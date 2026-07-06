@@ -1,0 +1,82 @@
+[project]
+name = "isnad"
+version = "1.0.0"
+description = "Isnād–Rijāl framework for claim-level provenance in multi-agent knowledge systems"
+readme = "README.md"
+authors = [
+    { name = "Ali Zahid Raja", email = "alizahidrajaa@gmail.com" }
+]
+license = { text = "Apache-2.0" }
+requires-python = ">=3.12"
+keywords = ["provenance", "multi-agent", "trust", "knowledge-base", "epistemology", "isnad"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "sqlalchemy>=2.0,<3.0",
+    "pydantic>=2.0,<3.0",
+    "alembic>=1.13,<2.0",
+    "psycopg2-binary>=2.9,<3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.5",
+    "mypy>=1.11",
+    "pre-commit>=3.8",
+]
+anthropic = [
+    "anthropic>=0.40",
+]
+all = [
+    "isnad[dev,anthropic]",
+]
+
+[project.scripts]
+isnad = "isnad.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.25,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+strict = true
+python_version = "3.12"
+warn_unreachable = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = "sqlalchemy.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.1.0",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.20",
+]

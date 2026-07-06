@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems"
+authors:
+  - family-names: Raja
+    given-names: Ali Zahid
+    orcid: "https://orcid.org/0009-0003-7875-4590"
+    email: alizahidrajaa@gmail.com
+doi: 10.5281/zenodo.21211291
+url: "https://doi.org/10.5281/zenodo.21211291"
+repository-code: "https://github.com/alizahidraja/isnad"
+version: "1.0.0"
+date-released: "2026-07-06"
+year: 2026
+license: Apache-2.0
+type: software
+keywords:
+  - provenance
+  - multi-agent-systems
+  - knowledge-bases
+  - trust
+  - epistemology
+  - isnad
+  - hadith-science
+abstract: >
+  Reference implementation of the Isnād–Rijāl framework for claim-level
+  provenance in multi-agent knowledge systems.  Adapts classical hadith-science
+  methodology — graded narrator registries, weakest-link chain evaluation,
+  independent corroboration, and dual chain+content criticism — to AI pipelines.
+  Implements the architecture described in "Grading the Narrators" (Raja, 2026).

@@ -1,0 +1,31 @@
+{
+  "title": "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems",
+  "description": "Reference implementation of the Isnād–Rijāl framework for claim-level provenance in multi-agent knowledge systems. Adapts classical hadith-science methodology — graded narrator registries, weakest-link chain evaluation, independent corroboration, and dual chain+content criticism — to AI pipelines. Implements the architecture described in \"Grading the Narrators\" (Raja, 2026).",
+  "creators": [
+    {
+      "name": "Ali Zahid Raja",
+      "orcid": "0009-0003-7875-4590",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "upload_type": "software",
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "keywords": [
+    "provenance",
+    "multi-agent-systems",
+    "knowledge-bases",
+    "trust",
+    "epistemology",
+    "isnad",
+    "hadith-science",
+    "claim-verification"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "10.5281/zenodo.21211291",
+      "resource_type": "publication-article"
+    }
+  ]
+}
