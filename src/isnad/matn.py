@@ -149,7 +149,7 @@ class LLMCritic:
             return ContentVerdict.UNVERIFIABLE
 
         try:
-            import anthropic  # type: ignore[import-not-found]
+            import anthropic
 
             client = anthropic.Anthropic(api_key=self.api_key)
 
@@ -165,7 +165,10 @@ class LLMCritic:
                 messages=[{"role": "user", "content": prompt}],
             )
 
-            verdict_text = response.content[0].text.strip().upper()
+            # response.content is a list of ContentBlock union types;
+            # the first block is typically TextBlock with a .text attribute
+            block = response.content[0]
+            verdict_text = getattr(block, "text", "").strip().upper()
             return self._parse_verdict(verdict_text)
 
         except Exception:
