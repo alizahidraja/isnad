@@ -176,9 +176,10 @@ class EmbeddingCritic:
                 best_sim = sim
                 best_text = cc
 
-        if best_sim >= self.contradiction_threshold:
-            if _has_contradiction_signal(normalized_claim, best_text):
-                return ContentVerdict.CONTRADICTION
+        if best_sim >= self.contradiction_threshold and _has_contradiction_signal(
+            normalized_claim, best_text
+        ):
+            return ContentVerdict.CONTRADICTION
 
         if best_sim >= self.similarity_threshold:
             return ContentVerdict.CONSISTENT

@@ -13,17 +13,15 @@ from __future__ import annotations
 import json
 import os
 import random
-import sys
-
-_exp_dir = os.path.dirname(os.path.abspath(__file__))
-_parent = os.path.dirname(_exp_dir)
-if _parent not in sys.path:
-    sys.path.insert(0, _parent)
 
 from isnad.critics.embedding import EmbeddingCritic
 from isnad.critics.llm import LLMCritic
 from isnad.matn import DeterministicRuleCritic
 from isnad.types import ContentVerdict
+
+_exp_dir = os.path.dirname(os.path.abspath(__file__))
+_parent = os.path.dirname(_exp_dir)
+_parent = os.path.dirname(_exp_dir)
 
 
 def build_eval_set(claims_path: str | None, n: int = 500) -> list[dict]:
@@ -131,7 +129,6 @@ def evaluate_critic(critic, entries: list[dict]) -> dict[str, float]:
     precision = tp / max(1, tp + fp)
     recall = tp / max(1, tp + fn)
     f1 = 2 * precision * recall / max(0.001, precision + recall)
-    false_consistent_rate = fn / max(1, fn + tn)  # fraction of consistent claims
     # False-consistent among contradictions:
     false_consistent_among_contra = fn / max(1, tp + fn + results["unverifiable"])
     accuracy = (tp + tn) / max(1, total)
@@ -178,9 +175,9 @@ def generate_report(results: dict[str, dict]) -> str:
             "",
             "## Interpretation",
             "",
-            "- **Precision:** Of the claims flagged as CONTRADICTION, what fraction are truly contradictions?",
-            "- **Recall:** Of the true contradictions, what fraction did the critic catch?",
-            "- **False-Consistent Rate:** Fraction of contradictions the critic called CONSISTENT — "
+            "- **Precision:** Of contradictions flagged, how many are real?",
+            "- **Recall:** Of real contradictions, how many were caught?",
+            "- **False-Consistent Rate:** Contradictions called CONSISTENT — "
             "the DANGEROUS error (passing a wrong claim as fine).",
             "",
         ]
@@ -221,7 +218,7 @@ def generate_report(results: dict[str, dict]) -> str:
             "contradictions with different vocabulary will be missed.",
             "- **LLM critic** quality depends on the model used and prompt design.",
             "- **Small eval set** — claims sampled from §8 corpus, not independently curated.",
-            "- **No ground-truth contradiction corpus exists** for undergraduate physics textbooks.",
+            "- **No ground-truth contradiction corpus** for physics.",
             "",
             "## Recommendation",
             "",
