@@ -78,6 +78,14 @@ ignore_missing_imports = true
 module = "langchain_core.*"
 ignore_missing_imports = true
 
+[[tool.mypy.overrides]]
+module = "isnad.integrations.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "isnad.critics.eval"
+ignore_errors = true
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
