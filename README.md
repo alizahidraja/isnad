@@ -48,6 +48,48 @@ print(f"Chain: {cg.value.upper()} | Content: {cv.value} | Action: {action.value}
 
 ---
 
+## §8 Validation Experiment — Results
+
+**Real PDFs. Real claims. Real findings.**  
+The framework was tested on 20,000 atomic claims extracted from 4 real physics
+textbooks (OpenStax Vol.1-3 + Crowell Light & Matter, 411 chunks, 2,386 pages).
+
+### ✅ What Works
+
+| Component | Result |
+|---|---|
+| **Weakest-link quarantine** | 100% of claims through REJECTED narrators are correctly quarantined |
+| **Seed-grade bootstrapping** | Pre-grading known-reliable narrators (sources, scrapers) resolves the cold-start |
+| **jarḥ–taʿdīl discovery** | Correctly identified the unreliable ingest narrator (15% fault rate → REJECTED) |
+| **Confidence-gating baseline** | Self-confidence scores are uncorrelated with defects — no better than random |
+
+### ❌ What Doesn't (Yet)
+
+| Component | Status |
+|---|---|
+| **Corroboration (mutābaʿāt)** | **EMPIRICALLY UNTESTED** — never fired across any run. Gated on baseline chain grades above MAWDU |
+| **Content criticism on real text** | Deterministic stub critic cannot detect contradictions in real textbook prose |
+| **Coverage without critic** | 10% — limited to review-budget claims. HASAN chains need CONSISTENT verdict to auto-serve |
+
+### 📊 Primary Metrics (B=10% review budget, 10 seeds)
+
+| Condition | Error Rate (95% CI) | Coverage |
+|---|---|---|
+| Ungated | 8.2% ± 0.1% | 100% |
+| Confidence-gated | 8.1% ± 0.1% | 100% |
+| **ISNAD-gated** | **~0%** | **10%** |
+
+**Interpretation:** ISNAD achieves near-zero error at its achievable coverage.
+Confidence-gating provides no benefit over serving everything. The 10% coverage
+ceiling comes from the decision matrix: without a working content critic that
+returns CONSISTENT, HASAN-tier chains route to REVIEW (not SERVE), consuming
+the review budget.
+
+**Full details:** [`experiments/s8_gated_vs_ungated/results/RESULTS.md`](experiments/s8_gated_vs_ungated/results/RESULTS.md)  
+**Reproduce:** `cd experiments/s8_gated_vs_ungated && python corpus/fetch.py && python extract.py && python inject.py && python calibrate.py && python run.py`
+
+---
+
 ## Install
 
 ```bash
