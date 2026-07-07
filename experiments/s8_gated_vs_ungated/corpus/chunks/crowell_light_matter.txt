@@ -1,0 +1,69 @@
+# Ben Crowell, Light and Matter (series)
+# Source: lightandmatter.com. CC BY-SA.
+# These are representative excerpts for research validation.
+
+=== CHUNK 17: Light and Matter — Newtonian Physics ===
+
+Motion in One Dimension
+Galileo showed that in the absence of friction, objects fall at the same rate regardless of mass. This contradicts the Aristotelian view that heavier objects fall faster. In a vacuum, a feather and a hammer fall at the same rate, as demonstrated on the Moon during Apollo 15.
+
+Velocity is the slope of the position-time graph. Acceleration is the slope of the velocity-time graph. The area under a velocity-time graph gives displacement. For constant acceleration, the equations are symmetric and follow from the definitions of velocity and acceleration.
+
+Forces and Free-Body Diagrams
+A force is an interaction between two objects. Weight is the gravitational force exerted by the Earth: W = mg. The normal force is perpendicular to the surface and prevents objects from falling through surfaces. Friction opposes relative motion and is proportional to the normal force: f_k = μ_k N (kinetic), f_s ≤ μ_s N (static). Static friction adjusts to prevent motion up to its maximum.
+
+Newton's third law is often misunderstood. The action-reaction pair acts on DIFFERENT objects. When a book rests on a table, the book's weight (Earth pulling book down) is paired with the book pulling Earth up — NOT with the normal force. The normal force's pair is the book pushing down on the table.
+
+Momentum
+Momentum is a conserved quantity in all interactions, making it a powerful problem-solving tool. Unlike kinetic energy, momentum conservation holds even in inelastic collisions where energy is lost to heat or deformation. Momentum is p = mv. For a system of particles, the total momentum equals the total mass times the velocity of the center of mass.
+
+=== CHUNK 18: Light and Matter — Conservation Laws ===
+
+Energy is the most abstract conserved quantity in physics. It can change forms — kinetic, potential, thermal, chemical, nuclear — but the total amount is constant in an isolated system. The First Law of Thermodynamics is energy conservation applied to thermal systems: ΔU = Q − W, where ΔU is change in internal energy, Q is heat added, and W is work done BY the system.
+
+Energy is not conserved in the presence of time-dependent external forces, but this is because the system is not isolated. Energy conservation always holds for the system plus its environment.
+
+Angular Momentum
+Angular momentum is conserved when no external torque acts. This is a separate conservation law from linear momentum. A spinning ice skater conserves angular momentum: pulling arms in reduces moment of inertia and increases angular speed. The same principle explains why neutron stars spin rapidly — the collapse of a star's core dramatically reduces its moment of inertia.
+
+Torque is the rotational analog of force. Unlike force, torque depends on the choice of axis. The condition for rotational equilibrium is that the net torque about ANY axis is zero.
+
+=== CHUNK 19: Light and Matter — Thermodynamics ===
+
+Temperature and Heat
+Temperature measures the average kinetic energy of random molecular motion. The Kelvin scale is absolute: 0 K is the theoretical temperature at which all molecular motion ceases. Celsius and Kelvin differ only by an offset: T_K = T_C + 273.15.
+
+Heat is energy transferred due to temperature difference. It is NOT a substance — the caloric theory was disproven by Rumford's cannon-boring experiments, which showed that friction could produce unlimited heat. The mechanical equivalent of heat: 1 cal = 4.184 J.
+
+Specific heat capacity c is the energy required to raise 1 kg of a substance by 1 K: Q = mcΔT. Water has an unusually high specific heat (4184 J/kg·K), which moderates Earth's climate.
+
+Entropy and the Second Law
+The Second Law of Thermodynamics states that the entropy of an isolated system never decreases. Entropy is a measure of disorder or the number of accessible microstates. Heat flows spontaneously from hot to cold because this increases total entropy.
+
+The efficiency of a heat engine operating between temperatures T_H and T_C is limited by the Carnot efficiency: η = 1 − T_C/T_H (temperatures in Kelvin). No real engine can exceed this efficiency. A perfect refrigerator would require zero work input — impossible because it would decrease entropy.
+
+=== CHUNK 20: Light and Matter — Optics ===
+
+The Ray Model of Light
+Light can be modeled as rays traveling in straight lines, valid when the wavelength is much smaller than the objects it interacts with. This fails at small scales where diffraction dominates. The ray model explains reflection (θ_i = θ_r), refraction (Snell's law), and image formation by lenses and mirrors.
+
+Light is fundamentally a wave — it exhibits interference and diffraction. It is also fundamentally a particle — it comes in quantized photons. Both descriptions are correct and complementary. Whether light behaves as a wave or a particle depends on the experiment performed.
+
+Images formed by converging lenses can be real (projectable on a screen) or virtual (visible only through the lens). A magnifying glass is a converging lens used with the object inside the focal point, producing an enlarged virtual image.
+
+Color is perception, not a physical property of light. The wavelength determines the hue, but the same color sensation can be produced by different spectral combinations (metamerism). White light is a mixture of all visible wavelengths. Objects appear colored because they selectively reflect or transmit certain wavelengths.
+
+=== CHUNK 21: Light and Matter — Modern Physics ===
+
+Wave-Particle Duality
+At the turn of the 20th century, physics faced a crisis: light behaved as a wave in some experiments and as a particle in others. Einstein's 1905 explanation of the photoelectric effect showed that light energy comes in discrete quanta: E = hf. The momentum of a photon is p = h/λ, derived from relativity since photons have zero rest mass.
+
+De Broglie extended wave-particle duality to matter: every particle has a wavelength λ = h/p. This was confirmed by Davisson and Germer's observation of electron diffraction from a nickel crystal. Electrons, protons, neutrons, and even large molecules all exhibit wave behavior. For macroscopic objects, the wavelength is far too small to observe — a 1 kg object moving at 1 m/s has λ ≈ 6.6 × 10⁻³⁴ m.
+
+Quantum Mechanics
+The uncertainty principle is not a measurement limitation but a fundamental property of nature. A particle does not HAVE a definite position and momentum simultaneously. The wave function contains all information about a particle, and |ψ|² gives the probability density.
+
+The interpretation of quantum mechanics remains debated. The Copenhagen interpretation holds that measurement collapses the wave function. The many-worlds interpretation holds that all possible outcomes occur in branching universes. These interpretations make identical experimental predictions — the debate is philosophical, not scientific, at present.
+
+Relativity
+Special relativity unifies space and time into spacetime. Events that are simultaneous in one frame are not simultaneous in another. The speed of light is the maximum speed for information transfer. As an object approaches c, its relativistic momentum p = γmv grows without bound, requiring infinite energy to reach c.

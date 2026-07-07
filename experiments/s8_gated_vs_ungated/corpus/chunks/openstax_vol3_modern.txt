@@ -1,0 +1,82 @@
+# OpenStax University Physics Volume 3 — Optics & Modern Physics
+# Source: Ling, Moebs, Sanny. CC BY 4.0.
+
+=== CHUNK 12: Geometric Optics ===
+
+Reflection and Refraction
+Light travels in straight lines in a uniform medium. When light strikes a surface, it can be reflected or refracted. The law of reflection states that the angle of incidence equals the angle of reflection: θ_i = θ_r, measured from the normal.
+
+Snell's Law of refraction: n₁ sin θ₁ = n₂ sin θ₂, where n is the index of refraction of the medium. The index of refraction is n = c/v, where v is the speed of light in the medium. For vacuum, n = 1; for water, n = 1.33; for glass, n ≈ 1.5.
+
+Total internal reflection occurs when light travels from a higher-index medium to a lower-index medium at an angle greater than the critical angle: θ_c = sin⁻¹(n₂/n₁). This principle is used in fiber optics.
+
+Mirrors and Lenses
+For a spherical mirror of focal length f = R/2 (where R is radius of curvature):
+  1/d₀ + 1/d_i = 1/f
+  Magnification: m = −d_i/d₀ = h_i/h₀
+
+For a thin lens, the same equation holds with f positive for converging lenses and negative for diverging lenses. The lens maker's equation: 1/f = (n−1)(1/R₁ − 1/R₂).
+
+=== CHUNK 13: Wave Optics ===
+
+Interference
+When two or more waves overlap, they interfere. Constructive interference occurs when waves are in phase (path difference = mλ). Destructive interference occurs when waves are out of phase (path difference = (m+1/2)λ).
+
+Young's Double-Slit Experiment: Bright fringes occur at d sin θ = mλ, dark fringes at d sin θ = (m+1/2)λ, where d is slit separation. The fringe spacing on a screen at distance L is Δy = λL/d.
+
+Thin-film interference produces the colors seen in soap bubbles and oil slicks. For a film of thickness t and index n in air, constructive interference (reflection) occurs when 2nt = (m+1/2)λ, destructive when 2nt = mλ (accounting for phase changes at boundaries).
+
+Diffraction
+Diffraction is the bending of waves around obstacles. For a single slit of width a, minima occur at a sin θ = mλ (m = ±1, ±2, ...). The central maximum has width 2λL/a.
+
+A diffraction grating with N slits produces sharp maxima at d sin θ = mλ. The resolving power is R = λ/Δλ = mN. Diffraction gratings are used in spectroscopy to analyze light spectra.
+
+=== CHUNK 14: Special Relativity ===
+
+Postulates of Special Relativity
+1. The laws of physics are the same in all inertial reference frames.
+2. The speed of light in vacuum is the same for all observers, regardless of the motion of the source or observer.
+
+Time Dilation and Length Contraction
+A clock moving at speed v relative to an observer runs slower by a factor γ = 1/√(1−v²/c²): Δt = γΔt₀, where Δt₀ is the proper time (time in the clock's rest frame).
+
+Length contraction: An object moving at speed v has its length contracted in the direction of motion: L = L₀/γ, where L₀ is the proper length (length in the object's rest frame).
+
+Relativistic Momentum and Energy
+Relativistic momentum is p = γmv. Relativistic kinetic energy is K = (γ−1)mc². The total energy is E = γmc². Einstein's famous mass-energy equivalence: E₀ = mc² (rest energy).
+
+The relationship between energy and momentum: E² = (pc)² + (mc²)². For massless particles (photons), E = pc, and p = E/c.
+
+The Doppler effect for light: f_obs = f_src √((1±β)/(1∓β)), where β = v/c. For v << c: Δf/f ≈ v/c.
+
+=== CHUNK 15: Quantum Physics ===
+
+Photons and the Photoelectric Effect
+Light consists of quantized packets of energy called photons. The energy of a photon is E = hf, where h = 6.626 × 10⁻³⁴ J·s is Planck's constant and f is the frequency. The momentum of a photon is p = h/λ.
+
+The photoelectric effect: electrons are emitted from a metal surface when light of sufficiently high frequency strikes it. The maximum kinetic energy of emitted electrons is K_max = hf − φ, where φ is the work function of the metal. This demonstrated that light is quantized — wave theory could not explain the threshold frequency behavior.
+
+Matter Waves and Wave-Particle Duality
+De Broglie proposed that all matter has wave properties. The wavelength of a particle is λ = h/p, where p is momentum. Electrons can exhibit diffraction and interference, confirming their wave nature.
+
+Light exhibits both wave properties (interference, diffraction) and particle properties (photoelectric effect, Compton scattering). This wave-particle duality is fundamental to quantum mechanics.
+
+The Heisenberg Uncertainty Principle
+It is impossible to simultaneously know both the exact position and exact momentum of a particle: ΔxΔp ≥ ℏ/2, where ℏ = h/(2π). Similarly, ΔEΔt ≥ ℏ/2 for energy and time uncertainty.
+
+=== CHUNK 16: Atomic and Nuclear Physics ===
+
+The Bohr Model
+Electrons orbit the nucleus in discrete energy levels. Transitions between levels emit or absorb photons with energy equal to the difference: ΔE = hf. For hydrogen: E_n = −13.6 eV / n², where n is the principal quantum number.
+
+The Schrödinger Equation
+In quantum mechanics, particles are described by a wave function ψ(x,t). The probability of finding a particle in a region is |ψ|²dx. The time-independent Schrödinger equation: −(ℏ²/2m)d²ψ/dx² + V(x)ψ = Eψ.
+
+Quantum numbers describe atomic states: n (principal), l (orbital angular momentum), m_l (magnetic), m_s (spin). The Pauli exclusion principle: no two electrons in an atom can have the same set of quantum numbers.
+
+Nuclear Physics
+The nucleus consists of protons and neutrons (nucleons). The atomic number Z is the number of protons. The mass number A is the total number of nucleons. Isotopes have the same Z but different A.
+
+The nuclear binding energy is the energy required to separate a nucleus into its constituent nucleons. The mass defect Δm = Zm_p + Nm_n − M_nucleus is converted to binding energy via E = mc².
+
+Radioactive decay follows N(t) = N₀e^(−λt), where λ is the decay constant and half-life T_1/2 = ln(2)/λ. Types: alpha decay (⁴He nucleus), beta decay (electron/positron emission), gamma decay (photon emission).

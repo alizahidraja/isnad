@@ -1,0 +1,88 @@
+# Extended physics corpus — additional textbook excerpts
+# Mechanics, thermodynamics, waves, optics, electricity, magnetism, modern physics
+
+=== CHUNK 22: Extended Mechanics ===
+
+Forces in equilibrium occur when the net force on an object is zero. The object may be at rest or moving with constant velocity. The condition for equilibrium is ΣF = 0. For rotational equilibrium, the sum of torques about any axis must also be zero: Στ = 0.
+
+Friction is a force that opposes relative motion between surfaces in contact. The coefficient of static friction μ_s is typically larger than the coefficient of kinetic friction μ_k. The maximum static friction force is f_s,max = μ_s N.
+
+Uniform circular motion requires a centripetal force directed toward the center: F_c = mv²/r. The centripetal acceleration is a_c = v²/r. Without this force, the object would move in a straight line per Newton's first law.
+
+Work done by a varying force is found by integration: W = ∫ F(x) dx. The work-energy theorem generalizes to W_net = ΔK. Power is the time derivative of work: P = dW/dt = F·v.
+
+Gravitational potential energy for large distances is U(r) = −GMm/r. The escape velocity from Earth's surface is approximately 11.2 km/s. Geosynchronous orbit occurs at altitude where orbital period equals Earth's rotation period (24 hours). For Earth, this altitude is approximately 35,800 km.
+
+Simple harmonic motion occurs when the restoring force is proportional to displacement: F = −kx. The period of a mass-spring system is T = 2π√(m/k). The period of a simple pendulum for small angles is T = 2π√(L/g), independent of mass.
+
+=== CHUNK 23: Fluid Mechanics and Thermodynamics ===
+
+Pressure in a static fluid increases with depth: P = P₀ + ρgh. Pascal's principle states that pressure applied to an enclosed fluid is transmitted undiminished throughout the fluid. Hydraulic systems multiply force using this principle.
+
+Archimedes' principle: the buoyant force on an object equals the weight of fluid displaced. An object floats when its density is less than the fluid's density. The fraction submerged equals the ratio of densities: ρ_object/ρ_fluid.
+
+Bernoulli's equation for ideal fluid flow: P + ½ρv² + ρgh = constant. This expresses conservation of energy per unit volume for incompressible, non-viscous flow. The continuity equation for incompressible flow is A₁v₁ = A₂v₂.
+
+The ideal gas law relates pressure, volume, temperature, and amount: PV = nRT, where R = 8.314 J/(mol·K). The Boltzmann constant k_B = R/N_A = 1.381 × 10⁻²³ J/K relates microscopic to macroscopic quantities.
+
+The first law of thermodynamics is conservation of energy including heat: ΔU = Q − W. For an isothermal process, ΔU = 0 and Q = W. For an adiabatic process, Q = 0 and ΔU = −W. For a constant-volume process, W = 0 and ΔU = Q.
+
+=== CHUNK 24: Waves and Sound ===
+
+A traveling wave transfers energy without transferring matter. The wave speed depends on the medium: for a string, v = √(T/μ) where T is tension and μ is linear density. The wave equation is ∂²y/∂x² = (1/v²) ∂²y/∂t².
+
+Standing waves form when incident and reflected waves interfere. Nodes are points of zero displacement; antinodes are points of maximum displacement. For a string fixed at both ends, standing waves occur at frequencies f_n = n(v/2L) for n = 1, 2, 3, ...
+
+Sound waves are longitudinal pressure waves. The speed of sound in air at 20°C is approximately 343 m/s. The speed increases with temperature: v = 331√(T/273) m/s. The speed of sound is faster in liquids and solids than in gases.
+
+The Doppler effect changes the observed frequency when source and observer move relative to each other: f' = f(v ± v_o)/(v ∓ v_s). When the source and observer approach each other, the observed frequency increases. When they recede, frequency decreases.
+
+Sound intensity level is measured in decibels: β = 10 log₁₀(I/I₀), where I₀ = 10⁻¹² W/m² is the threshold of hearing. Every 10 dB increase corresponds to a factor of 10 in intensity.
+
+=== CHUNK 25: Electric Circuits and Magnetism ===
+
+The electric potential energy of two point charges is U = kq₁q₂/r. The potential of a charged conducting sphere at its surface is V = kQ/R. The electric field outside the sphere is the same as if all charge were concentrated at the center.
+
+Gauss's Law for electricity: the electric flux through a closed surface equals the enclosed charge divided by ε₀. For a point charge, the flux through a spherical surface is Φ_E = q/ε₀, independent of radius. For an infinite line charge, symmetry gives E ∝ 1/r.
+
+A capacitor stores energy in its electric field. The capacitance of a parallel-plate capacitor with dielectric is C = κε₀A/d. Dielectric strength is the maximum electric field a material can withstand before breakdown. Air breaks down at approximately 3 × 10⁶ V/m.
+
+The Hall effect demonstrates that charge carriers in a conductor experience a magnetic force. The Hall voltage is V_H = IB/(nqt), where n is carrier density and t is thickness. The sign of the Hall voltage reveals whether charge carriers are positive or negative.
+
+Motional emf arises when a conductor moves through a magnetic field. The induced emf is ε = BLv for a rod moving perpendicular to B. Generators convert mechanical energy to electrical energy using this principle. The peak emf of an AC generator is ε_max = NBAω.
+
+=== CHUNK 26: Optics and Quantum ===
+
+Polarization is the orientation of the electric field in an EM wave. Unpolarized light has random field orientations. A polarizing filter transmits only the component parallel to its transmission axis: I = I₀ cos²θ (Malus's Law). Light reflected at Brewster's angle is completely polarized.
+
+The Michelson interferometer splits and recombines light beams to produce interference fringes. It was used to disprove the existence of the luminiferous ether (Michelson-Morley experiment, 1887). The null result led to Einstein's special relativity.
+
+Blackbody radiation led to the birth of quantum mechanics. Classical physics (Rayleigh-Jeans law) predicted infinite energy at short wavelengths — the ultraviolet catastrophe. Planck resolved this by quantizing energy: E = nhf, where n is an integer.
+
+The Compton effect demonstrates the particle nature of light. When X-rays scatter from electrons, the wavelength shift is Δλ = (h/mc)(1 − cos θ), independent of the incident wavelength. This confirmed that photons carry momentum p = h/λ.
+
+The Bohr model of hydrogen: angular momentum is quantized as L = nℏ. This leads to quantized energy levels E_n = −13.6 eV/n². Transitions between levels produce spectral lines. The Lyman series (to n=1) is in UV; Balmer series (to n=2) is in visible.
+
+Nuclear binding energy per nucleon peaks at iron-56, the most stable nucleus. Fusion of light nuclei and fission of heavy nuclei both release energy because they move toward iron. The Sun fuses hydrogen into helium via the proton-proton chain.
+
+Radioactive decay is a random process. The activity of a sample is A = λN. Carbon-14 dating uses the known half-life of 5730 years. The ratio of C-14 to C-12 in organic remains determines time since death.
+
+Special relativity predicts that moving clocks run slow. The twin paradox: a twin traveling at relativistic speed ages less than the twin on Earth. This is not a true paradox — the traveling twin's frame is not inertial during acceleration. GPS satellites must account for relativistic time dilation.
+
+=== CHUNK 27: Additional Mechanics and EM Topics ===
+
+Projectile motion is the superposition of constant-velocity horizontal motion and constant-acceleration vertical motion. The range of a projectile launched at angle θ with speed v₀ on level ground is R = (v₀² sin 2θ)/g. Maximum range occurs at 45 degrees.
+
+The center of mass of a system moves as if all mass were concentrated there and all external forces acted there. Internal forces do not affect the center of mass motion. This simplifies the analysis of complex systems like exploding projectiles.
+
+Impulse delivered to an object equals the area under the force-time curve. In collisions, the impulse on each object is equal and opposite (Newton's third law). Airbags increase the time of impact, reducing the average force.
+
+Rotational inertia about an axis through the center of mass is minimum. The parallel axis theorem gives I = I_cm + Md² for an axis parallel to one through the center of mass at distance d. This is essential for analyzing compound pendulums.
+
+Gauss's Law for magnetism states that magnetic flux through any closed surface is zero. This means magnetic monopoles do not exist — magnetic field lines always form closed loops. If monopoles were discovered, Maxwell's equations would be symmetric.
+
+Displacement current in a capacitor resolves the apparent discontinuity in Ampère's law. The changing electric field between capacitor plates acts like a current: I_d = ε₀ dΦ_E/dt. This was Maxwell's crucial insight linking electricity and magnetism.
+
+LC circuits oscillate at angular frequency ω = 1/√(LC). Energy transfers between the capacitor's electric field and the inductor's magnetic field. In an ideal LC circuit, total energy U = ½CV² + ½LI² is conserved. Resistance causes damping: oscillations decay exponentially.
+
+Transformers use mutual induction to change AC voltage: V_s/V_p = N_s/N_p. For an ideal transformer, power in equals power out: I_p V_p = I_s V_s. Step-up transformers increase voltage and decrease current; step-down transformers do the opposite.

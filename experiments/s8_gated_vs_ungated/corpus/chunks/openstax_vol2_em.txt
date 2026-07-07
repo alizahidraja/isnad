@@ -1,0 +1,107 @@
+# OpenStax University Physics Volume 2 — Electricity & Magnetism
+# Source: Ling, Moebs, Sanny. CC BY 4.0.
+
+=== CHUNK 6: Electric Charge and Field ===
+
+Electric Charge
+Electric charge is a fundamental property of matter. There are two types of charge: positive and negative. Like charges repel; opposite charges attract. Charge is quantized: all charges are integer multiples of the elementary charge e = 1.602 × 10⁻¹⁹ C. Charge is conserved: the net charge of an isolated system remains constant.
+
+Coulomb's Law
+The force between two point charges is given by Coulomb's Law: F = k|q₁q₂|/r², where k = 8.99 × 10⁹ N·m²/C² = 1/(4πε₀). The force is attractive for opposite charges and repulsive for like charges. The direction is along the line connecting the charges.
+
+Electric Field
+The electric field E at a point is the force per unit charge experienced by a test charge: E = F/q₀. The electric field due to a point charge q is E = kq/r² (directed away from positive charge, toward negative).
+
+For a continuous charge distribution, the field is found by integration: E = k ∫ dq/r². The electric field due to an infinite line of charge with linear charge density λ is E = 2kλ/r (perpendicular to the line). The field due to an infinite plane with surface charge density σ is E = σ/(2ε₀) (uniform, perpendicular to the plane).
+
+Electric Dipole
+An electric dipole consists of equal and opposite charges ±q separated by distance d. The dipole moment is p = qd, directed from negative to positive. In a uniform electric field, a dipole experiences a torque τ = p × E and has potential energy U = −p·E.
+
+=== CHUNK 7: Electric Potential and Capacitance ===
+
+Electric Potential
+The electric potential V at a point is the electric potential energy per unit charge: V = U/q. The potential difference between two points is ΔV = −∫ E·dl. For a point charge: V = kq/r. Potential is measured in volts (V), where 1 V = 1 J/C.
+
+Equipotential surfaces are surfaces of constant potential. Electric field lines are perpendicular to equipotential surfaces. The electric field is the negative gradient of potential: E = −∇V.
+
+Capacitance
+A capacitor stores electric charge and energy. Capacitance is defined as C = Q/V, measured in farads (F). For a parallel-plate capacitor: C = ε₀A/d, where A is plate area and d is separation.
+
+The energy stored in a capacitor is U = (1/2)QV = (1/2)CV² = Q²/(2C). The energy density of the electric field is u_E = (1/2)ε₀E².
+
+Dielectrics are insulating materials placed between capacitor plates. They increase capacitance by a factor κ (dielectric constant): C = κC₀. The dielectric reduces the electric field between plates and increases the maximum operating voltage.
+
+Capacitors in series: 1/C_eq = 1/C₁ + 1/C₂ + ...
+Capacitors in parallel: C_eq = C₁ + C₂ + ...
+
+=== CHUNK 8: Current, Resistance, and Circuits ===
+
+Electric Current
+Current is the rate of flow of charge: I = dQ/dt, measured in amperes (A), where 1 A = 1 C/s. Conventional current is the direction positive charges would flow — opposite to electron flow.
+
+Ohm's Law states that the current through a conductor is proportional to the voltage across it: V = IR. Resistance R is measured in ohms (Ω). Resistivity ρ is a material property: R = ρL/A. Resistance generally increases with temperature for metals: ρ = ρ₀[1 + α(T − T₀)].
+
+Power in Electric Circuits
+The power dissipated in a resistor is P = IV = I²R = V²/R. This power appears as heat (Joule heating). The total power supplied by an EMF source is P = Iε, where ε is the electromotive force.
+
+DC Circuits
+Resistors in series: R_eq = R₁ + R₂ + ...
+Resistors in parallel: 1/R_eq = 1/R₁ + 1/R₂ + ...
+
+Kirchhoff's Rules:
+1. Junction Rule: The sum of currents entering a junction equals the sum leaving (charge conservation).
+2. Loop Rule: The sum of potential differences around any closed loop is zero (energy conservation).
+
+RC Circuits: When a capacitor charges through a resistor, V(t) = ε(1 − e^(−t/RC)). The time constant τ = RC. After one time constant, the capacitor reaches ~63% of its final voltage.
+
+=== CHUNK 9: Magnetic Fields and Forces ===
+
+Magnetic Force
+The magnetic force on a moving charge is F = qv × B. The magnitude is F = qvB sin θ, where θ is the angle between v and B. The direction is given by the right-hand rule. Magnetic forces do no work because they are always perpendicular to velocity.
+
+The force on a current-carrying wire of length L in a magnetic field is F = IL × B. For a straight wire: F = ILB sin θ.
+
+Motion of Charged Particles in Magnetic Fields
+A charged particle moving perpendicular to a uniform magnetic field follows a circular path. The radius of the path is r = mv/(qB). The period of the motion is T = 2πm/(qB) and is independent of speed. This principle is used in mass spectrometers and cyclotrons.
+
+Sources of Magnetic Field
+Biot-Savart Law: dB = (μ₀/4π) (Idl × r̂)/r². For a long straight wire: B = μ₀I/(2πr). The direction is given by the right-hand rule (grasp wire with right hand, thumb in current direction, fingers curl in B direction).
+
+Ampère's Law: ∮ B·dl = μ₀I_enc. For a solenoid: B = μ₀nI inside, approximately zero outside, where n is turns per unit length.
+
+Force Between Parallel Currents
+Parallel currents attract; antiparallel currents repel. The force per unit length is F/L = μ₀I₁I₂/(2πr). This is the basis for the definition of the ampere.
+
+=== CHUNK 10: Electromagnetic Induction ===
+
+Faraday's Law
+A changing magnetic flux induces an emf: ε = −dΦ_B/dt. The magnetic flux is Φ_B = ∫ B·dA. The negative sign indicates Lenz's Law: the induced current flows in a direction that opposes the change in flux.
+
+For a coil of N turns: ε = −N dΦ_B/dt. Motional emf for a conductor of length L moving with velocity v perpendicular to B: ε = BLv.
+
+Lenz's Law
+The induced current creates a magnetic field that opposes the change in the original magnetic flux. If flux increases, the induced field opposes it; if flux decreases, the induced field reinforces it. This is a consequence of energy conservation.
+
+Inductance
+Mutual inductance: ε₂ = −M dI₁/dt. Self-inductance: ε = −L dI/dt, measured in henries (H). For a solenoid: L = μ₀n²Al, where l is length and A is cross-sectional area.
+
+The energy stored in an inductor is U = (1/2)LI². The energy density of the magnetic field is u_B = B²/(2μ₀).
+
+RL Circuits: When current builds up in an RL circuit, I(t) = (ε/R)(1 − e^(−t/τ)), where τ = L/R is the inductive time constant.
+
+=== CHUNK 11: Maxwell's Equations and EM Waves ===
+
+Maxwell's Equations
+1. Gauss's Law for Electricity: ∮ E·dA = q_enc/ε₀
+2. Gauss's Law for Magnetism: ∮ B·dA = 0 (no magnetic monopoles)
+3. Faraday's Law: ∮ E·dl = −dΦ_B/dt
+4. Ampère-Maxwell Law: ∮ B·dl = μ₀(I_enc + ε₀ dΦ_E/dt)
+
+The displacement current term (ε₀ dΦ_E/dt) was Maxwell's addition, which predicts electromagnetic waves.
+
+Electromagnetic Waves
+Maxwell's equations predict that changing electric and magnetic fields propagate as waves at speed c = 1/√(μ₀ε₀) ≈ 3.00 × 10⁸ m/s, the speed of light. E and B are perpendicular to each other and to the direction of propagation. EM waves are transverse waves.
+
+The energy carried by an EM wave is described by the Poynting vector: S = (1/μ₀) E × B. The average intensity is I_avg = (1/2)cε₀E₀², where E₀ is the amplitude of the electric field.
+
+EM waves carry momentum. The radiation pressure on a perfectly absorbing surface is p_rad = I/c. On a perfectly reflecting surface, p_rad = 2I/c.

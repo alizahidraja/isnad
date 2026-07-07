@@ -1,0 +1,86 @@
+# OpenStax University Physics Volume 1 — Mechanics
+# Source: Ling, Moebs, Sanny. CC BY 4.0.
+# These are representative excerpts for research validation.
+
+=== CHUNK 1: Kinematics and Newton's Laws ===
+
+Position, Displacement, and Velocity
+The position of an object is its location relative to a chosen reference point. Displacement is the change in position: Δx = x_f − x_i. Velocity is the rate of change of position. The instantaneous velocity is the derivative of position with respect to time: v = dx/dt.
+
+Average velocity over an interval is v_avg = Δx/Δt. Speed is the magnitude of velocity and does not include direction. An object moving at constant velocity has zero acceleration. Acceleration is the rate of change of velocity: a = dv/dt = d²x/dt².
+
+For constant acceleration a, the kinematic equations are:
+  v = v₀ + at
+  x = x₀ + v₀t + (1/2)at²
+  v² = v₀² + 2a(x − x₀)
+
+Newton's First Law states that an object at rest stays at rest and an object in motion stays in motion with constant velocity unless acted upon by a net external force. This is the law of inertia. An inertial reference frame is one in which Newton's first law holds.
+
+Newton's Second Law states that the net force on an object equals its mass times its acceleration: F_net = ma. Force is measured in newtons (N), where 1 N = 1 kg·m/s². This is a vector equation: the acceleration is in the direction of the net force.
+
+Newton's Third Law states that for every action there is an equal and opposite reaction. If object A exerts a force on object B, then object B exerts a force of equal magnitude and opposite direction on object A: F_AB = −F_BA. These forces act on different objects and therefore do not cancel.
+
+=== CHUNK 2: Energy and Work ===
+
+Work and Kinetic Energy
+Work is done when a force acts on an object and the object moves in the direction of the force. For a constant force F acting over a displacement d, the work is W = F·d = Fd cos θ, where θ is the angle between the force and displacement vectors. Work is measured in joules (J), where 1 J = 1 N·m.
+
+The work-energy theorem states that the net work done on an object equals its change in kinetic energy: W_net = ΔK = (1/2)mv_f² − (1/2)mv_i². Kinetic energy is the energy of motion: K = (1/2)mv².
+
+Potential energy is stored energy. Gravitational potential energy near Earth's surface is U_g = mgh, where h is the height above a reference level and g = 9.80 m/s² is the acceleration due to gravity. The work done by gravity is W_g = −ΔU_g = −mgΔh.
+
+Conservation of Mechanical Energy
+When only conservative forces (gravity, springs) do work, the total mechanical energy is conserved: K_i + U_i = K_f + U_f. A conservative force is one for which the work done is independent of the path taken. Gravity and spring forces are conservative; friction is non-conservative.
+
+The spring force is given by Hooke's Law: F = −kx, where k is the spring constant and x is the displacement from equilibrium. The elastic potential energy stored in a spring is U_s = (1/2)kx².
+
+Power is the rate at which work is done: P = dW/dt. Average power is P_avg = W/Δt. Power is measured in watts (W), where 1 W = 1 J/s.
+
+=== CHUNK 3: Momentum and Collisions ===
+
+Linear Momentum
+The linear momentum of an object is the product of its mass and velocity: p = mv. Momentum is a vector quantity measured in kg·m/s. Newton's second law can be expressed in terms of momentum: F_net = dp/dt. The net external force equals the rate of change of momentum.
+
+Impulse is the change in momentum: J = Δp = ∫ F dt. For a constant force, J = F_avg Δt. The impulse-momentum theorem states that the impulse on an object equals its change in momentum.
+
+Conservation of Momentum
+In an isolated system (no net external force), the total linear momentum is conserved: p_total,i = p_total,f. This is one of the most fundamental conservation laws in physics. It holds for all types of collisions.
+
+Types of Collisions
+In an elastic collision, both momentum and kinetic energy are conserved. For two objects: m₁v₁i + m₂v₂i = m₁v₁f + m₂v₂f AND (1/2)m₁v₁i² + (1/2)m₂v₂i² = (1/2)m₁v₁f² + (1/2)m₂v₂f².
+
+In an inelastic collision, momentum is conserved but kinetic energy is not. In a perfectly inelastic collision, the objects stick together after the collision and move with a common velocity. The maximum kinetic energy loss occurs in perfectly inelastic collisions.
+
+Center of Mass
+The center of mass of a system of particles is the weighted average of their positions: r_cm = (Σ m_i r_i) / (Σ m_i). The velocity of the center of mass is v_cm = (Σ m_i v_i) / M_total. The total momentum of a system equals the total mass times the velocity of the center of mass: P_total = M_total v_cm.
+
+=== CHUNK 4: Rotational Motion ===
+
+Angular Quantities
+Rotational motion is described by angular position θ (in radians), angular velocity ω = dθ/dt, and angular acceleration α = dω/dt. For constant angular acceleration: ω = ω₀ + αt, θ = θ₀ + ω₀t + (1/2)αt², ω² = ω₀² + 2α(θ − θ₀).
+
+The relationship between linear and angular quantities for a point at distance r from the axis: s = rθ, v_t = rω, a_t = rα. The centripetal acceleration is a_c = v²/r = ω²r and points toward the center of rotation.
+
+Torque and Rotational Dynamics
+Torque is the rotational analog of force: τ = r × F. The magnitude is τ = rF sin θ. The net torque on an object equals its moment of inertia times its angular acceleration: τ_net = Iα.
+
+The moment of inertia I depends on the mass distribution relative to the axis of rotation. For a point mass: I = mr². For a solid cylinder: I = (1/2)MR². For a solid sphere: I = (2/5)MR².
+
+Rotational kinetic energy is K_rot = (1/2)Iω². The total kinetic energy of a rolling object is the sum of translational and rotational kinetic energy: K_total = (1/2)mv_cm² + (1/2)I_cm ω².
+
+Angular Momentum
+Angular momentum L = r × p = Iω. For a system with no net external torque, angular momentum is conserved: L_i = L_f. This explains why an ice skater spins faster when pulling arms in — moment of inertia decreases, so angular velocity must increase to conserve angular momentum.
+
+=== CHUNK 5: Gravitation ===
+
+Newton's Law of Universal Gravitation
+Every particle in the universe attracts every other particle with a force proportional to the product of their masses and inversely proportional to the square of the distance between them: F = Gm₁m₂/r², where G = 6.674 × 10⁻¹¹ N·m²/kg² is the universal gravitational constant.
+
+The gravitational potential energy of two masses separated by distance r is U = −Gm₁m₂/r. The negative sign indicates that gravity is an attractive force — work must be done to separate the masses.
+
+Kepler's Laws
+Kepler's First Law: Planets move in elliptical orbits with the Sun at one focus.
+Kepler's Second Law: A line from the Sun to a planet sweeps out equal areas in equal times (consequence of angular momentum conservation).
+Kepler's Third Law: The square of the orbital period is proportional to the cube of the semi-major axis: T² ∝ a³. For circular orbits: T² = (4π²/GM)a³.
+
+The escape speed from a body of mass M and radius R is v_esc = √(2GM/R). For Earth, v_esc ≈ 11.2 km/s.
