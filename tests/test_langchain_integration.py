@@ -18,11 +18,13 @@ from isnad.types import (
 
 class TestSeedRegistry:
     def test_creates_registry_from_dict(self) -> None:
-        reg = seed_registry({
-            "source:my-docs": "reliable",
-            "model:gpt-4o": "acceptable",
-            "model:gpt-3.5": "weak",
-        })
+        reg = seed_registry(
+            {
+                "source:my-docs": "reliable",
+                "model:gpt-4o": "acceptable",
+                "model:gpt-3.5": "weak",
+            }
+        )
         assert isinstance(reg, Registry)
         assert reg.get_grade("source:my-docs", "general") == NarratorGrade.RELIABLE
         assert reg.get_grade("model:gpt-4o", "general") == NarratorGrade.ACCEPTABLE
@@ -38,12 +40,15 @@ class TestSeedRegistry:
         assert reg.get_grade("model:bad", "general") == NarratorGrade.REJECTED
 
     def test_multiple_narrators(self) -> None:
-        reg = seed_registry({
-            "source:docs": "reliable",
-            "retriever:v1": "acceptable",
-            "tool:calc": "acceptable",
-            "model:llm": "acceptable",
-        }, domain="physics")
+        reg = seed_registry(
+            {
+                "source:docs": "reliable",
+                "retriever:v1": "acceptable",
+                "tool:calc": "acceptable",
+                "model:llm": "acceptable",
+            },
+            domain="physics",
+        )
         assert len(reg) == 4
         for nid in ["source:docs", "retriever:v1", "tool:calc", "model:llm"]:
             assert reg.get(nid, "physics") is not None

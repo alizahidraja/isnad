@@ -66,8 +66,7 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
     ):
         if not _LANGCHAIN_AVAILABLE:
             raise ImportError(
-                "LangChain is required for IsnadTracer. "
-                "Install with: pip install isnad[langchain]"
+                "LangChain is required for IsnadTracer. Install with: pip install isnad[langchain]"
             )
         super().__init__()
         self.registry = registry
@@ -105,29 +104,31 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
         for text in claim_texts:
             chain = Chain(list(self._links))
             link_grades = [
-                self.registry.get_grade(link.narrator_id, link.domain)
-                for link in chain.links
+                self.registry.get_grade(link.narrator_id, link.domain) for link in chain.links
             ]
             link_transforms = [link.transform_type for link in chain.links]
 
             cg = grade_chain(
-                link_grades, link_transforms,
+                link_grades,
+                link_transforms,
                 is_complete=chain.is_complete,
             )
 
             cv = self.critic.evaluate(text, text, [], self.domain)
             action = decide(cg, cv)
 
-            self._graded_claims.append({
-                "claim_text": text,
-                "chain": chain,
-                "link_grades": link_grades,
-                "link_transforms": link_transforms,
-                "chain_grade": cg,
-                "content_verdict": cv,
-                "action": action,
-                "description": describe_action(cg, cv),
-            })
+            self._graded_claims.append(
+                {
+                    "claim_text": text,
+                    "chain": chain,
+                    "link_grades": link_grades,
+                    "link_transforms": link_transforms,
+                    "chain_grade": cg,
+                    "content_verdict": cv,
+                    "action": action,
+                    "description": describe_action(cg, cv),
+                }
+            )
 
     # ── Public API ──────────────────────────────────────────────
 
@@ -144,11 +145,9 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
             cg = gc["chain_grade"]
             action = gc["action"]
             chain = gc["chain"]
-            lines.append(f"\nClaim {i+1}: {gc['claim_text'][:80]}")
+            lines.append(f"\nClaim {i + 1}: {gc['claim_text'][:80]}")
             lines.append(f"  Chain: {' → '.join(chain.narrator_ids)}")
-            grades = " → ".join(
-                f"{g.value.upper()}" for g in gc["link_grades"]
-            )
+            grades = " → ".join(f"{g.value.upper()}" for g in gc["link_grades"])
             lines.append(f"  Grades: {grades}")
             lines.append(f"  Grade: {cg.value.upper()} | Action: {action.value.upper()}")
 
@@ -160,19 +159,16 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
                         lines.append(f"  ⚠ QUARANTINED: {link.narrator_id} is REJECTED")
                         break
             elif action == Action.REVIEW:
-                lines.append(
-                    f"  ⚠ HELD FOR REVIEW: content is {gc['content_verdict'].value}"
-                )
+                lines.append(f"  ⚠ HELD FOR REVIEW: content is {gc['content_verdict'].value}")
                 lines.append("     (tip: supply an LLM-backed critic for CONSISTENT verdicts)")
 
         served = sum(
-            1 for gc in self._graded_claims
+            1
+            for gc in self._graded_claims
             if gc["action"] in (Action.SERVE, Action.SERVE_WITH_CAVEAT)
         )
         lines.append(f"\nServed: {served}/{len(self._graded_claims)}")
-        lines.append(
-            "Note: Default critic is a stub. Supply a real one for coverage."
-        )
+        lines.append("Note: Default critic is a stub. Supply a real one for coverage.")
         lines.append("See: experiments/s8_gated_vs_ungated/results/RESULTS.md")
         return "\n".join(lines)
 
@@ -183,13 +179,15 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
     # ── Internal ────────────────────────────────────────────────
 
     def _add_link(self, narrator_id: str, transform_type: TransformType) -> None:
-        self._links.append(ChainLinkSpec(
-            narrator_id=narrator_id,
-            step=self._step,
-            transform_type=transform_type,
-            domain=self.domain,
-            trace_id=f"{self._run_id}-{self._step}",
-        ))
+        self._links.append(
+            ChainLinkSpec(
+                narrator_id=narrator_id,
+                step=self._step,
+                transform_type=transform_type,
+                domain=self.domain,
+                trace_id=f"{self._run_id}-{self._step}",
+            )
+        )
         self._step += 1
 
     @staticmethod

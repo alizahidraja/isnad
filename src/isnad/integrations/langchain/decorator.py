@@ -57,28 +57,30 @@ def isnad_track(
                 claims = [str(result)]
 
             for _claim_text in claims:
-                chain = Chain([
-                    ChainLinkSpec(
-                        narrator_id=narrator_id,
-                        step=0,
-                        domain=domain,
-                        transform_type=transform_type,
-                        trace_id=str(uuid.uuid4())[:8],
-                    )
-                ])
+                chain = Chain(
+                    [
+                        ChainLinkSpec(
+                            narrator_id=narrator_id,
+                            step=0,
+                            domain=domain,
+                            transform_type=transform_type,
+                            trace_id=str(uuid.uuid4())[:8],
+                        )
+                    ]
+                )
 
                 # Register narrator if not already present
                 if (narrator_id, domain) not in registry:
                     registry.register(narrator_id, domain)
 
                 link_grades = [
-                    registry.get_grade(link.narrator_id, link.domain)
-                    for link in chain.links
+                    registry.get_grade(link.narrator_id, link.domain) for link in chain.links
                 ]
                 link_transforms = [link.transform_type for link in chain.links]
 
                 wrapper._last_grade = grade_chain(  # type: ignore[attr-defined]
-                    link_grades, link_transforms,
+                    link_grades,
+                    link_transforms,
                     is_complete=chain.is_complete,
                 )
                 wrapper._last_chain = chain  # type: ignore[attr-defined]

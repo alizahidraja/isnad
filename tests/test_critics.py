@@ -1,6 +1,5 @@
 """Tests for ISNAD content critics."""
 
-
 from isnad.critics.embedding import EmbeddingCritic
 from isnad.types import ContentVerdict
 

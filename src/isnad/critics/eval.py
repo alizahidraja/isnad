@@ -47,18 +47,20 @@ def build_eval_set(claims_path: str | None, n: int = 500) -> list[dict]:
     for c in consistent:
         # Build context from other claims in same domain
         domain_claims = [
-            o["normalized"] for o in all_claims
-            if o.get("domain") == c.get("domain")
-            and o["claim_id"] != c["claim_id"]
+            o["normalized"]
+            for o in all_claims
+            if o.get("domain") == c.get("domain") and o["claim_id"] != c["claim_id"]
         ]
         random.shuffle(domain_claims)
-        eval_entries.append({
-            "claim_text": c["text"],
-            "normalized": c["normalized"],
-            "corpus": domain_claims[:20],
-            "true_label": "consistent",
-            "domain": c.get("domain", "general"),
-        })
+        eval_entries.append(
+            {
+                "claim_text": c["text"],
+                "normalized": c["normalized"],
+                "corpus": domain_claims[:20],
+                "true_label": "consistent",
+                "domain": c.get("domain", "general"),
+            }
+        )
 
     # Contradiction examples: inject known contradictions
     contradiction_templates = [
@@ -79,20 +81,20 @@ def build_eval_set(claims_path: str | None, n: int = 500) -> list[dict]:
             break
         # Find a real claim to use as context
         ctx = random.sample(all_claims, min(10, len(all_claims))) if all_claims else []
-        eval_entries.append({
-            "claim_text": contra,
-            "normalized": contra.lower(),
-            "corpus": [orig] + [c["normalized"] for c in ctx],
-            "true_label": "contradiction",
-            "domain": "general",
-        })
+        eval_entries.append(
+            {
+                "claim_text": contra,
+                "normalized": contra.lower(),
+                "corpus": [orig] + [c["normalized"] for c in ctx],
+                "true_label": "contradiction",
+                "domain": "general",
+            }
+        )
 
     return eval_entries
 
 
-def evaluate_critic(
-    critic, entries: list[dict]
-) -> dict[str, float]:
+def evaluate_critic(critic, entries: list[dict]) -> dict[str, float]:
     """Measure a critic on labeled eval set.
 
     Returns metrics dict with precision, recall, false-consistent rate, etc.
@@ -136,7 +138,10 @@ def evaluate_critic(
 
     return {
         "total": total,
-        "tp": tp, "fp": fp, "tn": tn, "fn": fn,
+        "tp": tp,
+        "fp": fp,
+        "tn": tn,
+        "fn": fn,
         "unverifiable": results["unverifiable"],
         "precision": round(precision, 3),
         "recall": round(recall, 3),
@@ -168,52 +173,63 @@ def generate_report(results: dict[str, dict]) -> str:
             f"{m['f1']:.3f} | {fc:.3f} | {m['accuracy']:.3f} |"
         )
 
-    lines.extend([
-        "",
-        "## Interpretation",
-        "",
-        "- **Precision:** Of the claims flagged as CONTRADICTION, what fraction are truly contradictions?",
-        "- **Recall:** Of the true contradictions, what fraction did the critic catch?",
-        "- **False-Consistent Rate:** Fraction of contradictions the critic called CONSISTENT — "
-        "the DANGEROUS error (passing a wrong claim as fine).",
-        "",
-    ])
+    lines.extend(
+        [
+            "",
+            "## Interpretation",
+            "",
+            "- **Precision:** Of the claims flagged as CONTRADICTION, what fraction are truly contradictions?",
+            "- **Recall:** Of the true contradictions, what fraction did the critic catch?",
+            "- **False-Consistent Rate:** Fraction of contradictions the critic called CONSISTENT — "
+            "the DANGEROUS error (passing a wrong claim as fine).",
+            "",
+        ]
+    )
 
     # Per-critic analysis
     for name, m in results.items():
         lines.append(f"### {name}")
         fc = m.get("false_consistent_among_contra", 0)
         if fc > 0.2:
-            lines.append(f"⚠ **NOT SAFE TO SERVE ON.** False-consistent rate is {fc:.0%} — "
-                         f"too many contradictions pass as correct.")
+            lines.append(
+                f"⚠ **NOT SAFE TO SERVE ON.** False-consistent rate is {fc:.0%} — "
+                f"too many contradictions pass as correct."
+            )
         elif fc > 0.05:
-            lines.append(f"⚠ **USE WITH CAUTION.** False-consistent rate is {fc:.0%}. "
-                         f"Best used with human-in-the-loop review for HASAN-tier claims.")
+            lines.append(
+                f"⚠ **USE WITH CAUTION.** False-consistent rate is {fc:.0%}. "
+                f"Best used with human-in-the-loop review for HASAN-tier claims."
+            )
         else:
-            lines.append(f"✓ **Acceptable for HASAN-tier auto-serve.** "
-                         f"False-consistent rate is {fc:.0%}.")
+            lines.append(
+                f"✓ **Acceptable for HASAN-tier auto-serve.** False-consistent rate is {fc:.0%}."
+            )
 
-        lines.append(f"  Precision={m['precision']:.0%}, Recall={m['recall']:.0%}, "
-                     f"Unverifiable={m['unverifiable']}/{m['total']}")
+        lines.append(
+            f"  Precision={m['precision']:.0%}, Recall={m['recall']:.0%}, "
+            f"Unverifiable={m['unverifiable']}/{m['total']}"
+        )
         lines.append("")
 
-    lines.extend([
-        "## Limitations",
-        "",
-        "- **Synthetic contradictions** — injected from templates, not real model errors.",
-        "- **Single domain** — physics only. Performance on other domains unknown.",
-        "- **Embedding critic** uses word-overlap, not semantic embeddings — "
-        "contradictions with different vocabulary will be missed.",
-        "- **LLM critic** quality depends on the model used and prompt design.",
-        "- **Small eval set** — claims sampled from §8 corpus, not independently curated.",
-        "- **No ground-truth contradiction corpus exists** for undergraduate physics textbooks.",
-        "",
-        "## Recommendation",
-        "",
-        "For practical deployment: use the LLM critic (with caching) for HASAN-tier claims, "
-        "with the false-consistent rate monitored in production. For offline/demo use, "
-        "the embedding critic provides a reasonable baseline with known limitations.",
-    ])
+    lines.extend(
+        [
+            "## Limitations",
+            "",
+            "- **Synthetic contradictions** — injected from templates, not real model errors.",
+            "- **Single domain** — physics only. Performance on other domains unknown.",
+            "- **Embedding critic** uses word-overlap, not semantic embeddings — "
+            "contradictions with different vocabulary will be missed.",
+            "- **LLM critic** quality depends on the model used and prompt design.",
+            "- **Small eval set** — claims sampled from §8 corpus, not independently curated.",
+            "- **No ground-truth contradiction corpus exists** for undergraduate physics textbooks.",
+            "",
+            "## Recommendation",
+            "",
+            "For practical deployment: use the LLM critic (with caching) for HASAN-tier claims, "
+            "with the false-consistent rate monitored in production. For offline/demo use, "
+            "the embedding critic provides a reasonable baseline with known limitations.",
+        ]
+    )
 
     return "\n".join(lines)
 
@@ -221,7 +237,11 @@ def generate_report(results: dict[str, dict]) -> str:
 def main() -> None:
     # Find claims from §8 experiment
     claims_path = os.path.join(
-        _parent, "experiments", "s8_gated_vs_ungated", "results", "claims.json",
+        _parent,
+        "experiments",
+        "s8_gated_vs_ungated",
+        "results",
+        "claims.json",
     )
     if not os.path.exists(claims_path):
         print("Claims file not found at", claims_path)
@@ -248,9 +268,11 @@ def main() -> None:
     for name, critic in critics.items():
         print(f"Evaluating {name}...")
         results[name] = evaluate_critic(critic, entries)
-        print(f"  Precision={results[name]['precision']:.3f} "
-              f"Recall={results[name]['recall']:.3f} "
-              f"FalseConsistent={results[name].get('false_consistent_among_contra',0):.3f}")
+        print(
+            f"  Precision={results[name]['precision']:.3f} "
+            f"Recall={results[name]['recall']:.3f} "
+            f"FalseConsistent={results[name].get('false_consistent_among_contra', 0):.3f}"
+        )
 
     report = generate_report(results)
     report_path = os.path.join(_exp_dir, "CRITIC_EVAL.md")

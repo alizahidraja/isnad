@@ -88,15 +88,24 @@ class LLMCritic:
         for cc in corpus_claims:
             from isnad.critics.embedding import _cosine_similarity, _default_embed
 
-            claim_vec = _default_embed(normalized_claim) if self._retriever._embed == _default_embed else self._retriever._embed(normalized_claim)
-            cc_vec = _default_embed(cc) if self._retriever._embed == _default_embed else self._retriever._embed(cc)
+            claim_vec = (
+                _default_embed(normalized_claim)
+                if self._retriever._embed == _default_embed
+                else self._retriever._embed(normalized_claim)
+            )
+            cc_vec = (
+                _default_embed(cc)
+                if self._retriever._embed == _default_embed
+                else self._retriever._embed(cc)
+            )
             sim = _cosine_similarity(
-                _vec_to_dict(claim_vec), _vec_to_dict(cc_vec),
+                _vec_to_dict(claim_vec),
+                _vec_to_dict(cc_vec),
             )
             scored.append((sim, cc))
 
         scored.sort(key=lambda x: -x[0])
-        context = [cc for _, cc in scored[:self.top_k]]
+        context = [cc for _, cc in scored[: self.top_k]]
 
         # Check cache
         cache_key = _hash_claim(normalized_claim + "||" + "||".join(context))

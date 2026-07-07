@@ -93,7 +93,8 @@ def seed_registry(
             dabt = DabtGrade.LOW
 
         reg.register(
-            narrator_id, domain,
+            narrator_id,
+            domain,
             narrator_type=ntype,
             grade=grade,
             adalah=adalah,
@@ -185,7 +186,8 @@ class CriticAdapter:
                     f"Answer with one word: CONSISTENT, CONTRADICTION, or UNVERIFIABLE."
                 )
                 response = client.messages.create(
-                    model=model, max_tokens=16,
+                    model=model,
+                    max_tokens=16,
                     messages=[{"role": "user", "content": prompt}],
                 )
                 text = getattr(response.content[0], "text", "").strip().upper()

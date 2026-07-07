@@ -65,8 +65,10 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
 
     # Negation pattern
     negation_pairs = [
-        (" is ", " is not "), (" does ", " does not "),
-        (" can ", " cannot "), (" has ", " has no "),
+        (" is ", " is not "),
+        (" does ", " does not "),
+        (" can ", " cannot "),
+        (" has ", " has no "),
     ]
     for pos, neg in negation_pairs:
         if (pos in c_lower and neg in cc_lower) or (neg in c_lower and pos in cc_lower):
@@ -74,10 +76,14 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
 
     # Opposite words
     opposites = [
-        ("increases", "decreases"), ("positive", "negative"),
-        ("attractive", "repulsive"), ("up", "down"),
-        ("faster", "slower"), ("higher", "lower"),
-        ("larger", "smaller"), ("hotter", "colder"),
+        ("increases", "decreases"),
+        ("positive", "negative"),
+        ("attractive", "repulsive"),
+        ("up", "down"),
+        ("faster", "slower"),
+        ("higher", "lower"),
+        ("larger", "smaller"),
+        ("hotter", "colder"),
     ]
     for a, b in opposites:
         if (a in c_lower and b in cc_lower) or (b in c_lower and a in cc_lower):
