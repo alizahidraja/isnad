@@ -40,7 +40,7 @@ except ImportError:
     BaseCallbackHandler = object
 
 
-class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc]
+class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
     """LangChain callback handler that records ISNAD transmission chains.
 
     Attach to any LangChain/LangGraph run to automatically build graded

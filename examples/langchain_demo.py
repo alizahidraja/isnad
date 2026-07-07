@@ -20,6 +20,7 @@ import sys
 # Ensure isnad is importable
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
+from isnad.critics import EmbeddingCritic
 from isnad.integrations.langchain import IsnadTracer, seed_registry
 
 
@@ -39,9 +40,10 @@ def main() -> None:
     print(f"   Registered {len(reg)} narrators")
 
     # ── Step 2: Create the tracer ────────────────────────────
-    print("\n2. Creating IsnadTracer...")
-    tracer = IsnadTracer(registry=reg, domain="physics")
-    print("   Tracer ready. Attach to any LangChain run.")
+    print("\n2. Creating IsnadTracer with EmbeddingCritic...")
+    critic = EmbeddingCritic()
+    tracer = IsnadTracer(registry=reg, critic=critic, domain="physics")
+    print("   Using embedding-based content critic (word-overlap, offline)")
 
     # ── Step 3: Simulate a chain run (without real LangChain) ─
     print("\n3. Simulating a chain run...")
@@ -61,7 +63,7 @@ def main() -> None:
 
     # ── Step 4: Show what happens with a WEAK model ──────────
     print("\n4. Simulating a run with an UNTRUSTED model...")
-    tracer2 = IsnadTracer(registry=reg, domain="physics")
+    tracer2 = IsnadTracer(registry=reg, critic=critic, domain="physics")
     tracer2._add_link("source:physics-textbook", "pass_through")
     tracer2._add_link("retriever:vector-db", "destructive")
     tracer2._add_link("model:untrusted-model", "generative")

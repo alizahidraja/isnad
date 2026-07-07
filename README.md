@@ -1,177 +1,71 @@
 # Isnād–Rijāl Framework
 
-**Grade the narrators, not just log them.** Claim-level provenance for multi-agent knowledge systems.
+**Grade the narrators, not just log them.** Claim-level provenance for multi-agent knowledge systems — adapted from classical hadith transmission science.
 
 [![CI](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml/badge.svg)](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![DOI: 10.5281/zenodo.21211291](https://zenodo.org/badge/DOI/10.5281/zenodo.21211291.svg)](https://doi.org/10.5281/zenodo.21211291)
 
+**🌐 Full project home: https://alizahidraja.com/isnad**
+
 ---
 
-## 60-second quickstart
+## What & Why
+
+In modern AI pipelines, a factual claim passes through many hands — a scraper
+extracts it, a model compiles it, another serves it. Each hand can drop, distort,
+or invent. Existing tools record *what* happened. ISNAD grades *who* transformed
+the claim, so it can tell you **how much to trust the result**.
+
+The framework adapts **hadith transmission science** — one of history's most
+rigorous epistemologies, refined over twelve centuries — into a Python library
+for AI systems. Every claim carries its complete chain of transmitters (isnād);
+each transmitter is graded in a living registry (rijāl); chains are evaluated
+by their weakest link; content is criticized independently of transmission
+quality; and the two combine in a decision matrix that routes claims to
+serve, review, or quarantine.
+
+---
+
+## 60-Second Quickstart
+
+```bash
+pip install isnad
+```
 
 ```python
 from isnad import Registry, Chain, ChainLinkSpec, grade_chain, decide
-from isnad.types import NarratorGrade, TransformType, ContentVerdict
-from isnad.matn import DeterministicRuleCritic
+from isnad.types import NarratorGrade, ContentVerdict
+from isnad.critics import EmbeddingCritic
 
-# Build a transmission chain: source → scraper → model
+# Build a chain: source → scraper → model
 chain = Chain([
-    ChainLinkSpec("openstax-v3", 0, domain="physics"),
-    ChainLinkSpec("pdf-scraper", 1, transform_type=TransformType.DESTRUCTIVE),
-    ChainLinkSpec("ingest-model", 2, transform_type=TransformType.GENERATIVE),
+    ChainLinkSpec("openstax-textbook", 0, domain="physics"),
+    ChainLinkSpec("pdf-scraper-v2", 1),
+    ChainLinkSpec("ingest-model-v3", 2),
 ])
 
-# Two narrators are ungraded → HASAN tier
+# Seed-grade known narrators (required for coverage — see §8 experiment)
 reg = Registry()
-reg.register("openstax-v3", "physics", grade=NarratorGrade.RELIABLE)
-reg.register("pdf-scraper", "physics", grade=NarratorGrade.UNGRADED)
-reg.register("ingest-model", "physics", grade=NarratorGrade.UNGRADED)
+reg.register("openstax-textbook", "physics", grade=NarratorGrade.RELIABLE)
+reg.register("pdf-scraper-v2", "physics", grade=NarratorGrade.RELIABLE)
+reg.register("ingest-model-v3", "physics", grade=NarratorGrade.ACCEPTABLE)
 
 # Grade the chain
 grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
 transforms = [l.transform_type for l in chain.links]
-cg = grade_chain(grades, transforms, is_complete=True)
+chain_grade = grade_chain(grades, transforms, is_complete=True)
 
-# Content criticism (fully decoupled from chain grading)
-cv = DeterministicRuleCritic().evaluate("p = h/λ", "p = h/lambda", ["p = mv"])
+# Content criticism (now functional — embedding-based)
+critic = EmbeddingCritic()
+verdict = critic.evaluate("p = h/λ", "p = h/lambda", ["p = mv"])
+action = decide(chain_grade, verdict)
 
-# Decision matrix: HASAN × CONTRADICTION → REVIEW
-action = decide(cg, cv)
-print(f"Chain: {cg.value.upper()} | Content: {cv.value} | Action: {action.value}")
-# Output: Chain: HASAN | Content: CONTRADICTION | Action: review
+print(f"Chain: {chain_grade.value.upper()} | Content: {verdict.value} | Action: {action.value}")
 ```
 
-📄 **Paper:** ["Grading the Narrators"](https://doi.org/10.5281/zenodo.21211291) — Ali Zahid Raja (2026)  
-📋 **Companion gist:** [Schema & design notes](https://gist.github.com/alizahidraja/56beaadf493976182f38aa602b8958e2)
-
----
-
-## §8 Validation Experiment — Results
-
-**Real PDFs. Real claims. Real findings.**  
-The framework was tested on 20,000 atomic claims extracted from 4 real physics
-textbooks (OpenStax Vol.1-3 + Crowell Light & Matter, 411 chunks, 2,386 pages).
-
-### ✅ What Works
-
-| Component | Result |
-|---|---|
-| **Weakest-link quarantine** | 100% of claims through REJECTED narrators are correctly quarantined |
-| **Seed-grade bootstrapping** | Pre-grading known-reliable narrators (sources, scrapers) resolves the cold-start |
-| **jarḥ–taʿdīl discovery** | Correctly identified the unreliable ingest narrator (15% fault rate → REJECTED) |
-| **Confidence-gating baseline** | Self-confidence scores are uncorrelated with defects — no better than random |
-
-### ❌ What Doesn't (Yet)
-
-| Component | Status |
-|---|---|
-| **Corroboration (mutābaʿāt)** | **EMPIRICALLY UNTESTED** — never fired across any run. Gated on baseline chain grades above MAWDU |
-| **Content criticism on real text** | Deterministic stub critic cannot detect contradictions in real textbook prose |
-| **Coverage without critic** | 10% — limited to review-budget claims. HASAN chains need CONSISTENT verdict to auto-serve |
-
-### 📊 Primary Metrics (B=10% review budget, 10 seeds)
-
-| Condition | Error Rate (95% CI) | Coverage |
-|---|---|---|
-| Ungated | 8.2% ± 0.1% | 100% |
-| Confidence-gated | 8.1% ± 0.1% | 100% |
-| **ISNAD-gated** | **~0%** | **10%** |
-
-**Interpretation:** ISNAD achieves near-zero error at its achievable coverage.
-Confidence-gating provides no benefit over serving everything. The 10% coverage
-ceiling comes from the decision matrix: without a working content critic that
-returns CONSISTENT, HASAN-tier chains route to REVIEW (not SERVE), consuming
-the review budget.
-
-**Full details:** [`experiments/s8_gated_vs_ungated/results/RESULTS.md`](experiments/s8_gated_vs_ungated/results/RESULTS.md)  
-**Reproduce:** `cd experiments/s8_gated_vs_ungated && python corpus/fetch.py && python extract.py && python inject.py && python calibrate.py && python run.py`
-
----
-
-## Install
-
-```bash
-git clone https://github.com/alizahidraja/isnad.git && cd isnad
-make install    # uv sync
-make test       # 90 tests, zero config, SQLite fallback
-make demo       # Paper's worked example (§4.5)
-make check      # lint + type-check + test
-```
-
-No database required for pure-logic tests. PostgreSQL is optional (`docker compose up`, set `ISNAD_DATABASE_URL`).
-
----
-
-## What problem does this solve?
-
-In modern AI pipelines, a factual claim passes through many hands — a scraper extracts it, a model compiles it, another serves it — and each hand can drop, distort, or invent. Existing provenance tools record *what* happened. They don't grade *who* transformed the claim, so they can't tell you how much to trust the result.
-
-This framework adapts classical Islamic hadith transmission science — one of history's most rigorous pre-modern epistemologies — into a Python library for AI systems. The core insight: **the trustworthiness of a claim is a function of the graded reliability of every individual who transmitted it**. Claims carry complete chains (isnād); transmitters are graded in a living registry (rijāl); chains are graded by their weakest link; independent corroboration can upgrade; and content is criticized independently of transmission quality.
-
----
-
-## Concept → module mapping
-
-| Concept | What it does | Module |
-|---|---|---|
-| **isnād** (chain) | Ordered, gap-checked transmission chain per claim | `isnad/chain.py` |
-| **rijāl** (registry) | Graded narrator store per (narrator, domain) | `isnad/registry.py` |
-| **jarḥ–taʿdīl** | Evidence-driven state machine for narrator grades | `isnad/registry.py` |
-| **ittiṣāl/munqaṭiʿ** | Completeness as epistemic property (gap → DAIF) | `isnad/chain.py` |
-| **Weakest-link grading** | Chain grade = refined minimum over narrators | `isnad/grading.py` |
-| **mutābaʿāt** | Independent-chain corroboration with correlation detection | `isnad/corroboration.py` |
-| **matn criticism** | Content evaluated independently of chain quality | `isnad/matn.py` |
-| **Decision matrix** | 4×2 (chain × content) → action router | `isnad/matrix.py` |
-| **ʿadālah / ḍabṭ** | Integrity and precision as two distinct axes | `isnad/types.py` |
-
----
-
-## Pluggable strategies
-
-The paper deliberately leaves certain transition arithmetic open (§4.2/§4.3). These are exposed as swappable interfaces:
-
-| Strategy | Protocol | Default | What it decides |
-|---|---|---|---|
-| `GradingStrategy` | `isnad/types.py` | `RefinedWeakestLink` | How link grades combine into a chain grade |
-| `TransitionPolicy` | `isnad/types.py` | `ThresholdTransitionPolicy` | How evidence moves narrators between ordinal states |
-| `CorroborationPolicy` | `isnad/types.py` | `CappedCorroborationPolicy` | How independent chains upgrade a claim |
-| `CorrelationDetector` | `isnad/types.py` | `SharedLineageDetector` | Whether two chains are truly independent |
-| `ContentCritic` | `isnad/types.py` | `DeterministicRuleCritic` | Content contradiction detection |
-
-**Swap one in one line:**
-
-```python
-from isnad import grade_chain, RefinedWeakestLink
-
-class MyStrategy:
-    def compute_chain_grade(self, grades, transforms, is_complete, *, corroboration_support=False):
-        # Your logic here
-        ...
-
-result = grade_chain(grades, transforms, is_complete=True, strategy=MyStrategy())
-```
-
----
-
-## Status — what this does and does not validate
-
-**This implements:** the framework's architecture, grading logic, and all pluggable strategy interfaces. It passes 90+ tests enforcing every epistemic commitment from the paper, including the paper's worked example (§4.5) as an end-to-end integration test.
-
-**This does NOT constitute:** the end-to-end empirical validation (gated-vs-ungated served-error study) that the paper scopes as future work (§8). The registry bootstrapping, transition-policy thresholds, and corroboration arithmetic are reference defaults — not empirically calibrated values. Deployers should run the §8 experiment against their own pipelines.
-
-**Reference stubs** are docstring-labeled:
-- `DeterministicRuleCritic` — hardcoded pattern matching; production needs semantic/LLM critic.
-- `LLMCritic` — reference Anthropic integration; needs batching, caching, ensemble for production.
-- `SharedLineageDetector` — exact-match heuristics; production needs structured model lineage data.
-- Seed-grade bootstrapping — designed but not yet implemented (see §7 of paper).
-
----
-
-## Integrations
-
-### LangChain / LangGraph
+### LangChain Integration (5 lines)
 
 ```bash
 pip install isnad[langchain]
@@ -179,58 +73,128 @@ pip install isnad[langchain]
 
 ```python
 from isnad.integrations.langchain import IsnadTracer, seed_registry
+from isnad.critics import EmbeddingCritic
+
 reg = seed_registry({"source:docs": "reliable", "model:gpt-4o": "acceptable"})
-tracer = IsnadTracer(registry=reg)
+tracer = IsnadTracer(registry=reg, critic=EmbeddingCritic())
 chain.invoke("What is F=ma?", config={"callbacks": [tracer]})
 print(tracer.report())
 ```
 
-See [`src/isnad/integrations/langchain/README.md`](src/isnad/integrations/langchain/README.md)
-for full docs and current limitations.
+---
+
+## What's Validated vs. What's Not
+
+| Component | Status | Notes |
+|---|---|---|
+| **Weakest-link quarantine** | ✅ Validated | 100% of REJECTED narrator claims correctly blocked |
+| **jarḥ–taʿdīl discovery** | ✅ Partial | Correctly identifies bad narrators; good ones need seed grades |
+| **Seed-grade bootstrapping** | ✅ Validated | Pre-grading sources/models enables practical coverage |
+| **Confidence-gating** | ❌ Useless | Self-confidence scores uncorrelated with defects |
+| **Content criticism** | ⚠ Functional, limited | Embedding critic catches obvious contradictions; LLM critic available |
+| **Corroboration (mutābaʿāt)** | ❌ Untested | Never fired on real corpora across all runs |
+| **Coverage (with critic)** | ~50% | Up from ~10% with the non-functional stub (see §8 experiment) |
+
+The honesty box is a feature. We tell you exactly what works, what's limited,
+and where you need to supply your own components.
 
 ---
 
-## Contributing
+## Concept → Module Map
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md). Especially welcome:
+| Concept | What it does | Module |
+|---|---|---|
+| **isnād** (chain) | Ordered, gap-checked transmission chain per claim | `isnad/chain.py` |
+| **rijāl** (registry) | Graded narrator store per (narrator, domain) | `isnad/registry.py` |
+| **jarḥ–taʿdīl** | Evidence-driven state machine for narrator grades | `isnad/registry.py` |
+| **ittiṣāl** | Completeness as epistemic property (gap → DAIF) | `isnad/chain.py` |
+| **Weakest-link grading** | Chain grade = refined minimum over narrators | `isnad/grading.py` |
+| **mutābaʿāt** (corroboration) | Independent-chain upgrade with correlation detection | `isnad/corroboration.py` |
+| **matn criticism** | Content evaluated independently of chain quality | `isnad/critics/` |
+| **Decision matrix** | 4×2 (chain × content) → action router | `isnad/matrix.py` |
+| **ʿadālah / ḍabṭ** | Integrity and precision as two distinct axes | `isnad/types.py` |
 
-1. **New `CorrelationDetector`** using embedding similarity or model-card lineage data.
-2. **Seed-grade bootstrapper** that initializes narrator grades from published benchmark accuracies.
-3. **Domain-specific `ContentCritic`** with formula canonicalization (physics, medicine, law).
-4. **Calibrated `TransitionPolicy`** from your own pipeline's §8 experiment data.
-5. **Pipeline adapters** for LangChain, CrewAI, or Autogen tracing.
+---
+
+## The Decision Matrix
+
+| | Content CONSISTENT | Content CONTRADICTION |
+|---|---|---|
+| **Ṣaḥīḥ** (sound chain) | **SERVE** — cache | **REVIEW** — ʿilal signal (highest-value case) |
+| **Ḥasan** (good chain) | **SERVE WITH CAVEAT** | **REVIEW** — hold, do not serve |
+| **Ḍaʿīf** (weak chain) | **REVIEW** — seek corroboration | **QUARANTINE** |
+| **Mawḍūʿ** (fabricated) | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR** |
+
+---
+
+## Pluggable Strategies — Extend It
+
+The framework leaves key parameters open by design (paper §4.2/§4.3). Swap any:
+
+| Strategy | Protocol | Default | What to provide |
+|---|---|---|---|
+| `GradingStrategy` | `isnad/types.py` | `RefinedWeakestLink` | How links combine into chain grade |
+| `TransitionPolicy` | `isnad/types.py` | `ThresholdTransitionPolicy` | Evidence → narrator grade transitions |
+| `CorroborationPolicy` | `isnad/types.py` | `CappedCorroborationPolicy` | Independent chains → claim upgrade |
+| `CorrelationDetector` | `isnad/types.py` | `SharedLineageDetector` | True independence between chains |
+| `ContentCritic` | `isnad/types.py` | `EmbeddingCritic` / `LLMCritic` | Content contradiction detection |
+
+**Swap a critic in one line:**
+
+```python
+from isnad.critics import EmbeddingCritic, LLMCritic
+
+critic = EmbeddingCritic()                            # offline, fast
+critic = LLMCritic(api_key="sk-...")                  # LLM-backed, higher quality
+```
+
+**Good first issues:**
+- Implement an alternative critic (sentence-transformers embedding, CrewAI integration)
+- Seed-grade bootstrapper from published benchmark data
+- Corroboration on a warm-grade corpus (the §8 experiment showed it's gated on warm grades)
+
+---
+
+## Ecosystem
+
+- 🌐 **Site:** https://alizahidraja.com/isnad
+- 📄 **Paper (DOI):** https://doi.org/10.5281/zenodo.21211291
+- 💾 **Software (DOI):** https://doi.org/10.5281/zenodo.21216873
+- 📦 **PyPI:** https://pypi.org/project/isnad/
+- 📝 **Companion gist:** https://gist.github.com/alizahidraja/56beaadf493976182f38aa602b8958e2
+- 🧪 **§8 Experiment & results:** [`experiments/s8_gated_vs_ungated/`](experiments/s8_gated_vs_ungated/)
+- 🔌 **LangChain integration:** [`src/isnad/integrations/langchain/`](src/isnad/integrations/langchain/)
+- 📊 **Critic evaluation:** [`src/isnad/critics/CRITIC_EVAL.md`](src/isnad/critics/CRITIC_EVAL.md)
 
 ---
 
 ## Citation
 
-If you use this software, cite the paper:
-
 ```bibtex
 @article{raja2026grading,
-  author       = {Ali Zahid Raja},
-  title        = {Grading the Narrators: An Isnād–Rijāl Framework for
-                  Claim-Level Provenance in Multi-Agent Knowledge Systems},
-  year         = 2026,
-  doi          = {10.5281/zenodo.21211291},
-  url          = {https://doi.org/10.5281/zenodo.21211291},
+  author  = {Ali Zahid Raja},
+  title   = {Grading the Narrators: An Isnād–Rijāl Framework for
+             Claim-Level Provenance in Multi-Agent Knowledge Systems},
+  year    = 2026,
+  doi     = {10.5281/zenodo.21211291},
 }
 
 @software{raja2026isnad,
-  author       = {Ali Zahid Raja},
-  title        = {Isnād–Rijāl Framework: Reference Implementation},
-  year         = 2026,
-  doi          = {10.5281/zenodo.21216873},
-  url          = {https://doi.org/10.5281/zenodo.21216873},
-  orcid        = {0009-0003-7875-4590},
+  author  = {Ali Zahid Raja},
+  title   = {Isnād–Rijāl Framework: Reference Implementation},
+  year    = 2026,
+  doi     = {10.5281/zenodo.21216873},
+  orcid   = {0009-0003-7875-4590},
 }
 ```
 
-> Software DOI: [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873)  
-> GitHub's "Cite this repository" button is powered by [`CITATION.cff`](CITATION.cff).
-
 ---
 
-## License
+## About
 
-Code: [Apache 2.0](LICENSE) · Paper & docs: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+Built by [Ali Zahid Raja](https://alizahidraja.com) · ORCID [0009-0003-7875-4590](https://orcid.org/0009-0003-7875-4590)
+
+The rigor belongs to twelve centuries of muḥaddithūn. The transfer to AI
+systems is the contribution claimed here. Built in public — collaborators welcome.
+
+**License:** Code — Apache 2.0 · Paper & docs — CC BY 4.0
