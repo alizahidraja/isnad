@@ -169,6 +169,27 @@ result = grade_chain(grades, transforms, is_complete=True, strategy=MyStrategy()
 
 ---
 
+## Integrations
+
+### LangChain / LangGraph
+
+```bash
+pip install isnad[langchain]
+```
+
+```python
+from isnad.integrations.langchain import IsnadTracer, seed_registry
+reg = seed_registry({"source:docs": "reliable", "model:gpt-4o": "acceptable"})
+tracer = IsnadTracer(registry=reg)
+chain.invoke("What is F=ma?", config={"callbacks": [tracer]})
+print(tracer.report())
+```
+
+See [`src/isnad/integrations/langchain/README.md`](src/isnad/integrations/langchain/README.md)
+for full docs and current limitations.
+
+---
+
 ## Contributing
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md). Especially welcome:
