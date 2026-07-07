@@ -1,0 +1,191 @@
+# REAL PDF — openstax_vol2.pdf, pages 400-405
+############################################################
+
+390 Chapter 9 | Current and Resistance
+Theconventionalcurrentflowsfromthepositiveterminaltothenegativeterminal,butdependingontheactualsituation,
+positivecharges,negativecharges,orbothmaymove.Inmetalwires,forexample,currentiscarriedbyelectrons—thatis,
+negative charges move. In ionic solutions, such as salt water, both positive and negative charges move. This is also true
+innervecells.AVandeGraaffgenerator,usedfornuclearresearch,canproduceacurrentofpurepositivecharges,such
+as protons. In the Tevatron Accelerator at Fermilab, before it was shut down in 2011, beams of protons and antiprotons
+travelinginoppositedirectionswerecollided.Theprotonsarepositiveandthereforetheircurrentisinthesamedirectionas
+theytravel.Theantiprotonsarenegativitychargedandthustheircurrentisintheoppositedirectionthattheactualparticles
+travel.
+AcloserlookatthecurrentflowingthroughawireisshowninFigure9.6.Thefigureillustratesthemovementofcharged
+particlesthatcomposeacurrent.Thefactthatconventionalcurrentistakentobeinthedirectionthatpositivechargewould
+flow can be traced back to American scientist and statesman Benjamin Franklin in the 1700s. Having no knowledge of
+the particles that make up the atom (namely the proton, electron, and neutron), Franklin believed that electrical current
+flowed from a material that had more of an “electrical fluid” and to a material that had less of this “electrical fluid.” He
+coinedthetermpositiveforthematerialthathadmoreofthiselectricalfluidandnegativeforthematerialthatlackedthe
+electricalfluid.Hesurmisedthatcurrentwouldflowfromthematerialwithmoreelectricalfluid—thepositivematerial—to
+thenegativematerial,whichhaslesselectricalfluid.Franklincalledthisdirectionofcurrentapositivecurrentflow.This
+was pretty advanced thinking for a man who knew nothing about the atom.
+Figure 9.6 CurrentIis the rate at which charge moves through an areaA, such as the cross-
+section of a wire. Conventional current is defined to move in the direction of the electrical field.
+(a) Positive charges move in the direction of the electrical field, which is the same direction as
+conventional current. (b) Negative charges move in the direction opposite to the electrical field.
+Conventional current is in the direction opposite to the movement of negative charge. The flow
+of electrons is sometimes referred to as electronic flow.
+Wenowknowthatamaterial ispositiveifithasagreaternumberofprotonsthanelectrons,anditisnegativeifithasa
+greaternumberofelectronsthanprotons.Inaconductingmetal,thecurrentflowisdueprimarilytoelectronsflowingfrom
+thenegativematerialtothepositivematerial,butforhistoricalreasons,weconsiderthepositivecurrentflowandthecurrent
+is shown to flow from the positive terminal of the battery to the negative terminal.
+Itisimportanttorealizethatanelectricalfieldispresentinconductorsandisresponsibleforproducingthecurrent(Figure
+9.6). In previous chapters, we considered the static electrical case, where charges in a conductor quickly redistribute
+themselves on the surface of the conductor in order to cancel out the external electrical field and restore equilibrium. In
+thecaseofanelectricalcircuit,thechargesarepreventedfromeverreachingequilibriumbyanexternalsourceofelectric
+potential, such as a battery. The energy needed to move the charge is supplied by the electric potential from the battery.
+Althoughtheelectricalfieldisresponsibleforthemotionofthechargesintheconductor,theworkdoneonthechargesby
+theelectricalfielddoesnotincreasethekineticenergyofthecharges.Wewillshowthattheelectricalfieldisresponsible
+for keeping the electric charges moving at a “drift velocity.”
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 391
+9.2 | Model of Conduction in Metals
+Learning Objectives
+By the end of this section, you will be able to:
+• Define the drift velocity of charges moving through a metal
+• Define the vector current density
+• Describe the operation of an incandescent lamp
+When electrons move through a conducting wire, they do not move at a constant velocity, that is, the electrons do not
+moveinastraightlineataconstantspeed.Rather,theyinteractwithandcollidewithatomsandotherfreeelectronsinthe
+conductor.Thus,theelectronsmoveinazig-zagfashionanddriftthroughthewire.Weshouldalsonotethateventhough
+itisconvenienttodiscussthedirectionofcurrent,currentisascalarquantity.Whendiscussingthevelocityofchargesina
+current, it is more appropriate to discuss the current density. We will come back to this idea at the end of this section.
+Drift Velocity
+Electrical signals move very rapidly. Telephone conversations carried by currents in wires cover large distances without
+noticeabledelays.Lightscomeonassoonasalightswitchismovedtothe‘on’position.Mostelectricalsignalscarriedby
+currentstravelatspeedsontheorderof 10 8 m/s,asignificantfractionofthespeedoflight.Interestingly,theindividual
+chargesthatmakeupthecurrentmovemuchsloweronaverage,typicallydriftingatspeedsontheorderof 10−4m/s.How
+do we reconcile these two speeds, and what does it tell us about standard conductors?
+The high speed of electrical signals results from the fact that the force between charges acts rapidly at a distance. Thus,
+whenafreechargeisforcedintoawire,asinFigure9.7,theincomingchargepushesotherchargesaheadofitduetothe
+repulsiveforcebetweenlikecharges.Thesemovingchargespushonchargesfartherdowntheline.Thedensityofchargein
+asystemcannoteasilybeincreased,sothesignalispassedonrapidly.Theresultingelectricalshockwavemovesthrough
+thesystematnearlythespeedoflight.Tobeprecise,thisfast-movingsignal,orshockwave,isarapidlypropagatingchange
+in the electrical field.
+Figure 9.7 When charged particles are forced into this volume
+of a conductor, an equal number are quickly forced to leave. The
+repulsion between like charges makes it difficult to increase the
+number of charges in a volume. Thus, as one charge enters,
+another leaves almost immediately, carrying the signal rapidly
+forward.
+Goodconductorshavelargenumbersoffreecharges.Inmetals,thefreechargesarefreeelectrons.(Infact,goodelectrical
+conductorsareoftengoodheatconductorstoo,becauselargenumbersoffreeelectronscantransportthermalenergyaswell
+ascarryelectricalcurrent.)Figure9.8showshowfreeelectronsmovethroughanordinaryconductor.Thedistancethatan
+individualelectroncanmovebetweencollisionswithatomsorotherelectronsisquitesmall.Theelectronpathsthusappear
+nearlyrandom,likethemotionofatomsinagas.Butthereisanelectricalfieldintheconductorthatcausestheelectronsto
+driftinthedirectionshown(oppositetothefield,sincetheyarenegative).Thedriftvelocity → v istheaveragevelocity
+d
+ofthefreecharges.Driftvelocityisquitesmall,sincetherearesomanyfreecharges.Ifwehaveanestimateofthedensity
+offreeelectronsinaconductor,wecancalculatethedriftvelocityforagivencurrent.Thelargerthedensity,thelowerthe
+velocity required for a given current.
+
+392 Chapter 9 | Current and Resistance
+Figure 9.8 Free electrons moving in a conductor make many
+collisions with other electrons and other particles. A typical path
+of one electron is shown. The average velocity of the free
+charges is called the drift velocity → v and for electrons, it is
+d
+in the direction opposite to the electrical field. The collisions
+normally transfer energy to the conductor, requiring a constant
+supply of energy to maintain a steady current.
+Free-electroncollisionstransferenergytotheatomsoftheconductor.Theelectricalfielddoesworkinmovingtheelectrons
+throughadistance,butthatworkdoesnotincreasethekineticenergy(norspeed)oftheelectrons.Theworkistransferredto
+theconductor’satoms,oftenincreasingtemperature.Thus,acontinuouspowerinputisrequiredtokeepacurrentflowing.
+(Anexceptionissuperconductors,forreasonsweshallexploreinalaterchapter.Superconductorscanhaveasteadycurrent
+withoutacontinualsupplyofenergy—agreatenergysavings.)Foraconductorthatisnotasuperconductor,thesupplyof
+energycanbeuseful,asinanincandescentlightbulbfilament(Figure9.9).Thesupplyofenergyisnecessarytoincrease
+the temperature of the tungsten filament, so that the filament glows.
+Figure 9.9 The incandescent lamp is a simple design. A tungsten filament is placed in a partially
+evacuated glass envelope. One end of the filament is attached to the screw base, which is made out of a
+conducting material. The second end of the filament is attached to a second contact in the base of the bulb.
+The two contacts are separated by an insulating material. Current flows through the filament, and the
+temperature of the filament becomes large enough to cause the filament to glow and produce light.
+However, these bulbs are not very energy efficient, as evident from the heat coming from the bulb. In the
+year 2012, the United States, along with many other countries, began to phase out incandescent lamps in
+favor of more energy-efficient lamps, such as light-emitting diode (LED) lamps and compact fluorescent
+lamps (CFL) (credit right: modification of work by Serge Saint).
+We can obtain an expression for the relationship between current and drift velocity by considering the number of free
+charges in a segment of wire, as illustrated in Figure 9.10. The number of free charges per unit volume, or the number
+number of charges
+densityoffreecharges,isgiventhesymbolnwhere n= .Thevalueofndependsonthematerial.The
+volume
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 393
+shadedsegmenthasavolume Av dt,sothatthenumberoffreechargesinthevolumeis nAv dt.ThechargedQinthis
+d d
+segmentisthus qnAv dt,whereqistheamountofchargeoneachcarrier.(Themagnitudeofthechargeofelectronsis
+d
+q=1.60×10 −19 C.)Currentischargemovedperunittime;thus,ifalltheoriginalchargesmoveoutofthissegmentin
+timedt, the current is
+dQ
+I = =qnAv .
+dt d
+Rearranging terms gives
+I (9.4)
+v =
+d nqA
+where v is the drift velocity, n is the free charge density, A is the cross-sectional area of the wire, and I is the current
+d
+through the wire. The carriers of the current each have chargeqand move with a drift velocity of magnitude v .
+d
+Figure 9.10 All the charges in the shaded volume of this wire
+move out in a timedt, having a drift velocity of magnitude v .
+d
+Note that simple drift velocity is not the entire story. The speed of an electron is sometimes much greater than its drift
+velocity.Inaddition,notalloftheelectronsinaconductorcanmovefreely,andthosethatdomovemightmovesomewhat
+faster or slower than the drift velocity. So what do we mean by free electrons?
+Atomsinametallicconductorarepackedintheformofalatticestructure.Someelectronsarefarenoughawayfromthe
+atomicnucleithattheydonotexperiencetheattractionofthenucleiasstronglyastheinnerelectronsdo.Thesearethefree
+electrons.Theyarenotboundtoasingleatombutcaninsteadmovefreelyamongtheatomsina“sea”ofelectrons.When
+anelectricalfieldisapplied,thesefreeelectronsrespondbyaccelerating.Astheymove,theycollidewiththeatomsinthe
+latticeandwithotherelectrons,generatingthermalenergy,andtheconductorgetswarmer.Inaninsulator,theorganization
+of the atoms and the structure do not allow for such free electrons.
+As you know, electric power is usually supplied to equipment and appliances through round wires made of a conducting
+material (copper, aluminum, silver, or gold) that are stranded or solid. The diameter of the wire determines the current-
+carrying capacity—the larger the diameter, the greater the current-carrying capacity. Even though the current-carrying
+capacity is determined by the diameter, wire is not normally characterized by the diameter directly. Instead, wire is
+commonlysoldinaunitknownas“gauge.”Wiresaremanufacturedbypassingthematerialthroughcircularformscalled
+“drawingdies.”Inordertomakethinnerwires,manufacturersdrawthewiresthroughmultiplediesofsuccessivelythinner
+diameter. Historically, the gauge of the wire was related to the number of drawing processes required to manufacture
+the wire. For this reason, the larger the gauge, the smaller the diameter. In the United States, the American Wire Gauge
+(AWG)wasdevelopedtostandardizethesystem.Householdwiringcommonlyconsistsof10-gauge(2.588-mmdiameter)
+to 14-gauge (1.628-mm diameter) wire. A device used to measure the gauge of wire is shown inFigure 9.11.
+
+394 Chapter 9 | Current and Resistance
+Figure 9.11 A device for measuring the gauge of electrical
+wire. As you can see, higher gauge numbers indicate thinner
+wires. (credit: Joseph J. Trout)
+Example 9.3
+Calculating Drift Velocity in a Common Wire
+Calculate the drift velocity of electrons in a copper wire with a diameter of 2.053 mm (12-gauge) carrying a
+20.0-Acurrent,giventhatthereisonefreeelectronpercopperatom.(Householdwiringoftencontains12-gauge
+copper wire, and the maximum current allowed in such wire is usually 20.0 A.) The density of copper is
+8.80×10 3 kg/m 3 and the atomic mass of copper is 63.54 g/mol.
+Strategy
+We can calculate the drift velocity using the equation I =nqAv . The current is I =20.00A and
+d
+q=1.60×10 −19 C isthechargeofanelectron.Wecancalculatetheareaofacross-sectionofthewireusing
+theformula A=πr2,whererisone-halfthediameter.Thegivendiameteris2.053mm,soris1.0265mm.We
+aregiventhedensityofcopper, 8.80×10 3 kg/m 3,andtheatomicmassofcopperis 63.54g/mol.Wecanuse
+thesetwoquantitiesalongwithAvogadro’snumber, 6.02×10 23 atoms/mol,todeterminen,thenumberoffree
+electrons per cubic meter.
+Solution
+First,wecalculatethedensityoffreeelectronsincopper.Thereisonefreeelectronpercopperatom.Therefore,
+the number of free electrons is the same as the number of copper atoms per m 3. We can now findnas follows:
+n = 1e− × 6.02×10 23 atoms × 1mol × 1000g × 8.80×10 3 kg
+atom mol 63.54g kg 1m 3
+=8.34×10
+28e−
+/m
+3
+.
+The cross-sectional area of the wire is
+2
+⎛ −3 ⎞
+A=πr2=π 2.05×10 m =3.30×10 −6 m2.
+⎝ 2 ⎠
+Rearranging I =nqAv to isolate drift velocity gives
+d
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

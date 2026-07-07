@@ -1,0 +1,199 @@
+# REAL PDF — openstax_vol1.pdf, pages 51-57
+############################################################
+
+1 • Chapter Review 39
+course in 2 h, 30 min, and 12 s. There is an pound-mass unit, what is its percent
+uncertainty of 25 m in the distance traveled and uncertainty? (b) Based on that percent
+an uncertainty of 1 s in the elapsed time. (a) uncertainty, what mass in pound-mass has an
+Calculate the percent uncertainty in the uncertainty of 1 kg when converted to
+distance. (b) Calculate the percent uncertainty in kilograms?
+the elapsed time. (c) What is the average speed
+86 . The length and width of a rectangular room are
+in meters per second? (d) What is the
+measured to be 3.955 ± 0.005 m and 3.050 ±
+uncertainty in the average speed?
+0.005 m. Calculate the area of the room and its
+84 . The sides of a small rectangular box are uncertainty in square meters.
+measured to be 1.80 ± 0.1 cm, 2.05 ± 0.02 cm,
+87 . A car engine moves a piston with a circular
+and 3.1 ± 0.1 cm long. Calculate its volume and
+cross-section of 7.500 ± 0.002 cm in diameter a
+uncertainty in cubic centimeters.
+distance of 3.250 ± 0.001 cm to compress the
+85 . When nonmetric units were used in the United gas in the cylinder. (a) By what amount is the gas
+Kingdom, a unit of mass called the pound-mass decreased in volume in cubic centimeters? (b)
+(lbm) was used, where 1 lbm = 0.4539 kg. (a) If Find the uncertainty in this volume.
+there is an uncertainty of 0.0001 kg in the
+Challenge Problems
+88 . The first atomic bomb was detonated on July 16, radius of 130.0 m. Use these values, along with
+1945, at the Trinity test site about 200 mi south an average air density of 1.25 kg/m3, to
+of Los Alamos. In 1947, the U.S. government calculate the initial energy release of the Trinity
+declassified a film reel of the explosion. From detonation in joules (J). (Hint: To get energy in
+this film reel, British physicist G. I. Taylor was joules, you need to make sure all the numbers
+able to determine the rate at which the radius of you substitute in are expressed in terms of SI
+the fireball from the blast grew. Using base units.) (c) The energy released in large
+dimensional analysis, he was then able to explosions is often cited in units of “tons of TNT”
+deduce the amount of energy released in the (abbreviated “t TNT”), where 1 t TNT is about
+explosion, which was a closely guarded secret at 4.2 GJ. Convert your answer to (b) into kilotons
+the time. Because of this, Taylor did not publish of TNT (that is, kt TNT). Compare your answer
+his results until 1950. This problem challenges with the quick-and-dirty estimate of 10 kt TNT
+you to recreate this famous calculation. (a) Using made by physicist Enrico Fermi shortly after
+keen physical insight developed from years of witnessing the explosion from what was thought
+experience, Taylor decided the radius r of the to be a safe distance. (Reportedly, Fermi made
+fireball should depend only on the following his estimate by dropping some shredded bits of
+variables: paper right before the remnants of the shock
+t, the time since the explosion, wave hit him and looked to see how far they
+and the density of the air, were carried by it.)
+E, the energy of the inital explosion.
+89 . The purpose of this problem is to show the
+Thus, he made the educated guess that
+entire concept of dimensional consistency can
+for some dimensionless constant k
+be summarized by the old saying “You can’t add
+and some unknown exponents a, b, and c. Given
+apples and oranges.” If you have studied power
+that [E] = ML2T–2, determine the values of the
+series expansions in a calculus course, you know
+exponents necessary to make this equation
+the standard mathematical functions such as
+dimensionally consistent. (Hint: Notice the
+trigonometric functions, logarithms, and
+equation implies that and that
+exponential functions can be expressed as
+) (b) By analyzing data from high-energy
+infinite sums of the form
+conventional explosives, Taylor found the
+∞
+formula he derived seemed to be valid as long as
+the constant k had the value 1.03. From the film
+reel, he was able to determine many values of r
+and the corresponding values of t. For example, where the are dimensionless constants for all
+he found that after 25.0 ms, the fireball had a and x is the argument of the
+
+40 1 • Chapter Review
+function. (If you have not studied power series in mathematical functions must be dimensionless,
+calculus yet, just trust us.) Use this fact to so it is not really necessary to make this latter
+explain why the requirement that all terms in an condition a separate requirement of the
+equation have the same dimensions is sufficient definition of dimensional consistency as we have
+as a definition of dimensional consistency. That done in this section.
+is, it actually implies the arguments of standard
+Access for free at openstax.org
+
+CHAPTER 2
+Vectors
+FIGURE 2.1 A signpost gives information about distances and directions to towns or to other locations relative to the location of the
+signpost. Distance is a scalar quantity. Knowing the distance alone is not enough to get to the town; we must also know the direction from
+the signpost to the town. The direction, together with the distance, is a vector quantity commonly called the displacement vector. A
+signpost, therefore, gives information about displacement vectors from the signpost to towns. (credit: modification of work by "studio
+tdes"/Flickr, thedailyenglishshow.com)
+CHAPTER OUTLINE
+2.1 Scalars and Vectors
+2.2 Coordinate Systems and Components of a Vector
+2.3 Algebra of Vectors
+2.4 Products of Vectors
+INTRODUCTION Vectors are essential to physics and engineering. Many fundamental physical quantities are
+vectors, including displacement, velocity, force, and electric and magnetic vector fields. Scalar products of vectors
+define other fundamental scalar physical quantities, such as energy. Vector products of vectors define still other
+fundamental vector physical quantities, such as torque and angular momentum. In other words, vectors are a
+component part of physics in much the same way as sentences are a component part of literature.
+In introductory physics, vectors are Euclidean quantities that have geometric representations as arrows in one
+dimension (in a line), in two dimensions (in a plane), or in three dimensions (in space). They can be added,
+subtracted, or multiplied. In this chapter, we explore elements of vector algebra for applications in mechanics and in
+electricity and magnetism. Vector operations also have numerous generalizations in other branches of physics.
+
+42 2 • Vectors
+2.1 Scalars and Vectors
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the difference between vector and scalar quantities.
+• Identify the magnitude and direction of a vector.
+• Explain the effect of multiplying a vector quantity by a scalar.
+• Describe how one-dimensional vector quantities are added or subtracted.
+• Explain the geometric construction for the addition or subtraction of vectors in a plane.
+• Distinguish between a vector equation and a scalar equation.
+Many familiar physical quantities can be specified completely by giving a single number and the appropriate unit.
+For example, “a class period lasts 50 min” or “the gas tank in my car holds 65 L” or “the distance between two posts
+is 100 m.” A physical quantity that can be specified completely in this manner is called a scalar quantity. Scalar is a
+synonym of “number.” Time, mass, distance, length, volume, temperature, and energy are examples of scalar
+quantities.
+Scalar quantities that have the same physical units can be added or subtracted according to the usual rules of
+algebra for numbers. For example, a class ending 10 min earlier than 50 min lasts .
+Similarly, a 60-cal serving of corn followed by a 200-cal serving of donuts gives of
+energy. When we multiply a scalar quantity by a number, we obtain the same scalar quantity but with a larger (or
+smaller) value. For example, if yesterday’s breakfast had 200 cal of energy and today’s breakfast has four times as
+much energy as it had yesterday, then today’s breakfast has of energy. Two scalar quantities
+can also be multiplied or divided by each other to form a derived scalar quantity. For example, if a train covers a
+distance of 100 km in 1.0 h, its speed is 100.0 km/1.0 h = 27.8 m/s, where the speed is a derived scalar quantity
+obtained by dividing distance by time.
+Many physical quantities, however, cannot be described completely by just a single number of physical units. For
+example, when the U.S. Coast Guard dispatches a ship or a helicopter for a rescue mission, the rescue team must
+know not only the distance to the distress signal, but also the direction from which the signal is coming so they can
+get to its origin as quickly as possible. Physical quantities specified completely by giving a number of units
+(magnitude) and a direction are called vector quantities. Examples of vector quantities include displacement,
+velocity, position, force, and torque. In the language of mathematics, physical vector quantities are represented by
+mathematical objects called vectors (Figure 2.2). We can add or subtract two vectors, and we can multiply a vector
+by a scalar or by another vector, but we cannot divide by a vector. The operation of division by a vector is not
+defined.
+FIGURE 2.2 We draw a vector from the initial point or origin (called the “tail” of a vector) to the end or terminal point (called the “head” of a
+vector), marked by an arrowhead. Magnitude is the length of a vector and is always a positive scalar quantity. (credit "photo": modification
+of work by Cate Sevilla)
+Let’s examine vector algebra using a graphical method to be aware of basic terms and to develop a qualitative
+understanding. In practice, however, when it comes to solving physics problems, we use analytical methods, which
+we’ll see in the next section. Analytical methods are more simple computationally and more accurate than graphical
+methods. From now on, to distinguish between a vector and a scalar quantity, we adopt the common convention
+that a letter in bold type with an arrow above it denotes a vector, and a letter without an arrow denotes a scalar. For
+example, a distance of 2.0 km, which is a scalar quantity, is denoted by d = 2.0 km, whereas a displacement of 2.0
+Access for free at openstax.org
+
+2.1 • Scalars and Vectors 43
+km in some direction, which is a vector quantity, is denoted by .
+Suppose you tell a friend on a camping trip that you have discovered a terrific fishing hole 6 km from your tent. It is
+unlikely your friend would be able to find the hole easily unless you also communicate the direction in which it can
+be found with respect to your campsite. You may say, for example, “Walk about 6 km northeast from my tent.” The
+key concept here is that you have to give not one but two pieces of information—namely, the distance or magnitude
+(6 km) and the direction (northeast).
+Displacement is a general term used to describe a change in position, such as during a trip from the tent to the
+fishing hole. Displacement is an example of a vector quantity. If you walk from the tent (location A) to the hole
+(location B), as shown in Figure 2.3, the vector , representing your displacement, is drawn as the arrow that
+originates at point A and ends at point B. The arrowhead marks the end of the vector. The direction of the
+displacement vector is the direction of the arrow. The length of the arrow represents the magnitude D of vector
+. Here, D = 6 km. Since the magnitude of a vector is its length, which is a positive number, the magnitude is also
+indicated by placing the absolute value notation around the symbol that denotes the vector; so, we can write
+equivalently that . To solve a vector problem graphically, we need to draw the vector to scale. For
+example, if we assume 1 unit of distance (1 km) is represented in the drawing by a line segment of length u = 2 cm,
+then the total displacement in this example is represented by a vector of length , as
+shown in Figure 2.4. Notice that here, to avoid confusion, we used to denote the magnitude of the actual
+displacement and d = 12 cm to denote the length of its representation in the drawing.
+FIGURE 2.3 The displacement vector from point A (the initial position at the campsite) to point B (the final position at the fishing hole) is
+indicated by an arrow with origin at point A and end at point B. The displacement is the same for any of the actual paths (dashed curves)
+that may be taken between points A and B.
+FIGURE 2.4 A displacement of magnitude 6 km is drawn to scale as a vector of length 12 cm when the length of 2 cm represents 1 unit of
+displacement (which in this case is 1 km).
+Suppose your friend walks from the campsite at A to the fishing pond at B and then walks back: from the fishing
+pond at B to the campsite at A. The magnitude of the displacement vector from A to B is the same as the
+magnitude of the displacement vector from B to A (it equals 6 km in both cases), so we can write
+
+44 2 • Vectors
+. However, vector is not equal to vector because these two vectors have different
+directions: . In Figure 2.3, vector would be represented by a vector with an origin at point B and
+an end at point A, indicating vector points to the southwest, which is exactly opposite to the direction of
+vector . We say that vector is antiparallel to vector and write , where the minus sign
+indicates the antiparallel direction.
+Two vectors that have identical directions are said to be parallel vectors—meaning, they are parallel to each other.
+Two parallel vectors and are equal, denoted by , if and only if they have equal magnitudes . Two
+vectors with directions perpendicular to each other are said to be orthogonal vectors. These relations between
+vectors are illustrated in Figure 2.5.
+FIGURE 2.5 Various relations between two vectors and . (a) because . (b) because they are not parallel and
+. (c) because they have different directions (even though . (d) because they are parallel and have
+identical magnitudes A = B. (e) because they have different directions (are not parallel); here, their directions differ by
+—meaning, they are orthogonal.
+CHECK YOUR UNDERSTANDING 2.1
+Two motorboats named Alice and Bob are moving on a lake. Given the information about their velocity vectors in
+each of the following situations, indicate whether their velocity vectors are equal or otherwise. (a) Alice moves north
+at 6 knots and Bob moves west at 6 knots. (b) Alice moves west at 6 knots and Bob moves west at 3 knots. (c) Alice
+moves northeast at 6 knots and Bob moves south at 3 knots. (d) Alice moves northeast at 6 knots and Bob moves
+southwest at 6 knots. (e) Alice moves northeast at 2 knots and Bob moves closer to the shore northeast at 2 knots.
+Algebra of Vectors in One Dimension
+Vectors can be multiplied by scalars, added to other vectors, or subtracted from other vectors. We can illustrate
+these vector concepts using an example of the fishing trip seen in Figure 2.6.
+Access for free at openstax.org

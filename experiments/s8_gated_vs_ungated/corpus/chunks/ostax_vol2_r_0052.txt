@@ -1,0 +1,342 @@
+# REAL PDF — openstax_vol2.pdf, pages 317-326
+############################################################
+
+Chapter 7 | Electric Potential 307
+Figure 7.18 The voltage of this demonstration Van de Graaff
+generator is measured between the charged sphere and ground.
+Earth’s potential is taken to be zero as a reference. The potential
+of the charged conducting sphere is the same as that of an equal
+point charge at its center.
+Strategy
+Thepotentialonthesurfaceisthesameasthatofapointchargeatthecenterofthesphere,12.5cmaway.(The
+radius of the sphere is 12.5 cm.) We can thus determine the excess charge using the equation
+kq
+V = r .
+Solution
+Solving forqand entering known values gives
+⎛ 3 ⎞
+q= rV = (0.125m) ⎝ 100×10 V ⎠ =1.39×10 −6 C=1.39µC.
+k 8.99×10 9 N·m2/C2
+Significance
+Thisisarelativelysmallcharge,butitproducesaratherlargevoltage.Wehaveanotherindicationherethatitis
+difficult to store isolated charges.
+7.8 Check Your UnderstandingWhat is the potential inside the metal sphere inExample 7.10?
+Thevoltagesinbothoftheseexamplescouldbemeasuredwithameterthatcomparesthemeasuredpotentialwithground
+potential.Groundpotentialisoftentakentobezero(insteadoftakingthepotentialatinfinitytobezero).Itisthepotential
+differencebetweentwopointsthatisofimportance, andveryoftenthereisatacitassumptionthatsomereferencepoint,
+suchasEarthoraverydistantpoint,isatzeropotential. Asnotedearlier,thisisanalogoustotakingsealevelas h=0
+when considering gravitational potential energy U g=mgh.
+
+308 Chapter 7 | Electric Potential
+Systems of Multiple Point Charges
+Justastheelectricfieldobeysasuperpositionprinciple,sodoestheelectricpotential.ConsiderasystemconsistingofN
+charges q
+1
+, q
+2
+, …, q N. WhatisthenetelectricpotentialVataspacepointPfromthesecharges?Eachofthesecharges
+isasourcechargethatproducesitsownelectricpotentialatpointP,independentofwhateverotherchangesmaybedoing.
+Let V 1 , V 2 , …, V N betheelectricpotentialsatPproducedbythecharges q 1 , q 2 , …, q N, respectively.Then,thenet
+electricpotential V atthatpointisequaltothesumoftheseindividualelectricpotentials.Youcaneasilyshowthisby
+P
+calculatingthepotentialenergyofatestchargewhenyoubringthetestchargefromthereferencepointatinfinitytopoint
+P:
+N
+V P=V 1 +V 2 +⋯+V N =∑V i.
+1
+Note that electric potential follows the same principle of superposition as electric field and electric potential energy. To
+show this more explicitly, note that a test charge q i at the point P in space has distances of r 1 , r 2 , …, r N from the N
+chargesfixedinspaceabove,asshowninFigure 7.19.Usingourformulaforthepotentialofapointchargeforeachof
+these (assumed to be point) charges, we find that
+N N (7.9)
+q q
+V P=∑k r i =k∑ r i .
+i i
+1 1
+Therefore, the electric potential energy of the test charge is
+N
+q
+U P=q t V P=q t k∑ r i ,
+i
+1
+which is the same as the work to bring the test charge into the system, as found in the first section of the chapter.
+Figure 7.19 Notation for direct distances from charges to a
+space pointP.
+The Electric Dipole
+Anelectricdipoleisasystemoftwoequalbutoppositechargesafixeddistanceapart.Thissystemisusedtomodelmany
+real-worldsystems,includingatomicandmolecularinteractions.Oneofthesesystemsisthewatermolecule,undercertain
+circumstances.Thesecircumstancesaremetinsideamicrowaveoven,whereelectricfieldswithalternatingdirectionsmake
+the water molecules change orientation. This vibration is the same as heat at the molecular level.
+Example 7.12
+Electric Potential of a Dipole
+Consider the dipole in Figure 7.20 with the charge magnitude of q=3.0nC and separation distance
+d =4.0cm. Whatisthepotentialatthefollowinglocationsinspace?(a)(0,0,1.0cm);(b)(0,0,–5.0cm);(c)
+(3.0 cm, 0, 2.0 cm).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 309
+Figure 7.20 A general diagram of an electric dipole, and the
+notation for the distances from the individual charges to a point
+Pin space.
+Strategy
+N
+q
+Apply V P=k∑
+r
+i to each of these three points.
+i
+1
+Solution
+N
+a. V P=k∑ q r i i =(9.0×10 9 N·m2/C2) ⎛ ⎝0 3 .0 .0 10 nC m − 0 3 .0 .0 30 nC m ⎞ ⎠ =1.8×10 3 V
+1
+N
+b. V P=k∑ q r i i =(9.0×10 9 N·m2/C2) ⎛ ⎝0 3 .0 .0 70 nC m − 0 3 .0 .0 30 nC m ⎞ ⎠ =−5.1×102 V
+1
+N
+c. V P=k∑ q r i i =(9.0×10 9 N·m2/C2) ⎛ ⎝0 3 .0 .0 30 nC m − 0 3 .0 .0 50 nC m ⎞ ⎠ =3.6×102 V
+1
+Significance
+Notethatevaluatingpotentialissignificantlysimplerthanelectricfield,duetopotentialbeingascalarinsteadof
+a vector.
+7.9 Check Your UnderstandingWhat is the potential on thex-axis? Thez-axis?
+Now let us consider the special case when the distance of the point P from the dipole is much greater than the distance
+betweenthechargesinthedipole, r ≫d; forexample,whenweareinterestedintheelectricpotentialduetoapolarized
+moleculesuchasawatermolecule.Thisisnotsofar(infinity)thatwecansimplytreatthepotentialaszero,butthedistance
+is great enough that we can simplify our calculations relative to the previous example.
+We start by noting that inFigure 7.21the potential is given by
+
+310 Chapter 7 | Electric Potential
+⎛q q ⎞
+V P=V + +V −=k ⎝r
++
+−r −⎠
+where
+2
+r = x2+ ⎛ z∓ d⎞ .
+± ⎝ 2⎠
+Figure 7.21 A general diagram of an electric dipole, and the
+notation for the distances from the individual charges to a pointP
+in space.
+Thisisstilltheexactformula.Totakeadvantageofthefactthat r ≫d, werewritetheradiiintermsofpolarcoordinates,
+with x=rsinθ and z=rcosθ. This gives us
+2
+r = r2 sin2 θ+ ⎛ rcosθ∓ d⎞ .
+± ⎝ 2⎠
+We can simplify this expression by pullingrout of the root,
+2
+r =r sin2 θ+ ⎛ cosθ∓ d⎞
+± ⎝ 2r⎠
+and then multiplying out the parentheses
+2 2
+r ± =r sin2 θ+cos2 θ∓cosθ d r + ⎛ ⎝2 d r ⎞ ⎠ =r 1∓cosθ d r + ⎛ ⎝2 d r ⎞ ⎠ .
+The last term in the root is small enough to be negligible (remember r ≫d, and hence (d/r)2 is extremely small,
+effectively zero to the level we will probably be measuring), leaving us with
+d
+r
+±
+=r 1∓cosθ r.
+Using the binomial approximation (a standard result from the mathematics of series, when α is small)
+1 α
+≈1±
+1∓α 2
+and substituting this into our formula for V , we get
+P
+V P=k ⎡ ⎣ q r ⎛ ⎝ 1+ dc 2 o r sθ⎞ ⎠ − q r ⎛ ⎝ 1− dc 2 o r sθ⎞ ⎠ ⎤ ⎦ =k qd r c 2 osθ .
+This may be written more conveniently if we define a new quantity, theelectric dipole moment,
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 311
+→ → (7.10)
+p =q d ,
+wherethesevectorspointfromthenegativetothepositivecharge.Notethatthishasmagnitudeqd.Thisquantityallowsus
+to write the potential at pointPdue to a dipole at the origin as
+→ ^ (7.11)
+p · r
+V P=k
+r2
+.
+A diagram of the application of this formula is shown inFigure 7.22.
+Figure 7.22 The geometry for the application of the potential
+of a dipole.
+There are also higher-order moments, for quadrupoles, octupoles, and so on. You will see these in future classes.
+Potential of Continuous Charge Distributions
+We have been working with point charges a great deal, but what about continuous charge distributions? Recall from
+Equation 7.9that
+q
+V P=k∑ r i .
+i
+Wemaytreatacontinuouschargedistributionasacollectionofinfinitesimallyseparatedindividualpoints.Thisyieldsthe
+integral
+dq (7.12)
+V P=k∫
+r
+forthepotentialatapointP.NotethatristhedistancefromeachindividualpointinthechargedistributiontothepointP.
+As we saw inElectric Charges and Fields, the infinitesimal charges are given by
+⎧λdl (one dimension)
+dq=⎨σdA (two dimensions)
+⎩ρdV
+(three dimensions)
+where λ is linear charge density, σ is the charge per unit area, and ρ is the charge per unit volume.
+
+312 Chapter 7 | Electric Potential
+Example 7.13
+Potential of a Line of Charge
+Find the electric potential of a uniformly charged, nonconducting wire with linear density λ (coulomb/meter)
+and lengthLat a point that lies on a line that divides the wire into two equal parts.
+Strategy
+Tosetuptheproblem,wechooseCartesiancoordinatesinsuchawayastoexploitthesymmetryintheproblem
+asmuchaspossible.Weplacetheoriginatthecenterofthewireandorientthey-axisalongthewiresothatthe
+endsofthewireareat y= ±L/2.ThefieldpointPisinthexy-planeandsincethechoiceofaxesisuptous,
+we choose thex-axis to pass through the field pointP, as shown inFigure 7.23.
+Figure 7.23 We want to calculate the electric potential due to
+a line of charge.
+Solution
+Considerasmallelementofthechargedistributionbetweenyand y+dy.Thechargeinthiscellis dq=λdy
+and the distance from the cell to the field pointPis x2+y2. Therefore, the potential becomes
+L/2
+V P =k
+⌠
+⌡ ⎮
+d
+r
+q
+=k
+⌠
+⌡ −L/2 x
+λ
+2
+d
++
+y
+y2 =kλ
+⎡
+⎣ ln
+⎛
+⎝ y+
+y2+x2⎞
+⎠
+⎤
+⎦−
+L/
+L
+2
+/2
+⎡ ⎛ 2 ⎞ ⎛ 2 ⎞⎤
+=kλ⎢ln⎜ ⎛L⎞ + ⎛L⎞ +x2⎟−ln⎜ ⎛ − L⎞ + ⎛ − L⎞ +x2⎟⎥
+⎣ ⎝
+⎝2⎠ ⎝2⎠
+⎠ ⎝
+⎝ 2⎠ ⎝ 2⎠
+⎠⎦
+⎡ ⎤
+=kλln⎢
+L+ L2+4x2
+⎥.
+⎣−L+ L2+4x2⎦
+Significance
+Notethatthiswassimplerthantheequivalentproblemforelectricfield,duetotheuseofscalarquantities.Recall
+thatweexpectthezerolevelofthepotentialtobeatinfinity,whenwehaveafinitecharge.Toexaminethis,we
+takethelimitoftheabovepotentialasxapproachesinfinity;inthiscase,thetermsinsidethenaturallogapproach
+one,andhencethepotentialapproacheszerointhislimit.Notethatwecouldhavedonethisproblemequivalently
+in cylindrical coordinates; the only effect would be to substituterforxandzfory.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 313
+Example 7.14
+Potential Due to a Ring of Charge
+Aringhasauniformchargedensity λ,withunitsofcoulombperunitmeterofarc.Findtheelectricpotentialat
+a point on the axis passing through the center of the ring.
+Strategy
+Weusethesameprocedureasforthechargedwire.Thedifferencehereisthatthechargeisdistributedonacircle.
+Wedividethecircleintoinfinitesimalelementsshapedasarcsonthecircleandusecylindricalcoordinatesshown
+inFigure 7.24.
+Figure 7.24 We want to calculate the electric potential due to
+a ring of charge.
+Solution
+Ageneralelementofthearcbetween θ and θ+dθ isoflength Rdθ andthereforecontainsachargeequalto
+λRdθ. The element is at a distance of z2+R2 fromP, and therefore the potential is
+2π
+V P=k∫ d r q =k ⌠ λRdθ = kλR ∫ 2π dθ= 2πkλR =k q tot .
+⌡ z2+R2 z2+R2 0 z2+R2 z2+R2
+0
+Significance
+ThisresultisexpectedbecauseeveryelementoftheringisatthesamedistancefrompointP.Thenetpotential
+atPis that of the total charge placed at the common distance, z2+R2.
+Example 7.15
+Potential Due to a Uniform Disk of Charge
+A disk of radius R has a uniform charge density σ, with units of coulomb meter squared. Find the electric
+potential at any point on the axis passing through the center of the disk.
+Strategy
+We divide the disk into ring-shaped cells, and make use of the result for a ring worked out in the previous
+example, then integrate overrin addition to θ. This is shown inFigure 7.25.
+
+314 Chapter 7 | Electric Potential
+Figure 7.25 We want to calculate the electric potential due to
+a disk of charge.
+Solution
+Aninfinitesimalwidthcellbetweencylindricalcoordinatesrand r+dr showninFigure7.25willbearingof
+charges whose electric potential dV at the field point has the following expression
+P
+dq
+dV P=k
+z2+r2
+where
+dq=σ2πrdr.
+Thesuperpositionofpotentialofalltheinfinitesimalringsthatmakeupthediskgivesthenetpotentialatpoint
+P. This is accomplished by integrating from r =0 to r =R:
+R
+⌠ rdr
+V P =∫dV P=k2πσ ,
+⌡ z2+r2
+0
+=k2πσ ⎛ z2+R2− z2⎞ .
+⎝ ⎠
+Significance
+The basic procedure for a disk is to first integrate around θ and then over r. This has been demonstrated for
+uniform(constant)chargedensity.Often,thechargedensitywillvarywithr,andthenthelastintegralwillgive
+different results.
+Example 7.16
+Potential Due to an Infinite Charged Wire
+Find the electric potential due to an infinitely long uniformly charged wire.
+Strategy
+SincewehavealreadyworkedoutthepotentialofafinitewireoflengthLinExample7.7,wemightwonderif
+taking L→∞ in our previous result will work:
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 315
+V P= lim kλln
+⎛
+⎜
+L+ L2+4x2 ⎞
+⎟.
+L→∞ ⎝−L+ L2+4x2⎠
+However,thislimitdoesnotexistbecausetheargumentofthelogarithmbecomes[2/0]as L→∞,sothisway
+of finding V of an infinite wire does not work. The reason for this problem may be traced to the fact that the
+chargesarenotlocalizedinsomespacebutcontinuetoinfinityinthedirectionofthewire.Hence,our(unspoken)
+assumption that zero potential must be an infinite distance from the wire is no longer valid.
+Toavoidthisdifficultyincalculatinglimits,letususethedefinitionofpotentialbyintegratingovertheelectric
+fieldfromtheprevioussection,andthevalueoftheelectricfieldfromthischargeconfigurationfromtheprevious
+chapter.
+Solution
+We use the integral
+P→ →
+V P=−∫ E ·d l
+R
+whereRis a finite distance from the line of charge, as shown inFigure 7.26.
+Figure 7.26 Points of interest for calculating the potential of
+an infinite line of charge.
+With this setup, we use → E P=2kλ1 s ^ s and d → l =d → s to obtain
+P s
+V P−V R=−∫ 2kλ1 s ds=−2kλlns P .
+R R
+Now, if we define the reference potential V R=0 at s R=1m, this simplifies to
+V P=−2kλlns P.
+Note that this form of the potential is quite usable; it is 0 at 1 m and is undefined at infinity, which is why we
+could not use the latter as a reference.
+Significance
+Although calculating potential directly can be quite convenient, we just found a system for which this strategy
+doesnotworkwell.Insuchcases,goingbacktothedefinitionofpotentialintermsoftheelectricfieldmayoffer
+a way forward.
+7.10 CheckYourUnderstandingWhatisthepotentialontheaxisofanonuniformringofcharge,wherethe
+charge density is λ(θ)=λcosθ ?

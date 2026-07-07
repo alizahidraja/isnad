@@ -1,0 +1,174 @@
+# REAL PDF — openstax_vol1.pdf, pages 26-31
+############################################################
+
+14 1 • Units and Measurement
+ISQ Base Quantity SI Base Unit
+Thermodynamic temperature kelvin (K)
+Amount of substance mole (mol)
+Luminous intensity candela (cd)
+TABLE 1.1 ISQ Base Quantities and Their SI Units
+You are probably already familiar with some derived quantities that can be formed from the base quantities in Table
+1.1. For example, the geometric concept of area is always calculated as the product of two lengths. Thus, area is a
+derived quantity that can be expressed in terms of SI base units using square meters Similarly,
+volume is a derived quantity that can be expressed in cubic meters Speed is length per time; so in terms of SI
+base units, we could measure it in meters per second (m/s). Volume mass density (or just density) is mass per
+volume, which is expressed in terms of SI base units such as kilograms per cubic meter (kg/m3). Angles can also be
+thought of as derived quantities because they can be defined as the ratio of the arc length subtended by two radii of
+a circle to the radius of the circle. This is how the radian is defined. Depending on your background and interests,
+you may be able to come up with other derived quantities, such as the mass flow rate (kg/s) or volume flow rate
+(m3/s) of a fluid, electric charge mass flux density and so on. We will see many more examples
+throughout this text. For now, the point is that every physical quantity can be derived from the seven base quantities
+in Table 1.1, and the units of every physical quantity can be derived from the seven SI base units.
+For the most part, we use SI units in this text. Non-SI units are used in a few applications in which they are in very
+common use, such as the measurement of temperature in degrees Celsius the measurement of fluid volume in
+liters (L), and the measurement of energies of elementary particles in electron-volts (eV). Whenever non-SI units are
+discussed, they are tied to SI units through conversions. For example, 1 L is
+INTERACTIVE
+Check out a comprehensive source of information on SI units (https://openstax.org/l/21SIUnits) at the National
+Institute of Standards and Technology (NIST) Reference on Constants, Units, and Uncertainty.
+Units of Time, Length, and Mass: The Second, Meter, and Kilogram
+The initial chapters in this textbook are concerned with mechanics, fluids, and waves. In these subjects all pertinent
+physical quantities can be expressed in terms of the base units of length, mass, and time. Therefore, we now turn to
+a discussion of these three base units, leaving discussion of the others until they are needed later.
+The second
+The SI unit for time, the second (abbreviated s), has a long history. For many years it was defined as 1/86,400 of a
+mean solar day. More recently, a new standard was adopted to gain greater accuracy and to define the second in
+terms of a nonvarying or constant physical phenomenon (because the solar day is getting longer as a result of the
+very gradual slowing of Earth’s rotation). Cesium atoms can be made to vibrate in a very steady way, and these
+vibrations can be readily observed and counted. In 1967, the second was redefined as the time required for
+9,192,631,770 of these vibrations to occur (Figure 1.8). Note that this may seem like more precision than you would
+ever need, but it isn’t—GPSs rely on the precision of atomic clocks to be able to give you turn-by-turn directions on
+the surface of Earth, far from the satellites broadcasting their location.
+Access for free at openstax.org
+
+1.2 • Units and Standards 15
+FIGURE 1.8 An atomic clock such as this one uses the vibrations of cesium atoms to keep time to a precision of better than a microsecond
+per year. The fundamental unit of time, the second, is based on such clocks. This image looks down from the top of an atomic fountain
+nearly 30 feet tall. (credit: Steve Jurvetson)
+The meter
+The SI unit for length is the meter (abbreviated m); its definition has also changed over time to become more
+precise. The meter was first defined in 1791 as 1/10,000,000 of the distance from the equator to the North Pole.
+This measurement was improved in 1889 by redefining the meter to be the distance between two engraved lines on
+a platinum–iridium bar now kept near Paris. By 1960, it had become possible to define the meter even more
+accurately in terms of the wavelength of light, so it was again redefined as 1,650,763.73 wavelengths of orange light
+emitted by krypton atoms. In 1983, the meter was given its current definition (in part for greater accuracy) as the
+distance light travels in a vacuum in 1/299,792,458 of a second (Figure 1.9). This change came after knowing the
+speed of light to be exactly 299,792,458 m/s.
+FIGURE 1.9 The meter is defined to be the distance light travels in 1/299,792,458 of a second in a vacuum. Distance traveled is speed
+multiplied by time.
+The kilogram
+The SI unit for mass is the kilogram (abbreviated kg); From 1795–2018 it was defined to be the mass of a
+platinum–iridium cylinder kept with the old meter standard at the International Bureau of Weights and Measures
+near Paris. However, this cylinder has lost roughly 50 micrograms since it was created. Because this is the standard,
+this has shifted how we defined a kilogram. Therefore, a new definition was adopted in May 2019 based on the
+Planck constant and other constants which will never change in value. We will study Planck’s constant in quantum
+mechanics, which is an area of physics that describes how the smallest pieces of the universe work. The kilogram is
+measured on a Kibble balance (see Figure 1.10). When a weight is placed on a Kibble balance, an electrical current
+is produced that is proportional to Planck’s constant. Since Planck’s constant is defined, the exact current
+measurements in the balance define the kilogram.
+
+16 1 • Units and Measurement
+FIGURE 1.10 Redefining the SI unit of mass. The U.S. National Institute of Standards and Technology’s Kibble balance is a machine that
+balances the weight of a test mass with the resulting electrical current needed for a force to balance it.
+Metric Prefixes
+SI units are part of the metric system, which is convenient for scientific and engineering calculations because the
+units are categorized by factors of 10. Table 1.2 lists the metric prefixes and symbols used to denote various factors
+of 10 in SI units. For example, a centimeter is one-hundredth of a meter (in symbols, 1 cm = 10–2 m) and a
+kilometer is a thousand meters (1 km = 103 m). Similarly, a megagram is a million grams (1 Mg = 106 g), a
+nanosecond is a billionth of a second (1 ns = 10–9 s), and a terameter is a trillion meters (1 Tm = 1012 m).
+Prefix Symbol Meaning Prefix Symbol Meaning
+yotta- Y 1024 yocto- y 10–24
+zetta- Z 1021 zepto- z 10–21
+exa- E 1018 atto- a 10–18
+peta- P 1015 femto- f 10–15
+tera- T 1012 pico- p 10–12
+giga- G 109 nano- n 10–9
+mega- M 106 micro- 10–6
+kilo- k 103 milli- m 10–3
+hecto- h 102 centi- c 10–2
+deka- da 101 deci- d 10–1
+TABLE 1.2 Metric Prefixes for Powers of 10 and Their Symbols
+The only rule when using metric prefixes is that you cannot “double them up.” For example, if you have
+Access for free at openstax.org
+
+1.2 • Units and Standards 17
+measurements in petameters (1 Pm = 1015 m), it is not proper to talk about megagigameters, although
+In practice, the only time this becomes a bit confusing is when discussing masses. As we have
+seen, the base SI unit of mass is the kilogram (kg), but metric prefixes need to be applied to the gram (g), because
+we are not allowed to “double-up” prefixes. Thus, a thousand kilograms (103 kg) is written as a megagram (1 Mg)
+since
+Incidentally, 103 kg is also called a metric ton, abbreviated t. This is one of the units outside the SI system
+considered acceptable for use with SI units.
+As we see in the next section, metric systems have the advantage that conversions of units involve only powers of
+10. There are 100 cm in 1 m, 1000 m in 1 km, and so on. In nonmetric systems, such as the English system of units,
+the relationships are not as simple—there are 12 in. in 1 ft, 5280 ft in 1 mi, and so on.
+Another advantage of metric systems is that the same unit can be used over extremely large ranges of values simply
+by scaling it with an appropriate metric prefix. The prefix is chosen by the order of magnitude of physical quantities
+commonly found in the task at hand. For example, distances in meters are suitable in construction, whereas
+distances in kilometers are appropriate for air travel, and nanometers are convenient in optical design. With the
+metric system there is no need to invent new units for particular applications. Instead, we rescale the units with
+which we are already familiar.
+EXAMPLE 1.1
+Using Metric Prefixes
+Restate the mass using a metric prefix such that the resulting numerical value is bigger than one but
+less than 1000.
+Strategy
+Since we are not allowed to “double-up” prefixes, we first need to restate the mass in grams by replacing the prefix
+symbol k with a factor of 103 (see Table 1.2). Then, we should see which two prefixes in Table 1.2 are closest to the
+resulting power of 10 when the number is written in scientific notation. We use whichever of these two prefixes
+gives us a number between one and 1000.
+Solution
+Replacing the k in kilogram with a factor of 103, we find that
+From Table 1.2, we see that 1016 is between “peta-” (1015) and “exa-” (1018). If we use the “peta-” prefix, then we
+find that since Alternatively, if we use the “exa-” prefix we find that
+since Because the problem asks for the numerical value
+between one and 1000, we use the “peta-” prefix and the answer is 19.3 Pg.
+Significance
+It is easy to make silly arithmetic errors when switching from one prefix to another, so it is always a good idea to
+check that our final answer matches the number we started with. An easy way to do this is to put both numbers in
+scientific notation and count powers of 10, including the ones hidden in prefixes. If we did not make a mistake, the
+powers of 10 should match up. In this problem, we started with so we have 13 + 3 = 16 powers of
+10. Our final answer in scientific notation is Pg, so we have 1 + 15 = 16 powers of 10. So, everything
+checks out.
+If this mass arose from a calculation, we would also want to check to determine whether a mass this large makes
+any sense in the context of the problem. For this, Figure 1.4 might be helpful.
+
+18 1 • Units and Measurement
+CHECK YOUR UNDERSTANDING 1.1
+Restate using a metric prefix such that the resulting number is bigger than one but less than 1000.
+1.3 Unit Conversion
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Use conversion factors to express the value of a given quantity in different units.
+It is often necessary to convert from one unit to another. For example, if you are reading a European cookbook,
+some quantities may be expressed in units of liters and you need to convert them to cups. Or perhaps you are
+reading walking directions from one location to another and you are interested in how many miles you will be
+walking. In this case, you may need to convert units of feet or meters to miles.
+Let’s consider a simple example of how to convert units. Suppose we want to convert 80 m to kilometers. The first
+thing to do is to list the units you have and the units to which you want to convert. In this case, we have units in
+meters and we want to convert to kilometers. Next, we need to determine a conversion factor relating meters to
+kilometers. A conversion factor is a ratio that expresses how many of one unit are equal to another unit. For
+example, there are 12 in. in 1 ft, 1609 m in 1 mi, 100 cm in 1 m, 60 s in 1 min, and so on. Refer to Appendix B for a
+more complete list of conversion factors. In this case, we know that there are 1000 m in 1 km. Now we can set up
+our unit conversion. We write the units we have and then multiply them by the conversion factor so the units cancel
+out, as shown:
+Note that the unwanted meter unit cancels, leaving only the desired kilometer unit. You can use this method to
+convert between any type of unit. Now, the conversion of 80 m to kilometers is simply the use of a metric prefix, as
+we saw in the preceding section, so we can get the same answer just as easily by noting that
+since “kilo-” means 103 (see Table 1.2) and However, using conversion factors is handy when
+converting between units that are not metric or when converting between derived units, as the following examples
+illustrate.
+EXAMPLE 1.2
+Converting Nonmetric Units to Metric
+The distance from the university to home is 10 mi and it usually takes 20 min to drive this distance. Calculate the
+average speed in meters per second (m/s). (Note: Average speed is distance traveled divided by time of travel.)
+Strategy
+First we calculate the average speed using the given units, then we can get the average speed into the desired units
+by picking the correct conversion factors and multiplying by them. The correct conversion factors are those that
+cancel the unwanted units and leave the desired units in their place. In this case, we want to convert miles to
+meters, so we need to know the fact that there are 1609 m in 1 mi. We also want to convert minutes to seconds, so
+we use the conversion of 60 s in 1 min.
+Solution
+1. Calculate average speed. Average speed is distance traveled divided by time of travel. (Take this definition as a
+given for now. Average speed and other motion concepts are covered in later chapters.) In equation form,
+Access for free at openstax.org

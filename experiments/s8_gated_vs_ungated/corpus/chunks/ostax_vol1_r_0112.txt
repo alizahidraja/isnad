@@ -1,0 +1,174 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 678-684
+############################################################
+
+666 14 • Fluid Mechanics
+where is absolute pressure, is gauge pressure, and is atmospheric pressure.
+For example, if a tire gauge reads 34 psi, then the absolute pressure is 34 psi plus 14.7 psi ( in psi), or 48.7 psi
+(equivalent to 336 kPa).
+In most cases, the absolute pressure in fluids cannot be negative. Fluids push rather than pull, so the smallest
+absolute pressure in a fluid is zero (a negative absolute pressure is a pull). Thus, the smallest possible gauge
+pressure is (which makes zero). There is no theoretical limit to how large a gauge pressure can be.
+Measuring Pressure
+A host of devices are used for measuring pressure, ranging from tire gauges to blood pressure monitors. Many other
+types of pressure gauges are commonly used to test the pressure of fluids, such as mechanical pressure gauges. We
+will explore some of these in this section.
+Any property that changes with pressure in a known way can be used to construct a pressure gauge. Some of the
+most common types include strain gauges, which use the change in the shape of a material with pressure;
+capacitance pressure gauges, which use the change in electric capacitance due to shape change with pressure;
+piezoelectric pressure gauges, which generate a voltage difference across a piezoelectric material under a pressure
+difference between the two sides; and ion gauges, which measure pressure by ionizing molecules in highly
+evacuated chambers. Different pressure gauges are useful in different pressure ranges and under different physical
+situations. Some examples are shown in Figure 14.11.
+FIGURE 14.11 (a) Gauges are used to measure and monitor pressure in gas cylinders. Compressed gases are used in many industrial as
+well as medical applications. (b) Tire pressure gauges come in many different models, but all are meant for the same purpose: to measure
+the internal pressure of the tire. This enables the driver to keep the tires inflated at optimal pressure for load weight and driving conditions.
+(c) An ionization gauge is a high-sensitivity device used to monitor the pressure of gases in an enclosed system. Neutral gas molecules are
+ionized by the release of electrons, and the current is translated into a pressure reading. Ionization gauges are commonly used in industrial
+applications that rely on vacuum systems.
+Manometers
+One of the most important classes of pressure gauges applies the property that pressure due to the weight of a fluid
+of constant density is given by . The U-shaped tube shown in Figure 14.12 is an example of a manometer; in
+part (a), both sides of the tube are open to the atmosphere, allowing atmospheric pressure to push down on each
+side equally so that its effects cancel.
+A manometer with only one side open to the atmosphere is an ideal device for measuring gauge pressures. The
+gauge pressure is and is found by measuring h. For example, suppose one side of the U-tube is connected
+to some source of pressure such as the balloon in part (b) of the figure or the vacuum-packed peanut jar shown
+in part (c). Pressure is transmitted undiminished to the manometer, and the fluid levels are no longer equal. In part
+(b), is greater than atmospheric pressure, whereas in part (c), is less than atmospheric pressure. In both
+cases, differs from atmospheric pressure by an amount where is the density of the fluid in the
+manometer. In part (b), can support a column of fluid of height h, so it must exert a pressure greater than
+atmospheric pressure (the gauge pressure is positive). In part (c), atmospheric pressure can support a column of
+fluid of height h, so is less than atmospheric pressure by an amount (the gauge pressure is negative).
+Access for free at openstax.org
+
+14.2 • Measuring Pressure 667
+FIGURE 14.12 An open-tube manometer has one side open to the atmosphere. (a) Fluid depth must be the same on both sides, or the
+pressure each side exerts at the bottom will be unequal and liquid will flow from the deeper side. (b) A positive gauge pressure
+transmitted to one side of the manometer can support a column of fluid of height h. (c) Similarly, atmospheric pressure is greater than a
+negative gauge pressure by an amount . The jar’s rigidity prevents atmospheric pressure from being transmitted to the peanuts.
+Barometers
+Manometers typically use a U-shaped tube of a fluid (often mercury) to measure pressure. A barometer (see Figure
+14.13) is a device that typically uses a single column of mercury to measure atmospheric pressure. The barometer,
+invented by the Italian mathematician and physicist Evangelista Torricelli (1608–1647) in 1643, is constructed from
+a glass tube closed at one end and filled with mercury. The tube is then inverted and placed in a pool of mercury.
+This device measures atmospheric pressure, rather than gauge pressure, because there is a nearly pure vacuum
+above the mercury in the tube. The height of the mercury is such that . When atmospheric pressure
+varies, the mercury rises or falls.
+Weather forecasters closely monitor changes in atmospheric pressure (often reported as barometric pressure), as
+rising mercury typically signals improving weather and falling mercury indicates deteriorating weather. The
+barometer can also be used as an altimeter, since average atmospheric pressure varies with altitude. Mercury
+barometers and manometers are so common that units of mm Hg are often quoted for atmospheric pressure and
+blood pressures.
+FIGURE 14.13 A mercury barometer measures atmospheric pressure. The pressure due to the mercury’s weight, , equals atmospheric
+pressure. The atmosphere is able to force mercury in the tube to a height h because the pressure above the mercury is zero.
+
+668 14 • Fluid Mechanics
+EXAMPLE 14.2
+Fluid Heights in an Open U-Tube
+A U-tube with both ends open is filled with a liquid of density to a height h on both sides (Figure 14.14). A liquid
+of density is poured into one side and Liquid 2 settles on top of Liquid 1. The heights on the two sides are
+different. The height to the top of Liquid 2 from the interface is and the height to the top of Liquid 1 from the level
+of the interface is . Derive a formula for the height difference.
+FIGURE 14.14 Two liquids of different densities are shown in a U-tube.
+Strategy
+The pressure at points at the same height on the two sides of a U-tube must be the same as long as the two points
+are in the same liquid. Therefore, we consider two points at the same level in the two arms of the tube: One point is
+the interface on the side of the Liquid 2 and the other is a point in the arm with Liquid 1 that is at the same level as
+the interface in the other arm. The pressure at each point is due to atmospheric pressure plus the weight of the
+liquid above it.
+Solution
+Since the two points are in Liquid 1 and are at the same height, the pressure at the two points must be the same.
+Therefore, we have
+Hence,
+This means that the difference in heights on the two sides of the U-tube is
+The result makes sense if we set which gives If the two sides have the same density, they have
+the same height.
+CHECK YOUR UNDERSTANDING 14.2
+Mercury is a hazardous substance. Why do you suppose mercury is typically used in barometers instead of a safer
+Access for free at openstax.org
+
+14.3 • Pascal's Principle and Hydraulics 669
+fluid such as water?
+Units of pressure
+As stated earlier, the SI unit for pressure is the pascal (Pa), where
+In addition to the pascal, many other units for pressure are in common use (Table 14.3). In meteorology,
+atmospheric pressure is often described in the unit of millibars (mbar), where
+The millibar is a convenient unit for meteorologists because the average atmospheric pressure at sea level on Earth
+is . Using the equations derived when considering pressure at a depth in a
+fluid, pressure can also be measured as millimeters or inches of mercury. The pressure at the bottom of a 760-mm
+column of mercury at in a container where the top part is evacuated is equal to the atmospheric pressure.
+Thus, 760 mm Hg is also used in place of 1 atmosphere of pressure. In vacuum physics labs, scientists often use
+another unit called the torr, named after Torricelli, who, as we have just seen, invented the mercury manometer for
+measuring pressure. One torr is equal to a pressure of 1 mm Hg.
+Unit Definition
+SI unit: the Pascal
+English unit: pounds per square inch ( or psi)
+Other units of pressure
+TABLE 14.3 Summary of the Units of Pressure
+14.3 Pascal's Principle and Hydraulics
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• State Pascal’s principle
+• Describe applications of Pascal’s principle
+• Derive relationships between forces in a hydraulic system
+In 1653, the French philosopher and scientist Blaise Pascal published his Treatise on the Equilibrium of Liquids, in
+which he discussed principles of static fluids. A static fluid is a fluid that is not in motion. When a fluid is not flowing,
+we say that the fluid is in static equilibrium. If the fluid is water, we say it is in hydrostatic equilibrium. For a fluid in
+static equilibrium, the net force on any part of the fluid must be zero; otherwise the fluid will start to flow.
+Pascal’s observations—since proven experimentally—provide the foundation for hydraulics, one of the most
+important developments in modern mechanical technology. Pascal observed that a change in pressure applied to an
+enclosed fluid is transmitted undiminished throughout the fluid and to the walls of its container. Because of this, we
+often know more about pressure than other physical quantities in fluids. Moreover, Pascal’s principle implies that
+the total pressure in a fluid is the sum of the pressures from different sources. A good example is the fluid at a depth
+
+670 14 • Fluid Mechanics
+depends on the depth of the fluid and the pressure of the atmosphere.
+Pascal’s Principle
+Pascal’s principle (also known as Pascal’s law) states that when a change in pressure is applied to an enclosed
+fluid, it is transmitted undiminished to all portions of the fluid and to the walls of its container. In an enclosed fluid,
+since atoms of the fluid are free to move about, they transmit pressure to all parts of the fluid and to the walls of the
+container. Any change in pressure is transmitted undiminished.
+Note that this principle does not say that the pressure is the same at all points of a fluid—which is not true, since the
+pressure in a fluid near Earth varies with height. Rather, this principle applies to the change in pressure. Suppose
+you place some water in a cylindrical container of height H and cross-sectional area A that has a movable piston of
+mass m (Figure 14.15). Adding weight Mg at the top of the piston increases the pressure at the top by Mg/A, since
+the additional weight also acts over area A of the lid:
+FIGURE 14.15 Pressure in a fluid changes when the fluid is compressed. (a) The pressure at the top layer of the fluid is different from
+pressure at the bottom layer. (b) The increase in pressure by adding weight to the piston is the same everywhere, for example,
+.
+According to Pascal’s principle, the pressure at all points in the water changes by the same amount, Mg/A. Thus, the
+pressure at the bottom also increases by Mg/A. The pressure at the bottom of the container is equal to the sum of
+the atmospheric pressure, the pressure due to the fluid, and the pressure supplied by the mass. The change in
+pressure at the bottom of the container due to the mass is
+Since the pressure changes are the same everywhere in the fluid, we no longer need subscripts to designate the
+pressure change for top or bottom:
+INTERACTIVE
+Pascal’s Barrel is a great demonstration of Pascal’s principle. Watch a simulation (https://openstax.org/l/
+21pascalbarrel) of Pascal’s 1646 experiment, in which he demonstrated the effects of changing pressure in a fluid.
+Applications of Pascal’s Principle and Hydraulic Systems
+Hydraulic systems are used to operate automotive brakes, hydraulic jacks, and numerous other mechanical systems
+(Figure 14.16).
+Access for free at openstax.org
+
+14.3 • Pascal's Principle and Hydraulics 671
+FIGURE 14.16 A typical hydraulic system with two fluid-filled cylinders, capped with pistons and connected by a tube called a hydraulic
+line. A downward force on the left piston creates a change in pressure that is transmitted undiminished to all parts of the enclosed fluid.
+This results in an upward force on the right piston that is larger than because the right piston has a larger surface area.
+We can derive a relationship between the forces in this simple hydraulic system by applying Pascal’s principle. Note
+first that the two pistons in the system are at the same height, so there is no difference in pressure due to a
+difference in depth. The pressure due to acting on area is simply
+According to Pascal’s principle, this pressure is transmitted undiminished throughout the fluid and to all walls of the
+container. Thus, a pressure is felt at the other piston that is equal to . That is, However,
+since we see that
+14.12
+This equation relates the ratios of force to area in any hydraulic system, provided that the pistons are at the same
+vertical height and that friction in the system is negligible.
+Hydraulic systems can increase or decrease the force applied to them. To make the force larger, the pressure is
+applied to a larger area. For example, if a 100-N force is applied to the left cylinder in Figure 14.16 and the right
+cylinder has an area five times greater, then the output force is 500 N. Hydraulic systems are analogous to simple
+levers, but they have the advantage that pressure can be sent through tortuously curved lines to several places at
+once.
+The hydraulic jack is such a hydraulic system. A hydraulic jack is used to lift heavy loads, such as the ones used by
+auto mechanics to raise an automobile. It consists of an incompressible fluid in a U-tube fitted with a movable
+piston on each side. One side of the U-tube is narrower than the other. A small force applied over a small area can
+balance a much larger force on the other side over a larger area (Figure 14.17).

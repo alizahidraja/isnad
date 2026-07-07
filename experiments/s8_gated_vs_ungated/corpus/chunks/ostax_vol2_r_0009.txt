@@ -1,0 +1,271 @@
+# REAL PDF — openstax_vol2.pdf, pages 50-57
+############################################################
+
+40 Chapter 1 | Temperature and Heat
+Strategy
+Thisquestioninvolvesbothheatforaphasechange(meltingofice)andthetransferofheatbyconduction.To
+findtheamountoficemelted,wemustfindthenetheattransferred.Thisvaluecanbeobtainedbycalculatingthe
+rate of heat transfer by conduction and multiplying by time.
+Solution
+First we identify the knowns.
+k=0.010W/m·°C for polystyrene foam; A=0.950m2; d =2.50cm=0.0250m;;T c=0°C;
+T =35.0°C; t=1day =24hours-84,400s.
+h
+Thenweidentifytheunknowns.Weneedtosolveforthemassoftheice,m.Wealsoneedtosolveforthenet
+heat transferred to melt the ice,Q. The rate of heat transfer by conduction is given by
+P=
+dQ
+=
+kA⎛
+⎝
+T
+h
+−T
+c
+⎞
+⎠ .
+dT d
+The heat used to melt the ice is Q=mL .We insert the known values:
+f
+(0.010W/m·°C)
+⎛ 0.950m2⎞
+(35.0°C−0°C)
+⎝ ⎠
+P= =13.3W.
+0.0250m
+Multiplying the rate of heat transfer by the time (1day =86,400s), we obtain
+Q=Pt=(13.3W)(86.400s)=1.15×10 6 J.
+We set this equal to the heat transferred to melt the ice, Q=mL , and solve for the massm:
+f
+m= Q = 1.15×10 6 J =3.44kg.
+L 3
+f 334×10 J/kg
+Significance
+Theresultof3.44kg,orabout7.6lb,seemsaboutright,basedonexperience.Youmightexpecttouseabouta4
+kg (7–10 lb) bag of ice per day. A little extra ice is required if you add any warm food or beverages.
+Table1.5showsthatpolystyrenefoamisaverypoorconductorandthusagoodinsulator.Othergoodinsulators
+includefiberglass,wool,andgoosedownfeathers.Likepolystyrenefoam,theseallcontainmanysmallpockets
+of air, taking advantage of air’s poor thermal conductivity.
+Indevelopinginsulation,thesmallertheconductivitykandthelargerthethicknessd,thebetter.Thus,theratiod/k,called
+theRfactor,islargeforagoodinsulator.TherateofconductiveheattransferisinverselyproportionaltoR.Rfactorsare
+mostcommonlyquotedforhouseholdinsulation, refrigerators, andthelike.Unfortunately,intheUnitedStates, Risstill
+innon-metricunitsof ft2·°F·h/Btu,althoughtheunitusuallygoesunstated[1Britishthermalunit(Btu)istheamount
+ofenergyneededtochangethetemperature of1.0lbofwaterby 1.0°F,whichis1055.1J].Acoupleofrepresentative
+values are an R factor of 11 for 3.5-inch-thick fiberglass batts (pieces) of insulation and an R factor of 19 for 6.5-inch-
+thickfiberglassbatts(Figure1.23).IntheUS,wallsareusuallyinsulatedwith3.5-inchbatts,whereasceilingsareusually
+insulated with 6.5-inch batts. In cold climates, thicker batts may be used.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 41
+Figure 1.23 The fiberglass batt is used for insulation of walls
+and ceilings to prevent heat transfer between the inside of the
+building and the outside environment. (credit: Tracey Nicholls)
+Note that in Table 1.5, most of the best thermal conductors—silver, copper, gold, and aluminum—are also the best
+electricalconductors,becausetheycontainmanyfreeelectronsthatcantransportthermalenergy.(Diamond,anelectrical
+insulator,conductsheatbyatomicvibrations.)Cookingutensilsaretypicallymadefromgoodconductors,butthehandles
+of those used on the stove are made from good insulators (bad conductors).
+Example 1.11
+Two Conductors End to End
+Asteelrodandanaluminumrod,eachofdiameter1.00cmandlength25.0cm,areweldedendtoend.Oneend
+of the steel rod is placed in a large tank of boiling water at 100°C, while the far end of the aluminum rod is
+placedinalargetankofwaterat 20°C.Therodsareinsulatedsothatnoheatescapesfromtheirsurfaces.What
+is the temperature at the joint, and what is the rate of heat conduction through this composite rod?
+Strategy
+Theheatthatentersthesteelrodfromtheboilingwaterhasnoplacetogobutthroughthesteelrod,thenthrough
+thealuminumrod,tothecoldwater.Therefore,wecanequatetherateofconductionthroughthesteeltotherate
+of conduction through the aluminum.
+We repeat the calculation with a second method, in which we use the thermal resistance R of the rod, since it
+simplyaddswhentworodsarejoinedendtoend.(Wewilluseasimilarmethodinthechapterondirect-current
+circuits.)
+Solution
+1. Identify the knowns and convert them to SI units.
+The length of each rod is L =L =0.25m, the cross-sectional area of each rod is
+A1 steel
+A = A =7.85×10 −5 m2, thethermalconductivityofaluminumis k =220W/m·°C,the
+A1 steel A1
+thermalconductivityofsteelis k =80W/m·°C,thetemperatureatthehotendis T =100°C,and
+steel
+the temperature at the cold end is T =20°C.
+
+42 Chapter 1 | Temperature and Heat
+2. Calculate the heat-conduction rate through the steel rod and the heat-conduction rate through the
+aluminum rod in terms of the unknown temperatureTat the joint:
+k A ΔT
+P = steel steel steel
+steel L
+steel
+(80W/m·°C) ⎛ 7.85×10 −5 m2⎞ (100°C−T)
+⎝ ⎠
+=
+0.25m
+=(0.0251W/°C)(100°C−T);
+k A ΔT
+P = Al A1 Al
+A1 L
+A1
+(220W/m·°C) ⎛ 7.85×10 −5 m2⎞ (T−20°C)
+⎝ ⎠
+=
+0.25m
+=(0.0691W/°C)(T−20°C).
+3. Set the two rates equal and solve for the unknown temperature:
+(0.0691W/°C)(T−20°C) = (0.0251W/°C)(100°C−T)
+T = 41.3°C.
+4. Calculate either rate:
+P =(0.0251W/°C)(100°C−41.3°C)=1.47W.
+steel
+5. If desired, check your answer by calculating the other rate.
+Solution
+1. Recall that R=L/k. Now P= AΔT/R, orΔT =PR/A.
+2. Weknowthat ΔT +ΔT =100°C−20°C=80°C.Wealsoknowthat P =P , andwe
+steel Al steel Al
+denote that rate of heat flow byP. Combine the equations:
+PR PR
+steel+ Al =80°C.
+A A
+Thus, we can simply addRfactors. Now, P= 80°C .
+A⎛R +R ⎞
+⎝ steel Al⎠
+3. Find the R from the known quantities:
+s
+R steel=3.13×10 −3 m2·°C/W
+and
+R Al=1.14×10 −3 m2·°C/W.
+4. Substitute these values in to find P=1.47W as before.
+5. Determine ΔT for the aluminum rod (or for the steel rod) and use it to findTat the joint.
+ΔT = PR Al = (1.47W) ⎛ ⎝ 1.14×10 −3 m2·°C/W ⎞ ⎠ =21.3°C,
+Al A 7.85×10 −5 m2
+so T =20°C+21.3°C=41.3°C, as in Solution 1.
+6. If desired, check by determining ΔT for the other rod.
+Significance
+In practice, adding R values is common, as in calculating the R value of an insulated wall. In the analogous
+situationinelectronics,theresistancecorrespondstoARinthisproblemandisadditiveevenwhentheareasare
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 43
+unequal,asiscommoninelectronics.Ourequationforheatconductioncanbeusedonlywhentheareasareequal;
+otherwise, we would have a problem in three-dimensional heat flow, which is beyond our scope.
+1.7 CheckYourUnderstandingHowdoestherateofheattransferbyconductionchangewhenallspatial
+dimensions are doubled?
+Conduction is caused by the random motion of atoms and molecules. As such, it is an ineffective mechanism for heat
+transport over macroscopic distances and short times. For example, the temperature on Earth would be unbearably cold
+duringthenightandextremelyhotduringthedayifheattransportintheatmospherewereonlythroughconduction.Also,
+carengineswouldoverheatunlesstherewasamoreefficientwaytoremoveexcessheatfromthepistons.Thenextmodule
+discusses the important heat-transfer mechanism in such situations.
+Convection
+In convection, thermal energy is carried by the large-scale flow of matter. It can be divided into two types. In forced
+convection, the flow is driven by fans, pumps, and the like. A simple example is a fan that blows air past you in hot
+surroundingsandcoolsyoubyreplacingtheairheatedbyyourbodywithcoolerair.Amorecomplicatedexampleisthe
+coolingsystemofatypicalcar,inwhichapumpmovescoolantthroughtheradiatorandenginetocooltheengineandafan
+blows air to cool the radiator.
+In free or natural convection, the flow is driven by buoyant forces: hot fluid rises and cold fluid sinks because density
+decreasesastemperatureincreases.ThehouseinFigure 1.24iskeptwarmbynaturalconvection,asisthepotofwater
+on the stove in Figure 1.25. Ocean currents and large-scale atmospheric circulation, which result from the buoyancy of
+warmairandwater,transferhotairfromthetropicstowardthepolesandcoldairfromthepolestowardthetropics.(Earth’s
+rotation interacts with those flows, causing the observed eastward flow of air in the temperate zones.)
+Figure 1.24 Air heated by a so-called gravity furnace expands and
+rises, forming a convective loop that transfers energy to other parts of
+the room. As the air is cooled at the ceiling and outside walls, it
+contracts, eventually becoming denser than room air and sinking to the
+floor. A properly designed heating system using natural convection,
+like this one, can heat a home quite efficiently.
+
+44 Chapter 1 | Temperature and Heat
+Figure 1.25 Natural convection plays an important role in
+heat transfer inside this pot of water. Once conducted to the
+inside, heat transfer to other parts of the pot is mostly by
+convection. The hotter water expands, decreases in density, and
+rises to transfer heat to other regions of the water, while colder
+water sinks to the bottom. This process keeps repeating.
+NaturalconvectionlikethatofFigure1.24andFigure1.25,butactingonrockinEarth’smantle,drivesplate
+tectonics (https://openstaxcollege.org/l/21platetecton) that are the motions that have shaped Earth’s
+surface.
+Convection is usually more complicated than conduction. Beyond noting that the convection rate is often approximately
+proportionaltothetemperaturedifference,wewillnotdoanyquantitativeworkcomparabletotheformulaforconduction.
+However, we can describe convection qualitatively and relate convection rates to heat and time. However, air is a poor
+conductor.Therefore,convectiondominatesheattransferbyair,andtheamountofavailablespaceforairflowdetermines
+whetherairtransfersheatrapidlyorslowly.Thereislittleheattransferinaspacefilledwithairwithasmallamountofother
+material thatpreventsflow.Thespacebetweentheinsideandoutsidewallsofatypical American house,forexample, is
+about9cm(3.5in.)—largeenoughforconvectiontoworkeffectively.Theadditionofwallinsulationpreventsairflow,so
+heatloss(orgain)isdecreased.Ontheotherhand,thegapbetweenthetwopanesofadouble-panedwindowisabout1cm,
+whichlargelypreventsconvectionandtakesadvantageofair’slowconductivityreduceheatloss.Fur,cloth,andfiberglass
+also take advantage of the low conductivity of air by trapping it in spaces too small to support convection (Figure 1.26).
+Figure 1.26 Fur is filled with air, breaking it up into many
+small pockets. Convection is very slow here, because the loops
+are so small. The low conductivity of air makes fur a very good
+lightweight insulator.
+Some interesting phenomena happen when convection is accompanied by a phase change. The combination allows us to
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 45
+cooloffbysweatingevenifthetemperatureofthesurroundingairexceedsbodytemperature.Heatfromtheskinisrequired
+forsweattoevaporatefromtheskin,butwithoutairflow,theairbecomessaturatedandevaporationstops.Airflowcaused
+by convection replaces the saturated air by dry air and evaporation continues.
+Example 1.12
+Calculating the Flow of Mass during Convection
+The average person produces heat at the rate of about 120 W when at rest. At what rate must water evaporate
+fromthebodytogetridofallthisenergy?(Forsimplicity,weassumethisevaporationoccurswhenapersonis
+sittingintheshadeandsurroundingtemperaturesarethesameasskintemperature,eliminatingheattransferby
+other methods.)
+Strategy
+Energy is needed for this phase change (Q=mL
+v
+). Thus, the energy loss per unit time is
+Q mL
+= V =120W=120 J/s.
+t t
+We divide both sides of the equation by L to find that the mass evaporated per unit time is
+v
+m 120J/s
+= .
+t L
+v
+Solution
+Insert the value of the latent heat fromTable 1.4, L v=2430kJ/kg=2430J/g. This yields
+m 120J/s
+= =0.0494g/s=2.96g/min.
+t 2430J/g
+Significance
+Evaporatingabout3g/minseemsreasonable.Thiswouldbeabout180g(about7oz.)perhour.Iftheairisvery
+dry,thesweatmayevaporatewithoutevenbeingnoticed.Asignificantamountofevaporationalsotakesplacein
+the lungs and breathing passages.
+Another important example of the combination of phase change and convection occurs when water evaporates from the
+oceans.Heatisremovedfromtheoceanwhenwaterevaporates.Ifthewatervaporcondensesinliquiddropletsasclouds
+form,possiblyfarfromtheocean,heatisreleasedintheatmosphere.Thus,thereisanoveralltransferofheatfromtheocean
+to the atmosphere. This process is the driving power behind thunderheads, those great cumulus clouds that rise as much
+as 20.0 km into the stratosphere (Figure 1.27). Water vapor carried in by convection condenses, releasing tremendous
+amounts of energy. This energy causes the air to expand and rise to colder altitudes. More condensation occurs in these
+regions,whichinturndrivesthecloudevenhigher.Thismechanismisanexampleofpositivefeedback,sincetheprocess
+reinforcesandacceleratesitself.Itsometimesproducesviolentstorms,withlightningandhail.Thesamemechanismdrives
+hurricanes.
+This time-lapse video (https://openstaxcollege.org/l/21convthuncurr) shows convection currents in a
+thunderstorm, including “rolling” motion similar to that of boiling water.
+
+46 Chapter 1 | Temperature and Heat
+Figure 1.27 Cumulus clouds are caused by water vapor that
+rises because of convection. The rise of clouds is driven by a
+positive feedback mechanism. (credit: “Amada44”/Wikimedia
+Commons)
+1.8
+Check Your UnderstandingExplain why using a fan in the summer feels refreshing.
+Radiation
+You can feel the heat transfer from the Sun. The space between Earth and the Sun is largely empty, so the Sun warms
+us without any possibility of heat transfer by convection or conduction. Similarly, you can sometimes tell that the oven
+is hot without touching its door or looking inside—it may just warm you as you walk by. In these examples, heat is
+transferred byradiation (Figure 1.28).That is,the hotbodyemits electromagnetic waves that are absorbed bythe skin.
+No medium is required for electromagnetic waves to propagate. Different names are used for electromagnetic waves of
+differentwavelengths:radiowaves,microwaves,infraredradiation,visiblelight,ultravioletradiation,X-rays,andgamma
+rays.
+Figure 1.28 Most of the heat transfer from this fire to the
+observers occurs through infrared radiation. The visible light,
+although dramatic, transfers relatively little thermal energy.
+Convection transfers energy away from the observers as hot air
+rises, while conduction is negligibly slow here. Skin is very
+sensitive to infrared radiation, so you can sense the presence of a
+fire without looking at it directly. (credit: Daniel O’Neil)
+Theenergyofelectromagneticradiationvariesoverawiderange,dependingonthewavelength:Ashorterwavelength(or
+higherfrequency)correspondstoahigherenergy.Becausemoreheatisradiatedathighertemperatures,highertemperatures
+producemoreintensityateverywavelengthbutespeciallyatshorterwavelengths.Invisiblelight,wavelengthdetermines
+color—redhasthelongestwavelengthandviolettheshortest—soatemperaturechangeisaccompaniedbyacolorchange.
+For example, an electric heating element on a stove glows from red to orange, while the higher-temperature steel in a
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

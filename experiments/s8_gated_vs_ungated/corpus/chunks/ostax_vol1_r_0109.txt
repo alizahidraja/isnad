@@ -1,0 +1,248 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 661-665
+############################################################
+
+13 • Chapter Review 649
+orbiting on the galaxy’s periphery is about 48 . Io orbits Jupiter with an average radius of
+light-years from its center. (a) What 421,700 km and a period of 1.769 days. Based
+should the orbital period of that star be? (b) If its upon these data, what is the mass of Jupiter?
+period is years instead, what is the
+49 . The “mean” orbital radius listed for astronomical
+mass of the galaxy? Such calculations are used
+objects orbiting the Sun is typically not an
+to imply the existence of mass that does not
+integrated average but is calculated such that it
+emit any light. Scientists do not know what it is
+gives the correct period when applied to the
+comprised of, so this mass is known simply as
+equation for circular orbits. Given that, what is
+"dark matter" and remains an enduring
+the mean orbital radius in terms of aphelion and
+astronomical mystery.
+perihelion?
+43 . (a) In order to keep a small satellite from drifting
+50 . The perihelion of Halley’s comet is 0.586 AU and
+into a nearby asteroid, it is placed in orbit with a
+the aphelion is 17.8 AU. Given that its speed at
+period of 3.02 hours and radius of 2.0 km. What
+perihelion is 55 km/s, what is the speed at
+is the mass of the asteroid? (b) Does this mass
+aphelion ( )? (Hint: You
+seem reasonable for the size of the orbit?
+may use either conservation of energy or angular
+44 . The Moon and Earth rotate about their common momentum, but the latter is much easier.)
+center of mass, which is located about 4700 km
+51 . The perihelion of the comet Lagerkvist is 2.61
+from the center of Earth. (This is 1690 km below
+AU and it has a period of 7.36 years. Show that
+the surface.) (a) Calculate the acceleration due
+the aphelion for this comet is 4.95 AU.
+to the Moon’s gravity at that point. (b) Calculate
+the centripetal acceleration of the center of 52 . What is the ratio of the speed at perihelion to
+Earth as it rotates about that point once each that at aphelion for the comet Lagerkvist in the
+lunar month (about 27.3 d) and compare it with previous problem?
+the acceleration found in part (a). Comment on
+53 . Eros has an elliptical orbit about the Sun, with a
+whether or not they are equal and why they
+perihelion distance of 1.13 AU and aphelion
+should or should not be.
+distance of 1.78 AU. What is the period of its
+45 . The Sun orbits the Milky Way galaxy once each orbit?
+, with a roughly circular orbit
+13.6 Tidal Forces
+averaging a radius of light-years. (A
+light-year is the distance traveled by light in 1 54 . (a) What is the difference between the forces on
+year.) Calculate the centripetal acceleration of a 1.0-kg mass on the near side of Io and far side
+the Sun in its galactic orbit. Does your result due to Jupiter? Io has a mean radius of 1821 km
+support the contention that a nearly inertial and a mean orbital radius about Jupiter of
+frame of reference can be located at the Sun? (b) 421,700 km. (b) Compare this difference to that
+Calculate the average speed of the Sun in its calculated for the difference for Earth due to the
+galactic orbit. Does the answer surprise you? Moon calculated in Example 13.14. Tidal forces
+are the cause of Io’s volcanic activity.
+46 . A geosynchronous Earth satellite is one that has
+an orbital period of precisely 1 day. Such orbits 55 . If the Sun were to collapse into a black hole, the
+are useful for communication and weather point of no return for an investigator would be
+observation because the satellite remains above approximately 3 km from the center singularity.
+the same point on Earth (provided it orbits in the Would the investigator be able to survive visiting
+equatorial plane in the same direction as Earth’s even 300 km from the center? Answer this by
+rotation). Calculate the radius of such an orbit finding the difference in the gravitational
+based on the data for Earth in Appendix D. attraction the black holes exerts on a 1.0-kg
+mass at the head and at the feet of the
+13.5 Kepler's Laws of Planetary Motion
+investigator.
+47 . Calculate the mass of the Sun based on data for
+56 . Consider Figure 13.23 in Tidal Forces. This
+average Earth’s orbit and compare the value
+diagram represents the tidal forces for spring
+obtained with the Sun’s commonly listed value
+tides. Sketch a similar diagram for neap tides.
+of .
+(Hint: For simplicity, imagine that the Sun and
+the Moon contribute equally. Your diagram
+
+650 13 • Chapter Review
+would be the vector sum of two force fields (as of 4 million solar masses?
+in Figure 13.23), reduced by a factor of two, and
+58 . What would be the Schwarzschild radius, in light
+superimposed at right angles.)
+years, if our Milky Way galaxy of 1 × 1011 stars
+13.7 Einstein's Theory of Gravity collapsed into a black hole? Compare this to our
+distance from the center, about 13,000 light
+57 . What is the Schwarzschild radius for the black
+years.
+hole at the center of our galaxy if it has the mass
+Additional Problems
+59 . A neutron star is a cold, collapsed star with 66 . Find the speed needed to escape from the solar
+nuclear density. A particular neutron star has a system starting from the surface of Earth.
+mass twice that of our Sun with a radius of 12.0 Assume there are no other bodies involved and
+km. (a) What would be the weight of a 100-kg do not account for the fact that Earth is moving
+astronaut on standing on its surface? (b) What in its orbit. [Hint: Equation 13.6 does not apply.
+does this tell us about landing on a neutron star? Use Equation 13.5 and include the potential
+energy of both Earth and the Sun.
+60 . (a) How far from the center of Earth would the
+net gravitational force of Earth and the Moon on 67 . Consider the previous problem and include the
+an object be zero? (b) Setting the magnitudes of fact that Earth has an orbital speed about the
+the forces equal should result in two answers Sun of 29.8 km/s. (a) What speed relative to
+from the quadratic. Do you understand why Earth would be needed and in what direction
+there are two positions, but only one where the should you leave Earth? (b) What will be the
+net force is zero? shape of the trajectory?
+61 . How far from the center of the Sun would the net 68 . A comet is observed 1.50 AU from the Sun with
+gravitational force of Earth and the Sun on a a speed of 24.3 km/s. Is this comet in a bound
+spaceship be zero? or unbound orbit?
+62 . Calculate the values of g at Earth’s surface for 69 . An asteroid has speed 15.5 km/s when it is
+the following changes in Earth’s properties: (a) located 2.00 AU from the sun. At its closest
+its mass is doubled and its radius is halved; (b) approach, it is 0.400 AU from the Sun. What is
+its mass density is doubled and its radius is its speed at that point?
+unchanged; (c) its mass density is halved and its
+70 . Space debris left from old satellites and their
+mass is unchanged.
+launchers is becoming a hazard to other
+63 . Suppose you can communicate with the satellites. (a) Calculate the speed of a satellite in
+inhabitants of a planet in another solar system. an orbit 900 km above Earth’s surface. (b)
+They tell you that on their planet, whose Suppose a loose rivet is in an orbit of the same
+diameter and mass are and radius that intersects the satellite’s orbit at an
+, respectively, the record for the angle of . What is the velocity of the rivet
+high jump is 2.0 m. Given that this record is relative to the satellite just before striking it? (c)
+close to 2.4 m on Earth, what would you If its mass is 0.500 g, and it comes to rest inside
+conclude about your extraterrestrial friends’ the satellite, how much energy in joules is
+jumping ability? generated by the collision? (Assume the
+satellite’s velocity does not change appreciably,
+64 . (a) Suppose that your measured weight at the
+because its mass is much greater than the
+equator is one-half your measured weight at the
+rivet’s.)
+pole on a planet whose mass and diameter are
+equal to those of Earth. What is the rotational 71 . A satellite of mass 1000 kg is in circular orbit
+period of the planet? (b) Would you need to take about Earth. The radius of the orbit of the
+the shape of this planet into account? satellite is equal to two times the radius of
+Earth. (a) How far away is the satellite? (b) Find
+65 . A body of mass 100 kg is weighed at the North
+the kinetic, potential, and total energies of the
+Pole and at the equator with a spring scale. What
+satellite.
+is the scale reading at these two points? Assume
+that at the pole. 72 . After Ceres was promoted to a dwarf planet, we
+Access for free at openstax.org
+
+13 • Chapter Review 651
+now recognize the largest known asteroid to be 77 . Show that for eccentricity equal to one in
+Vesta, with a mass of and a Equation 13.10 for conic sections, the path is a
+diameter ranging from 458 km to 578 km. parabola. Do this by substituting Cartesian
+Assuming that Vesta is spherical with radius 520 coordinates, x and y, for the polar coordinates, r
+km, find the approximate escape velocity from and , and showing that it has the general form
+its surface. for a parabola, .
+73 . (a) Given the asteroid Vesta which has a 78 . Using the technique shown in Satellite Orbits
+diameter of 520 km and mass of and Energy, show that two masses and in
+, what would be the orbital circular orbits about their common center of
+period for a space probe in a circular orbit of mass, will have total energy
+10.0 km from its surface? (b) Why is this .
+calculation marginally useful at best?
+We have shown the kinetic energy of both
+74 . What is the orbital velocity of our solar system masses explicitly. (Hint: The masses orbit at radii
+about the center of the Milky Way? Assume that and , respectively, where . Be
+the mass within a sphere of radius equal to our sure not to confuse the radius needed for
+distance away from the center is about a 1 × centripetal acceleration with that for the
+1011 solar masses. Our distance from the center gravitational force.)
+is 27,000 light years.
+79 . Given the perihelion distance, p, and aphelion
+75 . (a) Using the information in the previous distance, q, for an elliptical orbit, show that the
+problem, what velocity do you need to escape velocity at perihelion, , is given by
+the Milky Way galaxy from our present position?
+. (Hint: Use conservation of
+(b) Would you need to accelerate a spaceship to
+this speed relative to Earth? angular momentum to relate and , and
+then substitute into the conservation of energy
+76 . Circular orbits in Equation 13.10 for conic
+equation.)
+sections must have eccentricity zero. From this,
+and using Newton’s second law applied to 80 . Comet P/1999 R1 has a perihelion of 0.0570 AU
+centripetal acceleration, show that the value of and aphelion of 4.99 AU. Using the results of the
+in Equation 13.10 is given by previous problem, find its speed at aphelion.
+(Hint: The expression is for the perihelion. Use
+where L is the angular momentum of the orbiting
+symmetry to rewrite the expression for
+body. The value of is constant and given by this
+aphelion.)
+expression regardless of the type of orbit.
+Challenge Problems
+81 . A tunnel is dug through the center of a perfectly 83 . Show that the areal velocity for a circular orbit of
+spherical and airless planet of radius R. Using radius r about a mass M is .
+the expression for g derived in Gravitation Near
+Does your expression give the correct value for
+Earth’s Surface for a uniform density, show that
+Earth’s areal velocity about the Sun?
+a particle of mass m dropped in the tunnel will
+execute simple harmonic motion. Deduce the 84 . Show that the period of orbit for two masses,
+period of oscillation of m and show that it has and , in circular orbits of radii and ,
+the same period as an orbit at the surface. respectively, about their common center-of-
+mass, is given by
+82 . Following the technique used in Gravitation Near
+Earth’s Surface, find the value of g as a function . (Hint:
+of the radius r from the center of a spherical
+The masses orbit at radii and , respectively
+shell planet of constant density with inner and
+where . Use the expression for the
+outer radii and . Find g for both
+center-of-mass to relate the two radii and note
+and for . Assuming the
+that the two masses must have equal but
+inside of the shell is kept airless, describe travel
+opposite momenta. Start with the relationship of
+inside the spherical shell planet.
+the period to the circumference and speed of
+
+652 13 • Chapter Review
+orbit for one of the masses. Use the result of the a distance at the near and the far side of the
+previous problem using momenta in the object, due to the gravitation at a distance R
+expressions for the kinetic energy.) from M, is given by where
+85 . Show that for small changes in height h, such is the distance between the near and far side
+that , Equation 13.4 reduces to the and . (b) Assume you are falling feet
+expression . first into the black hole at the center of our
+galaxy. It has mass of 4 million solar masses.
+86 . Using Figure 13.9, carefully sketch a free body
+What would be the difference between the force
+diagram for the case of a simple pendulum
+at your head and your feet at the Schwarzschild
+hanging at latitude lambda, labeling all forces
+radius (event horizon)? Assume your feet and
+acting on the point mass, m. Set up the
+head each have mass 5.0 kg and are 2.0 m
+equations of motion for equilibrium, setting one
+apart. Would you survive passing through the
+coordinate in the direction of the centripetal
+event horizon?
+acceleration (toward P in the diagram), the other
+perpendicular to that. Show that the deflection 88 . Find the Hohmann transfer velocities,
+angle , defined as the angle between the and , needed for a
+pendulum string and the radial direction toward trip to Mars. Use Equation 13.7 to find the
+the center of Earth, is given by the expression circular orbital velocities for Earth and Mars.
+below. What is the deflection angle at latitude Using Equation 13.4 and the total energy of the
+45 degrees? Assume that Earth is a perfect ellipse (with semi-major axis a), given by
+sphere. , where is , find the velocities at Earth
+the angular velocity of Earth. (perihelion) and at Mars (aphelion) required to
+be on the transfer ellipse. The difference, , at
+87 . (a) Show that tidal force on a small object of
+each point is the velocity boost or transfer
+mass m, defined as the difference in the
+velocity needed.
+gravitational force that would be exerted on m at
+Access for free at openstax.org

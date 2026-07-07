@@ -1,0 +1,293 @@
+# REAL PDF — crowell_lm.pdf, pages 52-60
+############################################################
+
+o/Geometricalscalingofanimals.
+times more body mass will have only four times more surface area.
+This behavior of the ratio of surface area to mass (or, equiv-
+alently, the ratio of surface area to volume) has important conse-
+quences for mammals, which must maintain a constant body tem-
+perature. It would make sense for the rate of heat loss through the
+animal’s skin to be proportional to its surface area, so we should
+expect small animals, having large ratios of surface area to volume,
+toneedtoproduceagreatdealofheatincomparisontotheirsizeto
+avoid dying from low body temperature. This expectation is borne
+out by the data of the left-hand panel of figure p, showing the rate
+of oxygen consumption of guinea pigs as a function of their body
+mass. Neither an animal’s heat production nor its surface area is
+convenient to measure, but in order to produce heat, the animal
+must metabolize oxygen, so oxygen consumption is a good indicator
+of the rate of heat production. Since surface area is proportional to
+m2/3, theproportionalityoftherateofoxygenconsumptiontom2/3
+isconsistentwiththeideathattheanimalneedstoproduceheatata
+rate in proportion to its surface area. Although the smaller animals
+52 Chapter 1 Scaling and estimation
+
+p/Scalingofanimals’bodiesrelatedtometabolicrateandskeletalstrength.
+metabolize less oxygen and produce less heat in absolute terms, the
+amount of food and oxygen they must consume is greater in propor-
+tion to their own mass. The Etruscan pigmy shrew, weighing in at
+2 grams as an adult, is at about the lower size limit for mammals.
+It must eat continually, consuming many times its body weight each
+day to survive.
+Changes in shape to accommodate changes in size
+Large mammals, such as elephants, have a small ratio of surface
+area to volume, and have problems getting rid of their heat fast
+enough. An elephant cannot simply eat small enough amounts to
+keep from producing excessive heat, because cells need to have a
+certain minimum metabolic rate to run their internal machinery.
+Hence the elephant’s large ears, which add to its surface area and
+help it to cool itself. Previously, we have seen several examples
+of data within a given species that were consistent with a fixed
+shape,scaledupanddowninthecasesofindividualspecimens. The
+elephant’s ears are an example of a change in shape necessitated by
+a change in scale.
+Section 1.3 ? Scaling applied to biology 53
+
+Large animals also must be able to support their own weight.
+Returning to the example of the strengths of planks of di↵erent
+sizes, we can see that if the strength of the plank depends on area
+while its weight depends on volume, then the ratio of strength to
+weight goes as follows:
+strength/weight A/V 1/L.
+/ /
+Thus, the ability of objects to support their own weights decreases
+inversely in proportion to their linear dimensions. If an object is to
+be just barely able to support its own weight, then a larger version
+will have to be proportioned di↵erently, with a di↵erent shape.
+Since the data on the cockroaches seemed to be consistent with
+roughly similar shapes within the species, it appears that the abil-
+ity to support its own weight was not the tightest design constraint
+that Nature was working under when she designed them. For large
+animals, structural strength is important. Galileo was the first to
+quantify this reasoning and to explain why, for instance, a large an-
+imal must have bones that are thicker in proportion to their length.
+Consideraroughlycylindricalbonesuchasalegboneoravertebra.
+Thelengthofthebone, L, isdictatedbytheoveralllinearsizeofthe
+animal, since the animal’s skeleton must reach the animal’s whole
+length. We expect the animal’s mass to scale as L3, so the strength
+of the bone must also scale as L3. Strength is proportional to cross-
+sectional area, as with the wooden planks, so if the diameter of the
+bone is d, then
+q/Galileo’s original drawing,
+d2 L3
+showing how larger animals’
+/
+bones must be greater in diam-
+or
+eter compared to their lengths.
+d L3/2.
+/
+If the shape stayed the same regardless of size, then all linear di-
+mensions, including d and L, would be proportional to one another.
+If our reasoning holds, then the fact that d is proportional to L3/2,
+not L, implies a change in proportions of the bone. As shown in the
+right-hand panel of figure p, the vertebrae of African Bovidae follow
+the rule d L3/2 fairly well. The vertebrae of the giant eland are
+/
+as chunky as a co↵ee mug, while those of a Gunther’s dik-dik are as
+slender as the cap of a pen.
+Discussion questions
+A Single-celled animals must passively absorb nutrients and oxygen
+fromtheirsurroundings,unlikehumanswhohavelungstopumpairinand
+outandahearttodistributetheoxygenatedbloodthroughouttheirbodies.
+Eventhecellscomposingthebodiesofmulticellularanimalsmustabsorb
+oxygen from a nearby capillary through their surfaces. Based on these
+facts,explainwhycellsarealwaysmicroscopicinsize.
+B The reasoning of the previous question would seem to be contra-
+dicted by the fact that human nerve cells in the spinal cord can be as
+much as a meter long, although their widths are still very small. Why is
+thispossible?
+54 Chapter 1 Scaling and estimation
+
+1.4 Order-of-magnitude estimates
+It is the mark of an instructed mind to rest satisfied with the
+degreeofprecisionthatthenatureofthesubjectpermitsand
+nottoseekanexactnesswhereonlyanapproximationofthe
+truth is possible.
+Aristotle
+It is a common misconception that science must be exact. For
+instance, in the Star Trek TV series, it would often happen that
+Captain Kirk would ask Mr. Spock, “Spock, we’re in a pretty bad
+situation. What do you think are our chances of getting out of
+here?” The scientific Mr. Spock would answer with something like,
+“Captain, I estimate the odds as 237.345 to one.” In reality, he
+could not have estimated the odds with six significant figures of
+accuracy, but nevertheless one of the hallmarks of a person with a
+good education in science is the ability to make estimates that are
+likely to be at least somewhere in the right ballpark. In many such
+situations,itisoftenonlynecessarytogetananswerthatiso↵byno
+more than a factor of ten in either direction. Since things that di↵er
+by a factor of ten are said to di↵er by one order of magnitude, such
+an estimate is called an order-of-magnitude estimate. The tilde,
+, is used to indicate that things are only of the same order of
+⇠
+magnitude, but not exactly equal, as in
+odds of survival 100 to one.
+⇠
+The tilde can also be used in front of an individual number to em-
+phasize that the number is only of the right order of magnitude.
+Althoughmakingorder-of-magnitudeestimatesseemssimpleand
+natural to experienced scientists, it’s a mode of reasoning that is
+completely unfamiliar to most college students. Some of the typical
+mental steps can be illustrated in the following example.
+Cost of transporting tomatoes (incorrect solution) example 4
+. Roughly what percentage of the price of a tomato comes from
+the cost of transporting it in a truck?
+.Thefollowingincorrectsolutionillustratesoneofthemainways
+you can go wrong in order-of-magnitude estimates.
+Incorrect solution: Let’s say the trucker needs to make a $400
+profitonthetrip. Takingintoaccountherbenefits,thecostofgas,
+and maintenance and payments on the truck, let’s say the total
+cost is more like $2000. I’d guess about 5000 tomatoes would fit
+in the back of the truck, so the extra cost per tomato is 40 cents.
+Thatmeansthecostoftransportingonetomatoiscomparableto
+thecostofthetomatoitself. Transportationreallyaddsalottothe
+cost of produce, I guess.
+The problem is that the human brain is not very good at esti-
+matingareaorvolume,soitturnsouttheestimateof5000tomatoes
+Section 1.4 Order-of-magnitude estimates 55
+
+fitting in the truck is way o↵. That’s why people have a hard time
+at those contests where you are supposed to estimate the number of
+jellybeans in a big jar. Another example is that most people think
+their families use about 10 gallons of water per day, but in reality
+the average is about 300 gallons per day. When estimating area
+or volume, you are much better o↵ estimating linear dimensions,
+and computing volume from the linear dimensions. Here’s a better
+solution to the problem about the tomato truck:
+Cost of transporting tomatoes (correct solution) example 5
+As in the previous solution, say the cost of the trip is $2000. The
+dimensions of the bin are probably 4 m 2 m 1 m, for a vol-
+⇥ ⇥
+ume of 8 m3. Since the whole thing is just an order-of-magnitude
+estimate, let’s round that off to the nearest power of ten, 10 m3.
+The shape of a tomato is complicated, and I don’t know any for-
+mula for the volume of a tomato shape, but since this is just an
+r/Can you guess how many estimate,let’spretendthatatomatoisacube,0.05m 0.05m
+⇥ ⇥
+jelly beans are in the jar? If you 0.05m,foravolumeof1.25 10 4 m3. Sincethisisjustarough
+ 
+⇥
+try to guess directly, you will estimate, let’s round that to 10 4m3. We can find the total num-
+ 
+almost certainly underestimate.
+ber of tomatoes by dividing the volume of the bin by the volume
+The right way to do it is to esti- of one tomato: 10 m3/10 4 m3 = 105 tomatoes. The transporta-
+ 
+mate the linear dimensions, then
+tion cost per tomato is $2000/105 tomatoes=$0.02/tomato. That
+get the volume indirectly. See
+means that transportation really doesn’t contribute very much to
+problem26,p.62.
+the cost of a tomato.
+Approximating the shape of a tomato as a cube is an example of
+another general strategy for making order-of-magnitude estimates.
+A similar situation would occur if you were trying to estimate how
+many m2 of leather could be produced from a herd of ten thousand
+cattle. There is no point in trying to take into account the shape of
+the cows’ bodies. A reasonable plan of attack might be to consider
+a spherical cow. Probably a cow has roughly the same surface area
+as a sphere with a radius of about 1 m, which would be 4⇡(1 m)2.
+Usingthewell-knownfactsthatpiequalsthree,andfourtimesthree
+equalsaboutten,wecanguessthatacowhasasurfaceareaofabout
+10 m2, so the herd as a whole might yield 105 m2 of leather.
+Estimating mass indirectly example 6
+Usually the best way to estimate mass is to estimate linear di-
+mensions, then use those to infer volume, and then get the mass
+s/Consider a spherical cow. based on the volume. For example, Amphicoelias, shown in the
+figure,mayhavebeenthelargestlandanimalevertolive. Fossils
+tell us the linear dimensions of an animal, but we can only indi-
+rectly guess its mass. Given the length scale in the figure, let’s
+estimate the mass of an Amphicoelias.
+Its torso looks like it can be approximated by a rectangular box
+withdimensions10m 5m 3m,givingabout2 102 m3. Living
+⇥ ⇥ ⇥
+things are mostly made of water, so we assume the animal to
+havethedensityofwater,1g/cm3,whichconvertsto103 kg/m3.
+56 Chapter 1 Scaling and estimation
+
+This gives a mass of about 2 105 kg, or 200 metric tons.
+⇥
+The following list summarizes the strategies for getting a good
+order-of-magnitude estimate.
+1. Don’t even attempt more than one significant figure of preci-
+sion.
+2. Don’t guess area, volume, or mass directly. Guess linear di-
+mensions and get area, volume, or mass from them.
+3. When dealing with areas or volumes of objects with complex
+shapes, idealize them as if they were some simpler shape, a
+cube or a sphere, for example.
+4. Check your final answer to see if it is reasonable. If you esti-
+mate that a herd of ten thousand cattle would yield 0.01 m2
+of leather, then you have probably made a mistake with con-
+version factors somewhere.
+Section 1.4 Order-of-magnitude estimates 57
+
+Summary
+Notation
+. . . . . . . . . is proportional to
+/
+. . . . . . . . . on the order of, is on the order of
+⇠
+Summary
+Nature behaves di↵erently on large and small scales. Galileo
+showed that this results fundamentally from the way area and vol-
+ume scale. Area scales as the second power of length, A L2, while
+/
+volume scales as length to the third power, V L3.
+/
+An order of magnitude estimate is one in which we do not at-
+tempt or expect an exact answer. The main reason why the unini-
+tiated have trouble with order-of-magnitude estimates is that the
+human brain does not intuitively make accurate estimates of area
+and volume. Estimates of area and volume should be approached
+by first estimating linear dimensions, which one’s brain has a feel
+for.
+58 Chapter 1 Scaling and estimation
+
+Problems
+Key
+p A computerized answer check is available online.
+A problem that requires calculus.
+? A di cult problem.
+R
+1 How many cubic inches are there in a cubic foot? The answer
+is not 12. p
+2 Assume a dog’s brain is twice as great in diameter as a cat’s,
+but each animal’s brain cells are the same size and their brains are
+the same shape. In addition to being a far better companion and
+much nicer to come home to, how many times more brain cells does
+a dog have than a cat? The answer is not 2.
+3 ThepopulationdensityofLosAngelesisabout4000people/km2.
+That of San Francisco is about 6000 people/km2. How many times
+farther away is the average person’s nearest neighbor in LA than in
+San Francisco? The answer is not 1.5. p
+4 A hunting dog’s nose has about 10 square inches of active
+surface. How is this possible, since the dog’s nose is only about 1 in
+1 in 1 in = 1 in3? After all, 10 is greater than 1, so how can it
+⇥ ⇥
+fit?
+5 Estimate the number of blades of grass on a football field.
+6 In a computer memory chip, each bit of information (a 0 or
+a 1) is stored in a single tiny circuit etched onto the surface of a
+silicon chip. The circuits cover the surface of the chip like lots in a
+housing development. A typical chip stores 64 Mb (megabytes) of
+data, where a byte is 8 bits. Estimate (a) the area of each circuit,
+and (b) its linear size.
+7 Suppose someone built a gigantic apartment building, mea-
+suring 10 km 10 km at the base. Estimate how tall the building
+⇥
+wouldhavetobetohavespaceinitfortheentireworld’spopulation
+to live.
+8 A hamburger chain advertises that it has sold 10 billion Bongo
+Burgers. Estimate the total mass of feed required to raise the cows
+used to make the burgers.
+9 Estimate the volume of a human body, in cm3.
+10 How many cm2 is 1 mm2? . Solution, p. 534
+11 Compare the light-gathering powers of a 3-cm-diameter tele-
+scope and a 30-cm telescope. . Solution, p. 534
+12 One step on the Richter scale corresponds to a factor of 100
+in terms of the energy absorbed by something on the surface of the
+Earth, e.g., a house. For instance, a 9.3-magnitude quake would
+release 100 times more energy than an 8.3. The energy spreads out
+Problems 59

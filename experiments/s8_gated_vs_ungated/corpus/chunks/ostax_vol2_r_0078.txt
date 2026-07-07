@@ -1,0 +1,230 @@
+# REAL PDF — openstax_vol2.pdf, pages 486-491
+############################################################
+
+476 Chapter 10 | Direct-Current Circuits
+R is too large, the wires overheat. Fuses and circuit breakers are used to limit excessive currents.
+W
+Shock Hazards
+Electricshockisthephysiologicalreactionorinjurycausedbyanexternalelectriccurrentpassingthroughthebody.The
+effectofanelectricshockcanbenegativeorpositive.Whenacurrentwithamagnitudeabove300mApassesthroughthe
+heart,deathmayoccur.Mostelectricalshockfatalitiesoccurbecauseacurrentcausesventricularfibrillation,amassively
+irregularandoftenfatal,beatingoftheheart.Ontheotherhand,aheartattackvictim,whoseheartisinfibrillation,canbe
+saved by an electric shock from a defibrillator.
+The effects of an undesirable electric shock can vary in severity: a slight sensation at the point of contact, pain, loss of
+voluntarymusclecontrol,difficultybreathing,heartfibrillation,andpossiblydeath.Thelossofvoluntarymusclecontrol
+can cause the victim to not be able to let go of the source of the current.
+The major factors upon which the severity of the effects of electrical shock depend are
+1. The amount of currentI
+2. The path taken by the current
+3. The duration of the shock
+4. The frequencyfof the current ( f =0 for dc)
+Ourbodiesarerelativelygoodelectricconductorsduetothebody’swatercontent.Adangerousconditionoccurswhenthe
+bodyisincontactwithavoltagesourceand“ground.”Theterm“ground”referstoalargesinkorsourceofelectrons,for
+example,theearth(thus,thename).Whenthereisadirectpathtoground,largecurrentswillpassthroughthepartsofthe
+bodywiththelowestresistanceandadirectpathtoground.Asafetyprecautionusedbymanyprofessionsisthewearingof
+insulatedshoes.Insulatedshoesprohibitapathwaytogroundforelectronsthroughthefeetbyprovidingalargeresistance.
+Wheneverworkingwithhigh-powertools,oranyelectriccircuit,ensurethatyoudonotprovideapathwayforcurrentflow
+(especiallyacrosstheheart).Acommonsafetyprecautionistoworkwithonehand,reducingthepossibilityofprovidinga
+current path through the heart.
+Verysmallcurrentspassharmlesslyandunfeltthroughthebody.Thishappenstoyouregularlywithoutyourknowledge.
+The threshold of sensation is only 1 mA and, although unpleasant, shocks are apparently harmless for currents less than
+5 mA. A great number of safety rules take the 5-mA value for the maximum allowed shock. At 5–30 mA and above,
+thecurrentcanstimulatesustainedmuscularcontractions,muchasregularnerveimpulsesdo(Figure 10.42).Verylarge
+currents(above300mA)causetheheartanddiaphragmofthelungtocontractforthedurationoftheshock.Boththeheart
+and respiration stop. Both often return to normal following the shock.
+Figure 10.42 An electric current can cause muscular contractions with varying effects. (a) The
+victim is “thrown” backward by involuntary muscle contractions that extend the legs and torso.
+(b) The victim can’t let go of the wire that is stimulating all the muscles in the hand. Those that
+close the fingers are stronger than those that open them.
+Currentisthemajorfactordeterminingshockseverity.Alargervoltageismorehazardous,butsince I =V/R, theseverity
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 477
+oftheshockdependsonthecombinationofvoltageandresistance.Forexample,apersonwithdryskinhasaresistanceof
+about 200kΩ. If he comes into contact with 120-V ac, a current
+I =(120V)/(200kΩ)=0.6mA
+passesharmlesslythroughhim.Thesamepersonsoakingwetmayhavearesistanceof 10.0kΩ andthesame120Vwill
+produce a current of 12 mA—above the “can’t let go” threshold and potentially dangerous.
+Electrical Safety: Systems and Devices
+Figure10.43(a)showstheschematicforasimpleaccircuitwithnosafetyfeatures.Thisisnothowpowerisdistributedin
+practice.Modernhouseholdandindustrialwiringrequiresthethree-wiresystem,shownschematicallyinpart(b),which
+has several safety features, with live, neutral, and ground wires. First is the familiar circuit breaker (or fuse) to prevent
+thermaloverload.Secondisaprotectivecasearoundtheappliance,suchasatoasterorrefrigerator.Thecase’ssafetyfeature
+isthatitpreventsapersonfromtouchingexposedwiresandcomingintoelectricalcontactwiththecircuit,helpingprevent
+shocks.
+Figure 10.43 (a) Schematic of a simple ac circuit with a voltage source and a
+single appliance represented by the resistanceR. There are no safety features in this
+circuit. (b) The three-wire system connects the neutral wire to ground at the voltage
+source and user location, forcing it to be at zero volts and supplying an alternative
+return path for the current through ground. Also grounded to zero volts is the case of
+the appliance. A circuit breaker or fuse protects against thermal overload and is in
+series on the active (live/hot) wire.
+TherearethreeconnectionstogroundshowninFigure10.43(b).Recallthatagroundconnectionisalow-resistancepath
+directlytoground.Thetwogroundconnectionsontheneutralwireforceittobeatzerovoltsrelativetoground,givingthe
+wireitsname.Thiswireisthereforesafetotouchevenifitsinsulation,usuallywhite,ismissing.Theneutralwireisthe
+returnpathforthecurrenttofollowtocompletethecircuit.Furthermore,thetwogroundconnectionssupplyanalternative
+paththroughground(agoodconductor)tocompletethecircuit.Thegroundconnectionclosesttothepowersourcecouldbe
+atthegeneratingplant,whereastheotherisattheuser’slocation.Thethirdgroundistothecaseoftheappliance,through
+the green ground wire, forcing the case, too, to be at zero volts. The live or hot wire (hereafter referred to as “live/hot”)
+suppliesvoltageandcurrenttooperatetheappliance.Figure10.44showsamorepictorialversionofhowthethree-wire
+system is connected through a three-prong plug to an appliance.
+
+478 Chapter 10 | Direct-Current Circuits
+Figure 10.44 The standard three-prong plug can only be inserted in one
+way, to ensure proper function of the three-wire system.
+Insulatingplasticiscolor-codedtoidentifylive/hot,neutral,andgroundwires,butthesecodesvaryaroundtheworld.Itis
+essentialtodeterminethecolorcodeinyourregion.Stripedcoatingsaresometimesusedforthebenefitofthosewhoare
+colorblind.
+Grounding the case solves more than one problem. The simplest problem is worn insulation on the live/hot wire that
+allowsittocontactthecase,asshowninFigure 10.45.Lackingagroundconnection,asevereshockispossible.Thisis
+particularlydangerousinthekitchen,whereagoodconnectiontogroundisavailablethroughwateronthefloororawater
+faucet. With the ground connection intact, the circuit breaker will trip, forcing repair of the appliance.
+Figure 10.45 Worn insulation allows the live/hot wire to come into direct contact with the metal case of this appliance. (a)
+The ground connection being broken, the person is severely shocked. The appliance may operate normally in this situation. (b)
+With a proper ground, the circuit breaker trips, forcing repair of the appliance.
+Agroundfaultcircuitinterrupter(GFCI)isasafetydevicefoundinupdatedkitchenandbathroomwiringthatworksbased
+on electromagnetic induction. GFCIs compare the currents in the live/hot and neutral wires. When live/hot and neutral
+currents are not equal, it is almost always because current in the neutral is less than in the live/hot wire. Then some of
+thecurrent,calledaleakagecurrent,isreturningtothevoltagesourcebyapathotherthanthroughtheneutralwire.Itis
+assumedthatthispathpresentsahazard.GFCIsareusuallysettointerruptthecircuitiftheleakagecurrentisgreaterthan
+5mA,theacceptedmaximumharmlessshock.Eveniftheleakagecurrentgoessafelytogroundthroughanintactground
+wire, the GFCI will trip, forcing repair of the leakage.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 479
+CHAPTER 10 REVIEW
+KEY TERMS
+ammeter instrument that measures current
+electromotive force (emf) energy produced per unit charge, drawn from a source that produces an electrical current
+equivalent resistance resistanceofacombinationofresistors;itcanbethoughtofastheresistanceofasingleresistor
+that can replace a combination of resistors in a series and/or parallel circuit
+internal resistance amount of resistance to the flow of current within the voltage source
+junction rule sum of all currents entering a junction must equal the sum of all currents leaving the junction
+Kirchhoff’s rules set of two rules governing current and changes in potential in an electric circuit
+loop rule algebraic sum of changes in potential around any closed circuit path (loop) must be zero
+potential difference difference in electric potential between two points in an electric circuit, measured in volts
+potential drop loss of electric potential energy as a current travels across a resistor, wire, or other component
+RCcircuit circuit that contains both a resistor and a capacitor
+shock hazard hazard in which an electric current passes through a person
+terminal voltage potential difference measured across the terminals of a source when there is no load attached
+thermal hazard hazard in which an excessive electric current causes undesired thermal effects
+three-wire system wiring system used at present for safety reasons, with live, neutral, and ground wires
+voltmeter instrument that measures voltage
+KEY EQUATIONS
+Terminal voltage of a single voltage source V
+terminal
+=ε−Ir
+eq
+Equivalent resistance of a series circuit N
+R eq=R 1 +R 2 +R 3 +⋯+R N−1 +R N = ∑ R i
+i=1
+Equivalent resistance of a parallel circuit −1 ⎛ N ⎞ −1
+⎛ ⎞
+R eq=
+⎝R
+1
+1
++
+R
+1
+2
++⋯+
+R
+1
+N ⎠
+=
+⎝
+⎜
+i
+∑
+=1 R
+1
+i⎠
+⎟
+Junction rule
+∑I =∑I
+in out
+Loop rule
+∑V =0
+Terminal voltage ofNvoltage sources in series N N N
+V terminal = ∑ ε i−I∑ r i= ∑ ε i−Ir eq
+i=1 i=1 i=1
+Terminal voltage ofNvoltage sources in parallel N −1
+V
+terminal
+=ε−I∑ ⎛
+⎝r
+1
+i
+⎞
+⎠
+=ε−Ir
+eq
+i=1
+Charge on a charging capacitor q(t)=Cε ⎛ ⎜1−e − R t C ⎞ ⎟=Q ⎛ 1−e −τ t⎞
+⎝ ⎠
+⎝ ⎠
+Time constant τ=RC
+
+480 Chapter 10 | Direct-Current Circuits
+Current during charging of a capacitor t t
+I = R ε e − RC =I o e − RC
+Charge on a discharging capacitor t
+q(t)=Qe
+−τ
+Current during discharging of a capacitor
+I(t)= −
+Q
+e
+−τ t
+RC
+SUMMARY
+10.1Electromotive Force
+• Allvoltagesourceshavetwofundamentalparts:asourceofelectricalenergythathasacharacteristicelectromotive
+force(emf),andaninternalresistancer.Theemfistheworkdoneperchargetokeepthepotentialdifferenceofa
+sourceconstant.Theemfisequaltothepotentialdifferenceacrosstheterminalswhennocurrentisflowing.The
+internal resistancerof a voltage source affects the output voltage when a current flows.
+• Thevoltageoutputofadeviceiscalleditsterminalvoltage V andisgivenby V =ε−Ir,whereI
+terminal terminal
+istheelectriccurrentandispositivewhenflowingawayfromthepositiveterminalofthevoltagesourceandris
+the internal resistance.
+10.2Resistors in Series and Parallel
+• The equivalent resistance of an electrical circuit with resistors wired in a series is the sum of the individual
+N
+resistances: R s=R 1 +R 2 +R 3 +⋯= ∑ R i .
+i=1
+• Each resistor in a series circuit has the same amount of current flowing through it.
+• Thepotentialdrop,orpowerdissipation,acrosseachindividualresistorinaseriesisdifferent,andtheircombined
+total is the power source input.
+• Theequivalentresistanceofanelectricalcircuitwithresistorswiredinparallelislessthanthelowestresistanceof
+any of the components and can be determined using the formula
+−1 ⎛ N ⎞ −1
+⎛ ⎞
+R eq=
+⎝R
+1 +
+R
+1 +
+R
+1 +⋯
+⎠
+=⎜∑
+R
+1⎟ .
+1 2 3 ⎝i=1 i⎠
+• Each resistor in a parallel circuit has the same full voltage of the source applied to it.
+• The current flowing through each resistor in a parallel circuit is different, depending on the resistance.
+• If a more complex connection of resistors is a combination of series and parallel, it can be reduced to a single
+equivalent resistance by identifying its various parts as series or parallel, reducing each to its equivalent, and
+continuing until a single resistance is eventually reached.
+10.3Kirchhoff's Rules
+• Kirchhoff’srulescanbeusedtoanalyzeanycircuit,simpleorcomplex.Thesimplerseriesandparallelconnection
+rules are special cases of Kirchhoff’s rules.
+• Kirchhoff’s first rule, also known as the junction rule, applies to the charge to a junction. Current is the flow of
+charge; thus, whatever charge flows into the junction must flow out.
+• Kirchhoff’s second rule, also known as the loop rule, states that the voltage drop around a loop is zero.
+• When calculating potential and current using Kirchhoff’s rules, a set of conventions must be followed for
+determining the correct signs of various terms.
+• Whenmultiplevoltagesourcesareinseries,theirinternalresistancesaddtogetherandtheiremfsaddtogetherto
+get the total values.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

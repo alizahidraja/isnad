@@ -1,0 +1,217 @@
+# REAL PDF — openstax_vol2.pdf, pages 427-432
+############################################################
+
+Chapter 9 | Current and Resistance 417
+quite cold, it is near the boiling point of liquid nitrogen, a liquid commonly used in refrigeration. You may have noticed
+refrigerated trucks traveling down the highway labeled as “Liquid Nitrogen Cooled.”
+YBCOceramicisamaterialthatcouldbeusefulfortransmittingelectricalenergybecausethecostsavingofreducingthe
+I2R losses are larger than the cost of cooling the superconducting cable, making it financially feasible. There were and
+aremanyengineeringproblemstoovercome.Forexample,unliketraditionalelectricalcables,whichareflexibleandhave
+adecenttensilestrength,ceramicsarebrittleandwouldbreakratherthanstretchunderpressure.Processesthatarerather
+simplewithtraditionalcables,suchasmakingconnections,becomedifficultwhenworkingwithceramics.Theproblems
+are difficult and complex, and material scientists and engineers are coming up with innovative solutions.
+Aninterestingconsequenceoftheresistancegoingtozeroisthatonceacurrentisestablishedinasuperconductor,itpersists
+without an applied voltage source. Current loops in a superconductor have been set up and the current loops have been
+observed to persist for years without decaying.
+Zero resistance is not the only interesting phenomenon that occurs as the materials reach their transition temperatures. A
+secondeffectistheexclusionofmagneticfields.ThisisknownastheMeissnereffect(Figure9.28).Alight,permanent
+magnet placed over a superconducting sample will levitate in a stable position above the superconductor. High-speed
+trainshavebeendevelopedthatlevitateonstrongsuperconductingmagnets,eliminatingthefrictionnormallyexperienced
+between the train and the tracks. In Japan, the Yamanashi Maglev test line opened on April 3, 1997. In April 2015, the
+MLX01 test vehicle attained a speed of 374 mph (603 km/h).
+Figure 9.28 A small, strong magnet levitates over a
+superconductor cooled to liquid nitrogen temperature. The
+magnet levitates because the superconductor excludes magnetic
+fields. (credit: Joseph J. Trout)
+Table 9.3 shows a select list of elements, compounds, and high-temperature superconductors, along with the critical
+temperatures for which they become superconducting. Each section is sorted from the highest critical temperature to the
+lowest. Also listed is the critical magnetic field for some of the materials. This is the strength of the magnetic field that
+destroys superconductivity. Finally, the type of the superconductor is listed.
+Therearetwotypesofsuperconductors.Thereare30puremetalsthatexhibitzeroresistivitybelowtheircriticaltemperature
+and exhibit the Meissner effect, the property of excluding magnetic fields from the interior of the superconductor while
+the superconductor is at a temperature below the critical temperature. These metals are called Type I superconductors.
+The superconductivity exists only below their critical temperatures and below a critical magnetic field strength. Type I
+superconductors are well described by the BCS theory (described next). Type I superconductors have limited practical
+applications because the strength of the critical magnetic field needed to destroy the superconductivity is quite low.
+TypeIIsuperconductorsarefoundtohavemuchhighercriticalmagneticfieldsandthereforecancarrymuchhighercurrent
+densities while remaining in the superconducting state. A collection of various ceramics containing barium-copper-oxide
+havemuchhighercriticaltemperaturesforthetransitionintoasuperconductingstate.Superconductingmaterialsthatbelong
+to this subcategory of the Type II superconductors are often categorized as high-temperature superconductors.
+Introduction to BCS Theory
+TypeIsuperconductors,alongwithsomeTypeIIsuperconductorscanbemodeledusingtheBCStheory,proposedbyJohn
+Bardeen, Leon Cooper, and Robert Schrieffer. Although the theory is beyond the scope of this chapter, a short summary
+of the theory is provided here. (More detail is provided in Condensed Matter Physics (http://cnx.org/content/
+m58591/latest/) .) The theory considers pairs of electrons and how they are coupled together through lattice-vibration
+interactions.Throughtheinteractionswiththecrystallinelattice,electronsneartheFermienergylevelfeelasmallattractive
+
+418 Chapter 9 | Current and Resistance
+force and form pairs ( Cooper pairs), and the coupling is known as a phonon interaction. Single electrons are fermions,
+which are particles that obey the Pauli exclusion principle. The Pauli exclusion principle in quantum mechanics states
+that twoidentical fermions (particles withhalf-integer spin)cannot occupythesame quantum state simultaneously.Each
+electronhasfourquantumnumbers (n, l, m l, m s).Theprincipalquantumnumber(n)describestheenergyoftheelectron,
+the orbital angular momentum quantum number (l) indicates the most probable distance from the nucleus, the magnetic
+quantumnumber (m l) describestheenergylevelsinthesubshell,andtheelectronspinquantumnumber (m s) describes
+the orientation of the spin of the electron, either up or down. As the material enters a superconducting state, pairs of
+electrons act more like bosons, which can condense into the same energy level and need not obey the Pauli exclusion
+principle. The electron pairs have a slightly lower energy and leave an energy gap above them on the order of 0.001 eV.
+This energy gap inhibits collision interactions that lead to ordinary resistivity. When the material is below the critical
+temperature, the thermal energy is less than the band gap and the material exhibits zero resistivity.
+Material Symbol or Formula Critical Temperature Critical Type
+T (K) Magnetic Field
+c
+H (T)
+c
+Elements
+Lead Pb 7.19 0.08 I
+Lanthanum La (α) 4.90 − (β) 6.30 I
+Tantalum Ta 4.48 0.09 I
+Mercury Hg (α) 4.15 − (β) 3.95 0.04 I
+Tin Sn 3.72 0.03 I
+Indium In 3.40 0.03 I
+Thallium Tl 2.39 0.03 I
+Rhenium Re 2.40 0.03 I
+Thorium Th 1.37 0.013 I
+Protactinium Pa 1.40 I
+Aluminum Al 1.20 0.01 I
+Gallium Ga 1.10 0.005 I
+Zinc Zn 0.86 0.014 I
+Titanium Ti 0.39 0.01 I
+Uranium U (α) 0.68 − (β) 1.80 I
+Cadmium Cd 11.4 4.00 I
+Compounds
+Niobium-germanium Nb Ge 23.20 37.00 II
+3
+Niobium-tin Nb Sn 18.30 30.00 II
+3
+Niobium-nitrite NbN 16.00 II
+Niobium-titanium NbTi 10.00 15.00 II
+High-Temperature Oxides
+HgBa CaCu O 134.00 II
+2 2 8
+Tl Ba Ca Cu O 125.00 II
+2 2 2 3 10
+YBa Cu O 92.00 120.00 II
+2 3 7
+Table 9.3Superconductor Critical Temperatures
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 419
+Applications of Superconductors
+Superconductors can be used to make superconducting magnets. These magnets are 10 times stronger than the strongest
+electromagnets. These magnets are currently in use in magnetic resonance imaging (MRI), which produces high-quality
+images of the body interior without dangerous radiation.
+Another interesting application of superconductivity is the SQUID (superconducting quantum interference device). A
+SQUIDisaverysensitivemagnetometerusedtomeasureextremelysubtlemagneticfields.TheoperationoftheSQUID
+is based on superconducting loops containing Josephson junctions. A Josephson junction is the result of a theoretical
+predictionmadebyB.D.Josephsoninanarticlepublishedin1962.Inthearticle,Josephsondescribedhowasupercurrent
+canflowbetweentwopiecesofsuperconductorseparatedbyathinlayerofinsulator.Thisphenomenonisnowcalledthe
+Josephsoneffect.TheSQUIDconsistsofasuperconductingcurrentloopcontainingtwoJosephsonjunctions,asshownin
+Figure 9.29.Whentheloopisplacedinevenaveryweakmagneticfield,thereisaninterferenceeffectthatdependson
+the strength of the magnetic field.
+Figure 9.29 The SQUID (superconducting quantum interference
+device) uses a superconducting current loop and two Josephson
+junctions to detect magnetic fields as low as 10−14 T (Earth’s
+magnet field is on the order of 0.3×10 −5 T).
+Superconductivityisafascinatingandusefulphenomenon.Atcriticaltemperaturesneartheboilingpointofliquidnitrogen,
+superconductivityhasspecialapplicationsinMRIs,particleaccelerators,andhigh-speedtrains.Willwereachastatewhere
+wecanhavematerialsenterthesuperconductingphaseatnearroomtemperatures?Itseemsalongwayoff,butifscientists
+in 1911 were asked if we would reach liquid-nitrogen temperatures with a ceramic, they might have thought it implausible.
+
+420 Chapter 9 | Current and Resistance
+CHAPTER 9 REVIEW
+KEY TERMS
+ampere (amp) SI unit for current; 1A=1C/s
+circuit complete path that an electrical current travels along
+conventional current currentthatflowsthroughacircuitfromthepositiveterminalofabatterythroughthecircuitto
+the negative terminal of the battery
+critical temperature temperature at which a material reaches superconductivity
+current density flow of charge through a cross-sectional area divided by the area
+diode nonohmic circuit device that allows current flow in only one direction
+drift velocity velocity of a charge as it moves nearly randomly through a conductor, experiencing multiple collisions,
+averagedoveralengthofaconductor,whosemagnitudeisthelengthofconductortraveleddividedbythetimeit
+takes for the charges to travel the length
+electrical conductivity measure of a material’s ability to conduct or transmit electricity
+electrical current dQ
+rate at which charge flows, I =
+dt
+electrical power time rate of change of energy in an electric circuit
+Josephson junction junction of two pieces of superconducting material separated by a thin layer of insulating
+material, which can carry a supercurrent
+Meissner effect phenomenon that occurs in a superconducting material where all magnetic fields are expelled
+nonohmic type of a material for which Ohm’s law is not valid
+ohm (Ω) unit of electrical resistance, 1Ω =1V/A
+ohmic typeofamaterialforwhichOhm’slawisvalid,thatis,thevoltagedropacrossthedeviceisequaltothecurrent
+times the resistance
+Ohm’s law empiricalrelationstatingthatthecurrentIisproportionaltothepotentialdifferenceV;itisoftenwrittenas
+V =IR, whereRis the resistance
+resistance electric property that impedes current; for ohmic materials, it is the ratio of voltage to current, R=V/I
+resistivity intrinsic property of a material, independent of its shape or size, directly proportional to the resistance,
+denoted by ρ
+schematic graphicalrepresentationofacircuitusingstandardizedsymbolsforcomponentsandsolidlinesforthewire
+connecting the components
+SQUID (SuperconductingQuantumInterferenceDevice)devicethatisaverysensitivemagnetometer,usedtomeasure
+extremely subtle magnetic fields
+superconductivity phenomenon that occurs in some materials where the resistance goes to exactly zero and all
+magnetic fields are expelled, which occurs dramatically at some low critical temperature ⎛T ⎞
+⎝ C⎠
+KEY EQUATIONS
+Average electrical current ΔQ
+I ave = Δt
+Definition of an ampere 1A=1C/s
+Electrical current dQ
+I =
+dt
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 421
+Drift velocity I
+v d=
+nqA
+Current density → →
+I = ∬ J ·d A
+area
+Resistivity E
+ρ=
+J
+Common expression of Ohm’s law V =IR
+Resistivity as a function of temperature ρ= ρ ⎡1+α⎛T−T ⎞⎤
+0⎣ ⎝ 0⎠⎦
+Definition of resistance V
+R≡
+I
+Resistance of a cylinder of material L
+R= ρ
+A
+Temperature dependence of resistance R=R (1+αΔT)
+0
+Electric power P=IV
+Power dissipated by a resistor
+P=I2R=
+V2
+R
+SUMMARY
+9.1Electrical Current
+ΔQ
+• The average electrical current I ave is the rate at which charge flows, given by I ave = Δt , where ΔQ is the
+amount of charge passing through an area in time Δt.
+• Theinstantaneouselectricalcurrent,orsimplythecurrentI,istherateatwhichchargeflows.Takingthelimitas
+dQ dQ
+the change in time approaches zero, we have I = , where is the time derivative of the charge.
+dt dt
+• Thedirectionofconventionalcurrentistakenasthedirectioninwhichpositivechargemoves.Inasimpledirect-
+current (DC) circuit, this will be from the positive terminal of the battery to the negative terminal.
+• The SI unit for current is the ampere, or simply the amp (A), where 1A=1C/s.
+• Current consists of the flow of free charges, such as electrons, protons, and ions.
+9.2Model of Conduction in Metals
+• The current through a conductor depends mainly on the motion of free electrons.
+• Whenanelectricalfieldisappliedtoaconductor,thefreeelectronsinaconductordonotmovethroughaconductor
+ataconstantspeedanddirection;instead,themotionisalmostrandomduetocollisionswithatomsandotherfree
+electrons.
+• Eventhoughtheelectronsmoveinanearlyrandomfashion,whenanelectricalfieldisappliedtotheconductor,the
+overall velocity of the electrons can be defined in terms of a drift velocity.
+• The current density is a vector quantity defined as the current through an infinitesimal area divided by the area.
+→ →
+• The current can be found from the current density, I = ∬ J ·d A .
+area
+• An incandescent light bulb is a filament of wire enclosed in a glass bulb that is partially evacuated. Current runs
+through the filament, where the electrical energy is converted to light and heat.

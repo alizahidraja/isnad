@@ -1,0 +1,196 @@
+# REAL PDF — openstax_vol1.pdf, pages 403-410
+############################################################
+
+9.2 • Impulse and Collisions 391
+Significance
+Using Newton's Second Law, this force causes an acceleration of . This is 130,000 times gravity,
+which is unimaginably huge. It goes almost without saying that such a force would kill everyone on board instantly,
+as well as destroying every piece of equipment. Fortunately, the Enterprise has “inertial dampeners.” It is left as an
+exercise for the reader’s imagination to determine how these work.
+CHECK YOUR UNDERSTANDING 9.1
+The U.S. Air Force uses “10gs” (an acceleration equal to ) as the maximum acceleration a human can
+withstand (but only for several seconds) and survive. How much time must the Enterprise spend accelerating if the
+humans on board are to experience an average of at most 10gs of acceleration? (Assume the inertial dampeners are
+offline.)
+EXAMPLE 9.4
+The iPhone Drop
+Apple released its iPhone 6 Plus in November 2014. According to many reports, it was originally supposed to have a
+screen made from sapphire, but that was changed at the last minute for a hardened glass screen. Reportedly, this
+was because the sapphire screen cracked when the phone was dropped. What force did the iPhone 6 Plus
+experience as a result of being dropped?
+Strategy
+The force the phone experiences is due to the impulse applied to it by the floor when the phone collides with the
+floor. Our strategy then is to use the impulse-momentum relationship. We calculate the impulse, estimate the
+impact time, and use this to calculate the force.
+We need to make a couple of reasonable estimates, as well as find technical data on the phone itself. First, let’s
+suppose that the phone is most often dropped from about chest height on an average-height person. Second,
+assume that it is dropped from rest, that is, with an initial vertical velocity of zero. Finally, we assume that the phone
+bounces very little—the height of its bounce is assumed to be negligible.
+Solution
+Define upward to be the +y-direction. A typical height is approximately and, as stated, . The
+average force on the phone is related to the impulse the floor applies on it during the collision:
+The impulse equals the change in momentum,
+so
+Next, the change of momentum is
+We need to be careful with the velocities here; this is the change of velocity due to the collision with the floor. But
+the phone also has an initial drop velocity [ ], so we label our velocities. Let:
+• the initial velocity with which the phone was dropped (zero, in this example)
+
+392 9 • Linear Momentum and Collisions
+• the velocity the phone had the instant just before it hit the floor
+• the final velocity of the phone as a result of hitting the floor
+Figure 9.12 shows the velocities at each of these points in the phone’s trajectory.
+FIGURE 9.12 (a) The initial velocity of the phone is zero, just after the person drops it. (b) Just before the phone hits the floor, its velocity is
+which is unknown at the moment, except for its direction, which is downward (c) After bouncing off the floor, the phone has a
+velocity , which is also unknown, except for its direction, which is upward
+With these definitions, the change of momentum of the phone during the collision with the floor is
+Since we assume the phone doesn’t bounce at all when it hits the floor (or at least, the bounce height is negligible),
+then is zero, so
+We can get the speed of the phone just before it hits the floor using either kinematics or conservation of energy.
+We’ll use conservation of energy here; you should re-do this part of the problem using kinematics and prove that you
+get the same answer.
+First, define the zero of potential energy to be located at the floor. Conservation of energy then gives us:
+Defining and using gives
+Because is a vector magnitude, it must be positive. Thus, . Inserting this result into
+the expression for force gives
+Access for free at openstax.org
+
+9.2 • Impulse and Collisions 393
+Finally, we need to estimate the collision time. One common way to estimate a collision time is to calculate how long
+the object would take to travel its own length. The phone is moving at 5.4 m/s just before it hits the floor, and it is
+0.14 m long, giving an estimated collision time of 0.026 s. Inserting the given numbers, we obtain
+Significance
+The iPhone itself weighs just ; the force the floor applies to it is therefore over 20
+times its weight.
+CHECK YOUR UNDERSTANDING 9.2
+What if we had assumed the phone did bounce on impact? Would this have increased the force on the iPhone,
+decreased it, or made no difference?
+Momentum and Force
+In Example 9.3, we obtained an important relationship:
+9.8
+In words, the average force applied to an object is equal to the change of the momentum that the force causes,
+divided by the time interval over which this change of momentum occurs. This relationship is very useful in
+situations where the collision time is small, but measureable; typical values would be 1/10th of a second, or
+even one thousandth of a second. Car crashes, punting a football, or collisions of subatomic particles would meet
+this criterion.
+For a continuously changing momentum—due to a continuously changing force—this becomes a powerful
+conceptual tool. In the limit , Equation 9.2 becomes
+9.9
+This says that the rate of change of the system’s momentum (implying that momentum is a function of time) is
+exactly equal to the net applied force (also, in general, a function of time). This is, in fact, Newton’s second law,
+written in terms of momentum rather than acceleration. This is the relationship Newton himself presented in his
+Principia Mathematica (although he called it “quantity of motion” rather than “momentum”).
+If the mass of the system remains constant, Equation 9.3 reduces to the more familiar form of Newton’s second law.
+We can see this by substituting the definition of momentum:
+The assumption of constant mass allowed us to pull m out of the derivative. If the mass is not constant, we cannot
+
+394 9 • Linear Momentum and Collisions
+use this form of the second law, but instead must start from Equation 9.3. Thus, one advantage to expressing force
+in terms of changing momentum is that it allows for the mass of the system to change, as well as the velocity; this is
+a concept we’ll explore when we study the motion of rockets.
+NEWTON’S SECOND LAW OF MOTION IN TERMS OF MOMENTUM
+The net external force on a system is equal to the rate of change of the momentum of that system caused by the
+force:
+Although Equation 9.3 allows for changing mass, as we will see in Rocket Propulsion, the relationship between
+momentum and force remains useful when the mass of the system is constant, as in the following example.
+EXAMPLE 9.5
+Calculating Force: Venus Williams’ Tennis Serve
+During the 2007 French Open, Venus Williams hit the fastest recorded serve in a premier women’s match, reaching a
+speed of 58 m/s (209 km/h). What is the average force exerted on the 0.057-kg tennis ball by Venus Williams’
+racquet? Assume that the ball’s speed just after impact is 58 m/s, as shown in Figure 9.13, that the initial horizontal
+component of the velocity before impact is negligible, and that the ball remained in contact with the racquet for 5.0
+ms.
+FIGURE 9.13 The final velocity of the tennis ball is .
+Strategy
+This problem involves only one dimension because the ball starts from having no horizontal velocity component
+before impact. Newton’s second law stated in terms of momentum is then written as
+As noted above, when mass is constant, the change in momentum is given by
+Access for free at openstax.org
+
+9.3 • Conservation of Linear Momentum 395
+where we have used scalars because this problem involves only one dimension. In this example, the velocity just
+after impact and the time interval are given; thus, once is calculated, we can use to find the force.
+Solution
+To determine the change in momentum, insert the values for the initial and final velocities into the equation above:
+Now the magnitude of the net external force can be determined by using
+where we have retained only two significant figures in the final step.
+Significance
+This quantity was the average force exerted by Venus Williams’ racquet on the tennis ball during its brief impact
+(note that the ball also experienced the 0.57-N force of gravity, but that force was not due to the racquet). This
+problem could also be solved by first finding the acceleration and then using , but one additional step would
+be required compared with the strategy used in this example.
+9.3 Conservation of Linear Momentum
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the meaning of “conservation of momentum”
+• Correctly identify if a system is, or is not, closed
+• Define a system whose momentum is conserved
+• Mathematically express conservation of momentum for a given system
+• Calculate an unknown quantity using conservation of momentum
+Recall Newton’s third law: When two objects of masses and interact (meaning that they apply forces on each
+other), the force that object 2 applies to object 1 is equal in magnitude and opposite in direction to the force that
+object 1 applies on object 2. Let:
+• the force on from
+• the force on from
+Then, in symbols, Newton’s third law says
+9.10
+(Recall that these two forces do not cancel because they are applied to different objects. causes to
+accelerate, and causes to accelerate.)
+Although the magnitudes of the forces on the objects are the same, the accelerations are not, simply because the
+masses (in general) are different. Therefore, the changes in velocity of each object are different:
+However, the products of the mass and the change of velocity are equal (in magnitude):
+
+396 9 • Linear Momentum and Collisions
+9.11
+It’s a good idea, at this point, to make sure you’re clear on the physical meaning of the derivatives in Equation 9.3.
+Because of the interaction, each object ends up getting its velocity changed, by an amount dv. Furthermore, the
+interaction occurs over a time interval dt, which means that the change of velocities also occurs over dt. This time
+interval is the same for each object.
+Let‘s assume, for the moment, that the masses of the objects do not change during the interaction. (We’ll relax this
+restriction later.) In that case, we can pull the masses inside the derivatives:
+9.12
+and thus
+9.13
+This says that the rate at which momentum changes is the same for both objects. The masses are different, and the
+changes of velocity are different, but the rate of change of the product of m and are the same.
+Physically, this means that during the interaction of the two objects ( ), both objects have their
+momentum changed; but those changes are identical in magnitude, though opposite in sign. For example, the
+momentum of object 1 might increase, which means that the momentum of object 2 decreases by exactly the same
+amount.
+In light of this, let’s re-write Equation 9.12 in a more suggestive form:
+9.14
+This says that during the interaction, although object 1’s momentum changes, and object 2’s momentum also
+changes, these two changes cancel each other out, so that the total change of momentum of the two objects
+together is zero.
+Since the total combined momentum of the two objects together never changes, then we could write
+9.15
+from which it follows that
+9.16
+As shown in Figure 9.14, the total momentum of the system before and after the collision remains the same.
+Access for free at openstax.org
+
+9.3 • Conservation of Linear Momentum 397
+FIGURE 9.14 Before the collision, the two billiard balls travel with momenta and . The total momentum of the system is the sum of
+these, as shown by the red vector labeled on the left. After the collision, the two billiard balls travel with different momenta and
+. The total momentum, however, has not changed, as shown by the red vector arrow on the right.
+Generalizing this result to N objects, we obtain
+9.17
+Equation 9.17 is the definition of the total (or net) momentum of a system of N interacting objects, along with the
+statement that the total momentum of a system of objects is constant in time—or better, is conserved.
+CONSERVATION LAWS
+If the value of a physical quantity is constant in time, we say that the quantity is conserved.
+Requirements for Momentum Conservation
+There is a complication, however. A system must meet two requirements for its momentum to be conserved:
+1. The mass of the system must remain constant during the interaction.
+As the objects interact (apply forces on each other), they may transfer mass from one to another; but any
+mass one object gains is balanced by the loss of that mass from another. The total mass of the system of
+objects, therefore, remains unchanged as time passes:
+2. The net external force on the system must be zero.
+As the objects collide, or explode, and move around, they exert forces on each other. However, all of these
+forces are internal to the system, and thus each of these internal forces is balanced by another internal force
+that is equal in magnitude and opposite in sign. As a result, the change in momentum caused by each internal
+force is cancelled by another momentum change that is equal in magnitude and opposite in direction.
+Therefore, internal forces cannot change the total momentum of a system because the changes sum to zero.
+However, if there is some external force that acts on all of the objects (gravity, for example, or friction), then
+this force changes the momentum of the system as a whole; that is to say, the momentum of the system is
+changed by the external force. Thus, for the momentum of the system to be conserved, we must have

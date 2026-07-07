@@ -1,0 +1,292 @@
+# REAL PDF — openstax_vol3.pdf, pages 501-508
+############################################################
+
+Chapter 10 | Nuclear Physics 493
+1rad=0.01J/kg.
+Forexample,ifa50.0-kgpersonisexposedtonuclearradiationoverherentirebodyandsheabsorbs1.00J,thenherwhole-
+body radiation dose is
+(1.00J)/⎛50.0kg⎞=0.0200J/kg=2.00rad.
+⎝ ⎠
+Nuclearradiationdamagescellsbyionizingatomsinthecellsastheypassthroughthecells(Figure10.30).Theeffectsof
+ionizingradiationdependonthedoseinrads,butalsoonthetypeofradiation(alpha,beta,gamma,orX-ray)andthetype
+oftissue.Forexample,iftherangeoftheradiationissmall,asitisfor α rays,thentheionizationandthedamagecreated
+ismoreconcentratedandharderfortheorganismtorepair.Toaccountforsuchaffects,wedefinetherelativebiological
+effectiveness(RBE). Sample RBE values for several types of ionizing nuclear radiation are given inTable 10.3.
+Figure 10.30 The image shows ionization created in cells by α and γ radiation. Because of its shorter range, the ionization
+and damage created by α rays is more concentrated and harder for the organism to repair. Thus, the RBE for α rays is greater
+than the RBE for γ rays, even though they create the same amount of ionization at the same energy.
+Type and Energy of Radiation RBE[1]
+X-rays 1
+γ rays 1
+β rays greater than 32 keV 1
+β rays less than 32 keV 1.7
+Neutrons, thermal to slow (<20 keV) 2–5
+Neutrons, fast (1–10 MeV) 10 (body), 32 (eyes)
+Protons (1–10 MeV) 10 (body), 32 (eyes)
+α rays from radioactive decay 10–20
+Heavy ions from accelerators 10–20
+Table 10.3Relative Biological Effectiveness [1]Values
+approximate. Difficult to determine.
+Adoseunitmorecloselyrelatedtoeffectsinbiologicaltissueiscalledtheroentgenequivalentman(rem)andisdefined
+tobethedose(inrads)multipliedbytherelativebiologicaleffectiveness(RBE).Thus,ifapersonhadawhole-bodydose
+of 2.00 rad of γ radiation, the dose in rem would be (2.00rad)(1)=2.00 rem for the whole body. If the person had a
+whole-bodydoseof2.00radof α radiation,thenthedoseinremwouldbe (2.00rad)(20)=40.0 remforthewholebody.
+The α rayswouldhave20timestheeffectonthepersonthanthe γ raysforthesamedepositedenergy.TheSIequivalent
+of the rem, and the more standard term, is thesievert (Sv)is
+1Sv=100rem.
+TheRBEsgiveninTable 10.3areapproximatebutreflectanunderstandingofnuclearradiationanditsinteractionwith
+
+494 Chapter 10 | Nuclear Physics
+livingtissue.Forexample,neutronsareknowntocausemoredamagethan γ rays,althoughbothareneutralandhavelarge
+ranges,duetosecondaryradiation.Anydoselessthan100mSv(10rem)iscalledalowdose,0.1Svto1Sv(10to100
+rem)iscalledamoderatedose,andanythinggreaterthan1Sv(100rem)iscalledahighdose.Itisdifficulttodetermine
+if a person has been exposed to less than 10 mSv.
+Biological effects ofdifferent levels ofnuclear radiation onthehumanbodyaregiveninTable 10.4.Thefirstclue that
+apersonhasbeen exposed toradiation isachange inbloodcount, which isnotsurprising since bloodcells are the most
+rapidlyreproducingcellsinthebody.Athigherdoses,nauseaandhairlossareobserved,whichmaybeduetointerference
+withcellreproduction.Cellsintheliningofthedigestivesystemalsorapidlyreproduce,andtheirdestructioncausesnausea.
+Whenthegrowthofhaircellsslows,thehairfolliclesbecomethinandbreakoff.Highdosescausesignificantcelldeath
+inallsystems,butthelowestdosesthatcausefatalitiesdosobyweakeningtheimmunesystemthroughthelossofwhite
+blood cells.
+Dose in Sv[1] Effect
+0–0.10 No observable effect.
+0.1–1 Slight to moderate decrease in white blood cell counts.
+0.5 Temporary sterility; 0.35 for women, 0.50 for men.
+1–2 Significant reduction in blood cell counts, brief nausea and vomiting. Rarely fatal.
+2–5 Nausea, vomiting, hair loss, severe blood damage, hemorrhage, fatalities.
+4.5 Lethal to 50% of the population within 32 days after exposure if not treated.
+5–20 Worst effects due to malfunction of small intestine and blood systems. Limited survival.
+>20 Fatal within hours due to collapse of central nervous system.
+Table 10.4Immediate Effects of Radiation (Adults, Whole-Body, Single Exposure) [1]Multiply by 100 to
+obtain dose in rem.
+Sources of Radiation
+Humanarealsoexposedtomanysourcesofnuclearradiation.Asummaryofaverageradiationdosesfordifferentsources
+bycountryisgiveninTable10.5.Earthemitsradiationduetotheisotopesofuranium,thorium,andpotassium.Radiation
+levelsfromthesesourcesdependonlocationandcanvarybyafactorof10.Fertilizerscontainisotopesofpotassiumand
+uranium,whichwedigestinthefoodweeat.Fertilizershavemorethan3000Bq/kgradioactivity,comparedtojust66Bq/
+kg for Carbon-14.
+Source Dose (mSv/y)[1]
+Australia Germany US World
+Natural radiation – external
+Cosmic rays 0.30 0.28 0.30 0.39
+Soil, building materials 0.40 0.40 0.30 0.48
+Radon gas 0.90 1.1 2.0 1.2
+Natural radiation – internal
+40 K, 14C, 226 Ra 0.24 0.28 0.40 0.29
+Artificial radiation
+Medical and dental 0.80 0.90 0.53 0.40
+TOTAL 2.6 3.0 3.5 2.8
+Table 10.5Background Radiation Sources and Average Doses [1]Multiply
+by 100 to obtain does in mrem/y.
+Medicalvisitsarealsoasourceofnuclearradiation.AsampleofcommonnuclearradiationdosesisgiveninTable10.6.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 495
+Thesedosesaregenerallylowandcanbeloweredfurtherwithimprovedtechniquesandmoresensitivedetectors.Withthe
+possibleexceptionofroutinedentalX-rays,medicaluseofnuclearradiationisusedonlywhentherisk-benefitisfavorable.
+ChestX-raysgivethelowestdoses—about0.1mSvtothetissueaffected,withlessthan 5% scatteringintotissuesthatare
+notdirectlyimaged.OtherX-rayproceduresrangeupwardtoabout10mSvinaCTscan,andabout5mSv(0.5rem)per
+dental X-ray, again both only affecting the tissue imaged. Medical images with radiopharmaceuticals give doses ranging
+from 1 to 5 mSv, usually localized.
+Procedure Effective Dose (mSv)
+Chest 0.02
+Dental 0.01
+Skull 0.07
+Leg 0.02
+Mammogram 0.40
+Barium enema 7.0
+Upper GI 3.0
+CT head 2.0
+CT abdomen 10.0
+Table 10.6Typical Doses Received During
+Diagnostic X-Ray Exams
+Example 10.12
+What Mass of 137 Cs Escaped Chernobyl?
+The Chernobyl accident in Ukraine (formerly in the Soviet Union) exposed the surrounding population to
+a large amount of radiation through the decay of 137 Cs. The initial radioactivity level was approximately
+A=6.0MCi. Calculate the total mass of 137 Cs involved in this accident.
+Strategy
+Thetotalnumberofnuclei,N,canbedeterminedfromtheknownhalf-lifeandactivityof 137 Cs (30.2y).The
+mass can be calculated fromNusing the concept of a mole.
+Solution
+Solving the equation A=
+0.693N
+forNgives
+t
+1/2
+At
+N = 1/2.
+0.693
+Entering the given values yields
+(6.0MCi)⎛30.2y⎞
+N = ⎝ ⎠.
+0.693
+To convert from curies to becquerels and years to seconds, we write
+⎛
+6.0×10
+6
+Ci
+⎞⎛
+3.7×10
+10
+Bq/Ci
+⎞⎛30.2y⎞⎛
+3.16×10
+7
+s/y
+⎞
+N = ⎝ ⎠⎝ ⎠⎝ ⎠⎝ ⎠ =3.1×10 26 .
+0.693
+Onemoleofanuclide A X hasamassofAgrams,sothatonemoleof 137 Cs hasamassof137g.Amolehas
+6.02×10 23 nuclei. Thus the mass of 137 Cs released was
+
+496 Chapter 10 | Nuclear Physics
+m= ⎛ 137g ⎞ ⎛ 3.1×10 26⎞ =70×10 3 g=70kg.
+⎝ 23⎠⎝ ⎠
+6.02×10
+Significance
+The mass of 137 Cs involved in the Chernobyl accident is a small material compared to the typical amount of
+fuelusedinanuclearreactor.However,approximately250peoplewereadmittedtolocalhospitalsimmediately
+aftertheaccident,anddiagnosedassufferingacuteradiationsyndrome.Theyreceivedexternalradiationdosages
+between1and16Sv.ReferringtobiologicaleffectsinTable10.4,thesedosagesareextremelyhazardous.The
+eventual death toll is estimated to be around 4000 people, primarily due to radiation-induced cancer.
+10.7 Check Your Understanding Radiation propagates in all directions from its source, much as
+electromagnetic radiation from a light bulb. Is activity concept more analogous to power, intensity, or
+brightness?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 497
+CHAPTER 10 REVIEW
+KEY TERMS
+activity magnitude of the decay rate for radioactive nuclides
+alpha (α) rays one of the types of rays emitted from the nucleus of an atom as alpha particles
+alpha decay radioactive nuclear decay associated with the emission of an alpha particle
+antielectrons another term for positrons
+antineutrino antiparticle of an electron’s neutrino in β− decay
+atomic mass total mass of the protons, neutrons, and electrons in a single atom
+atomic mass unit unit used to express the mass of an individual nucleus, where 1u=1.66054×10 −27 kg
+atomic nucleus tightly packed group of nucleons at the center of an atom
+atomic number number of protons in a nucleus
+becquerel (Bq) SI unit for the decay rate of a radioactive material, equal to 1 decay/second
+beta (β) rays one of the types of rays emitted from the nucleus of an atom as beta particles
+beta decay radioactive nuclear decay associated with the emission of a beta particle
+binding energy (BE) energy needed to break a nucleus into its constituent protons and neutrons
+binding energy per nucleon (BEN) energy need to remove a nucleon from a nucleus
+breeder reactor reactor that is designed to make plutonium
+carbon-14 dating method to determine the age of formerly living tissue using the ratio 14C/12C
+chart of the nuclides graph comprising stable and unstable nuclei
+critical mass minimum mass required of a given nuclide in order for self-sustained fission to occur
+criticality condition in which a chain reaction easily becomes self-sustaining
+curie (Ci) unit of decay rate, or the activity of 1 g of 226 Ra, equal to 3.70×10 10 Bq
+daughter nucleus nucleus produced by the decay of a parent nucleus
+decay process bywhich anindividual atomic nucleus ofanunstable atom loses mass andenergybyemitting ionizing
+particles
+decay constant quantitythatisinverselyproportionaltothehalf-lifeandthatisusedinequationfornumberofnuclei
+as a function of time
+decay series series of nuclear decays ending in a stable nucleus
+fission splitting of a nucleus
+gamma (γ) rays one of the types of rays emitted from the nucleus of an atom as gamma particles
+gamma decay radioactive nuclear decay associated with the emission of gamma radiation
+half-life time for half of the original nuclei to decay (or half of the original nuclei remain)
+high dose dose of radiation greater than 1 Sv (100 rem)
+isotopes nuclei having the same number of protons but different numbers of neutrons
+lifetime average time that a nucleus exists before decaying
+liquid drop model modelofnucleus(onlytounderstandsomeofitsfeatures)inwhichnucleonsinanucleusactlike
+atoms in a drop
+
+498 Chapter 10 | Nuclear Physics
+low dose
+dose of radiation less than 100 mSv (10 rem)
+mass defect difference between the mass of a nucleus and the total mass of its constituent nucleons
+mass number number of nucleons in a nucleus
+moderate dose dose of radiation from 0.1 Sv to 1 Sv (10 to 100 rem)
+neutrino subatomic elementary particle which has no net electric charge
+neutron number number of neutrons in a nucleus
+nuclear fusion process of combining lighter nuclei to make heavier nuclei
+nuclear fusion reactor nuclear reactor that uses the fusion chain to produce energy
+nucleons protons and neutrons found inside the nucleus of an atom
+nucleosynthesis process of fusion by which all elements on Earth are believed to have been created
+nuclide nucleus
+parent nucleus original nucleus before decay
+positron electron with positive charge
+positron emission tomography (PET) tomography technique that uses β+ emitters and detects the two
+annihilation γ rays, aiding in source localization
+proton-proton chain combined reactions that fuse hydrogen nuclei to produce He nuclei
+radiation dose unit (rad) ionizing energy deposited per kilogram of tissue
+radioactive dating application of radioactive decay in which the age of a material is determined by the amount of
+radioactivity of a particular type that occurs
+radioactive decay law describes the exponential decrease of parent nuclei in a radioactive sample
+radioactive tags special drugs (radiopharmaceuticals) that allow doctors to track movement of other drugs in the body
+radioactivity spontaneous emission of radiation from nuclei
+radiopharmaceutical compound used for medical imaging
+radius of a nucleus radius of a nucleus is defined as r =r A1/3
+0
+relative biological effectiveness (RBE) numberthatexpressestherelativeamountofdamagethatafixedamountof
+ionizing radiation of a given type can inflict on biological tissues
+roentgen equivalent man (rem) dose unit more closely related to effects in biological tissue
+sievert (Sv) SI equivalent of the rem
+single-photon-emission computed tomography (SPECT) tomography performed with γ-emitting
+radiopharmaceuticals
+strong nuclear force force that binds nucleons together in the nucleus
+transuranic element element that lies beyond uranium in the periodic table
+KEY EQUATIONS
+Atomic mass number A=Z+N
+Standard format for expressing an isotope A
+X
+Z
+Nuclear radius, wherer 0 is the radius of a single proton r =r A1/3
+0
+Mass defect Δm=Zm p+(A−Z)m n−m
+nuc
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 499
+Binding energy E=(Δm)c2
+Binding energy per nucleon E
+BEN = b
+A
+Radioactive decay rate dN
+− =λN
+dt
+Radioactive decay law N =N e−λt
+0
+Decay constant λ= 0.693
+T
+1/2
+Lifetime of a substance T – = 1
+λ
+Activity of a radioactive substance A= A e−λt
+0
+Activity of a radioactive substance (linear form) lnA=−λt+lnA
+0
+Alpha decay A
+X→
+A−4X+4He
+Z Z−2 2
+Beta decay A X→ A X+ 0 e+ – v
+Z Z+1 −1
+Positron emission A X→ A X+ 0 e+v
+Z Z−1 +1
+Gamma decay A X* → A X+γ
+Z Z
+SUMMARY
+10.1Properties of Nuclei
+• The atomic nucleus is composed of protons and neutrons.
+• Thenumberofprotonsinthenucleusisgivenbytheatomicnumber,Z.Thenumberofneutronsinthenucleusis
+the neutron number,N. The number of nucleons is mass number,A.
+• Atomicnucleiwiththesameatomicnumber,Z,butdifferentneutronnumbers,N,areisotopesofthesameelement.
+• The atomic mass of an element is the weighted average of the masses of its isotopes.
+10.2Nuclear Binding Energy
+• Themassdefectofanucleusisthedifferencebetweenthetotalmassofanucleusandthesumofthemassesofall
+its constituent nucleons.
+• Thebindingenergy(BE)ofanucleusisequaltotheamountofenergyreleasedinformingthenucleus,orthemass
+defect multiplied by the speed of light squared.
+• A graph of binding energy per nucleon (BEN) versus atomic number A implies that nuclei divided or combined
+release an enormous amount of energy.
+• The binding energy of a nucleon in a nucleus is analogous to the ionization energy of an electron in an atom.
+10.3Radioactive Decay
+• In the decay of a radioactive substance, if the decay constant (λ) is large, the half-life is small, and vice versa.
+• The radioactive decay law, N =N e−λt , uses the properties of radioactive substances to estimate the age of a
+0
+substance.
+• Radioactivecarbonhasthesamechemistryasstablecarbon,soitmixesintotheecosphereandeventuallybecomes

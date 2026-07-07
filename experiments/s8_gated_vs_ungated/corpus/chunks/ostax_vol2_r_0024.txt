@@ -1,0 +1,202 @@
+# REAL PDF — openstax_vol2.pdf, pages 131-136
+############################################################
+
+Chapter 3 | The First Law of Thermodynamics 121
+DC;thepressureisconstantoverthevolumechange,sotheworkdoneissimply pΔV.Anisothermallinecould
+V
+also have been used, as we have derived the work for an isothermal process as W =nRTln 2.
+V
+1
+Example 3.5
+Isothermal Expansion of an Ideal Gas
+Heatisaddedto1molofanidealmonatomicgasconfinedtoacylinderwithamovablepistonatoneend.The
+gasexpandsquasi-staticallyataconstanttemperatureof300KuntilitsvolumeincreasesfromVto3V.(a)What
+isthechangeininternalenergyofthegas?(b)Howmuchworkdoesthegasdo?(c)Howmuchheatisaddedto
+the gas?
+Strategy
+(a)Becausethesystemisanidealgas,theinternalenergyonlychangeswhenthetemperaturechanges.(b)The
+heat added to the system is therefore purely used to do work that has been calculated in Work, Heat, and
+Internal Energy. (c) Lastly, the first law of thermodynamics can be used to calculate the heat added to the gas.
+Solution
+a. Wesawintheprecedingsectionthattheinternalenergyofanidealmonatomicgasisafunctiononlyof
+temperature. Since ΔT =0, for this process, ΔE =0.
+int
+b. The quasi-static isothermal expansion of an ideal gas was considered in the preceding section and was
+found to be
+W =nRTln V 2 =nRTln 3V
+V V
+1
+3
+=(1.00mol)(8.314J/K·mol)(300K)(ln3)=2.74×10 J.
+c. With the results of parts (a) and (b), we can use the first law to determine the heat added:
+ΔE =Q−W =0,
+int
+which leads to
+Q=W =2.74×10 3 J.
+Significance
+An isothermal process has no change in the internal energy. Based on that, the first law of thermodynamics
+reduces to Q=W.
+3.3 CheckYourUnderstandingWhywasitnecessarytostatethattheprocessofExample 3.5isquasi-
+static?
+Example 3.6
+Vaporizing Water
+When1.00gofwaterat 100°C changesfromtheliquidtothegasphaseatatmosphericpressure,itschangein
+volumeis 1.67×10 −3 m 3 . (a)Howmuchheatmustbeaddedtovaporizethewater?(b)Howmuchworkis
+donebythewateragainsttheatmosphereinitsexpansion?(c)Whatisthechangeintheinternalenergyofthe
+water?
+
+122 Chapter 3 | The First Law of Thermodynamics
+Strategy
+We can first figure out how much heat is needed from the latent heat of vaporization of the water. From the
+volumechange,wecancalculatetheworkdonefrom W = pΔV becausethepressureisconstant.Then,thefirst
+law of thermodynamics provides us with the change in the internal energy.
+Solution
+a. With L representing the latent heat of vaporization, the heat required to vaporize the water is
+v
+Q=mL v=(1.00g)(2.26×10 3 J/g)=2.26×10 3 J.
+b. Since the pressure on the system is constant at 1.00atm=1.01×10 5 N/m2, the work done by the
+water as it is vaporized is
+W = pΔV =(1.01×10 5 N/m2)(1.67×10 −3 m 3 )=169J.
+c. From the first law, the thermal energy of the water during its vaporization changes by
+ΔE =Q−W =2.26×10 3 J−169J=2.09×10 3 J.
+int
+Significance
+Wenotethatinpart(c),weseeachangeininternalenergy,yetthereisnochangeintemperature.Idealgasesthat
+arenotundergoingphasechangeshavetheinternalenergyproportionaltotemperature.Internalenergyingeneral
+is the sum of all energy in the system.
+3.4 CheckYourUnderstandingWhen1.00gofammoniaboilsatatmosphericpressureand −33.0°C, its
+volumechangesfrom1.47to 1130cm 3.Itsheatofvaporizationatthispressureis 1.37×10 6 J/kg. Whatis
+the change in the internal energy of the ammonia when it vaporizes?
+View this site (https://openstaxcollege.org/l/211stlawthermo) to learn about how the first law of
+thermodynamics.First,pumpsomeheavyspeciesmoleculesintothechamber.Then,playaroundbydoingwork
+(pushing the wall to the right where the person is located) to see how the internal energy changes (as seen by
+temperature).Then,lookathowheataddedchangestheinternalenergy.Finally,youcansetaparameterconstant
+suchastemperatureandseewhathappenswhenyoudoworktokeepthetemperatureconstant(Note:Youmight
+see a change in these variables initially if you are moving around quickly in the simulation, but ultimately, this
+value will return to its equilibrium value).
+3.4 | Thermodynamic Processes
+Learning Objectives
+By the end of this section, you will be able to:
+• Define a thermodynamic process
+• Distinguish between quasi-static and non-quasi-static processes
+• Calculate physical quantities, such as the heat transferred, work done, and internal energy
+change for isothermal, adiabatic, and cyclical thermodynamic processes
+Insolvingmechanicsproblems,weisolatethebodyunderconsideration,analyzetheexternalforcesactingonit,andthen
+useNewton’slawstopredictitsbehavior.Inthermodynamics,wetakeasimilarapproach.Westartbyidentifyingthepart
+oftheuniversewewishtostudy;itisalsoknownasoursystem.(Wedefinedasystematthebeginningofthischapteras
+anything whose properties are of interest to us; it can be a single atom or the entire Earth.) Once our system is selected,
+wedeterminehowtheenvironment,orsurroundings,interactwiththesystem.Finally,withtheinteractionunderstood,we
+study the thermal behavior of the system with the help of the laws of thermodynamics.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 123
+Thethermalbehaviorofasystemisdescribedintermsofthermodynamicvariables.Foranidealgas,thesevariablesare
+pressure,volume,temperature,andthenumberofmoleculesormolesofthegas.Differenttypesofsystemsaregenerally
+characterized by different sets of variables. For example, the thermodynamic variables for a stretched rubber band are
+tension, length, temperature, and mass.
+Thestateofasystemcanchangeasaresultofitsinteractionwiththeenvironment.Thechangeinasystemcanbefastor
+slowandlargeorsmall.Themannerinwhichastateofasystemcanchangefromaninitialstatetoafinalstateiscalled
+athermodynamicprocess.Foranalyticalpurposesinthermodynamics,itishelpfultodivideupprocessesaseitherquasi-
+staticornon-quasi-static, as we now explain.
+Quasi-static and Non-quasi-static Processes
+Aquasi-staticprocessreferstoanidealizedorimaginedprocesswherethechangeinstateismadeinfinitesimallyslowlyso
+thatateachinstant,thesystemcanbeassumedtobeatathermodynamicequilibriumwithitselfandwiththeenvironment.
+Forinstance,imagineheating1kgofwaterfromatemperature 20°C to 21°C ataconstantpressureof1atmosphere.To
+heatthewaterveryslowly,wemayimagineplacingthecontainerwithwaterinalargebaththatcanbeslowlyheatedsuch
+thatthetemperature ofthebathcanriseinfinitesimally slowlyfrom 20°C to 21°C.Ifweput1kgofwaterat 20°C
+directly into a bath at 21°C, the temperature of the water will rise rapidly to 21°C in a non-quasi-static way.
+Quasi-static processes are done slowly enough that the system remains at thermodynamic equilibrium at each instant,
+despitethefactthatthesystemchangesovertime.Thethermodynamicequilibriumofthesystemisnecessaryforthesystem
+tohavewell-definedvaluesofmacroscopicpropertiessuchasthetemperatureandthepressureofthesystemateachinstant
+of the process. Therefore, quasi-static processes can be shown as well-defined paths in state space of the system.
+Since quasi-static processes cannot be completely realized for any finite change of the system, all processes in nature
+are non-quasi-static. Examples of quasi-static and non-quasi-static processes are shown in Figure 3.8. Despite the fact
+thatallfinitechangesmustoccuressentiallynon-quasi-staticallyatsomestageofthechange,wecanimagineperforming
+infinitely many quasi-static process corresponding to every quasi-static process. Since quasi-static processes can be
+analyzedanalytically,wemostlystudyquasi-staticprocessesinthisbook.Wehavealreadyseenthatinaquasi-staticprocess
+the work by a gas is given bypdV.
+Figure 3.8 Quasi-static and non-quasi-static processes
+between statesAandBof a gas. In a quasi-static process, the
+path of the process betweenAandBcan be drawn in a state
+diagram since all the states that the system goes through are
+known. In a non-quasi-static process, the states betweenAandB
+are not known, and hence no path can be drawn. It may follow
+the dashed line as shown in the figure or take a very different
+path.
+Isothermal Processes
+Anisothermal processisachange inthestate ofthesystem ataconstant temperature. Thisprocessisaccomplished by
+keepingthesysteminthermalequilibriumwithalargeheatbathduringtheprocess.Recallthataheatbathisanidealized
+“infinitely”largesystemwhosetemperaturedoesnotchange.Inpractice,thetemperatureofafinitebathiscontrolledby
+either adding or removing a finite amount of energy as the case may be.
+Asanillustrationofanisothermalprocess,consideracylinderofgaswithamovablepistonimmersedinalargewatertank
+
+124 Chapter 3 | The First Law of Thermodynamics
+whosetemperatureismaintainedconstant.Sincethepistonisfreelymovable,thepressureinside P isbalancedbythe
+in
+pressure outside P by some weights on the piston, as inFigure 3.9.
+out
+Figure 3.9 Expanding a system at a constant temperature. Removing weights on
+the piston leads to an imbalance of forces on the piston, which causes the piston to
+move up. As the piston moves up, the temperature is lowered momentarily, which
+causes heat to flow from the heat bath to the system. The energy to move the piston
+eventually comes from the heat bath.
+Asweightsonthepistonareremoved,animbalanceofforcesonthepistondevelops.Thenetnonzeroforceonthepiston
+wouldcausethepistontoaccelerate,resultinginanincreaseinvolume.Theexpansionofthegascoolsthegastoalower
+temperature, whichmakes itpossible fortheheat toenter fromtheheat bathintothesystem until thetemperature ofthe
+gas is reset to the temperature of the heat bath. If weights are removed in infinitesimal steps, the pressure in the system
+decreasesinfinitesimallyslowly.Thisway,anisothermalprocesscanbeconductedquasi-statically.Anisothermallineon
+a(p,V)diagramisrepresentedbyacurvedlinefromstartingpointAtofinishingpointB,asseeninFigure3.10.Foran
+ideal gas, an isothermal process is hyperbolic, since for an ideal gas at constant temperature, p∝ 1 .
+V
+Figure 3.10 An isothermal expansion from a state labeledA
+to another state labeledBon apVdiagram. The curve represents
+the relation between pressure and volume in an ideal gas at
+constant temperature.
+An isothermal process studied in this chapter is quasi-statically performed, since to be isothermal throughout the change
+of volume, you must be able to state the temperature of the system at each step, which is possible only if the system is
+in thermal equilibrium continuously. The system must go out of equilibrium for the state to change, but for quasi-static
+processes,weimaginethattheprocessisconductedininfinitesimalstepssuchthatthesedeparturesfromequilibriumcan
+be made as brief and as small as we like.
+Other quasi-static processes of interest for gases are isobaric and isochoric processes. An isobaric process is a process
+where the pressure of the system does not change, whereas an isochoric process is a process where the volume of the
+system does not change.
+Adiabatic Processes
+In an adiabatic process, the system is insulated from its environment so that although the state of the system changes,
+no heat is allowed to enter or leave the system, as seen in Figure 3.11. An adiabatic process can be conducted either
+quasi-staticallyornon-quasi-statically.Whenasystemexpandsadiabatically,itmustdoworkagainsttheoutsideworld,and
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 125
+thereforeitsenergygoesdown,whichisreflectedintheloweringofthetemperatureofthesystem.Anadiabaticexpansion
+leadstoaloweringoftemperature,andanadiabaticcompressionleadstoanincreaseoftemperature.Wediscussadiabatic
+expansion again inAdiabatic Processes for an ideal Gas.
+Figure 3.11 An insulated piston with a hot, compressed gas is
+released. The piston moves up, the volume expands, and the
+pressure and temperature decrease. The internal energy goes into
+work. If the expansion occurs within a time frame in which
+negligible heat can enter the system, then the process is called
+adiabatic. Ideally, during an adiabatic process no heat enters or
+exits the system.
+Cyclic Processes
+Wesaythatasystemgoesthroughacyclicprocessifthestateofthesystemattheendissameasthestateatthebeginning.
+Therefore,statepropertiessuchastemperature,pressure,volume,andinternalenergyofthesystemdonotchangeovera
+complete cycle:
+ΔE =0.
+int
+When the first law of thermodynamics is applied to a cyclic process, we obtain a simple relation between heat into the
+system and the work done by the system over the cycle:
+Q=W⎛cyclic process⎞.
+⎝ ⎠
+Thermodynamicprocessesarealsodistinguishedbywhetherornottheyarereversible.Areversibleprocessisonethatcan
+bemadetoretraceitspathbydifferentialchangesintheenvironment.Suchaprocessmustthereforealsobequasi-static.
+Note,however,thataquasi-staticprocessisnotnecessarilyreversible,sincetheremaybedissipativeforcesinvolved.For
+example,iffrictionoccurredbetweenthepistonandthewallsofthecylindercontainingthegas,theenergylosttofriction
+would prevent us from reproducing the original states of the system.
+We considered several thermodynamic processes:
+1. An isothermal process, during which the system’s temperature remains constant
+2. An adiabatic process, during which no heat is transferred to or from the system
+3. An isobaric process, during which the system’s pressure does not change
+4. An isochoric process, during which the system’s volume does not change
+Many other processes also occur that do not fit into any of these four categories.
+Viewthissite(https://openstaxcollege.org/l/21idegaspvdiag)tosetupyourownprocessinapVdiagram.
+See if you can calculate the values predicted by the simulation for heat, work, and change in internal energy.

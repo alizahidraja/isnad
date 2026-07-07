@@ -1,0 +1,174 @@
+# REAL PDF — openstax_vol1.pdf, pages 261-267
+############################################################
+
+CHAPTER 6
+Applications of Newton's Laws
+FIGURE 6.1 Stock cars racing in the Grand National Divisional race at Iowa Speedway in May, 2015. Cars often reach speeds of 200 mph
+(320 km/h). (credit: modification of work by Erik Schneider/U.S. Navy)
+CHAPTER OUTLINE
+6.1 Solving Problems with Newton’s Laws
+6.2 Friction
+6.3 Centripetal Force
+6.4 Drag Force and Terminal Speed
+INTRODUCTION As a racecar moves in a curved path around the turn, its wheels also spin rapidly. The wheels
+complete many revolutions while the car makes only part of one (a circular arc). How can we describe the velocities,
+accelerations, and forces involved? What force keeps a racecar from spinning out, hitting the wall bordering the
+track? What provides this force? Why is the track banked? We answer all of these questions in this chapter as we
+expand our consideration of Newton’s laws of motion.
+6.1 Solving Problems with Newton’s Laws
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Apply problem-solving techniques to solve for quantities in more complex systems of forces
+• Use concepts from kinematics to solve problems using Newton’s laws of motion
+• Solve more complex equilibrium problems
+• Solve more complex acceleration problems
+• Apply calculus to more advanced dynamics problems
+Success in problem solving is necessary to understand and apply physical principles. We developed a pattern of
+analyzing and setting up the solutions to problems involving Newton’s laws in Newton’s Laws of Motion; in this
+chapter, we continue to discuss these strategies and apply a step-by-step process.
+
+250 6 • Applications of Newton's Laws
+Problem-Solving Strategies
+We follow here the basics of problem solving presented earlier in this text, but we emphasize specific strategies that
+are useful in applying Newton’s laws of motion. Once you identify the physical principles involved in the problem and
+determine that they include Newton’s laws of motion, you can apply these steps to find a solution. These techniques
+also reinforce concepts that are useful in many other areas of physics. Many problem-solving strategies are stated
+outright in the worked examples, so the following techniques should reinforce skills you have already begun to
+develop.
+PROBLEM-SOLVING STRATEGY
+Applying Newton’s Laws of Motion
+1. Identify the physical principles involved by listing the givens and the quantities to be calculated.
+2. Sketch the situation, using arrows to represent all forces.
+3. Determine the system of interest. The result is a free-body diagram that is essential to solving the problem.
+4. Apply Newton’s second law to solve the problem. If necessary, apply appropriate kinematic equations from
+the chapter on motion along a straight line.
+5. Check the solution to see whether it is reasonable.
+Let’s apply this problem-solving strategy to the challenge of lifting a grand piano into a second-story apartment.
+Once we have determined that Newton’s laws of motion are involved (if the problem involves forces), it is
+particularly important to draw a careful sketch of the situation. Such a sketch is shown in Figure 6.2(a). Then, as in
+Figure 6.2(b), we can represent all forces with arrows. Whenever sufficient information exists, it is best to label
+these arrows carefully and make the length and direction of each correspond to the represented force.
+FIGURE 6.2 (a) A grand piano is being lifted to a second-story apartment. (b) Arrows are used to represent all forces: is the tension in the
+rope above the piano, is the force that the piano exerts on the rope, and is the weight of the piano. All other forces, such as the nudge
+of a breeze, are assumed to be negligible. (c) Suppose we are given the piano’s mass and asked to find the tension in the rope. We then
+define the system of interest as shown and draw a free-body diagram. Now is no longer shown, because it is not a force acting on the
+system of interest; rather, acts on the outside world. (d) Showing only the arrows, the head-to-tail method of addition is used. It is
+apparent that if the piano is stationary, .
+As with most problems, we next need to identify what needs to be determined and what is known or can be inferred
+from the problem as stated, that is, make a list of knowns and unknowns. It is particularly crucial to identify the
+system of interest, since Newton’s second law involves only external forces. We can then determine which forces
+are external and which are internal, a necessary step to employ Newton’s second law. (See Figure 6.2(c).) Newton’s
+third law may be used to identify whether forces are exerted between components of a system (internal) or between
+Access for free at openstax.org
+
+6.1 • Solving Problems with Newton’s Laws 251
+the system and something outside (external). As illustrated in Newton’s Laws of Motion, the system of interest
+depends on the question we need to answer. Only forces are shown in free-body diagrams, not acceleration or
+velocity. We have drawn several free-body diagrams in previous worked examples. Figure 6.2(c) shows a free-body
+diagram for the system of interest. Note that no internal forces are shown in a free-body diagram.
+Once a free-body diagram is drawn, we apply Newton’s second law. This is done in Figure 6.2(d) for a particular
+situation. In general, once external forces are clearly identified in free-body diagrams, it should be a straightforward
+task to put them into equation form and solve for the unknown, as done in all previous examples. If the problem is
+one-dimensional—that is, if all forces are parallel—then the forces can be handled algebraically. If the problem is
+two-dimensional, then it must be broken down into a pair of one-dimensional problems. We do this by projecting the
+force vectors onto a set of axes chosen for convenience. As seen in previous examples, the choice of axes can
+simplify the problem. For example, when an incline is involved, a set of axes with one axis parallel to the incline and
+one perpendicular to it is most convenient. It is almost always convenient to make one axis parallel to the direction
+of motion, if this is known. Generally, just write Newton’s second law in components along the different directions.
+Then, you have the following equations:
+(If, for example, the system is accelerating horizontally, then you can then set ) We need this information to
+determine unknown forces acting on a system.
+As always, we must check the solution. In some cases, it is easy to tell whether the solution is reasonable. For
+example, it is reasonable to find that friction causes an object to slide down an incline more slowly than when no
+friction exists. In practice, intuition develops gradually through problem solving; with experience, it becomes
+progressively easier to judge whether an answer is reasonable. Another way to check a solution is to check the units.
+If we are solving for force and end up with units of millimeters per second, then we have made a mistake.
+There are many interesting applications of Newton’s laws of motion, a few more of which are presented in this
+section. These serve also to illustrate some further subtleties of physics and to help build problem-solving skills. We
+look first at problems involving particle equilibrium, which make use of Newton’s first law, and then consider particle
+acceleration, which involves Newton’s second law.
+Particle Equilibrium
+Recall that a particle in equilibrium is one for which the external forces are balanced. Static equilibrium involves
+objects at rest, and dynamic equilibrium involves objects in motion without acceleration, but it is important to
+remember that these conditions are relative. For example, an object may be at rest when viewed from our frame of
+reference, but the same object would appear to be in motion when viewed by someone moving at a constant
+velocity. We now make use of the knowledge attained in Newton’s Laws of Motion, regarding the different types of
+forces and the use of free-body diagrams, to solve additional problems in particle equilibrium.
+EXAMPLE 6.1
+Different Tensions at Different Angles
+Consider the traffic light (mass of 15.0 kg) suspended from two wires as shown in Figure 6.3. Find the tension in
+each wire, neglecting the masses of the wires.
+
+252 6 • Applications of Newton's Laws
+FIGURE 6.3 A traffic light is suspended from two wires. (b) Some of the forces involved. (c) Only forces acting on the system are shown
+here. The free-body diagram for the traffic light is also shown. (d) The forces projected onto vertical (y) and horizontal (x) axes. The
+horizontal components of the tensions must cancel, and the sum of the vertical components of the tensions must equal the weight of the
+traffic light. (e) The free-body diagram shows the vertical and horizontal forces acting on the traffic light.
+Strategy
+The system of interest is the traffic light, and its free-body diagram is shown in Figure 6.3(c). The three forces
+involved are not parallel, and so they must be projected onto a coordinate system. The most convenient coordinate
+system has one axis vertical and one horizontal, and the vector projections on it are shown in Figure 6.3(d). There
+are two unknowns in this problem ( and ), so two equations are needed to find them. These two equations
+come from applying Newton’s second law along the vertical and horizontal axes, noting that the net external force is
+zero along each axis because acceleration is zero.
+Solution
+First consider the horizontal or x-axis:
+where and are the magnitudes of the x components of the tension forces.
+Thus, as you might expect,
+This gives us the following relationship:
+Thus,
+Access for free at openstax.org
+
+6.1 • Solving Problems with Newton’s Laws 253
+Note that and are not equal in this case because the angles on either side are not equal. It is reasonable that
+ends up being greater than because it is exerted more vertically than
+Now consider the force components along the vertical or y-axis:
+This implies
+Substituting the expressions for the vertical components gives
+There are two unknowns in this equation, but substituting the expression for in terms of reduces this to one
+equation with one unknown:
+which yields
+Solving this last equation gives the magnitude of to be
+Finally, we find the magnitude of by using the relationship between them, , found above. Thus we
+obtain
+Significance
+Both tensions would be larger if both wires were more horizontal, and they will be equal if and only if the angles on
+either side are the same (as they were in the earlier example of a tightrope walker in Newton’s Laws of Motion.
+Particle Acceleration
+We have given a variety of examples of particles in equilibrium. We now turn our attention to particle acceleration
+problems, which are the result of a nonzero net force. Refer again to the steps given at the beginning of this section,
+and notice how they are applied to the following examples.
+EXAMPLE 6.2
+Drag Force on a Barge
+Two tugboats push on a barge at different angles (Figure 6.4). The first tugboat exerts a force of in the
+x-direction, and the second tugboat exerts a force of in the y-direction. The mass of the barge is
+and its acceleration is observed to be in the direction shown. What is the drag force
+of the water on the barge resisting the motion? (Note: Drag force is a frictional force exerted by fluids, such as air or
+water. The drag force opposes the motion of the object. Since the barge is flat bottomed, we can assume that the
+drag force is in the direction opposite of motion of the barge.) Assume that the motion and acceleration of the barge
+are in the same direction.
+
+254 6 • Applications of Newton's Laws
+FIGURE 6.4 (a) A view from above of two tugboats pushing on a barge. (b) The free-body diagram for the ship contains only forces acting in
+the plane of the water. It omits the two vertical forces—the weight of the barge and the buoyant force of the water supporting it cancel and
+are not shown. Note that is the total applied force of the tugboats.
+Strategy
+The directions and magnitudes of acceleration and the applied forces are given in Figure 6.4(a). We define the total
+force of the tugboats on the barge as so that
+The drag of the water is in the direction opposite to the direction of motion of the boat; this force thus works
+against as shown in the free-body diagram in Figure 6.4(b). The system of interest here is the barge, since the
+forces on it are given as well as its acceleration. Because the applied forces are perpendicular, the x- and y-axes are
+in the same direction as and The problem quickly becomes a one-dimensional problem along the direction of
+, since friction is in the direction opposite to Our strategy is to find the magnitude and direction of the net
+applied force and then apply Newton’s second law to solve for the drag force
+Solution
+Since and are perpendicular, we can find the magnitude and direction of directly. First, the resultant
+magnitude is given by the Pythagorean theorem:
+The angle is given by
+From Newton’s first law, we know this is the same direction as the acceleration. We also know that is in the
+opposite direction of since it acts to slow down the acceleration. Therefore, the net external force is in the
+same direction as but its magnitude is slightly less than The problem is now one-dimensional. From the
+free-body diagram, we can see that
+However, Newton’s second law states that
+Thus,
+Access for free at openstax.org

@@ -1,0 +1,302 @@
+# REAL PDF — openstax_vol3.pdf, pages 235-242
+############################################################
+
+Chapter 5 | Relativity 227
+γ = ⎛ 1−u2/c2⎞
+−1/2
+≈1+ 1
+⎛u2⎞
+.
+⎝ ⎠ 2⎝ c2⎠
+Abinomialexpansionisawayofexpressinganalgebraicquantityasasumofaninfiniteseriesofterms.Insomecases,as
+inthelimitofsmallspeedhere,mosttermsareverysmall.Thus,theexpressionderivedherefor γ isnotexact,butitisa
+very accurate approximation. Therefore, at low speed:
+γ−1= 1
+⎛u2⎞
+.
+2⎝ c2⎠
+Entering this into the expression for relativistic kinetic energy gives
+K =
+⎡
+1
+⎛u2⎞⎤
+mc2= 1mu2=K .
+rel ⎣2⎝ c2⎠⎦ 2 class
+That is, relativistic kinetic energy becomes the same as classical kinetic energy when u<<c.
+Itisevenmoreinterestingtoinvestigatewhathappenstokineticenergywhenthespeedofanobjectapproachesthespeed
+oflight.Weknowthat γ becomesinfiniteasuapproachesc,sothat K alsobecomesinfiniteasthevelocityapproaches
+rel
+thespeedoflight(Figure5.26).Theincreasein K isfarlargerthanin K asvapproachesc.Aninfiniteamountof
+rel class
+work (and, hence, an infinite amount of energy input) is required to accelerate a mass to the speed of light.
+The Speed of Light
+No object with mass can attain thespeed of light.
+Thespeedoflightistheultimatespeedlimitforanyparticlehavingmass.Allofthisisconsistentwiththefactthatvelocities
+lessthancalwaysaddtolessthanc.Boththerelativisticformforkineticenergyandtheultimatespeedlimitbeingchave
+beenconfirmedindetailinnumerousexperiments.Nomatterhowmuchenergyisputintoacceleratingamass,itsvelocity
+can only approach—not reach—the speed of light.
+Figure 5.26 This graph of K versus velocity shows how
+rel
+kinetic energy increases without bound as velocity approaches
+the speed of light. Also shown is K , the classical kinetic
+class
+energy.
+Example 5.12
+Comparing Kinetic Energy
+Anelectronhasavelocity v=0.990c. (a)CalculatethekineticenergyinMeVoftheelectron.(b)Comparethis
+with the classical value for kinetic energy at this velocity. (The mass of an electron is 9.11×10 −31 kg.)
+
+228 Chapter 5 | Relativity
+Strategy
+Theexpressionforrelativistickineticenergyisalwayscorrect,butfor(a),itmustbeusedbecausethevelocity
+is highly relativistic (close to c). First, we calculate the relativistic factor γ, and then use it to determine
+the relativistic kinetic energy. For (b), we calculate the classical kinetic energy (which would be close to the
+relativistic value ifvwere less than a few percent ofc) and see that it is not the same.
+Solution for (a)
+For part (a):
+a. Identify the knowns: v=0.990c;m=9.11×10 −31 kg.
+b. Identify the unknown: K .
+rel
+c. Express the answer as an equation: K =(γ−1)mc2 with γ = 1 .
+rel
+1−u2/c2
+d. Do the calculation. First calculate γ. Keep extra digits because this is an intermediate calculation:
+γ = 1
+u2
+1−
+c2
+1
+=
+(0.990c) 2
+1−
+c2
+=7.0888.
+Now use this value to calculate the kinetic energy:
+K =(γ−1)mc2
+rel
+=(7.0888−1)(9.11×10 −31 kg)(3.00×10 8 m/s2)
+−13
+=4.9922×10 J.
+e. Convert units:
+⎛ ⎞
+K =(4.9922×10 −13 J) 1MeV
+rel ⎝ −13 ⎠
+1.60×10 J
+=3.12MeV.
+Solution for (b)
+For part (b):
+a. List the knowns: v=0.990c; m=9.11×10 −31 kg.
+b. List the unknown: K .
+rel
+c. Express the answer as an equation: K = 1mu2.
+class 2
+d. Do the calculation:
+K = 1mu2
+class 2
+= 1 (9.11×10 −31 kg)(0.990)2(3.00×10 8 m/s)2
+2
+=4.0179×10−14 J.
+e. Convert units:
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 229
+⎛ ⎞
+K =4.0179×10−14 J 1MeV
+class ⎝ −13 ⎠
+1.60×10 J
+=0.251Mev.
+Significance
+As might be expected, because the velocity is 99.0% of the speed of light, the classical kinetic energy differs
+significantly from the correct relativistic value. Note also that the classical value is much smaller than the
+relativisticvalue.Infact, K /K =12.4 inthiscase.Thisillustrateshowdifficultitistogetamassmoving
+rel class
+close tothespeed oflight. Muchmoreenergyisneeded thanpredicted classically.Ever-increasing amounts of
+energyareneededtogetthevelocityofamassalittleclosertothatoflight.Anenergyof3MeVisaverysmall
+amount for an electron, and it can be achieved with present-day particle accelerators. SLAC, for example, can
+accelerate electrons to over 50×10 9 eV=50,000MeV.
+Isthereanypointingettingvalittleclosertocthan99.0%or99.9%?Theanswerisyes.Welearnagreatdealbydoingthis.
+Theenergythatgoesintoahigh-velocitymasscanbeconvertedintoanyotherform,includingintoentirelynewparticles.
+In the Large Hadron Collider in Figure 5.27, charged particles are accelerated before entering the ring-like structure.
+There,twobeamsofparticlesareacceleratedtotheirfinalspeedofabout99.7%thespeedoflightinoppositedirections,
+and made to collide, producing totally new species of particles. Most of what we know about the substructure of matter
+andthecollectionofexoticshort-livedparticlesinnaturehasbeenlearnedthisway.Patternsinthecharacteristicsofthese
+previouslyunknownparticleshintatabasicsubstructureforallmatter.Theseparticlesandsomeoftheircharacteristicswill
+be discussed in a later chapter on particle physics.
+Figure 5.27 The European Organization for Nuclear Research
+(called CERN after its French name) operates the largest particle
+accelerator in the world, straddling the border between France
+and Switzerland. (credit: modification of work by NASA)
+Total Relativistic Energy
+The expression for kinetic energy can be rearranged to:
+E=
+mu2
+=K+mc2.
+1−u2/c2
+Einsteinarguedinaseparatearticle,alsolaterpublishedin1905,thatiftheenergyofaparticlechangesby ΔE, itsmass
+changesby Δm=ΔE/c2. Abundantexperimentalevidencesincethenconfirmsthat mc2 correspondstotheenergythat
+theparticleofmassmhaswhenatrest.Forexample,whenaneutralpionofmassmatrestdecaysintotwophotons,the
+
+230 Chapter 5 | Relativity
+photonshavezeromassbutareobservedtohavetotalenergycorrespondingto mc2 forthepion.Similarly,whenaparticle
+ofmassmdecaysintotwoormoreparticleswithsmallertotalmass,theobservedkineticenergyimpartedtotheproducts
+ofthedecaycorrespondstothedecreaseinmass.Thus,Eisthetotalrelativisticenergyoftheparticle,and mc2 isitsrest
+energy.
+Total Energy
+Total energyEof a particle is
+E=γmc2 (5.9)
+wheremis mass,cis the speed of light, γ = 1 , anduis the velocity of the mass relative to an observer.
+u2
+1−
+c2
+Rest Energy
+Rest energyof an object is
+E =mc2. (5.10)
+0
+This is the correct form of Einstein’s most famous equation, which for the first time showed that energy is related to the
+massofanobjectatrest.Forexample,ifenergyisstoredintheobject,itsrestmassincreases.Thisalsoimpliesthatmass
+canbedestroyedtoreleaseenergy.Theimplicationsofthesefirsttwoequationsregardingrelativisticenergyaresobroad
+thattheywerenotcompletelyrecognizedforsomeyearsafterEinsteinpublishedthemin1905,norwastheexperimental
+proofthattheyarecorrectwidelyrecognizedatfirst.Einstein,itshouldbenoted,didunderstandanddescribethemeanings
+and implications of his theory.
+Example 5.13
+Calculating Rest Energy
+Calculate the rest energy of a 1.00-g mass.
+Strategy
+Onegramisasmallmass—lessthanone-halfthemassofapenny.Wecanmultiplythismass,inSIunits,bythe
+speed of light squared to find the equivalent rest energy.
+Solution
+a. Identify the knowns: m=1.00×10 −3 kg; c=3.00×10 8 m/s.
+b. Identify the unknown: E .
+0
+c. Express the answer as an equation: E =mc2.
+0
+d. Do the calculation:
+E =mc2=(1.00×10 −3 kg ⎞ (3.00×10 8 m/s)2
+0 ⎠
+=9.00×10 13 kg ·m2/s2.
+e. Convert units. Noting that 1kg·m2/s2=1J, we see the rest energy is:
+E =9.00×10 13 J.
+0
+Significance
+Thisisanenormousamountofenergyfora1.00-gmass.Restenergyislargebecausethespeedoflightcisa
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 231
+largenumberand c2 isaverylargenumber,sothat mc2 ishugeforanymacroscopicmass.The 9.00×10 13 J
+restmassenergyfor1.00gisabouttwicetheenergyreleasedbytheHiroshimaatomicbombandabout10,000
+times the kinetic energy of a large aircraft carrier.
+Today, the practical applications of the conversion of mass into another form of energy, such as in nuclear weapons and
+nuclearpowerplants,arewellknown.ButexamplesalsoexistedwhenEinsteinfirstproposedthecorrectformofrelativistic
+energy,andhediddescribesomeofthem.Nuclearradiationhadbeendiscoveredinthepreviousdecade,andithadbeen
+amysteryastowhereitsenergyoriginated.Theexplanationwasthat,insomenuclearprocesses,asmallamountofmass
+isdestroyedandenergyisreleasedandcarriedbynuclearradiation.Buttheamountofmassdestroyedissosmallthatitis
+difficulttodetectthatanyismissing.AlthoughEinsteinproposedthisasthesourceofenergyintheradioactivesaltsthen
+beingstudied,itwasmanyyearsbeforetherewasbroadrecognitionthatmasscouldbeand,infact,commonlyis,converted
+to energy (Figure 5.28).
+Figure 5.28 (a) The sun and (b) the Susquehanna Steam Electric Station both convert mass into energy—the sun via
+nuclear fusion, and the electric station via nuclear fission. (credit a: modification of work by NASA/SDO (AIA) )
+Because of the relationship of rest energy to mass, we now consider mass to be a form of energy rather than something
+separate.TherehadnotbeenevenahintofthispriortoEinstein’swork.Energy-massequivalenceisnowknowntobethe
+source of the sun’s energy, the energy of nuclear decay, and even one of the sources of energy keeping Earth’s interior hot.
+Stored Energy and Potential Energy
+Whathappenstoenergystoredinanobjectatrest,suchastheenergyputintoabatterybychargingit,ortheenergystored
+inatoygun’scompressedspring?Theenergyinputbecomespartofthetotalenergyoftheobjectandthusincreasesitsrest
+mass. All stored and potential energy becomes mass in a system. In seeming contradiction, the principle of conservation
+ofmass(meaningtotalmassisconstant)wasoneofthegreatlawsverifiedbynineteenth-centuryscience.Whywasitnot
+noticed to be incorrect? The following example helps answer this question.
+Example 5.14
+Calculating Rest Mass
+Acarbatteryisratedtobeabletomove600ampere-hours (A·h) ofchargeat12.0V.(a)Calculatetheincrease
+inrestmassofsuchabatterywhenitistakenfrombeingfullydepletedtobeingfullycharged,assumingnoneof
+thechemicalreactantsenterorleavethebattery.(b)Whatpercentincreaseisthis,giventhatthebattery’smassis
+20.0 kg?
+
+232 Chapter 5 | Relativity
+Strategy
+Inpart(a),wefirstmustfindtheenergystoredaschemicalenergy E inthebattery,whichequalstheelectrical
+batt
+energy the battery can provide. Because E =qV, we have to calculate the charge q in 600A·h, which
+batt
+is the product of the current I and the time t. We then multiply the result by 12.0 V. We can then calculate the
+battery’s increase in mass using E =(Δm)c2. Part (b) is a simple ratio converted into a percentage.
+batt
+Solution for (a)
+a. Identify the knowns: I·t=600A·h;V =12.0V;c=3.00×10 8 m/s.
+b. Identify the unknown: Δm.
+c. Express the answer as an equation:
+E = (Δm)c2
+batt
+E
+Δm = batt
+c2
+qV
+=
+c2
+(It)V
+= .
+c2
+d. Do the calculation:
+(600A·h⎞⎛12.0V⎞
+Δm= ⎠⎝ ⎠.
+(3.00×10 8 )2
+Write amperes A as coulombs per second (C/s), and convert hours into seconds:
+(600C/s ·h)
+⎛3600s⎞
+(12.0J/C)
+Δm = ⎝ 1h ⎠
+(3.00×10 8 m/s)2
+−10
+=2.88×10 kg.
+where we have used the conversion 1kg·m2/s2=1J.
+Solution for (b)
+For part (b):
+a. Identify the knowns: Δm=2.88×10 −10 kg;m=20.0kg.
+b. Identify the unknown: % change.
+c. Express the answer as an equation: %increase = Δ m m ×100%.
+d. Do the calculation:
+% increase = Δ m m ×100%
+−10
+2.88×10 kg
+= ×100%
+20.0kg
+=1.44×10
+−9%.
+Significance
+Both the actual increase in mass and the percent increase are very small, because energy is divided by c2, a
+verylargenumber.Wewouldhavetobeabletomeasurethemassofthebatterytoaprecisionofabillionthofa
+percent,or1partin 1011, tonoticethisincrease.Itisnowonderthatthemassvariationisnotreadilyobserved.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 233
+Infact,thischangeinmassissosmallthatwemayquestionhowanyonecouldverifythatitisreal.Theansweris
+foundinnuclearprocessesinwhichthepercentageofmassdestroyedislargeenoughtobemeasuredaccurately.
+Themassofthefuelofanuclearreactor,forexample,ismeasurablysmallerwhenitsenergyhasbeenused.In
+thatcase,storedenergyhasbeenreleased(convertedmostlyintothermalenergytopowerelectricgenerators)and
+therestmasshasdecreased.Adecreaseinmassalsooccursfromusingtheenergystoredinabattery,exceptthat
+thestoredenergyismuchgreaterinnuclearprocesses,makingthechangeinmassmeasurableinpracticeaswell
+as in theory.
+Relativistic Energy and Momentum
+We know classically that kinetic energy and momentum are related to each other, because:
+K =
+p2
+=
+(mu)2
+= 1mu2.
+class 2m 2m 2
+Relativistically,wecanobtainarelationshipbetweenenergyandmomentumbyalgebraicallymanipulatingtheirdefining
+equations. This yields:
+E2=(pc)2+(mc2)2, (5.11)
+where E is the relativistic total energy, E=mc2/ 1−u2/c2, and p is the relativistic momentum. This relationship
+betweenrelativisticenergyandrelativisticmomentumismorecomplicatedthantheclassicalversion,butwecangainsome
+interestingnewinsightsbyexaminingit.First,totalenergyisrelatedtomomentumandrestmass.Atrest,momentumis
+zero,andtheequationgivesthetotalenergytobetherestenergy mc2 (sothisequationisconsistentwiththediscussion
+ofrestenergyabove).However,asthemassisaccelerated,itsmomentumpincreases,thusincreasingthetotalenergy.At
+sufficientlyhighvelocities,therestenergyterm (mc2)2 becomesnegligiblecomparedwiththemomentumterm (pc)2;
+thus, E= pc at extremely relativistic velocities.
+If we consider momentum p to be distinct from mass, we can determine the implications of the equation
+E2=(pc)2+(mc2)2, foraparticlethathasnomass.Ifwetakemtobezerointhisequation,then E= pc, orp=E/c.
+Massless particles have this momentum. There are several massless particles found in nature, including photons (which
+arepacketsofelectromagneticradiation).Anotherimplicationisthatamasslessparticlemusttravelatspeedcandonlyat
+speedc.Itisbeyondthescopeofthistexttoexaminetherelationshipintheequation E2=(pc)2+(mc2)2 indetail,but
+you can see that the relationship has important implications in special relativity.
+5.9 Check Your UnderstandingWhat is the kinetic energy of an electron if its speed is 0.992c?

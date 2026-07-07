@@ -1,0 +1,271 @@
+# REAL PDF — openstax_vol2.pdf, pages 376-384
+############################################################
+
+366 Chapter 8 | Capacitance
+Figure 8.17 (a) When fully charged, a vacuum capacitor has a voltage V and charge Q
+0 0
+(the charges remain on plate’s inner surfaces; the schematic indicates the sign of charge on
+each plate). (b) In step 1, the battery is disconnected. Then, in step 2, a dielectric (that is
+electrically neutral) is inserted into the charged capacitor. When the voltage across the
+capacitor is now measured, it is found that the voltage value has decreased to V =V /κ.
+0
+The schematic indicates the sign of the induced charge that is now present on the surfaces of
+the dielectric material between the plates.
+The principle expressed by Equation 8.11 is widely used in the construction industry (Figure 8.18). Metal plates in
+an electronic stud finder act effectively as a capacitor. You place a stud finder with its flat side on the wall and move it
+continuallyinthehorizontaldirection.Whenthefindermovesoverawoodenstud,thecapacitanceofitsplateschanges,
+becausewoodhasadifferentdielectricconstantthanagypsumwall.Thischangetriggersasignalinacircuit,andthusthe
+stud is detected.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 367
+Figure 8.18 An electronic stud finder is used to detect wooden studs
+behind drywall. (credit top: modification of work by Jane Whitney)
+The electrical energy stored by a capacitor is also affected by the presence of a dielectric. When the energy stored in an
+empty capacitor is U , the energyUstored in a capacitor with a dielectric is smaller by a factor of κ,
+0
+Q2 Q2 (8.12)
+U = 1 2 C = 1 2 κC 0 = 1 κ U 0 .
+0
+Asadielectricmaterialsampleisbroughtnearanemptychargedcapacitor,thesamplereactstotheelectricalfieldofthe
+chargesonthecapacitor plates.JustaswelearnedinElectric Charges and Fieldsonelectrostatics, therewillbethe
+induced charges on the surface of the sample; however, they are not free charges like in a conductor, because a perfect
+insulatordoesnothavefreelymovingcharges.Theseinducedchargesonthedielectricsurfaceareofanoppositesignto
+thefreechargesontheplatesofthecapacitor,andsotheyareattractedbythefreechargesontheplates.Consequently,the
+dielectricis“pulled”intothegap,andtheworktopolarizethedielectricmaterialbetweentheplatesisdoneattheexpense
+of the stored electrical energy, which is reduced, in accordance withEquation 8.12.
+Example 8.10
+Inserting a Dielectric into an Isolated Capacitor
+An empty 20.0-pF capacitor is charged to a potential difference of 40.0 V. The charging battery is then
+disconnected, and a piece of Teflon™ with a dielectric constant of 2.1 is inserted to completely fill the space
+betweenthecapacitorplates(seeFigure8.17).Whatarethevaluesof(a)thecapacitance,(b)thechargeofthe
+plate,(c)thepotentialdifferencebetweentheplates,and(d)theenergystoredinthecapacitorwithandwithout
+dielectric?
+
+368 Chapter 8 | Capacitance
+Strategy
+Weidentifytheoriginalcapacitance C =20.0pF andtheoriginalpotentialdifference V =40.0V between
+0 0
+the plates. We combineEquation 8.11with other relations involving capacitance and substitute.
+Solution
+a. The capacitance increases to
+C=κC =2.1(20.0pF)=42.0pF.
+0
+b. Without dielectric, the charge on the plates is
+Q =C V =(20.0pF)(40.0V)=0.8nC.
+0 0 0
+Since the battery is disconnected before the dielectric is inserted, the plate charge is unaffected by the
+dielectric and remains at 0.8 nC.
+c. With the dielectric, the potential difference becomes
+V = 1 κ V 0 = 2 1 .1 40.0V=19.0V.
+d. The stored energy without the dielectric is
+U = 1C V2= 1 (20.0pF)(40.0V)2=16.0nJ.
+0 2 0 0 2
+With the dielectric inserted, we useEquation 8.12to find that the stored energy decreases to
+U = 1 κ U 0 = 2 1 .1 16.0nJ=7.6nJ.
+Significance
+Noticethattheeffectofadielectriconthecapacitanceofacapacitorisadrasticincreaseofitscapacitance.This
+effect is far more profound than a mere change in the geometry of a capacitor.
+8.7 Check Your Understanding When a dielectric is inserted into an isolated and charged capacitor, the
+stored energy decreases to 33% of its original value. (a) What is the dielectric constant? (b) How does the
+capacitance change?
+8.5 | Molecular Model of a Dielectric
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the polarization of a dielectric in a uniform electrical field
+• Describe the effect of a polarized dielectric on the electrical field between capacitor plates
+• Explain dielectric breakdown
+Wecanunderstandtheeffectofadielectric oncapacitance bylookingatitsbehavioratthemolecularlevel.Aswehave
+seeninearlierchapters,ingeneral,allmoleculescanbeclassifiedaseitherpolarornonpolar.Thereisanetseparationof
+positiveandnegativechargesinanisolatedpolarmolecule,whereasthereisnochargeseparationinanisolatednonpolar
+molecule(Figure8.19).Inotherwords,polarmoleculeshavepermanentelectric-dipolemomentsandnonpolarmolecules
+donot.Forexample,amoleculeofwaterispolar,andamoleculeofoxygenisnonpolar.Nonpolarmoleculescanbecome
+polar in the presence of an external electrical field, which is calledinduced polarization.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 369
+Figure 8.19 The concept of polarization: In an unpolarized atom or molecule, a negatively charged electron cloud is evenly
+distributed around positively charged centers, whereas a polarized atom or molecule has an excess of negative charge at one side
+so that the other side has an excess of positive charge. However, the entire system remains electrically neutral. The charge
+polarization may be caused by an external electrical field. Some molecules and atoms are permanently polarized (electric
+dipoles) even in the absence of an external electrical field (polar molecules and atoms).
+Let’s first consider a dielectric composed of polar molecules. In the absence of any external electrical field, the electric
+dipolesareorientedrandomly,asillustratedinFigure8.20(a).However,ifthedielectricisplacedinanexternalelectrical
+→
+field E ,thepolarmoleculesalignwiththeexternalfield,asshowninpart(b)ofthefigure.Oppositechargesonadjacent
+0
+dipoleswithinthevolumeofdielectricneutralizeeachother,sothereisnonetchargewithinthedielectric(seethedashed
+circlesinpart(b)).However,thisisnotthecaseveryclosetotheupperandlowersurfacesthatborderthedielectric(the
+region enclosed by the dashed rectangles in part (b)), where the alignment does produce a net charge. Since the external
+electricalfieldmerelyalignsthedipoles,thedielectricasawholeisneutral,andthesurfacechargesinducedonitsopposite
+→
+facesareequalandopposite.Theseinducedsurfacecharges +Q i and −Q i produceanadditionalelectricalfield E i
+→
+(aninduced electrical field), whichopposesthe external field E , as illustrated in part (c).
+0
+
+370 Chapter 8 | Capacitance
+Figure 8.20 A dielectric with polar molecules: (a) In the absence of an external electrical field; (b) in the presence of an
+→
+external electrical field E . The dashed lines indicate the regions immediately adjacent to the capacitor plates. (c) The
+0
+→
+induced electrical field E i inside the dielectric produced by the induced surface charge Q i of the dielectric. Note that, in
+reality, the individual molecules are not perfectly aligned with an external field because of thermal fluctuations; however, the
+averagealignment is along the field lines as shown.
+Thesameeffectisproducedwhenthemoleculesofadielectricarenonpolar.Inthiscase,anonpolarmoleculeacquiresan
+→
+induced electric-dipole moment because the external field E causes a separation between its positive and negative
+0
+→
+charges.Theinduceddipolesofthenonpolarmoleculesalignwith E inthesamewayasthepermanentdipolesofthe
+0
+polarmoleculesarealigned(showninpart(b)).Hence,theelectricalfieldwithinthedielectricisweakenedregardlessof
+whether its molecules are polar or nonpolar.
+Therefore, when the region between the parallel plates of a charged capacitor, such as that shown in Figure 8.21(a), is
+→
+filled withadielectric, within thedielectric thereisanelectrical field E duetothefreecharge Q onthecapacitor
+0 0
+→
+platesandanelectricalfield E i duetotheinducedcharge Q i onthesurfacesofthedielectric.Theirvectorsumgives
+→
+the net electrical field E within the dielectric between the capacitor plates (shown in part (b) of the figure):
+→ → → (8.13)
+E = E + E .
+0 i
+This net field can be considered to be the field produced by aneffective charge Q
+0
+−Q
+i
+on the capacitor.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 371
+Figure 8.21 Electrical field: (a) In an empty capacitor, electrical field
+→ →
+E . (b) In a dielectric-filled capacitor, electrical field E .
+0
+→ →
+Inmostdielectrics,thenetelectricalfield E isproportionaltothefield E producedbythefreecharge.Intermsof
+0
+these two electrical fields, the dielectric constant κ of the material is defined as
+E (8.14)
+κ= 0.
+E
+→ →
+Since E and E point in opposite directions, the magnitude E is smaller than the magnitude E and therefore
+0 i 0
+κ>1. CombiningEquation 8.14withEquation 8.13,andrearrangingtheterms,yieldsthefollowingexpressionfor
+the induced electrical field in a dielectric:
+→ ⎛1 ⎞→ (8.15)
+E i = ⎝κ −1 ⎠ E 0 .
+Whenthemagnitudeofanexternalelectricalfieldbecomestoolarge,themoleculesofdielectricmaterialstarttobecome
+ionized.Amoleculeoranatomisionizedwhenoneormoreelectronsareremovedfromitandbecomefreeelectrons,no
+longerboundtothemolecularoratomicstructure.Whenthishappens,thematerialcanconduct,therebyallowingcharge
+to move through the dielectric from one capacitor plate to the other. This phenomenon is called dielectric breakdown.
+(Figure 8.1 shows typical random-path patterns of electrical discharge during dielectric breakdown.) The critical value,
+E , of the electrical field at which the molecules of an insulator become ionized is called the dielectric strength of the
+c
+material.Thedielectricstrengthimposesalimitonthevoltagethatcanbeappliedforagivenplateseparationinacapacitor.
+For example, the dielectric strength of air is E c=3.0MV/m, so for an air-filled capacitor with a plate separation of
+d =1.00mm, thelimitonthepotentialdifferencethatcanbesafelyappliedacrossitsplateswithoutcausingdielectric
+breakdown is V =E c d =(3.0×10 6 V/m)(1.00×10 −3 m)=3.0kV.
+However, this limit becomes 60.0 kV when the same capacitor is filled with Teflon™, whose dielectric strength is about
+60.0MV/m.Becauseofthislimitimposedbythedielectricstrength,theamountofchargethatanair-filledcapacitorcan
+
+372 Chapter 8 | Capacitance
+store is only Q =κ C (3.0kV) and the charge stored on the same Teflon™-filled capacitor can be as much as
+0 air 0
+Q κ
+Q=κ teflo C 0 (60.0kV)=κ teflo κ air (3.0 0 kV) (60.0kV)=20 t κ e a fl i o r Q 0 =20 1.0 2 0 .1 059 Q 0 ≅42Q 0 ,
+which is about 42 times greater than a charge stored on an air-filled capacitor. Typical values of dielectric constants and
+dielectricstrengthsforvariousmaterialsaregiveninTable 8.1.Noticethatthedielectricconstant κ isexactly1.0fora
+vacuum (the empty space serves as a reference condition) and very close to 1.0 for air under normal conditions (normal
+pressure at room temperature). These two values are so close that, in fact, the properties of an air-filled capacitor are
+essentially the same as those of an empty capacitor.
+Material Dielectric constant κ Dielectric strength E c[×10 6 V/m]
+Vacuum 1 ∞
+Dry air (1 atm) 1.00059 3.0
+Teflon™ 2.1 60 to 173
+Paraffin 2.3 11
+Silicon oil 2.5 10 to 15
+Polystyrene 2.56 19.7
+Nylon 3.4 14
+Paper 3.7 16
+Fused quartz 3.78 8
+Glass 4 to 6 9.8 to 13.8
+Concrete 4.5 –
+Bakelite 4.9 24
+Diamond 5.5 2,000
+Pyrex glass 5.6 14
+Mica 6.0 118
+Neoprene rubber 6.7 15.7 to 26.7
+Water 80 −
+Sulfuric acid 84 to 100 −
+Titanium dioxide 86 to 173 –
+Strontium titanate 310 8
+Barium titanate 1,200 to 10,000 –
+Calcium copper titanate > 250,000 –
+Table 8.1Representative Values of Dielectric Constants and Dielectric Strengths of Various
+Materials at Room Temperature
+Notallsubstanceslistedinthetablearegoodinsulators,despitetheirhighdielectricconstants.Water,forexample,consists
+of polar molecules and has a large dielectric constant of about 80. In a water molecule, electrons are more likely found
+aroundtheoxygennucleusthanaroundthehydrogennuclei.Thismakestheoxygenendofthemoleculeslightlynegative
+andleavesthehydrogensendslightlypositive,whichmakesthemoleculeeasytoalignalonganexternalelectricalfield,and
+thuswaterhasalargedielectricconstant.However,thepolarnatureofwatermoleculesalsomakeswateragoodsolventfor
+many substances, which produces undesirable effects, because any concentration of free ions in water conducts electricity.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 373
+Example 8.11
+Electrical Field and Induced Surface Charge
+SupposethatthedistancebetweentheplatesofthecapacitorinExample 8.10is2.0mmandtheareaofeach
+plate is 4.5×10 −3 m2. Determine: (a) the electrical field between the plates before and after the Teflon™ is
+inserted, and (b) the surface charge induced on the Teflon™ surfaces.
+Strategy
+Inpart(a),weknowthatthevoltageacrosstheemptycapacitoris V =40V,sotofindtheelectricalfieldswe
+0
+usetherelation V =Ed andEquation8.14.Inpart(b),knowingthemagnitudeoftheelectricalfield,weuse
+theexpressionforthemagnitudeofelectricalfieldnearachargedplate E=σ/ε ,where σ isauniformsurface
+0
+chargedensitycausedbythesurfacecharge.Weusethevalueoffreecharge Q =8.0×10 −10 C obtainedin
+0
+Example 8.10.
+Solution
+a. The electrical field E between the plates of an empty capacitor is
+0
+V
+E = 0 = 40V =2.0×104 V/m.
+0 d −3
+2.0×10 m
+The electrical fieldEwith the Teflon™ in place is
+E= 1 κ E 0 = 2 1 .1 2.0×104 V/m=9.5×10 3 V/m.
+b. Theeffectivechargeonthecapacitoristhedifferencebetweenthefreecharge Q andtheinducedcharge
+0
+Q . The electrical field in the Teflon™ is caused by this effective charge. Thus
+i
+E= ε 1 0 σ = ε 1 0
+Q
+0 A
+−Q
+i.
+We invert this equation to obtain Q , which yields
+i
+Q =Q −ε AE
+i 0 0
+=8.0×10 −10 C− ⎛ 8.85×10−12 C2 ⎞ ⎛ 4.5×10 −3 m2⎞⎛ 9.5×10 3 V⎞
+⎝ N·m2⎠⎝ ⎠⎝ m⎠
+−10
+=4.2×10 C=0.42nC.
+Example 8.12
+Inserting a Dielectric into a Capacitor Connected to a Battery
+Whenabatteryofvoltage V isconnectedacrossanemptycapacitorofcapacitance C ,thechargeonitsplates
+0 0
+is Q ,andtheelectricalfieldbetweenitsplatesis E .Adielectricofdielectricconstant κ isinsertedbetween
+0 0
+theplateswhilethebatteryremainsinplace,asshowninFigure 8.22.(a)FindthecapacitanceC,thevoltage
+Vacrossthecapacitor,andtheelectricalfieldEbetweentheplatesafterthedielectricisinserted.(b)Obtainan
+expressionforthefreechargeQontheplatesofthefilledcapacitorandtheinducedcharge Q onthedielectric
+i
+surface in terms of the original plate charge Q .
+0

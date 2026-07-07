@@ -1,0 +1,195 @@
+# REAL PDF — openstax_vol3.pdf, pages 39-46
+############################################################
+
+Chapter 1 | The Nature of Light 31
+Solution
+Thesegmentonthesurface AB′ issharedbyboththetriangle ABB′ insidemedium1andthetriangle AA′B′
+inside medium 2. Note that from the geometry, the angle ∠BAB′ is equal to the angle of incidence, θ .
+1
+Similarly, ∠AB′A′ is θ .
+2
+The length of AB′ is given in two ways as
+AB′=
+BB′
+=
+AA′
+.
+sinθ sinθ
+1 2
+Inverting the equation and substituting AA′=cΔt/n from above and similarly BB′=cΔt/n , we obtain
+2 1
+sinθ sinθ
+1 = 2.
+cΔt/n cΔt/n
+1 2
+Cancellation of cΔt allows us to simplify this equation into the familiar form
+n sinθ =n sinθ .
+1 1 2 2
+Significance
+AlthoughthelawofrefractionwasestablishedexperimentallybySnellandstatedinRefraction,itsderivation
+here requires Huygens’s principle and the understanding that the speed of light is different in different media.
+1.5 Check Your Understanding In Example 1.6, we had n <n . If n were decreased such that
+1 2 2
+n >n andthespeedoflightinmedium2isfasterthaninmedium1,whatwouldhappentothelengthof
+1 2
+AA′? What would happen to the wave front A′B′ and the direction of the refracted ray?
+This applet (https://openstaxcollege.org/l/21walfedaniref) by Walter Fendt shows an animation of
+reflection and refraction using Huygens’s wavelets while you control the parameters. Be sure to click on “Next
+step” to display the wavelets. You can see the reflected and refracted wave fronts forming.
+Diffraction
+Whathappenswhenawavepassesthroughanopening,suchaslightshiningthroughanopendoorintoadarkroom?For
+light,weobserveasharpshadowofthedoorwayontheflooroftheroom,andnovisiblelightbendsaroundcornersinto
+otherpartsoftheroom.Whensoundpassesthroughadoor,weheariteverywhereintheroomandthusobservethatsound
+spreadsoutwhenpassingthroughsuchanopening(Figure 1.30).Whatisthedifferencebetweenthebehaviorofsound
+waves and light waves in this case? The answer is that light has very short wavelengths and acts like a ray. Sound has
+wavelengths on the order of the size of the door and bends around corners (for frequency of 1000 Hz,
+λ= c = 330m/s =0.33m,
+f 1000s−1
+about three times smaller than the width of the doorway).
+
+32 Chapter 1 | The Nature of Light
+Figure 1.30 (a) Light passing through a doorway makes a sharp outline on the floor. Since light’s
+wavelength is very small compared with the size of the door, it acts like a ray. (b) Sound waves bend
+into all parts of the room, a wave effect, because their wavelength is similar to the size of the door.
+Ifwepasslightthroughsmalleropeningssuchasslits,wecanuseHuygens’sprincipletoseethatlightbendsassounddoes
+(Figure1.31).Thebendingofawavearoundtheedgesofanopeningoranobstacleiscalleddiffraction.Diffractionisa
+wavecharacteristicandoccursforalltypesofwaves.Ifdiffractionisobservedforsomephenomenon,itisevidencethatthe
+phenomenonisawave.Thus,thehorizontaldiffractionofthelaserbeamafteritpassesthroughtheslitsinFigure1.31is
+evidence that light is a wave. You will learn about diffraction in much more detail in the chapter onDiffraction.
+Figure 1.31 Huygens’s principle applied to a plane wave front striking an
+opening. The edges of the wave front bend after passing through the opening, a
+process called diffraction. The amount of bending is more extreme for a small
+opening, consistent with the fact that wave characteristics are most noticeable for
+interactions with objects about the same size as the wavelength.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 33
+1.7 | Polarization
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the change in intensity as polarized light passes through a polarizing filter
+• Calculate the effect of polarization by reflection and Brewster’s angle
+• Describe the effect of polarization by scattering
+• Explain the use of polarizing materials in devices such as LCDs
+Polarizing sunglasses arefamiliar tomostofus.Theyhaveaspecial ability tocuttheglare oflight reflected fromwater
+or glass (Figure 1.32). They have this ability because of a wave characteristic of light called polarization. What is
+polarization? How is it produced? What are some of its uses? The answers to these questions are related to the wave
+character of light.
+Figure 1.32 These two photographs of a river show the effect of a polarizing filter in reducing glare in light reflected from the
+surface of water. Part (b) of this figure was taken with a polarizing filter and part (a) was not. As a result, the reflection of clouds
+and sky observed in part (a) is not observed in part (b). Polarizing sunglasses are particularly useful on snow and water. (credit a
+and credit b: modifications of work by “Amithshs”/Wikimedia Commons)
+Malus’s Law
+Light is one type of electromagnetic (EM) wave. As noted in the previous chapter on Electromagnetic Waves
+(http://cnx.org/content/m58495/latest/),EMwavesaretransversewavesconsistingofvaryingelectricandmagnetic
+fieldsthatoscillateperpendiculartothedirectionofpropagation(Figure1.33).However,ingeneral,therearenospecific
+directionsfortheoscillationsoftheelectricandmagneticfields;theyvibrateinanyrandomlyorientedplaneperpendicular
+tothedirectionofpropagation.Polarizationistheattributethatawave’soscillationsdohaveadefinitedirectionrelative
+tothedirectionofpropagationofthewave.(Thisisnotthesametypeofpolarizationasthatdiscussedfortheseparationof
+charges.)Waveshavingsuchadirectionaresaidtobepolarized.ForanEMwave,wedefinethedirectionofpolarization
+tobethedirectionparalleltotheelectricfield.Thus,wecanthinkoftheelectricfieldarrowsasshowingthedirectionof
+polarization, as inFigure 1.33.
+
+34 Chapter 1 | The Nature of Light
+Figure 1.33 An EM wave, such as light, is a transverse wave.
+→ →
+The electric ( E ) and magnetic ( B ) fields are
+perpendicular to the direction of propagation. The direction of
+polarization of the wave is the direction of the electric field.
+To examine this further, consider the transverse waves in the ropes shown in Figure 1.34. The oscillations in one rope
+are in a vertical plane and are said to be vertically polarized. Those in the other rope are in a horizontal plane and are
+horizontallypolarized.Ifaverticalslitisplacedonthefirstrope,thewavespassthrough.However,averticalslitblocks
+thehorizontallypolarizedwaves.ForEMwaves,thedirectionoftheelectricfieldisanalogoustothedisturbancesonthe
+ropes.
+Figure 1.34 The transverse oscillations in one rope (a) are in a vertical plane, and those in the other rope (b)
+are in a horizontal plane. The first is said to be vertically polarized, and the other is said to be horizontally
+polarized. Vertical slits pass vertically polarized waves and block horizontally polarized waves.
+TheSunandmanyotherlightsourcesproducewavesthathavetheelectricfieldsinrandomdirections(Figure 1.35(a)).
+Such light is said to be unpolarized, because it is composed of many waves with all possible directions of polarization.
+Polaroidmaterials—whichwereinventedbythefounderofthePolaroidCorporation,EdwinLand—actasapolarizingslit
+for light, allowing only polarization in one direction to pass through. Polarizing filters are composed of long molecules
+aligned in one direction. If we think of the molecules as many slits, analogous to those for the oscillating ropes, we can
+understandwhyonlylightwithaspecificpolarizationcangetthrough.Theaxisofapolarizingfilteristhedirectionalong
+which the filter passes the electric field of an EM wave.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 35
+Figure 1.35 The slender arrow represents a ray of unpolarized light. The bold arrows represent the direction of
+polarization of the individual waves composing the ray. (a) If the light is unpolarized, the arrows point in all directions. (b)
+A polarizing filter has a polarization axis that acts as a slit passing through electric fields parallel to its direction. The
+direction of polarization of an EM wave is defined to be the direction of its electric field.
+Figure 1.36 shows the effect of two polarizing filters on originally unpolarized light. The first filter polarizes the light
+alongitsaxis.Whentheaxesofthefirstandsecondfiltersarealigned(parallel),thenallofthepolarizedlightpassedby
+thefirstfilterisalsopassedbythesecondfilter.Ifthesecondpolarizingfilterisrotated,onlythecomponentofthelight
+parallel to the second filter’s axis is passed. When the axes are perpendicular, no light is passed by the second filter.
+Figure 1.36 The effect of rotating two polarizing filters, where the first polarizes the light. (a) All of the polarized light is
+passed by the second polarizing filter, because its axis is parallel to the first. (b) As the second filter is rotated, only part of the
+light is passed. (c) When the second filter is perpendicular to the first, no light is passed. (d) In this photograph, a polarizing filter
+is placed above two others. Its axis is perpendicular to the filter on the right (dark area) and parallel to the filter on the left (lighter
+area). (credit d: modification of work by P.P. Urone)
+
+36 Chapter 1 | The Nature of Light
+OnlythecomponentoftheEMwaveparalleltotheaxisofafilterispassed.Letuscalltheanglebetweenthedirectionof
+polarizationandtheaxisofafilter θ.IftheelectricfieldhasanamplitudeE,thenthetransmittedpartofthewavehasan
+amplitude Ecosθ (Figure1.37).Sincetheintensityofawaveisproportionaltoitsamplitudesquared,theintensityIof
+the transmitted wave is related to the incident wave by
+I =I cos2 θ (1.6)
+0
+where I is the intensity of the polarized wave before passing through the filter. This equation is known asMalus’s law.
+0
+Figure 1.37 A polarizing filter transmits only the component
+of the wave parallel to its axis, reducing the intensity of any
+light not polarized parallel to its axis.
+This Open Source Physics animation (https://openstaxcollege.org/l/21phyanielefie) helps you
+visualize the electric field vectors as light encounters a polarizing filter. You can rotate the filter—note that the
+angle displayed is in radians. You can also rotate the animation for 3D visualization.
+Example 1.7
+Calculating Intensity Reduction by a Polarizing Filter
+What angle is needed between the direction of polarized light and the axis of a polarizing filter to reduce its
+intensity by 90.0%?
+Strategy
+Whentheintensityisreducedby 90.0%,itis 10.0% or0.100timesitsoriginalvalue.Thatis, I =0.100I .
+0
+Using this information, the equation I =I cos2 θ can be used to solve for the needed angle.
+0
+Solution
+Solving the equation I =I cos2 θ for cosθ and substituting with the relationship betweenIand I gives
+0 0
+cosθ= I = 0.100I 0 =0.3162.
+I I
+0 0
+Solving for θ yields
+θ=cos−1 0.3162=71.6°.
+Significance
+Afairlylargeanglebetweenthedirectionofpolarizationandthefilteraxisisneededtoreducetheintensityto
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 37
+10.0% ofitsoriginalvalue.Thisseemsreasonablebasedonexperimentingwithpolarizingfilms.Itisinteresting
+that at an angle of 45°,the intensity is reduced to 50% ofits original value. Note that 71.6° is 18.4° from
+reducing the intensity to zero, and that at an angle of 18.4°, the intensity is reduced to 90.0% of its original
+value, giving evidence of symmetry.
+1.6 Check YourUnderstanding Although wedidnotspecify the direction inExample 1.7,let’ssaythe
+polarizing filter wasrotated clockwise by 71.6° toreduce thelightintensity by 90.0%.Whatwouldbethe
+intensity reduction if the polarizing filter were rotated counterclockwise by 71.6°?
+Polarization by Reflection
+Bynow,youcanprobablyguessthatpolarizingsunglassescuttheglareinreflectedlight,becausethatlightispolarized.
+Youcancheckthisforyourselfbyholdingpolarizing sunglasses infrontofyouandrotating themwhilelookingatlight
+reflectedfromwaterorglass.Asyourotatethesunglasses,youwillnoticethelightgetsbrightanddim,butnotcompletely
+black. This implies the reflected light is partially polarized and cannot be completely blocked by a polarizing filter.
+Figure 1.38 illustrates what happens when unpolarized light is reflected from a surface. Vertically polarized light is
+preferentially refracted at the surface, so the reflected light is left more horizontally polarized. The reasons for this
+phenomenon are beyond the scope of this text, but a convenient mnemonic for remembering this is to imagine the
+polarization direction to be like an arrow. Vertical polarization is like an arrow perpendicular to the surface and is more
+likely to stick and not be reflected. Horizontal polarization is like an arrow bouncing on its side and is more likely to be
+reflected. Sunglasses with vertical axes thus block more reflected light than unpolarized light from other sources.
+Figure 1.38 Polarization by reflection. Unpolarized light has equal amounts of vertical and horizontal
+polarization. After interaction with a surface, the vertical components are preferentially absorbed or refracted,
+leaving the reflected light more horizontally polarized. This is akin to arrows striking on their sides and
+bouncing off, whereas arrows striking on their tips go into the surface.
+Sincethepartofthelightthatisnotreflectedisrefracted,theamountofpolarizationdependsontheindicesofrefractionof
+the media involved. It can be shown that reflected light is completely polarized at an angle of reflection θ given by
+b
+n (1.7)
+tanθ b = n 2
+1

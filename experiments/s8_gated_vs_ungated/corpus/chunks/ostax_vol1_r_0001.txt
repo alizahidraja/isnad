@@ -1,0 +1,365 @@
+# REAL PDF — openstax_vol1.pdf, pages 3-14
+############################################################
+
+University Physics
+Volume 1
+SENIOR CONTRIBUTING AUTHORS
+WILLIAM MOEBS, FORMERLY OF LOYOLA MARYMOUNT UNIVERSITY
+SAMUEL J. LING, TRUMAN STATE UNIVERSITY
+JEFF SANNY, LOYOLA MARYMOUNT UNIVERSITY
+
+OpenStax
+Rice University
+6100 Main Street MS-375
+Houston, Texas 77005
+To learn more about OpenStax, visit https://openstax.org.
+Individual print copies and bulk orders can be purchased through our website.
+©2026 Rice University. Textbook content produced by OpenStax is licensed under a Creative Commons
+Attribution Non-Commercial ShareAlike 4.0 International License (CC BY-NC-SA 4.0). Under this license, any
+user of this textbook or the textbook contents herein can share, remix, and build upon the content for
+noncommercial purposes only. Any adaptations must be shared under the same type of license. In any case of
+sharing the original or adapted material, whether in whole or in part, the user must provide proper attribution
+as follows:
+- If you noncommercially redistribute this textbook in a digital format (including but not limited to PDF and
+HTML), then you must retain on every page the following attribution:
+“Access for free at openstax.org.”
+- If you noncommercially redistribute this textbook in a print format, then you must include on every
+physical page the following attribution:
+“Access for free at openstax.org.”
+- If you noncommercially redistribute part of this textbook, then you must retain in every digital format
+page view (including but not limited to PDF and HTML) and on every physical printed page the following
+attribution:
+“Access for free at openstax.org.”
+- If you use this textbook as a bibliographic reference, please include
+https://openstax.org/details/books/university-physics-volume-1 in your citation.
+For questions regarding this licensing, please contact support@openstax.org.
+Trademarks
+The OpenStax name, OpenStax logo, OpenStax book covers, OpenStax CNX name, OpenStax CNX logo,
+OpenStax Tutor name, Openstax Tutor logo, Connexions name, Connexions logo, Rice University name, and
+Rice University logo are not subject to the license and may not be reproduced without the prior and express
+written consent of Rice University.
+Kendall Hunt and the Kendall Hunt Logo are trademarks of Kendall Hunt. The Kendall Hunt mark is registered
+in the United States, Canada, and the European Union. These trademarks may not be used without the prior
+and express written consent of Kendall Hunt.
+COLOR PAPERBACK BOOK ISBN-13 978-1-938168-27-7
+B&W PAPERBACK BOOK ISBN-13 978-1-50669-817-5
+DIGITAL VERSION ISBN-13 978-1-947172-20-3
+ORIGINAL PUBLICATION YEAR 2016
+5 6 7 8 9 10 RS 26 25 21 18 16
+
+OPENSTAX
+OpenStax provides free, peer-reviewed, openly licensed textbooks for introductory college and Advanced
+Placement® courses and low-cost, personalized courseware that helps students learn. A nonprofit ed tech
+initiative based at Rice University, we’re committed to helping students access the tools they need to complete
+their courses and meet their educational goals.
+RICE UNIVERSITY
+OpenStax is an initiative of Rice University. As a leading research university with a distinctive commitment to
+undergraduate education, Rice University aspires to path-breaking research, unsurpassed teaching, and
+contributions to the betterment of our world. It seeks to fulfill this mission by cultivating a diverse community
+of learning and discovery that produces leaders across the spectrum of human endeavor.
+PHILANTHROPIC SUPPORT
+OpenStax is grateful for the generous philanthropic partners who advance our mission to improve educational
+access and learning for everyone. To see the impact of our supporter community and our most updated list of
+partners, please visit openstax.org/foundation.
+Arnold Ventures Burt and Deedee McMurtry
+Chan Zuckerberg Initiative Michelson 20MM Foundation
+Chegg, Inc. National Science Foundation
+Arthur and Carlyse Ciocca Charitable Foundation The Open Society Foundations
+Digital Promise Jumee Yhu and David E. Park III
+Ann and John Doerr Brian D. Patterson USA-International Foundation
+Bill & Melinda Gates Foundation The Bill and Stephanie Sick Fund
+Girard Foundation Steven L. Smith & Diana T. Go
+Google Inc. Stand Together
+The William and Flora Hewlett Foundation Robin and Sandy Stuart Foundation
+The Hewlett-Packard Company The Stuart Family Foundation
+Intel Inc. Tammy and Guillermo Treviño
+Rusty and John Jaggers Valhalla Charitable Foundation
+The Calvin K. Kazanjian Economics Foundation White Star Education Foundation
+Charles Koch Foundation Schmidt Futures
+Leon Lowenstein Foundation, Inc. William Marsh Rice University
+The Maxfield Foundation
+
+Study where you want, what
+you want, when you want.
+When you access your book in our web view, you can use our new online
+highlighting and note-taking features to create your own study guides.
+Our books are free and flexible, forever.
+Get started at openstax.org/details/books/university-physics-volume-1
+Access. The future of education.
+openstax.org
+
+Contents
+Preface 1
+UNIT 1 MECHANICS
+CHAPTER 1
+Units and Measurement
+5
+Introduction 5
+1.1 The Scope and Scale of Physics 6
+1.2 Units and Standards 12
+1.3 Unit Conversion 18
+1.4 Dimensional Analysis 20
+1.5 Estimates and Fermi Calculations 23
+1.6 Significant Figures 26
+1.7 Solving Problems in Physics 30
+Chapter Review 33
+CHAPTER 2
+Vectors
+41
+Introduction 41
+2.1 Scalars and Vectors 42
+2.2 Coordinate Systems and Components of a Vector 53
+2.3 Algebra of Vectors 63
+2.4 Products of Vectors 72
+Chapter Review 84
+CHAPTER 3
+Motion Along a Straight Line
+97
+Introduction 97
+3.1 Position, Displacement, and Average Velocity 98
+3.2 Instantaneous Velocity and Speed 102
+3.3 Average and Instantaneous Acceleration 107
+3.4 Motion with Constant Acceleration 115
+3.5 Free Fall 126
+3.6 Finding Velocity and Displacement from Acceleration 132
+Chapter Review 136
+CHAPTER 4
+Motion in Two and Three Dimensions
+147
+Introduction 147
+4.1 Displacement and Velocity Vectors 148
+4.2 Acceleration Vector 155
+4.3 Projectile Motion 160
+4.4 Uniform and Nonuniform Circular Motion 170
+
+4.5 Relative Motion in One and Two Dimensions 177
+Chapter Review 182
+CHAPTER 5
+Newton's Laws of Motion
+193
+Introduction 193
+5.1 Forces 194
+5.2 Newton's First Law 198
+5.3 Newton's Second Law 202
+5.4 Mass and Weight 212
+5.5 Newton’s Third Law 214
+5.6 Common Forces 220
+5.7 Drawing Free-Body Diagrams 230
+Chapter Review 235
+CHAPTER 6
+Applications of Newton's Laws
+249
+Introduction 249
+6.1 Solving Problems with Newton’s Laws 249
+6.2 Friction 265
+6.3 Centripetal Force 276
+6.4 Drag Force and Terminal Speed 284
+Chapter Review 293
+CHAPTER 7
+Work and Kinetic Energy
+311
+Introduction 311
+7.1 Work 312
+7.2 Kinetic Energy 320
+7.3 Work-Energy Theorem 323
+7.4 Power 328
+Chapter Review 331
+CHAPTER 8
+Potential Energy and Conservation of Energy
+341
+Introduction 341
+8.1 Potential Energy of a System 341
+8.2 Conservative and Non-Conservative Forces 350
+8.3 Conservation of Energy 353
+8.4 Potential Energy Diagrams and Stability 359
+8.5 Sources of Energy 363
+Chapter Review 367
+CHAPTER 9
+Linear Momentum and Collisions
+379
+Introduction 379
+9.1 Linear Momentum 380
+9.2 Impulse and Collisions 382
+9.3 Conservation of Linear Momentum 395
+Access for free at openstax.org
+
+9.4 Types of Collisions 405
+9.5 Collisions in Multiple Dimensions 412
+9.6 Center of Mass 419
+9.7 Rocket Propulsion 434
+Chapter Review 439
+CHAPTER 10
+Fixed-Axis Rotation
+451
+Introduction 451
+10.1 Rotational Variables 452
+10.2 Rotation with Constant Angular Acceleration 460
+10.3 Relating Angular and Translational Quantities 465
+10.4 Moment of Inertia and Rotational Kinetic Energy 469
+10.5 Calculating Moments of Inertia 477
+10.6 Torque 485
+10.7 Newton’s Second Law for Rotation 490
+10.8 Work and Power for Rotational Motion 494
+Chapter Review 500
+CHAPTER 11
+Angular Momentum
+515
+Introduction 515
+11.1 Rolling Motion 516
+11.2 Angular Momentum 523
+11.3 Conservation of Angular Momentum 531
+11.4 Precession of a Gyroscope 537
+Chapter Review 542
+CHAPTER 12
+Static Equilibrium and Elasticity
+553
+Introduction 553
+12.1 Conditions for Static Equilibrium 554
+12.2 Examples of Static Equilibrium 562
+12.3 Stress, Strain, and Elastic Modulus 575
+12.4 Elasticity and Plasticity 585
+Chapter Review 587
+CHAPTER 13
+Gravitation
+599
+Introduction 599
+13.1 Newton's Law of Universal Gravitation 599
+13.2 Gravitation Near Earth's Surface 605
+13.3 Gravitational Potential Energy and Total Energy 612
+13.4 Satellite Orbits and Energy 617
+13.5 Kepler's Laws of Planetary Motion 624
+13.6 Tidal Forces 630
+13.7 Einstein's Theory of Gravity 636
+Chapter Review 644
+
+CHAPTER 14
+Fluid Mechanics
+653
+Introduction 653
+14.1 Fluids, Density, and Pressure 654
+14.2 Measuring Pressure 665
+14.3 Pascal's Principle and Hydraulics 669
+14.4 Archimedes’ Principle and Buoyancy 674
+14.5 Fluid Dynamics 678
+14.6 Bernoulli’s Equation 682
+14.7 Viscosity and Turbulence 688
+Chapter Review 696
+UNIT 2 WAVES AND ACOUSTICS
+CHAPTER 15
+Oscillations
+709
+Introduction 709
+15.1 Simple Harmonic Motion 710
+15.2 Energy in Simple Harmonic Motion 718
+15.3 Comparing Simple Harmonic Motion and Circular Motion 725
+15.4 Pendulums 728
+15.5 Damped Oscillations 734
+15.6 Forced Oscillations 737
+Chapter Review 742
+CHAPTER 16
+Waves
+751
+Introduction 751
+16.1 Traveling Waves 752
+16.2 Mathematics of Waves 757
+16.3 Wave Speed on a Stretched String 766
+16.4 Energy and Power of a Wave 769
+16.5 Interference of Waves 774
+16.6 Standing Waves and Resonance 781
+Chapter Review 791
+CHAPTER 17
+Sound
+807
+Introduction 807
+17.1 Sound Waves 808
+17.2 Speed of Sound 810
+17.3 Sound Intensity 818
+17.4 Normal Modes of a Standing Sound Wave 826
+17.5 Sources of Musical Sound 834
+17.6 Beats 838
+17.7 The Doppler Effect 840
+17.8 Shock Waves 846
+Chapter Review 850
+Access for free at openstax.org
+
+Appendix A Units 863
+Appendix B Conversion Factors 867
+Appendix C Fundamental Constants 871
+Appendix D Astronomical Data 873
+Appendix E Mathematical Formulas 875
+Appendix F Chemistry 879
+Appendix G The Greek Alphabet 881
+Answer Key 883
+Index 943
+
+Access for free at openstax.org
+
+Preface 1
+PREFACE
+Welcome to University Physics, an OpenStax resource. bookstore. Visit your book page on OpenStax.org for
+This textbook was written to increase student access more information.
+to high-quality learning materials, maintaining highest
+Errata
+standards of academic rigor at little to no cost.
+All OpenStax textbooks undergo a rigorous review
+About OpenStax process. However, like any professional-grade
+textbook, errors sometimes occur. Since our books are
+OpenStax is part of Rice University, which is a 501(c)(3)
+web based, we can make updates periodically when
+nonprofit charitable corporation. Our mission is to
+deemed pedagogically necessary. If you have a
+make an amazing education accessible for all. Through
+correction to suggest, submit it through the link on your
+our partnerships with philanthropic organizations and
+book page on OpenStax.org. Subject matter experts
+our alliance with other educational resource
+review all errata suggestions. OpenStax is committed
+companies, we’re breaking down the most common
+to remaining transparent about all updates, so you will
+barriers to learning. Because we believe that everyone
+also find a list of past errata changes on your book
+should and can have access to knowledge.
+page on OpenStax.org.
+About OpenStax's resources
+Format
+Customization You can access this textbook for free in web view or
+University Physics is licensed under a Creative PDF through OpenStax.org, and for a low cost in print.
+Commons Attribution-NonCommercial-ShareAlike 4.0
+About University Physics
+(CC BY NC-SA) license, which means that you can non-
+commercially distribute, remix, and build upon the University Physics is designed for the two- or three-
+content, as long as you provide attribution to OpenStax semester calculus-based physics course. The text has
+and its content contributors, and distribute all been developed to meet the scope and sequence of
+derivatives under the same license. most university physics courses and provides a
+foundation for a career in mathematics, science, or
+Because our books are openly licensed, you are free to
+engineering. The book provides an important
+use the entire book or pick and choose the sections
+opportunity for students to learn the core concepts of
+that are most relevant to the needs of your course. Feel
+physics and understand how those concepts apply to
+free to remix the content by assigning your students
+their lives and to the world around them.
+certain chapters and sections in your syllabus in the
+order that you prefer. You can even provide a direct link Due to the comprehensive nature of the material, we
+in your syllabus to the sections in the web view of your are offering the book in three volumes for flexibility and
+book. efficiency.
+For any art that is openly licensed, non-commercial Coverage and scope
+users or organizations may reuse the art as long as Our University Physics textbook adheres to the scope
+they provide the same attribution to its original source. and sequence of most two- and three-semester
+(Commercial entities should contact OpenStax to physics courses nationwide. We have worked to make
+discuss reuse rights and permissions.) To maximize physics interesting and accessible to students while
+readability and content flow, some art does not include maintaining the mathematical rigor inherent in the
+attribution in the text. If you reuse art from this text subject. With this objective in mind, the content of this
+that does not have attribution provided, use the textbook has been developed and arranged to provide
+following attribution: Copyright Rice University, a logical progression from fundamental to more
+OpenStax, under CC BY NC-SA 4.0 license. advanced concepts, building upon what students have
+already learned and emphasizing connections between
+Instructors also have the option of creating a
+topics and between theory and applications. The goal
+customized version of their OpenStax book. The
+of each section is to enable students not just to
+custom version can be made available to students in
+recognize concepts, but to work with them in ways that
+low-cost print or digital form through their campus
+will be useful in later courses and future careers. The

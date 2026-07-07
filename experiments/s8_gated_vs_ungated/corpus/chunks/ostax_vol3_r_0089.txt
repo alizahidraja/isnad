@@ -1,0 +1,197 @@
+# REAL PDF — openstax_vol3.pdf, pages 547-554
+############################################################
+
+Chapter 11 | Particle Physics and Cosmology 539
+The Early Universe
+Before the short period of cosmic inflation, cosmologists believe that all matter in the universe was squeezed into a
+space much smaller than an atom. Cosmologists further believe that the universe was extremely dense and hot, and
+interactionsbetweenparticlesweregovernedbyasingleforce.Inotherwords,thefourfundamentalforces(strongnuclear,
+electromagnetic, weak nuclear, and gravitational) merge into one at these energies (Figure 11.21). How and why this
+“unity” breaks down at lower energies is an important unsolved problem in physics.
+Figure 11.21 The separation of the four fundamental forces in the early universe.
+Scientific models of the early universe are highly speculative. Figure 11.22 shows a sketch of one possible timeline of
+events.
+Figure 11.22 An approximate timeline for the evolution of the universe from the Big Bang to the present.
+1. Big Bang ⎛t<10 −43 s ⎞ : The current laws of physics break down. At the end of the initial Big Bang event, the
+⎝ ⎠
+temperature of the universe is approximately T =10 32 K.
+
+540 Chapter 11 | Particle Physics and Cosmology
+2. Inflationary phase ⎛t=10 −43 to 10 −35 s ⎞ : The universe expands exponentially, and gravity separates from the
+⎝ ⎠
+other forces. The universe cools to approximately T =10 27 K.
+3. Age of leptons ⎛t=10 −35 to 10 −6 s ⎞ : As the universe continues to expand, the strong nuclear force separates
+⎝ ⎠
+from the electromagnetic and weak nuclear forces (or electroweak force). Soon after, the weak nuclear force
+separatesfromtheelectromagneticforce.Theuniverseisahotsoupofquarks,leptons,photons,andotherparticles.
+4. Ageofnucleons ⎛t=10 −6 to 225 s ⎞ : Theuniverseconsistsofleptonsandhadrons(suchasprotons,neutrons,and
+⎝ ⎠
+mesons)inthermalequilibrium.Pairproductionandpairannihilationoccurswithequalease,sophotonsremainin
+thermal equilibrium:
+γ+γ ↔e−+e +
+−
+γ+γ ↔p+p
+−
+γ+γ ↔ n+n.
+The number of protons is approximately equal to the number of neutrons through interactions with neutrinos:
+ν e+n ↔e−+p
+−ν
+e+p ↔e
++
++n.
+The temperature of the universe settles to approximately 1011K —much too cool for the continued production
+ofnucleon-antinucleonpairs.Thenumbersofprotonsandneutronsbegintodominateovertheiranti-particles,so
+proton-antiproton ⎛p − p⎞ andneutron-antineutron(n − n)annihilationsdecline.Deuterons(proton-neutronpairs)begin
+⎝ ⎠
+to form.
+5. Ageofnucleosynthesis(t=225s to1000years):Astheuniversecontinuestoexpand,deuteronsreactwithprotons
+and neutrons to form larger nuclei; these larger nuclei react with protons and neutrons to form still larger nuclei.
+At the end of this period, about 1/4 of the mass of the universe is helium. (This explains the current amount of
+heliumintheuniverse.)Photonslacktheenergytocontinueelectron-positronproduction,soelectronsandpositrons
+annihilate each other to photons only.
+6. Ageofions(t=1000 to3000years):Theuniverseishotenoughtoionizeanyatomsformed.Theuniverseconsists
+of electrons, positrons, protons, light nuclei, and photons.
+7. Age of atoms (t=3000 to 300,000 years): The universe cools below 10 5 K and atoms form. Photons do not
+interactstronglywithneutralatoms,sothey“decouple”(separate)fromatoms.Thesephotonsconstitutethecosmic
+microwave background radiationto be discussed later.
+8. Ageofstarsandgalaxies(t=300,000 yearstopresent):Theatomsandparticlesarepulledtogetherbygravity
+and form large lumps. The atoms and particles in stars undergo nuclear fusion reaction.
+Watch thisvideo (https://openstaxcollege.org/l/21bigbang)to learn more about Big Bang cosmology.
+Todescribetheconditionsoftheearlyuniversequantitatively,recalltherelationshipbetweentheaveragethermalenergy
+of particle (E) in a system of interacting particles and equilibrium temperature (T) of that system:
+E=k
+B
+T, (11.16)
+where k is Boltzmann’s constant. In the hot conditions of the early universe, particle energies were unimaginably large.
+B
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 541
+Example 11.9
+What Was the Average Thermal Energy of a Particle just after the Big Bang?
+Strategy
+The average thermal energy of a particle in a system of interacting particles depends on the equilibrium
+temperature of that systemEquation 11.1. We are given this approximate temperature in the above timeline.
+Solution
+Cosmologists think the temperature of the universe just after the Big Bang was approximately T =10 32 K.
+Therefore, the average thermal energy of a particle would have been
+k T ≈(10−4 eV/K)(10 32 K)=10 28 eV = 10 19 GeV.
+B
+Significance
+This energy is many orders of magnitude larger than particle energies produced by human-made particle
+accelerators. Currently, these accelerators operate at energies less than 104 GeV.
+11.9 Check Your Understanding Compare the abundance of helium by mass 10,000 years after the Big
+Bang and now.
+Nucleonsformatenergiesapproximatelyequaltotherestmassofaproton,or1000MeV.Thetemperaturecorresponding
+to this energy is therefore
+T = 1000MeV =1.2×10 13 K.
+8.62×1011 MeV·K−1
+Temperaturesofthisvalueorhigherexistedwithinthefirstsecondoftheearlyuniverse.Asimilaranalysiscanbedonefor
+atoms.Atomsformatanenergyequaltotheionizationenergyofground-statehydrogen(13eV).Theeffectivetemperature
+for atom formation is therefore
+T = 13eV =1.6×10 5 K.
+8.62×10 5 eV·K−1
+This occurs well after the four fundamental forces have separated, including forces necessary to bind the protons and
+neutrons in the nucleus (strong nuclear force), and bind electrons to the nucleus (electromagnetic force).
+Nucleosynthesis of Light Elements
+Therelativeabundancesofthelightelementshydrogen,helium,lithium,andberylliumintheuniverseprovidekeyevidence
+for the Big Bang. The data suggest that much of the helium in the universe is primordial. For instance, it turns out that
+that 25% of the matter in the universe is helium, which is too high an abundance and cannot be explained based on the
+production of helium in stars.
+How much of the elements in the universe were created in the Big Bang? If you run the clock backward, the universe
+becomes more and more compressed, and hotter and hotter. Eventually, temperatures are reached that permit
+nucleosynthesis,theperiodofformationofnuclei,similartowhatoccursatthecoreoftheSun.BigBangnucleosynthesis
+is believed to have occurred within a few hundred seconds of the Big Bang.
+HowdidBigBangnucleosynthesisoccur?Atfirst,protonsandneutronscombinedtoformdeuterons, 2H.Thedeuteron
+capturedaneutrontoformtriton, 3 H —thenucleusoftheradioactive hydrogencalledtritium.Deuteronsalsocaptured
+protonstomakehelium 3 He.When 3 H capturesaprotonor 3 He capturesaneutron,helium 4He results.Atthisstage
+intheBigBang,theratioofprotonstoneutronswasabout7:1.Thus,theprocessofconversionto 4He usedupalmost
+all neutrons. The process lasted about 3 minutes and almost 25% of all the matter turned into 4He, along with small
+percentagesof 2H, 3 H,and 3 He.Tinyamountsof 7 Li and 7 Be werealsoformed.Theexpansionduringthistime
+
+542 Chapter 11 | Particle Physics and Cosmology
+cooled the universe enough that the nuclear reactions stopped. The abundances of the light nuclei 2H, 4He, and 7 Li
+created after the Big Bang are very dependent on the matter density.
+The predicted abundances of the elements in the universe provide a stringent test of the Big Bang and the Big Bang
+nucleosynthesis. Recent experimental estimates of the matter density from the Wilkinson Microwave Anisotropy Probe
+(WMAP)agree with model predictions. This agreement provides convincing evidence of the Big Bang model.
+Cosmic Microwave Background Radiation
+According to cosmological models, the Big Bang event should have left behind thermal radiation called the cosmic
+microwave background radiation (CMBR). The intensity of this radiation should follow the blackbody radiation curve
+(Photons and Matter Waves). Wien’s law states that the wavelength of the radiation at peak intensity is
+−3 (11.17)
+λ max= 2.898×1
+T
+0 m-K ,
+where T is temperature in kelvins. Scientists expected the expansion of the universe to “stretch the light,” and the
+temperature to be very low, so cosmic background radiation should be long-wavelength and low energy.
+Inthe1960s,ArnoPenziasandRobertWilsonofBellLaboratoriesnoticedthatnomatterwhattheydid,theycouldnotget
+ridofafaintbackgroundnoiseintheirsatellitecommunicationsystem.Thenoisewasduetoradiationwithwavelengths
+inthecentimeterrange(themicrowaveregion).Later,thisnoisewasassociatedwiththecosmicbackgroundradiation.An
+intensity map of the cosmic background radiation appears in Figure 11.23. The thermal spectrum is modeled well by a
+blackbody curve that corresponds to a temperature T =2.7K (Figure 11.24).
+Figure 11.23 This map of the sky uses color to show fluctuations, or wrinkles, in the cosmic
+microwave background observed with the WMAP spacecraft. The Milky Way has been removed
+for clarity. Red represents higher temperature and higher density, whereas blue indicates lower
+temperature and density. This map does not contradict the earlier claim of smoothness because
+the largest fluctuations are only one part in one million. (credit: NASA/WMAP Science Team)
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 543
+Figure 11.24 Intensity distribution of cosmic microwave background radiation. The model predictions (the line) agree
+extremely well with the experimental results (the dots). Frequency and brightness values are shown on a log axis. (credit:
+modification of work by George Smoot/NASA COBE Project)
+Theformationofatomsintheearlyuniversemakestheseatomslesslikelytointeractwithlight.Therefore,photonsthat
+belongtothecosmicbackgroundradiationmusthaveseparatedfrommatteratatemperatureTassociatedwith1eV(the
+approximate ionization energy of an atom) . The temperature of the universe at this point was
+k T∼1 eV⇒T = 1 eV ∼104 K.
+B 5
+8.617×10 eV/K
+Accordingtocosmologicalmodels,thetimewhenphotonslastscatteredoffchargedparticleswasapproximately380,000
+years after the Big Bang. Before that time, matter in the universe was in the plasma form and the photons were
+“thermalized.”
+Antimatter and Matter
+We know from direct observation that antimatter is rare. Earth and the solar system are nearly pure matter, and most
+of the universe also seems dominated by matter. This is proven by the lack of annihilation radiation coming to us from
+space,particularlytherelativeabsenceof0.511-MeV γ rayscreatedbythemutualannihilationofelectronsandpositrons.
+(Antimatterinnatureiscreatedinparticlecollisionsandin β+ decays,butonlyinsmallamountsthatquicklyannihilate,
+leaving almost pure matter surviving.)
+Despitetheobserveddominanceofmatteroverantimatterintheuniverse,theStandardModelofparticleinteractionsand
+experimental measurement suggests only small differences in the ways that matter and antimatter interact. For example,
+neutralkaondecaysproduceonlyslightlymorematterthanantimatter.Yet,ifthroughsuchdecay,slightlymorematterthan
+antimatterwasproducedintheearlyuniverse,therestcouldannihilatepairbypair,leavingmostlyordinarymattertoform
+thestarsandgalaxies.Inthisway,thevastnumberofstarsweobservemaybeonlyatinyremnantoftheoriginalmatter
+created in the Big Bang.
+
+544 Chapter 11 | Particle Physics and Cosmology
+Dark Matter and Dark Energy
+Inthelasttwodecades,newandmorepowerfultechniqueshaverevealedthattheuniverseisfilledwithdarkmatter.This
+typeofmatterisinterestingandimportantbecause,currently,scientistsdonotknowwhatitis!However,wecaninferits
+existencebythedeflectionofdistantstarlight.Forexample,iflightfromadistantgalaxyisbentbythegravitationalfield
+of a clump of dark matter between us and the galaxy, it is possible that two images of the same galaxy can be produced
+(Figure11.25).Thebendingoflightbythegravitationalfieldofmatteriscalledgravitationallensing.Insomecases,the
+starlight travels to an observer by multiple paths around the galaxy, producing a ring (Figure 11.26).
+Basedoncurrentresearch,scientistknowonlythatdarkmatteriscold,slowmoving,andinteractsweaklywithordinary
+matter. Dark matter candidates include neutralinos (partners of Z bosons, photons, and Higgs bosons in “supersymmetry
+theory”) and particles that circulate in tiny rings set up by extra spatial dimensions.
+Figure 11.25 Light from a distant star is bent around a galaxy.
+Under the right conditions, two duplicate images of the same star can
+be seen.
+Figure 11.26 Light from a distant star is bent around a galaxy. Under the right conditions, we can see a ring of light instead of
+a single star. (credit: modification of work by ESA/Hubble & NASA)
+Increasingly precise astronomical measurements of the expanding universe also reveal the presence of a new form of
+energycalleddarkenergy.Thisenergyisthoughttoexplainlarger-than-expectedvaluesfortheobservedgalacticredshifts
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 545
+for distant galaxies. These redshifts suggest that the universe is not only expanding, but expanding at an increasing rate.
+Virtuallynothingisknownaboutthenatureandpropertiesofdarkenergy.Together,darkenergyanddarkmatterrepresent
+two of the most interesting and unsolved puzzles of modern physics. Scientists attribute 68.3% of the energy of the
+universetodarkenergy, 26.8% todarkmatter,andjust 4.9% tothemass-energyofordinaryparticles(Figure 11.27).
+Giventhecurrentgreatmysteryoverthenatureofdarkmatteranddarkenergy,IsaacNewton’shumblewordsareastrue
+now as they were centuries ago:
+“IdonotknowwhatImayappeartotheworld,buttomyselfIseemtohavebeenonlylikeaboyplayingonthesea-shore,
+anddivertingmyselfinnowandthenfindingasmootherpebbleoraprettiershellthanordinary,whilstthegreatoceanof
+truth lay all undiscovered before me.”
+Figure 11.27 Estimated distribution of matter and energy in the universe.
+(credit: NASA/WMAP Science Team)

@@ -1,0 +1,197 @@
+# REAL PDF — openstax_vol1.pdf, pages 31-36
+############################################################
+
+1.3 • Unit Conversion 19
+2. Substitute the given values for distance and time:
+3. Convert miles per minute to meters per second by multiplying by the conversion factor that cancels miles and
+leave meters, and also by the conversion factor that cancels minutes and leave seconds:
+Significance
+Check the answer in the following ways:
+1. Be sure the units in the unit conversion cancel correctly. If the unit conversion factor was written upside down,
+the units do not cancel correctly in the equation. We see the “miles” in the numerator in 0.50 mi/min cancels
+the “mile” in the denominator in the first conversion factor. Also, the “min” in the denominator in 0.50 mi/min
+cancels the “min” in the numerator in the second conversion factor.
+2. Check that the units of the final answer are the desired units. The problem asked us to solve for average speed
+in units of meters per second and, after the cancellations, the only units left are a meter (m) in the numerator
+and a second (s) in the denominator, so we have indeed obtained these units.
+CHECK YOUR UNDERSTANDING 1.2
+Light travels about 9 Pm in a year. Given that a year is about what is the speed of light in meters per
+second?
+EXAMPLE 1.3
+Converting between Metric Units
+The density of iron is under standard conditions. Convert this to kg/m3.
+Strategy
+We need to convert grams to kilograms and cubic centimeters to cubic meters. The conversion factors we need are
+and However, we are dealing with cubic centimeters so we
+have to use the second conversion factor three times (that is, we need to cube it). The idea is still to multiply by the
+conversion factors in such a way that they cancel the units we want to get rid of and introduce the units we want to
+keep.
+Solution
+Significance
+Remember, it’s always important to check the answer.
+1. Be sure to cancel the units in the unit conversion correctly. We see that the gram (“g”) in the numerator in 7.86
+g/cm3 cancels the “g” in the denominator in the first conversion factor. Also, the three factors of “cm” in the
+denominator in 7.86 g/cm3 cancel with the three factors of “cm” in the numerator that we get by cubing the
+second conversion factor.
+2. Check that the units of the final answer are the desired units. The problem asked for us to convert to kilograms
+per cubic meter. After the cancellations just described, we see the only units we have left are “kg” in the
+numerator and three factors of “m” in the denominator (that is, one factor of “m” cubed, or “m3”). Therefore,
+the units on the final answer are correct.
+
+20 1 • Units and Measurement
+CHECK YOUR UNDERSTANDING 1.3
+We know from Figure 1.4 that the diameter of Earth is on the order of 107 m, so the order of magnitude of its surface
+area is 1014 m2. What is that in square kilometers (that is, km2)? (Try doing this both by converting 107 m to km and
+then squaring it and then by converting 1014 m2 directly to square kilometers. You should get the same answer both
+ways.)
+Unit conversions may not seem very interesting, but not doing them can be costly. One famous example of this
+situation was seen with the Mars Climate Orbiter. This probe was launched by NASA on December 11, 1998. On
+September 23, 1999, while attempting to guide the probe into its planned orbit around Mars, NASA lost contact with
+it. Subsequent investigations showed a piece of software called SM_FORCES (or “small forces”) was recording
+thruster performance data in the English units of pound-force-seconds (lbf-s). However, other pieces of software
+that used these values for course corrections expected them to be recorded in the SI units of newton-seconds (N-s),
+as dictated in the software interface protocols. This error caused the probe to follow a very different trajectory from
+what NASA thought it was following, which most likely caused the probe either to burn up in the Martian atmosphere
+or to shoot out into space. This failure to pay attention to unit conversions cost hundreds of millions of dollars, not to
+mention all the time invested by the scientists and engineers who worked on the project.
+CHECK YOUR UNDERSTANDING 1.4
+Given that 1 lbf (pound-force) is 4.45 N, were the numbers being output by SM_FORCES too big or too small?
+1.4 Dimensional Analysis
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Find the dimensions of a mathematical expression involving physical quantities.
+• Determine whether an equation involving physical quantities is dimensionally consistent.
+The dimension of any physical quantity expresses its dependence on the base quantities as a product of symbols
+(or powers of symbols) representing the base quantities. Table 1.3 lists the base quantities and the symbols used
+for their dimension. For example, a measurement of length is said to have dimension L or L1, a measurement of
+mass has dimension M or M1, and a measurement of time has dimension T or T1. Like units, dimensions obey the
+rules of algebra. Thus, area is the product of two lengths and so has dimension L2, or length squared. Similarly,
+volume is the product of three lengths and has dimension L3, or length cubed. Speed has dimension length over
+time, L/T or LT–1. Volumetric mass density has dimension M/L3 or ML–3, or mass over length cubed. In general, the
+dimension of any physical quantity can be written as for some powers and g. We
+can write the dimensions of a length in this form with and the remaining six powers all set equal to zero:
+Any quantity with a dimension that can be written so that all seven powers are zero (that
+is, its dimension is ) is called dimensionless (or sometimes “of dimension 1,” because anything
+raised to the zero power is one). Physicists often call dimensionless quantities pure numbers.
+Base Quantity Symbol for Dimension
+Length L
+Mass M
+Time T
+Current I
+TABLE 1.3 Base Quantities and Their Dimensions
+Access for free at openstax.org
+
+1.4 • Dimensional Analysis 21
+Base Quantity Symbol for Dimension
+Thermodynamic temperature Θ
+Amount of substance N
+Luminous intensity J
+TABLE 1.3 Base Quantities and Their Dimensions
+Physicists often use square brackets around the symbol for a physical quantity to represent the dimensions of that
+quantity. For example, if is the radius of a cylinder and is its height, then we write and to indicate
+the dimensions of the radius and height are both those of length, or L. Similarly, if we use the symbol for the
+surface area of a cylinder and for its volume, then [A] = L2 and [V] = L3. If we use the symbol for the mass of the
+cylinder and for the density of the material from which the cylinder is made, then and
+The importance of the concept of dimension arises from the fact that any mathematical equation relating physical
+quantities must be dimensionally consistent, which means the equation must obey the following rules:
+• Every term in an expression must have the same dimensions; it does not make sense to add or subtract
+quantities of differing dimension (think of the old saying: “You can’t add apples and oranges”). In particular,
+the expressions on each side of the equality in an equation must have the same dimensions.
+• The arguments of any of the standard mathematical functions such as trigonometric functions (such as sine
+and cosine), logarithms, or exponential functions that appear in the equation must be dimensionless. These
+functions require pure numbers as inputs and give pure numbers as outputs.
+If either of these rules is violated, an equation is not dimensionally consistent and cannot possibly be a correct
+statement of physical law. This simple fact can be used to check for typos or algebra mistakes, to help remember
+the various laws of physics, and even to suggest the form that new laws of physics might take. This last use of
+dimensions is beyond the scope of this text, but is something you may learn later in your academic career.
+EXAMPLE 1.4
+Using Dimensions to Remember an Equation
+Suppose we need the formula for the area of a circle for some computation. Like many people who learned
+geometry too long ago to recall with any certainty, two expressions may pop into our mind when we think of circles:
+and One expression is the circumference of a circle of radius r and the other is its area. But which is which?
+Strategy
+One natural strategy is to look it up, but this could take time to find information from a reputable source. Besides,
+even if we think the source is reputable, we shouldn’t trust everything we read. It is nice to have a way to double-
+check just by thinking about it. Also, we might be in a situation in which we cannot look things up (such as during a
+test). Thus, the strategy is to find the dimensions of both expressions by making use of the fact that dimensions
+follow the rules of algebra. If either expression does not have the same dimensions as area, then it cannot possibly
+be the correct equation for the area of a circle.
+Solution
+We know the dimension of area is L2. Now, the dimension of the expression is
+since the constant is a pure number and the radius is a length. Therefore, has the dimension of area.
+Similarly, the dimension of the expression is
+since the constants and are both dimensionless and the radius is a length. We see that has the dimension
+
+22 1 • Units and Measurement
+of length, which means it cannot possibly be an area.
+We rule out because it is not dimensionally consistent with being an area. We see that is dimensionally
+consistent with being an area, so if we have to choose between these two expressions, is the one to choose.
+Significance
+This may seem like kind of a silly example, but the ideas are very general. As long as we know the dimensions of the
+individual physical quantities that appear in an equation, we can check to see whether the equation is dimensionally
+consistent. On the other hand, knowing that true equations are dimensionally consistent, we can match expressions
+from our imperfect memories to the quantities for which they might be expressions. Doing this will not help us
+remember dimensionless factors that appear in the equations (for example, if you had accidentally conflated the
+two expressions from the example into then dimensional analysis is no help), but it does help us remember
+the correct basic form of equations.
+CHECK YOUR UNDERSTANDING 1.5
+Suppose we want the formula for the volume of a sphere. The two expressions commonly mentioned in elementary
+discussions of spheres are and One is the volume of a sphere of radius r and the other is its surface
+area. Which one is the volume?
+EXAMPLE 1.5
+Checking Equations for Dimensional Consistency
+Consider the physical quantities and with dimensions and
+Determine whether each of the following equations is dimensionally consistent: (a) (b)
+and (c)
+Strategy
+By the definition of dimensional consistency, we need to check that each term in a given equation has the same
+dimensions as the other terms in that equation and that the arguments of any standard mathematical functions are
+dimensionless.
+Solution
+a. There are no trigonometric, logarithmic, or exponential functions to worry about in this equation, so we need
+only look at the dimensions of each term appearing in the equation. There are three terms, one in the left
+expression and two in the expression on the right, so we look at each in turn:
+All three terms have the same dimension, so this equation is dimensionally consistent.
+b. Again, there are no trigonometric, exponential, or logarithmic functions, so we only need to look at the
+dimensions of each of the three terms appearing in the equation:
+None of the three terms has the same dimension as any other, so this is about as far from being dimensionally
+consistent as you can get. The technical term for an equation like this is nonsense.
+c. This equation has a trigonometric function in it, so first we should check that the argument of the sine function
+is dimensionless:
+Access for free at openstax.org
+
+1.5 • Estimates and Fermi Calculations 23
+The argument is dimensionless. So far, so good. Now we need to check the dimensions of each of the two
+terms (that is, the left expression and the right expression) in the equation:
+The two terms have different dimensions—meaning, the equation is not dimensionally consistent. This equation is
+another example of “nonsense.”
+Significance
+If we are trusting people, these types of dimensional checks might seem unnecessary. But, rest assured, any
+textbook on a quantitative subject such as physics (including this one) almost certainly contains some equations
+with typos. Checking equations routinely by dimensional analysis save us the embarrassment of using an incorrect
+equation. Also, checking the dimensions of an equation we obtain through algebraic manipulation is a great way to
+make sure we did not make a mistake (or to spot a mistake, if we made one).
+CHECK YOUR UNDERSTANDING 1.6
+Is the equation v = at dimensionally consistent?
+One further point that needs to be mentioned is the effect of the operations of calculus on dimensions. We have
+seen that dimensions obey the rules of algebra, just like units, but what happens when we take the derivative of one
+physical quantity with respect to another or integrate a physical quantity over another? The derivative of a function
+is just the slope of the line tangent to its graph and slopes are ratios, so for physical quantities v and t, we have that
+the dimension of the derivative of v with respect to t is just the ratio of the dimension of v over that of t:
+Similarly, since integrals are just sums of products, the dimension of the integral of v with respect to t is simply the
+dimension of v times the dimension of t:
+By the same reasoning, analogous rules hold for the units of physical quantities derived from other quantities by
+integration or differentiation.
+1.5 Estimates and Fermi Calculations
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Estimate the values of physical quantities.
+On many occasions, physicists, other scientists, and engineers need to make estimates for a particular quantity.
+Other terms sometimes used are guesstimates, order-of-magnitude approximations, back-of-the-envelope
+calculations, or Fermi calculations. (The physicist Enrico Fermi mentioned earlier was famous for his ability to
+estimate various kinds of data with surprising precision.) Will that piece of equipment fit in the back of the car or do
+we need to rent a truck? How long will this download take? About how large a current will there be in this circuit
+when it is turned on? How many houses could a proposed power plant actually power if it is built? Note that
+estimating does not mean guessing a number or a formula at random. Rather, estimation means using prior
+experience and sound physical reasoning to arrive at a rough idea of a quantity’s value. Because the process of
+determining a reliable approximation usually involves the identification of correct physical principles and a good

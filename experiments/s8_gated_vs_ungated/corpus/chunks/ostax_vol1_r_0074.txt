@@ -1,0 +1,273 @@
+# REAL PDF — openstax_vol1.pdf, pages 450-455
+############################################################
+
+438 9 • Linear Momentum and Collisions
+At .
+Acceleration is increasing, as we expected.
+At (and at any time after ), the acceleration is since the thrusters stopped working and
+thus no external forces are acting on the spacecraft.
+Significance
+Notice that the acceleration is not constant; as a result, any dynamical quantities must be calculated either using
+integrals, or (more easily) conservation of total energy.
+CHECK YOUR UNDERSTANDING 9.14
+What is the physical difference (or relationship) between and in this example?
+Rocket in a Gravitational Field
+Let’s now analyze the velocity change of the rocket during the launch phase, from the surface of Earth. To keep the
+math manageable, we’ll restrict our attention to distances for which the acceleration caused by gravity can be
+treated as a constant g.
+The analysis is similar, except that now there is an external force of acting on our system. This force
+applies an impulse , which is equal to the change of momentum. This gives us
+and so
+where we have again neglected the term and dropped the vector notation. Next we replace with :
+Dividing through by m gives
+and integrating, we have
+9.39
+Unsurprisingly, the rocket’s velocity is affected by the (constant) acceleration of gravity.
+Remember that is the burn time of the fuel. Now, in the absence of gravity, Equation 9.38 implies that it makes
+no difference how much time it takes to burn the entire mass of fuel; the change of velocity does not depend on .
+However, in the presence of gravity, it matters a lot. The −g term in Equation 9.39 tells us that the longer the burn
+time is, the smaller the rocket’s change of velocity will be. This is the reason that the launch of a rocket is so
+spectacular at the first moment of liftoff: It’s essential to burn the fuel as quickly as possible, to get as large a as
+possible.
+Access for free at openstax.org
+
+9 • Chapter Review 439
+Chapter Review
+Key Terms
+center of mass weighted average position of the Law of Conservation of Momentum total momentum
+mass of a closed system cannot change
+closed system system for which the mass is constant linear mass density , expressed as the number of
+and the net external force on the system is zero kilograms of material per meter
+elastic collision that conserves kinetic energy momentum measure of the quantity of motion that
+explosion single object breaks up into multiple an object has; it takes into account both how fast
+objects; kinetic energy is not conserved in the object is moving, and its mass; specifically, it is
+explosions the product of mass and velocity; it is a vector
+external force force applied to an extended object quantity
+that changes the momentum of the extended object perfectly inelastic collision after which all objects
+as a whole are stuck together, moving with the same velocity;
+impulse effect of applying a force on a system for a momentum is conserved, and the loss of kinetic
+time interval; this time interval is usually small, but energy is a maximum
+does not have to be rocket equation derived by the Soviet physicist
+impulse-momentum theorem change of momentum Konstantin Tsiolkovsky in 1897, it gives us the
+of a system is equal to the impulse applied to the change of velocity that the rocket obtains from
+system burning a mass of fuel that decreases the total
+inelastic collision that does not conserve kinetic rocket mass from down to m
+energy system object or collection of objects whose motion
+internal force force that the simple particles that is currently under investigation; however, your
+make up an extended object exert on each other. system is defined at the start of the problem, you
+Internal forces can be attractive or repulsive must keep that definition for the entire problem
+Key Equations
+Definition of momentum
+Impulse
+Impulse-momentum theorem
+Average force from momentum
+Instantaneous force from momentum
+(Newton’s second law)
+Conservation of momentum
+Generalized conservation of momentum
+Conservation of momentum in two dimensions
+External forces
+Newton’s second law for an extended object
+Acceleration of the center of mass
+Position of the center of mass for a system
+of particles
+
+440 9 • Chapter Review
+Velocity of the center of mass
+Position of the center of mass of a
+continuous object
+Rocket equation
+Summary
+9.1 Linear Momentum velocities and masses in one-dimensional, two-
+body collisions.
+• The motion of an object depends on its mass as
+well as its velocity. Momentum is a concept that 9.5 Collisions in Multiple Dimensions
+describes this. It is a useful and powerful
+• The approach to two-dimensional collisions is to
+concept, both computationally and theoretically.
+choose a convenient coordinate system and
+The SI unit for momentum is kg m/s.
+break the motion into components along
+9.2 Impulse and Collisions perpendicular axes.
+• Momentum is conserved in both directions
+• When a force is applied on an object for some
+simultaneously and independently.
+amount of time, the object experiences an
+• The Pythagorean theorem gives the magnitude of
+impulse.
+the momentum vector using the x- and
+• This impulse is equal to the object’s change of
+y-components, calculated using conservation of
+momentum.
+momentum in each direction.
+• Newton’s second law in terms of momentum
+states that the net force applied to a system 9.6 Center of Mass
+equals the rate of change of the momentum that
+• An extended object (made up of many objects)
+the force causes.
+has a defined position vector called the center of
+9.3 Conservation of Linear Momentum mass.
+• The center of mass can be thought of, loosely, as
+• The law of conservation of momentum says that
+the average location of the total mass of the
+the momentum of a closed system is constant in
+object.
+time (conserved).
+• The center of mass of an object traces out the
+• A closed (or isolated) system is defined to be one
+trajectory dictated by Newton’s second law, due
+for which the mass remains constant, and the net
+to the net external force.
+external force is zero.
+• The internal forces within an extended object
+• The total momentum of a system is conserved
+cannot alter the momentum of the extended
+only when the system is closed.
+object as a whole.
+9.4 Types of Collisions
+9.7 Rocket Propulsion
+• An elastic collision is one that conserves kinetic
+• A rocket is an example of conservation of
+energy.
+momentum where the mass of the system is not
+• An inelastic collision does not conserve kinetic
+constant, since the rocket ejects fuel to provide
+energy.
+thrust.
+• Momentum is conserved regardless of whether
+• The rocket equation gives us the change of
+or not kinetic energy is conserved.
+velocity that the rocket obtains from burning a
+• Analysis of kinetic energy changes and
+mass of fuel that decreases the total rocket
+conservation of momentum together allow the
+mass.
+final velocities to be calculated in terms of initial
+Conceptual Questions
+9.1 Linear Momentum momentum. Which object has the largest kinetic
+energy?
+1 . An object that has a small mass and an object
+that has a large mass have the same 2 . An object that has a small mass and an object
+Access for free at openstax.org
+
+9 • Chapter Review 441
+that has a large mass have the same kinetic Explain.
+energy. Which mass has the largest momentum?
+12 . A rocket in deep space (zero gravity) accelerates
+9.2 Impulse and Collisions by firing hot gas out of its thrusters. Does the
+rocket constitute a closed system? Explain.
+3 . Is it possible for a small force to produce a larger
+impulse on a given object than a large force? 9.4 Types of Collisions
+Explain.
+13 . Two objects of equal mass are moving with
+4 . Why is a 10-m fall onto concrete far more equal and opposite velocities when they collide.
+dangerous than a 10-m fall onto water? Can all the kinetic energy be lost in the collision?
+5 . What external force is responsible for changing 14 . Describe a system for which momentum is
+the momentum of a car moving along a conserved but mechanical energy is not. Now
+horizontal road? the reverse: Describe a system for which kinetic
+energy is conserved but momentum is not.
+6 . A piece of putty and a tennis ball with the same
+mass are thrown against a wall with the same 9.5 Collisions in Multiple Dimensions
+velocity. Which object experiences a greater
+15 . Momentum for a system can be conserved in
+force from the wall or are the forces equal?
+one direction while not being conserved in
+Explain.
+another. What is the angle between the
+9.3 Conservation of Linear Momentum directions? Give an example.
+7 . Under what circumstances is momentum 9.6 Center of Mass
+conserved?
+16 . Suppose a fireworks shell explodes, breaking
+8 . Can momentum be conserved for a system if into three large pieces for which air resistance is
+there are external forces acting on the system? negligible. How does the explosion affect the
+If so, under what conditions? If not, why not? motion of the center of mass? How would it be
+affected if the pieces experienced significantly
+9 . Explain in terms of momentum and Newton’s
+more air resistance than the intact shell?
+laws how a car’s air resistance is due in part to
+the fact that it pushes air in its direction of 9.7 Rocket Propulsion
+motion.
+17 . It is possible for the velocity of a rocket to be
+10 . Can objects in a system have momentum while greater than the exhaust velocity of the gases it
+the momentum of the system is zero? Explain ejects. When that is the case, the gas velocity
+your answer. and gas momentum are in the same direction as
+that of the rocket. How is the rocket still able to
+11 . A sprinter accelerates out of the starting blocks.
+obtain thrust by ejecting the gases?
+Can you consider him as a closed system?
+Problems
+9.1 Linear Momentum 7.50 m/s.
+b. Calculate the ratio of the elephant’s
+18 . An elephant and a hunter are having a confrontation.
+momentum to the momentum of a 0.0400-kg
+tranquilizer dart fired at a speed of 600 m/s.
+c. What is the momentum of the 90.0-kg hunter
+running at 7.40 m/s after missing the
+elephant?
+19 . A skater of mass 40 kg is carrying a box of mass
+5 kg. The skater has a speed of 5 m/s with
+respect to the floor and is gliding without any
+friction on a smooth surface.
+a. Calculate the momentum of the 2000.0-kg a. Find the momentum of the box with
+elephant charging the hunter at a speed of respect to the floor.
+
+442 9 • Chapter Review
+b. Find the momentum of the box with a. Calculate the average force on the person if he
+respect to the floor after she puts the box is stopped by a padded dashboard that
+down on the frictionless skating surface. compresses an average of 1.00 cm.
+b. Calculate the average force on the person if he
+20 . A car of mass 2000 kg is moving with a constant is stopped by an air bag that compresses an
+velocity of 10 m/s due east. What is the average of 15.0 cm.
+momentum of the car?
+26 . One hazard of space travel is debris left by
+21 . The mass of Earth is and its orbital
+previous missions. There are several thousand
+radius is an average of . Calculate
+objects orbiting Earth that are large enough to
+the magnitude of its linear momentum at the
+be detected by radar, but there are far greater
+location in the diagram.
+numbers of very small objects, such as flakes of
+paint. Calculate the force exerted by a 0.100-mg
+chip of paint that strikes a spacecraft window at
+a relative speed of , given the
+collision lasts .
+27 . A cruise ship with a mass of strikes a
+pier at a speed of 0.750 m/s. It comes to rest after
+traveling 6.00 m, damaging the ship, the pier, and
+the tugboat captain’s finances. Calculate the
+average force exerted on the pier using the concept
+of impulse. (Hint: First calculate the time it took to
+bring the ship to rest, assuming a constant force.)
+22 . If a rainstorm drops 1 cm of rain over an area of
+10 km2 in the period of 1 hour, what is the
+momentum of the rain that falls in one second?
+Assume the terminal velocity of a raindrop is 10
+m/s. 28 . Calculate the final speed of a 110-kg rugby
+player who is initially running at 8.00 m/s but
+23 . What is the average momentum of an avalanche
+collides head-on with a padded goalpost and
+that moves a 40-cm-thick layer of snow over an
+experiences a backward force of
+area of 100 m by 500 m over a distance of 1 km
+for .
+down a hill in 5.5 s? Assume a density of 350
+kg/m3 for the snow. 29 . Water from a fire hose is directed horizontally
+against a wall at a rate of 50.0 kg/s and a speed
+24 . What is the average momentum of a 70.0-kg
+of 42.0 m/s. Calculate the force exerted on the
+sprinter who runs the 100-m dash in 9.65 s?
+wall, assuming the water’s horizontal
+9.2 Impulse and Collisions momentum is reduced to zero.
+25 . A 75.0-kg person is riding in a car moving at 20.0 30 . A 0.450-kg hammer is moving horizontally at
+m/s when the car runs into a bridge abutment (see 7.00 m/s when it strikes a nail and comes to rest
+the following figure). after driving the nail 1.00 cm into a board.
+Assume constant acceleration of the hammer-
+nail pair.
+a. Calculate the duration of the impact.
+b. What was the average force exerted on the
+nail?
+31 . What is the momentum (as a function of time) of
+a 5.0-kg particle moving with a velocity
+? What is the net
+Access for free at openstax.org

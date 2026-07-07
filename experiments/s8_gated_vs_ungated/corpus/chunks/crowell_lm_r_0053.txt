@@ -1,0 +1,290 @@
+# REAL PDF — crowell_lm.pdf, pages 363-369
+############################################################
+
+pool notices a case where her cue ball hits an initially stationary
+ball and stops dead. “Wow, what a good trick,” she thinks. “I bet
+I could never do that again in a million years.” But she tries again,
+and finds that she can’t help doing it even if she doesn’t want to.
+Luckily she has just learned about collisions in her physics course.
+Once she has written down the equations for conservation of energy
+andnolossofkineticenergy, shereallydoesn’thavetocompletethe
+algebra. She knows that she has two equations in two unknowns, so
+there must be a well-defined solution. Once she has seen the result
+of one such collision, she knows that the same thing must happen
+every time. The same thing would happen with colliding marbles or
+croquet balls. It doesn’t matter if the masses or velocities are di↵er-
+ent, because that just multiplies both equations by some constant
+factor.
+The discovery of the neutron
+This was the type of reasoning employed by James Chadwick in his
+1932 discovery of the neutron. At the time, the atom was imag-
+ined to be made out of two types of fundamental particles, protons
+and electrons. The protons were far more massive, and clustered
+together in the atom’s core, or nucleus. Attractive electrical forces
+caused the electrons to orbit the nucleus in circles, in much the
+same way that gravitational forces kept the planets from cruising
+out of the solar system. Experiments showed that the helium nu-
+cleus, for instance, exerted exactly twice as much electrical force on
+anelectronasanucleusofhydrogen,thesmallestatom,andthiswas
+explained by saying that helium had two protons to hydrogen’s one.
+The trouble was that according to this model, helium would have
+two electrons and two protons, giving it precisely twice the mass of
+a hydrogen atom with one of each. In fact, helium has about four
+times the mass of hydrogen.
+Chadwick suspected that the helium nucleus possessed two addi-
+tional particles of a new type, which did not participate in electrical
+forcesatall,i.e.,wereelectricallyneutral. Iftheseparticleshadvery
+nearly the same mass as protons, then the four-to-one mass ratio of
+helium and hydrogen could be explained. In 1930, a new type of
+radiation was discovered that seemed to fit this description. It was
+electricallyneutral,andseemedtobecomingfromthenucleioflight
+elements that had been exposed to other types of radiation. At this
+time, however, reportsofnewtypesofparticleswereadimeadozen,
+and most of them turned out to be either clusters made of previ-
+ously known particles or else previously known particles with higher
+energies. Many physicists believed that the “new” particle that had
+attractedChadwick’sinterestwasreallyapreviouslyknownparticle
+called a gamma ray, which was electrically neutral. Since gamma
+rays have no mass, Chadwick decided to try to determine the new
+particle’s mass and see if it was nonzero and approximately equal
+Collisions in one dimension 363
+
+to the mass of a proton.
+Unfortunately a subatomic particle is not something you can just
+put on a scale and weigh. Chadwick came up with an ingenious
+solution. The masses of the nuclei of the various chemical elements
+were already known, and techniques had already been developed for
+measuring the speed of a rapidly moving nucleus. He therefore set
+out to bombard samples of selected elements with the mysterious
+new particles. When a direct, head-on collision occurred between
+a mystery particle and the nucleus of one of the target atoms, the
+nucleus would be knocked out of the atom, and he would measure
+its velocity.
+Chadwick’s subatomic pool table. A disk of the naturally occurring
+metal polonium provides a source of radiation capable of kicking neu-
+trons out of the beryllium nuclei. The type of radiation emitted by the
+polonium is easily absorbed by a few mm of air, so the air has to be
+pumpedoutoftheleft-handchamber. Theneutrons,Chadwick’smystery
+particles, penetrate matter far more readily, and fly out through the wall
+andintothechamberontheright,whichisfilledwithnitrogenorhydrogen
+gas. When a neutron collides with a nitrogen or hydrogen nucleus, it
+kicks it out of its atom at high speed, and this recoiling nucleus then rips
+apart thousands of other atoms of the gas. The result is an electrical
+pulsethatcanbedetectedinthewireontheright. Physicistshadalready
+calibratedthistypeofapparatussothattheycouldtranslatethestrength
+of the electrical pulse into the velocity of the recoiling nucleus. The
+wholeapparatusshowninthefigurewouldfitinthepalmofyourhand,in
+dramaticcontrasttotoday’sgiantparticleaccelerators.
+Suppose, forinstance, thatwebombardasampleofhydrogenatoms
+with the mystery particles. Since the participants in the collision
+are fundamental particles, there is no way for kinetic energy to be
+converted into heat or any other form of energy, and Chadwick thus
+had two equations in three unknowns:
+equation #1: conservation of momentum
+equation #2: no loss of kinetic energy
+364 Chapter 14 Conservation of momentum
+
+unknown #1: mass of the mystery particle
+unknown #2: initial velocity of the mystery particle
+unknown #3: final velocity of the mystery particle
+The number of unknowns is greater than the number of equations,
+so there is no unique solution. But by creating collisions with nuclei
+of another element, nitrogen, he gained two more equations at the
+expense of only one more unknown:
+equation #3: conservation of momentum in the new collision
+equation #4: no loss of kinetic energy in the new collision
+unknown #4: final velocity of the mystery particle in the new col-
+lision
+He was thus able to solve for all the unknowns, including the mass
+of the mystery particle, which was indeed within 1% of the mass
+of a proton. He named the new particle the neutron, since it is
+electrically neutral.
+Discussion question
+A Goodpoolplayerslearntomakethecueballspin,whichcancause
+itnottostopdeadinahead-oncollisionwithastationaryball. Ifthisdoes
+not violate the laws of physics, what hidden assumption was there in the
+exampleabove?
+14.3 ? Relationship of momentum to the
+center of mass
+In this multiple-flash photograph,
+we see the wrench from above
+as it flies through the air, rotat-
+ingasitgoes. Itscenterofmass,
+markedwiththeblackcross,trav-
+elsalongastraightline,unlikethe
+otherpointsonthewrench,which
+executeloops.
+We have already discussed the idea of the center of mass on p. 67,
+but using the concept of momentum we can now find a mathemati-
+cal method for defining the center of mass, explain why the motion
+of an object’s center of mass usually exhibits simpler motion than
+any other point, and gain a very simple and powerful way of under-
+standing collisions.
+The first step is to realize that the center of mass concept can be ap-
+plied to systems containing more than one object. Even something
+like a wrench, which we think of as one object, is really made of
+many atoms. The center of mass is particularly easy to visualize in
+the case shown on the left, where two identical hockey pucks collide.
+? Relationship of momentum to the center of mass 365
+
+It is clear on grounds of symmetry that their center of mass must
+be at the midpoint between them. After all, we previously defined
+the center of mass as the balance point, and if the two hockey pucks
+were joined with a very lightweight rod whose own mass was neg-
+ligible, they would obviously balance at the midpoint. It doesn’t
+matter that the hockey pucks are two separate objects. It is still
+true that the motion of their center of mass is exceptionally simple,
+just like that of the wrench’s center of mass.
+Thexcoordinateofthehockeypucks’centerofmassisthusgivenby
+x = (x +x )/2,i.e.,thearithmeticaverageoftheirxcoordinates.
+cm 1 2
+Why is its motion so simple? It has to do with conservation of
+momentum. Since the hockey pucks are not being acted on by any
+net external force, they constitute a closed system, and their total
+momentum is conserved. Their total momentum is
+mv +mv = m(v +v )
+1 2 1 2
+Two hockey pucks collide.  x 1  x 2
+= m +
+Their mutual center of mass  t  t
+✓ ◆
+traces the straight path shown by m
+=  (x +x )
+thedashedline.  t 1 2
+2 x
+cm
+= m
+ t
+= m v
+total cm
+In other words, the total momentum of the system is the same as
+if all its mass was concentrated at the center of mass point. Since
+the total momentum is conserved, the x component of the center of
+mass’s velocity vector cannot change. The same is also true for the
+other components, so the center of mass must move along a straight
+line at constant speed.
+Theaboverelationshipbetweenthetotalmomentumandthemotion
+of the center of mass applies to any system, even if it is not closed.
+total momentum related to center of mass motion
+Thetotalmomentumofanysystemisrelatedtoitstotalmass
+and the velocity of its center of mass by the equation
+p = m v .
+total total cm
+What about a system containing objects with unequal masses, or
+containing more than two objects? The reasoning above can be
+generalized to a weighted average
+m x +m x +...
+1 1 2 2
+x = ,
+cm
+m +m +...
+1 2
+with similar equations for the y and z coordinates.
+366 Chapter 14 Conservation of momentum
+
+Momentum in different frames of reference
+Absolute motion is supposed to be undetectable, i.e., the laws of
+physics are supposed to be equally valid in all inertial frames of
+reference. If we first calculate some momenta in one frame of ref-
+erence and find that momentum is conserved, and then rework the
+whole problem in some other frame of reference that is moving with
+respect to the first, the numerical values of the momenta will all
+be di↵erent. Even so, momentum will still be conserved. All that
+matters is that we work a single problem in one consistent frame of
+reference.
+One way of proving this is to apply the equation p =
+total
+m v . If the velocity of frame B relative to frame A is v ,
+total cm BA
+then the only e↵ect of changing frames of reference is to change
+v from its original value to v + v . This adds a constant
+cm cm BA
+onto the momentum vector, which has no e↵ect on conservation of
+momentum.
+The center of mass frame of reference
+A particularly useful frame of reference in many cases is the frame Moving your head so that
+you are always looking down
+that moves along with the center of mass, called the center of mass
+from right above the center of
+(c.m.) frame. In this frame, the total momentum is zero. The
+mass, you observe the collision
+following examples show how the center of mass frame can be a
+of the two hockey pucks in the
+powerful tool for simplifying our understanding of collisions.
+centerofmassframe.
+A collision of pool balls viewed in the c.m. frame example 12
+If you move your head so that your eye is always above the point
+halfway in between the two pool balls, you are viewing things in
+thecenterofmassframe. Inthisframe,theballscometowardthe
+center of mass at equal speeds. By symmetry, they must there-
+forerecoilatequalspeedsalongthelinesonwhichtheyentered.
+Since the balls have essentially swapped paths in the center of
+massframe, thesamemustalsobetrueinanyotherframe. This
+is the same result that required laborious algebra to prove previ-
+ously without the concept of the center of mass frame.
+The slingshot effect viewed
+The slingshot effect example 13 in the sun’s frame of reference.
+It is a counterintuitive fact that a spacecraft can pick up speed Jupiter is moving to the left, and
+thecollisionishead-on.
+by swinging around a planet, if it arrives in the opposite direction
+compared to the planet’s motion. Although there is no physical
+contact, we treat the encounter as a one-dimensional collision,
+and analyze it in the center of mass frame. Figure j shows such
+a “collision,” with a space probe whipping around Jupiter. In the
+sun’s frame of reference, Jupiter is moving.
+What about the center of mass frame? Since Jupiter is so much
+more massive than the spacecraft, the center of mass is essen-
+The slingshot viewed in the
+tially fixed at Jupiter’s center, and Jupiter has zero velocity in the
+frameofthecenterofmassofthe
+center of mass frame, as shown in figure k. The c.m. frame is Jupiter-spacecraftsystem.
+moving to the left compared to the sun-fixed frame used in j, so
+? Relationship of momentum to the center of mass 367
+
+the spacecraft’s initial velocity is greater in this frame.
+Thingsaresimplerinthecenterofmassframe,becauseitismore
+symmetric. In the complicated sun-fixed frame, the incoming leg
+of the encounter is rapid, because the two bodies are rushing to-
+ward each other, while their separation on the outbound leg is
+more gradual, because Jupiter is trying to catch up. In the c.m.
+frame, Jupiter is sitting still, and there is perfect symmetry be-
+tween the incoming and outgoing legs, so by symmetry we have
+v = v . Going back to the sun-fixed frame, the spacecraft’s
+1f 1i
+ 
+final velocity is increased by the frames’ motion relative to each
+other. In the sun-fixed frame, the spacecraft’s velocity has in-
+creased greatly.
+The result can also be understood in terms of work and energy.
+InJupiter’sframe,Jupiterisnotdoinganyworkonthespacecraft
+as it rounds the back of the planet, because the motion is per-
+pendicular to the force. But in the sun’s frame, the spacecraft’s
+velocityvectoratthesamemomenthasalargecomponenttothe
+left, so Jupiter is doing work on it.
+Discussion questions
+A Makeupanumericalexampleoftwounequalmassesmovinginone
+dimension at constant velocity, and verify the equation p = m v
+total total cm
+overatimeintervalofonesecond.
+B A more massive tennis racquet or baseball bat makes the ball fly
+off faster. Explain why this is true, using the center of mass frame. For
+simplicity, assume that the racquet or bat is simply sitting still before the
+collision, and that the hitter’s hands do not make any force large enough
+tohaveasignificanteffectovertheshortdurationoftheimpact.
+14.4 Momentum transfer
+The rate of change of momentum
+As with conservation of energy, we need a way to measure and cal-
+culate the transfer of momentum into or out of a system when the
+system is not closed. In the case of energy, the answer was rather
+complicated, and entirely di↵erent techniques had to be used for
+measuringthetransferofmechanicalenergy(work)andthetransfer
+of heat by conduction. For momentum, the situation is far simpler.
+In the simplest case, the system consists of a single object acted on
+by a constant external force. Since it is only the object’s velocity
+that can change, not its mass, the momentum transferred is
+ p = m v,
+whichwiththehelpofa = F/mandtheconstant-accelerationequa-
+tion a =  v/ t becomes
+ p = ma t
+= F t.
+368 Chapter 14 Conservation of momentum

@@ -1,0 +1,189 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 684-692
+############################################################
+
+672 14 • Fluid Mechanics
+FIGURE 14.17 (a) A hydraulic jack operates by applying forces to an incompressible fluid in a U-tube, using a movable piston
+on each side of the tube. (b) Hydraulic jacks are commonly used by car mechanics to lift vehicles so that repairs and maintenance
+can be performed. (credit b: modification of work by Jane Whitney)
+From Pascal’s principle, it can be shown that the force needed to lift the car is less than the weight of the car:
+where is the force applied to lift the car, is the cross-sectional area of the smaller piston, is the cross
+sectional area of the larger piston, and is the weight of the car.
+EXAMPLE 14.3
+Calculating Force on Wheel Cylinders: Pascal Puts on the Brakes
+Consider the automobile hydraulic system shown in Figure 14.18. Suppose a force of 100 N is applied to the brake
+pedal, which acts on the pedal cylinder (acting as a “master” cylinder) through a lever. A force of 500 N is exerted on
+the pedal cylinder. Pressure created in the pedal cylinder is transmitted to the four wheel cylinders. The pedal
+cylinder has a diameter of 0.500 cm and each wheel cylinder has a diameter of 2.50 cm. Calculate the magnitude of
+the force created at each of the wheel cylinders.
+Access for free at openstax.org
+
+14.3 • Pascal's Principle and Hydraulics 673
+FIGURE 14.18 Hydraulic brakes use Pascal’s principle. The driver pushes the brake pedal, exerting a force that is increased by the simple
+lever and again by the hydraulic system. Each of the identical wheel cylinders receives the same pressure and, therefore, creates the same
+force output . The circular cross-sectional areas of the pedal and wheel cylinders are represented by and , respectively.
+Strategy
+We are given the force applied to the pedal cylinder. The cross-sectional areas and can be calculated
+from their given diameters. Then we can use the following relationship to find the force :
+Manipulate this algebraically to get on one side and substitute known values.
+Solution
+Pascal’s principle applied to hydraulic systems is given by
+Significance
+This value is the force exerted by each of the four wheel cylinders. Note that we can add as many wheel cylinders as
+we wish. If each has a 2.50-cm diameter, each will exert A simple hydraulic system, as an example
+of a simple machine, can increase force but cannot do more work than is done on it. Work is force times distance
+moved, and the wheel cylinder moves through a smaller distance than the pedal cylinder. Furthermore, the more
+wheels added, the smaller the distance each one moves. Many hydraulic systems—such as power brakes and those
+in bulldozers—have a motorized pump that actually does most of the work in the system.
+
+674 14 • Fluid Mechanics
+CHECK YOUR UNDERSTANDING 14.3
+Would a hydraulic press still operate properly if a gas is used instead of a liquid?
+14.4 Archimedes’ Principle and Buoyancy
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Define buoyant force
+• State Archimedes’ principle
+• Describe the relationship between density and Archimedes’ principle
+When placed in a fluid, some objects float due to a buoyant force. Where does this buoyant force come from? Why is
+it that some things float and others do not? Do objects that sink get any support at all from the fluid? Is your body
+buoyed by the atmosphere, or are only helium balloons affected (Figure 14.19)?
+FIGURE 14.19 (a) Even objects that sink, like this anchor, are partly supported by water when submerged. (b) Submarines have adjustable
+density (ballast tanks) so that they may float or sink as desired. (c) Helium-filled balloons tug upward on their strings, demonstrating air’s
+buoyant effect. (credit b: modification of work by Allied Navy; credit c: modification of work by “Crystl”/Flickr)
+Answers to all these questions, and many others, are based on the fact that pressure increases with depth in a fluid.
+This means that the upward force on the bottom of an object in a fluid is greater than the downward force on top of
+the object. There is an upward force, or buoyant force, on any object in any fluid (Figure 14.20). If the buoyant force
+is greater than the object’s weight, the net force on the object is upward. If we release such an object, it will rise in
+the fluid. If the buoyant force is less than the object’s weight, the object sinks when released. If the buoyant force
+equals the object’s weight, the object can remain suspended at its present depth, either immersed in the fluid (as
+for a neutrally buoyant diver) or partly above the surface (as with a floating object.) If the buoyant force equals the
+object’s weight, the object can remain suspended at its present depth. The buoyant force is always present, whether
+the object floats, sinks, or is suspended in a fluid.
+BUOYANT FORCE
+The buoyant force is the upward force on any object in any fluid.
+Access for free at openstax.org
+
+14.4 • Archimedes’ Principle and Buoyancy 675
+FIGURE 14.20 Pressure due to the weight of a fluid increases with depth because . This change in pressure and associated upward
+force on the bottom of the cylinder are greater than the downward force on the top of the cylinder. The differences in the force results in the
+buoyant force . (Horizontal forces cancel.)
+Archimedes’ Principle
+Just how large a force is buoyant force? To answer this question, think about what happens when a submerged
+object is removed from a fluid, as in Figure 14.21. If the object were not in the fluid, the space the object occupied
+would be filled by fluid having a weight This weight is supported by the surrounding fluid, so the buoyant force
+must equal the weight of the fluid displaced by the object.
+ARCHIMEDES’ PRINCIPLE
+The buoyant force on an object equals the weight of the fluid it displaces. In equation form, Archimedes’
+principle is
+where is the buoyant force and is the weight of the fluid displaced by the object.
+This principle is named after the Greek mathematician and inventor Archimedes (ca. 287–212 BCE), who stated this
+principle long before concepts of force were well established.
+FIGURE 14.21 (a) An object submerged in a fluid experiences a buoyant force If is greater than the weight of the object, the object
+rises. If is less than the weight of the object, the object sinks. (b) If the object is removed, it is replaced by fluid having weight Since
+this weight is supported by surrounding fluid, the buoyant force must equal the weight of the fluid displaced.
+
+676 14 • Fluid Mechanics
+Archimedes’ principle refers to the force of buoyancy that results when a body is submerged in a fluid, whether
+partially or wholly. The force that provides the pressure of a fluid acts on a body perpendicular to the surface of the
+body. In other words, the force due to the pressure at the bottom is pointed up, while at the top, the force due to the
+pressure is pointed down; the forces due to the pressures at the sides are pointing into the body.
+Since the bottom of the body is at a greater depth than the top of the body, the pressure at the lower part of the
+body is higher than the pressure at the upper part, as shown in Figure 14.20. Therefore a net upward force acts on
+the body. This upward force is the force of buoyancy, or simply buoyancy.
+INTERACTIVE
+The exclamation “Eureka” (meaning “I found it”) has often been credited to Archimedes as he made the discovery
+that would lead to Archimedes’ principle. Some say it all started in a bathtub. To hear this story, watch this video
+(https://openstax.org/l/21archNASA) or explore Scientific American (https://openstax.org/l/21archsciamer) to learn
+more.
+Density and Archimedes’ Principle
+If you drop a lump of clay in water, it will sink. But if you mold the same lump of clay into the shape of a boat, it will
+float. Because of its shape, the clay boat displaces more water than the lump and experiences a greater buoyant
+force, even though its mass is the same. The same is true of steel ships.
+The average density of an object is what ultimately determines whether it floats. If an object’s average density is
+less than that of the surrounding fluid, it will float. The reason is that the fluid, having a higher density, contains
+more mass and hence more weight in the same volume. The buoyant force, which equals the weight of the fluid
+displaced, is thus greater than the weight of the object. Likewise, an object denser than the fluid will sink.
+The extent to which a floating object is submerged depends on how the object’s density compares to the density of
+the fluid. In Figure 14.22, for example, the unloaded ship has a lower density and less of it is submerged compared
+with the same ship when loaded. We can derive a quantitative expression for the fraction submerged by considering
+density. The fraction submerged is the ratio of the volume submerged to the volume of the object, or
+The volume submerged equals the volume of fluid displaced, which we call . Now we can obtain the relationship
+between the densities by substituting into the expression. This gives
+where is the average density of the object and is the density of the fluid. Since the object floats, its mass and
+that of the displaced fluid are equal, so they cancel from the equation, leaving
+We can use this relationship to measure densities.
+Access for free at openstax.org
+
+14.4 • Archimedes’ Principle and Buoyancy 677
+FIGURE 14.22 An unloaded ship (a) floats higher in the water than a loaded ship (b).
+EXAMPLE 14.4
+Calculating Average Density
+Suppose a 60.0-kg woman floats in fresh water with 97.0% of her volume submerged when her lungs are full of air.
+What is her average density?
+Strategy
+We can find the woman’s density by solving the equation
+for the density of the object. This yields
+We know both the fraction submerged and the density of water, so we can calculate the woman’s density.
+Solution
+Entering the known values into the expression for her density, we obtain
+Significance
+The woman’s density is less than the fluid density. We expect this because she floats.
+Numerous lower-density objects or substances float in higher-density fluids: oil on water, a hot-air balloon in the
+atmosphere, a bit of cork in wine, an iceberg in salt water, and hot wax in a “lava lamp,” to name a few. A less
+obvious example is mountain ranges floating on the higher-density crust and mantle beneath them. Even seemingly
+solid Earth has fluid characteristics.
+Measuring Density
+One of the most common techniques for determining density is shown in Figure 14.23.
+
+678 14 • Fluid Mechanics
+FIGURE 14.23 (a) A coin is weighed in air. (b) The apparent weight of the coin is determined while it is completely submerged in a fluid of
+known density. These two measurements are used to calculate the density of the coin.
+An object, here a coin, is weighed in air and then weighed again while submerged in a liquid. The density of the coin,
+an indication of its authenticity, can be calculated if the fluid density is known. We can use this same technique to
+determine the density of the fluid if the density of the coin is known.
+All of these calculations are based on Archimedes’ principle, which states that the buoyant force on the object
+equals the weight of the fluid displaced. This, in turn, means that the object appears to weigh less when submerged;
+we call this measurement the object’s apparent weight. The object suffers an apparent weight loss equal to the
+weight of the fluid displaced. Alternatively, on balances that measure mass, the object suffers an apparent mass
+loss equal to the mass of fluid displaced. That is, apparent weight loss equals weight of fluid displaced, or apparent
+mass loss equals mass of fluid displaced.
+14.5 Fluid Dynamics
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the characteristics of flow
+• Calculate flow rate
+• Describe the relationship between flow rate and velocity
+• Explain the consequences of the equation of continuity to the conservation of mass
+The first part of this chapter dealt with fluid statics, the study of fluids at rest. The rest of this chapter deals with
+fluid dynamics, the study of fluids in motion. Even the most basic forms of fluid motion can be quite complex. For
+this reason, we limit our investigation to ideal fluids in many of the examples. An ideal fluid is a fluid with negligible
+viscosity. Viscosity is a measure of the internal friction in a fluid; we examine it in more detail in Viscosity and
+Turbulence. In a few examples, we examine an incompressible fluid—one for which an extremely large force is
+required to change the volume—since the density in an incompressible fluid is constant throughout.
+Characteristics of Flow
+Velocity vectors are often used to illustrate fluid motion in applications like meteorology. For example, wind—the
+fluid motion of air in the atmosphere—can be represented by vectors indicating the speed and direction of the wind
+at any given point on a map. Figure 14.24 shows velocity vectors describing the winds during Hurricane Arthur in
+2014.
+Access for free at openstax.org
+
+14.5 • Fluid Dynamics 679
+FIGURE 14.24 The velocity vectors show the flow of wind in Hurricane Arthur. Notice the circulation of the wind around the eye of the
+hurricane. Wind speeds are highest near the eye. The colors represent the relative vorticity, a measure of turning or spinning of the air.
+(credit: modification of work by Joseph Trout, Stockton University)
+Another method for representing fluid motion is a streamline. A streamline represents the path of a small volume of
+fluid as it flows. The velocity is always tangential to the streamline. The diagrams in Figure 14.25 use streamlines to
+illustrate two examples of fluids moving through a pipe. The first fluid exhibits a laminar flow (sometimes described
+as a steady flow), represented by smooth, parallel streamlines. Note that in the example shown in part (a), the
+velocity of the fluid is greatest in the center and decreases near the walls of the pipe due to the viscosity of the fluid
+and friction between the pipe walls and the fluid. This is a special case of laminar flow, where the friction between
+the pipe and the fluid is high, known as no slip boundary conditions. The second diagram represents turbulent flow,
+in which streamlines are irregular and change over time. In turbulent flow, the paths of the fluid flow are irregular as
+different parts of the fluid mix together or form small circular regions that resemble whirlpools. This can occur when
+the speed of the fluid reaches a certain critical speed.
+FIGURE 14.25 (a) Laminar flow can be thought of as layers of fluid moving in parallel, regular paths. (b) In turbulent flow, regions of fluid
+move in irregular, colliding paths, resulting in mixing and swirling.
+Flow Rate and its Relation to Velocity
+The volume of fluid passing by a given location through an area during a period of time is called flow rate Q, or more
+precisely, volume flow rate. In symbols, this is written as
+14.13

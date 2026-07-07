@@ -1,0 +1,310 @@
+# REAL PDF — openstax_vol2.pdf, pages 368-376
+############################################################
+
+358 Chapter 8 | Capacitance
+Figure 8.12 (a) Three capacitors are connected in parallel. Each
+capacitor is connected directly to the battery. (b) The charge on the
+equivalent capacitor is the sum of the charges on the individual
+capacitors.
+Example 8.5
+Equivalent Capacitance of a Parallel Network
+Find the net capacitance for three capacitors connected in parallel, given their individual capacitances are
+1.0µF, 5.0µF, and8.0µF.
+Strategy
+Because there are only three capacitors in this network, we can find the equivalent capacitance by using
+Equation 8.8with three terms.
+Solution
+Entering the given capacitances intoEquation 8.8yields
+C = C +C +C =1.0µF+5.0µF+8.0µF
+P 1 2 3
+C = 14.0µF.
+P
+Significance
+Notethatinaparallelnetworkofcapacitors,theequivalentcapacitanceisalwayslargerthananyoftheindividual
+capacitances in the network.
+Capacitornetworksareusuallysomecombinationofseriesandparallelconnections,asshowninFigure8.13.Tofindthe
+netcapacitanceofsuchcombinations,weidentifypartsthatcontainonlyseriesoronlyparallelconnections,andfindtheir
+equivalent capacitances. We repeat this process until we can determine the equivalent capacitance of the entire network.
+The following example illustrates this process.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 359
+Figure 8.13 (a) This circuit contains both series and parallel connections of capacitors. (b) C and C are in series;
+1 2
+their equivalent capacitance is C . (c) The equivalent capacitance C is connected in parallel with C . Thus, the
+S S 3
+equivalent capacitance of the entire network is the sum of C and C .
+S 3
+Example 8.6
+Equivalent Capacitance of a Network
+FindthetotalcapacitanceofthecombinationofcapacitorsshowninFigure8.13.Assumethecapacitancesare
+knowntothreedecimalplaces (C =1.000µF, C =5.000µF, C =8.000µF). Roundyouranswertothree
+1 2 3
+decimal places.
+Strategy
+Wefirstidentifywhichcapacitorsareinseriesandwhichareinparallel.Capacitors C and C areinseries.
+1 2
+Their combination, labeled C , is in parallel with C .
+S 3
+Solution
+Since C andC are in series, their equivalent capacitance C is obtained withEquation 8.7:
+1 2 S
+1 = 1 + 1 = 1 + 1 = 1.200 ⇒C =0.833µF.
+C C C 1.000µF 5.000µF µF S
+S 1 2
+Capacitance C is connected in parallel with the third capacitance C , so we use Equation 8.8 to find the
+S 3
+equivalent capacitanceCof the entire network:
+C=C +C =0.833µF+8.000µF=8.833µF.
+S 3
+Example 8.7
+Network of Capacitors
+DeterminethenetcapacitanceCofthecapacitorcombinationshowninFigure8.14whenthecapacitancesare
+C =12.0µF, C =2.0µF, and C =4.0µF.Whena12.0-Vpotentialdifferenceismaintainedacrossthe
+1 2 3
+combination, find the charge and the voltage across each capacitor.
+
+360 Chapter 8 | Capacitance
+Figure 8.14 (a) A capacitor combination. (b) An equivalent two-capacitor combination.
+Strategy
+Wefirstcomputethenetcapacitance C oftheparallelconnection C and C .ThenCisthenetcapacitance
+23 2 3
+oftheseriesconnection C and C .Weusetherelation C=Q/V tofindthecharges Q ,Q ,and Q ,and
+1 23 1 2 3
+the voltages V , V , and V , across capacitors 1, 2, and 3, respectively.
+1 2 3
+Solution
+The equivalent capacitance for C and C is
+2 3
+C =C +C =2.0µF+4.0µF=6.0µF.
+23 2 3
+The entire three-capacitor combination is equivalent to two capacitors in series,
+1 = 1 + 1 = 1 ⇒C=4.0µF.
+C 12.0µF 6.0µF 4.0µF
+Consider the equivalent two-capacitor combination in Figure 8.14(b). Since the capacitors are in series, they
+have the same charge, Q =Q . Also, the capacitors share the 12.0-V potential difference, so
+1 23
+Q Q Q Q
+12.0V=V +V = 1+ 23 = 1 + 1 ⇒Q =48.0µC.
+1 23 C C 12.0µF 6.0µF 1
+1 23
+Now the potential difference across capacitor 1 is
+Q 48.0µC
+V = 1 = =4.0V.
+1 C 12.0µF
+1
+Because capacitors 2 and 3 are connected in parallel, they are at the same potential difference:
+V =V =12.0V−4.0V=8.0V.
+2 3
+Hence, the charges on these two capacitors are, respectively,
+Q =C V =(2.0µF)(8.0V)=16.0µC,
+2 2 2
+Q =C V =(4.0µF)(8.0V)=32.0µC.
+3 3 3
+Significance
+As expected, the net charge on the parallel combination of C and C is Q =Q +Q =48.0µC.
+2 3 23 2 3
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 361
+8.5 Check Your Understanding Determine the net capacitance C of each network of capacitors shown
+below. Assume that C =1.0pF, C =2.0pF, C =4.0pF, and C =5.0pF. Find the charge on each
+1 2 3 4
+capacitor, assuming there is a potential difference of 12.0 V across each network.
+8.3 | Energy Stored in a Capacitor
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how energy is stored in a capacitor
+• Use energy relations to determine the energy stored in a capacitor network
+Most of us have seen dramatizations of medical personnel using a defibrillator to pass an electrical current through a
+patient’s heart to get it to beat normally. Often realistic in detail, the person applying the shock directs another person to
+“makeit400joulesthistime.”Theenergydeliveredbythedefibrillatorisstoredinacapacitorandcanbeadjustedtofitthe
+situation.SIunitsofjoulesareoftenemployed.Lessdramaticistheuseofcapacitorsinmicroelectronicstosupplyenergy
+when batteries are charged (Figure 8.15). Capacitors are also used to supply energy for flash lamps on cameras.
+
+362 Chapter 8 | Capacitance
+Figure 8.15 The capacitors on the circuit board for an electronic device follow a labeling
+convention that identifies each one with a code that begins with the letter “C.” (credit: Windell
+Oskay)
+The energy U stored in a capacitor is electrostatic potential energy and is thus related to the charge Q and voltage V
+C
+betweenthecapacitorplates.Achargedcapacitorstoresenergyintheelectricalfieldbetweenitsplates.Asthecapacitoris
+beingcharged,theelectricalfieldbuildsup.Whenachargedcapacitorisdisconnectedfromabattery,itsenergyremainsin
+the field in the space between its plates.
+To gain insight into how this energy may be expressed (in terms of Q and V), consider a charged, empty, parallel-plate
+capacitor;thatis,acapacitorwithoutadielectricbutwithavacuumbetweenitsplates.Thespacebetweenitsplateshasa
+volumeAd,anditisfilledwithauniformelectrostatic fieldE.Thetotalenergy U ofthecapacitoriscontainedwithin
+C
+thisspace.Theenergydensity u inthisspaceissimply U dividedbythevolumeAd.Ifweknowtheenergydensity,
+E C
+the energy can be found as U C=u E(Ad). We will learn in Electromagnetic Waves (after completing the study of
+Maxwell’sequations)thattheenergydensity u inaregionoffreespaceoccupiedbyanelectricalfieldEdependsonly
+E
+on the magnitude of the field and is
+u E= 1
+2
+ε
+0
+E2. (8.9)
+If we multiply the energy density by the volume between the plates, we obtain the amount of energy stored between the
+plates of a parallel-plate capacitor:U C=u E(Ad)= 1
+2
+ε
+0
+E2Ad = 1
+2
+ε
+0
+V
+d2
+2 Ad = 1
+2
+V2ε
+0
+A
+d
+= 1
+2
+V2C.
+Inthisderivation,weusedthefactthattheelectricalfieldbetweentheplatesisuniformsothat E=V/d and C=ε A/d.
+0
+Because C=Q/V, we can express this result in other equivalent forms:
+Q2 (8.10)
+U C= 1
+2
+V2C= 1
+2 C
+= 1
+2
+QV.
+The expression in Equation 8.10 for the energy stored in a parallel-plate capacitor is generally valid for all types of
+capacitors.Toseethis,consideranyunchargedcapacitor(notnecessarilyaparallel-platetype).Atsomeinstant,weconnect
+itacrossabattery,givingitapotentialdifference V =q/C betweenitsplates.Initially,thechargeontheplatesis Q=0.
+Asthecapacitorisbeingcharged,thechargegraduallybuildsuponitsplates,andaftersometime,itreachesthevalueQ.
+To move an infinitesimal charge dq from the negative plate to the positive plate (from a lower to a higher potential), the
+q
+amount of workdWthat must be done ondqis dW =Vdq= dq.
+C
+Thisworkbecomestheenergystoredintheelectricalfieldofthecapacitor.InordertochargethecapacitortoachargeQ,
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 363
+the total work required is
+W(Q) Qq Q2
+W =∫ dW =∫ dq= 1 .
+C 2 C
+0 0
+Sincethegeometryofthecapacitorhasnotbeenspecified,thisequationholdsforanytypeofcapacitor.ThetotalworkW
+neededtochargeacapacitoristheelectricalpotentialenergy U
+C
+storedinit,or U C=W.Whenthechargeisexpressed
+in coulombs, potential is expressed in volts, and the capacitance is expressed in farads, this relation gives the energy in
+joules.
+Knowing that the energy stored in a capacitor is U C=Q2/(2C), we can now find the energy density u
+E
+stored in a
+vacuum between the plates of a charged parallel-plate capacitor. We just have to divide U by the volume Ad of space
+C
+betweenitsplatesandtakeintoaccountthatforaparallel-platecapacitor,wehave E=σ/ε and C=ε A/d.Therefore,
+0 0
+we obtain
+u E= U Ad C = 1 2 Q C 2 A 1 d = 1 2 ε 0 Q A 2 /d A 1 d = 1 2 ε 1 0 ⎛ ⎝ Q A ⎞ ⎠ 2 = 2 σ ε 2 0 = (E 2 ε ε 0 0 )2 = ε 2 0E2.
+Weseethatthisexpressionforthedensityofenergystoredinaparallel-plate capacitorisinaccordancewiththegeneral
+relation expressed in Equation 8.9. We could repeat this calculation for either a spherical capacitor or a cylindrical
+capacitor—or other capacitors—and in all cases, we would end up with the general relation given byEquation 8.9.
+Example 8.8
+Energy Stored in a Capacitor
+CalculatetheenergystoredinthecapacitornetworkinFigure8.14(a)whenthecapacitorsarefullychargedand
+when the capacitances are C =12.0µF, C =2.0µF, and C =4.0µF, respectively.
+1 2 3
+Strategy
+WeuseEquation8.10tofindtheenergy U , U ,and U storedincapacitors1,2,and3,respectively.The
+1 2 3
+total energy is the sum of all these energies.
+Solution
+Weidentify C =12.0µF and V =4.0V, C =2.0µF and V =8.0V, C =4.0µF and V =8.0V.
+1 1 2 2 3 3
+The energies stored in these capacitors are
+U = 1C V2= 1 (12.0µF)(4.0V)2=96µJ,
+1 2 1 1 2
+U = 1C V2= 1 (2.0µF)(8.0V)2=64µJ,
+2 2 2 2 2
+U = 1C V2= 1 (4.0µF)(8.0V)2=130µJ.
+3 2 3 3 2
+The total energy stored in this network is
+U C=U
+1
++U
+2
++U
+3
+=96µJ+64µJ+130µJ=0.29mJ.
+Significance
+We can verify this result by calculating the energy stored in the single 4.0-µF capacitor, which is found to be
+equivalenttotheentirenetwork.Thevoltageacrossthenetworkis12.0V.Thetotalenergyobtainedinthisway
+agrees with our previously obtained result,U C= 1CV2= 1 (4.0µF)(12.0V)2=0.29mJ.
+2 2
+8.6 CheckYourUnderstandingThepotentialdifferenceacrossa5.0-pFcapacitoris0.40V.(a)Whatisthe
+energystoredinthiscapacitor?(b)Thepotentialdifferenceisnowincreasedto1.20V.Bywhatfactoristhe
+stored energy increased?
+
+364 Chapter 8 | Capacitance
+Inacardiacemergency,aportableelectronicdeviceknownasanautomatedexternaldefibrillator(AED)canbealifesaver.
+Adefibrillator(Figure 8.16)deliversalargechargeinashortburst,orashock,toaperson’shearttocorrectabnormal
+heartrhythm(anarrhythmia).Aheartattackcanarisefromtheonsetoffast,irregularbeatingoftheheart—calledcardiac
+or ventricular fibrillation. Applying a large shock of electrical energy can terminate the arrhythmia and allow the body’s
+naturalpacemakertoresumeitsnormalrhythm.Today,itiscommonforambulancestocarryAEDs.AEDsarealsofound
+in many public places. These are designed to be used by lay persons. The device automatically diagnoses the patient’s
+heart rhythm and then applies the shock with appropriate energy and waveform. CPR (cardiopulmonary resuscitation) is
+recommended in many cases before using a defibrillator.
+Figure 8.16 Automated external defibrillators are found in
+many public places. These portable units provide verbal
+instructions for use in the important first few minutes for a
+person suffering a cardiac attack. (credit: Owain Davies)
+Example 8.9
+Capacitance of a Heart Defibrillator
+Aheartdefibrillatordelivers 4.00×102J ofenergybydischargingacapacitorinitiallyat 1.00×104 V. What
+is its capacitance?
+Strategy
+We are given U and V, and we are asked to find the capacitance C. We solve Equation 8.10 for C and
+C
+substitute.
+Solution
+Solving this expression forCand entering the given values yields C=2 U C =2 4.00×102 J =8.00µF.
+V2 (1.00×104V)2
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 365
+8.4 | Capacitor with a Dielectric
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the effects a dielectric in a capacitor has on capacitance and other properties
+• Calculate the capacitance of a capacitor containing a dielectric
+As we discussed earlier, an insulating material placed between the plates of a capacitor is called a dielectric. Inserting a
+dielectric between the plates of a capacitor affects its capacitance. To see why, let’s consider an experiment described in
+Figure 8.17. Initially, a capacitor with capacitance C when there is air between its plates is charged by a battery to
+0
+voltage V .Whenthecapacitorisfullycharged,thebatteryisdisconnected.Acharge Q thenresidesontheplates,and
+0 0
+thepotentialdifferencebetweentheplatesismeasuredtobe V .Now,supposeweinsertadielectricthattotallyfillsthe
+0
+gapbetweentheplates.Ifwemonitorthevoltage,wefindthatthevoltmeterreadinghasdroppedtoasmallervalueV.We
+write this new voltage value as a fraction of the original voltage V , with a positive number κ, κ>1:
+0
+V = 1 κ V 0 .
+The constant κ in this equation is called the dielectric constant of the material between the plates, and its value is
+characteristicforthematerial.Adetailedexplanationforwhythedielectricreducesthevoltageisgiveninthenextsection.
+Differentmaterialshavedifferentdielectricconstants(atableofvaluesfortypicalmaterialsisprovidedinthenextsection).
+Oncethebatterybecomesdisconnected,thereisnopathforachargetoflowtothebatteryfromthecapacitorplates.Hence,
+theinsertionofthedielectrichasnoeffectonthechargeontheplate,whichremainsatavalueof Q .Therefore,wefind
+0
+that the capacitance of the capacitor with a dielectric is
+Q Q Q (8.11)
+C= 0 = 0 =κ 0 =κC .
+V V /κ V 0
+0 0
+Thisequationtellsusthatthecapacitance C ofanempty(vacuum)capacitorcanbeincreasedbyafactorof κ whenwe
+0
+insertadielectricmaterialtocompletelyfillthespacebetweenitsplates.NotethatEquation 8.11canalsobeusedfor
+anemptycapacitorbysetting κ=1.Inotherwords,wecansaythatthedielectricconstantofthevacuumis1,whichisa
+reference value.

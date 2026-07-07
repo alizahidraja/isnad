@@ -1,0 +1,227 @@
+# REAL PDF — openstax_vol3.pdf, pages 139-146
+############################################################
+
+Chapter 3 | Interference 131
+Figure 3.14 (a) The rainbow-color bands are produced by thin-film interference in the
+air between the two glass slides. (b) Schematic of the paths taken by rays in the wedge of
+air between the slides. (c) If the air wedge is illuminated with monochromatic light, bright
+and dark bands are obtained rather than repeating rainbow colors.
+An important application of thin-film interference is found in the manufacturing of optical instruments. A lens or mirror
+canbecomparedwithamasterasitisbeingground,allowingittobeshapedtoanaccuracyoflessthanawavelengthover
+itsentiresurface.Figure 3.15illustratesthephenomenoncalledNewton’srings,whichoccurswhentheplanesurfaces
+oftwolensesareplacedtogether.(ThecircularbandsarecalledNewton’sringsbecauseIsaacNewtondescribedthemand
+theiruseindetail.Newtondidnotdiscoverthem;RobertHookedid,andNewtondidnotbelievetheywereduetothewave
+character of light.) Each successive ring of a given color indicates an increase of only half a wavelength in the distance
+between the lens and the blank, so that great precision can be obtained. Once the lens is perfect, no rings appear.
+
+132 Chapter 3 | Interference
+Figure 3.15 “Newton’s rings” interference fringes are produced when two plano-convex
+lenses are placed together with their plane surfaces in contact. The rings are created by
+interference between the light reflected off the two surfaces as a result of a slight gap between
+them, indicating that these surfaces are not precisely plane but are slightly convex. (credit: Ulf
+Seifert)
+Thin-film interference has many other applications, both in nature and in manufacturing. The wings of certain moths
+and butterflies have nearly iridescent colors due to thin-film interference. In addition to pigmentation, the wing’s color
+is affected greatly by constructive interference of certain wavelengths reflected from its film-coated surface. Some car
+manufacturers offer special paint jobs that use thin-film interference to produce colors that change with angle. This
+expensive option is based on variation of thin-film path length differences with angle. Security features on credit cards,
+banknotes,drivinglicenses,andsimilaritemspronetoforgeryusethin-filminterference,diffractiongratings,orholograms.
+As early as 1998, Australia led the way with dollar bills printed on polymer with a diffraction grating security feature,
+making the currency difficult to forge. Other countries, such as Canada, New Zealand, and Taiwan, are using similar
+technologies, while US currency includes a thin-film interference effect.
+3.5 | The Michelson Interferometer
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain changes in fringes observed with a Michelson interferometer caused by mirror
+movements
+• Explain changes in fringes observed with a Michelson interferometer caused by changes in
+medium
+The Michelson interferometer (invented by the American physicist Albert A. Michelson, 1852–1931) is a precision
+instrumentthatproducesinterferencefringesbysplittingalightbeamintotwopartsandthenrecombiningthemafterthey
+havetraveleddifferentopticalpaths.Figure3.16depictstheinterferometerandthepathofalightbeamfromasinglepoint
+ontheextendedsourceS,whichisaground-glassplatethatdiffusesthelightfromamonochromaticlampofwavelength
+λ .Thebeamstrikesthehalf-silveredmirrorM,wherehalfofitisreflectedtothesideandhalfpassesthroughthemirror.
+0
+The reflected light travels to the movable plane mirror M , where it is reflected back through M to the observer. The
+1
+transmitted half of the original beam is reflected back by the stationary mirror M and then toward the observer by M.
+2
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 133
+Figure 3.16 (a) The Michelson interferometer. The extended light source is a ground-glass plate that diffuses the light from a
+laser. (b) A planar view of the interferometer.
+Becausebothbeamsoriginatefromthesamepointonthesource,theyarecoherentandthereforeinterfere.Noticefromthe
+figurethatonebeampassesthroughMthreetimesandtheotheronlyonce.Toensurethatbothbeamstraversethesame
+thicknessofglass,acompensatorplateCoftransparentglassisplacedinthearmcontaining M .Thisplateisaduplicate
+2
+ofM(withoutthesilvering)andisusuallycutfromthesamepieceofglassusedtoproduceM.Withthecompensatorin
+place, any phase difference between the two beams is due solely to the difference in the distances they travel.
+Thepathdifferenceofthetwobeamswhentheyrecombineis 2d −2d ,where d isthedistancebetweenMand M ,
+1 2 1 1
+and d isthedistancebetweenMand M .Supposethispathdifferenceisanintegernumberofwavelengths mλ .Then,
+2 2 0
+constructiveinterferenceoccursandabrightimageofthepointonthesourceisseenattheobserver.Nowthelightfrom
+anyotherpointonthesourcewhosetwobeamshavethissamepathdifferencealsoundergoesconstructiveinterferenceand
+producesabrightimage.Thecollectionofthesepointimagesisabrightfringecorrespondingtoapathdifferenceof mλ
+0
+(Figure3.17).When M ismovedadistance Δd =λ /2,thispathdifferencechangesby λ ,andeachfringemovesto
+1 0 0
+thepositionpreviouslyoccupiedbyanadjacentfringe.Consequently,bycountingthenumberoffringesmpassingagiven
+pointas M ismoved,anobservercanmeasureminutedisplacementsthatareaccuratetoafractionofawavelength,as
+1
+shown by the relation
+λ (3.7)
+Δd =m 0.
+2
+Figure 3.17 Fringes produced with a Michelson
+interferometer. (credit: “SILLAGESvideos”/YouTube)
+
+134 Chapter 3 | Interference
+Example 3.5
+Precise Distance Measurements by Michelson Interferometer
+A red laser light of wavelength 630 nm is used in a Michelson interferometer. While keeping the mirror M
+1
+fixed,mirror M ismoved.Thefringesarefoundtomovepastafixedcross-hairintheviewer.Findthedistance
+2
+the mirror M is moved for a single fringe to move past the reference line.
+2
+Strategy
+RefertoFigure3.16forthegeometry.WeusetheresultoftheMichelsoninterferometerinterferencecondition
+to find the distance moved, Δd.
+Solution
+Fora630-nmredlaserlight,andforeachfringecrossing (m=1),thedistancetraveledby M ifyoukeep M
+2 1
+fixed is
+λ
+Δd =m 0 =1× 630nm =315nm = 0.315µm.
+2 2
+Significance
+An important application of this measurement is the definition of the standard meter. As mentioned in Units
+and Measurement (http://cnx.org/content/m58268/latest/) , the length of the standard meter was once
+definedasthemirrordisplacementinaMichelsoninterferometercorrespondingto1,650,763.73wavelengthsof
+the particular fringe of krypton-86 in a gas discharge tube.
+Example 3.6
+Measuring the Refractive Index of a Gas
+InonearmofaMichelsoninterferometer,aglasschamberisplacedwithattachmentsforevacuatingtheinside
+and putting gases in it. The space inside the container is 2 cm wide. Initially, the container is empty. As gas is
+slowlyletintothechamber,youobservethatdarkfringesmovepastareferencelineinthefieldofobservation.
+Bythetimethechamberisfilledtothedesiredpressure,youhavecounted122fringesmovepastthereference
+line. The wavelength of the light used is 632.8 nm. What is the refractive index of this gas?
+Strategy
+The m=122 fringes observed compose the difference between the number of wavelengths that fit within the
+emptychamber(vacuum)andthenumberofwavelengthsthatfitwithinthesamechamberwhenitisgas-filled.
+The wavelength in the filled chamber is shorter by a factor ofn, the index of refraction.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 135
+Solution
+Theraytravelsadistance t=2cm totherightthroughtheglasschamberandanotherdistancettotheleftupon
+reflection. The total travel is L=2t. When empty, the number of wavelengths that fit in this chamber is
+N =
+L
+=
+2t
+0 λ λ
+0 0
+where λ =632.8nm isthewavelength invacuum ofthelight used.Inanyothermedium, thewavelength is
+0
+λ=λ /n and the number of wavelengths that fit in the gas-filled chamber is
+0
+N =
+L
+=
+2t
+.
+λ λ /n
+0
+The number of fringes observed in the transition is
+m =N−N ,
+0
+2t 2t
+= − ,
+λ /n λ
+0 0
+=
+2t
+(n−1).
+λ
+0
+Solving for (n−1) gives
+⎛λ ⎞ ⎛ −9 ⎞
+n−1=m 0 =122⎜632.8×10 m⎟=0.0019
+⎝2t⎠ ⎝ 2(2×10−2 m) ⎠
+and n=1.0019.
+Significance
+Theindicesofrefractionforgasesaresoclosetothatofvacuum,thatwenormallyconsiderthemequalto1.The
+differencebetween1and1.0019issosmallthatmeasuringitrequiresacorrespondinglysensitivetechniquesuch
+asinterferometry.Wecannot,forexample,hopetomeasurethisvalueusingtechniquesbasedsimplyonSnell’s
+law.
+3.3 CheckYourUnderstandingAlthoughm,thenumberoffringesobserved,isaninteger,whichisoften
+regardedashavingzerouncertainty,inpracticalterms,itisalltooeasytolosetrackwhencountingfringes.In
+Example 3.6, if you estimate that you might have missed as many as five fringes when you reported
+m=122 fringes, (a) is the value for the index of refraction worked out in Example 3.6 too large or too
+small? (b) By how much?
+Problem-Solving Strategy: Wave Optics
+Step 1. Examine the situation to determine that interference is involved. Identify whether slits, thin films, or
+interferometers are considered in the problem.
+Step2.Ifslitsareinvolved,notethatdiffractiongratingsanddoubleslitsproduceverysimilarinterferencepatterns,
+butthatgratingshavenarrower(sharper)maxima.Single-slit patternsarecharacterized byalargecentralmaximum
+and smaller maxima to the sides.
+Step3.Ifthin-filminterferenceoraninterferometerisinvolved,takenoteofthepathlengthdifferencebetweenthetwo
+raysthatinterfere.Becertaintousethewavelengthinthemediuminvolved,sinceitdiffersfromthewavelengthin
+vacuum.Notealsothatthereisanadditional λ/2 phaseshiftwhenlightreflectsfromamediumwithagreaterindex
+of refraction.
+Step4.Identifyexactlywhatneedstobedeterminedintheproblem(identifytheunknowns).Awrittenlistisuseful.
+Draw a diagram of the situation. Labeling the diagram is useful.
+Step 5.Make a list of what is given or can be inferred from the problem as stated (identify the knowns).
+
+136 Chapter 3 | Interference
+Step6.Solvetheappropriateequationforthequantitytobedetermined(theunknown)andentertheknowns.Slits,
+gratings, and the Rayleigh limit involve equations.
+Step 7. For thin-film interference, you have constructive interference for a total shift that is an integral number of
+wavelengths.Youhavedestructiveinterferenceforatotalshiftofahalf-integralnumberofwavelengths.Alwayskeep
+in mind that crest to crest is constructive whereas crest to trough is destructive.
+Step8.Checktoseeiftheanswerisreasonable:Doesitmakesense?Anglesininterferencepatternscannotbegreater
+than 90°, for example.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 137
+CHAPTER 3 REVIEW
+KEY TERMS
+coherent waves waves are in phase or have a definite phase relationship
+fringes bright and dark patterns of interference
+incoherent waves have random phase relationships
+interferometer instrument that uses interference of waves to make measurements
+monochromatic light composed of one wavelength only
+Newton’s rings circular interference pattern created by interference between the light reflected off two surfaces as a
+result of a slight gap between them
+order integermused in the equations for constructive and destructive interference for a double slit
+principal maximum brightest interference fringes seen with multiple slits
+secondary maximum bright interference fringes of intensity lower than the principal maxima
+thin-film interference interference between light reflected from different surfaces of a thin film
+KEY EQUATIONS
+Constructive interference Δl=mλ, form= 0, ±1, ±2, ±3…
+Destructive interference Δl=(m+ 1 )λ, form= 0, ±1, ±2, ±3…
+2
+Path length difference for waves from two slits to a Δl=dsinθ
+common point on a screen
+Constructive interference dsinθ=mλ, form=0, ±1, ±2, ±3,…
+Destructive interference dsinθ=(m+ 1 )λ, form = 0,±1,±2,±3,…
+2
+Distance from central maximum to themth bright fringe mλD
+y m=
+d
+Displacement measured by a Michelson interferometer λ
+Δd =m 0
+2
+SUMMARY
+3.1Young's Double-Slit Interference
+• Young’s double-slit experiment gave definitive proof of the wave character of light.
+• An interference pattern is obtained by the superposition of light from two slits.
+3.2Mathematics of Interference
+• Indouble-slitdiffraction,constructiveinterferenceoccurswhen dsinθ=mλ(form=0, ±1, ±2, ±3…),where
+d is the distance between the slits, θ is the angle relative to the incident direction, and m is the order of the
+interference.
+• Destructive interference occurs when dsinθ=(m+ 1 )λform = 0, ±1, ±2, ±3,….
+2

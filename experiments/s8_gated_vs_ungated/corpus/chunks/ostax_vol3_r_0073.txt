@@ -1,0 +1,230 @@
+# REAL PDF — openstax_vol3.pdf, pages 444-450
+############################################################
+
+436 Chapter 9 | Condensed Matter Physics
+Inmodernelectronicdevices,digitalsignalsareusedwithdiodesandtransistorstoperformtaskssuchasdatamanipulation.
+Electric circuits carry two types of electrical signals: analog and digital (Figure 9.28). An analog signal varies
+continuously, whereas a digital signal switches between two fixed voltage values, such as plus 1 volt and zero volts. In
+digitalcircuitslikethosefoundincomputers,atransistorbehaveslikeanon-offswitch.Thetransistoriseitheron,meaning
+thevalveiscompletelyopen,oritisoff,meaningthevalveiscompletelyclosed.Integratedcircuitscontainvastcollections
+oftransistorsonasinglepieceofsilicon.Theyaredesignedtohandledigitalsignalsthatrepresentonesandzeroes,which
+is also known as binary code. The invention of the ic helped to launch the modern computer revolution.
+Figure 9.28 Real-world data are often analog, meaning data can vary continuously.
+Intensity values of sound or visual images are usually analog. These data are converted
+into digital signals for electronic processing in recording devices or computers. The
+digital signal is generated from the analog signal by requiring certain voltage cut-off
+value.
+9.8 | Superconductivity
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the main features of a superconductor
+• Describe the BCS theory of superconductivity
+• Determine the critical magnetic field for T = 0 K from magnetic field data
+• Calculate the maximum emf or current for a wire to remain superconducting
+Electrical resistance can be considered as a measure of the frictional force in electrical current flow. Thus, electrical
+resistance is a primary source of energy dissipation in electrical systems such as electromagnets, electric motors, and
+transmissionlines.Copperwireiscommonlyusedinelectricalwiringbecauseithasoneofthelowestroom-temperature
+electricalresistivitiesamongcommonconductors.(Actually,silverhasalowerresistivitythancopper,butthehighcostand
+limited availability of silver outweigh its savings in energy over copper.)
+Althoughourdiscussionofconductivityseemstoimplythatallmaterialsmusthaveelectricalresistance,weknowthatthis
+isnotthecase.Whenthetemperaturedecreasesbelowacriticalvalueformanymaterials,theirelectricalresistivitydrops
+tozero,andthematerialsbecomesuperconductors(seeSuperconductors (http://cnx.org/content/m58735/latest/)
+).
+Watch this NOVA video (https://openstaxcollege.org/l/21NOVA) excerpt, Making Stuff Colder, as an
+introduction to the topic of superconductivity and its many applications.
+Properties of Superconductors
+Inaddition tozero electrical resistance, superconductors also have perfect diamagnetism. Inother words,inthe presence
+of an applied magnetic field, the net magnetic field within a superconductor is always zero (Figure 9.29). Therefore,
+any magnetic field lines that pass through a superconducting sample when it is in its normal state are expelled once the
+samplebecomessuperconducting.ThesearemanifestationsoftheMeissnereffect,whichyoulearnedaboutinthechapter
+on current and resistance.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 437
+Figure 9.29 (a) In the Meissner effect, a magnetic field is expelled from a material once it becomes
+superconducting. (b) A magnet can levitate above a superconducting material, supported by the force expelling the
+magnetic field. (credit b: modification of work by Kevin Jarrett)
+Interestingly,theMeissnereffectisnotaconsequenceoftheresistancebeingzero.Toseewhy,supposethatasampleplaced
+inamagneticfieldundergoesatransitioninwhichitsresistancedropstozero.FromOhm’slaw,thecurrentdensity,j,in
+thesampleisrelatedtothenetinternalelectricfield,E,andtheresistivity ρ by j=E/ρ.If ρ iszero,Emustalsobezero
+so thatjcan remain finite. NowEand the magnetic flux Φm through the sample are related by Faraday’s law as
+∮EdI = −
+dΦm. (9.38)
+dt
+If E is zero, dΦm/dt is also zero, that is, the magnetic flux through the sample cannot change. The magnetic field lines
+within the sample should therefore not be expelled when the transition occurs. Hence, it does not follow that a material
+whose resistance goes to zero has to exhibit the Meissner effect. Rather, the Meissner effect is a special property of
+superconductors.
+Another important property of a superconducting material is its critical temperature, T , the temperature below which
+c
+the material is superconducting. The known range of critical temperatures is from a fraction of 1 K to slightly above
+100 K. Superconductors with critical temperatures near this higher limit are commonly known as “high-temperature”
+superconductors. From a practical standpoint, superconductors for which T c≫77K are very important. At present,
+applications involving superconductors often still require that superconducting materials be immersed in liquid helium
+(4.2 K) in order to keep them below their critical temperature. The liquid helium baths must be continually replenished
+becauseofevaporation,andcoolingcostscaneasilyoutweighthesavingsinusingasuperconductor.However,77Kisthe
+temperature of liquid nitrogen, which is far more abundant and inexpensive than liquid helium. It would be much more
+cost-effectiveifwecouldeasilyfabricateandusehigh-temperaturesuperconductorcomponentsthatonlyneedtobekept
+in liquid nitrogen baths to maintain their superconductivity.
+High-temperature superconducting materials are presently in use in various applications. An example is the production
+of magnetic fields in some particle accelerators. The ultimate goal is to discover materials that are superconducting at
+room temperature. Without any cooling requirements, the bulk of electronic components and transmission lines could be
+superconducting, resulting in dramatic and unprecedented increases in efficiency and performance.
+Another important property of a superconducting material is its critical magnetic field B c(T), which is the maximum
+applied magnetic field at a temperature T that will allow a material to remain superconducting. An applied field that is
+greater than the critical field will destroy the superconductivity. The critical field is zero at the critical temperature and
+increasesasthetemperaturedecreases.Plotsofthecriticalfieldversustemperatureforseveralsuperconductingmaterials
+are shown inFigure 9.30. The temperature dependence of the critical field can be described approximately by
+
+438 Chapter 9 | Condensed Matter Physics
+⎡ 2⎤ (9.39)
+⎛T ⎞
+B
+c
+(T)=B
+c
+(0)⎢1−
+⎝T ⎠
+⎥
+⎣ c ⎦
+where B c(0) isthecriticalfieldatabsolutezerotemperature.Table 9.5liststhecriticaltemperaturesandfieldsfortwo
+classes of superconductors: type I superconductor and type II superconductor. In general, type I superconductors are
+elements,suchasaluminumandmercury.TheyareperfectlydiamagneticbelowacriticalfieldB (T),andenterthenormal
+C
+non-superconductingstateoncethatfieldisexceeded.ThecriticalfieldsoftypeIsuperconductorsaregenerallyquitelow
+(wellbelowonetesla).Forthisreason,theycannotbeusedinapplicationsrequiringtheproductionofhighmagneticfields,
+which would destroy their superconducting state.
+Figure 9.30 The temperature dependence of the critical field
+for several superconductors. Superconductivity occurs for
+magnetic fields and temperatures below the curves shown.
+Material Critical Temperature (K) Critical Magnetic Field (T)
+Type I
+Al 1.2 0.011
+Ga 1.1 0.0051
+Hg(α) 4.2 0.041
+In 3.4 0.029
+Nb 9.3 0.20
+Pb 7.2 0.080
+Sn 3.7 0.031
+Th 1.4 0.00016
+Zn 0.87 0.0053
+Table 9.5Critical Temperature and Critical Magnetic Field at T=0K for
+Various Superconductors
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 439
+Material Critical Temperature (K) Critical Magnetic Field (T)
+Type II
+Nb Al 18 32
+3
+Nb Ge 23 38
+3
+Nb Sn 18 25
+3
+NbTi 9.3 15
+YBa Cu O 92 >100
+2 3 7
+Table 9.5Critical Temperature and Critical Magnetic Field at T=0K for
+Various Superconductors
+TypeIIsuperconductorsaregenerallycompoundsoralloysinvolvingtransitionmetalsoractinideserieselements.Almost
+all superconductors with relatively high critical temperatures are type II. They have two critical fields, represented by
+B (T) and B (T).Whenthefieldisbelow B (T), typeIIsuperconductorsareperfectlydiamagnetic,andnomagnetic
+c1 c2 c1
+flux penetration into the material can occur. For a field exceeding B (T), they are driven into their normal state.
+c2
+When the field is greater than B (T) but less than B (T), type II superconductors are said to be in a mixed state.
+c1 c2
+Although there is some magnetic flux penetration in the mixed state, the resistance of the material is zero. Within the
+superconductor,filament-likeregionsexistthathavenormalelectricalandmagneticpropertiesinterspersedbetweenregions
+thataresuperconductingwithperfectdiamagnetism.ArepresentationofthisstateisgiveninFigure 9.31.Themagnetic
+field is expelled from the superconducting regions but exists in the normal regions. In general, B (T) is very large
+c2
+comparedwiththecriticalfieldsoftypeIsuperconductors,sowiremadeoftypeIIsuperconductingmaterialissuitablefor
+the windings of high-field magnets.
+Figure 9.31 A schematic representation of the mixed state of
+a type II superconductor. Superconductors (the gray squares)
+expel magnetic fields in their vicinity.
+
+440 Chapter 9 | Condensed Matter Physics
+Example 9.7
+Niobium Wire
+Inanexperiment,aniobium(Nb)wireofradius0.25mmisimmersedinliquidhelium(T =4.2K)andrequired
+to carry a current of 300 A. Does the wire remain superconducting?
+Strategy
+Theappliedmagneticfieldcanbedeterminedfromtheradiusofthewireandcurrent.Thecriticalmagneticfield
+canbedeterminedfromEquation9.1,thepropertiesofthesuperconductor,andthetemperature.Iftheapplied
+magnetic field is greater than the critical field, then superconductivity in the Nb wire is destroyed.
+Solution
+At T =4.2K, the critical field for Nb is, fromEquation 9.1andTable 9.5,
+⎡ 2⎤
+B c(4.2K)=B c(0)
+⎣
+⎢1− ⎛
+⎝
+4
+9
+.
+.
+2
+3
+K
+K
+⎞
+⎠ ⎦
+⎥=(0.20T)(0.80)=0.16T.
+In an earlier chapter, we learned the magnetic field inside a current-carrying wire of radiusais given by
+µ I
+B= 0 ,
+2πa
+µ I
+whereristhedistancefromthecentralaxisofthewire.Thus,thefieldatthesurfaceofthewireis 0 r . For
+2πa
+the niobium wire, this field is
+(4π×10 −7 T m/A)(300A)
+B= =0.24T.
+2π ⎛ 2.5×10−4 m ⎞
+⎝ ⎠
+Since this exceeds the critical 0.16 T, the wire does not remain superconducting.
+Significance
+Superconductivityrequireslowtemperaturesandlowmagneticfields.Thesesimultaneousconditionsaremetless
+easilyforNbthanformanyothermetals.Forexample,aluminumsuperconductsattemperatures7timeslower
+and magnetic fields 18 times lower.
+9.6 Check Your UnderstandingWhat conditions are necessary for superconductivity?
+Theory of Superconductors
+A successful theory of superconductivity was developed in the 1950s by John Bardeen, Leon Cooper, and J. Robert
+Schrieffer, for which they received the Nobel Prize in 1972. This theory is known as the BCS theory. BCS theory is
+complex, so we summarize it qualitatively below.
+Inanormalconductor,theelectricalpropertiesofthematerialareduetothemostenergeticelectronsneartheFermienergy.
+In1956,CoopershowedthatifthereisanyattractiveinteractionbetweentwoelectronsattheFermilevel,thentheelectrons
+can form a bound state in which their total energy is less than 2E . Two such electrons are known as aCooper pair.
+F
+Itishardtoimaginetwoelectronsattractingeachother,sincetheyhavelikechargeandshouldrepel.However,theproposed
+interactionoccursonlyinthecontextofanatomiclattice.AdepictionoftheattractionisshowninFigure9.32.Electron
+1slightlydisplacesthepositivelychargedatomicnucleitowarditselfasittravelspastbecauseoftheCoulombattraction.
+Electron2“sees”aregionwithahigherdensityofpositivechargerelativetothesurroundingsandisthereforeattractedinto
+this region and, therefore indirectly, to electron 1. Because of the exclusion principle, the two electrons of a Cooper pair
+must have opposite spin.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 441
+Figure 9.32 A Cooper pair can form as a result of the
+displacement of positive atomic nuclei. Electron 1 slightly
+displaces the positively charged atomic nuclei toward itself as it
+travels past because of the Coulomb attraction. Electron 2 “sees”
+a region with a higher density of positive charge relative to the
+surroundings and is therefore attracted into this region.
+TheBCStheoryextendsCooper’sideas,whichareforasinglepairofelectrons,totheentirefreeelectrongas.Whenthe
+transitiontothesuperconductingstateoccurs,alltheelectronspairuptoformCooperpairs.Onanatomicscale,thedistance
+betweenthetwoelectronsmakingupaCooperpairisquitelarge.Betweentheseelectronsaretypicallyabout 10 6 other
+electrons, each also pairs with a distant electron. Hence, there is considerable overlap between the wave functions of the
+individualCooperpairs,resultinginastrongcorrelationamongthemotionsofthepairs.Theyallmovetogether“instep,”
+likethemembersofamarchingband.Inthesuperconductingtransition,thedensityofstatesbecomesdrasticallychanged
+neartheFermilevel.AsshowninFigure9.33,anenergygapappearsaround E becausethecollectionofCooperpairs
+F
+haslowergroundstateenergythantheFermigasofnoninteractingelectrons.Theappearanceofthisgapcharacterizesthe
+superconductingstate.Ifthisstateisdestroyed,thenthegapdisappears,andthedensityofstatesrevertstothatofthefree
+electron gas.
+Figure 9.33 A relatively large energy gap is formed around
+the Fermi energy when a material becomes superconducting. If
+this state is destroyed, then the gap disappears, and the density
+of states reverts to that of the free electron gas.

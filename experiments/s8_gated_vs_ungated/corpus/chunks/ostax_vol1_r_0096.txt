@@ -1,0 +1,204 @@
+# REAL PDF — openstax_vol1.pdf, pages 587-594
+############################################################
+
+12.3 • Stress, Strain, and Elastic Modulus 575
+12.3 Stress, Strain, and Elastic Modulus
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the concepts of stress and strain in describing elastic deformations of materials
+• Describe the types of elastic deformation of objects and materials
+A model of a rigid body is an idealized example of an object that does not deform under the actions of external
+forces. It is very useful when analyzing mechanical systems—and many physical objects are indeed rigid to a great
+extent. The extent to which an object can be perceived as rigid depends on the physical properties of the material
+from which it is made. For example, a ping-pong ball made of plastic is brittle, and a tennis ball made of rubber is
+elastic when acted upon by squashing forces. However, under other circumstances, both a ping-pong ball and a
+tennis ball may bounce well as rigid bodies. Similarly, someone who designs prosthetic limbs may be able to
+approximate the mechanics of human limbs by modeling them as rigid bodies; however, the actual combination of
+bones and tissues is an elastic medium.
+For the remainder of this chapter, we move from consideration of forces that affect the motion of an object to those
+that affect an object’s shape. A change in shape due to the application of a force is known as a deformation. Even
+very small forces are known to cause some deformation. Deformation is experienced by objects or physical media
+under the action of external forces—for example, this may be squashing, squeezing, ripping, twisting, shearing, or
+pulling the objects apart. In the language of physics, two terms describe the forces on objects undergoing
+deformation: stress and strain.
+Stress is a quantity that describes the magnitude of forces that cause deformation. Stress is generally defined as
+force per unit area. When forces pull on an object and cause its elongation, like the stretching of an elastic band, we
+call such stress a tensile stress. When forces cause a compression of an object, we call it a compressive stress.
+When an object is being squeezed from all sides, like a submarine in the depths of an ocean, we call this kind of
+stress a bulk stress (or volume stress). In other situations, the acting forces may be neither tensile nor
+compressive, and still produce a noticeable deformation. For example, suppose you hold a book tightly between the
+palms of your hands, then with one hand you press-and-pull on the front cover away from you, while with the other
+hand you press-and-pull on the back cover toward you. In such a case, when deforming forces act tangentially to the
+object’s surface, we call them ‘shear’ forces and the stress they cause is called shear stress.
+The SI unit of stress is the pascal (Pa). When one newton of force presses on a unit surface area of one meter
+squared, the resulting stress is one pascal:
+In the Imperial system of units, the unit of stress is ‘psi,’ which stands for ‘pound per square inch’ Another
+unit that is often used for bulk stress is the atm (atmosphere). Conversion factors are
+An object or medium under stress becomes deformed. The quantity that describes this deformation is called strain.
+Strain is given as a fractional change in either length (under tensile stress) or volume (under bulk stress) or
+geometry (under shear stress). Therefore, strain is a dimensionless number. Strain under a tensile stress is called
+tensile strain, strain under bulk stress is called bulk strain (or volume strain), and that caused by shear stress is
+called shear strain.
+The greater the stress, the greater the strain; however, the relation between strain and stress does not need to be
+linear. Only when stress is sufficiently low is the deformation it causes in direct proportion to the stress value. The
+proportionality constant in this relation is called the elastic modulus. In the linear limit of low stress values, the
+general relation between stress and strain is
+12.33
+
+576 12 • Static Equilibrium and Elasticity
+As we can see from dimensional analysis of this relation, the elastic modulus has the same physical unit as stress
+because strain is dimensionless.
+We can also see from Equation 12.33 that when an object is characterized by a large value of elastic modulus, the
+effect of stress is small. On the other hand, a small elastic modulus means that stress produces large strain and
+noticeable deformation. For example, a stress on a rubber band produces larger strain (deformation) than the same
+stress on a steel band of the same dimensions because the elastic modulus for rubber is two orders of magnitude
+smaller than the elastic modulus for steel.
+The elastic modulus for tensile stress is called Young’s modulus; that for the bulk stress is called the bulk modulus;
+and that for shear stress is called the shear modulus. Note that the relation between stress and strain is an
+observed relation, measured in the laboratory. Elastic moduli for various materials are measured under various
+physical conditions, such as varying temperature, and collected in engineering data tables for reference (Table
+12.1). These tables are valuable references for industry and for anyone involved in engineering or construction. In
+the next section, we discuss strain-stress relations beyond the linear limit represented by Equation 12.33, in the full
+range of stress values up to a fracture point. In the remainder of this section, we study the linear limit expressed by
+Equation 12.33.
+Material Young’s modulus Bulk modulus Shear modulus
+Aluminum 7.0 7.5 2.5
+Bone (tension) 1.6 0.8 8.0
+Bone (compression) 0.9
+Brass 9.0 6.0 3.5
+Brick 1.5
+Concrete 2.0
+Copper 11.0 14.0 4.4
+Crown glass 6.0 5.0 2.5
+Granite 4.5 4.5 2.0
+Hair (human) 1.0
+Hardwood 1.5 1.0
+Iron 21.0 16.0 7.7
+Lead 1.6 4.1 0.6
+Marble 6.0 7.0 2.0
+Nickel 21.0 17.0 7.8
+Polystyrene 3.0
+TABLE 12.1 Approximate Elastic Moduli for Selected Materials
+Access for free at openstax.org
+
+12.3 • Stress, Strain, and Elastic Modulus 577
+Material Young’s modulus Bulk modulus Shear modulus
+Silk 6.0
+Spider thread 3.0
+Steel 20.0 16.0 7.5
+Acetone 0.07
+Ethanol 0.09
+Glycerin 0.45
+Mercury 2.5
+Water 0.22
+TABLE 12.1 Approximate Elastic Moduli for Selected Materials
+Tensile or Compressive Stress, Strain, and Young’s Modulus
+Tension or compression occurs when two antiparallel forces of equal magnitude act on an object along only one of
+its dimensions, in such a way that the object does not move. One way to envision such a situation is illustrated in
+Figure 12.18. A rod segment is either stretched or squeezed by a pair of forces acting along its length and
+perpendicular to its cross-section. The net effect of such forces is that the rod changes its length from the original
+length that it had before the forces appeared, to a new length L that it has under the action of the forces. This
+change in length may be either elongation (when L is larger than the original length or
+contraction (when L is smaller than the original length Tensile stress and strain occur when the forces are
+stretching an object, causing its elongation, and the length change is positive. Compressive stress and strain
+occur when the forces are contracting an object, causing its shortening, and the length change is negative.
+In either of these situations, we define stress as the ratio of the deforming force to the cross-sectional area A of
+the object being deformed. The symbol that we reserve for the deforming force means that this force acts
+perpendicularly to the cross-section of the object. Forces that act parallel to the cross-section do not change the
+length of an object. The definition of the tensile stress is
+12.34
+Tensile strain is the measure of the deformation of an object under tensile stress and is defined as the fractional
+change of the object’s length when the object experiences tensile stress
+12.35
+Compressive stress and strain are defined by the same formulas, Equation 12.34 and Equation 12.35, respectively.
+The only difference from the tensile situation is that for compressive stress and strain, we take absolute values of
+the right-hand sides in Equation 12.34 and Equation 12.35.
+
+578 12 • Static Equilibrium and Elasticity
+FIGURE 12.18 When an object is in either tension or compression, the net force on it is zero, but the object deforms by changing its original
+length (a) Tension: The rod is elongated by (b) Compression: The rod is contracted by In both cases, the deforming force acts
+along the length of the rod and perpendicular to its cross-section. In the linear range of low stress, the cross-sectional area of the rod does
+not change.
+Young’s modulus Y is the elastic modulus when deformation is caused by either tensile or compressive stress, and is
+defined by Equation 12.33. Dividing this equation by tensile strain, we obtain the expression for Young’s modulus:
+12.36
+EXAMPLE 12.7
+Compressive Stress in a Pillar
+A sculpture weighing 10,000 N rests on a horizontal surface at the top of a 6.0-m-tall vertical pillar Figure 12.19.
+The pillar’s cross-sectional area is and it is made of granite with a mass density of Find the
+compressive stress at the cross-section located 3.0 m below the top of the pillar and the value of the compressive
+strain of the top 3.0-m segment of the pillar.
+Access for free at openstax.org
+
+12.3 • Stress, Strain, and Elastic Modulus 579
+FIGURE 12.19 Nelson’s Column in Trafalgar Square, London, England. (credit: modification of work by Cristian Bortes)
+Strategy
+First we find the weight of the 3.0-m-long top section of the pillar. The normal force that acts on the cross-section
+located 3.0 m down from the top is the sum of the pillar’s weight and the sculpture’s weight. Once we have the
+normal force, we use Equation 12.34 to find the stress. To find the compressive strain, we find the value of Young’s
+modulus for granite in Table 12.1 and invert Equation 12.36.
+Solution
+The volume of the pillar segment with height and cross-sectional area is
+With the density of granite the mass of the pillar segment is
+The weight of the pillar segment is
+The weight of the sculpture is so the normal force on the cross-sectional surface located 3.0 m
+below the sculpture is
+Therefore, the stress is
+Young’s modulus for granite is Therefore, the compressive strain at this
+position is
+Significance
+Notice that the normal force acting on the cross-sectional area of the pillar is not constant along its length, but
+varies from its smallest value at the top to its largest value at the bottom of the pillar. Thus, if the pillar has a uniform
+
+580 12 • Static Equilibrium and Elasticity
+cross-sectional area along its length, the stress is largest at its base.
+CHECK YOUR UNDERSTANDING 12.9
+Find the compressive stress and strain at the base of Nelson’s column.
+EXAMPLE 12.8
+Stretching a Rod
+A 2.0-m-long steel rod has a cross-sectional area of The rod is a part of a vertical support that holds a
+heavy 550-kg platform that hangs attached to the rod’s lower end. Ignoring the weight of the rod, what is the tensile
+stress in the rod and the elongation of the rod under the stress?
+Strategy
+First we compute the tensile stress in the rod under the weight of the platform in accordance with Equation 12.34.
+Then we invert Equation 12.36 to find the rod’s elongation, using From Table 12.1, Young’s modulus
+for steel is
+Solution
+Substituting numerical values into the equations gives us
+Significance
+Similarly as in the example with the column, the tensile stress in this example is not uniform along the length of the
+rod. Unlike in the previous example, however, if the weight of the rod is taken into consideration, the stress in the
+rod is largest at the top and smallest at the bottom of the rod where the equipment is attached.
+CHECK YOUR UNDERSTANDING 12.10
+A 2.0-m-long wire stretches 1.0 mm when subjected to a load. What is the tensile strain in the wire?
+Objects can often experience both compressive stress and tensile stress simultaneously Figure 12.20. One example
+is a long shelf loaded with heavy books that sags between the end supports under the weight of the books. The top
+surface of the shelf is in compressive stress and the bottom surface of the shelf is in tensile stress. Similarly, long
+and heavy beams sag under their own weight. In modern building construction, such bending strains can be almost
+eliminated with the use of I-beams Figure 12.21.
+FIGURE 12.20 (a) An object bending downward experiences tensile stress (stretching) in the upper section and compressive stress
+(compressing) in the lower section. (b) Elite weightlifters often bend iron bars temporarily during lifting, as in the 2012 Olympics
+Access for free at openstax.org
+
+12.3 • Stress, Strain, and Elastic Modulus 581
+competition. (credit b: modification of work by Oleksandr Kocherzhenko)
+FIGURE 12.21 Steel I-beams are used in construction to reduce bending strains. (credit: modification of work by “US Army Corps of
+Engineers Europe District”/Flickr)
+INTERACTIVE
+A heavy box rests on a table supported by three columns. View this demonstration (https://openstax.org/l/
+21movebox) to move the box to see how the compression (or tension) in the columns is affected when the box
+changes its position.
+Bulk Stress, Strain, and Modulus
+When you dive into water, you feel a force pressing on every part of your body from all directions. What you are
+experiencing then is bulk stress, or in other words, pressure. Bulk stress always tends to decrease the volume
+enclosed by the surface of a submerged object. The forces of this “squeezing” are always perpendicular to the
+submerged surface Figure 12.22. The effect of these forces is to decrease the volume of the submerged object by an
+amount compared with the volume of the object in the absence of bulk stress. This kind of deformation is
+called bulk strain and is described by a change in volume relative to the original volume:
+12.37
+FIGURE 12.22 An object under increasing bulk stress always undergoes a decrease in its volume. Equal forces perpendicular to the surface
+act from all directions. The effect of these forces is to decrease the volume by the amount compared to the original volume,
+The bulk strain results from the bulk stress, which is a force normal to a surface that presses on the unit surface
+area A of a submerged object. This kind of physical quantity, or pressure p, is defined as
+12.38
+We will study pressure in fluids in greater detail in Fluid Mechanics. An important characteristic of pressure is that it

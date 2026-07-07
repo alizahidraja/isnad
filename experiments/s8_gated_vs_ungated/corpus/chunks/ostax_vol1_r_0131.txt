@@ -1,0 +1,180 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 791-799
+############################################################
+
+16.5 • Interference of Waves 779
+FIGURE 16.22 When two linear waves in the same medium interfere, the height of resulting wave is the sum of the heights of the individual
+waves, taken point by point. This plot shows two waves (red and blue) added together, along with the resulting wave (black). These graphs
+represent the height of the wave at each point. The waves may be any linear wave, including ripples on a pond, disturbances on a string,
+sound, or electromagnetic waves.
+The superposition of most waves produces a combination of constructive and destructive interference, and can vary
+from place to place and time to time. Sound from a stereo, for example, can be loud in one spot and quiet in another.
+Varying loudness means the sound waves add partially constructively and partially destructively at different
+locations. A stereo has at least two speakers creating sound waves, and waves can reflect from walls. All these
+waves interfere, and the resulting wave is the superposition of the waves.
+We have shown several examples of the superposition of waves that are similar. Figure 16.23 illustrates an example
+of the superposition of two dissimilar waves. Here again, the disturbances add, producing a resultant wave.
+FIGURE 16.23 Superposition of nonidentical waves exhibits both constructive and destructive interference.
+
+780 16 • Waves
+At times, when two or more mechanical waves interfere, the pattern produced by the resulting wave can be rich in
+complexity, some without any readily discernable patterns. For example, plotting the sound wave of your favorite
+music can look quite complex and is the superposition of the individual sound waves from many instruments; it is
+the complexity that makes the music interesting and worth listening to. At other times, waves can interfere and
+produce interesting phenomena, which are complex in their appearance and yet beautiful in simplicity of the
+physical principle of superposition, which formed the resulting wave. One example is the phenomenon known as
+standing waves, produced by two identical waves moving in different directions. We will look more closely at this
+phenomenon in the next section.
+INTERACTIVE
+Engage the Phet simulation (https://openstax.org/l/21waveinterfer) to make waves with a dripping faucet, audio
+speaker, or laser! Add a second source or a pair of slits to create an interference pattern. You can observe one
+source or two sources. Using two sources, you can observe the interference patterns that result from varying the
+frequencies and the amplitudes of the sources.
+Superposition of Sinusoidal Waves that Differ by a Phase Shift
+Many examples in physics consist of two sinusoidal waves that are identical in amplitude, wave number, and angular
+frequency, but differ by a phase shift:
+When these two waves exist in the same medium, the resultant wave resulting from the superposition of the two
+individual waves is the sum of the two individual waves:
+The resultant wave can be better understood by using the trigonometric identity:
+where and . The resulting wave becomes
+This equation is usually written as
+16.13
+The resultant wave has the same wave number and angular frequency, an amplitude of and
+a phase shift equal to half the original phase shift. Examples of waves that differ only in a phase shift are shown in
+Figure 16.24. The red and blue waves each have the same amplitude, wave number, and angular frequency, and
+differ only in a phase shift. They therefore have the same period, wavelength, and frequency. The green wave is the
+result of the superposition of the two waves. When the two waves have a phase difference of zero, the waves are in
+phase, and the resultant wave has the same wave number and angular frequency, and an amplitude equal to twice
+the individual amplitudes (part (a)). This is constructive interference. If the phase difference is the waves
+interfere in destructive interference (part (c)). The resultant wave has an amplitude of zero. Any other phase
+difference results in a wave with the same wave number and angular frequency as the two incident waves but with a
+phase shift of and an amplitude equal to Examples are shown in parts (b) and (d).
+Access for free at openstax.org
+
+16.6 • Standing Waves and Resonance 781
+FIGURE 16.24 Superposition of two waves with identical amplitudes, wavelengths, and frequency, but that differ in a phase shift. The red
+wave is defined by the wave function and the blue wave is defined by the wave function
+. The black line shows the result of adding the two waves. The phase difference between the two waves are
+(a) (b) (c) and (d) .
+16.6 Standing Waves and Resonance
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe standing waves and explain how they are produced
+• Describe the modes of a standing wave on a string
+• Provide examples of standing waves beyond the waves on a string
+Throughout this chapter, we have been studying traveling waves, or waves that transport energy from one place to
+another. Under certain conditions, waves can bounce back and forth through a particular region, effectively
+becoming stationary. These are called standing waves.
+Another related effect is known as resonance. In Oscillations, we defined resonance as a phenomenon in which a
+small-amplitude driving force could produce large-amplitude motion. Think of a child on a swing, which can be
+modeled as a physical pendulum. Relatively small-amplitude pushes by a parent can produce large-amplitude
+swings. Sometimes this resonance is good—for example, when producing music with a stringed instrument. At other
+times, the effects can be devastating, such as the collapse of a building during an earthquake. In the case of
+standing waves, the relatively large amplitude standing waves are produced by the superposition of smaller
+amplitude component waves.
+
+782 16 • Waves
+Standing Waves
+Sometimes waves do not seem to move; rather, they just vibrate in place. You can see unmoving waves on the
+surface of a glass of milk in a refrigerator, for example. Vibrations from the refrigerator motor create waves on the
+milk that oscillate up and down but do not seem to move across the surface. Figure 16.25 shows an experiment you
+can try at home. Take a bowl of milk and place it on a common box fan. Vibrations from the fan will produce circular
+standing waves in the milk. The waves are visible in the photo due to the reflection from a lamp. These waves are
+formed by the superposition of two or more traveling waves, such as illustrated in Figure 16.26 for two identical
+waves moving in opposite directions. The waves move through each other with their disturbances adding as they go
+by. If the two waves have the same amplitude and wavelength, then they alternate between constructive and
+destructive interference. The resultant looks like a wave standing in place and, thus, is called a standing wave.
+FIGURE 16.25 Standing waves are formed on the surface of a bowl of milk sitting on a box fan. The vibrations from the fan causes the
+surface of the milk to oscillate. The waves are visible due to the reflection of light from a lamp. (credit: David Chelton)
+Access for free at openstax.org
+
+16.6 • Standing Waves and Resonance 783
+FIGURE 16.26 Time snapshots of two sine waves. The red wave is moving in the −x-direction and the blue wave is moving in the
++x-direction. The resulting wave is shown in black. Consider the resultant wave at the points and notice
+that the resultant wave always equals zero at these points, no matter what the time is. These points are known as fixed points (nodes). In
+between each two nodes is an antinode, a place where the medium oscillates with an amplitude equal to the sum of the amplitudes of the
+individual waves.
+Consider two identical waves that move in opposite directions. The first wave has a wave function of
+and the second wave has a wave function . The waves
+interfere and form a resultant wave
+
+784 16 • Waves
+This can be simplified using the trigonometric identity
+where and , giving us
+which simplifies to
+16.14
+Notice that the resultant wave is a sine wave that is a function only of position, multiplied by a cosine function that is
+a function only of time. Graphs of y(x,t) as a function of x for various times are shown in Figure 16.26. The red wave
+moves in the negative x-direction, the blue wave moves in the positive x-direction, and the black wave is the sum of
+the two waves. As the red and blue waves move through each other, they move in and out of constructive
+interference and destructive interference.
+Initially, at time the two waves are in phase, and the result is a wave that is twice the amplitude of the
+individual waves. The waves are also in phase at the time In fact, the waves are in phase at any integer
+multiple of half of a period:
+At other times, the two waves are out of phase, and the resulting wave is equal to zero. This
+happens at
+Notice that some x-positions of the resultant wave are always zero no matter what the phase relationship is. These
+positions are called nodes. Where do the nodes occur? Consider the solution to the sum of the two waves
+Finding the positions where the sine function equals zero provides the positions of the nodes.
+There are also positions where y oscillates between . These are the antinodes. We can find them by
+considering which values of x result in .
+What results is a standing wave as shown in Figure 16.27, which shows snapshots of the resulting wave of two
+identical waves moving in opposite directions. The resulting wave appears to be a sine wave with nodes at integer
+multiples of half wavelengths. The antinodes oscillate between due to the cosine term, , which
+oscillates between .
+The resultant wave appears to be standing still, with no apparent movement in the x-direction, although it is
+Access for free at openstax.org
+
+16.6 • Standing Waves and Resonance 785
+composed of one wave function moving in the positive, whereas the second wave is moving in the negative
+x-direction. Figure 16.27 shows various snapshots of the resulting wave. The nodes are marked with red dots while
+the antinodes are marked with blue dots.
+FIGURE 16.27 When two identical waves are moving in opposite directions, the resultant wave is a standing wave. Nodes appear at integer
+multiples of half wavelengths. Antinodes appear at odd multiples of quarter wavelengths, where they oscillate between The nodes
+are marked with red dots and the antinodes are marked with blue dots.
+A common example of standing waves are the waves produced by stringed musical instruments. When the string is
+plucked, pulses travel along the string in opposite directions. The ends of the strings are fixed in place, so nodes
+appear at the ends of the strings—the boundary conditions of the system, regulating the resonant frequencies in the
+strings. The resonance produced on a string instrument can be modeled in a physics lab using the apparatus shown
+in Figure 16.28.
+FIGURE 16.28 A lab setup for creating standing waves on a string. The string has a node on each end and a constant linear density. The
+length between the fixed boundary conditions is L. The hanging mass provides the tension in the string, and the speed of the waves on the
+string is proportional to the square root of the tension divided by the linear mass density.
+The lab setup shows a string attached to a string vibrator, which oscillates the string with an adjustable frequency f.
+The other end of the string passes over a frictionless pulley and is tied to a hanging mass. The magnitude of the
+tension in the string is equal to the weight of the hanging mass. The string has a constant linear density (mass per
+length) and the speed at which a wave travels down the string equals Equation 16.7. The
+symmetrical boundary conditions (a node at each end) dictate the possible frequencies that can excite standing
+waves. Starting from a frequency of zero and slowly increasing the frequency, the first mode appears as
+shown in Figure 16.29. The first mode, also called the fundamental mode or the first harmonic, shows half of a
+wavelength has formed, so the wavelength is equal to twice the length between the nodes . The
+fundamental frequency, or first harmonic frequency, that drives this mode is
+where the speed of the wave is Keeping the tension constant and increasing the frequency leads to the
+second harmonic or the mode. This mode is a full wavelength and the frequency is twice the
+
+786 16 • Waves
+fundamental frequency:
+FIGURE 16.29 Standing waves created on a string of length L. A node occurs at each end of the string. The nodes are boundary conditions
+that limit the possible frequencies that excite standing waves. (Note that the amplitudes of the oscillations have been kept constant for
+visualization. The standing wave patterns possible on the string are known as the normal modes. Conducting this experiment in the lab
+would result in a decrease in amplitude as the frequency increases.)
+The next two modes, or the third and fourth harmonics, have wavelengths of and driven by
+frequencies of and All frequencies above the frequency are known as the
+overtones. The equations for the wavelength and the frequency can be summarized as:
+16.15
+16.16
+The standing wave patterns that are possible for a string, the first four of which are shown in Figure 16.29, are
+known as the normal modes, with frequencies known as the normal frequencies. In summary, the first frequency to
+produce a normal mode is called the fundamental frequency (or first harmonic). Any frequencies above the
+fundamental frequency are overtones. The second frequency of the normal mode of the string is the first
+overtone (or second harmonic). The frequency of the normal mode is the second overtone (or third harmonic)
+and so on.
+The solutions shown as Equation 16.15 and Equation 16.16 are for a string with the boundary condition of a node on
+each end. When the boundary condition on either side is the same, the system is said to have symmetric boundary
+conditions. Equation 16.15 and Equation 16.16 are good for any symmetric boundary conditions, that is, nodes at
+both ends or antinodes at both ends.
+EXAMPLE 16.7
+Standing Waves on a String
+Consider a string of attached to an adjustable-frequency string vibrator as shown in Figure 16.30. The
+waves produced by the vibrator travel down the string and are reflected by the fixed boundary condition at the
+pulley. The string, which has a linear mass density of is passed over a frictionless pulley of a
+Access for free at openstax.org

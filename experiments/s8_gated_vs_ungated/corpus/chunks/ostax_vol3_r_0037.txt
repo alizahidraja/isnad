@@ -1,0 +1,348 @@
+# REAL PDF — openstax_vol3.pdf, pages 227-235
+############################################################
+
+Chapter 5 | Relativity 219
+Example 5.10
+Relativistic Package Delivery
+SupposethespaceshipinthepreviousexampleapproachesEarthathalfthespeedoflightandshootsacanister
+ataspeedof0.750c(Figure5.21).(a)Atwhatvelocitydoesanearthboundobserverseethecanisterifitisshot
+directly toward Earth? (b) If it is shot directly away from Earth?
+Figure 5.21 A canister is fired at 0.7500ctoward Earth or away from Earth.
+Strategy
+Because the canister and the spaceship are moving at relativistic speeds, we must determine the speed of the
+canister by an earthbound observer using relativistic velocity addition instead of simple velocity addition.
+Solution for (a)
+a. Identify the knowns: v=0.500c;u′=0.750c.
+b. Identify the unknown:u.
+c. Express the answer as an equation: u=
+v+u′
+.
+1+
+vu′
+c2
+d. Do the calculation:
+u =
+v+u′
+1+
+vu′
+c2
+0.500c+0.750c
+=
+(0.500c)(0.750c)
+1+
+c2
+=0.909c.
+Solution for (b)
+a. Identify the knowns: v=0.500c;u′=−0.750c.
+b. Identify the unknown:u.
+c. Express the answer as an equation: u=
+v+u′
+.
+1+
+vu′
+c2
+d. Do the calculation:
+u =
+v+u′
+1+
+vu′
+c2
+0.500c+(−0.750c)
+=
+(0.500c)(−0.750c)
+1+
+c2
+=−0.400c.
+
+220 Chapter 5 | Relativity
+Significance
+TheminussignindicatesavelocityawayfromEarth(intheoppositedirectionfromv),whichmeansthecanister
+is heading toward Earth in part (a) and away in part (b), as expected. But relativistic velocities do not add as
+simply as they do classically. In part (a), the canister does approach Earth faster, but at less than the vector
+sum of the velocities, which would give 1.250c. In part (b), the canister moves away from Earth at a velocity
+of −0.400c, which is faster than the −0.250c expected classically. The differences in velocities are not even
+symmetric:Inpart(a),anobserveronEarthseesthecanisterandtheshipmovingapartataspeedof0.409c,and
+at a speed of 0.900cin part (b).
+5.6 CheckYourUnderstandingDistancesalongadirectionperpendiculartotherelativemotionofthetwo
+framesarethesameinbothframes.Whythenarevelocitiesperpendiculartothex-directiondifferentinthetwo
+frames?
+5.7 | Doppler Effect for Light
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the origin of the shift in frequency and wavelength of the observed wavelength when
+observer and source moved toward or away from each other
+• Derive an expression for the relativistic Doppler shift
+• Apply the Doppler shift equations to real-world examples
+Asdiscussedinthechapteronsound,ifasourceofsoundandalisteneraremovingfartherapart,thelistenerencounters
+fewer cycles of a wave in each second, and therefore lower frequency, than if their separation remains constant. For the
+samereason,thelistenerdetectsahigherfrequencyifthesourceandlisteneraregettingcloser.TheresultingDopplershift
+indetected frequencyoccursforanyformofwave.Forsoundwaves,however,theequationsfortheDopplershiftdiffer
+markedlydependingonwhetheritisthesource,theobserver,ortheair,whichismoving.Lightrequiresnomedium,and
+the Doppler shift for light traveling in vacuum depends only on the relative speed of the observer and source.
+The Relativistic Doppler Effect
+SupposeanobserverinSseeslightfromasourcein S′ movingawayatvelocityv(Figure5.22).Thewavelengthofthe
+lightcouldbemeasuredwithin S′—forexample,byusingamirrortosetupstandingwavesandmeasuringthedistance
+betweennodes.Thesedistancesareproperlengthswith S′ astheirrestframe,andchangebyafactor 1−v2/c2 when
+measured in the observer’s frameS, where the ruler measuring the wavelength in S′ is seen as moving.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 221
+Figure 5.22 (a) When a light wave is emitted by a source fixed in
+the moving inertial frame S′, the observer inSsees the wavelength
+measured in S′. to be shorter by a factor 1−v2/c2. (b) Because
+the observer sees the source moving away withinS, the wave pattern
+reaching the observer inSis also stretched by the factor
+(cΔt+vΔt)/(cΔt)=1+v/c.
+IfthesourcewerestationaryinS,theobserverwouldseealength cΔt ofthewavepatternintime Δt. Butbecauseofthe
+motion of S′ relative toS,considered solely within S,theobserver sees thewave pattern, andtherefore thewavelength,
+stretched out by a factor of
+cΔt
+period
++vΔt
+period v
+cΔt
+=1+c
+period
+as illustrated in (b) ofFigure 5.22. The overall increase from both effects gives
+λ obs =λ src ⎛ ⎝ 1+ v c ⎞ ⎠ 1− 1 v2 =λ src ⎛ ⎝ 1+ v c ⎞ ⎠ ⎛ ⎝ 1+ v c 1 ⎞ ⎠ ⎛ ⎝ 1− v c ⎞ ⎠ =λ src ⎛ ⎝ ⎛ ⎝ 1 1 + − v c v c ⎞ ⎠ ⎞ ⎠
+c2
+where λ
+src
+isthewavelengthofthelightseenbythesourcein S′ and λ
+obs
+isthewavelengththattheobserverdetects
+withinS.
+Red Shifts and Blue Shifts
+Theobservedwavelength λ ofelectromagneticradiationislonger(calleda“redshift”)thanthatemittedbythesource
+obs
+whenthesourcemovesawayfromtheobserver.Similarly,thewavelengthisshorter(calleda“blueshift”)whenthesource
+moves toward the observer. The amount of change is determined by
+v
+λ
+obs
+=λ
+s 1
+1
+−
++
+v c
+c
+where λ isthewavelengthintheframeofreferenceofthesource,andvistherelativevelocityofthetwoframesSand
+s
+
+222 Chapter 5 | Relativity
+S′. Thevelocityvispositiveformotionawayfromanobserverandnegativeformotiontowardanobserver.Intermsof
+source frequency and observed frequency, this equation can be written as
+v
+f obs = f s 1 1 + − v c c .
+Notice that the signs are different from those of the wavelength equation.
+Example 5.11
+Calculating a Doppler Shift
+Suppose a galaxy is moving away from Earth at a speed 0.825c. It emits radio waves with a wavelength of
+0.525 m. What wavelength would we detect on Earth?
+Strategy
+Becausethegalaxyismovingatarelativisticspeed,wemustdeterminetheDopplershiftoftheradiowavesusing
+the relativistic Doppler shift instead of the classical Doppler shift.
+Solution
+a. Identify the knowns: u=0.825c;λ s=0.525m.
+b. Identify the unknown: λ .
+obs
+c. Express the answer as an equation:
+v
+λ obs =λ s 1 1 − + v c c .
+d. Do the calculation:
+v
+λ
+obs
+=λ
+s 1
+1
+−
++
+v c
+c
+1+0.8
+c
+25c
+=(0.525m)
+1−0.8
+c
+25c
+=1.70m.
+Significance
+BecausethegalaxyismovingawayfromEarth,weexpectthewavelengthsofradiationitemitstoberedshifted.
+Thewavelengthwecalculatedis1.70m,whichisredshiftedfromtheoriginalwavelengthof0.525m.Youwill
+seeinParticlePhysicsandCosmologythatdetectingredshiftedradiationledtopresent-dayunderstanding
+of the origin and evolution of the universe.
+5.7 CheckYourUnderstandingSupposeaspaceprobemovesawayfromEarthataspeed0.350c.Itsendsa
+radio-wavemessagebacktoEarthatafrequencyof1.50GHz.Atwhatfrequencyisthemessagereceivedon
+Earth?
+TherelativisticDopplereffecthasapplicationsrangingfromDopplerradarstormmonitoringtoprovidinginformationon
+the motion and distance of stars. We describe some of these applications in the exercises.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 223
+5.8 | Relativistic Momentum
+Learning Objectives
+By the end of this section, you will be able to:
+• Define relativistic momentum in terms of mass and velocity
+• Show how relativistic momentum relates to classical momentum
+• Show how conservation of relativistic momentum limits objects with mass to speeds less than
+c
+Momentum is a central concept in physics. The broadest form of Newton’s second law is stated in terms of momentum.
+Momentum is conserved whenever the net external force on a system is zero. This makes momentum conservation a
+fundamental tool foranalyzing collisions (Figure 5.23).Much ofwhat we knowabout subatomic structure comes from
+theanalysisofcollisionsofaccelerator-producedrelativisticparticles,andmomentumconservationplaysacrucialrolein
+this analysis.
+Figure 5.23 Momentum is an important concept for these
+football players from the University of California at Berkeley
+and the University of California at Davis. A player with the
+same velocity but greater mass collides with greater impact
+because his momentum is greater. For objects moving at
+relativistic speeds, the effect is even greater.
+Thefirstpostulateofrelativitystatesthatthelawsofphysicsarethesameinallinertialframes.Doesthelawofconservation
+of momentum survive this requirement at high velocities? It can be shown that the momentum calculated as merely
+→
+→ p =m d x , even if it is conserved in one frame of reference, may not be conserved in another after applying the
+dt
+Lorentz transformation to the velocities. The correct equation for momentum can be shown, instead, to be the classical
+expression in terms of the increment dτ of proper time of the particle, observed in the particle’s rest frame:
+
+224 Chapter 5 | Relativity
+→ →
+→ p =m d x =m d x dt
+dτ dt dτ
+→
+=m d x 1
+dt 1−u2/c2
+→
+= m u =γm → u .
+1−u2/c2
+Relativistic Momentum
+Relativistic momentum → p is classical momentum multiplied by the relativistic factorγ:
+→ p =γm → u (5.6)
+wheremis therest massof the object, → u is its velocity relative to an observer, and γ is the relativistic factor:
+γ = 1 . (5.7)
+u2
+1−
+c2
+Notethatweuseuforvelocityheretodistinguishitfromrelativevelocityvbetweenobservers.Thefactor γ thatoccurs
+herehasthesameformasthepreviousrelativisticfactor γ exceptthatitisnowintermsofthevelocityoftheparticleu
+instead of the relative velocityvof two frames of reference.
+With p expressed in this way, total momentum p is conserved whenever the net external force is zero, just as in
+tot
+classical physics. Again we see that the relativistic quantity becomes virtually the same as the classical quantity at low
+velocities,whereu/cissmalland γ isverynearlyequalto1.Relativisticmomentumhasthesameintuitiveroleasclassical
+momentum.Itisgreatestforlargemassesmovingathighvelocities,butbecauseofthefactor γ, relativisticmomentum
+approachesinfinityasuapproachesc(Figure 5.24).Thisisanotherindicationthatanobjectwithmasscannotreachthe
+speed of light. If it did, its momentum would become infinite—an unreasonable value.
+Figure 5.24 Relativistic momentum approaches infinity as the
+velocity of an object approaches the speed of light.
+Therelativisticallycorrectdefinitionofmomentumas p=γmu issometimestakentoimplythatmassvarieswithvelocity:
+m var=γm, particularlyinoldertextbooks.However,notethatmisthemassoftheobjectasmeasuredbyapersonatrest
+relativetotheobject.Thus,misdefinedtobetherestmass,whichcouldbemeasuredatrest,perhapsusinggravity.When
+amassismovingrelativetoanobserver,theonlywaythatitsmasscanbedeterminedisthroughcollisionsorothermeans
+involvingmomentum.Becausethemassofamovingobjectcannotbedeterminedindependentlyofmomentum,theonly
+meaningful mass is rest mass. Therefore, when we use the term “mass,” assume it to be identical to “rest mass.”
+Relativisticmomentumisdefinedinsuchawaythatconservationofmomentumholdsinallinertialframes.Wheneverthe
+netexternalforceonasystemiszero,relativisticmomentumisconserved,justasisthecaseforclassicalmomentum.This
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 225
+has been verified in numerous experiments.
+5.8 CheckYourUnderstandingWhatisthemomentumofanelectrontravelingataspeed0.985c?Therest
+mass of the electron is 9.11×10 −31 kg.
+5.9 | Relativistic Energy
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how the work-energy theorem leads to an expression for the relativistic kinetic energy
+of an object
+• Show how the relativistic energy relates to the classical kinetic energy, and sets a limit on the
+speed of any object with mass
+• Describe how the total energy of a particle is related to its mass and velocity
+• Explain how relativity relates to energy-mass equivalence, and some of the practical
+implications of energy-mass equivalence
+ThetokamakinFigure5.25isaformofexperimentalfusionreactor,whichcanchangemasstoenergy.Nuclearreactors
+are proof of the relationship between energy and matter.
+Conservationofenergyisoneofthemostimportantlawsinphysics.Notonlydoesenergyhavemanyimportantforms,but
+eachformcanbeconvertedtoanyother.Weknowthatclassically,thetotalamountofenergyinasystemremainsconstant.
+Relativistically,energyisstillconserved,butenergy-massequivalencemustnowbetakenintoaccount,forexample,inthe
+reactionsthatoccurwithinanuclearreactor.Relativisticenergyisintentionallydefinedsothatitisconservedinallinertial
+frames,justasisthecaseforrelativisticmomentum.Asaconsequence,severalfundamentalquantitiesarerelatedinways
+notknowninclassicalphysics.Alloftheserelationshipshavebeenverifiedbyexperimentalresultsandhavefundamental
+consequences. The altered definition of energy contains some of the most fundamental and spectacular new insights into
+nature in recent history.
+Figure 5.25 The National Spherical Torus Experiment
+(NSTX) is a fusion reactor in which hydrogen isotopes undergo
+fusion to produce helium. In this process, a relatively small mass
+of fuel is converted into a large amount of energy. (credit:
+Princeton Plasma Physics Laboratory)
+Kinetic Energy and the Ultimate Speed Limit
+Thefirstpostulateofrelativitystatesthatthelawsofphysicsarethesameinallinertialframes.Einsteinshowedthatthe
+lawofconservationofenergyofaparticleisvalidrelativistically,butforenergyexpressedintermsofvelocityandmassin
+
+226 Chapter 5 | Relativity
+a way consistent with relativity.
+Consider first the relativistic expression for the kinetic energy. We again use u for velocity to distinguish it from
+relative velocity v between observers. Classically, kinetic energy is related to mass and speed by the familiar expression
+K = 1mu2. Thecorrespondingrelativisticexpressionforkineticenergycanbeobtainedfromthework-energytheorem.
+2
+This theorem states that the net work on a system goes into kinetic energy. Specifically, if a force, expressed as
+→ F = d → p =m d⎛ ⎝ γ → u ⎞ ⎠ , acceleratesaparticlefromresttoitsfinalvelocity,theworkdoneontheparticleshouldbeequal
+dt dt
+to its final kinetic energy. In mathematical form, for one-dimensional motion:
+K =⌠Fdx=⌠m d (γu)dx
+⌡ ⌡ dt
+⎛ ⎞
+=m⌠ d(γu) dx dt=m ⌠ u d ⎜ u ⎟dt.
+⌡ dt dt ⌡ dt ⎝ 1−(u/c)2⎠
+Integrate this by parts to obtain
+mu2 | ⌠ u du
+K = −m dt
+1−(u/c)2 ⌡ 1−(u/c)2 dt
+0u
+mu2 ⌠ u
+= −m du
+1−(u/c)2 ⌡ 1−(u/c)2
+u
+=
+mu2 −mc2⎛ 1−(u/c)2⎞|
+⎝ ⎠
+1−(u/c)2
+0
+=
+mu2
++
+mc2
+−mc2
+1−(u/c)2 1−(u/c)2
+=mc2
+⎡
+⎢
+(u2/c2)+1−(u2/c2) ⎤
+⎥−mc2
+⎣ 1−(u/c)2 ⎦
+K =
+mc2
+−mc2.
+1−(u/c)2
+Relativistic Kinetic Energy
+Relativistic kinetic energyof any particle of massmis
+K =(γ−1)mc2. (5.8)
+rel
+When an object is motionless, its speed is u=0 and
+γ = 1 =1
+u2
+1−
+c2
+sothat K =0 atrest,asexpected.Buttheexpressionforrelativistickineticenergy(suchastotalenergyandrestenergy)
+rel
+doesnotlookmuchliketheclassical 1mu2. Toshowthattheexpressionfor K reducestotheclassicalexpressionfor
+2 rel
+kinetic energy at low speeds, we use the binomial expansion to obtain an approximation for (1+ε) n valid for small ε:
+(1+ε) n =1+nε+ n(n−1) ε2+ n(n−1)(n−2) ε3 + ⋯ ≈1+nε
+2! 3!
+by neglecting the very small terms in ε2 and higher powers of ε. Choosing ε=−u2/c2 and n= − 1 leads to the
+2
+conclusion thatγat nonrelativistic speeds, where ε=u/c is small, satisfies
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

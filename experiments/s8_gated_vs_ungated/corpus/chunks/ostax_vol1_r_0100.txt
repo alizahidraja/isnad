@@ -1,0 +1,172 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 611-617
+############################################################
+
+CHAPTER 13
+Gravitation
+FIGURE 13.1 Our visible Universe contains billions of galaxies, whose very existence is due to the force of gravity. Gravity is ultimately
+responsible for the energy output of all stars—initiating thermonuclear reactions in stars, allowing the Sun to heat Earth, and making
+galaxies visible from unfathomable distances. Most of the dots you see in this image are not stars, but galaxies. (credit: modification of
+work by NASA/ESA)
+CHAPTER OUTLINE
+13.1 Newton's Law of Universal Gravitation
+13.2 Gravitation Near Earth's Surface
+13.3 Gravitational Potential Energy and Total Energy
+13.4 Satellite Orbits and Energy
+13.5 Kepler's Laws of Planetary Motion
+13.6 Tidal Forces
+13.7 Einstein's Theory of Gravity
+INTRODUCTION In this chapter, we study the nature of the gravitational force for objects as small as ourselves and
+for systems as massive as entire galaxies. We show how the gravitational force affects objects on Earth and the
+motion of the Universe itself. Gravity is the first force to be postulated as an action-at-a-distance force, that is,
+objects exert a gravitational force on one another without physical contact and that force falls to zero only at an
+infinite distance. Earth exerts a gravitational force on you, but so do our Sun, the Milky Way galaxy, and the billions of
+galaxies, like those shown above, which are so distant that we cannot see them with the naked eye.
+13.1 Newton's Law of Universal Gravitation
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• List the significant milestones in the history of gravitation
+• Calculate the gravitational force between two point masses
+• Estimate the gravitational force between collections of mass
+We first review the history of the study of gravitation, with emphasis on those phenomena that for thousands of
+
+600 13 • Gravitation
+years have inspired philosophers and scientists to search for an explanation. Then we examine the simplest form of
+Newton’s law of universal gravitation and how to apply it.
+The History of Gravitation
+The earliest philosophers wondered why objects naturally tend to fall toward the ground. Aristotle (384–322 BCE)
+believed that it was the nature of rocks to seek Earth and the nature of fire to seek the Heavens. Brahmagupta
+(598~665 CE) postulated that Earth was a sphere and that objects possessed a natural affinity for it, falling toward
+the center from wherever they were located.
+The motions of the Sun, our Moon, and the planets have been studied for thousands of years as well. These motions
+were described with amazing accuracy by Ptolemy (90–168 CE), whose method of epicycles described the paths of
+the planets as circles within circles. However, there is little evidence that anyone connected the motion of
+astronomical bodies with the motion of objects falling to Earth—until the seventeenth century.
+The idea of heliocentrism, in which the Sun is at the center of the solar system, dates at least as far back as
+Aristarchus of Samos in the third century BCE, but attracted little attention, and Ptolemy’s geocentric (Earth-
+centered) model held sway in Europe until the sixteenth century. Nicolaus Copernicus (1473–1543) is generally
+credited as being the first to produce a mathematical model of a heliocentric system and to challenge Ptolemy’s
+geocentric system. This idea was supported by the incredibly precise naked-eye measurements of planetary
+motions by Tycho Brahe and their analysis by Johannes Kepler and Galileo Galilei. Kepler showed that the motion of
+each planet is an ellipse (the first of his three laws, discussed in Kepler’s Laws of Planetary Motion), and Robert
+Hooke (the same Hooke who formulated Hooke’s law for springs) intuitively suggested that these motions are due to
+the planets being attracted to the Sun. However, it was Isaac Newton who connected the acceleration of objects
+near Earth’s surface with the centripetal acceleration of the Moon in its orbit about Earth.
+Other prominent scientists and mathematicians of the time, particularly those outside of England, were reluctant to
+accept Newton's principles. It took the work of another prominent philosopher, writer, and scientist, Émilie du
+Châtelet, to establish the Newtonian gravitation as the accurate and overarching law. Du Châtelet, who had earlier
+laid the foundation for the understanding of conservation of energy as well as the principle that light had no mass,
+translated and augmented Newton's key work. She also utilized calculus to explain gravity, which helped lead to its
+acceptance.
+Finally, in Einstein’s Theory of Gravity, we look at the theory of general relativity proposed by Albert Einstein in
+1916. His theory comes from a vastly different perspective, in which gravity is a manifestation of mass warping
+space and time. The consequences of his theory gave rise to many remarkable predictions, essentially all of which
+have been confirmed over the many decades following the publication of the theory (including the 2015
+measurement of gravitational waves from the merger of two black holes).
+Newton’s Law of Universal Gravitation
+Newton noted that objects at Earth’s surface (hence at a distance of from the center of Earth) have an
+acceleration of g, but the Moon, at a distance of about , has a centripetal acceleration about times
+smaller than g. He could explain this by postulating that a force exists between any two objects, whose magnitude is
+given by the product of the two masses divided by the square of the distance between them. We now know that this
+inverse square law is ubiquitous in nature, a function of geometry for point sources. The strength of any source at a
+distance r is spread over the surface of a sphere centered about the mass. The surface area of that sphere is
+proportional to . In later chapters, we see this same form in the electromagnetic force.
+NEWTON’S LAW OF GRAVITATION
+Newton’s law of gravitation can be expressed as
+13.1
+where is the force on object 1 exerted by object 2 and is a unit vector that points from object 1 toward
+Access for free at openstax.org
+
+13.1 • Newton's Law of Universal Gravitation 601
+object 2.
+As shown in Figure 13.2, the vector points from object 1 toward object 2, and hence represents an attractive
+force between the objects. The equal but opposite force is the force on object 2 exerted by object 1.
+FIGURE 13.2 Gravitational force acts along a line joining the centers of mass of two objects.
+These equal but opposite forces reflect Newton’s third law, which we discussed earlier. Note that strictly speaking,
+Equation 13.1 applies to point masses—all the mass is located at one point. But it applies equally to any spherically
+symmetric objects, where r is the distance between the centers of mass of those objects. In many cases, it works
+reasonably well for nonsymmetrical objects, if their separation is large compared to their size, and we take r to be
+the distance between the center of mass of each body.
+The Cavendish Experiment
+A century after Newton published his law of universal gravitation, Henry Cavendish determined the proportionality
+constant G by performing a painstaking experiment. He constructed a device similar to that shown in Figure 13.3, in
+which small masses are suspended from a wire. Once in equilibrium, two fixed, larger masses are placed
+symmetrically near the smaller ones. The gravitational attraction creates a torsion (twisting) in the supporting wire
+that can be measured.
+The constant G is called the universal gravitational constant and Cavendish determined it to be
+. The word ‘universal’ indicates that scientists think that this constant applies to
+masses of any composition and that it is the same throughout the Universe. The value of G is an incredibly small
+number, showing that the force of gravity is very weak. The attraction between masses as small as our bodies, or
+even objects the size of skyscrapers, is incredibly small. For example, two 1.0-kg masses located 1.0 meter apart
+exert a force of on each other. This is the weight of a typical grain of pollen.
+
+602 13 • Gravitation
+FIGURE 13.3 Cavendish used an apparatus similar to this to measure the gravitational attraction between two spheres (m) suspended from
+a wire and two stationary spheres (M). This is a common experiment performed in undergraduate laboratories, but it is quite challenging.
+Passing trucks outside the laboratory can create vibrations that overwhelm the gravitational forces.
+Although gravity is the weakest of the four fundamental forces of nature, its attractive nature is what holds us to
+Earth, causes the planets to orbit the Sun and the Sun to orbit our galaxy, and binds galaxies into clusters, ranging
+from a few to millions. Gravity is the force that forms the Universe.
+PROBLEM-SOLVING STRATEGY
+Newton’s Law of Gravitation
+To determine the motion caused by the gravitational force, follow these steps:
+1. Identify the two masses, one or both, for which you wish to find the gravitational force.
+2. Draw a free-body diagram, sketching the force acting on each mass and indicating the distance between their
+centers of mass.
+3. Apply Newton’s second law of motion to each mass to determine how it will move.
+EXAMPLE 13.1
+A Collision in Orbit
+Consider two nearly spherical Soyuz payload vehicles, in orbit about Earth, each with mass 9000 kg and diameter
+4.0 m. They are initially at rest relative to each other, 10.0 m from center to center. (Both orbit Earth at the same
+speed and interact nearly the same as if they were isolated in deep space.) Determine the gravitational force
+between them and their initial acceleration toward each other (parallel to their orbital motion). Estimate how long it
+takes for them to drift together, and how fast they are moving upon impact.
+Strategy
+We use Newton’s law of gravitation to determine the force between them and then use Newton’s second law to find
+the acceleration of each. For the estimate, we find the final acceleration as well and assume the acceleration is
+constant at its average value, and we use the constant-acceleration equations from Motion along a Straight Line to
+find the time and speed of the collision.
+Access for free at openstax.org
+
+13.1 • Newton's Law of Universal Gravitation 603
+Solution
+The magnitude of the force is
+The initial acceleration of each payload is
+The vehicles are 4.0 m in diameter, so the vehicles move from 10.0 m to 4.0 m apart, or a distance of 3.0 m each. A
+similar calculation to that above, for when the vehicles are 4.0 m apart, yields an acceleration of ,
+and the average of these two values is . If we assume a constant acceleration of this value and
+they start from rest, then the vehicles collide with speed given by
+so
+We use to find or about 4.6 hours.
+Significance
+These calculations—including the initial force—are only estimates, as the vehicles are probably not spherically
+symmetrical. But you can see that the force is incredibly small. Astronauts must tether themselves when doing a
+spacewalk, as in Figure 13.4, because the gravitational attraction cannot save them from even the smallest push
+away.
+FIGURE 13.4 This photo shows Ed White tethered to the Gemini IV capsule during a spacewalk. (credit: NASA)
+CHECK YOUR UNDERSTANDING 13.1
+What happens to force and acceleration as the vehicles fall together? What will our estimate of the velocity at a
+collision higher or lower than the speed actually be? And finally, what would happen if the masses were not
+
+604 13 • Gravitation
+identical? Would the force on each be the same or different? How about their accelerations?
+The effect of gravity between two objects with masses on the order of these space vehicles is indeed small. Yet, the
+effect of gravity on you from Earth is significant enough that a fall into Earth of only a few feet can be dangerous. We
+examine the force of gravity near Earth’s surface in the next section.
+EXAMPLE 13.2
+Attraction between Galaxies
+Find the acceleration of our galaxy, the Milky Way, due to the nearest comparably sized galaxy, the Andromeda
+galaxy (Figure 13.5). The approximate mass of each galaxy is 800 × 109 solar masses (a solar mass is the mass of
+our Sun), and they are separated by 2.5 million light-years. (Note that the mass of Andromeda is not so well known
+but is believed to be slightly larger than our galaxy.) Each galaxy has a diameter of roughly 100,000 light-years
+.
+FIGURE 13.5 Galaxies interact gravitationally over immense distances. The Andromeda galaxy is the nearest spiral galaxy to the Milky Way,
+and they will eventually collide. (credit: Boris Štromar)
+Strategy
+As in the preceding example, we use Newton’s law of gravitation to determine the force between them and then use
+Newton’s second law to find the acceleration of the Milky Way. We can consider the galaxies to be point masses,
+since their sizes are about 25 times smaller than their separation. The mass of the Sun (see Appendix D) is
+and a light-year is the distance light travels in one year, .
+Solution
+The magnitude of the force is
+The acceleration of the Milky Way is
+Access for free at openstax.org

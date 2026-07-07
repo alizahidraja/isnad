@@ -1,0 +1,241 @@
+# REAL PDF — openstax_vol3.pdf, pages 309-315
+############################################################
+
+Chapter 6 | Photons and Matter Waves 301
+ADDITIONAL PROBLEMS
+127. Determine the power intensity of radiation per unit wavelengthisusedtoprojectabeamoflightontoacalcium
+wavelength emitted at a wavelength of 500.0 nm by a photoelectrode. (a) How many photoelectrons leave the
+blackbody at a temperature of 10,000 K. calcium surface per second? (b) What power is carried
+away by ejected photoelectrons, given that the work
+128. The HCl molecule oscillates at a frequency of 87.0 function of calcium is 2.31 eV? (c) Calculate the
+THz. What is the difference (in eV) between its adjacent photocurrent. (d) If the photoelectrode suddenly becomes
+energy levels? electricallyinsulatedandthesetupoftwoelectrodesinthe
+circuitsuddenlystartstoactlikea2.00-pFcapacitor,how
+longwillcurrentflowbeforethecapacitorvoltagestopsit?
+129. A quantum mechanical oscillator vibrates at a
+frequency of 250.0 THz. What is the minimum energy of
+radiation it can emit? 138. The work function for barium is 2.48 eV. Find the
+maximum kinetic energy of the ejected photoelectrons
+when the barium surface is illuminated with: (a) radiation
+130. Inabout5billionyears,thesunwillevolvetoared
+emitted by a 100-kW radio station broadcasting at 800
+giant.Assumethatitssurfacetemperaturewilldecreaseto
+kHz;(b)a633-nmlaserlightemittedfromapowerfulHe-
+about half its present value of 6000 K, while its present
+Ne laser; and (c) a 434-nm blue light emitted by a small
+radius of 7.0×10 8 m will increase to 1.5×1011m hydrogen gas discharge tube.
+(which is the current Earth-sun distance). Calculate the
+ratio of the total power emitted by the sun in its red giant
+139. (a)Calculatethewavelengthofaphotonthathasthe
+stage to its present power.
+samemomentumasaprotonmovingwith1%ofthespeed
+oflightinavacuum.(b)Whatistheenergyofthisphoton
+131. Asodiumlampemits2.0Wofradiantenergy,most in MeV? (c) What is the kinetic energy of the proton in
+of which has a wavelength of about 589 nm. Estimate the MeV?
+number of photons emitted per second by the lamp.
+140. (a)Findthemomentumofa100-keVX-rayphoton.
+132. Photoelectronsareejectedfromaphotoelectrodeand (b) Find the velocity of a neutron with the same
+are detected at a distance of 2.50 cm away from the momentum.(c)Whatistheneutron’skineticenergyineV?
+photoelectrode.Theworkfunctionofthephotoelectrodeis
+2.71eVandtheincidentradiationhasawavelengthof420
+141. The momentum of light, as it is for particles, is
+nm.Howlongdoesittakeaphotoelectrontotraveltothe
+exactly reversed when a photon is reflected straight back
+detector?
+from a mirror, assuming negligible recoil of the mirror.
+The change in momentum is twice the photon’s incident
+133. If the work function of a metal is 3.2 eV, what is momentum,asitisfortheparticles.Supposethatabeamof
+themaximumwavelengththataphotoncanhavetoejecta lighthasanintensity 1.0kW/m2 andfallsona −2.0-m2
+photoelectron from this metal surface?
+area of a mirror and reflects from it. (a) Calculate the
+energy reflected in 1.00 s. (b) What is the momentum
+134. Theworkfunctionofaphotoelectricsurfaceis2.00 imparted to the mirror? (c) Use Newton’s second law to
+eV. What is the maximum speed of the photoelectrons findtheforceonthemirror.(d)Doestheassumptionofno-
+emitted from this surface when a 450-nm light falls on it? recoil for the mirror seem reasonable?
+135. A 400-nm laser beam is projected onto a calcium 142. Aphotonofenergy5.0keVcollideswithastationary
+electrode. The power of the laser beam is 2.00 mW and electron and is scattered at an angle of 60°. What is the
+the work function of calcium is 2.31 eV. (a) How many
+energy acquired by the electron in the collision?
+photoelectronspersecondareejected?(b)Whatnetpower
+is carried away by photoelectrons?
+143. A 0.75-nm photon is scattered by a stationary
+electron. The speed of the electron’s recoil is
+136. (a) Calculate the number of photoelectrons per
+second that are ejected from a 1.00-mm2 area of sodium 1.5×10 6 m/s. (a)Findthewavelengthshiftofthephoton.
+(b) Find the scattering angle of the photon.
+metal by a 500-nm radiation with intensity 1.30kW/m2
+(the intensity of sunlight above Earth’s atmosphere). (b)
+144. FindthemaximumchangeinX-raywavelengththat
+Given the work function of the metal as 2.28 eV, what
+can occur due to Compton scattering. Does this change
+power is carried away by these photoelectrons?
+depend on the wavelength of the incident beam?
+137. Alaserwithapoweroutputof2.00mWata400-nm
+
+302 Chapter 6 | Photons and Matter Waves
+145. A photon of wavelength 700 nm is incident on a 155. Calculate the velocity of a 1.0-µm electron and a
+hydrogen atom. When this photon is absorbed, the atom
+potential difference used to accelerate it from rest to this
+becomesionized.Whatisthelowestpossibleorbitthatthe
+velocity.
+electron could have occupied before being ionized?
+156. In a supercollider at CERN, protons are accelerated
+146. What is the maximum kinetic energy of an electron
+to velocities of 0.25c. What are their wavelengths at this
+such that a collision between the electron and a stationary
+speed?Whataretheirkineticenergies?Ifabeamofprotons
+hydrogen atom in its ground state is definitely elastic?
+were to gain its kinetic energy in only one pass through
+a potential difference, how high would this potential
+147. Singlyionizedatomichelium He +1 isahydrogen- difference have to be? (Rest mass energy of a proton is
+like ion. (a) What is its ground-state radius? (b) Calculate E 0 =938MeV).
+theenergiesofitsfourlowestenergystates.(c)Repeatthe
+calculations for the Li 2+ ion. 157. Find the de Broglie wavelength of an electron
+accelerated from rest in an X-ray tube in the potential
+differenceof100keV.(Restmassenergyofanelectronis
+148. A triply ionized atom of beryllium Be 3+ is a
+E =511keV.)
+0
+hydrogen-like ion. When Be 3+ is in one of its excited
+states, its radius in this nth state is exactly the same as
+158. The cutoff wavelength for the emission of
+the radius of the first Bohr orbit of hydrogen. Find n and
+photoelectrons from a particular surface is 500 nm. Find
+compute the ionization energy for this state of Be 3+ . the maximum kinetic energy of the ejected photoelectrons
+when the surface is illuminated with light of wavelength
+149. Inextreme-temperatureenvironments,suchasthose 450 nm.
+existing in a solar corona, atoms may be ionized by
+undergoing collisions with other atoms. One example of 159. Compare the wavelength shift of a photon scattered
+suchionizationinthesolarcoronaisthepresenceof C 5+ byafreeelectrontothatofaphotonscatteredatthesame
+angle by a free proton.
+ions, detected in the Fraunhofer spectrum. (a) By what
+factor do the energies of the C 5+ ion scale compare to
+160. Thespectrometerusedtomeasurethewavelengthsof
+the energy spectrum of a hydrogen atom? (b) What is the
+thescatteredX-raysintheComptonexperimentisaccurate
+wavelengthofthefirstlineinthePaschenseriesof C 5+ to 5.0×10−4nm. Whatistheminimumscatteringangle
+? (c) In what part of the spectrum are these lines located?
+forwhichtheX-raysinteractingwiththefreeelectronscan
+be distinguished from those interacting with the atoms?
+150. (a) Calculate the ionization energy for He + . (b)
+What is the minimum frequency of a photon capable of 161. Consider a hydrogen-like ion where an electron is
+ionizing He + ? orbiting a nucleus that has charge q= +Ze. Derive the
+formulasfortheenergy E oftheelectroninnthorbitand
+n
+151. Experiments are performed with ultracold neutrons the orbital radius r n.
+havingvelocitiesassmallas1.00m/s.Findthewavelength
+of such an ultracold neutron and its kinetic energy.
+162. Assume that a hydrogen atom exists in the n=2
+152. Find the velocity and kinetic energy of a 6.0-fm excited state for 10 −8 s before decaying to the ground
+neutron.(Restmassenergyofneutronis E =940MeV.) state. How many times does the electron orbit the proton
+0
+nucleus during this time? How long does it take Earth to
+orbit the sun this many times?
+153. The spacing between crystalline planes in the NaCl
+163. An atom can be formed when a negative muon is
+crystal is 0.281 nm, as determined by X-ray diffraction
+capturedbyaproton.Themuonhasthesamechargeasthe
+with X-rays of wavelength 0.170 nm. What is the energy
+electronandamass207timesthatoftheelectron.Calculate
+of neutrons in the neutron beam that produces diffraction
+thefrequencyofthephotonemittedwhenthisatommakes
+peaksatthesamelocationsasthepeaksobtainedwiththe
+X-rays?
+thetransitionfrom n=2 tothe n=1 state.Assumethat
+the muon is orbiting a stationary proton.
+154. What is the wavelength of an electron accelerated
+from rest in a 30.0-kV potential difference?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 303
+7 | QUANTUM MECHANICS
+Figure 7.1 A D-wave qubit processor: The brain of a quantum computer that encodes information in quantum bits to perform
+complex calculations. (credit: modification of work by D-Wave Systems, Inc.)
+Chapter Outline
+7.1Wave Functions
+7.2The Heisenberg Uncertainty Principle
+7.3The Schrӧdinger Equation
+7.4The Quantum Particle in a Box
+7.5The Quantum Harmonic Oscillator
+7.6The Quantum Tunneling of Particles through Potential Barriers
+Introduction
+Quantum mechanics is a powerful framework for understanding the motions and interactions of particles at small scales,
+suchasatomsandmolecules.Theideasbehindquantummechanicsoftenappearquitestrange.Inmanyways,oureveryday
+experiencewiththemacroscopicphysicalworlddoesnotprepareusforthemicroscopicworldofquantummechanics.The
+purpose of this chapter is to introduce you to this exciting world.
+Picturedaboveisaquantum-computerprocessor.Thisdeviceisthe“brain”ofaquantumcomputerthatoperatesatnear-
+absolutezerotemperatures.Unlikeadigitalcomputer,whichencodesinformationinbinarydigits(definitestatesofeither
+zeroorone),aquantumcomputerencodesinformationinquantumbitsorqubits(mixedstatesofzeroandone).Quantum
+computers are discussed in the first section of this chapter.
+
+304 Chapter 7 | Quantum Mechanics
+7.1 | Wave Functions
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the statistical interpretation of the wave function
+• Use the wave function to determine probabilities
+• Calculate expectation values of position, momentum, and kinetic energy
+Intheprecedingchapter,wesawthatparticlesactinsomecaseslikeparticlesandinothercaseslikewaves.Butwhatdoes
+it mean for a particle to “act like a wave”? What precisely is “waving”? What rules govern how this wave changes and
+propagates?Howisthewavefunctionusedtomakepredictions?Forexample,iftheamplitudeofanelectronwaveisgiven
+byafunctionofpositionandtime, Ψ(x, t),definedforallx,whereexactlyistheelectron?Thepurposeofthischapteris
+to answer these questions.
+Using the Wave Function
+Acluetothephysicalmeaningofthewavefunction Ψ(x, t) isprovidedbythetwo-slitinterferenceofmonochromaticlight
+(Figure7.2).(SeealsoElectromagneticWaves(http://cnx.org/content/m58495/latest/)andInterference.)The
+wave function of a light wave is given by E(x,t), and its energy density is given by |E| 2, where E is the electric field
+strength.Theenergyofanindividualphotondependsonlyonthefrequencyoflight, ε =hf, so |E| 2 isproportional
+photon
+tothenumberofphotons.Whenlightwavesfrom S interferewithlightwavesfrom S attheviewingscreen(adistance
+1 2
+D away), an interference pattern is produced (part (a) of the figure). Bright fringes correspond to points of constructive
+interference of the light waves, and dark fringes correspond to points of destructive interference of the light waves (part
+(b)).
+Supposethescreenisinitiallyunexposedtolight.Ifthescreenisexposedtoveryweaklight,theinterferencepatternappears
+gradually(Figure7.2(c),lefttoright).Individualphotonhitsonthescreenappearasdots.Thedotdensityisexpectedto
+belargeatlocationswheretheinterferencepatternwillbe,ultimately,themostintense.Inotherwords,theprobability(per
+unitarea)thatasinglephotonwillstrikeaparticularspotonthescreenisproportionaltothesquareofthetotalelectricfield,
+|E| 2 atthatpoint.Undertherightconditions,thesameinterferencepatterndevelopsformatterparticles,suchaselectrons.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 305
+Figure 7.2 Two-slit interference of monochromatic light. (a) Schematic of two-slit interference; (b) light interference pattern;
+(c) interference pattern built up gradually under low-intensity light (left to right).
+Visit this interactive simulation (https://openstaxcollege.org/l/21intquawavint) to learn more about
+quantum wave interference.
+Thesquareofthematterwave |Ψ| 2 inonedimensionhasasimilarinterpretationasthesquareoftheelectricfield |E| 2.It
+givestheprobabilitythataparticlewillbefoundataparticularpositionandtimeperunitlength,alsocalledtheprobability
+density. The probability (P) a particle is found in a narrow interval (x,x + dx) at timetis therefore
+P(x, x+dx)=|Ψ(x, t)| 2dx. (7.1)
+(Later, we define the magnitude squared for the general case of a function with “imaginary parts.”) This probabilistic
+interpretationofthewavefunctioniscalledtheBorninterpretation.Examplesofwavefunctionsandtheirsquaresfora
+particular timetare given inFigure 7.3.
+
+306 Chapter 7 | Quantum Mechanics
+Figure 7.3 Several examples of wave functions and the
+corresponding square of their wave functions.
+If the wave function varies slowly over the interval Δx, the probability a particle is found in the interval is approximately
+P(x, x+Δx)≈|Ψ(x, t)| 2Δx. (7.2)
+Noticethatsquaringthewavefunctionensuresthattheprobabilityispositive.(Thisisanalogoustosquaringtheelectric
+fieldstrength—whichmaybepositiveornegative—toobtainapositivevalueofintensity.)However,ifthewavefunction
+does not vary slowly, we must integrate:
+x+Δx (7.3)
+P(x, x+Δx)= ∫ |Ψ(x, t)| 2dx.
+x
+Thisprobabilityisjusttheareaunderthefunction |Ψ(x, t)| 2 betweenxand x+Δx.Theprobabilityoffindingtheparticle
+“somewhere” (thenormalization condition) is
+∞ (7.4)
+P(−∞, +∞)= ∫ |Ψ(x, t)| 2dx=1.
+−∞
+For a particle in two dimensions, the integration is over an area and requires a double integral; for a particle in three
+dimensions,theintegrationisoveravolumeandrequiresatripleintegral.Fornow,westicktothesimpleone-dimensional
+case.
+Example 7.1
+Where Is the Ball? (Part I)
+AballisconstrainedtomovealongalineinsideatubeoflengthL.Theballisequallylikelytobefoundanywhere
+inthetubeatsometimet.Whatistheprobabilityoffindingtheballinthelefthalfofthetubeatthattime?(The
+answeris50%,ofcourse,buthowdowegetthisanswerbyusingtheprobabilisticinterpretationofthequantum
+mechanical wave function?)
+Strategy
+Thefirststepistowritedownthewavefunction.Theballisequallyliketobefoundanywhereinthebox,soone
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

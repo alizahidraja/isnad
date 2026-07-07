@@ -1,0 +1,281 @@
+# REAL PDF — openstax_vol3.pdf, pages 198-207
+############################################################
+
+190 Chapter 5 | Relativity
+Figure 5.3 (a) Two pulses of light are emitted simultaneously relative to observerB. (c) The pulses reach
+observerB’s position simultaneously. (b) Because ofA’s motion, she sees the pulse from the right first and
+concludes the bulbs did not flash simultaneously. Both conclusions are correct.
+Here,therelativevelocitybetweenobserversaffectswhethertwoeventsadistanceapartareobservedtobesimultaneous.
+Simultaneityisnotabsolute.Wemighthaveguessed(incorrectly)thatiflightisemittedsimultaneously,thentwoobservers
+halfwaybetweenthesourceswouldseetheflashessimultaneously.Butcarefulanalysisshowsthiscannotbethecaseifthe
+speed of light is the same in all inertial frames.
+Thistypeofthoughtexperiment(inGerman,“Gedankenexperiment”)showsthatseeminglyobviousconclusionsmustbe
+changed to agree with the postulates of relativity. The validity of thought experiments can only be determined by actual
+observation, and careful experiments have repeatedly confirmed Einstein’s theory of relativity.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 191
+5.3 | Time Dilation
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how time intervals can be measured differently in different reference frames.
+• Describe how to distinguish a proper time interval from a dilated time interval.
+• Describe the significance of the muon experiment.
+• Explain why the twin paradox is not a contradiction.
+• Calculate time dilation given the speed of an object in a given frame.
+TheanalysisofsimultaneityshowsthatEinstein’spostulatesimplyanimportanteffect:Timeintervalshavedifferentvalues
+when measured in different inertial frames. Suppose, for example, an astronaut measures the time it takes for a pulse of
+lighttotraveladistanceperpendiculartothedirectionofhisship’smotion(relativetoanearthboundobserver),bounceoff
+amirror,andreturn(Figure 5.4).Howdoestheelapsedtimethattheastronautmeasuresinthespacecraftcomparewith
+the elapsed time that an earthbound observer measures by observing what is happening in the spacecraft?
+Examiningthisquestionleadstoaprofoundresult.Theelapsedtimeforaprocessdependsonwhichobserverismeasuring
+it. In this case, the time measured by the astronaut (within the spaceship where the astronaut is at rest) is smaller than
+thetimemeasuredbytheearthboundobserver(towhomtheastronautismoving).Thetimeelapsedforthesameprocess
+is different for the observers, because the distance the light pulse travels in the astronaut’s frame is smaller than in the
+earthboundframe,asseeninFigure5.4.Lighttravelsatthesamespeedineachframe,soittakesmoretimetotravelthe
+greater distance in the earthbound frame.
+
+192 Chapter 5 | Relativity
+Figure 5.4 (a) An astronaut measures the time Δτ for light to travel distance 2Din the astronaut’s frame. (b) A NASA
+scientist on Earth sees the light follow the longer path 2sand take a longer time Δt. (c) These triangles are used to find the
+relationship between the two distancesDands.
+Time Dilation
+Time dilation isthe lengthening ofthe time interval between twoevents foranobserver inaninertial frame that is
+moving with respect to the rest frame of the events (in which the events occur at the same location).
+Toquantitativelycomparethetimemeasurementsinthetwoinertialframes,wecanrelatethedistancesinFigure 5.4to
+each other, then express each distance in terms of the time of travel (respectively either Δt or Δτ) of the pulse in the
+corresponding reference frame. The resulting equation can then be solved for Δt in terms of Δτ.
+The lengthsDandLinFigure 5.4are the sides of a right triangle with hypotenuses. From the Pythagorean theorem,
+s2=D2+L2.
+The lengths 2s and 2L are, respectively, the distances that the pulse of light and the spacecraft travel in time Δt in the
+earthboundobserver’sframe.ThelengthDisthedistancethatthelightpulsetravelsintime Δτ intheastronaut’sframe.
+This gives us three equations:
+2s=cΔt;2L=vΔt;2D=cΔτ.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 193
+NotethatweusedEinstein’ssecondpostulatebytakingthespeedoflighttobecinbothinertialframes.Wesubstitutethese
+results into the previous expression from the Pythagorean theorem:
+s2 = D2+L2
+2 2 2
+⎛ cΔt⎞
+=
+⎛ cΔτ⎞
++
+⎛ vΔt⎞
+.
+⎝ 2 ⎠ ⎝ 2 ⎠ ⎝ 2 ⎠
+Then we rearrange to obtain
+(cΔt)2−(vΔt)2=(cΔτ)2.
+Finally, solving for Δt in terms of Δτ gives us
+Δt=
+Δτ
+.
+(5.1)
+1−(v/c)2
+This is equivalent to
+Δt=γΔτ,
+where γ is the relativistic factor (often called theLorentz factor) given by
+γ = 1 (5.2)
+v2
+1−
+c2
+andvandcare the speeds of the moving observer and light, respectively.
+Notetheasymmetrybetweenthetwomeasurements.Onlyoneofthemisameasurementofthetimeintervalbetweentwo
+events—the emission and arrival of the light pulse—at the same position. It is a measurement of the time interval in the
+restframeofasingleclock.Themeasurementintheearthboundframeinvolvescomparingthetimeintervalbetweentwo
+eventsthatoccuratdifferentlocations.Thetimeintervalbetweeneventsthatoccuratasinglelocationhasaseparatename
+to distinguish it from the time measured by the earthbound observer, and we use the separate symbol Δτ to refer to it
+throughout this chapter.
+Proper Time
+Thepropertimeinterval Δτ betweentwoeventsisthetimeintervalmeasuredbyanobserverforwhombothevents
+occur at the same location.
+The equation relating Δt and Δτ is truly remarkable. First, as stated earlier, elapsed time is not the same for different
+observers moving relative to one another, even though both are in inertial frames. A proper time interval Δτ for an
+observerwho,liketheastronaut,ismovingwiththeapparatus,issmallerthanthetimeintervalforotherobservers.Itisthe
+smallestpossiblemeasuredtimebetweentwoevents.Theearthboundobserverseestimeintervalswithinthemovingsystem
+as dilated (i.e., lengthened) relative to how the observer moving relative to Earth sees them within the moving system.
+Alternatively,accordingtotheearthboundobserver,lesstimepassesbetweeneventswithinthemovingframe.Notethatthe
+shortestelapsedtimebetweeneventsisintheinertialframeinwhichtheobserverseestheevents(e.g.,theemissionand
+arrival of the light signal) occur at the same point.
+Thistimeeffectisrealandisnotcausedbyinaccurateclocksorimpropermeasurements.Time-intervalmeasurementsof
+thesameeventdifferforobserversinrelativemotion.Thedilationoftimeisanintrinsicpropertyoftimeitself.Allclocks
+movingrelativetoanobserver,includingbiologicalclocks,suchasaperson’sheartbeat,oraging,areobservedtorunmore
+slowly compared with a clock that is stationary relative to the observer.
+
+194 Chapter 5 | Relativity
+Note that if the relative velocity is much less than the speed of light (v<<c), then v2/c2 is extremely small, and the
+elapsed times Δt and Δτ are nearly equal. At low velocities, physics based on modern relativity approaches classical
+physics—everydayexperiencesinvolveverysmallrelativisticeffects.However,forspeedsnearthespeedoflight, v2/c2
+is close to one, so 1−v2/c2 is very small and Δt becomes significantly larger than Δτ.
+Half-Life of a Muon
+Thereisconsiderableexperimentalevidencethattheequation Δt=γΔτ iscorrect.Oneexampleisfoundincosmicray
+particlesthatcontinuouslyraindownonEarthfromdeepspace.Somecollisionsoftheseparticleswithnucleiintheupper
+atmosphereresultinshort-livedparticlescalledmuons.Thehalf-life(amountoftimeforhalfofamaterialtodecay)ofa
+muonis1.52μswhenitisatrestrelativetotheobserverwhomeasuresthehalf-life.Thisisthepropertimeinterval Δτ.
+ThisshorttimeallowsveryfewmuonstoreachEarth’ssurfaceandbedetectedifNewtonianassumptionsabouttimeand
+spacewerecorrect.However,muonsproducedbycosmicrayparticleshavearangeofvelocities,withsomemovingnear
+the speed of light. It has been found that the muon’s half-life as measured by an earthbound observer (Δt) varies with
+velocityexactlyaspredictedbytheequation Δt=γΔτ. Thefasterthemuonmoves,thelongeritlives.WeonEarthsee
+themuonlastmuchlongerthanitshalf-lifepredictswithinitsownrestframe.Asviewedfromourframe,themuondecays
+more slowly than it does when at rest relative to us. A far larger fraction of muons reach the ground as a result.
+Before we present the first example of solving a problem in relativity, we state a strategy you can use as a guideline for
+these calculations.
+Problem-Solving Strategy: Relativity
+1. Make a list of what is given or can be inferred from the problem as stated (identify the knowns). Look in
+particular for information on relative velocityv.
+2. Identify exactly what needs to be determined in the problem (identify the unknowns).
+3. Makecertainyouunderstandtheconceptualaspectsoftheproblembeforemakinganycalculations(express
+theanswerasanequation).Decide,forexample,whichobserverseestimedilatedorlengthcontractedbefore
+working with the equations or using them to carry out the calculation. If you have thought about who sees
+what,whoismovingwiththeeventbeingobserved,whoseespropertime,andsoon,youwillfinditmuch
+easier to determine if your calculation is reasonable.
+4. Determine the primary type of calculation to be done to find the unknowns identified above (do the
+calculation).Youwillfindthesectionsummaryhelpfulindeterminingwhetheralengthcontraction,relativistic
+kinetic energy, or some other concept is involved.
+Notethatyoushouldnotroundoffduringthecalculation.Asnotedinthetext,youmustoftenperformyourcalculationsto
+manydigitstoseethedesiredeffect.Youmayroundoffattheveryendoftheproblemsolution,butdonotusearounded
+numberinasubsequentcalculation.Also,checktheanswertoseeifitisreasonable:Doesitmakesense?Thismaybemore
+difficultforrelativity,whichhasfeweverydayexamplestoprovideexperiencewithwhatisreasonable.Butyoucanlook
+forvelocitiesgreaterthancorrelativisticeffectsthatareinthewrongdirection(suchasatimecontractionwhereadilation
+was expected).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 195
+Example 5.1
+Time Dilation in a High-Speed Vehicle
+TheHypersonicTechnologyVehicle2(HTV-2)isanexperimentalrocketvehiclecapableoftravelingat21,000
+km/h(5830m/s).IfanelectronicclockintheHTV-2measuresatimeintervalofexactly1-sduration,whatwould
+observers on Earth measure the time interval to be?
+Strategy
+Apply the time dilation formula to relate the proper time interval of the signal in HTV-2 to the time interval
+measured on the ground.
+Solution
+a. Identify the knowns: Δτ=1s;v=5830m/s.
+b. Identify the unknown: Δt.
+c. Express the answer as an equation:
+Δt=γΔτ=
+Δτ
+.
+v2
+1−
+c2
+d. Do the calculation. Use the expression for γ to determine Δt from Δτ:
+Δt = 1s
+2
+⎛ ⎞
+1− 5830m/s
+⎝ 8 ⎠
+3.00×10 m/s
+=1.000000000189s
+−10
+=1s+1.89×10 s.
+Significance
+TheveryhighspeedoftheHTV-2isstillonly10-5timesthespeedoflight.RelativisticeffectsfortheHTV-2are
+negligible for almost all purposes, but are not zero.
+Example 5.2
+What Speeds are Relativistic?
+Howfastmustavehicletravelfor1secondoftimemeasuredonapassenger’swatchinthevehicletodifferby
+1% for an observer measuring it from the ground outside?
+Strategy
+Use the time dilation formula to findv/cfor the given ratio of times.
+Solution
+a. Identify the known:
+Δτ 1
+= .
+Δt 1.01
+b. Identify the unknown:v/c.
+c. Express the answer as an equation:
+
+196 Chapter 5 | Relativity
+Δt = γΔτ= 1 Δτ
+1−v2/c2
+Δτ = 1−v2/c2
+Δt
+⎛Δτ⎞ 2 v2
+= 1−
+⎝Δt⎠ c2
+v c = 1−(Δτ/Δt)2.
+d. Do the calculation:
+v c = 1−(1/1.01)2
+=0.14.
+Significance
+Theresultshowsthatanobjectmusttravelatveryroughly10%ofthespeedoflightforitsmotiontoproduce
+significant relativistic time dilation effects.
+Example 5.3
+Calculating Δt for a Relativistic Event
+SupposeacosmicraycollidingwithanucleusinEarth’supperatmosphereproducesamuonthathasavelocity
+v=0.950c. Themuonthentravelsatconstantvelocity andlives2.20μsasmeasuredinthemuon’sframeof
+reference.(Youcanimaginethisasthemuon’sinternalclock.)Howlongdoesthemuonliveasmeasuredbyan
+earthbound observer (Figure 5.5)?
+Figure 5.5 A muon in Earth’s atmosphere lives longer as measured by an
+earthbound observer than as measured by the muon’s internal clock.
+As we will discuss later, in the muon’s reference frame, it travels a shorter distance than measured in Earth’s
+reference frame.
+Strategy
+A clock moving with the muon measures the proper time of its decay process, so the time we are given is
+Δτ=2.20µs. Theearthboundobservermeasures Δt asgivenbytheequation Δt=γΔτ. Becausethevelocity
+is given, we can calculate the time in Earth’s frame of reference.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 197
+Solution
+a. Identify the knowns: v=0.950c, Δτ=2.20µs.
+b. Identify the unknown: Δt.
+c. Express the answer as an equation. Use:
+Δt=γΔτ
+with
+γ = 1 .
+v2
+1−
+c2
+d. Do the calculation. Use the expression for γ to determine Δt from Δτ:
+Δt =γΔτ
+= 1 Δτ
+v2
+1−
+c2
+2.20µs
+=
+1−(0.950)2
+=7.05µs.
+Remember to keep extra significant figures until the final answer.
+Significance
+One implication of this example is that because γ =3.20 at 95.0% of the speed of light (v=0.950c), the
+relativisticeffectsaresignificant.Thetwotimeintervalsdifferbyafactorof3.20,whenclassicallytheywould
+be the same. Something moving at 0.950cis said to be highly relativistic.
+Example 5.4
+Relativistic Television
+A non-flat screen, older-style television display (Figure 5.6) works by accelerating electrons over a short
+distancetorelativisticspeed,andthenusingelectromagneticfieldstocontrolwheretheelectronbeamstrikesa
+fluorescentlayeratthefrontofthetube.Supposetheelectronstravelat 6.00×10 7 m/s throughadistanceof
+0.200m fromthestartofthebeamtothescreen.(a)Whatisthetimeoftravelofanelectronintherestframeof
+the television set? (b) What is the electron’s time of travel in its own rest frame?
+
+198 Chapter 5 | Relativity
+Figure 5.6 The electron beam in a cathode ray tube television display.
+Strategy for (a)
+(a)Calculatethetimefrom vt=d. Eventhoughthespeedisrelativistic,thecalculationisentirelyinoneframe
+of reference, and relativity is therefore not involved.
+Solution
+a. Identify the knowns:
+v=6.00×10 7 m/s;d =0.200m.
+b. Identify the unknown: the time of travel Δt.
+c. Express the answer as an equation:
+d
+Δt= v.
+d. Do the calculation:
+t = 0.200m
+7
+6.00×10 m/s
+−9
+=3.33×10 s.
+Significance
+The time of travel is extremely short, as expected. Because the calculation is entirely within a single frame of
+reference, relativity is not involved, even though the electron speed is close toc.
+Strategy for (b)
+(b) In the frame of reference of the electron, the vacuum tube is moving and the electron is stationary. The
+electron-emitting cathode leaves the electron and the front of the vacuum tube strikes the electron with the
+electronatthesamelocation.Thereforeweusethetimedilationformulatorelatethepropertimeintheelectron
+rest frame to the time in the television frame.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

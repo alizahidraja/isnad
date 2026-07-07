@@ -1,0 +1,354 @@
+========================================================================
+  ISNAD REJECTED-CLAIMS DIAGNOSTIC
+  Every quarantined claim traced through its full chain
+========================================================================
+
+Total eval claims: 14001
+Rejected/quarantined: 4057 (29.0%)
+Served: 9944 (71.0%)
+
+Rejection reason breakdown:
+    4057  MAWDU chain → quarantine
+
+========================================================================
+  SAMPLED REJECTED CLAIMS (15 shown)
+========================================================================
+
+── Claim #1 ──
+  ID:       d99841e39ff95a8b...
+  Text:     "2.0×10 5 N/m2."
+  Source:   openstax
+  Domain:   electromagnetism
+  Corrupted: YES — ingest:entity_swap by ingest@weak
+  Original: "2.0×10 5 N/m2."
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #2 ──
+  ID:       1dc4d7090554ece7...
+  Text:     "meaning that no work equals required to move a charge anywhere along one of those lines"
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #3 ──
+  ID:       65898cb1792f96d7...
+  Text:     "As the power d equals sipated by the open switch?"
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #4 ──
+  ID:       fe3c6b547e6ade0c...
+  Text:     "354 Chapter 8 | Capacitance
+Figure 8.8 In a variable air capacitor, capacitance can be tuned by changing the effective a"
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #5 ──
+  ID:       933b574389dedaee...
+  Text:     "power dissipated by the res equals tors:"
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #6 ──
+  ID:       ba171c0f03d57a9d...
+  Text:     "since each res equals tor gets full voltage"
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #7 ──
+  ID:       148a0307826bfb3d...
+  Text:     "since the voltage sources are in
+parallel"
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #8 ──
+  ID:       1d7849334f4d1ec3...
+  Text:     "because the metal on
+the left has expanded more than the metal on the right."
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #9 ──
+  ID:       b05afa850e865a51...
+  Text:     "so the net torque on the loop is
+2 4
+∑ → τ = → τ + → τ + → τ + → τ =F xsinθ ^ i −F (a−x)sin(θ) ^ i (11.18)
+1 2 3 4 2 4
+^"
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #10 ──
+  ID:       94d518380e9f9c1e...
+  Text:     "→ B = µ 0 ⌠ Id → l × ^ r ."
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #11 ──
+  ID:       67eb7a1106b98c58...
+  Text:     "A charged particle in a 2.0-T magnetic field is bent
+in a circle of radius 75 cm."
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #12 ──
+  ID:       b56ef51cec2624fe...
+  Text:     "that is a d equals tance z above the center of the square (see the
+the magnetic field between"
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #13 ──
+  ID:       3a6bc30e0b4ad5a3...
+  Text:     "con-
+verting magnetic potential energy into kinetic energy."
+  Source:   crowell
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:crowell            RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #14 ──
+  ID:       0dd61d47b52ce3d7...
+  Text:     "The power dissipated by a res equals tor has the form
+P=I2R=
+V2"
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+── Claim #15 ──
+  ID:       28fa23b4b4514392...
+  Text:     "Strategy
+Consider an arbitrary plane perpendicular to the wire, with the current directed out of the page."
+  Source:   openstax
+  Domain:   electromagnetism
+  Complete: ✓
+
+  Transmission chain (3 links):
+  Step  Narrator                  Grade          Transform        Domain            
+  0     source:openstax           RELIABLE ✓     [→]              electromagnetism  
+  1     pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]  electromagnetism  
+  2     ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]   electromagnetism   ← BREAKS
+
+  Chain grade: MAWDU
+  Matrix:      Chain grade mawdu × content unverifiable → reject_and_quarantine_narrator
+  Action:      REJECT_AND_QUARANTINE_NARRATOR
+
+  WHY REJECTED:
+    Step 2: ingest@weak is REJECTED → chain becomes MAWDU
+             (rejected narrator caps entire chain at fabricated tier)
+
+========================================================================
+  SUMMARY
+========================================================================
+  Served:    9944 claims (71.0%)
+  Rejected:  4057 claims (29.0%)
+  Key find:  Narrators graded REJECTED block ALL their claims,
+             regardless of downstream narrator quality.
+             This is the weakest-link rule working as designed.

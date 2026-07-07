@@ -1,0 +1,164 @@
+# REAL PDF — openstax_vol1.pdf, pages 477-483
+############################################################
+
+10.3 • Relating Angular and Translational Quantities 465
+FIGURE 10.13 The area under the curve is the area of the right triangle.
+We verify the solution using Equation 10.12:
+Setting , we have
+This verifies the solution found from finding the area under the curve.
+Significance
+We see from part (b) that there are alternative approaches to analyzing fixed-axis rotation with constant
+acceleration. We started with a graphical approach and verified the solution using the rotational kinematic
+equations. Since , we could do the same graphical analysis on an angular acceleration-vs.-time curve. The
+area under an curve gives us the change in angular velocity. Since the angular acceleration is constant in this
+section, this is a straightforward exercise.
+10.3 Relating Angular and Translational Quantities
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Given the linear kinematic equation, write the corresponding rotational kinematic equation
+• Calculate the linear distances, velocities, and accelerations of points on a rotating system given the
+angular velocities and accelerations
+In this section, we relate each of the rotational variables to the translational variables defined in Motion Along a
+Straight Line and Motion in Two and Three Dimensions. This will complete our ability to describe rigid-body
+rotations.
+Angular vs. Linear Variables
+In Rotational Variables, we introduced angular variables. If we compare the rotational definitions with the
+definitions of linear kinematic variables from Motion Along a Straight Line and Motion in Two and Three Dimensions,
+we find that there is a mapping of the linear variables to the rotational ones. Linear position, velocity, and
+acceleration have their rotational counterparts, as we can see when we write them side by side:
+
+466 10 • Fixed-Axis Rotation
+Linear Rotational
+Position x
+Velocity
+Acceleration
+Let’s compare the linear and rotational variables individually. The linear variable of position has physical units of
+meters, whereas the angular position variable has dimensionless units of radians, as can be seen from the definition
+of , which is the ratio of two lengths. The linear velocity has units of m/s, and its counterpart, the angular
+velocity, has units of rad/s. In Rotational Variables, we saw in the case of circular motion that the linear tangential
+speed of a particle at a radius r from the axis of rotation is related to the angular velocity by the relation .
+This could also apply to points on a rigid body rotating about a fixed axis. Here, we consider only circular motion. In
+circular motion, both uniform and nonuniform, there exists a centripetal acceleration (Motion in Two and Three
+Dimensions). The centripetal acceleration vector points inward from the particle executing circular motion toward
+the axis of rotation. The derivation of the magnitude of the centripetal acceleration is given in Motion in Two and
+Three Dimensions. From that derivation, the magnitude of the centripetal acceleration was found to be
+10.14
+where r is the radius of the circle.
+Thus, in uniform circular motion when the angular velocity is constant and the angular acceleration is zero, we have
+a linear acceleration—that is, centripetal acceleration—since the tangential speed in Equation 10.14 is a constant. If
+nonuniform circular motion is present, the rotating system has an angular acceleration, and we have both a linear
+centripetal acceleration that is changing (because is changing) as well as a linear tangential acceleration. These
+relationships are shown in Figure 10.14, where we show the centripetal and tangential accelerations for uniform
+and nonuniform circular motion.
+FIGURE 10.14 (a) Uniform circular motion: The centripetal acceleration has its vector inward toward the axis of rotation. There is no
+tangential acceleration. (b) Nonuniform circular motion: An angular acceleration produces an inward centripetal acceleration that is
+changing in magnitude, plus a tangential acceleration .
+The centripetal acceleration is due to the change in the direction of tangential velocity, whereas the tangential
+Access for free at openstax.org
+
+10.3 • Relating Angular and Translational Quantities 467
+acceleration is due to any change in the magnitude of the tangential velocity. The tangential and centripetal
+acceleration vectors and are always perpendicular to each other, as seen in Figure 10.14. To complete this
+description, we can assign a total linear acceleration vector to a point on a rotating rigid body or a particle
+executing circular motion at a radius r from a fixed axis. The total linear acceleration vector is the vector sum of
+the centripetal and tangential accelerations,
+10.15
+The total linear acceleration vector in the case of nonuniform circular motion points at an angle between the
+centripetal and tangential acceleration vectors, as shown in Figure 10.15. Since , the magnitude of the total
+linear acceleration is
+Note that if the angular acceleration is zero, the total linear acceleration is equal to the centripetal acceleration.
+FIGURE 10.15 A particle is executing circular motion and has an angular acceleration. The total linear acceleration of the particle is the
+vector sum of the centripetal acceleration and tangential acceleration vectors. The total linear acceleration vector is at an angle in between
+the centripetal and tangential accelerations.
+Relationships between Rotational and Translational Motion
+We can look at two relationships between rotational and translational motion.
+1. Generally speaking, the linear kinematic equations have their rotational counterparts. Table 10.2 lists the four
+linear kinematic equations and the corresponding rotational counterpart. The two sets of equations look
+similar to each other, but describe two different physical situations, that is, rotation and translation.
+Rotational Translational
+TABLE 10.2 Rotational and Translational Kinematic
+Equations
+2. The second correspondence has to do with relating linear and rotational variables in the special case of
+circular motion. This is shown in Table 10.3, where in the third column, we have listed the connecting equation
+that relates the linear variable to the rotational variable. The rotational variables of angular velocity and
+
+468 10 • Fixed-Axis Rotation
+acceleration have subscripts that indicate their definition in circular motion.
+Rotational Translational Relationship ( )
+s
+TABLE 10.3 Rotational and Translational Quantities: Circular Motion
+EXAMPLE 10.7
+Linear Acceleration of a Centrifuge
+A centrifuge has a radius of 20 cm and accelerates from a maximum rotation rate of 10,000 rpm to rest in 30
+seconds under a constant angular acceleration. It is rotating counterclockwise. What is the magnitude of the total
+acceleration of a point at the tip of the centrifuge at What is the direction of the total acceleration vector?
+Strategy
+With the information given, we can calculate the angular acceleration, which then will allow us to find the tangential
+acceleration. We can find the centripetal acceleration at by calculating the tangential speed at this time. With
+the magnitudes of the accelerations, we can calculate the total linear acceleration. From the description of the
+rotation in the problem, we can sketch the direction of the total acceleration vector.
+Solution
+The angular acceleration is
+Therefore, the tangential acceleration is
+The angular velocity at is
+Thus, the tangential speed at is
+We can now calculate the centripetal acceleration at :
+Since the two acceleration vectors are perpendicular to each other, the magnitude of the total linear acceleration is
+Since the centrifuge has a negative angular acceleration, it is slowing down. The total acceleration vector is as
+shown in Figure 10.16. The angle with respect to the centripetal acceleration vector is
+Access for free at openstax.org
+
+10.4 • Moment of Inertia and Rotational Kinetic Energy 469
+The negative sign means that the total acceleration vector is angled toward the clockwise direction.
+FIGURE 10.16 The centripetal, tangential, and total acceleration vectors. The centrifuge is slowing down, so the tangential acceleration is
+clockwise, opposite the direction of rotation (counterclockwise).
+Significance
+From Figure 10.16, we see that the tangential acceleration vector is opposite the direction of rotation. The
+magnitude of the tangential acceleration is much smaller than the centripetal acceleration, so the total linear
+acceleration vector will make a very small angle with respect to the centripetal acceleration vector.
+CHECK YOUR UNDERSTANDING 10.3
+A boy jumps on a merry-go-round with a radius of 5 m that is at rest. It starts accelerating at a constant rate up to an
+angular velocity of 5 rad/s in 20 seconds. What is the distance travelled by the boy?
+INTERACTIVE
+Check out this PhET simulation (https://openstax.org/l/28ladybugrevolutionrotation) to change the parameters of a
+rotating disk (the initial angle, angular velocity, and angular acceleration), and place bugs at different radial
+distances from the axis. The simulation then lets you explore how circular motion relates to the bugs’ xy-position,
+velocity, and acceleration using vectors or graphs.
+10.4 Moment of Inertia and Rotational Kinetic Energy
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the differences between rotational and translational kinetic energy
+• Define the physical concept of moment of inertia in terms of the mass distribution from the rotational axis
+• Explain how the moment of inertia of rigid bodies affects their rotational kinetic energy
+• Use conservation of mechanical energy to analyze systems undergoing both rotation and translation
+• Calculate the angular velocity of a rotating system when there are energy losses due to nonconservative
+forces
+So far in this chapter, we have been working with rotational kinematics: the description of motion for a rotating rigid
+body with a fixed axis of rotation. In this section, we define two new quantities that are helpful for analyzing
+properties of rotating objects: moment of inertia and rotational kinetic energy. With these properties defined, we will
+
+470 10 • Fixed-Axis Rotation
+have two important tools we need for analyzing rotational dynamics.
+Rotational Kinetic Energy
+Any moving object has kinetic energy. We know how to calculate this for a body undergoing translational motion, but
+how about for a rigid body undergoing rotation? This might seem complicated because each point on the rigid body
+has a different velocity. However, we can make use of angular velocity—which is the same for the entire rigid
+body—to express the kinetic energy for a rotating object. Figure 10.17 shows an example of a very energetic rotating
+body: an electric grindstone propelled by a motor. Sparks are flying, and noise and vibration are generated as the
+grindstone does its work. This system has considerable energy, some of it in the form of heat, light, sound, and
+vibration. However, most of this energy is in the form of rotational kinetic energy.
+FIGURE 10.17 The rotational kinetic energy of the grindstone is converted to heat, light, sound, and vibration. (credit: Zachary David Bell,
+US Navy)
+Energy in rotational motion is not a new form of energy; rather, it is the energy associated with rotational motion, the
+same as kinetic energy in translational motion. However, because kinetic energy is given by , and
+velocity is a quantity that is different for every point on a rotating body about an axis, it makes sense to find a way to
+write kinetic energy in terms of the variable , which is the same for all points on a rigid rotating body. For a single
+particle rotating around a fixed axis, this is straightforward to calculate. We can relate the angular velocity to the
+magnitude of the translational velocity using the relation , where r is the distance of the particle from the
+axis of rotation and is its tangential speed. Substituting into the equation for kinetic energy, we find
+In the case of a rigid rotating body, we can divide up any body into a large number of smaller masses, each with a
+mass and distance to the axis of rotation , such that the total mass of the body is equal to the sum of the
+individual masses: . Each smaller mass has tangential speed , where we have dropped the subscript t
+for the moment. The total kinetic energy of the rigid rotating body is
+and since for all masses,
+Access for free at openstax.org

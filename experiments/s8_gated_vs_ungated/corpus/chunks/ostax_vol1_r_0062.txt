@@ -1,0 +1,185 @@
+# REAL PDF — openstax_vol1.pdf, pages 367-373
+############################################################
+
+8.3 • Conservation of Energy 355
+doing work, then mechanical energy is not conserved. The system must then be analyzed with non-
+conservative work, Equation 8.12.
+4. For every conservative force that does work, choose a reference point and determine the potential energy
+function for the force. The reference points for the various potential energies do not have to be at the same
+location.
+5. If no non-conservative work is done, apply the principle of mechanical energy conservation by setting the sum
+of the kinetic energies and potential energies equal at every point of interest.
+EXAMPLE 8.7
+Simple Pendulum
+A particle of mass m is hung from the ceiling by a massless string of length 1.0 m, as shown in Figure 8.7. The
+particle is released from rest, when the angle between the string and the downward vertical direction is What is
+its speed when it reaches the lowest point of its arc?
+FIGURE 8.7 A particle hung from a string constitutes a simple pendulum. It is shown when released from rest, along with some distances
+used in analyzing the motion.
+Strategy
+Using our problem-solving strategy, the first step is to define that we are interested in the particle-Earth system.
+Second, only the gravitational force is acting on the particle, which is conservative (step 3). We neglect air resistance
+in the problem, and no work is done by the string tension, which is perpendicular to the arc of the motion. Therefore,
+the mechanical energy of the system is conserved, as represented by Equation 8.13, . Because the
+particle starts from rest, the increase in the kinetic energy is just the kinetic energy at the lowest point. This increase
+in kinetic energy equals the decrease in the gravitational potential energy, which we can calculate from the
+geometry. In step 4, we choose a reference point for zero gravitational potential energy to be at the lowest vertical
+point the particle achieves, which is mid-swing. Lastly, in step 5, we set the sum of energies at the highest point
+(initial) of the swing to the lowest point (final) of the swing to ultimately solve for the final speed.
+Solution
+We are neglecting non-conservative forces, so we write the energy conservation formula relating the particle at the
+highest point (initial) and the lowest point in the swing (final) as
+Since the particle is released from rest, the initial kinetic energy is zero. At the lowest point, we define the
+gravitational potential energy to be zero. Therefore our conservation of energy formula reduces to
+The vertical height of the particle is not given directly in the problem. This can be solved for by using trigonometry
+and two givens: the length of the pendulum and the angle through which the particle is vertically pulled up. Looking
+
+356 8 • Potential Energy and Conservation of Energy
+at the diagram, the vertical dashed line is the length of the pendulum string. The vertical height is labeled h. The
+other partial length of the vertical string can be calculated with trigonometry. That piece is solved for by
+Therefore, by looking at the two parts of the string, we can solve for the height h,
+We substitute this height into the previous expression solved for speed to calculate our result:
+Significance
+We found the speed directly from the conservation of mechanical energy, without having to solve the differential
+equation for the motion of a pendulum (see Oscillations). We can approach this problem in terms of bar graphs of
+total energy. Initially, the particle has all potential energy, being at the highest point, and no kinetic energy. When
+the particle crosses the lowest point at the bottom of the swing, the energy moves from the potential energy column
+to the kinetic energy column. Therefore, we can imagine a progression of this transfer as the particle moves
+between its highest point, lowest point of the swing, and back to the highest point (Figure 8.8). As the particle
+travels from the lowest point in the swing to the highest point on the far right hand side of the diagram, the energy
+bars go in reverse order from (c) to (b) to (a).
+FIGURE 8.8 Bar graphs representing the total energy (E), potential energy (U), and kinetic energy (K) of the particle in different positions.
+(a) The total energy of the system equals the potential energy and the kinetic energy is zero, which is found at the highest point the particle
+reaches. (b) The particle is midway between the highest and lowest point, so the kinetic energy plus potential energy bar graphs equal the
+total energy. (c) The particle is at the lowest point of the swing, so the kinetic energy bar graph is the highest and equal to the total energy
+of the system.
+CHECK YOUR UNDERSTANDING 8.7
+How high above the bottom of its arc is the particle in the simple pendulum above, when its speed is
+EXAMPLE 8.8
+Air Resistance on a Falling Object
+A helicopter is hovering at an altitude of when a panel from its underside breaks loose and plummets to the
+ground (Figure 8.9). The mass of the panel is and it hits the ground with a speed of . How much
+mechanical energy was dissipated by air resistance during the panel’s descent?
+Access for free at openstax.org
+
+8.3 • Conservation of Energy 357
+FIGURE 8.9 A helicopter loses a panel that falls until it reaches terminal velocity of 45 m/s. How much did air resistance contribute to the
+dissipation of energy in this problem?
+Strategy
+Step 1: Here only one body is being investigated.
+Step 2: Gravitational force is acting on the panel, as well as air resistance, which is stated in the problem.
+Step 3: Gravitational force is conservative; however, the non-conservative force of air resistance does negative work
+on the falling panel, so we can use the conservation of mechanical energy, in the form expressed by Equation 8.12,
+to find the energy dissipated. This energy is the magnitude of the work:
+Step 4: The initial kinetic energy, at is zero. We set the gravitational potential energy to zero at ground
+level out of convenience.
+Step 5: The non-conservative work is set equal to the energies to solve for the work dissipated by air resistance.
+Solution
+The mechanical energy dissipated by air resistance is the algebraic sum of the gain in the kinetic energy and loss in
+potential energy. Therefore the calculation of this energy is
+Significance
+Most of the initial mechanical energy of the panel , 147 kJ, was lost to air resistance. Notice that we were able
+to calculate the energy dissipated without knowing what the force of air resistance was, only that it was dissipative.
+CHECK YOUR UNDERSTANDING 8.8
+You probably recall that, neglecting air resistance, if you throw a projectile straight up, the time it takes to reach its
+maximum height equals the time it takes to fall from the maximum height back to the starting height. Suppose you
+
+358 8 • Potential Energy and Conservation of Energy
+cannot neglect air resistance, as in Example 8.8. Is the time the projectile takes to go up (a) greater than, (b) less
+than, or (c) equal to the time it takes to come back down? Explain.
+In these examples, we were able to use conservation of energy to calculate the speed of a particle just at particular
+points in its motion. But the method of analyzing particle motion, starting from energy conservation, is more
+powerful than that. More advanced treatments of the theory of mechanics allow you to calculate the full time
+dependence of a particle’s motion, for a given potential energy. In fact, it is often the case that a better model for
+particle motion is provided by the form of its kinetic and potential energies, rather than an equation for force acting
+on it. (This is especially true for the quantum mechanical description of particles like electrons or atoms.)
+We can illustrate some of the simplest features of this energy-based approach by considering a particle in one-
+dimensional motion, with potential energy U(x) and no non-conservative interactions present. Equation 8.12 and the
+definition of velocity require
+Separate the variables x and t and integrate, from an initial time to an arbitrary time, to get
+8.14
+If you can do the integral in Equation 8.14, then you can solve for x as a function of t.
+EXAMPLE 8.9
+Constant Acceleration
+Use the potential energy for in Equation 8.14 to find the position x of a particle as a
+function of time t.
+Strategy
+Since we know how the potential energy changes as a function of x, we can substitute for in Equation 8.14,
+integrate, and then solve for x. This results in an expression of x as a function of time with constants of energy E,
+mass m, and the initial position
+Solution
+Following the first two suggested steps in the above strategy,
+Solving for the position, we obtain .
+Significance
+The position as a function of time, for this potential, represents one-dimensional motion with constant acceleration,
+starting at rest from position This is not so surprising, since this is a potential energy for a
+constant force, and
+CHECK YOUR UNDERSTANDING 8.9
+What potential energy can you substitute in Equation 8.13 that will result in motion with constant velocity of 2
+Access for free at openstax.org
+
+8.4 • Potential Energy Diagrams and Stability 359
+m/s for a particle of mass 1 kg and mechanical energy 1 J?
+We will look at another more physically appropriate example of the use of Equation 8.13 after we have explored
+some further implications that can be drawn from the functional form of a particle’s potential energy.
+Systems with Several Particles or Objects
+Systems generally consist of more than one particle or object. However, the conservation of mechanical energy, in
+one of the forms in Equation 8.12 or Equation 8.13, is a fundamental law of physics and applies to any system. You
+just have to include the kinetic and potential energies of all the particles, and the work done by all the non-
+conservative forces acting on them. Until you learn more about the dynamics of systems composed of many
+particles, in Linear Momentum and Collisions, Fixed-Axis Rotation, and Angular Momentum, it is better to postpone
+discussing the application of energy conservation to then.
+8.4 Potential Energy Diagrams and Stability
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Create and interpret graphs of potential energy
+• Explain the connection between stability and potential energy
+Often, you can get a good deal of useful information about the dynamical behavior of a mechanical system just by
+interpreting a graph of its potential energy as a function of position, called a potential energy diagram. This is most
+easily accomplished for a one-dimensional system, whose potential energy can be plotted in one two-dimensional
+graph—for example, U(x) versus x—on a piece of paper or a computer program. For systems whose motion is in more
+than one dimension, the motion needs to be studied in three-dimensional space. We will simplify our procedure for
+one-dimensional motion only.
+First, let’s look at an object, freely falling vertically, near the surface of Earth, in the absence of air resistance. The
+mechanical energy of the object is conserved, and the potential energy, with respect to zero at ground
+level, is which is a straight line through the origin with slope . In the graph shown in Figure 8.10,
+the x-axis is the height above the ground y and the y-axis is the object’s energy.
+FIGURE 8.10 The potential energy graph for an object in vertical free fall, with various quantities indicated.
+The line at energy E represents the constant mechanical energy of the object, whereas the kinetic and potential
+energies, and are indicated at a particular height You can see how the total energy is divided between
+kinetic and potential energy as the object’s height changes. Since kinetic energy can never be negative, there is a
+maximum potential energy and a maximum height, which an object with the given total energy cannot exceed:
+If we use the gravitational potential energy reference point of zero at we can rewrite the gravitational potential
+energy U as mgy. Solving for y results in
+
+360 8 • Potential Energy and Conservation of Energy
+We note in this expression that the quantity of the total energy divided by the weight (mg) is located at the
+maximum height of the particle, or At the maximum height, the kinetic energy and the speed are zero, so if the
+object were initially traveling upward, its velocity would go through zero there, and would be a turning point in
+the motion. At ground level, , the potential energy is zero, and the kinetic energy and the speed are
+maximum:
+The maximum speed gives the initial velocity necessary to reach the maximum height, and
+represents the final velocity, after falling from You can read all this information, and more, from the potential
+energy diagram we have shown.
+Consider a mass-spring system on a frictionless, stationary, horizontal surface, so that gravity and the normal
+contact force do no work and can be ignored (Figure 8.11). This is like a one-dimensional system, whose mechanical
+energy E is a constant and whose potential energy, with respect to zero energy at zero displacement from the
+spring’s unstretched length, .
+FIGURE 8.11 (a) A glider between springs on an air track is an example of a horizontal mass-spring system. (b) The potential energy
+diagram for this system, with various quantities indicated.
+You can read off the same type of information from the potential energy diagram in this case, as in the case for the
+body in vertical free fall, but since the spring potential energy describes a variable force, you can learn more from
+this graph. As for the object in vertical free fall, you can deduce the physically allowable range of motion and the
+maximum values of distance and speed, from the limits on the kinetic energy, Therefore, and
+at a turning point, of which there are two for the elastic spring potential energy,
+The glider’s motion is confined to the region between the turning points, This is true for any
+(positive) value of E because the potential energy is unbounded with respect to x. For this reason, as well as the
+shape of the potential energy curve, U(x) is called an infinite potential well. At the bottom of the potential well,
+and the kinetic energy is a maximum,
+However, from the slope of this potential energy curve, you can also deduce information about the force on the
+glider and its acceleration. We saw earlier that the negative of the slope of the potential energy is the spring force,
+which in this case is also the net force, and thus is proportional to the acceleration. When , the slope, the
+force, and the acceleration are all zero, so this is an equilibrium point. The negative of the slope, on either side of
+the equilibrium point, gives a force pointing back to the equilibrium point, so the equilibrium is termed
+stable and the force is called a restoring force. This implies that U(x) has a relative minimum there. If the force on
+Access for free at openstax.org

@@ -1,0 +1,265 @@
+# REAL PDF — openstax_vol2.pdf, pages 352-361
+############################################################
+
+342 Chapter 7 | Electric Potential
+at a point 15 cm above the center. other, (a) what is the potential difference between the
+plates? (b) What is the potential difference between the
+93. A CD disk of radius (R=3.0cm) is sprayed with positive plate and a point 1.25 cm from it that is between
+the plates?
+a charged paint so that the charge varies continually with
+radial distance r from the center in the following manner:
+σ = −(6.0C/m)r/ R. 100. A point charge of q=5.0×10 −8 C is placed at
+the center of an uncharged spherical conducting shell of
+Find the potential at a point 4 cm above the center.
+inner radius 6.0 cm and outer radius 9.0 cm. Find the
+electric potential at (a) r =4.0cm, (b) r =8.0cm, (c)
+94. (a) What is the final speed of an electron accelerated
+from rest through a voltage of 25.0 MV by a negatively r =12.0cm.
+charged Van de Graff terminal? (b) What is unreasonable
+about this result? (c) Which assumptions are responsible? 101. Earthhasanetchargethatproducesanelectricfield
+of approximately 150 N/C downward at its surface. (a)
+95. Alargemetal plate ischargeduniformly toadensity Whatisthemagnitudeandsignoftheexcesscharge,noting
+of σ =2.0×10 −9 C/m2. How far apart are the the electric field of a conducting sphere is equivalent to a
+point charge at its center? (b) What acceleration will the
+equipotential surfaces that represent a potential difference
+field produce on a free electron near Earth’s surface? (c)
+of 25 V?
+Whatmassobjectwithasingleextraelectronwillhaveits
+weight supported by this field?
+96. Yourfriendgetsreallyexcitedbytheideaofmaking
+alightningrodormaybejustasparkingtoybyconnecting
+102. Point charges of 25.0µCand45.0µC are placed
+two spheres as shown in Figure 7.39, and making R
+2
+0.500 m apart.
+sosmallthattheelectricfieldisgreaterthanthedielectric
+strength of air, just from the usual 150 V/m electric field (a)Atwhatpointalongthelinebetweenthemistheelectric
+near the surface of the Earth. If R is 10 cm, how small field zero?
+1
+does R need to be, and does this seem practical? (Hint: (b) What is the electric field halfway between them?
+2
+recall the calculation for electric field at the surface of a
+conductor fromGauss’s Law.)
+103. What can you say about two charges q
+1
+andq
+2
+, if
+the electric field one-fourth of the way from q toq is
+1 2
+97. (a) Find x > > L limit of the potential of a finite zero?
+uniformlychargedrodandshowthatitcoincideswiththat
+ofapointchargeformula.(b)Whywouldyouexpect this
+104. Calculate the angular velocity ω of an electron
+result?
+orbitingaprotoninthehydrogenatom,giventheradiusof
+the orbit is 0.530×10 −10 m. You may assume that the
+98. Asmallsphericalpithballofradius0.50cmispainted
+protonisstationaryandthecentripetalforceissuppliedby
+with a silver paint and then −10µC of charge is placed
+Coulomb attraction.
+on it. The charged pith ball is put at the center of a gold
+spherical shell of inner radius 2.0 cm and outer radius 2.2
+105. An electron has an initial velocity of
+cm. (a) Find the electric potential of the gold shell with
+respect to zero potential at infinity. (b) How much charge 5.00×10 6 m/s in a uniform 2.00×10 5 -N/C electric
+should you put on the gold shell if you want to make its field. The field accelerates the electron in the direction
+potential 100 V? opposite to its initial velocity. (a) What is the direction
+of the electric field? (b) How far does the electron travel
+before coming to rest? (c) How long does it take the
+99. Twoparallelconductingplates,eachofcross-sectional
+electrontocometorest?(d)Whatistheelectron’svelocity
+area 400cm2, are 2.0 cm apart and uncharged. If
+when it returns to its starting point?
+1.0×1012 electronsaretransferredfromoneplatetothe
+CHALLENGE PROBLEMS
+106. Three Na + and three Cl− ions are placed 107. Look up (presumably online, or by dismantling an
+olddeviceandmakingmeasurements)themagnitudeofthe
+alternatelyandequallyspacedaroundacircleofradius50
+potentialdeflectionplates(andthespacebetweenthem)in
+nm. Find the electrostatic energy stored.
+aninkjetprinter.Thenlookupthespeedwithwhichtheink
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 343
+comesoutthenozzle.Canyoucalculatethetypicalmassof throughout space. Then check your results by calculating
+an ink drop? the electric field from the potential.
+108. Usetheelectricfieldofafinitespherewithconstant 109. Calculate the electric field of a dipole throughout
+volume charge density to calculate the electric potential, space from the potential.
+
+344 Chapter 7 | Electric Potential
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 345
+8 | CAPACITANCE
+Figure 8.1 The tree-like branch patterns in this clear Plexiglas® block are known as a Lichtenberg figure, named for the
+German physicist Georg Christof Lichtenberg (1742–1799), who was the first to study these patterns. The “branches” are created
+by the dielectric breakdown produced by a strong electric field. (credit: modification of work by Bert Hickman)
+Chapter Outline
+8.1Capacitors and Capacitance
+8.2Capacitors in Series and in Parallel
+8.3Energy Stored in a Capacitor
+8.4Capacitor with a Dielectric
+8.5Molecular Model of a Dielectric
+Introduction
+Capacitorsareimportantcomponentsofelectricalcircuitsinmanyelectronicdevices,includingpacemakers,cellphones,
+and computers. In this chapter, we study their properties, and, over the next few chapters, we examine their function in
+combinationwithothercircuitelements.Bythemselves,capacitorsareoftenusedtostoreelectricalenergyandreleaseit
+whenneeded;withothercircuitcomponents,capacitorsoftenactaspartofafilterthatallowssomeelectricalsignalstopass
+whileblockingothers.Youcanseewhycapacitorsareconsideredoneofthefundamentalcomponentsofelectricalcircuits.
+8.1 | Capacitors and Capacitance
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the concepts of a capacitor and its capacitance
+• Describe how to evaluate the capacitance of a system of conductors
+Acapacitorisadeviceusedtostoreelectricalchargeandelectricalenergy.Itconsistsofatleasttwoelectricalconductors
+separatedbyadistance.(Notethatsuchelectricalconductorsaresometimesreferredtoas“electrodes,”butmorecorrectly,
+
+346 Chapter 8 | Capacitance
+theyare“capacitorplates.”)Thespacebetweencapacitorsmaysimplybeavacuum,and,inthatcase,acapacitoristhen
+knownasa“vacuumcapacitor.”However,thespaceisusuallyfilledwithaninsulatingmaterialknownasadielectric.(You
+willlearnmoreaboutdielectricsinthesectionsondielectricslaterinthischapter.)Theamountofstorageinacapacitoris
+determined by a property calledcapacitance, which you will learn more about a bit later in this section.
+Capacitors have applications ranging from filtering static from radio reception to energy storage in heart defibrillators.
+Typically,commercialcapacitorshavetwoconductingpartsclosetooneanotherbutnottouching,suchasthoseinFigure
+8.2. Most of the time, a dielectric is used between the two plates. When battery terminals are connected to an initially
+uncharged capacitor,the battery potential moves a small amount ofcharge ofmagnitude Qfrom the positive plate to the
+negative plate. The capacitor remains neutral overall, but with charges +Q and −Q residing on opposite plates.
+Figure 8.2 Both capacitors shown here were initially uncharged before being
+connected to a battery. They now have charges of +Q and −Q (respectively) on
+their plates. (a) A parallel-plate capacitor consists of two plates of opposite charge
+with areaAseparated by distanced. (b) A rolled capacitor has a dielectric material
+between its two conducting sheets (plates).
+Asystemcomposedoftwoidenticalparallel-conductingplatesseparatedbyadistanceiscalledaparallel-platecapacitor
+(Figure8.3).Themagnitudeoftheelectricalfieldinthespacebetweentheparallelplatesis E=σ/ε ,where σ denotes
+0
+thesurfacechargedensityononeplate(recallthat σ isthechargeQperthesurfaceareaA).Thus,themagnitudeofthe
+field is directly proportional toQ.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 347
+Figure 8.3 The charge separation in a capacitor shows that the
+charges remain on the surfaces of the capacitor plates. Electrical
+field lines in a parallel-plate capacitor begin with positive
+charges and end with negative charges. The magnitude of the
+electrical field in the space between the plates is in direct
+proportion to the amount of charge on the capacitor.
+Capacitorswithdifferentphysicalcharacteristics(suchasshapeandsizeoftheirplates)storedifferentamountsofcharge
+forthesameappliedvoltageVacrosstheirplates.ThecapacitanceCofacapacitorisdefinedastheratioofthemaximum
+chargeQthatcanbestoredinacapacitortotheappliedvoltageVacrossitsplates.Inotherwords,capacitanceisthelargest
+amount of charge per volt that can be stored on the device:
+Q (8.1)
+C= .
+V
+TheSIunitofcapacitanceisthefarad(F),namedafterMichaelFaraday(1791–1867).Sincecapacitanceisthechargeper
+unit voltage, one farad is one coulomb per one volt, or
+1C
+1F= .
+1V
+By definition, a 1.0-F capacitor is able to store 1.0 C of charge (a very large amount of charge) when the potential
+differencebetweenitsplatesisonly1.0V.Onefaradisthereforeaverylargecapacitance.Typicalcapacitancevaluesrange
+frompicofarads (1pF=10−12 F) tomillifarads (1mF=10 −3 F),whichalsoincludesmicrofarads(1µF=10 −6 F).
+Capacitors can be produced in various shapes and sizes (Figure 8.4).
+
+348 Chapter 8 | Capacitance
+Figure 8.4 These are some typical capacitors used in
+electronic devices. A capacitor’s size is not necessarily related to
+its capacitance value. (credit: Windell Oskay)
+Calculation of Capacitance
+We can calculate the capacitance of a pair of conductors with the standard approach that follows.
+Problem-Solving Strategy: Calculating Capacitance
+1. Assume that the capacitor has a chargeQ.
+→
+2. Determine the electrical field E between the conductors. If symmetry is present in the arrangement of
+conductors, you may be able to use Gauss’s law for this calculation.
+3. Find the potential difference between the conductors from
+B (8.2)
+→ →
+V B−V A=−∫ E ·d l ,
+A
+wherethepathofintegrationleadsfromoneconductortotheother.Themagnitudeofthepotentialdifference
+is then V =|V B−V
+A
+|.
+4. WithVknown, obtain the capacitance directly fromEquation 8.1.
+To show how this procedure works, we now calculate the capacitances of parallel-plate, spherical, and cylindrical
+capacitors.Inallcases,weassumevacuumcapacitors(emptycapacitors)withnodielectricsubstanceinthespacebetween
+conductors.
+Parallel-Plate Capacitor
+Theparallel-platecapacitor(Figure8.5)hastwoidenticalconductingplates,eachhavingasurfaceareaA,separatedbya
+distanced.WhenavoltageVisappliedtothecapacitor,itstoresachargeQ,asshown.Wecanseehowitscapacitancemay
+dependonAanddbyconsideringcharacteristicsoftheCoulombforce.Weknowthatforcebetweenthechargesincreases
+withchargevaluesanddecreaseswiththedistancebetweenthem.Weshouldexpectthatthebiggertheplatesare,themore
+charge they can store. Thus, C should be greater for a larger value of A. Similarly, the closer the plates are together, the
+greater the attraction of the opposite charges on them. Therefore,Cshould be greater for a smallerd.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 349
+Figure 8.5 In a parallel-plate capacitor with plates separated
+by a distanced, each plate has the same surface areaA.
+We define the surface charge density σ on the plates as
+Q
+σ = .
+A
+Weknowfrompreviouschaptersthatwhendissmall,theelectricalfieldbetweentheplatesisfairlyuniform(ignoringedge
+effects) and that its magnitude is given by
+σ
+E= ε ,
+0
+where the constant ε is the permittivity of free space, ε =8.85×10−12 F/m. The SI unit of F/m is equivalent to
+0 0
+→
+C2/N·m2. Since the electrical field E between the plates is uniform, the potential difference between the plates is
+σd Qd
+V =Ed = ε 0 = ε 0 A .
+ThereforeEquation 8.1gives the capacitance of a parallel-plate capacitor as
+Q Q A (8.3)
+C= = =ε .
+V Qd/ε A 0d
+0
+Noticefromthisequationthatcapacitanceisafunctiononlyofthegeometryandwhatmaterialfillsthespacebetweenthe
+plates(inthiscase,vacuum)ofthiscapacitor.Infact,thisistruenotonlyforaparallel-platecapacitor,butforallcapacitors:
+ThecapacitanceisindependentofQorV.Ifthechargechanges,thepotentialchangescorrespondinglysothatQ/Vremains
+constant.
+
+350 Chapter 8 | Capacitance
+Example 8.1
+Capacitance and Charge Stored in a Parallel-Plate Capacitor
+(a) What is the capacitance of an empty parallel-plate capacitor with metal plates that each have an area of
+1.00m2,separatedby1.00mm?(b)Howmuchchargeisstoredinthiscapacitorifavoltageof 3.00×10 3 V
+is applied to it?
+Strategy
+Finding the capacitance C is a straightforward application of Equation 8.3. Once we find C, we can find the
+charge stored by usingEquation 8.1.
+Solution
+a. Entering the given values intoEquation 8.3yields
+C=ε A = ⎛ 8.85×10−12 F⎞ 1.00m2 =8.85×10 −9 F=8.85nF.
+0d ⎝ m⎠ −3
+1.00×10 m
+This small capacitance value indicates how difficult it is to make a device with a large capacitance.
+b. InvertingEquation 8.1and entering the known values into this equation gives
+Q=CV =(8.85×10 −9 F)(3.00×10 3 V)=26.6µC.
+Significance
+This charge is only slightly greater than those found in typical static electricity applications. Since air breaks
+down(becomesconductive)atanelectricalfieldstrengthofabout3.0MV/m,nomorechargecanbestoredon
+this capacitor by increasing the voltage.
+Example 8.2
+A 1-F Parallel-Plate Capacitor
+Supposeyouwishtoconstructaparallel-platecapacitorwithacapacitanceof1.0F.Whatareamustyouusefor
+each plate if the plates are separated by 1.0 mm?
+Solution
+RearrangingEquation 8.3, we obtain
+−3
+A= C ε d = (1.0F)(1.0×10 m) =1.1×10 8 m2.
+0 8.85×10−12 F/m
+Each square plate would have to be 10 km across. It used to be a common prank to ask a student to go to the
+laboratory stockroom and request a 1-F parallel-plate capacitor, until stockroom attendants got tired of the joke.
+8.1 CheckYourUnderstandingThecapacitanceofaparallel-platecapacitoris2.0pF.Iftheareaofeach
+plate is 2.4cm2, what is the plate separation?
+8.2 Check Your UnderstandingVerify that σ/V and ε /d have the same physical units.
+0
+Spherical Capacitor
+Asphericalcapacitorisanothersetofconductorswhosecapacitancecanbeeasilydetermined(Figure8.6).Itconsistsof
+twoconcentricconductingsphericalshellsofradii R (innershell)and R (outershell).Theshellsaregivenequaland
+1 2
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

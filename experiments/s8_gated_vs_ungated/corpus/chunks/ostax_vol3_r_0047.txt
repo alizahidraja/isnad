@@ -1,0 +1,272 @@
+# REAL PDF — openstax_vol3.pdf, pages 281-287
+############################################################
+
+Chapter 6 | Photons and Matter Waves 273
+U n= − 4π 1 ε 0 e r n 2 = − 16π 1 2ε2 m ℏ e 2 e4 n 1 2 . (6.42)
+0
+The total energy of the electron is the sum ofEquation 6.41andEquation 6.42:
+m e4 (6.43)
+E n=K n+U n= − 1 e 1 .
+32π2ε2 ℏ2 n2
+0
+NotethattheenergydependsonlyontheindexnbecausetheremainingsymbolsinEquation6.43arephysicalconstants.
+The value of the constant factor inEquation 6.43is
+m e4 m e4 (6.44)
+E = 1 e = 1 e =2.17×10 −18 J=13.6eV.
+0 32π2ε2 ℏ2 8ε2 h2
+0 0
+It is convenient to express the electron’s energy in thenth orbit in terms of this energy, as
+E n=−E
+0 n
+1
+2
+. (6.45)
+Nowwecanseethattheelectronenergiesinthehydrogenatomarequantizedbecausetheycanhaveonlydiscretevaluesof
+−E , −E /4, −E /9, −E /16, ... givenbyEquation6.45,andnootherenergyvaluesareallowed.Thissetofallowed
+0 0 0 0
+electron energies is called the energy spectrum of hydrogen (Figure 6.17). The index n that enumerates energy levels
+inBohr’smodeliscalledtheenergyquantumnumber.Weidentifytheenergyoftheelectroninsidethehydrogenatom
+withtheenergyofthehydrogenatom.Notethatthesmallestvalueofenergyisobtainedfor n=1, sothehydrogenatom
+cannothaveenergysmallerthanthat.Thissmallestvalueoftheelectronenergyinthehydrogenatomiscalledtheground
+state energy of the hydrogen atomand its value is
+E =−E =−13.6eV. (6.46)
+1 0
+Thehydrogenatommayhaveotherenergiesthatarehigherthanthegroundstate.Thesehigherenergystatesareknownas
+excited energy states of a hydrogen atom.
+There is only one ground state, but there are infinitely many excited states because there are infinitely many values of n
+inEquation6.45.Wesaythattheelectronisinthe“firstexitedstate”whenitsenergyis E (when n=2),thesecond
+2
+excitedstatewhenitsenergyis E 3 (when n=3)and,ingeneral,inthenthexitedstatewhenitsenergyis E n+1 . There
+is no highest-of-all excited state; however, there is a limit to the sequence of excited states. If we keep increasing n in
+Equation 6.45,wefindthatthelimitis − lim E /n2=0. Inthislimit,theelectronisnolongerboundtothenucleus
+n→∞ 0
+butbecomesafreeelectron.Anelectronremainsboundinthehydrogenatomaslongasitsenergyisnegative.Anelectron
+thatorbitsthenucleusinthefirstBohrorbit,closesttothenucleus,isinthegroundstate,whereitsenergyhasthesmallest
+value.Inthegroundstate,theelectronismoststronglyboundtothenucleusanditsenergyisgivenbyEquation 6.46.
+Ifwewanttoremovethiselectronfromtheatom,wemustsupplyitwithenoughenergy, E ∞, toatleastbalanceoutits
+ground state energy E :
+1
+E ∞+E
+1
+=0⇒E ∞=−E
+1
+=−(−E
+0
+)=E
+0
+=13.6eV. (6.47)
+Theenergythatisneededtoremovetheelectronfromtheatomiscalledtheionizationenergy.Theionizationenergy E
+∞
+that is needed to remove the electron from the first Bohr orbit is called the ionization limit of the hydrogen atom. The
+ionization limit inEquation 6.47that we obtain in Bohr’s model agrees with experimental value.
+
+274 Chapter 6 | Photons and Matter Waves
+Figure 6.17 The energy spectrum of the hydrogen atom.
+Energy levels (horizontal lines) represent the bound states of an
+electron in the atom. There is only one ground state, n=1,
+and infinite quantized excited states. The states are enumerated
+by the quantum number n=1, 2, 3, 4, .... Vertical lines
+illustrate the allowed electron transitions between the states.
+Downward arrows illustrate transitions with an emission of a
+photon with a wavelength in the indicated spectral band.
+Spectral Emission Lines of Hydrogen
+Toobtainthewavelengthsoftheemittedradiationwhenanelectronmakesatransitionfromthenthorbittothemthorbit,
+we use the second of Bohr’s quantization conditions and Equation 6.45 for energies. The emission of energy from the
+atomcanoccuronlywhenanelectronmakesatransitionfromanexcitedstatetoalower-energystate.Inthecourseofsuch
+a transition, the emitted photon carries away the difference of energies between the states involved in the transition. The
+transitioncannotgointheotherdirectionbecausetheenergyofaphotoncannotbenegative,whichmeansthatforemission
+we must have E n>E
+m
+and n>m. Therefore, the third of Bohr’s postulates gives
+⎛ ⎞ (6.48)
+hf = |E n−E m | =E n−E m=−E 0 n 1 2 +E 0 m 1 2 =E 0⎝ m 1 2 − n 1 2⎠ .
+Nowweexpressthephoton’senergyintermsofitswavelength, hf =hc/λ, anddividebothsidesofEquation6.48by
+hc. The result is
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 275
+E ⎛ ⎞ (6.49)
+1 = 0 1 − 1 .
+λ hc⎝ m2 n2⎠
+The value of the constant in this equation is
+E (6.50)
+0 = 13.6eV =1.097×10 7 1 .
+hc −15 8 m
+(4.136×10 eV·s)(2.997×10 m/s)
+ThisvalueisexactlytheRydbergconstant R intheRydbergheuristicformulaEquation6.32.Infact,Equation6.49
+H
+isidenticaltotheRydbergformula,becauseforagivenm,wehave n=m+1, m+2, .... Inthisway,theBohrquantum
+modelofthehydrogenatomallowsustoderivetheexperimentalRydbergconstantfromfirstprinciplesandtoexpressitin
+terms of fundamental constants. Transitions between the allowed electron orbits are illustrated inFigure 6.17.
+We can repeat the same steps that led to Equation 6.49 to obtain the wavelength of the absorbed radiation; this again
+gives Equation 6.49 but this time for the positions of absorption lines in the absorption spectrum of hydrogen. The
+onlydifferenceisthatforabsorption,thequantumnumbermistheindexoftheorbitoccupiedbytheelectronbeforethe
+transition(lower-energyorbit)andthequantumnumbernistheindexoftheorbittowhichtheelectronmakesthetransition
+(higher-energyorbit).Thedifferencebetweentheelectronenergiesinthesetwoorbitsistheenergyoftheabsorbedphoton.
+Example 6.10
+Size and Ionization Energy of the Hydrogen Atom in an Excited State
+Ifahydrogenatominthegroundstateabsorbsa93.7-nmphoton,correspondingtoatransitionlineintheLyman
+series,howdoesthisaffecttheatom’senergyandsize?Howmuchenergyisneededtoionizetheatomwhenitis
+in this excited state? Give your answers in absolute units, and relative to the ground state.
+Strategy
+Beforetheabsorption,theatomisinitsgroundstate.Thismeansthattheelectrontransitiontakesplacefromthe
+orbit m=1 tosomehighernthorbit.First,wemustdetermine n fortheabsorbedwavelength λ=93.7nm.
+Then,wecanuseEquation 6.45tofindtheenergy E n oftheexcitedstateanditsionizationenergy E ∞,n,
+anduseEquation6.40tofindtheradius r oftheatomintheexcitedstate.Toestimaten,weuseEquation
+n
+6.49.
+Solution
+Substitute m=1 and λ=93.7nm in Equation 6.49 and solve for n. You should not expect to obtain a
+perfect integer answer because of rounding errors, but your answer will be close to an integer, and you can
+estimatenby taking the integral part of your answer:
+⎛ ⎞
+1 =R 1 − 1 ⇒n= 1 = 1 =6.07⇒n=6.
+λ H⎝ 12 n2⎠ 1− 1 1− 1
+λR H (93.7×10 −9 m)(1.097×10 7 m −1 )
+The radius of the n=6 orbit is
+r n=a
+0
+n2=a
+0
+62=36a
+0
+=36(0.529×10 −10 m)=19.04×10 −10 m≅19.0Å.
+Thus,afterabsorbingthe93.7-nmphoton,thesizeofthehydrogenatomintheexcited n=6 stateis36times
+largerthanbeforetheabsorption,whentheatomwasinthegroundstate.Theenergyofthefifthexcitedstate(
+n=6) is:
+E E E
+E n= − 0 = − 0 = − 0 = − 13.6eV ≅ −0.378eV.
+n2 62 36 36
+Afterabsorbingthe93.7-nmphoton,theenergyofthehydrogenatomislargerthanitwasbeforetheabsorption.
+Ionizationoftheatomwhenitisinthefifthexcitedstate(n=6)requites36timeslessenergythanisneeded
+when the atom is in the ground state:
+E =−E =−(−0.378eV)=0.378eV.
+∞,6 6
+
+276 Chapter 6 | Photons and Matter Waves
+Significance
+We can analyze any spectral line in the spectrum of hydrogen in the same way. Thus, the experimental
+measurements of spectral lines provide us with information about the atomic structure of the hydrogen atom.
+6.10 Check Your Understanding When an electron in a hydrogen atom is in the first excited state, what
+predictiondoestheBohrmodelgiveaboutitsorbitalspeedandkineticenergy?Whatisthemagnitudeofits
+orbital angular momentum?
+Bohr’s model of the hydrogen atom also correctly predicts the spectra of some hydrogen-like ions. Hydrogen-like ions
+are atoms of elements with an atomic number Z larger than one (Z =1 for hydrogen) but with all electrons removed
+exceptone.Forexample,anelectricallyneutralheliumatomhasanatomicnumber Z =2. Thismeansithastwoelectrons
+orbitingthenucleuswithachargeof q= +Ze. Whenoneoftheorbitingelectronsisremovedfromtheheliumatom(we
+say,whentheheliumatomissinglyionized),whatremainsisahydrogen-likeatomicstructurewheretheremainingelectron
+orbitsthenucleuswithachargeof q= +Ze. ThistypeofsituationisdescribedbytheBohrmodel.Assumingthatthe
+chargeofthenucleusisnot +e but +Ze, wecanrepeatallsteps,beginningwithEquation 6.36,toobtaintheresults
+for a hydrogen-like ion:
+r n= a
+Z
+0n2 (6.51)
+where a is the Bohr orbit of hydrogen, and
+0
+E n=−Z2E
+0 n
+1
+2
+(6.52)
+where E is the ionization limit of a hydrogen atom. These equations are good approximations as long as the atomic
+0
+numberZis not too large.
+TheBohrmodelisimportantbecauseitwasthefirstmodeltopostulatethequantizationofelectronorbitsinatoms.Thus,
+itrepresentsanearlyquantumtheorythatgaveastarttodevelopingmodernquantumtheory.Itintroducedtheconceptof
+a quantum number to describe atomic states. The limitation of the early quantum theory is that it cannot describe atoms
+inwhichthenumberofelectronsorbitingthenucleusislargerthanone.TheBohrmodelofhydrogenisasemi-classical
+modelbecause itcombines theclassical conceptofelectron orbitswiththenewconceptofquantization. Theremarkable
+success of this model prompted many physicists to seek an explanation for why such a model should work at all, and to
+seekanunderstandingofthephysicsbehindthepostulatesofearlyquantumtheory.Thissearchbroughtabouttheonsetof
+an entirely new concept of “matter waves.”
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 277
+6.5 | De Broglie’s Matter Waves
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe de Broglie’s hypothesis of matter waves
+• Explain how the de Broglie’s hypothesis gives the rationale for the quantization of angular
+momentum in Bohr’s quantum theory of the hydrogen atom
+• Describe the Davisson–Germer experiment
+• Interpret de Broglie’s idea of matter waves and how they account for electron diffraction
+phenomena
+Compton’s formula established that an electromagnetic wave can behave like a particle of light when interacting with
+matter. In 1924, Louis de Broglie proposed a new speculative hypothesis that electrons and other particles of matter
+can behave like waves. Today, this idea is known as de Broglie’s hypothesis of matter waves. In 1926, De Broglie’s
+hypothesis, together with Bohr’s early quantum theory, led to the development of a new theory of wave quantum
+mechanics to describe the physics of atoms and subatomic particles. Quantum mechanics has paved the way for new
+engineeringinventionsandtechnologies,suchasthelaserandmagneticresonanceimaging(MRI).Thesenewtechnologies
+drive discoveries in other sciences such as biology and chemistry.
+According to de Broglie’s hypothesis, massless photons as well as massive particles must satisfy one common set of
+relations that connect the energy E with the frequency f, and the linear momentum p with the wavelength λ. We have
+discussed these relations for photons in the context of Compton’s effect. We are recalling them now in a more general
+context. Any particle that has energy and momentum is ade Broglie waveof frequencyfand wavelength λ:
+E=hf (6.53)
+h (6.54)
+λ= p.
+Here,Eandpare,respectively,therelativisticenergyandthemomentumofaparticle.DeBroglie’srelationsareusually
+→
+expressedintermsofthewavevector k , k=2π/λ, andthewavefrequency ω=2πf, asweusuallydoforwaves:
+E=ℏω (6.55)
+→ → (6.56)
+p =ℏ k .
+Wave theory tells us that a wave carries its energy with the group velocity. For matter waves, this group velocity is the
+velocityuoftheparticle.IdentifyingtheenergyEandmomentumpofaparticlewithitsrelativisticenergy mc2 andits
+relativisticmomentummu,respectively,itfollowsfromdeBroglierelationsthatmatterwavessatisfythefollowingrelation:
+λf = ω k = E p/ / ℏ ℏ = E p = m m c u 2 = c u 2 = β c (6.57)
+where β=u/c. When a particle is massless we have u=c andEquation 6.57becomes λf =c.
+
+278 Chapter 6 | Photons and Matter Waves
+Example 6.11
+How Long Are de Broglie Matter Waves?
+CalculatethedeBrogliewavelengthof:(a)a0.65-kgbasketballthrownataspeedof10m/s,(b)anonrelativistic
+electron with a kinetic energy of 1.0 eV, and (c) a relativistic electron with a kinetic energy of 108keV.
+Strategy
+WeuseEquation 6.57tofindthedeBrogliewavelength.Whentheprobleminvolvesanonrelativistic object
+movingwithanonrelativisticspeedu,suchasin(a)when β=u/c≪1, weusenonrelativisticmomentump.
+When the nonrelativistic approximation cannot be used, such as in (c), we must use the relativistic momentum
+p=mu=m γu=E γβ, where the rest mass energy of a particle is E =m c2 and γ is the Lorentz
+0 0 0 0
+factor γ =1/ 1−β2. The total energy E of a particle is given by Equation 6.53 and the kinetic energy
+is K =E−E =(γ−1)E . When the kinetic energy is known, we can invert Equation 6.18 to find the
+0 0
+momentum p= (E2−E2)/c2= K(K+2E )/c and substitute inEquation 6.57to obtain
+0 0
+h hc (6.58)
+λ= p = .
+K(K+2E )
+0
+Depending on the problem at hand, in this equation we can use the following values for hc:
+hc=(6.626×10 −34 J·s)(2.998×10 8 m/s)=1.986×10 −25 J·m=1.241eV·µm
+Solution
+a. For the basketball, the kinetic energy is
+K =m u2/2=(0.65kg)(10m/s)2/2=32.5J
+0
+and the rest mass energy is
+E =m c2=(0.65kg)(2.998×10 8 m/s)2=5.84×10 16 J.
+0 0
+We see that K/(K+E )≪1and usep=m u=(0.65kg)(10m/s)=6.5J·s/m:
+0 0
+λ= h p = 6.626×10 −34 J·s =1.02×10 −34 m.
+6.5J·s/m
+b. For the nonrelativistic electron,
+E =m c2=(9.109×10 −31 kg)(2.998×10 8 m/s)2=511keV
+0 0
+and when K =1.0eV, we have K/(K+E )=(1/512)×10 −3 ≪1, so we can use the
+0
+nonrelativistic formula. However, it is simpler here to useEquation 6.58:
+h hc 1.241eV·µm
+λ= p = = =1.23nm.
+K(K+2E ) (1.0eV)[1.0eV+2(511keV)]
+0
+Ifweusenonrelativisticmomentum,weobtainthesameresultbecause1eVismuchsmallerthantherest
+mass of the electron.
+c. Forafastelectronwith K =108keV, relativisticeffectscannotbeneglectedbecauseitstotalenergyis
+E=K+E =108keV+511keV=619keV and K/E=108/619 is not negligible:
+0
+h hc 1.241eV·µm
+λ= p = = =3.55pm.
+K(K+2E ) 108keV[108keV+2(511keV)]
+0
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

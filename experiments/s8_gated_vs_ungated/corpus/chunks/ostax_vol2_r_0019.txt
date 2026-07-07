@@ -1,0 +1,236 @@
+# REAL PDF — openstax_vol2.pdf, pages 106-111
+############################################################
+
+96 Chapter 2 | The Kinetic Theory of Gases
+With only a relatively small number of molecules, the distribution of speeds fluctuates around the Maxwell-
+Boltzmann distribution. However, you can view this simulation (https://openstaxcollege.org/l/
+21maxboltzdisim) toseetheessentialfeaturesthatmoremassivemoleculesmoveslowerandhaveanarrower
+distribution.Usetheset-up“2Gases,RandomSpeeds”.Notethedisplayatthebottomcomparinghistogramsof
+the speed distributions with the theoretical curves.
+We can use a probability distribution to calculate average values by multiplying the distribution function by the quantity
+tobeaveragedandintegratingtheproductoverallpossiblespeeds.(Thisisanalogoustocalculatingaveragesofdiscrete
+distributions, whereyoumultiply eachvaluebythenumberoftimes itoccurs,addtheresults,anddividebythenumber
+ofvalues.Theintegralisanalogoustothefirsttwosteps,andthenormalizationisanalogoustodividingbythenumberof
+values.) Thus the average velocity is
+∞ (2.16)
+v ¯ = ⌠ vf(v)dv= π 8 k B m T = π 8 R M T .
+⌡
+0
+Similarly,
+v rms= v – 2= ∫ ∞ v2f(v)dv= 3k m B T = 3 M RT
+0
+as in Pressure, Temperature, and RMS Speed. The most probable speed, also called the peak speed v p, is the
+speedatthepeakofthevelocitydistribution.(Instatisticsitwouldbecalledthemode.)Itislessthanthermsspeedv rms.
+Themostprobablespeedcanbecalculatedbythemorefamiliarmethodofsettingthederivativeofthedistributionfunction,
+with respect tov, equal to 0. The result is
+v p= 2k m B T = 2 M RT , (2.17)
+which is less than v rms. In fact, the rms speed is greater than both the most probable speed and the average speed.
+The peak speed provides a sometimes more convenient way to write the Maxwell-Boltzmann distribution function:
+f(v)=
+4v2
+e
+−v2 /v2
+p
+(2.18)
+πv3
+p
+In the factor e
+−mv2 /2k
+B
+T
+, it is easy to recognize the translational kinetic energy. Thus, that expression is equal to
+e
+−K/k
+B
+T
+. Thedistributionf(v)canbetransformedintoakineticenergydistributionbyrequiringthat f(K)dK = f(v)dv.
+Boltzmann showed that the resulting formula is much more generally applicable if we replace the kinetic energy of
+translation with the total mechanical energyE. Boltzmann’s result is
+f(E)= 2 (k T) −3/2 Ee −E/k B T = 2 E .
+π B π(k B T) 3/2 e E/k B T
+Thefirstpartofthisequation,withthenegativeexponential,istheusualwaytowriteit.Wegivethesecondpartonlyto
+remark that e
+E/k
+B
+T
+in the denominator is ubiquitous in quantum as well as classical statistical mechanics.
+Problem-Solving Strategy: Speed Distribution
+Step 1.Examine the situation to determine that it relates to the distribution of molecular speeds.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 97
+Step 2. Make a list of what quantities are given or can be inferred from the problem as stated (identify the known
+quantities).
+Step3.Identifyexactlywhatneedstobedeterminedintheproblem(identifytheunknownquantities).Awrittenlist
+is useful.
+Step4.ConvertknownvaluesintoproperSIunits(Kfortemperature,Paforpressure, m 3 forvolume,moleculesfor
+N,andmolesforn).Inmanycases,though,usingRandthemolarmasswillbemoreconvenientthanusing k and
+B
+the molecular mass.
+Step5.Determinewhetheryouneedthedistributionfunctionforvelocityortheoneforenergy,andwhetheryouare
+usingaformulaforoneofthecharacteristicspeeds(average,mostprobably,orrms),findingaratioofvaluesofthe
+distribution function, or approximating an integral.
+Step6.Solvetheappropriateequationfortheidealgaslawforthequantitytobedetermined(theunknownquantity).
+Note that if you are taking a ratio of values of the distribution function, the normalization factors divide out. Or if
+approximating an integral, use the method asked for in the problem.
+Step 7. Substitute the known quantities, along with their units, into the appropriate equation and obtain numerical
+solutions complete with units.
+WecannowgainaqualitativeunderstandingofapuzzleaboutthecompositionofEarth’satmosphere.Hydrogenisbyfar
+themostcommonelementintheuniverse,andheliumisbyfarthesecond-mostcommon.Moreover,heliumisconstantly
+produced on Earth by radioactive decay. Why are those elements so rare in our atmosphere? The answer is that gas
+molecules that reach speeds above Earth’s escape velocity, about 11 km/s, can escape from the atmosphere into space.
+Becauseofthelowermassofhydrogenandheliummolecules,theymoveathigherspeedsthanothergasmolecules,suchas
+nitrogenandoxygen.Onlyafewexceedescapevelocity,butfarfewerheaviermoleculesdo.Thus,overthebillionsofyears
+thatEarthhasexisted,farmorehydrogenandheliummoleculeshaveescapedfromtheatmospherethanothermolecules,
+and hardly any of either is now present.
+We can also now take another look at evaporative cooling, which we discussed in the chapter on temperature and heat.
+Liquids,likegases,haveadistributionofmolecularenergies.Thehighest-energymoleculesarethosethatcanescapefrom
+the intermolecular attractions of the liquid. Thus, when some liquid evaporates, the molecules left behind have a lower
+average energy, and the liquid has a lower temperature.
+
+98 Chapter 2 | The Kinetic Theory of Gases
+CHAPTER 2 REVIEW
+KEY TERMS
+Avogadro’s number N , the number of molecules in one mole of a substance; N =6.02×10 23 particles/mole
+A A
+Boltzmann constant k , a physical constant that relates energy to temperature and appears in the ideal gas law;
+B
+k =1.38×10 −23 J/K
+B
+critical temperature T at which the isotherm has a point with zero slope
+c
+Dalton’s law of partial pressures physical law that states that the total pressure of a gas is the sum of partial
+pressures of the component gases
+degree of freedom independentkindofmotionpossessingenergy,suchasthekineticenergyofmotioninoneofthe
+three orthogonal spatial directions
+equipartition theorem theorem that the energy of a classical thermodynamic system is shared equally among its
+degrees of freedom
+ideal gas gas at the limit of low density and high temperature
+ideal gas law physical law that relates the pressure and volume of a gas, far from liquefaction, to the number of gas
+molecules or number of moles of gas and the temperature of the gas
+internal energy sum of the mechanical energies of all of the molecules in it
+kinetic theory of gases theorythatderivesthemacroscopicpropertiesofgasesfromthemotionofthemoleculesthey
+consist of
+Maxwell-Boltzmann distribution functionthatcanbeintegratedtogivetheprobabilityoffindingidealgasmolecules
+with speeds in the range between the limits of integration
+mean free path average distance between collisions of a particle
+mean free time average time between collisions of a particle
+mole quantity of a substance whose mass (in grams) is equal to its molecular mass
+most probable speed speed near which the speeds of most molecules are found, the peak of the speed distribution
+function
+partial pressure pressure a gas would create if it occupied the total volume of space available
+peak speed same as “most probable speed”
+pVdiagram graph of pressure vs. volume
+root-mean-square (rms) speed square root of the average of the square (of a quantity)
+supercritical condition of a fluid being at such a high temperature and pressure that the liquid phase cannot exist
+universal gas constant R, the constant that appears in the ideal gas law expressed in terms of moles, given by
+R=N
+A
+k
+B
+van der Waals equation of state equation,typicallyapproximate,whichrelatesthepressureandvolumeofagasto
+the number of gas molecules or number of moles of gas and the temperature of the gas
+vapor pressure partial pressure of a vapor at which it is in equilibrium with the liquid (or solid, in the case of
+sublimation) phase of the same substance
+KEY EQUATIONS
+Ideal gas law in terms of molecules pV =Nk T
+B
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 99
+Ideal gas law ratios if the amount of gas is constant p V p V
+1 1 = 2 2
+T T
+1 2
+Ideal gas law in terms of moles pV =nRT
+Van der Waals equation ⎡ 2⎤
+⎛n⎞
+⎢p+a ⎥(V−nb)=nRT
+⎝V⎠
+⎣ ⎦
+Pressure, volume, and molecular speed –
+pV = 1Nmv2
+3
+Root-mean-square speed v rms= 3 M RT = 3k m B T
+Mean free path λ= V = k B T
+4 2πr2N 4 2πr2p
+Mean free time k T
+τ= B
+4 2πr2pv rms
+The following two equations apply only to a monatomic ideal gas:
+Average kinetic energy of a molecule K – = 3k T
+2 B
+Internal energy E = 3Nk T.
+int 2 B
+Heat in terms of molar heat capacity at constant volume Q=nC VΔT
+Molar heat capacity at constant volume for an ideal gas withd d
+C V = R
+degrees of freedom 2
+Maxwell–Boltzmann speed distribution f(v)= 4 ⎛ m ⎞ 3/2 v2e −mv2 /2k B T
+π⎝2k T⎠
+B
+Average velocity of a molecule v ¯ = π 8 k B m T = π 8 R M T
+Peak velocity of a molecule v p= 2k m B T = 2 M RT
+SUMMARY
+2.1Molecular Model of an Ideal Gas
+• Theidealgaslawrelatesthepressureandvolumeofagastothenumberofgasmoleculesandthetemperatureof
+the gas.
+• Amoleofanysubstancehasanumberofmoleculesequaltothenumberofatomsina12-gsampleofcarbon-12.
+The number of molecules in a mole is called Avogadro’s number N ,
+A
+N =6.02×10 23 mol−1.
+A
+• Amoleofanysubstancehasamassingramsnumericallyequaltoitsmolecularmassinunifiedmassunits,which
+canbedeterminedfromtheperiodictableofelements.Theidealgaslawcanalsobewrittenandsolvedintermsof
+the number of moles of gas:
+pV =nRT,
+
+100 Chapter 2 | The Kinetic Theory of Gases
+wherenis the number of moles andRis the universal gas constant,
+R=8.31J/mol·K.
+• The ideal gas law is generally valid at temperatures well above the boiling temperature.
+• The van der Waals equation of state for gases is valid closer to the boiling point than the ideal gas law.
+• Abovethecriticaltemperatureandpressureforagivensubstance,theliquidphasedoesnotexist,andthesampleis
+“supercritical.”
+2.2Pressure, Temperature, and RMS Speed
+• Kinetictheoryistheatomicdescriptionofgasesaswellasliquidsandsolids.Itmodelsthepropertiesofmatterin
+terms of continuous random motion of molecules.
+–
+• The ideal gas law can be expressed in terms of the mass of the gas’s molecules and v2, the average of the
+molecular speed squared, instead of the temperature.
+• Thetemperatureofgasesisproportionaltotheaveragetranslationalkineticenergyofmolecules.Hence,thetypical
+speedofgasmolecules v isproportionaltothesquarerootofthetemperatureandinverselyproportionaltothe
+rms
+square root of the molecular mass.
+• Inamixtureofgases,eachgasexertsapressureequaltothetotalpressuretimesthefractionofthemixturethatthe
+gas makes up.
+• The mean free path (the average distance between collisions) and the mean free time of gas molecules are
+proportionaltothetemperatureandinverselyproportionaltothemolardensityandthemolecules’cross-sectional
+area.
+2.3Heat Capacity and Equipartition of Energy
+• Every degree of freedom of an ideal gas contributes 1k T per atom or molecule to its changes in internal energy.
+2 B
+• Every degree of freedom contributes 1R to its molar heat capacity at constant volume C V.
+2
+• Degreesoffreedomdonotcontributeifthetemperatureistoolowtoexcitetheminimumenergyofthedegreeof
+freedomasgivenbyquantummechanics.Therefore,atordinarytemperatures, d =3 formonatomicgases, d =5
+for diatomic gases, and d ≈6 for polyatomic gases.
+2.4Distribution of Molecular Speeds
+• The motion of individual molecules in a gas is random in magnitude and direction. However, a gas of many
+molecules has a predictable distribution of molecular speeds, known as the Maxwell-Boltzmann distribution.
+• TheaverageandmostprobablevelocitiesofmoleculeshavingtheMaxwell-Boltzmannspeeddistribution,aswell
+as the rms velocity, can be calculated from the temperature and molecular mass.
+CONCEPTUAL QUESTIONS
+3. A constant-volume gas thermometer contains a fixed
+2.1Molecular Model of an Ideal Gas amount of gas. What property of the gas is measured to
+indicate its temperature?
+1. Two H molecules can react with one O molecule
+2 2
+to produce two H O molecules. How many moles of
+2 4. Inflate a balloon at room temperature. Leave the
+hydrogen molecules are needed to react with one mole of inflatedballoonintherefrigeratorovernight.Whathappens
+oxygen molecules? to the balloon, and why?
+2. Under what circumstances would you expect a gas to 5. Inthelastchapter,freeconvectionwasexplainedasthe
+behavesignificantlydifferentlythanpredictedbytheideal result ofbuoyant forces onhotfluids. Explain the upward
+gas law? motion of air in flames based on the ideal gas law.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

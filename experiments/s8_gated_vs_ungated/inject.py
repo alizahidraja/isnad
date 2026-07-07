@@ -146,7 +146,7 @@ def main() -> None:
     print(f"Loaded {len(claims)} claims")
 
     # Seed from config (hardcoded for now; in production, read config.yaml)
-    for seed in [1, 2, 3, 4, 5]:
+    for seed in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
         rng = random.Random(seed * 12345)
         enriched, gt = assign_narrators(claims, rng)
 

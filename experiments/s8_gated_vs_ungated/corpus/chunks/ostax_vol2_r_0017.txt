@@ -1,0 +1,254 @@
+# REAL PDF — openstax_vol2.pdf, pages 93-99
+############################################################
+
+Chapter 2 | The Kinetic Theory of Gases 83
+K – = 3k T = 3 (1.38×10 −23 J/K)(293K)=6.07×10−21 J.
+2 B 2
+b. Substituting this mass and the value for k into the equation for v yields
+B rms
+v rms= 3k m B T = 3(1.38×10 −23
+−
+J
+2
+/K
+6
+)(293K) =511m/s.
+4.65×10 kg
+Significance
+Note that the average kinetic energy of the molecule is independent of the type of molecule. The average
+translationalkineticenergydependsonlyonabsolutetemperature.Thekineticenergyisverysmallcomparedto
+macroscopic energies, so that we do not feel when an air molecule is hitting our skin. On the other hand, it is
+muchgreaterthanthetypicaldifferenceingravitationalpotentialenergywhenamoleculemovesfrom,say,the
+top to the bottom of a room, so our neglect of gravitation is justified in typical real-world situations. The rms
+speedofthenitrogenmoleculeissurprisinglylarge.Theselargemolecularvelocities donotyieldmacroscopic
+movement of air, since the molecules move in all directions with equal likelihood. The mean free path (the
+distanceamoleculemovesonaveragebetweencollisions,discussedabitlaterinthissection)ofmoleculesinair
+isverysmall,sothemoleculesmoverapidlybutdonotgetveryfarinasecond.Thehighvalueforrmsspeed
+is reflected in the speed of sound, which is about 340 m/s at room temperature. The higher the rms speed of
+airmolecules,thefastersoundvibrationscanbetransferredthroughtheair.Thespeedofsoundincreaseswith
+temperature and is greater in gases with small molecular masses, such as helium (seeFigure 2.11).
+Figure 2.11 (a) In an ordinary gas, so many molecules move so fast that they collide
+billions of times every second. (b) Individual molecules do not move very far in a
+small amount of time, but disturbances like sound waves are transmitted at speeds
+related to the molecular speeds.
+Example 2.5
+Calculating Temperature: Escape Velocity of Helium Atoms
+ToescapeEarth’sgravity,anobjectnearthetopoftheatmosphere(atanaltitudeof100km)musttravelaway
+fromEarthat11.1km/s.Thisspeediscalledtheescapevelocity.Atwhattemperaturewouldheliumatomshave
+an rms speed equal to the escape velocity?
+Strategy
+Identify the knowns and unknowns and determine which equations to use to solve the problem.
+Solution
+1. Identify the knowns:vis the escape velocity, 11.1 km/s.
+
+84 Chapter 2 | The Kinetic Theory of Gases
+2. Identifytheunknowns:Weneedtosolvefortemperature,T.Wealsoneedtosolveforthemassmofthe
+helium atom.
+3. Determine which equations are needed.
+◦ To get the massmof the helium atom, we can use information from the periodic table:
+M
+m= .
+N
+A
+◦ To solve for temperatureT, we can rearrange
+–
+1mv2= 3k T
+2 2 B
+to yield
+–
+mv2
+T = .
+3k
+B
+4. Substitute the known values into the equations and solve for the unknowns,
+−3
+m= M = 4.0026×10 kg/mol =6.65×10 −27 kg
+N A 6.02×10 23 mol
+and
+2
+−27 ⎞⎛ 3 ⎞
+(6.65×10 kg 11.1×10 m/s
+T = ⎠⎝ ⎠ =1.98×104 K.
+−23
+3(1.38×10 J/K)
+Significance
+This temperature is much higher than atmospheric temperature, which is approximately 250 K
+(−25°C or −10°F⎞ athighelevation.Veryfewheliumatomsareleftintheatmosphere,butmanywerepresent
+⎠
+whenthe atmosphere wasformed, andmore are always being created byradioactive decay (see the chapter on
+nuclear physics). The reason for the loss of helium atoms is that a small number of helium atoms have speeds
+higherthanEarth’sescapevelocityevenatnormaltemperatures.Thespeedofaheliumatomchangesfromone
+collisiontothenext,sothatatanyinstant,thereisasmallbutnonzerochancethattheatom’sspeedisgreaterthan
+theescapevelocity.ThechanceishighenoughthatoverthelifetimeofEarth,almostalltheheliumatomsthat
+havebeenintheatmospherehavereachedescapevelocityathighaltitudesandescapedfromEarth’sgravitational
+pull. Heavier molecules, such as oxygen, nitrogen, and water, have smaller rms speeds, and so it is much less
+likelythatanyofthemwillhavespeedsgreaterthantheescapevelocity.Infact,thelikelihoodissosmallthat
+billionsofyearsarerequiredtolosesignificantamountsofheaviermoleculesfromtheatmosphere.Figure2.12
+shows the effect of a lack of an atmosphere on the Moon. Because the gravitational pull of the Moon is much
+weaker,ithaslostalmostitsentireatmosphere.TheatmospheresofEarthandotherbodiesarecomparedinthis
+chapter’s exercises.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 85
+Figure 2.12 This photograph of Apollo 17 Commander
+Eugene Cernan driving the lunar rover on the Moon in 1972
+looks as though it was taken at night with a large spotlight. In
+fact, the light is coming from the Sun. Because the acceleration
+due to gravity on the Moon is so low (about 1/6 that of Earth),
+the Moon’s escape velocity is much smaller. As a result, gas
+molecules escape very easily from the Moon, leaving it with
+virtually no atmosphere. Even during the daytime, the sky is
+black because there is no gas to scatter sunlight. (credit:
+Harrison H. Schmitt/NASA)
+2.4 CheckYourUnderstandingIfyouconsideraverysmallobject,suchasagrainofpollen,inagas,then
+the number of molecules striking its surface would also be relatively small. Would you expect the grain of
+pollentoexperienceanyfluctuationsinpressureduetostatisticalfluctuationsinthenumberofgasmolecules
+striking it in a given amount of time?
+Vapor Pressure, Partial Pressure, and Dalton’s Law
+Thepressureagaswouldcreateifitoccupiedthetotalvolumeavailableiscalledthegas’spartialpressure.Iftwoormore
+gasesaremixed,theywillcometothermalequilibriumasaresultofcollisionsbetweenmolecules;theprocessisanalogous
+to heat conduction as described in the chapter on temperature and heat. As we have seen from kinetic theory, when the
+gases have the same temperature, their molecules have the same average kinetic energy. Thus, each gas obeys the ideal
+gaslawseparately andexertsthesamepressureonthewallsofacontainer thatitwouldifitwerealone.Therefore,ina
+mixtureofgases,thetotalpressureisthesumofpartialpressuresofthecomponentgases,assumingidealgasbehaviorand
+nochemicalreactionsbetweenthecomponents.ThislawisknownasDalton’slawofpartialpressures,aftertheEnglish
+scientistJohnDalton(1766–1844)whoproposedit.Dalton’slawisconsistentwiththefactthatpressuresaddaccordingto
+Pascal’s principle.
+Inamixtureofidealgasesinthermalequilibrium,thenumberofmoleculesofeachgasisproportionaltoitspartialpressure.
+This result follows from applying the ideal gas law to each in the form p/n=RT/V. Because the right-hand side is the
+same for any gas at a given temperature in a container of a given volume, the left-hand side is the same as well.
+• Partial pressure is the pressure a gas would create if it existed alone.
+• Dalton’s law states that the total pressure is the sum of the partial pressures of all of the gases present.
+p p
+• For any two gases (labeled 1 and 2) in equilibrium in a container, n 1 = n 2.
+1 2
+
+86 Chapter 2 | The Kinetic Theory of Gases
+Animportantapplicationofpartialpressureisthat,inchemistry,itfunctionsastheconcentrationofagasindeterminingthe
+rateofareaction.Here,wementiononlythatthepartialpressureofoxygeninaperson’slungsiscrucialtolifeandhealth.
+Breathing air that has a partial pressure of oxygen below 0.16 atm can impair coordination and judgment, particularly in
+peoplenotacclimatedtoahighelevation.Lowerpartialpressuresof O havemoreseriouseffects;partialpressuresbelow
+2
+0.06 atm can be quickly fatal, and permanent damage is likely even if the person is rescued. However, the sensation of
+needing to breathe, as when holding one’s breath, is caused much more by high concentrations of carbon dioxide in the
+bloodthanbylowconcentrationsofoxygen.Thus,ifasmallroomorclosetisfilledwithairhavingalowconcentrationof
+oxygen,perhapsbecausealeakingcylinderofsomecompressedgasisstoredthere,apersonwillnotfeelany“choking”
+sensation and may go into convulsions or lose consciousness without noticing anything wrong. Safety engineers give
+considerable attention to this danger.
+Anotherimportantapplicationofpartialpressureisvaporpressure,whichisthepartialpressureofavaporatwhichitis
+in equilibrium with the liquid (orsolid, in the case ofsublimation) phase ofthe same substance. At any temperature, the
+partialpressureofthewaterintheaircannotexceedthevaporpressureofthewateratthattemperature,becausewhenever
+thepartialpressurereachesthevaporpressure,watercondensesoutoftheair.Dewisanexampleofthiscondensation.The
+temperatureatwhichcondensationoccursforasampleofairiscalledthedewpoint.Itiseasilymeasuredbyslowlycooling
+a metal ball; the dew point is the temperature at which condensation first appears on the ball.
+The vapor pressures of water at some temperatures of interest for meteorology are given inTable 2.2.
+T (°C) Vapor Pressure (Pa)
+0 610.5
+3 757.9
+5 872.3
+8 1073
+10 1228
+13 1497
+15 1705
+18 2063
+20 2338
+23 2809
+25 3167
+30 4243
+35 5623
+40 7376
+Table 2.2Vapor Pressure of Water at
+Various Temperatures
+Therelative humidity(R.H.) at a temperatureTis defined by
+Partial pressure of water vapor atT
+R.H.= ×100%.
+Vapor pressure of water atT
+Arelativehumidityof 100% meansthatthepartialpressureofwaterisequaltothevaporpressure;inotherwords,theair
+is saturated with water.
+Example 2.6
+Calculating Relative Humidity
+What is the relative humidity when the air temperature is 25ºC and the dew point is 15ºC?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 87
+Strategy
+We simply look up the vapor pressure at the given temperature and that at the dew point and find the ratio.
+Solution
+R.H.= Partial pressure of water vapor at15°C ×100%= 1705Pa ×100%=53.8%.
+Partial pressure of water vapor at25°C 3167Pa
+Significance
+R.H. is important to our comfort. The value of 53.8% is within the range of 40%to60% recommended for
+comfort indoors.
+Asnotedinthechapterontemperatureandheat,thetemperatureseldomfallsbelowthedewpoint,becausewhen
+it reaches the dew point or frost point, water condenses and releases a relatively large amount of latent heat of
+vaporization.
+Mean Free Path and Mean Free Time
+Wenowconsidercollisionsexplicitly.Theusualfirststep(whichisallwe’lltake)istocalculatethemeanfreepath, λ,
+the average distance a molecule travels between collisions with other molecules, and the mean free time τ, the average
+timebetweenthecollisionsofamolecule.Ifweassumeallthemoleculesaresphereswitharadiusr,thenamoleculewill
+collide with another if their centers are within a distance 2r of each other. For a given particle, we say that the area of a
+circlewiththatradius, 4πr2,isthe“cross-section”forcollisions.Astheparticlemoves,ittracesacylinderwiththatcross-
+sectionalarea.Themeanfreepathisthelength λ suchthattheexpectednumberofothermoleculesinacylinderoflength
+λ andcross-section 4πr2 is1.Ifwetemporarilyignorethemotionofthemoleculesotherthantheonewe’relookingat,
+the expected number is the number density of molecules, N/V, times the volume, and the volume is 4πr2λ, so we have
+(N/V)4πr2λ=1, or
+V
+λ= .
+4πr2N
+Takingthemotionofallthemoleculesintoaccountmakesthecalculationmuchharder,buttheonlychangeisafactorof
+2. The result is
+V (2.10)
+λ= .
+4 2πr2N
+In an ideal gas, we can substitute V/N =k T/p to obtain
+B
+k T (2.11)
+λ= B .
+4 2πr2p
+Themeanfreetime τ issimplythemeanfreepathdividedbyatypicalspeed,andtheusualchoiceisthermsspeed.Then
+k T (2.12)
+τ= B .
+4 2πr2pv rms
+
+88 Chapter 2 | The Kinetic Theory of Gases
+Example 2.7
+Calculating Mean Free Time
+Findthemeanfreetimeforargonatoms (M =39.9g/mol⎞ atatemperatureof 0°C andapressureof1.00atm.
+⎠
+Take the radius of an argon atom to be 1.70×10 −10 m.
+Solution
+1. IdentifytheknownsandconvertintoSIunits.Weknowthemolarmassis0.0399kg/mol,thetemperature
+is 273 K, the pressure is 1.01×10 5 Pa, and the radius is 1.70×10 −10 m.
+2. Find the rms speed: v rms= 3
+M
+RT =413 m
+s
+.
+3. Substitute into the equation for the mean free time:
+τ= k B T = (1.38×10 −23 J/K)(273K) =1.76×10 −10 s.
+4 2πr2pv rms 4 2π(1.70×10 −10 m)2(1.01×10 5 Pa)(413m/s)
+Significance
+Wecanhardlycomparethisresultwithourintuitionaboutgasmolecules,butitgivesusapictureofmolecules
+colliding with extremely high frequency.
+2.5 Check Your UnderstandingWhich has a longer mean free path, liquid water or water vapor in the air?
+2.3 | Heat Capacity and Equipartition of Energy
+Learning Objectives
+By the end of this section, you will be able to:
+• Solve problems involving heat transfer to and from ideal monatomic gases whose volumes are
+held constant
+• Solve similar problems for non-monatomic ideal gases based on the number of degrees of
+freedom of a molecule
+• Estimate the heat capacities of metals using a model based on degrees of freedom
+In the chapter on temperature and heat, we defined the specific heat capacity with the equation Q=mcΔT, or
+c=(1/m)Q/ΔT.However,thepropertiesofanidealgasdependdirectlyonthenumberofmolesinasample,soherewe
+define specific heat capacity in terms of the number of moles, not the mass. Furthermore, when talking about solids and
+liquids,weignoredanychangesinvolumeandpressurewithchangesintemperature—agoodapproximationforsolidsand
+liquids,butforgases,wehavetomakesomeconditiononvolumeorpressurechanges.Here,wefocusontheheatcapacity
+with the volume held constant. We can calculate it for an ideal gas.
+Heat Capacity of an Ideal Monatomic Gas at Constant Volume
+We define themolar heat capacity at constant volume C as
+V
+Q
+C V = 1 n ΔT , withVheld constant.
+This is often expressed in the form
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

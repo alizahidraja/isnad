@@ -1,0 +1,181 @@
+# REAL PDF — openstax_vol1.pdf, pages 355-361
+############################################################
+
+8.1 • Potential Energy of a System 343
+Let’s look at a specific example, choosing zero potential energy for gravitational potential energy at convenient
+points.
+EXAMPLE 8.1
+Basic Properties of Potential Energy
+A particle moves along the x-axis under the action of a force given by , where . (a) What is the
+difference in its potential energy as it moves from to ? (b) What is the particle’s potential energy
+at with respect to a given 0.5 J of potential energy at ?
+Strategy
+(a) The difference in potential energy is the negative of the work done, as defined by Equation 8.1. The work is
+defined in the previous chapter as the dot product of the force with the distance. Since the particle is moving
+forward in the x-direction, the dot product simplifies to a multiplication ( ). To find the total work done, we
+need to integrate the function between the given limits. After integration, we can state the work or the change in
+potential energy. (b) The potential energy function, with respect to zero at , is the indefinite integral
+encountered in part (a), with the constant of integration determined from Equation 8.3. Then, we substitute the
+x-value into the function of potential energy to calculate the potential energy at
+Solution
+a. The work done by the given force as the particle moves from coordinate x to in one dimension is
+Substituting this expression into Equation 8.1, we obtain
+b. The indefinite integral for the potential energy function in part (a) is
+and we want the constant to be determined by
+Thus, the potential energy with respect to zero at is just
+Therefore, the potential energy at is
+Significance
+In this one-dimensional example, any function we can integrate, independent of path, is conservative. Notice how
+we applied the definition of potential energy difference to determine the potential energy function with respect to
+zero at a chosen point. Also notice that the potential energy, as determined in part (b), at is
+and at is ; their difference is the result in part (a).
+CHECK YOUR UNDERSTANDING 8.1
+In Example 8.1, what are the potential energies of the particle at and with respect to zero at
+? Verify that the difference of potential energy is still 7 J.
+
+344 8 • Potential Energy and Conservation of Energy
+Systems of Several Particles
+In general, a system of interest could consist of several particles. The difference in the potential energy of the
+system is the negative of the work done by gravitational or elastic forces, which, as we will see in the next section,
+are conservative forces. The potential energy difference depends only on the initial and final positions of the
+particles, and on some parameters that characterize the interaction (like mass for gravity or the spring constant for a
+Hooke’s law force).
+It is important to remember that potential energy is a property of the interactions between objects in a chosen
+system, and not just a property of each object. This is especially true for electric forces, although in the examples of
+potential energy we consider below, parts of the system are either so big (like Earth, compared to an object on its
+surface) or so small (like a massless spring), that the changes those parts undergo are negligible when included in
+the system.
+Types of Potential Energy
+For each type of interaction present in a system, you can label a corresponding type of potential energy. The total
+potential energy of the system is the sum of the potential energies of all the types. (This follows from the additive
+property of the dot product in the expression for the work done.) Let’s look at some specific examples of types of
+potential energy discussed in Work. First, we consider each of these forces when acting separately, and then when
+both act together.
+Gravitational potential energy near Earth’s surface
+The system of interest consists of our planet, Earth, and one or more particles near its surface (or bodies small
+enough to be considered as particles, compared to Earth). The gravitational force on each particle (or body) is just
+its weight mg near the surface of Earth, acting vertically down. According to Newton’s third law, each particle exerts
+a force on Earth of equal magnitude but in the opposite direction. Newton’s second law tells us that the magnitude
+of the acceleration produced by each of these forces on Earth is mg divided by Earth’s mass. Since the ratio of the
+mass of any ordinary object to the mass of Earth is vanishingly small, the motion of Earth can be completely
+neglected. Therefore, we consider this system to be a group of single-particle systems, subject to the uniform
+gravitational force of Earth.
+In Work, the work done on a body by Earth’s uniform gravitational force, near its surface, depended on the mass of
+the body, the acceleration due to gravity, and the difference in height the body traversed, as given by Equation 7.4.
+By definition, this work is the negative of the difference in the gravitational potential energy, so that difference is
+8.4
+You can see from this that the gravitational potential energy function, near Earth’s surface, is
+8.5
+You can choose the value of the constant, as described in the discussion of Equation 8.2; however, for solving most
+problems, the most convenient constant to choose is zero for when which is the lowest vertical position in
+the problem.
+EXAMPLE 8.2
+Gravitational Potential Energy of a Hiker
+The summit of Great Blue Hill in Milton, MA, is 147 m above its base and has an elevation above sea level of 195 m
+(Figure 8.3). (Its Native American name, Massachusett, was adopted by settlers for naming the Bay Colony and state
+near its location.) A 75-kg hiker ascends from the base to the summit. What is the gravitational potential energy of
+the hiker-Earth system with respect to zero gravitational potential energy at base height, when the hiker is (a) at the
+base of the hill, (b) at the summit, and (c) at sea level, afterward?
+Access for free at openstax.org
+
+8.1 • Potential Energy of a System 345
+FIGURE 8.3 Sketch of the profile of Great Blue Hill, Milton, MA. The altitudes of the three levels are indicated.
+Strategy
+First, we need to pick an origin for the y-axis and then determine the value of the constant that makes the potential
+energy zero at the height of the base. Then, we can determine the potential energies from Equation 8.5, based on
+the relationship between the zero potential energy height and the height at which the hiker is located.
+Solution
+a. Let’s choose the origin for the y-axis at base height, where we also want the zero of potential energy to be.
+This choice makes the constant equal to zero and
+b. At the summit, , so
+c. At sea level, , so
+Significance
+Besides illustrating the use of Equation 8.4 and Equation 8.5, the values of gravitational potential energy we found
+are reasonable. The gravitational potential energy is higher at the summit than at the base, and lower at sea level
+than at the base. Gravity does work on you on your way up, too! It does negative work and not quite as much (in
+magnitude), as your muscles do. But it certainly does work. Similarly, your muscles do work on your way down, as
+negative work. The numerical values of the potential energies depend on the choice of zero of potential energy, but
+the physically meaningful differences of potential energy do not. [Note that since Equation 8.2 is a difference, the
+numerical values do not depend on the origin of coordinates.]
+CHECK YOUR UNDERSTANDING 8.2
+What are the values of the gravitational potential energy of the hiker at the base, summit, and sea level, with respect
+to a sea-level zero of potential energy?
+Elastic potential energy
+In Work, we saw that the work done by a perfectly elastic spring, in one dimension, depends only on the spring
+constant and the squares of the displacements from the unstretched position, as given in Equation 7.5. This work
+involves only the properties of a Hooke’s law interaction and not the properties of real springs and whatever objects
+are attached to them. Therefore, we can define the difference of elastic potential energy for a spring force as the
+negative of the work done by the spring force in this equation, before we consider systems that embody this type of
+force. Thus,
+8.6
+where the object travels from point A to point B. The potential energy function corresponding to this difference is
+8.7
+
+346 8 • Potential Energy and Conservation of Energy
+If the spring force is the only force acting, it is simplest to take the zero of potential energy at , when the spring
+is at its unstretched length. Then, the constant in Equation 8.7 is zero. (Other choices may be more convenient if
+other forces are acting.)
+EXAMPLE 8.3
+Spring Potential Energy
+A system contains a perfectly elastic spring, with an unstretched length of 20 cm and a spring constant of 4 N/cm.
+(a) How much elastic potential energy does the spring contribute when its length is 23 cm? (b) How much more
+potential energy does it contribute if its length increases to 26 cm?
+Strategy
+When the spring is at its unstretched length, it contributes nothing to the potential energy of the system, so we can
+use Equation 8.7 with the constant equal to zero. The value of x is the length minus the unstretched length. When
+the spring is expanded, the spring’s displacement or difference between its relaxed length and stretched length
+should be used for the x-value in calculating the potential energy of the spring.
+Solution
+a. The displacement of the spring is , so the contributed potential energy is
+.
+b. When the spring’s displacement is , the potential energy is
+, which is a 0.54-J increase over the amount in part (a).
+Significance
+Calculating the elastic potential energy and potential energy differences from Equation 8.7 involves solving for the
+potential energies based on the given lengths of the spring. Since U depends on , the potential energy for a
+compression (negative x) is the same as for an extension of equal magnitude.
+CHECK YOUR UNDERSTANDING 8.3
+When the length of the spring in Example 8.3 changes from an initial value of 22.0 cm to a final value, the elastic
+potential energy it contributes changes by Find the final length.
+Gravitational and elastic potential energy
+A simple system embodying both gravitational and elastic types of potential energy is a one-dimensional, vertical
+mass-spring system. This consists of a massive particle (or block), hung from one end of a perfectly elastic,
+massless spring, the other end of which is fixed, as illustrated in Figure 8.4.
+Access for free at openstax.org
+
+8.1 • Potential Energy of a System 347
+FIGURE 8.4 A vertical mass-spring system, with the positive y-axis pointing upward. The mass is initially at an unstretched spring length,
+point A. Then it is released, expanding past point B to point C, where it comes to a stop.
+First, let's consider the potential energy of the system. We need to define the constant in the potential energy
+function of Equation 8.5. Often, the ground is a suitable choice for when the gravitational potential energy is zero;
+however, in this case, the highest point or when is a convenient location for zero gravitational potential energy.
+Note that this choice is arbitrary, and the problem can be solved correctly even if another choice is picked.
+We must also define the elastic potential energy of the system and the corresponding constant, as detailed in
+Equation 8.7. This is where the spring is unstretched, or at the position.
+If we consider that the total energy of the system is conserved, then the energy at point A equals point C. The block
+is placed just on the spring so its initial kinetic energy is zero. By the setup of the problem discussed previously, both
+the gravitational potential energy and elastic potential energy are equal to zero. Therefore, the initial energy of the
+system is zero. When the block arrives at point C, its kinetic energy is zero. However, it now has both gravitational
+potential energy and elastic potential energy. Therefore, we can solve for the distance y that the block travels before
+coming to a stop:
+
+348 8 • Potential Energy and Conservation of Energy
+FIGURE 8.5 A bungee jumper transforms gravitational potential energy at the start of the jump into elastic potential energy at the bottom of
+the jump.
+EXAMPLE 8.4
+Potential Energy of a Vertical Mass-Spring System
+A block weighing is hung from a spring with a spring constant of , as shown in Figure 8.4. (a) What is
+the maximum expansion of the spring, as seen at point C? (b) What is the total potential energy at point B, halfway
+between A and C? (c) What is the speed of the block at point B?
+Strategy
+In part (a) we calculate the distance as discussed in the previous text. Then in part (b), we use half of the y value
+to calculate the potential energy at point B using equations Equation 8.4 and Equation 8.6. This energy must be
+equal to the kinetic energy, Equation 7.6, at point B since the initial energy of the system is zero. By calculating the
+kinetic energy at point B, we can now calculate the speed of the block at point B.
+Solution
+a. Since the total energy of the system is zero at point A as discussed previously, the maximum expansion of the
+spring is calculated to be:
+b. The position of is half of the position at or . The total potential energy at point B
+would therefore be:
+c. The mass of the block is the weight divided by gravity.
+Access for free at openstax.org

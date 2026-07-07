@@ -1,0 +1,258 @@
+# REAL PDF — crowell_lm.pdf, pages 289-294
+############################################################
+
+around and around at ever higher speeds. Of course there is some
+friction, but there is a net gain in speed with each revolution.
+Physicists would lay long odds against the discovery of such a moon
+rock, not just because it breaks the rules that magnets normally
+obey but because, like the alchemists, they have discovered a very
+deepandfundamentalprincipleofnaturewhichforbidscertainthings
+from happening. The first alchemist who deserved to be called a
+chemist was the one who realized one day, “In all these attempts
+to create gold where there was none before, all I’ve been doing is
+shu✏ing the same atoms back and forth among di↵erent test tubes.
+The only way to increase the amount of gold in my laboratory is to
+bring some in through the door.” It was like having some of your
+money in a checking account and some in a savings account. Trans-
+ferring money from one account into the other doesn’t change the
+total amount.
+We say that the number of grams of gold is a conserved quantity. In
+this context, the word “conserve” does not have its usual meaning
+of trying not to waste something. In physics, a conserved quan-
+tity is something that you wouldn’t be able to get rid of even if you
+wanted to. Conservation laws in physics always refer to a closed sys-
+tem, meaning a region of space with boundaries through which the
+quantity in question is not passing. In our example, the alchemist’s
+Amysteriousmoonrockmakesa
+laboratory is a closed system because no gold is coming in or out
+perpetualmotionmachine.
+through the doors.
+Conservation of mass example 1
+In figure d, the stream of water is fatter near the mouth of the
+faucet,andskinnierlowerdown. Thisisbecausethewaterspeeds
+up as it falls. If the cross-sectional area of the stream was equal
+all along its length, then the rate of flow through a lower cross-
+section would be greater than the rate of flow through a cross-
+section higher up. Since the flow is steady, the amount of wa-
+ter between the two cross-sections stays constant. The cross-
+sectional area of the stream must therefore shrink in inverse pro-
+portion to the increasing speed of the falling water. This is an
+example of conservation of mass.
+In general, the amount of any particular substance is not conserved.
+Chemical reactions can change one substance into another, and nu-
+clear reactions can even change one element into another. The total
+mass of all substances is however conserved:
+the law of conservation of mass
+The total mass of a closed system always remains constant. Mass
+cannotbecreatedordestroyed,butonlytransferredfromonesystem
+to another. Example1.
+A similar lightbulb eventually lit up in the heads of the people who
+Energy 289
+
+had been frustrated trying to build a perpetual motion machine.
+In perpetual motion machine a, consider the motion of one of the
+balls. It performs a cycle of rising and falling. On the way down it
+gains speed, and coming up it slows back down. Having a greater
+speedislikehavingmoremoneyinyourcheckingaccount,andbeing
+high up is like having more in your savings account. The device is
+simplyshu✏ingfundsbackandforthbetweenthetwo. Havingmore
+balls doesn’t change anything fundamentally. Not only that, but
+friction is always draining o↵ money into a third “bank account:”
+heat. The reason we rub our hands together when we’re cold is that
+kinetic friction heats things up. The continual buildup in the “heat
+account” leaves less and less for the “motion account” and “height
+account,” causing the machine eventually to run down.
+These insights can be distilled into the following basic principle of
+physics:
+the law of conservation of energy
+It is possible to give a numerical rating, called energy, to the state
+of a physical system. The total energy is found by adding up contri-
+butions from characteristics of the system such as motion of objects
+in it, heating of the objects, and the relative positions of objects
+that interact via forces. The total energy of a closed system always
+remains constant. Energy cannot be created or destroyed, but only
+transferred from one system to another.
+The moon rock story violates conservation of energy because the
+rock-cylinderandtheballtogetherconstituteaclosedsystem. Once
+the ball has made one revolution around the cylinder, its position
+relative to the cylinder is exactly the same as before, so the numer-
+ical energy rating associated with its position is the same as before.
+Since the total amount of energy must remain constant, it is im-
+possible for the ball to have a greater speed after one revolution. If
+it had picked up speed, it would have more energy associated with
+motion, the same amount of energy associated with position, and a
+little more energy associated with heating through friction. There
+cannot be a net increase in energy.
+Converting one form of energy to another example 2
+Dropping a rock: The rock loses energy because of its changing
+position with respect to the earth. Nearly all that energy is trans-
+formed into energy of motion, except for a small amount lost to
+heat created by air friction.
+Sliding in to home base: The runner’s energy of motion is nearly
+all converted into heat via friction with the ground.
+Accelerating a car: The gasoline has energy stored in it, which
+is released as heat by burning it inside the engine. Perhaps 10%
+290 Chapter 11 Conservation of energy
+
+of this heat energy is converted into the car’s energy of motion.
+Therestremainsintheformofheat,whichiscarriedawaybythe
+exhaust.
+Cruising in a car: As you cruise at constant speed in your car, all
+the energy of the burning gas is being converted into heat. The
+tires and engine get hot, and heat is also dissipated into the air
+through the radiator and the exhaust.
+Steppingonthebrakes: Alltheenergyofthecar’smotioniscon-
+verted into heat in the brake shoes.
+Stevin’s machine example 3
+The Dutch mathematician and engineer Simon Stevin proposed
+theimaginarymachineshowninfiguree,whichhehadinscribed
+on his tombstone. This is an interesting example, because it
+showsalinkbetweentheforceconceptusedearlierinthiscourse,
+and the energy concept being developed now.
+The point of the imaginary machine is to show the mechanical
+advantage of an inclined plane. In this example, the triangle has
+the proportions 3-4-5, but the argument works for any right trian-
+gle. We imagine that the chain of balls slides without friction, so
+that no energy is ever converted into heat. If we were to slide
+the chain clockwise by one step, then each ball would take the
+place of the one in front of it, and the over all configuration would
+Example3.
+be exactly the same. Since energy is something that only de-
+pends on the state of the system, the energy would have to be
+the same. Similarly for a counterclockwise rotation, no energy of
+positionwouldbereleasedbygravity. Thismeansthatifweplace
+the chain on the triangle, and release it at rest, it can’t start mov-
+ing, because there would be no way for it to convert energy of
+position into energy of motion. Thus the chain must be perfectly
+balanced. Now by symmetry, the arc of the chain hanging under-
+neath the triangle has equal tension at both ends, so removing
+this arc wouldn’t affect the balance of the rest of the chain. This
+means that a weight of three units hanging vertically balances a
+weight of five units hanging diagonally along the hypotenuse.
+The mechanical advantage of the inclined plane is therefore 5/3,
+which is exactly the same as the result, 1/sin✓, that we got
+on p. 223 by analyzing force vectors. What this shows is that
+Newton’s laws and conservation laws are not logically separate,
+but rather are very closely related descriptions of nature. In the
+caseswhereNewton’slawsaretrue,theygivethesameanswers
+as the conservation laws. This is an example of a more gen-
+eralidea,calledthecorrespondenceprinciple,abouthowscience
+progressesovertime. Whenanewer,moregeneraltheoryispro-
+posedtoreplaceanoldertheory,thenewtheorymustagreewith
+theoldoneintherealmofapplicabilityoftheoldtheory,sincethe
+old theory only became accepted as a valid theory by being ver-
+Energy 291
+
+ified experimentally in a variety of experiments. In other words,
+the new theory must be backward-compatible with the old one.
+Even though conservation laws can prove things that Newton’s
+lawscan’t(thatperpetualmotionisimpossible,forexample),they
+aren’tgoingtodisprove Newton’slawswhenappliedtomechani-
+cal systems where we already knew Newton’s laws were valid.
+Discussion question
+A Hydroelectric power (water flowing over a dam to spin turbines)
+Discussion question A. The appearstobecompletelyfree. Doesthisviolateconservationofenergy?
+water behind the Hoover Dam If not, then what is the ultimate source of the electrical energy produced
+has energy because of its posi- byahydroelectricplant?
+tion relative to the planet earth,
+B Howdoestheproofinexample3failiftheassumptionofafrictionless
+which is attracting it with a gravi-
+surfacedoesn’thold?
+tationalforce. Lettingwaterdown
+tothebottomofthedamconverts
+thatenergyintoenergyofmotion. 11.3 A numerical scale of energy
+When the water reaches the
+Energycomesinavarietyofforms, andphysicistsdidn’tdiscoverall
+bottom of the dam, it hits turbine
+blades that drive generators, and of them right away. They had to start somewhere, so they picked
+its energy of motion is converted one form of energy to use as a standard for creating a numerical
+intoelectricalenergy. energyscale. (Infactthehistoryiscomplicated,andseveraldi↵erent
+energy units were defined before it was realized that there was a
+single general energy concept that deserved a single consistent unit
+of measurement.) One practical approach is to define an energy
+unit based on heating water. The SI unit of energy is the joule,
+J, (rhymes with “cool”), named after the British physicist James
+Joule. One Joule is the amount of energy required in order to heat
+0.24 g of water by 1 C. The number 0.24 is not worth memorizing.
+ 
+Note that heat, which is a form of energy, is completely di↵erent
+from temperature, which is not. Twice as much heat energy is re-
+quired to prepare two cups of co↵ee as to make one, but two cups of
+co↵ee mixed together don’t have double the temperature. In other
+words, the temperature of an object tells us how hot it is, but the
+heat energy contained in an object also takes into account the ob-
+ject’s mass and what it is made of.1
+Laterwewillencounterotherquantitiesthatareconservedinphysics,
+such as momentum and angular momentum, and the method for
+defining them will be similar to the one we have used for energy:
+pick some standard form of it, and then measure other forms by
+comparison with this standard. The flexible and adaptable nature
+of this procedure is part of what has made conservation laws such a
+durable basis for the evolution of physics.
+1In standard, formal terminology, there is another, finer distinction. The
+word “heat” is used only to indicate an amount of energy that is transferred,
+whereas“thermalenergy”indicatesanamountofenergycontainedinanobject.
+I’m informal on this point, and refer to both as heat, but you should be aware
+of the distinction.
+292 Chapter 11 Conservation of energy
+
+Heating a swimming pool example 4
+. If electricity costs 3.9 cents per MJ (1 MJ = 1 megajoule = 106
+J), how much does it cost to heat a 26000-gallon swimming pool
+from 10 C to 18 C?
+   
+. Converting gallons to cm3 gives
+3780 cm3
+26000 gallons = 9.8 107 cm3.
+⇥ 1 gallon ⇥
+Water has a density of 1 gram per cubic centimeter, so the mass
+of the water is 9.8 107 g. One joule is sufficient to heat 0.24 g
+⇥
+by 1 C, so the energy needed to heat the swimming pool is
+ 
+9.8 107 g 8 C
+1 J ⇥   = 3.3 109 J
+⇥ 0.24 g ⇥ 1 C ⇥
+ 
+= 3.3 103 MJ.
+⇥
+The cost of the electricity is (3.3 103 MJ)($0.039/MJ)=$130.
+⇥
+Irish coffee example 5
+. You make a cup of Irish coffee out of 300 g of coffee at 100 C
+ 
+and 30 g of pure ethyl alcohol at 20 C. One Joule is enough en-
+ 
+ergy to produce a change of 1 C in 0.42 g of ethyl alcohol (i.e.,
+ 
+alcohol is easier to heat than water). What temperature is the
+final mixture?
+.Addingupalltheenergyaftermixinghastogivethesameresult
+as the total before mixing. We let the subscript i stand for the
+initialsituation,beforemixing,andf forthefinalsituation,anduse
+subscripts c for the coffee and a for the alcohol. In this notation,
+we have
+total initial energy = total final energy
+E +E = E +E .
+ci ai cf af
+Weassumecoffee hasthesameheat-carryingproperties aswa-
+ter. Our information about the heat-carrying properties of the two
+substancesisstatedintermsofthechangeinenergyrequiredfor
+acertainchange intemperature,sowerearrangetheequationto
+express everything in terms of energy differences:
+E E = E E .
+af ai ci cf
+   
+Using the given ratios of temperature change to energy change,
+we have
+E E = (T T )(m )/(0.24 g)
+ci cf ci cf c
+   
+E E = (T T )(m )/(0.42 g)
+af ai af ai a
+   
+Setting these two quantities to be equal, we have
+(T T )(m )/(0.42 g) = (T T )(m )/(0.24 g).
+af ai a ci cf c
+   
+A numerical scale of energy 293

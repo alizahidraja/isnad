@@ -1,0 +1,224 @@
+# REAL PDF — openstax_vol1.pdf, pages 111-119
+############################################################
+
+3.1 • Position, Displacement, and Average Velocity 99
+FIGURE 3.3 A professor paces left and right while lecturing. Her position relative to Earth is given by x. The +2.0-m displacement of the
+professor relative to Earth is represented by an arrow pointing to the right.
+DISPLACEMENT
+Displacement is the change in position of an object:
+3.1
+where is displacement, is the final position, and is the initial position.
+We use the uppercase Greek letter delta (Δ) to mean “change in” whatever quantity follows it; thus, means
+change in position (final position less initial position). We always solve for displacement by subtracting initial
+position from final position . Note that the SI unit for displacement is the meter, but sometimes we use
+kilometers or other units of length. Keep in mind that when units other than meters are used in a problem, you may
+need to convert them to meters to complete the calculation (see Appendix B).
+Objects in motion can also have a series of displacements. In the previous example of the pacing professor, the
+individual displacements are 2 m and m, giving a total displacement of −2 m. We define total displacement
+, as the sum of the individual displacements, and express this mathematically with the equation
+3.2
+where are the individual displacements. In the earlier example,
+Similarly,
+Thus,
+The total displacement is 2 − 4 = −2 m along the x-axis. It is also useful to calculate the magnitude of the
+displacement, or its size. The magnitude of the displacement is always positive. This is the absolute value of the
+
+100 3 • Motion Along a Straight Line
+displacement, because displacement is a vector and cannot have a negative value of magnitude. In our example, the
+magnitude of the total displacement is 2 m, whereas the magnitudes of the individual displacements are 2 m and 4
+m.
+The magnitude of the total displacement should not be confused with the distance traveled. Distance traveled
+, is the total length of the path traveled between two positions. In the previous problem, the distance
+traveled is the sum of the magnitudes of the individual displacements:
+Average Velocity
+To calculate the other physical quantities in kinematics we must introduce the time variable. The time variable
+allows us not only to state where the object is (its position) during its motion, but also how fast it is moving. How fast
+an object is moving is given by the rate at which the position changes with time.
+For each position , we assign a particular time . If the details of the motion at each instant are not important, the
+rate is usually expressed as the average velocity . This vector quantity is simply the total displacement between
+two points divided by the time taken to travel between them. The time taken to travel between two points is called
+the elapsed time .
+AVERAGE VELOCITY
+If and are the positions of an object at times and , respectively, then
+3.3
+It is important to note that the average velocity is a vector and can be negative, depending on positions and .
+EXAMPLE 3.1
+Delivering Flyers
+Jill sets out from her home to deliver flyers for her yard sale, traveling due east along her street lined with houses. At
+km and 9 minutes later she runs out of flyers and has to retrace her steps back to her house to get more. This
+takes an additional 9 minutes. After picking up more flyers, she sets out again on the same path, continuing where
+she left off, and ends up 1.0 km from her house. This third leg of her trip takes minutes. At this point she turns
+back toward her house, heading west. After km and minutes she stops to rest.
+a. What is Jill’s total displacement to the point where she stops to rest?
+b. What is the magnitude of the total displacement?
+c. What is the average velocity during her entire trip?
+d. What is the total distance traveled?
+e. Make a graph of position versus time.
+A sketch of Jill’s movements is shown in Figure 3.4.
+Access for free at openstax.org
+
+3.1 • Position, Displacement, and Average Velocity 101
+FIGURE 3.4 Timeline of Jill’s movements.
+Strategy
+The problem contains data on the various legs of Jill’s trip, so it would be useful to make a table of the physical
+quantities. We are given position and time in the wording of the problem so we can calculate the displacements and
+the elapsed time. We take east to be the positive direction. From this information we can find the total displacement
+and average velocity. Jill’s home is the starting point . The following table gives Jill’s time and position in the first
+two columns, and the displacements are calculated in the third column.
+Time t (min) Position (km) Displacement (km)
+i
+Solution
+a. From the above table, the total displacement is
+b. The magnitude of the total displacement is .
+c.
+d. The total distance traveled (sum of magnitudes of individual displacements) is
+.
+e. We can graph Jill’s position versus time as a useful aid to see the motion; the graph is shown in Figure 3.5.
+
+102 3 • Motion Along a Straight Line
+FIGURE 3.5 This graph depicts Jill’s position versus time. The average velocity is the slope of a line connecting the initial and final
+points.
+Significance
+Jill’s total displacement is −0.75 km, which means at the end of her trip she ends up due west of her home.
+The average velocity means if someone was to walk due west at km/min starting at the same time Jill left her
+home, they both would arrive at the final stopping point at the same time. Note that if Jill were to end her trip at her
+house, her total displacement would be zero, as well as her average velocity. The total distance traveled during the
+58 minutes of elapsed time for her trip is 3.75 km.
+CHECK YOUR UNDERSTANDING 3.1
+A cyclist rides 3 km west and then turns around and rides 2 km east. (a) What is their displacement? (b) What is the
+distance traveled? (c) What is the magnitude of their displacement?
+3.2 Instantaneous Velocity and Speed
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the difference between average velocity and instantaneous velocity.
+• Describe the difference between velocity and speed.
+• Calculate the instantaneous velocity given the mathematical equation for the position.
+• Calculate the speed given the instantaneous velocity.
+We have now seen how to calculate the average velocity between two positions. However, since objects in the real
+world move continuously through space and time, we would like to find the velocity of an object at any single point.
+We can find the velocity of the object anywhere along its path by using some fundamental principles of calculus.
+This section gives us better insight into the physics of motion and will be useful in later chapters.
+Access for free at openstax.org
+
+3.2 • Instantaneous Velocity and Speed 103
+Instantaneous Velocity
+The quantity that tells us how fast an object is moving anywhere along its path is the instantaneous velocity,
+usually called simply velocity. It is the average velocity between two points on the path in the limit that the time
+(and therefore the displacement) between the two events approaches zero. To illustrate this idea mathematically,
+we need to express position x as a continuous function of t denoted by x(t). The expression for the average velocity
+between two points using this notation is . To find the instantaneous velocity at any position, we let
+and . After inserting these expressions into the equation for the average velocity and taking the
+limit as , we find the expression for the instantaneous velocity:
+INSTANTANEOUS VELOCITY
+The instantaneous velocity of an object is the limit of the average velocity as the elapsed time approaches zero,
+or the derivative of x with respect to t:
+3.4
+Like average velocity, instantaneous velocity is a vector with dimension of length per time. The instantaneous
+velocity at a specific time point is the rate of change of the position function, which is the slope of the position
+function at . Figure 3.6 shows how the average velocity between two times approaches the
+instantaneous velocity at The instantaneous velocity is shown at time , which happens to be at the maximum
+of the position function. The slope of the position graph is zero at this point, and thus the instantaneous velocity is
+zero. At other times, , and so on, the instantaneous velocity is not zero because the slope of the position graph
+would be positive or negative. If the position function had a minimum, the slope of the position graph would also be
+zero, giving an instantaneous velocity of zero there as well. Thus, the zeros of the velocity function give the minimum
+and maximum of the position function.
+FIGURE 3.6 In a graph of position versus time, the instantaneous velocity is the slope of the tangent line at a given point. The average
+velocities between times are shown. When , the average velocity
+approaches the instantaneous velocity at .
+EXAMPLE 3.2
+Finding Velocity from a Position-Versus-Time Graph
+Given the position-versus-time graph of Figure 3.7, find the velocity-versus-time graph.
+
+104 3 • Motion Along a Straight Line
+FIGURE 3.7 The object starts out in the positive direction, stops for a short time, and then reverses direction, heading back toward the
+origin. Notice that the object comes to rest instantaneously, which would require an infinite force. Thus, the graph is an approximation of
+motion in the real world. (The concept of force is discussed in Newton’s Laws of Motion.)
+Strategy
+The graph contains three straight lines during three time intervals. We find the velocity during each time interval by
+taking the slope of the line using the grid.
+Solution
+Time interval 0 s to 0.5 s:
+Time interval 0.5 s to 1.0 s:
+Time interval 1.0 s to 2.0 s:
+The graph of these values of velocity versus time is shown in Figure 3.8.
+FIGURE 3.8 The velocity is positive for the first part of the trip, zero when the object is stopped, and negative when the object reverses
+direction.
+Significance
+During the time interval between 0 s and 0.5 s, the object’s position is moving away from the origin and the position-
+versus-time curve has a positive slope. At any point along the curve during this time interval, we can find the
+instantaneous velocity by taking its slope, which is +1 m/s, as shown in Figure 3.8. In the subsequent time interval,
+between 0.5 s and 1.0 s, the position doesn’t change and we see the slope is zero. From 1.0 s to 2.0 s, the object is
+moving back toward the origin and the slope is −0.5 m/s. The object has reversed direction and has a negative
+velocity.
+Access for free at openstax.org
+
+3.2 • Instantaneous Velocity and Speed 105
+Speed
+In everyday language, most people use the terms speed and velocity interchangeably. In physics, however, they do
+not have the same meaning and are distinct concepts. One major difference is that speed has no direction; that is,
+speed is a scalar.
+We can calculate the average speed by finding the total distance traveled divided by the elapsed time:
+3.5
+Average speed is not necessarily the same as the magnitude of the average velocity, which is found by dividing the
+magnitude of the total displacement by the elapsed time. For example, if a trip starts and ends at the same location,
+the total displacement is zero, and therefore the average velocity is zero. The average speed, however, is not zero,
+because the total distance traveled is greater than zero. If we take a road trip of 300 km and need to be at our
+destination at a certain time, then we would be interested in our average speed.
+However, we can calculate the instantaneous speed from the magnitude of the instantaneous velocity:
+3.6
+If a particle is moving along the x-axis at +7.0 m/s and another particle is moving along the same axis at −7.0 m/s,
+they have different velocities, but both have the same speed of 7.0 m/s. Some typical speeds are shown in the
+following table.
+Speed m/s mi/h
+Continental drift
+Brisk walk 1.7 3.9
+Cyclist 4.4 10
+Sprint runner 12.2 27
+Rural speed limit 24.6 56
+Official land speed record 341.1 763
+Speed of sound at sea level 343 768
+Space shuttle on reentry 7800 17,500
+Escape velocity of Earth* 11,200 25,000
+Orbital speed of Earth around the Sun 29,783 66,623
+Speed of light in a vacuum 299,792,458 670,616,629
+TABLE 3.1 Speeds of Various Objects *Escape velocity is the velocity at which an
+object must be launched so that it overcomes Earth’s gravity and is not pulled back
+toward Earth.
+Calculating Instantaneous Velocity
+When calculating instantaneous velocity, we need to specify the explicit form of the position function . If each
+term in the equation has the form of where is a constant and is an integer, this can be differentiated
+
+106 3 • Motion Along a Straight Line
+using the power rule to be:
+3.7
+Note that if there are additional terms added together, this power rule of differentiation can be done multiple times
+and the solution is the sum of those terms. The following example illustrates the use of Equation 3.7.
+EXAMPLE 3.3
+Instantaneous Velocity Versus Average Velocity
+The position of a particle is given by .
+a. Using Equation 3.4 and Equation 3.7, find the instantaneous velocity at s.
+b. Calculate the average velocity between 1.0 s and 3.0 s.
+Strategy
+Equation 3.4 gives the instantaneous velocity of the particle as the derivative of the position function. Looking at the
+form of the position function given, we see that it is a polynomial in t. Therefore, we can use Equation 3.7, the power
+rule from calculus, to find the solution. We use Equation 3.6 to calculate the average velocity of the particle.
+Solution
+a. .
+Substituting t = 2.0 s into this equation gives .
+b. To determine the average velocity of the particle between 1.0 s and 3.0 s, we calculate the values of x(1.0 s)
+and x(3.0 s):
+Then the average velocity is
+Significance
+In the limit that the time interval used to calculate goes to zero, the value obtained for converges to the value of
+v. The value of that we calculated in part a for the instantaneous value at is close to the average
+value of found in b for a short interval that includes . If we were to make the interval shorter, the
+values in the calculation of the average would become even closer.
+EXAMPLE 3.4
+Instantaneous Velocity Versus Speed
+Consider the motion of a particle in which the position is .
+a. What is the instantaneous velocity at t = 0.25 s, t = 0.50 s, and t = 1.0 s?
+b. What is the speed of the particle at these times?
+Strategy
+The instantaneous velocity is the derivative of the position function and the speed is the magnitude of the
+instantaneous velocity. We use Equation 3.4 and Equation 3.7 to solve for instantaneous velocity.
+Access for free at openstax.org

@@ -1,0 +1,352 @@
+# REAL PDF — openstax_vol3.pdf, pages 366-375
+############################################################
+
+358 Chapter 8 | Atomic Structure
+n = 1, 2, 3, …
+l = 0, 1, 2, …, (n−1)
+m = −l, (−l+1), …, 0, …, (+l−1), +l
+Noticethatforthegroundstate, n=1, l=0,and m=0.Inotherwords,thereisonlyonequantumstatewiththewave
+function for n=1, and it is ψ . However, for n=2, we have
+100
+l=0, m=0
+l=1, m=−1, 0, 1.
+Therefore, the allowed states for the n=2 state are ψ , ψ , ψ , and ψ . Example wave functions for the
+200 21−1 210 211
+hydrogen atom are given in Table 8.1. Note that some of these expressions contain the letter i, which represents −1.
+When probabilities are calculated, these complex numbers do not appear in the final answer.
+n=1, l=0, m l=0 ψ = 1 1 e −r/a 0
+100 π a 3/2
+0
+n=2, l=0, m l=0 ψ
+200
+=
+4
+1
+2π a
+1
+3/2
+⎛
+⎝
+2−a r
+0
+⎞
+⎠
+e −r/2a 0
+0
+n=2, l=1, m l=−1 ψ 21−1 = 8 1 π a 1 3/2 a r 0 e −r/2a 0 sinθe −iϕ
+0
+n=2, l=1, m l=0 ψ 210 = 4 1 2π a 1 3/2 a r 0 e −r/2a 0 cosθ
+0
+n=2, l=1, m l=1 ψ 211 = 8 1 π a 1 3/2 a r 0 e −r/2a 0 sinθe iϕ
+0
+Table 8.1Wave Functions of the Hydrogen Atom
+Physical Significance of the Quantum Numbers
+Each of the three quantum numbers of the hydrogen atom (n, l, m) is associated with a different physical quantity. The
+principalquantumnumbernisassociatedwiththetotalenergyoftheelectron, E .AccordingtoSchrödinger’sequation:
+n
+⎛m k2e4⎞⎛ ⎞ ⎛ ⎞ (8.3)
+E n=−
+⎝
+⎜ e
+22 ⎠
+⎟
+⎝ n
+1
+2⎠
+=−E
+0⎝ n
+1
+2⎠
+,
+where E =−13.6eV. NoticethatthisexpressionisidenticaltothatofBohr’smodel.AsintheBohrmodel,theelectron
+0
+in a particular state of energy does not radiate.
+Example 8.1
+How Many Possible States?
+Forthehydrogenatom,howmanypossiblequantumstatescorrespondtotheprincipalnumber n=3?Whatare
+the energies of these states?
+Strategy
+Forahydrogenatomofagivenenergy,thenumberofallowedstatesdependsonitsorbitalangularmomentum.
+Wecancountthesestatesforeachvalueoftheprincipalquantumnumber, n=1, 2, 3. However,thetotalenergy
+dependsontheprincipalquantumnumberonly,whichmeansthatwecanuseEquation8.3andthenumberof
+states counted.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 359
+Solution
+If n=3, the allowed values of l are 0, 1, and 2. If l=0, m=0 (1 state). If l=1, m= −1, 0, +1 (3
+states);andif l=2, m= −2, −1, 0, +1, +2 (5states).Intotal,thereare 1+3+5=9 allowedstates.
+Because the total energy depends only on the principal quantum number, n=3, the energy of each of these
+states is
+⎛ ⎞
+E n3 =−E 0⎝ n 1 2⎠ = −13 9 .6eV =−1.51eV.
+Significance
+Anelectroninahydrogenatomcanoccupymanydifferentangularmomentumstateswiththeverysameenergy.
+As the orbital angular momentum increases, the number of the allowed states with the same energy increases.
+Theangularmomentumorbitalquantumnumberlisassociatedwiththeorbitalangularmomentumoftheelectronin
+ahydrogenatom.Quantumtheorytellsusthatwhenthehydrogenatomisinthestate ψ ,themagnitudeofitsorbital
+nlm
+angular momentum is
+L= l(l+1)ℏ, (8.4)
+where
+l=0, 1, 2, …, (n−1).
+This result is slightly different from that found with Bohr’s theory, which quantizes angular momentum according to the
+rule L=n, wheren=1, 2, 3, ....
+Quantumstateswithdifferentvaluesoforbitalangularmomentumaredistinguishedusingspectroscopicnotation(Table
+8.2).Thedesignationss,p,d,andfresultfromearlyhistoricalattemptstoclassifyatomicspectrallines.(Thelettersstand
+for sharp, principal, diffuse, and fundamental, respectively.) Afterf, the letters continue alphabetically.
+Thegroundstateofhydrogenisdesignatedasthe1sstate,where“1”indicatestheenergylevel (n=1) and“s”indicates
+the orbital angular momentum state (l=0).When n=2,lcan beeither 0or1.The n=2, l=0 state isdesignated
+“2s.” The n=2, l=1 state is designated “2p.” When n=3, l can be 0, 1, or 2, and the states are 3s, 3p, and 3d,
+respectively. Notation for other quantum states is given inTable 8.3.
+Theangularmomentumprojectionquantumnumbermisassociatedwiththeazimuthalangle ϕ (seeFigure8.3)and
+is related to thez-component of orbital angular momentum of an electron in a hydrogen atom. This component is given by
+L z=mℏ, (8.5)
+where
+m=−l, −l+1, …, 0, …, +l−1, l.
+Thez-component of angular momentum is related to the magnitude of angular momentum by
+L z=Lcosθ, (8.6)
+where θ is the angle between the angular momentum vector and the z-axis. Note that the direction of the z-axis is
+determinedbyexperiment—thatis,alonganydirection,theexperimenterdecidestomeasuretheangularmomentum.For
+example,thez-directionmightcorrespondtothedirectionofanexternalmagneticfield.Therelationshipbetween L zandL
+is given inFigure 8.4.
+
+360 Chapter 8 | Atomic Structure
+Figure 8.4 Thez-component of angular momentum is
+quantized with its own quantum numberm.
+Orbital Quantum Numberl Angular Momentum State Spectroscopic Name
+0 0 s Sharp
+1 2h p Principal
+2 6h d Diffuse
+3 12h f Fundamental
+4 20h g
+5 30h h
+Table 8.2Spectroscopic Notation and Orbital Angular Momentum
+l=0 l=1 l=2 l=3 l=4 l=5
+n=1 1s
+n=2 2s 2p
+n=3 3s 3p 3d
+n=4 4s 4p 4d 4f
+n=5 5s 5p 5d 5f 5g
+n=6 6s 6p 6d 6f 6g 6h
+Table 8.3Spectroscopic Description of Quantum States
+The quantization of L
+z
+is equivalent to the quantization of θ. Substituting l(l+1)ℏ for L and m for L
+z
+into this
+equation, we find
+mℏ= l(l+1)ℏcosθ. (8.7)
+Thus, the angle θ is quantized with the particular values
+⎛ ⎞ (8.8)
+θ=cos−1 m .
+⎝ l(l+1) ⎠
+Noticethatboththepolarangle(θ)andtheprojectionoftheangularmomentumvectorontoanarbitraryz-axis(L )are
+z
+quantized.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 361
+Thequantizationofthepolarangleforthe l=3 stateisshowninFigure8.5.Theorbitalangularmomentumvectorlies
+somewhereonthesurfaceofaconewithanopeningangle θ relativetothez-axis(unless m=0, inwhichcase θ=90°
+and the vector points are perpendicular to thez-axis).
+Figure 8.5 The quantization of orbital angular momentum.
+Each vector lies on the surface of a cone with axis along the
+z-axis.
+Adetailedstudyofangularmomentumrevealsthatwecannotknowallthreecomponentssimultaneously.Intheprevious
+section, the z-component of orbital angular momentum has definite values that depend on the quantum number m. This
+impliesthatwecannotknowbothx-andy-componentsofangularmomentum, L and L ,withcertainty.Asaresult,the
+x y
+precise direction of the orbital angular momentum vector is unknown.
+Example 8.2
+What Are the Allowed Directions?
+→
+Calculate the angles that the angular momentum vector L can make with the z-axis for l=1, as shown in
+Figure 8.6.
+
+362 Chapter 8 | Atomic Structure
+Figure 8.6 The component of a given angular momentum
+along thez-axis (defined by the direction of a magnetic field)
+can have only certain values. These are shown here for l=1,
+→
+for which m=−1, 0, and+1. The direction of L is
+quantized in the sense that it can have only certain angles
+relative to thez-axis.
+Strategy
+→ → → →
+Thevectors L and L z (inthez-direction)formarighttriangle,where L isthehypotenuseand L z is
+→ →
+theadjacentside.Theratioof L z to| L |isthecosineoftheangleofinterest.Themagnitudes L=| L | and
+L are given by
+z
+L= l(l+1)ℏandL z=mℏ.
+Solution
+We are given l=1, somlcan be +1, 0, or −1. Thus,Lhas the value given by
+L= l(l+1)ℏ= 2ℏ.
+The quantity L
+z
+can have three values, given by L z=m
+l
+ℏ.
+⎧ ℏ, m l= +1
+L z=m
+l
+ℏ=⎨ 0, m l=0
+⎩ −ℏ, m l=−1
+As you can see inFigure 8.6, cosθ=L z/L, so for m= +1, we have
+cosθ = L Z = ℏ = 1 =0.707.
+1 L 2ℏ 2
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 363
+Thus,
+θ = cos−10.707=45.0°.
+1
+Similarly, for m=0, we find cosθ =0; this gives
+2
+θ =cos−10=90.0°.
+2
+Then for m l=−1:
+cosθ = L Z = −ℏ = − 1 =−0.707,
+3 L 2ℏ 2
+so that
+θ = cos−1(−0.707)=135.0°.
+3
+Significance
+The angles are consistent with the figure. Only the angle relative to the z-axis is quantized. L can point in any
+directionaslongasitmakestheproperanglewiththez-axis.Thus,theangularmomentumvectorslieoncones,
+as illustrated. To see how the correspondence principle holds here, consider that the smallest angle (θ in the
+1
+example) is for the maximum value of m l, namely m l=l. For that smallest angle,
+cosθ= L z = l ,
+L l(l+1)
+which approaches 1 as l becomes very large. If cosθ=1, then θ=0º . Furthermore, for large l, there are
+many values of m , so that all angles become possible aslgets very large.
+l
+8.1 Check Your UnderstandingCan the magnitude of L ever be equal toL?
+z
+Using the Wave Function to Make Predictions
+As we saw earlier, we can use quantum mechanics to make predictions about physical events by the use of probability
+statements.Itisthereforepropertostate,“Anelectronislocatedwithinthisvolumewiththisprobabilityatthistime,”but
+not, “An electron is located at the position (x, y, z) at this time.” To determine the probability of finding an electron in a
+hydrogen atom in a particular region of space, it is necessary to integrate the probability density |ψ |2 over that region:
+nlm
+Probability=∫ |ψ
+nlm
+|2dV, (8.9)
+volume
+wheredVisaninfinitesimalvolumeelement.Ifthisintegraliscomputedforallspace,theresultis1,becausetheprobability
+of the particle to be located somewhere is 100% (the normalization condition). In a more advanced course on modern
+physics,youwillfindthat |ψ nlm |2=ψ n * lm ψ nlm, where ψ n * lm isthecomplexconjugate.Thiseliminatestheoccurrences
+of i= −1 in the above calculation.
+Consideranelectroninastateofzeroangularmomentum(l=0).Inthiscase,theelectron’swavefunctiondependsonly
+ontheradialcoordinater.(Refertothestates ψ and ψ inTable8.1.)Theinfinitesimalvolumeelementcorresponds
+100 200
+to a spherical shell of radiusrand infinitesimal thicknessdr, written as
+dV =4πr2dr. (8.10)
+The probability of finding the electron in the regionrto r+dr (“at approximatelyr”) is
+
+364 Chapter 8 | Atomic Structure
+2 (8.11)
+P(r)dr =|ψ
+n00
+| 4πr2dr.
+Here P(r)is called the radial probability density function (a probability per unit length). Foranelectron inthe ground
+state of hydrogen, the probability of finding an electron in the regionrto r+dr is
+2 (8.12)
+|ψ
+n00
+| 4πr2dr =(4/a
+0
+3 )r2 exp(−2r/a
+0
+)dr,
+where a =0.5 angstroms.TheradialprobabilitydensityfunctionP(r)isplottedinFigure8.7.Theareaunderthecurve
+0
+between any two radial positions, say r and r , gives the probability of finding the electron in that radial range. To
+1 2
+findthemostprobableradialposition,wesetthefirstderivativeofthisfunctiontozero(dP/dr =0)andsolveforr.The
+mostprobableradialpositionisnotequaltotheaverageorexpectationvalueoftheradialpositionbecause |ψ |2 isnot
+n00
+symmetrical about its peak value.
+Figure 8.7 The radial probability density function for the
+ground state of hydrogen.
+If the electron has orbital angular momentum (l≠0), then the wave functions representing the electron depend on the
+angles θ and ϕ; that is, ψ nlm= ψ nlm (r, θ, ϕ). Atomic orbitals for three states with n=2 and l=1 are shown
+in Figure 8.8. An atomic orbital is a region in space that encloses a certain percentage (usually 90%) of the electron
+probability. (Sometimes atomic orbitals are referred to as “clouds” of probability.) Notice that these distributions are
+pronounced in certain directions. This directionality is important to chemists when they analyze how atoms are bound
+together to form molecules.
+Figure 8.8 The probability density distributions for three states with n=2
+and l=1. The distributions are directed along the (a)x-axis, (b)y-axis, and
+(c)z-axis.
+A slightly different representation of the wave function is given in Figure 8.9. In this case, light and dark regions
+indicatelocationsofrelativelyhighandlowprobability,respectively.IncontrasttotheBohrmodelofthehydrogenatom,
+the electron does not move around the proton nucleus in a well-defined path. Indeed, the uncertainty principle makes it
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 365
+impossible to know how the electron gets from one place to another.
+Figure 8.9 Probability clouds for the electron in the ground state and several
+excited states of hydrogen. The probability of finding the electron is indicated by
+the shade of color; the lighter the coloring, the greater the chance of finding the
+electron.
+8.2 | Orbital Magnetic Dipole Moment of the Electron
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain why the hydrogen atom has magnetic properties
+• Explain why the energy levels of a hydrogen atom associated with orbital angular momentum
+are split by an external magnetic field
+• Use quantum numbers to calculate the magnitude and direction of the orbital magnetic dipole
+moment of a hydrogen atom
+InBohr’smodelofthehydrogenatom,theelectronmovesinacircularorbitaroundtheproton.Theelectronpassesbya
+particularpointontheloopinacertaintime,sowecancalculateacurrent I =Q/t.Anelectronthatorbitsaprotonina
+hydrogenatomisthereforeanalogoustocurrentflowingthroughacircularwire(Figure8.10).Inthestudyofmagnetism,
+wesawthatacurrent-carryingwireproducesmagneticfields.Itisthereforereasonabletoconcludethatthehydrogenatom
+produces a magnetic field and interacts with other magnetic fields.
+
+366 Chapter 8 | Atomic Structure
+Figure 8.10 (a) Current flowing through a circular wire is analogous to (b) an electron that orbits a proton in
+a hydrogen atom.
+The orbital magnetic dipole moment is a measure of the strength of the magnetic field produced by the orbital
+angularmomentumofanelectron.FromForceandTorqueonaCurrentLoop(http://cnx.org/content/m58743/
+latest/#fs-id1171360245659), the magnitude of the orbital magnetic dipole moment for a current loop is
+µ =IA, (8.13)
+whereIisthecurrentandAistheareaoftheloop.(Forbrevity,werefertothisasthemagneticmoment.)ThecurrentI
+associated with an electron in orbit about a proton in a hydrogen atom is
+I = e , (8.14)
+T
+whereeisthemagnitudeoftheelectronchargeandTisitsorbitalperiod.Ifweassumethattheelectrontravelsinaperfectly
+circular orbit, the orbital period is
+T =
+2π
+v
+r
+,
+(8.15)
+whereristheradiusoftheorbitandvisthespeedoftheelectroninitsorbit.Giventhattheareaofacircleis πr2,the
+absolute magnetic moment is
+µ =IA= e πr2= evr . (8.16)
+⎛2πr⎞ 2
+⎝ v ⎠
+Itishelpfultoexpressthemagneticmomentum µ intermsoftheorbitalangularmomentum ( → L = → r × → p ). Because
+the electron orbits in a circle, the position vector → r and the momentum vector → p form a right angle. Thus, the
+magnitude of the orbital angular momentum is
+L=| → L |=| → r × → p |=rpsinθ=rp=rmv. (8.17)
+Combining these two equations, we have
+⎛ e ⎞ (8.18)
+µ = L.
+⎝2m
+e
+⎠
+In full vector form, this expression is written as
+→ ⎛ e ⎞→ (8.19)
+µ =− L .
+⎝2m
+e
+⎠
+Thenegativesignappearsbecausetheelectronhasanegativecharge.Noticethatthedirectionofthemagneticmomentof
+theelectronisantiparalleltotheorbitalangularmomentum,asshowninFigure 8.10(b).IntheBohrmodeloftheatom,
+the relationship between →µ and → L inEquation 8.19is independent of the radius of the orbit.
+Themagneticmoment µ canalsobeexpressedintermsoftheorbitalangularquantumnumberl.CombiningEquation
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

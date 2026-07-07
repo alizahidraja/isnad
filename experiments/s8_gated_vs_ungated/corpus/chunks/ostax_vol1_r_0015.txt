@@ -1,0 +1,213 @@
+# REAL PDF — openstax_vol1.pdf, pages 77-85
+############################################################
+
+2.3 • Algebra of Vectors 65
+resultant displacement vectors and resultant velocity vectors, in mechanics to find resultant force vectors and the
+resultants of many derived vector quantities, and in electricity and magnetism to find resultant electric or magnetic
+vector fields.
+EXAMPLE 2.9
+Analytical Computation of a Resultant
+Three displacement vectors , , and in a plane (Figure 2.13) are specified by their magnitudes A = 10.0, B = 7.0,
+and C = 8.0, respectively, and by their respective direction angles with the horizontal direction ,
+and . The physical units of the magnitudes are centimeters. Resolve the vectors to their scalar components
+and find the following vector sums: (a) , (b) , and (c) .
+Strategy
+First, we use Equation 2.17 to find the scalar components of each vector and then we express each vector in its
+vector component form given by Equation 2.12. Then, we use analytical methods of vector algebra to find the
+resultants.
+Solution
+We resolve the given vectors to their scalar components:
+For (a) we may substitute directly into Equation 2.25 to find the scalar components of the resultant:
+Therefore, the resultant vector is .
+For (b), we may want to write the vector difference as
+Then, the scalar components of the vector difference are
+Hence, the difference vector is .
+For (c), we can write vector in the following explicit form:
+Then, the scalar components of are
+The vector is .
+
+66 2 • Vectors
+Significance
+Having found the vector components, we can illustrate the vectors by graphing or we can compute magnitudes and
+direction angles, as shown in Figure 2.24. Results for the magnitudes in (b) and (c) can be compared with results for
+the same problems obtained with the graphical method, shown in Figure 2.14 and Figure 2.15. Notice that the
+analytical method produces exact results and its accuracy is not limited by the resolution of a ruler or a protractor,
+as it was with the graphical method used in Example 2.2 for finding this same resultant.
+FIGURE 2.24 Graphical illustration of the solutions obtained analytically in Example 2.9.
+CHECK YOUR UNDERSTANDING 2.8
+Three displacement vectors , , and (Figure 2.13) are specified by their magnitudes A = 10.00, B = 7.00, and F =
+20.00, respectively, and by their respective direction angles with the horizontal direction , , and
+. The physical units of the magnitudes are centimeters. Use the analytical method to find vector
+. Verify that
+G = 28.15 cm and that .
+EXAMPLE 2.10
+The Tug-of-War Game
+Four dogs named Astro, Balto, Clifford, and Dug play a tug-of-war game with a toy (Figure 2.25). Astro pulls on the
+toy in direction south of east, Balto pulls in direction east of north, and Clifford pulls in direction
+west of north. Astro pulls strongly with 160.0 units of force (N), which we abbreviate as A = 160.0 N. Balto
+pulls even stronger than Astro with a force of magnitude B = 200.0 N, and Clifford pulls with a force of magnitude C
+= 140.0 N. When Dug pulls on the toy in such a way that his force balances out the resultant of the other three
+forces, the toy does not move in any direction. With how big a force and in what direction must Dug pull on the toy
+for this to happen?
+Access for free at openstax.org
+
+2.3 • Algebra of Vectors 67
+FIGURE 2.25 Four dogs play a tug-of-war game with a toy.
+Strategy
+We assume that east is the direction of the positive x-axis and north is the direction of the positive y-axis. As in
+Example 2.9, we have to resolve the three given forces— (the pull from Astro), (the pull from Balto), and (the
+pull from Clifford)—into their scalar components and then find the scalar components of the resultant vector
+. When the pulling force from Dug balances out this resultant, the sum of and must give the
+null vector . This means that , so the pull from Dug must be antiparallel to .
+Solution
+The direction angles are , , and , and substituting them
+into Equation 2.17 gives the scalar components of the three given forces:
+Now we compute scalar components of the resultant vector :
+The antiparallel vector to the resultant is
+The magnitude of Dug’s pulling force is
+The direction of Dug’s pulling force is
+Dug pulls in the direction south of west because both components are negative, which means the pull vector
+
+68 2 • Vectors
+lies in the third quadrant (Figure 2.19).
+CHECK YOUR UNDERSTANDING 2.9
+Suppose that Balto in Example 2.10 leaves the game to attend to more important matters, but Astro, Clifford, and
+Dug continue playing. Astro and Clifford's pull on the toy does not change, but Dug runs around and bites on the toy
+in a different place. With how big a force and in what direction must Dug pull on the toy now to balance out the
+combined pulls from Clifford and Astro? Illustrate this situation by drawing a vector diagram indicating all forces
+involved.
+EXAMPLE 2.11
+Vector Algebra
+Find the magnitude of the vector that satisfies the equation , where and
+.
+Strategy
+We first solve the given equation for the unknown vector . Then we substitute and ; group the terms along
+each of the three directions , , and ; and identify the scalar components , , and . Finally, we substitute
+into Equation 2.21 to find magnitude C.
+Solution
+The components are , , and , and substituting into Equation 2.21 gives
+EXAMPLE 2.12
+Displacement of a Skier
+Starting at a ski lodge, a cross-country skier goes 5.0 km north, then 3.0 km west, and finally 4.0 km southwest
+before taking a rest. Find their total displacement vector relative to the lodge when they are at the rest point. How
+far and in what direction must they ski from the rest point to return directly to the lodge?
+Strategy
+We assume a rectangular coordinate system with the origin at the ski lodge and with the unit vector pointing east
+and the unit vector pointing north. There are three displacements: , , and . We identify their magnitudes
+as , , and . We identify their directions are the angles , ,
+and . We resolve each displacement vector to its scalar components and substitute the
+Access for free at openstax.org
+
+2.3 • Algebra of Vectors 69
+components into Equation 2.25 to obtain the scalar components of the resultant displacement from the lodge to
+the rest point. On the way back from the rest point to the lodge, the displacement is . Finally, we find the
+magnitude and direction of .
+Solution
+Scalar components of the displacement vectors are
+Scalar components of the net displacement vector are
+Hence, the skier’s net displacement vector is . On the way back to the lodge,
+their displacement is . Its magnitude is
+and its direction angle is .
+Therefore, to return to the lodge, they must go 6.2 km in a direction about south of east.
+Significance
+Notice that no figure is needed to solve this problem by the analytical method. Figures are required when using a
+graphical method; however, we can check if our solution makes sense by sketching it, which is a useful final step in
+solving any vector problem.
+EXAMPLE 2.13
+Displacement of a Jogger
+A jogger runs up a flight of 200 identical steps to the top of a hill and then runs along the top of the hill 50.0 m
+before he stops at a drinking fountain (Figure 2.26). His displacement vector from point A at the bottom of the steps
+to point B at the fountain is . What is the height and width of each step in the flight?
+What is the actual distance the jogger covers? If he makes a loop and returns to point A, what is his net
+displacement vector?
+
+70 2 • Vectors
+FIGURE 2.26 A jogger runs up a flight of steps.
+Strategy
+The displacement vector is the vector sum of the jogger’s displacement vector along the stairs (from
+point A at the bottom of the stairs to point T at the top of the stairs) and his displacement vector on the top of
+the hill (from point T at the top of the stairs to the fountain at point B). We must find the horizontal and the vertical
+components of . If each step has width w and height h, the horizontal component of must have a length of
+200w and the vertical component must have a length of 200h. The actual distance the jogger covers is the sum of
+the distance he runs up the stairs and the distance of 50.0 m that he runs along the top of the hill.
+Solution
+In the coordinate system indicated in Figure 2.26, the jogger’s displacement vector on the top of the hill is
+. His net displacement vector is
+Therefore, his displacement vector along the stairs is
+Its scalar components are and . Therefore, we must have
+Hence, the step width is w = 40.0 m/200 = 0.2 m = 20 cm, and the step height is h = 30.0 m/200 = 0.15 m = 15 cm.
+The distance that the jogger covers along the stairs is
+Thus, the actual distance he runs is . When he makes a loop and comes
+back from the fountain to his initial position at point A, the total distance he covers is twice this distance, or 200.0
+m. However, his net displacement vector is zero, because when his final position is the same as his initial position,
+the scalar components of his net displacement vector are zero (Equation 2.13).
+In many physical situations, we often need to know the direction of a vector. For example, we may want to know the
+direction of a magnetic field vector at some point or the direction of motion of an object. We have already said
+direction is given by a unit vector, which is a dimensionless entity—that is, it has no physical units associated with it.
+When the vector in question lies along one of the axes in a Cartesian system of coordinates, the answer is simple,
+because then its unit vector of direction is either parallel or antiparallel to the direction of the unit vector of an axis.
+For example, the direction of vector is unit vector . The general rule of finding the unit vector of
+Access for free at openstax.org
+
+2.3 • Algebra of Vectors 71
+direction for any vector is to divide it by its magnitude V:
+2.26
+We see from this expression that the unit vector of direction is indeed dimensionless because the numerator and the
+denominator in Equation 2.26 have the same physical unit. In this way, Equation 2.26 allows us to express the unit
+vector of direction in terms of unit vectors of the axes. The following example illustrates this principle.
+EXAMPLE 2.14
+The Unit Vector of Direction
+If the velocity vector of the military convoy in Example 2.8 is , what is the unit
+vector of its direction of motion?
+Strategy
+The unit vector of the convoy’s direction of motion is the unit vector that is parallel to the velocity vector. The unit
+vector is obtained by dividing a vector by its magnitude, in accordance with Equation 2.26.
+Solution
+The magnitude of the vector is
+To obtain the unit vector , divide by its magnitude:
+Significance
+Note that when using the analytical method with a calculator, it is advisable to carry out your calculations to at least
+three decimal places and then round off the final answer to the required number of significant figures, which is the
+way we performed calculations in this example. If you round off your partial answer too early, you risk your final
+answer having a huge numerical error, and it may be far off from the exact answer or from a value measured in an
+experiment.
+CHECK YOUR UNDERSTANDING 2.10
+Verify that vector obtained in Example 2.14 is indeed a unit vector by computing its magnitude. If the convoy in
+Example 2.8 was moving across a desert flatland—that is, if the third component of its velocity was zero—what is the
+unit vector of its direction of motion? Which geographic direction does it represent?
+
+72 2 • Vectors
+2.4 Products of Vectors
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the difference between the scalar product and the vector product of two vectors.
+• Determine the scalar product of two vectors.
+• Determine the vector product of two vectors.
+• Describe how the products of vectors are used in physics.
+A vector can be multiplied by another vector but may not be divided by another vector. There are two kinds of
+products of vectors used broadly in physics and engineering. One kind of multiplication is a scalar multiplication of
+two vectors. Taking a scalar product of two vectors results in a number (a scalar), as its name indicates. Scalar
+products are used to define work and energy relations. For example, the work that a force (a vector) performs on an
+object while causing its displacement (a vector) is defined as a scalar product of the force vector with the
+displacement vector. A quite different kind of multiplication is a vector multiplication of vectors. Taking a vector
+product of two vectors returns as a result a vector, as its name suggests. Vector products are used to define other
+derived vector quantities. For example, in describing rotations, a vector quantity called torque is defined as a vector
+product of an applied force (a vector) and its distance from pivot to force (a vector). It is important to distinguish
+between these two kinds of vector multiplications because the scalar product is a scalar quantity and a vector
+product is a vector quantity.
+The Scalar Product of Two Vectors (the Dot Product)
+Scalar multiplication of two vectors yields a scalar product.
+SCALAR PRODUCT (DOT PRODUCT)
+The scalar product of two vectors and is a number defined by the equation
+2.27
+where is the angle between the vectors (shown in Figure 2.27). The scalar product is also called the dot
+product because of the dot notation that indicates it.
+In the definition of the dot product, the direction of angle does not matter, and can be measured from either of
+the two vectors to the other because . The dot product is a negative number when
+and is a positive number when . Moreover, the dot product of two parallel vectors is
+, and the dot product of two antiparallel vectors is . The
+scalar product of two orthogonal vectors vanishes: . The scalar product of a vector with
+itself is the square of its magnitude:
+2.28
+FIGURE 2.27 The scalar product of two vectors. (a) The angle between the two vectors. (b) The orthogonal projection of vector onto
+Access for free at openstax.org

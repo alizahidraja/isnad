@@ -1,0 +1,188 @@
+# REAL PDF — openstax_vol2.pdf, pages 154-160
+############################################################
+
+144 Chapter 3 | The First Law of Thermodynamics
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 145
+4 | THE SECOND LAW OF
+THERMODYNAMICS
+Figure 4.1 A xenon ion engine from the Jet Propulsion Laboratory shows the faint blue glow of charged atoms emitted from
+the engine. The ion propulsion engine is the first nonchemical propulsion to be used as the primary means of propelling a
+spacecraft. (credit: modification of work by NASA/JPL)
+Chapter Outline
+4.1Reversible and Irreversible Processes
+4.2Heat Engines
+4.3Refrigerators and Heat Pumps
+4.4Statements of the Second Law of Thermodynamics
+4.5The Carnot Cycle
+4.6Entropy
+4.7Entropy on a Microscopic Scale
+Introduction
+According to the first law of thermodynamics, the only processes that can occur are those that conserve energy. But this
+cannotbetheonlyrestrictionimposedbynature,becausemanyseeminglypossiblethermodynamicprocessesthatwould
+conserveenergydonotoccur.Forexample,whentwobodiesareinthermalcontact,heatneverflowsfromthecolderbody
+to the warmer one, even though this is not forbidden by the first law. So some other thermodynamic principles must be
+controlling the behavior of physical systems.
+One such principle is the second law of thermodynamics, which limits the use of energy within a source. Energy cannot
+arbitrarily pass from one object to another, just as we cannot transfer heat from a cold object to a hot one without doing
+anywork.Wecannotunmixcreamfromcoffeewithoutachemicalprocessthatchangesthephysicalcharacteristicsofthe
+systemoritsenvironment.Wecannotuseinternalenergystoredintheairtopropelacar,orusetheenergyoftheoceanto
+run a ship, without disturbing something around that object.
+Inthechaptercoveringthefirstlawofthermodynamics,westartedourdiscussionwithajokebyC.P.Snowstatingthat
+
+146 Chapter 4 | The Second Law of Thermodynamics
+thefirstlawmeans“youcan’twin.”Heparaphrasedthesecondlawas“youcan’tbreakeven,exceptonaverycoldday.”
+Unlessyouareatzerokelvin,youcannotconvert100%ofthermalenergyintowork.Westartbydiscussingspontaneous
+processes and explain why some processes require work to occur even if energy would have been conserved.
+4.1 | Reversible and Irreversible Processes
+Learning Objectives
+By the end of this section, you will be able to:
+• Define reversible and irreversible processes
+• State the second law of thermodynamics via an irreversible process
+Consider an ideal gas that is held in half of a thermally insulated container by a wall in the middle of the container. The
+otherhalfofthecontainerisundervacuumwithnomoleculesinside.Now,ifweremovethewallinthemiddlequickly,the
+gas expands and fills up the entire container immediately, as shown inFigure 4.2.
+Figure 4.2 A gas expanding from half of a container to the entire container (a) before and (b) after the wall in the middle is
+removed.
+Becausehalfofthecontainerisundervacuumbeforethegasexpandsthere,wedonotexpectanyworktobedonebythe
+system—thatis, W =0—becausenoforcefromthevacuumisexertedonthegasduringtheexpansion.Ifthecontainer
+isthermallyinsulatedfromtherestoftheenvironment,wedonotexpectanyheattransfertothesystemeither,so Q=0.
+Then the first law of thermodynamics leads to the change of the internal energy of the system,
+ΔE =Q−W =0.
+int
+Foranidealgas,iftheinternalenergydoesn’tchange,thenthetemperaturestaysthesame.Thus,theequationofstateof
+theidealgasgivesusthefinalpressureofthegas, p=nRT/V = p /2, where p isthepressureofthegasbeforethe
+0 0
+expansion.Thevolumeisdoubledandthepressureishalved,butnothingelseseemstohavechangedduringtheexpansion.
+All of this discussion is based on what we have learned so far and makes sense. Here is what puzzles us: Can all the
+moleculesgobackwardtotheoriginalhalfofthecontainerinsomefuturetime?Ourintuitiontellsusthatthisisgoingtobe
+veryunlikely,eventhoughnothingwehavelearnedsofarpreventssuchaneventfromhappening,regardlessofhowsmall
+the probability is. What we are really asking is whether the expansion into the vacuum half of the container isreversible.
+Areversibleprocessisaprocessinwhichthesystemandenvironmentcanberestoredtoexactlythesameinitialstatesthat
+theywereinbeforetheprocessoccurred,ifwegobackwardalongthepathoftheprocess.Thenecessaryconditionfora
+reversibleprocessisthereforethequasi-staticrequirement.Notethatitisquiteeasytorestoreasystemtoitsoriginalstate;
+thehardpartistohaveitsenvironmentrestoredtoitsoriginalstateatthesametime.Forexample,intheexampleofanideal
+gasexpandingintovacuumtotwiceitsoriginalvolume,wecaneasilypushitbackwithapistonandrestoreitstemperature
+andpressurebyremovingsomeheatfromthegas.Theproblemisthatwecannotdoitwithoutchangingsomethinginits
+surroundings, such as dumping some heat there.
+A reversible process is truly an ideal process that rarely happens. We can make certain processes close to reversible and
+thereforeusetheconsequencesofthecorrespondingreversibleprocessesasastartingpointorreference.Inreality,almost
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 147
+all processes are irreversible, and some properties of the environment are altered when the properties of the system are
+restored.Theexpansionofanidealgas,aswehavejustoutlined,isirreversiblebecausetheprocessisnotevenquasi-static,
+that is, not in an equilibrium state at any moment of the expansion.
+Fromthemicroscopicpointofview,aparticledescribedbyNewton’ssecondlawcangobackwardifweflipthedirection
+oftime.Butthisisnotthecase,inpracticalterms,inamacroscopicsystemwithmorethan 10 23 particlesormolecules,
+wherenumerouscollisionsbetweenthesemoleculestendtoeraseanytraceofmemoryoftheinitialtrajectoryofeachof
+theparticles.Forexample,wecanactuallyestimatethechanceforalltheparticlesintheexpandedgastogobacktothe
+original half of the container, but the current age of the universe is still not long enough for it to happen even once.
+An irreversible process is what we encounter in reality almost all the time. The system and its environment cannot be
+restoredtotheiroriginalstatesatthesametime.Becausethisiswhathappensinnature,itisalsocalledanaturalprocess.
+The signofanirreversible process comes fromthe finite gradient between the states occurring inthe actual process. For
+example, when heat flows from one object to another, there is a finite temperature difference (gradient) between the two
+objects.Moreimportantly,atanygivenmomentoftheprocess,thesystemmostlikelyisnotatequilibrium orinawell-
+defined state. This phenomenon is calledirreversibility.
+Let us see another example of irreversibility in thermal processes. Consider two objects in thermal contact: one at
+temperature T and the other at temperature T >T , as shown inFigure 4.3.
+1 2 1
+Figure 4.3 Spontaneous heat flow from an object at higher
+temperature T to another at lower temperature T .
+2 1
+Weknowfromcommonpersonalexperience thatheatflowsfromahotterobject toacolderone.Forexample, whenwe
+holdafewpiecesoficeinourhands,wefeelcoldbecauseheathasleftourhandsintotheice.Theoppositeistruewhen
+weholdoneendofametalrodwhilekeepingtheotherendoverafire.Basedonalloftheexperimentsthathavebeendone
+on spontaneous heat transfer, the following statement summarizes the governing principle:
+Second Law of Thermodynamics (Clausius statement)
+Heat never flows spontaneously from a colder object to a hotter object.
+Thisstatementturnsouttobeoneofseveraldifferentwaysofstatingthesecondlawofthermodynamics.Theformofthis
+statementiscreditedtoGermanphysicistRudolfClausius(1822−1888)andisreferredtoastheClausiusstatementofthe
+secondlawofthermodynamics.Theword“spontaneously”heremeansnootherefforthasbeenmadebyathirdparty,or
+onethatisneitherthehotternorcolderobject.Wewillintroducesomeothermajorstatementsofthesecondlawandshow
+that they imply each other. In fact, all the different statements of the second law of thermodynamics can be shown to be
+equivalent,andallleadtotheirreversibilityofspontaneousheatflowbetweenmacroscopicobjectsofaverylargenumber
+of molecules or particles.
+BothisothermalandadiabaticprocessessketchedonapVgraph(discussedinTheFirstLawofThermodynamics)are
+reversibleinprinciplebecausethesystemisalwaysatanequilibriumstateatanypointoftheprocessesandcangoforward
+orbackwardalongthegivencurves.OtheridealizedprocessescanberepresentedbypVcurves;Table4.1summarizesthe
+most common reversible processes.
+Process Constant Quantity and Resulting Fact
+Isobaric Constant pressure W = pΔV
+Isochoric Constant volume W =0
+Table 4.1Summary of Simple Thermodynamic Processes
+
+148 Chapter 4 | The Second Law of Thermodynamics
+Process Constant Quantity and Resulting Fact
+Isothermal Constant temperature ΔT =0
+Adiabatic No heat transfer Q=0
+Table 4.1Summary of Simple Thermodynamic Processes
+4.2 | Heat Engines
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the function and components of a heat engine
+• Explain the efficiency of an engine
+• Calculate the efficiency of an engine for a given cycle of an ideal gas
+A heat engine is a device used to extract heat from a source and then convert it into mechanical work that is used for
+all sorts of applications. For example, a steam engine on an old-style train can produce the work needed for driving the
+train.Severalquestionsemergefromtheconstructionandapplicationofheatengines.Forexample,whatisthemaximum
+percentage of the heat extracted that can be used to do work? This turns out to be a question that can only be answered
+through the second law of thermodynamics.
+The second law of thermodynamics can be formally stated in several ways. One statement presented so far is about the
+directionofspontaneousheatflow,knownastheClausiusstatement.Acoupleofotherstatementsarebasedonheatengines.
+Wheneverweconsiderheatenginesandassociateddevicessuchasrefrigeratorsandheatpumps,wedonotusethenormal
+sign convention for heat and work. For convenience, we assume that the symbols Q
+h
+, Q c, and W represent only the
+amounts of heat transferred and work delivered, regardless what the givers or receivers are. Whether heat is entering or
+leaving a system and work is done to or by a system are indicated by proper signs in front of the symbols and by the
+directions of arrows in diagrams.
+Itturnsoutthatweneedmorethanoneheatsource/sinktoconstructaheatengine.Wewillcomebacktothispointlater
+inthechapter,whenwecomparedifferentstatementsofthesecondlawofthermodynamics.Forthemoment,weassume
+thataheatengineisconstructedbetweenaheatsource(high-temperaturereservoirorhotreservoir)andaheatsink(low-
+temperaturereservoirorcoldreservoir),representedschematicallyinFigure4.4.Theengineabsorbsheat Q fromaheat
+h
+source(hotreservoir)ofKelvintemperature T , usessomeofthatenergytoproduceusefulworkW,andthendiscards
+h
+theremainingenergyasheat Q c intoaheatsink(coldreservoir)ofKelvintemperature T c. Powerplantsandinternal
+combustion engines are examples ofheat engines. Power plants use steam produced at high temperature to drive electric
+generators, while exhausting heat to the atmosphere ora nearby bodyofwater in the role ofthe heat sink. Inan internal
+combustionengine,ahotgas-airmixtureisusedtopushapiston,andheatisexhaustedtothenearbyatmosphereinasimilar
+manner.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 149
+Figure 4.4 A schematic representation of a heat engine.
+Energy flows from the hot reservoir to the cold reservoir while
+doing work.
+Actualheatengineshavemanydifferentdesigns.Examplesincludeinternalcombustionengines,suchasthoseusedinmost
+carstoday,andexternalcombustionengines,suchasthesteamenginesusedinoldsteam-enginetrains.Figure4.5shows
+aphotoofanuclearpowerplantinoperation.Theatmospherearoundthereactorsactsasthecoldreservoir,andtheheat
+generated from the nuclear reaction provides the heat from the hot reservoir.
+Figure 4.5 The heat exhausted from a nuclear power plant
+goes to the cooling towers, where it is released into the
+atmosphere.
+Heat engines operate bycarrying a working substance through a cycle. In a steam power plant, the working substance is
+water,whichstartsasaliquid,becomesvaporized,isthenusedtodriveaturbine,andisfinallycondensedbackintothe
+liquidstate.Asisthecaseforallworkingsubstancesincyclicprocesses,oncethewaterreturnstoitsinitialstate,itrepeats
+the same sequence.
+Fornow,weassumethatthecyclesofheatenginesarereversible,sothereisnoenergylosstofrictionorotherirreversible
+effects.SupposethattheengineofFigure 4.4goesthroughonecomplete cycleandthat Q
+h
+, Q c, andWrepresentthe
+heatsexchangedandtheworkdoneforthatcycle.Sincetheinitialandfinalstatesofthesystemarethesame, ΔE =0
+int
+for the cycle. We therefore have from the first law of thermodynamics,
+W =Q−ΔE
+int
+=(Q
+h
+−Q c)−0,
+so that
+W =Q
+h
+−Q c. (4.1)
+Themostimportantmeasureofaheatengineisitsefficiency(e),whichissimply“whatwegetout”dividedby“whatwe
+put in” during each cycle, as defined by e=W /Q .
+out in

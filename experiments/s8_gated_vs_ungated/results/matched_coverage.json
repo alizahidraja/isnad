@@ -1,0 +1,42 @@
+[
+  {
+    "target_coverage": 0.2,
+    "isnad_actual_coverage": 0.04770065695515567,
+    "isnad_error": 0.0,
+    "confidence_actual_coverage": 0.20008568980291344,
+    "confidence_error": 0.15060670949321914,
+    "isnad_advantage": 0.15060670949321914
+  },
+  {
+    "target_coverage": 0.3,
+    "isnad_actual_coverage": 0.04770065695515567,
+    "isnad_error": 0.0,
+    "confidence_actual_coverage": 0.3000571265352756,
+    "confidence_error": 0.15849595430747263,
+    "isnad_advantage": 0.15849595430747263
+  },
+  {
+    "target_coverage": 0.5,
+    "isnad_actual_coverage": 0.04770065695515567,
+    "isnad_error": 0.0,
+    "confidence_actual_coverage": 0.5,
+    "confidence_error": 0.1625249928591831,
+    "isnad_advantage": 0.1625249928591831
+  },
+  {
+    "target_coverage": 0.7,
+    "isnad_actual_coverage": 0.04770065695515567,
+    "isnad_error": 0.0,
+    "confidence_actual_coverage": 0.7000856898029134,
+    "confidence_error": 0.1599347205222358,
+    "isnad_advantage": 0.1599347205222358
+  },
+  {
+    "target_coverage": 0.9,
+    "isnad_actual_coverage": 0.04770065695515567,
+    "isnad_error": 0.0,
+    "confidence_actual_coverage": 0.9000285632676378,
+    "confidence_error": 0.16074262139003492,
+    "isnad_advantage": 0.16074262139003492
+  }
+]

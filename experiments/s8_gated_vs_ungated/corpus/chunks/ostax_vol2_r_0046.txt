@@ -1,0 +1,265 @@
+# REAL PDF — openstax_vol2.pdf, pages 275-284
+############################################################
+
+Chapter 6 | Gauss's Law 265
+enclosed by the Gaussian box reside on an areaAof thexy-plane. Hence,
+q enc=σ
+0
+A. (6.12)
+UsingtheequationsforthefluxandenclosedchargeinGauss’slaw,wecanimmediatelydeterminetheelectricfieldata
+point at heightzfrom a uniformly charged plane in thexy-plane:
+→ E P=
+2
+σ
+ε
+0 ^ n.
+0
+ThedirectionofthefielddependsonthesignofthechargeontheplaneandthesideoftheplanewherethefieldpointPis
+located. Note that above the plane, ^ n =+ ^ z , while below the plane, ^ n =− ^ z .
+Youmaybesurprisedtonotethattheelectricfielddoesnotactuallydependonthedistancefromtheplane;thisisaneffect
+oftheassumptionthattheplaneisinfinite.Inpracticalterms,theresultgivenaboveisstillausefulapproximationforfinite
+planes near the center.
+6.4 | Conductors in Electrostatic Equilibrium
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the electric field within a conductor at equilibrium
+• Describe the electric field immediately outside the surface of a charged conductor at
+equilibrium
+• Explain why if the field is not as described in the first two objectives, the conductor is not at
+equilibrium
+Sofar,wehavegenerallybeenworkingwithchargesoccupyingavolumewithinaninsulator.Wenowstudywhathappens
+when free charges are placed on a conductor. Generally, in the presence of a (generally external) electric field, the free
+chargeinaconductorredistributesandveryquicklyreacheselectrostaticequilibrium.Theresultingchargedistributionand
+itselectricfieldhavemanyinterestingproperties,whichwecaninvestigatewiththehelpofGauss’slawandtheconceptof
+electric potential.
+The Electric Field inside a Conductor Vanishes
+If an electric field is present inside a conductor, it exerts forces on the free electrons (also called conduction electrons),
+whichareelectronsinthematerialthatarenotboundtoanatom.Thesefreeelectronsthenaccelerate.However,moving
+chargesbydefinitionmeansnonstaticconditions,contrarytoourassumption.Therefore,whenelectrostaticequilibriumis
+reached, the charge is distributed in such a way that the electric field inside the conductor vanishes.
+Ifyouplaceapieceofametalnearapositivecharge,thefreeelectronsinthemetalareattractedtotheexternalpositive
+charge and migrate freely toward that region. The region the electrons move to then has an excess of electrons over the
+protonsintheatomsandtheregionfromwheretheelectronshavemigratedhasmoreprotonsthanelectrons.Consequently,
+the metal develops a negative region near the charge and a positive region at the far end (Figure 6.34). As we saw in
+theprecedingchapter,thisseparationofequalmagnitudeandoppositetypeofelectricchargeiscalledpolarization.Ifyou
+remove the external charge, the electrons migrate back and neutralize the positive region.
+
+266 Chapter 6 | Gauss's Law
+Figure 6.34 Polarization of a metallic sphere by an external
+point charge +q. The near side of the metal has an opposite
+surface charge compared to the far side of the metal. The sphere
+is said to be polarized. When you remove the external charge,
+the polarization of the metal also disappears.
+The polarization of the metal happens only in the presence of external charges. You can think of this in terms of electric
+fields. The external charge creates an external electric field. When the metal is placed in the region of this electric field,
+theelectronsandprotonsofthemetalexperienceelectricforcesduetothisexternalelectricfield,butonlytheconduction
+electronsarefreetomoveinthemetalovermacroscopicdistances.Themovementoftheconductionelectronsleadstothe
+polarization,whichcreatesaninducedelectricfieldinadditiontotheexternalelectricfield(Figure6.35).Thenetelectric
+field is a vector sum ofthe fields of +q and the surface charge densities −σ A and +σ B. This means that the net field
+inside the conductor is different from the field outside the conductor.
+Figure 6.35 In the presence of an external chargeq, the
+charges in a metal redistribute. The electric field at any point has
+three contributions, from +q and the induced charges −σ
+A
+and +σ B. Note that the surface charge distribution will not be
+uniform in this case.
+The redistribution of charges is such that the sum of the three contributions at any pointPinside the conductor is
+→ → → → →
+E P= E q+ E B+ E A= 0 .
+Now,thankstoGauss’slaw,weknowthatthereisnonetchargeenclosedbyaGaussiansurfacethatissolelywithinthe
+volume of the conductor at equilibrium. That is, q enc=0 and hence
+→ → (6.13)
+E = 0 (at points inside a conductor).
+net
+Charge on a Conductor
+An interesting property of a conductor in static equilibrium is that extra charges on the conductor end up on the outer
+surfaceoftheconductor,regardlessofwheretheyoriginate.Figure6.36illustratesasysteminwhichwebringanexternal
+positivechargeinsidethecavityofametalandthentouchittotheinsidesurface.Initially,theinsidesurfaceofthecavityis
+negativelychargedandtheoutsidesurfaceoftheconductorispositivelycharged.Whenwetouchtheinsidesurfaceofthe
+cavity,theinducedchargeisneutralized,leavingtheoutsidesurfaceandthewholemetalchargedwithanetpositivecharge.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 267
+Figure 6.36 Electric charges on a conductor migrate to the outside surface no
+matter where you put them initially.
+Toseewhythishappens,notethattheGaussiansurfaceinFigure6.37(thedashedline)followsthecontouroftheactual
+surface of the conductor and is located an infinitesimal distancewithinit. Since E=0 everywhere inside a conductor,
+→ ^
+∮ E ·ndA=0.
+s
+Thus, from Gauss’s law, there is no net charge inside the Gaussian surface. But the Gaussian surface lies just below the
+actualsurfaceoftheconductor;consequently,thereisnonetchargeinsidetheconductor.Anyexcesschargemustlieonits
+surface.
+Figure 6.37 The dashed line represents a Gaussian surface
+that is just beneath the actual surface of the conductor.
+This particular property of conductors is the basis for an extremely accurate method developed by Plimpton and Lawton
+in1936toverifyGauss’slawand,correspondingly,Coulomb’slaw.AsketchoftheirapparatusisshowninFigure6.38.
+TwosphericalshellsareconnectedtooneanotherthroughanelectrometerE,adevicethatcandetectaveryslightamount
+ofchargeflowingfromoneshelltotheother.WhenswitchSisthrowntotheleft,chargeisplacedontheoutershellbythe
+battery B. Will charge flow through the electrometer to the inner shell?
+No. Doing so would mean a violation of Gauss’s law. Plimpton and Lawton did not detect any flow and, knowing the
+sensitivityoftheirelectrometer,concludedthatiftheradialdependenceinCoulomb’slawwere 1/r
+(2+δ),
+δ wouldbeless
+than 2×10 −9[1]. More recent measurements place δ at less than 3×10 −16[2], a number so small that the validity of
+Coulomb’s law seems indisputable.
+1. S. Plimpton and W. Lawton. 1936. “A Very Accurate Test of Coulomb’s Law of Force between Charges.”Physical
+Review50, No. 11: 1066, doi:10.1103/PhysRev.50.1066
+2. E. Williams, J. Faller, and H. Hill. 1971. “New Experimental Test of Coulomb’s Law: A Laboratory Upper Limit on
+the Photon Rest Mass.”Physical Review Letters26 , No. 12: 721, doi:10.1103/PhysRevLett.26.721
+
+268 Chapter 6 | Gauss's Law
+Figure 6.38 A representation of the apparatus used by Plimpton and Lawton.
+Any transfer of charge between the spheres is detected by the electrometer E.
+The Electric Field at the Surface of a Conductor
+If the electric field had a component parallel to the surface of a conductor, free charges on the surface would move, a
+situationcontrarytotheassumptionofelectrostaticequilibrium.Therefore,theelectricfieldisalwaysperpendiculartothe
+surface of a conductor.
+Atanypointjustabovethesurfaceofaconductor,thesurfacechargedensity σ andthemagnitudeoftheelectricfieldE
+are related by
+E= ε σ . (6.14)
+0
+Toseethis,consideraninfinitesimallysmallGaussiancylinderthatsurroundsapointonthesurfaceoftheconductor,as
+inFigure6.39.Thecylinderhasoneendfaceinsideandoneendfaceoutsidethesurface.Theheightandcross-sectional
+areaofthecylinderare δ and ΔA,respectively.Thecylinder’ssidesareperpendiculartothesurfaceoftheconductor,and
+its end faces are parallel to the surface. Because the cylinder is infinitesimally small, the charge density σ is essentially
+constantoverthesurfaceenclosed,sothetotalchargeinsidetheGaussiancylinderis σΔA.NowEisperpendiculartothe
+surfaceoftheconductoroutsidetheconductorandvanisheswithinit,becauseotherwise,thechargeswouldaccelerate,and
+wewouldnotbeinequilibrium.ElectricfluxthereforecrossesonlytheouterendfaceoftheGaussiansurfaceandmaybe
+writtenas EΔA,sincethecylinderisassumedtobesmallenoughthatEisapproximatelyconstantoverthatarea.From
+Gauss’ law,
+EΔA=
+σ
+ε
+ΔA
+.
+0
+Thus,
+σ
+E= ε .
+0
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 269
+Figure 6.39 An infinitesimally small cylindrical Gaussian surface surrounds pointP, which is on the surface of
+→
+the conductor. The field E is perpendicular to the surface of the conductor outside the conductor and vanishes
+within it.
+Example 6.9
+Electric Field of a Conducting Plate
+TheinfiniteconductingplateinFigure6.40hasauniformsurfacechargedensity σ.UseGauss’lawtofindthe
+electric field outside the plate. Compare this result with that previously calculated directly.
+Figure 6.40 A side view of an infinite conducting plate and
+Gaussian cylinder with cross-sectional areaA.
+
+270 Chapter 6 | Gauss's Law
+Strategy
+For this case, we use a cylindrical Gaussian surface, a side view of which is shown.
+Solution
+The flux calculation is similar to that for an infinite sheet of charge from the previous chapter with one major
+→ →
+exception: The left face of the Gaussian surface is inside the conductor where E = 0 , so the total flux
+through the Gaussian surface isEArather than 2EA. Then from Gauss’ law,
+σA
+EA=
+ε
+0
+and the electric field outside the plate is
+σ
+E= ε .
+0
+Significance
+This result is in agreement with the result from the previous section, and consistent with the rule stated above.
+Example 6.10
+Electric Field between Oppositely Charged Parallel Plates
+Two large conducting plates carry equal and opposite charges, with a surface charge density σ of magnitude
+6.81×10 −7 C/m2, asshowninFigure6.41.Theseparationbetweentheplatesis l=6.50mm.Whatisthe
+electric field between the plates?
+Figure 6.41 The electric field between oppositely charged
+parallel plates. A test charge is released at the positive plate.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 271
+Strategy
+Note that the electric field at the surface of one plate only depends on the charge on that plate. Thus, apply
+E=σ/ε with the given values.
+0
+Solution
+Theelectricfieldisdirectedfromthepositivetothenegativeplate,asshowninthefigure,anditsmagnitudeis
+given by
+E= ε σ = 6.81×10 −7 C/m2 =7.69×104 N/C.
+0 8.85×10−12 C2/N m2
+Significance
+This formula is applicable to more than just a plate. Furthermore, two-plate systems will be important later.
+Example 6.11
+A Conducting Sphere
+Theisolatedconductingsphere(Figure 6.42)hasaradiusRandanexcesschargeq.Whatistheelectricfield
+both inside and outside the sphere?
+Figure 6.42 An isolated conducting sphere.
+Strategy
+Thesphereisisolated,soitssurfacechangedistributionandtheelectricfieldofthatdistributionarespherically
+symmetrical.Wecanthereforerepresentthefieldas → E =E(r) ^ r .TocalculateE(r),weapplyGauss’slawover
+a closed spherical surfaceSof radiusrthat is concentric with the conducting sphere.
+Solution
+Sinceris constant and ^ n = ^ r on the sphere,
+∮ → E · ^ n dA=E(r)∮ dA=E(r)4πr2.
+S S
+For r <R,Sis within the conductor, so q enc=0, and Gauss’s law gives
+E(r)=0,
+
+272 Chapter 6 | Gauss's Law
+as expected inside a conductor. If r >R,Sencloses the conductor so q enc=q. From Gauss’s law,
+q
+E(r)4πr2= ε .
+0
+The electric field of the sphere may therefore be written as
+→ →
+E = 0 (r <R),
+→ E = 1 q ^ r (r ≥R).
+4πε
+0
+r2
+Significance
+Noticethatintheregion r ≥R,theelectricfieldduetoachargeqplacedonanisolatedconductingsphereof
+radius R is identical to the electric field of a point charge q located at the center of the sphere. The difference
+between the charged metal and a point charge occurs only at the space points inside the conductor.Fora point
+chargeplacedatthecenterofthesphere,theelectricfieldisnotzeroatpointsofspaceoccupiedbythesphere,
+butaconductorwiththesameamountofchargehasazeroelectricfieldatthosepoints(Figure6.43).However,
+there is no distinction at the outside points in space where r >R, and we can replace the isolated charged
+spherical conductor by a point charge at its center with impunity.
+Figure 6.43 Electric field of a positively charged metal
+sphere. The electric field inside is zero, and the electric field
+outside is same as the electric field of a point charge at the
+center, although the charge on the metal sphere is at the surface.
+6.6 CheckYourUnderstandingHowwillthesystemabovechangeiftherearechargedobjectsexternalto
+the sphere?
+For a conductor with a cavity, if we put a charge +q inside the cavity, then the charge separation takes place in the
+conductor, with −q amount of charge on the inside surface and a +q amount of charge at the outside surface (Figure
+6.44(a)). For the same conductor with a charge +q outside it, there is no excess charge on the inside surface; both the
+positive and negative induced charges reside on the outside surface (Figure 6.44(b)).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 273
+Figure 6.44 (a) A charge inside a cavity in a metal. The distribution of charges
+at the outer surface does not depend on how the charges are distributed at the
+inner surface, since theE-field inside the body of the metal is zero. That
+magnitude of the charge on the outer surface does depend on the magnitude of the
+charge inside, however. (b) A charge outside a conductor containing an inner
+cavity. The cavity remains free of charge. The polarization of charges on the
+conductor happens at the surface.
+Ifaconductorhastwocavities,oneofthemhavingacharge +q a insideitandtheotheracharge −q b, thepolarization
+of the conductor results in −q
+a
+on the inside surface of the cavity a, +q
+b
+on the inside surface of the cavity b, and
+q a−q
+b
+ontheoutsidesurface(Figure6.45).Thechargesonthesurfacesmaynotbeuniformlyspreadout;theirspread
+dependsuponthegeometry.Theonlyruleobeyedisthatwhentheequilibriumhasbeenreached,thechargedistributionin
+aconductorissuchthattheelectricfieldbythechargedistributionintheconductorcancelstheelectricfieldoftheexternal
+charges at all space points inside the body of the conductor.
+Figure 6.45 The charges induced by two equal and opposite
+charges in two separate cavities of a conductor. If the net charge
+on the cavity is nonzero, the external surface becomes charged
+to the amount of the net charge.

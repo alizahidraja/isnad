@@ -1,0 +1,193 @@
+# REAL PDF — openstax_vol3.pdf, pages 294-300
+############################################################
+
+286 Chapter 6 | Photons and Matter Waves
+Figure 6.23 Young’s double-slit experiment explains the
+interference of light by making an analogy with the interference
+of water waves. Two waves are generated at the positions of two
+slits in an opaque screen. The waves have the same wavelengths.
+They travel from their origins at the slits to the viewing screen
+placed to the right of the slits. The waves meet on the viewing
+screen. At the positions marked “Max” on the screen, the
+meeting waves are in-phase and the combined wave amplitude is
+enhanced. At positions marked “Min,” the combined wave
+amplitude is zero. For light, this mechanism creates a bright-
+and-dark fringe pattern on the viewing screen.
+A similar dichotomy existed in the interpretation of electricity. From Benjamin Franklin’s observations of electricity in
+1751 until J.J. Thomson’s discovery of the electron in 1897, electric current was seen as a flow in a continuous electric
+medium. Within this theory of electric fluid, the present theory of electric circuits was developed, and electromagnetism
+andelectromagneticinductionwerediscovered.Thomson’sexperimentshowedthattheunitofnegativeelectriccharge(an
+electron) can travel in a vacuum without any medium to carry the charge around, as in electric circuits. This discovery
+changedthewayinwhichelectricityisunderstoodtodayandgavetheelectronitsparticlestatus.InBohr’searlyquantum
+theoryofthehydrogenatom,boththeelectronandtheprotonareparticlesofmatter.Likewise,intheComptonscatteringof
+X-raysonelectrons,theelectronisaparticle.Ontheotherhand,inelectron-scatteringexperimentsoncrystallinestructures,
+the electron behaves as a wave.
+Askepticmayraiseaquestionthatperhapsanelectronmightalwaysbenothingmorethanaparticle,andthatthediffraction
+imagesobtainedinelectron-scatteringexperimentsmightbeexplainedwithinsomemacroscopicmodelofacrystalanda
+macroscopicmodelofelectronscomingatitlikearainofping-pongballs.Asamatteroffact,toinvestigatethisquestion,
+wedonotneedacomplexmodelofacrystalbutjustacoupleofsimpleslitsinascreenthatisopaquetoelectrons.Inother
+words,togatherconvincingevidenceaboutthenatureofanelectron,weneedtorepeattheYoungdouble-slitexperiment
+withelectrons.Iftheelectronisawave,weshouldobservetheformationofinterferencepatternstypicalforwaves,suchas
+thosedescribedinFigure6.23,evenwhenelectronscomethroughtheslitsonebyone.However,iftheelectronisanota
+wave but a particle, the interference fringes will not be formed.
+The very first double-slit experiment with a beam of electrons, performed by Claus Jönsson in Germany in 1961,
+demonstratedthatabeamofelectronsindeedformsaninterferencepattern,whichmeansthatelectronscollectivelybehave
+asawave.Thefirstdouble-slitexperimentswithsingleelectronspassingthroughtheslitsone-by-onewereperformedby
+Giulio Pozzi in 1974 in Italy and by Akira Tonomura in 1989 in Japan. They show that interference fringes are formed
+gradually,evenwhenelectronspassthroughtheslitsindividually.Thisdemonstratesconclusivelythatelectron-diffraction
+imagesareformedbecauseofthewavenatureofelectrons.Theresultsseenindouble-slitexperimentswithelectronsare
+illustrated by the images of the interference pattern inFigure 6.24.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 287
+Figure 6.24 Computer-simulated interference fringes seen in the Young double-slit experiment with electrons. One pattern is
+gradually formed on the screen, regardless of whether the electrons come through the slits as a beam or individually one-by-one.
+Example 6.15
+Double-Slit Experiment with Electrons
+In one experimental setup for studying interference patterns of electron waves, two slits are created in a gold-
+coatedsiliconmembrane.Eachslitis62-nmwideand 4-µm long,andtheseparationbetweentheslitsis272nm.
+Theelectronbeamiscreatedinanelectrongunbyheatingatungstenelementandbyacceleratingtheelectrons
+acrossa600-Vpotential.Thebeamissubsequentlycollimatedusingelectromagneticlenses,andthecollimated
+beamofelectronsissentthroughtheslits.Findtheangularpositionofthefirst-orderbrightfringeontheviewing
+screen.
+Strategy
+Recallthattheangularposition θ ofthenthorderbrightfringethatisformedinYoung’stwo-slitinterference
+pattern(discussedinapreviouschapter)isrelatedtotheseparation,d,betweentheslitsandtothewavelength,
+λ, oftheincidentlightbytheequation dsinθ=nλ, where n=0, ±1, ±2, .... Theseparationisgivenand
+isequalto d =272nm. Forthefirst-orderfringe,wetake n=1. Theonlythingwenowneedisthewavelength
+of the incident electron wave.
+Sincetheelectronhasbeenacceleratedfromrestacrossapotentialdifferenceof ΔV =600V, itskineticenergy
+is K =eΔV =600eV. The rest-mass energy of the electron is E =511keV.
+0
+WecomputeitsdeBrogliewavelengthasthatofanonrelativisticelectronbecauseitskineticenergy K ismuch
+smaller than its rest energy E , K ≪E .
+0 0
+Solution
+The electron’s wavelength is
+λ= h p = h = h = hc = 1.241×10 −6 eV·m =0.050nm.
+2m e K 2E 0 /c2K 2E 0 K 2(511keV)(600eV)
+This λ is used to obtain the position of the first bright fringe:
+sinθ= 1·λ = 0.050nm =0.000184⇒θ=0.010°.
+d 272nm
+Significance
+Noticethatthisisalsotheangularresolutionbetweentwoconsecutivebrightfringesuptoabout n=1000. For
+example,betweenthezero-orderfringeandthefirst-orderfringe,betweenthefirst-orderfringeandthesecond-
+order fringe, and so on.
+6.14 CheckYourUnderstandingForthesituationdescribedinExample6.15,findtheangularpositionof
+the fifth-order bright fringe on the viewing screen.
+Thewave-particledualnatureofmatterparticlesandofradiationisadeclarationofourinabilitytodescribephysicalreality
+within one unified classical theory because separately neither a classical particle approach nor a classical wave approach
+canfullyexplaintheobservedphenomena.Thislimitationoftheclassicalapproachwasrealizedbytheyear1928,anda
+foundationforanewstatisticaltheory,calledquantummechanics,wasputinplacebyBohr,EdwinSchrödinger,Werner
+Heisenberg,andPaulDirac.QuantummechanicstakesdeBroglie’sideaofmatterwavestobethefundamentalpropertyof
+allparticlesandgivesitastatisticalinterpretation.Accordingtothisinterpretation,awavethatisassociatedwithaparticle
+
+288 Chapter 6 | Photons and Matter Waves
+carriesinformationabouttheprobablepositionsoftheparticleandaboutitsotherproperties.Asingleparticleisseenasa
+movingwavepacketsuchastheoneshowninFigure 6.25.Wecanintuitivelysensefromthisexamplethatifaparticle
+isawavepacket,wewillnotbeabletomeasureitsexactpositioninthesamesenseaswecannotpinpointalocationof
+a wave packet in a vibrating guitar string. The uncertainty, Δx, in measuring the particle’s position is connected to the
+uncertainty, Δp, in the simultaneous measuring of its linear momentum by Heisenberg’s uncertainty principle:
+ΔxΔp≥ 1ℏ. (6.63)
+2
+Heisenberg’s principle expresses the law of nature that, at the quantum level, our perception is limited. For example, if
+weknowtheexactpositionofabody(whichmeansthat Δx=0 inEquation 6.63)atthesametimewecannotknow
+its momentum, because then the uncertainty in its momentum becomes infinite (because Δp≥0.5ℏ/Δx in Equation
+6.63).TheHeisenberguncertaintyprinciplesetsthelimitontheprecisionofsimultaneousmeasurementsofpositionand
+momentumofaparticle;itshowsthatthebestprecisionwecanobtainiswhenwehaveanequalssign( = )inEquation
+6.63,andwecannotdobetterthanthat,evenwiththebestinstrumentsofthefuture.Heisenberg’sprincipleisaconsequence
+of the wave nature of particles.
+Figure 6.25 In this graphic, a particle is shown as a wave
+packet and its position does not have an exact value.
+Weroutinelyusemanyelectronicdevicesthatexploitwave-particledualitywithoutevenrealizingthesophisticationofthe
+physicsunderlyingtheiroperation.Oneexampleofatechnologybasedontheparticlepropertiesofphotonsandelectrons
+is a charge-coupled device, which is used for light detection in any instrumentation where high-quality digital data are
+required,suchasindigitalcamerasorinmedicalsensors.Anexampleinwhichthewavepropertiesofelectronsisexploited
+is an electron microscope.
+In 1931, physicist Ernst Ruska—building on the idea that magnetic fields can direct an electron beam just as lenses can
+directabeamoflightinanopticalmicroscope—developedthefirstprototypeoftheelectronmicroscope.Thisdevelopment
+originated the field of electron microscopy. In the transmission electron microscope (TEM), shown in Figure 6.26,
+electronsareproducedbyahottungstenelementandacceleratedbyapotentialdifferenceinanelectrongun,whichgives
+them up to 400 keV in kinetic energy. After leaving the electron gun, the electron beam is focused by electromagnetic
+lenses(asystemofcondensinglenses)andtransmittedthroughaspecimensampletobeviewed.Theimageofthesample
+isreconstructedfromthetransmittedelectronbeam.Themagnifiedimagemaybeviewedeitherdirectlyonafluorescent
+screenorindirectlybysendingit,forexample,toadigitalcameraoracomputermonitor.Theentiresetupconsistingofthe
+electrongun,thelenses,thespecimen,andthefluorescentscreenareenclosedinavacuumchambertopreventtheenergy
+lossfromthebeam.ResolutionoftheTEMislimitedonlybysphericalaberration(discussedinapreviouschapter).Modern
+high-resolutionmodelsofaTEMcanhaveresolvingpowergreaterthan0.5Åandmagnificationshigherthan50million
+times.Forcomparison,thebestresolvingpowerobtainedwithlightmicroscopyiscurrentlyabout97nm.Alimitationof
+the TEM is that the samples must be about 100-nm thick and biological samples require a special preparation involving
+chemical “fixing” to stabilize them for ultrathin slicing.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 289
+Figure 6.26 TEM: An electron beam produced by an electron gun is collimated by condenser
+lenses and passes through a specimen. The transmitted electrons are projected on a screen and
+the image is sent to a camera. (credit: modification of work by Dr. Graham Beards)
+Suchlimitationsdonotappearinthescanningelectronmicroscope(SEM),whichwasinventedbyManfredvonArdenne
+in1937.InanSEM,atypicalenergyoftheelectronbeamisupto40keVandthebeamisnottransmittedthroughasample
+but is scattered off its surface. Surface topography of the sample is reconstructed by analyzing back-scattered electrons,
+transmittedelectrons,andtheemittedradiationproducedbyelectronsinteractingwithatomsinthesample.Theresolving
+powerofanSEMisbetterthan1nm,andthemagnificationcanbemorethan250timesbetterthanthatobtainedwithalight
+microscope.ThesamplesscannedbyanSEMcanbeaslargeasseveralcentimetersbuttheymustbespeciallyprepared,
+depending on electrical properties of the sample.
+Highmagnifications oftheTEMandSEMallowustoseeindividualmolecules. HighresolvingpowersoftheTEMand
+SEM allow us to see fine details, such as those shown in the SEM micrograph of pollen at the beginning of this chapter
+(Figure 6.1).
+Example 6.16
+Resolving Power of an Electron Microscope
+Ifa1.0-pmelectronbeamofaTEMpassesthrougha 2.0-µm circularopening,whatistheanglebetweenthe
+two just-resolvable point sources for this microscope?
+Solution
+Wecandirectlyuseaformulafortheresolvingpower, Δθ, ofamicroscope(discussedinapreviouschapter)
+when the wavelength of the incident radiation is λ=1.0pm and the diameter of the aperture is D=2.0µm:
+Δθ=1.22 λ =1.22 1.0pm =6.10×10 −7 rad=3.50×10 −5 degree.
+D 2.0µm
+Significance
+Notethatifweusedaconventionalmicroscopewitha400-nmlight,theresolvingpowerwouldbeonly 14°,
+which means that all of the fine details in the image would be blurred.
+
+290 Chapter 6 | Photons and Matter Waves
+6.15 Check Your Understanding Suppose that the diameter of the aperture in Example 6.16 is halved.
+How does it affect the resolving power?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 291
+CHAPTER 6 REVIEW
+KEY TERMS
+absorber any object that absorbs radiation
+absorption spectrum wavelengths of absorbed radiation by atoms and molecules
+Balmer formula describes the emission spectrum of a hydrogen atom in the visible-light range
+Balmer series spectral lines corresponding to electron transitions to/from the n=2 state of the hydrogen atom,
+described by the Balmer formula
+blackbody perfect absorber/emitter
+blackbody radiation radiation emitted by a blackbody
+Bohr radius of hydrogen radius of the first Bohr’s orbit
+Bohr’s model of the hydrogen atom first quantum model to explain emission spectra of hydrogen
+Brackett series spectral lines corresponding to electron transitions to/from the n=4 state
+Compton effect the change in wavelength when an X-ray is scattered by its interaction with some materials
+Compton shift difference between the wavelengths of the incident X-ray and the scattered X-ray
+Compton wavelength physical constant with the value λ c=2.43pm
+cut-off frequency frequency of incident light below which the photoelectric effect does not occur
+cut-off wavelength wavelength of incident light that corresponds to cut-off frequency
+Davisson–Germer experiment historically first electron-diffraction experiment that revealed electron waves
+de Broglie wave matter wave associated with any object that has mass and momentum
+de Broglie’s hypothesis of matter waves particles of matter can behave like waves
+double-slit interference experiment Young’s double-slit experiment, which shows the interference of waves
+electron microscopy microscopy that uses electron waves to “see” fine details of nano-size objects
+emission spectrum wavelengths of emitted radiation by atoms and molecules
+emitter any object that emits radiation
+energy of a photon quantum of radiant energy, depends only on a photon’s frequency
+energy spectrum of hydrogen set of allowed discrete energies of an electron in a hydrogen atom
+excited energy states of the H atom energy state other than the ground state
+Fraunhofer lines dark absorption lines in the continuum solar emission spectrum
+ground state energy of the hydrogen atom energy of an electron in the first Bohr orbit of the hydrogen atom
+group velocity velocity of a wave, energy travels with the group velocity
+Heisenberg uncertainty principle sets the limits on precision in simultaneous measurements of momentum and
+position of a particle
+Humphreys series spectral lines corresponding to electron transitions to/from the n=6 state
+hydrogen-like atom ionized atom with one electron remaining and nucleus with charge +Ze
+inelastic scattering scattering effect where kinetic energy is not conserved but the total energy is conserved
+ionization energy energy needed to remove an electron from an atom
+ionization limit of the hydrogen atom ionization energy needed to remove an electron from the first Bohr orbit
+Lyman series spectral lines corresponding to electron transitions to/from the ground state

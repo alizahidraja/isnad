@@ -1,0 +1,239 @@
+# REAL PDF — openstax_vol2.pdf, pages 509-516
+############################################################
+
+Chapter 11 | Magnetic Forces and Fields 499
+Figure 11.5 The magnetic forces on an alpha-particle moving in a uniform
+magnetic field. The field is the same in each drawing, but the velocity is different.
+Strategy
+Wearegiventhecharge,itsvelocity,andthemagneticfieldstrengthanddirection.Wecanthususetheequation
+→ F =q → v × → B or F =qvBsinθ tocalculatetheforce.ThedirectionoftheforceisdeterminedbyRHR-1.
+Solution
+a. First,todeterminethedirection,startwithyourfingerspointinginthepositivex-direction.Sweepyour
+fingers upward in the direction of magnetic field. Your thumb should point in the negative y-direction.
+Thisshouldmatchthemathematicalanswer.Tocalculatetheforce,weusethegivencharge,velocity,and
+magnetic field and the definition of the magnetic force in cross-product form to calculate:
+→ F =q → v × → B = ⎛ 3.2×10 −19 C ⎞ ⎛ 5.0×104m/s ^ i ⎞ × ⎛ 1.5T ^ k ⎞ =−2.4×10−14N ^ j.
+⎝ ⎠⎝ ⎠ ⎝ ⎠
+b. First,todetermine thedirectionality,startwithyourfingerspointinginthenegativey-direction.Sweep
+yourfingersupwardinthedirectionofmagneticfieldasinthepreviousproblem.Yourthumbshouldbe
+openinthenegativex-direction.Thisshouldmatchthemathematicalanswer.Tocalculatetheforce,we
+usethegivencharge,velocity,andmagneticfieldandthedefinitionofthemagneticforceincross-product
+form to calculate:
+→ F =q → v × → B = ⎛ 3.2×10 −19 C ⎞ ⎛ −5.0×104m/s ^ j ⎞ × ⎛ 1.5T ^ k ⎞ =−2.4×10−14N ^ i.
+⎝ ⎠⎝ ⎠ ⎝ ⎠
+AnalternativeapproachistouseEquation11.2tofindthemagnitudeoftheforce.Thisappliesforboth
+
+500 Chapter 11 | Magnetic Forces and Fields
+parts(a)and(b).Sincethevelocityisperpendiculartothemagneticfield,theanglebetweenthemis90
+degrees. Therefore, the magnitude of the force is:
+F =qvBsinθ= ⎛ 3.2×10 −19 C ⎞⎛ 5.0×104m/s ⎞ (1.5T)sin(90°)=2.4×10−14N.
+⎝ ⎠⎝ ⎠
+c. Sincethevelocityandmagneticfieldareparalleltoeachother,thereisnoorientationofyourhandthat
+willresultinaforcedirection.Therefore,theforceonthismovingchargeiszero.Thisisconfirmedby
+the cross product. When you cross two vectors pointing in the same direction, the result is equal to zero.
+d. First, to determine the direction, your fingers could point in any orientation; however, you must sweep
+yourfingersupwardinthedirectionofthemagneticfield.Asyourotateyourhand,noticethatthethumb
+canpointinanyx-ory-directionpossible,butnotinthez-direction.Thisshouldmatchthemathematical
+answer.Tocalculatetheforce,weusethegivencharge,velocity,andmagneticfieldandthedefinitionof
+the magnetic force in cross-product form to calculate:
+→ F =q → v × → B = ⎛ 3.2×10 −19 C ⎞ ⎛⎛ 2.0 ^ i −3.0 ^ j +1.0 ^ k ⎞ ×104m/s ⎞ × ⎛ 1.5T ^ k ⎞
+⎝ ⎠⎝⎝ ⎠ ⎠ ⎝ ⎠
+⎛ ^ ^⎞
+−15
+= −14.4i −9.6j ×10 N.
+⎝ ⎠
+This solution can be rewritten in terms of a magnitude and angle in thexy-plane:
+→
+| F | = F x 2+F y 2= (−14.4)2+(−9.6)2×10 −15 N=1.7×10−14N
+θ = tan−1
+⎛F y⎞
+=tan−1
+⎛
+−9.6×10
+−15
+N
+⎞
+=34°.
+⎝F x ⎠ ⎝ −14.4×10 −15 N ⎠
+ThemagnitudeoftheforcecanalsobecalculatedusingEquation 11.2.Thevelocityinthisquestion,
+however,hasthreecomponents.Thez-componentofthevelocitycanbeneglected,becauseitisparallel
+tothemagneticfieldandthereforegeneratesnoforce.Themagnitudeofthevelocityiscalculatedfrom
+the x- and y-components. The angle between the velocity in the xy-plane and the magnetic field in the
+z-plane is 90 degrees. Therefore, the force is calculated to be:
+| → v | = (2)2+(−3)2×104m =3.6×104m
+s s
+F = qvBsinθ=(3.2×10 −19 C)(3.6×104m/s)(1.5T)sin(90°)=1.7×10−14N.
+This is the same magnitude of force calculated by unit vectors.
+Significance
+The cross product in this formula results in a third vector that must be perpendicular to the other two. Other
+physicalquantities,suchasangularmomentum,alsohavethreevectorsthatarerelatedbythecrossproduct.Note
+thattypicalforcevaluesinmagneticforceproblemsaremuchlargerthanthegravitationalforce.Therefore,for
+an isolated charge, the magnetic force is the dominant force governing the charge’s motion.
+11.1 Check Your Understanding Repeat the previous problem with the magnetic field in the x-direction
+rather than in thez-direction. Check your answers with RHR-1.
+Representing Magnetic Fields
+Therepresentationofmagneticfieldsbymagneticfieldlinesisveryusefulinvisualizingthestrengthanddirectionofthe
+magneticfield.AsshowninFigure11.6,eachoftheselinesformsaclosedloop,evenifnotshownbytheconstraintsof
+the space available for the figure. The field lines emerge from the north pole (N), loop around to the south pole (S), and
+continue through the bar magnet back to the north pole.
+Magnetic field lines have several hard-and-fast rules:
+1. Thedirectionofthemagneticfieldistangenttothefieldlineatanypointinspace.Asmallcompasswillpointin
+the direction of the field line.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 501
+2. Thestrengthofthefieldisproportionaltotheclosenessofthelines.Itisexactlyproportionaltothenumberoflines
+per unit area perpendicular to the lines (called the areal density).
+3. Magnetic field lines can never cross, meaning that the field is unique at any point in space.
+4. Magneticfieldlinesarecontinuous,formingclosedloopswithoutabeginningorend.Theyaredirectedfromthe
+north pole to the south pole.
+The last property is related to the fact that the north and south poles cannot be separated. It is a distinct difference from
+electricfieldlines,whichgenerallybeginonpositivechargesandendonnegativechargesoratinfinity.Ifisolatedmagnetic
+charges (referred to asmagnetic monopoles) existed, then magnetic field lines would begin and end on them.
+Figure 11.6 Magnetic field lines are defined to have the direction in which a small compass points when placed at a
+location in the field. The strength of the field is proportional to the closeness (or density) of the lines. If the interior of the
+magnet could be probed, the field lines would be found to form continuous, closed loops. To fit in a reasonable space, some
+of these drawings may not show the closing of the loops; however, if enough space were provided, the loops would be closed.
+11.3 | Motion of a Charged Particle in a Magnetic Field
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how a charged particle in an external magnetic field undergoes circular motion
+• Describe how to determine the radius of the circular motion of a charged particle in a magnetic
+field
+Achargedparticleexperiencesaforcewhenmovingthroughamagneticfield.Whathappensifthisfieldisuniformover
+themotionofthechargedparticle?Whatpathdoestheparticlefollow?Inthissection,wediscussthecircularmotionofthe
+charged particle as well as other motion that results from a charged particle entering a magnetic field.
+ThesimplestcaseoccurswhenachargedparticlemovesperpendiculartoauniformB-field(Figure 11.7).Ifthefieldis
+inavacuum,themagneticfieldisthedominantfactordeterminingthemotion.Sincethemagneticforceisperpendicular
+tothedirectionoftravel,achargedparticlefollowsacurvedpathinamagneticfield.Theparticlecontinuestofollowthis
+curvedpathuntilitformsacompletecircle.Anotherwaytolookatthisisthatthemagneticforceisalwaysperpendicular
+tovelocity,sothatitdoesnoworkonthechargedparticle. Theparticle’skinetic energyandspeedthusremainconstant.
+The direction of motion is affected but not the speed.
+
+502 Chapter 11 | Magnetic Forces and Fields
+Figure 11.7 A negatively charged particle moves in the plane of the paper in a
+region where the magnetic field is perpendicular to the paper (represented by the
+small × ’s—like the tails of arrows). The magnetic force is perpendicular to the
+velocity, so velocity changes in direction but not magnitude. The result is
+uniform circular motion. (Note that because the charge is negative, the force is
+opposite in direction to the prediction of the right-hand rule.)
+mv2
+Inthissituation,themagneticforcesuppliesthecentripetalforce F c= r . Notingthatthevelocityisperpendicularto
+themagneticfield,themagnitudeofthemagneticforceisreducedto F =qvB. BecausethemagneticforceFsuppliesthe
+centripetal force F c, we have
+mv2 (11.4)
+qvB= r .
+Solving forryields
+r = mv . (11.5)
+qB
+Here,ristheradiusofcurvatureofthepathofachargedparticle withmassmandchargeq,movingataspeedvthatis
+perpendiculartoamagneticfieldofstrengthB.Thetimeforthechargedparticletogoaroundthecircularpathisdefinedas
+theperiod,whichisthesameasthedistancetraveled(thecircumference)dividedbythespeed.BasedonthisandEquation
+11.4, we can derive the period of motion as
+T = 2π v r = 2 v π m qB v = 2 q π B m . (11.6)
+Ifthevelocityisnotperpendiculartothemagneticfield,thenwecancompareeachcomponentofthevelocityseparately
+with the magnetic field. The component of the velocity perpendicular to the magnetic field produces a magnetic force
+perpendicular to both this velocity and the field:
+v perp=vsinθ, v para=vcosθ. (11.7)
+where θ is the angle between v and B. The component parallel to the magnetic field creates constant motion along the
+samedirectionasthemagneticfield,alsoshowninEquation11.7.Theparallelmotiondeterminesthepitchpofthehelix,
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 503
+which is the distance between adjacent turns. This distance equals the parallel component of the velocity times the period:
+p=v
+para
+T. (11.8)
+The result is ahelical motion, as shown in the following figure.
+Figure 11.8 A charged particle moving with a velocity not in
+the same direction as the magnetic field. The velocity
+component perpendicular to the magnetic field creates circular
+motion, whereas the component of the velocity parallel to the
+field moves the particle along a straight line. The pitch is the
+horizontal distance between two consecutive circles. The
+resulting motion is helical.
+While the charged particle travels in a helical path, it may enter a region where the magnetic field is not uniform. In
+particular,supposeaparticletravelsfromaregionofstrongmagneticfieldtoaregionofweakerfield,thenbacktoaregion
+ofstrongerfield.Theparticlemayreflectbackbeforeenteringthestrongermagneticfieldregion.Thisissimilartoawave
+onastringtravelingfromaverylight,thinstringtoahardwallandreflectingbackward.Ifthereflectionhappensatboth
+ends, the particle is trapped in a so-called magnetic bottle.
+Trapped particles in magnetic fields are found in the Van Allen radiation belts around Earth, which are part of Earth’s
+magneticfield.ThesebeltswerediscoveredbyJamesVanAllenwhiletryingtomeasurethefluxofcosmicraysonEarth
+(high-energy particles that come from outside the solar system) to see whether this was similar to the flux measured on
+Earth.VanAllenfoundthatduetothecontributionofparticlestrappedinEarth’smagneticfield,thefluxwasmuchhigher
+onEarththaninouterspace.Aurorae,likethefamousauroraborealis(northernlights)intheNorthernHemisphere(Figure
+11.9),arebeautifuldisplaysoflightemittedasionsrecombinewithelectronsenteringtheatmosphereastheyspiralalong
+magneticfieldlines.(Theionsareprimarilyoxygenandnitrogenatomsthatareinitiallyionizedbycollisionswithenergetic
+particles in Earth’s atmosphere.) Aurorae have also been observed on other planets, such as Jupiter and Saturn.
+
+504 Chapter 11 | Magnetic Forces and Fields
+Figure 11.9 (a) The Van Allen radiation belts around Earth trap ions produced by cosmic rays striking Earth’s atmosphere. (b)
+The magnificent spectacle of the aurora borealis, or northern lights, glows in the northern sky above Bear Lake near Eielson Air
+Force Base, Alaska. Shaped by Earth’s magnetic field, this light is produced by glowing molecules and ions of oxygen and
+nitrogen. (credit b: modification of work by USAF Senior Airman Joshua Strang)
+Example 11.2
+Beam Deflector
+Aresearchgroupisinvestigatingshort-livedradioactiveisotopes.Theyneedtodesignawaytotransportalpha-
+particles (helium nuclei) from where they are made to a place where they will collide with another material
+to form an isotope. The beam of alpha-particles ⎛m=6.64×10 −27 kg,q=3.2×10 −19 C ⎞ bends through a
+⎝ ⎠
+90-degree region with a uniform magnetic field of 0.050 T (Figure 11.10). (a) In what direction should the
+magneticfieldbeapplied?(b)Howmuchtimedoesittakethealpha-particlestotraversetheuniformmagnetic
+field region?
+Figure 11.10 Top view of the beam deflector setup.
+Strategy
+a. ThedirectionofthemagneticfieldisshownbytheRHR-1.Yourfingerspointinthedirectionofv,and
+yourthumbneedstopointinthedirectionoftheforce,totheleft.Therefore,sincethealpha-particlesare
+positively charged, the magnetic field must point down.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 505
+b. The period of the alpha-particle going around the circle is
+T =
+2πm
+.
+(11.9)
+qB
+Becausetheparticleisonlygoingaroundaquarterofacircle,wecantake0.25timestheperiodtofind
+the time it takes to go around this path.
+Solution
+a. Let’sstartbyfocusingonthealpha-particleenteringthefieldnearthebottomofthepicture.First,point
+yourthumbupthepage.Inorderforyourpalmtoopentotheleftwherethecentripetalforce(andhence
+themagneticforce)points,yourfingersneedtochangeorientationuntiltheypointintothepage.Thisis
+the direction of the applied magnetic field.
+b. Theperiodofthechargedparticlegoingaroundacircleiscalculatedbyusingthegivenmass,charge,and
+magnetic field in the problem. This works out to be
+T = 2πm =
+2π⎛
+⎝ 6.64×10
+−27
+kg
+⎞
+⎠ =2.6×10 −6 s.
+qB ⎛ −19 ⎞
+3.2×10 C(0.050T)
+⎝ ⎠
+However,forthegivenproblem,thealpha-particlegoesaroundaquarterofthecircle,sothetimeittakes
+would be
+t=0.25×2.61×10 −6 s=6.5×10 −7 s.
+Significance
+Thistimemaybequickenoughtogettothematerialwewouldliketobombard,dependingonhowshort-lived
+theradioactiveisotopeisandcontinuestoemitalpha-particles.Ifwecouldincreasethemagneticfieldappliedin
+theregion,thiswouldshortenthetimeevenmore.Thepaththeparticlesneedtotakecouldbeshortened,butthis
+may not be economical given the experimental setup.
+11.2 CheckYourUnderstandingAuniformmagneticfieldofmagnitude1.5Tisdirectedhorizontallyfrom
+westtoeast.(a)Whatisthemagneticforceonaprotonattheinstantwhenitismovingverticallydownwardin
+the field with a speed of 4×10 7 m/s? (b) Compare this force with the weightwof a proton.
+Example 11.3
+Helical Motion in a Magnetic Field
+Aprotonentersauniformmagneticfieldof 1.0×10−4T withaspeedof 5×10 5 m/s. Atwhatanglemustthe
+magneticfieldbefromthevelocitysothatthepitchoftheresultinghelicalmotionisequaltotheradiusofthe
+helix?
+Strategy
+Thepitchofthemotionrelatestotheparallelvelocitytimestheperiodofthecircularmotion,whereastheradius
+relatestotheperpendicularvelocitycomponent.Aftersettingtheradiusandthepitchequaltoeachother,solve
+for the angle between the magnetic field and velocity or θ.
+Solution
+ThepitchisgivenbyEquation11.8,theperiodisgivenbyEquation11.6,andtheradiusofcircularmotion
+is given by Equation 11.5. Note that the velocity in the radius equation is related to only the perpendicular
+velocity,whichiswherethecircularmotionoccurs.Therefore,wesubstitutethesinecomponentoftheoverall

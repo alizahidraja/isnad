@@ -1,0 +1,169 @@
+# REAL PDF — openstax_vol1.pdf, pages 225-231
+############################################################
+
+5.4 • Mass and Weight 213
+Moon, for example, acceleration due to gravity is only . A 1.0-kg mass thus has a weight of 9.8 N on Earth
+and only about 1.6 N on the Moon.
+The broadest definition of weight in this sense is that the weight of an object is the gravitational force on it from the
+nearest large body, such as Earth, the Moon, or the Sun. This is the most common and useful definition of weight in
+physics. It differs dramatically, however, from the definition of weight used by NASA and the popular media in
+relation to space travel and exploration. When they speak of “weightlessness” and “microgravity,” they are referring
+to the phenomenon we call “free fall” in physics. We use the preceding definition of weight, force due to gravity
+acting on an object of mass m, and we make careful distinctions between free fall and actual weightlessness.
+Be aware that weight and mass are different physical quantities, although they are closely related. Mass is an
+intrinsic property of an object: It is a quantity of matter. The quantity or amount of matter of an object is determined
+by the numbers of atoms and molecules of various types it contains. Because these numbers do not vary, in
+Newtonian physics, mass does not vary; therefore, its response to an applied force does not vary. In contrast, weight
+is the gravitational force acting on an object, so it does vary depending on gravity. For example, a person closer to
+the center of Earth, at a low elevation such as New Orleans, weighs slightly more than a person who is located in the
+higher elevation of Denver, even though they may have the same mass.
+It is tempting to equate mass to weight, because most of our examples take place on Earth, where the weight of an
+object varies only a little with the location of the object. In addition, it is difficult to count and identify all of the
+atoms and molecules in an object, so mass is rarely determined in this manner. If we consider situations in which
+is a constant on Earth, we see that weight is directly proportional to mass m, since that is, the more
+massive an object is, the more it weighs. Operationally, the masses of objects are determined by comparison with
+the standard kilogram, as we discussed in Units and Measurement. But by comparing an object on Earth with one on
+the Moon, we can easily see a variation in weight but not in mass. For instance, on Earth, a 5.0-kg object weighs 49
+N; on the Moon, where g is , the object weighs 8.4 N. However, the mass of the object is still 5.0 kg on the
+Moon.
+EXAMPLE 5.8
+Clearing a Field
+A farmer is lifting some moderately heavy rocks from a field to plant crops. He lifts a stone that weighs 40.0 lb.
+(about 180 N). What force does he apply if the stone accelerates at a rate of
+Strategy
+We were given the weight of the stone, which we use in finding the net force on the stone. However, we also need to
+know its mass to apply Newton’s second law, so we must apply the equation for weight, , to determine the
+mass.
+Solution
+No forces act in the horizontal direction, so we can concentrate on vertical forces, as shown in the following free-
+body diagram. We label the acceleration to the side; technically, it is not part of the free-body diagram, but it helps
+to remind us that the object accelerates upward (so the net force is upward).
+
+214 5 • Newton's Laws of Motion
+Significance
+To apply Newton’s second law as the primary equation in solving a problem, we sometimes have to rely on other
+equations, such as the one for weight or one of the kinematic equations, to complete the solution.
+CHECK YOUR UNDERSTANDING 5.6
+For Example 5.8, find the acceleration when the farmer’s applied force is 230.0 N.
+5.5 Newton’s Third Law
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• State Newton’s third law of motion
+• Identify the action and reaction forces in different situations
+• Apply Newton’s third law to define systems and solve problems of motion
+We have thus far considered force as a push or a pull; however, if you think about it, you realize that no push or pull
+ever occurs by itself. When you push on a wall, the wall pushes back on you. This brings us to Newton’s third law.
+NEWTON’S THIRD LAW OF MOTION
+Whenever one body exerts a force on a second body, the first body experiences a force that is equal in
+magnitude and opposite in direction to the force that it exerts. Mathematically, if a body A exerts a force on
+body B, then B simultaneously exerts a force on A, or in vector equation form,
+5.10
+Newton’s third law represents a certain symmetry in nature: Forces always occur in pairs, and one body cannot exert
+a force on another without experiencing a force itself. We sometimes refer to this law loosely as “action-reaction,”
+where the force exerted is the action and the force experienced as a consequence is the reaction. Newton’s third law
+has practical uses in analyzing the origin of forces and understanding which forces are external to a system.
+We can readily see Newton’s third law at work by taking a look at how people move about. Consider a swimmer
+pushing off the side of a pool (Figure 5.16). She pushes against the wall of the pool with her feet and accelerates in
+the direction opposite that of her push. The wall has exerted an equal and opposite force on the swimmer. You might
+think that two equal and opposite forces would cancel, but they do not because they act on different systems. In
+this case, there are two systems that we could investigate: the swimmer and the wall. If we select the swimmer to
+be the system of interest, as in the figure, then is an external force on this system and affects its motion.
+The swimmer moves in the direction of this force. In contrast, the force acts on the wall, not on our
+system of interest. Thus, does not directly affect the motion of the system and does not cancel
+The swimmer pushes in the direction opposite that in which she wishes to move. The reaction to her
+push is thus in the desired direction. In a free-body diagram, such as the one shown in Figure 5.16, we never include
+both forces of an action-reaction pair; in this case, we only use , not .
+Access for free at openstax.org
+
+5.5 • Newton’s Third Law 215
+FIGURE 5.16 When the swimmer exerts a force on the wall, she accelerates in the opposite direction; in other words, the net external force
+on her is in the direction opposite of This opposition occurs because, in accordance with Newton’s third law, the wall exerts a
+force on the swimmer that is equal in magnitude but in the direction opposite to the one she exerts on it. The line around the
+swimmer indicates the system of interest. Thus, the free-body diagram shows only w (the gravitational force), and BF, which is
+the buoyant force of the water supporting the swimmer’s weight. The vertical forces w and BF cancel because there is no vertical
+acceleration.
+Other examples of Newton’s third law are easy to find:
+• As a professor paces in front of a whiteboard, he exerts a force backward on the floor. The floor exerts a
+reaction force forward on the professor that causes him to accelerate forward.
+• A car accelerates forward because the ground pushes forward on the drive wheels, in reaction to the drive
+wheels pushing backward on the ground. You can see evidence of the wheels pushing backward when tires
+spin on a gravel road and throw the rocks backward.
+• Rockets move forward by expelling gas backward at high velocity. This means the rocket exerts a large
+backward force on the gas in the rocket combustion chamber; therefore, the gas exerts a large reaction force
+forward on the rocket. This reaction force, which pushes a body forward in response to a backward force, is
+called thrust. It is a common misconception that rockets propel themselves by pushing on the ground or on
+the air behind them. They actually work better in a vacuum, where they can more readily expel the exhaust
+gases.
+• Helicopters create lift by pushing air down, thereby experiencing an upward reaction force.
+• Birds and airplanes also fly by exerting force on the air in a direction opposite that of whatever force they
+need. For example, the wings of a bird force air downward and backward to get lift and move forward.
+• An octopus propels itself in the water by ejecting water through a funnel from its body, similar to a jet ski.
+• When a person pulls down on a vertical rope, the rope pulls up on the person (Figure 5.17).
+FIGURE 5.17 When the mountain climber pulls down on the rope, the rope pulls up on the mountain climber. (credit left: modification of
+work by Cristian Bortes)
+
+216 5 • Newton's Laws of Motion
+There are two important features of Newton’s third law. First, the forces exerted (the action and reaction) are always
+equal in magnitude but opposite in direction. Second, these forces are acting on different bodies or systems: A’s
+force acts on B and B’s force acts on A. In other words, the two forces are distinct forces that do not act on the same
+body. Thus, they do not cancel each other.
+For the situation shown in Figure 5.6, the third law indicates that because the chair is pushing upward on the boy
+with force he is pushing downward on the chair with force Similarly, he is pushing downward with forces
+and on the floor and table, respectively. Finally, since Earth pulls downward on the boy with force he pulls
+upward on Earth with force . If that student were to angrily pound the table in frustration, he would quickly learn
+the painful lesson (avoidable by studying Newton’s laws) that the table hits back just as hard.
+A person who is walking or running applies Newton’s third law instinctively. For example, the runner in Figure 5.18
+pushes backward on the ground so that it pushes him forward.
+FIGURE 5.18 The runner experiences Newton’s third law. (a) A force is exerted by the runner on the ground. (b) The reaction force of the
+ground on the runner pushes him forward. (credit "runner": modification of work by "Greenwich Photography"/Flickr)
+EXAMPLE 5.9
+Forces on a Stationary Object
+The package in Figure 5.19 is sitting on a scale. For the scale and package at rest (i.e., not accelerating), show that
+the scale indicates the weight of the package.
+Access for free at openstax.org
+
+5.5 • Newton’s Third Law 217
+FIGURE 5.19 (a) The forces on a package sitting on a scale, along with their reaction forces. The force is the weight of the package (the
+force due to Earth’s gravity) and is the force of the scale on the package. (b) Isolation of the package-scale system and the package-Earth
+system makes the action and reaction pairs clear.
+Strategy
+The forces on the package are which is due to the scale, and which is due to Earth’s gravitational field. The
+reaction forces that the package exerts are on the scale and on Earth. Because the package is not
+accelerating, application of the second law yields
+so
+The scale reading indicates the magnitude of the force , which is equal to the magnitude of the package’s weight.
+Significance
+The scale actually does not measure the weight of the package; it measures the force on its surface. If the
+system is accelerating, and would not be equal, as explained in Applications of Newton’s Laws.
+EXAMPLE 5.10
+Getting Up to Speed: Choosing the Correct System
+A physics professor pushes a cart of demonstration equipment to a lecture hall (Figure 5.20). Her mass is 65.0 kg,
+the cart’s mass is 12.0 kg, and the equipment’s mass is 7.0 kg. Calculate the acceleration produced when the
+professor exerts a backward force of 150 N on the floor. All forces opposing the motion, such as friction on the cart’s
+wheels and air resistance, total 24.0 N.
+
+218 5 • Newton's Laws of Motion
+FIGURE 5.20 A professor pushes the cart with her demonstration equipment. The lengths of the arrows are proportional to the magnitudes
+of the forces (except for because it is too small to be drawn to scale). System 1 is appropriate for this example, because it asks for the
+acceleration of the entire group of objects. Only and are external forces acting on System 1 along the line of motion. All other forces
+either cancel or act on the outside world. System 2 is chosen for the next example so that is an external force and enters into
+Newton’s second law. The free-body diagrams, which serve as the basis for Newton’s second law, vary with the system chosen.
+Strategy
+Since they accelerate as a unit, we define the system to be the professor, cart, and equipment. This is System 1 in
+Figure 5.20. The professor pushes backward with a force of 150 N. According to Newton’s third law, the floor
+exerts a forward reaction force of 150 N on System 1. Because all motion is horizontal, we can assume there
+is no net force in the vertical direction. Therefore, the problem is one-dimensional along the horizontal direction. As
+noted, friction f opposes the motion and is thus in the opposite direction of We do not include the forces
+or because these are internal forces, and we do not include because it acts on the floor, not on the
+system. There are no other significant forces acting on System 1. If the net external force can be found from all this
+information, we can use Newton’s second law to find the acceleration as requested. See the free-body diagram in
+the figure.
+Solution
+Newton’s second law is given by
+The net external force on System 1 is deduced from Figure 5.20 and the preceding discussion to be
+The mass of System 1 is
+These values of and m produce an acceleration of
+Significance
+None of the forces between components of System 1, such as between the professor’s hands and the cart,
+contribute to the net external force because they are internal to System 1. Another way to look at this is that forces
+Access for free at openstax.org

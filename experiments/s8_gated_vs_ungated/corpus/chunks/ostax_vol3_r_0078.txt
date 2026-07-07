@@ -1,0 +1,240 @@
+# REAL PDF — openstax_vol3.pdf, pages 479-488
+############################################################
+
+Chapter 10 | Nuclear Physics 471
+Example 10.7
+Plutonium Alpha Decay
+Find the energy emitted in the α decay of 239 Pu.
+Strategy
+Theenergyemittedinthe α decayof 239 Pu canbefoundusingtheequation E=(Δm)c2. Wemustfirstfind
+Δm, the difference in mass between the parent nucleus and the products of the decay.
+Solution
+The decay equation is
+239 Pu→ 235 U+4He.
+Thus,thepertinentmassesarethoseof 239 Pu, 235 U,andthe α particleor 4He,allofwhichareknown.The
+initial mass was m⎛239 Pu ⎞ =239.052157u. The final mass is the sum
+⎝ ⎠
+m⎛235
+U
+⎞ +m⎛4He ⎞
+=235.043924u+4.002602u
+⎝ ⎠ ⎝ ⎠
+=239.046526u.
+Thus,
+Δm =m⎛239 Pu ⎞ − ⎡m⎛235 U ⎞ +m⎛4He ⎞⎤
+⎝ ⎠ ⎣ ⎝ ⎠ ⎝ ⎠⎦
+=239.052157u−239.046526u
+=0.0005631u.
+Now we can findEby entering Δm into the equation:
+E=(Δm)c2=(0.005631u)c2.
+We know 1u=931.5MeV/c2, so we have
+E =(0.005631) ⎛ 931.5MeV/c2⎞⎛c2⎞
+⎝ ⎠⎝ ⎠
+=5.25MeV.
+Significance
+Theenergyreleased inthis α decayisintheMeVrange,manytimes greater thanchemical reaction energies.
+Most of this energy becomes kinetic energy of the α particle (or 4He nucleus), which moves away at high
+speed. The energy carried away by the recoil of the 235 U nucleus is much smaller due to its relatively large
+mass. The 235 U nucleus can be left in an excited state to later emit photons (γ rays).
+Beta Decay
+Inmost β particledecays(orbetadecay),eitheranelectron(β− )orpositron(β+ )isemittedbyanucleus.Apositron
+has the same mass as the electron, but its charge is +e. For this reason, a positron is sometimes called an antielectron.
+Howdoes β decayoccur?Apossibleexplanationistheelectron(positron)isconfinedtothenucleuspriortothedecayand
+somehowescapes.Toobtainaroughestimateoftheescapeenergy,considerasimplifiedmodelofanelectrontrappedina
+box(orintheterminologyofquantummechanics,aone-dimensionalsquarewell)thathasthewidthofatypicalnucleus(
+10−14m).AccordingtotheHeisenberguncertaintyprincipleinQuantumMechanics,theuncertaintyofthemomentum
+of the electron is:
+
+472 Chapter 10 | Nuclear Physics
+Δp> h = 6.6×10 −34 m2·kg/s =6.6×10 −20 kg· m/s.
+Δx 10−14m
+Taking this momentum value (an underestimate) to be the “true value,” the kinetic energy of the electron on escape is
+approximately
+2
+⎛ ⎝ Δp⎞ ⎠ 2 = ⎛ ⎝ 6.6×10 −20 kg·m/s ⎞ ⎠ =2.0×10 −9 J=12,400MeV.
+2m e 2 ⎛ 9.1×10 −31 kg ⎞
+⎝ ⎠
+Experimentally,theelectronsemittedin β− decayarefoundtohavekineticenergiesoftheorderofonlyafewMeV.We
+thereforeconcludethattheelectronissomehowproducedinthedecayratherthanescapingthenucleus.Particleproduction
+(annihilation)isdescribedbytheoriesthatcombinequantummechanicsandrelativity,asubjectofamoreadvancedcourse
+in physics.
+Nuclearbetadecayinvolvestheconversionofonenucleonintoanother.Forexample,aneutroncandecaytoaprotonby
+the emission of an electron (β− ) and a nearly massless particle called anantineutrino( – ν ):
+1n→ 1p+ 0 e+ – v .
+0 1 −1
+Thenotation 0 e isusedtodesignatetheelectron.Itsmassnumberis0becauseitisnotanucleon,anditsatomicnumber
+−1
+is −1 tosignifythatithasachargeof −e.Theprotonisrepresentedby 1p becauseitsmassnumberandatomicnumber
+1
+are 1. When this occurs within an atomic nucleus, we have the following equation for beta decay:
+A X→ A X+ 0 e+ – v . (10.22)
+Z Z+1 −1
+As discussed in another chapter, this process occurs due to the weak nuclear force.
+Watchbeta decay (https://openstaxcollege.org/l/21betadecayvid) occurforacollectionofnucleiorfor
+an individual nucleus.
+Asanexample, theisotope 234 Th isunstable anddecaysby β− emission withahalf-life of24days.Itsdecaycanbe
+90
+represented as
+234 Th→ 234 X+ 0 e+ – v .
+90 91 −1
+Since the chemical element with atomic number 91 is protactinium (Pa), we can write the β− decay of thorium as
+234 Th→ 234 Pa+ 0 e+ – v .
+90 91 −1
+The reverse process is also possible: A proton can decay to a neutron by the emission of a positron (β+ ) and a nearly
+massless particle called aneutrino(v). This reaction is written as 1p→ 1n+ 0 e+v.
+1 0 +1
+Thepositron 0 e isemittedwiththeneutrinov,andtheneutronremainsinthenucleus.(Like β− decay,thepositrondoes
++1
+notprecedethedecaybutisproducedinthedecay.)Foranisolatedproton,thisprocessisimpossiblebecausetheneutron
+isheavierthantheproton.However,thisprocessispossiblewithinthenucleusbecausetheprotoncanreceiveenergyfrom
+othernucleonsforthetransition.Asanexample,theisotopeofaluminum 26 Al decaysby β+ emissionwithahalf-life
+13
+of 7.40×10 5 y. The decay is written as
+26 Al→ 26 X+ 0 e+v.
+13 12 +1
+The atomic number 12 corresponds to magnesium. Hence,
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 473
+26 Al→ 26 Mg+ 0 e+v.
+13 12 +1
+As a nuclear reaction, positron emission can be written as
+A X→ A X+ 0 e+v. (10.23)
+Z Z−1 +1
+Theneutrinowasnotdetectedintheearlyexperimentson β decay.However,thelawsofenergyandmomentumseemed
+to require such a particle. Later, neutrinos were detected through their interactions with nuclei.
+Example 10.8
+Bismuth Alpha and Beta Decay
+The 211Bi nucleus undergoes both α and β− decay. For each case, what is the daughter nucleus?
+83
+Strategy
+WecanusetheprocessesdescribedbyEquation10.21andEquation10.22,aswellasthePeriodicTable,to
+identify the resulting elements.
+Solution
+Theatomicnumberandthemassnumberforthe α particleare2and4,respectively.Thus,whenabismuth-211
+nucleusemitsan α particle,thedaughternucleushasanatomicnumberof81andamassnumberof207.The
+element with an atomic number of 81 is thallium, so the decay is given by
+211Bi→ 207 Ti+4He.
+83 81 2
+In β− decay, the atomic number increases by 1, while the mass number stays the same. The element with an
+atomic number of 84 is polonium, so the decay is given by
+211Bi→ 211Po+ 0 e+ – v .
+83 84 −1
+10.4 Check Your Understanding In radioactive beta decay, does the atomic mass number, A, increase or
+decrease?
+Gamma Decay
+Anucleusinanexcitedstatecandecaytoalower-levelstatebytheemissionofa“gamma-ray”photon,andthisisknown
+asgamma decay. This is analogous to de-excitation of an atomic electron. Gamma decay is represented symbolically by
+A X* → A X+γ (10.24)
+Z Z
+wheretheasterisk(*)onthenucleusindicatesanexcitedstate.In γ decay,neithertheatomicnumbernorthemassnumber
+changes, so the type of nucleus does not change.
+Radioactive Decay Series
+Nucleiwith Z >82 areunstableanddecaynaturally.Manyofthesenucleihaveveryshortlifetimes,sotheyarenotfound
+innature.Notableexceptionsinclude 232 Th (orTh-232)withahalf-lifeof 1.39×10 10 years,and 238 U (orU-238)with
+90 92
+ahalf-lifeof 7.04×10 8 years.Whenaheavynucleusdecaystoalighterone,thelighterdaughternucleuscanbecomethe
+
+474 Chapter 10 | Nuclear Physics
+parentnucleusforthenextdecay,andsoon.Thisprocesscanproducealongseriesofnucleardecayscalledadecayseries.
+The series ends with a stable nucleus.
+To illustrate the concept of a decay series, consider the decay of Th-232 series (Figure 10.13). The neutron number,
+N, is plotted on the vertical y-axis, and the atomic number, Z, is plotted on the horizontal x-axis, so Th-232 is found at
+the coordinates (N, Z)=(142, 90). Th-232 decays by α emission with a half-life of 1.39×10 10 years. Alpha decay
+decreases the atomic number by 2 and the mass number by 4, so we have
+232 Th→ 228 Ra+4He.
+90 88 2
+The neutron number for Radium-228 is 140, so it is found in the diagram at the coordinates (N, Z)=(140, 88).
+Radium-228isalsounstableanddecaysby β− emissionwithahalf-lifeof5.76yearstoActinum-228.Theatomicnumber
+increases by 1, the mass number remains the same, and the neutron number decreases by 1. Notice that in the graph, α
+emission appears as a line sloping downward to the left, with both N and Z decreasing by 2. Beta emission, on the other
+hand,appearsasalineslopingdownwardtotherightwithNdecreasingby1,andZincreasingby1.Afterseveraladditional
+alpha and beta decays, the series ends with the stable nucleus Pb-208.
+Therelativefrequencyofdifferenttypesofradioactivedecays(alpha,beta,andgamma)dependsonmanyfactors,including
+thestrengthoftheforcesinvolvedandthenumberofwaysagivenreactioncanoccurwithoutviolatingtheconservation
+of energy and momentum. How often a radioactive decay occurs often depends on a sensitive balance of the strong and
+electromagnetic forces. These forces are discussed inParticle Physics and Cosmology.
+Figure 10.13 In the thorium 232 Th decay series, alpha (α) decays reduce the atomic number, as indicated
+90
+by the red arrows. Beta (β− ) decays increase the atomic number, as indicated by the blue arrows. The series
+ends at the stable nucleus Pb-208.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 475
+As another example, consider the U-238 decay series shown in Figure 10.14. After numerous alpha and beta decays,
+theseriesendswiththestablenucleusPb-206.Anexampleofadecaywhoseparentnucleusnolongerexistsnaturallyis
+shown in Figure 10.15. It starts with Neptunium-237 and ends in the stable nucleus Bismuth-209. Neptunium is called
+a transuranic element because it lies beyond uranium in the periodic table. Uranium has the highest atomic number
+(Z =92) of any element found in nature. Elements with Z >92 can be produced only in the laboratory. They most
+probablyalsoexistedinnatureatthetimeoftheformationofEarth,butbecauseoftheirrelativelyshortlifetimes,theyhave
+completely decayed. There is nothing fundamentally different between naturally occurring and artificial elements.
+Figure 10.14 In the Uranium-238 decay series, alpha (α) decays reduce the atomic number, as indicated by
+the red arrows. Beta (β− ) decays increase the atomic number, as indicated by the blue arrows. The series
+ends at the stable nucleus Pb-206.
+Notice that for Bi (21), the decay may proceed through either alpha or beta decay.
+
+476 Chapter 10 | Nuclear Physics
+Figure 10.15 In the Neptunium-237 decay series, alpha (α) decays reduce the atomic number, as indicated by
+the red arrows. Beta (β− ) decays increase the atomic number, as indicated by the blue arrows. The series ends at
+the stable nucleus Bi-209.
+Radioactivity in the Earth
+According to geologists, if there were no heat source, Earth should have cooled to its present temperature in no more
+than 1 billion years. Yet, Earth is more than 4 billion years old. Why is Earth cooling so slowly? The answer is nuclear
+radioactivity, that is, high-energy particles produced in radioactive decays heat Earth from the inside (Figure 10.16).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 477
+Figure 10.16 Earth is heated by nuclear reactions (alpha, beta, and gamma decays). Without
+these reactions, Earth’s surface would be much cooler than it is now.
+Candidatenucleiforthisheatingmodelare 238 U and 40 K,whichpossesshalf-livessimilartoorlongerthantheageof
+Earth. The energy produced by these decays (per second per cubic meter) is small, but the energy cannot escape easily,
+soEarth’scoreisveryhot.Thermal energyinEarth’scoreistransferredtoEarth’ssurfaceandawayfromitthroughthe
+processes of convection, conduction, and radiation.
+10.5 | Fission
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the process of nuclear fission in terms of its product and reactants
+• Calculate the energies of particles produced by a fission reaction
+• Explain the fission concept in the context of fission bombs and nuclear reactions
+In 1934, Enrico Fermi bombarded chemical elements with neutrons in order to create isotopes of other elements. He
+assumedthatbombardinguraniumwithneutronswouldmakeitunstableandproduceanewelement.Unfortunately,Fermi
+could not determine the products of the reaction. Several years later, Otto Hahn and Fritz Strassman reproduced these
+experiments and discovered that the products of these reactions were smaller nuclei. From this, they concluded that the
+uranium nucleus had split into two smaller nuclei.
+The splitting of a nucleus is called fission. Interestingly, U-235 fission does not always produce the same fragments.
+Example fission reactions include:
+
+478 Chapter 10 | Nuclear Physics
+1n+ 235 U→ 141Ba+ 92 Kr+31n+Q,
+0 92 56 36 0
+1n+ 235 U→ 140 Xe+ 94 Sr+21n+Q,
+0 92 54 38 0
+1n+ 235 U→ 132 Sn+ 101 Mo+31n+Q.
+0 92 50 42 0
+Ineachcase,thesumofthemassesoftheproductnucleiarelessthanthemassesofthereactants,sothefissionofuranium
+isanexothermicprocess ⎛Q>0⎞. Thisistheideabehindtheuseoffissionreactorsassourcesofenergy(Figure10.17).
+⎝ ⎠
+Theenergycarriedawaybythereactiontakestheformofparticleswithkineticenergy.Thepercentyieldoffragmentsfrom
+a U-235 fission is given inFigure 10.18.
+Figure 10.17 The Phillipsburg Nuclear Power Plant in Germany uses a fission reactor to generate electricity.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 479
+Figure 10.18 In this graph of fission fragments from U-235,
+the peaks in the graph indicate nuclei that are produced in the
+greatest abundance by the fission process.
+Energychangesinanuclearfissionreactioncanbeunderstoodintermsofthebindingenergypernucleoncurve(Figure
+10.7).TheBENvalueforuranium (A=236) isslightlylowerthanitsdaughternuclei,whichlieclosertotheiron(Fe)
+peak.ThismeansthatnucleonsinthenuclearfragmentsaremoretightlyboundthanthoseintheU-235nucleus.Therefore,
+afissionreactionresultsinadropintheaverageenergyofanucleon.Thisenergyiscarriedawaybyhigh-energyneutrons.
+NielsBohrandJohnWheelerdevelopedtheliquiddropmodeltounderstandthefissionprocess.Accordingtothismodel,
+firing a neutron at a nucleus is analogous to disturbing a droplet of water (Figure 10.19). The analogy works because
+short-range forces between nucleons in a nucleus are similar to the attractive forces between water molecules in a water
+droplet.Inparticular,forcesbetweennucleonsatthesurfaceofthenucleusresultinasurfacetensionsimilartothatofa
+waterdroplet.Aneutronfiredintoauraniumnucleuscansetthenucleusintovibration.Ifthisvibrationisviolentenough,
+the nucleus divides into smaller nuclei and also emits two or three individual neutrons.
+Figure 10.19 In the liquid drop model of nuclear fission, the uranium nucleus is split into two lighter nuclei by a high-energy
+neutron.
+U-235fissioncanproduceachainreaction.InacompoundconsistingofmanyU-235nuclei,neutronsinthedecayofone
+U-235 nucleus can initiate the fission of additional U-235 nuclei (Figure 10.20). This chain reaction can proceed in a
+controlled manner, as in a nuclear reactor at a power plant, or proceed uncontrollably, as in an explosion.

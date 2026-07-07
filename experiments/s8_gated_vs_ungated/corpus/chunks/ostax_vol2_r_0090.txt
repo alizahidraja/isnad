@@ -1,0 +1,293 @@
+# REAL PDF — openstax_vol2.pdf, pages 562-570
+############################################################
+
+552 Chapter 12 | Sources of Magnetic Fields
+Solution
+→ →
+Over this path B is constant and parallel to d l , so
+→ →
+∮ B ·d l =B θ ∮dl=B θ(2πr).
+Thus Ampère’s law reduces to
+B θ(2πr)= µ
+0
+I.
+→
+Finally, since B θ is the only component of B , we can drop the subscript and write
+µ I
+B= 0 .
+2πr
+This agrees with the Biot-Savart calculation above.
+Significance
+→ →
+Ampère’s law works well if you have a path to integrate over which B ·d l has results that are easy to
+simplify.Fortheinfinitewire,thisworkseasilywithapaththatiscirculararoundthewiresothatthemagnetic
+fieldfactorsoutoftheintegration.Ifthepathdependencelookscomplicated,youcanalwaysgobacktotheBiot-
+Savart law and use that to find the magnetic field.
+Example 12.7
+Calculating the Magnetic Field of a Thick Wire with Ampère’s Law
+Theradiusofthelong,straightwireofFigure 12.16isa,andthewirecarriesacurrent I thatisdistributed
+0
+uniformly over its cross-section. Find the magnetic field both inside and outside the wire.
+Figure 12.16 (a) A model of a current-carrying wire of radius
+aand current I . (b) A cross-section of the same wire showing
+0
+the radiusaand the Ampère’s loop of radiusr.
+Strategy
+This problem has the same geometry as Example 12.6, but the enclosed current changes as we move the
+integrationpathfromoutsidethewiretoinsidethewire,whereitdoesn’tcapturetheentirecurrentenclosed(see
+Figure 12.16).
+Solution
+For any circular path of radiusrthat is centered on the wire,
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 553
+→ →
+∮ B ·d l =∮Bdl=B∮dl=B(2πr).
+From Ampère’s law, this equals the total current passing through any surface bounded by the path of integration.
+Considerfirstacircularpaththatisinsidethewire (r ≤a) suchasthatshowninpart(a)ofFigure12.16.We
+needthecurrentIpassingthroughtheareaenclosedbythepath.It’sequaltothecurrentdensityJtimesthearea
+enclosed.Sincethecurrentisuniform,thecurrentdensityinsidethepathequalsthecurrentdensityinthewhole
+wire, which is I / πa2. Therefore the currentIpassing through the area enclosed by the path is
+0
+πr2 r2
+I = I = I .
+πa2 0 a2 0
+WecanconsiderthisratiobecausethecurrentdensityJisconstantovertheareaofthewire.Therefore,thecurrent
+density of a part of the wire is equal to the current density in the whole area. Using Ampère’s law, we obtain
+⎛r2⎞
+B(2πr)= µ I ,
+0⎝ a2⎠ 0
+and the magnetic field inside the wire is
+B= µ 0 I 0 r (r ≤a).
+2π a2
+Outside the wire, the situation is identical to that of the infinite thin wire of the previous example; that is,
+µ I
+B= 0 0(r ≥a).
+2πr
+The variation ofBwithris shown inFigure 12.17.
+Figure 12.17 Variation of the magnetic field produced by a current
+I in a long, straight wire of radiusa.
+0
+Significance
+Theresultsshowthatastheradialdistanceincreasesinsidethethickwire,themagneticfieldincreasesfromzero
+toafamiliarvalueofthemagneticfieldofathinwire.Outsidethewire,thefielddropsoffregardlessofwhether
+it was a thick or thin wire.
+This result is similar to how Gauss’s law for electrical charges behaves inside a uniform charge distribution,
+except that Gauss’s law for electrical charges has a uniform volume distribution of charge, whereas Ampère’s
+lawherehasauniformareaofcurrentdistribution.Also,thedrop-offoutsidethethickwireissimilartohowan
+electric field drops off outside of a linear charge distribution, since the two cases have the same geometry and
+neither case depends on the configuration of charges or currents once the loop is outside the distribution.
+
+554 Chapter 12 | Sources of Magnetic Fields
+Example 12.8
+Using Ampère’s Law with Arbitrary Paths
+→ →
+Use Ampère’s law to evaluate ∮ B ·d l for the current configurations and paths inFigure 12.18.
+Figure 12.18 Current configurations and paths forExample
+12.8.
+Strategy
+→ →
+Ampère’slawstatesthat ∮ B ·d l = µ I whereIisthetotalcurrentpassingthroughtheenclosedloop.The
+0
+quickest way to evaluate the integral is to calculate µ I by finding the net current through the loop. Positive
+0
+currentsflowwithyourright-handthumbifyourfingerswraparoundinthedirectionoftheloop.Thiswilltell
+us the sign of the answer.
+Solution
+(a)Thecurrentgoingdownwardthroughtheloopequalsthecurrentgoingoutoftheloop,sothenetcurrentis
+→ →
+zero. Thus, ∮ B ·d l =0.
+(b)Theonlycurrenttoconsiderinthisproblemis2Abecauseitistheonlycurrentinsidetheloop.Theright-hand
+ruleshowsusthecurrentgoingdownwardthroughtheloopisinthepositivedirection.Therefore,theansweris
+→ →
+∮ B ·d l = µ (2A)=2.51×10 −6 T⋅m/A.
+0
+(c)Theright-handruleshowsusthecurrentgoingdownwardthroughtheloopisinthepositivedirection.There
+are 7A+5A=12A ofcurrentgoingdownwardand–3Agoingupward.Therefore,thetotalcurrentis9Aand
+→ →
+∮ B ·d l = µ (9A)=5.65×10 −6 T⋅m/A.
+0
+Significance
+Ifthecurrentsallwrappedaroundsothatthesamecurrentwentintotheloopandoutoftheloop,thenetcurrent
+would be zero and no magnetic field would be present. This is why wires are very close to each other in an
+electricalcord.Thecurrentsflowingtowardadeviceandawayfromadeviceinawireequalzerototalcurrent
+flowthroughanAmpèrelooparoundthesewires.Therefore,nostraymagneticfieldscanbepresentfromcords
+carrying current.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 555
+12.6 CheckYourUnderstandingConsiderusingAmpère’slawtocalculatethemagneticfieldsofafinite
+straight wire and of a circular loop of wire. Why is it not useful for these calculations?
+12.6 | Solenoids and Toroids
+Learning Objectives
+By the end of this section, you will be able to:
+• Establish a relationship for how the magnetic field of a solenoid varies with distance and
+current by using both the Biot-Savart law and Ampère’s law
+• Establish a relationship for how the magnetic field of a toroid varies with distance and current
+by using Ampère’s law
+Twoofthemostcommonandusefulelectromagneticdevicesarecalledsolenoidsandtoroids.Inoneformoranother,they
+are part of numerous instruments, both large and small. In this section, we examine the magnetic field typical of these
+devices.
+Solenoids
+A long wire wound in the form of a helical coil is known as a solenoid. Solenoids are commonly used in experimental
+research requiring magnetic fields. A solenoid is generally easy to wind, and near its center, its magnetic field is quite
+uniform and directly proportional to the current in the wire.
+Figure 12.19showsasolenoidconsistingofNturnsofwiretightlywoundoveralengthL.AcurrentIisflowingalong
+thewireofthesolenoid.ThenumberofturnsperunitlengthisN/L;therefore,thenumberofturnsinaninfinitesimallength
+dyare (N/L)dyturns. This produces a current
+NI (12.24)
+dI = dy.
+L
+WefirstcalculatethemagneticfieldatthepointPofFigure 12.19.Thispointisonthecentralaxisofthesolenoid.We
+arebasicallycuttingthesolenoidintothinslicesthataredythickandtreatingeachasacurrentloop.Thus,dIisthecurrent
+→
+througheachslice.Themagneticfield d B duetothecurrentdIindycanbefoundwiththehelpofEquation 12.15
+andEquation 12.24:
+→ µ R2dI ^ ⎛µ IR2N^ ⎞ dy (12.25)
+d B = 0 j =⎜ 0 j⎟
+2(y2+R2) 3/2 ⎝ 2L ⎠(y2+R2) 3/2
+→
+whereweusedEquation12.24toreplacedI.TheresultantfieldatPisfoundbyintegrating d B alongtheentirelength
+ofthesolenoid.It’seasiesttoevaluatethisintegralbychangingtheindependentvariablefromyto θ. Frominspectionof
+Figure 12.19, we have:
+y (12.26)
+sinθ= .
+y2+R2
+
+556 Chapter 12 | Sources of Magnetic Fields
+Figure 12.19 (a) A solenoid is a long wire wound in the shape of a helix. (b) The
+magnetic field at the pointPon the axis of the solenoid is the net field due to all of the
+current loops.
+Taking the differential of both sides of this equation, we obtain
+⎡ y2 ⎤
+cosθdθ =⎢− + 1 ⎥dy
+⎣ (y2+R2) 3/2 y2+R2⎦
+R2dy
+= .
+(y2+R2) 3/2
+→
+When this is substituted into the equation for d B , we have
+θ (12.27)
+→ µI N^ 2 µI N ^
+B = 0 j∫cosθdθ= 0 (sinθ −sinθ )j,
+2L 2L 2 1
+θ
+1
+which is the magnetic field along the central axis of a finite solenoid.
+Ofspecialinterestistheinfinitelylongsolenoid,forwhich L→∞. Fromapracticalpointofview,theinfinitesolenoid
+isonewhoselengthismuchlargerthanitsradius (L≫R). Inthiscase, θ =
+−π
+and θ =
+π
+. ThenfromEquation
+1 2 2 2
+12.27, the magnetic field along the central axis of an infinite solenoid is
+→ µ IN^ µ IN^
+B = 0 j⎡sin(π/2)−sin(−π/2)⎤= 0 j
+2L ⎣ ⎦ L
+or
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 557
+→ ^ (12.28)
+B = µ nI j,
+0
+→
+wherenisthenumberofturnsperunitlength.Youcanfindthedirectionof B witharight-handrule:Curlyourfingers
+in the direction of the current, and your thumb points along the magnetic field in the interior of the solenoid.
+We now use these properties, along with Ampère’s law, to calculate the magnitude of the magnetic field at any location
+→
+insidetheinfinitesolenoid.ConsidertheclosedpathofFigure12.20.Alongsegment1, B isuniformandparalleltothe
+→
+path.Alongsegments2and4, B isperpendiculartopartofthepathandvanishesovertherestofit.Therefore,segments
+→
+2and4donotcontributetothelineintegralinAmpère’slaw.Alongsegment3, B =0 becausethemagneticfieldiszero
+outsidethesolenoid.IfyouconsideranAmpère’slawloopoutsideofthesolenoid,thecurrentflowsinoppositedirections
+on different segments of wire. Therefore, there is no enclosed current and no magnetic field according to Ampère’s law.
+Thus, there is no contribution to the line integral from segment 3. As a result, we find
+→ → → → (12.29)
+∮ B ·d l =∫ B ·d l =Bl.
+1
+Figure 12.20 The path of integration used in Ampère’s law to
+evaluate the magnetic field of an infinite solenoid.
+Thesolenoidhasnturnsperunitlength,sothecurrentthatpassesthroughthesurfaceenclosedbythepathisnlI.Therefore,
+from Ampère’s law,
+Bl= µ nlI
+0
+and
+B= µ nI (12.30)
+0
+within the solenoid. This agrees with what we found earlier for B on the central axis of the solenoid. Here, however, the
+locationofsegment1isarbitrary,sowehavefoundthatthisequationgivesthemagneticfieldeverywhereinsidetheinfinite
+solenoid.
+Outsidethesolenoid,onecandrawanAmpère’slawlooparoundtheentiresolenoid.Thiswouldenclosecurrentflowingin
+bothdirections.Therefore,thenetcurrentinsidetheloopiszero.AccordingtoAmpère’slaw,ifthenetcurrentiszero,the
+magnetic field must be zero. Therefore, for locations outside of the solenoid’s radius, the magnetic field is zero.
+When a patient undergoes a magnetic resonance imaging (MRI) scan, the person lies down on a table that is moved into
+thecenterofalargesolenoidthatcangenerateverylargemagneticfields.Thesolenoidiscapableofthesehighfieldsfrom
+highcurrentsflowingthroughsuperconductingwires.Thelargemagneticfieldisusedtochangethespinofprotonsinthe
+patient’s body. The time it takes for the spins to align or relax (return to original orientation) is a signature of different
+tissues that can be analyzed to see if the structures of the tissues is normal (Figure 12.21).
+
+558 Chapter 12 | Sources of Magnetic Fields
+Figure 12.21 In an MRI machine, a large magnetic field is generated by the cylindrical
+solenoid surrounding the patient. (credit: Liz West)
+Example 12.9
+Magnetic Field Inside a Solenoid
+Asolenoidhas300turnswoundaroundacylinderofdiameter1.20cmandlength14.0cm.Ifthecurrentthrough
+the coils is 0.410 A, what is the magnitude of the magnetic field inside and near the middle of the solenoid?
+Strategy
+Wearegiventhenumberofturnsandthelengthofthesolenoidsowecanfindthenumberofturnsperunitlength.
+Therefore,themagneticfieldinsideandnearthemiddleofthesolenoidisgivenbyEquation 12.30.Outside
+the solenoid, the magnetic field is zero.
+Solution
+The number of turns per unit length is
+n= 300turns =2.14×10 3 turns/m.
+0.140m
+The magnetic field produced inside the solenoid is
+B = µ nI =(4π×10 −7 T⋅m/A)(2.14×10 3 turns/m)(0.410A)
+0
+B = 1.10×10 −3 T.
+Significance
+This solution is valid only if the length of the solenoid is reasonably large compared with its diameter. This
+example is a case where this is valid.
+12.7 Check Your Understanding What is the ratio of the magnetic field produced from using a finite
+formulaovertheinfiniteapproximationforanangle θ of(a) 85°? (b) 89°? Thesolenoidhas1000turnsin50
+cm with a current of 1.0 A flowing through the coils
+Toroids
+Atoroidisadonut-shapedcoilcloselywoundwithonecontinuouswire,asillustratedinpart(a)ofFigure 12.22.Ifthe
+toroid hasNwindings and the current in the wire isI, what is the magnetic field both inside and outside the toroid?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 559
+Figure 12.22 (a) A toroid is a coil wound into a donut-shaped
+object. (b) A loosely wound toroid does not have cylindrical
+symmetry. (c) In a tightly wound toroid, cylindrical symmetry is a
+very good approximation. (d) Several paths of integration for
+Ampère’s law.
+WebeginbyassumingcylindricalsymmetryaroundtheaxisOO’.Actually,thisassumptionisnotpreciselycorrect,foras
+part(b)ofFigure12.22shows,theviewofthetoroidalcoilvariesfrompointtopoint(forexample, P , P , and P )
+1 2 3
+onacircularpathcenteredaroundOO’.However,ifthetoroidistightlywound,allpointsonthecirclebecomeessentially
+equivalent [part (c) ofFigure 12.22], and cylindrical symmetry is an accurate approximation.
+Withthissymmetry,themagneticfieldmustbetangenttoandconstantinmagnitudealonganycircularpathcenteredon
+OO’. This allows us to write for each of the paths D , D , and D shown in part (d) ofFigure 12.22,
+1 2 3
+→ → (12.31)
+∮ B ·d l =B(2πr).
+Ampère’s law relates this integral to the net current passing through any surface bounded by the path of integration. For
+a path that is external to the toroid, either no current passes through the enclosing surface (path D ), or the current
+1
+passingthroughthesurfaceinonedirectionisexactlybalancedbythecurrentpassingthroughitintheoppositedirection
+(pathD ). In either case, there is no net current passing through the surface, so
+3
+∮B(2πr)=0
+and
+B=0 (outside the toroid). (12.32)
+Theturnsofatoroidformahelix,ratherthancircularloops.Asaresult,thereisasmallfieldexternaltothecoil;however,
+the derivation above holds if the coils were circular.
+Foracircularpathwithinthetoroid(path D ),thecurrentinthewirecutsthesurfaceNtimes,resultinginanetcurrentNI
+2
+through the surface. We now find with Ampère’s law,
+B(2πr)= µ NI
+0

@@ -1,0 +1,131 @@
+# REAL PDF — openstax_vol1.pdf, pages 18-21
+############################################################
+
+6 1 • Units and Measurement
+1.1 The Scope and Scale of Physics
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the scope of physics.
+• Calculate the order of magnitude of a quantity.
+• Compare measurable length, mass, and timescales quantitatively.
+• Describe the relationships among models, theories, and laws.
+Physics is devoted to the understanding of all natural phenomena. In physics, we try to understand physical
+phenomena at all scales—from the world of subatomic particles to the entire universe. Despite the breadth of the
+subject, the various subfields of physics share a common core. The same basic training in physics will prepare you to
+work in any area of physics and the related areas of science and engineering. In this section, we investigate the
+scope of physics; the scales of length, mass, and time over which the laws of physics have been shown to be
+applicable; and the process by which science in general, and physics in particular, operates.
+The Scope of Physics
+Take another look at the chapter-opening image. The Whirlpool Galaxy contains billions of individual stars as well as
+huge clouds of gas and dust. Its companion galaxy is also visible to the right. This pair of galaxies lies a staggering
+billion trillion miles from our own galaxy (which is called the Milky Way). The stars and planets that
+make up the Whirlpool Galaxy might seem to be the furthest thing from most people’s everyday lives, but the
+Whirlpool is a great starting point to think about the forces that hold the universe together. The forces that cause the
+Whirlpool Galaxy to act as it does are thought to be the same forces we contend with here on Earth, whether we are
+planning to send a rocket into space or simply planning to raise the walls for a new home. The gravity that causes
+the stars of the Whirlpool Galaxy to rotate and revolve is thought to be the same as what causes water to flow over
+hydroelectric dams here on Earth. When you look up at the stars, realize the forces out there are the same as the
+ones here on Earth. Through a study of physics, you may gain a greater understanding of the interconnectedness of
+everything we can see and know in this universe.
+Humans have created and manufactured millions of different objects. Successive technological periods (often
+referred to as the Stone Age, the Bronze Age, the Iron Age, and so on) are marked by knowledge of the physical
+properties of certain materials and the ability to manipulate them. This knowledge all stems from physics, whether
+it's the way a rock would flake when constructing a spear point, the effect of integrating carbon with iron in South
+Indian and Sri Lankan furnaces to create the earliest high-quality steel, or the proper way to combine perfectly
+ground and polished pieces of glass to create optical instruments. Our current technological age, the Information
+Age, can be traced to critical innovations made by people from all backgrounds working together. Mohamed M.
+Atalla and Dawon Kahng, for example, invented the MOSFET (metal-oxide-semiconductor field-effect transistor).
+Although unknown to most people, this tiny device, created in 1959 by an Egyptian-born scientist and a Korean-
+born scientist working in a lab in New Jersey (U.S.), is the basis for modern electronics. More MOSFETs have been
+produced than any other object in human history. They are used in computers, smartphones, microwave ovens,
+automotive controls, medical instruments, and nearly every other electronic device.
+Next, think about the most exciting modern technologies that you have heard about in the news, such as trains that
+levitate above tracks, “invisibility cloaks” that bend light around them, and microscopic robots that fight cancer cells
+in our bodies. All these groundbreaking advances, commonplace or unbelievable, rely on the principles of physics.
+Aside from playing a significant role in technology, professionals such as engineers, pilots, physicians, physical
+therapists, electricians, and computer programmers apply physics concepts in their daily work. For example, a pilot
+must understand how wind forces affect a flight path; a physical therapist must understand how the muscles in the
+body experience forces as they move and bend. As you will learn in this text, the principles of physics are propelling
+new, exciting technologies, and these principles are applied in a wide range of careers.
+The underlying order of nature makes science in general, and physics in particular, interesting and enjoyable to
+study. For example, what do a bag of chips and a car battery have in common? Both contain energy that can be
+converted to other forms. The law of conservation of energy (which says that energy can change form but is never
+lost) ties together such topics as food calories, batteries, heat, light, and watch springs. Understanding this law
+Access for free at openstax.org
+
+1.1 • The Scope and Scale of Physics 7
+makes it easier to learn about the various forms energy takes and how they relate to one another. Apparently
+unrelated topics are connected through broadly applicable physical laws, permitting an understanding beyond just
+the memorization of lists of facts.
+Science consists of theories and laws that are the general truths of nature, as well as the body of knowledge they
+encompass. Scientists are continuously trying to expand this body of knowledge and to perfect the expression of the
+laws that describe it. Physics, which comes from the Greek phúsis, meaning “nature,” is concerned with describing
+the interactions of energy, matter, space, and time to uncover the fundamental mechanisms that underlie every
+phenomenon. This concern for describing the basic phenomena in nature essentially defines the scope of physics.
+Physics aims to understand the world around us at the most basic level. It emphasizes the use of a small number of
+quantitative laws to do this, which can be useful to other fields pushing the performance boundaries of existing
+technologies. Consider a smartphone (Figure 1.2). Physics describes how electricity interacts with the various
+circuits inside the device. This knowledge helps engineers select the appropriate materials and circuit layout when
+building a smartphone. Knowledge of the physics underlying these devices is required to shrink their size or increase
+their processing speed. Or, think about a GPS. Physics describes the relationship between the speed of an object,
+the distance over which it travels, and the time it takes to travel that distance. GPS relies on precise calculations that
+account for variations in the Earth's landscapes, the exact distance between orbiting satellites, and even the effect
+of a complex occurrence of time dilation. Most of these calculations are founded on algorithms developed by Gladys
+West, a mathematician and computer scientist who programmed the first computers capable of highly accurate
+remote sensing and positioning. When you use a GPS device, it utilizes these algorithms to recognize where you are
+and how your position relates to other objects on Earth.
+FIGURE 1.2 The Apple iPhone is a common smartphone with a GPS function. Physics describes the way that electricity flows through the
+circuits of this device. Engineers use their knowledge of physics to construct an iPhone with features that consumers will enjoy. One
+specific feature of an iPhone is the GPS function. A GPS uses physics equations to determine the drive time between two locations on a
+map. (credit: Jane Whitney)
+Knowledge of physics is useful in everyday situations as well as in nonscientific professions. It can help you
+understand how microwave ovens work, why metals should not be put into them, and why they might affect
+pacemakers. Physics allows you to understand the hazards of radiation and to evaluate these hazards rationally and
+more easily. Physics also explains the reason why a black car radiator helps remove heat in a car engine, and it
+explains why a white roof helps keep the inside of a house cool. Similarly, the operation of a car’s ignition system as
+well as the transmission of electrical signals throughout our body’s nervous system are much easier to understand
+when you think about them in terms of basic physics.
+Physics is a key element of many important disciplines and contributes directly to others. Chemistry, for
+
+8 1 • Units and Measurement
+example—since it deals with the interactions of atoms and molecules—has close ties to atomic and molecular
+physics. Most branches of engineering are concerned with designing new technologies, processes, or structures
+within the constraints set by the laws of physics. In architecture, physics is at the heart of structural stability and is
+involved in the acoustics, heating, lighting, and cooling of buildings. Parts of geology rely heavily on physics, such as
+radioactive dating of rocks, earthquake analysis, and heat transfer within Earth. Some disciplines, such as
+biophysics and geophysics, are hybrids of physics and other disciplines.
+Physics has many applications in the biological sciences. On the microscopic level, it helps describe the properties
+of cells and their environments. On the macroscopic level, it explains the heat, work, and power associated with the
+human body and its various organ systems. Physics is involved in medical diagnostics, such as radiographs,
+magnetic resonance imaging, and ultrasonic blood flow measurements. Medical therapy sometimes involves
+physics directly; for example, cancer radiotherapy uses ionizing radiation. Physics also explains sensory
+phenomena, such as how musical instruments make sound, how the eye detects color, and how lasers transmit
+information.
+It is not necessary to study all applications of physics formally. What is most useful is knowing the basic laws of
+physics and developing skills in the analytical methods for applying them. The study of physics also can improve
+your problem-solving skills. Furthermore, physics retains the most basic aspects of science, so it is used by all the
+sciences, and the study of physics makes other sciences easier to understand.
+The Scale of Physics
+From the discussion so far, it should be clear that to accomplish your goals in any of the various fields within the
+natural sciences and engineering, a thorough grounding in the laws of physics is necessary. The reason for this is
+simply that the laws of physics govern everything in the observable universe at all measurable scales of length,
+mass, and time. Now, that is easy enough to say, but to come to grips with what it really means, we need to get a
+little bit quantitative. So, before surveying the various scales that physics allows us to explore, let’s first look at the
+concept of “order of magnitude,” which we use to come to terms with the vast ranges of length, mass, and time that
+we consider in this text (Figure 1.3).
+FIGURE 1.3 (a) Using a scanning tunneling microscope, scientists can see the individual atoms (diameters around 10–10 m) that compose
+this sheet of gold. (b) Tiny phytoplankton swim among crystals of ice in the Antarctic Sea. They range from a few micrometers (1 μm is 10–6
+m) to as much as 2 mm (1 mm is 10–3 m) in length. (c) These two colliding galaxies, known as NGC 4676A (right) and NGC 4676B (left), are
+nicknamed “The Mice” because of the tail of gas emanating from each one. They are located 300 million light-years from Earth in the
+constellation Coma Berenices. Eventually, these two galaxies will merge into one. (credit a: modification of work by
+"Erwinrossen"/Wikimedia Commons; credit b: modification of work by Prof. Gordon T. Taylor, Stony Brook University; NOAA Corps
+Collections; credit c: modification of work by NASA, H. Ford (JHU), G. Illingworth (UCSC/LO), M. Clampin (STScI), G. Hartig (STScI), the ACS
+Science Team, and ESA)
+Order of magnitude
+The order of magnitude of a number is the power of 10 that most closely approximates it. Thus, the order of
+magnitude refers to the scale (or size) of a value. Each power of 10 represents a different order of magnitude. For
+example, and so forth, are all different orders of magnitude, as are and
+To find the order of magnitude of a number, take the base-10 logarithm of the number and round it to the nearest
+integer, then the order of magnitude of the number is simply the resulting power of 10. For example, the order of
+magnitude of 800 is 103 because which rounds to 3. Similarly, the order of magnitude of 450 is
+Access for free at openstax.org

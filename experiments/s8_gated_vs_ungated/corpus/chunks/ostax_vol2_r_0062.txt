@@ -1,0 +1,261 @@
+# REAL PDF — openstax_vol2.pdf, pages 390-394
+############################################################
+
+380 Chapter 8 | Capacitance
+42. How much energy is stored in the electrical field of
+a metal sphere of radius 2.0 m that is kept at a 10.0-V 8.4Capacitor with a Dielectric
+potential?
+50. Show that for a given dielectric material, the
+maximum energy a parallel-plate capacitor can store is
+43. (a)Whatistheenergystoredinthe 10.0-µF capacitor directly proportional to the volume of dielectric.
+ofaheartdefibrillatorchargedto 9.00×10 3 V ?(b)Find
+51. An air-filled capacitor is made from two flat parallel
+the amount of the stored charge.
+plates 1.0 mm apart. The inside area of each plate is
+8.0cm2.(a)Whatisthecapacitanceofthissetofplates?
+44. In open-heart surgery, a much smaller amount of
+(b)Iftheregionbetweentheplatesisfilledwithamaterial
+energy will defibrillate the heart. (a) What voltage is
+whose dielectric constant is 6.0, what is the new
+applied to the 8.00-µF capacitor of a heart defibrillator
+capacitance?
+that stores 40.0 J of energy? (b) Find the amount of the
+stored charge.
+52. Acapacitorismadefromtwoconcentricspheres,one
+with radius 5.00 cm, the other with radius 8.00 cm. (a)
+45. A 165-µF capacitor is used in conjunction with a
+What is the capacitance of this set of conductors? (b) If
+dc motor. How much energy is stored in it when 119 V is theregionbetweentheconductorsisfilledwithamaterial
+applied? whosedielectricconstantis6.00,whatisthecapacitanceof
+the system?
+46. Suppose you have a 9.00-V battery, a 2.00-µF
+53. A parallel-plate capacitor has charge of magnitude
+capacitor,anda 7.40-µF capacitor.(a)Findthechargeand
+9.00µF on each plate and capacitance 3.00µC when
+energystoredifthecapacitorsareconnectedtothebattery
+there is air between the plates. The plates are separated
+in series. (b) Do the same for a parallel connection.
+by 2.00 mm. With the charge on the plates kept constant,
+a dielectric with κ=5 is inserted between the plates,
+47. An anxious physicist worries that the two metal
+completelyfillingthevolumebetweentheplates.(a)What
+shelves of a wood frame bookcase might obtain a high
+is the potential difference between the plates of the
+voltageifchargedbystaticelectricity,perhapsproducedby
+capacitor,beforeandafterthedielectrichasbeeninserted?
+friction. (a) What is the capacitance of the empty shelves
+(b)Whatistheelectricalfieldatthepointmidwaybetween
+if they have area 1.00×102 m2 and are 0.200 m apart?
+the plates before and after the dielectric is inserted?
+(b) What is the voltage between them if opposite charges
+of magnitude 2.00 nC are placed on them? (c) To show
+54. Some cell walls in the human body have a layer of
+thatthisvoltageposesasmallhazard,calculatetheenergy
+negative charge on the inside surface. Suppose that the
+stored. (d) The actual shelves have an area 100 times
+smaller than these hypothetical shelves. Are his fears surfacechargedensitiesare ±0.50×10 −3 C/m2,thecell
+justified? wallis 5.0×10 −9 m thick,andthecellwallmaterialhas
+a dielectric constant of κ=5.4. (a) Find the magnitude
+48. Aparallel-platecapacitorismadeoftwosquareplates
+oftheelectricfieldinthewallbetweentwochargelayers.
+25 cm on a side and 1.0 mm apart. The capacitor is
+(b) Find the potential difference between the inside and
+connected to a 50.0-V battery. With the battery still
+the outside of the cell. Which is at higher potential? (c)
+connected,theplatesarepulledaparttoaseparationof2.00
+A typical cell in the human body has volume 10 −16 m 3 .
+mm. What are the energies stored in the capacitor before
+Estimate thetotal electrical field energystoredinthewall
+andaftertheplatesarepulledfartherapart?Whydoesthe
+of a cell of this size when assuming that the cell is
+energydecreaseeventhoughworkisdoneinseparatingthe
+spherical. (Hint: Calculate the volume of the cell wall.)
+plates?
+55. A parallel-plate capacitor with only air between its
+49. Suppose that the capacitance of a variable capacitor
+plates is charged by connecting the capacitor to a battery.
+canbemanuallychangedfrom100pFto800pFbyturning
+Thecapacitoristhendisconnectedfromthebattery,without
+a dial, connected to one set of plates by a shaft, from
+anyofthechargeleavingtheplates.(a)Avoltmeterreads
+0° to 180°. With the dial set at 180° (corresponding
+45.0Vwhenplacedacrossthecapacitor.Whenadielectric
+to C=800pF), the capacitor is connected to a 500-V
+isinsertedbetweentheplates,completelyfillingthespace,
+source. After charging, the capacitor is disconnected from the voltmeter reads 11.5 V. What is the dielectric constant
+the source, and the dial is turned to 0°. If friction is of the material? (b) What will the voltmeter read if the
+negligible,howmuchworkisrequiredtoturnthedialfrom dielectric is now pulled away out so it fills only one-third
+180° to 0° ? of the space between the plates?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 381
+is filled with dielectric, the electrical field is
+8.5Molecular Model of a Dielectric E=2.50×10 5 V/m. (a) What is the surface charge
+56. Twoflatplatescontainingequalandoppositecharges density on each surface of the dielectric? (b) What is the
+are separated by material 4.0 mm thick with a dielectric dielectric constant?
+constant of 5.0. If the electrical field in the dielectric is
+1.5MV/m,whatare(a)thechargedensityonthecapacitor
+61. The dielectric to be used in a parallel-plate capacitor
+plates,and(b)theinducedchargedensityonthesurfacesof
+hasadielectricconstantof3.60andadielectricstrengthof
+the dielectric?
+1.60×10 7 V/m.Thecapacitorhastohaveacapacitance
+of 1.25 nF and must be able to withstand a maximum
+57. ForaTeflon™-filled,parallel-platecapacitor,thearea
+potentialdifference5.5kV.Whatistheminimumareathe
+oftheplateis 50.0cm2 andthespacingbetweentheplates
+plates of the capacitor may have?
+is0.50mm.Ifthecapacitorisconnectedtoa200-Vbattery,
+find (a) the free charge on the capacitor plates, (b) the
+62. Whena360-nFaircapacitorisconnectedtoapower
+electricalfieldinthedielectric,and(c)theinducedcharge
+supply,theenergystoredinthecapacitoris 18.5µJ.While
+on the dielectric surfaces.
+the capacitor is connected to the power supply, a slab of
+dielectricisinsertedthatcompletelyfillsthespacebetween
+58. Find the capacitance of a parallel-plate capacitor
+the plates. This increases the stored energy by 23.2µJ.
+havingplateswithasurfaceareaof 5.00m2 andseparated
+(a) What is the potential difference between the capacitor
+by 0.100 mm of Teflon™.
+plates? (b) What is the dielectric constant of the slab?
+59. (a)Whatisthecapacitanceofaparallel-platecapacitor
+63. A parallel-plate capacitor has square plates that are
+with plates of area 1.50m2 that are separated by 0.0200 8.00 cm on each side and 3.80 mm apart. The space
+mmofneoprenerubber?(b)Whatchargedoesitholdwhen between the plates is completely filled with two square
+9.00 V is applied to it? slabs of dielectric, each 8.00 cm on a side and 1.90 mm
+thick. One slab is Pyrex glass and the other slab is
+60. Two parallel plates have equal and opposite charges. polystyrene. If the potential difference between the plates
+When the space between the plates is evacuated, the is86.0V,findhowmuchelectricalenergycanbestoredin
+this capacitor.
+electrical field is E=3.20×10 5 V/m. When the space
+ADDITIONAL PROBLEMS
+64. A capacitor is made from two flat parallel plates to 180°. With the dial set at 180° (corresponding to
+placed 0.40 mm apart. When a charge of 0.020µC is C=800pF), the capacitor is connected to a 500-V
+placedontheplatesthepotentialdifferencebetweenthem source. After charging, the capacitor is disconnected from
+is250V.(a)Whatisthecapacitanceoftheplates?(b)What the source, and the dial is turned to 0°. (a) What is the
+is the area of each plate? (c) What is the charge on the
+chargeonthecapacitor?(b)Whatisthevoltageacrossthe
+plates when the potential difference between them is 500
+capacitor when the dial is set to 0°?
+V?(d)Whatmaximumpotentialdifferencecanbeapplied
+betweentheplatessothatthemagnitudeofelectricalfields
+between the plates does not exceed 3.0 MV/m? 67. Earthcanbeconsideredasasphericalcapacitorwith
+twoplates,wherethenegativeplateisthesurfaceofEarth
+and the positive plate is the bottom of the ionosphere,
+65. An air-filled (empty) parallel-plate capacitor is made
+which is located at an altitude of approximately 70 km.
+fromtwosquareplatesthatare25cmoneachsideand1.0
+The potential difference between Earth’s surface and the
+mmapart.Thecapacitorisconnectedtoa50-Vbatteryand
+ionosphere is about 350,000 V. (a) Calculate the
+fullycharged.Itisthendisconnectedfromthebatteryand
+capacitanceofthissystem.(b)Findthetotalchargeonthis
+its plates are pulled apart to a separation of 2.00 mm. (a)
+capacitor. (c) Find the energy stored in this system.
+Whatisthecapacitanceofthisnewcapacitor?(b)Whatis
+the charge on each plate? (c) What is the electrical field
+between the plates? 68. A 4.00-µF capacitor and a 6.00-µF capacitor are
+connected in parallel across a 600-V supply line. (a) Find
+66. Suppose that the capacitance of a variable capacitor the charge on each capacitor and voltage across each. (b)
+can be manually changed from 100 to 800 pF by turning Thechargedcapacitorsaredisconnectedfromthelineand
+a dial connected to one set of plates by a shaft, from 0° from each other. They are then reconnected to each other
+withterminalsofunlikesigntogether.Findthefinalcharge
+
+382 Chapter 8 | Capacitance
+on each capacitor and the voltage across each. 72. Three capacitors having capacitances 8.4, 8.4, and
+4.2 µF are connected in series across a 36.0-V potential
+69. Three capacitors having capacitances of 8.40, 8.40, difference. (a) What is the total energy stored in all three
+and4.20 µF,respectively,areconnectedinseriesacrossa capacitors? (b) The capacitors are disconnected from the
+36.0-V potential difference. (a) What is the charge on the potential difference without allowing them to discharge.
+4.20-µF capacitor? (b) The capacitors are disconnected Theyarethenreconnectedinparallelwitheachotherwith
+the positively charged plates connected together. What is
+from the potential difference without allowing them to
+the total energy now stored in the capacitors?
+discharge.Theyarethenreconnectedinparallelwitheach
+otherwiththepositivelychargedplatesconnectedtogether.
+What is the voltage across each capacitor in the parallel
+73. (a) An 8.00-µF capacitor is connected in parallel
+combination? to another capacitor, producing a total capacitance of
+5.00µF.Whatisthecapacitanceofthesecondcapacitor?
+70. Aparallel-platecapacitorwithcapacitance 5.0µF is (b) What is unreasonable about this result? (c) Which
+assumptions are unreasonable or inconsistent?
+charged with a 12.0-V battery, after which the battery is
+disconnected. Determine the minimum work required to
+increase the separation between the plates by a factor of 3. 74. (a) On a particular day, it takes 9.60×10 3 J of
+electrical energy to start a truck’s engine. Calculate the
+71. (a)Howmuchenergyisstoredintheelectricalfields capacitance of a capacitor that could store that amount
+inthecapacitors(intotal)shownbelow?(b)Isthisenergy of energy at 12.0 V. (b) What is unreasonable about this
+equaltotheworkdonebythe400-Vsourceinchargingthe result? (c) Which assumptions are responsible?
+capacitors?
+75. (a)Acertainparallel-platecapacitorhasplatesofarea
+4.00m2, separated by 0.0100 mm of nylon, and stores
+0.170Cofcharge.Whatistheappliedvoltage?(b)Whatis
+unreasonableaboutthisresult?(c)Whichassumptionsare
+responsible or inconsistent?
+76. A prankster applies 450 V to an 80.0-µF capacitor
+and then tosses it to an unsuspecting victim. The victim’s
+finger is burned by the discharge of the capacitor through
+0.200gofflesh.Estimate,whatisthetemperatureincrease
+of the flesh? Is it reasonable to assume that no
+thermodynamic phase change happened?
+Figure 8.23
+CHALLENGE PROBLEMS
+77. A spherical capacitor is formed from two concentric potential difference V E−V
+D
+? (b) What is the potential
+spherical conducting spheres separated by vacuum. The
+atpointEaftertheswitchisclosed?(c)Howmuchcharge
+inner sphere has radius 12.5 cm and the outer sphere has
+flows through the switch after it is closed?
+radius14.8cm.Apotentialdifferenceof120Visappliedto
+thecapacitor.(a)Whatisthecapacitanceofthecapacitor?
+(b) What is the magnitude of the electrical field at
+r =12.6cm, just outside the inner sphere? (c) What is
+the magnitude of the electrical field at r =14.7cm, just
+inside the outer sphere? (d) For a parallel-plate capacitor
+the electrical field is uniform in the region between the
+plates,exceptneartheedgesoftheplates.Isthisalsotrue
+for a spherical capacitor?
+78. The network of capacitors shown below are all
+uncharged when a 300-V potential is applied between
+points A and B with the switch S open. (a) What is the
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 383
+82. Aparallel-platecapacitorisfilledwithtwodielectrics,
+as shown below. When the plate area is A and separation
+between plates isd, show that the capacitance is given by
+C=ε A κ 1 +κ 2.
+0d 2
+79. Electronicflashunitsforcamerascontainacapacitor
+for storing the energy used to produce the flash. In one
+such unit the flash lasts for 1/675 fraction of a second
+with an average light power output of 270 kW. (a) If the
+conversion of electrical energy to light is 95% efficient
+(because the rest of the energy goes to thermal energy),
+how much energy must be stored in the capacitor for one
+flash?(b)Thecapacitorhasapotentialdifferencebetween
+itsplatesof125Vwhenthestoredenergyequalsthevalue
+stored in part (a). What is the capacitance?
+80. A spherical capacitor is formed from two concentric
+spherical conducting shells separated by a vacuum. The
+inner sphere has radius 12.5 cm and the outer sphere has
+radius14.8cm.Apotentialdifferenceof120Visapplied
+to the capacitor. (a) What is the energy density at
+r =12.6cm, just outside the inner sphere? (b) What is
+83. Aparallel-platecapacitorisfilledwithtwodielectrics,
+the energy density at r =14.7cm, just inside the outer as shown below. Show that the capacitance is given by
+s d p e h n e s r it e y ? is (c u ) ni F fo o r r m th in e th p e ar r a e l g le io l- n pl b a e te tw c e a e p n a t c h i e to p r la t t h e e s, e e n x e c r e g p y t C=2ε 0 A d κ κ 1 + κ κ 2 .
+1 2
+near the edges of the plates. Is this also true for the
+spherical capacitor?
+81. A metal plate of thickness t is held in place between
+two capacitor plates by plastic pegs, as shown below. The
+effect of the pegs on the capacitance is negligible. The
+area of each capacitor plate and the area of the top and
+bottomsurfacesoftheinsertedplateareallA.Whatisthe
+capacitance of this system?
+84. A capacitor has parallel plates of area 12cm2
+separatedby2.0mm.Thespacebetweentheplatesisfilled
+with polystyrene. (a) Find the maximum permissible

@@ -1,0 +1,221 @@
+# REAL PDF — openstax_vol3.pdf, pages 179-185
+############################################################
+
+Chapter 4 | Diffraction 171
+Figure 4.26 Because of the regularity that makes a crystal structure, one
+crystal can have many families of planes within its geometry, each one giving
+rise to X-ray diffraction.
+4.7 | Holography
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe how a three-dimensional image is recorded as a hologram
+• Describe how a three-dimensional image is formed from a hologram
+A hologram, such as the one in Figure 4.27, is a true three-dimensional image recorded on film by lasers. Holograms
+areusedforamusement;decorationonnoveltyitemsandmagazinecovers;securityoncreditcardsanddriver’slicenses(a
+laserandotherequipmentareneededtoreproducethem);andforseriousthree-dimensionalinformationstorage.Youcan
+seethatahologramisatruethree-dimensionalimagebecauseobjectschangerelativepositionintheimagewhenviewed
+from different angles.
+Figure 4.27 Credit cards commonly have holograms for
+logos, making them difficult to reproduce. (credit: Dominic
+Alves)
+The name hologram means “entire picture” (from the Greek holo, as in holistic) because the image is three-dimensional.
+Holography is the process of producing holograms and, although they are recorded on photographic film, the process is
+quitedifferentfromnormalphotography.Holographyuseslightinterferenceorwaveoptics,whereasnormalphotography
+uses geometric optics. Figure 4.28 shows one method of producing a hologram. Coherent light from a laser is split by
+a mirror, with part of the light illuminating the object. The remainder, called the reference beam, shines directly on a
+piece of film. Light scattered from the object interferes with the reference beam, producing constructive and destructive
+interference. As a result, the exposed film looks foggy, but close examination reveals a complicated interference pattern
+storedonit.Wheretheinterferencewasconstructive,thefilm(anegativeactually)isdarkened.Holographyissometimes
+calledlens-lessphotography,becauseitusesthewavecharacteristicsoflight,ascontrastedtonormalphotography,which
+
+172 Chapter 4 | Diffraction
+uses geometric optics and requires lenses.
+Figure 4.28 Production of a hologram. Single-wavelength
+coherent light from a laser produces a well-defined interference
+pattern on a piece of film. The laser beam is split by a partially
+silvered mirror, with part of the light illuminating the object and
+the remainder shining directly on the film. (credit: modification
+of work by Mariana Ruiz Villarreal)
+Lightfallingonahologramcanformathree-dimensionalimageoftheoriginalobject.Theprocessiscomplicatedindetail,
+butthebasicscanbeunderstood,asshowninFigure4.29,inwhichalaserofthesametypethatexposedthefilmisnow
+usedtoilluminateit.Themyriadtinyexposedregionsofthefilmaredarkandblockthelight,whereaslessexposedregions
+allow light to pass. The film thus acts much like a collection of diffraction gratings with various spacing patterns. Light
+passingthroughthehologramisdiffractedinvariousdirections,producingbothrealandvirtualimagesoftheobjectused
+toexposethefilm.Theinterferencepatternisthesameasthatproducedbytheobject.Movingyoureyetovariousplacesin
+theinterferencepatterngivesyoudifferentperspectives,justaslookingdirectlyattheobjectwould.Theimagethuslooks
+like the object and is three dimensional like the object.
+Figure 4.29 A transmission hologram is one that produces real and
+virtual images when a laser of the same type as that which exposed the
+hologram is passed through it. Diffraction from various parts of the film
+produces the same interference pattern that was produced by the object
+that was used to expose it. (credit: modification of work by Mariana
+Ruiz Villarreal)
+ThehologramillustratedinFigure4.29isatransmissionhologram.Hologramsthatareviewedwithreflectedlight,such
+asthewhitelighthologramsoncreditcards,arereflectionhologramsandaremorecommon.Whitelighthologramsoften
+appearalittleblurrywithrainbowedges,becausethediffractionpatternsofvariouscolorsoflightareatslightlydifferent
+locationsduetotheirdifferentwavelengths.Furtherusesofholographyincludealltypesofthree-dimensionalinformation
+storage, such as of statues in museums, engineering studies of structures, and images of human organs.
+Invented in the late 1940s by Dennis Gabor (1900–1970), who won the 1971 Nobel Prize in Physics for his work,
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 173
+holographybecamefarmorepracticalwiththedevelopmentofthelaser.Sincelasersproducecoherentsingle-wavelength
+light,theirinterferencepatternsaremorepronounced.Theprecisionissogreatthatitisevenpossibletorecordnumerous
+holograms on a single piece of film by just changing the angle of the film for each successive image. This is how the
+holograms that move as you walk by them are produced—a kind of lens-less movie.
+Inasimilarway,inthemedicalfield,hologramshaveallowedcompletethree-dimensionalholographicdisplaysofobjects
+fromastackofimages.Storingtheseimagesforfutureuseisrelativelyeasy.Withtheuseofanendoscope,high-resolution,
+three-dimensional holographic images of internal organs and tissues can be made.
+
+174 Chapter 4 | Diffraction
+CHAPTER 4 REVIEW
+KEY TERMS
+Bragg planes families of planes within crystals that can give rise to X-ray diffraction
+destructive interference for a single slit occurswhenthewidthoftheslitiscomparabletothewavelengthoflight
+illuminating it
+diffraction bending of a wave around the edges of an opening or an obstacle
+diffraction grating large number of evenly spaced parallel slits
+diffraction limit fundamental limit to resolution due to diffraction
+hologram three-dimensionalimagerecordedonfilmbylasers;thewordhologrammeansentirepicture(fromtheGreek
+wordholo, as in holistic)
+holography process of producing holograms with the use of lasers
+missing order interference maximum that is not seen because it coincides with a diffraction minimum
+Rayleigh criterion twoimagesarejust-resolvablewhenthecenterofthediffractionpatternofoneisdirectlyoverthe
+first minimum of the diffraction pattern of the other
+resolution ability, or limit thereof, to distinguish small details in images
+two-slit diffraction pattern diffraction pattern of two slits of width D that are separated by a distance d is the
+interference pattern of two point sources separated bydmultiplied by the diffraction pattern of a slit of widthD
+width of the central peak angle between the minimum for m=1 and m=−1
+X-ray diffraction technique that provides the detailed information about crystallographic structure of natural and
+manufactured materials
+KEY EQUATIONS
+Destructive interference for a single slit Dsinθ=mλform= ±1, ±2, ±3, ...
+Half phase angle
+β=
+ϕ
+=
+πDsinθ
+2 λ
+Field amplitude in the diffraction pattern sinβ
+E=NΔE
+0 β
+Intensity in the diffraction pattern 2
+⎛sinβ⎞
+I =I
+0⎝ β ⎠
+Rayleigh criterion for circular apertures λ
+θ=1.22
+D
+Bragg equation mλ=2dsinθ, m=1, 2, 3...
+SUMMARY
+4.1Single-Slit Diffraction
+• Diffraction can send a wave around the edges of an opening or other obstacle.
+• Asingleslitproducesaninterferencepatterncharacterizedbyabroadcentralmaximumwithnarroweranddimmer
+maxima to the sides.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 175
+4.2Intensity in Single-Slit Diffraction
+• The intensity pattern for diffraction due to a single slit can be calculated using phasors as
+2
+⎛sinβ⎞
+I =I ,
+0⎝ β ⎠
+where β=
+ϕ
+=
+πDsinθ
+,Dis the slit width, λ is the wavelength, and θ is the angle from the central peak.
+2 λ
+4.3Double-Slit Diffraction
+• With real slits with finite widths, the effects of interference and diffraction operate simultaneously to form a
+complicated intensity pattern.
+• Relative intensities of interference fringes within a diffraction pattern can be determined.
+• Missing orders occur when an interference maximum and a diffraction minimum are located together.
+4.4Diffraction Gratings
+• Adiffractiongratingconsistsofalargenumberofevenlyspacedparallelslitsthatproduceaninterferencepattern
+similar to but sharper than that of a double slit.
+• Constructiveinterferenceoccurswhen dsinθ=mλform=0, ±1, ±2, ..., wheredisthedistancebetween
+the slits, θ is the angle relative to the incident direction, andmis the order of the interference.
+4.5Circular Apertures and Resolution
+• Diffraction limits resolution.
+• TheRayleighcriterionstatesthattwoimagesarejustresolvablewhenthecenterofthediffractionpatternofoneis
+directly over the first minimum of the diffraction pattern of the other.
+4.6X-Ray Diffraction
+• X-raysarerelativelyshort-wavelengthEMradiationandcanexhibitwavecharacteristicssuchasinterferencewhen
+interacting with correspondingly small objects.
+4.7Holography
+• Holography is a technique based on wave interference to record and form three-dimensional images.
+• Lasers offer a practical way to produce sharp holographic images because of their monochromatic and coherent
+light for pronounced interference patterns.
+CONCEPTUAL QUESTIONS
+4. Whathappenstothediffraction pattern ofasingleslit
+4.1Single-Slit Diffraction when the entire optical apparatus is immersed in water?
+1. As the width of the slit producing a single-slit
+diffraction pattern is reduced, how will the diffraction 5. In our study of diffraction by a single slit, we assume
+pattern produced change? that the length of the slit is much larger than the width.
+What happens to the diffraction pattern if these two
+dimensions were comparable?
+2. Compare interference and diffraction.
+6. A rectangular slit is twice as wide as it is high. Is the
+3. If you and a friend are on opposite sides of a hill,
+centraldiffractionpeakwiderintheverticaldirectionorin
+you can communicate with walkie-talkies but not with
+the horizontal direction?
+flashlights. Explain.
+
+176 Chapter 4 | Diffraction
+gained with a larger lens?
+4.2Intensity in Single-Slit Diffraction
+7. InEquation4.4,theparameter β lookslikeanangle 11. The distance between atoms in a molecule is about
+but is not an angle that youcan measure with a protractor 10 −8 cm. Can visible light be used to “see” molecules?
+in the physical world. Explain what β represents.
+12. Abeamoflightalwaysspreadsout.Whycanabeam
+notbecreatedwithparallelraystopreventspreading?Why
+canlenses,mirrors,oraperturesnotbeusedtocorrectthe
+4.3Double-Slit Diffraction
+spreading?
+8. Shown below is the central part of the interference
+patternforapurewavelengthofredlightprojectedontoa
+doubleslit.Thepatternisactuallyacombinationofsingle-
+4.6X-Ray Diffraction
+and double-slit interference. Note that the bright spots are
+evenlyspaced.Isthisadouble-orsingle-slitcharacteristic? 13. Crystal lattices can be examined with X-rays but not
+Note that some of the bright spots are dim on either side UV. Why?
+ofthecenter.Isthisasingle-ordouble-slitcharacteristic?
+Which is smaller, the slit width or the separation between
+slits? Explain your responses. 4.7Holography
+14. How can you tell that a hologram is a true three-
+dimensional image and that those in three-dimensional
+movies are not?
+15. If a hologram is recorded using monochromatic light
+(credit: PASCO) at one wavelength but its image is viewed at another
+wavelength, say 10% shorter, what will you see? What
+if it is viewed using light of exactly half the original
+4.5Circular Apertures and Resolution wavelength?
+9. Ishigher resolution obtained inamicroscope with red
+or blue light? Explain your answer. 16. What image will one see if a hologram is recorded
+usingmonochromaticlightbutitsimageisviewedinwhite
+light? Explain.
+10. Theresolvingpowerofrefractingtelescopeincreases
+withthesizeofitsobjectivelens.Whatotheradvantageis
+PROBLEMS
+21. Find the wavelength of light that has its third
+4.1Single-Slit Diffraction minimumatanangleof 48.6° whenitfallsonasingleslit
+17. (a) At what angle is the first minimum for 550-nm of width 3.00µm.
+light falling on a single slit of width 1.00µm ? (b) Will
+there be a second minimum? 22. (a) Sodium vapor light averaging 589 nm in
+wavelengthfallsonasingleslitofwidth 7.50µm.Atwhat
+18. (a) Calculate the angle at which a 2.00-µm-wide angledoesitproducesitssecondminimum?(b)Whatisthe
+slitproducesitsfirstminimumfor410-nmvioletlight.(b) highest-order minimum produced?
+Where is the first minimum for 700-nm red light?
+23. Consider a single-slit diffraction pattern for
+19. (a) How wide is a single slit that produces its first λ=589nm, projected on a screen that is 1.00 m from
+minimum for 633-nm light at an angle of 28.0° ? (b) At a slit of width 0.25 mm. How far from the center of the
+what angle will the second minimum be? pattern are the centers of the first and second dark fringes?
+20. (a) What is the width of a single slit that produces 24. (a) Find the angle between the first minima for the
+itsfirstminimumat 60.0° for600-nmlight?(b)Findthe twosodiumvaporlines,whichhavewavelengthsof589.1
+and 589.6 nm, when they fall upon a single slit of width
+wavelength of light that has its first minimum at 62.0°.
+2.00µm. (b) What is the distance between these minima
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

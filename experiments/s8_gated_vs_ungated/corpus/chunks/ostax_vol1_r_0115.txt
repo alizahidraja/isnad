@@ -1,0 +1,216 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 697-704
+############################################################
+
+14.6 • Bernoulli’s Equation 685
+fluid, the depth increases by , and consequently, is greater than by an amount . In the very simplest
+case, is zero at the top of the fluid, and we get the familiar relationship . and
+Thus, Bernoulli’s equation confirms the fact that the pressure change due to the weight of a fluid is
+. Although we introduce Bernoulli’s equation for fluid motion, it includes much of what we studied for static
+fluids earlier.
+Bernoulli’s principle
+Suppose a fluid is moving but its depth is constant—that is, . Under this condition, Bernoulli’s equation
+becomes
+Situations in which fluid flows at a constant depth are so common that this equation is often also called Bernoulli’s
+principle, which is simply Bernoulli’s equation for fluids at constant depth. (Note again that this applies to a small
+volume of fluid as we follow it along its path.) Bernoulli’s principle reinforces the fact that pressure drops as speed
+increases in a moving fluid: If is greater than in the equation, then must be less than for the equality to
+hold.
+EXAMPLE 14.6
+Calculating Pressure
+In Example 14.5, we found that the speed of water in a hose increased from 1.96 m/s to 25.5 m/s going from the
+hose to the nozzle. Calculate the pressure in the hose, given that the absolute pressure in the nozzle is
+(atmospheric, as it must be) and assuming level, frictionless flow.
+Strategy
+Level flow means constant depth, so Bernoulli’s principle applies. We use the subscript 1 for values in the hose and
+2 for those in the nozzle. We are thus asked to find .
+Solution
+Solving Bernoulli’s principle for yields
+Substituting known values,
+Significance
+This absolute pressure in the hose is greater than in the nozzle, as expected, since v is greater in the nozzle. The
+pressure in the nozzle must be atmospheric, because the water emerges into the atmosphere without other
+changes in conditions.
+Applications of Bernoulli’s Principle
+Many devices and situations occur in which fluid flows at a constant height and thus can be analyzed with Bernoulli’s
+principle.
+Entrainment
+People have long put the Bernoulli principle to work by using reduced pressure in high-velocity fluids to move things
+about. With a higher pressure on the outside, the high-velocity fluid forces other fluids into the stream. This process
+is called entrainment. Entrainment devices have been in use since ancient times as pumps to raise water to small
+heights, as is necessary for draining swamps, fields, or other low-lying areas. Some other devices that use the
+concept of entrainment are shown in Figure 14.31.
+
+686 14 • Fluid Mechanics
+FIGURE 14.31 Entrainment devices use increased fluid speed to create low pressures, which then entrain one fluid into another. (a) A
+Bunsen burner uses an adjustable gas nozzle, entraining air for proper combustion. (b) An atomizer uses a squeeze bulb to create a jet of air
+that entrains drops of perfume. Paint sprayers and carburetors use very similar techniques to move their respective liquids. (c) A common
+aspirator uses a high-speed stream of water to create a region of lower pressure. Aspirators may be used as suction pumps in dental and
+surgical situations or for draining a flooded basement or producing a reduced pressure in a vessel. (d) The chimney of a water heater is
+designed to entrain air into the pipe leading through the ceiling.
+Velocity measurement
+Figure 14.32 shows two devices that apply Bernoulli’s principle to measure fluid velocity. The manometer in part (a)
+is connected to two tubes that are small enough not to appreciably disturb the flow. The tube facing the oncoming
+fluid creates a dead spot having zero velocity ( ) in front of it, while fluid passing the other tube has velocity
+. This means that Bernoulli’s principle as stated in
+becomes
+Thus pressure over the second opening is reduced by , so the fluid in the manometer rises by h on the side
+connected to the second opening, where
+(Recall that the symbol means “proportional to.”) Solving for , we see that
+Part (b) shows a version of this device that is in common use for measuring various fluid velocities; such devices are
+frequently used as air-speed indicators in aircraft.
+FIGURE 14.32 Measurement of fluid speed based on Bernoulli’s principle. (a) A manometer is connected to two tubes that are close
+Access for free at openstax.org
+
+14.6 • Bernoulli’s Equation 687
+together and small enough not to disturb the flow. Tube 1 is open at the end facing the flow. A dead spot having zero speed is created there.
+Tube 2 has an opening on the side, so the fluid has a speed v across the opening; thus, pressure there drops. The difference in pressure at
+the manometer is , so h is proportional to (b) This type of velocity measuring device is a Prandtl tube, also known as a pitot
+tube.
+A fire hose
+All preceding applications of Bernoulli’s equation involved simplifying conditions, such as constant height or
+constant pressure. The next example is a more general application of Bernoulli’s equation in which pressure,
+velocity, and height all change.
+EXAMPLE 14.7
+Calculating Pressure: A Fire Hose Nozzle
+Fire hoses used in major structural fires have an inside diameter of 6.40 cm (Figure 14.33). Suppose such a hose
+carries a flow of 40.0 L/s, starting at a gauge pressure of . The hose rises up 10.0 m along a ladder
+to a nozzle having an inside diameter of 3.00 cm. What is the pressure in the nozzle?
+FIGURE 14.33 Pressure in the nozzle of this fire hose is less than at ground level for two reasons: The water has to go uphill to get to the
+nozzle, and speed increases in the nozzle. In spite of its lowered pressure, the water can exert a large force on anything it strikes by virtue
+of its kinetic energy. Pressure in the water stream becomes equal to atmospheric pressure once it emerges into the air.
+Strategy
+We must use Bernoulli’s equation to solve for the pressure, since depth is not constant.
+Solution
+Bernoulli’s equation is
+where subscripts 1 and 2 refer to the initial conditions at ground level and the final conditions inside the nozzle,
+respectively. We must first find the speeds and . Since , we get
+Similarly, we find
+This rather large speed is helpful in reaching the fire. Now, taking to be zero, we solve Bernoulli’s equation for :
+Substituting known values yields
+
+688 14 • Fluid Mechanics
+Significance
+This value is a gauge pressure, since the initial pressure was given as a gauge pressure. Thus, the nozzle pressure
+equals atmospheric pressure because the water exits into the atmosphere without changes in its conditions.
+14.7 Viscosity and Turbulence
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain what viscosity is
+• Calculate flow and resistance with Poiseuille's law
+• Explain how pressure drops due to resistance
+• Calculate the Reynolds number for an object moving through a fluid
+• Use the Reynolds number for a system to determine whether it is laminar or turbulent
+• Describe the conditions under which an object has a terminal speed
+In Applications of Newton’s Laws, which introduced the concept of friction, we saw that an object sliding across the
+floor with an initial velocity and no applied force comes to rest due to the force of friction. Friction depends on the
+types of materials in contact and is proportional to the normal force. We also discussed drag and air resistance in
+that same chapter. We explained that at low speeds, the drag is proportional to the velocity, whereas at high speeds,
+drag is proportional to the velocity squared. In this section, we introduce the forces of friction that act on fluids in
+motion. For example, a fluid flowing through a pipe is subject to resistance, a type of friction, between the fluid and
+the walls. Friction also occurs between the different layers of fluid. These resistive forces affect the way the fluid
+flows through the pipe.
+Viscosity and Laminar Flow
+When you pour yourself a glass of juice, the liquid flows freely and quickly. But if you pour maple syrup on your
+pancakes, that liquid flows slowly and sticks to the pitcher. The difference is fluid friction, both within the fluid itself
+and between the fluid and its surroundings. We call this property of fluids viscosity. Juice has low viscosity, whereas
+syrup has high viscosity.
+The precise definition of viscosity is based on laminar, or nonturbulent, flow. Figure 14.34 shows schematically how
+laminar and turbulent flow differ. When flow is laminar, layers flow without mixing. When flow is turbulent, the layers
+mix, and significant velocities occur in directions other than the overall direction of flow.
+FIGURE 14.34 (a) Laminar flow occurs in layers without mixing. Notice that viscosity causes drag between layers as well as with the fixed
+surface. The speed near the bottom of the flow ( ) is less than speed near the top ( ) because in this case, the surface of the containing
+vessel is at the bottom. (b) An obstruction in the vessel causes turbulent flow. Turbulent flow mixes the fluid. There is more interaction,
+greater heating, and more resistance than in laminar flow.
+Access for free at openstax.org
+
+14.7 • Viscosity and Turbulence 689
+Turbulence is a fluid flow in which layers mix together via eddies and swirls. It has two main causes. First, any
+obstruction or sharp corner, such as in a faucet, creates turbulence by imparting velocities perpendicular to the flow.
+Second, high speeds cause turbulence. The drag between adjacent layers of fluid and between the fluid and its
+surroundings can form swirls and eddies if the speed is great enough. In Figure 14.35, the speed of the accelerating
+smoke reaches the point that it begins to swirl due to the drag between the smoke and the surrounding air.
+FIGURE 14.35 Smoke rises smoothly for a while and then begins to form swirls and eddies. The smooth flow is called laminar flow,
+whereas the swirls and eddies typify turbulent flow. Smoke rises more rapidly when flowing smoothly than after it becomes turbulent,
+suggesting that turbulence poses more resistance to flow. (credit: “Creativity103”/Flickr)
+Figure 14.36 shows how viscosity is measured for a fluid. The fluid to be measured is placed between two parallel
+plates. The bottom plate is held fixed, while the top plate is moved to the right, dragging fluid with it. The layer (or
+lamina) of fluid in contact with either plate does not move relative to the plate, so the top layer moves at speed v
+while the bottom layer remains at rest. Each successive layer from the top down exerts a force on the one below it,
+trying to drag it along, producing a continuous variation in speed from v to 0 as shown. Care is taken to ensure that
+the flow is laminar, that is, the layers do not mix. The motion in the figure is like a continuous shearing motion. Fluids
+have zero shear strength, but the rate at which they are sheared is related to the same geometrical factors A and L
+as is shear deformation for solids. In the diagram, the fluid is initially at rest. The layer of fluid in contact with the
+moving plate is accelerated and starts to move due to the internal friction between moving plate and the fluid. The
+next layer is in contact with the moving layer; since there is internal friction between the two layers, it also
+accelerates, and so on through the depth of the fluid. There is also internal friction between the stationary plate and
+the lowest layer of fluid, next to the station plate. The force is required to keep the plate moving at a constant
+velocity due to the internal friction.
+FIGURE 14.36 Measurement of viscosity for laminar flow of fluid between two plates of area A. The bottom plate is fixed. When the top
+plate is pushed to the right, it drags the fluid along with it.
+A force F is required to keep the top plate in Figure 14.36 moving at a constant velocity v, and experiments have
+shown that this force depends on four factors. First, F is directly proportional to v (until the speed is so high that
+turbulence occurs—then a much larger force is needed, and it has a more complicated dependence on v). Second, F
+is proportional to the area A of the plate. This relationship seems reasonable, since A is directly proportional to the
+amount of fluid being moved. Third, F is inversely proportional to the distance between the plates L. This
+
+690 14 • Fluid Mechanics
+relationship is also reasonable; L is like a lever arm, and the greater the lever arm, the less the force that is needed.
+Fourth, F is directly proportional to the coefficient of viscosity, . The greater the viscosity, the greater the force
+required. These dependencies are combined into the equation
+This equation gives us a working definition of fluid viscosity . Solving for gives
+14.17
+which defines viscosity in terms of how it is measured.
+The SI unit of viscosity is . Table 14.4 lists the coefficients of viscosity for
+various fluids. Viscosity varies from one fluid to another by several orders of magnitude. As you might expect, the
+viscosities of gases are much less than those of liquids, and these viscosities often depend on temperature.
+Fluid Temperature Viscosity
+Pa ⋅ s
+Air 0 0.0171
+20 0.0181
+40 0.0190
+100 0.0218
+Ammonia 20 0.00974
+Carbon dioxide 20 0.0147
+Helium 20 0.0196
+Hydrogen 0 0.0090
+Mercury 20 0.0450
+Oxygen 20 0.0203
+Steam 100 0.0130
+Liquid water 0 1.792
+20 1.002
+37 0.6947
+40 0.653
+100 0.282
+TABLE 14.4 Coefficients of Viscosity of Various Fluids
+Access for free at openstax.org
+
+14.7 • Viscosity and Turbulence 691
+Fluid Temperature Viscosity
+Pa ⋅ s
+Whole blood 20 3.015
+37 2.084
+Blood plasma 20 1.810
+37 1.257
+Ethyl alcohol 20 1.20
+Methanol 20 0.584
+Oil (heavy machine) 20 660
+Oil (motor, SAE 10) 30 200
+Oil (olive) 20 138
+Glycerin 20 1500
+Honey 20 2000–10000
+Maple syrup 20 2000–3000
+Milk 20 3.0
+Oil (corn) 20 65
+TABLE 14.4 Coefficients of Viscosity of Various Fluids
+Laminar Flow Confined to Tubes: Poiseuille’s Law
+What causes flow? The answer, not surprisingly, is a pressure difference. In fact, there is a very simple relationship
+between horizontal flow and pressure. Flow rate Q is in the direction from high to low pressure. The greater the
+pressure differential between two points, the greater the flow rate. This relationship can be stated as
+where and are the pressures at two points, such as at either end of a tube, and R is the resistance to flow. The
+resistance R includes everything, except pressure, that affects flow rate. For example, R is greater for a long tube
+than for a short one. The greater the viscosity of a fluid, the greater the value of R. Turbulence greatly increases R,
+whereas increasing the diameter of a tube decreases R.
+If viscosity is zero, the fluid is frictionless and the resistance to flow is also zero. Comparing frictionless flow in a
+tube to viscous flow, as in Figure 14.37, we see that for a viscous fluid, speed is greatest at midstream because of
+drag at the boundaries. We can see the effect of viscosity in a Bunsen burner flame [part (c)], even though the
+viscosity of natural gas is small.

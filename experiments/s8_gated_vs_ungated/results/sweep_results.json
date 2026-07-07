@@ -1,0 +1,37 @@
+[
+  {
+    "downgrade_threshold": 3,
+    "coverage": 0.07078313253012049,
+    "served_error_rate": 0.0,
+    "review_precision": 0.11170212765957446,
+    "recovery_score": "2/4"
+  },
+  {
+    "downgrade_threshold": 6,
+    "coverage": 0.09375,
+    "served_error_rate": 0.0,
+    "review_precision": 0.14859437751004015,
+    "recovery_score": "2/4"
+  },
+  {
+    "downgrade_threshold": 10,
+    "coverage": 0.09977409638554217,
+    "served_error_rate": 0.0,
+    "review_precision": 0.10943396226415095,
+    "recovery_score": "1/4"
+  },
+  {
+    "downgrade_threshold": 15,
+    "coverage": 0.09977409638554217,
+    "served_error_rate": 0.0,
+    "review_precision": 0.1320754716981132,
+    "recovery_score": "0/4"
+  },
+  {
+    "downgrade_threshold": 25,
+    "coverage": 0.09977409638554217,
+    "served_error_rate": 0.0,
+    "review_precision": 0.1320754716981132,
+    "recovery_score": "0/4"
+  }
+]

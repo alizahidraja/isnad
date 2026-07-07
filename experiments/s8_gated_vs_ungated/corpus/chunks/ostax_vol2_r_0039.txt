@@ -1,0 +1,206 @@
+# REAL PDF — openstax_vol2.pdf, pages 222-230
+############################################################
+
+212 Chapter 5 | Electric Charges and Fields
+Doestheplanelookanydifferentifyouvaryyouraltitude?No—youstillseetheplanegoingofftoinfinity,nomatterhow
+faryouarefromit.ItisimportanttonotethatEquation 5.15isbecauseweareabovetheplane.Ifwewerebelow,the
+^
+field would point in the −k direction.
+Example 5.9
+The Field of Two Infinite Planes
+Find the electric field everywhere resulting from two infinite planes with equal but opposite charge densities
+(Figure 5.26).
+Figure 5.26 Two charged infinite planes. Note the direction of
+the electric field.
+Strategy
+We already know the electric field resulting from a single infinite plane, so we may use the principle of
+superposition to find the field from two.
+Solution
+Theelectricfieldpointsawayfromthepositivelychargedplaneandtowardthenegativelychargedplane.Since
+the σ areequal andopposite, thismeans that intheregionoutside ofthetwoplanes, theelectric fields cancel
+each other out to zero.
+However, in the region between the planes, the electric fields add, and we get
+→ σ ^
+E = ε i
+0
+^
+for the electric field. The i is because in the figure, the field is pointing in the +x-direction.
+Significance
+Systemsthatmaybeapproximatedastwoinfiniteplanesofthissortprovideausefulmeansofcreatinguniform
+electric fields.
+5.6 Check Your Understanding What would the electric field look like in a system with two parallel
+positively charged planes with equal charge densities?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 213
+5.6 | Electric Field Lines
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the purpose of an electric field diagram
+• Describe the relationship between a vector diagram and a field line diagram
+• Explain the rules for creating a field diagram and why these rules make physical sense
+• Sketch the field of an arbitrary source charge
+Now that we have some experience calculating electric fields, let’s try to gain some insight into the geometry of electric
+fields.Asmentionedearlier,ourmodelisthatthechargeonanobject(thesourcecharge)altersspaceintheregionaroundit
+insuchawaythatwhenanotherchargedobject(thetestcharge)isplacedinthatregionofspace,thattestchargeexperiences
+anelectricforce.Theconceptofelectricfieldlines,andofelectricfieldlinediagrams,enablesustovisualizethewayin
+whichthespaceisaltered,allowingustovisualizethefield.Thepurposeofthissectionistoenableyoutocreatesketches
+ofthisgeometry,sowewilllistthespecificstepsandrulesinvolvedincreatinganaccurateandusefulsketchofanelectric
+field.
+Itisimportanttorememberthatelectricfieldsarethree-dimensional.Althoughinthisbookweincludesomepseudo-three-
+dimensionalimages,severalofthediagramsthatyou’llsee(bothhere,andinsubsequentchapters)willbetwo-dimensional
+projections, or cross-sections. Always keep in mind that in fact, you’re looking at a three-dimensional phenomenon.
+Ourstartingpointisthephysicalfactthattheelectricfieldofthesourcechargecausesatestchargeinthatfieldtoexperience
+aforce.Bydefinition,electricfieldvectorspointinthesamedirectionastheelectricforcethata(hypothetical)positivetest
+charge would experience, if placed in the field (Figure 5.27)
+Figure 5.27 The electric field of a positive point charge. A large number of field vectors are shown. Like all vector
+arrows, the length of each vector is proportional to the magnitude of the field at each point. (a) Field in two
+dimensions; (b) field in three dimensions.
+We’veplottedmanyfieldvectorsinthefigure,whicharedistributeduniformlyaroundthesourcecharge.Sincetheelectric
+fieldisavector,thearrowsthatwedrawcorrespondateverypointinspacetoboththemagnitudeandthedirectionofthe
+fieldatthatpoint.Asalways,thelengthofthearrowthatwedrawcorrespondstothemagnitudeofthefieldvectoratthat
+point.Forapointsourcecharge,thelengthdecreasesbythesquareofthedistancefromthesourcecharge.Inaddition,the
+
+214 Chapter 5 | Electric Charges and Fields
+directionofthefieldvectorisradiallyawayfromthesourcecharge,becausethedirectionoftheelectricfieldisdefinedby
+thedirectionoftheforcethatapositivetestchargewouldexperienceinthatfield.(Again,keepinmindthattheactualfield
+is three-dimensional; there are also field lines pointing out of and into the page.)
+This diagram is correct, but it becomes less useful as the source charge distribution becomes more complicated. For
+example, consider the vector field diagram of a dipole (Figure 5.28).
+Figure 5.28 The vector field of a dipole. Even with just two
+identical charges, the vector field diagram becomes difficult to
+understand.
+Thereisamoreusefulwaytopresentthesameinformation. Rather thandrawingalargenumberofincreasingly smaller
+vector arrows, we instead connect all of them together, forming continuous lines and curves, as shown inFigure 5.29.
+Figure 5.29 (a) The electric field line diagram of a positive point charge. (b) The field line diagram
+of a dipole. In both diagrams, the magnitude of the field is indicated by the field line density. The
+fieldvectors(not shown here) are everywhere tangent to the field lines.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 215
+Althoughitmaynotbeobviousatfirstglance,thesefielddiagramsconveythesameinformationabouttheelectricfieldas
+dothevectordiagrams.First,thedirectionofthefieldateverypointissimplythedirectionofthefieldvectoratthatsame
+point.Inotherwords,atanypointinspace,thefieldvectorateachpointistangenttothefieldlineatthatsamepoint.The
+arrowhead placed on a field line indicates its direction.
+As for the magnitude of the field, that is indicated by the field line density—that is, the number of field lines per unit
+areapassingthroughasmallcross-sectionalareaperpendiculartotheelectricfield.Thisfieldlinedensityisdrawntobe
+proportionaltothemagnitudeofthefieldatthatcross-section.Asaresult,ifthefieldlinesareclosetogether(thatis,the
+fieldlinedensityisgreater),thisindicatesthatthemagnitudeofthefieldislargeatthatpoint.Ifthefieldlinesarefarapart
+at the cross-section, this indicates the magnitude of the field is small.Figure 5.30shows the idea.
+Figure 5.30 Electric field lines passing through imaginary areas. Since the number of
+lines passing through each area is the same, but the areas themselves are different, the
+field line density is different. This indicates different magnitudes of the electric field at
+these points.
+InFigure 5.30,thesamenumberoffieldlinespassesthroughbothsurfaces(Sand S′), butthesurfaceSislargerthan
+surface S′.Therefore,thedensityoffieldlines(numberoflinesperunitarea)islargeratthelocationof S′,indicatingthat
+the electric field is stronger at the location of S′ than atS. The rules for creating an electric field diagram are as follows.
+Problem-Solving Strategy: Drawing Electric Field Lines
+1. Electric field lines either originate on positive charges or come in from infinity, and either terminate on
+negative charges or extend out to infinity.
+2. Thenumberoffieldlinesoriginatingorterminatingatachargeisproportionaltothemagnitudeofthatcharge.
+A charge of 2qwill have twice as many lines as a charge ofq.
+3. At every point in space, the field vector at that point is tangent to the field line at that same point.
+
+216 Chapter 5 | Electric Charges and Fields
+4. Thefieldlinedensityatanypointinspaceisproportionalto(andthereforeisrepresentativeof)themagnitude
+of the field at that point in space.
+5. Fieldlinescannevercross.Sinceafieldlinerepresentsthedirectionofthefieldatagivenpoint,iftwofield
+linescrossedatsomepoint,thatwouldimplythattheelectricfieldwaspointingintwodifferentdirectionsat
+asinglepoint.Thisinturnwouldsuggestthatthe(net)forceonatestchargeplacedatthatpointwouldpoint
+in two different directions. Since this is obviously impossible, it follows that field lines must never cross.
+Always keep in mind that field lines serve only as a convenient way to visualize the electric field; they are not physical
+entities.Althoughthedirectionandrelativeintensityoftheelectricfieldcanbededucedfromasetoffieldlines,thelines
+canalsobemisleading.Forexample,thefieldlinesdrawntorepresenttheelectricfieldinaregionmust,bynecessity,be
+discrete. However, the actual electric field in that region exists at every point in space.
+FieldlinesforthreegroupsofdiscretechargesareshowninFigure 5.31.Sincethechargesinparts(a)and(b)havethe
+samemagnitude,thesamenumberoffieldlinesareshownstartingfromorterminatingoneachcharge.In(c),however,we
+drawthreetimesasmanyfieldlinesleavingthe +3q chargeasenteringthe −q.Thefieldlinesthatdonotterminateat
+−q emanate outward from the charge configuration, to infinity.
+Figure 5.31 Three typical electric field diagrams. (a) A dipole. (b) Two identical charges. (c) Two charges with opposite
+signs and different magnitudes. Can you tell from the diagram which charge has the larger magnitude?
+Theabilitytoconstructanaccurateelectricfielddiagramisanimportant,usefulskill;itmakesitmucheasiertoestimate,
+predict, and therefore calculate the electric field of a source charge. The best way to develop this skill is with software
+thatallowsyoutoplacesourcechargesandthenwilldrawthenetfielduponrequest.Westronglyurgeyoutosearchthe
+Internetforaprogram.Onceyou’vefoundoneyoulike,runseveralsimulationstogettheessentialideasoffielddiagram
+construction. Then practice drawing field diagrams, and checking your predictions with the computer-drawn diagrams.
+One example of a field-line drawing program (https://openstaxcollege.org/l/21fieldlindrapr) is from
+the PhET “Charges and Fields” simulation.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 217
+5.7 | Electric Dipoles
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe a permanent dipole
+• Describe an induced dipole
+• Define and calculate an electric dipole moment
+• Explain the physical meaning of the dipole moment
+Earlierwediscussed,andcalculated,theelectricfieldofadipole:twoequalandoppositechargesthatare“close”toeach
+other.(Inthiscontext,“close”meansthatthedistancedbetweenthetwochargesismuch,muchlessthanthedistanceof
+thefieldpointP,thelocationwhereyouarecalculatingthefield.)Let’snowconsiderwhathappenstoadipolewhenitis
+→
+placedinanexternalfield E .Weassumethatthedipoleisapermanentdipole;itexistswithoutthefield,anddoesnot
+break apart in the external field.
+Rotation of a Dipole due to an Electric Field
+Fornow,wedealwithonlythesimplestcase:Theexternalfieldisuniforminspace.Supposewehavethesituationdepicted
+→
+inFigure5.32,wherewedenotethedistancebetweenthechargesasthevector d , pointingfromthenegativecharge
+tothepositivecharge.Theforcesonthetwochargesareequalandopposite,sothereisnonetforceonthedipole.However,
+there is a torque:
+→τ = ⎛ ⎝ ⎜ → d 2 × → F + ⎞ ⎠ ⎟ + ⎛ ⎝ ⎜− → d 2 × → F − ⎞ ⎠ ⎟
+= ⎡ ⎢ ⎛ ⎜ → d ⎞ ⎟ × ⎛ +q → E ⎞ + ⎛ ⎜− → d ⎞ ⎟ × ⎛ −q → E ⎞ ⎤ ⎥
+⎣⎝ 2 ⎠ ⎝ ⎠ ⎝ 2 ⎠ ⎝ ⎠ ⎦
+→ →
+=q d × E .
+Figure 5.32 A dipole in an external electric field. (a) The net force on the dipole is zero, but the net torque is not. As a result,
+the dipole rotates, becoming aligned with the external field. (b) The dipole moment is a convenient way to characterize this
+→ →
+effect. The d points in the same direction as p .
+→
+The quantity q d (the magnitude of each charge multiplied by the vector distance between them) is a property of the
+dipole;itsvalue,asyoucansee,determinesthetorquethatthedipoleexperiencesintheexternalfield.Itisuseful,therefore,
+to define this product as the so-calleddipole momentof the dipole:
+→ → (5.16)
+p ≡q d .
+
+218 Chapter 5 | Electric Charges and Fields
+We can therefore write
+→τ
+=
+→
+p ×
+→
+E .
+(5.17)
+Recallthatatorquechangestheangularvelocityofanobject,thedipole,inthiscase.Inthissituation,theeffectistorotate
+the dipole (that is, align the direction of → p ) so that it is parallel to the direction of the external field.
+Induced Dipoles
+Neutralatomsare,bydefinition,electricallyneutral;theyhaveequalamountsofpositiveandnegativecharge.Furthermore,
+sincetheyaresphericallysymmetrical,theydonothavea“built-in”dipolemomentthewaymostasymmetricalmolecules
+do.Theyobtainone,however,whenplacedinanexternalelectricfield,becausetheexternalfieldcausesoppositelydirected
+forcesonthepositivenucleusoftheatomversusthenegativeelectronsthatsurroundthenucleus.Theresultisanewcharge
+distribution of the atom, and therefore, aninduced dipolemoment (Figure 5.33).
+Figure 5.33 A dipole is induced in a neutral atom by an external electric field. The induced
+dipole moment is aligned with the external field.
+An important fact here is that, just as for a rotated polar molecule, the result is that the dipole moment ends up aligned
+paralleltotheexternalelectricfield.Generally,themagnitudeofaninduceddipoleismuchsmallerthanthatofaninherent
+dipole.Forbothkindsofdipoles,noticethatoncethealignmentofthedipole(rotatedorinduced)iscomplete,theneteffect
+→ → →
+is to decrease the total electric field E = E + E in the regions inside the dipole charges (Figure
+total external dipole
+5.34). By “inside” we mean in between the charges. This effect is crucial for capacitors, as you will see inCapacitance.
+Figure 5.34 The net electric field is the vector sum of the
+field of the dipole plus the external field.
+Recall that we found the electric field of a dipole inEquation 5.7. If we rewrite it in terms of the dipole moment we get:
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 219
+→
+→ E (z)= 1 p .
+4πε
+0
+z3
+The form of this field is shown in Figure 5.34. Notice that along the plane perpendicular to the axis of the dipole and
+midwaybetweenthecharges,thedirectionoftheelectricfieldisoppositethatofthedipoleandgetsweakerthefurtherfrom
+theaxisonegoes.Similarly,ontheaxisofthedipole(butoutsideit),thefieldpointsinthesamedirectionasthedipole,
+again getting weaker the further one gets from the charges.

@@ -1,0 +1,267 @@
+# REAL PDF — openstax_vol3.pdf, pages 305-309
+############################################################
+
+Chapter 6 | Photons and Matter Waves 297
+Thomson’smodelofthehydrogenatomandBohr’smodel speed, which one has the shorter de Broglie wavelength?
+of the hydrogen atom.
+42. Ifaparticleisaccelerating,howdoesthisaffectitsde
+30. Discuss the way in which Thomson’s model is Broglie wavelength?
+nonphysical. Support your argument with experimental
+evidence. 43. Why is the wave-like nature of matter not observed
+every day for macroscopic objects?
+31. If,inahydrogenatom,anelectronmovestoanorbit
+withalargerradius,doestheenergyofthehydrogenatom 44. What is the wavelength of a neutron at rest? Explain.
+increase or decrease?
+45. Why does the setup of Davisson–Germer experiment
+32. How is the energy conserved when an atom makes a need to be enclosed in a vacuum chamber? Discuss what
+transition from a higher to a lower energy state? result you expect when the chamber is not evacuated.
+33. Suppose an electron in a hydrogen atom makes a
+transition from the (n+1)th orbit to the nth orbit. Is the 6.6Wave-Particle Duality
+wavelength of the emitted photon longer for larger values
+46. Give an example of an experiment in which light
+ofn, or for smaller values ofn?
+behaves as waves. Give an example of an experiment in
+which light behaves as a stream of photons.
+34. Discuss why the allowed energies of the hydrogen
+atom are negative.
+47. Discuss: How does the interference of water waves
+differ from the interference of electrons? How are they
+35. Canahydrogenatomabsorbaphotonwhoseenergyis
+analogous?
+greater than 13.6 eV?
+48. Give at least one argument in support of the matter-
+36. Whycanyouseethroughglassbutnotthroughwood?
+wave hypothesis.
+37. Do gravitational forces have a significant effect on
+49. Giveatleastoneargumentinsupportoftheparticle-
+atomic energy levels?
+nature of radiation.
+38. Show that Planck’s constant has the dimensions of
+50. Explain the importance of the Young double-slit
+angular momentum.
+experiment.
+51. Does the Heisenberg uncertainty principle allow a
+6.5De Broglie’s Matter Waves
+particle to be at rest in a designated region in space?
+39. Which type of radiation is most suitable for the
+observation of diffraction patterns on crystalline solids; 52. CanthedeBrogliewavelengthofaparticlebeknown
+radio waves, visible light, or X-rays? Explain. exactly?
+40. Speculateastohowthediffractionpatternsofatypical 53. Do the photons of red light produce better resolution
+crystalwouldbeaffectedif γ-rays wereusedinsteadofX- in a microscope than blue light photons? Explain.
+rays.
+54. Discuss the main difference between an SEM and a
+41. If an electron and a proton are traveling at the same TEM.
+PROBLEMS
+to increase its temperature by 2 K? (c) How long does
+6.1Blackbody Radiation the heating process in(b)take, assuming that all radiation
+emitted by the heater gets absorbed by the body?
+55. A 200-W heater emits a 1.5-µm radiation. (a) What
+value of the energy quantum does it emit? (b) Assuming
+thatthespecificheatofa4.0-kgbodyis 0.83kcal/kg·K, 56. A 900-W microwave generator in an oven generates
+energy quanta of frequency 2560 MHz. (a) How many
+howmanyofthesephotonsmustbeabsorbedbythebody
+energy quanta does it emit per second? (b) How many
+
+298 Chapter 6 | Photons and Matter Waves
+energy quanta must be absorbed by a pasta dish placed in photoelectrode.
+theradiationcavitytoincreaseitstemperatureby45.0K?
+Assume that the dish has a mass of 0.5 kg and that its 68. Whatisthemaximumkineticenergyofphotoelectrons
+specificheatis 0.9kcal/kg·K. (c)Assumethatallenergy ejected from sodium by the incident radiation of
+quanta emitted by the generator are absorbed by the pasta wavelength 450 nm?
+dish. How long must we wait until the dish in (b) is ready?
+69. A 120-nm UV radiation illuminates a gold-plated
+57. (a) For what temperature is the peak of blackbody electrode. What is the maximum kinetic energy of the
+radiation spectrum at 400 nm? (b) If the temperature of a ejected photoelectrons?
+blackbodyis800K,atwhatwavelengthdoesitradiatethe
+most energy? 70. A 400-nm violet light ejects photoelectrons with a
+maximum kinetic energy of 0.860 eV from sodium
+58. The tungsten elements of incandescent light bulbs photoelectrode. What is the work function of sodium?
+operate at 3200 K. At what frequency does the filament
+radiate maximum energy? 71. A 600-nm light falls on a photoelectric surface and
+electronswiththemaximumkineticenergyof0.17eVare
+59. Interstellarspaceisfilledwithradiationofwavelength emitted.Determine(a)theworkfunctionand(b)thecutoff
+970µm. This radiation is considered to be a remnant of frequencyofthesurface.(c)Whatisthestoppingpotential
+when the surface is illuminated with light of wavelength
+the “big bang.” What is the corresponding blackbody
+400 nm?
+temperature of this radiation?
+72. The cutoff wavelength for the emission of
+60. Theradiantenergyfromthesunreachesitsmaximum
+photoelectrons from a particular surface is 500 nm. Find
+at a wavelength of about 500.0 nm. What is the
+the maximum kinetic energy of the ejected photoelectrons
+approximate temperature of the sun’s surface?
+when the surface is illuminated with light of wavelength
+600 nm.
+6.2Photoelectric Effect
+73. Find the wavelength of radiation that can eject
+61. A photon has energy 20 keV. What are its frequency 2.00-eV electrons from calcium electrode. The work
+and wavelength? function for calcium is 2.71 eV. In what range is this
+radiation?
+62. The wavelengths of visible light range from
+approximately 400 to 750 nm. What is the corresponding 74. Find the wavelength of radiation that can eject
+range of photon energies for visible light? 0.10-eV electrons from potassium electrode. The work
+function for potassium is 2.24 eV. In what range is this
+63. What is the longest wavelength of radiation that can radiation?
+eject a photoelectron from silver? Is it in the visible range?
+75. Findthemaximumvelocityofphotoelectronsejected
+64. What is the longest wavelength of radiation that can by an 80-nm radiation, if the work function of
+eject a photoelectron from potassium, given the work photoelectrode is 4.73 eV.
+function of potassium 2.24 eV? Is it in the visible range?
+65. Estimate the binding energy of electrons in 6.3The Compton Effect
+magnesium, given that the wavelength of 337 nm is the
+76. What is the momentum of a 589-nm yellow photon?
+longest wavelength that a photon may have to eject a
+photoelectron from magnesium photoelectrode.
+77. What is the momentum of a 4-cm microwave photon?
+66. The work function for potassium is 2.26 eV. What
+78. Inabeamofwhitelight(wavelengthsfrom400to750
+is the cutoff frequency when this metal is used as
+nm), what range of momentum can the photons have?
+photoelectrode?Whatisthestoppingpotentialwhenforthe
+emitted electrons when this photoelectrode is exposed to
+radiation of frequency 1200 THz? 79. What is the energy of a photon whose momentum is
+3.0×10−24kg·m/s ?
+67. Estimate the work function of aluminum, given that
+thewavelengthof304nmisthelongestwavelengththata
+80. Whatisthewavelengthof(a)a12-keVX-rayphoton;
+photon may have to eject a photoelectron from aluminum
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 299
+(b) a 2.0-MeV γ-ray photon? state to the n=4 state?
+81. Find the momentum and energy of a 1.0-Å photon. 94. Whenahydrogenatomisinitsgroundstate,whatare
+the shortest and longest wavelengths of the photons it can
+absorb without being ionized?
+82. Find the wavelength and energy of a photon with
+momentum 5.00×10 −29 kg·m/s.
+95. When a hydrogen atom is in its third excided state,
+what are the shortest and longest wavelengths of the
+83. A γ-ray photon has a momentum of photons it can emit?
+8.00×10−21kg·m/s. Find its wavelength and energy.
+96. Whatisthelongestwavelengththatlightcanhaveifit
+istobecapableofionizingthehydrogenatominitsground
+84. (a)Calculatethemomentumofa 2.5-µm photon.(b) state?
+Findthevelocityofanelectronwiththesamemomentum.
+(c)Whatisthekineticenergyoftheelectron,andhowdoes 97. Foranelectroninahydrogenatominthe n=2 state,
+it compare to that of the photon? compute:(a)theangularmomentum;(b)thekineticenergy;
+(c) the potential energy; and (d) the total energy.
+85. Showthat p=h/λ and E
+f
+=hf areconsistentwith
+98. Findtheionization energyofahydrogenatominthe
+the relativistic formula E2= p2c2+m
+0
+2c2.
+fourth energy state.
+86. ShowthattheenergyEineVofaphotonisgivenby 99. It has been measured that it required 0.850 eV to
+removeanelectronfromthehydrogenatom.Inwhatstate
+E=1.241×10 −6 eV·m/λ, where λ is its wavelength
+was the atom before the ionization happened?
+in meters.
+100. What is the radius of a hydrogen atom when the
+87. For collisions with free electrons, compare the
+electron is in the first excited state?
+Comptonshiftofaphotonscatteredasanangleof 30° to
+that of a photon scattered at 45°. 101. FindtheshortestwavelengthintheBalmerseries.In
+what part of the spectrum does this line lie?
+88. X-rays of wavelength 12.5 pm are scattered from a
+block of carbon. What are the wavelengths of photons 102. Show that the entire Paschen series lies in the
+scattered at (a) 30°; (b) 90°; and, (c) 180° ? infrared part of the spectrum.
+103. DotheBalmerseriesandtheLymanseriesoverlap?
+6.4Bohr’s Model of the Hydrogen Atom Why? Why not? (Hint: calculate the shortest Balmer line
+and the longest Lyman line.)
+89. CalculatethewavelengthofthefirstlineintheLyman
+series and show that this line lies in the ultraviolet part of
+the spectrum. 104. (a) Which line in the Balmer series is the first one
+in the UV part of the spectrum? (b) How many Balmer
+lineslieinthevisiblepartofthespectrum?(c)Howmany
+90. CalculatethewavelengthofthefifthlineintheLyman
+Balmer lines lie in the UV?
+series and show that this line lies in the ultraviolet part of
+the spectrum.
+105. A 4.653-µm emission line of atomic hydrogen
+91. Calculate the energy changes corresponding to the corresponds to transition between the states n f =5 and
+transitions of the hydrogen atom: (a) from n=3 to
+n i. Find n i.
+n=4; (b)from n=2 to n=1; and(c)from n=3 to
+n=∞.
+6.5De Broglie’s Matter Waves
+92. Determine the wavelength of the third Balmer line
+106. Atwhatvelocitywillanelectronhaveawavelength
+(transition from n=5 to n=2).
+of 1.00 m?
+93. What is the frequency of the photon absorbed when
+107. What is the de Broglie wavelength of an electron
+the hydrogen atom makes the transition from the ground
+
+300 Chapter 6 | Photons and Matter Waves
+travelling at a speed of 5.0×10 6 m/s ? must be accelerated from rest if it is to be diffracted by
+these planes.
+108. WhatisthedeBrogliewavelengthofanelectronthat
+122. X-rays form ionizing radiation that is dangerous to
+isacceleratedfromrestthroughapotentialdifferenceof20
+living tissue and undetectable to the human eye. Suppose
+keV?
+that a student researcher working in an X-ray diffraction
+laboratory is accidentally exposed to a fatal dose of
+109. WhatisthedeBrogliewavelengthofaprotonwhose
+radiation. Calculate the temperature increase of the
+kinetic energy is 2.0 MeV? 10.0 MeV?
+researcher under the following conditions: the energy of
+X-ray photons is 200 keV and the researcher absorbs
+110. WhatisthedeBrogliewavelengthofa10-kgfootball 4×10 13 photons per each kilogram of body weight
+player running at a speed of 8.0 m/s?
+during the exposure. Assume that the specific heat of the
+student’s body is 0.83kcal/kg·K.
+111. (a) What is the energy of an electron whose de
+Brogliewavelengthisthatofaphotonofyellowlightwith
+wavelength590nm?(b)WhatisthedeBrogliewavelength 123. Solar wind (radiation) that is incident on the top
+ofanelectronwhoseenergyisthatofthephotonofyellow of Earth’s atmosphere has an average intensity of
+light? 1.3kW/m2. Supposethatyouarebuildingasolarsailthat
+istopropelasmalltoyspaceshipwithamassof0.1kgin
+112. ThedeBrogliewavelengthofaneutronis0.01nm. the space between the International Space Station and the
+What is the speed and energy of this neutron? moon. The sail is made from a very light material, which
+perfectly reflects the incident radiation. To assess whether
+113. Whatisthewavelengthofanelectronthatismoving such a project is feasible, answer the following questions,
+at a 3% of the speed of light? assumingthatradiationphotonsareincidentonlyinnormal
+direction to the sail reflecting surface. (a) What is the
+114. At what velocity does a proton have a 6.0-fm radiation pressure (force per m2) of the radiation falling
+wavelength(aboutthesizeofanucleus)?Giveyouranswer on the mirror-like sail? (b) Given the radiation pressure
+in units ofc. computed in (a), what will be the acceleration of the
+spaceship when the sail has of an area of 10.0m2 ? (c)
+115. Whatisthevelocityofa0.400-kgbilliardballifits Given the acceleration estimate in (b), how fast will the
+wavelength is 7.50 fm? spaceship be moving after 24 hours when it starts from
+rest?
+116. Find the wavelength of a proton that is moving at
+1.00% of the speed of light (when β=0.01). 124. Treatthehumanbodyasablackbodyanddetermine
+the percentage increase in the total power of its radiation
+when its temperature increases from 98.6 ° F to 103 ° F.
+6.6Wave-Particle Duality
+125. Show that Wien’s displacement law results from
+117. An AM radio transmitter radiates 500 kW at a
+frequencyof760kHz.Howmanyphotonsperseconddoes
+Planck’s radiation law. (Hint: substitute x=hc/λkT and
+the emitter emit? write Planck’s law in the form I(x, T)= Ax5 /(ex −1),
+where A=2π(kT) 5 /(h4c3 ). Now, for fixed T, find the
+118. Find the Lorentz factor γ and de Broglie’s
+position of the maximum in I(x,T) by solving for x in the
+wavelength for a 50-GeV electron in a particle accelerator.
+equation dI(x, T)/dx=0.)
+119. Find the Lorentz factor γ and de Broglie’s
+126. Show that Stefan’s law results from Planck’s
+wavelength for a 1.0-TeV proton in a particle accelerator.
+radiation law. Hint: To compute the total power of
+blackbody radiation emitted across the entire spectrum of
+120. Whatisthekineticenergyofa0.01-nmelectronina wavelengthsatagiventemperature,integratePlanck’slaw
+TEM? ∞
+over the entire spectrum P(T)=∫ I(λ, T)dλ. Use the
+0
+121. If electron is to be diffracted significantly by a
+substitution x=hc/λkT and the tabulated value of the
+crystal,itswavelengthmustbeaboutequaltothespacing,
+∞
+d, of crystalline planes. Assuming d =0.250nm, integral ∫ dxx3 /(ex −1)=π4/15.
+0
+estimatethepotentialdifferencethroughwhichanelectron
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

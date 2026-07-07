@@ -1,0 +1,226 @@
+# REAL PDF — openstax_vol3.pdf, pages 123-132
+############################################################
+
+Chapter 2 | Geometric Optics and Image Formation 115
+d o=4.0cm fromthelensandthelensisclosetotheeye. 148. In a reflecting telescope the objective is a concave
+mirror of radius of curvature 2 m and an eyepiece is a
+convexlensoffocallength5cm.Findtheapparentsizeof
+143. Let objective and eyepiece of a compound
+a25-mtreeatadistanceof10kmthatyouwouldperceive
+microscope have focal lengths of 2.5 cm and 10 cm,
+when looking through the telescope.
+respectively and be separated by 12 cm. A 70-µm object
+isplaced6.0cmfromtheobjective.Howlargeisthevirtual
+149. Two stars that are 10 9 km apart are viewed by a
+image formed by the objective-eyepiece system?
+telescope and found to be separated by an angle of
+144. Drawraystoscaletolocatetheimageattheretinaif 10 −5 radians.Iftheeyepieceofthetelescopehasafocal
+theeyelenshasafocallength2.5cmandthenearpointis length of 1.5 cm and the objective has a focal length of 3
+24 cm. (Hint: Place an object at the near point.) meters, how far away are the stars from the observer?
+145. Theobjectiveandtheeyepieceofamicroscopehave 150. WhatistheangularsizeoftheMoonifviewedfrom
+thefocallengths3cmand10cmrespectively.Decideabout abinocularthathasafocallengthof1.2cmfortheeyepiece
+the distance between the objective and the eyepiece if we andafocallengthof8cmfortheobjective?Usetheradius
+need a 10× magnification from the objective/eyepiece of the moon 1.74×10 6 m and the distance of the moon
+compound system.
+from the observer to be 3.8×10 8 m.
+146. Afar-sightedpersonhasanearpointof100cm.How
+farinfrontorbehindtheretinadoestheimageofanobject 151. An unknown planet at a distance of 1012m from
+placed25cmfromtheeyeform?Usethecorneatoretina Earth is observed bya telescope that has a focal length of
+distance of 2.5 cm. the eyepiece of 1 cm and a focal length of the objective
+of 1 m. If the far away planet is seen to subtend an angle
+147. A near-sighted person has afar point of 80 cm. (a) of 10 −5 radian at the eyepiece, what is the size of the
+Whatkindofcorrectivelensthepersonwillneedifthelens planet?
+is to be placed 1.5 cm from the eye? (b) What would be
+the power of the contact lens needed? Assume distance to
+contact lens from the eye to be zero.
+
+116 Chapter 2 | Geometric Optics and Image Formation
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 117
+3 | INTERFERENCE
+Figure 3.1 Soap bubbles are blown from clear fluid into very thin films. The colors we see are not due to any pigmentation but
+are the result of light interference, which enhances specific wavelengths for a given thickness of the film.
+Chapter Outline
+3.1Young's Double-Slit Interference
+3.2Mathematics of Interference
+3.3Multiple-Slit Interference
+3.4Interference in Thin Films
+3.5The Michelson Interferometer
+Introduction
+Themostcertainindicationofawaveisinterference.Thiswavecharacteristicismostprominentwhenthewaveinteracts
+withanobjectthatisnotlargecomparedwiththewavelength.Interferenceisobservedforwaterwaves,soundwaves,light
+waves, and, in fact, all types of waves.
+Ifyouhaveeverlookedatthereds,blues,andgreensinasunlitsoapbubbleandwonderedhowstraw-coloredsoapywater
+couldproducethem,youhavehitupononeofthemanyphenomenathatcanonlybeexplainedbythewavecharacteroflight
+(seeFigure 3.1).ThesameistrueforthecolorsseeninanoilslickorinthelightreflectedfromaDVDdisc.Theseand
+otherinterestingphenomenacannotbeexplainedfullybygeometricoptics.Inthesecases,lightinteractswithobjectsand
+exhibitswavecharacteristics.Thebranchofopticsthatconsidersthebehavioroflightwhenitexhibitswavecharacteristics
+is calledwave optics(sometimes called physical optics). It is the topic of this chapter.
+3.1 | Young's Double-Slit Interference
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the phenomenon of interference
+• Define constructive and destructive interference for a double slit
+The Dutch physicist Christiaan Huygens (1629–1695) thought that light was a wave, but Isaac Newton did not. Newton
+thoughtthattherewereotherexplanationsforcolor,andfortheinterferenceanddiffractioneffectsthatwereobservableat
+thetime.OwingtoNewton’stremendousreputation,hisviewgenerallyprevailed;thefactthatHuygens’sprincipleworked
+wasnotconsidereddirectevidenceprovingthatlightisawave.Theacceptanceofthewavecharacteroflightcamemany
+yearslaterin1801,whentheEnglishphysicistandphysicianThomasYoung(1773–1829)demonstratedopticalinterference
+with his now-classic double-slit experiment.
+If there were not one but two sources of waves, the waves could be made to interfere, as in the case of waves on
+
+118 Chapter 3 | Interference
+water (Figure 3.2). If light is an electromagnetic wave, it must therefore exhibit interference effects under appropriate
+circumstances.InYoung’sexperiment,sunlightwaspassedthroughapinholeonaboard.Theemergingbeamfellontwo
+pinholesonasecondboard.Thelightemanatingfromthetwopinholesthenfellonascreenwhereapatternofbrightand
+dark spots was observed. This pattern, called fringes, can only be explained through interference, a wave phenomenon.
+Figure 3.2 Photograph of an interference pattern produced by
+circular water waves in a ripple tank. Two thin plungers are
+vibrated up and down in phase at the surface of the water.
+Circular water waves are produced by and emanate from each
+plunger. The points where the water is calm (corresponding to
+destructive interference) are clearly visible.
+We can analyze double-slit interference with the help of Figure 3.3, which depicts an apparatus analogous to Young’s.
+Lightfromamonochromaticsourcefallsonaslit S .Thelightemanatingfrom S isincidentontwootherslits S and
+0 0 1
+S thatareequidistantfrom S .Apatternofinterferencefringesonthescreenisthenproducedbythelightemanating
+2 0
+from S and S .AllslitsareassumedtobesonarrowthattheycanbeconsideredsecondarypointsourcesforHuygens’
+1 2
+wavelets (The Nature of Light). Slits S and S are a distance d apart (d ≤1mm), and the distance between the
+1 2
+screen and the slits is D(≈1m), which is much greater thand.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 119
+Figure 3.3 The double-slit interference experiment using monochromatic light and narrow slits.
+Fringes produced by interfering Huygens wavelets from slits S and S are observed on the screen.
+1 2
+Since S isassumedtobeapointsourceofmonochromaticlight,thesecondaryHuygenswaveletsleaving S and S
+0 1 2
+always maintain a constant phase difference (zero in this case because S and S are equidistant from S ) and have
+1 2 0
+thesamefrequency.Thesources S and S arethensaidtobecoherent.Bycoherentwaves,wemeanthewavesarein
+1 2
+phaseorhaveadefinitephaserelationship.Thetermincoherentmeansthewaveshaverandomphaserelationships,which
+wouldbethecaseif S and S wereilluminatedbytwoindependentlightsources,ratherthanasinglesource S .Two
+1 2 0
+independent light sources (which may be two separate areas within the same lamp or the Sun) would generally not emit
+theirlightinunison,thatis,notcoherently.Also,because S and S arethesamedistancefrom S ,theamplitudesof
+1 2 0
+the two Huygens wavelets are equal.
+Youngusedsunlight,whereeachwavelengthformsitsownpattern,makingtheeffectmoredifficulttosee.Inthefollowing
+discussion,weillustratethedouble-slitexperimentwithmonochromaticlight(single λ)toclarifytheeffect.Figure3.4
+shows the pure constructive and destructive interference of two waves having the same wavelength and amplitude.
+Figure 3.4 The amplitudes of waves add. (a) Pure constructive interference is obtained when identical waves are in phase. (b)
+Pure destructive interference occurs when identical waves are exactly out of phase, or shifted by half a wavelength.
+
+120 Chapter 3 | Interference
+When light passes through narrow slits, the slits act as sources of coherent waves and light spreads out as semicircular
+waves, as shown in Figure 3.5(a). Pure constructive interference occurs where the waves are crest to crest or trough to
+trough.Puredestructiveinterferenceoccurswheretheyarecresttotrough.Thelightmustfallonascreenandbescattered
+intooureyesforustoseethepattern.AnanalogouspatternforwaterwavesisshowninFigure3.2.Notethatregionsof
+constructiveanddestructiveinterferencemoveoutfromtheslitsatwell-definedanglestotheoriginalbeam.Theseangles
+depend on wavelength and the distance between the slits, as we shall see below.
+Figure 3.5 Double slits produce two coherent sources of waves that interfere. (a) Light
+spreads out (diffracts) from each slit, because the slits are narrow. These waves overlap and
+interfere constructively (bright lines) and destructively (dark regions). We can only see this
+if the light falls onto a screen and is scattered into our eyes. (b) When light that has passed
+through double slits falls on a screen, we see a pattern such as this.
+Tounderstandthedouble-slitinterferencepattern,considerhowtwowavestravelfromtheslitstothescreen(Figure3.6).
+Eachslitisadifferentdistancefromagivenpointonthescreen.Thus,differentnumbersofwavelengthsfitintoeachpath.
+Wavesstartoutfromtheslitsinphase(cresttocrest),buttheymayendupoutofphase(cresttotrough)atthescreenif
+thepathsdifferinlengthbyhalfawavelength,interferingdestructively.Ifthepathsdifferbyawholewavelength,thenthe
+wavesarriveinphase(cresttocrest)atthescreen,interferingconstructively.Moregenerally,ifthepathlengthdifference
+Δl betweenthetwowavesisanyhalf-integralnumberofwavelengths[(1/2)λ,(3/2)λ,(5/2)λ,etc.],thendestructive
+interferenceoccurs.Similarly,ifthepathlengthdifferenceisanyintegralnumberofwavelengths(λ,2λ,3λ,etc.),then
+constructive interference occurs. These conditions can be expressed as equations:
+Δl=mλ, form=0, ±1, ±2, ±3 … (constructive interference) (3.1)
+Δl=(m+ 1 )λ, form=0, ±1, ±2, ±3 … (destructive interference) (3.2)
+2
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 121
+Figure 3.6 Waves follow different paths from the slits to a
+common pointPon a screen. Destructive interference occurs
+where one path is a half wavelength longer than the other—the
+waves start in phase but arrive out of phase. Constructive
+interference occurs where one path is a whole wavelength longer
+than the other—the waves start out and arrive in phase.
+3.2 | Mathematics of Interference
+Learning Objectives
+By the end of this section, you will be able to:
+• Determine the angles for bright and dark fringes for double slit interference
+• Calculate the positions of bright fringes on a screen
+Figure3.7(a)showshowtodeterminethepathlengthdifference Δl forwavestravelingfromtwoslitstoacommonpoint
+onascreen.Ifthescreenisalargedistanceawaycomparedwiththedistancebetweentheslits,thentheangle θ between
+thepathandalinefromtheslitstothescreen[part(b)]isnearlythesameforeachpath.Inotherwords, r and r are
+1 2
+essentially parallel. The lengths of r and r differ by Δl, as indicated by the two dashed lines in the figure. Simple
+1 2
+trigonometry shows
+Δl=dsinθ (3.3)
+wheredisthedistancebetweentheslits.CombiningthisresultwithEquation3.1,weobtainconstructiveinterferencefor
+a double slit when the path length difference is an integral multiple of the wavelength, or
+dsinθ=mλ, form=0, ±1, ±2, ±3,…(constructive interference). (3.4)
+Similarly,toobtaindestructiveinterferenceforadoubleslit,thepathlengthdifferencemustbeahalf-integralmultipleof
+the wavelength, or
+dsinθ=(m+ 1 )λ, form=0, ±1, ±2, ±3,…(destructive interference) (3.5)
+2
+where λ isthewavelengthofthelight,disthedistancebetweenslits,and θ istheanglefromtheoriginaldirectionofthe
+beam as discussed above. We callmtheorderof the interference. For example, m=4 is fourth-order interference.
+
+122 Chapter 3 | Interference
+Figure 3.7 (a) To reachP, the light waves from S and S must travel different distances. (b) The path difference
+1 2
+between the two rays is Δl.
+Theequationsfordouble-slitinterferenceimplythataseriesofbrightanddarklinesareformed.Forverticalslits,thelight
+spreads out horizontally on either side of the incident beam into a pattern called interference fringes (Figure 3.8). The
+closer the slits are, the more the bright fringes spread apart. We can see this by examining the equation
+dsinθ=mλ, form=0, ±1, ±2, ±3….Forfixed λ andm,thesmallerdis,thelarger θ mustbe,since sinθ=mλ/d.
+Thisisconsistentwithourcontentionthatwaveeffectsaremostnoticeablewhentheobjectthewaveencounters(here,slits
+a distancedapart) is small. Smalldgives large θ, hence, a large effect.
+Referringbacktopart(a)ofthefigure, θ istypicallysmallenoughthat sinθ≈tanθ≈y m/D,where y
+m
+isthedistance
+fromthecentralmaximumtothemthbrightfringeandDisthedistancebetweentheslitandthescreen.Equation3.4may
+then be written as
+y
+d m =mλ
+D
+or
+mλD (3.6)
+y m=
+d
+.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 123
+Figure 3.8 The interference pattern for a double slit has an intensity that falls off with angle. The image shows
+multiple bright and dark lines, or fringes, formed by light passing through a double slit.
+Example 3.1
+Finding a Wavelength from an Interference Pattern
+SupposeyoupasslightfromaHe-Nelaserthroughtwoslitsseparatedby0.0100mmandfindthatthethirdbright
+line on a screen is formed at an angle of 10.95° relative to the incident beam. What is the wavelength of the
+light?
+Strategy
+The phenomenon is two-slit interference as illustrated in Figure 3.8 and the third bright line is due to third-
+orderconstructiveinterference,whichmeansthat m=3.Wearegiven d =0.0100mm and θ=10.95°.The
+wavelength can thus be found using the equation dsinθ=mλ for constructive interference.
+Solution
+Solving dsinθ=mλ for the wavelength λ gives
+λ=
+ds
+m
+inθ
+.
+Substituting known values yields
+λ= (0.0100mm)(sin10.95°) =6.33×10−4 mm = 633nm.
+3
+Significance
+Tothreedigits,thisisthewavelengthoflightemittedbythecommonHe-Nelaser.Notbycoincidence,thisred
+colorissimilartothatemittedbyneonlights.Moreimportant,however,isthefactthatinterferencepatternscan
+beusedtomeasurewavelength.Youngdidthisforvisiblewavelengths.Thisanalyticaltechinqueisstillwidely
+usedtomeasureelectromagneticspectra.Foragivenorder,theangleforconstructiveinterferenceincreaseswith
+λ, so that spectra (measurements of intensity versus wavelength) can be obtained.

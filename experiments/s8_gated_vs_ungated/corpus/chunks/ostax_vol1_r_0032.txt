@@ -1,0 +1,242 @@
+# REAL PDF — openstax_vol1.pdf, pages 194-198
+############################################################
+
+182 4 • Chapter Review
+Chapter Review
+Key Terms
+acceleration vector instantaneous acceleration reference frame coordinate system in which the
+found by taking the derivative of the velocity position, velocity, and acceleration of an object at
+function with respect to time in unit vector notation rest or moving is measured
+angular frequency rate of change of an angle with relative velocity velocity of an object as observed
+which an object that is moving on a circular path from a particular reference frame, or the velocity of
+centripetal acceleration component of acceleration one reference frame with respect to another
+of an object moving in a circle that is directed reference frame
+radially inward toward the center of the circle tangential acceleration magnitude of which is the
+displacement vector vector from the initial position time rate of change of speed. Its direction is tangent
+to a final position on a trajectory of a particle to the circle.
+position vector vector from the origin of a chosen time of flight elapsed time a projectile is in the air
+coordinate system to the position of a particle in total acceleration vector sum of centripetal and
+two- or three-dimensional space tangential accelerations
+projectile motion motion of an object subject only to trajectory path of a projectile through the air
+the acceleration of gravity velocity vector vector that gives the instantaneous
+range maximum horizontal distance a projectile speed and direction of a particle; tangent to the
+travels trajectory
+Key Equations
+Position vector
+Displacement vector
+Velocity vector
+Velocity in terms of components
+Velocity components
+Average velocity
+Instantaneous acceleration
+Instantaneous acceleration, component form
+Instantaneous acceleration as second
+derivatives of position
+Time of flight
+Trajectory
+Range
+Centripetal acceleration
+Position vector, uniform circular motion
+Velocity vector, uniform circular motion
+Acceleration vector, uniform circular motion
+Tangential acceleration
+Total acceleration
+Access for free at openstax.org
+
+4 • Chapter Review 183
+Position vector in frame
+S is the position
+vector in frame plus the vector from the
+origin of S to the origin of
+Relative velocity equation connecting two
+reference frames
+Relative velocity equation connecting more
+than two reference frames
+Relative acceleration equation
+Summary
+4.1 Displacement and Velocity Vectors • The kinematic equations for constant
+acceleration can be written as the vector sum of
+• The position function gives the position as a
+the constant acceleration equations in the x, y,
+function of time of a particle moving in two or
+and z directions.
+three dimensions. Graphically, it is a vector from
+the origin of a chosen coordinate system to the 4.3 Projectile Motion
+point where the particle is located at a specific
+• Projectile motion is the motion of an object
+time.
+subject only to the acceleration of gravity, where
+• The displacement vector gives the shortest
+the acceleration is constant, as near the surface
+distance between any two points on the
+of Earth.
+trajectory of a particle in two or three
+• To solve projectile motion problems, we analyze
+dimensions.
+the motion of the projectile in the horizontal and
+• Instantaneous velocity gives the speed and
+vertical directions using the one-dimensional
+direction of a particle at a specific time on its
+kinematic equations for x and y.
+trajectory in two or three dimensions, and is a
+• The time of flight of a projectile launched with
+vector in two and three dimensions.
+initial vertical velocity on an even surface is
+• The velocity vector is tangent to the trajectory of
+given by
+the particle.
+• Displacement can be written as a vector sum
+of the one-dimensional displacements
+along the x, y, and z directions. This equation is valid only when the projectile
+• Velocity can be written as a vector sum of lands at the same elevation from which it was
+the one-dimensional velocities launched.
+along the x, y, and z directions. • The maximum horizontal distance traveled by a
+• Motion in any given direction is independent of projectile is called the range. Again, the equation
+motion in a perpendicular direction. for range is valid only when the projectile lands at
+the same elevation from which it was launched.
+4.2 Acceleration Vector
+4.4 Uniform and Nonuniform Circular Motion
+• In two and three dimensions, the acceleration
+vector can have an arbitrary direction and does • Uniform circular motion is motion in a circle at
+not necessarily point along a given component of constant speed.
+the velocity. • Centripetal acceleration is the acceleration a
+• The instantaneous acceleration is produced by a particle must have to follow a circular path.
+change in velocity taken over a very short Centripetal acceleration always points toward
+(infinitesimal) time period. Instantaneous the center of rotation and has magnitude
+acceleration is a vector in two or three
+dimensions. It is found by taking the derivative of • Nonuniform circular motion occurs when there is
+the velocity function with respect to time. tangential acceleration of an object executing
+• In three dimensions, acceleration can be circular motion such that the speed of the object
+written as a vector sum of the one-dimensional is changing. This acceleration is called tangential
+accelerations along the x-, acceleration The magnitude of tangential
+y-, and z-axes. acceleration is the time rate of change of the
+
+184 4 • Chapter Review
+magnitude of the velocity. The tangential reference frame in terms of position, velocity,
+acceleration vector is tangential to the circle, and acceleration needs to be specified.
+whereas the centripetal acceleration vector • Relative velocity is the velocity of an object as
+points radially inward toward the center of the observed from a particular reference frame, and
+circle. The total acceleration is the vector sum of it varies with the choice of reference frame.
+tangential and centripetal accelerations. • If S and are two reference frames moving
+• An object executing uniform circular motion can relative to each other at a constant velocity, then
+be described with equations of motion. The the velocity of an object relative to S is equal to
+position vector of the object is its velocity relative to plus the velocity of
+where A is the relative to S.
+magnitude which is also the radius of the • If two reference frames are moving relative to
+circle, and is the angular frequency. each other at a constant velocity, then the
+accelerations of an object as observed in both
+4.5 Relative Motion in One and Two Dimensions
+reference frames are equal.
+• When analyzing motion of an object, the
+Conceptual Questions
+4.1 Displacement and Velocity Vectors time other than at t = 0?
+1 . What form does the trajectory of a particle have 8 . Answer the following questions for projectile
+if the distance from any point A to point B is motion on level ground assuming negligible air
+equal to the magnitude of the displacement resistance, with the initial angle being neither
+from A to B? nor (a) Is the acceleration ever zero? (b) Is
+the vector ever parallel or antiparallel to the
+2 . Give an example of a trajectory in two or three
+vector ? (c) Is the vector v ever perpendicular
+dimensions caused by independent
+to the vector a? If so, where is this located?
+perpendicular motions.
+9 . A dime is placed at the edge of a table so it
+3 . If the instantaneous velocity is zero, what can be
+hangs over slightly. A quarter is slid horizontally
+said about the slope of the position function?
+on the table surface perpendicular to the edge
+4.2 Acceleration Vector and hits the dime head on. Which coin hits the
+ground first?
+4 . If the position function of a particle is a linear
+function of time, what can be said about its 4.4 Uniform and Nonuniform Circular Motion
+acceleration?
+10 . Can centripetal acceleration change the speed
+5 . If an object has a constant x-component of the of a particle undergoing circular motion?
+velocity and suddenly experiences an
+11 . Can tangential acceleration change the speed of
+acceleration in the y direction, does the
+a particle undergoing circular motion?
+x-component of its velocity change?
+4.5 Relative Motion in One and Two Dimensions
+6 . If an object has a constant x-component of
+velocity and suddenly experiences an 12 . What frame or frames of reference do you use
+acceleration at an angle of in the x direction, instinctively when driving a car? When flying in a
+does the x-component of velocity change? commercial jet?
+4.3 Projectile Motion 13 . A basketball player dribbling down the court
+usually keeps his eyes fixed on the players
+7 . Answer the following questions for projectile
+around him. He is moving fast. Why doesn’t he
+motion on level ground assuming negligible air
+need to keep his eyes on the ball?
+resistance, with the initial angle being neither
+nor (a) Is the velocity ever zero? (b) When 14 . If someone is riding in the back of a pickup truck
+is the velocity a minimum? A maximum? (c) Can and throws a softball straight backward, is it
+the velocity ever be the same as the initial possible for the ball to fall straight down as
+velocity at a time other than at t = 0? (d) Can the viewed by a person standing at the side of the
+speed ever be the same as the initial speed at a road? Under what condition would this occur?
+Access for free at openstax.org
+
+4 • Chapter Review 185
+How would the motion of the ball appear to the 16 . A clod of dirt falls from the bed of a moving
+person who threw it? truck. It strikes the ground directly below the
+end of the truck. (a) What is the direction of its
+15 . The hat of a jogger running at constant velocity
+velocity relative to the truck just before it hits?
+falls off the back of his head. Draw a sketch
+(b) Is this the same as the direction of its
+showing the path of the hat in the jogger’s frame
+velocity relative to ground just before it hits?
+of reference. Draw its path as viewed by a
+Explain your answers.
+stationary observer. Neglect air resistance.
+Problems
+4.1 Displacement and Velocity Vectors
+17 . The coordinates of a particle in a rectangular
+coordinate system are (1.0, –4.0, 6.0). What is
+the position vector of the particle?
+18 . The position of a particle changes from
+​ to
+What is the particle’s
+displacement?
+19 . The 18th hole at Pebble Beach Golf Course is a
+dogleg to the left of length 496.0 m. The fairway
+off the tee is taken to be the x direction. A golfer
+hits his tee shot a distance of 300.0 m,
+corresponding to a displacement 23 . The position of a particle is
+and hits his second shot 189.0 (a) What is the
+m with a displacement velocity of the particle at 0 s and at s? (b)
+What is the final What is the average velocity between 0 s and
+displacement of the golf ball from where it s?
+started?
+24 . Clay Matthews, a linebacker for the Green Bay
+20 . A bird flies straight northeast a distance of 95.0 Packers, can reach a speed of 10.0 m/s. At the
+km for 3.0 h. With the x-axis due east and the start of a play, Matthews runs downfield at
+y-axis due north, what is the displacement in with respect to the 50-yard line and covers 8.0
+unit vector notation for the bird? What is the m in 1 s. He then runs straight down the field at
+average velocity for the trip? with respect to the 50-yard line for 12 m,
+with an elapsed time of 1.2 s. (a) What is
+21 . A cyclist rides 5.0 km due east, then 10.0 km
+Matthews’ final displacement from the start of
+west of north. From this point she rides 8.0
+the play? (b) What is his average velocity?
+km due west. What is the final displacement
+from where the cyclist started? 25 . The F-35B Lighting II is a short-takeoff and
+vertical landing fighter jet. If it does a vertical
+22 . New York Rangers defenseman Daniel Girardi
+takeoff to 20.00-m height above the ground and
+stands at the goal and passes a hockey puck 20
+then follows a flight path angled at with
+m and from straight down the ice to left wing
+respect to the ground for 20.00 km, what is the
+Chris Kreider waiting at the blue line. Kreider
+final displacement?
+waits for Girardi to reach the blue line and
+passes the puck directly across the ice to him 10 4.2 Acceleration Vector
+m away. What is the final displacement of the
+26 . The position of a particle is
+puck? See the following figure.
+(a) Determine
+its velocity and acceleration as functions of time.
+(b) What are its velocity and acceleration at time
+t = 0?
+27 . A particle’s acceleration is At

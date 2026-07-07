@@ -1,0 +1,272 @@
+# REAL PDF — crowell_lm.pdf, pages 386-392
+############################################################
+
+physical e↵ort to continue rotating, and indeed would be unable to
+stop rotating before he hit the water.
+These observations have the hallmarks of a conservation law:
+A closed system is involved. Nothing is making an e↵ort to
+twist the earth, the hydrogen atom, or the high-diver. They are
+isolated from rotation-changing influences, i.e., they are closed
+systems.
+Something remains unchanged. There appears to be a numer-
+ical quantity for measuring rotational motion such that the total
+amount of that quantity remains constant in a closed system.
+Something can be transferred back and forth without
+changing the total amount. In figure a, the jumper wants to
+get his feet out in front of him so he can keep from doing a “face
+plant” when he lands. Bringing his feet forward would involve a
+certain quantity of counterclockwise rotation, but he didn’t start
+out with any rotation when he left the ground. Suppose we con-
+sider counterclockwise as positive and clockwise as negative. The
+onlywayhislegscanacquiresomepositiverotationisifsomeother
+part of his body picks up an equal amount of negative rotation.
+This is why he swings his arms up behind him, clockwise.
+Anearlyphotographofanold-fashionedlong-jump.
+What numerical measure of rotational motion is conserved? Car en-
+ginesandold-fashionedLPrecordshavespeedsofrotationmeasured
+in rotations per minute (r.p.m.), but the number of rotations per
+minute (or per second) is not a conserved quantity. A twirling fig-
+ure skater, for instance, can pull her arms in to increase her r.p.m.’s.
+The first section of this chapter deals with the numerical definition
+of the quantity of rotation that results in a valid conservation law.
+386 Chapter 15 Conservation of angular momentum
+
+15.1 Conservation of angular momentum
+When most people think of rotation, they think of a solid object
+like a wheel rotating in a circle around a fixed point. Examples of
+this type of rotation, called rigid rotation or rigid-body rotation, in-
+cludeaspinningtop,aseatedchild’sswingingleg,andahelicopter’s
+spinning propeller. Rotation, however, is a much more general phe-
+nomenon, and includes noncircular examples such as a comet in
+an elliptical orbit around the sun, or a cyclone, in which the core
+completes a circle more quickly than the outer parts.
+If there is a numerical measure of rotational motion that is a con-
+served quantity, then it must include nonrigid cases like these, since
+nonrigid rotation can be traded back and forth with rigid rotation.
+For instance, there is a trick for finding out if an egg is raw or hard-
+boiled. If you spin a hardboiled egg and then stop it briefly with
+your finger, it stops dead. But if you do the same with a raw egg, it
+springs back into rotation because the soft interior was still swirling
+around within the momentarily motionless shell. The pattern of
+flow of the liquid part is presumably very complex and nonuniform
+An overhead view of a piece
+due to the asymmetric shape of the egg and the di↵erent consisten- of putty being thrown at a door.
+cies of the yolk and the white, but there is apparently some way to Even though the putty is neither
+describe the liquid’s total amount of rotation with a single number, spinning nor traveling along a
+ofwhichsomepercentageisgivenbacktotheshellwhenyourelease curve,wemustdefineitashaving
+somekindof“rotation”becauseit
+it.
+isabletomakethedoorrotate.
+The best strategy is to devise a way of defining the amount of rota-
+tion of a single small part of a system. The amount of rotation of a
+system such as a cyclone will then be defined as the total of all the
+contributions from its many small parts.
+The quest for a conserved quantity of rotation even requires us to
+broaden the rotation concept to include cases where the motion
+doesn’t repeat or even curve around. If you throw a piece of putty
+As seen by someone stand-
+at a door, the door will recoil and start rotating. The putty was
+ing at the axis, the putty changes
+traveling straight, not in a circle, but if there is to be a general
+its angular position. We there-
+conservation law that can cover this situation, it appears that we fore define it as having angular
+must describe the putty as having had some “rotation,” which it momentum.
+then gave up to the door. The best way of thinking about it is to
+attribute rotation to any moving object or part of an object that
+changes its angle in relation to the axis of rotation. In the putty-
+and-doorexample,thehingeofthedooristhenaturalpointtothink
+of as an axis, and the putty changes its angle as seen by someone
+standingatthehinge. Forthisreason,theconservedquantityweare
+investigating is called angular momentum. The symbol for angular
+momentum can’t be a or m, since those are used for acceleration
+and mass, so the symbol L is arbitrarily chosen instead.
+Imaginea1-kgblobofputty,thrownatthedoorataspeedof1m/s,
+which hits the door at a distance of 1 m from the hinge. We define
+this blob to have 1 unit of angular momentum. When it hits the
+Conservation of angular momentum 387
+
+door, the door will recoil and start rotating. We can use the speed
+at which the door recoils as a measure of the angular momentum
+the blob brought in.1
+Experiments show, not surprisingly, that a 2-kg blob thrown in the
+same way makes the door rotate twice as fast, so the angular mo-
+mentum of the putty blob must be proportional to mass,
+L m.
+/
+Similarly, experiments show that doubling the velocity of the blob
+will have a doubling e↵ect on the result, so its angular momentum
+must be proportional to its velocity as well,
+L mv.
+/
+You have undoubtedly had the experience of approaching a closed
+door with one of those bar-shaped handles on it and pushing on
+A putty blob thrown directly the wrong side, the side close to the hinges. You feel like an idiot,
+at the axis has no angular mo- because you have so little leverage that you can hardly budge the
+tion, and therefore no angular
+door. The same would be true with the putty blob. Experiments
+momentum. It will not cause the
+would show that the amount of rotation the blob can give to the
+doortorotate.
+door is proportional to the distance, r, from the axis of rotation, so
+angular momentum must also be proportional to r,
+L mvr.
+/
+We are almost done, but there is one missing ingredient. We know
+on grounds of symmetry that a putty ball thrown directly inward
+Only the component of the toward the hinge will have no angular momentum to give to the
+velocity vector perpendicular door. After all, there would not even be any way to decide whether
+to the dashed line should be the ball’s rotation was clockwise or counterclockwise in this situa-
+counted into the definition of tion. It is therefore only the component of the blob’s velocity vector
+angularmomentum.
+perpendicular to the door that should be counted in its angular
+momentum,
+L = mv r.
+?
+More generally, v should be thought of as the component of the
+?
+object’s velocity vector that is perpendicular to the line joining the
+object to the axis of rotation.
+We find that this equation agrees with the definition of the original
+putty blob as having one unit of angular momentum, and we can
+now see that the units of angular momentum are (kg m/s) m, i.e.,
+· ·
+kg m2/s. This gives us a way of calculating the angular momentum
+·
+of any material object or any system consisting of material objects:
+1We assume that the door is much more massive than the blob. Under this
+assumption, the speed at which the door recoils is much less than the original
+speedoftheblob,sotheblobhaslostessentiallyallitsangularmomentum,and
+given it to the door.
+388 Chapter 15 Conservation of angular momentum
+
+angular momentum of a material object
+The angular momentum of a moving particle is
+L = mv r,
+?
+where m is its mass, v is the component of its velocity vector
+?
+perpendicular to the line joining it to the axis of rotation, and r is
+its distance from the axis. Positive and negative signs are used to
+describe opposite directions of rotation.
+The angular momentum of a finite-sized object or a system of
+many objects is found by dividing it up into many small parts,
+applying the equation to each part, and adding to find the total
+amount of angular momentum.
+Note that r is not necessarily the radius of a circle. (As implied
+by the qualifiers, matter isn’t the only thing that can have angular
+momentum. Light can also have angular momentum, and the above
+equation would not apply to light.)
+Conservation of angular momentum has been verified over and over
+again by experiment, and is now believed to be one of the three
+most fundamental principles of physics, along with conservation of
+energy and momentum.
+A figure skater pulls her arms in example 1
+Whenafigureskateristwirling,thereisverylittlefrictionbetween
+her and the ice, so she is essentially a closed system, and her
+angular momentum is conserved. If she pulls her arms in, she is
+decreasing r for all the atoms in her arms. It would violate con-
+servation of angular momentum if she then continued rotating at
+the same speed, i.e., taking the same amount of time for each
+revolution, because her arms’ contributions to her angular mo-
+mentum would have decreased, and no other part of her would
+have increased its angular momentum. This is impossible be-
+cause it would violate conservation of angular momentum. If her
+total angular momentum is to remain constant, the decrease in r
+for her arms must be compensated for by an overall increase in
+her rate of rotation. That is, by pulling her arms in, she substan- A figure skater pulls in her
+tially reduces the time for each rotation. arms so that she can execute a
+spinmorerapidly.
+Conservation of angular momentum 389
+
+Example2.
+Changing the axis example 2
+Anobject’sangularmomentumcanbedifferentdependingonthe
+axis about which it rotates. Figure g shows two double-exposure
+Example 3. A view of the photographs a viola player tipping the bow in order to cross from
+earth-moon system from above one string to another. Much more angular momentum is required
+the north pole. All distances when playing near the bow’s handle, called the frog, as in the
+have been highly distorted for
+panel on the right; not only are most of the atoms in the bow
+legibility. The earth’s rotation is
+at greater distances, r, from the axis of rotation, but the ones in
+counterclockwise from this point
+the tip also have more momentum, p. It is difficult for the player
+ofview(arrow). Themoon’sgrav-
+to quickly transfer a large angular momentum into the bow, and
+ity creates a bulge on the side
+near it, because its gravitational thentransferitbackoutjustasquickly. (Inthelanguageofsection
+pull is stronger there, and an 15.4, large torques are required.) This is one of the reasons that
+“anti-bulge” on the far side, since stringplayerstendtostaynearthemiddleofthebowasmuchas
+its gravity there is weaker. For
+possible.
+simplicity, let’s focus on the tidal
+bulge closer to the moon. Its Earth’s slowing rotation and the receding moon example 3
+frictional force is trying to slow
+Asnotedinchapter1,theearth’srotationisactuallyslowingdown
+down the earth’s rotation, so its
+verygradually,withthekineticenergybeingdissipatedasheatby
+force on the earth’s solid crust is
+friction between the land and the tidal bulges raised in the seas
+toward the bottom of the figure.
+by the earth’s gravity. Does this mean that angular momentum is
+By Newton’s third law, the crust
+must thus make a force on the not really perfectly conserved? No, it just means that the earth
+bulge which is toward the top of is not quite a closed system by itself. If we consider the earth
+the figure. This causes the bulge and moon as a system, then the angular momentum lost by the
+to be pulled forward at a slight earthmustbegainedbythemoonsomehow. Infactveryprecise
+angle, and the bulge’s gravity
+measurements of the distance between the earth and the moon
+therefore pulls the moon forward,
+have been carried out by bouncing laser beams off of a mirror
+accelerating its orbital motion
+left there by astronauts, and these measurements show that the
+about the earth and flinging it
+outward. moon is receding from the earth at a rate of 4 centimeters per
+year! The moon’s greater value of r means that it has a greater
+390 Chapter 15 Conservation of angular momentum
+
+angular momentum, and the increase turns out to be exactly the
+amount lost by the earth. In the days of the dinosaurs, the days
+weresignificantlyshorter,andthemoonwascloserandappeared
+bigger in the sky.
+But what force is causing the moon to speed up, drawing it out
+into a larger orbit? It is the gravitational forces of the earth’s tidal
+bulges. The effect is described qualitatively in the caption of the
+figure. The result would obviously be extremely difficult to calcu-
+latedirectly,andthisisoneofthosesituationswhereaconserva-
+tion law allows us to make precise quantitative statements about
+the outcome of a process when the calculation of the process
+itself would be prohibitively complex.
+Restriction to rotation in a plane
+Is angular momentum a vector, or a scalar? It does have a direction
+in space, but it’s a direction of rotation, not a straight-line direction
+like the directions of vectors such as velocity or force. It turns out
+(see problem 29) that there is a way of defining angular momentum
+asavector,butinthisbooktheexampleswillbeconfinedtoasingle
+plane of rotation, i.e., e↵ectively two-dimensional situations. In this
+special case, we can choose to visualize the plane of rotation from
+one side or the other, and to define clockwise and counterclockwise
+rotation as having opposite signs of angular momentum.
+Discussion question
+A Conservation of plain old momentum, p, can be thought of as the
+greatly expanded and modified descendant of Galileo’s original principle
+ofinertia,thatnoforceisrequiredtokeepanobjectinmotion. Theprinci-
+ple of inertia is counterintuitive, and there are many situations in which it
+appears superficially that a force is needed to maintain motion, as main-
+tained by Aristotle. Think of a situation in which conservation of angular
+momentum,L,alsoseemstobeviolated,makingitseemincorrectlythat
+something external must act on a closed system to keep its angular mo-
+mentumfrom“runningdown.”
+15.2 Angular momentum in planetary motion
+We now discuss the application of conservation of angular momen-
+tum to planetary motion, both because of its intrinsic importance
+andbecauseitisagoodwaytodevelopavisualintuitionforangular
+momentum.
+Kepler’s law of equal areas states that the area swept out by a
+planet in a certain length of time is always the same. Angular
+momentum had not been invented in Kepler’s time, and he did not
+evenknowthemostbasicphysicalfactsabouttheforcesatwork. He
+thoughtofthislawasanentirelyempiricalandunexpectedlysimple
+way of summarizing his data, a rule that succeeded in describing
+and predicting how the planets sped up and slowed down in their
+Angular momentum in planetary motion 391

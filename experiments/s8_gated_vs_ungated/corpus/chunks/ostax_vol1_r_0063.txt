@@ -1,0 +1,161 @@
+# REAL PDF — openstax_vol1.pdf, pages 373-378
+############################################################
+
+8.4 • Potential Energy Diagrams and Stability 361
+either side of an equilibrium point has a direction that is the same as the direction of position change, pointing away
+from the equilibrium point, the equilibrium is termed unstable, and this implies that U(x) has a relative maximum
+there.
+EXAMPLE 8.10
+Quartic and Quadratic Potential Energy Diagram
+The potential energy for a particle undergoing one-dimensional motion along the x-axis is
+where U is in joules and x is in meters. The particle is not subject to any non-conservative forces and its mechanical
+energy is constant at . (a) Is the motion of the particle confined to any regions on the x-axis, and if so,
+what are they? (b) Are there any equilibrium points, and if so, where are they and are they stable or unstable?
+Strategy
+First, we need to graph the potential energy as a function of x. The function is zero at the origin, becomes negative
+as x increases in the positive or negative directions ( is larger than for ), and then becomes positive at
+sufficiently large . Your graph should look like a double potential well, with the zeros determined by solving the
+equation , and the extremes determined by examining the first and second derivatives of U(x), as shown in
+Figure 8.12.
+FIGURE 8.12 The potential energy graph for a one-dimensional, quartic and quadratic potential energy, with various quantities indicated.
+You can find the values of (a) the allowed regions along the x-axis, for the given value of the mechanical energy, from
+the condition that the kinetic energy can’t be negative, and (b) the equilibrium points and their stability from the
+properties of the force (stable for a relative minimum and unstable for a relative maximum of potential energy).
+You can just eyeball the graph to reach qualitative answers to the questions in this example. That, after all, is the
+value of potential energy diagrams. You can see that there are two allowed regions for the motion and
+three equilibrium points (slope of which the central one is unstable and the other
+two are stable
+Solution
+a. To find the allowed regions for x, we use the condition
+
+362 8 • Potential Energy and Conservation of Energy
+If we complete the square in , this condition simplifies to which we can solve to obtain
+This represents two allowed regions, and where and
+(in meters).
+b. To find the equilibrium points, we solve the equation
+and find and , where (meters). The second derivative
+is negative at , so that position is a relative maximum and the equilibrium there is unstable. The second
+derivative is positive at , so these positions are relative minima and represent stable equilibria.
+Significance
+The particle in this example can oscillate in the allowed region about either of the two stable equilibrium points we
+found, but it does not have enough energy to escape from whichever potential well it happens to initially be in. The
+conservation of mechanical energy and the relations between kinetic energy and speed, and potential energy and
+force, enable you to deduce much information about the qualitative behavior of the motion of a particle, as well as
+some quantitative information, from a graph of its potential energy.
+CHECK YOUR UNDERSTANDING 8.10
+Repeat Example 8.10 when the particle’s mechanical energy is
+Before ending this section, let’s practice applying the method based on the potential energy of a particle to find its
+position as a function of time, for the one-dimensional, mass-spring system considered earlier in this section.
+EXAMPLE 8.11
+Sinusoidal Oscillations
+Find x(t) for a particle moving with a constant mechanical energy and a potential energy ,
+when the particle starts from rest at time .
+Strategy
+We follow the same steps as we did in Example 8.9. Substitute the potential energy U into Equation 8.14 and factor
+out the constants, like m or k. Integrate the function and solve the resulting expression for position, which is now a
+function of time.
+Solution
+Substitute the potential energy in Equation 8.14 and integrate using an integral solver found on a web search:
+From the initial conditions at the initial kinetic energy is zero and the initial potential energy is
+from which you can see that and Now you can solve for x:
+Access for free at openstax.org
+
+8.5 • Sources of Energy 363
+Significance
+A few paragraphs earlier, we referred to this mass-spring system as an example of a harmonic oscillator. Here, we
+anticipate that a harmonic oscillator executes sinusoidal oscillations with a maximum displacement of
+(called the amplitude) and a rate of oscillation of (called the frequency). Further discussions about
+oscillations can be found in Oscillations.
+CHECK YOUR UNDERSTANDING 8.11
+Find for the mass-spring system in Example 8.11 if the particle starts from at What is the
+particle’s initial velocity?
+8.5 Sources of Energy
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe energy transformations and conversions in general terms
+• Explain what it means for an energy source to be renewable or nonrenewable
+In this chapter, we have studied energy. We learned that energy can take different forms and can be transferred
+from one form to another. You will find that energy is discussed in many everyday, as well as scientific, contexts,
+because it is involved in all physical processes. It will also become apparent that many situations are best
+understood, or most easily conceptualized, by considering energy. So far, no experimental results have contradicted
+the conservation of energy. In fact, whenever measurements have appeared to conflict with energy conservation,
+new forms of energy have been discovered or recognized in accordance with this principle.
+What are some other forms of energy? Many of these are covered in later chapters (also see Figure 8.13), but let’s
+detail a few here:
+• Atoms and molecules inside all objects are in random motion. The internal kinetic energy from these random
+motions is called thermal energy, because it is related to the temperature of the object. In this case, the
+energy is known as heat energy.
+• Electrical energy is a common form that is converted to many other forms and does work in a wide range of
+practical situations.
+• Fuels, such as gasoline and food, have chemical energy, which is potential energy arising from their molecular
+structure. Chemical energy can be converted into thermal energy by reactions like oxidation. Chemical
+reactions can also produce electrical energy, such as in batteries. Electrical energy can, in turn, produce
+thermal energy and light, such as in an electric heater or a light bulb.
+• Light is just one kind of electromagnetic radiation, or radiant energy, which also includes radio, infrared,
+ultraviolet, X-rays, and gamma rays. All bodies with thermal energy can radiate energy in electromagnetic
+waves.
+• Nuclear energy comes from reactions and processes that convert measurable amounts of mass into energy.
+Nuclear energy is transformed into radiant energy in the Sun, into thermal energy in the boilers of nuclear
+power plants, and then into electrical energy in the generators of power plants. These and all other forms of
+energy can be transformed into one another and, to a certain degree, can be converted into mechanical work.
+
+364 8 • Potential Energy and Conservation of Energy
+FIGURE 8.13 Energy that we use in society takes many forms, which be converted from one into another depending on the process
+involved. We will study many of these forms of energy in later chapters in this text. (credit “sun”: modification of work by EIT - SOHO
+Consortium, ESA, NASA credit “solar panels”: “modification of work by “kjkolb”/Wikimedia Commons; credit “gas burner”: modification of
+work by Steven Depolo)
+The transformation of energy from one form into another happens all the time. The chemical energy in food is
+converted into thermal energy through metabolism; light energy is converted into chemical energy through
+photosynthesis. Another example of energy conversion occurs in a solar cell. Sunlight impinging on a solar cell
+produces electricity, which can be used to run electric motors or heat water. In an example encompassing many
+steps, the chemical energy contained in coal is converted into thermal energy as it burns in a furnace, to transform
+water into steam, in a boiler. Some of the thermal energy in the steam is then converted into mechanical energy as it
+expands and spins a turbine, which is connected to a generator to produce electrical energy. In these examples, not
+all of the initial energy is converted into the forms mentioned, because some energy is always transferred to the
+environment.
+Energy is an important element at all levels of society. We live in a very interdependent world, and access to
+adequate and reliable energy resources is crucial for economic growth and for maintaining the quality of our lives.
+The principal energy resources used in the world are shown in Figure 8.14. The figure distinguishes between two
+major types of energy sources: renewable and non-renewable, and further divides each type into a few more
+specific kinds. Renewable sources are energy sources that are replenished through naturally occurring, ongoing
+processes, on a time scale that is much shorter than the anticipated lifetime of the civilization using the source.
+Non-renewable sources are depleted once some of the energy they contain is extracted and converted into other
+kinds of energy. The natural processes by which non-renewable sources are formed typically take place over
+geological time scales.
+Access for free at openstax.org
+
+8.5 • Sources of Energy 365
+FIGURE 8.14 World energy consumption by source; the percentage of renewables is increasing, accounting for 19% in 2012.
+Our most important non-renewable energy sources are fossil fuels, such as coal, petroleum, and natural gas. These
+account for about 81% of the world’s energy consumption, as shown in the figure. Burning fossil fuels creates
+chemical reactions that transform potential energy, in the molecular structures of the reactants, into thermal energy
+and products. This thermal energy can be used to heat buildings or to operate steam-driven machinery. Internal
+combustion and jet engines convert some of the energy of rapidly expanding gases, released from burning gasoline,
+into mechanical work. Electrical power generation is mostly derived from transferring energy in expanding steam,
+via turbines, into mechanical work, which rotates coils of wire in magnetic fields to generate electricity. Nuclear
+energy is the other non-renewable source shown in Figure 8.14 and supplies about 3% of the world’s consumption.
+Nuclear reactions release energy by transforming potential energy, in the structure of nuclei, into thermal energy,
+analogous to energy release in chemical reactions. The thermal energy obtained from nuclear reactions can be
+transferred and converted into other forms in the same ways that energy from fossil fuels are used.
+An unfortunate byproduct of relying on energy produced from the combustion of fossil fuels is the release of carbon
+dioxide into the atmosphere and its contribution to global warming. Nuclear energy poses environmental problems
+as well, including the safety and disposal of nuclear waste. Besides these important consequences, reserves of non-
+renewable sources of energy are limited and, given the rapidly growing rate of world energy consumption, may not
+last for more than a few hundred years. Considerable effort is going on to develop and expand the use of renewable
+sources of energy, involving a significant percentage of the world’s physicists and engineers.
+Four of the renewable energy sources listed in Figure 8.14—those using material from plants as fuel (biomass heat,
+ethanol, biodiesel, and biomass electricity)—involve the same types of energy transformations and conversions as
+just discussed for fossil and nuclear fuels. The other major types of renewable energy sources are hydropower, wind
+power, geothermal power, and solar power.
+Hydropower is produced by converting the gravitational potential energy of falling or flowing water into kinetic
+energy and then into work to run electric generators or machinery. Converting the mechanical energy in ocean
+surface waves and tides is in development. Wind power also converts kinetic energy into work, which can be used
+directly to generate electricity, operate mills, and propel sailboats.
+The interior of Earth has a great deal of thermal energy, part of which is left over from its original formation
+(gravitational potential energy converted into thermal energy) and part of which is released from radioactive
+minerals (a form of natural nuclear energy). It will take a very long time for this geothermal energy to escape into
+space, so people generally regard it as a renewable source, when actually, it’s just inexhaustible on human time
+scales.
+The source of solar power is energy carried by the electromagnetic waves radiated by the Sun. Most of this energy is
+carried by visible light and infrared (heat) radiation. When suitable materials absorb electromagnetic waves, radiant
+energy is converted into thermal energy, which can be used to heat water, or when concentrated, to make steam and

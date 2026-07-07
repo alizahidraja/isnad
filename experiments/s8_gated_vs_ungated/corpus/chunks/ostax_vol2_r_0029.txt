@@ -1,0 +1,245 @@
+# REAL PDF — openstax_vol2.pdf, pages 160-167
+############################################################
+
+150 Chapter 4 | The Second Law of Thermodynamics
+With a heat engine working between two heat reservoirs, we get outWand put in Q , so the efficiency of the engine is
+h
+e= W =1− Q c. (4.2)
+Q Q
+h h
+Here, we usedEquation 4.1, W =Q
+h
+−Q c, in the final step of this expression for the efficiency.
+Example 4.1
+A Lawn Mower
+A lawn mower is rated to have an efficiency of 25.0% and an average power of 3.00 kW. What are (a) the
+average work and (b) the minimum heat discharge into the air by the lawn mower in one minute of use?
+Strategy
+From the average power—that is, the rate of work production—we can figure out the work done in the given
+elapsedtime.Then,fromtheefficiencygiven,wecanfigureouttheminimumheatdischarge Q c=Q
+h
+(1−e)
+with Q
+h
+=Q c+W.
+Solution
+a. The average work delivered by the lawn mower is
+W =PΔt=3.00×10 3 ×60×1.00J=180kJ.
+b. The minimum heat discharged into the air is given by
+Q c=Q
+h
+(1−e)=(Q c+W)(1−e),
+which leads to
+Q c=W(1/e−1)=180×(1/0.25−1)kJ=540kJ.
+Significance
+As the efficiency rises, the minimum heat discharged falls. This helps our environment and atmosphere by not
+having as much waste heat expelled.
+4.3 | Refrigerators and Heat Pumps
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe a refrigerator and a heat pump and list their differences
+• Calculate the performance coefficients of simple refrigerators and heat pumps
+Thecyclesweusedtodescribetheengineintheprecedingsectionareallreversible,soeachsequenceofstepscanjustas
+easilybeperformedintheoppositedirection.Inthiscase,theengineisknownasarefrigeratororaheatpump,depending
+onwhatisthefocus:theheatremovedfromthecoldreservoirortheheatdumpedtothehotreservoir.Eitherarefrigerator
+oraheatpumpisanenginerunninginreverse.Forarefrigerator,thefocusisonremovingheatfromaspecificarea.For
+aheat pump, the focus is on dumping heat to a specific area.
+Wefirstconsiderarefrigerator(Figure 4.6).Thepurposeofthisengineistoremoveheatfromthecoldreservoir,which
+isthespaceinsidetherefrigeratorforanactualhouseholdrefrigeratororthespaceinsideabuildingforanair-conditioning
+unit.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 151
+Figure 4.6 A schematic representation of a refrigerator (or a
+heat pump). The arrow next to work (W) indicates work being
+put into the system.
+A refrigerator (or heat pump) absorbs heat Q from the cold reservoir at Kelvin temperature T and discards heat Q
+c c h
+to the hot reservoir at Kelvin temperature T , while work W is done on the engine’s working substance, as shown by
+h
+the arrow pointing toward the system in the figure. A household refrigerator removes heat from the food within it while
+exhaustingheattothesurroundingair.Therequiredwork,forwhichwepayinourelectricitybill,isperformedbythemotor
+that moves a coolant through the coils. A schematic sketch of a household refrigerator is given inFigure 4.7.
+
+152 Chapter 4 | The Second Law of Thermodynamics
+Figure 4.7 A schematic diagram of a household refrigerator. A coolant with a
+boiling temperature below the freezing point of water is sent through the cycle
+(clockwise in this diagram). The coolant extracts heat from the refrigerator at the
+evaporator, causing coolant to vaporize. It is then compressed and sent through the
+condenser, where it exhausts heat to the outside.
+The effectiveness or coefficient of performance K of a refrigerator is measured by the heat removed from the cold
+R
+reservoir divided by the work done by the working substance cycle by cycle:
+Q Q (4.3)
+K = c = c .
+R W Q
+h
+−Q
+c
+Note that we have used the condition of energy conservation, W =Q
+h
+−Q c, in the final step of this expression.
+Theeffectiveness orcoefficientofperformance K ofaheatpumpismeasuredbytheheatdumpedtothehotreservoir
+P
+divided by the work done to the engine on the working substance cycle by cycle:
+Q Q (4.4)
+K = h = h .
+P W Q
+h
+−Q
+c
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 153
+Once again, we use the energy conservation condition W =Q
+h
+−Q
+c
+to obtain the final step of this expression.
+4.4 | Statements of the Second Law of Thermodynamics
+Learning Objectives
+By the end of this section, you will be able to:
+• Contrast the second law of thermodynamics statements according to Kelvin and Clausius
+formulations
+• Interpret the second of thermodynamics via irreversibility
+Earlier in this chapter, we introduced the Clausius statement of the second law of thermodynamics, which is based on
+the irreversibility of spontaneous heat flow. As we remarked then, the second law of thermodynamics can be stated in
+several different ways, and all of them can be shown to imply the others. In terms of heat engines, the second law of
+thermodynamics may be stated as follows:
+Second Law of Thermodynamics (Kelvin statement)
+It is impossible to convert the heat from a single source into work without any other effect.
+ThisisknownastheKelvinstatementofthesecondlawofthermodynamics.Thisstatementdescribesanunattainable
+“ perfect engine,” as represented schematically in Figure 4.8(a). Note that “without any other effect” is a very strong
+restriction. For example, an engine can absorb heat and turn it all into work, but not if it completes a cycle. Without
+completing a cycle, the substance in the engine is not in its original state and therefore an “other effect” has occurred.
+Anotherexampleisachamberofgasthatcanabsorbheatfromaheatreservoiranddoworkisothermallyagainstapiston
+asitexpands.However,ifthegaswerereturnedtoitsinitialstate(thatis,madetocompleteacycle),itwouldhavetobe
+compressed and heat would have to be extracted from it.
+TheKelvinstatementisamanifestationofawell-knownengineeringproblem.Despiteadvancingtechnology,wearenot
+abletobuildaheatenginethatis 100% efficient.Thefirstlawdoesnotexcludethepossibilityofconstructingaperfect
+engine, but the second law forbids it.
+Figure 4.8 (a) A “perfect heat engine” converts all input heat into work. (b) A “perfect
+refrigerator” transports heat from a cold reservoir to a hot reservoir without work input. Neither
+of these devices is achievable in reality.
+WecanshowthattheKelvinstatementisequivalenttotheClausiusstatementifweviewthetwoobjectsintheClausius
+statement as a cold reservoir and a hot reservoir. Thus, the Clausius statement becomes: It is impossible to construct a
+refrigeratorthattransfersheatfromacoldreservoirtoahotreservoirwithoutaidfromanexternalsource.TheClausius
+statementisrelatedtotheeverydayobservationthatheatneverflowsspontaneouslyfromacoldobjecttoahotobject.Heat
+transferinthedirectionofincreasingtemperaturealwaysrequiressomeenergyinput.A“perfectrefrigerator,”shownin
+Figure 4.8(b), which works without such external aid, is impossible to construct.
+
+154 Chapter 4 | The Second Law of Thermodynamics
+ToprovetheequivalenceoftheKelvinandClausiusstatements,weshowthatifonestatementisfalse,itnecessarilyfollows
+thattheotherstatementisalsofalse.LetusfirstassumethattheClausiusstatementisfalse,sothattheperfectrefrigerator
+ofFigure 4.8(b)doesexist.TherefrigeratorremovesheatQfromacoldreservoiratatemperature T andtransfersall
+c
+of it to a hot reservoir at a temperature T . Now consider a real heat engine working in the same temperature range. It
+h
+extractsheat Q+ΔQ fromthehotreservoir,doesworkW,anddiscardsheatQtothecoldreservoir.Fromthefirstlaw,
+these quantities are related by W =(Q+ΔQ)−Q=ΔQ.
+Suppose these two devices are combined as shown in Figure 4.9. The net heat removed from the hot reservoir is ΔQ,
+nonetheattransferoccurstoorfromthecoldreservoir,andworkWisdoneonsomeexternalbody.Since W =ΔQ,the
+combinationofaperfectrefrigeratorandarealheatengineisitselfaperfectheatengine,therebycontradictingtheKelvin
+statement. Thus, if the Clausius statement is false, the Kelvin statement must also be false.
+Figure 4.9 Combining a perfect refrigerator and a real heat
+engine yields a perfect heat engine because W =ΔQ.
+Usingthesecondlawofthermodynamics,wenowprovetwoimportantpropertiesofheatenginesoperatingbetweentwo
+heat reservoirs. The first property is that any reversible engine operating between two reservoirs hasagreater efficiency
+than any irreversible engine operating between the same two reservoirs.
+Thesecondpropertytobedemonstratedisthatallreversibleenginesoperatingbetweenthesametworeservoirshavethe
+same efficiency. To show this, we start with the two engines D and E of Figure 4.10(a), which are operating between
+two common heat reservoirs at temperatures T
+h
+andT c. First, we assume that D is a reversible engine and that E is a
+hypotheticalirreversibleenginethathasahigherefficiencythanD.Ifbothenginesperformthesameamountofwork W
+per cycle, it follows fromEquation 4.2that Q
+h
+>Q′
+h
+. It then follows from the first law that Q c>Q′
+c
+.
+Figure 4.10 (a) Two uncoupled engines D and E working between the same reservoirs. (b) The coupled engines, with D
+working in reverse.
+SupposethecycleofDisreversedsothatitoperatesasarefrigerator,andthetwoenginesarecoupledsuchthatthework
+outputofEisusedtodriveD,asshowninFigure4.10(b).Since Q
+h
+>Q′
+h
+and Q c>Q′
+c
+, thenetresultofeachcycleis
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 155
+equivalenttoaspontaneoustransferofheatfromthecoldreservoirtothehotreservoir,aprocessthesecondlawdoesnot
+allow.Theoriginalassumptionmustthereforebewrong,anditisimpossibletoconstructanirreversibleenginesuchthatE
+is more efficient than the reversible engine D.
+Nowitisquiteeasytodemonstratethattheefficienciesofallreversibleenginesoperatingbetweenthesamereservoirsare
+equal. Supposethat DandEare bothreversible engines. Ifthey are coupled asshowninFigure 4.10(b),the efficiency
+ofEcannotbegreaterthantheefficiencyofD,orthesecondlawwouldbeviolated.Ifbothenginesarethenreversed,the
+samereasoningimpliesthattheefficiencyofDcannotbegreaterthantheefficiencyofE.Combiningtheseresultsleadsto
+the conclusion that all reversible engines working between the same two reservoirs have the same efficiency.
+4.1 CheckYourUnderstandingWhatistheefficiencyofaperfectheatengine?Whatisthecoefficientof
+performance of a perfect refrigerator?
+4.2 Check Your Understanding Show that Q
+h
+−Q′
+h
+=Q c−Q′
+c
+for the hypothetical engine of Figure
+4.10(b).
+4.5 | The Carnot Cycle
+Learning Objectives
+• Describe the Carnot cycle with the roles of all four processes involved
+• Outline the Carnot principle and its implications
+• Demonstrate the equivalence of the Carnot principle and the second law of thermodynamics
+Intheearly1820s,SadiCarnot(1786−1832),aFrenchengineer,becameinterestedinimprovingtheefficienciesofpractical
+heat engines. In 1824, his studies led him to propose a hypothetical working cycle with the highest possible efficiency
+between the same two reservoirs, known now as the Carnot cycle. An engine operating in this cycle is called a Carnot
+engine. The Carnot cycle is of special importance for a variety of reasons. At a practical level, this cycle represents a
+reversible model for the steam power plant and the refrigerator or heat pump. Yet, it is also very important theoretically,
+foritplaysamajorroleinthedevelopmentofanotherimportantstatementofthesecondlawofthermodynamics.Finally,
+becauseonlytworeservoirsareinvolvedinitsoperation,itcanbeusedalongwiththesecondlawofthermodynamicsto
+define an absolute temperature scale that is truly independent of any substance used for temperature measurement.
+With an ideal gas as the working substance, the steps of the Carnot cycle, as represented byFigure 4.11, are as follows.
+1. Isothermal expansion. The gas is placed in thermal contact with a heat reservoir at a temperature T . The gas
+h
+absorbs heat Q from the heat reservoir and is allowed to expand isothermally, doing work W . Because the
+h 1
+internalenergy E ofanidealgasisafunctionofthetemperatureonly,thechangeoftheinternalenergyiszero,
+int
+thatis, ΔE =0 duringthisisothermalexpansion.Withthefirstlawofthermodynamics, ΔE =Q−W, we
+int int
+find that the heat absorbed by the gas is
+V
+Q =W =nRT ln N .
+h 1 h V
+M
+
+156 Chapter 4 | The Second Law of Thermodynamics
+Figure 4.11 The four processes of the Carnot cycle. The working substance is assumed to be an
+ideal gas whose thermodynamic pathMNOPis represented inFigure 4.12.
+Figure 4.12 The total work done by the gas in the Carnot cycle
+is shown and given by the area enclosed by the loopMNOPM.
+2. Adiabatic expansion.The gas is thermally isolated and allowed to expand further,doing work W . Because this
+2
+expansionisadiabatic,thetemperatureofthegasfalls—inthiscase,from T
+h
+toT c. From pVγ = constant and
+the equation of state for an ideal gas, pV =nRT, we have
+γ−1
+TV =constant,
+so that
+γ−1 γ−1
+T h V N =T c V O .
+3. Isothermal compression. The gas is placed in thermal contact with a cold reservoir at temperature T and
+c
+compressed isothermally. During this process, work W is done on the gas and it gives up heat Q to the cold
+3 c
+reservoir. The reasoning used in step 1 now yields
+V
+Q c=nRT c ln V O ,
+P
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

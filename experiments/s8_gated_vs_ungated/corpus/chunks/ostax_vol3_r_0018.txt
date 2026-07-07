@@ -1,0 +1,278 @@
+# REAL PDF — openstax_vol3.pdf, pages 111-116
+############################################################
+
+Chapter 2 | Geometric Optics and Image Formation 103
+CHAPTER 2 REVIEW
+KEY TERMS
+aberration distortion in an image caused by departures from the small-angle approximation
+accommodation use of the ciliary muscles to adjust the shape of the eye lens for focusing on near or far objects
+angular magnification ratio of the angle subtended by an object observed with a magnifier to that observed by the
+naked eye
+apparent depth depth at which an object is perceived to be located with respect to an interface between two media
+Cassegrain design arrangementofanobjectiveandeyepiecesuchthatthelight-gatheringconcavemirrorhasaholein
+the middle, and light then is incident on an eyepiece lens
+charge-coupled device (CCD) semiconductorchipthatconvertsalightimageintotinypixelsthatcanbeconverted
+into electronic signals of color and intensity
+coma similar to spherical aberration, but arises when the incoming rays are not parallel to the optical axis
+compound microscope microscope constructed from two convex lenses, the first serving as the eyepiece and the
+second serving as the objective lens
+concave mirror spherical mirror with its reflecting surface on the inner side of the sphere; the mirror forms a “cave”
+converging (or convex) lens lensinwhichlightraysthatenteritparallelconvergeintoasinglepointontheopposite
+side
+convex mirror spherical mirror with its reflecting surface on the outer side of the sphere
+curved mirror mirror formed by a curved surface, such as spherical, elliptical, or parabolic
+diverging (or concave) lens lens that causes light rays to bend away from its optical axis
+eyepiece lens or combination of lenses in an optical instrument nearest to the eye of the observer
+far point furthest point an eye can see in focus
+farsightedness (or hyperopia) visual defect in which near objects appear blurred because their images are focused
+behind the retina rather than on the retina; a farsighted person can see far objects clearly but near objects appear
+blurred
+first focus or object focus objectlocatedatthispointwillresultinanimagecreatedatinfinityontheoppositesideof
+a spherical interface between two media
+focal length distance along the optical axis from the focal point to the optical element that focuses the light rays
+focal plane plane that contains the focal point and is perpendicular to the optical axis
+focal point foraconverginglensormirror,thepointatwhichconverginglightrayscross;foradiverginglensormirror,
+the point from which diverging light rays appear to originate
+image distance distance of the image from the central axis of the optical element that produces the image
+linear magnification ratio of image height to object height
+magnification ratio of image size to object size
+near point closest point an eye can see in focus
+nearsightedness (or myopia) visual defect in which far objects appear blurred because their images are focused in
+frontoftheretinaratherthanontheretina;anearsightedpersoncanseenearobjectsclearlybutfarobjectsappear
+blurred
+net magnification (M )ofthecompoundmicroscopeistheproductofthelinearmagnificationoftheobjectiveand
+net
+the angular magnification of the eyepiece
+Newtonian design arrangementofanobjectiveandeyepiecesuchthatthefocusedlightfromtheconcavemirrorwas
+reflected to one side of the tube into an eyepiece
+
+104 Chapter 2 | Geometric Optics and Image Formation
+object distance
+distance of the object from the central axis of the optical element that produces its image
+objective lens nearest to the object being examined.
+optical axis axis about which the mirror is rotationally symmetric; you can rotate the mirror about this axis without
+changing anything
+optical power (P)inverseofthefocallengthofalens,withthefocallengthexpressedinmeters.TheopticalpowerPof
+a lens is expressed in units of diopters D; that is, 1D=1/m=1m−1
+plane mirror plane (flat) reflecting surface
+ray tracing technique that uses geometric constructions to find and characterize the image formed by an optical system
+real image image that can be projected onto a screen because the rays physically go through the image
+second focus or image focus for a converging interface, the point where a bundle of parallel rays refracting at a
+sphericalinterface;foradiverginginterface,thepointatwhichthebackwardcontinuationoftherefractedrayswill
+converge between two media will focus
+simple magnifier (or magnifying glass) converginglensthatproducesavirtualimageofanobjectthatiswithinthe
+focal length of the lens
+small-angle approximation approximation that is valid when the size of a spherical mirror is significantly smaller
+thanthemirror’sradius;inthisapproximation,sphericalaberrationisnegligibleandthemirrorhasawell-defined
+focal point
+spherical aberration distortion in the image formed by a spherical mirror when rays are not all focused at the same
+point
+thin-lens approximation assumption that the lens is very thin compared to the first image distance
+vertex point where the mirror’s surface intersects with the optical axis
+virtual image imagethatcannotbeprojectedonascreenbecausetheraysdonotphysicallygothroughtheimage,they
+only appear to originate from the image
+KEY EQUATIONS
+Image distance in a plane mirror d o=−d
+i
+Focal length for a spherical mirror R
+f =
+2
+Mirror equation 1 1 1
++ =
+d d f
+o i
+Magnification of a spherical mirror h d
+m= i =− i
+h d
+o o
+Sign convention for mirrors
+Focal lengthf +for concave mirror
+−for convex mirror
+Object distanced +for real object
+o
+−for virtual object
+Image distanced +for real image
+i
+−for virtual image
+Magnificationm +for upright image
+−for inverted image
+Apparent depth equation
+h i =
+⎛
+⎝
+n
+n
+2⎞
+⎠ h o
+1
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 105
+Spherical interface equation n n n −n
+1+ 2 = 2 1
+d d R
+o i
+The thin-lens equation 1 1 1
++ =
+d d f
+o i
+The lens maker’s equation 1 f = ⎛ ⎝ n n 2 1 −1 ⎞ ⎠ ⎛ ⎝R 1 1 − R 1 2 ⎞ ⎠
+The magnificationmof an object h d
+m≡ i =− i
+h d
+o o
+Optical power P= 1
+f
+Optical power of thin, closely spaced lenses P =P +P +P +⋯
+total lens1 lens2 lens3
+Angular magnificationMof a simple magnifier θ
+M = image
+θ
+object
+Angular magnification of an object a distance
+M =
+⎛25cm⎞⎛
+1+
+L−ℓ ⎞
+Lfrom the eye for a convex lens of focal length ⎝ L ⎠⎝ f ⎠
+fheld a distanceℓfrom the eye
+Range of angular magnification for a given 25cm ≤M ≤1+ 25cm
+lens for a person with a near point of 25 cm f f
+Net magnification of compound microscope d obj⎛f eye +25cm ⎞
+M =m obj M eye =− i ⎝ ⎠
+net obj eye
+f f
+SUMMARY
+2.1Images Formed by Plane Mirrors
+• A plane mirror always forms a virtual image (behind the mirror).
+• Theimageandobjectarethesamedistancefromaflatmirror,theimagesizeisthesameastheobjectsize,andthe
+image is upright.
+2.2Spherical Mirrors
+• Spherical mirrors may be concave (converging) or convex (diverging).
+• The focal length of a spherical mirror is one-half of its radius of curvature: f =R/2.
+• The mirror equation and ray tracing allow you to give a complete description of an image formed by a spherical
+mirror.
+• Sphericalaberrationoccursforsphericalmirrorsbutnotparabolicmirrors;comaticaberrationoccursforbothtypes
+of mirrors.
+2.3Images Formed by Refraction
+This section explains how a single refracting interface forms images.
+• Whenanobjectisobservedthroughaplaneinterface betweentwomedia,thenitappearsatanapparentdistance
+h
+i
+that differs from the actual distance h
+o
+: h
+i
+=(n
+2
+/n
+1
+)h
+o
+.
+• Animageisformedbytherefractionoflightatasphericalinterfacebetweentwomediaofindicesofrefraction n
+1
+and n .
+2
+
+106 Chapter 2 | Geometric Optics and Image Formation
+• Image distance depends on the radius of curvature of the interface, location of the object, and the indices of
+refraction of the media.
+2.4Thin Lenses
+• Two types of lenses are possible: converging and diverging. A lens that causes light rays to bend toward (away
+from) its optical axis is a converging (diverging) lens.
+• Foraconverginglens,thefocalpointiswheretheconverginglightrayscross;foradiverginglens,thefocalpoint
+is the point from which the diverging light rays appear to originate.
+• The distance from the center of a thin lens to its focal point is called the focal lengthf.
+• Ray tracing is a geometric technique to determine the paths taken by light rays through thin lenses.
+• A real image can be projected onto a screen.
+• A virtual image cannot be projected onto a screen.
+• Aconverginglensformseitherrealorvirtualimages,dependingontheobjectlocation;adiverginglensformsonly
+virtual images.
+2.5The Eye
+• Image formation by the eye is adequately described by the thin-lens equation.
+• The eye produces a real image on the retina by adjusting its focal length in a process called accommodation.
+• Nearsightedness,ormyopia,istheinabilitytoseefarobjectsandiscorrectedwithadiverginglenstoreducethe
+optical power of the eye.
+• Farsightedness,orhyperopia,istheinabilitytoseenearobjectsandiscorrectedwithaconverginglenstoincrease
+the optical power of the eye.
+• Inmyopiaandhyperopia,thecorrectivelensesproduceimagesatdistancesthatfallbetweentheperson’snearand
+far points so that images can be seen clearly.
+2.6The Camera
+• Cameras use combinations of lenses to create an image for recording.
+• Digitalphotographyisbasedoncharge-coupleddevices(CCDs)thatbreakanimageintotiny“pixels”thatcanbe
+converted into electronic signals.
+2.7The Simple Magnifier
+• A simple magnifier is a converging lens and produces a magnified virtual image of an object located within the
+focal length of the lens.
+• Angularmagnificationaccountsformagnificationofanimagecreatedbyamagnifier.Itisequaltotheratioofthe
+angle subtended by the image to that subtended by the object when the object is observed by the unaided eye.
+• Angular magnification is greater for magnifying lenses with smaller focal lengths.
+• Simple magnifiers can produce as great as tenfold (10× ) magnification.
+2.8Microscopes and Telescopes
+• Many optical devices contain more than a single lens or mirror. These are analyzed by considering each element
+sequentially.Theimageformedbythefirstistheobjectforthesecond,andsoon.Thesameray-tracingandthin-
+lens techniques developed in the previous sections apply to each lens element.
+• Theoverallmagnificationofamultiple-elementsystemistheproductofthelinearmagnificationsofitsindividual
+elements times the angular magnification of the eyepiece. For a two-element system with an objective and an
+eyepiece, this is
+obj eye
+M =m M .
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 107
+where m obj is the linear magnification of the objective and M eye is the angular magnification of the eyepiece.
+• The microscope is a multiple-element system that contains more than a single lens or mirror. It allows us to see
+detailthatwecouldnottoseewiththeunaidedeye.Boththeeyepieceandobjectivecontributetothemagnification.
+The magnification of a compound microscope with the image at infinity is
+(16cm)(25cm)
+M =− .
+net obj eye
+f f
+In this equation, 16 cm is the standardized distance between the image-side focal point of the objective lens and
+theobject-sidefocalpointoftheeyepiece,25cmisthenormalnearpointdistance, f obj and f eye arethefocal
+distances for the objective lens and the eyepiece, respectively.
+• Simple telescopes can be made with two lenses. They are used for viewing objects at large distances.
+• The angular magnificationMfor a telescope is given by
+obj
+f
+M =− ,
+eye
+f
+where f obj and f eye are the focal lengths of the objective lens and the eyepiece, respectively.
+CONCEPTUAL QUESTIONS
+9. Underwhat circumstances will animage belocated at
+2.1Images Formed by Plane Mirrors the focal point of a spherical lens or mirror?
+1. What are the differences between real and virtual
+images? How can you tell (by looking) whether an image 10. What is meant by a negative magnification? What is
+formed by a single lens or mirror is real or virtual? meantbyamagnificationwhoseabsolutevalueislessthan
+one?
+2. Can you see a virtual image? Explain your response.
+11. Cananimagebelargerthantheobjecteventhoughits
+magnification is negative? Explain.
+3. Can you photograph a virtual image?
+4. Can you project a virtual image onto a screen?
+2.3Images Formed by Refraction
+5. Isit necessary toproject areal image ontoascreen to 12. Derivetheformulafortheapparentdepthofafishin
+see it? a fish tank using Snell’s law.
+6. Devise an arrangement of mirrors allowing you to see 13. Use a ruler and a protractor to find the image by
+the back of your head. What is the minimum number of refraction in the following cases. Assume an air-glass
+mirrors needed for this task? interface.Usearefractiveindexof1forairandof1.5for
+glass. (Hint: Use Snell’s law at the interface.)
+7. Ifyouwishtoseeyourentirebodyinaflatmirror(from (a)Apointobjectlocatedontheaxisofaconcaveinterface
+head to toe), how tall should the mirror be? Does its size located at a point within the focal length from the vertex.
+dependuponyourdistanceawayfromthemirror?Provide
+(b)Apointobjectlocatedontheaxisofaconcaveinterface
+a sketch.
+located at a point farther than the focal length from the
+vertex.
+(c)Apointobjectlocatedontheaxisofaconvexinterface
+2.2Spherical Mirrors
+located at a point within the focal length from the vertex.
+8. At what distance is an image always located: at
+(d)Apointobjectlocatedontheaxisofaconvexinterface
+d o, d
+i
+, orf?
+located at a point farther than the focal length from the
+vertex.

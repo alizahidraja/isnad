@@ -1,0 +1,459 @@
+# REAL PDF — openstax_vol2.pdf, pages 214-222
+############################################################
+
+204 Chapter 5 | Electric Charges and Fields
+Significance
+It is a very common and very useful technique in physics to check whether your answer is reasonable by
+evaluating it at extreme cases. In this example, we should evaluate the field expressions for the cases d =0,
+z≫d, and z→∞, and confirm that the resulting expressions match our physical expectations. Let’s do so:
+Let’sstartwithEquation 5.5,thefieldoftwoidenticalcharges.Fromfaraway(i.e., z≫d), thetwosource
+chargesshould“merge”andweshouldthen“see”thefieldofjustonecharge,ofsize2q.So,let z≫d; thenwe
+can neglect d2 inEquation 5.5to obtain
+→
+1
+2qz ^
+lim E = k
+d→0 4πε 0 ⎡z2⎤ 3/2
+⎣ ⎦
+1
+2qz^
+= k
+4πε
+0
+z3
+= 1
+⎛
+⎝
+2q⎞
+⎠
+^
+k,
+4πε
+0
+z2
+which is the correct expression for a field at a distancezaway from a charge 2q.
+Next, we consider the field of equal and opposite charges, Equation 5.6. It can be shown (via a Taylor
+expansion) that for d ≪z≪∞, this becomes
+→ qd^ (5.7)
+E (z)= 1 i,
+4πε
+0
+z3
+→
+whichisthefieldofadipole,asystemthatwewillstudyinmoredetaillater.(Notethattheunitsof E arestill
+correctinthisexpression,sincetheunitsofdinthenumeratorcanceltheunitofthe“extra”zinthedenominator.)
+Ifzisverylarge (z→∞), then E→0, as it should; the two charges “merge” and so cancel out.
+5.3 Check Your UnderstandingWhat is the electric field due to a single point particle?
+Trythissimulation of electric field hockey (https://openstaxcollege.org/l/21elefielhocke) togetthe
+charge in the goal by placing other charges on the field.
+5.5 | Calculating Electric Fields of Charge Distributions
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain what a continuous source charge distribution is and how it is related to the concept of
+quantization of charge
+• Describe line charges, surface charges, and volume charges
+• Calculate the field of a continuous source charge distribution of either sign
+Thechargedistributionswehaveseensofarhavebeendiscrete:madeupofindividualpointparticles.Thisisincontrast
+with acontinuous charge distribution,which hasat least onenonzero dimension. Ifachargedistribution iscontinuous
+rather than discrete, we can generalize the definition of the electric field. We simply divide the charge into infinitesimal
+pieces and treat each piece as a point charge.
+Notethatbecausechargeisquantized,thereisnosuchthingasa“truly”continuouschargedistribution.However,inmost
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 205
+practicalcases,thetotalchargecreatingthefieldinvolvessuchahugenumberofdiscretechargesthatwecansafelyignore
+thediscretenatureofthechargeandconsiderittobecontinuous.Thisisexactlythekindofapproximationwemakewhen
+we deal with a bucket of water as a continuous fluid, rather than a collection of H O molecules.
+2
+Our first step is to define a charge density for a charge distribution along a line, across a surface, or within a volume, as
+shown inFigure 5.22.
+Figure 5.22 The configuration of charge differential elements for a (a) line charge, (b) sheet of
+charge, and (c) a volume of charge. Also note that (d) some of the components of the total electric field
+cancel out, with the remainder resulting in a net electric field.
+Definitions of charge density:
+• λ≡ charge per unit length (linear charge density); units are coulombs per meter (C/m)
+• σ ≡ charge per unit area (surface charge density); units are coulombs per square meter (C/m2)
+• ρ≡ charge per unit volume (volume charge density); units are coulombs per cubic meter (C/m 3 )
+Then,foralinecharge,asurfacecharge,andavolumecharge,thesummationinEquation 5.4becomesanintegraland
+q
+i
+is replaced by dq=λdl, σdA, or ρdV, respectively:
+N (5.8)
+Point charge: → E (P)= 1 ∑ ⎛q i ⎞ ^ r
+4πε
+0i=1
+⎝ r2⎠
+Line charge: → E (P)= 1 ⌠ ⎛λdl⎞ ^ r (5.9)
+4πε 0⌡
+line
+⎝ r2⎠
+Surface charge: → E (P)= 1 ⌠ ⎛σdA⎞ ^ r (5.10)
+4πε 0⌡
+surface
+⎝ r2 ⎠
+Volume charge: → E (P)= 1 ⌠ ⎛ρdV⎞ ^ r (5.11)
+4πε 0⌡
+volume
+⎝ r2 ⎠
+Theintegralsaregeneralizationsoftheexpressionforthefieldofapointcharge.Theyimplicitlyincludeandassumethe
+principleofsuperposition.The“trick”tousingthemisalmostalwaysincomingupwithcorrectexpressionsfordl,dA,or
+dV,asthecase maybe,expressed interms ofr,andalsoexpressing thechargedensity function appropriately.Itmaybe
+constant; it might be dependent on location.
+Notecarefullythemeaningofrintheseequations:Itisthedistancefromthechargeelement ⎛
+⎝
+q i, λdl, σdA, ρdV⎞
+⎠
+tothe
+locationofinterest, P(x, y, z) (thepointinspacewhereyouwanttodeterminethefield).However,don’tconfusethiswith
+
+206 Chapter 5 | Electric Charges and Fields
+themeaningof ^ r ;weareusingitandthevectornotation → E towritethreeintegralsatonce.Thatis,Equation5.9is
+actually
+E x(P)=
+4π
+1
+ε 0
+⌠
+⌡ line
+⎛
+⎝
+λ
+r
+d
+2
+l⎞ ⎠x, E y(P)=
+4π
+1
+ε 0
+⌠
+⌡ line
+⎛
+⎝
+λ
+r
+d
+2
+l⎞ ⎠y, E z(P)=
+4π
+1
+ε 0
+⌠
+⌡ line
+⎛
+⎝
+λ
+r
+d
+2
+l⎞ ⎠z.
+Example 5.5
+Electric Field of a Line Segment
+FindtheelectricfieldadistancezabovethemidpointofastraightlinesegmentoflengthLthatcarriesauniform
+line charge density λ.
+Strategy
+Sincethisisacontinuouschargedistribution,weconceptuallybreakthewiresegmentintodifferentialpiecesof
+length dl, each of which carries a differential amount of charge dq=λdl. Then, we calculate the differential
+field created by two symmetrically placed pieces of the wire, using the symmetry of the setup to simplify the
+calculation(Figure5.23).Finally,weintegratethisdifferentialfieldexpressionoverthelengthofthewire(half
+of it, actually, as we explain below) to obtain the complete electric field expression.
+Figure 5.23 A uniformly charged segment of wire. The
+electric field at pointPcan be found by applying the
+superposition principle to symmetrically placed charge elements
+and integrating.
+Solution
+Beforewejumpintoit,whatdoweexpectthefieldto“looklike”fromfaraway?Sinceitisafinitelinesegment,
+from far away, it should look like a point charge. We will check the expression we get to see if it meets this
+expectation.
+The electric field for a line charge is given by the general expression
+→ E (P)= 1 ⌠ λdl^ r.
+4πε 0⌡
+line
+r2
+Thesymmetryofthesituation(ourchoiceofthetwoidenticaldifferentialpiecesofcharge)impliesthehorizontal
+(x)-components of the field cancel, so that the net field points in thez-direction. Let’s check this formally.
+→ →
+Thetotalfield E (P) isthevectorsumofthefieldsfromeachofthetwochargeelements(callthem E and
+1
+→
+E , for now):
+2
+→ → → ^ ^ ⎛ ^⎞ ^
+E (P)= E 1 + E 2 =E 1x i +E 1zk +E 2x⎝ −i ⎠ +E 2zk.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 207
+BecausethetwochargeelementsareidenticalandarethesamedistanceawayfromthepointPwherewewantto
+calculate the field, E 1x=E 2x, so those components cancel. This leaves
+→ ^ ^ ^ ^
+E (P)=E 1zk +E 2zk =E
+1
+cosθk +E
+2
+cosθk.
+These components are also equal, so we have
+→ E (P) = 1 ⌠λdl cosθ ^ k + 1 ⌠λdl cosθ ^ k
+4πε 0⌡r2 4πε 0⌡r2
+L/2
+= 1 ⌠ 2λdx cosθ ^ k
+4πε 0⌡ r2
+0
+whereourdifferentiallineelementdlisdx,inthisexample,sinceweareintegratingalongalineofchargethat
+L L L
+liesonthex-axis.(Thelimitsofintegrationare0to ,not − to + ,becausewehaveconstructedthenet
+2 2 2
+field from two differential pieces of charge dq. If we integrated along the entire length, we would pick up an
+erroneous factor of 2.)
+Inprinciple,thisiscomplete.However,toactuallycalculatethisintegral,weneedtoeliminateallthevariables
+thatarenotgiven.Inthiscase,bothrand θ changeasweintegrateoutwardtotheendofthelinecharge,sothose
+are the variables to get rid of. We can do that the same way we did for the two point charges: by noticing that
+1/2
+r = ⎛z2+x2⎞
+⎝ ⎠
+and
+z z
+cosθ= r = .
+1/2
+⎛z2+x2⎞
+⎝ ⎠
+Substituting, we obtain
+L/2
+→ E (P) = 1 ⌠ 2λdx z ^ k
+4πε
+0⌡
+⎛
+⎝
+z2+x2⎞
+⎠⎛z2+x2⎞
+1/2
+0 ⎝ ⎠
+L/2
+⌠
+= 1 ⎮ 2λz dx ^ k
+4πε 3/2
+0
+⌡
+⎛z2+x2⎞
+⎝ ⎠
+0
+L/2
+⎡ ⎤
+2λz x | ^
+= ⎢ ⎥ k
+4πε 0⎣z2 z2+x2⎦ 0
+which simplifies to
+→ E (z)= 1 λL ^ k. (5.12)
+4πε 0 z z2+ L2
+4
+Significance
+Notice,onceagain,theuseofsymmetrytosimplifytheproblem.Thisisaverycommonstrategyforcalculating
+electricfields.Thefieldsofnonsymmetricalchargedistributionshavetobehandledwithmultipleintegralsand
+may need to be calculated numerically by a computer.
+5.4 CheckYourUnderstandingHowwouldthestrategyusedabovechangetocalculatetheelectricfieldat
+a point a distancezabove one end of the finite line segment?
+
+208 Chapter 5 | Electric Charges and Fields
+Example 5.6
+Electric Field of an Infinite Line of Charge
+Find the electric field a distance z above the midpoint of an infinite line of charge that carries a uniform line
+charge density λ.
+Strategy
+This is exactly like the preceding example, except the limits of integration will be −∞ to +∞.
+Solution
+Again, the horizontal components cancel out, so we wind up with
+∞
+→ E (P)= 1 ⌠ λdx cosθ ^ k
+4πε 0⌡
+−∞
+r2
+whereourdifferentiallineelementdlisdx,inthisexample,sinceweareintegratingalongalineofchargethat
+lies on thex-axis. Again,
+z z
+cosθ= r = .
+1/2
+⎛z2+x2⎞
+⎝ ⎠
+Substituting, we obtain
+∞
+→ E (P) = 1 ⌠ λdx z ^ k
+4πε
+0⌡
+−∞
+⎛
+⎝
+z2+x2⎞
+⎠⎛
+⎝
+z2+x2⎞
+⎠
+1/2
+∞
+⌠
+= 1 ⎮ λz dx ^ k
+4πε 3/2
+0
+⌡
+⎛z2+x2⎞
+⎝ ⎠
+−∞
+∞
+⎡ ⎤
+λz x | ^
+= ⎢ ⎥ k,
+4πε 0⎣z2 z2+x2⎦ −∞
+which simplifies to
+→ E (z)= 4π 1 ε 2 z λ^ k.
+0
+Significance
+Ourstrategyforworkingwithcontinuouschargedistributionsalsogivesusefulresultsforchargeswithinfinite
+dimension.
+Inthecaseofafinitelineofcharge,notethatfor z≫L, z2 dominatestheLinthedenominator,sothatEquation5.12
+simplifies to
+→
+1
+λL^
+E ≈ k.
+4πε
+0
+z2
+Ifyourecallthat λL=q,thetotalchargeonthewire,wehaveretrievedtheexpressionforthefieldofapointcharge,as
+expected.
+Inthelimit L→∞,ontheotherhand,wegetthefieldofaninfinitestraightwire,whichisastraightwirewhoselength
+ismuch,muchgreaterthaneitherofitsotherdimensions,andalsomuch,muchgreaterthanthedistanceatwhichthefield
+is to be calculated:
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 209
+→ E (z)= 4π 1 ε 2 z λ^ k. (5.13)
+0
+An interesting artifact of this infinite limit is that we have lost the usual 1/r2 dependence that we are used to. This will
+become even more intriguing in the case of an infinite plane.
+Example 5.7
+Electric Field due to a Ring of Charge
+Aringhasauniformchargedensity λ,withunitsofcoulombperunitmeterofarc.Findtheelectricpotentialat
+a point on the axis passing through the center of the ring.
+Strategy
+Weusethesameprocedureasforthechargedwire.Thedifferencehereisthatthechargeisdistributedonacircle.
+Wedividethecircleintoinfinitesimalelementsshapedasarcsonthecircleandusepolarcoordinatesshownin
+Figure 5.24.
+Figure 5.24 The system and variable for calculating the
+electric field due to a ring of charge.
+Solution
+The electric field for a line charge is given by the general expression
+→ E (P)= 1 ⌠ λdl^ r.
+4πε 0⌡
+line
+r2
+Ageneralelementofthearcbetween θ and θ+dθ isoflength Rdθ andthereforecontainsachargeequalto
+λRdθ. Theelementisatadistanceof r = z2+R2 fromP,theangleis cosϕ= z ,andthereforethe
+z2+R2
+electric field is
+
+210 Chapter 5 | Electric Charges and Fields
+2π
+→ E (P) = 1 ⌠ λdl^ r = 1 ⌠ λRdθ z ^ z
+4πε 0⌡
+line
+r2 4πε 0⌡
+0
+z2+R2 z2+R2
+= 1 λRz ^ z∫
+2π
+dθ= 1 2πλRz ^ z
+4πε 3/2 4πε 3/2
+0 ⎛z2+R2⎞ 0 0 ⎛z2+R2⎞
+⎝ ⎠ ⎝ ⎠
+q z
+= 1 tot ^ z.
+4πε 3/2
+0 ⎛z2+R2⎞
+⎝ ⎠
+Significance
+Asusual,symmetrysimplifiedthisproblem,inthisparticularcaseresultinginatrivialintegral.Also,whenwe
+take the limit of z>>R, we find that
+→
+E ≈
+1 q tot^
+z,
+4πε
+0
+z2
+as we expect.
+Example 5.8
+The Field of a Disk
+FindtheelectricfieldofacircularthindiskofradiusRanduniformchargedensityatadistancezabovethecenter
+of the disk (Figure 5.25)
+Figure 5.25 A uniformly charged disk. As in the line charge
+example, the field above the center of this disk can be calculated
+by taking advantage of the symmetry of the charge distribution.
+Strategy
+The electric field for a surface charge is given by
+→ E (P)= 1 ⌠ σdA^ r.
+4πε 0⌡
+surface
+r2
+To solve surface charge problems, we break the surface into symmetrical differential “stripes” that match the
+shapeofthesurface;here,we’lluserings,asshowninthefigure.Again,bysymmetry,thehorizontalcomponents
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 211
+^
+cancel and the field is entirely in the vertical (k) direction. The vertical component of the electric field is
+extracted by multiplying by cosθ, so
+→ E (P)= 1 ⌠ σdA cosθ ^ k.
+4πε 0⌡
+surface
+r2
+As before, we need to rewrite the unknown factors in the integrand in terms of the given quantities. In this case,
+dA = 2πr′dr′
+r2 = r′2+z2
+z
+cosθ = .
+1/2
+⎛r′2+z2⎞
+⎝ ⎠
+(Pleasetakenoteofthetwodifferent“r’s”here;risthedistancefromthedifferentialringofchargetothepoint
+Pwherewewishtodeterminethefield,whereas r′ isthedistancefromthecenterofthedisktothedifferential
+ring of charge.) Also, we already performed the polar angle integral in writing downdA.
+Solution
+Substituting all this in, we get
+R
+⌠
+→
+E (P) =
+→
+E (z)= 1 ⎮
+σ(2πr′dr′)z^
+k
+4πε 3/2
+0
+⌡
+⎛r′2+z2⎞
+⎝ ⎠
+0
+⎛ ⎞
+^
+= 4π 1 ε 0 (2πσz) ⎝ ⎜1 z − R2 1 +z2⎠ ⎟k
+or, more simply,
+⎛ ⎞ (5.14)
+→ E (z)= 1 ⎜2πσ− 2πσz ⎟ ^ k.
+4πε 0⎝ R2+z2⎠
+Significance
+Again, it can be shown (via a Taylor expansion) that when z≫R, this reduces to
+→
+E (z)≈ 1
+σπR2^
+k,
+4πε
+0
+z2
+which is the expression for a point charge Q=σπR2.
+5.5 Check Your Understanding How would the above limit change with a uniformly charged rectangle
+instead of a disk?
+As R→∞, Equation 5.14 reduces to the field of an infinite plane, which is a flat sheet whose area is much, much
+greater than its thickness, and also much, much greater than the distance at which the field is to be calculated:
+→ σ ^ (5.15)
+E = k.
+2ε
+0
+Notethatthisfieldisconstant.Thissurprisingresultis,again,anartifactofourlimit,althoughonethatwewillmakeuseof
+repeatedlyinthefuture.Tounderstandwhythishappens,imaginebeingplacedaboveaninfiniteplaneofconstantcharge.

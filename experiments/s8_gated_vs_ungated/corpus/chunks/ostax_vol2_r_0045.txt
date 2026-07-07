@@ -1,0 +1,269 @@
+# REAL PDF — openstax_vol2.pdf, pages 268-275
+############################################################
+
+258 Chapter 6 | Gauss's Law
+A note about symbols: We use r′ for locating charges in the charge distribution and r for locating the field
+point(s) at the Gaussian surface(s). The letterRis used for the radius of the charge distribution.
+Aschargedensityisnotconstanthere,weneedtointegratethechargedensityfunctionoverthevolumeenclosed
+by the Gaussian surface. Therefore, we set up the problem for charges in one spherical shell, say between r′
+and r′+dr′, asshowninFigure 6.26.Thevolumeofchargesintheshellofinfinitesimal widthisequalto
+theproductoftheareaofsurface 4πr′2 andthethickness dr′.Multiplyingthevolumewiththedensityatthis
+location, which is ar′ n, gives the charge in the shell:
+dq=ar′ n 4πr′2dr′.
+Figure 6.26 Spherical symmetry with non-uniform charge
+distribution. In this type of problem, we need four radii:Ris the
+radius of the charge distribution,ris the radius of the Gaussian
+surface, r′ is the inner radius of the spherical shell, and
+r′+dr′ is the outer radius of the spherical shell. The spherical
+shell is used to calculate the charge enclosed within the
+Gaussian surface. The range for r′ is from 0 torfor the field at
+a point inside the charge distribution and from 0 toRfor the
+field at a point outside the charge distribution. If r >R, then
+the Gaussian surface encloses more volume than the charge
+distribution, but the additional volume does not contribute to
+q .
+enc
+(a)Fieldatapointoutsidethechargedistribution.Inthiscase,theGaussiansurface,whichcontainsthefield
+pointP,hasaradiusrthatisgreaterthantheradiusRofthechargedistribution, r >R.Therefore,allchargesof
+thechargedistributionareenclosedwithintheGaussiansurface.Notethatthespacebetween r′=R and r′=r
+isemptyofchargesandthereforedoesnotcontributetotheintegraloverthevolumeenclosedbytheGaussian
+surface:
+R
+q enc=∫ dq=∫ ar′ n 4πr′2dr′=
+n
+4
++
+πa
+3
+R n+3 .
+0
+→
+This is used in the general result for E above to obtain the electric field at a point outside the charge
+out
+distribution as
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 259
+→ ⎡ aR n+3 ⎤ 1 ^
+E = r,
+out ⎣ε
+0
+(n+3)⎦ r2
+where ^ r is a unit vector in the direction from the origin to the field point at the Gaussian surface.
+(b) Field at a point inside the charge distribution. The Gaussian surface is now buried inside the charge
+distribution,with r <R.Therefore,onlythosechargesinthedistributionthatarewithinadistancerofthecenter
+of the spherical charge distribution count in r :
+enc
+r
+q enc=⌠
+⌡
+ar′ n 4πr′2 dr′=
+n
+4
++
+πa
+3
+r n+3 .
+0
+→
+Now,usingthegeneralresultabovefor E , wefindtheelectricfieldatapointthatisadistancerfromthe
+in
+center and lies within the charge distribution as
+→
+E =
+⎡ a ⎤
+r
+n+1^
+r,
+in ⎣ε (n+3)⎦
+0
+where the direction information is included by using the unit radial vector.
+6.4 CheckYourUnderstandingCheckthattheelectricfieldsforthespherereducetothecorrectvaluesfor
+a point charge.
+Charge Distribution with Cylindrical Symmetry
+Achargedistributionhascylindricalsymmetryifthechargedensitydependsonlyuponthedistancerfromtheaxisofa
+cylinderandmustnotvaryalongtheaxisorwithdirectionabouttheaxis.Inotherwords,ifyoursystemvariesifyourotate
+it around the axis, or shift it along the axis, you do not have cylindrical symmetry.
+Figure 6.27 shows four situations in which charges are distributed in a cylinder. A uniform charge density ρ . in an
+0
+infinitestraightwirehasacylindricalsymmetry,andsodoesaninfinitelylongcylinderwithconstantchargedensity ρ .
+0
+Aninfinitelylongcylinderthathasdifferentchargedensitiesalongitslength,suchasachargedensity ρ for z>0 and
+1
+ρ ≠ ρ for z<0,doesnothaveausablecylindricalsymmetryforthiscourse.Neitherdoesacylinderinwhichcharge
+2 1
+densityvarieswiththedirection,suchasachargedensity ρ for 0≤θ<π and ρ ≠ ρ for π ≤θ<2π.Asystemwith
+1 2 1
+concentriccylindricalshells,eachwithuniformchargedensities,albeitdifferentindifferentshells,asinFigure 6.27(d),
+does have cylindrical symmetry if they are infinitely long. The infinite length requirement is due to the charge density
+changing along the axis of a finite cylinder. In real systems, we don’t have infinite cylinders; however, if the cylindrical
+objectisconsiderablylongerthantheradiusfromitthatweareinterestedin,thentheapproximationofaninfinitecylinder
+becomes useful.
+
+260 Chapter 6 | Gauss's Law
+Figure 6.27 To determine whether a given charge distribution has cylindrical symmetry,
+look at the cross-section of an “infinitely long” cylinder. If the charge density does not
+depend on the polar angle of the cross-section or along the axis, then you have cylindrical
+symmetry. (a) Charge density is constant in the cylinder; (b) upper half of the cylinder has a
+different charge density from the lower half; (c) left half of the cylinder has a different
+charge density from the right half; (d) charges are constant in different cylindrical rings, but
+the density does not depend on the polar angle. Cases (a) and (d) have cylindrical symmetry,
+whereas (b) and (c) do not.
+Consequences of symmetry
+→
+In all cylindrically symmetrical cases, the electric field E P at any pointPmust also display cylindrical symmetry.
+Cylindrical symmetry: → E P=E P(r) ^ r ,
+whereris the distance from the axis and ^ r is a unit vector directed perpendicularly away from the axis (Figure 6.28).
+Figure 6.28 The electric field in a cylindrically symmetrical
+situation depends only on the distance from the axis. The
+direction of the electric field is pointed away from the axis for
+positive charges and toward the axis for negative charges.
+Gaussian surface and flux calculation
+To make use of the direction and functional dependence of the electric field, we choose a closed Gaussian surface in the
+shapeofacylinderwiththesameaxisastheaxisofthechargedistribution.Thefluxthroughthissurfaceofradiussand
+heightLiseasytocomputeifwedivideourtaskintotwoparts:(a)afluxthroughtheflatendsand(b)afluxthroughthe
+curved surface (Figure 6.29).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 261
+Figure 6.29 The Gaussian surface in the case of cylindrical
+symmetry. The electric field at a patch is either parallel or
+perpendicular to the normal to the patch of the Gaussian surface.
+Theelectricfieldisperpendiculartothecylindricalsideandparalleltotheplanarendcapsofthesurface.Thefluxthrough
+the cylindrical part is
+⌠ → E · ^ n dA=E∫ dA=E(2πrL),
+⌡ S S
+whereas the flux through the end caps is zero because → E · ^ n =0 there. Thus, the flux is
+→ ^
+∫ E ·n dA=E(2πrL)+0+0=2πrLE.
+S
+Using Gauss’s law
+AccordingtoGauss’slaw,thefluxmustequaltheamountofchargewithinthevolumeenclosedbythissurface,dividedby
+thepermittivityoffreespace.WhenyoudothecalculationforacylinderoflengthL,youfindthat q ofGauss’slawis
+enc
+directly proportional toL. Let us write it as charge per unit length (λ enc) times lengthL:
+q enc=λ
+enc
+L.
+Hence,Gauss’slawforanycylindricallysymmetricalchargedistributionyieldsthefollowingmagnitudeoftheelectricfield
+a distancesaway from the axis:
+λ
+Magnitude:E(r)=
+2π
+e
+ε
+nc 1 r.
+0
+Thechargeperunitlength λ dependsonwhetherthefieldpointisinsideoroutsidethecylinderofchargedistribution,
+enc
+just as we have seen for the spherical distribution.
+Computing enclosed charge
+Let R be the radius of the cylinder within which charges are distributed in a cylindrically symmetrical way. Let the field
+pointPbeatadistancesfromtheaxis.(ThesideoftheGaussiansurfaceincludesthefieldpointP.)When r >R (thatis,
+whenPisoutsidethechargedistribution),theGaussiansurfaceincludesallthechargeinthecylinderofradiusRandlength
+L.When r <R (Pislocatedinsidethechargedistribution),thenonlythechargewithinacylinderofradiussandlengthL
+is enclosed by the Gaussian surface:
+⎧(total charge)ifr ≥R
+λ enc L= ⎩ ⎨ (only charge withinr <R)ifr <R .
+
+262 Chapter 6 | Gauss's Law
+Example 6.8
+Uniformly Charged Cylindrical Shell
+A very long non-conducting cylindrical shell of radius R has a uniform surface charge densityσ . Find the
+0
+electric field (a) at a point outside the shell and (b) at a point inside the shell.
+Strategy
+Apply the Gauss’s law strategy given earlier, where we treat the cases inside and outside the shell separately.
+Solution
+a. Electricfieldatapointoutsidetheshell.Forapointoutsidethecylindricalshell,theGaussiansurface
+isthesurfaceofacylinderofradius r >R andlengthL,asshowninFigure6.30.Thechargeenclosed
+by the Gaussian cylinder is equal to the charge on the cylindrical shell of length L. Therefore, λ is
+enc
+given by
+σ 2πRL
+λ enc= 0
+L
+=2πRσ
+0
+.
+Figure 6.30 A Gaussian surface surrounding a cylindrical
+shell.
+Hence, the electric field at a pointPoutside the shell at a distanceraway from the axis is
+→ E = 2 2 π π R ε σ o 0 1 r ^ r = R ε σ o 0 1 r ^ r (r >R)
+where ^ r is a unit vector, perpendicular to the axis and pointing away from it, as shown in the figure.
+TheelectricfieldatPpointsinthedirectionof ^ r giveninFigure6.30if σ >0 andintheopposite
+0
+direction to ^ r if σ <0.
+0
+b. Electricfieldatapointinsidetheshell.Forapointinsidethecylindricalshell,theGaussiansurfaceis
+a cylinder whose radius r is less than R (Figure 6.31). This means no charges are included inside the
+Gaussian surface:
+λ enc=0.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 263
+Figure 6.31 A Gaussian surface within a cylindrical shell.
+This gives the following equation for the magnitude of the electric field E at a point whose r is less
+in
+thanRof the shell of charges.
+E 2πrL=0(r <R),
+in
+This gives us
+E =0(r <R).
+in
+Significance
+Noticethattheresultinsidetheshellisexactlywhatweshouldexpect:Noenclosedchargemeanszeroelectric
+field. Outside the shell, the result becomes identical to a wire with uniform charge Rσ .
+0
+6.5 Check Your Understanding A thin straight wire has a uniform linear charge density λ . Find the
+0
+electric field at a distancedfrom the wire, wheredis much less than the length of the wire.
+Charge Distribution with Planar Symmetry
+Aplanarsymmetryofchargedensityisobtainedwhenchargesareuniformlyspreadoveralargeflatsurface.Inplanar
+symmetry, all points in a plane parallel to the plane of charge are identical with respect to the charges.
+Consequences of symmetry
+We take the plane of the charge distribution to be the xy-plane and we find the electric field at a space point P with
+coordinates (x, y, z). Since the charge density is the same at all (x, y)-coordinates in the z=0 plane, by symmetry, the
+electric field at P cannot depend on the x- or y-coordinates of point P, as shown in Figure 6.32. Therefore, the electric
+fieldatPcanonlydependonthedistancefromtheplaneandhasadirectioneithertowardtheplaneorawayfromtheplane.
+That is, the electric field atPhas only a nonzeroz-component.
+Uniform charges inxyplane: → E =E(z) ^ z
+where z is the distance from the plane and ^ z is the unit vector normal to the plane. Note that in this system,
+E(z)=E(−z), although of course they point in opposite directions.
+
+264 Chapter 6 | Gauss's Law
+Figure 6.32 The components of the electric field parallel to a
+plane of charges cancel out the two charges located
+symmetrically from the field pointP. Therefore, the field at any
+point is pointed vertically from the plane of charges. For any
+pointPand charge q , we can always find a q with this
+1 2
+effect.
+Gaussian surface and flux calculation
+Inthepresentcase,aconvenientGaussiansurfaceisabox,sincetheexpectedelectricfieldpointsinonedirectiononly.To
+keeptheGaussianboxsymmetricalabouttheplaneofcharges,wetakeittostraddletheplaneofthecharges,suchthatone
+facecontainingthefieldpointPistakenparalleltotheplaneofthecharges.InFigure6.33,sidesIandIIoftheGaussian
+surface(thebox)thatareparalleltotheinfiniteplanehavebeenshaded.Theyaretheonlysurfacesthatgiverisetononzero
+flux because the electric field and the area vectors of the other faces are perpendicular to each other.
+Figure 6.33 A thin charged sheet and the Gaussian box for
+finding the electric field at the field pointP. The normal to each
+face of the box is from inside the box to outside. On two faces of
+the box, the electric fields are parallel to the area vectors, and on
+the other four faces, the electric fields are perpendicular to the
+area vectors.
+Let A be the area of the shaded surface on each side of the plane and E be the magnitude of the electric field at point
+P
+P.SincesidesIandIIareatthesamedistancefromtheplane,theelectricfieldhasthesamemagnitudeatpointsinthese
+planes, although the directions of the electric field at these points in the two planes are opposite to each other.
+Magnitude at I or II: E(z)=E P.
+Ifthechargeontheplane ispositive, thenthedirection oftheelectric field andthearea vectors areasshowninFigure
+6.33. Therefore, we find for the flux of electric field through the box
+→ ^ (6.11)
+Φ=∮ E P·n dA=E P A+E P A+0+0+0+0=2E P A
+S
+where the zeros are for the flux through the other sides of the box. Note that if the charge on the plane is negative, the
+directionsofelectricfieldandareavectorsforplanesIandIIareoppositetoeachother,andwegetanegativesignforthe
+flux.AccordingtoGauss’slaw,thefluxmustequal q enc/ε
+0
+.FromFigure6.33,weseethatthechargesinsidethevolume
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

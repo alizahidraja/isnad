@@ -1,0 +1,320 @@
+# REAL PDF — openstax_vol3.pdf, pages 471-479
+############################################################
+
+Chapter 10 | Nuclear Physics 463
+Figure 10.8 The international ionizing radiation symbol is
+universally recognized as the warning symbol for nuclear
+radiation.
+Radioactive Decay Law
+Whenanindividualnucleustransformsintoanotherwiththeemissionofradiation,thenucleusissaidtodecay.Radioactive
+decayoccursforallnucleiwith Z >82, andalsoforsomeunstableisotopeswith Z <83. Thedecayrateisproportional
+tothenumberoforiginal(undecayed)nucleiNinasubstance.Thenumberofnucleilosttodecay, −dN intimeinterval
+dt, is written
+dN (10.7)
+− =λN
+dt
+where λ is called the decay constant. (The minus sign indicates the number of original nuclei decreases over time.) In
+other words, the more nuclei available to decay, the more that do decay (in timedt). This equation can be rewritten as
+dN (10.8)
+=−λdt.
+N
+Integrating both sides of the equation, and defining N to be the number of nuclei at t=0, we obtain
+0
+N t (10.9)
+⌠ dN′ =−∫ λdt′.
+⌡N
+0
+N
+0
+This gives us
+N (10.10)
+ln =−λt.
+N
+0
+Taking the left and right sides of the equation as a power ofe, we have theradioactive decay law.
+Radioactive Decay Law
+The total numberNof radioactive nuclei remaining after timetis
+N =N e−λt (10.11)
+0
+where λ is the decay constant for the particular nucleus.
+The total number of nuclei drops very rapidly at first, and then more slowly (Figure 10.9).
+
+464 Chapter 10 | Nuclear Physics
+Figure 10.9 A plot of the radioactive decay law demonstrates that the
+number of nuclei remaining in a decay sample drops dramatically during
+the first moments of decay.
+Thehalf-life ⎛T ⎞ ofaradioactivesubstanceisdefinedasthetimeforhalfoftheoriginalnucleitodecay(orthetimeat
+⎝ 1/2⎠
+whichhalfoftheoriginalnucleiremain).Thehalf-livesofunstableisotopesareshowninthechartofnuclidesinFigure
+10.4. The number of radioactive nuclei remaining after an integer (n) number of half-lives is therefore
+N (10.12)
+N = n 0
+2
+If the decay constant (λ) is large, the half-life is small, and vice versa. To determine the relationship between these
+quantities, note that when t=T , then N =N /2. Thus,Equation 10.10can be rewritten as
+1/2 0
+N
+0 =N e
+−λT
+1/2 .
+(10.13)
+2 0
+Dividing both sides by N and taking the natural logarithm yields
+0
+ln 1 =lne
+−λT
+1/2
+(10.14)
+2
+which reduces to
+λ= 0.693 . (10.15)
+T
+1/2
+–
+Thus, if we know the half-life T of a radioactive substance, we can find its decay constant. The lifetime T of a
+1/2
+radioactive substance is defined as the average amount of time that a nucleus exists before decaying. The lifetime of a
+substance is just the reciprocal of the decay constant, written as
+T – = 1 . (10.16)
+λ
+TheactivityAis defined as the magnitude of the decay rate, or
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 465
+A= − dN =λN =λN e−λt . (10.17)
+dt 0
+The infinitesimal change dN in the time interval dt is negative because the number of parent (undecayed) particles is
+decreasing, so the activity (A) is positive. Defining the initial activity as A =λN , we have
+0 0
+A= A e−λt . (10.18)
+0
+Thus, the activityAof a radioactive substance decreases exponentially with time (Figure 10.10).
+Figure 10.10 (a) A plot of the activity as a function of time (b) If we measure the activity at different times, we can plot lnA
+versust, and obtain a straight line.
+Example 10.4
+Decay Constant and Activity of Strontium-90
+Thehalf-lifeofstrontium-90, 90 Sr,is28.8y.Find(a)itsdecayconstantand(b)theinitialactivityof1.00gof
+38
+the material.
+Strategy
+WecanfindthedecayconstantdirectlyfromEquation 10.15.Todeterminetheactivity,wefirstneedtofind
+the number of nuclei present.
+Solution
+a. The decay constant is found to be
+λ= 0.693 = ⎛ 0.693 ⎞⎛ 1yr ⎞ =7.61×10 −10 s−1.
+T ⎝T ⎠⎝ 7 ⎠
+1/2 1/2 3.16×10 s
+b. The atomic mass of
+3
+9
+8
+0 Sr is 89.91 g. Using Avogadro’s number N A=6.022×10 23 atoms/mol, we
+find the initial number of nuclei in 1.00 g of the material:
+N
+0
+=
+8
+1
+9
+.0
+.9
+0
+1
+g
+g
+(N A)=6.70×1021 nuclei.
+From this, we find that the activity A at t=0 for 1.00 g of strontium-90 is
+0
+
+466 Chapter 10 | Nuclear Physics
+A =λN
+0 0
+=(7.61×10 −10 s−1)(6.70×1021nuclei)
+=5.10×1012 decays/s.
+Expressing λ in terms of the half-life of the substance, we get
+A= A e
+−(0.693/T 1/2)T
+1/2 = A e−0.693 = A /2.
+(10.19)
+0 0 0
+Therefore,theactivityishalvedafteronehalf-life.Wecandeterminethedecayconstant λ bymeasuringtheactivityasa
+function of time. Taking the natural logarithm of the left and right sides ofEquation 10.17, we get
+lnA=−λt+lnA . (10.20)
+0
+This equation follows the linear form y=mx+b. If we plot ln A versus t, we expect a straight line with slope
+−λ and y-intercept lnA (Figure 10.10(b)). Activity A is expressed in units of becquerels (Bq), where one
+0
+1Bq=1decay per second.Thisquantitycanalsobeexpressedindecaysperminuteordecaysperyear.Oneofthemost
+commonunitsforactivityisthecurie(Ci),definedtobetheactivityof1gof 226 Ra.TherelationshipbetweentheBq
+and Ci is
+10
+1Ci=3.70×10 Bq.
+Example 10.5
+What is 14 C Activity in Living Tissue?
+Approximately 20% of the human body by mass is carbon. Calculate the activity due to 14C in 1.00 kg of
+carbon found in a living organism. Express the activity in units of Bq and Ci.
+Strategy
+The activity of 14C is determined using the equation A =λN , where λ is the decay constant and N is
+0 0 0
+the number of radioactive nuclei. The number of 14C nuclei in a 1.00-kg sample is determined in two steps.
+First, we determine the number of 12C nuclei using the concept of a mole. Second, we multiply this value
+by 1.3×10−12 (the known abundance of 14C in a carbon sample from a living organism) to determine the
+numberof 14C nucleiinalivingorganism.Thedecayconstantisdeterminedfromtheknownhalf-lifeof 14C
+(available fromFigure 10.4).
+Solution
+Onemoleofcarbonhasamassof12.0g,sinceitisnearlypure 12C.Thus,thenumberofcarbonnucleiina
+kilogram is
+N⎛12C ⎞ = 6.02×10 23 mol−1 ×⎛1000g⎞=5.02×10 25 .
+⎝ ⎠ 12.0g/mol ⎝ ⎠
+The number of 14C nuclei in 1 kg of carbon is therefore
+N⎛14C ⎞
+=
+⎛
+5.02×10
+25⎞⎛ 1.3×10−12⎞
+=6.52×10
+13
+.
+⎝ ⎠ ⎝ ⎠⎝ ⎠
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 467
+Now we can find the activityAby using the equation A=
+0.693N
+. Entering known values gives us
+t
+1/2
+⎛ 13⎞
+0.6936.52×10
+A= ⎝ ⎠ =7.89×10 9 y−1
+5730y
+or 7.89×10 9 decays per year. To convert this to the unit Bq, we simply convert years to seconds. Thus,
+A= ⎛ 7.89×10 9 y−1⎞ 1.00y =250Bq,
+⎝ ⎠ 7
+3.16×10 s
+or 250 decays per second. To expressAin curies, we use the definition of a curie,
+A= 250Bq =6.76×10 −9 Ci.
+10
+3.7×10 Bq/Ci
+Thus,
+A=6.76nCi.
+Significance
+Approximately 20% of the human body by weight is carbon. Hundreds of 14C decays take place in the
+humanbodyeverysecond.Carbon-14andothernaturallyoccurringradioactivesubstancesinthebodycompose
+aperson’sbackgroundexposuretonuclearradiation.Aswewillseelaterinthischapter,thisactivityleveliswell
+below the maximum recommended dosages.
+Radioactive Dating
+Radioactivedatingisatechniquethatusesnaturallyoccurringradioactivitytodeterminetheageofamaterial,suchasa
+rock or an ancient artifact. The basic approach is to estimate the original number of nuclei in a material and the present
+numberofnucleiinthematerial(afterdecay),andthenusetheknownvalueofthedecayconstant λ andEquation10.10
+to calculate the total time of the decay,t.
+An important method of radioactive dating is carbon-14 dating. Carbon-14 nuclei are produced when high-energy solar
+radiationstrikes 14N nucleiintheupperatmosphereandsubsequentlydecaywithahalf-lifeof5730years.Radioactive
+carbonhasthesamechemistryasstablecarbon,soitcombineswiththeecosphereandeventuallybecomespartofevery
+livingorganism.Carbon-14hasanabundanceof1.3partspertrillionofnormalcarbon.Therefore,ifyouknowthenumber
+ofcarbonnucleiinanobject,youmultiplythatnumberby 1.3×10−12 tofindthenumberof 14C nucleiinthatobject.
+When an organism dies, carbon exchange with the environment ceases, and 14C is not replenished as it decays.
+By comparing the abundance of 14C in an artifact, such as mummy wrappings, with the normal abundance in living
+tissue,itispossibletodeterminethemummy’sage(orthetimesincetheperson’sdeath).Carbon-14datingcanbeusedfor
+biologicaltissuesasoldas50,000years,butisgenerallymostaccurateforyoungersamples,sincetheabundanceof 14C
+nucleiinthemisgreater.Veryoldbiologicalmaterialscontainno 14C atall.Thevalidityofcarbondatingcanbechecked
+by other means, such as by historical knowledge or by tree-ring counting.
+Example 10.6
+An Ancient Burial Cave
+Inanancientburialcave,yourteamofarchaeologistsdiscoversancientwoodfurniture.Only 80% oftheoriginal
+14C remains in the wood. How old is the furniture?
+
+468 Chapter 10 | Nuclear Physics
+Strategy
+Theproblemstatementimpliesthat N/N =0.80. Therefore,theequation N =N e−λt canbeusedtofindthe
+0 0
+product, λt.Weknowthehalf-lifeof 14C is5730y,sowealsoknowthedecayconstant,andthereforethetotal
+decay timet.
+Solution
+Solving the equation N =N e−λt for N/N gives us
+0 0
+N =e−λt
+.
+N
+0
+Thus,
+0.80=e−λt
+.
+Taking the natural logarithm of both sides of the equation yields
+ln0.80= −λt,
+so that
+−0.223=−λt.
+Rearranging the equation to isolatetgives us
+t= 0.223 ,
+λ
+where
+λ= 0.693 = 0.693 .
+t 1/2 5730y
+Combining this information yields
+t= 0.223 =1844y.
+⎛0.693⎞
+⎝5730y⎠
+Significance
+Thefurnitureisalmost2000yearsold—animpressivediscovery.Thetypicaluncertaintyoncarbon-14datingis
+about 5%,sothefurnitureisanywherebetween1750and1950yearsold.Thisdaterangemustbeconfirmedby
+other evidence, such as historical records.
+10.3 CheckYourUnderstandingAradioactivenuclidehasahighdecayrate.Whatdoesthismeanforits
+half-life and activity?
+Visit the Radioactive Dating Game (https://openstaxcollege.org/l/21raddatgame) to learn about the
+types of radiometric dating and try your hand at dating some ancient objects.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 469
+10.4 | Nuclear Reactions
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe and compare three types of nuclear radiation
+• Use nuclear symbols to describe changes that occur during nuclear reactions
+• Describe processes involved in the decay series of heavy elements
+Early experiments revealed three types of nuclear “rays” or radiation: alpha (α) rays, beta (β) rays, and gamma (γ)
+rays.Thesethreetypesofradiationaredifferentiatedbytheirabilitytopenetratematter.Alpharadiationisbarelyableto
+passthroughathinsheetofpaper.Betaradiationcanpenetratealuminumtoadepthofabout3mm,andgammaradiation
+can penetrate lead to a depth of 2 or more centimeters (Figure 10.11).
+Figure 10.11 A comparison of the penetration depths of alpha (α), beta (β), and gamma (γ)
+radiation through various materials.
+Theelectricalpropertiesofthesethreetypesofradiationareinvestigatedbypassingthemthroughauniformmagneticfield,
+as shown in Figure 10.12. According to the magnetic force equation → F =q → v × → B , positively charged particles
+are deflected upward, negatively charged particles are deflected downward, and particles with no charge pass through
+the magnetic field undeflected. Eventually, α rays were identified with helium nuclei ⎛4He ⎞ , β rays with electrons and
+⎝ ⎠
+positrons (positively charged electrons or antielectrons), and γ rays with high-energy photons. We discuss alpha, beta,
+and gamma radiation in detail in the remainder of this section.
+
+470 Chapter 10 | Nuclear Physics
+Figure 10.12 The effect of a magnetic field on alpha (α), beta (β), and gamma (γ)
+radiation. This figure is a schematic only. The relative paths of the particles depend on
+their masses and initial kinetic energies.
+Alpha Decay
+Heavy unstable nuclei emit α radiation. In α-particle decay (or alpha decay), the nucleus loses two protons and two
+neutrons,sotheatomicnumberdecreasesbytwo,whereasitsmassnumberdecreasesbyfour.Beforethedecay,thenucleus
+is called the parent nucleus. The nucleus or nuclei produced in the decay are referred to as the daughter nucleus or
+daughter nuclei. We represent an α decay symbolically by
+A
+X→
+A−4X+4He (10.21)
+Z Z−2 2
+where A X istheparentnucleus, A−4X isthedaughternucleus,and 4He isthe α particle.In α decay,anucleusof
+Z Z−2 2
+atomicnumberZdecaysintoanucleusofatomicnumber Z−2 andatomicmass A−4. Interestingly,thedreamofthe
+ancientalchemiststoturnothermetalsintogoldisscientificallyfeasiblethroughthealpha-decayprocess.Theeffortsofthe
+alchemists failed because they relied on chemical interactions rather than nuclear interactions.
+Watch alpha particles escape from a polonium nucleus, causing radioactive alpha decay.See howrandom decay
+times relate to the half-life. To try a simulation of alpha decay, visit alpha particles
+(https://openstaxcollege.org/l/21alphaparvid)
+An example of alpha decay is uranium-238:
+238 U→ 234 X+4He.
+92 90 2
+Theatomicnumberhasdroppedfrom92to90.Thechemicalelementwith Z =90 isthorium.Hence,Uranium-238has
+decayed to Thorium-234 by the emission of an α particle, written
+238 U→ 234 Th+4He.
+92 90 2
+Subsequently, 234 Th decaysby β emissionwithahalf-lifeof24days.Theenergyreleasedinthisalphadecaytakesthe
+90
+formofkineticenergiesofthethoriumandheliumnuclei,althoughthekineticenergyofthoriumissmallerthanheliumdue
+to its heavier mass and smaller velocity.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

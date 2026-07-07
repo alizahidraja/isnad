@@ -1,0 +1,294 @@
+# REAL PDF — openstax_vol3.pdf, pages 450-456
+############################################################
+
+442 Chapter 9 | Condensed Matter Physics
+The BCS theory is able to predict many of the properties observed in superconductors. Examples include the Meissner
+effect,thecritical temperature, thecritical field,and,perhapsmostimportantly,theresistivity becomingzeroatacritical
+temperature. We can think about this last phenomenon qualitatively as follows. In a normal conductor, resistivity results
+from the interaction of the conduction electrons with the lattice. In this interaction, the energy exchanged is on the order
+of k T, the thermal energy. In a superconductor, electric current is carried by the Cooper pairs. The only way for a
+B
+lattice toscatteraCooperpairistobreakitup.Thedestructionofonepairthendestroysthecollective motionofallthe
+pairs. This destruction requires energy on the order of 10 −3 eV, which is the size of the energy gap. Below the critical
+temperature,thereisnotenoughthermalenergyavailableforthisprocess,sotheCooperpairstravelunimpededthroughout
+the superconductor.
+Finally,itisinterestingtonotethatnoevidenceofsuperconductivityhasbeenfoundinthebestnormalconductors,suchas
+copperandsilver.Thisisnotunexpected,giventheBCStheory.Thebasisfortheformationofthesuperconductingstate
+isaninteractionbetweentheelectronsandthelattice.Inthebestconductors,theelectron-latticeinteractionisweakest,as
+evidentfromtheirminimalresistivity.Wemightexpectthenthatinthesematerials,theinteractionissoweakthatCooper
+pairs cannot be formed, and superconductivity is therefore precluded.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 443
+CHAPTER 9 REVIEW
+KEY TERMS
+acceptor impurity atom substituted for another in a semiconductor that results in a free electron
+amplifier electrical device that amplifies an electric signal
+base current current drawn from the basen-type material in a transistor
+BCS theory theory of superconductivity based on electron-lattice-electron interactions
+body-centered cubic (BCC) crystalstructureinwhichanionissurroundedbyeightnearestneighborslocatedatthe
+corners of a unit cell
+breakdown voltage in a diode, the reverse bias voltage needed to cause an avalanche of current
+collector current current drawn from the collectorp-type material
+conduction band above the valence band, the next available band in the energy structure of a crystal
+Cooper pair coupled electron pair in a superconductor
+covalent bond bond formed by the sharing of one or more electrons between atoms
+critical magnetic field maximum field required to produce superconductivity
+critical temperature maximum temperature to produce superconductivity
+density of states number of allowed quantum states per unit energy
+depletion layer region near thep-njunction that produces an electric field
+dissociation energy amountofenergyneededtobreakapartamoleculeintoatoms;also,totalenergyperionpairto
+separate the crystal into isolated ions
+donor impurity atom substituted for another in a semiconductor that results in a free electron hole
+doping alteration of a semiconductor by the substitution of one type of atom with another
+drift velocity average velocity of a randomly moving particle
+electric dipole transition transition between energy levels brought by the absorption or emission of radiation
+electron affinity energy associated with an accepted (bound) electron
+electron number density number of electrons per unit volume
+energy band nearly continuous band of electronic energy levels in a solid
+energy gap gap between energy bands in a solid
+equilibrium separation distance distance between atoms in a molecule
+exchange symmetry how a total wave function changes under the exchange of two electrons
+face-centered cubic (FCC) crystalstructureinwhichanionissurroundedbysixnearestneighborslocatedatthefaces
+at the faces of a unit cell
+Fermi energy largest energy filled by electrons in a metal at T =0K
+Fermi factor number that expresses the probability that a state of given energy will be filled
+Fermi temperature effective temperature of electrons with energies equal to the Fermi energy
+forward bias configuration diode configuration that results in high current
+free electron model model of a metal that views electrons as a gas
+hole unoccupied states in an energy band
+hybridization change in the energy structure of an atom in which energetically favorable mixed states participate in
+bonding
+
+444 Chapter 9 | Condensed Matter Physics
+impurity atom
+acceptor or donor impurity atom
+impurity band new energy band create by semiconductor doping
+ionic bond bond formed by the Coulomb attraction of a positive and negative ions
+junction transistor electrical valve based on ap-n-pjunction
+lattice regular array or arrangement of atoms into a crystal structure
+Madelung constant constantthatdependsonthegeometryofacrystalusedtodeterminethetotalpotentialenergyof
+an ion in a crystal
+majority carrier free electrons (or holes) contributed by impurity atoms
+minority carrier free electrons (or holes) produced by thermal excitations across the energy gap
+n-type semiconductor doped semiconductor that conducts electrons
+p-njunction junction formed by joiningp- andn-type semiconductors
+p-type semiconductor doped semiconductor that conducts holes
+polyatomic molecule molecule formed of more than one atom
+repulsion constant experimental parameterassociatedwitharepulsiveforcebetweenionsbroughtsoclosetogether
+that the exclusion principle is important
+reverse bias configuration diode configuration that results in low current
+rotational energy level energy level associated with the rotational energy of a molecule
+selection rule rule that limits the possible transitions from one quantum state to another
+semiconductor solid with a relatively small energy gap between the lowest completely filled band and the next
+available unfilled band
+simple cubic basic crystal structure in which each ion is located at the nodes of a three-dimensional grid
+type I superconductor superconducting element, such as aluminum or mercury
+type II superconductor superconducting compound or alloy, such as a transition metal or an actinide series element
+valence band highest energy band that is filled in the energy structure of a crystal
+van der Waals bond bond formed by the attraction of two electrically polarized molecules
+vibrational energy level energy level associated with the vibrational energy of a molecule
+KEY EQUATIONS
+Electrostatic energy for equilibrium separation distance between atoms ke2
+U coul = − r
+0
+Energy change associated with ionic bonding U
+form
+=E
+transfer
++U
+coul
++U
+ex
+Critical magnetic field of a superconductor ⎡ 2⎤
+⎛T ⎞
+B
+c
+(T)=B
+c
+(0)⎢1−
+⎝T ⎠
+⎥
+⎣ c ⎦
+Rotational energy of a diatomic molecule ℏ2
+E r=l(l+1)
+2I
+Characteristic rotational energy of a molecule ℏ2
+E 0r=
+2I
+Potential energy associated with the exclusion principle A
+U ex= rn
+Dissociation energy of a solid U diss =α k r e2⎛ ⎝ 1− 1 n ⎞ ⎠
+0
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 445
+Moment of inertia of a diatomic molecule with reduced mass µ I = µr2
+0
+Electron energy in a metal
+E=
+π2ℏ2
+⎛n2+n2+n2⎞
+2mL2⎝ 1 2 3⎠
+Electron density of states of a metal 3/2
+g(E)=
+πV⎛8m
+e
+⎞
+E1/2
+2 ⎝ h2 ⎠
+Fermi energy
+E =
+h2 ⎛3N⎞ 2/3
+F 8m
+e
+⎝πV⎠
+Fermi temperature E
+T = F
+F k
+B
+Hall effect V =uBw
+H
+Current versus bias voltage acrossp-njunction
+I =I
+⎛
+e
+eVb/k
+B
+T
+−1
+⎞
+net 0⎝ ⎠
+Current gain I c= βI B
+Selection rule for rotational energy transitions Δl= ±1
+Selection rule for vibrational energy transitions Δn= ±1
+SUMMARY
+9.1Types of Molecular Bonds
+• Molecules form by two main types of bonds: the ionic bond and the covalent bond. An ionic bond transfers an
+electron from one atom to another, and a covalent bond shares the electrons.
+• The energy change associated with ionic bonding depends on three main processes: the ionization of an electron
+fromoneatom,theacceptanceoftheelectronbythesecondatom,andtheCoulombattractionoftheresultingions.
+• Covalent bonds involve space-symmetric wave functions.
+• Atoms use a linear combination of wave functions in bonding with other molecules (hybridization).
+9.2Molecular Spectra
+• Molecules possess vibrational and rotational energy.
+• Energydifferencesbetweenadjacentvibrationalenergylevelsarelargerthanthosebetweenrotationalenergylevels.
+• Separation between peaks in an absorption spectrum is inversely related to the moment of inertia.
+• Transitions between vibrational and rotational energy levels follow selection rules.
+9.3Bonding in Crystalline Solids
+• Packing structures of common ionic salts include FCC and BCC.
+• The density of a crystal is inversely related to the equilibrium constant.
+• The dissociation energy of a salt is large when the equilibrium separation distance is small.
+• The densities and equilibrium radii for common salts (FCC) are nearly the same.
+9.4Free Electron Model of Metals
+• Metalsconductelectricity,andelectricityiscomposedoflargenumbersofrandomlycollidingandapproximately
+free electrons.
+
+446 Chapter 9 | Condensed Matter Physics
+• Theallowedenergystatesofanelectronarequantized.Thisquantizationappearsintheformofverylargeelectron
+energies, even at T =0K.
+• Theallowedenergiesoffreeelectronsinametaldependonelectronmassandontheelectronnumberdensityofthe
+metal.
+• Thedensityofstatesofanelectroninametalincreaseswithenergy,becausetherearemorewaysforanelectronto
+fill a high-energy state than a low-energy state.
+• Pauli’sexclusionprinciplestatesthatonlytwoelectrons(spinupandspindown)canoccupythesameenergylevel.
+Therefore, in filling these energy levels (lowest to highest at T =0K), the last and largest energy level to be
+occupied is called the Fermi energy.
+9.5Band Theory of Solids
+• The energy levels of an electron in a crystal can be determined by solving Schrödinger’s equation for a periodic
+potential and by studying changes to the electron energy structure as atoms are pushed together from a distance.
+• The energy structure of a crystal is characterized by continuous energy bands and energy gaps.
+• The ability of a solid to conduct electricity relies on the energy structure of the solid.
+9.6Semiconductors and Doping
+• The energy structure of a semiconductor can be altered by substituting one type of atom with another (doping).
+• Semiconductorn-type doping creates and fills new energy levels just below the conduction band.
+• Semiconductorp-type doping creates new energy levels just above the valence band.
+• The Hall effect can be used to determine charge, drift velocity, and charge carrier number density of a
+semiconductor.
+9.7Semiconductor Devices
+• A diode is produced by an n-p junction. A diode allows current to move in just one direction. In forward biased
+configuration of a diode, the current increases exponentially with the voltage.
+• A transistor is produced by ann-p-njunction. A transistor is an electric valve that controls the current in a circuit.
+• A transistor is a critical component in audio amplifiers, computers, and many other devices.
+9.8Superconductivity
+• Asuperconductorischaracterized bytwofeatures:theconductionofelectronswithzeroelectrical resistanceand
+the repelling of magnetic field lines.
+• A minimum temperature is required for superconductivity to occur.
+• A strong magnetic field destroys superconductivity.
+• Superconductivity can be explain in terms of Cooper pairs.
+CONCEPTUAL QUESTIONS
+4. Whatpreventsapositiveandnegativeionfromhaving
+9.1Types of Molecular Bonds a zero separation?
+1. What is the main difference between an ionic bond, a
+covalent bond, and avan der Waals bond? 5. Forthe H molecule,whymustthespinstheelectron
+2
+spins be antiparallel?
+2. For the following cases, what type of bonding is
+expected? (a) KCl molecule; (b) N molecule.
+2
+9.2Molecular Spectra
+3. Describe three steps to ionic bonding. 6. Doestheabsorptionspectrumofthediatomicmolecule
+HCl depend on the isotope of chlorine contained in the
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 447
+molecule? Explain your reasoning.
+9.5Band Theory of Solids
+7. Rank the energy spacing (ΔE) of the following 19. Whatarethetwomainapproachesusedtodetermine
+transitions from least to greatest: an electron energy the energy levels of electrons in a crystal?
+transitioninanatom(atomicenergy),therotationalenergy
+of a molecule, or the vibrational energy of a molecule? 20. Describetwofeaturesofenergylevelsforanelectron
+in a crystal.
+8. Explain key features of a vibrational-rotation energy
+spectrum of the diatomic molecule. 21. How does the number of energy levels in a band
+correspond to the number,N, of atoms.
+9.3Bonding in Crystalline Solids 22. Why are some materials very good conductors and
+others very poor conductors?
+9. Why is the equilibrium separation distance between
+K + andCl− different for a diatomic molecule than for
+23. Why are some materials semiconductors?
+solid KCl?
+24. Whydoestheresistanceofasemiconductordecrease
+10. Describethedifferencebetweenaface-centeredcubic
+as the temperature increases?
+structure (FCC) and a body-centered cubic structure
+(BCC).
+9.6Semiconductors and Doping
+11. Insodiumchloride,howmany Cl– atomsare“nearest
+25. Whatkindofsemiconductorisproducedifgermanium
+neighbors”of Na + ?Howmany Na + atomsare“nearest
+is doped with (a) arsenic, and (b) gallium?
+neighbors” of Cl− ?
+26. What kind of semiconductor is produced if silicon is
+12. Incesiumiodide,howmany Cl− atomsare“nearest doped with (a) phosphorus, and (b) indium?
+neighbors”of Cs + ?Howmany Cs + atomsare“nearest
+neighbors” of Cl− ? 27. What is the Hall effect and what is it used for?
+28. Forann-typesemiconductor,howdoimpurityatoms
+13. The NaCl crystal structure is FCC. The equilibrium
+alter the energy structure of the solid?
+spacing is r =0.282nm. If each ion occupies a cubic
+0
+volume of r3, estimate the distance between “nearest
+29. For a p-type semiconductor, how do impurity atoms
+0
+neighbor” Na + ions (center-to-center)? alter the energy structure of the solid?
+9.7Semiconductor Devices
+9.4Free Electron Model of Metals
+30. When p- and n-type materials are joined, why is a
+14. Why does the Fermi energy (E ) increase with the
+F uniform electric field generated near the junction?
+number of electrons in a metal?
+31. Whenp-andn-typematerialsarejoined,whydoesthe
+15. If the electron number density (N/V) of a metal depletion layer not grow indefinitely?
+increases by a factor 8, what happens to the Fermi energy
+(E F )? 32. Howdoyouknowifadiodeisintheforwardbiased
+configuration?
+16. Why does the horizontal line in the graph in Figure
+9.12suddenly stop at the Fermi energy? 33. Whydoesthereversebiasconfigurationleadtoavery
+small current?
+17. Why does the graph in Figure 9.12 increase
+gradually from the origin? 34. What happens in the extreme case that where the n-
+andp-type materials are heavily doped?
+18. Why are the sharp transitions at the Fermi energy
+“smoothed out” by increasing the temperature? 35. Explain how an audio amplifier works, using the
+transistor concept.

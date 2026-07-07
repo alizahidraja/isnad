@@ -1,0 +1,291 @@
+# REAL PDF — openstax_vol3.pdf, pages 214-220
+############################################################
+
+206 Chapter 5 | Relativity
+downashortpipeasitwouldtogetdownapipe3kmlong.This,again,isanexperimentalverificationofthespecialtheory
+of relativity.
+Figure 5.12 The electric field lines of a high-velocity charged
+particle are compressed along the direction of motion by length
+contraction, producing an observably different signal as the
+particle goes through a coil.
+5.4
+CheckYourUnderstandingAparticleistravelingthroughEarth’satmosphereataspeedof0.750c.To
+anearthboundobserver,thedistanceittravelsis2.50km.Howfardoestheparticletravelasviewedfromthe
+particle’s reference frame?
+5.5 | The Lorentz Transformation
+Learning Objectives
+• Describe the Galilean transformation of classical mechanics, relating the position, time,
+velocities, and accelerations measured in different inertial frames
+• Derive the corresponding Lorentz transformation equations, which, in contrast to the Galilean
+transformation, are consistent with special relativity
+• Explain the Lorentz transformation and many of the features of relativity in terms of four-
+dimensional space-time
+Wehaveusedthepostulatesofrelativitytoexamine,inparticularexamples,howobserversindifferentframesofreference
+measuredifferentvaluesforlengthsandthetimeintervals.Wecangainfurtherinsightintohowthepostulatesofrelativity
+change the Newtonian view of time and space by examining the transformation equations that give the space and time
+coordinates of events in one inertial reference frame in terms of those in another. We first examine how position and
+time coordinates transform between inertial frames according to the view in Newtonian physics. Then we examine how
+thishastobechangedtoagreewiththepostulatesofrelativity.Finally,weexaminetheresultingLorentztransformation
+equationsandsomeoftheirconsequencesintermsoffour-dimensionalspace-timediagrams,tosupporttheviewthatthe
+consequences of special relativity result from the properties of time and space itself, rather than electromagnetism.
+The Galilean Transformation Equations
+An event is specified by its location and time (x, y, z, t) relative to one particular inertial frame of reference S. As an
+example,(x,y,z,t)coulddenotethepositionofaparticleattimet,andwecouldbelookingatthesepositionsformany
+different times to follow the motion of the particle. Suppose a second frame of reference S′ moves with velocity v with
+respect to the first. For simplicity, assume this relative velocity is along the x-axis. The relation between the time and
+coordinates in the two frames of reference is then
+x= x′+vt, y=y′, z=z′.
+Implicit in these equations is the assumption that time measurements made by observers in both S and S′ are the same.
+That is,
+t=t′.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 207
+These four equations are known collectively as theGalilean transformation.
+We can obtain the Galilean velocity and acceleration transformation equations by differentiating these equations with
+respecttotime.Weuseuforthevelocityofaparticlethroughoutthischaptertodistinguishitfromv,therelativevelocity
+oftworeferenceframes.Notethat,fortheGalileantransformation,theincrementoftimeusedindifferentiatingtocalculate
+the particle velocity is the same in both frames, dt=dt′. Differentiation yields
+u x=u′x+v, u y=u′y, u z=u′z
+and
+a x=a′x, a y=a′y, a z=a′z.
+Wedenotethevelocityoftheparticlebyuratherthanvtoavoidconfusionwiththevelocityvofoneframeofreference
+withrespecttotheother.Velocities ineachframedifferbythevelocity thatoneframehasasseenfromtheotherframe.
+Observersinbothframesofreferencemeasurethesamevalueoftheacceleration.Becausethemassisunchangedbythe
+transformation,anddistancesbetweenpointsareuncharged,observersinbothframesseethesameforces F =ma acting
+between objects and the same form of Newton’s second and third laws in all inertial frames. The laws of mechanics are
+consistent with the first postulate of relativity.
+The Lorentz Transformation Equations
+TheGalileantransformationneverthelessviolatesEinstein’spostulates,becausethevelocityequationsstatethatapulseof
+lightmovingwithspeedcalongthex-axiswouldtravelatspeed c−v intheotherinertialframe.Specifically,thespherical
+pulse has radius r =ct at time t in the unprimed frame, and also has radius r′=ct′ at time t′ in the primed frame.
+Expressing these relations in Cartesian coordinates gives
+x2+y2+z2−c2t2 = 0
+x′2+y′2+z′2−c2t′2 = 0.
+The left-hand sides of the two expressions can be set equal because both are zero. Because y=y′ and z=z′, we obtain
+x2−c2t2= x′2−c2t′2. (5.5)
+ThiscannotbesatisfiedfornonzerorelativevelocityvofthetwoframesifweassumetheGalileantransformationresults
+in t=t′ with x= x′+vt′.
+To find the correct set of transformation equations, assume the two coordinate systems S and S′ in Figure 5.13. First
+suppose that an event occurs at (x′, 0, 0, t′) in S′ and at (x, 0, 0, t) inS, as depicted in the figure.
+Figure 5.13 An event occurs at (x, 0, 0,t) inSand at
+(x′, 0, 0, t′) in S′. The Lorentz transformation equations relate
+events in the two systems.
+SupposethatattheinstantthattheoriginsofthecoordinatesystemsinSand S′ coincide,aflashbulbemitsaspherically
+spreadingpulseoflightstartingfromtheorigin.Attimet,anobserverinSfindstheoriginof S′ tobeat x=vt. With
+thehelpofafriendinS,the S′ observeralsomeasuresthedistancefromtheeventtotheoriginof S′ andfindsittobe
+
+208 Chapter 5 | Relativity
+x′ 1−v2/c2. Thisfollowsbecausewehavealreadyshownthepostulatesofrelativitytoimplylengthcontraction.Thus
+the position of the event inSis
+x=vt+x′ 1−v2/c2
+and
+x′=
+x−vt
+.
+1−v2/c2
+The postulates of relativity imply that the equation relating distance and time of the spherical wave front:
+x2+y2+z2−c2t2=0
+must apply both in terms of primed and unprimed coordinates, which was shown above to lead toEquation 5.5:
+x2−c2t2= x′2−c2t′2.
+We combine this with the equation relatingxand x′ to obtain the relation betweentand t′:
+t′=
+t−vx/c2
+.
+1−v2/c2
+The equations relating the time and position of the events as seen inSare then
+t =
+t′+vx′/c2
+1−v2/c2
+x =
+x′+vt′
+1−v2/c2
+y = y′
+z = z′.
+Thissetofequations,relatingthepositionandtimeinthetwoinertialframes,isknownastheLorentztransformation.
+They are named in honor of H.A. Lorentz (1853–1928), who first proposed them. Interestingly, he justified the
+transformationonwhatwaseventuallydiscoveredtobeafallacioushypothesis.ThecorrecttheoreticalbasisisEinstein’s
+special theory of relativity.
+The reverse transformation expresses the variables in S in terms of those in S′. Simply interchanging the primed and
+unprimed variables and substituting gives:
+t′ =
+t−vx/c2
+1−v2/c2
+x′ =
+x−vt
+1−v2/c2
+y′ = y
+z′ = z.
+Example 5.6
+Using the Lorentz Transformation for Time
+Spacecraft S′ isonitswaytoAlphaCentauriwhenSpacecraftSpassesitatrelativespeedc/2.Thecaptainof
+S′ sendsaradiosignalthatlasts1.2saccordingtothatship’sclock.UsetheLorentztransformationtofindthe
+time interval of the signal measured by the communications officer of spaceshipS.
+Solution
+a. Identify the known: Δt′=t ′−t ′=1.2s; Δx′= x′ −x′ =0.
+2 1 2 1
+b. Identify the unknown: Δt=t −t .
+2 1
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 209
+c. Express the answer as an equation. The time signal starts as ⎛x′, t ′⎞ and stops at ⎛x′, t ′⎞. Note
+⎝ 1⎠ ⎝ 2⎠
+that the x′ coordinate of both events is the same because the clock is at rest in S′. Write the first
+Lorentztransformationequationintermsof Δt=t −t , Δx= x −x , andsimilarlyfortheprimed
+2 1 2 1
+coordinates, as:
+Δt=
+Δt′+vΔx′/c2
+.
+v2
+1−
+c2
+Because the position of the clock in S′ is fixed, Δx′=0, and the time interval Δt becomes:
+Δt=
+Δt′
+.
+v2
+1−
+c2
+d. Do the calculation.
+With Δt′=1.2s this gives:
+Δt= 1.2s =1.6s.
+2
+1−
+⎛1⎞
+⎝2⎠
+Note that the Lorentz transformation reproduces the time dilation equation.
+Example 5.7
+Using the Lorentz Transformation for Length
+Asurveyormeasuresastreettobe L=100m longinEarthframeS.UsetheLorentztransformationtoobtainan
+expressionforitslengthmeasuredfromaspaceship S′, movingbyatspeed0.20c,assumingthexcoordinates
+of the two frames coincide at time t=0.
+Solution
+a. Identify the known: L=100m;v=0.20c;Δτ=0.
+b. Identify the unknown: L′.
+c. Express the answer as an equation. The surveyor in frame S has measured the two ends of the stick
+simultaneously, and found them at rest at x and x a distance L= x −x =100m apart. The
+2 1 2 1
+spaceship crew measures the simultaneous location of the ends of the sticks in their frame. To relate
+the lengths recorded by observers in S′ and S, respectively, write the second of the four Lorentz
+transformation equations as:
+x −vt x −vt
+x′ −x′ = 2 − 1
+2 1
+1−v2/c2 1−v2/c2
+= x 2 −x 1 = L .
+1−v2/c2 1−v2/c2
+d. Do the calculation. Because x′ −x′ =100m, the length of the moving stick is equal to:
+2 1
+L′ =(100m) 1−v2/c2
+=(100m) 1−(0.20)2
+=98.0m.
+Note that the Lorentz transformation gave the length contraction equation for the street.
+
+210 Chapter 5 | Relativity
+Example 5.8
+Lorentz Transformation and Simultaneity
+The observer shown in Figure 5.14 standing by the railroad tracks sees the two bulbs flash simultaneously at
+both ends of the 26 m long passenger car when the middle of the car passes him at a speed of c/2. Find the
+separation in time between when the bulbs flashed as seen by the train passenger seated in the middle of the car.
+Figure 5.14 An person watching a train go by observes two bulbs flash simultaneously at opposite ends
+of a passenger car. There is another passenger inside of the car observing the same flashes but from a
+different perspective.
+Solution
+a. Identify the known: Δt=0.
+Notethatthespatialseparationofthetwoeventsisbetweenthetwolamps,notthedistanceofthelamp
+to the passenger.
+b. Identify the unknown: Δt′=t′ −t′.
+2 1
+Again, note that the time interval is between the flashes of the lamps, not between arrival times for
+reaching the passenger.
+c. Express the answer as an equation:
+Δt=
+Δt′+vΔx′/c2
+.
+1−v2/c2
+d. Do the calculation:
+Δt′+ c (26m)/c2
+0 = 2
+1−v2/c2
+Δt′ = − 26m/s = − 26m/s
+2c
+2
+⎛
+3.00×10
+8
+m/s
+⎞
+⎝ ⎠
+Δt′ = −4.33×10 −8 s.
+Significance
+Thesignindicatesthattheeventwiththelarger x ′, namely,theflashfromtheright,isseentooccurfirstinthe
+2
+S′ frame, as found earlier for this example, so that t <t .
+2 1
+Space-time
+Relativisticphenomenacanbeanalyzedintermsofeventsinafour-dimensionalspace-time.Whenphenomenasuchasthe
+twin paradox, time dilation, length contraction, and the dependence ofsimultaneity onrelative motion are viewed in this
+way, they are seen to be characteristic of the nature of space and time, rather than specific aspects of electromagnetism.
+Inthree-dimensionalspace,positionsarespecifiedbythreecoordinatesonasetofCartesianaxes,andthedisplacementof
+one point from another is given by:
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 211
+⎛Δx, Δy, Δz⎞=(x −x , y −y , z −z ).
+⎝ ⎠ 2 1 2 1 2 1
+The distance Δr between the points is
+Δr2=(Δx)2+⎛Δy⎞2+(Δz)2.
+⎝ ⎠
+Thedistance Δr isinvariantunderarotationofaxes.IfanewsetofCartesianaxesrotatedaroundtheoriginrelativetothe
+originalaxesareused,eachpointinspacewillhavenewcoordinatesintermsofthenewaxes,butthedistance Δr′ given
+by
+Δr′2=(Δx′)2+⎛Δy′⎞2+(Δz′)2.
+⎝ ⎠
+That has the same value that Δr2 had. Something similar happens with the Lorentz transformation in space-time.
+Definetheseparationbetweentwoevents,eachgivenbyasetofx,y,z¸andctalongafour-dimensionalCartesiansystem
+of axes in space-time, as
+⎛Δx, Δy, Δz, cΔt⎞=⎛x −x , y −y , z −z , c(t −t )⎞.
+⎝ ⎠ ⎝ 2 1 2 1 2 1 2 1 ⎠
+Also define the space-time interval Δs between the two events as
+Δs2=(Δx)2+⎛Δy⎞2+(Δz)2−(cΔt)2.
+⎝ ⎠
+Ifthetwoeventshavethesamevalueofctintheframeofreferenceconsidered, Δs wouldcorrespondtothedistance Δr
+between points in space.
+Thepathofaparticlethroughspace-timeconsistsoftheevents(x,y,z¸ct)specifyingalocationateachtimeofitsmotion.
+The path through space-time is called the world line of the particle. The world line of a particle that remains at rest at
+thesamelocationisastraightlinethatisparalleltothetimeaxis.Iftheparticlemovesatconstantvelocityparalleltothe
+x-axis,itsworldlinewouldbeaslopedline x=vt, correspondingtoasimpledisplacementvs.timegraph.Iftheparticle
+accelerates, its world line is curved. The increment ofsalong the world line of the particle is given in differential form as
+ds2=(dx)2+⎛dy⎞2+(dz)2−c2(dt)2.
+⎝ ⎠
+Just as the distance Δr is invariant under rotation of the space axes, the space-time interval:
+Δs2=(Δx)2+⎛Δy⎞2+(Δz)2−(cΔt)2.
+⎝ ⎠
+is invariant under the Lorentz transformation. This follows from the postulates of relativity, and can be seen also by
+substitution of the previous Lorentz transformation equations into the expression for the space-time interval:
+Δs2 =(Δx)2+⎛Δy⎞2+(Δz)2−(cΔt)2
+⎝ ⎠
+⎛ ⎞
+2 ⎛ Δt′+ vΔx′⎞2
+=⎜ Δx′+vΔt′ ⎟ +⎛Δy′⎞2+(Δz′)2− ⎜ c c2 ⎟
+⎝ ⎠ ⎜ ⎟
+⎝ 1−v2/c2⎠
+⎝
+1−v2/c2
+⎠
+=(Δx′)2+⎛Δy′⎞2+(Δz′)2−(cΔt′)2
+⎝ ⎠
+=Δs′2.
+In addition, the Lorentz transformation changes the coordinates of an event in time and space similarly to how a three-
+dimensional rotation changes old coordinates into new coordinates:
+Lorentz transformation Axis – rotation aroundz-axis
+(x, tcoordinates): (x, ycoordinates):
+x′ =(γ)x+⎛−βγ⎞ct x′=(cosθ)x+(sinθ)y
+⎝ ⎠
+ct′=(−βγ)x+(γ)ct y′=(−sinθ)x+(cosθ)y
+where γ = 1 ; β=v/c.
+1−β2
+Lorentz transformations can be regarded as generalizations of spatial rotations to space-time. However, there are some
+differences between a three-dimensional axis rotation and a Lorentz transformation involving the time axis, because of

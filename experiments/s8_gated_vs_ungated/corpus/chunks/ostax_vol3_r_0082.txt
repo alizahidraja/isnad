@@ -1,0 +1,225 @@
+# REAL PDF — openstax_vol3.pdf, pages 508-512
+############################################################
+
+500 Chapter 10 | Nuclear Physics
+part of every living organism. By comparing the abundance of 14C in an artifact with the normal abundance in
+living tissue, it is possible to determine the artifact’s age.
+10.4Nuclear Reactions
+• The three types of nuclear radiation are alpha (α) rays, beta (β) rays, and gamma (γ) rays.
+• Werepresent α decaysymbolicallyby A X→ A−4X+4He.Therearetwotypesof β decay:eitheranelectron
+Z Z−2 2
+(β− ) or a positron (β+ ) is emitted by a nucleus. γ decay is represented symbolically by A X* → A X+γ.
+Z Z
+• Whenaheavynucleusdecaystoalighterone,thelighterdaughternucleuscanbecometheparentnucleusforthe
+next decay, and so on, producing a decay series.
+10.5Fission
+• Nuclear fission is a process in which the sum of the masses of the product nuclei are less than the masses of the
+reactants.
+• Energy changes in a nuclear fission reaction can be understood in terms of the binding energy per nucleon curve.
+• Theproductionofnewordifferentisotopesbynucleartransformationiscalledbreeding,andreactorsdesignedfor
+this purpose are called breeder reactors.
+10.6Nuclear Fusion
+• Nuclear fusion is a reaction in which two nuclei are combined to form a larger nucleus; energy is released when
+light nuclei are fused to form medium-mass nuclei.
+• The amount of energy released by a fusion reaction is known as theQvalue.
+• Nuclear fusion explains the reaction between deuterium and tritium that produces a fusion (or hydrogen) bomb;
+fusion also explains the production of energy in the Sun, the process of nucleosynthesis, and the creation of the
+heavy elements.
+10.7Medical Applications and Biological Effects of Nuclear Radiation
+• Nuclear technology is used in medicine to locate and study diseased tissue using special drugs called
+radiopharmaceuticals.Radioactivetagsareusedtoidentifycancercellsinthebones,braintumors,andAlzheimer’s
+disease,andtomonitorthefunctionofbodyorgans,suchasbloodflow,heartmuscleactivity,andiodineuptakein
+the thyroid gland.
+• Thebiologicaleffectsofionizingradiationareduetotwoeffectsithasoncells:interferencewithcellreproduction
+and destruction of cell function.
+• CommonsourcesofradiationincludethatemittedbyEarthduetotheisotopesofuranium,thorium,andpotassium;
+natural radiation from cosmic rays, soils, and building materials, and artificial sources from medical and dental
+diagnostic tests.
+• Biological effects of nuclear radiation are expressed by many different physical quantities and in many different
+units, including the rad or radiation dose unit.
+CONCEPTUAL QUESTIONS
+10.1Properties of Nuclei 10.2Nuclear Binding Energy
+1. Define and make clear distinctions between the terms 3. Explainwhyaboundsystemshouldhavelessmassthan
+neutron, nucleon, nucleus, and nuclide. itscomponents.Whyisthisnotobservedtraditionally,say,
+for a building made of bricks?
+2. Whatareisotopes?Whydoisotopesofthesameatom
+share the same chemical properties? 4. Whyisthenumberofneutronsgreaterthanthenumber
+ofprotonsinstablenucleithathaveanAgreaterthanabout
+40? Why is this effect more pronounced for the heaviest
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 501
+nuclei? 12. Why is Earth’s core molten?
+5. Toobtainthemostprecisevalueofthebindingenergy
+per nucleon, it is important to take into account forces 10.5Fission
+betweennucleonsatthesurfaceofthenucleus.Willsurface
+13. Should an atomic bomb really be called nuclear
+effects increase or decrease estimates of BEN?
+bomb?
+14. Why does a chain reaction occur during a fission
+10.3Radioactive Decay
+reaction?
+6. Howistheinitialactivityrateofaradioactivesubstance
+related to its half-life? 15. In what way is an atomic nucleus like a liquid drop?
+7. For the carbon dating described in this chapter, what
+important assumption is made about the time variation in 10.6Nuclear Fusion
+the intensity of cosmic rays?
+16. Explain the difference between nuclear fission and
+nuclear fusion.
+10.4Nuclear Reactions
+17. Whydoesthefusionoflightnucleiintoheaviernuclei
+8. What is the key difference and the key similarity release energy?
+between beta (β− ) decay and alpha decay?
+9. What is the difference between γ rays and 10.7Medical Applications and Biological
+characteristic X-rays and visible light? Effects of Nuclear Radiation
+18. WhyisaPETscanmoreaccuratethanaSPECTscan?
+10. What characteristics of radioactivity show it to be
+nuclear in origin and not atomic?
+19. Isotopes that emit α radiation are relatively safe
+outside the body and exceptionally hazardous inside.
+11. Consider Figure 10.12. If the magnetic field is
+Explain why.
+replacedbyanelectricfieldpointedintowardthepage,in
+which directions will the α-, β+ -, and γ rays bend?
+20. Ionizing radiation can impair the ability of a cell to
+repair DNA. What are the three ways the cell can respond?
+PROBLEMS
+to that for iron (Fe).
+10.1Properties of Nuclei
+21. Findtheatomicnumbers,massnumbers,andneutron 24. A particle has a mass equal to 10 u. If this mass
+numbers for (a) 58 Cu, (b) 24Na, (c) 210 Po, (d) is converted completely into energy, how much energy is
+29 11 84 released? Express your answer in mega-electron volts
+2 4 0 5 Ca, and (e) 2 8 0 2 6 Pb. (MeV). (Recall that 1eV=1.6×10 −19 J.)
+22. Silverhastwostableisotopes.Thenucleus, 107 Ag, 25. Find the length of a side of a cube having a mass of
+47 1.0 kg and the density of nuclear matter.
+has atomic mass 106.905095 g/mol with an abundance of
+51.83%;whereas 109 Ag hasatomicmass108.904754g/ 26. The detail that you can observe using a probe is
+47
+molwithanabundanceof 48.17%.Findtheatomicmass limitedbyitswavelength.Calculatetheenergyofaparticle
+of the element silver. that has a wavelength of 1×10 −16 m, small enough to
+detect details about one-tenth the size of a nucleon.
+23. The mass (M) and the radius (r) of a nucleus can be
+expressed in terms of the mass number, A. (a) Show that
+thedensityofanucleusisindependentofA.(b)Calculate 10.2Nuclear Binding Energy
+the density of a gold (Au) nucleus. Compare your answer
+27. Howmuchenergywouldbereleasedifsixhydrogen
+
+502 Chapter 10 | Nuclear Physics
+atoms and six neutrons were combined to form 12C? molofaradioactivematerialwhosehalf-lifeis6.00h.How
+6 manymolesoftheradioactivematerialremainafter6.00h?
+After 12.0 h? After 36.0 h?
+28. Find the mass defect and the binding energy for the
+helium-4 nucleus.
+38. An old campfire is uncovered during an
+archaeologicaldig.Itscharcoalisfoundtocontainlessthan
+29. 56 Fe isamongthemosttightlyboundofallnuclides. 1/1000thenormalamountof 14C.Estimatetheminimum
+It makes up more than 90% of natural iron. Note that age of the charcoal, noting that 2 10 =1024.
+56 Fe hasevennumbersofprotonsandneutrons.Calculate
+the binding energy per nucleon for 56 Fe and compare 39. Calculate the activity R, in curies of 1.00 g of
+it with the approximate value obtained from the graph in 226 Ra. (b) Explain why your answer is not exactly 1.00
+Figure 10.7. Ci, given that the curie was originally supposed to be
+exactly the activity of a gram of radium.
+30. 209 Bi is the heaviest stable nuclide, and its BEN is
+lowcomparedwithmedium-massnuclides.CalculateBEN 40. Natural uranium consists of 235 U
+forthisnucleusandcompareitwiththeapproximatevalue (percent abundance=0.7200%, λ=3.12×10 −17 /s)
+obtained from the graph inFigure 10.7.
+and 238 U (percent abundance=99.27%,
+31. (a)CalculateBENfor 235 U,therarerofthetwomost λ=4.92×10 −18 /s). What were the values for percent
+common uranium isotopes; (b) Calculate BEN for 238 U. abundance of 235 U and 238 U when Earth formed
+(Most of uranium is 238 U.) 4.5×10 9 years ago?
+32. The fact that BEN peaks at roughly A=60 implies 41. World War II aircraft had instruments with glowing
+radium-painted dials. The activity of one such instrument
+that the range of the strong nuclear force is about the
+diameter of this nucleus. was 1.0×10 5 Bq when new. (a) What mass of 226 Ra
+(a) Calculate the diameter of A=60 nucleus. was present? (b) After some years, the phosphors on the
+dials deteriorated chemically, but the radium did not
+(b) Compare BEN for 58 Ni and 90 Sr. The first is one escape. What is the activity of this instrument 57.0 years
+after it was made?
+of the most tightly bound nuclides, whereas the second is
+larger and less tightly bound.
+42. The 210 Po source used in a physics laboratory is
+labeled as having an activity of 1.0µCi on the date it
+10.3Radioactive Decay
+wasprepared.Astudentmeasures theradioactivity ofthis
+33. A sample of radioactive material is obtained from a sourcewithaGeigercounterandobserves1500countsper
+very old rock. A plot lnA verses t yields a slope value of minute.Shenoticesthatthesourcewasprepared120days
+−10 −9 s−1 (seeFigure10.10(b)).Whatisthehalf-lifeof beforeherlab.Whatfractionofthedecaysissheobserving
+this material? with her apparatus?
+34. Show that: T – = 1. 43. Armor-piercingshellswithdepleteduraniumcoresare
+λ firedbyaircraftattanks.(Thehighdensityoftheuranium
+makes them effective.) The uranium is called depleted
+35. Thehalf-lifeofstrontium-91, 91 Sr is9.70h.Find(a) becauseithashadits 235 U removedforreactoruseandis
+38
+itsdecay constant and(b)foraninitial 1.00-gsample, the
+nearlypure 238 U.Depleteduraniumhasbeenerroneously
+activity after 15 hours. called nonradioactive. To demonstrate that this is wrong:
+(a) Calculate the activity of 60.0 g of pure 238 U. (b)
+36. Asample ofpurecarbon-14 ⎛ ⎝ T 1/2 =5730y⎞ ⎠ has an Calculate the activity of 60.0 g of natural uranium,
+activity of 1.0µCi. What is the mass of the sample? neglecting the 234 U and all daughter nuclides.
+37. A radioactive sample initially contains 2.40×10−2
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 503
+53. A rare decay mode has been observed in which
+10.4Nuclear Reactions 222Ra emits a 14C nucleus. (a) The decay equation is
+44. 249 Cf undergoesalphadecay.(a)Writethereaction 222Ra→ A X+14C.Identifythenuclide A X.(b)Find
+equation. (b) Find the energy released in the decay.
+the energy emitted in the decay. The mass of 222Ra is
+222.015353 u.
+45. (a) Calculate the energy released in the α decay of
+238 U.(b)Whatfractionofthemassofasingle 238 U is
+destroyedinthedecay?Themassof 234 Th is234.043593 10.5Fission
+u.(c)Althoughthefractionalmasslossislargeforasingle 54. A large power reactor that has been in operation for
+nucleus,itisdifficulttoobserveforanentiremacroscopic somemonthsisturnedoff,butresidualactivityinthecore
+sample of uranium. Why is this? stillproduces150MWofpower.Iftheaverageenergyper
+decayofthefissionproductsis1.00MeV,whatisthecore
+activity?
+46. The β− particles emitted in the decay of 3 H
+(tritium) interact with matter to create light in a glow- 55. (a) Calculate the energy released in the neutron-
+in-the-dark exit sign. At the time of manufacture, such a
+induced fission n+ 238 U→ 96 Sr + 140 Xe+3n, given
+sign contains 15.0 Ci of 3 H. (a) What is the mass of the
+m⎛96 Sr ⎞ =95.921750u and m⎛140 Xe ⎞ =139.92164.
+tritium? (b) What is its activity 5.00 y after manufacture? ⎝ ⎠ ⎝ ⎠
+(b) This result is about 6 MeV greater than the result for
+47. (a)Writethecomplete β− decayequationfor 90 Sr, spontaneous fission. Why?
+a major waste product of nuclear reactors. (b) Find the (c) Confirm that the total number of nucleons and total
+energy released in the decay. charge are conserved in this reaction.
+48. Writeanuclear β− decayreactionthatproducesthe 56. (a) Calculate the energy released in the neutron-
+induced fission reaction
+90 Y nucleus. (Hint: The parent nuclide is a major waste n+ 235 U→ 92 Kr+142Ba+2n, given
+productofreactorsandhaschemistrysimilartocalcium,so
+that it is concentrated in bones if ingested.) m⎛ ⎝ 92 Kr ⎞ ⎠ =91.926269u and
+m⎛142Ba ⎞ =141.916361u. (b) Confirm that the total
+⎝ ⎠
+49. Write the complete decay equation in the complete
+number of nucleons and total charge are conserved in this
+Z
+A XN notationforthebeta(β− )decayof 3 H (tritium),
+reaction.
+a manufactured isotope of hydrogen used in some digital
+watch displays, and manufactured primarily for use in
+57. Theelectricalpoweroutputofalargenuclearreactor
+hydrogen bombs.
+facilityis900MW.Ithasa 35.0% efficiencyinconverting
+nuclear power to electrical power.
+50. Ifa1.50-cm-thickpieceofleadcanabsorb 90.0% of
+(a)Whatisthethermalnuclearpoweroutputinmegawatts?
+the rays from a radioactive source, how many centimeters
+of lead are needed to absorb all but 0.100% of the rays? (b)Howmany 235 U nucleifissioneachsecond,assuming
+the average fission produces 200 MeV?
+51. An electron can interact with a nucleus through the
+beta-decay process: (c)Whatmassof 235 U isfissionedin1yearoffull-power
+operation?
+Z A X+e− → Y+v e .
+(a) Write the complete reaction equation for electron 58. Findthetotalenergyreleasedif1.00kgof 235 U were
+92
+capture by 7 Be.
+to undergo fission.
+(b) Calculate the energy released.
+10.6Nuclear Fusion
+52. (a) Write the complete reaction equation for electron
+59. Verify that the total number of nucleons, and total
+capture by 15 O.
+charge are conserved for each of the following fusion
+(b) Calculate the energy released. reactions in the proton-proton chain.

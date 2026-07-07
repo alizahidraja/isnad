@@ -1,0 +1,278 @@
+# REAL PDF — openstax_vol1.pdf, pages 558-562
+############################################################
+
+546 11 • Chapter Review
+speed in opposite directions along parallel lines 46 . A satellite is spinning at 6.0 rev/s. The satellite
+separated by a distance d. Show that the angular consists of a main body in the shape of a sphere
+momentum of this two-particle system is the of radius 2.0 m and mass 10,000 kg, and two
+same no matter what point is used as the antennas projecting out from the center of mass
+reference for calculating the angular of the main body that can be approximated with
+momentum. rods of length 3.0 m each and mass 10 kg. The
+antenna’s lie in the plane of rotation. What is the
+41 . An airplane of mass flies
+angular momentum of the satellite?
+horizontally at an altitude of 10 km with a
+constant speed of 250 m/s relative to Earth. (a) 47 . A propeller consists of two blades each 3.0 m in
+What is the magnitude of the airplane’s angular length and mass 120 kg each. The propeller can
+momentum relative to a ground observer be approximated by a single rod rotating about
+directly below the plane? (b) Does the angular its center of mass. The propeller starts from rest
+momentum change as the airplane flies along a and rotates up to 1200 rpm in 30 seconds at a
+constant altitude? constant rate. (a) What is the angular
+momentum of the propeller at
+42 . At a particular instant, a 1.0-kg particle’s
+(b) What is the torque on the
+position is , its
+propeller?
+velocity is , and
+48 . A pulsar is a rapidly rotating neutron star. The
+the force on it is . (a)
+Crab nebula pulsar in the constellation Taurus
+What is the angular momentum of the particle
+has a period of , radius 10.0 km,
+about the origin? (b) What is the torque on the
+and mass The pulsar’s
+particle about the origin? (c) What is the time
+rotational period will increase over time due to
+rate of change of the particle’s angular
+the release of electromagnetic radiation, which
+momentum at this instant?
+doesn’t change its radius but reduces its
+43 . A particle of mass m is dropped at the point rotational energy. (a) What is the angular
+and falls vertically in Earth’s gravitational momentum of the pulsar? (b) Suppose the
+field (a) What is the expression for the angular velocity decreases at a rate of
+angular momentum of the particle around the . What is the torque on the pulsar?
+z-axis, which points directly out of the page as
+49 . The blades of a wind turbine are 30 m in length
+shown below? (b) Calculate the torque on the
+and rotate at a maximum rotation rate of 20 rev/
+particle around the z-axis. (c) Is the torque equal
+min. (a) If the blades are 6000 kg each and the
+to the time rate of change of the angular
+rotor assembly has three blades, calculate the
+momentum?
+angular momentum of the turbine at this
+rotation rate. (b) What is the torque require to
+rotate the blades up to the maximum rotation
+rate in 5 minutes?
+50 . A roller coaster has mass 3000.0 kg and needs
+to make it safely through a vertical circular loop
+of radius 50.0 m. What is the minimum angular
+momentum of the coaster at the bottom of the
+loop to make it safely through? Neglect friction
+on the track. Take the coaster to be a point
+44 . (a) Calculate the angular momentum of Earth in particle.
+its orbit around the Sun. (b) Compare this
+51 . A mountain biker takes a jump in a race and goes
+angular momentum with the angular momentum
+airborne. The mountain bike is travelling at 10.0
+of Earth about its axis.
+m/s before it goes airborne. If the mass of the
+45 . A boulder of mass 20 kg and radius 20 cm rolls front wheel on the bike is 750 g and has radius
+down a hill 15 m high from rest. What is its 35 cm, what is the angular momentum of the
+angular momentum when it is half way down the spinning wheel in the air the moment the bike
+hill? (b) At the bottom? leaves the ground?
+Access for free at openstax.org
+
+11 • Chapter Review 547
+11.3 Conservation of Angular Momentum
+52 . A disk of mass 2.0 kg and radius 60 cm with a
+small mass of 0.05 kg attached at the edge is
+rotating at 2.0 rev/s. The small mass, while
+attached to the disk, slides gradually to the
+center of the disk. What is the disk’s final
+rotation rate?
+53 . The Sun’s mass is its radius is
+and it has a rotational period of
+57 . A Molniya orbit is a highly eccentric orbit of a
+approximately 28 days. If the Sun should
+communication satellite so as to provide continuous
+collapse into a white dwarf of radius
+communications coverage for Scandinavian
+what would its period be if no
+countries and adjacent Russia. The orbit is
+mass were ejected and a sphere of uniform
+positioned so that these countries have the satellite
+density can model the Sun both before and
+in view for extended periods in time (see below). If a
+after?
+satellite in such an orbit has an apogee at 40,000.0
+54 . A cylinder with rotational inertia km as measured from the center of Earth and a
+rotates clockwise about a velocity of 1.68 km/s, what would be its velocity at
+vertical axis through its center with angular perigee measured at 200.0 km altitude?
+speed A second cylinder with
+rotational inertia rotates
+counterclockwise about the same axis with
+angular speed . If the cylinders
+couple so they have the same rotational axis
+what is the angular speed of the combination?
+What percentage of the original kinetic energy is
+lost to friction?
+55 . A diver off the high board imparts an initial
+rotation with their body fully extended before
+going into a tuck and executing three back
+somersaults before hitting the water. If their
+moment of inertia before the tuck is
+and after the tuck during the
+somersaults is , what rotation rate
+must the diver impart to their body directly off
+the board and before the tuck if they take 1.4 s
+to execute the somersaults before hitting the
+water?
+56 . An Earth satellite has its apogee at 2500 km
+above the surface of Earth and perigee at 500
+km above the surface of Earth. At apogee its
+speed is 6260 m/s. What is its speed at perigee?
+Earth’s radius is 6370 km (see below).
+58 . Shown below is a small particle of mass 20 g
+that is moving at a speed of 10.0 m/s when it
+collides and sticks to the edge of a uniform solid
+cylinder. The cylinder is free to rotate about its
+axis through its center and is perpendicular to
+the page. The cylinder has a mass of 0.5 kg and
+a radius of 10 cm, and is initially at rest. (a) What
+is the angular velocity of the system after the
+
+548 11 • Chapter Review
+collision? (b) How much kinetic energy is lost in go-round that is 100 kg, has a 1.60-m radius,
+the collision? and is spinning at 20.0 rpm. The children have
+masses of 22.0, 28.0, and 33.0 kg. If the child
+who has a mass of 28.0 kg moves to the center
+of the merry-go-round, what is the new angular
+velocity in rpm?
+64 . (a) Calculate the angular momentum of an ice
+skater spinning at 6.00 rev/s given his moment
+of inertia is . (b) He reduces his
+rate of spin (his angular velocity) by extending
+his arms and increasing his moment of inertia.
+59 . A bug of mass 0.020 kg is at rest on the edge of
+Find the value of his moment of inertia if his
+a solid cylindrical disk
+angular velocity decreases to 1.25 rev/s. (c)
+rotating in a
+Suppose instead he keeps his arms in and allows
+horizontal plane around the vertical axis through
+friction of the ice to slow him to 3.00 rev/s. What
+its center. The disk is rotating at 10.0 rad/s. The
+average torque was exerted if this takes 15.0 s?
+bug crawls to the center of the disk. (a) What is
+the new angular velocity of the disk? (b) What is 65 . Twin skaters approach one another as shown below
+the change in the kinetic energy of the system? and lock hands. (a) Calculate their final angular
+(c) If the bug crawls back to the outer edge of velocity, given each had an initial speed of 2.50 m/s
+the disk, what is the angular velocity of the disk relative to the ice. Each has a mass of 70.0 kg, and
+then? (d) What is the new kinetic energy of the each has a center of mass located 0.800 m from
+system? (e) What is the cause of the increase their locked hands. You may approximate their
+and decrease of kinetic energy? moments of inertia to be that of point masses at this
+radius. (b) Compare the initial kinetic energy and
+60 . A uniform rod of mass 200 g and length 100 cm
+final kinetic energy.
+is free to rotate in a horizontal plane around a
+fixed vertical axis through its center,
+perpendicular to its length. Two small beads,
+each of mass 20 g, are mounted in grooves along
+the rod. Initially, the two beads are held by
+catches on opposite sides of the rod’s center, 10
+cm from the axis of rotation. With the beads in
+this position, the rod is rotating with an angular
+velocity of 10.0 rad/s. When the catches are
+released, the beads slide outward along the rod.
+(a) What is the rod’s angular velocity when the
+beads reach the ends of the rod? (b) What is the
+rod’s angular velocity if the beads fly off the rod?
+61 . A merry-go-round has a radius of 2.0 m and a
+66 . A baseball catcher extends his arm straight up to
+moment of inertia A boy of mass 50
+catch a fast ball with a speed of 40 m/s. The
+kg runs tangent to the rim at a speed of 4.0 m/s
+baseball is 0.145 kg and the catcher’s arm
+and jumps on. If the merry-go-round is initially
+length is 0.5 m and mass 4.0 kg. (a) What is the
+at rest, what is the angular velocity after the boy
+angular velocity of the arm immediately after
+jumps on?
+catching the ball as measured from the arm
+62 . A playground merry-go-round has a mass of 120 socket? (b) What is the torque applied if the
+kg and a radius of 1.80 m and it is rotating with catcher stops the rotation of his arm 0.3 s after
+an angular velocity of 0.500 rev/s. What is its catching the ball?
+angular velocity after a 22.0-kg child gets onto it
+67 . In 2015, in Warsaw, Poland, Olivia Oliver of Nova
+by grabbing its outer edge? The child is initially
+Scotia broke the world record for being the
+at rest.
+fastest spinner on ice skates. She achieved a
+63 . Three children are riding on the edge of a merry- record 342 rev/min, beating the existing
+Access for free at openstax.org
+
+11 • Chapter Review 549
+Guinness World Record by 34 rotations. If an ice hollow cylinder of mass including people
+skater extends her arms at that rotation rate, on the station and a radius of 100.00 m. It is
+what would be her new rotation rate? Assume rotating in space at 3.30 rev/min in order to
+she can be approximated by a 45-kg rod that is produce artificial gravity. If 100 people of an
+1.7 m tall with a radius of 15 cm in the record average mass of 65.00 kg spacewalk to an
+spin. With her arms stretched take the awaiting spaceship, what is the new rotation rate
+approximation of a rod of length 130 cm with when all the people are off the station?
+of her body mass aligned perpendicular to
+74 . Neptune has a mass of and is
+the spin axis. Neglect frictional forces.
+from the Sun with an orbital period
+68 . A satellite in a geosynchronous circular orbit is of 165 years. Planetesimals in the outer
+42,164.0 km from the center of Earth. A small primordial solar system 4.5 × 109 years ago
+asteroid collides with the satellite sending it into coalesced into Neptune over hundreds of
+an elliptical orbit of apogee 45,000.0 km. What millions of years. If the primordial disk that
+is the speed of the satellite at apogee? Assume evolved into our present day solar system had a
+its angular momentum is conserved. radius of km and if the matter that made up
+these planetesimals that later became Neptune
+69 . A gymnast does cartwheels along the floor and
+was spread out evenly on the edges of it, what
+then launches herself into the air and executes
+was the orbital period of the outer edges of the
+several flips in a tuck while she is airborne. If her
+primordial disk?
+moment of inertia when executing the
+cartwheels is and her spin rate is 11.4 Precession of a Gyroscope
+0.5 rev/s, how many revolutions does she do in
+75 . A gyroscope has a 0.5-kg disk that spins at 40
+the air if her moment of inertia in the tuck is
+rev/s. The center of mass of the disk is 15 cm
+and she has 2.0 s to do the flips in
+from a pivot with a radius of the disk of 10 cm.
+the air?
+What is the precession angular velocity?
+70 . The centrifuge at NASA Ames Research Center
+76 . The precession angular velocity of a gyroscope is
+has a radius of 8.8 m and can produce forces on
+1.0 rad/s. If the mass of the rotating disk is 0.4
+its payload of 20 gs or 20 times the force of
+kg and its radius is 30 cm, and the distance from
+gravity on Earth. (a) What is the angular
+the center of mass to the pivot is 40 cm, what is
+momentum of a 20-kg payload that experiences
+the rotation rate in rev/s of the disk?
+10 gs in the centrifuge? (b) If the driver motor
+was turned off in (a) and the payload lost 10 kg, 77 . The axis of Earth makes a angle with a
+what would be its new spin rate, taking into direction perpendicular to the plane of Earth’s
+account there are no frictional forces present? orbit. As shown below, this axis precesses,
+making one complete rotation in 25,780 y.
+71 . A ride at a carnival has four spokes to which
+(a) Calculate the change in angular momentum
+pods are attached that can hold two people. The
+in half this time.
+spokes are each 15 m long and are attached to a
+(b) What is the average torque producing this
+central axis. Each spoke has mass 200.0 kg, and
+change in angular momentum?
+the pods each have mass 100.0 kg. If the ride
+(c) If this torque were created by a pair of forces
+spins at 0.2 rev/s with each pod containing two
+acting at the most effective point on the equator,
+50.0-kg children, what is the new spin rate if all
+what would the magnitude of each force be?
+the children jump off the ride?
+72 . An ice skater is preparing for a jump with turns
+and has his arms extended. His moment of
+inertia is while his arms are
+extended, and he is spinning at 0.5 rev/s. If he
+launches himself into the air at 9.0 m/s at an
+angle of with respect to the ice, how many
+revolutions can he execute while airborne if his
+moment of inertia in the air is ?
+73 . A space station consists of a giant rotating

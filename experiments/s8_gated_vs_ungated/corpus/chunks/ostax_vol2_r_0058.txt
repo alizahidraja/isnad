@@ -1,0 +1,278 @@
+# REAL PDF — openstax_vol2.pdf, pages 361-368
+############################################################
+
+Chapter 8 | Capacitance 351
+opposite charges +Q and −Q, respectively. From symmetry, the electrical field between the shells is directed radially
+outward.WecanobtainthemagnitudeofthefieldbyapplyingGauss’slawoverasphericalGaussiansurfaceofradiusr
+concentric with the shells. The enclosed charge is +Q; therefore we have
+∮ → E · ^ ndA=E(4πr2)= ε Q .
+0
+S
+Thus, the electrical field between the conductors is
+→
+1
+Q^
+E = r.
+4πε
+0
+r2
+→
+We substitute this E intoEquation 8.2and integrate along a radial path between the shells:
+V =∫ R 2→ E ·d → l = ⌠ R 2 ⎛ 1 Q^ r ⎞ ·( ^ r dr)= Q ⌠ R 2 dr = Q ⎛ 1 − 1 ⎞ .
+R 1 ⌡ R ⎝4πε 0 r2 ⎠ 4πε 0⌡ R r2 4πε 0 ⎝R 1 R 2 ⎠
+1 1
+Inthisequation,thepotentialdifferencebetweentheplatesis V =−(V −V )=V −V .Wesubstitutethisresultinto
+2 1 1 2
+Equation 8.1to find the capacitance of a spherical capacitor:
+Q R R (8.4)
+C= =4πε 1 2 .
+V 0R −R
+2 1
+Figure 8.6 A spherical capacitor consists of two concentric
+conducting spheres. Note that the charges on a conductor reside
+on its surface.
+Example 8.3
+Capacitance of an Isolated Sphere
+Calculatethecapacitanceofasingleisolatedconductingsphereofradius R andcompareitwithEquation8.4
+1
+in the limit as R →∞.
+2
+Strategy
+WeassumethatthechargeonthesphereisQ,andsowefollowthefourstepsoutlinedearlier.Wealsoassume
+the other conductor to be a concentric hollow sphere of infinite radius.
+
+352 Chapter 8 | Capacitance
+Solution
+Ontheoutsideofanisolatedconductingsphere,theelectricalfieldisgivenbyEquation8.2.Themagnitudeof
+the potential difference between the surface of an isolated sphere and infinity is
+V =∫ +∞→ E ·d → l = Q ⌠ +∞ 1 ^ r ·( ^ r dr)= Q ⌠ +∞ dr = 1 Q .
+R 1 4πε 0⌡ R r2 4πε 0⌡ R r2 4πε 0 R 1
+1 1
+The capacitance of an isolated sphere is therefore
+Q 4πε R
+C= =Q 0 1 =4πε R .
+V Q 0 1
+Significance
+ThesameresultcanbeobtainedbytakingthelimitofEquation 8.4as R →∞.Asingleisolatedsphereis
+2
+therefore equivalent to a spherical capacitor whose outer shell has an infinitely large radius.
+8.3 Check Your Understanding The radius of the outer sphere of a spherical capacitor is five times the
+radius of its inner shell. What are the dimensions of this capacitor if its capacitance is 5.00 pF?
+Cylindrical Capacitor
+Acylindrical capacitor consistsoftwoconcentric, conductingcylinders(Figure 8.7).Theinnercylinder,ofradius R ,
+1
+mayeitherbeashellorbecompletelysolid.Theoutercylinderisashellofinnerradius R .Weassumethatthelengthof
+2
+each cylinder island that the excess charges +Q and −Q reside on the inner and outer cylinders, respectively.
+Figure 8.7 A cylindrical capacitor consists of two concentric, conducting cylinders. Here, the charge
+on the outer surface of the inner cylinder is positive (indicated by + ) and the charge on the inner
+surface of the outer cylinder is negative (indicated by − ).
+Withedgeeffectsignored,theelectricalfieldbetweentheconductorsisdirectedradiallyoutwardfromthecommonaxisof
+the cylinders. Using the Gaussian surface shown inFigure 8.7, we have
+→ ^ Q
+∮ E ·n dA=E(2πrl)= ε .
+0
+S
+Therefore, the electrical field between the cylinders is
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 353
+→
+1
+Q^ (8.5)
+E = r.
+2πε rl
+0
+Here ^ r istheunitradialvectoralongtheradiusofthecylinder.WecansubstituteintoEquation8.2andfindthepotential
+difference between the cylinders:
+R R R
+V =∫ R 1 2→ E ·d → l p= 2π Q ε 0 l ∫ R 1 2 1 r ^ r ·( ^ r dr)= 2π Q ε 0 l ∫ R 1 2 d r r = 2π Q ε 0 l lnr|R R 1 2= 2π Q ε 0 l ln R R 2 1 .
+Thus, the capacitance of a cylindrical capacitor is
+Q 2πε l (8.6)
+C= = 0 .
+V ln(R /R )
+2 1
+Asinothercases,thiscapacitancedependsonlyonthegeometryoftheconductorarrangement.Animportantapplication
+of Equation 8.6 is the determination of the capacitance per unit length of a coaxial cable, which is commonly used to
+transmittime-varyingelectricalsignals.Acoaxialcableconsistsoftwoconcentric,cylindricalconductorsseparatedbyan
+insulatingmaterial.(Here,weassumeavacuumbetweentheconductors,butthephysicsisqualitatively almostthesame
+whenthespacebetweentheconductorsisfilledbyadielectric.)Thisconfigurationshieldstheelectricalsignalpropagating
+downtheinnerconductorfromstrayelectricalfieldsexternaltothecable.Currentflowsinoppositedirectionsintheinner
+andtheouterconductors,withtheouterconductorusuallygrounded.Now,fromEquation 8.6,thecapacitanceperunit
+length of the coaxial cable is given by
+C = 2πε 0 .
+l ln(R /R )
+2 1
+Inpracticalapplications,itisimportanttoselectspecificvaluesofC/l.Thiscanbeaccomplishedwithappropriatechoices
+of radii of the conductors and of the insulating material between them.
+8.4 Check Your Understanding When a cylindrical capacitor is given a charge of 0.500 nC, a potential
+differenceof20.0Vismeasuredbetweenthecylinders.(a)Whatisthecapacitanceofthissystem?(b)Ifthe
+cylinders are 1.0 m long, what is the ratio of their radii?
+SeveraltypesofpracticalcapacitorsareshowninFigure 8.4.Commoncapacitorsareoftenmadeoftwosmallpiecesof
+metalfoilseparatedbytwosmallpiecesofinsulation(seeFigure 8.2(b)).Themetalfoilandinsulationareencasedina
+protective coating, and two metal leads are used for connecting the foils to an external circuit. Some common insulating
+materials are mica, ceramic, paper, and Teflon™ non-stick coating.
+Another popular type of capacitor is an electrolytic capacitor. It consists of an oxidized metal in a conducting paste.
+The main advantage of an electrolytic capacitor is its high capacitance relative to other common types of capacitors. For
+example,capacitanceofonetypeofaluminumelectrolyticcapacitorcanbeashighas1.0F.However,youmustbecareful
+when using an electrolytic capacitor in a circuit, because it only functions correctly when the metal foil is at a higher
+potentialthantheconductingpaste.Whenreversepolarizationoccurs,electrolyticactiondestroystheoxidefilm.Thistype
+ofcapacitorcannotbeconnectedacrossanalternatingcurrentsource,becausehalfofthetime,acvoltagewouldhavethe
+wrong polarity, as an alternating current reverses its polarity (see Alternating-Current Circuts on alternating-current
+circuits).
+Avariableaircapacitor(Figure 8.8)hastwosetsofparallelplates.Onesetofplatesisfixed(indicatedas“stator”),and
+theothersetofplatesisattachedtoashaftthatcanberotated(indicatedas“rotor”).Byturningtheshaft,thecross-sectional
+areaintheoverlapoftheplatescanbechanged;therefore,thecapacitanceofthissystemcanbetunedtoadesiredvalue.
+Capacitortuninghasapplicationsinanytypeofradiotransmissionandinreceivingradiosignalsfromelectronicdevices.
+Any time you tune your car radio to your favorite station, think of capacitance.
+
+354 Chapter 8 | Capacitance
+Figure 8.8 In a variable air capacitor, capacitance can be tuned by changing the effective area
+of the plates. (credit: modification of work by Robbie Sproule)
+ThesymbolsshowninFigure 8.9arecircuitrepresentationsofvarioustypesofcapacitors.Wegenerallyusethesymbol
+showninFigure8.9(a).ThesymbolinFigure8.9(c)representsavariable-capacitancecapacitor.Noticethesimilarityof
+thesesymbolstothesymmetryofaparallel-platecapacitor.Anelectrolyticcapacitorisrepresentedbythesymbolinpart
+Figure 8.9(b), where the curved plate indicates the negative terminal.
+Figure 8.9 This shows three different circuit representations
+of capacitors. The symbol in (a) is the most commonly used one.
+The symbol in (b) represents an electrolytic capacitor. The
+symbol in (c) represents a variable-capacitance capacitor.
+Aninterestingappliedexampleofacapacitormodelcomesfromcellbiologyanddealswiththeelectricalpotentialinthe
+plasmamembraneofalivingcell(Figure 8.10).Cellmembranesseparatecellsfromtheirsurroundingsbutallowsome
+selectedionstopassinoroutofthecell.Thepotentialdifferenceacrossamembraneisabout70mV.Thecellmembrane
+maybe7to10nmthick.Treatingthecellmembraneasanano-sizedcapacitor,theestimateofthesmallestelectricalfield
+strength across its ‘plates’ yields the value E= V = 70×10 −3 V =7×10 6 V/m >3MV/m.
+d −9
+10×10 m
+This magnitude of electrical field is great enough to create an electrical spark in the air.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 355
+Figure 8.10 The semipermeable membrane of a biological cell has different
+concentrations of ions on its interior surface than on its exterior. Diffusion moves
+the K+ (potassium) and Cl– (chloride) ions in the directions shown, until the
+Coulomb force halts further transfer. In this way, the exterior of the membrane
+acquires a positive charge and its interior surface acquires a negative charge,
+creating a potential difference across the membrane. The membrane is normally
+impermeable to Na+ (sodium ions).
+Visit the PhET Explorations: Capacitor Lab (https://openstaxcollege.org/l/21phetcapacitor) to
+explorehowacapacitorworks.Changethesizeoftheplatesandaddadielectrictoseetheeffectoncapacitance.
+Changethevoltageandseechargesbuiltupontheplates.Observetheelectricalfieldinthecapacitor.Measurethe
+voltage and the electrical field.
+8.2 | Capacitors in Series and in Parallel
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how to determine the equivalent capacitance of capacitors in series and in parallel
+combinations
+• Compute the potential difference across the plates and the charge on the plates for a capacitor
+in a network and determine the net capacitance of a network of capacitors
+Several capacitors can be connected together to be used in a variety of applications. Multiple connections of capacitors
+behave as a single equivalent capacitor. The total capacitance of this equivalent single capacitor depends both on the
+individual capacitors and how they are connected. Capacitors can be arranged in two simple and common types of
+connections, known as series and parallel, for which we can easily calculate the total capacitance. These two basic
+combinations, series and parallel, can also be used as part of more complex connections.
+The Series Combination of Capacitors
+Figure8.11illustratesaseriescombinationofthreecapacitors,arrangedinarowwithinthecircuit.Asforanycapacitor,
+the capacitance of the combination is related to the charge and voltage by using Equation 8.1. When this series
+combination is connected to a battery with voltage V, each of the capacitors acquires an identical charge Q. To explain,
+firstnotethatthechargeontheplateconnectedtothepositiveterminalofthebatteryis +Q andthechargeontheplate
+connectedtothenegativeterminalis −Q.Chargesaretheninducedontheotherplatessothatthesumofthechargeson
+allplates,andthesumofchargesonanypairofcapacitorplates,iszero.However,thepotentialdrop V =Q/C onone
+1 1
+
+356 Chapter 8 | Capacitance
+capacitormaybedifferentfromthepotentialdrop V =Q/C onanothercapacitor,because,generally,thecapacitorsmay
+2 2
+havedifferentcapacitances.Theseriescombinationoftwoorthreecapacitorsresemblesasinglecapacitorwithasmaller
+capacitance. Generally, any number of capacitors connected in series is equivalent to one capacitor whose capacitance
+(calledtheequivalentcapacitance)issmallerthanthesmallestofthecapacitancesintheseriescombination.Chargeonthis
+equivalentcapacitoristhesameasthechargeonanycapacitorinaseriescombination:Thatis,allcapacitorsofaseries
+combinationhavethesamecharge.Thisoccursduetotheconservationofchargeinthecircuit.WhenachargeQinaseries
+circuitisremovedfromaplateofthefirstcapacitor(whichwedenoteas −Q),itmustbeplacedonaplateofthesecond
+capacitor (which we denote as +Q), and so on.
+Figure 8.11 (a) Three capacitors are connected in series. The magnitude of the charge on each plate
+isQ. (b) The network of capacitors in (a) is equivalent to one capacitor that has a smaller capacitance
+than any of the individual capacitances in (a), and the charge on its plates isQ.
+Wecanfindanexpressionforthetotal(equivalent)capacitancebyconsideringthevoltagesacrosstheindividualcapacitors.
+Thepotentialsacrosscapacitors1,2,and3are,respectively, V =Q/C , V =Q/C ,and V =Q/C .Thesepotentials
+1 1 2 2 3 3
+must sum up to the voltage of the battery, giving the following potential balance:
+V =V +V +V .
+1 2 3
+PotentialVismeasuredacrossanequivalentcapacitorthatholdschargeQandhasanequivalentcapacitance C .Entering
+S
+the expressions for V , V , and V , we get
+1 2 3
+Q Q Q Q
+= + + .
+C C C C
+S 1 2 3
+CancelingthechargeQ,weobtainanexpressioncontainingtheequivalentcapacitance, C ,ofthreecapacitorsconnected
+S
+in series:
+1 1 1 1
+= + + .
+C C C C
+S 1 2 3
+This expression can be generalized to any number of capacitors in a series network.
+Series Combination
+Forcapacitorsconnectedinaseriescombination,thereciprocaloftheequivalentcapacitanceisthesumofreciprocals
+of individual capacitances:
+1 1 1 1 (8.7)
+= + + +⋯.
+C C C C
+S 1 2 3
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 357
+Example 8.4
+Equivalent Capacitance of a Series Network
+Find the total capacitance for three capacitors connected in series, given their individual capacitances are
+1.000µF, 5.000µF, and 8.000µF.
+Strategy
+Because there are only three capacitors in this network, we can find the equivalent capacitance by using
+Equation 8.7with three terms.
+Solution
+We enter the given capacitances intoEquation 8.7:
+1 1 1 1
+= + +
+C C C C
+S 1 2 3
+1 1 1
+= + +
+1.000µF 5.000µF 8.000µF
+1 1.325
+= .
+C µF
+S
+µF
+Now we invert this result and obtain C = =0.755µF.
+S 1.325
+Significance
+Notethatinaseriesnetworkofcapacitors,theequivalentcapacitanceisalwayslessthanthesmallestindividual
+capacitance in the network.
+The Parallel Combination of Capacitors
+Aparallelcombinationofthreecapacitors,withoneplateofeachcapacitorconnectedtoonesideofthecircuitandtheother
+plate connected to the other side, is illustrated in Figure 8.12(a). Since the capacitors are connected in parallel, they all
+havethesamevoltageVacrosstheirplates.However,eachcapacitorintheparallelnetworkmaystoreadifferentcharge.
+Tofindtheequivalentcapacitance C oftheparallelnetwork,wenotethatthetotalchargeQstoredbythenetworkisthe
+P
+sum of all the individual charges:
+Q=Q +Q +Q .
+1 2 3
+On the left-hand side of this equation, we use the relation Q=C V, which holds for the entire network. On the right-
+P
+handsideoftheequation,weusetherelations Q =C V, Q =C V, and Q =C V forthethreecapacitorsinthe
+1 1 2 2 3 3
+network. In this way we obtain
+C V =C V+C V+C V.
+P 1 2 3
+This equation, when simplified, is the expression for the equivalent capacitance of the parallel network of three capacitors:
+C =C +C +C .
+P 1 2 3
+This expression is easily generalized to any number of capacitors connected in parallel in the network.
+Parallel Combination
+For capacitors connected in a parallel combination, the equivalent (net) capacitance is the sum of all individual
+capacitances in the network,
+C =C +C +C +⋯. (8.8)
+P 1 2 3

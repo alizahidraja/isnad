@@ -1,0 +1,177 @@
+# REAL PDF — openstax_vol1.pdf, pages 544-552
+############################################################
+
+532 11 • Angular Momentum
+So far, we have looked at the angular momentum of systems consisting of point particles and rigid bodies. We have
+also analyzed the torques involved, using the expression that relates the external net torque to the change in
+angular momentum, Equation 11.8. Examples of systems that obey this equation include a freely spinning bicycle
+tire that slows over time due to torque arising from friction, or the slowing of Earth’s rotation over millions of years
+due to frictional forces exerted on tidal deformations.
+However, suppose there is no net external torque on the system, In this case, Equation 11.8 becomes the
+law of conservation of angular momentum.
+LAW OF CONSERVATION OF ANGULAR MOMENTUM
+The angular momentum of a system of particles around a point in a fixed inertial reference frame is conserved if
+there is no net external torque around that point:
+11.10
+or
+11.11
+Note that the total angular momentum is conserved. Any of the individual angular momenta can change as long as
+their sum remains constant. This law is analogous to linear momentum being conserved when the external force on
+a system is zero.
+As an example of conservation of angular momentum, Figure 11.14 shows an ice skater executing a spin. The net
+torque on her is very close to zero because there is relatively little friction between her skates and the ice. Also, the
+friction is exerted very close to the pivot point. Both are small, so is negligible. Consequently, she can
+spin for quite some time. She can also increase her rate of spin by pulling her arms and legs in. Why does pulling her
+arms and legs in increase her rate of spin? The answer is that her angular momentum is constant, so that
+or
+where the primed quantities refer to conditions after she has pulled in her arms and reduced her moment of inertia.
+Because is smaller, the angular velocity must increase to keep the angular momentum constant.
+Access for free at openstax.org
+
+11.3 • Conservation of Angular Momentum 533
+FIGURE 11.14 (a) An ice skater is spinning on the tip of her skate with her arms extended. Her angular momentum is conserved because
+the net torque on her is negligibly small. (b) Her rate of spin increases greatly when she pulls in her arms, decreasing her moment of inertia.
+The work she does to pull in her arms results in an increase in rotational kinetic energy.
+It is interesting to see how the rotational kinetic energy of the skater changes when she pulls her arms in. Her initial
+rotational energy is
+whereas her final rotational energy is
+Since we can substitute for and find
+​
+Because her moment of inertia has decreased, her final rotational kinetic energy has increased. The source
+of this additional rotational kinetic energy is the work required to pull her arms inward. Note that the skater’s arms
+do not move in a perfect circle—they spiral inward. This work causes an increase in the rotational kinetic energy,
+while her angular momentum remains constant. Since she is in a frictionless environment, no energy escapes the
+system. Thus, if she were to extend her arms to their original positions, she would rotate at her original angular
+velocity and her kinetic energy would return to its original value.
+The solar system is another example of how conservation of angular momentum works in our universe. Our solar
+system was born from a huge cloud of gas and dust that initially had rotational energy. Gravitational forces caused
+the cloud to contract, and the rotation rate increased as a result of conservation of angular momentum (Figure
+11.15).
+
+534 11 • Angular Momentum
+FIGURE 11.15 The solar system coalesced from a cloud of gas and dust that was originally rotating. The orbital motions and spins of the
+planets are in the same direction as the original spin and conserve the angular momentum of the parent cloud. (credit: modification of work
+by NASA)
+We continue our discussion with an example that has applications to engineering.
+EXAMPLE 11.7
+Coupled Flywheels
+A flywheel rotates without friction at an angular velocity on a frictionless, vertical shaft of
+negligible rotational inertia. A second flywheel, which is at rest and has a moment of inertia three times that of the
+rotating flywheel, is dropped onto it (Figure 11.16). Because friction exists between the surfaces, the flywheels very
+quickly reach the same rotational velocity, after which they spin together. (a) Use the law of conservation of angular
+momentum to determine the angular velocity of the combination. (b) What fraction of the initial kinetic energy is
+lost in the coupling of the flywheels?
+Access for free at openstax.org
+
+11.3 • Conservation of Angular Momentum 535
+FIGURE 11.16 Two flywheels are coupled and rotate together.
+Strategy
+Part (a) is straightforward to solve for the angular velocity of the coupled system. We use the result of (a) to compare
+the initial and final kinetic energies of the system in part (b).
+Solution
+a. No external torques act on the system. The force due to friction produces an internal torque, which does not
+affect the angular momentum of the system. Therefore conservation of angular momentum gives
+b. Before contact, only one flywheel is rotating. The rotational kinetic energy of this flywheel is the initial rotational
+kinetic energy of the system, . The final kinetic energy is
+Therefore, the ratio of the final kinetic energy to the initial kinetic energy is
+Thus, 3/4 of the initial kinetic energy is lost to the coupling of the two flywheels.
+Significance
+Since the rotational inertia of the system increased, the angular velocity decreased, as expected from the law of
+conservation of angular momentum. In this example, we see that the final kinetic energy of the system has
+decreased, as energy is lost to the coupling of the flywheels. Compare this to the example of the skater in Figure
+11.14 doing work to bring her arms inward and adding rotational kinetic energy.
+CHECK YOUR UNDERSTANDING 11.4
+A merry-go-round at a playground is rotating at 4.0 rev/min. Three children jump on and increase the moment of
+inertia of the merry-go-round/children rotating system by . What is the new rotation rate?
+EXAMPLE 11.8
+Dismount from a High Bar
+An 80.0-kg gymnast dismounts from a high bar. He starts the dismount at full extension, then tucks to complete a
+number of revolutions before landing. His moment of inertia when fully extended can be approximated as a rod of
+length 1.8 m and when in the tuck a rod of half that length. If his rotation rate at full extension is 1.0 rev/s and he
+enters the tuck when his center of mass is at 3.0 m height moving horizontally to the floor, how many revolutions
+can he execute if he comes out of the tuck at 1.8 m height? See Figure 11.17.
+
+536 11 • Angular Momentum
+FIGURE 11.17 A gymnast dismounts from a high bar and executes a number of revolutions in the tucked position before landing upright.
+Strategy
+Using conservation of angular momentum, we can find his rotation rate when in the tuck. Using the equations of
+kinematics, we can find the time interval from a height of 3.0 m to 1.8 m. Since he is moving horizontally with
+respect to the ground, the equations of free fall simplify. This will allow the number of revolutions that can be
+executed to be calculated. Since we are using a ratio, we can keep the units as rev/s and don’t need to convert to
+radians/s.
+Solution
+The moment of inertia at full extension is .
+The moment of inertia in the tuck is .
+Conservation of angular momentum: .
+Time interval in the tuck: .
+In 0.5 s, he will be able to execute two revolutions at 4.0 rev/s.
+Significance
+Note that the number of revolutions he can complete will depend on how long he is in the air. In the problem, he is
+exiting the high bar horizontally to the ground. He could also exit at an angle with respect to the ground, giving him
+more or less time in the air depending on the angle, positive or negative, with respect to the ground. Gymnasts must
+take this into account when they are executing their dismounts.
+EXAMPLE 11.9
+Conservation of Angular Momentum of a Collision
+A bullet of mass is moving horizontally with a speed of The bullet strikes and becomes
+embedded in the edge of a solid disk of mass and radius The cylinder is free to rotate
+around its axis and is initially at rest (Figure 11.18). What is the angular velocity of the disk immediately after the
+bullet is embedded?
+Access for free at openstax.org
+
+11.4 • Precession of a Gyroscope 537
+FIGURE 11.18 A bullet is fired horizontally and becomes embedded in the edge of a disk that is free to rotate about its vertical axis.
+Strategy
+For the system of the bullet and the cylinder, no external torque acts along the vertical axis through the center of the
+disk. Thus, the angular momentum along this axis is conserved. The initial angular momentum of the bullet is ,
+which is taken about the rotational axis of the disk the moment before the collision. The initial angular momentum of
+the cylinder is zero. Thus, the net angular momentum of the system is . Since angular momentum is conserved,
+the initial angular momentum of the system is equal to the angular momentum of the bullet embedded in the disk
+immediately after impact.
+Solution
+The initial angular momentum of the system is
+The moment of inertia of the system with the bullet embedded in the disk is
+The final angular momentum of the system is
+Thus, by conservation of angular momentum, and
+Solving for
+Significance
+The system is composed of both a point particle and a rigid body. Care must be taken when formulating the angular
+momentum before and after the collision. Just before impact the angular momentum of the bullet is taken about the
+rotational axis of the disk.
+11.4 Precession of a Gyroscope
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the physical processes underlying the phenomenon of precession
+• Calculate the precessional angular velocity of a gyroscope
+Figure 11.19 shows a gyroscope, defined as a spinning disk in which the axis of rotation is free to assume any
+orientation. When spinning, the orientation of the spin axis is unaffected by the orientation of the body that encloses
+
+538 11 • Angular Momentum
+it. The body or vehicle enclosing the gyroscope can be moved from place to place and the orientation of the spin axis
+will remain the same. This makes gyroscopes very useful in navigation, especially where magnetic compasses can’t
+be used, such as in piloted and unpiloted spacecrafts, intercontinental ballistic missiles, unmanned aerial vehicles,
+and satellites like the Hubble Space Telescope.
+FIGURE 11.19 A gyroscope consists of a spinning disk about an axis that is free to assume any orientation.
+We illustrate the precession of a gyroscope with an example of a top in the next two figures. If the top is placed on a
+flat surface near the surface of Earth at an angle to the vertical and is not spinning, it will fall over, due to the force of
+gravity producing a torque acting on its center of mass. This is shown in Figure 11.20(a). However, if the top is
+spinning on its axis, rather than topple over due to this torque, it precesses about the vertical, shown in part (b) of
+the figure. This is due to the torque on the center of mass, which provides the change in angular momentum.
+FIGURE 11.20 (a) If the top is not spinning, there is a torque about the origin, and the top falls over. (b) If the top is spinning about
+its axis it doesn’t fall over but precesses about the z-axis.
+Figure 11.21 shows the forces acting on a spinning top. The torque produced is perpendicular to the angular
+momentum vector. This changes the direction of the angular momentum vector according to but not its
+magnitude. The top precesses around a vertical axis, since the torque is always horizontal and perpendicular to . If
+the top is not spinning, it acquires angular momentum in the direction of the torque, and it rotates around a
+horizontal axis, falling over just as we would expect.
+Access for free at openstax.org
+
+11.4 • Precession of a Gyroscope 539
+FIGURE 11.21 The force of gravity acting on the center of mass produces a torque in the direction perpendicular to The magnitude of
+doesn’t change but its direction does, and the top precesses about the z-axis.
+We can experience this phenomenon first hand by holding a spinning bicycle wheel and trying to rotate it about an
+axis perpendicular to the spin axis. As shown in Figure 11.22, the person applies forces perpendicular to the spin
+axis in an attempt to rotate the wheel, but instead, the wheel axis starts to change direction to her left due to the
+applied torque.
+FIGURE 11.22 (a) A person holding the spinning bike wheel lifts it with her right hand and pushes down with her left hand in an attempt to
+rotate the wheel. This action creates a torque directly toward her. This torque causes a change in angular momentum in exactly the
+same direction. (b) A vector diagram depicting how add, producing a new angular momentum pointing more toward the person.

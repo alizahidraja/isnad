@@ -1,0 +1,269 @@
+# REAL PDF — openstax_vol3.pdf, pages 456-464
+############################################################
+
+448 Chapter 9 | Condensed Matter Physics
+38. What is the Meissner effect?
+9.8Superconductivity
+36. Describe two main features of a superconductor. 39. What impact does an increasing magnetic field have
+on the critical temperature of a semiconductor?
+37. How does BCS theory explain superconductivity?
+PROBLEMS
+(a) Determine µ for the KCl molecule. (b) Find the
+9.1Types of Molecular Bonds
+separation distance between the K and Cl atoms.
+40. Theelectronconfigurationofcarbonis 1s22s22p2.
+Given this electron configuration, what other element 49. A diatomic F 2 molecule is in the l=1 state. (a)
+might exhibit the same type of hybridization as carbon? Whatistheenergyofthemolecule?(b)Howmuchenergy
+is radiated in a transition from a l=2 to a l=1 state?
+41. Potassium chloride (KCl) is a molecule formed by
+an ionic bond. At equilibrium separation the atoms are
+50. In a physics lab, you measure the vibrational-
+r 0 =0.279nm apart.Determinetheelectrostaticpotential rotational spectrum of potassium bromide (KBr). The
+energy of the atoms. estimated separation between absorption peaks is
+Δf ≈5.35×10 10 Hz.Thecentralfrequencyoftheband
+42. The electron affinity of Cl is 3.89 eV and the
+is f =8.75×1012 Hz.(a)Whatisthemomentofinertia
+ionization energy of K is 4.34 eV. Use the preceding 0
+problemtofindthedissociationenergy.(Neglecttheenergy (I)? (b) What is the energy of vibration for the molecule?
+of repulsion.)
+43. The measured energy dissociated energy of KCl is 9.3Bonding in Crystalline Solids
+4.43 eV. Use the results of the preceding problem to 51. The CsI crystal structure is BCC. The equilibrium
+determine the energy of repulsion of the ions due to the spacing is approximately r =0.46nm. If Cs + ion
+exclusion principle. 0
+occupiesacubicvolumeof r3,whatisthedistanceofthis
+0
+ion to its “nearest neighbor” I + ion?
+9.2Molecular Spectra
+44. In a physics lab, you measure the vibrational-
+52. The potential energy of a crystal is −8.10eV/ion
+rotational spectrum of HCl. The estimated separation
+pair. Find the dissociation energy for four moles of the
+between absorption peaks is Δf ≈5.5×1011 Hz. The
+crystal.
+central frequency of the band is f =9.0×10 13 Hz. (a)
+0
+53. The measured density of a NaF crystal is
+Whatisthemomentofinertia(I)?(b)Whatistheenergyof
+vibration for the molecule? 2.558g/cm 3.Whatistheequilibriumseparatedistanceof
+Na + and Fl− ions?
+45. For the preceding problem, find the equilibrium
+separation of the H and Cl atoms. Compare this with the
+54. What value of the repulsion constant, n, gives the
+actual value.
+measured dissociation energy of 221 kcal/mole for NaF?
+46. The separation between oxygen atoms in an O
+2 55. Determine the dissociation energy of 12 moles of
+molecule is about 0.121 nm. Determine the characteristic sodium chloride (NaCl). (Hint: the repulsion constant n is
+energy of rotation in eV. approximately 8.)
+47. The characteristic energy of the N molecule is 56. The measured density of a KCl crystal is
+2
+2.48×10−4 eV. Determine the separation distance 1.984g/cm 3 . Whatistheequilibriumseparationdistance
+between the nitrogen atoms of K + and Cl− ions?
+48. ThecharacteristicenergyforKClis 1.4×10 −5 eV. 57. What value of the repulsion constant, n, gives the
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 449
+measured dissociation energy of 171 kcal/mol for KCl?
+9.6Semiconductors and Doping
+58. The measured density of a CsCl crystal is 70. An experiment is performed to demonstrate the Hall
+3.988g/cm
+3.Whatistheequilibriumseparatedistanceof effect.Athinrectangularstripofsemiconductorwithwidth
+10 cm and length 30 cm is attached to a battery and
+Cs + and Cl− ions? immersedina1.50-Tfieldperpendiculartoitssurface.This
+producedaHallvoltageof12V.Whatisthedriftvelocity
+of the charge carriers?
+9.4Free Electron Model of Metals
+59. What is the difference in energy between the 71. Supposethat the cross-sectional area ofthe strip (the
+n x=n y=n z=4 stateandthestatewiththenexthigher area of the face perpendicular to the electric current)
+presented to the in the preceding problem is 1mm2 and
+energy? What is the percentage change in the energy
+thecurrentisindependentlymeasuredtobe2mA.Whatis
+betweenthe n x=n y=n z=4 stateandthestatewiththe
+the number density of the charge carriers?
+nexthigherenergy?(b)Comparethesewiththedifference
+inenergyandthepercentagechangeintheenergybetween
+72. A current-carrying copper wire with cross-section
+the n x=n y=n z=400 state and the state with the next
+σ =2mm2 hasadriftvelocityof0.02cm/s.Findthetotal
+higher energy.
+current running through the wire.
+60. Anelectronisconfinedtoametalcubeof l=0.8cm
+73. The Hall effect is demonstrated in the laboratory. A
+on each side. Determine the density of states at (a) thinrectangularstripofsemiconductorwithwidth5cmand
+E=0.80eV; (b) E=2.2eV; and (c) E=5.0eV.
+cross-sectional area 2mm2 is attached to a battery and
+immersed in a field perpendicular to its surface. The Hall
+61. What value of energy corresponds to a density of voltagereads12.5Vandthemeasureddriftvelocityis50
+states of 1.10×1024 eV−1 ? m/s. What is the magnetic field?
+62. Compare the density of states at 2.5 eV and 0.25 eV.
+9.7Semiconductor Devices
+63. Consideracubeofcopperwithedges1.50mmlong. 74. Show that forVless than zero, I ≈−I .
+net 0
+Estimatethenumberofelectronquantumstatesinthiscube
+whose energies are in the range 3.75 to 3.77 eV.
+75. A p-n diode has a reverse saturation current
+1.44×10 −8 A.Itisforwardbiasedsothatithasacurrent
+64. Ifthereisonefreeelectronperatomofcopper,what
+is the electron number density of this metal? of 6.78×10−1 A movingthroughit.Whatbiasvoltageis
+being applied if the temperature is 300 K?
+65. Determine the Fermi energy and temperature for
+copper at T =0K. 76. Thecollectorcurrentofatransistoris3.4Aforabase
+current of 4.2 mA. What is the current gain?
+9.5Band Theory of Solids 77. Applying the positive end of a battery to the p-side
+and the negative end to the n-side of a p-n junction, the
+66. Foraone-dimensionalcrystal,writethelatticespacing
+(a) in terms of the electron wavelength. measured current is 8.76×10−1 A. Reversing this
+polarity give a reverse saturation current of
+67. Whatisthemaindifferencebetweenaninsulatorand 4.41×10 −8 A. What is the temperature if the bias
+a semiconductor? voltage is 1.2 V?
+68. Whatisthelongestwavelengthforaphotonthatcan 78. Thebasecurrentofatransistoris4.4A,anditscurrent
+exciteavalenceelectronintotheconductionbandacrossan gain 1126. What is the collector current?
+energy gap of 0.80 eV?
+69. A valence electron in a crystal absorbs a photon of 9.8Superconductivity
+wavelength, λ=0.300nm.Thisisjustenoughenergyto
+79. At what temperature, in terms of T , is the critical
+allow the electron to jump from the valence band to the C
+conduction band. What is the size of the energy gap? field of a superconductor one-half its value at T =0K ?
+
+450 Chapter 9 | Condensed Matter Physics
+80. What is the critical magnetic field for lead at have when the superconductivity of the wire is destroyed?
+T =2.8K ?
+82. A tightly wound solenoid at 4.0 K is 50 cm long
+81. A Pb wire wound in a tight solenoid of diameter of and is constructed from Nb wire of radius 1.5 mm. What
+4.0 mm is cooled to a temperature of 5.0 K. The wire is maximum current can the solenoid carry if the wire is to
+connected in series with a 50-Ω resistor and a variable remain superconducting?
+sourceofemf.Astheemfisincreased,whatvaluedoesit
+ADDITIONAL PROBLEMS
+83. Potassium fluoride (KF) is a molecule formed by an r is the distance between the masses.
+0
+ionic bond. At equilibrium separation the atoms are
+r =0.255nm apart.Determinetheelectrostaticpotential
+0 93. Show that the average energy of an electron in a
+energy of the atoms. The electron affinity of F is 3.40 one-dimensional metal is related to the Fermi energy by
+eV and the ionization energy of K is 4.34 eV. Determine E − = 1E .
+dissociation energy. (Neglect the energy of repulsion.) 2 F
+84. Fortheprecedingproblem,sketchthepotentialenergy 94. Measurementsofasuperconductor’scriticalmagnetic
+versus separation graph for the bonding of K + andFl− field(inT)atvarioustemperatures(inK)aregivenbelow.
+ions. (a) Label the graph with the energy required to Use a line of best fit to determine B c(0). Assume
+transferanelectronfromKtoFl.(b)Labelthegraphwith
+T c=9.3K.
+the dissociation energy.
+T (in K) B c(T)
+85. The separation between hydrogen atoms in a H
+2 3.0 0.18
+molecule is about 0.075 nm. Determine the characteristic
+energy of rotation in eV. 4.0 0.16
+5.0 0.14
+86. The characteristic energy of the Cl molecule is
+2 6.0 0.12
+2.95×10 −5 eV. Determine the separation distance 7.0 0.09
+between the nitrogen atoms.
+8.0 0.05
+87. Determinethelowestthreerotationalenergylevelsof 9.0 0.01
+H .
+2 Table 9.6
+88. A carbon atom can hybridize in the sp2
+95. EstimatethefractionofSiatomsthatmustbereplaced
+configuration. (a) What is the angle between the hybrid
+by As atoms in order to form an impurity band.
+orbitals?
+96. Transition in the rotation spectrum are observed at
+89. List five main characteristics of ionic crystals that
+ordinary room temperature (T =300K). According to
+result from their high dissociation energy.
+your lab partner, a peak in the spectrum corresponds to
+a transition from the l=4 to the l=1 state. Is this
+90. Why is bonding in H + favorable? Express your
+2 possible? If so, determine the momentum of inertia of the
+answer in terms of the symmetry of the electron wave molecule.
+function.
+97. DeterminetheFermienergiesfor(a)Mg,(b)Na,and
+91. Astronomers claim to find evidence of He from (c) Zn.
+2
+light spectra of a distant star. Do you believe them?
+98. Find the average energy of an electron in a Zn wire.
+92. Show that the moment of inertia of a diatomic
+molecule is I = µr2, where µ is the reduced mass, and 99. What value of the repulsion constant, n, gives the
+0
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 451
+measured dissociation energy of 158 kcal/mol for CsCl? 100. A physical model of a diamond suggests a BCC
+packing structure. Why is this not possible?
+CHALLENGE PROBLEMS
+101. For an electron in a three-dimensional metal, show WhereNis the total number electrons in the metal.
+that the average energy is given by
+E
+F
+E − = 1∫ Eg(E)dE= 3E ,
+N 5 F
+0
+
+452 Chapter 9 | Condensed Matter Physics
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 453
+10 | NUCLEAR PHYSICS
+Figure 10.1 The Sun is powered by nuclear fusion in its core. The core converts approximately 10 38 protons/second into
+helium at a temperature of 14 million K. This process releases energy in the form of photons, neutrinos, and other particles.
+(credit: modification of work by EIT SOHO Consortium, ESA, NASA)
+Chapter Outline
+10.1Properties of Nuclei
+10.2Nuclear Binding Energy
+10.3Radioactive Decay
+10.4Nuclear Reactions
+10.5Fission
+10.6Nuclear Fusion
+10.7Medical Applications and Biological Effects of Nuclear Radiation
+Introduction
+Inthischapter,westudythecompositionandpropertiesoftheatomicnucleus.Thenucleusliesatthecenterofanatom,and
+
+454 Chapter 10 | Nuclear Physics
+consistsofprotonsandneutrons.Adeepunderstandingofthenucleusleadstonumerousvaluabletechnologies,including
+devices to date ancient rocks, map the galactic arms of the Milky Way, and generate electrical power.
+TheSunisthemainsourceofenergyinthesolarsystem.TheSunis109Earthdiametersacross,andaccountsformorethan
+99% ofthetotalmassofthesolarsystem.TheSunshinesbyfusinghydrogennuclei—protons—deepinsideitsinterior.
+Once this fuel is spent, the Sun will burn helium and, later, other nuclei. Nuclear fusion in the Sun is discussed toward
+theendofthischapter.Inthemeantime,wewillinvestigatenuclearpropertiesthatgovernallnuclearprocesses,including
+fusion.
+10.1 | Properties of Nuclei
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the composition and size of an atomic nucleus
+• Use a nuclear symbol to express the composition of an atomic nucleus
+• Explain why the number of neutrons is greater than protons in heavy nuclei
+• Calculate the atomic mass of an element given its isotopes
+Theatomicnucleusiscomposedofprotonsandneutrons(Figure 10.2).Protonsandneutronshaveapproximatelythe
+samemass,butprotonscarryoneunitofpositivecharge (+e), andneutronscarrynocharge.Theseparticlesarepacked
+togetherintoanextremelysmallspaceatthecenterofanatom.Accordingtoscatteringexperiments,thenucleusisspherical
+or ellipsoidal in shape, and about 1/100,000th the size of a hydrogen atom. If an atom were the size of a major league
+baseballstadium,thenucleuswouldberoughlythesizeofthebaseball.Protonsandneutronswithinthenucleusarecalled
+nucleons.
+Figure 10.2 The atomic nucleus is composed of protons and
+neutrons. Protons are shown in blue, and neutrons are shown in
+red.
+Counts of Nucleons
+The number of protons in the nucleus is given by the atomic number, Z. The number of neutrons in the nucleus is the
+neutron number,N. The total number of nucleons is themass number,A. These numbers are related by
+A=Z+N. (10.1)
+A nucleus is represented symbolically by
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 455
+A (10.2)
+X,
+Z
+whereXrepresentsthechemicalelement,Aisthemassnumber,andZistheatomicnumber.Forexample, 12C represents
+6
+the carbon nucleus with six protons and six neutrons (or 12 nucleons).
+AgraphofthenumberNofneutronsversusthenumberZofprotonsforarangeofstablenuclei(nuclides)isshownin
+Figure 10.3. For a given value of Z, multiple values of N (blue points) are possible. For small values of Z, the number
+of neutrons equals the number of protons (N =P), and the data fall on the red line. For large values of Z, the number
+of neutrons is greater than the number of protons (N >P), and the data points fall above the red line. The number of
+neutrons is generally greater than the number of protons for Z >15.
+Figure 10.3 This graph plots the number of neutronsN
+against the number of protonsZfor stable atomic nuclei. Larger
+nuclei, have more neutrons than protons.
+A chart based on this graph that provides more detailed information about each nucleus is given in Figure 10.4. This
+chartiscalledachartofthenuclides.Eachcellortilerepresentsaseparatenucleus.Thenucleiarearrangedinorderof
+ascendingZ(along the horizontal direction) and ascendingN(along the vertical direction).

@@ -1,0 +1,161 @@
+# REAL PDF — openstax_vol1.pdf, pages 323-328
+############################################################
+
+CHAPTER 7
+Work and Kinetic Energy
+FIGURE 7.1 A sprinter exerts her maximum power with the greatest force in the short time her foot is in contact with the ground. This
+adds to her kinetic energy, preventing her from slowing down during the race. Pushing back hard on the track generates a reaction force
+that propels the sprinter forward to win at the finish. (credit: modification of work by Marie-Lan Nguyen)
+CHAPTER OUTLINE
+7.1 Work
+7.2 Kinetic Energy
+7.3 Work-Energy Theorem
+7.4 Power
+INTRODUCTION In this chapter, we discuss some basic physical concepts involved in every physical motion in the
+universe, going beyond the concepts of force and change in motion, which we discussed in Motion in Two and Three
+Dimensions and Newton’s Laws of Motion. These concepts are work, kinetic energy, and power. We explain how
+these quantities are related to one another, which will lead us to a fundamental relationship called the work-energy
+theorem. In the next chapter, we generalize this idea to the broader principle of conservation of energy.
+The application of Newton’s laws usually requires solving differential equations that relate the forces acting on an
+object to the accelerations they produce. Often, an analytic solution is intractable or impossible, requiring lengthy
+numerical solutions or simulations to get approximate results. In such situations, more general relations, like the
+work-energy theorem (or the conservation of energy), can still provide useful answers to many questions and
+require a more modest amount of mathematical calculation. In particular, you will see how the work-energy
+theorem is useful in relating the speeds of a particle, at different points along its trajectory, to the forces acting on it,
+even when the trajectory is otherwise too complicated to deal with. Thus, some aspects of motion can be addressed
+with fewer equations and without vector decompositions.
+
+312 7 • Work and Kinetic Energy
+7.1 Work
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Represent the work done by any force
+• Evaluate the work done for various forces
+In physics, work is done on an object when energy is transferred to the object. In other words, work is done when a
+force acts on something that undergoes a displacement from one position to another. Forces can vary as a function
+of position, and displacements can be along various paths between two points. We first define the increment of
+work dW done by a force acting through an infinitesimal displacement as the dot product of these two vectors:
+7.1
+Then, we can add up the contributions for infinitesimal displacements, along a path between two positions, to get
+the total work.
+WORK DONE BY A FORCE
+The work done by a force is the integral of the force with respect to displacement along the path of the
+displacement:
+7.2
+The vectors involved in the definition of the work done by a force acting on a particle are illustrated in Figure 7.2.
+While in general, Equation 7.2 requires mathematics beyond the scope of this text, in many simple situations this
+integral becomes a familiar integral in one variable. We will examine several such examples and restrict our
+discussion to these cases.
+FIGURE 7.2 Vectors used to define work. The force acting on a particle and its infinitesimal displacement are shown at one point along the
+path between A and B. The infinitesimal work is the dot product of these two vectors; the total work is the integral of the dot product along
+the path.
+We choose to express the dot product in terms of the magnitudes of the vectors and the cosine of the angle between
+them, because the meaning of the dot product for work can be put into words more directly in terms of magnitudes
+and angles. We could equally well have expressed the dot product in terms of the various components introduced in
+Vectors. In two dimensions, these were the x- and y-components in Cartesian coordinates, or the r- and
+-components in polar coordinates; in three dimensions, it was just x-, y-, and z-components. Which choice is more
+convenient depends on the situation. In words, you can express Equation 7.1 for the work done by a force acting
+over a displacement as a product of one component acting parallel to the other component. From the properties of
+vectors, it doesn’t matter if you take the component of the force parallel to the displacement or the component of
+the displacement parallel to the force—you get the same result either way.
+Recall that the magnitude of a force times the cosine of the angle the force makes with a given direction is the
+component of the force in the given direction. The components of a vector can be positive, negative, or zero,
+depending on whether the angle between the vector and the component-direction is between and or and
+, or is equal to . As a result, the work done by a force can be positive, negative, or zero, depending on
+whether the force is generally in the direction of the displacement, generally opposite to the displacement, or
+Access for free at openstax.org
+
+7.1 • Work 313
+perpendicular to the displacement. The maximum work is done by a given force when it is along the direction of the
+displacement ( ), and zero work is done when the force is perpendicular to the displacement ( ).
+The units of work are units of force multiplied by units of length, which in the SI system is newtons times meters,
+This combination is called a joule, for historical reasons that we will mention later, and is abbreviated as J. In
+the English system, still used in the United States, the unit of force is the pound (lb) and the unit of distance is the
+foot (ft), so the unit of work is the foot-pound
+Work Done by Constant Forces and Contact Forces
+The simplest work to evaluate is that done by a force that is constant in magnitude and direction. In this case, we
+can factor out the force; the remaining integral is just the total displacement, which only depends on the end points
+A and B, but not on the path between them:
+Figure 7.3(a) shows a person exerting a constant force along the handle of a lawn mower, which makes an angle
+with the horizontal. The horizontal displacement of the lawn mower, over which the force acts, is The work done
+on the lawn mower is , which the figure also illustrates as the horizontal component of the
+force times the magnitude of the displacement.
+FIGURE 7.3 Work done by a constant force. (a) A person pushes a lawn mower with a constant force. The component of the force parallel to
+the displacement is the work done, as shown in the equation in the figure. (b) A person holds a briefcase. No work is done because the
+displacement is zero. (c) The person in (b) walks horizontally while holding the briefcase. No work is done because is zero.
+
+314 7 • Work and Kinetic Energy
+Figure 7.3(b) shows a person holding a briefcase. The person must exert an upward force, equal in magnitude to the
+weight of the briefcase, but this force does no work, because the displacement over which it acts is zero.
+In Figure 7.3(c), where the person in (b) is walking horizontally with constant speed, the work done by the person on
+the briefcase is still zero, but now because the angle between the force exerted and the displacement is (
+perpendicular to ) and .
+EXAMPLE 7.1
+Calculating the Work You Do to Push a Lawn Mower
+How much work is done on the lawn mower by the person in Figure 7.3(a) if he exerts a constant force of 75.0 N at
+an angle below the horizontal and pushes the mower 25.0 m on level ground?
+Strategy
+We can solve this problem by substituting the given values into the definition of work done on an object by a
+constant force, stated in the equation . The force, angle, and displacement are given, so that only the
+work W is unknown.
+Solution
+The equation for the work is
+Substituting the known values gives
+Significance
+Even though one and a half kilojoules may seem like a lot of work, we will see in Potential Energy and Conservation
+of Energy that it’s only about as much work as you could do by burning one sixth of a gram of fat.
+When you mow the grass, other forces act on the lawn mower besides the force you exert—namely, the contact force
+of the ground and the gravitational force of Earth. Let’s consider the work done by these forces in general. For an
+object moving on a surface, the displacement is tangent to the surface. The part of the contact force on the
+object that is perpendicular to the surface is the normal force Since the cosine of the angle between the normal
+and the tangent to a surface is zero, we have
+The normal force never does work under these circumstances. (Note that if the displacement did have a relative
+component perpendicular to the surface, the object would either leave the surface or break through it, and there
+would no longer be any normal contact force. However, if the object is more than a particle, and has an internal
+structure, the normal contact force can do work on it, for example, by displacing it or deforming its shape. This will
+be mentioned in the next chapter.)
+The part of the contact force on the object that is parallel to the surface is friction, For this object sliding along the
+surface, kinetic friction is opposite to relative to the surface, so the work done by kinetic friction is negative. If
+the magnitude of is constant (as it would be if all the other forces on the object were constant), then the work
+done by friction is
+7.3
+where is the path length on the surface. The force of static friction does no work in the reference frame
+between two surfaces because there is never displacement between the surfaces. As an external force, static
+Access for free at openstax.org
+
+7.1 • Work 315
+friction can do work. Static friction can keep someone from sliding off a sled when the sled is moving and perform
+positive work on the person. If you’re driving your car at the speed limit on a straight, level stretch of highway, the
+negative work done by air resistance is balanced by the positive work done by the static friction of the road on the
+drive wheels. You can pull the rug out from under an object in such a way that it slides backward relative to the rug,
+but forward relative to the floor. In this case, kinetic friction exerted by the rug on the object could be in the same
+direction as the displacement of the object, relative to the floor, and do positive work. The bottom line is that you
+need to analyze each particular case to determine the work done by the forces, whether positive, negative or zero.
+EXAMPLE 7.2
+Moving a Couch
+You decide to move your couch to a new position on your horizontal living room floor. The normal force on the couch
+is 1 kN and the coefficient of friction is 0.6. (a) You first push the couch 3 m parallel to a wall and then 1 m
+perpendicular to the wall (A to B in Figure 7.4). How much work is done by the frictional force? (b) You don’t like the
+new position, so you move the couch straight back to its original position (B to A in Figure 7.4). What was the total
+work done against friction moving the couch away from its original position and back again?
+FIGURE 7.4 Top view of paths for moving a couch.
+Strategy
+The magnitude of the force of kinetic friction on the couch is constant, equal to the coefficient of friction times the
+normal force, . Therefore, the work done by it is , where d is the path length traversed. The
+segments of the paths are the sides of a right triangle, so the path lengths are easily calculated. In part (b), you can
+use the fact that the work done against a force is the negative of the work done by the force.
+Solution
+a. The work done by friction i
+b. The length of the path along the hypotenuse is , so the total work done against friction is
+Significance
+The total path over which the work of friction was evaluated began and ended at the same point (it was a closed
+path), so that the total displacement of the couch was zero. However, the total work was not zero. The reason is that
+forces like friction are classified as nonconservative forces, or dissipative forces, as we discuss in the next chapter.
+CHECK YOUR UNDERSTANDING 7.1
+Can kinetic friction ever be a constant force for all paths?
+The other force on the lawn mower mentioned above was Earth’s gravitational force, or the weight of the mower.
+Near the surface of Earth, the gravitational force on an object of mass m has a constant magnitude, mg, and
+constant direction, vertically down. Therefore, the work done by gravity on an object is the dot product of its weight
+and its displacement. In many cases, it is convenient to express the dot product for gravitational work in terms of
+the x-, y-, and z-components of the vectors. A typical coordinate system has the x-axis horizontal and the y-axis
+vertically up. Then the gravitational force is so the work done by gravity, over any path from A to B, is

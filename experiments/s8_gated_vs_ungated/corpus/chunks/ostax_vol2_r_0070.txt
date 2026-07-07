@@ -1,0 +1,253 @@
+# REAL PDF — openstax_vol2.pdf, pages 432-436
+############################################################
+
+422 Chapter 9 | Current and Resistance
+9.3Resistivity and Resistance
+• Resistance has units of ohms (Ω), related to volts and amperes by 1Ω = 1V/A.
+ρL
+• TheresistanceRofacylinderoflengthLandcross-sectionalareaAis R= ,where ρ istheresistivityofthe
+A
+material.
+• Values of ρ inTable 9.1show that materials fall into three groups—conductors, semiconductors, and insulators.
+• Temperature affects resistivity; for relatively small temperature changes ΔT, resistivity is ρ= ρ (1+αΔT),
+0
+where ρ is the original resistivity and α is the temperature coefficient of resistivity.
+0
+• TheresistanceRofanobjectalsovarieswithtemperature: R=R (1+αΔT),where R istheoriginalresistance,
+0 0
+andRis the resistance after the temperature change.
+9.4Ohm's Law
+• Ohm’s law is an empirical relationship for current, voltage, and resistance for some common types of circuit
+elements, including resistors. It does not apply to other devices, such as diodes.
+• OnestatementofOhm’slawgivestherelationshipamongcurrentI,voltageV,andresistanceRinasimplecircuit
+as V =IR.
+• Another statement of Ohm’s law, on a microscopic level, is J =σE.
+9.5Electrical Energy and Power
+• Electric power is the rate at which electric energy is supplied to a circuit or consumed by a load.
+• Power dissipated by a resistor depends on the square of the current through the resistor and is equal to
+P=I2R=
+V2
+.
+R
+• TheSIunitforelectricpoweristhewattandtheSIunitforelectricenergyisthejoule.Anothercommonunitfor
+electric energy, used by power companies, is the kilowatt-hour (kW · h).
+• The total energy used over a time interval can be found by E=∫Pdt.
+9.6Superconductors
+• Superconductivity is a phenomenon that occurs in some materials when cooled to very low critical temperatures,
+resulting in a resistance of exactly zero and the expulsion of all magnetic fields.
+• Materialsthatarenormallygoodconductors(suchascopper,gold,andsilver)donotexperiencesuperconductivity.
+• SuperconductivitywasfirstobservedinmercurybyHeikeKamerlinghOnnesin1911.In1986,Dr.ChingWuChu
+ofHoustonUniversityfabricatedabrittle,ceramiccompoundwithacriticaltemperatureclosetothetemperatureof
+liquid nitrogen.
+• Superconductivity can be used in the manufacture of superconducting magnets for use in MRIs and high-speed,
+levitated trains.
+CONCEPTUAL QUESTIONS
+what physical quantity do ampere-hours correspond
+9.1Electrical Current (voltage, current, charge, energy, power,…)?
+1. Canawirecarryacurrentandstillbeneutral—thatis,
+have a total charge of zero? Explain. 3. When working with high-power electric circuits, it is
+advisedthatwheneverpossible,youwork“one-handed”or
+“keep one hand in your pocket.” Why is this a sensible
+2. Car batteries are rated in ampere-hours (A·h). To
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 423
+suggestion?
+9.4Ohm's Law
+12. In Determining Field from Potential, resistance
+9.2Model of Conduction in Metals V
+was defined as R≡ . In this section, we presented
+I
+4. Incandescent light bulbs are being replaced with more
+efficient LED and CFL light bulbs. Is there any obvious Ohm’s law, which is commonly expressed as V =IR.
+evidence that incandescent light bulbs might not be that The equations look exactly alike. What is the difference
+energy efficient? Is energy converted into anything but between Ohm’s law and the definition of resistance?
+visible light?
+13. Shown below are the results of an experiment where
+5. It was stated that the motion of an electron appears four devices were connected across a variable voltage
+nearly random when an electrical field is applied to the source. The voltage is increased and the current is
+conductor. What makes the motion nearly random and measured. Which device, if any, is an ohmic device?
+differentiatesitfromtherandommotionofmoleculesina
+gas?
+6. Electric circuits are sometimes explained using a
+conceptual model of water flowing through a pipe. In this
+conceptual model, the voltage source is represented as a
+pumpthatpumpswaterthroughpipesandthepipesconnect
+components in the circuit. Is a conceptual model of water
+flowing through a pipe an adequate representation of the
+circuit? How are electrons and wires similar to water
+molecules and pipes? How are they different?
+7. Anincandescentlightbulbispartiallyevacuated.Why
+do you suppose that is? 14. The current I is measured through a sample of an
+ohmic material as a voltage V is applied. (a) What is the
+current when the voltage is doubled to 2V (assume the
+change in temperature of the material is negligible)? (b)
+9.3Resistivity and Resistance
+Whatisthevoltageappliedisthecurrentmeasuredis0.2I
+8. The IR drop across a resistor means that there is a
+(assume the change in temperature of the material is
+change in potential or voltage across the resistor. Is there
+negligible)?Whatwillhappentothecurrentifthematerial
+any change in current as it passes through a resistor?
+ifthe voltage remains constant, butthe temperature ofthe
+Explain.
+material increases significantly?
+9. Do impurities in semiconducting materials listed in
+Table 9.1 supply free charges? (Hint: Examine the range 9.5Electrical Energy and Power
+of resistivity for each and determine whether the pure
+15. Commonhouseholdappliancesareratedat110V,but
+semiconductor has the higher or lower conductivity.)
+powercompaniesdelivervoltageinthekilovoltrangeand
+then step the voltage down using transformers to 110 V
+10. Does the resistance of an object depend on the path
+to be used in homes. You will learn in later chapters that
+current takes through it? Consider, for example, a
+transformersconsistofmanyturnsofwire,whichwarmup
+rectangularbar—isitsresistancethesamealongitslength
+ascurrentflowsthroughthem,wastingsomeoftheenergy
+as across its width?
+that is given off as heat. This sounds inefficient. Why do
+the power companies transport electric power using this
+method?
+16. Your electric bill gives your consumption in units
+of kilowatt-hour (kW · h). Does this unit represent the
+amount of charge, current, voltage, power, or energy you
+buy?
+11. Ifaluminumandcopperwiresofthesamelengthhave
+17. Resistors are commonly rated at 1 W, 1 W, 1 W,
+the same resistance, which has the larger diameter? Why? 8 4 2
+1 W and 2 W for use in electrical circuits. If a current of
+
+424 Chapter 9 | Current and Resistance
+I =2.00A isaccidentallypassedthrougha R=1.00Ω
+resistor rated at 1 W, what would be the most probable 9.6Superconductors
+outcome?Isthereanythingthatcanbedonetopreventsuch 19. What requirement for superconductivity makes
+an accident? current superconducting devices expensive to operate?
+18. Animmersionheaterisasmallapplianceusedtoheat 20. Name two applications for superconductivity listed
+acupofwaterforteabypassingcurrentthrougharesistor. in this section and explain how superconductivity is used
+If the voltage applied to the appliance is doubled, will the in the application. Can you think of a use for
+time required toheat thewater change? Byhowmuch? Is superconductivity that is not listed?
+this a good idea?
+PROBLEMS
+What is the current at time t=3.00s?
+9.1Electrical Current
+21. A Van de Graaff generator is one of the original 26. The current through a conductor is modeled as
+particleacceleratorsandcanbeusedtoacceleratecharged I(t)=I
+m
+sin(2π[60Hz]t). Write an equation for the
+particles like protons or electrons. You may have seen it
+charge as a function of time.
+used to make human hair stand on end or produce large
+sparks.OneapplicationoftheVandeGraaffgeneratoristo
+27. The charge on a capacitor in a circuit is modeled
+create X-rays by bombarding a hard metal target with the
+beam.Considerabeamofprotonsat1.00keVandacurrent as Q(t)=Q max cos⎛ ⎝ ωt+ϕ⎞ ⎠ .Whatisthecurrentthrough
+of 5.00 mA produced by the generator. (a) What is the the circuit as a function of time?
+speedoftheprotons?(b)Howmanyprotonsareproduced
+each second?
+9.2Model of Conduction in Metals
+22. A cathode ray tube (CRT) is a device that produces
+28. Analuminumwire1.628mmindiameter(14-gauge)
+a focused beam of electrons in a vacuum. The electrons
+carries a current of 3.00 amps. (a) What is the absolute
+strike a phosphor-coated glass screen at the end of the
+value of the charge density in the wire? (b) What is the
+tube, which produces a bright spot of light. The position
+driftvelocityoftheelectrons?(c)Whatwouldbethedrift
+of the bright spot of light on the screen can be adjusted
+velocity if the same gauge copper were used instead of
+by deflecting the electrons with electrical fields, magnetic
+fields,orboth.AlthoughtheCRTtubewasoncecommonly aluminum? The density of copper is 8.96g/cm 3 and the
+foundintelevisions,computerdisplays,andoscilloscopes, density of aluminum is 2.70g/cm 3. The molar mass of
+newer appliances use a liquid crystal display (LCD) or
+aluminum is 26.98 g/mol and the molar mass of copper is
+plasma screen. You still may come across a CRT in your
+63.5 g/mol. Assume each atom of metal contributes one
+study of science. Consider a CRT with an electron beam
+free electron.
+average current of 25.00µA. How many electrons strike
+the screen every minute?
+29. The current of an electron beam has a measured
+current of I =50.00µA with a radius of 1.00mm2.
+23. Howmanyelectronsflowthroughapointinawirein
+3.00 s if there is a constant current of I =4.00A? What is the magnitude of the current density of the beam?
+30. A high-energy proton accelerator produces a proton
+24. A conductor carries a current that is decreasing
+exponentially with time. The current is modeled as
+beam with a radius of r =0.90mm. The beam current
+I =I e−t/τ, where I =3.00A is the current at time is I =9.00µA and is constant. The charge density of
+0 0
+t=0.00s and τ=0.50s isthetimeconstant.Howmuch thebeamis n=6.00×1011 protonspercubicmeter.(a)
+charge flows through the conductor between t=0.00s What is the current density of the beam? (b) What is the
+driftvelocityofthebeam?(c)Howmuchtimedoesittake
+and t=3τ?
+for 1.00×10 10 protons to be emitted by the accelerator?
+25. Thequantityofchargethroughaconductorismodeled
+31. Consider a wire of a circular cross-section with a
+as Q=4.00 Ct4−1.00 Ct+6.00mC.
+s4 s radius of R=3.00mm. The magnitude of the current
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 425
+densityismodeledas J =cr2=5.00×10 6 A r2.What originally at 20.0°C, to double its resistance, neglecting
+m4 any changes in dimensions? (b) Does this happen in
+isthecurrentthroughtheinnersectionofthewirefromthe household wiring under ordinary circumstances?
+center to r =0.5R?
+44. A resistor made of nichrome wire is used in an
+32. The current of an electron beam has a measured application where its resistance cannot change more than
+current of I =50.00µA with a radius of 1.00mm2.
+1.00% from its value at 20.0°C. Over what temperature
+range can it be used?
+What is the magnitude of the current density of the beam?
+45. Ofwhatmaterialisaresistormadeifitsresistanceis
+33. Thecurrentsuppliedtoanairconditionerunitis4.00
+40.0% greater at 100.0°C than at 20.0°C?
+amps. The air conditioner is wired using a 10-gauge
+(diameter 2.588 mm) wire. The charge density is
+46. An electronic device designed to operate at any
+n=8.48×10 28electrons. Find the magnitude of (a)
+m 3 temperature in the range from −10.0°C to 55.0°C
+current density and (b) the drift velocity. contains pure carbon resistors. By what factor does their
+resistance increase over this range?
+9.3Resistivity and Resistance 47. (a) Of what material is a wire made, if it is 25.0 m
+long with a diameter of 0.100 mm and has a resistance
+34. What current flows through the bulb of a 3.00-V
+of 77.7Ω at 20.0°C? (b) What is its resistance at
+flashlight when its hot resistance is 3.60Ω?
+150.0°C?
+35. Calculate the effective resistance of a pocket
+48. Assuming a constant temperature coefficient of
+calculator that has a 1.35-V battery and through which
+resistivity, what is the maximum percent decrease in the
+0.200 mA flows.
+resistance of a constantan wire starting at 20.0°C?
+36. How many volts are supplied to operate an indicator
+light on a DVD player that has a resistance of 140Ω, 49. A copper wire has a resistance of 0.500Ω at
+given that 25.0 mA passes through it? 20.0°C, and an iron wire has a resistance of 0.525Ω
+at the same temperature. At what temperature are their
+37. What is the resistance of a 20.0-m-long piece of resistances equal?
+12-gauge copper wire having a 2.053-mm diameter?
+38. The diameter of 0-gauge copper wire is 8.252 mm. 9.4Ohm's Law
+Find the resistance of a 1.00-km length of such wire used 50. A 2.2-kΩ resistor is connected across a D cell
+for power transmission.
+battery (1.5 V). What is the current through the resistor?
+39. Ifthe0.100-mm-diametertungstenfilamentinalight
+51. A resistor rated at 250kΩ is connected across two
+bulb is to have a resistance of 0.200Ω at 20.0°C, how
+Dcellbatteries(each1.50V)inseries,withatotalvoltage
+long should it be?
+of 3.00 V. The manufacturer advertises that their resistors
+are within 5% of the rated value. What are the possible
+40. Aleadrodhasalengthof30.00cmandaresistanceof minimum current and maximum current through the
+5.00µΩ. What is the radius of the rod? resistor?
+41. Findtheratioofthediameterofaluminumtocopper 52. Aresistorisconnectedinserieswithapowersupply
+wire, if they have the same resistance per unit length (as of 20.00 V. The current measure is 0.50 A. What is the
+they might in household wiring). resistance of the resistor?
+42. Whatcurrentflowsthrougha2.54-cm-diameterrodof 53. A resistor is placed in a circuit with an adjustable
+voltagesource.Thevoltageacrossandthecurrentthrough
+pure silicon that is 20.0 cm long, when 1.00×10 3 V is
+the resistor and the measurements are shown below.
+applied to it? (Such a rod may be used to make nuclear-
+Estimate the resistance of the resistor.
+particle detectors, for example.)
+43. (a)Towhattemperaturemustyouraiseacopperwire,

@@ -1,0 +1,308 @@
+# REAL PDF — openstax_vol3.pdf, pages 417-425
+############################################################
+
+Chapter 9 | Condensed Matter Physics 409
+repulsionbetweenatoms,thebondangleis 104.5°.Thesameargumentscanbeusedtounderstandthetetrahedralshape
+of methane ⎛CH ) and other molecules.
+⎝ 4
+9.2 | Molecular Spectra
+Learning Objectives
+By the end of this section, you will be able to:
+• Use the concepts of vibrational and rotational energy to describe energy transitions in a
+diatomic molecule
+• Explain key features of a vibrational-rotational energy spectrum of a diatomic molecule
+• Estimate allowed energies of a rotating molecule
+• Determine the equilibrium separation distance between atoms in a diatomic molecule from the
+vibrational-rotational absorption spectrum
+Molecularenergylevelsaremorecomplicatedthanatomicenergylevelsbecausemoleculescanalsovibrateandrotate.The
+energiesassociatedwithsuchmotionslieindifferentrangesandcanthereforebestudiedseparately.Electronictransitions
+are of order 1 eV, vibrational transitions are of order 10−2 eV, and rotational transitions are of order 10 −3 eV. For
+complex molecules, these energy changes are difficult to characterize, so we begin with the simple case of a diatomic
+molecule.
+According to classical mechanics, the energy of rotation of a diatomic molecule is given by
+L2 (9.4)
+E r=
+2I
+,
+whereIisthemomentofinertiaandListheangularmomentum.Accordingtoquantummechanics,therotationalangular
+momentum is quantized:
+L= l(l+1)ℏ(l=0, 1, 2, 3,...), (9.5)
+wherelis the orbital angular quantum number. The allowedrotational energy levelof a diatomic molecule is therefore
+ℏ2 (9.6)
+E r=l(l+1) 2I =l(l+1)E 0r (l=0, 1, 2, 3,...),
+where the characteristic rotational energy of a molecule is defined as
+ℏ2 (9.7)
+E 0r=
+2I
+.
+For a diatomic molecule, the moment of inertia with reduced mass µ is
+I = µr2, (9.8)
+0
+where r is the total distance between the atoms. The energy difference between rotational levels is therefore
+0
+ΔE r=E l+1 −E l=2(l+1)E 0r. (9.9)
+
+410 Chapter 9 | Condensed Matter Physics
+Adetailedstudyoftransitionsbetweenrotationalenergylevelsbroughtaboutbytheabsorptionoremissionofradiation(a
+so-calledelectric dipole transition) requires that
+Δl= ±1. (9.10)
+Thisrule,knownasaselectionrule,limitsthepossibletransitionsfromonequantumstatetoanother.Equation9.10isthe
+selectionruleforrotationalenergytransitions.Itappliesonlytodiatomicmoleculesthathaveanelectricdipolemoment.For
+thisreason,symmetricmoleculessuchas H and N donotexperiencerotationalenergytransitionsduetotheabsorption
+2 2
+or emission of electromagnetic radiation.
+Example 9.2
+The Rotational Energy of HCl
+Determine the lowest three rotational energy levels of a hydrogen chloride (HCl) molecule.
+Strategy
+Hydrogenchloride(HCl)isadiatomicmoleculewithanequilibriumseparationdistanceof0.127nm.Rotational
+energylevels dependonlyonthemomentum ofinertia Iandtheorbital angularmomentum quantumnumberl
+(inthiscase, l=0,1,and2).Themomentumofinertiadepends,inturn,ontheequilibriumseparationdistance
+(which is given) and the reduced mass, which depends on the masses of the H and Cl atoms.
+Solution
+First, we compute the reduced mass. If Particle 1 is hydrogen and Particle 2 is chloride, we have
+⎛931.5MeV⎞
+µ = m 1 m 2 = (1.0u)(35.4u) =0.97u=0.97u ⎜ c2 ⎟ =906 MeV .
+m 1 +m 2 1.0u+35.4u ⎜ 1u ⎟ c2
+⎝ ⎠
+The corresponding rest mass energy is therefore
+µc2=9.06×10 8 eV.
+This allows us to calculate the characteristic energy:
+E 0r= ℏ
+2I
+2 =
+2 ⎛
+ℏ
+µr
+2
+2⎞
+=
+2 ⎛
+(
+µ
+ℏ
+c
+c
+2
+)
+⎞
+2
+r2
+=
+2 ⎛ 9.06
+(
+×
+19
+1
+7
+0
+.3
+8
+e
+e
+V
+V ⎞
+·
+(
+n
+0
+m
+.1
+)
+2
+2
+7nm)2
+=1.33×10 −3 eV.
+⎝ 0⎠ ⎝ ⎠ 0 ⎝ ⎠
+(Notice how this expression is written in terms of the rest mass energy. This technique is common in modern
+physics calculations.) The rotational energy levels are given by
+ℏ2
+E r=l(l+1)
+2I
+=l(l+1)E 0r,
+wherelistheorbitalquantumnumber.ThethreelowestrotationalenergylevelsofanHClmoleculearetherefore
+l=0;E r=0eV⎛
+⎝
+no rotation⎞
+⎠
+,
+l=1;E r=2E 0r=2.66×10 −3 eV,
+l=2;E r=6E 0r=7.99×10 −3 eV.
+Significance
+Therotationalspectrumisassociatedwithweaktransitions(1/1000to1/100ofaneV).Bycomparison,theenergy
+of an electron in the ground state of hydrogen is −13.6eV.
+9.2 Check Your Understanding What does the energy separation between absorption lines in a rotational
+spectrum of a diatomic molecule tell you?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 411
+The vibrational energy level, which is the energy level associated with the vibrational energy of a molecule, is more
+difficulttoestimatethantherotationalenergylevel.However,wecanestimatetheselevelsbyassumingthatthetwoatoms
+inthediatomicmoleculeareconnectedbyanidealspringofspringconstantk.Thepotentialenergyofthisspringsystemis
+U osc= 1
+2
+kΔr2, (9.11)
+Where Δr isachangeinthe“naturallength”ofthemoleculealongalinethatconnectstheatoms.SolvingSchrödinger’s
+equation for this potential gives
+E n= ⎛
+⎝
+n+ 1
+2
+⎞
+⎠
+ℏω(n=0, 1, 2, …), (9.12)
+Where ω is the natural angular frequency of vibration and n is the vibrational quantum number. The prediction that
+vibrational energy levels are evenly spaced (ΔE=ℏω) turns out to be good at lower energies.
+Adetailedstudyoftransitionsbetweenvibrationalenergylevelsinducedbytheabsorptionoremissionofradiation(andthe
+specifically so-called electric dipole transition) requires that
+Δn= ±1. (9.13)
+Equation9.13representstheselectionruleforvibrationalenergytransitions.Asmentionedbefore,thisruleappliesonly
+to diatomic molecules that have an electric dipole moment. Symmetric molecules do not experience such transitions.
+Due to the selection rules, the absorption or emission of radiation by a diatomic molecule involves a transition in
+vibrationalandrotationalstates.Specifically,ifthevibrationalquantumnumber(n)changesbyoneunit,thentherotational
+quantum number (l) changes by one unit. An energy-level diagram of a possible transition is given in Figure 9.5.
+The absorption spectrum for such transitions in hydrogen chloride (HCl) is shown in Figure 9.6. The absorption peaks
+are due to transitions from the n=0 to n=1 vibrational states. Energy differences for the band of peaks at the left
+andrightare,respectively, ΔE l→l+1 =ℏω+2(l+1)E 0r=ℏω+2E 0r, ℏω+4E 0r, ℏω+6E 0r, …⎛ ⎝ right band⎞ ⎠ and
+ΔE l→l−1 =ℏω−2lE 0r=ℏω−2E 0r, ℏω−4E 0r, ℏω−6E 0r, …(left band⎞ ⎠ .
+Themomentofinertiacanthenbedeterminedfromtheenergyspacingbetweenindividualpeaks ⎛
+⎝
+2E
+0r
+⎞
+⎠
+orfromthegap
+between the left and right bands (4E 0r). The frequency at the center of this gap is the frequency of vibration.
+Figure 9.5 Three types of energy levels in a diatomic
+molecule: electronic, vibrational, and rotational. If the
+vibrational quantum number (n) changes by one unit, then the
+rotational quantum number (l) changes by one unit.
+
+412 Chapter 9 | Condensed Matter Physics
+Figure 9.6 Absorption spectrum of hydrogen chloride (HCl) from the n=0ton=1 vibrational levels. The discrete peaks
+indicate a quantization of the angular momentum of the molecule. The bands to the left indicate a decrease in angular momentum,
+whereas those to the right indicate an increase in angular momentum.
+9.3 | Bonding in Crystalline Solids
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the packing structures of common solids
+• Explain the difference between bonding in a solid and in a molecule
+• Determine the equilibrium separation distance given crystal properties
+• Determine the dissociation energy of a salt given crystal properties
+Beginninginthissection,westudycrystallinesolids,whichconsistofatomsarrangedinanextendedregularpatterncalled
+alattice.Solidsthatdonotorareunabletoformcrystalsareclassifiedasamorphoussolids.Althoughamorphoussolids
+(like glass) have a variety of interesting technological applications, the focus of this chapter will be on crystalline solids.
+Atomsarrangethemselvesinalatticetoformacrystalbecauseofanetattractiveforcebetweentheirconstituentelectrons
+and atomic nuclei. The crystals formed by the bonding of atoms belong to one of three categories, classified by their
+bonding:ionic,covalent,andmetallic.Moleculescanalsobondtogethertoformcrystals;thesebonds,notdiscussedhere,
+areclassifiedasmolecular.Earlyinthetwentiethcentury,theatomicmodelofasolidwasspeculative.Wenowhavedirect
+evidence of atoms in solids (Figure 9.7).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 413
+Figure 9.7 An image made with a scanning tunneling microscope of the surface of graphite.
+The peaks represent the atoms, which are arranged in hexagons. The scale is in angstroms.
+Ionic Bonding in Solids
+Manysolidsformbyionicbonding.Aprototypicalexampleisthesodiumchloridecrystal,aswediscussedearlier.Electrons
+transferfromsodiumatomstoadjacentchlorineatoms,sincethevalenceelectronsinsodiumarelooselyboundandchlorine
+hasalargeelectronaffinity.Thepositivelychargedsodiumionsandnegativelychargedchlorine(chloride)ionsorganize
+into an extended regular array of atoms (Figure 9.8).
+Figure 9.8 Structure of the sodium chloride crystal. The
+sodium and chloride ions are arranged in a face-centered cubic
+(FCC) structure.
+Thechargedistributionsofthesodiumandchlorideionsaresphericallysymmetric,andthechlorideionisabouttwotimes
+the diameter of the sodium ion. The lowest energy arrangement of these ions is called the face-centered cubic (FCC)
+
+414 Chapter 9 | Condensed Matter Physics
+structure.Inthisstructure,eachionisclosesttosixionsoftheotherspecies.Theunitcellisacube—anatomoccupiesthe
+centerandcornersofeach“face”ofthecube.Theattractivepotentialenergyofthe Na + ionduetothefieldsofthesesix
+Cl– ions is written
+e2 (9.14)
+U =−6
+1 4πε r
+0
+where the minus sign designates an attractive potential (and we identify k=1/4πε ). At a distance 2r are its next-
+0
+nearest neighbors: twelve Na + ions of the same charge. The total repulsive potential energy associated with these ions is
+e2 (9.15)
+U =12 .
+2 4πε 2r
+0
+Nextclosestareeight Cl− ionsadistance 3r fromthe Na + ion.Thepotentialenergyofthe Na + ioninthefieldof
+these eight ions is
+e2 (9.16)
+U =−8 .
+3 4πε 3r
+0
+Continuinginthesamemannerwithalternatesetsof Cl− and Na + ions,wefindthatthenetattractivepotentialenergy
+U of the single Na + ion can be written as
+A
+e2 (9.17)
+U =−α
+coul 4πε r
+0
+where α is the Madelung constant, introduced earlier. From this analysis, we can see that this constant is the infinite
+converging sum
+α=6− 12 + 8 +⋯. (9.18)
+2 3
+Distantionsmakeasignificantcontributiontothissum,soitconvergesslowly,andmanytermsmustbeusedtocalculate
+α accurately. For all FCC ionic solids, α is approximately 1.75.
+Otherpossiblepackingarrangementsofatomsinsolidsincludesimplecubicandbody-centeredcubic(BCC).Thesethree
+differentpackingstructuresofsolidsarecomparedinFigure9.9.Thefirstrowrepresentsthelocation,butnotthesize,of
+theions;thesecondrowindicatestheunitcellsofeachstructureorlattice;andthethirdrowrepresentsthelocationandsize
+oftheions.TheBCCstructurehaseightnearestneighbors,withaMadelungconstantofabout1.76—onlyslightlydifferent
+fromthatfortheFCCstructure.DeterminingtheMadelungconstantforspecificsolidsisdifficultworkandthesubjectof
+current research.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 415
+Figure 9.9 Packing structures for solids from left to right: (a) simple cubic, (b) body-centered cubic (BCC), and (c) face-
+centered cubic (FCC). Each crystal structure minimizes the energy of the system.
+Theenergyofthesodiumionsisnotentirelyduetoattractiveforcesbetweenoppositelychargedions.Iftheionsarebought
+too close together, the wave functions of core electrons of the ions overlap, and the electrons repel due to the exclusion
+principle.Thetotalpotentialenergyofthe Na + ionisthereforethesumoftheattractiveCoulombpotential (U ) and
+coul
+therepulsivepotentialassociatedwiththeexclusionprinciple (U ex). Calculatingthisrepulsivepotentialrequirespowerful
+computers. Fortunately, however, this energy can be described accurately by a simple formula that contains adjustable
+parameters:
+A (9.19)
+U ex= rn
+wheretheparametersAandnarechosentogivepredictionsconsistentwithexperimentaldata.Fortheproblemattheendof
+thischapter,theparameternisreferredtoastherepulsionconstant.Thetotalpotentialenergyofthe Na + ionistherefore
+e2 A (9.20)
+U = −α
+4πε r
++ rn.
+0
+Atequilibrium,thereisnonetforceontheion,sothedistancebetweenneighboring Na + and Cl− ionsmustbethevalue
+
+416 Chapter 9 | Condensed Matter Physics
+dU
+r for whichUis a minimum. Setting =0, we have
+0 dr
+αe2 nA (9.21)
+0= − .
+4πε r 2 r n+1
+0 0 0
+Thus,
+αe2r n−1 (9.22)
+A= 0 .
+4πε n
+0
+Inserting this expression into the expression for the total potential energy, we have
+U = − 4π α ε e2 r ⎡ ⎣ r r 0− 1 n ⎛ ⎝ r r 0⎞ ⎠ n⎤ ⎦ . (9.23)
+0 0
+Notice that the total potential energy now has only one adjustable parameter, n. The parameter A has been replaced by a
+functioninvolving r ,theequilibriumseparationdistance,whichcanbemeasuredbyadiffractionexperiment(youlearned
+0
+aboutdiffractioninapreviouschapter).ThetotalpotentialenergyisplottedinFigure 9.10for n=8,theapproximate
+value ofnfor NaCl.
+Figure 9.10 The potential energy of a sodium ion in a NaCl
+crystal for n=8. The equilibrium bond length occurs when the
+energy is a minimized.
+Aslongas n>1,thecurveforUhasthesamegeneralshape:Uapproachesinfinityas r →0 andUapproacheszeroas
+r →∞. The minimum value of the potential energy is given by
+U min (r =r 0 )=−α k r e2⎛ ⎝ 1− 1 n ⎞ ⎠ . (9.24)
+0
+The energy per ion pair needed to separate the crystal into ions is therefore
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

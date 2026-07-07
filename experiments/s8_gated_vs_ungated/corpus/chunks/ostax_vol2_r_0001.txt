@@ -1,0 +1,153 @@
+# REAL PDF — openstax_vol2.pdf, pages 3-8
+############################################################
+
+University Physics Volume 2
+SENIOR CONTRIBUTING AUTHORS
+SAMUEL J. LING, TRUMAN STATE UNIVERSITY
+JEFF SANNY, LOYOLA MARYMOUNT UNIVERSITY
+WILLIAM MOEBS, PHD
+
+OpenStax
+Rice University
+6100 Main Street MS-375
+Houston, Texas 77005
+To learn more about OpenStax, visit https://openstax.org.
+Individual print copies and bulk orders can be purchased through our website.
+©2018 Rice University. Textbook content produced by OpenStax is licensed under a Creative Commons Attribution 4.0
+International License (CC BY 4.0). Under this license, any user of this textbook or the textbook contents herein must provide
+proper attribution as follows:
+- If you redistribute this textbook in a digital format (including but not limited to PDF and HTML), then you must retain on
+every page the following attribution:
+“Download for free at https://openstax.org/details/books/university-physics-volume-2.”
+- If you redistribute this textbook in a print format, then you must include on every physical page the following attribution:
+“Download for free at https://openstax.org/details/books/university-physics-volume-2.”
+- If you redistribute part of this textbook, then you must retain in every digital format page view (including but not limited
+to PDF and HTML) and on every physical printed page the following attribution:
+“Download for free at https://openstax.org/details/books/university-physics-volume-2.”
+- If you use this textbook as a bibliographic reference, please include https://openstax.org/details/books/university-
+physics-volume-2 in your citation.
+For questions regarding this licensing, please contact support@openstax.org.
+Trademarks
+The OpenStax name, OpenStax logo, OpenStax book covers, OpenStax CNX name, OpenStax CNX logo, OpenStax Tutor name,
+Openstax Tutor logo, Connexions name, Connexions logo, Rice University name, and Rice University logo are not subject to the
+license and may not be reproduced without the prior and express written consent of Rice University.
+PRINT BOOK ISBN-10 1-938168-16-X
+PRINT BOOK ISBN-13 978-1-938168-16-1
+PDF VERSION ISBN-10 1-947172-21-2
+PDF VERSION ISBN-13 978-1-947172-21-0
+ENHANCED TEXTBOOK ISBN-10 1-947172-21-2
+ENHANCED TEXTBOOK ISBN-13 978-1-947172-21-0
+Revision Number UP2-2016-003(05/18)-MJ
+Original Publication Year 2016
+
+OPENSTAX
+OpenStax provides free, peer-reviewed, openly licensed textbooks for introductory college and Advanced Placement® courses and low-cost,
+personalized courseware that helps students learn. A nonprofit ed tech initiative based at Rice University, we’re committed to helping students
+access the tools they need to complete their courses and meet their educational goals.
+RICE UNIVERSITY
+OpenStax, OpenStax CNX, and OpenStax Tutor are initiatives of Rice University. As a leading research university with a distinctive commitment
+to undergraduate education, Rice University aspires to path-breaking research, unsurpassed teaching, and contributions to the betterment of
+our world. It seeks to fulfill this mission by cultivating a diverse community of learning and discovery that produces leaders across the spectrum
+of human endeavor.
+FOUNDATION SUPPORT
+OpenStax is grateful for the tremendous support of our sponsors. Without their strong engagement, the goal of free access to
+high-quality textbooks would remain just a dream.
+Laura and John Arnold Foundation (LJAF) actively seeks opportunities to invest in organizations and thought leaders
+that have a sincere interest in implementing fundamental changes that not only yield immediate gains, but also
+repair broken systems for future generations. LJAF currently focuses its strategic investments on education, criminal
+justice, research integrity, and public accountability.
+The William and Flora Hewlett Foundation has been making grants since 1967 to help solve social and
+environmental problems at home and around the world. The Foundation concentrates its resources on activities in
+education, the environment, global development and population, performing arts, and philanthropy, and makes
+grants to support disadvantaged communities in the San Francisco Bay Area.
+Calvin K. Kazanjian was the founder and president of Peter Paul (Almond Joy), Inc. He firmly believed that the more
+people understood about basic economics the happier and more prosperous they would be. Accordingly, he
+established the Calvin K. Kazanjian Economics Foundation Inc, in 1949 as a philanthropic, nonpolitical educational
+organization to support efforts that enhanced economic understanding.
+Guided by the belief that every life has equal value, the Bill & Melinda Gates Foundation works to help all people
+lead healthy, productive lives. In developing countries, it focuses on improving people’s health with vaccines and
+other life-saving tools and giving them the chance to lift themselves out of hunger and extreme poverty. In the
+United States, it seeks to significantly improve education so that all young people have the opportunity to reach
+their full potential. Based in Seattle, Washington, the foundation is led by CEO Jeff Raikes and Co-chair William H.
+Gates Sr., under the direction of Bill and Melinda Gates and Warren Buffett.
+The Maxfield Foundation supports projects with potential for high impact in science, education, sustainability, and
+other areas of social importance.
+Our mission at The Michelson 20MM Foundation is to grow access and success by eliminating unnecessary hurdles
+to affordability. We support the creation, sharing, and proliferation of more effective, more affordable educational
+content by leveraging disruptive technologies, open educational resources, and new models for collaboration
+between for-profit, nonprofit, and public entities.
+The Bill and Stephanie Sick Fund supports innovative projects in the areas of Education, Art, Science and
+Engineering.
+
+new school year.
+new classes.
+new books.
+free books.
+new assignments.
+free app.
+new app.
+OpenStax + SE
+Get free textbooks for over 30
+college courses in the free
+OpenStax + SE app.
+Download it now on the App Store
+or get it on Google Play.
+
+Table of Contents
+Preface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+Unit 1. Thermodynamics
+Chapter1: Temperature and Heat . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+1.1 Temperature and Thermal Equilibrium . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+1.2 Thermometers and Temperature Scales . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+1.3 Thermal Expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+1.4 Heat Transfer, Specific Heat, and Calorimetry . . . . . . . . . . . . . . . . . . . . . . 19
+1.5 Phase Changes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+1.6 Mechanisms of Heat Transfer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+Chapter2: The Kinetic Theory of Gases . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+2.1 Molecular Model of an Ideal Gas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
+2.2 Pressure, Temperature, and RMS Speed . . . . . . . . . . . . . . . . . . . . . . . . . 78
+2.3 Heat Capacity and Equipartition of Energy . . . . . . . . . . . . . . . . . . . . . . . . 88
+2.4 Distribution of Molecular Speeds . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 93
+Chapter3: The First Law of Thermodynamics . . . . . . . . . . . . . . . . . . . . . . . . . . 109
+3.1 Thermodynamic Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 110
+3.2 Work, Heat, and Internal Energy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 112
+3.3 First Law of Thermodynamics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 116
+3.4 Thermodynamic Processes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 122
+3.5 Heat Capacities of an Ideal Gas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 126
+3.6 Adiabatic Processes for an Ideal Gas . . . . . . . . . . . . . . . . . . . . . . . . . . . 128
+Chapter4: The Second Law of Thermodynamics . . . . . . . . . . . . . . . . . . . . . . . . 145
+4.1 Reversible and Irreversible Processes . . . . . . . . . . . . . . . . . . . . . . . . . . 146
+4.2 Heat Engines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 148
+4.3 Refrigerators and Heat Pumps . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 150
+4.4 Statements of the Second Law of Thermodynamics . . . . . . . . . . . . . . . . . . . 153
+4.5 The Carnot Cycle . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 155
+4.6 Entropy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 160
+4.7 Entropy on a Microscopic Scale . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 166
+Unit 2. Electricity and Magnetism
+Chapter5: Electric Charges and Fields . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 181
+5.1 Electric Charge . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 182
+5.2 Conductors, Insulators, and Charging by Induction . . . . . . . . . . . . . . . . . . . . 188
+5.3 Coulomb's Law . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 192
+5.4 Electric Field . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 197
+5.5 Calculating Electric Fields of Charge Distributions . . . . . . . . . . . . . . . . . . . . 204
+5.6 Electric Field Lines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 213
+5.7 Electric Dipoles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 217
+Chapter6: Gauss's Law . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 235
+6.1 Electric Flux . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 236
+6.2 Explaining Gauss’s Law . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 245
+6.3 Applying Gauss’s Law . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 251
+6.4 Conductors in Electrostatic Equilibrium . . . . . . . . . . . . . . . . . . . . . . . . . . 265
+Chapter7: Electric Potential . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 285
+7.1 Electric Potential Energy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 286
+7.2 Electric Potential and Potential Difference . . . . . . . . . . . . . . . . . . . . . . . . 293
+7.3 Calculations of Electric Potential . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 305
+7.4 Determining Field from Potential . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 316
+7.5 Equipotential Surfaces and Conductors . . . . . . . . . . . . . . . . . . . . . . . . . . 319
+7.6 Applications of Electrostatics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 328
+Chapter8: Capacitance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 345
+8.1 Capacitors and Capacitance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 345
+8.2 Capacitors in Series and in Parallel . . . . . . . . . . . . . . . . . . . . . . . . . . . . 355
+8.3 Energy Stored in a Capacitor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 361
+8.4 Capacitor with a Dielectric . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 365
+8.5 Molecular Model of a Dielectric . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 368
+Chapter9: Current and Resistance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 385

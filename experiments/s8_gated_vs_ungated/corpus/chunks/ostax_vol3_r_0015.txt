@@ -1,0 +1,284 @@
+# REAL PDF — openstax_vol3.pdf, pages 89-97
+############################################################
+
+Chapter 2 | Geometric Optics and Image Formation 81
+Thepositivemagnificationmeansthattheimageisupright(i.e.,ithasthesameorientationastheobject).
+Since |m|>0, the image is larger than the object. The size of the image is
+|h
+i
+|=|m|h o=(2.00)(3.0cm)= 6.0cm.
+c. For d o=20cm, f = +10cm
+−1
+⎛ ⎞
+d = 1 − 1
+i ⎝f d ⎠
+o
+−1
+⎛ 1 1 ⎞
+= −
+⎝10.0cm 20.0cm⎠
+=20.0cm
+Theimagedistanceispositive,sotheimageisreal,isontheoppositesideofthelensfromtheobject,and
+is 20.0 cm from the lens. The magnification is
+d
+m=− i =− 20.0cm =−1.00.
+d 20.0cm
+o
+Thenegativemagnificationmeansthattheimageisinverted.Since |m|=1,theimageisthesamesize
+as the object.
+Whensolvingproblemsingeometric optics,weoftenneedtocombineraytracingandthelensequations.Thefollowing
+example demonstrates this approach.
+Example 2.5
+Choosing the Focal Length and Type of Lens
+To project an image of a light bulb on a screen 1.50 m away, you need to choose what type of lens to use
+(convergingordiverging)anditsfocallength(Figure2.28).Thedistancebetweenthelensandthelightbulbis
+fixed at 0.75 m. Also, what is the magnification and orientation of the image?
+Strategy
+The image must be real, so you choose to use a converging lens. The focal length can be found by using the
+thin-lensequationandsolvingforthefocallength.Theobjectdistanceis d o=0.75m andtheimagedistanceis
+d =1.5m.
+i
+Solution
+Solve the thin lens for the focal length and insert the desired object and image distances:
+1 1 1
++ =
+d d f
+o i
+−1
+⎛ ⎞
+f = 1 + 1
+⎝d d ⎠
+o i
+−1
+⎛ 1 1 ⎞
+= +
+⎝0.75m 1.5m⎠
+=0.50m
+The magnification is
+d
+m=− i =− 1.5m =−2.0.
+d o 0.75m
+
+82 Chapter 2 | Geometric Optics and Image Formation
+Significance
+Theminussignforthemagnificationmeansthattheimageisinverted.Thefocallengthispositive,asexpected
+foraconverginglens.Raytracingcanbeusedtocheckthecalculation(seeFigure2.28).Asexpected,theimage
+is inverted, is real, and is larger than the object.
+Figure 2.28 A light bulb placed 0.75 m from a lens having a 0.50-m focal length produces a real
+image on a screen, as discussed in the example. Ray tracing predicts the image location and size.
+2.5 | The Eye
+Learning Objectives
+By the end of this section, you will be able to:
+• Understand the basic physics of how images are formed by the human eye
+• Recognize several conditions of impaired vision as well as the optics principles for treating
+these conditions
+Thehumaneyeisperhapsthemostinterestingandimportantofallopticalinstruments.Oureyesperformavastnumberof
+functions:Theyallowustosensedirection,movement,colors,anddistance.Inthissection,weexplorethegeometricoptics
+of the eye.
+Physics of the Eye
+The eye is remarkable in how it forms images and in the richness of detail and color it can detect. However, our eyes
+oftenneedsomecorrectiontoreachwhatiscalled“normal”vision.Actually,normalvisionshouldbecalled“ideal”vision
+because nearly one-half of the human population requires some sort of eyesight correction, so requiring glasses is by no
+means“abnormal.”Imageformationbyoureyesandcommonvisioncorrectioncanbeanalyzedwiththeopticsdiscussed
+earlier in this chapter.
+Figure2.29showsthebasicanatomyoftheeye.Thecorneaandlensformasystemthat,toagoodapproximation,actsas
+asinglethinlens.Forclearvision,arealimagemustbeprojectedontothelight-sensitiveretina,whichliesafixeddistance
+fromthelens.Theflexiblelensoftheeyeallowsittoadjusttheradiusofcurvatureofthelenstoproduceanimageonthe
+retinaforobjectsatdifferentdistances.Thecenteroftheimagefallsonthefovea,whichhasthegreatestdensityoflight
+receptorsandthegreatestacuity(sharpness)inthevisualfield.Thevariableopening(i.e.,thepupil)oftheeye,alongwith
+chemical adaptation, allows the eye to detect light intensities from the lowest observable to 10 10 times greater (without
+damage).Thisisanincrediblerangeofdetection.Processingofvisualnerveimpulsesbeginswithinterconnectionsinthe
+retina and continues in the brain. The optic nerve conveys the signals received by the eye to the brain.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 83
+Figure 2.29 The cornea and lens of the eye act together to form a real image on the
+light-sensing retina, which has its densest concentration of receptors in the fovea and a
+blind spot over the optic nerve. The radius of curvature of the lens of an eye is
+adjustable to form an image on the retina for different object distances. Layers of
+tissues with varying indices of refraction in the lens are shown here. However, they
+have been omitted from other pictures for clarity.
+Theindicesofrefractionintheeyearecrucialtoitsabilitytoformimages.Table2.1liststheindicesofrefractionrelevant
+to the eye. The biggest change in the index of refraction, which is where the light rays are most bent, occurs at the air-
+corneainterfaceratherthanattheaqueoushumor-lensinterface.TheraydiagraminFigure2.30showsimageformation
+bythe cornea and lens ofthe eye. The cornea, which is itself a converging lens with a focal length ofapproximately 2.3
+cm,providesmostofthefocusingpoweroftheeye.Thelens,whichisaconverginglenswithafocallengthofabout6.4
+cm,providesthefinerfocusneededtoproduceaclearimageontheretina.Thecorneaandlenscanbetreatedasasingle
+thinlens,eventhoughthelightrayspassthroughseverallayersofmaterial(suchascornea,aqueoushumor,severallayers
+inthelens,andvitreoushumor),changingdirectionateachinterface.Theimageformedismuchliketheoneproducedby
+asingleconvexlens(i.e.,areal,invertedimage).Althoughimagesformedintheeyeareinverted,thebraininvertsthem
+once more to make them seem upright.
+Material Index of Refraction
+Water 1.33
+Air 1.0
+Cornea 1.38
+Aqueous humor 1.34
+Lens 1.41*
+Vitreous humor 1.34
+Table 2.1Refractive Indices Relevant to the
+Eye *This is an average value. The actual
+index of refraction varies throughout the lens
+and is greatest in center of the lens.
+
+84 Chapter 2 | Geometric Optics and Image Formation
+Figure 2.30 In the human eye, an image forms on the retina. Rays from the top and bottom of the
+object are traced to show how a real, inverted image is produced on the retina. The distance to the
+object is not to scale.
+As noted, the image must fall precisely on the retina to produce clear vision—that is, the image distance d must equal
+i
+the lens-to-retina distance. Because the lens-to-retina distance does not change, the image distance d must be the same
+i
+for objects at all distances. The ciliary muscles adjust the shape of the eye lens for focusing on nearby or far objects.
+By changing the shape of the eye lens, the eye changes the focal length of the lens. This mechanism of the eye is called
+accommodation.
+Thenearestpointanobjectcanbeplacedsothattheeyecanformaclearimageontheretinaiscalledthenearpointof
+theeye.Similarly,thefarpointisthefarthestdistanceatwhichanobjectisclearlyvisible.Apersonwithnormalvision
+canseeobjectsclearlyatdistancesrangingfrom25cmtoessentiallyinfinity.Thenearpointincreaseswithage,becoming
+several meters for some older people. In this text, we consider the near point to be 25 cm.
+Wecanusethethin-lensequationstoquantitativelyexamineimageformationbytheeye.First,wedefinetheopticalpower
+of a lens as
+P= 1 (2.23)
+f
+withthefocallengthfgiveninmeters.Theunitsofopticalpowerarecalled“diopters”(D).Thatis, 1D= 1 , or1m−1.
+m
+Optometristsprescribecommoneyeglassesandcontactlensesinunitsofdiopters.Withthisdefinitionofopticalpower,we
+can rewrite the thin-lens equations as
+P= 1 + 1 . (2.24)
+d d
+o i
+Workingwithopticalpowerisconvenientbecause,fortwoormorelensesclosetogether,theeffectiveopticalpowerofthe
+lens system is approximately the sum of the optical power of the individual lenses:
+P =P +P +P +⋯ (2.25)
+total lens1 lens2 lens3
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 85
+Example 2.6
+Effective Focal Length of the Eye
+Thecorneaandeyelenshavefocallengthsof2.3and6.4cm,respectively.Findthenetfocallengthandoptical
+power of the eye.
+Strategy
+The optical powers of the closely spaced lenses add, so P
+eye
+=P cornea+P
+lens
+.
+Solution
+Writing the equation for power in terms of the focal lengths gives
+1 1 1 1 1
+= + = + .
+f eye f cornea f lens 2.3cm 6.4cm
+Hence, the focal length of the eye (cornea and lens together) is
+f eye =1.69cm.
+The optical power of the eye is
+P eye = f e 1 ye = 0.01 1 69m =59D.
+For clear vision, the image distance d must equal the lens-to-retina distance. Normal vision is possible for objects at
+i
+distances d o=25cm toinfinity.Thefollowingexampleshowshowtocalculatetheimagedistanceforanobjectplaced
+at the near point of the eye.
+Example 2.7
+Image of an object placed at the near point
+Thenetfocallengthofaparticularhumaneyeis1.7cm.Anobjectisplacedatthenearpointoftheeye.Howfar
+behind the lens is a focused image formed?
+Strategy
+Thenearpointis25cmfromtheeye,sotheobjectdistanceis d o=25cm.Wedeterminetheimagedistance
+from the lens equation:
+1 1 1
+= − .
+d f d
+i o
+Solution
+−1
+⎛ ⎞
+d = 1 − 1
+i ⎝f d ⎠
+o
+−1
+⎛ 1 1 ⎞
+= −
+⎝1.7cm 25cm⎠
+=1.8cm
+Therefore, the image is formed 1.8 cm behind the lens.
+Significance
+From the magnification formula, we find m=− 1.8cm =−0.073. Since m<0, the image is inverted in
+25cm
+orientationwithrespecttotheobject.Fromtheabsolutevalueofmweseethattheimageismuchsmallerthan
+the object; in fact, it is only 7% of the size of the object.
+
+86 Chapter 2 | Geometric Optics and Image Formation
+Vision Correction
+Theneedforsometypeofvisioncorrectionisverycommon.Typicalvisiondefectsareeasytounderstandwithgeometric
+optics,andsomearesimpletocorrect.Figure2.31illustratestwocommonvisiondefects.Nearsightedness,ormyopia,
+istheabilitytoseenearobjects,whereasdistantobjectsareblurry.Theeyeoverconvergesthenearlyparallelraysfroma
+distantobject,andtherayscrossinfrontoftheretina.Moredivergentraysfromacloseobjectareconvergedontheretina
+for a clear image. The distance to the farthest object that can be seen clearly is called the far point of the eye (normally
+thefarpointisatinfinity).Farsightedness,orhyperopia,istheabilitytoseefarobjectsclearly,whereasnearobjectsare
+blurry. A farsighted eye does not sufficiently converge the rays from a near object to make the rays meet on the retina.
+Figure 2.31 (a) The nearsighted (myopic) eye converges rays from a distant object in front of the retina, so they have
+diverged when they strike the retina, producing a blurry image. An eye lens that is too powerful can cause
+nearsightedness, or the eye may be too long. (b) The farsighted (hyperopic) eye is unable to converge the rays from a
+close object on the retina, producing blurry near-field vision. An eye lens with insufficient optical power or an eye that is
+too short can cause farsightedness.
+Since the nearsighted eye overconverges light rays, the correction for nearsightedness consists of placing a diverging
+eyeglasslensinfrontoftheeye,asshowninFigure 2.32.Thisreducestheopticalpowerofaneyethatistoopowerful
+(recallthatthefocallengthofadiverginglensisnegative,soitsopticalpowerisnegative).Anotherwaytounderstandthis
+correctionisthatadiverginglenswillcausetheincomingraystodivergemoretocompensatefortheexcessiveconvergence
+causedbythelenssystemoftheeye.Theimageproducedbythedivergingeyeglasslensservesasthe(optical)objectfor
+theeye,andbecausetheeyecannotfocusonobjectsbeyonditsfarpoint,thediverginglensmustformanimageofdistant
+(physical) objects at a point that is closer than the far point.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 87
+Figure 2.32 Correction of nearsightedness requires a diverging lens that compensates for
+overconvergence by the eye. The diverging lens produces an image closer to the eye than the
+physical object. This image serves as the optical object for the eye, and the nearsighted person can
+see it clearly because it is closer than their far point.
+Example 2.8
+Correcting Nearsightedness
+Whatopticalpowerofeyeglasslensisneededtocorrectthevisionofanearsightedpersonwhosefarpointis30.0
+cm? Assume the corrective lens is fixed 1.50 cm away from the eye.
+Strategy
+You want this nearsighted person to be able to see distant objects clearly, which means that the eyeglass lens
+must produce an image 30.0 cm from the eye for an object at infinity. An image 30.0 cm from the eye will
+be 30.0cm−1.50cm=28.5cm from the eyeglass lens. Therefore, we must have d =−28.5cm when
+i
+d o=∞. The image distance is negative because it is on the same side of the eyeglass lens as the object.
+Solution
+Since d and d are known, we can find the optical power of the eyeglass lens by usingEquation 2.24:
+i o
+P= 1 + 1 = 1 + 1 =−3.51D.
+d o d i ∞ −0.285m
+Significance
+Thenegative optical powerindicates adiverging(orconcave)lens,asexpected. Ifyouexamine eyeglasses for
+nearsightedpeople,youwillfindthelensesarethinnestinthecenter.Additionally,ifyouexamineaprescription
+for eyeglasses for nearsighted people, you will find that the prescribed optical power is negative and given in
+units of diopters.
+Correctingfarsightednessconsistssimplyofusingtheoppositetypeoflensasfornearsightedness(i.e.,aconverginglens),
+
+88 Chapter 2 | Geometric Optics and Image Formation
+as shown inFigure 2.33.
+Suchalenswillproduceanimageofphysicalobjectsthatarecloserthanthenearpointatadistancethatisbetweenthenear
+pointandthefarpoint,sothatthepersoncanseetheimageclearly.Todeterminetheopticalpowerneededforcorrection,
+you must therefore know the person’s near point, as explained inExample 2.9.
+Figure 2.33 Correction of farsightedness uses a converging lens that compensates for the
+underconvergence by the eye. The converging lens produces an image farther from the eye than
+the object, so that the farsighted person can see it clearly.
+Example 2.9
+Correcting Farsightedness
+Whatopticalpowerofeyeglasslensisneededtoallowafarsightedperson,whosenearpointis1.00m,toseean
+object clearly that is 25.0 cm from the eye? Assume the corrective lens is fixed 1.5 cm from the eye.
+Strategy
+Whenanobjectis25.0cmfromtheperson’seyes,theeyeglasslensmustproduceanimage1.00maway(thenear
+point),sothatthepersoncanseeitclearly.Animage1.00mfromtheeyewillbe 100cm−1.5cm=98.5cm
+from the eyeglass lens because the eyeglass lens is 1.5 cm from the eye. Therefore, d =−98.5cm, where
+i
+the minus sign indicates that the image is on the same side of the lens as the object. The object is
+25.0cm−1.5cm=23.5cm from the eyeglass lens, so d o=23.5cm.
+Solution
+Since d and d are known, we can find the optical power of the eyeglass lens by usingEquation 2.24:
+i o
+P= 1 + 1 = 1 + 1 = +3.24D.
+d o d i 0.235m −0.985m
+Significance
+The positive optical power indicates a converging (convex) lens, as expected. If you examine eyeglasses of
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

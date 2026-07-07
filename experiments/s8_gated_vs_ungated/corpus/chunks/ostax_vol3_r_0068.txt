@@ -1,0 +1,252 @@
+# REAL PDF — openstax_vol3.pdf, pages 411-417
+############################################################
+
+Chapter 9 | Condensed Matter Physics 403
+9 | CONDENSED MATTER
+PHYSICS
+Figure 9.1 The crystalline structure of quartz allows it to cleave into smooth planes that refract light, making it suitable for
+jewelry. Silicon, the main element in quartz, also forms crystals in its pure form, and these crystals form the basis for the
+worldwide semiconductor electronics industry. (credit left: modification of work by the United States Geological Survey)
+Chapter Outline
+9.1Types of Molecular Bonds
+9.2Molecular Spectra
+9.3Bonding in Crystalline Solids
+9.4Free Electron Model of Metals
+9.5Band Theory of Solids
+9.6Semiconductors and Doping
+9.7Semiconductor Devices
+9.8Superconductivity
+Introduction
+In this chapter, we examine applications of quantum mechanics to more complex systems, such as molecules, metals,
+semiconductors,andsuperconductors.Wereviewanddevelopconceptsofthepreviouschapters,includingwavefunctions,
+orbitals,andquantumstates.Wealsointroducemanynewconcepts,includingcovalentbonding,rotationalenergylevels,
+Fermi energy, energy bands, doping, and Cooper pairs.
+Themaintopicinthischapteristhecrystalstructureofsolids.Forcenturies,crystallinesolidshavebeenprizedfortheir
+beauty, including gems like diamonds and emeralds, as well as geological crystals of quartz and metallic ores. But the
+crystalline structures of semiconductors such as silicon have also made possible the electronics industry of today. In this
+chapter,westudyhowthestructuresofsolidsgivethempropertiesfromstrengthandtransparencytoelectricalconductivity.
+
+404 Chapter 9 | Condensed Matter Physics
+9.1 | Types of Molecular Bonds
+Learning Objectives
+By the end of this section, you will be able to:
+• Distinguish between the different types of molecular bonds
+• Determine the dissociation energy of a molecule using the concepts ionization energy, electron
+affinity, and Coulomb force
+• Describe covalent bonding in terms of exchange symmetry
+• Explain the physical structure of a molecule in terms of the concept of hybridization
+Quantum mechanics has been extraordinarily successful at explaining the structure and bonding in molecules, and is
+thereforethefoundationforallofchemistry.Quantumchemistry,asitissometimescalled,explainssuchbasicquestions
+aswhy H O moleculesexist,whythebondinganglebetweenhydrogenatomsinthismoleculeisprecisely 104.5°,and
+2
+whythesemoleculesbindtogethertoformliquidwateratroomtemperature.Applyingquantummechanicstomolecules
+can be very difficult mathematically, so our discussion will be qualitative only.
+Aswestudymoleculesandthensolids,wewillusemanydifferentscientificmodels.Insomecases,welookatamolecule
+or crystal as a set of point nuclei with electrons whizzing around the outside in well-defined trajectories, as in the Bohr
+model.Inothercases,weemployourfullknowledgeofquantummechanicstostudythesesystemsusingwavefunctions
+andtheconceptofelectronspin.Itisimportanttorememberthatwestudymodernphysicswithmodels,andthatdifferent
+modelsareusefulfordifferentpurposes.Wedonotalwaysusethemostpowerfulmodel,whenaless-powerful,easier-to-
+use model will do the job.
+Types of Bonds
+Chemicalunitsformbymanydifferentkindsofchemicalbonds.Anionicbondformswhenanelectrontransfersfromone
+atomtoanother.Acovalentbondoccurswhentwoormoreatomsshareelectrons.AvanderWaalsbondoccursdueto
+theattractionofcharge-polarizedmoleculesandisconsiderablyweakerthanionicorcovalentbonds.Manyothertypesof
+bondingexistaswell.Often,bondingoccursviamorethanonemechanism.Thefocusofthissectionisionicandcovalent
+bonding.
+Ionic bonds
+The ionic bond is perhaps the easiest type of bonding to understand. It explains the formation of salt compounds, such
+assodiumchloride, NaCl. Thesodiumatom (symbolNa)hasthesame electron arrangement asaneonatom plusone3s
+electron.Only5.14eVofenergyisrequiredtoremovethisoneelectronfromthesodiumatom.Therefore,Nacaneasily
+give up or donate this electron to an adjacent (nearby) atom, attaining a more stable arrangement of electrons. Chlorine
+(symbolCl)requiresjustoneelectrontocompleteitsvalenceshell,soitreadilyacceptsthiselectronifitisnearthesodium
+atom.Wethereforesaythatchlorinehasalargeelectronaffinity,whichistheenergyassociatedwithanacceptedelectron.
+Theenergygivenupbythechlorineatominthisprocessis3.62eV.Aftertheelectrontransfersfromthesodiumatomto
+thechlorineatom,thesodiumatombecomesapositiveionandthechlorineatombecomesanegativeion.Thetotalenergy
+required for this transfer is given by
+E =5.14eV−3.62eV=1.52eV.
+transfer
+ThepositivesodiumionandnegativechlorideionexperienceanattractiveCoulombforce.Thepotentialenergyassociated
+with this force is given by
+ke2 (9.1)
+U coul = − r ,
+0
+where ke2=1.440eV-nm and r is the distance between the ions.
+0
+Asthesodiumandchlorideionsmovetogether(“descendthepotentialenergyhill”),theforceofattractionbetweentheions
+becomes stronger. However, if the ions become too close, core-electron wave functions in the two ions begin to overlap.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 405
+Duetothe exclusion principle, this action promotes the core electrons—and therefore the entire molecule—into ahigher
+energystate.Theequilibrium separationdistance(orbondlength)betweentheionsoccurswhenthemolecule isinits
+lowestenergystate.FordiatomicNaCl,thisdistanceis0.236nm.Figure9.2showsthetotalenergyofNaClasafunction
+of the distance of separation between ions.
+Figure 9.2 Graph of energy versus ionic separation for
+sodium chloride. Equilibrium separation occur when the total
+energy is a minimum (−4.36eV).
+The total energy required to form a single salt unit is
+U
+form
+=E
+transfer
++U
+coul
++U ex, (9.2)
+where U istheenergyassociatedwiththerepulsionbetweencoreelectronsduetoPauli’sexclusionprinciple.Thevalue
+ex
+of U mustbenegativeforthebondtoformspontaneously.Thedissociationenergyisdefinedastheenergyrequired
+form
+to separate the unit into its constituent ions, written
+U =−U (9.3)
+diss form
+Everydiatomicformulaunithasitsowncharacteristicdissociationenergyandequilibriumseparationlength.Samplevalues
+are given inTable 9.1.
+Molecule Dissociation Energy(eV) Equilibrium Separation (nm) ⎛ ⎝Bond length⎞ ⎠
+NaCl 4.26 0.236
+NaF 4.99 0.193
+NaBr 3.8 0.250
+NaI 3.1 0.271
+NaH 2.08 0.189
+LiCl 4.86 0.202
+LiH 2.47 0.239
+Table 9.1Bond Length
+
+406 Chapter 9 | Condensed Matter Physics
+Molecule Dissociation Energy(eV) Equilibrium Separation (nm) ⎛ ⎝Bond length⎞ ⎠
+LiI 3.67 0.238
+KCl 4.43 0.267
+KBr 3.97 0.282
+RbF 5.12 0.227
+RbCl 4.64 0.279
+CsI 3.57 0.337
+H-H 4.5 0.075
+N-N 9.8 0.11
+O-O 5.2 0.12
+F-F 1.6 0.14
+Cl-Cl 2.5 0.20
+Table 9.1Bond Length
+Example 9.1
+The Energy of Salt
+What is the dissociation energy of a salt formula unit (NaCl)?
+Strategy
+Sodiumchloride(NaCl)isasaltformedbyionicbonds.Theenergychangeassociated withthisbonddepends
+onthreemainprocesses:theionizationofNa;theacceptanceoftheelectronfromaNaatombyaClatom;and
+Coulombattractionoftheresultingions(Na + andCl−).Iftheionsgettooclose,theyrepelduetotheexclusion
+principle (0.32 eV). The equilibrium separation distance is r =0.236nm.
+0
+Solution
+TheenergychangeassociatedwiththetransferofanelectronfromNatoClis1.52eV,asdiscussedearlierinthis
+section.Atequilibriumseparation,theatomsare r =0.236nm apart.Theelectrostaticpotentialenergyofthe
+0
+atoms is
+U coul = − k r e 0 2 = − 1. 0 4 . 4 23 e 6 V n · m nm =−6.10eV.
+The total energy difference associated with the formation of a NaCl formula unit is
+E
+form
+=E
+xfr
++U
+coul
++U ex=1.52eV +(−6.10eV)+0.32eV=−4.26eV.
+Therefore, the dissociated energy of NaCl is 4.26 eV.
+Significance
+The formation of a NaCl formula unit by ionic bonding is energetically favorable. The dissociation energy, or
+energy required to separate the NaCl unit into Na + andCl− ions is 4.26 eV, consistent withFigure 9.2.
+9.1 CheckYourUnderstandingWhyisthepotentialenergyassociatedwiththeexclusionprinciplepositive
+inExample 9.1?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 407
+ForasodiumioninanionicNaClcrystal,theexpressionforCoulombpotentialenergy U mustbemodifiedbyafactor
+coul
+knownastheMadelungconstant.Thisfactortakesintoaccounttheinteractionofthesodiumionwithallnearbychloride
+and sodium ions. The Madelung constant for a NaCl crystal is about 1.75. This value implies an equilibrium separation
+distance between Na + andCl− ions of 0.280 nm—slightly larger than for diatomic NaCl. We will return to this point
+again later.
+Covalent bonds
+Inanionicbond,anelectrontransfersfromoneatomtoanother.However,inacovalentbond,anelectronissharedbetween
+two atoms. The ionic bonding mechanism cannot explain the existence of such molecules as H ,O , and CO, since
+2 2
+noseparationdistanceexistsforwhichthenegativepotentialenergyofattractionisgreaterinmagnitudethantheenergy
+neededtocreateions.Understandingpreciselyhowsuchmoleculesarecovalentlybondedreliesonadeeperunderstanding
+ofquantummechanicsthatgoesbeyondthecoverageofthisbook,butwewillqualitativelydescribethemechanismsinthe
+following section.
+Covalent bonds can be understood using the simple example of a H + molecule, which consists of one electron in the
+2
+electricfieldoftwoprotons.Thissystemcanbemodeledbyanelectroninadoublesquarewell(Figure9.3).Theelectron
+isequallylikelytobefoundineachwell,sothewavefunctioniseithersymmetricorantisymmetricaboutapointmidway
+between the wells.
+Figure 9.3 A one-dimensional model of covalent bonding in a
+H + molecule. (a) The symmetric wave function of the electron
+2
+shared by the two positively charged protons (represented by the two
+finite square wells). (b) The corresponding antisymmetric wave
+function.
+Nowimaginethatthetwowellsareseparatedbyalargedistance.Inthegroundstate,thewavefunctionexistsinoneoftwo
+possiblestates:eitherasinglepositivepeak(asinewave-like“hump”)inbothwells(symmetriccase),orapositivepeak
+inonewellandanegativepeakintheother(antisymmetriccase).Thesestateshavethesameenergy.However,whenthe
+wellsarebroughttogether,thesymmetricwavefunctionbecomesthegroundstateandtheantisymmetricstatebecomesthe
+firstexcitedstate—inotherwords,theenergyleveloftheelectronissplit.Notice,thespace-symmetricstatebecomesthe
+energetically favorable (lower energy) state.
+Thesameanalysisisappropriateforanelectronboundtotwohydrogenatoms.Here,theshapesoftheground-statewave
+functionshavetheform e −r/a 0 or e (−|x|/a 0) inonedimension.Theenergeticallyfavorable,space-symmetricstateimplies
+a high charge density midway between the protons where the electrons are likely to pull the positively charged protons
+together.
+If a second electron is added to this system to form a H molecule, the wave function must describe both particles,
+2
+including their spatial relationship and relative spins. This wave function must also respect the indistinguishability of
+electrons.(“Ifyou’veseenoneelectron,you’veseenthemall.”)Inparticular,switchingorexchangingtheelectronsshould
+notproduceanobservableeffect,apropertycalledexchangesymmetry.Exchangesymmetrycanbesymmetric,producing
+nochangeinthewavefunction,orantisymmetric,producinganoverallchangeinthesignofthewavefunction—neitherof
+which is observable.
+As we discuss later, the total wave function of two electrons must be antisymmetric on exchange. For example, two
+electrons bound to a hydrogen molecule can be in a space-symmetric state with antiparallel spins (↑↓ ) or space-
+antisymmetric state with parallel spins (↑↑). The state with antiparallel spins is energetically favorable and therefore
+
+408 Chapter 9 | Condensed Matter Physics
+usedincovalentbonding.Iftheprotonsaredrawntoocloselytogether,however,repulsionbetweentheprotonsbecomes
+important.(Inothermolecules,thiseffectissuppliedbytheexclusionprinciple.)Asaresult, H reachesanequilibrium
+2
+separation of about 0.074 nm with a binding energy is 4.52 eV.
+Visit this PBS Learning Media tutorial and interactive simulation (https://openstaxcollege.org/l/
+21covalentbond)toexploretheattractiveandrepulsiveforcesthatactonatomicparticlesandcovalentbonding
+in a H molecule.
+2
+Quantummechanicsexcludesmanytypesofmolecules.Forexample,themolecule H doesnotform,becauseifathird
+3
+H atom approaches diatomic hydrogen, the wave function of the electron in this atom overlaps the electrons in the other
+twoatoms.Ifallthreeelectronsareinthegroundstatesoftheirrespectiveatoms,onepairofelectronssharesallthesame
+quantumnumbers,whichisforbiddenbytheexclusionprinciple.Instead,oneoftheelectronsisforcedintoahigherenergy
+state. No separation between three protons exists for which the total energy change of this process is negative—that is,
+where bonding occurs spontaneously. Similarly, He is not covalently bonded under normal conditions, because these
+2
+atoms have no valence electrons to share. As the atoms are brought together, the wave functions of the core electrons
+overlap,andduetotheexclusionprinciple,theelectronsareforcedintoahigherenergystate.Noseparationexistsforwhich
+such a molecule is energetically favorable.
+Bonding in Polyatomic Molecules
+A polyatomic molecule is a molecule made of more than two atoms. Examples range from a simple water molecule to
+acomplexproteinmolecule.Thestructuresofthesemoleculescanoftenbeunderstoodintermsofcovalentbondingand
+hybridization.Hybridizationisachangeintheenergystructureofanatominwhichmixedstates(statesthatcanbewritten
+as a linear superposition of others) participate in bonding.
+Toillustratehybridization,considerthebondinginasimplewatermolecule, H O. Theelectronconfigurationofoxygenis
+2
+1s22s22p4. The1sand2selectronsarein“closedshells”anddonotparticipateinbonding.Theremainingfourelectrons
+are the valence electrons. These electrons can fill six possible states (l=1, m=0, ±1, plus spin up and down). The
+energies of these states are the same, so the oxygen atom can exploit any linear combination of these states in bonding
+withthehydrogenatoms.Theselinearcombinations(whichyoulearnedaboutinthechapteronatomicstructure)arecalled
+atomicorbitals,andtheyaredenotedby p x, p y, and p z. Theelectronchargedistributionsfortheseorbitalsaregivenin
+Figure 9.4.
+Figure 9.4 Oxygen has four valence electrons. In the context of a water
+molecule, two valence electrons fill the p orbital and one electron fills
+z
+each of the p and p orbitals. The p and p orbitals are used in
+x y x y
+bonding with hydrogen atoms to form H O. Without repulsion of H
+2
+atoms, the bond angle between hydrogen atoms would be 90 degrees.
+Thetransformationoftheelectronwavefunctionsofoxygento p x, p y, and p z orbitalsinthepresenceofthehydrogen
+atomsisanexampleofhybridization.Twoelectronsarefoundinthe p z orbitalwithpairedspins (↑↓ ).Oneelectronis
+foundineachofthe p and p orbitals,withunpairedspins.Thelatterorbitalsparticipateinbondingwiththehydrogen
+x y
+atoms.BasedonFigure9.4,weexpectthebondinganglefor H—O—H tobe 90°.However,ifweincludetheeffectsof
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

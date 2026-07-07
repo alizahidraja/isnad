@@ -1,0 +1,244 @@
+# REAL PDF — openstax_vol3.pdf, pages 188-193
+############################################################
+
+180 Chapter 4 | Diffraction
+be observed, if X-rays of wavelength 0.085 nm are used?
+4.6X-Ray Diffraction
+72. X-rays of wavelength 0.103 nm reflects off a crystal 76. On a certain crystal, a first-order X-ray diffraction
+andasecond-ordermaximumisrecordedataBraggangle maximum is observed at an angle of 27.1° relative to its
+of 25.5°. What is the spacing between the scattering surface, using an X-ray source of unknown wavelength.
+planes in this crystal? Additionally,whenilluminatedwithadifferent,thistimeof
+knownwavelength 0.137nm,asecond-ordermaximum is
+73. A first-order Bragg reflection maximum is observed detected at 37.3°. Determine (a) the spacing between the
+whenamonochromaticX-rayfallsonacrystalata 32.3° reflecting planes, and (b) the unknown wavelength.
+angletoareflecting plane.Whatisthewavelengthofthis
+X-ray? 77. Calcitecrystalscontainscatteringplanesseparatedby
+0.30 nm. What is the angular separation between first and
+second-orderdiffractionmaximawhenX-raysof0.130nm
+74. An X-ray scattering experiment is performed on a
+wavelength are used?
+crystal whose atoms form planes separated by 0.440 nm.
+Using an X-ray source of wavelength 0.548 nm, what is
+theangle (withrespect totheplanes inquestion) atwhich 78. The first-order Bragg angle for a certain crystal is
+theexperimenterneedstoilluminatethecrystalinorderto 12.1°. What is the second-order angle?
+observe a first-order maximum?
+75. The structure of the NaCl crystal forms reflecting
+planes 0.541 nm apart. What is the smallest angle,
+measuredfromtheseplanes,atwhichX-raydiffractioncan
+ADDITIONAL PROBLEMS
+79. White light falls on two narrow slits separated by 83. A microwave of an unknown wavelength is incident
+0.40mm.Theinterferencepatternisobservedonascreen on a single slit of width 6 cm. The angular width of the
+3.0 m away. (a) What is the separation between the first central peak is found to be 25°. Find the wavelength.
+maxima for red light (λ=700nm⎞ and violet light
+⎠
+(λ=400nm⎞? (b) At what point nearest the central 84. Redlight(wavelength632.8nminair)fromaHelium-
+⎠
+maximumwillamaximumforyellowlight (λ=600nm⎞ Neon laser is incident on a single slit of width 0.05 mm.
+⎠
+The entire apparatus is immersed in water of refractive
+coincide with a maximum for violet light? Identify the
+index 1.333. Determine the angular width of the central
+order for each maximum.
+peak.
+80. Microwavesofwavelength10.0mmfallnormallyon
+85. A light ray of wavelength 461.9 nm emerges from
+ametalplatethatcontainsaslit25mmwide.(a)Whereare
+a 2-mm circular aperture of a krypton ion laser. Due to
+thefirstminimaofthediffractionpattern?(b)Wouldthere
+diffraction,thebeamexpandsasitmovesout.Howlargeis
+be minima if the wavelength were 30.0 mm?
+the central bright spot at (a) 1 m, (b) 1 km, (c) 1000 km,
+and(d)atthesurfaceofthemoonatadistanceof400,000
+81. Quasars, or quasi-stellar radio sources, are km from Earth.
+astronomical objects discovered in 1960. They are distant
+but strong emitters of radio waves with angular size so
+86. How far apart must two objects be on the moon to
+small, they were originally unresolved, the same as stars.
+be distinguishable by eye if only the diffraction effects of
+The quasar 3C405 is actually two discrete radio sources
+the eye’s pupil limit the resolution? Assume 550 nm for
+thatsubtendanangleof82arcsec.Ifthisobjectisstudied
+the wavelength of light, the pupil diameter 5.0 mm, and
+usingradioemissionsatafrequencyof410MHz,whatis
+400,000 km for the distance to the moon.
+theminimumdiameterofaradiotelescopethatcanresolve
+the two sources?
+87. Howfarapartmusttwoobjectsbeonthemoontobe
+resolvable by the 8.1-m-diameter Gemini North telescope
+82. Two slits each of width 1800 nm and separated by
+atMaunaKea,Hawaii,ifonlythediffractioneffectsofthe
+the center-to-center distance of 1200 nm are illuminated
+telescopeaperturelimittheresolution?Assume550nmfor
+by plane waves from a krypton ion laser-emitting at
+thewavelengthoflightand400,000kmforthedistanceto
+wavelength 461.9 nm. Find the number of interference
+the moon.
+peaks in the central diffraction peak.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 181
+88. Aspysatelliteisreputedtobeabletoresolveobjects usedtomeasurethewavelengthsemittedbyahydrogengas
+10.cmapartwhileoperating197kmabovethesurfaceof dischargetube.(a)Atwhatangleswillyoufindthemaxima
+Earth.Whatisthediameteroftheapertureofthetelescope of the two first-order blue lines of wavelengths 410 and
+if the resolution is only limited by the diffraction effects? 434nm?(b)Themaximaoftwootherfirst-orderlinesare
+Use 550 nm for light. found at θ =0.097rad and θ =0.132rad. What are
+1 2
+the wavelengths of these lines?
+89. Monochromatic light of wavelength 530 nm passes
+through a horizontal single slit of width 1.5µm in an
+98. For white light (400nm<λ<700nm) falling
+opaque plate. A screen of dimensions 2.0m×2.0m is normally on a diffraction grating, show that the second
+1.2mawayfromtheslit.(a)Whichwayisthediffraction and third-order spectra overlap no matter what the grating
+pattern spread out on the screen? (b) What are the angles constantdis.
+oftheminimawithrespecttothecenter?(c)Whatarethe
+angles of the maxima? (d) How wide is the central bright
+99. How many complete orders of the visible spectrum
+fringeonthescreen?(e)Howwideisthenextbrightfringe
+(400nm<λ<700nm) canbeproducedwithadiffraction
+on the screen?
+grating that contains 5000 lines per centimeter?
+90. A monochromatic light of unknown wavelength is
+incidentonaslitofwidth 20µm.Adiffractionpatternis 100. Twolampsproducinglightofwavelength589nmare
+fixed1.0mapartonawoodenplank.Whatisthemaximum
+seenatascreen2.5mawaywherethecentralmaximumis
+distance an observer can be and still resolve the lamps as
+spread over a distance of 10.0 cm. Find the wavelength.
+two separate sources of light, if the resolution is affected
+solelybythediffractionoflightenteringtheeye?Assume
+91. Asourceoflighthavingtwowavelengths550nmand light enters the eye through a pupil of diameter 4.5 mm.
+600 nm of equal intensity is incident on a slit of width
+1.8µm.Findtheseparationofthe m=1 brightspotsof
+101. Onabrightclearday,youareatthetopofamountain
+the two wavelengths on a screen 30.0 cm away. andlookingatacity12kmaway.Therearetwotalltowers
+20.0 m apart in the city. Can your eye resolve the two
+92. Asingleslitofwidth2100nmisilluminatednormally towers if the diameter of the pupil is 4.0 mm? If not,
+by a wave of wavelength 632.8 nm. Find the phase what should be the minimum magnification power of the
+differencebetweenwavesfromthetopandonethirdfrom telescope needed to resolve the two towers? In your
+thebottomoftheslittoapointonascreenatahorizontal calculations use 550 nm for the wavelength of the light.
+distanceof2.0mandverticaldistanceof10.0cmfromthe
+center. 102. Radiotelescopesaretelescopesusedforthedetection
+of radio emission from space. Because radio waves have
+93. A single slit of width 3.0µm is illuminated by a much longer wavelengths than visible light, the diameter
+of a radio telescope must be very large to provide good
+sodium yellow light of wavelength 589 nm. Find the
+resolution. For example, the radio telescope in Penticton,
+intensityata 15° angletotheaxisintermsoftheintensity
+BCinCanada,hasadiameterof26mandcanbeoperated
+of the central maximum. at frequencies as high as 6.6 GHz. (a) What is the
+wavelength corresponding to this frequency? (b) What is
+94. A single slit of width 0.10 mm is illuminated by a the angular separation of two radio sources that can be
+mercurylampofwavelength576nm.Findtheintensityata resolved by this telescope? (c) Compare the telescope’s
+10° angletotheaxisintermsoftheintensityofthecentral resolution with the angular size of the moon.
+maximum.
+95. Adiffractiongratingproducesasecondmaximumthat
+is 89.7 cm from the central maximum on a screen 2.0 m
+away. If the grating has 600 lines per centimeter, what is
+the wavelength of the light that produces the diffraction
+pattern?
+96. A grating with 4000 lines per centimeter is used to
+diffractlightthatcontainsallwavelengthsbetween400and
+650 nm. How wide is the first-order spectrum on a screen
+3.0 m from the grating?
+97. Adiffractiongratingwith2000linespercentimeteris
+
+182 Chapter 4 | Diffraction
+assumed to occur at angular positions of ±90°. For this
+case,whatistheratiooftheslitwidthtothewavelengthof
+the light?
+110. The central diffraction peak of the double-slit
+interference pattern contains exactly nine fringes. What is
+the ratio of the slit separation to the slit width?
+111. Determinetheintensitiesofthreeinterferencepeaks
+other than the central peak in the central maximum of the
+diffraction,ifpossible,whenalightofwavelength500nm
+isincidentnormallyonadoubleslitofwidth1000nmand
+separation1500nm.Usetheintensityofthecentralspotto
+be 1mW/cm2.
+112. The yellow light from a sodium vapor lamp seems
+to be of pure wavelength, but it produces two first-order
+maxima at 36.093° and 36.129° when projected on a
+10,000linepercentimeterdiffractiongrating.Whatarethe
+two wavelengths to an accuracy of 0.1 nm?
+Figure 4.30 (credit: modification of work by Jason 113. Structures on a bird feather act like a reflection
+Nishiyama) gratinghaving8000linespercentimeter.Whatistheangle
+of the first-order maximum for 600-nm light?
+103. Calculate the wavelength of light that produces its
+first minimum at an angle of 36.9° when falling on a 114. If a diffraction grating produces a first-order
+single slit of width 1.00µm. maximum for the shortest wavelength of visible light at
+30.0°, at what angle will the first-order maximum be for
+the largest wavelength of visible light?
+104. (a) Find the angle of the third diffraction minimum
+for 633-nm light falling on a slit of width 20.0µm. (b)
+115. (a) What visible wavelength has its fourth-order
+What slit width would place this minimum at 85.0° ? maximum at an angle of 25.0° when projected on a
+25,000-linepercentimeterdiffractiongrating?(b)Whatis
+105. As an example of diffraction by apertures of unreasonableaboutthisresult?(c)Whichassumptionsare
+everydaydimensions,consideradoorwayofwidth1.0m. unreasonable or inconsistent?
+(a) What is the angular position of the first minimum in
+the diffraction pattern of 600-nm light? (b) Repeat this
+116. Consider a spectrometer based on a diffraction
+calculation for a musical note of frequency 440 Hz (A
+grating. Construct a problem in which you calculate the
+above middle C). Take the speed of sound to be 343 m/s.
+distance between two wavelengths of electromagnetic
+radiation in your spectrometer. Among the things to be
+106. Whataretheangularpositionsofthefirstandsecond considered are the wavelengths you wish to be able to
+minimainadiffractionpatternproducedbyaslitofwidth distinguish,thenumberoflinespermeteronthediffraction
+0.20 mm that is illuminated by 400 nm light? What is the grating, and the distance from the grating to the screen or
+angular width of the central peak? detector. Discuss the practicality of the device in terms of
+being able to discern between wavelengths of interest.
+107. Howfarwouldyouplaceascreenfromtheslitofthe
+previousproblemsothatthesecondminimumisadistance 117. An amateur astronomer wants to build a telescope
+of 2.5 mm from the center of the diffraction pattern? withadiffractionlimitthatwillallowhimtoseeifthereare
+peopleonthemoonsofJupiter.(a)Whatdiametermirroris
+108. How narrow is a slit that produces a diffraction neededtobeabletosee1.00-mdetailonaJovianmoonat
+patternonascreen1.8mawaywhosecentralpeakis1.0m adistanceof 7.50×10 8 km fromEarth?Thewavelength
+wide? Assume λ=589nm.
+of light averages 600 nm. (b) What is unreasonable about
+this result? (c) Which assumptions are unreasonable or
+109. Suppose that the central peak of a single-slit inconsistent?
+diffraction pattern is so wide that the first minima can be
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 183
+CHALLENGE PROBLEMS
+118. Blue light of wavelength 450 nm falls on a slit of 122. Show that a diffraction grating cannot produce a
+width0.25mm.Aconverginglensoffocallength20cmis second-order maximum for a given wavelength of light
+placedbehindtheslitandfocusesthediffractionpatternon unless the first-order maximum is at an angle less than
+ascreen.(a)Howfaristhescreenfromthelens?(b)What 30.0°.
+isthedistancebetweenthefirstandthethirdminimaofthe
+diffraction pattern?
+123. AHe-Nelaserbeamisreflectedfromthesurfaceofa
+CDontoawall.Thebrightestspotisthereflectedbeamat
+119. (a) Assume that the maxima are halfway between anangleequaltotheangleofincidence.However,fringes
+the minima of a single-slit diffraction pattern. The use the are also observed. If the wall is 1.50 m from the CD, and
+diameter and circumference of the phasor diagram, as thefirstfringeis0.600mfromthecentralmaximum,what
+described in Intensity in Single-Slit Diffraction, to is the spacing of grooves on the CD?
+determinetheintensitiesofthethirdandfourthmaximain
+terms of the intensity of the central maximum. (b) Do the
+124. Objectsviewedthroughamicroscopeareplacedvery
+same calculation, usingEquation 4.4.
+closetothefocalpointoftheobjectivelens.Showthatthe
+minimum separation x of two objects resolvable through
+120. (a) By differentiating Equation 4.4, show that the 1.22λf
+higher-order maxima of the single-slit diffraction pattern the microscope is given by x= D 0,
+occur at values of β that satisfy tanβ= β. (b) Plot
+where f is the focal length and D is the diameter of the
+y=tanβ and y= β versus β andfindtheintersections 0
+objective lens as shown below.
+of these two curves. What information do they give you
+about the locations of the maxima? (c) Convince yourself
+that these points do not appear exactly at β=
+⎛
+n+
+1⎞
+π,
+⎝ 2⎠
+where n=0, 1, 2, …, but are quite close to these
+values.
+121. Whatisthemaximumnumberoflinespercentimeter
+adiffractiongratingcanhaveandproduceacompletefirst-
+order spectrum for visible light?
+
+184 Chapter 4 | Diffraction
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

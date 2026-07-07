@@ -1,0 +1,267 @@
+# REAL PDF — openstax_vol1.pdf, pages 340-346
+############################################################
+
+328 7 • Work and Kinetic Energy
+7.4 Power
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Relate the work done during a time interval to the power delivered
+• Find the power expended by a force acting on a moving body
+The concept of work involves force and displacement; the work-energy theorem relates the net work done on a body
+to the difference in its kinetic energy, calculated between two points on its trajectory. None of these quantities or
+relations involves time explicitly, yet we know that the time available to accomplish a particular amount of work is
+frequently just as important to us as the amount itself. In the chapter-opening figure, several sprinters may have
+achieved the same velocity at the finish, and therefore did the same amount of work, but the winner of the race did it
+in the least amount of time.
+We express the relation between work done and the time interval involved in doing it, by introducing the concept of
+power. Since work can vary as a function of time, we first define average power as the work done during a time
+interval, divided by the interval,
+7.10
+Then, we can define the instantaneous power (frequently referred to as just plain power).
+POWER
+Power is defined as the rate of doing work, or the limit of the average power for time intervals approaching zero,
+7.11
+If the power is constant over a time interval, the average power for that interval equals the instantaneous power,
+and the work done by the agent supplying the power is . If the power during an interval varies with time,
+then the work done is the time integral of the power,
+The work-energy theorem relates how work can be transformed into kinetic energy. Since there are other forms of
+energy as well, as we discuss in the next chapter, we can also define power as the rate of transfer of energy. Work
+and energy are measured in units of joules, so power is measured in units of joules per second, which has been
+given the SI name watts, abbreviation W: . Another common unit for expressing the power capability of
+everyday devices is horsepower: .
+EXAMPLE 7.11
+Pull-Up Power
+An 80-kg army trainee does pull-ups on a horizontal bar (Figure 7.14). It takes the trainee 0.8 seconds to raise the
+body from a lower position to where the chin is above the bar. How much power do the trainee’s muscles supply
+moving his body from the lower position to where the chin is above the bar? (Hint: Make reasonable estimates for
+any quantities needed.)
+Access for free at openstax.org
+
+7.4 • Power 329
+FIGURE 7.14 What is the power expended in doing ten pull-ups in ten seconds?
+Strategy
+The work done against gravity, going up or down a distance , is Let’s assume that Also,
+assume that the arms comprise 10% of the body mass and are not included in the moving mass. With these
+assumptions, we can calculate the work done.
+Solution
+The result we get, applying our assumptions, is
+Significance
+This is typical for power expenditure in strenuous exercise; in everyday units, it’s somewhat more than one
+horsepower
+CHECK YOUR UNDERSTANDING 7.8
+Estimate the power expended by a weightlifter raising a 150-kg barbell 2 m in 3 s.
+The power involved in moving a body can also be expressed in terms of the forces acting on it. If a force acts on a
+body that is displaced in a time dt, the power expended by the force is
+7.12
+where is the velocity of the body. The fact that the limits implied by the derivatives exist, for the motion of a real
+body, justifies the rearrangement of the infinitesimals.
+EXAMPLE 7.12
+Automotive Power Driving Uphill
+How much power must an automobile engine expend to move a 1200-kg car up a 15% grade at 90 km/h (Figure
+7.15)? Assume that 25% of this power is dissipated overcoming air resistance and friction.
+
+330 7 • Work and Kinetic Energy
+FIGURE 7.15 We want to calculate the power needed to move a car up a hill at constant speed.
+Strategy
+At constant velocity, there is no change in kinetic energy, so the net work done to move the car is zero. Therefore the
+power supplied by the engine to move the car equals the power expended against gravity and air resistance. By
+assumption, 75% of the power is supplied against gravity, which equals where is the angle of
+the incline. A 15% grade means This reasoning allows us to solve for the power required.
+Solution
+Carrying out the suggested steps, we find
+or
+or about 78 hp. (You should supply the steps used to convert units.)
+Significance
+This is a reasonable amount of power for the engine of a small to mid-size car to supply Note
+that this is only the power expended to move the car. Much of the engine’s power goes elsewhere, for example, into
+waste heat. That’s why cars need radiators. Any remaining power could be used for acceleration, or to operate the
+car’s accessories.
+Access for free at openstax.org
+
+7 • Chapter Review 331
+Chapter Review
+Key Terms
+average power work done in a time interval divided power (or instantaneous power) rate of doing work
+by the time interval work done when a force acts on something that
+kinetic energy energy of motion, one-half an object’s undergoes a displacement from one position to
+mass times the square of its speed another
+net work work done by all the forces acting on an work-energy theorem net work done on a particle is
+object equal to the change in its kinetic energy
+Key Equations
+Work done by a force over an infinitesimal displacement
+Work done by a force acting along a path from A to B
+Work done by a constant force of kinetic friction
+Work done going from A to B by Earth’s gravity, near its surface
+Work done going from A to B by one-dimensional spring force
+Kinetic energy of a non-relativistic particle
+Work-energy theorem
+Power as rate of doing work
+Power as the dot product of force and velocity
+Summary
+7.1 Work non-relativistic speeds.
+• The kinetic energy of a system is the sum of the
+• The infinitesimal increment of work done by a
+kinetic energies of all the particles in the system.
+force, acting over an infinitesimal displacement,
+• Kinetic energy is relative to a frame of reference,
+is the dot product of the force and the
+is always positive, and is sometimes given
+displacement.
+special names for different types of motion.
+• The work done by a force, acting over a finite
+path, is the integral of the infinitesimal 7.3 Work-Energy Theorem
+increments of work done along the path.
+• Because the net force on a particle is equal to its
+• The work done against a force is the negative of
+mass times the derivative of its velocity, the
+the work done by the force.
+integral for the net work done on the particle is
+• The work done by a normal or frictional contact
+equal to the change in the particle’s kinetic
+force must be determined in each particular
+energy. This is the work-energy theorem.
+case.
+• You can use the work-energy theorem to find
+• The work done by the force of gravity, on an
+certain properties of a system, without having to
+object near the surface of Earth, depends only on
+solve the differential equation for Newton’s
+the weight of the object and the difference in
+second law.
+height through which it moved.
+• The work done by a spring force, acting from an 7.4 Power
+initial position to a final position, depends only
+• Power is the rate of doing work; that is, the
+on the spring constant and the squares of those
+derivative of work with respect to time.
+positions.
+• Alternatively, the work done, during a time
+7.2 Kinetic Energy interval, is the integral of the power supplied
+over the time interval.
+• The kinetic energy of a particle is the product of
+• The power delivered by a force, acting on a
+one-half its mass and the square of its speed, for
+moving particle, is the dot product of the force
+
+332 7 • Chapter Review
+and the particle’s velocity.
+Conceptual Questions
+7.1 Work in using stairs?
+1 . Give an example of something we think of as 7.2 Kinetic Energy
+work in everyday circumstances that is not work
+8 . A particle of m has a velocity of
+in the scientific sense. Is energy transferred or
+Is its kinetic energy given by
+changed in form in your example? If so, explain
+If not, what is the
+how this is accomplished without doing work.
+correct expression?
+2 . Give an example of a situation in which there is a
+force and a displacement, but the force does no 9 . One particle has mass m and a second particle
+work. Explain why it does no work. has mass 2m. The second particle is moving
+with speed v and the first with speed 2v. How do
+3 . Describe a situation in which a force is exerted
+their kinetic energies compare?
+for a long time but does no work. Explain.
+10 . A person drops a pebble of mass from a
+4 . A body moves in a circle at constant speed. Does
+height h, and it hits the floor with kinetic energy
+the centripetal force that accelerates the body
+K. The person drops another pebble of mass
+do any work? Explain.
+from a height of 2h, and it hits the floor with the
+5 . Suppose you throw a ball upward and catch it same kinetic energy K. How do the masses of
+when it returns at the same height. How much the pebbles compare?
+work does the gravitational force do on the ball
+7.3 Work-Energy Theorem
+over its entire trip?
+11 . The person shown below does work on the lawn
+6 . Why is it more difficult to do sit-ups while on a
+mower. Under what conditions would the mower
+slant board than on a horizontal surface? (See
+gain energy from the person pushing the mower?
+below.)
+Under what conditions would it lose energy?
+12 . Work done on a system puts energy into it. Work
+done by a system removes energy from it. Give
+an example for each statement.
+13 . Two marbles of masses m and 2m are dropped
+from a height h. Compare their kinetic energies
+when they reach the ground.
+14 . Compare the work required to accelerate a car
+of mass 2000 kg from 30.0 to 40.0 km/h with
+that required for an acceleration from 50.0 to
+7 . As a young man, Tarzan climbed up a vine to 60.0 km/h.
+reach his tree house. As he got older, he decided
+15 . Suppose you are jogging at constant velocity.
+to build and use a staircase instead. Since the
+Are you doing any work on the environment and
+work of the gravitational force mg is path
+vice versa?
+independent, what did the King of the Apes gain
+Access for free at openstax.org
+
+7 • Chapter Review 333
+16 . Two forces act to double the speed of a particle, relationship between these two energy units?
+initially moving with kinetic energy of 1 J. One of
+19 . A spark of static electricity, such as that you
+the forces does 4 J of work. How much work
+might receive from a doorknob on a cold dry day,
+does the other force do?
+may carry a few hundred watts of power. Explain
+7.4 Power why you are not injured by such a spark.
+17 . Most electrical appliances are rated in watts. 20 . Does the work done in lifting an object depend
+Does this rating depend on how long the on how fast it is lifted? Does the power
+appliance is on? (When off, it is a zero-watt expended depend on how fast it is lifted?
+device.) Explain in terms of the definition of
+21 . Can the power expended by a force be negative?
+power.
+22 . How can a 50-W light bulb use more energy than
+18 . Explain, in terms of the definition of power, why
+a 1000-W oven?
+energy consumption is sometimes listed in
+kilowatt-hours rather than joules. What is the
+Problems
+7.1 Work
+23 . How much work does a supermarket checkout
+attendant do on a can of soup he pushes 0.600
+m horizontally with a force of 5.00 N?
+24 . A 75.0-kg person climbs stairs, gaining 2.50 m in
+height. Find the work done to accomplish this
+task.
+25 . (a) Calculate the work done on a 1500-kg 28 . How much work is done by the boy pulling his sister
+elevator car by its cable to lift it 40.0 m at 30.0 m in a wagon as shown below?
+constant speed, assuming friction averages 100
+N. (b) What is the work done on the elevator car
+by the gravitational force in this process? (c)
+What is the total work done on the elevator car?
+26 . Suppose a car travels 108 km at a speed of 30.0
+m/s, and uses 2.0 gal of gasoline. Only 30% of
+the gasoline goes into useful work by the force
+that keeps the car moving at constant speed
+despite friction. (The energy content of gasoline
+is about 140 MJ/gal.) (a) What is the magnitude
+of the force exerted to keep the car moving at
+constant speed? (b) If the required force is
+directly proportional to speed, how many gallons
+29 . A shopper pushes a grocery cart 20.0 m at
+will be used to drive 108 km at a speed of 28.0
+constant speed on level ground, against a 35.0 N
+m/s?
+frictional force. He pushes in a direction
+below the horizontal. (a) What is the work done
+27 . An 85.0-kg man who pushes a crate 4.00 m up
+on the cart by friction? (b) What is the work done
+along a ramp that makes an angle of with the
+on the cart by the gravitational force? (c) What is
+horizontal (see below). He exerts a force of 500 N on
+the work done on the cart by the shopper? (d)
+the crate parallel to the ramp and moves at a
+Find the force the shopper exerts, using energy
+constant speed. Find the total work done on the
+considerations. (e) What is the total work done
+crate and the man.
+on the cart?
+30 . Suppose the ski patrol lowers a rescue sled and
+victim, having a total mass of 90.0 kg, down a
+slope at constant speed, as shown below.

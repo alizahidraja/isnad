@@ -1,0 +1,175 @@
+# REAL PDF — openstax_vol3.pdf, pages 193-198
+############################################################
+
+Chapter 5 | Relativity 185
+5 | RELATIVITY
+Figure 5.1 Special relativity explains how time passes slightly differently on Earth and within the rapidly moving global
+positioning satellite (GPS). GPS units in vehicles could not find their correct location on Earth without taking this correction into
+account. (credit: modification of work by U.S. Air Force)
+Chapter Outline
+5.1Invariance of Physical Laws
+5.2Relativity of Simultaneity
+5.3Time Dilation
+5.4Length Contraction
+5.5The Lorentz Transformation
+5.6Relativistic Velocity Transformation
+5.7Doppler Effect for Light
+5.8Relativistic Momentum
+5.9Relativistic Energy
+Introduction
+The special theory of relativity was proposed in 1905 by Albert Einstein (1879–1955). It describes how time, space, and
+physicalphenomenaappearindifferentframesofreferencethataremovingatconstantvelocitywithrespecttoeachother.
+ThisdiffersfromEinstein’slaterworkongeneralrelativity,whichdealswithanyframeofreference,includingaccelerated
+frames.
+Thetheoryofrelativityledtoaprofoundchangeinthewayweperceivespaceandtime.The“commonsense”rulesthat
+weusetorelatespaceandtimemeasurementsintheNewtonianworldviewdifferseriouslyfromthecorrectrulesatspeeds
+nearthespeedoflight.Forexample,thespecialtheoryofrelativitytellsusthatmeasurementsoflengthandtimeintervals
+are not the same in reference frames moving relative to one another. A particle might be observed to have a lifetime of
+1.0×10 −8 s inonereferenceframe,butalifetimeof 2.0×10 −8 s inanother;andanobjectmightbemeasuredtobe
+2.0mlonginoneframeand3.0mlonginanotherframe.Theseeffectsareusuallysignificantonlyatspeedscomparableto
+thespeedoflight,butevenatthemuchlowerspeedsoftheglobalpositioningsatellite,whichrequiresextremelyaccurate
+time measurements to function, the different lengths of the same distance in different frames of reference are significant
+
+186 Chapter 5 | Relativity
+enough that they need to be taken into account.
+Unlike Newtonian mechanics, which describes the motion of particles, or Maxwell's equations, which specify how the
+electromagnetic field behaves, special relativity is not restricted to a particular type of phenomenon. Instead, its rules on
+space and time affect all fundamental physical theories.
+ThemodificationsofNewtonianmechanicsinspecialrelativitydonotinvalidateclassicalNewtonianmechanicsorrequire
+its replacement. Instead, the equations of relativistic mechanics differ meaningfully from those of classical Newtonian
+mechanics only for objects moving at relativistic speeds (i.e., speeds less than, but comparable to, the speed of light). In
+the macroscopic world that you encounter in your daily life, the relativistic equations reduce to classical equations, and
+the predictions of classical Newtonian mechanics agree closely enough with experimental results to disregard relativistic
+corrections.
+5.1 | Invariance of Physical Laws
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the theoretical and experimental issues that Einstein’s theory of special relativity
+addressed.
+• State the two postulates of the special theory of relativity.
+Supposeyoucalculatethehypotenuseofarighttrianglegiventhebaseanglesandadjacentsides.Whetheryoucalculate
+the hypotenuse from one of the sides and the cosine of the base angle, or from the Pythagorean theorem, the results
+shouldagree.Predictionsbasedondifferentprinciplesofphysicsmustalsoagree,whetherweconsiderthemprinciplesof
+mechanics or principles of electromagnetism.
+Albert Einstein pondered a disagreement between predictions based on electromagnetism and on assumptions made in
+classical mechanics. Specifically, suppose an observer measures the velocity of a light pulse in the observer’s own rest
+frame; that is, in the frame of reference in which the observer is at rest. According to the assumptions long considered
+obvious in classical mechanics, if an observer measures a velocity → v in one frame of reference, and that frame of
+referenceismovingwithvelocity → u pastasecondreferenceframe,anobserverinthesecondframemeasurestheoriginal
+velocityas → v′ = → v + → u . ThissumofvelocitiesisoftenreferredtoasGalileanrelativity.Ifthisprincipleiscorrect,
+thepulseoflightthattheobservermeasuresastravelingwithspeedctravelsatspeedc+umeasuredintheframeofthe
+secondobserver.Ifwereasonablyassumethatthelawsofelectrodynamicsarethesameinbothframesofreference,thenthe
+predictedspeedoflight(invacuum)inbothframesshouldbe c=1/ ε µ . Eachobservershouldmeasurethesamespeed
+0 0
+ofthelightpulsewithrespecttothatobserver’sownrestframe.Toreconciledifficultiesofthiskind,Einsteinconstructed
+hisspecialtheoryofrelativity,whichintroducedradicalnewideasabouttimeandspacethathavesincebeenconfirmed
+experimentally.
+Inertial Frames
+All velocities are measured relative to some frame of reference. For example, a car’s motion is measured relative to its
+startingpositionontheroadittravelson;aprojectile’smotionismeasuredrelativetothesurfacefromwhichitislaunched;
+andaplanet’sorbitalmotionismeasuredrelativetothestaritorbits.Theframesofreferenceinwhichmechanicstakesthe
+simplest form are those that are not accelerating. Newton’s first law, the law of inertia, holds exactly in such a frame.
+Inertial Reference Frame
+Aninertialframeofreferenceisareferenceframeinwhichabodyatrestremainsatrestandabodyinmotionmoves
+at a constant speed in a straight line unless acted upon by an outside force.
+For example, to a passenger inside a plane flying at constant speed and constant altitude, physics seems to work exactly
+the same as when the passenger is standing on the surface of Earth. When the plane is taking off, however, matters are
+somewhatmorecomplicated.Inthiscase,thepassengeratrestinsidetheplaneconcludesthatanetforceFonanobject
+isnotequaltotheproductofmassandacceleration,ma.Instead,Fisequaltomaplusafictitiousforce.Thissituationis
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 187
+notassimpleasinaninertialframe.Theterm“special”in“specialrelativity”referstodealingonlywithinertialframesof
+reference.Einstein’slatertheoryofgeneralrelativitydealswithallkindsofreferenceframes,includingaccelerating,and
+therefore non-inertial, reference frames.
+Einstein’s First Postulate
+Notonlyaretheprinciplesofclassicalmechanicssimplestininertialframes,buttheyarethesameinallinertialframes.
+Einsteinbasedthefirstpostulateofhistheoryontheideathatthisistrueforallthelawsofphysics,notmerelythosein
+mechanics.
+First Postulate of Special Relativity
+The laws of physics are the same in all inertial frames of reference.
+This postulate denies the existence of a special or preferred inertial frame. The laws of nature do not give us a way to
+endowanyoneinertialframewithspecialproperties.Forexample,wecannotidentifyanyinertialframeasbeinginastate
+of “absolute rest.” We can only determine the relative motion of one frame with respect to another.
+There is, however, more to this postulate than meets the eye. The laws of physics include only those that satisfy this
+postulate.Wewillseethatthedefinitionsofenergyandmomentummustbealteredtofitthispostulate.Anotheroutcome
+of this postulate is the famous equation E=mc2, which relates energy to mass.
+Einstein’s Second Postulate
+The second postulate upon which Einstein based his theory of special relativity deals with the speed of light. Late in the
+nineteenth century, the major tenets of classical physics were well established. Two of the most important were the laws
+of electromagnetism and Newton’s laws. Investigations such as Young’s double-slit experiment in the early 1800s had
+convincingly demonstrated that light is a wave. Maxwell’s equations of electromagnetism implied that electromagnetic
+waves travel at c=3.00×10 8 m/s in a vacuum, but they do not specify the frame of reference in which light has this
+speed.Manytypesofwaveswereknown,andalltravelledinsomemedium.Scientiststhereforeassumedthatsomemedium
+carried the light, even in a vacuum, and that light travels at a speedcrelative to that medium (often called “the aether”).
+Starting in the mid-1880s, the American physicist A.A. Michelson, later aided by E.W. Morley, made a series of direct
+measurementsofthespeedoflight.TheyintendedtodeducefromtheirdatathespeedvatwhichEarthwasmovingthrough
+themysteriousmediumforlightwaves.ThespeedoflightmeasuredonEarthshouldhavebeenc vwhenEarth’smotion
++
+wasoppositetothemedium’sflowatspeedupasttheEarth,andc–vwhenEarthwasmovinginthesamedirectionasthe
+medium. The results of their measurements were startling.
+Michelson-Morley Experiment
+TheMichelson-Morleyexperimentdemonstratedthatthespeedoflightinavacuumisindependentofthemotionof
+Earth about the Sun.
+The eventual conclusion derived from this result is that light, unlike mechanical waves such as sound, does not need a
+mediumtocarryit.Furthermore,theMichelson-Morleyresultsimpliedthatthespeedoflightcisindependentofthemotion
+of the source relative to the observer. That is, everyone observes light to move at speed c regardless of how they move
+relativetothelightsourceortooneanother.Forseveralyears,manyscientiststriedunsuccessfullytoexplaintheseresults
+within the framework of Newton’s laws.
+In addition, there was a contradiction between the principles of electromagnetism and the assumption made in Newton’s
+lawsaboutrelativevelocity.Classically,thevelocityofanobjectinoneframeofreferenceandthevelocityofthatobjectin
+asecondframeofreferencerelativetothefirstshouldcombinelikesimplevectorstogivethevelocityseeninthesecond
+frame. If that were correct, then two observers moving at different speeds would see light traveling at different speeds.
+Imaginewhatalightwavewouldlookliketoapersontravelingalongwithit(invacuum)ataspeedc.Ifsuchamotion
+werepossible,thenthewavewouldbestationaryrelativetotheobserver.Itwouldhaveelectricandmagneticfieldswhose
+strengthsvariedwithpositionbutwereconstantintime.ThisisnotallowedbyMaxwell’sequations.SoeitherMaxwell’s
+equationsaredifferentindifferentinertialframes,oranobjectwithmasscannottravelatspeedc.Einsteinconcludedthat
+thelatteristrue:Anobjectwithmasscannottravelatspeedc.Maxwell’sequationsarecorrect,butNewton’sadditionof
+velocities is not correct for light.
+
+188 Chapter 5 | Relativity
+Notuntil1905,whenEinsteinpublishedhisfirstpaperonspecialrelativity,wasthecurrentlyacceptedconclusionreached.
+Basedmostlyonhisanalysisthatthelawsofelectricityandmagnetismwouldnotallowanotherspeedforlight,andonly
+slightly aware of the Michelson-Morley experiment, Einstein detailed hissecond postulate of special relativity.
+Second Postulate of Special Relativity
+Light travels in a vacuum with the same speedcin any direction in all inertial frames.
+In other words, the speed of light has the same definite speed for any observer, regardless of the relative motion of the
+source.Thisdeceptivelysimpleandcounterintuitivepostulate,alongwiththefirstpostulate,leaveallelseopenforchange.
+Among the changes are the loss of agreement on the time between events, the variation of distance with speed, and the
+realization that matter and energy can be converted into one another. We describe these concepts in the following sections.
+5.1 Check Your UnderstandingExplain how special relativity differs from general relativity.
+5.2 | Relativity of Simultaneity
+Learning Objectives
+By the end of this section, you will be able to:
+• Show from Einstein's postulates that two events measured as simultaneous in one inertial
+frame are not necessarily simultaneous in all inertial frames.
+• Describe how simultaneity is a relative concept for observers in different inertial frames in
+relative motion.
+Dotimeintervalsdependonwhoobservesthem?Intuitively,itseemsthatthetimeforaprocess,suchastheelapsedtime
+forafootrace(Figure5.2),shouldbethesameforallobservers.Ineverydayexperiences,disagreementsoverelapsedtime
+havetodowiththeaccuracyofmeasuringtime.Noonewouldbelikelytoarguethattheactualtimeintervalwasdifferent
+for the moving runner and for the stationary clock displayed. Carefully considering just how time is measured, however,
+shows that elapsed time does depends on the relative motion of an observer with respect to the process being measured.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 189
+Figure 5.2 Elapsed time for a foot race is the same for all observers, but at relativistic speeds,
+elapsed time depends on the motion of the observer relative to the location where the process
+being timed occurs. (credit: "Jason Edward Scott Bain"/Flickr)
+Considerhowwemeasureelapsedtime.Ifweuseastopwatch,forexample,howdoweknowwhentostartandstopthe
+watch?Onemethodistousethearrivaloflightfromtheevent.Forexample,ifyou’reinamovingcarandobservethelight
+arrivingfromatrafficsignalchangefromgreentored,youknowit’stimetosteponthebrakepedal.Thetimingismore
+accurate if some sort of electronic detection is used, avoiding human reaction times and other complications.
+Now suppose two observers use this method to measure the time interval between two flashes of light from flash lamps
+thatareadistanceapart(Figure5.3).AnobserverAisseatedmidwayonarailcarwithtwoflashlampsatoppositesides
+equidistant fromher.Apulse oflight isemitted fromeach flash lamp andmoves toward observer A,showninframe (a)
+ofthefigure.Therailcarismovingrapidlyinthedirectionindicatedbythevelocityvectorinthediagram.AnobserverB
+standingontheplatformisfacingtherailcarasitpassesandobservesbothflashesoflightreachhimsimultaneously,as
+showninframe(c).Hemeasuresthedistancesfromwherehesawthepulsesoriginate,findsthemequal,andconcludesthat
+the pulses were emitted simultaneously.
+However, because of Observer A’s motion, the pulse from the right of the railcar, from the direction the car is moving,
+reachesherbeforethepulsefromtheleft,asshowninframe(b).Shealsomeasuresthedistancesfromwithinherframeof
+reference, finds them equal, and concludes that the pulses were not emitted simultaneously.
+The two observers reach conflicting conclusions about whether the two events at well-separated locations were
+simultaneous.Bothframesofreferencearevalid,andbothconclusionsarevalid.Whethertwoeventsatseparatelocations
+are simultaneous depends on the motion of the observer relative to the locations of the events.

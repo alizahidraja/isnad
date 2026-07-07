@@ -1,0 +1,288 @@
+# REAL PDF — openstax_vol3.pdf, pages 521-528
+############################################################
+
+Chapter 11 | Particle Physics and Cosmology 513
+for example, cannot produce just one photon because this violates the conservation of linear momentum. As discussed
+inRelativity,thespecialtheoryofrelativitymodifiesdefinitionsofmomentum,energy,andotherfamiliarquantities.In
+particular,therelativisticmomentumofaparticlediffersfromitsclassicalmomentumbyafactor γ =1/ 1−(v/c)2 that
+varies from 1 to ∞, depending on the speed of the particle.
+Inpreviouschapters,weencounteredotherconservationlawsaswell.Forexample,chargeisconservedinallelectrostatic
+phenomena. Charge lost in one place is gained in another because charge is carried by particles. No known physical
+processes violate charge conservation. In the next section, we describe three less-familiar conservation laws: baryon
+number, lepton number, and strangeness. These are by no means the only conservation laws in particle physics.
+Baryon Number Conservation
+No conservation law considered thus far prevents a neutron from decaying via a reaction such as
+n→e + +e−.
+Thisprocessconserves charge,energy,andmomentum. However,itdoesnotoccurbecause itviolates thelawofbaryon
+numberconservation.Thislawrequiresthatthetotalbaryonnumberofareactionisthesamebeforeandafterthereaction
+occurs. To determine the total baryon number, every elementary particle is assigned a baryon number B. The baryon
+numberhasthevalue B= +1 forbaryons,–1forantibaryons,and0forallotherparticles.Returningtotheabovecase
+(the decay of the neutron into an electron-positron pair), the neutron has a value B= +1, whereas the electron and
+thepositroneachhasavalueof0.Thus,thedecaydoesnotoccurbecausethetotalbaryonnumberchangesfrom1to0.
+However, the proton-antiproton collision process
+− − −
+p+p →p+p+p+p,
+doessatisfythelawofconservationofbaryonnumberbecausethebaryonnumberiszerobeforeandaftertheinteraction.
+The baryon number for several common particles is given inTable 11.2.
+Particle Symbol Lepton Lepton Lepton Baryon Strange-
+name number number number number ness
+(L e) (Lµ) (Lτ ) (B) number
+Electron e− 1 0 0 0 0
+Electron υ 1 0 0 0 0
+e
+neutrino
+Muon µ− 0 1 0 0 0
+Muon υ 0 1 0 0 0
+µ
+neutrino
+Tau τ− 0 0 1 0 0
+Tau υ 0 0 1 0 0
+τ
+neutrino
+Pion π+ 0 0 0 0 0
+Positive + 0 0 0 0 1
+K
+kaon
+Negative K− 0 0 0 0 –1
+kaon
+Proton p 0 0 0 1 0
+Neutron n 0 0 0 1 0
+Lambda 0 0 0 0 1 –1
+Λ
+zero
+Table 11.2Conserved Properties of Particles
+
+514 Chapter 11 | Particle Physics and Cosmology
+Particle Symbol Lepton Lepton Lepton Baryon Strange-
+name number number number number ness
+(L e) (Lµ) (Lτ ) (B) number
+Positive + 0 0 0 1 –1
+Σ
+sigma
+Negative Σ− 0 0 0 1 –1
+sigma
+Xi zero 0 0 0 0 1 –2
+Ξ
+Negative Ξ− 0 0 0 1 –2
+xi
+Omega Ω− 0 0 0 1 –3
+Table 11.2Conserved Properties of Particles
+Example 11.1
+Baryon Number Conservation
+Based on the law of conservation of baryon number, which of the following reactions can occur?
+(a)π−+p→π0 +n+π−+π+
+− −
+(b)p+p →p+p+p
+Strategy
+Determinethetotalbaryonnumberforthereactantsandproducts,andrequirethatthisvaluedoesnotchangein
+the reaction.Solution
+For reaction (a), the net baryon number of the two reactants is 0+1=1 and the net baryon number of the
+fourproductsis 0+1+0+0=1. Sincethenetbaryonnumbersofthereactantsandproductsareequal,this
+reaction is allowed on the basis of the baryon number conservation law.
+For reaction (b), the net baryon number of the reactants is 1+(−1)=0 and the net baryon number of the
+proposed products is 1+1+(−1)=1. Since the net baryon numbers of the reactants and proposed products
+are not equal, this reaction cannot occur.
+Significance
+Baryonnumberisconservedinthefirstreaction,butnotinthesecond.Baryonnumberconservationconstrains
+what reactions can and cannot occur in nature.
+11.1 Check Your UnderstandingWhat is the baryon number of a hydrogen nucleus?
+Lepton Number Conservation
+Lepton number conservation states that the sum of lepton numbers before and after the interaction must be the same.
+There are three different lepton numbers: the electron-lepton number L e, the muon-lepton number L µ, and the tau-
+lepton number L τ. In any interaction, each of these quantities must be conserved separately. For electrons and electron
+neutrinos, L e=1; for their antiparticles, L e=−1; all other particles have L e=0. Similarly, L µ=1 for muons and
+muonneutrinos, L µ=−1 fortheirantiparticles,and L µ=0 forallotherparticles.Finally, L τ=1, −1,or0,depending
+onwhetherwehaveatauortauneutrino,theirantiparticles,oranyotherparticle,respectively.Leptonnumberconservation
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 515
+guarantees that the number of electrons and positrons in the universe stays relatively constant. (Note: The total lepton
+numberis,asfarasweknow,conservedinnature.However,observationshaveshownvariationsoffamilyleptonnumber
+(for example, L e) in a phenomenon calledneutrino oscillations.)
+To illustrate the lepton number conservation law, consider the following known two-step decay process:
+π+ → µ+ +ν µ
+µ+ →e + +ν c+ —ν µ.
+Inthefirstdecay,alloftheleptonnumbersfor π+ are0.Fortheproductsofthisdecay, L µ=−1 for µ+ and L µ=1
+for ν µ. Therefore,muon-leptonnumberisconserved.Neitherelectronsnortauareinvolvedinthisdecay,so L e=0 and
+L τ=0 fortheinitialparticleandalldecayproducts.Thus,electron-leptonandtau-leptonnumbersarealsoconserved.In
+theseconddecay, µ+ hasamuon-leptonnumber L µ=−1, whereasthenetmuon-leptonnumberofthedecayproductsis
+0+0+(−1)= –1.Thus,themuon-leptonnumberisconserved.Electron-leptonnumberisalsoconserved,as L e=0
+for µ+ ,whereasthenetelectron-leptonnumberofthedecayproductsis (−1)+1+0=0.Finally,sincenotausortau-
+neutrons are involved in this decay, the tau-lepton number is also conserved.
+Example 11.2
+Lepton Number Conservation
+Based on the law of conservation of lepton number, which of the following decays can occur?
+(a)n→p+e−+ −ν
+e
+(b)π−→ µ−+ν µ+ −ν µ
+Strategy
+Determinethetotalleptonnumberforthereactantsandproducts,andrequirethatthisvaluedoesnotchangein
+the reaction.
+Solution
+For decay (a), the electron-lepton number of the neutron is 0, and the net electron-lepton number of the decay
+products is 0+1+(−1)=0. Since the net electron-lepton numbers before and after the decay are the same,
+thedecayispossibleonthebasisofthelawofconservationofelectron-leptonnumber.Also,sincethereareno
+muons or taus involved in this decay, the muon-lepton and tauon-lepton numbers are conserved.
+Fordecay(b),themuon-leptonnumberofthe π− is0,andthenetmuon-leptonnumberoftheproposeddecay
+productsis 1+1+(−1)=1.Thus,onthebasisofthelawofconservationofmuon-leptonnumber,thisdecay
+cannot occur.
+Significance
+Leptonnumberisconservedinthefirstreaction,butnotinthesecond.Leptonnumberconservationconstrains
+what reactions can and cannot occur in nature.
+11.2 Check Your UnderstandingWhat is the lepton number of an electron-positron pair?
+Strangeness Conservation
+Inthelate1940sandearly1950s,cosmic-rayexperimentsrevealedtheexistenceofparticlesthathadneverbeenobserved
+onEarth.Theseparticleswereproducedincollisionsofpionswithprotonsorneutronsintheatmosphere.Theirproduction
+anddecaywereunusual.Theywereproducedinthestrongnuclearinteractionsofpionsandnucleons,andweretherefore
+inferredtobehadrons;however,theirdecaywasmediatedbythemuchmoreslowlyactingweaknuclearinteraction.Their
+
+516 Chapter 11 | Particle Physics and Cosmology
+lifetimeswereontheorderof 10 −10 to 10 −8 s, whereasatypicallifetimeforaparticlethatdecaysviathestrongnuclear
+reaction is 10 −23 s. These particles were also unusual because they were always produced in pairs in the pion-nucleon
+collisions.Forthesereasons,thesenewlydiscoveredparticlesweredescribedasstrange.Theproductionandsubsequent
+decay of a pair of strange particles is illustrated inFigure 11.4and follows the reaction
+π−+p→Λ 0 +K 0 .
+The lambda particle then decays through the weak nuclear interaction according to
+Λ 0 →π−+p,
+and the kaon decays via the weak interaction
+K 0 →π+ +π−.
+Figure 11.4 The interactions of hadrons. (a) Bubble chamber photograph; (b) sketch that
+represents the photograph.
+To rationalize the behavior of these strange particles, particle physicists invented a particle property conserved in strong
+interactionsbutnotinweakinteractions.Thispropertyiscalledstrangenessand,asthenamesuggests,isassociatedwith
+the presence of a strange quark. The strangeness of a particle is equal to the number of strange quarks of the particle.
+Strangenessconservationrequiresthetotalstrangenessofareactionordecay(summingthestrangenessofalltheparticles)
+isthesamebeforeandaftertheinteraction.Strangenessconservationisnotabsolute:Itisconservedinstronginteractions
+andelectromagneticinteractionsbutnotinweakinteractions.Thestrangenessnumberforseveralcommonparticlesisgiven
+inTable 11.2.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 517
+Example 11.3
+Strangeness Conservation
+(a) Based on the conservation of strangeness, can the following reaction occur?
+π−+p→K + +K−+n.
+(b) The following decay is mediated by the weak nuclear force:
+K
++ →π+ +π0
+.
+Does the decay conserve strangeness? If not, can the decay occur?
+Strategy
+Determinethestrangenessofthereactantsandproductsandrequirethatthisvaluedoesnotchangeinthereaction.
+Solution
+a. The net strangeness of the reactants is 0+0=0, and the net strangeness of the products is
+1+(−1)+0=0. Thus,thestrongnuclearinteractionbetweenapionandaprotonisnotforbiddenby
+the law of conservation of strangeness. Notice that baryon number is also conserved in the reaction.
+b. The net strangeness before and after this decay is 1 and 0, so the decay does not conserve strangeness.
+However,thedecaymaystillbepossible,becausethelawofconservationofstrangenessdoesnotapply
+to weak decays.
+Significance
+Strangeness is conserved in the first reaction, but not in the second. Strangeness conservation constrains what
+reactions can and cannot occur in nature.
+11.3 Check Your UnderstandingWhat is the strangeness number of a muon?
+11.3 | Quarks
+Learning Objectives
+By the end of this section, you will be able to:
+• Compare and contrast the six known quarks
+• Use quark composition of hadrons to determine the total charge of these particles
+• Explain the primary evidence for the existence of quarks
+Inthe1960s,particlephysicistsbegantorealizethathadronsarenotelementaryparticlesbutaremadeofparticlescalled
+quarks. (The name ‘quark’ was coined by the physicist Murray Gell-Mann, from a phrase in the James Joyce novel
+FinnegansWake.)Initially,itwasbelievedtherewereonlythreetypesofquarks,calledup(u),down(d),andstrange(s).
+However,thisnumbersoongrewtosix—interestingly,thesameasthenumberofleptons—toincludecharmed(c),bottom
+(b), andtop(t).
+Allquarksarespin-halffermions (s=1/2), haveafractionalcharge (1/3or2/3e),andhavebaryonnumber B=1/3.
+Eachquarkhasanantiquarkwiththesamemassbutoppositechargeandbaryonnumber.Thenamesandpropertiesofthe
+six quarks are listed inTable 11.3.
+
+518 Chapter 11 | Particle Physics and Cosmology
+Quark Charge (units ofe) Spin (s) Baryon number Strangeness number
+Down (d) −1/3 1/2 1/3 0
+Up (u) +2/3 1/2 1/3 0
+Strange (s) −1/3 1/2 1/3 −1
+Charm (c) +2/3 1/2 1/3 0
+Bottom (b) −1/3 1/2 1/3 0
+Top (t) +2/3 1/2 1/3 0
+Table 11.3Quarks
+Quark Combinations
+Asmentionedearlier,quarksbindtogetheringroupsoftwoorthreetoformhadrons.Baryonsareformedfromthreequarks.
+Samplebaryons,includingquarkcontentandproperties,aregiveninTable11.4.Interestingly,thedeltaplus(Δ + )baryon
+isformedfromthesamethreequarksastheproton,butthetotalspinoftheparticleis3/2ratherthan1/2.Similarly,themass
+of Δ + withspin3/2is1.3timesthemassoftheproton,andthedeltazero(Δ 0)baryonwithaspin3/2is1.3timesthe
+neutronmass.Evidently,theenergyassociatedwiththespin(orangularmomentum)oftheparticlecontributestoitsmass
+energy.Itisalsointerestingthatnobaryonsarebelievedtoexistwithtopquarks,becausetopquarksdecaytooquicklyto
+bind to the other quarks in their production.
+Name Symbol Quarks Charge (unit ofe) Spin (s) Mass (GeV/c2)
+Proton p u u d 1 1/2 0.938
+Neutron n u d d 0 1/2 0.940
+Delta plus plus ∆++ u u u 2 3/2 1.232
+Delta plus ∆+ u u d 1 3/2 1.232
+Delta zero ∆0 u d d 0 3/2 1.232
+Delta minus ∆− d d d –1 3/2 1.232
+Lambda zero 0 u d s 0 1/2 1.116
+Λ
+Positive sigma + u u s 1 1/2 1.189
+Σ
+Neutral sigma 0 u d s 0 1/2 1.192
+Σ
+Negative xi Ξ− s d s −1 1/2 1.321
+Neutral xi 0 s u s 0 1/2 1.315
+Ξ
+Omega minus Ω− s s s −1 3/2 1.672
+Charmed lambda Λ u d c 1 1/2 2.281
+C+
+Charmed bottom Λ u d b 0 1/2 5.619
+b0
+Table 11.4Baryon Quarks
+Mesons are formed by two quarks—a quark-antiquark pair. Sample mesons, including quark content and properties, are
+−
+given inTable 11.5. Consider the formation of the pion (π+ =ud). Based on its quark content, the charge of the pion is
+2e+ 1e=e.
+3 3
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 519
+Bothquarksarespin-half(s=½),sotheresultantspiniseither0or1.Thespinofthe π+ mesonis0.Thesamequark-
+antiquark combination gives the rho (ρ) meson with spin 1. This meson has a mass approximately 5.5 times that of the
+π+ meson.
+Example 11.4
+Quark Structure
+Show that the quark composition given in Table 11.5 for Ξ 0 is consistent with the known charge, spin, and
+strangeness of this baryon.
+Strategy
+Ξ 0 iscomposedoftwostrangequarksandanupquark(sus).Wecanaddtogetherthepropertiesofquarksto
+predict the resulting properties of the Ξ 0 baryon.
+Solution
+The charge of the s quark is −e/3 and the charge of the u quark is 2e/3. Thus, the combination (s u s) has no
+netcharge,inagreementwiththeknownchargeof Ξ 0.Sincethreespin −1/2 quarkscancombinetoproduce
+a particle with spin of either 1/2 or 3/2, the quark composition is consistent with the known spin (s=1/2) of
+Ξ 0.Finally,thenetstrangenessofthe(sus)combinationis (−1)+0+(−1)=−2, whichalsoagreeswith
+experiment.
+Significance
+The charge, spin, and strangeness of the Ξ 0 particle can be determined from the properties of its constituent
+quarks.Thegreatdiversityofbaryonsandmesonscanbetracedtothepropertiesofjustsixquarks:up,down,
+charge, strange, top, and bottom.
+11.4 Check Your UnderstandingWhat is the baryon number of a pion?
+Name Symbol Quarks Charge (e) Spin Mass (GeV/c2 )
+Positive pion π+
+u
+−
+d
+1 0 0.140
+Positive rho ρ+
+u
+−
+d
+1 1 0.768
+Negative pion π− −ud −1 0 0.140
+Negative rho ρ− −ud −1 1 0.768
+Neutral Pion π0 −uu or − dd 0 0 0.135
+Neutral eta η0 −uu, − dd or −ss 0 0 0.547
+Positive kaon
+K
++ u−s 1 0 0.494
+Neutral kaon 0 d−s 0 0 0.498
+K
+Negative kaon K− −us −1 0 0.494
+J/Psi J/ψ −cc 0 1 3.10
+Table 11.5Meson Quarks

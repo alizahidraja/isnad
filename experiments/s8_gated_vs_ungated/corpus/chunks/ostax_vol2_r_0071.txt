@@ -1,0 +1,253 @@
+# REAL PDF — openstax_vol2.pdf, pages 436-443
+############################################################
+
+426 Chapter 9 | Current and Resistance
+incandescent bulb can be replaced by a 16-W LED bulb.
+Both produce 1600 lumens of light. Assuming the cost of
+electricityis$0.10perkilowatt-hour,howmuchdoesitcost
+to run the bulb for one year if it runs for four hours a day?
+59. Thepowerdissipatedbyaresistorwitharesistanceof
+R=100Ω is P=2.0W. What are the current through
+and the voltage drop across the resistor?
+60. Running late to catch a plane, a driver accidentally
+leavestheheadlightsonafterparkingthecarintheairport
+parkinglot.Duringtakeoff,thedriverrealizesthemistake.
+Havingjustreplacedthebattery,thedriverknowsthatthe
+54. The following table show the measurements of a battery is a 12-V automobile battery, rated at 100 A·h
+currentthroughandthevoltageacrossasampleofmaterial. . The driver, knowing there is nothing that can be done,
+Plotthedata,andassumingtheobjectisanohmicdevice, estimates how long the lights will shine, assuming there
+estimate the resistance. aretwo12-Vheadlights,eachratedat40W.Whatdidthe
+I(A) V(V) driver conclude?
+0 3
+61. Aphysicsstudenthasasingle-occupancydormroom.
+2 23 Thestudenthasasmallrefrigeratorthatrunswithacurrent
+of 3.00 A and a voltage of 110 V, a lamp that contains
+4 39
+a 100-W bulb, an overhead light with a 60-W bulb, and
+6 58 various other small devices adding up to 3.00 W. (a)
+Assuming the power plant that supplies 110 V electricity
+8 77
+to the dorm is 10 km away and the two aluminum
+10 100 transmission cables use 0-gauge wire with a diameter of
+8.252 mm, estimate the percentage of the total power
+12 119
+supplied by the power company that is lost in the
+14 142 transmission. (b) What would be the result is the power
+company delivered the electric power at 110 kV?
+16 162
+62. A 0.50-W, 220-Ω resistor carries the maximum
+current possible without damaging the resistor. If the
+current were reduced to half the value, what would be the
+9.5Electrical Energy and Power power consumed?
+55. A 20.00-V battery is used to supply current to a
+10-kΩ resistor.Assumethevoltagedropacrossanywires
+9.6Superconductors
+used for connections is negligible. (a) What is the current
+through the resistor? (b) What is the power dissipated by 63. Consider a power plant is located 60 km away from
+the resistor? (c) What is the power input from the battery, aresidentialareauses0-gauge ⎛A=42.40mm2⎞ wireof
+⎝ ⎠
+assuming all the electrical power is dissipated by the
+resistor?(d)Whathappenstotheenergydissipatedbythe
+copper to transmit power at a current of I =100.00A.
+resistor? How much more power is dissipated in the copper wires
+than it would be in superconducting wires?
+56. Whatisthemaximumvoltagethatcanbeappliedtoa
+64. A wire is drawn through a die, stretching it to four
+10-kΩ resistor rated at 1 W?
+4 timesitsoriginallength.Bywhatfactordoesitsresistance
+increase?
+57. Aheaterisbeingdesignedthatusesacoilof14-gauge
+nichrome wire to generate 300 W using a voltage of 65. Digital medical thermometers determine temperature
+V =110V. How long should the engineer make the by measuring the resistance of a semiconductor device
+wire?
+called a thermistor (which has α=−0.06/°C) when it is
+at the same temperature as the patient. What is a patient’s
+temperature if the thermistor’s resistance at that
+58. An alternative to CFL bulbs and incandescent bulbs
+are light-emitting diode (LED) bulbs. A 100-W temperature is 82.0% of its value at 37°C (normal body
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 427
+temperature)? the resistor is converted to heat, what is the final
+temperature of the water?
+66. Electrical power generators are sometimes “load
+tested” by passing current through a large vat of water. 67. A12-guagegoldwirehasalengthof1meter.(a)What
+A similar method can be used to test the heat output of wouldbethelengthofasilver12-gaugewirewiththesame
+a resistor. A R=30Ω resistor is connected to a 9.0-V resistance? (b) What are their respective resistances at the
+battery and the resistor leads are waterproofed and the temperature of boiling water?
+resistor is placed in 1.0 kg of room temperature water
+(T =20°C). Current runs through the resistor for 20 68. Whatisthechangeintemperaturerequiredtodecrease
+minutes. Assuming all the electrical energy dissipated by the resistance for a carbon resistor by 10%?
+ADDITIONAL PROBLEMS
+69. A coaxial cable consists of an inner conductor with are unchanged.
+radius r
+i
+=0.25cm and an outer radius of r o=0.5cm
+and has a length of 10 meters. Plastic, with a resistivity 75. What is the resistivity of a wire of 5-gauge wire
+of ρ=2.00×10 13 Ω ·m,separatesthetwoconductors. (A=16.8×10 −6 m2), 5.00 m length, and 5.10mΩ
+What is the resistance of the cable? resistance?
+70. A10.00-meterlongwirecablethatismadeofcopper 76. Coils are often used in electrical and electronic
+has a resistance of 0.051 ohms. (a) What is the weight circuits.Consideracoilwhichisformedbywinding1000
+if the wire was made of copper? (b) What is the weight turnsofinsulated20-gaugecopperwire(area 0.52mm2)
+of a 10.00-meter-long wire of the same gauge made of
+in a single layer on a cylindrical non-conducting core of
+aluminum?(c)Whatistheresistanceofthealuminumwire?
+radius2.0mm.Whatistheresistanceofthecoil?Neglect
+The density of copper is 8960kg/m 3 and the density of the thickness of the insulation.
+aluminum is 2760kg/m 3.
+77. Currents of approximately 0.06 A can be potentially
+fatal. Currents in that range can make the heart fibrillate
+71. A nichrome rod that is 3.00 mm long with a cross- (beat in an uncontrolled manner). The resistance of a dry
+sectional area of 1.00mm2 is used for a digital human body can be approximately 100kΩ. (a) What
+thermometer. (a) What is the resistance at room voltage can cause 0.06 A through a dry human body? (b)
+temperature? (b) What is the resistance at body When a human body is wet, the resistance can fall to
+temperature? 100Ω. What voltage can cause harm to a wet body?
+72. ThetemperatureinPhiladelphia,PAcanvarybetween 78. A 20.00-ohm, 5.00-watt resistor is placed in series
+68.00°F and 100.00°F in one summer day. By what withapowersupply.(a)Whatisthemaximumvoltagethat
+percentage will an aluminum wire’s resistance change canbeappliedtotheresistorwithoutharmingtheresistor?
+during the day? (b) What would be the current through the resistor?
+73. When 100.0 V is applied across a 5-gauge (diameter 79. Abatterywithanemfof24.00Vdeliversaconstant
+4.621 mm) wire that is 10 m long, the magnitude of the currentof2.00mAtoanappliance.Howmuchworkdoes
+currentdensityis 2.0×10 8 A/m2.Whatistheresistivity the battery do in three minutes?
+of the wire?
+80. A12.00-Vbatteryhasaninternalresistanceofatenth
+of an ohm. (a) What is the current if the battery terminals
+74. A wire with a resistance of 5.0Ω is drawn out
+aremomentarilyshortedtogether?(b)Whatistheterminal
+through a die so that its new length is twice times its
+voltage if the battery delivers 0.25 amps to a circuit?
+originallength.Findtheresistanceofthelongerwire.You
+mayassumethattheresistivityanddensityofthematerial
+
+428 Chapter 9 | Current and Resistance
+CHALLENGE PROBLEMS
+81. A 10-gauge copper wire has a cross-sectional area
+A=5.26mm2 andcarriesacurrentof I =5.00A.The
+density of copper is ρ=89.50g/cm 3. One mole of
+copper atoms ⎛ 6.02×10 23 atoms ⎞ has a mass of
+⎝ ⎠
+approximately 63.50 g. What is the magnitude of the drift
+velocity of the electrons, assuming that each copper atom
+contributes one free electron to the current?
+82. The current through a 12-gauge wire is given as
+I(t)=(5.00A)sin(2π60Hzt). What is the current
+density at time 15.00 ms?
+83. A particle accelerator produces a beam with a radius
+of 1.25 mm with a current of 2.00 mA. Each proton has
+a kinetic energy of 10.00 MeV. (a) What is the velocity
+of the protons? (b) What is the number (n) of protons per
+unitvolume?(b)Howmanyelectronspassacrosssectional
+area each second? 87. A resistor of an unknown resistance is placed in an
+insulatedcontainerfilledwith0.75kgofwater.Avoltage
+84. Inthischapter,mostexamplesandproblemsinvolved sourceisconnectedinserieswiththeresistorandacurrent
+directcurrent(DC).DCcircuitshavethecurrentflowingin of 1.2 amps flows through the resistor for 10 minutes.
+onedirection,frompositivetonegative.Whenthecurrent Duringthistime,thetemperatureofthewaterismeasured
+was changing, it was changed linearly from I =−I
+max
+and the temperature change during this time is
+ΔT =10.00°C.(a)Whatistheresistanceoftheresistor?
+to I = +I max and the voltage changed linearly from (b) What is the voltage supplied by the power supply?
+V =−V max to V = +V max , where V max=I max R.
+Supposeavoltagesourceisplacedinserieswitharesistor 88. The charge that flows through a point in a wire as
+of R=10Ω that supplied a current that alternated as a a function of time is modeled as
+sine wave, for example, I(t)=(3.00A)sin ⎛ 2π t ⎞ . (a) q(t)=q e−t/T =10.0Ce−t/5s. (a) What is the initial
+⎝4.00s ⎠ 0
+Whatwouldagraphofthevoltagedropacrosstheresistor
+current through the wire at time t=0.00s? (b) Find the
+V(t) versus time look like? (b) What would a plot of V(t) currentattime t= 1T.(c)Atwhattimetwillthecurrent
+versus I(t) for one period look like? (Hint: If you are not 2
+sure, try plottingV(t) versusI(t) using a spreadsheet.) be reduced by one-half I = 1I ?
+2 0
+85. Acurrentof I =25A isdrawnfroma100-Vbattery
+89. Consider a resistor made from a hollow cylinder of
+for 30 seconds. By how much is the chemical energy
+carbon as shown below. The inner radius of the cylinder
+reduced?
+is R i=0.20mm andtheouterradiusis R
+0
+=0.30mm.
+86. Considerasquarerodofmaterialwithsidesoflength Thelengthoftheresistoris L=0.90mm.Theresistivity
+L=3.00cm with a current density of ofthecarbonis ρ=3.5×10 −5 Ω ·m.(a)Provethatthe
+→ J =J eαx^ k = ⎛ 0.35 A ⎞ e ⎛ ⎝2.1×10 −3 m −1⎞ ⎠ x^ k as resistanceperpendicularfromtheaxisis R= ρ ln ⎛R 0 ⎞ .
+0 ⎝ m2⎠ 2πL ⎝R
+i
+⎠
+shownbelow.Findthecurrentthatpassesthroughtheface (b) What is the resistance?
+of the rod.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 429
+(d) How much heat was added to the dorm room?
+92. A 12-V car battery is used to power a 20.00-W,
+12.00-V lamp during the physics club camping trip/star
+party.Thecabletothelampis2.00meterslong,14-gauge
+copper wire with a charge density of
+n=9.50×10 28 m −3.(a)Whatisthecurrentdrawbythe
+lamp? (b) How long would it take an electron to get from
+the battery to the lamp?
+93. A physics student uses a 115.00-V immersion heater
+90. Whatisthecurrentthroughacylindricalwireofradius
+toheat400.00grams(almosttwocups)ofwaterforherbal
+J
+R=0.1mm if the current density is J = 0r, where tea. During the two minutes it takes the water to heat, the
+R
+physics student becomes bored and decides to figure out
+J =32000 A ? the resistance of the heater. The student starts with the
+0 m2
+assumption that the water is initially at the temperature of
+the room T i=25.00°C and reaches T f =100.00°C.
+91. A student uses a 100.00-W, 115.00-V radiant heater
+toheatthestudent’sdormroom,duringthehoursbetween
+Thespecificheatofthewateris c=4180 J .Whatis
+kg∙K
+sunsetandsunrise,6:00p.m.to7:00a.m.(a)Whatcurrent
+the resistance of the heater?
+does the heater operate at? (b) How many electrons move
+throughtheheater?(c)Whatistheresistanceoftheheater?
+
+430 Chapter 9 | Current and Resistance
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 431
+10 | DIRECT-CURRENT
+CIRCUITS
+Figure 10.1 This circuit shown is used to amplify small signals and power the earbud speakers attached to a cellular phone.
+This circuit’s components include resistors, capacitors, and diodes, all of which have been covered in previous chapters, as well
+as transistors, which are semi-conducting devices covered inCondensed Matter Physics (http://cnx.org/content/
+m58591/latest/). Circuits using similar components are found in all types of equipment and appliances you encounter in
+everyday life, such as alarm clocks, televisions, computers, and refrigerators. (credit left: modification of work by Jane Whitney)
+Chapter Outline
+10.1Electromotive Force
+10.2Resistors in Series and Parallel
+10.3Kirchhoff's Rules
+10.4Electrical Measuring Instruments
+10.5RC Circuits
+10.6Household Wiring and Electrical Safety
+Introduction
+Intheprecedingfewchapters,wediscussedelectriccomponents,includingcapacitors,resistors,anddiodes.Inthischapter,
+weusetheseelectriccomponentsincircuits.Acircuitisacollectionofelectricalcomponentsconnectedtoaccomplisha
+specifictask.Figure 10.1showsanamplifiercircuit,whichtakesasmall-amplitudesignalandamplifiesittopowerthe
+speakersinearbuds.Althoughthecircuitlookscomplex,itactuallyconsistsofasetofseries,parallel,andseries-parallel
+circuits.Thesecondsectionofthischaptercoverstheanalysisofseriesandparallelcircuitsthatconsistofresistors.Later
+inthischapter,weintroducethebasicequationsandtechniquestoanalyzeanycircuit,includingthosethatarenotreducible
+through simplifying parallel and series elements. But first, we need to understand how to power a circuit.
+
+432 Chapter 10 | Direct-Current Circuits
+10.1 | Electromotive Force
+Learning Objectives
+By the end of the section, you will be able to:
+• Describe the electromotive force (emf) and the internal resistance of a battery
+• Explain the basic operation of a battery
+If you forget to turn off your car lights, they slowly dim as the battery runs down. Why don’t they suddenly blink off
+whenthebattery’senergyisgone?Theirgradualdimmingimpliesthatthebatteryoutputvoltagedecreasesasthebattery
+is depleted. The reason for the decrease in output voltage for depleted batteries is that all voltage sources have two
+fundamentalparts—asourceofelectricalenergyandaninternalresistance.Inthissection,weexaminetheenergysource
+and the internal resistance.
+Introduction to Electromotive Force
+Voltagehasmanysources,afewofwhichareshowninFigure 10.2.Allsuchdevicescreateapotentialdifferenceand
+cansupplycurrentifconnectedtoacircuit.Aspecialtypeofpotentialdifferenceisknownaselectromotiveforce(emf).
+Theemfisnotaforceatall,buttheterm‘electromotiveforce’isusedforhistoricalreasons.ItwascoinedbyAlessandro
+Voltainthe1800s,whenheinventedthefirstbattery,alsoknownasthevoltaicpile.Becausetheelectromotiveforceisnot
+aforce,itiscommontorefertothesesourcessimplyassourcesofemf(pronouncedastheletters“ee-em-eff”),insteadof
+sources of electromotive force.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

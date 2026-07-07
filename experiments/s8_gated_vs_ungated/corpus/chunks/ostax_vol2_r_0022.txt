@@ -1,0 +1,209 @@
+# REAL PDF — openstax_vol2.pdf, pages 119-125
+############################################################
+
+Chapter 3 | The First Law of Thermodynamics 109
+3 | THE FIRST LAW OF
+THERMODYNAMICS
+Figure 3.1 A weak cold front of air pushes all the smog in northeastern China into a giant smog blanket over the Yellow Sea,
+as captured by NASA’s Terra satellite in 2012. To understand changes in weather and climate, such as the event shown here, you
+need a thorough knowledge of thermodynamics. (credit: modification of work by NASA)
+Chapter Outline
+3.1Thermodynamic Systems
+3.2Work, Heat, and Internal Energy
+3.3First Law of Thermodynamics
+3.4Thermodynamic Processes
+3.5Heat Capacities of an Ideal Gas
+3.6Adiabatic Processes for an Ideal Gas
+Introduction
+Heatisthetransferofenergyduetoatemperaturedifferencebetweentwosystems.Heatdescribestheprocessofconverting
+fromoneformofenergyintoanother.Acarengine,forexample,burnsgasoline.Heatisproducedwhentheburnedfuelis
+chemicallytransformedintomostly CO and H O, whicharegasesatthecombustiontemperature.Thesegasesexert
+2 2
+a force on a piston through a displacement, doing work and converting the piston’s kinetic energy into a variety of other
+forms—into the car’s kinetic energy; into electrical energy to run the spark plugs, radio, and lights; and back into stored
+energy in the car’s battery.
+Energyisconservedinallprocesses,includingthoseassociatedwiththermodynamicsystems.Therolesofheattransferand
+internal energy change vary from process to process and affect how work is done by the system in that process. We will
+seethatthefirstlawofthermodynamicsexplainsthatachangeintheinternalenergyofasystemcomesfromchangesin
+heatorwork.Understandingthelawsthatgovernthermodynamicprocessesandtherelationshipbetweenthesystemandits
+surroundings is therefore paramount in gaining scientific knowledge of energy and energy consumption.
+
+110 Chapter 3 | The First Law of Thermodynamics
+3.1 | Thermodynamic Systems
+Learning Objectives
+By the end of this section, you will be able to:
+• Define a thermodynamic system, its boundary, and its surroundings
+• Explain the roles of all the components involved in thermodynamics
+• Define thermal equilibrium and thermodynamic temperature
+• Link an equation of state to a system
+A thermodynamic system includes anything whose thermodynamic properties are of interest. It is embedded in its
+surroundings or environment; it can exchange heat with, and do work on, its environment through a boundary, which
+is the imagined wall that separates the system and the environment (Figure 3.2). In reality, the immediate surroundings
+ofthesystemareinteractingwithitdirectlyandthereforehaveamuchstrongerinfluenceonitsbehaviorandproperties.
+Forexample,ifwearestudyingacarengine,theburninggasolineinsidethecylinderoftheengineisthethermodynamic
+system;thepiston,exhaustsystem,radiator,andairoutsideformthesurroundingsofthesystem.Theboundarythenconsists
+of the inner surfaces of the cylinder and piston.
+Figure 3.2 (a) A system, which can include any relevant process or value, is self-contained in an area.
+The surroundings may also have relevant information; however, the surroundings are important to study
+only if the situation is an open system. (b) The burning gasoline in the cylinder of a car engine is an
+example of a thermodynamic system.
+Normally,asystemmusthavesomeinteractionswithitssurroundings.Asystemiscalledanisolatedorclosedsystemifit
+iscompletelyseparatedfromitsenvironment—forexample,agasthatissurroundedbyimmovableandthermallyinsulating
+walls.Inreality,aclosedsystemdoesnotexistunlesstheentireuniverseistreatedasthesystem,oritisusedasamodel
+foranactualsystemthathasminimalinteractionswithitsenvironment.Mostsystemsareknownasanopensystem,which
+can exchange energy and/or matter with its surroundings (Figure 3.3).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 111
+Figure 3.3 (a) This boiling tea kettle is an open thermodynamic system. It transfers
+heat and matter (steam) to its surroundings. (b) A pressure cooker is a good
+approximation to a closed system. A little steam escapes through the top valve to prevent
+explosion. (credit a: modification of work by Gina Hamilton; credit b: modification of
+work by Jane Whitney)
+Whenweexamineathermodynamicsystem,weignorethedifferenceinbehaviorfromplacetoplaceinsidethesystemfor
+a given moment. In other words, we concentrate on the macroscopic properties of the system, which are the averages of
+themicroscopicpropertiesofallthemoleculesorentitiesinthesystem.Anythermodynamicsystemisthereforetreatedas
+acontinuumthathasthesamebehavioreverywhereinside.Weassumethesystemisinequilibrium.Youcouldhave,for
+example,atemperaturegradientacrossthesystem.However,whenwediscussathermodynamicsysteminthischapter,we
+study those that have uniform properties throughout the system.
+Before we can carry out any study on a thermodynamic system, we need a fundamental characterization of the system.
+When we studied a mechanical system, we focused on the forces and torques on the system, and their balances dictated
+themechanicalequilibriumofthesystem.Inasimilarway,weshouldexaminetheheattransferbetweenathermodynamic
+system and its environment or between the different parts of the system, and its balance should dictate the thermal
+equilibriumofthesystem.Intuitively,suchabalanceisreachedifthetemperaturebecomesthesamefordifferentobjects
+or parts of the system in thermal contact, and the net heat transfer over time becomes zero.
+Thus,whenwesaytwoobjects(athermodynamicsystemanditsenvironment,forexample)areinthermalequilibrium,we
+meanthattheyareatthesametemperature,aswediscussedinTemperatureandHeat.Letusconsiderthreeobjectsat
+temperatures T , T , and T , respectively.Howdoweknowwhethertheyareinthermalequilibrium?Thegoverning
+1 2 3
+principle here is thezeroth law of thermodynamics, as described inTemperature and Heaton temperature and heat:
+If object 1 is in thermal equilibrium with objects 2 and 3, respectively, then objects 2 and 3 must also be in thermal
+equilibrium.
+Mathematically, we can simply write the zeroth law of thermodynamics as
+IfT =T andT =T , thenT =T . (3.1)
+1 2 1 3 2 3
+Thisisthemostfundamentalwayofdefiningtemperature:Twoobjectsmustbeatthesametemperaturethermodynamically
+if the net heat transfer between them is zero when they are put in thermal contact and have reached a thermal equilibrium.
+The zeroth law of thermodynamics is equally applicable to the different parts of a closed system and requires that the
+temperature everywhere inside the system be the same if the system has reached a thermal equilibrium. To simplify our
+discussion,weassumethesystemisuniformwithonlyonetypeofmaterial—forexample,waterinatank.Themeasurable
+properties of the system at least include its volume, pressure, and temperature. The range of specific relevant variables
+depends upon the system. For example, for a stretched rubber band, the relevant variables would be length, tension, and
+temperature.Therelationshipbetweenthesethreebasicpropertiesofthesystemiscalledtheequationofstateofthesystem
+and is written symbolicallyfor a closed systemas
+
+112 Chapter 3 | The First Law of Thermodynamics
+f(p, V, T)=0, (3.2)
+whereV,p, andTare the volume, pressure, and temperature of the system at a given condition.
+Inprinciple,thisequationofstateexistsforanythermodynamicsystembutisnotalwaysreadilyavailable.Theformsof
+f(p, V, T)=0 formanymaterialshavebeendeterminedeitherexperimentallyortheoretically.Intheprecedingchapter,
+we saw an example of an equation of state for an ideal gas, f(p, V, T)= pV−nRT =0.
+Wehavesofarintroducedseveralphysicalpropertiesthatarerelevanttothethermodynamicsofathermodynamicsystem,
+suchasitsvolume,pressure,andtemperature. Wecanseparate thesequantities intotwogenericcategories. Thequantity
+associated with an amount of matter is an extensive variable, such as the volume and the number of moles. The other
+propertiesofasystemareintensivevariables,suchasthepressureandtemperature.Anextensivevariabledoublesitsvalue
+iftheamountofmatterinthesystemdoubles,providedalltheintensivevariablesremainthesame.Forexample,thevolume
+ortotalenergyofthesystemdoublesifwedoubletheamountofmatterinthesystemwhileholdingthetemperatureand
+pressure of the system unchanged.
+3.2 | Work, Heat, and Internal Energy
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the work done by a system, heat transfer between objects, and internal energy
+change of a system
+• Calculate the work, heat transfer, and internal energy change in a simple process
+Wediscussedtheconceptsofworkandenergyearlierinmechanics.Examplesandrelatedissuesofheattransferbetween
+different objects have also been discussed in the preceding chapters. Here, we want to expand these concepts to a
+thermodynamic system and its environment. Specifically, we elaborated on the concepts of heat and heat transfer in the
+previous two chapters. Here, we want to understand how work is done by or to a thermodynamic system; how heat is
+transferredbetweenasystemanditsenvironment;andhowthetotalenergyofthesystemchangesundertheinfluenceof
+the work done and heat transfer.
+Work Done by a System
+Aforcecreatedfromanysourcecandoworkbymovinganobjectthroughadisplacement.Thenhowdoesathermodynamic
+systemdowork?Figure 3.4showsagasconfinedtoacylinderthathasamovablepistonatoneend.Ifthegasexpands
+against the piston, it exerts a force through a distance and does work on the piston. If the piston compresses the gas as
+it is moved inward, work is also done—in this case, on the gas. The work associated with such volume changes can be
+determinedasfollows:Letthegaspressureonthepistonfacebep.ThentheforceonthepistonduetothegasispA,where
+Aistheareaoftheface.Whenthepistonispushedoutwardaninfinitesimaldistancedx,themagnitudeoftheworkdone
+by the gas is
+dW =Fdx= pAdx.
+Since the change in volume of the gas is dV = Adx, this becomes
+dW = pdV. (3.3)
+For a finite change in volume from V toV , we can integrate this equation from V toV to find the net work:
+1 2 1 2
+V (3.4)
+2
+W =∫ pdV.
+V
+1
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 113
+Figure 3.4 The work done by a confined gas in moving a
+piston a distancedxis given by dW =Fdx= pdV.
+Thisintegralisonlymeaningfulforaquasi-staticprocess,whichmeansaprocessthattakesplaceininfinitesimallysmall
+steps,keepingthesystematthermalequilibrium.(Weexaminethisideainmoredetaillaterinthischapter.)Onlythendoes
+awell-defined mathematical relationship (theequation ofstate) existbetween thepressureandvolume.Thisrelationship
+can be plotted on a pV diagram of pressure versus volume, where the curve is the change of state. We can approximate
+suchaprocessasonethatoccursslowly,throughaseriesofequilibriumstates.Theintegralisinterpretedgraphicallyasthe
+areaunderthepVcurve(theshadedareaofFigure3.5).Workdonebythegasispositiveforexpansionandnegativefor
+compression.
+Figure 3.5 When a gas expands slowly from V toV , the
+1 2
+work done by the system is represented by the shaded area under
+thepVcurve.
+Consider the two processes involving an ideal gas that are represented by paths AC and ABC in Figure 3.6. The first
+processisanisothermalexpansion,withthevolumeofthegaschangingitsvolumefrom V toV .Thisisothermalprocess
+1 2
+isrepresentedbythecurvebetweenpointsAandC.Thegasiskeptataconstanttemperature Tbykeepingitinthermal
+equilibrium with a heat reservoir at that temperature. FromEquation 3.4and the ideal gas law,
+V V
+2 2
+W =∫ pdV =⌠ ⎛nRT⎞ dV.
+V ⌡V ⎝ V ⎠
+1 1
+
+114 Chapter 3 | The First Law of Thermodynamics
+Figure 3.6 The pathsABC,AC, andADCrepresent three
+different quasi-static transitions between the equilibrium statesA
+andC.
+Theexpansionisisothermal,soTremainsconstantovertheentireprocess.SincenandRarealsoconstant,theonlyvariable
+in the integrand isV, so the work done by an ideal gas in an isothermal process is
+V
+W =nRT⌠ 2 dV =nRTln V 2.
+⌡V V V
+1
+1
+Notice that if V >V (expansion),Wis positive, as expected.
+2 1
+ThestraightlinesfromAtoBandthenfromBtoCrepresentadifferentprocess.Here,agasatapressure p firstexpands
+1
+isobarically (constant pressure) and quasi-statically from V toV , after which it cools quasi-statically at the constant
+1 2
+volume V untilitspressuredropsto p .FromAtoB,thepressureisconstantatp,sotheworkoverthispartofthepath
+2 2
+is
+V V
+2 2
+W =∫ pdV = p ∫ dV = p (V −V ).
+1 1 2 1
+V V
+1 1
+FromBtoC, there is no change in volume and therefore no work is done. The net work over the pathABCis then
+W = p (V −V )+0= p (V −V ).
+1 2 1 1 2 1
+AcomparisonoftheexpressionsfortheworkdonebythegasinthetwoprocessesofFigure3.6showsthattheyarequite
+different.Thisillustratesaveryimportantpropertyofthermodynamicwork:Itispathdependent.Wecannotdeterminethe
+workdonebyasystemasitgoesfromoneequilibriumstatetoanotherunlessweknowitsthermodynamicpath.Different
+values of the work are associated with different paths.
+Example 3.1
+Isothermal Expansion of a van der Waals Gas
+Studies ofavanderWaals gasrequire anadjustment totheideal gaslawthat takes intoconsideration that gas
+moleculeshaveadefinitevolume(seeTheKineticTheoryofGases).OnemoleofavanderWaalsgashas
+an equation of state
+⎛ a ⎞
+p+ (V−b)=RT,
+⎝ V2⎠
+whereaandbaretwoparametersforaspecificgas.Supposethegasexpandsisothermallyandquasi-statically
+from volume V to volume V . How much work is done by the gas during the expansion?
+1 2
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

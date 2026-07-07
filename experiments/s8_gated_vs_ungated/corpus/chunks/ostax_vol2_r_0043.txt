@@ -1,0 +1,311 @@
+# REAL PDF — openstax_vol2.pdf, pages 250-261
+############################################################
+
+240 Chapter 6 | Gauss's Law
+IfwedivideasurfaceSintosmallpatches,thenwenoticethat,asthepatchesbecomesmaller,theycanbeapproximatedby
+flatsurfaces.ThisissimilartothewaywetreatthesurfaceofEarthaslocallyflat,eventhoughweknowthatglobally,itis
+approximately spherical.
+Figure 6.8 A surface is divided into patches to find the flux.
+To keep track of the patches, we can number them from 1 through N . Now, we define the area vector for each patch as
+→
+theareaofthepatchpointedinthedirectionofthenormal.Letusdenotetheareavectorfortheithpatchby δ A i. (We
+haveusedthesymbol δ toremindusthattheareaisofanarbitrarilysmallpatch.)Withsufficientlysmallpatches,wemay
+approximatetheelectricfieldoveranygivenpatchasuniform.Letusdenotetheaverageelectricfieldatthelocationofthe
+→
+ith patch by E i.
+→
+E i=average electric field ver the ith patch.
+Therefore, we can write the electric flux Φi through the area of theith patch as
+→ →
+Φi= E i·δ A i (ith patch).
+Thefluxthrougheachoftheindividualpatchescanbeconstructedinthismannerandthenaddedtogiveusanestimateof
+the net flux through the entire surfaceS, which we denote simply as Φ.
+N N
+→ →
+Φ= ∑ Φi= ∑ E i·δ A i (Npatch estimate).
+i=1 i=1
+Thisestimate ofthefluxgetsbetteraswedecreasethesizeofthepatches.However,whenyouusesmallerpatches,you
+needmoreofthemtocoverthesamesurface.Inthelimitofinfinitesimallysmallpatches,theymaybeconsideredtohave
+area dA and unit normal ^ n . Since the elements are infinitesimal, they may be assumed to be planar, and → E i may be
+taken as constant over any element. Then the flux dΦ through an area dA is given by dΦ= → E · ^ n dA. It is positive
+whentheanglebetween → E i and ^ n islessthan 90° andnegativewhentheangleisgreaterthan 90°.Thenetfluxisthe
+sumoftheinfinitesimalfluxelementsovertheentiresurface.Withinfinitesimallysmallpatches,youneedinfinitelymany
+patches, and the limit of the sum becomes a surface integral. With ∫ representing the integral overS,
+S
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 241
+Φ=∫ → E · ^ n dA= ⌠ → E ·d → A (open surface). (6.2)
+S ⌡ S
+Inpracticalterms,surfaceintegralsarecomputedbytakingtheantiderivativesofbothdimensionsdefiningthearea,with
+the edges of the surface in question being the bounds of the integral.
+TodistinguishbetweenthefluxthroughanopensurfacelikethatofFigure6.4andthefluxthroughaclosedsurface(one
+that completely bounds some volume), we represent flux through a closed surface by
+→ ^ → → (6.3)
+Φ=∮ E ·n dA=∮ E ·d A (closed surface)
+S S
+wherethecirclethroughtheintegralsymbolsimplymeansthatthesurfaceisclosed,andweareintegratingovertheentire
+thing. If you only integrate over a portion of a closed surface, that means you are treating a subset of it as an open surface.
+Example 6.1
+Flux of a Uniform Electric Field
+Aconstantelectricfieldofmagnitude E pointsinthedirectionofthepositivez-axis(Figure6.9).Whatisthe
+0
+electric flux through a rectangle with sidesaandbin the (a)xy-plane and in the (b)xz-plane?
+Figure 6.9 Calculating the flux of E through a rectangular
+0
+surface.
+Strategy
+→ → →
+Apply the definition of flux: Φ= E · A (uniform E ), where the definition of dot product is crucial.
+Solution
+→ →
+a. In this case, Φ= E · A =E A=E ab.
+0 0 0
+b. Here, the direction of the area vector is either along the positive y-axis or toward the negative y-axis.
+Therefore, the scalar product of the electric field with the area vector is zero, giving zero flux.
+Significance
+The relative directions of the electric field and area can cause the flux through the area to be zero.
+
+242 Chapter 6 | Gauss's Law
+Example 6.2
+Flux of a Uniform Electric Field through a Closed Surface
+Aconstantelectricfieldofmagnitude E pointsinthedirectionofthepositivez-axis(Figure 6.10).Whatis
+0
+the net electric flux through a cube?
+Figure 6.10 Calculating the flux of E through a closed cubic
+0
+surface.
+Strategy
+→ → →
+Applythedefinitionofflux: Φ= E · A (uniform E ),notingthataclosedsurfaceeliminatestheambiguity
+in the direction of the area vector.
+Solution
+→ →
+Through the top face of the cube, Φ= E · A =E A.
+0 0
+→ →
+Throughthebottomfaceofthecube, Φ= E · A =−E A, becausetheareavectorherepointsdownward.
+0 0
+Alongtheotherfoursides,thedirectionoftheareavectorisperpendiculartothedirectionoftheelectricfield.
+Therefore, the scalar product of the electric field with the area vector is zero, giving zero flux.
+The net flux is Φ =E A−E A+0+0+0+0=0.
+net 0 0
+Significance
+The net flux of a uniform electric field through a closed surface is zero.
+Example 6.3
+Electric Flux through a Plane, Integral Method
+→
+Auniformelectricfield E ofmagnitude10N/Cisdirectedparalleltotheyz-planeat 30° abovethexy-plane,
+as shown in Figure 6.11. What is the electric flux through the plane surface of area 6.0m2 located in the
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 243
+xz-plane? Assume that ^ n points in the positivey-direction.
+Figure 6.11 The electric field produces a net electric flux
+through the surfaceS.
+Strategy
+Apply Φ=∫ → E · ^ n dA, where the direction and magnitude of the electric field are constant.
+S
+Solution
+The angle between the uniform electric field → E and the unit normal ^ n to the planar surface is 30°. Since
+boththedirectionandmagnitudeareconstant,Ecomesoutsidetheintegral.Allthatisleftisasurfaceintegral
+overdA,whichisA.Therefore,usingtheopen-surfaceequation,wefindthattheelectricfluxthroughthesurface
+is
+→ ^
+Φ =∫ E ·n dA=EAcosθ
+S
+=(10N/C)(6.0m2)(cos30°)=52N·m2/C.
+Significance
+Again, the relative directions of the field and the area matter, and the general equation with the integral will
+simplify to the simple dot product of area and electric field.
+6.1 Check Your Understanding What angle should there be between the electric field and the surface
+shown inFigure 6.11in the previous example so that no electric flux passes through the surface?
+
+244 Chapter 6 | Gauss's Law
+Example 6.4
+Inhomogeneous Electric Field
+→ ^
+What is the total flux of the electric field E =cy2 k through the rectangular surface shown inFigure 6.12?
+Figure 6.12 Since the electric field is not constant over the
+surface, an integration is necessary to determine the flux.
+Strategy
+Apply Φ=∫ → E · ^ n dA. We assume that the unit normal ^ n to the given surface points in the positive
+S
+z-direction,so ^ n = ^ k. Sincetheelectricfieldisnotuniformoverthesurface,itisnecessarytodividethesurface
+→
+into infinitesimal strips along which E is essentially constant. As shown in Figure 6.12, these strips are
+parallel to thex-axis, and each strip has an area dA=bdy.
+Solution
+From the open surface integral, we find that the net flux through the rectangular surface is
+Φ =∫ → E · ^ n dA=∫ a (cy2 ^ k)· ^ k(bdy)
+S 0
+a
+=cb⌠ y2 dy= 1a3bc.
+⌡ 3
+0
+Significance
+For a non-constant electric field, the integral method is required.
+6.2 → ^
+Check Your Understanding If the electric field in Example 6.4 is E =mxk, what is the flux
+through the rectangular area?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 245
+6.2 | Explaining Gauss’s Law
+Learning Objectives
+By the end of this section, you will be able to:
+• State Gauss’s law
+• Explain the conditions under which Gauss’s law may be used
+• Apply Gauss’s law in appropriate systems
+Wecannowdeterminetheelectricfluxthroughanarbitraryclosedsurfaceduetoanarbitrarychargedistribution.Wefound
+that if a closed surface does not have any charge inside where an electric field line can terminate, then any electric field
+lineenteringthesurfaceatonepointmustnecessarilyexitatsomeotherpointofthesurface.Therefore,ifaclosedsurface
+doesnothaveanychargesinsidetheenclosedvolume,thentheelectricfluxthroughthesurfaceiszero.Now,whathappens
+tothe electric fluxifthere are some charges inside the enclosed volume? Gauss’slaw gives aquantitative answer tothis
+question.
+Togetafeelforwhattoexpect,let’scalculatetheelectricfluxthroughasphericalsurfacearoundapositivepointcharge
+q,sincewealreadyknowtheelectricfieldinsuchasituation.Recallthatwhenweplacethepointchargeattheoriginofa
+coordinate system, the electric field at a pointPthat is at a distancerfrom the charge at the origin is given by
+→ 1 1 ^
+E P=
+4πε
+0
+r2
+r,
+where ^ r is the radial vector from the charge at the origin to the point P. We can use this electric field to find the flux
+through the spherical surface of radiusr, as shown inFigure 6.13.
+Figure 6.13 A closed spherical surface surrounding a point
+chargeq.
+Thenweapply Φ=∫ → E · ^ n dA tothissystemandsubstituteknownvalues.Onthesphere, ^ n = ^ r and r =R,sofor
+S
+an infinitesimal areadA,
+dΦ= → E · ^ n dA= 1 q ^ r · ^ r dA= 1 q dA.
+4πε
+0
+R2 4πε
+0
+R2
+We now find the net flux by integrating this flux over the surface of the sphere:
+q q q
+Φ= 4π 1 ε 0 R2 ∮ S dA= 4π 1 ε 0 R2 (4πR2)= ε 0 .
+where the total surface area ofthe spherical surface is 4πR2. This gives the flux through the closed spherical surface at
+radiusras
+q (6.4)
+Φ= ε .
+0
+
+246 Chapter 6 | Gauss's Law
+Aremarkablefactaboutthisequationisthatthefluxisindependentofthesizeofthesphericalsurface.Thiscanbedirectly
+attributedtothefactthattheelectricfieldofapointchargedecreasesas 1/r2 withdistance,whichjustcancelsthe r2 rate
+of increase of the surface area.
+Electric Field Lines Picture
+Analternativewaytoseewhythefluxthroughaclosedsphericalsurfaceisindependentoftheradiusofthesurfaceisto
+lookattheelectricfieldlines.Notethateveryfieldlinefromqthatpiercesthesurfaceatradius R alsopiercesthesurface
+1
+at R (Figure 6.14).
+2
+Figure 6.14 Flux through spherical surfaces of radii R and
+1
+R enclosing a chargeqare equal, independent of the size of
+2
+the surface, since allE-field lines that pierce one surface from
+the inside to outside direction also pierce the other surface in the
+same direction.
+Therefore, the net number of electric field lines passing through the two surfaces from the inside to outside direction is
+equal. This net number of electric field lines, which is obtained by subtracting the number of lines in the direction from
+outsidetoinsidefromthenumberoflinesinthedirectionfrominsidetooutsidegivesavisualmeasureoftheelectricflux
+through the surfaces.
+Youcanseethatifnochargesareincludedwithinaclosedsurface,thentheelectricfluxthroughitmustbezero.Atypical
+fieldlineentersthesurfaceat dA andleavesat dA . Everylinethatentersthesurfacemustalsoleavethatsurface.Hence
+1 2
+thenet“flow”ofthefieldlinesintooroutofthesurfaceiszero(Figure 6.15(a)).Thesamethinghappensifchargesof
+equalandoppositesignareincludedinsidetheclosedsurface,sothatthetotalchargeincludediszero(part(b)).Asurface
+thatincludesthesameamountofchargehasthesamenumberoffieldlinescrossingit,regardlessoftheshapeorsizeofthe
+surface, as long as the surface encloses the same amount of charge (part (c)).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 247
+Figure 6.15 Understanding the flux in terms of field lines. (a) The electric flux through a closed surface due to a charge
+outside that surface is zero. (b) Charges are enclosed, but because the net charge included is zero, the net flux through the
+closed surface is also zero. (c) The shape and size of the surfaces that enclose a charge does not matter because all surfaces
+enclosing the same charge have the same flux.
+Statement of Gauss’s Law
+Gauss’slawgeneralizesthisresulttothecaseofanynumberofchargesandanylocationofthechargesinthespaceinside
+→
+theclosed surface. According toGauss’slaw,thefluxoftheelectric field E throughanyclosed surface, also called a
+Gaussian surface, is equal to the net charge enclosed (q enc) divided by the permittivity of free space (ε
+0
+):
+q
+Φ Closed Surface = ε enc.
+0
+Thisequationholdsforchargesofeithersign,becausewedefinetheareavectorofaclosedsurfacetopointoutward.Ifthe
+enclosed charge is negative (seeFigure 6.16(b)), then the flux through either SorS' is negative.
+Figure 6.16 The electric flux through any closed surface surrounding a point chargeqis
+given by Gauss’s law. (a) Enclosed charge is positive. (b) Enclosed charge is negative.
+The Gaussian surface does not need to correspond to a real, physical object; indeed, it rarely will. It is a mathematical
+constructthatmaybeofanyshape,providedthatitisclosed.However,sinceourgoalistointegratethefluxoverit,we
+tend to choose shapes that are highly symmetrical.
+
+248 Chapter 6 | Gauss's Law
+Ifthechargesarediscretepointcharges,thenwejustaddthem.Ifthechargeisdescribedbyacontinuousdistribution,then
+we need to integrate appropriately to find the total charge that resides inside the enclosed volume. For example, the flux
+throughtheGaussiansurfaceSofFigure6.17is Φ=(q 1 +q 2 +q 5 )/ε 0 . Notethat q enc issimplythesumofthepoint
+charges.Ifthechargedistributionwerecontinuous,wewouldneedtointegrateappropriatelytocomputethetotalcharge
+within the Gaussian surface.
+Figure 6.17 The flux through the Gaussian surface shown,
+due to the charge distribution, is Φ=(q +q +q )/ε .
+1 2 5 0
+Recallthattheprincipleofsuperpositionholdsfortheelectricfield.Therefore,thetotalelectricfieldatanypoint,including
+thoseonthechosenGaussiansurface,isthesumofalltheelectricfieldspresentatthispoint.ThisallowsustowriteGauss’s
+law in terms of the total electric field.
+Gauss’s Law
+→
+The flux Φ of the electric field E through any closed surface S (a Gaussian surface) is equal to the net charge
+enclosed (q enc) divided by the permittivity of free space (ε
+0
+):
+Φ=∮ → E · ^ n dA= q ε enc. (6.5)
+S 0
+TouseGauss’slaweffectively,youmusthaveaclearunderstandingofwhateachtermintheequationrepresents.Thefield
+→
+E isthetotalelectricfieldateverypointontheGaussiansurface.Thistotalfieldincludescontributionsfromcharges
+both inside and outside the Gaussian surface. However, q is just the charge inside the Gaussian surface. Finally, the
+enc
+Gaussiansurfaceisanyclosedsurfaceinspace.Thatsurfacecancoincidewiththeactualsurfaceofaconductor,oritcan
+beanimaginarygeometricsurface.TheonlyrequirementimposedonaGaussiansurfaceisthatitbeclosed(Figure6.18).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 249
+Figure 6.18 AKlein bottlepartially filled with a liquid. Could
+the Klein bottle be used as a Gaussian surface?
+Example 6.5
+Electric Flux through Gaussian Surfaces
+Calculate the electric flux through each Gaussian surface shown inFigure 6.19.
+Figure 6.19 Various Gaussian surfaces and charges.
+
+250 Chapter 6 | Gauss's Law
+Strategy
+FromGauss’slaw,thefluxthrougheachsurfaceisgivenby q enc/ε 0 , where q enc isthechargeenclosedbythat
+surface.
+Solution
+For the surfaces and charges shown, we find
+a. Φ= 2.0 ε µC =2.3×10 5 N·m2/C.
+0
+b. Φ= −2. ε 0µC =−2.3×10 5 N·m2/C.
+0
+c. Φ= 2.0 ε µC =2.3×10 5 N·m2/C.
+0
+d. Φ=
+−4.0µC+6.
+ε
+0µC−1.0µC
+=1.1×10 5 N·m2/C.
+0
+4.0µC+6.0µC−10.0µC
+e. Φ= ε =0.
+0
+Significance
+Inthespecialcaseofaclosedsurface,thefluxcalculationsbecomeasumofcharges.Inthenextsection,thiswill
+allow us to work with more complex systems.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

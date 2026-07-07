@@ -1,0 +1,268 @@
+# REAL PDF — openstax_vol3.pdf, pages 242-247
+############################################################
+
+234 Chapter 5 | Relativity
+CHAPTER 5 REVIEW
+KEY TERMS
+classical (Galilean) velocity addition methodofaddingvelocitieswhen v<<c; velocitiesaddlikeregularnumbers
+inone-dimensionalmotion: u=v+u′, wherevisthevelocitybetweentwoobservers,uisthevelocityofanobject
+relative to one observer, and u′ is the velocity relative to the other observer
+event occurrenceinspaceandtimespecifiedbyitspositionandtimecoordinates(x,y,z,t)measuredrelativetoaframe
+of reference
+first postulate of special relativity laws of physics are the same in all inertial frames of reference
+Galilean relativity ifanobservermeasuresavelocityinoneframeofreference,andthatframeofreferenceismoving
+withavelocitypastasecondreferenceframe,anobserverinthesecondframemeasurestheoriginalvelocityasthe
+vector sum of these velocities
+Galilean transformation relation between position and time coordinates of the same events as seen in different
+reference frames, according to classical mechanics
+inertial frame of reference referenceframeinwhichabodyatrestremainsatrestandabodyinmotionmovesata
+constant speed in a straight line unless acted on by an outside force
+length contraction decreaseinobservedlengthofanobjectfromitsproperlength L tolengthLwhenitslengthis
+0
+observed in a reference frame where it is traveling at speedv
+Lorentz transformation relation between position and time coordinates of the same events as seen in different
+reference frames, according to the special theory of relativity
+Michelson-Morley experiment investigationperformedin1887thatshowedthatthespeedoflightinavacuumisthe
+same in all frames of reference from which it is viewed
+proper length L ; thedistancebetweentwopointsmeasuredbyanobserverwhoisatrestrelativetobothofthepoints;
+0
+forexample,earthboundobserversmeasureproperlengthwhenmeasuringthedistancebetweentwopointsthatare
+stationary relative to Earth
+proper time Δτ isthetimeintervalmeasuredbyanobserverwhoseesthebeginningandendoftheprocessthatthe
+time interval measures occur at the same location
+relativistic kinetic energy kinetic energy of an object moving at relativistic speeds
+relativistic momentum → p , the momentum of an object moving at relativistic velocity; → p =γm → u
+relativistic velocity addition method of adding velocities of an object moving at a relativistic speeds
+rest energy energy stored in an object at rest: E =mc2
+0
+rest frame frame of reference in which the observer is at rest
+rest mass mass of an object as measured by an observer at rest relative to the object
+second postulate of special relativity lighttravelsinavacuumwiththesamespeedcinanydirectioninallinertial
+frames
+special theory of relativity theorythatAlbertEinsteinproposedin1905thatassumesallthelawsofphysicshavethe
+same form in every inertial frame of reference, and that the speed of light is the same within all inertial frames
+speed of light ultimate speed limit for any particle having mass
+time dilation lengtheningofthetimeintervalbetweentwoeventswhenseeninamovinginertialframeratherthanthe
+rest frame of the events (in which the events occur at the same location)
+total energy sumofallenergiesforaparticle,includingrestenergyandkineticenergy,givenforaparticleofmassm
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 235
+and speeduby E=γmc2, where γ = 1
+u2
+1−
+c2
+world line path through space-time
+KEY EQUATIONS
+Δt=
+Δτ
+=γτ
+Time dilation v2
+1−
+c2
+γ = 1
+Lorentz factor v2
+1−
+c2
+Length contraction L=L 0 1− v c 2 2 = L γ 0
+Galilean transformation x= x′+vt, y=y′, z=z′, t=t′
+Lorentz transformation t=
+t′+vx′/c2
+1−v2/c2
+x=
+x′+vt′
+1−v2/c2
+y=y′
+z=z′
+Inverse Lorentz transformation t′=
+t−vx/c2
+1−v2/c2
+x′=
+x−vt
+1−v2/c2
+y′=y
+z′=z
+Space-time invariants (Δs)2=(Δx)2+⎛Δy⎞2+(Δz)2−c2(Δt)2
+⎝ ⎠
+⎡ (Δx)2+⎛Δy⎞2+(Δz)2⎤
+(Δτ)2= −(Δs)2/c2=(Δt)2− ⎣ ⎝ ⎠ ⎦
+c2
+Relativistic velocity addition u x=
+⎛
+⎜
+u′x+v ⎞
+⎟, u y=
+⎛
+⎜
+u′y/γ ⎞
+⎟, u z=
+⎛
+⎜
+u′z/γ ⎞
+⎟
+⎝1+vu′x/c2⎠ ⎝1+vu′x/c2⎠ ⎝1+vu′x/c2⎠
+v
+Relativistic Doppler effect for wavelength λ obs =λ s 1 1 − + v c c
+v
+Relativistic Doppler effect for frequency f obs = f s 1 1 + − v c c
+→
+→ p =γm → u = m u
+Relativistic momentum
+u2
+1− c
+
+236 Chapter 5 | Relativity
+E=γmc2, whereγ = 1
+Relativistic total energy u2
+1−
+c2
+K =(γ−1)mc2, whereγ = 1
+rel
+Relativistic kinetic energy u2
+1−
+c2
+SUMMARY
+5.1Invariance of Physical Laws
+• Relativity is the study of how observers in different reference frames measure the same event.
+• Modern relativity is divided into two parts. Special relativity deals with observers in uniform (unaccelerated)
+motion,whereasgeneralrelativityincludesacceleratedrelativemotionandgravity.Modernrelativityisconsistent
+withallempirical evidence thusfarand,inthelimit oflowvelocity andweakgravitation, givescloseagreement
+with the predictions of classical (Galilean) relativity.
+• An inertial frame of reference is a reference frame in which a body at rest remains at rest and a body in motion
+moves at a constant speed in a straight line unless acted upon by an outside force.
+• Modernrelativity isbasedonEinstein’stwopostulates. Thefirstpostulate ofspecial relativity isthat thelawsof
+physicsarethesameinallinertialframesofreference.Thesecondpostulateofspecialrelativityisthatthespeedof
+lightcisthesameinallinertialframesofreference,independentoftherelativemotionoftheobserverandthelight
+source.
+• TheMichelson-Morleyexperimentdemonstratedthatthespeedoflightinavacuumisindependentofthemotion
+of Earth about the sun.
+5.2Relativity of Simultaneity
+• Twoeventsaredefinedtobesimultaneousifanobservermeasuresthemasoccurringatthesametime(suchasby
+receiving light from the events).
+• Twoeventsatlocationsadistanceapartthataresimultaneousforanobserveratrestinoneframeofreferenceare
+not necessarily simultaneous for an observer at rest in a different frame of reference.
+5.3Time Dilation
+• Twoeventsaredefinedtobesimultaneousifanobservermeasuresthemasoccurringatthesametime.Theyarenot
+necessarily simultaneous to all observers—simultaneity is not absolute.
+• Timedilationisthelengtheningofthetimeintervalbetweentwoeventswhenseeninamovinginertialframerather
+than the rest frame of the events (in which the events occur at the same location).
+• Observersmovingatarelativevelocityvdonotmeasurethesameelapsedtimebetweentwoevents.Propertime
+Δτ is the time measured in the reference frame where the start and end of the time interval occur at the same
+location.Thetimeinterval Δt measuredbyanobserverwhoseestheframeofeventsmovingatspeedvisrelated
+to the proper time interval Δτ of the events by the equation:
+Δt=
+Δτ
+=γΔτ,
+v2
+1−
+c2
+where
+γ = 1 .
+v2
+1−
+c2
+• Thepremiseofthetwinparadoxisfaultybecausethetravelingtwinisaccelerating.Thejourneyisnotsymmetrical
+for the two twins.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 237
+• Time dilation is usually negligible at low relative velocities, but it does occur, and it has been verified by
+experiment.
+• The proper time is the shortest measure of any time interval. Any observer who is moving relative to the system
+being observed measures a time interval longer than the proper time.
+5.4Length Contraction
+• All observers agree upon relative speed.
+• Distancedependsonanobserver’smotion.Properlength L isthedistancebetweentwopointsmeasuredbyan
+0
+observer who is at rest relative to both of the points.
+• Lengthcontractionisthedecreaseinobservedlengthofanobjectfromitsproperlength L tolengthLwhenits
+0
+length is observed in a reference frame where it is traveling at speedv.
+• Theproperlength isthelongest measurement ofanylength interval. Anyobserverwhoismovingrelative tothe
+system being observed measures a length shorter than the proper length.
+5.5The Lorentz Transformation
+• TheGalilean transformation equations describe how,inclassical nonrelativistic mechanics, theposition,velocity,
+andaccelerationsmeasuredinoneframeappearinanother.Lengthsremainunchangedandasingleuniversaltime
+scale is assumed to apply to all inertial frames.
+• Newton’s laws of mechanics obey the principle of having the same form in all inertial frames under a Galilean
+transformation, given by
+x= x′+vt, y=y′, z=z′, t=t′.
+TheconceptthattimesanddistancesarethesameinallinertialframesintheGalileantransformation,however,is
+inconsistent with the postulates of special relativity.
+• The relativistically correct Lorentz transformation equations are
+Lorentz transformation Inverse Lorentz transformation
+t=
+t′+vx′/c2
+t′=
+t−vx/c2
+1−v2/c2 1−v2/c2
+x=
+x′+vt′
+x′=
+x−vt
+1−v2/c2 1−v2/c2
+y=y′ y′=y
+z=z′ z′=z
+Wecanobtaintheseequationsbyrequiringanexpandingsphericallightsignaltohavethesameshapeandspeedof
+growth,c, in both reference frames.
+• Relativisticphenomenacanbeexplainedintermsofthegeometricalpropertiesoffour-dimensionalspace-time,in
+which Lorentz transformations correspond to rotations of axes.
+• TheLorentztransformationcorrespondstoaspace-timeaxisrotation,similarinsomewaystoarotationofspace
+axes,butinwhichtheinvariantspatialseparationisgivenby Δs ratherthandistances Δr, andthattheLorentz
+transformation involving the time axis does not preserve perpendicularity of axes or the scales along the axes.
+• The analysis of relativistic phenomena in terms of space-time diagrams supports the conclusion that these
+phenomena result from properties of space and time itself, rather than from the laws of electromagnetism.
+5.6Relativistic Velocity Transformation
+• With classical velocity addition, velocities add like regular numbers in one-dimensional motion: u=v+u′,
+wherevisthevelocitybetweentwoobservers,uisthevelocityofanobjectrelativetooneobserver,and u′ isthe
+
+238 Chapter 5 | Relativity
+velocity relative to the other observer.
+• Velocities cannot add to be greater than the speed of light.
+• Relativistic velocity addition describes the velocities of an object moving at a relativistic velocity.
+5.7Doppler Effect for Light
+• An observer of electromagnetic radiation sees relativistic Doppler effects if the source of the radiation is moving
+relativetotheobserver.Thewavelengthoftheradiationislonger(calledaredshift)thanthatemittedbythesource
+whenthesourcemovesawayfromtheobserverandshorter(calledablueshift)whenthesourcemovestowardthe
+observer. The shifted wavelength is described by the equation:
+v
+λ obs =λ s 1 1 − + v c c .
+where λ istheobservedwavelength, λ isthesourcewavelength,andvistherelativevelocityofthesourceto
+obs s
+the observer.
+5.8Relativistic Momentum
+• Thelawofconservationofmomentumisvalidforrelativisticmomentumwheneverthenetexternalforceiszero.
+The relativistic momentum is p=γmu, where m is the rest mass of the object, u is its velocity relative to an
+observer, and the relativistic factor is γ = 1 .
+u2
+1−
+c2
+• At low velocities, relativistic momentum is equivalent to classical momentum.
+• Relativisticmomentumapproachesinfinityasuapproachesc.Thisimpliesthatanobjectwithmasscannotreach
+the speed of light.
+5.9Relativistic Energy
+• The relativistic work-energy theorem is W =E−E =γmc2−mc2=(γ−1)mc2.
+net 0
+• Relativistically, W =K where K is the relativistic kinetic energy.
+net rel rel
+• An object ofmassmat velocityuhas kinetic energy K =(γ−1)mc2, where γ = 1 .
+rel
+u2
+1−
+c2
+• At low velocities, relativistic kinetic energy reduces to classical kinetic energy.
+• No object with mass can attain the speed of light, because an infinite amount of work and an infinite amount of
+energy input is required to accelerate a mass to the speed of light.
+• Relativistic energy is conserved as long as we define it to include the possibility of mass changing to energy.
+• Thetotalenergyofaparticlewithmassmtravelingatspeeduisdefinedas E=γmc2, where γ = 1 and
+u2
+1−
+c2
+udenotes the velocity of the particle.
+• Therestenergyofanobjectofmassmis E =mc2, meaningthatmassisaformofenergy.Ifenergyisstoredin
+0
+an object, its mass increases. Mass can be destroyed to release energy.
+• We do not ordinarily notice the increase or decrease in mass of an object because the change in mass is so small
+for a large increase in energy. The equation E2=(pc)2+(mc2)2 relates the relativistic total energy E and the
+relativistic momentump. At extremely high velocities, the rest energy mc2 becomes negligible, and E= pc.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

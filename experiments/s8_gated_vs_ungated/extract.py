@@ -12,6 +12,7 @@ import json
 import os
 import re
 import sys
+from collections import defaultdict
 from dataclasses import dataclass
 
 
@@ -42,20 +43,26 @@ def _atomic_decompose(sentence: str) -> list[str]:
         return claims
     claims.append(s)
 
-    # Extract formula equalities: "X = Y" or "X is Y"
+    # Extract formula equalities and produce derived claims
     for m in re.finditer(
-        r"([A-Za-z_][A-Za-z_ ]{1,30})\s*(?:=|is)\s*([^,.]+?)(?:,|\.|\s+where|\s+and\s+the|\s*$)",
+        r"([A-Za-z_][A-Za-z_ ]{1,40})\s*(?:=|is)\s*([^,.]+?)(?:,|\.|\s+where|\s+and\s+the|\s*$)",
         s,
     ):
         try:
             lhs = m.group(1).strip()
             rhs = m.group(2).strip()
-            if len(rhs) > 3 and len(lhs) > 1:
+            if len(rhs) > 2 and len(lhs) > 1:
                 claim = f"{lhs} equals {rhs}"
-                if claim not in claims and len(claim) > 12:
+                if claim not in claims and len(claim) > 10:
                     claims.append(claim)
         except (IndexError, AttributeError):
             pass
+
+    # Also produce unit-of-measurement claims
+    for m in re.finditer(r"(?:measured in|units?:?)\s+([a-zA-Z/²³·]+)\s*\(([^)]+)\)", s):
+        claim = f"{m.group(1)} is a unit of measurement equal to {m.group(2)}"
+        if len(claim) > 10 and claim not in claims:
+            claims.append(claim)
 
     return claims
 
@@ -92,7 +99,7 @@ def extract_claims_from_chunks(chunks_dir: str) -> list[Claim]:
         if not fname.endswith(".txt"):
             continue
         fpath = os.path.join(chunks_dir, fname)
-        source = "openstax" if "openstax" in fname else "crowell"
+        source = "openstax" if ("openstax" in fname or "ostax" in fname) else "crowell"
         source_domain = _domain_for_chunk(fname)
 
         with open(fpath) as f:
@@ -123,7 +130,7 @@ def extract_claims_from_chunks(chunks_dir: str) -> list[Claim]:
 
             for sent in sentences:
                 sent = sent.strip()
-                if len(sent) < 10:
+                if len(sent) < 6:
                     continue
                 if re.match(r"^(This|These|The following|Note|In)", sent) and len(sent) < 60:
                     continue
@@ -144,13 +151,23 @@ def extract_claims_from_chunks(chunks_dir: str) -> list[Claim]:
                         model_confidence=round(confidence, 3),
                     ))
 
-    # Deduplicate
-    seen: set[str] = set()
+    # Deduplicate within each source, but ALLOW cross-source duplicates
+    # (identical normalized text from different sources → separate claim entries
+    #  with the same claim_id but different source tags — enables corroboration)
+    seen: dict[str, set[str]] = defaultdict(set)  # normalized → set of sources
     deduped: list[Claim] = []
     for c in claims:
-        if c.normalized not in seen:
-            seen.add(c.normalized)
+        if c.source not in seen[c.normalized]:
+            seen[c.normalized].add(c.source)
             deduped.append(c)
+
+    # Report cross-source overlaps
+    cross_source = sum(1 for s in seen.values() if len(s) >= 2)
+    if cross_source > 0:
+        print(f"  Cross-source overlaps detected: {cross_source} claims appear in ≥2 sources")
+        for norm, srcs in list(seen.items())[:5]:
+            if len(srcs) >= 2:
+                print(f"    \"{norm[:60]}...\" from {srcs}")
 
     return deduped
 

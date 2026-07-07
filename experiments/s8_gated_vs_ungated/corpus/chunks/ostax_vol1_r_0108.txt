@@ -1,0 +1,266 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 657-661
+############################################################
+
+13 • Chapter Review 645
+Gravitational potential energy beyond Earth
+Conservation of energy
+Escape velocity
+Orbital speed
+Orbital period
+Energy in circular orbit
+Conic sections
+Kepler’s third law
+Schwarzschild radius
+Summary
+13.1 Newton's Law of Universal Gravitation 13.4 Satellite Orbits and Energy
+• All masses attract one another with a • Orbital velocities are determined by the mass of
+gravitational force proportional to their masses the body being orbited and the distance from the
+and inversely proportional to the square of the center of that body, and not by the mass of a
+distance between them. much smaller orbiting object.
+• Spherically symmetrical masses can be treated • The period of the orbit is likewise independent of
+as if all their mass were located at the center. the orbiting object’s mass.
+• Nonsymmetrical objects can be treated as if their • Bodies of comparable masses orbit about their
+mass were concentrated at their center of mass, common center of mass and their velocities and
+provided their distance from other masses is periods should be determined from Newton’s
+large compared to their size. second law and law of gravitation.
+13.2 Gravitation Near Earth's Surface 13.5 Kepler's Laws of Planetary Motion
+• The weight of an object is the gravitational • All orbital motion follows the path of a conic
+attraction between Earth and the object. section. Bound or closed orbits are either a circle
+• The gravitational field is represented as lines that or an ellipse; unbounded or open orbits are
+indicate the direction of the gravitational force; either a parabola or a hyperbola.
+the line spacing indicates the strength of the • The areal velocity of any orbit is constant, a
+field. reflection of the conservation of angular
+• Apparent weight differs from actual weight due momentum.
+to the acceleration of the object. • The square of the period of an elliptical orbit is
+proportional to the cube of the semi-major axis
+13.3 Gravitational Potential Energy and Total Energy
+of that orbit.
+• The acceleration due to gravity changes as we
+13.6 Tidal Forces
+move away from Earth, and the expression for
+gravitational potential energy must reflect this • Earth’s tides are caused by the difference in
+change. gravitational forces from the Moon and the Sun
+• The total energy of a system is the sum of kinetic on the different sides of Earth.
+and gravitational potential energy, and this total • Spring or neap (high) tides occur when Earth, the
+energy is conserved in orbital motion. Moon, and the Sun are aligned, and neap or (low)
+• Objects must have a minimum velocity, the tides occur when they form a right triangle.
+escape velocity, to leave a planet and not return. • Tidal forces can create internal heating, changes
+• Objects with total energy less than zero are in orbital motion, and even destruction of orbiting
+bound; those with zero or greater are bodies.
+unbounded.
+
+646 13 • Chapter Review
+13.7 Einstein's Theory of Gravity circumstances.
+• Black holes, the result of gravitational collapse,
+• According to the theory of general relativity,
+are singularities with an event horizon that is
+gravity is the result of distortions in space-time
+proportional to their mass.
+created by mass and energy.
+• Evidence for the existence of black holes is still
+• The principle of equivalence states that that both
+circumstantial, but the amount of that evidence
+mass and acceleration distort space-time and
+is overwhelming.
+are indistinguishable in comparable
+Conceptual Questions
+13.1 Newton's Law of Universal Gravitation agree with and why?
+1 . Action at a distance, such as is the case for 7 . Many satellites are placed in geosynchronous
+gravity, was once thought to be illogical and orbits. What is special about these orbits? For a
+therefore untrue. What is the ultimate global communication network, how many of
+determinant of the truth in science, and why was these satellites would be needed?
+this action at a distance ultimately accepted?
+13.5 Kepler's Laws of Planetary Motion
+2 . In the law of universal gravitation, Newton
+8 . Are Kepler’s laws purely descriptive, or do they
+assumed that the force was proportional to the
+contain causal information?
+product of the two masses ( ). While all
+scientific conjectures must be experimentally 9 . In the diagram below for a satellite in an elliptical
+verified, can you provide arguments as to why orbit about a much larger mass, indicate where its
+this must be? (You may wish to consider simple speed is the greatest and where it is the least. What
+examples in which any other form would lead to conservation law dictates this behavior? Indicate
+contradictory results.) the directions of the force, acceleration, and velocity
+at these points. Draw vectors for these same three
+13.2 Gravitation Near Earth's Surface
+quantities at the two points where the y-axis
+3 . Must engineers take Earth’s rotation into intersects (along the semi-minor axis) and from this
+account when constructing very tall buildings at determine whether the speed is increasing
+any location other than the equator or very near decreasing, or at a max/min.
+the poles?
+13.3 Gravitational Potential Energy and Total Energy
+4 . It was stated that a satellite with negative total
+energy is in a bound orbit, whereas one with zero
+or positive total energy is in an unbounded orbit.
+Why is this true? What choice for gravitational
+potential energy was made such that this is
+true?
+5 . It was shown that the energy required to lift a
+satellite into a low Earth orbit (the change in
+potential energy) is only a small fraction of the
+kinetic energy needed to keep it in orbit. Is this
+true for larger orbits? Is there a trend to the ratio
+of kinetic energy to change in potential energy as 13.6 Tidal Forces
+the size of the orbit increases?
+10 . As an object falls into a black hole, tidal forces
+13.4 Satellite Orbits and Energy increase. Will these tidal forces always tear the
+object apart as it approaches the Schwarzschild
+6 . One student argues that a satellite in orbit is in
+radius? How does the mass of the black hole and
+free fall because the satellite keeps falling
+size of the object affect your answer?
+toward Earth. Another says a satellite in orbit is
+not in free fall because the acceleration due to
+gravity is not . With whom do you
+Access for free at openstax.org
+
+13 • Chapter Review 647
+13.7 Einstein's Theory of Gravity Does the fact that light has no mass make any
+difference to the argument?
+11 . The principle of equivalence states that all
+experiments done in a lab in a uniform 12 . As a person approaches the Schwarzschild
+gravitational field cannot be distinguished from radius of a black hole, outside observers see all
+those done in a lab that is not in a gravitational the processes of that person (their clocks, their
+field but is uniformly accelerating. For the latter heart rate, etc.) slowing down, and coming to a
+case, consider what happens to a laser beam at halt as they reach the Schwarzschild radius.
+some height shot perfectly horizontally to the (The person falling into the black hole sees their
+floor, across the accelerating lab. (View this from own processes unaffected.) But the speed of
+a nonaccelerating frame outside the lab.) light is the same everywhere for all observers.
+Relative to the height of the laser, where will the What does this say about space as you approach
+laser beam hit the far wall? What does this say the black hole?
+about the effect of a gravitational field on light?
+Problems
+13.1 Newton's Law of Universal Gravitation variations in local geology.)
+13 . Evaluate the magnitude of gravitational force 17 . The International Space Station has a mass of
+between two 5-kg spherical steel balls approximately 370,000 kg. (a) What is the force on a
+separated by a center-to-center distance of 15 150-kg suited astronaut if she is 20 m from the
+cm. center of mass of the station? (b) How accurate do
+you think your answer would be?
+14 . Estimate the gravitational force between two
+sumo wrestlers, with masses 220 kg and 240 kg,
+when they are embraced and their centers are
+1.2 m apart.
+15 . Astrology makes much of the position of the
+planets at the moment of one’s birth. The only
+known force a planet exerts on Earth is
+gravitational. (a) Calculate the gravitational force
+exerted on a 4.20-kg baby by a 100-kg father
+0.200 m away at birth (he is assisting, so he is
+close to the child). (b) Calculate the force on the
+baby due to Jupiter if it is at its closest distance
+to Earth, some away. How does
+the force of Jupiter on the baby compare to the FIGURE 13.33 (credit: ©ESA–David Ducros)
+force of the father on the baby? Other objects in
+18 . Asteroid Toutatis passed near Earth in 2006 at
+the room and the hospital building also exert
+four times the distance to our Moon. This was
+similar gravitational forces. (Of course, there
+the closest approach we will have until 2060. If
+could be an unknown force acting, but scientists
+it has mass of , what force did it
+first need to be convinced that there is even an
+exert on Earth at its closest approach?
+effect, much less that an unknown force causes
+it.)
+19 . (a) What was the acceleration of Earth caused by
+asteroid Toutatis (see previous problem) at its
+16 . A mountain 10.0 km from a person exerts a
+closest approach? (b) What was the acceleration
+gravitational force on the person equal to 2.00%
+of Toutatis at this point?
+of their weight. (a) Calculate the mass of the
+mountain. (b) Compare the mountain’s mass
+13.2 Gravitation Near Earth's Surface
+with that of Earth. (c) What is unreasonable
+about these results? (d) Which premises are 20 . (a) Calculate Earth’s mass given the acceleration
+unreasonable or inconsistent? (Note that due to gravity at the North Pole is measured to
+accurate gravitational measurements can easily be and the radius of the Earth at the
+detect the effect of nearby mountains and pole is 6356 km. (b) Compare this with the
+NASA’s Earth Fact Sheet value of
+
+648 13 • Chapter Review
+. rest relative to each other in deep space, use
+conservation of energy to find how fast will they
+21 . (a) What is the acceleration due to gravity on the
+be traveling upon impact. Each sphere has a
+surface of the Moon? (b) On the surface of Mars?
+radius of 5.10 cm.
+The mass of Mars is and its
+radius is . 33 . An average-sized asteroid located
+from Earth with mass is detected
+22 . (a) Calculate the acceleration due to gravity on
+headed directly toward Earth with speed of 2.0
+the surface of the Sun. (b) By what factor would
+km/s. What will its speed be just before it hits
+your weight increase if you could stand on the
+our atmosphere? (You may ignore the size of the
+Sun? (Never mind that you cannot.)
+asteroid.)
+23 . The mass of a particle is 15 kg. (a) What is its
+34 . (a) What will be the kinetic energy of the
+weight on Earth? (b) What is its weight on the
+asteroid in the previous problem just before it
+Moon? (c) What is its mass on the Moon? (d)
+hits Earth? b) Compare this energy to the output
+What is its weight in outer space far from any
+of the largest fission bomb, 2100 TJ. What
+celestial body? (e) What is its mass at this point?
+impact would this have on Earth?
+24 . On a planet whose radius is , the
+35 . (a) What is the change in energy of a 1000-kg
+acceleration due to gravity is . What is
+payload taken from rest at the surface of Earth
+the mass of the planet?
+and placed at rest on the surface of the Moon?
+25 . The mean diameter of the planet Saturn is (b) What would be the answer if the payload
+, and its mean mass density is were taken from the Moon’s surface to Earth? Is
+. Find the acceleration due to gravity this a reasonable calculation of the energy
+at Saturn’s surface. needed to move a payload back and forth?
+26 . The mean diameter of the planet Mercury is 13.4 Satellite Orbits and Energy
+, and the acceleration due to
+36 . If a planet with 1.5 times the mass of Earth was
+gravity at its surface is . Estimate the
+traveling in Earth’s orbit, what would its period
+mass of this planet.
+be?
+27 . The acceleration due to gravity on the surface of
+37 . Two planets in circular orbits around a star have
+a planet is three times as large as it is on the
+speeds of v and 2v. (a) What is the ratio of the
+surface of Earth. The mass density of the planet
+orbital radii of the planets? (b) What is the ratio
+is known to be twice that of Earth. What is the
+of their periods?
+radius of this planet in terms of Earth’s radius?
+38 . Using the average distance of Earth from the
+28 . A body on the surface of a planet with the same Sun, and the orbital period of Earth, (a) find the
+radius as Earth’s weighs 10 times more than it
+centripetal acceleration of Earth in its motion
+does on Earth. What is the mass of this planet in
+about the Sun. (b) Compare this value to that of
+terms of Earth’s mass?
+the centripetal acceleration at the equator due
+to Earth’s rotation.
+13.3 Gravitational Potential Energy and Total Energy
+39 . (a) What is the orbital radius of an Earth satellite
+29 . Find the escape speed of a projectile from the
+having a period of 1.00 h? (b) What is
+surface of Mars.
+unreasonable about this result?
+30 . Find the escape speed of a projectile from the
+40 . Calculate the mass of the Sun based on data for
+surface of Jupiter.
+Earth’s orbit and compare the value obtained
+31 . What is the escape speed of a satellite located with the Sun’s actual mass.
+at the Moon’s orbit about Earth? Assume the
+41 . Find the mass of Jupiter based on the fact that
+Moon is not nearby.
+Io, its innermost moon, has an average orbital
+32 . (a) Evaluate the gravitational potential energy radius of 421,700 km and a period of 1.77 days.
+between two 5.00-kg spherical steel balls
+42 . Astronomical observations of light from the
+separated by a center-to-center distance of 15.0
+Milky Way galaxy's stars indicate that it has a
+cm. (b) Assuming that they are both initially at
+mass of about solar masses. A star
+Access for free at openstax.org

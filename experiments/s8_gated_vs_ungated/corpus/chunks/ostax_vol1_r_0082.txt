@@ -1,0 +1,193 @@
+# REAL PDF — openstax_vol1.pdf, pages 499-506
+############################################################
+
+10.6 • Torque 487
+direction of the torque by the right-hand rule is out of the page along the positive z-axis. The disk rotates
+counterclockwise due to the torque, in the same direction as a positive angular acceleration.
+FIGURE 10.33 A disk is free to rotate about its axis through the center. The magnitude of the torque on the disk is .When , the
+torque is zero and the disk does not rotate. When , the torque is maximum and the disk rotates with maximum angular acceleration.
+Any number of torques can be calculated about a given axis. The individual torques add to produce a net torque
+about the axis. When the appropriate sign (positive or negative) is assigned to the magnitudes of individual torques
+about a specified axis, the net torque about the axis is the sum of the individual torques:
+10.24
+Calculating Net Torque for Rigid Bodies on a Fixed Axis
+In the following examples, we calculate the torque both abstractly and as applied to a rigid body.
+We first introduce a problem-solving strategy.
+PROBLEM-SOLVING STRATEGY
+Finding Net Torque
+1. Choose a coordinate system with the pivot point or axis of rotation as the origin of the selected coordinate
+system.
+2. Determine the angle between the lever arm and the force vector.
+3. Take the cross product of to determine if the torque is positive or negative about the pivot point or
+axis.
+4. Evaluate the magnitude of the torque using .
+5. Assign the appropriate sign, positive or negative, to the magnitude.
+6. Sum the torques to find the net torque.
+EXAMPLE 10.14
+Calculating Torque
+Four forces are shown in Figure 10.34 at particular locations and orientations with respect to a given xy-coordinate
+system. Find the torque due to each force about the origin, then use your results to find the net torque about the
+origin.
+
+488 10 • Fixed-Axis Rotation
+FIGURE 10.34 Four forces producing torques.
+Strategy
+This problem requires calculating torque. All known quantities––forces with directions and lever arms––are given in
+the figure. The goal is to find each individual torque and the net torque by summing the individual torques. Be
+careful to assign the correct sign to each torque by using the cross product of and the force vector .
+Solution
+Use to find the magnitude and to determine the sign of the torque.
+The magnitude of the torque from force 40 N in the first quadrant is given by .
+The cross product of and is out of the page, positive.
+The magnitude of the torque from force 20 N in the third quadrant is given by .
+The cross product of and is into the page, so it is negative: .
+The magnitude of the torque from force 30 N in the third quadrant is given by .
+The cross product of and is out of the page, positive.
+The magnitude of the torque from force 20 N in the second quadrant is given by .
+The cross product of and is out of the page.
+The net magnitude of the torque is therefore
+Significance
+Note that each force that acts in the counterclockwise direction has a positive torque, whereas each force that acts
+in the clockwise direction has a negative torque. The torque is greater when the distance, force, or perpendicular
+components are greater.
+EXAMPLE 10.15
+Calculating Torque on a rigid body
+Figure 10.35 shows several forces acting at different locations and angles on a flywheel. We have
+, , and . Find the net torque on the flywheel about an axis through the center.
+Access for free at openstax.org
+
+10.6 • Torque 489
+FIGURE 10.35 Three forces acting on a flywheel.
+Strategy
+We calculate each torque individually, using the cross product, and determine the sign of the torque. Then we sum
+the torques to find the net torque.
+Solution
+We start with . If we look at Figure 10.35, we see that makes an angle of with the radius vector .
+Taking the cross product, we see that it is out of the page and so is positive. We also see this from calculating its
+magnitude:
+Next we look at . The angle between and is and the cross product is into the page so the torque is
+negative. Its value is
+When we evaluate the torque due to , we see that the angle it makes with is zero so Therefore,
+does not produce any torque on the flywheel.
+We evaluate the sum of the torques:
+Significance
+The axis of rotation is at the center of mass of the flywheel. Since the flywheel is on a fixed axis, it is not free to
+translate. If it were on a frictionless surface and not fixed in place, would cause the flywheel to translate, as well
+as . Its motion would be a combination of translation and rotation.
+CHECK YOUR UNDERSTANDING 10.6
+A large ocean-going ship runs aground near the coastline, similar to the fate of the Costa Concordia, and lies at an
+angle as shown below. Salvage crews must apply a torque to right the ship in order to float the vessel for transport.
+A force of acting at point A must be applied to right the ship. What is the torque about the point of
+
+490 10 • Fixed-Axis Rotation
+contact of the ship with the ground (Figure 10.36)?
+FIGURE 10.36 A ship runs aground and tilts, requiring torque to be applied to return the vessel to an upright position.
+10.7 Newton’s Second Law for Rotation
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Calculate the torques on rotating systems about a fixed axis to find the angular acceleration
+• Explain how changes in the moment of inertia of a rotating system affect angular acceleration with a fixed
+applied torque
+In this section, we put together all the pieces learned so far in this chapter to analyze the dynamics of rotating rigid
+bodies. We have analyzed motion with kinematics and rotational kinetic energy but have not yet connected these
+ideas with force and/or torque. In this section, we introduce the rotational equivalent to Newton’s second law of
+motion and apply it to rigid bodies with fixed-axis rotation.
+Newton’s Second Law for Rotation
+We have thus far found many counterparts to the translational terms used throughout this text, most recently,
+torque, the rotational analog to force. This raises the question: Is there an analogous equation to Newton’s second
+law, which involves torque and rotational motion? To investigate this, we start with Newton’s second law
+for a single particle rotating around an axis and executing circular motion. Let’s exert a force on a point mass m
+that is at a distance r from a pivot point (Figure 10.37). The particle is constrained to move in a circular path with
+fixed radius and the force is tangent to the circle. We apply Newton’s second law to determine the magnitude of the
+acceleration in the direction of . Recall that the magnitude of the tangential acceleration is proportional
+to the magnitude of the angular acceleration by . Substituting this expression into Newton’s second law, we
+obtain
+Access for free at openstax.org
+
+10.7 • Newton’s Second Law for Rotation 491
+FIGURE 10.37 An object is supported by a horizontal frictionless table and is attached to a pivot point by a cord that supplies centripetal
+force. A force is applied to the object perpendicular to the radius r, causing it to accelerate about the pivot point. The force is
+perpendicular to r.
+Multiply both sides of this equation by r,
+Note that the left side of this equation is the torque about the axis of rotation, where r is the lever arm and F is the
+force, perpendicular to r. Recall that the moment of inertia for a point particle is . The torque applied
+perpendicularly to the point mass in Figure 10.37 is therefore
+The torque on the particle is equal to the moment of inertia about the rotation axis times the angular acceleration.
+We can generalize this equation to a rigid body rotating about a fixed axis.
+NEWTON’S SECOND LAW FOR ROTATION
+If more than one torque acts on a rigid body about a fixed axis, then the sum of the torques equals the moment
+of inertia times the angular acceleration:
+10.25
+The term is a scalar quantity and can be positive or negative (counterclockwise or clockwise) depending upon
+the sign of the net torque. Remember the convention that counterclockwise angular acceleration is positive. Thus, if
+a rigid body is rotating clockwise and experiences a positive torque (counterclockwise), the angular acceleration is
+positive.
+Equation 10.25 is Newton’s second law for rotation and tells us how to relate torque, moment of inertia, and
+rotational kinematics. This is called the equation for rotational dynamics. With this equation, we can solve a whole
+class of problems involving force and rotation. It makes sense that the relationship for how much force it takes to
+rotate a body would include the moment of inertia, since that is the quantity that tells us how easy or hard it is to
+change the rotational motion of an object.
+Deriving Newton’s Second Law for Rotation in Vector Form
+As before, when we found the angular acceleration, we may also find the torque vector. The second law
+tells us the relationship between net force and how to change the translational motion of an object. We have a
+vector rotational equivalent of this equation, which can be found by using Equation 10.7 and Figure 10.8. Equation
+10.7 relates the angular acceleration to the position and tangential acceleration vectors:
+We form the cross product of this equation with and use a cross product identity (note that ):
+
+492 10 • Fixed-Axis Rotation
+We now form the cross product of Newton’s second law with the position vector
+Identifying the first term on the left as the sum of the torques, and as the moment of inertia, we arrive at
+Newton’s second law of rotation in vector form:
+10.26
+This equation is exactly Equation 10.25 but with the torque and angular acceleration as vectors. An important point
+is that the torque vector is in the same direction as the angular acceleration.
+Applying the Rotational Dynamics Equation
+Before we apply the rotational dynamics equation to some everyday situations, let’s review a general problem-
+solving strategy for use with this category of problems.
+PROBLEM-SOLVING STRATEGY
+Rotational Dynamics
+1. Examine the situation to determine that torque and mass are involved in the rotation. Draw a careful sketch of
+the situation.
+2. Determine the system of interest.
+3. Draw a free-body diagram. That is, draw and label all external forces acting on the system of interest.
+4. Identify the pivot point. If the object is in equilibrium, it must be in equilibrium for all possible pivot
+points––chose the one that simplifies your work the most.
+5. Apply , the rotational equivalent of Newton’s second law, to solve the problem. Care must be taken
+to use the correct moment of inertia and to consider the torque about the point of rotation.
+6. As always, check the solution to see if it is reasonable.
+EXAMPLE 10.16
+Calculating the Effect of Mass Distribution on a Merry-Go-Round
+Consider the father pushing a playground merry-go-round in Figure 10.38. He exerts a force of 250 N at the edge of
+the 50.0-kg merry-go-round, which has a 1.50-m radius. Calculate the angular acceleration produced (a) when no
+one is on the merry-go-round and (b) when an 18.0-kg child sits 1.25 m away from the center. Consider the merry-
+go-round itself to be a uniform disk with negligible friction.
+FIGURE 10.38 A father pushes a playground merry-go-round at its edge and perpendicular to its radius to achieve maximum torque.
+Access for free at openstax.org
+
+10.7 • Newton’s Second Law for Rotation 493
+Strategy
+The net torque is given directly by the expression , To solve for , we must first calculate the net torque
+(which is the same in both cases) and moment of inertia I (which is greater in the second case).
+Solution
+a. The moment of inertia of a solid disk about this axis is given in Figure 10.20 to be
+We have and , so
+To find the net torque, we note that the applied force is perpendicular to the radius and friction is negligible, so
+that
+Now, after we substitute the known values, we find the angular acceleration to be
+b. We expect the angular acceleration for the system to be less in this part because the moment of inertia is
+greater when the child is on the merry-go-round. To find the total moment of inertia I, we first find the child’s
+moment of inertia by approximating the child as a point mass at a distance of 1.25 m from the axis. Then
+The total moment of inertia is the sum of the moments of inertia of the merry-go-round and the child (about
+the same axis):
+Substituting known values into the equation for α gives
+Significance
+The angular acceleration is less when the child is on the merry-go-round than when the merry-go-round is empty, as
+expected. The angular accelerations found are quite large, partly due to the fact that friction was considered to be
+negligible. If, for example, the father kept pushing perpendicularly for 2.00 s, he would give the merry-go-round an
+angular velocity of 13.3 rad/s when it is empty but only 8.89 rad/s when the child is on it. In terms of revolutions per
+second, these angular velocities are 2.12 rev/s and 1.41 rev/s, respectively. The father would end up running at
+about 50 km/h in the first case.
+CHECK YOUR UNDERSTANDING 10.7
+The fan blades on a jet engine have a moment of inertia . In 10 s, they rotate counterclockwise from rest
+up to a rotation rate of 20 rev/s. (a) What torque must be applied to the blades to achieve this angular acceleration?
+(b) What is the torque required to bring the fan blades rotating at 20 rev/s to a rest in 20 s?

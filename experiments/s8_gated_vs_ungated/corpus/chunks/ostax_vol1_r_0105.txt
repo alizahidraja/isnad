@@ -1,0 +1,180 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 641-647
+############################################################
+
+13.5 • Kepler's Laws of Planetary Motion 629
+FIGURE 13.21 The element of area swept out in time as the planet moves through angle . The angle between the radial direction
+and is .
+The areal velocity is simply the rate of change of area with time, so we have
+Since the angular momentum is constant, the areal velocity must also be constant. This is exactly Kepler’s second
+law. As with Kepler’s first law, Newton showed it was a natural consequence of his law of gravitation.
+INTERACTIVE
+You can view an animated version (https://openstax.org/l/21animationgrav) of Figure 13.20, and many other
+interesting animations as well, at the School of Physics (University of New South Wales) site.
+Kepler’s Third Law
+Kepler’s third law states that the square of the period is proportional to the cube of the semi-major axis of the orbit.
+In Satellite Orbits and Energy, we derived Kepler’s third law for the special case of a circular orbit. Equation 13.8
+gives us the period of a circular orbit of radius r about Earth:
+For an ellipse, recall that the semi-major axis is one-half the sum of the perihelion and the aphelion. For a circular
+orbit, the semi-major axis (a) is the same as the radius for the orbit. In fact, Equation 13.8 gives us Kepler’s third law
+if we simply replace r with a and square both sides.
+13.11
+We have changed the mass of Earth to the more general M, since this equation applies to satellites orbiting any large
+mass.
+EXAMPLE 13.13
+Orbit of Halley’s Comet
+Determine the semi-major axis of the orbit of Halley’s comet, given that it arrives at perihelion every 75.3 years. If
+the perihelion is 0.586 AU, what is the aphelion?
+Strategy
+We are given the period, so we can rearrange Equation 13.11, solving for the semi-major axis. Since we know the
+value for the perihelion, we can use the definition of the semi-major axis, given earlier in this section, to find the
+aphelion. We note that 1 Astronomical Unit (AU) is the average radius of Earth’s orbit and is defined to be
+.
+
+630 13 • Gravitation
+Solution
+Rearranging Equation 13.11 and inserting the values of the period of Halley’s comet and the mass of the Sun, we
+have
+This yields a value of or 17.8 AU for the semi-major axis.
+The semi-major axis is one-half the sum of the aphelion and perihelion, so we have
+Substituting for the values, we found for the semi-major axis and the value given for the perihelion, we find the value
+of the aphelion to be 35.0 AU.
+Significance
+Edmond Halley, a contemporary of Newton, first suspected that three comets, reported in 1531, 1607, and 1682,
+were actually the same comet. Before Tycho Brahe made measurements of comets, it was believed that they were
+one-time events, perhaps disturbances in the atmosphere, and that they were not affected by the Sun. Halley used
+Newton’s new mechanics to predict his namesake comet’s return in 1758.
+CHECK YOUR UNDERSTANDING 13.9
+The nearly circular orbit of Saturn has an average radius of about 9.5 AU and has a period of 30 years, whereas
+Uranus averages about 19 AU and has a period of 84 years. Is this consistent with our results for Halley’s comet?
+13.6 Tidal Forces
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the origins of Earth’s ocean tides
+• Describe how neap and leap tides differ
+• Describe how tidal forces affect binary systems
+The origin of Earth’s ocean tides has been a subject of continuous investigation for over 2000 years. But the work of
+Newton is considered to be the beginning of the true understanding of the phenomenon. Ocean tides are the result
+of gravitational tidal forces. These same tidal forces are present in any astronomical body. They are responsible for
+the internal heat that creates the volcanic activity on Io, one of Jupiter’s moons, and the breakup of stars that get
+too close to black holes.
+Lunar Tides
+If you live on an ocean shore almost anywhere in the world, you can observe the rising and falling of the sea level
+about twice per day. This is caused by a combination of Earth’s rotation about its axis and the gravitational attraction
+of both the Moon and the Sun.
+Let’s consider the effect of the Moon first. In Figure 13.22, we are looking “down” onto Earth’s North Pole. One side
+of Earth is closer to the Moon than the other side, by a distance equal to Earth’s diameter. Hence, the gravitational
+force is greater on the near side than on the far side. The magnitude at the center of Earth is between these values.
+Access for free at openstax.org
+
+13.6 • Tidal Forces 631
+This is why a tidal bulge appears on both sides of Earth.
+FIGURE 13.22 The tidal force stretches Earth along the line between Earth and the Moon. It is the difference between the gravitational
+force from the far side to the near side, along with the orbit of Earth and the Moon around each other, that creates the tidal bulge on both
+sides of the planet. Tidal variations of the oceans are on the order of few meters; hence, this diagram is greatly exaggerated.
+The net force on Earth causes it to orbit about the Earth-Moon center of mass, located about 1600 km below Earth’s
+surface along the line between Earth and the Moon. The tidal force can be viewed as the difference between the
+force at the center of Earth and that at any other location. In Figure 13.23, this difference is shown at sea level,
+where we observe the ocean tides. (Note that the change in sea level caused by these tidal forces is measured from
+the baseline sea level. We saw earlier that Earth bulges many kilometers at the equator due to its rotation. This
+defines the baseline sea level and here we consider only the much smaller tidal bulge measured from that baseline
+sea level.)
+FIGURE 13.23 The tidal force is the difference between the gravitational force at the center and that elsewhere. In this figure, the tidal
+forces are shown at the ocean surface. These forces would diminish to zero as you approach Earth’s center.
+Why does the rise and fall of the tides occur twice per day? Look again at Figure 13.22. If Earth were not rotating
+and the Moon was fixed, then the bulges would remain in the same location on Earth. Relative to the Moon, the
+bulges stay fixed—along the line connecting Earth and the Moon. But Earth rotates (in the direction shown by the
+blue arrow) approximately every 24 hours. In 6 hours, the near and far locations of Earth move to where the low
+tides are occurring, and 6 hours later, those locations are back to the high-tide position. Since the Moon also orbits
+Earth approximately every 28 days, and in the same direction as Earth rotates, the time between high (and low)
+tides is actually about 12.5 hours. The actual timing of the tides is complicated by numerous factors, the most
+important of which is another astronomical body—the Sun.
+The Effect of the Sun on Tides
+In addition to the Moon’s tidal forces on Earth’s oceans, the Sun exerts a tidal force as well. The gravitational
+attraction of the Sun on any object on Earth is nearly 200 times that of the Moon. However, as we show later in an
+
+632 13 • Gravitation
+example, the tidal effect of the Sun is less than that of the Moon, but a significant effect nevertheless. Depending
+upon the positions of the Moon and Sun relative to Earth, the net tidal effect can be amplified or attenuated.
+Figure 13.22 illustrates the relative positions of the Sun and the Moon that create the largest tides, called spring
+tides (or leap tides). During spring tides, Earth, the Moon, and the Sun are aligned and the tidal effects add. (Recall
+that the tidal forces cause bulges on both sides.) Figure 13.22(c) shows the relative positions for the smallest tides,
+called neap tides. The extremes of both high and low tides are affected. Spring tides occur during the new or full
+moon, and neap tides occur at half-moon.
+INTERACTIVE
+You can see an animation (https://openstax.org/l/21tidesinmot01) of the tides in motion.
+FIGURE 13.24 (a and b) The spring tides occur when the Sun and the Moon are aligned, whereas (c) the neap tides occur when the Sun and
+Moon make a right triangle with Earth. (Figure is not drawn to scale.)
+The Magnitude of the Tides
+With accurate data for the positions of the Moon and the Sun, the time of maximum and minimum tides at most
+locations on our planet can be predicted accurately.
+INTERACTIVE
+Visit this site (https://openstax.org/l/21tidepredic) to generate tide predictions for up to 2 years in the past or future,
+Access for free at openstax.org
+
+13.6 • Tidal Forces 633
+at more than 3000 locations around the United States.
+The magnitude of the tides, however, is far more complicated. The relative angles of Earth and the Moon determine
+spring and neap tides, but the magnitudes of these tides are affected by the distances from Earth as well. Tidal
+forces are greater when the distances are smaller. Both the Moon’s orbit about Earth and Earth’s orbit about the Sun
+are elliptical, so a spring tide is exceptionally large if it occurs when the Moon is at perigee and Earth is at perihelion.
+Conversely, it is relatively small if it occurs when the Moon is at apogee and Earth is at aphelion.
+The greatest causes of tide variation are the topography of the local shoreline and the bathymetry (the profile of the
+depth) of the ocean floor. The range of tides due to these effects is astounding. Although ocean tides are much
+smaller than a meter in many places around the globe, the tides at the Bay of Fundy (Figure 13.25), on the east
+coast of Canada, can be as much as 16.3 meters.
+FIGURE 13.25 Boats in the Bay of Fundy at high and low tides. The twice-daily change in sea level creates a real challenge to the safe
+mooring of boats. (credit: modification of works by Dylan Kereluk)
+EXAMPLE 13.14
+Comparing Tidal Forces
+Compare the Moon’s gravitational force on a 1.0-kg mass located on the near side and another on the far side of
+Earth. Repeat for the Sun and then compare the results to confirm that the Moon’s tidal forces are about twice that
+of the Sun.
+Strategy
+We use Newton’s law of gravitation given by Equation 13.1. We need the masses of the Moon and the Sun and their
+distances from Earth, as well as the radius of Earth. We use the astronomical data from Appendix D.
+Solution
+Substituting the mass of the Moon and mean distance from Earth to the Moon, we have
+In the denominator, we use the minus sign for the near side and the plus sign for the far side. The results are
+The Moon’s gravitational force is nearly 7% higher at the near side of Earth than at the far side, but both forces are
+much less than that of Earth itself on the 1.0-kg mass. Nevertheless, this small difference creates the tides. We now
+repeat the problem, but substitute the mass of the Sun and the mean distance between the Earth and Sun. The
+results are
+
+634 13 • Gravitation
+We have to keep six significant digits since we wish to compare the difference between them to the difference for
+the Moon. (Although we can’t justify the absolute value to this accuracy, since all values in the calculation are the
+same except the distances, the accuracy in the difference is still valid to three digits.) The difference between the
+near and far forces on a 1.0-kg mass due to the Moon is
+whereas the difference for the Sun is
+Note that a more proper approach is to write the difference in the two forces with the difference between the near
+and far distances explicitly expressed. With just a bit of algebra we can show that
+where and are the same to three significant digits, but their difference , equal to the diameter of
+Earth, is also known to three significant digits. The results of the calculation are the same. This approach would be
+necessary if the number of significant digits needed exceeds that available on your calculator or computer.
+Significance
+Note that the forces exerted by the Sun are nearly 200 times greater than the forces exerted by the Moon. But the
+difference in those forces for the Sun is half that for the Moon. This is the nature of tidal forces. The Moon has a
+greater tidal effect because the fractional change in distance from the near side to the far side is so much greater for
+the Moon than it is for the Sun.
+CHECK YOUR UNDERSTANDING 13.10
+Earth exerts a tidal force on the Moon. Is it greater than, the same as, or less than that of the Moon on Earth? Be
+careful in your response, as tidal forces arise from the difference in gravitational forces between one side and the
+other. Look at the calculations we performed for the tidal force on Earth and consider the values that would change
+significantly for the Moon. The diameter of the Moon is one-fourth that of Earth. Tidal forces on the Moon are not
+easy to detect, since there is no liquid on the surface.
+Other Tidal Effects
+Tidal forces exist between any two bodies. The effect stretches the bodies along the line between their centers.
+Although the tidal effect on Earth’s seas is observable on a daily basis, long-term consequences cannot be observed
+so easily. One consequence is the dissipation of rotational energy due to friction during flexure of the bodies
+themselves. Earth’s rotation rate is slowing down as the tidal forces transfer rotational energy into heat. The other
+effect, related to this dissipation and conservation of angular momentum, is called “locking” or tidal
+synchronization. It has already happened to most moons in our solar system, including Earth’s Moon. The Moon
+keeps one face toward Earth—its rotation rate has locked into the orbital rate about Earth. The same process is
+happening to Earth, and eventually it will keep one face toward the Moon. If that does happen, we would no longer
+see tides, as the tidal bulge would remain in the same place on Earth, and half the planet would never see the Moon.
+However, this locking will take many billions of years, perhaps not before our Sun expires.
+One of the more dramatic example of tidal effects is found on Io, one of Jupiter’s moons. In 1979, the Voyager
+spacecraft sent back dramatic images of volcanic activity on Io. It is the only other astronomical body in our solar
+system on which we have found such activity. Figure 13.26 shows a more recent picture of Io taken by the New
+Horizons spacecraft on its way to Pluto, while using a gravity assist from Jupiter.
+Access for free at openstax.org

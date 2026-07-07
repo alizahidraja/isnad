@@ -1,0 +1,271 @@
+# REAL PDF — crowell_lm.pdf, pages 525-532
+############################################################
+
+as to perceive them as a single, fused sensation of tone.
+Musical applications
+Many musicians claim to be able to pick out by ear several of the
+frequencies 2f , 3f , ..., called overtones or harmonics of the funda-
+o o
+mental f , but they are kidding themselves. In reality, the overtone
+o
+series has two important roles in music, neither of which depends
+on this fictitious ability to “hear out” the individual overtones.
+First, the relative strengths of the overtones is an important part of
+the personality of a sound, called its timbre (rhymes with “amber”).
+The characteristic tone of the brass instruments, for example, is a
+sound that starts out with a very strong harmonic series extending
+up to very high frequencies, but whose higher harmonics die down
+drastically as the attack changes to the sustained portion of the
+note.
+Second, although the ear cannot separate the individual harmonics
+of a single musical tone, it is very sensitive to clashes between the
+overtones of notes played simultaneously, i.e., in harmony. We tend Graphs of loudness versus
+to perceive a combination of notes as being dissonant if they have frequency for the vowel “ah,”
+overtonesthatareclosebutnotthesame. Roughlyspeaking, strong sung as three different musical
+notes. G is consonant with D,
+overtones whose frequencies di↵er by more than 1% and less than
+since every overtone of G that is
+10% cause the notes to sound dissonant. It is important to realize
+close to an overtone of D (*) is at
+thattheterm“dissonance”isnotanegativeoneinmusic. Nomatter
+exactly the same frequency. G
+how long you search the radio dial, you will never hear more than
+and C# are dissonant together,
+three seconds of music without at least one dissonant combination sincesomeoftheovertonesofG
+of notes. Dissonance is a necessary ingredient in the creation of a (x) are close to, but not right on
+musicalcycleoftensionandrelease. Musicallyknowledgeablepeople topof,thoseofC#.
+don’t use the word “dissonant” as a criticism of music, although
+dissonance can be used in a clumsy way, or without providing any
+contrast between dissonance and consonance.
+Standing waves
+Figure w shows sinusoidal wave patterns made by shaking a rope. I
+used to enjoy doing this at the bank with the pens on chains, back
+inthedayswhenpeopleactuallywenttothebank. Youmightthink
+that I and the person in the photos had to practice for a long time
+in order to get such nice sine waves. In fact, a sine wave is the only
+shape that can create this kind of wave pattern, called a standing
+wave, which simply vibrates back and forth in one place without
+moving. The sine wave just creates itself automatically when you
+find the right frequency, because no other shape is possible.
+Ifyouthinkaboutit, it’snotevenobviousthatsinewavesshouldbe
+able to do this trick. After all, waves are supposed to travel at a set Sine waves add to make sine
+waves. Other functions don’t
+speed, aren’t they? The speed isn’t supposed to be zero! Well, we
+havethisproperty.
+canactuallythinkofastandingwaveasasuperpositionofamoving
+Waves bounded on both sides 525
+
+Standingwavesonaspring.
+sine wave with its own reflection, which is moving the opposite way.
+Sine waves have the unique mathematical property, v, that the sum
+of sine waves of equal wavelength is simply a new sine wave with
+the same wavelength. As the two sine waves go back and forth, they
+always cancel perfectly at the ends, and their sum appears to stand
+still.
+Standing wave patterns are rather important, since atoms are really
+A salamander crawls across standing-wave patterns of electron waves. You are a standing wave!
+a person’s palm. Its spine
+Harmonics on string instruments example 8
+oscillatesasastandingwave.
+Figure y shows a violist playing what string players refer to as a
+natural harmonic. The term “harmonic” is used here in a some-
+what different sense than in physics. The musician’s pinkie is
+pressing very lightly against the string — not hard enough to
+makeittouchthefingerboard—atapointpreciselyatthecenter
+of the string’s length. As shown in the diagram, this allows the
+string to vibrate at frequencies 2f ,4f ,6f ,..., which have sta-
+o o o
+tionary points at the center of the string, but not at the odd mul-
+tiples f ,3f ,.... Since all the overtones are multiples of 2f , the
+o o o
+ear perceives 2f as the basic frequency of the note. In musical
+o
+terms,doublingthefrequencycorrespondstoraisingthepitchby
+an octave. The technique can be used in order to make it easier
+toplayhighnotesinrapidpassages,orforitsownsake,because
+Example8.
+of the change in timbre.
+526 Chapter 20 Bounded waves
+
+Standing-wave patterns of air columns
+The air column inside a wind instrument behaves very much like
+the wave-on-a-string example we’ve been concentrating on so far,
+the main di↵erence being that we may have either inverting or non-
+inverting reflections at the ends.
+Some organ pipes are closed at both ends. The speed of sound
+is di↵erent in metal than in air, so there is a strong reflection at
+the closed ends, and we can have standing waves. These reflections
+are both density-noninverting, so we get symmetric standing-wave
+patterns, such as the one shown in figure aa/1.
+Surprisingly, sound waves
+Figure z shows the sound waves in and around a bamboo Japanese
+undergo partial reflection at the
+flute called a shakuhachi, which is open at both ends of the air
+open ends of tubes as well as
+column. We can only have a standing wave pattern if there are
+closedones.
+reflections at the ends, but that is very counterintuitive — why is
+there any reflection at all, if the sound wave is free to emerge into
+open space, and there is no change in medium? Recall the reason
+why we got reflections at a change in medium: because the wave-
+length changes, so the wave has to readjust itself from one pattern
+to another, and the only way it can do that without developing a
+kink is if there is a reflection. Something similar is happening here.
+The only di↵erence is that the wave is adjusting from being a plane
+wave to being a spherical wave. The reflections at the open ends
+are density-inverting, aa/2, so the wave pattern is pinched o↵ at the
+ends. Comparing panels 1 and 2 of the figure, we see that although
+the wave pattens are di↵erent, in both cases the wavelength is the
+same: in the lowest-frequency standing wave, half a wavelength fits
+inside the tube. Thus, it isn’t necessary to memorize which type of
+reflection is inverting and which is inverting. It’s only necessary to
+know that the tubes are symmetric.
+Graphs of excess density versus
+Finally,wecanhaveanasymmetrictube: closedatoneendandopen
+position for the lowest-frequency
+at the other. A common example is the pan pipes, ab, which are standing waves of three types of
+closed at the bottom and open at the top. The standing wave with air columns. Points on the axis
+the lowest frequency is therefore one in which 1/4 of a wavelength havenormalairdensity.
+fits along the length of the tube, as shown in figure aa/3.
+Sometimes an instrument’s physical appearance can be misleading.
+Aconcertflute,ac,isclosedatthemouthendandopenattheother,
+so we would expect it to behave like an asymmetric air column; in
+reality, it behaves like a symmetric air column open at both ends,
+because the embouchure hole (the hole the player blows over) acts
+like an open end. The clarinet and the saxophone look similar, hav-
+ing a mouthpiece and reed at one end and an open end at the other,
+but they act di↵erent. In fact the clarinet’s air column has patterns
+of vibration that are asymmetric, the saxophone symmetric. The
+discrepancy comes from the di↵erence between the conical tube of
+the sax and the cylindrical tube of the clarinet. The adjustment
+of the wave pattern from a plane wave to a spherical wave is more
+Waves bounded on both sides 527
+
+gradual at the flaring bell of the saxophone.
+self-checkF
+Draw a graph of density versus position for the first overtone of the air
+column in a tube open at one end and closed at the other. This will be
+the next-to-longest possible wavelength that allows for a point of maxi-
+mumvibrationatoneendandapointofnovibrationattheother. How
+many times shorter will its wavelength be compared to the wavelength
+of the lowest-frequency standing wave, shown in the figure? Based on
+this,howmanytimesgreaterwillitsfrequencybe? .Answer,p. 555
+Discussion question
+A Figurexonp.526showsthesalamanderinthesalamander’sframe
+of reference, so that the palm moves. In the palm’s frame, would this
+be a traveling wave? Would the worm in example 1 on p. 485 execute a
+standing wave in its own frame? Is there anything qualitatively different
+about these two animals’ patterns of motion, other than the fact that one
+waveistransverseandtheotherlongitudinal?
+A pan pipe is an asymmetric
+air column, open at the top and
+closedatthebottom.
+A concert flute looks like an
+asymmetric air column, open at
+the mouth end and closed at the
+other. However, its patterns of
+vibration are symmetric, because
+the embouchure hole acts like an
+openend.
+528 Chapter 20 Bounded waves
+
+Summary
+Selected vocabulary
+reflection . . . . . the bouncing back of part of a wave from a
+boundary
+transmission . . . the continuation of part of a wave through a
+boundary
+absorption . . . . the gradual conversion of wave energy into
+heating of the medium
+standing wave . . a wave pattern that stays in one place
+Notation
+  . . . . . . . . . . wavelength (Greek letter lambda)
+Summary
+Whenever a wave encounters the boundary between two media in
+which its speeds are di↵erent, part of the wave is reflected and part
+is transmitted. The reflection is always reversed front-to-back, but
+may also be inverted in amplitude. Whether the reflection is in-
+verted depends on how the wave speeds in the two media compare,
+e.g., a wave on a string is uninverted when it is reflected back into
+a segment of string where its speed is lower. The greater the di↵er-
+ence in wave speed between the two media, the greater the fraction
+of the wave energy that is reflected. Surprisingly, a wave in a dense
+material like wood will be strongly reflected back into the wood at
+a wood-air boundary.
+A one-dimensional wave confined by highly reflective boundaries on
+twosideswilldisplaymotionwhichisperiodic. Forexample, ifboth
+reflections are inverting, the wave will have a period equal to twice
+thetimerequiredtotraversetheregion,ortothattimedividedbyan
+integer. An important special case is a sinusoidal wave; in this case,
+the wave forms a stationary pattern composed of a superposition of
+sine waves moving in opposite direction.
+Summary 529
+
+Problems
+Key
+p A computerized answer check is available online.
+A problem that requires calculus.
+? A di cult problem.
+R
+1 Light travels faster in warmer air. Use this fact to explain the
+formation of a mirage appearing like the shiny surface of a pool of
+water when there is a layer of hot air above a road. (For simplicity,
+pretend that there is actually a sharp boundary between the hot
+layer and the cooler layer above it.)
+2 (a) Using the equations from optional section 20.2, compute
+the amplitude of light that is reflected back into air at an air-water
+interface, relativetotheamplitudeoftheincidentwave. Thespeeds
+oflightinairandwaterare3.0 108 and2.2 108 m/s, respectively.
+⇥ ⇥
+(b)Findtheenergyofthereflectedwaveasafractionoftheincident
+energy. [Hint: The answers to the two parts are not the same.]
+p
+3 A concert flute produces its lowest note, at about 262 Hz,
+when half of a wavelength fits inside its tube. Compute the length
+of the flute. . Answer, p. 556
+4 (a) A good tenor saxophone player can play all of the fol-
+lowing notes without changing her fingering, simply by altering the
+tightness of her lips: E[ (150 Hz), E[ (300 Hz), B[ (450 Hz), and
+E[ (600 Hz). How is this possible? (I’m not asking you to analyze
+the coupling between the lips, the reed, the mouthpiece, and the air
+column, which is very complicated.)
+(b) Some saxophone players are known for their ability to use this
+technique to play “freak notes,” i.e., notes above the normal range
+of the instrument. Why isn’t it possible to play notes below the
+C 261.6 Hz normal range using this technique?
+D 293.7
+5 The table gives the frequencies of the notes that make up the
+E 329.6
+key of F major, starting from middle C and going up through all
+F 349.2
+seven notes.
+G 392.0
+(a) Calculate the first four or five harmonics of C and G, and deter-
+A 440.0
+mine whether these two notes will be consonant or dissonant. (Re-
+B[ 466.2
+call that harmonics that di↵er by about 1-10% cause dissonance.)
+(b) Do the same for C and B[.
+Problem5.
+6 Brass and wind instruments go up in pitch as the musician
+warms up. As a typical empirical example, a trumpet’s frequency
+might go up by about 1%. Let’s consider possible physical reasons
+for the change in pitch. (a) Solids generally expand with increas-
+ing temperature, because the stronger random motion of the atoms
+tendstobumpthemapart. Brassexpandsby1.88 10 5 perdegree
+ 
+⇥
+C. Would this tend to raise the pitch, or lower it? Estimate the size
+530 Chapter 20 Bounded waves
+
+of the e↵ect in comparison with the observed change in frequency.
+(b) The speed of sound in a gas is proportional to the square root of
+the absolute temperature, where zero absolute temperature is -273
+degrees C. As in part a, analyze the size and direction of the e↵ect.
+7 Your exhaled breath contains about 4.5% carbon dioxide, and
+is therefore more dense than fresh air by about 2.3%. By analogy
+with the treatment of waves on a string in section 19.2, we expect
+that the speed of sound will be inversely proportional to the square
+root of the density of the gas. Calculate the e↵ect on the frequency
+produced by a wind instrument.
+Problems 531

@@ -1,0 +1,235 @@
+# REAL PDF — openstax_vol3.pdf, pages 398-406
+############################################################
+
+390 Chapter 8 | Atomic Structure
+Figure 8.26 An X-ray image of a piece of luggage. The
+denser the material, the darker the shadow. Object colors relate
+to material composition—metallic objects show up as blue in
+this image. (credit: “IDuke”/Wikimedia Commons)
+AstandardX-rayimageprovidesatwo-dimensionalviewoftheobject.However,inmedicalapplications,thisviewdoes
+not often provide enough information to draw firm conclusions. For example, in a two-dimensional X-ray image of the
+body,bonescaneasilyhidesofttissuesororgans.TheCAT(computedaxialtomography)scanneraddressesthisproblem
+bycollectingnumerousX-rayimagesin“slices”throughoutthebody.Complexcomputer-imageprocessingoftherelative
+absorption of the X-rays, in different directions, can produce a highly detailed three-dimensional X-ray image of the body.
+X-rays can also be used to probe the structures of atoms and molecules. Consider X-rays incident on the surface of a
+crystalline solid. Some X-ray photons reflect at the surface, and others reflect off the “plane” of atoms just below the
+surface. Interference between these photons, for different angles of incidence, produces a beautiful image on a screen
+(Figure 8.27).Theinteraction ofX-rayswithasolidiscalledX-raydiffraction.ThemostfamousexampleusingX-ray
+diffraction is the discovery of the double-helix structure of DNA.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 391
+Figure 8.27 X-ray diffraction from the crystal of a protein (hen egg lysozyme) produced this
+interference pattern. Analysis of the pattern yields information about the structure of the protein.
+(credit: “Del45”/Wikimedia Commons)
+8.6 | Lasers
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the physical processes necessary to produce laser light
+• Explain the difference between coherent and incoherent light
+• Describe the application of lasers to a CD and Blu-Ray player
+Alaserisdevicethatemitscoherentandmonochromaticlight.Thelightiscoherentifphotonsthatcomposethelightare
+in-phase, and monochromatic if the photons have a single frequency (color). When a gas in the laser absorbs radiation,
+electronsareelevatedtodifferentenergylevels.Mostelectronsreturnimmediatelytothegroundstate,butotherslingerin
+whatiscalledametastablestate.Itispossibletoplaceamajorityoftheseatomsinametastablestate,aconditioncalleda
+population inversion.
+Whenaphotonofenergydisturbsanelectroninametastablestate(Figure 8.28),theelectrondropstothelower-energy
+levelandemitsanadditionphoton,andthetwophotonsproceedofftogether.Thisprocessiscalledstimulatedemission.It
+occurswithrelativelyhighprobabilitywhentheenergyoftheincomingphotonisequaltotheenergydifferencebetweenthe
+excitedand“de-excited”energylevelsoftheelectron(ΔE=hf ).Hence,theincomingphotonandthephotonproduced
+byde-excitationhavethesameenergy,hf.Thesephotonsencountermoreelectronsinthemetastablestate,andtheprocess
+repeats.Theresultisacascadeorchainreactionofsimilarde-excitations.Laserlightiscoherentbecausealllightwavesin
+laserlightsharethesamefrequency(color)andthesamephase(anytwopointsofalongalineperpendiculartothedirection
+
+392 Chapter 8 | Atomic Structure
+ofmotionareonthe“samepart”ofthewave”).Aschematicdiagramofcoherentandincoherentlightwavepatternisgiven
+inFigure 8.29.
+Figure 8.28 The physics of a laser. An incident photon of frequencyfcauses a cascade of
+photons of the same frequency.
+Figure 8.29 A coherent light wave pattern contains light waves of the same
+frequency and phase. An incoherent light wave pattern contains light waves of
+different frequencies and phases.
+Lasersareusedinawiderangeofapplications,suchasincommunication(opticalfiberphonelines),entertainment(laser
+lightshows),medicine(removingtumorsandcauterizingvesselsintheretina),andinretailsales(barcodereaders).Lasers
+can also be produced by a large range of materials, including solids (for example, the ruby crystal), gases (helium-gas
+mixture),andliquids(organicdyes).Recently,alaserwasevencreatedusinggelatin—anediblelaser!Belowwediscuss
+two practical applications in detail: CD players and Blu-Ray Players.
+CD Player
+ACDplayerreadsdigitalinformationstoredonacompactdisc(CD).ACDis6-inchdiameter discmadeofplasticthat
+contains small “bumps” and “pits” nears its surface to encode digital or binary data (Figure 8.30). The bumps and pits
+appearalongaverythintrackthatspiralsoutwardsfromthecenterofthedisc.Thewidthofthetrackissmallerthan1/20th
+the width of a human hair, and the heights of the bumps are even smaller yet.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 393
+Figure 8.30 A compact disc is a plastic disc that uses bumps near
+its surface to encode digital information. The surface of the disc
+contains multiple layers, including a layer of aluminum and one of
+polycarbonate plastic.
+ACDplayerusesalasertoreadthisdigital information. Laserlightissuitedtothispurpose,becausecoherentlightcan
+be focused onto an incredibly small spot and therefore distinguish between bumps and pits in the CD. After processing
+byplayer components (including adiffraction grating, polarizer,andcollimator), laser light isfocusedbyalensontothe
+CDsurface.Lightthatstrikesabump(“land”)ismerelyreflected,butlightthatstrikesa“pit”destructivelyinterferes,so
+nolightreturns(thedetailsofthisprocessarenotimportanttothisdiscussion).Reflectedlightisinterpretedasa“1”and
+unreflectedlightisinterpretedasa“0.”Theresultingdigitalsignalisconvertedintoananalogsignal,andtheanalogsignal
+is fed into an amplifier that powers a device such as a pair of headphones. The laser system of a CD player is shown in
+Figure 8.31.
+Figure 8.31 A CD player and its laser component.
+Blu-Ray Player
+LikeaCDplayer,aBlu-Rayplayerreadsdigitalinformation(videooraudio)storedonadisc,andalaserisusedtorecord
+thisinformation.ThepitsonaBlu-RaydiscaremuchsmallerandmorecloselypackedtogetherthanforaCD,somuch
+moreinformationcanbestored.Asaresult,theresolvingpowerofthelasermustbegreater.Thisisachievedusingshort
+wavelength (λ=405nm) bluelaserlight—hence,thename“Blu-”Ray.(CDsandDVDsuseredlaserlight.)Thedifferent
+pitsizesandplayer-hardwareconfigurationsofaCD,DVD,andBlu-RayplayerareshowninFigure 8.32.Thepitsizes
+of a Blu-Ray disk are more than twice as small as the pits on a DVD or CD. Unlike a CD, a Blu-Ray disc store data on
+apolycarbonatelayer,whichplacesthedataclosertothelensandavoidsreadabilityproblems.Ahardcoatingisusedto
+protect the data since it is so close to the surface.
+
+394 Chapter 8 | Atomic Structure
+Figure 8.32 Comparison of laser resolution in a CD, DVD, and Blu-Ray Player.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 395
+CHAPTER 8 REVIEW
+KEY TERMS
+angular momentum orbital quantum number (l) quantumnumberassociatedwiththeorbitalangularmomentum
+of an electron in a hydrogen atom
+angular momentum projection quantum number (m) quantum number associated with the z-component of the
+orbital angular momentum of an electron in a hydrogen atom
+atomic orbital region in space that encloses a certain percentage (usually 90%) of the electron probability
+Bohr magneton magnetic moment of an electron, equal to 9.3×10−24J/T or 5.8×10 −5 eV/T
+braking radiation radiationproducedbytargetingmetalwithahigh-energyelectronbeam(orradiationproducedbythe
+acceleration of any charged particle in a material)
+chemical group group of elements in the same column of the periodic table that possess similar chemical properties
+coherent light light that consists of photons of the same frequency and phase
+covalent bond chemical bond formed by the sharing of electrons between two atoms
+electron configuration representation of the state of electrons in an atom, such as 1s22s1 for lithium
+fine structure detailed structure of atomic spectra produced by spin-orbit coupling
+fluorescence radiation produced by the excitation and subsequent, gradual de-excitation of an electron in an atom
+hyperfine structure detailed structure of atomic spectra produced by spin-orbit coupling
+ionic bond chemical bond formed by the electric attraction between two oppositely charged ions
+laser coherent light produced by a cascade of electron de-excitations
+magnetic orbital quantum number another term for the angular momentum projection quantum number
+magnetogram pictoral representation, or map, of the magnetic activity at the Sun’s surface
+metastable state state in which an electron “lingers” in an excited state
+monochromatic light that consists of photons with the same frequency
+Moseley plot plot of the atomic number versus the square root of X-ray frequency
+Moseley’s law relationship between the atomic number and X-ray photon frequency for X-ray production
+orbital magnetic dipole moment measure of the strength of the magnetic field produced by the orbital angular
+momentum of the electron
+Pauli’s exclusion principle no two electrons in an atom can have the same values for all four quantum numbers
+(n, l, m, m s)
+population inversion condition in which a majority of atoms contain electrons in a metastable state
+principal quantum number (n) quantum number associated with the total energy of an electron in a hydrogen atom
+radial probability density function function use to determine the probability of a electron to be found in a spatial
+interval inr
+selection rules rules that determine whether atomic transitions are allowed or forbidden (rare)
+spin projection quantum number (m ) quantum number associated with the z-component of the spin angular
+s
+momentum of an electron
+spin quantum number (s) quantum number associated with the spin angular momentum of an electron
+spin-flip transitions atomictransitionsbetweenstatesofanelectron-protonsysteminwhichthemagneticmomentsare
+aligned and not aligned
+spin-orbit coupling interactionbetweentheelectronmagneticmomentandthemagneticfieldproducedbytheorbital
+
+396 Chapter 8 | Atomic Structure
+angular momentum of the electron
+stimulated emission whenaphotonofenergytriggersanelectroninametastablestatetodropinenergyemittingan
+additional photon
+transition metal elementthatislocatedinthegapbetweenthefirsttwocolumnsandthelastsixcolumnsofthetableof
+elements that contains electrons that fill thedsubshell
+valence electron electron in the outer shell of an atom that participates in chemical bonding
+Zeeman effect splitting of energy levels by an external magnetic field
+KEY EQUATIONS
+Orbital angular momentum L= l(l+1)ℏ
+z-component of orbital angular momentum L z=mℏ
+2
+Radial probability density function P(r)dr =|ψ
+n00
+| 4πr2dr
+Spin angular momentum S= s(s+1)ℏ
+z-component of spin angular momentum S z=m sℏ
+→ ⎛ e ⎞→
+Electron spin magnetic moment µ s= ⎝m e⎠ S
+→ ⎛ e ⎞→
+Electron orbital magnetic dipole moment µ =− L
+⎝2m
+e
+⎠
+Potential energy associated with the magnetic
+interaction between the orbital magnetic dipole U(θ)=−µ
+z
+B=mµ
+B
+B
+→
+moment and an external magnetic field B
+Maximum number of electrons in a subshell of
+N =4l+2
+a hydrogen atom
+Selection rule for atomic transitions in a
+Δl= ±1
+hydrogen-like atom
+Moseley’s law for X-ray production (Z−1)=constant f
+SUMMARY
+8.1The Hydrogen Atom
+• Ahydrogenatomcanbedescribedintermsofitswavefunction,probabilitydensity,totalenergy,andorbitalangular
+momentum.
+• The state of an electron in a hydrogen atom is specified by its quantum numbers (n,l,m).
+• IncontrasttotheBohrmodeloftheatom,theSchrödingermodelmakespredictionsbasedonprobabilitystatements.
+• The quantum numbers of a hydrogen atom can be used to calculate important information about the atom.
+8.2Orbital Magnetic Dipole Moment of the Electron
+• A hydrogen atom has magnetic properties because the motion of the electron acts as a current loop.
+• Theenergylevelsofahydrogenatomassociatedwithorbitalangularmomentumaresplitbyanexternalmagnetic
+field because the orbital angular magnetic moment interacts with the field.
+• Thequantumnumbersofanelectroninahydrogenatomcanbeusedtocalculatethemagnitudeanddirectionofthe
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 397
+orbital magnetic dipole moment of the atom.
+8.3Electron Spin
+• The state of an electron in a hydrogen atom can be expressed in terms of five quantum numbers.
+• Thespinangularmomentumquantumofanelectronis= +½.Thespinangularmomentumprojectionquantum
+number ism s = +½or −½ (spin up or spin down).
+• Thefineandhyperfinestructuresofthehydrogenspectrumareexplainedbymagneticinteractionswithintheatom.
+8.4The Exclusion Principle and the Periodic Table
+• Pauli’s exclusion principle states that no two electrons in an atom can have all the same quantum numbers.
+• The structure of the periodic table of elements can be explained in terms of the total energy, orbital angular
+momentum, and spin of electrons in an atom.
+• Thestateofanatomcanbeexpressedbyitselectronconfiguration,whichdescribestheshellsandsubshellsthatare
+filled in the atom.
+8.5Atomic Spectra and X-rays
+• Radiation is absorbed and emitted by atomic energy-level transitions.
+• Quantumnumberscanbeusedtoestimatetheenergy,frequency,andwavelengthofphotonsproducedbyatomic
+transitions.
+• Atomic fluorescence occurs when an electron in an atom is excited several steps above the ground state by the
+absorption of a high-energy ultraviolet (UV) photon.
+• X-rayphotonsareproducedwhenavacancyinaninnershellofanatomisfilledbyanelectronfromtheoutershell
+of the atom.
+• The frequency of X-ray radiation is related to the atomic numberZof an atom.
+8.6Lasers
+• Laser light is coherent (monochromatic and “phase linked”) light.
+• Laserlightisproducedbypopulationinversionandsubsequentde-excitationofelectronsinamaterial(solid,liquid,
+or gas).
+• CD and Blu-Ray players uses lasers to read digital information stored on discs.
+CONCEPTUAL QUESTIONS
+split by an external magnetic field. What determines the
+8.1The Hydrogen Atom number and spacing of these lines?
+1. Identify the physical significance of each of the
+quantum numbers of the hydrogen atom. 5. Ahydrogenatomisplacedinamagneticfield.Which
+of the following quantities are affected? (a) total energy;
+(b) angular momentum; (c) z-component of angular
+2. Describethegroundstateofhydrogenintermsofwave
+momentum; (d) polar angle.
+function, probability density, and atomic orbitals.
+6. On what factors does the orbital magnetic dipole
+3. Distinguish between Bohr’s and Schrödinger’s model
+moment of an electron depend?
+ofthehydrogenatom.Inparticular,comparetheenergyand
+orbital angular momentum of the ground states.
+8.3Electron Spin
+8.2Orbital Magnetic Dipole Moment of the 7. Explain how a hydrogen atom in the ground state
+Electron
+(l=0) can interact magnetically with an external
+magnetic field.
+4. Explain why spectral lines of the hydrogen atom are

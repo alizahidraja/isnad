@@ -1,0 +1,219 @@
+# REAL PDF — openstax_vol3.pdf, pages 488-494
+############################################################
+
+480 Chapter 10 | Nuclear Physics
+Figure 10.20 In a U-235 fission chain reaction, the fission of the uranium nucleus produces high-
+energy neutrons that go on to split more nuclei. The energy released in this process can be used to
+produce electricity.
+View a simulation on nuclear fission (https://openstaxcollege.org/l/21nuclrfissvid) to start a chain
+reaction, or introduce nonradioactive isotopes to prevent one. Control energy production in a nuclear reactor.
+The Atomic Bomb
+Thepossibilityofachainreactioninuranium,withitsextremelylargeenergyrelease,lednuclearscientiststoconceiveof
+making a bomb—an atomic bomb. (These discoveries were taking place in the years just prior to the Second World War
+andmanyoftheEuropeanphysicistsinvolvedinthesediscoveriescamefromcountriesthatwerebeingoverrun.)Natural
+uraniumcontains 99.3% U-238andonly 0.7% U-235,anddoesnotproduceachainreaction.Toproduceacontrolled,
+sustainablechainreaction,thepercentageofU-235mustbeincreasedtoabout 50%.Inaddition,theuraniumsamplemust
+bemassiveenoughsoatypicalneutronismorelikelytoinducefissionthanitistoescape.Theminimummassneededfor
+thechainreactiontooccuriscalledthecriticalmass.Whenthecriticalmassreachesapointatwhichthechainreaction
+becomesself-sustaining,thisisaconditionknownascriticality.TheoriginaldesignrequiredtwopiecesofU-235below
+thecriticalmass.Whenonepieceintheformofabulletisfiredintothesecondpiece,thecriticalmassisexceededanda
+chain reaction is produced.
+AnimportantobstacletotheU-235bombistheproductionofacriticalmassoffissionablematerial.Therefore,scientists
+developedaplutonium-239bombbecausePu-239ismorefissionablethanU-235andthusrequiresasmallercriticalmass.
+The bomb was made in the form of a sphere with pieces of plutonium, each below the critical mass, at the edge of the
+sphere.Aseriesofchemicalexplosionsfiredtheplutoniumpiecestowardthecenterofthespheresimultaneously.Whenall
+thesepiecesofplutoniumcametogether,thecombinationexceededthecriticalmassandproducedachainreaction.Both
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 481
+theU-235andPu-239bombswereusedinWorldWarII.Whethertodevelopanduseatomicweaponsremaintwoofthe
+most important questions faced by human civilization.
+Example 10.9
+Calculating Energy Released by Fission
+Calculate the energy released in the following spontaneous fission reaction:
+238 95 140
+U→ Sr+ Xe+3n,
+The atomic masses are m⎛238 U ⎞ =238.050784u, m⎛95 Sr ⎞ =94.919388u, m⎛140 Xe ⎞ =139.921610u,
+⎝ ⎠ ⎝ ⎠ ⎝ ⎠
+and m(n)=1.008665u.
+Strategy
+Asalways,theenergyreleasedisequaltothemassdestroyedtimes c2,sowemustfindthedifferenceinmass
+between the parent 238 U and the fission products.
+Solution
+The products have a total mass of
+m =94.919388u+139.921610u+3(1.008665u)
+products
+=237.866993u.
+The mass lost is the mass of 238 U−m or
+products
+Δm=238.050784u−237.8669933u=0.183791u.
+Therefore, the energy released is
+E=(Δm)c2=(0.183791u)
+931.5MeV/c2
+c2= 171.2MeV.
+u
+Significance
+Severalimportantthingsariseinthisexample.Theenergyreleaseislargebutlessthanitwouldbeifthenucleus
+split into two equal parts, since energy is carried away by neutrons. However, this fission reaction produces
+neutrons and does not split the nucleus into two equal parts. Fission of a given nuclide, such as 238 U, does
+not always produce the same products. Fission is a statistical process in which an entire range of products are
+produced with various probabilities. Most fission produces neutrons, although the number varies. This is an
+extremelyimportantaspectoffission,becauseneutronscaninducemorefission,enablingself-sustainingchain
+reactions.
+Fission Nuclear Reactors
+The first nuclear reactor was built by Enrico Fermi on a squash court on the campus of the University of Chicago on
+December2,1942.ThereactoritselfcontainedU-238enrichedwith 3.6% U-235.Neutronsproducedbythechainreaction
+movetoofasttoinitiatefissionreactions.Onewaytoslowthemdownistoenclosetheentirereactorinawaterbathunder
+high pressure. The neutrons collide with the water molecules and are slowed enough to be used in the fission process.
+TheslowedneutronssplitmoreU-235nucleiandachainreactionoccurs.Therateatwhichthechainreactionproceedsis
+controlledbyaseriesof“control”rodsmadeofcadmiuminsertedintothereactor.Cadmiumiscapableofabsorbingalarge
+number of neutrons without becoming unstable.
+A nuclear reactor design, called a pressurized water reactor, can also be used to generate electricity (Figure 10.21). A
+pressurized water reactor (on the left in the figure) is designed to control the fission of large amounts of 235 U. The
+energyreleased inthisprocessisabsorbedbywater flowingthroughpipesinthesystem (the“primary loop”)andsteam
+isproduced.Cadmium control rodsadjust theneutronflux(therate offlowofneutrons passing throughthesystem) and
+thereforecontrolthereaction.Incasethereactoroverheatsandthewaterboilsaway,thechainreactionterminates,because
+waterisusedtothermalizetheneutrons.(Thissafetyfeaturecanbeoverwhelmedinextremecircumstances.)Thehot,high-
+
+482 Chapter 10 | Nuclear Physics
+pressurewaterthenpassesthroughapipetoasecondtankofwateratnormalpressureinthesteamgenerator.Thesteam
+producedatoneendofthesteam generator fills achamber thatcontains aturbine.Thissteam isataveryhighpressure.
+Meanwhile, a steam condenser connected to the other side of the turbine chamber maintains steam at low pressure. The
+pressure differences force steam through the chamber, which turns the turbine. The turbine, in turn, powers an electric
+generator.
+Figure 10.21 A nuclear reactor uses the energy produced in the fission of U-235 to produce electricity. Energy from a nuclear
+fission reaction produces hot, high-pressure steam that turns a turbine. As the turbine turns, electricity is produced.
+Themajordrawbacktoafissionreactorisnuclearwaste.U-235fissionproducesnucleiwithlonghalf-livessuchas 236 U
+that must be stored. These products cannot be dumped into oceans or left in any place where they will contaminate the
+environment,suchasthroughthesoil,air,orwater.Manyscientistsbelievethatthebestplacetostorenuclearwasteisthe
+bottom of old salt mines or inside of stable mountains.
+Many people are fearful that a nuclear reactor may explode like an atomic bomb. However, a nuclear reactor does not
+containenoughU-235todothis.Also,anuclearreactorisdesignedsothatfailureofanymechanismofthereactorcauses
+the cadmium control rods to fall fully into the reactor, stopping the fission process. As evidenced by the Fukushima and
+Chernobyl disasters, such systems can fail. Systems and procedures to avoid such disasters is an important priority for
+advocates of nuclear energy.
+IfallelectricalpowerwereproducedbynuclearfissionofU-235,Earth’sknownreservesofuraniumwouldbedepletedin
+lessthanacentury.However,Earth’ssupplyoffissionablematerialcanbeexpandedconsiderablyusingabreederreactor.
+AbreederreactoroperatesforthefirsttimeusingthefissionofU-235asjustdescribedforthepressurizedwaterreactor.
+Butinadditiontoproducingenergy,someofthefastneutronsoriginatingfromthefissionofU-235areabsorbedbyU-238,
+resulting in the production of Pu-239 via the set of reactions
+β β
+1n+ 238 U→ 239 U→ 239 Np→ 239 Pu.
+0 92 92 93 94
+The Pu-239 is itself highly fissionable and can therefore be used as a nuclear fuel in place of U-235. Since 99.3% of
+naturally occurring uranium is the U-238 isotope, the use of breeder reactors should increase our supply of nuclear fuel
+by roughly a factor of 100. Breeder reactors are now in operation in Great Britain, France, and Russia. Breeder reactors
+alsohavedrawbacks.First,breederreactorsproduceplutonium,whichcan,ifleakedintotheenvironment,produceserious
+public health problems. Second, plutonium can be used to build bombs, thus increasing significantly the risk of nuclear
+proliferation.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 483
+Example 10.10
+Calculating Energy of Fissionable Fuel
+Calculatetheamountofenergyproducedbythefissionof1.00kgof 235 U giventhattheaveragefissionreaction
+of 235 U produces 200 MeV.
+Strategy
+Thetotalenergyproducedisthenumberof 235 U atomstimesthegivenenergyper 235 U fission.Weshould
+therefore find the number of 235 U atoms in 1.00 kg.
+Solution
+Thenumberof 235 U atomsin1.00kgisAvogadro’snumbertimesthenumberofmoles.Onemoleof 235 U has
+amassof235.04g;thus,thereare ⎛1000g⎞/⎛235.04g/mol⎞=4.25mol. Thenumberof 235 U atomsistherefore
+⎝ ⎠⎝ ⎠
+(4.25mol) ⎛ 6.02×10 23 235 U/mol ⎞ =2.56×1024 235 U.
+⎝ ⎠
+Thus, the total energy released is
+⎛ ⎞⎛ −13 ⎞
+E= ⎛ 2.56×1024 235 U ⎞ 200MeV 1.60×10 J =8.21×10 13 J.
+⎝ ⎠⎝ 235 ⎠⎝ MeV ⎠
+U
+Significance
+Thisisanotherimpressivelylargeamountofenergy,equivalenttoabout14,000barrelsofcrudeoilor600,000
+gallonsofgasoline.However,itisonlyone-fourththeenergyproducedbythefusionofakilogrammixtureof
+deuteriumandtritium.Eventhougheachfissionreactionyieldsabout10timestheenergyofafusionreaction,the
+energyperkilogramoffissionfuelisless,becausetherearefarfewermolesperkilogramoftheheavynuclides.
+Fission fuel is also much scarcer than fusion fuel, and less than 1% of uranium (the 235 U) is readily usable.
+10.5 Check Your Understanding Which has a larger energy yield per fission reaction, a large or small
+sample of pure 235 U?
+10.6 | Nuclear Fusion
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the process of nuclear fusion in terms of its product and reactants
+• Calculate the energies of particles produced by a fusion reaction
+• Explain the fission concept in the context of fusion bombs, the production of energy by the Sun,
+and nucleosynthesis
+Theprocessofcombininglighternucleitomakeheaviernucleiiscallednuclearfusion.Aswithfissionreactions,fusion
+reactions are exothermic—they release energy. Suppose that we fuse a carbon and helium nuclei to produce oxygen:
+12C+4He→ 16 O+γ.
+6 2 8
+The energy changes in this reaction can be understood using a graph of binding energy per nucleon (Figure 10.7).
+Comparingthebindingenergypernucleonforoxygen,carbon,andhelium,theoxygennucleusismuchmoretightlybound
+thanthecarbonandheliumnuclei,indicatingthatthereactionproducesadropintheenergyofthesystem.Thisenergyis
+
+484 Chapter 10 | Nuclear Physics
+releasedintheformofgammaradiation.Fusionreactionsaresaidtobeexothermicwhentheamountofenergyreleased
+(known as theQ value) in each reaction is greater than zero ⎛Q>0⎞.
+⎝ ⎠
+An important example of nuclear fusion in nature is the production of energy in the Sun. In 1938, Hans Bethe proposed
+thattheSunproducesenergywhenhydrogennuclei(1H)fuseintostableheliumnuclei ⎛4He ⎞ intheSun’score(Figure
+⎝ ⎠
+10.22). This process, called theproton-proton chain, is summarized by three reactions:
+1H+1H→ 2H+ 0 e+v+Q,
+1 1 1 +1
+1H+2H→ 3 He+γ + Q,
+1 1 2
+3 He + 3 He→ 4He +1H+1H+Q.
+2 2 2 1 1
+Thus,astableheliumnucleusisformedfromthefusionofthenucleiofthehydrogenatom.Thesethreereactionscanbe
+summarized by
+41H→ 4He+ 2 0 e+2γ+2v+Q.
+1 2 +1
+ThenetQvalueisabout26MeV.ThereleaseofthisenergyproducesanoutwardthermalgaspressurethatpreventstheSun
+fromgravitationalcollapse.Astrophysicistsfindthathydrogenfusionsuppliestheenergystarsrequiretomaintainenergy
+balance over most of a star's life span.
+Figure 10.22 The Sun produces energy by fusing hydrogen into helium at the
+Sun’s core. The red arrows show outward pressure due to thermal gas, which tends
+to make the Sun expand. The blue arrows show inward pressure due to gravity,
+which tends to make the Sun contract. These two influences balance each other.
+Nucleosynthesis
+ScientistnowbelievethatmanyheavyelementsfoundonEarthandthroughouttheuniversewereoriginallysynthesizedby
+fusionwithinthehotcoresofthestars.Thisprocessisknownasnucleosynthesis.Forexample,inlighterstars,hydrogen
+combines to form helium through the proton-proton chain. Once the hydrogen fuel is exhausted, the star enters the next
+stage of its life and fuses helium. An example of a nuclear reaction chain that can occur is:
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 485
+4He+4He → 8 Be+γ,
+2 2 4
+8 Be+4He → 12C+γ,
+4 2 6
+12C+4He → 16 O+ γ.
+6 2 8
+Carbonandoxygennucleiproducedinsuchprocesseseventuallyreachthestar’ssurfacebyconvection.Neartheendofits
+lifetime,thestarlosesitsouterlayersintospace,thusenrichingtheinterstellarmediumwiththenucleiofheavierelements
+(Figure 10.23).
+Figure 10.23 A planetary nebula is produced at the end of the life of a star. The greenish color
+of this planetary nebula comes from oxygen ions. (credit: Hubble Heritage Team (STScI/AURA/
+NASA/ESA) )
+StarssimilarinmasstotheSundonotbecomehotenoughtofusenucleiasheavy(orheavier)thanoxygennuclei.However,
+in massive stars whose cores become much hotter ⎛T >6×10 8 K ⎞ , even more complex nuclei are produced. Some
+⎝ ⎠
+representative reactions are
+12C+12C→ 23 Na+1H,
+6 6 11 1
+12C → 12C→ 24Mg+ γ,
+6 6 12
+12C+ 16 O→ 28 Si+γ.
+6 8 14
+Nucleosynthesiscontinuesuntilthecoreisprimarilyiron-nickelmetal.Now,ironhasthepeculiarpropertythatanyfusion
+orfissionreactioninvolvingtheironnucleusisendothermic,meaningthatenergyisabsorbedratherthanproduced.Hence,
+nuclearenergycannotbegeneratedinaniron-richcore.Lackinganoutwardpressurefromfusionreactions,thestarbegins
+tocontractduetogravity.Thisprocessheatsthecoretoatemperatureontheorderof 5×10 9 K. Expandingshockwaves
+generated within the star due to the collapse cause the star to quickly explode. The luminosity of the star can increase
+temporarily to nearly that of an entire galaxy. During this event, the flood of energetic neutrons reacts with iron and the
+othernucleitoproduceelementsheavierthaniron.Theseelements,alongwithmuchofthestar,areejectedintospaceby
+theexplosion. Supernovae andtheformation ofplanetary nebulas together playamajor roleinthedispersal ofchemical
+elements into space.
+Eventually, much of the material lost by stars is pulled together through the gravitational force, and it condenses into a
+newgenerationofstarsandaccompanyingplanets.RecentimagesfromtheHubbleSpaceTelescopeprovideaglimpseof
+thismagnificentprocesstakingplaceintheconstellationSerpens(Figure10.24).Thenewgenerationofstarsbeginsthe

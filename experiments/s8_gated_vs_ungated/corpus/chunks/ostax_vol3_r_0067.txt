@@ -1,0 +1,280 @@
+# REAL PDF — openstax_vol3.pdf, pages 406-411
+############################################################
+
+398 Chapter 8 | Atomic Structure
+8. Compareorbitalangularmomentumwithspinangular 16. Discusstheprocessoftheabsorptionoflightbymatter
+momentum of an electron in the hydrogen atom. in terms of the atomic structure of the absorbing medium.
+9. Listallthepossiblevaluesofsand m foranelectron. 17. NGC1763 is an emission nebula in the Large
+s
+Magellanic Cloud just outside our Milky Way Galaxy.
+Are there particles for which these values are different?
+Ultraviolet light from hot stars ionize the hydrogen atoms
+inthenebula.Asprotonsandelectronsrecombine,lightin
+→ →
+10. Are the angular momentum vectors L and S the visible range is emitted. Compare the energies of the
+necessarily aligned? photons involved in these two transitions.
+11. What is spin-orbit coupling? 18. WhyareX-raysemittedonlyforelectrontransitionsto
+innershells?Whattypeofphotonisemittedfortransitions
+between outer shells?
+8.4The Exclusion Principle and the Periodic
+19. Howdotheallowedorbitsforelectronsinatomsdiffer
+Table
+from the allowed orbits for planets around the sun?
+12. What is Pauli’s exclusion principle? Explain the
+importanceofthisprinciplefortheunderstandingofatomic
+structure and molecular bonding. 8.6Lasers
+20. Distinguish between coherent and monochromatic
+13. Compare the electron configurations of the elements
+light.
+in the same column of the periodic table.
+21. Whyisametastablestatenecessaryfortheproduction
+14. Compare the electron configurations of the elements
+of laser light?
+that belong in the same row of the periodic table of
+elements.
+22. Howdoeslightfromanincandescentlightbulbdiffer
+from laser light?
+8.5Atomic Spectra and X-rays
+23. How is a Blu-Ray player able to read more
+15. Atomicandmolecularspectraarediscrete.Whatdoes
+information that a CD player?
+discrete mean, and how are discrete spectra related to the
+quantization of energy and electron orbits in atoms and
+24. What are the similarities and differences between a
+molecules?
+CD player and a Blu-Ray player?
+PROBLEMS
+30. (a) How many angles can L make with the z-axis for
+8.1The Hydrogen Atom an l=2 electron? (b) Calculate the value of the smallest
+25. The wave function is evaluated at rectangular angle.
+coordinates(x, y, z) = (2,1,1)inarbitraryunits.What
+are the spherical coordinates of this position? 31. The force on an electron is “negative the gradient
+of the potential energy function.” Use this knowledge and
+Equation 8.1 to show that the force on the electron in a
+26. If an atom has an electron in the n=5 state with
+hydrogen atom is given by Coulomb’s force law.
+m=3, what are the possible values ofl?
+32. Whatisthetotalnumberofstateswithorbitalangular
+27. Whatarethepossiblevaluesofmforanelectroninthe momentum l=0? (Ignore electron spin.)
+n=4 state?
+33. The wave function is evaluated at spherical
+28. What,ifany,constraintsdoesavalueof m=1 place coordinates (r, θ, ϕ)=⎛ 3, 45°, 45°⎞, where the value
+⎝ ⎠
+on the other quantum numbers for an electron in an atom?
+oftheradialcoordinateisgiveninarbitraryunits.Whatare
+the rectangular coordinates of this position?
+29. Whatarethepossiblevaluesofmforanelectroninthe
+n=4 state?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 399
+34. Coulomb’sforcelawstatesthattheforcebetweentwo 45. For a 3d electron in an external magnetic field of
+charged particles is: 2.50×10 −3 T, find (a) the current associated with the
+Qq orbital angular momentum, and (b) the maximum torque.
+F =k . Use this expression to determine the potential
+r2
+energy function. 46. An electron in a hydrogen atom is in the n=5,
+l=4 state.Findthesmallestanglethemagneticmoment
+35. Writeanexpressionforthetotalnumberofstateswith makes with the z-axis. (Express your answer in terms of
+orbital angular momentuml. µ )
+B.
+36. Considerhydrogeninthegroundstate, ψ .(a)Use
+100 47. Findtheminimumtorquemagnitude | →τ |thatacts
+thederivativetodeterminetheradialpositionforwhichthe
+on the orbital magnetic dipole of a 3p electron in an
+probability density,P(r), is a maximum.
+external magnetic field of 2.50×10 −3 T.
+(b)Usetheintegralconcepttodeterminetheaverageradial
+position. (This is called the expectation value of the
+electron’sradialposition.)Expressyouranswersintoterms 48. Anelectroninahydrogenatomisin3pstate.Findthe
+oftheBohrradius, a .Hint:Theexpectationvalueisthe smallestanglethemagneticmomentmakeswiththez-axis.
+o
+(Express your answer in terms of µ .)
+just average value. (c) Why are these values different? B
+37. What is the probability that the 1s electron of a 49. Show that U =− → µ · → B .
+hydrogen atom is found outside the Bohr radius?
+(Hint: An infinitesimal amount of work is done to align
+38. Howmanypolaranglesarepossibleforanelectronin the magnetic moment with the external field. This work
+the l=5 state? rotatesthemagneticmomentvectorthroughanangle −dθ
+(toward the positive z-direction), where dθ is a positive
+39. What is the maximum number of orbital angular angle change.)
+momentumelectronstatesinthe n=2 shellofahydrogen
+atom? (Ignore electron spin.)
+8.3Electron Spin
+40. What is the maximum number of orbital angular 50. What is the magnitude of the spin momentum of an
+momentumelectronstatesinthe n=3 shellofahydrogen electron? (Express you answer in terms of ℏ.)
+atom? (Ignore electron spin.)
+51. What are the possible polar orientations of the spin
+momentum vector for an electron?
+8.2Orbital Magnetic Dipole Moment of the
+Electron 52. For n=1, write all the possible sets of quantum
+41. Find the magnitude of the orbital magnetic dipole numbers (n,l,m, m s ).
+moment of the electron in in the 3p state. (Express your
+answer in terms of µ .)
+B 53. A hydrogen atom is placed in an external uniform
+magnetic field (B=200T). Calculate the wavelength of
+42. A current of I =2A flows through a square-shaped lightproducedinatransitionfromaspinuptospindown
+wirewith2-cmsidelengths.Whatisthemagneticmoment state.
+of the wire?
+54. If the magnetic field in the preceding problem is
+43. Estimate the ratio of the electron magnetic moment quadrupled, what happens to the wavelength of light
+tothemuonmagneticmomentforthesamestateoforbital produced in a transition from a spin up to spin down state?
+angular momentum. (Hint: m µ=105.7MeV/c2)
+55. If the magnetic moment in the preceding problem is
+doubled, what happens to the frequency of light produced
+44. Find the magnitude of the orbital magnetic dipole in a transition from a spin-up to spin-down state?
+moment of the electron in in the 4d state. (Express your
+answer in terms of µ
+B
+.)
+56. For n=2, write all the possible sets of quantum
+numbers (n,l,m, m ).
+s
+
+400 Chapter 8 | Atomic Structure
+69. Theredlightemittedbyarubylaserhasawavelength
+8.4The Exclusion Principle and the Periodic of694.3nm.Whatisthedifferenceinenergybetweenthe
+initialstateandfinalstatecorrespondingtotheemissionof
+Table
+the light?
+57. (a) How many electrons can be in the n=4 shell?
+(b)Whatareitssubshells,andhowmanyelectronscanbe 70. The yellow light from a sodium-vapor street lamp is
+in each? producedbyatransitionofsodiumatomsfroma3pstateto
+a3sstate.Ifthedifferenceinenergiesofthosetwostatesis
+2.10 eV, what is the wavelength of the yellow light?
+58. (a)Whatistheminimumvalueoflforasubshellthat
+contains 11 electrons?
+71. Estimate the wavelength of the K X-ray from
+(b) If this subshell is in the n=5 shell, what is the α
+calcium.
+spectroscopic notation for this atom?
+72. Estimatethefrequencyofthe K X-rayfromcesium.
+59. Unreasonable result. Which of the following α
+spectroscopicnotationsarenotallowed?(a) 5s1 (b) 1d1
+73. X-raysareproducedbystrikingatargetwithabeam
+(c) 4s3 (d) 3p7 (e) 5g15.Statewhichruleisviolatedfor
+of electrons. Prior to striking the target, the electrons are
+each notation that is not allowed. accelerated by an electric field through a potential energy
+difference:
+60. Write the electron configuration for potassium.
+ΔU =−eΔV,
+61. Write the electron configuration for iron. whereeisthechargeofanelectronand ΔV isthevoltage
+difference. If ΔV =15,000 volts, what is the minimum
+62. The valence electron of potassium is excited to a 5d wavelength of the emitted radiation?
+state. (a) What is the magnitude of the electron’s orbital
+angular momentum? (b) How many states are possible
+74. For the preceding problem, what happens to the
+along a chosen direction?
+minimum wavelength if the voltage across the X-ray tube
+is doubled?
+63. (a) If one subshell of an atom has nine electrons
+in it, what is the minimum value of l? (b) What is the
+75. Suppose the experiment in the preceding problem is
+spectroscopicnotationforthisatom,ifthissubshellispart
+conducted with muons. What happens to the minimum
+of the n=3 shell? wavelength?
+64. Write the electron configuration for magnesium. 76. AnX-raytubeacceleratesanelectronwithanapplied
+voltage of 50 kV toward a metal target. (a) What is the
+65. Write the electron configuration for carbon. shortest-wavelength X-ray radiation generated at the
+target? (b) Calculate the photon energy in eV. (c) Explain
+the relationship of the photon energy to the applied
+66. Themagnitudesoftheresultantspinsoftheelectrons
+voltage.
+of the elements B through Ne when in the ground state
+are: 3ℏ/2, 2ℏ, 15ℏ/2, 2ℏ, 3ℏ/2, and 0,
+77. A color television tube generates some X-rays when
+respectively. Argue that these spins are consistent with
+its electron beam strikes the screen. What is the shortest
+Hund’s rule.
+wavelength of these X-rays, if a 30.0-kV potential is used
+to accelerate the electrons? (Note that TVs have shielding
+to prevent these X-rays from exposing viewers.)
+8.5Atomic Spectra and X-rays
+67. Whatistheminimumfrequencyofaphotonrequired 78. An X-ray tube has an applied voltage of 100 kV. (a)
+to ionize: (a) a He + ion in its ground state? (b) A Li 2+ What is the most energetic X-ray photon it can produce?
+Express youranswer inelectron volts andjoules. (b)Find
+ion in its first excited state?
+the wavelength of such an X-ray.
+68. The ion Li 2+ makes an atomic transition from an 79. The maximum characteristic X-ray photon energy
+n=4 state to an n=2 state. (a) What is the energy of comes from the capture of a free electron into a K shell
+the photon emitted during the transition? (b) What is the vacancy. What is this photon energy in keV for tungsten,
+wavelength of the photon? assuming that the free electron has no initial kinetic
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 401
+energy? radiation with a wavelength of 10.6µm. In 1.00 ms, this
+laser raised the temperature of 1.00cm 3 of flesh to
+80. Whataretheapproximateenergiesofthe K and K
+α β 100°C and evaporated it. (a) How many photons were
+X-rays for copper? required?Youmayassumethatfleshhasthesameheatof
+vaporization as water. (b) What was the minimum power
+81. Compare the X-ray photon wavelengths for copper output during the flash?
+and gold.
+84. An excimer laser used for vision correction emits
+82. Theapproximateenergiesofthe K and K X-rays UV radiation with a wavelength of 193 nm. (a) Calculate
+α β
+the photon energy in eV. (b) These photons are used to
+for copper are E Kα =8.00keV and E Kβ =9.48keV, evaporate corneal tissue, which is very similar to water in
+its properties. Calculate the amount of energy needed per
+respectively. Determine the ratio of X-ray frequencies of
+molecule of water to make the phase change from liquid
+gold to copper, then use this value to estimate the
+togas.Thatis,dividetheheatofvaporizationinkJ/kgby
+corresponding energies of K and K X-rays for gold.
+α β the number of water molecules in a kilogram. (c) Convert
+this to eV and compare to the photon energy. Discuss the
+implications.
+8.6Lasers
+83. Acarbondioxidelaserusedinsurgeryemitsinfrared
+ADDITIONAL PROBLEMS
+85. Forahydrogenatominanexcitedstatewithprincipal magnetic field, and a photon is emitted in the transition
+quantum number n, show that the smallest angle that the from a spin-up to spin-down state. The wavelength of the
+orbitalangularmomentumvectorcanmakewithrespectto photon is 168µm. What is the strength of the magnetic
+thez-axis is θ=cos−1 ⎛ ⎝ n− n 1⎞ ⎠ . field?
+93. Showthatthemaximumnumberofelectronstatesin
+86. What is the probability that the 1s electron of a thenth shell of an atom is 2n2.
+hydrogen atom is found between r =0 and r =∞?
+94. The valence electron of chlorine is excited to a 3p
+87. Sketchthepotentialenergyfunctionofanelectronin
+state. (a) What is the magnitude of the electron’s orbital
+a hydrogen atom. (a) What is the value of this function at
+angular momentum? (b) What are possible values for the
+r =0?inthelimitthat r =∞?(b)Whatisunreasonable
+z-component of angular measurement?
+or inconsistent with the former result?
+95. Which of the following notations are allowed (that
+88. Find the value of l, the orbital angular momentum is, which violate none of the rules regarding values of
+quantum number, for the Moon around Earth. quantumnumbers)?(a) 1s1; (b) 1d3 ; (c) 4s2; (d) 3p7 ;
+(e) 6h20
+89. Show that the maximum number of orbital angular
+momentum electron states in the nth shell of an atom is
+n2.(Ignoreelectronspin.)(Hint:Makeatableofthetotal 96. The ion Be 3+ makes an atomic transition from an
+number oforbital angular momentum states foreach shell n=3 state to an n=2 state. (a) What is the energy of
+and find the pattern.) the photon emitted during the transition? (b) What is the
+wavelength of the photon?
+90. What is the magnitude of an electron magnetic
+moment? 97. The maximum characteristic X-ray photon energy
+comes from the capture of a free electron into a K shell
+91. Whatisthemaximumnumberofelectronstatesinthe vacancy. What is this photon frequency for tungsten,
+n=5 shell? assuming that the free electron has no initial kinetic
+energy?
+92. Aground-statehydrogenatomisplacedinauniform
+98. Derive an expression for the ratio of X-ray photon
+
+402 Chapter 8 | Atomic Structure
+frequency for two elements with atomic numbers Z and 101. A student in a physics laboratory observes a
+1
+hydrogen spectrum with a diffraction grating for the
+Z .
+2 purpose of measuring the wavelengths of the emitted
+radiation. In the spectrum, she observes a yellow line and
+99. Compare the X-ray photon wavelengths for copper finds its wavelength to be 589 nm. (a) Assuming that this
+and silver. is part of the Balmer series, determine n, the principal
+i
+quantum number of the initial state. (b) What is
+100. (a)WhatvoltagemustbeappliedtoanX-raytubeto unreasonableaboutthisresult?(c)Whichassumptionsare
+obtain 0.0100-fm-wavelength X-rays for use in exploring unreasonable or inconsistent?
+the details of nuclei? (b) What is unreasonable about this
+result? (c) Which assumptions are unreasonable or
+inconsistent?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

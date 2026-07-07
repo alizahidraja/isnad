@@ -1,0 +1,214 @@
+# REAL PDF — openstax_vol3.pdf, pages 247-250
+############################################################
+
+Chapter 5 | Relativity 239
+CONCEPTUAL QUESTIONS
+11. What happens to the relativistic Doppler effect when
+5.1Invariance of Physical Laws relative velocity is zero? Is this the expected result?
+1. Which of Einstein’s postulates of special relativity
+includes a concept that does not fit with the ideas of 12. Is the relativistic Doppler effect consistent with the
+classical physics? Explain. classicalDopplereffectintherespectthat λ islargerfor
+obs
+motion away?
+2. Is Earth an inertial frame of reference? Is the sun?
+Justify your response.
+13. All galaxies farther away than about 50×10 6 ly
+exhibitaredshiftintheiremittedlightthatisproportional
+3. Whenyouareflyinginacommercialjet,itmayappear
+to distance, with those farther and farther away having
+to you that the airplane is stationary and Earth is moving
+progressively greater red shifts. What does this imply,
+beneath you. Is this point of view valid? Discuss briefly.
+assuming that the only source of red shift is relative
+motion?
+5.3Time Dilation
+4. (a)Doesmotionaffecttherateofaclockasmeasured
+5.8Relativistic Momentum
+byanobservermovingwithit?(b)Doesmotionaffecthow
+14. How does modern relativity modify the law of
+an observer moving relative to a clock measures its rate?
+conservation of momentum?
+5. To whom does the elapsed time for a process seem
+15. Is it possible for an external force to be acting on
+to be longer, an observer moving relative to the process
+a system and relativistic momentum to be conserved?
+or an observer moving with the process? Which observer
+Explain.
+measures the interval of proper time?
+6. (a) How could you travel far into the future of Earth
+5.9Relativistic Energy
+without aging significantly? (b) Could this method also
+allow you to travel into the past? 16. How are the classical laws of conservation of energy
+and conservation of mass modified by modern relativity?
+5.4Length Contraction 17. What happens to the mass of water in a pot when it
+cools,assumingnomoleculesescapeorareadded?Isthis
+7. To whom does an object seem greater in length, an
+observable in practice? Explain.
+observer moving with the object or an observer moving
+relative to the object? Which observer measures the
+object’s proper length? 18. Consider a thought experiment. You place an
+expanded balloon of air on weighing scales outside in the
+early morning. The balloon stays on the scales and you
+8. Relativistic effects such as time dilation and length
+are able to measure changes in its mass. Does the mass
+contractionarepresentforcarsandairplanes.Whydothese
+of the balloon change as the day progresses? Discuss the
+effects seem strange to us?
+difficulties in carrying out this experiment.
+9. Suppose an astronaut is moving relative to Earth at
+19. Themassofthefuelinanuclearreactordecreasesby
+a significant fraction of the speed of light. (a) Does he
+anobservableamountasitputsoutenergy.Isthesametrue
+observe the rate of his clocks to have slowed? (b) What
+forthecoalandoxygencombinedinaconventionalpower
+change in the rate of earthbound clocks does he see? (c)
+plant? If so, is this observable in practice for the coal and
+Does his ship seem to him to shorten? (d)What about the
+oxygen? Explain.
+distance between two stars that lie in the direction of his
+motion?(e)Doheandanearthboundobserveragreeonhis
+velocity relative to Earth? 20. We know that the velocity of an object with mass
+has an upper limit of c. Is there an upper limit on its
+momentum? Its energy? Explain.
+5.7Doppler Effect for Light
+21. Giventhefactthatlighttravelsatc,canithavemass?
+10. Explainthemeaningoftheterms“redshift”and“blue
+Explain.
+shift” as they relate to the relativistic Doppler effect.
+
+240 Chapter 5 | Relativity
+22. IfyouuseanEarth-basedtelescope toprojectalaser Does this violate modern relativity? (Note that light is
+beam onto the moon, you can move the spot across the being sent from the Earth to the moon, not across the
+moon’ssurfaceatavelocitygreaterthanthespeedoflight. surface of the moon.)
+PROBLEMS
+accordingtotheearthboundobserver?(b)Howfardoesit
+5.3Time Dilation travelasviewedbyanobservermovingwithit?Baseyour
+calculationonitsvelocityrelativetotheEarthandthetime
+23. (a) What is γ if v=0.250c? (b) If v=0.500c?
+itlives(propertime).(c)Verifythatthesetwodistancesare
+related through length contraction γ =3.20.
+24. (a) What is γ if v=0.100c? (b) If v=0.900c?
+34. (a)HowlongwouldthemuoninExample 5.3have
+25. Particlescalled π-mesonsareproducedbyaccelerator lived as observed on Earth if its velocity was 0.0500c?
+beams.Iftheseparticlestravelat 2.70×10 8 m/s andlive (b) How far would it have traveled as observed on Earth?
+(c) What distance is this in the muon’s frame?
+2.60×10 −8 s when at rest relative to an observer, how
+long do they live as viewed in the laboratory?
+35. Unreasonable Results A spaceship is heading
+directlytowardEarthatavelocityof0.800c.Theastronaut
+26. Supposeaparticlecalledakaoniscreatedbycosmic onboardclaimsthathecansendacanistertowardtheEarth
+radiation striking the atmosphere. It moves by you at at 1.20c relative to Earth. (a) Calculate the velocity the
+0.980c, anditlives 1.24×10 −8 s whenatrestrelative canister must have relative to the spaceship. (b) What is
+unreasonableaboutthisresult?(c)Whichassumptionsare
+to an observer. How long does it live as you observe it?
+unreasonable or inconsistent?
+27. A neutral π-meson is a particle that can be created
+by accelerator beams. If one such particle lives
+5.5The Lorentz Transformation
+1.40×10 −16 s as measured in the laboratory, and
+36. Describethefollowingphysicaloccurrencesasevents,
+0.840×10 −16 s whenatrestrelativetoanobserver,what thatis,intheform(x,y,z,t):(a)Apostmanringsadoorbell
+is its velocity relative to the laboratory? of a house precisely at noon. (b) At the same time as the
+doorbellisrung,asliceofbreadpopsoutofatoasterthat
+islocated10mfromthedoorintheeastdirectionfromthe
+28. A neutron lives 900 s when at rest relative to an
+door.(c)Tensecondslater,anairplanearrivesattheairport,
+observer. How fast is the neutron moving relative to an
+whichis10kmfromthedoorintheeastdirectionand2km
+observer who measures its life span to be 2065 s?
+to the south.
+29. If relativistic effects are to be less than 1%, then
+γ must be less than 1.01. At what relative velocity is
+37. Describe what happens to the angle α=tan(v/c),
+and therefore to the transformed axes in Figure 5.17, as
+γ =1.01?
+therelativevelocityvoftheSand S′ framesofreference
+approachesc.
+30. If relativistic effects are to be less than 3%, then
+γ must be less than 1.03. At what relative velocity is
+38. Describe the shape of the world line on a space-
+γ =1.03? time diagram of (a) an object that remains at rest at a
+specificpositionalongthex-axis;(b)anobjectthatmoves
+at constant velocity u in the x-direction; (c) an object that
+begins at rest and accelerates at a constant rate of in the
+5.4Length Contraction
+positivex-direction.
+31. Aspaceship,200mlongasseenonboard,movesby
+the Earth at 0.970c. What is its length as measured by an
+39. Amanstandingstillatatrainstationwatchestwoboys
+earthbound observer?
+throwingabaseballinamovingtrain.Supposethetrainis
+movingeastwithaconstantspeedof20m/sandoneofthe
+32. How fast would a 6.0 m-long sports car have to be boysthrowstheballwithaspeedof5m/swithrespectto
+going past you in order for it to appear only 5.5 m long? himself toward the other boy, who is 5 m west from him.
+Whatisthevelocityoftheballasobservedbythemanon
+33. (a) How far does the muon in Example 5.3 travel the station?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 241
+40. When observed from the sun at a particular instant, 47. Twoplanetsareonacollisioncourse,headingdirectly
+EarthandMarsappeartomoveinoppositedirectionswith toward each other at 0.250c. A spaceship sent from one
+speeds108,000km/hand86,871km/h,respectively.What planet approaches the second at 0.750c as seen by the
+is the speed of Mars at this instant when observed from second planet. What is the velocity of the ship relative to
+Earth? the first planet?
+41. A man is running on a straight road perpendicular to 48. When a missile is shot from one spaceship toward
+a train track and away from the track at a speed of 12 m/ another, it leaves the first at 0.950c and approaches the
+s.Thetrainismovingwithaspeedof30m/swithrespect other at 0.750c. What is the relative velocity of the two
+tothetrack.Whatisthespeedofthemanwithrespecttoa ships?
+passenger sitting at rest in the train?
+49. Whatistherelativevelocityoftwospaceshipsifone
+42. A man is running on a straight road that makes 30° firesamissileattheotherat0.750candtheotherobserves
+withthetraintrack.Themanisrunninginthedirectionon it to approach at 0.950c?
+the road that is away from the track at a speed of 12 m/s.
+Thetrainismovingwithaspeedof30m/swithrespectto 50. Prove that for any relative velocity v between two
+the track. What is the speed of the man with respect to a observers, a beam of light sent from one to the other will
+passenger sitting at rest in the train? approach at speed c (provided that v is less than c, of
+course).
+43. In a frame at rest with respect to the billiard table, a
+billiardballofmassmmovingwithspeedvstrikesanother 51. Show that for any relative velocity v between two
+billiard ball of mass m at rest. The first ball comes to rest observers, a beam of light projected by one directly away
+afterthecollisionwhilethesecondballtakesoffwithspeed from the other will move away at the speed of light
+v in the original direction of the motion of the first ball. (provided thatvis less thanc, of course).
+Thisshowsthatmomentumisconservedinthisframe.(a)
+Now,describethesamecollisionfromtheperspectiveofa
+frame that is moving with speed v in the direction of the 5.7Doppler Effect for Light
+motionofthefirstball.(b)Isthemomentumconservedin
+52. Ahighwaypatrolofficerusesadevicethatmeasures
+this frame?
+the speed of vehicles by bouncing radar off them and
+measuring the Doppler shift. The outgoing radar has a
+44. In a frame at rest with respect to the billiard table,
+frequency of 100 GHz and the returning echo has a
+twobilliardballsofsamemassmaremovingtowardeach
+frequency 15.0 kHz higher. What is the velocity of the
+other with the same speed v. After the collision, the two
+vehicle? Note that there are two Doppler shifts in echoes.
+balls come to rest. (a) Show that momentum is conserved
+Be certain not to round off until the end of the problem,
+in this frame. (b) Now, describe the same collision from
+because the effect is small.
+the perspective of a frame that is moving with speed v
+in the direction of the motion of the first ball. (c) Is the
+momentum conserved in this frame?
+5.8Relativistic Momentum
+53. Find the momentum of a helium nucleus having a
+45. In a frame S, two events are observed: event 1: a
+pion is created at rest at the origin and event 2: the pion mass of 6.68×10 −27 kg that is moving at 0.200c.
+disintegrates after time τ. Another observer in a frame
+S′ is moving in the positive direction along the positive 54. What is the momentum of an electron traveling at
+x-axis with a constant speed v and observes the same two 0.980c?
+eventsinhisframe.Theoriginsofthetwoframescoincide
+at t=t′=0. (a) Find the positions and timings of these
+55. (a)Findthemomentumofa 1.00×10 9 -kg asteroid
+two events in the frame S′ (a) according to the Galilean
+heading towards Earth at 30.0 km/s. (b) Find the ratio of
+transformation, and (b) according to the Lorentz
+thismomentumtotheclassicalmomentum.(Hint:Usethe
+transformation.
+approximation that γ =1+(1/2)v2/c2 at low velocities.)
+5.6Relativistic Velocity Transformation
+56. (a) What is the momentum of a 2000-kg satellite
+46. If two spaceships are heading directly toward each orbitingat4.00km/s?(b)Findtheratioofthismomentum
+otherat0.800c,atwhatspeedmustacanisterbeshotfrom to the classical momentum. (Hint: Use the approximation
+thefirstshiptoapproachtheotherat0.999casseenbythe that γ =1+(1/2)v2/c2 at low velocities.)
+second ship?

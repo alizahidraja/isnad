@@ -1,0 +1,257 @@
+# REAL PDF — openstax_vol2.pdf, pages 200-207
+############################################################
+
+190 Chapter 5 | Electric Charges and Fields
+Figure 5.10 Induced polarization. A positively charged glass
+rod is brought near the left side of the conducting sphere,
+attracting negative charge and leaving the other side of the
+sphere positively charged. Although the sphere is overall still
+electrically neutral, it now has a charge distribution, so it can
+exert an electric force on other nearby charges. Furthermore, the
+distribution is such that it will be attracted to the glass rod.
+Theresultistheformationofwhatiscalledanelectricdipole,fromaLatinphrasemeaning“twoends.”Thepresenceof
+electricchargesontheinsulator—andtheelectricforcestheyapplytotheconductionelectrons—creates,or“induces,”the
+dipole in the conductor.
+Neutral objects can be attracted to any charged object. The pieces of straw attracted to polished amber are neutral, for
+example.Ifyourunaplasticcombthroughyourhair,thechargedcombcanpickupneutralpiecesofpaper.Figure5.11
+shows how the polarization of atoms and molecules in neutral objects results in their attraction to a charged object.
+Figure 5.11 Both positive and negative objects attract a neutral object by polarizing its molecules. (a) A positive object
+brought near a neutral insulator polarizes its molecules. There is a slight shift in the distribution of the electrons orbiting the
+molecule, with unlike charges being brought nearer and like charges moved away. Since the electrostatic force decreases with
+distance, there is a net attraction. (b) A negative object produces the opposite polarization, but again attracts the neutral object.
+(c) The same effect occurs for a conductor; since the unlike charges are closer, there is a net attraction.
+Whenachargedrodisbroughtnearaneutralsubstance,aninsulatorinthiscase,thedistributionofchargeinatomsand
+moleculesisshiftedslightly.Oppositechargeisattractednearertheexternalchargedrod,whilelikechargeisrepelled.Since
+theelectrostaticforcedecreaseswithdistance,therepulsionoflikechargesisweakerthantheattractionofunlikecharges,
+and so there is a net attraction. Thus, a positively charged glass rod attracts neutral pieces of paper, as will a negatively
+chargedrubberrod.Somemolecules,likewater,arepolarmolecules.Polarmoleculeshaveanaturalorinherentseparation
+of charge, although they are neutral overall. Polar molecules are particularly affected by other charged objects and show
+greater polarization effects than molecules with naturally uniform charge distributions.
+When the two ends of a dipole can be separated, this method of charging by induction may be used to create charged
+objects without transferring charge. In Figure 5.12, we see two neutral metal spheres in contact with one another but
+insulatedfromtherestoftheworld.Apositivelychargedrodisbroughtnearoneofthem,attractingnegativechargetothat
+side, leaving the other sphere positively charged.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 191
+Figure 5.12 Charging by induction. (a) Two uncharged or neutral metal spheres are in contact with each
+other but insulated from the rest of the world. (b) A positively charged glass rod is brought near the sphere
+on the left, attracting negative charge and leaving the other sphere positively charged. (c) The spheres are
+separated before the rod is removed, thus separating negative and positive charges. (d) The spheres retain
+net charges after the inducing rod is removed—without ever having been touched by a charged object.
+AnothermethodofchargingbyinductionisshowninFigure5.13.Theneutralmetalsphereispolarizedwhenacharged
+rodisbroughtnearit.Thesphereisthengrounded,meaningthataconductingwireisrunfromthespheretotheground.
+SinceEarthislargeandmostofthegroundisagoodconductor,itcansupplyoracceptexcesschargeeasily.Inthiscase,
+electrons are attracted to the sphere through a wire called the ground wire, because it supplies a conducting path to the
+ground. The ground connection is broken before the charged rod is removed, leaving the sphere with an excess charge
+oppositetothatoftherod.Again,anoppositechargeisachieved whenchargingbyinduction,andthechargedrodloses
+none of its excess charge.
+
+192 Chapter 5 | Electric Charges and Fields
+Figure 5.13 Charging by induction using a ground connection. (a) A positively charged rod is brought near a neutral metal
+sphere, polarizing it. (b) The sphere is grounded, allowing electrons to be attracted from Earth’s ample supply. (c) The ground
+connection is broken. (d) The positive rod is removed, leaving the sphere with an induced negative charge.
+5.3 | Coulomb's Law
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the electric force, both qualitatively and quantitatively
+• Calculate the force that charges exert on each other
+• Determine the direction of the electric force for different source charges
+• Correctly describe and apply the superposition principle for multiple source charges
+Experimentswithelectricchargeshaveshownthatiftwoobjectseachhaveelectriccharge,thentheyexertanelectricforce
+oneachother.Themagnitudeoftheforceislinearlyproportionaltothenetchargeoneachobjectandinverselyproportional
+to the square of the distance between them. (Interestingly, the force does not depend on the mass of the objects.) The
+directionoftheforcevectorisalongtheimaginarylinejoiningthetwoobjectsandisdictatedbythesignsofthecharges
+involved.
+Let
+• q , q = the net electric charges of the two objects;
+1 2
+• → r = the vector displacement from q to q .
+12 1 2
+→
+Theelectricforce F ononeofthechargesisproportionaltothemagnitudeofitsownchargeandthemagnitudeofthe
+other charge, and is inversely proportional to the square of the distance between them:
+q q
+F ∝ 1 2.
+r2
+12
+Thisproportionalitybecomesanequalitywiththeintroductionofaproportionalityconstant.Forreasonsthatwillbecome
+clearinalaterchapter,theproportionalityconstantthatweuseisactuallyacollectionofconstants.(Wediscussthisconstant
+shortly.)
+Coulomb’s Law
+The magnitude of the electric force (orCoulomb force) between two electrically charged particles is equal to
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 193
+→ F (r)= 1 |q 1 q 2 | ‸ r (5.1)
+12 4πε
+0
+r2 12
+12
+Weuseabsolutevaluesignsaroundtheproduct q q becauseoneofthechargesmaybenegative,butthemagnitude
+1 2
+oftheforceisalwayspositive.Thedirectionoftheforcevectordependsonthesignofthecharges.Ifthechargesare
+thesame,theforcepointsawayfromtheothercharge.Ifthechargeshavedifferentsigns,theforcepointstowardthe
+other charge(Figure 5.14).
+→
+Figure 5.14 The electrostatic force F between point charges q and q
+1 2
+separated by a distanceris given by Coulomb’s law. Note that Newton’s third law
+(every force exerted creates an equal and opposite force) applies as usual—the force on
+q is equal in magnitude and opposite in direction to the force it exerts on q . (a)
+1 2
+Like charges; (b) unlike charges.
+It is important to note that the electric force is not constant; it is a function of the separation distance between the two
+charges.Ifeitherthetestchargeorthesourcecharge(orboth)move,then → r changes,andthereforesodoestheforce.An
+immediateconsequenceofthisisthatdirectapplicationofNewton’slawswiththisforcecanbemathematicallydifficult,
+depending on the specific problem at hand. It can (usually) be done, but we almost always look for easier methods of
+calculating whatever physical quantity we are interested in. (Conservation of energy is the most common choice.)
+Finally, the new constant ε in Coulomb’s law is called the permittivity of free space, or (better) the permittivity of
+0
+vacuum.Ithasaveryimportantphysicalmeaningthatwewilldiscussinalaterchapter;fornow,itissimplyanempirical
+proportionality constant. Its numerical value (to three significant figures) turns out to be
+ε =8.85×10−12
+C2
+.
+0 N·m2
+TheseunitsarerequiredtogivetheforceinCoulomb’slawthecorrectunitsofnewtons.NotethatinCoulomb’slaw,the
+permittivityofvacuumisonlypartoftheproportionalityconstant.Forconvenience,weoftendefineaCoulomb’sconstant:
+k e=
+4π
+1
+ε 0
+=8.99×10 9 N
+C
+·m
+2
+2 .
+Example 5.1
+The Force on the Electron in Hydrogen
+A hydrogen atom consists of a single proton and a single electron. The proton has a charge of +e and the
+electron has −e. In the “ground state” of the atom, the electron orbits the proton at most probable distance of
+5.29×10−11 m (Figure 5.15). Calculate the electric force on the electron due to the proton.
+
+194 Chapter 5 | Electric Charges and Fields
+Figure 5.15 A schematic depiction of a hydrogen atom,
+showing the force on the electron. This depiction is only to
+enable us to calculate the force; the hydrogen atom does not
+really look like this. RecallFigure 5.7.
+Strategy
+For the purposes of this example, we are treating the electron and proton as two point particles, each with an
+electric charge,andwearetoldthedistancebetweenthem;weareaskedtocalculate theforceontheelectron.
+We thus use Coulomb’s law.
+Solution
+Our two charges and the distance between them are,
+q = +e=+1.602×10 −19 C
+1
+q = −e=−1.602×10 −19 C
+2
+r = 5.29×10−11 m.
+The magnitude of the force on the electron is
+2
+⎛ −19 ⎞
+F = 1 |e| 2 = 1 ⎝ 1.602×10 C ⎠ =8.25×10 −8 N.
+4πϵ 0 r2 4π ⎛ ⎝ 8.85×10−12 C 2 2 ⎞ ⎠ ⎛ ⎝ 5.29×10−11 m ⎞ ⎠ 2
+N·m
+Asforthedirection,sincethechargesonthetwoparticlesareopposite,theforceisattractive;theforceonthe
+electronpointsradiallydirectlytowardtheproton,everywhereintheelectron’sorbit.Theforceisthusexpressed
+as
+→ ⎛ −8 ⎞^
+F = 8.25×10 N r.
+⎝ ⎠
+Significance
+This is a three-dimensional system, so the electron (and therefore the force on it) can be anywhere in an
+imaginary spherical shell around the proton. In this “classical” model of the hydrogen atom, the electrostatic
+forceontheelectronpointsintheinwardcentripetaldirection,thusmaintainingtheelectron’sorbit.Butnotethat
+the quantum mechanical model of hydrogen (discussed in Quantum Mechanics (http://cnx.org/content/
+m58573/latest/)) is utterly different.
+5.1 Check Your UnderstandingWhat would be different if the electron also had a positive charge?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 195
+Multiple Source Charges
+Theanalysisthatwehavedonefortwoparticlescanbeextendedtoanarbitrarynumberofparticles;wesimplyrepeatthe
+analysis, twochargesat atime. Specifically,weaskthe question: Given Ncharges(which werefer toassource charge),
+whatisthenetelectricforcethattheyexertonsomeotherpointcharge(whichwecallthetestcharge)?Notethatweuse
+these terms because we can think of the test charge being used to test the strength of the force provided by the source
+charges.
+Like all forces that we have seen up to now, the net electric force on our test charge is simply the vector sum of each
+individualelectricforceexertedonitbyeachoftheindividualtestcharges.Thus,wecancalculatethenetforceonthetest
+chargeQbycalculatingtheforceonitfromeachsourcecharge,takenoneatatime,andthenaddingallthoseforcestogether
+(asvectors).Thisabilitytosimplyaddupindividualforcesinthiswayisreferredtoastheprincipleofsuperposition,and
+is one of the more important features of the electric force. In mathematical form, this becomes
+N (5.2)
+→ F (r)=
+4π
+1
+ε 0
+Q
+i
+∑
+=1 r
+q
+i 2
+i^ ri.
+Inthisexpression,Qrepresentsthechargeoftheparticlethatisexperiencingtheelectricforce → F ,andislocatedat → r
+fromtheorigin;the q i’s aretheNsourcecharges,andthevectors → r i=r i ^ ri arethedisplacementsfromtheposition
+oftheithchargetothepositionofQ.EachoftheNunitvectorspointsdirectlyfromitsassociatedsourcechargetowardthe
+testcharge.AllofthisisdepictedinFigure 5.16.PleasenotethatthereisnophysicaldifferencebetweenQand q ;the
+i
+difference in labels is merely to allow clear discussion, withQbeing the charge we are determining the force on.
+Figure 5.16 The eight source charges each apply a force on the
+single test chargeQ. Each force can be calculated independently
+of the other seven forces. This is the essence of the superposition
+principle.
+(Note that the force vector → F i does not necessarily point in the same direction as the unit vector ^ ri ; it may point in
+theoppositedirection, − ^ ri .Thesignsofthesourcechargeandtestchargedeterminethedirectionoftheforceonthetest
+charge.)
+Thereisacomplication,however.Justasthesourcechargeseachexertaforceonthetestcharge,sotoo(byNewton’sthird
+law)doesthetestchargeexertanequalandoppositeforceoneachofthesourcecharges.Asaconsequence,eachsource
+chargewouldchangeposition.However,byEquation 5.2,theforceonthetestchargeisafunctionofposition;thus,as
+thepositionsofthesourcechargeschange,thenetforceonthetestchargenecessarilychanges,whichchangestheforce,
+
+196 Chapter 5 | Electric Charges and Fields
+whichagainchangesthepositions.Thus,theentiremathematicalanalysisquicklybecomesintractable.Later,wewilllearn
+techniquesforhandlingthissituation,butfornow,wemakethesimplifyingassumptionthatthesourcechargesarefixed
+inplacesomehow,sothattheirpositionsareconstantintime.(Thetestchargeisallowedtomove.)Withthisrestrictionin
+place,theanalysisofchargesisknownaselectrostatics,where“statics”referstotheconstant(thatis,static)positionsof
+the source charges and the force is referred to as anelectrostatic force.
+Example 5.2
+The Net Force from Two Source Charges
+Threedifferent,smallchargedobjectsareplacedasshowninFigure 5.17.Thecharges q and q arefixed
+1 3
+inplace; q isfreetomove.Given q =2e, q =−3e,and q =−5e,andthat d =2.0×10 −7 m,whatis
+2 1 2 3
+the net force on the middle charge q ?
+2
+Figure 5.17 Source charges q and q each apply a force
+1 3
+on q .
+2
+Strategy
+WeuseCoulomb’slawagain.Thewaythequestionisphrasedindicatesthat q isourtestcharge,sothat q and
+2 1
+q aresourcecharges.Theprincipleofsuperpositionsaysthattheforceon q fromeachoftheothercharges
+3 2
+isunaffectedbythepresenceoftheothercharge.Therefore,wewritedowntheforceon q fromeachandadd
+2
+them together as vectors.
+Solution
+Wehavetwosourcecharges (q and q ), atestcharge (q ), distances (r and r ), andweareaskedto
+1 3 2 21 23
+find a force. This calls for Coulomb’s law and superposition of forces. There are two forces:
+⎡ ⎛ ⎞⎤
+→ → → q q ^ q q ^
+F = F + F = 1 ⎢ 2 1 j +⎜− 2 3 i⎟⎥.
+21 23 4πε 0⎣ r2 ⎝ r2 ⎠⎦
+21 23
+→
+We can’t add these forces directly because they don’t point in the same direction: F points only in
+12
+→
+the −x-direction, while F points only in the +y-direction. The net force is obtained from applying the
+13
+Pythagorean theorem to itsx- andy-components:
+F = F x 2+F y 2
+where
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

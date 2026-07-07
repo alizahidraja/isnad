@@ -1,0 +1,245 @@
+# REAL PDF — openstax_vol2.pdf, pages 241-250
+############################################################
+
+Chapter 5 | Electric Charges and Fields 231
+information you need, and look it up.)
+ADDITIONAL PROBLEMS
+108. Point charges q =2.0µC and q =4.0µC are of a parallelogram as shown below. If q=5.0µC and
+1 1
+⎛ ^ ^ ^⎞ Q=8.0µC, what is the net force onq?
+located at r = 4.0i −2.0j +2.0k m and
+1 ⎝ ⎠
+⎛ ^ ^ ^⎞
+r = 8.0i +5.0j −9.0k m. What is the force of
+2 ⎝ ⎠
+q onq ?
+2 1
+109. What is the force on the 5.0-µC charge shown
+below?
+112. AchargeQisfixedattheoriginandasecondcharge
+qmovesalongthex-axis,asshownbelow.Howmuchwork
+is done on q by the electric force when q moves from
+x tox ?
+1 2
+110. Whatistheforceonthe 2.0-µC chargeplacedatthe
+center of the square shown below?
+113. A charge q=−2.0µC is released from rest when
+it is 2.0 m from a fixed charge Q=6.0µC. What is the
+kinetic energy ofqwhen it is 1.0 m fromQ?
+114. What is the electric field at the midpoint M of the
+hypotenuse of the triangle shown below?
+111. Four charged particles are positioned at the corners
+
+232 Chapter 5 | Electric Charges and Fields
+117. Point charges are placed at the four corners of a
+115. Find the electric field at P for the charge rectangle as shown below: q =2.0×10 −6 C,
+1
+configurations shown below.
+q =−2.0×10 −6 C, q =4.0×10 −6 C, and
+2 3
+q =1.0×10 −6 C. What is the electric field atP?
+4
+118. Three charges are positioned at the corners of a
+parallelogramasshownbelow.(a)If Q=8.0µC, whatis
+theelectricfieldattheunoccupiedcorner?(b)Whatisthe
+force on a 5.0-µC charge placed at this corner?
+119. Apositivechargeqisreleasedfromrestattheorigin
+of a rectangular coordinate system and moves under the
+→ ^
+influenceoftheelectricfield E =E (1+x/a)i. What
+0
+is the kinetic energy ofqwhen it passes through x=3a?
+120. Aparticleofcharge −q andmassmisplacedatthe
+116. (a) What is the electric field at the lower-right-hand
+cornerofthesquareshownbelow?(b)Whatistheforceon center of a uniformaly charged ring of total charge Q and
+a chargeqplaced at that point? radius R. The particle is displaced a small distance along
+theaxisperpendiculartotheplaneoftheringandreleased.
+Assumingthattheparticleisconstrainedtomovealongthe
+axis, show that the particle oscillates in simple harmonic
+qQ
+motion with a frequency f = 1 .
+2π 4πε mR3
+0
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 233
+121. Charge is distributed uniformly along the entire →
+integrating d F over the length of the rod.
+y-axis with a density λ and along the positive x-axis
+y
+from x=atox=b withadensity λ x. Whatistheforce
+between the two distributions?
+122. The circular arc shown below carries a charge per
+unitlength λ=λ cosθ, where θ ismeasuredfromthe
+0
+x-axis. What is the electric field at the origin?
+125. Thechargeperunitlengthonthethinrodshownhere
+is λ. Whatistheelectricforceonthepointchargeq?(See
+the preceding problem.)
+126. The charge per unit length on the thin semicircular
+123. Calculate the electric field due to a uniformly
+wire shown below is λ. What is the electric force on the
+charged rod of length L, aligned with the x-axis with one
+point chargeq? (See the preceding problems.)
+end at the origin; at a pointPon thez-axis.
+124. The charge per unit length on the thin rod shown
+belowis λ. Whatistheelectric forceonthepointcharge
+q?Solvethisproblembyfirstconsideringtheelectricforce
+→
+d F on q due to a small segment dx of the rod, which
+contains charge λdx. Then, find the net force by
+
+234 Chapter 5 | Electric Charges and Fields
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 235
+6 | GAUSS'S LAW
+Figure 6.1 This chapter introduces the concept of flux, which relates a physical quantity and the area through which it is
+flowing. Although we introduce this concept with the electric field, the concept may be used for many other quantities, such as
+fluid flow. (credit: modification of work by “Alessandro”/Flickr)
+Chapter Outline
+6.1Electric Flux
+6.2Explaining Gauss’s Law
+6.3Applying Gauss’s Law
+6.4Conductors in Electrostatic Equilibrium
+Introduction
+Flux is a general and broadly applicable concept in physics. However, in this chapter, we concentrate on the flux of the
+electricfield.ThisallowsustointroduceGauss’slaw,whichisparticularlyusefulforfindingtheelectricfieldsofcharge
+distributions exhibiting spatial symmetry. The main topics discussed here are
+1. Electric flux.We define electric flux for both open and closed surfaces.
+2. Gauss’s law. We derive Gauss’s law for an arbitrary charge distribution and examine the role of electric flux in
+Gauss’s law.
+3. CalculatingelectricfieldswithGauss’slaw.ThemainfocusofthischapteristoexplainhowtouseGauss’slaw
+to find the electric fields of spatially symmetrical charge distributions. We discuss the importance of choosing a
+Gaussian surface and provide examples involving the applications of Gauss’s law.
+4. Electricfieldsinconductors.Gauss’slawprovidesusefulinsightintotheabsenceofelectricfieldsinconducting
+materials.
+Sofar,wehavefoundthattheelectrostaticfieldbeginsandendsatpointchargesandthatthefieldofapointchargevaries
+inverselywiththesquareofthedistancefromthatcharge.Thesecharacteristicsoftheelectrostaticfieldleadtoanimportant
+mathematicalrelationshipknownasGauss’slaw.ThislawisnamedinhonoroftheextraordinaryGermanmathematician
+and scientist Karl Friedrich Gauss (Figure 6.2). Gauss’s law gives us an elegantly simple way of finding the electric
+field, and, as you will see, it can be much easier to use than the integration method described in the previous chapter.
+However,thereisacatch—Gauss’slawhasalimitationinthat,whilealwaystrue,itcanbereadilyappliedonlyforcharge
+distributions with certain symmetries.
+
+236 Chapter 6 | Gauss's Law
+Figure 6.2 Karl Friedrich Gauss (1777–1855) was a legendary
+mathematician of the nineteenth century. Although his major
+contributions were to the field of mathematics, he also did
+important work in physics and astronomy.
+6.1 | Electric Flux
+Learning Objectives
+By the end of this section, you will be able to:
+• Define the concept of flux
+• Describe electric flux
+• Calculate electric flux for a given situation
+Theconceptoffluxdescribeshowmuchofsomethinggoesthroughagivenarea.Moreformally,itisthedotproductofa
+vectorfield(inthischapter,theelectricfield)withanarea.Youmayconceptualizethefluxofanelectricfieldasameasure
+of the number of electric field lines passing through an area (Figure 6.3). The larger the area, the more field lines go
+through it and, hence, the greater the flux; similarly, the stronger the electric field is (represented by a greater density of
+lines),thegreatertheflux.Ontheotherhand,ifthearearotatedsothattheplaneisalignedwiththefieldlines,nonewill
+pass through and there will be no flux.
+Figure 6.3 The flux of an electric field through the shaded
+area captures information about the “number” of electric field
+lines passing through the area. The numerical value of the
+electric flux depends on the magnitudes of the electric field and
+the area, as well as the relative orientation of the area with
+respect to the direction of the electric field.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 237
+Amacroscopicanalogythatmighthelpyouimaginethisistoputahulahoopinaflowingriver.Asyouchangetheangle
+ofthehooprelativetothedirectionofthecurrent,moreorlessoftheflowwillgothroughthehoop.Similarly,theamount
+offlowthroughthehoopdependsonthestrengthofthecurrentandthesizeofthehoop.Again,fluxisageneralconcept;
+wecanalsouseittodescribetheamountofsunlighthittingasolarpanelortheamountofenergyatelescopereceivesfrom
+a distant star, for example.
+Toquantifythisidea,Figure6.4(a)showsaplanarsurface S ofarea A thatisperpendiculartotheuniformelectricfield
+1 1
+→ E =Ey ^ . IfNfieldlinespassthrough S ,thenweknowfromthedefinitionofelectricfieldlines(ElectricCharges
+1
+and Fields) that N/A ∝E, or N ∝EA .
+1 1
+Thequantity EA istheelectricfluxthrough S .Werepresenttheelectricfluxthroughanopensurfacelike S bythe
+1 1 1
+symbol Φ.ElectricfluxisascalarquantityandhasanSIunitofnewton-meterssquaredpercoulomb(N·m2/C).Notice
+that N ∝EA mayalsobewrittenas N ∝Φ,demonstratingthatelectricfluxisameasureofthenumberoffieldlines
+1
+crossing a surface.
+^
+Figure 6.4 (a) A planar surface S of area A is perpendicular to the electric field Ej .Nfield lines cross
+1 1
+surface S . (b) A surface S of area A whose projection onto thexz-plane is S .The same number of field lines
+1 2 2 1
+cross each surface.
+Now consider a planar surface that is not perpendicular to the field. How would we represent the electric flux? Figure
+6.4(b)showsasurface S ofarea A thatisinclinedatanangle θ tothexz-planeandwhoseprojectioninthatplaneis
+2 2
+S (area A ).Theareasarerelatedby A cosθ= A . Becausethesamenumberoffieldlinescrossesboth S and S ,
+1 1 2 1 1 2
+thefluxesthroughbothsurfacesmustbethesame.Thefluxthrough S istherefore Φ=EA =EA cosθ. Designating
+2 1 2
+^ n as a unit vector normal to S (seeFigure 6.4(b)), we obtain
+2 2
+→ ^
+Φ= E ·n A .
+2 2
+Checkoutthisvideo(https://openstaxcollege.org/l/21fluxsizeangl)toobservewhathappenstothefluxas
+the area changes in size and angle, or the electric field changes in strength.
+Area Vector
+→
+For discussing the flux of a vector field, it is helpful to introduce an area vector A . This allows us to write the last
+equationinamorecompactform.Whatshouldthemagnitudeoftheareavectorbe?Whatshouldthedirectionofthearea
+vector be? What are the implications of how you answer the previous question?
+Thearea vectorof a flat surface of areaAhas the following magnitude and direction:
+• Magnitude is equal to area (A)
+
+238 Chapter 6 | Gauss's Law
+• Direction is along the normal to the surface ( ^ n ); that is, perpendicular to the surface.
+Sincethenormaltoaflatsurfacecanpointineitherdirectionfromthesurface,thedirectionoftheareavectorofanopen
+surface needs to be chosen, as shown inFigure 6.5.
+Figure 6.5 The direction of the area vector of an open surface
+needs to be chosen; it could be either of the two cases displayed
+here. The area vector of a part of a closed surface is defined to
+point from the inside of the closed space to the outside. This rule
+gives a unique direction.
+Since ^ n isaunitnormaltoasurface,ithastwopossibledirectionsateverypointonthatsurface(Figure6.6(a)).Foran
+opensurface,wecanuseeitherdirection,aslongasweareconsistentovertheentiresurface.Part(c)ofthefigureshows
+several cases.
+Figure 6.6 (a) Two potential normal vectors arise at every point on a surface. (b) The outward normal
+is used to calculate the flux through a closed surface. (c) Only S has been given a consistent set of
+3
+normal vectors that allows us to define the flux through the surface.
+However,ifasurfaceisclosed,thenthesurfaceenclosesavolume.Inthatcase,thedirectionofthenormalvectoratany
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 239
+pointonthesurfacepointsfromtheinsidetotheoutside.OnaclosedsurfacesuchasthatofFigure6.6(b), ^ n ischosen
+to be theoutward normalat every point, to be consistent with the sign convention for electric charge.
+Electric Flux
+Nowthatwehavedefinedtheareavectorofasurface,wecandefinetheelectricfluxofauniformelectricfieldthrougha
+flatareaasthescalarproductoftheelectricfieldandtheareavector,asdefinedinProductsofVectors(http://cnx.org/
+content/m58280/latest/):
+→ → → (6.1)
+Φ= E · A (uniform E , flat suface).
+Figure6.7showstheelectricfieldofanoppositelycharged,parallel-platesystemandanimaginaryboxbetweentheplates.
+Theelectricfieldbetweentheplatesisuniformandpointsfromthepositiveplatetowardthenegativeplate.Acalculation
+ofthefluxofthisfieldthroughvariousfacesoftheboxshowsthatthenetfluxthroughtheboxiszero.Whydoestheflux
+cancel out here?
+Figure 6.7 Electric flux through a cube, placed between two
+charged plates. Electric flux through the bottom face (ABCD) is
+→
+negative, because E is in the opposite direction to the normal to
+the surface. The electric flux through the top face (FGHK) is positive,
+because the electric field and the normal are in the same direction.
+The electric flux through the other faces is zero, since the electric
+field is perpendicular to the normal vectors of those faces. The net
+electric flux through the cube is the sum of fluxes through the six
+faces. Here, the net flux through the cube is equal to zero. The
+magnitude of the flux through rectangleBCKFis equal to the
+magnitudes of the flux through both the top and bottom faces.
+Thereasonisthatthesourcesoftheelectricfieldareoutsidethebox.Therefore,ifanyelectricfieldlineentersthevolume
+ofthebox,itmustalsoexitsomewhereonthesurfacebecausethereisnochargeinsideforthelinestolandon.Therefore,
+quite generally, electric flux through a closed surface is zero if there are no sources of electric field, whether positive or
+negativecharges,insidetheenclosedvolume.Ingeneral,whenfieldlinesleave(or“flowoutof”)aclosedsurface, Φ is
+positive; when they enter (or “flow into”) the surface, Φ is negative.
+Anysmooth,non-flatsurfacecanbereplacedbyacollectionoftiny,approximatelyflatsurfaces,asshowninFigure6.8.

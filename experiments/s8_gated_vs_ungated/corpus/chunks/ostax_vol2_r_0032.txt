@@ -1,0 +1,277 @@
+# REAL PDF — openstax_vol2.pdf, pages 180-185
+############################################################
+
+170 Chapter 4 | The Second Law of Thermodynamics
+Strategy
+Since the objects are identical, their common temperature at equilibrium is 350 K. To calculate the entropy
+changesassociatedwiththeirtransitions,wesubstitutetheirreversibleprocessoftheheattransferbytwoisobaric,
+reversible processes, one for each of the two objects. The entropy change for each object is then given by
+ΔS=mcln(T B/T A).
+Solution
+Using c=450J/kg·K, the specific heat of steel, we have for the hotter object
+T
+ΔS =⌠ 2 mcdT =mcln T 2
+h ⌡T T T
+1
+1
+350K
+=(4.00kg)(450J/kg·K)ln =−240J/K.
+400K
+Similarly, the entropy change of the cooler object is
+ΔS c=(4.00kg)(450J/kg·K)ln 3
+3
+5
+0
+0
+0
+K
+K
+=277J/K.
+The net entropy change of the two objects during the heat transfer is then
+ΔS
+h
++ΔS c=37J/K.
+Significance
+Theobjectsarethermallyisolatedfromtheenvironment,soitsentropymustremainconstant.Thus,theentropy
+of the universe also increases by 37 J/K.
+4.6 CheckYourUnderstandingAquantityofheatQisabsorbedfromareservoiratatemperature T bya
+h
+coolerreservoiratatemperature T c. Whatistheentropychangeofthehotreservoir,thecoldreservoir,andthe
+universe?
+4.7 Check Your Understanding A 50-g copper piece at a temperature of 20°C is placed into a large
+insulatedvatofwaterat 100°C.(a)Whatistheentropychangeofthecopperpiecewhenitreachesthermal
+equilibriumwiththewater?(b)Whatistheentropychangeofthewater?(c)Whatistheentropychangeofthe
+universe?
+Viewthissite(https://openstaxcollege.org/l/21reversereact)tolearnaboutentropyandmicrostates.Start
+with a large barrier in the middle and 1000 molecules in only the left chamber. What is the total entropy of the
+system?Nowremovethebarrierandletthemoleculestravelfromthelefttotherighthandside?Whatisthetotal
+entropyofthesystemnow?Lastly,addheatandnotewhathappenstothetemperature.Didthisincreaseentropy
+of the system?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 171
+CHAPTER 4 REVIEW
+KEY TERMS
+Carnot cycle cycle that consists of two isotherms at the temperatures of two reservoirs and two adiabatic processes
+connecting the isotherms
+Carnot engine Carnot heat engine, refrigerator, or heat pump that operates on a Carnot cycle
+Carnot principle principlegoverningtheefficiencyorperformanceofaheatdeviceoperatingonaCarnotcycle:any
+reversible heat device working between two reservoirs must have the same efficiency or performance coefficient,
+greater than that of an irreversible heat device operating between the same two reservoirs
+Clausius statement of the second law of thermodynamics heatneverflowsspontaneouslyfromacolderobject
+to a hotter object
+coefficient of performance measure of effectiveness of a refrigerator or heat pump
+cold reservoir sink of heat used by a heat engine
+disorder measure of order in a system; the greater the disorder is, the higher the entropy
+efficiency (e) output work from the engine over the input heat to the engine from the hot reservoir
+entropy state function of the system that changes when heat is transferred between the system and the environment
+entropy statement of the second law of thermodynamics entropy of a closed system or the entire universe
+never decreases
+heat engine device that converts heat into work
+heat pump device that delivers heat to a hot reservoir
+hot reservoir source of heat used by a heat engine
+irreversibility phenomenon associated with a natural process
+irreversible process processinwhichneitherthesystemnoritsenvironmentcanberestoredtotheiroriginalstatesat
+the same time
+isentropic reversible adiabatic process where the process is frictionless and no heat is transferred
+Kelvin statement of the second law of thermodynamics itisimpossibletoconverttheheatfromasinglesource
+into work without any other effect
+perfect engine engine that can convert heat into work with 100% efficiency
+perfect refrigerator (heat pump) refrigerator (heat pump) that can remove (dump) heat without any input of work
+refrigerator device that removes heat from a cold reservoir
+reversible process processinwhichboththesystemandtheexternalenvironmenttheoreticallycanbereturnedtotheir
+original states
+third law of thermodynamics absolutezerotemperaturecannotbereachedthroughanyfinitenumberofcoolingsteps
+KEY EQUATIONS
+Result of energy conservation W =Q
+h
+−Q
+c
+Efficiency of a heat engine e= W =1− Q c
+Q Q
+h h
+Coefficient of performance of a refrigerator Q Q
+K = c = c
+R W Q
+h
+−Q
+c
+
+172 Chapter 4 | The Second Law of Thermodynamics
+Coefficient of performance of a heat pump Q Q
+K = h = h
+P W Q
+h
+−Q
+c
+Resulting efficiency of a Carnot cycle T
+e=1− c
+T
+h
+Performance coefficient of a reversible refrigerator T
+K = c
+R T
+h
+−T
+c
+Performance coefficient of a reversible heat pump T
+K = h
+P T
+h
+−T
+c
+Entropy of a system undergoing a reversible process at a constant Q
+ΔS=
+temperature T
+Change of entropy of a system under a reversible process B
+ΔS=S B−S A=∫ dQ/T
+A
+Entropy of a system undergoing any complete reversible cyclic process dQ
+∮dS=∮ =0
+T
+Change of entropy of a closed system under an irreversible process ΔS≥0
+Change in entropy of the system along an isotherm lim (ΔS)T =0
+T→0
+SUMMARY
+4.1Reversible and Irreversible Processes
+• Areversibleprocessisoneinwhichboththesystemanditsenvironmentcanreturntoexactlythestatestheywere
+in by following the reverse path.
+• Anirreversibleprocessisoneinwhichthesystemanditsenvironmentcannotreturntogethertoexactlythestates
+that they were in.
+• The irreversibility of any natural process results from the second law of thermodynamics.
+4.2Heat Engines
+• The work done by a heat engine is the difference between the heat absorbed from the hot reservoir and the heat
+discharged to the cold reservoir, that is, W =Q
+h
+−Q c.
+• Theratiooftheworkdonebytheengineandtheheatabsorbedfromthehotreservoirprovidestheefficiencyofthe
+engine, that is, e=W/Q
+h
+=1−Q c/Q
+h
+.
+4.3Refrigerators and Heat Pumps
+• A refrigerator or a heat pump is a heat engine run in reverse.
+• The focus of a refrigerator is on removing heat from the cold reservoir with a coefficient of performance K .
+R
+• The focus of a heat pump is on dumping heat to the hot reservoir with a coefficient of performance K .
+P
+4.4Statements of the Second Law of Thermodynamics
+• TheKelvinstatementofthesecondlawofthermodynamics:Itisimpossibletoconverttheheatfromasinglesource
+into work without any other effect.
+• The Kelvin statement and Clausius statement of the second law of thermodynamics are equivalent.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 173
+4.5The Carnot Cycle
+• The Carnot cycle is the most efficient engine for a reversible cycle designed between two reservoirs.
+• The Carnot principle is another way of stating the second law of thermodynamics.
+4.6Entropy
+• The change in entropy for a reversible process at constant temperature is equal to the heat divided by the
+B
+temperature. The entropy change of a system under a reversible process is given by ΔS=∫ dQ/T.
+A
+• Asystem’schangeinentropybetweentwostatesisindependentofthereversiblethermodynamicpathtakenbythe
+system when it makes a transition between the states.
+4.7Entropy on a Microscopic Scale
+• Entropy can be related to how disordered a system is—the more it is disordered, the higher is its entropy. In any
+irreversible process, the universe becomes more disordered.
+• According to the third law of thermodynamics, absolute zero temperature is unreachable.
+CONCEPTUAL QUESTIONS
+heat pumps and electric heating.
+4.1Reversible and Irreversible Processes
+1. Stateanexampleofaprocessthatoccursinnaturethat 8. The energy output of a heat pump is greater than the
+is as close to reversible as it can be. energy used to operate the pump. Why doesn’t this
+statement violate the first law of thermodynamics?
+4.2Heat Engines 9. Speculate as to why nuclear power plants are less
+efficient than fossil-fuel plants based on temperature
+2. Explaininpracticaltermswhyefficiencyisdefinedas
+arguments.
+W/Q .
+h
+10. An ideal gas goes from state (p, V) to state
+i i
+4.3Refrigerators and Heat Pumps (p f , V f ) whenitisallowedtoexpandfreely.Isitpossible
+to represent the actual process on apVdiagram? Explain.
+3. Iftherefrigeratordoorisleftopen,whathappenstothe
+temperature of the kitchen?
+4.5The Carnot Cycle
+4. Is it possible for the efficiency of a reversible engine
+to be greater than 1.0? Is it possible for the coefficient of 11. To increase the efficiency of a Carnot engine, should
+performanceofareversiblerefrigeratortobelessthan1.0? the temperature of the hot reservoir be raised or lowered?
+What about the cold reservoir?
+4.4Statements of the Second Law of 12. How could you design a Carnot engine with 100%
+Thermodynamics efficiency?
+5. Inthetext,weshowedthatiftheClausiusstatementis
+13. What type of processes occur in a Carnot cycle?
+false, the Kelvin statement must also be false. Now show
+the reverse, such that if the Kelvin statement is false, it
+follows that the Clausius statement is false.
+4.6Entropy
+6. Why don’t we operate ocean liners by extracting heat 14. DoestheentropyincreaseforaCarnotengineforeach
+fromtheoceanoroperateairplanesbyextractingheatfrom cycle?
+the atmosphere?
+15. Is it possible for a system to have an entropy change
+7. Discuss the practical advantages and disadvantages of if it neither absorbs nor emits heat during a reversible
+
+174 Chapter 4 | The Second Law of Thermodynamics
+transition? What happens if the process is irreversible? leaksintothesurroundingatmosphere;(c)anicecubethat
+meltsinaglassoflukewarmwater;(d)thelukewarmwater
+of part (c); (e) a real heat engine performing a cycle; (f)
+4.7Entropy on a Microscopic Scale foodcooled in a refrigerator.
+16. Are the entropy changes of the systems in the
+17. Discuss the entropy changes in the systems of
+following processes positive or negative? (a) water vapor
+Question 21.10 in terms of disorder.
+thatcondensesonacoldsurface;(b)gasinacontainerthat
+PROBLEMS
+26. Thetemperatureofthecoldreservoiroftheengineis
+4.1Reversible and Irreversible Processes 300K.Ithasanefficiencyof0.30andabsorbs500Jofheat
+per cycle. (a) How much work does it perform per cycle?
+18. A tank contains 111.0 g chlorine gas (Cl ), which
+2 (b) How much heat does it discharge per cycle?
+is at temperature 82.0°C and absolute pressure
+5.70×10 5 Pa. Thetemperatureoftheairoutsidethetank 27. An engine absorbs three times as much heat as it
+is 20.0°C. The molar mass of Cl is 70.9 g/mol. (a) discharges. The work done by the engine per cycle is 50
+2
+J. Calculate (a) the efficiency of the engine, (b) the heat
+What is the volume of the tank? (b) What is the internal
+absorbed per cycle, and (c) the heat discharged per cycle.
+energy of the gas? (c) What is the work done by the gas
+if the temperature and pressure inside the tank drop to
+28. A coal power plant consumes 100,000 kg of coal
+31.0°C and 3.80×10 5 Pa, respectively, due to a leak?
+per hour and produces 500 MW of power. If the heat of
+combustion of coal is 30 MJ/kg, what is the efficiency of
+19. Amoleofidealmonatomicgasat 0°C and1.00atm the power plant?
+is warmed up to expand isobarically to triple its volume.
+How much heat is transferred during the process?
+4.3Refrigerators and Heat Pumps
+20. A mole of an ideal gas at pressure 4.00 atm and 29. Arefrigeratorhasacoefficientofperformanceof3.0.
+temperature 298 K expands isothermally to double its (a) If it requires 200 J of work per cycle, how much heat
+volume. What is the work done by the gas? percycledoesitremovethecoldreservoir?(b)Howmuch
+heat per cycle is discarded to the hot reservoir?
+21. Afterafreeexpansiontoquadrupleitsvolume,amole
+of ideal diatomic gas is compressed back to its original 30. Duringonecycle,arefrigeratorremoves500Jfroma
+volume isobarically and then cooled down to its original coldreservoiranddischarges800Jtoitshotreservoir.(a)
+temperature.Whatistheminimumheatremovedfromthe Whatisitscoefficientofperformance?(b)Howmuchwork
+gas in the final step to restoring its state? per cycle does it require to operate?
+31. Ifarefrigeratordiscards80Jofheatpercycleandits
+4.2Heat Engines coefficientofperformanceis6.0,whatare(a)thequantity
+22. Anengineisfoundtohaveanefficiencyof0.40.Ifit offheatitremovespercyclefromacoldreservoirand(b)
+does 200 J of work per cycle, what are the corresponding the amount of work per cycle required for its operation?
+quantities of heat absorbed and discharged?
+32. Arefrigeratorhasacoefficientofperformanceof3.0.
+23. In performing 100.0 J of work, an engine discharges (a) If it requires 200 J of work per cycle, how much heat
+50.0 J of heat. What is the efficiency of the engine? percycledoesitremovethecoldreservoir?(b)Howmuch
+heat per cycle is discarded to the hot reservoir?
+24. An engine with an efficiency of 0.30 absorbs 500 J
+ofheatpercycle.(a)Howmuchworkdoesitperformper
+cycle? (b) How much heat does it discharge per cycle? 4.5The Carnot Cycle
+33. The temperature of the cold and hot reservoirs
+25. It is found that an engine discharges 100.0 J while betweenwhichaCarnotrefrigeratoroperatesare −73°C
+absorbing 125.0 J each cycle of operation. (a) What is and 270°C, respectively. Which is its coefficient of
+the efficiency of the engine? (b) How much work does it
+performance?
+perform per cycle?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

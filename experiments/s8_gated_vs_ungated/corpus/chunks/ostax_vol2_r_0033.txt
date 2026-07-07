@@ -1,0 +1,207 @@
+# REAL PDF — openstax_vol2.pdf, pages 185-188
+############################################################
+
+Chapter 4 | The Second Law of Thermodynamics 175
+34. Suppose a Carnot refrigerator operates between 44. In an isothermal reversible expansion at 27°C, an
+T c andT h . Calculate the amount of work required to idealgasdoes20Jofwork.Whatistheentropychangeof
+extract 1.0 J of heat from the cold reservoir if (a) the gas?
+T c=7°C, T
+h
+=27°C; (b) T c=−73°C,
+45. An ideal gas at 300 K is compressed isothermally to
+T
+h
+=27°C; (c) T c=−173°C, T
+h
+=27°C; and (d)
+one-fifthitsoriginalvolume.Determinetheentropychange
+T c=−273°C, T
+h
+=27°C. per mole of the gas.
+35. A Carnot engine operates between reservoirs at 600 46. What is the entropy change of 10 g of steam at
+and300K.Iftheengineabsorbs100Jpercycleatthehot 100°C when it condenses to water at the same
+reservoir, what is its work output per cycle? temperature?
+36. A 500-W motor operates a Carnot refrigerator 47. A metal rod is used to conduct heat between two
+between −5°C and 30°C.(a)Whatistheamountofheat reservoirsattemperatures T
+h
+andT c, respectively.When
+persecondextractedfromtheinsideoftherefrigerator?(b) anamountofheatQflowsthroughtherodfromthehotto
+How much heat is exhausted to the outside air per second? thecoldreservoir,whatisthenetentropychangeoftherod,
+the hot reservoir, the cold reservoir, and the universe?
+37. Sketch a Carnot cycle on a temperature-volume
+diagram. 48. For the Carnot cycle of Figure 4.12, what is the
+entropychangeofthehotreservoir,thecoldreservoir,and
+38. A Carnot heat pump operates between 0°C and the universe?
+20°C.Howmuchheat isexhausted intotheinterior ofa
+house for every 1.0 J of work done by the pump? 49. A5.0-kgpieceofleadatatemperatureof 600°C is
+placed in a lake whose temperature is 15°C. Determine
+39. Anengineoperatingbetweenheatreservoirsat 20°C the entropy change of (a) the lead piece, (b) the lake, and
+and 200°C extracts 1000 J per cycle from the hot (c) the universe.
+reservoir. (a) What is the maximum possible work that
+enginecandopercycle?(b)Forthismaximumwork,how 50. One mole of an ideal gas doubles its volume in a
+much heat is exhausted to the cold reservoir per cycle? reversibleisothermalexpansion.(a)Whatisthechangein
+entropy of the gas? (b) If 1500 J of heat are added in this
+process, what is the temperature of the gas?
+40. SupposeaCarnotenginecanbeoperatedbetweentwo
+reservoirs as either a heat engine or a refrigerator. How is
+thecoefficientofperformanceoftherefrigeratorrelatedto 51. Onemoleofanidealmonatomicgasisconfinedtoa
+the efficiency of the heat engine? rigidcontainer.Whenheatisaddedreversiblytothegas,its
+temperaturechangesfrom T toT . (a)Howmuchheatis
+1 2
+41. A Carnot engine is used to measure the temperature added? (b) What is the change in entropy of the gas?
+of a heat reservoir. The engine operates between the heat
+reservoir and a reservoir consisting of water at its triple 52. (a) A 5.0-kg rock at a temperature of 20°C is
+point. (a) If 400 J per cycle are removed from the heat
+droppedintoashallowlakealsoat 20°C fromaheightof
+reservoir while 200Jpercycle aredeposited inthetriple-
+point reservoir, what is the temperature of the heat 1.0×10 3 m. What is the resulting change in entropy of
+reservoir? (b) If 400 J per cycle are removed from the theuniverse?(b)Ifthetemperatureoftherockis 100°C
+triple-point reservoir while 200 J per cycle are deposited when it is dropped, what is the change of entropy of the
+in the heat reservoir, what is the temperature of the heat universe?Assumethatairfrictionisnegligible(notagood
+reservoir? assumption)andthat c=860J/kg·K isthespecificheat
+of the rock.
+42. Whatistheminimumworkrequiredofarefrigerator
+ifitistoextract50Jpercyclefromtheinsideofafreezer
+at −10°C and exhaust heat to the air at 25°C?
+4.7Entropy on a Microscopic Scale
+53. A copper rod of cross-sectional area 5.0cm2 and
+4.6Entropy length5.0mconductsheatfromaheatreservoirat373K
+to one at 273 K. What is the time rate of change of the
+43. Two hundred joules of heat are removed from a heat
+universe’s entropy for this process?
+reservoir at a temperature of 200 K. What is the entropy
+change of the reservoir?
+
+176 Chapter 4 | The Second Law of Thermodynamics
+54. Fifty grams of water at 20°C is heated until it
+becomesvaporat 100°C.Calculatethechangeinentropy
+of the water in this process.
+55. Fiftygramsofwaterat 0°C arechangedintovapor
+at 100°C. What is the change in entropy of the water in
+this process?
+56. In an isochoric process, heat is added to 10 mol of
+monoatomic ideal gas whose temperature increases from
+273 to 373 K. What is the entropy change of the gas?
+57. Twohundredgramsofwaterat 0°C isbroughtinto 62. A Carnot engine operating between heat reservoirs
+at 500 and 300 K absorbs 1500 J per cycle at the high-
+contact with a heat reservoir at 80°C. After thermal
+temperature reservoir. (a) Represent the engine’s cycle on
+equilibrium is reached, what is the temperature of the
+a temperature-entropy diagram. (b) How much work per
+water? Of the reservoir? How much heat has been
+cycle is done by the engine?
+transferred in the process? What is the entropy change of
+thewater?Ofthereservoir?Whatistheentropychangeof
+63. A monoatomic ideal gas (n moles) goes through a
+the universe?
+cyclicprocessshownbelow.Findthechangeinentropyof
+the gas in each step and the total entropy change over the
+58. Suppose that the temperature of the water in the
+entire cycle.
+previous problem is raised by first bringing it to thermal
+equilibrium with a reservoir at a temperature of 40°C
+and then with a reservoir at 80°C. Calculate the entropy
+changesof(a)eachreservoir,(b)ofthewater,and(c)ofthe
+universe.
+59. Twohundredgramsofwaterat 0°C isbroughtinto
+contact into thermal equilibrium successively with
+reservoirsat 20°C, 40°C, 60°C,and 80°C.(a)What
+istheentropychangeofthewater?(b)Ofthereservoir?(c)
+What is the entropy change of the universe?
+60. (a)Tengramsof H O startsasiceat 0°C.Theice
+2 64. ACarnotenginehasanefficiency of0.60.Whenthe
+absorbs heat from the air (just above 0°C) until all of it temperature of its cold reservoir changes, the efficiency
+melts.Calculatetheentropychangeofthe H
+2
+O,oftheair, drops to 0.55. If initially T c=27°C, determine (a) the
+andoftheuniverse.(b)Supposethattheairinpart(a)isat constant value of T and (b) the final value of T .
+h c
+20°C ratherthan 0°C andthattheiceabsorbsheatuntil
+it becomes water at 20°C. Calculate the entropy change
+65. A Carnot engine performs 100 J of work while
+ofthe H O,oftheair,andoftheuniverse.(c)Iseitherof discharging200Jofheateachcycle.Afterthetemperature
+2
+these processes reversible? of the hot reservoir only is adjusted, it is found that the
+enginenowdoes130Jofworkwhilediscardingthesame
+quantity of heat. (a) What are the initial and final
+61. The Carnot cycle is represented by the temperature-
+efficienciesoftheengine?(b)Whatisthefractionalchange
+entropy diagram shown below. (a) How much heat is
+in the temperature of the hot reservoir?
+absorbed per cycle at the high-temperature reservoir? (b)
+How much heat is exhausted per cycle at the low-
+temperature reservoir? (c) How much work is done per 66. ACarnotrefrigeratorexhaustsheattotheair,whichis
+cycle by the engine? (d) What is the efficiency of the atatemperatureof 25°C.Howmuchpowerisusedbythe
+engine? refrigeratorifitfreezes1.5gofwaterpersecond?Assume
+the water is at 0°C.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 177
+ADDITIONAL PROBLEMS
+67. A 300-W heat pump operates between the ground, Findthechangeinentropyofthe(a)hotbathand(b)cold
+whose temperature is 0°C, and the interior of a house at bath, in each Carnot cycle?
+22°C.Whatisthemaximumamountofheatperhourthat
+the heat pump can supply to the house? 74. AnidealgasattemperatureTisstoredinthelefthalf
+ofaninsulatingcontainerofvolumeVusingapartitionof
+negligiblevolume(seebelow).Whatistheentropychange
+68. An engineer must design a refrigerator that does 300
+permoleofthegasineachofthefollowingcases?(a)The
+J of work per cycle to extract 2100 J of heat per cycle
+partitionissuddenlyremovedandthegasquicklyfillsthe
+from a freezer whose temperature is −10°C. What is
+entirecontainer.(b)Atinyholeispuncturedinthepartition
+themaximumairtemperatureforwhichthisconditioncan
+andafteralongperiod,thegasreachesanequilibriumstate
+be met? Is this a reasonable condition to impose on the
+such that there is no net flow through the hole. (c) The
+design?
+partition is moved very slowly and adiabatically all the
+way to the right wall so that the gas finally fills the entire
+69. A Carnot engine employs 1.5 mol of nitrogen gas container.
+as a working substance, which is considered as an ideal
+diatomicgaswith γ =7.5 attheworkingtemperaturesof
+the engine. The Carnot cycle goes in the cycle ABCDA
+with AB being an isothermal expansion. The volume at
+points A and C of the cycle are 5.0×10 −3 m 3 and 0.15
+L, respectively. The engine operates between two thermal
+bathsoftemperature500Kand300K.(a)Findthevalues
+of volume at B and D. (b) How much heat is absorbed by
+the gas in the AB isothermal expansion? (c) How much
+workisdonebythegasintheABisothermalexpansion?(d)
+HowmuchheatisgivenupbythegasintheCDisothermal 75. A 0.50-kg piece of aluminum at 250°C is dropped
+expansion? (e) How much work is done by the gas in the into1.0kgofwaterat 20°C.Afterequilibriumisreached,
+CD isothermal compression? (f) How much work is done what is the net entropy change of the system?
+by the gas in the BC adiabatic expansion? (g) How much
+workisdonebythegasintheDAadiabaticcompression?
+76. Suppose 20 g of ice at 0°C is added to 300 g of
+(h) Find the value of efficiency of the engine based on
+waterat 60°C.Whatisthetotalchangeinentropyofthe
+the net work and heat input. Compare this value to the
+efficiencyofaCarnotenginebasedonthetemperaturesof mixture after it reaches thermal equilibrium?
+the two baths.
+77. Aheatengineoperatesbetweentwotemperaturessuch
+70. A 5.0-kg wood block starts with an initial speed of thattheworkingsubstanceoftheengineabsorbs5000Jof
+8.0 m/s and slides across the floor until friction stops it. heat from the high-temperature bath and discharges 3000
+Estimate the resulting change in entropy of the universe. J to the low-temperature bath. The rest of the energy is
+Assume that everything stays at a room temperature of converted into mechanical energy of the turbine. Find (a)
+20°C. the amount of work produced by the engine and (b) the
+efficiency of the engine.
+71. A system consisting of 20.0 mol of a monoatomic
+78. A thermal engine produces 4 MJ of electrical energy
+ideal gas is cooled at constant pressure from a volume of
+while operating between two thermal baths of different
+50.0Lto10.0L.Theinitialtemperaturewas300K.What
+temperatures. The working substance of the engine
+is the change in entropy of the gas?
+discharges5MJofheattothecoldtemperaturebath.What
+is the efficiency of the engine?
+72. Aglassbeakerofmass400gcontains500gofwater
+at 27°C. The beaker is heated reversibly so that the
+79. A coal power plant consumes 100,000 kg of coal
+temperature of the beaker and water rise gradually to
+per hour and produces 500 MW of power. If the heat of
+57°C.Findthechangeinentropyofthebeakerandwater
+combustion of coal is 30 MJ/kg, what is the efficiency of
+together. the power plant?
+73. A Carnot engine operates between 550°C and 80. ACarnotengineoperatesinaCarnotcyclebetweena
+20°C bathsandproduces300kJofenergyineachcycle. heatsourceat 550°C andaheatsinkat 20°C. Findthe

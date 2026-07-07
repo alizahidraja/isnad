@@ -1,0 +1,228 @@
+# REAL PDF — openstax_vol3.pdf, pages 185-188
+############################################################
+
+Chapter 4 | Diffraction 177
+ifthe diffraction pattern falls onascreen 1.00mfromthe 33. Consider the single-slit diffraction pattern for
+slit?(c)Discusstheeaseordifficultyofmeasuringsucha λ=600nm, D=0.025mm, and x=2.0m. Find the
+distance. intensity in terms of I
+o
+at θ=0.5°, 1.0°, 1.5°, 3.0°,
+and 10.0°.
+25. (a) What is the minimum width of a single slit (in
+multiples of λ) that will produce a first minimum for
+a wavelength λ ? (b) What is its minimum width if it
+4.3Double-Slit Diffraction
+produces 50 minima? (c) 1000 minima?
+34. Twoslitsofwidth 2µm, eachinanopaquematerial,
+26. (a)Ifasingleslitproducesafirstminimumat 14.5°, are separated by a center-to-center distance of 6µm. A
+at what angle is the second-order minimum? (b) What is monochromatic light of wavelength 450 nm is incident
+theangleofthethird-orderminimum?(c)Isthereafourth- on the double-slit. One finds a combined interference and
+orderminimum?(d)Useyouranswerstoillustratehowthe diffraction pattern on the screen.
+angular width of the central maximum is about twice the (a)Howmanypeaksoftheinterferencewillbeobservedin
+angular width of the next maximum (which is the angle the central maximum of the diffraction pattern?
+between the first and second minima).
+(b) How many peaks of the interference will be observed
+if the slit width is doubled while keeping the distance
+27. If the separation between the first and the second
+between the slits same?
+minimaofasingle-slitdiffractionpatternis6.0mm,what
+is the distance between the screen and the slit? The light (c)Howmanypeaksofinterferencewillbeobservedifthe
+wavelength is 500 nm and the slit width is 0.16 mm. slits are separated by twice the distance, that is, 12µm,
+while keeping the widths of the slits same?
+28. A water break at the entrance to a harbor consists of
+(d) What will happen in (a) if instead of 450-nm light
+a rock barrier with a 50.0-m-wide opening. Ocean waves
+another light of wavelength 680 nm is used?
+of20.0-mwavelengthapproachtheopeningstraighton.At
+whatanglestotheincidentdirectionaretheboatsinsidethe (e) What is the value of the ratio of the intensity of the
+harbor most protected against wave action? central peak to the intensity of the next bright peak in (a)?
+(f) Does this ratio depend on the wavelength of the light?
+29. An aircraft maintenance technician walks past a tall
+(g)Doesthisratiodependonthewidthorseparationofthe
+hangar door that acts like a single slit for sound entering
+slits?
+thehangar.Outsidethedoor,onalineperpendiculartothe
+opening in the door, a jet engine makes a 600-Hz sound.
+35. A double slit produces a diffraction pattern that is a
+Atwhatanglewiththedoorwillthetechnicianobservethe
+combination of single- and double-slit interference. Find
+first minimum in sound intensity if the vertical opening is
+theratioofthewidthoftheslitstotheseparationbetween
+0.800 m wide and the speed of sound is 340 m/s?
+them, if the first minimum of the single-slit pattern falls
+onthefifthmaximumofthedouble-slitpattern.(Thiswill
+greatly reduce the intensity of the fifth maximum.)
+4.2Intensity in Single-Slit Diffraction
+30. A single slit of width 3.0µm is illuminated by a 36. For a double-slit configuration where the slit
+sodium yellow light of wavelength 589 nm. Find the separation is four times the slit width, how many
+intensityata 15° angletotheaxisintermsoftheintensity interferencefringeslieinthecentralpeakofthediffraction
+pattern?
+of the central maximum.
+37. Light of wavelength 500 nm falls normally on 50
+31. A single slit of width 0.1 mm is illuminated by a
+mercurylightofwavelength576nm.Findtheintensityata slits that are 2.5×10 −3 mm wide and spaced
+10° angletotheaxisintermsoftheintensityofthecentral 5.0×10 −3 mm apart.Howmanyinterferencefringeslie
+maximum.
+in the central peak of the diffraction pattern?
+32. The width of the central peak in a single-slit
+38. A monochromatic light of wavelength 589 nm
+diffraction pattern is 5.0 mm. The wavelength of the light
+incident on a double slit with slit width 2.5µm and
+is600nm,andthescreenis2.0mfromtheslit.(a)Whatis
+thewidthoftheslit?(b)Determinetheratiooftheintensity unknown separation results in a diffraction pattern
+at4.5mmfromthecenterofthepatterntotheintensityat containing nine interference peaks inside the central
+the center. maximum. Find the separation of the slits.
+
+178 Chapter 4 | Diffraction
+39. When a monochromatic light of wavelength 430 nm areflectiongratingwithrowsseparatedbyabout 8µm. If
+incidentonadoubleslitofslitseparation 5µm, thereare
+theopalisilluminatednormally,(a)atwhatanglewillred
+11interferencefringesinitscentralmaximum.Howmany light be seen and (b) at what angle will blue light be seen?
+interference fringes will be in the central maximum of a
+light of wavelength 632.8 nm for the same double slit? 50. At what angle does a diffraction grating produce a
+second-order maximum for light having a first-order
+40. Determine the intensities of two interference peaks maximum at 20.0° ?
+other than the central peak in the central maximum of
+the diffraction, if possible, when a light of wavelength
+51. (a)Findthemaximumnumberoflinespercentimeter
+628 nm is incident on a double slit of width 500 nm and
+adiffractiongratingcanhaveandproduceamaximumfor
+separation1500nm.Usetheintensityofthecentralspotto
+the smallest wavelength of visible light. (b) Would such a
+be 1mW/cm2. grating be useful for ultraviolet spectra? (c) For infrared
+spectra?
+4.4Diffraction Gratings 52. (a) Show that a 30,000 line per centimeter grating
+will not produce a maximum for visible light. (b) What is
+41. Adiffractiongratinghas2000linespercentimeter.At
+the longest wavelength for which it does produce a first-
+what angle will the first-order maximum be for 520-nm-
+order maximum? (c) What is the greatest number of line
+wavelength green light?
+percentimeteradiffractiongratingcanhaveandproducea
+complete second-order spectrum for visible light?
+42. Find the angle for the third-order maximum for
+580-nm-wavelength yellow light falling on a difraction
+53. The analysis shown below also applies to diffraction
+grating having 1500 lines per centimeter.
+gratings with lines separated by a distance d. What is the
+distancebetweenfringesproducedbyadiffractiongrating
+43. How many lines per centimeter are there on a
+having 125 lines per centimeter for 600-nm light, if the
+diffraction grating that gives a first-order maximum for
+screen is 1.50 m away? (Hint: The distance between
+470-nm blue light at an angle of 25.0° ?
+adjacent fringes is Δy= xλ/d, assuming the slit
+separationdis comparable to λ.)
+44. What is the distance between lines on a diffraction
+gratingthatproducesasecond-ordermaximumfor760-nm
+red light at an angle of 60.0° ?
+45. Calculatethewavelengthoflightthathasitssecond-
+order maximum at 45.0° when falling on a diffraction
+grating that has 5000 lines per centimeter.
+46. An electric current through hydrogen gas produces
+several distinct wavelengths of visible light. What are the
+wavelengths of the hydrogen spectrum, if they form first-
+ordermaximaatangles 24.2°, 25.7°, 29.1°, and 41.0°
+whenprojectedonadiffractiongratinghaving10,000lines
+per centimeter?
+47. (a)Whatdothefouranglesintheprecedingproblem
+become if a 5000-line per centimeter diffraction grating 4.5Circular Apertures and Resolution
+is used? (b) Using this grating, what would the angles be 54. The305-m-diameterAreciboradiotelescopepictured
+for the second-order maxima? (c) Discuss the relationship inFigure4.20detectsradiowaveswitha4.00-cmaverage
+betweenintegralreductionsinlinespercentimeterandthe wavelength. (a) What is the angle between two just-
+new angles of various order maxima. resolvable point sources for this telescope? (b) How close
+togethercouldthesepointsourcesbeatthe2millionlight-
+48. Whatisthespacingbetweenstructuresinafeatherthat year distance of the Andromeda Galaxy?
+actsasareflectiongrating,givingthattheyproduceafirst-
+order maximum for 525-nm light at a 30.0° angle? 55. AssumingtheangularresolutionfoundfortheHubble
+TelescopeinExample4.6,whatisthesmallestdetailthat
+could be observed on the moon?
+49. AnopalsuchasthatshowninFigure 4.15actslike
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 179
+56. Diffraction spreading for a flashlight is insignificant reasons for this?
+compared with other limitations in its optics, such as
+spherical aberrations in its mirror. To show this, calculate 63. AspysatelliteorbitsEarthataheightof180km.What
+theminimumangularspreadingofaflashlightbeamthatis istheminimumdiameteroftheobjectivelensinatelescope
+originally5.00cmindiameterwithanaveragewavelength that must be used to resolve columns of troops marching
+of 600 nm. 2.0 m apart? Assume λ=550nm.
+57. (a)Whatistheminimumangularspreadofa633-nm
+64. Whatistheminimumangularseparationoftwostars
+wavelengthHe-Nelaserbeamthatisoriginally1.00mmin
+that are just-resolvable by the 8.1-m Gemini South
+diameter?(b)Ifthislaserisaimedatamountaincliff15.0
+telescope, if atmospheric effects do not limit resolution?
+km away, how big will the illuminated spot be? (c) How
+Use 550 nm for the wavelength of the light from the stars.
+big a spot would be illuminated on the moon, neglecting
+atmospheric effects? (This might be done to hit a corner
+65. The headlights of a car are 1.3 m apart. What is the
+reflector to measure the round-trip time and, hence,
+maximumdistanceatwhichtheeyecanresolvethesetwo
+distance.)
+headlights? Take the pupil diameter to be 0.40 cm.
+58. A telescope can be used to enlarge the diameter of a
+66. When dots are placed on a page from a laser printer,
+laserbeamandlimitdiffractionspreading.Thelaserbeam
+they must be close enough so that you do not see the
+is sent through the telescope in opposite the normal
+individualdotsofink.Todothis,theseparationofthedots
+direction and can then be projected onto a satellite or the
+mustbelessthanRaleigh’scriterion.Takethepupilofthe
+moon.(a)IfthisisdonewiththeMountWilsontelescope,
+eyetobe3.0mmandthedistancefromthepapertotheeye
+producing a 2.54-m-diameter beam of 633-nm light, what
+of 35 cm; find the minimum separation of two dots such
+istheminimumangularspreadofthebeam?(b)Neglecting
+thattheycannotberesolved.Howmanydotsperinch(dpi)
+atmospheric effects, what is the size of the spot this beam
+does this correspond to?
+would make on the moon, assuming a lunar distance of
+3.84×10 8 m ?
+67. Suppose you are looking down at a highway from a
+jetlinerflyingatanaltitudeof6.0km.Howfarapartmust
+59. The limit to the eye’s acuity is actually related to two cars be if you are able to distinguish them? Assume
+diffraction by the pupil. (a) What is the angle between that λ=550nm andthatthediameterofyourpupilsis4.0
+twojust-resolvablepointsoflightfora3.00-mm-diameter
+mm.
+pupil, assuming an average wavelength of 550 nm? (b)
+Takeyourresulttobethepracticallimitfortheeye.What
+68. Can an astronaut orbiting Earth in a satellite at a
+isthegreatestpossibledistanceacarcanbefromyouifyou
+distance of 180 km from the surface distinguish two
+canresolveitstwoheadlights,giventheyare1.30mapart?
+skyscrapersthatare20mapart?Assumethatthepupilsof
+(c)Whatisthedistancebetweentwojust-resolvablepoints
+the astronaut’s eyes have a diameter of 5.0 mm and that
+heldatanarm’slength(0.800m)fromyoureye?(d)How
+most of the light is centered around 500 nm.
+does your answer to (c) compare to details you normally
+observe in everyday circumstances?
+69. The characters of a stadium scoreboard are formed
+withcloselyspacedlightbulbsthatradiateprimarilyyellow
+60. Whatistheminimumdiametermirroronatelescope
+that would allow you to see details as small as 5.00 km
+light. (Use λ=600nm.) How closely must the bulbs be
+onthemoonsome384,000kmaway?Assumeanaverage spaced so that an observer 80 m away sees a display of
+wavelength of 550 nm for the light received. continuous lines rather than the individual bulbs? Assume
+that the pupil of the observer’s eye has a diameter of 5.0
+mm.
+61. Find the radius of a star’s image on the retina of an
+eyeifitspupilisopento0.65cmandthedistancefromthe
+pupil to the retina is 2.8 cm. Assume λ=550nm. 70. Ifamicroscopecanacceptlightfromobjectsatangles
+aslargeas α=70°,whatisthesmalleststructurethatcan
+beresolvedwhenilluminatedwithlightofwavelength500
+62. (a)ThedwarfplanetPlutoanditsmoon,Charon,are
+nmand(a)thespecimenisinair?(b)Whenthespecimen
+separated by 19,600 km. Neglecting atmospheric effects,
+is immersed in oil, with index of refraction of 1.52?
+should the 5.08-m-diameter Palomar Mountain telescope
+be able to resolve these bodies when they are
+4.50×10 9 km from Earth? Assume an average 71. A camera uses a lens with aperture 2.0 cm. What is
+the angular resolution of a photograph taken at 700 nm
+wavelength of 550 nm. (b) In actuality, it is just barely
+wavelength? Can it resolve the millimeter markings of a
+possible to discern that Pluto and Charon are separate
+ruler placed 35 m away?
+bodies using a ground-based telescope. What are the

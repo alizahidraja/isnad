@@ -1,0 +1,325 @@
+# REAL PDF — openstax_vol2.pdf, pages 125-131
+############################################################
+
+Chapter 3 | The First Law of Thermodynamics 115
+Strategy
+Because the equation of state is given, we can use Equation 3.4 to express the pressure in terms of V and T.
+Furthermore,temperatureTisaconstantundertheisothermalcondition,soVbecomestheonlychangingvariable
+under the integral.
+Solution
+Toevaluatethisintegral,wemustexpresspasafunctionofV.Fromthegivenequationofstate,thegaspressure
+is
+RT a
+p= − .
+V−b V2
+BecauseTisconstantundertheisothermalcondition,theworkdoneby1molofavanderWaalsgasinexpanding
+from a volume V to a volume V is thus
+1 2
+V
+2 V
+W = ⌠ ⎛ RT − a ⎞ =|RTln(V−b)+ a| 2
+⌡ ⎝V−b V2⎠ V V 1
+V
+1
+=RTln
+⎛V
+2
+−b⎞
++a
+⎛
+1 − 1
+⎞
+.
+⎝V −b⎠ ⎝V V ⎠
+1 2 1
+Significance
+By taking into account the volume of molecules, the expression for work is much more complex. If, however,
+weset a=0 and b=0, weseethattheexpressionforworkmatchesexactlytheworkdonebyanisothermal
+process for one mole of an ideal gas.
+3.1 Check Your Understanding How much work is done by the gas, as given in Figure 3.6, when it
+expands quasi-statically along the pathADC?
+Internal Energy
+The internal energy E of a thermodynamic system is, by definition, the sum of the mechanical energies of all the
+int
+moleculesorentitiesinthesystem.Ifthekineticandpotentialenergiesofmoleculeiare K i and U i, respectively,then
+the internal energy of the system is the average of the total mechanical energy of all the entities:
+− − (3.5)
+E
+int
+=∑(K i+U i),
+i
+wherethesummationisoverallthemoleculesofthesystem,andthebarsoverKandUindicateaveragevalues.Thekinetic
+energy K of an individual molecule includes contributions due to its rotation and vibration, as well as its translational
+i
+energy m
+i
+v
+i
+2/2, where v
+i
+is the molecule’s speed measured relative to the center of mass of the system. The potential
+energy U isassociatedonlywiththeinteractionsbetweenmoleculeiandtheothermoleculesofthesystem.Infact,neither
+i
+thesystem’slocationnoritsmotionisofanyconsequenceasfarastheinternalenergyisconcerned.Theinternalenergyof
+thesystemisnotaffectedbymovingitfromthebasementtotheroofofa100-storybuildingorbyplacingitonamoving
+train.
+Inanidealmonatomicgas,eachmoleculeisasingleatom.Consequently,thereisnorotationalorvibrationalkineticenergy
+and K i=m
+i
+v
+i
+2/2. Furthermore, there are no interatomic interactions (collisions notwithstanding), so U i=constant,
+which we set to zero. The internal energy is therefore due to translational kinetic energy only and
+
+116 Chapter 3 | The First Law of Thermodynamics
+E
+int
+=∑K − i=∑ 1
+2
+m
+i
+v
+i
+2.
+i i
+Fromthediscussionintheprecedingchapter,weknowthattheaveragekineticenergyofamoleculeinanidealmonatomic
+gas is
+−
+1
+2
+m
+i
+v
+i
+2= 3
+2
+k
+B
+T,
+where T is the Kelvin temperature of the gas. Consequently, the average mechanical energy per molecule of an ideal
+monatomic gas is also 3k T/2, that is,
+B
+K i+U i=K − i= 3
+2
+k
+B
+T.
+Theinternalenergyisjustthenumberofmoleculesmultipliedbytheaveragemechanicalenergypermolecule.Thusforn
+moles of an ideal monatomic gas,
+E =nN ⎛3k T ⎞ = 3nRT. (3.6)
+int A⎝2 B ⎠ 2
+Notice that the internal energy of a given quantity of an ideal monatomic gas depends on just the temperature and is
+completelyindependentofthepressureandvolumeofthegas.Forothersystems,theinternalenergycannotbeexpressed
+so simply. However, an increase in internal energy can often be associated with an increase in temperature.
+We know from the zeroth law of thermodynamics that when two systems are placed in thermal contact, they eventually
+reachthermalequilibrium,atwhichpointtheyareatthesametemperature.Asanexample,supposewemixtwomonatomic
+idealgases.Now,theenergypermoleculeofanidealmonatomicgasisproportionaltoitstemperature.Thus,whenthetwo
+gases are mixed, the molecules of the hotter gas must lose energy and the molecules of the colder gas must gain energy.
+Thiscontinuesuntilthermalequilibriumisreached,atwhichpoint,thetemperature,andthereforetheaveragetranslational
+kinetic energy per molecule, is the same for both gases. The approach to equilibrium for real systems is somewhat more
+complicatedthanforanidealmonatomicgas.Nevertheless,wecanstillsaythatenergyisexchangedbetweenthesystems
+until their temperatures are the same.
+3.3 | First Law of Thermodynamics
+Learning Objectives
+By the end of this section, you will be able to:
+• State the first law of thermodynamics and explain how it is applied
+• Explain how heat transfer, work done, and internal energy change are related in any
+thermodynamic process
+Now that we have seen how to calculate internal energy, heat, and work done for a thermodynamic system undergoing
+changeduringsomeprocess,wecanseehowthesequantitiesinteracttoaffecttheamountofchangethatcanoccur.This
+interactionisgivenbythefirstlawofthermodynamics.BritishscientistandnovelistC.P.Snow(1905–1980)iscredited
+withajokeaboutthefourlawsofthermodynamics.Hishumorousstatementofthefirstlawofthermodynamicsisstated
+“you can’t win,” or in other words, you cannot get more energy out of a system than you put into it. We will see in this
+chapter how internal energy, heat, and work all play a role in the first law of thermodynamics.
+Suppose Q represents the heat exchanged between a system and the environment, and W is the work done by or on the
+system.Thefirstlawstatesthatthechangeininternalenergyofthatsystemisgivenby Q−W.Sinceaddedheatincreases
+the internal energy of a system, Q is positive when it is added to the system and negative when it is removed from the
+system.
+Whenagasexpands,itdoesworkanditsinternalenergydecreases.Thus,Wispositivewhenworkisdonebythesystem
+and negative when work is done on the system. This sign convention is summarized in Table 3.1. The first law of
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 117
+thermodynamicsis stated as follows:
+First Law of Thermodynamics
+Associatedwitheveryequilibriumstateofasystemisitsinternalenergy E . Thechangein E foranytransition
+int int
+between two equilibrium states is
+ΔE =Q−W (3.7)
+int
+whereQandWrepresent, respectively, the heat exchanged by the system and the work done by or on the system.
+Thermodynamic Sign Conventions for Heat and Work
+Process Convention
+Heat added to system Q>0
+Heat removed from system Q<0
+Work done by system W >0
+Work done on system W <0
+Table 3.1
+The first law is a statement of energy conservation. It tells us that a system can exchange energy with its surroundings
+bythetransmissionofheatandbytheperformanceofwork.Thenetenergyexchangedisthenequaltothechangeinthe
+totalmechanicalenergyofthemoleculesofthesystem(i.e.,thesystem’sinternalenergy).Thus,ifasystemisisolated,its
+internal energy must remain constant.
+AlthoughQandWbothdependonthethermodynamicpathtakenbetweentwoequilibriumstates,theirdifference Q−W
+doesnot.Figure3.7showsthepVdiagramofasystemthatismakingthetransitionfromAtoBrepeatedlyalongdifferent
+thermodynamic paths.Alongpath1,thesystemabsorbsheat Q anddoeswork W ; alongpath2,itabsorbsheat Q
+1 1 2
+and does work W 2 , and so on. The values of Q i and W i may vary from path to path, but we have
+Q
+1
+−W
+1
+=Q
+2
+−W
+2
+=⋯=Q i−W i=⋯,
+or
+ΔE
+int1
+=ΔE
+int2
+=⋯=ΔE inti=⋯.
+Thatis,thechangeintheinternalenergyofthesystembetweenAandBispathindependent.Inthechapteronpotential
+energyandtheconservationofenergy,weencounteredanotherpath-independentquantity:thechangeinpotentialenergy
+between two arbitrary points in space. This change represents the negative of the work done by a conservative force
+betweenthetwopoints.Thepotentialenergyisafunctionofspatialcoordinates,whereastheinternalenergyisafunction
+of thermodynamic variables. For example, we might write E (T, p) for the internal energy. Functions such as internal
+int
+energy and potential energy are known asstate functionsbecause their values depend solely on the state of the system.
+
+118 Chapter 3 | The First Law of Thermodynamics
+Figure 3.7 Different thermodynamic paths taken by a system
+in going from stateAto stateB. For all transitions, the change in
+the internal energy of the system ΔE =Q−W is the same.
+int
+Often the first law is used in its differential form, which is
+dE =dQ−dW. (3.8)
+int
+Here dE isaninfinitesimal changeininternalenergywhenaninfinitesimal amountofheatdQisexchangedwiththe
+int
+system and an infinitesimal amount of workdWis done by (positive in sign) or on (negative in sign) the system.
+Example 3.2
+Changes of State and the First Law
+Duringathermodynamicprocess,asystemmovesfromstateAtostateB,itissuppliedwith400Jofheatand
+does100Jofwork.(a)Forthistransition,whatisthesystem’schangeininternalenergy?(b)Ifthesystemthen
+movesfromstateBbacktostateA,whatisitschangeininternalenergy?(c)IfinmovingfromAtoBalonga
+different path, W′AB=400J of work is done on the system, how much heat does it absorb?
+Strategy
+The first law of thermodynamics relates the internal energy change, work done by the system, and the heat
+transferredtothesysteminasimpleequation.Theinternalenergyisafunctionofstateandisthereforefixedat
+any given point regardless of how the system reaches the state.
+Solution
+a. From the first law, the change in the system’s internal energy is
+ΔE intAB=Q AB−W AB=400J−100J=300J.
+b. ConsideraclosedpaththatpassesthroughthestatesAandB.Internalenergyisastatefunction,so ΔE
+int
+is zero for a closed path. Thus
+ΔE
+int
+=ΔE intAB+ΔE intBA=0,
+and
+ΔE intAB=−ΔE intBA.
+This yields
+ΔE intBA=−300J.
+c. The change in internal energy is the same for any path, so
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 119
+ΔE
+intAB
+=ΔE′ intAB=Q′AB–W′AB;
+300J =Q′AB–(−400J),
+and the heat exchanged is
+Q′AB=−100J.
+The negative sign indicates that the system loses heat in this transition.
+Significance
+Whenaclosedcycleisconsideredforthefirstlawofthermodynamics,thechangeininternalenergyaroundthe
+wholepathisequaltozero.Iffrictionweretoplayaroleinthisexample,lessworkwouldresultfromthisheat
+added.Example 3.3takes into consideration what happens if friction plays a role.
+NoticethatinExample 3.2,wedidnotassumethatthetransitionswerequasi-static.Thisisbecausethefirstlawisnot
+subjecttosucharestriction.Itdescribestransitionsbetweenequilibriumstatesbutisnotconcernedwiththeintermediate
+states. The system does not have to pass through only equilibrium states. For example, if a gas in a steel container at a
+well-definedtemperatureandpressureismadetoexplodebymeansofaspark,someofthegasmaycondense,differentgas
+moleculesmaycombinetoformnewcompounds,andtheremaybeallsortsofturbulenceinthecontainer—buteventually,
+the system will settle down to a new equilibrium state. This system is clearly not in equilibrium during its transition;
+however,itsbehaviorisstillgovernedbythefirstlawbecausetheprocessstartsandendswiththesysteminequilibrium
+states.
+Example 3.3
+Polishing a Fitting
+Amachinistpolishesa0.50-kgcopperfittingwithapieceofemeryclothfor2.0min.Hemovestheclothacross
+thefittingataconstantspeedof1.0m/sbyapplyingaforceof20N,tangenttothesurfaceofthefitting.(a)What
+isthetotalworkdoneonthefittingbythemachinist?(b)Whatistheincreaseintheinternalenergyofthefitting?
+Assumethatthechangeintheinternalenergyoftheclothisnegligibleandthatnoheatisexchangedbetweenthe
+fitting and its environment. (c) What is the increase in the temperature of the fitting?
+Strategy
+Themachinist’sforceoveradistancethatcanbecalculatedfromthespeedandtimegivenistheworkdoneon
+thesystem.Thework,inturn,increasestheinternalenergyofthesystem.Thisenergycanbeinterpretedasthe
+heat that raises the temperature of the system via its heat capacity. Be careful with the sign of each quantity.
+Solution
+a. Thepowercreatedbyaforceonanobjectortherateatwhichthemachinistdoesfrictionalworkonthe
+fitting is → F · → v =−Fv. Thus, in an elapsed time Δt (2.0 min), the work done on the fitting is
+W =−FvΔt=−(20N)(0.1m/s)(1.2×102 s)
+3
+=−2.4×10 J.
+b. Byassumption, noheatisexchanged between thefitting anditsenvironment, sothefirstlawgivesfor
+the change in the internal energy of the fitting:
+ΔE =−W =2.4×10 3 J.
+int
+c. Since ΔE ispathindependent,theeffectofthe 2.4×10 3 J ofworkisthesameasifitweresupplied
+int
+at atmospheric pressure by a transfer of heat. Thus,
+2.4×10 3 J=mcΔT =(0.50kg)(3.9×102 J/kg·°C)ΔT,
+and the increase in the temperature of the fitting is
+
+120 Chapter 3 | The First Law of Thermodynamics
+ΔT =12°C,
+where we have used the value for the specific heat of copper, c=3.9×102 J/kg·°C.
+Significance
+If heat were released, the change in internal energy would be less and cause less of a temperature change than
+what was calculated in the problem.
+3.2 CheckYourUnderstandingThequantitiesbelowrepresentfourdifferenttransitionsbetweenthesame
+initial and final state. Fill in the blanks.
+Q(J) W(J) ΔE (J)
+int
+–80 –120
+90
+40
+–40
+Table 3.2
+Example 3.4
+An Ideal Gas Making Transitions between Two States
+Consider the quasi-static expansions of an ideal gas between the equilibrium states A and C of Figure 3.6. If
+515 J of heat are added to the gas as it traverses the path ABC, how much heat is required for the transition
+along ADC? Assume that p =2.10×10 5 N/m2,p =1.05×10 5 N/m2,V =2.25×10 −3 m 3 , and
+1 2 1
+V =4.50×10 −3 m 3 .
+2
+Strategy
+ThedifferenceinworkdonebetweenprocessABCandprocessADCistheareaenclosedbyABCD.Becausethe
+changeoftheinternalenergy(afunctionofstate)isthesameforbothprocesses,thedifferenceinworkisthus
+the same as the difference in heat transferred to the system.
+Solution
+ForpathABC,theheataddedis Q ABC=515J andtheworkdonebythegasistheareaunderthepathonthe
+pVdiagram, which is
+W ABC= p
+1
+(V
+2
+−V
+1
+)=473J.
+AlongADC, the work done by the gas is again the area under the path:
+W ADC= p
+2
+(V
+2
+−V
+1
+)=236J.
+Then using the strategy we just described, we have
+Q ADC−Q ABC=W ADC−W ABC,
+which leads to
+Q ADC=Q ABC+W ADC−W ABC=(515+236−473)J=278J.
+Significance
+TheworkcalculationsinthisproblemaremadesimplesincenoworkisdonealongADandBCandalongABand
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

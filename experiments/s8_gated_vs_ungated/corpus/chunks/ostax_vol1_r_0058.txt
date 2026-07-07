@@ -1,0 +1,282 @@
+# REAL PDF — openstax_vol1.pdf, pages 346-350
+############################################################
+
+334 7 • Chapter Review
+The coefficient of friction between the sled and snow at constant velocity by a force directed
+the snow is 0.100. (a) How much work is done below the horizontal. Calculate (a) the work of
+by friction as the sled moves 30.0 m along the the applied force, (b) the work of friction, and (c)
+hill? (b) How much work is done by the rope on the total work.
+the sled in this distance? (c) What is the work
+36 . How much work does the force
+done by the gravitational force on the sled? (d)
+do on a particle as it moves
+What is the total work done?
+from to
+37 . How much work is done against the gravitational
+force on a 5.0-kg briefcase when it is carried
+from the ground floor to the roof of the Empire
+State Building, a vertical climb of 380 m?
+38 . It takes 500 J of work to compress a spring 10
+cm. What is the force constant of the spring?
+39 . A bungee cord is essentially a very long rubber
+band that can stretch up to four times its
+unstretched length. However, its spring constant
+varies over its stretch [see Menz, P.G. “The
+Physics of Bungee Jumping.” The Physics
+Teacher (November 1993) 31: 483-487]. Take
+the length of the cord to be along the x-direction
+and define the stretch x as the length of the cord
+l minus its un-stretched length that is,
+(see below). Suppose a particular
+bungee cord has a spring constant, for
+, of and for
+, of (Recall that the
+31 . A constant 20-N force pushes a small ball in the spring constant is the slope of the force F(x)
+direction of the force over a distance of 5.0 m. versus its stretch x.) (a) What is the tension in
+What is the work done by the force? the cord when the stretch is 16.7 m (the
+maximum desired for a given jump)? (b) How
+32 . A toy cart is pulled a distance of 6.0 m in a
+much work must be done against the elastic
+straight line across the floor. The force pulling
+force of the bungee cord to stretch it 16.7 m?
+the cart has a magnitude of 20 N and is directed
+at above the horizontal. What is the work
+done by this force?
+33 . A 5.0-kg box rests on a horizontal surface. The
+coefficient of kinetic friction between the box
+and surface is A horizontal force
+pulls the box at constant velocity for 10 cm. Find
+the work done by (a) the applied horizontal
+force, (b) the frictional force, and (c) the net
+force.
+34 . A sled plus passenger with total mass 50 kg is
+pulled 20 m across the snow at
+constant velocity by a force directed above
+the horizontal. Calculate (a) the work of the
+applied force, (b) the work of friction, and (c) the
+total work.
+35 . Suppose that the sled plus passenger of the
+preceding problem is pushed 20 m across the
+Access for free at openstax.org
+
+7 • Chapter Review 335
+7.2 Kinetic Energy
+44 . Compare the kinetic energy of a 20,000-kg truck
+moving at 110 km/h with that of an 80.0-kg
+astronaut in orbit moving at 27,500 km/h.
+45 . (a) How fast must a 3000-kg elephant move to
+have the same kinetic energy as a 65.0-kg
+sprinter running at 10.0 m/s? (b) Discuss how
+the larger energies needed for the movement of
+larger animals would relate to metabolic rates.
+46 . Estimate the kinetic energy of a 90,000-ton
+aircraft carrier moving at a speed of at 30 knots.
+You will need to look up the definition of a
+nautical mile to use in converting the unit for
+speed, where 1 knot equals 1 nautical mile per
+hour. Furthermore for this problem, 1 ton is
+equivalent to 2,000 pounds.
+47 . Calculate the kinetic energies of (a) a 2000.0-kg
+automobile moving at 100.0 km/h; (b) an 80.-kg
+FIGURE 7.16 (credit: modification of work by Graeme
+runner sprinting at 10. m/s; and (c) a
+Churchard)
+electron moving at
+40 . A bungee cord exerts a nonlinear elastic force of
+magnitude where x is the
+48 . A 5.0-kg body has three times the kinetic energy
+distance the cord is stretched,
+of an 8.0-kg body. Calculate the ratio of the
+and How much work must
+speeds of these bodies.
+be done on the cord to stretch it 16.7 m?
+49 . An 8.0-g bullet has a speed of 800 m/s. (a) What
+41 . Engineers desire to model the magnitude of the
+is its kinetic energy? (b) What is its kinetic
+elastic force of a bungee cord using the equation
+energy if the speed is halved?
+,
+7.3 Work-Energy Theorem
+where x is the stretch of the cord along its length
+50 . (a) Calculate the force needed to bring a 950-kg
+and a is a constant. If it takes 22.0 kJ of work to
+car to rest from a speed of 90.0 km/h in a
+stretch the cord by 16.7 m, determine the value
+distance of 120 m (a fairly typical distance for a
+of the constant a.
+non-panic stop). (b) Suppose instead the car hits
+42 . A particle moving in the xy-plane is subject to a
+a concrete abutment at full speed and is brought
+force
+to a stop in 2.00 m. Calculate the force exerted
+on the car and compare it with the force found in
+part (a).
+where x and y are in meters. Calculate the work
+done on the particle by this force, as it moves in 51 . A car’s bumper is designed to withstand a
+a straight line from the point (3 m, 4 m) to the 4.0-km/h (1.1-m/s) collision with an immovable
+point (6 m, 8 m). object without damage to the body of the car.
+The bumper cushions the shock by absorbing
+43 . A particle moves along a curved path
+the force over a distance. Calculate the
+from
+magnitude of the average force on a bumper that
+to subject to a tangential
+collapses 0.200 m while bringing a 900-kg car to
+force of variable magnitude
+rest from an initial speed of 1.1 m/s.
+How much work
+does the force do? (Hint: Consult a table of 52 . Boxing gloves are padded to lessen the force of
+integrals or use a numerical integration a blow. (a) Calculate the force exerted by a
+program.) boxing glove on an opponent’s face, if the glove
+and face compress 7.50 cm during a blow in
+
+336 7 • Chapter Review
+which the 7.00-kg arm and glove are brought to Use the work-energy principle to determine how
+rest from an initial speed of 10.0 m/s. (b) far the block slides along the plane before
+Calculate the force exerted by an identical blow momentarily coming to rest. (b) After stopping,
+in the days when no gloves were used, and the the block slides back down the plane. What is its
+knuckles and face would compress only 2.00 speed when it reaches the bottom? (Hint: For
+cm. Assume the change in mass by removing the the round trip, only the force of friction does
+glove is negligible. (c) Discuss the magnitude of work on the block.)
+the force with glove on. Does it seem high
+61 . When a 3.0-kg block is pushed against a
+enough to cause damage even though it is lower
+massless spring of force constant
+than the force with no glove?
+the spring is compressed 8.0
+53 . Using energy considerations, calculate the cm. The block is released, and it slides 2.0 m
+average force a 60.0-kg sprinter exerts (from the point at which it is released) across a
+backward on the track to accelerate from 2.00 to horizontal surface before friction stops it. What
+8.00 m/s in a distance of 25.0 m, if he is the coefficient of kinetic friction between the
+encounters a headwind that exerts an average block and the surface?
+force of 30.0 N against him.
+62 . A small block of mass 200 g starts at rest at A,
+54 . A 5.0-kg box has an acceleration of slides to B where its speed is
+when it is pulled by a horizontal force across a then slides along the horizontal surface a
+surface with Find the work done distance 10 m before coming to rest at C. (See
+over a distance of 10 cm by (a) the horizontal below.) (a) What is the work of friction along the
+force, (b) the frictional force, and (c) the net curved surface? (b) What is the coefficient of
+force. (d) What is the change in kinetic energy of kinetic friction along the horizontal surface?
+the box?
+55 . A constant 10-N horizontal force is applied to a
+20-kg cart at rest on a level floor. If friction is
+negligible, what is the speed of the cart when it
+has been pushed 8.0 m?
+56 . In the preceding problem, the 10-N force is
+applied at an angle of below the horizontal.
+What is the speed of the cart when it has been 63 . A small object is placed at the top of an incline
+pushed 8.0 m? that is essentially frictionless. The object slides
+down the incline onto a rough horizontal surface,
+57 . Compare the work required to stop a 100-kg
+where it stops in 5.0 s after traveling 60 m. (a)
+crate sliding at 1.0 m/s and an 8.0-g bullet
+What is the speed of the object at the bottom of
+traveling at 500 m/s.
+the incline and its acceleration along the
+58 . A wagon with its passenger sits at the top of a horizontal surface? (b) What is the height of the
+hill. The wagon is given a slight push and rolls incline?
+100 m down a incline to the bottom of the
+64 . When released, a 100-g block slides down the
+hill. What is the wagon’s speed when it reaches
+path shown below, reaching the bottom with a
+the end of the incline. Assume that the retarding
+speed of 4.0 m/s. How much work does the
+force of friction is negligible.
+force of friction do?
+59 . An 8.0-g bullet with a speed of 800 m/s is shot
+into a wooden block and penetrates 20 cm
+before stopping. What is the average force of the
+wood on the bullet? Assume the block does not
+move.
+60 . A 2.0-kg block starts with a speed of 10 m/s at
+the bottom of a plane inclined at to the
+horizontal. The coefficient of sliding friction 65 . A 0.22LR-caliber bullet like that mentioned in
+between the block and plane is (a) Example 7.10 is fired into a door made of a
+Access for free at openstax.org
+
+7 • Chapter Review 337
+single thickness of 1-inch pine boards. How fast if the car also climbs a 3.00-m high hill in the
+would the bullet be traveling after it penetrated process?
+through the door?
+74 . (a) Find the useful power output of an elevator
+66 . A sled starts from rest at the top of a snow- motor that lifts a 2500-kg load a height of 35.0
+covered incline that makes a angle with the m in 12.0 s, if it also increases the speed from
+horizontal. After sliding 75 m down the slope, its rest to 4.00 m/s. Note that the total mass of the
+speed is 14 m/s. Use the work-energy theorem counterbalanced system is 10,000 kg—so that
+to calculate the coefficient of kinetic friction only 2500 kg is raised in height, but the full
+between the runners of the sled and the snowy 10,000 kg is accelerated. (b) What does it cost, if
+surface. electricity is $0.0900 per ?
+7.4 Power 75 . (a) How long would it take a
+airplane with engines that produce 100 MW of
+67 . A person in good physical condition can put out
+power to reach a speed of 250 m/s and an
+100 W of useful power for several hours at a
+altitude of 12.0 km if air resistance were
+stretch, perhaps by pedaling a mechanism that
+negligible? (b) If it actually takes 900 s, what is
+drives an electric generator. Neglecting any
+the power? (c) Given this power, what is the
+problems of generator efficiency and practical
+average force of air resistance if the airplane
+considerations such as resting time: (a) How
+takes 1200 s to reach 250 m/s? (Hint: You must
+many people would it take to run a 4.00-kW
+find the distance the plane travels in 1200 s
+electric clothes dryer? (b) How many people
+assuming constant acceleration.)
+would it take to replace a large electric power
+plant that generates 800 MW? 76 . Calculate the power output needed for a 950-kg
+car to climb a slope at a constant 30.0 m/s
+68 . What is the cost of operating a 3.00-W electric
+while encountering wind resistance and friction
+clock for a year if the cost of electricity is
+totaling 600 N.
+$0.0900 per ?
+77 . A man of mass 80 kg runs up a flight of stairs 20
+69 . A large household air conditioner may consume
+m high in 10 s. (a) how much power is used to lift
+15.0 kW of power. What is the cost of operating
+the man? (b) If the man’s body is 25% efficient,
+this air conditioner 3.00 h per day for 30.0 d if
+how much power does he expend?
+the cost of electricity is $0.110 per ?
+78 . The man of the preceding problem consumes
+70 . (a) What is the average power consumption in
+approximately (2500 food
+watts of an appliance that uses 5.00 of
+calories) of energy per day in maintaining a
+energy per day? (b) How many joules of energy
+constant weight. What is the average power he
+does this appliance consume in a year?
+produces over a day? Compare this with his
+71 . (a) What is the average useful power output of a power production when he runs up the stairs.
+person who does of useful work in
+79 . An electron in a television tube is accelerated
+8.00 h? (b) Working at this rate, how long will it
+uniformly from rest to a speed of
+take this person to lift 2000 kg of bricks 1.50 m
+over a distance of 2.5 cm. What is the power
+to a platform? (Work done to lift his body can be
+delivered to the electron at the instant that its
+omitted because it is not considered useful
+displacement is 1.0 cm?
+output here.)
+80 . Coal is lifted out of a mine a vertical distance of
+72 . A 500-kg dragster accelerates from rest to a
+50 m by an engine that supplies 500 W to a
+final speed of 110 m/s in 400 m (about a quarter
+conveyor belt. How much coal per minute can be
+of a mile) and encounters an average frictional
+brought to the surface? Ignore the effects of
+force of 1200 N. What is its average power
+friction.
+output in watts and horsepower if this takes
+7.30 s? 81 . A girl pulls her 15-kg wagon along a flat sidewalk
+by applying a 10-N force at to the horizontal.
+73 . (a) How long will it take an 850-kg car with a
+Assume that friction is negligible and that the
+useful power output of 40.0 hp (1 hp equals 746
+wagon starts from rest. (a) How much work does
+W) to reach a speed of 15.0 m/s, neglecting
+the girl do on the wagon in the first 2.0 s. (b)
+friction? (b) How long will this acceleration take

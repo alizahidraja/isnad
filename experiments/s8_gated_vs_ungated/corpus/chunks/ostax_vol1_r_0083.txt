@@ -1,0 +1,239 @@
+# REAL PDF — openstax_vol1.pdf, pages 506-514
+############################################################
+
+494 10 • Fixed-Axis Rotation
+10.8 Work and Power for Rotational Motion
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Use the work-energy theorem to analyze rotation to find the work done on a system when it is rotated
+about a fixed axis for a finite angular displacement
+• Solve for the angular velocity of a rotating rigid body using the work-energy theorem
+• Find the power delivered to a rotating rigid body given the applied torque and angular velocity
+• Summarize the rotational variables and equations and relate them to their translational counterparts
+Thus far in the chapter, we have extensively addressed kinematics and dynamics for rotating rigid bodies around a
+fixed axis. In this final section, we define work and power within the context of rotation about a fixed axis, which has
+applications to both physics and engineering. The discussion of work and power makes our treatment of rotational
+motion almost complete, with the exception of rolling motion and angular momentum, which are discussed in
+Angular Momentum. We begin this section with a treatment of the work-energy theorem for rotation.
+Work for Rotational Motion
+Now that we have determined how to calculate kinetic energy for rotating rigid bodies, we can proceed with a
+discussion of the work done on a rigid body rotating about a fixed axis. Figure 10.39 shows a rigid body that has
+rotated through an angle from A to B while under the influence of a force . The external force is applied to
+point P, whose position is , and the rigid body is constrained to rotate about a fixed axis that is perpendicular to the
+page and passes through O. The rotational axis is fixed, so the vector moves in a circle of radius r, and the vector
+is perpendicular to
+FIGURE 10.39 A rigid body rotates through an angle from A to B by the action of an external force applied to point P.
+The work by the force is given by Equation 7.2,
+In this equation, is the displacement of point P, not a change in the moment arm. That is:
+Substituting this into the definition of work, we have
+Access for free at openstax.org
+
+10.8 • Work and Power for Rotational Motion 495
+Since is perpendicular to , we can see that , the torque by the force F. Evaluating the work using the net
+torque, we arrive at the expression for the net rotational work done on a rigid body:
+10.27
+>
+The total work done on a rigid body is the sum of the torques integrated over the angle through which the body
+rotates. The incremental work is
+10.28
+In a rigid body, all particles rotate through the same angle; thus the work of every external force is equal to the
+torque times the common incremental angle . The quantity is the net torque on the body due to
+external forces.
+Similarly, we found the kinetic energy of a rigid body rotating around a fixed axis by summing the kinetic energy of
+each particle that makes up the rigid body. Since the work-energy theorem is valid for each particle, it is
+valid for the sum of the particles and the entire body.
+WORK-ENERGY THEOREM FOR ROTATION
+The work-energy theorem for a rigid body rotating around a fixed axis is
+10.29
+where
+and the rotational work done by a net force rotating a body from point A to point B is
+10.30
+We give a strategy for using this equation when analyzing rotational motion.
+PROBLEM-SOLVING STRATEGY
+Work-Energy Theorem for Rotational Motion
+1. Identify the forces on the body and draw a free-body diagram. Calculate the torque for each force.
+2. Calculate the work done during the body’s rotation by every torque.
+3. Apply the work-energy theorem by equating the net work done on the body to the change in rotational kinetic
+energy.
+Let’s look at two examples and use the work-energy theorem to analyze rotational motion.
+
+496 10 • Fixed-Axis Rotation
+EXAMPLE 10.17
+Rotational Work and Energy
+A torque is applied to a flywheel that rotates about a fixed axis and has a moment of inertia of
+. If the flywheel is initially at rest, what is its angular velocity after it has turned through eight
+revolutions?
+Strategy
+We apply the work-energy theorem. We know from the problem description what the torque is and the angular
+displacement of the flywheel. Then we can solve for the final angular velocity.
+Solution
+The flywheel turns through eight revolutions, which is radians. The work done by the torque, which is constant
+and therefore can come outside the integral in Equation 10.30, is
+We apply the work-energy theorem:
+With , we have
+Therefore,
+This is the angular velocity of the flywheel after eight revolutions.
+Significance
+The work-energy theorem provides an efficient way to analyze rotational motion, connecting torque with rotational
+kinetic energy.
+EXAMPLE 10.18
+Rotational Work: A Pulley
+A string wrapped around the pulley in Figure 10.40 is pulled with a constant downward force of magnitude 50 N.
+The radius R and moment of inertia I of the pulley are 0.10 m and , respectively. If the string does
+not slip, what is the angular velocity of the pulley after 1.0 m of string has unwound? Assume the pulley starts from
+rest.
+Access for free at openstax.org
+
+10.8 • Work and Power for Rotational Motion 497
+FIGURE 10.40 (a) A string is wrapped around a pulley of radius R. (b) The free-body diagram.
+Strategy
+Looking at the free-body diagram, we see that neither , the force on the bearings of the pulley, nor , the weight
+of the pulley, exerts a torque around the rotational axis, and therefore does no work on the pulley. As the pulley
+rotates through an angle acts through a distance d such that
+Solution
+Since the torque due to has magnitude , we have
+If the force on the string acts through a distance of 1.0 m, we have, from the work-energy theorem,
+Solving for , we obtain
+Power for Rotational Motion
+Power always comes up in the discussion of applications in engineering and physics. Power for rotational motion is
+equally as important as power in linear motion and can be derived in a similar way as in linear motion when the force
+is a constant. The linear power when the force is a constant is . If the net torque is constant over the
+angular displacement, Equation 10.25 simplifies and the net torque can be taken out of the integral. In the following
+discussion, we assume the net torque is constant. We can apply the definition of power derived in Power to
+rotational motion. From Work and Kinetic Energy, the instantaneous power (or just power) is defined as the rate of
+doing work,
+If we have a constant net torque, Equation 10.27 becomes and the power is
+or
+
+498 10 • Fixed-Axis Rotation
+10.31
+EXAMPLE 10.19
+Torque on a Boat Propeller
+A boat engine operating at is running at 300 rev/min. What is the torque on the propeller shaft?
+Strategy
+We are given the rotation rate in rev/min and the power consumption, so we can easily calculate the torque.
+Solution
+Significance
+It is important to note the radian is a dimensionless unit because its definition is the ratio of two lengths. It
+therefore does not appear in the solution.
+CHECK YOUR UNDERSTANDING 10.8
+A constant torque of is applied to a wind turbine to keep it rotating at 6 rad/s. What is the power
+required to keep the turbine rotating?
+Rotational and Translational Relationships Summarized
+The rotational quantities and their linear analog are summarized in three tables. Table 10.5 summarizes the
+rotational variables for circular motion about a fixed axis with their linear analogs and the connecting equation,
+except for the centripetal acceleration, which stands by itself. Table 10.6 summarizes the rotational and
+translational kinematic equations. Table 10.7 summarizes the rotational dynamics equations with their linear
+analogs.
+Rotational Translational Relationship
+TABLE 10.5 Rotational and Translational Variables:
+Summary
+Access for free at openstax.org
+
+10.8 • Work and Power for Rotational Motion 499
+Rotational Translational
+TABLE 10.6 Rotational and Translational Kinematic
+Equations: Summary
+Rotational Translational
+m
+TABLE 10.7 Rotational and Translational Equations:
+Dynamics
+
+500 10 • Chapter Review
+Chapter Review
+Key Terms
+angular acceleration time rate of change of angular parallel axis axis of rotation that is parallel to an axis
+velocity about which the moment of inertia of an object is
+angular position angle a body has rotated through in known
+a fixed coordinate system parallel-axis theorem if the moment of inertia is
+angular velocity time rate of change of angular known for a given axis, it can be found for any axis
+position parallel to it
+instantaneous angular acceleration derivative of rotational dynamics analysis of rotational motion
+angular velocity with respect to time using the net torque and moment of inertia to find
+instantaneous angular velocity derivative of angular the angular acceleration
+position with respect to time rotational kinetic energy kinetic energy due to the
+kinematics of rotational motion describes the rotation of an object; this is part of its total kinetic
+relationships among rotation angle, angular velocity, energy
+angular acceleration, and time rotational work work done on a rigid body due to the
+lever arm perpendicular distance from the line that sum of the torques integrated over the angle
+the force vector lies on to a given axis through with the body rotates
+linear mass density the mass per unit length of a surface mass density mass per unit area of a two
+one dimensional object dimensional object
+moment of inertia rotational mass of rigid bodies torque cross product of a force and a lever arm to a
+that relates to how easy or hard it will be to change given axis
+the angular velocity of the rotating rigid body total linear acceleration vector sum of the
+Newton’s second law for rotation sum of the torques centripetal acceleration vector and the tangential
+on a rotating system equals its moment of inertia acceleration vector
+times its angular acceleration
+Key Equations
+Angular position
+Angular velocity
+Tangential speed
+Angular acceleration
+Tangential acceleration
+Average angular velocity
+Angular displacement
+Angular velocity from constant angular acceleration
+Angular velocity from displacement and
+constant angular acceleration
+Change in angular velocity
+Total acceleration
+Rotational kinetic energy
+Moment of inertia
+Rotational kinetic energy in terms of the
+moment of inertia of a rigid body
+Moment of inertia of a continuous object
+Access for free at openstax.org
+
+10 • Chapter Review 501
+Parallel-axis theorem
+Moment of inertia of a compound object
+Torque vector
+Magnitude of torque
+Total torque
+Newton’s second law for rotation
+Incremental work done by a torque
+Work-energy theorem
+Rotational work done by net force
+Rotational power
+Summary
+10.1 Rotational Variables body is decreasing, the angular acceleration is in
+the opposite direction to . If the rotation rate is
+• The angular position of a rotating body is the
+increasing, the angular acceleration is in the
+angle the body has rotated through in a fixed
+same direction as .
+coordinate system, which serves as a frame of
+• The tangential acceleration of a point at a radius
+reference.
+from the axis of rotation is the angular
+• The angular velocity of a rotating body about a
+acceleration times the radius to the point.
+fixed axis is defined as , the rotational
+rate of the body in radians per second. The 10.2 Rotation with Constant Angular Acceleration
+instantaneous angular velocity of a rotating body
+• The kinematics of rotational motion describes
+is the derivative with respect
+the relationships among rotation angle (angular
+to time of the angular position , found by taking position), angular velocity, angular acceleration,
+the limit in the average angular velocity and time.
+. The angular velocity relates to the • For a constant angular acceleration, the angular
+tangential speed of a point on the rotating body velocity varies linearly. Therefore, the average
+through the relation , where r is the angular velocity is 1/2 the initial plus final
+radius to the point and is the tangential speed angular velocity over a given time period:
+at the given point.
+• The angular velocity is found using the right-
+hand rule. If the fingers curl in the direction of • We used a graphical analysis to find solutions to
+rotation about a fixed axis, the thumb points in fixed-axis rotation with constant angular
+the direction of (see Figure 10.5). acceleration. From the relation , we
+• If the system’s angular velocity is not constant, found that the area under an angular velocity-vs.-
+then the system has an angular acceleration. The time curve gives the angular displacement,
+average angular acceleration over a given time
+interval is the change in angular velocity over this . The results of the
+time interval, . The instantaneous
+angular acceleration is the time derivative of
+graphical analysis were verified using the
+angular velocity, . The
+kinematic equations for constant angular
+angular acceleration is found by locating the acceleration. Similarly, since , the area
+angular velocity. If a rotation rate of a rotating under an angular acceleration-vs.-time graph

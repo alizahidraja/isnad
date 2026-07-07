@@ -1,0 +1,244 @@
+# REAL PDF — openstax_vol3.pdf, pages 267-272
+############################################################
+
+Chapter 6 | Photons and Matter Waves 259
+Figure 6.10 Kinetic energy of photoelectrons at the surface
+versus the frequency of incident radiation. The photoelectric
+effect can only occur above the cut-off frequency f c.
+Measurements for all metal surfaces give linear plots with one
+slope. Each metal surface has its own cut-off frequency.
+The Work Function
+Thephotoelectriceffectwasexplainedin1905byA.Einstein.EinsteinreasonedthatifPlanck’shypothesisaboutenergy
+quantawascorrectfordescribingtheenergyexchangebetweenelectromagneticradiationandcavitywalls,itshouldalso
+worktodescribeenergyabsorptionfromelectromagneticradiationbythesurfaceofaphotoelectrode.Hepostulatedthatan
+electromagneticwavecarriesitsenergyindiscretepackets.Einstein’spostulategoesbeyondPlanck’shypothesisbecauseit
+states that the light itself consists of energy quanta. In other words, it states that electromagnetic waves are quantized.
+InEinstein’sapproach,abeamofmonochromaticlightoffrequencyfismadeofphotons.Aphotonisaparticleoflight.
+Each photon moves at the speed of light and carries an energy quantum E f. A photon’s energy depends only on its
+frequencyf. Explicitly, theenergy of a photonis
+E
+f
+=hf (6.13)
+where h isPlanck’sconstant.Inthephotoelectriceffect,photonsarriveatthemetalsurfaceandeachphotongivesaway
+allofitsenergytoonlyoneelectrononthemetalsurface.Thistransferofenergyfromphotontoelectronisofthe“allor
+nothing”type,andtherearenofractionaltransfersinwhichaphotonwouldloseonlypartofitsenergyandsurvive.The
+essenceofaquantumphenomenoniseitheraphotontransfersitsentireenergyandceasestoexistorthereisnotransfer
+at all. This is in contrast with the classical picture, where fractional energy transfers are permitted. Having this quantum
+understanding, the energy balance for an electron on the surface that receives the energy E from a photon is
+f
+E
+f
+=K max+ϕ
+where K isthekineticenergy,givenbyEquation 6.12,thatanelectronhasattheveryinstantitgetsdetachedfrom
+max
+thesurface.Inthisenergybalanceequation, ϕ istheenergyneededtodetachaphotoelectronfromthesurface.Thisenergy
+ϕ iscalledtheworkfunctionofthemetal.Eachmetalhasitscharacteristicworkfunction,asillustratedinTable6.1.To
+obtainthekineticenergyofphotoelectronsatthesurface,wesimplyinverttheenergybalanceequationanduseEquation
+6.13toexpresstheenergyoftheabsorbedphoton.Thisgivesustheexpressionforthekineticenergyofphotoelectrons,
+which explicitly depends on the frequency of incident radiation:
+K max=hf −ϕ. (6.14)
+Thisequationhasasimplemathematicalformbutitsphysicsisprofound.Wecannowelaborateonthephysicalmeaning
+behindEquation 6.14.
+
+260 Chapter 6 | Photons and Matter Waves
+Typical Values of the Work Function for Some Common Metals
+Metal ϕ (eV)
+Na 2.46
+Al 4.08
+Pb 4.14
+Zn 4.31
+Fe 4.50
+Cu 4.70
+Ag 4.73
+Pt 6.35
+Table 6.1
+In Einstein’s interpretation, interactions take place between individual electrons and individual photons. The absence of
+a lag time means that these one-on-one interactions occur instantaneously. This interaction time cannot be increased by
+loweringthelightintensity.Thelightintensitycorrespondstothenumberofphotonsarrivingatthemetalsurfaceperunit
+time.Evenatverylowlightintensities,thephotoelectriceffectstilloccursbecausetheinteractionisbetweenoneelectron
+andonephoton.Aslongasthereisatleastonephotonwithenoughenergytotransferittoaboundelectron,aphotoelectron
+will appear on the surface of the photoelectrode.
+The existence of the cut-off frequency f for the photoelectric effect follows from Equation 6.14 because the kinetic
+c
+energy K ofthephotoelectroncantakeonlypositivevalues.Thismeansthattheremustbesomethresholdfrequency
+max
+for which the kinetic energy is zero, 0=hf c−ϕ. In this way, we obtain the explicit formula for cut-off frequency:
+ϕ (6.15)
+f c=
+h
+.
+Cut-offfrequencydependsonlyontheworkfunctionofthemetalandisindirectproportiontoit.Whentheworkfunction
+islarge(whenelectronsareboundfasttothemetalsurface),theenergyofthethresholdphotonmustbelargetoproducea
+photoelectron,andthenthecorrespondingthresholdfrequencyislarge.Photonswithfrequencieslargerthanthethreshold
+frequency f c always produce photoelectrons because they have K max>0. Photons with frequencies smaller than f c
+donothaveenoughenergytoproducephotoelectrons.Therefore,whenincidentradiationhasafrequencybelowthecut-
+off frequency, the photoelectric effect is not observed. Because frequency f and wavelength λ of electromagnetic waves
+are related by the fundamental relation λf =c (where c is the speed of light in vacuum), the cut-off frequency has its
+correspondingcut-off wavelength λ c:
+c c hc (6.16)
+λ c=
+f
+c
+=
+ϕ/h
+=
+ϕ
+.
+Inthisequation, hc=1240eV·nm. Ourobservationscanberestatedinthefollowingequivalentway:Whentheincident
+radiation has wavelengths longer than the cut-off wavelength, the photoelectric effect does not occur.
+Example 6.5
+Photoelectric Effect for Silver
+Radiation with wavelength 300 nm is incident on a silver surface. Will photoelectrons be observed?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 261
+Strategy
+Photoelectronscanbeejectedfromthemetalsurfaceonlywhentheincidentradiationhasashorterwavelength
+thanthecut-offwavelength.Theworkfunctionofsilveris ϕ=4.73eV (Table6.1).Tomaketheestimate,we
+useEquation 6.16.
+Solution
+The threshold wavelength for observing the photoelectric effect in silver is
+λ c= h
+ϕ
+c = 124
+4
+0
+.7
+e
+3
+V
+eV
+·nm =262nm.
+The incident radiation has wavelength 300 nm, which is longer than the cut-off wavelength; therefore,
+photoelectrons are not observed.
+Significance
+If the photoelectrode were made of sodium instead of silver, the cut-off wavelength would be 504 nm and
+photoelectrons would be observed.
+Equation 6.14inEinstein’smodeltellsusthatthemaximumkineticenergyofphotoelectronsisalinearfunctionofthe
+frequency of incident radiation, which is illustrated in Figure 6.10. For any metal, the slope of this plot has a value of
+Planck’sconstant.Theinterceptwiththe K -axisgivesusavalueoftheworkfunctionthatischaracteristicforthemetal.
+max
+Ontheotherhand, K
+max
+canbedirectlymeasuredintheexperimentbymeasuringthevalueofthestoppingpotential ΔV
+s
+(seeEquation6.12)atwhichthephotocurrentstops.Thesedirectmeasurementsallowustodetermineexperimentallythe
+value of Planck’s constant, as well as work functions of materials.
+Einstein’smodelalsogivesastraightforwardexplanationforthephotocurrentvaluesshowninFigure 6.9.Forexample,
+doubling the intensity of radiation translates to doubling the number of photons that strike the surface per unit time. The
+larger the number of photons, the larger is the number of photoelectrons, which leads to a larger photocurrent in the
+circuit. This is how radiation intensity affects the photocurrent. The photocurrent must reach a plateau at some value of
+potentialdifferencebecause,inunittime,thenumberofphotoelectronsisequaltothenumberofincidentphotonsandthe
+numberofincidentphotonsdoesnotdependontheappliedpotentialdifferenceatall,butonlyontheintensityofincident
+radiation.Thestoppingpotentialdoesnotchangewiththeradiationintensitybecausethekineticenergyofphotoelectrons
+(seeEquation 6.14) does not depend on the radiation intensity.
+Example 6.6
+Work Function and Cut-Off Frequency
+Whena180-nmlightisusedinanexperimentwithanunknownmetal,themeasuredphotocurrentdropstozero
+at potential – 0.80 V. Determine the work function of the metal and its cut-off frequency for the photoelectric
+effect.
+Strategy
+Tofindthecut-offfrequency f c, weuseEquation6.15,butfirstwemustfindtheworkfunction ϕ. Tofind
+ϕ, weuseEquation 6.12andEquation 6.14.Photocurrentdropstozeroatthestoppingvalueofpotential,
+so we identify ΔV s=0.8V.
+Solution
+We useEquation 6.12to find the kinetic energy of the photoelectrons:
+K max=eΔV s=e(0.80V)=0.80eV.
+Now we solveEquation 6.14for ϕ:
+ϕ=hf −K max= h
+λ
+c −K max= 124
+1
+0
+80
+eV
+nm
+·nm −0.80eV=6.09eV.
+
+262 Chapter 6 | Photons and Matter Waves
+Finally, we useEquation 6.15to find the cut-off frequency:
+ϕ
+f c=
+h
+= 6.09
+−
+eV
+15
+=1.47×10 −15 Hz.
+4.136×10 eV·s
+Significance
+Incalculationsliketheoneshowninthisexample,itisconvenienttousePlanck’sconstantintheunitsof eV·s
+and express all energies in eV instead of joules.
+Example 6.7
+The Photon Energy and Kinetic Energy of Photoelectrons
+A 430-nm violet light is incident on a calcium photoelectrode with a work function of 2.71 eV.
+Find the energy of the incident photons and the maximum kinetic energy of ejected electrons.
+Strategy
+Theenergyoftheincidentphotonis E
+f
+=hf =hc/λ, whereweuse fλ=c. Toobtainthemaximumenergy
+of the ejected electrons, we useEquation 6.16.
+Solution
+E f = h λ c = 124 4 0 30 eV nm ·nm =2.88eV, K max=E f −ϕ=2.88eV−2.71eV=0.17eV
+Significance
+In this experimental setup, photoelectrons stop flowing at the stopping potential of 0.17 V.
+6.6 CheckYourUnderstandingAyellow589-nmlightisincidentonasurfacewhoseworkfunctionis1.20
+eV. What is the stopping potential? What is the cut-off wavelength?
+6.7 Check Your Understanding Cut-off frequency for the photoelectric effect in some materials is
+8.0×10 13 Hz. Whentheincidentlighthasafrequencyof 1.2×1014Hz, thestoppingpotentialismeasured
+as–0.16V.EstimateavalueofPlanck’sconstantfromthesedata(inunits J·s and eV·s)anddeterminethe
+percentage error of your estimation.
+6.3 | The Compton Effect
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe Compton’s experiment
+• Explain the Compton wavelength shift
+• Describe how experiments with X-rays confirm the particle nature of radiation
+Two of Einstein’s influential ideas introduced in 1905 were the theory of special relativity and the concept of a light
+quantum, which we now call a photon. Beyond 1905, Einstein went further to suggest that freely propagating
+electromagnetic waves consisted of photons that are particles of light in the same sense that electrons or other massive
+particlesareparticlesofmatter.Abeamofmonochromaticlightofwavelength λ (orequivalently,offrequencyf)canbe
+seeneitherasaclassicalwaveorasacollectionofphotonsthattravelinavacuumwithonespeed,c(thespeedoflight),
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 263
+andallcarryingthesameenergy, E
+f
+=hf. Thisideaprovedusefulforexplainingtheinteractionsoflightwithparticles
+of matter.
+Momentum of a Photon
+Unlikeaparticleofmatterthatischaracterizedbyitsrestmass m , aphotonismassless.Inavacuum,unlikeaparticle
+0
+ofmatterthatmayvaryitsspeedbutcannotreachthespeedoflight,aphotontravelsatonlyonespeed,whichisexactly
+thespeedoflight.FromthepointofviewofNewtonianclassicalmechanics,thesetwocharacteristicsimplythataphoton
+shouldnotexistatall.Forexample,howcanwefindthelinearmomentumorkineticenergyofabodywhosemassiszero?
+Thisapparentparadoxvanishesifwedescribeaphotonasarelativisticparticle.Accordingtothetheoryofspecialrelativity,
+any particle in nature obeys the relativistic energy equation
+E2= p2c2+m2c4. (6.17)
+0
+Thisrelationcanalsobeappliedtoaphoton.InEquation6.17,Eisthetotalenergyofaparticle,pisitslinearmomentum,
+and m is its rest mass. For a photon, we simply set m =0 in this equation. This leads to the expression for the
+0 0
+momentum p of a photon
+f
+E (6.18)
+f
+p f = c .
+Here the photon’s energy E is the same as that of a light quantum of frequency f, which we introduced to explain the
+f
+photoelectric effect:
+hc (6.19)
+E f =hf = λ .
+The wave relation that connects frequencyfwith wavelength λ and speedcalso holds for photons:
+λf =c (6.20)
+Therefore,aphotoncanbeequivalentlycharacterizedbyeitheritsenergyandwavelength,oritsfrequencyandmomentum.
+Equation 6.19 and Equation 6.20 can be combined into the explicit relation between a photon’s momentum and its
+wavelength:
+h (6.21)
+p f = λ .
+Notice that this equation gives us only the magnitude of the photon’s momentum and contains no information about the
+direction in which the photon is moving. To include the direction, it is customary to write the photon’s momentum as a
+vector:
+→ → (6.22)
+p f =ℏ k .
+In Equation 6.22, ℏ=h/2π is the reduced Planck’s constant (pronounced “h-bar”), which is just Planck’s constant

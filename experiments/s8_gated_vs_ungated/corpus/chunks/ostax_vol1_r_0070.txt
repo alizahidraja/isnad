@@ -1,0 +1,198 @@
+# REAL PDF — openstax_vol1.pdf, pages 417-423
+############################################################
+
+9.4 • Types of Collisions 405
+9.4 Types of Collisions
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Identify the type of collision
+• Correctly label a collision as elastic or inelastic
+• Use kinetic energy along with momentum and impulse to analyze a collision
+Although momentum is conserved in all interactions, not all interactions (collisions or explosions) are the same. The
+possibilities include:
+• A single object can explode into multiple objects (explosions).
+• Multiple objects can collide and bounce off each other, called an elastic collision, resulting in the same kinetic
+energy of the system before and after the collision.
+• Multiple objects can collide and the system loses kinetic energy, called an inelastic collision. One such case is
+where the two objects stick together, forming a single object.
+It’s useful, therefore, to categorize different types of interactions, according to how the interacting objects move
+before and after the interaction.
+Explosions
+The first possibility is that a single object may break apart into two or more pieces. An example of this is a
+firecracker, or a bow and arrow, or a rocket rising through the air toward space. These can be difficult to analyze if
+the number of fragments after the collision is more than about three or four; but nevertheless, the total momentum
+of the system before and after the explosion is identical.
+Note that if the object is initially motionless, then the system (which is just the object) has no momentum and no
+kinetic energy. After the explosion, the net momentum of all the pieces of the object must sum to zero (since the
+momentum of this closed system cannot change). However, the system will have a great deal of kinetic energy after
+the explosion, although it had none before. Thus, we see that, although the momentum of the system is conserved
+in an explosion, the kinetic energy of the system most definitely is not; it increases. This interaction—one object
+becoming many, with an increase of kinetic energy of the system—is called an explosion.
+Where does the energy come from? Does conservation of energy still hold? Yes; some form of potential energy is
+converted to kinetic energy. In the case of gunpowder burning and pushing out a bullet, chemical potential energy is
+converted to kinetic energy of the bullet, and of the recoiling gun. For a bow and arrow, it is elastic potential energy
+in the bowstring.
+Inelastic
+The second possibility is the reverse: that two or more objects collide with each other and stick together, thus (after
+the collision) forming one single composite object. The total mass of this composite object is the sum of the masses
+of the original objects, and the new single object moves with a velocity dictated by the conservation of momentum.
+However, it turns out again that, although the total momentum of the system of objects remains constant, the kinetic
+energy doesn’t; but this time, the kinetic energy decreases. This type of collision is called inelastic.
+Any collision where the objects stick together will result in the maximum loss of kinetic energy (i.e., will be a
+minimum).
+Such a collision is called perfectly inelastic. In the extreme case, multiple objects collide, stick together, and
+remain motionless after the collision. Since the objects are all motionless after the collision, the final kinetic energy
+is also zero; therefore, the loss of kinetic energy is a maximum.
+• If , the collision is inelastic.
+• If is the lowest energy, or the energy lost by both objects is the most, the collision is perfectly inelastic
+(objects stick together).
+• If , the collision is elastic.
+
+406 9 • Linear Momentum and Collisions
+Elastic
+The extreme case on the other end is if two or more objects approach each other, collide, and bounce off each other,
+moving away from each other at the same relative speed at which they approached each other. In this case, the total
+kinetic energy of the system is conserved. Such an interaction is called elastic.
+PROBLEM-SOLVING STRATEGY
+Collisions
+A closed system always conserves momentum; it might also conserve kinetic energy, but very often it doesn’t.
+Energy-momentum problems confined to a plane (as ours are) usually have two unknowns. Generally, this approach
+works well:
+1. Define a closed system.
+2. Write down the expression for conservation of momentum.
+3. If kinetic energy is conserved, write down the expression for conservation of kinetic energy; if not, write down
+the expression for the change of kinetic energy.
+4. You now have two equations in two unknowns, which you solve by standard methods.
+EXAMPLE 9.10
+Formation of a Deuteron
+A proton (mass ) collides with a neutron (with essentially the same mass as the proton) to form a
+particle called a deuteron. What is the velocity of the deuteron if it is formed from a proton moving with velocity
+to the right and a neutron moving with velocity to the left?
+Strategy
+Define the system to be the two particles. This is a collision, so we should first identify what kind. Since we are told
+the two particles form a single particle after the collision, this means that the collision is perfectly inelastic. Thus,
+kinetic energy is not conserved, but momentum is. Thus, we use conservation of momentum to determine the final
+velocity of the system.
+Solution
+Treat the two particles as having identical masses M. Use the subscripts p, n, and d for proton, neutron, and
+deuteron, respectively. This is a one-dimensional problem, so we have
+The masses divide out:
+The velocity is thus .
+Significance
+This is essentially how particle colliders like the Large Hadron Collider work: They accelerate particles up to very
+Access for free at openstax.org
+
+9.4 • Types of Collisions 407
+high speeds (large momenta), but in opposite directions. This maximizes the creation of so-called “daughter
+particles.”
+EXAMPLE 9.11
+Ice Hockey 2
+(This is a variation of an earlier example.)
+Two ice hockey pucks of different masses are on a flat, horizontal hockey rink. The red puck has a mass of 15 grams,
+and is motionless; the blue puck has a mass of 12 grams, and is moving at 2.5 m/s to the left. It collides with the
+motionless red puck (Figure 9.20). If the collision is perfectly elastic, what are the final velocities of the two pucks?
+FIGURE 9.20 Two different hockey pucks colliding. The top diagram shows the pucks the instant before the collision, and the bottom
+diagram show the pucks the instant after the collision. The net external force is zero.
+Strategy
+We’re told that we have two colliding objects, and we’re told their masses and initial velocities; we’re asked for both
+final velocities. Conservation of momentum seems like a good strategy; define the system to be the two pucks.
+There is no friction, so we have a closed system. We have two unknowns (the two final velocities), but only one
+equation. The comment about the collision being perfectly elastic is the clue; it suggests that kinetic energy is also
+conserved in this collision. That gives us our second equation.
+The initial momentum and initial kinetic energy of the system resides entirely and only in the second puck (the blue
+one); the collision transfers some of this momentum and energy to the first puck.
+Solution
+Conservation of momentum, in this case, reads
+Conservation of kinetic energy reads
+There are our two equations in two unknowns. The algebra is tedious but not terribly difficult; you definitely should
+work it through. The solution is
+Substituting with the given numbers where a positive direction is to the left, we obtain
+
+408 9 • Linear Momentum and Collisions
+Significance
+Notice that after the collision, the blue puck is moving to the right; its direction of motion was reversed. The red
+puck is now moving to the left.
+CHECK YOUR UNDERSTANDING 9.7
+There is a possible mathematical second to the system of equations solved in this example (because the energy
+equation is quadratic): . This solution is unacceptable on physical grounds; what’s wrong
+with it?
+EXAMPLE 9.12
+Thor vs. Iron Man
+The 2012 movie “The Avengers” has a scene where Iron Man and Thor fight. At the beginning of the fight, Thor
+throws his hammer at Iron Man, hitting him and throwing him slightly up into the air and against a small tree, which
+breaks. From the video, Iron Man is standing still when the hammer hits him. The distance between Thor and Iron
+Man is approximately 10 m, and the hammer takes about 1 s to reach Iron Man after Thor releases it. The tree is
+about 2 m behind Iron Man, which he hits in about 0.75 s. Also from the video, Iron Man’s trajectory to the tree is
+very close to horizontal. Assuming Iron Man’s total mass is 200 kg:
+a. Estimate the mass of Thor’s hammer
+b. Estimate how much kinetic energy was lost in this collision
+Strategy
+After the collision, Thor’s hammer is in contact with Iron Man for the entire time, so this is a perfectly inelastic
+collision. Thus, with the correct choice of a closed system, we expect momentum is conserved, but not kinetic
+energy. We use the given numbers to estimate the initial momentum, the initial kinetic energy, and the final kinetic
+energy. Because this is a one-dimensional problem, we can go directly to the scalar form of the equations.
+Solution
+a. First, we posit conservation of momentum. For that, we need a closed system. The choice here is the system
+(hammer + Iron Man), from the time of collision to the moment just before Iron Man and the hammer hit the
+tree. Let:
+◦ mass of the hammer
+◦ mass of Iron Man
+◦ velocity of the hammer before hitting Iron Man
+◦ v combined velocity of Iron Man + hammer after the collision
+Again, Iron Man’s initial velocity was zero. Conservation of momentum here reads:
+We are asked to find the mass of the hammer, so we have
+Access for free at openstax.org
+
+9.4 • Types of Collisions 409
+Considering the uncertainties in our estimates, this should be expressed with just one significant figure; thus,
+.
+b. The initial kinetic energy of the system, like the initial momentum, is all in the hammer:
+After the collision,
+Thus, there was a loss of .
+Significance
+From other scenes in the movie, Thor apparently can control the hammer’s velocity with his mind. It is possible,
+therefore, that he mentally causes the hammer to maintain its initial velocity of 10 m/s while Iron Man is being
+driven backward toward the tree. If so, this would represent an external force on our system, so it would not be
+closed. Thor’s mental control of his hammer is beyond the scope of this book, however.
+EXAMPLE 9.13
+Analyzing a Car Crash
+At a stoplight, a small car (1200 kg) collides with a motionless large truck (3000 kg). The car comes to an
+instantaneous stop; the truck slides straight ahead, coming to a stop after sliding 10 meters. The measured
+coefficient of friction between the truck’s tires and the road was 0.62. How fast was the car moving at the moment
+of impact?
+Strategy
+At first it may seem we don’t have enough information to solve this problem. Although we know the initial speed of
+the truck, we don’t know the speed of the car (indeed, that’s what we’re asked to find), so we don’t know the initial
+momentum of the system. Similarly, we know the final speed of the car, but not the speed of the truck immediately
+after impact. The fact that the truck eventually slid to a speed of zero doesn’t help with the final momentum, since
+an external friction force caused that. Nor can we calculate an impulse, since we don’t know the collision time, or
+the amount of time the truck slid before stopping. A useful strategy is to impose a restriction on the analysis.
+Suppose we define a system consisting of just the car and the truck. The momentum of this system isn’t conserved,
+because of the friction between the truck and the road. But if we could find the speed of the truck the instant after
+impact—before friction had any measurable effect on the truck—then we could consider the momentum of the
+system to be conserved, with that restriction.
+Can we find the final speed of the truck? Yes; we invoke the work-energy theorem.
+
+410 9 • Linear Momentum and Collisions
+Solution
+First, define some variables. Let:
+• be the masses of the car and truck, respectively
+• be the velocities of the truck before and after the collision, respectively
+• Z be the velocities of the car before and after the collision, respectively
+• be the kinetic energies of the truck immediately after the collision, and after the truck has stopped
+sliding (so ).
+• d be the distance the truck slides after the collision before eventually coming to a stop.
+Since we actually want the initial speed of the car, and since the car is not part of the work-energy calculation, let’s
+start with conservation of momentum. For the car + truck system, conservation of momentum reads
+Since the car’s initial velocity was zero, as was the truck’s final velocity, this simplifies to
+So now we need the truck’s speed immediately after impact. Recall that
+where
+Also,
+The work is done over the distance the truck slides, which we’ve called d. Equating:
+Friction is the force on the truck that does the work to stop the sliding. With a level road, the friction force is
+Since the angle between the directions of the friction force vector and the displacement d is , and
+we have
+(Notice that the truck’s mass divides out; evidently the mass of the truck doesn’t matter.)
+Solving for the truck’s speed immediately after the collision gives
+Substituting the given numbers:
+Access for free at openstax.org

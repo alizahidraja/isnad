@@ -1,0 +1,167 @@
+# REAL PDF — openstax_vol1.pdf, pages 21-26
+############################################################
+
+1.1 • The Scope and Scale of Physics 9
+103 because which rounds to 3 as well. Thus, we say the numbers 800 and 450 are of the same
+order of magnitude: 103. However, the order of magnitude of 250 is 102 because which rounds
+to 2.
+An equivalent but quicker way to find the order of magnitude of a number is first to write it in scientific notation and
+then check to see whether the first factor is greater than or less than The idea is that
+is halfway between and on a log base-10 scale. Thus, if the first factor is less than
+then we round it down to 1 and the order of magnitude is simply whatever power of 10 is required to write the
+number in scientific notation. On the other hand, if the first factor is greater than then we round it up to 10 and
+the order of magnitude is one power of 10 higher than the power needed to write the number in scientific notation.
+For example, the number 800 can be written in scientific notation as Because 8 is bigger than
+we say the order of magnitude of 800 is The number 450 can be written as so its order of
+magnitude is also 103 because 4.5 is greater than 3. However, 250 written in scientific notation is and
+2.5 is less than 3, so its order of magnitude is
+The order of magnitude of a number is designed to be a ballpark estimate for the scale (or size) of its value. It is
+simply a way of rounding numbers consistently to the nearest (on a logarithmic scale) power of 10. In other words, if
+numbers differ by one order of magnitude, the one is larger than the other by a multiplicative factor of about ten.
+This makes doing rough mental math with very big and very small numbers easier. For example, the diameter of a
+hydrogen atom is on the order of 10−10 m, whereas the diameter of the Sun is on the order of 109 m, so it would
+take roughly hydrogen atoms to stretch across the diameter of the Sun. This is much easier to do
+in your head than using the more precise values of for a hydrogen atom diameter and
+for the Sun’s diameter, to find that it would take hydrogen atoms to stretch across the
+Sun’s diameter. In addition to being easier, the rough estimate is also nearly as informative as the precise
+calculation.
+Known ranges of length, mass, and time
+The vastness of the universe and the breadth over which physics applies are illustrated by the wide range of
+examples of known lengths, masses, and times (given as orders of magnitude) in Figure 1.4. Examining this table
+will give you a feeling for the range of possible topics in physics and numerical values. A good way to appreciate the
+vastness of the ranges of values in Figure 1.4 is to try to answer some simple comparative questions, such as the
+following:
+• How many hydrogen atoms does it take to stretch across the diameter of the Sun?
+(Answer: 109 m/10–10 m = 1019 hydrogen atoms)
+• How many protons are there in a bacterium?
+(Answer: 10–15 kg/10–27 kg = 1012 protons)
+• How many floating-point operations can a supercomputer do in 1 day?
+(Answer: 105 s/10–17 s = 1022 floating-point operations)
+In studying Figure 1.4, take some time to come up with similar questions that interest you and then try answering
+them. Doing this can breathe some life into almost any table of numbers.
+
+10 1 • Units and Measurement
+FIGURE 1.4 This table shows the orders of magnitude of length, mass, and time.
+INTERACTIVE
+Visit this site (https://openstax.org/l/21scaleuniv) to explore interactively the vast range of length scales in our
+universe. Scroll down and up the scale to view hundreds of organisms and objects, and click on the individual
+objects to learn more about each one.
+Building Models
+How did we come to know the laws governing natural phenomena? What we refer to as the laws of nature are
+concise descriptions of the universe around us. They are human statements of the underlying laws or rules that all
+natural processes follow. Such laws are intrinsic to the universe; humans did not create them and cannot change
+them. We can only discover and understand them. Their discovery is a very human endeavor, with all the elements
+of mystery, imagination, struggle, triumph, and disappointment inherent in any creative effort (Figure 1.5). The
+cornerstone of discovering natural laws is observation; scientists must describe the universe as it is, not as we
+imagine it to be.
+Access for free at openstax.org
+
+1.1 • The Scope and Scale of Physics 11
+FIGURE 1.5 (a) Enrico Fermi (1901–1954) was born in Italy. On accepting the Nobel Prize in Stockholm in 1938 for his work on artificial
+radioactivity produced by neutrons, he took his family to America rather than return home to the government in power at the time. He
+became an American citizen and was a leading participant in the Manhattan Project. (b) Marie Curie (1867–1934) sacrificed monetary
+assets to help finance her early research and damaged her physical well-being with radiation exposure. She is the only person to win Nobel
+prizes in both physics and chemistry. One of her daughters also won a Nobel Prize. (credit a: modification of work by United States
+Department of Energy)
+A model is a representation of something that is often too difficult (or impossible) to display directly. Although a
+model is justified by experimental tests, it is only accurate in describing certain aspects of a physical system. An
+example is the Bohr model of single-electron atoms, in which the electron is pictured as orbiting the nucleus,
+analogous to the way planets orbit the Sun (Figure 1.6). We cannot observe electron orbits directly, but the mental
+image helps explain some of the observations we can make, such as the emission of light from hot gases (atomic
+spectra). However, other observations show that the picture in the Bohr model is not really what atoms look like.
+The model is “wrong,” but is still useful for some purposes. Physicists use models for a variety of purposes. For
+example, models can help physicists analyze a scenario and perform a calculation or models can be used to
+represent a situation in the form of a computer simulation. Ultimately, however, the results of these calculations and
+simulations need to be double-checked by other means—namely, observation and experimentation.
+FIGURE 1.6 What is a model? The Bohr model of a single-electron atom shows the electron orbiting the nucleus in one of several possible
+circular orbits. Like all models, it captures some, but not all, aspects of the physical system.
+The word theory means something different to scientists than what is often meant when the word is used in
+everyday conversation. In particular, to a scientist a theory is not the same as a “guess” or an “idea” or even a
+“hypothesis.” The phrase “it’s just a theory” seems meaningless and silly to scientists because science is founded
+on the notion of theories. To a scientist, a theory is a testable explanation for patterns in nature supported by
+scientific evidence and verified multiple times by various groups of researchers. Some theories include models to
+
+12 1 • Units and Measurement
+help visualize phenomena whereas others do not. Newton’s theory of gravity, for example, does not require a model
+or mental image, because we can observe the objects directly with our own senses. Although models are meant only
+to describe certain aspects of a physical system accurately, a theory should describe all aspects of any system that
+falls within its domain of applicability. In particular, any experimentally testable implication of a theory should be
+verified. If an experiment ever shows an implication of a theory to be false, then the theory is either thrown out or
+modified suitably (for example, by limiting its domain of applicability).
+A law uses concise language to describe a generalized pattern in nature supported by scientific evidence and
+repeated experiments. Often, a law can be expressed in the form of a single mathematical equation. Laws and
+theories are similar in that they are both scientific statements that result from a tested hypothesis and are
+supported by scientific evidence. However, the designation law is usually reserved for a concise and very general
+statement that describes phenomena in nature, such as the law that energy is conserved during any process, or
+Newton’s second law of motion, which relates force (F), mass (m), and acceleration (a) by the simple equation
+A theory, in contrast, is a less concise statement of observed behavior. For example, the theory of evolution
+and the theory of relativity cannot be expressed concisely enough to be considered laws. The biggest difference
+between a law and a theory is that a theory is much more complex and dynamic. A law describes a single action
+whereas a theory explains an entire group of related phenomena. Less broadly applicable statements are usually
+called principles (such as Pascal’s principle, which is applicable only in fluids), but the distinction between laws and
+principles often is not made carefully.
+The models, theories, and laws we devise sometimes imply the existence of objects or phenomena that are as yet
+unobserved. These predictions are remarkable triumphs and tributes to the power of science. It is the underlying
+order in the universe that enables scientists to make such spectacular predictions. However, if experimentation
+does not verify our predictions, then the theory or law is wrong, no matter how elegant or convenient it is. Laws can
+never be known with absolute certainty because it is impossible to perform every imaginable experiment to confirm
+a law for every possible scenario. Physicists operate under the assumption that all scientific laws and theories are
+valid until a counterexample is observed. If a good-quality, verifiable experiment contradicts a well-established law
+or theory, then the law or theory must be modified or overthrown completely.
+The study of science in general, and physics in particular, is an adventure much like the exploration of an uncharted
+ocean. Discoveries are made; models, theories, and laws are formulated; and the beauty of the physical universe is
+made more sublime for the insights gained.
+1.2 Units and Standards
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe how SI base units are defined.
+• Describe how derived units are created from base units.
+• Express quantities given in SI units using metric prefixes.
+As we saw previously, the range of objects and phenomena studied in physics is immense. From the incredibly short
+lifetime of a nucleus to the age of Earth, from the tiny sizes of subnuclear particles to the vast distance to the edges
+of the known universe, from the force exerted by a jumping flea to the force between Earth and the Sun, there are
+enough factors of 10 to challenge the imagination of even the most experienced scientist. Giving numerical values
+for physical quantities and equations for physical principles allows us to understand nature much more deeply than
+qualitative descriptions alone. To comprehend these vast ranges, we must also have accepted units in which to
+express them. We shall find that even in the potentially mundane discussion of meters, kilograms, and seconds, a
+profound simplicity of nature appears: all physical quantities can be expressed as combinations of only seven base
+physical units.
+We define a physical quantity either by specifying how it is measured or by stating how it is calculated from other
+measurements. For example, we might define distance and time by specifying methods for measuring them, such as
+using a meter stick and a stopwatch. Then, we could define average speed by stating that it is calculated as the total
+distance traveled divided by time of travel.
+Measurements of physical quantities are expressed in terms of units, which are standardized values. For example,
+Access for free at openstax.org
+
+1.2 • Units and Standards 13
+the length of a race, which is a physical quantity, can be expressed in units of meters (for sprinters) or kilometers
+(for distance runners). Without standardized units, it would be extremely difficult for scientists to express and
+compare measured values in a meaningful way (Figure 1.7).
+FIGURE 1.7 Distances given in unknown units are maddeningly useless.
+Two major systems of units are used in the world: SI units (for the French Système International d’Unités), also
+known as the metric system, and English units (also known as the customary or imperial system). English units
+were historically used in nations once ruled by the British Empire and are still widely used in the United States.
+English units may also be referred to as the foot–pound–second (fps) system, as opposed to the
+centimeter–gram–second (cgs) system. You may also encounter the term SAE units, named after the Society of
+Automotive Engineers. Products such as fasteners and automotive tools (for example, wrenches) that are measured
+in inches rather than metric units are referred to as SAE fasteners or SAE wrenches.
+Virtually every other country in the world (except the United States) now uses SI units as the standard. The metric
+system is also the standard system agreed on by scientists and mathematicians.
+SI Units: Base and Derived Units
+In any system of units, the units for some physical quantities must be defined through a measurement process.
+These are called the base quantities for that system and their units are the system’s base units. All other physical
+quantities can then be expressed as algebraic combinations of the base quantities. Each of these physical quantities
+is then known as a derived quantity and each unit is called a derived unit. The choice of base quantities is
+somewhat arbitrary, as long as they are independent of each other and all other quantities can be derived from
+them. Typically, the goal is to choose physical quantities that can be measured accurately to a high precision as the
+base quantities. The reason for this is simple. Since the derived units can be expressed as algebraic combinations of
+the base units, they can only be as accurate and precise as the base units from which they are derived.
+Based on such considerations, the International Standards Organization recommends using seven base quantities,
+which form the International System of Quantities (ISQ). These are the base quantities used to define the SI base
+units. Table 1.1 lists these seven ISQ base quantities and the corresponding SI base units.
+ISQ Base Quantity SI Base Unit
+Length meter (m)
+Mass kilogram (kg)
+Time second (s)
+Electrical current ampere (A)
+TABLE 1.1 ISQ Base Quantities and Their SI Units

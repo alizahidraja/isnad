@@ -1,0 +1,274 @@
+# REAL PDF — openstax_vol2.pdf, pages 31-37
+############################################################
+
+Chapter 1 | Temperature and Heat 21
+definedquantitythatdependsonlyonthecurrentstateofthesystem,ratherthanonthehistoryofthatsystem,isknownas
+astatevariable.Temperatureandinternalenergyarestatevariables.Tosumupthisparagraph,heatandworkarenotstate
+variables.
+Incidentally,increasingtheinternalenergyofasystemdoesnotnecessarilyincreaseitstemperature.Aswe’llseeinthenext
+section,thetemperaturedoesnotchangewhenasubstancechangesfromonephasetoanother.Anexampleisthemelting
+ofice,whichcanbeaccomplishedbyaddingheatorbydoingfrictionalwork,aswhenanicecubeisrubbedagainstarough
+surface.
+Temperature Change and Heat Capacity
+We have noted that heat transfer often causes temperature change. Experiments show that with no phase change and no
+workdoneonorbythesystem,thetransferredheatistypicallydirectlyproportionaltothechangeintemperatureandto
+the mass of the system, to a good approximation. (Below we show how to handle situations where the approximation is
+notvalid.)Theconstantofproportionalitydependsonthesubstanceanditsphase,whichmaybegas,liquid,orsolid.We
+omitdiscussionofthefourthphase,plasma,becausealthoughitisthemostcommonphaseintheuniverse,itisrareand
+short-lived on Earth.
+We can understand the experimental facts by noting that the transferred heat is the change in the internal energy, which
+is the total energy of the molecules. Under typical conditions, the total kinetic energy of the molecules K is a
+total
+constant fraction of the internal energy (for reasons and with exceptions that we’ll see in the next chapter). The average
+kinetic energy of a molecule K is proportional to the absolute temperature. Therefore, the change in internal energy
+ave
+of a system is typically proportional to the change in temperature and to the number of molecules, N. Mathematically,
+ΔU ∝ΔK
+total
+=NK
+ave
+∝NΔT Thedependenceonthesubstanceresultsinlargepartfromthedifferentmassesofatoms
+and molecules. We are considering its heat capacity in terms of its mass, but as we will see in the next chapter, in some
+cases,heatcapacitiespermoleculearesimilarfordifferentsubstances.Thedependenceonsubstanceandphasealsoresults
+from differences in the potential energy associated with interactions between atoms and molecules.
+Heat Transfer and Temperature Change
+A practical approximation for the relationship between heat transfer and temperature change is:
+Q=mcΔT, (1.5)
+where Q is the symbol for heat transfer (“quantity of heat”), m is the mass of the substance, and ΔT is the change
+in temperature. The symbol c stands for the specific heat (also called “specific heat capacity”) and depends on the
+materialandphase.Thespecificheatisnumericallyequaltotheamountofheatnecessarytochangethetemperatureof
+1.00 kgofmassby 1.00°C.TheSIunitforspecificheatis J/(kg×K) or J/(kg×°C).(Recallthatthetemperature
+change ΔT is the same in units of kelvin and degrees Celsius.)
+Valuesofspecificheatmustgenerallybemeasured,becausethereisnosimplewaytocalculatethemprecisely.Table1.3
+listsrepresentativevaluesofspecificheatforvarioussubstances.Weseefromthistablethatthespecificheatofwateris
+fivetimesthatofglassand10timesthatofiron,whichmeansthatittakesfivetimesasmuchheattoraisethetemperature
+ofwateragivenamountasforglass,and10timesasmuchasforiron.Infact,waterhasoneofthelargestspecificheatsof
+any material, which is important for sustaining life on Earth.
+The specific heats of gases depend on what is maintained constant during the heating—typically either the volume or
+the pressure. In the table, the first specific heat value for each gas is measured at constant volume, and the second (in
+parentheses) is measured at constant pressure. We will return to this topic in the chapter on the kinetic theory of gases.
+
+22 Chapter 1 | Temperature and Heat
+Substances Specific Heat (c)
+Solids J/kg·°C [2]
+kcal/kg·°C
+Aluminum 900 0.215
+Asbestos 800 0.19
+Concrete, granite (average) 840 0.20
+Copper 387 0.0924
+Glass 840 0.20
+Gold 129 0.0308
+Human body (average at 37°C) 3500 0.83
+Ice (average, −50°Cto0°C) 2090 0.50
+Iron, steel 452 0.108
+Lead 128 0.0305
+Silver 235 0.0562
+Wood 1700 0.40
+Liquids
+Benzene 1740 0.415
+Ethanol 2450 0.586
+Glycerin 2410 0.576
+Mercury 139 0.0333
+Water (15.0°C) 4186 1.000
+Gases[3]
+Air (dry) 721 (1015) 0.172 (0.242)
+Ammonia 1670 (2190) 0.399 (0.523)
+Carbon dioxide 638 (833) 0.152 (0.199)
+Nitrogen 739 (1040) 0.177 (0.248)
+Oxygen 651 (913) 0.156 (0.218)
+Steam (100°C) 1520 (2020) 0.363 (0.482)
+Table 1.3Specific Heats of Various Substances[1] [1]The values for
+solids and liquids are at constant volume and 25°C, except as noted.
+[2]These values are identical in units of cal/g·°C. [3]Specific heats at
+constant volume and at 20.0°C except as noted, and at 1.00 atm
+pressure. Values in parentheses are specific heats at a constant
+pressure of 1.00 atm.
+Ingeneral,specificheatalsodependsontemperature.Thus,aprecisedefinitionofcforasubstancemustbegiveninterms
+of an infinitesimal change in temperature. To do this, we note that c= m 1 Δ Δ Q T and replace Δ withd:
+dQ
+c= m 1 dT .
+Except for gases, the temperature and volume dependence of the specific heat of most substances is weak at normal
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 23
+temperatures. Therefore, we will generally take specific heats to be constant at the values given in the table.
+Example 1.5
+Calculating the Required Heat
+A0.500-kgaluminumpanonastoveand0.250Lofwaterinitareheatedfrom 20.0°C to 80.0°C.(a)How
+much heat is required? What percentage of the heat is used to raise the temperature of (b) the pan and (c) the
+water?
+Strategy
+Wecanassumethatthepanandthewaterarealwaysatthesametemperature.Whenyouputthepanonthestove,
+thetemperatureofthewaterandthatofthepanareincreasedbythesameamount.Weusetheequationforthe
+heat transfer for the given temperature change and mass of water and aluminum. The specific heat values for
+water and aluminum are given inTable 1.3.
+Solution
+1. Calculate the temperature difference:
+ΔT =T −T =60.0°C.
+f i
+2. Calculatethemassofwater.Becausethedensityofwateris 1000kg/m 3,1Lofwaterhasamassof1
+kg, and the mass of 0.250 L of water is m w=0.250kg.
+3. Calculate the heat transferred to the water. Use the specific heat of water inTable 1.3:
+Q w=m w c wΔT =⎛ ⎝ 0.250kg⎞ ⎠ ⎛ ⎝ 4186J/kg°C⎞ ⎠ (60.0°C)=62.8kJ.
+4. Calculate the heat transferred to the aluminum. Use the specific heat for aluminum inTable 1.3:
+Q =m c ΔT =⎛0.500kg⎞⎛900J/kg°C⎞(60.0°C)=27.0kJ.
+Al A1 A1 ⎝ ⎠⎝ ⎠
+5. Find the total transferred heat:
+Q =Q +Q =89.8kJ.
+Total W Al
+Significance
+Inthisexample,theheattransferredtothecontainerisasignificantfractionofthetotaltransferredheat.Although
+the mass of the pan is twice that of the water, the specific heat of water is over four times that of aluminum.
+Therefore,ittakesabitmorethantwiceasmuchheattoachievethegiventemperaturechangeforthewateras
+for the aluminum pan.
+Example1.6illustratesatemperaturerisecausedbydoingwork.(Theresultisthesameasifthesameamountofenergy
+had been added with a blowtorch instead of mechanically.)
+Example 1.6
+Calculating the Temperature Increase from the Work Done on a Substance
+Truck brakes used to control speed on a downhill run do work, converting gravitational potential energy into
+increasedinternalenergy(highertemperature)ofthebrakematerial(Figure1.11).Thisconversionpreventsthe
+gravitationalpotentialenergyfrombeingconvertedintokineticenergyofthetruck.Sincethemassofthetruck
+ismuchgreaterthanthatofthebrakematerialabsorbingtheenergy,thetemperatureincreasemayoccurtoofast
+for sufficient heat to transfer from the brakes to the environment; in other words, the brakes may overheat.
+
+24 Chapter 1 | Temperature and Heat
+Figure 1.11 The smoking brakes on a braking truck are visible evidence of the mechanical equivalent of heat.
+Calculatethetemperatureincreaseof10kgofbrakematerialwithanaveragespecificheatof 800J/kg·°C if
+thematerialretains10%oftheenergyfroma10,000-kgtruckdescending75.0m(inverticaldisplacement)ata
+constant speed.
+Strategy
+We calculate the gravitational potential energy (Mgh) that the entire truck loses in its descent, equate it to the
+increase in the brakes’ internal energy, and then find the temperature increase produced in the brake material
+alone.
+Solution
+First we calculate the change in gravitational potential energy as the truck goes downhill:
+Mgh=⎛10,000kg⎞⎛ 9.80m/s2⎞
+(75.0m)=7.35×10
+6
+J.
+⎝ ⎠⎝ ⎠
+Becausethekineticenergyofthetruckdoesnotchange,conservationofenergytellsusthelostpotentialenergy
+isdissipated,andweassumethat10%ofitistransferredtointernalenergyofthebrakes,sotake Q=Mgh/10.
+Then we calculate the temperature change from the heat transferred, using
+Q
+ΔT = mc,
+wheremis the mass of the brake material. Insert the given values to find
+5
+ΔT = 7.35×10 J =92°C.
+(10kg)(800J/kg°C)
+Significance
+If the truck had been traveling for some time, then just before the descent, the brake temperature would
+probablybehigherthantheambienttemperature.Thetemperatureincreaseinthedescentwouldlikelyraisethe
+temperature of the brake material very high, so this technique is not practical. Instead, the truck would use the
+techniqueofenginebraking.Adifferentideaunderliestherecenttechnologyofhybridandelectriccars,where
+mechanicalenergy(kineticandgravitationalpotentialenergy)isconvertedbythebrakesintoelectricalenergyin
+the battery, a process called regenerative braking.
+In a common kind of problem, objects at different temperatures are placed in contact with each other but isolated from
+everythingelse,andtheyareallowedtocomeintoequilibrium. Acontainerthatpreventsheattransferinoroutiscalled
+a calorimeter, and the use of a calorimeter to make measurements (typically of heat or specific heat capacity) is called
+calorimetry.
+Wewillusetheterm“calorimetryproblem”torefertoanyprobleminwhichtheobjectsconcernedarethermallyisolated
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 25
+fromtheirsurroundings.Animportantideainsolvingcalorimetryproblemsisthatduringaheattransferbetweenobjects
+isolatedfromtheirsurroundings,theheatgainedbythecolderobjectmustequaltheheatlostbythehotterobject,dueto
+conservation of energy:
+Q +Q =0. (1.6)
+cold hot
+Weexpressthisideabywritingthatthesumoftheheatsequalszerobecausetheheatgainedisusuallyconsideredpositive;
+the heat lost, negative.
+Example 1.7
+Calculating the Final Temperature in Calorimetry
+Supposeyoupour0.250kgof 20.0-°C water(aboutacup)intoa0.500-kgaluminumpanoffthestovewitha
+temperatureof 150°C.Assumenoheattransfertakesplacetoanythingelse:Thepanisplacedonaninsulated
+pad, and heat transfer to the air is neglected in the short time needed to reach equilibrium. Thus, this is a
+calorimetry problem, even though no isolating container is specified. Also assume that a negligible amount of
+water boils off. What is the temperature when the water and pan reach thermal equilibrium?
+Strategy
+Originally,thepanandwaterarenotinthermalequilibrium:Thepanisatahighertemperaturethanthewater.
+Heattransferrestoresthermalequilibriumoncethewaterandpanareincontact;itstopsoncethermalequilibrium
+betweenthepanandthewaterisachieved.Theheatlostbythepanisequaltotheheatgainedbythewater—that
+is the basic principle of calorimetry.
+Solution
+1. Use the equation for heat transfer Q=mcΔT to express the heat lost by the aluminum pan in terms
+of the mass of the pan, the specific heat of aluminum, the initial temperature of the pan, and the final
+temperature:
+Q =m c ⎛T −150°C⎞.
+hot A1 A1⎝ f ⎠
+2. Express the heat gained by the water in terms of the mass of the water, the specific heat of water, the
+initial temperature of the water, and the final temperature:
+Q cold =m w c w ⎛ ⎝ T f −20.0°C⎞ ⎠ .
+3. Note that Q <0 and Q >0 and that as stated above, they must sum to zero:
+hot cold
+Q +Q = 0
+cold hot
+Q = −Q
+cold hot
+m w c w ⎛ ⎝ T f −20.0°C⎞ ⎠ = −m A1 c A1 ⎛ ⎝ T f −150°C⎞ ⎠ .
+4. This a linear equation for the unknown final temperature, T . Solving for T ,
+f f
+T = m A1 c A1 (150°C)+m w c w(20.0°C) ,
+f m
+A1
+c
+A1
++m
+w
+c
+w
+and insert the numerical values:
+⎛0.500kg⎞⎛900J/kg°C⎞(150°C)+⎛0.250kg⎞⎛4186J/kg°C⎞(20.0°C)
+T = ⎝ ⎠⎝ ⎠ ⎝ ⎠⎝ ⎠ =59.1°C.
+f ⎛0.500kg⎞⎛900J/kg°C⎞+⎛0.250kg⎞⎛4186J/kg°C⎞
+⎝ ⎠⎝ ⎠ ⎝ ⎠⎝ ⎠
+Significance
+Whyisthefinaltemperaturesomuchcloserto 20.0°C thanto 150°C?Thereasonisthatwaterhasagreater
+specific heat than most common substances and thus undergoes a smaller temperature change for a given heat
+transfer. A large body of water, such as a lake, requires a large amount of heat to increase its temperature
+
+26 Chapter 1 | Temperature and Heat
+appreciably. This explains why the temperature of a lake stays relatively constant during the day even when
+thetemperaturechangeoftheairislarge.However,thewatertemperaturedoeschangeoverlongertimes(e.g.,
+summer to winter).
+1.3 Check Your Understanding If 25 kJ is necessary to raise the temperature of a rock from
+25°Cto30°C, how much heat is necessary to heat the rock from 45°Cto50°C?
+Example 1.8
+Temperature-Dependent Heat Capacity
+Atlowtemperatures,thespecificheatsofsolidsaretypicallyproportionalto T3.Thefirstunderstandingofthis
+behaviorwasduetotheDutchphysicistPeterDebye,whoin1912,treatedatomicoscillationswiththequantum
+theorythatMaxPlanckhadrecentlyusedforradiation.Forinstance,agoodapproximationforthespecificheat
+3
+ofsalt,NaCl,is c=3.33×104 J ⎛ T ⎞ . Theconstant321KiscalledtheDebyetemperatureofNaCl,
+kg·k⎝321K⎠
+Θ , andtheformulaworkswellwhen T <0.04Θ . Usingthisformula,howmuchheatisrequiredtoraise
+D D
+the temperature of 24.0 g of NaCl from 5 K to 15 K?
+Solution
+Because the heat capacity depends on the temperature, we need to use the equation
+dQ
+c= m 1 dT .
+T
+2
+We solve this equation forQby integrating both sides: Q=m∫ cdT.
+T
+1
+Then we substitute the given values in and evaluate the integral:
+Q=(0.024kg)∫ T 2 333×104 J ⎛ T ⎞ 3 dT = ⎛ 6.04×10−4 J ⎞ T4| 15K =30.2J.
+T
+kg·K⎝321K⎠ ⎝ K4⎠ 5K
+1
+Significance
+Ifwehadusedtheequation Q=mcΔT andtheroom-temperaturespecificheatofsalt, 880J/kg·K, wewould
+have gotten a very different value.
+1.5 | Phase Changes
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe phase transitions and equilibrium between phases
+• Solve problems involving latent heat
+• Solve calorimetry problems involving phase changes
+Phase transitions play an important theoretical and practical role in the study of heat flow. In melting (or “fusion”), a
+solidturnsintoaliquid;theoppositeprocessisfreezing.Inevaporation,aliquidturnsintoagas;theoppositeprocessis
+condensation.
+A substance melts or freezes at a temperature called its melting point, and boils (evaporates rapidly) or condenses at its
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

@@ -1,0 +1,225 @@
+# REAL PDF — openstax_vol2.pdf, pages 348-352
+############################################################
+
+338 Chapter 7 | Electric Potential
+the diagram due to the two given charges. perpendicular to the equipotential lines.
+59. A very large sheet of insulating material has had an
+excessofelectronsplacedonittoasurfacechargedensity
+of –3.00nC/m2. (a) As the distance from the sheet
+increases,doesthepotentialincreaseordecrease?Canyou
+explain why without any calculations? Does the location
+of your reference point matter? (b) What is the shape of
+theequipotentialsurfaces?(c)Whatisthespacingbetween
+surfaces that differ by 1.00 V?
+60. A metallic sphere of radius 2.0 cm is charged with
++5.0-µC charge, which spreads on the surface of the
+53. Two charges –2.0µCand+2.0µC are separated by sphere uniformly. The metallic sphere stands on an
+insulated stand and is surrounded by a larger metallic
+4.0 cm on the z-axis symmetrically about origin, with the
+sphericalshell,ofinnerradius5.0cmandouterradius6.0
+positive one uppermost. Two space points of interest
+cm. Now, a charge of −5.0-µC is placed on the inside
+P andP are located 3.0 cm and 30 cm from origin at
+1 2
+of the spherical shell, which spreads out uniformly on the
+an angle 30° with respect to the z-axis. Evaluate electric inside surface of the shell. If potential is zero at infinity,
+potentials at P andP in two ways: (a) Using the exact what is the potential of (a) the spherical shell, (b) the
+1 2
+formula for point charges, and (b) using the approximate sphere,(c)thespacebetweenthetwo,(d)insidethesphere,
+dipole potential formula. and (e) outside the shell?
+54. (a) Plot the potential of a uniformly charged 1-m
+rod with 1 C/m charge as a function of the perpendicular
+distance from the center. Draw your graph from
+s=0.1mtos=1.0m. (b) On the same graph, plot the
+potentialofapointchargewitha1-Cchargeattheorigin.
+(c) Which potential is stronger near the rod? (d) What
+happens to the difference as the distance increases?
+Interpret your result.
+7.4Determining Field from Potential
+55. Throughoutaregion,equipotentialsurfacesaregiven
+by z=constant. The surfaces are equally spaced with
+V =100V for z=0.00m,V =200V for
+z=0.50m,V =300V for z=1.00m. What is the
+electric field in this region?
+61. Two large charged plates of charge density
+56. In a particular region, the electric potential is given ±30µC/m2 faceeachotherataseparationof5.0mm.(a)
+by V =−xy2z+4xy. What is the electric field in this Find the electric potential everywhere. (b) An electron is
+region? released from rest at the negative plate; with what speed
+will it strike the positive plate?
+57. Calculate the electric field of an infinite line charge,
+throughout space. 62. A long cylinder of aluminum of radius R meters is
+charged so that it has a uniform charge per unit length on
+its surface of λ.
+7.5Equipotential Surfaces and Conductors (a)Findtheelectricfieldinsideandoutsidethecylinder.(b)
+58. Two very large metal plates are placed 2.0 cm apart, Find the electric potential inside and outside the cylinder.
+withapotentialdifferenceof12Vbetweenthem.Consider (c)Plotelectricfieldandelectricpotentialasafunctionof
+one plate to be at 12 V, and the other at 0 V. (a) Sketch distance from the center of the rod.
+the equipotential surfaces for 0, 4, 8, and 12 V. (b) Next
+sketchinsomeelectricfieldlines,andconfirmthattheyare
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 339
+63. Twoparallelplates10cmonasidearegivenequaland potential in the regions (a) r <R , (b) R <r <R ,
+1 1 2
+opposite charges of magnitude 5.0×10 −9 C. The plates and (c) r >R ?
+2
+are1.5mmapart.Whatisthepotentialdifferencebetween
+the plates?
+64. Thesurfacechargedensityonalongstraightmetallic
+pipeis σ.Whatistheelectricpotentialoutsideandinside
+the pipe? Assume the pipe has a diameter of 2a.
+67. Asolidcylindricalconductorofradiusaissurrounded
+byaconcentriccylindricalshellofinnerradiusb.Thesolid
+cylinderandtheshellcarrychargesQand–Q,respectively.
+Assuming that the length L of both conductors is much
+greaterthanaorb,whatisthepotentialdifferencebetween
+the two conductors?
+7.6Applications of Electrostatics
+68. (a) What is the electric field 5.00 m from the center
+oftheterminalofaVandeGraaffwitha3.00-mCcharge,
+notingthatthefieldisequivalenttothatofapointchargeat
+thecenteroftheterminal?(b)Atthisdistance,whatforce
+65. Concentric conducting spherical shells carry charges does the field exert on a 2.00-µC charge on the Van de
+Q and –Q, respectively. The inner shell has negligible
+Graaff’s belt?
+thickness. What is the potential difference between the
+shells?
+69. (a)Whatisthedirectionandmagnitudeofanelectric
+field that supports the weight of a free electron near the
+surface of Earth? (b) Discuss what the small value for
+this field implies regarding the relative strength of the
+gravitational and electrostatic forces.
+70. A simple and common technique for accelerating
+electrons is shown in Figure 7.46, where there is a
+uniform electric field between two plates. Electrons are
+released, usually from a hot filament, near the negative
+plate, and there is a small hole in the positive plate that
+allows the electrons to continue moving. (a) Calculate the
+acceleration of the electron if the field strength is
+2.50×104 N/C.(b)Explainwhytheelectronwillnotbe
+pulledbacktothepositiveplateonceitmovesthroughthe
+hole.
+66. Shown below are two concentric spherical shells of
+negligible thicknesses and radii R and R . The inner
+1 2
+andoutershellcarrynetcharges q and q , respectively,
+1 2
+where both q and q are positive. What is the electric
+1 2
+
+340 Chapter 7 | Electric Potential
+72. The practical limit to an electric field in air is about
+3.00×10 6 N/C. Above this strength, sparking takes
+placebecauseairbeginstoionize.(a)Atthiselectricfield
+strength, how far would a proton travel before hitting the
+speedoflight(ignorerelativisticeffects)?(b)Isitpractical
+to leave air in particle accelerators?
+73. Toformaheliumatom,analphaparticlethatcontains
+two protons and two neutrons is fixed at one location,
+and two electrons are brought in from far away, one at
+a time. The first electron is placed at 0.600×10 −10 m
+from the alpha particle and held there while the second
+electron is brought to 0.600×10 −10 m from the alpha
+particle on the other side from the first electron. See the
+final configuration below. (a) How much work is done in
+eachstep?(b)Whatistheelectrostaticenergyofthealpha
+Figure 7.46 Parallel conducting plates with opposite charges
+particle and two electrons in the final configuration?
+on them create a relatively uniform electric field used to
+accelerate electrons to the right. Those that go through the hole
+can be used to make a TV or computer screen glow or to
+produce X- rays.
+71. InaGeigercounter,athinmetallicwireatthecenter
+of a metallic tube is kept at a high voltage with respect to 74. Find the electrostatic energy of eight equal charges
+themetaltube.Ionizingradiationenteringthetubeknocks ⎛+3µC⎞ each fixed at the corners of a cube of side 2 cm.
+⎝ ⎠
+electrons off gas molecules or sides of the tube that then
+acceleratetowardsthecenterwire,knockingoffevenmore
+electrons. This process eventually leads to an avalanche 75. The probability of fusion occurring is greatly
+that is detectable as acurrent. Aparticular Geiger counter enhanced when appropriate nuclei are brought close
+has a tube of radius R and the inner wire of radius a is together,butmutualCoulombrepulsionmustbeovercome.
+at a potential of V volts with respect to the outer metal This can be done using the kinetic energy of high-
+0 temperature gas ions or by accelerating the nuclei toward
+tube. Consider a point P at a distance s from the center
+oneanother.(a)Calculatethepotentialenergyoftwosingly
+wire and far away from the ends. (a) Find a formula for
+chargednucleiseparatedby 1.00×10−12 m. (b)Atwhat
+theelectric fieldatapointPinsideusingtheinfinitewire
+approximation.(b)Findaformulafortheelectricpotential temperature will atoms of a gas have an average kinetic
+at a point P inside. (c) Use energy equal to this needed electrical potential energy?
+V =900V, a=3.00mm,R=2.00cm, and find the
+0
+76. Abareheliumnucleushastwopositivechargesanda
+valueoftheelectricfieldatapoint1.00cmfromthecenter.
+massof 6.64×10 –27 kg.(a)Calculateitskineticenergy
+injoulesat 2.00% ofthespeedoflight.(b)Whatisthisin
+electron-volts?(c)Whatvoltagewouldbeneededtoobtain
+this energy?
+77. Anelectronentersaregionbetweentwolargeparallel
+platesmadeofaluminumseparatedbyadistanceof2.0cm
+and kept at a potential difference of 200 V. The electron
+entersthroughasmallholeinthenegativeplateandmoves
+toward the positive plate. At the time the electron is near
+thenegativeplate,itsspeedis 4.0×10 5 m/s. Assumethe
+electricfieldbetweentheplatestobeuniform,andfindthe
+speed of electron at (a) 0.10 cm, (b) 0.50 cm, (c) 1.0 cm,
+and(d)1.5cmfromthenegativeplate,and(e)immediately
+before it hits the positive plate.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 341
+conductingplatesseparatedby2.00cm.Whatistheelectric
+field strength between the plates?
+82. ThetemperaturenearthecenteroftheSunisthought
+to be 15 million degrees Celsius (1.5×10 7 °C) (or
+kelvin).Throughwhatvoltagemustasinglychargedionbe
+acceleratedtohavethesameenergyastheaveragekinetic
+energy of ions at this temperature?
+83. A lightning bolt strikes a tree, moving 20.0 C of
+chargethroughapotentialdifferenceof 1.00×102 MV.
+(a) What energy was dissipated? (b) What mass of water
+could be raised from 15°C to the boiling point and then
+boiledbythisenergy?(c)Discussthedamagethatcouldbe
+caused to the tree by the expansion of the boiling steam.
+78. Howfarapartaretwoconductingplatesthathavean
+electric field strength of 4.50×10 3 V/m between them, 84. Whatisthepotential 0.530×10 −10 m fromaproton
+if their potential difference is 15.0 kV? (theaveragedistancebetweentheprotonandelectronina
+hydrogen atom)?
+79. (a)Willtheelectricfieldstrengthbetweentwoparallel
+conducting plates exceed the breakdown strength of dry 85. (a)Aspherehasasurfaceuniformlychargedwith1.00
+air, which is 3.00×10 6 V/m, if the plates are separated C. At what distance from its center is the potential 5.00
+MV?(b)Whatdoesyouranswerimplyaboutthepractical
+by 2.00 mm and a potential difference of 5.0×10 3 V is aspect of isolating such a large charge?
+applied?(b)Howclosetogethercantheplatesbewiththis
+applied voltage?
+86. Whatarethesignandmagnitudeofapointchargethat
+produces a potential of –2.00 V at a distance of 1.00 mm?
+80. Membranewallsoflivingcellshavesurprisinglylarge
+electricfieldsacrossthemduetoseparationofions.What
+87. In one of the classic nuclear physics experiments at
+is the voltage across an 8.00-nm-thick membrane if the
+the beginning of the twentieth century, an alpha particle
+electric field strength across it is 5.50 MV/m? You may
+was accelerated toward a gold nucleus, and its path was
+assume a uniform electric field.
+substantially deflected by the Coulomb interaction. If the
+energyofthedoublychargedalphanucleuswas5.00MeV,
+81. A double charged ion is accelerated to an energy how close to the gold nucleus (79 protons) could it come
+of 32.0 keV by the electric field between two parallel before being deflected?
+ADDITIONAL PROBLEMS
+88. A 12.0-V battery-operated bottle warmer heats 50.0 90. (a) Find the voltage near a 10.0 cm diameter metal
+g of glass, 2.50×102 g of baby formula, and sphere that has 8.00 C of excess positive charge on it.
+(b) What is unreasonable about this result? (c) Which
+2.00×102 g ofaluminumfrom 20.0°C to 90.0°C.(a) assumptions are responsible?
+Howmuchchargeismovedbythebattery?(b)Howmany
+electrons per second flow if it takes 5.00 min to warm 91. A uniformly charged ring of radius 10 cm is placed
+the formula? (Hint: Assume that the specific heat of baby onanonconductingtable.Itisfoundthat3.0cmabovethe
+formula is about the same as the specific heat of water.) center of the half-ring the potential is –3.0 V with respect
+tozeropotentialatinfinity.Howmuchchargeisinthehalf-
+89. A battery-operated car uses a 12.0-V system. Find ring?
+the charge the batteries must be able to move in order
+to accelerate the 750 kg car from rest to 25.0 m/s, make 92. Aglassringofradius5.0cmispaintedwithacharged
+it climb a 2.00×102-m high hill, and finally cause it paint such that the charge density around the ring varies
+continuously given by the following function of the polar
+to travel at a constant 25.0 m/s while climbing with
+5.00×102-N force for an hour. angle θ, λ= ⎛ ⎝ 3.0×10 −6 C/m ⎞ ⎠ cos2θ. Findthepotential

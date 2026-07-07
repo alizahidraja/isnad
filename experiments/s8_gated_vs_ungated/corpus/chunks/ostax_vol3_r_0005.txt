@@ -1,0 +1,240 @@
+# REAL PDF — openstax_vol3.pdf, pages 26-32
+############################################################
+
+18 Chapter 1 | The Nature of Light
+Entering known values,
+n =1.00 sin30.0° = 0.500 =1.33.
+2 sin22.0° 0.375
+Significance
+This is the index of refraction for water, and Snell could have determined it by measuring the angles and
+performingthiscalculation.Hewouldthenhavefound1.33tobetheappropriateindexofrefractionforwaterin
+allothersituations,suchaswhenaraypassesfromwatertoglass.Today,wecanverifythattheindexofrefraction
+is related to the speed of light in a medium by measuring that speed directly.
+Explorebendingoflight(https://openstaxcollege.org/l/21bendoflight)betweentwomediawithdifferent
+indices of refraction. Use the “Intro” simulation and see how changing from air to water to glass changes the
+bending angle. Use the protractor tool to measure the angles and see if you can recreate the configuration in
+Example 1.2. Also by measurement, confirm that the angle of reflection equals the angle of incidence.
+Example 1.3
+A Larger Change in Direction
+SupposethatinasituationlikethatinExample1.2,lightgoesfromairtodiamondandthattheincidentangle
+is 30.0°. Calculate the angle of refraction θ in the diamond.
+2
+Strategy
+Again,theindexofrefractionforairistakentobe n =1.00,andwearegiven θ =30.0°.Wecanlookup
+1 1
+theindexofrefractionfordiamondinTable1.1,finding n =2.419.TheonlyunknowninSnell’slawis θ ,
+2 2
+which we wish to determine.
+Solution
+Solving Snell’s law for sinθ yields
+2
+n
+sinθ 2 = n 1sinθ 1 .
+2
+Entering known values,
+sinθ = 1.00 sin30.0°=(0.413)(0.500)=0.207.
+2 2.419
+The angle is thus
+θ =sin−1(0.207)=11.9°.
+2
+Significance
+Forthesame 30.0° angleofincidence,theangleofrefractionindiamondissignificantlysmallerthaninwater
+(11.9° ratherthan 22.0°—seeExample1.2).Thismeansthereisalargerchangeindirectionindiamond.The
+causeofalargechangeindirectionisalargechangeintheindexofrefraction(orspeed).Ingeneral,thelarger
+the change in speed, the greater the effect on the direction of the ray.
+1.2 Check Your Understanding In Table 1.1, the solid with the next highest index of refraction after
+diamondiszircon.IfthediamondinExample 1.3werereplacedwithapieceofzircon,whatwouldbethe
+new angle of refraction?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 19
+1.4 | Total Internal Reflection
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the phenomenon of total internal reflection
+• Describe the workings and uses of optical fibers
+• Analyze the reason for the sparkle of diamonds
+Agood-quality mirrormayreflect morethan 90% ofthelight that falls onit,absorbingtherest.Butitwouldbeuseful
+tohaveamirrorthatreflectsallofthelightthatfallsonit.Interestingly,wecanproducetotalreflectionusinganaspectof
+refraction.
+Consider what happens when a ray of light strikes the surface between two materials, as shown in Figure 1.14(a). Part
+of the light crosses the boundary and is refracted; the rest is reflected. If, as shown in the figure, the index of refraction
+for the second medium is less than for the first, the ray bends away from the perpendicular. (Since n >n , the angle
+1 2
+of refraction is greater than the angle of incidence—that is, θ >θ .) Now imagine what happens as the incident angle
+2 1
+increases.Thiscauses θ toincreasealso.Thelargesttheangleofrefraction θ canbeis 90°,asshowninpart(b).The
+2 2
+criticalangle θ foracombinationofmaterialsisdefinedtobetheincidentangle θ thatproducesanangleofrefraction
+c 1
+of 90°.Thatis, θ
+c
+istheincidentangleforwhich θ
+2
+=90°.Iftheincidentangle θ
+1
+isgreaterthanthecriticalangle,as
+showninFigure1.14(c),thenallofthelightisreflectedbackintomedium1,aconditioncalledtotalinternalreflection.
+(As the figure shows, the reflected rays obey the law of reflection so that the angle of reflection is equal to the angle of
+incidence in all three cases.)
+Figure 1.14 (a) A ray of light crosses a boundary where the index of refraction decreases. That is, n <n . The ray bends
+2 1
+away from the perpendicular. (b) The critical angle θ c is the angle of incidence for which the angle of refraction is 90°. (c)
+Total internal reflection occurs when the incident angle is greater than the critical angle.
+Snell’s law states the relationship between angles and indices of refraction. It is given by
+n sinθ =n sinθ .
+1 1 2 2
+When the incident angle equals the critical angle ⎛ ⎝ θ 1 =θ c ⎞ ⎠ , the angle of refraction is 90° ⎛ ⎝ θ 2 =90°⎞ ⎠ . Noting that
+sin90°=1, Snell’s law in this case becomes
+n sinθ =n .
+1 1 2
+The critical angle θ for a given combination of materials is thus
+c
+
+20 Chapter 1 | The Nature of Light
+θ
+c=sin−1⎛
+⎝
+n
+n
+2⎞
+⎠ forn 1 >n 2 .
+(1.5)
+1
+Total internal reflection occurs for any incident angle greater than the critical angle θ , and it can only occur when the
+c
+secondmediumhasanindexofrefractionlessthanthefirst.Notethatthisequationiswrittenforalightraythattravelsin
+medium 1 and reflects from medium 2, as shown inFigure 1.14.
+Example 1.4
+Determining a Critical Angle
+Whatisthecriticalangleforlighttravelinginapolystyrene(atypeofplastic)pipesurroundedbyair?Theindex
+of refraction for polystyrene is 1.49.
+Strategy
+Theindexofrefractionofaircanbetakentobe1.00,asbefore.Thus,theconditionthatthesecondmedium(air)
+has an index of refraction less than the first (plastic) is satisfied, and we can use the equation
+θ
+c=sin−1⎛
+⎝
+n
+n
+2⎞
+⎠
+1
+to find the critical angle θ c, where n
+2
+=1.00 and n
+1
+=1.49.
+Solution
+Substituting the identified values gives
+θ c=sin−1⎛
+⎝
+1
+1
+.
+.
+0
+4
+0
+9
+⎞
+⎠
+=sin−1(0.671)=42.2°.
+Significance
+Thisresultmeansthatanyrayoflightinsidetheplasticthatstrikesthesurfaceatananglegreaterthan 42.2° is
+totallyreflected.Thismakestheinsidesurfaceoftheclearplasticaperfectmirrorforsuchrays,withoutanyneed
+forthesilveringusedoncommonmirrors.Differentcombinationsofmaterialshavedifferentcriticalangles,but
+anycombinationwith n >n canproducetotalinternalreflection.Thesamecalculationasmadehereshows
+1 2
+thatthecriticalangleforaraygoingfromwatertoairis 48.6°,whereasthatfromdiamondtoairis 24.4°,and
+that from flint glass to crown glass is 66.3°.
+1.3 CheckYourUnderstandingAtthesurfacebetweenairandwater,lightrayscangofromairtowaterand
+from water to air. For which ray is there no possibility of total internal reflection?
+Inthephotothatopensthischapter,theimageofaswimmerunderwateriscapturedbyacamerathatisalsounderwater.
+Theswimmerintheupperhalfofthephotograph,apparentlyfacingupward,is,infact,areflectedimageoftheswimmer
+below.Thecircularripplenearthephotograph’scenterisactuallyonthewatersurface.Theundisturbedwatersurrounding
+it makes a good reflecting surface when viewed from below, thanks to total internal reflection. However, at the very top
+edge ofthis photograph, rays from below strike the surface with incident angles less than the critical angle, allowing the
+camera to capture a view of activities on the pool deck above water.
+Fiber Optics: Endoscopes to Telephones
+Fiber optics is one application of total internal reflection that is in wide use. In communications, it is used to transmit
+telephone, internet, and cable TV signals. Fiber optics employs the transmission of light down fibers of plastic or glass.
+Becausethefibersarethin,lightenteringoneislikelytostriketheinsidesurfaceatananglegreaterthanthecriticalangle
+and,thus,betotallyreflected(Figure1.15).Theindexofrefractionoutsidethefibermustbesmallerthaninside.Infact,
+mostfibershaveavaryingrefractiveindextoallowmorelighttobeguidedalongthefiberthroughtotalinternalrefraction.
+Rays are reflected around corners as shown, making the fibers into tiny light pipes.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 21
+Figure 1.15 Light entering a thin optic fiber may strike the inside surface at large
+or grazing angles and is completely reflected if these angles exceed the critical
+angle. Such rays continue down the fiber, even following it around corners, since
+the angles of reflection and incidence remain large.
+Bundles of fibers can be used to transmit an image without a lens, as illustrated in Figure 1.16. The output of a device
+calledanendoscopeisshowninFigure1.16(b).Endoscopesareusedtoexploretheinteriorofthebodythroughitsnatural
+orificesorminorincisions.Lightistransmitteddownonefiberbundletoilluminateinternalparts,andthereflectedlightis
+transmitted back out through another bundle to be observed.
+Figure 1.16 (a) An image “A” is transmitted by a bundle of optical fibers. (b) An endoscope is used to probe the body,
+both transmitting light to the interior and returning an image such as the one shown of a human epiglottis (a structure at
+the base of the tongue). (credit b: modification of work by “Med_Chaos”/Wikimedia Commons)
+Fiberopticshasrevolutionizedsurgicaltechniquesandobservationswithinthebody,withahostofmedicaldiagnosticand
+therapeutic uses. Surgery can be performed, such as arthroscopic surgery on a knee or shoulder joint, employing cutting
+toolsattachedtoandobservedwiththeendoscope.Samplescanalsobeobtained,suchasbylassoinganintestinalpolyp
+forexternalexamination.Theflexibilityofthefiberopticbundleallowsdoctorstonavigateitaroundsmallanddifficult-to-
+reachregionsinthebody,suchastheintestines,theheart,bloodvessels,andjoints.Transmissionofanintenselaserbeam
+toburnawayobstructingplaquesinmajorarteries,aswellasdeliveringlighttoactivatechemotherapydrugs,arebecoming
+commonplace.Opticalfibershaveinfactenabledmicrosurgeryandremotesurgerywheretheincisionsaresmallandthe
+
+22 Chapter 1 | The Nature of Light
+surgeon’s fingers do not need to touch the diseased tissue.
+Opticalfibersinbundlesaresurroundedbyacladdingmaterialthathasalowerindexofrefractionthanthecore(Figure
+1.17).The cladding prevents light frombeing transmitted between fibers inabundle. Without cladding, light could pass
+betweenfibersincontact,sincetheirindicesofrefractionareidentical.Sincenolightgetsintothecladding(thereistotal
+internal reflection back into the core), none can be transmitted between clad fibers that are in contact with one another.
+Instead,thelightispropagatedalongthelengthofthefiber,minimizingthelossofsignalandensuringthataqualityimage
+is formed at the other end. The cladding and an additional protective layer make optical fibers durable as well as flexible.
+Figure 1.17 Fibers in bundles are clad by a material that has a
+lower index of refraction than the core to ensure total internal
+reflection, even when fibers are in contact with one another.
+Specialtinylensesthatcanbeattachedtotheendsofbundlesoffibershavebeendesignedandfabricated.Lightemerging
+from a fiber bundle can be focused through such a lens, imaging a tiny spot. In some cases, the spot can be scanned,
+allowingqualityimagingofaregioninsidethebody.Specialminuteopticalfiltersinsertedattheendofthefiberbundle
+havethecapacitytoimagetheinterioroforganslocatedtensofmicronsbelowthesurfacewithoutcuttingthesurface—an
+areaknownasnonintrusivediagnostics.Thisisparticularlyusefulfordeterminingtheextentofcancersinthestomachand
+bowel.
+Inanothertypeofapplication,opticalfibersarecommonlyusedtocarrysignalsfortelephoneconversationsandinternet
+communications. Extensive optical fiber cables have been placed on the ocean floor and underground to enable optical
+communications. Optical fiber communication systems offer several advantages over electrical (copper)-based systems,
+particularlyforlongdistances.Thefiberscanbemadesotransparentthatlightcantravelmanykilometersbeforeitbecomes
+dimenoughtorequireamplification—muchsuperiortocopperconductors.Thispropertyofopticalfibersiscalledlowloss.
+Lasersemitlightwithcharacteristicsthatallowfarmoreconversationsinonefiberthanarepossiblewithelectricsignals
+onasingleconductor.Thispropertyofopticalfibersiscalledhighbandwidth.Opticalsignalsinonefiberdonotproduce
+undesirableeffectsinotheradjacentfibers.Thispropertyofopticalfibersiscalledreducedcrosstalk.Weshallexplorethe
+unique characteristics of laser radiation in a later chapter.
+Corner Reflectors and Diamonds
+Corner reflectors (The Law of Reflection) are perfectly efficient when the conditions for total internal reflection are
+satisfied.Withcommonmaterials,itiseasytoobtainacriticalanglethatislessthan 45°. Oneuseoftheseperfectmirrors
+is in binoculars, as shown inFigure 1.18. Another use is in periscopes found in submarines.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 23
+Figure 1.18 These binoculars employ corner reflectors
+(prisms) with total internal reflection to get light to the
+observer’s eyes.
+Totalinternalreflection,coupledwithalargeindexofrefraction,explainswhydiamondssparklemorethanothermaterials.
+Thecriticalangleforadiamond-to-airsurfaceisonly 24.4°,sowhenlightentersadiamond,ithastroublegettingback
+out(Figure 1.19).Althoughlightfreelyentersthediamond,itcanexitonlyifitmakesananglelessthan 24.4°.Facets
+ondiamondsarespecificallyintendedtomakethisunlikely.Gooddiamondsareveryclear,sothatthelightmakesmany
+internalreflectionsandisconcentratedbeforeexiting—hencethebrightsparkle.(Zirconisanaturalgemstonethathasan
+exceptionally large index of refraction, but it is not as large as diamond, so it is not as highly prized. Cubic zirconia is
+manufactured and has an even higher index of refraction (≈2.17), but it is still less than that of diamond.) The colors
+youseeemergingfromacleardiamondarenotduetothediamond’scolor,whichisusuallynearlycolorless.Thecolors
+resultfromdispersion,whichwediscussinDispersion.Coloreddiamondsgettheircolorfromstructuraldefectsofthe
+crystallatticeandtheinclusionofminutequantitiesofgraphiteandothermaterials.TheArgyleMineinWesternAustralia
+producesaround90%oftheworld’spink,red,champagne,andcognacdiamonds,whereasaround50%oftheworld’sclear
+diamonds come from central and southern Africa.
+Figure 1.19 Light cannot easily escape a diamond, because its
+critical angle with air is so small. Most reflections are total, and
+the facets are placed so that light can exit only in particular
+ways—thus concentrating the light and making the diamond
+sparkle brightly.

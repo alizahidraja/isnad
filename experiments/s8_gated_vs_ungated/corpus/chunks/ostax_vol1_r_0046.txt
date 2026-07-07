@@ -1,0 +1,205 @@
+# REAL PDF — openstax_vol1.pdf, pages 274-281
+############################################################
+
+262 6 • Applications of Newton's Laws
+The magnitude of the force is now easily found:
+Significance
+The original problem was stated in terms of vector components, so we used vector methods. Compare this
+example with the previous example.
+CHECK YOUR UNDERSTANDING 6.5
+Find the direction of the resultant for the 1.50-kg model helicopter.
+EXAMPLE 6.8
+Baggage Tractor
+Figure 6.8(a) shows a baggage tractor pulling luggage carts from an airplane. The tractor has mass 650.0 kg, while
+cart A has mass 250.0 kg and cart B has mass 150.0 kg. The driving force acting for a brief period of time
+accelerates the system from rest and acts for 3.00 s. (a) If this driving force is given by find the
+speed after 3.00 seconds. (b) What is the horizontal force acting on the connecting cable between the tractor and
+cart A at this instant?
+FIGURE 6.8 (a) A free-body diagram is shown, which indicates all the external forces on the system consisting of the tractor and baggage
+carts for carrying airline luggage. (b) A free-body diagram of the tractor only is shown isolated in order to calculate the tension in the cable
+to the carts.
+Strategy
+A free-body diagram shows the driving force of the tractor, which gives the system its acceleration. We only need to
+consider motion in the horizontal direction. The vertical forces balance each other and it is not necessary to consider
+them. For part b, we make use of a free-body diagram of the tractor alone to determine the force between it and cart
+A. This exposes the coupling force which is our objective.
+Solution
+a. and so
+Since acceleration is a function of time, we can determine the velocity of the tractor by using with the
+initial condition that at We integrate from to
+Access for free at openstax.org
+
+6.1 • Solving Problems with Newton’s Laws 263
+b. Refer to the free-body diagram in Figure 6.8(b).
+Significance
+Since the force varies with time, we must use calculus to solve this problem. Notice how the total mass of the
+system was important in solving Figure 6.8(a), whereas only the mass of the truck (since it supplied the force) was of
+use in Figure 6.8(b).
+Recall that and . If acceleration is a function of time, we can use the calculus forms developed in
+Motion Along a Straight Line, as shown in this example. However, sometimes acceleration is a function of
+displacement. In this case, we can derive an important result from these calculus relations. Solving for dt in each,
+we have and Now, equating these expressions, we have We can rearrange this to obtain
+EXAMPLE 6.9
+Motion of a Projectile Fired Vertically
+A 10.0-kg mortar shell is fired vertically upward from the ground, with an initial velocity of 50.0 m/s (see Figure 6.9).
+Determine the maximum height it will travel if atmospheric resistance is measured as where v
+is the speed at any instant.
+FIGURE 6.9 (a) The mortar fires a shell straight up; we consider the friction force provided by the air. (b) A free-body diagram is shown
+which indicates all the forces on the mortar shell. (credit a: modification of work by OS541/DoD; The appearance of U.S. Department of
+Defense (DoD) visual information does not imply or constitute DoD endorsement.)
+Strategy
+The known force on the mortar shell can be related to its acceleration using the equations of motion. Kinematics can
+then be used to relate the mortar shell’s acceleration to its position.
+
+264 6 • Applications of Newton's Laws
+Solution
+Initially, and At the maximum height The free-body diagram shows to act
+downward, because it slows the upward motion of the mortar shell. Thus, we can write
+The acceleration depends on v and is therefore variable. Since we can relate a to v using the
+rearrangement described above,
+We replace ds with dy because we are dealing with the vertical direction,
+We now separate the variables (v’s and dv’s on one side; dy on the other):
+Thus,
+Significance
+Notice the need to apply calculus since the force is not constant, which also means that acceleration is not constant.
+To make matters worse, the force depends on v (not t), and so we must use the trick explained prior to the example.
+The answer for the height indicates a lower elevation if there were air resistance. We will deal with the effects of air
+resistance and other drag forces in greater detail in Drag Force and Terminal Speed.
+CHECK YOUR UNDERSTANDING 6.6
+If atmospheric resistance is neglected, find the maximum height for the mortar shell. Is calculus required for this
+solution?
+INTERACTIVE
+Explore the forces at work in this simulation (https://openstax.org/l/21forcesatwork) when you try to push a filing
+cabinet. Create an applied force and see the resulting frictional force and total force acting on the cabinet. Charts
+show the forces, position, velocity, and acceleration vs. time. View a free-body diagram of all the forces (including
+gravitational and normal forces).
+Access for free at openstax.org
+
+6.2 • Friction 265
+6.2 Friction
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the general characteristics of friction
+• List the various types of friction
+• Calculate the magnitude of static and kinetic friction, and use these in problems involving Newton’s laws
+of motion
+When a body is in motion, it has resistance because the body interacts with its surroundings. This resistance is a
+force of friction. Friction opposes relative motion between systems in contact but also allows us to move, a concept
+that becomes obvious if you try to walk on ice. Friction is a common yet complex force, and its behavior still not
+completely understood. Still, it is possible to understand the circumstances in which it behaves.
+Static and Kinetic Friction
+The basic definition of friction is relatively simple to state.
+FRICTION
+Friction is a force that opposes relative motion between systems in contact.
+There are several forms of friction. One of the simpler characteristics of sliding friction is that it is parallel to the
+contact surfaces between systems and is always in a direction that opposes motion or attempted motion of the
+systems relative to each other. If two systems are in contact and moving relative to one another, then the friction
+between them is called kinetic friction. For example, friction slows a hockey puck sliding on ice. When objects are
+stationary, static friction can act between them; the static friction is usually greater than the kinetic friction between
+two objects.
+STATIC AND KINETIC FRICTION
+If two systems are in contact and stationary relative to one another, then the friction between them is called
+static friction. If two systems are in contact and moving relative to one another, then the friction between them
+is called kinetic friction.
+Imagine, for example, trying to slide a heavy crate across a concrete floor—you might push very hard on the crate
+and not move it at all. This means that the static friction responds to what you do—it increases to be equal to and in
+the opposite direction of your push. If you finally push hard enough, the crate seems to slip suddenly and starts to
+move. Now static friction gives way to kinetic friction. Once in motion, it is easier to keep it in motion than it was to
+get it started, indicating that the kinetic frictional force is less than the static frictional force. If you add mass to the
+crate, say by placing a box on top of it, you need to push even harder to get it started and also to keep it moving.
+Furthermore, if you oiled the concrete you would find it easier to get the crate started and keep it going (as you
+might expect).
+Figure 6.10 is a crude pictorial representation of how friction occurs at the interface between two objects. Close-up
+inspection of these surfaces shows them to be rough. Thus, when you push to get an object moving (in this case, a
+crate), you must raise the object until it can skip along with just the tips of the surface hitting, breaking off the
+points, or both. A considerable force can be resisted by friction with no apparent motion. The harder the surfaces
+are pushed together (such as if another box is placed on the crate), the more force is needed to move them. Part of
+the friction is due to adhesive forces between the surface molecules of the two objects, which explains the
+dependence of friction on the nature of the substances. For example, rubber-soled shoes slip less than those with
+leather soles. Adhesion varies with substances in contact and is a complicated aspect of surface physics. Once an
+object is moving, there are fewer points of contact (fewer molecules adhering), so less force is required to keep the
+object moving. At small but nonzero speeds, friction is nearly independent of speed.
+
+266 6 • Applications of Newton's Laws
+FIGURE 6.10 Frictional forces, such as always oppose motion or attempted motion between objects in contact. Friction arises in part
+because of the roughness of the surfaces in contact, as seen in the expanded view. For the object to move, it must rise to where the peaks
+of the top surface can skip along the bottom surface. Thus, a force is required just to set the object in motion. Some of the peaks will be
+broken off, also requiring a force to maintain motion. Much of the friction is actually due to attractive forces between molecules making up
+the two objects, so that even perfectly smooth surfaces are not friction-free. (In fact, perfectly smooth, clean surfaces of similar materials
+would adhere, forming a bond called a “cold weld.”)
+The magnitude of the frictional force has two forms: one for static situations (static friction), the other for situations
+involving motion (kinetic friction). What follows is an approximate empirical (experimentally determined) model
+only. These equations for static and kinetic friction are not vector equations.
+MAGNITUDE OF STATIC FRICTION
+The magnitude of static friction is
+6.1
+where is the coefficient of static friction and N is the magnitude of the normal force.
+The symbol means less than or equal to, implying that static friction can have a maximum value of Static
+friction is a responsive force that increases to be equal and opposite to whatever force is exerted, up to its maximum
+limit. Once the applied force exceeds
+the object moves. Thus,
+MAGNITUDE OF KINETIC FRICTION
+The magnitude of kinetic friction is given by
+6.2
+where is the coefficient of kinetic friction.
+A system in which is described as a system in which friction behaves simply. The transition from static
+friction to kinetic friction is illustrated in Figure 6.11.
+Access for free at openstax.org
+
+6.2 • Friction 267
+FIGURE 6.11 (a) The force of friction between the block and the rough surface opposes the direction of the applied force The
+magnitude of the static friction balances that of the applied force. This is shown in the left side of the graph in (c). (b) At some point, the
+magnitude of the applied force is greater than the force of kinetic friction, and the block moves to the right. This is shown in the right side of
+the graph. (c) The graph of the frictional force versus the applied force; note that This means that
+As you can see in Table 6.1, the coefficients of kinetic friction are less than their static counterparts. The
+approximate values of are stated to only one or two digits to indicate the approximate description of friction given
+by the preceding two equations.
+System Static Friction Kinetic Friction
+Rubber on dry concrete 1.0 0.7
+Rubber on wet concrete 0.5-0.7 0.3-0.5
+Wood on wood 0.5 0.3
+Waxed wood on wet snow 0.14 0.1
+Metal on wood 0.5 0.3
+Steel on steel (dry) 0.6 0.3
+Steel on steel (oiled) 0.05 0.03
+Teflon on steel 0.04 0.04
+Bone lubricated by synovial fluid 0.016 0.015
+Shoes on wood 0.9 0.7
+Shoes on ice 0.1 0.05
+Ice on ice 0.1 0.03
+Steel on ice 0.04 0.02
+TABLE 6.1 Approximate Coefficients of Static and Kinetic Friction
+
+268 6 • Applications of Newton's Laws
+Equation 6.1 and Equation 6.2 include the dependence of friction on materials and the normal force. The direction of
+friction is always opposite that of motion, parallel to the surface between objects, and perpendicular to the normal
+force. For example, if the crate you try to push (with a force parallel to the floor) has a mass of 100 kg, then the
+normal force is equal to its weight,
+perpendicular to the floor. If the coefficient of static friction is 0.45, you would have to exert a force parallel to the
+floor greater than
+to move the crate. Once there is motion, friction is less and the coefficient of kinetic friction might be 0.30, so that a
+force of only
+keeps it moving at a constant speed. If the floor is lubricated, both coefficients are considerably less than they
+would be without lubrication. Coefficient of friction is a unitless quantity with a magnitude usually between 0 and
+1.0. The actual value depends on the two surfaces that are in contact.
+Many people have experienced the slipperiness of walking on ice. However, many parts of the body, especially the
+joints, have much smaller coefficients of friction—often three or four times less than ice. A joint is formed by the
+ends of two bones, which are connected by thick tissues. The knee joint is formed by the lower leg bone (the tibia)
+and the thighbone (the femur). The hip is a ball (at the end of the femur) and socket (part of the pelvis) joint. The
+ends of the bones in the joint are covered by cartilage, which provides a smooth, almost-glassy surface. The joints
+also produce a fluid (synovial fluid) that reduces friction and wear. A damaged or arthritic joint can be replaced by an
+artificial joint (Figure 6.12). These replacements can be made of metals (stainless steel or titanium) or plastic
+(polyethylene), also with very small coefficients of friction.
+FIGURE 6.12 Artificial knee replacement is a procedure that has been performed for more than 20 years. These post-operative X-rays show
+a right knee joint replacement. (credit: modification of work by Mike Baird)
+Natural lubricants include saliva produced in our mouths to aid in the swallowing process, and the slippery mucus
+found between organs in the body, allowing them to move freely past each other during heartbeats, during
+breathing, and when a person moves. Hospitals and doctor’s clinics commonly use artificial lubricants, such as gels,
+to reduce friction.
+The equations given for static and kinetic friction are empirical laws that describe the behavior of the forces of
+friction. While these formulas are very useful for practical purposes, they do not have the status of mathematical
+statements that represent general principles (e.g., Newton’s second law). In fact, there are cases for which these
+equations are not even good approximations. For instance, neither formula is accurate for lubricated surfaces or for
+two surfaces sliding across each other at high speeds. Unless specified, we will not be concerned with these
+exceptions.
+Access for free at openstax.org

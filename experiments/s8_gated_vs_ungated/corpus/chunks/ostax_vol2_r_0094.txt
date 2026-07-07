@@ -1,0 +1,215 @@
+# REAL PDF — openstax_vol2.pdf, pages 591-598
+############################################################
+
+Chapter 13 | Electromagnetic Induction 581
+13 | ELECTROMAGNETIC
+INDUCTION
+Figure 13.1 The black strip found on the back of credit cards and driver’s licenses is a very thin layer of magnetic material
+with information stored on it. Reading and writing the information on the credit card is done with a swiping motion. The physical
+reason why this is necessary is called electromagnetic induction and is discussed in this chapter. (credit: modification of work by
+Jane Whitney)
+Chapter Outline
+13.1Faraday’s Law
+13.2Lenz's Law
+13.3Motional Emf
+13.4Induced Electric Fields
+13.5Eddy Currents
+13.6Electric Generators and Back Emf
+13.7Applications of Electromagnetic Induction
+Introduction
+We have been considering electric fields created by fixed charge distributions and magnetic fields produced by constant
+currents,butelectromagneticphenomenaarenotrestrictedtothesestationarysituations.Mostoftheinterestingapplications
+of electromagnetism are, in fact, time-dependent. To investigate some of these applications, we now remove the time-
+independent assumption that we have been making and allow the fields to vary with time. In this and the next several
+chapters, you will see a wonderful symmetry in the behavior exhibited by time-varying electric and magnetic fields.
+Mathematically, this symmetry is expressed by an additional term in Ampère’s law and by another key equation of
+electromagnetismcalledFaraday’slaw.Wealsodiscusshowmovingawirethroughamagneticfieldproducesanemfor
+voltage. Lastly, we describe applications of these principles, such as the card reader shown above.
+
+582 Chapter 13 | Electromagnetic Induction
+13.1 | Faraday’s Law
+Learning Objectives
+By the end of this section, you will be able to:
+• Determine the magnetic flux through a surface, knowing the strength of the magnetic field, the
+surface area, and the angle between the normal to the surface and the magnetic field
+• Use Faraday’s law to determine the magnitude of induced emf in a closed loop due to changing
+magnetic flux through the loop
+Thefirstproductiveexperimentsconcerningtheeffectsoftime-varyingmagneticfieldswereperformedbyMichaelFaraday
+in 1831. One of his early experiments is represented in Figure 13.2. An emf is induced when the magnetic field in the
+coilischangedbypushingabarmagnetintooroutofthecoil.Emfsofoppositesignsareproducedbymotioninopposite
+directions,andthedirectionsofemfsarealsoreversedbyreversingpoles.Thesameresultsareproducedifthecoilismoved
+ratherthanthemagnet—itistherelativemotionthatisimportant.Thefasterthemotion,thegreatertheemf,andthereisno
+emf when the magnet is stationary relative to the coil.
+Figure 13.2 Movement of a magnet relative to a coil produces emfs as shown (a–d). The same emfs are produced if the coil
+is moved relative to the magnet. This short-lived emf is only present during the motion. The greater the speed, the greater the
+magnitude of the emf, and the emf is zero when there is no motion, as shown in (e).
+Faradayalsodiscoveredthatasimilareffectcanbeproducedusingtwocircuits—achangingcurrentinonecircuitinduces
+acurrentinasecond,nearbycircuit.Forexample,whentheswitchisclosedincircuit1ofFigure 13.3(a),theammeter
+needle of circuit 2 momentarily deflects, indicating that a short-lived current surge has been induced in that circuit. The
+ammeterneedlequicklyreturnstoitsoriginalposition,whereitremains.However,iftheswitchofcircuit1isnowsuddenly
+opened, another short-lived current surge in the direction opposite from before is observed in circuit 2.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 13 | Electromagnetic Induction 583
+Figure 13.3 (a) Closing the switch of circuit 1 produces a short-lived current surge in circuit 2. (b) If the switch remains
+closed, no current is observed in circuit 2. (c) Opening the switch again produces a short-lived current in circuit 2 but in the
+opposite direction from before.
+Faradayrealizedthatinbothexperiments,acurrentflowedinthecircuitcontainingtheammeteronlywhenthemagnetic
+field in the region occupied by that circuit was changing. As the magnet of the figure was moved, the strength of its
+magneticfieldattheloopchanged;andwhenthecurrentincircuit1wasturnedonoroff,thestrengthofitsmagneticfield
+atcircuit2changed.Faradaywaseventuallyabletointerprettheseandallotherexperimentsinvolvingmagneticfieldsthat
+vary with time in terms of the following law:
+Faraday’s Law
+Theemf ε inducedisthenegativechangeinthemagneticflux Φm perunittime.Anychangeinthemagneticfield
+or change in orientation of the area of the coil with respect to the magnetic field induces a voltage (emf).
+Themagneticfluxisameasurementoftheamountofmagneticfieldlinesthroughagivensurfacearea,asseeninFigure
+13.4. This definition is similar to the electric flux studied earlier. This means that if we have
+→ ^ (13.1)
+Φm=∫ B ·ndA,
+S
+then theinduced emfor the voltage generated by a conductor or coil moving in a magnetic field is
+ε= −
+d
+∫
+→
+B ·
+^
+ndA= −
+dΦm. (13.2)
+dt dt
+S
+Thenegativesigndescribesthedirectioninwhichtheinducedemfdrivescurrentaroundacircuit.However,thatdirection
+is most easily determined with a rule known as Lenz’s law, which we will discuss shortly.
+
+584 Chapter 13 | Electromagnetic Induction
+Figure 13.4 The magnetic flux is the amount of magnetic
+field lines cutting through a surface areaAdefined by the unit
+^ ^
+area vector n. If the angle between the unit area n and
+→
+magnetic field vector B are parallel or antiparallel, as shown
+in the diagram, the magnetic flux is the highest possible value
+given the values of area and magnetic field.
+Part(a)ofFigure 13.5depictsacircuitandanarbitrarysurfaceSthatitbounds.NoticethatSisanopensurface.Itcan
+beshownthatanyopensurfaceboundedbythecircuitinquestioncanbeusedtoevaluate Φm. Forexample, Φm isthe
+same for the various surfaces S , S , … of part (b) of the figure.
+1 2
+Figure 13.5 (a) A circuit bounding an arbitrary open surfaceS. The planar area bounded by the circuit is not
+part ofS. (b) Three arbitrary open surfaces bounded by the same circuit. The value of Φm is the same for all
+these surfaces.
+The SI unit for magnetic flux is theweber(Wb),
+1Wb=1T·m2.
+Occasionally, the magnetic field unit is expressed as webers per square meter (Wb/m2) instead of teslas, based on this
+definition.Inmanypracticalapplications,thecircuitofinterestconsistsofanumberNoftightlywoundturns(seeFigure
+13.6).Eachturnexperiencesthesamemagneticflux.Therefore,thenetmagneticfluxthroughthecircuitsisNtimesthe
+flux through one turn, and Faraday’s law is written as
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 13 | Electromagnetic Induction 585
+ε= −
+d
+d
+t
+(NΦm)=−N dΦ
+dt
+m. (13.3)
+Example 13.1
+A Square Coil in a Changing Magnetic Field
+ThesquarecoilofFigure 13.6hassides l=0.25m longandistightlywoundwith N =200 turnsofwire.
+Theresistanceofthecoilis R=5.0Ω. Thecoilisplacedinaspatiallyuniformmagneticfieldthatisdirected
+perpendiculartothefaceofthecoilandwhosemagnitudeisdecreasingatarate dB/dt=−0.040T/s. (a)What
+isthemagnitudeoftheemfinducedinthecoil?(b)Whatisthemagnitudeofthecurrentcirculatingthroughthe
+coil?
+Figure 13.6 A square coil withNturns of wire with uniform
+→
+magnetic field B directed in the downward direction,
+perpendicular to the coil.
+Strategy
+Theareavector,or ^ n direction,isperpendiculartoareacoveringtheloop.Wewillchoosethistobepointing
+downwardsothat → B isparallelto ^ n andthatthefluxturnsintomultiplicationofmagneticfieldtimesarea.
+Theareaoftheloopisnotchangingintime,soitcanbefactoredoutofthetimederivative,leavingthemagnetic
+fieldastheonlyquantityvaryingintime.Lastly,wecanapplyOhm’slawonceweknowtheinducedemftofind
+the current in the loop.
+Solution
+a. The flux through one turn is
+Φm=BA=Bl2,
+sowecancalculatethemagnitudeoftheemffromFaraday’slaw.Thesignoftheemfwillbediscussed
+in the next section, on Lenz’s law:
+|ε| = | −N dΦm| =Nl2dB
+dt dt
+=(200)(0.25m)2(0.040T/s)=0.50V.
+
+586 Chapter 13 | Electromagnetic Induction
+b. The magnitude of the current induced in the coil is
+I = ε = 0.50V =0.10A.
+R 5.0Ω
+Significance
+Iftheareaoftheloopwerechangingintime,wewouldnotbeabletopullitoutofthetimederivative.Sincethe
+loopisaclosedpath,theresultofthiscurrentwouldbeasmallamountofheatingofthewiresuntilthemagnetic
+field stops changing. This may increase the area of the loop slightly as the wires are heated.
+13.1 Check Your Understanding A closely wound coil has a radius of 4.0 cm, 50 turns, and a total
+resistanceof 40Ω.Atwhatratemustamagneticfieldperpendiculartothefaceofthecoilchangeinorderto
+produce Joule heating in the coil at a rate of 2.0 mW?
+13.2 | Lenz's Law
+Learning Objectives
+By the end of this section, you will be able to:
+• Use Lenz’s law to determine the direction of induced emf whenever a magnetic flux changes
+• Use Faraday’s law with Lenz’s law to determine the induced emf in a coil and in a solenoid
+The direction in which the induced emf drives current around a wire loop can be found through the negative sign.
+However,itisusuallyeasiertodeterminethisdirectionwithLenz’slaw,namedinhonorofitsdiscoverer,HeinrichLenz
+(1804–1865). (Faraday also discovered this law, independently of Lenz.) We state Lenz’s law as follows:
+Lenz’s Law
+Thedirectionoftheinducedemfdrivescurrentaroundawirelooptoalwaysopposethechangeinmagneticfluxthat
+causes the emf.
+Lenz’slawcanalsobeconsidered interms ofconservation ofenergy.Ifpushingamagnet intoacoil causes current, the
+energyinthatcurrentmusthavecomefromsomewhere.Iftheinducedcurrentcausesamagneticfieldopposingtheincrease
+in field of the magnet we pushed in, then the situation is clear. We pushed a magnet against a field and did work on the
+system, and that showed up as current. If it were not the case that the induced field opposes the change in the flux, the
+magnetwouldbepulledinproduceacurrentwithoutanythinghavingdonework.Electricpotentialenergywouldhavebeen
+created, violating the conservation of energy.
+Todetermineaninducedemf ε,youfirstcalculatethemagneticflux Φm andthenobtain dΦm/dt. Themagnitudeof ε
+isgivenby ε=|dΦm/dt|. Finally,youcanapplyLenz’slawtodeterminethesenseof ε.Thiswillbedevelopedthrough
+examples that illustrate the following problem-solving strategy.
+Problem-Solving Strategy: Lenz’s Law
+To use Lenz’s law to determine the directions of induced magnetic fields, currents, and emfs:
+1. Make a sketch of the situation for use in visualizing and recording directions.
+→
+2. Determine the direction of the applied magnetic field B .
+3. Determine whether its magnetic flux is increasing or decreasing.
+→
+4. Nowdeterminethedirectionoftheinducedmagneticfield B . Theinducedmagneticfieldtriestoreinforcea
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 13 | Electromagnetic Induction 587
+magneticfluxthatisdecreasingoropposesamagneticfluxthatisincreasing.Therefore,theinducedmagnetic
+field adds or subtracts to the applied magnetic field, depending on the change in magnetic flux.
+5. Useright-handrule2(RHR-2;seeMagneticForcesandFields)todeterminethedirectionoftheinduced
+→
+currentIthat is responsible for the induced magnetic field B .
+6. The direction (or polarity) of the induced emf can now drive a conventional current in this direction.
+Let’s apply Lenz’s law to the system of Figure 13.7(a). We designate the “front” of the closed conducting loop as the
+region containing the approaching bar magnet, and the “back” of the loop as the other region. As the north pole of the
+magnet moves toward the loop, the flux through the loop due to the field of the magnet increases because the strength
+of field lines directed from the front to the back of the loop is increasing. A current is therefore induced in the loop. By
+Lenz’slaw,thedirectionoftheinducedcurrentmustbesuchthatitsownmagneticfieldisdirectedinawaytoopposethe
+changingfluxcausedbythefieldoftheapproachingmagnet.Hence,theinducedcurrentcirculatessothatitsmagneticfield
+lines through the loop are directed from the back to the front of the loop. By RHR-2, place your thumb pointing against
+the magnetic field lines, which is toward the bar magnet. Your fingers wrap in a counterclockwise direction as viewed
+fromthebarmagnet.Alternatively,wecandeterminethedirectionoftheinducedcurrentbytreatingthecurrentloopasan
+electromagnetthatopposestheapproachofthenorthpoleofthebarmagnet.Thisoccurswhentheinducedcurrentflowsas
+shown, for then the face of the loop nearer the approaching magnet is also a north pole.
+Figure 13.7 The change in magnetic flux caused by the approaching magnet induces a
+current in the loop. (a) An approaching north pole induces a counterclockwise current with
+respect to the bar magnet. (b) An approaching south pole induces a clockwise current with
+respect to the bar magnet.
+Part(b)ofthefigureshowsthesouthpoleofamagnetmovingtowardaconductingloop.Inthiscase,thefluxthroughthe
+loopduetothefieldofthemagnetincreasesbecausethenumberoffieldlinesdirectedfromthebacktothefrontoftheloop
+isincreasing.Toopposethischange,acurrentisinducedintheloopwhosefieldlinesthroughthelooparedirectedfrom
+thefronttotheback.Equivalently,wecansaythatthecurrentflowsinadirectionsothatthefaceoftheloopnearerthe
+approachingmagnetisasouthpole,whichthenrepelstheapproachingsouthpoleofthemagnet.ByRHR-2,yourthumb
+points away from the bar magnet. Your fingers wrap in a clockwise fashion, which is the direction of the induced current.
+AnotherexampleillustratingtheuseofLenz’slawisshowninFigure 13.8.Whentheswitchisopened,thedecreasein
+current through the solenoid causes a decrease in magnetic flux through its coils, which induces an emf in the solenoid.
+Thisemfmustopposethechange(theterminationofthecurrent)causingit.Consequently,theinducedemfhasthepolarity
+shownanddrivesinthedirectionoftheoriginalcurrent.Thismaygenerateanarcacrosstheterminalsoftheswitchasitis
+opened.

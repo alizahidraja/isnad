@@ -1,0 +1,189 @@
+# REAL PDF — openstax_vol1.pdf, pages 178-185
+############################################################
+
+166 4 • Motion in Two and Three Dimensions
+The time for projectile motion is determined completely by the vertical motion. Thus, any projectile that has an
+initial vertical velocity of 21.2 m/s and lands 10.0 m above its starting altitude spends 3.79 s in the air.
+(b) We can find the final horizontal and vertical velocities and with the use of the result from (a). Then, we can
+combine them to find the magnitude of the total velocity vector and the angle it makes with the horizontal. Since
+is constant, we can solve for it at any horizontal location. We choose the starting point because we know both the
+initial velocity and the initial angle. Therefore,
+The final vertical velocity is given by Equation 4.21:
+Since was found in part (a) to be 21.2 m/s, we have
+The magnitude of the final velocity is
+The direction is found using the inverse tangent:
+Significance
+(a) As mentioned earlier, the time for projectile motion is determined completely by the vertical motion. Thus, any
+projectile that has an initial vertical velocity of 21.2 m/s and lands 10.0 m above its starting altitude spends 3.79 s in
+the air. (b) The negative angle means the velocity is below the horizontal at the point of impact. This result is
+consistent with the fact that the ball is impacting at a point on the other side of the apex of the trajectory and
+therefore has a negative y component of the velocity. The magnitude of the velocity is less than the magnitude of the
+initial velocity we expect since it is impacting 10.0 m above the launch elevation.
+Time of Flight, Trajectory, and Range
+Of interest are the time of flight, trajectory, and range for a projectile launched on a flat horizontal surface and
+impacting on the same surface. In this case, kinematic equations give useful expressions for these quantities, which
+are derived in the following sections.
+Time of flight
+We can solve for the time of flight of a projectile that is both launched and impacts on a flat horizontal surface by
+performing some manipulations of the kinematic equations. We note the position and displacement in y must be
+zero at launch and at impact on an even surface. Thus, we set the displacement in y equal to zero and find
+Factoring, we have
+Solving for t gives us
+4.24
+This is the time of flight for a projectile both launched and impacting on a flat horizontal surface. Equation 4.24
+Access for free at openstax.org
+
+4.3 • Projectile Motion 167
+does not apply when the projectile lands at a different elevation than it was launched, as we saw in Example 4.8 of
+the tennis player hitting the ball into the stands. The other solution, t = 0, corresponds to the time at launch. The
+time of flight is linearly proportional to the initial velocity in the y direction and inversely proportional to g. Thus, on
+the Moon, where gravity is one-sixth that of Earth, a projectile launched with the same velocity as on Earth would be
+airborne six times as long.
+Trajectory
+The trajectory of a projectile can be found by eliminating the time variable t from the kinematic equations for
+arbitrary t and solving for y(x). We take so the projectile is launched from the origin. The kinematic
+equation for x gives
+Substituting the expression for t into the equation for the position gives
+Rearranging terms, we have
+4.25
+This trajectory equation is of the form which is an equation of a parabola with coefficients
+Range
+From the trajectory equation we can also find the range, or the horizontal distance traveled by the projectile.
+Factoring Equation 4.25, we have
+The position y is zero for both the launch point and the impact point, since we are again considering only a flat
+horizontal surface. Setting y = 0 in this equation gives solutions x = 0, corresponding to the launch point, and
+corresponding to the impact point. Using the trigonometric identity and setting x = R for range,
+we find
+4.26
+Note particularly that Equation 4.26 is valid only for launch and impact on a horizontal surface. We see the range is
+directly proportional to the square of the initial speed and , and it is inversely proportional to the
+acceleration of gravity. Thus, on the Moon, the range would be six times greater than on Earth for the same initial
+velocity. Furthermore, we see from the factor that the range is maximum at These results are shown in
+Figure 4.15. In (a) we see that the greater the initial velocity, the greater the range. In (b), we see that the range is
+maximum at This is true only for conditions neglecting air resistance. If air resistance is considered, the
+maximum angle is somewhat smaller. It is interesting that the same range is found for two initial launch angles that
+sum to The projectile launched with the smaller angle has a lower apex than the higher angle, but they both
+have the same range.
+
+168 4 • Motion in Two and Three Dimensions
+FIGURE 4.15 Trajectories of projectiles on level ground. (a) The greater the initial speed the greater the range for a given initial angle.
+(b) The effect of initial angle on the range of a projectile with a given initial speed. Note that the range is the same for initial angles of
+and although the maximum heights of those paths are different.
+EXAMPLE 4.9
+Comparing Golf Shots
+A golfer encounters two different situations on different holes. On the second hole they are 120 m from the green
+and want to hit the ball 90 m and let it run onto the green. They angle the shot low to the ground at to the
+horizontal to let the ball roll after impact. On the fourth hole they are 90 m from the green and want to let the ball
+drop with a minimum amount of rolling after impact. Here, they angle the shot at to the horizontal to minimize
+rolling after impact. Both shots are hit and impacted on a level surface.
+(a) What is the initial speed of the ball at the second hole?
+(b) What is the initial speed of the ball at the fourth hole?
+(c) Write the trajectory equation for both cases.
+(d) Graph the trajectories.
+Strategy
+We see that the range equation has the initial speed and angle, so we can solve for the initial speed for both (a) and
+(b). When we have the initial speed, we can use this value to write the trajectory equation.
+Solution
+(a)
+(b)
+Access for free at openstax.org
+
+4.3 • Projectile Motion 169
+(c)
+(d) Using a graphing utility, we can compare the two trajectories, which are shown in Figure 4.16.
+FIGURE 4.16 Two trajectories of a golf ball with a range of 90 m. The impact points of both are at the same level as the launch point.
+Significance
+The initial speed for the shot at is greater than the initial speed of the shot at Note from Figure 4.16 that if
+the two projectiles were launched at the same speed but at different angles, the projectiles would have the same
+range as long as the angles were less than The launch angles in this example add to give a number greater than
+Thus, the shot at has to have a greater launch speed to reach 90 m, otherwise it would land at a shorter
+distance.
+CHECK YOUR UNDERSTANDING 4.4
+If the two golf shots in Example 4.9 were launched at the same speed, which shot would have the greatest range?
+When we speak of the range of a projectile on level ground, we assume R is very small compared with the
+circumference of Earth. If, however, the range is large, Earth curves away below the projectile and the acceleration
+resulting from gravity changes direction along the path. The range is larger than predicted by the range equation
+given earlier because the projectile has farther to fall than it would on level ground, as shown in Figure 4.17, which
+is based on a drawing in Newton’s Principia. If the initial speed is great enough, the projectile goes into orbit. Earth’s
+surface drops 5 m every 8000 m. In 1 s an object falls 5 m without air resistance. Thus, if an object is given a
+
+170 4 • Motion in Two and Three Dimensions
+horizontal velocity of 8000 m/s (or 18,000 mi/hr) near Earth’s surface, it will go into orbit around the planet because
+the surface continuously falls away from the object. This is roughly the speed of the Space Shuttle in a low Earth
+orbit when it was operational, or any satellite in a low Earth orbit. These and other aspects of orbital motion, such as
+Earth’s rotation, are covered in greater depth in Gravitation.
+FIGURE 4.17 Projectile to satellite. In each case shown here, a projectile is launched from a very high tower to avoid air resistance. With
+increasing initial speed, the range increases and becomes longer than it would be on level ground because Earth curves away beneath its
+path. With a speed of 8000 m/s, orbit is achieved.
+INTERACTIVE
+At PhET Explorations: Projectile Motion (https://openstax.org/l/21phetpromot), learn about projectile motion in
+terms of the launch angle and initial velocity.
+4.4 Uniform and Nonuniform Circular Motion
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Solve for the centripetal acceleration of an object moving on a circular path.
+• Use the equations of circular motion to find the position, velocity, and acceleration of a particle executing
+circular motion.
+• Explain the differences between centripetal acceleration and tangential acceleration resulting from
+nonuniform circular motion.
+• Evaluate centripetal and tangential acceleration in nonuniform circular motion, and find the total
+acceleration vector.
+Uniform circular motion is a specific type of motion in which an object travels in a circle with a constant speed. For
+example, any point on a propeller spinning at a constant rate is executing uniform circular motion. Other examples
+are the second, minute, and hour hands of a watch. It is remarkable that points on these rotating objects are
+actually accelerating, although the rotation rate is a constant. To see this, we must analyze the motion in terms of
+vectors.
+Centripetal Acceleration
+In one-dimensional kinematics, objects with a constant speed have zero acceleration. However, in two- and three-
+dimensional kinematics, even if the speed is a constant, a particle can have acceleration if it moves along a curved
+trajectory such as a circle. In this case the velocity vector is changing, or This is shown in Figure 4.18. As
+the particle moves counterclockwise in time on the circular path, its position vector moves from to
+Access for free at openstax.org
+
+4.4 • Uniform and Nonuniform Circular Motion 171
+The velocity vector has constant magnitude and is tangent to the path as it changes from to changing
+its direction only. Since the velocity vector is perpendicular to the position vector the triangles formed by
+the position vectors and and the velocity vectors and are similar. Furthermore, since and
+the two triangles are isosceles. From these facts we can make the assertion
+or
+FIGURE 4.18 (a) A particle is moving in a circle at a constant speed, with position and velocity vectors at times and (b) Velocity
+vectors forming a triangle. The two triangles in the figure are similar. The vector points toward the center of the circle in the limit
+We can find the magnitude of the acceleration from
+The direction of the acceleration can also be found by noting that as and therefore approach zero, the vector
+approaches a direction perpendicular to In the limit is perpendicular to Since is tangent to the
+circle, the acceleration points toward the center of the circle. Summarizing, a particle moving in a circle at a
+constant speed has an acceleration with magnitude
+4.27
+The direction of the acceleration vector is toward the center of the circle (Figure 4.19). This is a radial acceleration
+and is called the centripetal acceleration, which is why we give it the subscript c. The word centripetal comes from
+the Latin words centrum (meaning “center”) and petere (meaning “to seek”), and thus takes the meaning “center
+seeking.”
+
+172 4 • Motion in Two and Three Dimensions
+FIGURE 4.19 The centripetal acceleration vector points toward the center of the circular path of motion and is an acceleration in the radial
+direction. The velocity vector is also shown and is tangent to the circle.
+Let’s investigate some examples that illustrate the relative magnitudes of the velocity, radius, and centripetal
+acceleration.
+EXAMPLE 4.10
+Creating an Acceleration of 1 g
+A jet is flying at 134.1 m/s along a straight line and makes a turn along a circular path level with the ground. What
+does the radius of the circle have to be to produce a centripetal acceleration of 1 g on the pilot and jet toward the
+center of the circular trajectory?
+Strategy
+Given the speed of the jet, we can solve for the radius of the circle in the expression for the centripetal acceleration.
+Solution
+Set the centripetal acceleration equal to the acceleration of gravity:
+Solving for the radius, we find
+Significance
+To create a greater acceleration than g on the pilot, the jet would either have to decrease the radius of its circular
+trajectory or increase its speed on its existing trajectory or both.
+CHECK YOUR UNDERSTANDING 4.5
+A flywheel has a radius of 20.0 cm. What is the speed of a point on the edge of the flywheel if it experiences a
+centripetal acceleration of
+Centripetal acceleration can have a wide range of values, depending on the speed and radius of curvature of the
+circular path. Typical centripetal accelerations are given in the following table.
+Object Centripetal Acceleration (m/s2 or factors of g)
+Earth around the Sun
+Moon around the Earth
+TABLE 4.1 Typical Centripetal Accelerations
+Access for free at openstax.org

@@ -1,0 +1,220 @@
+# REAL PDF — openstax_vol2.pdf, pages 111-114
+############################################################
+
+Chapter 2 | The Kinetic Theory of Gases 101
+molecules’ vibrational degrees of freedom can contribute
+2.2Pressure, Temperature, and RMS Speed tosomeextenttotheirenergyatroomtemperature.Would
+you expect that fact to increase or decrease their heat
+6. How is momentum related to the pressure exerted by
+capacity from the valueR? Explain.
+a gas? Explain on the molecular level, considering the
+behavior of molecules.
+13. One might think that the internal energy of diatomic
+7. Ifonekindofmoleculehasdoubletheradiusofanother
+gases is given by E
+int
+=5RT/2. Do diatomic gases near
+and eight times the mass, how do their mean free paths room temperature have more or less internal energy than
+under the same conditions compare? How do their mean that? Hint: Their internal energy includes the total energy
+free times compare? added in raising the temperature from the boiling point
+(very low) to room temperature.
+8. Whatistheaveragevelocityoftheairmoleculesinthe
+room where you are right now? 14. You mix 5 moles of H at 300 K with 5 moles of
+2
+Heat360Kinaperfectlyinsulatedcalorimeter.Isthefinal
+9. WhydotheatmospheresofJupiter,Saturn,Uranus,and temperature higher or lower than 330 K?
+Neptune, which are much more massive and farther from
+the Sun than Earth is, contain large amounts of hydrogen
+and helium?
+2.4Distribution of Molecular Speeds
+15. Onecylindercontainsheliumgasandanothercontains
+10. Statisticalmechanicssaysthatinagasmaintainedata
+krypton gas at the same temperature. Mark each of these
+constanttemperaturethroughthermalcontactwithabigger
+statementstrue,false,orimpossibletodeterminefromthe
+system(a“reservoir”)atthattemperature,thefluctuations
+given information. (a) The rms speeds of atoms in the
+in internal energy are typically a fraction 1/ N of the
+two gases are the same. (b) The average kinetic energies
+internalenergy.Asafractionofthetotalinternalenergyof
+of atoms in the two gases are the same. (c) The internal
+a mole of gas, how big are the fluctuations in the internal
+energiesof1moleofgasineachcylinderarethesame.(d)
+energy? Are we justified in ignoring them?
+The pressures in the two cylinders are the same.
+11. Which is more dangerous, a closet where tanks of
+16. Repeatthepreviousquestionifonegasisstillhelium
+nitrogen are stored, or one where tanks of carbon dioxide
+but the other is changed to fluorine, F .
+are stored? 2
+17. Anideal gasisatatemperature of300K.Todouble
+2.3Heat Capacity and Equipartition of Energy the average speed of its molecules, what does the
+temperature need to be changed to?
+12. Experimentally it appears that many polyatomic
+PROBLEMS
+part (a) because the glass bulb will expand. Is this effect
+2.1Molecular Model of an Ideal Gas significant?
+18. The gauge pressure in your car tires is
+2.50×10 5 N/m2 atatemperatureof 35.0°C whenyou 20. People buying food in sealed bags at high elevations
+often notice that the bags are puffed up because the air
+drive it onto a ship in Los Angeles to be sent to Alaska.
+inside has expanded. A bag of pretzels was packed at a
+What is their gauge pressure on a night in Alaska when
+pressureof1.00atmandatemperatureof 22.0°C. When
+theirtemperaturehasdroppedto −40.0°C ?Assumethe
+openedatasummerpicnicinSantaFe,NewMexico,ata
+tires have not gained or lost any air.
+temperatureof 32.0°C, thevolumeoftheairinthebagis
+1.38timesitsoriginalvolume.Whatisthepressureofthe
+19. Suppose a gas-filled incandescent light bulb is
+air?
+manufactured so that the gas inside the bulb is at
+atmospheric pressure when the bulb has a temperature of
+20.0°C. (a) Find the gauge pressure inside such a bulb 21. How many moles are there in (a) 0.0500 g of N
+2
+whenitishot,assumingitsaveragetemperatureis 60.0°C gas (M =28.0g/mol⎞? (b) 10.0 g of CO gas
+⎠ 2
+(an approximation) and neglecting any change in volume (M =44.0g/mol)? (c) How many molecules are present
+duetothermalexpansionorgasleaks.(b)Theactualfinal
+in each case?
+pressure for the light bulb will be less than calculated in
+
+102 Chapter 2 | The Kinetic Theory of Gases
+22. A cubic container of volume 2.00 L holds 0.500 mol thebottle.Supposethebottlehasavolumeof0.500Land
+of nitrogen gas at a temperature of 25.0°C. What is the the temperature inside it is raised to 80.0°C while the
+netforceduetothenitrogenononewallofthecontainer? pressure remains constant at 1.00 atm because the bottle
+Compare that force to the sample’s weight. is open. (a) How many moles of air are inside? (b) Now
+the egg is put in place, sealing the bottle. What is the
+23. Calculate the number of moles in the 2.00-L volume gaugepressureinsideaftertheaircoolsbacktotheambient
+of air in the lungs of the average person. Note that the air temperatureof 25°C butbeforetheeggisforcedintothe
+isat 37.0°C (bodytemperature)andthatthetotalvolume bottle?
+inthelungsisseveraltimestheamountinhaledinatypical
+breath as given inExample 2.2. 31. Ahigh-pressuregascylindercontains50.0Loftoxic
+gas at a pressure of 1.40×10 7 N/m2 and a temperature
+24. An airplane passenger has 100cm 3 of air in his of 25.0°C.Thecylinderiscooledtodryicetemperature
+stomach just before the plane takes off from a sea-level (−78.5°C) to reduce the leak rate and pressure so that
+airport.Whatvolumewilltheairhaveatcruisingaltitudeif it can be safely repaired. (a) What is the final pressure in
+cabin pressure drops to 7.50×104 N/m2 ? the tank, assuming anegligible amount ofgasleaks while
+being cooled and that there is no phase change? (b) What
+isthefinalpressureifone-tenthofthegasescapes?(c)To
+25. A company advertises that it delivers helium at a
+what temperature must the tank be cooled to reduce the
+gaugepressureof 1.72×10 7 Pa inacylinderofvolume pressure to 1.00 atm (assuming the gas does not change
+43.8L.Howmanyballoonscanbeinflatedtoavolumeof phase and that there is no leakage during cooling)? (d)
+4.00 L with that amount of helium? Assume the pressure Doescoolingthetankasinpart(c)appeartobeapractical
+inside theballoons is 1.01×10 5 Pa andthetemperature solution?
+in the cylinder and the balloons is 25.0°C.
+32. Findthenumberofmolesin2.00Lofgasat 35.0°C
+26. According to http://hyperphysics.phy-astr.gsu.edu/ and under 7.41×10 7 N/m2 of pressure.
+hbase/solar/venusenv.html, the atmosphere of Venus is
+approximately 96.5%CO 2 and 3.5%N 2 byvolume.On 33. Calculate the depth to which Avogadro’s number of
+the surface, where the temperature is about 750 K and table tennis balls would cover Earth. Each ball has a
+the pressure is about 90 atm, what is the density of the diameterof3.75cm.Assumethespacebetweenballsadds
+atmosphere? an extra 25.0% to their volume and assume they are not
+crushed by their own weight.
+27. An expensive vacuum system can achieve a pressure
+as low as 1.00×10 −7 N/m2 at 20.0°C. How many 34. (a) What is the gauge pressure in a 25.0°C car tire
+molecules are there in a cubic centimeter at this pressure containing 3.60 mol of gas in a 30.0-L volume? (b) What
+and temperature? willitsgaugepressurebeifyouadd1.00Lofgasoriginally
+at atmospheric pressure and 25.0°C ? Assume the
+28. ThenumberdensityN/Vofgasmoleculesatacertain temperature remains at 25.0°C and the volume remains
+location in the space above our planet is about constant.
+1.00×1011 m −3 , and the pressure is
+2.75×10 −10 N/m2 inthisspace.Whatisthetemperature
+2.2Pressure, Temperature, and RMS Speed
+there?
+In the problems in this section, assume all gases are ideal.
+29. A bicycle tire contains 2.00 L of gas at an absolute 35. A person hits a tennis ball with a mass of 0.058 kg
+pressure of 7.00×10 5 N/m2 and a temperature of againstawall.Theaveragecomponentoftheball’svelocity
+18.0°C.Whatwillitspressurebeifyouletoutanamount perpendicular to the wall is 11 m/s, and the ball hits the
+wallevery2.1sonaverage,reboundingwiththeopposite
+of air that has a volume of 100cm 3 at atmospheric perpendicularvelocitycomponent.(a)Whatistheaverage
+pressure? Assume tire temperature and volume remain force exerted on the wall? (b) If the part of the wall the
+constant.
+person hits has an area of 3.0m2, what is the average
+pressure on that area?
+30. In a common demonstration, a bottle is heated and
+stopperedwithahard-boiledeggthat’salittle biggerthan
+36. A person is in a closed room (a racquetball court)
+the bottle’s neck. When the bottle is cooled, the pressure
+difference between inside and outside forces the egg into
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 103
+with V =453m 3 hitting a ball (m=42.0g⎞ around at 45. If the rms speed of oxygen molecules inside a
+⎠
+random without any pauses. The average kinetic energy refrigerator of volume 22.0ft. 3 is 465 m/s, what is the
+of the ball is 2.30 J. (a) What is the average value of partial pressure of the oxygen? There are 5.71 moles of
+oxygenintherefrigerator,andthemolarmassofoxygenis
+v2 x? Does it matter which direction you take to be x?
+32.0 g/mol.
+(b)Applyingthemethodsofthischapter,findtheaverage
+pressureonthewalls?(c)Asidefromthepresenceofonly
+46. The escape velocity of any object from Earth is 11.1
+one “molecule” in this problem, what is the main
+km/s.Atwhattemperaturewouldoxygenmolecules(molar
+assumption in Pressure, Temperature, and RMS
+mass is equal to 32.0 g/mol) have root-mean-square
+Speedthat does not apply here?
+velocity v equaltoEarth’sescapevelocityof11.1km/
+rms
+s?
+37. Fivebicyclistsareridingatthefollowingspeeds:5.4
+m/s,5.7m/s,5.8m/s,6.0m/s,and6.5m/s.(a)Whatistheir
+average speed? (b) What is their rms speed? 47. The escape velocity from the Moon is much smaller
+than that from the Earth, only 2.38 km/s. At what
+temperature would hydrogen molecules (molar mass is
+38. Some incandescent light bulbs are filled with argon
+equal to 2.016 g/mol) have a root-mean-square velocity
+gas. What is v for argon atoms near the filament,
+rms v equal to the Moon’s escape velocity?
+rms
+assuming their temperature is 2500 K?
+48. Nuclear fusion, the energy source of the Sun,
+39. Typical molecular speeds (v rms) are large, even at
+hydrogen bombs, and fusion reactors, occurs much more
+low temperatures. What is v rms for helium atoms at 5.00 readily when the average kinetic energy of the atoms is
+K, less than one degree above helium’s liquefaction high—that is, at high temperatures. Suppose youwant the
+temperature? atoms in your fusion experiment to have average kinetic
+energies of 6.40×10−14 J. What temperature is needed?
+40. What is the average kinetic energy in joules of
+hydrogen atoms on the 5500°C surface of the Sun? (b) 49. Suppose that the typical speed (v rms) of carbon
+What is the average kinetic energy of helium atoms in
+dioxidemolecules(molarmassis44.0g/mol)inaflameis
+a region of the solar corona where the temperature is
+foundtobe1350m/s.Whattemperaturedoesthisindicate?
+6.00×10 5 K ?
+50. (a)Hydrogenmolecules(molarmassisequalto2.016
+41. What is the ratio of the average translational kinetic g/mol) have v equal to 193 m/s. What is the
+rms
+energy of a nitrogen molecule at a temperature of 300
+temperature? (b) Much of the gas near the Sun is atomic
+K to the gravitational potential energy of a nitrogen-
+hydrogen(Hratherthan H ). Itstemperaturewouldhave
+molecule−Earth system at the ceiling of a 3-m-tall room 2
+with respect to the same system with the molecule at the to be 1.5×10 7 K for the rms speed v rms to equal the
+floor?
+escape velocity from the Sun. What is that velocity?
+42. Whatisthetotaltranslationalkineticenergyoftheair
+51. There are two important isotopes of uranium, 235 U
+molecules in a room of volume 23m 3 if the pressure is
+9.5×104 Pa (theroomisatfairlyhighelevation)andthe
+and 238 U; these isotopes are nearly identical chemically
+temperatureis 21°C ?Isanyitemofdataunnecessaryfor but have different atomic masses. Only 235 U is very
+the solution? usefulinnuclearreactors.Separatingtheisotopesiscalled
+uranium enrichment (and is often in the news as of this
+43. Theproductofthepressureandvolumeofasampleof writing, because of concerns that some countries are
+hydrogengasat 0.00°C is80.0J.(a)Howmanymolesof enriching uranium with the goal of making nuclear
+weapons.) One of the techniques for enrichment, gas
+hydrogenarepresent?(b)Whatistheaveragetranslational
+diffusion, is based on the different molecular speeds of
+kineticenergyofthehydrogenmolecules?(c)Whatisthe
+value of the product of pressure and volume at 200°C? uranium hexafluoride gas, UF 6 . (a) The molar masses of
+235 U and 238 UF are 349.0 g/mol and 352.0 g/mol,
+6
+44. What is the gauge pressure inside a tank of
+respectively.Whatistheratiooftheirtypicalspeeds v ?
+rms
+4.86×104 mol ofcompressednitrogenwithavolumeof (b)Atwhattemperaturewouldtheirtypicalspeedsdifferby
+6.56m 3 if the rms speed is 514 m/s? 1.00 m/s? (c) Do your answers in this problem imply that
+this technique may be difficult?

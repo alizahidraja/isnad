@@ -1,0 +1,275 @@
+# REAL PDF — openstax_vol2.pdf, pages 384-390
+############################################################
+
+374 Chapter 8 | Capacitance
+Figure 8.22 A dielectric is inserted into the charged capacitor while the
+capacitor remains connected to the battery.
+Strategy
+Weidentifytheknownvalues: V , C ,E , κ,and Q .Ourtaskistoexpresstheunknownvaluesintermsof
+0 0 0 0
+these known values.
+Solution
+(a) The capacitance of the filled capacitor is C=κC . Since the battery is always connected to the capacitor
+0
+plates, the potential difference between them does not change; hence, V =V . Because of that, the electrical
+0
+field in the filled capacitor is the same as the field in the empty capacitor, so we can obtain directly that
+E= V = V 0 =E .
+d d 0
+(b) For the filled capacitor, the free charge on the plates is
+Q=CV =(κC )V =κ(C V )=κQ .
+0 0 0 0 0
+The electrical field E in the filled capacitor is due to the effective charge Q−Q (Figure 8.22(b)). Since
+i
+E=E , we have
+0
+Q−Q Q
+i = 0 .
+ε A ε A
+0 0
+Solving this equation for Q , we obtain for the induced charge
+i
+Q =Q−Q =κQ −Q =(κ−1)Q .
+i 0 0 0 0
+Significance
+Noticethatformaterialswithdielectricconstantslargerthan2(seeTable8.1),theinducedchargeonthesurface
+ofdielectricislargerthanthechargeontheplatesofavacuumcapacitor.Theoppositeistrueforgasseslikeair
+whose dielectric constant is smaller than 2.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 375
+8.8 CheckYourUnderstandingContinuingwithExample8.12,showthatwhenthebatteryisconnected
+acrosstheplatestheenergystoredindielectric-filledcapacitoris U =κU (largerthantheenergy U ofan
+0 0
+emptycapacitorkeptatthesamevoltage).Comparethisresultwiththeresult U =U /κ foundpreviouslyfor
+0
+an isolated, charged capacitor.
+8.9 CheckYourUnderstandingRepeatthecalculationsofExample8.10forthecaseinwhichthebattery
+remains connected while the dielectric is placed in the capacitor.
+
+376 Chapter 8 | Capacitance
+CHAPTER 8 REVIEW
+KEY TERMS
+capacitance amount of charge stored per unit volt
+capacitor device that stores electrical charge and electrical energy
+dielectric insulating material used to fill the space between two plates
+dielectric breakdown phenomenon that occurs when an insulator becomes a conductor in a strong electrical field
+dielectric constant factorbywhichcapacitanceincreaseswhenadielectricisinsertedbetweentheplatesofacapacitor
+dielectric strength critical electrical field strength above which molecules in insulator begin to break down and the
+insulator starts to conduct
+energy density energy stored in a capacitor divided by the volume between the plates
+induced electric-dipole moment dipole moment that a nonpolar molecule may acquire when it is placed in an
+electrical field
+induced electrical field electrical field in the dielectric due to the presence of induced charges
+induced surface charges charges that occur on a dielectric surface due to its polarization
+parallel combination componentsinacircuitarrangedwithonesideofeachcomponentconnectedtoonesideofthe
+circuit and the other sides of the components connected to the other side of the circuit
+parallel-plate capacitor system of two identical parallel conducting plates separated by a distance
+series combination components in a circuit arranged in a row one after the other in a circuit
+KEY EQUATIONS
+Capacitance Q
+C=
+V
+Capacitance of a parallel-plate capacitor A
+C=ε
+0d
+Capacitance of a vacuum spherical capacitor R R
+C=4πε 1 2
+0R −R
+2 1
+Capacitance of a vacuum cylindrical capacitor 2πε l
+C= 0
+ln(R /R )
+2 1
+Capacitance of a series combination 1 1 1 1
+= + + +⋯
+C C C C
+S 1 2 3
+Capacitance of a parallel combination C =C +C +C +⋯
+P 1 2 3
+Energy density u E= 1
+2
+ε
+0
+E2
+Energy stored in a capacitor Q2
+U C= 1
+2
+V2C= 1
+2 C
+= 1
+2
+QV
+Capacitance of a capacitor with dielectric C=κC
+0
+E di n e e le rg ct y r i s c tored in an isolated capacitor with U = 1 κ U 0
+Dielectric constant E
+κ= 0
+E
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 377
+Induced electrical field in a dielectric → ⎛1 ⎞→
+E i = ⎝κ −1 ⎠ E 0
+SUMMARY
+8.1Capacitors and Capacitance
+• A capacitor is a device that stores an electrical charge and electrical energy. The amount of charge a vacuum
+capacitorcanstoredependsontwomajorfactors:thevoltageappliedandthecapacitor’sphysicalcharacteristics,
+such as its size and geometry.
+• Thecapacitanceofacapacitorisaparameterthattellsushowmuchchargecanbestoredinthecapacitorperunit
+potentialdifferencebetweenitsplates.Capacitanceofasystemofconductorsdependsonlyonthegeometryoftheir
+arrangementandphysicalpropertiesoftheinsulatingmaterialthatfillsthespacebetweentheconductors.Theunit
+of capacitance is the farad, where 1F=1C/1V.
+8.2Capacitors in Series and in Parallel
+• Whenseveralcapacitorsareconnectedinaseriescombination,thereciprocaloftheequivalentcapacitanceisthe
+sum of the reciprocals of the individual capacitances.
+• When several capacitors are connected in a parallel combination, the equivalent capacitance is the sum of the
+individual capacitances.
+• Whenanetworkofcapacitorscontainsacombinationofseriesandparallelconnections,weidentifytheseriesand
+parallelnetworks,andcomputetheirequivalentcapacitancesstepbystepuntiltheentirenetworkbecomesreduced
+to one equivalent capacitance.
+8.3Energy Stored in a Capacitor
+• Capacitors are used to supply energy to a variety of devices, including defibrillators, microelectronics such as
+calculators, and flash lamps.
+• Theenergystoredinacapacitoristheworkrequiredtochargethecapacitor,beginningwithnochargeonitsplates.
+Theenergyisstored intheelectrical field inthespace between thecapacitor plates. Itdepends ontheamount of
+electrical charge on the plates and on the potential difference between the plates.
+• Theenergystoredinacapacitornetworkisthesumoftheenergiesstoredonindividualcapacitorsinthenetwork.
+It can be computed as the energy stored in the equivalent capacitor of the network.
+8.4Capacitor with a Dielectric
+• Thecapacitanceofanemptycapacitorisincreasedbyafactorof κ whenthespacebetweenitsplatesiscompletely
+filled by a dielectric with dielectric constant κ.
+• Each dielectric material has its specific dielectric constant.
+• Theenergystoredinanemptyisolatedcapacitorisdecreasedbyafactorof κ whenthespacebetweenitsplatesis
+completely filled with a dielectric with dielectric constant κ.
+8.5Molecular Model of a Dielectric
+• Whenadielectricisinsertedbetweentheplatesofacapacitor,equalandoppositesurfacechargeisinducedonthe
+twofacesofthedielectric.Theinducedsurfacechargeproducesaninducedelectricalfieldthatopposesthefieldof
+the free charge on the capacitor plates.
+• The dielectric constant of a material is the ratio of the electrical field in vacuum to the net electrical field in the
+material. A capacitor filled with dielectric has a larger capacitance than an empty capacitor.
+• The dielectric strength of an insulator represents a critical value of electrical field at which the molecules in an
+insulatingmaterialstarttobecomeionized.Whenthishappens,thematerialcanconductanddielectricbreakdown
+is observed.
+
+378 Chapter 8 | Capacitance
+CONCEPTUAL QUESTIONS
+10. Discusshowtheenergystoredinanemptybutcharged
+8.1Capacitors and Capacitance capacitor changes when a dielectric is inserted if (a) the
+capacitorisisolatedsothatitschargedoesnotchange;(b)
+1. Doesthecapacitanceofadevicedependontheapplied
+the capacitor remains connected to a battery so that the
+voltage? Does the capacitance of a device depend on the
+potential difference between its plates does not change.
+charge residing on it?
+2. Wouldyouplacetheplatesofaparallel-platecapacitor
+8.5Molecular Model of a Dielectric
+closer together or farther apart to increase their
+capacitance? 11. Distinguish between dielectric strength and dielectric
+constant.
+3. Thevalueofthecapacitanceiszeroiftheplatesarenot
+charged. True or false? 12. Waterisagoodsolventbecauseithasahighdielectric
+constant. Explain.
+4. Iftheplatesofacapacitorhavedifferentareas,willthey
+acquire the same charge when the capacitor is connected 13. Waterhasahighdielectricconstant.Explainwhyitis
+across a battery? then not used as a dielectric material in capacitors.
+5. Doesthecapacitanceofasphericalcapacitordependon 14. Elaborate on why molecules in a dielectric material
+which sphere is charged positively or negatively? experience net forces on them in a non-uniform electrical
+field but not in a uniform field.
+8.2Capacitors in Series and in Parallel 15. Explain why the dielectric constant of a substance
+containing permanent molecular electric dipoles decreases
+6. If you wish to store a large amount of charge in a
+with increasing temperature.
+capacitorbank,wouldyouconnectcapacitorsinseriesorin
+parallel? Explain.
+16. Give a reason why a dielectric material increases
+capacitance compared with what it would be with air
+7. What is the maximum capacitance you can get by
+between the plates of a capacitor. How does a dielectric
+connectingthree 1.0-µF capacitors?Whatistheminimum
+material also allow a greater voltage to be applied to a
+capacitance?
+capacitor? (The dielectric thus increases C and permits a
+greaterV.)
+8.3Energy Stored in a Capacitor
+17. Elaborate on the way in which the polar character of
+8. If you wish to store a large amount of energy in a water molecules helps to explain water’s relatively large
+capacitor bank, would you connect capacitors in series or dielectric constant.
+parallel? Explain.
+18. Sparks will occur between the plates of an air-filled
+capacitor at a lower voltage when the air is humid than
+8.4Capacitor with a Dielectric whenitisdry.Discusswhy,consideringthepolarcharacter
+of water molecules.
+9. Discusswhatwouldhappenifaconductingslabrather
+than a dielectric were inserted into the gap between the
+capacitor plates.
+PROBLEMS
+21. Calculatethevoltageappliedtoa 2.00-µF capacitor
+8.1Capacitors and Capacitance
+when it holds 3.10µC of charge.
+19. Whatchargeisstoredina 180.0-µF capacitorwhen
+120.0 V is applied to it?
+22. Whatvoltagemustbeappliedtoan8.00-nFcapacitor
+to store 0.160 mC of charge?
+20. Find the charge stored when 5.50 V is applied to an
+8.00-pF capacitor.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 8 | Capacitance 379
+23. What capacitance is needed to store 3.00µC of 34. Suppose you need a capacitor bank with a total
+capacitance of 0.750 F but you have only 1.50-mF
+charge at a voltage of 120 V?
+capacitorsatyourdisposal.Whatisthesmallestnumberof
+capacitorsyoucouldconnecttogethertoachieveyourgoal,
+24. What is the capacitance of a large Van de Graaff
+and how would you connect them?
+generator’sterminal,giventhatitstores8.00mCofcharge
+at a voltage of 12.0 MV?
+35. Whattotalcapacitances canyoumakebyconnecting
+a 5.00-µF and a 8.00-µF capacitor?
+25. The plates of an empty parallel-plate capacitor of
+capacitance 5.0 pF are 2.0 mm apart. What is the area of
+each plate? 36. Findtheequivalentcapacitanceofthecombinationof
+series and parallel capacitors shown below.
+26. A 60.0-pF vacuum capacitor has a plate area of
+0.010m2. What is the separation between its plates?
+27. A set of parallel plates has a capacitance of 5.0µF.
+How much charge must be added to the plates to increase
+the potential difference between them by 100 V?
+28. Consider Earth to be a spherical conductor of radius
+37. Findthe net capacitance ofthe combination ofseries
+6400 km and calculate its capacitance.
+and parallel capacitors shown below.
+29. If the capacitance per unit length of a cylindrical
+capacitoris20pF/m,whatistheratiooftheradiiofthetwo
+cylinders?
+30. Anemptyparallel-platecapacitorhasacapacitanceof
+20 µF.Howmuchchargemustleakoffitsplatesbefore
+the voltage across them is reduced by 100 V?
+38. A40-pFcapacitorischargedtoapotentialdifference
+8.2Capacitors in Series and in Parallel of 500 V. Its terminals are then connected to those of an
+uncharged 10-pF capacitor. Calculate: (a) the original
+31. A 4.00-pF is connected in series with an 8.00-pF
+charge on the 40-pF capacitor; (b) the charge on each
+capacitoranda400-Vpotentialdifferenceisappliedacross
+capacitoraftertheconnectionismade;and(c)thepotential
+thepair.(a)Whatisthechargeoneachcapacitor?(b)What
+difference across the plates of each capacitor after the
+is the voltage across each capacitor?
+connection.
+32. Threecapacitors,withcapacitancesof C =2.0µF,
+1 39. A 2.0-µF capacitor and a 4.0-µF capacitor are
+C =3.0µF, and C =6.0µF, respectively, are
+2 3 connectedinseriesacrossa1.0-kVpotential.Thecharged
+connected in parallel. A 500-V potential difference is capacitors are then disconnected from the source and
+applied across the combination. Determine the voltage connectedtoeachotherwithterminalsoflikesigntogether.
+across each capacitor and the charge on each capacitor. Find the charge on each capacitor and the voltage across
+each capacitor.
+33. Findthetotalcapacitanceofthiscombinationofseries
+and parallel capacitors shown below.
+8.3Energy Stored in a Capacitor
+40. Howmuchenergyisstoredinan 8.00-µF capacitor
+whose plates are at a potential difference of 6.00 V?
+41. A capacitor has a charge of 2.5µC when connected
+to a 6.0-V battery. How much energy is stored in this
+capacitor?

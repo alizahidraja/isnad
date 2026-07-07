@@ -1,0 +1,178 @@
+# REAL PDF — openstax_vol1.pdf, pages 63-70
+############################################################
+
+2.1 • Scalars and Vectors 51
+FIGURE 2.11 When we use the parallelogram rule four times, we obtain the resultant vector , which is the green
+vector connecting Tallahassee with Gainesville.
+Drawing the resultant vector of many vectors can be generalized by using the following tail-to-head geometric
+construction. Suppose we want to draw the resultant vector of four vectors , , , and (Figure 2.12(a)). We
+select any one of the vectors as the first vector and make a parallel translation of a second vector to a position
+where the origin (“tail”) of the second vector coincides with the end (“head”) of the first vector. Then, we select a
+third vector and make a parallel translation of the third vector to a position where the origin of the third vector
+coincides with the end of the second vector. We repeat this procedure until all the vectors are in a head-to-tail
+arrangement like the one shown in Figure 2.12. We draw the resultant vector by connecting the origin (“tail”) of
+the first vector with the end (“head”) of the last vector. The end of the resultant vector is at the end of the last vector.
+Because the addition of vectors is associative and commutative, we obtain the same resultant vector regardless of
+which vector we choose to be first, second, third, or fourth in this construction.
+FIGURE 2.12 Tail-to-head method for drawing the resultant vector . (a) Four vectors of different magnitudes and
+directions. (b) Vectors in (a) are translated to new positions where the origin (“tail”) of one vector is at the end (“head”) of another vector.
+The resultant vector is drawn from the origin (“tail”) of the first vector to the end (“head”) of the last vector in this arrangement.
+
+52 2 • Vectors
+EXAMPLE 2.2
+Geometric Construction of the Resultant
+The three displacement vectors , , and in Figure 2.13 are specified by their magnitudes A = 10.0, B = 7.0, and
+C = 8.0, respectively, and by their respective direction angles with the horizontal direction , , and
+. The physical units of the magnitudes are centimeters. Choose a convenient scale and use a ruler and a
+protractor to find the following vector sums: (a) , (b) (c) .
+FIGURE 2.13 Vectors used in Example 2.2 and in the Check Your Understanding feature that follows.
+Strategy
+In geometric construction, to find a vector means to find its magnitude and its direction angle with the horizontal
+direction. The strategy is to draw to scale the vectors that appear on the right-hand side of the equation and
+construct the resultant vector. Then, use a ruler and a protractor to read the magnitude of the resultant and the
+direction angle. For parts (a) and (b) we use the parallelogram rule. For (c) we use the tail-to-head method.
+Solution
+For parts (a) and (b), we attach the origin of vector to the origin of vector , as shown in Figure 2.14, and
+construct a parallelogram. The shorter diagonal of this parallelogram is the sum . The longer of the diagonals
+is the difference . We use a ruler to measure the lengths of the diagonals, and a protractor to measure the
+angles with the horizontal. For the resultant , we obtain R = 5.8 cm and . For the difference , we obtain D
+= 16.2 cm and , which are shown in Figure 2.14.
+FIGURE 2.14 Using the parallelogram rule to solve (a) (finding the resultant, red) and (b) (finding the difference, blue).
+For (c), we can start with vector and draw the remaining vectors tail-to-head as shown in Figure 2.15. In vector
+addition, the order in which we draw the vectors is unimportant, but drawing the vectors to scale is very important.
+Access for free at openstax.org
+
+2.2 • Coordinate Systems and Components of a Vector 53
+Next, we draw vector from the origin of the first vector to the end of the last vector and place the arrowhead at the
+end of . We use a ruler to measure the length of , and find that its magnitude is
+S = 36.9 cm. We use a protractor and find that its direction angle is . This solution is shown in Figure
+2.15.
+FIGURE 2.15 Using the tail-to-head method to solve (c) (finding vector , green).
+CHECK YOUR UNDERSTANDING 2.3
+Using the three displacement vectors , , and in Figure 2.13, choose a convenient scale, and use a ruler and a
+protractor to find vector given by the vector equation .
+INTERACTIVE
+Observe the addition of vectors in a plane by visiting this vector calculator (https://openstax.org/l/21compveccalc),
+and by engaging the Phet simulation below.
+Access multimedia content (https://openstax.org/l/21addvectors)
+2.2 Coordinate Systems and Components of a Vector
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe vectors in two and three dimensions in terms of their components, using unit vectors along the
+axes.
+• Distinguish between the vector components of a vector and the scalar components of a vector.
+• Explain how the magnitude of a vector is defined in terms of the components of a vector.
+• Identify the direction angle of a vector in a plane.
+• Explain the connection between polar coordinates and Cartesian coordinates in a plane.
+Vectors are usually described in terms of their components in a coordinate system. Even in everyday life we
+naturally invoke the concept of vector components in a rectangular coordinate system. For example, if you ask
+someone for directions to a particular location, you will more likely be told to go 40 km east and 30 km north than
+50 km in the direction north of east.
+
+54 2 • Vectors
+In a rectangular (Cartesian) xy-coordinate system in a plane, a point in a plane is described by a pair of coordinates
+(x, y). In a similar fashion, a vector in a plane is described by a pair of its vector coordinates. The x-coordinate of
+vector is called its x-component and the y-coordinate of vector is called its y-component. The vector
+x-component is a vector denoted by . The vector y-component is a vector denoted by . In the Cartesian
+system, the x and y vector components of a vector are the orthogonal projections, as illustrated in Figure 2.16, of
+this vector onto the x- and y-axes, respectively. In this way, following the parallelogram rule for vector addition,
+each vector on a Cartesian plane can be expressed as the vector sum of its vector components:
+2.10
+As illustrated in Figure 2.16, vector is the diagonal of the rectangle where the x-component is the side parallel
+to the x-axis and the y-component is the side parallel to the y-axis. Vector component is orthogonal to vector
+component .
+FIGURE 2.16 Vector in a plane in the Cartesian coordinate system is the vector sum of its vector x- and y-components. The x-vector
+component is the orthogonal projection of vector onto the x-axis. The y-vector component is the orthogonal projection of vector
+onto the y-axis. The numbers and that multiply the unit vectors are the scalar components of the vector.
+It is customary to denote the positive direction on the x-axis by the unit vector and the positive direction on the
+y-axis by the unit vector . Unit vectors of the axes, and , define two orthogonal directions in the plane. As
+shown in Figure 2.16, the x- and y- components of a vector can now be written in terms of the unit vectors of the
+axes:
+2.11
+The vectors and defined by Equation 2.11 are the vector components of vector . The numbers and
+that define the vector components in Equation 2.11 are the scalar components of vector . Combining Equation
+2.10 with Equation 2.11, we obtain the component form of a vector:
+2.12
+If we know the coordinates of the origin point of a vector (where b stands for “beginning”) and the
+coordinates of the end point of a vector (where e stands for “end”), we can obtain the scalar components
+of a vector simply by subtracting the origin point coordinates from the end point coordinates:
+2.13
+Access for free at openstax.org
+
+2.2 • Coordinate Systems and Components of a Vector 55
+EXAMPLE 2.3
+Displacement of a Mouse Pointer
+A mouse pointer on the display monitor of a computer at its initial position is at point (6.0 cm, 1.6 cm) with respect
+to the lower left-side corner. If you move the pointer to an icon located at point (2.0 cm, 4.5 cm), what is the
+displacement vector of the pointer?
+Strategy
+The origin of the xy-coordinate system is the lower left-side corner of the computer monitor. Therefore, the unit
+vector on the x-axis points horizontally to the right and the unit vector on the y-axis points vertically upward. The
+origin of the displacement vector is located at point b(6.0, 1.6) and the end of the displacement vector is located at
+point e(2.0, 4.5). Substitute the coordinates of these points into Equation 2.13 to find the scalar components
+and of the displacement vector . Finally, substitute the coordinates into Equation 2.12 to write the
+displacement vector in the vector component form.
+Solution
+We identify , , , and , where the physical unit is 1 cm. The scalar x- and
+y-components of the displacement vector are
+The vector component form of the displacement vector is
+2.14
+This solution is shown in Figure 2.17.
+FIGURE 2.17 The graph of the displacement vector. The vector points from the origin point at b to the end point at e.
+Significance
+Notice that the physical unit—here, 1 cm—can be placed either with each component immediately before the unit
+vector or globally for both components, as in Equation 2.14. Often, the latter way is more convenient because it is
+simpler.
+The vector x-component of the displacement vector has the magnitude
+because the magnitude of the unit vector is . Notice, too, that the direction of the
+x-component is , which is antiparallel to the direction of the +x-axis; hence, the x-component vector points to
+
+56 2 • Vectors
+the left, as shown in Figure 2.17. The scalar x-component of vector is .
+Similarly, the vector y-component of the displacement vector has magnitude
+because the magnitude of the unit vector is . The direction of the y-component is , which is parallel to the
+direction of the +y-axis. Therefore, the y-component vector points up, as seen in Figure 2.17. The scalar
+y-component of vector is . The displacement vector is the resultant of its two vector components.
+The vector component form of the displacement vector Equation 2.14 tells us that the mouse pointer has been
+moved on the monitor 4.0 cm to the left and 2.9 cm upward from its initial position.
+CHECK YOUR UNDERSTANDING 2.4
+A blue fly lands on a sheet of graph paper at a point located 10.0 cm to the right of its left edge and 8.0 cm above its
+bottom edge and walks slowly to a point located 5.0 cm from the left edge and 5.0 cm from the bottom edge.
+Choose the rectangular coordinate system with the origin at the lower left-side corner of the paper and find the
+displacement vector of the fly. Illustrate your solution by graphing.
+When we know the scalar components and of a vector , we can find its magnitude A and its direction angle
+. The direction angle—or direction, for short—is the angle the vector forms with the positive direction on the
+x-axis. The angle is measured in the counterclockwise direction from the +x-axis to the vector (Figure 2.18).
+Because the lengths A, , and form a right triangle, they are related by the Pythagorean theorem:
+2.15
+This equation works even if the scalar components of a vector are negative. The direction angle of a vector is
+defined via the tangent function of angle in the triangle shown in Figure 2.18:
+2.16
+FIGURE 2.18 When the vector lies either in the first quadrant or in the fourth quadrant, where component is positive (Figure 2.19), the
+direction angle in Equation 2.16) is identical to the angle .
+When the vector lies either in the first quadrant or in the fourth quadrant, where component is positive (Figure
+2.19), the angle in Equation 2.16 is identical to the direction angle . For vectors in the fourth quadrant, angle
+is negative, which means that for these vectors, direction angle is measured clockwise from the positive x-axis.
+Similarly, for vectors in the second quadrant, angle is negative. When the vector lies in either the second or third
+Access for free at openstax.org
+
+2.2 • Coordinate Systems and Components of a Vector 57
+quadrant, where component is negative, the direction angle is (Figure 2.19).
+FIGURE 2.19 Scalar components of a vector may be positive or negative. Vectors in the first quadrant (I) have both scalar components
+positive and vectors in the third quadrant have both scalar components negative. For vectors in quadrants II and III, the direction angle of a
+vector is .
+EXAMPLE 2.4
+Magnitude and Direction of the Displacement Vector
+You move a mouse pointer on the display monitor from its initial position at point (6.0 cm, 1.6 cm) to an icon located
+at point (2.0 cm, 4.5 cm). What are the magnitude and direction of the displacement vector of the pointer?
+Strategy
+In Example 2.3, we found the displacement vector of the mouse pointer (see Equation 2.14). We identify its scalar
+components and and substitute into Equation 2.15 and Equation 2.16 to find the
+magnitude D and direction , respectively.
+Solution
+The magnitude of vector is
+The direction angle is
+Vector lies in the second quadrant, so its direction angle is
+CHECK YOUR UNDERSTANDING 2.5
+If the displacement vector of a blue fly walking on a sheet of graph paper is , find its
+magnitude and direction.

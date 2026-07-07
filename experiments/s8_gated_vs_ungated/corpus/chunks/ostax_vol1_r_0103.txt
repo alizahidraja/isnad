@@ -1,0 +1,196 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 629-636
+############################################################
+
+13.4 • Satellite Orbits and Energy 617
+CHECK YOUR UNDERSTANDING 13.5
+Assume you are in a spacecraft in orbit about the Sun at Earth’s orbit, but far away from Earth (so that it can be
+ignored). How could you redirect your tangential velocity to the radial direction such that you could then pass by
+Mars’s orbit? What would be required to change just the direction of the velocity?
+13.4 Satellite Orbits and Energy
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the mechanism for circular orbits
+• Find the orbital periods and speeds of satellites
+• Determine whether objects are gravitationally bound
+The Moon orbits Earth. In turn, Earth and the other planets orbit the Sun. The space directly above our atmosphere
+is filled with artificial satellites in orbit. We examine the simplest of these orbits, the circular orbit, to understand the
+relationship between the speed and period of planets and satellites in relation to their positions and the bodies that
+they orbit.
+Circular Orbits
+As noted at the beginning of this chapter, Nicolaus Copernicus first suggested that Earth and all other planets orbit
+the Sun in circles. He further noted that orbital periods increased with distance from the Sun. Later analysis by
+Kepler showed that these orbits are actually ellipses, but the orbits of most planets in the solar system are nearly
+circular. Earth’s orbital distance from the Sun varies a mere 2%. The exception is the eccentric orbit of Mercury,
+whose orbital distance varies nearly 40%.
+Determining the orbital speed and orbital period of a satellite is much easier for circular orbits, so we make that
+assumption in the derivation that follows. As we described in the previous section, an object with negative total
+energy is gravitationally bound and therefore is in orbit. Our computation for the special case of circular orbits will
+confirm this. We focus on objects orbiting Earth, but our results can be generalized for other cases.
+Consider a satellite of mass m in a circular orbit about Earth at distance r from the center of Earth (Figure 13.12). It
+has centripetal acceleration directed toward the center of Earth. Earth’s gravity is the only force acting, so Newton’s
+second law gives
+
+618 13 • Gravitation
+FIGURE 13.12 A satellite of mass m orbiting at radius r from the center of Earth. The gravitational force supplies the centripetal
+acceleration.
+We solve for the speed of the orbit, noting that m cancels, to get the orbital speed
+13.7
+Consistent with what we saw in Equation 13.2 and Equation 13.6, m does not appear in Equation 13.7. The value of
+g, the escape velocity, and orbital velocity depend only upon the distance from the center of the planet, and not
+upon the mass of the object being acted upon. Notice the similarity in the equations for and . The escape
+velocity is exactly times greater, about 40%, than the orbital velocity. This comparison was noted in Example
+13.7, and it is true for a satellite at any radius.
+To find the period of a circular orbit, we note that the satellite travels the circumference of the orbit in one
+period T. Using the definition of speed, we have . We substitute this into Equation 13.7 and rearrange
+to get
+13.8
+We see in the next section that this represents Kepler’s third law for the case of circular orbits. It also confirms
+Copernicus’s observation that the period of a planet increases with increasing distance from the Sun. We need only
+replace with in Equation 13.8.
+We conclude this section by returning to our earlier discussion about astronauts in orbit appearing to be weightless,
+as if they were free-falling towards Earth. In fact, they are in free fall. Consider the trajectories shown in Figure
+13.13. (This figure is based on a drawing by Newton in his Principia and also appeared earlier in Motion in Two and
+Three Dimensions.) All the trajectories shown that hit the surface of Earth have less than orbital velocity. The
+astronauts would accelerate toward Earth along the noncircular paths shown and feel weightless. (Astronauts
+actually train for life in orbit by riding in airplanes that free fall for 30 seconds at a time.) But with the correct orbital
+velocity, Earth’s surface curves away from them at exactly the same rate as they fall toward Earth. Of course, staying
+the same distance from the surface is the point of a circular orbit.
+Access for free at openstax.org
+
+13.4 • Satellite Orbits and Energy 619
+FIGURE 13.13 A circular orbit is the result of choosing a tangential velocity such that Earth’s surface curves away at the same rate as the
+object falls toward Earth.
+We can summarize our discussion of orbiting satellites in the following Problem-Solving Strategy.
+PROBLEM-SOLVING STRATEGY
+Orbits and Conservation of Energy
+1. Determine whether the equations for speed, energy, or period are valid for the problem at hand. If not, start
+with the first principles we used to derive those equations.
+2. To start from first principles, draw a free-body diagram and apply Newton’s law of gravitation and Newton’s
+second law.
+3. Along with the definitions for speed and energy, apply Newton’s second law of motion to the bodies of
+interest.
+EXAMPLE 13.9
+The International Space Station
+Determine the orbital speed and period for the International Space Station (ISS).
+Strategy
+Since the ISS orbits above Earth’s surface, the radius at which it orbits is . We
+use Equation 13.7 and Equation 13.8 to find the orbital speed and period, respectively.
+Solution
+Using Equation 13.7, the orbital velocity is
+which is about 17,000 mph. Using Equation 13.8, the period is
+
+620 13 • Gravitation
+which is just over 90 minutes.
+Significance
+The ISS is considered to be in low Earth orbit (LEO). Nearly all satellites are in LEO, including most weather
+satellites. GPS satellites, at about 20,000 km, are considered medium Earth orbit. The higher the orbit, the more
+energy is required to put it there and the more energy is needed to reach it for repairs. Of particular interest are the
+satellites in geosynchronous orbit. All fixed satellite dishes on the ground pointing toward the sky, such as TV
+reception dishes, are pointed toward geosynchronous satellites. These satellites are placed at the exact distance,
+and just above the equator, such that their period of orbit is 1 day. They remain in a fixed position relative to Earth’s
+surface.
+CHECK YOUR UNDERSTANDING 13.6
+By what factor must the radius change to reduce the orbital velocity of a satellite by one-half? By what factor would
+this change the period?
+EXAMPLE 13.10
+Determining the Mass of Earth
+Determine the mass of Earth from the orbit of the Moon.
+Strategy
+We use Equation 13.8, solve for , and substitute for the period and radius of the orbit. The radius and period of
+the Moon’s orbit was measured with reasonable accuracy thousands of years ago. From the astronomical data in
+Appendix D, the period of the Moon is 27.3 days , and the average distance between the centers of
+Earth and the Moon is 384,000 km.
+Solution
+Solving for ,
+Significance
+Compare this to the value of that we obtained in Example 13.5, using the value of g at the surface
+of Earth. Although these values are very close (~0.8%), both calculations use average values. The value of g varies
+from the equator to the poles by approximately 0.5%. But the Moon has an elliptical orbit in which the value of r
+varies just over 10%. (The apparent size of the full Moon actually varies by about this amount, but it is difficult to
+notice through casual observation as the time from one extreme to the other is many months.)
+CHECK YOUR UNDERSTANDING 13.7
+There is another consideration to this last calculation of . We derived Equation 13.8 assuming that the satellite
+orbits around the center of the astronomical body at the same radius used in the expression for the gravitational
+force between them. What assumption is made to justify this? Earth is about 81 times more massive than the Moon.
+Does the Moon orbit about the exact center of Earth?
+Access for free at openstax.org
+
+13.4 • Satellite Orbits and Energy 621
+EXAMPLE 13.11
+Galactic Speed and Period
+Let’s revisit Example 13.2. Assume that the Milky Way and Andromeda galaxies are in a circular orbit about each
+other. What would be the velocity of each and how long would their orbital period be? Assume the mass of each is 8
+× 1011 solar masses and their centers are separated by 2.5 million light years.
+Strategy
+We cannot use Equation 13.7 and Equation 13.8 directly because they were derived assuming that the object of
+mass m orbited about the center of a much larger planet of mass M. We determined the gravitational force in
+Example 13.2 using Newton’s law of universal gravitation. We can use Newton’s second law, applied to the
+centripetal acceleration of either galaxy, to determine their tangential speed. From that result we can determine the
+period of the orbit.
+Solution
+In Example 13.2, we found the force between the galaxies to be
+and that the acceleration of each galaxy is
+Since the galaxies are in a circular orbit, they have centripetal acceleration. If we ignore the effect of other galaxies,
+then, as we learned in Linear Momentum and Collisions and Fixed-Axis Rotation, the centers of mass of the two
+galaxies remain fixed. Hence, the galaxies must orbit about this common center of mass. For equal masses, the
+center of mass is exactly half way between them. So the radius of the orbit, , is not the same as the distance
+between the galaxies, but one-half that value, or 1.25 million light-years. These two different values are shown in
+Figure 13.14.
+FIGURE 13.14 The distance between two galaxies, which determines the gravitational force between them, is r, and is different from ,
+which is the radius of orbit for each. For equal masses, . (credit: modification of work by Marc Van Norden)
+Using the expression for centripetal acceleration, we have
+
+622 13 • Gravitation
+Solving for the orbit velocity, we have . Finally, we can determine the period of the orbit directly
+from , to find that the period is , about 5 × 1010 years.
+Significance
+The orbital speed of 47 km/s might seem high at first. But this speed is comparable to the escape speed from the
+Sun, which we calculated in an earlier example. To give even more perspective, this period is nearly four times
+longer than the time that the Universe has been in existence.
+In fact, the present relative motion of these two galaxies is such that they are expected to collide in about 4 × 109
+years. Although the density of stars in each galaxy makes a direct collision of any two stars unlikely, such a collision
+will have a dramatic effect on the shape of the galaxies. Examples of such collisions are well known in astronomy.
+CHECK YOUR UNDERSTANDING 13.8
+Galaxies are not single objects. How does the gravitational force of one galaxy exerted on the “closer” stars of the
+other galaxy compare to those farther away? What effect would this have on the shape of the galaxies themselves?
+INTERACTIVE
+See the Sloan Digital Sky Survey page (https://openstax.org/l/21sloandigskysu) for more information on colliding
+galaxies.
+Engage the Phet simulation (https://openstax.org/l/21gravityorbits) to move the Sun, Earth, Moon, and space station
+to see the effects on their gravitational forces and orbital paths. Visualize the sizes and distances between different
+heavenly bodies, and turn off gravity to see what would happen without it.
+Energy in Circular Orbits
+In Gravitational Potential Energy and Total Energy, we argued that objects are gravitationally bound if their total
+energy is negative. The argument was based on the simple case where the velocity was directly away or toward the
+planet. We now examine the total energy for a circular orbit and show that indeed, the total energy is negative. As
+we did earlier, we start with Newton’s second law applied to a circular orbit,
+In the last step, we multiplied by r on each side. The right side is just twice the kinetic energy, so we have
+The total energy is the sum of the kinetic and potential energies, so our final result is
+13.9
+We can see that the total energy is negative, with the same magnitude as the kinetic energy. For circular orbits, the
+magnitude of the kinetic energy is exactly one-half the magnitude of the potential energy. Remarkably, this result
+applies to any two masses in circular orbits about their common center of mass, at a distance r from each other. The
+proof of this is left as an exercise. We will see in the next section that a very similar expression applies in the case of
+elliptical orbits.
+Access for free at openstax.org
+
+13.4 • Satellite Orbits and Energy 623
+EXAMPLE 13.12
+Energy Required to Orbit
+In Example 13.8, we calculated the energy required to simply lift the 9000-kg Soyuz vehicle from Earth’s surface to
+the height of the ISS, 400 km above the surface. In other words, we found its change in potential energy. We now
+ask, what total energy change in the Soyuz vehicle is required to take it from Earth’s surface and put it in orbit with
+the ISS for a rendezvous (Figure 13.15)? How much of that total energy is kinetic energy?
+FIGURE 13.15 The Soyuz in a rendezvous with the ISS. Note that this diagram is not to scale; the Soyuz is very small compared to the ISS
+and its orbit is much closer to Earth. (credit: modification of works by NASA)
+Strategy
+The energy required is the difference in the Soyuz’s total energy in orbit and that at Earth’s surface. We can use
+Equation 13.9 to find the total energy of the Soyuz at the ISS orbit. But the total energy at the surface is simply the
+potential energy, since it starts from rest. [Note that we do not use Equation 13.9 at the surface, since we are not in
+orbit at the surface.] The kinetic energy can then be found from the difference in the total energy change and the
+change in potential energy found in Example 13.8. Alternatively, we can use Equation 13.7 to find and
+calculate the kinetic energy directly from that. The total energy required is then the kinetic energy plus the change in
+potential energy found in Example 13.8.
+Solution
+From Equation 13.9, the total energy of the Soyuz in the same orbit as the ISS is
+The total energy at Earth’s surface is

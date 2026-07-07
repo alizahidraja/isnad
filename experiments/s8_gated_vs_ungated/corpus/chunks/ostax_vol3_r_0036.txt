@@ -1,0 +1,293 @@
+# REAL PDF — openstax_vol3.pdf, pages 220-227
+############################################################
+
+212 Chapter 5 | Relativity
+differencesinhowthemetric,orruleformeasuringthedisplacements Δr and Δs, differ.Although Δr isinvariantunder
+spatialrotationsand Δs isinvariantalsounderLorentztransformation,theLorentztransformationinvolvingthetimeaxis
+doesnotpreservesomefeatures,suchastheaxesremainingperpendicularorthelengthscalealongeachaxisremainingthe
+same.
+Notethatthequantity Δs2 canhaveeithersign,dependingonthecoordinatesofthespace-timeeventsinvolved.Forpairs
+ofeventsthatgiveitanegativesign,itisusefultodefine Δτ2 as −Δs2. Thesignificanceof Δτ asjustdefinedfollows
+bynotingthatinaframeofreferencewherethetwoeventsoccuratthesamelocation,wehave Δx=Δy=Δz=0 and
+therefore (from the equation for Δs2= −Δτ2⎞ :
+⎠
+Δτ2= −Δs2=(Δt)2.
+Therefore Δτ isthetimeinterval Δt intheframeofreferencewherebotheventsoccuratthesamelocation.Itisthesame
+interval of proper time discussed earlier. It also follows from the relation between Δs and that Δτ that because Δs is
+Lorentz invariant, the proper time is also Lorentz invariant. All observers in all inertial frames agree on the proper time
+intervals between the same two events.
+5.5 Check Your Understanding Show that if a time increment dt elapses for an observer who sees the
+particlemovingwithvelocityv,itcorrespondstoapropertimeparticleincrementfortheparticleof dτ=γdt.
+The light cone
+We can deal with the difficulty of visualizing and sketching graphs in four dimensions by imagining the three spatial
+coordinates to be represented collectively by a horizontal axis, and the vertical axis to be the ct-axis. Starting with a
+particulareventinspace-timeastheoriginofthespace-timegraphshown,theworldlineofaparticlethatremainsatrestat
+theinitiallocationoftheeventattheoriginthenisthetimeaxis.Anyplanethroughthetimeaxisparalleltothespatialaxes
+containsalltheeventsthataresimultaneouswitheachotherandwiththeintersectionoftheplaneandthetimeaxis,asseen
+in the rest frame of the event at the origin.
+Itisusefultopicturealightconeonthegraph,formedbytheworldlinesofalllightbeamspassingthroughtheoriginevent
+A,asshowninFigure5.15.Thelightcone,accordingtothepostulatesofrelativity,hassidesatanangleof 45° ifthetime
+axisismeasuredinunitsofct,and,accordingtothepostulatesofrelativity,thelightconeremainsthesameinallinertial
+frames. Because the eventAis arbitrary, every point in the space-time diagram has a light cone associated with it.
+Figure 5.15 The light cone consists of all the world lines
+followed by light from the eventAat the vertex of the cone.
+Considernowtheworldlineofaparticlethroughspace-time.Anyworldlineoutsideofthecone,suchasonepassingfrom
+AthroughC,wouldinvolvespeedsgreaterthanc,andwouldthereforenotbepossible.EventssuchasCthatlieoutsidethe
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 213
+light cone are said to have a space-like separation from eventA. They are characterized by:
+Δs2
+AC
+=(x A−x B)2+(x A−x B)2+(x A−x B)2−(cΔt)2>0.
+AneventlikeBthatliesintheupperconeisreachablewithoutexceedingthespeedoflightinvacuum,andischaracterized
+by
+Δs2
+AB
+=(x A−x B)2+(x A−x B)2+(x A−x B)2−(cΔt)2<0.
+Theeventissaidtohaveatime-likeseparationfromA.Time-likeeventsthatfallintotheupperhalfofthelightconeoccur
+atgreatervaluesoftthanthetimeoftheeventAatthevertexandareinthefuturerelativetoA.Eventsthathavetime-like
+separationfromAandfallinthelowerhalfofthelightconeareinthepast,andcanaffecttheeventattheorigin.Theregion
+outside the light cone is labeled as neither past nor future, but rather as “elsewhere.”
+For any event that has a space-like separation from the event at the origin, it is possible to choose a time axis that will
+makethetwoeventsoccuratthesametime,sothatthetwoeventsaresimultaneousinsomeframeofreference.Therefore,
+which of the events with space-like separation comes before the other in time also depends on the frame of reference of
+the observer. Since space-like separations can be traversed only by exceeding the speed of light; this violation of which
+eventcancausetheotherprovidesanotherargumentforwhyparticlescannottravelfasterthanthespeedoflight,aswellas
+potentialmaterialforsciencefictionabouttimetravel.Similarlyforanyeventwithtime-likeseparationfromtheeventat
+the origin, a frame of reference can be found that will make the events occur at the same location. Because the relations
+Δs2
+AC
+=(x A−x B)2+(x A−x B)2+(x A−x B)2−(cΔt)2>0
+and
+Δs2
+AB
+=(x A−x B)2+(x A−x B)2+(x A−x B)2−(cΔt)2<0.
+areLorentzinvariant,whethertwoeventsaretime-likeandcanbemadetooccuratthesameplaceorspace-likeandcanbe
+madetooccuratthesametimeisthesameforallobservers.Allobserversindifferentinertialframesofreferenceagreeon
+whether two events have a time-like or space-like separation.
+The twin paradox seen in space-time
+The twin paradox discussed earlier involves an astronaut twin traveling at near light speed to a distant star system, and
+returning to Earth. Because of time dilation, the space twin is predicted to age much less than the earthbound twin. This
+seems paradoxical because we might have expected at first glance for the relative motion to be symmetrical and naively
+thought it possible to also argue that the earthbound twin should age less.
+Toanalyzethisintermsofaspace-timediagram,assumethattheoriginoftheaxesusedisfixedinEarth.Theworldlineof
+the earthbound twin is then along the time axis.
+Theworldlineoftheastronauttwin,whotravelstothedistantstarandthenreturns,mustdeviatefromastraightlinepath
+inordertoallowareturntrip.AsseeninFigure5.16,thecircumstancesofthetwotwinsarenotatallsymmetrical.Their
+pathsinspace-timeareofmanifestlydifferentlength.Specifically,theworldlineoftheearthboundtwinhaslength 2cΔt,
+which then gives the proper time that elapses for the earthbound twin as 2Δt. The distance to the distant star system is
+Δx=vΔt. The proper time that elapses for the space twin is 2Δτ where
+c2Δτ2= −Δs2=(cΔt)2−(Δx)2.
+This is considerably shorter than the proper time for the earthbound twin by the ratio
+cΔτ
+(cΔt)2−(Δx)2 (cΔt)2−(vΔt)2
+= =
+cΔt (cΔt)2 (cΔt)2
+v2
+1
+= 1− = γ.
+c2
+consistentwiththetimedilationformula.Thetwinparadoxisthereforeseentobenoparadoxatall.Thesituationofthe
+twotwinsisnotsymmetricalinthespace-timediagram.Theonlysurpriseisperhapsthattheseeminglylongerpathonthe
+space-time diagram corresponds to the smaller proper time interval, because of how Δτ and Δs depend on Δx and Δt.
+
+214 Chapter 5 | Relativity
+Figure 5.16 The space twin and the earthbound twin, in the
+twin paradox example, follow world lines of different length
+through space-time.
+Lorentz transformations in space-time
+We have already noted how the Lorentz transformation leaves
+Δs2=(Δx)2+⎛Δy⎞2+(Δz)2−(cΔt)2
+⎝ ⎠
+unchangedandcorrespondstoarotationofaxesinthefour-dimensionalspace-time.IftheSand S′ framesareinrelative
+motionalongtheirsharedx-directionthespaceandtimeaxesof S′ arerotatedbyanangle α asseenfromS,intheway
+shown in shown inFigure 5.17, where:
+v
+tanα= c = β.
+Thisdiffersfromarotationintheusualthree-dimensionsense,insofarasthetwospace-timeaxesrotatetowardeachother
+symmetricallyinascissors-likeway,asshown.Therotationofthetimeandspaceaxesareboththroughthesameangle.
+Themeshofdashedlinesparalleltothetwoaxesshowhowcoordinatesofaneventwouldbereadalongtheprimedaxes.
+Thiswouldbedonebyfollowingalineparalleltothe x′ andoneparalleltothe t′-axis,asshownbythedashedlines.The
+length scale of both axes are changed by:
+1+β2 1+β2
+ct′=ct ; x′= x .
+1−β2 1−β2
+Thelinelabeled “v=c” at 45° tothex-axiscorrespondstotheedgeofthelightcone,andisunaffectedbytheLorentz
+transformation,inaccordancewiththesecondpostulateofrelativity.The “v=c” line,andthelightconeitrepresents,are
+the same for both theSand S′ frame of reference.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 215
+Figure 5.17 The Lorentz transformation results in new space
+and time axes rotated in a scissors-like way with respect to the
+original axes.
+Simultaneity
+Simultaneity of events at separated locations depends on the frame of reference used to describe them, as given by the
+scissors-like“rotation”tonewtimeandspacecoordinatesasdescribed.Iftwoeventshavethesametvaluesintheunprimed
+frameofreference,theyneednothavethesamevaluesmeasuredalongthe ct′-axis, andwouldthennotbesimultaneous
+in the primed frame.
+As a specific example, consider the near-light-speed train in which flash lamps at the two ends of the car have flashed
+simultaneouslyintheframeofreferenceofanobserverontheground.Thespace-timegraphisshownFigure 5.18.The
+flashesofthetwolampsarerepresentedbythedotslabeled“Leftflashlamp”and“Rightflashlamp”thatlieonthelight
+coneinthepast.Theworldlineofbothpulsestravelalongtheedgeofthelightconetoarriveattheobserverontheground
+simultaneously. Their arrival is the event at the origin. They therefore had to be emitted simultaneously in the unprimed
+frame,asrepresentedbythepointlabeledast(both).Buttimeismeasuredalongthe ct′-axis intheframeofreferenceof
+theobserverseatedinthemiddleofthetraincar.Soinherframeofreference,theemissioneventofthebulbslabeledas t′
+(left) and t′ (right) were not simultaneous.
+
+216 Chapter 5 | Relativity
+Figure 5.18 The train example revisited. The flashes occur at the same time
+t(both) along the time axis of the ground observer, but at different times, along
+the t′ time axis of the passenger.
+In terms of the space-time diagram, the two observers are merely using different time axes for the same events because
+theyareindifferentinertialframes,andtheconclusionsofbothobserversareequallyvalid.Astheanalysisintermsofthe
+space-timediagramsfurthersuggests,thepropertyofhowsimultaneityofeventsdependsontheframeofreferenceresults
+from the properties of space and time itself, rather than from anything specifically about electromagnetism.
+5.6 | Relativistic Velocity Transformation
+Learning Objectives
+By the end of this section, you will be able to:
+• Derive the equations consistent with special relativity for transforming velocities in one inertial
+frame of reference into another.
+• Apply the velocity transformation equations to objects moving at relativistic speeds.
+• Examine how the combined velocities predicted by the relativistic transformation equations
+compare with those expected classically.
+Remaininginplaceinakayakinafast-movingrivertakeseffort.Therivercurrentpullsthekayakalong.Tryingtopaddle
+againsttheflowcanmovethekayakupstreamrelativetothewater,butthatonlyaccountsforpartofitsvelocityrelativeto
+theshore.Thekayak’smotionisanexampleofhowvelocitiesinNewtonianmechanicscombinebyvectoraddition.The
+kayak’s velocity is the vector sum of its velocity relative to the water and the water’s velocity relative to the riverbank.
+However, the relativistic addition of velocities is quite different.
+Velocity Transformations
+Imagineacartravelingatnightalongastraightroad,asinFigure 5.19.Thedriverseesthelightleavingtheheadlights
+atspeedcwithinthecar’sframeofreference.IftheGalileantransformationappliedtolight,thenthelightfromthecar’s
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 217
+headlights would approach the pedestrian at a speed u=v+c, contrary to Einstein’s postulates.
+Figure 5.19 According to experimental results and the second postulate of relativity, light from the car’s headlights moves
+away from the car at speedcand toward the observer on the sidewalk at speedc.
+Boththedistancetraveledandthetimeoftravelaredifferentinthetwoframesofreference,andtheymustdifferinaway
+thatmakesthespeedoflightthesameinallinertialframes.Thecorrectrulesfortransformingvelocitiesfromoneframeto
+another can be obtained from the Lorentz transformation equations.
+Relativistic Transformation of Velocity
+SupposeanobjectPismovingatconstantvelocity u= ⎛
+⎝
+u′x, u′y, u′z ⎞
+⎠
+asmeasuredinthe S′ frame.The S′ frameismoving
+alongits x′-axis atvelocityv.Inanincrementoftime dt′,theparticleisdisplacedby dx′ alongthe x′-axis. Applying
+the Lorentz transformation equations gives the corresponding increments of time and displacement in the unprimed axes:
+dt = γ⎛dt′+vdx′/c2⎞
+⎝ ⎠
+dx = γ(dx′+vdt′)
+dy = dy′
+dz = dz′.
+The velocity components of the particle seen in the unprimed coordinate system are then
+dx
+=
+γ(dx′+vdt′)
+=
+d
+d
+x
+t′
+′+v
+dt γ⎛dt′+vdx′/c2⎞
+1+
+v dx′
+⎝ ⎠ c2 dt′
+dy′
+dy
+=
+dy′
+=
+dt′
+dt γ⎛
+⎝
+dt′+vdx′/c2⎞
+⎠ γ
+⎛
+1+ v dx′
+⎞
+⎝ c2 dt′⎠
+dz′
+dz
+=
+dz′
+=
+dt′
+.
+dt γ⎛
+⎝
+dt′+vdx′/c2⎞
+⎠ γ
+⎛
+1+ v dx′
+⎞
+⎝ c2 dt′⎠
+We thus obtain the equations for the velocity components of the object as seen in frameS:
+u x=
+⎛
+⎜
+u′x+v ⎞
+⎟, u y=
+⎛
+⎜
+u′y/γ ⎞
+⎟, u z=
+⎛
+⎜
+u′z/γ ⎞
+⎟.
+⎝1+vu′x/c2⎠ ⎝1+vu′x/c2⎠ ⎝1+vu′x/c2⎠
+
+218 Chapter 5 | Relativity
+ComparethiswithhowtheGalileantransformationofclassicalmechanicssaysthevelocitiestransform,byaddingsimply
+as vectors:
+u x=u′x+u, u y=u′y, u z=u′z.
+Whentherelativevelocityoftheframesismuchsmallerthanthespeedoflight,thatis,when v≪c, thespecialrelativity
+velocityadditionlawreducestotheGalileanvelocitylaw.Whenthespeedvof S′ relativetoSiscomparabletothespeed
+oflight,therelativisticvelocityadditionlawgivesamuchsmallerresultthantheclassical(Galilean)velocityaddition
+does.
+Example 5.9
+Velocity Transformation Equations for Light
+Suppose a spaceship heading directly toward Earth at half the speed of light sends a signal to us on a laser-
+producedbeamoflight(Figure5.20).Giventhatthelightleavestheshipatspeedcasobservedfromtheship,
+calculate the speed at which it approaches Earth.
+Figure 5.20 How fast does a light signal approach Earth if sent from a
+spaceship traveling at 0.500c?
+Strategy
+Because the light and the spaceship are moving at relativistic speeds, we cannot use simple velocity addition.
+Instead, we determine the speed at which the light approaches Earth using relativistic velocity addition.
+Solution
+a. Identify the knowns: v=0.500c;u′=c.
+b. Identify the unknown:u.
+c. Express the answer as an equation: u=
+v+u′
+.
+1+
+vu′
+c2
+d. Do the calculation:
+u =
+v+u′
+1+
+vu′
+c2
+0.500c+c
+=
+(0.500c)(c)
+1+
+c2
+(0.500+1)c
+=
+⎛ c2 +0.500c2⎞
+⎝ c2 ⎠
+=c.
+Significance
+Relativistic velocity addition gives the correct result. Light leaves the ship at speed c and approaches Earth at
+speedc.Thespeedoflightisindependentoftherelativemotionofsourceandobserver,whethertheobserveris
+on the ship or earthbound.
+Velocities cannot add to greater than the speed of light, provided that v is less than c and u′ does not exceed c. The
+following example illustrates that relativistic velocity addition is not as symmetric as classical velocity addition.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

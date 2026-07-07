@@ -1,0 +1,155 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 636-641
+############################################################
+
+624 13 • Gravitation
+The change in energy is . To get the kinetic energy, we subtract the change
+in potential energy from Example 13.6, . That gives us
+. As stated earlier, the kinetic energy of a circular orbit is
+always one-half the magnitude of the potential energy, and the same as the magnitude of the total energy. Our
+result confirms this.
+The second approach is to use Equation 13.7 to find the orbital speed of the Soyuz, which we did for the ISS in
+Example 13.9.
+So the kinetic energy of the Soyuz in orbit is
+the same as in the previous method. The total energy is just
+Significance
+The kinetic energy of the Soyuz is nearly eight times the change in its potential energy, or 90% of the total energy
+needed for the rendezvous with the ISS. And it is important to remember that this energy represents only the energy
+that must be given to the Soyuz. With our present rocket technology, the mass of the propulsion system (the rocket
+fuel, its container and combustion system) far exceeds that of the payload, and a tremendous amount of kinetic
+energy must be given to that mass. So the actual cost in energy is many times that of the change in energy of the
+payload itself.
+13.5 Kepler's Laws of Planetary Motion
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the conic sections and how they relate to orbital motion
+• Describe how orbital velocity is related to conservation of angular momentum
+• Determine the period of an elliptical orbit from its major axis
+Using the precise data collected by Tycho Brahe, Johannes Kepler carefully analyzed the positions in the sky of all
+the known planets and the Moon, plotting their positions at regular intervals of time. From this analysis, he
+formulated three laws, which we address in this section.
+Kepler’s First Law
+The prevailing view during the time of Kepler was that all planetary orbits were circular. The data for Mars presented
+the greatest challenge to this view and that eventually encouraged Kepler to give up the popular idea. Kepler’s first
+law states that every planet moves along an ellipse, with the Sun located at a focus of the ellipse. An ellipse is
+defined as the set of all points such that the sum of the distance from each point to two foci is a constant. Figure
+13.16 shows an ellipse and describes a simple way to create it.
+Access for free at openstax.org
+
+13.5 • Kepler's Laws of Planetary Motion 625
+FIGURE 13.16 (a) An ellipse is a curve in which the sum of the distances from a point on the curve to two foci is a constant.
+From this definition, you can see that an ellipse can be created in the following way. Place a pin at each focus, then place a loop of string
+around a pencil and the pins. Keeping the string taught, move the pencil around in a complete circuit. If the two foci occupy the same place,
+the result is a circle—a special case of an ellipse. (b) For an elliptical orbit, if , then m follows an elliptical path with M at one focus.
+More exactly, both m and M move in their own ellipse about the common center of mass.
+For elliptical orbits, the point of closest approach of a planet to the Sun is called the perihelion. It is labeled point A
+in Figure 13.16. The farthest point is the aphelion and is labeled point B in the figure. For the Moon’s orbit about
+Earth, those points are called the perigee and apogee, respectively.
+An ellipse has several mathematical forms, but all are a specific case of the more general equation for conic
+sections. There are four different conic sections, all given by the equation
+13.10
+The variables r and are shown in Figure 13.17 in the case of an ellipse. The constants and e are determined by
+the total energy and angular momentum of the satellite at a given point. The constant e is called the eccentricity.
+The values of and e determine which of the four conic sections represents the path of the satellite.
+FIGURE 13.17 As before, the distance between the planet and the Sun is r, and the angle measured from the x-axis, which is along the
+major axis of the ellipse, is .
+One of the real triumphs of Newton’s law of universal gravitation, with the force proportional to the inverse of the
+distance squared, is that when it is combined with his second law, the solution for the path of any satellite is a conic
+section. Every path taken by m is one of the four conic sections: a circle or an ellipse for bound or closed orbits, or a
+parabola or hyperbola for unbounded or open orbits. These conic sections are shown in Figure 13.18.
+
+626 13 • Gravitation
+FIGURE 13.18 All motion caused by an inverse square force is one of the four conic sections and is determined by the energy and direction
+of the moving body.
+If the total energy is negative, then , and Equation 13.10 represents a bound or closed orbit of either an
+ellipse or a circle, where . [You can see from Equation 13.10 that for , , and hence the radius is
+constant.] For ellipses, the eccentricity is related to how oblong the ellipse appears. A circle has zero eccentricity,
+whereas a very long, drawn-out ellipse has an eccentricity near one.
+If the total energy is exactly zero, then and the path is a parabola. Recall that a satellite with zero total energy
+has exactly the escape velocity. (The parabola is formed only by slicing the cone parallel to the tangent line along
+the surface.) Finally, if the total energy is positive, then and the path is a hyperbola. These last two paths
+represent unbounded orbits, where m passes by M once and only once. This situation has been observed for several
+comets that approach the Sun and then travel away, never to return.
+We have confined ourselves to the case in which the smaller mass (planet) orbits a much larger, and hence
+stationary, mass (Sun), but Equation 13.10 also applies to any two gravitationally interacting masses. Each mass
+traces out the exact same-shaped conic section as the other. That shape is determined by the total energy and
+angular momentum of the system, with the center of mass of the system located at the focus. The ratio of the
+dimensions of the two paths is the inverse of the ratio of their masses.
+INTERACTIVE
+You can see an animation of two interacting objects at the My Solar System page at Phet (https://openstax.org/l/
+21mysolarsys). Choose the Sun and Planet preset option. You can also view the more complicated multiple body
+problems as well. You may find the actual path of the Moon quite surprising, yet is obeying Newton’s simple laws of
+motion.
+Orbital Transfers
+People have imagined traveling to the other planets of our solar system since they were discovered. But how can we
+best do this? The most efficient method was discovered in 1925 by Walter Hohmann, inspired by a popular science
+fiction novel of that time. The method is now called a Hohmann transfer. For the case of traveling between two
+circular orbits, the transfer is along a “transfer” ellipse that perfectly intercepts those orbits at the aphelion and
+perihelion of the ellipse. Figure 13.19 shows the case for a trip from Earth’s orbit to that of Mars. As before, the Sun
+is at the focus of the ellipse.
+For any ellipse, the semi-major axis is defined as one-half the sum of the perihelion and the aphelion. In Figure
+13.17, the semi-major axis is the distance from the origin to either side of the ellipse along the x-axis, or just one-
+half the longest axis (called the major axis). Hence, to travel from one circular orbit of radius to another circular
+orbit of radius , the aphelion of the transfer ellipse will be equal to the value of the larger orbit, while the
+perihelion will be the smaller orbit. The semi-major axis, denoted a, is therefore given by .
+Access for free at openstax.org
+
+13.5 • Kepler's Laws of Planetary Motion 627
+FIGURE 13.19 The transfer ellipse has its perihelion at Earth’s orbit and aphelion at Mars’ orbit.
+Let’s take the case of traveling from Earth to Mars. For the moment, we ignore the planets and assume we are alone
+in Earth’s orbit and wish to move to Mars’ orbit. From Equation 13.9, the expression for total energy, we can see that
+the total energy for a spacecraft in the larger orbit (Mars) is greater (less negative) than that for the smaller orbit
+(Earth). To move onto the transfer ellipse from Earth’s orbit, we will need to increase our kinetic energy, that is, we
+need a velocity boost. The most efficient method is a very quick acceleration along the circular orbital path, which is
+also along the path of the ellipse at that point. (In fact, the acceleration should be instantaneous, such that the
+circular and elliptical orbits are congruent during the acceleration. In practice, the finite acceleration is short enough
+that the difference is not a significant consideration.) Once you have arrived at Mars orbit, you will need another
+velocity boost to move into that orbit, or you will stay on the elliptical orbit and simply fall back to perihelion where
+you started. For the return trip, you simply reverse the process with a retro-boost at each transfer point.
+To make the move onto the transfer ellipse and then off again, we need to know each circular orbit velocity and the
+transfer orbit velocities at perihelion and aphelion. The velocity boost required is simply the difference between the
+circular orbit velocity and the elliptical orbit velocity at each point. We can find the circular orbital velocities from
+Equation 13.7. To determine the velocities for the ellipse, we state without proof (as it is beyond the scope of this
+course) that total energy for an elliptical orbit is
+where is the mass of the Sun and a is the semi-major axis. Remarkably, this is the same as Equation 13.9 for
+circular orbits, but with the value of the semi-major axis replacing the orbital radius. Since we know the potential
+energy from Equation 13.4, we can find the kinetic energy and hence the velocity needed for each point on the
+ellipse. We leave it as a challenge problem to find those transfer velocities for an Earth-to-Mars trip.
+We end this discussion by pointing out a few important details. First, we have not accounted for the gravitational
+potential energy due to Earth and Mars, or the mechanics of landing on Mars. In practice, that must be part of the
+calculations. Second, timing is everything. You do not want to arrive at the orbit of Mars to find out it isn’t there. We
+must leave Earth at precisely the correct time such that Mars will be at the aphelion of our transfer ellipse just as we
+arrive. That opportunity comes about every 2 years. And returning requires correct timing as well. The total trip
+would take just under 3 years! There are other options that provide for a faster transit, including a gravity assist flyby
+of Venus. But these other options come with an additional cost in energy and danger to the astronauts.
+INTERACTIVE
+Visit this site (https://openstax.org/l/21plantripmars) for more details about planning a trip to Mars.
+
+628 13 • Gravitation
+Kepler’s Second Law
+Kepler’s second law states that a planet sweeps out equal areas in equal times, that is, the area divided by time,
+called the areal velocity, is constant. Consider Figure 13.20. The time it takes a planet to move from position A to B,
+sweeping out area , is exactly the time taken to move from position C to D, sweeping area , and to move from
+E to F, sweeping out area . These areas are the same: .
+FIGURE 13.20 The shaded regions shown have equal areas and represent the same time interval.
+Comparing the areas in the figure and the distance traveled along the ellipse in each case, we can see that in order
+for the areas to be equal, the planet must speed up as it gets closer to the Sun and slow down as it moves away. This
+behavior is completely consistent with our conservation equation, Equation 13.5. But we will show that Kepler’s
+second law is actually a consequence of the conservation of angular momentum, which holds for any system with
+only radial forces.
+Recall the definition of angular momentum from Angular Momentum, . For the case of orbiting motion,
+is the angular momentum of the planet about the Sun, is the position vector of the planet measured from the Sun,
+and is the instantaneous linear momentum at any point in the orbit. Since the planet moves along the
+ellipse, is always tangent to the ellipse.
+We can resolve the linear momentum into two components: a radial component along the line to the Sun, and a
+component perpendicular to . The cross product for angular momentum can then be written as
+.
+The first term on the right is zero because is parallel to , and in the second term is perpendicular to , so
+the magnitude of the cross product reduces to . Note that the angular momentum does not
+depend upon . Since the gravitational force is only in the radial direction, it can change only and not ;
+hence, the angular momentum must remain constant.
+Now consider Figure 13.21. A small triangular area is swept out in time . The velocity is along the path and it
+makes an angle with the radial direction. Hence, the perpendicular velocity is given by . The planet
+moves a distance projected along the direction perpendicular to r. Since the area of a triangle is one-
+half the base (r) times the height , for a small displacement, the area is given by . Substituting for
+, multiplying by m in the numerator and denominator, and rearranging, we obtain
+Access for free at openstax.org

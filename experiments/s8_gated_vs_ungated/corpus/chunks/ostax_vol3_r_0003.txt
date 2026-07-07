@@ -1,0 +1,246 @@
+# REAL PDF — openstax_vol3.pdf, pages 12-19
+############################################################
+
+4 Preface
+encourageinstructorstojointhehubsforthesubjectsmostrelevanttoyourteachingandresearchasanopportunitybothto
+enrich your courses and to engage with other faculty.
+To reach the Community Hubs, visit www.oercommons.org/hubs/OpenStax (https://www.oercommons.org/
+hubs/OpenStax).
+Partner resources
+OpenStaxpartnersareouralliesinthemissiontomakehigh-qualitylearningmaterialsaffordableandaccessibletostudents
+andinstructorseverywhere.TheirtoolsintegrateseamlesslywithourOpenStaxtitlesatalowcost.Toaccessthepartner
+resources for your text, visit your book page on OpenStax.org.
+About the authors
+Senior contributing authors
+Samuel J. Ling, Truman State University
+Dr.SamuelLinghastaughtintroductoryandadvancedphysicsforover25yearsatTrumanStateUniversity,whereheis
+currentlyProfessorofPhysicsandtheDepartmentChair.Dr.LinghastwoPhDsfromBostonUniversity,oneinChemistry
+andtheotherinPhysics,andhewasaResearchFellowattheIndianInstituteofScience,Bangalore,beforejoiningTruman.
+Dr.LingisalsoanauthorofAFirstCourseinVibrationsandWaves,publishedbyOxfordUniversityPress.Dr.Linghas
+considerableexperiencewithresearchinPhysicsEducationandhaspublishedresearchoncollaborativelearningmethodsin
+physicsteaching.HewasawardedaTrumanFellowandaJepsonfellowinrecognitionofhisinnovativeteachingmethods.
+Dr. Ling’s research publications have spanned Cosmology, Solid State Physics, and Nonlinear Optics.
+Jeff Sanny, Loyola Marymount University
+Dr. Jeff Sanny earned a BS in Physics from Harvey Mudd College in 1974 and a PhD in Solid State Physics from the
+UniversityofCalifornia–LosAngelesin1980.HejoinedthefacultyatLoyolaMarymountUniversityinthefallof1980.
+During his tenure, he has served as department Chair as well as Associate Dean. Dr. Sanny enjoys teaching introductory
+physics in particular. He is also passionate about providing students with research experience and has directed an active
+undergraduate student research group in space physics for many years.
+William Moebs, Formerly of Loyola Marymount University
+Dr. William Moebs earned a BS and PhD (1959 and 1965) from the University of Michigan. He then joined their staff
+as a Research Associate for one year, where he continued his doctoral research in particle physics. In 1966, he accepted
+an appointment to the Physics Department of Indiana Purdue Fort Wayne (IPFW), where he served as Department Chair
+from1971to1979.In1979,hemovedtoLoyolaMarymountUniversity(LMU),whereheservedasChairofthePhysics
+Department from 1979 to 1986. He retired from LMU in 2000. He has published research in particle physics, chemical
+kinetics, cell division, atomic physics, and physics teaching.
+Contributing authors
+Stephen D. Druger
+Alice Kolakowska, University of Memphis
+David Anderson, Albion College
+Daniel Bowman, Ferrum College
+Dedra Demaree, Georgetown University
+Edw. S. Ginsberg, University of Massachusetts
+Joseph Trout, Richard Stockton College
+Kevin Wheelock, Bellevue College
+David Smith, University of the Virgin Islands
+Takashi Sato, Kwantlen Polytechnic University
+Gerald Friedman, Santa Fe Community College
+Lev Gasparov, University of North Florida
+Lee LaRue, Paris Junior College
+Mark Lattery, University of Wisconsin
+Richard Ludlow, Daniel Webster College
+Patrick Motl, Indiana University Kokomo
+Tao Pang, University of Nevada, Las Vegas
+Kenneth Podolak, Plattsburgh State University
+Reviewers
+Salameh Ahmad, Rochester Institute of Technology–Dubai
+John Aiken, University of Colorado–Boulder
+Raymond Benge, Terrant County College
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Preface 5
+Gavin Buxton, Robert Morris University
+Erik Christensen, South Florida State College
+Clifton Clark, Fort Hays State University
+Nelson Coates, California Maritime Academy
+Herve Collin, Kapi’olani Community College
+Carl Covatto, Arizona State University
+Alejandro Cozzani, Imperial Valley College
+Danielle Dalafave, The College of New Jersey
+Nicholas Darnton, Georgia Institute of Technology
+Ethan Deneault, University of Tampa
+Kenneth DeNisco, Harrisburg Area Community College
+Robert Edmonds, Tarrant County College
+William Falls, Erie Community College
+Stanley Forrester, Broward College
+Umesh Garg, University of Notre Dame
+Maurizio Giannotti, Barry University
+Bryan Gibbs, Dallas County Community College
+Lynn Gillette, Pima Community College–West Campus
+Mark Giroux, East Tennessee State University
+Matthew Griffiths, University of New Haven
+Alfonso Hinojosa, University of Texas–Arlington
+Steuard Jensen, Alma College
+David Kagan, University of Massachusetts
+Sergei Katsev, University of Minnesota–Duluth
+Jill Leggett, Florida State College–Jacksonville
+Alfredo Louro, University of Calgary
+James Maclaren, Tulane University
+Ponn Maheswaranathan, Winthrop University
+Seth Major, Hamilton College
+Oleg Maksimov, Excelsior College
+Aristides Marcano, Delaware State University
+James McDonald, University of Hartford
+Ralph McGrew, SUNY–Broome Community College
+Paul Miller, West Virginia University
+Tamar More, University of Portland
+Farzaneh Najmabadi, University of Phoenix
+Richard Olenick, The University of Dallas
+Christopher Porter, Ohio State University
+Liza Pujji, Manakau Institute of Technology
+Baishali Ray, Young Harris University
+Andrew Robinson, Carleton University
+Aruvana Roy, Young Harris University
+Gajendra Tulsian, Daytona State College
+Adria Updike, Roger Williams University
+Clark Vangilder, Central Arizona University
+Steven Wolf, Texas State University
+Alexander Wurm, Western New England University
+Lei Zhang, Winston Salem State University
+Ulrich Zurcher, Cleveland State University
+
+Preface
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 7
+1 | THE NATURE OF LIGHT
+Figure 1.1 Due to total internal reflection, an underwater swimmer’s image is reflected back into the water where the camera is
+located. The circular ripple in the image center is actually on the water surface. Due to the viewing angle, total internal reflection
+is not occurring at the top edge of this image, and we can see a view of activities on the pool deck. (credit: modification of work
+by “jayhem”/Flickr)
+Chapter Outline
+1.1The Propagation of Light
+1.2The Law of Reflection
+1.3Refraction
+1.4Total Internal Reflection
+1.5Dispersion
+1.6Huygens’s Principle
+1.7Polarization
+Introduction
+Ourinvestigationoflightrevolvesaroundtwoquestionsoffundamentalimportance:(1)Whatisthenatureoflight,and(2)
+howdoeslightbehaveundervariouscircumstances?AnswerstothesequestionscanbefoundinMaxwell’sequations(in
+ElectromagneticWaves(http://cnx.org/content/m58495/latest/)),whichpredicttheexistenceofelectromagnetic
+wavesandtheirbehavior.Examplesoflightincluderadioandinfraredwaves,visiblelight,ultravioletradiation,andX-rays.
+Interestingly,notalllightphenomenacanbeexplainedbyMaxwell’stheory.Experimentsperformedearlyinthetwentieth
+centuryshowedthatlighthascorpuscular,orparticle-like,properties.Theideathatlightcandisplaybothwaveandparticle
+characteristics is calledwave-particle duality, which is examined inPhotons and Matter Waves.
+Inthischapter,westudythebasicpropertiesoflight.Inthenextfewchapters,weinvestigatethebehavioroflightwhenit
+interacts with optical devices such as mirrors, lenses, and apertures.
+
+8 Chapter 1 | The Nature of Light
+1.1 | The Propagation of Light
+Learning Objectives
+By the end of this section, you will be able to:
+• Determine the index of refraction, given the speed of light in a medium
+• List the ways in which light travels from a source to another location
+Thespeedoflightinavacuumcisoneofthefundamentalconstantsofphysics.AsyouwillseewhenyoureachRelativity,
+itisacentralconceptinEinstein’stheoryofrelativity.Astheaccuracyofthemeasurementsofthespeedoflightimproved,
+it was found that different observers, even those moving at large velocities with respect to each other, measure the same
+valueforthespeedoflight.However,thespeedoflightdoesvaryinaprecisemannerwiththematerialittraverses.These
+facts have far-reaching implications, as we will see in later chapters.
+The Speed of Light: Early Measurements
+The first measurement of the speed of light was made by the Danish astronomer Ole Roemer (1644–1710) in 1675. He
+studiedtheorbitofIo,oneofthefourlargemoonsofJupiter,andfoundthatithadaperiodofrevolutionof42.5haround
+Jupiter.Healsodiscoveredthatthisvaluefluctuatedbyafewseconds,dependingonthepositionofEarthinitsorbitaround
+the Sun. Roemer realized that this fluctuation was due to the finite speed of light and could be used to determinec.
+RoemerfoundtheperiodofrevolutionofIobymeasuringthetimeintervalbetweensuccessiveeclipsesbyJupiter.Figure
+1.2(a) shows the planetary configurations when such a measurement is made from Earth in the part of its orbit where it
+isrecedingfromJupiter.WhenEarthisatpointA,Earth,Jupiter,andIoarealigned.Thenexttimethisalignmentoccurs,
+EarthisatpointB,andthelightcarryingthatinformationtoEarthmusttraveltothatpoint.SinceBisfartherfromJupiter
+than A, light takes more time to reach Earth when Earth is at B. Now imagine it is about 6 months later, and the planets
+arearrangedasinpart(b)ofthefigure.ThemeasurementofIo’speriodbeginswithEarthatpoint A′ andIoeclipsedby
+Jupiter.ThenexteclipsethenoccurswhenEarthisatpoint B′,towhichthelightcarryingtheinformationofthiseclipse
+musttravel.Since B′ isclosertoJupiterthan A′,lighttakeslesstimetoreachEarthwhenitisat B′.Thistimeinterval
+betweenthesuccessiveeclipsesofIoseenat A′ and B′ isthereforelessthanthetimeintervalbetweentheeclipsesseen
+at A and B. By measuring the difference in these time intervals and with appropriate knowledge of the distance between
+JupiterandEarth,Roemercalculatedthatthespeedoflightwas 2.0×10 8 m/s, whichis33%belowthevalueaccepted
+today.
+Figure 1.2 Roemer’s astronomical method for determining the speed of light. Measurements of Io’s period
+done with the configurations of parts (a) and (b) differ, because the light path length and associated travel time
+increase fromAtoB(a) but decrease from A′ to B′ (b).
+The first successful terrestrial measurement of the speed of light was made by Armand Fizeau (1819–1896) in 1849. He
+placedatoothedwheelthatcouldberotatedveryrapidlyononehilltopandamirroronasecondhilltop8kmaway(Figure
+1.3).Anintenselightsourcewasplacedbehindthewheel,sothatwhenthewheelrotated,itchoppedthelightbeaminto
+asuccessionofpulses.Thespeedofthewheelwasthenadjusteduntilnolightreturnedtotheobserverlocatedbehindthe
+wheel. This could only happen if the wheel rotated through an angle corresponding to a displacement of (n+½) teeth,
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 9
+whilethepulsestraveleddowntothemirrorandback.Knowingtherotationalspeedofthewheel,thenumberofteethon
+thewheel,andthedistancetothemirror,Fizeaudeterminedthespeedoflighttobe 3.15×10 8 m/s, whichisonly5%
+too high.
+Figure 1.3 Fizeau’s method for measuring the speed of light. The teeth of the
+wheel block the reflected light upon return when the wheel is rotated at a rate that
+matches the light travel time to and from the mirror.
+TheFrenchphysicistJeanBernardLéonFoucault(1819–1868)modifiedFizeau’sapparatusbyreplacingthetoothedwheel
+witharotatingmirror.In1862,hemeasuredthespeedoflighttobe 2.98×10 8 m/s, whichiswithin0.6%ofthepresently
+acceptedvalue.AlbertMichelson(1852–1931)alsousedFoucault’smethodonseveraloccasionstomeasurethespeedof
+light. His first experiments were performed in 1878; by 1926, he had refined the technique so well that he found c to be
+8
+(2.99796±4)×10 m/s.
+Today, the speed of light is known to great precision. In fact, the speed of light in a vacuum c is so important that it is
+accepted as one of the basic physical quantities and has the value
+c=2.99792458×10 8 m/s≈3.00×10 8 m/s (1.1)
+where the approximate value of 3.00×10 8 m/s is used whenever three-digit accuracy is sufficient.
+Speed of Light in Matter
+Thespeedoflightthroughmatterislessthanitisinavacuum,becauselightinteractswithatomsinamaterial.Thespeed
+oflightdependsstronglyonthetypeofmaterial,sinceitsinteractionvarieswithdifferentatoms,crystallattices,andother
+substructures.Wecandefineaconstantofamaterialthatdescribesthespeedoflightinit,calledtheindexofrefractionn:
+n= c
+v
+(1.2)
+wherevis the observed speed of light in the material.
+Since the speed of light is always less than c in matter and equals c only in a vacuum, the index of refraction is always
+greaterthanorequaltoone;thatis, n≥1.Table 1.1givestheindicesofrefractionforsomerepresentativesubstances.
+The values are listed for a particular wavelength of light, because they vary slightly with wavelength. (This can have
+
+10 Chapter 1 | The Nature of Light
+important effects, such as colors separated by a prism, as we will see in Dispersion.) Note that for gases, n is close to
+1.0.Thisseemsreasonable,sinceatomsingasesarewidelyseparated,andlighttravelsatcinthevacuumbetweenatoms.
+Itiscommontotake n=1 forgasesunlessgreatprecisionisneeded.Althoughthespeedoflightvinamediumvaries
+considerably from its valuecin a vacuum, it is still a large speed.
+Medium n
+Gases at 0°C, 1 atm
+Air 1.000293
+Carbon dioxide 1.00045
+Hydrogen 1.000139
+Oxygen 1.000271
+Liquids at 20°C
+Benzene 1.501
+Carbon disulfide 1.628
+Carbon tetrachloride 1.461
+Ethanol 1.361
+Glycerine 1.473
+Water, fresh 1.333
+Solids at 20°C
+Diamond 2.419
+Fluorite 1.434
+Glass, crown 1.52
+Glass, flint 1.66
+Ice (at 0°C) 1.309
+Polystyrene 1.49
+Plexiglas 1.51
+Quartz, crystalline 1.544
+Quartz, fused 1.458
+Sodium chloride 1.544
+Zircon 1.923
+Table 1.1Index of Refraction in
+Various Media For light with a
+wavelength of 589 nm in a vacuum
+Example 1.1
+Speed of Light in Jewelry
+Calculate the speed of light in zircon, a material used in jewelry to imitate diamond.
+Strategy
+Wecancalculatethespeedoflightinamaterialvfromtheindexofrefractionnofthematerial,usingtheequation
+n=c/v.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

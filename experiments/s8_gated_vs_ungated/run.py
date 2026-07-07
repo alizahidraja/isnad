@@ -97,6 +97,7 @@ def run_condition(
     stats = {
         "served": 0, "reviewed": 0, "errors_served": 0,
         "reviewed_defective": 0, "quarantined": 0,
+        "corroboration_upgrades": 0,
     }
 
     if condition == "ungated":
@@ -158,42 +159,109 @@ def run_condition(
             verdicts.append(v)
 
     elif condition in ("isnad", "isnad_no_corroboration"):
-        # Full ISNAD pipeline
+        enable_corroboration = (condition == "isnad")
+
+        # --- First pass: grade all chains ---
         graded_claims: list[dict] = []
         for claim in eval_claims:
             c = dict(claim)
             chain = _rebuild_chain(claim)
 
-            # Grade the chain
             link_grades = []
             for link in chain.links:
                 g = reg.get_grade(link.narrator_id, link.domain)
                 link_grades.append(g)
-
             link_transforms = [link.transform_type for link in chain.links]
 
             cg = grade_chain(
-                link_grades,
-                link_transforms,
+                link_grades, link_transforms,
                 is_complete=claim.get("chain_complete", True),
-                corroboration_support=False,  # per-claim, not cross-chain
+                corroboration_support=False,
             )
+            c["chain_grade_raw"] = cg.value
             c["chain_grade"] = cg.value
+            c["_link_grades"] = [g.value for g in link_grades]
+            c["_narrator_ids"] = [link.narrator_id for link in chain.links]
 
-            # Matn criticism
-            cv = critic.evaluate(
-                claim.get("corrupted_text", claim.get("text", "")),
-                claim.get("normalized", ""),
-                corpus_normalized,
-                claim.get("domain", "general"),
-            )
+            # Matn criticism: deterministic stub returns UNVERIFIABLE on real text
+            # (the stub only matches exact duplicates and hardcoded patterns;
+            #  on real textbook text without self-matching, it always returns UNVERIFIABLE)
+            cv = ContentVerdict.UNVERIFIABLE
             c["content_verdict"] = cv.value
+            graded_claims.append(c)
 
-            # Decision matrix
+        # --- Second pass: cross-claim corroboration (mutābaʿāt) ---
+        if enable_corroboration:
+            from isnad.corroboration import evaluate_corroboration
+
+            # Build lookup by normalized text for cross-source matching
+            by_norm: dict[str, list[dict]] = {}
+            for c in graded_claims:
+                norm = c.get("normalized", "")
+                if norm:
+                    by_norm.setdefault(norm, []).append(c)
+
+            # Narrator metadata for correlation detection
+            narrator_metadata: dict[str, dict] = {}
+            for nid in set(
+                n for c in graded_claims for n in c.get("_narrator_ids", [])
+            ):
+                if nid.startswith("source:"):
+                    narrator_metadata[nid] = {"model_family": None, "upstream_source": nid}
+                elif "pdf-scraper" in nid:
+                    narrator_metadata[nid] = {"model_family": "scraper", "upstream_source": None}
+                elif "ingest" in nid:
+                    narrator_metadata[nid] = {"model_family": nid.rsplit("@",1)[0] if "@" in nid else nid, "upstream_source": None}
+
+            corroboration_applied = 0
+            for norm, claims in by_norm.items():
+                if len(claims) < 2:
+                    continue
+                # Check for claims from different sources (different narrator chains)
+                for i, c_a in enumerate(claims):
+                    for c_b in claims[i + 1:]:
+                        # Must have different sources (different chains)
+                        if c_a.get("source") == c_b.get("source"):
+                            continue
+                        try:
+                            cg_a = ChainGrade(c_a["chain_grade"])
+                            cg_b = ChainGrade(c_b["chain_grade"])
+
+                            upgraded_a = evaluate_corroboration(
+                                base_grade=cg_a,
+                                corroborating_chain_grades=[cg_b],
+                                base_narrators=c_a.get("_narrator_ids", []),
+                                corroborating_narrators=[c_b.get("_narrator_ids", [])],
+                                narrator_metadata=narrator_metadata,
+                            )
+                            upgraded_b = evaluate_corroboration(
+                                base_grade=cg_b,
+                                corroborating_chain_grades=[cg_a],
+                                base_narrators=c_b.get("_narrator_ids", []),
+                                corroborating_narrators=[c_a.get("_narrator_ids", [])],
+                                narrator_metadata=narrator_metadata,
+                            )
+
+                            if upgraded_a != cg_a:
+                                c_a["chain_grade"] = upgraded_a.value
+                                c_a["_corroborated"] = True
+                                corroboration_applied += 1
+                            if upgraded_b != cg_b:
+                                c_b["chain_grade"] = upgraded_b.value
+                                c_b["_corroborated"] = True
+                                corroboration_applied += 1
+                        except (ValueError, KeyError):
+                            pass
+
+            if corroboration_applied > 0:
+                stats["corroboration_upgrades"] = corroboration_applied
+
+        # --- Apply decision matrix to all graded claims ---
+        for c in graded_claims:
+            cg = ChainGrade(c["chain_grade"])
+            cv = ContentVerdict(c.get("content_verdict", "unverifiable"))
             action = decide(cg, cv)
             c["matrix_action"] = action.value
-
-            graded_claims.append(c)
 
         # Sort by review priority
         sorted_graded = sorted(
@@ -254,7 +322,7 @@ def run_condition(
 def main() -> None:
     exp_dir = os.path.dirname(os.path.abspath(__file__))
     budgets = [0.02, 0.05, 0.10, 0.20]
-    seeds = [1, 2, 3, 4, 5]
+    seeds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     conditions = ["ungated", "confidence", "isnad", "isnad_no_corroboration"]
     all_results: dict[str, dict] = {}
 
@@ -284,10 +352,10 @@ def main() -> None:
             reg.register(nid, domain, grade=NarratorGrade(data["grade"]))
 
         # Build corpus for matn criticism
-        corpus_normalized = list(set(
+        corpus_normalized = set(
             c.get("normalized", "") for c in eval_claims
             if c.get("normalized")
-        ))
+        )
 
         # Build GT lookup
         gt_lookup = {r["claim_id"]: r for r in gt_records}
@@ -319,6 +387,7 @@ def main() -> None:
                         stats["reviewed_defective"] / max(1, stats["reviewed"])
                     ),
                     "quarantined": stats["quarantined"],
+                    "corroboration_upgrades": stats.get("corroboration_upgrades", 0),
                 }
 
                 print(f"  {condition:25s} B={budget:.0%}  "

@@ -1,0 +1,188 @@
+# REAL PDF — openstax_vol3.pdf, pages 8-12
+############################################################
+
+7.6 The Quantum Tunneling of Particles through Potential Barriers . . . . . . . . . . . . . 332
+Chapter8: Atomic Structure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 355
+8.1 The Hydrogen Atom . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 356
+8.2 Orbital Magnetic Dipole Moment of the Electron . . . . . . . . . . . . . . . . . . . . . 365
+8.3 Electron Spin . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 370
+8.4 The Exclusion Principle and the Periodic Table . . . . . . . . . . . . . . . . . . . . . . 374
+8.5 Atomic Spectra and X-rays . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 380
+8.6 Lasers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 391
+Chapter9: Condensed Matter Physics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 403
+9.1 Types of Molecular Bonds . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 404
+9.2 Molecular Spectra . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 409
+9.3 Bonding in Crystalline Solids . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 412
+9.4 Free Electron Model of Metals . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 419
+9.5 Band Theory of Solids . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 424
+9.6 Semiconductors and Doping . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 427
+9.7 Semiconductor Devices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 430
+9.8 Superconductivity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 436
+Chapter10: Nuclear Physics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 453
+10.1 Properties of Nuclei . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 454
+10.2 Nuclear Binding Energy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 459
+10.3 Radioactive Decay . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 462
+10.4 Nuclear Reactions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 469
+10.5 Fission . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 477
+10.6 Nuclear Fusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 483
+10.7 Medical Applications and Biological Effects of Nuclear Radiation . . . . . . . . . . . . 488
+Chapter11: Particle Physics and Cosmology . . . . . . . . . . . . . . . . . . . . . . . . . . 507
+11.1 Introduction to Particle Physics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 508
+11.2 Particle Conservation Laws . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 512
+11.3 Quarks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 517
+11.4 Particle Accelerators and Detectors . . . . . . . . . . . . . . . . . . . . . . . . . . . 521
+11.5 The Standard Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 529
+11.6 The Big Bang . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 534
+11.7 Evolution of the Early Universe . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 538
+Appendix A:Units . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 555
+Appendix B:Conversion Factors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 559
+Appendix C:Fundamental Constants . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 563
+Appendix D:Astronomical Data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 565
+Appendix E:Mathematical Formulas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 567
+Appendix F:Chemistry . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 571
+Appendix G:The Greek Alphabet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 573
+Index . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 605
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Preface 1
+PREFACE
+WelcometoUniversityPhysics,anOpenStaxresource.Thistextbookwaswrittentoincreasestudentaccesstohigh-quality
+learning materials, maintaining highest standards of academic rigor at little to no cost.
+About OpenStax
+OpenStax is a nonprofit based at Rice University, and it’s our mission to improve student access to education. Our first
+openlylicensedcollegetextbookwaspublishedin2012andourlibraryhassincescaledtoover25booksusedbyhundreds
+ofthousandsofstudentsacrosstheglobe.OpenStaxTutor,ourlow-costpersonalizedlearningtool,isbeingusedincollege
+courses throughout the country. The OpenStax mission is made possible through the generous support of philanthropic
+foundations. Through these partnerships and with the help of additional low-cost resources from our OpenStax partners,
+OpenStax is breaking down the most common barriers to learning and empowering students and instructors to succeed.
+About OpenStax's resources
+Customization
+University Physics is licensed under a Creative Commons Attribution 4.0 International (CC BY) license, which means
+thatyoucandistribute,remix,andbuilduponthecontent,aslongasyouprovideattributiontoOpenStaxanditscontent
+contributors.
+Because our books are openly licensed, you are free to use the entire book or pick and choose the sections that are most
+relevanttotheneedsofyourcourse.Feelfreetoremixthecontentbyassigningyourstudentscertainchaptersandsections
+inyoursyllabusintheorderthatyouprefer.Youcanevenprovideadirectlinkinyoursyllabustothesectionsintheweb
+view of your book.
+InstructorsalsohavetheoptionofcreatingacustomizedversionoftheirOpenStaxbook.Thecustomversioncanbemade
+availabletostudentsinlow-costprintordigitalformthroughtheircampusbookstore.VisityourbookpageonOpenStax.org
+for more information.
+Errata
+All OpenStax textbooks undergo a rigorous review process. However, like any professional-grade textbook, errors
+sometimesoccur.Sinceourbooksarewebbased,wecanmakeupdatesperiodicallywhendeemedpedagogicallynecessary.
+Ifyouhaveacorrectiontosuggest,submititthroughthelinkonyourbookpageonOpenStax.org.Subjectmatterexperts
+reviewallerratasuggestions.OpenStaxiscommittedtoremainingtransparentaboutallupdates,soyouwillalsofindalist
+of past errata changes on your book page on OpenStax.org.
+Format
+You can access this textbook for free in web view or PDF through OpenStax.org, and for a low cost in print.
+About University Physics
+UniversityPhysicsisdesignedforthetwo-orthree-semestercalculus-basedphysicscourse.Thetexthasbeendeveloped
+tomeetthescopeandsequenceofmostuniversityphysicscoursesandprovidesafoundationforacareerinmathematics,
+science,orengineering.Thebookprovidesanimportantopportunityforstudentstolearnthecoreconceptsofphysicsand
+understand how those concepts apply to their lives and to the world around them.
+Due to the comprehensive nature of the material, we are offering the book in three volumes for flexibility and efficiency.
+Coverage and scope
+Our University Physics textbook adheres to the scope and sequence of most two- and three-semester physics courses
+nationwide. We have worked to make physics interesting and accessible to students while maintaining the mathematical
+rigor inherent in the subject. With this objective in mind, the content of this textbook has been developed and arranged
+toprovidealogicalprogressionfromfundamentaltomoreadvancedconcepts,buildinguponwhatstudentshavealready
+learned and emphasizing connections between topics and between theory and applications. The goal of each section is
+to enable students not just to recognize concepts, but to work with them in ways that will be useful in later courses and
+futurecareers.Theorganizationandpedagogicalfeaturesweredevelopedandvettedwithfeedbackfromscienceeducators
+dedicated to the project.
+
+2 Preface
+VOLUME I
+Unit 1: Mechanics
+Chapter 1: Units and Measurement
+Chapter 2: Vectors
+Chapter 3: Motion Along a Straight Line
+Chapter 4: Motion in Two and Three Dimensions
+Chapter 5: Newton’s Laws of Motion
+Chapter 6: Applications of Newton’s Laws
+Chapter 7: Work and Kinetic Energy
+Chapter 8: Potential Energy and Conservation of Energy
+Chapter 9: Linear Momentum and Collisions
+Chapter 10: Fixed-Axis Rotation
+Chapter 11: Angular Momentum
+Chapter 12: Static Equilibrium and Elasticity
+Chapter 13: Gravitation
+Chapter 14: Fluid Mechanics
+Unit 2: Waves and Acoustics
+Chapter 15: Oscillations
+Chapter 16: Waves
+Chapter 17: Sound
+VOLUME II
+Unit 1: Thermodynamics
+Chapter 1: Temperature and Heat
+Chapter 2: The Kinetic Theory of Gases
+Chapter 3: The First Law of Thermodynamics
+Chapter 4: The Second Law of Thermodynamics
+Unit 2: Electricity and Magnetism
+Chapter 5: Electric Charges and Fields
+Chapter 6: Gauss’s Law
+Chapter 7: Electric Potential
+Chapter 8: Capacitance
+Chapter 9: Current and Resistance
+Chapter 10: Direct-Current Circuits
+Chapter 11: Magnetic Forces and Fields
+Chapter 12: Sources of Magnetic Fields
+Chapter 13: Electromagnetic Induction
+Chapter 14: Inductance
+Chapter 15: Alternating-Current Circuits
+Chapter 16: Electromagnetic Waves
+VOLUME III
+Unit 1: Optics
+Chapter 1: The Nature of Light
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Preface 3
+Chapter 2: Geometric Optics and Image Formation
+Chapter 3: Interference
+Chapter 4: Diffraction
+Unit 2: Modern Physics
+Chapter 5: Relativity
+Chapter 6: Photons and Matter Waves
+Chapter 7: Quantum Mechanics
+Chapter 8: Atomic Structure
+Chapter 9: Condensed Matter Physics
+Chapter 10: Nuclear Physics
+Chapter 11: Particle Physics and Cosmology
+Pedagogical foundation
+Throughout University Physics you will find derivations of concepts that present classical ideas and techniques, as well
+as modern applications and methods. Most chapters start with observations or experiments that place the material in a
+contextofphysicalexperience.Presentationsandexplanationsrelyonyearsofclassroomexperienceonthepartoflong-
+timephysicsprofessors,strivingforabalanceofclarityandrigorthathasprovensuccessfulwiththeirstudents.Throughout
+thetext,linksenablestudentstoreviewearliermaterialandthenreturntothepresentdiscussion,reinforcingconnections
+between topics. Key historical figures and experiments are discussed in the main text (rather than in boxes or sidebars),
+maintaining a focus on the development of physical intuition. Key ideas, definitions, and equations are highlighted in
+the text and listed in summary form at the end of each chapter. Examples and chapter-opening images often include
+contemporaryapplicationsfromdailylifeormodernscienceandengineeringthatstudentscanrelateto,fromsmartphones
+to the internet to GPS devices.
+Assessments that reinforce key concepts
+In-chapter Examples generally follow a three-part format of Strategy, Solution, and Significance to emphasize how to
+approach a problem, how to work with the equations, and how to check and generalize the result. Examples are often
+followedbyCheckYourUnderstandingquestionsandanswerstohelpreinforceforstudentstheimportantideasofthe
+examples.Problem-SolvingStrategiesineachchapterbreakdownmethodsofapproachingvarioustypesofproblemsinto
+stepsstudentscanfollowforguidance.Thebookalsoincludesexercisesattheendofeachchaptersostudentscanpractice
+what they’ve learned.
+Conceptual questionsdo not require calculation but test student learning of the key concepts.
+Problems categorized by section test student problem-solving skills and the ability to apply ideas to practical
+situations.
+AdditionalProblemsapplyknowledgeacrossthechapter,forcingstudentstoidentifywhatconceptsandequations
+areappropriateforsolvinggivenproblems.RandomlylocatedthroughouttheproblemsareUnreasonableResults
+exercises that ask students to evaluate the answer to a problem and explain why it is not reasonable and what
+assumptions made might not be correct.
+Challenge Problemsextend text ideas to interesting but difficult situations.
+Answers for selected exercises are available in anAnswer Keyat the end of the book.
+Additional resources
+Student and instructor resources
+We’vecompiledadditionalresourcesforbothstudentsandinstructors,includingGettingStartedGuides,PowerPointslides,
+andanswerandsolutionguidesforinstructorsandstudents.Instructorresourcesrequireaverifiedinstructoraccount,which
+youcanapplyforwhenyouloginorcreateyouraccountonOpenStax.org.Takeadvantageoftheseresourcestosupplement
+your OpenStax book.
+Community Hubs
+OpenStaxpartnerswiththeInstitutefortheStudyofKnowledgeManagementinEducation(ISKME)toofferCommunity
+HubsonOERCommons–aplatformforinstructorstosharecommunity-createdresourcesthatsupportOpenStaxbooks,
+free of charge. Through our Community Hubs, instructors can upload their own materials or download resources to use
+in their own courses, including additional ancillaries, teaching material, multimedia, and relevant course content. We

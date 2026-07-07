@@ -1,0 +1,277 @@
+# REAL PDF — openstax_vol3.pdf, pages 321-327
+############################################################
+
+Chapter 7 | Quantum Mechanics 313
+useful.
+Example 7.3
+Expectation Value (Part I)
+The normalized wave function of a particle is
+ψ(x)=e
+−|x|/x
+0 / x .
+0
+Find the expectation value of position.
+Strategy
+SubstitutethewavefunctionintoEquation 7.7andevaluate.Thepositionoperatorintroducesamultiplicative
+factor only, so the position operator need not be “sandwiched.”
+Solution
+First multiply, then integrate:
++∞ 2
+〈 x〉 =
++
+∫
+∞
+dxx|ψ(x)| 2= ⌠ dxx |e
+−|
+x
+x|/x
+0| = x 1
++
+∫
+∞
+dxxe −2|x|/x 0 =0.
+−∞ ⌡ 0 0 −∞
+−∞
+Significance
+Thefunctionintheintegrand (xe
+−2|x|/x
+0 ) isoddsinceitistheproductofanoddfunction(x)andanevenfunction
+(e
+−2|x|/x
+0 ). The integral vanishes because the total area of the function about the x-axis cancels the (negative)
+areabelowit.Theresult (〈 x〉 =0) isnotsurprisingsincetheprobabilitydensityfunctionissymmetricabout
+x=0.
+Example 7.4
+Expectation Value (Part II)
+The time-dependent wave function of a particle confined to a region between 0 andLis
+ψ(x, t)= Ae−iωt sin(πx/L)
+where ω isangularfrequencyandEistheenergyoftheparticle.(Note:Thefunctionvariesasasinebecause
+of the limits (0 to L). When x=0, the sine factor is zero and the wave function is zero, consistent with the
+boundary conditions.) Calculate the expectation values of position, momentum, and kinetic energy.
+Strategy
+We must first normalize the wave function to find A. Then we use the operators to calculate the expectation
+values.
+Solution
+Computation of the normalization constant:
+L L L
+1=∫dxψ*(x)ψ(x)=⌠dx ⎛ Ae+iωt sin πx⎞⎛ Ae−iωt sin πx⎞ = A2∫dxsin2πx = A2L ⇒ A= 2 .
+⌡ ⎝ L⎠⎝ L⎠ L 2 L
+0 0 0
+The expectation value of position is
+
+314 Chapter 7 | Quantum Mechanics
+L L L
+〈 x〉 =∫dxψ*(x)xψ(x)=⌠dx ⎛ Ae+iωt sin πx⎞ x ⎛ Ae−iωt sin πx⎞ = A2⌠dxxsin2πx = A2L2 = L .
+⌡ ⎝ L⎠ ⎝ L⎠ ⌡ L 4 2
+0 0 0
+The expectation value of momentum in the x-direction also requires an integral. To set this integral up, the
+associated operator must— by rule—act to the right on the wave function ψ(x):
+−iℏ d ψ(x)=−iℏ d Ae−iωt sin πx =−i Ah e−iωt cos πx .
+dx dx L 2L L
+Therefore, the expectation value of momentum is
+L L
+〈 p〉 =⌠dx ⎛ Ae+iωt sin πx⎞⎛ −i Ah e−iωt cos πx⎞ =−i A2h ∫dxsin 2πx =0.
+⌡ ⎝ L⎠⎝ 2L L⎠ 4L L
+0 0
+Thefunctionintheintegralisasinefunctionwithawavelengthequaltothewidthofthewell,L—anoddfunction
+about x=L/2. As a result, the integral vanishes.
+The expectation value of kinetic energy in the x-direction requires the associated operator to act on the wave
+function:
+− ℏ2 d2 ψ(x)= − ℏ2 d2 Ae−iωt sin πx = − ℏ2 Ae−iωt d2 sin πx = Ah2 e−iωt sin πx .
+2m dx2 2m dx2 L 2m dx2 L 2mL2 L
+Thus, the expectation value of the kinetic energy is
+L
+〈K 〉 = ⌠dx ⎛ Ae+iωt sin πx⎞⎛ Ah2 e−iωt sin πx⎞
+⌡ ⎝ L⎠⎝ 2mL2 L⎠
+0
+L
+=
+A2h2 ∫dxsin2πx
+=
+A2h2 L
+=
+h2
+.
+2mL2 L 2mL2 2 2mL2
+0
+Significance
+TheaveragepositionofalargenumberofparticlesinthisstateisL/2.Theaveragemomentumoftheseparticles
+is zero because a given particle is equally likely to be moving right or left. However, the particle is not at rest
+because its average kinetic energy is not zero. Finally, the probability density is
+2
+|ψ| =(2/L)sin2(πx/L).
+ThisprobabilitydensityislargestatlocationL/2andiszeroat x=0 andat x=L. Notethattheseconclusions
+do not depend explicitly on time.
+7.3 Check Your Understanding For the particle in the above example, find the probability of locating it
+between positions 0 andL/4
+Quantummechanicsmakesmanysurprisingpredictions.However,in1920,NielsBohr(founderoftheNielsBohrInstitute
+in Copenhagen, from which we get the term “Copenhagen interpretation”) asserted that the predictions of quantum
+mechanicsandclassicalmechanicsmustagreeforallmacroscopicsystems,suchasorbitingplanets,bouncingballs,rocking
+chairs,andsprings.Thiscorrespondenceprincipleisnowgenerallyaccepted.Itsuggeststherulesofclassicalmechanics
+areanapproximationoftherulesofquantummechanicsforsystemswithverylargeenergies.Quantummechanicsdescribes
+both the microscopic and macroscopic world, but classical mechanics describes only the latter.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 315
+7.2 | The Heisenberg Uncertainty Principle
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the physical meaning of the position-momentum uncertainty relation
+• Explain the origins of the uncertainty principle in quantum theory
+• Describe the physical meaning of the energy-time uncertainty relation
+Heisenberg’s uncertainty principle is a key principle in quantum mechanics. Very roughly, it states that if we know
+everything about where a particle is located (the uncertainty of position is small), we know nothing about its momentum
+(theuncertaintyofmomentumislarge),andviceversa.Versionsoftheuncertaintyprinciplealsoexistforotherquantities
+as well, such as energy and time. We discuss the momentum-position and energy-time uncertainty principles separately.
+Momentum and Position
+To illustrate the momentum-position uncertainty principle, consider a free particle that moves along the x-direction. The
+particle moves with a constant velocity u and momentum p=mu. According to de Broglie’s relations, p=ℏk and
+E=ℏω. As discussed in the previous section, the wave function for this particle is given by
+ψ k(x, t)= A[cos(ω t−k x)−isin(ω t−k x)]= Ae −i(ω t−k x) = Ae−i ω tei k x (7.14)
+2
+and the probability density |ψ k(x, t)| = A2 is uniform and independent of time. The particle is equally likely to be
+foundanywherealongthex-axisbuthasdefinite valuesofwavelength andwavenumber,andtherefore momentum. The
+uncertaintyofpositionisinfinite(wearecompletelyuncertainaboutposition)andtheuncertaintyofthemomentumiszero
+(we are completely certain about momentum). This account of a free particle is consistent with Heisenberg’s uncertainty
+principle.
+Similar statements can be made of localized particles. In quantum theory, a localized particle is modeled by a linear
+superposition of free-particle (or plane-wave) states called a wave packet. An example of a wave packet is shown in
+Figure7.9.AwavepacketcontainsmanywavelengthsandthereforebydeBroglie’srelationsmanymomenta—possiblein
+quantummechanics!Thisparticlealsohasmanyvaluesofposition,althoughtheparticleisconfinedmostlytotheinterval
+Δx. The particle can be better localized (Δx can be decreased) if more plane-wave states of different wavelengths or
+momenta are added together in the right way (Δp is increased). According to Heisenberg, these uncertainties obey the
+following relation.
+The Heisenberg Uncertainty Principle
+The product of the uncertainty in position of a particle and the uncertainty in its momentum can never be less than
+one-half of the reduced Planck constant:
+Δx Δp≥ℏ/2. (7.15)
+This relation expresses Heisenberg’s uncertainty principle. It places limits on what we can know about a particle from
+simultaneousmeasurementsofpositionandmomentum.If Δx islarge, Δp issmall,andviceversa.Equation7.15can
+bederivedinamoreadvancedcourseinmodernphysics.ReflectingonthisrelationinhisworkThePhysicalPrinciplesof
+theQuantumTheory,Heisenbergwrote“Anyuseofthewords‘position’and‘velocity’withaccuracyexceedingthatgiven
+by [the relation] is just as meaningless as the use of words whose sense is not defined.”
+
+316 Chapter 7 | Quantum Mechanics
+Figure 7.9 Adding together several plane waves of different
+wavelengths can produce a wave that is relatively localized.
+Note that the uncertainty principle has nothing to do with the precision of an experimental apparatus. Even for perfect
+measuringdevices,theseuncertaintieswouldremainbecausetheyoriginateinthewave-likenatureofmatter.Theprecise
+value of the product ΔxΔp depends on the specific form of the wave function. Interestingly, the Gaussian function (or
+bell-curve distribution) gives the minimum value of the uncertainty product: Δx Δp=ℏ/2.
+Example 7.5
+The Uncertainty Principle Large and Small
+Determinetheminimumuncertaintiesinthepositionsofthefollowingobjectsiftheirspeedsareknownwitha
+precision of 1.0×10 −3 m/s: (a) an electron and (b) a bowling ball of mass 6.0 kg.
+Strategy
+Giventheuncertaintyinspeed Δu=1.0×10 −3 m/s,wehavetofirstdeterminetheuncertaintyinmomentum
+Δp=m Δu and then invertEquation 7.15to find the uncertainty in position Δx=ℏ/(2Δp).
+Solution
+a. For the electron:
+Δp = mΔu=(9.1×10 −31 kg)(1.0×10 −3 m/s)=9.1×10 −34 kg·m/s ,
+ℏ
+Δx = =5.8cm.
+2 Δp
+b. For the bowling ball:
+Δp = mΔu=(6.0kg)(1.0×10 −3 m/s)=6.0×10 −3 kg·m/s ,
+Δx = ℏ =8.8×10 −33 m.
+2 Δp
+Significance
+Unlike the position uncertainty for the electron, the position uncertainty for the bowling ball is immeasurably
+small.Planck’sconstantisverysmall,sothelimitationsimposedbytheuncertaintyprinciplearenotnoticeable
+in macroscopic systems such as a bowling ball.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 317
+Example 7.6
+Uncertainty and the Hydrogen Atom
+Estimatetheground-stateenergyofahydrogenatomusingHeisenberg’suncertaintyprinciple.(Hint:According
+to early experiments, the size of a hydrogen atom is approximately 0.1 nm.)
+Strategy
+Anelectronboundtoahydrogenatomcanbemodeledbyaparticleboundtoaone-dimensionalboxoflength
+L=0.1nm. The ground-state wave function of this system is a half wave, like that given in Example 7.1.
+This is the largest wavelength that can “fit” in the box, so the wave function corresponds to the lowest energy
+state.NotethatthisfunctionisverysimilarinshapetoaGaussian(bellcurve)function.Wecantaketheaverage
+energy of a particle described by this function (E) as a good estimate of the ground state energy (E ). This
+0
+averageenergyofaparticleisrelatedtoitsaverageofthemomentumsquared,whichisrelatedtoitsmomentum
+uncertainty.
+Solution
+Tosolvethisproblem,wemustbespecificaboutwhatismeantby“uncertaintyofposition”and“uncertaintyof
+momentum.”Weidentifytheuncertaintyofposition (Δx) withthestandarddeviationofposition (σ x),andthe
+uncertaintyofmomentum (Δp) withthestandarddeviationofmomentum (σ p).FortheGaussianfunction,the
+uncertainty product is
+ℏ
+σ x σ p= ,
+2
+where
+σ x 2= x2− – x 2 and σ2 p= p2−p2.
+Theparticleisequallylikelytobemovingleftasmovingright,so – p =0.Also,theuncertaintyofpositionis
+comparable to the size of the box, so σ x=L. The estimated ground state energy is therefore
+–
+E 0 =E Gaussian = p m 2 = 2 σ m 2 p = 2 1 m ⎛ ⎝2 ℏ σ x ⎞ ⎠ 2 = 2 1 m ⎛ ⎝2 ℏ L ⎞ ⎠ 2 = 8m ℏ L 2 2 .
+Multiplying numerator and denominator by c2 gives
+(ℏc)2 (197.3eV·nm)2
+E = = =0.952eV≈1eV.
+0 8(mc2)L2 8 ⎛ 0.511·10 6 eV ⎞ (0.1nm)2
+⎝ ⎠
+Significance
+Based on early estimates of the size of a hydrogen atom and the uncertainty principle, the ground-state energy
+of a hydrogen atom is in the eV range. The ionization energy of an electron in the ground-state energy is
+approximately10eV,sothispredictionisroughlyconfirmed.(Note:Theproduct ℏc isoftenausefulvaluein
+performing calculations in quantum mechanics.)
+Energy and Time
+Anotherkindofuncertaintyprincipleconcernsuncertaintiesinsimultaneousmeasurementsoftheenergyofaquantumstate
+and its lifetime,
+ℏ (7.16)
+ΔEΔt≥ ,
+2
+where ΔE is the uncertainty in the energy measurement and Δt is the uncertainty in the lifetime measurement. The
+
+318 Chapter 7 | Quantum Mechanics
+energy-timeuncertaintyprincipledoesnotresultfromarelationofthetypeexpressedbyEquation 7.15fortechnical
+reasonsbeyondthisdiscussion.Nevertheless,thegeneralmeaningoftheenergy-timeprincipleisthataquantumstatethat
+existsforonlyashorttimecannothaveadefiniteenergy.Thereasonisthatthefrequencyofastateisinverselyproportional
+totimeandthefrequencyconnectswiththeenergyofthestate,sotomeasuretheenergywithgoodprecision,thestatemust
+be observed for many cycles.
+To illustrate, consider the excited states of an atom. The finite lifetimes of these states can be deduced from the shapes
+of spectral lines observed in atomic emission spectra. Each time an excited state decays, the emitted energy is slightly
+differentand,therefore,theemissionlineischaracterizedbyadistributionofspectralfrequencies(orwavelengths)ofthe
+emittedphotons.Asaresult,allspectrallinesarecharacterizedbyspectralwidths.Theaverageenergyoftheemittedphoton
+corresponds to the theoretical energy of the excited state and gives the spectral location of the peak of the emission line.
+Short-lived states have broad spectral widths and long-lived states have narrow spectral widths.
+Example 7.7
+Atomic Transitions
+Anatomtypicallyexistsinanexcitedstateforabout Δt=10 −8 s.Estimatetheuncertainty Δ f inthefrequency
+ofemittedphotonswhenanatommakesatransitionfromanexcitedstatewiththesimultaneousemissionofa
+photon with an average frequency of f =7.1×1014 Hz. Is the emitted radiation monochromatic?
+Strategy
+WeinvertEquation7.16toobtaintheenergyuncertainty ΔE≈ℏ/2Δt andcombineitwiththephotonenergy
+E=h f to obtain Δ f . To estimate whether or not the emission is monochromatic, we evaluate Δf/f .
+Solution
+The spread in photon energies is Δ E=hΔ f . Therefore,
+ΔE ≈ ℏ ⇒hΔf ≈ ℏ ⇒Δf ≈ 1 = 1 =8.0×10 6 Hz,
+2Δt 2Δt 4πΔt
+4π(10
+−8
+s)
+Δf
+8.0×10
+6
+Hz −8
+= =1.1×10 .
+f 7.1×1014 Hz
+Significance
+Because the emitted photons have their frequencies within 1.1×10 −6 percent of the average frequency, the
+emitted radiation can be considered monochromatic.
+7.4 CheckYourUnderstandingAsodiumatommakesatransitionfromthefirstexcitedstatetotheground
+state, emitting a 589.0-nm photon with energy 2.105 eV. If the lifetime of this excited state is 1.6×10 −8 s,
+what is the uncertainty in energy of this excited state? What is the width of the corresponding spectral line?
+7.3 | The Schrӧdinger Equation
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the role Schrӧdinger’s equation plays in quantum mechanics
+• Explain the difference between time-dependent and -independent Schrӧdinger’s equations
+• Interpret the solutions of Schrӧdinger’s equation
+Intheprecedingtwosections,wedescribedhowtouseaquantummechanicalwavefunctionanddiscussedHeisenberg’s
+uncertaintyprinciple.Inthissection,wepresentacompleteandformaltheoryofquantummechanicsthatcanbeusedto
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

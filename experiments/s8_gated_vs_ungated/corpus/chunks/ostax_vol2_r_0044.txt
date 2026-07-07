@@ -1,0 +1,291 @@
+# REAL PDF — openstax_vol2.pdf, pages 261-268
+############################################################
+
+Chapter 6 | Gauss's Law 251
+6.3 Check Your Understanding Calculate the electric flux through the closed cubical surface for each
+charge distribution shown inFigure 6.20.
+Figure 6.20 A cubical Gaussian surface with various charge distributions.
+Usethissimulation (https://openstaxcollege.org/l/21gaussimulat) toadjustthemagnitudeofthecharge
+andtheradiusoftheGaussiansurfacearoundit.Seehowthisaffectsthetotalfluxandthemagnitudeoftheelectric
+field at the Gaussian surface.
+6.3 | Applying Gauss’s Law
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain what spherical, cylindrical, and planar symmetry are
+• Recognize whether or not a given system possesses one of these symmetries
+• Apply Gauss’s law to determine the electric field of a system with one of these symmetries
+Gauss’slawisveryhelpfulindeterminingexpressionsfortheelectricfield,eventhoughthelawisnotdirectlyaboutthe
+electricfield;itisabouttheelectricflux.Itturnsoutthatinsituationsthathavecertainsymmetries(spherical,cylindrical,
+or planar) in the charge distribution, we can deduce the electric field based on knowledge of the electric flux. In these
+
+252 Chapter 6 | Gauss's Law
+→
+systems, we can find a Gaussian surface S over which the electric field has constant magnitude. Furthermore, if E is
+parallelto ^ n everywhereonthesurface,then → E · ^ n =E. (If → E and ^ n areantiparalleleverywhereonthesurface,
+then → E · ^ n =−E.) Gauss’s law then simplifies to
+Φ=∮ → E · ^ n dA=E∮ dA=EA= q ε enc, (6.6)
+S S 0
+whereAistheareaofthesurface.Notethatthesesymmetriesleadtothetransformationofthefluxintegralintoaproduct
+ofthemagnitudeoftheelectricfieldandanappropriatearea.WhenyouusethisfluxintheexpressionforGauss’slaw,you
+obtain an algebraic equation that you can solve for the magnitude of the electric field, which looks like
+q
+E~ε e
+a
+n
+r
+c
+ea
+.
+0
+ThedirectionoftheelectricfieldatthefieldpointPisobtainedfromthesymmetryofthechargedistributionandthetype
+→
+ofchargeinthedistribution.Therefore,Gauss’slawcanbeusedtodetermine E . Hereisasummaryofthestepswewill
+follow:
+Problem-Solving Strategy: Gauss’s Law
+1. Identifythespatialsymmetryofthechargedistribution.Thisisanimportantfirststepthatallowsustochoose
+theappropriateGaussiansurface.Asexamples,anisolatedpointchargehassphericalsymmetry,andaninfinite
+line of charge has cylindrical symmetry.
+2. ChooseaGaussiansurfacewiththesamesymmetryasthechargedistributionandidentifyitsconsequences.
+With this choice, → E · ^ n is easily determined over the Gaussian surface.
+3. Evaluatetheintegral ∮ → E · ^ n dA overtheGaussiansurface,thatis,calculatethefluxthroughthesurface.
+S
+The symmetry of the Gaussian surface allows us to factor → E · ^ n outside the integral.
+4. Determine the amount of charge enclosed by the Gaussian surface. This is an evaluation of the right-hand
+sideoftheequationrepresentingGauss’slaw.Itisoftennecessarytoperformanintegrationtoobtainthenet
+enclosed charge.
+5. Evaluatetheelectricfieldofthechargedistribution.Thefieldmaynowbefoundusingtheresultsofsteps3
+and 4.
+Basically, there are only three types of symmetry that allow Gauss’s law to be used to deduce the electric field. They are
+• A charge distribution with spherical symmetry
+• A charge distribution with cylindrical symmetry
+• A charge distribution with planar symmetry
+Toexploitthesymmetry,weperformthecalculationsinappropriatecoordinatesystemsandusetherightkindofGaussian
+surface for that symmetry, applying the remaining four steps.
+Charge Distribution with Spherical Symmetry
+Achargedistributionhassphericalsymmetryifthedensityofchargedependsonlyonthedistancefromapointinspace
+and not on the direction. In other words, if you rotate the system, it doesn’t look different. For instance, if a sphere of
+radiusRisuniformlychargedwithchargedensity ρ thenthedistributionhassphericalsymmetry(Figure 6.21(a)).On
+0
+theotherhand,ifasphereofradiusRischargedsothatthetophalfofthespherehasuniformchargedensity ρ andthe
+1
+bottomhalfhasauniformchargedensity ρ ≠ ρ , thenthespheredoesnothavesphericalsymmetrybecausethecharge
+2 1
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 253
+densitydependsonthedirection(Figure6.21(b)).Thus,itisnottheshapeoftheobjectbutrathertheshapeofthecharge
+distribution that determines whether or not a system has spherical symmetry.
+Figure 6.21(c) shows a sphere with four different shells, each with its own uniform charge density. Although this is a
+situationwherechargedensityinthefullsphereisnotuniform,thechargedensityfunctiondependsonlyonthedistance
+from the center and not on the direction. Therefore, this charge distribution does have spherical symmetry.
+Figure 6.21 Illustrations of spherically symmetrical and nonsymmetrical systems. Different shadings indicate
+different charge densities. Charges on spherically shaped objects do not necessarily mean the charges are
+distributed with spherical symmetry. The spherical symmetry occurs only when the charge density does not
+depend on the direction. In (a), charges are distributed uniformly in a sphere. In (b), the upper half of the sphere
+has a different charge density from the lower half; therefore, (b) does not have spherical symmetry. In (c), the
+charges are in spherical shells of different charge densities, which means that charge density is only a function
+of the radial distance from the center; therefore, the system has spherical symmetry.
+Onegoodwaytodeterminewhetherornotyourproblemhassphericalsymmetryistolookatthechargedensityfunction
+insphericalcoordinates, ρ⎛r, θ, ϕ⎞.Ifthechargedensityisonlyafunctionofr,thatis ρ= ρ(r),thenyouhavespherical
+⎝ ⎠
+symmetry. If the density depends on θ or ϕ, you could change it by rotation; hence, you would not have spherical
+symmetry.
+Consequences of symmetry
+Inallsphericallysymmetricalcases,theelectricfieldatanypointmustberadiallydirected,becausethechargeand,hence,
+the field must be invariant under rotation. Therefore, using spherical coordinates with their origins at the center of the
+sphericalchargedistribution,wecanwritedowntheexpectedformoftheelectricfieldatapointPlocatedatadistancer
+from the center:
+→ ^ (6.7)
+Spherical symmetry: E P=E P(r)r,
+where ^ r istheunitvectorpointedinthedirectionfromtheorigintothefieldpointP.Theradialcomponent E P ofthe
+electric field can be positive or negative. When E P>0, the electric field at P points away from the origin, and when
+E P<0, the electric field atPpoints toward the origin.
+Gaussian surface and flux calculations
+We can now use this form of the electric field to obtain the flux of the electric field through the Gaussian surface. For
+sphericalsymmetry,theGaussiansurfaceisaclosedsphericalsurfacethathasthesamecenterasthecenterofthecharge
+distribution.Thus,thedirectionoftheareavectorofanareaelementontheGaussiansurfaceatanypointisparalleltothe
+direction of the electric field at that point, since they are both radially directed outward (Figure 6.22).
+
+254 Chapter 6 | Gauss's Law
+Figure 6.22 The electric field at any point of the spherical
+Gaussian surface for a spherically symmetrical charge
+distribution is parallel to the area element vector at that point,
+giving flux as the product of the magnitude of electric field and
+the value of the area. Note that the radiusRof the charge
+distribution and the radiusrof the Gaussian surface are different
+quantities.
+→
+Themagnitudeoftheelectricfield E mustbethesameeverywhereonasphericalGaussiansurfaceconcentricwiththe
+distribution. For a spherical surface of radiusr,
+Φ=∮ → E P· ^ n dA=E P ∮ dA=E P 4πr2.
+S S
+Using Gauss’s law
+AccordingtoGauss’slaw,thefluxthroughaclosedsurfaceisequaltothetotalchargeenclosedwithintheclosedsurface
+dividedbythepermittivityofvacuum ε .Let q bethetotalchargeenclosedinsidethedistancerfromtheorigin,which
+0 enc
+is the space inside the Gaussian spherical surface of radiusr. This gives the following relation for Gauss’s law:
+q
+4πr2E=
+ε
+enc.
+0
+Hence,theelectricfieldatpointPthatisadistancerfromthecenterofasphericallysymmetricalchargedistributionhas
+the following magnitude and direction:
+Magnitude:E(r)= 1 q enc (6.8)
+4πε
+0
+r2
+Direction: radial fromOtoPor fromPtoO.
+ThedirectionofthefieldatpointPdependsonwhetherthechargeinthesphereispositiveornegative.Foranetpositive
+charge enclosed within the Gaussian surface, the direction is from O to P, and for a net negative charge, the direction is
+fromPtoO.Thisisallweneedforapointcharge,andyouwillnoticethattheresultaboveisidenticaltothatforapoint
+charge. However, Gauss’s law becomes truly useful in cases where the charge occupies a finite volume.
+Computing enclosed charge
+The more interesting case is when a spherical charge distribution occupies a volume, and asking what the electric field
+insidethechargedistribution isthusbecomes relevant. Inthiscase,thechargeenclosed dependsonthedistance rofthe
+field point relative to the radius of the charge distributionR, such as that shown inFigure 6.23.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 255
+Figure 6.23 A spherically symmetrical charge distribution and the Gaussian surface used for finding the
+field (a) inside and (b) outside the distribution.
+If point P is located outside the charge distribution—that is, if r ≥R—then the Gaussian surface containing P encloses
+all charges in the sphere. In this case, q equals the total charge in the sphere. On the other hand, if point P is within
+enc
+thesphericalchargedistribution,thatis,if r <R, thentheGaussiansurfaceenclosesasmallerspherethanthesphereof
+chargedistribution.Inthiscase, q islessthanthetotalchargepresentinthesphere.ReferringtoFigure6.23,wecan
+enc
+write q as
+enc
+⎧q (total charge)ifr ≥R
+q enc=
+⎩
+⎨
+q
+t
+w
+o
+i
+t
+thinr<R(only charge withinr<R)ifr<R
+.
+→
+Thefieldatapointoutsidethechargedistributionisalsocalled E ,andthefieldatapointinsidethechargedistribution
+out
+→
+iscalled E . Focusingonthetwotypesoffieldpoints,eitherinsideoroutsidethechargedistribution,wecannowwrite
+in
+the magnitude of the electric field as
+Poutside sphereE = 1 q tot (6.9)
+out 4πε
+0
+r2
+Pinside sphereE = 1 q withinr<R . (6.10)
+in 4πε
+0
+r2
+Notethattheelectricfieldoutsideasphericallysymmetricalchargedistributionisidenticaltothatofapointchargeatthe
+centerthathasachargeequaltothetotalchargeofthesphericalchargedistribution.Thisisremarkablesincethecharges
+arenotlocated atthecenter only.Wenowworkoutspecific examples ofspherical chargedistributions, starting withthe
+case of a uniformly charged sphere.
+Example 6.6
+Uniformly Charged Sphere
+A sphere of radius R, such as that shown in Figure 6.23, has a uniform volume charge density ρ . Find the
+0
+electric field at a point outside the sphere and at a point inside the sphere.
+Strategy
+Apply the Gauss’s law problem-solving strategy, where we have already worked out the flux calculation.
+Solution
+The charge enclosed by the Gaussian surface is given by
+
+256 Chapter 6 | Gauss's Law
+r
+q enc=∫ρ
+0
+dV =∫ ρ
+0
+4πr′2dr′= ρ
+0
+⎛
+⎝
+4
+3
+πr3⎞
+⎠
+.
+0
+The answer for electric field amplitude can then be written down immediately for a point outside the sphere,
+labeled E , and a point inside the sphere, labeled E .
+out in
+q
+E = 1 tot, q = 4πR3 ρ ,
+out 4πε
+0
+r2 tot 3 0
+q ρ r
+E
+in
+=
+4πε
+e
+0
+nc
+r2
+=
+3ε
+0
+0
+, sinceq enc= 4
+3
+πr3 ρ
+0
+.
+Itisinterestingtonotethatthemagnitudeoftheelectricfieldincreasesinsidethematerialasyougoout,sincethe
+amountofchargeenclosedbytheGaussiansurfaceincreaseswiththevolume.Specifically,thechargeenclosed
+grows ∝r3,whereasthefieldfromeachinfinitesimalelementofchargedropsoff ∝1/r2 withthenetresult
+thattheelectricfieldwithinthedistributionincreasesinstrengthlinearlywiththeradius.Themagnitudeofthe
+electricfieldoutsidethespheredecreasesasyougoawayfromthecharges,becausetheincludedchargeremains
+thesamebutthedistanceincreases.Figure6.24displaysthevariationofthemagnitudeoftheelectricfieldwith
+distance from the center of a uniformly charged sphere.
+Figure 6.24 Electric field of a uniformly charged, non-
+conducting sphere increases inside the sphere to a maximum at
+ρ R
+the surface and then decreases as 1/r2. Here, E R=
+3
+0
+ε
+. The
+0
+electric field is due to a spherical charge distribution of uniform
+charge density and total chargeQas a function of distance from
+the center of the distribution.
+ThedirectionoftheelectricfieldatanypointPisradiallyoutwardfromtheoriginif ρ ispositive,andinward
+0
+(i.e.,towardthecenter)if ρ isnegative.Theelectricfieldatsomerepresentativespacepointsaredisplayedin
+0
+Figure 6.25whose radial coordinatesrare r =R/2, r =R, and r =2R.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 257
+Figure 6.25 Electric field vectors inside and outside a uniformly charged
+sphere.
+Significance
+Noticethat E hasthesameformastheequationoftheelectricfieldofanisolatedpointcharge.Indetermining
+out
+theelectricfieldofauniformsphericalchargedistribution,wecanthereforeassumethatallofthechargeinside
+the appropriate spherical Gaussian surface is located at the center of the distribution.
+Example 6.7
+Non-Uniformly Charged Sphere
+Anon-conductingsphereofradiusRhasanon-uniformchargedensitythatvarieswiththedistancefromitscenter
+as given by
+ρ(r)=arn (r ≤R;n≥0),
+whereaisaconstant.Werequire n≥0 sothatthechargedensityisnotundefinedat r =0.Findtheelectric
+field at a point outside the sphere and at a point inside the sphere.
+Strategy
+ApplytheGauss’slawstrategygivenabove,whereweworkouttheenclosedchargeintegralsseparatelyforcases
+inside and outside the sphere.
+Solution
+Sincethegivenchargedensityfunctionhasonlyaradialdependenceandnodependenceondirection,wehavea
+sphericallysymmetricalsituation.Therefore,themagnitudeoftheelectricfieldatanypointisgivenaboveand
+thedirectionisradial.Wejustneedtofindtheenclosedcharge q enc, whichdependsonthelocationofthefield
+point.

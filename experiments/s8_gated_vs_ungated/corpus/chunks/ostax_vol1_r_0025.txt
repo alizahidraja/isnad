@@ -1,0 +1,290 @@
+# REAL PDF — openstax_vol1.pdf, pages 148-153
+############################################################
+
+136 3 • Chapter Review
+Chapter Review
+Key Terms
+acceleration due to gravity acceleration of an object instantaneous acceleration acceleration at a specific
+as a result of gravity point in time
+average acceleration the rate of change in velocity; instantaneous speed the absolute value of the
+the change in velocity over time instantaneous velocity
+average speed the total distance traveled divided by instantaneous velocity the velocity at a specific
+elapsed time instant or time point
+average velocity the displacement divided by the kinematics the description of motion through
+time over which displacement occurs under properties such as position, time, velocity, and
+constant acceleration acceleration
+displacement the change in position of an object position the location of an object at a particular time
+distance traveled the total length of the path total displacement the sum of individual
+traveled between two positions displacements over a given time period
+elapsed time the difference between the ending time two-body pursuit problem a kinematics problem in
+and the beginning time which the unknowns are calculated by solving the
+free fall the state of movement that results from kinematic equations simultaneously for two moving
+gravitational force only objects
+Key Equations
+Displacement
+Total displacement
+Average velocity
+Instantaneous velocity
+Average speed
+Instantaneous speed
+Average acceleration
+Instantaneous acceleration
+Position from average velocity
+Average velocity (for constant acceleration)
+Velocity from acceleration
+Position from velocity and acceleration
+Velocity from distance
+Velocity of free fall
+Height of free fall
+Velocity of free fall from height
+Velocity from acceleration
+Position from velocity
+Summary
+3.1 Position, Displacement, and Average Velocity limited to motion along a straight line, called
+one-dimensional motion.
+• Kinematics is the description of motion without
+• Displacement is the change in position of an
+considering its causes. In this chapter, it is
+object. The SI unit for displacement is the meter.
+Access for free at openstax.org
+
+3 • Chapter Review 137
+Displacement has direction as well as magnitude. • Instantaneous acceleration a(t) is a continuous
+• Distance traveled is the total length of the path function of time and gives the acceleration at any
+traveled between two positions. specific time during the motion. It is calculated
+• Time is measured in terms of change. The time from the derivative of the velocity function.
+between two position points and is Instantaneous acceleration is the slope of the
+. Elapsed time for an event is velocity-versus-time graph.
+, where is the final time and is • Negative acceleration (sometimes called
+the initial time. The initial time is often taken to deceleration) is acceleration in the negative
+be zero. direction in the chosen coordinate system.
+• Average velocity is defined as displacement
+3.4 Motion with Constant Acceleration
+divided by elapsed time. If and are
+two position time points, the average velocity • When analyzing one-dimensional motion with
+between these points is constant acceleration, identify the known
+quantities and choose the appropriate equations
+to solve for the unknowns. Either one or two of
+the kinematic equations are needed to solve for
+3.2 Instantaneous Velocity and Speed
+the unknowns, depending on the known and
+• Instantaneous velocity is a continuous function unknown quantities.
+of time and gives the velocity at any point in time • Two-body pursuit problems always require two
+during a particle’s motion. We can calculate the equations to be solved simultaneously for the
+instantaneous velocity at a specific time by unknowns.
+taking the derivative of the position function,
+3.5 Free Fall
+which gives us the functional form of
+instantaneous velocity v(t). • An object in free fall experiences constant
+• Instantaneous velocity is a vector and can be acceleration if air resistance is negligible.
+negative. • On Earth, all free-falling objects have an
+• Instantaneous speed is found by taking the acceleration g due to gravity, which averages
+absolute value of instantaneous velocity, and it is .
+always positive. • For objects in free fall, the upward direction is
+• Average speed is total distance traveled divided normally taken as positive for displacement,
+by elapsed time. velocity, and acceleration.
+• The slope of a position-versus-time graph at a
+3.6 Finding Velocity and Displacement from
+specific time gives instantaneous velocity at that
+Acceleration
+time.
+3.3 Average and Instantaneous Acceleration • Integral calculus gives us a more complete
+formulation of kinematics.
+• Acceleration is the rate at which velocity • If acceleration a(t) is known, we can use integral
+changes. The SI unit for acceleration is meters calculus to derive expressions for velocity v(t)
+per second squared. and position x(t).
+• Acceleration is a vector. It has both magnitude • If acceleration is constant, the integral equations
+and direction and so can be the rate of change of reduce to Equation 3.12 and Equation 3.13 for
+the magnitude or direction of the velocity, or motion with constant acceleration.
+both.
+Conceptual Questions
+3.1 Position, Displacement, and Average Velocity traveled equal magnitude of displacement?
+What is the only case in which magnitude of
+1 . Give an example in which there are clear
+displacement and distance are exactly the
+distinctions among distance traveled,
+same?
+displacement, and magnitude of displacement.
+Identify each quantity in your example 3 . Bacteria move back and forth using their flagella
+specifically. (structures that look like little tails). Speeds of
+up to 50 μm/s (50 × 10−6 m/s) have been
+2 . Under what circumstances does distance
+observed. The total distance traveled by a
+
+138 3 • Chapter Review
+bacterium is large for its size, whereas its what is the required number of known physical
+displacement is small. Why is this? variables that are needed to solve for the
+unknown quantities using the kinematic
+4 . Give an example of a device used to measure
+equations?
+time and identify what change in that device
+indicates a change in time. 17 . State two scenarios of the kinematics of single
+object where three known quantities require two
+5 . Does a car’s odometer measure distance
+kinematic equations to solve for the unknowns.
+traveled or displacement?
+3.5 Free Fall
+6 . During a given time interval the average velocity
+of an object is zero. What can you conclude 18 . What is the acceleration of a rock thrown
+about its displacement over the time interval? straight upward on the way up? At the top of its
+flight? On the way down? Assume there is no air
+3.2 Instantaneous Velocity and Speed
+resistance.
+7 . There is a distinction between average speed
+19 . An object that is thrown straight up falls back to
+and the magnitude of average velocity. Give an
+Earth. This is one-dimensional motion. (a) When
+example that illustrates the difference between
+is its velocity zero? (b) Does its velocity change
+these two quantities.
+direction? (c) Does the acceleration have the
+8 . Does the speedometer of a car measure speed same sign on the way up as on the way down?
+or velocity?
+20 . Suppose you throw a rock nearly straight up at a
+9 . If you divide the total distance traveled on a car coconut in a palm tree and the rock just misses
+trip (as determined by the odometer) by the the coconut on the way up but hits the coconut
+elapsed time of the trip, are you calculating on the way down. Neglecting air resistance and
+average speed or magnitude of average velocity? the slight horizontal variation in motion to
+Under what circumstances are these two account for the hit and miss of the coconut, how
+quantities the same? does the speed of the rock when it hits the
+coconut on the way down compare with what it
+10 . How are instantaneous velocity and
+would have been if it had hit the coconut on the
+instantaneous speed related to one another?
+way up? Is it more likely to dislodge the coconut
+How do they differ?
+on the way up or down? Explain.
+3.3 Average and Instantaneous Acceleration
+21 . The severity of a fall depends on your speed
+11 . Is it possible for speed to be constant while when you strike the ground. All factors but the
+acceleration is not zero? acceleration from gravity being the same, how
+many times higher could a safe fall occur on the
+12 . Is it possible for velocity to be constant while
+Moon than on Earth (gravitational acceleration
+acceleration is not zero? Explain.
+on the Moon is about one-sixth that of the
+13 . Give an example in which velocity is zero yet Earth)?
+acceleration is not.
+22 . How many times higher could an astronaut jump
+14 . If a subway train is moving to the left (has a on the Moon than on Earth if her takeoff speed is
+negative velocity) and then comes to a stop, the same in both locations (gravitational
+what is the direction of its acceleration? Is the acceleration on the Moon is about on-sixth of
+acceleration positive or negative? that on Earth)?
+15 . Plus and minus signs are used in one- 3.6 Finding Velocity and Displacement from
+dimensional motion to indicate direction. What Acceleration
+is the sign of an acceleration that reduces the
+23 . When given the acceleration function, what
+magnitude of a negative velocity? Of a positive
+additional information is needed to find the
+velocity?
+velocity function and position function?
+3.4 Motion with Constant Acceleration
+16 . When analyzing the motion of a single object,
+Access for free at openstax.org
+
+3 • Chapter Review 139
+Problems
+3.1 Position, Displacement, and Average Velocity following position-versus-time graph.
+24 . Consider a coordinate system in which the
+positive x axis is directed upward vertically.
+What are the positions of a particle (a) 5.0 m
+directly above the origin and (b) 2.0 m below the
+origin?
+25 . A car is 2.0 km west of a traffic light at t = 0 and
+5.0 km east of the light at t = 6.0 min. Assume
+the origin of the coordinate system is the light
+and the positive x direction is eastward. (a) What
+are the car’s position vectors at these two
+times? (b) What is the car’s displacement
+between 0 min and 6.0 min?
+26 . The Shanghai maglev train connects Longyang
+Road to Pudong International Airport, a distance
+of 30 km. The journey takes 8 minutes on
+average. What is the maglev train’s average
+32 . Sketch the velocity-versus-time graph from the
+velocity?
+following position-versus-time graph.
+27 . The position of a particle moving along the
+x-axis is given by m. (a) At
+what time does the particle cross the origin? (b)
+What is the displacement of the particle
+between and
+28 . A cyclist rides 8.0 km east for 20 minutes, then
+they turn and head west for 8 minutes and 3.2
+km. Finally, they ride east for 16 km, which takes
+40 minutes. (a) What is the final displacement of
+the cyclist? (b) What is their average velocity?
+29 . On February 15, 2013, a superbolide meteor
+(brighter than the Sun) entered Earth’s
+33 . Given the following velocity-versus-time graph,
+atmosphere over Chelyabinsk, Russia, and
+sketch the position-versus-time graph.
+exploded at an altitude of 23.5 km.
+Eyewitnesses could feel the intense heat from
+the fireball, and the blast wave from the
+explosion blew out windows in buildings. The
+blast wave took approximately 2 minutes 30
+seconds to reach ground level. The blast wave
+traveled at 10° above the horizon. (a) What was
+the average velocity of the blast wave? b)
+Compare this with the speed of sound, which is
+343 m/s at sea level.
+3.2 Instantaneous Velocity and Speed
+30 . A woodchuck runs 20 m to the right in 5 s, then
+turns and runs 10 m to the left in 3 s. (a) What is
+34 . An object has a position function x(t) = 5t m. (a)
+the average velocity of the woodchuck? (b) What
+What is the velocity as a function of time? (b)
+is its average speed?
+Graph the position function and the velocity
+31 . Sketch the velocity-versus-time graph from the function.
+
+140 3 • Chapter Review
+35 . A particle moves along the x-axis according to from rest to a suborbital speed of 6.50 km/s in
+. (a) What is the 60.0 s (the actual speed and time are classified).
+instantaneous velocity at t = 2 s and t = 3 s? (b) What is its average acceleration in meters per
+What is the instantaneous speed at these times? second squared and in multiples of g (9.80
+(c) What is the average velocity between t = 2 s
+m/s2)?
+and t = 3 s?
+42 . An airplane, starting from rest, moves down the
+36 . Unreasonable results. A particle moves along runway at constant acceleration for 18 s and
+the x-axis according to ​ . At then takes off at a speed of 60 m/s. What is the
+average acceleration of the plane?
+what time is the velocity of the particle equal to
+zero? Is this reasonable? 3.4 Motion with Constant Acceleration
+3.3 Average and Instantaneous Acceleration 43 . A particle moves in a straight line at a constant
+velocity of 30 m/s. What is its displacement
+37 . A cheetah can accelerate from rest to a speed of
+between t = 0 and t = 5.0 s?
+30.0 m/s in 7.00 s. What is its acceleration?
+44 . A particle moves in a straight line with an initial
+38 . Dr. John Paul Stapp was a U.S. Air Force officer
+velocity of 0 m/s and a constant acceleration of
+who studied the effects of extreme acceleration 30 m/s2. If , what is the particle’s
+on the human body. On December 10, 1954,
+position at t = 5 s?
+Stapp rode a rocket sled, accelerating from rest
+to a top speed of 282 m/s (1015 km/h) in 5.00 s 45 . A particle moves in a straight line with an initial
+and was brought jarringly back to rest in only velocity of 30 m/s and constant acceleration 30
+1.40 s. Calculate his (a) acceleration in his m/s2. (a) What is its displacement at t = 5 s? (b)
+direction of motion and (b) acceleration opposite What is its velocity at this same time?
+to his direction of motion. Express each in
+46 . (a) Sketch a graph of velocity versus time
+multiples of g (9.80 m/s2) by taking its ratio to
+corresponding to the graph of displacement versus
+the acceleration of gravity.
+time given in the following figure. (b) Identify the
+39 . Sketch the acceleration-versus-time graph from time or times (ta, tb, tc, etc.) at which the
+the following velocity-versus-time graph. instantaneous velocity has the greatest positive
+value. (c) At which times is it zero? (d) At which
+times is it negative?
+47 . (a) Sketch a graph of acceleration versus time
+corresponding to the graph of velocity versus time
+40 . A commuter backs her car out of her garage with given in the following figure. (b) Identify the time or
+an acceleration of 1.40 m/s2. (a) How long does times (ta, tb, tc, etc.) at which the acceleration has
+it take her to reach a speed of 2.00 m/s? (b) If the greatest positive value. (c) At which times is it
+she then brakes to a stop in 0.800 s, what is her zero? (d) At which times is it negative?
+acceleration?
+41 . Assume an intercontinental ballistic missile goes
+Access for free at openstax.org

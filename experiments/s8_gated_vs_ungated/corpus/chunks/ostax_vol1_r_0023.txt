@@ -1,0 +1,193 @@
+# REAL PDF — openstax_vol1.pdf, pages 134-140
+############################################################
+
+122 3 • Motion Along a Straight Line
+FIGURE 3.22 Sample sketch to visualize acceleration opposite to the motion and stopping distance of a car.
+Solution
+a. First, we need to identify the knowns and what we want to solve for. We know that v0 = 30.0 m/s, v = 0, and a
+= −7.00 m/s2 (a is negative because it is in a direction opposite to velocity). We take x0 to be zero. We are
+looking for displacement , or x − x0.
+Second, we identify the equation that will help us solve the problem. The best equation to use is
+This equation is best because it includes only one unknown, x. We know the values of all the other variables in
+this equation. (Other equations would allow us to solve for x, but they require us to know the stopping time, t,
+which we do not know. We could use them, but it would entail additional calculations.)
+Third, we rearrange the equation to solve for x:
+and substitute the known values:
+Thus,
+b. This part can be solved in exactly the same manner as (a). The only difference is that the acceleration is −5.00
+m/s2. The result is
+c. When the driver reacts, the stopping distance is the same as it is in (a) and (b) for dry and wet concrete. So, to
+answer this question, we need to calculate how far the car travels during the reaction time, and then add that
+to the stopping time. It is reasonable to assume the velocity remains constant during the driver’s reaction
+time.
+To do this, we, again, identify the knowns and what we want to solve for. We know that ,
+, and . We take to be zero. We are looking for .
+Second, as before, we identify the best equation to use. In this case, works well because the only
+unknown value is x, which is what we want to solve for.
+Third, we substitute the knowns to solve the equation:
+This means the car travels 15.0 m while the driver reacts, making the total displacements in the two cases of
+dry and wet concrete 15.0 m greater than if he reacted instantly.
+Last, we then add the displacement during the reaction time to the displacement when braking (Figure 3.23),
+and find (a) to be 64.3 m + 15.0 m = 79.3 m when dry and (b) to be 90.0 m + 15.0 m = 105 m when wet.
+Access for free at openstax.org
+
+3.4 • Motion with Constant Acceleration 123
+FIGURE 3.23 The distance necessary to stop a car varies greatly, depending on road conditions and driver reaction time. Shown here are
+the braking distances for dry and wet pavement, as calculated in this example, for a car traveling initially at 30.0 m/s. Also shown are the
+total distances traveled from the point when the driver first sees a light turn red, assuming a 0.500-s reaction time.
+Significance
+The displacements found in this example seem reasonable for stopping a fast-moving car. It should take longer to
+stop a car on wet pavement than dry. It is interesting that reaction time adds significantly to the displacements, but
+more important is the general approach to solving problems. We identify the knowns and the quantities to be
+determined, then find an appropriate equation. If there is more than one unknown, we need as many independent
+equations as there are unknowns to solve. There is often more than one way to solve a problem. The various parts of
+this example can, in fact, be solved by other methods, but the solutions presented here are the shortest.
+EXAMPLE 3.11
+Calculating Time
+Suppose a car merges into freeway traffic on a 200-m-long ramp. If its initial velocity is 10.0 m/s and it accelerates
+at 2.00 m/s2, how long does it take the car to travel the 200 m up the ramp? (Such information might be useful to a
+traffic engineer.)
+Strategy
+First, we draw a sketch Figure 3.24. We are asked to solve for time t. As before, we identify the known quantities to
+choose a convenient physical relationship (that is, an equation with one unknown, t.)
+FIGURE 3.24 Sketch of a car accelerating on a freeway ramp.
+Solution
+Again, we identify the knowns and what we want to solve for. We know that
+, and x = 200 m.
+We need to solve for t. The equation works best because the only unknown in the equation is
+the variable t, for which we need to solve. From this insight we see that when we input the knowns into the equation,
+we end up with a quadratic equation.
+
+124 3 • Motion Along a Straight Line
+We need to rearrange the equation to solve for t, then substituting the knowns into the equation:
+We then simplify the equation. The units of meters cancel because they are in each term. We can get the units of
+seconds to cancel by taking t = t s, where t is the magnitude of time and s is the unit. Doing so leaves
+We then use the quadratic formula to solve for t,
+which yields two solutions: t = 10.0 and t = −20.0. A negative value for time is unreasonable, since it would mean
+the event happened 20 s before the motion began. We can discard that solution. Thus,
+Significance
+Whenever an equation contains an unknown squared, there are two solutions. In some problems both solutions are
+meaningful; in others, only one solution is reasonable. The 10.0-s answer seems reasonable for a typical freeway
+on-ramp.
+CHECK YOUR UNDERSTANDING 3.5
+A rocket accelerates at a rate of 20 m/s2 during launch. How long does it take the rocket to reach a velocity of 400
+m/s?
+EXAMPLE 3.12
+Acceleration of a Spaceship
+A spaceship has left Earth’s orbit and is on its way to the Moon. It accelerates at 20 m/s2 for 2 min and covers a
+distance of 1000 km. What are the initial and final velocities of the spaceship?
+Strategy
+We are asked to find the initial and final velocities of the spaceship. Looking at the kinematic equations, we see that
+one equation will not give the answer. We must use one kinematic equation to solve for one of the velocities and
+substitute it into another kinematic equation to get the second velocity. Thus, we solve two of the kinematic
+equations simultaneously.
+Solution
+First we solve for using
+Then we substitute into to solve for the final velocity:
+Access for free at openstax.org
+
+3.4 • Motion with Constant Acceleration 125
+Significance
+There are six variables in displacement, time, velocity, and acceleration that describe motion in one dimension. The
+initial conditions of a given problem can be many combinations of these variables. Because of this diversity,
+solutions may not be as easy as simple substitutions into one of the equations. This example illustrates that
+solutions to kinematics may require solving two simultaneous kinematic equations.
+With the basics of kinematics established, we can go on to many other interesting examples and applications. In the
+process of developing kinematics, we have also glimpsed a general approach to problem solving that produces both
+correct answers and insights into physical relationships. The next level of complexity in our kinematics problems
+involves the motion of two interrelated bodies, called two-body pursuit problems.
+Two-Body Pursuit Problems
+Up until this point we have looked at examples of motion involving a single body. Even for the problem with two cars
+and the stopping distances on wet and dry roads, we divided this problem into two separate problems to find the
+answers. In a two-body pursuit problem, the motions of the objects are coupled—meaning, the unknown we seek
+depends on the motion of both objects. To solve these problems we write the equations of motion for each object
+and then solve them simultaneously to find the unknown. This is illustrated in Figure 3.25.
+FIGURE 3.25 A two-body pursuit scenario where car 2 has a constant velocity and car 1 is behind with a constant acceleration. Car 1
+catches up with car 2 at a later time.
+The time and distance required for car 1 to catch car 2 depends on the initial distance car 1 is from car 2 as well as
+the velocities of both cars and the acceleration of car 1. The kinematic equations describing the motion of both cars
+must be solved to find these unknowns.
+Consider the following example.
+EXAMPLE 3.13
+Cheetah Catching a Gazelle
+A cheetah waits in hiding behind a bush. The cheetah spots a gazelle running past at 10 m/s. At the instant the
+gazelle passes the cheetah, the cheetah accelerates from rest at 4 m/s2 to catch the gazelle. (a) How long does it
+take the cheetah to catch the gazelle? (b) What is the displacement of the gazelle and cheetah?
+Strategy
+We use the set of equations for constant acceleration to solve this problem. Since there are two objects in motion,
+we have separate equations of motion describing each animal. But what links the equations is a common parameter
+that has the same value for each animal. If we look at the problem closely, it is clear the common parameter to each
+animal is their position x at a later time t. Since they both start at , their displacements are the same at a later
+time t, when the cheetah catches up with the gazelle. If we pick the equation of motion that solves for the
+displacement for each animal, we can then set the equations equal to each other and solve for the unknown, which
+is time.
+Solution
+a. Equation for the gazelle: The gazelle has a constant velocity, which is its average velocity, since it is not
+accelerating. Therefore, we use Equation 3.10 with :
+
+126 3 • Motion Along a Straight Line
+Equation for the cheetah: The cheetah is accelerating from rest, so we use Equation 3.13 with and
+:
+Now we have an equation of motion for each animal with a common parameter, which can be eliminated to
+find the solution. In this case, we solve for t:
+The gazelle has a constant velocity of 10 m/s, which is its average velocity. The acceleration of the cheetah is
+4 m/s2. Evaluating t, the time for the cheetah to reach the gazelle, we have
+b. To get the displacement, we use either the equation of motion for the cheetah or the gazelle, since they should
+both give the same answer.
+Displacement of the cheetah:
+Displacement of the gazelle:
+We see that both displacements are equal, as expected.
+Significance
+It is important to analyze the motion of each object and to use the appropriate kinematic equations to describe the
+individual motion. It is also important to have a good visual perspective of the two-body pursuit problem to see the
+common parameter that links the motion of both objects.
+CHECK YOUR UNDERSTANDING 3.6
+A bicycle has a constant velocity of 10 m/s. A person starts from rest and begins to run to catch up to the bicycle in
+30 s when the bicycle is at the same position as the person. What is the acceleration of the person?
+3.5 Free Fall
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Use the kinematic equations with the variables y and g to analyze free-fall motion.
+• Describe how the values of the position, velocity, and acceleration change during a free fall.
+• Solve for the position, velocity, and acceleration as functions of time when an object is in a free fall.
+An interesting application of Equation 3.4 through Equation 3.14 is called free fall, which describes the motion of an
+object falling in a gravitational field, such as near the surface of Earth or other celestial objects of planetary size.
+Let’s assume the body is falling in a straight line perpendicular to the surface, so its motion is one-dimensional. For
+example, we can estimate the depth of a vertical mine shaft by dropping a rock into it and listening for the rock to hit
+the bottom. But “falling,” in the context of free fall, does not necessarily imply the body is moving from a greater
+height to a lesser height. If a ball is thrown upward, the equations of free fall apply equally to its ascent as well as its
+descent.
+Access for free at openstax.org
+
+3.5 • Free Fall 127
+Gravity
+The most remarkable and unexpected fact about falling objects is that if air resistance and friction are negligible,
+then in a given location all objects fall toward the center of Earth with the same constant acceleration, independent
+of their mass. This experimentally determined fact is unexpected because we are so accustomed to the effects of air
+resistance and friction that we expect light objects to fall slower than heavy ones. Until Galileo Galilei (1564–1642)
+proved otherwise, people believed that a heavier object has a greater acceleration in a free fall. We now know this is
+not the case. In the absence of air resistance, heavy objects arrive at the ground at the same time as lighter objects
+when dropped from the same height Figure 3.26.
+FIGURE 3.26 A hammer and a feather fall with the same constant acceleration if air resistance is negligible. This is a general characteristic
+of gravity not unique to Earth, as astronaut David R. Scott demonstrated in 1971 on the Moon, where the acceleration from gravity is only
+1.67 m/s2 and there is no atmosphere.
+In the real world, air resistance can cause a lighter object to fall slower than a heavier object of the same size. A
+tennis ball reaches the ground after a baseball dropped at the same time. (It might be difficult to observe the
+difference if the height is not large.) Air resistance opposes the motion of an object through the air, and friction
+between objects—such as between clothes and a laundry chute or between a stone and a pool into which it is
+dropped—also opposes motion between them.
+For the ideal situations of these first few chapters, an object falling without air resistance or friction is defined to be
+in free fall. The force of gravity causes objects to fall toward the center of Earth. The acceleration of free-falling
+objects is therefore called acceleration due to gravity. Acceleration due to gravity is constant, which means we can
+apply the kinematic equations to any falling object where air resistance and friction are negligible. This opens to us a
+broad class of interesting situations.
+Acceleration due to gravity is so important that its magnitude is given its own symbol, g. It is constant at any given
+location on Earth and has the average value
+Although g varies from 9.78 m/s2 to 9.83 m/s2, depending on latitude, altitude, underlying geological formations,
+and local topography, let’s use an average value of 9.8 m/s2 rounded to two significant figures in this text unless
+specified otherwise. Neglecting these effects on the value of g as a result of position on Earth’s surface, as well as
+effects resulting from Earth’s rotation, we take the direction of acceleration due to gravity to be downward (toward
+the center of Earth). In fact, its direction defines what we call vertical. Note that whether acceleration a in the
+kinematic equations has the value +g or −g depends on how we define our coordinate system. If we define the
+upward direction as positive, then and if we define the downward direction as positive, then
+.

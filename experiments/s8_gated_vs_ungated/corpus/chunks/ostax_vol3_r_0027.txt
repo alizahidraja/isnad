@@ -1,0 +1,273 @@
+# REAL PDF — openstax_vol3.pdf, pages 164-172
+############################################################
+
+156 Chapter 4 | Diffraction
+maximumoftheinterferenceisinthesamedirectionastheminimumofthediffraction.Werefertosuchamissingpeakas
+amissingorder.OneexampleofadiffractionpatternonthescreenisshowninFigure4.11.Thesolidlinewithmultiple
+peaks of various heights is the intensity observed on the screen. It is a product of the interference pattern of waves from
+separate slits and the diffraction of waves from within one slit.
+Figure 4.11 Diffraction from a double slit. The purple line with peaks of the same height are
+from the interference of the waves from two slits; the blue line with one big hump in the middle
+is the diffraction of waves from within one slit; and the thick red line is the product of the two,
+which is the pattern observed on the screen. The plot shows the expected result for a slit width
+D=2λ and slit separation d =6λ. The maximum of m= ±3 order for the interference is
+missing because the minimum of the diffraction occurs in the same direction.
+Example 4.3
+Intensity of the Fringes
+Figure4.11showsthattheintensityofthefringefor m=3 iszero,butwhatabouttheotherfringes?Calculate
+the intensity for the fringe at m=1 relative to I , the intensity of the central peak.
+0
+Strategy
+Determinetheangleforthedouble-slitinterferencefringe,usingtheequationfromInterference,thendetermine
+the relative intensity in that direction due to diffraction by usingEquation 4.4.
+Solution
+From the chapter on interference, we know that the bright interference fringes occur at dsinθ=mλ, or
+mλ
+sinθ= .
+d
+FromEquation 4.4,
+2
+I =I
+⎛sinβ⎞
+, whereβ=
+ϕ
+=
+πDsinθ
+.
+0⎝ β ⎠ 2 λ
+Substituting from above,
+β=
+πDsinθ
+=
+πD
+·
+mλ
+=
+mπD
+.
+λ λ d d
+For D=2λ, d =6λ, and m=1,
+(1)π(2λ) π
+β= = .
+(6λ) 3
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 157
+Then, the intensity is
+⎛sinβ⎞ 2 ⎛sin(π/3)⎞ 2
+I =I =I =0.684I .
+0⎝ β ⎠ 0⎝ π/3 ⎠ 0
+Significance
+Notethatthisapproachisrelativelystraightforwardandgivesaresultthatisalmostexactlythesameasthemore
+complicated analysis using phasors to work out the intensity values of the double-slit interference (thin line in
+Figure 4.11).The phasor approach accounts forthe downward slope inthe diffraction intensity (blue line) so
+that the peaknear m=1 occurs at a value of θ ever so slightly smaller than we have shown here.
+Example 4.4
+Two-Slit Diffraction
+SupposethatinYoung’sexperiment,slitsofwidth0.020mmareseparatedby0.20mm.Iftheslitsareilluminated
+bymonochromaticlightofwavelength500nm,howmanybrightfringesareobservedinthecentralpeakofthe
+diffraction pattern?
+Solution
+From Equation 4.1, the angular position of the first diffraction minimum is
+θ≈ sinθ= λ = 5.0×10 −7 m =2.5×10−2 rad.
+D −5
+2.0×10 m
+Using sinθ=mλ for θ=2.5×10−2 rad, we find
+m=
+dsinθ
+=
+(0.20mm) ⎛ ⎝ 2.5×10−2 rad ⎞ ⎠
+=10,
+λ ⎛ −7 ⎞
+5.0×10 m
+⎝ ⎠
+whichisthemaximuminterferenceorderthatfitsinsidethecentralpeak.Wenotethat m= ±10 aremissing
+orders as θ matches exactly. Accordingly, we observe bright fringes for
+m=−9, −8, −7, −6, −5, −4, −3, −2, −1, 0, +1, +2, +3, +4, +5, +6, +7, +8, and +9
+for a total of 19 bright fringes.
+4.3 CheckYourUnderstandingFortheexperimentinExample4.4,showthat m=20 isalsoamissing
+order.
+Explore the effects of double-slit diffraction. In this simulation (https://openstaxcollege.org/l/
+21doubslitdiff) written by Fu-Kwun Hwang, select N =2 using the slider and see what happens when you
+control the slit width, slit separation and the wavelength. Can you make an order go “missing?”
+4.4 | Diffraction Gratings
+Learning Objectives
+By the end of this section, you will be able to:
+• Discuss the pattern obtained from diffraction gratings
+• Explain diffraction grating effects
+
+158 Chapter 4 | Diffraction
+Analyzingtheinterferenceoflightpassingthroughtwoslitslaysoutthetheoreticalframeworkofinterferenceandgivesus
+ahistoricalinsightintoThomasYoung’sexperiments.However,mostmodern-dayapplicationsofslitinterferenceusenot
+justtwoslitsbutmany,approachinginfinityforpracticalpurposes.Thekeyopticalelementiscalledadiffractiongrating,
+an important tool in optical analysis.
+Diffraction Gratings: An Infinite Number of Slits
+The analysis of multi-slit interference in Interference allows us to consider what happens when the number of slits N
+approachesinfinity.Recallthat N –2 secondarymaximaappearbetweentheprincipalmaxima.Wecanseetherewillbe
+an infinite number of secondary maxima that appear, and an infinite number of dark fringes between them. This makes
+the spacing between the fringes, and therefore the width of the maxima, infinitesimally small. Furthermore, because the
+intensityofthesecondarymaximaisproportionalto 1/N2,itapproacheszerosothatthesecondarymaximaarenolonger
+seen. What remains are only the principal maxima, now very bright and very narrow (Figure 4.12).
+Figure 4.12 (a) Intensity of light transmitted through a large number of slits. WhenN
+approaches infinity, only the principal maxima remain as very bright and very narrow lines. (b)
+A laser beam passed through a diffraction grating. (credit b: modification of work by Sebastian
+Stapelberg)
+Inreality,thenumberofslitsisnotinfinite,butitcanbeverylarge—largeenoughtoproducetheequivalenteffect.Aprime
+example is an optical element called a diffraction grating. A diffraction grating can be manufactured by carving glass
+withasharptoolinalargenumberofpreciselypositionedparallellines,withuntouchedregionsactinglikeslits(Figure
+4.13).Thistypeofgratingcanbephotographicallymassproducedrathercheaply.Becausetherecanbeover1000linesper
+millimeteracrossthegrating,whenasectionassmallasafewmillimetersisilluminatedbyanincomingray,thenumberof
+illuminated slits is effectively infinite, providing for very sharp principal maxima.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 159
+Figure 4.13 A diffraction grating can be manufactured by carving glass with a
+sharp tool in a large number of precisely positioned parallel lines.
+Diffractiongratingsworkbothfortransmissionoflight,asinFigure4.14,andforreflectionoflight,asonbutterflywings
+andtheAustralianopalinFigure 4.15.Naturaldiffractiongratingsalsooccurinthefeathersofcertainbirdssuchasthe
+hummingbird.Tiny,finger-likestructuresinregularpatternsactasreflectiongratings,producingconstructiveinterference
+that gives the feathers colors not solely due to their pigmentation. This is callediridescence.
+Figure 4.14 (a) Light passing through a diffraction grating is
+diffracted in a pattern similar to a double slit, with bright regions
+at various angles. (b) The pattern obtained for white light incident
+on a grating. The central maximum is white, and the higher-order
+maxima disperse white light into a rainbow of colors.
+
+160 Chapter 4 | Diffraction
+Figure 4.15 (a) This Australian opal and (b) butterfly wings have rows of
+reflectors that act like reflection gratings, reflecting different colors at different
+angles. (credit a: modification of work by "Opals-On-Black"/Flickr; credit b:
+modification of work by “whologwhy”/Flickr)
+Applications of Diffraction Gratings
+Wherearediffractiongratingsusedinapplications? Diffractiongratingsarecommonlyusedforspectroscopic dispersion
+and analysis of light. What makes them particularly useful is the fact that they form a sharper pattern than double slits
+do.Thatis,theirbrightfringesarenarrowerandbrighterwhiletheirdarkregionsaredarker.Diffractiongratingsarekey
+componentsofmonochromatorsused,forexample,inopticalimagingofparticularwavelengthsfrombiologicalormedical
+samples.Adiffractiongratingcanbechosentospecificallyanalyzeawavelengthemittedbymoleculesindiseasedcellsin
+abiopsysampleortohelpexcitestrategicmoleculesinthesamplewithaselectedwavelengthoflight.Anothervitaluseis
+inopticalfibertechnologieswherefibersaredesignedtoprovideoptimumperformanceatspecificwavelengths.Arangeof
+diffraction gratings are available for selecting wavelengths for such use.
+Example 4.5
+Calculating Typical Diffraction Grating Effects
+Diffractiongratingswith10,000linespercentimeterarereadilyavailable.Supposeyouhaveone,andyousend
+abeamofwhitelightthroughittoascreen2.00maway.(a)Findtheanglesforthefirst-orderdiffractionofthe
+shortestandlongestwavelengthsofvisiblelight(380and760nm,respectively).(b)Whatisthedistancebetween
+the ends of the rainbow of visible light produced on the screen for first-order interference? (SeeFigure 4.16.)
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 161
+Figure 4.16 (a) The diffraction grating considered in this
+example produces a rainbow of colors on a screen a distance
+x=2.00m from the grating. The distances along the screen
+are measured perpendicular to thex-direction. In other words,
+the rainbow pattern extends out of the page.
+(b) In a bird’s-eye view, the rainbow pattern can be seen on a
+table where the equipment is placed.
+Strategy
+Onceavalueforthediffractiongrating’sslitspacingdhasbeendetermined,theanglesforthesharplinescanbe
+found using the equation
+dsinθ=mλform=0, ±1, ±2, ....
+Sincethereare10,000linespercentimeter,eachlineisseparatedby1/10,000ofacentimeter.Onceweknowthe
+angles, we an find the distances along the screen by using simple trigonometry.
+Solution
+a. The distance between slits is d =(1cm)/10, 000=1.00×10−4 cm or1.00×10 −6 m. Let us call
+the two angles θ for violet (380 nm) and θ for red (760 nm). Solving the equation
+V R
+dsinθ =mλforsinθ ,
+V V
+mλ
+sinθ = V,
+V d
+where m=1 for the first-order and λ =380nm=3.80×10 −7 m. Substituting these values gives
+V
+−7
+sinθ = 3.80×10 m =0.380.
+V −6
+1.00×10 m
+Thus the angle θ is
+V
+θ =sin−1 0.380=22.33°.
+V
+
+162 Chapter 4 | Diffraction
+Similarly,
+−7
+sinθ = 7.60×10 m =0.760.
+R −6
+1.00×10 m
+Thus the angle θ is
+R
+θ =sin−1 0.760=49.46°.
+R
+Noticethatinbothequations,wereportedtheresultsoftheseintermediatecalculationstofoursignificant
+figures to use with the calculation in part (b).
+b. Thedistancesonthesecreenarelabeled y andy inFigure 4.16.Noticethat tanθ=y/x. Wecan
+V R
+solve for y andy . That is,
+V R
+y V = xtanθ V =(2.00m)(tan22.33°)=0.815m
+and
+y
+R
+= xtanθ R=(2.00m)(tan49.46°)=2.338m.
+The distance between them is therefore
+y −y =1.523m.
+R V
+Significance
+The large distance between the red and violet ends of the rainbow produced from the white light indicates the
+potentialthisdiffractiongratinghasasaspectroscopictool.Themoreitcanspreadoutthewavelengths(greater
+dispersion),themoredetailcanbeseeninaspectrum.Thisdependsonthequalityofthediffractiongrating—it
+must be very precisely made in addition to having closely spaced lines.
+4.4 CheckYourUnderstandingIfthelinespacingofadiffractiongratingdisnotpreciselyknown,wecan
+usealightsourcewithawell-determinedwavelengthtomeasureit.Supposethefirst-orderconstructivefringe
+of the Hβ emission line of hydrogen (λ=656.3nm) is measured at 11.36° using a spectrometer with a
+diffraction grating. What is the line spacing of this grating?
+Take the same simulation (https://openstaxcollege.org/l/21doubslitdiff) we used for double-slit
+diffraction and try increasing the number of slits from N =2 to N =3, 4, 5.... The primary peaks become
+sharper,andthesecondarypeaksbecomelessandlesspronounced.Bythetimeyoureachthemaximumnumber
+of N =20, the system is behaving much like a diffraction grating.
+4.5 | Circular Apertures and Resolution
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the diffraction limit on resolution
+• Describe the diffraction limit on beam propagation
+Lightdiffractsasitmovesthroughspace,bendingaroundobstacles,interferingconstructivelyanddestructively.Thiscan
+beusedasaspectroscopictool—adiffractiongratingdisperseslightaccordingtowavelength,forexample,andisusedto
+produce spectra—but diffraction also limits the detail we can obtain in images.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 163
+Figure4.17(a)showstheeffectofpassinglightthroughasmallcircularaperture.Insteadofabrightspotwithsharpedges,
+we obtain a spot with a fuzzy edge surrounded by circles of light. This pattern is caused by diffraction, similar to that
+producedbyasingleslit.Lightfromdifferentpartsofthecircularapertureinterferesconstructivelyanddestructively.The
+effect is most noticeable when the aperture is small, but the effect is there for large apertures as well.
+Figure 4.17 (a) Monochromatic light passed through a small circular aperture produces this
+diffraction pattern. (b) Two point-light sources that are close to one another produce overlapping images
+because of diffraction. (c) If the sources are closer together, they cannot be distinguished or resolved.
+Howdoesdiffractionaffectthedetailthatcanbeobservedwhenlightpassesthroughanaperture?Figure 4.17(b)shows
+thediffractionpatternproducedbytwopoint-lightsourcesthatareclosetooneanother.Thepatternissimilartothatfora
+singlepointsource,anditisstillpossibletotellthattherearetwolightsourcesratherthanone.Iftheyareclosertogether,
+as in Figure 4.17(c), we cannot distinguish them, thus limiting the detail or resolution we can obtain. This limit is an
+inescapable consequence of the wave nature of light.
+Diffraction limits the resolution in many situations. The acuity of our vision is limited because light passes through the
+pupil, which is the circular aperture of the eye. Be aware that the diffraction-like spreading of light is due to the limited
+diameterofalightbeam,nottheinteractionwithanaperture.Thus,lightpassingthroughalenswithadiameterDshows
+thiseffectandspreads,blurringtheimage,justaslightpassingthroughanapertureofdiameterDdoes.Thus,diffraction
+limitstheresolutionofanysystemhavingalensormirror.Telescopesarealsolimitedbydiffraction,becauseofthefinite
+diameterDof the primary mirror.
+Justwhatisthelimit?Toanswerthatquestion,considerthediffractionpatternforacircularaperture,whichhasacentral
+maximumthatiswiderandbrighterthanthemaximasurroundingit(similartoaslit)(Figure 4.18(a)).Itcanbeshown
+that,foracircularapertureofdiameterD,thefirstminimuminthediffractionpatternoccursat θ=1.22λ/D (providing
+theapertureislargecomparedwiththewavelengthoflight,whichisthecaseformostopticalinstruments).Theaccepted
+criterionfordeterminingthediffractionlimittoresolutionbasedonthisangleisknownastheRayleighcriterion,which
+was developed by Lord Rayleigh in the nineteenth century.
+Rayleigh Criterion
+Thediffractionlimittoresolutionstatesthattwoimagesarejustresolvablewhenthecenterofthediffractionpattern
+of one is directly over the first minimum of the diffraction pattern of the other (Figure 4.18(b)).
+Thefirstminimumisatanangleof θ=1.22λ/D,sothattwopointobjectsarejustresolvableiftheyareseparatedbythe
+angle
+θ=1.22 λ (4.5)
+D
+where λ isthewavelengthoflight(orotherelectromagneticradiation)andDisthediameteroftheaperture,lens,mirror,
+etc.,withwhichthetwoobjectsareobserved.Inthisexpression, θ hasunitsofradians.Thisangleisalsocommonlyknown
+as the diffraction limit.

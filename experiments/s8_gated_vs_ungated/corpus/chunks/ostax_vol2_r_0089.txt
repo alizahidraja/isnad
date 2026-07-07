@@ -1,0 +1,294 @@
+# REAL PDF — openstax_vol2.pdf, pages 554-562
+############################################################
+
+544 Chapter 12 | Sources of Magnetic Fields
+µ I (12.9)
+B = 0 1
+1 2πr
+Figure 12.9 (a) The magnetic field produced by a long straight conductor
+is perpendicular to a parallel conductor, as indicated by right-hand rule
+(RHR)-2. (b) A view from above of the two wires shown in (a), with one
+magnetic field line shown for wire 1. RHR-1 shows that the force between
+the parallel conductors is attractive when the currents are in the same
+direction. A similar analysis shows that the force is repulsive between
+currents in opposite directions.
+Thisfieldisuniformfromthewire1andperpendiculartoit,sotheforce F itexertsonalengthlofwire2isgivenby
+2
+F =IlBsinθ with sinθ=1:
+F =I lB . (12.10)
+2 2 1
+→ →
+Theforcesonthewiresareequalinmagnitude,sowejustwriteFforthemagnitudeof F . (Notethat F = − F .)
+2 1 2
+Sincethewiresareverylong,itisconvenienttothinkintermsofF/l,theforceperunitlength.Substitutingtheexpression
+for B intoEquation 12.10and rearranging terms gives
+1
+F = µ 0 I 1 I 2. (12.11)
+l 2πr
+TheratioF/listheforceperunitlengthbetweentwoparallelcurrents I and I separatedbyadistancer.Theforceis
+1 2
+attractive if the currents are in the same direction and repulsive if they are in opposite directions.
+This force is responsible for the pinch effect in electric arcs and other plasmas. The force exists whether the currents are
+in wires or not. It is only apparent if the overall charge density is zero; otherwise, the Coulomb repulsion overwhelms
+the magnetic attraction. In an electric arc, where charges are moving parallel to one another, an attractive force squeezes
+currentsintoasmallertube.Inlargecircuitbreakers,suchasthoseusedinneighborhoodpowerdistributionsystems,the
+pincheffectcanconcentrateanarcbetweenplatesofaswitchtryingtobreakalargecurrent,burnholes,andevenignitethe
+equipment.Anotherexampleofthepincheffectisfoundinthesolarplasma,wherejetsofionizedmaterial,suchassolar
+flares, are shaped by magnetic forces.
+The definition of the ampere is based on the force between current-carrying wires. Note that for long, parallel wires
+separated by 1 meter with each carrying 1 ampere, the force per meter is
+F ⎛ ⎝ 4π×10 −7 T⋅m/A ⎞ ⎠ (1A)2 −7 (12.12)
+= =2×10 N/m.
+l (2π)(1 m)
+Since µ isexactly 4π×10 −7 T⋅m/A bydefinition,andbecause 1 T=1N/(A⋅m), theforcepermeterisexactly
+0
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 545
+2×10 −7 N/m. This is the basis of the definition of the ampere.
+Infinite-lengthwiresareimpractical,soinpractice,acurrentbalanceisconstructedwithcoilsofwireseparatedbyafew
+centimeters.Forceismeasuredtodeterminecurrent.Thisalsoprovidesuswithamethodformeasuringthecoulomb.We
+measurethechargethatflowsforacurrentofoneampereinonesecond.Thatis, 1 C=1 A⋅s. Forboththeampereand
+the coulomb, the method of measuring force between conductors is the most accurate in practice.
+Example 12.4
+Calculating Forces on Wires
+Twowires,bothcarryingcurrentoutofthepage,haveacurrentofmagnitude5.0mA.Thefirstwireislocated
+at(0.0cm,3.0cm)whiletheotherwireislocatedat(4.0cm,0.0cm)asshowninFigure 12.10.Whatisthe
+magnetic force per unit length of the first wire on the second and the second wire on the first?
+Figure 12.10 Two current-carrying wires at given locations
+with currents out of the page.
+Strategy
+Each wire produces a magnetic field felt by the other wire. The distance along the hypotenuse of the triangle
+betweenthewiresistheradialdistanceusedinthecalculationtodeterminetheforceperunitlength.Sinceboth
+wires have currents flowing in the same direction, the direction of the force is toward each other.
+Solution
+The distance between the wires results from finding the hypotenuse of a triangle:
+r = (3.0 cm)2+(4.0 cm)2=5.0 cm.
+The force per unit length can then be calculated using the known currents in the wires:
+2
+⎛ 4π×10 −7 T⋅m/A ⎞⎛ 5×10 −3 A ⎞
+F ⎝ ⎠⎝ ⎠ −10
+= =1×10 N/m.
+l (2π)(5×10−2m)
+The force from the first wire pulls the second wire. The angle between the radius and thex-axis is
+θ=tan−1⎛3 cm⎞
+=36.9°.
+⎝4 cm⎠
+The unit vector for this is calculated by
+^ ^ ^ ^
+cos(36.9∘)i −sin(36.9∘)j =0.8i −0.6j.
+Therefore, the force per unit length from wire one on wire 2 is
+→
+^ ^ ^ ^
+F =(1×10 −10 N/m)×(0.8i −0.6j)=(8×10−11 i −6×10−11 j)N/m.
+l
+The force per unit length from wire 2 on wire 1 is the negative of the previous answer:
+→
+^ ^
+F =(−8×10−11 i +6×10−11 j)N/m.
+l
+
+546 Chapter 12 | Sources of Magnetic Fields
+Significance
+These wires produced magnetic fields of equal magnitude but opposite directions at each other’s locations.
+Whetherthefieldsareidenticalornot,theforcesthatthewiresexertoneachotherarealwaysequalinmagnitude
+and opposite in direction (Newton’s third law).
+12.4 Check Your Understanding Two wires, both carrying current out of the page, have a current of
+magnitude2.0mAand3.0mA,respectively.Thefirstwireislocatedat(0.0cm,5.0cm)whiletheotherwireis
+locatedat(12.0cm,0.0cm).Whatisthemagnitudeofthemagneticforceperunitlengthofthefirstwireonthe
+second and the second wire on the first?
+12.4 | Magnetic Field of a Current Loop
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how the Biot-Savart law is used to determine the magnetic field due to a current in a
+loop of wire at a point along a line perpendicular to thep lane of the loop.
+• Determine the magnetic field of an arc of current.
+ThecircularloopofFigure 12.11hasaradiusR,carriesacurrentI,andliesinthexz-plane.Whatisthemagneticfield
+due to the current at an arbitrary pointPalong the axis of the loop?
+Figure 12.11 Determining the magnetic field at pointPalong the axis of a current-carrying loop of wire.
+WecanusetheBiot-Savartlawtofindthemagneticfieldduetoacurrent.Wefirstconsiderarbitrarysegmentsonopposite
+sides of the loop to qualitatively show by the vector results that the net magnetic field direction is along the central axis
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 547
+from the loop. From there, we can use the Biot-Savart law to derive the expression for magnetic field.
+→
+LetPbeadistanceyfromthecenteroftheloop.Fromtheright-handrule,themagneticfield d B atP,producedbythe
+→ →
+currentelement Id l , isdirectedatanangle θ abovethey-axisasshown.Since d l isparallelalongthex-axisand
+^ r is in theyz-plane, the two vectors are perpendicular, so we have
+dB= µ 0 Idlsinθ = µ 0 Idl (12.13)
+4π r2 4π y2+R2
+where we have used r2=y2+R2.
+→ → →
+Now consider the magnetic field d B ′ due to the current element Id l ′, which is directly opposite Id l on the
+→
+loop.Themagnitudeof d B ′ isalsogivenbyEquation 12.13,butitisdirectedatanangle θ belowthey-axis.The
+→ →
+components of d B and d B ′ perpendicular to the y-axis therefore cancel, and in calculating the net magnetic field,
+onlythecomponentsalongthey-axisneedtobeconsidered.Thecomponentsperpendiculartotheaxisoftheloopsumto
+zero in pairs. Hence at pointP:
+→ B = ^ j ∫ dBcosθ= ^ j µ 0 I ⌠ cosθdl . (12.14)
+4π ⌡ y2+R2
+loop
+loop
+→
+For all elements d l on the wire,y,R, and cosθ are constant and are related by
+R
+cosθ= .
+y2+R2
+Now fromEquation 12.14, the magnetic field atPis
+→ ^ µ IR µ IR2 ^ (12.15)
+B = j 0 ∫ dl= 0 j
+4π(y2+R2) 3/2 2(y2+R2) 3/2
+loop
+wherewehaveused ∫ dl=2πR. Asdiscussedinthepreviouschapter,theclosedcurrentloopisamagneticdipoleof
+loop
+moment →µ =IA ^ n. For this example, A=πR2 and ^ n = ^ j, so the magnetic field atPcan also be written as
+^ (12.16)
+→ µ µj
+B = 0 .
+2π(y2+R2) 3/2
+By setting y=0 inEquation 12.16, we obtain the magnetic field at the center of the loop:
+→ µ I^ (12.17)
+B = 0 j.
+2R
+This equation becomes B= µ nI/ (2R) for a flat coil ofnloops per length. It can also be expressed as
+0
+→ µ →µ (12.18)
+B = 0 .
+2πR3
+Ifweconsider y≫R inEquation 12.16,theexpressionreducestoanexpressionknownasthemagneticfieldfroma
+dipole:
+
+548 Chapter 12 | Sources of Magnetic Fields
+→ µ →µ (12.19)
+B = 0 .
+2πy3
+Thecalculationofthemagneticfieldduetothecircularcurrentloopatpointsoff-axisrequiresrathercomplexmathematics,
+sowe’lljustlookattheresults.ThemagneticfieldlinesareshapedasshowninFigure 12.12.Noticethatonefieldline
+follows the axis of the loop. This is the field line we just found. Also, very close to the wire, the field lines are almost
+circular, like the lines of a long straight wire.
+Figure 12.12 Sketch of the magnetic field lines of a circular
+current loop.
+Example 12.5
+Magnetic Field between Two Loops
+Two loops of wire carry the same current of 10 mA, but flow in opposite directions as seen in Figure 12.13.
+Oneloopismeasuredtohavearadiusof R=50cm whiletheotherloophasaradiusof 2R=100cm. The
+distancefromthefirstlooptothepointwherethemagneticfieldismeasuredis0.25m,andthedistancefromthat
+point to the second loop is 0.75 m. What is the magnitude of the net magnetic field at pointP?
+Figure 12.13 Two loops of different radii have the same
+current but flowing in opposite directions. The magnetic field at
+pointPis measured to be zero.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 549
+Strategy
+ThemagneticfieldatpointPhasbeendeterminedinEquation12.15.Sincethecurrentsareflowinginopposite
+directions,thenetmagneticfieldisthedifferencebetweenthetwofieldsgeneratedbythecoils.Usingthegiven
+quantities in the problem, the net magnetic field is then calculated.
+Solution
+Solving for the net magnetic field usingEquation 12.15and the given quantities in the problem yields
+µ IR 2 µ IR 2
+B = 0 1 − 0 2
+3/2 3/2
+2 ⎛y 2+R 2⎞ 2 ⎛y 2+R 2⎞
+⎝ 1 1 ⎠ ⎝ 2 2 ⎠
+(4π×10 −7 T⋅m/A)(0.010A)(0.5m)2 (4π×10 −7 T⋅m/A)(0.010A)(1.0m)2
+B = −
+2((0.25m)2+(0.5m)2) 3/2 2((0.75m)2+(1.0m)2) 3/2
+B = 5.77×10 −9 Tto the right.
+Significance
+Helmholtzcoilstypicallyhaveloopswithequalradiiwithcurrentflowinginthesamedirectiontohaveastrong
+uniformfieldatthemidpointbetweentheloops.Asimilarapplicationofthemagneticfielddistributioncreatedby
+Helmholtzcoilsisfoundinamagneticbottlethatcantemporarilytrapchargedparticles.SeeMagneticForces
+and Fieldsfor a discussion on this.
+12.5 CheckYourUnderstandingUsingExample12.5,atwhatdistancewouldyouhavetomovethefirst
+coil to have zero measurable magnetic field at pointP?
+12.5 | Ampère’s Law
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how Ampère’s law relates the magnetic field produced by a current to the value of the
+current
+• Calculate the magnetic field from a long straight wire, either thin or thick, by Ampère’s law
+Afundamentalpropertyofastaticmagneticfieldisthat,unlikeanelectrostaticfield,itisnotconservative.Aconservative
+field is one that does the same amount of work on a particle moving between two different points regardless of the path
+chosen. Magnetic fields do not have such a property. Instead, there is a relationship between the magnetic field and its
+→
+source,electriccurrent.Itisexpressedintermsofthelineintegralof B andisknownasAmpère’slaw.Thislawcan
+alsobederiveddirectlyfromtheBiot-Savartlaw.Wenowconsiderthatderivationforthespecialcaseofaninfinite,straight
+wire.
+Figure 12.14 shows an arbitrary plane perpendicular to an infinite, straight wire whose current I is directed out of the
+page. The magnetic field lines are circles directed counterclockwise and centered on the wire. To begin, let’s consider
+→ →
+∮ B ·d l overtheclosedpathsMandN.Noticethatonepath(M)enclosesthewire,whereastheother(N)doesnot.
+→ →
+Since the field lines are circular, B ·d l is the product of B and the projection of dl onto the circle passing through
+→
+d l . If the radius of this particular circle isr, the projection is rdθ, and
+→ →
+B ·d l =Brdθ.
+
+550 Chapter 12 | Sources of Magnetic Fields
+Figure 12.14 The currentIof a long, straight wire is directed out of the page. The integral ∮dθ equals 2π and
+0, respectively, for pathsMandN.
+→
+With B given byEquation 12.9,
+→ → ⎛µ I⎞ µ I (12.20)
+∮ B ·d l =∮ 0 rdθ= 0 ∮dθ.
+⎝2πr⎠ 2π
+For pathM, which circulates around the wire, ∮ dθ=2π and
+M
+→ → (12.21)
+∮ B ·d l = µ I.
+0
+M
+PathN,ontheotherhand,circulatesthroughbothpositive(counterclockwise)andnegative(clockwise) dθ (seeFigure
+12.14), and since it is closed, ∮ dθ=0. Thus for pathN,
+N
+→ → (12.22)
+∮ B ·d l =0.
+N
+The extension of this result to the general case is Ampère’s law.
+Ampère’s law
+Over an arbitrary closed path,
+→ → (12.23)
+∮ B ·d l = µ I
+0
+whereIisthetotalcurrentpassingthroughanyopensurfaceSwhoseperimeteristhepathofintegration.Onlycurrents
+inside the path of integration need be considered.
+TodeterminewhetheraspecificcurrentIispositiveornegative,curlthefingersofyourrighthandinthedirectionofthe
+path of integration, as shown in Figure 12.14. If I passes through S in the same direction as your extended thumb, I is
+positive; ifIpasses throughSin the direction opposite to your extended thumb, it is negative.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 551
+Problem-Solving Strategy: Ampère’s Law
+To calculate the magnetic field created from current in wire(s), use the following steps:
+1. Identify the symmetry of the current in the wire(s). If there is no symmetry, use the Biot-Savart law to
+determine the magnetic field.
+2. Determine the direction of the magnetic field created by the wire(s) by right-hand rule 2.
+3. Chose a path loop where the magnetic field is either constant or zero.
+4. Calculate the current inside the loop.
+→ →
+5. Calculate the line integral ∮ B ·d l around the closed loop.
+→ → →
+6. Equate ∮ B ·d l with µ 0 I enc and solve for B .
+Example 12.6
+Using Ampère’s Law to Calculate the Magnetic Field Due to a Wire
+UseAmpère’slawtocalculatethemagneticfieldduetoasteadycurrentIinaninfinitelylong,thin,straightwire
+as shown inFigure 12.15.
+Figure 12.15 The possible components of the magnetic field
+Bdue to a currentI, which is directed out of the page. The radial
+component is zero because the angle between the magnetic field
+and the path is at a right angle.
+Strategy
+Consider an arbitrary plane perpendicular to the wire, with the current directed out of the page. The possible
+magnetic field components in this plane, B r and B θ, are shown at arbitrary points on a circle of radius r
+centeredonthewire.Sincethefieldiscylindricallysymmetric,neither B nor B varieswiththepositionon
+r θ
+thiscircle.Alsofromsymmetry,theradiallines,iftheyexist,mustbedirectedeitherallinwardoralloutward
+fromthewire.Thismeans,however,thattheremustbeanetmagneticfluxacrossanarbitrarycylinderconcentric
+→ →
+with the wire. The radial component of the magnetic field must be zero because B r⋅d l =0. Therefore,
+we can apply Ampère’s law to the circular path as shown.

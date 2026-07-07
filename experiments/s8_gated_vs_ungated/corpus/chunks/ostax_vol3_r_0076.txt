@@ -1,0 +1,269 @@
+# REAL PDF — openstax_vol3.pdf, pages 464-471
+############################################################
+
+456 Chapter 10 | Nuclear Physics
+Figure 10.4 Partial chart of the nuclides. For stable nuclei (dark blue backgrounds), cell values represent the percentage of
+nuclei found on Earth with the same atomic number (percent abundance). For the unstable nuclei, the number represents the half-
+life.
+Atomsthatcontainnucleiwiththesamenumberofprotons(Z)anddifferentnumbersofneutrons(N)arecalledisotopes.
+For example, hydrogen has three isotopes: normal hydrogen (1 proton, no neutrons), deuterium (one proton and one
+neutron), and tritium (one proton and two neutrons). Isotopes of a given atom share the same chemical properties, since
+thesepropertiesaredeterminedbyinteractionsbetweentheouterelectronsoftheatom,andnotthenucleons.Forexample,
+waterthatcontainsdeuteriumratherthanhydrogen(“heavywater”)looksandtasteslikenormalwater.Thefollowingtable
+shows a list of common isotopes.
+Element Symbol Mass Mass (Atomic Mass Percent Half-
+Number Units) Abundance* life**
+Hydrogen H 1 1.0078 99.99 stable
+2HorD 2 2.0141 0.01 stable
+3 3 3.0160 − 12.32 y
+H
+Carbon 12C 12 12.0000 98.91 stable
+13 13 13.0034 1.1 stable
+C
+14C 14 14.0032 − 5730 y
+Nitrogen 14N 14 14.0031 99.6 stable
+Table 10.1Common Isotopes *No entry if less than 0.001 (trace amount).
+**Stable if half-life > 10 seconds.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 457
+Element Symbol Mass Mass (Atomic Mass Percent Half-
+Number Units) Abundance* life**
+15 15 15.0001 0.4 stable
+N
+16 16 16.0061 − 7.13 s
+N
+Oxygen 16 16 15.9949 99.76 stable
+O
+17 17 16.9991 0.04 stable
+O
+18 18 17.9992 0.20 stable
+O
+19 19 19.0035 − 26.46 s
+O
+Table 10.1Common Isotopes *No entry if less than 0.001 (trace amount).
+**Stable if half-life > 10 seconds.
+Why do neutrons outnumber protons in heavier nuclei (Figure 10.5)? The answer to this question requires an
+understanding of forces inside the nucleus. Two types of forces exist: (1) the long-range electrostatic (Coulomb) force
+that makes the positively chargedprotons repel oneanother; and(2)the short-range strongnuclear force that makes all
+nucleonsinthenucleusattractoneanother.Youmayalsohaveheardofa“weak”nuclearforce.Thisforceisresponsible
+for some nuclear decays, but as the name implies, it does not play a role in stabilizing the nucleus against the strong
+Coulombrepulsionitexperiences.Wediscussstrongnuclearforceinmoredetailinthenextchapterwhenwecoverparticle
+physics. Nuclear stability occurs when the attractive forces between nucleons compensate for the repulsive, long-range
+electrostaticforcesbetweenallprotonsinthenucleus.Forheavynuclei (Z >15), excessneutronsarenecessarytokeep
+the electrostatic interactions from breaking the nucleus apart, as shown inFigure 10.3.
+Figure 10.5 (a) The electrostatic force is repulsive and has
+long range. The arrows represent outward forces on protons (in
+blue) at the nuclear surface by a proton (also in blue) at the
+center. (b) The strong nuclear force acts between neighboring
+nucleons. The arrows represent attractive forces exerted by a
+neutron (in red) on its nearest neighbors.
+Becauseoftheexistenceofstableisotopes,wemusttakespecialcarewhenquotingthemassofanelement.Forexample,
+Copper (Cu) has two stable isotopes:
+63 ⎛ ⎞
+Cu 62.929595g/mol with an abundance of69.09%
+29 ⎝ ⎠
+65 ⎛ ⎞
+Cu 64.927786g/mol with an abundance of30.91%
+29 ⎝ ⎠
+Given these two “versions” of Cu, what is the mass of this element? The atomic mass of an element is defined
+as the weighted average of the masses of its isotopes. Thus, the atomic mass of Cu is
+
+458 Chapter 10 | Nuclear Physics
+m =(62.929595)(0.6909) + (64.927786)(0.3091)=63.55g/mol. The mass of an individual nucleus is often
+Cu
+expressedinatomicmassunits(u),where u=1.66054×10 −27 kg.(Anatomicmassunitisdefinedas1/12ththemass
+ofa 12C nucleus.)Inatomicmassunits,themassofaheliumnucleus(A=4)isapproximately4u.Aheliumnucleusis
+also called an alpha (α) particle.
+Nuclear Size
+The simplest model of the nucleus is a densely packed sphere of nucleons. The volume V of the nucleus is therefore
+proportional to the number of nucleonsA, expressed by
+V = 4πr3 =kA,
+3
+whereris theradius of a nucleusandkis a constant with units of volume. Solving forr, we have
+r =r A1/3 (10.3)
+0
+where r is a constant. For hydrogen (A=1), r corresponds to the radius of a single proton. Scattering experiments
+0 0
+supportthisgeneralrelationshipforawiderangeofnuclei,andtheyimplythatneutronshaveapproximatelythesameradius
+as protons. The experimentally measured value for r is approximately 1.2 femtometer (recall that 1fm=10 −15 m).
+0
+Example 10.1
+The Iron Nucleus
+Find the radius (r) and approximate density (ρ) of a Fe-56 nucleus. Assume the mass of the Fe-56 nucleus is
+approximately 56 u.
+Strategy
+(a)Findingtheradiusof 56 Fe isastraightforwardapplicationof r =r A1/3,given A=56. (b)Tofindthe
+0
+approximatedensityofthisnucleus,assumethenucleusisspherical.Calculateitsvolumeusingtheradiusfound
+in part (a), and then find its density from ρ=m/V.
+Solution
+a. The radius of a nucleus is given by
+r =r A1/3 .
+0
+Substituting the values for r andAyields
+0
+r =(1.2fm)(56) 1/3 =(1.2fm)(3.83)
+=4.6fm.
+b. Density is defined to be ρ=m/V, which for a sphere of radiusris
+m m
+ρ= = .
+V (4/3)πr3
+Substituting known values gives
+ρ= 56u =0.138u/fm 3 .
+3
+(1.33)(3.14)(4.6fm)
+Converting to units of kg/m 3 , we find
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 459
+⎛ ⎞
+ρ=(0.138u/fm 3 )(1.66×10 −27 kg/u) 1fm =2.3×10 17 kg/m 3 .
+⎝ −15 ⎠
+10 m
+Significance
+a. The radius of the Fe-56 nucleus is found to be approximately 5 fm, so its diameter is about 10 fm, or
+10−14m. InpreviousdiscussionsofRutherford’sscatteringexperiments,alightnucleuswasestimated
+to be 10 −15 m in diameter. Therefore, the result shown for a mid-sized nucleus is reasonable.
+b. Thedensityfoundheremayseemincredible.However,itisconsistentwithearliercommentsaboutthe
+nucleuscontainingnearlyallofthemassoftheatominatinyregionofspace.Onecubicmeterofnuclear
+matter has the same mass as a cube of water 61 km on each side.
+10.1 Check YourUnderstanding Nucleus Xistwotimes largerthan nucleus Y.What isthe ratio oftheir
+atomic masses?
+10.2 | Nuclear Binding Energy
+Learning Objectives
+By the end of this section, you will be able to:
+• Calculate the mass defect and binding energy for a wide range of nuclei
+• Use a graph of binding energy per nucleon (BEN) versus mass number (A) graph to assess
+the relative stability of a nucleus
+• Compare the binding energy of a nucleon in a nucleus to the ionization energy of an electron in
+an atom
+The forces that bind nucleons together in an atomic nucleus are much greater than those that bind an electron to
+an atom through electrostatic attraction. This is evident by the relative sizes of the atomic nucleus and the atom
+(10 −15 and10 −10 m, respectively).Theenergyrequiredtopryanucleonfromthenucleusisthereforemuchlargerthan
+thatrequiredtoremove(orionize)anelectroninanatom.Ingeneral,allnuclearchangesinvolvelargeamountsofenergy
+per particle undergoing the reaction. This has numerous practical applications.
+Mass Defect
+According to nuclear particle experiments, the total mass of a nucleus (m nuc) is less than the sum of the masses of its
+constituent nucleons (protons and neutrons). The mass difference, ormass defect, is given by
+Δm=Zm p+(A−Z)m n−m
+nuc
+(10.4)
+where Zm
+p
+is the total mass of the protons, (A−Z)m
+n
+is the total mass of the neutrons, and m
+nuc
+is the mass of the
+nucleus.AccordingtoEinstein’sspecialtheoryofrelativity,massisameasureofthetotalenergyofasystem(E=mc2).
+Thus,thetotalenergyofanucleusislessthanthesumoftheenergiesofitsconstituentnucleons.Theformationofanucleus
+fromasystemofisolatedprotonsandneutronsisthereforeanexothermicreaction—meaningthatitreleasesenergy.The
+energy emitted, or radiated, in this process is (Δm)c2.
+Nowimaginethisprocessoccursinreverse.Insteadofforminganucleus,energyisputintothesystemtobreakapartthe
+nucleus (Figure 10.6). The amount of energy required is called the totalbinding energy (BE), E .
+b
+
+460 Chapter 10 | Nuclear Physics
+Binding Energy
+The binding energy is equal to the amount of energy released in forming the nucleus, and is therefore given by
+E =(Δm)c2. (10.5)
+b
+Experimental results indicate that the binding energy for a nucleus with mass number A>8 is roughly proportional to
+the total number of nucleons in the nucleus, A. The binding energy of a magnesium nucleus (24Mg), for example, is
+approximately two times greater than for the carbon nucleus (12C).
+Figure 10.6 The binding energy is the energy required to break a nucleus into its
+constituent protons and neutrons. A system of separated nucleons has a greater mass
+than a system of bound nucleons.
+Example 10.2
+Mass Defect and Binding Energy of the Deuteron
+Calculate the mass defect and the binding energy of the deuteron. The mass of the deuteron is
+m =3.34359×10 −27 kg or 1875.61MeV/c2.
+D
+Solution
+FromEquation 10.4, the mass defect for the deuteron is
+Δm =m p+m n−m
+D
+=938.28MeV/c2+939.57MeV/c2−1875.61MeV/c2
+=2.24MeV/c2.
+The binding energy of the deuteron is then
+E =(Δm)c2= ⎛ 2.24MeV/c2⎞⎛c2⎞ =2.24MeV.
+b ⎝ ⎠⎝ ⎠
+Overtwomillionelectronvoltsareneededtobreakapartadeuteronintoaprotonandaneutron.Thisverylarge
+valueindicatesthegreatstrengthofthenuclearforce.Bycomparison,thegreatestamountofenergyrequiredto
+liberateanelectronboundtoahydrogenatombyanattractiveCoulombforce(anelectromagneticforce)isabout
+10 eV.
+Graph of Binding Energy per Nucleon
+Innuclearphysics,oneofthemostimportantexperimentalquantitiesisthebindingenergypernucleon(BEN),whichis
+defined by
+E (10.6)
+BEN = b
+A
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 461
+Thisquantityistheaverageenergyrequiredtoremoveanindividualnucleonfromanucleus—analogoustotheionization
+energyofanelectroninanatom.IftheBENisrelativelylarge,thenucleusisrelativelystable.BENvaluesareestimated
+from nuclear scattering experiments.
+AgraphofbindingenergypernucleonversusatomicnumberAisgiveninFigure10.7.Thisgraphisconsideredbymany
+physiciststobeoneofthemostimportantgraphsinphysics.Twonotesareinorder.First,typicalBENvaluesrangefrom
+6–10MeV,withanaveragevalueofabout8MeV.Inotherwords,ittakesseveralmillionelectronvoltstopryanucleon
+from a typical nucleus, as compared to just 13.6 eV to ionize an electron in the ground state of hydrogen. This is why
+nuclear force is referred to as the “strong” nuclear force.
+Second,thegraphrisesatlowA,peaksveryneariron (Fe, A=56), andthentapersoffathighA.Thepeakvaluesuggests
+thattheironnucleusisthemoststablenucleusinnature(itisalsowhynuclearfusioninthecoresofstarsendswithFe).The
+reasonthegraphrisesandtapersoffhastodowithcompetingforcesinthenucleus.AtlowvaluesofA,attractivenuclear
+forces between nucleons dominate over repulsive electrostatic forces between protons. But at high values of A, repulsive
+electrostatic forcesbetweenforcesbegintodominate, andtheseforcestendtobreakapartthenucleusratherthanholdit
+together.
+Figure 10.7 In this graph of binding energy per nucleon for stable nuclei, the BEN is greatest for nuclei
+with a mass near 56 Fe. Therefore, fusion of nuclei with mass numbers much less than that of Fe, and
+fission of nuclei with mass numbers greater than that of Fe, are exothermic processes.
+Aswewillsee,theBEN-versus-Agraphimpliesthatnucleidividedorcombinedreleaseanenormousamountofenergy.
+This is the basis for a wide range of phenomena, from the production of electricity at a nuclear power plant to sunlight.
+Example 10.3
+Tightly Bound Alpha Nuclides
+Calculate the binding energy per nucleon of an 4He⎛α particle⎞.
+⎝ ⎠
+Strategy
+Determinethetotalbindingenergy(BE)usingtheequation BE=(Δm)c2, where Δm isthemassdefect.The
+binding energy per nucleon (BEN) is BE divided byA.
+
+462 Chapter 10 | Nuclear Physics
+Solution
+For 4He, we have Z =N =2. The total binding energy is
+BE= ⎧ ⎩ ⎨ ⎡ ⎣ 2m p+2m n ⎤ ⎦ −m⎛ ⎝ 4He ⎞ ⎠ ⎫ ⎭ ⎬c2.
+These masses are m⎛
+⎝
+4He ⎞
+⎠
+=4.002602u, m p=1.007825u, and m n=1.008665u. Thus we have,
+BE=(0.030378u)c2.
+Noting that 1u=931.5MeV/c2, we find
+BE =(0.030378)
+⎛ 931.5MeV/c2⎞c2
+⎝ ⎠
+=28.3MeV.
+Since A=4, the total binding energy per nucleon is
+BEN=7.07MeV/nucleon.
+Significance
+Notice that the binding energy per nucleon for 4He is much greater than for the hydrogen isotopes
+⎛only≈3MeV/nucleon⎞. Therefore,heliumnucleicannotbreakdownhydrogenisotopeswithoutenergybeing
+⎝ ⎠
+put into the system.
+10.2 Check Your Understanding If the binding energy per nucleon is large, does this make it harder or
+easier to strip off a nucleon from a nucleus?
+10.3 | Radioactive Decay
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the decay of a radioactive substance in terms of its decay constant and half-life
+• Use the radioactive decay law to estimate the age of a substance
+• Explain the natural processes that allow the dating of living tissue using 14C
+In1896,AntoineBecquereldiscoveredthatauranium-richrockemitsinvisibleraysthatcandarkenaphotographicplatein
+anenclosedcontainer.Scientistsofferthreeargumentsforthenuclearoriginoftheserays.First,theeffectsoftheradiation
+donotvarywithchemicalstate;thatis,whethertheemittingmaterialisintheformofanelementorcompound.Second,the
+radiationdoesnotvarywithchangesintemperatureorpressure—bothfactorsthatinsufficientdegreecanaffectelectrons
+inanatom.Third,theverylargeenergyoftheinvisiblerays(uptohundredsofeV)isnotconsistentwithatomicelectron
+transitions(onlyafeweV).Today,thisradiationisexplainedbytheconversionofmassintoenergydeepwithinthenucleus
+of an atom. The spontaneous emission of radiation from nuclei is called nuclearradioactivity(Figure 10.8).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

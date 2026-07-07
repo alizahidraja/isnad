@@ -1,0 +1,172 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 672-678
+############################################################
+
+660 14 • Fluid Mechanics
+surface of a fluid. The molecules of the fluid simply flow to accommodate the horizontal force. A force applied
+perpendicular to the surface compresses or expands the fluid. If you try to compress a fluid, you find that a reaction
+force develops at each point inside the fluid in the outward direction, balancing the force applied on the molecules
+at the boundary.
+Consider a fluid of constant density as shown in Figure 14.6. The pressure at the bottom of the container is due to
+the pressure of the atmosphere plus the pressure due to the weight of the fluid. The pressure due to the fluid is
+equal to the weight of the fluid divided by the area. The weight of the fluid is equal to its mass times the acceleration
+due to gravity.
+FIGURE 14.6 The bottom of this container supports the entire weight of the fluid in it. The vertical sides cannot exert an upward force on
+the fluid (since it cannot withstand a shearing force), so the bottom must support it all.
+Since the density is constant, the weight can be calculated using the density:
+The pressure at the bottom of the container is therefore equal to atmospheric pressure added to the weight of the
+fluid divided by the area:
+This equation is only good for pressure at a depth for a fluid of constant density.
+PRESSURE AT A DEPTH FOR A FLUID OF CONSTANT DENSITY
+The pressure at a depth in a fluid of constant density is equal to the pressure of the atmosphere plus the
+pressure due to the weight of the fluid, or
+14.4
+Where p is the pressure at a particular depth, is the pressure of the atmosphere, is the density of the fluid, g
+is the acceleration due to gravity, and h is the depth.
+FIGURE 14.7 The Three Gorges Dam, erected on the Yangtze River in central China in 2008, created a massive reservoir that displaced
+Access for free at openstax.org
+
+14.1 • Fluids, Density, and Pressure 661
+more than one million people. (credit: modification of work by “Le Grand Portage”/Flickr)
+EXAMPLE 14.1
+What Force Must a Dam Withstand?
+Consider the pressure and force acting on the dam retaining a reservoir of water (Figure 14.7). Suppose the dam is
+500-m wide and the water is 80.0-m deep at the dam, as illustrated below. (a) What is the average pressure on the
+dam due to the water? (b) Calculate the force exerted against the dam.
+The average pressure p due to the weight of the water is the pressure at the average depth h of 40.0 m, since
+pressure increases linearly with depth. The force exerted on the dam by the water is the average pressure times the
+area of contact,
+solution
+a. The average pressure due to the weight of a fluid is
+14.5
+Entering the density of water from Table 14.2 and taking h to be the average depth of 40.0 m, we obtain
+b. We have already found the value for p. The area of the dam is
+so that
+Significance
+Although this force seems large, it is small compared with the weight of the water in the reservoir. In
+fact, it is only 0.0800% of the weight.
+CHECK YOUR UNDERSTANDING 14.1
+If the reservoir in Example 14.1 covered twice the area, but was kept to the same depth, would the dam need to be
+redesigned?
+Pressure in a static fluid in a uniform gravitational field
+A static fluid is a fluid that is not in motion. At any point within a static fluid, the pressure on all sides must be
+equal—otherwise, the fluid at that point would react to a net force and accelerate.
+
+662 14 • Fluid Mechanics
+The pressure at any point in a static fluid depends only on the depth at that point. As discussed, pressure in a fluid
+near Earth varies with depth due to the weight of fluid above a particular level. In the above examples, we assumed
+density to be constant and the average density of the fluid to be a good representation of the density. This is a
+reasonable approximation for liquids like water, where large forces are required to compress the liquid or change
+the volume. In a swimming pool, for example, the density is approximately constant, and the water at the bottom is
+compressed very little by the weight of the water on top. Traveling up in the atmosphere is quite a different
+situation, however. The density of the air begins to change significantly just a short distance above Earth’s surface.
+To derive a formula for the variation of pressure with depth in a tank containing a fluid of density ρ on the surface of
+Earth, we must start with the assumption that the density of the fluid is not constant. Fluid located at deeper levels
+is subjected to more force than fluid nearer to the surface due to the weight of the fluid above it. Therefore, the
+pressure calculated at a given depth is different than the pressure calculated using a constant density.
+Imagine a thin element of fluid at a depth h, as shown in Figure 14.8. Let the element have a cross-sectional area A
+and height . The forces acting upon the element are due to the pressures p(y) above and below it. The
+weight of the element itself is also shown in the free-body diagram.
+FIGURE 14.8 Forces on a mass element inside a fluid. The weight of the element itself is shown in the free-body diagram.
+Since the element of fluid between y and is not accelerating, the forces are balanced. Using a Cartesian
+y-axis oriented up, we find the following equation for the y-component:
+14.6
+Note that if the element had a non-zero y-component of acceleration, the right-hand side would not be zero but
+would instead be the mass times the y-acceleration. The mass of the element can be written in terms of the density
+of the fluid and the volume of the elements:
+Putting this expression for into Equation 14.6 and then dividing both sides by , we find
+14.7
+Taking the limit of the infinitesimally thin element , we obtain the following differential equation, which
+gives the variation of pressure in a fluid:
+14.8
+Access for free at openstax.org
+
+14.1 • Fluids, Density, and Pressure 663
+This equation tells us that the rate of change of pressure in a fluid is proportional to the density of the fluid. The
+solution of this equation depends upon whether the density ρ is constant or changes with depth; that is, the function
+ρ(y).
+If the range of the depth being analyzed is not too great, we can assume the density to be constant. But if the range
+of depth is large enough for the density to vary appreciably, such as in the case of the atmosphere, there is
+significant change in density with depth. In that case, we cannot use the approximation of a constant density.
+Pressure in a fluid with a constant density
+Let’s use Equation 14.9 to work out a formula for the pressure at a depth h from the surface in a tank of a liquid such
+as water, where the density of the liquid can be taken to be constant.
+We need to integrate Equation 14.9 from where the pressure is atmospheric pressure to the
+y-coordinate of the depth:
+14.9
+Hence, pressure at a depth of fluid on the surface of Earth is equal to the atmospheric pressure plus ρgh if the
+density of the fluid is constant over the height, as we found previously.
+Note that the pressure in a fluid depends only on the depth from the surface and not on the shape of the container.
+Thus, in a container where a fluid can freely move in various parts, the liquid stays at the same level in every part,
+regardless of the shape, as shown in Figure 14.9.
+FIGURE 14.9 If a fluid can flow freely between parts of a container, it rises to the same height in each part. In the container pictured, the
+pressure at the bottom of each column is the same; if it were not the same, the fluid would flow until the pressures became equal.
+Variation of atmospheric pressure with height
+The change in atmospheric pressure with height is of particular interest. Assuming the temperature of air to be
+constant, and that the ideal gas law of thermodynamics describes the atmosphere to a good approximation, we can
+find the variation of atmospheric pressure with height, when the temperature is constant. (We discuss the ideal gas
+law in a later chapter, but we assume you have some familiarity with it from high school and chemistry.) Let p(y) be
+the atmospheric pressure at height y. The density at y, the temperature T in the Kelvin scale (K), and the mass m
+
+664 14 • Fluid Mechanics
+of a molecule of air are related to the absolute pressure by the ideal gas law, in the form
+14.10
+where is Boltzmann’s constant, which has a value of .
+You may have encountered the ideal gas law in the form , where n is the number of moles and R is the
+gas constant. Here, the same law has been written in a different form, using the density instead of volume V.
+Therefore, if pressure p changes with height, so does the density Using density from the ideal gas law, the rate of
+variation of pressure with height is given as
+where constant quantities have been collected inside the parentheses. Replacing these constants with a single
+symbol the equation looks much simpler:
+This gives the solution
+Thus, atmospheric pressure drops exponentially with height, since the y-axis is pointed up from the ground and y
+has positive values in the atmosphere above sea level. The pressure drops by a factor of when the height is
+which gives us a physical interpretation for : The constant is a length scale that characterizes how pressure
+varies with height and is often referred to as the pressure scale height.
+We can obtain an approximate value of by using the mass of a nitrogen molecule as a proxy for an air molecule. At
+temperature or 300 K, we find
+Therefore, for every 8800 meters, the air pressure drops by a factor 1/e, or approximately one-third of its value. This
+gives us only a rough estimate of the actual situation, since we have assumed both a constant temperature and a
+constant g over such great distances from Earth, neither of which is correct in reality.
+Direction of pressure in a fluid
+Fluid pressure has no direction, being a scalar quantity, whereas the forces due to pressure have well-defined
+directions: They are always exerted perpendicular to any surface. The reason is that fluids cannot withstand or exert
+shearing forces. Thus, in a static fluid enclosed in a tank, the force exerted on the walls of the tank is exerted
+perpendicular to the inside surface. Likewise, pressure is exerted perpendicular to the surfaces of any object within
+the fluid. Figure 14.10 illustrates the pressure exerted by air on the walls of a tire and by water on the body of a
+swimmer.
+Access for free at openstax.org
+
+14.2 • Measuring Pressure 665
+FIGURE 14.10 (a) Pressure inside this tire exerts forces perpendicular to all surfaces it contacts. The arrows represent directions and
+magnitudes of the forces exerted at various points. (b) Pressure is exerted perpendicular to all sides of this swimmer, since the water would
+flow into the space he occupies if he were not there. The arrows represent the directions and magnitudes of the forces exerted at various
+points on the swimmer. Note that the forces are larger underneath, due to greater depth, giving a net upward or buoyant force. The net
+vertical force on the swimmer is equal to the sum of the buoyant force and the weight of the swimmer.
+14.2 Measuring Pressure
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Define gauge pressure and absolute pressure
+• Explain various methods for measuring pressure
+• Understand the working of open-tube barometers
+• Describe in detail how manometers and barometers operate
+In the preceding section, we derived a formula for calculating the variation in pressure for a fluid in hydrostatic
+equilibrium. As it turns out, this is a very useful calculation. Measurements of pressure are important in daily life as
+well as in science and engineering applications. In this section, we discuss different ways that pressure can be
+reported and measured.
+Gauge Pressure vs. Absolute Pressure
+Suppose the pressure gauge on a full scuba tank reads 3000 psi, which is approximately 207 atmospheres. When
+the valve is opened, air begins to escape because the pressure inside the tank is greater than the atmospheric
+pressure outside the tank. Air continues to escape from the tank until the pressure inside the tank equals the
+pressure of the atmosphere outside the tank. At this point, the pressure gauge on the tank reads zero, even though
+the pressure inside the tank is actually 1 atmosphere—the same as the air pressure outside the tank.
+Most pressure gauges, like the one on the scuba tank, are calibrated to read zero at atmospheric pressure. Pressure
+readings from such gauges are called gauge pressure, which is the pressure relative to the atmospheric pressure.
+When the pressure inside the tank is greater than atmospheric pressure, the gauge reports a positive value.
+Some gauges are designed to measure negative pressure. For example, many physics experiments must take place
+in a vacuum chamber, a rigid chamber from which some of the air is pumped out. The pressure inside the vacuum
+chamber is less than atmospheric pressure, so the pressure gauge on the chamber reads a negative value.
+Unlike gauge pressure, absolute pressure accounts for atmospheric pressure, which in effect adds to the pressure
+in any fluid not enclosed in a rigid container.
+ABSOLUTE PRESSURE
+The absolute pressure, or total pressure, is the sum of gauge pressure and atmospheric pressure:
+14.11

@@ -1,0 +1,137 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 730-736
+############################################################
+
+718 15 • Oscillations
+FIGURE 15.10 Graphs of y(t), v(t), and a(t) versus t for the motion of an object on a vertical spring. The net force on the object can be
+described by Hooke’s law, so the object undergoes SHM. Note that the initial position has the vertical displacement at its maximum value A;
+v is initially zero and then negative as the object moves down; the initial acceleration is negative, back toward the equilibrium position and
+becomes zero at that point.
+15.2 Energy in Simple Harmonic Motion
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the energy conservation of the system of a mass and a spring
+• Explain the concepts of stable and unstable equilibrium points
+To produce a deformation in an object, we must do work. That is, whether you pluck a guitar string or compress a
+car’s shock absorber, a force must be exerted through a distance. If the only result is deformation, and no work goes
+Access for free at openstax.org
+
+15.2 • Energy in Simple Harmonic Motion 719
+into thermal, sound, or kinetic energy, then all the work is initially stored in the deformed object as some form of
+potential energy.
+Consider the example of a block attached to a spring on a frictionless table, oscillating in SHM. The force of the
+spring is a conservative force (which you studied in the chapter on potential energy and conservation of energy), and
+we can define a potential energy for it. This potential energy is the energy stored in the spring when the spring is
+extended or compressed. In this case, the block oscillates in one dimension with the force of the spring acting
+parallel to the motion:
+When considering the energy stored in a spring, the equilibrium position, marked as is the position at
+which the energy stored in the spring is equal to zero. When the spring is stretched or compressed a distance x, the
+potential energy stored in the spring is
+Energy and the Simple Harmonic Oscillator
+To study the energy of a simple harmonic oscillator, we need to consider all the forms of energy. Consider the
+example of a block attached to a spring, placed on a frictionless surface, oscillating in SHM. The potential energy
+stored in the deformation of the spring is
+In a simple harmonic oscillator, the energy oscillates between kinetic energy of the mass and potential
+energy stored in the spring. In the SHM of the mass and spring system, there are no dissipative forces,
+so the total energy is the sum of the potential energy and kinetic energy. In this section, we consider the
+conservation of energy of the system. The concepts examined are valid for all simple harmonic oscillators, including
+those where the gravitational force plays a role.
+Consider Figure 15.11, which shows an oscillating block attached to a spring. In the case of undamped SHM, the
+energy oscillates back and forth between kinetic and potential, going completely from one form of energy to the
+other as the system oscillates. So for the simple example of an object on a frictionless surface attached to a spring,
+the motion starts with all of the energy stored in the spring as elastic potential energy. As the object starts to move,
+the elastic potential energy is converted into kinetic energy, becoming entirely kinetic energy at the equilibrium
+position. The energy is then converted back into elastic potential energy by the spring as it is stretched or
+compressed. The velocity becomes zero when the kinetic energy is completely converted, and this cycle then
+repeats. Understanding the conservation of energy in these cycles will provide extra insight here and in later
+applications of SHM, such as alternating circuits.
+
+720 15 • Oscillations
+FIGURE 15.11 The transformation of energy in SHM for an object attached to a spring on a frictionless surface. (a) When the mass is at the
+position , all the energy is stored as potential energy in the spring . The kinetic energy is equal to zero because the
+velocity of the mass is zero. (b) As the mass moves toward , the mass crosses the position . At this point, the spring is neither
+extended nor compressed, so the potential energy stored in the spring is zero. At , the total energy is all kinetic energy where
+. (c) The mass continues to move until it reaches where the mass stops and starts moving toward . At
+the position , the total energy is stored as potential energy in the compressed and the kinetic energy is zero. (d) As
+the mass passes through the position , the kinetic energy is and the potential energy stored in the spring is zero. (e)
+The mass returns to the position , where and .
+Consider Figure 15.11, which shows the energy at specific points on the periodic motion. While staying constant, the
+energy oscillates between the kinetic energy of the block and the potential energy stored in the spring:
+The motion of the block on a spring in SHM is defined by the position with a velocity of
+. Using these equations, the trigonometric identity and , we
+can find the total energy of the system:
+The total energy of the system of a block and a spring is equal to the sum of the potential energy stored in the spring
+plus the kinetic energy of the block and is proportional to the square of the amplitude The total
+energy of the system is constant.
+A closer look at the energy of the system shows that the kinetic energy oscillates like a sine-squared function, while
+the potential energy oscillates like a cosine-squared function. However, the total energy for the system is constant
+and is proportional to the amplitude squared. Figure 15.12 shows a plot of the potential, kinetic, and total energies
+of the block and spring system as a function of time. Also plotted are the position and velocity as a function of time.
+Before time the block is attached to the spring and placed at the equilibrium position. Work is done on the
+Access for free at openstax.org
+
+15.2 • Energy in Simple Harmonic Motion 721
+block by applying an external force, pulling it out to a position of . The system now has potential energy
+stored in the spring. At time the position of the block is equal to the amplitude, the potential energy
+stored in the spring is equal to , and the force on the block is maximum and points in the negative
+x-direction . The velocity and kinetic energy of the block are zero at time At time
+the block is released from rest.
+FIGURE 15.12 Graph of the kinetic energy, potential energy, and total energy of a block oscillating on a spring in SHM. Also shown are the
+graphs of position versus time and velocity versus time. The total energy remains constant, but the energy oscillates between kinetic
+energy and potential energy. When the kinetic energy is maximum, the potential energy is zero. This occurs when the velocity is maximum
+and the mass is at the equilibrium position. The potential energy is maximum when the speed is zero. The total energy is the sum of the
+kinetic energy plus the potential energy and it is constant.
+Oscillations About an Equilibrium Position
+We have just considered the energy of SHM as a function of time. Another interesting view of the simple harmonic
+oscillator is to consider the energy as a function of position. Figure 15.13 shows a graph of the energy versus
+position of a system undergoing SHM.
+FIGURE 15.13 A graph of the kinetic energy (red), potential energy (blue), and total energy (green) of a simple harmonic oscillator. The
+force is equal to . The equilibrium position is shown as a black dot and is the point where the force is equal to zero. The force is
+positive when , negative when , and equal to zero when .
+The potential energy curve in Figure 15.13 resembles a bowl. When a marble is placed in a bowl, it settles to the
+equilibrium position at the lowest point of the bowl . This happens because a restoring force points toward
+
+722 15 • Oscillations
+the equilibrium point. This equilibrium point is sometimes referred to as a fixed point. When the marble is disturbed
+to a different position , the marble oscillates around the equilibrium position. Looking back at the graph of
+potential energy, the force can be found by looking at the slope of the potential energy graph . Since the
+force on either side of the fixed point points back toward the equilibrium point, the equilibrium point is called a
+stable equilibrium point. The points and are called the turning points. (See Potential Energy and
+Conservation of Energy.)
+Stability is an important concept. If an equilibrium point is stable, a slight disturbance of an object that is initially at
+the stable equilibrium point will cause the object to oscillate around that point. The stable equilibrium point occurs
+because the force on either side is directed toward it. For an unstable equilibrium point, if the object is disturbed
+slightly, it does not return to the equilibrium point.
+Consider the marble in the bowl example. If the bowl is right-side up, the marble, if disturbed slightly, will oscillate
+around the stable equilibrium point. If the bowl is turned upside down, the marble can be balanced on the top, at
+the equilibrium point where the net force is zero. However, if the marble is disturbed slightly, it will not return to the
+equilibrium point, but will instead roll off the bowl. The reason is that the force on either side of the equilibrium
+point is directed away from that point. This point is an unstable equilibrium point.
+Figure 15.14 shows three conditions. The first is a stable equilibrium point (a), the second is an unstable equilibrium
+point (b), and the last is also an unstable equilibrium point (c), because the force on only one side points toward the
+equilibrium point.
+FIGURE 15.14 Examples of equilibrium points. (a) Stable equilibrium point; (b) unstable equilibrium point; (c) unstable equilibrium point
+(sometimes referred to as a half-stable equilibrium point).
+The process of determining whether an equilibrium point is stable or unstable can be formalized. Consider the
+potential energy curves shown in Figure 15.15. The force can be found by analyzing the slope of the graph. The force
+is In (a), the fixed point is at When the force is positive. When the
+force is negative. This is a stable point. In (b), the fixed point is at When the force is
+negative. When the force is also negative. This is an unstable point.
+Access for free at openstax.org
+
+15.2 • Energy in Simple Harmonic Motion 723
+FIGURE 15.15 Two examples of a potential energy function. The force at a position is equal to the negative of the slope of the graph at that
+position. (a) A potential energy function with a stable equilibrium point. (b) A potential energy function with an unstable equilibrium point.
+This point is sometimes called half-stable because the force on one side points toward the fixed point.
+A practical application of the concept of stable equilibrium points is the force between two neutral atoms in a
+molecule. If two molecules are in close proximity, separated by a few atomic diameters, they can experience an
+attractive force. If the molecules move close enough so that the electron shells of the other electrons overlap, the
+force between the molecules becomes repulsive. The attractive force between the two atoms may cause the atoms
+to form a molecule. The force between the two molecules is not a linear force and cannot be modeled simply as two
+masses separated by a spring, but the atoms of the molecule can oscillate around an equilibrium point when
+displaced a small amount from the equilibrium position. The atoms oscillate due the attractive force and repulsive
+force between the two atoms.
+Consider one example of the interaction between two atoms known as the van Der Waals interaction. It is beyond
+the scope of this chapter to discuss in depth the interactions of the two atoms, but the oscillations of the atoms can
+be examined by considering one example of a model of the potential energy of the system. One suggestion to model
+the potential energy of this molecule is with the Lennard-Jones 6-12 potential:
+A graph of this function is shown in Figure 15.16. The two parameters and are found experimentally.

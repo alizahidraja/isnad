@@ -1,0 +1,230 @@
+# REAL PDF — openstax_vol3.pdf, pages 360-366
+############################################################
+
+352 Chapter 7 | Quantum Mechanics
+transitionfromthe (n+1) statetothenstateandemitsa
+7.6The Quantum Tunneling of Particles
+450-nm photon, what is its frequency?
+through Potential Barriers
+62. Vibrations of the hydrogen molecule H can be 69. Show that the wave function in (a) Equation 7.68
+2
+modeled as a simple harmonic oscillator with the spring satisfiesEquation7.61,and(b)Equation7.69satisfies
+Equation 7.63.
+constant k=1.13×10 3 N/m and mass
+m=1.67×10 −27 kg. (a) What is the vibrational
+70. A 6.0-eV electron impacts on a barrier with height
+frequency of this molecule? (b) What are the energy and 11.0 eV. Find the probability of the electron to tunnel
+the wavelength of the emitted photon when the molecule through the barrier if the barrier width is (a) 0.80 nm and
+makes transition between its third and second excited (b) 0.40 nm.
+states?
+71. A 5.0-eV electron impacts on a barrier of with 0.60
+63. A particle with mass 0.030 kg oscillates back-and- nm. Find the probability of the electron to tunnel through
+forthonaspringwithfrequency4.0Hz.Attheequilibrium thebarrierifthebarrierheightis(a)7.0eV;(b)9.0eV;and
+position, it has a speed of 0.60 m/s. If the particle is in a (c) 13.0 eV.
+state of definite energy, find its energy quantum number.
+72. A12.0-eVelectronencountersabarrierofheight15.0
+64. Find the expectation value 〈 x 2〉 of the square eV.Iftheprobabilityoftheelectrontunnelingthroughthe
+barrier is 2.5 %, find its width.
+of the position for a quantum harmonic oscillator in the
+ground state. Note: ∫ +∞ dxx 2e −a x 2 = π(2a 3/2 ) −1. 73. A quantum particle with initial kinetic energy 32.0
+−∞ eV encounters a square barrier with height 41.0 eV and
+width 0.25 nm. Find probability that the particle tunnels
+65. Determine the expectation value of the potential throughthisbarrieriftheparticleis(a)anelectronand,(b)
+energy for a quantum harmonic oscillator in the ground a proton.
+state. Use this to calculate the expectation value of the
+kinetic energy. 74. A simple model of a radioactive nuclear decay
+assumes that α-particles are trapped inside a well of
+66. Verify that ψ (x) given by Equation 7.57 is a nuclearpotentialthatwallsarethebarriersofafinitewidth
+1
+solution of Schrӧdinger’s equation for the quantum 2.0fmandheight30.0MeV.Findthetunnelingprobability
+harmonic oscillator. across the potential barrier of the wall for α-particles
+havingkineticenergy(a)29.0MeVand(b)20.0MeV.The
+67. Estimate the ground state energy of the quantum mass of the α-particle is m=6.64×10 −27 kg.
+harmonic oscillator by Heisenberg’s uncertainty principle.
+Startbyassumingthattheproductoftheuncertainties Δx
+75. A muon, a quantum particle with a mass
+and Δp isatitsminimum.Write Δp intermsof Δx and
+approximately200timesthatofanelectron,isincidenton
+assume that for the ground state x≈Δx and p≈Δp, a potential barrier of height 10.0 eV. The kinetic energy
+oftheimpactingmuonis5.5eVandonlyabout0.10%of
+then write the ground state energy in terms of x. Finally,
+thesquaredamplitudeofitsincomingwavefunctionfilters
+find the value of x that minimizes the energy and find the
+through the barrier. What is the barrier’s width?
+minimum of the energy.
+76. Agrainofsandwithmass1.0mgandkineticenergy
+68. A mass of 0.250 kg oscillates on a spring with the
+1.0 J is incident on a potential energy barrier with height
+forceconstant110N/m.Calculatethegroundenergylevel
+1.000001Jandwidth2500nm.Howmanygrainsofsand
+and the separation between the adjacent energy levels.
+have to fall on this barrier before, on the average, one
+Express the results in joules and in electron-volts. Are
+passes through?
+quantum effects important?
+ADDITIONAL PROBLEMS
+77. Showthatiftheuncertaintyinthepositionofaparticle its momentum.
+is on the order of its de Broglie’s wavelength, then the
+uncertaintyinitsmomentumisontheorderofthevalueof 78. The mass of a ρ-meson is measured to be
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 353
+770MeV/c2 with an uncertainty of 100MeV/c2. 84. Consideraninfinitesquarewellwithwallboundaries
+Estimate the lifetime of this meson.
+x=0 and x=L. Explain why the function
+ψ(x)= Acoskx is not a solution to the stationary
+79. A particle of mass m is confined to a box of width Schrӧdinger equation for the particle in a box.
+L. If the particle is in the first excited state, what are the
+probabilities of finding the particle in a region of width 85. Atoms in a crystal lattice vibrate in simple harmonic
+0.020 L around the given point x: (a) x=0.25L; (b) motion. Assuming a lattice atom has a mass of
+x=0.40L; (c) x=0.75L; and (d) x=0.90L. 9.4×10 −26 kg,whatistheforceconstantofthelatticeif
+a lattice atom makes a transition from the ground state to
+80. A particle in a box [0;L] is in the third excited state. first excited state when it absorbs a 525-µm photon?
+What are its most probable positions?
+86. A diatomic molecule behaves like a quantum
+81. A0.20-kgbilliardballbouncesbackandforthwithout
+harmonic oscillator with the force constant 12.0 N/m and
+losing its energy between the cushions of a 1.5 m long
+table.(a)Iftheballisinitsgroundstate,howmanyyears mass 5.60×10 −26 kg.(a)Whatisthewavelengthofthe
+doesitneedtogetfromonecushiontotheother?Youmay emitted photon when the molecule makes the transition
+compare this time interval to the age of the universe. (b) fromthethirdexcitedstatetothesecondexcitedstate?(b)
+Howmuchenergyisrequiredtomaketheballgofromits Findthegroundstateenergyofvibrationsforthisdiatomic
+ground state to its first excited state? Compare it with the molecule.
+kinetic energy of the ball moving at 2.0 m/s.
+87. Anelectronwithkineticenergy2.0MeVencountersa
+82. Find the expectation value of the position squared potentialenergybarrierofheight16.0MeVandwidth2.00
+whentheparticleintheboxisinitsthirdexcitedstateand nm.Whatistheprobabilitythattheelectronemergesonthe
+the length of the box isL. other side of the barrier?
+83. Consideraninfinitesquarewellwithwallboundaries 88. A beam of mono-energetic protons with energy 2.0
+x=0 and x=L. Show that the function MeVfallsonapotentialenergybarrierofheight20.0MeV
+ψ(x)= Asinkx is the solution to the stationary and of width 1.5 fm. What percentage of the beam is
+transmitted through the barrier?
+Schrӧdinger equation for the particle in a box only if
+k= 2mE/ℏ. Explain why this is an acceptable wave
+function only ifkis an integer multiple of π/L.
+CHALLENGE PROBLEMS
+89. Anelectroninalong,organicmoleculeusedinadye 91. IfSTMistodetectsurfacefeatureswithlocalheights
+laser behaves approximately like a quantum particle in a of about 0.00200 nm, what percent change in tunneling-
+boxwithwidth4.18nm.Findtheemittedphotonwhenthe electron current must the STM electronics be able to
+electronmakesatransitionfromthefirstexcitedstatetothe detect? Assume that the tunneling-electron current has
+ground state and from the second excited state to the first characteristics given in the preceding problem.
+excited state.
+92. UseHeisenberg’suncertaintyprincipletoestimatethe
+90. InSTM,anelevationofthetipabovethesurfacebeing ground state energy of a particle oscillating on an spring
+scannedcanbedeterminedwithagreatprecision,because with angular frequency, ω= k/m, where k is the spring
+the tunneling-electron current between surface atoms and
+constant andmis the mass.
+theatomsofthetipisextremelysensitivetothevariationof
+theseparationgapbetweenthemfrompointtopointalong
+thesurface.Assumingthatthetunneling-electroncurrentis
+93. Supposeaninfinitesquarewellextendsfrom −L/2 to
+indirectproportiontothetunnelingprobabilityandthatthe +L/2.Solvethetime-independentSchrӧdinger’sequation
+tunnelingprobabilityistoagoodapproximationexpressed to find the allowed energies and stationary states of a
+by the exponential function e
+−2βL
+with β=10.0/nm,
+particle with mass m that is confined to this well. Then
+show that these solutions can be obtained by making the
+determinetheratioofthetunnelingcurrentwhenthetipis coordinate transformation x′= x−L/2 for the solutions
+0.500 nm above the surface to the current when the tip is
+obtained for the well extending between 0 andL.
+0.515 nm above the surface.
+
+354 Chapter 7 | Quantum Mechanics
+94. A particle ofmass m confined to a boxofwidth L is (whichistheexpectationvalueoftheposition).(b)Where
+initsfirstexcitedstate ψ (x).(a)Finditsaverageposition is the particle most likely to be found?
+2
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 355
+8 | ATOMIC STRUCTURE
+Figure 8.1 NGC1763 is an emission nebula in the Large Magellanic Cloud, which is a satellite galaxy to our Milky Way
+Galaxy. The colors we see can be explained by applying the ideas of quantum mechanics to atomic structure. (credit:
+modification of work by NASA, ESA, and Josh Lake)
+Chapter Outline
+8.1The Hydrogen Atom
+8.2Orbital Magnetic Dipole Moment of the Electron
+8.3Electron Spin
+8.4The Exclusion Principle and the Periodic Table
+8.5Atomic Spectra and X-rays
+8.6Lasers
+Introduction
+Inthischapter,weusequantummechanicstostudythestructureandpropertiesofatoms.Thisstudyintroducesideasand
+concepts that are necessary to understand more complex systems, such as molecules, crystals, and metals. As we deepen
+ourunderstandingofatoms,webuildonthingswealreadyknow,suchasRutherford’snuclearmodeloftheatom,Bohr’s
+model of the hydrogen atom, and de Broglie’s wave hypothesis.
+Figure8.1isNGC1763,anemissionnebulainthesmallgalaxyknownastheLargeMagellanicCloud,whichisasatellite
+oftheMilkyWayGalaxy.Ultravioletlightfromhotstarsionizesthehydrogenatomsinthenebula.Asprotonsandelectrons
+recombine,radiationofdifferentfrequenciesisemitted.Thedetailsofthisprocesscanbecorrectlypredictedbyquantum
+mechanics and are examined in this chapter.
+
+356 Chapter 8 | Atomic Structure
+8.1 | The Hydrogen Atom
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the hydrogen atom in terms of wave function, probability density, total energy, and
+orbital angular momentum
+• Identify the physical significance of each of the quantum numbers (n, l, m) of the hydrogen
+atom
+• Distinguish between the Bohr and Schrödinger models of the atom
+• Use quantum numbers to calculate important information about the hydrogen atom
+Thehydrogenatomisthesimplestatominnatureand,therefore,agoodstartingpointtostudyatomsandatomicstructure.
+Thehydrogenatomconsistsofasinglenegativelychargedelectronthatmovesaboutapositivelychargedproton(Figure
+8.2).InBohr’smodel,theelectronispulledaroundtheprotoninaperfectlycircularorbitbyanattractiveCoulombforce.
+Theprotonisapproximately1800timesmoremassivethantheelectron,sotheprotonmovesverylittleinresponsetothe
+forceontheprotonbytheelectron.(ThisisanalogoustotheEarth-Sunsystem,wheretheSunmovesverylittleinresponse
+totheforceexertedonitbyEarth.)AnexplanationofthiseffectusingNewton’slawsisgiveninPhotons and Matter
+Waves.
+Figure 8.2 A representation of theBohr modelof the
+hydrogen atom.
+With the assumption of a fixed proton, we focus on the motion of the electron.
+In the electric field of the proton, the potential energy of the electron is
+e2 (8.1)
+U(r)=−k r ,
+where k=1/4πε andristhedistancebetweentheelectronandtheproton.Aswesawearlier,theforceonanobjectis
+0
+equaltothenegativeofthegradient(orslope)ofthepotentialenergyfunction.Forthespecialcaseofahydrogenatom,the
+force between the electron and proton is an attractive Coulomb force.
+Notice that the potential energyfunction U(r)doesnotvaryintime. Asaresult, Schrödinger’sequation ofthe hydrogen
+atomreducestotwosimplerequations:onethatdependsonlyonspace(x,y,z)andanotherthatdependsonlyontime(t).
+(Theseparationofawavefunctionintospace-andtime-dependentpartsfortime-independentpotentialenergyfunctionsis
+discussed inQuantum Mechanics.) We are most interested in the space-dependent equation:
+− 2m ℏ2 e ⎛ ⎝ ⎜ ∂ ∂ 2 x ψ 2 + ∂ ∂ 2 y ψ 2 + ∂ ∂ 2 z ψ 2 ⎞ ⎠ ⎟−k e r 2 ψ =Eψ, (8.2)
+where ψ =ψ(x, y, z) isthethree-dimensionalwavefunctionoftheelectron, m
+e
+isthemassoftheelectron,andEisthe
+totalenergyoftheelectron.Recallthatthetotalwavefunction Ψ(x, y, z, t), istheproductofthespace-dependentwave
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 357
+function ψ =ψ(x, y, z) and the time-dependent wave function φ=φ(t).
+Inadditiontobeingtime-independent,U(r)isalsosphericallysymmetrical.ThissuggeststhatwemaysolveSchrödinger’s
+equation more easily if we express it in terms of the spherical coordinates (r,θ,ϕ) instead of rectangular coordinates
+(x, y, z). A spherical coordinate system is shown in Figure 8.3. In spherical coordinates, the variable r is the radial
+coordinate, θ isthepolarangle(relativetotheverticalz-axis),and ϕ istheazimuthalangle(relativetothex-axis).The
+relationship between spherical and rectangular coordinates is x=rsinθcosϕ, y=rsinθsinϕ, z=rcosθ.
+Figure 8.3 The relationship between the spherical and
+rectangular coordinate systems.
+The factor rsinθ is the magnitude of a vector formed by the projection of the polar vector onto the xy-plane. Also, the
+coordinatesofxandyareobtainedbyprojectingthisvectorontothex-andy-axes,respectively.Theinversetransformation
+gives
+⎛ ⎞
+r = x2+y2+z2, θ=cos−1⎛ ⎝r z⎞ ⎠ , ϕ=cos−1⎜ x ⎟.
+⎝ x2+y2⎠
+Schrödinger’s wave equation for the hydrogen atom in spherical coordinates is discussed in more advanced courses in
+modern physics, so we do not consider it in detail here. However, due to the spherical symmetry of U(r), this equation
+reducestothreesimplerequations:oneforeachofthethreecoordinates (r, θ, andϕ). Solutionstothetime-independent
+wave function are written as a product of three functions:
+ψ(r, θ, ϕ)=R(r)Θ(θ)Φ(ϕ),
+where Risthe radial function dependent onthe radial coordinate ronly; Θ isthe polar function dependent onthe polar
+coordinate θ only;and Φ isthephifunctionof ϕ only.ValidsolutionstoSchrödinger’sequation ψ(r, θ, ϕ) arelabeled
+by the quantum numbersn,l, andm.
+n: principal quantum number
+l: angular momentum quantum number
+m: angular momentum projection quantum number
+(Thereasonsforthesenameswillbeexplainedinthenextsection.)TheradialfunctionRdependsonlyonnandl;thepolar
+function Θ depends only on l and m; and the phi function Φ depends only on m. The dependence of each function on
+quantum numbers is indicated with subscripts:
+ψ nlm(r, θ, ϕ)=R nl(r)Θlm(θ)Φm(ϕ).
+Not all sets of quantum numbers (n, l, m) are possible. For example, the orbital angular quantum number l can never be
+greater or equal to the principal quantum number n(l<n). Specifically, we have

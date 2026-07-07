@@ -1,0 +1,174 @@
+# REAL PDF — openstax_vol2.pdf, pages 195-200
+############################################################
+
+Chapter 5 | Electric Charges and Fields 185
+Figure 5.6 A Leyden jar (an early version of what is now
+called a capacitor) allowed experimenters to store large amounts
+of electric charge. Benjamin Franklin used such a jar to
+demonstrate that lightning behaved exactly like the electricity he
+got from the equipment in his laboratory.
+Franklin pointed out that the observed behavior could be explained by supposing that one of the two types of charge
+remainedmotionless,whiletheothertypeofchargeflowedfromonepieceoffoiltotheother.Hefurthersuggestedthat
+anexcessofwhathecalledthis“electricalfluid”becalled“positiveelectricity”andthedeficiencyofitbecalled“negative
+electricity.”Hissuggestion,withsomeminormodifications,isthemodelweusetoday.(Withtheexperimentsthathewas
+abletodo,thiswasapureguess;hehadnowayofactuallydeterminingthesignofthemovingcharge.Unfortunately,he
+guessed wrong; we now know that the charges that flow are the ones Franklin labeled negative, and the positive charges
+remainlargelymotionless.Fortunately,aswe’llsee,itmakesnopracticalortheoreticaldifferencewhichchoicewemake,
+as long as we stay consistent with our choice.)
+Let’s list the specific observations that we have of thiselectric force:
+• The force acts without physical contact between the two objects.
+• Theforcecanbeeitherattractiveorrepulsive:Iftwointeractingobjectscarrythesamesignofcharge,theforceis
+repulsive;ifthechargesareofoppositesign,theforceisattractive.Theseinteractionsarereferredtoaselectrostatic
+repulsionandelectrostatic attraction, respectively.
+• Not all objects are affected by this force.
+• The magnitude of the force decreases (rapidly) with increasing separation distance between the objects.
+Tobemoreprecise,wefindexperimentallythatthemagnitudeoftheforcedecreasesasthesquareofthedistancebetween
+thetwointeractingobjectsincreases.Thus,forexample,whenthedistancebetweentwointeractingobjectsisdoubled,the
+forcebetweenthemdecreasestoonefourthwhatitwasintheoriginalsystem.Wecanalsoobservethatthesurroundingsof
+the charged objects affect the magnitude of the force. However, we will explore this issue in a later chapter.
+Properties of Electric Charge
+In addition to the existence of two types of charge, several other properties of charge have been discovered.
+
+186 Chapter 5 | Electric Charges and Fields
+• Chargeisquantized.Thismeansthatelectricchargecomesindiscreteamounts,andthereisasmallestpossible
+amountofchargethatanobjectcanhave.IntheSIsystem,thissmallestamountis e≡1.602×10 −19 C.Nofree
+particle canhavelesschargethanthis,and,therefore, thechargeonanyobject—the chargeonallobjects—must
+beanintegermultipleofthisamount.Allmacroscopic,chargedobjectshavechargebecauseelectronshaveeither
+been added or taken away from them, resulting in a net charge.
+• The magnitude of the charge is independent of the type. Phrased another way, the smallest possible positive
+charge (to four significant figures) is +1.602×10 −19 C, and the smallest possible negative charge is
+−1.602×10 −19 C;thesevaluesareexactlyequal.Thisissimplyhowthelawsofphysicsinouruniverseturned
+out.
+• Chargeisconserved.Chargecanneitherbecreatednordestroyed;itcanonlybetransferredfromplacetoplace,
+fromoneobjecttoanother.Frequently,wespeakoftwocharges“canceling”;thisisverbalshorthand.Itmeansthat
+iftwoobjectsthathaveequalandoppositechargesarephysicallyclosetoeachother,thenthe(oppositelydirected)
+forcestheyapplyonsomeotherchargedobjectcancel,foranetforceofzero.Itisimportantthatyouunderstand
+that the charges on the objects by no means disappear, however. The net charge of the universe is constant.
+• Charge is conserved in closed systems. In principle, if a negative charge disappeared from your lab bench and
+reappearedontheMoon,conservationofchargewouldstillhold.However,thisneverhappens.Ifthetotalcharge
+youhaveinyourlocalsystemonyourlabbenchischanging,therewillbeameasurableflowofchargeintoorout
+ofthesystem.Again,chargescananddomovearound,andtheireffectscananddocancel,butthenetchargein
+yourlocalenvironment(ifclosed)isconserved.Thelasttwoitemsarebothreferredtoasthelawofconservation
+of charge.
+The Source of Charges: The Structure of the Atom
+Onceitbecameclearthatallmatterwascomposedofparticlesthatcametobecalledatoms,italsoquicklybecameclearthat
+theconstituentsoftheatomincludedbothpositivelychargedparticlesandnegativelychargedparticles.Thenextquestion
+was, what are the physical properties of those electrically charged particles?
+Thenegativelychargedparticlewasthefirstonetobediscovered.In1897,theEnglishphysicistJ.J.Thomsonwasstudying
+what was then known as cathode rays. Some years before, the English physicist William Crookes had shown that these
+“rays” were negatively charged, but his experiments were unable to tell any more than that. (The fact that they carried a
+negativeelectricchargewasstrongevidencethatthesewerenotraysatall,butparticles.)Thomsonpreparedapurebeamof
+theseparticlesandsentthemthroughcrossedelectricandmagneticfields,andadjustedthevariousfieldstrengthsuntilthe
+netdeflectionofthebeamwaszero.Withthisexperiment,hewasabletodeterminethecharge-to-massratiooftheparticle.
+Thisratioshowedthatthemassoftheparticlewasmuchsmallerthanthatofanyotherpreviouslyknownparticle—1837
+times smaller, in fact. Eventually, this particle came to be called theelectron.
+Sincetheatomasawholeiselectricallyneutral,thenextquestionwastodeterminehowthepositiveandnegativecharges
+are distributed within the atom. Thomson himself imagined that his electrons were embedded within a sort of positively
+charged paste, smeared out throughout the volume of the atom. However, in 1908, the New Zealand physicist Ernest
+Rutherford showed that the positive charges of the atom existed within a tiny core—called a nucleus—that took up only
+a very tiny fraction of the overall volume of the atom, but held over 99% of the mass. (See Linear Momentum and
+Collisions (http://cnx.org/content/m58317/latest/) .) In addition, he showed that the negatively charged electrons
+perpetuallyorbitedaboutthisnucleus,formingasortofelectricallychargedcloudthatsurroundsthenucleus(Figure5.7).
+Rutherford concluded that the nucleus was constructed of small, massive particles that he namedprotons.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 187
+Figure 5.7 This simplified model of a hydrogen atom shows a
+positively charged nucleus (consisting, in the case of hydrogen, of a
+single proton), surrounded by an electron “cloud.” The charge of the
+electron cloud is equal (and opposite in sign) to the charge of the
+nucleus, but the electron does not have a definite location in space;
+hence, its representation here is as a cloud. Normal macroscopic
+amounts of matter contain immense numbers of atoms and
+molecules, and, hence, even greater numbers of individual negative
+and positive charges.
+Since it was known that different atoms have different masses, and that ordinarily atoms are electrically neutral, it was
+natural to suppose that different atoms have different numbers of protons in their nucleus, with an equal number of
+negatively charged electrons orbiting about the positively charged nucleus, thus making the atoms overall electrically
+neutral.However,itwassoondiscoveredthatalthoughthelightestatom,hydrogen,didindeedhaveasingleprotonasits
+nucleus, the next heaviest atom—helium—has twice the number of protons (two), butfourtimes the mass of hydrogen.
+This mystery was resolved in 1932 by the English physicist James Chadwick, with the discovery of the neutron. The
+neutronis,essentially,anelectricallyneutraltwinoftheproton,withnoelectriccharge,but(nearly)identicalmasstothe
+proton. The helium nucleus therefore has two neutrons along with its two protons. (Later experiments were to show that
+although the neutron is electrically neutral overall, it does have an internal charge structure. Furthermore, although the
+massesoftheneutronandtheprotonarenearlyequal,theyaren’texactlyequal:Theneutron’smassisveryslightlylarger
+thanthemassoftheproton.Thatslightmassexcessturnedouttobeofgreatimportance.That,however,isastorythatwill
+have to wait until our study of modern physics inNuclear Physics (http://cnx.org/content/m58606/latest/).)
+Thus,in1932,thepictureoftheatomwasofasmall,massivenucleusconstructedofacombinationofprotonsandneutrons,
+surrounded by a collection of electrons whose combined motion formed a sort of negatively charged “cloud” around the
+nucleus(Figure5.8).Inanelectricallyneutralatom,thetotalnegativechargeofthecollectionofelectronsisequaltothe
+totalpositivechargeinthenucleus.Theverylow-masselectronscanbemoreorlesseasilyremovedoraddedtoanatom,
+changingthenetchargeontheatom(thoughwithoutchangingitstype).Anatomthathashadthechargealteredinthisway
+iscalledanion.Positiveionshavehadelectronsremoved,whereasnegativeionshavehadexcesselectronsadded.Wealso
+use this term to describe molecules that are not electrically neutral.
+
+188 Chapter 5 | Electric Charges and Fields
+Figure 5.8 The nucleus of a carbon atom is composed of six
+protons and six neutrons. As in hydrogen, the surrounding six
+electrons do not have definite locations and so can be considered to
+be a sort of cloud surrounding the nucleus.
+Thestoryoftheatomdoesnotstopthere,however.Inthelatterpartofthetwentiethcentury,manymoresubatomicparticles
+werediscoveredinthenucleusoftheatom:pions,neutrinos,andquarks,amongothers.Withtheexceptionofthephoton,
+noneoftheseparticlesaredirectlyrelevanttothestudyofelectromagnetism,sowedeferfurtherdiscussionofthemuntil
+the chapter on particle physics (Particle Physics and Cosmology (http://cnx.org/content/m58767/latest/)).
+A Note on Terminology
+As noted previously, electric charge is a property that an object can have. This is similar to how an object can have a
+propertythatwecallmass,apropertythatwecalldensity,apropertythatwecalltemperature,andsoon.Technically,we
+shouldalwayssaysomethinglike,“Supposewehaveaparticlethatcarriesachargeof 3µC.”However,itisverycommon
+tosayinstead,“Supposewehavea 3-µC charge.”Similarly,weoftensaysomethinglike,“Sixchargesarelocatedatthe
+verticesofaregularhexagon.”Achargeisnotaparticle;rather,itisapropertyofaparticle.Nevertheless,thisterminology
+isextremelycommon(andisfrequentlyusedinthisbook,asitiseverywhereelse).So,keepinthebackofyourmindwhat
+we really mean when we refer to a “charge.”
+5.2 | Conductors, Insulators, and Charging by Induction
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain what a conductor is
+• Explain what an insulator is
+• List the differences and similarities between conductors and insulators
+• Describe the process of charging by induction
+Intheprecedingsection,wesaidthatscientistswereabletocreateelectricchargeonlyonnonmetallicmaterialsandnever
+onmetals.Tounderstandwhythisisthecase,youhavetounderstandmoreaboutthenatureandstructureofatoms.Inthis
+section,wediscusshowandwhyelectricchargesdo—ordonot—movethroughmaterials(Figure5.9).Amorecomplete
+description is given in a later chapter.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 189
+Figure 5.9 This power adapter uses metal wires and connectors to conduct electricity from the
+wall socket to a laptop computer. The conducting wires allow electrons to move freely through the
+cables, which are shielded by rubber and plastic. These materials act as insulators that don’t allow
+electric charge to escape outward. (credit: modification of work by “Evan-Amos”/Wikimedia
+Commons)
+Conductors and Insulators
+As discussed in the previous section, electrons surround the tiny nucleus in the form of a (comparatively) vast cloud of
+negativecharge.However,thisclouddoeshaveadefinitestructuretoit.Let’sconsideranatomofthemostcommonlyused
+conductor, copper.
+For reasons that will become clear in Atomic Structure (http://cnx.org/content/m58583/latest/) , there is an
+outermost electron that is only loosely bound to the atom’s nucleus. It can be easily dislodged; it then moves to a
+neighboring atom. In a large mass of copper atoms (such as a copper wire or a sheet of copper), these vast numbers
+of outermost electrons (one per atom) wander from atom to atom, and are the electrons that do the moving when
+electricityflows.Thesewandering,or“free,”electronsarecalledconductionelectrons,andcopperisthereforeanexcellent
+conductor (of electric charge). All conducting elements have a similar arrangement of their electrons, with one or two
+conduction electrons. This includes most metals.
+Insulators,incontrast,aremadefrommaterialsthatlackconductionelectrons;chargeflowsonlywithgreatdifficulty,if
+atall.Evenifexcesschargeisaddedtoaninsulatingmaterial,itcannotmove,remainingindefinitelyinplace.Thisiswhy
+insulatingmaterialsexhibittheelectricalattractionandrepulsionforcesdescribedearlier,whereasconductorsdonot;any
+excess chargeplaced onaconductor wouldinstantly flowaway (duetomutual repulsion fromexisting charges),leaving
+noexcesschargearoundtocreateforces.Chargecannotflowalongorthroughaninsulator,soitselectricforcesremain
+forlongperiodsoftime.(Chargewilldissipatefromaninsulator,givenenoughtime.)Asithappens,amber,fur,andmost
+semi-precious gems are insulators, as are materials like wood, glass, and plastic.
+Charging by Induction
+Let’s examine in more detail what happens in a conductor when an electrically charged object is brought close to it. As
+mentioned,theconductionelectronsintheconductorareabletomovewithnearlycompletefreedom.Asaresult,whena
+chargedinsulator(suchasapositivelychargedglassrod)isbroughtclosetotheconductor,the(total)chargeontheinsulator
+exerts an electric force on the conduction electrons. Since the rod is positively charged, the conduction electrons (which
+themselves are negatively charged) are attracted, flowing toward the insulator to the near side of the conductor (Figure
+5.10).
+Now,theconductorisstilloverallelectricallyneutral;theconductionelectronshavechangedposition,buttheyarestillin
+theconductingmaterial.However,theconductornowhasachargedistribution;thenearend(theportionoftheconductor
+closesttotheinsulator)nowhasmorenegativechargethanpositivecharge,andthereverseistrueoftheendfarthestfrom
+theinsulator.Therelocationofnegativechargestothenearsideoftheconductorresultsinanoverallpositivechargeinthe
+partoftheconductorfarthestfromtheinsulator.Wehavethuscreatedanelectricchargedistributionwhereonedidnotexist
+before.Thisprocessisreferredtoasinducingpolarization—inthiscase,polarizingtheconductor.Theresultingseparation
+ofpositiveandnegativechargeiscalledpolarization,andamaterial,orevenamolecule,thatexhibitspolarizationissaidto
+bepolarized.Asimilarsituationoccurswithanegativelychargedinsulator,buttheresultingpolarizationisintheopposite
+direction.

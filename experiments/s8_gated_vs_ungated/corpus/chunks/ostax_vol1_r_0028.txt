@@ -1,0 +1,216 @@
+# REAL PDF — openstax_vol1.pdf, pages 162-171
+############################################################
+
+150 4 • Motion in Two and Three Dimensions
+FIGURE 4.4 Two position vectors are drawn from the center of Earth, which is the origin of the coordinate system, with the y-axis as north
+and the x-axis as east. The vector between them is the displacement of the satellite.
+In unit vector notation, the position vectors are
+Evaluating the sine and cosine, we have
+Now we can find , the displacement of the satellite:
+The magnitude of the displacement is The angle the displacement
+makes with the x-axis is
+Significance
+Plotting the displacement gives information and meaning to the unit vector solution to the problem. When plotting
+the displacement, we need to include its components as well as its magnitude and the angle it makes with a chosen
+axis—in this case, the x-axis (Figure 4.5).
+Access for free at openstax.org
+
+4.1 • Displacement and Velocity Vectors 151
+FIGURE 4.5 Displacement vector with components, angle, and magnitude.
+Note that the satellite took a curved path along its circular orbit to get from its initial position to its final position in
+this example. It also could have traveled 4787 km east, then 11,557 km south to arrive at the same location. Both of
+these paths are longer than the length of the displacement vector. In fact, the displacement vector gives the
+shortest path between two points in one, two, or three dimensions.
+Many applications in physics can have a series of displacements, as discussed in the previous chapter. The total
+displacement is the sum of the individual displacements, only this time, we need to be careful, because we are
+adding vectors. We illustrate this concept with an example of Brownian motion.
+EXAMPLE 4.2
+Brownian Motion
+Brownian motion is a chaotic random motion of particles suspended in a fluid, resulting from collisions with the
+molecules of the fluid. This motion is three-dimensional. The displacements in numerical order of a particle
+undergoing Brownian motion could look like the following, in micrometers (Figure 4.6):
+What is the total displacement of the particle from the origin?
+
+152 4 • Motion in Two and Three Dimensions
+FIGURE 4.6 Trajectory of a particle undergoing random displacements of Brownian motion. The total displacement is shown in red.
+Solution
+We form the sum of the displacements and add them as vectors:
+To complete the solution, we express the displacement as a magnitude and direction,
+with respect to the x-axis in the xz-plane.
+Significance
+From the figure we can see the magnitude of the total displacement is less than the sum of the magnitudes of the
+individual displacements.
+Velocity Vector
+In the previous chapter we found the instantaneous velocity by calculating the derivative of the position function
+with respect to time. We can do the same operation in two and three dimensions, but we use vectors. The
+instantaneous velocity vector is now
+4.4
+Let’s look at the relative orientation of the position vector and velocity vector graphically. In Figure 4.7 we show the
+vectors and which give the position of a particle moving along a path represented by the gray line. As
+goes to zero, the velocity vector, given by Equation 4.4, becomes tangent to the path of the particle at time t.
+Access for free at openstax.org
+
+4.1 • Displacement and Velocity Vectors 153
+FIGURE 4.7 A particle moves along a path given by the gray line. In the limit as approaches zero, the velocity vector becomes tangent to
+the path of the particle.
+Equation 4.4 can also be written in terms of the components of Since
+we can write
+4.5
+where
+4.6
+If only the average velocity is of concern, we have the vector equivalent of the one-dimensional average velocity for
+two and three dimensions:
+4.7
+EXAMPLE 4.3
+Calculating the Velocity Vector
+The position function of a particle is (a) What is the instantaneous velocity
+and speed at t = 2.0 s? (b) What is the average velocity between 1.0 s and 3.0 s?
+Solution
+Using Equation 4.5 and Equation 4.6, and taking the derivative of the position function with respect to time, we find
+(a)
+Speed
+(b) From Equation 4.7,
+Significance
+We see the average velocity is the same as the instantaneous velocity at t = 2.0 s, as a result of the velocity function
+
+154 4 • Motion in Two and Three Dimensions
+being linear. This need not be the case in general. In fact, most of the time, instantaneous and average velocities are
+not the same.
+CHECK YOUR UNDERSTANDING 4.1
+The position function of a particle is (a) What is the instantaneous velocity at t = 3 s? (b) Is the
+average velocity between 2 s and 4 s equal to the instantaneous velocity at t = 3 s?
+The Independence of Perpendicular Motions
+When we look at the three-dimensional equations for position and velocity written in unit vector notation, Equation
+4.2 and Equation 4.5, we see the components of these equations are separate and unique functions of time that do
+not depend on one another. Motion along the x direction has no part of its motion along the y and z directions, and
+similarly for the other two coordinate axes. Thus, the motion of an object in two or three dimensions can be divided
+into separate, independent motions along the perpendicular axes of the coordinate system in which the motion
+takes place.
+To illustrate this concept with respect to displacement, consider a woman walking from point A to point B in a city
+with square blocks. The woman taking the path from A to B may walk east for so many blocks and then north (two
+perpendicular directions) for another set of blocks to arrive at B. How far she walks east is affected only by her
+motion eastward. Similarly, how far she walks north is affected only by her motion northward.
+INDEPENDENCE OF MOTION
+In the kinematic description of motion, we are able to treat the horizontal and vertical components of motion
+separately. In many cases, motion in the horizontal direction does not affect motion in the vertical direction, and
+vice versa.
+An example illustrating the independence of vertical and horizontal motions is given by two baseballs. One baseball
+is dropped from rest. At the same instant, another is thrown horizontally from the same height and it follows a
+curved path. A stroboscope captures the positions of the balls at fixed time intervals as they fall (Figure 4.8).
+Access for free at openstax.org
+
+4.2 • Acceleration Vector 155
+FIGURE 4.8 A diagram of the motions of two identical balls: one falls from rest and the other has an initial horizontal velocity. Each
+subsequent position is an equal time interval. Arrows represent the horizontal and vertical velocities at each position. The ball on the right
+has an initial horizontal velocity whereas the ball on the left has no horizontal velocity. Despite the difference in horizontal velocities, the
+vertical velocities and positions are identical for both balls, which shows the vertical and horizontal motions are independent.
+It is remarkable that for each flash of the strobe, the vertical positions of the two balls are the same. This similarity
+implies vertical motion is independent of whether the ball is moving horizontally. (Assuming no air resistance, the
+vertical motion of a falling object is influenced by gravity only, not by any horizontal forces.) Careful examination of
+the ball thrown horizontally shows it travels the same horizontal distance between flashes. This is because there are
+no additional forces on the ball in the horizontal direction after it is thrown. This result means horizontal velocity is
+constant and is affected neither by vertical motion nor by gravity (which is vertical). Note this case is true for ideal
+conditions only. In the real world, air resistance affects the speed of the balls in both directions.
+The two-dimensional curved path of the horizontally thrown ball is composed of two independent one-dimensional
+motions (horizontal and vertical). The key to analyzing such motion, called projectile motion, is to resolve it into
+motions along perpendicular directions. Resolving two-dimensional motion into perpendicular components is
+possible because the components are independent.
+4.2 Acceleration Vector
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Calculate the acceleration vector given the velocity function in unit vector notation.
+• Describe the motion of a particle with a constant acceleration in three dimensions.
+• Use the one-dimensional motion equations along perpendicular axes to solve a problem in two or three
+dimensions with a constant acceleration.
+• Express the acceleration in unit vector notation.
+Instantaneous Acceleration
+In addition to obtaining the displacement and velocity vectors of an object in motion, we often want to know its
+acceleration vector at any point in time along its trajectory. This acceleration vector is the instantaneous
+acceleration and it can be obtained from the derivative with respect to time of the velocity function, as we have seen
+in a previous chapter. The only difference in two or three dimensions is that these are now vector quantities. Taking
+the derivative with respect to time we find
+
+156 4 • Motion in Two and Three Dimensions
+4.8
+The acceleration in terms of components is
+4.9
+​
+Also, since the velocity is the derivative of the position function, we can write the acceleration in terms of the second
+derivative of the position function:
+4.10
+EXAMPLE 4.4
+Finding an Acceleration Vector
+A particle has a velocity of (a) What is the acceleration function? (b) What is the
+acceleration vector at t = 2.0 s? Find its magnitude and direction.
+Solution
+(a) We take the first derivative with respect to time of the velocity function to find the acceleration. The derivative is
+taken component by component:
+(b) Evaluating gives us the direction in unit vector notation. The magnitude of
+the acceleration is
+Significance
+In this example we find that acceleration has a time dependence and is changing throughout the motion. Let’s
+consider a different velocity function for the particle.
+EXAMPLE 4.5
+Finding a Particle Acceleration
+A particle has a position function ​ (a) What is the velocity? (b) What is the
+acceleration? (c) Describe the motion from t = 0 s.
+Strategy
+We can gain some insight into the problem by looking at the position function. It is linear in y and z, so we know the
+acceleration in these directions is zero when we take the second derivative. Also, note that the position in the x
+direction is zero for t = 0 s and t = 10 s.
+Solution
+(a) Taking the derivative with respect to time of the position function, we find
+The velocity function is linear in time in the x direction and is constant in the y and z directions.
+Access for free at openstax.org
+
+4.2 • Acceleration Vector 157
+(b) Taking the derivative of the velocity function, we find
+The acceleration vector is a constant in the negative x-direction.
+(c) The trajectory of the particle can be seen in Figure 4.9. Let’s look in the y and z directions first. The particle’s
+position increases steadily as a function of time with a constant velocity in these directions. In the x direction,
+however, the particle follows a path in positive x until t = 5 s, when it reverses direction. We know this from looking
+at the velocity function, which becomes zero at this time and negative thereafter. We also know this because the
+acceleration is negative and constant—meaning, the particle is accelerating in the opposite direction. The particle’s
+position reaches 25 m, where it then reverses direction and begins to accelerate in the negative x direction. The
+position reaches zero at t = 10 s.
+FIGURE 4.9 The particle starts at point (x, y, z) = (0, 0, 0) with position vector as shown with red stars. The projection of the trajectory
+onto the xy-plane is shown with blue dots. The values of y and z increase linearly as a function of time, whereas x has a turning point at t = 5
+s and 25 m, when it reverses direction. At this point, the x component of the velocity becomes negative. At t = 10 s, the particle is back to 0
+m in the x direction.
+Significance
+By graphing the trajectory of the particle, we can better understand its motion, given by the numerical results of the
+kinematic equations.
+CHECK YOUR UNDERSTANDING 4.2
+Suppose the acceleration function has the form where a, b, and c are constants. What can
+be said about the functional form of the velocity function?
+Constant Acceleration
+Multidimensional motion with constant acceleration can be treated the same way as shown in the previous chapter
+for one-dimensional motion. Earlier we showed that three-dimensional motion is equivalent to three one-
+
+158 4 • Motion in Two and Three Dimensions
+dimensional motions, each along an axis perpendicular to the others. To develop the relevant equations in each
+direction, let’s consider the two-dimensional problem of a particle moving in the xy plane with constant
+acceleration, ignoring the z-component for the moment. The acceleration vector is
+Each component of the motion has a separate set of equations similar to Equation 3.10–Equation 3.14 of the
+previous chapter on one-dimensional motion. We show only the equations for position and velocity in the x- and
+y-directions. A similar set of kinematic equations could be written for motion in the z-direction:
+4.11
+4.12
+4.13
+4.14
+4.15
+4.16
+4.17
+4.18
+Here the subscript 0 denotes the initial position or velocity. Equation 4.11 to Equation 4.18 can be substituted into
+Equation 4.2 and Equation 4.5 without the z-component to obtain the position vector and velocity vector as a
+function of time in two dimensions:
+The following example illustrates a practical use of the kinematic equations in two dimensions.
+EXAMPLE 4.6
+A Skier
+Figure 4.10 shows a skier moving with an acceleration of down a slope of at t = 0. With the origin of the
+coordinate system at the front of the lodge, her initial position and velocity are
+and
+(a) What are the x- and y-components of the skier’s position and velocity as functions of time? (b) What are her
+position and velocity at t = 10.0 s?
+Access for free at openstax.org

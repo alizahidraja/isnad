@@ -1,0 +1,215 @@
+# REAL PDF — openstax_vol1.pdf, pages 218-225
+############################################################
+
+206 5 • Newton's Laws of Motion
+(the mower is moving only horizontally). The acceleration found is small enough to be reasonable for a person
+pushing a mower. Such an effort would not last too long, because the person’s top speed would soon be reached.
+CHECK YOUR UNDERSTANDING 5.3
+At the time of its launch, the HMS Titanic was the most massive mobile object ever built, with a mass of
+. If a force of 6 MN was applied to the ship, what acceleration would it experience?
+In the preceding example, we dealt with net force only for simplicity. However, several forces act on the lawn
+mower. The weight (discussed in detail in Mass and Weight) pulls down on the mower, toward the center of Earth;
+this produces a contact force on the ground. The ground must exert an upward force on the lawn mower, known as
+the normal force , which we define in Common Forces. These forces are balanced and therefore do not produce
+vertical acceleration. In the next example, we show both of these forces. As you continue to solve problems using
+Newton’s second law, be sure to show multiple forces.
+EXAMPLE 5.3
+Which Force Is Bigger?
+(a) The car shown in Figure 5.13 is moving at a constant speed. Which force is bigger, or ? Explain.
+(b) The same car is now accelerating to the right. Which force is bigger, or Explain.
+FIGURE 5.13 A car is shown (a) moving at constant speed and (b) accelerating. How do the forces acting on the car compare in each case?
+(a) What does the knowledge that the car is moving at constant velocity tell us about the net horizontal force on the car compared to the
+friction force? (b) What does the knowledge that the car is accelerating tell us about the horizontal force on the car compared to the friction
+force?
+Strategy
+We must consider Newton’s first and second laws to analyze the situation. We need to decide which law applies;
+this, in turn, will tell us about the relationship between the forces.
+Solution
+a. The forces are equal. According to Newton’s first law, if the net force is zero, the velocity is constant.
+b. In this case, must be larger than According to Newton’s second law, a net force is required to
+cause acceleration.
+Significance
+These questions may seem trivial, but they are commonly answered incorrectly. For a car or any other object to
+Access for free at openstax.org
+
+5.3 • Newton's Second Law 207
+move, it must be accelerated from rest to the desired speed; this requires that the friction force be greater than the
+drag force. Once the car is moving at constant velocity, the net force must be zero; otherwise, the car will accelerate
+(gain speed). To solve problems involving Newton’s laws, we must understand whether to apply Newton’s first law
+(where ) or Newton’s second law (where is not zero). This will be apparent as you see more
+examples and attempt to solve problems on your own.
+EXAMPLE 5.4
+What Rocket Thrust Accelerates This Sled?
+Before space flights carrying astronauts, rocket sleds were used to test aircraft, missile equipment, and
+physiological effects on human subjects at high speeds. They consisted of a platform that was mounted on one or
+two rails and propelled by several rockets.
+Calculate the magnitude of force exerted by each rocket, called its thrust T, for the four-rocket propulsion system
+shown in Figure 5.14. The sled’s initial acceleration is , the mass of the system is 2100 kg, and the force of
+friction opposing the motion is 650 N.
+FIGURE 5.14 A sled experiences a rocket thrust that accelerates it to the right. Each rocket creates an identical thrust T. The system here is
+the sled, its rockets, and its rider, so none of the forces between these objects are considered. The arrow representing friction is drawn
+larger than scale.
+Strategy
+Although forces are acting both vertically and horizontally, we assume the vertical forces cancel because there is no
+vertical acceleration. This leaves us with only horizontal forces and a simpler one-dimensional problem. Directions
+are indicated with plus or minus signs, with right taken as the positive direction. See the free-body diagram in Figure
+5.14.
+Solution
+Since acceleration, mass, and the force of friction are given, we start with Newton’s second law and look for ways to
+find the thrust of the engines. We have defined the direction of the force and acceleration as acting “to the right,” so
+we need to consider only the magnitudes of these quantities in the calculations. Hence we begin with
+
+208 5 • Newton's Laws of Motion
+where is the net force along the horizontal direction. We can see from the figure that the engine thrusts add,
+whereas friction opposes the thrust. In equation form, the net external force is
+Substituting this into Newton’s second law gives us
+Using a little algebra, we solve for the total thrust 4T:
+Substituting known values yields
+Therefore, the total thrust is
+and the individual thrusts are
+Significance
+The numbers are quite large, so the result might surprise you. Experiments such as this were performed in the early
+1960s to test the limits of human endurance, and the setup was designed to protect human subjects in jet fighter
+emergency ejections. Speeds of 1000 km/h were obtained, with accelerations of 45 g’s. (Recall that g, acceleration
+due to gravity, is . When we say that acceleration is 45 g’s, it is which is approximately
+.) Although living subjects are not used anymore, land speeds of 10,000 km/h have been obtained with a
+rocket sled.
+In this example, as in the preceding one, the system of interest is obvious. We see in later examples that choosing
+the system of interest is crucial—and the choice is not always obvious.
+Newton’s second law is more than a definition; it is a relationship among acceleration, force, and mass. It can help
+us make predictions. Each of those physical quantities can be defined independently, so the second law tells us
+something basic and universal about nature.
+CHECK YOUR UNDERSTANDING 5.4
+A 550-kg sports car collides with a 2200-kg truck, and during the collision, the net force on each vehicle is the force
+exerted by the other. If the magnitude of the truck’s acceleration is what is the magnitude of the sports
+car’s acceleration?
+Component Form of Newton’s Second Law
+We have developed Newton’s second law and presented it as a vector equation in Equation 5.3. This vector equation
+can be written as three component equations:
+5.5
+The second law is a description of how a body responds mechanically to its environment. The influence of the
+environment is the net force the body’s response is the acceleration and the strength of the response is
+inversely proportional to the mass m. The larger the mass of an object, the smaller its response (its acceleration) to
+the influence of the environment (a given net force). Therefore, a body’s mass is a measure of its inertia, as we
+explained in Newton’s First Law.
+Access for free at openstax.org
+
+5.3 • Newton's Second Law 209
+EXAMPLE 5.5
+Force on a Soccer Ball
+A 0.400-kg soccer ball is kicked across the field by a player; it undergoes acceleration given by
+Find (a) the resultant force acting on the ball and (b) the magnitude and direction of the
+resultant force.
+Strategy
+The vectors in and format, which indicate force direction along the x-axis and the y-axis, respectively, are
+involved, so we apply Newton’s second law in vector form.
+Solution
+a. We apply Newton’s second law:
+b. Magnitude and direction are found using the components of :
+Significance
+We must remember that Newton’s second law is a vector equation. In (a), we are multiplying a vector by a scalar to
+determine the net force in vector form. While the vector form gives a compact representation of the force vector, it
+does not tell us how “big” it is, or where it goes, in intuitive terms. In (b), we are determining the actual size
+(magnitude) of this force and the direction in which it travels.
+EXAMPLE 5.6
+Mass of a Car
+Find the mass of a car if a net force of produces an acceleration of .
+Strategy
+Vector division is not defined, so cannot be performed. However, mass m is a scalar, so we can use the
+scalar form of Newton’s second law, .
+Solution
+We use and substitute the magnitudes of the two vectors: and Therefore,
+Significance
+Force and acceleration were given in the and format, but the answer, mass m, is a scalar and thus is not given in
+and form.
+EXAMPLE 5.7
+Several Forces on a Particle
+A particle of mass is acted upon by four forces of magnitudes.
+, with the directions as shown in the free-body diagram in
+Figure 5.15. What is the acceleration of the particle?
+
+210 5 • Newton's Laws of Motion
+FIGURE 5.15 Four forces in the xy-plane are applied to a 4.0-kg particle.
+Strategy
+Because this is a two-dimensional problem, we must use a free-body diagram. First, must be resolved into x-
+and y-components. We can then apply the second law in each direction.
+Solution
+We draw a free-body diagram as shown in Figure 5.15. Now we apply Newton’s second law. We consider all vectors
+resolved into x- and y-components:
+Thus, the net acceleration is
+which is a vector of magnitude directed at to the positive x-axis.
+Significance
+Numerous examples in everyday life can be found that involve three or more forces acting on a single object, such as
+cables running from the Golden Gate Bridge or a football player being tackled by three defenders. We can see that
+the solution of this example is just an extension of what we have already done.
+CHECK YOUR UNDERSTANDING 5.5
+A car has forces acting on it, as shown below. The mass of the car is 1000.0 kg. The road is slick, so friction can be
+ignored. (a) What is the net force on the car? (b) What is the acceleration of the car?
+Access for free at openstax.org
+
+5.3 • Newton's Second Law 211
+Newton’s Second Law and Momentum
+Newton actually stated his second law in terms of momentum: “The instantaneous rate at which a body’s
+momentum changes is equal to the net force acting on the body.” (“Instantaneous rate” implies that the derivative is
+involved.) This can be given by the vector equation
+5.6
+This means that Newton’s second law addresses the central question of motion: What causes a change in motion of
+an object? Momentum was described by Newton as “quantity of motion,” a way of combining both the velocity of an
+object and its mass. We devote Linear Momentum and Collisions to the study of momentum.
+For now, it is sufficient to define momentum as the product of the mass of the object m and its velocity :
+5.7
+Since velocity is a vector, so is momentum.
+It is easy to visualize momentum. A train moving at 10 m/s has more momentum than one that moves at 2 m/s. In
+everyday life, we speak of one sports team as “having momentum” when they score points against the opposing
+team.
+If we substitute Equation 5.7 into Equation 5.6, we obtain
+When m is constant, we have
+Thus, we see that the momentum form of Newton’s second law reduces to the form given earlier in this section.
+INTERACTIVE
+Explore the forces at work (https://openstax.org/l/21forcesatwork) when pulling a cart (https://openstax.org/l/
+21pullacart) or pushing a refrigerator, crate, or person. Put an object on a ramp (https://openstax.org/l/21ramp) and
+see how it affects its motion. Engage the simulation below and see how applied forces make objects move.
+Access multimedia content (https://openstax.org/l/21forcemotion)
+
+212 5 • Newton's Laws of Motion
+5.4 Mass and Weight
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the difference between mass and weight
+• Explain why objects falling through the air are never truly in free fall
+• Describe the concept of weightlessness
+Mass and weight are often used interchangeably in everyday conversation. For example, our medical records often
+show our weight in kilograms but never in the correct units of newtons. In physics, however, there is an important
+distinction. Weight is the pull of Earth on an object. It depends on the distance from the center of Earth. Unlike
+weight, mass does not vary with location. The mass of an object is the same on Earth, in orbit, or on the surface of
+the Moon.
+Units of Force
+The equation is used to define net force in terms of mass, length, and time. As explained earlier, the SI
+unit of force is the newton. Since
+Although almost the entire world uses the newton for the unit of force, in the United States, the most familiar unit of
+force is the pound (lb), where 1 N = 0.225 lb. Thus, a 225-lb person weighs 1000 N.
+Weight and Gravitational Force
+When an object is dropped, it accelerates toward the center of Earth. Newton’s second law says that a net force on
+an object is responsible for its acceleration. If air resistance is negligible, the net force on a falling object is the
+gravitational force, commonly called its weight , or its force due to gravity acting on an object of mass m. Weight
+can be denoted as a vector because it has a direction; down is, by definition, the direction of gravity, and hence,
+weight is a downward force. The magnitude of weight is denoted as w. Galileo was instrumental in showing that, in
+the absence of air resistance, all objects fall with the same acceleration g. Using Galileo’s result and Newton’s
+second law, we can derive an equation for weight.
+Consider an object with mass m falling toward Earth. It experiences only the downward force of gravity, which is the
+weight . Newton’s second law says that the magnitude of the net external force on an object is We
+know that the acceleration of an object due to gravity is or . Substituting these into Newton’s second law
+gives us the following equations.
+WEIGHT
+The gravitational force on a mass is its weight. We can write this in vector form, where is weight and m is
+mass, as
+5.8
+In scalar form, we can write
+5.9
+Since on Earth, the weight of a 1.00-kg object on Earth is 9.80 N:
+When the net external force on an object is its weight, we say that it is in free fall, that is, the only force acting on the
+object is gravity. However, when objects on Earth fall downward through the air, they are never truly in free fall
+because there is always some upward resistance force from the air acting on the object.
+Acceleration due to gravity g varies slightly over the surface of Earth, so the weight of an object depends on its
+location and is not an intrinsic property of the object. Weight varies dramatically if we leave Earth’s surface. On the
+Access for free at openstax.org

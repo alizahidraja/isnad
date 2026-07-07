@@ -1,0 +1,275 @@
+# REAL PDF — openstax_vol3.pdf, pages 315-321
+############################################################
+
+Chapter 7 | Quantum Mechanics 307
+waytodescribetheballwithaconstantwavefunction(Figure7.4).Thenormalizationconditioncanbeusedto
+find the value of the function and a simple integration over half of the box yields the final answer.
+Figure 7.4 Wave function for a ball in a tube of lengthL.
+Solution
+The wave function of the ball can be written as Ψ(x, t)=C(0< x<L), where C is a constant, and
+Ψ(x, t)=0 otherwise.WecandeterminetheconstantCbyapplyingthenormalizationcondition(weset t=0
+to simplify the notation):
+∞
+P(x=−∞, +∞)= ∫ |C| 2dx=1.
+−∞
+Thisintegralcanbebrokenintothreeparts:(1)negativeinfinitytozero,(2)zerotoL,and(3)Ltoinfinity.The
+particleisconstrainedtobeinthetube,so C=0 outsidethetubeandthefirstandlastintegrationsarezero.The
+above equation can therefore be written
+L
+P(x=0, L)=∫|C| 2dx=1.
+0
+The valueCdoes not depend onxand can be taken out of the integral, so we obtain
+L
+|C| 2∫dx=1.
+0
+Integration gives
+C= 1 .
+L
+To determine the probability of finding the ball in the first half of the box (0< x<L), we have
+L/2
+2
+P(x=0, L/2)= ⌠| 1| dx= ⎛1⎞L =0.50.
+⌡
+L ⎝L⎠2
+0
+Significance
+The probability of finding the ball in the first half of the tube is 50%, as expected. Two observations are
+noteworthy.First,thisresultcorrespondstotheareaundertheconstantfunctionfrom x=0 toL/2(theareaofa
+squareleftofL/2).Second,thiscalculationrequiresanintegrationofthesquareofthewavefunction.Acommon
+mistake in performing such calculations is to forget to square the wave function before integration.
+
+308 Chapter 7 | Quantum Mechanics
+Example 7.2
+Where Is the Ball? (Part II)
+AballisagainconstrainedtomovealongalineinsideatubeoflengthL.Thistime,theballisfoundpreferentially
+inthemiddleofthetube.Onewaytorepresentitswavefunctioniswithasimplecosinefunction(Figure7.5).
+What is the probability of finding the ball in the last one-quarter of the tube?
+Figure 7.5 Wave function for a ball in a tube of lengthL,
+where the ball is preferentially in the middle of the tube.
+Strategy
+Weusethesamestrategyasbefore.Inthiscase,thewavefunctionhastwounknownconstants:Oneisassociated
+withthewavelengthofthewaveandtheotheristheamplitudeofthewave.Wedeterminetheamplitudebyusing
+theboundaryconditionsoftheproblem,andweevaluatethewavelengthbyusingthenormalization condition.
+Integration of the square of the wave function over the last quarter of the tube yields the final answer. The
+calculation is simplified by centering our coordinate system on the peak of the wave function.
+Solution
+The wave function of the ball can be written
+Ψ(x, 0)= Acos(kx)(−L/2< x<L/2),
+where A is the amplitude of the wave function and k=2π/λ is its wave number. Beyond this interval, the
+amplitudeofthewavefunctioniszerobecausetheballisconfinedtothetube.Requiringthewavefunctionto
+terminate at the right end of the tube gives
+⎛ L ⎞
+Ψ x= , 0 =0.
+⎝ 2 ⎠
+Evaluating the wave function at x=L/2 gives
+Acos(kL/2)=0.
+Thisequationissatisfiediftheargumentofthecosineisanintegralmultipleof π/2, 3π/2, 5π/2, andsoon.In
+this case, we have
+kL π
+= ,
+2 2
+or
+π
+k= .
+L
+Applying the normalization condition gives A= 2/L, so the wave function of the ball is
+Ψ(x, 0)= 2 cos(πx/L), −L/2< x<L/2.
+L
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 309
+Todeterminetheprobabilityoffindingtheballinthelastquarterofthetube,wesquarethefunctionandintegrate:
+L/2
+2
+P(x=L/4, L/2)= ⌠ | 2 cos ⎛πx⎞| dx=0.091.
+L ⎝L⎠
+⌡
+L/4
+Significance
+The probability of finding the ball in the last quarter of the tube is 9.1%. The ball has a definite wavelength
+(λ=2L). If the tube is of macroscopic length (L=1m), the momentum of the ball is
+p= h = h ~10 −36 m/s.
+λ 2L
+This momentum is much too small to be measured by any human instrument.
+An Interpretation of the Wave Function
+Wearenowinpositiontobegintoanswerthequestionsposedatthebeginningofthissection.First,foratravelingparticle
+describedby Ψ(x, t)= Asin(kx−ωt),whatis“waving?”Basedontheabovediscussion,theanswerisamathematical
+functionthatcan,amongotherthings,beusedtodeterminewheretheparticleislikelytobewhenapositionmeasurement
+isperformed.Second,howisthewavefunctionusedtomakepredictions? Ifitisnecessary tofindtheprobability thata
+particlewillbefoundinacertaininterval,squarethewavefunctionandintegrateovertheintervalofinterest.Soon,you
+will learn soon that the wave function can be used to make many other kinds of predictions, as well.
+Third,ifamatterwaveisgivenbythewavefunction Ψ(x, t),whereexactlyistheparticle?Twoanswersexist:(1)when
+the observer is not looking (or the particle is not being otherwise detected), the particle is everywhere (x=−∞, +∞);
+and (2) when the observer is looking (the particle is being detected), the particle “jumps into” a particular position state
+(x, x+dx) withaprobabilitygivenby P(x, x+dx)=|Ψ(x, t)| 2dx —aprocesscalledstatereductionorwavefunction
+collapse. This answer is called theCopenhagen interpretationof the wave function, or of quantum mechanics.
+Toillustratethisinterpretation,considerthesimplecaseofaparticlethatcanoccupyasmallcontainereitherat x or x
+1 2
+(Figure7.6).Inclassicalphysics,weassumetheparticleislocatedeitherat x or x whentheobserverisnotlooking.
+1 2
+However,inquantummechanics, theparticle mayexistinastateofindefinite position—that is,itmaybelocatedat x
+1
+and x when the observer is not looking. The assumption that a particle can only have one value of position (when the
+2
+observerisnotlooking)isabandoned.Similarcommentscanbemadeofothermeasurablequantities,suchasmomentum
+and energy.
+Figure 7.6 A two-state system of position of a particle.
+The bizarre consequences of the Copenhagen interpretation of quantum mechanics are illustrated by a creative thought
+experiment first articulated by Erwin Schrödinger (National Geographic, 2013) (Figure 7.7):
+“AcatisplacedinasteelboxalongwithaGeigercounter,avialofpoison,ahammer,andaradioactivesubstance.When
+theradioactivesubstancedecays,theGeigerdetectsitandtriggersthehammertoreleasethepoison,whichsubsequently
+killsthecat.Theradioactivedecayisarandom[probabilistic]process,andthereisnowaytopredictwhenitwillhappen.
+Physicistssaytheatomexistsinastateknownasasuperposition—bothdecayedandnotdecayedatthesametime.Until
+theboxisopened,anobserverdoesn’tknowwhetherthecatisaliveordead—becausethecat’sfateisintrinsicallytiedto
+whetherornottheatomhasdecayedandthecatwould[accordingtotheCopenhageninterpretation]be“livinganddead...
+in equal parts” until it is observed.”
+
+310 Chapter 7 | Quantum Mechanics
+Figure 7.7 Schrödinger’s cat.
+Schrödingertooktheabsurdimplicationsofthisthoughtexperiment(acatsimultaneouslydeadandalive)asanargument
+against the Copenhagen interpretation. However, this interpretation remains the most commonly taught view of quantum
+mechanics.
+Two-statesystems(leftandright,atomdecaysanddoesnotdecay,andsoon)areoftenusedtoillustratetheprinciplesof
+quantummechanics.Thesesystemsfindmanyapplicationsinnature,includingelectronspinandmixedstatesofparticles,
+atoms,andevenmolecules.Two-statesystemsarealsofindingapplicationinthequantumcomputer,asmentionedinthe
+introduction of this chapter. Unlike a digital computer, which encodes information in binary digits (zeroes and ones), a
+quantumcomputerstoresandmanipulatesdataintheformofquantumbits,orqubits.Ingeneral,aqubitisnotinastateof
+zeroorone,butratherinamixedstateofzeroandone.Ifalargenumberofqubitsareplacedinthesamequantumstate,
+themeasurementofanindividualqubitwouldproduceazerowithaprobabilityp,andaonewithaprobability q=1−p.
+Many scientists believe that quantum computers are the future of the computer industry.
+Complex Conjugates
+Later in this section, you will see how to use the wave function to describe particles that are “free” or bound by forces
+to other particles. The specific form of the wave function depends on the details of the physical system. A peculiarity of
+quantum theory is that these functions are usually complex functions. A complex function is one that contains one or
+moreimaginarynumbers (i= −1).Experimentalmeasurementsproducereal(nonimaginary)numbersonly,sotheabove
+procedure to use the wave function must be slightly modified. In general, the probability that a particle is found in the
+narrow interval (x,x + dx) at timetis given by
+P(x, x+dx)=|Ψ(x, t)| 2dx=Ψ* (x, t)Ψ(x, t)dx, (7.5)
+where Ψ* (x, t) is the complex conjugate of the wave function. The complex conjugate of a function is obtaining by
+replacing every occurrence of i= −1 in that function with −i. This procedure eliminates complex numbers in all
+predictions because the product Ψ* (x, t)Ψ(x, t) is always a real number.
+7.1 Check Your UnderstandingIf a=3+4i, what is the product a* a?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 311
+Considerthemotionofafreeparticlethatmovesalongthex-direction.Asthenamesuggests,afreeparticleexperiencesno
+forcesandsomoveswithaconstantvelocity.Aswewillseeinalatersectionofthischapter,aformalquantummechanical
+treatmentofafreeparticleindicatesthatitswavefunctionhasrealandcomplexparts.Inparticular,thewavefunctionis
+given by
+Ψ(x, t)= Acos(kx−ωt)+iAsin(kx−ωt),
+where A is the amplitude, k is the wave number, and ω is the angular frequency. Using Euler’s formula,
+iϕ
+e =cos(ϕ)+isin⎛ϕ⎞, this equation can be written in the form
+⎝ ⎠
+i(kx−ωt) iϕ
+Ψ(x, t)= Ae = Ae ,
+where ϕ isthephaseangle.Ifthewavefunctionvariesslowlyovertheinterval Δx, theprobabilityoffindingtheparticle
+in that interval is
+⎛ iϕ⎞⎛ −iϕ⎞
+P(x, x+Δx)≈Ψ* (x, t)Ψ(x, t)Δx= Ae A* e Δx=(A* A)Δx.
+⎝ ⎠⎝ ⎠
+IfAhas real and complex parts (a+ib, whereaandbare real constants), then
+A* A=(a+ib)(a−ib)=a2+b2.
+Notice that the complex numbers have vanished. Thus,
+P(x, x+Δx)≈|A| 2Δx
+isarealquantity.Theinterpretation of Ψ* (x, t)Ψ(x, t) asaprobabilitydensityensuresthatthepredictionsofquantum
+mechanics can be checked in the “real world.”
+7.2 Check Your Understanding Suppose that a particle with energy E is moving along the x-axis and is
+confined in the region between 0 andL. One possible wave function is
+⎧Ae−iEt/ℏ sin πx , when0≤ x≤L
+ψ(x, t)=⎨ L .
+⎩ 0, otherwise
+Determine the normalization constant.
+Expectation Values
+Inclassicalmechanics,thesolutiontoanequationofmotionisafunctionofameasurablequantity,suchasx(t),wherexis
+thepositionandtisthetime.Notethattheparticlehasonevalueofpositionforanytimet.Inquantummechanics,however,
+thesolutiontoanequationofmotionisawavefunction, Ψ(x, t). Theparticlehasmanyvaluesofpositionforanytimet,
+andonlytheprobabilitydensityoffindingtheparticle, |Ψ(x, t)| 2,canbeknown.Theaveragevalueofpositionforalarge
+number of particles with the same wave function is expected to be
+∞ ∞ (7.6)
+〈 x〉 = ∫ xP(x, t)dx= ∫ xΨ* (x, t)Ψ(x, t)dx.
+−∞ −∞
+This is called theexpectation valueof the position. It is usually written
+∞ (7.7)
+〈 x〉 = ∫ Ψ* (x, t)xΨ(x, t)dx,
+−∞
+wherethexissandwichedbetweenthewavefunctions.Thereasonforthiswillbecomeapparentsoon.Formally,xiscalled
+theposition operator.
+Atthispoint,itisimportanttostressthatawavefunctioncanbewrittenintermsofotherquantitiesaswell,suchasvelocity
+
+312 Chapter 7 | Quantum Mechanics
+(v), momentum (p), and kinetic energy (K). The expectation value of momentum, for example, can be written
+∞ (7.8)
+〈 p〉 = ∫ Ψ* (p, t)pΨ(p, t)dp,
+−∞
+Wheredpisusedinsteadofdxtoindicateaninfinitesimalintervalinmomentum.Insomecases,weknowthewavefunction
+in position, Ψ(x, t), but seek the expectation of momentum. The procedure for doing this is
+∞ (7.9)
+〈 p〉 = ⌠ Ψ* (x, t) ⎛ −iℏ d ⎞ Ψ(x, t)dx,
+⌡ ⎝ dx⎠
+−∞
+where the quantity in parentheses, sandwiched between the wave functions, is called the momentum operator in the
+x-direction. [The momentum operator in Equation 7.9 is said to be the position-space representation of the momentum
+operator.] The momentum operator must act (operate) on the wave function to the right, and then the result must be
+multiplied by the complex conjugate of the wave function on the left, before integration. The momentum operator in the
+x-direction is sometimes denoted
+d (7.10)
+(p x) op=−iℏ
+dx
+,
+Momentumoperatorsforthey-andz-directionsaredefinedsimilarly.Thisoperatorandmanyothersarederivedinamore
+advanced course in modern physics. In some cases, this derivation is relatively simple. For example, the kinetic energy
+operator is just
+2 (7.11)
+(K) op= 1
+2
+m(v x)
+o
+2
+p
+= (p
+2
+x
+m
+) o 2 p = ⎛ ⎝ −i
+2
+ℏ
+m
+d d x ⎞ ⎠ = −
+2
+ℏ
+m
+2⎛
+⎝d
+d
+x
+⎞
+⎠
+⎛
+⎝d
+d
+x
+⎞
+⎠
+.
+Thus,ifweseekanexpectationvalueofkineticenergyofaparticleinonedimension,twosuccessiveordinaryderivatives
+of the wave function are required before integration.
+Expectation-value calculations are often simplified by exploiting the symmetry of wave functions. Symmetric wave
+functions can be even or odd. Aneven functionis a function that satisfies
+ψ(x)=ψ(−x). (7.12)
+In contrast, anodd functionis a function that satisfies
+ψ(x)= -ψ(−x). (7.13)
+An example of even and odd functions is shown in Figure 7.8. An even function is symmetric about the y-axis. This
+functionisproducedbyreflecting ψ(x) forx>0abouttheverticaly-axis.Bycomparison,anoddfunctionisgeneratedby
+reflectingthefunctionaboutthey-axisandthenaboutthex-axis.(Anoddfunctionisalsoreferredtoasananti-symmetric
+function.)
+Figure 7.8 Examples of even and odd wave functions.
+Ingeneral,anevenfunctiontimesanevenfunctionproducesanevenfunction.Asimpleexampleofanevenfunctionisthe
+product
+x2e−x2
+(eventimeseveniseven).Similarly,anoddfunctiontimesanoddfunctionproducesanevenfunction,
+suchasxsinx(oddtimesoddiseven).However,anoddfunctiontimesanevenfunctionproducesanoddfunction,suchas
+xe−x2
+(oddtimesevenisodd).Theintegraloverallspaceofanoddfunctioniszero,becausethetotalareaofthefunction
+above the x-axis cancels the (negative) area below it. As the next example shows, this property of odd functions is very
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

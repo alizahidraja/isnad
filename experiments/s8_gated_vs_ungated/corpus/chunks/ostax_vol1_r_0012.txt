@@ -1,0 +1,168 @@
+# REAL PDF — openstax_vol1.pdf, pages 57-63
+############################################################
+
+2.1 • Scalars and Vectors 45
+FIGURE 2.6 Displacement vectors for a fishing trip. (a) Stopping to rest at point C while walking from camp (point A) to the pond (point B).
+(b) Going back for the dropped tackle box (point D). (c) Finishing up at the fishing pond.
+Suppose your friend departs from point A (the campsite) and walks in the direction to point B (the fishing pond), but,
+along the way, stops to rest at some point C located three-quarters of the distance between A and B, beginning from
+point A (Figure 2.6(a)). What is his displacement vector when he reaches point C? We know that if he walks all
+the way to B, his displacement vector relative to A is , which has magnitude and a direction of
+northeast. If he walks only a 0.75 fraction of the total distance, maintaining the northeasterly direction, at point C he
+must be away from the campsite at A. So, his displacement vector at the rest point C has
+magnitude and is parallel to the displacement vector . All of this can be stated
+succinctly in the form of the following vector equation:
+In a vector equation, both sides of the equation are vectors. The previous equation is an example of a vector
+multiplied by a positive scalar (number) . The result, , of such a multiplication is a new vector with a
+direction parallel to the direction of the original vector .
+In general, when a vector is multiplied by a positive scalar , the result is a new vector that is parallel to :
+2.1
+The magnitude of this new vector is obtained by multiplying the magnitude of the original vector, as
+expressed by the scalar equation:
+2.2
+In a scalar equation, both sides of the equation are numbers. Equation 2.2 is a scalar equation because the
+magnitudes of vectors are scalar quantities (and positive numbers). If the scalar is negative in the vector equation
+Equation 2.1, then the magnitude of the new vector is still given by Equation 2.2, but the direction of the new
+vector is antiparallel to the direction of . These principles are illustrated in Figure 2.7(a) by two examples where
+the length of vector is 1.5 units. When , the new vector has length (twice as
+long as the original vector) and is parallel to the original vector. When , the new vector has length
+(twice as long as the original vector) and is antiparallel to the original vector.
+
+46 2 • Vectors
+FIGURE 2.7 Algebra of vectors in one dimension. (a) Multiplication by a scalar. (b) Addition of two vectors is called the resultant of
+vectors and . (c) Subtraction of two vectors is the difference of vectors and . (d) The difference between A and B can also be
+drawn in tail-to-tail fashion, with the vectors slightly offset. The difference connects the head of the second (subtracted) vector to the head
+of the first.
+Now suppose your fishing buddy departs from point A (the campsite), walking in the direction to point B (the fishing
+hole), but he realizes he lost his tackle box when he stopped to rest at point C (located three-quarters of the
+distance between A and B, beginning from point A). So, he turns back and retraces his steps in the direction toward
+the campsite and finds the box lying on the path at some point D only 1.2 km away from point C (see Figure 2.6(b)).
+What is his displacement vector when he finds the box at point D? What is his displacement vector from
+point D to the hole? We have already established that at rest point C his displacement vector is .
+Starting at point C, he walks southwest (toward the campsite), which means his new displacement vector from
+point C to point D is antiparallel to . Its magnitude is , so his second
+displacement vector is . His total displacement relative to the campsite is the vector sum of
+the two displacement vectors: vector (from the campsite to the rest point) and vector (from the rest
+point to the point where he finds his box):
+2.3
+The vector sum of two (or more) vectors is called the resultant vector or, for short, the resultant. When the vectors
+on the right-hand-side of Equation 2.3 are known, we can find the resultant as follows:
+2.4
+When your friend finally reaches the pond at B, his displacement vector from point A is the vector sum of his
+displacement vector from point A to point D and his displacement vector from point D to the fishing hole:
+(see Figure 2.6(c)). This means his displacement vector is the difference of two
+vectors:
+2.5
+Notice that a difference of two vectors is nothing more than a vector sum of two vectors because the second term in
+Equation 2.5 is vector (which is antiparallel to . When we substitute Equation 2.4 into Equation 2.5, we
+obtain the second displacement vector:
+2.6
+Access for free at openstax.org
+
+2.1 • Scalars and Vectors 47
+This result means your friend walked from the point where he finds his
+tackle box to the fishing hole.
+When vectors and lie along a line (that is, in one dimension), such as in the camping example, their resultant
+and their difference both lie along the same direction. We can illustrate the addition or
+subtraction of vectors by drawing the corresponding vectors to scale in one dimension, as shown in Figure 2.7.
+To illustrate the resultant when and are two parallel vectors, we draw them along one line by placing the origin
+of one vector at the end of the other vector in head-to-tail fashion (see Figure 2.7(b)). The magnitude of this
+resultant is the sum of their magnitudes: R = A + B. The direction of the resultant is parallel to both vectors. When
+vector is antiparallel to vector , we can draw them along one line in head-to-head fashion (Figure 2.7(c)), tail-to-
+tail fashion, or head-to-tail fashion. The magnitude of the vector difference, then, is the absolute value
+of the difference of their magnitudes. The direction of the difference vector is parallel to the direction of the longer
+vector.
+In general, in one dimension—as well as in higher dimensions, such as in a plane or in space—we can add any
+number of vectors and we can do so in any order because the addition of vectors is commutative,
+2.7
+and associative,
+2.8
+Moreover, multiplication by a scalar is distributive:
+2.9
+We used the distributive property in Equation 2.4 and Equation 2.6.
+When adding many vectors in one dimension, it is convenient to use the concept of a unit vector. A unit vector,
+which is denoted by a letter symbol with a hat, such as , has a magnitude of one and does not have any physical
+unit so that . The only role of a unit vector is to specify direction. For example, instead of saying vector
+has a magnitude of 6.0 km and a direction of northeast, we can introduce a unit vector that points to the
+northeast and say succinctly that . Then the southwesterly direction is simply given by the unit
+vector . In this way, the displacement of 6.0 km in the southwesterly direction is expressed by the vector
+EXAMPLE 2.1
+A Ladybug Walker
+A long measuring stick rests against a wall in a physics laboratory with its 200-cm end at the floor. A ladybug lands
+on the 100-cm mark and crawls randomly along the stick. It first walks 15 cm toward the floor, then it walks 56 cm
+toward the wall, then it walks 3 cm toward the floor again. Then, after a brief stop, it continues for 25 cm toward the
+floor and then, again, it crawls up 19 cm toward the wall before coming to a complete rest (Figure 2.8). Find the
+vector of its total displacement and its final resting position on the stick.
+Strategy
+If we choose the direction along the stick toward the floor as the direction of unit vector , then the direction toward
+the floor is and the direction toward the wall is . The ladybug makes a total of five displacements:
+
+48 2 • Vectors
+The total displacement is the resultant of all its displacement vectors.
+FIGURE 2.8 Five displacements of the ladybug. Note that in this schematic drawing, magnitudes of displacements are not drawn to scale.
+(credit "ladybug": modification of work by “Persian Poet Gal”/Wikimedia Commons)
+Solution
+The resultant of all the displacement vectors is
+In this calculation, we use the distributive law given by Equation 2.9. The result reads that the total displacement
+vector points away from the 100-cm mark (initial landing site) toward the end of the meter stick that touches the
+wall. The end that touches the wall is marked 0 cm, so the final position of the ladybug is at the (100 – 32)cm =
+68-cm mark.
+CHECK YOUR UNDERSTANDING 2.2
+A cave diver enters a long underwater tunnel. When her displacement with respect to the entry point is 20 m, she
+accidentally drops her camera, but she doesn’t notice it missing until she is some 6 m farther into the tunnel. She
+swims back 10 m but cannot find the camera, so she decides to end the dive. How far from the entry point is she?
+Taking the positive direction out of the tunnel, what is her displacement vector relative to the entry point?
+Access for free at openstax.org
+
+2.1 • Scalars and Vectors 49
+Algebra of Vectors in Two Dimensions
+When vectors lie in a plane—that is, when they are in two dimensions—they can be multiplied by scalars, added to
+other vectors, or subtracted from other vectors in accordance with the general laws expressed by Equation 2.1,
+Equation 2.2, Equation 2.7, and Equation 2.8. However, the addition rule for two vectors in a plane becomes more
+complicated than the rule for vector addition in one dimension. We have to use the laws of geometry to construct
+resultant vectors, followed by trigonometry to find vector magnitudes and directions. This geometric approach is
+commonly used in navigation (Figure 2.9). In this section, we need to have at hand two rulers, a triangle, a
+protractor, a pencil, and an eraser for drawing vectors to scale by geometric constructions.
+FIGURE 2.9 In navigation, the laws of geometry are used to draw resultant displacements on nautical maps.
+For a geometric construction of the sum of two vectors in a plane, we follow the parallelogram rule. Suppose two
+vectors and are at the arbitrary positions shown in Figure 2.10. Translate either one of them in parallel to the
+beginning of the other vector, so that after the translation, both vectors have their origins at the same point. Now, at
+the end of vector we draw a line parallel to vector and at the end of vector we draw a line parallel to vector
+(the dashed lines in Figure 2.10). In this way, we obtain a parallelogram. From the origin of the two vectors we draw
+a diagonal that is the resultant of the two vectors: (Figure 2.10(a)). The other diagonal of this
+parallelogram is the vector difference of the two vectors , as shown in Figure 2.10(b). Notice that the end
+of the difference vector is placed at the end of vector .
+FIGURE 2.10 The parallelogram rule for the addition of two vectors. Make the parallel translation of each vector to a point where their
+origins (marked by the dot) coincide and construct a parallelogram with two sides on the vectors and the other two sides (indicated by
+dashed lines) parallel to the vectors. (a) Draw the resultant vector along the diagonal of the parallelogram from the common point to the
+opposite corner. Length R of the resultant vector is not equal to the sum of the magnitudes of the two vectors. (b) Draw the difference
+vector along the diagonal connecting the ends of the vectors. Place the origin of vector at the end of vector and the end
+(arrowhead) of vector at the end of vector . Length D of the difference vector is not equal to the difference of magnitudes of the two
+vectors.
+
+50 2 • Vectors
+It follows from the parallelogram rule that neither the magnitude of the resultant vector nor the magnitude of the
+difference vector can be expressed as a simple sum or difference of magnitudes A and B, because the length of a
+diagonal cannot be expressed as a simple sum of side lengths. When using a geometric construction to find
+magnitudes and , we have to use trigonometry laws for triangles, which may lead to complicated algebra.
+There are two ways to circumvent this algebraic complexity. One way is to use the method of components, which we
+examine in the next section. The other way is to draw the vectors to scale, as is done in navigation, and read
+approximate vector lengths and angles (directions) from the graphs. In this section we examine the second
+approach.
+If we need to add three or more vectors, we repeat the parallelogram rule for the pairs of vectors until we find the
+resultant of all of the resultants. For three vectors, for example, we first find the resultant of vector 1 and vector 2,
+and then we find the resultant of this resultant and vector 3. The order in which we select the pairs of vectors does
+not matter because the operation of vector addition is commutative and associative (see Equation 2.7 and Equation
+2.8). Before we state a general rule that follows from repetitive applications of the parallelogram rule, let’s look at
+the following example.
+Suppose you plan a vacation trip in Florida. Departing from Tallahassee, the state capital, you plan to visit your uncle
+Joe in Jacksonville, see your cousin Vinny in Daytona Beach, stop for a little fun in Orlando, see a circus performance
+in Tampa, and visit the University of Florida in Gainesville. Your route may be represented by five displacement
+vectors , , , and , which are indicated by the red vectors in Figure 2.11. What is your total displacement
+when you reach Gainesville? The total displacement is the vector sum of all five displacement vectors, which may be
+found by using the parallelogram rule four times. Alternatively, recall that the displacement vector has its beginning
+at the initial position (Tallahassee) and its end at the final position (Gainesville), so the total displacement vector can
+be drawn directly as an arrow connecting Tallahassee with Gainesville (see the green vector in Figure 2.11). When
+we use the parallelogram rule four times, the resultant we obtain is exactly this green vector connecting
+Tallahassee with Gainesville: .
+Access for free at openstax.org

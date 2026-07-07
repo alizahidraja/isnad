@@ -1,0 +1,191 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 736-744
+############################################################
+
+724 15 • Oscillations
+FIGURE 15.16 The Lennard-Jones potential energy function for a system of two neutral atoms. If the energy is below some maximum
+energy, the system oscillates near the equilibrium position between the two turning points.
+From the graph, you can see that there is a potential energy well, which has some similarities to the potential energy
+well of the potential energy function of the simple harmonic oscillator discussed in Figure 15.13. The Lennard-Jones
+potential has a stable equilibrium point where the potential energy is minimum and the force on either side of the
+equilibrium point points toward equilibrium point. Note that unlike the simple harmonic oscillator, the potential well
+of the Lennard-Jones potential is not symmetric. This is due to the fact that the force between the atoms is not a
+Hooke’s law force and is not linear. The atoms can still oscillate around the equilibrium position because when
+, the force is positive; when , the force is negative. Notice that as x approaches zero, the slope is
+quite steep and negative, which means that the force is large and positive. This suggests that it takes a large force to
+try to push the atoms close together. As x becomes increasingly large, the slope becomes less steep and the force is
+smaller and negative. This suggests that if given a large enough energy, the atoms can be separated.
+If you are interested in this interaction, find the force between the molecules by taking the derivative of the potential
+energy function. You will see immediately that the force does not resemble a Hooke’s law force , but if
+you are familiar with the binomial theorem:
+the force can be approximated by a Hooke’s law force.
+Velocity and Energy Conservation
+Getting back to the system of a block and a spring in Figure 15.11, once the block is released from rest, it begins to
+move in the negative direction toward the equilibrium position. The potential energy decreases and the magnitude
+of the velocity and the kinetic energy increase. At time , the block reaches the equilibrium position
+where the force on the block and the potential energy are zero. At the equilibrium position, the block
+reaches a negative velocity with a magnitude equal to the maximum velocity . The kinetic energy is
+maximum and equal to At this point, the force on the block is zero, but
+momentum carries the block, and it continues in the negative direction toward . As the block continues to
+move, the force on it acts in the positive direction and the magnitude of the velocity and kinetic energy decrease.
+The potential energy increases as the spring compresses. At time , the block reaches . Here the
+velocity and kinetic energy are equal to zero. The force on the block is and the potential energy stored in
+the spring is . During the oscillations, the total energy is constant and equal to the sum of the potential
+energy and the kinetic energy of the system,
+Access for free at openstax.org
+
+15.3 • Comparing Simple Harmonic Motion and Circular Motion 725
+15.12
+The equation for the energy associated with SHM can be solved to find the magnitude of the velocity at any position:
+15.13
+The energy in a simple harmonic oscillator is proportional to the square of the amplitude. When considering many
+forms of oscillations, you will find the energy proportional to the amplitude squared.
+CHECK YOUR UNDERSTANDING 15.1
+Why would it hurt more if you snapped your hand with a ruler than with a loose spring, even if the displacement of
+each system is equal?
+CHECK YOUR UNDERSTANDING 15.2
+Identify one way you could decrease the maximum velocity of a simple harmonic oscillator.
+15.3 Comparing Simple Harmonic Motion and Circular Motion
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe how the sine and cosine functions relate to the concepts of circular motion
+• Describe the connection between simple harmonic motion and circular motion
+An easy way to model SHM is by considering uniform circular motion. Figure 15.17 shows one way of using this
+method. A peg (a cylinder of wood) is attached to a vertical disk, rotating with a constant angular frequency. Figure
+15.18 shows a side view of the disk and peg. If a lamp is placed above the disk and peg, the peg produces a shadow.
+Let the disk have a radius of and define the position of the shadow that coincides with the center line of the
+disk to be . As the disk rotates at a constant rate, the shadow oscillates between and .
+Now imagine a block on a spring beneath the floor as shown in Figure 15.18.
+
+726 15 • Oscillations
+FIGURE 15.17 SHM can be modeled as rotational motion by looking at the shadow of a peg on a wheel rotating at a constant angular
+frequency.
+Access for free at openstax.org
+
+15.3 • Comparing Simple Harmonic Motion and Circular Motion 727
+FIGURE 15.18 Light shines down on the disk so that the peg makes a shadow. If the disk rotates at just the right angular frequency, the
+shadow follows the motion of the block on a spring. If there is no energy dissipated due to nonconservative forces, the block and the
+shadow will oscillate back and forth in unison. In this figure, four snapshots are taken at four different times. (a) The wheel starts at
+and the shadow of the peg is at , representing the mass at position . (b) As the disk rotates through an angle , the
+shadow of the peg is between and . (c) The disk continues to rotate until , at which the shadow follows the mass to
+. (d) The disk continues to rotate, the shadow follows the position of the mass.
+If the disk turns at the proper angular frequency, the shadow follows along with the block. The position of the
+shadow can be modeled with the equation
+15.14
+Recall that the block attached to the spring does not move at a constant velocity. How often does the wheel have to
+turn to have the peg’s shadow always on the block? The disk must turn at a constant angular frequency equal to
+times the frequency of oscillation .
+Figure 15.19 shows the basic relationship between uniform circular motion and SHM. The peg lies at the tip of the
+radius, a distance A from the center of the disk. The x-axis is defined by a line drawn parallel to the ground, cutting
+
+728 15 • Oscillations
+the disk in half. The y-axis (not shown) is defined by a line perpendicular to the ground, cutting the disk into a left
+half and a right half. The center of the disk is the point The projection of the position of the peg onto
+the fixed x-axis gives the position of the shadow, which undergoes SHM analogous to the system of the block and
+spring. At the time shown in the figure, the projection has position x and moves to the left with velocity v. The
+tangential velocity of the peg around the circle equals of the block on the spring. The x-component of the
+velocity is equal to the velocity of the block on the spring.
+FIGURE 15.19 A peg moving on a circular path with a constant angular velocity is undergoing uniform circular motion. Its projection on
+the x-axis undergoes SHM. Also shown is the velocity of the peg around the circle, , and its projection, which is v. Note that these
+velocities form a similar triangle to the displacement triangle.
+We can use Figure 15.19 to analyze the velocity of the shadow as the disk rotates. The peg moves in a circle with a
+speed of . The shadow moves with a velocity equal to the component of the peg’s velocity that is parallel
+to the surface where the shadow is being produced:
+15.15
+It follows that the acceleration is
+15.16
+CHECK YOUR UNDERSTANDING 15.3
+Identify an object that undergoes uniform circular motion. Describe how you could trace the SHM of this object.
+15.4 Pendulums
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• State the forces that act on a simple pendulum
+• Determine the angular frequency, frequency, and period of a simple pendulum in terms of the length of
+the pendulum and the acceleration due to gravity
+• Define the period for a physical pendulum
+• Define the period for a torsional pendulum
+Pendulums are in common usage. Grandfather clocks use a pendulum to keep time and a pendulum can be used to
+Access for free at openstax.org
+
+15.4 • Pendulums 729
+measure the acceleration due to gravity. For small displacements, a pendulum is a simple harmonic oscillator.
+The Simple Pendulum
+A simple pendulum is defined to have a point mass, also known as the pendulum bob, which is suspended from a
+string of length L with negligible mass (Figure 15.20). Here, the only forces acting on the bob are the force of gravity
+(i.e., the weight of the bob) and tension from the string. The mass of the string is assumed to be negligible as
+compared to the mass of the bob.
+FIGURE 15.20 A simple pendulum has a small-diameter bob and a string that has a very small mass but is strong enough not to stretch
+appreciably. The linear displacement from equilibrium is s, the length of the arc. Also shown are the forces on the bob, which result in a net
+force of toward the equilibrium position—that is, a restoring force.
+Consider the torque on the pendulum. The force providing the restoring torque is the component of the weight of the
+pendulum bob that acts along the arc length. The torque is the length of the string L times the component of the net
+force that is perpendicular to the radius of the arc. The minus sign indicates the torque acts in the opposite direction
+of the angular displacement:
+The solution to this differential equation involves advanced calculus, and is beyond the scope of this text. But note
+that for small angles (less than 15 degrees or about 0.26 radians), and differ by less than 1%, if θ is
+measured in radians. We can then use the small angle approximation The angle describes the position
+of the pendulum. Using the small angle approximation gives an approximate solution for small angles,
+15.17
+Because this equation has the same form as the equation for SHM, the solution is easy to find. The angular
+frequency is
+15.18
+and the period is
+
+730 15 • Oscillations
+15.19
+The period of a simple pendulum depends on its length and the acceleration due to gravity. The period is completely
+independent of other factors, such as mass and the maximum displacement. As with simple harmonic oscillators,
+the period T for a pendulum is nearly independent of amplitude, especially if is less than about Even simple
+pendulum clocks can be finely adjusted and remain accurate.
+Note the dependence of T on g. If the length of a pendulum is precisely known, it can actually be used to measure
+the acceleration due to gravity, as in the following example.
+EXAMPLE 15.3
+Measuring Acceleration due to Gravity by the Period of a Pendulum
+What is the acceleration due to gravity in a region where a simple pendulum having a length 75.000 cm has a period
+of 1.7357 s?
+Strategy
+We are asked to find g given the period T and the length L of a pendulum. We can solve for g, assuming
+only that the angle of deflection is less than .
+Solution
+1. Square and solve for g:
+2. Substitute known values into the new equation:
+3. Calculate to find g:
+Significance
+This method for determining g can be very accurate, which is why length and period are given to five digits in this
+example. For the precision of the approximation to be better than the precision of the pendulum length
+and period, the maximum displacement angle should be kept below about .
+CHECK YOUR UNDERSTANDING 15.4
+An engineer builds two simple pendulums. Both are suspended from small wires secured to the ceiling of a room.
+Each pendulum hovers 2 cm above the floor. Pendulum 1 has a bob with a mass of 10 kg. Pendulum 2 has a bob
+with a mass of 100 kg. Describe how the motion of the pendulums will differ if the bobs are both displaced by .
+Physical Pendulum
+Any object can oscillate like a pendulum. Consider a coffee mug hanging on a hook in the pantry. If the mug gets
+knocked, it oscillates back and forth like a pendulum until the oscillations die out. We have described a simple
+pendulum as a point mass and a string. A physical pendulum is any object whose oscillations are similar to those of
+the simple pendulum, but cannot be modeled as a point mass on a string, and the mass distribution must be
+included into the equation of motion.
+Access for free at openstax.org
+
+15.4 • Pendulums 731
+As for the simple pendulum, the restoring force of the physical pendulum is the force of gravity. With the simple
+pendulum, the force of gravity acts on the center of the pendulum bob. In the case of the physical pendulum, the
+force of gravity acts on the center of mass (CM) of an object. The object oscillates about a point O. Consider an
+object of a generic shape as shown in Figure 15.21.
+FIGURE 15.21 A physical pendulum is any object that oscillates as a pendulum, but cannot be modeled as a point mass on a string. The
+force of gravity acts on the center of mass (CM) and provides the restoring force that causes the object to oscillate. The minus sign on the
+component of the weight that provides the restoring force is present because the force acts in the opposite direction of the increasing angle
+.
+When a physical pendulum is hanging from a point but is free to rotate, it rotates because of the torque applied at
+the CM, produced by the component of the object’s weight that acts tangent to the motion of the CM. Taking the
+counterclockwise direction to be positive, the component of the gravitational force that acts tangent to the motion is
+. The minus sign is the result of the restoring force acting in the opposite direction of the increasing angle.
+Recall that the torque is equal to . The magnitude of the torque is equal to the length of the radius arm
+times the tangential component of the force applied, . Here, the length L of the radius arm is the
+distance between the point of rotation and the CM. To analyze the motion, start with the net torque. Like the simple
+pendulum, consider only small angles so that . Recall from Fixed-Axis Rotation on rotation that the net
+torque is equal to the moment of inertia times the angular acceleration where :
+Using the small angle approximation and rearranging:
+Once again, the equation says that the second time derivative of the position (in this case, the angle) equals minus a
+constant times the position. The solution is
+where is the maximum angular displacement. The angular frequency is
+15.20
+The period is therefore

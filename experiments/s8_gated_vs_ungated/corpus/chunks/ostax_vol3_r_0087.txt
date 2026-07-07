@@ -1,0 +1,234 @@
+# REAL PDF — openstax_vol3.pdf, pages 534-540
+############################################################
+
+526 Chapter 11 | Particle Physics and Cosmology
+Example 11.7
+Creating a New Particle
+−
+Themassoftheupsilon (ϒ) meson(bb)iscreatedinasymmetricelectron-positroncollider.Whatbeamenergy
+is required?
+Strategy
+The Particle Data Group (https://openstaxcollege.org/l/21particledata) has stated that the rest mass
+energy of this meson is approximately 10.58 GeV. The above expression for the center-of-mass energy can
+be simplified because a symmetric collider implies → p =− → p . Also, the rest masses of the colliding
+1 2
+electrons and positrons are identical(m
+e
+c2=0.511MeV ⎞
+⎠
+and much smaller than the mass of the energy
+particlecreated.Thus,thecenter-of-massenergy(W)canbeexpressedcompletelyintermsofthebeamenergy,
+E =E =E .
+beam 1 2
+Solution
+Based on the above assumptions, we have
+W2≈2⎡E E +E E ⎤=4E E =4E2.
+⎣ 1 2 1 2⎦ 1 2 1
+The beam energy is therefore
+W
+E ≈E = .
+beam 1 2
+The rest mass energy of the particle created in the collision is equal to the center-of-mass energy, so
+E ≈ 10.58GeV =5.29GeV.
+beam 2
+Significance
+Giventheenergyscaleofthisproblem,therestmassenergyoftheupsilon (ϒ) mesonisduealmostentirelydue
+totheinitialkineticenergiesoftheelectronandpositrons.Thismesonishighlyunstableandquicklydecaysto
+lighterandmorestableparticles.Theexistenceoftheupsilon (ϒ) particleappearsasadramaticincreaseofsuch
+events at 5.29 GeV.
+11.7 Check Your UnderstandingWhy is a symmetric collider “symmetric?”
+Higherbeamenergiesrequirelargeraccelerators,somoderncollidingbeammachinesareverylarge.TheLHC,forexample,
+is 17 miles in circumference (Figure 5.27). (In the 1940s, Enrico Fermi envisioned an accelerator that encircled all of
+Earth!) An important scientific challenge of the twenty-first century is to reduce the size of particle accelerators.
+Particle Detectors
+The purpose of a particle detector is to accurately measure the outcome of collisions created by a particle accelerator.
+Thedetectorsaremultipurpose.Inotherwords,thedetectorisdividedintomanysubdetectors,eachdesignedtomeasurea
+differentaspectofthecollisionevent.Forexample,onedetectormightbedesignedtomeasurephotonsandanothermight
+bedesignedtomeasuremuons.Toillustratehowsubdetectorscontributetoanunderstandingofanentirecollisionevent,
+wedescribethesubdetectorsoftheCompactMuonSolenoid(CMS),whichwasusedtodiscovertheHiggsBosonatthe
+LHC (Figure 11.9).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 527
+Figure 11.9 Compact Muon Solenoid detector. The detector consists of several layers, each responsible for measuring different
+types of particles. (credit: modification of work by David Barney/CERN)
+The beam pipe of the detector is out of (and into) the page at the left. Particles produced by pp collisions (the “collision
+fragments”) stream out of the detector in all directions. These particles encounter multiple layers of subdetectors. A
+subdetectorisaparticledetectorwithinalargersystemofdetectorsdesignedtomeasurecertaintypesofparticles.Thereare
+severalmaintypesofsubdetectors.Trackingdevicesdeterminethepathandthereforemomentumofaparticle;calorimeters
+measure a particle’s energy; and particle-identification detectors determine a particle’s identity (mass).
+Thefirstsetofsubdetectorsthatparticlesencounteristhesilicontrackingsystem.Thissystemisdesignedtomeasurethe
+momentum of charged particles (such as electrons and protons). The detector is bathed in a uniform magnetic field, so
+thechargedparticlesarebentinacircularpathbyaLorentzforce(asforthecyclotron).Ifthemomentumoftheparticle
+is large, the radius of the trajectory is large, and the path is almost straight. But if the momentum is small, the radius of
+thetrajectoryissmall,andthepathistightlycurved.Astheparticlespassthroughthedetector,theyinteractwithsilicon
+microstripdetectorsatmultiplepoints.Thesedetectorsproducesmallelectrical signalsasthechargedparticlespassnear
+the detector elements. The signals are then amplified and recorded. A series of electrical “hits” is used to determine the
+trajectoryoftheparticleinthetrackingsystem.Acomputer-generated“bestfit”tothistrajectorygivesthetrackradiusand
+thereforetheparticlemomentum.AttheLHC,alargenumberoftracksarerecordedforthesamecollisionevent.Fitstothe
+tracks are shown by the blue and green lines inFigure 11.10.
+
+528 Chapter 11 | Particle Physics and Cosmology
+Figure 11.10 A three-dimensional view of particle fragments in
+the LHC as seen by theATLAS detector. (credit: LHC/CERN)
+Beyond the tracking layers is the electromagnetic calorimeter. This detector is made of clear, lead-based crystals. When
+electrons interact with the crystals, they radiate high-energy photons. The photons interact with the crystal to produce
+electron-positron pairs. Then, these particles radiate more photons. The process repeats, producing a particle shower (the
+crystal “glows”). A crude model of this process is as follows.
+Anelectronwithenergy E strikesthecrystalandloseshalfofitsenergyintheformofaphoton.Thephotonproducesan
+0
+electron-positronpair,andeachparticleproceedsawaywithhalftheenergyofthephoton.Meanwhile,theoriginalelectron
+radiatesagain.So,weareleftwithfourparticles:twoelectrons,onepositron,andonephoton,eachwithanenergy E /4.
+0
+Thenumberofparticlesintheshowerincreasesgeometrically.Afternradiationevents,thereare N =2 n particles.Hence,
+the total energy per particle afternradiation events is
+E
+E(t)=
+n
+0,
+2
+where E istheincidentenergyandE(t)istheamountofenergyperparticleafternevents.Anincomingphotontriggers
+0
+asimilarchainofevents(Figure11.11).Iftheenergyperparticledropsbelowaparticularthresholdvalue,othertypesof
+radiativeprocessesbecomeimportantandtheparticleshowerceases.Eventually,thetotalenergyoftheincomingparticle
+is absorbed and converted into an electrical signal.
+Figure 11.11 (a) A particle shower produced in a crystal calorimeter. (b) A diagram showing a typical sequence of
+reactions in a particle shower.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 529
+Beyondthecrystalcalorimeteristhehadroncalorimeter.Asthenamesuggests,thissubdetectormeasureshadronssuchas
+protonsandpions.Thehadroncalorimeterconsistsoflayersofbrassandsteelseparatedbyplasticscintillators.Itspurpose
+istoabsorbtheparticleenergyandconvertitintoanelectronicsignal.Beyondthisdetectorisalargemagneticcoilusedto
+produce a uniform field for tracking.
+The last subdetector is the muon detector, which consists of slabs of iron that only muons (and neutrinos) can penetrate.
+Betweentheironslabsaremultipletypesofmuon-trackingelementsthataccuratelymeasurethemomentumofthemuon.
+The muon detectors are important because the Higgs boson (discussed soon) can be detected through its decays to four
+muons—hence the name of the detector.
+Oncedataiscollectedfromeachoftheparticlesubdetectors,theentirecollisioneventcanbeassessed.Theenergyofthe
+ith particle is written
+2
+E i= (p i c)2+(m i c2) ,
+where p is the absolute magnitude of the momentum of theith particle, and m is its rest mass.
+i i
+The total energy of all particles is therefore
+E
+total
+=∑E i.
+i
+If all particles are detected, the total energy should be equal to the center-of-mass energy of the colliding beam machine
+(W).Inpractice,notallparticlesareidentified,eitherbecausetheseparticlesaretoodifficulttodetect(neutrinos)orbecause
+these particles “slip through.” In many cases, whole chains of decays can be “reconstructed,” like putting back together
+awatchthathasbeensmashedtopieces.Informationaboutthesedecaychainsarecriticaltotheevaluationofmodelsof
+particle interactions.
+11.5 | The Standard Model
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the Standard Model in terms of the four fundamental forces and exchange particles
+• Draw a Feynman diagram for a simple particle interaction
+• Use Heisenberg’s uncertainty principle to determine the range of forces described by the
+Standard Model
+• Explain the rationale behind grand unification theories
+The chief intellectual activity of any scientist is the development and revision of scientific models. A particle physicist
+seekstodevelopmodelsofparticleinteractions.Thisworkbuildsdirectlyonworkdoneongravityandelectromagnetism
+intheseventeenth,eighteenth,andnineteenthcenturies.Theultimategoalofphysicsisaunified“theoryofeverything”that
+describesallparticleinteractionsintermsofasingleelegantequationandapicture.Theequationitselfmightbecomplex,
+butmanyscientistssuspecttheideabehindtheequationwillmakeusexclaim:“Howcouldwehavemissedit?Itwasso
+obvious!”
+Inthissection,weintroducetheStandardModel,whichisthebestcurrentmodelofparticleinteractions.Wedescribethe
+StandardModelindetailintermsofelectromagnetic,weaknuclear,andstrongforces.Attheendofthissection,wereview
+unification theories in particle physics.
+Introduction to the Standard Model
+The Standard Model of particle interactions contains two ideas: electroweak theory and quantum chromodynamics
+(QCD) (the force acting between color charges). Electroweak theory unifies the theory of quantum electrodynamics
+(QED), the modern equivalent of classical electromagnetism, and the theory of weak nuclear interactions. The Standard
+Model combines the theory of relativity and quantum mechanics.
+IntheStandardModel,particleinteractions occurthroughtheexchangeofbosons,the“forcecarriers.”Forexample,the
+electrostatic forceiscommunicatedbetweentwopositivelychargedparticlesbysendingandreceivingmasslessphotons.
+
+530 Chapter 11 | Particle Physics and Cosmology
+Thiscanoccuratatheoreticalinfiniterange.TheresultoftheseinteractionsisCoulombrepulsion(orattraction).Similarly,
+quarks bind together through the exchange of massless gluons. Leptons scatter off other leptons (or decay into lighter
+particles)throughtheexchangeofmassiveWandZbosons.AsummaryofforcesasdescribedbytheStandardModelis
+giveninTable11.6.Thegravitationalforce,mediatedbytheexchangeofmasslessgravitations,isaddedinthistablefor
+completeness but is not part of the Standard Model.
+Force Relative Exchange particle Particles acted Range
+strength (bosons) upon
+Strong 1 Gluon Quarks −15
+10 m
+Electromagnetic 1/137 photon Charged particles ∞
+Weak 10 −10 W + , W−, Z bosons Quarks, leptons, 10 −18 m
+neutrinos
+Gravitational 10 −38 graviton All particles ∞
+Table 11.6Four Forces and the Standard Model
+The Standard Model can be expressed in terms of equations and diagrams. The equations are complex and are usually
+coveredinamoreadvancedcourseinmodernphysics.However,theessenceoftheStandardModelcanbecapturedusing
+Feynman diagrams. A Feynman diagram, invented by American physicist Richard Feynman (1918–1988), is a space-
+time diagram that describes how particles move and interact. Different symbols are used for different particles. Particle
+interactionsinonedimensionareshownasatime-positiongraph(notaposition-timegraph).Asanexample,considerthe
+scatteringofanelectronandelectron-neutrino(Figure11.12).Theelectronmovestowardpositivevaluesofx(totheright)
+and collides with an electron neutrino moving to the left. The electron exchanges a Z boson (charge zero). The electron
+scatterstotheleftandtheneutrinoscatterstotheright.Thisexchangeisnotinstantaneous.TheZbosontravelsfromone
+particletotheotheroverashortperiodoftime.Theinteractionoftheelectronandneutrinoissaidtooccurviatheweak
+nuclearforce.Thisforcecannotbeexplainedbyclassicalelectromagnetismbecausethechargeoftheneutrinoiszero.The
+weak nuclear force is discussed again later in this section.
+Figure 11.12 In this Feynman diagram, the exchange of a
+virtual Z 0 carries the weak nuclear force between an electron
+and a neutrino.
+Electromagnetic Force
+According to QED, the electromagnetic force is transmitted between charged particles through the exchange of photons.
+Thetheoryisbasedonthreebasicprocesses:Anelectrontravelsfromoneplacetothenext,emitsorabsorbsaphoton,and
+travelsfromoneplacetoanotheragain.Whentwoelectronsinteract,oneelectronemitsthephotonandtheotherreceives
+it(Figure 11.13).Photonstransferenergyandmomentumfromoneelectrontotheother.Thenetresultinthiscaseisa
+repulsive force. The photons exchanged are virtual. A virtual particle is a particle that exists for too short a time to be
+observable. Virtual photonsmayviolate thelawofconservation ofenergy.Toseethis,consider that ifthephotontransit
+time Δt isextremelysmall,thenHeisenberg’suncertaintyprinciplestatesthattheuncertainlyinthephoton’senergy, ΔE,
+may be very large.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 531
+Figure 11.13 Feynman diagram of two electrons interacting
+through the exchange of a photon.
+To estimate the range of the electromagnetic interaction, assume that the uncertainty on the energy is comparable to the
+energy of the photon itself, written
+ΔE≈E. (11.4)
+The Heisenberg uncertainly principle states that
+h (11.5)
+ΔE≈ .
+Δt
+Combining these equations, we have
+h (11.6)
+Δt≈ .
+E
+The energy of a photon is given by E=hf , so
+Δt≈
+h
+h
+f
+≈ 1
+f
+= λ c. (11.7)
+The distancedthat the photon can move in this time is therefore
+⎛λ⎞ (11.8)
+d =cΔt≈c
+⎝c⎠
+=λ.
+The energy of the virtual photon can be arbitrarily small, so its wavelength can be arbitrarily large—in principle, even
+infinitely large. The electromagnetic force is therefore a long-range force.
+Weak Nuclear Force
+Theweaknuclearforceisresponsibleforradioactivedecay.Therangeoftheweaknuclearforceisveryshort(onlyabout
+10 −18 m)andliketheotherforcesintheStandardModel,theweakforcecanbedescribedintermsofparticleexchange.
+(There is no simple function like the Coulomb force to describe these interactions.) The particle exchanged is one of
+threebosons: W + , W−, and Z 0.TheStandardModelpredictstheexistenceofthesespin-1particlesandalsopredicts
+their specific masses. In combination with previous experiments, the mass of the charged W bosons was predicted to be
+81GeV/c2 andthatofthe Z 0 waspredicted tobe 90GeV/c2.ACERNexperiment discoveredparticles inthe1980s
+with precisely these masses—an impressive victory for the model.
+Theweaknuclearforceismostfrequentlyassociatedwithscatteringanddecaysofunstableparticlestolightparticles.For
+example, neutrons decay to protons through the weak nuclear force. This reaction is written
+n→p+e−+ν e,
+wherenistheneutron,pisaproton, e− isanelectron,and ν
+e
+isanearlymasslesselectronneutrino.Thisprocess,called
+betadecay,isimportantinmanyphysicalprocesses.AFeynmandiagramofbetadecayisgiveninFigure 11.14(a).The
+neutronemitsa W− andbecomesaproton,thenthe W− producesanelectronandanantineutrino.Thisprocessissimilar
+to the scattering event

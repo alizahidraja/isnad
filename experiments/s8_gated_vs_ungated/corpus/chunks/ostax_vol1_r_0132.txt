@@ -1,0 +1,52 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 799-800
+############################################################
+
+16.6 • Standing Waves and Resonance 787
+negligible mass, and the tension is provided by a 2.00-kg hanging mass. (a) What is the velocity of the waves on the
+string? (b) Draw a sketch of the first three normal modes of the standing waves that can be produced on the string
+and label each with the wavelength. (c) List the frequencies that the string vibrator must be tuned to in order to
+produce the first three normal modes of the standing waves.
+FIGURE 16.30 A string attached to an adjustable-frequency string vibrator.
+Strategy
+a. The velocity of the wave can be found using The tension is provided by the weight of the hanging
+mass.
+b. The standing waves will depend on the boundary conditions. There must be a node at each end. The first
+mode will be one half of a wave. The second can be found by adding a half wavelength. That is the shortest
+length that will result in a node at the boundaries. For example, adding one quarter of a wavelength will result
+in an antinode at the boundary and is not a mode which would satisfy the boundary conditions. This is shown
+in Figure 16.31.
+c. Since the wave speed velocity is the wavelength times the frequency, the frequency is wave speed divided by
+the wavelength.
+FIGURE 16.31 (a) The figure represents the second mode of the string that satisfies the boundary conditions of a node at each end
+of the string. (b)This figure could not possibly be a normal mode on the string because it does not satisfy the boundary conditions.
+There is a node on one end, but an antinode on the other.
+Solution
+a. Begin with the velocity of a wave on a string. The tension is equal to the weight of the hanging mass. The linear
+mass density and mass of the hanging mass are given:
+b. The first normal mode that has a node on each end is a half wavelength. The next two modes are found by
+adding a half of a wavelength.
+
+788 16 • Waves
+c. The frequencies of the first three modes are found by using
+Significance
+The three standing modes in this example were produced by maintaining the tension in the string and adjusting the
+driving frequency. Keeping the tension in the string constant results in a constant velocity. The same modes could
+have been produced by keeping the frequency constant and adjusting the speed of the wave in the string (by
+changing the hanging mass.)
+INTERACTIVE
+Engage the Phet simulation (https://openstax.org/l/21normalmodes)to play with a 1D or 2D system of coupled
+mass-spring oscillators. Vary the number of masses, set the initial conditions, and watch the system evolve. See the
+spectrum of normal modes for arbitrary motion. See longitudinal or transverse modes in the 1D system.
+CHECK YOUR UNDERSTANDING 16.7
+The equations for the wavelengths and the frequencies of the modes of a wave produced on a string:
+were derived by considering a wave on a string where there were symmetric boundary conditions of a node at each
+end. These modes resulted from two sinusoidal waves with identical characteristics except they were moving in
+opposite directions, confined to a region L with nodes required at both ends. Will the same equations work if there
+were symmetric boundary conditions with antinodes at each end? What would the normal modes look like for a
+medium that was free to oscillate on each end? Don’t worry for now if you cannot imagine such a medium, just
+consider two sinusoidal wave functions in a region of length L, with antinodes on each end.
+The free boundary conditions shown in the last Check Your Understanding may seem hard to visualize. How can
+there be a system that is free to oscillate on each end? In Figure 16.32 are shown two possible configuration of a
+metallic rods (shown in red) attached to two supports (shown in blue). In part (a), the rod is supported at the ends,
+and there are fixed boundary conditions at both ends. Given the proper frequency, the rod can be driven into
+Access for free at openstax.org

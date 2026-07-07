@@ -1,0 +1,181 @@
+# REAL PDF — openstax_vol1.pdf, pages 444-450
+############################################################
+
+432 9 • Linear Momentum and Collisions
+Equation 9.36 implies another important result: Since M represents the mass of the entire system of particles, it is
+necessarily constant. (If it isn’t, we don’t have a closed system, so we can’t expect the system’s momentum to be
+conserved.) As a result, Equation 9.36 implies that, for a closed system,
+9.37
+That is to say, in the absence of an external force, the velocity of the center of mass never changes.
+You might be tempted to shrug and say, “Well yes, that’s just Newton’s first law,” but remember that Newton’s first
+law discusses the constant velocity of a particle, whereas Equation 9.37 applies to the center of mass of a (possibly
+vast) collection of interacting particles, and that there may not be any particle at the center of mass at all! So, this
+really is a remarkable result.
+EXAMPLE 9.19
+Fireworks Display
+When a fireworks rocket explodes, thousands of glowing fragments fly outward in all directions, and fall to Earth in
+an elegant and beautiful display (Figure 9.31). Describe what happens, in terms of conservation of momentum and
+center of mass.
+FIGURE 9.31 These exploding fireworks are a vivid example of conservation of momentum and the motion of the center of mass.
+The picture shows radial symmetry about the central points of the explosions; this suggests the idea of center of
+mass. We can also see the parabolic motion of the glowing particles; this brings to mind projectile motion ideas.
+Solution
+Initially, the fireworks rocket is launched and flies more or less straight upward; this is the cause of the more-or-
+less-straight, white trail going high into the sky below the explosion in the upper-right of the picture (the yellow
+explosion). This trail is not parabolic because the explosive shell, during its launch phase, is actually a rocket; the
+impulse applied to it by the ejection of the burning fuel applies a force on the shell during the rise-time interval.
+(This is a phenomenon we will study in the next section.) The shell has multiple forces on it; thus, it is not in free-fall
+prior to the explosion.
+At the instant of the explosion, the thousands of glowing fragments fly outward in a radially symmetrical pattern.
+Access for free at openstax.org
+
+9.6 • Center of Mass 433
+The symmetry of the explosion is the result of all the internal forces summing to zero for every
+internal force, there is another that is equal in magnitude and opposite in direction.
+However, as we learned above, these internal forces cannot change the momentum of the center of mass of the
+(now exploded) shell. Since the rocket force has now vanished, the center of mass of the shell is now a projectile
+(the only force on it is gravity), so its trajectory does become parabolic. The two red explosions on the left show the
+path of their centers of mass at a slightly longer time after explosion compared to the yellow explosion on the upper
+right.
+In fact, if you look carefully at all three explosions, you can see that the glowing trails are not truly radially
+symmetric; rather, they are somewhat denser on one side than the other. Specifically, the yellow explosion and the
+lower middle explosion are slightly denser on their right sides, and the upper-left explosion is denser on its left side.
+This is because of the momentum of their centers of mass; the differing trail densities are due to the momentum
+each piece of the shell had at the moment of its explosion. The fragment for the explosion on the upper left of the
+picture had a momentum that pointed upward and to the left; the middle fragment’s momentum pointed upward
+and slightly to the right; and the right-side explosion clearly upward and to the right (as evidenced by the white
+rocket exhaust trail visible below the yellow explosion).
+Finally, each fragment is a projectile on its own, thus tracing out thousands of glowing parabolas.
+Significance
+In the discussion above, we said, “…the center of mass of the shell is now a projectile (the only force on it is
+gravity)….” This is not quite accurate, for there may not be any mass at all at the center of mass; in which case, there
+could not be a force acting on it. This is actually just verbal shorthand for describing the fact that the gravitational
+forces on all the particles act so that the center of mass changes position exactly as if all the mass of the shell were
+always located at the position of the center of mass.
+CHECK YOUR UNDERSTANDING 9.13
+How would the firework display change in deep space, far away from any source of gravity?
+You may sometimes hear someone describe an explosion by saying something like, “the fragments of the exploded
+object always move in a way that makes sure that the center of mass continues to move on its original trajectory.”
+This makes it sound as if the process is somewhat magical: how can it be that, in every explosion, it always works
+out that the fragments move in just the right way so that the center of mass’ motion is unchanged? Phrased this way,
+it would be hard to believe no explosion ever does anything differently.
+The explanation of this apparently astonishing coincidence is: We defined the center of mass precisely so this is
+exactly what we would get. Recall that first we defined the momentum of the system:
+We then concluded that the net external force on the system (if any) changed this momentum:
+and then—and here’s the point—we defined an acceleration that would obey Newton’s second law. That is, we
+demanded that we should be able to write
+which requires that
+
+434 9 • Linear Momentum and Collisions
+where the quantity inside the parentheses is the center of mass of our system. So, it’s not astonishing that the
+center of mass obeys Newton’s second law; we defined it so that it would.
+9.7 Rocket Propulsion
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the application of conservation of momentum when the mass changes with time, as well as the
+velocity
+• Calculate the speed of a rocket in empty space, at some time, given initial conditions
+• Calculate the speed of a rocket in Earth’s gravity field, at some time, given initial conditions
+Now we deal with the case where the mass of an object is changing. We analyze the motion of a rocket, which
+changes its velocity (and hence its momentum) by ejecting burned fuel gases, thus causing it to accelerate in the
+opposite direction of the velocity of the ejected fuel (see Figure 9.32). Specifically: A fully fueled rocket ship in deep
+space has a total mass (this mass includes the initial mass of the fuel). At some moment in time, the rocket has a
+velocity and mass m; this mass is a combination of the mass of the empty rocket and the mass of the remaining
+unburned fuel it contains. (We refer to m as the “instantaneous mass” and as the “instantaneous velocity.”) The
+rocket accelerates by burning the fuel it carries and ejecting the burned exhaust gases. If the burn rate of the fuel is
+constant, and the velocity at which the exhaust is ejected is also constant, what is the change of velocity of the
+rocket as a result of burning all of its fuel?
+FIGURE 9.32 The space shuttle had a number of reusable parts. Solid fuel boosters on either side were recovered and refueled after each
+flight, and the entire orbiter returned to Earth for use in subsequent flights. The large liquid fuel tank was expended. The space shuttle was
+a complex assemblage of technologies, employing both solid and liquid fuel, and pioneering ceramic tiles as reentry heat shields. As a
+result, it permitted multiple launches as opposed to single-use rockets. (credit: modification of work by NASA)
+Physical Analysis
+Here’s a description of what happens, so that you get a feel for the physics involved.
+Access for free at openstax.org
+
+9.7 • Rocket Propulsion 435
+• As the rocket engines operate, they are continuously ejecting burned fuel gases, which have both mass and
+velocity, and therefore some momentum. By conservation of momentum, the rocket’s momentum changes by
+this same amount (with the opposite sign). We will assume the burned fuel is being ejected at a constant rate,
+which means the rate of change of the rocket’s momentum is also constant. By Equation 9.9, this represents a
+constant force on the rocket.
+• However, as time goes on, the mass of the rocket (which includes the mass of the remaining fuel) continuously
+decreases. Thus, even though the force on the rocket is constant, the resulting acceleration is not; it is
+continuously increasing.
+• So, the total change of the rocket’s velocity will depend on the amount of mass of fuel that is burned, and that
+dependence is not linear.
+The problem has the mass and velocity of the rocket changing; also, the total mass of ejected gases is changing. If
+we define our system to be the rocket + fuel, then this is a closed system (since the rocket is in deep space, there
+are no external forces acting on this system); as a result, momentum is conserved for this system. Thus, we can
+apply conservation of momentum to answer the question (Figure 9.33).
+FIGURE 9.33 The rocket accelerates to the right due to the expulsion of some of its fuel mass to the left. Conservation of momentum
+enables us to determine the resulting change of velocity. The mass m is the instantaneous total mass of the rocket (i.e., mass of rocket body
+plus mass of fuel at that point in time). (credit: modification of work by NASA/Bill Ingalls)
+At the same moment that the total instantaneous rocket mass is m (i.e., m is the mass of the rocket body plus the
+mass of the fuel at that point in time), we define the rocket’s instantaneous velocity to be (in the
++x-direction); this velocity is measured relative to an inertial reference system (the Earth, for example). Thus, the
+initial momentum of the system is
+The rocket’s engines are burning fuel at a constant rate and ejecting the exhaust gases in the −x-direction. During an
+infinitesimal time interval dt, the engines eject a (positive) infinitesimal mass of gas at velocity ; note
+that although the rocket velocity is measured with respect to Earth, the exhaust gas velocity is measured with
+respect to the (moving) rocket. Measured with respect to the Earth, therefore, the exhaust gas has velocity .
+As a consequence of the ejection of the fuel gas, the rocket’s mass decreases by , and its velocity increases by
+. Therefore, including both the change for the rocket and the change for the exhaust gas, the final momentum of
+the system is
+Since all vectors are in the x-direction, we drop the vector notation. Applying conservation of momentum, we obtain
+
+436 9 • Linear Momentum and Collisions
+Now, and dv are each very small; thus, their product is very, very small, much smaller than the other
+two terms in this expression. We neglect this term, therefore, and obtain:
+Our next step is to remember that, since represents an increase in the mass of ejected gases, it must also
+represent a decrease of mass of the rocket:
+Replacing this, we have
+or
+Integrating from the initial mass m0 to the final mass m of the rocket gives us the result we are after:
+and thus our final answer is
+9.38
+This result is called the rocket equation. It was originally derived by the Russian rocket scientist Konstantin
+Tsiolkovsky in 1897. It gives us the change of velocity that the rocket obtains from burning a mass of fuel that
+decreases the total rocket mass from down to m. As expected, the relationship between and the change of
+mass of the rocket is nonlinear.
+PROBLEM-SOLVING STRATEGY
+Rocket Propulsion
+In rocket problems, the most common questions are finding the change of velocity due to burning some amount of
+fuel for some amount of time; or to determine the acceleration that results from burning fuel.
+1. To determine the change of velocity, use the rocket equation Equation 9.38.
+2. To determine the acceleration, determine the force by using the impulse-momentum theorem, using the
+rocket equation to determine the change of velocity.
+EXAMPLE 9.20
+Thrust on a Spacecraft
+A spacecraft is moving in gravity-free space along a straight path when its pilot decides to accelerate forward. He
+turns on the thrusters, and burned fuel is ejected at a constant rate of , at a speed (relative to the
+rocket) of . The initial mass of the spacecraft and its unburned fuel is , and the
+Access for free at openstax.org
+
+9.7 • Rocket Propulsion 437
+thrusters are on for 30 s.
+a. What is the thrust (the force applied to the rocket by the ejected fuel) on the spacecraft?
+b. What is the spacecraft’s acceleration as a function of time?
+c. What are the spacecraft’s accelerations at t = 0, 15, 30, and 35 s?
+Strategy
+a. The force on the spacecraft is equal to the rate of change of the momentum of the fuel.
+b. Knowing the force from part (a), we can use Newton’s second law to calculate the consequent acceleration.
+The key here is that, although the force applied to the spacecraft is constant (the fuel is being ejected at a
+constant rate), the mass of the spacecraft isn’t; thus, the acceleration caused by the force won’t be constant.
+We expect to get a function a(t), therefore.
+c. We’ll use the function we obtain in part (b), and just substitute the numbers given. Important: We expect that
+the acceleration will get larger as time goes on, since the mass being accelerated is continuously decreasing
+(fuel is being ejected from the rocket).
+Solution
+a. The momentum of the ejected fuel gas is
+The ejection velocity is constant, and therefore the force is
+Now, is the rate of change of the mass of the fuel; the problem states that this is .
+Substituting, we get
+b. Above, we defined m to be the combined mass of the empty rocket plus however much unburned fuel it
+contained: . From Newton’s second law,
+The force is constant and the empty rocket mass is constant, but the fuel mass is decreasing at a
+uniform rate; specifically:
+This gives us
+Notice that, as expected, the acceleration is a function of time. Substituting the given numbers:
+c. At :
+At .

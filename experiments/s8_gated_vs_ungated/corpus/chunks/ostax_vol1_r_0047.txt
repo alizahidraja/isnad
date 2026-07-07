@@ -1,0 +1,191 @@
+# REAL PDF — openstax_vol1.pdf, pages 281-288
+############################################################
+
+6.2 • Friction 269
+EXAMPLE 6.10
+Static and Kinetic Friction
+A 20.0-kg crate is at rest on a floor as shown in Figure 6.13. The coefficient of static friction between the crate and
+floor is 0.700 and the coefficient of kinetic friction is 0.600. A horizontal force is applied to the crate. Find the
+force of friction if (a) (b) (c) and (d)
+FIGURE 6.13 (a) A crate on a horizontal surface is pushed with a force (b) The forces on the crate. Here, may represent either the static
+or the kinetic frictional force.
+Strategy
+The free-body diagram of the crate is shown in Figure 6.13(b). We apply Newton’s second law in the horizontal and
+vertical directions, including the friction force in opposition to the direction of motion of the box.
+Solution
+Newton’s second law GIVES
+Here we are using the symbol f to represent the frictional force since we have not yet determined whether the crate
+is subject to station friction or kinetic friction. We do this whenever we are unsure what type of friction is acting.
+Now the weight of the crate is
+which is also equal to N. The maximum force of static friction is therefore As long as is
+less than 137 N, the force of static friction keeps the crate stationary and Thus, (a) (b)
+and (c)
+(d) If the applied force is greater than the maximum force of static friction (137 N), so the crate can no
+longer remain at rest. Once the crate is in motion, kinetic friction acts. Then
+and the acceleration is
+Significance
+This example illustrates how we consider friction in a dynamics problem. Notice that static friction has a value that
+
+270 6 • Applications of Newton's Laws
+matches the applied force, until we reach the maximum value of static friction. Also, no motion can occur until the
+applied force equals the force of static friction, but the force of kinetic friction will then become smaller.
+CHECK YOUR UNDERSTANDING 6.7
+A block of mass 1.0 kg rests on a horizontal surface. The frictional coefficients for the block and surface are
+and (a) What is the minimum horizontal force required to move the block? (b) What is the
+block’s acceleration when this force is applied?
+Friction and the Inclined Plane
+One situation where friction plays an obvious role is that of an object on a slope. It might be a crate being pushed up
+a ramp to a loading dock or a skateboarder coasting down a mountain, but the basic physics is the same. We usually
+generalize the sloping surface and call it an inclined plane but then pretend that the surface is flat. Let’s look at an
+example of analyzing motion on an inclined plane with friction.
+EXAMPLE 6.11
+Downhill Skier
+A skier with a mass of 62 kg is sliding down a snowy slope at a constant acceleration. Find the coefficient of kinetic
+friction for the skier if friction is known to be 45.0 N.
+Strategy
+The magnitude of kinetic friction is given as 45.0 N. Kinetic friction is related to the normal force by ;
+thus, we can find the coefficient of kinetic friction if we can find the normal force on the skier. The normal force is
+always perpendicular to the surface, and since there is no motion perpendicular to the surface, the normal force
+should equal the component of the skier’s weight perpendicular to the slope. (See Figure 6.14, which repeats a
+figure from the chapter on Newton’s laws of motion.)
+FIGURE 6.14 The motion of the skier and friction are parallel to the slope, so it is most convenient to project all forces onto a coordinate
+system where one axis is parallel to the slope and the other is perpendicular (axes shown to left of skier). The normal force is
+perpendicular to the slope, and friction is parallel to the slope, but the skier’s weight has components along both axes, namely and
+The normal force is equal in magnitude to so there is no motion perpendicular to the slope.
+We have
+Access for free at openstax.org
+
+6.2 • Friction 271
+Substituting this into our expression for kinetic friction, we obtain
+which can now be solved for the coefficient of kinetic friction
+Solution
+Solving for gives
+Substituting known values on the right-hand side of the equation,
+Significance
+This result is a little smaller than the coefficient listed in Table 6.1 for waxed wood on snow, but it is still reasonable
+since values of the coefficients of friction can vary greatly. In situations like this, where an object of mass m slides
+down a slope that makes an angle with the horizontal, friction is given by All objects slide down
+a slope with constant acceleration under these circumstances.
+We have discussed that when an object rests on a horizontal surface, the normal force supporting it is equal in
+magnitude to its weight. Furthermore, simple friction is always proportional to the normal force. When an object is
+not on a horizontal surface, as with the inclined plane, we must find the force acting on the object that is directed
+perpendicular to the surface; it is a component of the weight.
+We now derive a useful relationship for calculating coefficient of friction on an inclined plane. Notice that the result
+applies only for situations in which the object slides at constant speed down the ramp.
+An object slides down an inclined plane at a constant velocity if the net force on the object is zero. We can use this
+fact to measure the coefficient of kinetic friction between two objects. As shown in Example 6.11, the kinetic friction
+on a slope is . The component of the weight down the slope is equal to (see the free-body
+diagram in Figure 6.14). These forces act in opposite directions, so when they have equal magnitude, the
+acceleration is zero. Writing these out,
+Solving for we find that
+Put a coin on a book and tilt it until the coin slides at a constant velocity down the book. You might need to tap the
+book lightly to get the coin to move. Measure the angle of tilt relative to the horizontal and find Note that the
+coin does not start to slide at all until an angle greater than is attained, since the coefficient of static friction is
+larger than the coefficient of kinetic friction. Think about how this may affect the value for and its uncertainty.
+Atomic-Scale Explanations of Friction
+The simpler aspects of friction dealt with so far are its macroscopic (large-scale) characteristics. Great strides have
+been made in the atomic-scale explanation of friction during the past several decades. Researchers are finding that
+the atomic nature of friction seems to have several fundamental characteristics. These characteristics not only
+explain some of the simpler aspects of friction—they also hold the potential for the development of nearly friction-
+free environments that could save hundreds of billions of dollars in energy which is currently being converted
+(unnecessarily) into heat.
+Figure 6.15 illustrates one macroscopic characteristic of friction that is explained by microscopic (small-scale)
+
+272 6 • Applications of Newton's Laws
+research. The equations for kinetic and maximum static friction depend on the normal force and the materials in
+contact, but not on the amount of area in contact, a somewhat counterintuitive notion. When two rough surfaces are
+in contact, the actual contact area is a tiny fraction of the total area because only high spots touch. When a greater
+normal force is exerted, the actual contact area increases, and we find that the friction is proportional to this area.
+FIGURE 6.15 Two rough surfaces in contact have a much smaller area of actual contact than their total area. When the normal force is
+larger as a result of a larger applied force, the area of actual contact increases, as does friction.
+However, the atomic-scale view promises to explain far more than the simpler features of friction. The mechanism
+for how heat is generated is now being determined. In other words, why do surfaces get warmer when rubbed?
+Essentially, atoms are linked with one another to form lattices. When surfaces rub, the surface atoms adhere and
+cause atomic lattices to vibrate—essentially creating sound waves that penetrate the material. The sound waves
+diminish with distance, and their energy is converted into heat. Chemical reactions that are related to frictional wear
+can also occur between atoms and molecules on the surfaces. Figure 6.16 shows how the tip of a probe drawn
+across another material is deformed by atomic-scale friction. The force needed to drag the tip can be measured and
+is found to be related to shear stress, which is discussed in Static Equilibrium and Elasticity. The variation in shear
+stress is remarkable (more than a factor of ) and difficult to predict theoretically, but shear stress is yielding a
+fundamental understanding of a large-scale phenomenon known since ancient times—friction.
+FIGURE 6.16 The tip of a probe is deformed sideways by frictional force as the probe is dragged across a surface. Measurements of how the
+force varies for different materials are yielding fundamental insights into the atomic nature of friction.
+INTERACTIVE
+Engaging the simulation below, describe a model for friction on a molecular level. Describe matter in terms of
+molecular motion. The description should include diagrams to support the description; how the temperature affects
+the image; what are the differences and similarities between solid, liquid, and gas particle motion; and how the size
+and speed of gas molecules relate to everyday objects.
+Access multimedia content (https://openstax.org/l/21friction)
+Access for free at openstax.org
+
+6.2 • Friction 273
+EXAMPLE 6.12
+Sliding Blocks
+The two blocks of Figure 6.17 are attached to each other by a massless string that is wrapped around a frictionless
+pulley. When the bottom 4.00-kg block is pulled to the left by the constant force the top 2.00-kg block slides
+across it to the right. Find the magnitude of the force necessary to move the blocks at constant speed. Assume that
+the coefficient of kinetic friction between all surfaces is 0.400.
+FIGURE 6.17 (a) Each block moves at constant velocity. (b) Free-body diagrams for the blocks.
+Strategy
+We analyze the motions of the two blocks separately. The top block is subjected to a contact force exerted by the
+bottom block. The components of this force are the normal force and the frictional force Other
+forces on the top block are the tension in the string and the weight of the top block itself, 19.6 N. The bottom
+block is subjected to contact forces due to the top block and due to the floor. The first contact force has components
+and which are simply reaction forces to the contact forces that the bottom block exerts on the top
+block. The components of the contact force of the floor are and Other forces on this block are the
+tension and the weight –39.2 N.
+Solution
+Since the top block is moving horizontally to the right at constant velocity, its acceleration is zero in both the
+horizontal and the vertical directions. From Newton’s second law,
+Solving for the two unknowns, we obtain and The bottom block is also not
+accelerating, so the application of Newton’s second law to this block gives
+The values of and T were found with the first set of equations. When these values are substituted into the
+second set of equations, we can determine and P. They are
+
+274 6 • Applications of Newton's Laws
+Significance
+Understanding what direction in which to draw the friction force is often troublesome. Notice that each friction force
+labeled in Figure 6.17 acts in the direction opposite the motion of its corresponding block.
+EXAMPLE 6.13
+A Crate on an Accelerating Truck
+A 50.0-kg crate rests on the bed of a truck as shown in Figure 6.18. The coefficients of friction between the surfaces
+are and Find the frictional force on the crate when the truck is accelerating forward relative
+to the ground at (a) 2.00 m/s2, and (b) 5.00 m/s2.
+FIGURE 6.18 (a) A crate rests on the bed of the truck that is accelerating forward. (b) The free-body diagram of the crate.
+Strategy
+The forces on the crate are its weight and the normal and frictional forces due to contact with the truck bed. We
+start by assuming that the crate is not slipping. In this case, the static frictional force acts on the crate.
+Furthermore, the accelerations of the crate and the truck are equal.
+Solution
+a. Application of Newton’s second law to the crate, using the reference frame attached to the ground, yields
+We can now check the validity of our no-slip assumption. The maximum value of the force of static friction is
+whereas the actual force of static friction that acts when the truck accelerates forward at is only
+Thus, the assumption of no slipping is valid.
+b. If the crate is to move with the truck when it accelerates at the force of static friction must be
+Since this exceeds the maximum of 196 N, the crate must slip. The frictional force is therefore kinetic and is
+The horizontal acceleration of the crate relative to the ground is now found from
+Access for free at openstax.org
+
+6.2 • Friction 275
+Significance
+Relative to the ground, the truck is accelerating forward at and the crate is accelerating forward at
+. Hence the crate is sliding backward relative to the bed of the truck with an acceleration
+EXAMPLE 6.14
+Snowboarding
+Earlier, we analyzed the situation of a downhill skier moving at constant velocity to determine the coefficient of
+kinetic friction. Now let’s do a similar analysis to determine acceleration. The snowboarder of Figure 6.19 glides
+down a slope that is inclined at 13° to the horizontal. The coefficient of kinetic friction between the board and the
+snow is What is the acceleration of the snowboarder?
+FIGURE 6.19 (a) A snowboarder glides down a slope inclined at 13° to the horizontal. (b) The free-body diagram of the snowboarder.
+Strategy
+The forces acting on the snowboarder are her weight and the contact force of the slope, which has a component
+normal to the incline and a component along the incline (force of kinetic friction). Because she moves along the
+slope, the most convenient reference frame for analyzing her motion is one with the x-axis along and the y-axis
+perpendicular to the incline. In this frame, both the normal and the frictional forces lie along coordinate axes, the
+components of the weight are , and the only
+acceleration is along the x-axis
+Solution
+We can now apply Newton’s second law to the snowboarder:
+From the second equation, Upon substituting this into the first equation, we find
+Significance
+Notice from this equation that if is small enough or is large enough, is negative, that is, the snowboarder

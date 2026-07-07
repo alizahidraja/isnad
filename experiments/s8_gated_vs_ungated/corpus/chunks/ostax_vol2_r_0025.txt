@@ -1,0 +1,337 @@
+# REAL PDF — openstax_vol2.pdf, pages 136-144
+############################################################
+
+126 Chapter 3 | The First Law of Thermodynamics
+3.5 | Heat Capacities of an Ideal Gas
+Learning Objectives
+By the end of this section, you will be able to:
+• Define heat capacity of an ideal gas for a specific process
+• Calculate the specific heat of an ideal gas for either an isobaric or isochoric process
+• Explain the difference between the heat capacities of an ideal gas and a real gas
+• Estimate the change in specific heat of a gas over temperature ranges
+WelearnedaboutspecificheatandmolarheatcapacityinTemperature and Heat;however,wehavenotconsidereda
+process in which heat is added. We do that in this section. First, we examine a process where the system has a constant
+volume, then contrast it with a system at constant pressure and show how their specific heats are related.
+Let’sstartwithlookingatFigure3.12,whichshowstwovesselsAandB,eachcontaining1molofthesametypeofideal
+gasatatemperatureTandavolumeV.TheonlydifferencebetweenthetwovesselsisthatthepistonatthetopofAisfixed,
+whereastheoneatthetopofBisfreetomoveagainstaconstantexternalpressurep.Wenowconsiderwhathappenswhen
+the temperature of the gas in each vessel is slowly increased to T+dT with the addition of heat.
+Figure 3.12 Two vessels are identical except that the piston at
+the top ofAis fixed, whereas that atopBis free to move against
+a constant external pressurep.
+SincethepistonofvesselAisfixed,thevolumeoftheenclosedgasdoesnotchange.Consequently,thegasdoesnowork,
+and we have from the first law
+dE =dQ−dW =dQ.
+int
+We represent the fact that the heat is exchanged at constant volume by writing
+dQ=C
+V
+dT,
+where C
+V
+isthe molar heatcapacity atconstant volume ofthe gas.Inaddition, since dE
+int
+=dQ forthis particular
+process,
+dE
+int
+=C
+V
+dT. (3.9)
+We obtained this equation assuming the volume of the gas was fixed. However, internal energy is a state function that
+dependsononlythetemperatureofanidealgas.Therefore, dE
+int
+=C
+V
+dT givesthechangeininternalenergyofanideal
+gas for any process involving a temperature changedT.
+WhenthegasinvesselBisheated,itexpandsagainstthemovablepistonanddoeswork dW = pdV. Inthiscase,theheat
+is added at constant pressure, and we write
+dQ=C
+p
+dT,
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 127
+where C isthemolarheatcapacityatconstantpressureofthegas.Furthermore,sincetheidealgasexpandsagainsta
+p
+constant pressure,
+d(pV)=d(RT)
+becomes
+pdV =RdT.
+Finally, inserting the expressions fordQandpdVinto the first law, we obtain
+dE
+int
+=dQ−pdV =(C p−R)dT.
+Wehavefound dE forbothanisochoricandanisobaricprocess.Becausetheinternalenergyofanidealgasdepends
+int
+only on the temperature, dE must be the same for both processes. Thus,
+int
+C
+V
+dT =(C p−R)dT,
+and
+C p=C V+R. (3.10)
+The derivation of Equation 3.10 was based only on the ideal gas law. Consequently, this relationship is approximately
+valid for all dilute gases, whether monatomic like He, diatomic like O , or polyatomic like CO or NH .
+2 2 3
+In the preceding chapter, we found the molar heat capacity of an ideal gas under constant volume to be
+d
+C V = R,
+2
+wheredisthenumberofdegrees offreedom ofamolecule inthesystem. Table 3.3showsthemolar heat capacities of
+somediluteidealgasesatroomtemperature.Theheatcapacitiesofrealgasesaresomewhathigherthanthosepredictedby
+theexpressionsof C and C giveninEquation 3.10.Thisindicatesthatvibrationalmotioninpolyatomicmolecules
+V p
+issignificant,evenatroomtemperature.Nevertheless,thedifferenceinthemolarheatcapacities, C p−C V, isveryclose
+toR, even for the polyatomic gases.
+Molar Heat Capacities of Dilute Ideal Gases at Room Temperature
+Type of Molecule Gas C
+p
+C
+V
+C p−C
+V
+(J/mol K) (J/mol K) (J/mol K)
+Monatomic Ideal 5R=20.79 3R=12.47 R=8.31
+2 2
+Diatomic Ideal 7R=29.10 5R=20.79 R=8.31
+2 2
+Polyatomic Ideal 4R=33.26 3R=24.94 R=8.31
+Table 3.3
+
+128 Chapter 3 | The First Law of Thermodynamics
+3.6 | Adiabatic Processes for an Ideal Gas
+Learning Objectives
+By the end of this section, you will be able to:
+• Define adiabatic expansion of an ideal gas
+• Demonstrate the qualitative difference between adiabatic and isothermal expansions
+Whenanidealgasiscompressedadiabatically (Q=0), workisdoneonitanditstemperatureincreases;inanadiabatic
+expansion, the gas does work and its temperature drops. Adiabatic compressions actually occur in the cylinders of a car,
+wherethecompressionsofthegas-airmixturetakeplacesoquicklythatthereisnotimeforthemixturetoexchangeheat
+withitsenvironment.Nevertheless,becauseworkisdoneonthemixtureduringthecompression,itstemperaturedoesrise
+significantly.Infact,thetemperatureincreasescanbesolargethatthemixturecanexplodewithouttheadditionofaspark.
+Suchexplosions,sincetheyarenottimed,makeacarrunpoorly—itusually“knocks.”Becauseignitiontemperaturerises
+with the octane of gasoline, one way to overcome this problem is to use a higher-octane gasoline.
+Anotherinterestingadiabaticprocessisthefreeexpansionofagas.Figure3.13showsagasconfinedbyamembraneto
+onesideofatwo-compartment,thermallyinsulatedcontainer.Whenthemembraneispunctured,gasrushesintotheempty
+sideofthecontainer,therebyexpandingfreely.Becausethegasexpands“againstavacuum” (p=0),itdoesnowork,and
+becausethevesselisthermallyinsulated,theexpansionisadiabatic.With Q=0 and W =0 inthefirstlaw, ΔE =0,
+int
+so E inti=E
+int f
+for the free expansion.
+Figure 3.13 The gas in the left chamber expands freely into the right chamber when the membrane is punctured.
+If the gas is ideal, the internal energy depends only on the temperature. Therefore, when an ideal gas expands freely, its
+temperature does not change.
+Aquasi-static,adiabaticexpansionofanidealgasisrepresentedinFigure 3.14,whichshowsaninsulatedcylinderthat
+contains 1mol ofan ideal gas. The gas is made to expand quasi-statically byremoving one grain ofsand at a time from
+thetopofthepiston.WhenthegasexpandsbydV,thechangeinitstemperature isdT.Theworkdonebythegasinthe
+expansion is dW = pdV;dQ=0 because the cylinder is insulated; and the change in the internal energy of the gas is,
+fromEquation 3.9, dE
+int
+=C
+V
+dT. Therefore, from the first law,
+C
+V
+dT =0−pdV =−pdV,
+so
+pdV
+dT = − .
+C
+V
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 129
+Figure 3.14 When sand is removed from the piston one grain
+at a time, the gas expands adiabatically and quasi-statically in
+the insulated vessel.
+Also, for 1 mol of an ideal gas,
+d(pV)=d(RT),
+so
+pdV+Vdp=RdT
+and
+pdV+Vdp
+dT = .
+R
+We now have two equations fordT. Upon equating them, we find that
+C V Vdp+(C V+R)pdV =0.
+Now, we divide this equation bypVand use C p=C V+R. We are then left with
+dp dV
+C V p +C p V =0,
+which becomes
+dp dV
+p +γ V =0,
+where we define γ as the ratio of the molar heat capacities:
+C (3.11)
+p
+γ = .
+C
+V
+
+130 Chapter 3 | The First Law of Thermodynamics
+Thus,
+⌠ ⌡ d p p +γ⌠ ⌡ d V V =0
+and
+lnp+γlnV =constant.
+Finally, using ln(Ax )= xlnAandlnAB=lnA+lnB, we can write this in the form
+pVγ =constant. (3.12)
+This equation is the condition that must be obeyed by an ideal gas in a quasi-static adiabatic process. For example, if an
+idealgasmakesaquasi-staticadiabatictransitionfromastatewithpressureandvolume p and V toastatewith p
+1 1 2
+and V , then it must be true that p Vγ = p Vγ .
+2 1 1 2 2
+TheadiabaticconditionofEquation3.12canbewrittenintermsofotherpairsofthermodynamicvariablesbycombining
+it with the ideal gas law. In doing this, we find that
+p 1−γ Tγ =constant (3.13)
+and
+γ−1 (3.14)
+TV =constant.
+AreversibleadiabaticexpansionofanidealgasisrepresentedonthepVdiagramofFigure 3.15.Theslopeofthecurve
+at any point is
+d d V p = d d V ⎛ ⎝ con V st γ ant⎞ ⎠ =−γ V p .
+Figure 3.15 Quasi-static adiabatic and isothermal expansions
+of an ideal gas.
+ThedashedcurveshownonthispVdiagramrepresentsanisothermalexpansionwhereT(andthereforepV)isconstant.The
+slope of this curve is useful when we consider the second law of thermodynamics in the next chapter. This slope is
+dp d nRT p
+= = − .
+dV dV V V
+Because γ>1, the isothermal curve is not as steep as that for the adiabatic expansion.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 131
+Example 3.7
+Compression of an Ideal Gas in an Automobile Engine
+Gasolinevaporisinjectedintothecylinderofanautomobileenginewhenthepistonisinitsexpandedposition.
+The temperature, pressure, and volume of the resulting gas-air mixture are 20°C, 1.00×10 5 N/m2, and
+240cm 3, respectively. The mixture is then compressed adiabatically to a volume of 40cm 3. Note that in
+the actual operation of an automobile engine, the compression is not quasi-static, although we are making that
+assumptionhere.(a)Whatarethepressureandtemperatureofthemixtureafterthecompression?(b)Howmuch
+work is done by the mixture during the compression?
+Strategy
+Because we are modeling the process as a quasi-static adiabatic compression of an ideal gas, we have
+V
+2
+pVγ = constant and pV =nRT. The work needed can then be evaluated with W =∫ pdV.
+V
+1
+Solution
+a. For an adiabatic compression we have
+γ
+⎛V ⎞
+p = p 1 ,
+2 1⎝V ⎠
+2
+so after the compression, the pressure of the mixture is
+1.40
+⎛ −6 3⎞
+p =(1.00×10 5 N/m2) 240×10 m =1.23×10 6 N/m2.
+2 ⎝ −6 3 ⎠
+40×10 m
+From the ideal gas law, the temperature of the mixture after the compression is
+⎛p V ⎞
+T = 2 2 T
+2 ⎝p V ⎠ 1
+1 1
+(1.23×10 6 N/m2)(40×10 −6 m 3 )
+= ·293K
+(1.00×10 5 N/m2)(240×10 −6 m 3 )
+=600K=328°C.
+b. The work done by the mixture during the compression is
+V
+2
+W =∫ pdV.
+V
+1
+WiththeadiabaticconditionofEquation3.12,wemaywritepas K/Vγ, where K = p Vγ = p Vγ .
+1 1 2 2
+The work is therefore
+
+132 Chapter 3 | The First Law of Thermodynamics
+V
+2
+W =⌠
+⌡ V
+K
+γ
+dV
+V
+1
+⎛ ⎞
+= K ⎜ 1 − 1 ⎟
+1−γ
+⎝V
+γ−1
+V
+γ−1
+⎠
+2 1
+⎛ p Vγ p Vγ ⎞
+= 1 ⎜ 2 2 − 1 1 ⎟
+1−γ
+⎝V
+γ−1
+V
+γ−1
+⎠
+2 1
+= 1 (p V −p V )
+1−γ 2 2 1 1
+= 1 [(1.23×10 6 N/m2)(40×10 −6 m 3 )
+1−1.40
+−(1.00×10 5 N/m2)(240×10 −6 m 3 )]
+=−63J.
+Significance
+Thenegativesignontheworkdoneindicatesthatthepistondoesworkonthegas-airmixture.Theenginewould
+not work if the gas-air mixture did work on the piston.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 133
+CHAPTER 3 REVIEW
+KEY TERMS
+adiabatic process process during which no heat is transferred to or from the system
+boundary imagined walls that separate the system and its surroundings
+closed system system that is mechanically and thermally isolated from its environment
+cyclic process process in which the state of the system at the end is same as the state at the beginning
+environment outside of the system being studied
+equation of state describes properties of matter under given physical conditions
+equilibrium thermal balance established between two objects or parts within a system
+extensive variable variable that is proportional to the amount of matter in the system
+first law of thermodynamics the change in internal energy for any transition between two equilibrium states is
+ΔE =Q−W
+int
+intensive variable variable that is independent of the amount of matter in the system
+internal energy average of the total mechanical energy of all the molecules or entities in the system
+isobaric process process during which the system’s pressure does not change
+isochoric process process during which the system’s volume does not change
+isothermal process process during which the system’s temperature remains constant
+molar heat capacity at constant pressure quantifies the ratio of the amount of heat added removed to the
+temperature while measuring at constant pressure
+molar heat capacity at constant volume quantifies the ratio of the amount of heat added removed to the
+temperature while measuring at constant volume
+open system system that can exchange energy and/or matter with its surroundings
+quasi-static process evolutionofasystemthatgoessoslowlythatthesysteminvolvedisalwaysinthermodynamic
+equilibrium
+reversible process processthatcanberevertedtorestoreboththesystemanditsenvironment backtotheiroriginal
+states together
+surroundings environment that interacts with an open system
+thermodynamic process manner in which a state of a system can change from initial state to final state
+thermodynamic system object and focus of thermodynamic study
+KEY EQUATIONS
+Equation of state for a closed system f(p, V, T)=0
+Net work for a finite change in volume V
+2
+W =∫ pdV
+V
+1
+Internal energy of a system (average total energy) ¯ ¯
+E
+int
+=∑(K i+U i),
+i
+Internal energy of a monatomic ideal gas E =nN ⎛3k T ⎞ = 3nRT
+int A⎝2 B ⎠ 2
+First law of thermodynamics ΔE =Q−W
+int

@@ -1,0 +1,213 @@
+# REAL PDF — openstax_vol1.pdf, pages 536-544
+############################################################
+
+524 11 • Angular Momentum
+plane containing and
+11.5
+FIGURE 11.9 In three-dimensional space, the position vector locates a particle in the xy-plane with linear momentum . The angular
+momentum with respect to the origin is , which is in the z-direction. The direction of is given by the right-hand rule, as shown.
+The intent of choosing the direction of the angular momentum to be perpendicular to the plane containing and is
+similar to choosing the direction of torque to be perpendicular to the plane of as discussed in Fixed-Axis
+Rotation. The magnitude of the angular momentum is found from the definition of the cross-product,
+where is the angle between and The units of angular momentum are .
+As with the definition of torque, we can define a lever arm that is the perpendicular distance from the momentum
+vector to the origin, With this definition, the magnitude of the angular momentum becomes
+We see that if the direction of is such that it passes through the origin, then and the angular momentum is
+zero because the lever arm is zero. In this respect, the magnitude of the angular momentum depends on the choice
+of origin.
+If we take the time derivative of the angular momentum, we arrive at an expression for the torque on the particle:
+Here we have used the definition of and the fact that a vector crossed into itself is zero. From Newton’s second
+law, the net force acting on the particle, and the definition of the net torque, we can write
+11.6
+Note the similarity with the linear result of Newton’s second law, . The following problem-solving
+strategy can serve as a guideline for calculating the angular momentum of a particle.
+Access for free at openstax.org
+
+11.2 • Angular Momentum 525
+PROBLEM-SOLVING STRATEGY
+Angular Momentum of a Particle
+1. Choose a coordinate system about which the angular momentum is to be calculated.
+2. Write down the radius vector to the point particle in unit vector notation.
+3. Write the linear momentum vector of the particle in unit vector notation.
+4. Take the cross product and use the right-hand rule to establish the direction of the angular
+momentum vector.
+5. See if there is a time dependence in the expression of the angular momentum vector. If there is, then a torque
+exists about the origin, and use to calculate the torque. If there is no time dependence in the
+expression for the angular momentum, then the net torque is zero.
+EXAMPLE 11.4
+Angular Momentum and Torque on a Meteor
+A meteor enters Earth’s atmosphere (Figure 11.10) and is observed by someone on the ground before it burns up in
+the atmosphere. The vector gives the position of the meteor with respect to the observer. At
+the instant the observer sees the meteor, it has linear momentum , and it is accelerating at
+a constant along its path, which for our purposes can be taken as a straight line. (a) What is the
+angular momentum of the meteor about the origin, which is at the location of the observer? (b) What is the torque on
+the meteor about the origin?
+FIGURE 11.10 An observer on the ground sees a meteor at position with linear momentum .
+Strategy
+We resolve the acceleration into x- and y-components and use the kinematic equations to express the velocity as a
+function of acceleration and time. We insert these expressions into the linear momentum and then calculate the
+angular momentum using the cross-product. Since the position and momentum vectors are in the xy-plane, we
+expect the angular momentum vector to be along the z-axis. To find the torque, we take the time derivative of the
+angular momentum.
+Solution
+The meteor is entering Earth’s atmosphere at an angle of below the horizontal, so the components of the
+acceleration in the x- and y-directions are
+
+526 11 • Angular Momentum
+We write the velocities using the kinematic equations.
+a. The angular momentum is
+At , the angular momentum of the meteor about the origin is
+This is the instant that the observer sees the meteor.
+b. To find the torque, we take the time derivative of the angular momentum. Taking the time derivative of as a
+function of time, which is the second equation immediately above, we have
+Then, since , we have
+The units of torque are given as newton-meters, not to be confused with joules. As a check, we note that the
+lever arm is the x-component of the vector in Figure 11.10 since it is perpendicular to the force acting on the
+meteor, which is along its path. By Newton’s second law, this force is
+The lever arm is
+Thus, the torque is
+Significance
+Since the meteor is accelerating downward toward Earth, its radius and velocity vector are changing. Therefore,
+since , the angular momentum is changing as a function of time. The torque on the meteor about the
+origin, however, is constant, because the lever arm and the force on the meteor are constants. This example is
+important in that it illustrates that the angular momentum depends on the choice of origin about which it is
+calculated. The methods used in this example are also important in developing angular momentum for a system of
+particles and for a rigid body.
+CHECK YOUR UNDERSTANDING 11.2
+A proton spiraling around a magnetic field executes circular motion in the plane of the paper, as shown below. The
+circular path has a radius of 0.4 m and the proton has velocity . What is the angular momentum of
+the proton about the origin?
+Access for free at openstax.org
+
+11.2 • Angular Momentum 527
+Angular Momentum of a System of Particles
+The angular momentum of a system of particles is important in many scientific disciplines, one being astronomy.
+Consider a spiral galaxy, a rotating island of stars like our own Milky Way. The individual stars can be treated as point
+particles, each of which has its own angular momentum. The vector sum of the individual angular momenta give the
+total angular momentum of the galaxy. In this section, we develop the tools with which we can calculate the total
+angular momentum of a system of particles.
+In the preceding section, we introduced the angular momentum of a single particle about a designated origin. The
+expression for this angular momentum is where the vector is from the origin to the particle, and is
+the particle’s linear momentum. If we have a system of N particles, each with position vector from the origin given
+by and each having momentum then the total angular momentum of the system of particles about the origin is
+the vector sum of the individual angular momenta about the origin. That is,
+11.7
+Similarly, if particle i is subject to a net torque about the origin, then we can find the net torque about the origin
+due to the system of particles by differentiating Equation 11.7:
+The sum of the individual torques produces a net external torque on the system, which we designate Thus,
+11.8
+Equation 11.8 states that the rate of change of the total angular momentum of a system is equal to the net external
+torque acting on the system when both quantities are measured with respect to a given origin. Equation 11.8 can be
+applied to any system that has net angular momentum, including rigid bodies, as discussed in the next section.
+EXAMPLE 11.5
+Angular Momentum of Three Particles
+Referring to Figure 11.11(a), determine the total angular momentum due to the three particles about the origin. (b)
+What is the rate of change of the angular momentum?
+
+528 11 • Angular Momentum
+FIGURE 11.11 Three particles in the xy-plane with different position and momentum vectors.
+Strategy
+Write down the position and momentum vectors for the three particles. Calculate the individual angular momenta
+and add them as vectors to find the total angular momentum. Then do the same for the torques.
+Solution
+a. Particle 1:
+Particle 2: ,
+Particle 3: ,
+We add the individual angular momenta to find the total about the origin:
+b. The individual forces and lever arms are
+Therefore:
+Significance
+This example illustrates the superposition principle for angular momentum and torque of a system of particles. Care
+must be taken when evaluating the radius vectors of the particles to calculate the angular momenta, and the lever
+arms, to calculate the torques, as they are completely different quantities.
+Access for free at openstax.org
+
+11.2 • Angular Momentum 529
+Angular Momentum of a Rigid Body
+We have investigated the angular momentum of a single particle, which we generalized to a system of particles. Now
+we can use the principles discussed in the previous section to develop the concept of the angular momentum of a
+rigid body. Celestial objects such as planets have angular momentum due to their spin and orbits around stars. In
+engineering, anything that rotates about an axis carries angular momentum, such as flywheels, propellers, and
+rotating parts in engines. Knowledge of the angular momenta of these objects is crucial to the design of the system
+in which they are a part.
+To develop the angular momentum of a rigid body, we model a rigid body as being made up of small mass segments,
+In Figure 11.12, a rigid body is constrained to rotate about the z-axis with angular velocity . All mass
+segments that make up the rigid body undergo circular motion about the z-axis with the same angular velocity. Part
+(a) of the figure shows mass segment with position vector from the origin and radius to the z-axis. The
+magnitude of its tangential velocity is . Because the vectors are perpendicular to each other, the
+magnitude of the angular momentum of this mass segment is
+FIGURE 11.12 (a) A rigid body is constrained to rotate around the z-axis. The rigid body is symmetrical about the z-axis. A mass segment
+is located at position which makes angle with respect to the z-axis. The circular motion of an infinitesimal mass segment is
+shown. (b) is the angular momentum of the mass segment and has a component along the z-axis .
+Using the right-hand rule, the angular momentum vector points in the direction shown in part (b). The sum of the
+angular momenta of all the mass segments contains components both along and perpendicular to the axis of
+rotation. Every mass segment has a perpendicular component of the angular momentum that will be cancelled by
+the perpendicular component of an identical mass segment on the opposite side of the rigid body, because it is
+cylindrically symmetric. Thus, the component along the axis of rotation is the only component that gives a nonzero
+value when summed over all the mass segments. From part (b), the component of along the axis of rotation is
+The net angular momentum of the rigid body along the axis of rotation is
+
+530 11 • Angular Momentum
+The summation is simply the moment of inertia I of the rigid body about the axis of rotation. For a thin
+hoop rotating about an axis perpendicular to the plane of the hoop, all of the ’s are equal to R so the summation
+reduces to which is the moment of inertia for a thin hoop found in Figure 10.20. Thus, the
+magnitude of the angular momentum along the axis of rotation of a rigid body rotating with angular velocity about
+the axis is
+11.9
+This equation is analogous to the magnitude of the linear momentum . The direction of the angular
+momentum vector is directed along the axis of rotation given by the right-hand rule.
+EXAMPLE 11.6
+Angular Momentum of a Robot Arm
+A robot arm on a Mars rover like Curiosity shown in Figure 11.8 is 1.0 m long and has forceps at the free end to pick
+up rocks. The mass of the arm is 2.0 kg and the mass of the forceps is 1.0 kg. See Figure 11.13. The robot arm and
+forceps move from rest to in 0.1 s. It rotates down and picks up a Mars rock that has mass 1.5 kg.
+The axis of rotation is the point where the robot arm connects to the rover. (a) What is the angular momentum of the
+robot arm by itself about the axis of rotation after 0.1 s when the arm has stopped accelerating? (b) What is the
+angular momentum of the robot arm when it has the Mars rock in its forceps and is rotating upwards? (c) When the
+arm does not have a rock in the forceps, what is the torque about the point where the arm connects to the rover
+when it is accelerating from rest to its final angular velocity?
+FIGURE 11.13 A robot arm on a Mars rover swings down and picks up a Mars rock. (credit: modification of work by NASA/JPL-Caltech)
+Strategy
+We use Equation 11.9 to find angular momentum in the various configurations. When the arm is rotating downward,
+the right-hand rule gives the angular momentum vector directed out of the page, which we will call the positive
+z-direction. When the arm is rotating upward, the right-hand rule gives the direction of the angular momentum
+vector into the page or in the negative z-direction. The moment of inertia is the sum of the individual moments of
+inertia. The arm can be approximated with a solid rod, and the forceps and Mars rock can be approximated as point
+masses located at a distance of 1 m from the origin. For part (c), we use Newton’s second law of motion for rotation
+to find the torque on the robot arm.
+Access for free at openstax.org
+
+11.3 • Conservation of Angular Momentum 531
+Solution
+a. Writing down the individual moments of inertia, we have
+Robot arm:
+Forceps:
+Mars rock:
+Therefore, without the Mars rock, the total moment of inertia is
+and the magnitude of the angular momentum is
+The angular momentum vector is directed out of the page in the direction since the robot arm is rotating
+counterclockwise.
+b. We must include the Mars rock in the calculation of the moment of inertia, so we have
+and
+Now the angular momentum vector is directed into the page in the direction, by the right-hand rule, since
+the robot arm is now rotating clockwise.
+c. We find the torque when the arm does not have the rock by taking the derivative of the angular momentum
+using Equation 11.8 But since , and understanding that the direction of the angular
+momentum and torque vectors are along the axis of rotation, we can suppress the vector notation and find
+which is Newton’s second law for rotation. Since , we can calculate the net torque:
+Significance
+The angular momentum in (a) is less than that of (b) due to the fact that the moment of inertia in (b) is greater than
+(a), while the angular velocity is the same.
+CHECK YOUR UNDERSTANDING 11.3
+Which has greater angular momentum: a solid sphere of mass m rotating at a constant angular frequency about
+the z-axis, or a solid cylinder of same mass and rotation rate about the z-axis?
+INTERACTIVE
+Visit the University of Colorado’s Interactive Simulation of Angular Momentum (https://openstax.org/l/
+21angmomintsim) to learn more about angular momentum.
+11.3 Conservation of Angular Momentum
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Apply conservation of angular momentum to determine the angular velocity of a rotating system in which
+the moment of inertia is changing
+• Explain how the rotational kinetic energy changes when a system undergoes changes in both moment of
+inertia and angular velocity

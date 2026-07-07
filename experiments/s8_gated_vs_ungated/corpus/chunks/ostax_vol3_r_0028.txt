@@ -1,0 +1,214 @@
+# REAL PDF — openstax_vol3.pdf, pages 172-179
+############################################################
+
+164 Chapter 4 | Diffraction
+Figure 4.18 (a) Graph of intensity of the diffraction pattern for a circular aperture. Note
+that, similar to a single slit, the central maximum is wider and brighter than those to the sides.
+(b) Two point objects produce overlapping diffraction patterns. Shown here is the Rayleigh
+criterion for being just resolvable. The central maximum of one pattern lies on the first
+minimum of the other.
+Allattemptstoobservethesizeandshapeofobjectsarelimitedbythewavelengthoftheprobe.Eventhesmallwavelength
+oflightprohibitsexactprecision.Whenextremelysmallwavelengthprobesareused,aswithanelectronmicroscope,the
+system is disturbed, still limiting our knowledge. Heisenberg’s uncertainty principle asserts that this limit is fundamental
+and inescapable, as we shall see in the chapter on quantum mechanics.
+Example 4.6
+Calculating Diffraction Limits of the Hubble Space Telescope
+TheprimarymirroroftheorbitingHubbleSpaceTelescopehasadiameterof2.40m.Beinginorbit,thistelescope
+avoidsthedegradingeffectsofatmosphericdistortiononitsresolution.(a)Whatistheanglebetweentwojust-
+resolvablepointlightsources(perhapstwostars)?Assumeanaveragelightwavelengthof550nm.(b)Ifthese
+two stars are at a distance of 2 million light-years, which is the distance of the Andromeda Galaxy, how close
+together can they be and still be resolved? (A light-year, or ly, is the distance light travels in 1 year.)
+Strategy
+TheRayleighcriterionstatedinEquation4.5, θ=1.22λ/D,givesthesmallestpossibleangle θ betweenpoint
+sources, orthebest obtainable resolution. Once this angle isknown,wecancalculate thedistance between the
+stars, since we are given how far away they are.
+Solution
+a. The Rayleigh criterion for the minimum resolvable angle is
+θ=1.22 λ .
+D
+Entering known values gives
+−9
+θ=1.22 550×10 m =2.80×10 −7 rad.
+2.40m
+b. The distancesbetween two objects a distanceraway and separated by an angle θ is s=rθ.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 165
+Substituting known values gives
+s= ⎛ 2.0×10 6 ly ⎞⎛ 2.80×10 −7 rad ⎞ =0.56ly.
+⎝ ⎠⎝ ⎠
+Significance
+Theanglefoundinpart(a)isextraordinarilysmall(lessthan1/50,000ofadegree),becausetheprimarymirror
+issolargecomparedwiththewavelengthoflight.Asnoticed,diffractioneffectsaremostnoticeablewhenlight
+interactswithobjectshavingsizesontheorderofthewavelengthoflight.However,theeffectisstillthere,and
+there is a diffraction limit to what is observable. The actual resolution of the Hubble Telescope is not quite as
+good as that found here. As with all instruments, there are other effects, such as nonuniformities in mirrors or
+aberrations in lenses that further limit resolution. However, Figure 4.19 gives an indication of the extent of
+thedetailobservablewiththeHubblebecauseofitssizeandquality,andespeciallybecauseitisaboveEarth’s
+atmosphere.
+Figure 4.19 These two photographs of the M82 Galaxy give an idea of the
+observable detail using (a) a ground-based telescope and (b) the Hubble Space
+Telescope. (credit a: modification of work by “Ricnun”/Wikimedia Commons; credit
+b: modification of work by NASA, ESA, and The Hubble Heritage Team (STScI/
+AURA))
+Theanswerinpart(b)indicatesthattwostarsseparatedbyabouthalfalight-yearcanberesolved.Theaverage
+distancebetweenstarsinagalaxyisontheorderoffivelight-yearsintheouterpartsandaboutonelight-year
+near the galactic center. Therefore, the Hubble can resolve most of the individual stars in Andromeda Galaxy,
+even though it lies at such a huge distance that its light takes 2 million years to reach us. Figure 4.20 shows
+another mirror used to observe radio waves from outer space.
+
+166 Chapter 4 | Diffraction
+Figure 4.20 A 305-m-diameter paraboloid at Arecibo in
+Puerto Rico is lined with reflective material, making it into a
+radio telescope. It is the largest curved focusing dish in the
+world. AlthoughDfor Arecibo is much larger than for the
+Hubble Telescope, it detects radiation of a much longer
+wavelength and its diffraction limit is significantly poorer than
+Hubble’s. The Arecibo telescope is still very useful, because
+important information is carried by radio waves that is not
+carried by visible light. (credit: Jeff Hitchcock)
+4.5 CheckYourUnderstandingWhatistheangularresolutionoftheArecibotelescopeshowninFigure
+4.20when operated at 21-cm wavelength? How does it compare to the resolution of the Hubble Telescope?
+Diffractionisnotonlyaproblemforopticalinstrumentsbutalsofortheelectromagneticradiationitself.Anybeamoflight
+havingafinitediameterDandawavelength λ exhibitsdiffractionspreading.Thebeamspreadsoutwithanangle θ given
+byEquation4.5, θ=1.22λ/D.Take,forexample,alaserbeammadeofraysasparallelaspossible(anglesbetweenrays
+as close to θ=0° as possible) instead spreads out at an angle θ=1.22λ/D, where D is the diameter of the beam and
+λ isitswavelength.Thisspreadingisimpossibletoobserveforaflashlightbecauseitsbeamisnotveryparalleltostart
+with.However,forlong-distancetransmissionoflaserbeamsormicrowavesignals,diffractionspreadingcanbesignificant
+(Figure4.21).Toavoidthis,wecanincreaseD.Thisisdoneforlaserlightsenttothemoontomeasureitsdistancefrom
+Earth. The laser beam is expanded through a telescope to makeDmuch larger and θ smaller.
+Figure 4.21 The beam produced by this microwave
+transmission antenna spreads out at a minimum angle
+θ=1.22λ/D due to diffraction. It is impossible to produce a
+near-parallel beam because the beam has a limited diameter.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 167
+Inmostbiologylaboratories,resolutionisanissuewhentheuseofthemicroscopeisintroduced.Thesmallerthedistancex
+bywhichtwoobjectscanbeseparatedandstillbeseenasdistinct,thegreatertheresolution.Theresolvingpowerofalens
+is defined as that distance x. An expression for resolving power is obtained from the Rayleigh criterion. Figure 4.22(a)
+shows two point objects separated by a distance x. According to the Rayleigh criterion, resolution is possible when the
+minimum angular separation is
+θ=1.22 λ = x ,
+D d
+wheredisthedistancebetweenthespecimenandtheobjectivelens,andwehaveusedthesmallangleapproximation(i.e.,
+we have assumed thatxis much smaller thand), so that tanθ≈ sinθ≈θ. Therefore, the resolving power is
+x=1.22
+λd
+.
+D
+Anotherwaytolookatthisisbytheconceptofnumericalaperture(NA),whichisameasureofthemaximumacceptance
+angleatwhichalenswilltakelightandstillcontainitwithinthelens.Figure4.22(b)showsalensandanobjectatpoint
+P.TheNAhereisameasureoftheabilityofthelenstogatherlightandresolvefinedetail.Theanglesubtendedbythelens
+at its focus is defined to be θ=2α. From the figure and again using the small angle approximation, we can write
+sinα=
+D/2
+=
+D
+.
+d 2d
+TheNAforalensis NA=nsinα,wherenistheindexofrefractionofthemediumbetweentheobjectivelensandthe
+object at pointP. From this definition forNA, we can see that
+x=1.22 λd =1.22 λ =0.61 λn .
+D 2sinα NA
+Inamicroscope,NAisimportantbecauseitrelatestotheresolvingpowerofalens.AlenswithalargeNAisabletoresolve
+finerdetails.LenseswithlargerNAarealsoabletocollectmorelightandsogiveabrighterimage.Anotherwaytodescribe
+thissituationisthatthelargertheNA,thelargertheconeoflightthatcanbebroughtintothelens,somoreofthediffraction
+modes are collected. Thus the microscope has more information to form a clear image, and its resolving power is higher.
+Figure 4.22 (a) Two points separated by a distancexand positioned a
+distancedaway from the objective. (b) Terms and symbols used in
+discussion of resolving power for a lens and an object at pointP(credit a:
+modification of work by “Infopro”/Wikimedia Commons).
+Oneoftheconsequencesofdiffractionisthatthefocalpointofabeamhasafinitewidthandintensitydistribution.Imagine
+
+168 Chapter 4 | Diffraction
+focusingwhenonlyconsideringgeometricoptics,asinFigure 4.23(a).Thefocalpointisregardedasaninfinitelysmall
+point with a huge intensity and the capacity to incinerate most samples, irrespective of the NA of the objective lens—an
+unphysical oversimplification. For wave optics, due to diffraction, we take into account the phenomenon in which the
+focal point spreads to become a focal spot (Figure 4.23(b)) with the size of the spot decreasing with increasing NA.
+Consequently, the intensity in the focal spot increases with increasing NA. The higher the NA, the greater the chances of
+photodegrading the specimen. However, the spot never becomes a true point.
+Figure 4.23 (a) In geometric optics, the focus is modelled as a point, but it is not physically possible to produce such a
+point because it implies infinite intensity. (b) In wave optics, the focus is an extended region.
+In a different type of microscope, molecules within a specimen are made to emit light through a mechanism called
+fluorescence.Bycontrollingthemoleculesemittinglight,ithasbecomepossibletoconstructimageswithresolutionmuch
+finerthantheRayleighcriterion,thuscircumventingthediffractionlimit.Thedevelopmentofsuper-resolvedfluorescence
+microscopy led to the 2014 Nobel Prize in Chemistry.
+InthisOpticalResolutionModel,twodiffractionpatternsforlightthroughtwocircularaperturesareshownside
+bysideinthissimulation(https://openstaxcollege.org/l/21optresmodsim)byFu-KwunHwang.Watch
+the patterns merge as you decrease the aperture diameters.
+4.6 | X-Ray Diffraction
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe interference and diffraction effects exhibited by X-rays in interaction with atomic-scale
+structures
+Since X-ray photons are very energetic, they have relatively short wavelengths, on the order of 10 −8 m to 10−12 m.
+Thus,typicalX-rayphotonsactlikerayswhentheyencountermacroscopicobjects,liketeeth,andproducesharpshadows.
+However,sinceatomsareontheorderof0.1nminsize,X-rayscanbeusedtodetectthelocation,shape,andsizeofatoms
+andmolecules.TheprocessiscalledX-raydiffraction,anditinvolvestheinterferenceofX-raystoproducepatternsthat
+can be analyzed for information about the structures that scattered the X-rays.
+PerhapsthemostfamousexampleofX-raydiffractionisthediscoveryofthedouble-helicalstructureofDNAin1953byan
+internationalteamofscientistsworkingatEngland’sCavendishLaboratory—AmericanJamesWatson,EnglishmanFrancis
+Crick, and New Zealand-born Maurice Wilkins. Using X-ray diffraction data produced by Rosalind Franklin, they were
+the first to model the double-helix structure of DNA that is so crucial to life. For this work, Watson, Crick, and Wilkins
+wereawardedthe1962NobelPrizeinPhysiologyorMedicine.(Thereissomedebateandcontroversyovertheissuethat
+Rosalind Franklin was not included in the prize, although she died in 1958, before the prize was awarded.)
+Figure4.24showsadiffractionpatternproducedbythescatteringofX-raysfromacrystal.ThisprocessisknownasX-ray
+crystallographybecauseoftheinformationitcanyieldaboutcrystalstructure,anditwasthetypeofdataRosalindFranklin
+supplied to Watson and Crick for DNA. Not only do X-rays confirm the size and shape of atoms, they give information
+about the atomic arrangements in materials. For example, more recent research in high-temperature superconductors
+involvescomplexmaterialswhoselatticearrangementsarecrucialtoobtainingasuperconductingmaterial.Thesecanbe
+studied using X-ray crystallography.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 169
+Figure 4.24 X-ray diffraction from the crystal of a protein
+(hen egg lysozyme) produced this interference pattern. Analysis
+of the pattern yields information about the structure of the
+protein. (credit: “Del45”/Wikimedia Commons)
+Historically,thescatteringofX-raysfromcrystalswasusedtoprovethatX-raysareenergeticelectromagnetic(EM)waves.
+ThiswassuspectedfromthetimeofthediscoveryofX-raysin1895,butitwasnotuntil1912thattheGermanMaxvon
+Laue(1879–1960)convincedtwoofhiscolleaguestoscatterX-raysfromcrystals.Ifadiffractionpatternisobtained,he
+reasoned, then the X-rays must be waves, and their wavelength could be determined. (The spacing of atoms in various
+crystals was reasonably well known at the time, based on good values for Avogadro’s number.) The experiments were
+convincing,andthe1914NobelPrizeinPhysicswasgiventovonLaueforhissuggestionleadingtotheproofthatX-rays
+are EM waves. In 1915, the unique father-and-son team of Sir William Henry Bragg and his son Sir William Lawrence
+Bragg were awarded a joint Nobel Prize for inventing the X-ray spectrometer and the then-new science of X-ray analysis.
+Inwaysreminiscentofthin-filminterference,weconsidertwoplanewavesatX-raywavelengths,eachonereflectingoff
+a different plane of atoms within a crystal’s lattice, as shown in Figure 4.25. From the geometry, the difference in path
+lengths is 2dsinθ. Constructive interference results when this distance is an integer multiple of the wavelength. This
+condition is captured by theBragg equation,
+mλ=2dsinθ, m=1, 2, 3... (4.6)
+wheremisapositiveintegeranddisthespacingbetweentheplanes.FollowingtheLawofReflection,boththeincident
+andreflectedwavesaredescribedbythesameangle, θ, butunlikethegeneralpracticeingeometricoptics, θ ismeasured
+with respect to the surface itself, rather than the normal.
+
+170 Chapter 4 | Diffraction
+Figure 4.25 X-ray diffraction with a crystal. Two incident waves reflect off two
+planes of a crystal. The difference in path lengths is indicated by the dashed line.
+Example 4.7
+X-Ray Diffraction with Salt Crystals
+CommontablesaltiscomposedmainlyofNaClcrystals.InaNaClcrystal,thereisafamilyofplanes0.252nm
+apart.Ifthefirst-ordermaximumisobservedatanincidenceangleof 18.1°,whatisthewavelengthoftheX-ray
+scattering from this crystal?
+Strategy
+Use the Bragg equation,Equation 4.6, mλ=2dsinθ, to solve for θ.
+Solution
+For first-order, m=1, and the plane spacingdis known. Solving the Bragg equation for wavelength yields
+⎛ −9 ⎞
+20.252×10 m sin(18.1°)
+2dsinθ ⎝ ⎠ −10
+λ= m = =1.57×10 m, or0.157nm.
+1
+Significance
+ThedeterminedwavelengthfitswithintheX-rayregionoftheelectromagneticspectrum.Onceagain,thewave
+nature of light makes itself prominent when the wavelength (λ=0.157nm) is comparable to the size of the
+physical structures (d =0.252nm⎞ it interacts with.
+⎠
+4.6 Check Your Understanding For the experiment described in Example 4.7, what are the two other
+angles where interference maxima may be observed? What limits the number of maxima?
+Although Figure 4.25 depicts a crystal as a two-dimensional array of scattering centers for simplicity, real crystals are
+structuresinthreedimensions.Scatteringcanoccursimultaneouslyfromdifferentfamiliesofplanesatdifferentorientations
+andspacingpatterns knownascalled Braggplanes,asshowninFigure 4.26.Theresulting interference pattern canbe
+quite complex.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

@@ -1,0 +1,276 @@
+# REAL PDF — openstax_vol2.pdf, pages 81-87
+############################################################
+
+Chapter 2 | The Kinetic Theory of Gases 71
+p V p V (2.2)
+1 1 = 2 2,
+T T
+1 2
+wherethesubscripts1and2refertoanytwostatesofthegasatdifferenttimes.Again,thetemperaturemustbeexpressed
+in kelvin and the pressure must be absolute pressure, which is the sum of gauge pressure and atmospheric pressure.
+Example 2.1
+Calculating Pressure Changes Due to Temperature Changes
+Supposeyourbicycletireisfullyinflated,withanabsolutepressureof 7.00×10 5 Pa (agaugepressureofjust
+under 90.0lb/in.2)atatemperatureof 18.0°C. Whatisthepressureafteritstemperaturehasrisento 35.0°C
+on a hot day? Assume there are no appreciable leaks or changes in volume.
+Strategy
+The pressure in the tire is changing only because of changes in temperature. We know the initial pressure
+p =7.00×10 5 Pa, the initial temperature T =18.0°C, and the final temperature T =35.0°C. We
+0 0 f
+must find the final pressure p . Since the number of molecules is constant, we can use the equation
+f
+p V p V
+f f = 0 0.
+T T
+f 0
+Since the volume is constant, V and V are the same and they divide out. Therefore,
+f 0
+p p
+f = 0.
+T T
+f 0
+We can then rearrange this to solve for p :
+f
+T
+p = p f,
+f 0T
+0
+where the temperature must be in kelvin.
+Solution
+1. Convert temperatures from degrees Celsius to kelvin
+T =(18.0+273)K=291K,
+0
+T =(35.0+273)K=308K.
+f
+2. Substitute the known values into the equation,
+p = p T f =7.00×10 5 Pa ⎛308K⎞ =7.41×10 5 Pa.
+f 0T ⎝291K⎠
+0
+Significance
+Thefinaltemperatureisabout 6% greaterthantheoriginaltemperature,sothefinalpressureisabout 6% greater
+aswell.Notethatabsolutepressure(seeFluid Mechanics (http://cnx.org/content/m58624/latest/) )and
+absolute temperature(seeTemperature and Heat) must be used in the ideal gas law.
+
+72 Chapter 2 | The Kinetic Theory of Gases
+Example 2.2
+Calculating the Number of Molecules in a Cubic Meter of Gas
+Howmanymoleculesareinatypicalobject,suchasgasinatireorwaterinaglass?Thiscalculationcangive
+us an idea of how large N typically is. Let’s calculate the number of molecules in the air that a typical healthy
+youngadultinhalesinonebreath,withavolumeof500mL,atstandardtemperatureandpressure(STP),which
+is defined as 0ºC and atmospheric pressure. (Our young adult is apparently outside in winter.)
+Strategy
+Becausepressure,volume,andtemperatureareallspecified,wecanusetheidealgaslaw, pV =Nk T, tofind
+B
+N.
+Solution
+1. Identify the knowns.
+T =0°C=273K, p=1.01×10 5 Pa, V =500mL=5×10−4 m 3 , k =1.38×10 −23 J/K
+B
+2. Substitute the known values into the equation and solve forN.
+N = pV = (1.01×10 5 Pa)(5×10−4 m 3 ) =1.34×1022 molecules
+k T −23
+B (1.38×10 J/K)(273K)
+Significance
+Nishuge,eveninsmallvolumes.Forexample, 1cm 3 ofagasatSTPcontains 2.68×10 19 molecules.Once
+again, note that our result forNis the same for all types of gases, including mixtures.
+Asweobservedinthechapteronfluidmechanics,pascalsare N/m2,so Pa·m 3 =N·m=J. Thus,ourresult
+for N is dimensionless, a pure number that could be obtained by counting (in principle) rather than measuring.
+As it is the number of molecules, we put “molecules” after the number, keeping in mind that it is an aid to
+communication rather than a unit.
+Moles and Avogadro’s Number
+Itisoftenconvenienttomeasuretheamountofsubstancewithaunitonamorehumanscalethanmolecules.TheSIunitfor
+thispurposewasdevelopedbytheItalianscientistAmedeoAvogadro(1776–1856).(Heworkedfromthehypothesisthat
+equalvolumesofgasatequalpressureandtemperaturecontainequalnumbersofmolecules,independentofthetypeofgas.
+Asmentionedabove,thishypothesishasbeenconfirmedwhentheidealgasapproximationapplies.)Amole(abbreviated
+mol) is defined as the amount of any substance that contains as many molecules as there are atoms in exactly 12 grams
+(0.012kg)ofcarbon-12.(Technically,weshouldsay“formulaunits,”not“molecules,”butthisdistinctionisirrelevantfor
+ourpurposes.)ThenumberofmoleculesinonemoleiscalledAvogadro’snumber (N ), andthevalueofAvogadro’s
+A
+number is now known to be
+N =6.02×10 23 mol−1.
+A
+We can now write N =N
+A
+n, wherenrepresents the number of moles of a substance.
+Avogadro’snumberrelatesthemassofanamountofsubstanceingramstothenumberofprotonsandneutronsinanatom
+ormolecule(12foracarbon-12atom),whichroughlydetermineitsmass.It’snaturaltodefineaunitofmasssuchthatthe
+massofanatomisapproximatelyequaltoitsnumberofneutronsandprotons.Theunitofthatkindacceptedforusewith
+theSIistheunifiedatomicmassunit(u),alsocalledthedalton.Specifically,acarbon-12atomhasamassofexactly12
+u,sothatitsmolarmassMingramspermoleisnumericallyequaltothemassofonecarbon-12atominu.Thatequality
+holdsforanysubstance.Inotherwords, N isnotonlytheconversionfromnumbersofmoleculestomoles,butitisalso
+A
+the conversion from u to grams: 6.02×10 23 u=1g. SeeFigure 2.6.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 73
+Figure 2.6 How big is a mole? On a macroscopic level, Avogadro’s number of table tennis balls
+would cover Earth to a depth of about 40 km.
+Now letting m
+s
+stand for the mass of a sample of a substance, we have m s=nM. Letting m stand for the mass of a
+molecule, we have M =N
+A
+m.
+2.1 Check Your Understanding The recommended daily amount ofvitamin B orniacin, C NH O ,
+3 6 5 2
+for women who are not pregnant or nursing, is 14 mg. Find the number of molecules of niacin in that amount.
+2.2 Check Your Understanding The density of air in a classroom (p=1.00atm and T =20°C) is
+1.28kg/m 3. At what pressure is the density 0.600kg/m 3 if the temperature is kept constant?
+The Ideal Gas Law Restated using Moles
+A very common expression of the ideal gas law uses the number of moles in a sample, n, rather than the number of
+molecules,N. We start from the ideal gas law,
+pV =Nk T,
+B
+and multiply and divide the right-hand side of the equation by Avogadro’s number N . This gives us
+A
+N
+pV = N k T.
+N A B
+A
+Notethat n=N/N isthenumberofmoles.Wedefinetheuniversalgasconstantas R=N k , andobtaintheideal
+A A B
+gas law in terms of moles.
+Ideal Gas Law (in terms of moles)
+In terms of number of molesn, the ideal gas law is written as
+pV =nRT. (2.3)
+In SI units,
+R=N k = ⎛ 6.02×10 23 mol−1⎞⎛ 1.38×10 −23 J⎞ =8.31 J .
+A B ⎝ ⎠⎝ K⎠ mol·K
+In other units,
+R=1.99 cal =0.0821 L·atm .
+mol·K mol·K
+You can use whichever value ofRis most convenient for a particular problem.
+
+74 Chapter 2 | The Kinetic Theory of Gases
+Example 2.3
+Density of Air at STP and in a Hot Air Balloon
+Calculate the density of dry air (a) under standard conditions and (b) in a hot air balloon at a temperature of
+120ºC. Dry air is approximately 78%N , 21%O , and 1%Ar.
+2 2
+Strategy and Solution
+a. Weareaskedtofindthedensity,ormasspercubicmeter.Wecanbeginbyfindingthemolarmass.Ifwe
+haveahundredmolecules,ofwhich78arenitrogen,21areoxygen,and1isargon,theaveragemolecular
+78m +21m +m
+mass is
+N2 O2 Ar
+, or the mass of each constituent multiplied by its percentage. The
+100
+same applies to the molar mass, which therefore is
+M =0.78M +0.21M +0.01M =29.0g/mol.
+N2 O2 Ar
+Now we can find the number of moles per cubic meter. We use the ideal gas law in terms of moles,
+pV =nRT, with p=1.00atm, T =273K, V =1m 3, and R=8.31J/mol·K. The most
+convenient choice forRin this case is R=8.31J/mol·K because the known quantities are in SI units:
+pV (1.01×10 5 Pa)(1m 3 )
+n= = =44.5mol.
+RT (8.31J/mol·K)(273K)
+Then, the mass m of that air is
+s
+m s=nM =(44.5mol)(29.0g/mol)=1290g=1.29kg.
+Finally the density of air at STP is
+ρ= m s = 1.29kg =1.29kg/m 3 .
+V 3
+1m
+b. The air pressure inside the balloon is still 1 atm because the bottom of the balloon is open to the
+atmosphere. The calculation is the same except that we use a temperature of 120ºC, which is 393 K.
+Wecanrepeatthecalculationin(a),orsimplyobservethatthedensityisproportionaltothenumberof
+moles,whichisinverselyproportionaltothetemperature.Thenusingthesubscripts1forairatSTPand
+2 for the hot air, we have
+T
+ρ = 1ρ = 273K (1.29kg/m 3 )=0.896kg/m 3 .
+2 T 1 393K
+2
+Significance
+UsingthemethodsofArchimedes’ Principle and Buoyancy (http://cnx.org/content/m58356/latest/)
+, we can find that the net force on 2200m 3 of air at 120ºC is
+F b−F g= ρ
+atmosphere
+Vg−ρ
+hot air
+Vg=8.49×10 3 N, orenoughtoliftabout867kg.Themassdensityand
+molar density of air at STP, found above, are often useful numbers. From the molar density, we can easily
+determine another useful number, the volume of a mole of any ideal gas at STP, which is 22.4 L.
+2.3 CheckYourUnderstandingLiquidsandsolidshavedensitiesontheorderof1000timesgreaterthan
+gases. Explain how this implies that the distances between molecules in gases are on the order of 10 times
+greater than the size of their molecules.
+The ideal gas law is closely related to energy: The units on both sides of the equation are joules. The right-hand side of
+the ideal gas law equation is Nk T. This term is roughly the total translational kinetic energy (which, when discussing
+B
+gases, refers to the energy of translation of a molecule, not that of vibration of its atoms or rotation) of N molecules at
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 75
+anabsolutetemperatureT,aswewillseeformallyinthenextsection.Theleft-handsideoftheidealgaslawequationis
+pV.Asmentionedintheexampleonthenumberofmoleculesinanidealgas,pressuremultipliedbyvolumehasunitsof
+energy.Theenergyofagascanbechangedwhenthegasdoesworkasitincreasesinvolume,somethingweexploredin
+theprecedingchapter,andtheamountofworkisrelatedtothepressure.Thisistheprocessthatoccursingasolineorsteam
+engines and turbines, as we’ll see in the next chapter.
+Problem-Solving Strategy: The Ideal Gas Law
+Step1.Examinethesituationtodeterminethatanidealgasisinvolved.Mostgasesarenearlyidealunlesstheyare
+close to the boiling point or at pressures far above atmospheric pressure.
+Step 2. Make a list of what quantities are given or can be inferred from the problem as stated (identify the known
+quantities).
+Step3.Identifyexactlywhatneedstobedeterminedintheproblem(identifytheunknownquantities).Awrittenlist
+is useful.
+Step4.Determinewhetherthenumberofmoleculesorthenumberofmolesisknownoraskedfortodecidewhetherto
+usetheidealgaslawas pV =Nk T, whereNisthenumberofmolecules,or pV =nRT, wherenisthenumber
+B
+of moles.
+Step5.ConvertknownvaluesintoproperSIunits(Kfortemperature,Paforpressure, m 3 forvolume,moleculesfor
+N,andmolesforn).Iftheunitsoftheknownsareconsistentwithoneofthenon-SIvaluesofR,youcanleavethemin
+those units. Be sure to use absolute temperature and absolute pressure.
+Step6.Solvetheidealgaslawforthequantitytobedetermined(theunknownquantity).Youmayneedtotakearatio
+of final states to initial states to eliminate the unknown quantities that are kept fixed.
+Step 7. Substitute the known quantities, along with their units, into the appropriate equation and obtain numerical
+solutions complete with units.
+Step 8.Check the answer to see if it is reasonable: Does it make sense?
+The Van der Waals Equation of State
+Wehaverepeatedlynotedthattheidealgaslawisanapproximation.Howcanitbeimprovedupon?ThevanderWaals
+equationofstate(namedaftertheDutchphysicistJohannesvanderWaals,1837−1923)improvesitbytakingintoaccount
+two factors. First, the attractive forces between molecules, which are stronger at higher density and reduce the pressure,
+are taken into account by adding to the pressure a term equal to the square of the molar density multiplied by a positive
+coefficienta.Second,thevolumeofthemoleculesisrepresentedbyapositiveconstantb,whichcanbethoughtofasthe
+volumeofamoleofmolecules.Thisissubtractedfromthetotalvolumetogivetheremainingvolumethatthemolecules
+can move in. The constantsaandbare determined experimentally for each gas. The resulting equation is
+⎡ 2⎤ (2.4)
+⎛n⎞
+⎢p+a ⎥(V−nb)=nRT.
+⎝V⎠
+⎣ ⎦
+Inthelimitoflowdensity(smalln),theaandbtermsarenegligible,andwehavetheidealgaslaw,asweshouldforlow
+density.Ontheotherhand,if V−nb issmall,meaningthatthemolecules areveryclosetogether,thepressuremustbe
+higher to give the same nRT, as we would expect in the situation of a highly compressed gas. However, the increase in
+pressureislessthanthatargumentwouldsuggest,becauseathighdensitythe (n/V)2 termissignificant.Sinceit’spositive,
+it causes a lower pressure to give the samenRT.
+ThevanderWaalsequationofstateworkswellformostgasesunderawidevarietyofconditions.Aswe’llseeinthenext
+module, it even predicts the gas-liquid transition.
+pV Diagrams
+We can examine aspects of the behavior of a substance by plotting a pV diagram, which is a graph of pressure versus
+
+76 Chapter 2 | The Kinetic Theory of Gases
+volume.Whenthesubstancebehaveslikeanidealgas,theidealgaslaw pV =nRT describestherelationshipbetweenits
+pressureandvolume.OnapVdiagram,it’scommontoplotanisotherm,whichisacurveshowingpasafunctionofVwith
+thenumberofmoleculesandthetemperaturefixed.Then,foranidealgas, pV =constant. Forexample,thevolumeof
+the gas decreases as the pressure increases. The resulting graph is a hyperbola.
+However,ifweassumethevanderWaalsequationofstate,theisothermsbecomemoreinteresting,asshowninFigure2.7.
+Athightemperatures,thecurvesareapproximatelyhyperbolas,representingapproximatelyidealbehavioratvariousfixed
+temperatures.Atlowertemperatures,thecurveslooklessandlesslikehyperbolas—thatis,thegasisnotbehavingideally.
+Thereisacriticaltemperature T atwhichthecurvehasapointwithzeroslope.Belowthattemperature,thecurvesdo
+c
+notdecreasemonotonically;instead,theyeachhavea“hump,”meaningthatforacertainrangeofvolume,increasingthe
+volume increases the pressure.
+Figure 2.7 pVdiagram for a Van der Waals gas at various temperatures. The red curves
+are calculated at temperatures above the critical temperature and the blue curves at
+temperatures below it. The blue curves have an oscillation in which volume (V) increases
+with increasing temperature (T), an impossible situation, so they must be corrected as in
+Figure 2.8. (credit: “Eman”/Wikimedia Commons)
+Such behavior would be completely unphysical. Instead, the curves are understood as describing a liquid-gas phase
+transition.Theoscillatingpartofthecurveisreplacedbyahorizontalline,showingthatasthevolumeincreasesatconstant
+temperature,thepressurestaysconstant.Thatbehaviorcorrespondstoboilingandcondensation;whenasubstanceisatits
+boiling temperature for a particular pressure, it can increase in volume as some of the liquid turns to gas, or decrease as
+some of the gas turns to liquid, without any change in temperature or pressure.
+Figure2.8showssimilarisothermsthataremorerealisticthanthosebasedonthevanderWaalsequation.Thesteepparts
+ofthecurvestotheleftofthetransitionregionshowtheliquidphase,whichisalmostincompressible—aslightdecreasein
+volumerequiresalargeincreaseinpressure.Theflatpartsshowtheliquid-gastransition;theblueregionsthattheydefine
+represent combinations of pressure and volume where liquid and gas can coexist.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

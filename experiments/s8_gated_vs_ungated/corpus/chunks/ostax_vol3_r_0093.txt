@@ -1,0 +1,495 @@
+# REAL PDF — openstax_vol3.pdf, pages 586-595
+############################################################
+
+578 Answer Key
+41.
+m=−11.0
+A′=0.110m2
+I =6.82kW/m2
+x 2m=−x 2m−1 , (m=1, 2, 3, ...),
+43.
+x 2m+1 =b−x 2m, (m=0, 1, 2, ...), withx 0 =a.
+45. d =−55cm;m= +1.8
+i
+47. d =−41cm,m=1.4
+i
+49.proof
+51.a.
+d
+1 +
+d
+1 = 1
+f
+⇒d
+i
+=3.43m;
+i o
+⎛ 2.40×10−2 m ⎞ (33.33)=80.0cm, and
+⎝ ⎠
+b. m=−33.33, so that
+⎛ 3.60×10−2 m ⎞ (33.33)=1.20m⇒0.800m×1.20m or80.0cm ×120cm
+⎝ ⎠
+1 1 1
++ =
+d d f
+53.a. o i ;
+d =5.08cm
+i
+0.036m
+b. m=−1.695×10−2, so the maximum height is
+1.695×10−2
+=2.12m⇒100% ;
+c. This seems quite reasonable, since at 3.00 m it is possible to get a full length picture of a person.
+55.a.
+d
+1 +
+d
+1 = 1
+f
+⇒d o=2.55m;
+o i
+h d
+b.
+h
+i =−
+d
+i ⇒h o=1.00m
+o o
+1 1 1
+57.a.Using
+d
++
+d
+=
+f
+, d
+i
+=−56.67cm.Thenwecandeterminethemagnification, m=6.67.b. d
+i
+=−190cm and
+o i
+m= +20.0; c. The magnificationmincreases rapidly as you increase the object distance toward the focal length.
+1 1 1
++ =
+d d f
+o i
+d = 1
+59. i (1/f)−(1/d o)
+d h
+i =6.667×10 −13 = i
+d h
+o o
+h =−0.933mm
+i
+61. d =−6.7cm
+i
+h =4.0cm
+i
+63.83 cm to the right of the converging lens, m=−2.3, h =6.9cm
+i
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Answer Key 579
+65. P=52.0D
+67. h h i =− d d i ⇒h i =−h o ⎛ ⎝d d i ⎞ ⎠ =−(3.50mm) ⎛ ⎝ 2 3 . 0 0 . 0 0 c c m m ⎞ ⎠ =−0.233mm
+o o o
+69.a. P= +62.5D;
+h d
+b. i =− i ⇒h =−0.250mm;
+h d i
+o o
+c. h =−0.0800mm
+i
+71. P=
+d
+1 +
+d
+1 ⇒d o=28.6cm
+o i
+73.Originally, the close vision was 51.0 D. Therefore, P=
+d
+1 +
+d
+1 ⇒d o=1.00m
+o i
+75.originally, P=70.0D; because the power for normal distant vision is 50.0 D, the power should be decreased by 20.0 D
+77. P=
+d
+1 +
+d
+1 ⇒d o=0.333m
+o i
+79.a. P=52.0D;
+P′=56.16D
+b.
+d
+1 +
+d
+1 =P⇒d o=16.2cm
+o i
+81.We need d
+i
+=−18.5cm when d o=∞, so
+P=−5.41D
+83.Let x = far point
+⇒P= 1 + 1 ⇒ −xP+(0.0175m)P=1
+−(x−0.0175m) ∞
+⇒ x=26.8cm
+85. M =6×
+M =
+⎛25cm⎞⎛
+1+
+L−ℓ ⎞
+⎝ L ⎠⎝ f ⎠
+87.
+L−ℓ =d
+o
+d o =13cm
+89. M =2.5×
+91. M =−2.1×
+M = 25cm
+93. f
+M max=5
+M young =1+ 18cm ⇒ f = 18cm
+95. max f M m yo a u x ng −1
+Mold
+=9.8×
+max
+1 + 1 = 1 ⇒d =4.65cm
+97.a. d o d i f i ;
+⇒m=−30.0
+b. M =−240
+net
+99.a. 1 obj + 1 obj = 1 obj ⇒d i obj =18.3cm behind the objective lens;
+d d f
+o i
+b. m obj =−60.0 ;
+eye
+d =1.70cm
+o
+c.
+eye
+d =−11.3cm
+i
+in front of the eyepiece; d. M eye =13.5;
+
+580 Answer Key
+e. M =−810
+net
+101. M =−40.0
+obj R
+103. f = , M =−1.67
+2
+obj
+f eye
+105. M =− , f = +10.0cm
+eye
+f
+107.Answers will vary.
+109.12 cm to the left of the mirror, m=3/5
+111.27 cm in front of the mirror, m=0.6, h i=1.76cm, orientation upright
+113.Thefollowingfigureshowsthreesuccessiveimagesbeginningwiththeimage Q inmirror M . Q istheimageinmirror
+1 1 1
+M , whose image in mirror M is Q whose image in mirror M is the real image Q .
+1 2 12 1 121
+115.5.4 cm from the axis
+117.Letthevertexoftheconcavemirrorbetheoriginofthecoordinatesystem.Image1isat−10/3cm(−3.3cm),image2isat
+−40/11cm(−3.6cm).Theseserveasobjectsforsubsequentimages,whichareat−310/83cm(−3.7cm),−9340/2501cm(−3.7
+cm), −140,720/37,681 cm (−3.7 cm). All remaining images are at approximately −3.7 cm.
+119.
+121.
+123.−5 D
+125.11
+ADDITIONAL PROBLEMS
+127.a.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Answer Key 581
+b.
+c.
+d.similartothepreviouspicturebutwithpointPoutsidethefocallength;e.Repeat(a)–(d)forapointobjectofftheaxis.For
+apointobjectplacedoffaxisinfrontofaconcavemirrorcorrespondingtoparts(a)and(b),thecaseforconvexmirrorleftas
+exercises.
+
+582 Answer Key
+129. d =−10/3cm, h =2cm, upright
+i i
+131.proof
+133.
+A B d
+TrianglesBAOand B A O aresimilartriangles.Thus, 1 1 = i .TrianglesNOFand B A F aresimilartriangles.Thus,
+1 1 AB d 1 1
+o
+NO = A 1 B 1 .Noting that NO = AB gives AB = A 1 B 1 or AB = f .Inverting this gives A 1 B 1 = d i − f .
+f d − f f d − f A B d − f AB f
+i i 1 1 i
+Equating the two expressions for the ratio A A 1 B B 1 gives d d o i = d i − f f . Dividing through by d i gives d 1 o = 1 f − d 1 i or
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Answer Key 583
+1 1 1
++ = .
+d d f
+o i
+135.70 cm
+137.Theplanemirrorhasaninfinitefocalpoint,sothat d
+i
+=−d
+o
+.Thetotalapparentdistanceofthemaninthemirrorwillbe
+hisactualdistance,plustheapparentimagedistance,or d o+(−d
+i
+)=2d
+o
+.Ifthisdistancemustbelessthan20cm,heshould
+stand at d o=10cm.
+139. Here we want d o=25cm−2.20cm=0.228m. If x= near point, d
+i
+=−(x−0.0220m). Thus,
+P=
+d
+1 +
+d
+1 =
+0.22
+1
+8m
++
+x−0.0
+1
+220m
+. Using P=0.75D gives x=0.253m, so the near point is 25.3 cm.
+o i
+141. Assuming a lens at 2.00 cm from the boy’s eye, the image distance must be d =−(500cm −2.00cm)=−498cm.
+i
+For an infinite-distance object, the required power is P= d 1 =−0.200D. Therefore, the −4.00D lens will correct the
+i
+nearsightedness.
+143. 87µm
+145. Use, M =− d i obj⎛ ⎝ f eye +25cm ⎞ ⎠. The image distance for the objective is d obj =− M net f obj f eye . Using
+net f obj f eye i f eye +25cm
+f obj =3.0cm, f eye =10cm, andM =−10 gives d obj =8.6cm. We want this image to be at the focal point of the
+i
+eyepiecesothattheeyepieceformsanimageatinfinityforcomfortableviewing.Thus,thedistancedbetweenthelensesshould
+be d = f eye +d obj =10cm+8.6cm=19cm.
+i
+147.a. focal length of the corrective lens f c=−80cm; b. −1.25 D
+149. 16
+2×10 km
+151. 5
+10 m
+CHAPTER 3
+CHECK YOUR UNDERSTANDING
+3.1. 3.63°and7.27°, respectively
+3.2.a. 853 nm, 1097 nm; b. 731 nm, 975 nm
+3.3.a. too small; b. up to −5
+8×10
+CONCEPTUAL QUESTIONS
+1.No. Two independent light sources do not have coherent phase.
+3.Becauseboththesodiumlampsarenotcoherentpairsoflightsources.Twolasersoperatingindependentlyarealsonotcoherent
+so no interference pattern results.
+5.Monochromaticsourcesproducefringesatanglesaccordingto dsinθ=mλ.Withwhitelight,eachconstituentwavelength
+will produce fringes at its own set of angles, blending into the fringes of adjacent wavelengths. This results in rainbow patterns.
+7.Differingpathlengthsresultindifferentphasesatdestinationresultinginconstructiveordestructiveinterferenceaccordingly.
+Reflectioncancausea 180° phasechange,whichalsoaffectshowwavesinterfere.Refractionintoanothermediumchangesthe
+wavelengthinsidethatmediumsuchthatawavecanemergefromthemediumwithadifferentphasecomparedtoanotherwave
+that travelled the same distance in a different medium.
+9.Phase changes occur upon reflection at the top of glass cover and the top of glass slide only.
+11.Thesurfaceofthehambeingmoistmeansthereisathinlayeroffluid,resultinginthin-filminterference.Becausetheexact
+thickness of the film varies across the piece of ham, which is illuminated by white light, different wavelengths produce bright
+fringes at different locations, resulting in rainbow colors.
+13.Otherwavelengthswillnotgenerallysatisfy t=
+λ/n
+forthesamevalueoftsoreflectionswillresultincompletelydestructive
+4
+interference. For an incidence angle θ, the path length inside the coating will be increased by a factor 1/cosθ so the new
+t λ/n
+condition for destructive interference becomes = .
+cosθ 4
+15.In one arm, place a transparent chamber to be filled with the gas. SeeExample3.6.
+
+584 Answer Key
+PROBLEMS
+17. 0.997°
+19. 0.290µm
+21. 5.77×10 −7 m=577nm
+23.62.5; sincemmust be an integer, the highest order is then m=62.
+25. 1.44µm
+27.a. 20.3°; b. 4.98°; c. 5.76, the highest order is m=5.
+29.a. 2.37 cm; b. 1.78 cm
+31.560 nm
+33.1.2 mm
+35.a. 0.40°, 0.53°; b. 4.6×10 −3 m
+37.1:9
+39.532 nm (green)
+41.
+8.39×10
+−8
+m=83.9nm
+43.620 nm (orange)
+45.380 nm
+47.a.Assumingnfortheplaneisgreaterthan1.20,thentherearetwophasechanges:0.833cm.b.Itistoothick,andtheplane
+would be too heavy. c. It is unreasonable to think the layer of material could be any thickness when used on a real aircraft.
+49. 4.55×10−4 m
+51. D=2.53×10 −6 m
+ADDITIONAL PROBLEMS
+53. 0.29°and0.86°
+55.a. 4.26 cm; b. 2.84 cm
+57.6
+59.0.20 m
+61.0.0839 mm
+63.a. 9.8, 10.4, 11.7, and 15.7 cm; b. 3.9 cm
+65. 0.0575°
+67.700 nm
+69.189 nm
+71.a. green (504 nm); b. magenta (white minus green)
+73.1.29
+75. 52.7µm and 53.0µm
+77.160 nm
+79.413 nm and 689 nm
+81. 73.9µm
+83.47
+85. 8.5µm
+87. 0.013°C
+CHALLENGE PROBLEMS
+89.Bright and dark fringes switch places.
+91.Thepathlengthmustbelessthanone-fourthoftheshortestvisiblewavelengthinoil.Thethicknessoftheoilishalfthepath
+length,soitmustbelessthanone-eighthoftheshortestvisiblewavelength inoil.Ifwetake380nmtobetheshortestvisible
+wavelength in air, 33.9 nm.
+93. −5
+4.42×10 m
+95.foronephasechange: 950nm(infrared); forthree phasechanges: 317nm(ultraviolet); Therefore, theoilfilm will appear
+black, since the reflected light is not in the visible part of the spectrum.
+CHAPTER 4
+CHECK YOUR UNDERSTANDING
+4.1. 17.8°, 37.7°, 66.4°; no
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Answer Key 585
+4.2. 74.3°, 0.0083I
+0
+4.3.From dsinθ=mλ,theinterferencemaximumoccursat 2.87° for m=20. FromEquation4.1,thisisalsotheangle
+for the second diffraction minimum. (Note:Both equations use the indexmbut they refer to separate phenomena.)
+4.4. −6 or 300 lines per millimeter
+3.332×10 m
+4.5. 8.4×10−4 rad, 3000 times broader than the Hubble Telescope
+4.6. 38.4° and 68.8°; Between θ=0°→90°, orders 1, 2, and 3, are all that exist.
+CONCEPTUAL QUESTIONS
+1.The diffraction pattern becomes wider.
+3.Walkie-talkiesuseradiowaveswhosewavelengthsarecomparabletothesizeofthehillandarethusabletodiffractaroundthe
+hill. Visible wavelengths of the flashlight travel as rays at this size scale.
+5.Thediffractionpatternbecomestwo-dimensional,withmainfringes,whicharenowspots,runninginperpendiculardirections
+and fainter spots in intermediate directions.
+7.Theparameter β=ϕ/2 isthearcangleshowninthephasordiagramin Figure4.7.Thephasedifferencebetweenthefirst
+andlastHuygenswaveletacrossthesingleslitis 2β andisrelatedtothecurvatureofthearcthatformstheresultantphasorthat
+determines the light intensity.
+9.blue; The shorter wavelength of blue light results in a smaller angle for diffraction limit.
+11.No,thesedistancesarethreeordersofmagnitudesmallerthanthewavelengthofvisiblelight,sovisiblelightmakesapoor
+probe for atoms.
+13.UVwavelengthsaremuchlargerthanlatticespacingsincrystalssuchthatthereisnodiffraction.TheBraggequationimplies
+a value forsinθgreater than unity, which has no solution.
+15.Imagewillappearatslightlydifferentlocationand/orsizewhenviewedusing 10% shorterwavelengthbutatexactlyhalfthe
+wavelength, a higher-order interference reconstructs the original image, different color.
+PROBLEMS
+17.a. 33.4°; b. no
+19.a. 1.35×10 −6 m ; b. 69.9°
+21.750 nm
+23.2.4 mm, 4.7 mm
+25.a. 1.00λ; b. 50.0λ; c. 1000λ
+27.1.92 m
+29. 45.1°
+31. I/I =2.2×10 −5
+0
+33. 0.63I , 0.11I , 0.0067I , 0.0062I , 0.00088I
+0 0 0 0 0
+35.0.200
+37.3
+39.9
+41. 5.97°
+43.
+8.99×10
+3
+45.707 nm
+47.a. 11.8°, 12.5°, 14.1°, 19.2°;b. 24.2°, 25.7°, 29.1°, 41.0°;c.Decreasingthenumberoflinespercentimeterbya
+factor ofxmeans that the angle for thex-order maximum is the same as the original angle for the first-order maximum.
+49.a. using λ=700nm,θ=5.0°; b. using λ=460nm,θ=3.3°
+51.a. 26,300 lines/cm; b. yes; c. no
+53. 1.13×10−2 m
+55.107 m
+57.a. 7.72×10−4 rad; b. 23.2 m; c. 590 km
+59.a. 2.24×10−4 rad; b. 5.81 km; c. 0.179 mm; d. can resolve details 0.2 mm apart at arm’s length
+61. 2.9µm
+63.6.0 cm
+65.7.71 km
+67.1.0 m
+69.1.2 cm or closer
+
+586 Answer Key
+71.no
+73.0.120 nm
+75. 4.51°
+77. 13.2°
+ADDITIONAL PROBLEMS
+79.a. 2.2 mm; b. 0.172°, second-order yellow and third-order violet coincide
+81.2.2 km
+83.1.3 cm
+85.a. 0.28 mm; b. 0.28 m; c. 280 m; d. 113 km
+87.33 m
+89.a. vertically; b. ±20°, ±44°; c. 0, ±31°, ±60°; d. 89 cm; e. 71 cm
+91.0.98 cm
+93. I/I =0.041
+0
+95.340 nm
+97.a. 0.082 rad and 0.087 rad; b. 480 nm and 660 nm
+99.two orders
+101.yes and N/A
+103.600 nm
+105.a. 3.4×10 −5 ° ; b. 51°
+107.0.63 m
+109.1
+111.0.17 mW/cm2 for m=1 only, no higher orders
+113. 28.7°
+115.a.42.3nm;b.Thiswavelengthisnotinthevisiblespectrum.c.Thenumberofslitsinthisdiffractiongratingistoolarge.
+Etchinginintegratedcircuitscanbedonetoaresolutionof50nm,soslitseparationsof400nmareatthelimitofwhatwecando
+today. This line spacing is too small to produce diffraction of light.
+117.a.549km;b.Thisisanunreasonablylargetelescope.c.Unreasonabletoassumediffractionlimitforopticaltelescopesunless
+in space due to atmospheric effects.
+CHALLENGE PROBLEMS
+119.a. I=0.00500I , 0.00335I ; b. I=0.00500I , 0.00335I
+0 0 0 0
+121.12,800
+123. −6
+1.58×10 m
+CHAPTER 5
+CHECK YOUR UNDERSTANDING
+5.1.Specialrelativityappliesonlytoobjectsmovingatconstantvelocity,whereasgeneralrelativityappliestoobjectsthatundergo
+acceleration.
+γ = 1 = 1 =1.32
+5.2.
+1−
+v2
+1−
+(0.650c) 2
+c2 c2
+Δt= Δτ = 2.10×10 −8 s =2.71×10 −8 s.
+5.3.a. 1−
+v2
+(1.90×10 8 m/s)
+2
+c2 1−
+2
+8
+(3.00×10 m/s)
+5.3. b. Only the relative speed of the two spacecraft matters because there is no absolute motion through space. The signal is
+emittedfromafixedlocationintheframeofreferenceofA,sothepropertimeintervalofitsemissionis τ=1.00s. Theduration
+of the signal measured from frame of referenceBis then
+Δt= Δτ = 1.00s =1.01s.
+1−
+v2
+(4.00×10 7 m/s)
+2
+c2 1−
+2
+8
+(3.00×10 m/s)
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

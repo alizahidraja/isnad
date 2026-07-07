@@ -1,0 +1,190 @@
+# REAL PDF — openstax_vol2.pdf, pages 37-43
+############################################################
+
+Chapter 1 | Temperature and Heat 27
+boiling point. These temperatures depend on pressure. High pressure favors the denser form, so typically, high pressure
+raisesthemeltingpointandboilingpoint,andlowpressurelowersthem.Forexample,theboilingpointofwateris 100°C
+at 1.00 atm. At higher pressure, the boiling point is higher, and at lower pressure, it is lower. The main exception is the
+melting and freezing of water, discussed in the next section.
+Phase Diagrams
+The phase of a given substance depends on the pressure and temperature. Thus, plots of pressure versus temperature
+showing the phase in each region provide considerable insight into thermal properties of substances. Such a pT graph is
+called aphase diagram.
+Figure 1.12 shows the phase diagram for water. Using the graph, if you know the pressure and temperature, you
+can determine the phase of water. The solid curves—boundaries between phases—indicate phase transitions, that is,
+temperatures and pressures at which the phases coexist. For example, the boiling point of water is 100°C at 1.00 atm.
+Asthepressureincreases,theboilingtemperaturerisesgraduallyto 374°C atapressureof218atm.Apressurecooker
+(orevenacoveredpot)cooksfoodfasterthananopenpot,becausethewatercanexistasaliquidattemperaturesgreater
+than 100°C without all boiling away. (As we’ll see in the next section, liquid water conducts heat better than steam or
+hot air.) The boiling point curve ends at a certain point called the critical point—that is, a critical temperature, above
+whichtheliquidandgasphasescannotbedistinguished;thesubstanceiscalledasupercriticalfluid.Atsufficientlyhigh
+pressureabovethecriticalpoint,thegashasthedensityofaliquidbutdoesnotcondense.Carbondioxide,forexample,is
+supercritical at all temperatures above 31.0°C.Critical pressureis the pressure of the critical point.
+Figure 1.12 The phase diagram (pTgraph) for water shows
+solid (s), liquid (l), and vapor (v) phases. At temperatures and
+pressure above those of the critical point, there is no distinction
+between liquid and vapor. Note that the axes are nonlinear and
+the graph is not to scale. This graph is simplified—it omits
+several exotic phases of ice at higher pressures. The phase
+diagram of water is unusual because the melting-point curve has
+a negative slope, showing that you can melt ice byincreasing
+the pressure.
+Similarly,thecurvebetweenthesolidandliquidregionsinFigure1.12givesthemeltingtemperatureatvariouspressures.
+Forexample,themeltingpointis 0°C at1.00atm,asexpected.Waterhastheunusualpropertythaticeislessdensethan
+liquidwateratthemeltingpoint,soatafixedtemperature,youcanchangethephasefromsolid(ice)toliquid(water)by
+increasingthepressure.Thatis,themeltingtemperatureoficefallswithincreasedpressure,asthephasediagramshows.
+For example, when a car is driven over snow, the increased pressure from the tires melts the snowflakes; afterwards, the
+water refreezes and forms an ice layer.
+As you learned in the earlier section on thermometers and temperature scales, the triple point is the combination of
+
+28 Chapter 1 | Temperature and Heat
+temperature and pressure at which ice, liquid water, and water vapor can coexist stably—that is, all three phases exist in
+equilibrium. For water, the triple point occurs at 273.16K(0.01°C) and 611.2 Pa; that is a more accurate calibration
+temperature than the melting point of water at 1.00 atm, or 273.15K(0.0°C).
+View thisvideo (https://openstaxcollege.org/l/21triplepoint)to see a substance at its triple point.
+Atpressuresbelowthatofthetriplepoint,thereisnoliquidphase;thesubstancecanexistaseithergasorsolid.Forwater,
+thereisnoliquidphaseatpressuresbelow0.00600atm.Thephasechangefromsolidtogasiscalledsublimation.Youmay
+havenoticedthatsnowcandisappearintothinairwithoutatraceofliquidwater,orthaticecubescandisappearinafreezer.
+Bothareexamplesofsublimation.Thereversealsohappens:Frostcanformonverycoldwindowswithoutgoingthrough
+the liquid stage. Figure 1.13 shows the result, as well as showing a familiar example of sublimation. Carbon dioxide
+has no liquid phase at atmospheric pressure. Solid CO is known as dry ice because instead of melting, it sublimes. Its
+2
+sublimationtemperatureatatmosphericpressureis −78°C.Certainairfreshenersusethesublimationofasolidtospread
+aperfumearoundaroom.Somesolids,suchasosmiumtetroxide,aresotoxicthattheymustbekeptinsealedcontainersto
+prevent human exposure to their sublimation-produced vapors.
+Figure 1.13 Direct transitions between solid and vapor are common, sometimes useful, and even beautiful. (a) Dry ice
+sublimes directly to carbon dioxide gas. The visible “smoke” consists of water droplets that condensed in the air cooled by the
+dry ice. (b) Frost forms patterns on a very cold window, an example of a solid formed directly from a vapor. (credit a:
+modification of work by Windell Oskay; credit b: modification of work by Liz West)
+Equilibrium
+At the melting temperature, the solid and liquid phases are in equilibrium. If heat is added, some of the solid will melt,
+andifheatisremoved,someoftheliquidwillfreeze.Thesituationissomewhatmorecomplexforliquid-gasequilibrium.
+Generally,liquidandgasareinequilibriumatanytemperature.Wecallthegasphaseavaporwhenitexistsatatemperature
+below the boiling temperature, as it does for water at 20.0°C. Liquid in a closed container at a fixed temperature
+evaporatesuntilthepressureofthegasreachesacertainvalue,calledthevaporpressure,whichdependsonthegasand
+thetemperature.Atthisequilibrium,ifheatisadded,someoftheliquidwillevaporate,andifheatisremoved,someofthe
+gaswillcondense;moleculeseitherjointheliquidorformsuspendeddroplets.Ifthereisnotenoughliquidforthegasto
+reach the vapor pressure in the container, all the liquid eventually evaporates.
+Ifthevaporpressureoftheliquidisgreaterthanthetotalambientpressure,includingthatofanyair(orothergas),theliquid
+evaporatesrapidly;inotherwords,itboils.Thus,theboilingpointofaliquidatagivenpressureisthetemperatureatwhich
+itsvaporpressureequalstheambientpressure.Liquidandgasphasesareinequilibriumattheboilingtemperature(Figure
+1.14).Ifasubstanceisinaclosedcontainerattheboilingpoint,thentheliquidisboilingandthegasiscondensingatthe
+same rate without net change in their amounts.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 29
+Figure 1.14 Equilibrium between liquid and gas at two different boiling points inside a
+closed container. (a) The rates of boiling and condensation are equal at this combination of
+temperature and pressure, so the liquid and gas phases are in equilibrium. (b) At a higher
+temperature, the boiling rate is faster, that is, the rate at which molecules leave the liquid and
+enter the gas is faster. This increases the number of molecules in the gas, which increases the
+gas pressure, which in turn increases the rate at which gas molecules condense and enter the
+liquid. The pressure stops increasing when it reaches the point where the boiling rate and the
+condensation rate are equal. The gas and liquid are in equilibrium again at this higher
+temperature and pressure.
+Forwater, 100°C istheboilingpointat1.00atm,sowaterandsteamshouldexistinequilibriumundertheseconditions.
+Whydoesanopenpotofwaterat 100°C boilcompletelyaway?Thegassurroundinganopenpotisnotpurewater:itis
+mixedwithair.Ifpurewaterandsteamareinaclosedcontainerat 100°C and1.00atm,theywillcoexist—butwithair
+overthepot,therearefewerwatermoleculestocondense,andwaterboilsaway.Anotherwaytoseethisisthatattheboiling
+point,thevaporpressureequalstheambientpressure.However,partoftheambientpressureisduetoair,sothepressureof
+thesteamislessthanthevaporpressureatthattemperature,andevaporationcontinues.Incidentally,theequilibriumvapor
+pressure of solids is not zero, a fact that accounts for sublimation.
+1.4 CheckYourUnderstandingExplainwhyacupofwater(orsoda)withicecubesstaysat 0°C, evenon
+a hot summer day.
+Phase Change and Latent Heat
+Sofar,wehavediscussedheattransfersthatcausetemperaturechange.However,inaphasetransition,heattransferdoes
+not cause any temperature change.
+For an example of phase changes, consider the addition of heat to a sample of ice at −20°C (Figure 1.15) and
+atmosphericpressure.Thetemperatureoftheiceriseslinearly,absorbingheatataconstantrateof 2090J/kg·ºC untilit
+reaches 0°C. Once at this temperature, the ice begins tomelt andcontinues until it hasall melted, absorbing 333kJ/kg
+ofheat.Thetemperatureremainsconstantat 0°C duringthisphasechange.Oncealltheicehasmelted,thetemperature
+of the liquid water rises, absorbing heat at a new constant rate of 4186 J/kg·ºC. At 100°C, the water begins to boil.
+Thetemperatureagainremainsconstantduringthisphasechangewhilethewaterabsorbs2256kJ/kgofheatandturnsinto
+steam.Whenalltheliquidhasbecomesteam,thetemperaturerisesagain,absorbingheatatarateof 2020J/kg·ºC.Ifwe
+startedwithsteamandcooledittomakeitcondenseintoliquidwaterandfreezeintoice,theprocesswouldexactlyreverse,
+with the temperature again constant during each phase transition.
+
+30 Chapter 1 | Temperature and Heat
+Figure 1.15 Temperature versus heat. The system is constructed so that no vapor evaporates while ice
+warms to become liquid water, and so that, when vaporization occurs, the vapor remains in the system. The
+long stretches of constant temperatures at 0°C and 100°C reflect the large amounts of heat needed to
+cause melting and vaporization, respectively.
+Wheredoestheheataddedduringmeltingorboilinggo,consideringthatthetemperaturedoesnotchangeuntilthetransition
+is complete? Energy is required to melt a solid, because the attractive forces between the molecules in the solid must be
+brokenapart,sothatintheliquid,themoleculescanmovearoundatcomparablekineticenergies;thus,thereisnorisein
+temperature.Energyisneededtovaporizealiquidforsimilarreasons.Conversely,workisdonebyattractiveforceswhen
+moleculesarebroughttogetherduringfreezingandcondensation.Thatenergymustbetransferredoutofthesystem,usually
+intheformofheat,toallowthemoleculestostaytogether(Figure 1.18).Thus,condensationoccursinassociationwith
+cold objects—the glass inFigure 1.16, for example.
+Figure 1.16 Condensation forms on this glass of iced tea
+because the temperature of the nearby air is reduced. The air
+cannot hold as much water as it did at room temperature, so
+water condenses. Energy is released when the water condenses,
+speeding the melting of the ice in the glass. (credit: Jenny
+Downing)
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 31
+The energy released when a liquid freezes is used by orange growers when the temperature approaches 0°C. Growers
+spraywateronthetreessothatthewaterfreezesandheatisreleasedtothegrowingoranges.Thispreventsthetemperature
+inside the orange from dropping below freezing, which would damage the fruit (Figure 1.17).
+Figure 1.17 The ice on these trees released large amounts of
+energy when it froze, helping to prevent the temperature of the
+trees from dropping below 0°C. Water is intentionally sprayed
+on orchards to help prevent hard frosts. (credit: Hermann
+Hammer)
+Theenergyinvolvedinaphasechangedependsonthenumberofbondsorforcepairsandtheirstrength.Thenumberof
+bondsisproportionaltothenumberofmoleculesandthustothemassofthesample.Theenergyperunitmassrequiredto
+changeasubstancefromthesolidphasetotheliquidphase,orreleasedwhenthesubstancechangesfromliquidtosolid,is
+knownastheheatoffusion.Theenergyperunitmassrequiredtochangeasubstancefromtheliquidphasetothevapor
+phase is known as the heat of vaporization. The strength of the forces depends on the type of molecules. The heat Q
+absorbed or released in a phase change in a sample of massmis given by
+Q=mL ⎛melting/freezing⎞ (1.7)
+f⎝ ⎠
+Q=mL
+v
+⎛
+⎝
+vaporization/condensation⎞
+⎠
+(1.8)
+where the latent heat of fusion L and latent heat of vaporization L are material constants that are determined
+f v
+experimentally. (Latent heats are also called latent heat coefficients and heats of transformation.) These constants are
+“latent,”orhidden,becauseinphasechanges,energyentersorleavesasystemwithoutcausingatemperaturechangeinthe
+system, so in effect, the energy is hidden.
+
+32 Chapter 1 | Temperature and Heat
+Figure 1.18 (a) Energy is required to partially overcome the attractive forces (modeled as springs) between molecules in a
+solid to form a liquid. That same energy must be removed from the liquid for freezing to take place. (b) Molecules become
+separated by large distances when going from liquid to vapor, requiring significant energy to completely overcome molecular
+attraction. The same energy must be removed from the vapor for condensation to take place.
+Table1.4listsrepresentativevaluesof L and L inkJ/kg,togetherwithmeltingandboilingpoints.Notethatingeneral,
+f v
+L v>L
+f
+. The table shows that the amounts of energy involved in phase changes can easily be comparable to or greater
+than those involved in temperature changes, asFigure 1.15and the accompanying discussion also showed.
+L L
+f v
+Substance Melting Point kJ/ kcal/ Boiling Point kJ/kg kcal/
+(°C) kg kg (°C) kg
+Helium[2] −272.2 (0.95 K) 5.23 1.25 −268.9(4.2K) 20.9 4.99
+Hydrogen −259.3(13.9K) 58.6 14.0 −252.9(20.2K) 452 108
+Nitrogen −210.0(63.2K) 25.5 6.09 −195.8(77.4K) 201 48.0
+Oxygen −218.8(54.4K) 13.8 3.30 −183.0(90.2K) 213 50.9
+Ethanol –114 104 24.9 78.3 854 204
+Ammonia –75 332 79.3 –33.4 1370 327
+Mercury –38.9 11.8 2.82 357 272 65.0
+Water 0.00 334 79.8 100.0 2256[3] 539[4]
+Sulfur 119 38.1 9.10 444.6 326 77.9
+Lead 327 24.5 5.85 1750 871 208
+Antimony 631 165 39.4 1440 561 134
+Aluminum 660 380 90 2450 11400 2720
+Silver 961 88.3 21.1 2193 2336 558
+Table 1.4Heats of Fusion and Vaporization[1] [1]Values quoted at the normal melting and boiling
+temperatures at standard atmospheric pressure (1atm).[2]Helium has no solid phase at atmospheric pressure.
+The melting point given is at a pressure of 2.5 MPa.[3]At 37.0°C (body temperature), the heat of vaporization
+L v for water is 2430 kJ/kg or 580 kcal/kg.[4]At 37.0°C (body temperature), the heat of vaporization, L v for
+water is 2430 kJ/kg or 580 kcal/kg.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

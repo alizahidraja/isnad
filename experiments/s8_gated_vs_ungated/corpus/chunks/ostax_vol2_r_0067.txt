@@ -1,0 +1,207 @@
+# REAL PDF — openstax_vol2.pdf, pages 418-423
+############################################################
+
+408 Chapter 9 | Current and Resistance
+(b)First,theresistanceistemperaturedependentsothenewresistanceaftertheresistorhasbeenheatedcanbe
+found using R=R (1+αΔT). The current can be found using Ohm’s law in the form I =V/R.
+0
+Solution
+a. Using Ohm’s law and solving for the resistance yields the resistance at room temperature:
+R= V = 9.00V =3.00×10 3 Ω =3.00kΩ.
+I −3
+3.00×10 A
+b. The resistance at 60°C can be found using R=R (1+αΔT) where the temperature coefficient for
+0
+carbon is α=−0.0005. R=R (1+αΔT)=3.00×10 3⎛1−0.0005(60°C−20°C)⎞=2.94kΩ.
+0 ⎝ ⎠
+The current through the heated resistor is
+I = V = 9.00V =3.06×10 −3 A=3.06mA.
+R 3
+2.94×10 Ω
+Significance
+Achangeintemperature of 40°C resultedina2.00%changeincurrent.Thismaynotseemlikeaverygreat
+change, but changing electrical characteristics can have a strong effect on the circuits. For this reason, many
+electronicappliances,suchascomputers,containfanstoremovetheheatdissipatedbycomponentsintheelectric
+circuits.
+9.8 CheckYourUnderstandingThevoltagesuppliedtoyourhousevariesas V(t)=V
+max
+sin⎛
+⎝
+2πft⎞
+⎠
+.Ifa
+resistor is connected across this voltage, will Ohm’s law V =IR still be valid?
+SeehowtheequationformofOhm’slaw(https://openstaxcollege.org/l/21ohmslaw)relatestoasimple
+circuit. Adjust the voltage and resistance, and see the current change according to Ohm’s law. The sizes of the
+symbols in the equation change to match the circuit diagram.
+Nonohmic devices do not exhibit a linear relationship between the voltage and the current. One such device is the
+semiconductingcircuitelementknownasadiode.Adiodeisacircuitdevicethatallowscurrentflowinonlyonedirection.
+Adiagramofasimplecircuitconsistingofabattery,adiode,andaresistorisshowninFigure9.21.Althoughwedonot
+cover the theory of the diode in this section, the diode can be tested to see if it is an ohmic or a nonohmic device.
+Figure 9.21 A diode is a semiconducting device that allows current flow only if the
+diode is forward biased, which means that the anode is positive and the cathode is
+negative.
+AplotofcurrentversusvoltageisshowninFigure 9.22.Notethatthebehaviorofthediodeisshownascurrentversus
+voltage,whereastheresistoroperationwasshownasvoltageversuscurrent.Adiodeconsistsofananodeandacathode.
+When the anode is at a negative potential and the cathode is at a positive potential, as shown in part (a), the diode is
+said to have reverse bias. With reverse bias, the diode has an extremely large resistance and there is very little current
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 409
+flow—essentiallyzerocurrent—throughthediodeandtheresistor.Asthevoltageappliedtothecircuitincreases,thecurrent
+remains essentially zero, until the voltage reaches the breakdown voltage and the diode conducts current, as shown in
+Figure9.22.Whenthebatteryandthepotentialacrossthediodearereversed,makingtheanodepositiveandthecathode
+negative,thediodeconductsandcurrentflowsthroughthediodeifthevoltageisgreaterthan0.7V.Theresistanceofthe
+diodeisclosetozero.(Thisisthereasonfortheresistorinthecircuit;ifitwerenotthere,thecurrentwouldbecomevery
+large.)YoucanseefromthegraphinFigure9.22thatthevoltageandthecurrentdonothavealinearrelationship.Thus,
+the diode is an example of a nonohmic device.
+Figure 9.22 When the voltage across the diode is negative
+and small, there is very little current flow through the diode. As
+the voltage reaches the breakdown voltage, the diode conducts.
+When the voltage across the diode is positive and greater than
+0.7 V (the actual voltage value depends on the diode), the diode
+conducts. As the voltage applied increases, the current through
+the diode increases, but the voltage across the diode remains
+approximately 0.7 V.
+Ohm’slawiscommonlystatedas V =IR,butoriginallyitwasstatedasamicroscopicview,intermsofthecurrentdensity,
+theconductivity,andtheelectricalfield.Thismicroscopicviewsuggeststheproportionality V ∝I comesfromthedrift
+velocityofthefreeelectronsinthemetalthatresultsfromanappliedelectricalfield.Asstatedearlier,thecurrentdensity
+isproportionaltotheappliedelectricalfield.ThereformulationofOhm’slawiscreditedtoGustavKirchhoff,whosename
+we will see again in the next chapter.
+9.5 | Electrical Energy and Power
+Learning Objectives
+By the end of this section, you will be able to:
+• Express electrical power in terms of the voltage and the current
+• Describe the power dissipated by a resistor in an electric circuit
+• Calculate the energy efficiency and cost effectiveness of appliances and equipment
+Inanelectriccircuit,electricalenergyiscontinuouslyconvertedintootherformsofenergy.Forexample,whenacurrent
+flowsinaconductor,electricalenergyisconvertedintothermalenergywithintheconductor.Theelectricalfield,supplied
+bythevoltagesource,acceleratesthefreeelectrons,increasingtheirkineticenergyforashorttime.Thisincreasedkinetic
+energyisconvertedintothermalenergythroughcollisionswiththeionsofthelatticestructureoftheconductor.InWork
+and Kinetic Energy (http://cnx.org/content/m58307/latest/) ,wedefinedpowerastherateatwhichworkisdone
+byaforcemeasuredinwatts.Powercanalsobedefinedastherateatwhichenergyistransferred.Inthissection,wediscuss
+the time rate of energy transfer, or power, in an electric circuit.
+Power in Electric Circuits
+Powerisassociatedbymanypeoplewithelectricity.Powertransmissionlinesmightcometomind.Wealsothinkoflight
+bulbs in terms of their power ratings in watts. What is the expression forelectric power?
+
+410 Chapter 9 | Current and Resistance
+Let us compare a 25-W bulb with a 60-W bulb (Figure 9.23(a)). The 60-W bulb glows brighter than the 25-W bulb.
+Althoughitisnotshown,a60-Wlightbulbisalsowarmerthanthe25-Wbulb.Theheatandlightisproducedbyfromthe
+conversionofelectricalenergy.Thekineticenergylostbytheelectronsincollisionsisconvertedintotheinternalenergyof
+the conductor and radiation. How are voltage, current, and resistance related to electric power?
+Figure 9.23 (a) Pictured above are two incandescent bulbs: a 25-W bulb (left) and a 60-W bulb (right). The 60-W bulb
+provides a higher intensity light than the 25-W bulb. The electrical energy supplied to the light bulbs is converted into heat and
+light. (b) This compact fluorescent light (CFL) bulb puts out the same intensity of light as the 60-W bulb, but at 1/4 to 1/10 the
+input power. (credit a: modification of works by “Dickbauch”/Wikimedia Commons and Greg Westfall; credit b: modification of
+work by “dbgg1979”/Flickr)
+Tocalculateelectricpower,consideravoltagedifferenceexistingacrossamaterial(Figure 9.24).Theelectricpotential
+V is higher than the electric potential at V , and the voltage difference is negative V =V −V . As discussed in
+1 2 2 1
+ElectricPotential,anelectricalfieldexistsbetweenthetwopotentials,whichpointsfromthehigherpotentialtothelower
+potential.Recallthattheelectricalpotentialisdefinedasthepotentialenergypercharge, V =ΔU/q,andthecharge ΔQ
+loses potential energy moving through the potential difference.
+Figure 9.24 When there is a potential difference across a conductor,
+an electrical field is present that points in the direction from the higher
+potential to the lower potential.
+If the charge is positive, the charge experiences a force due to the electrical field → F =m → a =ΔQ → E . This force is
+necessary to keep the charge moving. This force does not act to accelerate the charge through the entire distance ΔL
+becauseoftheinteractionsofthechargewithatomsandfreeelectronsinthematerial.Thespeed,andthereforethekinetic
+energy,ofthechargedonotincreaseduringtheentiretripacross ΔL,andchargepassingthrougharea A hasthesame
+2
+driftvelocity v asthechargethatpassesthrougharea A .However,workisdoneonthecharge,bytheelectricalfield,
+d 1
+whichchangesthepotentialenergy.Sincethechangeintheelectricalpotentialdifferenceisnegative,theelectricalfieldis
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 411
+found to be
+E= − ⎛ ⎝ V 2 −V 1 ⎞ ⎠ = V .
+ΔL ΔL
+The work done on the charge is equal to the electric force times the length at which the force is applied,
+⎛ V ⎞
+W =FΔL=⎛ΔQE⎞ΔL= ΔQ ΔL=ΔQV =ΔU.
+⎝ ⎠ ⎝ ΔL⎠
+The charge moves at a drift velocity v so the work done on the charge results in a loss of potential energy, but the
+d
+averagekineticenergyremainsconstant.Thelostelectricalpotentialenergyappearsasthermalenergyinthematerial.On
+a microscopic scale, the energy transfer is due to collisions between the charge and the molecules of the material, which
+leadstoanincreaseintemperatureinthematerial.Thelossofpotentialenergyresultsinanincreaseinthetemperatureof
+thematerial,whichisdissipatedasradiation.Inaresistor,itisdissipatedasheat,andinalightbulb,itisdissipatedasheat
+and light.
+The power dissipated by the material as heat and light is equal to the time rate of change of the work:
+P=
+ΔU
+= −
+ΔQV
+=IV.
+Δt Δt
+Witharesistor,thevoltagedropacrosstheresistorisdissipatedasheat.Ohm’slawstatesthatthevoltageacrosstheresistor
+is equal to the current times the resistance, V =IR. The power dissipated by the resistor is therefore
+P=IV =I(IR)=I2R or P=IV = ⎛V⎞ V = V2 .
+⎝R⎠ R
+If a resistor is connected to a battery, the power dissipated as radiant energy by the wires and the resistor is equal to
+P=IV =I2R=
+V2
+. The power supplied from the battery is equal to current times the voltage, P=IV.
+R
+Electric Power
+The electric power gained or lost by any device has the form
+P=IV. (9.12)
+The power dissipated by a resistor has the form
+P=I2R=
+V2
+.
+(9.13)
+R
+Differentinsightscanbegainedfromthethreedifferentexpressionsforelectricpower.Forexample, P=V2/R implies
+thatthelowertheresistanceconnectedtoagivenvoltagesource,thegreaterthepowerdelivered.Furthermore,sincevoltage
+issquaredin P=V2/R,theeffectofapplyingahighervoltageisperhapsgreaterthanexpected.Thus,whenthevoltage
+is doubled to a 25-W bulb, its power nearly quadruples to about 100 W, burning it out. If the bulb’s resistance remained
+constant, its power would be exactly 100 W, but at the higher temperature, its resistance is higher, too.
+Example 9.9
+Calculating Power in Electric Devices
+ADCwinchmotorisratedat20.00Awithavoltageof115V.Whenthemotorisrunningatitsmaximumpower,
+itcanliftanobjectwithaweightof4900.00Nadistanceof10.00m,in30.00s,ataconstantspeed.(a)What
+is the power consumed by the motor? (b) What is the power used in lifting the object? Ignore air resistance.
+(c)Assumingthatthedifferenceinthepowerconsumedbythemotorandthepowerusedliftingtheobjectare
+dissipated as heat by the resistance of the motor, estimate the resistance of the motor?
+
+412 Chapter 9 | Current and Resistance
+Strategy
+(a)Thepowerconsumedbythemotorcanbefoundusing P=IV.(b)Thepowerusedinliftingtheobjectata
+constantspeedcanbefoundusing P=Fv,wherethespeedisthedistancedividedbythetime.Theupwardforce
+suppliedbythemotorisequaltotheweightoftheobjectbecausetheaccelerationisconstant.(c)Theresistance
+of the motor can be found using P=I2R.
+Solution
+a. Thepowerconsumedbythemotorisequalto P=IV andthecurrentisgivenas20.00Aandthevoltage
+is 115.00 V:
+P=IV =(20.00A)115.00V=2300.00W.
+b. Thepowerusedliftingtheobjectisequalto P=Fv wheretheforceisequaltotheweightoftheobject
+(1960 N) and the magnitude of the velocity is v= 10.00m =0.33 m,
+30.00s s
+P=Fv=(4900N)0.33m/s=1633.33W.
+c. The difference in the power equals 2300.00W−1633.33W=666.67W and the resistance can be
+found using P=I2R:
+R= P = 666.67W =1.67Ω.
+I2 (20.00A)2
+Significance
+The resistance of the motor is quite small. The resistance of the motor is due to many windings of copper
+wire. The power dissipated by the motor can be significant since the thermal power dissipated by the motor is
+proportional to the square of the current ⎛P=I2R⎞.
+⎝ ⎠
+9.9 Check Your Understanding Electric motors have a reasonably high efficiency. A 100-hp motor can
+haveanefficiencyof90%anda1-hpmotorcanhaveanefficiencyof80%.Whyisitimportanttousehigh-
+performance motors?
+A fuse (Figure 9.25) is a device that protects a circuit from currents that are too high. A fuse is basically a short piece
+ofwirebetweentwocontacts.Aswehaveseen,whenacurrentisrunningthroughaconductor,thekineticenergyofthe
+chargecarriersisconvertedintothermalenergyintheconductor.Thepieceofwireinthefuseisundertensionandhasalow
+meltingpoint.Thewireisdesignedtoheatupandbreakattheratedcurrent.Thefuseisdestroyedandmustbereplaced,
+but it protects the rest of the circuit. Fuses act quickly, but there is a small time delay while the wire heats up and breaks.
+Figure 9.25 A fuse consists of a piece of wire between two
+contacts. When a current passes through the wire that is greater
+than the rated current, the wire melts, breaking the connection.
+Pictured is a “blown” fuse where the wire broke protecting a
+circuit (credit: modification of work by “Shardayyy”/Flickr).
+Circuitbreakersarealsoratedforamaximumcurrent,andopentoprotectthecircuit,butcanbereset.Circuitbreakersreact
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

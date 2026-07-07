@@ -1,0 +1,272 @@
+# REAL PDF — openstax_vol1.pdf, pages 99-103
+############################################################
+
+2 • Chapter Review 87
+methods, which are approximate. multiplying their magnitudes with the cosine of
+• Analytical methods of vector algebra are used the angle between them. The scalar product of
+routinely in mechanics, electricity, and orthogonal vectors vanishes; the scalar product
+magnetism. They are important mathematical of antiparallel vectors is negative.
+tools of physics. • The vector product of two vectors is a vector
+perpendicular to both of them. Its magnitude is
+2.4 Products of Vectors
+obtained by multiplying their magnitudes by the
+• There are two kinds of multiplication for vectors. sine of the angle between them. The direction of
+One kind of multiplication is the scalar product, the vector product can be determined by the
+also known as the dot product. The other kind of corkscrew right-hand rule. The vector product of
+multiplication is the vector product, also known two either parallel or antiparallel vectors
+as the cross product. The scalar product of vanishes. The magnitude of the vector product is
+vectors is a number (scalar). The vector product largest for orthogonal vectors.
+of vectors is a vector. • The scalar product of vectors is used to find
+• Both kinds of multiplication have the distributive angles between vectors and in the definitions of
+property, but only the scalar product has the derived scalar physical quantities such as work
+commutative property. The vector product has or energy.
+the anticommutative property, which means that • The cross product of vectors is used in definitions
+when we change the order in which two vectors of derived vector physical quantities such as
+are multiplied, the result acquires a minus sign. torque or magnetic force, and in describing
+• The scalar product of two vectors is obtained by rotations.
+Conceptual Questions
+2.1 Scalars and Vectors zero? Explain.
+1 . A weather forecast states the temperature is 8 . Does the odometer in an automobile indicate a
+predicted to be the following day. Is this scalar or a vector quantity?
+temperature a vector or a scalar quantity?
+9 . When a 10,000-m runner competing on a 400-m
+Explain.
+track crosses the finish line, what is the runner’s
+2 . Which of the following is a vector: a person’s net displacement? Can this displacement be
+height, the altitude on Mt. Everest, the velocity zero? Explain.
+of a fly, the age of Earth, the boiling point of
+10 . A vector has zero magnitude. Is it necessary to
+water, the cost of a book, Earth’s population, or
+specify its direction? Explain.
+the acceleration of gravity?
+11 . Can a magnitude of a vector be negative?
+3 . Give a specific example of a vector, stating its
+magnitude, units, and direction. 12 . Can the magnitude of a particle’s displacement
+be greater than the distance traveled?
+4 . What do vectors and scalars have in common?
+How do they differ? 13 . If two vectors are equal, what can you say about
+their components? What can you say about their
+5 . Suppose you add two vectors and . What
+magnitudes? What can you say about their
+relative direction between them produces the
+directions?
+resultant with the greatest magnitude? What is
+14 . If three vectors sum up to zero, what geometric
+the maximum magnitude? What relative
+condition do they satisfy?
+direction between them produces the resultant
+with the smallest magnitude? What is the
+2.2 Coordinate Systems and Components of a Vector
+minimum magnitude?
+15 . Give an example of a nonzero vector that has a
+6 . Is it possible to add a scalar quantity to a vector
+component of zero.
+quantity?
+16 . Explain why a vector cannot have a component
+7 . Is it possible for two vectors of different
+greater than its own magnitude.
+magnitudes to add to zero? Is it possible for
+three vectors of different magnitudes to add to 17 . If two vectors are equal, what can you say about
+their components?
+
+88 2 • Chapter Review
+18 . If vectors and are orthogonal, what is the , (c) , (d) , (e)
+component of along the direction of ? What , (f) , (g)
+is the component of along the direction of ? , (h) , (i) ,
+and (j) .
+19 . If one of the two components of a vector is not
+zero, can the magnitude of the other vector 22 . If the cross product of two vectors vanishes,
+component of this vector be zero? what can you say about their directions?
+20 . If two vectors have the same magnitude, do 23 . If the dot product of two vectors vanishes, what
+their components have to be the same? can you say about their directions?
+2.4 Products of Vectors 24 . What is the dot product of a vector with the
+cross product that this vector has with another
+21 . What is wrong with the following expressions?
+vector?
+How can you correct them? (a) , (b)
+Problems
+2.1 Scalars and Vectors (f) , (g) ; and (h) .
+25 . A scuba diver makes a slow descent into the
+depths of the ocean. His vertical position with
+respect to a boat on the surface changes several
+times. He makes the first stop 9.0 m from the
+boat but has a problem with equalizing the
+pressure, so he ascends 3.0 m and then
+continues descending for another 12.0 m to the
+second stop. From there, he ascends 4 m and
+then descends for 18.0 m, ascends again for 7 m
+and descends again for 24.0 m, where he makes
+a stop, waiting for his buddy. Assuming the
+positive direction up to the surface, express his
+net vertical displacement vector in terms of the
+unit vector. What is his distance to the boat?
+26 . In a tug-of-war game on one campus, 15
+students pull on a rope at both ends in an effort
+to displace the central knot to one side or the
+other. Two students pull with force 196 N each
+to the right, four students pull with force 98 N
+each to the left, five students pull with force 62
+N each to the left, three students pull with force
+150 N each to the right, and one student pulls
+with force 250 N to the left. Assuming the
+29 . A delivery driver starts at the post office, drives
+positive direction to the right, express the net
+40 km north, then 20 km west, then 60 km
+pull on the knot in terms of the unit vector. How
+northeast, and finally 50 km north to stop for
+big is the net pull on the knot? In what direction?
+lunch. Use a graphical method to find their net
+27 . Suppose you walk 18.0 m straight west and then displacement vector.
+25.0 m straight north. How far are you from your
+30 . An adventurous dog strays from home, runs
+starting point and what is the compass direction
+three blocks east, two blocks north, one block
+of a line connecting your starting point to your
+east, one block north, and two blocks west.
+final position? Use a graphical method.
+Assuming that each block is about 100 m, how
+28 . For the vectors given in the following figure, use a far from home and in what direction is the dog?
+graphical method to find the following resultants: (a) Use a graphical method.
+, (b) , (c) , (d) , (e) ,
+31 . In an attempt to escape a desert island, a
+Access for free at openstax.org
+
+2 • Chapter Review 89
+castaway builds a raft and sets out to sea. The resultant
+wind shifts a great deal during the day and he is
+2.2 Coordinate Systems and Components of a Vector
+blown along the following directions: 2.50 km
+and north of west, then 4.70 km and
+37 . Assuming the +x-axis is horizontal and points to the
+south of east, then 1.30 km and south of
+right, resolve the vectors given in the following
+west, then 5.10 km straight east, then 1.70 km
+figure to their scalar components and express them
+and east of north, then 7.20 km and
+in vector component form.
+south of west, and finally 2.80 km and
+north of east. Use a graphical method to find the
+castaway’s final position relative to the island.
+32 . A small plane flies 40.0 km in a direction
+north of east and then flies 30.0 km in a
+direction north of east. Use a graphical
+method to find the total distance the plane
+covers from the starting point and the direction
+of the path to the final position.
+33 . A trapper walks a 5.0-km straight-line distance from
+his cabin to the lake, as shown in the following
+figure. Use a graphical method (the parallelogram
+rule) to determine the trapper’s displacement
+directly to the east and displacement directly to the
+north that sum up to his resultant displacement
+vector. If the trapper walked only in directions east
+and north, zigzagging his way to the lake, how many
+kilometers would he have to walk to get to the lake?
+38 . Suppose you walk 18.0 m straight west and then
+25.0 m straight north. How far are you from your
+starting point? What is your displacement
+vector? What is the direction of your
+displacement? Assume the +x-axis is to the
+east.
+39 . You drive 7.50 km in a straight line in a direction
+34 . A surveyor measures the distance across a river
+east of north. (a) Find the distances you
+that flows straight north by the following
+would have to drive straight east and then
+method. Starting directly across from a tree on
+straight north to arrive at the same point. (b)
+the opposite bank, the surveyor walks 100 m
+Show that you still arrive at the same point if the
+along the river to establish a baseline. She then
+east and north legs are reversed in order.
+sights across to the tree and reads that the angle
+Assume the +x-axis is to the east.
+from the baseline to the tree is . How wide is
+the river? 40 . A sledge is being pulled by two horses on a flat
+terrain. The net force on the sledge can be
+35 . A pedestrian walks 6.0 km east and then 13.0
+expressed in the Cartesian coordinate system as
+km north. Use a graphical method to find the
+vector , where
+pedestrian’s resultant displacement and
+and denote directions to the east and north,
+geographic direction.
+respectively. Find the magnitude and direction of
+36 . The magnitudes of two displacement vectors are the pull.
+A = 20 m and B = 6 m. What are the largest and
+41 . A trapper walks a 5.0-km straight-line distance from
+the smallest values of the magnitude of the
+
+90 2 • Chapter Review
+her cabin to the lake, as shown in the following calculate (a) and its magnitude and
+figure. Determine the east and north components of
+direction angle, and (b) and its magnitude
+her displacement vector. How many more
+and direction angle.
+kilometers would she have to walk if she walked
+along the component displacements? What is her 48 . A particle undergoes three consecutive
+displacement vector? displacements given by vectors
+,
+, and
+. (a) Find the
+resultant displacement vector of the particle. (b)
+What is the magnitude of the resultant
+displacement? (c) If all displacements were
+along one line, how far would the particle travel?
+49 . Given two displacement vectors
+and
+, find the
+displacements and their magnitudes for (a)
+42 . The polar coordinates of a point are and
+and (b) .
+5.50 m. What are its Cartesian coordinates?
+50 . A small plane flies in a direction
+43 . Two points in a plane have polar coordinates
+north of east and then flies in a
+and .
+direction north of east. Use the analytical
+Determine their Cartesian coordinates and the
+method to find the total distance the plane
+distance between them in the Cartesian
+covers from the starting point, and the
+coordinate system. Round the distance to a
+geographic direction of its displacement vector.
+nearest centimeter.
+What is its displacement vector?
+44 . A chameleon is resting quietly on a lanai screen,
+51 . In an attempt to escape a desert island, a
+waiting for an insect to come by. Assume the
+castaway builds a raft and sets out to sea. The
+origin of a Cartesian coordinate system at the
+wind shifts a great deal during the day, and she
+lower left-hand corner of the screen and the
+is blown along the following straight lines: 2.50
+horizontal direction to the right as the
+km and north of west, then 4.70 km and
++x-direction. If its coordinates are (2.000 m,
+south of east, then 1.30 km and
+1.000 m), (a) how far is it from the corner of the
+south of west, then 5.10 km due east, then 1.70
+screen? (b) What is its location in polar
+km and east of north, then 7.20 km and
+coordinates?
+south of west, and finally 2.80 km and
+45 . Two points in the Cartesian plane are A(2.00 m, north of east. Use the analytical method to
+−4.00 m) and B(−3.00 m, 3.00 m). Find the find the resultant vector of all her displacement
+distance between them and their polar vectors. What is its magnitude and direction?
+coordinates.
+52 . Assuming the +x-axis is horizontal to the right for
+46 . A fly enters through an open window and zooms the vectors given in the following figure, use the
+around the room. In a Cartesian coordinate analytical method to find the following resultants:
+system with three axes along three edges of the
+(a) , (b) , (c) , (d) , (e) ,
+room, the fly changes its position from point
+(f) , (g) , and (h) .
+b(4.0 m, 1.5 m, 2.5 m) to point e(1.0 m, 4.5 m,
+0.5 m). Find the scalar components of the fly’s
+displacement vector and express its
+displacement vector in vector component form.
+What is its magnitude?
+2.3 Algebra of Vectors
+47 . For vectors and ,
+Access for free at openstax.org

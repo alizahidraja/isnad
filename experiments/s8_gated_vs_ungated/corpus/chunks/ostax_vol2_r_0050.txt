@@ -1,0 +1,231 @@
+# REAL PDF — openstax_vol2.pdf, pages 303-309
+############################################################
+
+Chapter 7 | Electric Potential 293
+toworkonthesystemorthesystemwoulddoworkonyou,thatis,yourworkiseitherpositiveornegative.Ifyouhave
+todopositiveworkonthesystem(actuallypushthechargescloser),thentheenergyofthesystemshouldincrease.Ifyou
+bringtwopositivechargesortwonegativechargescloser,youhavetodopositiveworkonthesystem,whichraisestheir
+potentialenergy.Sincepotentialenergyisproportionalto1/r,thepotentialenergygoesupwhenrgoesdownbetweentwo
+positive or two negative charges.
+Ontheotherhand,ifyoubringapositiveandanegativechargenearer,youhavetodonegativeworkonthesystem(the
+chargesarepullingyou),whichmeansthatyoutakeenergyawayfromthesystem.Thisreducesthepotentialenergy.Since
+potentialenergyisnegativeinthecaseofapositiveandanegativechargepair,theincreasein1/rmakesthepotentialenergy
+more negative, which is the same as a reduction in potential energy.
+TheresultfromExample 7.1maybeextendedtosystemswithanyarbitrarynumberofcharges.Inthiscase,itismost
+convenient to write the formula as
+N N q q (7.3)
+W 12⋯N =
+2
+k∑∑
+r
+i
+ij
+j
+fori≠ j.
+i j
+The factor of 1/2 accounts for adding each pair of charges twice.
+7.2 | Electric Potential and Potential Difference
+Learning Objectives
+By the end of this section, you will be able to:
+• Define electric potential, voltage, and potential difference
+• Define the electron-volt
+• Calculate electric potential and potential difference from potential energy and electric field
+• Describe systems in which the electron-volt is a useful unit
+• Apply conservation of energy to electric systems
+Recallthatearlierwedefinedelectricfieldtobeaquantityindependentofthetestchargeinagivensystem,whichwould
+nonetheless allow us to calculate the force that would result on an arbitrary test charge. (The default assumption in the
+absenceofotherinformationisthatthetestchargeispositive.)Webrieflydefinedafieldforgravity,butgravityisalways
+attractive,whereastheelectricforcecanbeeitherattractiveorrepulsive.Therefore,althoughpotentialenergyisperfectly
+adequate in a gravitational system, it is convenient to define a quantity that allows us to calculate the work on a charge
+→ →
+independentofthemagnitudeofthecharge.Calculatingtheworkdirectlymaybedifficult,since W = F · d andthe
+→
+directionandmagnitudeof F canbecomplexformultiplecharges,forodd-shapedobjects,andalongarbitrarypaths.But
+→ →
+wedoknowthatbecause F =q E ,thework,andhence ΔU, isproportionaltothetestchargeq.Tohaveaphysical
+quantitythatisindependentoftestcharge,wedefineelectricpotentialV(orsimplypotential,sinceelectricisunderstood)
+to be the potential energy per unit charge:
+Electric Potential
+The electric potential energy per unit charge is
+U (7.4)
+V = q.
+SinceUisproportionaltoq,thedependenceonqcancels.Thus,Vdoesnotdependonq.Thechangeinpotentialenergy
+ΔU iscrucial,soweareconcernedwiththedifferenceinpotentialorpotentialdifference ΔV betweentwopoints,where
+
+294 Chapter 7 | Electric Potential
+ΔV =V B−V A= Δ q U .
+Electric Potential Difference
+TheelectricpotentialdifferencebetweenpointsAandB, V B−V A, isdefinedtobethechangeinpotentialenergy
+ofachargeqmovedfromAtoB,dividedbythecharge.Unitsofpotentialdifferencearejoulespercoulomb,giventhe
+namevolt (V)after AlessandroVolta.
+1V=1J/C
+Thefamiliartermvoltageisthecommonnameforelectricpotentialdifference.Keepinmindthatwheneveravoltageis
+quoted,itisunderstoodtobethepotentialdifferencebetweentwopoints.Forexample,everybatteryhastwoterminals,and
+itsvoltageisthepotentialdifferencebetweenthem.Morefundamentally,thepointyouchoosetobezerovoltsisarbitrary.
+Thisisanalogoustothefactthatgravitationalpotentialenergyhasanarbitraryzero,suchassealevelorperhapsalecture
+hall floor. It is worthwhile to emphasize the distinction between potential difference and electrical potential energy.
+Potential Difference and Electrical Potential Energy
+The relationship between potential difference (or voltage) and electrical potential energy is given by
+ΔV = Δ q U orΔU =qΔV. (7.5)
+Voltageisnotthesameasenergy.Voltageistheenergyperunitcharge.Thus,amotorcyclebatteryandacarbatterycanboth
+havethesamevoltage(moreprecisely,thesamepotentialdifferencebetweenbatteryterminals),yetonestoresmuchmore
+energythantheotherbecause ΔU =qΔV. Thecarbatterycanmovemorechargethanthemotorcyclebattery,although
+both are 12-V batteries.
+Example 7.4
+Calculating Energy
+Youhavea12.0-Vmotorcyclebatterythatcanmove5000Cofcharge,anda12.0-Vcarbatterythatcanmove
+60,000 C of charge. How much energy does each deliver? (Assume that the numerical value of each charge is
+accurate to three significant figures.)
+Strategy
+Tosaywehavea12.0-Vbatterymeansthatitsterminalshavea12.0-Vpotentialdifference.Whensuchabattery
+moves charge, it puts the charge through a potential difference of 12.0 V, and the charge is given a change in
+potentialenergyequalto ΔU =qΔV. Tofindtheenergyoutput,wemultiplythechargemovedbythepotential
+difference.
+Solution
+For the motorcycle battery, q=5000C and ΔV =12.0V. The total energy delivered by the motorcycle
+battery is
+ΔU =(5000C)(12.0V)=(5000C)(12.0J/C)= 6.00×104 J.
+cycle
+Similarly, for the car battery, q=60,000C and
+ΔU car=(60,000C)(12.0V)=7.20×10 5 J.
+Significance
+Voltageandenergyarerelated,buttheyarenotthesamething.Thevoltagesofthebatteriesareidentical,butthe
+energysuppliedbyeachisquitedifferent.Acarbatteryhasamuchlargerenginetostartthanamotorcycle.Note
+alsothatasabatteryisdischarged,someofitsenergyisusedinternallyanditsterminalvoltagedrops,suchas
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 295
+whenheadlightsdimbecauseofadepletedcarbattery.Theenergysuppliedbythebatteryisstillcalculatedasin
+this example, but not all of the energy is available for external use.
+7.4 Check Your UnderstandingHow much energy does a 1.5-V AAA battery have that can move 100 C?
+Notethattheenergiescalculatedinthepreviousexampleareabsolutevalues.Thechangeinpotentialenergyforthebattery
+isnegative,sinceitlosesenergy.Thesebatteries,likemanyelectricalsystems,actuallymovenegativecharge—electronsin
+particular.Thebatteriesrepelelectronsfromtheirnegativeterminals(A)throughwhatevercircuitryisinvolvedandattract
+themtotheirpositiveterminals(B),asshowninFigure7.12.Thechangeinpotentialis ΔV =V B−V A= +12V and
+thechargeqisnegative,sothat ΔU =qΔV isnegative,meaningthepotentialenergyofthebatteryhasdecreasedwhenq
+has moved fromAtoB.
+Figure 7.12 A battery moves negative charge from its
+negative terminal through a headlight to its positive terminal.
+Appropriate combinations of chemicals in the battery separate
+charges so that the negative terminal has an excess of negative
+charge, which is repelled by it and attracted to the excess
+positive charge on the other terminal. In terms of potential, the
+positive terminal is at a higher voltage than the negative
+terminal. Inside the battery, both positive and negative charges
+move.
+Example 7.5
+How Many Electrons Move through a Headlight Each Second?
+When a 12.0-V car battery powers a single 30.0-W headlight, how many electrons pass through it each second?
+Strategy
+Tofindthenumberofelectrons,wemustfirstfindthechargethatmovesin1.00s.Thechargemovedisrelated
+tovoltageandenergythroughtheequations ΔU =qΔV. A30.0-Wlampuses30.0joulespersecond.Sincethe
+batterylosesenergy,wehave ΔU =−30J and,sincetheelectronsaregoingfromthenegativeterminaltothe
+positive, we see that ΔV =+12.0V.
+Solution
+To find the chargeqmoved, we solve the equation ΔU =qΔV :
+q=
+ΔU
+.
+ΔV
+Entering the values for ΔU and ΔV, we get
+
+296 Chapter 7 | Electric Potential
+q= −30.0J = −30.0J =−2.50C.
++12.0V +12.0J/C
+The number of electrons n is the total charge divided by the charge per electron. That is,
+e
+n e= −2.50C =1.56× 10 19 electrons.
+−1.60× 10 −19 C/e−
+Significance
+Thisisaverylargenumber.Itisnowonderthatwedonotordinarilyobserveindividualelectronswithsomany
+beingpresentinordinarysystems.Infact,electricityhadbeeninuseformanydecadesbeforeitwasdetermined
+thatthemovingchargesinmanycircumstanceswerenegative.Positivechargemovingintheoppositedirectionof
+negativechargeoftenproducesidenticaleffects;thismakesitdifficulttodeterminewhichismovingorwhether
+both are moving.
+7.5 Check Your UnderstandingHow many electrons would go through a 24.0-W lamp?
+The Electron-Volt
+Theenergyperelectronisverysmallinmacroscopicsituationslikethatinthepreviousexample—atinyfractionofajoule.
+Butonasubmicroscopicscale,suchenergyperparticle(electron,proton,orion)canbeofgreatimportance.Forexample,
+evenatinyfractionofajoulecanbegreatenoughfortheseparticlestodestroyorganicmoleculesandharmlivingtissue.
+The particle may do its damage by direct collision, or it may create harmful X-rays, which can also inflict damage. It is
+useful to have an energy unit related to submicroscopic effects.
+Figure 7.13 shows a situation related to the definition of such an energy unit. An electron is accelerated between two
+chargedmetalplates,asitmightbeinanold-modeltelevisiontubeoroscilloscope.Theelectrongainskineticenergythat
+islaterconvertedintoanotherform—lightinthetelevisiontube,forexample.(Notethatintermsofenergy,“downhill”for
+theelectronis“uphill”forapositivecharge.)Sinceenergyisrelatedtovoltageby ΔU =qΔV,wecanthinkofthejoule
+as a coulomb-volt.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 297
+Figure 7.13 A typical electron gun accelerates electrons using a potential difference between two separated metal plates.
+By conservation of energy, the kinetic energy has to equal the change in potential energy, so KE=qV. The energy of the
+electron in electron-volts is numerically the same as the voltage between the plates. For example, a 5000-V potential
+difference produces 5000-eV electrons. The conceptual construct, namely two parallel plates with a hole in one, is shown in
+(a), while a real electron gun is shown in (b).
+Electron-Volt
+Onthesubmicroscopicscale,itismoreconvenienttodefineanenergyunitcalledtheelectron-volt(eV),whichisthe
+energy given to a fundamental charge accelerated through a potential difference of 1 V. In equation form,
+−19 −19 −19
+1eV=(1.60×10 C)(1V)=(1.60×10 C)(1J/C)=1.60×10 J.
+An electron accelerated through a potential difference of 1 V is given an energy of 1 eV. It follows that an electron
+acceleratedthrough50Vgains50eV.Apotentialdifferenceof100,000V(100kV)givesanelectronanenergyof100,000
+eV (100 keV), and so on. Similarly, an ion with a double positive charge accelerated through 100 V gains 200 eV of
+energy.Thesesimplerelationshipsbetweenacceleratingvoltageandparticlechargesmaketheelectron-voltasimpleand
+convenient energy unit in such circumstances.
+The electron-volt is commonly employed in submicroscopic processes—chemical valence energies and molecular and
+nuclear binding energies are among the quantities often expressed in electron-volts. For example, about 5 eV of energy
+is required to break up certain organic molecules. If a proton is accelerated from rest through a potential difference
+of 30 kV, it acquires an energy of 30 keV (30,000 eV) and can break up as many as 6000 of these molecules
+(30,000eV÷5eVper molecule=6000molecules). Nucleardecayenergiesareontheorderof1MeV(1,000,000eV)
+per event and can thus produce significant biological damage.
+Conservation of Energy
+The total energy of a system is conserved if there is no net addition (or subtraction) due to work or heat transfer. For
+conservative forces, such as the electrostatic force, conservation of energy states that mechanical energy is a constant.
+
+298 Chapter 7 | Electric Potential
+Mechanicalenergyisthesumofthekineticenergyandpotentialenergyofasystem;thatis, K+U =constant. Alossof
+Ufor a charged particle becomes an increase in itsK. Conservation of energy is stated in equation form as
+K+U =constant
+or
+K +U =K +U
+i i f f
+whereiandfstandforinitialandfinalconditions.Aswehavefoundmanytimesbefore,consideringenergycangiveus
+insights and facilitate problem solving.
+Example 7.6
+Electrical Potential Energy Converted into Kinetic Energy
+Calculatethefinalspeedofafreeelectronacceleratedfromrestthroughapotentialdifferenceof100V.(Assume
+that this numerical value is accurate to three significant figures.)
+Strategy
+We have a system with only conservative forces. Assuming the electron is accelerated in a vacuum, and
+neglecting thegravitational force(wewill check onthis assumption later), all oftheelectrical potential energy
+is converted into kinetic energy. We can identify the initial and final forms of energy to be
+K =0, K = 1mv2, U =qV, U =0.
+i f 2 i f
+Solution
+Conservation of energy states that
+K +U =K +U .
+i i f f
+Entering the forms identified above, we obtain
+mv2
+qV = .
+2
+We solve this forv:
+2qV
+v= m .
+Entering values forq,V, andmgives
+−19
+v= 2(−1.60×10 C)(−100J/C) =5.93×10 6 m/s.
+−31
+9.11×10 kg
+Significance
+Notethatboththechargeandtheinitialvoltagearenegative,asinFigure7.13.Fromthediscussionofelectric
+chargeandelectricfield,weknowthatelectrostaticforcesonsmallparticlesaregenerallyverylargecompared
+withthegravitationalforce.Thelargefinalspeedconfirmsthatthegravitationalforceisindeednegligiblehere.
+The large speed also indicates how easy it is to accelerate electrons with small voltages because of their very
+small mass. Voltages much higher than the 100 V in this problem are typically used in electron guns. These
+highervoltagesproduceelectronspeedssogreatthateffectsfromspecialrelativitymustbetakenintoaccountand
+hencearereservedforalaterchapter(Relativity(http://cnx.org/content/m58555/latest/)).Thatiswhywe
+consider a low voltage (accurately) in this example.
+7.6 CheckYourUnderstandingHowwouldthisexamplechangewithapositron?Apositronisidenticalto
+an electron except the charge is positive.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

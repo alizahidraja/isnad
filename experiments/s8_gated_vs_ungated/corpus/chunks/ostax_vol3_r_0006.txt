@@ -1,0 +1,185 @@
+# REAL PDF — openstax_vol3.pdf, pages 32-39
+############################################################
+
+24 Chapter 1 | The Nature of Light
+Explorerefraction and reflection of light (https://openstaxcollege.org/l/21bendoflight) betweentwo
+mediawithdifferentindicesofrefraction.Trytomaketherefractedraydisappearwithtotalinternalreflection.Use
+the protractor tool to measure the critical angle and compare with the prediction fromEquation 1.5.
+1.5 | Dispersion
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the cause of dispersion in a prism
+• Describe the effects of dispersion in producing rainbows
+• Summarize the advantages and disadvantages of dispersion
+Everyoneenjoysthespectacleofarainbowglimmeringagainstadarkstormysky.Howdoessunlightfallingoncleardrops
+ofraingetbrokenintotherainbowofcolorswesee?Thesameprocesscauseswhitelighttobebrokenintocolorsbyaclear
+glass prism or a diamond (Figure 1.20).
+Figure 1.20 The colors of the rainbow (a) and those produced by a prism (b) are identical. (credit a: modification of work by
+“Alfredo55”/Wikimedia Commons; credit b: modification of work by NASA)
+Weseeaboutsixcolorsinarainbow—red,orange,yellow,green,blue,andviolet;sometimesindigoislisted,too.These
+colorsareassociatedwithdifferentwavelengthsoflight,asshowninFigure1.21.Whenoureyereceivespure-wavelength
+light,wetendtoseeonlyoneofthesixcolors,dependingonwavelength.Thethousandsofotherhueswecansenseinother
+situationsareoureye’sresponsetovariousmixturesofwavelengths.Whitelight,inparticular,isafairlyuniformmixture
+ofallvisiblewavelengths.Sunlight,consideredtobewhite,actuallyappearstobeabityellow,becauseofitsmixtureof
+wavelengths,butitdoescontainallvisiblewavelengths.Thesequenceofcolorsinrainbowsisthesamesequenceasthe
+colorsshowninthefigure.Thisimpliesthatwhitelightisspreadoutinarainbowaccordingtowavelength.Dispersionis
+definedasthespreadingofwhitelightintoitsfullspectrumofwavelengths.Moretechnically,dispersionoccurswhenever
+the propagation of light depends on wavelength.
+Figure 1.21 Even though rainbows are associated with six colors, the rainbow is a continuous
+distribution of colors according to wavelengths.
+Anytypeofwavecanexhibitdispersion.Forexample,soundwaves,alltypesofelectromagneticwaves,andwaterwaves
+can be dispersed according to wavelength. Dispersion may require special circumstances and can result in spectacular
+displays such as in the production of a rainbow. This is also true for sound, since all frequencies ordinarily travel at the
+samespeed.Ifyoulistentosoundthroughalongtube,suchasavacuumcleanerhose,youcaneasilyhearitdispersedby
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 25
+interaction with the tube. Dispersion, in fact, can reveal a great deal about what the wave has encountered that disperses
+itswavelengths.Thedispersionofelectromagneticradiationfromouterspace,forexample,hasrevealedmuchaboutwhat
+exists between the stars—the so-called interstellar medium.
+NickMoore’svideo(https://openstaxcollege.org/l/21nickmoorevid)discussesdispersionofapulseashe
+tapsalongspring.FollowhisexplanationasMoorereplaysthehigh-speedfootageshowinghighfrequencywaves
+outrunning the lower frequency waves.
+Refractionisresponsiblefordispersioninrainbowsandmanyothersituations.Theangleofrefractiondependsontheindex
+ofrefraction,asweknowfromSnell’slaw.Weknowthattheindexofrefractionndependsonthemedium.Butforagiven
+medium,nalsodependsonwavelength (Table 1.2).Notethatforagivenmedium,nincreases aswavelength decreases
+andisgreatestforvioletlight.Thus,violetlightisbentmorethanredlight,asshownforaprisminFigure1.22(b).White
+light is dispersed into the same sequence of wavelengths as seen inFigure 1.20andFigure 1.21.
+Medium Red Orange Yellow Green Blue Violet
+(660 nm) (610 nm) (580 nm) (550 nm) (470 nm) (410 nm)
+Water 1.331 1.332 1.333 1.335 1.338 1.342
+Diamond 2.410 2.415 2.417 2.426 2.444 2.458
+Glass, crown 1.512 1.514 1.518 1.519 1.524 1.530
+Glass, flint 1.662 1.665 1.667 1.674 1.684 1.698
+Polystyrene 1.488 1.490 1.492 1.493 1.499 1.506
+Quartz, fused 1.455 1.456 1.458 1.459 1.462 1.468
+Table 1.2Index of Refractionnin Selected Media at Various Wavelengths
+Figure 1.22 (a) A pure wavelength of light falls onto a prism and is refracted at both
+surfaces. (b) White light is dispersed by the prism (shown exaggerated). Since the index
+of refraction varies with wavelength, the angles of refraction vary with wavelength. A
+sequence of red to violet is produced, because the index of refraction increases steadily
+with decreasing wavelength.
+Example 1.5
+Dispersion of White Light by Flint Glass
+Abeamofwhitelightgoesfromairintoflintglassatanincidenceangleof 43.2°.Whatistheanglebetweenthe
+red (660 nm) and violet (410 nm) parts of the refracted light?
+
+26 Chapter 1 | The Nature of Light
+Strategy
+ValuesfortheindicesofrefractionforflintglassatvariouswavelengthsarelistedinTable1.2.Usethesevalues
+for calculate the angle of refraction for each color and then take the difference to find the dispersion angle.
+Solution
+Applying the law of refraction for the red part of the beam
+n sinθ =n sinθ ,
+air air red red
+we can solve for the angle of refraction as
+θ red =sin−1 ⎛ ⎝ n air n s r i e n d θ air ⎞ ⎠ =sin−1 ⎡ ⎣ (1.00 ( 0 1 ) .6 s 6 in 2) 43.2°⎤ ⎦ =27.0°.
+Similarly, the angle of incidence for the violet part of the beam is
+θ violet =sin−1 ⎛ ⎝ n ai n r v s i i o n le θ t air ⎞ ⎠ =sin−1 ⎡ ⎣ (1.00 ( 0 1 ) .6 s 9 in 8) 43.2°⎤ ⎦ =26.4°.
+The difference between these two angles is
+θ −θ =27.0°−26.4°=0.6°.
+red violet
+Significance
+Although 0.6° may seem like a negligibly small angle, if this beam is allowed to propagate a long enough
+distance, the dispersion of colors becomes quite noticeable.
+1.4 CheckYourUnderstandingIntheprecedingexample,howmuchdistanceinsidetheblockofflintglass
+would the red and the violet rays have to progress before they are separated by 1.0 mm?
+Rainbowsareproducedbyacombinationofrefractionandreflection.Youmayhavenoticedthatyouseearainbowonly
+whenyoulookawayfromtheSun.Lightentersadropofwaterandisreflectedfromthebackofthedrop(Figure1.23).
+Thelightisrefractedbothasitentersandasitleavesthedrop.Sincetheindexofrefractionofwatervarieswithwavelength,
+thelightisdispersed,andarainbowisobserved(Figure 1.24(a)).(Nodispersionoccursatthebacksurface,becausethe
+lawofreflectiondoesnotdependonwavelength.)Theactualrainbowofcolorsseenbyanobserverdependsonthemyriad
+raysbeingrefractedandreflectedtowardtheobserver’seyesfromnumerousdropsofwater.Theeffectismostspectacular
+whenthebackgroundisdark,asinstormyweather,butcanalsobeobservedinwaterfallsandlawnsprinklers.Thearcofa
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 27
+rainbowcomesfromtheneedtobelookingataspecificanglerelativetothedirectionoftheSun,asillustratedinpart(b).If
+tworeflectionsoflightoccurwithinthewaterdrop,another“secondary”rainbowisproduced.Thisrareeventproducesan
+arcthatliesabovetheprimaryrainbowarc,asinpart(c),andproducescolorsinthereverseorderoftheprimaryrainbow,
+with red at the lowest angle and violet at the largest angle.
+Figure 1.23 A ray of light falling on this water drop enters and is
+reflected from the back of the drop. This light is refracted and
+dispersed both as it enters and as it leaves the drop.
+Figure 1.24 (a) Different colors emerge in different directions, and so you must look at different locations to see the various
+colors of a rainbow. (b) The arc of a rainbow results from the fact that a line between the observer and any point on the arc must
+make the correct angle with the parallel rays of sunlight for the observer to receive the refracted rays. (c) Double rainbow. (credit
+c: modification of work by “Nicholas”/Wikimedia Commons)
+Dispersion may produce beautiful rainbows, but it can cause problems in optical systems. White light used to transmit
+messages in a fiber is dispersed, spreading out in time and eventually overlapping with other messages. Since a laser
+producesanearlypurewavelength,itslightexperienceslittledispersion,anadvantageoverwhitelightfortransmissionof
+information.Incontrast,dispersionofelectromagneticwavescomingtousfromouterspacecanbeusedtodeterminethe
+amount of matter they pass through.
+
+28 Chapter 1 | The Nature of Light
+1.6 | Huygens’s Principle
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe Huygens’s principle
+• Use Huygens’s principle to explain the law of reflection
+• Use Huygens’s principle to explain the law of refraction
+• Use Huygens’s principle to explain diffraction
+Sofarinthischapter,wehavebeendiscussingopticalphenomenausingtheraymodeloflight.However,somephenomena
+requireanalysisandexplanationsbasedonthewavecharacteristicsoflight.Thisisparticularlytruewhenthewavelengthis
+notnegligiblecomparedtothedimensionsofanopticaldevice,suchasaslitinthecaseofdiffraction.Huygens’sprinciple
+is an indispensable tool for this analysis.
+Figure 1.25showshowatransversewavelooksasviewedfromaboveandfromtheside.Alightwavecanbeimagined
+topropagatelikethis,althoughwedonotactuallyseeitwigglingthroughspace.Fromabove,weviewthewavefronts(or
+wavecrests)asifwewerelookingdownonoceanwaves.Thesideviewwouldbeagraphoftheelectricormagneticfield.
+The view from above is perhaps more useful in developing concepts aboutwave optics.
+Figure 1.25 A transverse wave, such as an electromagnetic light wave, as viewed from above and from
+the side. The direction of propagation is perpendicular to the wave fronts (or wave crests) and is
+represented by a ray.
+TheDutchscientistChristiaanHuygens(1629–1695)developedausefultechniquefordeterminingindetailhowandwhere
+waves propagate. Starting from some known position, Huygens’s principle states that every point on a wave front is a
+source of wavelets that spread out in the forward direction at the same speed as the wave itself. The new wave front is
+tangent to all of the wavelets.
+Figure 1.26showshowHuygens’sprincipleisapplied.Awavefrontisthelongedgethatmoves,forexample,withthe
+crestorthetrough.Eachpointonthewavefrontemitsasemicircularwavethatmovesatthepropagationspeedv.Wecan
+drawthesewaveletsatatimetlater,sothattheyhavemovedadistance s=vt. Thenewwavefrontisaplanetangentto
+thewaveletsandiswherewewouldexpectthewavetobeatimetlater.Huygens’sprincipleworksforalltypesofwaves,
+includingwaterwaves,soundwaves,andlightwaves.Itisusefulnotonlyindescribinghowlightwavespropagatebutalso
+inexplainingthelawsofreflectionandrefraction.Inaddition,wewillseethatHuygens’sprincipletellsushowandwhere
+light rays interfere.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 29
+Figure 1.26 Huygens’s principle applied to a straight wave
+front. Each point on the wave front emits a semicircular wavelet
+that moves a distance s=vt. The new wave front is a line
+tangent to the wavelets.
+Reflection
+Figure 1.27showshowamirrorreflectsanincomingwaveatanangleequaltotheincidentangle,verifyingthelawof
+reflection.Asthewavefrontstrikesthemirror,waveletsarefirstemittedfromtheleftpartofthemirrorandthenfromthe
+right.Thewaveletsclosertothelefthavehadtimetotravelfarther,producingawavefronttravelinginthedirectionshown.
+Figure 1.27 Huygens’s principle applied to a plane wave front
+striking a mirror. The wavelets shown were emitted as each
+point on the wave front struck the mirror. The tangent to these
+wavelets shows that the new wave front has been reflected at an
+angle equal to the incident angle. The direction of propagation is
+perpendicular to the wave front, as shown by the downward-
+pointing arrows.
+Refraction
+ThelawofrefractioncanbeexplainedbyapplyingHuygens’sprincipletoawavefrontpassingfromonemediumtoanother
+(Figure1.28).Eachwaveletinthefigurewasemittedwhenthewavefrontcrossedtheinterfacebetweenthemedia.Since
+thespeedoflightissmallerinthesecondmedium,thewavesdonottravelasfarinagiventime,andthenewwavefront
+changes direction as shown. This explains why a ray changes direction to become closer to the perpendicular when light
+slows down. Snell’s law can be derived from the geometry inFigure 1.28(Example 1.6).
+
+30 Chapter 1 | The Nature of Light
+Figure 1.28 Huygens’s principle applied to a plane wave front
+traveling from one medium to another, where its speed is less. The
+ray bends toward the perpendicular, since the wavelets have a lower
+speed in the second medium.
+Example 1.6
+Deriving the Law of Refraction
+By examining the geometry of the wave fronts, derive the law of refraction.
+Strategy
+Consider Figure 1.29, which expands upon Figure 1.28. It shows the incident wave front just reaching the
+surface at point A, while point B is still well within medium 1. In the time Δt it takes for a wavelet from
+B to reach B′ on the surface at speed v =c/n , a wavelet from A travels into medium 2 a distance of
+1 1
+AA′=v Δt, where v =c/n . Note that in this example, v is slower than v because n <n .
+2 2 2 2 1 1 2
+Figure 1.29 Geometry of the law of refraction from medium 1 to medium 2.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

@@ -1,0 +1,260 @@
+# REAL PDF — crowell_lm.pdf, pages 481-489
+############################################################
+
+“TheGreatWaveOffKanagawa,”byKatsushikaHokusai(1760-1849).
+Chapter 19
+Free waves
+Your vocal cords or a saxophone reed can vibrate, but being able
+to vibrate wouldn’t be of much use unless the vibrations could be
+transmitted to the listener’s ear by sound waves. What are waves
+and why do they exist? Put your fingertip in the middle of a cup
+of water and then remove it suddenly. You will have noticed two
+results that are surprising to most people. First, the flat surface
+of the water does not simply sink uniformly to fill in the volume
+vacated by your finger. Instead, ripples spread out, and the process
+of flattening out occurs over a long period of time, during which
+the water at the center vibrates above and below the normal water
+level. This type of wave motion is the topic of the present chapter.
+Second, you have found that the ripples bounce o↵ of the walls of
+the cup, in much the same way that a ball would bounce o↵ of a
+wall. In the next chapter we discuss what happens to waves that
+have a boundary around them. Until then, we confine ourselves to
+wave phenomena that can be analyzed as if the medium (e.g., the
+water) was infinite and the same everywhere.
+It isn’t hard to understand why removing your fingertip creates rip- Dipping a finger in some wa-
+ples rather than simply allowing the water to sink back down uni- ter, 1, causes a disturbance that
+formly. The initial crater, (a), left behind by your finger has sloping spreadsoutward,2.
+sides, and the water next to the crater flows downhill to fill in the
+hole. The water far away, on the other hand, initially has no way of
+481
+
+knowing what has happened, because there is no slope for it to flow
+down. As the hole fills up, the rising water at the center gains up-
+ward momentum, and overshoots, creating a little hill where there
+had been a hole originally. The area just outside of this region
+has been robbed of some of its water in order to build the hill, so
+a depressed “moat” is formed, (b). This e↵ect cascades outward,
+producing ripples.
+482 Chapter 19 Free waves
+
+The two circular patterns of rip-
+plespassthrougheachother. Un-
+like material objects, wave pat-
+terns can overlap in space, and
+when this happens they combine
+byaddition.
+19.1 Wave motion
+There are three main ways in which wave motion di↵ers from the
+motion of objects made of matter.
+1. Superposition
+The most profound di↵erence is that waves do not display anything
+analogous to the normal forces between objects that come in con-
+tact. Two wave patterns can therefore overlap in the same region of
+space, asshowninfigureb. Wherethetwowavescoincide, theyadd
+together. Forinstance, supposethatatacertainlocationinatacer-
+tain moment in time, each wave would have had a crest 3 cm above
+the normal water level. The waves combine at this point to make
+a 6-cm crest. We use negative numbers to represent depressions in
+the water. If both waves would have had a trough measuring -3 cm,
+then they combine to make an extra-deep -6 cm trough. A +3 cm
+crest and a -3 cm trough result in a height of zero, i.e., the waves
+momentarily cancel each other out at that point. This additive rule
+isreferredtoastheprincipleofsuperposition,“superposition”being
+merely a fancy word for “adding.”
+Superposition can occur not just with sinusoidal waves like the ones
+in the figure above but with waves of any shape. The figures on the
+following page show superposition of wave pulses. A pulse is simply
+a wave of very short duration. These pulses consist only of a single
+hump or trough. If you hit a clothesline sharply, you will observe
+pulses heading o↵ in both directions. This is analogous to the way
+Wave motion 483
+
+ripples spread out in all directions when you make a disturbance at
+one point on water. The same occurs when the hammer on a piano
+comes up and hits a string.
+Experiments to date have not shown any deviation from the prin-
+ciple of superposition in the case of light waves. For other types
+of waves, it is typically a very good approximation for low-energy
+waves.
+Discussion question
+A In figure c/3, the fifth frame shows the spring just about perfectly
+flat. If the two pulses have essentially canceled each other out perfectly,
+thenwhydoesthemotionpickupagain? Whydoesn’tthespringjuststay
+flat?
+These pictures show the motion of wave pulses along a spring. To make a pulse, one end of the
+springwasshakenbyhand. Movieswerefilmed,andaseriesofframechosentoshowthemotion.1. Apulse
+travelstotheleft.2. Superpositionoftwocollidingpositivepulses.3. Superpositionoftwocollidingpulses,one
+positiveandonenegative.
+484 Chapter 19 Free waves
+
+As the wave pattern passes the rubber duck, the duck stays put.
+Thewaterisn’tmovingforwardwiththewave.
+2. The medium is not transported with the wave.
+Figure d shows a series of water waves before it has reached a rub-
+ber duck (left), having just passed the duck (middle) and having
+progressed about a meter beyond the duck (right). The duck bobs
+around its initial position, but is not carried along with the wave.
+This shows that the water itself does not flow outward with the
+wave. If it did, we could empty one end of a swimming pool simply
+by kicking up waves! We must distinguish between the motion of
+the medium (water in this case) and the motion of the wave pattern
+through the medium. The medium vibrates; the wave progresses
+through space.
+self-checkA
+Infiguree,youcandetecttheside-to-sidemotionofthespringbecause
+the spring appears blurry. At a certain instant, represented by a single
+photo, how would you describe the motion of the different parts of the
+spring? Other than the flat parts, do any parts of the spring have zero
+velocity? .Answer,p. 554
+A worm example 1
+The worm in the figure is moving to the right. The wave pattern,
+a pulse consisting of a compressed area of its body, moves to
+the left. In other words, the motion of the wave pattern is in the
+opposite direction compared to the motion of the medium.
+As the wave pulse goes by,
+theribbontiedtothespringisnot
+carried along. The motion of the
+wave pattern is to the right, but
+themedium(spring)ismovingup
+anddown,nottotheright.
+Wave motion 485
+
+Surfing example 2
+Theincorrectbeliefthatthemediummoveswiththewaveisoften
+reinforced by garbled secondhand knowledge of surfing. Anyone
+who has actually surfed knows that the front of the board pushes
+thewatertothesides,creatingawake—thesurfercanevendrag
+hishandthroughthewater,asinfiguref. Ifthewaterwasmoving
+along with the wave and the surfer, this wouldn’t happen. The
+surferiscarriedforwardbecauseforwardisdownhill,notbecause
+of any forward flow of the water. If the water was flowing forward,
+thenapersonfloatinginthewateruptoherneckwouldbecarried
+Example 2. The surfer is
+alongjustasquicklyassomeoneonasurfboard. Infact,itiseven
+dragginghishandinthewater.
+possible to surf down the back side of a wave, although the ride
+wouldn’t last very long because the surfer and the wave would
+quickly part company.
+3. A wave’s velocity depends on the medium.
+A material object can move with any velocity, and can be sped up
+or slowed down by a force that increases or decreases its kinetic
+energy. Not so with waves. The magnitude of a wave’s velocity
+depends on the properties of the medium (and perhaps also on the
+shape of the wave, for certain types of waves). Sound waves travel
+at about 340 m/s in air, 1000 m/s in helium. If you kick up water
+Example3: abreakingwave. waves in a pool, you will find that kicking harder makes waves that
+are taller (and therefore carry more energy), not faster. The sound
+waves from an exploding stick of dynamite carry a lot of energy,
+but are no faster than any other waves. Thus although both waves
+and physical objects carry energy as they move through space, the
+energy of the wave relates to its amplitude, not to its speed.
+In the following section we will give an example of the physical rela-
+tionship between the wave speed and the properties of the medium.
+Breaking waves example 3
+The velocity of water waves increases with depth. The crest of a
+wave travels faster than the trough, and this can cause the wave
+to break.
+Once a wave is created, the only reason its speed will change is if it
+enters a di↵erent medium or if the properties of the medium change.
+It is not so surprising that a change in medium can slow down a
+Example 4. The boat has
+wave, but the reverse can also happen. A sound wave traveling
+runupagainstalimitonitsspeed
+because it can’t climb over its through a helium balloon will slow down when it emerges into the
+own wave. Dolphins get around air, but if it enters another balloon it will speed back up again!
+the problem by leaping out of the Similarly, water waves travel more quickly over deeper water, so a
+water.
+wavewillslowdownasitpassesoveranunderwaterridge, butspeed
+up again as it emerges into deeper water.
+486 Chapter 19 Free waves
+
+Hull speed example 4
+The speeds of most boats, and of some surface-swimming ani-
+mals, are limited by the fact that they make a wave due to their
+motion through the water. The boat in figure h is going at the
+same speed as its own waves, and can’t go any faster. No mat-
+ter how hard the boat pushes against the water, it can’t make
+the wave move ahead faster and get out of the way. The wave’s
+speed depends only on the medium. Adding energy to the wave
+doesn’t speed it up, it just increases its amplitude.
+A water wave, unlike many other types of wave, has a speed that
+depends on its shape: a broader wave moves faster. The shape
+of the wave made by a boat tends to mold itself to the shape of
+theboat’shull,soaboatwithalongerhullmakesabroaderwave
+thatmovesfaster. Themaximumspeedofaboatwhosespeedis
+limitedbythiseffectisthereforecloselyrelatedtothelengthofits
+hull, and the maximum speed is called the hull speed. Sailboats
+designed for racing are not just long and skinny to make them
+more streamlined — they are also long so that their hull speeds
+will be high.
+Wave patterns
+Circular and linear wave pat-
+If the magnitude of a wave’s velocity vector is preordained, what terns.
+about its direction? Waves spread out in all directions from every
+point on the disturbance that created them. If the disturbance is
+small, we may consider it as a single point, and in the case of water
+waves the resulting wave pattern is the familiar circular ripple, i/1.
+If, on the other hand, we lay a pole on the surface of the water
+and wiggle it up and down, we create a linear wave pattern, i/2.
+For a three-dimensional wave such as a sound wave, the analogous
+patterns would be spherical waves and plane waves, j.
+Infinitely many patterns are possible, but linear or plane waves are
+often the simplest to analyze, because the velocity vector is in the
+same direction no matter what part of the wave we look at. Since
+all the velocity vectors are parallel to one another, the problem is
+e↵ectively one-dimensional. Throughout this chapter and the next,
+we will restrict ourselves mainly to wave motion in one dimension,
+while not hesitating to broaden our horizons when it can be done
+without too much complication.
+Plane and spherical wave
+patterns.
+Wave motion 487
+
+Discussion questions
+A [seeabove]
+B Sketchtwopositivewavepulsesonastringthatareoverlappingbut
+notrightontopofeachother,anddrawtheirsuperposition. Dothesame
+forapositivepulserunningintoanegativepulse.
+C Atravelingwavepulseismovingtotherightonastring. Sketchthe
+velocity vectors of the various parts of the string. Now do the same for a
+pulsemovingtotheleft.
+D In a spherical sound wave spreading out from a point, how would
+theenergyofthewavefalloffwithdistance?
+19.2 Waves on a string
+So far you have learned some counterintuitive things about the be-
+Hittingakeyonapianocausesa
+havior of waves, but intuition can be trained. The first half of this
+hammer to come up from under-
+section aims to build your intuition by investigating a simple, one-
+neath and hit a string (actually a
+set of three strings). The result dimensional type of wave: a wave on a string. If you have ever
+is a pair of pulses moving away stretched a string between the bottoms of two open-mouthed cans
+fromthepointofimpact. to talk to a friend, you were putting this type of wave to work.
+Stringed instruments are another good example. Although we usu-
+ally think of a piano wire simply as vibrating, the hammer actually
+strikes it quickly and makes a dent in it, which then ripples out in
+both directions. Since this chapter is about free waves, not bounded
+ones, we pretend that our string is infinitely long.
+After the qualitative discussion, we will use simple approximations
+to investigate the speed of a wave pulse on a string. This quick
+A string is struck with a hammer,
+1,andtwopulsesflyoff,2. and dirty treatment is then followed by a rigorous attack using the
+methods of calculus, which may be skipped by the student who has
+not studied calculus. How far you penetrate in this section is up to
+you, and depends on your mathematical self-confidence. If you skip
+some of the math, you should nevertheless absorb the significance
+of the result, discussed on p. 492.
+Intuitive ideas
+Consider a string that has been struck, l/1, resulting in the creation
+of two wave pulses, 2, one traveling to the left and one to the right.
+Thisisanalogoustothewayripplesspreadoutinalldirectionsfrom
+a splash in water, but on a one-dimensional string, “all directions”
+becomes “both directions.”
+We can gain insight by modeling the string as a series of masses con-
+nectedbysprings. (Intheactualstringthemassandthespringiness
+arebothcontributedbythemoleculesthemselves.) Ifwelookatvar-
+iousmicroscopicportionsofthestring, therewillbesomeareasthat
+A continuous string can be areflat,m/1,somethatareslopingbutnotcurved,2,andsomethat
+modeled as a series of discrete are curved, 3 and 4. In example 1 it is clear that both the forces
+massesconnectedbysprings. on the central mass cancel out, so it will not accelerate. The same
+488 Chapter 19 Free waves

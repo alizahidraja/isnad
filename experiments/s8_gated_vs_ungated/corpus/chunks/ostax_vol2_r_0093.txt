@@ -1,0 +1,283 @@
+# REAL PDF — openstax_vol2.pdf, pages 584-591
+############################################################
+
+574 Chapter 12 | Sources of Magnetic Fields
+44. Asuperconductingwireofdiameter0.25cmcarriesa
+current of 1000 A. What is the magnetic field just outside
+the wire?
+45. Along,straightwireofradiusRcarriesacurrentIthat
+isdistributeduniformlyoverthecross-sectionofthewire.
+Atwhatdistancefromtheaxisofthewireisthemagnitude
+of the magnetic field a maximum?
+12.6Solenoids and Toroids
+46. The accompanying figure shows a cross-section of 49. Asolenoidiswoundwith2000turnspermeter.When
+a long, hollow, cylindrical conductor of inner radius the current is 5.2 A, what is the magnetic field within the
+r =3.0 cm and outer radius r =5.0 cm. A 50-A solenoid?
+1 2
+current distributed uniformly over the cross-section flows
+50. Asolenoidhas12turnspercentimeter.Whatcurrent
+into the page. Calculate the magnetic field at
+r =2.0 cm, r =4.0cm, andr =6.0 cm. will produce a magnetic field of 2.0×10−2T within the
+solenoid?
+51. If a current is 2.0 A, how many turns per centimeter
+must be wound on a solenoid in order to produce a
+magnetic field of 2.0×10 −3 T within it?
+52. A solenoid is 40 cm long, has a diameter of 3.0 cm,
+and is wound with 500 turns. If the current through the
+windings is 4.0 A, what is the magnetic field at a point
+on the axis of the solenoid that is (a) at the center of the
+solenoid,(b)10.0cmfromoneendofthesolenoid,and(c)
+5.0 cm from one end of the solenoid? (d) Compare these
+answers with the infinite-solenoid case.
+47. A long, solid, cylindrical conductor of radius 3.0 cm
+carries a current of 50 A distributed uniformly over its
+cross-section. Plot the magnetic field as a function of the
+radial distancerfrom the center of the conductor.
+48. Aportionofalong,cylindricalcoaxialcableisshown
+in the accompanying figure. A current I flows down the
+center conductor, and this current is returned in the outer
+conductor.Determine themagnetic fieldintheregions(a)
+r ≤r , (b) r ≥r ≥r , (c) r ≥r ≥r , and (d)
+1 2 1 3 2
+r ≥r . Assume that the current is distributed uniformly
+3
+over the cross sections of the two parts of the cable.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 575
+diameterof4.0cm,iswrappedwithnturnspermeter,and
+carries a currentI?
+55. A solenoid with 25 turns per centimeter carries a
+currentI.Anelectronmoveswithinthesolenoidinacircle
+that has a radius of 2.0 cm and is perpendicular to the
+axis of the solenoid. If the speed of the electron is
+2.0×10 5 m/s, what isI?
+56. A toroid has 250 turns of wire and carries a current
+of20A.Itsinnerandouterradiiare8.0and9.0cm.What
+are the values of its magnetic field at r =8.1, 8.5, and
+8.9cm?
+57. A toroid with a square cross section 3.0 cm × 3.0
+cm has an inner radius of 25.0 cm. It is wound with 500
+turnsofwire,anditcarriesacurrentof2.0A.Whatisthe
+strength of the magnetic field at the center of the square
+cross section?
+12.7Magnetism in Matter
+58. Themagneticfieldinthecoreofanair-filledsolenoid
+is1.50T.Byhowmuchwillthismagneticfielddecreaseif
+the air is pumped out of the core while the current is held
+constant?
+59. A solenoid has a ferromagnetic core, n = 1000 turns
+permeter,andI=5.0A.IfBinsidethesolenoidis2.0T,
+what is χ for the core material?
+60. A 20-A current flows through a solenoid with 2000
+turns per meter. What is the magnetic field inside the
+solenoidifitscoreis(a)avacuumand(b)filledwithliquid
+oxygen at 90 K?
+61. Themagneticdipolemomentoftheironatomisabout
+2.1×10 −23 A·m2. (a)Calculatethemaximummagnetic
+dipolemomentofadomainconsistingof 10 19 ironatoms.
+(b) What current would have to flow through a single
+circular loop of wire of diameter 1.0 cm to produce this
+magnetic dipole moment?
+62. Supposeyouwishtoproducea1.2-Tmagneticfieldin
+a toroid with an iron core for which χ =4.0×10 3 . The
+toroidhasameanradiusof15cmandiswoundwith500
+53. Determine the magnetic field on the central axis at
+turns. What current is required?
+the opening of a semi-infinite solenoid. (That is, take the
+opening to be at x=0 and the other end to be at
+63. A current of 1.5 A flows through the windings of a
+x=∞.)
+large, thin toroid with 200 turns per meter. If the toroid
+is filled with iron for which χ =3.0×10 3 , what is the
+54. By how much is the approximation B= µ nI in
+0 magnetic field within it?
+erroratthecenterofasolenoidthatis15.0cmlong,hasa
+
+576 Chapter 12 | Sources of Magnetic Fields
+64. A solenoid with an iron core is 25 cm long and is For this current, what is the permeability of the iron? If
+wrappedwith100turnsofwire.Whenthecurrentthrough thecurrentisturnedoffandthenrestoredto10A,willthe
+the solenoid is 10 A, the magnetic field inside it is 2.0 T. magnetic field necessarily return to 2.0 T?
+ADDITIONAL PROBLEMS
+65. Threelong,straight,parallelwires,allcarrying20A,
+arepositionedasshownintheaccompanyingfigure.What
+is the magnitude of the magnetic field at the pointP?
+68. Currentflowsalongathin,infinitesheetasshownin
+theaccompanyingfigure.Thecurrentperunitlengthalong
+thesheetisJinamperespermeter.(a)UsetheBiot-Savart
+lawtoshowthat B= µ J/ 2 oneithersideofthesheet.
+0
+→
+What is the direction of B on each side? (b) Now use
+Ampère’s law to calculate the field.
+66. AcurrentIflowsaroundawirebentintotheshapeof
+asquareofsidea.WhatisthemagneticfieldatthepointP
+69. (a)Usetheresultofthepreviousproblemtocalculate
+that is a distance z above the center of the square (see the
+the magnetic field between, above, and below the pair of
+accompanying figure)?
+infinite sheets shown in the accompanying figure. (b)
+Repeat your calculations if the direction of the current in
+the lower sheet is reversed.
+67. Theaccompanyingfigureshowsalong,straightwire
+carrying a current of 10 A. What is the magnetic force on
+70. Weoftenassumethatthemagneticfieldisuniformin
+anelectronattheinstantitis20cmfromthewire,traveling
+a region and zero everywhere else. Show that in reality it
+parallel to the wire with a speed of 2.0×10 5 m/s? isimpossibleforamagneticfieldtodropabruptlytozero,
+Describe qualitatively the subsequent motion of the as illustrated in the accompanying figure. (Hint: Apply
+electron. Ampère’s law over the path shown.)
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 577
+71. How is the percentage change in the strength of the
+magnetic field across the face of the toroid related to the
+percentagechangeintheradialdistancefromtheaxisofthe 76. A charge of 4.0µC is distributed uniformly around
+toroid?
+a thin ring of insulating material. The ring has a radius of
+0.20 m and rotates at 2.0×104rev/min around the axis
+72. Show that the expression for the magnetic field of a
+that passes through its center and is perpendicular to the
+toroidreducestothatforthefieldofaninfinitesolenoidin
+planeofthering.Whatisthemagneticfieldatthecenterof
+the limit that the central radius goes to infinity.
+the ring?
+73. A toroid with an inner radius of 20 cm and an outer
+77. A thin, nonconducting disk of radius R is free to
+radiusof22cmistightlywoundwithonelayerofwirethat
+rotate aroundtheaxisthat passesthroughitscenter andis
+has a diameter of 0.25 mm. (a) How many turns are there
+perpendicular to the face of the disk. The disk is charged
+onthetoroid?(b)Ifthecurrentthroughthetoroidwindings
+uniformly with a total charge q. If the disk rotates at a
+is 2.0 A, what is the strength of the magnetic field at the
+constantangularvelocity ω, whatisthemagneticfieldat
+center of the toroid?
+its center?
+→ →
+74. A wire element has d l , Id l =JAdl=Jdv,
+78. Consider the disk in the previous problem. Calculate
+whereAanddvarethecross-sectionalareaandvolumeof the magnetic field at a point on its central axis that is a
+theelement,respectively.Usethis,theBiot-Savartlaw,and distanceyabove the disk.
+J=nev toshowthatthemagneticfieldofamovingpoint
+charge q is given by: 79. Consider the axial magnetic field
+→ B = µ 0 qv× ^ r B v= µ 0 IR2/2(y2+R2) 3/2 of the circular current loop
+4π r2 a
+shown below. (a) Evaluate ∫ B
+y
+dy. Also show that
+−a
+75. A reasonably uniform magnetic field over a limited a
+region of space can be produced with the Helmholtz coil, a l → im ∞ ∫ −a B y dy= µ 0 I. (b) Can you deduce this limit
+which consists of two parallel coils centered on the same
+without evaluating the integral? (Hint: See the
+axis. The coils are connected so that they carry the same
+accompanying figure.)
+currentI.EachcoilhasNturnsandradiusR,whichisalso
+thedistancebetweenthecoils.(a)Findthemagneticfieldat
+anypointonthez-axisshownintheaccompanyingfigure.
+d2B
+(b)ShowthatdB/dzand arebothzeroatz=0.(These
+dz2
+vanishing derivatives demonstrate that the magnetic field
+varies only slightly nearz= 0.)
+
+578 Chapter 12 | Sources of Magnetic Fields
+80. Thecurrentdensityinthelong,cylindricalwireshown
+in the accompanying figure varies with distance r from
+the center of the wire according to J =cr, where c is a
+constant.(a)Whatisthecurrentthroughthewire?(b)What
+isthemagneticfieldproducedbythiscurrentfor r ≤R?
+For r ≥R?
+82. Betweenthetwoendsofahorseshoemagnetthefield
+is uniform as shown in the diagram. As you move out to
+outsideedges,thefieldbends.ShowbyAmpère’slawthat
+the field must bend and thereby the field weakens due to
+these bends.
+81. A long, straight, cylindrical conductor contains a
+cylindrical cavity whose axis is displaced by a from the
+axisoftheconductor,asshownintheaccompanyingfigure.
+The current density in the conductor is given by
+→ ^ ^
+J =J k, where J isaconstantand k isalongthe
+0 0
+axis of the conductor. Calculate the magnetic field at an
+arbitrary point P in the cavity by superimposing the field
+ofasolidcylindricalconductorwithradius R andcurrent
+1
+→
+density J ontothefieldofasolidcylindricalconductor
+→
+with radius R and current density − J . Then use the
+2
+fact that the appropriate azimuthal unit vectors can be
+expressed as θ ^ = ^ k × ^ r and θ ^ = ^ k × ^ r to show 83. Showthatthemagneticfieldofathinwireandthatof
+1 1 2 2 a current loop are zero if you are infinitely far away.
+that everywhere inside the cavity the magnetic field is
+→
+given by the constant B = 1µ J k×a, where 84. An Ampère loop is chosen as shown by dashed lines
+2 0 0
+for a parallel constant magnetic field as shown by solid
+a=r 1 −r 2 and r 1 =r 1 ^ r 1 isthepositionofPrelative arrows.Calculate → B ·d → l foreachsideoftheloopthen
+to the center of the conductor and r 2 =r 2 ^ r 2 is the findtheentire ∮ → B ·d → l . CanyouthinkofanAmpère
+position ofPrelative to the center of the cavity.
+loopthatwouldmaketheproblemeasier?Dothoseresults
+match these?
+85. Averylong,thickcylindricalwireofradiusRcarries
+acurrentdensityJthatvariesacrossitscross-section.The
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 579
+magnitudeofthecurrentdensityatapointadistancerfrom surfacesisvertical.Findthemagneticfieldinsidethetorus
+thecenterofthewireisgivenby J =J r , where J is as a function of radial distancerfrom the axis.
+0R 0
+aconstant.Findthemagneticfield(a)atapointoutsidethe
+wireand(b)atapointinsidethewire.Writeyouranswerin
+terms of the net currentIthrough the wire.
+86. Averylong,cylindricalwireofradiusahasacircular
+hole of radius b in it at a distance d from the center. The
+wire carries a uniform current of magnitude I through it.
+Thedirectionofthecurrentinthefigureisoutofthepaper.
+Findthemagneticfield(a)atapointattheedgeofthehole
+closest to the center of the thick wire, (b) at an arbitrary
+point inside the hole, and (c) at an arbitrary point outside
+the wire. (Hint: Think of the hole as a sum of two wires
+carrying current in the opposite directions.)
+88. Two long coaxial copper tubes, each of length L,
+are connected to a battery of voltage V. The inner tube
+has inner radius a and outer radius b, and the outer tube
+has inner radius c and outer radius d. The tubes are then
+disconnected from the battery and rotated in the same
+direction at angular speed of ω radians per second about
+their common axis. Find the magnetic field (a) at a point
+insidethespaceenclosedbytheinnertube r <a, and(b)
+atapointbetweenthetubes b<r <c, and(c)atapoint
+87. Magnetic field inside a torus. Consider a torus of
+rectangular cross-section with inner radius a and outer outsidethetubes r >d. (Hint:Thinkofcoppertubesasa
+radiusb.Nturnsofaninsulatedthinwirearewoundevenly capacitorandfindthechargedensitybasedonthevoltage
+on the torus tightly all around the torus and connected to 2πε L
+applied, Q=VC, C= 0 .)
+abatteryproducingasteadycurrentIinthewire.Assume ln(c/b)
+thatthecurrentonthetopandbottomsurfacesinthefigure
+is radial, and the current on the inner and outer radii
+CHALLENGE PROBLEMS
+89. Theaccompanyingfigureshowsaflat,infinitelylong through the rectangle.
+sheet of width a that carries a current I uniformly
+distributedacrossit.FindthemagneticfieldatthepointP,
+whichisintheplaneofthesheetandatadistancexfrom
+one edge. Test your result for the limit a→0.
+91. A nonconducting hard rubber circular disk of radius
+90. A hypothetical current flowing in the z-direction
+Rispaintedwithauniformsurfacechargedensity σ. Itis
+→ ⎡ ^ ^⎤
+creates the field B =C ⎣ ⎛ ⎝ x/y2⎞ ⎠ i +⎛ ⎝ 1/y⎞ ⎠ j ⎦ in the rotated about its axis with angular speed ω. (a) Find the
+magneticfieldproducedatapointontheaxisadistanceh
+rectangular region of the xy-plane shown in the
+meters from the center of the disk. (b) Find the numerical
+accompanyingfigure.UseAmpère’slawtofindthecurrent
+value of magnitude of the magnetic field when
+
+580 Chapter 12 | Sources of Magnetic Fields
+σ =1C/m2, R=20 cm, h=2 cm, and magnetic field of Earth, which is about 1/2 Gauss.
+ω=400rad/sec, and compare it with the magnitude of
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

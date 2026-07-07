@@ -1,0 +1,265 @@
+# REAL PDF — openstax_vol2.pdf, pages 149-154
+############################################################
+
+Chapter 3 | The First Law of Thermodynamics 139
+52. A metallic container of fixed volume of 57. AnidealgasexpandsisothermallyalongABanddoes
+2.5×10 −3 m 3 immersed in a large tank of temperature 700Jofwork(seebelow).(a)Howmuchheatdoesthegas
+exchangealongAB?(b)Thegasthenexpandsadiabatically
+27°C contains two compartments separated by a freely
+alongBCanddoes400Jofwork.Whenthegasreturnsto
+movablewall.Initially,thewalliskeptinplacebyastopper
+A along CA, it exhausts 100 J of heat to its surroundings.
+so that there are 0.02 mol of the nitrogen gas on one side
+How much work is done on the gas along this path?
+and 0.03 mol of the oxygen gas on the other side, each
+occupying half the volume. When the stopper is removed,
+the wall moves and comes to a final position. The
+movementofthewalliscontrolledsothatthewallmoves
+in infinitesimal quasi-static steps. (a) Find the final
+volumes of the two sides assuming the ideal gas behavior
+forthetwogases.(b)Howmuchworkdoeseachgasdoon
+theother?(c)Whatisthechangeintheinternalenergyof
+eachgas?(d)Findtheamountofheatthatentersorleaves
+each gas.
+53. Agasinacylindricalclosedcontainerisadiabatically
+and quasi-statically expanded from a state A (3 MPa, 2
+L) to a state B with volume of 6 L along the path
+1.8pV =constant. (a) Plot the path in the pV plane. (b) 58. Considertheprocessesshownbelow.Intheprocesses
+Findtheamountofworkdonebythegasandthechangein AB and BC, 3600 J and 2400 J of heat are added to the
+the internal energy of the gas during the process. system, respectively. (a) Find the work done in each of
+the processes AB, BC, AD, and DC. (b) Find the internal
+energy change in processes AB and BC. (c) Find the
+3.4Thermodynamic Processes internalenergydifferencebetweenstatesCandA.(d)Find
+the total heat added in the ADC process. (e) From the
+54. Twomolesofamonatomicidealgasat(5MPa,5L)is
+information give, can you find the heat added in process
+expandedisothermallyuntilthevolumeisdoubled(step1).
+AD? Why or why not?
+Thenitiscooled isochorically untilthepressureis1MPa
+(step2).Thetemperaturedropsinthisprocess.Thegasis
+nowcompressedisothermallyuntilitsvolumeisbackto5
+L,butitspressureisnow2MPa(step3).Finally,thegasis
+heatedisochoricallytoreturntotheinitialstate(step4).(a)
+DrawthefourprocessesinthepVplane.(b)Findthetotal
+work done by the gas.
+55. ConsideratransformationfrompointAtoBinatwo-
+step process. First, the pressure is lowered from 3 MPa at
+pointAtoapressureof1MPa,whilekeepingthevolume
+at 2 L by cooling the system. The state reached is labeled
+C. Then the system is heated at a constant pressure to
+reach a volume of 6 L in the state B. (a) Find the amount
+59. Two moles of helium gas are placed in a cylindrical
+of work done on the ACB path. (b) Find the amount of
+container with a piston. The gas is at room temperature
+heat exchanged by the system when it goes from A to B
+on the ACB path. (c) Compare the change in the internal 25°C and under a pressure of 3.0×10 5 Pa. When the
+energy when the AB process occurs adiabatically with the pressure from the outside is decreased while keeping the
+ABchange through the two-step process on theACBpath. temperaturethesameastheroomtemperature,thevolume
+of the gas doubles. (a) Find the work the external agent
+56. Consideracylinderwithamovablepistoncontaining doesonthegasintheprocess.(b)Findtheheatexchanged
+n moles of an ideal gas. The entire apparatus is immersed bythegasandindicatewhetherthegastakesinorgivesup
+inaconstanttemperaturebathoftemperatureTkelvin.The heat. Assume ideal gas behavior.
+piston is then pushed slowly so that the pressure of the
+gas changes quasi-statically from p to p at constant 60. An amount of n moles of a monatomic ideal gas in
+1 2
+a conducting container with a movable piston is placed in
+temperatureT.Findtheworkdonebythegasintermsofn,
+R, T, p , and p . a large thermal heat bath at temperature T 1 and the gas
+1 2
+is allowed to come to equilibrium. After the equilibrium
+is reached, the pressure on the piston is lowered so that
+
+140 Chapter 3 | The First Law of Thermodynamics
+the gas expands at constant temperature. The process is
+P (atm) V (L)
+continued quasi-statically until the final pressure is 4/3 of
+theinitialpressure p . (a)Findthechangeintheinternal 20.0 1.0
+1
+energy of the gas. (b) Find the work done by the gas. (c) 17.0 1.1
+Findtheheatexchangedbythegas,andindicate, whether
+14.0 1.3
+the gas takes in or gives up heat.
+11.0 1.5
+8.0 2.0
+3.5Heat Capacities of an Ideal Gas
+5.0 2.6
+61. The temperature of an ideal monatomic gas rises by
+8.0K.Whatisthechangeintheinternalenergyof1molof 2.0 5.2
+the gas at constant volume?
+1.0 8.4
+62. For a temperature increase of 10°C at constant
+volume,whatistheheatabsorbedby(a)3.0molofadilute
+monatomicgas;(b)0.50molofadilutediatomicgas;and 70. An ideal monatomic gas at 300 K expands
+(c) 15 mol of a dilute polyatomic gas? adiabaticallyandreversiblytotwiceitsvolume.Whatisits
+final temperature?
+63. If the gases of the preceding problem are initially at
+300K,whataretheirinternalenergiesaftertheyabsorbthe 71. An ideal diatomic gas at 80 K is slowly compressed
+heat? adiabaticallyandreversiblytotwiceitsvolume.Whatisits
+final temperature?
+64. Consider 0.40 mol of dilute carbon dioxide at a
+pressure of 0.50 atm and a volume of 50 L. What is the 72. An ideal diatomic gas at 80 K is slowly compressed
+internal energy of the gas? adiabatically to one-third its original volume. What is its
+final temperature?
+65. When400Jofheatareslowlyaddedto10molofan
+idealmonatomicgas,itstemperaturerisesby 10°C.What 73. Compare the charge in internal energy of an ideal
+is the work done on the gas? gas for a quasi-static adiabatic expansion with that for a
+quasi-static isothermal expansion. What happens to the
+temperature of an ideal gas in an adiabatic expansion?
+66. Onemoleofadilutediatomicgasoccupyingavolume
+of10.00Lexpandsagainstaconstantpressureof2.000atm
+whenitisslowlyheated.Ifthetemperatureofthegasrises 74. The temperature of n moles of an ideal gas changes
+by 10.00 K and 400.0 J of heat are added in the process, from T to T inaquasi-staticadiabatictransition.Show
+1 2
+what is its final volume? that the work done by the gas is given by
+nR
+W = (T −T ).
+γ−1 1 2
+3.6Adiabatic Processes for an Ideal Gas
+67. A monatomic ideal gas undergoes a quasi-static
+75. A dilute gas expands quasi-statically to three times
+adiabaticexpansioninwhichitsvolumeisdoubled.Howis
+its initial volume. Is the final gas pressure greater for an
+the pressure of the gas changed?
+isothermal or an adiabatic expansion? Does your answer
+depend on whether the gas is monatomic, diatomic, or
+68. Anidealgashasapressureof0.50atmandavolume polyatomic?
+of10L.Itiscompressedadiabaticallyandquasi-statically
+untilitspressureis3.0atmanditsvolumeis2.8L.Isthe
+76. (a)Anidealgasexpandsadiabaticallyfromavolume
+gas monatomic, diatomic, or polyatomic?
+of 2.0×10 −3 m 3 to 2.5×10 −3 m 3. If the initial
+69. Pressure and volume measurements of a dilute gas pressure and temperature were 5.0×10 5 Pa and 300 K,
+undergoing a quasi-static adiabatic expansion are shown respectively, what are the final pressure and temperature
+below. Plot ln p vs. V and determine γ for this gas from of the gas? Use γ =5/3 for the gas. (b) In an isothermal
+your graph. process, an ideal gas expands from a volume of
+2.0×10 −3 m 3 to 2.5×10 −3 m 3.Iftheinitialpressure
+and temperature were 5.0×10 5 Pa and 300 K,
+respectively,whatarethefinalpressureandtemperatureof
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 141
+the gas? T =500K, V =1L, andT =300K for your plot.
+1 1 2
+77. On an adiabatic process of an ideal gas pressure,
+78. Two moles of a monatomic ideal gas such as helium
+volumeandtemperaturechangesuchthat pVγ isconstant
+is compressed adiabatically and reversibly from a state (3
+with γ =5/3 for monatomic gas such as helium and atm,5L)toastatewithpressure4atm.(a)Findthevolume
+andtemperatureofthefinalstate.(b)Findthetemperature
+γ =7/5 for diatomic gas such as hydrogen at room
+oftheinitialstateofthegas.(c)Findtheworkdonebythe
+temperature.Usenumericalvaluestoplottwoisothermsof
+gasintheprocess.(d)Findthechangeininternalenergyof
+1molofheliumgasusingidealgaslawandtwoadiabatic
+the gas in the process.
+processes mediating between them. Use
+ADDITIONAL PROBLEMS
+79. Consider the process shown below. During steps AB 83. Ahand-driventirepumphasapistonwitha2.50-cm
+andBC,3600Jand2400Jofheat,respectively,areadded diameterandamaximumstrokeof30.0cm.(a)Howmuch
+to the system. (a) Find the work done in each of the workdoyoudoinonestrokeiftheaveragegaugepressure
+processesAB,BC,AD,andDC.(b)Findtheinternalenergy is 2.4×10 5 N/m2 (about35psi)?(b)Whataverageforce
+changeinprocessesABandBC.(c)Findtheinternalenergy
+do you exert on the piston, neglecting friction and
+difference between states C and A. (d) Find the total heat
+gravitational force?
+addedintheADCprocess.(e)Fromtheinformationgiven,
+can you find the heat added in process AD? Why or why
+84. Calculate the net work output of a heat engine
+not?
+following pathABCDAas shown below.
+80. Acartirecontains 0.0380m 3 ofairatapressureof
+85. What is the net work output of a heat engine that
+2.20×10 5 Pa (about 32 psi). How much more internal followspathABDAintheprecedingproblemwithastraight
+energydoesthisgashavethanthesamevolumehasatzero linefromBtoD?Whyistheworkoutputlessthanforpath
+gaugepressure(whichisequivalenttonormalatmospheric ABCDA?
+pressure)?
+86. Five moles of a monatomic ideal gas in a cylinder at
+81. A helium-filled toy balloon has a gauge pressure of 27°C is expanded isothermally from a volume of 5 L to
+0.200atmandavolumeof10.0L.Howmuchgreateristhe
+10 L. (a) What is the change in internal energy? (b) How
+internal energy of the helium in the balloon than it would
+much work was done on the gas in the process? (c) How
+be at zero gauge pressure?
+much heat was transferred to the gas?
+82. Steam to drive an old-fashioned steam locomotive is
+87. Four moles of a monatomic ideal gas in a cylinder
+suppliedataconstantgaugepressureof 1.75×10 6 N/m2 at 27°C is expanded at constant pressure equal to 1 atm
+(about 250 psi) to a piston with a 0.200-m radius. (a) By untilitsvolumedoubles.(a)Whatisthechangeininternal
+calculating pΔV, find the work done by the steam when energy? (b) How much work was done by the gas in the
+the piston moves 0.800 m. Note that this is the net work process? (c) How much heat was transferred to the gas?
+output, since gauge pressure is used. (b) Now find the
+amountofworkbycalculating theforceexertedtimesthe 88. Helium gas is cooled from 20°C to 10°C by
+distance traveled. Is the answer the same as in part (a)? expanding from 40 atm to 1 atm. If there is 1.4 mol of
+
+142 Chapter 3 | The First Law of Thermodynamics
+helium,(a)Whatisthefinalvolumeofhelium?(b)Whatis gasbyusingvanderWaalsequationofstateinsteadofideal
+the change in internal energy? gas law.
+89. In an adiabatic process, oxygen gas in a container 92. Twomolesofamonatomic idealgassuchasoxygen
+is compressed along a path that can be described by the is compressed adiabatically and reversibly from a state (3
+followingpressureinatmasafunctionofvolumeV,with atm, 5 L) to a state with a pressure of 4 atm. (a) Find
+V =1L: p=(3.0atm)(V/V ) −1.2.Theinitialandfinal thevolumeandtemperatureofthefinalstate.(b)Findthe
+0 0
+temperature of the initial state. (c) Find work done by the
+volumes during the process were 2 L and 1.5 L,
+gasintheprocess.(d)Findthechangeininternalenergyin
+respectively. Find the amount of work done on the gas.
+theprocess.Assume C
+V
+=5R and C p=C V+R forthe
+diatomic ideal gas in the conditions given.
+90. A cylinder containing three moles of a monatomic
+ideal gas is heated at a constant pressure of 2 atm. The
+temperature of the gas changes from 300 K to 350 K as a 93. An insulated vessel contains 1.5 moles of argon at 2
+resultoftheexpansion.Findworkdone(a)onthegas;and atm.Thegasinitiallyoccupiesavolumeof5L.Asaresult
+(b) by the gas. oftheadiabaticexpansionthepressureofthegasisreduced
+to1atm.(a)Findthevolumeandtemperatureofthefinal
+state.(b)Findthetemperatureofthegasintheinitialstate.
+91. A cylinder containing three moles of nitrogen gas is
+(c)Findtheworkdonebythegasintheprocess.(d)Find
+heatedataconstantpressureof2atm.Thetemperatureof
+the change in the internal energy of the gas in the process.
+the gas changes from 300 K to 350 K as a result of the
+expansion. Find work done (a) on the gas, and (b) by the
+CHALLENGE PROBLEMS
+94. One mole of an ideal monatomic gas occupies a endsandcontainsaninsulatingpistonthatisfreetomove
+volume of 1.0×10−2 m 3 at a pressure of on frictionless bearings. The piston divides the chamber
+into two compartments containing gases A and B.
+2.0×10 5 N/m2. (a)Whatisthetemperature ofthegas? Originally, each compartment has a volume of
+(b)Thegasundergoesaquasi-staticadiabaticcompression 5.0×10−2 m 3 and contains a monatomic ideal gas at a
+until its volume is decreased to 5.0×10 −3 m 3 . What is temperature of 0°C and a pressure of 1.0 atm. (a) How
+the new gas temperature? (c) How much work is done on
+manymolesofgasareineachcompartment?(b)HeatQis
+thegasduringthecompression?(d)Whatisthechangein
+slowlyaddedtoAsothatitexpandsandBiscompressed
+the internal energy of the gas?
+until the pressure of both gases is 3.0 atm. Use the fact
+thatthecompressionofBisadiabatictodeterminethefinal
+95. One mole of an ideal gas is initially in a chamber of volumeofbothgases.(c)Whataretheirfinaltemperatures?
+volume 1.0×10−2 m 3 and at a temperature of 27°C. (d) What is the value of Q?
+(a) How much heat is absorbed by the gas when it slowly
+expands isothermally to twice its initial volume? (b)
+Suppose the gas is slowly transformed to the same final
+statebyfirstdecreasingthepressureatconstantvolumeand
+thenexpandingitisobarically.Whatistheheattransferred
+for this case? (c) Calculate the heat transferred when the
+gas is transformed quasi-statically to the same final state
+byexpandingitisobarically,thendecreasingitspressureat
+constant volume.
+96. Abulletofmass10gistravelinghorizontallyat200
+m/swhenitstrikesandembedsinapendulumbobofmass 98. In a diesel engine, the fuel is ignited without a spark
+2.0 kg. (a) How much mechanical energy is dissipated in plug.Instead,airinacylinderiscompressedadiabatically
+thecollision?(b)Assumingthat C forthebobplusbullet toatemperatureabovetheignitiontemperatureofthefuel;
+v
+at the point of maximum compression, the fuel is injected
+is3R,calculatethetemperatureincreaseofthesystemdue
+to the collision. Take the molecular mass of the system to intothecylinder.Supposethatairat 20°C istakenintothe
+be 200 g/mol. cylinderatavolume V andthencompressedadiabatically
+1
+and quasi-statically to a temperature of 600°C and a
+97. Theinsulatedcylindershownbelowisclosedatboth
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 143
+volume V . If γ =1.4, whatistheratio V /V ? (Note: static.)
+2 1 2
+Inanoperatingdieselengine,thecompressionisnotquasi-

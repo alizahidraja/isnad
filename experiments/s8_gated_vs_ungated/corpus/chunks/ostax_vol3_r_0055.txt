@@ -1,0 +1,287 @@
+# REAL PDF — openstax_vol3.pdf, pages 327-333
+############################################################
+
+Chapter 7 | Quantum Mechanics 319
+makepredictions.Indevelopingthistheory,itishelpfultoreviewthewavetheoryoflight.Foralightwave,theelectric
+fieldE(x,t) obeys the relation
+∂2E
+1
+∂2E (7.17)
+= ,
+∂x2 c2 ∂t2
+wherecisthespeedoflightandthesymbol ∂ representsapartialderivative.(RecallfromOscillations(http://cnx.org/
+content/m58360/latest/) that a partial derivative is closely related to an ordinary derivative, but involves functions of
+morethanonevariable.Whentakingthepartialderivativeofafunctionbyacertainvariable,allothervariablesareheld
+constant.)Alightwaveconsistsofaverylargenumberofphotons,sothequantity |E(x, t)| 2 caninterpretedasaprobability
+density of finding a single photon at a particular point in space (for example, on a viewing screen).
+There are many solutions to this equation. One solution of particular importance is
+E(x, t)= Asin(kx−ωt), (7.18)
+whereAistheamplitudeoftheelectricfield,kisthewavenumber,and ω istheangularfrequency.Combingthisequation
+withEquation 7.17gives
+k2=
+ω2
+.
+(7.19)
+c2
+AccordingtodeBroglie’sequations,wehave p=ℏk and E=ℏω.SubstitutingtheseequationsinEquation7.19gives
+E (7.20)
+p= c,
+or
+E= pc. (7.21)
+Therefore, according to Einstein’s general energy-momentum equation (Equation 5.11), Equation 7.17 describes a
+particle with a zero rest mass. This is consistent with our knowledge of a photon.
+This process can be reversed. We can begin with the energy-momentum equation of a particle and then ask what wave
+equation corresponds to it. The energy-momentum equation of a nonrelativistic particle in one dimension is
+p2 (7.22)
+E= +U(x, t),
+2m
+wherepisthemomentum,misthemass,andUisthepotentialenergyoftheparticle.Thewaveequationthatgoeswithit
+turns out to be a key equation in quantum mechanics, calledSchrӧdinger’s time-dependent equation.
+The Schrӧdinger Time-Dependent Equation
+The equation describing the energy and momentum of a wave function is known as the Schrӧdinger equation:
+ℏ2 ∂2Ψ(x, t) ∂Ψ(x, t) (7.23)
+− +U(x, t)Ψ(x, t)=iℏ .
+2m ∂x2 ∂t
+As described in Potential Energy and Conservation of Energy (http://cnx.org/content/m58311/latest/) , the
+force on the particle described by this equation is given by
+∂U(x, t) (7.24)
+F = − .
+∂x
+This equation plays a role in quantum mechanics similar to Newton’s second law in classical mechanics. Once the
+potentialenergyofaparticleisspecified—or,equivalently,oncetheforceontheparticleisspecified—wecansolvethis
+differentialequationforthewavefunction.ThesolutiontoNewton’ssecondlawequation(alsoadifferentialequation)in
+onedimensionisafunctionx(t)thatspecifieswhereanobjectisatanytimet.ThesolutiontoSchrӧdinger’stime-dependent
+equationprovidesatool—thewavefunction—thatcanbeusedtodeterminewheretheparticleislikelytobe.Thisequation
+canbealsowrittenintwoorthreedimensions.SolvingSchrӧdinger’stime-dependentequationoftenrequirestheaidofa
+computer.
+Considerthespecialcaseofafreeparticle.Afreeparticleexperiencesnoforce (F =0). BasedonEquation 7.24,this
+
+320 Chapter 7 | Quantum Mechanics
+requires only that
+U(x, t)=U =constant. (7.25)
+0
+For simplicity, we set U =0. Schrӧdinger’s equation then reduces to
+0
+ℏ2 ∂2Ψ(x, t) ∂Ψ(x, t) (7.26)
+− =iℏ .
+2m ∂x2 ∂t
+A valid solution to this equation is
+Ψ(x, t)= Ae
+i(kx−ωt)
+.
+(7.27)
+Not surprisingly, this solution contains an imaginary number (i= −1) because the differential equation itself contains
+an imaginary number. As stressed before, however, quantum-mechanical predictions depend only on |Ψ(x, t)| 2, which
+yields completely real values. Notice that the real plane-wave solutions, Ψ(x, t)= Asin(kx−ωt) and
+Ψ(x, t)= Acos(kx−ωt), donotobeySchrödinger’sequation.Thetemptationtothinkthatawavefunctioncanbeseen,
+touched, and felt in nature is eliminated by the appearance of an imaginary number. In Schrӧdinger’s theory of quantum
+mechanics, the wave function is merely a tool for calculating things.
+If the potential energy function (U) does not depend on time, it is possible to show that
+Ψ(x, t)=ψ(x)e−iωt (7.28)
+satisfies Schrӧdinger’s time-dependent equation, where ψ(x) is a time-independent function and e−iωt is a
+space-independent function. In other words, the wave function is separable into two parts: a space-only part and a time-
+onlypart.Thefactor e−iωt issometimesreferredtoasatime-modulationfactorsinceitmodifiesthespace-onlyfunction.
+According to de Broglie, the energy of a matter wave is given by E=ℏω, where E is its total energy. Thus, the above
+equation can also be written as
+Ψ(x, t)=ψ(x)e−iEt/ℏ . (7.29)
+Any linear combination of such states (mixed state of energy or momentum) is also valid solution to this equation. Such
+states can, for example, describe a localized particle (seeFigure 7.9)
+7.5 CheckYourUnderstandingAparticlewithmassmismovingalongthex-axisinapotentialgivenby
+the potential energy function U(x)=0.5mω2x2. Compute the product Ψ(x, t)* U(x)Ψ(x, t). Express your
+answer in terms of the time-independent wave function, ψ(x).
+CombiningEquation 7.23andEquation 7.28, Schrödinger’s time-dependent equation reduces to
+ℏ2 d2ψ(x) (7.30)
+− +U(x)ψ(x)=Eψ(x),
+2m dx2
+where E is the total energy of the particle (a real number). This equation is called Schrӧdinger’s time-independent
+equation. Notice that we use “big psi” (Ψ) for the time-dependent wave function and “little psi” (ψ) for the time-
+independentwavefunction.Thewave-functionsolutiontothisequationmustbemultipliedbythetime-modulationfactor
+to obtain the time-dependent wave function.
+In the next sections, we solve Schrӧdinger’s time-independent equation for three cases: a quantum particle in a box, a
+simple harmonic oscillator, and a quantum barrier. These cases provide important lessons that can be used to solve more
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 321
+complicated systems. The time-independent wave function ψ(x) solutions must satisfy three conditions:
+• ψ(x) must be a continuous function.
+• The first derivative of ψ(x) with respect to space, dψ(x)/dx, must be continuous, unless V(x)=∞.
+• ψ(x) must not diverge (“blow up”) at x=±∞.
+Thefirstconditionavoidssuddenjumpsorgapsinthewavefunction.Thesecondconditionrequiresthewavefunctionto
+besmoothatallpoints,exceptinspecialcases.(Inamoreadvancedcourseonquantummechanics,forexample,potential
+spikesofinfinitedepthandheightareusedtomodelsolids).Thethirdconditionrequiresthewavefunctionbenormalizable.
+ThisthirdconditionfollowsfromBorn’sinterpretationofquantummechanics.Itensuresthat |ψ(x)|2 isafinitenumberso
+we can use it to calculate probabilities.
+7.6 Check Your Understanding Which ofthe following wave functions is a valid wave-function solution
+for Schrӧdinger’s equation?
+7.4 | The Quantum Particle in a Box
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe how to set up a boundary-value problem for the stationary Schrӧdinger equation
+• Explain why the energy of a quantum particle in a box is quantized
+• Describe the physical meaning of stationary solutions to Schrӧdinger’s equation and the
+connection of these solutions with time-dependent quantum states
+• Explain the physical meaning of Bohr’s correspondence principle
+Inthissection,weapplySchrӧdinger’sequationtoaparticleboundtoaone-dimensionalbox.Thisspecialcaseprovides
+lessons for understanding quantum mechanics in more complex systems. The energy of the particle is quantized as a
+consequence of a standing wave condition inside the box.
+Consideraparticleofmass m thatisallowedtomoveonlyalongthex-directionanditsmotionisconfinedtotheregion
+betweenhardandrigidwallslocatedat x=0 andat x=L (Figure7.10).Betweenthewalls,theparticlemovesfreely.
+This physical situation is called theinfinite square well, described by the potential energy function
+⎧0, 0≤ x≤L, (7.31)
+U(x)=⎨
+⎩∞, otherwise.
+Combining this equation with Schrӧdinger’s time-independent wave equation gives
+−ℏ2 d2ψ(x)
+=Eψ(x), for0≤ x≤L
+(7.32)
+2m dx2
+whereEisthetotalenergyoftheparticle.Whattypesofsolutionsdoweexpect?Theenergyoftheparticleisapositive
+number,soifthevalueofthewavefunctionispositive(rightsideoftheequation),thecurvatureofthewavefunctionis
+negative,orconcavedown(leftsideoftheequation).Similarly,ifthevalueofthewavefunctionisnegative(rightsideof
+
+322 Chapter 7 | Quantum Mechanics
+theequation),thecurvatureofthewavefunctionispositiveorconcaveup(leftsideofequation).Thisconditionismetby
+anoscillatingwavefunction,suchasasineorcosinewave.Sincethesewavesareconfinedtothebox,weenvisionstanding
+waves with fixed endpoints at x=0 and x=L.
+Figure 7.10 The potential energy function that confines the
+particle in a one-dimensional box.
+Solutions ψ(x) to this equation have a probabilistic interpretation. In particular, the square |ψ(x)|2 represents the
+probability density of finding the particle at a particular location x. This function must be integrated to determine the
+probability of finding the particle in some interval of space. We are therefore looking for a normalizable solution that
+satisfies the following normalization condition:
+L (7.33)
+∫dx|ψ(x)|2=1.
+0
+Thewallsarerigidandimpenetrable, whichmeansthattheparticle isneverfoundbeyondthewall.Mathematically,this
+means that the solution must vanish at the walls:
+ψ(0)=ψ(L)=0. (7.34)
+We expect oscillating solutions, so the most general solution to this equation is
+ψ k(x)= A
+k
+coskx+B
+k
+sinkx (7.35)
+wherekisthewavenumber,and A and B areconstants.ApplyingtheboundaryconditionexpressedbyEquation7.34
+k k
+gives
+ψ k(0)= A kcos(k·0)+B ksin(k·0)= A k=0. (7.36)
+Because we have A k=0, the solution must be
+ψ k(x)=B
+k
+sinkx. (7.37)
+If B
+k
+is zero, ψ k(x)=0 for all values of x and the normalization condition, Equation 7.33, cannot be satisfied.
+Assuming B k≠0,Equation 7.34for x=L then gives
+0=B ksin(kL)⇒sin(kL)=0⇒kL=nπ, n=1, 2, 3,... (7.38)
+We discard the n=0 solution because ψ(x) for this quantum number would be zero everywhere—an un-normalizable
+and therefore unphysical solution. SubstitutingEquation 7.37intoEquation 7.32gives
+−
+2
+ℏ
+m
+2
+d
+d
+x
+2
+2
+⎛
+⎝
+B ksin(kx)⎞
+⎠
+=E⎛
+⎝
+B ksin(kx)⎞
+⎠
+. (7.39)
+Computing these derivatives leads to
+ℏ2k2 (7.40)
+E=E k=
+2m
+.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 323
+AccordingtodeBroglie, p=ℏk, sothisexpressionimpliesthatthetotalenergyisequaltothekineticenergy,consistent
+with our assumption that the “particle moves freely.” Combining the results ofEquation 7.38andEquation 7.40gives
+E
+n=n2π2ℏ2
+, n=1, 2, 3, ...
+(7.41)
+2mL2
+Strange!Aparticleboundtoaone-dimensionalboxcanonlyhavecertaindiscrete(quantized)valuesofenergy.Further,the
+particle cannot have a zero kinetic energy—it is impossible for a particle bound to a box to be “at rest.”
+Toevaluatetheallowedwavefunctionsthatcorrespondtotheseenergies,wemustfindthenormalizationconstant B .We
+n
+impose the normalization conditionEquation 7.33on the wave function
+ψ n(x)=B nsinnπx/L (7.42)
+L L L
+1=∫dx|ψ n(x)|2=∫dxB n 2sin2n L π x=B n 2∫dxsin2n L π x=B n 2L 2 ⇒B n= L 2 .
+0 0 0
+Hence, the wave functions that correspond to the energy values given inEquation 7.41are
+ψ n(x)=
+L
+2 sin n
+L
+πx , n=1, 2, 3, ... (7.43)
+For the lowest energy state orground state energy, we have
+E = π2ℏ2 , ψ (x)= 2 sin ⎛πx⎞ . (7.44)
+1 2mL2 1 L ⎝L⎠
+All other energy states can be expressed as
+E n=n2E
+1
+, ψ n(x)=
+L
+2 sin ⎛
+⎝
+n
+L
+πx⎞
+⎠
+. (7.45)
+Theindexniscalledtheenergyquantumnumberorprincipalquantumnumber.Thestatefor n=2 isthefirstexcited
+state,thestatefor n=3 isthesecondexcitedstate,andsoon.Thefirstthreequantumstates(for n=1, 2, and3) ofa
+particle in a box are shown inFigure 7.11.
+ThewavefunctionsinEquation7.45aresometimesreferredtoasthe“statesofdefiniteenergy.”Particlesinthesestates
+aresaidtooccupyenergylevels,whicharerepresentedbythehorizontallinesinFigure7.11.Energylevelsareanalogous
+to rungs of a ladder that the particle can “climb” as it gains or loses energy.
+The wave functions in Equation 7.45 are also called stationary states and standing wave states. These functions are
+“stationary,” because their probability density functions, |Ψ(x, t)| 2, do not vary in time, and “standing waves” because
+theirrealandimaginarypartsoscillateupanddownlikeastandingwave—likearopewavingbetweentwochildrenona
+playground.Stationarystatesarestatesofdefiniteenergy[Equation 7.45],butlinearcombinationsofthesestates,such
+as ψ(x)=aψ +bψ (also solutions to Schrӧdinger’s equation) are states of mixed energy.
+1 2
+
+324 Chapter 7 | Quantum Mechanics
+Figure 7.11 The first three quantum states of a quantum particle in a box for principal quantum
+numbers n=1, 2, and3: (a) standing wave solutions and (b) allowed energy states.
+Energyquantizationisaconsequenceoftheboundaryconditions.Iftheparticleisnotconfinedtoaboxbutwandersfreely,
+the allowed energies are continuous. However, in this case, only certain energies (E , 4E , 9E , …) are allowed. The
+1 1 1
+energy difference between adjacent energy levels is given by
+ΔE n+1,n=E n+1 −E n=(n+1)2E 1 −n2E 1 =(2n+1)E 1 . (7.46)
+Conservation of energy demands that if the energy of the system changes, the energy difference is carried in some other
+form of energy. For the special case of a charged particle confined to a small volume (for example, in an atom), energy
+changesareoftencarriedawaybyphotons.Thefrequenciesoftheemitted photonsgiveusinformationabouttheenergy
+differences (spacings) of the system and the volume of containment—the size of the “box” [seeEquation 7.44].
+Example 7.8
+A Simple Model of the Nucleus
+Suppose a proton is confined to a box of width L=1.00×10−14m (a typical nuclear radius). What are the
+energiesofthegroundandthefirstexcitedstates?Iftheprotonmakesatransitionfromthefirstexcitedstateto
+the ground state, what are the energy and the frequency of the emitted photon?
+Strategy
+Ifweassumethattheprotonconfinedinthenucleuscanbemodeledasaquantumparticleinabox,allweneed
+todoistouseEquation7.41tofinditsenergies E and E .Themassofaprotonis m=1.76×10 −27 kg.
+1 2
+Theemittedphotoncarriesawaytheenergydifference ΔE=E 2 −E 1 . Wecanusetherelation E f =hf tofind
+its frequencyf.
+Solution
+The ground state:
+E =
+π2ℏ2
+=
+π2(1.05×10 −34 J·s)2
+=3.28×10 −13 J=2.05MeV.
+1 2mL2 2(1.67×10 −27 kg)(1.00×10−14m)2
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

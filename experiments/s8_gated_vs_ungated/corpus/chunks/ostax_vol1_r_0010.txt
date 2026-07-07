@@ -1,0 +1,294 @@
+# REAL PDF — openstax_vol1.pdf, pages 47-51
+############################################################
+
+1 • Chapter Review 35
+Conceptual Questions
+1.1 The Scope and Scale of Physics is the difference between a base quantity and a
+base unit?
+1 . What is physics?
+10 . For each of the following scenarios, refer to
+2 . Some have described physics as a “search for
+Figure 1.4 and Table 1.2 to determine which
+simplicity.” Explain why this might be an
+metric prefix on the meter is most appropriate
+appropriate description.
+for each of the following scenarios. (a) You want
+3 . If two different theories describe experimental to tabulate the mean distance from the Sun for
+observations equally well, can one be said to be each planet in the solar system. (b) You want to
+more valid than the other (assuming both use compare the sizes of some common viruses to
+accepted rules of logic)? design a mechanical filter capable of blocking
+the pathogenic ones. (c) You want to list the
+4 . What determines the validity of a theory?
+diameters of all the elements on the periodic
+5 . Certain criteria must be satisfied if a table. (d) You want to list the distances to all the
+measurement or observation is to be believed. stars that have now received any radio
+Will the criteria necessarily be as strict for an broadcasts sent from Earth 10 years ago.
+expected result as for an unexpected result?
+1.6 Significant Figures
+6 . Can the validity of a model be limited or must it
+11 . (a) What is the relationship between the
+be universally valid? How does this compare
+precision and the uncertainty of a
+with the required validity of a theory or a law?
+measurement? (b) What is the relationship
+1.2 Units and Standards between the accuracy and the discrepancy of a
+measurement?
+7 . Identify some advantages of metric units.
+1.7 Solving Problems in Physics
+8 . What are the SI base units of length, mass, and
+time? 12 . What information do you need to choose which
+equation or equations to use to solve a problem?
+9 . What is the difference between a base unit and a
+derived unit? (b) What is the difference between 13 . What should you do after obtaining a numerical
+a base quantity and a derived quantity? (c) What answer when solving a problem?
+Problems
+1.1 The Scope and Scale of Physics mass of a proton? (b) How many Earths would it
+take to equal the mass of the Sun? (c) How many
+14 . Find the order of magnitude of the following
+Earth–Moon distances would it take to cover the
+physical quantities. (a) The mass of Earth’s
+distance from Earth to the Sun? (d) How many
+atmosphere: (b) The mass of the
+Moon atmospheres would it take to equal the
+Moon’s atmosphere: 25,000 kg; (c) The mass of
+mass of Earth’s atmosphere? (e) How many
+Earth’s hydrosphere: (d) The
+moons would it take to equal the mass of Earth?
+mass of Earth: (e) The mass of
+(f) How many protons would it take to equal the
+the Moon: (f) The Earth–Moon
+mass of the Sun?
+distance (semimajor axis): (g)
+For the remaining questions, you need to use Figure
+The mean Earth–Sun distance:
+1.4 to obtain the necessary orders of magnitude of
+(h) The equatorial radius of Earth:
+lengths, masses, and times.
+(i) The mass of an electron:
+(j) The mass of a proton: 16 . Roughly how many heartbeats are there in a
+(k) The mass of the Sun: lifetime?
+17 . A generation is about one-third of a lifetime.
+15 . Use the orders of magnitude you found in the Approximately how many generations have
+previous problem to answer the following passed since the year 0?
+questions to within an order of magnitude. (a)
+18 . Roughly how many times longer than the mean
+How many electrons would it take to equal the
+
+36 1 • Chapter Review
+life of an extremely unstable atomic nucleus is kilogram. For example, 40 Mg would be written
+the lifetime of a human? as (a) 23 mg; (b) 320 Tg; (c) 42 ng;
+(d) 7 g; (e) 9 Pg.
+19 . Calculate the approximate number of atoms in a
+bacterium. Assume the average mass of an atom 29 . The following masses are given in kilograms. Use
+in the bacterium is 10 times the mass of a metric prefixes on the gram to rewrite them so
+proton. the numerical value is bigger than one but less
+than 1000. For example, could be
+20 . (a) Calculate the number of cells in a
+written as 70 cg or 700 mg. (a)
+hummingbird assuming the mass of an average
+(b) (c) (d)
+cell is 10 times the mass of a bacterium. (b)
+(e)
+Making the same assumption, how many cells
+are there in a human?
+1.3 Unit Conversion
+21 . Assuming one nerve impulse must end before 30 . The volume of Earth is on the order of 1021 m3.
+another can begin, what is the maximum firing (a) What is this in cubic kilometers (km3)? (b)
+rate of a nerve in impulses per second? What is it in cubic miles (mi3)? (c) What is it in
+22 . About how many floating-point operations can a cubic centimeters (cm3)?
+supercomputer perform each year?
+31 . The speed limit on some interstate highways is
+23 . Roughly how many floating-point operations can roughly 100 km/h. (a) What is this in meters per
+a supercomputer perform in a human lifetime? second? (b) How many miles per hour is this?
+1.2 Units and Standards 32 . A car is traveling at a speed of 33 m/s. (a) What
+is its speed in kilometers per hour? (b) Is it
+24 . The following times are given using metric exceeding the 90 km/h speed limit?
+prefixes on the base SI unit of time: the second.
+33 . In SI units, speeds are measured in meters per
+Rewrite them in scientific notation without the
+second (m/s). But, depending on where you live,
+prefix. For example, 47 Ts would be rewritten as
+you’re probably more comfortable of thinking of
+(a) 980 Ps; (b) 980 fs; (c) 17 ns;
+speeds in terms of either kilometers per hour
+(d)
+(km/h) or miles per hour (mi/h). In this problem,
+25 . The following times are given in seconds. Use you will see that 1 m/s is roughly 4 km/h or 2 mi/
+metric prefixes to rewrite them so the numerical h, which is handy to use when developing your
+value is greater than one but less than 1000. For physical intuition. More precisely, show that (a)
+example, could be written as and (b)
+either 7.9 cs or 79 ms. (a) (b)
+34 . American football is played on a 100-yd-long
+0.045 s; (c) (d)
+field, excluding the end zones. How long is the
+26 . The following lengths are given using metric field in meters? (Assume that 1 m = 3.281 ft.)
+prefixes on the base SI unit of length: the meter.
+35 . Soccer fields vary in size. A large soccer field is
+Rewrite them in scientific notation without the
+115 m long and 85.0 m wide. What is its area in
+prefix. For example, 4.2 Pm would be rewritten
+square feet? (Assume that 1 m = 3.281 ft.)
+as (a) 89 Tm; (b) 89 pm; (c) 711
+mm; (d) 36 . What is the height in meters of a person who is 6
+ft 1.0 in. tall?
+27 . The following lengths are given in meters. Use
+metric prefixes to rewrite them so the numerical 37 . Mount Everest, at 29,028 ft, is the tallest
+value is bigger than one but less than 1000. For mountain on Earth. What is its height in
+example, could be written either kilometers? (Assume that 1 m = 3.281 ft.)
+as 7.9 cm or 79 mm. (a) (b)
+38 . The speed of sound is measured to be 342 m/s
+0.0074 m; (c) (d)
+on a certain day. What is this measurement in
+kilometers per hour?
+28 . The following masses are written using metric
+39 . Tectonic plates are large segments of Earth’s
+prefixes on the gram. Rewrite them in scientific
+crust that move slowly. Suppose one such plate
+notation in terms of the SI base unit of mass: the
+has an average speed of 4.0 cm/yr. (a) What
+Access for free at openstax.org
+
+1 • Chapter Review 37
+distance does it move in 1.0 s at this speed? (b) consistent. (a) (b)
+What is its speed in kilometers per million years? (c) (d)
+40 . The average distance between Earth and the Sun 52 . Consider the physical quantities , , , , , and
+is (a) Calculate the average with dimensions [m] = M, [s] = L, [v] = LT–1, [a]
+speed of Earth in its orbit (assumed to be = LT–2, [t] = T, and [r] = L. Assuming each of the
+circular) in meters per second. (b) What is this following equations is dimensionally consistent,
+speed in miles per hour? find the dimension of the quantity on the left-
+hand side of the equation: (a) F = ma; (b) K =
+41 . The density of nuclear matter is about 1018
+0.5mv2; (c) p = mv; (d) W = mas; (e) L = mvr.
+kg/m3. Given that 1 mL is equal in volume to
+cm3, what is the density of nuclear matter in 53 . Suppose quantity is a length and quantity is a
+megagrams per microliter (that is, )? time. Suppose the quantities and are defined
+by v = ds/dt and a = dv/dt. (a) What is the
+42 . The density of aluminum is 2.7 g/cm3. What is
+dimension of v? (b) What is the dimension of the
+the density in kilograms per cubic meter?
+quantity a? What are the dimensions of (c)
+43 . A commonly used unit of mass in the English
+(d) and (e) da/dt?
+system is the pound-mass, abbreviated lbm,
+where 1 lbm = 0.454 kg. What is the density of
+54 . Suppose [V] = L3, and [t] = T. (a)
+water in pound-mass per cubic foot?
+What is the dimension of (b) What is
+44 . A furlong is 220 yd. A fortnight is 2 weeks.
+Convert a speed of one furlong per fortnight to the dimension of dV/dt? (c) What is the
+millimeters per second. dimension of
+45 . It takes radians (rad) to get around a circle, 55 . The arc length formula says the length of arc
+which is the same as 360°. How many radians subtended by angle Ɵ in a circle of radius is
+are in 1°?
+given by the equation Ɵ What are the
+46 . Light travels a distance of about A
+light-minute is the distance light travels in 1 min. dimensions of (a) s, (b) r, and (c) Ɵ
+If the Sun is from Earth, how far
+1.5 Estimates and Fermi Calculations
+away is it in light-minutes?
+56 . Assuming the human body is made primarily of
+47 . A light-nanosecond is the distance light travels
+water, estimate the volume of a person.
+in 1 ns. Convert 1 ft to light-nanoseconds.
+57 . Assuming the human body is primarily made of
+48 . An electron has a mass of A
+water, estimate the number of molecules in it.
+proton has a mass of What is
+(Note that water has a molecular mass of 18 g/
+the mass of a proton in electron-masses?
+mol and there are roughly 1024 atoms in a
+49 . A fluid ounce is about 30 mL. What is the volume mole.)
+of a 12 fl-oz can of soda pop in cubic meters?
+58 . Estimate the mass of air in a classroom.
+1.4 Dimensional Analysis
+59 . Estimate the number of molecules that make up
+50 . A student is trying to remember some formulas Earth, assuming an average molecular mass of
+from geometry. In what follows, assume is 30 g/mol. (Note there are on the order of 1024
+area, is volume, and all other variables are objects per mole.)
+lengths. Determine which formulas are
+60 . Estimate the surface area of a person.
+dimensionally consistent. (a) (b)
+(c) (d) 61 . Roughly how many solar systems would it take
+(e) to tile the disk of the Milky Way?
+51 . Consider the physical quantities s, v, a, and t 62 . (a) Estimate the density of the Moon. (b)
+Estimate the diameter of the Moon. (c) Given
+with dimensions
+that the Moon subtends at an angle of about half
+and Determine whether
+a degree in the sky, estimate its distance from
+each of the following equations is dimensionally
+
+38 1 • Chapter Review
+Earth.
+63 . The average density of the Sun is on the order 73 . (a) How many significant figures are in the
+103 kg/m3. (a) Estimate the diameter of the Sun. numbers 99 and 100.? (b) If the uncertainty in
+(b) Given that the Sun subtends at an angle of each number is 1, what is the percent
+about half a degree in the sky, estimate its uncertainty in each? (c) Which is a more
+distance from Earth. meaningful way to express the accuracy of these
+two numbers: significant figures or percent
+64 . Estimate the mass of a virus.
+uncertainties?
+65 . A floating-point operation is a single arithmetic
+74 . (a) If your speedometer has an uncertainty of
+operation such as addition, subtraction,
+2.0 km/h at a speed of 90 km/h, what is the
+multiplication, or division. (a) Estimate the
+percent uncertainty? (b) If it has the same
+maximum number of floating-point operations a
+percent uncertainty when it reads 60 km/h, what
+human being could possibly perform in a
+is the range of speeds you could be going?
+lifetime. (b) How long would it take a
+supercomputer to perform that many floating- 75 . (a) A person’s blood pressure is measured to be
+point operations? What is its percent
+uncertainty? (b) Assuming the same percent
+1.6 Significant Figures
+uncertainty, what is the uncertainty in a blood
+66 . Consider the equation 4000/400 = 10.0. pressure measurement of 80 mm Hg?
+Assuming the number of significant figures in the
+76 . A person measures their heart rate by counting
+answer is correct, what can you say about the
+the number of beats in 30 s. If 40 ± 1 beats are
+number of significant figures in 4000 and 400?
+counted in 30.0 ± 0.5 s, what is the heart rate
+67 . Suppose your bathroom scale reads your mass and its uncertainty in beats per minute?
+as 65 kg with a 3% uncertainty. What is the
+77 . What is the area of a circle 3.102 cm in
+uncertainty in your mass (in kilograms)?
+diameter?
+68 . A good-quality measuring tape can be off by
+78 . Determine the number of significant figures in
+0.50 cm over a distance of 20 m. What is its
+the following measurements: (a) 0.0009, (b)
+percent uncertainty?
+15,450.0, (c) 6×103, (d) 87.990, and (e) 30.42.
+69 . An infant’s pulse rate is measured to be 130 ± 5
+79 . Perform the following calculations and express
+beats/min. What is the percent uncertainty in
+your answer using the correct number of
+this measurement?
+significant digits. (a) A woman has two bags
+70 . (a) Suppose that a person has an average heart weighing 13.5 lb and one bag with a weight of
+rate of 72.0 beats/min. How many beats do they 10.2 lb. What is the total weight of the bags? (b)
+have in 2.0 years? (b) In 2.00 years? (c) In 2.000 The force F on an object is equal to its mass m
+years? multiplied by its acceleration a. If a wagon with
+mass 55 kg accelerates at a rate of 0.0255 m/s2,
+71 . A can contains 375 mL of soda. How much is left
+what is the force on the wagon? (The unit of
+after 308 mL is removed?
+force is called the newton and it is expressed
+72 . State how many significant figures are proper in with the symbol N.)
+the results of the following calculations: (a)
+(b) (c)
+Additional Problems
+80 . Consider the equation y = mt +b, where the dimensions and SI units of (a) (b) (c) (d)
+dimension of y is length and the dimension of t is (e) and (f) c?
+time, and m and b are constants. What are the
+82 . (a) A car speedometer has a 5% uncertainty.
+dimensions and SI units of (a) m and (b) b?
+What is the range of possible speeds when it
+81 . Consider the equation reads 90 km/h? (b) Convert this range to miles
+per hour. Note 1 km = 0.6214 mi.
+where s is a length and t is a time. What are the
+83 . A marathon runner completes a 42.188-km
+Access for free at openstax.org

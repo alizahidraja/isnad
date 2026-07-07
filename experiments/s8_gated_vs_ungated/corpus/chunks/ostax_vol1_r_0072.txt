@@ -1,0 +1,235 @@
+# REAL PDF — openstax_vol1.pdf, pages 433-444
+############################################################
+
+9.6 • Center of Mass 421
+As a result of this fractional force, the momentum of each particle gets changed:
+9.21
+The net force on the object is the vector sum of these forces:
+9.22
+This net force changes the momentum of the object as a whole, and the net change of momentum of the object
+must be the vector sum of all the individual changes of momentum of all of the particles:
+9.23
+Combining Equation 9.22 and Equation 9.23 gives
+9.24
+Let’s now think about these summations. First consider the internal forces term; remember that each is the
+force on the jth particle from the other particles in the object. But by Newton’s third law, for every one of these
+forces, there must be another force that has the same magnitude, but the opposite sign (points in the opposite
+direction). These forces do not cancel; however, that’s not what we’re doing in the summation. Rather, we’re simply
+mathematically adding up all the internal force vectors. That is, in general, the internal forces for any individual part
+of the object won’t cancel, but when all the internal forces are added up, the internal forces must cancel in pairs. It
+follows, therefore, that the sum of all the internal forces must be zero:
+(This argument is subtle, but crucial; take plenty of time to completely understand it.)
+For the external forces, this summation is simply the total external force that was applied to the whole object:
+As a result,
+9.25
+This is an important result. Equation 9.25 tells us that the total change of momentum of the entire object (all N
+particles) is due only to the external forces; the internal forces do not change the momentum of the object as a
+whole. This is why you can’t lift yourself in the air by standing in a basket and pulling up on the handles: For the
+system of you + basket, your upward pulling force is an internal force.
+
+422 9 • Linear Momentum and Collisions
+Force and Momentum
+Remember that our actual goal is to determine the equation of motion for the entire object (the entire system of
+particles). To that end, let’s define:
+the total momentum of the system of N particles (the reason for the subscript will become clear shortly)
+Then we have
+and therefore Equation 9.25 can be written simply as
+9.26
+Since this change of momentum is caused by only the net external force, we have dropped the “ext” subscript.
+This is Newton’s second law, but now for the entire extended object. If this feels a bit anticlimactic, remember what
+is hiding inside it: is the vector sum of the momentum of (in principle) hundreds of thousands of billions of
+billions of particles , all caused by one simple net external force—a force that you can calculate.
+Center of Mass
+Our next task is to determine what part of the extended object, if any, is obeying Equation 9.26.
+It’s tempting to take the next step; does the following equation mean anything?
+9.27
+If it does mean something (acceleration of what, exactly?), then we could write
+and thus
+which follows because the derivative of a sum is equal to the sum of the derivatives.
+Now, is the momentum of the jth particle. Defining the positions of the constituent particles (relative to some
+coordinate system) as , we thus have
+Substituting back, we obtain
+Dividing both sides by M (the total mass of the extended object) gives us
+Access for free at openstax.org
+
+9.6 • Center of Mass 423
+9.28
+Thus, the point in the object that traces out the trajectory dictated by the applied force in Equation 9.27 is inside the
+parentheses in Equation 9.28.
+Looking at this calculation, notice that (inside the parentheses) we are calculating the product of each particle’s
+mass with its position, adding all N of these up, and dividing this sum by the total mass of particles we summed. This
+is reminiscent of an average; inspired by this, we’ll (loosely) interpret it to be the weighted average position of the
+mass of the extended object. It’s actually called the center of mass of the object. Notice that the position of the
+center of mass has units of meters; that suggests a definition:
+9.29
+So, the point that obeys Equation 9.26 (and therefore Equation 9.27 as well) is the center of mass of the object,
+which is located at the position vector .
+It may surprise you to learn that there does not have to be any actual mass at the center of mass of an object. For
+example, a hollow steel sphere with a vacuum inside it is spherically symmetrical (meaning its mass is uniformly
+distributed about the center of the sphere); all of the sphere’s mass is out on its surface, with no mass inside. But it
+can be shown that the center of mass of the sphere is at its geometric center, which seems reasonable. Thus, there
+is no mass at the position of the center of mass of the sphere. (Another example is a doughnut.) The procedure to
+find the center of mass is illustrated in Figure 9.27.
+
+424 9 • Linear Momentum and Collisions
+FIGURE 9.27 Finding the center of mass of a system of three different particles. (a) Position vectors are created for each object. (b) The
+position vectors are multiplied by the mass of the corresponding object. (c) The scaled vectors from part (b) are added together. (d) The
+final vector is divided by the total mass. This vector points to the center of mass of the system. Note that no mass is actually present at the
+center of mass of this system.
+Since , it follows that:
+9.30
+9.31
+9.32
+and thus
+Therefore, you can calculate the components of the center of mass vector individually.
+Access for free at openstax.org
+
+9.6 • Center of Mass 425
+Finally, to complete the kinematics, the instantaneous velocity of the center of mass is calculated exactly as you
+might suspect:
+9.33
+and this, like the position, has x-, y-, and z-components.
+To calculate the center of mass in actual situations, we recommend the following procedure:
+PROBLEM-SOLVING STRATEGY
+Calculating the Center of Mass
+The center of mass of an object is a position vector. Thus, to calculate it, do these steps:
+1. Define your coordinate system. Typically, the origin is placed at the location of one of the particles. This is not
+required, however.
+2. Determine the x, y, z-coordinates of each particle that makes up the object.
+3. Determine the mass of each particle, and sum them to obtain the total mass of the object. Note that the mass
+of the object at the origin must be included in the total mass.
+4. Calculate the x-, y-, and z-components of the center of mass vector, using Equation 9.30, Equation 9.31, and
+Equation 9.32.
+5. If required, use the Pythagorean theorem to determine its magnitude.
+Here are two examples that will give you a feel for what the center of mass is.
+EXAMPLE 9.16
+Center of Mass of the Earth-Moon System
+Using data from text appendix, determine how far the center of mass of the Earth-moon system is from the center of
+Earth. Compare this distance to the radius of Earth, and comment on the result. Ignore the other objects in the solar
+system.
+Strategy
+We get the masses and separation distance of the Earth and moon, impose a coordinate system, and use Equation
+9.29 with just objects. We use a subscript “e” to refer to Earth, and subscript “m” to refer to the moon.
+Solution
+Define the origin of the coordinate system as the center of Earth. Then, with just two objects, Equation 9.29
+becomes
+From Appendix D,
+We defined the center of Earth as the origin, so . Inserting these into the equation for R gives
+
+426 9 • Linear Momentum and Collisions
+Significance
+The radius of Earth is , so the center of mass of the Earth-moon system is (6.37 − 4.64)
+(roughly 1080 miles) below the surface of Earth. The location of the center
+of mass is shown (not to scale).
+CHECK YOUR UNDERSTANDING 9.11
+Suppose we included the sun in the system. Approximately where would the center of mass of the Earth-moon-sun
+system be located? (Feel free to actually calculate it.)
+EXAMPLE 9.17
+Center of Mass of a Salt Crystal
+Figure 9.28 shows a single crystal of sodium chloride—ordinary table salt. The sodium and chloride ions form a
+single unit, NaCl. When multiple NaCl units group together, they form a cubic lattice. The smallest possible cube
+(called the unit cell) consists of four sodium ions and four chloride ions, alternating. The length of one edge of this
+cube (i.e., the bond length) is . Find the location of the center of mass of the unit cell. Specify it
+either by its coordinates , or by and two angles.
+Access for free at openstax.org
+
+9.6 • Center of Mass 427
+FIGURE 9.28 A drawing of a sodium chloride (NaCl) crystal.
+Strategy
+We can look up all the ion masses. If we impose a coordinate system on the unit cell, this will give us the positions of
+the ions. We can then apply Equation 9.30, Equation 9.31, and Equation 9.32 (along with the Pythagorean theorem).
+Solution
+Define the origin to be at the location of the chloride ion at the bottom left of the unit cell. Figure 9.29 shows the
+coordinate system.
+FIGURE 9.29 A single unit cell of a NaCl crystal.
+There are eight ions in this crystal, so N = 8:
+The mass of each of the chloride ions is
+
+428 9 • Linear Momentum and Collisions
+so we have
+For the sodium ions,
+The total mass of the unit cell is therefore
+From the geometry, the locations are
+Substituting:
+Similar calculations give (you could argue that this must be true, by symmetry,
+but it’s a good idea to check).
+Significance
+Although this is a great exercise to determine the center of mass given a Chloride ion at the origin, in fact the origin
+could be chosen at any location. Therefore, there is no meaningful application of the center of mass of a unit cell
+beyond as an exercise.
+CHECK YOUR UNDERSTANDING 9.12
+Suppose you have a macroscopic salt crystal (that is, a crystal that is large enough to be visible with your unaided
+eye). It is made up of a huge number of unit cells. Is the center of mass of this crystal necessarily at the geometric
+center of the crystal?
+Two crucial concepts come out of these examples:
+Access for free at openstax.org
+
+9.6 • Center of Mass 429
+1. As with all problems, you must define your coordinate system and origin. For center-of-mass calculations, it
+often makes sense to choose your origin to be located at one of the masses of your system. That choice
+automatically defines its distance in Equation 9.29 to be zero. However, you must still include the mass of the
+object at your origin in your calculation of M, the total mass Equation 9.19. In the Earth-moon system
+example, this means including the mass of Earth. If you hadn’t, you’d have ended up with the center of mass
+of the system being at the center of the moon, which is clearly wrong.
+2. In the second example (the salt crystal), notice that there is no mass at all at the location of the center of
+mass. This is an example of what we stated above, that there does not have to be any actual mass at the
+center of mass of an object.
+Center of Mass of Continuous Objects
+If the object in question has its mass distributed uniformly in space, rather than as a collection of discrete particles,
+then , and the summation becomes an integral:
+9.34
+In this context, r is a characteristic dimension of the object (the radius of a sphere, the length of a long rod). To
+generate an integrand that can actually be calculated, you need to express the differential mass element dm as a
+function of the mass density of the continuous object, and the dimension r. An example will clarify this.
+EXAMPLE 9.18
+CM of a Uniform Thin Hoop
+Find the center of mass of a uniform thin hoop (or ring) of mass M and radius r.
+Strategy
+First, the hoop’s symmetry suggests the center of mass should be at its geometric center. If we define our
+coordinate system such that the origin is located at the center of the hoop, the integral should evaluate to zero.
+We replace dm with an expression involving the density of the hoop and the radius of the hoop. We then have an
+expression we can actually integrate. Since the hoop is described as “thin,” we treat it as a one-dimensional object,
+neglecting the thickness of the hoop. Therefore, its density is expressed as the number of kilograms of material per
+meter. Such a density is called a linear mass density, and is given the symbol ; this is the Greek letter “lambda,”
+which is the equivalent of the English letter “l” (for “linear”).
+Since the hoop is described as uniform, this means that the linear mass density is constant. Thus, to get our
+expression for the differential mass element dm, we multiply by a differential length of the hoop, substitute, and
+integrate (with appropriate limits for the definite integral).
+Solution
+First, define our coordinate system and the relevant variables (Figure 9.30).
+
+430 9 • Linear Momentum and Collisions
+FIGURE 9.30 Finding the center of mass of a uniform hoop. We express the coordinates of a differential piece of the hoop, and then
+integrate around the hoop.
+The center of mass is calculated with Equation 9.34:
+We have to determine the limits of integration a and b. Expressing in component form gives us
+In the diagram, we highlighted a piece of the hoop that is of differential length ds; it therefore has a differential mass
+. Substituting:
+However, the arc length ds subtends a differential angle , so we have
+and thus
+One more step: Since is the linear mass density, it is computed by dividing the total mass by the length of the
+hoop:
+giving us
+Access for free at openstax.org
+
+9.6 • Center of Mass 431
+Notice that the variable of integration is now the angle . This tells us that the limits of integration (around the
+circular hoop) are , so and . Also, for convenience, we separate the integral into the x-
+and y-components of . The final integral expression is
+as expected.
+Center of Mass and Conservation of Momentum
+How does all this connect to conservation of momentum?
+Suppose you have N objects with masses and initial velocities . The center of
+mass of the objects is
+Its velocity is
+9.35
+and thus the initial momentum of the center of mass is
+After these masses move and interact with each other, the momentum of the center of mass is
+But conservation of momentum tells us that the right-hand side of both equations must be equal, which says
+9.36
+This result implies that conservation of momentum is expressed in terms of the center of mass of the system. Notice
+that as an object moves through space with no net external force acting on it, an individual particle of the object may
+accelerate in various directions, with various magnitudes, depending on the net internal force acting on that object
+at any time. (Remember, it is only the vector sum of all the internal forces that vanishes, not the internal force on a
+single particle.) Thus, such a particle’s momentum will not be constant—but the momentum of the entire extended
+object will be, in accord with Equation 9.36.

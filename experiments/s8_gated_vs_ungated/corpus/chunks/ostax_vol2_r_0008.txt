@@ -1,0 +1,259 @@
+# REAL PDF — openstax_vol2.pdf, pages 43-50
+############################################################
+
+Chapter 1 | Temperature and Heat 33
+L L
+f v
+Gold 1063 64.5 15.4 2660 1578 377
+Copper 1083 134 32.0 2595 5069 1211
+Uranium 1133 84 20 3900 1900 454
+Tungsten 3410 184 44 5900 4810 1150
+Table 1.4Heats of Fusion and Vaporization[1] [1]Values quoted at the normal melting and boiling
+temperatures at standard atmospheric pressure (1atm).[2]Helium has no solid phase at atmospheric pressure.
+The melting point given is at a pressure of 2.5 MPa.[3]At 37.0°C (body temperature), the heat of vaporization
+L v for water is 2430 kJ/kg or 580 kcal/kg.[4]At 37.0°C (body temperature), the heat of vaporization, L v for
+water is 2430 kJ/kg or 580 kcal/kg.
+Phasechangescanhaveastrongstabilizingeffectontemperaturesthatarenotnearthemeltingandboilingpoints,since
+evaporationandcondensationoccurevenattemperaturesbelowtheboilingpoint.Forexample,airtemperaturesinhumid
+climates rarely go above approximately 38.0°C because most heat transfer goes into evaporating water into the air.
+Similarly, temperatures in humid weather rarely fall below the dew point—the temperature where condensation occurs
+given the concentration of water vapor in the air—because so much heat is released when water vapor condenses.
+Moreenergyisrequiredtoevaporatewaterbelowtheboilingpointthanattheboilingpoint,becausethekineticenergyof
+watermoleculesattemperaturesbelow 100°C islessthanthatat 100°C,solessenergyisavailablefromrandomthermal
+motions.Forexample,atbodytemperature,evaporationofsweatfromtheskinrequiresaheatinputof2428kJ/kg,which
+is about 10% higher than the latent heat of vaporization at 100°C. This heat comes from the skin, and this evaporative
+coolingeffectofsweatinghelpsreducethebodytemperatureinhotweather.However,highhumidityinhibitsevaporation,
+so that body temperature might rise, while unevaporated sweat might be left on your brow.
+Example 1.9
+Calculating Final Temperature from Phase Change
+Threeicecubesareusedtochillasodaat 20°C withmass m =0.25kg.Theiceisat 0°C andeachice
+soda
+cubehasamassof6.0g.Assumethatthesodaiskeptinafoamcontainersothatheatlosscanbeignoredand
+that the soda has the same specific heat as water. Find the final temperature when all ice has melted.
+Strategy
+The ice cubes are at the melting temperature of 0°C. Heat is transferred fromthe soda tothe ice formelting.
+Meltingyieldswaterat 0°C, somoreheatistransferredfromthesodatothiswateruntilthewaterplussoda
+system reaches thermal equilibrium.
+The heat transferred to the ice is
+Q =m L +m c ⎛T −0°C⎞.
+ice ice f ice W⎝ f ⎠
+The heat given off by the soda is
+Q =m c ⎛T −20°C⎞.
+soda soda W⎝ f ⎠
+Since no heat is lost, Q =−Q , as inExample 1.7, so that
+ice soda
+m L +m c ⎛T −0°C⎞=−m c ⎛T −20°C⎞.
+ice f ice W⎝ f ⎠ soda W⎝ f ⎠
+Solve for the unknown quantity T :
+f
+T =
+m
+soda
+c w(20°C)−m
+ice
+L
+f.
+f (m
+soda
++m
+ice
+)c
+w
+
+34 Chapter 1 | Temperature and Heat
+Solution
+Firstweidentifytheknownquantities.Themassoficeis m =3×6.0g=0.018kg andthemassofsodais
+ice
+m =0.25kg. Then we calculate the final temperature:
+soda
+20,930J−6012J
+T = =13°C.
+f 1122J/°C
+Significance
+Thisexampleillustratesthelargeenergiesinvolvedduringaphasechange.Themassoficeisabout7%ofthe
+massofthesodabutleadstoanoticeablechangeinthetemperatureofthesoda.Althoughweassumedthatthe
+icewasatthefreezingtemperature,thisisunrealisticforicestraightoutofafreezer:Thetypicaltemperatureis
+−6°C. However, this correction makes no significant change from the result we found. Can you explain why?
+Like solid-liquid and and liquid-vapor transitions, direct solid-vapor transitions or sublimations involve heat. The energy
+transferredisgivenbytheequation Q=mL
+s
+,where L
+s
+istheheatofsublimation,analogousto L
+f
+and L
+v
+.Theheat
+of sublimation at a given temperature is equal to the heat of fusion plus the heat of vaporization at that temperature.
+Wecannowcalculateanynumberofeffectsrelatedtotemperatureandphasechange.Ineachcase,itisnecessarytoidentify
+whichtemperatureandphasechangesaretakingplace.Keepinmindthatheattransferandworkcancausebothtemperature
+and phase changes.
+Problem-Solving Strategy: The Effects of Heat Transfer
+1. Examinethesituationtodeterminethatthereisachangeinthetemperatureorphase.Isthereheattransferinto
+oroutofthesystem?Whenitisnotobviouswhetheraphasechangeoccursornot,youmaywishtofirstsolve
+theproblemasiftherewerenophasechanges,andexaminethetemperaturechangeobtained.Ifitissufficient
+totakeyoupastaboilingormeltingpoint,youshouldthengobackanddotheprobleminsteps—temperature
+change, phase change, subsequent temperature change, and so on.
+2. Identify and list all objects that change temperature or phase.
+3. Identify exactly what needs to be determined in the problem (identify the unknowns). A written list is useful.
+4. Makealistofwhatisgivenorwhatcanbeinferredfromtheproblemasstated(identifytheknowns).Ifthere
+isatemperature change,thetransferred heatdependsonthespecific heatofthesubstance (Heat Transfer,
+SpecificHeat,andCalorimetry),andifthereisaphasechange,thetransferredheatdependsonthelatent
+heat of the substance (Table 1.4).
+5. Solve the appropriate equation for the quantity to be determined (the unknown).
+6. Substitute the knowns along with their units into the appropriate equation and obtain numerical solutions
+completewithunits.Youmayneedtodothisinstepsifthereismorethanonestatetotheprocess,suchasa
+temperaturechangefollowedbyaphasechange.However,inacalorimetryproblem,eachstepcorrespondsto
+a term in the single equation Q +Q =0.
+hot cold
+7. Checktheanswertoseeifitisreasonable.Doesitmakesense?Asanexample,becertainthatanytemperature
+change does not also cause a phase change that you have not taken into account.
+1.5 CheckYourUnderstandingWhydoessnowoftenremainevenwhendaytimetemperaturesarehigher
+than the freezing temperature?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 35
+1.6 | Mechanisms of Heat Transfer
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain some phenomena that involve conductive, convective, and radiative heat transfer
+• Solve problems on the relationships between heat transfer, time, and rate of heat transfer
+• Solve problems using the formulas for conduction and radiation
+Just as interesting as the effects of heat transfer on a system are the methods by which it occurs. Whenever there is a
+temperaturedifference,heattransferoccurs.Itmayoccurrapidly,asthroughacookingpan,orslowly,asthroughthewalls
+ofapicnicicechest.Somanyprocessesinvolveheattransferthatitishardtoimagineasituationwherenoheattransfer
+occurs. Yet every heat transfer takes place by only three methods:
+1. Conduction is heat transfer through stationary matter by physical contact. (The matter is stationary on a
+macroscopic scale—we know that thermal motion of the atoms and molecules occurs at any temperature above
+absolute zero.) Heat transferred from the burner of a stove through the bottom of a pan to food in the pan is
+transferred byconduction.
+2. Convection is the heat transfer by the macroscopic movement of a fluid. This type of transfer takes place in a
+forced-air furnace and in weather systems, for example.
+3. Heat transfer by radiation occurs when microwaves, infrared radiation, visible light, or another form of
+electromagneticradiationisemittedorabsorbed.AnobviousexampleisthewarmingofEarthbytheSun.Aless
+obvious example is thermal radiation from the human body.
+In the illustration at the beginning of this chapter, the fire warms the snowshoers’ faces largely by radiation. Convection
+carriessomeheattothem,butmostoftheairflowfromthefireisupward(creatingthefamiliarshapeofflames),carrying
+heattothefoodbeingcookedandintothesky.Thesnowshoerswearclothesdesignedwithlowconductivitytopreventheat
+flow out of their bodies.
+In this section, we examine these methods in some detail. Each method has unique and interesting characteristics, but
+all three have two things in common: They transfer heat solely because of a temperature difference, and the greater the
+temperature difference, the faster the heat transfer (Figure 1.19).
+
+36 Chapter 1 | Temperature and Heat
+Figure 1.19 In a fireplace, heat transfer occurs by all three methods:
+conduction, convection, and radiation. Radiation is responsible for most of
+the heat transferred into the room. Heat transfer also occurs through
+conduction into the room, but much slower. Heat transfer by convection
+also occurs through cold air entering the room around windows and hot air
+leaving the room by rising up the chimney.
+1.6
+Check Your Understanding Name an example from daily life (different from the text) for each
+mechanism of heat transfer.
+Conduction
+Asyouwalkbarefootacrossthelivingroomcarpetinacoldhouseandthenstepontothekitchentilefloor,yourfeetfeel
+colder on the tile. This result is intriguing, since the carpet and tile floor are both at the same temperature. The different
+sensationisexplainedbythedifferentratesofheattransfer:Theheatlossisfasterforskinincontactwiththetilesthanwith
+the carpet, so the sensation of cold is more intense.
+Somematerialsconductthermalenergyfasterthanothers.Figure1.20showsamaterialthatconductsheatslowly—itisa
+good thermal insulator, or poor heat conductor—used to reduce heat flow into and out of a house.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 37
+Figure 1.20 Insulation is used to limit the conduction of heat
+from the inside to the outside (in winter) and from the outside to
+the inside (in summer). (credit: Giles Douglas)
+A molecular picture of heat conduction will help justify the equation that describes it. Figure 1.21 shows molecules in
+two bodies at different temperatures, T
+h
+and T c, for “hot” and “cold.” The average kinetic energy of a molecule in
+the hot body is higher than in the colder body. If two molecules collide, energy transfers from the high-energy to the
+low-energymolecule.Inametal,thepicturewouldalsoincludefreevalenceelectronscollidingwitheachotherandwith
+atoms, likewise transferring energy. The cumulative effect of all collisions is a net flux of heat from the hotter body to
+the colder body. Thus, the rate of heat transfer increases with increasing temperature difference ΔT =T
+h
+−T c. If the
+temperaturesarethesame,thenetheattransferrateiszero.Becausethenumberofcollisionsincreaseswithincreasingarea,
+heat conduction is proportional to the cross-sectional area—a second factor in the equation.
+
+38 Chapter 1 | Temperature and Heat
+Figure 1.21 Molecules in two bodies at different temperatures
+have different average kinetic energies. Collisions occurring at
+the contact surface tend to transfer energy from high-
+temperature regions to low-temperature regions. In this
+illustration, a molecule in the lower-temperature region (right
+side) has low energy before collision, but its energy increases
+after colliding with a high-energy molecule at the contact
+surface. In contrast, a molecule in the higher-temperature region
+(left side) has high energy before collision, but its energy
+decreases after colliding with a low-energy molecule at the
+contact surface.
+Athirdquantitythataffectstheconductionrateisthethicknessofthematerialthroughwhichheattransfers.Figure1.22
+showsaslabofmaterialwithahighertemperatureontheleftthanontheright.Heattransfersfromthelefttotherightby
+aseriesofmolecularcollisions.Thegreaterthedistancebetweenhotandcold,themoretimethematerialtakestotransfer
+the same amount of heat.
+Figure 1.22 Heat conduction occurs through any material, represented here by a
+rectangular bar, whether window glass or walrus blubber.
+All four of these quantities appear in a simple equation deduced from and confirmed by experiments. The rate of
+conductive heat transferthrough a slab of material, such as the one inFigure 1.22, is given by
+P=
+dQ
+=
+kA⎛
+⎝
+T
+h
+−T
+c
+⎞
+⎠
+(1.9)
+dT d
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 39
+wherePisthepowerorrateofheattransferinwattsorinkilocaloriespersecond,Aanddareitssurfaceareaandthickness,
+asshowninFigure1.22, T
+h
+−T
+c
+isthetemperaturedifferenceacrosstheslab,andkisthethermalconductivityofthe
+material.Table 1.5gives representative values of thermal conductivity.
+More generally, we can write
+dT
+P=−kA ,
+dx
+where x is the coordinate in the direction of heat flow. Since in Figure 1.22, the power and area are constant, dT/dx is
+constant, and the temperature decreases linearly from T
+h
+to T c.
+Substance Thermal Conductivityk (W/m·°C)
+Diamond 2000
+Silver 420
+Copper 390
+Gold 318
+Aluminum 220
+Steel iron 80
+Steel (stainless) 14
+Ice 2.2
+Glass (average) 0.84
+Concrete brick 0.84
+Water 0.6
+Fatty tissue (without blood) 0.2
+Asbestos 0.16
+Plasterboard 0.16
+Wood 0.08–0.16
+Snow (dry) 0.10
+Cork 0.042
+Glass wool 0.042
+Wool 0.04
+Down feathers 0.025
+Air 0.023
+Polystyrene foam 0.010
+Table 1.5Thermal Conductivities of Common Substances Values are
+given for temperatures near 0°C.
+Example 1.10
+Calculating Heat Transfer through Conduction
+A polystyrene foam icebox has a total area of 0.950m2 and walls with an average thickness of2.50cm. The
+boxcontainsice,water,andcannedbeveragesat 0°C. Theinsideoftheboxiskeptcoldbymeltingice.How
+much ice melts in one day if the icebox is kept in the trunk of a car at 35.0ºC?

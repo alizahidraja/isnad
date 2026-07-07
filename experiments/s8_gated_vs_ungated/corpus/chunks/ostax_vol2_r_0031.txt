@@ -1,0 +1,271 @@
+# REAL PDF — openstax_vol2.pdf, pages 174-180
+############################################################
+
+164 Chapter 4 | The Second Law of Thermodynamics
+at constant pressure from T
+h
+to T c.
+Strategy
+Theprocessisclearlystatedasanirreversibleprocess;therefore,wecannotsimplycalculatetheentropychange
+fromtheactualprocess.However,becauseentropyofasystemisafunctionofstate,wecanimagineareversible
+process that starts from the same initial state and ends at the given final state. Then, the entropy change of the
+B
+system is given byEquation 4.10, ΔS=∫ dQ/T.
+A
+Solution
+Toreplace this rapid cooling with aprocess that proceeds reversibly,weimagine that the hotobject isputinto
+thermalcontactwithsuccessivelycoolerheatreservoirswhosetemperaturesrangefrom T
+h
+to T c. Throughout
+the substitute transition, the object loses infinitesimal amounts of heatdQ, so we have
+Tc
+dQ
+ΔS= ⌠ .
+⌡ T
+T
+h
+From the definition of heat capacity, an infinitesimal exchange dQ for the object is related to its temperature
+changedTby
+dQ=mcdT.
+Substituting this dQ into the expression for ΔS, we obtain the entropy change of the object as it is cooled at
+constant pressure from T
+h
+toT c:
+ΔS=⌠
+Tc
+mcdT =mcln T c.
+⌡T T T
+h
+h
+Note that ΔS<0 here because T c<T
+h
+. In other words, the object has lost some entropy. But if we count
+whatever is used to remove the heat from the object, we would still end up with ΔS >0 because the
+universe
+process is irreversible.
+Significance
+If the temperature changes during the heat flow, you must keep it inside the integral to solve for the change in
+entropy.If,however,thetemperature isconstant,youcansimplycalculate theentropychangeastheheatflow
+divided by the temperature.
+Example 4.6
+Stirling Engine
+ThestepsofareversibleStirlingengineareasfollows.Forthisproblem,wewilluse0.0010molofamonatomic
+gasthatstartsatatemperatureof 133°C andavolumeof 0.10m 3,whichwillbecalledpointA.Thenitgoes
+through the following steps:
+1. StepAB: isothermal expansion at 133°C from 0.10m 3 to 0.20m 3
+2. StepBC: isochoric cooling to 33°C
+3. StepCD: isothermal compression at 33°C from 0.20m 3 to 0.10m 3
+4. StepDA: isochoric heating back to 133°C and 0.10m 3
+(a) Draw thepVdiagram for the Stirling engine with proper labels.
+(b) Fill in the following table.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 165
+Step W(J) Q(J) ΔS (J/K)
+StepAB
+StepBC
+StepCD
+StepDA
+Complete cycle
+(c) How does the efficiency of the Stirling engine compare to the Carnot engine working within the same two
+heat reservoirs?
+Strategy
+Using the ideal gas law, calculate the pressure at each point so that they can be labeled on the pV diagram.
+⎛V ⎞
+Isothermal work is calculated using W =nRTln 2 , and an isochoric process has no work done. The
+⎝V ⎠
+1
+heat flow is calculated from the first law of thermodynamics, Q=ΔE −W where ΔE = 3nRΔT for
+int int 2
+monatomic gasses. Isothermal steps have a change in entropy of Q/T, whereas isochoric steps have
+⎛T ⎞
+ΔS= 3nRln 2 . The efficiency of a heat engine is calculated by using e =W/Q .
+2 ⎝T ⎠ Stir h
+1
+Solution
+a. The graph is shown below.
+b. The completed table is shown below.
+Step W(J) Q(J) ΔS (J/K)
+StepABIsotherm 2.3 2.3 0.0057
+StepBCIsochoric 0 –1.2 0.0035
+StepCDIsotherm –1.8 –1.8 –0.0059
+StepDAIsochoric 0 1.2 –0.0035
+Complete cycle 0.5 0.5 ~ 0
+c. The efficiency of the Stirling heat engine is
+
+166 Chapter 4 | The Second Law of Thermodynamics
+e
+Stir
+=W/Q
+h
+=(Q AB+Q CD)/(Q AB+Q DA)=0.5/4.5=0.11.
+If this were a Carnot engine operating between the same heat reservoirs, its efficiency would be
+⎛T ⎞
+e =1− c =0.25.
+Car ⎝T ⎠
+h
+Therefore, the Carnot engine would have a greater efficiency than the Stirling engine.
+Significance
+In the early days of steam engines, accidents would occur due to the high pressure of the steam in the boiler.
+RobertStirlingdevelopedanenginein1816thatdidnotusesteamandthereforewassafer.TheStirlingengine
+wascommonlyusedinthenineteenthcentury,butdevelopmentsinsteamandinternalcombustionengineshave
+made it difficult to broaden the use of the Stirling engine.
+The Stirling engine uses compressed air as the working substance, which passes back and forth between two
+chamberswithaporousplug,calledtheregenerator,whichismadeofmaterialthatdoesnotconductheataswell.
+In two of the steps, pistons in the two chambers move in phase.
+4.7 | Entropy on a Microscopic Scale
+Learning Objectives
+By the end of this section you will be able to:
+• Interpret the meaning of entropy at a microscopic scale
+• Calculate a change in entropy for an irreversible process of a system and contrast with the
+change in entropy of the universe
+• Explain the third law of thermodynamics
+Wehaveseenhowentropyisrelatedtoheatexchangeataparticulartemperature.Inthissection,weconsiderentropyfroma
+statisticalviewpoint.Althoughthedetailsoftheargumentarebeyondthescopeofthistextbook,itturnsoutthatentropycan
+berelatedtohowdisorderedorrandomizedasystemis—themoreitisdisordered,thehigherisitsentropy.Forexample,a
+newdeckofcardsisveryordered,asthecardsarearrangednumericallybysuit.Inshufflingthisnewdeck,werandomize
+thearrangementofthecardsandthereforeincreaseitsentropy(Figure4.17).Thus,bypickingonecardoffthetopofthe
+deck, there would be no indication of what the next selected card will be.
+Figure 4.17 The entropy of a new deck of cards goes up after
+the dealer shuffles them. (credit: “Rommel SK”/YouTube)
+Thesecondlawofthermodynamicsrequiresthattheentropyoftheuniverseincreaseinanyirreversibleprocess.Thus,in
+terms of order, the second law may be stated as follows:
+Inanyirreversibleprocess,theuniversebecomesmoredisordered.Forexample,theirreversiblefreeexpansionofanideal
+gas,showninFigure4.2,resultsinalargervolumeforthegasmoleculestooccupy.Alargervolumemeansmorepossible
+arrangements for the same number of atoms, so disorder is also increased. As a result, the entropy of the gas has gone
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 167
+up.Thegasinthiscaseisaclosedsystem,andtheprocessisirreversible.Changesinphasealsoillustratetheconnection
+between entropy anddisorder.
+Example 4.7
+Entropy Change of the Universe
+Supposeweplace50goficeat 0°C incontactwithaheatreservoirat 20°C.Heatspontaneouslyflowsfrom
+thereservoirtotheice,whichmeltsandeventuallyreachesatemperatureof 20°C.Findthechangeinentropy
+of (a) the ice and (b) the universe.
+Strategy
+Because the entropy of a system is a function of its state, we can imagine two reversible processes for the ice:
+(1)iceismeltedat 0°C(T A); and(2)meltedice(water)iswarmedupfrom 0°C to 20°C(T B) underconstant
+pressure. Then, we add the change in entropy of the reservoir when we calculate the change in entropy of the
+universe.
+Solution
+a. FromEquation 4.10, the increase in entropy of the ice is
+ΔS =ΔS +ΔS
+ice 1 2
+mL B
+= f +mc⌠ dT
+T A ⌡A T
+⎛50×335 293⎞
+= +50×4.19×ln J/K
+⎝ 273 273⎠
+=76.3J/K.
+b. During this transition, the reservoir gives the ice an amount of heat equal to
+Q =mL f +mc(T B−T A)
+=50×(335+4.19×20)J
+=2.10×104 J.
+This leads to a change (decrease) in entropy of the reservoir:
+−Q
+ΔS = =−71.7J/K.
+reservoir T
+B
+The increase in entropy of the universe is therefore
+ΔS =76.3J/K−71.7J/K=4.6J/K>0.
+universe
+Significance
+Theentropyoftheuniversethereforeisgreaterthanzerosincetheicegainsmoreentropythanthereservoirloses.
+Ifweconsideredonlythephasechangeoftheiceintowaterandnotthetemperatureincrease,theentropychange
+of the ice and reservoir would be the same, resulting in the universe gaining no entropy.
+Thisprocessalsoresultsinamoredisordereduniverse.Theicechangesfromasolidwithmoleculeslocatedatspecificsites
+toaliquidwhosemoleculesaremuchfreertomove.Themoleculararrangementhasthereforebecomemorerandomized.
+Althoughthechangeinaveragekineticenergyofthemoleculesoftheheatreservoirisnegligible,thereisneverthelessa
+significantdecreaseintheentropyofthereservoirbecauseithasmanymoremoleculesthanthemeltedicecube.However,
+thereservoir’sdecreaseinentropyisstillnotaslargeastheincreaseinentropyoftheice.Theincreaseddisorderoftheice
+more than compensates for the increased order of the reservoir, and the entropy of the universe increases by 4.6 J/K.
+Youmightsuspectthatthegrowthofdifferentformsoflifemightbeanetorderingprocessandthereforeaviolationofthe
+secondlaw.Afterall,asinglecellgathersmoleculesandeventuallybecomesahighlystructuredorganism,suchasahuman
+being.However,thisorderingprocessismorethancompensatedforbythedisorderingoftherestoftheuniverse.Thenet
+result is an increase in entropy and an increase in the disorder of the universe.
+
+168 Chapter 4 | The Second Law of Thermodynamics
+4.5 CheckYourUnderstandingInExample4.7,thespontaneousflowofheatfromahotobjecttoacold
+objectresultsinanetincreaseinentropyoftheuniverse.Discusshowthisresultcanberelatedtoanincreasein
+disorder of the system.
+Thesecondlawofthermodynamicsmakesclearthattheentropyoftheuniverseneverdecreasesduringanythermodynamic
+process. For any other thermodynamic system, when the process is reversible, the change of the entropy is given by
+ΔS=Q/T. But what happens if the temperature goes to zero, T →0? It turns out this is not a question that can be
+answered by the second law.
+A fundamental issue still remains: Is it possible to cool a system all the way down to zero kelvin? We understand that
+thesystemmustbeatitslowestenergystatebecauseloweringtemperaturereducesthekineticenergyoftheconstituents
+in the system. What happens to the entropy of a system at the absolute zero temperature? It turns out the absolute zero
+temperatureisnotreachable—atleast,notthoughafinitenumberofcoolingsteps.Thisisastatementofthethirdlawof
+thermodynamics,whoseproofrequiresquantummechanicsthatwedonotpresenthere.Inactualexperiments,physicists
+have continuously pushed that limit downward, with the lowest temperature achieved at about 1×10 −10 K in a low-
+temperature lab at the Helsinki University of Technology in 2008.
+Like the second law of thermodynamics, the third law of thermodynamics can be stated in different ways. One of the
+commonstatementsofthethirdlawofthermodynamicsis:Theabsolutezerotemperaturecannotbereachedthroughany
+finite number of cooling steps.
+Inotherwords,thetemperatureofanygivenphysicalsystemmustbefinite,thatis, T >0.Thisproducesaveryinteresting
+question in physics: Do we know how a system would behave if it were at the absolute zero temperature?
+Thereasonasystemisunabletoreach0Kisfundamentalandrequiresquantummechanicstofullyunderstanditsorigin.
+Butwecancertainlyaskwhathappenstotheentropyofasystemwhenwetrytocoolitdownto0K.Becausetheamount
+ofheatthatcanberemovedfromthesystembecomesvanishinglysmall,weexpectthatthechangeinentropyofthesystem
+along an isotherm approaches zero, that is,
+lim (ΔS)T =0. (4.13)
+T→0
+Thiscanbeviewedasanotherstatementofthethirdlaw,withalltheisothermsbecomingisentropic,orintoareversible
+idealadiabat.Wecanputthisexpressioninwords:Asystembecomesperfectlyorderedwhenitstemperatureapproaches
+absolute zero and its entropy approaches its absolute minimum.
+Thethirdlawofthermodynamicsputsanotherlimitonwhatcanbedonewhenwelookforenergyresources.Iftherecould
+beareservoirattheabsolutezerotemperature,wecouldhaveengineswithefficiencyof 100%,whichwould,ofcourse,
+violate the second law of thermodynamics.
+Example 4.8
+Entropy Change of an Ideal Gas in Free Expansion
+Anidealgasoccupiesapartitionedvolume V insideaboxwhosewallsarethermallyinsulating,asshownin
+1
+Figure 4.18(a).Whenthepartitionisremoved,thegasexpandsandfillstheentirevolume V ofthebox,as
+2
+shown in part (b). What is the entropy change of the universe (the system plus its environment)?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 169
+Figure 4.18 The adiabatic free expansion of an ideal gas from volume V to volume V .
+1 2
+Strategy
+Theadiabaticfreeexpansionofanidealgasisanirreversibleprocess.Thereisnochangeintheinternalenergy
+(andhencetemperature)ofthegasinsuchanexpansionbecausenoworkorheattransferhashappened.Thus,a
+convenientreversiblepathconnectingthesametwoequilibriumstatesisaslow,isothermalexpansionfrom V
+1
+to V .Inthisprocess,thegascouldbeexpandingagainstapistonwhileinthermalcontactwithaheatreservoir,
+2
+as in step 1 of the Carnot cycle.
+Solution
+Since the temperature is constant, the entropy change is given by ΔS=Q/T, where
+V
+2
+Q=W =∫ pdV
+V
+1
+because ΔE =0. Now, with the help of the ideal gas law, we have
+int
+V
+2
+Q=nRT⌠ dV =nRTln V 2,
+⌡ V V V 1
+1
+so the change in entropy of the gas is
+Q V
+ΔS= =nRln 2.
+T V
+1
+Because V >V , ΔS is positive, and the entropy of the gas has gone up during the free expansion.
+2 1
+Significance
+Whatabouttheenvironment?Thewallsofthecontainerarethermallyinsulating,sonoheatexchangetakesplace
+betweenthegasanditssurroundings.Theentropyoftheenvironmentisthereforeconstantduringtheexpansion.
+Thenetentropychangeoftheuniverseisthensimplytheentropychangeofthegas.Sincethisispositive, the
+entropy of the universe increases in the free expansion of the gas.
+Example 4.9
+Entropy Change during Heat Transfer
+Heat flows from a steel object of mass 4.00 kg whose temperature is 400 K to an identical object at 300 K.
+Assuming that the objects are thermally isolated from the environment, what is the net entropy change of the
+universe after thermal equilibrium has been reached?

@@ -1,0 +1,282 @@
+# REAL PDF — openstax_vol3.pdf, pages 333-339
+############################################################
+
+Chapter 7 | Quantum Mechanics 325
+The first excited state: E =22E =4(2.05MeV)=8.20MeV.
+2 1
+The energy of the emitted photon is E
+f
+=ΔE=E
+2
+−E
+1
+=8.20MeV−2.05MeV=6.15MeV.
+The frequency of the emitted photon is
+E
+f = f = 6.15MeV =1.49×1021 Hz.
+h 4.14×10−21MeV·s
+Significance
+Thisisthetypicalfrequencyofagammarayemittedbyanucleus.Theenergyofthisphotonisabout10million
+times greater than that of a visible light photon.
+The expectation value of the position for a particle in a box is given by
+L L L (7.47)
+〈 x〉 =∫dxψ n* (x)xψ n(x)=∫dxx|ψ n* (x)|2=∫dxx
+L
+2 sin2n
+L
+πx = L
+2
+.
+0 0 0
+Wecanalsofindtheexpectationvalueofthemomentumoraveragemomentumofalargenumberofparticlesinagiven
+state:
+L (7.48)
+〈 p〉 =⌠
+⌡
+dxψ n* (x) ⎡
+⎣
+−iℏ
+d
+d
+x
+ψ n(x) ⎤
+⎦
+0
+L L
+=−iℏ⌠dx 2 sin nπx⎡d 2 sin nπx⎤ =−i2ℏ ∫dxsin nπx⎡nπ cos nπx⎤
+⌡ L L ⎣dx L L ⎦ L L ⎣L L ⎦
+0 0
+L 2πn
+=−i2nπℏ ∫dx1 sin 2nπx =−i nπℏ L ∫ dφsinφ=−i ℏ ·0=0.
+L2 2 L L2 2nπ 2L
+0 0
+Thus,foraparticleinastateofdefiniteenergy,theaveragepositionisinthemiddleoftheboxandtheaveragemomentum
+oftheparticleiszero—asitwouldalsobeforaclassicalparticle.Notethatwhiletheminimumenergyofaclassicalparticle
+canbezero(theparticlecanbeatrestinthemiddleofthebox),theminimumenergyofaquantumparticleisnonzeroand
+given byEquation 7.44. The average particle energy in thenthquantum state—its expectation value of energy—is
+E n= 〈E〉
+=n2π
+2
+2
+m
+ℏ2
+.
+(7.49)
+Theresultisnotsurprisingbecausethestandingwavestateisastateofdefiniteenergy.Anyenergymeasurementofthis
+system must return a value equal to one of these allowed energies.
+OuranalysisofthequantumparticleinaboxwouldnotbecompletewithoutdiscussingBohr’scorrespondenceprinciple.
+Thisprinciplestatesthatforlargequantumnumbers,thelawsofquantumphysicsmustgiveidenticalresultsasthelaws
+ofclassicalphysics.Toillustratehowthisprincipleworksforaquantumparticleinabox,weplottheprobabilitydensity
+distribution
+2 (7.50)
+|ψ n(x)| =
+L
+2 sin2(nπx/L)
+forfindingtheparticlearoundlocationxbetweenthewallswhentheparticleisinquantumstate ψ .Figure7.12shows
+n
+theseprobabilitydistributionsforthegroundstate,forthefirstexcitedstate,andforahighlyexcitedstatethatcorresponds
+toalargequantumnumber.Weseefromtheseplotsthatwhenaquantumparticleisinthegroundstate,itismostlikelytobe
+foundaroundthemiddleofthebox,wheretheprobabilitydistributionhasthelargestvalue.Thisisnotsowhentheparticle
+isinthefirstexcitedstatebecausenowtheprobabilitydistributionhasthezerovalueinthemiddleofthebox,sothereis
+nochanceoffindingtheparticlethere.Whenaquantumparticleisinthefirstexcitedstate,theprobabilitydistributionhas
+twomaxima,andthebestchanceoffindingtheparticleisatpositionsclosetothelocationsofthesemaxima.Thisquantum
+picture is unlike the classical picture.
+
+326 Chapter 7 | Quantum Mechanics
+Figure 7.12 The probability density distribution |ψ n(x)|2 for a quantum particle in a box for: (a)
+the ground state, n=1; (b) the first excited state, n=2; and, (c) the nineteenth excited state,
+n=20.
+Theprobabilitydensityoffindingaclassicalparticlebetweenxand x+Δx dependsonhowmuchtime Δt theparticle
+spendsinthisregion.Assumingthatitsspeeduisconstant,thistimeis Δt=Δx/u, whichisalsoconstantforanylocation
+betweenthewalls.Therefore,theprobabilitydensityoffindingtheclassicalparticleatxisuniformthroughoutthebox,and
+thereisnopreferablelocationforfindingaclassicalparticle.Thisclassicalpictureismatchedinthelimitoflargequantum
+numbers.Forexample,whenaquantumparticleisinahighlyexcitedstate,showninFigure7.12,theprobabilitydensity
+ischaracterizedbyrapidfluctuationsandthentheprobabilityoffindingthequantumparticleintheinterval Δx doesnot
+depend on where this interval is located between the walls.
+Example 7.9
+A Classical Particle in a Box
+A small 0.40-kg cart is moving back and forth along an air track between two bumpers located 2.0 m apart.
+We assume no friction; collisions with the bumpers are perfectly elastic so that between the bumpers, the car
+maintainsaconstantspeedof0.50m/s.Treatingthecartasaquantumparticle,estimatethevalueoftheprincipal
+quantum number that corresponds to its classical energy.
+Strategy
+WefindthekineticenergyKofthecartanditsgroundstateenergy E asthoughitwereaquantumparticle.The
+1
+energy of the cart is completely kinetic, so K =n2E (Equation 7.45). Solving forngives n=(K/E ) 1/2.
+1 1
+Solution
+The kinetic energy of the cart is
+K = 1mu2= 1 (0.40kg)(0.50m/s)2=0.050J.
+2 2
+The ground state of the cart, treated as a quantum particle, is
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 327
+E =
+π2ℏ2
+=
+π2(1.05×10 −34 J·s)2
+=1.700×10 −68 J.
+1 2mL2 2(0.40kg)(2.0m)2
+Therefore, n=(K/E ) 1/2 =(0.050/1.700×10 −68 ) 1/2 =1.2×10 33.
+1
+Significance
+We see from this example that the energy of a classical system is characterized by a very large quantum
+number.Bohr’scorrespondenceprincipleconcernsthiskindofsituation.Wecanapplytheformalismofquantum
+mechanics to any kind of system, quantum or classical, and the results are correct in each case. In the limit of
+highquantumnumbers,thereisnoadvantageinusingquantumformalismbecausewecanobtainthesameresults
+withthelesscomplicatedformalismofclassicalmechanics.However,wecannotapplyclassicalformalismtoa
+quantum system in a low-number energy state.
+7.7 Check Your Understanding (a) Consider an infinite square well with wall boundaries x=0 and
+x=L.Whatistheprobabilityoffindingaquantumparticleinitsgroundstatesomewherebetween x=0 and
+x=L/4? (b) Repeat question (a) for a classical particle.
+Having found the stationary states ψ n(x) and the energies E
+n
+by solving the time-independent Schrӧdinger equation
+Equation 7.32, we use Equation 7.28 to write wave functions Ψn(x, t) that are solutions of the time-dependent
+Schrӧdinger’s equation given byEquation 7.23. For a particle in a box this gives
+Ψn(x, t)=e −iωnt ψ n(x)=
+L
+2e −iEnt/ℏ sin n
+L
+πx , n=1, 2, 3, ... (7.51)
+where the energies are given byEquation 7.41.
+The quantum particle in a box model has practical applications in a relatively newly emerged field of optoelectronics,
+whichdealswithdevicesthatconvertelectricalsignalsintoopticalsignals.Thismodelalsodealswithnanoscalephysical
+phenomena, such as a nanoparticle trapped in a low electric potential bounded by high-potential barriers.
+7.5 | The Quantum Harmonic Oscillator
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the model of the quantum harmonic oscillator
+• Identify differences between the classical and quantum models of the harmonic oscillator
+• Explain physical situations where the classical and the quantum models coincide
+Oscillationsarefoundthroughoutnature,insuchthingsaselectromagneticwaves,vibratingmolecules,andthegentleback-
+and-forth sway of a tree branch. In previous chapters, we used Newtonian mechanics to study macroscopic oscillations,
+suchasablockonaspringandasimplependulum.Inthischapter,webegintostudyoscillatingsystemsusingquantum
+mechanics. We begin with a review of the classic harmonic oscillator.
+The Classic Harmonic Oscillator
+Asimpleharmonicoscillatorisaparticleorsystemthatundergoesharmonicmotionaboutanequilibriumposition,suchas
+anobjectwithmassvibratingonaspring.Inthissection,weconsideroscillationsinone-dimensiononly.Supposeamass
+moves back-and-forth along the
+x-direction about the equilibrium position, x=0. In classical mechanics, the particle moves in response to a linear
+restoringforcegivenby F x=−kx, wherexisthedisplacementoftheparticlefromitsequilibriumposition.Themotion
+takesplacebetweentwoturningpoints, x=±A,whereAdenotestheamplitudeofthemotion.Thepositionoftheobject
+variesperiodicallyintimewithangularfrequency ω= k/m, whichdependsonthemassmoftheoscillatorandonthe
+
+328 Chapter 7 | Quantum Mechanics
+force constantkof the net force, and can be written as
+x(t)= Acos (ω t+ϕ). (7.52)
+ThetotalenergyEofanoscillatoristhesumofitskineticenergy K =mu2/2 andtheelasticpotentialenergyoftheforce
+U(x)=k x2/2,
+E= 1mu2+ 1kx2. (7.53)
+2 2
+Atturningpoints x=±A,thespeedoftheoscillatoriszero;therefore,atthesepoints,theenergyofoscillationissolely
+intheformofpotentialenergy E=k A 2/2.TheplotofthepotentialenergyU(x)oftheoscillatorversusitspositionxisa
+parabola(Figure7.13).Thepotential-energyfunctionisaquadraticfunctionofx,measuredwithrespecttotheequilibrium
+position.Onthesamegraph,wealsoplotthetotalenergyEoftheoscillator,asahorizontallinethatinterceptstheparabola
+at x=±A. Then the kinetic energy K is represented as the vertical distance between the line of total energy and the
+potential energy parabola.
+Figure 7.13 The potential energy well of a classical harmonic oscillator: The motion
+is confined between turning points at x=−A and at x= +A. The energy of
+oscillations is E=kA2/2.
+Inthisplot,themotionofaclassicaloscillatorisconfinedtotheregionwhereitskineticenergyisnonnegative,whichis
+what the energy relation Equation 7.53 says. Physically, it means that a classical oscillator can never be found beyond
+itsturningpoints,anditsenergydependsonlyonhowfartheturningpointsarefromitsequilibriumposition.Theenergy
+ofaclassicaloscillatorchangesinacontinuousway.Thelowestenergythataclassicaloscillatormayhaveiszero,which
+correspondstoasituationwhereanobjectisatrestatitsequilibriumposition.Thezero-energystateofaclassicaloscillator
+simplymeansnooscillationsandnomotionatall(aclassicalparticlesittingatthebottomofthepotentialwellinFigure
+7.13).Whenanobjectoscillates,nomatterhowbigorsmallitsenergymaybe,itspendsthelongesttimeneartheturning
+points, because this is where it slows down and reverses its direction of motion. Therefore, the probability of finding a
+classicaloscillatorbetweentheturningpointsishighestneartheturningpointsandlowestattheequilibriumposition.(Note
+thatthisisnotastatementofpreferenceoftheobjecttogotolowerenergy.Itisastatementabouthowquicklytheobject
+moves through various regions.)
+The Quantum Harmonic Oscillator
+Oneproblemwiththisclassicalformulationisthatitisnotgeneral.Wecannotuseit,forexample,todescribevibrationsof
+diatomicmolecules,wherequantumeffectsareimportant.Afirststeptowardaquantumformulationistousetheclassical
+expression k=m ω 2 tolimitmentionofa“spring”constantbetweentheatoms.Inthiswaythepotentialenergyfunction
+can be written in a more general form,
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 329
+U(x)= 1mω 2x 2. (7.54)
+2
+Combining this expression with the time-independent Schrӧdinger equation gives
+− ℏ d 2ψ(x) + 1mω 2x 2ψ(x)=Eψ(x). (7.55)
+2m d x2 2
+To solve Equation 7.55—that is, to find the allowed energies E and their corresponding wave functions ψ(x) —we
+requirethewavefunctionstobesymmetricabout x=0 (thebottomofthepotentialwell)andtobenormalizable.These
+conditionsensurethattheprobabilitydensity |ψ(x)| 2 mustbefinitewhenintegratedovertheentirerangeofxfrom −∞
+to +∞.HowtosolveEquation 7.55isthesubjectofamoreadvancedcourseinquantummechanics;here,wesimply
+cite the results. The allowed energies are
+E n= ⎛
+⎝
+n+ 1
+2
+⎞
+⎠
+ℏω= 2n
+2
++1ℏω, n=0, 1, 2, 3, ... (7.56)
+The wave functions that correspond to these energies (the stationary states or states of definite energy) are
+−β 2x 2 /2 (7.57)
+ψ n(x)=N n e H n(βx), n=0, 1, 2, 3, ...
+where β= m ω/ℏ, N
+n
+is the normalization constant, and H n(y) is a polynomial of degree n called a Hermite
+polynomial. The first four Hermite polynomials are
+H (y)=1
+0
+H (y)=2y
+1
+H (y)=4y2−2
+2
+H (y)=8y3 −12y.
+3
+A few sample wave functions are given in Figure 7.14. As the value of the principal number increases, the solutions
+alternate between even functions and odd functions about x=0.
+
+330 Chapter 7 | Quantum Mechanics
+Figure 7.14 The first five wave functions of the quantum harmonic
+oscillator. The classical limits of the oscillator’s motion are indicated by
+vertical lines, corresponding to the classical turning points at x=±A
+of a classical particle with the same energy as the energy of a quantum
+oscillator in the state indicated in the figure.
+Example 7.10
+Classical Region of Harmonic Oscillations
+Find the amplitude A of oscillations for a classical oscillator with energy equal to the energy of a quantum
+oscillator in the quantum staten.
+Strategy
+To determine the amplitude A, we set the classical energy E=kx2/2=m ω2A2/2 equal to E
+n
+given by
+Equation 7.56.
+Solution
+We obtain
+E n=m ω2A n 2/2 ⇒ A n=
+m
+2
+ω 2
+E n=
+m
+2
+ω 2
+2n
+2
++1ℏω= (2n+1)m ℏ ω.
+Significance
+As the quantum number n increases, the energy of the oscillator and therefore the amplitude of oscillation
+increases(forafixednaturalangularfrequency.Forlargen,theamplitudeisapproximatelyproportionaltothe
+square root of the quantum number.
+Several interesting features appear in this solution. Unlike a classical oscillator, the measured energies of a quantum
+oscillatorcanhaveonlyenergyvaluesgivenbyEquation7.56.Moreover,unlikethecaseforaquantumparticleinabox,
+the allowable energy levels are evenly spaced,
+ΔE=E n+1 −E n= 2(n+
+2
+1)+1 ℏω− 2n
+2
++1ℏω=ℏω=h f. (7.58)
+Whenaparticleboundtosuchasystemmakesatransitionfromahigher-energystatetoalower-energystate,thesmallest-
+energyquantumcarriedbytheemittedphotonisnecessarilyhf.Similarly,whentheparticlemakesatransitionfromalower-
+energy state to a higher-energy state, the smallest-energy quantum that can be absorbed by the particle is hf. A quantum
+oscillator can absorb or emit energy only in multiples of this smallest-energy quantum. This is consistent with Planck’s
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

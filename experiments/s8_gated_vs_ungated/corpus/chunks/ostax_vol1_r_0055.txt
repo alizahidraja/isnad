@@ -1,0 +1,201 @@
+# REAL PDF — openstax_vol1.pdf, pages 328-334
+############################################################
+
+316 7 • Work and Kinetic Energy
+7.4
+The work done by a constant force of gravity on an object depends only on the object’s weight and the difference in
+height through which the object is displaced. Gravity does negative work on an object that moves upward
+( ), or, in other words, you must do positive work against gravity to lift an object upward. Alternately, gravity
+does positive work on an object that moves downward ( ), or you do negative work against gravity to “lift”
+an object downward, controlling its descent so it doesn’t drop to the ground. (“Lift” is used as opposed to “drop”.)
+EXAMPLE 7.3
+Shelving a Book
+You lift an oversized library book, weighing 20 N, 1 m vertically down from a shelf, and carry it 3 m horizontally to a
+table (Figure 7.5). (a) How much work does gravity do on the book? (b) When you’re finished, you move the book in a
+straight line back to its original place on the shelf. What was the total work done against gravity, moving the book
+away from its original position on the shelf and back again?
+FIGURE 7.5 Side view of the paths for moving a book to and from a shelf.
+Strategy
+We have just seen that the work done by a constant force of gravity depends only on the weight of the object moved
+and the difference in height for the path taken, . We can evaluate the difference in height to
+answer (a) and (b).
+Solution
+a. Since the book starts on the shelf and is lifted down , we have
+b. There is zero difference in height for any path that begins and ends at the same place on the shelf, so
+Significance
+Gravity does positive work (20 J) when the book moves down from the shelf. The gravitational force between two
+objects is an attractive force, which does positive work when the objects get closer together. Gravity does zero work
+(0 J) when the book moves horizontally from the shelf to the table and negative work (−20 J) when the book moves
+from the table back to the shelf. The total work done by gravity is zero Unlike friction or
+other dissipative forces, described in Example 7.2, the total work done against gravity, over any closed path, is zero.
+Positive work is done against gravity on the upward parts of a closed path, but an equal amount of negative work is
+done against gravity on the downward parts. In other words, work done against gravity, lifting an object up, is “given
+back” when the object comes back down. Forces like gravity (those that do zero work over any closed path) are
+classified as conservative forces and play an important role in physics.
+Access for free at openstax.org
+
+7.1 • Work 317
+CHECK YOUR UNDERSTANDING 7.2
+Can Earth’s gravity ever be a constant force for all paths?
+Work Done by Forces that Vary
+In general, forces may vary in magnitude and direction at points in space, and paths between two points may be
+curved. The infinitesimal work done by a variable force can be expressed in terms of the components of the force
+and the displacement along the path,
+Here, the components of the force are functions of position along the path, and the displacements depend on the
+equations of the path. (Although we chose to illustrate dW in Cartesian coordinates, other coordinates are better
+suited to some situations.) Equation 7.2 defines the total work as a line integral, or the limit of a sum of infinitesimal
+amounts of work. The physical concept of work is straightforward: you calculate the work for tiny displacements and
+add them up. Sometimes the mathematics can seem complicated, but the following example demonstrates how
+cleanly they can operate.
+EXAMPLE 7.4
+Work Done by a Variable Force over a Curved Path
+An object moves along a parabolic path from the origin to the point
+under the action of a force (Figure 7.6). Calculate the work done.
+FIGURE 7.6 The parabolic path of a particle acted on by a given force.
+Strategy
+The components of the force are given functions of x and y. We can use the equation of the path to express y and dy
+in terms of x and dx; namely,
+Then, the integral for the work is just a definite integral of a function of x.
+Solution
+The infinitesimal element of work is
+The integral of is so
+Significance
+This integral was not hard to do. You can follow the same steps, as in this example, to calculate line integrals
+
+318 7 • Work and Kinetic Energy
+representing work for more complicated forces and paths. In this example, everything was given in terms of x- and
+y-components, which are easiest to use in evaluating the work in this case. In other situations, magnitudes and
+angles might be easier.
+CHECK YOUR UNDERSTANDING 7.3
+Find the work done by the same force in Example 7.4 over a cubic path, , between the same
+points and
+One very important and widely applicable variable force is the force exerted by a perfectly elastic spring, which
+satisfies Hooke’s law where k is the spring constant, and is the displacement from the
+spring’s unstretched (equilibrium) position (Newton’s Laws of Motion). Note that the unstretched position is only the
+same as the equilibrium position if no other forces are acting (or, if they are, they cancel one another). Forces
+between molecules, or in any system undergoing small displacements from a stable equilibrium, behave
+approximately like a spring force.
+To calculate the work done by a spring force, we can choose the x-axis along the length of the spring, in the direction
+of increasing length, as in Figure 7.7, with the origin at the equilibrium position (Then positive x
+corresponds to a stretch and negative x to a compression.) With this choice of coordinates, the spring force has only
+an x-component, , and the work done when x changes from to is
+7.5
+FIGURE 7.7 (a) The spring exerts no force at its equilibrium position. The spring exerts a force in the opposite direction to (b) an extension
+or stretch, and (c) a compression.
+Notice that depends only on the starting and ending points, A and B, and is independent of the actual path
+between them, as long as it starts at A and ends at B. That is, the actual path could involve going back and forth
+before ending.
+Another interesting thing to notice about Equation 7.5 is that, for this one-dimensional case, you can readily see the
+correspondence between the work done by a force and the area under the curve of the force versus its
+displacement. Recall that, in general, a one-dimensional integral is the limit of the sum of infinitesimals, ,
+representing the area of strips, as shown in Figure 7.8. In Equation 7.5, since is a straight line with slope
+Access for free at openstax.org
+
+7.1 • Work 319
+, when plotted versus x, the “area” under the line is just an algebraic combination of triangular “areas,” where
+“areas” above the x-axis are positive and those below are negative, as shown in Figure 7.9. The magnitude of one of
+these “areas” is just one-half the triangle’s base, along the x-axis, times the triangle’s height, along the force axis.
+(There are quotation marks around “area” because this base-height product has the units of work, rather than
+square meters.)
+FIGURE 7.8 A curve of f(x) versus x showing the area of an infinitesimal strip, f(x)dx, and the sum of such areas, which is the integral of f(x)
+from to .
+FIGURE 7.9 Curve of the spring force versus x, showing areas under the line, between and , for both positive and
+negative values of . When is negative, the total area under the curve for the integral in Equation 7.5 is the sum of positive and
+negative triangular areas. When is positive, the total area under the curve is the difference between two negative triangles.
+EXAMPLE 7.5
+Work Done by a Spring Force
+A perfectly elastic spring requires 0.54 J of work to stretch 6 cm from its equilibrium position, as in Figure 7.7(b). (a)
+What is its spring constant k? (b) How much work is required to stretch it an additional 6 cm?
+Strategy
+Work “required” means work done against the spring force, which is the negative of the work in Equation 7.5, that is
+For part (a), and ; for part (b), and . In part (a), the work is given and you
+can solve for the spring constant; in part (b), you can use the value of k, from part (a), to solve for the work.
+Solution
+a. , so
+b.
+Significance
+Since the work done by a spring force is independent of the path, you only needed to calculate the difference in the
+quantity at the end points. Notice that the work required to stretch the spring from 0 to 12 cm is four times
+that required to stretch it from 0 to 6 cm, because that work depends on the square of the amount of stretch from
+
+320 7 • Work and Kinetic Energy
+equilibrium, . In this circumstance, the work to stretch the spring from 0 to 12 cm is also equal to the work for
+a composite path from 0 to 6 cm followed by an additional stretch from 6 cm to 12 cm. Therefore,
+, or , as we
+found above.
+CHECK YOUR UNDERSTANDING 7.4
+The spring in Example 7.5 is compressed 6 cm from its equilibrium length. (a) Does the spring force do positive or
+negative work and (b) what is the magnitude?
+7.2 Kinetic Energy
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Calculate the kinetic energy of a particle given its mass and its velocity or momentum
+• Evaluate the kinetic energy of a body, relative to different frames of reference
+It’s plausible to suppose that the greater the velocity of a body, the greater effect it could have on other bodies. This
+does not depend on the direction of the velocity, only its magnitude. At the end of the seventeenth century, a
+quantity was introduced into mechanics to explain collisions between two perfectly elastic bodies, in which one
+body makes a head-on collision with an identical body at rest. The first body stops, and the second body moves off
+with the initial velocity of the first body. (If you have ever played billiards or croquet, or seen a model of Newton’s
+Cradle, you have observed this type of collision.) The idea behind this quantity was related to the forces acting on a
+body and was referred to as “the energy of motion.” Later on, during the eighteenth century, the name kinetic
+energy was given to energy of motion.
+With this history in mind, we can now state the classical definition of kinetic energy. Note that when we say
+“classical,” we mean non-relativistic, that is, at speeds much less that the speed of light. At speeds comparable to
+the speed of light, the special theory of relativity requires a different expression for the kinetic energy of a particle,
+as discussed in Relativity (http://openstax.org/books/university-physics-volume-3/pages/5-introduction).
+Since objects (or systems) of interest vary in complexity, we first define the kinetic energy of a particle with mass m.
+KINETIC ENERGY
+The kinetic energy of a particle is one-half the product of the particle’s mass m and the square of its speed v:
+7.6
+We then extend this definition to any system of particles by adding up the kinetic energies of all the constituent
+particles:
+7.7
+Note that just as we can express Newton’s second law in terms of either the rate of change of momentum or mass
+times the rate of change of velocity, so the kinetic energy of a particle can be expressed in terms of its mass and
+momentum instead of its mass and velocity. Since , we see that
+also expresses the kinetic energy of a single particle. Sometimes, this expression is more convenient to use than
+Equation 7.6.
+The units of kinetic energy are mass times the square of speed, or . But the units of force are mass times
+Access for free at openstax.org
+
+7.2 • Kinetic Energy 321
+acceleration, , so the units of kinetic energy are also the units of force times distance, which are the units
+of work, or joules. You will see in the next section that work and kinetic energy have the same units, because they
+are different forms of the same, more general, physical property.
+EXAMPLE 7.6
+Kinetic Energy of an Object
+(a) What is the kinetic energy of an 80-kg athlete, running at 10 m/s? (b) The Chicxulub crater in Yucatan, one of the
+largest existing impact craters on Earth, is thought to have been created by an asteroid, traveling at
+22 km/s and releasing of kinetic energy upon impact. What was its mass? (c) In nuclear reactors,
+thermal neutrons, traveling at about 2.2 km/s, play an important role. What is the kinetic energy of such a particle?
+Strategy
+To answer these questions, you can use the definition of kinetic energy in Equation 7.6. You also have to look up the
+mass of a neutron.
+Solution
+Don’t forget to convert km into m to do these calculations, although, to save space, we omitted showing these
+conversions.
+a.
+b.
+c.
+Significance
+In this example, we used the way mass and speed are related to kinetic energy, and we encountered a very wide
+range of values for the kinetic energies. Different units are commonly used for such very large and very small values.
+The energy of the impactor in part (b) can be compared to the explosive yield of TNT and nuclear explosions,
+The Chicxulub asteroid’s kinetic energy was about a hundred million megatons. At the
+other extreme, the energy of subatomic particle is expressed in electron-volts, The thermal
+neutron in part (c) has a kinetic energy of about one fortieth of an electron-volt.
+CHECK YOUR UNDERSTANDING 7.5
+(a) A car and a truck are each moving with the same kinetic energy. Assume that the truck has more mass than the
+car. Which has the greater speed? (b) A car and a truck are each moving with the same speed. Which has the greater
+kinetic energy?
+Because velocity is a relative quantity, you can see that the value of kinetic energy must depend on your frame of
+reference. You can generally choose a frame of reference that is suited to the purpose of your analysis and that
+simplifies your calculations. One such frame of reference is the one in which the observations of the system are
+made (likely an external frame). Another choice is a frame that is attached to, or moves with, the system (likely an
+internal frame). The equations for relative motion, discussed in Motion in Two and Three Dimensions, provide a link
+to calculating the kinetic energy of an object with respect to different frames of reference.
+EXAMPLE 7.7
+Kinetic Energy Relative to Different Frames
+A 75.0-kg person walks down the central aisle of a subway car at a speed of 1.50 m/s relative to the car, whereas
+the train is moving at 15.0 m/s relative to the tracks. (a) What is the person’s kinetic energy relative to the car? (b)
+What is the person’s kinetic energy relative to the tracks? (c) What is the person’s kinetic energy relative to a frame

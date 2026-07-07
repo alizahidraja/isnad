@@ -1,0 +1,189 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 617-624
+############################################################
+
+13.2 • Gravitation Near Earth's Surface 605
+Significance
+Does this value of acceleration seem astoundingly small? If they start from rest, then they would accelerate directly
+toward each other, “colliding” at their center of mass. Let’s estimate the time for this to happen. The initial
+acceleration is , so using , we see that it would take for each galaxy to reach a speed of
+1.0 m/s, and they would be only closer. That is nine orders of magnitude smaller than the initial
+distance between them. In reality, such motions are rarely simple. These two galaxies, along with about 50 other
+smaller galaxies, are all gravitationally bound into our local cluster. Our local cluster is gravitationally bound to other
+clusters in what is called a supercluster. All of this is part of the great cosmic dance that results from gravitation, as
+shown in Figure 13.6.
+FIGURE 13.6 Based on the results of this example, plus what astronomers have observed elsewhere in the Universe, our galaxy will collide
+with the Andromeda Galaxy in about 4 × 109 years. (credit: modification of work by NASA; ESA; A. Feild and R. van der Marel, STScI)
+13.2 Gravitation Near Earth's Surface
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the connection between the constants and
+• Determine the mass of an astronomical body from free-fall acceleration at its surface
+• Describe how the value of varies due to location and Earth’s rotation
+In this section, we observe how Newton’s law of gravitation applies at the surface of a planet and how it connects
+with what we learned earlier about free fall. We also examine the gravitational effects within spherical bodies.
+Weight
+Recall that the acceleration of a free-falling object near Earth’s surface is approximately . The force
+causing this acceleration is called the weight of the object, and from Newton’s second law, it has the value mg. This
+weight is present regardless of whether the object is in free fall. We now know that this force is the gravitational
+force between the object and Earth. If we substitute mg for the magnitude of in Newton’s law of universal
+gravitation, m for , and for , we obtain the scalar equation
+
+606 13 • Gravitation
+where r is the distance between the centers of mass of the object and Earth. The mass m of the object cancels,
+leaving
+13.2
+The average radius of Earth is about 6370 km. Hence, for objects within a few kilometers of Earth’s surface, we can
+take (Figure 13.7). This explains why all masses free fall with the same acceleration. We have ignored the
+fact that Earth also accelerates toward the falling object, but that is acceptable as long as the mass of Earth is much
+larger than that of the object.
+FIGURE 13.7 We can take the distance between the centers of mass of Earth and an object on its surface to be the radius of Earth, provided
+that its size is much less than the radius of Earth.
+EXAMPLE 13.3
+Masses of Earth and Moon
+Have you ever wondered how we know the mass of Earth? We certainly can’t place it on a scale. The values of g and
+the radius of Earth were measured with reasonable accuracy centuries ago.
+a. Use the standard values of g, , and Equation 13.2 to find the mass of Earth.
+b. Estimate the value of g on the Moon. Use the fact that the Moon has a radius of about 1700 km (a value of this
+accuracy was determined many centuries ago) and assume it has the same average density as Earth,
+.
+Strategy
+With the known values of g and , we can use Equation 13.2 to find . For the Moon, we use the assumption of
+equal average density to determine the mass from a ratio of the volumes of Earth and the Moon.
+Solution
+a. Rearranging Equation 13.2, we have
+b. The volume of a sphere is proportional to the radius cubed, so a simple ratio gives us
+Access for free at openstax.org
+
+13.2 • Gravitation Near Earth's Surface 607
+We now use Equation 13.2.
+Significance
+As soon as Cavendish determined the value of G in 1798, the mass of Earth could be calculated. (In fact, that was
+the ultimate purpose of Cavendish’s experiment in the first place.) The value we calculated for g of the Moon is
+incorrect. The average density of the Moon is actually only and at the surface. Newton
+attempted to measure the mass of the Moon by comparing the effect of the Sun on Earth’s ocean tides compared to
+that of the Moon. His value was a factor of two too small. The most accurate values for g and the mass of the Moon
+come from tracking the motion of spacecraft that have orbited the Moon. But the mass of the Moon can actually be
+determined accurately without going to the Moon. Earth and the Moon orbit about a common center of mass, and
+careful astronomical measurements can determine that location. The ratio of the Moon’s mass to Earth’s is the ratio
+of [the distance from the common center of mass to the Moon’s center] to [the distance from the common center of
+mass to Earth’s center].
+Later in this chapter, we will see that the mass of other astronomical bodies also can be determined by the period of
+small satellites orbiting them. But until Cavendish determined the value of G, the masses of all these bodies were
+unknown.
+EXAMPLE 13.4
+Gravity above Earth’s Surface
+What is the value of g 400 km above Earth’s surface, where the International Space Station is in orbit?
+Strategy
+Using the value of and noting the radius is , we use Equation 13.2 to find g.
+From Equation 13.2 we have
+Significance
+We often see video of astronauts in space stations, apparently weightless. But clearly, the force of gravity is acting
+on them. Comparing the value of g we just calculated to that on Earth , we see that the astronauts in the
+International Space Station still have 88% of their weight. They only appear to be weightless because they are in
+free fall. We will come back to this in Satellite Orbits and Energy.
+CHECK YOUR UNDERSTANDING 13.2
+How does your weight at the top of a tall building compare with that on the first floor? Do you think engineers need
+to take into account the change in the value of g when designing structural support for a very tall building?
+The Gravitational Field
+Equation 13.2 is a scalar equation, giving the magnitude of the gravitational acceleration as a function of the
+distance from the center of the mass that causes the acceleration. But we could have retained the vector form for
+the force of gravity in Equation 13.1, and written the acceleration in vector form as
+
+608 13 • Gravitation
+We identify the vector field represented by as the gravitational field caused by mass . We can picture the field
+as shown Figure 13.8. The lines are directed radially inward and are symmetrically distributed about the mass.
+FIGURE 13.8 Field line representation of the gravitational field created by Earth.
+The direction of is parallel to the field lines at any point. The strength of at any point is inversely proportional to
+the line spacing. Another way to state this is that the magnitude of the field in any region is proportional to the
+number of lines that pass through a unit surface area, effectively a density of lines. Since the lines are equally
+spaced in all directions, the number of lines per unit surface area at a distance r from the mass is the total number
+of lines divided by the surface area of a sphere of radius r, which is proportional to . Hence, this picture perfectly
+represents the inverse square law, in addition to indicating the direction of the field. In the field picture, we say that
+a mass m interacts with the gravitational field of mass M. We will use the concept of fields to great advantage in the
+later chapters on electromagnetism.
+Apparent Weight: Accounting for Earth’s Rotation
+As we saw in Applications of Newton’s Laws, objects moving at constant speed in a circle have a centripetal
+acceleration directed toward the center of the circle, which means that there must be a net force directed toward
+the center of that circle. Since all objects on the surface of Earth move through a circle every 24 hours, there must
+be a net centripetal force on each object directed toward the center of that circle.
+Let’s first consider an object of mass m located at the equator, suspended from a scale (Figure 13.9). The scale
+exerts an upward force away from Earth’s center. This is the reading on the scale, and hence it is the apparent
+weight of the object. The weight (mg) points toward Earth’s center. If Earth were not rotating, the acceleration
+would be zero and, consequently, the net force would be zero, resulting in . This would be the true reading
+of the weight.
+Access for free at openstax.org
+
+13.2 • Gravitation Near Earth's Surface 609
+FIGURE 13.9 For a person standing at the equator, the centripetal acceleration is in the same direction as the force of gravity. At
+latitude , the angle the between and the force of gravity is and the magnitude of decreases with .
+With rotation, the sum of these forces must provide the centripetal acceleration, . Using Newton’s second law, we
+have
+13.3
+Note that points in the same direction as the weight; hence, it is negative. The tangential speed v is the speed at
+the equator and r is . We can calculate the speed simply by noting that objects on the equator travel the
+circumference of Earth in 24 hours. Instead, let’s use the alternative expression for from Motion in Two and Three
+Dimensions. Recall that the tangential speed is related to the angular speed by . Hence, we have
+. By rearranging Equation 13.3 and substituting , the apparent weight at the equator is
+The angular speed of Earth everywhere is
+Substituting for the values or and , we have . This is only 0.34% of the value of gravity,
+so it is clearly a small correction.
+
+610 13 • Gravitation
+EXAMPLE 13.5
+Zero Apparent Weight
+How fast would Earth need to spin for those at the equator to have zero apparent weight? How long would the length
+of the day be?
+Strategy
+Using Equation 13.3, we can set the apparent weight ( ) to zero and determine the centripetal acceleration
+required. From that, we can find the speed at the equator. The length of day is the time required for one complete
+rotation.
+Solution
+From Equation 13.2, we have , so setting , we get . Using the expression
+for , substituting for Earth’s radius and the standard value of gravity, we get
+The period T is the time for one complete rotation. Therefore, the tangential speed is the circumference divided by
+T, so we have
+This is about 84 minutes.
+Significance
+We will see later in this chapter that this speed and length of day would also be the orbital speed and period of a
+satellite in orbit at Earth’s surface. While such an orbit would not be possible near Earth’s surface due to air
+resistance, it certainly is possible only a few hundred miles above Earth.
+Results Away from the Equator
+At the pole, and , just as is the case without rotation. At any other latitude , the situation
+is more complicated. The centripetal acceleration is directed toward point P in the figure, and the radius becomes
+. The vector sum of the weight and must point toward point P, hence no longer points away from
+the center of Earth. (The difference is small and exaggerated in the figure.) A plumb bob will always point along this
+deviated direction. All buildings are built aligned along this deviated direction, not along a radius through the center
+of Earth. For the tallest buildings, this represents a deviation of a few feet at the top.
+It is also worth noting that Earth is not a perfect sphere. The interior is partially liquid, and this enhances Earth
+bulging at the equator due to its rotation. The radius of Earth is about 30 km greater at the equator compared to the
+poles. It is left as an exercise to compare the strength of gravity at the poles to that at the equator using Equation
+13.2. The difference is comparable to the difference due to rotation and is in the same direction. Apparently, you
+really can lose “weight” by moving to the tropics.
+Gravity Away from the Surface
+Earlier we stated without proof that the law of gravitation applies to spherically symmetrical objects, where the
+mass of each body acts as if it were at the center of the body. Since Equation 13.2 is derived from Equation 13.1, it is
+Access for free at openstax.org
+
+13.2 • Gravitation Near Earth's Surface 611
+also valid for symmetrical mass distributions, but both equations are valid only for values of . As we saw in
+Example 13.4, at 400 km above Earth’s surface, where the International Space Station orbits, the value of g is
+. (We will see later that this is also the centripetal acceleration of the ISS.)
+For , Equation 13.1 and Equation 13.2 are not valid. However, we can determine g for these cases using a
+principle that comes from Gauss’s law, which is a powerful mathematical tool that we study in more detail later in
+the course. A consequence of Gauss’s law, applied to gravitation, is that only the mass within r contributes to the
+gravitational force. Also, that mass, just as before, can be considered to be located at the center. The gravitational
+effect of the mass outside r has zero net effect.
+Two very interesting special cases occur. For a spherical planet with constant density, the mass within r is the
+density times the volume within r. This mass can be considered located at the center. Replacing with only the
+mass within r, , and with r, Equation 13.2 becomes
+The value of g, and hence your weight, decreases linearly as you descend down a hole to the center of the spherical
+planet. At the center, you are weightless, as the mass of the planet pulls equally in all directions. Actually, Earth’s
+density is not constant, nor is Earth solid throughout. Figure 13.10 shows the profile of g if Earth had constant
+density and the more likely profile based upon estimates of density derived from seismic data.
+FIGURE 13.10 For , the value of g for the case of constant density is the straight green line. The blue line from the PREM
+(Preliminary Reference Earth Model) is probably closer to the actual profile for g.
+The second interesting case concerns living on a spherical shell planet. This scenario has been proposed in many
+science fiction stories. Ignoring significant engineering issues, the shell could be constructed with a desired radius
+and total mass, such that g at the surface is the same as Earth’s. Can you guess what happens once you descend in
+an elevator to the inside of the shell, where there is no mass between you and the center? What benefits would this
+provide for traveling great distances from one point on the sphere to another? And finally, what effect would there

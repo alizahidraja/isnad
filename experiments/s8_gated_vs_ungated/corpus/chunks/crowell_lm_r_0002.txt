@@ -1,0 +1,307 @@
+# REAL PDF — crowell_lm.pdf, pages 11-16
+############################################################
+
+19.2 Waves on a string . . . . . . . 488 Photo credits for volume 1 . . . . . . 557
+Intuitive ideas, 488.—Approximate treat-
+ment, 489.—Rigorous derivation using cal-
+Relativity and electromagnetism
+culus (optional), 490.—Significance of the
+result, 492.
+19.3 Sound and light waves . . . . . 492 21 Electricity and circuits
+Sound waves, 492.—Light waves, 493
+21.1 The quest for the atomic force . . 564
+21.2 Electrical forces . . . . . . . . 565
+Charge, 565.—Conservation of charge,
+567.—Electrical forces involving neutral
+objects, 568.
+21.3 Current. . . . . . . . . . . . 568
+Unity of all types of electricity, 568.—
+Electric current, 569.
+21.4 Circuits. . . . . . . . . . . . 571
+21.5 Voltage. . . . . . . . . . . . 573
+The volt unit, 573.—The voltage concept
+. in general, 573.
+19.4 Periodic waves. . . . . . . . . 495 21.6 Resistance . . . . . . . . . . 578
+Period and frequency of a periodic wave, Resistance,578.—Superconductors,580.—
+495.—Graphsofwavesasafunctionofpo- Constant voltage throughout a conductor,
+sition, 495.—Wavelength, 496.—Wave ve- 580.—Short circuits, 582.—Resistors, 583.
+locityrelatedtofrequencyandwavelength, 21.7 Applications of calculus . . . . . 585
+496.—Sinusoidal waves, 498.
+21.8 Series and parallel circuits. . . . 586
+19.5 The Doppler effect . . . . . . . 499
+Schematics, 586.—Parallel resistances and
+The Big Bang, 501.—What the Big Bang the junction rule, 587.—Series resistances,
+is not, 503. 592.
+Summary . . . . . . . . . . . . . 505 Summary . . . . . . . . . . . . . 600
+Problems . . . . . . . . . . . . . 507 Problems . . . . . . . . . . . . . 604
+Exercise 21A: Electrical measurements. 613
+20 Bounded waves Exercise 21B: Voltage and current. . . 614
+20.1 Reflection, transmission, and ab- Exercise 21C: Reasoning about circuits 619
+sorption . . . . . . . . . . . . . . 510
+22 The nonmechanical uni-
+Reflection and transmission, 510.—
+Invertedanduninvertedreflections, 513.— verse
+Absorption, 513.
+22.1 The stage and the actors . . . . 622
+20.2 Quantitative treatment of reflection 517
+Newton’s instantaneous action at a dis-
+Why reflection occurs, 517.—Intensity of
+tance, 622.—No absolute time, 622.—
+reflection, 518.—Inverted and uninverted
+Causality, 623.—Time delays in forces ex-
+reflections in general, 519.
+erted at a distance, 623.—More evidence
+20.3 Interference effects. . . . . . . 520
+that fields of force are real: they carry en-
+20.4 Waves bounded on both sides . . 523 ergy., 624.
+Musical applications, 525.—Standing 22.2 The gravitational field . . . . . . 626
+waves, 525.—Standing-wave patterns of
+Sources and sinks, 627.—Superposition of
+air columns, 527.
+fields, 627.—Gravitational waves, 628.
+Summary . . . . . . . . . . . . . 529
+22.3 The electric field . . . . . . . . 629
+Problems . . . . . . . . . . . . . 530
+Definition, 629.—Dipoles, 632.—
+Alternative definition of the electric field,
+Three essential mathematical skills . . 532 633.—Voltage related to electric field, 633.
+11
+
+22.4 Calculating energy in fields . . . 635 Exercise 24B: Events and spacetime. . 713
+22.5 Voltage for nonuniform fields. . . 638
+22.6 Two or three dimensions . . . . 639 25 Capacitance and induc-
+22.7 Field lines and Gauss’s law . . . 642 tance
+22.8 Electric field of a continuous charge
+25.1 Capacitance and inductance. . . 717
+distribution. . . . . . . . . . . . . 644
+Capacitors, 718.—Inductors, 718.
+Summary . . . . . . . . . . . . . 646
+25.2 Oscillations . . . . . . . . . . 720
+Problems . . . . . . . . . . . . . 648
+25.3 Voltage and current. . . . . . . 723
+Exercise 22: Field vectors . . . . . . 652
+25.4 Decay . . . . . . . . . . . . 727
+TheRCcircuit,727.—TheRLcircuit,728.
+23 Relativity and magnetism
+25.5 Impedance . . . . . . . . . . 730
+23.1 Relativistic distortion of space and
+Problems . . . . . . . . . . . . . 733
+time . . . . . . . . . . . . . . . 655
+Time distortion arising from motion and 26 The atom and E=mc2
+gravity, 655.—The Lorentz transforma-
+tion, 657.—The G factor, 663. 26.1 Atoms . . . . . . . . . . . . 735
+23.2 Magnetic interactions . . . . . . 671 The chemical elements, 735.—Making
+Relativity requires magnetism, 672. sense of the elements, 736.—Direct proof
+Summary . . . . . . . . . . . . . 676 that atoms existed, 737.
+Problems . . . . . . . . . . . . . 677 26.2 Quantization of charge . . . . . 738
+26.3 The electron. . . . . . . . . . 741
+24 Electromagnetism Cathode rays, 741.—Were cathode rays
+a form of light, or of matter?, 741.—
+24.1 The magnetic field . . . . . . . 679
+Thomson’s experiments, 742.—The cath-
+No magnetic monopoles, 679.—Definition ode ray as a subatomic particle: the elec-
+of the magnetic field, 680.—Relativity, tron, 744.—The raisin cookie model, 744.
+681.
+26.4 The nucleus. . . . . . . . . . 747
+24.2 Calculating magnetic fields and
+Radioactivity,747.—Theplanetarymodel,
+forces. . . . . . . . . . . . . . . 682
+750.—Atomic number, 753.—The struc-
+Magnetostatics, 682.—Force on a charge ture of nuclei, 759.—The strong nuclear
+moving through a magnetic field, 684.— force, alpha decay and fission, 762.—The
+Energy in the magnetic field, 685. weak nuclear force; beta decay, 765.—
+24.3 The universal speed c. . . . . . 686 Fusion, 767.—Nuclear energy and binding
+Velocities don’t simply add and subtract., energies, 768.—Biological e↵ects of ioniz-
+686.—A universal speed limit, 687.—Light ingradiation,770.—Thecreationoftheel-
+travels at c., 687.—The Michelson-Morley ements, 775.
+experiment, 687. 26.5 Relativistic mass and energy. . . 776
+24.4 Induction . . . . . . . . . . . 691 Momentum, 776.—Equivalence of mass
+The principle of induction, 691. and energy, 780.
+24.5 Electromagnetic waves . . . . . 693 26.6 Proofs . . . . . . . . . . . . 784
+Polarization, 694.—Light is an electro- Transformationofthefieldsinalightwave,
+magneticwave,694.—Theelectromagnetic 785.—Transformation of the volume of a
+spectrum, 695.—Momentum of light, 697. light wave, 785.—Transformation of the
+24.6 Symmetry and handedness . . . 697 energy of a light wave, 786.—E = mc2,
+24.7 Doppler shifts and clock time. . . 698
+786.—P =mGv, 787.
+26.7 Two tests of Newton’s third law . . 787
+Doppler shifts of light, 698.—Clock time,
+701. Summary . . . . . . . . . . . . . 789
+Summary . . . . . . . . . . . . . 703 Problems . . . . . . . . . . . . . 791
+Problems . . . . . . . . . . . . . 704 Exercise 26A: Sports in Slowlightland . 796
+Exercise 24A: Polarization . . . . . . 711 Exercise 26B: Nuclear decay . . . . . 797
+12
+
+Exercise 26C: Misconceptions about 29.3 A real image . . . . . . . . . 840
+relativity. . . . . . . . . . . . . . 798 29.4 Images of images . . . . . . . 841
+Summary . . . . . . . . . . . . . 846
+27 General relativity Problems . . . . . . . . . . . . . 847
+Exercise 29: Exploring images with a
+27.1 Our universe isn’t Euclidean . . . 799
+curved mirror. . . . . . . . . . . . 850
+Curvature, 800.—Curvature doesn’t re-
+quire higher dimensions, 801.
+27.2 The equivalence principle . . . . 802 30 Images, quantitatively
+Universality of free-fall, 802.— 30.1 Arealimageformedbyaconverging
+Gravitational Doppler shifts and time di-
+mirror. . . . . . . . . . . . . . . 854
+lation, 804.—Local flatness, 804.—Inertial
+Location of the image, 854.—
+frames, 805.
+Magnification, 857.
+27.3 Black holes . . . . . . . . . . 806
+30.2 Other cases with curved mirrors . 857
+Information paradox, 807.—Formation,
+30.3 Aberrations . . . . . . . . . . 861
+808.
+Summary . . . . . . . . . . . . . 865
+27.4 Cosmology . . . . . . . . . . 809
+Problems . . . . . . . . . . . . . 867
+The Big Bang, 809.—The cosmic censor-
+Exercise 30: Object and image distances870
+shiphypothesis,810.—Theadventofhigh-
+precision cosmology, 810.—Dark energy
+and dark matter, 812.
+Problems . . . . . . . . . . . . . 813
+Exercise 27: Misconceptions about
+relativity. . . . . . . . . . . . . . 814
+Optics
+28 The ray model of light
+28.1 The nature of light . . . . . . . 818 31 Refraction
+The cause and e↵ect relationship in vi-
+31.1 Refraction. . . . . . . . . . . 872
+sion, 818.—Light is a thing, and it trav-
+Refraction, 872.—Refractive properties of
+elsfromonepointtoanother.,819.—Light
+media, 873.—Snell’s law, 874.—The in-
+can travel through a vacuum., 820.
+dex of refraction is related to the speed
+28.2 Interaction of light with matter . . 821
+of light., 875.—A mechanical model of
+Absorptionoflight,821.—Howweseenon-
+Snell’s law, 876.—A derivation of Snell’s
+luminous objects, 821.—Numerical mea-
+law, 876.—Color and refraction, 877.—
+surement of the brightness of light, 823.
+Howmuchlightisreflected,andhowmuch
+28.3 The ray model of light. . . . . . 823
+is transmitted?, 877.
+Models of light, 823.—Ray diagrams, 825.
+31.2 Lenses . . . . . . . . . . . . 879
+28.4 Geometry of specular reflection . 826
+31.3 The lensmaker’s equation . . . . 880
+Reversibility of light rays, 828.
+31.4 Dispersion . . . . . . . . . . 881
+28.5 The principle of least time for reflec-
+31.5 The principle of least time for refrac-
+tion. . . . . . . . . . . . . . . . 830
+tion. . . . . . . . . . . . . . . . 882
+Summary . . . . . . . . . . . . . 832
+31.6 Case study: the eye of the jumping
+Problems . . . . . . . . . . . . . 833
+spider. . . . . . . . . . . . . . . 882
+Summary . . . . . . . . . . . . . 885
+29 Images by reflection
+Problems . . . . . . . . . . . . . 886
+29.1 A virtual image . . . . . . . . 836 Exercise 31: How strong are your
+29.2 Curved mirrors. . . . . . . . . 839 glasses? . . . . . . . . . . . . . 892
+13
+
+32 Wave optics pected dependence on frequency, 949.—
+Numericalrelationshipbetweenenergyand
+32.1 Diffraction. . . . . . . . . . . 894
+frequency, 950.
+32.2 Scaling of diffraction . . . . . . 895
+34.3 Wave-particle duality . . . . . . 953
+32.3 The correspondence principle . . 896
+A wrong interpretation: photons interfer-
+32.4 Huygens’ principle . . . . . . . 897
+ingwitheachother,954.—Theconceptofa
+32.5 Double-slit diffraction . . . . . . 898
+photon’spathisundefined.,954.—Another
+32.6 Repetition. . . . . . . . . . . 902 wrong interpretation: the pilot wave hy-
+32.7 Single-slit diffraction . . . . . . 903 pothesis,955.—Theprobabilityinterpreta-
+32.8 The principle of least time . . . . 904 tion, 955.
+Summary . . . . . . . . . . . . . 907 34.4 Photons in three dimensions. . . 958
+Problems . . . . . . . . . . . . . 909 Summary . . . . . . . . . . . . . 959
+Exercise 32A: Double-source interference914 Problems . . . . . . . . . . . . . 960
+Exercise 32B: Single-slit diffraction . . 916
+Exercise 32C: Diffraction of light. . . . 918 35 Matter as a wave
+35.1 Electrons as waves. . . . . . . 964
+The modern revolution in What kind of wave is it?, 967.
+physics 35.2 Dispersive waves . . . . . . . 969
+35.3 Bound states . . . . . . . . . 971
+35.4 The uncertainty principle . . . . 974
+33 Rules of randomness
+The uncertainty principle, 974.—
+33.1 Randomness isn’t random. . . . 923 Measurement and Schr¨odinger’s cat, 976.
+33.2 Calculating randomness. . . . . 924 35.5 Electrons in electric fields . . . . 978
+Statistical independence, 924.—Addition Tunneling, 979.
+of probabilities, 925.—Normalization, 35.6 The Schro¨dinger equation . . . . 979
+926.—Averages, 926. Use of complex numbers, 982.
+33.3 Probability distributions . . . . . 928 Summary . . . . . . . . . . . . . 983
+Average and width of a probability distri- Problems . . . . . . . . . . . . . 985
+bution, 929.
+33.4 Exponential decay and half-life . . 930 36 The atom
+Rate of decay, 933.
+36.1 Classifying states . . . . . . . 990
+33.5 Applications of calculus . . . . . 935
+36.2 Angular momentum in three dimen-
+Summary . . . . . . . . . . . . . 938
+sions . . . . . . . . . . . . . . . 991
+Problems . . . . . . . . . . . . . 940
+Three-dimensional angular momentum in
+classical physics, 991.—Three-dimensional
+angular momentum in quantum physics,
+992.
+36.3 The hydrogen atom. . . . . . . 993
+36.4 Energies of states in hydrogen . . 996
+History, 996.—Approximate treatment,
+996.
+36.5 Electron spin . . . . . . . . . 998
+36.6 Atoms with more than one electron 999
+Deriving the periodic table, 1001.
+Summary . . . . . . . . . . . . . 1004
+34 Light as a particle Problems . . . . . . . . . . . . . 1006
+34.1 Evidence for light as a particle . . 946 Exercise 36: Quantum versus classical
+34.2 How much light is one photon?. . 948 randomness . . . . . . . . . . . . 1009
+The photoelectric e↵ect, 948.—An unex- Photo credits for volume 2 . . . . . . 1019
+14
+
+The Mars Climate Orbiter is pre-
+pared for its mission. The laws
+of physics are the same every-
+where, even on Mars, so the
+probe could be designed based
+on the laws of physics as discov-
+ered on earth. There is unfor-
+tunately another reason why this
+spacecraft is relevant to the top-
+ics of this chapter: it was de-
+stroyed attempting to enter Mars’
+atmosphere because engineers
+at Lockheed Martin forgot to con-
+vert data on engine thrusts from
+pounds into the metric unit of
+force (newtons) before giving the
+information to NASA. Conver-
+sionsareimportant!
+Chapter 0
+Introduction and review
+If you drop your shoe and a coin side by side, they hit the ground at
+the same time. Why doesn’t the shoe get there first, since gravity is
+pulling harder on it? How does the lens of your eye work, and why
+do your eye’s muscles need to squash its lens into di↵erent shapes in
+order to focus on objects nearby or far away? These are the kinds
+of questions that physics tries to answer about the behavior of light
+and matter, the two things that the universe is made of.
+0.1 The scientific method
+Until very recently in history, no progress was made in answering
+questions like these. Worse than that, the wrong answers written
+by thinkers like the ancient Greek physicist Aristotle were accepted
+without question for thousands of years. Why is it that scientific
+knowledge has progressed more since the Renaissance than it had
+in all the preceding millennia since the beginning of recorded his-
+tory? Undoubtedly the industrial revolution is part of the answer.
+Building its centerpiece, the steam engine, required improved tech-
+15

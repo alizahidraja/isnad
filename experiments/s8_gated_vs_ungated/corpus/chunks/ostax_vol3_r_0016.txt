@@ -1,0 +1,254 @@
+# REAL PDF — openstax_vol3.pdf, pages 97-104
+############################################################
+
+Chapter 2 | Geometric Optics and Image Formation 89
+farsighted people, you will find the lenses to be thickest in the center. In addition, prescription eyeglasses for
+farsighted people have a prescribed optical power that is positive.
+2.6 | The Camera
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the optics of a camera
+• Characterize the image created by a camera
+Camerasareverycommoninoureverydaylife.Between1825and1827,FrenchinventorNicéphoreNiépcesuccessfully
+photographedanimagecreatedbyaprimitivecamera.Sincethen,enormousprogresshasbeenachievedinthedesignof
+cameras and camera-based detectors.
+Initially,photographswererecordedbyusingthelight-sensitivereactionofsilver-basedcompoundssuchassilverchloride
+orsilverbromide.Silver-basedphotographicpaperwasincommonuseuntiltheadventofdigitalphotographyinthe1980s,
+which is intimately connected to charge-coupled device (CCD) detectors. In a nutshell, a CCD is a semiconductor chip
+thatrecordsimagesasamatrixoftinypixels,eachpixellocatedina“bin”inthesurface.Eachpixeliscapableofdetecting
+the intensity of light impinging on it. Color is brought into play by putting red-, blue-, and green-colored filters over the
+pixels,resultingincoloreddigitalimages(Figure2.34).Atitsbestresolution,oneCCDpixelcorrespondstoonepixelof
+theimage.Toreducetheresolutionanddecreasethesizeofthefile,wecan“bin”severalCCDpixelsintoone,resultingin
+a smaller but “pixelated” image.
+Figure 2.34 A charge-coupled device (CCD) converts light signals into electronic signals, enabling electronic processing
+and storage of visual images. This is the basis for electronic imaging in all digital cameras, from cell phones to movie
+cameras. (credit left: modification of work by Bruce Turner)
+Clearly,electronicsisabigpartofadigitalcamera;however,theunderlyingphysicsisbasicoptics.Asamatteroffact,the
+opticsofacameraareprettymuchthesameasthoseofasinglelenswithanobjectdistancethatissignificantlylargerthan
+the lens’s focal distance (Figure 2.35).
+
+90 Chapter 2 | Geometric Optics and Image Formation
+Figure 2.35 Modern digital cameras have several lenses to produce a clear image with minimal aberration and
+use red, blue, and green filters to produce a color image.
+Forinstance,letusconsiderthecamerainasmartphone.Anaveragesmartphonecameraisequippedwithastationarywide-
+anglelenswithafocallengthofabout4–5mm.(Thisfocallengthisaboutequaltothethicknessofthephone.)Theimage
+createdbythelensisfocusedontheCCDdetectormountedattheoppositesideofthephone.Inacellphone,thelensand
+theCCDcannotmoverelativetoeachother.Sohowdowemakesurethatboththeimagesofadistantandacloseobject
+are in focus?
+Recallthatahumaneyecanaccommodatefordistantandcloseimagesbychangingitsfocaldistance.Acellphonecamera
+cannotdothatbecausethedistancefromthelenstothedetectorisfixed.Hereiswherethesmallfocaldistancebecomes
+important.Letusassumewehaveacamerawitha5-mmfocaldistance.Whatistheimagedistanceforaselfie?Theobject
+distance for a selfie (the length of the hand holding the phone) is about 50 cm. Using the thin-lens equation, we can write
+1 1 1
+= +
+5mm 500mm d i
+We then obtain the image distance:
+1 1 1
+= −
+d 5mm 500mm
+i
+Note that the object distance is 100 times larger than the focal distance. We can clearly see that the 1/(500 mm) term is
+significantlysmallerthan1/(5mm),whichmeansthattheimagedistanceisprettymuchequaltothelens’sfocallength.An
+actual calculation gives us the image distance d i=5.05mm. This value is extremely close to the lens’s focal distance.
+Nowletusconsiderthecaseofadistantobject.Letussaythatwewouldliketotakeapictureofapersonstandingabout
+5mfromus.Usingthethin-lensequationagain,weobtaintheimagedistanceof5.005mm.Thefarthertheobjectisfrom
+thelens,theclosertheimagedistanceistothefocaldistance.Atthelimitingcaseofaninfinitelydistantobject,weobtain
+the image distance exactly equal to the focal distance of the lens.
+As you can see, the difference between the image distance for a selfie and the image distance for a distant object is just
+about 0.05 mm or 50 microns. Even a short object distance such as the length of your hand is two orders of magnitude
+largerthanthelens’sfocallength,resultinginminutevariationsoftheimagedistance.(The50-microndifferenceissmaller
+thanthethicknessofanaveragesheetofpaper.)Suchasmalldifferencecanbeeasilyaccommodatedbythesamedetector,
+positioned at the focal distance of the lens. Image analysis software can help improve image quality.
+Conventionalpoint-and-shootcamerasoftenuseamovablelenstochangethelens-to-imagedistance.Complexlensesof
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 91
+themoreexpensivemirrorreflexcamerasallowforsuperbqualityphotographicimages.Theopticsofthesecameralenses
+is beyond the scope of this textbook.
+2.7 | The Simple Magnifier
+Learning Objectives
+By the end of this section, you will be able to:
+• Understand the optics of a simple magnifier
+• Characterize the image created by a simple magnifier
+Theapparentsizeofanobjectperceived bytheeyedependsontheangletheobjectsubtendsfromtheeye.Asshownin
+Figure2.36,theobjectatAsubtendsalargeranglefromtheeyethanwhenitispositionatpointB.Thus,theobjectatA
+formsalargerimageontheretina(see OA′)thanwhenitispositionedatB(see OB′).Thus,objectsthatsubtendlarge
+angles from the eye appear larger because they form larger images on the retina.
+Figure 2.36 Size perceived by an eye is determined by the angle subtended by the object. An
+image formed on the retina by an object atAis larger than an image formed on the retina by the
+same object positioned atB(compared image heights OA′ to OB′).
+Wehaveseenthat,whenanobjectisplacedwithinafocallengthofaconvexlens,itsimageisvirtual,upright,andlarger
+thantheobject(seepart(b)ofFigure2.26).Thus,whensuchanimageproducedbyaconvexlensservesastheobjectfor
+theeye,asshowninFigure2.37,theimageontheretinaisenlarged,becausetheimageproducedbythelenssubtendsa
+largerangleintheeyethandoestheobject.Aconvexlensusedforthispurposeiscalledamagnifyingglassorasimple
+magnifier.
+
+92 Chapter 2 | Geometric Optics and Image Formation
+Figure 2.37 The simple magnifier is a convex lens used to produce an enlarged image of an object on the retina. (a) With no
+convex lens, the object subtends an angle θ from the eye. (b) With the convex lens in place, the image produced by the
+object
+convex lens subtends an angle θ from the eye, with θ >θ . Thus, the image on the retina is larger with the
+image image object
+convex lens in place.
+Toaccountforthemagnificationofamagnifyinglens,wecomparetheanglesubtendedbytheimage(createdbythelens)
+with the angle subtended by the object (viewed with no lens), as shown in Figure 2.37. We assume that the object is
+situatedatthenearpointoftheeye,becausethisistheobjectdistanceatwhichtheunaidedeyecanformthelargestimage
+ontheretina.Wewillcomparethemagnifiedimagescreatedbyalenswiththismaximumimagesizefortheunaidedeye.
+ThemagnificationofanimagewhenobservedbytheeyeistheangularmagnificationM,whichisdefinedbytheratioof
+the angle θ subtended by the image to the angle θ subtended by the object:
+image object
+θ (2.26)
+M = image .
+θ
+object
+Consider the situation shown in Figure 2.37. The magnifying lens is held a distance ℓ from the eye, and the image
+producedbythemagnifierformsadistanceLfromtheeye.Wewanttocalculatetheangularmagnificationforanyarbitrary
+Land ℓ.Inthesmall-angleapproximation,theangularsize θ oftheimageis h/L.Theangularsize θ ofthe
+image i object
+object at the near point is θ
+object
+=h o/25cm. The angular magnification is then
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 93
+M = θ image = h i (25cm) . (2.27)
+θ Lh
+object o
+UsingEquation 2.8for linear magnification
+d h
+m=− i = i
+d h
+o o
+and the thin-lens equation
+1 1 1
++ =
+d d f
+o i
+inEquation 2.27, we arrive at the following expression for the angular magnification of a magnifying lens:
+M =
+⎛
+−
+d
+i
+⎞⎛25cm⎞ (2.28)
+⎝ d ⎠⎝ L ⎠
+o
+=−d
+⎛
+1 − 1
+⎞⎛25cm⎞
+i⎝f d ⎠⎝ L ⎠
+i
+=
+⎛
+1−
+d
+i
+⎞⎛25cm⎞
+⎝ f ⎠⎝ L ⎠
+Frompart(b)ofthefigure,weseethattheabsolutevalueoftheimagedistanceis |d|=L−ℓ.Notethat d <0 because
+i i
+the image is virtual, so we can dispense with the absolute value by explicitly inserting the minus sign: −d =L−ℓ.
+i
+Inserting this intoEquation 2.28gives us the final equation for the angular magnification of a magnifying lens:
+M =
+⎛25cm⎞⎛
+1+
+L−ℓ ⎞
+.
+(2.29)
+⎝ L ⎠⎝ f ⎠
+Notethatallthequantitiesinthisequationhavetobeexpressedincentimeters.Often,wewanttheimagetobeatthenear-
+pointdistance(L=25cm)togetmaximummagnification,andweholdthemagnifyinglensclosetotheeye(ℓ=0).In
+this case,Equation 2.29gives
+M =1+ 25cm (2.30)
+f
+whichshowsthatthegreatestmagnificationoccursforthelenswiththeshortestfocallength.Inaddition,whentheimageis
+atthenear-pointdistanceandthelensisheldclosetotheeye (ℓ=0),then L=d =25cm andEquation2.27becomes
+i
+h (2.31)
+M = i =m
+h
+o
+wheremisthelinearmagnification(Equation2.32)derivedforsphericalmirrorsandthinlenses.Anotherusefulsituation
+is when the image is at infinity (L=∞).Equation 2.29then takes the form
+M(L=∞)= 25cm . (2.32)
+f
+The resulting magnification is simply the ratio of the near-point distance to the focal length of the magnifying lens, so
+a lens with a shorter focal length gives a stronger magnification. Although this magnification is smaller by 1 than the
+magnificationobtainedwiththeimageatthenearpoint,itprovidesforthemostcomfortableviewingconditions,because
+the eye is relaxed when viewing a distant object.
+BycomparingEquation2.29withEquation2.32,weseethattherangeofangularmagnificationofagivenconverging
+lens is
+
+94 Chapter 2 | Geometric Optics and Image Formation
+25cm ≤M ≤1+ 25cm . (2.33)
+f f
+Example 2.10
+Magnifying a Diamond
+Ajewelerwishestoinspecta3.0-mm-diameterdiamondwithamagnifier.Thediamondisheldatthejeweler’s
+near point (25 cm), and the jeweler holds the magnifying lens close to his eye.
+(a) What should the focal length of the magnifying lens be to see a 15-mm-diameter image of the diamond?
+(b) What should the focal length of the magnifying lens be to obtain 10× magnification?
+Strategy
+Weneedtodeterminetherequisitemagnificationofthemagnifier.Becausethejewelerholdsthemagnifyinglens
+close to his eye, we can useEquation 2.30to find the focal length of the magnifying lens.
+Solution
+a. The required linear magnification is the ratio of the desired image diameter to the diamond’s actual
+diameter(Equation2.32).Becausethejewelerholdsthemagnifyinglensclosetohiseyeandtheimage
+forms at his near point, the linear magnification is the same as the angular magnification, so
+h
+M =m= i = 15mm =5.0.
+h 3.0mm
+o
+ThefocallengthfofthemagnifyinglensmaybecalculatedbysolvingEquation2.30forf,whichgives
+M =1+ 25cm
+f
+f = 25cm = 25cm =6.3cm
+M−1 5.0−1
+b. Togetanimagemagnifiedbyafactoroften,weagainsolveEquation2.30forf,butthistimeweuse
+M =10. The result is
+f = 25cm = 25cm =2.8cm.
+M−1 10−1
+Significance
+Notethatagreatermagnificationisachievedbyusingalenswithasmallerfocallength.Wethusneedtousea
+lenswithradiiofcurvaturethatarelessthanafewcentimetersandholditveryclosetooureye.Thisisnotvery
+convenient. A compound microscope, explored in the following section, can overcome this drawback.
+2.8 | Microscopes and Telescopes
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the physics behind the operation of microscopes and telescopes
+• Describe the image created by these instruments and calculate their magnifications
+Microscopesandtelescopesaremajorinstrumentsthathavecontributedhugelytoourcurrentunderstandingofthemicro-
+and macroscopic worlds. The invention of these devices led to numerous discoveries in disciplines such as physics,
+astronomy, and biology, to name a few. In this section, we explain the basic physics that make these instruments work.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 95
+Microscopes
+Althoughtheeyeismarvelousinitsabilitytoseeobjectslargeandsmall,itobviouslyislimitedinthesmallestdetailsit
+can detect. The desire to see beyond what is possible with the naked eye led to the use of optical instruments. We have
+seenthatasimpleconvexlenscancreateamagnifiedimage,butitishardtogetlargemagnificationwithsuchalens.A
+magnificationgreaterthan 5× isdifficultwithoutdistortingtheimage.Togethighermagnification,wecancombinethe
+simplemagnifyingglasswithoneormoreadditionallenses.Inthissection,weexaminemicroscopesthatenlargethedetails
+that we cannot see with the naked eye.
+Microscopes were first developed in the early 1600sbyeyeglass makers in The Netherlands and Denmark. The simplest
+compoundmicroscopeisconstructedfromtwoconvexlenses(Figure2.38).Theobjectivelensisaconvexlensofshort
+focallength(i.e.,highpower)withtypicalmagnificationfrom 5× to 100× .Theeyepiece,alsoreferredtoastheocular,
+is a convex lens of longer focal length.
+The purpose of a microscope is to create magnified images of small objects, and both lenses contribute to the final
+magnification.Also,thefinalenlargedimageisproducedsufficientlyfarfromtheobservertobeeasilyviewed,sincethe
+eye cannot focus on objects or images that are too close (i.e., closer than the near point of the eye).
+Figure 2.38 A compound microscope is composed of two lenses: an objective and an eyepiece. The objective forms the first
+image, which is larger than the object. This first image is inside the focal length of the eyepiece and serves as the object for the
+eyepiece. The eyepiece forms final image that is further magnified.
+ToseehowthemicroscopeinFigure2.38formsanimage,consideritstwolensesinsuccession.Theobjectisjustbeyond
+thefocallength f obj oftheobjectivelens,producingareal,invertedimagethatislargerthantheobject.Thisfirstimage
+serves as the object forthe second lens, oreyepiece. The eyepiece is positioned so that the first image is within its focal
+length f eye,sothatitcanfurthermagnifytheimage.Inasense,itactsasamagnifyingglassthatmagnifiestheintermediate
+imageproducedbytheobjective.Theimageproducedbytheeyepieceisamagnifiedvirtualimage.Thefinalimageremains
+inverted but is farther from the observer than the object, making it easy to view.
+Theeyeviewsthevirtualimagecreatedbytheeyepiece,whichservesastheobjectforthelensintheeye.Thevirtualimage
+formed by the eyepiece is well outside the focal length of the eye, so the eye forms a real image on the retina.
+The magnification of the microscope is the product of the linear magnification m obj by the objective and the angular
+magnification M eye by the eyepiece. These are given by

@@ -1,0 +1,242 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 751-757
+############################################################
+
+15.6 • Forced Oscillations 739
+FIGURE 15.30 Forced, damped harmonic motion produced by driving a spring and mass with a disk driven by a variable-speed motor.
+Using Newton’s second law we can analyze the motion of the mass. The resulting equation is similar to
+the force equation for the damped harmonic oscillator, with the addition of the driving force:
+15.27
+When an oscillator is forced with a periodic driving force, the motion may seem chaotic. The motions of the oscillator
+is known as transients. After the transients die out, the oscillator reaches a steady state, where the motion is
+periodic. After some time, the steady state solution to this differential equation is
+15.28
+Once again, it is left as an exercise to prove that this equation is a solution. Taking the first and second time
+derivative of x(t) and substituting them into the force equation shows that is a solution as long
+as the amplitude is equal to
+15.29
+where is the natural frequency of the mass/spring system. Recall that the angular frequency, and
+therefore the frequency, of the motor can be adjusted. Looking at the denominator of the equation for the amplitude,
+when the driving frequency is much smaller, or much larger, than the natural frequency, the square of the difference
+of the two angular frequencies is positive and large, making the denominator large, and the result is a
+small amplitude for the oscillations of the mass. As the frequency of the driving force approaches the natural
+frequency of the system, the denominator becomes small and the amplitude of the oscillations becomes large. The
+maximum amplitude results when the frequency of the driving force equals the natural frequency of the system
+.
+Figure 15.31 shows a graph of the amplitude of a damped harmonic oscillator as a function of the frequency of the
+periodic force driving it. Each of the three curves on the graph represents a different amount of damping. All three
+curves peak at the point where the frequency of the driving force equals the natural frequency of the harmonic
+oscillator. The highest peak, or greatest response, is for the least amount of damping, because less energy is
+removed by the damping force. Note that since the amplitude grows as the damping decreases, taking this to the
+
+740 15 • Oscillations
+limit where there is no damping , the amplitude becomes infinite.
+Note that a small-amplitude driving force can produce a large-amplitude response. This phenomenon is known as
+resonance. A common example of resonance is a parent pushing a small child on a swing. When the child wants to
+go higher, the parent does not move back and then, getting a running start, slam into the child, applying a great force
+in a short interval. Instead, the parent applies small pushes to the child at just the right frequency, and the
+amplitude of the child’s swings increases.
+FIGURE 15.31 Amplitude of a harmonic oscillator as a function of the frequency of the driving force. The curves represent the same
+oscillator with the same natural frequency but with different amounts of damping. Resonance occurs when the driving frequency equals the
+natural frequency, and the greatest response is for the least amount of damping. The narrowest response is also for the least damping.
+It is interesting to note that the widths of the resonance curves shown in Figure 15.31 depend on damping: the less
+the damping, the narrower the resonance. The consequence is that if you want a driven oscillator to resonate at a
+very specific frequency, you need as little damping as possible. For instance, a radio has a circuit that is used to
+choose a particular radio station. In this case, the forced damped oscillator consists of a resistor, capacitor, and
+inductor, which will be discussed later in this course. The circuit is “tuned” to pick a particular radio station. Here it
+is desirable to have the resonance curve be very narrow, to pick out the exact frequency of the radio station chosen.
+The narrowness of the graph, and the ability to pick out a certain frequency, is known as the quality of the system.
+The quality, Q, is defined as the spread of the angular frequency, or equivalently, as inverse of the fractional
+bandwidth, i.e., the natural frequency divided by the spread in the frequency at half the maximum amplitude
+as shown in Figure 15.32. For a small damping, the quality is approximately equal to .
+FIGURE 15.32 The quality of a system is defined as the spread in the frequencies at half the amplitude divided by the natural frequency.
+These features of driven harmonic oscillators apply to a huge variety of systems. For instance, magnetic resonance
+imaging (MRI) is a widely used medical diagnostic tool in which atomic nuclei (mostly hydrogen nuclei or protons)
+are made to resonate by incoming radio waves (on the order of 100 MHz). In all of these cases, the efficiency of
+Access for free at openstax.org
+
+15.6 • Forced Oscillations 741
+energy transfer from the driving force into the oscillator is best at resonance. Figure 15.33 shows the London
+Millennium Footbridge that allows pedestrians to cross the River Thames in London. This bridge was nicknamed
+“Wobbly Bridge” when pedestrians experienced swaying motion while crossing it. The bridge was closed for roughly
+two years to get rid of this motion.
+FIGURE 15.33 Initially when people crossed the London Millennium Footbridge, they experienced a swaying motion. People continuing to
+cross reinforced the oscillation’s amplitude, thereby increasing the problematic swaying. (credit: Adrian Pingstone/Wikimedia Commons)
+CHECK YOUR UNDERSTANDING 15.6
+A famous magic trick involves a performer singing a note toward a crystal glass until the glass shatters. Explain why
+the trick works in terms of resonance and natural frequency.
+
+742 15 • Chapter Review
+Chapter Review
+Key Terms
+amplitude (A) maximum displacement from the or sine function to shift the function left or right,
+equilibrium position of an object oscillating around used to match up the function with the initial
+the equilibrium position conditions of data
+critically damped condition in which the damping of physical pendulum any extended object that swings
+an oscillator causes it to return as quickly as like a pendulum
+possible to its equilibrium position without resonance large amplitude oscillations in a system
+oscillating back and forth about this position produced by a small amplitude driving force, which
+elastic potential energy potential energy stored as a has a frequency equal to the natural frequency
+result of deformation of an elastic object, such as restoring force force acting in opposition to the force
+the stretching of a spring caused by a deformation
+equilibrium position position where the spring is simple harmonic motion (SHM) oscillatory motion in
+neither stretched nor compressed a system where the restoring force is proportional to
+force constant (k) characteristic of a spring which is the displacement, which acts in the direction
+defined as the ratio of the force applied to the spring opposite to the displacement
+to the displacement caused by the force simple harmonic oscillator a device that oscillates in
+frequency (f) number of events per unit of time SHM where the restoring force is proportional to the
+natural angular frequency angular frequency of a displacement and acts in the direction opposite to
+system oscillating in SHM the displacement
+oscillation single fluctuation of a quantity, or simple pendulum point mass, called a pendulum
+repeated and regular fluctuations of a quantity, bob, attached to a near massless string
+between two extreme values around an equilibrium stable equilibrium point point where the net force on
+or average value a system is zero, but a small displacement of the
+overdamped condition in which damping of an mass will cause a restoring force that points toward
+oscillator causes it to return to equilibrium without the equilibrium point
+oscillating; oscillator moves more slowly toward torsional pendulum any suspended object that
+equilibrium than in the critically damped system oscillates by twisting its suspension
+period (T) time taken to complete one oscillation underdamped condition in which damping of an
+periodic motion motion that repeats itself at regular oscillator causes the amplitude of oscillations of a
+time intervals damped harmonic oscillator to decrease over time,
+phase shift angle, in radians, that is used in a cosine eventually approaching zero
+Key Equations
+Relationship between frequency and period
+General position in SHM
+General velocity in SHM
+General acceleration in SHM
+Maximum displacement (amplitude) of SHM
+Maximum velocity of SHM
+Maximum acceleration of SHM
+Angular frequency of a mass-spring system in SHM
+Period of a mass-spring system in SHM
+Frequency of a mass-spring system in SHM
+Energy in a mass-spring system in SHM
+The velocity of the mass in a spring-mass
+system in SHM
+Access for free at openstax.org
+
+15 • Chapter Review 743
+The x-component of the radius of a rotating disk
+The x-component of the velocity of the edge of a rotating disk
+The x-component of the acceleration of the
+edge of a rotating disk
+Force equation for a simple pendulum
+Angular frequency for a simple pendulum
+Period of a simple pendulum
+Angular frequency of a physical pendulum
+Period of a physical pendulum
+Period of a torsional pendulum
+Newton’s second law for harmonic motion
+Solution for underdamped harmonic motion
+Natural angular frequency of a
+mass-spring system
+Angular frequency of underdamped
+harmonic motion
+Newton’s second law for forced,
+damped oscillation
+Solution to Newton’s second law for forced,
+damped oscillations
+Amplitude of system undergoing forced,
+damped oscillations
+Summary
+15.1 Simple Harmonic Motion
+• Periodic motion is a repeating oscillation. The where .
+time for one oscillation is the period T and the • The acceleration is
+number of oscillations per unit time is the
+frequency f. These quantities are related by , where .
+.
+15.2 Energy in Simple Harmonic Motion
+• Simple harmonic motion (SHM) is oscillatory
+motion for a system where the restoring force is • The simplest type of oscillations are related to
+proportional to the displacement and acts in the systems that can be described by Hooke’s law, F
+direction opposite to the displacement. = −kx, where F is the restoring force, x is the
+• Maximum displacement is the amplitude A. The displacement from equilibrium or deformation,
+angular frequency , period T, and frequency f of and k is the force constant of the system.
+a simple harmonic oscillator are given by • Elastic potential energy U stored in the
+, , deformation of a system that can be described by
+Hooke’s law is given by
+where m is the mass of the system and k is the
+• Energy in the simple harmonic oscillator is
+force constant.
+shared between elastic potential energy and
+• Displacement as a function of time in SHM is
+kinetic energy, with the total being constant:
+given by
+.
+• The velocity is given by
+
+744 15 • Chapter Review
+• The magnitude of the velocity as a function of rotation and the center of mass is L.
+position for the simple harmonic oscillator can be
+• The period of a torsional pendulum
+found by using
+can be found if the moment of inertia and torsion
+constant are known.
+15.5 Damped Oscillations
+15.3 Comparing Simple Harmonic Motion and
+Circular Motion • Damped harmonic oscillators have non-
+conservative forces that dissipate their energy.
+• A projection of uniform circular motion
+• Critical damping returns the system to
+undergoes simple harmonic oscillation.
+equilibrium as fast as possible without
+• Consider a circle with a radius A, moving at a
+overshooting.
+constant angular speed . A point on the edge of
+• An underdamped system will oscillate through
+the circle moves at a constant tangential speed
+the equilibrium position.
+of . The projection of the radius onto
+• An overdamped system moves more slowly
+the x-axis is , where is
+toward equilibrium than one that is critically
+the phase shift. The x-component of the
+damped.
+tangential velocity is .
+15.6 Forced Oscillations
+15.4 Pendulums
+• A system’s natural frequency is the frequency at
+• A mass m suspended by a wire of length L and
+which the system oscillates if not affected by
+negligible mass is a simple pendulum and
+driving or damping forces.
+undergoes SHM for amplitudes less than about
+• A periodic force driving a harmonic oscillator at
+. The period of a simple pendulum is
+its natural frequency produces resonance. The
+, where L is the length of the string system is said to resonate.
+• The less damping a system has, the higher the
+and g is the acceleration due to gravity.
+amplitude of the forced oscillations near
+• The period of a physical pendulum
+resonance. The more damping a system has, the
+can be found if the moment of
+broader response it has to varying driving
+inertia is known. The length between the point of frequencies.
+Conceptual Questions
+15.1 Simple Harmonic Motion 6 . Some people modify cars to be much closer to
+the ground than when manufactured. Should
+1 . What conditions must be met to produce SHM?
+they install stiffer springs? Explain your answer.
+2 . (a) If frequency is not constant for some
+15.2 Energy in Simple Harmonic Motion
+oscillation, can the oscillation be SHM? (b) Can
+you think of any examples of harmonic motion 7 . Describe a system in which elastic potential
+where the frequency may depend on the energy is stored.
+amplitude?
+8 . Explain in terms of energy how dissipative forces
+3 . Give an example of a simple harmonic oscillator, such as friction reduce the amplitude of a
+specifically noting how its frequency is harmonic oscillator. Also explain how a driving
+independent of amplitude. mechanism can compensate. (A pendulum clock
+is such a system.)
+4 . Explain why you expect an object made of a stiff
+material to vibrate at a higher frequency than a 9 . The temperature of the atmosphere oscillates
+similar object made of a more pliable material. from a maximum near noontime and a minimum
+near sunrise. Would you consider the
+5 . As you pass a freight truck with a trailer on a
+atmosphere to be in stable or unstable
+highway, you notice that its trailer is bouncing up
+equilibrium?
+and down slowly. Is it more likely that the trailer
+is heavily loaded or nearly empty? Explain your
+answer.
+Access for free at openstax.org

@@ -1,0 +1,469 @@
+# REAL PDF — openstax_vol2.pdf, pages 207-214
+############################################################
+
+Chapter 5 | Electric Charges and Fields 197
+q q
+F x =−F 23 = − 4π 1 ε 0 r 2 2 3
+23
+⎛ −19 ⎞⎛ −19 ⎞
+⎛ 9N·m2⎞
+⎝
+4.806×10 C
+⎠⎝
+8.01×10 C
+⎠
+=− 8.99×10
+⎝ C2 ⎠
+⎛ −7 ⎞
+2
+4.00×10 m
+⎝ ⎠
+=−2.16×10−14 N
+and
+q q
+F y =F 21 = 4π 1 ε 0 r 2 2 1
+21
+⎛ −19 ⎞⎛ −19 ⎞
+⎛ 9N·m2⎞
+⎝
+4.806×10 C
+⎠⎝
+3.204×10 C
+⎠
+= 8.99×10
+⎝ C2 ⎠
+⎛ −7 ⎞
+2
+2.00×10 m
+⎝ ⎠
+=3.46×10−14 N.
+We find that
+F = F x 2+F y 2=4.08×10−14 N
+at an angle of
+ϕ=tan−1 ⎛F y⎞ =tan−1 ⎛ 3.46×10−14 N ⎞ =−58°,
+⎝F x ⎠ ⎝ −2.16×10−14 N ⎠
+that is, 58° above the −x-axis, as shown in the diagram.
+Significance
+Notice that when we substituted the numerical values of the charges, we did not include the negative sign of
+either q or q .Recallthatnegativesignsonvectorquantitiesindicateareversalofdirectionofthevectorin
+2 3
+question.Butforelectricforces,thedirectionoftheforceisdeterminedbythetypes(signs)ofbothinteracting
+charges;wedeterminetheforcedirectionsbyconsideringwhetherthesignsofthetwochargesarethesameor
+areopposite.Ifyoualsoincludenegativesignsfromnegativechargeswhenyousubstitutenumbers,yourunthe
+riskofmathematicallyreversingthedirectionoftheforceyouarecalculating.Thus,thesafestthingtodoisto
+calculatejustthemagnitudeoftheforce,usingtheabsolutevaluesofthecharges,anddeterminethedirections
+physically.
+It’salsoworthnotingthattheonlynewconceptinthisexampleishowtocalculatetheelectricforces;everything
+else(gettingthenetforcefromitscomponents,breakingtheforcesintotheircomponents,findingthedirection
+of the net force) is the same as force problems you have done earlier.
+5.2 Check Your UnderstandingWhat would be different if q were negative?
+1
+5.4 | Electric Field
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the purpose of the electric field concept
+• Describe the properties of the electric field
+• Calculate the field of a collection of source charges of either sign
+
+198 Chapter 5 | Electric Charges and Fields
+As we showed in the preceding section, the net electric force on a test charge is the vector sum of all the electric forces
+acting on it, from all of the various source charges, located at their various positions. But what if we use a different test
+charge,onewithadifferentmagnitude,orsign,orboth?Orsupposewehaveadozendifferenttestchargeswewishtotry
+atthesamelocation?Wewouldhavetocalculatethesumoftheforcesfromscratch.Fortunately,itispossibletodefinea
+quantity,calledtheelectricfield,whichisindependentofthetestcharge.Itonlydependsontheconfigurationofthesource
+charges, and once found, allows us to calculate the force on any test charge.
+Defining a Field
+Suppose we have N source charges q 1 , q 2 , q 3 ,…, q N located at positions → r 1 , → r 2 , → r 3 ,…, → r N , applying N
+electrostatic forces on a test chargeQ. The net force onQis (seeEquation 5.2)
+→ → → → →
+F = F 1 + F 2 + F 3 + ⋯ + F N
+⎛ ⎞
+Qq Qq Qq Qq
+=
+4π
+1
+ε 0⎝
+⎜
+r2
+1^ r
+1
++
+r2
+2^ r
+2
++
+r2
+3^ r
+3
++ ⋯ +
+r2
+N^ rN
+⎠
+⎟
+1 2 3 1
+⎡ ⎛ ⎞⎤
+q q q q
+=Q
+⎣
+⎢
+4π
+1
+ε 0⎝
+⎜
+r2
+1^ r
+1
++
+r2
+2^ r
+2
++
+r2
+3^ r
+3
++ ⋯ +
+r
+N
+2
+^ rN
+⎠
+⎟
+⎦
+⎥.
+1 2 3 1
+We can rewrite this as
+→ → (5.3)
+F =Q E
+where
+⎛ ⎞
+→ E ≡
+4π
+1
+ε 0⎝
+⎜ q
+r2
+1^ r
+1
++ q
+r2
+2^ r
+2
++ q
+r2
+3^ r
+3
++ ⋯ + q
+r
+N
+2
+^ rN
+⎠
+⎟
+1 2 3 1
+or, more compactly,
+N (5.4)
+→ E (P)≡
+4π
+1
+ε 0i
+∑
+=1 r
+q
+i 2
+i^ ri.
+Thisexpressioniscalledtheelectricfieldatposition P=P(x, y, z) oftheNsourcecharges.Here,Pisthelocationofthe
+pointinspacewhereyouarecalculatingthefieldandisrelativetothepositions → r i ofthesourcecharges(Figure5.18).
+Note that we have to impose a coordinate system to solve actual problems.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 199
+Figure 5.18 Each of these eight source charges creates its own
+electric field at every point in space; shown here are the field vectors
+at an arbitrary pointP. Like the electric force, the net electric field
+obeys the superposition principle.
+Noticethatthecalculationoftheelectricfieldmakesnoreferencetothetestcharge.Thus,thephysicallyusefulapproachis
+tocalculatetheelectricfieldandthenuseittocalculatetheforceonsometestchargelater,ifneeded.Differenttestcharges
+experiencedifferentforcesEquation5.3,butitisthesameelectricfieldEquation5.4.Thatbeingsaid,recallthatthere
+isnofundamentaldifferencebetweenatestchargeandasourcecharge;thesearemerelyconvenientlabelsforthesystemof
+interest.Anychargeproducesanelectricfield;however,justasEarth’sorbitisnotaffectedbyEarth’sowngravity,acharge
+isnotsubjecttoaforceduetotheelectricfielditgenerates.Chargesareonlysubjecttoforcesfromtheelectricfieldsof
+other charges.
+In this respect, the electric field → E of a point charge is similar to the gravitational field → g of Earth; once we have
+calculated the gravitational field at some point in space, we can use it any time we want to calculate the resulting force
+on any mass we choose to place at that point. In fact, this is exactly what we do when we say the gravitational field of
+Earth(nearEarth’ssurface)hasavalueof 9.81m/s2, andthenwecalculatetheresultingforce(i.e.,weight)ondifferent
+masses.Also,thegeneralexpressionforcalculating → g atarbitrarydistancesfromthecenterofEarth(i.e.,notjustnear
+Earth’ssurface)isverysimilartotheexpressionfor → E : → g =G M^ r ,whereGisaproportionalityconstant,playing
+r2
+thesamerolefor → g as 1 doesfor → E .Thevalueof → g iscalculatedonceandisthenusedinanendlessnumber
+4πε
+0
+of problems.
+Topushtheanalogyfurther,noticetheunitsoftheelectricfield:From F =QE,theunitsofEarenewtonspercoulomb,
+N/C,thatis,theelectricfieldappliesaforceoneachunitcharge.Nownoticetheunitsofg:From w=mg,theunitsof
+garenewtonsperkilogram,N/kg,thatis,thegravitationalfieldappliesaforceoneachunitmass.Wecouldsaythatthe
+gravitational field of Earth, near Earth’s surface, has a value of 9.81 N/kg.
+The Meaning of “Field”
+Recall from your studies of gravity that the word “field” in this context has a precise meaning. A field, in physics, is a
+physicalquantitywhosevaluedependson(isafunctionof)position,relativetothesourceofthefield.Inthecaseofthe
+→
+electricfield,Equation5.4showsthatthevalueof E (boththemagnitudeandthedirection)dependsonwhereinspace
+the pointPis located, measured from the locations → r i of the source charges q i .
+Inaddition,sincetheelectricfieldisavectorquantity,theelectricfieldisreferredtoasavectorfield.(Thegravitational
+fieldisalsoavectorfield.)Incontrast,afieldthathasonlyamagnitudeateverypointisascalarfield.Thetemperaturein
+
+200 Chapter 5 | Electric Charges and Fields
+aroomisanexampleofascalarfield.Itisafieldbecausethetemperature,ingeneral,isdifferentatdifferentlocationsin
+the room, and it is a scalar field because temperature is a scalar quantity.
+Also,asyoudidwiththegravitationalfieldofanobjectwithmass,youshouldpicturetheelectricfieldofacharge-bearing
+object(thesourcecharge)asacontinuous,immaterialsubstancethatsurroundsthesourcecharge,fillingallofspace—in
+principle,to ±∞ inalldirections.Thefieldexistsateveryphysicalpointinspace.Toputitanotherway,theelectriccharge
+on an object alters the space around the charged object in such a way that all other electrically charged objects in space
+experienceanelectricforceasaresultofbeinginthatfield.Theelectricfield,then,isthemechanismbywhichtheelectric
+propertiesofthesourcechargearetransmittedtoandthroughtherestoftheuniverse.(Again,therangeoftheelectricforce
+is infinite.)
+We will see in subsequent chapters that the speed at which electrical phenomena travel is the same as the speed of light.
+There is a deep connection between the electric field and light.
+Superposition
+Yetanotherexperimentalfactaboutthefieldisthatitobeysthesuperpositionprinciple.Inthiscontext,thatmeansthatwe
+can (in principle) calculate the total electric field of many source charges by calculating the electric field of only q at
+1
+positionP,thencalculatethefieldof q atP,while—andthisisthecrucialidea—ignoringthefieldof,andindeedeven
+2
+theexistenceof, q . Wecanrepeatthisprocess,calculatingthefieldofeachindividualsourcecharge,independentlyof
+1
+theexistenceofanyoftheothercharges.Thetotalelectricfield,then,isthevectorsumofallthesefields.That,inessence,
+is whatEquation 5.4says.
+Inthenextsection,wedescribehowtodeterminetheshapeofanelectricfieldofasourcechargedistributionandhowto
+sketch it.
+The Direction of the Field
+Equation 5.4 enables us to determine the magnitude of the electric field, but we need the direction also. We use the
+conventionthatthedirectionofanyelectricfieldvectoristhesameasthedirectionoftheelectricforcevectorthatthefield
+wouldapplytoapositivetestchargeplacedinthatfield.Suchachargewouldberepelledbypositivesourcecharges(the
+forceonitwouldpointawayfromthepositivesourcecharge)butattractedtonegativecharges(theforcepointstowardthe
+negative source).
+Direction of the Electric Field
+→
+By convention, all electric fields E point away from positive source charges and point toward negative source
+charges.
+AddchargestotheElectricFieldofDreams(https://openstaxcollege.org/l/21elefiedream)andseehow
+they react to the electric field. Turn on a background electric field and adjust the direction and magnitude.
+Example 5.3
+TheE-field of an Atom
+In an ionized helium atom, the most probable distance between the nucleus and the electron is
+r =26.5×10−12 m. What is the electric field due to the nucleus at the location of the electron?
+Strategy
+Notethatalthoughtheelectronismentioned,itisnotusedinanycalculation.Theproblemasksforanelectric
+field,notaforce;hence,thereisonlyonechargeinvolved,andtheproblemspecificallyasksforthefielddueto
+thenucleus.Thus,theelectronisaredherring;onlyitsdistancematters.Also,sincethedistancebetweenthetwo
+protonsinthenucleusismuch,muchsmallerthanthedistanceoftheelectronfromthenucleus,wecantreatthe
+two protons as a single charge +2e(Figure 5.19).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 201
+Figure 5.19 A schematic representation of a helium atom.
+Again, helium physically looks nothing like this, but this sort of
+diagram is helpful for calculating the electric field of the
+nucleus.
+Solution
+The electric field is calculated by
+N
+→ E =
+4π
+1
+ε 0i
+∑
+=1 r
+q
+i 2
+i^ ri.
+Since there is only one source charge (the nucleus), this expression simplifies to
+→ E = 1 q ^ r.
+4πε
+0
+r2
+Here q=2e=2 ⎛ 1.6×10 −19 C ⎞ (since there are two protons) andris given; substituting gives
+⎝ ⎠
+⎛ −19 ⎞
+→
+E =
+1 2 ⎝ 1.6×10 C ⎠ ^
+r
+=4.1×1012N^
+r.
+4π ⎛ ⎝ 8.85×10−12 C 2 2 ⎞ ⎠ ⎛ ⎝ 26.5×10−12 m ⎞ ⎠ 2 C
+N·m
+→
+The direction of E is radially away from the nucleus in all directions. Why? Because a positive test charge
+placedinthisfieldwouldaccelerateradiallyawayfromthenucleus(sinceitisalsopositivelycharged),andagain,
+theconventionisthatthedirectionoftheelectricfieldvectorisdefinedintermsofthedirectionoftheforceit
+would apply to positive test charges.
+Example 5.4
+TheE-Field above Two Equal Charges
+(a)Findtheelectricfield(magnitudeanddirection)adistancezabovethemidpointbetweentwoequalcharges
++q thatareadistancedapart(Figure5.20).Checkthatyourresultisconsistentwithwhatyou’dexpectwhen
+z≫d.
+(b) The same as part (a), only this time make the right-hand charge −q instead of +q.
+
+202 Chapter 5 | Electric Charges and Fields
+Figure 5.20 Finding the field of two identical source charges
+at the pointP. Due to the symmetry, the net field atPis entirely
+vertical. (Notice that this isnottrue away from the midline
+between the charges.)
+Strategy
+We add the two fields as vectors, per Equation 5.4. Notice that the system (and therefore the field) is
+symmetrical about the vertical axis; as a result, the horizontal components of the field vectors cancel. This
+simplifiesthemath.Also,wetakecaretoexpressourfinalanswerintermsofonlyquantitiesthataregiveninthe
+original statement of the problem:q,z,d, and constants (π, ε ).
+0
+Solution
+→
+a. By symmetry, the horizontal (x)-components of E cancel (Figure 5.21);
+q q
+E x=
+4π
+1
+ε
+0
+r2
+sinθ−
+4π
+1
+ε
+0
+r2
+sinθ=0.
+Figure 5.21 Note that the horizontal components of the
+electric fields from the two charges cancel each other out, while
+the vertical components add together.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 203
+The vertical (z)-component is given by
+E z=
+4π
+1
+ε 0 r
+q
+2
+cosθ+
+4π
+1
+ε 0 r
+q
+2
+cosθ=
+4π
+1
+ε 0
+2
+r
+q
+2
+cosθ.
+^
+Since none of the other components survive, this is the entire electric field, and it points in the k
+direction.Noticethatthiscalculationusestheprincipleofsuperposition;wecalculatethefieldsofthe
+two charges independently and then add them together.
+What we want to donowis replace the quantities in this expression that we don’t know(such as r),or
+can’t easily measure (such as cosθ) with quantities that we do know, or can measure. In this case, by
+geometry,
+2
+r2=z2+ ⎛d⎞
+⎝2⎠
+and
+z z
+cosθ= r = .
+1/2
+⎡ 2⎤
+z2+ ⎛d⎞
+⎣ ⎝2⎠ ⎦
+Thus, substituting,
+→ E (z)= 1 2q z ^ k.
+4πε ⎡ 2⎤ 1/2
+0
+⎣
+z2+ ⎛
+⎝
+d
+2
+⎞
+⎠ ⎦
+⎡
+⎣ z2+ ⎛ ⎝ d 2 ⎞ ⎠
+2⎤
+⎦
+Simplifying, the desired answer is
+→
+E (z)= 1
+2qz ^
+k.
+(5.5)
+4πε 3/2
+0 ⎡ 2⎤
+z2+ ⎛d⎞
+⎣ ⎝2⎠ ⎦
+b. If the source charges are equal and opposite, the vertical components cancel because
+q q
+E z=
+4π
+1
+ε
+0
+r2
+cosθ−
+4π
+1
+ε
+0
+r2
+cosθ=0
+→
+and we get, for the horizontal component of E ,
+→
+E (z) = 1
+q
+sinθ
+^
+i − 1
+−q
+sinθ
+^
+i
+4πε
+0
+r2 4πε
+0
+r2
+= 1
+2q
+sinθ
+^
+i
+4πε
+0
+r2
+⎛d⎞
+=
+1 2q ⎝2⎠ ^
+i.
+4πε ⎡ 2⎤ 1/2
+0
+⎣
+z2+ ⎛
+⎝
+d
+2
+⎞
+⎠ ⎦
+⎡
+⎣ z2+ ⎛ ⎝ d 2 ⎞ ⎠
+2⎤
+⎦
+This becomes
+→ qd ^ (5.6)
+E (z)= 1 i.
+4πε 3/2
+0 ⎡ 2⎤
+z2+ ⎛d⎞
+⎣ ⎝2⎠ ⎦

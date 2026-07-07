@@ -1,0 +1,346 @@
+# REAL PDF — openstax_vol2.pdf, pages 456-463
+############################################################
+
+446 Chapter 10 | Direct-Current Circuits
+Significance
+Total power dissipated by the resistors is also 18.00 W:
+P +P +P =9.00W+4.50W+4.50W=18.00W.
+1 2 3
+Notice that the total power dissipated by the resistors equals the power supplied by the source.
+10.3 CheckYourUnderstandingConsiderthesamepotentialdifference (V =3.00V) appliedtothesame
+three resistors connected in series. Would the equivalent resistance of the series circuit be higher, lower, or
+equaltothethreeresistorinparallel?Wouldthecurrentthroughtheseriescircuitbehigher,lower,orequalto
+thecurrentprovidedbythesamevoltageappliedtotheparallelcircuit?Howwouldthepowerdissipatedbythe
+resistor in series compare to the power dissipated by the resistors in parallel?
+10.4 Check Your Understanding How would you use a river and two waterfalls to model a parallel
+configuration of two resistors? How does this analogy break down?
+Let us summarize the major features of resistors in parallel:
+1. Equivalent resistance is found from
+−1 ⎛ N ⎞ −1
+⎛ ⎞
+R eq=
+⎝R
+1 +
+R
+1 +
+R
+1 +⋯+
+R
+1 +
+R
+1
+⎠
+=⎜∑
+R
+1⎟ ,
+1 2 3 N−1 N ⎝i=1 i⎠
+and is smaller than any individual resistance in the combination.
+2. The potential drop across each resistor in parallel is the same.
+3. Parallel resistors do not each get the total current; they divide it. The current entering a parallel combination of
+resistors is equal to the sum of the current through each resistor in parallel.
+Inthischapter,weintroducedtheequivalentresistanceofresistorsconnectinseriesandresistorsconnectedinparallel.You
+mayrecallthatinCapacitance,weintroducedtheequivalentcapacitanceofcapacitorsconnectedinseriesandparallel.
+Circuitsoftencontainbothcapacitorsandresistors.Table10.1summarizestheequationsusedfortheequivalentresistance
+and equivalent capacitance for series and parallel connections.
+Series combination Parallel combination
+Equivalent capacitance 1
+=
+1
++
+1
++
+1
++⋯
+C eq=C
+1
++C
+2
++C
+3
++⋯
+C C C C
+eq 1 2 3
+Equivalent resistance N 1 1 1 1
+= + + +⋯
+R eq=R 1 +R 2 +R 3 +⋯= ∑ R i R eq R 1 R 2 R 3
+i=1
+Table 10.1Summary for Equivalent Resistance and Capacitance in Series and Parallel
+Combinations
+Combinations of Series and Parallel
+Morecomplexconnectionsofresistorsareoftenjustcombinationsofseriesandparallelconnections.Suchcombinations
+arecommon,especiallywhenwireresistanceisconsidered.Inthatcase,wireresistanceisinserieswithotherresistances
+that are in parallel.
+CombinationsofseriesandparallelcanbereducedtoasingleequivalentresistanceusingthetechniqueillustratedinFigure
+10.15.Variouspartscanbeidentifiedaseitherseriesorparallelconnections,reducedtotheirequivalentresistances,and
+thenfurtherreduceduntilasingleequivalentresistanceisleft.Theprocessismoretimeconsumingthandifficult.Here,we
+note the equivalent resistance as R eq.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 447
+Figure 10.15 (a) The original circuit of four resistors. (b) Step 1: The resistors R and R are in series and the equivalent
+3 4
+resistance is R =10Ω. (c) Step 2: The reduced circuit shows resistors R and R are in parallel, with an equivalent
+34 2 34
+resistance of R =5Ω. (d) Step 3: The reduced circuit shows that R and R are in series with an equivalent
+234 1 234
+resistance of R
+1234
+=12Ω, which is the equivalent resistance R eq. (e) The reduced circuit with a voltage source of
+V =24V with an equivalent resistance of R eq=12Ω. This results in a current of I =2A from the voltage source.
+Noticethatresistors R and R areinseries.Theycanbecombinedintoasingleequivalentresistance.Onemethodof
+3 4
+keeping track of the process is to include the resistors as subscripts. Here the equivalent resistance of R and R is
+3 4
+R =R +R =6Ω+4Ω=10Ω.
+34 3 4
+Thecircuitnowreducestothreeresistors,showninFigure10.15(c).Redrawing,wenowseethatresistors R and R
+2 34
+constitute a parallel circuit. Those two resistors can be reduced to an equivalent resistance:
+R = ⎛ 1 + 1 ⎞ −1 = ⎛ 1 + 1 ⎞ −1 =5Ω.
+234 ⎝R R ⎠ ⎝10Ω 10Ω⎠
+2 34
+This step of the process reduces the circuit to two resistors, shown in in Figure 10.15(d). Here, the circuit reduces to
+tworesistors,whichinthiscaseareinseries.Thesetworesistorscanbereducedtoanequivalentresistance,whichisthe
+equivalent resistance of the circuit:
+
+448 Chapter 10 | Direct-Current Circuits
+R eq=R
+1234
+=R
+1
++R
+234
+=7Ω+5Ω=12Ω.
+Themaingoalofthiscircuitanalysisisreached,andthecircuitisnowreducedtoasingleresistorandsinglevoltagesource.
+Nowwecananalyzethecircuit.Thecurrentprovidedbythevoltagesourceis I = V = 24V =2A. Thiscurrentruns
+R eq 12Ω
+through resistor R and is designated as I . The potential drop across R can be found using Ohm’s law:
+1 1 1
+V =I R =(2A)(7Ω)=14V.
+1 1 1
+LookingatFigure 10.15(c),thisleaves 24V−14V=10V tobedroppedacrosstheparallelcombinationof R and
+2
+R . The current through R can be found using Ohm’s law:
+34 2
+V
+I = 2 = 10V =1A.
+2 R 10Ω
+2
+The resistors R and R are in series so the currents I and I are equal to
+3 4 3 4
+I =I =I−I =2A−1A=1A.
+3 4 2
+UsingOhm’slaw,wecanfindthepotentialdropacrossthelasttworesistors.Thepotentialdropsare V =I R =6V
+3 3 3
+and V =I R =4V. Thefinalanalysisistolookatthepowersuppliedbythevoltagesourceandthepowerdissipated
+4 4 4
+by the resistors. The power dissipated by the resistors is
+P = I2R =(2A)2(7Ω)=28W,
+1 1 1
+P = I2R =(1A)2(10Ω)=10W,
+2 2 2
+P = I2R =(1A)2(6Ω)=6W,
+3 3 3
+P = I2R =(1A)2(4Ω)=4W,
+4 4 4
+P = P +P +P +P =48W.
+dissipated 1 2 3 4
+The total energy is constant in any process. Therefore, the power supplied by the voltage source is
+P s=IV =(2A)(24V)=48W. Analyzingthepowersuppliedtothecircuitandthepowerdissipatedbytheresistorsis
+a good check for the validity of the analysis; they should be equal.
+Example 10.4
+Combining Series and Parallel Circuits
+Figure 10.16 shows resistors wired in a combination of series and parallel. We can consider R to be the
+1
+resistance of wires leading to R and R . (a) Find the equivalent resistance of the circuit. (b) What is the
+2 3
+potentialdrop V acrossresistor R ?(c)Findthecurrent I throughresistor R .(d)Whatpowerisdissipated
+1 1 2 2
+by R ?
+2
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 449
+Figure 10.16 These three resistors are connected to a voltage
+source so that R and R are in parallel with one another and
+2 3
+that combination is in series with R .
+1
+Strategy
+(a)Tofindtheequivalentresistance,firstfindtheequivalentresistanceoftheparallelconnectionof R and R .
+2 3
+Then use this result to find the equivalent resistance of the series connection with R .
+1
+(b) The current through R can be found using Ohm’s law and the voltage applied. The current through R
+1 1
+is equal to the current from the battery. The potential drop V across the resistor R (which represents the
+1 1
+resistance in the connecting wires) can be found using Ohm’s law.
+V
+(c)Thecurrentthrough R canbefoundusingOhm’slaw I = 2. Thevoltageacross R canbefoundusing
+2 2 R 2
+2
+V =V−V .
+2 1
+(d) Using Ohm’s law ⎛V =I R ⎞, the power dissipated by the resistor can also be found using
+⎝ 2 2 2⎠
+V2
+P =I2R = 2 .
+2 2 2 R
+2
+Solution
+a. To find the equivalent resistance of the circuit, notice that the parallel connection of R and R is in
+2 3
+series with R , so the equivalent resistance is
+1
+R eq=R
+1
++ ⎛
+⎝R
+1 +
+R
+1 ⎞
+⎠
+−1 =1.00Ω+ ⎛
+⎝6.0
+1
+0Ω
++
+13.0
+1
+0Ω
+⎞
+⎠
+−1 =5.10Ω.
+2 3
+Thetotalresistanceofthiscombinationisintermediatebetweenthepureseriesandpureparallelvalues(
+20.0Ω and 0.804Ω, respectively).
+b. The current through R is equal to the current supplied by the battery:
+1
+I =I = V = 12.0V =2.35A.
+1 R eq 5.10Ω
+The voltage across R is
+1
+V =I R =(2.35A)(1Ω)=2.35V.
+1 1 1
+
+450 Chapter 10 | Direct-Current Circuits
+The voltage applied to R and R is less than the voltage supplied by the battery by an amount V .
+2 3 1
+Whenwireresistanceislarge,itcansignificantlyaffecttheoperationofthedevicesrepresentedby R
+2
+and R .
+3
+c. Tofindthecurrentthrough R ,wemustfirstfindthevoltageappliedtoit.Thevoltageacrossthetwo
+2
+resistors in parallel is the same:
+V =V =V−V =12.0V−2.35V=9.65V.
+2 3 1
+Now we can find the current I through resistance R using Ohm’s law:
+2 2
+V
+I = 2 = 9.65V =1.61A.
+2 R 6.00Ω
+2
+Thecurrentislessthanthe2.00Athatflowedthrough R whenitwasconnectedinparalleltothebattery
+2
+in the previous parallel circuit example.
+d. The power dissipated by R is given by
+2
+P =I2R =(1.61A)2(6.00Ω)=15.5W.
+2 2 2
+Significance
+The analysis of complex circuits can often be simplified by reducing the circuit to a voltage source and an
+equivalent resistance. Even if the entire circuit cannot be reduced to a single voltage source and a single
+equivalent resistance, portions of the circuit may be reduced, greatly simplifying the analysis.
+10.5 CheckYourUnderstandingConsidertheelectricalcircuitsinyourhome.Giveatleasttwoexamples
+of circuits that must use a combination of series and parallel circuits to operate efficiently.
+Practical Implications
+Oneimplicationofthislastexampleisthatresistanceinwiresreducesthecurrentandpowerdeliveredtoaresistor.Ifwire
+resistanceisrelativelylarge,asinaworn(oraverylong)extensioncord,thenthislosscanbesignificant.Ifalargecurrent
+is drawn, theIRdrop in the wires can also be significant and may become apparent from the heat generated in the cord.
+Forexample,whenyouarerummagingintherefrigeratorandthemotorcomeson,therefrigeratorlightdimsmomentarily.
+Similarly,youcanseethepassengercompartmentlightdimwhenyoustarttheengineofyourcar(althoughthismaybedue
+to resistance inside the battery itself).
+Whatishappeninginthesehigh-currentsituationsisillustratedinFigure10.17.Thedevicerepresentedby R hasavery
+3
+lowresistance,sowhenitisswitchedon,alargecurrentflows.ThisincreasedcurrentcausesalargerIRdropinthewires
+represented by R , reducing the voltage across the light bulb (which is R ), which then dims noticeably.
+1 2
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 451
+Figure 10.17 Why do lights dim when a large appliance is
+switched on? The answer is that the large current the appliance
+motor draws causes a significantIRdrop in the wires and
+reduces the voltage across the light.
+Problem-Solving Strategy: Series and Parallel Resistors
+1. Drawaclearcircuitdiagram,labelingallresistorsandvoltagesources.Thisstepincludesalistoftheknown
+values for the problem, since they are labeled in your circuit diagram.
+2. Identify exactly what needs to be determined in the problem (identify the unknowns). A written list is useful.
+3. Determinewhetherresistorsareinseries,parallel,oracombinationofbothseriesandparallel.Examinethe
+circuit diagram to make this assessment. Resistors are in series if the same current must pass sequentially
+through them.
+4. Usetheappropriatelistofmajorfeaturesforseriesorparallelconnectionstosolvefortheunknowns.Thereis
+one list for series and another for parallel.
+5. Check to see whether the answers are reasonable and consistent.
+Example 10.5
+Combining Series and Parallel Circuits
+Tworesistorsconnectedinseries ⎛R , R ⎞ areconnectedtotworesistorsthatareconnectedinparallel ⎛R , R ⎞.
+⎝ 1 2⎠ ⎝ 3 4⎠
+Theseries-parallelcombinationisconnectedtoabattery.Eachresistorhasaresistanceof10.00Ohms.Thewires
+connectingtheresistorsandbatteryhavenegligibleresistance.Acurrentof2.00Ampsrunsthroughresistor R .
+1
+What is the voltage supplied by the voltage source?
+Strategy
+Use the steps in the preceding problem-solving strategy to find the solution for this example.
+
+452 Chapter 10 | Direct-Current Circuits
+Solution
+1. Draw a clear circuit diagram (Figure 10.18).
+Figure 10.18 To find the unknown voltage, we must first find the
+equivalent resistance of the circuit.
+2. The unknown is the voltage of the battery. In order to find the voltage supplied by the battery, the
+equivalent resistance must be found.
+3. Inthiscircuit,wealreadyknowthattheresistors R and R areinseriesandtheresistors R and R
+1 2 3 4
+areinparallel.Theequivalentresistanceoftheparallelconfigurationoftheresistors R and R isin
+3 4
+series with the series configuration of resistors R and R .
+1 2
+4. The voltage supplied by the battery can be found by multiplying the current from the battery and
+the equivalent resistance of the circuit. The current from the battery is equal to the current through
+R and is equal to 2.00 A. We need to find the equivalent resistance by reducing the circuit. To
+1
+reduce the circuit, first consider the two resistors in parallel. The equivalent resistance is
+−1
+R = ⎛ 1 + 1 ⎞ =5.00Ω. This parallel combination is in series with the other two
+34 ⎝10.00Ω 10.00Ω⎠
+resistors, so the equivalent resistance of the circuit is R eq=R
+1
++R
+2
++R
+34
+=25.00Ω. The voltage
+supplied by the battery is therefore V =IR eq=2.00A(25.00Ω)=50.00V.
+5. Onewaytochecktheconsistencyofyourresultsistocalculatethepowersuppliedbythebatteryandthe
+power dissipated by the resistors. The power supplied by the battery is P =IV =100.00W.
+batt
+Since they are in series, the current through R equals the current through R . Since R =R , the
+2 1 3 4
+currentthrougheachwillbe1.00Amps.Thepowerdissipatedbytheresistorsisequaltothesumofthe
+power dissipated by each resistor:
+P=I2R +I2R +I2R +I2R =40.00W+40.00W+10.00W+10.00W=100.00W.
+1 1 2 2 3 3 4 4
+Sincethepowerdissipatedbytheresistorsequalsthepowersuppliedbythebattery,oursolutionseems
+consistent.
+Significance
+Ifaproblemhasacombinationofseriesandparallel,asinthisexample,itcanbereducedinstepsbyusingthe
+precedingproblem-solvingstrategyandbyconsideringindividualgroupsofseriesorparallelconnections.When
+finding R for a parallel connection, the reciprocal must be taken with care. In addition, units and numerical
+eq
+resultsmustbereasonable.Equivalentseriesresistanceshouldbegreater,whereasequivalentparallelresistance
+shouldbesmaller,forexample.Powershouldbegreaterforthesamedevicesinparallelcomparedwithseries,
+and so on.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

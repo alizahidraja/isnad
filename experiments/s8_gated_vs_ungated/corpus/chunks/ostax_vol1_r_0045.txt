@@ -1,0 +1,197 @@
+# REAL PDF — openstax_vol1.pdf, pages 267-274
+############################################################
+
+6.1 • Solving Problems with Newton’s Laws 255
+This can be solved for the magnitude of the drag force of the water in terms of known quantities:
+Substituting known values gives
+The direction of has already been determined to be in the direction opposite to or at an angle of south
+of west.
+Significance
+The numbers used in this example are reasonable for a moderately large barge. It is certainly difficult to obtain
+larger accelerations with tugboats, and small speeds are desirable to avoid running the barge into the docks. Drag is
+relatively small for a well-designed hull at low speeds, consistent with the answer to this example, where is less
+than 1/600th of the weight of the ship.
+In Newton’s Laws of Motion, we discussed the normal force, which is a contact force that acts normal to the surface
+so that an object does not have an acceleration perpendicular to the surface. The bathroom scale is an excellent
+example of a normal force acting on a body. It provides a quantitative reading of how much it must push upward to
+support the weight of an object. But can you predict what you would see on the dial of a bathroom scale if you stood
+on it during an elevator ride? Will you see a value greater than your weight when the elevator starts up? What about
+when the elevator moves upward at a constant speed? Take a guess before reading the next example.
+EXAMPLE 6.3
+What Does the Bathroom Scale Read in an Elevator?
+Figure 6.5 shows a 75.0-kg man (weight of about 165 lb.) standing on a bathroom scale in an elevator. Calculate the
+scale reading: (a) if the elevator accelerates upward at a rate of and (b) if the elevator moves upward at a
+constant speed of 1 m/s.
+
+256 6 • Applications of Newton's Laws
+FIGURE 6.5 (a) The various forces acting when a person stands on a bathroom scale in an elevator. The arrows are approximately correct
+for when the elevator is accelerating upward—broken arrows represent forces too large to be drawn to scale. is the tension in the
+supporting cable, is the weight of the person, is the weight of the scale, is the weight of the elevator, is the force of the scale on
+the person, is the force of the person on the scale, is the force of the scale on the floor of the elevator, and is the force of the floor
+upward on the scale. (b) The free-body diagram shows only the external forces acting on the designated system of interest—the
+person—and is the diagram we use for the solution of the problem.
+Strategy
+If the scale at rest is accurate, its reading equals , the magnitude of the force the person exerts downward on it.
+Figure 6.5(a) shows the numerous forces acting on the elevator, scale, and person. It makes this one-dimensional
+problem look much more formidable than if the person is chosen to be the system of interest and a free-body
+diagram is drawn, as in Figure 6.5(b). Analysis of the free-body diagram using Newton’s laws can produce answers
+to both Figure 6.5(a) and (b) of this example, as well as some other questions that might arise. The only forces
+acting on the person are his weight and the upward force of the scale According to Newton’s third law, and
+are equal in magnitude and opposite in direction, so that we need to find in order to find what the scale reads.
+We can do this, as usual, by applying Newton’s second law,
+From the free-body diagram, we see that so we have
+Solving for gives us an equation with only one unknown:
+or, because simply
+Access for free at openstax.org
+
+6.1 • Solving Problems with Newton’s Laws 257
+No assumptions were made about the acceleration, so this solution should be valid for a variety of accelerations in
+addition to those in this situation. (Note: We are considering the case when the elevator is accelerating upward. If
+the elevator is accelerating downward, Newton’s second law becomes )
+Solution
+a. We have so that
+yielding
+b. Now, what happens when the elevator reaches a constant upward velocity? Will the scale still read more than
+his weight? For any constant velocity—up, down, or stationary—acceleration is zero because and
+Thus,
+or
+which gives
+Significance
+The scale reading in Figure 6.5(a) is about 185 lb. What would the scale have read if he were stationary? Since his
+acceleration would be zero, the force of the scale would be equal to his weight:
+Thus, the scale reading in the elevator is greater than his 735-N (165-lb.) weight. This means that the scale is
+pushing up on the person with a force greater than his weight, as it must in order to accelerate him upward. Clearly,
+the greater the acceleration of the elevator, the greater the scale reading, consistent with what you feel in rapidly
+accelerating versus slowly accelerating elevators. In Figure 6.5(b), the scale reading is 735 N, which equals the
+person’s weight. This is the case whenever the elevator has a constant velocity—moving up, moving down, or
+stationary.
+CHECK YOUR UNDERSTANDING 6.1
+Now calculate the scale reading when the elevator accelerates downward at a rate of
+The solution to the previous example also applies to an elevator accelerating downward, as mentioned. When an
+elevator accelerates downward, a is negative, and the scale reading is less than the weight of the person. If a
+constant downward velocity is reached, the scale reading again becomes equal to the person’s weight. If the
+elevator is in free fall and accelerating downward at g, then the scale reading is zero and the person appears to be
+weightless.
+EXAMPLE 6.4
+Two Attached Blocks
+Figure 6.6 shows a block of mass on a frictionless, horizontal surface. It is pulled by a light string that passes
+over a frictionless and massless pulley. The other end of the string is connected to a block of mass Find the
+acceleration of the blocks and the tension in the string in terms of
+
+258 6 • Applications of Newton's Laws
+FIGURE 6.6 (a) Block 1 is connected by a light string to block 2. (b) The free-body diagrams of the blocks.
+Strategy
+We draw a free-body diagram for each mass separately, as shown in Figure 6.6. Then we analyze each one to find
+the required unknowns. The forces on block 1 are the gravitational force, the contact force of the surface, and the
+tension in the string. Block 2 is subjected to the gravitational force and the string tension. Newton’s second law
+applies to each, so we write two vector equations:
+For block 1:
+For block 2:
+Notice that is the same for both blocks. Since the string and the pulley have negligible mass, and since there is no
+friction in the pulley, the tension is the same throughout the string. We can now write component equations for each
+block. All forces are either horizontal or vertical, so we can use the same horizontal/vertical coordinate system for
+both objects
+Solution
+The component equations follow from the vector equations above. We see that block 1 has the vertical forces
+balanced, so we ignore them and write an equation relating the x-components. There are no horizontal forces on
+block 2, so only the y-equation is written. We obtain these results:
+When block 1 moves to the right, block 2 travels an equal distance downward; thus, Writing the
+common acceleration of the blocks as we now have
+and
+From these two equations, we can express a and T in terms of the masses
+Access for free at openstax.org
+
+6.1 • Solving Problems with Newton’s Laws 259
+and
+Significance
+Notice that the tension in the string is less than the weight of the block hanging from the end of it. A common error in
+problems like this is to set You can see from the free-body diagram of block 2 that cannot be correct if the
+block is accelerating.
+CHECK YOUR UNDERSTANDING 6.2
+Calculate the acceleration of the system, and the tension in the string, when the masses are and
+EXAMPLE 6.5
+Atwood Machine
+A classic problem in physics, similar to the one we just solved, is that of the Atwood machine, which consists of a
+rope running over a pulley, with two objects of different mass attached. It is particularly useful in understanding the
+connection between force and motion. In Figure 6.7, and Consider the pulley to be
+frictionless. (a) If is released, what will its acceleration be? (b) What is the tension in the string?
+FIGURE 6.7 An Atwood machine and free-body diagrams for each of the two blocks.
+Strategy
+We draw a free-body diagram for each mass separately, as shown in the figure. Then we analyze each diagram to
+find the required unknowns. This may involve the solution of simultaneous equations. It is also important to note the
+similarity with the previous example. As block 2 accelerates with acceleration in the downward direction, block 1
+accelerates upward with acceleration . Thus,
+Solution
+a. We have
+
+260 6 • Applications of Newton's Laws
+(The negative sign in front of indicates that accelerates downward; both blocks accelerate at the
+same rate, but in opposite directions.) Solve the two equations simultaneously (subtract them) and the result
+is
+Solving for a:
+b. Observing the first block, we see that
+Significance
+The result for the acceleration given in the solution can be interpreted as the ratio of the unbalanced force on the
+system, , to the total mass of the system, . We can also use the Atwood machine to measure
+local gravitational field strength.
+CHECK YOUR UNDERSTANDING 6.3
+Determine a general formula in terms of and g for calculating the tension in the string for the Atwood
+machine shown above.
+Newton’s Laws of Motion and Kinematics
+Physics is most interesting and most powerful when applied to general situations that involve more than a narrow
+set of physical principles. Newton’s laws of motion can also be integrated with other concepts that have been
+discussed previously in this text to solve problems of motion. For example, forces produce accelerations, a topic of
+kinematics, and hence the relevance of earlier chapters.
+When approaching problems that involve various types of forces, acceleration, velocity, and/or position, listing the
+givens and the quantities to be calculated will allow you to identify the principles involved. Then, you can refer to the
+chapters that deal with a particular topic and solve the problem using strategies outlined in the text. The following
+worked example illustrates how the problem-solving strategy given earlier in this chapter, as well as strategies
+presented in other chapters, is applied to an integrated concept problem.
+EXAMPLE 6.6
+What Force Must a Soccer Player Exert to Reach Top Speed?
+A soccer player starts at rest and accelerates forward, reaching a velocity of 8.00 m/s in 2.50 s. (a) What is her
+average acceleration? (b) What average force does the ground exert forward on the runner so that she achieves this
+acceleration? The player’s mass is 70.0 kg, and air resistance is negligible.
+Strategy
+To find the answers to this problem, we use the problem-solving strategy given earlier in this chapter. The solutions
+to each part of the example illustrate how to apply specific problem-solving steps. In this case, we do not need to
+use all of the steps. We simply identify the physical principles, and thus the knowns and unknowns; apply Newton’s
+second law; and check to see whether the answer is reasonable.
+Solution
+a. We are given the initial and final velocities (zero and 8.00 m/s forward); thus, the change in velocity is
+. We are given the elapsed time, so The unknown is acceleration, which can be
+found from its definition:
+Access for free at openstax.org
+
+6.1 • Solving Problems with Newton’s Laws 261
+Substituting the known values yields
+b. Here we are asked to find the average force the ground exerts on the runner to produce this acceleration.
+(Remember that we are dealing with the force or forces acting on the object of interest.) This is the reaction
+force to that exerted by the player backward against the ground, by Newton’s third law. Neglecting air
+resistance, this would be equal in magnitude to the net external force on the player, since this force causes her
+acceleration. Since we now know the player’s acceleration and are given her mass, we can use Newton’s
+second law to find the force exerted. That is,
+Substituting the known values of m and a gives
+This is a reasonable result: The acceleration is attainable for an athlete in good condition. The force is about 50
+pounds, a reasonable average force.
+Significance
+This example illustrates how to apply problem-solving strategies to situations that include topics from different
+chapters. The first step is to identify the physical principles, the knowns, and the unknowns involved in the problem.
+The second step is to solve for the unknown, in this case using Newton’s second law. Finally, we check our answer to
+ensure it is reasonable. These techniques for integrated concept problems will be useful in applications of physics
+outside of a physics course, such as in your profession, in other science disciplines, and in everyday life.
+CHECK YOUR UNDERSTANDING 6.4
+The soccer player stops after completing the play described above, but now notices that the ball is in position to be
+stolen. If she now experiences a force of 126 N to attempt to steal the ball, which is 2.00 m away from her, how long
+will it take her to get to the ball?
+EXAMPLE 6.7
+What Force Acts on a Model Helicopter?
+A 1.50-kg model helicopter has a velocity of at It is accelerated at a constant rate for two seconds
+(2.00 s) after which it has a velocity of What is the magnitude of the resultant force acting on
+the helicopter during this time interval?
+Strategy
+We can easily set up a coordinate system in which the x-axis direction) is horizontal, and the y-axis direction) is
+vertical. We know that and From this, we can calculate the
+acceleration by the definition; we can then apply Newton’s second law.
+Solution
+We have

@@ -1,0 +1,258 @@
+# REAL PDF — openstax_vol2.pdf, pages 516-523
+############################################################
+
+506 Chapter 11 | Magnetic Forces and Fields
+velocity into the radius equation to equate the pitch and radius:
+p = r
+mv
+v T = ⊥
+∥ qB
+vcosθ2πm
+=
+mvsinθ
+qB qB
+2π = tanθ
+θ = 81.0°.
+Significance
+If this angle were 0°, only parallel velocity would occur and the helix would not form, because there would
+benocircularmotionintheperpendicularplane.Ifthisanglewere 90°, onlycircularmotionwouldoccurand
+there would be no movement of the circles perpendicular to the motion. That is what creates the helical motion.
+11.4 | Magnetic Force on a Current-Carrying Conductor
+Learning Objectives
+By the end of this section, you will be able to:
+• Determine the direction in which a current-carrying wire experiences a force in an external
+magnetic field
+• Calculate the force on a current-carrying wire in an external magnetic field
+Movingchargesexperienceaforceinamagneticfield.Ifthesemovingchargesareinawire—thatis,ifthewireiscarrying
+acurrent—thewireshouldalsoexperienceaforce.However,beforewediscusstheforceexertedonacurrentbyamagnetic
+field,wefirstexaminethemagneticfieldgeneratedbyanelectriccurrent.Wearestudyingtwoseparateeffectsherethat
+interact closely: A current-carrying wire generates a magnetic field and the magnetic field exerts a force on the current-
+carrying wire.
+Magnetic Fields Produced by Electrical Currents
+When discussing historical discoveries in magnetism, we mentioned Oersted’s finding that a wire carrying an electrical
+currentcausedanearbycompasstodeflect.Aconnectionwasestablishedthatelectricalcurrentsproducemagneticfields.
+(This connection between electricity and magnetism is discussed in more detail inSources of Magnetic Fields.)
+Thecompassneedlenearthewireexperiencesaforcethatalignstheneedletangenttoacirclearoundthewire.Therefore,a
+current-carryingwireproducescircularloopsofmagneticfield.Todeterminethedirectionofthemagneticfieldgenerated
+fromawire,weuseasecondright-handrule.InRHR-2,yourthumbpointsinthedirectionofthecurrentwhileyourfingers
+wraparoundthewire,pointinginthedirectionofthemagneticfieldproduced(Figure11.11).Ifthemagneticfieldwere
+comingatyouoroutofthepage,werepresentthiswithadot.Ifthemagneticfieldweregoingintothepage,werepresent
+thiswithan ×. Thesesymbolscomefromconsideringavectorarrow:Anarrowpointedtowardyou,fromyourperspective,
+wouldlooklikeadotorthetipofanarrow.Anarrowpointedawayfromyou,fromyourperspective, wouldlooklikea
+crossoran ×. AcompositesketchofthemagneticcirclesisshowninFigure11.11,wherethefieldstrengthisshownto
+decrease as you get farther from the wire by loops that are farther separated.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 507
+Figure 11.11 (a) When the wire is in the plane of the paper, the field is perpendicular to the paper. Note the symbols used
+for the field pointing inward (like the tail of an arrow) and the field pointing outward (like the tip of an arrow). (b) A long and
+straight wire creates a field with magnetic field lines forming circular loops.
+Calculating the Magnetic Force
+Electriccurrentisanorderedmovementofcharge.Acurrent-carryingwireinamagneticfieldmustthereforeexperiencea
+forceduetothefield.Toinvestigatethisforce,let’sconsidertheinfinitesimalsectionofwireasshowninFigure 11.12.
+Thelengthandcross-sectionalareaofthesectionaredlandA,respectively,soitsvolumeis V = A·dl. Thewireisformed
+frommaterialthatcontainsnchargecarriersperunitvolume,sothenumberofchargecarriersinthesectionis nA·dl. If
+the charge carriers move with drift velocity → v , the currentIin the wire is (fromCurrent and Resistance)
+d
+I =neAv d.
+Themagneticforceonanysinglechargecarrieris e → v × → B , sothetotalmagneticforce d → F onthe nA·dl charge
+d
+carriers in the section of wire is
+→ → → (11.10)
+d F =(nA·dl)e v × B .
+d
+We can definedlto be a vector of lengthdlpointing along → v , which allows us to rewrite this equation as
+d
+→ → → (11.11)
+d F =neAv dl × B ,
+d
+or
+→ → → (11.12)
+d F =I dl × B .
+This is the magnetic force on the section of wire. Note that it is actually the net force exerted by the field on the charge
+carriers themselves. The direction of this force is given by RHR-1, where you point your fingers in the direction of the
+current and curl them toward the field. Your thumb then points in the direction of the force.
+
+508 Chapter 11 | Magnetic Forces and Fields
+Figure 11.12 An infinitesimal section of current-carrying wire in a magnetic field.
+→
+Todeterminethemagneticforce F onawireofarbitrarylengthandshape,wemustintegrateEquation11.12overthe
+entirewire.IfthewiresectionhappenstobestraightandBisuniform,theequationdifferentialsbecomeabsolutequantities,
+giving us
+→ → → (11.13)
+F =I l × B .
+This is the force on a straight, current-carrying wire in a uniform magnetic field.
+Example 11.4
+Balancing the Gravitational and Magnetic Forces on a Current-Carrying Wire
+A wire of length 50 cm and mass 10 g is suspended in a horizontal plane by a pair of flexible leads (Figure
+11.13).Thewireisthensubjectedtoaconstantmagneticfieldofmagnitude0.50T,whichisdirectedasshown.
+Whatarethemagnitudeanddirectionofthecurrentinthewireneededtoremovethetensioninthesupporting
+leads?
+Figure 11.13 (a) A wire suspended in a magnetic field. (b) The free-
+body diagram for the wire.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 509
+Strategy
+Fromthefree-bodydiagraminthefigure,thetensionsinthesupportingleadsgotozerowhenthegravitational
+andmagneticforcesbalanceeachother.UsingtheRHR-1,wefindthatthemagneticforcepointsup.Wecanthen
+determine the currentIby equating the two forces.
+Solution
+Equate the two forces of weight and magnetic force on the wire:
+mg=IlB.
+Thus,
+mg (0.010kg)(9.8m/s2)
+I = = =0.39A.
+lB (0.50m)(0.50T)
+Significance
+This large magnetic field creates a significant force on a length of wire to counteract the weight of the wire.
+Example 11.5
+Calculating Magnetic Force on a Current-Carrying Wire
+Along,rigidwirelyingalongthey-axiscarriesa5.0-Acurrentflowinginthepositivey-direction.(a)Ifaconstant
+magneticfieldofmagnitude0.30Tisdirectedalongthepositivex-axis,whatisthemagneticforceperunitlength
+onthewire?(b)Ifaconstantmagneticfieldof0.30Tisdirected30degreesfromthe+x-axistowardsthe+y-axis,
+what is the magnetic force per unit length on the wire?
+Strategy
+→ → →
+The magnetic force on a current-carrying wire in a magnetic field is given by F =I l × B . For part a,
+since the current and magnetic field are perpendicular in this problem, we can simplify the formula to give us
+the magnitude and find the direction through the RHR-1. The angle θ is 90 degrees, which means sinθ=1.
+Also,thelengthcanbedividedovertotheleft-handsidetofindtheforceperunitlength.Forpartb,thecurrent
+timeslengthiswritteninunitvectornotation,aswellasthemagneticfield.Afterthecrossproductistaken,the
+directionality is evident by the resulting unit vector.
+Solution
+a. Westartwiththegeneralformulaforthemagneticforceonawire.Wearelookingfortheforceperunit
+length,sowedividebythelengthtobringittotheleft-handside.Wealsoset sinθ=1. Thesolution
+therefore is
+F = IlBsinθ
+F
+= (5.0A)(0.30 T)
+l
+F
+= 1.5N/m.
+l
+Directionality: Point your fingers in the positive y-direction and curl your fingers in the positive
+→
+x-direction. Your thumb will point in the − k direction. Therefore, with directionality, the solution is
+→
+→
+F
+=−1.5 k N/m.
+l
+b. Thecurrenttimeslengthandthemagneticfieldarewritteninunitvectornotation.Then,wetakethecross
+product to find the force:
+
+510 Chapter 11 | Magnetic Forces and Fields
+→ → → ^ ⎛ ^ ^⎞
+F = I l × B =(5.0A)lj × 0.30Tcos(30°)i +0.30Tsin(30°)j
+⎝ ⎠
+→ ^
+F /l = −1.30k N/m.
+Significance
+Thislargemagneticfieldcreatesasignificantforceonasmalllengthofwire.Astheangleofthemagneticfield
+becomes more closely aligned to the current in the wire, there is less of a force on it, as seen from comparing
+parts a and b.
+11.3 CheckYourUnderstandingAstraight,flexiblelengthofcopperwireisimmersedinamagneticfield
+thatisdirectedintothepage.(a)Ifthewire’scurrentrunsinthe+x-direction,whichwaywillthewirebend?(b)
+Which way will the wire bend if the current runs in the –x-direction?
+Example 11.6
+Force on a Circular Wire
+A circular current loop of radius R carrying a current I is placed in the xy-plane. A constant uniform magnetic
+fieldcutsthroughtheloopparalleltothey-axis(Figure11.14).Findthemagneticforceontheupperhalfofthe
+loop, the lower half of the loop, and the total force on the loop.
+Figure 11.14 A loop of wire carrying a current in a magnetic
+field.
+Strategy
+Themagneticforceontheupperloopshouldbewrittenintermsofthedifferentialforceactingoneachsegment
+oftheloop.Ifweintegrateovereachdifferentialpiece,wesolvefortheoverallforceonthatsectionoftheloop.
+The force on the lower loop is found in a similar manner, and the total force is the addition of these two forces.
+Solution
+A differential force on an arbitrary piece of wire located on the upper ring is:
+dF =IBsinθdl.
+where θ istheanglebetweenthemagneticfielddirection(+y)andthesegmentofwire.Adifferentialsegment
+is located at the same radius, so using an arc-length formula, we have:
+dl = Rdθ
+dF = IBRsinθdθ.
+Inordertofindtheforceonasegment,weintegrateovertheupperhalfofthecircle,from0to π. Thisresultsin:
+π
+F =IBR∫sinθdθ=IBR(−cosπ+cos0) =2IBR.
+0
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 511
+The lower half of the loop is integrated from π to zero, giving us:
+0
+F =IBR∫sinθdθ=IBR(−cos0+cosπ) =−2IBR.
+π
+The net force is the sum of these forces, which is zero.
+Significance
+Thetotalforceonanyclosedloopinauniformmagneticfieldiszero.Eventhougheachpieceoftheloophas
+a force acting on it, the net force on the system is zero. (Note that there is a net torque on the loop, which we
+consider in the next section.)
+11.5 | Force and Torque on a Current Loop
+Learning Objectives
+By the end of this section, you will be able to:
+• Evaluate the net force on a current loop in an external magnetic field
+• Evaluate the net torque on a current loop in an external magnetic field
+• Define the magnetic dipole moment of a current loop
+Motorsarethemostcommonapplicationofmagneticforceoncurrent-carryingwires.Motorscontainloopsofwireina
+magnetic field. When current is passed through the loops, the magnetic field exerts torque on the loops, which rotates a
+shaft.Electricalenergyisconvertedintomechanicalworkintheprocess.Oncetheloop’ssurfaceareaisalignedwiththe
+magneticfield,thedirectionofcurrentisreversed,sothereisacontinualtorqueontheloop(Figure11.15).Thisreversal
+ofthecurrentisdonewithcommutatorsandbrushes.Thecommutatorissettoreversethecurrentflowatsetpointstokeep
+continualmotioninthemotor.Abasiccommutatorhasthreecontactareastoavoidanddeadspotswheretheloopwould
+havezeroinstantaneoustorqueatthatpoint.Thebrushespressagainstthecommutator,creatingelectricalcontactbetween
+parts of the commutator during the spinning motion.
+Figure 11.15 A simplified version of a dc electric motor. (a) The rectangular wire loop is placed in a
+magnetic field. The forces on the wires closest to the magnetic poles (N and S) are opposite in direction as
+determined by the right-hand rule-1. Therefore, the loop has a net torque and rotates to the position shown
+in (b). (b) The brushes now touch the commutator segments so that no current flows through the loop. No
+torque acts on the loop, but the loop continues to spin from the initial velocity given to it in part (a). By
+the time the loop flips over, current flows through the wires again but now in the opposite direction, and
+the process repeats as in part (a). This causes continual rotation of the loop.
+
+512 Chapter 11 | Magnetic Forces and Fields
+Inauniformmagneticfield,acurrent-carryingloopofwire,suchasaloopinamotor,experiencesbothforcesandtorques
+ontheloop.Figure 11.16showsarectangularloopofwirethatcarriesacurrentIandhassidesoflengthsaandb.The
+→ ^
+loopisinauniformmagneticfield: B =Bj. Themagneticforceonastraightcurrent-carryingwireoflengthlisgiven
+→ →
+by I l × B . Tofindthenetforceontheloop,wehavetoapplythisequationtoeachofthefoursides.Theforceon
+side 1 is
+→ ^ ^ (11.14)
+F =IaBsin(90°−θ)i =IaBcosθi
+1
+wherethedirectionhasbeendeterminedwiththeRHR-1.Thecurrentinside3flowsintheoppositedirectiontothatofside
+1, so
+→ ^ ^ (11.15)
+F =−IaBsin(90°+θ)i =−IaBcosθi.
+3
+→
+The currents in sides 2 and 4 are perpendicular to B and the forces on these sides are
+→ ^ → ^ (11.16)
+F =IbBk, F =−IbBk.
+2 4
+We can now find the net force on the loop:
+→ → → → → (11.17)
+∑ F = F + F + F + F =0.
+net 1 2 3 4
+Althoughthisresult (ΣF =0) hasbeenobtainedforarectangularloop,itisfarmoregeneralandholdsforcurrent-carrying
+loops of arbitrary shapes; that is, there is no net force on a current loop in a uniform magnetic field.
+Figure 11.16 (a) A rectangular current loop in a uniform magnetic field is subjected
+to a net torque but not a net force. (b) A side view of the coil.
+To find the net torque on the current loop shown in Figure 11.16, we first consider F and F . Since they have the
+1 3
+samelineofactionandareequalandopposite,thesumoftheirtorquesaboutanyaxisiszero(seeFixed-AxisRotation
+(http://cnx.org/content/m58325/latest/) ). Thus, if there is any torque on the loop, it must be furnished by F and
+2
+F . Let’scalculatethetorquesaroundtheaxisthatpassesthroughpointOofFigure11.16(asideviewofthecoil)and
+4
+isperpendiculartotheplaneofthepage.ThepointOisadistancexfromside2andadistance (a−x) fromside4ofthe
+loop. The moment arms of F and F are xsinθ and (a−x)sinθ, respectively, so the net torque on the loop is
+2 4
+∑ → τ = → τ + → τ + → τ + → τ =F xsinθ ^ i −F (a−x)sin(θ) ^ i (11.18)
+1 2 3 4 2 4
+^ ^
+=−IbBxsinθi −IbB(a−x)sinθi.
+This simplifies to
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

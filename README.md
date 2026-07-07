@@ -144,17 +144,26 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md). Especially welcome:
 If you use this software, cite the paper:
 
 ```bibtex
-@software{raja2026isnad,
+@article{raja2026grading,
   author       = {Ali Zahid Raja},
-  title        = {Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems},
+  title        = {Grading the Narrators: An Isnād–Rijāl Framework for
+                  Claim-Level Provenance in Multi-Agent Knowledge Systems},
   year         = 2026,
   doi          = {10.5281/zenodo.21211291},
   url          = {https://doi.org/10.5281/zenodo.21211291},
+}
+
+@software{raja2026isnad,
+  author       = {Ali Zahid Raja},
+  title        = {Isnād–Rijāl Framework: Reference Implementation},
+  year         = 2026,
+  doi          = {10.5281/zenodo.21216873},
+  url          = {https://doi.org/10.5281/zenodo.21216873},
   orcid        = {0009-0003-7875-4590},
 }
 ```
 
-> A dedicated software DOI will be added after the first Zenodo release.  
+> Software DOI: [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873)  
 > GitHub's "Cite this repository" button is powered by [`CITATION.cff`](CITATION.cff).
 
 ---

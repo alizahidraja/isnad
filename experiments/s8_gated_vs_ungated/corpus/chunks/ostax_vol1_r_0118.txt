@@ -1,0 +1,222 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 714-717
+############################################################
+
+702 14 • Chapter Review
+components in the system have on the output mass of 10.0 g and a 20.0-g magnet is placed on
+force? How would this depend on whether or not it, what fraction of the cork will be submerged?
+the fluid is moving? (c) Will the bar magnet and cork float in ethyl
+alcohol?
+14.4 Archimedes’ Principle and Buoyancy
+72 . What percentage of an iron anchor’s weight will
+64 . What fraction of ice is submerged when it floats
+be supported by buoyant force when submerged
+in freshwater, given the density of water at
+in salt water?
+is very close to ?
+73 . Referring to Figure 14.20, prove that the
+65 . If a person’s body has a density of ,
+buoyant force on the cylinder is equal to the
+what fraction of the body will be submerged
+weight of the fluid displaced (Archimedes’
+when floating gently in (a) freshwater? (b) In salt
+principle). You may assume that the buoyant
+water with a density of ?
+force is and that the ends of the
+66 . A rock with a mass of 540 g in air is found to cylinder have equal areas . Note that the
+have an apparent mass of 342 g when volume of the cylinder (and that of the fluid it
+submerged in water. (a) What mass of water is displaces) equals .
+displaced? (b) What is the volume of the rock?
+74 . A 75.0-kg man floats in freshwater with 3.00%
+(c) What is its average density? Is this consistent
+of his volume above water when his lungs are
+with the value for granite?
+empty, and 5.00% of his volume above water
+67 . Archimedes’ principle can be used to calculate when his lungs are full. Calculate the volume of
+the density of a fluid as well as that of a solid. air he inhales—called his lung capacity—in liters.
+Suppose a chunk of iron with a mass of 390.0 g (b) Does this lung volume seem reasonable?
+in air is found to have an apparent mass of 350.5
+14.5 Fluid Dynamics
+g when completely submerged in an unknown
+liquid. (a) What mass of fluid does the iron 75 . What is the average flow rate in of
+displace? (b) What is the volume of iron, using its gasoline to the engine of a car traveling at 100
+density as given in Table 14.1? (c) Calculate the km/h if it averages 10.0 km/L?
+fluid’s density and identify it.
+76 . The heart of a resting adult pumps blood at a
+68 . Calculate the buoyant force on a 2.00-L helium rate of 5.00 L/min. (a) Convert this to . (b)
+balloon. (b) Given the mass of the rubber in the What is this rate in ?
+balloon is 1.50 g, what is the net vertical force
+77 . The Huka Falls on the Waikato River is one of
+on the balloon if it is let go? Neglect the volume
+New Zealand’s most visited natural tourist
+of the rubber.
+attractions. On average, the river has a flow rate
+69 . What is the density of a woman who floats in of about 300,000 L/s. At the gorge, the river
+fresh water with of her volume above the narrows to 20-m wide and averages 20-m deep.
+surface? (This could be measured by placing her (a) What is the average speed of the river in the
+in a tank with marks on the side to measure how gorge? (b) What is the average speed of the
+much water she displaces when floating and water in the river downstream of the falls when
+when held under water.) (b) What percent of her it widens to 60 m and its depth increases to an
+volume is above the surface when she floats in average of 40 m?
+seawater?
+78 . (a) Estimate the time it would take to fill a
+70 . A man has a mass of 80 kg and a density of private swimming pool with a capacity of 80,000
+(excluding the air in his lungs). (a) L using a garden hose delivering 60 L/min. (b)
+Calculate his volume. (b) Find the buoyant force How long would it take if you could divert a
+air exerts on him. (c) What is the ratio of the moderate size river, flowing at into
+buoyant force to his weight? the pool?
+71 . A simple compass can be made by placing a 79 . What is the fluid speed in a fire hose with a
+small bar magnet on a cork floating in water. (a) 9.00-cm diameter carrying 80.0 L of water per
+What fraction of a plain cork will be submerged second? (b) What is the flow rate in cubic meters
+when floating in water? (b) If the cork has a per second? (c) Would your answers be different
+Access for free at openstax.org
+
+14 • Chapter Review 703
+if salt water replaced the fresh water in the fire maximum height above the nozzle can this water
+hose? rise? (The actual height will be significantly
+smaller due to air resistance.)
+80 . Water is moving at a velocity of 2.00 m/s
+through a hose with an internal diameter of 1.60 88 . (a) Using Bernoulli’s equation, show that the
+cm. (a) What is the flow rate in liters per second? measured fluid speed v for a pitot tube, like the
+(b) The fluid velocity in this hose’s nozzle is 15.0 one in Figure 14.32(b), is given by
+m/s. What is the nozzle’s inside diameter?
+, where h is the height of the
+81 . Prove that the speed of an incompressible fluid
+manometer fluid, is the density of the
+through a constriction, such as in a Venturi tube,
+manometer fluid, is the density of the moving
+increases by a factor equal to the square of the
+fluid, and g is the acceleration due to gravity.
+factor by which the diameter decreases. (The
+(Note that v is indeed proportional to the square
+converse applies for flow out of a constriction
+root of h, as stated in the text.) (b) Calculate v for
+into a larger-diameter region.)
+moving air if a mercury manometer’s h is 0.200
+82 . Water emerges straight down from a faucet with m.
+a 1.80-cm diameter at a speed of 0.500 m/s.
+89 . A container of water has a cross-sectional area of
+(Because of the construction of the faucet, there
+. A piston sits on top of the water (see
+is no variation in speed across the stream.) (a)
+the following figure). There is a spout located 0.15
+What is the flow rate in ? (b) What is the
+m from the bottom of the tank, open to the
+diameter of the stream 0.200 m below the
+atmosphere, and a stream of water exits the spout.
+faucet? Neglect any effects due to surface
+The cross sectional area of the spout is
+tension.
+. (a) What is the velocity of the
+14.6 Bernoulli’s Equation water as it leaves the spout? (b) If the opening of the
+spout is located 1.5 m above the ground, how far
+83 . Verify that pressure has units of energy per unit
+from the spout does the water hit the floor? Ignore
+volume.
+all friction and dissipative forces.
+84 . Suppose you have a wind speed gauge like the
+pitot tube shown in Figure 14.32. By what factor
+must wind speed increase to double the value of
+h in the manometer? Is this independent of the
+moving fluid and the fluid in the manometer?
+85 . If the pressure reading of your pitot tube is 15.0
+mm Hg at a speed of 200 km/h, what will it be at
+700 km/h at the same altitude?
+86 . Every few years, winds in Boulder, Colorado,
+attain sustained speeds of 45.0 m/s (about 100
+mph) when the jet stream descends during early
+spring. Approximately what is the force due to 90 . A fluid of a constant density flows through a
+the Bernoulli equation on a roof having an area reduction in a pipe. Find an equation for the change
+of ? Typical air density in Boulder is in pressure, in terms of , and the density.
+, and the corresponding atmospheric
+pressure is . (Bernoulli’s
+principle as stated in the text assumes laminar
+flow. Using the principle here produces only an
+approximate result, because there is significant
+turbulence.)
+87 . What is the pressure drop due to the Bernoulli
+14.7 Viscosity and Turbulence
+Effect as water goes into a 3.00-cm-diameter
+nozzle from a 9.00-cm-diameter fire hose while
+91 . (a) Calculate the retarding force due to the
+carrying a flow of 40.0 L/s? (b) To what
+viscosity of the air layer between a cart and a
+
+704 14 • Chapter Review
+level air track given the following information: air what factor has the clot reduced the radius of
+temperature is , the cart is moving at the artery?
+0.400 m/s, its surface area is
+98 . An oil gusher shoots crude oil 25.0 m into the air
+and the thickness of the air layer is
+through a pipe with a 0.100-m diameter.
+. (b) What is the ratio of this
+Neglecting air resistance but not the resistance
+force to the weight of the 0.300-kg cart?
+of the pipe, and assuming laminar flow, calculate
+92 . The arterioles (small arteries) leading to an the pressure at the entrance of the 50.0-m-long
+organ constrict in order to decrease flow to the vertical pipe. Take the density of the oil to be
+organ. To shut down an organ, blood flow is and its viscosity to be
+reduced naturally to 1.00% of its original value. (or ). Note that you must take into
+By what factor do the radii of the arterioles account the pressure due to the 50.0-m column
+constrict? of oil in the pipe.
+93 . A spherical particle falling at a terminal speed in 99 . Concrete is pumped from a cement mixer to the
+a liquid must have the gravitational force place it is being laid, instead of being carried in
+balanced by the drag force and the buoyant wheelbarrows. The flow rate is 200 L/min
+force. The buoyant force is equal to the weight of through a 50.0-m-long, 8.00-cm-diameter hose,
+the displaced fluid, while the drag force is and the pressure at the pump is
+assumed to be given by Stokes Law, . (a) Calculate the resistance
+Show that the terminal speed is of the hose. (b) What is the viscosity of the
+concrete, assuming the flow is laminar? (c) How
+given by , where R is the
+much power is being supplied, assuming the
+radius of the sphere, is its density, and is
+point of use is at the same level as the pump?
+the density of the fluid, and the coefficient of
+You may neglect the power supplied to increase
+viscosity.
+the concrete’s velocity.
+94 . Using the equation of the previous problem, find
+100 . Verify that the flow of oil is laminar for an oil
+the viscosity of motor oil in which a steel ball of
+gusher that shoots crude oil 25.0 m into the air
+radius 0.8 mm falls with a terminal speed of
+through a pipe with a 0.100-m diameter. The
+4.32 cm/s. The densities of the ball and the oil
+vertical pipe is 50 m long. Take the density of the
+are 7.86 and 0.88 g/mL, respectively.
+oil to be and its viscosity to be
+95 . A skydiver will reach a terminal velocity when (or ).
+the air drag equals their weight. For a skydiver
+101 . Calculate the Reynolds numbers for the flow of
+with a large body, turbulence is a factor at high
+water through (a) a nozzle with a radius of 0.250
+speeds. The drag force then is approximately
+cm and (b) a garden hose with a radius of 0.900
+proportional to the square of the velocity. Taking
+cm, when the nozzle is attached to the hose. The
+the drag force to be and setting
+flow rate through hose and nozzle is 0.500 L/s.
+this equal to the skydiver’s weight, find the Can the flow in either possibly be laminar?
+terminal speed for a person falling “spread
+102 . A fire hose has an inside diameter of 6.40 cm.
+eagle.”
+Suppose such a hose carries a flow of 40.0 L/s
+96 . (a) Verify that a 19.0% decrease in laminar flow starting at a gauge pressure of
+through a tube is caused by a 5.00% decrease in
+. The hose goes 10.0 m up a
+radius, assuming that all other factors remain
+ladder to a nozzle having an inside diameter of
+constant. (b) What increase in flow is obtained
+3.00 cm. Calculate the Reynolds numbers for
+from a 5.00% increase in radius, again assuming
+flow in the fire hose and nozzle to show that the
+all other factors remain constant?
+flow in each must be turbulent.
+97 . When physicians diagnose arterial blockages,
+103 . At what flow rate might turbulence begin to
+they quote the reduction in flow rate. If the flow
+develop in a water main with a 0.200-m
+rate in an artery has been reduced to 10.0% of
+diameter? Assume a temperature.
+its normal value by a blood clot and the average
+pressure difference has increased by 20.0%, by
+Access for free at openstax.org

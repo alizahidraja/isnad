@@ -1,0 +1,133 @@
+# REAL PDF — openstax_vol1.pdf, pages 36-39
+############################################################
+
+24 1 • Units and Measurement
+guess about the relevant variables, estimating is very useful in developing physical intuition. Estimates also allow us
+to perform “sanity checks” on calculations or policy proposals by helping us rule out certain scenarios or unrealistic
+numbers. They allow us to challenge others (as well as ourselves) in our efforts to learn truths about the world.
+Many estimates are based on formulas in which the input quantities are known only to a limited precision. As you
+develop physics problem-solving skills (which are applicable to a wide variety of fields), you also will develop skills
+at estimating. You develop these skills by thinking quantitatively and being willing to take risks. As with any skill,
+experience helps. Familiarity with dimensions (see Table 1.3) and units (see Table 1.1 and Table 1.2), and the scales
+of base quantities (see Figure 1.4) also helps.
+To make some progress in estimating, you need to have some definite ideas about how variables may be related.
+The following strategies may help you in practicing the art of estimation:
+• Get big lengths from smaller lengths. When estimating lengths, remember that anything can be a ruler. Thus,
+imagine breaking a big thing into smaller things, estimate the length of one of the smaller things, and multiply
+to get the length of the big thing. For example, to estimate the height of a building, first count how many floors
+it has. Then, estimate how big a single floor is by imagining how many people would have to stand on each
+other’s shoulders to reach the ceiling. Last, estimate the height of a person. The product of these three
+estimates is your estimate of the height of the building. It helps to have memorized a few length scales
+relevant to the sorts of problems you find yourself solving. For example, knowing some of the length scales in
+Figure 1.4 might come in handy. Sometimes it also helps to do this in reverse—that is, to estimate the length of
+a small thing, imagine a bunch of them making up a bigger thing. For example, to estimate the thickness of a
+sheet of paper, estimate the thickness of a stack of paper and then divide by the number of pages in the stack.
+These same strategies of breaking big things into smaller things or aggregating smaller things into a bigger
+thing can sometimes be used to estimate other physical quantities, such as masses and times.
+• Get areas and volumes from lengths. When dealing with an area or a volume of a complex object, introduce a
+simple model of the object such as a sphere or a box. Then, estimate the linear dimensions (such as the radius
+of the sphere or the length, width, and height of the box) first, and use your estimates to obtain the volume or
+area from standard geometric formulas. If you happen to have an estimate of an object’s area or volume, you
+can also do the reverse; that is, use standard geometric formulas to get an estimate of its linear dimensions.
+• Get masses from volumes and densities. When estimating masses of objects, it can help first to estimate its
+volume and then to estimate its mass from a rough estimate of its average density (recall, density has
+dimension mass over length cubed, so mass is density times volume). For this, it helps to remember that the
+density of air is around 1 kg/m3, the density of water is 103 kg/m3, and the densest everyday solids max out at
+around 104 kg/m3. Asking yourself whether an object floats or sinks in either air or water gets you a ballpark
+estimate of its density. You can also do this the other way around; if you have an estimate of an object’s mass
+and its density, you can use them to get an estimate of its volume.
+• If all else fails, bound it. For physical quantities for which you do not have a lot of intuition, sometimes the
+best you can do is think something like: Well, it must be bigger than this and smaller than that. For example,
+suppose you need to estimate the mass of a moose. Maybe you have a lot of experience with moose and know
+their average mass offhand. If so, great. But for most people, the best they can do is to think something like: It
+must be bigger than a person (of order 102 kg) and less than a car (of order 103 kg). If you need a single
+number for a subsequent calculation, you can take the geometric mean of the upper and lower bound—that is,
+you multiply them together and then take the square root. For the moose mass example, this would be
+The tighter the bounds, the better. Also, no rules are unbreakable when it comes to estimation. If you think the
+value of the quantity is likely to be closer to the upper bound than the lower bound, then you may want to
+bump up your estimate from the geometric mean by an order or two of magnitude.
+• One “sig. fig.” is fine. There is no need to go beyond one significant figure, or one digit in the coefficient of an
+expression in scientific notation, when doing calculations to obtain an estimate. In most cases, the order of
+magnitude is good enough. The goal is just to get in the ballpark figure, so keep the arithmetic as simple as
+possible.
+• Ask yourself: Does this make any sense? Last, check to see whether your answer is reasonable. How does it
+compare with the values of other quantities with the same dimensions that you already know or can look up
+Access for free at openstax.org
+
+1.5 • Estimates and Fermi Calculations 25
+easily? If you get some wacky answer (for example, if you estimate the mass of the Atlantic Ocean to be bigger
+than the mass of Earth, or some time span to be longer than the age of the universe), first check to see
+whether your units are correct. Then, check for arithmetic errors. Then, rethink the logic you used to arrive at
+your answer. If everything checks out, you may have just proved that some slick new idea is actually bogus.
+EXAMPLE 1.6
+Mass of Earth’s Oceans
+Estimate the total mass of the oceans on Earth.
+Strategy
+We know the density of water is about 103 kg/m3, so we start with the advice to “get masses from densities and
+volumes.” Thus, we need to estimate the volume of the planet’s oceans. Using the advice to “get areas and volumes
+from lengths,” we can estimate the volume of the oceans as surface area times average depth, or V = AD. We know
+the diameter of Earth from Figure 1.4 and we know that most of Earth’s surface is covered in water, so we can
+estimate the surface area of the oceans as being roughly equal to the surface area of the planet. By following the
+advice to “get areas and volumes from lengths” again, we can approximate Earth as a sphere and use the formula
+for the surface area of a sphere of diameter d—that is, to estimate the surface area of the oceans. Now we
+just need to estimate the average depth of the oceans. For this, we use the advice: “If all else fails, bound it.” We
+happen to know the deepest points in the ocean are around 10 km and that it is not uncommon for the ocean to be
+deeper than 1 km, so we take the average depth to be around Now we just need to
+put it all together, heeding the advice that “one ‘sig. fig.’ is fine.”
+Solution
+We estimate the surface area of Earth (and hence the surface area of Earth’s oceans) to be roughly
+Next, using our average depth estimate of which was obtained by bounding, we estimate the
+volume of Earth’s oceans to be
+Last, we estimate the mass of the world’s oceans to be
+Thus, we estimate that the order of magnitude of the mass of the planet’s oceans is 1021 kg.
+Significance
+To verify our answer to the best of our ability, we first need to answer the question: Does this make any sense? From
+Figure 1.4, we see the mass of Earth’s atmosphere is on the order of 1019 kg and the mass of Earth is on the order of
+1025 kg. It is reassuring that our estimate of 1021 kg for the mass of Earth’s oceans falls somewhere between these
+two. So, yes, it does seem to make sense. It just so happens that we did a search on the Web for “mass of oceans”
+and the top search results all said which is the same order of magnitude as our estimate. Now,
+rather than having to trust blindly whoever first put that number up on a website (most of the other sites probably
+just copied it from them, after all), we can have a little more confidence in it.
+CHECK YOUR UNDERSTANDING 1.7
+Figure 1.4 says the mass of the atmosphere is 1019 kg. Assuming the density of the atmosphere is 1 kg/m3,
+estimate the height of Earth’s atmosphere. Do you think your answer is an underestimate or an overestimate?
+Explain why.
+How many piano tuners are there in New York City? How many leaves are on that tree? If you are studying
+
+26 1 • Units and Measurement
+photosynthesis or thinking of writing a smartphone app for piano tuners, then the answers to these questions might
+be of great interest to you. Otherwise, you probably couldn’t care less what the answers are. However, these are
+exactly the sorts of estimation problems that people in various tech industries have been asking potential
+employees to evaluate their quantitative reasoning skills. If building physical intuition and evaluating quantitative
+claims do not seem like sufficient reasons for you to practice estimation problems, how about the fact that being
+good at them just might land you a high-paying job?
+INTERACTIVE
+For practice estimating relative lengths, areas, and volumes, check out this PhET (https://openstax.org/l/
+21lengthgame) simulation, titled “Estimation.”
+1.6 Significant Figures
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Determine the correct number of significant figures for the result of a computation.
+• Describe the relationship between the concepts of accuracy, precision, uncertainty, and discrepancy.
+• Calculate the percent uncertainty of a measurement, given its value and its uncertainty.
+• Determine the uncertainty of the result of a computation involving quantities with given uncertainties.
+Figure 1.11 shows two instruments used to measure the mass of an object. The digital scale has mostly replaced
+the double-pan balance in physics labs because it gives more accurate and precise measurements. But what exactly
+do we mean by accurate and precise? Aren’t they the same thing? In this section we examine in detail the process of
+making and reporting a measurement.
+FIGURE 1.11 (a) A double-pan mechanical balance is used to compare different masses. Usually an object with unknown mass is placed in
+one pan and objects of known mass are placed in the other pan. When the bar that connects the two pans is horizontal, then the masses in
+both pans are equal. The “known masses” are typically metal cylinders of standard mass such as 1 g, 10 g, and 100 g. (b) Many mechanical
+balances, such as double-pan balances, have been replaced by digital scales, which can typically measure the mass of an object more
+precisely. A mechanical balance may read only the mass of an object to the nearest tenth of a gram, but many digital scales can measure
+the mass of an object up to the nearest thousandth of a gram. (credit a: modification of work by Serge Melki; credit b: modification of work
+by Karel Jakubec)
+Accuracy and Precision of a Measurement
+Science is based on observation and experiment—that is, on measurements. Accuracy is how close a measurement
+is to the accepted reference value for that measurement. For example, let’s say we want to measure the length of
+standard printer paper. The packaging in which we purchased the paper states that it is 11.0 in. long. We then
+measure the length of the paper three times and obtain the following measurements: 11.1 in., 11.2 in., and 10.9 in.
+These measurements are quite accurate because they are very close to the reference value of 11.0 in. In contrast, if
+we had obtained a measurement of 12 in., our measurement would not be very accurate. Notice that the concept of
+accuracy requires that an accepted reference value be given.
+Access for free at openstax.org

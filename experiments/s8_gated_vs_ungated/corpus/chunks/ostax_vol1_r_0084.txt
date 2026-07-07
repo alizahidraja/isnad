@@ -1,0 +1,296 @@
+# REAL PDF — openstax_vol1.pdf, pages 514-518
+############################################################
+
+502 10 • Chapter Review
+gives the change in angular velocity: up an object, multiplied by the square of the
+distance of each ‘piece of mass’ to the axis. In
+. integral form the moment of inertia is
+.
+10.3 Relating Angular and Translational Quantities • Moment of inertia is larger when an object’s mass
+is farther from the axis of rotation.
+• The linear kinematic equations have their
+• It is possible to find the moment of inertia of an
+rotational counterparts such that there is a
+object about a new axis of rotation once it is
+mapping .
+known for a parallel axis. This is called the
+• A system undergoing uniform circular motion has
+parallel axis theorem given by
+a constant angular velocity, but points at a
+, where d is
+distance r from the rotation axis have a linear
+the distance from the initial axis to the parallel
+centripetal acceleration.
+axis.
+• A system undergoing nonuniform circular motion
+• Moment of inertia for a compound object is
+has an angular acceleration and therefore has
+simply the sum of the moments of inertia for
+both a linear centripetal and linear tangential
+each individual object that makes up the
+acceleration at a point a distance r from the axis
+compound object.
+of rotation.
+• The total linear acceleration is the vector sum of 10.6 Torque
+the centripetal acceleration vector and the
+• The magnitude of a torque about a fixed axis is
+tangential acceleration vector. Since the
+calculated by finding the lever arm to the point
+centripetal and tangential acceleration vectors
+where the force is applied and using the relation
+are perpendicular to each other for circular
+, where is the perpendicular
+motion, the magnitude of the total linear
+distance from the axis to the line upon which the
+acceleration is .
+force vector lies.
+• The sign of the torque is found using the right
+10.4 Moment of Inertia and Rotational Kinetic Energy
+hand rule. If the page is the plane containing
+• The rotational kinetic energy is the kinetic energy
+and , then is out of the page for positive
+of rotation of a rotating rigid body or system of
+torques and into the page for negative torques.
+particles, and is given by , where I is • The net torque can be found from summing the
+the moment of inertia, or “rotational mass” of the individual torques about a given axis.
+rigid body or system of particles.
+10.7 Newton’s Second Law for Rotation
+• The moment of inertia for a system of point
+particles rotating about a fixed axis is • Newton’s second law for rotation, ,
+, where is the mass of the point
+says that the sum of the torques on a rotating
+particle and is the distance of the point system about a fixed axis equals the product of
+particle to the rotation axis. Because of the the moment of inertia and the angular
+term, the moment of inertia increases as the acceleration. This is the rotational analog to
+square of the distance to the fixed rotational axis. Newton’s second law of linear motion.
+The moment of inertia is the rotational • In the vector form of Newton’s second law for
+counterpart to the mass in linear motion. rotation, the torque vector is in the same
+• In systems that are both rotating and translating, direction as the angular acceleration . If the
+conservation of mechanical energy can be used if angular acceleration of a rotating system is
+there are no nonconservative forces at work. The positive, the torque on the system is also
+total mechanical energy is then conserved and is positive, and if the angular acceleration is
+the sum of the rotational and translational kinetic negative, the torque is negative.
+energies, and the gravitational potential energy.
+10.8 Work and Power for Rotational Motion
+10.5 Calculating Moments of Inertia
+• The incremental work dW in rotating a rigid body
+• Moments of inertia can be found by summing or about a fixed axis is the sum of the torques about
+integrating over every ‘piece of mass’ that makes the axis times the incremental angle .
+Access for free at openstax.org
+
+10 • Chapter Review 503
+• The total work done to rotate a rigid body work done to the change in rotational kinetic
+through an angle about a fixed axis is the sum energy: where
+of the torques integrated over the angular • The power delivered to a system that is rotating
+displacement. If the torque is a constant as a about a fixed axis is the torque times the angular
+function of , then . velocity, .
+• The work-energy theorem relates the rotational
+Conceptual Questions
+10.1 Rotational Variables centripetal acceleration, or both when: (a) the
+plate starts to spin faster? (b) The plate rotates
+1 . A clock is mounted on the wall. As you look at it,
+at constant angular velocity? (c) The plate slows
+what is the direction of the angular velocity
+to a halt?
+vector of the second hand?
+10.4 Moment of Inertia and Rotational Kinetic Energy
+2 . What is the value of the angular acceleration of
+the second hand of the clock on the wall? 12 . What if another planet the same size as Earth
+were put into orbit around the Sun along with
+3 . A baseball bat is swung. Do all points on the bat
+Earth. Would the moment of inertia of the
+have the same angular velocity? The same
+system increase, decrease, or stay the same?
+tangential speed?
+13 . A solid sphere is rotating about an axis through
+4 . The blades of a blender on a counter are rotating
+its center at a constant rotation rate. Another
+clockwise as you look into it from the top. If the
+hollow sphere of the same mass and radius is
+blender is put to a greater speed what direction
+rotating about its axis through the center at the
+is the angular acceleration of the blades?
+same rotation rate. Which sphere has a greater
+10.2 Rotation with Constant Angular Acceleration rotational kinetic energy?
+5 . If a rigid body has a constant angular 10.5 Calculating Moments of Inertia
+acceleration, what is the functional form of the
+14 . If a child walks toward the center of a merry-go-
+angular velocity in terms of the time variable?
+round, does the moment of inertia increase or
+6 . If a rigid body has a constant angular decrease?
+acceleration, what is the functional form of the
+15 . A discus thrower rotates with a discus in his
+angular position?
+hand before letting it go. (a) How does his
+7 . If the angular acceleration of a rigid body is zero, moment of inertia change after releasing the
+what is the functional form of the angular discus? (b) What would be a good approximation
+velocity? to use in calculating the moment of inertia of the
+discus thrower and discus?
+8 . A massless tether with a masses tied to both
+ends rotates about a fixed axis through the 16 . Does increasing the number of blades on a
+center. Can the total acceleration of the tether/ propeller increase or decrease its moment of
+mass combination be zero if the angular velocity inertia, and why?
+is constant?
+17 . The moment of inertia of a long rod spun around
+10.3 Relating Angular and Translational Quantities an axis through one end perpendicular to its
+length is . Why is this moment of inertia
+9 . Explain why centripetal acceleration changes
+greater than it would be if you spun a point mass
+the direction of velocity in circular motion but
+m at the location of the center of mass of the rod
+not its magnitude.
+(at L/2) (that would be )?
+10 . In circular motion, a tangential acceleration can
+18 . Why is the moment of inertia of a hoop that has
+change the magnitude of the velocity but not its
+a mass M and a radius R greater than the
+direction. Explain your answer.
+moment of inertia of a disk that has the same
+11 . Suppose a piece of food is on the edge of a mass and radius?
+rotating microwave oven plate. Does it
+experience nonzero tangential acceleration,
+
+504 10 • Chapter Review
+10.6 Torque 24 . Can a set of forces have a net force that is zero
+and a net torque that is not zero?
+19 . What three factors affect the torque created by a
+force relative to a specific pivot point? 25 . In the expression can ever be less
+than the lever arm? Can it be equal to the lever
+20 . Give an example in which a small force exerts a
+arm?
+large torque. Give another example in which a
+large force exerts a small torque.
+10.7 Newton’s Second Law for Rotation
+21 . When reducing the mass of a racing bike, the
+26 . If you were to stop a spinning wheel with a
+greatest benefit is realized from reducing the
+constant force, where on the wheel would you
+mass of the tires and wheel rims. Why does this
+apply the force to produce the maximum
+allow a racer to achieve greater accelerations
+negative acceleration?
+than would an identical reduction in the mass of
+the bicycle’s frame? 27 . A rod is pivoted about one end. Two forces
+are applied to it. Under what
+22 . Can a single force produce a zero torque?
+circumstances will the rod not rotate?
+23 . Can a set of forces have a net torque that is zero
+and a net force that is not zero?
+Problems
+10.1 Rotational Variables 35 . On takeoff, the propellers on a UAV (unmanned
+aerial vehicle) increase their angular velocity for
+28 . Calculate the angular velocity of Earth.
+3.0 s from rest at a rate of
+29 . A track star runs a 400-m race on a 400-m where t is measured in seconds. (a) What is the
+circular track in 45 s. What is his angular velocity instantaneous angular velocity of the propellers
+assuming a constant speed? at ? (b) What is the angular
+acceleration?
+30 . A wheel rotates at a constant rate of
+. (a) What is its angular 36 . The angular position of a rod varies as
+velocity in radians per second? (b) Through what radians from time . The rod has two beads on
+angle does it turn in 10 s? Express the solution it as shown in the following figure, one at 10 cm
+in radians and degrees. from the rotation axis and the other at 20 cm from
+the rotation axis. (a) What is the instantaneous
+31 . A particle moves 3.0 m along a circle of radius
+angular velocity of the rod at (b) What is
+1.5 m. (a) Through what angle does it rotate? (b)
+the angular acceleration of the rod? (c) What are
+If the particle makes this trip in 1.0 s at a
+the tangential speeds of the beads at (d)
+constant speed, what is its angular velocity? (c)
+What are the tangential accelerations of the beads
+What is its acceleration?
+at (e) What are the centripetal
+32 . A compact disc rotates at 500 rev/min. If the accelerations of the beads at
+diameter of the disc is 120 mm, (a) what is the
+tangential speed of a point at the edge of the
+disc? (b) At a point halfway to the center of the
+disc?
+33 . Unreasonable results. The propeller of an
+aircraft is spinning at 10 rev/s when the pilot
+shuts off the engine. The propeller reduces its
+angular velocity at a constant for a
+time period of 40 s. What is the rotation rate of
+the propeller in 40 s? Is this a reasonable
+situation?
+10.2 Rotation with Constant Angular Acceleration
+34 . A gyroscope slows from an initial rate of 32.0
+37 . A wheel has a constant angular acceleration of
+rad/s at a rate of . How long does it
+. Starting from rest, it turns through
+take to come to rest?
+Access for free at openstax.org
+
+10 • Chapter Review 505
+300 rad. (a) What is its final angular velocity? (b)
+How much time elapses while it turns through
+the 300 radians?
+38 . During a 6.0-s time interval, a flywheel with a
+constant angular acceleration turns through 500
+radians and acquires an angular velocity of 100
+rad/s. (a) What is the angular velocity at the
+beginning of the 6.0 s? (b) What is the angular
+acceleration of the flywheel?
+39 . The angular velocity of a rotating rigid body 45 . A rod of length 20 cm has two beads attached to
+increases from 500 to 1500 rev/min in 120 s. (a) its ends. The rod with beads starts rotating from
+What is the angular acceleration of the body? (b) rest. If the beads are to have a tangential speed
+Through what angle does it turn in this 120 s? of 20 m/s in 7 s, what is the angular acceleration
+of the rod to achieve this?
+40 . A flywheel slows from 600 to 400 rev/min while
+rotating through 40 revolutions. (a) What is the 10.3 Relating Angular and Translational Quantities
+angular acceleration of the flywheel? (b) How
+46 . At its peak, a tornado is 60.0 m in diameter and
+much time elapses during the 40 revolutions?
+carries 500 km/h winds. What is its angular
+41 . A wheel 1.0 m in radius rotates with an angular velocity in revolutions per second?
+acceleration of . (a) If the wheel’s
+47 . A man stands on a merry-go-round that is
+initial angular velocity is 2.0 rad/s, what is its
+rotating at 2.5 rad/s. If the coefficient of static
+angular velocity after 10 s? (b) Through what
+friction between the man’s shoes and the merry-
+angle does it rotate in the 10-s interval? (c) What
+go-round is , how far from the axis of
+are the tangential speed and acceleration of a
+rotation can he stand without sliding?
+point on the rim of the wheel at the end of the
+10-s interval? 48 . An ultracentrifuge accelerates from rest to
+100,000 rpm in 2.00 min. (a) What is the
+42 . A vertical wheel with a diameter of 50 cm starts
+average angular acceleration in ? (b) What
+from rest and rotates with a constant angular
+is the tangential acceleration of a point 9.50 cm
+acceleration of around a fixed axis
+from the axis of rotation? (c) What is the
+through its center counterclockwise. (a) Where
+centripetal acceleration in and multiples of
+is the point that is initially at the bottom of the
+g of this point at full rpm? (d) What is the total
+wheel at (b) What is the point’s linear
+distance traveled during the acceleration by a
+acceleration at this instant?
+point 9.5 cm from the axis of rotation of the
+43 . A circular disk of radius 10 cm has a constant ultracentrifuge?
+angular acceleration of ; at its
+49 . A wind turbine is rotating counterclockwise at
+angular velocity is 2.0 rad/s. (a) Determine the
+0.5 rev/s and slows to a stop in 10 s. Its blades
+disk’s angular velocity at . (b) What is
+are 20 m in length. (a) What is the angular
+the angle it has rotated through during this time?
+acceleration of the turbine? (b) What is the
+(c) What is the tangential acceleration of a point
+centripetal acceleration of the tip of the blades
+on the disk at
+at (c) What is the magnitude and
+44 . The angular velocity vs. time for a fan on a direction of the total linear acceleration of the
+hovercraft is shown below. (a) What is the angle tip of the blade that lies along the positive x-axis
+through which the fan blades rotate in the first 8 at
+seconds? (b) Verify your result using the
+50 . What is (a) the angular speed and (b) the linear
+kinematic equations.
+speed of a point on Earth’s surface at latitude
+N. Take the radius of the Earth to be 6309
+km. (c) At what latitude would your linear speed
+be 10 m/s?
+51 . A child with mass 40 kg sits on the edge of a

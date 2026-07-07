@@ -1,0 +1,161 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 652-657
+############################################################
+
+640 13 • Gravitation
+This is a diameter of only about 6 km. If we use the mass of Earth, we get . This is a diameter
+of less than 2 cm! If we pack Earth’s mass into a sphere with the radius , we get a density of
+Significance
+A neutron star is the most compact object known—outside of a black hole itself. The neutron star is composed of
+neutrons, with the density of an atomic nucleus, and, like many black holes, is believed to be the remnant of a
+supernova—a star that explodes at the end of its lifetime. To create a black hole from Earth, we would have to
+compress it to a density thirteen orders of magnitude greater than that of a neutron star. This process would require
+unimaginable force. There is no known mechanism that could cause an Earth-sized object to become a black hole.
+For the Sun, you should be able to show that it would have to be compressed to a density only about 80 times that
+of a nucleus. (Note: Once the mass is compressed within its Schwarzschild radius, general relativity dictates that it
+will collapse to a singularity. These calculations merely show the density we must achieve to initiate that collapse.)
+CHECK YOUR UNDERSTANDING 13.11
+Consider the density required to make Earth a black hole compared to that required for the Sun. What conclusion
+can you draw from this comparison about what would be required to create a black hole? Would you expect the
+Universe to have many black holes with small mass?
+The event horizon
+The Schwarzschild radius is also called the event horizon of a black hole. We noted that both space and time are
+stretched near massive objects, such as black holes. Figure 13.30 illustrates that effect on space. The distortion
+caused by our Sun is actually quite small, and the diagram is exaggerated for clarity. Consider the neutron star,
+described in Example 13.15. Although the distortion of space-time at the surface of a neutron star is very high, the
+radius is still larger than its Schwarzschild radius. Objects could still escape from its surface.
+However, if a neutron star gains additional mass, it would eventually collapse, shrinking beyond the Schwarzschild
+radius. Once that happens, the entire mass would be pulled, inevitably, to a singularity. In the diagram, space is
+stretched to infinity. Time is also stretched to infinity. As objects fall toward the event horizon, we see them
+approaching ever more slowly, but never reaching the event horizon. As outside observers, we never see objects
+pass through the event horizon—effectively, time is stretched to a stop.
+INTERACTIVE
+Visit this site (https://openstax.org/l/21spacetelescop) to view an animated example of these spatial distortions.
+Access for free at openstax.org
+
+13.7 • Einstein's Theory of Gravity 641
+FIGURE 13.30 The space distortion becomes more noticeable around increasingly larger masses. Once the mass density reaches a critical
+level, a black hole forms and the fabric of space-time is torn. The curvature of space is greatest at the surface of each of the first three
+objects shown and is finite. The curvature then decreases (not shown) to zero as you move to the center of the object. But the black hole is
+different. The curvature becomes infinite: The surface has collapsed to a singularity, and the cone extends to infinity. (Note: These diagrams
+are not to any scale.) (credit: modification of work by NASA)
+Observational evidence of neutron stars and black holes
+The first validated neutron star was discovered by Jocelyn Bell Burnell in 1967. Burnell observed a regular radio
+pulse from an distant object, a phenomenon not previously observed. After further analysis and the discovery of a
+second pulsar (as the objects would later be called), the researchers and scientific community recognized that the
+pulses were caused by rapidly rotating neutron stars. At about the same time, a number of other astronomers,
+including Iosof Shklovsky, observed radio sources that would be proven to be neutron stars. These discoveries
+renewed interest in black holes. Evidence for black holes is based upon several types of observations, such as
+radiation analysis of X-ray binaries, gravitational lensing of the light from distant galaxies, and the motion of visible
+objects around invisible partners. We will focus on these later observations as they relate to what we have learned
+in this chapter. Although light cannot escape from a black hole for us to see, we can nevertheless see the
+gravitational effect of the black hole on surrounding masses.
+The closest, and perhaps most dramatic, evidence for a black hole is at the center of our Milky Way galaxy. The
+UCLA Galactic Group, using data obtained by the W. M. Keck telescopes, has determined the orbits of several stars
+near the center of our galaxy. Some of that data is shown in Figure 13.31. The orbits of two stars are highlighted.
+From measurements of the periods and sizes of their orbits, it is estimated that they are orbiting a mass of
+approximately 4 million solar masses. Note that the mass must reside in the region created by the intersection of
+the ellipses of the stars. The region in which that mass must reside would fit inside the orbit of Mercury—yet nothing
+is seen there in the visible spectrum. In 2020, UCLA astrophysicist Andrea Ghez and Plank Institute's (Germany)
+Reinhardt Genzel shared the Nobel prize for the discovery of the supermassive object. They shared the prize with
+Richard Penrose, whose mathematical models proved that black holes can actually form and align with Einstein's
+theory. Since their work, the world has actually seen a black hole, thanks to the Event Horizon Telescope. The global
+network of observatories combined massive amounts of data in order to produce remarkable images of two black
+holes: first at the center of galaxy Messier 87, and second at the center of the Milky Way, Saggitarious A.
+
+642 13 • Gravitation
+FIGURE 13.31 Paths of stars orbiting about a mass at the center of our Milky Way galaxy. From their motion, it is estimated that a black
+hole of about 4 million solar masses resides at the center. (credit: modification of work by UCLA Galactic Center Group – W.M. Keck
+Observatory Laser Team)
+The physics of stellar creation and evolution is well established. The ultimate source of energy that makes stars
+shine is the self-gravitational energy that triggers fusion. The general behavior is that the more massive a star, the
+brighter it shines and the shorter it lives. The logical inference is that a mass that is 4 million times the mass of our
+Sun, confined to a very small region, and that cannot be seen, has no viable interpretation other than a black hole.
+Extragalactic observations strongly suggest that black holes are common at the center of galaxies.
+INTERACTIVE
+Visit the UCLA Galactic Center Group main page (https://openstax.org/l/21galacenter01) for information on X-ray
+binaries and gravitational lensing. Visit this page (https://openstax.org/l/21galacenter02) to view the background
+and the image of the black hole at the center of the Milky Way.
+Dark matter
+Stars orbiting near the very heart of our galaxy provide strong evidence for a black hole there, but the orbits of stars
+far from the center suggest another intriguing phenomenon that is observed indirectly as well. Recall from
+Gravitation Near Earth’s Surface that we can consider the mass for spherical objects to be located at a point at the
+center for calculating their gravitational effects on other masses. Similarly, we can treat the total mass that lies
+within the orbit of any star in our galaxy as being located at the center of the Milky Way disc. We can estimate that
+mass from counting the visible stars and include in our estimate the mass of the black hole at the center as well.
+But when we do that, we find the orbital speed of the stars is far too fast to be caused by that amount of matter.
+Astronomer Vera Rubin disovered this phenomenon in the 1970s while researching the movement of spiral galaxies.
+She observed that their outermost reaches were rotating as quickly as their centers, which was not the predicted
+outcome. Figure 13.32 shows the orbital velocities of stars as a function of their distance from the center of the
+Milky Way. The blue line represents the velocities we would expect from our estimates of the mass, whereas the
+green curve is what we get from direct measurements. Rubin calculated that the rotational velocity of galaxies
+should have been enough to cause them to fly apart, unless there was a significant discrepancy between their
+observable matter and their actual matter. This became known as the galaxy rotation problem. Rubin proposed that
+massive amounts of unseen matter must be present in and around the galaxies for the rotation speeds to occur.
+Furthermore, the velocity profile does not follow what we expect from the observed distribution of visible stars. Not
+only is the estimate of the total mass inconsistent with the data, but the expected distribution is inconsistent as
+well. Rubin’s 1978 discovery provided much more concrete and widespread evidence of dark matter, a term Fritz
+Zwicky coined in 1933 when he observed a similar anomaly while examining a galaxy cluster.
+Access for free at openstax.org
+
+13.7 • Einstein's Theory of Gravity 643
+FIGURE 13.32 The blue curve shows the expected orbital velocity of stars in the Milky Way based upon the visible stars we can see. The
+green curve shows that the actually velocities are higher, suggesting additional matter that cannot be seen. (credit: modification of work by
+Matthew Newby)
+There are two prevailing ideas of what this matter could be—WIMPs and MACHOs. WIMPs stands for weakly
+interacting massive particles. These particles (neutrinos are one example) interact very weakly with ordinary matter
+and, hence, are very difficult to detect directly. MACHOs stands for massive compact halo objects, which are
+composed of ordinary baryonic matter, such as neutrons and protons. There are unresolved issues with both of
+these ideas, and far more research will be needed to solve the mystery.
+
+644 13 • Chapter Review
+Chapter Review
+Key Terms
+action-at-a-distance force type of force exerted direction along the line connecting the center of
+without physical contact mass of each
+aphelion farthest point from the Sun of an orbiting non-Euclidean geometry geometry of curved space,
+body; the corresponding term for the Moon’s describing the relationships among angles and lines
+farthest point from Earth is the apogee on the surface of a sphere, hyperboloid, etc.
+apparent weight reading of the weight of an object orbital period time required for a satellite to
+on a scale that does not account for acceleration complete one orbit
+black hole mass that becomes so dense, that it orbital speed speed of a satellite in a circular orbit; it
+collapses in on itself, creating a singularity at the can be also be used for the instantaneous speed for
+center surround by an event horizon noncircular orbits in which the speed is not constant
+escape velocity initial velocity an object needs to perihelion point of closest approach to the Sun of an
+escape the gravitational pull of another; it is more orbiting body; the corresponding term for the
+accurately defined as the velocity of an object with Moon’s closest approach to Earth is the perigee
+zero total mechanical energy principle of equivalence part of the general theory of
+event horizon location of the Schwarzschild radius relativity, it states that there no difference between
+and is the location near a black hole from within free fall and being weightless, or a uniform
+which no object, even light, can escape gravitational field and uniform acceleration
+gravitational field vector field that surrounds the Schwarzschild radius critical radius ( ) such that if
+mass creating the field; the field is represented by a mass were compressed to the extent that its
+field lines, in which the direction of the field is radius becomes less than the Schwarzschild radius,
+tangent to the lines, and the magnitude (or field then the mass will collapse to a singularity, and
+strength) is inversely proportional to the spacing of anything that passes inside that radius cannot
+the lines; other masses respond to this field escape
+gravitationally bound two object are gravitationally space-time concept of space-time is that time is
+bound if their orbits are closed; gravitationally essentially another coordinate that is treated the
+bound systems have a negative total mechanical same way as any individual spatial coordinate; in
+energy the equations that represent both special and
+Kepler’s first law law stating that every planet moves general relativity, time appears in the same context
+along an ellipse, with the Sun located at a focus of as do the spatial coordinates
+the ellipse spring tide high tide created when the Moon, the Sun,
+Kepler’s second law law stating that a planet sweeps and Earth are along one line
+out equal areas in equal times, meaning it has a theory of general relativity Einstein’s theory for
+constant areal velocity gravitation and accelerated reference frames; in this
+Kepler’s third law law stating that the square of the theory, gravitation is the result of mass and energy
+period is proportional to the cube of the semi-major distorting the space-time around it; it is also often
+axis of the orbit referred to as Einstein’s theory of gravity
+neap tide low tide created when the Moon and the tidal force difference between the gravitational force
+Sun form a right triangle with Earth at the center of a body and that at any other location
+neutron star most compact object known—outside of on the body; the tidal force stretches the body
+a black hole itself universal gravitational constant constant
+Newton’s law of gravitation every mass attracts representing the strength of the gravitational force,
+every other mass with a force proportional to the that is believed to be the same throughout the
+product of their masses, inversely proportional to universe
+the square of the distance between them, and with
+Key Equations
+Newton’s law of gravitation
+Acceleration due to gravity
+at the surface of Earth
+Access for free at openstax.org

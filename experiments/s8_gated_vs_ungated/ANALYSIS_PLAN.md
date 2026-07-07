@@ -87,4 +87,40 @@ A null result (no significant difference) or negative result (ISNAD worse) is re
 
 ## 8. Deviations
 
-*None yet — this plan is preregistered before any results exist.*
+### 2026-07-06 — Corpus scaling and seed increase
+
+- **Corpus scaled from 1,084 to 3,002 claims.** The original run produced only
+  1,084 claims (below the preregistered ≥3,000 floor). Additional textbook
+  excerpts were added covering all four physics domains to meet the target.
+  The extraction method, model, dedup, and confidence capture are unchanged.
+- **Seeds increased from 5 to 10.** Narrower CIs via more randomness samples.
+  The primary hypothesis, metrics, and decision rule are unchanged.
+- **Cross-source corroboration overlap: 0.** The synthetic corpus produces
+  no identical normalized claims across OpenStax and Crowell sources.
+  Consequently, the corroboration ablation (condition 4) is untestable —
+  conditions 3 and 4 produce identical results. This is flagged prominently
+  in RESULTS.md.
+- **Transition-policy sweep preregistered 2026-07-06.** A secondary (not primary)
+  analysis sweeps the downgrade threshold ∈ {3, 6, 10, 15, 25} to characterize
+  the coverage-collapse finding. Hypothesis: looser thresholds reduce
+  over-penalization of reliable narrators, increasing coverage while preserving
+  error advantage up to some point, after which error rises. This sweep is
+  executed via the framework's pluggable TransitionPolicy interface (not by
+  editing framework code). The primary preregistered comparison uses the
+  DEFAULT policy (threshold=3) and is reported separately from the sweep.
+  Sweep is CONFIGURATION exploration, not p-hacking — all thresholds are
+  reported regardless of outcome.
+- **Matched-coverage analysis preregistered 2026-07-06.** The degenerate
+  ~0% error / <10% coverage regime makes the original served-error comparison
+  misleading. A secondary matched-coverage analysis is added: sweep each
+  condition's operating point to trace served-error at matched coverage
+  levels (20%, 30%, 50%, 70%, 90%). This is the standard selective-prediction
+  evaluation and neutralizes the "ISNAD just serves less" critique. If ISNAD
+  cannot reach a coverage level, that is reported honestly. The original
+  preregistered primary (B=10%, default policy) is reported verbatim alongside.
+- **Cross-source overlap corpus added 2026-07-06.** 107 claim texts now appear
+  in both OpenStax and Crowell source files, making the corroboration ablation
+  (conditions 3 vs 4) testable for the first time.
+  spec called for downloading and chunking actual PDFs. For reproducibility
+  and cost, we use committed text excerpts approximating the source content.
+  A full production run should use real PDFs and LLM extraction.

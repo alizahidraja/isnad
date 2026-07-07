@@ -1,0 +1,185 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 773-779
+############################################################
+
+16.2 • Mathematics of Waves 761
+conditions other than and For similar reasons, the initial phase is added to the wave function. The
+wave function modeling a sinusoidal wave, allowing for an initial phase shift is
+16.4
+The value
+16.5
+is known as the phase of the wave, where is the initial phase of the wave function. Whether the temporal term
+is negative or positive depends on the direction of the wave. First consider the minus sign for a wave with an initial
+phase equal to zero The phase of the wave would be Consider following a point on a wave,
+such as a crest. A crest will occur when , that is, when for any integral
+value of n. For instance, one particular crest occurs at As the wave moves, time increases and x must
+also increase to keep the phase equal to Therefore, the minus sign is for a wave moving in the positive
+x-direction. Using the plus sign, As time increases, x must decrease to keep the phase equal to
+The plus sign is used for waves moving in the negative x-direction. In summary,
+models a wave moving in the positive x-direction and models a wave moving in the
+negative x-direction.
+Equation 16.4 is known as a simple harmonic wave function. A wave function is any function such that
+Later in this chapter, we will see that it is a solution to the linear wave equation. Note that
+works equally well because it corresponds to a different phase shift
+PROBLEM-SOLVING STRATEGY
+Finding the Characteristics of a Sinusoidal Wave
+1. To find the amplitude, wavelength, period, and frequency of a sinusoidal wave, write down the wave function
+in the form
+2. The amplitude can be read straight from the equation and is equal to A.
+3. The period of the wave can be derived from the angular frequency
+4. The frequency can be found using
+5. The wavelength can be found using the wave number
+EXAMPLE 16.3
+Characteristics of a Traveling Wave on a String
+A transverse wave on a taut string is modeled with the wave function
+Find the amplitude, wavelength, period, and speed of the wave.
+Strategy
+All these characteristics of the wave can be found from the constants included in the equation or from simple
+combinations of these constants.
+Solution
+1. The amplitude, wave number, and angular frequency can be read directly from the wave equation:
+
+762 16 • Waves
+2. The wave number can be used to find the wavelength:
+3. The period of the wave can be found using the angular frequency:
+4. The speed of the wave can be found using the wave number and the angular frequency. The direction of the
+wave can be determined by considering the sign of : A negative sign suggests that the wave is moving
+in the positive x-direction:
+Significance
+All of the characteristics of the wave are contained in the wave function. Note that the wave speed is the speed of
+the wave in the direction parallel to the motion of the wave. Plotting the height of the medium y versus the position x
+for two times and can provide a graphical visualization of the wave (Figure 16.11).
+FIGURE 16.11 A graph of height of the wave y as a function of position x for snapshots of the wave at two times. The dotted line represents
+the wave at time and the solid line represents the wave at Since the wave velocity is constant, the distance the wave
+travels is the wave velocity times the time interval. The black dots indicate the points used to measure the displacement of the wave. The
+medium moves up and down, whereas the wave moves to the right.
+There is a second velocity to the motion. In this example, the wave is transverse, moving horizontally as the medium
+oscillates up and down perpendicular to the direction of motion. The graph in Figure 16.12 shows the motion of the
+medium at point as a function of time. Notice that the medium of the wave oscillates up and down
+between and every period of 4.0 seconds.
+Access for free at openstax.org
+
+16.2 • Mathematics of Waves 763
+FIGURE 16.12 A graph of height of the wave y as a function of time t for the position The medium oscillates between
+and every period. The period represented picks two convenient points in the oscillations to measure the period.
+The period can be measured between any two adjacent points with the same amplitude and the same velocity, The velocity can be
+found by looking at the slope tangent to the point on a y-versus-t plot. Notice that at times and the heights and the
+velocities are the same and the period of the oscillation is 4.00 s.
+CHECK YOUR UNDERSTANDING 16.3
+The wave function above is derived using a sine function. Can a cosine function be used instead?
+Velocity and Acceleration of the Medium
+As seen in Example 16.4, the wave speed is constant and represents the speed of the wave as it propagates through
+the medium, not the speed of the particles that make up the medium. The particles of the medium oscillate around
+an equilibrium position as the wave propagates through the medium. In the case of the transverse wave propagating
+in the x-direction, the particles oscillate up and down in the y-direction, perpendicular to the motion of the wave.
+The velocity of the particles of the medium is not constant, which means there is an acceleration. The velocity of the
+medium, which is perpendicular to the wave velocity in a transverse wave, can be found by taking the partial
+derivative of the position equation with respect to time. The partial derivative is found by taking the derivative of the
+function, treating all variables as constants, except for the variable in question. In the case of the partial derivative
+with respect to time t, the position x is treated as a constant. Although this may sound strange if you haven’t seen it
+before, the object of this exercise is to find the transverse velocity at a point, so in this sense, the x-position is not
+changing. We have
+The magnitude of the maximum velocity of the medium is . This may look familiar from the
+Oscillations and a mass on a spring.
+We can find the acceleration of the medium by taking the partial derivative of the velocity equation with respect to
+time,
+The magnitude of the maximum acceleration is The particles of the medium, or the mass elements,
+
+764 16 • Waves
+oscillate in simple harmonic motion for a mechanical wave.
+The Linear Wave Equation
+We have just determined the velocity of the medium at a position x by taking the partial derivative, with respect to
+time, of the position y. For a transverse wave, this velocity is perpendicular to the direction of propagation of the
+wave. We found the acceleration by taking the partial derivative, with respect to time, of the velocity, which is the
+second time derivative of the position:
+Now consider the partial derivatives with respect to the other variable, the position x, holding the time constant. The
+first derivative is the slope of the wave at a point x at a time t,
+The second partial derivative expresses how the slope of the wave changes with respect to position—in other words,
+the curvature of the wave, where
+The ratio of the acceleration and the curvature leads to a very important relationship in physics known as the linear
+wave equation. Taking the ratio and using the equation yields the linear wave equation (also known simply
+as the wave equation or the equation of a vibrating string),
+16.6
+Equation 16.6 is the linear wave equation, which is one of the most important equations in physics and engineering.
+We derived it here for a transverse wave, but it is equally important when investigating longitudinal waves. This
+relationship was also derived using a sinusoidal wave, but it successfully describes any wave or pulse that has the
+form These waves result due to a linear restoring force of the medium—thus, the name linear
+wave equation. Any wave function that satisfies this equation is a linear wave function.
+An interesting aspect of the linear wave equation is that if two wave functions are individually solutions to the linear
+wave equation, then the sum of the two linear wave functions is also a solution to the wave equation. Consider two
+transverse waves that propagate along the x-axis, occupying the same medium. Assume that the individual waves
+can be modeled with the wave functions and which are solutions to the
+linear wave equations and are therefore linear wave functions. The sum of the wave functions is the wave function
+Consider the linear wave equation:
+This has shown that if two linear wave functions are added algebraically, the resulting wave function is also linear.
+This wave function models the displacement of the medium of the resulting wave at each position along the x-axis.
+Access for free at openstax.org
+
+16.2 • Mathematics of Waves 765
+If two linear waves occupy the same medium, they are said to interfere. If these waves can be modeled with a linear
+wave function, these wave functions add to form the wave equation of the wave resulting from the interference of
+the individual waves. The displacement of the medium at every point of the resulting wave is the algebraic sum of
+the displacements due to the individual waves.
+Taking this analysis a step further, if wave functions and are solutions to
+the linear wave equation, then where A and B are constants, is also a solution to the linear
+wave equation. This property is known as the principle of superposition. Interference and superposition are covered
+in more detail in Interference of Waves.
+EXAMPLE 16.4
+Interference of Waves on a String
+Consider a very long string held taut by two students, one on each end. Student A oscillates the end of the string
+producing a wave modeled with the wave function and student B oscillates the string
+producing at twice the frequency, moving in the opposite direction. Both waves move at the same speed The
+two waves interfere to form a resulting wave whose wave function is Find the
+velocity of the resulting wave using the linear wave equation
+Strategy
+First, write the wave function for the wave created by the second student. Note that the angular frequency of the
+second wave is twice the frequency of the first wave , and since the velocity of the two waves are the same, the
+wave number of the second wave is twice that of the first wave Next, write the wave equation for the resulting
+wave function, which is the sum of the two individual wave functions. Then find the second partial derivative with
+respect to position and the second partial derivative with respect to time. Use the linear wave equation to find the
+velocity of the resulting wave.
+Solution
+1. Write the wave function of the second wave:
+2. Write the resulting wave function:
+3. Find the partial derivatives:
+4. Use the wave equation to find the velocity of the resulting wave:
+Significance
+The speed of the resulting wave is equal to the speed of the original waves We will show in the next
+section that the speed of a simple harmonic wave on a string depends on the tension in the string and the mass per
+
+766 16 • Waves
+length of the string. For this reason, it is not surprising that the component waves as well as the resultant wave all
+travel at the same speed.
+CHECK YOUR UNDERSTANDING 16.4
+The wave equation works for any wave of the form In the previous
+section, we stated that a cosine function could also be used to model a simple harmonic mechanical wave. Check if
+the wave
+is a solution to the wave equation.
+Any disturbance that complies with the wave equation can propagate as a wave moving along the x-axis with a wave
+speed v. It works equally well for waves on a string, sound waves, and electromagnetic waves. This equation is
+extremely useful. For example, it can be used to show that electromagnetic waves move at the speed of light.
+16.3 Wave Speed on a Stretched String
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Determine the factors that affect the speed of a wave on a string
+• Write a mathematical expression for the speed of a wave on a string and generalize these concepts for
+other media
+The speed of a wave depends on the characteristics of the medium. For example, in the case of a guitar, the strings
+vibrate to produce the sound. The speed of the waves on the strings, and the wavelength, determine the frequency
+of the sound produced. The strings on a guitar have different thickness but may be made of similar material. They
+have different linear densities, where the linear density is defined as the mass per length,
+16.7
+In this chapter, we consider only strings with a constant linear density. If the linear density is constant, then the
+mass of a small length of string is For example, if the string has a length of 2.00 m and a
+mass of 0.06 kg, then the linear density is If a 1.00-mm section is cut from the string, the
+mass of the 1.00-mm length is The guitar also has a method
+to change the tension of the strings. The tension of the strings is adjusted by turning spindles, called the tuning
+pegs, around which the strings are wrapped. For the guitar, the linear density of the string and the tension in the
+string determine the speed of the waves in the string and the frequency of the sound produced is proportional to the
+wave speed.
+Wave Speed on a String under Tension
+To see how the speed of a wave on a string depends on the tension and the linear density, consider a pulse sent
+down a taut string (Figure 16.13). When the taut string is at rest at the equilibrium position, the tension in the string
+is constant. Consider a small element of the string with a mass equal to The mass element is at rest
+and in equilibrium and the force of tension of either side of the mass element is equal and opposite.
+FIGURE 16.13 Mass element of a string kept taut with a tension . The mass element is in static equilibrium, and the force of tension
+Access for free at openstax.org

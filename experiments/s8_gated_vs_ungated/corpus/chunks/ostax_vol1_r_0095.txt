@@ -1,0 +1,154 @@
+# REAL PDF — openstax_vol1.pdf, pages 580-587
+############################################################
+
+568 12 • Static Equilibrium and Elasticity
+joints such as the elbow. In the initial analysis of a problem, hinge joints should always be assumed to exert a force
+in an arbitrary direction, and then you must solve for all components of a hinge force independently. In this example,
+the elbow force happens to be vertical because the problem assumes the tension by the biceps to be vertical as
+well. Such a simplification, however, is not a general rule.
+Solution
+Suppose we adopt a reference frame with the direction of the y-axis along the 50-lb weight and the pivot placed at
+the elbow. In this frame, all three forces have only y-components, so we have only one equation for the first
+equilibrium condition (for forces). We draw the free-body diagram for the forearm as shown in Figure 12.13,
+indicating the pivot, the acting forces and their lever arms with respect to the pivot, and the angles and that
+the forces and (respectively) make with their lever arms. In the definition of torque given by Equation 12.10,
+the angle is the direction angle of the vector counted counterclockwise from the radial direction of the lever
+arm that always points away from the pivot. By the same convention, the angle is measured counterclockwise
+from the radial direction of the lever arm to the vector Done this way, the non-zero torques are most easily
+computed by directly substituting into Equation 12.10 as follows:
+FIGURE 12.13 Free-body diagram for the forearm for the equivalent solution. The pivot is located at point E (elbow).
+The second equilibrium condition, can be now written as
+12.26
+From the free-body diagram, the first equilibrium condition (for forces) is
+12.27
+Equation 12.26 is identical to Equation 12.25 and gives the result Equation 12.27 gives
+We see that these answers are identical to our previous answers, but the second choice for the frame of reference
+leads to an equivalent solution that is simpler and quicker because it does not require that the forces be resolved
+into their rectangular components.
+CHECK YOUR UNDERSTANDING 12.4
+Repeat Example 12.4 assuming that the forearm is an object of uniform density that weighs 8.896 N.
+Access for free at openstax.org
+
+12.2 • Examples of Static Equilibrium 569
+EXAMPLE 12.5
+A Ladder Resting Against a Wall
+A uniform ladder is long and weighs 400.0 N. The ladder rests against a slippery vertical wall, as shown
+in Figure 12.14. The minimum inclination angle between the ladder and the rough floor below which the ladder slips
+is Find the reaction forces from the floor and from the wall on the ladder and the coefficient of static
+friction at the interface of the ladder with the floor that prevents the ladder from slipping.
+FIGURE 12.14 A 5.0-m-long ladder rests against a frictionless wall.
+Strategy
+We can identify four forces acting on the ladder. The first force is the normal reaction force N from the floor in the
+upward vertical direction. The second force is the static friction force directed horizontally along the floor
+toward the wall—this force prevents the ladder from slipping. These two forces act on the ladder at its contact point
+with the floor. The third force is the weight w of the ladder, attached at its CM located midway between its ends. The
+fourth force is the normal reaction force F from the wall in the horizontal direction away from the wall, attached at
+the contact point with the wall. There are no other forces because the wall is slippery, which means there is no
+friction between the wall and the ladder. Based on this analysis, we adopt the frame of reference with the y-axis in
+the vertical direction (parallel to the wall) and the x-axis in the horizontal direction (parallel to the floor). In this
+frame, each force has either a horizontal component or a vertical component but not both, which simplifies the
+solution. We select the pivot at the contact point with the floor. In the free-body diagram for the ladder, we indicate
+the pivot, all four forces and their lever arms, and the angles between lever arms and the forces, as shown in Figure
+12.15. With our choice of the pivot location, there is no torque either from the normal reaction force N or from the
+static friction f because they both act at the pivot.
+
+570 12 • Static Equilibrium and Elasticity
+FIGURE 12.15 Free-body diagram for a ladder resting against a frictionless wall.
+Solution
+From the free-body diagram, the net force in the x-direction is
+12.28
+the net force in the y-direction is
+12.29
+and the net torque along the rotation axis at the pivot point is
+12.30
+where is the torque of the weight w and is the torque of the reaction F. From the free-body diagram, we
+identify that the lever arm of the reaction at the wall is and the lever arm of the weight is
+With the help of the free-body diagram, we identify the angles to be used in Equation 12.10 for
+torques: for the torque from the reaction force with the wall, and for the
+torque due to the weight. Now we are ready to use Equation 12.10 to compute torques:
+We substitute the torques into Equation 12.30 and solve for
+12.31
+We obtain the normal reaction force with the floor by solving Equation 12.29: The magnitude of
+friction is obtained by solving Equation 12.28: Since the ladder will slip if the angle is any
+smaller, the static friction force is at its maximum angle and the coefficient of static friction is
+The net force on the ladder at the contact point with the floor is the vector sum of the normal reaction from the floor
+and the static friction forces:
+Access for free at openstax.org
+
+12.2 • Examples of Static Equilibrium 571
+Its magnitude is
+and its direction is
+We should emphasize here two general observations of practical use. First, notice that when we choose a pivot
+point, there is no expectation that the system will actually pivot around the chosen point. The ladder in this example
+is not rotating at all but firmly stands on the floor; nonetheless, its contact point with the floor is a good choice for
+the pivot. Second, notice when we use Equation 12.10 for the computation of individual torques, we do not need to
+resolve the forces into their normal and parallel components with respect to the direction of the lever arm, and we
+do not need to consider a sense of the torque. As long as the angle in Equation 12.10 is correctly identified—with the
+help of a free-body diagram—as the angle measured counterclockwise from the direction of the lever arm to the
+direction of the force vector, Equation 12.10 gives both the magnitude and the sense of the torque. This is because
+torque is the vector product of the lever-arm vector crossed with the force vector, and Equation 12.10 expresses the
+rectangular component of this vector product along the axis of rotation.
+Significance
+This result is independent of the length of the ladder because L is cancelled in the second equilibrium condition,
+Equation 12.31. No matter how long or short the ladder is, as long as its weight is 400 N and the angle with the floor
+is our results hold. But the ladder will slip if the net torque becomes negative in Equation 12.31. This happens
+for some angles when the coefficient of static friction is not great enough to prevent the ladder from slipping.
+CHECK YOUR UNDERSTANDING 12.5
+For the situation described in Example 12.5, determine the values of the coefficient of static friction for which the
+ladder starts slipping, given that is the angle that the ladder makes with the floor.
+EXAMPLE 12.6
+Forces on Door Hinges
+A swinging door that weighs is supported by hinges A and B so that the door can swing about a vertical
+axis passing through the hinges Figure 12.16. The door has a width of and the door slab has a uniform
+mass density. The hinges are placed symmetrically at the door’s edge in such a way that the door’s weight is evenly
+distributed between them. The hinges are separated by distance Find the forces on the hinges when
+the door rests half-open.
+
+572 12 • Static Equilibrium and Elasticity
+FIGURE 12.16 A 400-N swinging vertical door is supported by two hinges attached at points A and B.
+Strategy
+The forces that the door exerts on its hinges can be found by simply reversing the directions of the forces that the
+hinges exert on the door. Hence, our task is to find the forces from the hinges on the door. Three forces act on the
+door slab: an unknown force from hinge an unknown force from hinge and the known weight attached
+at the center of mass of the door slab. The CM is located at the geometrical center of the door because the slab has
+a uniform mass density. We adopt a rectangular frame of reference with the y-axis along the direction of gravity and
+the x-axis in the plane of the slab, as shown in panel (a) of Figure 12.17, and resolve all forces into their rectangular
+components. In this way, we have four unknown component forces: two components of force and and
+two components of force and In the free-body diagram, we represent the two forces at the hinges by
+their vector components, whose assumed orientations are arbitrary. Because there are four unknowns
+and we must set up four independent equations. One equation is the equilibrium condition for forces in the
+x-direction. The second equation is the equilibrium condition for forces in the y-direction. The third equation is the
+equilibrium condition for torques in rotation about a hinge. Because the weight is evenly distributed between the
+hinges, we have the fourth equation, To set up the equilibrium conditions, we draw a free-body diagram
+and choose the pivot point at the upper hinge, as shown in panel (b) of Figure 12.17. Finally, we solve the equations
+for the unknown force components and find the forces.
+Access for free at openstax.org
+
+12.2 • Examples of Static Equilibrium 573
+FIGURE 12.17 (a) Geometry and (b) free-body diagram for the door.
+Solution
+From the free-body diagram for the door we have the first equilibrium condition for forces:
+We select the pivot at point P (upper hinge, per the free-body diagram) and write the second equilibrium condition
+for torques in rotation about point P:
+12.32
+We use the free-body diagram to find all the terms in this equation:
+In evaluating we use the geometry of the triangle shown in part (a) of the figure. Now we substitute these
+torques into Equation 12.32 and compute
+Therefore the magnitudes of the horizontal component forces are The forces on the door are
+The forces on the hinges are found from Newton’s third law as
+
+574 12 • Static Equilibrium and Elasticity
+Significance
+Note that if the problem were formulated without the assumption of the weight being equally distributed between
+the two hinges, we wouldn’t be able to solve it because the number of the unknowns would be greater than the
+number of equations expressing equilibrium conditions.
+CHECK YOUR UNDERSTANDING 12.6
+Solve the problem in Example 12.6 by taking the pivot position at the center of mass.
+CHECK YOUR UNDERSTANDING 12.7
+A 50-kg person stands 1.5 m away from one end of a uniform 6.0-m-long scaffold of mass 70.0 kg. Find the tensions
+in the two vertical ropes supporting the scaffold.
+CHECK YOUR UNDERSTANDING 12.8
+A 400.0-N sign hangs from the end of a uniform strut. The strut is 4.0 m long and weighs 600.0 N. The strut is
+supported by a hinge at the wall and by a cable whose other end is tied to the wall at a point 3.0 m above the left
+end of the strut. Find the tension in the supporting cable and the force of the hinge on the strut.
+Access for free at openstax.org

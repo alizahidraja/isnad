@@ -1,0 +1,3 @@
+*.pdf
+results/*_backup*
+results/seed_*/

@@ -1,0 +1,179 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 779-785
+############################################################
+
+16.3 • Wave Speed on a Stretched String 767
+acting on either side of the mass element is equal in magnitude and opposite in direction.
+If you pluck a string under tension, a transverse wave moves in the positive x-direction, as shown in Figure 16.14.
+The mass element is small but is enlarged in the figure to make it visible. The small mass element oscillates
+perpendicular to the wave motion as a result of the restoring force provided by the string and does not move in the
+x-direction. The tension in the string, which acts in the positive and negative x-direction, is approximately
+constant and is independent of position and time.
+FIGURE 16.14 A string under tension is plucked, causing a pulse to move along the string in the positive x-direction.
+Assume that the inclination of the displaced string with respect to the horizontal axis is small. The net force on the
+element of the string, acting parallel to the string, is the sum of the tension in the string and the restoring force. The
+x-components of the force of tension cancel, so the net force is equal to the sum of the y-components of the force.
+The magnitude of the x-component of the force is equal to the horizontal force of tension of the string as shown
+in Figure 16.14. To obtain the y-components of the force, note that and The is
+equal to the slope of a function at a point, which is equal to the partial derivative of y with respect to x at that point.
+Therefore, is equal to the negative slope of the string at and is equal to the slope of the string at
+The net force on the small mass element can be written as
+Using Newton’s second law, the net force is equal to the mass times the acceleration. The linear density of the string
+is the mass per length of the string, and the mass of the portion of the string is ,
+Dividing by and taking the limit as approaches zero,
+
+768 16 • Waves
+Recall that the linear wave equation is
+Therefore,
+Solving for v, we see that the speed of the wave on a string depends on the tension and the linear density.
+SPEED OF A WAVE ON A STRING UNDER TENSION
+The speed of a pulse or wave on a string under tension can be found with the equation
+16.8
+where is the tension in the string and is the mass per length of the string.
+EXAMPLE 16.5
+The Wave Speed of a Guitar String
+On a six-string guitar, the high E string has a linear density of and the low E string has
+a linear density of (a) If the high E string is plucked, producing a wave in the string,
+what is the speed of the wave if the tension of the string is 56.40 N? (b) The linear density of the low E string is
+approximately 20 times greater than that of the high E string. For waves to travel through the low E string at the
+same wave speed as the high E, would the tension need to be larger or smaller than the high E string? What would
+be the approximate tension? (c) Calculate the tension of the low E string needed for the same wave speed.
+Strategy
+a. The speed of the wave can be found from the linear density and the tension
+b. From the equation if the linear density is increased by a factor of almost 20, the tension would
+need to be increased by a factor of 20.
+c. Knowing the velocity and the linear density, the velocity equation can be solved for the force of tension
+Solution
+a. Use the velocity equation to find the speed:
+b. The tension would need to be increased by a factor of approximately 20. The tension would be slightly less
+Access for free at openstax.org
+
+16.4 • Energy and Power of a Wave 769
+than 1128 N.
+c. Use the velocity equation to find the actual tension:
+This solution is within of the approximation.
+Significance
+The standard notes of the six string (high E, B, G, D, A, low E) are tuned to vibrate at the fundamental frequencies
+(329.63 Hz, 246.94Hz, 196.00Hz, 146.83Hz, 110.00Hz, and 82.41Hz) when plucked. The frequencies depend on
+the speed of the waves on the string and the wavelength of the waves. The six strings have different linear densities
+and are “tuned” by changing the tensions in the strings. We will see in Interference of Waves that the wavelength
+depends on the length of the strings and the boundary conditions. To play notes other than the fundamental notes,
+the lengths of the strings are changed by pressing down on the strings.
+CHECK YOUR UNDERSTANDING 16.5
+The wave speed of a wave on a string depends on the tension and the linear mass density. If the tension is doubled,
+what happens to the speed of the waves on the string?
+Speed of Compression Waves in a Fluid
+The speed of a wave on a string depends on the square root of the tension divided by the mass per length, the linear
+density. In general, the speed of a wave through a medium depends on the elastic property of the medium and the
+inertial property of the medium.
+The elastic property describes the tendency of the particles of the medium to return to their initial position when
+perturbed. The inertial property describes the tendency of the particle to resist changes in velocity.
+The speed of a longitudinal wave through a liquid or gas depends on the density of the fluid and the bulk modulus of
+the fluid,
+16.9
+Here the bulk modulus is defined as where is the change in the pressure and the denominator is
+the ratio of the change in volume to the initial volume, and is the mass per unit volume. For example, sound
+is a mechanical wave that travels through a fluid or a solid. The speed of sound in air with an atmospheric pressure
+of and a temperature of is Because the density depends on temperature,
+the speed of sound in air depends on the temperature of the air. This will be discussed in detail in Sound.
+16.4 Energy and Power of a Wave
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain how energy travels with a pulse or wave
+• Describe, using a mathematical expression, how the energy in a wave depends on the amplitude of the
+wave
+All waves carry energy, and sometimes this can be directly observed. Earthquakes can shake whole cities to the
+ground, performing the work of thousands of wrecking balls (Figure 16.15). Loud sounds can pulverize nerve cells in
+the inner ear, causing permanent hearing loss. Ultrasound is used for deep-heat treatment of muscle strains. A laser
+
+770 16 • Waves
+beam can burn away a malignancy. Water waves chew up beaches.
+FIGURE 16.15 The destructive effect of an earthquake is observable evidence of the energy carried in these waves. The Richter scale rating
+of earthquakes is a logarithmic scale related to both their amplitude and the energy they carry.
+In this section, we examine the quantitative expression of energy in waves. This will be of fundamental importance
+in later discussions of waves, from sound to light to quantum mechanics.
+Energy in Waves
+The amount of energy in a wave is related to its amplitude and its frequency. Large-amplitude earthquakes produce
+large ground displacements. Loud sounds have high-pressure amplitudes and come from larger-amplitude source
+vibrations than soft sounds. Large ocean breakers churn up the shore more than small ones. Consider the example
+of the seagull and the water wave earlier in the chapter (Figure 16.3). Work is done on the seagull by the wave as the
+seagull is moved up, changing its potential energy. The larger the amplitude, the higher the seagull is lifted by the
+wave and the larger the change in potential energy.
+The energy of the wave depends on both the amplitude and the frequency. If the energy of each wavelength is
+considered to be a discrete packet of energy, a high-frequency wave will deliver more of these packets per unit time
+than a low-frequency wave. We will see that the average rate of energy transfer in mechanical waves is proportional
+to both the square of the amplitude and the square of the frequency. If two mechanical waves have equal
+amplitudes, but one wave has a frequency equal to twice the frequency of the other, the higher-frequency wave will
+have a rate of energy transfer a factor of four times as great as the rate of energy transfer of the lower-frequency
+wave. It should be noted that although the rate of energy transport is proportional to both the square of the
+amplitude and square of the frequency in mechanical waves, the rate of energy transfer in electromagnetic waves is
+proportional to the square of the amplitude, but independent of the frequency.
+Power in Waves
+Consider a sinusoidal wave on a string that is produced by a string vibrator, as shown in Figure 16.16. The string
+vibrator is a device that vibrates a rod up and down. A string of uniform linear mass density is attached to the rod,
+and the rod oscillates the string, producing a sinusoidal wave. The rod does work on the string, producing energy
+that propagates along the string. Consider a mass element of the string with a mass , as seen in Figure 16.16. As
+the energy propagates along the string, each mass element of the string is driven up and down at the same
+frequency as the wave. Each mass element of the string can be modeled as a simple harmonic oscillator. Since the
+string has a constant linear density each mass element of the string has the mass
+Access for free at openstax.org
+
+16.4 • Energy and Power of a Wave 771
+FIGURE 16.16 A string vibrator is a device that vibrates a rod. A string is attached to the rod, and the rod does work on the string, driving
+the string up and down. This produces a sinusoidal wave in the string, which moves with a wave velocity v. The wave speed depends on the
+tension in the string and the linear mass density of the string. A section of the string with mass oscillates at the same frequency as the
+wave.
+The total mechanical energy of the wave is the sum of its kinetic energy and potential energy. The kinetic energy
+of each mass element of the string of length is as the mass element oscillates
+perpendicular to the direction of the motion of the wave. Using the constant linear mass density, the kinetic energy
+of each mass element of the string with length is
+A differential equation can be formed by letting the length of the mass element of the string approach zero,
+Since the wave is a sinusoidal wave with an angular frequency the position of each mass element may be
+modeled as Each mass element of the string oscillates with a velocity
+The kinetic energy of each mass element of the string becomes
+The wave can be very long, consisting of many wavelengths. To standardize the energy, consider the kinetic energy
+associated with a wavelength of the wave. This kinetic energy can be integrated over the wavelength to find the
+energy associated with each wavelength of the wave:
+There is also potential energy associated with the wave. Much like the mass oscillating on a spring, there is a
+conservative restoring force that, when the mass element is displaced from the equilibrium position, drives the
+mass element back to the equilibrium position. The potential energy of the mass element can be found by
+considering the linear restoring force of the string, In Oscillations, we saw that the potential energy stored in a
+spring with a linear restoring force is equal to where the equilibrium position is defined as
+When a mass attached to the spring oscillates in simple harmonic motion, the angular frequency is equal to
+As each mass element oscillates in simple harmonic motion, the spring constant is equal to
+The potential energy of the mass element is equal to
+Note that is the spring constant and not the wave number This equation can be used to find the energy
+over a wavelength. Integrating over the wavelength, we can compute the potential energy over a wavelength:
+
+772 16 • Waves
+The potential energy associated with a wavelength of the wave is equal to the kinetic energy associated with a
+wavelength.
+The total energy associated with a wavelength is the sum of the potential energy and the kinetic energy:
+The time-averaged power of a sinusoidal mechanical wave, which is the average rate of energy transfer associated
+with a wave as it passes a point, can be found by taking the total energy associated with the wave divided by the
+time it takes to transfer the energy. If the velocity of the sinusoidal wave is constant, the time for one wavelength to
+pass by a point is equal to the period of the wave, which is also constant. For a sinusoidal mechanical wave, the
+time-averaged power is therefore the energy associated with a wavelength divided by the period of the wave. The
+wavelength of the wave divided by the period is equal to the velocity of the wave,
+16.10
+Note that this equation for the time-averaged power of a sinusoidal mechanical wave shows that the power is
+proportional to the square of the amplitude of the wave and to the square of the angular frequency of the wave.
+Recall that the angular frequency is equal to , so the power of a mechanical wave is equal to the square of
+the amplitude and the square of the frequency of the wave.
+EXAMPLE 16.6
+Power Supplied by a String Vibrator
+Consider a two-meter-long string with a mass of 70.00 g attached to a string vibrator as illustrated in Figure 16.16.
+The tension in the string is 90.0 N. When the string vibrator is turned on, it oscillates with a frequency of 60 Hz and
+produces a sinusoidal wave on the string with an amplitude of 4.00 cm and a constant wave speed. What is the
+time-averaged power supplied to the wave by the string vibrator?
+Strategy
+The power supplied to the wave should equal the time-averaged power of the wave on the string. We know the mass
+of the string , the length of the string , and the tension in the string. The speed of the wave on the
+string can be derived from the linear mass density and the tension. The string oscillates with the same frequency as
+the string vibrator, from which we can find the angular frequency.
+Solution
+1. Begin with the equation of the time-averaged power of a sinusoidal wave on a string:
+The amplitude is given, so we need to calculate the linear mass density of the string, the angular frequency of
+the wave on the string, and the speed of the wave on the string.
+2. We need to calculate the linear density to find the wave speed:
+3. The wave speed can be found using the linear mass density and the tension of the string:
+Access for free at openstax.org

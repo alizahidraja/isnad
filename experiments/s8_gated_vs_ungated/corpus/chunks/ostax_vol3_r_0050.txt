@@ -1,0 +1,339 @@
+# REAL PDF — openstax_vol3.pdf, pages 300-305
+############################################################
+
+292 Chapter 6 | Photons and Matter Waves
+nuclear model of the atom
+heavy positively charged nucleus at the center is surrounded by electrons, proposed by
+Rutherford
+Paschen series spectral lines corresponding to electron transitions to/from the n=3 state
+Pfund series spectral lines corresponding to electron transitions to/from the n=5 state
+photocurrent in a circuit, current that flows when a photoelectrode is illuminated
+photoelectric effect emission of electrons from a metal surface exposed to electromagnetic radiation of the proper
+frequency
+photoelectrode in a circuit, an electrode that emits photoelectrons
+photoelectron electron emitted from a metal surface in the presence of incident radiation
+photon particle of light
+Planck’s hypothesis of energy quanta energyexchangesbetweentheradiationandthewallstakeplaceonlyinthe
+form of discrete energy quanta
+postulates of Bohr’s model three assumptions that set a frame for Bohr’s model
+power intensity energy that passes through a unit surface per unit time
+propagation vector vector with magnitude 2π/λ that has the direction of the photon’s linear momentum
+quantized energies discrete energies; not continuous
+quantum number index that enumerates energy levels
+quantum phenomenon in interaction with matter, photon transfers either all its energy or nothing
+quantum state of a Planck’s oscillator any mode of vibration of Planck’s oscillator, enumerated by quantum
+number
+reduced Planck’s constant Planck’s constant divided by 2π
+Rutherford’s gold foil experiment first experiment to demonstrate the existence of the atomic nucleus
+Rydberg constant for hydrogen physical constant in the Balmer formula
+Rydberg formula experimentally found positions of spectral lines of hydrogen atom
+scattering angle angle between the direction of the scattered beam and the direction of the incident beam
+Stefan–Boltzmann constant physical constant in Stefan’s law
+stopping potential in a circuit, potential difference that stops photocurrent
+wave number magnitude of the propagation vector
+wave quantum mechanics theory that explains the physics of atoms and subatomic particles
+wave-particle duality particles can behave as waves and radiation can behave as particles
+work function energy needed to detach photoelectron from the metal surface
+α-particle doubly ionized helium atom
+α-ray beam of α-particles (alpha-particles)
+β-ray beam of electrons
+γ-ray beam of highly energetic photons
+KEY EQUATIONS
+Wien’s displacement law λ max T =2.898×10 −3 m⋅K
+Stefan’s law P(T)=σAT4
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 293
+Planck’s constant h=6.626×10 −34 J⋅s=4.136×10 −15 eV⋅s
+Energy quantum of radiation ΔE=hf
+Planck’s blackbody radiation law
+I(λ, T)=
+2πhc2
+1
+λ5
+e
+hc/λkBT
+−1
+Maximum kinetic energy K max=eΔV
+s
+of a photoelectron
+Energy of a photon E
+f
+=hf
+Energy balance for photoelectron K max=hf −ϕ
+Cut-off frequency ϕ
+f c=
+h
+Relativistic invariant E2= p2c2+m2c4
+energy equation 0
+Energy-momentum relation E
+f
+for photon p f = c
+Energy of a photon hc
+E f =hf = λ
+Magnitude of photon’s momentum h
+p f = λ
+Photon’s linear → →
+momentum vector
+p
+f
+=ℏ k
+The Compton wavelength h
+λ c= m c =0.00243nm
+of an electron 0
+The Compton shift Δλ=λ c(1−cosθ)
+The Balmer formula ⎛ ⎞
+1 =R 1 − 1
+λ H⎝ 22 n2⎠
+The Rydberg formula ⎛ ⎞
+1 λ =R H ⎝ ⎜ n 1 2 f − n 1 i 2 ⎠ ⎟, n i=n f +1, n f +2, …
+Bohr’s first quantization condition L n=nℏ, n=1, 2, …
+Bohr’s second quantization condition hf =|E n−E m|
+Bohr’s radius of hydrogen ℏ2
+a =4πε =0.529Å
+0 0 m e2
+e
+Bohr’s radius of thenth orbit r n=a
+0
+n2
+Ground-state energy value, m e4
+ionization limit E 0 = 8 1 ε2 h e 2 =13.6eV
+0
+E
+th
+l
+e
+ec
+n
+tr
+th
+o n
+o
+’s
+rb
+e
+it
+nergy in E n= −E
+0 n
+1
+2
+Ground state energy of E = −E = −13.6eV
+1 0
+hydrogen
+
+294 Chapter 6 | Photons and Matter Waves
+T
+hy
+h
+d
+e
+ro
+n
+g
+th
+e n
+o
+-
+r
+l
+b
+ik
+it
+e
+o
+i
+f
+on
+r n= a
+Z
+0n2
+T
+of
+h
+h
+e
+y
+n
+d
+t
+r
+h
+o g
+e
+e
+n
+n
+e
+-
+r
+l
+g
+ik
+y
+e ion
+E n= −Z2E
+0 n
+1
+2
+Energy of a matter wave E=hf
+The de Broglie wavelength h
+λ=
+p
+The frequency-wavelength relation λf = c
+β
+for matter waves
+Heisenberg’s uncertainty principle ΔxΔp≥ 1ℏ
+2
+SUMMARY
+6.1Blackbody Radiation
+• All bodies radiate energy. The amount of radiation a body emits depends on its temperature. The experimental
+Wien’sdisplacementlawstatesthatthehotterthebody,theshorterthewavelengthcorrespondingtotheemission
+peakintheradiationcurve.TheexperimentalStefan’slawstatesthatthetotalpowerofradiationemittedacrossthe
+entirespectrumofwavelengthsatagiventemperatureisproportionaltothefourthpoweroftheKelvintemperature
+of the radiating body.
+• Absorption and emission of radiation are studied within the model of a blackbody. In the classical approach, the
+exchangeofenergybetweenradiationandcavitywallsiscontinuous.Theclassicalapproachdoesnotexplainthe
+blackbody radiation curve.
+• Toexplaintheblackbodyradiationcurve,Planckassumedthattheexchangeofenergybetweenradiationandcavity
+walls takes place only in discrete quanta of energy. Planck’s hypothesis of energy quanta led to the theoretical
+Planck’sradiationlaw,whichagreeswiththeexperimentalblackbodyradiationcurve;italsoexplainsWien’sand
+Stefan’s laws.
+6.2Photoelectric Effect
+• Thephotoelectriceffectoccurswhenphotoelectronsareejectedfromametalsurfaceinresponsetomonochromatic
+radiation incident on the surface. It has three characteristics: (1) it is instantaneous, (2) it occurs only when the
+radiationisaboveacut-offfrequency,and(3)kineticenergiesofphotoelectronsatthesurfacedonotdependofthe
+intensity of radiation. The photoelectric effect cannot be explained by classical theory.
+• We can explain the photoelectric effect by assuming that radiation consists of photons (particles of light). Each
+photoncarriesaquantumofenergy.Theenergyofaphotondependsonlyonitsfrequency,whichisthefrequency
+of the radiation. At the surface, the entire energy of a photon is transferred to one photoelectron.
+• The maximum kinetic energy of a photoelectron at the metal surface is the difference between the energy of the
+incident photon and the work function of the metal. The work function is the binding energy of electrons to the
+metal surface. Each metal has its own characteristic work function.
+6.3The Compton Effect
+• IntheComptoneffect,X-raysscatteredoffsomematerialshavedifferentwavelengthsthanthewavelengthofthe
+incident X-rays. This phenomenon does not have a classical explanation.
+• The Compton effect is explained by assuming that radiation consists of photons that collide with weakly bound
+electronsinthetargetmaterial.Bothelectronandphotonaretreatedasrelativisticparticles.Conservationlawsof
+the total energy and of momentum are obeyed in collisions.
+• Treating the photon as a particle with momentum that can be transferred to an electron leads to a theoretical
+Compton shift that agrees with the wavelength shift measured in the experiment. This provides evidence that
+radiation consists of photons.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 295
+• Compton scattering is an inelastic scattering, in which scattered radiation has a longer wavelength than that of
+incident radiation.
+6.4Bohr’s Model of the Hydrogen Atom
+• Positions of absorption and emission lines in the spectrum of atomic hydrogen are given by the experimental
+Rydberg formula. Classical physics cannot explain the spectrum of atomic hydrogen.
+• The Bohr model of hydrogen was the first model of atomic structure to correctly explain the radiation spectra of
+atomic hydrogen. It was preceded by the Rutherford nuclear model of the atom. In Rutherford’s model, an atom
+consistsofapositivelychargedpoint-likenucleusthatcontainsalmosttheentiremassoftheatomandofnegative
+electrons that are located far away from the nucleus.
+• Bohr’s model of the hydrogen atom is based on three postulates: (1) an electron moves around the nucleus in a
+circular orbit, (2) an electron’s angular momentum in the orbit is quantized, and (3) the change in an electron’s
+energyasitmakesaquantumjumpfromoneorbittoanotherisalwaysaccompaniedbytheemissionorabsorption
+ofaphoton.Bohr’smodelissemi-classicalbecauseitcombinestheclassicalconceptofelectronorbit(postulate1)
+with the new concept of quantization (postulates 2 and 3).
+• Bohr’smodelofthehydrogenatomexplainstheemissionandabsorptionspectraofatomichydrogenandhydrogen-
+likeionswithlowatomicnumbers.Itwasthefirstmodeltointroducetheconceptofaquantumnumbertodescribe
+atomicstatesandtopostulatequantizationofelectronorbitsintheatom.Bohr’smodelisanimportantstepinthe
+development of quantum mechanics, which deals with many-electron atoms.
+6.5De Broglie’s Matter Waves
+• DeBroglie’shypothesisofmatterwavespostulatesthatanyparticleofmatterthathaslinearmomentumisalsoa
+wave.Thewavelengthofamatterwaveassociatedwithaparticleisinverselyproportionaltothemagnitudeofthe
+particle’s linear momentum. The speed of the matter wave is the speed of the particle.
+• DeBroglie’sconceptoftheelectronmatterwaveprovidesarationaleforthequantizationoftheelectron’sangular
+momentum in Bohr’s model of the hydrogen atom.
+• IntheDavisson–Germerexperiment,electronsarescatteredoffacrystallinenickelsurface.Diffractionpatternsof
+electron matter waves are observed. They are the evidence for the existence of matter waves. Matter waves are
+observed in diffraction experiments with various particles.
+6.6Wave-Particle Duality
+• Wave-particledualityexistsinnature:Undersomeexperimentalconditions,aparticleactsasaparticle;underother
+experimentalconditions,aparticleactsasawave.Conversely,undersomephysicalcircumstances,electromagnetic
+radiation acts as a wave, and under other physical circumstances, radiation acts as a beam of photons.
+• Modern-eradouble-slitexperimentswithelectronsdemonstratedconclusivelythatelectron-diffractionimagesare
+formed because of the wave nature of electrons.
+• The wave-particle dual nature of particles and of radiation has no classical explanation.
+• Quantum theory takes the wave property to be the fundamental property of all particles. A particle is seen as
+a moving wave packet. The wave nature of particles imposes a limitation on the simultaneous measurement of
+the particle’s position and momentum. Heisenberg’s uncertainty principle sets the limits on precision in such
+simultaneous measurements.
+• Wave-particledualityisexploitedinmanydevices,suchascharge-coupledevices(usedindigitalcameras)orinthe
+electron microscopy of the scanning electron microscope (SEM) and the transmission electron microscope (TEM).
+CONCEPTUAL QUESTIONS
+whosetemperatureisincreasedfrom1000Kto1,000,000
+6.1Blackbody Radiation K.
+1. Whichsurfacehasahighertemperature–thesurfaceof
+a yellow star or that of a red star? 3. Explain the color changes in a hot body as its
+temperature is increased.
+2. Describe what you would see when looking at a body
+
+296 Chapter 6 | Photons and Matter Waves
+4. SpeculateastowhyUVlightcausessunburn,whereas
+visible light does not. 6.3The Compton Effect
+17. Discuss any similarities and differences between the
+5. Twocavityradiatorsareconstructedwithwallsmadeof photoelectric and the Compton effects.
+differentmetals.Atthesametemperature,howwouldtheir
+radiation spectra differ?
+18. Whichhasagreatermomentum:anUVphotonoran
+IR photon?
+6. Discuss why some bodies appear black, other bodies
+appear red, and still other bodies appear white.
+19. Doeschangingtheintensityofamonochromaticlight
+beamaffectthemomentumoftheindividualphotonsinthe
+7. Ifeverythingradiateselectromagneticenergy,whycan beam?Doessuchachangeaffectthenetmomentumofthe
+we not see objects at room temperature in a dark room? beam?
+8. How much does the power radiated by a blackbody 20. CantheComptoneffectoccurwithvisiblelight?Ifso,
+increase when its temperature (in K) is tripled? will it be detectable?
+21. Is it possible in the Compton experiment to observe
+6.2Photoelectric Effect scattered X-rays that have a shorter wavelength than the
+9. For the same monochromatic light source, would the incident X-ray radiation?
+photoelectric effect occur for all metals?
+22. ShowthattheComptonwavelengthhasthedimension
+10. In the interpretation of the photoelectric effect, how of length.
+isitknownthatanelectrondoesnotabsorbmorethanone
+photon? 23. Atwhatscatteringangleisthewavelengthshiftinthe
+Compton effect equal to the Compton wavelength?
+11. Explain how you can determine the work function
+fromaplotofthestoppingpotentialversusthefrequencyof
+the incident radiation in a photoelectric effect experiment. 6.4Bohr’s Model of the Hydrogen Atom
+CanyoudeterminethevalueofPlanck’sconstantfromthis
+24. Explain why the patterns of bright emission spectral
+plot?
+lines have an identical spectral position to the pattern of
+dark absorption spectral lines for a given gaseous element.
+12. Suppose that in the photoelectric-effect experiment
+we make a plot of the detected current versus the applied
+25. Do the various spectral lines of the hydrogen atom
+potential difference. What information do we obtain from
+overlap?
+suchaplot?CanwedeterminefromitthevalueofPlanck’s
+constant? Can we determine the work function of the
+26. TheBalmerseriesforhydrogenwasdiscoveredbefore
+metal?
+either the Lyman or the Paschen series. Why?
+13. Speculate how increasing the temperature of a
+27. When the absorption spectrum of hydrogen at room
+photoelectrode affects the outcomes of the photoelectric
+temperature is analyzed, absorption lines for the Lyman
+effect experiment.
+seriesarefound,butnonearefoundfortheBalmerseries.
+What does this tell us about the energy state of most
+14. Which aspects of the photoelectric effect cannot be
+hydrogen atoms at room temperature?
+explained by classical physics?
+28. Hydrogen accounts for about 75% by mass of the
+15. Isthephotoelectric effectaconsequenceofthewave
+matter at the surfaces of most stars. However, the
+characterofradiationorisitaconsequenceoftheparticle
+absorption lines of hydrogen are strongest (of highest
+character of radiation? Explain briefly.
+intensity)inthespectraofstarswithasurfacetemperature
+of about 9000 K. They are weaker in the sun spectrum
+16. Themetalssodium,iron,andmolybdenumhavework and are essentially nonexistent in very hot (temperatures
+functions 2.5 eV, 3.9 eV, and 4.2 eV, respectively. Which above 25,000 K) or rather cool (temperatures below 3500
+of these metals will emit photoelectrons when illuminated K) stars. Speculate as to why surface temperature affects
+with 400 nm light? the hydrogen absorption lines that we observe.
+29. Discuss the similarities and differences between
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

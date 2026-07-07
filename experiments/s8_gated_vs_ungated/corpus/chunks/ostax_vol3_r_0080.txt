@@ -1,0 +1,218 @@
+# REAL PDF — openstax_vol3.pdf, pages 494-501
+############################################################
+
+486 Chapter 10 | Nuclear Physics
+nucleosynthesis process anew, with a higher percentage of heavier elements. Thus, stars are “factories” for the chemical
+elements, and many of the atoms in our bodies were once a part of stars.
+Figure 10.24 This image taken by NASA’s Spitzer Space
+Telescope and the Two Micron All Sky Survey (2MASS), shows
+the Serpens Cloud Core, a star-forming region in the
+constellation Serpens (the “Serpent”). Located about 750 light-
+years away, this cluster of stars is formed from cooling dust and
+gases. Infrared light has been used to reveal the youngest stars in
+orange and yellow. (credit: NASA/JPL-Caltech/2MASS)
+Example 10.11
+Energy of the Sun
+ThepoweroutputoftheSunisapproximately 3.8×10 26 J/s. MostofthisenergyisproducedintheSun’score
+bytheproton-protonchain.Thisenergyistransmittedoutwardbytheprocessesofconvectionandradiation.(a)
+HowmanyofthesefusionreactionspersecondmustoccurtosupplythepowerradiatedbytheSun?(b)Whatis
+therateatwhichthemassoftheSundecreases?(c)Inaboutfivebillionyears,thecentralcoreoftheSunwillbe
+depletedofhydrogen.BywhatpercentagewillthemassoftheSunhavedecreasedfromitspresentvaluewhen
+the core is depleted of hydrogen?
+Strategy
+The total energy output per second is given in the problem statement. If we know the energy released in each
+fusionreaction,wecandeterminetherateofthefusionreactions.Ifthemasslossperfusionreactionisknown,
+themasslossrateisknown.MultiplyingthisratebyfivebillionyearsgivesthetotalmasslostbytheSun.This
+valueisdividedbytheoriginalmassoftheSuntodeterminethepercentageoftheSun’smassthathasbeenlost
+when the hydrogen fuel is depleted.
+Solution
+a. The decrease in mass for the fusion reaction is
+Δm =4m⎛1H ⎞ −m⎛4He ⎞ −2m⎛ 0 e ⎞
+⎝1 ⎠ ⎝2 ⎠ ⎝+1 ⎠
+=4(1.007825u)−4.002603u−2(0.000549u)
+=0.0276u.
+The energy released per fusion reaction is
+Q=(0.0276u)(931.49MeV/u)=25.7MeV.
+Thus, to supply 3.8×10 26 J/s=2.38×10 39 MeV/s, there must be
+39
+2.38×10 MeV/s 37
+=9.26×10 reaction/s.
+25.7MeV/reaction
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 487
+b. TheSun’smassdecreasesby 0.0276u=4.58×10 −29 kg perfusionreaction,sotherateatwhichits
+mass decreases is
+⎛ 37 ⎞⎛ −29 ⎞ 9
+9.26×10 reaction/s 4.58×10 kg/reaction =4.24×10 kg/s.
+⎝ ⎠⎝ ⎠
+c. In 5×10 9 y=1.6×10 17 s, the Sun’s mass will therefore decrease by
+ΔM = ⎛ 4.24×10 9 kg/s ⎞⎛ 1.6×10 17 s ⎞ =6.8×10 26 kg.
+⎝ ⎠⎝ ⎠
+The current mass of the Sun is about 2.0×10 30 kg, so the percentage decrease in its mass when its
+hydrogen fuel is depleted will be
+⎛ 26 ⎞
+6.8×10 kg
+⎜ ⎟×100%=0.034%.
+⎝2.0×10 30 kg⎠
+Significance
+Afterfivebillionyears,theSunisverynearlythesamemassasitisnow.Hydrogenburningdoesverylittleto
+changethemassoftheSun.Thiscalculationassumesthatonlytheproton-protondecaychangeisresponsiblefor
+the power output of the Sun.
+10.6 Check Your UnderstandingWhere does the energy from the Sun originate?
+The Hydrogen Bomb
+In1942,RobertOppenheimersuggestedthattheextremelyhightemperature ofanatomicbombcouldbeusedtotrigger
+a fusion reaction between deuterium and tritium, thus producing a fusion (or hydrogen) bomb. The reaction between
+deuterium and tritium, both isotopes of hydrogen, is given by
+2H+ 3 H→ 4He+1n+17.6MeV.
+1 1 2 0
+Deuteriumisrelativelyabundantinoceanwaterbuttritiumisscarce.However,tritiumcanbegeneratedinanuclearreactor
+through a reaction involving lithium. The neutrons from the reactor cause the reaction
+1n+ 7 Li→ 4He+ 3 H+1n,
+0 3 2 1 0
+to produce the desired tritium. The first hydrogen bomb was detonated in 1952 on the remote island of Eniwetok in the
+Marshall Islands.Ahydrogenbombhasneverbeenusedinwar.Modernhydrogenbombsareapproximately 1000times
+more powerful than the fission bombs dropped on Hiroshima and Nagasaki in World War II.
+The Fusion Reactor
+The fusion chain believed to be the most practical for use in anuclear fusion reactoris the following two-step process:
+2H+2H→ 3 H+1H,
+1 1 1 1
+2H+ 3 H→ 4He+1n.
+1 1 2 0
+This chain, like the proton-proton chain, produces energy without any radioactive by-product. However, there is a very
+difficult problem that must be overcome before fusion can be used to produce significant amounts of energy: Extremely
+hightemperatures ⎛ ~10 7 K ⎞ areneededtodrivethefusionprocess.Tomeetthischallenge,testfusionreactorsarebeing
+⎝ ⎠
+developedtowithstandtemperatures20timesgreaterthantheSun’scoretemperature.AnexampleistheJointEuropean
+Torus (JET) shown in Figure 10.25. A great deal of work still has to be done on fusion reactor technology, but many
+scientists predict that fusion energy will power the world’s cities by the end of the twentieth century.
+
+488 Chapter 10 | Nuclear Physics
+Figure 10.25 The Joint European Torus (JET) tokamak fusion detector uses magnetic fields to fuse deuterium and
+tritium nuclei (credit: EUROfusion).
+10.7 | Medical Applications and Biological Effects of
+Nuclear Radiation
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe two medical uses of nuclear technology
+• Explain the origin of biological effects due to nuclear radiation
+• List common sources of radiation and their effects
+• Estimate exposure for nuclear radiation using common dosage units
+Nuclearphysicsisanintegralpartofoureverydaylives(Figure 10.26).Radioactivecompoundsareusedintoidentify
+cancer,studyancientartifacts,andpowerourcities.NuclearfusionalsopowerstheSun,theprimarysourceofenergyon
+Earth.Thefocusofthischapterisnuclearradiation.Inthissection,weasksuchquestionsas:Howisnuclearradiationused
+to benefit society? What are its health risks? How much nuclear radiation is the average person exposed to in a lifetime?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 489
+Figure 10.26 Dr. Tori Randall, a curator at the San Diego
+Museum of Man, uses nuclear radiation to study a 500-year-old
+Peruvian child mummy. The origin of this radiation is the
+transformation of one nucleus to another. (credit: Samantha A.
+Lewis, U.S. Navy)
+Medical Applications
+Medicaluseofnuclearradiationisquitecommonintoday’shospitalsandclinics.Oneofthemostimportantusesofnuclear
+radiationisthelocationandstudyofdiseasedtissue.Thisapplicationrequiresaspecialdrugcalledaradiopharmaceutical.
+Aradiopharmaceuticalcontainsanunstableradioactiveisotope.Whenthedrugentersthebody,ittendstoconcentratein
+inflamed regions of the body. (Recall that the interaction of the drug with the body does not depend on whether a given
+nucleusisreplacedbyoneofitsisotopes,sincethisinteractionisdeterminedbychemicalinteractions.)Radiationdetectors
+usedoutsidethebodyusenuclearradiationfromtheradioisotopestolocatethediseasedtissue.Radiopharmaceuticalsare
+called radioactive tags because they allow doctors to track the movement of drugs in the body. Radioactive tags are for
+many purposes, including the identification of cancer cells in the bones, brain tumors, and Alzheimer’s disease (Figure
+10.27).Radioactive tagsarealsousedtomonitorthefunctionofbodyorgans,suchasbloodflow,heartmuscleactivity,
+and iodine uptake in the thyroid gland.
+
+490 Chapter 10 | Nuclear Physics
+Figure 10.27 These brain images are produced using a radiopharmaceutical. The colors indicate relative metabolic or
+biochemical activity (red indicates high activity and blue indicates low activity). The figure on the left shows the normal brain of
+an individual and the figure on the right shows the brain of someone diagnosed with Alzheimer’s disease. The brain image of the
+normal brain indicates much greater metabolic activity (a larger fraction of red and orange areas). (credit: modification of works
+by National Institutes of Health)
+Table 10.2listssomemedicaldiagnosticusesofradiopharmaceuticals,includingisotopesandtypicalactivity(A)levels.
+Onecommondiagnostictestusesiodinetoimagethethyroid,sinceiodineisconcentratedinthatorgan.Anothercommon
+nucleardiagnosticisthethalliumscanforthecardiovascularsystem,whichrevealsblockagesinthecoronaryarteriesand
+examinesheartactivity.ThesaltTlClcanbeusedbecauseitactslikeNaClandfollowstheblood.NotethatTable 10.2
+listsmanydiagnosticusesfor 99m Tc,where“m”standsforametastablestateofthetechnetiumnucleus.Thisisotopeis
+usedinmanycompoundstoimagetheskeleton,heart,lungs,andkidneys.About 80% ofallradiopharmaceuticalsemploy
+99m Tc because it produces a single, easily identified, 0.142-MeV γ ray and has a short 6.0-h half-life, which reduces
+radiation exposure.
+Procedure, Activity (mCi), where Procedure, Activity (mCi), where
+Isotope 7 Isotope 7
+1mCi=3.7×10 Bq 1mCi=3.7×10 Bq
+Brain scan Thyroid scan
+99m 7.5 131 0.05
+Tc I
+15 O (PET) 50 123 I 0.07
+Lung scan Liver scan
+13 7.5 198 0.1
+Xe Au
+(colloid)
+99m 2 99m 2
+Tc Tc
+(colloid)
+Cardiovascular blood pool Bone scan
+Table 10.2Diagnostic Uses of Radiopharmaceuticals
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 491
+Procedure, Activity (mCi), where Procedure, Activity (mCi), where
+Isotope 7 Isotope 7
+1mCi=3.7×10 Bq 1mCi=3.7×10 Bq
+131 I 0.2 85 Sr 0.1
+99m 2 99m 10
+Tc Tc
+Cardiovascular arterial flow Kidney scan
+201 3 197 0.1
+Tl Hg
+24Na 7.5 99m
+Tc
+1.5
+Table 10.2Diagnostic Uses of Radiopharmaceuticals
+Thefirstradiationdetectorsproducedtwo-dimensionalimages,likeaphototakenfromacamera.However,acirculararray
+ofdetectorsthatcanberotatedcanbeusedtoproducethree-dimensionalimages.Thistechniqueissimilartothatusedin
+X-raycomputedtomography(CT)scans.Oneapplicationofthistechniqueiscalledsingle-photon-emissionCT(SPECT)
+(Figure 10.28). The spatial resolution of this technique is about 1 cm.
+Figure 10.28 The SPECT machine uses radiopharmaceutical compounds to produce an image
+of the human body. The machine takes advantage of the physics of nuclear beat decays and
+electron-positron collisions. (credit: “Woldo”/Wikimedia Commons)
+Improved image resolution is achieved by a technique known as positron emission tomography (PET). This technique
+useradioisotopesthatdecayby β+ radiation.Whenapositronencountersanelectron,theseparticleannihilatetoproduce
+two gamma-ray photons. This reaction is represented by
+e+ +e− →2γ.
+These γ-rayphotonshaveidentical0.511-MeVenergiesandmovedirectlyawayfromoneanother(Figure10.29).This
+easilyidentifieddecaysignaturecanbeusedtoidentifythelocationoftheradioactiveisotope.Examplesof β+ -emitting
+isotopesusedinPETinclude 11C, 13 N, 15 O, and 18 F.Thenucleihavetheadvantageofbeingabletofunctionastags
+
+492 Chapter 10 | Nuclear Physics
+for natural body compounds. Its resolution of 0.5 cm is better than that of SPECT.
+Figure 10.29 A PET system takes advantage of the two identical γ-ray
+photons produced by positron-electron annihilation. These γ rays are
+emitted in opposite directions, so that the line along which each pair is
+emitted is determined.
+PET scans are especially useful to examine the brain’s anatomy and function. For example, PET scans can be used to
+monitorthebrain’suseofoxygenandwater,identifyregionsofdecreasedmetabolism(linkedtoAlzheimer’sdisease),and
+locate different parts of the brain responsible for sight, speech, and fine motor activity
+Is it a tumor? View an animation (https://openstaxcollege.org/l/21simmagresimg) of simplified
+magneticresonanceimaging(MRI)toseeifyoucantell.Yourheadisfulloftinyradiotransmitters(thenuclear
+spinsofthehydrogennucleiofyourwatermolecules).InanMRIunit,theselittleradioscanbemadetobroadcast
+their positions, giving a detailed picture of the inside of your head.
+Biological Effects
+Nuclearradiationcanhavebothpositiveandnegativeeffectsonbiologicalsystems.However,itcanalsobeusedtotreatand
+evencurecancer.Howdoweunderstandtheseeffects?Toanswerthisquestion,considermoleculeswithincells,particularly
+DNA molecules.
+Cells have long, double-helical DNA molecules containing chemical codes that govern the function and processes of the
+cell.NuclearradiationcanalterthestructuralfeaturesoftheDNAchain,leadingtochangesinthegeneticcode.Inhuman
+cells,wecanhaveasmanyasamillionindividualinstancesofdamagetoDNApercellperday.DNAcontainscodesthat
+checkwhethertheDNAisdamagedandcanrepairitself.ThisrepairabilityofDNAisvitalformaintainingtheintegrityof
+thegeneticcodeandforthenormalfunctioningoftheentireorganism.Itshouldbeconstantlyactiveandneedstorespond
+rapidly.TherateofDNArepairdependsonvariousfactorssuchasthetypeandageofthecell.Ifnuclearradiationdamages
+the ability of the cell to repair DNA, the cell can
+1. Retreat to an irreversible state of dormancy (known as senescence);
+2. Commit suicide (known as programmed cell death); or
+3. Progress into unregulated cell division, possibly leading to tumors and cancers.
+Nuclearradiationcanharmthehumanbodyismanyotherwaysaswell.Forexample,highdosesofnuclearradiationcan
+cause burns and even hair loss.
+Biological effectsofnuclearradiation areexpressedbymanydifferentphysicalquantities andinmanydifferentunits.A
+commonunittoexpressthebiologicaleffectsofnuclearradiationistheradorradiationdoseunit.Oneradisequalto1/
+100 of a joule of nuclear energy deposited per kilogram of tissue, written:
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

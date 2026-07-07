@@ -1,0 +1,212 @@
+# REAL PDF — openstax_vol1.pdf, pages 361-367
+############################################################
+
+8.1 • Potential Energy of a System 349
+The kinetic energy at point B therefore is 0.12 J because the total energy is zero. Therefore, the speed of the
+block at point B is equal to
+Significance
+Even though the potential energy due to gravity is relative to a chosen zero location, the solutions to this problem
+would be the same if the zero energy points were chosen at different locations.
+CHECK YOUR UNDERSTANDING 8.4
+Suppose the mass in Equation 8.6 is doubled while keeping the all other conditions the same. Would the maximum
+expansion of the spring increase, decrease, or remain the same? Would the speed at point B be larger, smaller, or
+the same compared to the original mass?
+INTERACTIVE
+Engage the simulation below to learn about conservation of energy with a skater! Build tracks, ramps and jumps for
+the skater and view the kinetic energy, potential energy and friction as he moves. You can also take the skater to
+different planets or even space!
+Access multimedia content (https://openstax.org/l/21conenerskat)
+A sample chart of a variety of energies is shown in Table 8.1 to give you an idea about typical energy values
+associated with certain events. Some of these are calculated using kinetic energy, whereas others are calculated by
+using quantities found in a form of potential energy that may not have been discussed at this point.
+Object/phenomenon Energy in joules
+Big Bang
+Annual world energy use
+Large fusion bomb (9 megaton)
+Hiroshima-size fission bomb (10 kiloton)
+1 barrel crude oil
+1 metric ton TNT
+1 gallon of gasoline
+Daily adult food intake (recommended)
+1000-kg car at 90 km/h
+TABLE 8.1 Energy of Various Objects and Phenomena
+
+350 8 • Potential Energy and Conservation of Energy
+Object/phenomenon Energy in joules
+Tennis ball at 100 km/h
+Mosquito
+Single electron in a TV tube beam
+Energy to break one DNA strand
+1 kg hydrogen (fusion to helium)
+1 kg uranium (nuclear fission)
+TABLE 8.1 Energy of Various Objects and Phenomena
+8.2 Conservative and Non-Conservative Forces
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Characterize a conservative force in several different ways
+• Specify mathematical conditions that must be satisfied by a conservative force and its components
+• Relate the conservative force between particles of a system to the potential energy of the system
+• Calculate the components of a conservative force in various cases
+In the interactions we considered in Potential Energy and Conservation of Energy, any transition between kinetic
+and potential energy did not change the total energy of the system. This was path independent, meaning that we
+can start and stop at any two points in the problem, and the total energy of the system—kinetic plus potential—at
+these points are equal to each other. This is characteristic of a conservative force. We dealt with conservative
+forces in the preceding section, such as the gravitational force and spring force. When comparing the motion of the
+football in Figure 8.2, the total energy of the system never changes, even though the gravitational potential energy of
+the football increases, as the ball rises relative to ground and falls back to the initial gravitational potential energy
+when the football player catches the ball. Non-conservative forces and the work that they do are path dependent.
+Dissipative forces such as friction or air resistance, for example, are non-conservative. These forces take energy
+away from the system as the system progresses; energy that you can’t get back. Push-pull forces are also generally
+non-conservative. Imagine pushing a merry-go-round. The total work done in returning to the starting point depends
+on how many revolutions are completed, and therefore the total energy at that location is not constant.
+CONSERVATIVE FORCE
+The work done by a conservative force is independent of the path; in other words, the work done by a
+conservative force is the same for any path connecting two points:
+8.8
+The work done by a non-conservative force depends on the path taken.
+Equivalently, a force is conservative if the work it does around any closed path is zero:
+8.9
+[In Equation 8.9, we use the notation of a circle in the middle of the integral sign for a line integral over a closed
+path, a notation found in most physics and engineering texts.] Equation 8.8 and Equation 8.9 are equivalent because
+Access for free at openstax.org
+
+8.2 • Conservative and Non-Conservative Forces 351
+any closed path is the sum of two paths: the first going from A to B, and the second going from B to A. The work
+done going along a path from B to A is the negative of the work done going along the same path from A to B, where A
+and B are any two points on the closed path:
+You might ask how we go about proving whether or not a force is conservative, since the definitions involve any and
+all paths from A to B, or any and all closed paths, but to do the integral for the work, you have to choose a particular
+path. One answer is that the work done is independent of path if the infinitesimal work is an exact
+differential, the way the infinitesimal net work was equal to the exact differential of the kinetic energy,
+when we derived the work-energy theorem in Work-Energy Theorem. There are mathematical conditions that you
+can use to test whether the infinitesimal work done by a force is an exact differential, and the force is conservative.
+These conditions only involve differentiation and are thus relatively easy to apply. In two dimensions, the condition
+for to be an exact differential is
+8.10
+You may recall that the work done by the force in Example 7.4 depended on the path. For that force,
+Therefore,
+which indicates it is a non-conservative force. Can you see what you could change to make it a conservative force?
+FIGURE 8.6 A grinding wheel applies a non-conservative force, because the work done depends on how many rotations the wheel makes,
+so it is path-dependent. (credit: modification of work by Grantez Stephens, U.S. Navy)
+EXAMPLE 8.5
+Conservative or Not?
+Which of the following two-dimensional forces are conservative and which are not? Assume a and b are constants
+with appropriate units:
+
+352 8 • Potential Energy and Conservation of Energy
+(a) (b) (c)
+Strategy
+Apply the condition stated in Equation 8.10, namely, using the derivatives of the components of each force
+indicated. If the derivative of the y-component of the force with respect to x is equal to the derivative of the
+x-component of the force with respect to y, the force is a conservative force, which means the path taken for
+potential energy or work calculations always yields the same results.
+Solution
+a. and , so this force is non-conservative.
+b. and so this force is conservative.
+c. again conservative.
+Significance
+The conditions in Equation 8.10 are derivatives as functions of a single variable; in three dimensions, similar
+conditions exist that involve more derivatives.
+CHECK YOUR UNDERSTANDING 8.5
+A two-dimensional, conservative force is zero on the x- and y-axes, and satisfies the condition
+. What is the magnitude of the force at the point
+Before leaving this section, we note that non-conservative forces do not have potential energy associated with
+them. There is always a conservative force associated with every potential energy. We have seen that potential
+energy is defined in relation to the work done by conservative forces. This relation, Equation 8.1, involved an integral
+for the work; starting with the force and displacement, you integrated to get the work and the change in potential
+energy. However, integration is the inverse operation of differentiation; you could equally well have started with the
+potential energy and taken its derivative, with respect to displacement, to get the force. The infinitesimal increment
+of potential energy is the dot product of the force and the infinitesimal displacement,
+Here, we chose to represent the displacement in an arbitrary direction by so as not to be restricted to any
+particular coordinate direction. We also expressed the dot product in terms of the magnitude of the infinitesimal
+displacement and the component of the force in its direction. Both these quantities are scalars, so you can divide by
+dl to get
+8.11
+This equation gives the relation between force and the potential energy associated with it. In words, the component
+of a conservative force, in a particular direction, equals the negative of the derivative of the corresponding potential
+energy, with respect to a displacement in that direction. For one-dimensional motion, say along the x-axis, Equation
+8.11 give the entire vector force,
+In two dimensions,
+Access for free at openstax.org
+
+8.3 • Conservation of Energy 353
+From this equation, you can see why Equation 8.11 is the condition for the work to be an exact differential, in terms
+of the derivatives of the components of the force. In general, a partial derivative notation is used. If a function has
+many variables in it, the derivative is taken only of the variable the partial derivative specifies. The other variables
+are held constant. In three dimensions, you add another term for the z-component, and the result is that the force is
+the negative of the gradient of the potential energy. However, we won’t be looking at three-dimensional examples
+just yet.
+EXAMPLE 8.6
+Force due to a Quartic Potential Energy
+The potential energy for a particle undergoing one-dimensional motion along the x-axis is
+where Its total energy at and it is not subject to any non-conservative forces. Find (a) the
+positions where its kinetic energy is zero and (b) the forces at those positions.
+Strategy
+(a) We can find the positions where so the potential energy equals the total energy of the given system. (b)
+Using Equation 8.11, we can find the force evaluated at the positions found from the previous part, since the
+mechanical energy is conserved.
+Solution
+a. The total energy of the system of 2 J equals the quartic elastic energy as given in the problem,
+Solving for results in
+b. From Equation 8.11,
+Thus, evaluating the force at , we get
+At both positions, the magnitude of the forces is 8 N and the directions are toward the origin, since this is the
+potential energy for a restoring force.
+Significance
+Finding the force from the potential energy is mathematically easier than finding the potential energy from the force,
+because differentiating a function is generally easier than integrating one.
+CHECK YOUR UNDERSTANDING 8.6
+Find the forces on the particle in Example 8.6 when its kinetic energy is 1.0 J at
+8.3 Conservation of Energy
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Formulate the principle of conservation of mechanical energy, with or without the presence of non-
+conservative forces
+• Use the conservation of mechanical energy to calculate various properties of simple systems
+In this section, we elaborate and extend the result we derived in Potential Energy of a System, where we re-wrote
+the work-energy theorem in terms of the change in the kinetic and potential energies of a particle. This will lead us
+
+354 8 • Potential Energy and Conservation of Energy
+to a discussion of the important principle of the conservation of mechanical energy. As you continue to examine
+other topics in physics, in later chapters of this book, you will see how this conservation law is generalized to
+encompass other types of energy and energy transfers. The last section of this chapter provides a preview.
+The terms ‘conserved quantity’ and ‘conservation law’ have specific, scientific meanings in physics, which are
+different from the everyday meanings associated with the use of these words. (The same comment is also true
+about the scientific and everyday uses of the word ‘work.’) In everyday usage, you could conserve water by not using
+it, or by using less of it, or by re-using it. Water is composed of molecules consisting of two atoms of hydrogen and
+one of oxygen. Bring these atoms together to form a molecule and you create water; dissociate the atoms in such a
+molecule and you destroy water. However, in scientific usage, a conserved quantity for a system stays constant,
+changes by a definite amount that is transferred to other systems, and/or is converted into other forms of that
+quantity. A conserved quantity, in the scientific sense, can be transformed, but not strictly created or destroyed.
+Thus, there is no physical law of conservation of water.
+Systems with a Single Particle or Object
+We first consider a system with a single particle or object. Returning to our development of Equation 8.2, recall that
+we first separated all the forces acting on a particle into conservative and non-conservative types, and wrote the
+work done by each type of force as a separate term in the work-energy theorem. We then replaced the work done by
+the conservative forces by the change in the potential energy of the particle, combining it with the change in the
+particle’s kinetic energy to get Equation 8.2. Now, we write this equation without the middle step and define the sum
+of the kinetic and potential energies, to be the mechanical energy of the particle.
+CONSERVATION OF ENERGY
+The mechanical energy E of a particle stays constant unless forces outside the system or non-conservative
+forces do work on it, in which case, the change in the mechanical energy is equal to the work done by the non-
+conservative forces:
+8.12
+This statement expresses the concept of energy conservation for a classical particle as long as there is no non-
+conservative work. Recall that a classical particle is just a point mass, is nonrelativistic, and obeys Newton’s laws of
+motion. In Relativity (http://openstax.org/books/university-physics-volume-3/pages/5-introduction), we will see
+that conservation of energy still applies to a non-classical particle, but for that to happen, we have to make a slight
+adjustment to the definition of energy.
+It is sometimes convenient to separate the case where the work done by non-conservative forces is zero, either
+because no such forces are assumed present, or, like the normal force, they do zero work when the motion is
+parallel to the surface. Then
+8.13
+In this case, the conservation of mechanical energy can be expressed as follows: The mechanical energy of a
+particle does not change if all the non-conservative forces that may act on it do no work. Understanding the concept
+of energy conservation is the important thing, not the particular equation you use to express it.
+PROBLEM-SOLVING STRATEGY
+Conservation of Energy
+1. Identify the body or bodies to be studied (the system). Often, in applications of the principle of mechanical
+energy conservation, we study more than one body at the same time.
+2. Identify all forces acting on the body or bodies.
+3. Determine whether each force that does work is conservative. If a non-conservative force (e.g., friction) is
+Access for free at openstax.org

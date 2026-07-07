@@ -1,0 +1,232 @@
+# REAL PDF — openstax_vol3.pdf, pages 540-547
+############################################################
+
+532 Chapter 11 | Particle Physics and Cosmology
+e−+p→n+v e,
+In this process, the proton emits a W + and is converted into a neutron (b). The W + then combines with the electron,
+forming a neutrino. Other electroweak interactions are considered in the exercises.
+Figure 11.14 Feynman diagram of particles interacting through
+the exchange of a W boson: (a) beta decay; (b) conversion of a
+proton into a neutron.
+Therangeoftheweaknuclearforcecanbeestimatedwithanargumentsimilartotheonebefore.Assumingtheuncertainty
+on the energy is comparable to the energy of the exchange particle by ⎛E≈mc2⎞ , we have
+⎝ ⎠
+h (11.9)
+Δt≈ .
+mc2
+The maximum distancedthat the exchange particle can travel (assuming it moves at a speed close toc) is therefore
+h (11.10)
+d ≈cΔt= mc.
+For one of the charged vector bosons with mc2≈80GeV=1.28×10 −8 J, we obtain mc=4.27×10 −17 J·s/m.
+Hence, the range of the force mediated by this boson is
+−34 (11.11)
+d ≈ 1.05×10 J·s ≈2×10 −18 m.
+−17
+4.27×10 J·s/m
+Strong Nuclear Force
+Strong nuclear interactions describe interactions between quarks. Details of these interactions are described by QCD.
+Accordingtothistheory,quarksbindtogetherbysendingandreceivinggluons.Justasquarkscarryelectriccharge[either
+(+2/3)e or (−1/3)e] thatdetermines thestrengthofelectromagnetic interactions betweenthequarks,quarksalsocarry
+“colorcharge”(eitherred,blue,orgreen)thatdeterminesthestrengthofstrongnuclearinteractions.Asdiscussedbefore,
+quarks bind together in groups in color neutral (or “white”) combinations, such as red-blue-green and red-antired.
+Interestingly,thegluonsthemselvescarrycolorcharge.Eightknowngluonsexist:sixthatcarryacolorandanticolor,and
+twothatarecolorneutral(Figure11.15(a)).Toillustratetheinteractionbetweenquarksthroughtheexchangeofcharged
+gluons, consider the Feynman diagram in part (b). As time increases, a red down quark moves right and a green strange
+quark moves left. (These appear at the lower edge of the graph.) The up quark exchanges a red-antigreen gluon with the
+strangequark.(Anticolorsareshownassecondarycolors.Forexample,antiredisrepresentedbycyanbecausecyanmixes
+with red to form white light.) According to QCD, all interactions in this process—identified with the vertices—must be
+color neutral. Therefore, the down quark transforms from red to green, and the strange quark transforms from green to red.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 533
+Figure 11.15 (a) Eight types of gluons carry the strong nuclear force. The white gluons are mixtures of color-anticolor pairs.
+(b) An interaction between two quarks through the exchange of a gluon.
+Assuggestedbythisexample,theinteractionbetweenquarksinanatomicnucleuscanbeverycomplicated.Figure11.16
+showstheinteractionbetweenaprotonandneutron.Noticethattheprotonconvertsintoaneutronandtheneutronconverts
+intoaprotonduringtheinteraction.Thepresenceofquark-antiquarkpairsintheexchangesuggestthatbondingbetween
+nucleons can be modeled as an exchange of pions.
+Figure 11.16 A Feynman diagram that describes a strong nuclear
+interaction between a proton and a neutron.
+Inpractice,QCDpredictionsaredifficulttoproduce.Thisdifficultyarisesfromtheinherentstrengthoftheforceandthe
+inability to neglect terms in the equations. Thus, QCD calculations are often performed with the aid of supercomputers.
+Theexistenceofgluonsissupportedbyelectron-nucleonscatteringexperiments.Theestimatedquarkmomentaimpliedby
+thesescatteringeventsaremuchsmallerthanwewouldexpectwithoutgluonsbecausethegluonscarryawaysomeofthe
+momentum of each collision.
+Unification Theories
+Physicistshavelongknownthatthestrengthofaninteractionbetweenparticlesdependsonthedistanceoftheinteraction.
+
+534 Chapter 11 | Particle Physics and Cosmology
+Forexample,twopositivelychargedparticlesexperiencealargerrepulsiveforceatashortdistancethenatalongdistance.
+Inscatteringexperiments,thestrengthofaninteractiondependsontheenergyoftheinteractingparticle,sincelargerenergy
+implies both closer and stronger interactions.
+Particlephysicistsnowsuspectthatthestrengthofallparticleinteractions(thefourforces)mergeathighenergies,andthe
+detailsofparticleinteractionsattheseenergiescanbedescribedintermsofasingleforce(Figure11.17).Aunifiedtheory
+describes what these interactions are like and explains why this description breaks down at low-energy scales. A grand
+unifiedtheoryisatheorythatattemptstodescribestrongandelectroweakinteractionintermsofjustoneforce.Atheory
+ofeverything(TOE)takestheunificationconceptonestepfurther.ATOEcombinesallfourfundamentalforces(including
+gravity) into one theory.
+Figure 11.17 Grand unification of forces at high energies.
+11.6 | The Big Bang
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the expansion of the universe in terms of a Hubble graph and cosmological redshift
+• Describe the analogy between cosmological expansion and an expanding balloon
+• Use Hubble’s law to make predictions about the measured speed of distant galaxies
+Wehavebeendiscussingelementaryparticles,whicharesomeofthesmallestthingswecanstudy.Nowwearegoingto
+examinewhatweknowabouttheuniverse,whichisthebiggestthingwecanstudy.Thelinkbetweenthesetwotopicsis
+highenergy:Thestudyofparticleinteractionsrequiresveryhighenergies,andthehighestenergiesweknowaboutexisted
+duringtheearlyevolutionoftheuniverse.Somephysiciststhinkthattheunifiedforcetheorieswedescribedinthepreceding
+section may actually have governed the behavior of the universe in its earliest moments.
+Hubble’s Law
+In1929,EdwinHubblepublishedoneofthemostimportantdiscoveriesinmodernastronomy.Hubblediscoveredthat(1)
+galaxies appear to move away from Earth and (2) the velocity of recession (v) is proportional to the distance (d) of the
+galaxyfromEarth.Bothvanddcanbedetermined usingstellar lightspectra. Abestfittothesample illustrative datais
+given inFigure 11.18. (Hubble’s original plot had a considerable scatter but a general trend was still evident.)
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 535
+Figure 11.18 This graph of red shift versus distance for
+galaxies shows a linear relationship, with larger red shifts at
+greater distances, implying an expanding universe. The slope
+gives an approximate value for the expansion rate. (credit: John
+Cub)
+The trend in the data suggests the simple proportional relationship:
+v=H d, (11.12)
+0
+where H =70km/s/Mpc is known as Hubble’s constant. (Note: 1 Mpc is one megaparsec or one million parsecs,
+0
+whereoneparsecis3.26light-years.)Thisrelationship,calledHubble’slaw,statesthatdistantstarsandgalaxiesrecede
+awayfromusataspeedof70km/sforeveryonemegaparsec ofdistance fromus.Hubble’sconstant correspondstothe
+slopeofthelineinFigure 11.18.Hubble’sconstantisabitofamisnomer,becauseitvarieswithtime.Thevaluegiven
+here is only its valuetoday.
+Watch this video (https://openstaxcollege.org/l/21hubble) to learn more about the history of Hubble’s
+constant.
+Hubble’s law describes an average behavior of all but the closest galaxies. For example, a galaxy 100 Mpc away (as
+determined by its size and brightness) typically moves away from us at a speed of
+v=
+⎛⎛
+70
+km⎞
+/Mpc
+⎞⎛100Mpc⎞=7000km/s.
+⎝⎝ s ⎠ ⎠⎝ ⎠
+This speed may vary due to interactions with neighboring galaxies. Conversely, if a galaxy is found to be moving away
+from us at speed of 100,000 km/s based on its red shift, it is at a distance
+d =v/H =(10,000km/s)/
+⎛⎛
+70
+km⎞
+/Mpc
+⎞
+=143Mpc.
+0 ⎝⎝ s ⎠ ⎠
+This last calculation is approximate because it assumes the expansion rate was the same 5 billion years ago as it is now.
+Big Bang Model
+Scientistswhostudytheorigin,evolution,andultimatefateoftheuniverse(cosmology)believethattheuniversebeganin
+anexplosion,calledtheBigBang,approximately13.7billionyearsago.Thisexplosionwasnotanexplosionofparticles
+throughspace,likefireworks,butarapidexpansionofspaceitself.Thedistancesandvelocitiesoftheoutward-goingstars
+and galaxies permit us to estimate when all matter in the universe was once together—at the beginning of time.
+Scientists often explain the Big Bang expansion using an inflated-balloon model (Figure 11.19). Dots marked on the
+surfaceoftheballoonrepresentgalaxies,andtheballoonskinrepresentsfour-dimensionalspace-time(Relativity).Asthe
+balloon is inflated, every dot “sees” the other dots moving away. This model yields two insights. First, the expansion is
+observedbyallobserversintheuniverse,nomatterwheretheyarelocated.The“centerofexpansion”doesnotexist,so
+Earth does not reside at the “privileged” center of the expansion (seeExercise 11.24).
+
+536 Chapter 11 | Particle Physics and Cosmology
+Figure 11.19 An analogy to the expanding universe: The dots move away
+from each other as the balloon expands; compare (a) to (b) after expansion.
+Second, as mentioned already, the Big Bang expansion is due to the expansion of space, not the increased separation of
+galaxies in ordinary (static) three-dimensional space. This cosmological expansion affects all things: dust, stars, planets,
+andevenlight.Thus,thewavelengthoflight (λ) emittedbydistantgalaxiesis“stretched”out.Thismakesthelightappear
+“redder”(lowerenergy)totheobserver—aphenomenoncalledcosmologicalredshift.Cosmologicalredshiftismeasurable
+only for galaxies farther away than 50 million light-years.
+Example 11.8
+Calculating Speeds and Galactic Distances
+A galaxy is observed to have a redshift:
+λ −λ
+z= obs emit =4.5.
+λ
+emit
+Thisvalueindicatesagalaxymovingclosetothespeedoflight.Usingtherelativisticredshiftformula(givenin
+Relativity),determine(a)HowfastisthegalaxyrecedingwithrespecttoEarth?(b)Howfarawayisthegalaxy?
+Strategy
+Weneedtousetherelativistic Dopplerformulatodetermine speedfromredshiftandthenuseHubble’slawto
+find the distance from the speed.
+Solution
+a. According to the relativistic redshift formula:
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 537
+1+β
+z= −1,
+1−β
+where β=v/c. Substitutingthevalueforzandsolvingfor β,weget β=0.93. Thisvalueimpliesthat
+the speed of the galaxy is 2.8×10 8 m/s.
+b. Using Hubble’s law, we can find the distance to the galaxy if we know its
+recession velocity:
+d = v = 2.8×10 8 m/s =3.8×10 3 Mpc.
+H 3
+0 73.8×10 m/sper Mpc
+Significance
+DistantgalaxiesappeartomoveveryrapidlyawayfromEarth.Theredshiftofstarlightfromthesegalaxiescan
+beusedtodeterminetheprecisespeedofrecession,over 90% ofthespeedoflightinthiscase.Thismotionis
+not due to the motion of galaxy through space but by the expansion of space itself.
+11.8 Check Your Understanding The light of a galaxy that moves away from us is “redshifted.” What
+occurs to the light of a galaxy that moves toward us?
+View this video (https://openstaxcollege.org/l/21expansion) to learn more about the cosmological
+expansion.
+Structure and Dynamics of the Universe
+Atlargescales,theuniverseisbelievedtobebothisotropicandhomogeneous.Theuniverseisbelievedtoisotropicbecause
+itappearstobethesameinalldirections,andhomogeneousbecauseitappearstobethesameinallplaces.Auniversethatis
+isotropicandhomogeneousissaidtobesmooth.TheassumptionofasmoothuniverseissupportedbytheAutomatedPlate
+Measurement Galaxy Survey conducted in the 1980s and 1900s (Figure 11.20). However, even before these data were
+collected,theassumptionofasmoothuniversewasusedbytheoriststosimplifymodelsoftheexpansionoftheuniverse.
+This assumption of a smooth universe is sometimes called thecosmological principle.
+Figure 11.20 The Automated Plate Measurement (APM) Galaxy Survey. Over 2 million galaxies are depicted in a region 100
+degrees across centered toward the Milky Way’s south pole. (credit: 2MASS/T. H. Jarrett, J. Carpenter, & R. Hurt)
+
+538 Chapter 11 | Particle Physics and Cosmology
+The fate of this expanding and smooth universe is an open question. According to the general theory of relativity, an
+important way to characterize the state of the universe is through the space-time metric:
+ds2=c2dt2−a(t)2dΣ2, (11.13)
+wherecisthespeedoflight,aisascalefactor(afunctionoftime),and dΣ isthelengthelementofthespace.Inspherical
+coordinates (r, θ, ϕ), this length element can be written
+dΣ2=
+dr2
++r2⎛dθ2+sin2θdφ2),
+(11.14)
+1−kr2 ⎝
+wherekisaconstantwithunitsofinverseareathatdescribesthecurvatureofspace.Thisconstantdistinguishesbetween
+open, closed, and flat universes:
+• k=0 (flat universe)
+• k>0 (closed universe, such as a sphere)
+• k<0 (open universe, such as a hyperbola)
+In terms of the scale factora, this metric also distinguishes between static, expanding, and shrinking universes:
+• a=1 (static universe)
+• da/dt>0 (expanding universe)
+• da/dt<0 (shrinking universe)
+ThescalefactoraandthecurvaturekaredeterminedfromEinstein’sgeneraltheoryofrelativity.Ifwetreattheuniverseas
+a gas of galaxies of density ρ and pressurep, and assume k=0 (a flat universe), than the scale factorais given by
+d2a
+= −
+4πG
+⎛ρ+3p⎞a,
+(11.15)
+dt2 3 ⎝ ⎠
+where G is the universal gravitational constant. (For ordinary matter, we expect the quantity ρ+3p to be greater than
+zero.)Ifthescalefactorispositive(a>0),thevalueofthescalefactor“decelerates”(d2a/dt2<0),andtheexpansion
+oftheuniverseslowsdownovertime.Ifthenumeratorislessthanzero(somehow,thepressureoftheuniverseisnegative),
+the value of the scale factor “accelerates,” and the expansion of the universe speeds up over time. According to recent
+cosmologicaldata,theuniverseappearstobeexpanding.Manyscientistsexplainthecurrentstateoftheuniverseinterms
+of a very rapid expansion in the early universe. This expansion is called inflation.
+11.7 | Evolution of the Early Universe
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the evolution of the early universe in terms of the four fundamental forces
+• Use the concept of gravitational lensing to explain astronomical phenomena
+• Provide evidence of the Big Bang in terms of cosmic background radiation
+• Distinguish between dark matter and dark energy
+In the previous section, we discussed the structure and dynamics of universe. In particular, the universe appears to be
+expandingandevenaccelerating.Butwhatwastheuniverselikeatthebeginningoftime?Inthissection,wediscusswhat
+evidence scientists have been able to gather about the early universe and its evolution to present time.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

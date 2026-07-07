@@ -1,0 +1,148 @@
+# REAL PDF — openstax_vol1.pdf, pages 209-213
+############################################################
+
+5.1 • Forces 197
+FIGURE 5.6 (a) The forces acting on the student are due to the chair, the table, the floor, and Earth’s gravitational attraction. (b) In solving a
+problem involving the student, we may want to consider only the forces acting along the line running through his torso. A free-body diagram
+for this situation is shown.
+In most situations, forces are grouped into two categories: contact forces and field forces. As you might guess,
+contact forces are due to direct physical contact between objects. For example, the student in Figure 5.6
+experiences the contact forces , , and , which are exerted by the chair on his posterior, the floor on his feet, and
+the table on his forearms, respectively. Field forces, however, act without the necessity of physical contact between
+objects. They depend on the presence of a “field” in the region of space surrounding the body under consideration.
+Since the student is in Earth’s gravitational field, he feels a gravitational force ; in other words, he has weight.
+You can think of a field as a property of space that is detectable by the forces it exerts. Scientists think there are only
+four fundamental force fields in nature. These are the gravitational, electromagnetic, strong nuclear, and weak fields
+(we consider these four forces in nature later in this text). As noted for in Figure 5.6, the gravitational field is
+responsible for the weight of a body. The forces of the electromagnetic field include those of static electricity and
+magnetism; they are also responsible for the attraction among atoms in bulk matter. Both the strong nuclear and the
+weak force fields are effective only over distances roughly equal to a length of scale no larger than an atomic
+nucleus ( ). Their range is so small that neither field has influence in the macroscopic world of Newtonian
+mechanics.
+Contact forces are fundamentally electromagnetic. While the elbow of the student in Figure 5.6 is in contact with the
+tabletop, the atomic charges in his skin interact electromagnetically with the charges in the surface of the table. The
+net (total) result is the force . Similarly, when adhesive tape sticks to a piece of paper, the atoms of the tape are
+intermingled with those of the paper to cause a net electromagnetic force between the two objects. However, in the
+context of Newtonian mechanics, the electromagnetic origin of contact forces is not an important concern.
+Vector Notation for Force
+As previously discussed, force is a vector; it has both magnitude and direction. The SI unit of force is called the
+newton (abbreviated N), and 1 N is the force needed to accelerate an object with a mass of 1 kg at a rate of :
+An easy way to remember the size of a newton is to imagine holding a small apple; it has a
+weight of about 1 N.
+We can thus describe a two-dimensional force in the form (the unit vectors indicate the
+direction of these forces along the x-axis and the y-axis, respectively) and a three-dimensional force in the form
+In Figure 5.3, let’s suppose that ice skater 1, on the left side of the figure, pushes
+
+198 5 • Newton's Laws of Motion
+horizontally with a force of 30.0 N to the right; we represent this as Similarly, if ice skater 2 pushes
+with a force of 40.0 N in the positive vertical direction shown, we would write The resultant of the
+two forces causes a mass to accelerate—in this case, the third ice skater. This resultant is called the net external
+force and is found by taking the vector sum of all external forces acting on an object or system (thus, we can
+also represent net external force as ):
+5.1
+This equation can be extended to any number of forces.
+In this example, we have . The hypotenuse of the triangle shown in
+Figure 5.3 is the resultant force, or net force. It is a vector. To find its magnitude (the size of the vector, without
+regard to direction), we use the rule given in Vectors, taking the square root of the sum of the squares of the
+components:
+The direction is given by
+measured from the positive x-axis, as shown in the free-body diagram in Figure 5.3(b).
+Let’s suppose the ice skaters now push the third ice skater with and . What
+is the resultant of these two forces? We must recognize that force is a vector; therefore, we must add using the rules
+for vector addition:
+CHECK YOUR UNDERSTANDING 5.1
+Find the magnitude and direction of the net force in the ice skater example just given.
+INTERACTIVE
+Engage the Phet simulation below to learn how to add vectors. Drag vectors onto a graph, change their length and
+angle, and sum them together. The magnitude, angle, and components of each vector can be displayed in several
+formats.
+Access multimedia content (https://openstax.org/l/21addvectors)
+5.2 Newton's First Law
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe Newton's first law of motion
+• Recognize friction as an external force
+• Define inertia
+• Identify inertial reference frames
+• Calculate equilibrium for a system
+Experience suggests that an object at rest remains at rest if left alone and that an object in motion tends to slow
+down and stop unless some effort is made to keep it moving. However, Newton’s first law gives a deeper
+explanation of this observation.
+Access for free at openstax.org
+
+5.2 • Newton's First Law 199
+NEWTON’S FIRST LAW OF MOTION
+A body at rest remains at rest or, if in motion, remains in motion at constant velocity unless acted on by a net
+external force.
+Note the repeated use of the verb “remains.” We can think of this law as preserving the status quo of motion. Also
+note the expression “constant velocity;” this means that the object maintains a path along a straight line, since
+neither the magnitude nor the direction of the velocity vector changes. We can use Figure 5.7 to consider the two
+parts of Newton’s first law.
+FIGURE 5.7 (a) A hockey puck is shown at rest; it remains at rest until an outside force such as a hockey stick changes its state of rest; (b) a
+hockey puck is shown in motion; it continues in motion in a straight line until an outside force causes it to change its state of motion.
+Although it is slick, an ice surface provides some friction that slows the puck.
+Rather than contradicting our experience, Newton’s first law says that there must be a cause for any change in
+velocity (a change in either magnitude or direction) to occur. This cause is a net external force, which we defined
+earlier in the chapter. An object sliding across a table or floor slows down due to the net force of friction acting on
+the object. If friction disappears, will the object still slow down?
+The idea of cause and effect is crucial in accurately describing what happens in various situations. For example,
+consider what happens to an object sliding along a rough horizontal surface. The object quickly grinds to a halt. If we
+spray the surface with talcum powder to make the surface smoother, the object slides farther. If we make the
+surface even smoother by rubbing lubricating oil on it, the object slides farther yet. Extrapolating to a frictionless
+surface and ignoring air resistance, we can imagine the object sliding in a straight line indefinitely. Friction is thus the
+cause of slowing (consistent with Newton’s first law). The object would not slow down if friction were eliminated.
+Consider an air hockey table (Figure 5.8). When the air is turned off, the puck slides only a short distance before
+friction slows it to a stop. However, when the air is turned on, it creates a nearly frictionless surface, and the puck
+glides long distances without slowing down. Additionally, if we know enough about the friction, we can accurately
+predict how quickly the object slows down.
+FIGURE 5.8 An air hockey table is useful in illustrating Newton’s laws. When the air is off, friction quickly slows the puck; but when the air is
+on, it minimizes contact between the puck and the hockey table, and the puck glides far down the table.
+
+200 5 • Newton's Laws of Motion
+Newton’s first law is general and can be applied to anything from an object sliding on a table to a satellite in orbit to
+blood pumped from the heart. Experiments have verified that any change in velocity (speed or direction) must be
+caused by an external force. The idea of generally applicable or universal laws is important—it is a basic feature of all
+laws of physics. Identifying these laws is like recognizing patterns in nature from which further patterns can be
+discovered. The genius of Galileo, who first developed the idea for the first law of motion, and Newton, who clarified
+it, was to ask the fundamental question: “What is the cause?” Thinking in terms of cause and effect is fundamentally
+different from the typical ancient Greek approach, when questions such as “Why does a tiger have stripes?” would
+have been answered in Aristotelian fashion, such as “That is the nature of the beast.” The ability to think in terms of
+cause and effect is the ability to make a connection between an observed behavior and the surrounding world.
+Gravitation and Inertia
+Regardless of the scale of an object, whether a molecule or a subatomic particle, two properties remain valid and
+thus of interest to physics: gravitation and inertia. Both are connected to mass. Roughly speaking, mass is a
+measure of the amount of matter in something. Gravitation is the attraction of one mass to another, such as the
+attraction between yourself and Earth that holds your feet to the floor. The magnitude of this attraction is your
+weight, and it is a force.
+Mass is also related to inertia, the ability of an object to resist changes in its motion—in other words, to resist
+acceleration. Newton’s first law is often called the law of inertia. As we know from experience, some objects have
+more inertia than others. It is more difficult to change the motion of a large boulder than that of a basketball, for
+example, because the boulder has more mass than the basketball. In other words, the inertia of an object is
+measured by its mass. The relationship between mass and weight is explored later in this chapter.
+Inertial Reference Frames
+Earlier, we stated Newton’s first law as “A body at rest remains at rest or, if in motion, remains in motion at constant
+velocity unless acted on by a net external force.” It can also be stated as “Every body remains in its state of uniform
+motion in a straight line unless it is compelled to change that state by forces acting on it.” To Newton, “uniform
+motion in a straight line” meant constant velocity, which includes the case of zero velocity, or rest. Therefore, the
+first law says that the velocity of an object remains constant if the net force on it is zero.
+Newton’s first law is usually considered to be a statement about reference frames. It provides a method for
+identifying a special type of reference frame: the inertial reference frame. In principle, we can make the net force
+on a body zero. If its velocity relative to a given frame is constant, then that frame is said to be inertial. So by
+definition, an inertial reference frame is a reference frame in which Newton’s first law is valid. Newton’s first law
+applies to objects with constant velocity. From this fact, we can infer the following statement.
+INERTIAL REFERENCE FRAME
+A reference frame moving at constant velocity relative to an inertial frame is also inertial. A reference frame
+accelerating relative to an inertial frame is not inertial.
+Are inertial frames common in nature? It turns out that well within experimental error, a reference frame at rest
+relative to the most distant, or “fixed,” stars is inertial. All frames moving uniformly with respect to this fixed-star
+frame are also inertial. For example, a nonrotating reference frame attached to the Sun is, for all practical purposes,
+inertial, because its velocity relative to the fixed stars does not vary by more than one part in Earth
+accelerates relative to the fixed stars because it rotates on its axis and revolves around the Sun; hence, a reference
+frame attached to its surface is not inertial. For most problems, however, such a frame serves as a sufficiently
+accurate approximation to an inertial frame, because the acceleration of a point on Earth’s surface relative to the
+fixed stars is rather small ( ). Thus, unless indicated otherwise, we consider reference frames
+fixed on Earth to be inertial.
+Finally, no particular inertial frame is more special than any other. As far as the laws of nature are concerned, all
+inertial frames are equivalent. In analyzing a problem, we choose one inertial frame over another simply on the
+basis of convenience.
+Access for free at openstax.org

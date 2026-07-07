@@ -1,0 +1,196 @@
+# REAL PDF — openstax_vol3.pdf, pages 512-516
+############################################################
+
+504 Chapter 10 | Nuclear Physics
+(i) 1H+1H→ 2H+e+ +v
+e
+, 65. (a) Calculate the energy released by the fusion of a
+1.00-kgmixtureofdeuteriumandtritium,whichproduces
+(ii) 1H+2H→ 3 He +γ, and (iii) helium.Thereareequalnumbersofdeuteriumandtritium
+nuclei in the mixture.
+3 He + 3 He→ 4He+1H+1H.
+(b)Ifthisprocesstakesplacecontinuouslyoveraperiodof
+(List the value of each of the conserved quantities before a year, what is the average power output?
+and after each of the reactions.)
+60. Calculate the energy output in each of the fusion 10.7Medical Applications and Biological
+reactions intheproton-protonchain,andverifythevalues Effects of Nuclear Radiation
+determined in the preceding problem.
+66. WhatisthedoseinmSvfor:(a)a0.1-GyX-ray?(b)
+2.5mGyofneutronexposuretotheeye?(c)1.5mGyof α
+61. Show that the total energy released in the proton-
+exposure?
+proton chain is 26.7 MeV, considering the overall effect
+in 1H+1H→ 2H+e+ +v e , 1H+2H→ 3 He +γ, 67. Find the radiation dose in Gy for: (a) A 10-mSv
+and 3 He + 3 He→ 4He+1H+1H.Besuretoinclude fluoroscopicX-rayseries.(b)50mSvofskinexposureby
+an α emitter. (c) 160 mSv of β− and γ rays from the
+the annihilation energy.
+40 K in your body.
+62. Two fusion reactions mentioned in the text are
+n+ 3 He→ 4He+γ and n+1H→ 2H+γ. Both
+68. Find the mass of 239 Pu that has an activity of
+reactions release energy, but the second also creates more
+fuel. Confirm that the energies produced in the reactions
+1.00µCi.
+are20.58and2.22MeV,respectively.Commentonwhich
+product nuclide is most tightly bound, 4He or 2H. 69. Inthe1980s,thetermpicowavewasusedtodescribe
+food irradiation in order to overcome public resistance by
+playing on the well-known safety of microwave radiation.
+63. The power output of the Sun is 4×10 26 W. (a) If Find the energy in MeV of a photon having a wavelength
+90% ofthisenergyissuppliedbytheproton-protonchain, of a picometer.
+how many protons are consumed per second? (b) How
+manyneutrinospersecondshouldtherebepersquaremeter 70. What is the dose in Sv in a cancer treatment that
+at the surface of Earth from this process? exposes the patient to 200 Gy of γ rays?
+64. Another set of reactions that fuses hydrogen into
+71. One half the γ rays from 99m Tc are absorbed bya
+heliumintheSunandespeciallyinhotterstarsiscalledthe
+CNO cycle: 0.170-mm-thickleadshielding.Halfofthe γ raysthatpass
+throughthefirstlayerofleadareabsorbedinasecondlayer
+12C+1H→ 13 N+γ
+of equal thickness. What thickness of lead will absorb all
+13 N→ 13 C+e+ +v e but one in 1000 of these γ rays?
+13 C+1H→ 14N+γ
+72. How many Gy of exposure is needed to give a
+cancerous tumor a dose of 40 Sv if it is exposed to α
+14N+1H → 15 O+γ activity?
+15 O→ 15 N+e+ +v e 73. Aplumberatanuclearpowerplantreceivesawhole-
+body dose of 30 mSv in 15 minutes while repairing a
+15 N+1H→ 12C+4He
+crucial valve. Find the radiation-induced yearly risk of
+death from cancer and the chance of genetic defect from
+This process is a “cycle” because 12C appears at the
+this maximum allowable exposure.
+beginning and end of these reactions. Write down the
+overall effect of this cycle (as done for the proton-proton
+74. Calculatethedoseinrem/yforthelungsofaweapons
+chain in 2e− +41H→ 4He+2v e+6γ). Assume that
+plant employee who inhales and retains an activity of
+the positrons annihilate electrons to form more γ rays. 1.00µCi 239 Pu inanaccident.Themassofaffectedlung
+tissueis2.00kgandtheplutoniumdecaysbyemissionofa
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 10 | Nuclear Physics 505
+5.23-MeV α particle. Assume a RBE value of 20.
+ADDITIONAL PROBLEMS
+75. The wiki-phony site states that the atomic mass of 80. In the science section of the newspaper, an article
+chlorineis40g/mol.Checkthisresult.Hint:Thetwo,most reports the efforts of a group of scientists to create a new
+commonstableisotopesofchlorineare: 35 Cl and 37 Cl. nuclear reactor based on the fission of iron (Fe). Is this a
+17 17 good idea?
+(TheabundanceofCl-35is 75.8%,andtheabundanceof
+Cl-37 is 24.2%.)
+81. Theceramicglazeonared-orange“Fiestaware”plate
+is U O andcontains50.0gramsof 238 U,butverylittle
+2 3
+76. Aparticlephysicistdiscoversaneutralparticlewitha
+mass of 2.02733 u that he assumes is two neutrons bound 235 U. (a) What is the activity of the plate? (b) Calculate
+together.
+the total energy that will be released by the 238 U decay.
+(a) Find the binding energy.
+(c) If energy is worth 12.0 cents per kW·h, what is the
+(b) What is unreasonable about this result? monetary value of the energy emitted? (These brightly-
+colored ceramic plates went out of production some 30
+years ago, but are still available as collectibles.)
+77. Anuclearphysicistfinds 1.0µg of 236 U inapiece
+of uranium ore (T 1/2 = 2.348×10 7 y). (a) Use the decay 82. Large amounts of depleted uranium ⎛238 U ⎞ are
+⎝ ⎠
+lawtodeterminehowmuch 236 U wouldhadtohavebeen
+availableasaby-productofuraniumprocessingforreactor
+onEarthwhenitformed 4.543×10 9 y agofor 1.0µg to fuelandweapons.Uraniumisverydenseandmakesgood
+counter weights for aircraft. Suppose you have a 4000-kg
+belefttoday.(b)Whatisunreasonableaboutthisresult?(c)
+How is this unreasonable result resolved?
+blockof 238 U.(a)Finditsactivity.(b)Howmanycalories
+per day are generated by thermalization of the decay
+78. Agroupofscientistsusecarbondatingtodateapiece energy? (c) Do you think you could detect this as heat?
+of wood to be 3 billion years old. Why doesn’t this make Explain.
+sense?
+83. A piece of wood from an ancient Egyptian tomb is
+79. According to your lab partner, a 2.00-cm-thick tested for its carbon-14 activity. It is found to have an
+sodium-iodidecrystalabsorbsallbut 10% ofraysfroma activity per gram of carbon of A=10decay/min·g.
+radioactivesourceanda4.00-cmpieceofthesamematerial What is the age of the wood?
+absorbs all but 5%? Is this result reasonable?
+CHALLENGE PROBLEMS
+84. This problem demonstrates that the binding energy 85. The Galileo space probe was launched on its long
+of the electron in the ground state of a hydrogen atom is journey past Venus and Earth in 1989, with an ultimate
+muchsmallerthantherestmassenergiesoftheprotonand goal of Jupiter. Its power source is 11.0 kg of 238 Pu,
+electron.
+a by-product of nuclear weapons plutonium production.
+(a) Calculate the mass equivalent in u of the 13.6-eV Electrical energy is generated thermoelectrically from the
+binding energy of an electron in a hydrogen atom, and heat produced when the 5.59-MeV α particles emitted in
+compare this with the known mass of the hydrogen atom.
+each decay crash to a halt inside the plutonium and its
+(b)Subtracttheknownmassoftheprotonfromtheknown shielding. The half-life of 238 Pu is 87.7 years.
+mass of the hydrogen atom.
+(c)Taketheratioofthebindingenergyoftheelectron(13.6 (a) What was the original activity of the 238 Pu in
+eV)tothe energyequivalent ofthe electron’smass (0.511 becquerels?
+MeV).
+(b) What power was emitted in kilowatts?
+(d) Discuss how your answers confirm the stated purpose
+(c)Whatpowerwasemitted12.0yafterlaunch?Youmay
+of this problem.
+neglect any extra energy from daughter nuclides and any
+
+506 Chapter 10 | Nuclear Physics
+losses from escaping γ rays. speed v. (b) Use this minimum kinetic energy to estimate
+the minimum temperature a gas of the nuclei must have
+before a significant number of them will undergo fusion.
+86. Find the energy emitted in the β− decay of 60 Co. Calculatethisminimumtemperaturefirstforhydrogenand
+then for helium. (Hint: For fusion to occur, the minimum
+kineticenergywhenthenucleiarefarapartmustbeequal
+87. Engineers are frequently called on to inspect and,
+totheCoulombpotentialenergywhentheyareadistanceR
+if necessary, repair equipment in nuclear power plants.
+apart.)
+Suppose that the city lights go out. After inspecting the
+nuclear reactor, you find a leaky pipe that leads from the
+steam generator to turbine chamber. (a) How do the 89. For the reaction, n+ 3 He→ 4He+γ, find the
+pressure readings for the turbine chamber and steam
+condenser compare? (b) Why is the nuclear reactor not
+amount of energy transfers to 4He and γ (on the right
+generating electricity? side of the equation). Assume the reactants are initially at
+rest. (Hint:Use conservation of momentum principle.)
+88. If two nuclei are to fuse in a nuclear reaction, they
+mustbemovingfastenoughsothattherepulsiveCoulomb 90. Engineers are frequently called on to inspect and, if
+force between them does not prevent them for getting necessary, repair equipment in medical hospitals. Suppose
+within R≈10−14m of one another. At this distance or that the PET system malfunctions. After inspecting the
+unit, you suspect that one of the PET photon detectors is
+nearer, the attractive nuclear force can overcome the
+misaligned. To test your theory you position one detector
+Coulomb force, and the nuclei are able to fuse.
+at the location ⎛r, θ, φ⎞=(1.5, 45, 30) relative to a
+⎝ ⎠
+(a) Find a simple formula that can be used to estimate the
+radioactivetestsampleatthecenterofthepatientbed.(a)
+minimumkineticenergythenucleimusthaveiftheyareto
+If the second photon detector is properly aligned where
+fuse.Tokeepthecalculationsimple,assumethetwonuclei
+should it be located? (b) What energy reading is expected?
+areidenticalandmovingtowardoneanotherwiththesame
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 507
+11 | PARTICLE PHYSICS
+AND COSMOLOGY
+Figure 11.1 The Large Hadron Collider (LHC) is located over 150 meters (500 feet) underground on the border of Switzerland
+and France near Geneva, Switzerland. The LHC is the most powerful machine ever developed to test our understanding of
+elementary particle interactions. Shown here is the ATLAS detector, which helps identify new particles formed in collisions.
+(credit: modification of work by Maximilien Brice, CERN)
+Chapter Outline
+11.1Introduction to Particle Physics
+11.2Particle Conservation Laws
+11.3Quarks
+11.4Particle Accelerators and Detectors
+11.5The Standard Model
+11.6The Big Bang
+11.7Evolution of the Early Universe
+Introduction
+Attheverybeginningofthistextwediscussedthewiderangeofscalesthatphysicsencompasses,fromtheverysmallest
+particlestothelargestscalepossible—theuniverseitself.Inthisfinalchapterweexaminesomeofthefrontiersofresearch
+attheseextremescales.Particlephysicsdealswiththemostbasicbuildingblocksofmatterandtheforcesthatholdthem
+together.Cosmologyisthestudyofthestars,galaxies,andgalacticstructuresthatpopulateouruniverse,aswellastheir
+past history and future evolution.
+Thesetwoareasofphysicsarenotasdisconnectedasyoumightthink.Thestudyofelementaryparticlesrequiresenormous
+energies to produce isolated particles, involving some of the largest machines humans have ever built. But such high
+energieswerepresentintheearlieststagesoftheuniverseandtheuniverseweseearoundustodaywasshapedinpartby
+thenatureandinteractionsoftheelementaryparticlescreatedthen.Bearinmindthatparticlephysicsandcosmologyare
+bothareasofintensecurrentresearch,subjecttomuchspeculationonthepartofphysicists(aswellscience-fictionwriters).
+In this chapter we try to emphasize what is known on the basis of deductions from observational evidence, and identify

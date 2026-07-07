@@ -1,0 +1,220 @@
+# REAL PDF — openstax_vol1.pdf, pages 126-134
+############################################################
+
+114 3 • Motion Along a Straight Line
+Getting a Feel for Acceleration
+You are probably used to experiencing acceleration when you step into an elevator, or step on the gas pedal in your
+car. However, acceleration is happening to many other objects in our universe with which we don’t have direct
+contact. Table 3.2 presents the acceleration of various objects. We can see the magnitudes of the accelerations
+extend over many orders of magnitude.
+Acceleration Value (m/s2)
+High-speed train 0.25
+Elevator 2
+Cheetah 5
+Object in a free fall without air resistance near the surface of Earth 9.8
+Space shuttle maximum during launch 29
+Parachutist peak during normal opening of parachute 59
+F16 aircraft pulling out of a dive 79
+Explosive seat ejection from aircraft 147
+Sprint missile 982
+Fastest rocket sled peak acceleration 1540
+Jumping flea 3200
+Baseball struck by a bat 30,000
+Closing jaws of a trap-jaw ant 1,000,000
+Proton in the large Hadron collider
+TABLE 3.2 Typical Values of Acceleration (credit: Wikipedia: Orders of Magnitude (acceleration))
+In this table, we see that typical accelerations vary widely with different objects and have nothing to do with object
+size or how massive it is. Acceleration can also vary widely with time during the motion of an object. A drag racer has
+a large acceleration just after its start, but then it tapers off as the vehicle reaches a constant velocity. Its average
+acceleration can be quite different from its instantaneous acceleration at a particular time during its motion. Figure
+3.17 compares graphically average acceleration with instantaneous acceleration for two very different motions.
+Access for free at openstax.org
+
+3.4 • Motion with Constant Acceleration 115
+FIGURE 3.17 Graphs of instantaneous acceleration versus time for two different one-dimensional motions. (a) Acceleration varies only
+slightly and is always in the same direction, since it is positive. The average over the interval is nearly the same as the acceleration at any
+given time. (b) Acceleration varies greatly, perhaps representing a package on a post office conveyor belt that is accelerated forward and
+backward as it bumps along. It is necessary to consider small time intervals (such as from 0–1.0 s) with constant or nearly constant
+acceleration in such a situation.
+INTERACTIVE
+Learn about position, velocity, and acceleration graphs. Move the little man back and forth with a mouse and plot his
+motion. Set the position, velocity, or acceleration and let the simulation move the man for you. Visit this link
+(https://openstax.org/l/21movmansimul) to use the moving man simulation.
+3.4 Motion with Constant Acceleration
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Identify which equations of motion are to be used to solve for unknowns.
+• Use appropriate equations of motion to solve a two-body pursuit problem.
+You might guess that the greater the acceleration of a car moving away from a stop sign, the greater the car’s
+displacement in a given time. But, we have not developed a specific equation that relates acceleration and
+displacement. In this section, we look at some convenient equations for kinematic relationships, starting from the
+definitions of displacement, velocity, and acceleration. We first investigate a single object in motion, called single-
+body motion. Then we investigate the motion of two objects, called two-body pursuit problems.
+Notation
+First, let us make some simplifications in notation. Taking the initial time to be zero, as if time is measured with a
+stopwatch, is a great simplification. Since elapsed time is , taking means that , the final
+time on the stopwatch. When initial time is taken to be zero, we use the subscript 0 to denote initial values of
+position and velocity. That is, is the initial position and is the initial velocity. We put no subscripts on the final
+values. That is, t is the final time, x is the final position, and v is the final velocity. This gives a simpler expression for
+elapsed time, . It also simplifies the expression for x displacement, which is now . Also, it
+simplifies the expression for change in velocity, which is now . To summarize, using the simplified
+notation, with the initial time taken to be zero,
+
+116 3 • Motion Along a Straight Line
+where the subscript 0 denotes an initial value and the absence of a subscript denotes a final value in whatever
+motion is under consideration.
+We now make the important assumption that acceleration is constant. This assumption allows us to avoid using
+calculus to find instantaneous acceleration. Since acceleration is constant, the average and instantaneous
+accelerations are equal—that is,
+Thus, we can use the symbol a for acceleration at all times. Assuming acceleration to be constant does not seriously
+limit the situations we can study nor does it degrade the accuracy of our treatment. For one thing, acceleration is
+constant in a great number of situations. Furthermore, in many other situations we can describe motion accurately
+by assuming a constant acceleration equal to the average acceleration for that motion. Lastly, for motion during
+which acceleration changes drastically, such as a car accelerating to top speed and then braking to a stop, motion
+can be considered in separate parts, each of which has its own constant acceleration.
+Displacement and Position from Velocity
+To get our first two equations, we start with the definition of average velocity:
+Substituting the simplified notation for and yields
+Solving for x gives us
+3.10
+where the average velocity is
+3.11
+The equation reflects the fact that when acceleration is constant, is just the simple average of the initial
+and final velocities. Figure 3.18 illustrates this concept graphically. In part (a) of the figure, acceleration is constant,
+with velocity increasing at a constant rate. The average velocity during the 1-h interval from 40 km/h to 80 km/h is
+60 km/h:
+In part (b), acceleration is not constant. During the 1-h interval, velocity is closer to 80 km/h than 40 km/h. Thus,
+the average velocity is greater than in part (a).
+Access for free at openstax.org
+
+3.4 • Motion with Constant Acceleration 117
+FIGURE 3.18 (a) Velocity-versus-time graph with constant acceleration showing the initial and final velocities . The average
+velocity is . (b) Velocity-versus-time graph with an acceleration that changes with time. The average velocity is not
+given by , but is greater than 60 km/h.
+Solving for Final Velocity from Acceleration and Time
+We can derive another useful equation by manipulating the definition of acceleration:
+Substituting the simplified notation for and gives us
+Solving for v yields
+3.12
+EXAMPLE 3.7
+Calculating Final Velocity
+An airplane lands with an initial velocity of 70.0 m/s and then accelerates opposite to the motion at 1.50 m/s2 for
+40.0 s. What is its final velocity?
+Strategy
+First, we identify the knowns: .
+Second, we identify the unknown; in this case, it is final velocity .
+Last, we determine which equation to use. To do this we figure out which kinematic equation gives the unknown in
+terms of the knowns. We calculate the final velocity using Equation 3.12, .
+Solution
+Substitute the known values and solve:
+Figure 3.19 is a sketch that shows the acceleration and velocity vectors.
+
+118 3 • Motion Along a Straight Line
+FIGURE 3.19 The airplane lands with an initial velocity of 70.0 m/s and slows to a final velocity of 10.0 m/s before heading for the terminal.
+Note the acceleration is negative because its direction is opposite to its velocity, which is positive.
+Significance
+The final velocity is much less than the initial velocity, as desired when slowing down, but is still positive (see figure).
+With jet engines, reverse thrust can be maintained long enough to stop the plane and start moving it backward,
+which is indicated by a negative final velocity, but is not the case here.
+In addition to being useful in problem solving, the equation gives us insight into the relationships
+among velocity, acceleration, and time. We can see, for example, that
+• Final velocity depends on how large the acceleration is and how long it lasts
+• If the acceleration is zero, then the final velocity equals the initial velocity (v = v0), as expected (in other
+words, velocity is constant)
+• If a is negative, then the final velocity is less than the initial velocity
+All these observations fit our intuition. Note that it is always useful to examine basic equations in light of our
+intuition and experience to check that they do indeed describe nature accurately.
+Solving for Final Position with Constant Acceleration
+We can combine the previous equations to find a third equation that allows us to calculate the final position of an
+object experiencing constant acceleration. We start with
+Adding to each side of this equation and dividing by 2 gives
+Since for constant acceleration, we have
+Now we substitute this expression for into the equation for displacement, , yielding
+3.13
+EXAMPLE 3.8
+Calculating Displacement of an Accelerating Object
+Dragsters can achieve an average acceleration of 26.0 m/s2. Suppose a dragster accelerates from rest at this rate
+for 5.56 s (Figure 3.20). How far does it travel in this time?
+Access for free at openstax.org
+
+3.4 • Motion with Constant Acceleration 119
+FIGURE 3.20 U.S. Army Top Fuel pilot Tony “The Sarge” Schumacher begins a race with a controlled burnout. (credit: Lt. Col. William
+Thurmond. Photo Courtesy of U.S. Army.)
+Strategy
+First, let’s draw a sketch (Figure 3.21). We are asked to find displacement, which is x if we take to be zero. (Think
+about as the starting line of a race. It can be anywhere, but we call it zero and measure all other positions relative
+to it.) We can use the equation when we identify , , and t from the statement of the
+problem.
+FIGURE 3.21 Sketch of an accelerating dragster.
+Solution
+First, we need to identify the knowns. Starting from rest means that , a is given as 26.0 m/s2 and t is given as
+5.56 s.
+Second, we substitute the known values into the equation to solve for the unknown:
+Since the initial position and velocity are both zero, this equation simplifies to
+Substituting the identified values of a and t gives
+Significance
+If we convert 402 m to miles, we find that the distance covered is very close to one-quarter of a mile, the standard
+distance for drag racing. So, our answer is reasonable. This is an impressive displacement to cover in only 5.56 s,
+
+120 3 • Motion Along a Straight Line
+but top-notch dragsters can do a quarter mile in even less time than this. If the dragster were given an initial
+velocity, this would add another term to the distance equation. If the same acceleration and time are used in the
+equation, the distance covered would be much greater.
+What else can we learn by examining the equation We can see the following relationships:
+• Displacement depends on the square of the elapsed time when acceleration is not zero. In Example 3.8, the
+dragster covers only one-fourth of the total distance in the first half of the elapsed time.
+• If acceleration is zero, then initial velocity equals average velocity , and
+Solving for Final Velocity from Distance and Acceleration
+A fourth useful equation can be obtained from another algebraic manipulation of previous equations. If we solve
+for t, we get
+Substituting this and into , we get
+3.14
+EXAMPLE 3.9
+Calculating Final Velocity
+Calculate the final velocity of the dragster in Example 3.8 without using information about time.
+Strategy
+The equation is ideally suited to this task because it relates velocities, acceleration, and
+displacement, and no time information is required.
+Solution
+First, we identify the known values. We know that v0 = 0, since the dragster starts from rest. We also know that x −
+x0 = 402 m (this was the answer in Example 3.8). The average acceleration was given by a = 26.0 m/s2.
+Second, we substitute the knowns into the equation and solve for v:
+Thus,
+Significance
+A velocity of 145 m/s is about 522 km/h, or about 324 mi/h, but even this breakneck speed is short of the record for
+the quarter mile. Also, note that a square root has two values; we took the positive value to indicate a velocity in the
+same direction as the acceleration.
+An examination of the equation can produce additional insights into the general relationships
+among physical quantities:
+• The final velocity depends on how large the acceleration is and the distance over which it acts.
+Access for free at openstax.org
+
+3.4 • Motion with Constant Acceleration 121
+• For a fixed acceleration, a car that is going twice as fast doesn’t simply stop in twice the distance. It takes
+much farther to stop. (This is why we have reduced speed zones near schools.)
+Putting Equations Together
+In the following examples, we continue to explore one-dimensional motion, but in situations requiring slightly more
+algebraic manipulation. The examples also give insight into problem-solving techniques. The note that follows is
+provided for easy reference to the equations needed. Be aware that these equations are not independent. In many
+situations we have two unknowns and need two equations from the set to solve for the unknowns. We need as many
+equations as there are unknowns to solve a given situation.
+SUMMARY OF KINEMATIC EQUATIONS (CONSTANT A)
+Before we get into the examples, let’s look at some of the equations more closely to see the behavior of acceleration
+at extreme values. Rearranging Equation 3.12, we have
+From this we see that, for a finite time, if the difference between the initial and final velocities is small, the
+acceleration is small, approaching zero in the limit that the initial and final velocities are equal. On the contrary, in
+the limit for a finite difference between the initial and final velocities, acceleration becomes infinite.
+Similarly, rearranging Equation 3.14, we can express acceleration in terms of velocities and displacement:
+Thus, for a finite difference between the initial and final velocities acceleration becomes infinite in the limit the
+displacement approaches zero. Acceleration approaches zero in the limit the difference in initial and final velocities
+approaches zero for a finite displacement.
+EXAMPLE 3.10
+How Far Does a Car Go?
+On dry concrete, a car can accelerate opposite to the motion at a rate of 7.00 m/s2, whereas on wet concrete it can
+accelerate opposite to the motion at only 5.00 m/s2. Find the distances necessary to stop a car moving at 30.0 m/s
+(about 110 km/h) on (a) dry concrete and (b) wet concrete. (c) Repeat both calculations and find the displacement
+from the point where the driver sees a traffic light turn red, taking into account their reaction time of 0.500 s to get
+their foot on the brake.
+Strategy
+First, we need to draw a sketch Figure 3.22. To determine which equations are best to use, we need to list all the
+known values and identify exactly what we need to solve for.

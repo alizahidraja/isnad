@@ -1,0 +1,259 @@
+# REAL PDF — openstax_vol3.pdf, pages 356-360
+############################################################
+
+348 Chapter 7 | Quantum Mechanics
+product of a time-independent wave function and a time-modulation factor.
+• The Schrӧdinger equation can be applied to many physical situations.
+7.4The Quantum Particle in a Box
+• Energy states of a quantum particle in a box are found by solving the time-independent Schrӧdinger equation.
+• Tosolvethetime-independentSchrӧdingerequationforaparticleinaboxandfindthestationarystatesandallowed
+energies, we require that the wave function terminate at the box wall.
+• Energy states of a particle in a box are quantized and indexed by principal quantum number.
+• Thequantumpicturedifferssignificantlyfromtheclassicalpicturewhenaparticleisinalow-energystateofalow
+quantum number.
+• In the limit of high quantum numbers, when the quantum particle is in a highly excited state, the quantum
+description of a particle in a box coincides with the classical description, in the spirit of Bohr’s correspondence
+principle.
+7.5The Quantum Harmonic Oscillator
+• The quantum harmonic oscillator is a model built in analogy with the model of a classical harmonic oscillator. It
+models the behavior of many physical systems, such as molecular vibrations or wave packets in quantum optics.
+• Theallowedenergiesofaquantumoscillatorarediscreteandevenlyspaced.TheenergyspacingisequaltoPlanck’s
+energy quantum.
+• The ground state energy is larger than zero. This means that, unlike a classical oscillator, a quantum oscillator is
+never at rest, even at the bottom of a potential well, and undergoes quantum fluctuations.
+• Thestationarystates(statesofdefiniteenergy)havenonzerovaluesalsoinregionsbeyondclassicalturningpoints.
+Wheninthegroundstate,aquantumoscillatorismostlikelytobefoundaroundthepositionoftheminimumofthe
+potential well, which is the least-likely position for a classical oscillator.
+• Forhighquantumnumbers,themotionofaquantumoscillatorbecomesmoresimilartothemotionofaclassical
+oscillator, in accordance with Bohr’s correspondence principle.
+7.6The Quantum Tunneling of Particles through Potential Barriers
+• Aquantumparticlethatisincidentonapotentialbarrierofafinitewidthandheightmaycrossthebarrierandappear
+on its other side. This phenomenon is called ‘quantum tunneling.’ It does not have a classical analog.
+• Tofindtheprobabilityofquantumtunneling,weassumetheenergyofanincidentparticleandsolvethestationary
+Schrӧdingerequationtofindwavefunctionsinsideandoutsidethebarrier.Thetunnelingprobabilityisaratioof
+squared amplitudes of the wave past the barrier to the incident wave.
+• Thetunnelingprobabilitydependsontheenergyoftheincidentparticlerelativetotheheightofthebarrierandon
+thewidthofthebarrier.Itisstronglyaffectedbythewidthofthebarrierinanonlinear,exponentialwaysothata
+small change in the barrier width causes a disproportionately large change in the transmission probability.
+• Quantum-tunnelingphenomenagovernradioactivenucleardecays.Theyareutilizedinmanymoderntechnologies
+such as STM and nano-electronics. STM allows us to see individual atoms on metal surfaces. Electron-tunneling
+devices have revolutionized electronics and allow us to build fast electronic devices of miniature sizes.
+CONCEPTUAL QUESTIONS
+3. Whatkindofphysicalquantitydoesawavefunctionof
+7.1Wave Functions an electron represent?
+1. Whatisthephysicalunitofawavefunction, Ψ(x, t)?
+4. What is the physical meaning of a wave function of a
+What is the physical unit of the square of this wave
+particle?
+function?
+5. What is the meaning of the expression “expectation
+2. Can the magnitude of a wave function
+value?” Explain.
+(Ψ* (x, t)Ψ(x, t)) be a negative number? Explain.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 349
+is exactly zero. Explain what is wrong with the following
+7.2The Heisenberg Uncertainty Principle reasoning:“Iftheprobabilityoffindingaquantumparticle
+at the midpoint is zero, the particle is never at this point,
+6. Iftheformalismofquantummechanicsis‘moreexact’
+right?Howdoesitcomethenthattheparticlecancrossthis
+thanthatofclassicalmechanics,whydon’tweusequantum
+point on its way from the left side to the right side of the
+mechanics to describe the motion of a leaping frog?
+box?
+Explain.
+7. CanthedeBrogliewavelengthofaparticle beknown
+7.5The Quantum Harmonic Oscillator
+precisely? Can the position of a particle be known
+precisely? 17. Is it possible to measure energy of 0.75ℏω for a
+quantum harmonic oscillator? Why? Why not? Explain.
+8. Canwemeasuretheenergyofafreelocalizedparticle
+with complete precision? 18. Explain the connection between Planck’s hypothesis
+ofenergyquantaandtheenergiesofthequantumharmonic
+9. Canwemeasureboththepositionandmomentumofa oscillator.
+particle with complete precision?
+19. If a classical harmonic oscillator can be at rest, why
+canthequantumharmonicoscillatorneverbeatrest?Does
+7.3The Schrӧdinger Equation this violate Bohr’s correspondence principle?
+10. What is the difference between a wave function
+ψ(x, y, z) andawavefunction Ψ(x, y, z, t) forthesame 20. Use an example of a quantum particle in a box or
+a quantum oscillator to explain the physical meaning of
+particle?
+Bohr’s correspondence principle.
+11. If a quantum particle is in a stationary state, does it
+21. Can we simultaneously measure position and energy
+mean that it does not move?
+of a quantum oscillator? Why? Why not?
+12. Explain the difference between time-dependent and
+-independent Schrӧdinger’s equations.
+7.6The Quantum Tunneling of Particles
+through Potential Barriers
+13. Suppose a wave function is discontinuous at some
+point.Canthisfunctionrepresentaquantumstateofsome 22. When an electron and a proton of the same kinetic
+physical particle? Why? Why not? energyencounterapotentialbarrierofthesameheightand
+width, which one of them will tunnel through the barrier
+more easily? Why?
+7.4The Quantum Particle in a Box
+23. What decreases the tunneling probability most:
+14. Using the quantum particle in a box model, describe
+doublingthebarrierwidthorhalvingthekineticenergyof
+howthe possible energies ofthe particle are related to the
+the incident particle?
+size of the box.
+24. Explain the difference between a box-potential and a
+15. Is it possible that when we measure the energy of a
+potential of a quantum dot.
+quantum particle in a box, the measurement may return a
+smaller value than the ground state energy? What is the
+highest value of the energy that we can measure for this 25. Can a quantum particle ‘escape’ from an infinite
+particle? potential well like that in a box? Why? Why not?
+16. Foraquantumparticleinabox,thefirstexcitedstate 26. A tunnel diode and a resonant-tunneling diode both
+(Ψ ) haszerovalueatthemidpointpositioninthebox,so utilizethesamephysicsprincipleofquantumtunneling.In
+2
+what important way are they different?
+thattheprobabilitydensityoffindingaparticleatthispoint
+
+350 Chapter 7 | Quantum Mechanics
+PROBLEMS
+components?(c)Findtheratiooftheuncertaintiesin(b)to
+7.1Wave Functions the mean speed of an atom in each direction.
+27. Compute |Ψ(x, t)| 2 for the function
+34. If the uncertainty in the y-component of a proton’s
+Ψ(x, t)=ψ(x)sinω t, where ω is a real constant.
+position is 2.0 pm, find the minimum uncertainty in the
+simultaneous measurement of the proton’s y-component
+28. Given the complex-valued function
+of velocity. What is the minimum uncertainty in the
+f(x, y)=(x−iy)/(x+iy), calculate |f(x, y)| 2. simultaneous measurement of the proton’s x-component
+of velocity?
+29. Which one of the following functions, and why,
+qualifiestobeawavefunctionofaparticlethatcanmove 35. Someunstableelementaryparticlehasarestenergyof
+along the entire real axis? (a) ψ(x)= Ae−x 2 ; 80.41GeVandanuncertainty inrest energyof2.06GeV.
+Estimate the lifetime of this particle.
+(b) ψ(x)= Ae−x; (c) ψ(x)= Atanx;
+(d) ψ(x)= A(sinx)/x; (e) ψ(x)= Ae−|x|. 36. An atom in a metastable state has a lifetime of 5.2
+ms. Find the minimum uncertainty in the measurement of
+energy of the excited state.
+30. A particle with mass m moving along the x-axis and
+its quantum state is represented by the following wave
+37. Measurements indicate that an atom remains in an
+function:
+excitedstateforanaveragetimeof50.0nsbeforemaking
+⎧ 0, x<0, a transition to the ground state with the simultaneous
+Ψ(x, t)= ⎩ ⎨ Axe−α xe−i E t/ℏ , x≥0, emission of a 2.1-eV photon. (a) Estimate the uncertainty
+in the frequency of the photon. (b) What fraction of the
+where α=2.0×10 10 m−1. (a) Find the normalization photon’s average frequency is this?
+constant. (b) Find the probability that the particle can be
+38. Supposeanelectronisconfinedtoaregionoflength
+foundontheinterval 0≤ x≤L.(c)Findtheexpectation
+0.1 nm (of the order of the size of a hydrogen atom) and
+valueofposition.(d)Findtheexpectationvalueofkinetic
+its kinetic energy is equal to the ground state energy of
+energy.
+thehydrogenatominBohr’smodel(13.6eV).(a)Whatis
+theminimumuncertaintyofitsmomentum?Whatfraction
+31. A wave function of a particle with massmis given by of its momentum is it? (b) What would the uncertainty in
+π π kinetic energy of this electron be if its momentum were
+⎧Acosαx, − ≤ x≤ + ,
+ψ(x)=⎨ 2α 2α equaltoyouranswerinpart(a)?Whatfractionofitskinetic
+⎩ 0, otherwise, energy is it?
+where α=1.00×10 10 /m. (a) Find the normalization
+constant. (b) Find the probability that the particle can be 7.3The Schrӧdinger Equation
+foundontheinterval 0≤ x≤0.5×10 −10 m.(c)Findthe 39. Combine Equation 7.17 and Equation 7.18 to
+p (e a ) rticle’s F a in v d eragep i o ts sition. a ( v d e ) r F ag in e ditsav k e in ra e g ti e c mome e n n t e u r m gy . show k2= ω c2 2 .
+−0.5×10 −10 m≤ x≤ +0.5×10 −10 m.
+40. Showthat Ψ(x, t)= Ae
+i(kx−ωt)
+isavalidsolutionto
+7.2The Heisenberg Uncertainty Principle Schrӧdinger’s time-dependent equation.
+32. A velocity measurement of an α-particle has been
+41. Show that Ψ(x, t)= Asin(kx−ωt) and
+performed with a precision of 0.02 mm/s. What is the
+minimum uncertainty in its position? Ψ(x, t)= Acos(kx−ωt) do not obey Schrӧdinger’s
+time-dependent equation.
+33. A gas of helium atoms at 273 K is in a cubical
+containerwith25.0cmonaside.(a)Whatistheminimum 42. Showthatwhen Ψ (x, t) and Ψ (x, t) aresolutions
+1 2
+uncertainty in momentum components of helium atoms?
+to the time-dependent Schrӧdinger equation and A,B are
+(b) What is the minimum uncertainty in velocity
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 351
+numbers, then a function Ψ(x, t) that is a superposition uranium nucleus that has a radius of approximately 15.0
+fm?
+of these functions is also a solution:
+Ψ(x, t)= AΨ (x, t)+BΨ (x, t).
+1 1
+52. To excite an electron in a one-dimensional box from
+itsfirstexcitedstatetoitsthirdexcitedstaterequires20.0
+43. Aparticlewithmassmisdescribedbythefollowing eV. What is the width of the box?
+wave function: ψ(x)= Acoskx+Bsinkx, where A, B,
+and k are constants. Assuming that the particle is free, 53. An electron confined to a box of width 0.15 nm by
+show that this function is the solution of the stationary infinite potential energy barriers emits a photon when it
+Schrӧdinger equation for this particle and find the energy makesatransitionfromthefirstexcitedstatetotheground
+that the particle has in this state. state. Find the wavelength of the emitted photon.
+44. Find the expectation value of the kinetic energy for 54. Iftheenergyofthefirstexcitedstateoftheelectronin
+the particle in the state, Ψ(x, t)= Ae i(kx−ωt). What the box is 25.0 eV, what is the width of the box?
+conclusion can you draw from your solution?
+55. Supposeanelectronconfinedtoaboxemitsphotons.
+Thelongestwavelengththatisregisteredis500.0nm.What
+45. Find the expectation value of the square of the
+is the width of the box?
+momentum squared for the particle in the state,
+Ψ(x, t)= Ae
+i(kx−ωt).
+What conclusion can you draw
+56. Hydrogen H molecules are kept at 300.0 K in a
+2
+from your solution?
+cubical container with a side length of 20.0 cm. Assume
+that you can treat the molecules as though they were
+46. A free proton has a wave function given by moving in a one-dimensional box. (a) Find the ground
+Ψ(x, t)= Ae
+i (5.02×10 11x−8.00×10 15t). stateenergyofthehydrogenmoleculeinthecontainer.(b)
+Assume that the molecule has a thermal energy given by
+The coefficient of x is inverse meters (m−1) and the
+k
+B
+T/2 and find the corresponding quantum number n of
+the quantum state that would correspond to this thermal
+coefficient on t is inverse seconds (s−1). Find its
+energy.
+momentum and energy.
+57. An electron is confined to a box of width 0.25 nm.
+(a) Draw an energy-level diagram representing the first
+7.4The Quantum Particle in a Box five states of the electron. (b) Calculate the wavelengths
+47. Assumethatanelectron inanatomcanbetreated as oftheemittedphotonswhentheelectronmakestransitions
+between the fourth and the second excited states, between
+if it were confined to a box of width 2.0 Å. What is the
+thesecondexcitedstateandthegroundstate,andbetween
+groundstateenergyoftheelectron?Compareyourresultto
+the third and the second excited states.
+thegroundstatekineticenergyofthehydrogenatominthe
+Bohr’s model of the hydrogen atom.
+58. Anelectroninaboxisinthegroundstatewithenergy
+2.0eV.(a)Findthewidthofthebox.(b)Howmuchenergy
+48. Assume that a proton in a nucleus can be treated as
+isneededtoexcitetheelectrontoitsfirstexcitedstate?(c)
+ifitwereconfinedtoaone-dimensionalboxofwidth10.0
+If the electron makes a transition from an excited state to
+fm. (a) What are the energies of the proton when it is
+thegroundstatewiththesimultaneousemissionof30.0-eV
+in the states corresponding to n=1, n=2, and n=3
+photon, find the quantum number of the excited state?
+? (b) What are the energies of the photons emitted when
+the proton makes the transitions from the first and second
+excited states to the ground state?
+7.5The Quantum Harmonic Oscillator
+59. Show that the two lowest energy states of the simple
+49. An electron confined to a box has the ground state
+harmonic oscillator, ψ (x) and ψ (x) from Equation
+energy of 2.5 eV. What is the width of the box? 0 1
+7.57, satisfyEquation 7.55.
+50. What is the ground state energy (in eV) of a proton
+confinedtoaone-dimensionalboxthesizeoftheuranium 60. If the ground state energy of a simple harmonic
+nucleus that has a radius of approximately 15.0 fm? oscillator is 1.25 eV, what is the frequency of its motion?
+51. What is the ground state energy (in eV) of an α 61. When a quantum harmonic oscillator makes a
+-particleconfinedtoaone-dimensionalboxthesizeofthe

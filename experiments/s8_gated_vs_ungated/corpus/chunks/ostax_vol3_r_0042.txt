@@ -1,0 +1,214 @@
+# REAL PDF — openstax_vol3.pdf, pages 255-261
+############################################################
+
+Chapter 6 | Photons and Matter Waves 247
+6 | PHOTONS AND MATTER
+WAVES
+Figure 6.1 In this image of pollen taken with an electron microscope, the bean-shaped grains are about 50µm long. Electron
+microscopes can have a much higher resolving power than a conventional light microscope because electron wavelengths can be
+100,000 times shorter than the wavelengths of visible-light photons. (credit: modification of work by Dartmouth College Electron
+Microscope Facility)
+Chapter Outline
+6.1Blackbody Radiation
+6.2Photoelectric Effect
+6.3The Compton Effect
+6.4Bohr’s Model of the Hydrogen Atom
+6.5De Broglie’s Matter Waves
+6.6Wave-Particle Duality
+Introduction
+Twoofthemostrevolutionaryconceptsofthetwentiethcenturywerethedescriptionoflightasacollectionofparticles,
+andthetreatmentofparticlesaswaves.Thesewavepropertiesofmatterhaveledtothediscoveryoftechnologiessuchas
+electron microscopy, which allows us to examine submicroscopic objects such as grains of pollen, as shown above.
+Inthischapter,youwilllearnabouttheenergyquantum,aconceptthatwasintroducedin1900bytheGermanphysicist
+Max Planck to explain blackbody radiation. We discuss how Albert Einstein extended Planck’s concept to a quantum of
+light(a“photon”)toexplainthephotoelectriceffect.WealsoshowhowAmericanphysicistArthurH.Comptonusedthe
+photonconceptin1923toexplainwavelengthshiftsobservedinX-rays.AfteradiscussionofBohr’smodelofhydrogen,we
+describehowmatterwaveswerepostulatedin1924byLouis-VictordeBroglietojustifyBohr’smodelandweexaminethe
+experimentsconductedin1923–1927byClintonDavissonandLesterGermerthatconfirmedtheexistenceofdeBroglie’s
+matter waves.
+
+248 Chapter 6 | Photons and Matter Waves
+6.1 | Blackbody Radiation
+Learning Objectives
+By the end of this section you will be able to:
+• Apply Wien’s and Stefan’s laws to analyze radiation emitted by a blackbody
+• Explain Planck’s hypothesis of energy quanta
+Allbodiesemitelectromagneticradiationoverarangeofwavelengths.Inanearlierchapter,welearnedthatacoolerbody
+radiateslessenergythanawarmerbody.Wealsoknowbyobservationthatwhenabodyisheatedanditstemperaturerises,
+theperceivedwavelengthofitsemittedradiationchangesfrominfraredtored,andthenfromredtoorange,andsoforth.
+Asitstemperaturerises,thebodyglowswiththecolorscorrespondingtoever-smallerwavelengthsoftheelectromagnetic
+spectrum.Thisistheunderlyingprincipleoftheincandescentlightbulb:Ahotmetalfilamentglowsred,andwhenheating
+continues,itsgloweventuallycoverstheentirevisibleportionoftheelectromagneticspectrum.Thetemperature(T)ofthe
+objectthatemitsradiation,ortheemitter,determinesthewavelengthatwhichtheradiatedenergyisatitsmaximum.For
+example,theSun,whosesurfacetemperatureisintherangebetween5000Kand6000K,radiatesmoststronglyinarange
+ofwavelengthsabout560nminthevisiblepartoftheelectromagneticspectrum.Yourbody,whenatitsnormaltemperature
+of about 300 K, radiates most strongly in the infrared part of the spectrum.
+Radiationthatisincidentonanobjectispartiallyabsorbedandpartiallyreflected.Atthermodynamicequilibrium,therate
+atwhichanobjectabsorbsradiationisthesameastherateatwhichitemitsit.Therefore,agoodabsorberofradiation(any
+objectthatabsorbsradiation)isalsoagoodemitter.Aperfectabsorberabsorbsallelectromagneticradiationincidentonit;
+such an object is called ablackbody.
+Althoughtheblackbodyisanidealization,becausenophysicalobjectabsorbs100%ofincidentradiation,wecanconstruct
+acloserealizationofablackbodyintheformofasmallholeinthewallofasealedenclosureknownasacavityradiator,
+as shown in Figure 6.2. The inside walls of a cavity radiator are rough and blackened so that any radiation that enters
+throughatinyholeinthecavitywallbecomestrappedinsidethecavity.Atthermodynamicequilibrium(attemperatureT),
+the cavity walls absorb exactly as much radiation as they emit. Furthermore, inside the cavity, the radiation entering the
+holeisbalancedbytheradiationleavingit.Theemissionspectrumofablackbodycanbeobtainedbyanalyzingthelight
+radiating from the hole. Electromagnetic waves emitted by a blackbody are calledblackbody radiation.
+Figure 6.2 A blackbody is physically realized by a small hole
+in the wall of a cavity radiator.
+Theintensity I(λ, T) ofblackbodyradiationdependsonthewavelength λ oftheemittedradiationandonthetemperature
+T of the blackbody (Figure 6.3). The function I(λ, T) is the power intensity that is radiated per unit wavelength; in
+other words, it is the power radiated per unit area of the hole in a cavity radiator per unit wavelength. According to this
+definition, I(λ, T)dλ isthepowerperunitareathatisemittedinthewavelengthintervalfrom λ to λ+dλ. Theintensity
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 249
+distribution among wavelengths of radiation emitted by cavities was studied experimentally at the end of the nineteenth
+century.Generally,radiationemittedbymaterialsonlyapproximatelyfollowstheblackbodyradiationcurve(Figure6.4);
+however, spectra of common stars do follow the blackbody radiation curve very closely.
+Figure 6.3 The intensity of blackbody radiation versus the wavelength of the emitted radiation. Each curve
+corresponds to a different blackbody temperature, starting with a low temperature (the lowest curve) to a high
+temperature (the highest curve).
+Figure 6.4 The spectrum of radiation emitted from a quartz
+surface (blue curve) and the blackbody radiation curve (black
+curve) at 600 K.
+Twoimportantlawssummarizetheexperimentalfindingsofblackbodyradiation:Wien’sdisplacementlawandStefan’slaw.
+Wien’sdisplacementlawisillustratedinFigure6.3bythecurveconnectingthemaximaontheintensitycurves.Inthese
+
+250 Chapter 6 | Photons and Matter Waves
+curves,weseethatthehotterthebody,theshorterthewavelengthcorrespondingtotheemissionpeakintheradiationcurve.
+Quantitatively, Wien’s law reads
+λ max T =2.898×10 −3 m·K (6.1)
+where λ is the position of the maximum in the radiation curve. In other words, λ is the wavelength at which a
+max max
+blackbodyradiatesmoststronglyatagiventemperatureT.NotethatinEquation6.1,thetemperatureisinkelvins.Wien’s
+displacementlawallowsustoestimatethetemperaturesofdistantstarsbymeasuringthewavelengthofradiationtheyemit.
+Example 6.1
+Temperatures of Distant Stars
+Onacleareveningduringthewintermonths,ifyouhappentobeintheNorthernHemisphereandlookupatthe
+sky,youcanseetheconstellationOrion(TheHunter).Onestarinthisconstellation,Rigel,flickersinabluecolor
+and another star, Betelgeuse, has a reddish color, as shown in Figure 6.5. Which of these two stars is cooler,
+Betelgeuse or Rigel?
+Strategy
+Wetreateachstarasablackbody.ThenaccordingtoWien’slaw,itstemperatureisinverselyproportionaltothe
+wavelengthofitspeakintensity.Thewavelength λ (blue) ofbluelightisshorterthanthewavelength λ (red) of
+max max
+red light. Even if we do not know the precise wavelengths, we can still set up a proportion.
+Solution
+Writing Wien’s law for the blue star and for the red star, we have
+λ (red) T =2.898×10 −3 m·K=λ (blue) T (6.2)
+max (red) max (blue)
+When simplified,Equation 6.2gives
+(blue) (6.3)
+λ
+T = max T <T
+(red) (red) (blue) (blue)
+λ
+max
+Therefore, Betelgeuse is cooler than Rigel.
+Significance
+Note that Wien’s displacement law tells us that the higher the temperature of an emitting body, the shorter the
+wavelength of the radiation it emits. The qualitative analysis presented in this example is generally valid for
+anyemittingbody,whetheritisabigobjectsuchasastarorasmallobjectsuchastheglowingfilamentinan
+incandescent lightbulb.
+6.1 CheckYourUnderstandingTheflameofapeach-scentedcandlehasayellowishcolorandtheflameof
+a Bunsen’s burner in a chemistry lab has a bluish color. Which flame has a higher temperature?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 251
+Figure 6.5 In the Orion constellation, the red star Betelgeuse, which usually takes on a yellowish tint, appears as the
+figure’s right shoulder (in the upper left). The giant blue star on the bottom right is Rigel, which appears as the hunter’s left
+foot. (credit left: modification of work by Matthew Spinelli, NASA APOD)
+ThesecondexperimentalrelationisStefan’slaw,whichconcernsthetotalpowerofblackbodyradiationemittedacrossthe
+entirespectrumofwavelengthsatagiventemperature.InFigure6.3,thistotalpowerisrepresentedbytheareaunderthe
+blackbodyradiationcurveforagivenT.Asthetemperatureofablackbodyincreases,thetotalemittedpoweralsoincreases.
+Quantitatively, Stefan’s law expresses this relation as
+P(T)=σAT4 (6.4)
+where A isthesurfaceareaofablackbody,Tisitstemperature(inkelvins),and σ istheStefan–Boltzmannconstant,
+σ =5.670×10 −8 W/(m2·K4). Stefan’s law enables us to estimate how much energy a star is radiating by remotely
+measuring its temperature.
+Example 6.2
+Power Radiated by Stars
+AstarsuchasourSunwilleventuallyevolvetoa“redgiant”starandthentoa“whitedwarf”star.Atypicalwhite
+dwarfisapproximatelythesizeofEarth,anditssurfacetemperatureisabout 2.5×104K. Atypicalredgiant
+hasasurfacetemperatureof 3.0×10 3 K andaradius~100,000timeslargerthanthatofawhitedwarf.Whatis
+theaverageradiatedpowerperunitareaandthetotalpowerradiatedbyeachofthesetypesofstars?Howdothey
+compare?
+Strategy
+If we treat the star as a blackbody, then according to Stefan’s law, the total power that the star radiates is
+proportionaltothefourthpowerofitstemperature.Tofindthepowerradiatedperunitareaofthesurface,wedo
+notneedtomakeanyassumptionsabouttheshapeofthestarbecauseP/Adependsonlyontemperature.However,
+tocomputethetotalpower,weneedtomakeanassumptionthattheenergyradiatesthroughasphericalsurface
+enclosing the star, so that the surface area is A=4πR2, whereRis its radius.
+
+252 Chapter 6 | Photons and Matter Waves
+Solution
+A simple proportion based on Stefan’s law gives
+P
+dwarf
+/A
+dwarf =
+σT
+d
+4
+warf =
+⎛
+⎜
+T
+dwarf
+⎞
+⎟
+4
+=
+⎛ 2.5×104⎞ 4
+=4820
+(6.5)
+P giant /A giant σT4 ⎝ T giant⎠ ⎝ 3.0×10 3⎠
+giant
+The power emitted per unit area by a white dwarf is about 5000 times that the power emitted by a red giant.
+Denoting this ratio by a=4.8×10 3 , Equation 6.5gives
+P A 4πR2 ⎛R ⎞ 2 ⎛ R ⎞ 2 (6.6)
+dwarf =a dwarf =a dwarf =a⎜ dwarf⎟ =4.8×10 3⎜ dwarf ⎟ =4.8×10 −7
+P giant A giant 4πR2 ⎝ R giant⎠ ⎝10 5R ⎠
+giant dwarf
+Weseethatthetotalpoweremittedbyawhitedwarfisatinyfractionofthetotalpoweremittedbyaredgiant.
+Despite itsrelatively lowertemperature, theoverallpowerradiated byaredgiantfarexceedsthatofthewhite
+dwarfbecausetheredgianthasamuchlargersurfacearea.Toestimatetheabsolutevalueoftheemittedpower
+per unit area, we again use Stefan’s law. For the white dwarf, we obtain
+P 4 (6.7)
+dwarf =σT4 =5.670×10 −8 W ⎛ 2.5×104K ⎞ =2.2×10 10 W/m2
+A
+dwarf
+dwarf m2·K4⎝ ⎠
+The analogous result for the red giant is obtained by scaling the result for a white dwarf:
+P giant 2.2×10 10 W 6 W 6 W (6.8)
+= =4.56×10 ≅4.6×10
+A
+giant 4.82×10
+3 m2 m2 m2
+Significance
+Toestimatethetotalpoweremittedbyawhitedwarf,inprinciple,wecoulduseEquation6.7.However,tofind
+itssurfacearea,weneedtoknowtheaverageradius,whichisnotgiveninthisexample.Therefore,thesolution
+stops here. The same is also true for the red giant star.
+6.2 CheckYourUnderstandingAnironpokerisbeingheated.Asitstemperaturerises,thepokerbeginsto
+glow—firstdullred,thenbrightred,thenorange,andthenyellow.Useeithertheblackbodyradiationcurveor
+Wien’s law to explain these changes in the color of the glow.
+6.3 CheckYourUnderstandingSupposethattwostars, α and β, radiateexactlythesametotalpower.If
+theradiusofstar α isthreetimesthatofstar β, whatistheratioofthesurfacetemperaturesofthesestars?
+Which one is hotter?
+The term “blackbody” was coined by Gustav R. Kirchhoff in 1862. The blackbody radiation curve was known
+experimentally, but its shape eluded physical explanation until the year 1900. The physical model of a blackbody at
+temperatureTisthatoftheelectromagneticwavesenclosedinacavity(seeFigure6.2)andatthermodynamicequilibrium
+with the cavity walls. The waves can exchange energy with the walls. The objective here is to find the energy density
+distributionamongvariousmodesofvibrationatvariouswavelengths(orfrequencies).Inotherwords,wewanttoknow
+howmuchenergyiscarriedbyasinglewavelengthorabandofwavelengths.Onceweknowtheenergydistribution,we
+canusestandardstatisticalmethods(similartothosestudiedinapreviouschapter)toobtaintheblackbodyradiationcurve,
+Stefan’s law, and Wien’s displacement law. When the physical model is correct, the theoretical predictions should be the
+same as the experimental curves.
+Inaclassicalapproachtotheblackbodyradiationproblem,inwhichradiationistreatedaswaves(asyouhavestudiedin
+previouschapters),themodesofelectromagneticwavestrappedinthecavityareinequilibriumandcontinuallyexchange
+theirenergieswiththecavitywalls.Thereisnophysicalreasonwhyawaveshoulddootherwise:Anyamountofenergycan
+beexchanged,eitherbybeingtransferredfromthewavetothematerialinthewallorbybeingreceivedbythewavefrom
+the material in the wall. This classical picture is the basis of the model developed by Lord Rayleigh and, independently,
+bySirJamesJeans.TheresultofthisclassicalmodelforblackbodyradiationcurvesisknownastheRayleigh–Jeanslaw.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

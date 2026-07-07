@@ -1,0 +1,180 @@
+# REAL PDF — openstax_vol2.pdf, pages 423-427
+############################################################
+
+Chapter 9 | Current and Resistance 413
+muchfaster.Theoperationofcircuitbreakersisnotwithinthescopeofthischapterandwillbediscussedinlaterchapters.
+Another method of protecting equipment and people is the ground fault circuit interrupter (GFCI), which is common in
+bathroomsandkitchens.TheGFCIoutletsrespondveryquicklytochangesincurrent.Theseoutletsopenwhenthereisa
+change in magnetic field produced by current-carrying conductors, which is also beyond the scope of this chapter and is
+covered in a later chapter.
+The Cost of Electricity
+Themoreelectricappliancesyouuseandthelongertheyarelefton,thehigheryourelectricbill.Thisfamiliarfactisbased
+dE
+on the relationship between energy and power. You pay for the energy used. Since P= , we see that
+dt
+E=∫Pdt
+is the energy used by a device using power P for a time interval t. If power is delivered at a constant rate, then then the
+energycanbefoundby E=Pt.Forexample,themorelightbulbsburning,thegreaterPused;thelongertheyareon,the
+greatertis.
+The energy unit on electric bills is the kilowatt-hour (kW·h), consistent with the relationship E=Pt. It is easy to
+estimate the cost of operating electrical appliances if you have some idea of their power consumption rate in watts or
+kilowatts, the time they are on in hours, and the cost per kilowatt-hour for your electric utility. Kilowatt-hours, like
+all other specialized energy units such as food calories, can be converted into joules. You can prove to yourself that
+1kW·h=3.6×10 6 J.
+The electrical energy (E) used can be reduced either by reducing the time of use or by reducing the power consumption
+of that appliance or fixture. This not only reduces the cost but also results in a reduced impact on the environment.
+Improvements to lighting are some of the fastest ways to reduce the electrical energy used in a home or business. About
+20%ofahome’suseofenergygoestolighting,andthenumberforcommercialestablishmentsiscloserto40%.Fluorescent
+lights are about four times more efficient than incandescent lights—this is true for both the long tubes and the compact
+fluorescentlights(CFLs).(SeeFigure9.23(b).)Thus,a60-Wincandescentbulbcanbereplacedbya15-WCFL,which
+hasthesamebrightnessandcolor.CFLshaveabenttubeinsideaglobeoraspiral-shapedtube,allconnectedtoastandard
+screw-in base that fits standard incandescent light sockets. (Original problems with color, flicker, shape, and high initial
+investment for CFLs have been addressed in recent years.)
+The heat transfer from these CFLs is less, and they last up to 10 times longer than incandescent bulbs. The significance
+ofaninvestmentinsuchbulbsisaddressedinthenextexample.NewwhiteLEDlights(whichareclustersofsmallLED
+bulbs) are even more efficient (twice that of CFLs) and last five times longer than CFLs.
+Example 9.10
+Calculating the Cost Effectiveness of LED Bulb
+Thetypicalreplacementfora100-Wincandescentbulbisa20-WLEDbulb.The20-WLEDbulbcanprovide
+thesameamountoflightoutputasthe100-Wincandescentlightbulb.WhatisthecostsavingsforusingtheLED
+bulbinplaceoftheincandescentbulbforoneyear,assuming$0.10perkilowatt-houristheaverageenergyrate
+charged by the power company? Assume that the bulb is turned on for three hours a day.
+Strategy
+(a) Calculate the energy used during the year for each bulb, using E=Pt.
+(b) Multiply the energy by the cost.
+Solution
+a. Calculate the power for each bulb.
+E =Pt=100W ⎛ 1kW ⎞⎛ 3h ⎞ ⎛365days⎞=109.5kW·h
+Incandescent ⎝1000W⎠⎝day⎠⎝ ⎠
+.
+E =Pt=20W ⎛ 1kW ⎞⎛ 3h ⎞ ⎛365days⎞=21.90kW·h
+LED ⎝1000W⎠⎝day⎠⎝ ⎠
+
+414 Chapter 9 | Current and Resistance
+b. Calculate the cost for each.
+⎛$0.10⎞
+cost =109.5kW-h =$10.95
+Incandescent ⎝kW·h⎠
+.
+⎛$0.10⎞
+cost =21.90kW-h =$2.19
+LED ⎝kW·h⎠
+Significance
+ALEDbulbuses80%lessenergythantheincandescentbulb,saving$8.76overtheincandescentbulbforone
+year.TheLEDbulbcancost$20.00andthe100-Wincandescentbulbcancost$0.75,whichshouldbecalculated
+intothecomputation.Atypicallifespanofanincandescentbulbis1200hoursandis50,000hoursfortheLED
+bulb.Theincandescentbulbwouldlast1.08yearsat3hoursadayandtheLEDbulbwouldlast45.66years.The
+initialcostoftheLEDbulbishigh,butthecosttothehomeownerwillbe$0.69fortheincandescentbulbsversus
+$0.44fortheLEDbulbsperyear.(NotethattheLEDbulbsarecomingdowninprice.)Thecostsavingsperyear
+is approximately $8.50, and that is just for one bulb.
+9.10 Check Your Understanding Is the efficiency of the various light bulbs the only consideration when
+comparing the various light bulbs?
+ChanginglightbulbsfromincandescentbulbstoCFLorLEDbulbsisasimplewaytoreduceenergyconsumptioninhomes
+andcommercialsites.CFLbulbsoperatewithamuchdifferentmechanismthandoincandescentlights.Themechanismis
+complexandbeyondthescopeofthischapter,buthereisaverygeneraldescriptionofthemechanism.CFLbulbscontain
+argon and mercury vapor housed within a spiral-shaped tube. The CFL bulbs use a “ballast” that increases the voltage
+usedbytheCFLbulb.Theballastproduceanelectricalcurrent,whichpassesthroughthegasmixtureandexcitesthegas
+molecules. The excited gas molecules produce ultraviolet (UV) light, which in turn stimulates the fluorescent coating on
+theinsideofthetube.Thiscoatingfluorescesinthevisiblespectrum,emittingvisiblelight.Traditionalfluorescenttubes
+andCFLbulbshadashorttimedelayofuptoafewsecondswhilethemixturewasbeing“warmedup”andthemolecules
+reached an excited state. It should be noted that these bulbs do contain mercury, which is poisonous, but if the bulb is
+broken,themercuryisneverreleased.Evenifthebulbisbroken,themercurytendstoremaininthefluorescentcoating.
+The amount is also quite small and the advantage of the energy saving may outweigh the disadvantage of using mercury.
+The CFL light bulbs are being replaced with LED light bulbs, where LED stands for “light-emitting diode.” The diode
+was briefly discussed as a nonohmic device, made of semiconducting material, which essentially permits current flow in
+onedirection.LEDsareaspecialtypeofdiodemadeofsemiconductingmaterialsinfusedwithimpuritiesincombinations
+and concentrations that enable the extra energy from the movement of the electrons during electrical excitation to be
+convertedintovisiblelight.SemiconductingdeviceswillbeexplainedingreaterdetailinCondensed Matter Physics
+(http://cnx.org/content/m58591/latest/).
+Commercial LEDs are quickly becoming the standard for commercial and residential lighting, replacing incandescent
+and CFL bulbs. They are designed for the visible spectrum and are constructed from gallium doped with arsenic and
+phosphorousatoms.ThecoloremittedfromanLEDdependsonthematerialsusedinthesemiconductorandthecurrent.In
+theearlyyearsofLEDdevelopment,smallLEDsfoundoncircuitboardswerered,green,andyellow,butLEDlightbulbs
+can now be programmed to produce millions of colors of light as well as many different hues of white light.
+Comparison of Incandescent, CFL, and LED Light Bulbs
+The energy savings can be significant when replacing an incandescent light bulb or a CFL light bulb with an LED light.
+Lightbulbsareratedbytheamountofpowerthatthebulbconsumes,andtheamountoflightoutputismeasuredinlumens.
+Thelumen(lm)istheSI-derivedunitofluminousfluxandisameasureofthetotalquantityofvisiblelightemittedbya
+source.A60-Wincandescentlightbulbcanbereplacedwitha13-to15-WCFLbulbora6-to8-WLEDbulb,allthreeof
+whichhavealightoutputofapproximately800lm.Atableoflightoutputforsomecommonlyusedlightbulbsappearsin
+Table 9.2.
+Thelifespansofthethreetypesofbulbsaresignificantlydifferent.AnLEDbulbhasalifespanof50,000hours,whereas
+the CFL has a lifespan of 8000 hours and the incandescent lasts a mere 1200 hours. The LED bulb is the most durable,
+easily withstanding rough treatment such as jarring and bumping. The incandescent light bulb has little tolerance to the
+sametreatmentsincethefilamentandglasscaneasilybreak.TheCFLbulbisalsolessdurablethantheLEDbulbbecause
+ofitsglassconstruction.Theamountofheatemittedis3.4btu/hforthe8-WLEDbulb,85btu/hforthe60-Wincandescent
+bulb,and30btu/hfortheCFLbulb.Asmentionedearlier,amajordrawbackoftheCFLbulbisthatitcontainsmercury,a
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 415
+neurotoxin,andmustbedisposedofashazardouswaste.Fromthesedata,itiseasytounderstandwhytheLEDlightbulb
+is quickly becoming the standard in lighting.
+Light Output LED Light Bulbs Incandescent Light Bulbs CFL Light Bulbs
+(lumens) (watts) (watts) (watts)
+450 4−5 40 9−13
+800 6−8 60 13−15
+1100 9−13 75 18−25
+1600 16−20 100 23−30
+2600 25−28 150 30−55
+Table 9.2Light Output of LED, Incandescent, and CFL Light Bulbs
+Summary of Relationships
+In this chapter, we have discussed relationships between voltages, current, resistance, and power. Figure 9.26 shows a
+summary of the relationships between these measurable quantities for ohmic devices. (Recall that ohmic devices follow
+Ohm’s law V =IR.) For example, if you need to calculate the power, use the pink section, which shows that P=VI,
+P=
+V2
+, and P=I2R.
+R
+Figure 9.26 This circle shows a summary of the equations for
+the relationships between power, current, voltage, and
+resistance.
+Whichequationyouusedependsonwhatvaluesyouaregiven,oryoumeasure.Forexampleifyouaregiventhecurrent
+andtheresistance,use P=I2R.Althoughallthepossiblecombinationsmayseemoverwhelming,don’tforgetthatthey
+all are combinations of just two equations, Ohm’s law (V =IR) and power (P=IV).
+9.6 | Superconductors
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the phenomenon of superconductivity
+• List applications of superconductivity
+
+416 Chapter 9 | Current and Resistance
+Touch the power supply of your laptop computer or some other device. It probably feels slightly warm. That heat is an
+unwantedbyproductoftheprocessofconvertinghouseholdelectricpowerintoacurrentthatcanbeusedbyyourdevice.
+Althoughelectricpowerisreasonablyefficient,otherlossesareassociatedwithit.Asdiscussedinthesectiononpowerand
+energy, transmission of electric power produces I2R line losses. These line losses exist whether the power is generated
+from conventional power plants (using coal, oil, orgas), nuclear plants, solar plants, hydroelectric plants, orwind farms.
+These losses can be reduced, but not eliminated, by transmitting using a higher voltage. It would be wonderful if these
+line losses could be eliminated, but that would require transmission lines that have zero resistance. In a world that has a
+globalinterestinnotwastingenergy,thereductionoreliminationofthisunwantedthermalenergywouldbeasignificant
+achievement. Is this possible?
+The Resistance of Mercury
+In 1911, Heike Kamerlingh Onnes of Leiden University, a Dutch physicist, was looking at the temperature dependence
+of the resistance of the element mercury. He cooled the sample of mercury and noticed the familiar behavior of a linear
+dependence of resistance on temperature; as the temperature decreased, the resistance decreased. Kamerlingh Onnes
+continued to cool the sample of mercury, using liquid helium. As the temperature approached 4.2K(−269.2°C), the
+resistanceabruptlywenttozero(Figure 9.27).Thistemperatureisknownasthecriticaltemperature T formercury.
+c
+The sample of mercury entered into a phase where the resistance was absolutely zero. This phenomenon is known as
+superconductivity. (Note: If you connect the leads of a three-digit ohmmeter across a conductor, the reading commonly
+showsupas 0.00Ω.Theresistanceoftheconductorisnotactuallyzero,itislessthan 0.01Ω.)Therearevariousmethods
+tomeasureverysmallresistances,suchasthefour-pointmethod,butanohmmeterisnotanacceptablemethodtousefor
+testing resistance in superconductivity.
+Figure 9.27 The resistance of a sample of mercury is zero at
+very low temperatures—it is a superconductor up to the
+temperature of about 4.2 K. Above that critical temperature, its
+resistance makes a sudden jump and then increases nearly
+linearly with temperature.
+Other Superconducting Materials
+As research continued, several other materials were found to enter a superconducting phase, when the temperature
+reached near absolute zero. In 1941, an alloy of niobium-nitride was found that could become superconducting at
+T c=16K(−257°C) andin1953,vanadium-siliconwasfoundtobecomesuperconductiveat T c=17.5K(−255.7°C).
+The temperatures for the transition into superconductivity were slowly creeping higher. Strangely, many materials that
+make good conductors, such as copper, silver, and gold, do not exhibit superconductivity. Imagine the energy savings if
+transmission lines for electric power-generating stations could be made to be superconducting at temperatures near room
+temperature! A resistance of zero ohms means no I2R losses and a great boost to reducing energy consumption. The
+problemisthat T c=17.5K isstillverycoldandintherangeofliquidheliumtemperatures.Atthistemperature,itisnot
+cost effective to transmit electrical energy because of the cooling requirements.
+Alargejumpwasseenin1986,whenateamofresearchers,headedbyDr.ChingWuChuofHoustonUniversity,fabricated
+a brittle, ceramic compound with a transition temperature of T c=92K(−181°C). The ceramic material, composed
+of yttrium barium copper oxide (YBCO), was an insulator at room temperature. Although this temperature still seems
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

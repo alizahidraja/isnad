@@ -1,0 +1,138 @@
+# REAL PDF — openstax_vol1.pdf, pages 599-600
+############################################################
+
+12 • Chapter Review 587
+Chapter Review
+Key Terms
+breaking stress (ultimate stress) value of stress at normal pressure pressure of one atmosphere, serves
+the fracture point as a reference level for pressure
+bulk modulus elastic modulus for the bulk stress pascal (Pa) SI unit of stress, SI unit of pressure
+bulk strain (or volume strain) strain under the bulk plastic behavior material deforms irreversibly, does
+stress, given as fractional change in volume not go back to its original shape and size when load
+bulk stress (or volume stress) stress caused by is removed and stress vanishes
+compressive forces, in all directions pressure force pressing in normal direction on a
+center of gravity point where the weight vector is surface per the surface area, the bulk stress in fluids
+attached second equilibrium condition expresses rotational
+compressibility reciprocal of the bulk modulus equilibrium; all torques due to external forces acting
+compressive strain strain that occurs when forces on the body balance out and their vector sum is zero
+are contracting an object, causing its shortening shear modulus elastic modulus for shear stress
+compressive stress stress caused by compressive shear strain strain caused by shear stress
+forces, only in one direction shear stress stress caused by shearing forces
+elastic object that comes back to its original size and static equilibrium body is in static equilibrium when
+shape when the load is no longer present it is at rest in our selected inertial frame of reference
+elastic limit stress value beyond which material no strain dimensionless quantity that gives the amount
+longer behaves elastically and becomes of deformation of an object or medium under stress
+permanently deformed stress quantity that contains information about the
+elastic modulus proportionality constant in linear magnitude of force causing deformation, defined as
+relation between stress and strain, in SI pascals force per unit area
+equilibrium body is in equilibrium when its linear and stress-strain diagram graph showing the relationship
+angular accelerations are both zero relative to an between stress and strain, characteristic of a
+inertial frame of reference material
+first equilibrium condition expresses translational tensile strain strain under tensile stress, given as
+equilibrium; all external forces acting on the body fractional change in length, which occurs when
+balance out and their vector sum is zero forces are stretching an object, causing its
+gravitational torque torque on the body caused by its elongation
+weight; it occurs when the center of gravity of the tensile stress stress caused by tensile forces, only in
+body is not located on the axis of rotation one direction, which occurs when forces are
+linearity limit (proportionality limit) largest stress stretching an object, causing its elongation
+value beyond which stress is no longer proportional Young’s modulus elastic modulus for tensile or
+to strain compressive stress
+Key Equations
+First Equilibrium Condition
+Second Equilibrium Condition
+Linear relation between
+stress and strain
+Young’s modulus
+Bulk modulus
+Shear modulus
+
+588 12 • Chapter Review
+Summary
+12.1 Conditions for Static Equilibrium its deformation, which is a change in its size and
+shape. The strength of the forces that cause
+• A body is in equilibrium when it remains either in
+deformation is expressed by stress, which in SI
+uniform motion (both translational and
+units is measured in the unit of pressure (pascal).
+rotational) or at rest. When a body in a selected
+The extent of deformation under stress is
+inertial frame of reference neither rotates nor
+expressed by strain, which is dimensionless.
+moves in translational motion, we say the body is
+• For a small stress, the relation between stress
+in static equilibrium in this frame of reference.
+and strain is linear. The elastic modulus is the
+• Conditions for equilibrium require that the sum of
+proportionality constant in this linear relation.
+all external forces acting on the body is zero (first
+• Tensile (or compressive) strain is the response of
+condition of equilibrium), and the sum of all
+an object or medium to tensile (or compressive)
+external torques from external forces is zero
+stress. Here, the elastic modulus is called
+(second condition of equilibrium). These two
+Young’s modulus. Tensile (or compressive) stress
+conditions must be simultaneously satisfied in
+causes elongation (or shortening) of the object or
+equilibrium. If one of them is not satisfied, the
+medium and is due to an external forces acting
+body is not in equilibrium.
+along only one direction perpendicular to the
+• The free-body diagram for a body is a useful tool
+cross-section.
+that allows us to count correctly all contributions
+• Bulk strain is the response of an object or
+from all external forces and torques acting on the
+medium to bulk stress. Here, the elastic modulus
+body. Free-body diagrams for the equilibrium of
+is called the bulk modulus. Bulk stress causes a
+an extended rigid body must indicate a pivot
+change in the volume of the object or medium
+point and lever arms of acting forces with respect
+and is caused by forces acting on the body from
+to the pivot.
+all directions, perpendicular to its surface.
+12.2 Examples of Static Equilibrium Compressibility of an object or medium is the
+reciprocal of its bulk modulus.
+• A variety of engineering problems can be solved
+• Shear strain is the deformation of an object or
+by applying equilibrium conditions for rigid
+medium under shear stress. The shear modulus
+bodies.
+is the elastic modulus in this case. Shear stress is
+• In applications, identify all forces that act on a
+caused by forces acting along the object’s two
+rigid body and note their lever arms in rotation
+parallel surfaces.
+about a chosen rotation axis. Construct a free-
+body diagram for the body. Net external forces 12.4 Elasticity and Plasticity
+and torques can be clearly identified from a
+• An object or material is elastic if it comes back to
+correctly constructed free-body diagram. In this
+its original shape and size when the stress
+way, you can set up the first equilibrium
+vanishes. In elastic deformations with stress
+condition for forces and the second equilibrium
+values lower than the proportionality limit, stress
+condition for torques.
+is proportional to strain. When stress goes
+• In setting up equilibrium conditions, we are free
+beyond the proportionality limit, the deformation
+to adopt any inertial frame of reference and any
+is still elastic but nonlinear up to the elasticity
+position of the pivot point. All choices lead to one
+limit.
+answer. However, some choices can make the
+• An object or material has plastic behavior when
+process of finding the solution unduly
+stress is larger than the elastic limit. In the
+complicated. We reach the same answer no
+plastic region, the object or material does not
+matter what choices we make. The only way to
+come back to its original size or shape when
+master this skill is to practice.
+stress vanishes but acquires a permanent
+12.3 Stress, Strain, and Elastic Modulus deformation. Plastic behavior ends at the
+breaking point.
+• External forces on an object (or medium) cause
+Access for free at openstax.org

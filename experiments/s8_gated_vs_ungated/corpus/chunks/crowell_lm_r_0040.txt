@@ -1,0 +1,266 @@
+# REAL PDF — crowell_lm.pdf, pages 278-289
+############################################################
+
+15 Astronomers have detected a solar system consisting of three
+planets orbiting the star Upsilon Andromedae. The planets have
+been named b, c, and d. Planet b’s average distance from the star
+is 0.059 A.U., and planet c’s average distance is 0.83 A.U., where an
+astronomical unit or A.U. is defined as the distance from the Earth
+to the sun. For technical reasons, it is possible to determine the
+ratios of the planets’ masses, but their masses cannot presently be
+determined in absolute units. Planet c’s mass is 3.0 times that of
+planet b. Compare the star’s average gravitational force on planet
+c with its average force on planet b. [Based on a problem by Arnold
+Arons.] . Solution, p. 544
+16 Some communications satellites are in orbits called geosyn-
+chronous: the satellite takes one day to orbit the earth from west
+to east, so that as the earth spins, the satellite remains above the
+same point on the equator. What is such a satellite’s altitude above
+the surface of the earth? . Solution, p. 544
+17 As discussed in more detail in example 3 on p. 390, tidal
+interactions with the earth are causing the moon’s orbit to grow
+gradually larger. Laser beams bounced o↵ of a mirror left on the
+moon by astronauts have allowed a measurement of the moon’s rate
+of recession, which is about 4 cm per year. This means that the
+gravitational force acting between earth and moon is decreasing.
+By what fraction does the force decrease with each 27-day orbit?
+[Based on a problem by Arnold Arons.]
+. Hint, p. 534 . Solution, p. 545
+18 Suppose that we inhabited a universe in which, instead of
+Newton’s law of gravity, we had F = kpm m /r2, where k is some
+1 2
+constant with di↵erent units than G. (The force is still attrac-
+tive.) However, we assume that a = F/m and the rest of Newtonian
+physics remains true, and we use a = F/m to define our mass scale,
+so that, e.g., a mass of 2 kg is one which exhibits half the accelera-
+tion when the same force is applied to it as to a 1 kg mass.
+(a) Is this new law of gravity consistent with Newton’s third law?
+(b) Suppose you lived in such a universe, and you dropped two un-
+equal masses side by side. What would happen?
+(c) Numerically, suppose a 1.0-kg object falls with an acceleration
+of 10 m/s2. What would be the acceleration of a rain drop with a
+mass of 0.1 g? Would you want to go out in the rain?
+(d) If a falling object broke into two unequal pieces while it fell,
+what would happen?
+(e) Invent a law of gravity that results in behavior that is the op-
+posite of what you found in part b. [Based on a problem by Arnold
+Arons.]
+278 Chapter 10 Gravity
+
+19 (a) A certain vile alien gangster lives on the surface of an
+asteroid, where his weight is 0.20 N. He decides he needs to lose
+weightwithoutreducinghisconsumptionofprincesses, sohe’sgoing
+to move to a di↵erent asteroid where his weight will be 0.10 N. The
+real estate agent’s database has asteroids listed by mass, however,
+not by surface gravity. Assuming that all asteroids are spherical
+and have the same density, how should the mass of his new asteroid
+compare with that of his old one?
+(b) Jupiter’s mass is 318 times the Earth’s, and its gravity is about
+twice Earth’s. Is this consistent with the results of part a? If not,
+how do you explain the discrepancy? . Solution, p. 545
+20 Where would an object have to be located so that it would
+experience zero total gravitational force from the earth and moon?
+p
+21 The planet Uranus has a mass of 8.68 1025 kg and a radius
+⇥
+of 2.56 104 km. The figure shows the relative sizes of Uranus and
+⇥
+Earth.
+(a) Compute the ratio g /g , where g is the strength of the grav-
+U E U
+itational field at the surface of Uranus and g is the corresponding
+E
+quantity at the surface of the Earth. p
+(b) What is surprising about this result? How do you explain it?
+Problem21.
+22 The International Space Station orbits at an average altitude
+of about 370 km above sea level. Compute the value of g at that
+altitude. p
+Problems 279
+
+Problem 23: New Horizons at
+its closest approach to Jupiter.
+(Jupiter’s four largest moons are
+shown for illustrative purposes.)
+Themassesare:
+sun: 1.9891 1030 kg
+⇥
+Jupiter: 1.8986 1027 kg
+⇥
+NewHorizons: 465.0kg
+23 On Feb. 28, 2007, the New Horizons space probe, on its way
+to a 2015 flyby of Pluto, passed by the planet Jupiter for a gravity-
+assisted maneuver that increased its speed and changed its course.
+Thedashedlineinthefigureshowsthespacecraft’strajectory,which
+iscurvedbecauseofthreeforces: theforceoftheexhaustgasesfrom
+the probe’s own engines, the sun’s gravitational force, and Jupiter’s
+gravitational force. Find the magnitude of the total gravitational
+force acting on the probe. You will find that the sun’s force is much
+smaller than Jupiter’s, so that the magnitude of the total force is
+determined almost entirely by Jupiter’s force. However, this is a
+high-precision problem, and you will find that the total force is
+slightly di↵erent from Jupiter’s force. p
+24 Onanairlessbodysuchasthemoon, thereisnoatmospheric
+friction, so it should be possible for a satellite to orbit at a very low
+altitude, just high enough to keep from hitting the mountains. (a)
+Suppose that such a body is a smooth sphere of uniform density
+⇢ and radius r. Find the velocity required for a ground-skimming
+orbit. p
+(b)Atypicalasteroidhasadensityofabout2g/cm3,i.e.,twicethat
+of water. (This is a lot lower than the density of the earth’s crust,
+probably indicating that the low gravity is not enough to compact
+the material very tightly, leaving lots of empty space inside.) Sup-
+pose that it is possible for an astronaut in a spacesuit to jump at
+2 m/s. Find the radius of the largest asteroid on which it would be
+possible to jump into a ground-skimming orbit. p
+280 Chapter 10 Gravity
+
+25 The figure shows a region of outer space in which two stars
+have exploded, leaving behind two overlapping spherical shells of
+gas, which we assume to remain at rest. The figure is a cross-
+section in a plane containing the shells’ centers. A space probe is
+released with a very small initial speed at the point indicated by
+the arrow, initially moving in the direction indicated by the dashed
+line. Without any further information, predict as much as possible
+about the path followed by the probe and its changes in speed along
+that path. ?
+Problem25.
+26 Approximate the earth’s density as being constant. (a) Find
+the gravitational field at a point P inside the earth and half-way
+between the center and the surface. Express your result as a ratio
+g /g relative to the field we experience at the surface. (b) As a
+P S
+check on your answer, make sure that the same reasoning leads to
+a reasonable result when the fraction 1/2 is replaced by the value 0
+(P being the earth’s center) or the value 1 (P being a point on the
+surface).
+Problems 281
+
+27 The earth is divided into solid inner core, a liquid outer core,
+and a plastic mantle. Physical properties such as density change
+discontinuously at the boundaries between one layer and the next.
+Although the density is not completely constant within each region,
+we will approximate it as being so for the purposes of this problem.
+(We neglect the crust as well.) Let R be the radius of the earth
+as a whole and M its mass. The following table gives a model of
+some properties of the three layers, as determined by methods such
+as the observation of earthquake waves that have propagated from
+one side of the planet to the other.
+region outer radius/R mass/M
+mantle 1 0.69
+outer core 0.55 0.29
+inner core 0.19 0.017
+The boundary between the mantle and the outer core is referred to
+astheGutenbergdiscontinuity. Letg bethestrengthoftheearth’s
+s
+gravitational field at its surface and g its value at the Gutenberg
+G
+discontinuity. Find g /g . p
+G s
+282 Chapter 10 Gravity
+
+Exercise 10: The shell theorem
+This exercise is an approximate numerical test of the shell theorem. There are seven masses
+A-G, each being one kilogram. Masses A-F, each one meter from the center, form a shape like
+two Egyptian pyramids joined at their bases; this is a rough approximation to a six-kilogram
+spherical shell of mass. Mass G is five meters from the center of the main group. The class will
+divide into six groups and split up the work required in order to calculate the vector sum of the
+six gravitational forces exerted on mass G. Depending on the size of the class, more than one
+group may be assigned to deal with the contribution of the same mass to the total force, and
+the redundant groups can check each other’s results.
+1. Discuss as a class what can be done to simplify the task of calculating the vector sum, and
+how to organize things so that each group can work in parallel with the others.
+2. Each group should write its results on the board in units of piconewtons, retaining five
+significant figures of precision. Everyone will need to use the same value for the gravitational
+constant, G = 6.6743 10 11 N m2/kg2.
+ 
+⇥ ·
+3. The class will determine the vector sum and compare with the result that would be obtained
+with the shell theorem.
+Exercise 10: The shell theorem 283
+
+Conservation laws
+284
+
+286
+
+In July of 1994, Comet Shoemaker-Levy struck the planet Jupiter, de-
+positing 7 1022 joules of energy, and incidentally giving rise to a series
+⇥
+of Hollywood movies in which our own planet is threatened by an impact
+by a comet or asteroid. There is evidence that such an impact caused
+the extinction of the dinosaurs. Left: Jupiter’s gravitational force on the
+near side of the comet was greater than on the far side, and this differ-
+ence in force tore up the comet into a string of fragments. Two separate
+telescopeimageshavebeencombinedtocreatetheillusionofapointof
+view just behind the comet. (The colored fringes at the edges of Jupiter
+areartifactsoftheimagingsystem.) Top: Aseriesofimagesoftheplume
+ofsuperheatedgaskickedupbytheimpactofoneofthefragments. The
+plumeisaboutthesizeofNorthAmerica. Bottom: Animageafterallthe
+impactswereover,showingthedamagedone.
+Chapter 11
+Conservation of energy
+11.1 The search for a perpetual motion
+machine
+Don’t underestimate greed and laziness as forces for progress. Mod-
+ern chemistry was born from the collision of lust for gold with dis-
+taste for the hard work of finding it and digging it up. Failed e↵orts
+by generations of alchemists to turn lead into gold led finally to the
+conclusion that it could not be done: certain substances, the chem-
+287
+
+ical elements, are fundamental, and chemical reactions can neither
+increase nor decrease the amount of an element such as gold.
+Now flash forward to the early industrial age. Greed and laziness
+have created the factory, the train, and the ocean liner, but in each
+of these is a boiler room where someone gets sweaty shoveling the
+coal to fuel the steam engine. Generations of inventors have tried to
+createamachine,calledaperpetualmotionmachine,thatwouldrun
+forever without fuel. Such a machine is not forbidden by Newton’s
+laws of motion, which are built around the concepts of force and
+inertia. Forceisfree, andcanbemultipliedindefinitelywithpulleys,
+gears, or levers. The principle of inertia seems even to encourage
+the belief that a cleverly constructed machine might not ever run
+down.
+Figures a and b show two of the innumerable perpetual motion
+machines that have been proposed. The reason these two examples
+don’t work is not much di↵erent from the reason all the others have
+failed. Consider machine a. Even if we assume that a properly
+shaped ramp would keep the ball rolling smoothly through each
+cycle, friction would always be at work. The designer imagined that
+the machine would repeat the same motion over and over again, so
+The magnet draws the ball that every time it reached a given point its speed would be exactly
+to the top of the ramp, where it
+the same as the last time. But because of friction, the speed would
+falls through the hole and rolls
+actually be reduced a little with each cycle, until finally the ball
+backtothebottom.
+would no longer be able to make it over the top.
+Frictionhasawayofcreepingintoallmovingsystems. Therotating
+earthmightseemlikeaperfectperpetualmotionmachine, sinceitis
+isolatedinthevacuumofouterspacewithnothingtoexertfrictional
+forces on it. But in fact our planet’s rotation has slowed drastically
+since it first formed, and the earth continues to slow its rotation,
+making today just a little longer than yesterday. The very subtle
+sourceoffrictionisthetides. Themoon’sgravityraisesbulgesinthe
+earth’s oceans, and as the earth rotates the bulges progress around
+theplanet. Wherethebulgesencounterland,thereisfriction,which
+slows the earth’s rotation very gradually.
+11.2 Energy
+As the wheel spins clock-
+wise, the flexible arms sweep
+Theanalysisbasedonfrictionissomewhatsuperficial,however. One
+aroundandbendandunbend. By
+could understand friction perfectly well and yet imagine the follow-
+dropping off its ball on the ramp,
+ing situation. Astronauts bring back a piece of magnetic ore from
+the arm is supposed to make
+the moon which does not behave like ordinary magnets. A normal
+itself lighter and easier to lift over
+the top. Picking its own ball back bar magnet, c/1, attracts a piece of iron essentially directly toward
+up again on the right, it helps to it, and has no left- or right-handedness. The moon rock, however,
+pulltherightsidedown. exerts forces that form a whirlpool pattern around it, 2. NASA
+goes to a machine shop and has the moon rock put in a lathe and
+machined down to a smooth cylinder, 3. If we now release a ball
+bearing on the surface of the cylinder, the magnetic force whips it
+288 Chapter 11 Conservation of energy

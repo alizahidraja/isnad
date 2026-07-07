@@ -39,3 +39,5 @@ htmlcov/
 
 # Ruff
 .ruff_cache/
+corpus/pdfs/
+corpus/pdfs/

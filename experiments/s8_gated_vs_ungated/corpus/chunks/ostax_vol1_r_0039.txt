@@ -1,0 +1,181 @@
+# REAL PDF — openstax_vol1.pdf, pages 231-238
+############################################################
+
+5.5 • Newton’s Third Law 219
+between components of a system cancel because they are equal in magnitude and opposite in direction. For
+example, the force exerted by the professor on the cart results in an equal and opposite force back on the professor.
+In this case, both forces act on the same system and therefore cancel. Thus, internal forces (between components
+of a system) cancel. Choosing System 1 was crucial to solving this problem.
+EXAMPLE 5.11
+Force on the Cart: Choosing a New System
+Calculate the force the professor exerts on the cart in Figure 5.20, using data from the previous example if needed.
+Strategy
+If we define the system of interest as the cart plus the equipment (System 2 in Figure 5.20), then the net external
+force on System 2 is the force the professor exerts on the cart minus friction. The force she exerts on the cart, ,
+is an external force acting on System 2. was internal to System 1, but it is external to System 2 and thus enters
+Newton’s second law for this system.
+Solution
+Newton’s second law can be used to find We start with
+The magnitude of the net external force on System 2 is
+We solve for , the desired quantity:
+The value of f is given, so we must calculate net That can be done because both the acceleration and the mass
+of System 2 are known. Using Newton’s second law, we see that
+where the mass of System 2 is 19.0 kg ( ) and its acceleration was found to be in
+the previous example. Thus,
+Now we can find the desired force:
+Significance
+This force is significantly less than the 150-N force the professor exerted backward on the floor. Not all of that
+150-N force is transmitted to the cart; some of it accelerates the professor. The choice of a system is an important
+analytical step both in solving problems and in thoroughly understanding the physics of the situation (which are not
+necessarily the same things).
+CHECK YOUR UNDERSTANDING 5.7
+Two blocks are at rest and in contact on a frictionless surface as shown below, with and
+applied force 24 N. (a) Find the acceleration of the system of blocks. (b) Suppose that the blocks are later separated.
+What force will give the second block, with the mass of 6.0 kg, the same acceleration as the system of blocks?
+
+220 5 • Newton's Laws of Motion
+INTERACTIVE
+View this video (https://openstax.org/l/21actionreact) to watch examples of action and reaction.
+INTERACTIVE
+View this video (https://openstax.org/l/21NewtonsLaws) to watch examples of Newton’s laws and internal and
+external forces.
+5.6 Common Forces
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Define normal and tension forces
+• Distinguish between real and fictitious forces
+• Apply Newton’s laws of motion to solve problems involving a variety of forces
+Forces are given many names, such as push, pull, thrust, and weight. Traditionally, forces have been grouped into
+several categories and given names relating to their source, how they are transmitted, or their effects. Several of
+these categories are discussed in this section, together with some interesting applications. Further examples of
+forces are discussed later in this text.
+A Catalog of Forces: Normal, Tension, and Other Examples of Forces
+A catalog of forces will be useful for reference as we solve various problems involving force and motion. These
+forces include normal force, tension, friction, and spring force.
+Normal force
+Weight (also called the force of gravity) is a pervasive force that acts at all times and must be counteracted to keep
+an object from falling. You must support the weight of a heavy object by pushing up on it when you hold it stationary,
+as illustrated in Figure 5.21(a). But how do inanimate objects like a table support the weight of a mass placed on
+them, such as shown in Figure 5.21(b)? When the bag of dog food is placed on the table, the table sags slightly
+under the load. This would be noticeable if the load were placed on a card table, but even a sturdy oak table
+deforms when a force is applied to it. Unless an object is deformed beyond its limit, it will exert a restoring force
+much like a deformed spring (or a trampoline or diving board). The greater the deformation, the greater the restoring
+force. Thus, when the load is placed on the table, the table sags until the restoring force becomes as large as the
+weight of the load. At this point, the net external force on the load is zero. That is the situation when the load is
+stationary on the table. The table sags quickly and the sag is slight, so we do not notice it. But it is similar to the
+sagging of a trampoline when you climb onto it.
+Access for free at openstax.org
+
+5.6 • Common Forces 221
+FIGURE 5.21 (a) The person holding the bag of dog food must supply an upward force equal in magnitude and opposite in direction
+to the weight of the food so that it doesn’t drop to the ground. (b) The card table sags when the dog food is placed on it, much like a stiff
+trampoline. Elastic restoring forces in the table grow as it sags until they supply a force equal in magnitude and opposite in direction to
+the weight of the load.
+We must conclude that whatever supports a load, be it animate or not, must supply an upward force equal to the
+weight of the load, as we assumed in a few of the previous examples. If the force supporting the weight of an object,
+or a load, is perpendicular to the surface of contact between the load and its support, this force is defined as a
+normal force and here is given by the symbol (This is not the newton unit for force, or N.) The word normal
+means perpendicular to a surface. This means that the normal force experienced by an object resting on a horizontal
+surface can be expressed in vector form as follows:
+In scalar form, this becomes
+The normal force can be less than the object’s weight if the object is on an incline.
+EXAMPLE 5.12
+Weight on an Incline
+Consider the skier on the slope in Figure 5.22. Her mass including equipment is 60.0 kg. (a) What is her acceleration
+if friction is negligible? (b) What is her acceleration if friction is 45.0 N?
+
+222 5 • Newton's Laws of Motion
+FIGURE 5.22 Since the acceleration is parallel to the slope and acting down the slope, it is most convenient to project all forces onto a
+coordinate system where one axis is parallel to the slope and the other is perpendicular to it (axes shown to the left of the skier). is
+perpendicular to the slope and is parallel to the slope, but has components along both axes, namely, and . Here, has a
+squiggly line to show that it has been replaced by these components. The force is equal in magnitude to , so there is no acceleration
+perpendicular to the slope, but f is less than , so there is a downslope acceleration (along the axis parallel to the slope).
+Strategy
+This is a two-dimensional problem, since not all forces on the skier (the system of interest) are parallel. The
+approach we have used in two-dimensional kinematics also works well here. Choose a convenient coordinate
+system and project the vectors onto its axes, creating two one-dimensional problems to solve. The most convenient
+coordinate system for motion on an incline is one that has one coordinate parallel to the slope and one
+perpendicular to the slope. (Motions along mutually perpendicular axes are independent.) We use x and y for the
+parallel and perpendicular directions, respectively. This choice of axes simplifies this type of problem, because
+there is no motion perpendicular to the slope and the acceleration is downslope. Regarding the forces, friction is
+drawn in opposition to motion (friction always opposes forward motion) and is always parallel to the slope, is
+drawn parallel to the slope and downslope (it causes the motion of the skier down the slope), and is drawn as
+the component of weight perpendicular to the slope. Then, we can consider the separate problems of forces parallel
+to the slope and forces perpendicular to the slope.
+Solution
+The magnitude of the component of weight parallel to the slope is
+and the magnitude of the component of the weight perpendicular to the slope is
+a. Neglect friction. Since the acceleration is parallel to the slope, we need only consider forces parallel to the slope.
+(Forces perpendicular to the slope add to zero, since there is no acceleration in that direction.) The forces parallel to
+the slope are the component of the skier’s weight parallel to slope and friction f. Using Newton’s second law,
+with subscripts to denote quantities parallel to the slope,
+where assuming no friction for this part. Therefore,
+Access for free at openstax.org
+
+5.6 • Common Forces 223
+is the acceleration.
+b. Include friction. We have a given value for friction, and we know its direction is parallel to the slope and it opposes
+motion between surfaces in contact. So the net external force is
+Substituting this into Newton’s second law, gives
+We substitute known values to obtain
+This gives us
+which is the acceleration parallel to the incline when there is 45.0 N of opposing friction.
+Significance
+Since friction always opposes motion between surfaces, the acceleration is smaller when there is friction than when
+there is none. It is a general result that if friction on an incline is negligible, then the acceleration down the incline is
+, regardless of mass. As discussed previously, all objects fall with the same acceleration in the absence of
+air resistance. Similarly, all objects, regardless of mass, slide down a frictionless incline with the same acceleration
+(if the angle is the same).
+When an object rests on an incline that makes an angle with the horizontal, the force of gravity acting on the object
+is divided into two components: a force acting perpendicular to the plane, , and a force acting parallel to the
+plane, (Figure 5.23). The normal force is typically equal in magnitude and opposite in direction to the
+perpendicular component of the weight . The force acting parallel to the plane, , causes the object to
+accelerate down the incline.
+FIGURE 5.23 An object rests on an incline that makes an angle with the horizontal.
+Be careful when resolving the weight of the object into components. If the incline is at an angle to the horizontal,
+then the magnitudes of the weight components are
+
+224 5 • Newton's Laws of Motion
+and
+We use the second equation to write the normal force experienced by an object resting on an inclined plane:
+object at rest or sliding on an inclined plane. Instead of memorizing these equations, it is helpful to be able to
+determine them from reason. To do this, we draw the right angle formed by the three weight vectors. The angle of
+the incline is the same as the angle formed between w and . Knowing this property, we can use trigonometry to
+determine the magnitude of the weight components:
+CHECK YOUR UNDERSTANDING 5.8
+A force of 1150 N acts parallel to a ramp to push a 250-kg gun safe into a moving van. The ramp is frictionless and
+inclined at (a) What is the acceleration of the safe up the ramp? (b) If we consider friction in this problem, with
+a friction force of 120 N, what is the acceleration of the safe?
+Tension
+A tension is a force along the length of a medium; in particular, it is a pulling force that acts along a stretched
+flexible connector, such as a rope or cable. The word “tension” comes from a Latin word meaning “to stretch.” Not
+coincidentally, the flexible cords that carry muscle forces to other parts of the body are called tendons.
+Any flexible connector, such as a string, rope, chain, wire, or cable, can only exert a pull parallel to its length; thus, a
+force carried by a flexible connector is a tension with a direction parallel to the connector. Tension is a pull in a
+connector. Consider the phrase: “You can’t push a rope.” Instead, tension force pulls outward along the two ends of
+a rope.
+Consider a person holding a mass on a rope, as shown in Figure 5.24. If the 5.00-kg mass in the figure is stationary,
+then its acceleration is zero and the net force is zero. The only external forces acting on the mass are its weight and
+the tension supplied by the rope. Thus,
+where T and w are the magnitudes of the tension and weight, respectively, and their signs indicate direction, with up
+being positive. As we proved using Newton’s second law, the tension equals the weight of the supported mass:
+object hanging at rest. Thus, for a 5.00-kg mass (neglecting the mass of the rope), we see that
+If we cut the rope and insert a spring, the spring would extend a length corresponding to a force of 49.0 N, providing
+a direct observation and measure of the tension force in the rope.
+Access for free at openstax.org
+
+5.6 • Common Forces 225
+FIGURE 5.24 When a perfectly flexible connector (one requiring no force to bend it) such as this rope transmits a force that force must
+be parallel to the length of the rope, as shown. By Newton’s third law, the rope pulls with equal force but in opposite directions on the hand
+and the supported mass (neglecting the weight of the rope). The rope is the medium that carries the equal and opposite forces between the
+two objects. The tension anywhere in the rope between the hand and the mass is equal. Once you have determined the tension in one
+location, you have determined the tension at all locations along the rope.
+Flexible connectors are often used to transmit forces around corners, such as in a hospital traction system, a
+tendon, or a bicycle brake cable. If there is no friction, the tension transmission is undiminished; only its direction
+changes, and it is always parallel to the flexible connector, as shown in Figure 5.25.
+FIGURE 5.25 (a) Tendons in the finger carry force T from the muscles to other parts of the finger, usually changing the force’s direction but
+not its magnitude (the tendons are relatively friction free). (b) The brake cable on a bicycle carries the tension T from the brake lever on the
+handlebars to the brake mechanism. Again, the direction but not the magnitude of T is changed.
+EXAMPLE 5.13
+What Is the Tension in a Tightrope?
+Calculate the tension in the wire supporting the 70.0-kg tightrope walker shown in Figure 5.26.

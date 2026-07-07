@@ -1,0 +1,159 @@
+# REAL PDF — openstax_vol1.pdf, pages 213-218
+############################################################
+
+5.2 • Newton's First Law 201
+Newton’s First Law and Equilibrium
+Newton’s first law tells us about the equilibrium of a system, which is the state in which the forces on the system are
+balanced. Returning to Forces and the ice skaters in Figure 5.3, we know that the forces and combine to form
+a resultant force, or the net external force: To create equilibrium, we require a balancing
+force that will produce a net force of zero. This force must be equal in magnitude but opposite in direction to
+which means the vector must be Referring to the ice skaters, for which we found to be ,
+we can determine the balancing force by simply finding See the free-body diagram in
+Figure 5.3(b).
+We can give Newton’s first law in vector form:
+5.2
+This equation says that a net force of zero implies that the velocity of the object is constant. (The word “constant”
+can indicate zero velocity.)
+Newton’s first law is deceptively simple. If a car is at rest, the only forces acting on the car are weight and the
+contact force of the pavement pushing up on the car (Figure 5.9). It is easy to understand that a nonzero net force is
+required to change the state of motion of the car. As a car moves with constant velocity, the friction force propels the
+car forward and opposes the drag force against it.
+FIGURE 5.9 A car is shown (a) parked and (b) moving at constant velocity. How do Newton’s laws apply to the parked car? What does the
+knowledge that the car is moving at constant velocity tell us about the net horizontal force on the car?
+EXAMPLE 5.1
+When Does Newton’s First Law Apply to Your Car?
+Newton’s laws can be applied to all physical processes involving force and motion, including something as mundane
+as driving a car.
+(a) Your car is parked outside your house. Does Newton’s first law apply in this situation? Why or why not?
+(b) Your car moves at constant velocity down the street. Does Newton’s first law apply in this situation? Why or why
+not?
+Strategy
+In (a), we are considering the first part of Newton’s first law, dealing with a body at rest; in (b), we look at the second
+part of Newton’s first law for a body in motion.
+Solution
+a. When your car is parked, all forces on the car must be balanced; the vector sum is 0 N. Thus, the net force is
+zero, and Newton’s first law applies. The acceleration of the car is zero, and in this case, the velocity is also
+zero.
+b. When your car is moving at constant velocity down the street, the net force must also be zero according to
+Newton’s first law. The car’s frictional force between the road and tires opposes the drag force on the car with
+the same magnitude, producing a net force of zero. The body continues in its state of constant velocity until
+
+202 5 • Newton's Laws of Motion
+the net force becomes nonzero. Realize that a net force of zero means that an object is either at rest or moving
+with constant velocity, that is, it is not accelerating. What do you suppose happens when the car accelerates?
+We explore this idea in the next section.
+Significance
+As this example shows, there are two kinds of equilibrium. In (a), the car is at rest; we say it is in static equilibrium.
+In (b), the forces on the car are balanced, but the car is moving; we say that it is in dynamic equilibrium. (We
+examine this idea in more detail in Static Equilibrium and Elasticity.) Again, it is possible for two (or more) forces to
+act on an object yet for the object to move. In addition, a net force of zero cannot produce acceleration.
+CHECK YOUR UNDERSTANDING 5.2
+A skydiver opens their parachute, and shortly thereafter, they are moving at constant velocity. (a) What forces are
+acting on them? (b) Which force is bigger?
+INTERACTIVE
+Engage the simulation below to predict, qualitatively, how an external force will affect the speed and direction of an
+object’s motion. Explain the effects with the help of a free-body diagram. Use free-body diagrams to draw position,
+velocity, acceleration, and force graphs, and vice versa. Explain how the graphs relate to one another. Given a
+scenario or a graph, sketch all four graphs.
+Access multimedia content (https://openstax.org/l/21forcemotion)
+5.3 Newton's Second Law
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Distinguish between external and internal forces
+• Describe Newton's second law of motion
+• Explain the dependence of acceleration on net force and mass
+Newton’s second law is closely related to his first law. It mathematically gives the cause-and-effect relationship
+between force and changes in motion. Newton’s second law is quantitative and is used extensively to calculate what
+happens in situations involving a force. Before we can write down Newton’s second law as a simple equation that
+gives the exact relationship of force, mass, and acceleration, we need to sharpen some ideas we mentioned earlier.
+Force and Acceleration
+First, what do we mean by a change in motion? The answer is that a change in motion is equivalent to a change in
+velocity. A change in velocity means, by definition, that there is acceleration. Newton’s first law says that a net
+external force causes a change in motion; thus, we see that a net external force causes nonzero acceleration.
+We defined external force in Forces as force acting on an object or system that originates outside of the object or
+system. Let’s consider this concept further. An intuitive notion of external is correct—it is outside the system of
+interest. For example, in Figure 5.10(a), the system of interest is the car plus the person within it. The two forces
+exerted by the two students are external forces. In contrast, an internal force acts between elements of the system.
+Thus, the force the person in the car exerts to hang on to the steering wheel is an internal force between elements of
+the system of interest. Only external forces affect the motion of a system, according to Newton’s first law. (The
+internal forces cancel each other out, as explained in the next section.) Therefore, we must define the boundaries of
+the system before we can determine which forces are external. Sometimes, the system is obvious, whereas at other
+times, identifying the boundaries of a system is more subtle. The concept of a system is fundamental to many areas
+of physics, as is the correct application of Newton’s laws. This concept is revisited many times in the study of
+physics.
+Access for free at openstax.org
+
+5.3 • Newton's Second Law 203
+FIGURE 5.10 Different forces exerted on the same mass produce different accelerations. (a) Two students push a stalled car. All external
+forces acting on the car are shown. (b) The forces acting on the car are transferred to a coordinate plane (free-body diagram) for simpler
+analysis. (c) The tow truck can produce greater external force on the same mass, and thus greater acceleration.
+From this example, you can see that different forces exerted on the same mass produce different accelerations. In
+Figure 5.10(a), the two students push a car with a driver in it. Arrows representing all external forces are shown. The
+system of interest is the car and its driver. The weight of the system and the support of the ground are also
+shown for completeness and are assumed to cancel (because there was no vertical motion and no imbalance of
+forces in the vertical direction to create a change in motion). The vector represents the friction acting on the car,
+and it acts to the left, opposing the motion of the car. (We discuss friction in more detail in the next chapter.) In
+Figure 5.10(b), all external forces acting on the system add together to produce the net force The free-body
+diagram shows all of the forces acting on the system of interest. The dot represents the center of mass of the
+system. Each force vector extends from this dot. Because there are two forces acting to the right, the vectors are
+shown collinearly. Finally, in Figure 5.10(c), a larger net external force produces a larger acceleration when
+the tow truck pulls the car.
+It seems reasonable that acceleration would be directly proportional to and in the same direction as the net external
+force acting on a system. This assumption has been verified experimentally and is illustrated in Figure 5.10. To
+obtain an equation for Newton’s second law, we first write the relationship of acceleration and net external force
+as the proportionality
+
+204 5 • Newton's Laws of Motion
+where the symbol means “proportional to.” (Recall from Forces that the net external force is the vector sum of all
+external forces and is sometimes indicated as ) This proportionality shows what we have said in
+words—acceleration is directly proportional to net external force. Once the system of interest is chosen, identify the
+external forces and ignore the internal ones. It is a tremendous simplification to disregard the numerous internal
+forces acting between objects within the system, such as muscular forces within the students’ bodies, let alone the
+myriad forces between the atoms in the objects. Still, this simplification helps us solve some complex problems.
+It also seems reasonable that acceleration should be inversely proportional to the mass of the system. In other
+words, the larger the mass (the inertia), the smaller the acceleration produced by a given force. As illustrated in
+Figure 5.11, the same net external force applied to a basketball produces a much smaller acceleration when it is
+applied to an SUV. The proportionality is written as
+where m is the mass of the system and a is the magnitude of the acceleration. Experiments have shown that
+acceleration is exactly inversely proportional to mass, just as it is directly proportional to net external force.
+FIGURE 5.11 The same force exerted on systems of different masses produces different accelerations. (a) A basketball player pushes on a
+basketball to make a pass. (Ignore the effect of gravity on the ball.) (b) The same player exerts an identical force on a stalled SUV and
+produces far less acceleration. (c) The free-body diagrams are identical, permitting direct comparison of the two situations. A series of
+patterns for free-body diagrams will emerge as you do more problems and learn how to draw them in Drawing Free-Body Diagrams.
+It has been found that the acceleration of an object depends only on the net external force and the mass of the
+object. Combining the two proportionalities just given yields Newton’s second law.
+NEWTON’S SECOND LAW OF MOTION
+The acceleration of a system is directly proportional to and in the same direction as the net external force acting
+on the system and is inversely proportional to its mass. In equation form, Newton’s second law is
+where is the acceleration, is the net force, and m is the mass. This is often written in the more familiar
+form
+Access for free at openstax.org
+
+5.3 • Newton's Second Law 205
+5.3
+but the first equation gives more insight into what Newton’s second law means. When only the magnitude of
+force and acceleration are considered, this equation can be written in the simpler scalar form:
+5.4
+The law is a cause-and-effect relationship among three quantities that is not simply based on their definitions. The
+validity of the second law is based on experimental verification. The free-body diagram, which you will learn to draw
+in Drawing Free-Body Diagrams, is the basis for writing Newton’s second law.
+EXAMPLE 5.2
+What Acceleration Can a Person Produce When Pushing a Lawn Mower?
+Suppose that the net external force (push minus friction) exerted on a lawn mower is 51 N (about 11 lb.) parallel to
+the ground (Figure 5.12). The mass of the mower is 24 kg. What is its acceleration?
+FIGURE 5.12 (a) The net force on a lawn mower is 51 N to the right. At what rate does the lawn mower accelerate to the right? (b) The free-
+body diagram for this problem is shown.
+Strategy
+This problem involves only motion in the horizontal direction; we are also given the net force, indicated by the single
+vector, but we can suppress the vector nature and concentrate on applying Newton’s second law. Since and m
+are given, the acceleration can be calculated directly from Newton’s second law as
+Solution
+The magnitude of the acceleration a is . Entering known values gives
+Substituting the unit of kilograms times meters per square second for newtons yields
+Significance
+The direction of the acceleration is the same direction as that of the net force, which is parallel to the ground. This is
+a result of the vector relationship expressed in Newton’s second law, that is, the vector representing net force is the
+scalar multiple of the acceleration vector. There is no information given in this example about the individual external
+forces acting on the system, but we can say something about their relative magnitudes. For example, the force
+exerted by the person pushing the mower must be greater than the friction opposing the motion (since we know the
+mower moved forward), and the vertical forces must cancel because no acceleration occurs in the vertical direction

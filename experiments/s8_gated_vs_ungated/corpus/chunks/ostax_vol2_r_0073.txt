@@ -1,0 +1,320 @@
+# REAL PDF — openstax_vol2.pdf, pages 450-456
+############################################################
+
+440 Chapter 10 | Direct-Current Circuits
+10.2 | Resistors in Series and Parallel
+Learning Objectives
+By the end of the section, you will be able to:
+• Define the term equivalent resistance
+• Calculate the equivalent resistance of resistors connected in series
+• Calculate the equivalent resistance of resistors connected in parallel
+InCurrent and Resistance,wedescribedtheterm‘resistance’andexplainedthebasicdesignofaresistor.Basically,
+aresistorlimitstheflowofchargeinacircuitandisanohmicdevicewhere V =IR. Mostcircuitshavemorethanone
+resistor.Ifseveralresistorsareconnectedtogetherandconnectedtoabattery,thecurrentsuppliedbythebatterydepends
+on theequivalent resistanceof the circuit.
+Theequivalentresistanceofacombinationofresistorsdependsonboththeirindividualvaluesandhowtheyareconnected.
+The simplest combinations of resistors are series and parallel connections (Figure 10.11). In a series circuit, the output
+currentofthefirstresistorflowsintotheinputofthesecondresistor;therefore,thecurrentisthesameineachresistor.In
+aparallelcircuit,alloftheresistorleadsononesideoftheresistorsareconnectedtogetherandalltheleadsontheother
+sideareconnectedtogether.Inthecaseofaparallelconfiguration,eachresistorhasthesamepotentialdropacrossit,and
+thecurrentsthrougheachresistormaybedifferent,dependingontheresistor.Thesumoftheindividualcurrentsequalsthe
+current that flows into the parallel connections.
+Figure 10.11 (a) For a series connection of resistors, the current is the same in each resistor.
+(b) For a parallel connection of resistors, the voltage is the same across each resistor.
+Resistors in Series
+Resistors are said to be in series whenever the current flows through the resistors sequentially. Consider Figure 10.12,
+which shows three resistors in series with an applied voltage equal to V ab. Since there is only one path for the charges
+to flow through, the current is the same through each resistor. The equivalent resistance of a set of resistors in a series
+connection is equal to the algebraic sum of the individual resistances.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 441
+Figure 10.12 (a) Three resistors connected in series to a
+voltage source. (b) The original circuit is reduced to an
+equivalent resistance and a voltage source.
+In Figure 10.12, the current coming from the voltage source flows through each resistor, so the current through each
+resistoristhesame.Thecurrentthroughthecircuitdependsonthevoltagesuppliedbythevoltagesourceandtheresistance
+oftheresistors. Foreach resistor,apotential dropoccursthat isequal tothelossofelectric potential energyasacurrent
+travelsthrougheachresistor.AccordingtoOhm’slaw,thepotentialdropVacrossaresistorwhenacurrentflowsthrough
+itiscalculatedusingtheequation V =IR, whereIisthecurrentinamps(A)andRistheresistanceinohms (Ω). Since
+energyisconserved,andthevoltageisequaltothepotentialenergypercharge,thesumofthevoltageappliedtothecircuit
+by the source and the potential drops across the individual resistors around a loop should be equal to zero:
+N
+∑ V i=0.
+i=1
+This equation is often referred to as Kirchhoff’s loop law, which we will look at in more detail later in this chapter. For
+Figure 10.12,thesumofthepotentialdropofeachresistorandthevoltagesuppliedbythevoltagesourceshouldequal
+zero:
+V−V −V −V = 0,
+1 2 3
+V = V +V +V ,
+1 2 3
+= IR +IR +IR ,
+1 2 3
+V V
+I = = .
+R
+1
++R
+2
++R
+3
+R
+eq
+Sincethecurrentthrougheachcomponentisthesame,theequalitycanbesimplifiedtoanequivalentresistance,whichis
+just the sum of the resistances of the individual resistors.
+Any number of resistors can be connected in series. IfNresistors are connected in series, the equivalent resistance is
+N (10.2)
+R eq=R 1 +R 2 +R 3 +⋯+R N−1 +R N = ∑ R i.
+i=1
+Oneresultofcomponentsconnectedinaseriescircuitisthatifsomethinghappenstoonecomponent,itaffectsalltheother
+components. For example, if several lamps are connected in series and one bulb burns out, all the other lamps go dark.
+
+442 Chapter 10 | Direct-Current Circuits
+Example 10.2
+Equivalent Resistance, Current, and Power in a Series Circuit
+Abatterywithaterminalvoltageof9Visconnectedtoacircuitconsistingoffour 20-Ω andone 10-Ω resistors
+allinseries(Figure 10.13).Assumethebatteryhasnegligibleinternalresistance.(a)Calculatetheequivalent
+resistance of the circuit. (b) Calculate the current through each resistor. (c) Calculate the potential drop across
+each resistor. (d) Determine the total power dissipated by the resistors and the power supplied by the battery.
+Figure 10.13 A simple series circuit with five resistors.
+Strategy
+Inaseriescircuit,theequivalentresistanceisthealgebraicsumoftheresistances.Thecurrentthroughthecircuit
+canbefoundfromOhm’slawandisequaltothevoltagedividedbytheequivalentresistance.Thepotentialdrop
+across each resistor can be found using Ohm’s law. The power dissipated by each resistor can be found using
+P=I2R, and the total power dissipated by the resistors is equal to the sum of the power dissipated by each
+resistor. The power supplied by the battery can be found using P=Iε.
+Solution
+a. The equivalent resistance is the algebraic sum of the resistances:
+R eq=R
+1
++R
+2
++R
+3
++R
+4
++R
+5
+=20Ω+20Ω+20Ω+20Ω+10Ω=90Ω.
+b. Thecurrentthroughthecircuitisthesameforeachresistorinaseriescircuitandisequaltotheapplied
+voltage divided by the equivalent resistance:
+I = V = 9V =0.1A.
+R eq 90Ω
+c. The potential drop across each resistor can be found using Ohm’s law:
+V =V =V =V =(0.1A)20Ω=2V,
+1 2 3 4
+V =(0.1A)10Ω=1V,
+5
+V +V +V +V +V =9V.
+1 2 3 4 5
+Notethatthesumofthepotentialdropsacrosseachresistorisequaltothevoltagesuppliedbythebattery.
+d. Thepowerdissipatedbyaresistorisequalto P=I2R,andthepowersuppliedbythebatteryisequal
+to P=Iε:
+P =P =P =P =(0.1A)2(20Ω)=0.2W,
+1 2 3 4
+P =(0.1A)2(10Ω)=0.1W,
+5
+P =0.2W+0.2W+0.2W+0.2W+0.1W=0.9W,
+dissipated
+P source=Iε=(0.1A)(9V)=0.9W.
+Significance
+Thereareseveralreasonswhywewouldusemultipleresistorsinsteadofjustoneresistorwitharesistanceequal
+totheequivalent resistance ofthecircuit. Perhapsaresistoroftherequiredsizeisnotavailable, orweneedto
+dissipatetheheatgenerated,orwewanttominimizethecostofresistors.Eachresistormaycostafewcentstoa
+few dollars, but when multiplied by thousands of units, the cost saving may be appreciable.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 443
+10.2 CheckYourUnderstandingSomestringsofminiatureholidaylightsaremadetoshortoutwhenabulb
+burns out. The device that causes the short is called a shunt, which allows current to flow around the open
+circuit.A“short”islikeputtingapieceofwireacrossthecomponent.Thebulbsareusuallygroupedinseries
+of nine bulbs. If too many bulbs burn out, the shunts eventually open. What causes this?
+Let’s briefly summarize the major features of resistors in series:
+1. Series resistances add together to get the equivalent resistance:
+N
+R eq=R 1 +R 2 +R 3 +⋯+R N−1 +R N = ∑ R i.
+i=1
+2. The same current flows through each resistor in series.
+3. Individualresistorsinseriesdonotgetthetotalsourcevoltage,butdivideit.Thetotalpotentialdropacrossaseries
+configuration of resistors is equal to the sum of the potential drops across each resistor.
+Resistors in Parallel
+Figure10.14showsresistorsinparallel,wiredtoavoltagesource.Resistorsareinparallelwhenoneendofalltheresistors
+areconnectedbyacontinuouswireofnegligibleresistanceandtheotherendofalltheresistorsarealsoconnectedtoone
+another through a continuous wire of negligible resistance. The potential drop across each resistor is the same. Current
+through each resistor can be found using Ohm’s law I =V/R, where the voltage is constant across each resistor. For
+example, an automobile’s headlights, radio, and other systems are wired in parallel, so that each subsystem utilizes the
+fullvoltageofthesourceandcanoperatecompletelyindependently.Thesameistrueofthewiringinyourhouseorany
+building.
+Figure 10.14 (a) Two resistors connected in parallel to a voltage
+source. (b) The original circuit is reduced to an equivalent resistance and
+a voltage source.
+ThecurrentflowingfromthevoltagesourceinFigure 10.14dependsonthevoltagesuppliedbythevoltagesourceand
+the equivalent resistance of the circuit. In this case, the current flows from the voltage source and enters a junction, or
+node,wherethecircuitsplitsflowingthroughresistors R and R .Asthechargesflowfromthebattery,somegothrough
+1 2
+resistor R andsomeflowthroughresistor R . Thesumofthecurrentsflowingintoajunctionmustbeequaltothesum
+1 2
+of the currents flowing out of the junction:
+∑I =∑I .
+in out
+This equation is referred to as Kirchhoff’s junction rule and will be discussed in detail in the next section. In Figure
+10.14,thejunctionrulegives I =I +I .Therearetwoloopsinthiscircuit,whichleadstotheequations V =I R and
+1 2 1 1
+I R =I R . Note the voltage across the resistors in parallel are the same ⎛V =V =V ⎞ and the current is additive:
+1 1 2 2 ⎝ 1 2⎠
+
+444 Chapter 10 | Direct-Current Circuits
+I = I +I
+1 2
+V V
+= 1+ 2
+R R
+1 2
+V V
+= +
+R R
+1 2
+= V ⎛ 1 + 1 ⎞ = V
+⎝R R ⎠ R
+1 2 eq
+−1
+⎛ ⎞
+R eq = ⎝R 1 + R 1 ⎠ .
+1 2
+GeneralizingtoanynumberofNresistors,theequivalentresistance R ofaparallelconnectionisrelatedtotheindividual
+eq
+resistances by
+−1 ⎛ N ⎞ −1 (10.3)
+⎛ ⎞
+R eq=
+⎝R
+1 +
+R
+1 +
+R
+1 +⋯+
+R
+1 +
+R
+1
+⎠
+=⎜∑
+R
+1⎟ .
+1 2 3 N−1 N ⎝i=1 i⎠
+Thisrelationshipresultsinanequivalentresistance R thatislessthanthesmallestoftheindividualresistances.When
+eq
+resistorsareconnectedinparallel,morecurrentflowsfromthesourcethanwouldflowforanyofthemindividually,sothe
+total resistance is lower.
+Example 10.3
+Analysis of a Parallel Circuit
+Three resistors R =1.00Ω, R =2.00Ω, and R =2.00Ω, are connected in parallel. The parallel
+1 2 3
+connectionisattachedtoa V =3.00V voltagesource.(a)Whatistheequivalentresistance?(b)Findthecurrent
+suppliedbythesourcetotheparallelcircuit.(c)Calculatethecurrentsineachresistorandshowthattheseadd
+togethertoequalthecurrentoutputofthesource.(d)Calculatethepowerdissipatedbyeachresistor.(e)Findthe
+power output of the source and show that it equals the total power dissipated by the resistors.
+Strategy
+−1
+⎛ ⎞
+(a) The total resistance for a parallel combination of resistors is found using R eq=⎜∑
+R
+1⎟ .
+⎝ i i⎠
+(Note that in these calculations, each intermediate answer is shown with an extra digit.)
+(b) The current supplied by the source can be found from Ohm’s law, substituting R for the total resistance
+eq
+V
+I = .
+R
+eq
+⎛ V ⎞
+(c) The individual currents are easily calculated from Ohm’s law
+⎝
+I i=
+R
+i
+⎠
+, since each resistor gets the full
+i
+voltage. The total current is the sum of the individual currents: I =∑I i.
+i
+(d) The power dissipated by each resistor can be found using any of the equations relating power to current,
+voltage, and resistance, since all three are known. Let us use P i=V2/R i, since each resistor gets full voltage.
+(e) The total power can also be calculated in several ways, use P=IV.
+Solution
+a. ThetotalresistanceforaparallelcombinationofresistorsisfoundusingEquation10.3.Enteringknown
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 445
+values gives
+R eq= ⎛
+⎝R
+1 +
+R
+1 +
+R
+1 ⎞
+⎠
+−1 = ⎛
+⎝1.0
+1
+0Ω
++
+2.0
+1
+0Ω
++
+2.0
+1
+0Ω
+⎞
+⎠
+−1 =0.50Ω.
+1 2 3
+Thetotalresistancewiththecorrectnumberofsignificantdigitsis R eq=0.50Ω. Aspredicted, R eq is
+less than the smallest individual resistance.
+b. The total current can be found from Ohm’s law, substituting R for the total resistance. This gives
+eq
+I = V = 3.00V =6.00A.
+R eq 0.50Ω
+CurrentIforeachdeviceismuchlargerthanforthesamedevicesconnectedinseries(seetheprevious
+example).Acircuitwithparallelconnectionshasasmallertotalresistancethantheresistorsconnectedin
+series.
+c. The individual currents are easily calculated from Ohm’s law, since each resistor gets the full voltage.
+Thus,
+I = V = 3.00V =3.00A.
+1 R 1.00Ω
+1
+Similarly,
+I = V = 3.00V =1.50A
+2 R 2.00Ω
+2
+and
+I = V = 6.00V =1.50A.
+3 R 2.00Ω
+3
+The total current is the sum of the individual currents:
+I +I +I =6.00A.
+1 2 3
+d. Thepowerdissipatedbyeachresistorcanbefoundusinganyoftheequationsrelatingpowertocurrent,
+voltage, and resistance, since all three are known. Let us use P=V2/R, since each resistor gets full
+voltage. Thus,
+V2 (3.00V)2
+P = = =9.00W.
+1 R 1.00Ω
+1
+Similarly,
+V2 (3.00V)2
+P = = =4.50W
+2 R 2.00Ω
+2
+and
+V2 (3.00V)2
+P = = =4.50W.
+3 R 2.00Ω
+3
+e. Thetotalpowercanalsobecalculatedinseveralways.Choosing P=IV andenteringthetotalcurrent
+yields
+P=IV =(6.00A)(3.00V)=18.00W.

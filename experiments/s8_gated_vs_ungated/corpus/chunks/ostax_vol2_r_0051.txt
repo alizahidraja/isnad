@@ -1,0 +1,341 @@
+# REAL PDF — openstax_vol2.pdf, pages 309-317
+############################################################
+
+Chapter 7 | Electric Potential 299
+Voltage and Electric Field
+Sofar,we have explored the relationship between voltage and energy.Now we want to explore the relationship between
+→
+voltageandelectricfield.Wewillstartwiththegeneralcaseforanon-uniform E field.Recallthatourgeneralformula
+for the potential energy of a test chargeqat pointPrelative to reference pointRis
+P→ →
+U P=−∫ F ·d l .
+R
+→ →
+When we substitute in the definition of electric field ( E = F /q), this becomes
+P→ →
+U P=−q∫ E ·d l .
+R
+Applying our definition of potential (V =U/q) to this potential energy, we find that, in general,
+P→ → (7.6)
+V P=−∫ E ·d l .
+R
+Fromourpreviousdiscussionofthepotentialenergyofachargeinanelectricfield,theresultisindependentofthepath
+chosen, and hence we can pick the integral path that is most convenient.
+Considerthespecialcaseofapositivepointchargeqattheorigin.Tocalculatethepotentialcausedbyqatadistancerfrom
+theoriginrelativetoareferenceof0atinfinity(recallthatwedidthesameforpotentialenergy),let P=r and R=∞,
+with d → l =d → r = ^ rdr and use → E = kq^ r. When we evaluate the integral
+r2
+P→ →
+V P=−∫ E ·d l
+R
+for this system, we have
+r
+V r=− ⌠ kq^ r · ^ rdr,
+⌡ r2
+∞
+which simplifies to
+r
+V r=− ⌠ ⌡ k r q 2 dr = k r q − k ∞ q = k r q .
+∞
+This result,
+kq
+V r= r
+is the standard form of the potential of a point charge. This will be explored further in the next section.
+→
+To examine another interesting special case, suppose a uniform electric field E is produced by placing a potential
+difference(orvoltage) ΔV acrosstwoparallelmetalplates,labeledAandB(Figure7.14).Examiningthissituationwill
+telluswhatvoltageisneededtoproduceacertainelectricfieldstrength.Itwillalsorevealamorefundamentalrelationship
+between electric potential and electric field.
+
+300 Chapter 7 | Electric Potential
+Figure 7.14 The relationship betweenVandEfor parallel
+conducting plates is E=V/ d. (Note that ΔV =V
+AB
+in
+magnitude. For a charge that is moved from plateAat higher
+potential to plateBat lower potential, a minus sign needs to be
+included as follows: −ΔV =V A−V B=V AB.)
+→
+Fromaphysicist’spointofview,either ΔV or E canbeusedtodescribe anyinteraction between charges.However,
+→
+ΔV isascalarquantityandhasnodirection,whereas E isavectorquantity,havingbothmagnitudeanddirection.(Note
+→
+thatthemagnitudeoftheelectricfield,ascalarquantity,isrepresentedbyE.)Therelationshipbetween ΔV and E is
+revealedbycalculatingtheworkdonebytheelectricforceinmovingachargefrompointAtopointB.But,asnotedearlier,
+arbitrary charge distributions require calculus. We therefore look at a uniform electric field as an interesting special case.
+TheworkdonebytheelectricfieldinFigure7.14tomoveapositivechargeqfromA,thepositiveplate,higherpotential,
+toB, the negative plate, lower potential, is
+W =−ΔU =−qΔV.
+The potential difference between pointsAandBis
+−ΔV =−(V B−V A)=V A−V B=V AB.
+Entering this into the expression for work yields
+W =qV AB.
+→ →
+Work is W = F · d =Fdcosθ; here cosθ=1, since the path is parallel to the field. Thus, W =Fd. Since
+F =qE, we see that W =qEd.
+Substituting this expression for work into the previous equation gives
+qEd =qV AB.
+The charge cancels, so we obtain for the voltage between pointsAandB
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 301
+V AB=Ed⎫
+V ⎬(uniformE-field ony)
+E= AB ⎭
+d
+wheredisthedistancefromAtoB,orthedistancebetweentheplatesinFigure7.14.Notethatthisequationimpliesthat
+theunitsforelectricfieldarevoltspermeter.Wealreadyknowtheunitsforelectricfieldarenewtonspercoulomb;thus,
+the following relation among units is valid:
+1N/C=1V/m.
+Furthermore, we may extend this to the integral form. Substituting Equation 7.5 into our definition for the potential
+difference between pointsAandB, we obtain
+B→ → A→ →
+V BA=V B−V A=−∫ E ·d l +∫ E ·d l
+R R
+which simplifies to
+B→ →
+V B−V A=−∫ E ·d l .
+A
+Asademonstration,fromthiswemaycalculatethepotentialdifferencebetweentwopoints(AandB)equidistantfroma
+point chargeqat the origin, as shown inFigure 7.15.
+Figure 7.15 The arc for calculating the potential difference
+between two points that are equidistant from a point charge at
+the origin.
+To do this, we integrate around an arc of the circle of constant radius r between A and B, which means we let
+d → l =rφ ^ dφ, while using → E = kq^ r . Thus,
+r2
+B→ → (7.7)
+ΔV BA=V B−V A=−∫ E ·d l
+A
+for this system becomes
+B
+V B−V A=− ⌠
+⌡
+k
+r
+q
+2
+^ r ·rφ ^ dφ.
+A
+However, ^ r ·φ ^ =0 and therefore
+V B−V A=0.
+Thisresult,thatthereisnodifferenceinpotentialalongaconstantradiusfromapointcharge,willcomeinhandywhenwe
+map potentials.
+
+302 Chapter 7 | Electric Potential
+Example 7.7
+What Is the Highest Voltage Possible between Two Plates?
+Dry air can support a maximum electric field strength of about 3.0×10 6 V/m. Above that value, the field
+createsenoughionizationintheairtomaketheairaconductor.Thisallowsadischargeorsparkthatreducesthe
+field.What,then,isthemaximumvoltagebetweentwoparallelconductingplatesseparatedby2.5cmofdryair?
+Strategy
+WearegiventhemaximumelectricfieldEbetweentheplatesandthedistancedbetweenthem.Wecanusethe
+equation V AB=Ed to calculate the maximum voltage.
+Solution
+The potential difference or voltage between the plates is
+V AB=Ed.
+Entering the given values forEanddgives
+V AB=(3.0×10 6 V/m)(0.025m)=7.5×104 V
+or
+V AB=75kV.
+(The answer is quoted to only two digits, since the maximum field strength is approximate.)
+Significance
+Oneofthe implications ofthis result isthat it takes about 75kVtomake asparkjump across a2.5-cm (1-in.)
+gap,or150kVfora5-cmspark.Thislimitsthevoltagesthatcanexistbetweenconductors,perhapsonapower
+transmission line. A smaller voltage can cause a spark if there are spines on the surface, since sharp points
+havelargerfieldstrengthsthansmoothsurfaces.Humidairbreaksdownatalowerfieldstrength,meaningthat
+a smaller voltage will make a spark jump through humid air. The largest voltages can be built up with static
+electricity on dry days (Figure 7.16).
+Figure 7.16 Aspark chamberis used to trace the paths of high-energy particles. Ionization created by the particles as
+they pass through the gas between the plates allows a spark to jump. The sparks are perpendicular to the plates,
+following electric field lines between them. The potential difference between adjacent plates is not high enough to
+cause sparks without the ionization produced by particles from accelerator experiments (or cosmic rays). This form of
+detector is now archaic and no longer in use except for demonstration purposes. (credit b: modification of work by Jack
+Collins)
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 303
+Example 7.8
+Field and Force inside an Electron Gun
+Anelectrongun(Figure7.13)hasparallelplatesseparatedby4.00cmandgiveselectrons25.0keVofenergy.
+(a)Whatistheelectricfieldstrengthbetweentheplates?(b)Whatforcewouldthisfieldexertonapieceofplastic
+with a 0.500-µC charge that gets between the plates?
+Strategy
+Since the voltage and plate separation are given, the electric field strength can be calculated directly from
+V
+the expression E= AB. Once we know the electric field strength, we can find the force on a charge by
+d
+→ →
+using F =q E . Since the electric field is in only one direction, we can write this equation in terms of the
+magnitudes, F =qE.
+Solution
+a. The expression for the magnitude of the electric field between two uniform metal plates is
+V
+E= AB .
+d
+Sincetheelectronisasinglechargeandisgiven25.0keVofenergy,thepotentialdifferencemustbe25.0
+kV. Entering this value for V and the plate separation of 0.0400 m, we obtain
+AB
+E= 25.0kV =6.25×10 5 V/m.
+0.0400m
+b. The magnitude of the force on a charge in an electric field is obtained from the equation
+F =qE.
+Substituting known values gives
+F =(0.500×10 −6 C)(6.25×10 5 V/m)=0.313N.
+Significance
+Notethattheunitsarenewtons,since 1V/m=1N/C.Becausetheelectricfieldisuniformbetweentheplates,
+the force on the charge is the same no matter where the charge is located between the plates.
+Example 7.9
+Calculating Potential of a Point Charge
+Givenapointcharge q= +2.0nC attheorigin,calculatethepotentialdifferencebetweenpoint P adistance
+1
+a=4.0cm fromq,and P adistance b=12.0cm fromq,wherethetwopointshaveanangleof φ=24°
+2
+between them (Figure 7.17).
+
+304 Chapter 7 | Electric Potential
+Figure 7.17 Find the difference in potential between P and
+1
+P .
+2
+Strategy
+B→ →
+Do this in two steps. The first step is to use V B−V A=−∫ E ·d l and let A=a=4.0cm and
+A
+B=b=12.0cm, with d → l =d → r = ^ rdr and → E = kq^ r. Thenperformtheintegral.Thesecondstepis
+r2
+tointegrate V B−V A=−∫ B→ E ·d → l aroundanarcofconstantradiusr,whichmeanswelet d → l =rφ ^ dφ
+A
+with limits 0≤φ≤24°, still using
+→
+E =
+kq^
+r . Then add the two results together.
+r2
+Solution
+For the first part, V B−V A=−∫
+A
+B→ E ·d → l for this system becomes V b−V a=− ⌠
+⌡ a
+b k
+r
+q
+2
+^ r · ^ rdr which
+computes to
+b
+ΔV =− ⌠
+⌡
+k
+r
+q
+2
+dr =kq ⎡
+⎣
+1 a− 1
+b
+⎤
+⎦
+a
+=
+⎛
+8.99×10
+9 Nm2/C2⎞⎛
+2.0×10
+−9
+C
+⎞⎡ 1
+−
+1 ⎤
+=300V.
+⎝ ⎠⎝ ⎠⎣0.040m 0.12m⎦
+For the second step, V B−V A=−∫
+A
+B→ E ·d → l becomes ΔV =− ⌠
+⌡
+24° k
+r
+q
+2
+^ r ·rφ ^ dφ, but ^ r ·φ ^ =0 and
+0
+therefore ΔV =0. Adding the two parts together, we get 300 V.
+Significance
+Wehavedemonstratedtheuseoftheintegralformofthepotentialdifferencetoobtainanumericalresult.Notice
+that,inthisparticularsystem,wecouldhavealsousedtheformulaforthepotentialduetoapointchargeatthe
+two points and simply taken the difference.
+7.7 CheckYourUnderstandingFromtheexamples,howdoestheenergyofalightningstrikevarywiththe
+height of the clouds from the ground? Consider the cloud-ground system to be two parallel plates.
+Before presenting problems involving electrostatics, we suggest a problem-solving strategy to follow for this topic.
+Problem-Solving Strategy: Electrostatics
+1. Examine the situation to determine if static electricity is involved; this may concern separated stationary
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 305
+charges, the forces among them, and the electric fields they create.
+2. Identify the system of interest. This includes noting the number, locations, and types of charges involved.
+3. Identifyexactlywhatneedstobedeterminedintheproblem(identifytheunknowns).Awrittenlistisuseful.
+DeterminewhethertheCoulombforceistobeconsidereddirectly—ifso,itmaybeusefultodrawafree-body
+diagram, using electric field lines.
+4. Makealistofwhatisgivenorcanbeinferredfromtheproblemasstated(identifytheknowns).Itisimportant
+to distinguish the Coulomb forceFfrom the electric fieldE, for example.
+5. Solve the appropriate equation for the quantity to be determined (the unknown) or draw the field lines as
+requested.
+6. Examinetheanswertoseeifitisreasonable:Doesitmakesense?Areunitscorrectandthenumbersinvolved
+reasonable?
+7.3 | Calculations of Electric Potential
+Learning Objectives
+By the end of this section, you will be able to:
+• Calculate the potential due to a point charge
+• Calculate the potential of a system of multiple point charges
+• Describe an electric dipole
+• Define dipole moment
+• Calculate the potential of a continuous charge distribution
+Point charges, such as electrons, are among the fundamental building blocks of matter. Furthermore, spherical charge
+distributions (such as charge on a metal sphere) create external electric fields exactly like a point charge. The electric
+potential due to a point charge is, thus, a case we need to consider.
+Wecanusecalculustofindtheworkneededtomoveatestchargeqfromalargedistanceawaytoadistanceofrfroma
+pointchargeq.Notingtheconnectionbetweenworkandpotential W =−qΔV, asinthelastsection,wecanobtainthe
+following result.
+Electric PotentialVof a Point Charge
+The electric potentialVof a point charge is given by
+kq (7.8)
+V = r (point charge)
+wherekis a constant equal to 8.99×10 9 N·m2/C2.
+→
+Thepotentialatinfinityischosentobezero.Thus,Vforapointchargedecreaseswithdistance,whereas E forapoint
+charge decreases with distance squared:
+F kq
+E= q = .
+t r2
+→
+RecallthattheelectricpotentialVisascalarandhasnodirection,whereastheelectricfield E isavector.Tofindthe
+voltageduetoacombinationofpointcharges,youaddtheindividualvoltagesasnumbers.Tofindthetotalelectricfield,
+youmustaddtheindividualfieldsasvectors,takingmagnitudeanddirectionintoaccount.Thisisconsistentwiththefact
+→
+thatVis closely associated with energy, a scalar, whereas E is closely associated with force, a vector.
+
+306 Chapter 7 | Electric Potential
+Example 7.10
+What Voltage Is Produced by a Small Charge on a Metal Sphere?
+Charges in static electricity are typically in the nanocoulomb (nC) to microcoulomb (µC) range. What is the
+voltage 5.00 cm away from the center of a 1-cm-diameter solid metal sphere that has a –3.00-nC static charge?
+Strategy
+As we discussed in Electric Charges and Fields, charge on a metal sphere spreads out uniformly and
+producesafieldlikethatofapointchargelocatedatitscenter.Thus,wecanfindthevoltageusingtheequation
+kq
+V = r .
+Solution
+Entering known values into the expression for the potential of a point charge, we obtain
+q ⎛ −9 ⎞
+V =k r = ⎛ ⎝ 8.99×10 9 N·m2/C2⎞ ⎠⎝ − 5 3 .0 .0 0 0 × × 1 1 0 0 −2 m C ⎠ =−539V.
+Significance
+The negative value for voltage means a positive charge would be attracted from a larger distance, since the
+potential islower(morenegative) thanatlargerdistances. Conversely,anegative chargewouldberepelled, as
+expected.
+Example 7.11
+What Is the Excess Charge on a Van de Graaff Generator?
+AdemonstrationVandeGraaffgeneratorhasa25.0-cm-diametermetalspherethatproducesavoltageof100kV
+near its surface (Figure 7.18). What excess charge resides on the sphere? (Assume that each numerical value
+here is shown with three significant figures.)
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

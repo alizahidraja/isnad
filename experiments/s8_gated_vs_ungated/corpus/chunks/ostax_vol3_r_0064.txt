@@ -1,0 +1,260 @@
+# REAL PDF — openstax_vol3.pdf, pages 382-389
+############################################################
+
+374 Chapter 8 | Atomic Structure
+Figure 8.16 The magnetic interaction between the electron and proton in the hydrogen atom is used to
+map the spiral arms of the Pinwheel Galaxy (NGC 5457). (a) The galaxy seen in visible light; (b) the
+galaxy seen in 21-cm hydrogen radiation; (c) the composite image of (a) and (b). Notice how the
+hydrogen emission penetrates dust in the galaxy to show the spiral arms very clearly, whereas the galactic
+nucleus shows up better in visible light (credit a: modification of work by ESA & NASA; credit b:
+modification of work by Fabian Walter).
+Acompletespecificationofthestateofanelectroninahydrogenatomrequiresfivequantumnumbers:n,l,m,s,and m .
+s
+The names, symbols, and allowed values of these quantum numbers are summarized inTable 8.4.
+Name Symbol Allowed values
+Principal quantum number n 1, 2, 3, …
+Angular momentum l 0, 1, 2, …n– 1
+Angular momentum projection m 0, ±1, ±2,... ±l
+Spin s 1/2 (electrons)
+Spin projection m −½, +½
+s
+Table 8.4Summary of Quantum Numbers of an Electron in a
+Hydrogen Atom
+Notethattheintrinsicquantumnumbersintroducedinthissection(sandm)arevalidformanyparticles,notjustelectrons.
+s
+Forexample,quarkswithinanatomicnucleusarealsospin-halfparticles.Aswewillseelater,quantumnumbershelpto
+classify subatomic particles and enter into scientific models that attempt to explain how the universe works.
+8.4 | The Exclusion Principle and the Periodic Table
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the importance of Pauli’s exclusion principle to an understanding of atomic structure
+and molecular bonding
+• Explain the structure of the periodic table in terms of the total energy, orbital angular
+momentum, and spin of individual electrons in an atom
+• Describe the electron configuration of atoms in the periodic table
+Sofar,wehavestudiedonlyhydrogen,thesimplestchemicalelement.Wehavefoundthatanelectroninthehydrogenatom
+can be completely specified by five quantum numbers:
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 375
+n: principal quantum number (8.34)
+l: angular momentum quantum number
+m: angular momentum projection quantum number
+s: spin quantum number
+m s: spin projection quantum number
+To construct the ground state of a neutral multi-electron atom, imagine starting with a nucleus of charge Ze (that is, a
+nucleus of atomic number Z) and then adding Z electrons one by one. Assume that each electron moves in a spherically
+symmetrical electric field produced by the nucleus and all other electrons of the atom. The assumption is valid because
+the electrons are distributed randomly around the nucleus and produce an average electric field (and potential) that is
+spherically symmetrical. The electric potential U(r) for each electron does not follow the simple −1/r form because of
+interactions between electrons, butit turnsoutthat we can still label each individual electron state byquantum numbers,
+(n, l, m, s, m s). (The spin quantum numbersis the same for all electrons, so it will not be used in this section.)
+ThestructureandchemicalpropertiesofatomsareexplainedinpartbyPauli’sexclusionprinciple:Notwoelectronsin
+anatomcanhavethesamevaluesforallfourquantumnumbers (n, l, m, m s). Thisprincipleisrelatedtotwoproperties
+ofelectrons:Allelectronsareidentical(“whenyou’veseenoneelectron,you’veseenthemall”)andtheyhavehalf-integral
+spin (s=1/2). Sample sets of quantum numbers for the electrons in an atom are given in Table 8.5. Consistent with
+Pauli’s exclusion principle, no two rows of the table have the exact same set of quantum numbers.
+n l m m Subshell No. of electrons: No. of electrons:
+s
+symbol subshell shell
+1 0 0 ½
+1s 2 2
+1 0 0 –½
+2 0 0 ½ 8
+2s 2
+2 0 0 –½
+2 1 –1 ½
+2 1 –1 –½
+2 1 0 ½
+2p 6
+2 1 0 –½
+2 1 1 ½
+2 1 1 –½
+3 0 0 ½
+3s 2
+3 0 0 –½
+3 1 –1 ½
+3 1 –1 –½
+3 1 0 ½
+3p 6
+3 1 0 –½ 18
+3 1 1 ½
+3 1 1 –½
+3 2 –2 ½
+3 2 –2 –½ 3d 10
+3 2 –1 ½
+Table 8.5Electron States of Atoms Because of Pauli’s exclusion principle, no two electrons in an atom have
+the same set of four quantum numbers.
+
+376 Chapter 8 | Atomic Structure
+n l m m Subshell No. of electrons: No. of electrons:
+s
+symbol subshell shell
+3 2 –1 –½
+3 2 0 ½
+3 2 0 –½
+3 2 1 ½
+3 2 1 –½
+3 2 2 ½
+3 2 2 –½
+Table 8.5Electron States of Atoms Because of Pauli’s exclusion principle, no two electrons in an atom have
+the same set of four quantum numbers.
+Electronswiththesameprincipalquantumnumbernaresaidtobeinthesameshell,andthosethathavethesamevalue
+oflaresaidtooccupythesamesubshell.Anelectroninthe n=1 stateofahydrogenatomisdenoted1s,wherethefirst
+digitindicatestheshell (n=1) andtheletterindicatesthesubshell (s, p, d, f…correspond tol=0, 1, 2, 3…). Two
+electrons in the n=1 state are denoted as 1s2, where the superscript indicates the number of electrons. An electron
+inthe n=2 statewith l=1 isdenoted2p.Thecombinationoftwoelectronsinthe n=2 and l=0 state,andthree
+electronsinthe n=2 and l=1 stateiswrittenas 2s22p3 , andsoon.Thisrepresentationoftheelectronstateiscalled
+theelectronconfigurationoftheatom.TheelectronconfigurationsforseveralatomsaregiveninTable8.6.Electronsin
+theoutershellofanatomarecalledvalenceelectrons.Chemicalbondingbetweenatomsinamoleculeareexplainedby
+the transfer and sharing of valence electrons.
+Element Electron Configuration Spin Alignment
+H 1s1 (↑)
+He 1s2 (↑↓ )
+Li 1s22s1 (↑)
+Be 1s22s2 (↑↓ )
+B 1s22s22p1 (↑↓ )(↑)
+C 1s22s22p2 (↑↓ )(↑)(↑)
+N 1s22s22p3 (↑↓ )(↑)(↑)(↑)
+O 1s22s22p4 (↑↓ )(↑↓ )(↑)(↑)
+F 1s22s22p5 (↑↓ )(↑↓ )(↑↓ )(↑)
+Ne 1s22s22p6 (↑↓ )(↑↓ )(↑↓ )(↑↓ )
+Na 1s22s22p6 3s1 (↑)
+Table 8.6Electron Configurations of Electrons in an Atom The
+symbol (↑) indicates an unpaired electron in the outer shell, whereas
+the symbol (↑↓ ) indicates a pair of spin-up and -down electrons in an
+outer shell.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 377
+Element Electron Configuration Spin Alignment
+Mg 1s22s22p6 3s2 (↑↓ )
+Al 1s22s22p6 3s23p1 (↑↓ )(↑)
+Table 8.6Electron Configurations of Electrons in an Atom The
+symbol (↑) indicates an unpaired electron in the outer shell, whereas
+the symbol (↑↓ ) indicates a pair of spin-up and -down electrons in an
+outer shell.
+Themaximumnumberofelectronsinasubshelldependsonthevalueoftheangularmomentumquantumnumber,l.For
+a given a value l, there are 2l+1 orbital angular momentum states. However, each of these states can be filled by two
+electrons (spin up and down, ↑↓ ). Thus, the maximum number of electrons in a subshell is
+N =2(2l+1)=4l+2. (8.35)
+In the 2s (l=0) subshell, the maximum number of electrons is 2. In the 2p (l=1) subshell, the maximum number of
+electrons is 6. Therefore, the total maximum number of electrons in the n=2 shell (including both the l=0 and 1
+subshells) is 2+6 or 8. In general, the maximum number of electrons in thenth shell is 2n2.
+Example 8.5
+Subshells and Totals for n=3
+How many subshells are in the n=3 shell? Identify each subshell and calculate the maximum number of
+electrons that will fill each. Show that the maximum number of electrons that fill an atom is 2n2.
+Strategy
+Subshellsaredeterminedbythevalueofl;thus,wefirstdeterminewhichvaluesoflareallowed,andthenwe
+applytheequation“maximumnumberofelectronsthatcanbeinasubshell =2(2l+1)”tofindthenumberof
+electrons in each subshell.
+Solution
+Because n=3, weknowthatlcanbe0,1,or2;thus,therearethreepossiblesubshells.Instandardnotation,
+theyarelabeledthe3s,3p,and3dsubshells.Wehavealreadyseenthattwoelectronscanbeinansstate,andsix
+inapstate,butletususetheequation“maximumnumberofelectronsthatcanbeinasubshell =2(2l+1)”to
+calculate the maximum number in each:
+3shasl=0; thus,2⎛2l+1⎞=2(0+1)=2
+⎝ ⎠
+3phasl=1; thus,2⎛2l+1)=2(2+1)=6
+⎝
+3dhasl=2; thus,2(2l+1)=2(4+1)=10
+Total =18
+⎛inthen=3shell).
+⎝
+Theequation“maximumnumberofelectronsthatcanbeinashell =2n2”givesthemaximumnumberinthe
+n=3 shell to be
+Maximum number of electrons=2n2=2(3)2=2(9)=18.
+
+378 Chapter 8 | Atomic Structure
+Significance
+The total number of electrons in the three possible subshells is thus the same as the formula 2n2. In standard
+(spectroscopic)notation,afilled n=3 shellisdenotedas 3s23p6 3d10.Shellsdonotfillinasimplemanner.
+Before the n=3 shell is completely filled, for example, we begin to find electrons in the n=4 shell.
+Thestructureoftheperiodictable(Figure 8.17)canbeunderstoodintermsofshellsandsubshells,and,ultimately,the
+totalenergy,orbitalangularmomentum,andspinoftheelectronsintheatom.Adetaileddiscussionoftheperiodictable
+is left to a chemistry course—we sketch only its basic features here. In this discussion, we assume that the atoms are
+electricallyneutral;thatis,theyhavethesamenumberofelectronsandprotons.(Recallthatthetotalnumberofprotonsin
+an atomic nucleus is called the atomic number,Z.)
+First,theperiodictableisarrangedintocolumnsandrows.Thetableisreadlefttorightandtoptobottomintheorderof
+increasingatomicnumberZ.Atomsthatbelongtothesamecolumnorchemicalgroupsharemanyofthesamechemical
+properties.Forexample,theLiandNaatoms(inthefirstcolumn)bondtootheratomsinasimilarway.Thefirstrowofthe
+table corresponds to the 1s(l=0) shell of an atom.
+Considerthehypotheticalprocedureofaddingelectrons,onebyone,toanatom.Forhydrogen(H)(upperleft),the1sshell
+isfilledwitheitheraspinupordownelectron( ↑or↓ ).Thisloneelectroniseasilysharedwithotheratoms,sohydrogenis
+chemicallyactive.Forhelium(He)(upperright),the1sshellisfilledwithbothaspinupandaspindown( ↑↓ )electron.
+This “fills” the 1s shell, so a helium atom tends not to share electrons with other atoms. The helium atom is said to be
+chemically inactive, inert, or noble; likewise, helium gas is said to be an inert gas or noble gas.
+Buildanatombyaddingandsubtractingprotons,neutrons,andelectrons.Howdoestheelement,charge,andmass
+change? Visit PhET Explorations: Build an Atom (https://openstaxcollege.org/l/21buildanatom) to
+explore the answers to these questions.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 379
+Figure 8.17 The periodic table of elements, showing the structure of shells and subshells.
+The second rowcorresponds to the 2sand 2psubshells. Forlithium (Li) (upper left), the 1sshell is filled with a spin-up
+and spin-down electron ( ↑↓ ) and the 2s shell is filled with either a spin-up or -down electron ( ↑or↓ ). Its electron
+configurationistherefore 1s22s1 or[He]2s,where[He]indicatesaheliumcore.Likehydrogen,theloneelectroninthe
+outermostshelliseasilysharedwithotheratoms.Forberyllium(Be),the2sshellisfilledwithaspin-upand-downelectron
+( ↑↓ ), and has the electron configuration [He]2s2.
+Next,welookattherightsideofthetable.Forboron(B),the1sand2sshellsarefilledandthe2p(l=1)shellcontains
+eitheraspinupordownelectron( ↑or↓ ).Fromcarbon(C)toneon(N),wethefillthe2pshell.Themaximumnumber
+ofelectronsinthe2pshellsis 4l+2=4(2)+2=6.Forneon(Ne),the1sshellisfilledwithaspin-upandspin-down
+electron( ↑↓ ),andthe2pshellisfilledwithsixelectrons( ↑↓ ↑↓ ↑↓ ).This“fills”the1s,2s,and2psubshells,solike
+helium, the neon atom tends not to share electrons with other atoms.
+The process of electron filling repeats in the third row. However, beginning in the fourth row, the pattern is broken. The
+actual order of order of electron filling is given by
+1s, 2s, 2p, 3s, 3p, 4s,3d, 4p, 5s,4d, 5p, 6s,4f, 5d, 6p, 7s,...
+Notice that the 3d, 4d, 4f, and 5d subshells (in bold) are filled out of order; this occurs because of interactions between
+electrons in the atom, which so far we have neglected. The transition metals are elements in the gap between the first
+two columns and the last six columns that contain electrons that fill the d (l=1) subshell. As expected, these atoms
+are arranged in 4l+2=4(2)+2=10 columns. The structure of the periodic table can be understood in terms of the
+quantization of the total energy (n), orbital angular momentum (l), and spin (s). The first two columns correspond to
+the s (l=0) subshell, the next six columns correspond to the p (l=1) subshell, and the gap between these columns
+
+380 Chapter 8 | Atomic Structure
+corresponds to thed(l=2) subshell.
+Theperiodictablealsogivesinformationonmolecularbonding.Toseethis,consideratomsintheleft-mostcolumn(the
+so-calledalkalimetalsincluding:Li,Na,andK).Theseatomscontainasingleelectroninthe2ssubshell,whichiseasily
+donated to other atoms. In contrast, atoms in the second-to-right column (the halogens: for example, Cl, F, and Br) are
+relativelystingyinsharingelectrons.Theseatomswouldmuchratheracceptanelectron,becausetheyarejustoneelectron
+shy of a filled shell (“of being noble”).
+Therefore, if a Na atom is placed in close proximity to a Cl atom, the Na atom freely donates its 2s electron and the Cl
+atom eagerly accepts it. In the process, the Na atom (originally a neutral charge) becomes positively charged and the Cl
+(originally a neutral charge) becomes negatively charged. Charged atoms are called ions. In this case, the ions are Na +
+and Cl−,wherethesuperscriptindicateschargeoftheion.Theelectric(Coulomb)attractionbetweentheseatomsformsa
+NaCl(salt)molecule.Achemicalbondbetweentwoionsiscalledanionicbond.Therearemanykindsofchemicalbonds.
+Forexample,inanoxygenmolecule O electronsareequallysharedbetweentheatoms.Thebondingofoxygenatomsis
+2
+an example of acovalent bond.
+8.5 | Atomic Spectra and X-rays
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the absorption and emission of radiation in terms of atomic energy levels and energy
+differences
+• Use quantum numbers to estimate the energy, frequency, and wavelength of photons produced
+by atomic transitions in multi-electron atoms
+• Explain radiation concepts in the context of atomic fluorescence and X-rays
+Thestudyofatomicspectraprovidesmostofourknowledgeaboutatoms.Inmodernscience,atomicspectraareusedto
+identify species of atoms in a range of objects, from distant galaxies to blood samples at a crime scene.
+The theoretical basis of atomic spectroscopy is the transition of electrons between energy levels in atoms. For example,
+ifanelectroninahydrogenatommakesatransitionfromthe n=3 tothe n=2 shell,theatomemitsaphotonwitha
+wavelength
+λ=
+c
+=
+h·c
+=
+hc
+=
+hc
+,
+(8.36)
+f h· f ΔE E −E
+3 2
+where ΔE=E −E isenergycarriedawaybythephotonand hc=1940eV·nm.Afterthisradiationpassesthrough
+3 2
+aspectrometer,itappearsasasharpspectrallineonascreen.TheBohrmodelofthisprocessisshowninFigure8.18.If
+theelectronlaterabsorbsaphotonwithenergy ΔE,theelectronreturnstothe n=3 shell.(WeexaminedtheBohrmodel
+earlier, inPhotons and Matter Waves.)
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

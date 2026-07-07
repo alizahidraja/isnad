@@ -1,0 +1,269 @@
+# REAL PDF — openstax_vol3.pdf, pages 554-559
+############################################################
+
+546 Chapter 11 | Particle Physics and Cosmology
+CHAPTER 11 REVIEW
+KEY TERMS
+antiparticle subatomic particle with the same mass and lifetime as its associated particle, but opposite electric charge
+baryon number baryonnumberhasthevalue B= +1 forbaryons, –1 forantibaryons,and0forallotherparticles
+and is conserved in particle interactions
+baryons group of three quarks
+Big Bang rapid expansion of space that marked the beginning of the universe
+boson particle with integral spin that are symmetric on exchange
+color property of particles and that plays the same role in strong nuclear interactions as electric charge does in
+electromagnetic interactions
+cosmic microwave background radiation (CMBR) thermal radiation produced by the Big Bang event
+cosmology study of the origin, evolution, and ultimate fate of the universe
+dark energy form of energy believed to be responsible for the observed acceleration of the universe
+dark matter matter in the universe that does not interact with other particles but that can be inferred by deflection of
+distance star light
+electroweak force unification of electromagnetic force and weak-nuclear force interactions
+exchange symmetry propertyofasystemofindistinguishableparticlesthatrequirestheexchangeofanytwoparticles
+to be unobservable
+fermion particle with half-integral spin that is antisymmetric on exchange
+Feynman diagram space-time diagram that describes how particles move and interact
+fundamental force one of four forces that act between bodies of matter: the strong nuclear, electromagnetic, weak
+nuclear, and gravitational forces
+gluon particle that that carry the strong nuclear force between quarks within an atomic nucleus
+grand unified theory theoryofparticleinteractionsthatunifiesthestrongnuclear,electromagnetic,andweaknuclear
+forces
+hadron a meson or baryon
+Hubble’s constant constant that relates speed and distance in Hubble’s law
+Hubble’s law relationship between the speed and distance of stars and galaxies
+lepton a fermion that participates in the electroweak force
+lepton number electron-lepton number L e, the muon-lepton number L µ, and the tau-lepton number L τ are
+conserved separately in every particle interaction
+mesons a group of two quarks
+nucleosynthesis creation of heavy elements, occurring during the Big Bang
+particle accelerator machinedesignedtoacceleratechargedparticles;thisaccelerationisusuallyachievedwithstrong
+electric fields, magnetic fields, or both
+particle detector detector designed to accurately measure the outcome of collisions created by a particle accelerator;
+particle detectors are hermetic and multipurpose
+positron antielectron
+quantum chromodynamics (QCD) theory that describes strong interactions between quarks
+quantum electrodynamics (QED) theory that describes the interaction of electrons with photons
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 547
+quark
+a fermion that participates in the electroweak and strong nuclear force
+redshift lengthening of the wavelength of light (or reddening) due to cosmological expansion
+Standard Model model of particle interactions that contains the electroweak theory and quantum chromodynamics
+(QCD)
+strangeness particle property associated with the presence of a strange quark
+strong nuclear force relativelystrongattractiveforcethatactsovershortdistances(about 10 −15 m)responsiblefor
+binding protons and neutrons together in atomic nuclei
+synchrotron circular accelerator that uses alternating voltage and increasing magnetic field strengths to accelerate
+particles to higher and higher energies
+synchrotron radiation high-energyradiationproducedinasynchrotronacceleratorbythecircularmotionofacharged
+beam
+theory of everything a theory of particle interactions that unifies all four fundamental forces
+virtual particle particle that exists for too short of time to be observable
+W and Z boson particle with a relatively large mass that carries the weak nuclear force between leptons and quarks
+weak nuclear force relativeweakforce(about 10 −6 thestrengthofthestrongnuclearforce)responsiblefordecaysof
+elementary particles and neutrino interactions
+KEY EQUATIONS
+Momentum of a charged particle in a cyclotron p=0.3Br
+Center-of-mass energy of a colliding beam 2 2
+machine
+W2=2[E
+1
+E
+2
++(p
+1
+c)(p
+2
+c)]+(m
+1
+c2) +(m
+2
+c2)
+Approximate time for exchange of a virtual particle h
+Δt=
+between two other particles E
+Hubble’s law v=H d
+0
+Cosmological space-time metric ds2=c2dt2−a(t)2dΣ2
+SUMMARY
+11.1Introduction to Particle Physics
+• The four fundamental forces of nature are, in order of strength: strong nuclear, electromagnetic, weak nuclear,
+andgravitational.Quarksinteractviathestrongforce,butleptonsdonot.Bothquarkandleptonsinteractviathe
+electromagnetic, weak, and gravitational forces.
+• Elementaryparticlesareclassifiedintofermionsandboson.Fermionshavehalf-integralspinandobeytheexclusion
+principle. Bosons have integral spin and do not obey this principle. Bosons are the force carriers of particle
+interactions.
+• Quarksandleptonsbelongtoparticlefamiliescomposedofthreememberseach.Membersofafamilysharemany
+properties (charge, spin, participation in forces) but not mass.
+• Allparticleshaveantiparticles.Particlessharethesamepropertiesastheirantimatterparticles,butcarryopposite
+charge.
+11.2Particle Conservation Laws
+• Elementaryparticleinteractionsaregovernedbyparticleconservationlaws,whichcanbeusedtodeterminewhat
+particle reactions and decays are possible (or forbidden).
+• The baryon number conservation law and the three lepton number conversation law are valid for all physical
+
+548 Chapter 11 | Particle Physics and Cosmology
+processes.However,conservation ofstrangenessisvalidonlyforstrongnuclearinteractions andelectromagnetic
+interactions.
+11.3Quarks
+• Sixknownquarksexist:up(u),down(d),charm(c),strange(s),top(t),andbottom(b).Theseparticlesarefermions
+with half-integral spin and fractional charge.
+• Baryonsconsistofthreequarks,andmesonsconsistofaquark-antiquarkpair.Duetothestrongforce,quarkscannot
+exist in isolation.
+• Evidence for quarks is found in scattering experiments.
+11.4Particle Accelerators and Detectors
+• Many types of particle accelerators have been developed to study particles and their interactions. These include
+linear accelerators, cyclotrons, synchrotrons, and colliding beams.
+• Colliding beam machines are used to create massive particles that decay quickly to lighter particles.
+• Multipurposedetectorsareusedtodesignallaspectsofhigh-energycollisions.Theseincludedetectorstomeasure
+the momentum and energies of charge particles and photons.
+• Charged particles are measured by bending these particles in a circle by a magnetic field.
+• Particles are measured using calorimeters that absorb the particles.
+11.5The Standard Model
+• TheStandardModeldescribesinteractionsbetweenparticlesthroughthestrongnuclear,electromagnetic,andweak
+nuclear forces.
+• Particle interactions are represented by Feynman diagrams. A Feynman diagram represents interactions between
+particles on a space-time graph.
+• Electromagneticforcesactoveralongrange,butstrongandweakforcesactoverashortrange.Theseforcesare
+transmitted between particles by sending and receiving bosons.
+• Grand unified theories seek an understanding of the universe in terms of just one force.
+11.6The Big Bang
+• The universe is expanding like a balloon—every point is receding from every other point.
+• Distant galaxies move away from us at a velocity proportional to its distance. This rate is measured to be
+approximately 70 km/s/Mpc. Thus, the farther galaxies are from us, the greater their speeds. These “recessional
+velocities” can be measure using the Doppler shift of light.
+• Accordingtocurrentcosmologicalmodels,theuniversebeganwiththeBigBangapproximately13.7billionyears
+ago.
+11.7Evolution of the Early Universe
+• The early universe was hot and dense.
+• The universe is isotropic and expanding.
+• Cosmic background radiation is evidence for the Big Bang.
+• The vast portion of the mass and energy of the universe is not well understood.
+CONCEPTUAL QUESTIONS
+2. Distinguishfermionsandbosonsusingtheconceptsof
+11.1Introduction to Particle Physics indistiguishability and exchange symmetry.
+1. Whatarethefourfundamentalforces?Brieflydescribe
+them. 3. List the quark and lepton families
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 549
+4. Distinguish between elementary particles and 19. What is the motivation behind grand unification
+antiparticles. Describe their interactions. theories?
+20. If a theory is developed that unifies all four forces,
+11.2Particle Conservation Laws will it still be correct to say that the orbit of the Moon is
+determined by the gravitational force? Explain why.
+5. What are six particle conservation laws? Briefly
+describe them.
+21. If the Higgs boson is discovered and found to have
+mass,willitbeconsideredtheultimatecarrieroftheweak
+6. In general, how do we determine if a particle reaction
+force? Explain your response.
+or decay occurs?
+22. One of the common decay modes of the
+7. Why might the detection of particle interaction that
+violates an established particle conservation law be Λ 0 isΛ 0 →π−+p. Even though only hadrons are
+considered agoodthing for a scientist?
+involved in this decay, it occurs through the weak nuclear
+force. How do we know that this decay does not occur
+through the strong nuclear force?
+11.3Quarks
+8. What are the six known quarks? Summarize their
+properties. 11.6The Big Bang
+23. What is meant by cosmological expansion? Express
+9. Whatisthegeneralquarkcompositionofabaryon?Of youranswerintermsofaHubblegraphandtheredshiftof
+a meson? distant starlight.
+10. What evidence exists for the existence of quarks? 24. Describe the balloon analogy for cosmological
+expansion. Explain why it only appears that we are at the
+11. Why do baryons with the same quark composition center of expansion of the universe.
+sometimes differ in their rest mass energies?
+25. Distances to local galaxies are determined by
+measuringthebrightnessofstars,calledCepheidvariables,
+11.4Particle Accelerators and Detectors that can be observed individually and that have absolute
+brightnesses at a standard distance that are well known.
+12. BrieflycomparetheVandeGraaffaccelerator,linear
+Explain how the measured brightness would vary with
+accelerator, cyclotron, and synchrotron accelerator.
+distance, as compared with the absolute brightness.
+13. Describe the basic components and function of a
+typical colliding beam machine.
+11.7Evolution of the Early Universe
+26. Whatismeantbya“cosmologicalmodeloftheearly
+14. What are the subdetectors of the Compact Muon
+universe?”Brieflydescribethismodelintermsofthefour
+Solenoid experiment? Briefly describe them.
+fundamental forces.
+15. Whatistheadvantageofacolliding-beamaccelerator
+27. Describe twopieces ofevidence that supportthe Big
+over one that fires particles into a fixed target?
+Bang model.
+16. AnelectronappearsinthemuondetectorsoftheCMS.
+28. In what sense are we, as Newton once said, “a boy
+How is this possible?
+playingonthesea-shore”?Expressyouranswerintermsof
+the concepts of dark matter and dark energy.
+11.5The Standard Model
+29. If some unknown cause of redshift—such as light
+17. What is the Standard Model? Express your answer becoming “tired” from traveling long distances through
+in terms of the four fundamental forces and exchange empty space—is discovered, what effect would that have
+particles. on cosmology?
+18. DrawaFeynmandiagramtorepresentsannihilationof 30. Inthepast,manyscientistsbelievedtheuniversetobe
+an electron and positron into a photon. infinite.However,iftheuniverseisinfinite,thenanylineof
+sightshouldeventuallyfallonastar’ssurfaceandthenight
+
+550 Chapter 11 | Particle Physics and Cosmology
+skyshouldbeverybright.Howisthisparadoxresolvedin modern cosmology?
+PROBLEMS
+antiparticles:
+11.1Introduction to Particle Physics
+—
+31. Howmuchenergyisreleasedwhenanelectronanda (a) −n, (b) Λ 0, (c) Ω + , (d) K−, and (e) Σ − .
+positronatrestannihilateeachother?(Forparticlemasses,
+seeTable 11.1.) 38. Each of the following strong nuclear reactions is
+forbidden. Identify a conservation law that is violated for
+each one.
+32. If 1.0×10 30 MeV of energy is released in the
+annihilation of a sphere of matter and antimatter, and the − −
+(a)p+p →p+n+p
+spheresareequalmass,whatarethemassesofthespheres?
+(b)p+n→p+
+− p+n+π+
+33. Whenbothanelectronandapositronareatrest,they
+(c)π−+p→Σ+ +K−
+can annihilate each other according to the reaction (d)K−+p→Λ 0 +n
+e−+e+ →γ+γ.
+Inthiscase,whataretheenergy,momentum,andfrequency
+11.3Quarks
+of each photon?
+39. Basedonquarkcompositionofaproton,showthatits
+34. What is the total kinetic energy carried away by the
+charge is +1.
+particles of the following decays?
+40. Based on the quark composition of a neutron, show
+(a)π0 →γ+γ that is charge is 0.
+(b)K 0 →π+ +π−
+41. ArguethatthequarkcompositiongiveninTable11.5
+(c)Σ+ →n+π+
+for the positive kaon is consistent with the known charge,
+(d)Σ0 → Λ0 +γ. spin, and strangeness of this baryon.
+42. Mesons are formed from the following combinations
+11.2Particle Conservation Laws
+of quarks (subscripts indicate color and AR=antired):
+35. Which of the following decays cannot occur because (d R , − d AR ), (s G , −u AG ), and (s R , −s AR ).
+the law of conservation of lepton number is violated?
+(a) Determine the charge and strangeness of each
+(a)n→p+e− (e)π−→e−+ −υ
+e
+combination. (b) Identify one or more mesons formed by
+(b)µ+ →e + +υ e (f)µ−→e−+ −υ e+υ µ each quark-antiquark combination.
+(c)π+ →e + +υ e+ −υ µ (g)Λ 0 →π−+p 43. Why can’t either set of quarks shown below form a
+(d)p→n+e + +υ e (h)K + → µ+ +υ µ hadron?
+36. Which of the following reactions cannot because the
+law of conservation of strangeness is violated?
+(a)p+n→p+p+π− (e)K−+p→Ξ 0 +K + +π−
+(b)p+n→p+p+K− (f)K−+p→Ξ 0 +π−+π−
++
+(c)K−+p→K−+∑ (g)π+ +p→Σ+ +K +
+−
+(d)π−+p→K + +∑ (h)π−+n→K−+Λ 0
+37. Identifyonepossibledecayforeachofthefollowing
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

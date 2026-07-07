@@ -1,0 +1,156 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 692-697
+############################################################
+
+680 14 • Fluid Mechanics
+where V is the volume and t is the elapsed time. In Figure 14.26, the volume of the cylinder is Ax, so the flow rate is
+FIGURE 14.26 Flow rate is the volume of fluid flowing past a point through the area A per unit time. Here, the shaded cylinder of fluid flows
+past point P in a uniform pipe in time t.
+The SI unit for flow rate is but several other units for Q are in common use, such as liters per minute (L/min).
+Note that a liter (L) is 1/1000 of a cubic meter or 1000 cubic centimeters
+Flow rate and velocity are related, but quite different, physical quantities. To make the distinction clear, consider the
+flow rate of a river. The greater the velocity of the water, the greater the flow rate of the river. But flow rate also
+depends on the size and shape of the river. A rapid mountain stream carries far less water than the Amazon River in
+Brazil, for example. Figure 14.26 illustrates the volume flow rate. The volume flow rate is where
+is the cross-sectional area of the pipe and v is the magnitude of the velocity.
+The precise relationship between flow rate Q and average speed v is
+where A is the cross-sectional area and is the average speed. The relationship tells us that flow rate is directly
+proportional to both the average speed of the fluid and the cross-sectional area of a river, pipe, or other conduit. The
+larger the conduit, the greater its cross-sectional area. Figure 14.26 illustrates how this relationship is obtained. The
+shaded cylinder has a volume , which flows past the point P in a time t. Dividing both sides of this
+relationship by t gives
+We note that and the average speed is . Thus the equation becomes .
+Figure 14.27 shows an incompressible fluid flowing along a pipe of decreasing radius. Because the fluid is
+incompressible, the same amount of fluid must flow past any point in the tube in a given time to ensure continuity of
+flow. The flow is continuous because they are no sources or sinks that add or remove mass, so the mass flowing into
+the pipe must be equal the mass flowing out of the pipe. In this case, because the cross-sectional area of the pipe
+decreases, the velocity must necessarily increase. This logic can be extended to say that the flow rate must be the
+same at all points along the pipe. In particular, for arbitrary points 1 and 2,
+14.14
+This is called the equation of continuity and is valid for any incompressible fluid (with constant density). The
+consequences of the equation of continuity can be observed when water flows from a hose into a narrow spray
+nozzle: It emerges with a large speed—that is the purpose of the nozzle. Conversely, when a river empties into one
+end of a reservoir, the water slows considerably, perhaps picking up speed again when it leaves the other end of the
+reservoir. In other words, speed increases when cross-sectional area decreases, and speed decreases when cross-
+sectional area increases.
+Access for free at openstax.org
+
+14.5 • Fluid Dynamics 681
+FIGURE 14.27 When a tube narrows, the same volume occupies a greater length. For the same volume to pass points 1 and 2 in a given
+time, the speed must be greater at point 2. The process is exactly reversible. If the fluid flows in the opposite direction, its speed decreases
+when the tube widens. (Note that the relative volumes of the two cylinders and the corresponding velocity vector arrows are not drawn to
+scale.)
+Since liquids are essentially incompressible, the equation of continuity is valid for all liquids. However, gases are
+compressible, so the equation must be applied with caution to gases if they are subjected to compression or
+expansion.
+EXAMPLE 14.5
+Calculating Fluid Speed through a Nozzle
+A nozzle with a diameter of 0.500 cm is attached to a garden hose with a radius of 0.900 cm. The flow rate through
+hose and nozzle is 0.500 L/s. Calculate the speed of the water (a) in the hose and (b) in the nozzle.
+Strategy
+We can use the relationship between flow rate and speed to find both speeds. We use the subscript 1 for the hose
+and 2 for the nozzle.
+Solution
+a. We solve the flow rate equation for speed and use for the cross-sectional area of the hose, obtaining
+Substituting values and using appropriate unit conversions yields
+b. We could repeat this calculation to find the speed in the nozzle , but we use the equation of continuity to
+give a somewhat different insight. The equation states
+Solving for and substituting for the cross-sectional area yields
+Substituting known values,
+Significance
+A speed of 1.96 m/s is about right for water emerging from a hose with no nozzle. The nozzle produces a
+considerably faster stream merely by constricting the flow to a narrower tube.
+The solution to the last part of the example shows that speed is inversely proportional to the square of the radius of
+the tube, making for large effects when radius varies. We can blow out a candle at quite a distance, for example, by
+
+682 14 • Fluid Mechanics
+pursing our lips, whereas blowing on a candle with our mouth wide open is quite ineffective.
+Mass Conservation
+The rate of flow of a fluid can also be described by the mass flow rate or mass rate of flow. This is the rate at which a
+mass of the fluid moves past a point. Refer once again to Figure 14.26, but this time consider the mass in the
+shaded volume. The mass can be determined from the density and the volume:
+The mass flow rate is then
+where is the density, A is the cross-sectional area, and v is the magnitude of the velocity. The mass flow rate is an
+important quantity in fluid dynamics and can be used to solve many problems. Consider Figure 14.27. The pipe in
+the figure starts at the inlet with a cross sectional area of and constricts to an outlet with a smaller cross
+sectional area of . The mass of fluid entering the pipe has to be equal to the mass of fluid leaving the pipe. For
+this reason the velocity at the outlet is greater than the velocity of the inlet . Using the fact that the mass of
+fluid entering the pipe must be equal to the mass of fluid exiting the pipe, we can find a relationship between the
+velocity and the cross-sectional area by taking the rate of change of the mass in and the mass out:
+14.15
+Equation 14.15 is also known as the continuity equation in general form. If the density of the fluid remains constant
+through the constriction—that is, the fluid is incompressible—then the density cancels from the continuity equation,
+The equation reduces to show that the volume flow rate into the pipe equals the volume flow rate out of the pipe.
+FIGURE 14.28 Geometry for deriving the equation of continuity. The amount of liquid entering the cross-sectional (shaded) area must equal
+the amount of liquid leaving the cross-sectional area if the liquid is incompressible.
+14.6 Bernoulli’s Equation
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the terms in Bernoulli’s equation
+• Explain how Bernoulli’s equation is related to the conservation of energy
+• Describe how to derive Bernoulli’s principle from Bernoulli’s equation
+• Perform calculations using Bernoulli’s principle
+• Describe some applications of Bernoulli’s principle
+As we showed in Figure 14.27, when a fluid flows into a narrower channel, its speed increases. That means its
+kinetic energy also increases. The increased kinetic energy comes from the net work done on the fluid to push it into
+the channel. Also, if the fluid changes vertical position, work is done on the fluid by the gravitational force.
+A pressure difference occurs when the channel narrows. This pressure difference results in a net force on the fluid
+because the pressure times the area equals the force, and this net force does work. Recall the work-energy
+theorem,
+Access for free at openstax.org
+
+14.6 • Bernoulli’s Equation 683
+The net work done increases the fluid’s kinetic energy. As a result, the pressure drops in a rapidly moving fluid
+whether or not the fluid is confined to a tube.
+There are many common examples of pressure dropping in rapidly moving fluids. For instance, shower curtains have
+a disagreeable habit of bulging into the shower stall when the shower is on. The reason is that the high-velocity
+stream of water and air creates a region of lower pressure inside the shower, whereas the pressure on the other side
+remains at the standard atmospheric pressure. This pressure difference results in a net force, pushing the curtain
+inward. Similarly, when a car passes a truck on the highway, the two vehicles seem to pull toward each other. The
+reason is the same: The high velocity of the air between the car and the truck creates a region of lower pressure
+between the vehicles, and they are pushed together by greater pressure on the outside (Figure 14.29). This effect
+was observed as far back as the mid-1800s, when it was found that trains passing in opposite directions tipped
+precariously toward one another.
+FIGURE 14.29 An overhead view of a car passing a truck on a highway. Air passing between the vehicles flows in a narrower channel and
+must increase its speed ( is greater than ), causing the pressure between them to drop ( is less than Greater pressure on the
+outside pushes the car and truck together.
+Energy Conservation and Bernoulli’s Equation
+The application of the principle of conservation of energy to frictionless laminar flow leads to a very useful relation
+between pressure and flow speed in a fluid. This relation is called Bernoulli’s equation, named after Daniel
+Bernoulli (1700–1782), who published his studies on fluid motion in his book Hydrodynamica (1738).
+Consider an incompressible fluid flowing through a pipe that has a varying diameter and height, as shown in Figure
+14.30. Subscripts 1 and 2 in the figure denote two locations along the pipe and illustrate the relationships between
+the areas of the cross sections A, the speed of flow v, the height from ground h, and the pressure p at each point. We
+assume here that the density at the two points is the same—therefore, density is denoted by without any
+subscripts—and since the fluid is incompressible, the shaded volumes must be equal.
+FIGURE 14.30 The geometry used for the derivation of Bernoulli’s equation.
+We also assume that there are no viscous forces in the fluid, so the energy of any part of the fluid will be conserved.
+
+684 14 • Fluid Mechanics
+To derive Bernoulli’s equation, we first calculate the work that was done on the fluid:
+The work done was due to the conservative force of gravity and the change in the kinetic energy of the fluid. The
+change in the kinetic energy of the fluid is equal to
+The change in potential energy is
+The energy equation then becomes
+Rearranging the equation gives Bernoulli’s equation:
+This relation states that the mechanical energy of any part of the fluid changes as a result of the work done by the
+fluid external to that part, due to varying pressure along the way. Since the two points were chosen arbitrarily, we
+can write Bernoulli’s equation more generally as a conservation principle along the flow.
+BERNOULLI’S EQUATION
+For an incompressible, frictionless fluid, the combination of pressure and the sum of kinetic and potential energy
+densities is constant not only over time, but also along a streamline:
+14.16
+A special note must be made here of the fact that in a dynamic situation, the pressures at the same height in
+different parts of the fluid may be different if they have different speeds of flow.
+Analyzing Bernoulli’s Equation
+According to Bernoulli’s equation, if we follow a small volume of fluid along its path, various quantities in the sum
+may change, but the total remains constant. Bernoulli’s equation is, in fact, just a convenient statement of
+conservation of energy for an incompressible fluid in the absence of friction.
+The general form of Bernoulli’s equation has three terms in it, and it is broadly applicable. To understand it better, let
+us consider some specific situations that simplify and illustrate its use and meaning.
+Bernoulli’s equation for static fluids
+First consider the very simple situation where the fluid is static—that is, Bernoulli’s equation in that
+case is
+We can further simplify the equation by setting (Any height can be chosen for a reference height of zero, as
+is often done for other situations involving gravitational force, making all other heights relative.) In this case, we get
+This equation tells us that, in static fluids, pressure increases with depth. As we go from point 1 to point 2 in the
+Access for free at openstax.org

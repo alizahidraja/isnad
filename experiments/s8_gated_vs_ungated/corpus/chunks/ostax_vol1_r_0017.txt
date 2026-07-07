@@ -1,0 +1,250 @@
+# REAL PDF — openstax_vol1.pdf, pages 93-99
+############################################################
+
+2.4 • Products of Vectors 81
+FIGURE 2.32 (a) The diagram of the cyclic order of the unit vectors of the axes. (b) The only cross products where the unit vectors appear in
+the cyclic order. These products have the positive sign. (c, d) Two examples of cross products where the unit vectors do not appear in the
+cyclic order. These products have the negative sign.
+Suppose we want to find the cross product for vectors and .
+We can use the distributive property (Equation 2.37), the anticommutative property (Equation 2.36), and the results
+in Equation 2.38 and Equation 2.39 for unit vectors to perform the following algebra:
+When performing algebraic operations involving the cross product, be very careful about keeping the correct order
+of multiplication because the cross product is anticommutative. The last two steps that we still have to do to
+complete our task are, first, grouping the terms that contain a common unit vector and, second, factoring. In this
+way we obtain the following very useful expression for the computation of the cross product:
+2.40
+In this expression, the scalar components of the cross-product vector are
+2.41
+When finding the cross product, in practice, we can use either Equation 2.35 or Equation 2.40, depending on which
+
+82 2 • Vectors
+one of them seems to be less complex computationally. They both lead to the same final result. One way to make
+sure if the final result is correct is to use them both.
+EXAMPLE 2.19
+A Particle in a Magnetic Field
+When moving in a magnetic field, some particles may experience a magnetic force. Without going into details—a
+detailed study of magnetic phenomena comes in later chapters—let’s acknowledge that the magnetic field is a
+vector, the magnetic force is a vector, and the velocity of the particle is a vector. The magnetic force vector is
+proportional to the vector product of the velocity vector with the magnetic field vector, which we express as
+. In this equation, a constant takes care of the consistency in physical units, so we can omit physical
+units on vectors and . In this example, let’s assume the constant is positive.
+A particle moving in space with velocity vector enters a region with a magnetic field and
+experiences a magnetic force. Find the magnetic force on this particle at the entry point to the region where the
+magnetic field vector is (a) and (b) . In each case, find magnitude F of the magnetic
+force and angle the force vector makes with the given magnetic field vector .
+Strategy
+First, we want to find the vector product , because then we can determine the magnetic force using
+. Magnitude F can be found either by using components, , or by computing the
+magnitude directly using Equation 2.35. In the latter approach, we would have to find the angle between
+vectors and . When we have , the general method for finding the direction angle involves the computation of
+the scalar product and substitution into Equation 2.34. To compute the vector product we can either use
+Equation 2.40 or compute the product directly, whichever way is simpler.
+Solution
+The components of the velocity vector are , , and .
+(a) The components of the magnetic field vector are , , and . Substituting them into
+Equation 2.41 gives the scalar components of vector :
+Thus, the magnetic force is and its magnitude is
+To compute angle , we may need to find the magnitude of the magnetic field vector,
+and the scalar product :
+Now, substituting into Equation 2.34 gives angle :
+Access for free at openstax.org
+
+2.4 • Products of Vectors 83
+Hence, the magnetic force vector is perpendicular to the magnetic field vector. (We could have saved some time if
+we had computed the scalar product earlier.)
+(b) Because vector has only one component, we can perform the algebra quickly and find the vector
+product directly:
+The magnitude of the magnetic force is
+Because the scalar product is
+the magnetic force vector is perpendicular to the magnetic field vector .
+Significance
+Even without actually computing the scalar product, we can predict that the magnetic force vector must always be
+perpendicular to the magnetic field vector because of the way this vector is constructed. Namely, the magnetic force
+vector is the vector product and, by the definition of the vector product (see Figure 2.29), vector
+must be perpendicular to both vectors and .
+CHECK YOUR UNDERSTANDING 2.16
+Given two vectors and , find (a) , (b) , (c) the angle between and , and (d)
+the angle between and vector .
+In conclusion to this section, we want to stress that “dot product” and “cross product” are entirely different
+mathematical objects that have different meanings. The dot product is a scalar; the cross product is a vector. Later
+chapters use the terms dot product and scalar product interchangeably. Similarly, the terms cross product and
+vector product are used interchangeably.
+
+84 2 • Chapter Review
+Chapter Review
+Key Terms
+anticommutative property change in the order of system where location in a plane is given by polar
+operation introduces the minus sign coordinates
+antiparallel vectors two vectors with directions that polar coordinates a radial coordinate and an angle
+differ by radial coordinate distance to the origin in a polar
+associative terms can be grouped in any fashion coordinate system
+commutative operations can be performed in any resultant vector vector sum of two (or more) vectors
+order scalar a number, synonymous with a scalar quantity
+component form of a vector a vector written as the in physics
+vector sum of its components in terms of unit scalar component a number that multiplies a unit
+vectors vector in a vector component of a vector
+corkscrew right-hand rule a rule used to determine scalar equation equation in which the left-hand and
+the direction of the vector product right-hand sides are numbers
+cross product the result of the vector multiplication scalar product the result of the scalar multiplication
+of vectors is a vector called a cross product; also of two vectors is a scalar called a scalar product;
+called a vector product also called a dot product
+difference of two vectors vector sum of the first scalar quantity quantity that can be specified
+vector with the vector antiparallel to the second completely by a single number with an appropriate
+direction angle in a plane, an angle between the physical unit
+positive direction of the x-axis and the vector, tail-to-head geometric construction geometric
+measured counterclockwise from the axis to the construction for drawing the resultant vector of
+vector many vectors
+displacement change in position unit vector vector of a unit magnitude that specifies
+distributive multiplication can be distributed over direction; has no physical unit
+terms in summation unit vectors of the axes unit vectors that define
+dot product the result of the scalar multiplication of orthogonal directions in a plane or in space
+two vectors is a scalar called a dot product; also vector mathematical object with magnitude and
+called a scalar product direction
+equal vectors two vectors are equal if and only if all vector components orthogonal components of a
+their corresponding components are equal; vector; a vector is the vector sum of its vector
+alternately, two parallel vectors of equal components.
+magnitudes vector equation equation in which the left-hand and
+magnitude length of a vector right-hand sides are vectors
+null vector a vector with all its components equal to vector product the result of the vector multiplication
+zero of vectors is a vector called a vector product; also
+orthogonal vectors two vectors with directions that called a cross product
+differ by exactly , synonymous with vector quantity physical quantity described by a
+perpendicular vectors mathematical vector—that is, by specifying both its
+parallel vectors two vectors with exactly the same magnitude and its direction; synonymous with a
+direction angles vector in physics
+parallelogram rule geometric construction of the vector sum resultant of the combination of two (or
+vector sum in a plane more) vectors
+polar coordinate system an orthogonal coordinate
+Key Equations
+Multiplication by a scalar (vector
+equation)
+Multiplication by a scalar (scalar
+equation for magnitudes)
+Resultant of two vectors
+Access for free at openstax.org
+
+2 • Chapter Review 85
+Commutative law
+Associative law
+Distributive law
+The component form of a vector in
+two dimensions
+Scalar components of a vector in
+two dimensions
+Magnitude of a vector in a plane
+The direction angle of a vector in a
+plane
+Scalar components of a vector in a
+plane
+Polar coordinates in a plane
+The component form of a vector in
+three dimensions
+The scalar z-component of a vector
+in three dimensions
+Magnitude of a vector in three
+dimensions
+Distributive property
+Antiparallel vector to
+Equal vectors
+Components of the resultant of N
+vectors
+General unit vector
+Definition of the scalar product
+Commutative property of the scalar
+product
+Distributive property of the scalar
+product
+Scalar product in terms of scalar
+components of vectors
+Cosine of the angle between two
+vectors
+Dot products of unit vectors
+Magnitude of the vector product
+(definition)
+
+86 2 • Chapter Review
+Anticommutative property of the
+vector product
+Distributive property of the vector
+product
+Cross products of unit vectors
+The cross product in terms of scalar
+components of vectors
+Summary
+2.1 Scalars and Vectors to-head method.
+• A vector quantity is any quantity that has 2.2 Coordinate Systems and Components of a Vector
+magnitude and direction, such as displacement
+• Vectors are described in terms of their
+or velocity. Vector quantities are represented by
+components in a coordinate system. In two
+mathematical objects called vectors.
+dimensions (in a plane), vectors have two
+• Geometrically, vectors are represented by
+components. In three dimensions (in space),
+arrows, with the end marked by an arrowhead.
+vectors have three components.
+The length of the vector is its magnitude, which is
+• A vector component of a vector is its part in an
+a positive scalar. On a plane, the direction of a
+axis direction. The vector component is the
+vector is given by the angle the vector makes
+product of the unit vector of an axis with its
+with a reference direction, often an angle with
+scalar component along this axis. A vector is the
+the horizontal. The direction angle of a vector is a
+resultant of its vector components.
+scalar.
+• Scalar components of a vector are differences of
+• Two vectors are equal if and only if they have the
+coordinates, where coordinates of the origin are
+same magnitudes and directions. Parallel vectors
+subtracted from end point coordinates of a
+have the same direction angles but may have
+vector. In a rectangular system, the magnitude of
+different magnitudes. Antiparallel vectors have
+a vector is the square root of the sum of the
+direction angles that differ by . Orthogonal
+squares of its components.
+vectors have direction angles that differ by .
+• In a plane, the direction of a vector is given by an
+• When a vector is multiplied by a scalar, the result
+angle the vector has with the positive x-axis. This
+is another vector of a different length than the
+direction angle is measured counterclockwise.
+length of the original vector. Multiplication by a
+The scalar x-component of a vector can be
+positive scalar does not change the original
+expressed as the product of its magnitude with
+direction; only the magnitude is affected.
+the cosine of its direction angle, and the scalar
+Multiplication by a negative scalar reverses the
+y-component can be expressed as the product of
+original direction. The resulting vector is
+its magnitude with the sine of its direction angle.
+antiparallel to the original vector. Multiplication
+• In a plane, there are two equivalent coordinate
+by a scalar is distributive. Vectors can be divided
+systems. The Cartesian coordinate system is
+by nonzero scalars but cannot be divided by
+defined by unit vectors and along the x-axis
+vectors.
+and the y-axis, respectively. The polar coordinate
+• Two or more vectors can be added to form
+system is defined by the radial unit vector ,
+another vector. The vector sum is called the
+which gives the direction from the origin, and a
+resultant vector. We can add vectors to vectors or
+unit vector , which is perpendicular (orthogonal)
+scalars to scalars, but we cannot add scalars to
+to the radial direction.
+vectors. Vector addition is commutative and
+associative. 2.3 Algebra of Vectors
+• To construct a resultant vector of two vectors in a
+• Analytical methods of vector algebra allow us to
+plane geometrically, we use the parallelogram
+find resultants of sums or differences of vectors
+rule. To construct a resultant vector of many
+without having to draw them. Analytical methods
+vectors in a plane geometrically, we use the tail-
+of vector addition are exact, contrary to graphical
+Access for free at openstax.org

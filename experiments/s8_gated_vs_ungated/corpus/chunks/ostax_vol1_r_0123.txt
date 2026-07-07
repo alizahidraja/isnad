@@ -1,0 +1,176 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 744-751
+############################################################
+
+732 15 • Oscillations
+15.21
+Note that for a simple pendulum, the moment of inertia is and the period reduces to
+.
+EXAMPLE 15.4
+Reducing the Swaying of a Skyscraper
+In extreme conditions, skyscrapers can sway up to two meters with a frequency of up to 20.00 Hz due to high winds
+or seismic activity. Several companies have developed physical pendulums that are placed on the top of the
+skyscrapers. As the skyscraper sways to the right, the pendulum swings to the left, reducing the sway. Assuming the
+oscillations have a frequency of 0.50 Hz, design a pendulum that consists of a long beam, of constant density, with a
+mass of 100 metric tons and a pivot point at one end of the beam. What should be the length of the beam?
+Strategy
+We are asked to find the length of the physical pendulum with a known mass. We first need to find the moment of
+inertia of the beam. We can then use the equation for the period of a physical pendulum to find the length.
+Solution
+1. Find the moment of inertia for the CM:
+Use the parallel axis theorem to find the moment of inertia about the point of rotation for a rod length L:
+2. The period of a physical pendulum with its center of mass a distance l from the pivot point has a period of
+. In this problem, L has been defined as the total length of the rod, so . Use the moment
+Access for free at openstax.org
+
+15.4 • Pendulums 733
+of inertia to solve for the length L:
+Significance
+There are many ways to reduce the oscillations, including modifying the shape of the skyscrapers, using multiple
+physical pendulums, and using tuned-mass dampers.
+Torsional Pendulum
+A torsional pendulum consists of a rigid body suspended by a light wire or spring (Figure 15.22). When the body is
+twisted some small maximum angle and released from rest, the body oscillates between and
+. The restoring torque is supplied by the shearing of the string or wire.
+FIGURE 15.22 A torsional pendulum consists of a rigid body suspended by a string or wire. The rigid body oscillates between and
+.
+The restoring torque can be modeled as being proportional to the angle:
+The variable kappa is known as the torsion constant of the wire or string. The minus sign shows that the
+restoring torque acts in the opposite direction to increasing angular displacement. The net torque is equal to the
+moment of inertia times the angular acceleration:
+This equation says that the second time derivative of the position (in this case, the angle) equals a negative constant
+times the position. This looks very similar to the equation of motion for the SHM , where the period was
+found to be . Therefore, the period of the torsional pendulum can be found using
+15.22
+The units for the torsion constant are and the units for the moment of inertial
+are which show that the unit for the period is the second.
+
+734 15 • Oscillations
+EXAMPLE 15.5
+Measuring the Torsion Constant of a String
+A rod has a length of and a mass of 4.00 kg. A string is attached to the CM of the rod and the system is
+hung from the ceiling (Figure 15.23). The rod is displaced 10 degrees from the equilibrium position and released
+from rest. The rod oscillates with a period of 0.5 s. What is the torsion constant ?
+FIGURE 15.23 (a) A rod suspended by a string from the ceiling. (b) Finding the rod’s moment of inertia.
+Strategy
+We are asked to find the torsion constant of the string. We first need to find the moment of inertia.
+Solution
+1. Find the moment of inertia for the CM:
+2. Calculate the torsion constant using the equation for the period:
+Significance
+Like the force constant of the system of a block and a spring, the larger the torsion constant, the shorter the period.
+15.5 Damped Oscillations
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the motion of damped harmonic motion
+• Write the equations of motion for damped harmonic oscillations
+• Describe the motion of driven, or forced, damped harmonic motion
+• Write the equations of motion for forced, damped harmonic motion
+In the real world, oscillations seldom follow true SHM. Friction of some sort usually acts to dampen the motion so it
+dies away, or needs more force to continue. In this section, we examine some examples of damped harmonic
+motion and see how to modify the equations of motion to describe this more general case.
+A guitar string stops oscillating a few seconds after being plucked. To keep swinging on a playground swing, you
+must keep pushing (Figure 15.24). Although we can often make friction and other nonconservative forces small or
+negligible, completely undamped motion is rare. In fact, we may even want to damp oscillations, such as with car
+Access for free at openstax.org
+
+15.5 • Damped Oscillations 735
+shock absorbers.
+FIGURE 15.24 To counteract dampening forces, you need to keep pumping a swing. (credit: Bob Mical)
+Figure 15.25 shows a mass m attached to a spring with a force constant The mass is raised to a position , the
+initial amplitude, and then released. The mass oscillates around the equilibrium position in a fluid with viscosity but
+the amplitude decreases for each oscillation. For a system that has a small amount of damping, the period and
+frequency are constant and are nearly the same as for SHM, but the amplitude gradually decreases as shown. This
+occurs because the non-conservative damping force removes energy from the system, usually in the form of thermal
+energy.
+FIGURE 15.25 For a mass on a spring oscillating in a viscous fluid, the period remains constant, but the amplitudes of the oscillations
+decrease due to the damping caused by the fluid.
+Consider the forces acting on the mass. Note that the only contribution of the weight is to change the equilibrium
+position, as discussed earlier in the chapter. Therefore, the net force is equal to the force of the spring and the
+damping force . If the magnitude of the velocity is small, meaning the mass oscillates slowly, the damping
+force is proportional to the velocity and acts against the direction of motion . The net force on the mass
+is therefore
+Writing this as a differential equation in x, we obtain
+15.23
+To determine the solution to this equation, consider the plot of position versus time shown in Figure 15.26. The
+curve resembles a cosine curve oscillating in the envelope of an exponential function where . The
+solution is
+
+736 15 • Oscillations
+15.24
+It is left as an exercise to prove that this is, in fact, the solution. To prove that it is the right solution, take the first
+and second derivatives with respect to time and substitute them into Equation 15.23. It is found that Equation
+15.24 is the solution if
+Recall that the angular frequency of a mass undergoing SHM is equal to the square root of the force constant divided
+by the mass. This is often referred to as the natural angular frequency, which is represented as
+15.25
+The angular frequency for damped harmonic motion becomes
+15.26
+FIGURE 15.26 Position versus time for the mass oscillating on a spring in a viscous fluid. Notice that the curve appears to be a cosine
+function inside an exponential envelope.
+Recall that when we began this description of damped harmonic motion, we stated that the damping must be small.
+Two questions come to mind. Why must the damping be small? And how small is small? If you gradually increase
+the amount of damping in a system, the period and frequency begin to be affected, because damping opposes and
+hence slows the back and forth motion. (The net force is smaller in both directions.) If there is very large damping,
+the system does not even oscillate—it slowly moves toward equilibrium. The angular frequency is equal to
+As b increases, becomes smaller and eventually reaches zero when . If b becomes any
+larger, becomes a negative number and is a complex number.
+Figure 15.27 shows the displacement of a harmonic oscillator for different amounts of damping. When the damping
+constant is small, , the system oscillates while the amplitude of the motion decays exponentially. This
+Access for free at openstax.org
+
+15.6 • Forced Oscillations 737
+system is said to be underdamped, as in curve (a). Many systems are underdamped, and oscillate while the
+amplitude decreases exponentially, such as the mass oscillating on a spring. The damping may be quite small, but
+eventually the mass comes to rest. If the damping constant is , the system is said to be critically
+damped, as in curve (b). An example of a critically damped system is the shock absorbers in a car. It is
+advantageous to have the oscillations decay as fast as possible. Here, the system does not oscillate, but
+asymptotically approaches the equilibrium condition as quickly as possible. Curve (c) in Figure 15.27 represents an
+overdamped system where An overdamped system will approach equilibrium over a longer period of
+time.
+FIGURE 15.27 The position versus time for three systems consisting of a mass and a spring in a viscous fluid. (a) If the damping is small
+, the mass oscillates, slowly losing amplitude as the energy is dissipated by the non-conservative force(s). The limiting case
+is (b) where the damping is . (c) If the damping is very large , the mass does not oscillate when displaced, but
+attempts to return to the equilibrium position.
+Critical damping is often desired, because such a system returns to equilibrium rapidly and remains at equilibrium
+as well. In addition, a constant force applied to a critically damped system moves the system to a new equilibrium
+position in the shortest time possible without overshooting or oscillating about the new position.
+CHECK YOUR UNDERSTANDING 15.5
+Why are completely undamped harmonic oscillators so rare?
+15.6 Forced Oscillations
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Define forced oscillations
+• List the equations of motion associated with forced oscillations
+• Explain the concept of resonance and its impact on the amplitude of an oscillator
+• List the characteristics of a system oscillating in resonance
+Sit in front of a piano sometime and sing a loud brief note at it with the dampers off its strings (Figure 15.28). It will
+sing the same note back at you—the strings, having the same frequencies as your voice, are resonating in response
+to the forces from the sound waves that you sent to them. This is a good example of the fact that objects—in this
+case, piano strings—can be forced to oscillate, and oscillate most easily at their natural frequency. In this section,
+we briefly explore applying a periodic driving force acting on a simple harmonic oscillator. The driving force puts
+energy into the system at a certain frequency, not necessarily the same as the natural frequency of the system.
+Recall that the natural frequency is the frequency at which a system would oscillate if there were no driving and no
+damping force.
+
+738 15 • Oscillations
+FIGURE 15.28 You can cause the strings in a piano to vibrate simply by producing sound waves from your voice. (credit: Matt Billings)
+Most of us have played with toys involving an object supported on an elastic band, something like the paddle ball
+suspended from a finger in Figure 15.29. Imagine the finger in the figure is your finger. At first, you hold your finger
+steady, and the ball bounces up and down with a small amount of damping. If you move your finger up and down
+slowly, the ball follows along without bouncing much on its own. As you increase the frequency at which you move
+your finger up and down, the ball responds by oscillating with increasing amplitude. When you drive the ball at its
+natural frequency, the ball’s oscillations increase in amplitude with each oscillation for as long as you drive it. The
+phenomenon of driving a system with a frequency equal to its natural frequency is called resonance. A system being
+driven at its natural frequency is said to resonate. As the driving frequency gets progressively higher than the
+resonant or natural frequency, the amplitude of the oscillations becomes smaller until the oscillations nearly
+disappear, and your finger simply moves up and down with little effect on the ball.
+FIGURE 15.29 The paddle ball on its rubber band moves in response to the finger supporting it. If the finger moves with the natural
+frequency of the ball on the rubber band, then a resonance is achieved, and the amplitude of the ball’s oscillations increases
+dramatically. At higher and lower driving frequencies, energy is transferred to the ball less efficiently, and it responds with lower-amplitude
+oscillations.
+Consider a simple experiment. Attach a mass m to a spring in a viscous fluid, similar to the apparatus discussed in
+the damped harmonic oscillator. This time, instead of fixing the free end of the spring, attach the free end to a disk
+that is driven by a variable-speed motor. The motor turns with an angular driving frequency of . The rotating disk
+provides energy to the system by the work done by the driving force . The experimental apparatus
+is shown in Figure 15.30.
+Access for free at openstax.org

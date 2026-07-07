@@ -1,0 +1,287 @@
+# REAL PDF — openstax_vol3.pdf, pages 375-382
+############################################################
+
+Chapter 8 | Atomic Structure 367
+8.18andEquation 8.15, the magnitude of the magnetic moment is
+⎛ e ⎞ ⎛ e ⎞ (8.20)
+µ = L= l(l+1)ℏ= µ l(l+1).
+⎝2m
+e
+⎠ ⎝2m
+e
+⎠ B
+Thez-component of the magnetic moment is
+⎛ e ⎞ ⎛ e ⎞ (8.21)
+µ z=−
+⎝2m
+e
+⎠
+L z=−
+⎝2m
+e
+⎠
+mℏ=−µ
+B
+m.
+The quantity µ is a fundamental unit of magnetism called the Bohr magneton, which has the value
+B
+9.3×10−24joule/tesla (J/T)or 5.8×10 −5 eV/T. Quantizationofthemagneticmomentistheresultofquantizationof
+the orbital angular momentum.
+Aswewillseeinthenextsection,thetotalmagneticdipolemomentofthehydrogenatomisduetoboththeorbitalmotion
+of the electron and its intrinsic spin. For now, we ignore the effect of electron spin.
+Example 8.3
+Orbital Magnetic Dipole Moment
+Whatisthemagnitudeoftheorbitaldipolemagneticmoment µ ofanelectroninthehydrogenatominthe(a)s
+state, (b)pstate, and (c)dstate? (Assume that the spin of the electron is zero.)
+Strategy
+The magnetic momentum of the electron is related to its orbital angular momentum L. For the hydrogen atom,
+this quantity is related to the orbital angular quantum number l. The states are given in spectroscopic notation,
+which relates a letter (s,p,d, etc.) to a quantum number.
+Solution
+The magnitude of the magnetic moment is given inEquation 8.20:
+⎛ e ⎞ ⎛ e ⎞
+µ = L= l(l+1)ℏ= µ l(l+1).
+⎝2m
+e
+⎠ ⎝2m
+e
+⎠ B
+a. For thesstate, l=0 so we have µ =0 and µ z=0.
+b. For thepstate, l=1 and we have
+µ = µ 1(1+1)= 2µ
+B B
+µ z=−µ
+B
+m, wherem=(−1, 0, 1), so
+µ z= µ
+B
+, 0, −µ
+B
+.
+c. For thedstate, l=2 and we obtain
+µ = µ 2(2+1)= 6µ
+B B
+µ z=−µ
+B
+m, wherem=(−2, −1, 0, 1, 2), so
+µ z=2µ
+B
+, µ
+B
+, 0, −µ
+B
+, −2µ
+B
+.
+Significance
+In the s state, there is no orbital angular momentum and therefore no magnetic moment. This does not mean
+thattheelectronisatrest,justthattheoverallmotionoftheelectrondoesnotproduceamagnetic field.Inthe
+p state, the electron has a magnetic moment with three possible values for the z-component of this magnetic
+moment;thismeansthatmagneticmomentcanpointinthreedifferentpolardirections—eachantiparalleltothe
+orbital angular momentum vector.Inthe dstate, the electron has a magnetic moment with five possible values
+forthez-componentofthismagneticmoment.Inthiscase,themagneticmomentcanpointinfivedifferentpolar
+directions.
+Ahydrogenatomhasamagneticfield,soweexpectthehydrogenatomtointeractwithanexternalmagneticfield—suchas
+
+368 Chapter 8 | Atomic Structure
+thepushandpullbetweentwobarmagnets.FromForce and Torque on aCurrent Loop (http://cnx.org/content/
+m58743/latest/#fs-id1171360288680) , we know that when a current loop interacts with an external magnetic field
+→
+B , it experiences a torque given by
+→ τ =I ⎛→ A × → B ⎞ = → µ × → B , (8.22)
+⎝ ⎠
+where I is the current, → A is the area of the loop, → µ is the magnetic moment, and → B is the external magnetic
+field. This torque acts to rotate the magnetic moment vector of the hydrogen atom to align with the external magnetic
+field. Because mechanical work is done by the external magnetic field on the hydrogen atom, we can talk about energy
+transformationsintheatom.Thepotentialenergyofthehydrogenatomassociatedwiththismagneticinteractionisgiven
+byEquation 8.23:
+U =− → µ · → B . (8.23)
+If the magnetic moment is antiparallel to the external magnetic field, the potential energy is large, but if the magnetic
+momentisparalleltothefield,thepotentialenergyissmall.Workdoneonthehydrogenatomtorotatetheatom’smagnetic
+moment vector in the direction of the external magnetic field is therefore associated with a drop in potential energy. The
+energy of the system is conserved, however, because a drop in potential energy produces radiation (the emission of a
+photon). These energy transitions are quantized because the magnetic moment can point in only certain directions.
+If the external magnetic field points in the positive z-direction, the potential energy associated with the orbital magnetic
+dipole moment is
+U(θ)=−µBcosθ=−µ
+z
+B=−(−µ
+B
+m)B=mµ
+B
+B, (8.24)
+where µ is the Bohr magneton and m is the angular momentum projection quantum number (or magnetic orbital
+B
+quantum number), which has the values
+m=−l, −l+1,..., 0,..., l−1, l. (8.25)
+For example, in the l=1 electron state, the total energy of the electron is split into three distinct energy levels
+corresponding to U =−µ B, 0, µ B.
+B B
+The splitting of energy levels by an external magnetic field is called the Zeeman effect. Ignoring the effects of electron
+spin,transitionsfromthe l=1 statetoacommonlowerenergystateproducethreecloselyspacedspectrallines(Figure
+8.11,leftcolumn).Likewise,transitionsfromthe l=2 stateproducefivecloselyspacedspectrallines(rightcolumn).The
+separationoftheselinesisproportionaltothestrengthoftheexternalmagneticfield.Thiseffecthasmanyapplications.For
+example,thesplittingoflinesinthehydrogenspectrumoftheSunisusedtodeterminethestrengthoftheSun’smagnetic
+field. Many such magnetic field measurements can be used to make a map of the magnetic activity at the Sun’s surface
+called amagnetogram(Figure 8.12).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 369
+Figure 8.11 The Zeeman effect refers to the splitting of
+spectral lines by an external magnetic field. In the left column,
+the energy splitting occurs due to transitions from the state
+(n=2, l=1) to a lower energy state; and in the right column,
+energy splitting occurs due to transitions from the state
+(n=2,l=2) to a lower-energy state. The separation of these
+lines is proportional to the strength of the external magnetic
+field.
+Figure 8.12 A magnetogram of the Sun. The bright and dark
+spots show significant magnetic activity at the surface of the
+Sun. (credit: NASA, SDO)
+
+370 Chapter 8 | Atomic Structure
+8.3 | Electron Spin
+Learning Objectives
+By the end of this section, you will be able to:
+• Express the state of an electron in a hydrogen atom in terms of five quantum numbers
+• Use quantum numbers to calculate the magnitude and direction of the spin and magnetic
+moment of an electron
+• Explain the fine and hyperfine structure of the hydrogen spectrum in terms of magnetic
+interactions inside the hydrogen atom
+Inthissection,weconsidertheeffectsofelectronspin.Spinintroducestwoadditionalquantumnumberstoourmodelofthe
+hydrogenatom.Bothwerediscoveredbylookingatthefinestructureofatomicspectra.Spinisafundamentalcharacteristic
+ofallparticles,notjustelectrons,andisanalogoustotheintrinsicspinofextendedbodiesabouttheirownaxes,suchasthe
+daily rotation of Earth.
+Spinisquantizedinthesamemannerasorbitalangularmomentum.Ithasbeenfoundthatthemagnitudeoftheintrinsic
+spin angular momentumSof an electron is given by
+S= s(s+1)ℏ, (8.26)
+wheresisdefinedtobethespinquantumnumber.ThisissimilartothequantizationofLgiveninEquation8.4,except
+that the only value allowed for s for an electron is s=1/2. The electron is said to be a “spin-half particle.” The spin
+projection quantum number m is associated with thez-components of spin, expressed by
+s
+S z=m sℏ. (8.27)
+In general, the allowed quantum numbers are
+m s=−s, −s+1, …, 0, …, +s−1, s. (8.28)
+For the special case of an electron (s=1/2),
+m s= − 1 , 1 . (8.29)
+2 2
+Directionsofintrinsicspinarequantized,justastheywerefororbitalangularmomentum.The m s=−1/2 stateiscalled
+the“spin-down”stateandhasaz-componentofspin, s z=−1/2; them s= +1/2 stateiscalledthe“spin-up”stateand
+has az-component of spin, s z= +1/2. These states are shown inFigure 8.13.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 371
+Figure 8.13 The two possible states of electron spin.
+The intrinsic magnetic dipole moment of an electron µ can also be expressed in terms of the spin quantum number. In
+e
+analogy to the orbital angular momentum, the magnitude of the electron magnetic moment is
+⎛ e ⎞ (8.30)
+µ s=
+⎝2m
+e
+⎠
+S.
+According to the special theory of relativity, this value is low by a factor of 2. Thus, in vector form, the spin magnetic
+moment is
+→ ⎛ e ⎞→ (8.31)
+µ = ⎝m e⎠ S .
+Thez-component of the magnetic moment is
+⎛ e ⎞ ⎛ e ⎞ (8.32)
+µ z=− ⎝m e⎠ S z=− ⎝m e⎠ m sℏ.
+Thespinprojectionquantumnumberhasjusttwovalues ⎛
+⎝
+m s= ±1/2⎞
+⎠
+, sothez-componentofthemagneticmomentalso
+has just two values:
+⎛ e ⎞ (8.33)
+µ z= ±
+⎝2m
+e
+⎠
+= ±µ
+B
+ℏ,
+where µ isoneBohrmagneton.Anelectronismagnetic,soweexpecttheelectrontointeractwithothermagneticfields.
+B
+We consider two special cases: the interaction of a free electron with an external (nonuniform) magnetic field, and an
+electron in a hydrogen atom with a magnetic field produced by the orbital angular momentum of the electron.
+Example 8.4
+Electron Spin and Radiation
+Ahydrogenatominthegroundstateisplacedinanexternaluniformmagneticfield(B=1.5T).Determinethe
+frequency of radiation produced in a transition between the spin-up and spin-down states of the electron.
+
+372 Chapter 8 | Atomic Structure
+Strategy
+The spin projection quantum number is m s= ±1/2, so thez-component of the magnetic moment is
+⎛ e ⎞
+µ z= ±
+⎝2m
+e
+⎠
+= ±µ
+B
+ℏ.
+The potential energy associated with the interaction between the electron magnetic moment and the external
+magnetic field is
+U =−µ
+z
+B= ∓µ
+B
+B.
+The frequency of light emitted is proportional to the energy (ΔE) difference between these two states.
+Solution
+The energy difference between these states is ΔE=2µ B, so the frequency of radiation produced is
+B
+⎛ −5 ⎞
+2 5.79× 10 eV (1.5T)
+f = ΔE = 2µ B B = ⎝ T ⎠ =4.2×10 10cycles .
+h h −15 s
+4.136×10 eV ·s
+Significance
+The electron magnetic moment couples with the external magnetic field. The energyofthis system is different
+whether the electron is aligned or not with the proton. The frequency of radiation produced by a transition
+between these states is proportional to the energy difference. If we double the strength of the magnetic field,
+holding all other things constant, the frequency of the radiation doubles and its wavelength is cut in half.
+In a hydrogen atom, the electron magnetic moment can interact with the magnetic field produced by the orbital angular
+→
+momentum of the electron, a phenomenon called spin-orbit coupling. The orbital angular momentum ( L ), orbital
+magneticmoment( → µ ),spinangularmomentum( → S ),andspinmagneticmoment( → µ s )vectorsareshowntogether
+inFigure 8.14.
+Just as the energy levels of a hydrogen atom can be split by an external magnetic field, so too are the energy levels of a
+hydrogenatomsplitbyinternalmagneticfieldsoftheatom.Ifthemagneticmomentoftheelectronandorbitalmagnetic
+momentoftheelectronareantiparallel,thepotentialenergyfromthemagneticinteractionisrelativelyhigh,butwhenthese
+moments are parallel, the potential energy is relatively small. Transition from each of these two states to a lower-energy
+levelresultsintheemissionofaphotonofslightlydifferentfrequency.Thatis,thespin-orbitcoupling“splits”thespectral
+line expected from a spin-less electron. Thefine structureof the hydrogen spectrum is explained by spin-orbit coupling.
+Figure 8.14 Spin-orbit coupling is the interaction of an
+electron’s spin magnetic moment → µ s with its orbital
+magnetic moment → µ .
+l
+TheStern-Gerlachexperimentprovidesexperimentalevidencethatelectronshavespinangularmomentum.Theexperiment
+passesastreamofsilver(Ag)atomsthroughanexternal,nonuniformmagneticfield.TheAgatomhasanorbitalangular
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 373
+momentumofzeroandcontainsasingleunpairedelectronintheoutershell.Therefore,thetotalangularmomentumofthe
+Agatomisdueentirelytothespinoftheouterelectron(s=1/2).Duetoelectronspin,theAgatomsactastinymagnets
+astheypassthroughthemagneticfield.These“magnets”havetwopossibleorientations,whichcorrespondtothespin-up
+and-downstatesoftheelectron.Themagneticfielddivertsthespinupatomsinonedirectionandthespin-downatomsin
+another direction. This produces two distinct bands on a screen (Figure 8.15).
+Figure 8.15 In the Stern-Gerlach experiment, an external, nonuniform
+magnetic field diverts a beam of electrons in two different directions. This
+result is due to the quantization of spin angular momentum.
+Accordingtoclassicalpredictions,theangularmomentum(and,therefore,themagneticmoment)oftheAgatomcanpoint
+inanydirection,sooneexpects,instead,acontinuoussmudgeonthescreen.TheresultingtwobandsoftheStern-Gerlach
+experiment provide startling support for the ideas of quantum mechanics.
+VisitPhETExplorations:Stern-GerlachExperiment(https://openstaxcollege.org/l/21sterngerlach)
+to learn more about the Stern-Gerlach experiment.
+8.2 CheckYourUnderstandingIftheStern-Gerlachexperimentyieldedfourdistinctbandsinsteadoftwo,
+what might be concluded about the spin quantum number of the charged particle?
+Just like an electron, a proton is spin 1/2 and has a magnetic moment. (According to nuclear theory, this moment is due
+totheorbitalmotionofquarkswithintheproton.)Thehyperfinestructureofthehydrogenspectrumisexplainedbythe
+interaction between the magnetic moment of the proton and the magnetic moment of the electron, an interaction known
+asspin-spincoupling.Theenergyoftheelectron-protonsystemisdifferentdependingonwhetherornotthemomentsare
+aligned. Transitions between these states ( spin-flip transitions) result in the emission of a photon with a wavelength of
+λ≈21cm (inthe radio range). The 21-cm line inatomic spectroscopy isa“fingerprint” ofhydrogengas.Astronomers
+exploit this spectral line to map the spiral arms of galaxies, which are composed mostly of hydrogen (Figure 8.16).

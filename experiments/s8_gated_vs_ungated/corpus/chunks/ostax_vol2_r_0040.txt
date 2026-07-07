@@ -1,0 +1,273 @@
+# REAL PDF — openstax_vol2.pdf, pages 230-235
+############################################################
+
+220 Chapter 5 | Electric Charges and Fields
+CHAPTER 5 REVIEW
+KEY TERMS
+charging by induction processbywhichanelectricallychargedobjectbroughtnearaneutralobjectcreatesacharge
+separation in that object
+conduction electron electron that is free to move away from its atomic orbit
+conductor materialthatallowselectronstomoveseparatelyfromtheiratomicorbits;objectwithpropertiesthatallow
+charges to move about freely within it
+continuous charge distribution totalsourcechargecomposedofsolargeanumberofelementarychargesthatitmust
+be treated as continuous, rather than discrete
+coulomb SI unit of electric charge
+Coulomb force another term for the electrostatic force
+Coulomb’s law mathematical equation calculating the electrostatic force vector between two charged particles
+dipole two equal and opposite charges that are fixed close to each other
+dipole moment propertyofadipole;itcharacterizesthecombinationofdistancebetweentheoppositecharges,andthe
+magnitude of the charges
+electric charge physical property of an object that causes it to be attracted toward or repelled from another charged
+object; each charged object generates and is influenced by a force called an electric force
+electric field physical phenomenon created by a charge; it “transmits” a force between a two charges
+electric force noncontact force observed between electrically charged objects
+electron particle surrounding the nucleus of an atom and carrying the smallest unit of negative charge
+electrostatic attraction phenomenon of two objects with opposite charges attracting each other
+electrostatic force amountanddirectionofattractionorrepulsionbetweentwochargedbodies;theassumptionisthat
+the source charges remain motionless
+electrostatic repulsion phenomenon of two objects with like charges repelling each other
+electrostatics study of charged objects which are not in motion
+field line smooth, usually curved line that indicates the direction of the electric field
+field line density numberoffieldlinespersquaremeterpassingthroughanimaginaryarea;itspurposeistoindicatethe
+field strength at different points in space
+induced dipole typically an atom, or a spherically symmetric molecule; a dipole created due to opposite forces
+displacing the positive and negative charges
+infinite plane flatsheetinwhichthedimensionsmakinguptheareaaremuch,muchgreaterthanitsthickness,andalso
+much, much greater than the distance at which the field is to be calculated; its field is constant
+infinite straight wire straight wire whose length is much, much greater than either of its other dimensions, and also
+much, much greater than the distance at which the field is to be calculated
+insulator material that holds electrons securely within their atomic orbits
+ion atom or molecule with more or fewer electrons than protons
+law of conservation of charge net electric charge of a closed system is constant
+linear charge density amountofchargeinanelementofachargedistributionthatisessentiallyone-dimensional(the
+width and height are much, much smaller than its length); its units are C/m
+neutron neutral particle in the nucleus of an atom, with (nearly) the same mass as a proton
+permanent dipole typically a molecule; a dipole created by the arrangement of the charged particles from which the
+dipole is created
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 221
+permittivity of vacuum
+also called the permittivity offree space, and constant describing the strength ofthe electric
+force in a vacuum
+polarization slight shifting of positive and negative charges to opposite sides of an object
+principle of superposition useful fact that we can simply add up all of the forces due to charges acting on an object
+proton particleinthenucleusofanatomandcarryingapositivechargeequalinmagnitudetotheamountofnegative
+charge carried by an electron
+static electricity buildupofelectricchargeonthesurfaceofanobject;thearrangementofthechargeremainsconstant
+(“static”)
+superposition conceptthatstatesthatthenetelectricfieldofmultiplesourcechargesisthevectorsumofthefieldof
+each source charge calculated individually
+surface charge density amount of charge in an element of a two-dimensional charge distribution (the thickness is
+small); its units are C/m2
+volume charge density amountofchargeinanelementofathree-dimensionalchargedistribution;itsunitsare C/m 3
+KEY EQUATIONS
+Coulomb’s law → F (r)= 1 q 1 q 2^ r
+12 4πε
+0
+r2 12
+12
+Superposition of electric forces N
+→ F (r)=
+4π
+1
+ε 0
+Q
+i
+∑
+=1 r
+q
+i 2
+i^ ri
+Electric force due to an electric field → →
+F =Q E
+Electric field at pointP N
+→ E (P)≡
+4π
+1
+ε 0i
+∑
+=1 r
+q
+i 2
+i^ ri
+Field of an infinite wire → E (z)= 4π 1 ε 2 z λ^ k
+0
+Field of an infinite plane → σ ^
+E = k
+2ε
+0
+Dipole moment → →
+p ≡q d
+Torque on dipole in external E-field →τ
+=
+→
+p ×
+→
+E
+SUMMARY
+5.1Electric Charge
+• Thereareonlytwotypesofcharge,whichwecallpositiveandnegative.Likechargesrepel,unlikechargesattract,
+and the force between charges decreases with the square of the distance.
+• Thevastmajorityofpositivechargeinnatureiscarriedbyprotons,whereasthevastmajorityofnegativechargeis
+carriedbyelectrons.Theelectricchargeofoneelectronisequalinmagnitudeandoppositeinsigntothechargeof
+one proton.
+• Anionisanatomormoleculethathasnonzerototalchargeduetohavingunequalnumbersofelectronsandprotons.
+• The SI unit for charge is the coulomb (C), with protons and electrons having charges of opposite sign but equal
+magnitude; the magnitude of this basic charge is e≡1.602×10 −19 C
+
+222 Chapter 5 | Electric Charges and Fields
+• Both positive and negative charges exist in neutral objects and can be separated by bringing the two objects into
+physicalcontact;rubbingtheobjectstogethercanremoveelectronsfromthebondsinoneobjectandplacethemon
+the other object, increasing the charge separation.
+• Formacroscopicobjects,negativelychargedmeansanexcessofelectronsandpositivelychargedmeansadepletion
+of electrons.
+• The law of conservation of charge states that the net charge of a closed system is constant.
+5.2Conductors, Insulators, and Charging by Induction
+• A conductor is a substance that allows charge to flow freely through its atomic structure.
+• An insulator holds charge fixed in place.
+• Polarization is the separation of positive and negative charges in a neutral object. Polarized objects have their
+positive and negative charges concentrated in different areas, giving them a charge distribution.
+5.3Coulomb's Law
+• Coulomb’s law gives the magnitude of the force between point charges. It is
+→ F (r)= 1 q 1 q 2^ r
+12 4πε
+0
+r2 12
+12
+where q and q are two point charges separated by a distance r. This Coulomb force is extremely basic,
+2 2
+since most charges are due to point-like particles. It is responsible for all electrostatic effects and underlies most
+macroscopic forces.
+5.4Electric Field
+• Theelectricfieldisanalterationofspacecausedbythepresenceofanelectriccharge.Theelectricfieldmediates
+the electric force between a source charge and a test charge.
+• The electric field, like the electric force, obeys the superposition principle
+• The field is a vector; by definition, it points away from positive charges and toward negative charges.
+5.5Calculating Electric Fields of Charge Distributions
+• Averylargenumberofchargescanbetreatedasacontinuouschargedistribution,wherethecalculationofthefield
+requires integration. Common cases are:
+◦ one-dimensional (like a wire); uses a line charge density λ
+◦ two-dimensional (metal plate); uses surface charge density σ
+◦ three-dimensional (metal sphere); uses volume charge density ρ
+• The “source charge” is a differential amount of charge dq. Calculating dq depends on the type of source charge
+distribution:
+dq=λdl; dq=σdA; dq= ρdV.
+• Symmetry of the charge distribution is usually key.
+• Important special cases are the field of an “infinite” wire and the field of an “infinite” plane.
+5.6Electric Field Lines
+• Electric field diagrams assist in visualizing the field of a source charge.
+• The magnitude of the field is proportional to the field line density.
+• Field vectors are everywhere tangent to field lines.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 223
+5.7Electric Dipoles
+• Ifapermanentdipoleisplacedinanexternalelectricfield,itresultsinatorquethatalignsitwiththeexternalfield.
+• Ifanonpolaratom (ormolecule) isplaced inanexternal field, itgainsaninduced dipole that isaligned withthe
+external field.
+• The net field is the vector sum of the external field plus the field of the dipole (physical or induced).
+• The strength of the polarization is described by the dipole moment of the dipole, → p =q → d .
+CONCEPTUAL QUESTIONS
+5.1Electric Charge
+1. There are very large numbers of charged particles in
+most objects. Why, then, don’t most objects exhibit static
+electricity?
+2. Why do most objects tend to contain nearly equal
+numbers of positive and negative charges?
+3. Apositivelychargedrodattractsasmallpieceofcork.
+(a) Can we conclude that the cork is negatively charged?
+(b) The rod repels another small piece of cork. Can we
+conclude that this piece is positively charged?
+4. Twobodiesattracteachotherelectrically.Dotheyboth
+havetobecharged?Answerthesamequestionifthebodies
+repel one another.
+10. Whilewalkingonarug,apersonfrequentlybecomes
+5. How would you determine whether the charge on a
+chargedbecause oftherubbingbetween hisshoesandthe
+particular rod is positive or negative?
+rug. This charge then causes a spark and a slight shock
+whenthepersongetsclosetoametalobject.Whyarethese
+shocks so much more common on a dry day?
+5.2Conductors, Insulators, and Charging by
+Induction 11. Compare charging by conduction to charging by
+induction.
+6. Aneccentricinventorattemptstolevitateacorkballby
+wrapping it with foil and placing a large negative charge
+on the ball and then putting a large positive charge on 12. Smallpiecesoftissueareattractedtoachargedcomb.
+the ceiling of his workshop. Instead, while attempting to Soon after sticking to the comb, the pieces of tissue are
+placealargenegativechargeontheball,thefoilfliesoff. repelled from it. Explain.
+Explain.
+13. Trucksthatcarrygasolineoftenhavechainsdangling
+7. When a glass rod is rubbed with silk, it becomes from their undercarriages and brushing the ground. Why?
+positive and the silk becomes negative—yet both attract
+dust. Does the dust have a third type of charge that is 14. Why do electrostatic experiments work so poorly in
+attracted to both positive and negative? Explain. humid weather?
+8. Why does a car always attract dust right after it is 15. Why do some clothes cling together after being
+polished? (Note that car wax and car tires are insulators.) removed from the clothes dryer? Does this happen if
+they’re still damp?
+9. Doestheunchargedconductorshownbelowexperience
+a net electric force? 16. Can induction be used to produce charge on an
+insulator?
+
+224 Chapter 5 | Electric Charges and Fields
+17. Suppose someone tells you that rubbing quartz with
+cottonclothproducesathirdkindofchargeonthequartz. Distributions
+Describe what you might do to test this claim.
+27. Giveaplausibleargumentastowhytheelectricfield
+outside an infinite charged sheet is constant.
+18. Ahandheldcopperroddoesnotacquireachargewhen
+you rub it with a cloth. Explain why.
+28. Compare the electric fields of an infinite sheet of
+charge, an infinite, charged conducting plate, and infinite,
+19. Supposeyouplaceachargeqnearalargemetalplate. oppositely charged parallel plates.
+(a) If q is attracted to the plate, is the plate necessarily
+charged? (b) If q is repelled by the plate, is the plate
+29. Describetheelectricfieldsofaninfinitechargedplate
+necessarily charged?
+and of two infinite, charged parallel plates in terms of the
+electric field of an infinite sheet of charge.
+5.3Coulomb's Law
+30. A negative charge is placed at the center of a ring of
+20. Would defining the charge on an electron to be uniformpositivecharge.Whatisthemotion(ifany)ofthe
+positive have any effect on Coulomb’s law? charge? What if the charge were placed at a point on the
+axis of the ring other than the center?
+21. Anatomicnucleuscontainspositivelychargedprotons
+andunchargedneutrons.Sincenucleidostaytogether,what
+must we conclude about the forces between these nuclear 5.6Electric Field Lines
+particles?
+31. If a point charge is released from rest in a uniform
+electricfield,willitfollowafieldline?Willitdosoifthe
+22. Istheforcebetweentwofixedchargesinfluencedby electric field is not uniform?
+the presence of other charges?
+32. Underwhatconditions,ifany,willthetrajectoryofa
+charged particle not follow a field line?
+5.4Electric Field
+23. When measuring an electric field, could we use a 33. Howwouldyouexperimentallydistinguishanelectric
+negative rather than a positive test charge? field from a gravitational field?
+24. During fair weather, the electric field due to the net 34. A representation of an electric field shows 10 field
+charge on Earth points downward. Is Earth charged linesperpendiculartoasquareplate.Howmanyfieldlines
+positively or negatively? should pass perpendicularly through the plate to depict a
+field with twice the magnitude?
+25. Iftheelectricfieldatapointonthelinebetweentwo
+charges is zero, what do you know about the charges? 35. Whatistheratioofthenumberofelectric fieldlines
+leaving a charge 10qand a chargeq?
+26. Two charges lie along the x-axis. Is it true that the
+netelectricfieldalwaysvanishesatsomepoint(otherthan
+infinity) along thex-axis? 5.7Electric Dipoles
+36. What are the stable orientation(s) for a dipole in an
+external electric field? What happens if the dipole is
+5.5Calculating Electric Fields of Charge slightly perturbed from these orientations?
+PROBLEMS
+38. If 1.80×10 20 electrons move through a pocket
+5.1Electric Charge
+calculator during a full day’s operation, how many
+37. Common static electricity involves charges ranging coulombs of charge moved through it?
+from nanocoulombs to microcoulombs. (a) How many
+electronsareneededtoformachargeof−2.00nC?(b)How
+39. To start a car engine, the car battery moves
+many electrons must be removed from a neutral object to
+leave a net charge of 0.500µC?
+3.75×1021 electrons through the starter motor. How
+many coulombs of charge were moved?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

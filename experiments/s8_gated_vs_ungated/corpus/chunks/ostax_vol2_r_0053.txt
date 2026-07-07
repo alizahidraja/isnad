@@ -1,0 +1,282 @@
+# REAL PDF — openstax_vol2.pdf, pages 326-335
+############################################################
+
+316 Chapter 7 | Electric Potential
+7.4 | Determining Field from Potential
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how to calculate the electric field in a system from the given potential
+• Calculate the electric field in a given direction from a given potential
+• Calculate the electric field throughout space from a given potential
+Recall that we were able, in certain systems, to calculate the potential by integrating over the electric field. As you may
+already suspect, this means that we may calculate the electric field by taking derivatives of the potential, although going
+→
+fromascalartoavectorquantityintroducessomeinterestingwrinkles.Wefrequentlyneed E tocalculatetheforceina
+system;sinceitisoftensimplertocalculatethepotentialdirectly,therearesystemsinwhichitisusefultocalculateVand
+→
+then derive E from it.
+In general, regardless of whether the electric field is uniform, it points in the direction of decreasing potential, because
+→
+the force on a positive charge is in the direction of E and also in the direction of lower potential V. Furthermore, the
+→
+magnitude of E equals the rate of decrease of V with distance. The faster V decreases over distance, the greater the
+electric field. This gives us the following result.
+Relationship between Voltage and Uniform Electric Field
+In equation form, the relationship between voltage and uniform electric field is
+E= −
+ΔV
+Δs
+where Δs isthedistanceoverwhichthechangeinpotential ΔV takesplace.TheminussigntellsusthatEpointsin
+thedirectionofdecreasingpotential.Theelectricfieldissaidtobethegradient(asingradeorslope)oftheelectric
+potential.
+For continually changing potentials, ΔV and Δs become infinitesimals, and we need differential calculus to determine
+theelectricfield.AsshowninFigure7.27,ifwetreatthedistance Δs asverysmallsothattheelectricfieldisessentially
+constant over it, we find that
+dV
+E s= −
+ds
+.
+Figure 7.27 The electric field component along the
+displacement Δs is given by E= −
+ΔV
+. Note thatAandB
+Δs
+are assumed to be so close together that the field is constant
+along Δs.
+Therefore, the electric field components in the Cartesian directions are given by
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 317
+E x= − ∂
+∂
+V
+x
+, E y= − ∂
+∂
+V
+y
+, E z= − ∂
+∂
+V
+z
+. (7.13)
+This allows us to define the “grad” or “del” vector operator, which allows us to compute the gradient in one step. In
+Cartesian coordinates, it takes the form
+→ ^ ∂ ^ ∂ ^ ∂ (7.14)
+∇ = i + j + k .
+∂x ∂y ∂z
+With this notation, we can calculate the electric field from the potential with
+→ → (7.15)
+E =− ∇ V,
+a process we call calculating thegradientof the potential.
+Ifwehaveasystemwitheithercylindricalorsphericalsymmetry,weonlyneedtousethedeloperatorintheappropriate
+coordinates:
+Cylindrical: → ∇ = ^ r ∂ ∂ r + φ ^1 r ∂ ∂ φ + ^ z ∂ ∂ z (7.16)
+Spherical: → ∇ = ^ r ∂ ∂ r + ^ θ1 r ∂ ∂ θ + φ ^ rs 1 inθ ∂ ∂ φ (7.17)
+Example 7.17
+Electric Field of a Point Charge
+Calculate the electric field of a point charge from the potential.
+Strategy
+q
+The potential is known to be V =k
+r
+, which has a spherical symmetry. Therefore, we use the spherical del
+→ →
+operator in the formula E =− ∇ V.
+Solution
+Performing this calculation gives us
+→ E =− ⎛ ⎝ ^ r ∂ ∂ r + ^ θ1 r ∂ ∂ θ + φ ^ rs 1 inθ ∂ ∂ φ ⎞ ⎠ k q r =−kq ⎛ ⎝ ^ r ∂ ∂ r 1 r + ^ θ1 r ∂ ∂ θ 1 r + φ ^ rs 1 inθ ∂ ∂ φ 1 r ⎞ ⎠ .
+This equation simplifies to
+→ E =−kq ⎛ ^ r −1 + ^ θ0+ φ ^ 0 ⎞ =k q ^ r
+⎝ r2 ⎠ r2
+as expected.
+
+318 Chapter 7 | Electric Potential
+Significance
+Wenotonlyobtainedtheequationfortheelectricfieldofapointparticlethatwe’veseenbefore,wealsohavea
+→
+demonstration that E points in the direction of decreasing potential, as shown inFigure 7.28.
+Figure 7.28 Electric field vectors inside and outside a uniformly charged
+sphere.
+Example 7.18
+Electric Field of a Ring of Charge
+UsethepotentialfoundinExample7.8tocalculatetheelectricfieldalongtheaxisofaringofcharge(Figure
+7.29).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 319
+Figure 7.29 We want to calculate the electric field from the
+electric potential due to a ring charge.
+Strategy
+In this case, we are only interested in one dimension, thez-axis. Therefore, we use E z= − ∂
+∂
+V
+z
+q
+with the potential V =k tot found previously.
+z2+R2
+Solution
+Taking the derivative of the potential yields
+kq q z
+E z= −
+∂
+∂
+z z2+
+tot
+R2
+=k
+⎛z2+
+to
+R
+t
+2⎞ 3/2
+.
+⎝ ⎠
+Significance
+Again,thismatchestheequationfortheelectricfieldfoundpreviously.Italsodemonstratesasysteminwhich
+using the full del operator is not necessary.
+7.11 CheckYourUnderstandingWhichcoordinatesystemwouldyouusetocalculatetheelectricfieldofa
+dipole?
+7.5 | Equipotential Surfaces and Conductors
+Learning Objectives
+By the end of this section, you will be able to:
+• Define equipotential surfaces and equipotential lines
+• Explain the relationship between equipotential lines and electric field lines
+• Map equipotential lines for one or two point charges
+• Describe the potential of a conductor
+• Compare and contrast equipotential lines and elevation lines on topographic maps
+We can represent electric potentials (voltages) pictorially, just as we drew pictures to illustrate electric fields. This is not
+
+320 Chapter 7 | Electric Potential
+surprising, since thetwoconcepts arerelated. Consider Figure 7.30,which showsanisolated positive pointchargeand
+its electric field lines, which radiate out from a positive charge and terminate on negative charges. We use red arrows to
+represent the magnitude and direction of the electric field, and we use black lines to represent places where the electric
+potentialisconstant.Thesearecalledequipotentialsurfacesinthreedimensions,orequipotentiallinesintwodimensions.
+Thetermequipotentialisalsousedasanoun,referringtoanequipotentiallineorsurface.Thepotentialforapointcharge
+is the same anywhere on an imaginary sphere of radius r surrounding the charge. This is true because the potential for a
+pointchargeisgivenby V =kq/r andthushasthesamevalueatanypointthatisagivendistancerfromthecharge.An
+equipotentialsphereisacircleinthetwo-dimensionalviewofFigure7.30.Becausetheelectricfieldlinespointradially
+away from the charge, they are perpendicular to the equipotential lines.
+Figure 7.30 An isolated point chargeQwith its electric field
+lines in red and equipotential lines in black. The potential is the
+same along each equipotential line, meaning that no work is
+required to move a charge anywhere along one of those lines.
+Work is needed to move a charge from one equipotential line to
+another. Equipotential lines are perpendicular to electric field
+lines in every case. For a three-dimensional version, explore the
+first media link.
+Itisimportanttonotethatequipotentiallinesarealwaysperpendiculartoelectricfieldlines.Noworkisrequiredtomove
+a charge along an equipotential, since ΔV =0. Thus, the work is
+W =−ΔU =−qΔV =0.
+Workiszeroifthedirectionoftheforceisperpendiculartothedisplacement.ForceisinthesamedirectionasE,somotion
+along an equipotential must be perpendicular toE. More precisely, work is related to the electric field by
+→ → → →
+W = F ⋅ d =q E ⋅ d =qEdcosθ=0.
+Notethatinthisequation,EandFsymbolizethemagnitudesoftheelectricfieldandforce,respectively.NeitherqnorE
+iszero;disalsonotzero.So cosθ mustbe0,meaning θ mustbe 90º.Inotherwords,motionalonganequipotentialis
+perpendicular toE.
+Oneoftherulesforstaticelectricfieldsandconductorsisthattheelectricfieldmustbeperpendiculartothesurfaceofany
+conductor.Thisimpliesthataconductorisanequipotentialsurfaceinstaticsituations.Therecanbenovoltagedifference
+acrossthesurfaceofaconductor,orchargeswillflow.Oneoftheusesofthisfactisthataconductorcanbefixedatwhat
+weconsiderzerovoltsbyconnectingittotheearthwithagoodconductor—aprocesscalledgrounding.Groundingcanbe
+ausefulsafetytool.Forexample,groundingthemetalcaseofanelectricalapplianceensuresthatitisatzerovoltsrelative
+to Earth.
+Becauseaconductorisanequipotential,itcanreplaceanyequipotentialsurface.Forexample,inFigure 7.30,acharged
+sphericalconductorcanreplacethepointcharge,andtheelectricfieldandpotentialsurfacesoutsideofitwillbeunchanged,
+confirming the contention that a spherical charge distribution is equivalent to a point charge at its center.
+Figure 7.31 shows the electric field and equipotential lines for two equal and opposite charges. Given the electric field
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 321
+lines, the equipotential lines can be drawn simply by making them perpendicular to the electric field lines. Conversely,
+giventheequipotentiallines,asinFigure 7.32(a),theelectricfieldlinescanbedrawnbymakingthemperpendicularto
+the equipotentials, as inFigure 7.32(b).
+Figure 7.31 The electric field lines and equipotential lines for two equal but
+opposite charges. The equipotential lines can be drawn by making them
+perpendicular to the electric field lines, if those are known. Note that the
+potential is greatest (most positive) near the positive charge and least (most
+negative) near the negative charge. For a three-dimensional version, explore the
+first media link.
+Figure 7.32 (a) These equipotential lines might be measured with a voltmeter in a laboratory experiment. (b) The
+corresponding electric field lines are found by drawing them perpendicular to the equipotentials. Note that these fields are
+consistent with two equal negative charges. For a three-dimensional version, play with the first media link.
+To improve your intuition, we show a three-dimensional variant of the potential in a system with two opposing charges.
+Figure7.33displaysathree-dimensionalmapofelectricpotential,wherelinesonthemapareforequipotentialsurfaces.
+Thehillisatthepositivecharge,andthetroughisatthenegativecharge.Thepotentialiszerofarawayfromthecharges.
+Note that the cut off at a particular potential implies that the charges are on conducting spheres with a finite radius.
+
+322 Chapter 7 | Electric Potential
+Figure 7.33 Electric potential map of two opposite charges of
+equal magnitude on conducting spheres. The potential is
+negative near the negative charge and positive near the positive
+charge.
+Atwo-dimensionalmapofthecross-sectionalplanethatcontainsbothchargesisshowninFigure 7.34.Thelinethatis
+equidistantfromthetwooppositechargescorrespondstozeropotential,sinceatthepointsontheline,thepositivepotential
+fromthepositivechargecancelsthenegativepotentialfromthenegativecharge.Equipotentiallinesinthecross-sectional
+planeareclosedloops,whicharenotnecessarilycircles,sinceateachpoint,thenetpotentialisthesumofthepotentials
+from each charge.
+Figure 7.34 A cross-section of the electric potential map of
+two opposite charges of equal magnitude. The potential is
+negative near the negative charge and positive near the positive
+charge.
+View this simulation (https://openstaxcollege.org/l/21equipsurelec) to observe and modify the
+equipotential surfaces and electric fields for many standard charge configurations. There’s a lot to explore.
+OneofthemostimportantcasesisthatofthefamiliarparallelconductingplatesshowninFigure7.35.Betweentheplates,
+theequipotentialsareevenlyspacedandparallel.Thesamefieldcouldbemaintainedbyplacingconductingplatesatthe
+equipotential lines at the potentials shown.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 323
+Figure 7.35 The electric field and equipotential lines between
+two metal plates. Note that the electric field is perpendicular to
+the equipotentials and hence normal to the plates at their surface
+as well as in the center of the region between them.
+ConsidertheparallelplatesinFigure7.2.Thesehaveequipotentiallinesthatareparalleltotheplatesinthespacebetween
+and evenly spaced. An example of this (with sample values) is given in Figure 7.35. We could draw a similar set of
+equipotentialisolinesforgravityonthehillshowninFigure 7.2.Ifthehillhasanyextentatthesameslope,theisolines
+alongthatextentwouldbeparallel toeachother.Furthermore,inregionsofconstantslope,theisolineswouldbeevenly
+spaced. An example of real topographic lines is shown inFigure 7.36.
+Figure 7.36 A topographical map along a ridge has roughly parallel elevation lines, similar to the equipotential lines inFigure
+7.35. (a) A topographical map of Devil’s Tower, Wyoming. Lines that are close together indicate very steep terrain. (b) A
+perspective photo of Devil’s Tower shows just how steep its sides are. Notice the top of the tower has the same shape as the
+center of the topographical map.
+
+324 Chapter 7 | Electric Potential
+Example 7.19
+Calculating Equipotential Lines
+YouhaveseentheequipotentiallinesofapointchargeinFigure7.30.Howdowecalculatethem?Forexample,
+ifwehavea +10-nC chargeattheorigin,whataretheequipotentialsurfacesatwhichthepotentialis(a)100V,
+(b) 50 V, (c) 20 V, and (d) 10 V?
+Strategy
+Set the equation for the potential of a point charge equal to a constant and solve for the remaining variable(s).
+Then calculate values as needed.
+Solution
+q q
+In V =k
+r
+, let V be a constant. The only remaining variable is r; hence, r =k
+V
+=constant. Thus, the
+equipotential surfaces are spheres about the origin. Their locations are:
+⎛ −9 ⎞
+a. r =k q = ⎛ 8.99×10 9 Nm2/C2⎞⎝ 10×10 C ⎠ =0.90m;
+V ⎝ ⎠ 100V
+⎛ −9 ⎞
+b. r =k q = ⎛ 8.99×10 9 Nm2/C2⎞⎝ 10×10 C ⎠ =1.8m;
+V ⎝ ⎠ 50V
+⎛ −9 ⎞
+c. r =k q = ⎛ 8.99×10 9 Nm2/C2⎞⎝ 10×10 C ⎠ =4.5m;
+V ⎝ ⎠ 20V
+⎛ −9 ⎞
+d. r =k q = ⎛ 8.99×10 9 Nm2/C2⎞⎝ 10×10 C ⎠ =9.0m.
+V ⎝ ⎠ 10V
+Significance
+Thismeansthatequipotentialsurfacesaroundapointchargearespheresofconstantradius,asshownearlier,with
+well-defined locations.
+Example 7.20
+Potential Difference between Oppositely Charged Parallel Plates
+Two large conducting plates carry equal and opposite charges, with a surface charge density σ of magnitude
+6.81×10 −7 C/m2, asshowninFigure 7.37.The separation between the plates is l=6.50mm.(a)What
+istheelectric fieldbetween theplates? (b)Whatisthepotential difference between theplates? (c)Whatisthe
+distance between equipotential planes which differ by 100 V?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

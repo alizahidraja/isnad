@@ -1,0 +1,219 @@
+# REAL PDF — openstax_vol2.pdf, pages 411-418
+############################################################
+
+Chapter 9 | Current and Resistance 401
+Figure 9.13 A potential provided by a battery is applied to a
+segment of a conductor with a cross-sectional areaAand a
+lengthL.
+The magnitude of the electrical field across the segment of the conductor is equal to the voltage divided by the length,
+E=V/L,andthe magnitude ofthe current density isequal tothe current divided bythe cross-sectional area, J =I/A.
+Usingthisinformationandrecallingthattheelectricalfieldisproportionaltotheresistivityandthecurrentdensity,wecan
+see that the voltage is proportional to the current:
+E= ρJ
+V I
+= ρ
+L A
+⎛ L⎞
+V = ρ I.
+⎝ A⎠
+Resistance
+The ratio of the voltage to the current is defined as theresistanceR:
+V (9.8)
+R≡ .
+I
+Theresistanceofacylindricalsegmentofaconductorisequaltotheresistivityofthematerialtimesthelengthdivided
+by the area:
+V L (9.9)
+R≡ = ρ .
+I A
+The unit of resistance is the ohm, Ω. For a given voltage, the higher the resistance, the lower the current.
+Resistors
+A common component in electronic circuits is the resistor. The resistor can be used to reduce current flow or provide a
+voltagedrop.Figure 9.14showsthesymbolsusedforaresistorinschematicdiagramsofacircuit.Twocommonlyused
+standards for circuit diagrams are provided by the American National Standard Institute (ANSI, pronounced “AN-see”)
+andtheInternationalElectrotechnicalCommission(IEC).Bothsystemsarecommonlyused.WeusetheANSIstandardin
+thistextforitsvisualrecognition,butwenotethatforlarger,morecomplexcircuits,theIECstandardmayhaveacleaner
+presentation, making it easier to read.
+Figure 9.14 Symbols for a resistor used in circuit diagrams. (a)
+The ANSI symbol; (b) the IEC symbol.
+
+402 Chapter 9 | Current and Resistance
+Material and shape dependence of resistance
+Aresistorcanbemodeledasacylinderwithacross-sectionalareaAandalengthL,madeofamaterialwitharesistivity ρ
+L
+(Figure 9.15). The resistance of the resistor is R= ρ .
+A
+Figure 9.15 A model of a resistor as a uniform cylinder of lengthLand cross-
+sectional areaA. Its resistance to the flow of current is analogous to the resistance
+posed by a pipe to fluid flow. The longer the cylinder, the greater its resistance.
+The larger its cross-sectional areaA, the smaller its resistance.
+Themostcommonmaterialusedtomakearesistoriscarbon.Acarbontrackiswrappedaroundaceramiccore,andtwo
+copperleadsareattached.Asecondtypeofresistoristhemetalfilmresistor,whichalsohasaceramiccore.Thetrackis
+madefromametaloxidematerial,whichhassemiconductivepropertiessimilartocarbon.Again,copperleadsareinserted
+intotheendsoftheresistor.Theresistoristhenpaintedandmarkedforidentification.Aresistorhasfourcoloredbands,as
+shown inFigure 9.16.
+Figure 9.16 Many resistors resemble the figure shown above. The four bands
+are used to identify the resistor. The first two colored bands represent the first
+two digits of the resistance of the resistor. The third color is the multiplier. The
+fourth color represents the tolerance of the resistor. The resistor shown has a
+resistance of 20×10 5 Ω±10%.
+Resistances range over many orders of magnitude. Some ceramic insulators, such as those used to support power lines,
+haveresistancesof 1012 Ω ormore.Adrypersonmayhaveahand-to-footresistanceof 10 5 Ω,whereastheresistance
+ofthehumanheartisabout 10 3 Ω.Ameter-longpieceoflarge-diametercopperwiremayhavearesistanceof 10 −5 Ω,
+andsuperconductorshavenoresistanceatallatlowtemperatures.Aswehaveseen,resistanceisrelatedtotheshapeofan
+object and the material of which it is composed.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 403
+Theresistanceofanobjectalsodependsontemperature,since R isdirectlyproportionalto ρ. Foracylinder,weknow
+0
+L
+R= ρ ,soifLandAdonotchangegreatlywithtemperature,Rhasthesametemperaturedependenceas ρ. (Examination
+A
+of the coefficients of linear expansion shows them to be about two orders of magnitude less than typical temperature
+coefficients of resistivity, so the effect of temperature onLandAis about two orders of magnitude less than on ρ.) Thus,
+R=R (1+αΔT) (9.10)
+0
+is the temperature dependence of the resistance of an object, where R is the original resistance (usually taken to be
+0
+20.00°C) andRistheresistanceafteratemperaturechange ΔT. Thecolorcodegivestheresistanceoftheresistorata
+temperature of T =20.00°C.
+Numerous thermometers are based on the effect of temperature on resistance (Figure 9.17). One of the most common
+thermometersisbasedonthethermistor,asemiconductorcrystalwithastrongtemperaturedependence,theresistanceof
+whichismeasuredtoobtainitstemperature.Thedeviceissmall,sothatitquicklycomesintothermalequilibriumwiththe
+part of a person it touches.
+Figure 9.17 These familiar thermometers are based on the automated measurement of a
+thermistor’s temperature-dependent resistance.
+Example 9.6
+Calculating Resistance
+Althoughcautionmustbeusedinapplying ρ= ρ (1+αΔT) and R=R (1+αΔT) fortemperaturechanges
+0 0
+greater than 100°C, for tungsten, the equations work reasonably well for very large temperature changes. A
+tungsten filament at 20°C has a resistance of 0.350Ω. What would the resistance be if the temperature is
+increased to 2850°C?
+Strategy
+Thisisastraightforwardapplicationof R=R (1+αΔT),sincetheoriginalresistanceofthefilamentisgiven
+0
+as R =0.350Ω and the temperature change is ΔT =2830°C.
+0
+Solution
+The resistance of the hotter filamentRis obtained by entering known values into the above equation:
+⎡ ⎛ −3⎞ ⎤
+R=R (1+αΔT)= (0.350Ω) 1+ 4.5×10 (2830°C) =4.8Ω.
+0 ⎣ ⎝ °C ⎠ ⎦
+
+404 Chapter 9 | Current and Resistance
+Significance
+Noticethattheresistancechangesbymorethanafactorof10asthefilamentwarmstothehightemperatureand
+thecurrentthroughthefilamentdependsontheresistanceofthefilamentandthevoltageapplied.Ifthefilament
+isusedinanincandescentlightbulb,theinitialcurrentthroughthefilamentwhenthebulbisfirstenergizedwill
+be higher than the current after the filament reaches the operating temperature.
+9.6 CheckYourUnderstandingAstraingaugeisanelectricaldevicetomeasurestrain,asshownbelow.It
+consists of a flexible, insulating backing that supports a conduction foil pattern. The resistance of the foil
+changesasthebackingisstretched.Howdoesthestraingaugeresistancechange?Isthestraingaugeaffected
+by temperature changes?
+Example 9.7
+The Resistance of Coaxial Cable
+Longcablescansometimesactlikeantennas,pickingupelectronicnoise,whicharesignalsfromotherequipment
+and appliances. Coaxial cables are used for many applications that require this noise to be eliminated. For
+example,theycanbefoundinthehomeincableTVconnectionsorotheraudiovisualconnections.Coaxialcables
+consist of an inner conductor of radius r surrounded by a second, outer concentric conductor with radius r
+i o
+(Figure 9.18). The space between the two is normally filled with an insulator such as polyethylene plastic. A
+smallamountofradialleakagecurrentoccursbetweenthetwoconductors.Determinetheresistanceofacoaxial
+cable of lengthL.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 405
+Figure 9.18 Coaxial cables consist of two concentric conductors separated
+by insulation. They are often used in cable TV or other audiovisual
+connections.
+Strategy
+L
+Wecannotusetheequation R= ρ directly.Instead,welookatconcentriccylindricalshells,withthicknessdr,
+A
+and integrate.
+Solution
+We first find an expression fordRand then integrate from r to r ,
+i o
+ρ ρ
+dR = dr = dr,
+A 2πrL
+ro ro ro
+ρ ρ ρ r
+R = ∫ r dR=∫ r 2πrL dr = 2πL ∫ r 1 r dr = 2πL ln r o i .
+i i i
+Significance
+Theresistanceofacoaxialcabledependsonitslength,theinnerandouterradii,andtheresistivityofthematerial
+separating the two conductors. Since this resistance is not infinite, a small leakage current occurs between the
+twoconductors.Thisleakagecurrentleadstotheattenuation(orweakening)ofthesignalbeingsentthroughthe
+cable.
+9.7 CheckYourUnderstandingTheresistancebetweenthetwoconductorsofacoaxialcabledependson
+the resistivity of the material separating the two conductors, the length of the cable and the inner and outer
+radius of the two conductor. If you are designing a coaxial cable, how does the resistance between the two
+conductors depend on these variables?
+Viewthissimulation (https://openstaxcollege.org/l/21batteryresist) toseehowthevoltageappliedand
+theresistanceofthematerialthecurrentflowsthroughaffectsthecurrentthroughthematerial.Youcanvisualize
+the collisions of the electrons and the atoms of the material effect the temperature of the material.
+
+406 Chapter 9 | Current and Resistance
+9.4 | Ohm's Law
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe Ohm’s law
+• Recognize when Ohm’s law applies and when it does not
+Wehavebeendiscussingthreeelectricalpropertiessofarinthischapter:current,voltage,andresistance.Itturnsoutthat
+many materials exhibit a simple relationship among the values for these properties, known as Ohm’s law. Many other
+materialsdonotshowthisrelationship,sodespitebeingcalledOhm’slaw,itisnotconsideredalawofnature,likeNewton’s
+laws or the laws of thermodynamics. But it is very useful for calculations involving materials that do obey Ohm’s law.
+Description of Ohm’s Law
+ThecurrentthatflowsthroughmostsubstancesisdirectlyproportionaltothevoltageVappliedtoit.TheGermanphysicist
+Georg Simon Ohm (1787–1854) was the first to demonstrate experimentally that the current in a metal wire is directly
+proportional to the voltage applied:
+I∝V.
+ThisimportantrelationshipisthebasisforOhm’slaw.Itcanbeviewedasacause-and-effectrelationship,withvoltagethe
+causeandcurrenttheeffect.Thisisanempiricallaw,whichistosaythatitisanexperimentallyobservedphenomenon,like
+friction.Suchalinearrelationshipdoesn’talwaysoccur.Anymaterial,component,ordevicethatobeysOhm’slaw,where
+thecurrentthroughthedeviceisproportionaltothevoltageapplied,isknownasanohmicmaterialorohmiccomponent.
+Any material or component that does not obey Ohm’s law is known as anonohmicmaterial or nonohmic component.
+Ohm’s Experiment
+Inapaperpublishedin1827,GeorgOhmdescribedanexperimentinwhichhemeasuredvoltageacrossandcurrentthrough
+varioussimpleelectricalcircuitscontainingvariouslengthsofwire.AsimilarexperimentisshowninFigure 9.19.This
+experiment is used to observe the current through a resistor that results from an applied voltage. In this simple circuit, a
+resistor is connected in series with a battery. The voltage is measured with a voltmeter, which must be placed across the
+resistor(inparallelwiththeresistor).Thecurrentismeasuredwithanammeter,whichmustbeinlinewiththeresistor(in
+series with the resistor).
+Figure 9.19 The experimental set-up used to determine if a resistor is
+an ohmic or nonohmic device. (a) When the battery is attached, the
+current flows in the clockwise direction and the voltmeter and ammeter
+have positive readings. (b) When the leads of the battery are switched, the
+current flows in the counterclockwise direction and the voltmeter and
+ammeter have negative readings.
+InthisupdatedversionofOhm’soriginalexperiment,severalmeasurementsofthecurrentweremadeforseveraldifferent
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 407
+voltages. When the battery was hooked up as in Figure 9.19(a), the current flowed in the clockwise direction and the
+readingsofthevoltmeterandammeterwerepositive.Doesthebehaviorofthecurrentchangeifthecurrentflowedinthe
+oppositedirection?Togetthecurrenttoflowintheoppositedirection,theleadsofthebatterycanbeswitched.Whenthe
+leadsofthebatterywereswitched,thereadingsofthevoltmeterandammeterreadingswerenegativebecausethecurrent
+flowedintheoppositedirection,inthiscase,counterclockwise.ResultsofasimilarexperimentareshowninFigure9.20.
+Figure 9.20 A resistor is placed in a circuit with a battery. The voltage applied varies from −10.00 V to
++10.00 V, increased by 1.00-V increments. A plot shows values of the voltage versus the current typical of
+what a casual experimenter might find.
+In this experiment, the voltage applied across the resistor varies from −10.00 to +10.00 V, by increments of 1.00 V. The
+currentthroughtheresistorandthevoltageacrosstheresistoraremeasured.Aplotismadeofthevoltageversusthecurrent,
+andtheresultisapproximatelylinear.Theslopeofthelineistheresistance,orthevoltagedividedbythecurrent.Thisresult
+is known asOhm’s law:
+V =IR, (9.11)
+whereVisthevoltagemeasuredinvoltsacrosstheobjectinquestion,Iisthecurrentmeasuredthroughtheobjectinamps,
+andRistheresistanceinunitsofohms.Asstatedpreviously,anydevicethatshowsalinearrelationshipbetweenthevoltage
+and the current is known as an ohmic device. A resistor is therefore an ohmic device.
+Example 9.8
+Measuring Resistance
+Acarbonresistoratroomtemperature (20°C) isattachedtoa9.00-Vbatteryandthecurrentmeasuredthrough
+theresistoris3.00mA.(a)Whatistheresistanceoftheresistormeasuredinohms?(b)Ifthetemperatureofthe
+resistor is increased to 60°C by heating the resistor, what is the current through the resistor?
+Strategy
+(a)TheresistancecanbefoundusingOhm’slaw.Ohm’slawstatesthat V =IR,sotheresistancecanbefound
+using R=V/I.

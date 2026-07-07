@@ -1,0 +1,301 @@
+# REAL PDF — openstax_vol3.pdf, pages 69-75
+############################################################
+
+Chapter 2 | Geometric Optics and Image Formation 61
+point of the mirror (ray 1 inFigure 2.9).
+• Araytravellingalongalinethatgoesthroughthefocalpointofasphericalmirrorisreflectedalongalineparallel
+to the optical axis of the mirror (ray 2 inFigure 2.9).
+• Araytravellingalongalinethatgoesthroughthecenterofcurvatureofasphericalmirrorisreflectedbackalong
+the same line (ray 3 inFigure 2.9).
+• Araythatstrikesthevertexofasphericalmirrorisreflectedsymmetricallyabouttheopticalaxisofthemirror(ray
+4 inFigure 2.9).
+We use ray tracing to illustrate how images are formed by mirrors and to obtain numerical information about optical
+propertiesofthemirror.Ifweassumethatamirrorissmallcomparedwithitsradiusofcurvature,wecanalsousealgebra
+andgeometrytoderiveamirrorequation,whichwedointhenextsection.Combiningraytracingwiththemirrorequation
+is a good way to analyze mirror systems.
+Image Formation by Reflection—The Mirror Equation
+Foraplanemirror,weshowedthattheimageformedhasthesameheightandorientationastheobject,anditislocatedat
+thesamedistancebehindthemirrorastheobjectisinfrontofthemirror.Althoughthesituationisabitmorecomplicated
+forcurvedmirrors,usinggeometryleadstosimpleformulasrelatingtheobjectandimagedistancestothefocallengthsof
+concave and convex mirrors.
+ConsidertheobjectOPshowninFigure2.10.ThecenterofcurvatureofthemirrorislabeledCandisadistanceRfrom
+the vertex of the mirror, as marked in the figure. The object and image distances are labeled d and d , and the object
+o i
+and image heights are labeled h
+o
+and h
+i
+, respectively. Because the angles ϕ and ϕ′ are alternate interior angles, we
+knowthattheyhavethesamemagnitude.However,theymustdifferinsignifwemeasureanglesfromtheopticalaxis,so
+ϕ=−ϕ′. An analogous scenario holds for the angles θ and θ′. The law of reflection tells us that they have the same
+magnitude,buttheirsignsmustdifferifwemeasureanglesfromtheopticalaxis.Thus, θ=−θ′.Takingthetangentofthe
+angles θ and θ′, and using the property that tan(−θ)=−tanθ, gives us
+h ⎫ (2.3)
+tanθ= o
+d o ⎬ ⎪ h o =− h ior − h o = d o.
+h d d h d
+tanθ′=−tanθ= i⎪ o i i i
+d ⎭
+i
+Figure 2.10 Image formed by a concave mirror.
+Similarly, taking the tangent of ϕ and ϕ′ gives
+h ⎫
+tanϕ= o
+d o−R
+⎬
+⎪ h
+o =−
+h
+i or −
+h
+o =
+d o−R
+.
+tanϕ′=−tanϕ=
+h
+i ⎪
+d o−R R−d
+i
+h
+i
+R−d
+i
+R−d ⎭
+i
+Combining these two results gives
+
+62 Chapter 2 | Geometric Optics and Image Formation
+d
+o =
+d o−R
+.
+d R−d
+i i
+After a little algebra, this becomes
+1 1 2 (2.4)
++ = .
+d d R
+o i
+Noapproximationisrequiredforthisresult,soitisexact.However,asdiscussedabove,inthesmall-angleapproximation,
+the focal length of a spherical mirror is one-half the radius of curvature of the mirror, or f =R/2. Inserting this into
+Equation 2.3gives themirror equation:
+1 1 1 (2.5)
++ = .
+d d f
+o i
+The mirror equation relates the image and object distances to the focal distance and is valid only in the small-angle
+approximation. Although it was derived for a concave mirror, it also holds for convex mirrors (proving this is left as an
+exercise).Wecanextendthemirrorequationtothecaseofaplanemirrorbynotingthataplanemirrorhasaninfiniteradius
+of curvature. This means the focal point is at infinity, so the mirror equation simplifies to
+d o=−d
+i
+(2.6)
+which is the same asEquation 2.1obtained earlier.
+Noticethatwehavebeenverycarefulwiththesignsinderivingthemirrorequation.Foraplanemirror,theimagedistance
+hastheoppositesignoftheobjectdistance.Also,therealimageformedbytheconcavemirrorinFigure 2.10isonthe
+opposite side of the optical axis with respect to the object. In this case, the image height should have the opposite sign
+of the object height. To keep track of the signs of the various quantities in the mirror equation, we now introduce a sign
+convention.
+Sign convention for spherical mirrors
+Using a consistent sign convention is very important in geometric optics. It assigns positive or negative values for the
+quantitiesthatcharacterizeanopticalsystem.Understandingthesignconventionallowsyoutodescribeanimagewithout
+constructing a ray diagram. This text uses the following sign convention:
+1. The focal lengthfis positive for concave mirrors and negative for convex mirrors.
+2. The image distance d is positive for real images and negative for virtual images.
+i
+Noticethatrule1meansthattheradiusofcurvatureofasphericalmirrorcanbepositiveornegative.Whatdoesitmean
+tohaveanegativeradiusofcurvature?Thismeanssimplythattheradiusofcurvatureforaconvexmirrorisdefinedtobe
+negative.
+Image magnification
+Let’susethesignconventiontofurtherinterpretthederivationofthemirrorequation.Inderivingthisequation,wefound
+that the object and image heights are related by
+h d (2.7)
+− o = o.
+h d
+i i
+SeeEquation 2.3.BoththeobjectandtheimageformedbythemirrorinFigure 2.10arereal,sotheobjectandimage
+distances are both positive. The highest point of the object is above the optical axis, so the object height is positive. The
+image,however,isbelowtheopticalaxis,sotheimageheightisnegative.Thus,thissignconventionisconsistentwithour
+derivation of the mirror equation.
+Equation2.7infactdescribesthelinearmagnification(oftensimplycalled“magnification”)oftheimageintermsofthe
+object and image distances. We thus define the dimensionless magnificationmas follows:
+h (2.8)
+m= i.
+h
+o
+Ifmispositive,theimageisupright,andifmisnegative,theimageisinverted.If |m|>1,theimageislargerthanthe
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 63
+object, and if |m|<1, the image is smaller than the object. With this definition of magnification, we get the following
+relation between the vertical and horizontal object and image distances:
+h d (2.9)
+m= i =− i.
+h d
+o o
+Thisisaveryusefulrelationbecauseitletsyouobtainthemagnificationoftheimagefromtheobjectandimagedistances,
+which you can obtain from the mirror equation.
+Example 2.1
+Solar Electric Generating System
+One of the solar technologies used today for generating electricity involves a device (called a parabolic trough
+or concentrating collector) that concentrates sunlight onto a blackened pipe that contains a fluid. This heated
+fluid is pumped to a heat exchanger, where the thermal energy is transferred to another system that is used to
+generatesteamandeventuallygenerateselectricitythroughaconventionalsteamcycle.Figure2.11showssuch
+aworkingsysteminsouthernCalifornia.Therealmirrorisaparaboliccylinderwithitsfocuslocatedatthepipe;
+however, we can approximate the mirror as exactly one-quarter of a circular cylinder.
+Figure 2.11 Parabolic trough collectors are used to generate electricity in southern California. (credit:
+“kjkolb”/Wikimedia Commons)
+a. If we want the rays from the sun to focus at 40.0 cm from the mirror, what is the radius of the mirror?
+b. What is the amount of sunlight concentrated onto the pipe, per meter of pipe length, assuming the
+insolation (incident solar radiation) is 900 W/m2?
+c. Ifthefluid-carryingpipehasa2.00-cmdiameter,whatisthetemperatureincreaseofthefluidpermeter
+ofpipeoveraperiodof1minute?Assumethatallsolarradiationincidentonthereflectorisabsorbedby
+the pipe, and that the fluid is mineral oil.
+Strategy
+First identify the physical principles involved. Part (a) is related to the optics of spherical mirrors. Part (b)
+involves a little math, primarily geometry. Part (c) requires an understanding of heat and density.
+Solution
+a. Thesunistheobject,sotheobjectdistanceisessentiallyinfinity: d o=∞.Thedesiredimagedistance
+is d =40.0cm. We use the mirror equation to find the focal length of the mirror:
+i
+
+64 Chapter 2 | Geometric Optics and Image Formation
+1 1 1
++ =
+d d f
+o i
+−1
+⎛ ⎞
+f = 1 + 1
+⎝d d ⎠
+o i
+−1
+⎛1 1 ⎞
+= +
+⎝∞ 40.0cm⎠
+=40.0cm
+Thus, the radius of the mirror is R=2f =80.0cm.
+b. Theinsolationis900 W/m2.Youmustfindthecross-sectionalareaAoftheconcavemirror,sincethe
+powerdeliveredis900 W/m2 × A.Themirrorinthiscaseisaquarter-sectionofacylinder,sothearea
+for a lengthLof the mirror is A= 1 (2πR)L. The area for a length of 1.00 m is then
+4
+A= π R(1.00m)= (3.14) (0.800m)(1.00m)=1.26m2.
+2 2
+The insolation on the 1.00-m length of pipe is then
+⎛ ⎞
+9.00×102 W ⎛ 1.26m2⎞ =1130W.
+⎝ m2⎠⎝ ⎠
+c. The increase in temperature is given by Q=mcΔT. The mass m of the mineral oil in the one-meter
+section of pipe is
+2
+⎛d⎞
+m = ρV = ρπ (1.00m)
+⎝2⎠
+= ⎛ 8.00×102 kg/m 3⎞ (3.14)(0.0100m)2(1.00m)
+⎝ ⎠
+=0.251kg
+Therefore, the increase in temperature in one minute is
+ΔT =Q/mc
+(1130W)(60.0s)
+=
+⎛0.251kg⎞⎛1670J·kg/°C⎞
+⎝ ⎠⎝ ⎠
+=162°C
+Significance
+An array of such pipes in the California desert can provide a thermal output of 250 MW on a sunny day, with
+fluidsreachingtemperaturesashighas 400°C.Weareconsideringonlyonemeterofpipehereandignoringheat
+losses along the pipe.
+Example 2.2
+Image in a Convex Mirror
+Akeratometerisadeviceusedtomeasurethecurvatureofthecorneaoftheeye,particularlyforfittingcontact
+lenses. Light is reflected from the cornea, which acts like a convex mirror, and the keratometer measures the
+magnification oftheimage.Thesmallerthemagnification, thesmallertheradiusofcurvatureofthecornea.If
+thelightsourceis12cmfromthecorneaandtheimagemagnificationis0.032,whatistheradiusofcurvatureof
+the cornea?
+Strategy
+Ifyoufindthefocallengthoftheconvexmirrorformedbythecornea,thenyouknowitsradiusofcurvature(it’s
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 65
+twicethefocallength).Theobjectdistanceis d o=12cm andthemagnificationis m=0.032.Firstfindthe
+image distance d and then solve for the focal lengthf.
+i
+Solution
+Start with the equation for magnification, m=−d
+i
+/d
+o
+. Solving for d
+i
+and inserting the given values yields
+d
+i
+=−md o=−(0.032)(12cm)=−0.384cm
+where we retained an extra significant figure because this is an intermediate step in the calculation. Solve the
+mirrorequationforthefocallengthfandinserttheknownvaluesfortheobjectandimagedistances.Theresultis
+1 1 1
++ =
+d d f
+o i
+−1
+⎛ ⎞
+f = 1 + 1
+⎝d d ⎠
+o i
+−1
+⎛ 1 1 ⎞
+= +
+⎝12cm −0.384cm⎠
+=−0.40cm
+The radius of curvature is twice the focal length, so
+R=2f =−0.80cm
+Significance
+Thefocallengthisnegative,sothefocusisvirtual,asexpectedforaconcavemirrorandarealobject.Theradius
+of curvature found here is reasonable for a cornea. The distance from cornea to retina in an adult eye is about
+2.0cm.Inpractice,corneasmaynotbespherical,whichcomplicatesthejoboffittingcontactlenses.Notethat
+theimagedistancehereisnegative,consistentwiththefactthattheimageisbehindthemirror.Thus,theimage
+isvirtualbecausenoraysactuallypassthroughit.Intheproblemsandexercises,youwillshowthat,forafixed
+object distance, a smaller radius of curvature corresponds to a smaller the magnification.
+Problem-Solving Strategy: Spherical Mirrors
+Step 1. First make sure that image formation by a spherical mirror is involved.
+Step2.Determinewhetherraytracing,themirrorequation,orbotharerequired.Asketchisveryusefulevenifray
+tracing is not specifically required by the problem. Write symbols and known values on the sketch.
+Step 3. Identify exactly what needs to be determined in the problem (identify the unknowns).
+Step 4. Make a list of what is given or can be inferred from the problem as stated (identify the knowns).
+Step 5. If ray tracing is required, use the ray-tracing rules listed near the beginning of this section.
+Step6.Mostquantitativeproblemsrequireusingthemirrorequation.Usetheexamplesasguidesforusingthemirror
+equation.
+Step7.Checktoseewhethertheanswermakessense.Dothesignsofobjectdistance,imagedistance,andfocallength
+correspondwithwhatisexpectedfromraytracing?Isthesignofthemagnificationcorrect?Aretheobjectandimage
+distances reasonable?
+Departure from the Small-Angle Approximation
+The small-angle approximation is a cornerstone of the above discussion of image formation by a spherical mirror. When
+this approximation is violated, then the image created by a spherical mirror becomes distorted. Such distortion is called
+aberration. Here we briefly discuss two specific types of aberrations: spherical aberration and coma.
+Spherical aberration
+Consider a broad beam of parallel rays impinging on a spherical mirror, as shown inFigure 2.12.
+
+66 Chapter 2 | Geometric Optics and Image Formation
+Figure 2.12 (a) With spherical aberration, the rays that are farther from the optical axis and the rays that are closer to
+the optical axis are focused at different points. Notice that the aberration gets worse for rays farther from the optical
+axis. (b) For comatic aberration, parallel rays that are not parallel to the optical axis are focused at different heights and
+at different focal lengths, so the image contains a “tail” like a comet (which is “coma” in Latin). Note that the colored
+rays are only to facilitate viewing; the colors do not indicate the color of the light.
+Thefartherfromtheopticalaxistheraysstrike,theworsethesphericalmirrorapproximatesaparabolicmirror.Thus,these
+raysarenotfocusedatthesamepointasraysthatareneartheopticalaxis,asshowninthefigure.Becauseofspherical
+aberration,theimageofanextendedobjectinasphericalmirrorwillbeblurred.Sphericalaberrationsarecharacteristicof
+themirrorsandlensesthatweconsiderinthefollowingsectionofthischapter(moresophisticatedmirrorsandlensesare
+needed to eliminate spherical aberrations).
+Coma or comatic aberration
+Comaissimilartosphericalaberration,butariseswhentheincomingraysarenotparalleltotheopticalaxis,asshownin
+part(b)ofFigure 2.12.Recallthatthesmall-angleapproximationholdsforsphericalmirrorsthataresmallcomparedto
+theirradius.Inthiscase,sphericalmirrorsaregoodapproximationsofparabolicmirrors.Parabolicmirrorsfocusallrays
+that are parallel to the optical axis at the focal point. However, parallel rays that are not parallel to the optical axis are
+focusedatdifferentheightsandatdifferentfocallengths,asshowinpart(b)ofFigure 2.12.Becauseasphericalmirror
+issymmetricabouttheopticalaxis,thevariouscoloredraysinthisfigurecreatecirclesofthecorrespondingcoloronthe
+focal plane.
+Althoughasphericalmirrorisshowninpart(b)ofFigure 2.12,comaticaberrationoccursalsoforparabolicmirrors—it
+doesnotresultfromabreakdowninthesmall-angleapproximation.Sphericalaberration,however,occursonlyforspherical
+mirrorsandisaresultofabreakdowninthesmall-angleapproximation.Wewilldiscussbothcomaandsphericalaberration
+later in this chapter, in connection with telescopes.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

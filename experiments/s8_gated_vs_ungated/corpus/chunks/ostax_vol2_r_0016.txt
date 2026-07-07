@@ -1,0 +1,263 @@
+# REAL PDF — openstax_vol2.pdf, pages 87-93
+############################################################
+
+Chapter 2 | The Kinetic Theory of Gases 77
+Figure 2.8 pVdiagrams. (a) Each curve (isotherm) represents the relationship betweenpandVat a fixed temperature; the
+upper curves are at higher temperatures. The lower curves are not hyperbolas because the gas is no longer an ideal gas. (b) An
+expanded portion of thepVdiagram for low temperatures, where the phase can change from a gas to a liquid. The term “vapor”
+refers to the gas phase when it exists at a temperature below the boiling temperature.
+Theisothermsabove T donotgothroughtheliquid-gastransition.Therefore,liquidcannotexistabovethattemperature,
+c
+whichisthecriticaltemperature(describedinthechapterontemperatureandheat).Atsufficientlylowpressureabovethat
+temperature,thegashasthedensityofaliquidbutwillnotcondense;thegasissaidtobesupercritical.Athigherpressure,
+itissolid.Carbondioxide, forexample, hasnoliquid phaseatatemperature above 31.0ºC.Thecritical pressure isthe
+maximum pressure at which the liquid can exist. The point on the pV diagram at the critical pressure and temperature is
+thecriticalpoint(whichyoulearnedaboutinthechapterontemperatureandheat).Table 2.1listsrepresentativecritical
+temperatures and pressures.
+Substance Critical temperature Critical pressure
+K °C Pa atm
+Water 647.4 374.3 6 219.0
+22.12×10
+Sulfur dioxide 430.7 157.6 6 78.0
+7.88×10
+Ammonia 405.5 132.4 6 111.7
+11.28×10
+Carbon dioxide 304.2 31.1 6 73.2
+7.39×10
+Oxygen 154.8 –118.4 6 50.3
+5.08×10
+Nitrogen 126.2 –146.9 6 33.6
+3.39×10
+Hydrogen 33.3 –239.9 6 12.9
+1.30×10
+Helium 5.3 –267.9 6 2.27
+0.229×10
+Table 2.1Critical Temperatures and Pressures for Various
+Substances
+
+78 Chapter 2 | The Kinetic Theory of Gases
+2.2 | Pressure, Temperature, and RMS Speed
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the relations between microscopic and macroscopic quantities in a gas
+• Solve problems involving mixtures of gases
+• Solve problems involving the distance and time between a gas molecule’s collisions
+We have examined pressure and temperature based on their macroscopic definitions. Pressure is the force divided by the
+areaonwhichtheforceisexerted,andtemperatureismeasuredwithathermometer.Wecangainabetterunderstandingof
+pressureandtemperaturefromthekinetictheoryofgases,thetheorythatrelatesthemacroscopicpropertiesofgasestothe
+motion of the molecules they consist of. First, we make two assumptions about molecules in an ideal gas.
+1. There is a very large numberNof molecules, all identical and each having massm.
+2. ThemoleculesobeyNewton’slawsandareincontinuousmotion,whichisrandomandisotropic,thatis,thesame
+in all directions.
+Toderivetheidealgaslawandtheconnectionbetweenmicroscopicquantitiessuchastheenergyofatypicalmoleculeand
+macroscopicquantitiessuchastemperature,weanalyzeasampleofanidealgasinarigidcontainer,aboutwhichwemake
+two further assumptions:
+3. Themolecules aremuchsmallerthantheaveragedistancebetweenthem,sotheirtotalvolumeismuchlessthan
+thatoftheircontainer(whichhasvolumeV).Inotherwords,wetaketheVanderWaalsconstantb,thevolumeofa
+mole of gas molecules, to be negligible compared to the volume of a mole of gas in the container.
+4. The molecules make perfectly elastic collisions with the walls of the container and with each other. Other forces
+on them, including gravity and the attractions represented by the Van der Waals constant a, are negligible (as is
+necessary for the assumption of isotropy).
+Thecollisionsbetweenmoleculesdonotappearinthederivationoftheidealgaslaw.Theydonotdisturbthederivation
+either,sincecollisionsbetweenmoleculesmovingwithrandomvelocitiesgivenewrandomvelocities.Furthermore,ifthe
+velocitiesofgasmoleculesinacontainerareinitiallynotrandomandisotropic,molecularcollisionsarewhatmakethem
+random and isotropic.
+Wemakestillfurtherassumptionsthatsimplifythecalculationsbutdonotaffecttheresult.First,weletthecontainerbea
+rectangularbox.Second,webeginbyconsideringmonatomicgases,thosewhosemoleculesconsistofsingleatoms,such
+ashelium.Then,wecanassumethattheatomshavenoenergyexcepttheirtranslationalkineticenergy;forinstance,they
+haveneitherrotationalnorvibrationalenergy.(Later,wediscussthevalidityofthisassumptionforrealmonatomicgases
+and dispense with it to consider diatomic and polyatomic gases.)
+Figure 2.9 shows a collision of a gas molecule with the wall of a container, so that it exerts a force on the wall (by
+Newton’sthirdlaw).Thesecollisionsarethesourceofpressureinagas.Asthenumberofmoleculesincreases,thenumber
+ofcollisions,andthusthepressure,increases.Similarly,iftheaveragevelocityofthemoleculesishigher,thegaspressure
+is higher.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 79
+Figure 2.9 When a molecule collides with a rigid wall, the
+component of its momentum perpendicular to the wall is
+reversed. A force is thus exerted on the wall, creating pressure.
+In a sample of gas in a container, the randomness of the molecular motion causes the number of collisions of molecules
+withanypartofthewallinagiventimetofluctuate.However,becauseahugenumberofmoleculescollidewiththewall
+in a short time, the number of collisions on the scales of time and space we measure fluctuates by only a tiny, usually
+unobservablefractionfromtheaverage.Wecancomparethissituationtothatofacasino,wheretheoutcomesofthebets
+are random and the casino’s takings fluctuate by the minute and the hour. However, over long times such as a year, the
+casino’stakingsareveryclosetotheaveragesexpectedfromtheodds.Atankofgashasenormouslymoremoleculesthan
+a casino has bettors in a year, and the molecules make enormously more collisions in a second than a casino has bets.
+A calculation of the average force exerted by molecules on the walls of the box leads us to the ideal gas law and to the
+connection between temperature and molecular kinetic energy. (In fact, we will take two averages: one over time to get
+the average force exerted byone molecule with a given velocity,and then another average over molecules with different
+velocities.)ThisapproachwasdevelopedbyDanielBernoulli(1700–1782),whoisbestknowninphysicsforhisworkon
+fluidflow(hydrodynamics).Remarkably,BernoullididthisworkbeforeDaltonestablishedtheviewofmatterasconsisting
+of atoms.
+Figure 2.10showsacontainerfullofgasandanexpandedviewofanelasticcollisionofagasmoleculewithawallof
+thecontainer,brokendownintocomponents.Wehaveassumedthatamoleculeissmallcomparedwiththeseparationof
+moleculesinthegas,andthatitsinteractionwithothermoleculescanbeignored.Undertheseconditions,theidealgaslaw
+isexperimentallyvalid.Becausewehavealsoassumedthewallisrigidandtheparticlesarepoints,thecollisioniselastic
+(byconservationofenergy—there’snowhereforaparticle’skineticenergytogo).Therefore,themolecule’skineticenergy
+remainsconstant,andhence,itsspeedandthemagnitudeofitsmomentumremainconstantaswell.Thisassumptionisnot
+alwaysvalid,buttheresultsintherestofthismodulearealsoobtainedinmodelsthatletthemoleculesexchangeenergy
+and momentum with the wall.
+
+80 Chapter 2 | The Kinetic Theory of Gases
+Figure 2.10 Gas in a box exerts an outward pressure on its
+walls. A molecule colliding with a rigid wall has its velocity and
+momentum in thex-direction reversed. This direction is
+perpendicular to the wall. The components of its velocity
+momentum in they- andz-directions are not changed, which
+means there is no force parallel to the wall.
+If the molecule’s velocity changes in the x-direction, its momentum changes from −mv x to +mv x. Thus, its change in
+momentumis Δmv= +mv x−(−mv x)=2mv x. Accordingtotheimpulse-momentumtheoremgiveninthechapteron
+linearmomentumandcollisions,theforceexertedontheithmolecule,whereilabelsthemoleculesfrom1toN,isgivenby
+F i= Δ
+Δ
+p
+t
+i = 2m
+Δ
+v
+t
+ix .
+(Inthisequationalone,prepresentsmomentum,notpressure.)Thereisnoforcebetweenthewallandthemoleculeexcept
+while the molecule is touching the wall. During the short time of the collision, the force between the molecule and wall
+isrelativelylarge,butthatisnottheforcewearelookingfor.Wearelookingfortheaverageforce,sowetake Δt tobe
+theaveragetimebetweencollisionsofthegivenmoleculewiththiswall,whichisthetimeinwhichweexpecttofindone
+collision.Letlrepresentthelengthoftheboxinthex-direction.Then Δt isthetimethemoleculewouldtaketogoacross
+the box and back, a distance 2l, at a speed of v x. Thus Δt=2l/v x, and the expression for the force becomes
+F i= 2
+2
+m
+l/v
+v
+i
+i
+x
+x = mv
+l
+i 2 x .
+Thisforceisduetoonemolecule.Tofindthetotalforceonthewall,F,weneedtoaddthecontributionsofallNmolecules:
+N N mv2 N
+F = ∑ F i= ∑
+l
+ix = m
+l
+∑ v
+i
+2
+x
+.
+i=1 i=1 i=1
+We now use the definition of the average, which we denote with a bar, to find the force:
+–
+F =N m
+⎛
+⎜1 ∑
+N
+v2
+⎞
+⎟=N
+mv2
+x .
+l N ix l
+⎝ i=1 ⎠
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 81
+Wewanttheforceintermsofthespeedv,ratherthanthex-componentofthevelocity.Notethatthetotalvelocitysquared
+is the sum of the squares of its components, so that
+– – – –
+v2=v2 x+v2 y+v2 z.
+With the assumption of isotropy, the three averages on the right side are equal, so
+– –
+v2=3v2.
+ix
+Substituting this into the expression forFgives
+–
+mv2
+F =N .
+3l
+The pressure isF/A, so we obtain
+– –
+F mv2 Nmv2
+p= =N = ,
+A 3Al 3V
+where we used V = Al for the volume. This gives the important result
+– (2.5)
+pV = 1Nmv2.
+3
+Combining this equation with pV =Nk T gives
+B
+–
+1Nmv2=Nk T.
+3 B
+–
+Wecangettheaveragekineticenergyofamolecule, 1mv2,fromtheleft-handsideoftheequationbydividingoutNand
+2
+multiplying by 3/2.
+Average Kinetic Energy per Molecule
+The average kinetic energy of a molecule is directly proportional to its absolute temperature:
+K – = 1mv – 2= 3k T. (2.6)
+2 2 B
+The equation K – = 3k T is the average kinetic energy per molecule. Note in particular that nothing in this equation
+2 B
+dependsonthemolecularmass(oranyotherproperty)ofthegas,thepressure,oranythingbutthetemperature.Ifsamples
+ofheliumandxenongas,withverydifferentmolecularmasses,areatthesametemperature,themoleculeshavethesame
+average kinetic energy.
+Theinternalenergyofathermodynamicsystemisthesumofthemechanicalenergiesofallofthemoleculesinit.Wecan
+nowgiveanequationfortheinternalenergyofamonatomicidealgas.Insuchagas,themolecules’onlyenergyistheir
+–
+translational kinetic energy. Therefore, denoting the internal energy by E , we simply have E =NK, or
+int int
+E = 3Nk T. (2.7)
+int 2 B
+Often we would like to use this equation in terms of moles:
+E = 3nRT.
+int 2
+
+82 Chapter 2 | The Kinetic Theory of Gases
+Wecansolve K – = 1mv – 2= 3k T foratypicalspeedofamoleculeinanidealgasintermsoftemperaturetodetermine
+2 2 B
+what is known as theroot-mean-square(rms)speedof a molecule.
+RMS Speed of a Molecule
+–
+Theroot-mean-square (rms) speedof a molecule, or the square root of the average of the square of the speedv2, is
+– 3k T (2.8)
+v rms= v2= m B .
+The rms speed is not the average or the most likely speed of molecules, as we will see in Distribution of Molecular
+Speeds,butitprovidesaneasilycalculatedestimateofthemolecules’speedthatisrelatedtotheirkineticenergy.Again
+we can write this equation in terms of the gas constantRand the molar massMin kg/mol:
+v rms= 3
+M
+RT . (2.9)
+Wedigressforamomenttoansweraquestionthatmayhaveoccurredtoyou:Whenweapplythemodeltoatomsinsteadof
+theoreticalpointparticles,doesrotationalkineticenergychangeourresults?Toanswerthisquestion,wehavetoappealto
+quantummechanics.Inquantummechanics,rotationalkineticenergycannottakeonjustanyvalue;it’slimitedtoadiscrete
+setofvalues,andthesmallestvalueisinverselyproportionaltotherotationalinertia.Therotationalinertiaofanatomis
+tinybecausealmostallofitsmassisinthenucleus,whichtypicallyhasaradiuslessthan 10−14 m.Thustheminimum
+rotational energy of an atom is much more than 1k T for any attainable temperature, and the energy available is not
+2 B
+enough to make an atom rotate. We will return to this point when discussing diatomic and polyatomic gases in the next
+section.
+Example 2.4
+Calculating Kinetic Energy and Speed of a Gas Molecule
+(a)Whatistheaveragekineticenergyofagasmoleculeat 20.0ºC (roomtemperature)?(b)Findthermsspeed
+of a nitrogen molecule ⎛N ⎞ at this temperature.
+⎝ 2⎠
+Strategy
+(a) The known in the equation for the average kinetic energy is the temperature:
+K – = 1mv – 2= 3k T.
+2 2 B
+Before substituting values into this equation, we must convert the given temperature into kelvin:
+T =(20.0+273)K=293K. We can find the rms speed of a nitrogen molecule by using the equation
+– 3k T
+v rms= v2= m B ,
+but we must first find the mass of a nitrogen molecule. Obtaining the molar mass of nitrogen N from the
+2
+periodic table, we find
+−3
+m= M = 2(14.0067)×10 kg/mol) =4.65×10 −26 kg.
+N A 6.02×10 23 mol-1
+Solution
+a. Thetemperaturealoneissufficientforustofindtheaveragetranslationalkineticenergy.Substitutingthe
+temperature into the translational kinetic energy equation gives
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

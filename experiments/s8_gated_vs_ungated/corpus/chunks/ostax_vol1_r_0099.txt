@@ -1,0 +1,273 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 604-611
+############################################################
+
+592 12 • Chapter Review
+center of mass is 15.0 cm from the elbow. (a)
+What is the magnitude of the force that the
+biceps muscle exerts on the forearm for
+(b) What is the magnitude of the force
+on the elbow joint for the same angle? (c) How
+do these forces depend on the angle
+42 . A 12.0-m boom, AB, of a crane lifting a 3000-kg load
+is shown below. The center of mass of the boom is
+40 . The uniform boom shown below weighs 3000 N. at its geometric center, and the mass of the boom is
+It is supported by the horizontal guy wire and by 1000 kg. For the position shown, calculate tension T
+the hinged support at point A. What are the in the cable and the force at the axle A.
+forces on the boom due to the wire and due to
+the support at A? Does the force at A act along
+the boom?
+43 . A uniform trapdoor shown below is 1.0 m by 1.5
+m and weighs 300 N. It is supported by a single
+hinge (H), and by a light rope tied between the
+middle of the door and the floor. The door is held
+at the position shown, where its slab makes a
+angle with the horizontal floor and the rope
+41 . The uniform boom shown below weighs 700 N,
+makes a angle with the floor. Find the
+and the object hanging from its right end weighs
+tension in the rope and the force at the hinge.
+400 N. The boom is supported by a light cable
+and by a hinge at the wall. Calculate the tension
+in the cable and the force on the hinge on the
+boom. Does the force on the hinge act along the
+boom?
+Access for free at openstax.org
+
+12 • Chapter Review 593
+44 . A 90-kg man walks on a sawhorse, as shown 49 . A farmer making grape juice fills a glass bottle to
+below. The sawhorse is 2.0 m long and 1.0 m the brim and caps it tightly. The juice expands
+high, and its mass is 25.0 kg. Calculate the more than the glass when it warms up, in such a
+normal reaction force on each leg at the contact way that the volume increases by 0.20%.
+point with the floor when the man is 0.5 m from Calculate the force exerted by the juice per
+the far end of the sawhorse. (Hint: At each end, square centimeter if its bulk modulus is
+find the total reaction force first. This reaction assuming the bottle does not
+force is the vector sum of two reaction forces, break.
+each acting along one leg. The normal reaction
+50 . A disk between vertebrae in the spine is
+force at the contact point with the floor is the
+subjected to a shearing force of 600.0 N. Find its
+normal (with respect to the floor) component of
+shear deformation, using the shear modulus of
+this force.)
+The disk is equivalent to a
+solid cylinder 0.700 cm high and 4.00 cm in
+diameter.
+51 . A vertebra is subjected to a shearing force of
+500.0 N. Find the shear deformation, taking the
+vertebra to be a cylinder 3.00 cm high and 4.00
+cm in diameter.
+52 . Calculate the force a piano tuner applies to
+stretch a steel piano wire by 8.00 mm, if the wire
+is originally 1.35 m long and its diameter is
+0.850 mm.
+53 . A 20.0-m-tall hollow aluminum flagpole is
+equivalent in strength to a solid cylinder 4.00 cm
+in diameter. A strong wind bends the pole as
+much as a horizontal 900.0-N force on the top
+would do. How far to the side does the top of the
+pole flex?
+12.3 Stress, Strain, and Elastic Modulus
+54 . A copper wire of diameter 1.0 cm stretches
+45 . The “lead” in pencils is a graphite composition
+1.0% when it is used to lift a load upward with
+with a Young’s modulus of approximately
+an acceleration of What is the weight
+Calculate the change in length
+of the load?
+of the lead in an automatic pencil if you tap it
+straight into the pencil with a force of 4.0 N. The 55 . As an oil well is drilled, each new section of drill
+lead is 0.50 mm in diameter and 60 mm long. pipe supports its own weight and the weight of
+the pipe and the drill bit beneath it. Calculate the
+46 . TV broadcast antennas are the tallest artificial
+stretch in a new 6.00-m-long steel pipe that
+structures on Earth. In 1987, a 72.0-kg physicist
+supports a 100-kg drill bit and a 3.00-km length
+placed himself and 400 kg of equipment at the
+of pipe with a linear mass density of 20.0 kg/m.
+top of a 610-m-high antenna to perform gravity
+Treat the pipe as a solid cylinder with a 5.00-cm
+experiments. By how much was the antenna
+diameter.
+compressed, if we consider it to be equivalent to
+a steel cylinder 0.150 m in radius? 56 . A large uniform cylindrical steel rod of density
+is 2.0 m long and has a diameter
+47 . By how much does a 65.0-kg mountain climber
+of 5.0 cm. The rod is fastened to a concrete floor
+stretch her 0.800-cm diameter nylon rope when
+with its long axis vertical. What is the normal
+she hangs 35.0 m below a rock outcropping?
+stress in the rod at the cross-section located at
+(For nylon,
+(a) 1.0 m from its lower end? (b) 1.5 m from the
+48 . When water freezes, its volume increases by lower end?
+9.05%. What force per unit area is water capable
+57 . A 90-kg mountain climber hangs from a nylon
+of exerting on a container when it freezes?
+rope and stretches it by 25.0 cm. If the rope was
+
+594 12 • Chapter Review
+originally 30.0 m long and its diameter is 1.0 cm, radius is 20.0 cm. If the pressure on the surface
+what is Young’s modulus for the nylon? is increased by 200 MPa, by how much does the
+radius of the sphere decrease?
+58 . A suspender rod of a suspension bridge is 25.0
+m long. If the rod is made of steel, what must its 12.4 Elasticity and Plasticity
+diameter be so that it does not stretch more
+66 . A uniform rope of cross-sectional area
+than 1.0 cm when a truck passes
+breaks when the tensile stress in it reaches
+by it? Assume that the rod supports all of the
+(a) What is the maximum
+weight of the truck.
+load that can be lifted slowly at a constant speed
+59 . A copper wire is 1.0 m long and its diameter is by the rope? (b) What is the maximum load that
+1.0 mm. If the wire hangs vertically, how much can be lifted by the rope with an acceleration of
+weight must be added to its free end in order to
+stretch it 3.0 mm?
+67 . One end of a vertical metallic wire of length 2.0 m and
+60 . A 100-N weight is attached to a free end of a diameter 1.0 mm is attached to a ceiling, and the other
+metallic wire that hangs from the ceiling. When a end is attached to a 5.0-N weight pan, as shown below.
+second 100-N weight is added to the wire, it The position of the pointer before the pan is 4.000 cm.
+stretches 3.0 mm. The diameter and the length Different weights are then added to the pan area, and
+of the wire are 1.0 mm and 2.0 m, respectively. the position of the pointer is recorded in the table
+What is Young’s modulus of the metal used to shown. Plot stress versus strain for this wire, then use
+manufacture the wire? the resulting curve to determine Young’s modulus and
+the proportionality limit of the metal. What metal is this
+61 . The bulk modulus of a material is
+most likely to be?
+What fractional change in
+volume does a piece of this material undergo
+when it is subjected to a bulk stress increase of Added load (including Scale reading
+Assume that the force is applied pan) (cm)
+uniformly over the surface. (N)
+62 . Normal forces of magnitude are
+0 4.000
+applied uniformly to a spherical surface
+enclosing a volume of a liquid. This causes the
+15 4.036
+radius of the surface to decrease from 50.000
+cm to 49.995 cm. What is the bulk modulus of
+25 4.073
+the liquid?
+63 . During a walk on a rope, a tightrope walker 35 4.109
+creates a tension of in a wire that
+is stretched between two supporting poles that 45 4.146
+are 15.0 m apart. The wire has a diameter of
+0.50 cm when it is not stretched. When the 55 4.181
+walker is on the wire in the middle between the
+poles the wire makes an angle of below the 65 4.221
+horizontal. How much does this tension stretch
+the steel wire when the walker is this position? 75 4.266
+64 . When using a pencil eraser, you exert a vertical
+85 4.316
+force of 6.00 N at a distance of 2.00 cm from the
+hardwood-eraser joint. The pencil is 6.00 mm in
+diameter and is held at an angle of to the
+horizontal. (a) By how much does the wood flex
+perpendicular to its length? (b) How much is it
+compressed lengthwise?
+65 . Normal forces are applied uniformly over the
+surface of a spherical volume of water whose
+Access for free at openstax.org
+
+12 • Chapter Review 595
+68 . An aluminum wire is
+suspended from the ceiling and hangs vertically.
+How long must the wire be before the stress at
+its upper end reaches the proportionality limit,
+which is
+Additional Problems
+69 . The coefficient of static friction between the
+rubber eraser of the pencil and the tabletop is
+If the force is applied along the
+axis of the pencil, as shown below, what is the
+minimum angle at which the pencil can stand
+without slipping? Ignore the weight of the pencil.
+71 . A uniform 4.0-m plank weighing 200.0 N rests
+against the corner of a wall, as shown below. There
+is no friction at the point where the plank meets the
+corner. (a) Find the forces that the corner and the
+floor exert on the plank. (b) What is the minimum
+coefficient of static friction between the floor and
+the plank to prevent the plank from slipping?
+70 . A pencil rests against a corner, as shown below.
+The sharpened end of the pencil touches a
+smooth vertical surface and the eraser end
+touches a rough horizontal floor. The coefficient
+of static friction between the eraser and the
+floor is The center of mass of the
+pencil is located 9.0 cm from the tip of the
+eraser and 11.0 cm from the tip of the pencil
+lead. Find the minimum angle for which the
+pencil does not slip.
+
+596 12 • Chapter Review
+72 . A 40-kg boy jumps from a height of 3.0 m, lands of aluminum, are joined end to end. Each rod is
+on one foot and comes to rest in 0.10 s after he 2.0 m long and has cross-sectional area
+hits the ground. Assume that he comes to rest If a 10,000-N tensile force is applied
+with a constant acceleration opposite to the at each end of the combination, find: (a) stress in
+motion. If the total cross-sectional area of the each rod; (b) strain in each rod; and, (c)
+bones in his legs just above his ankles is elongation of each rod.
+what is the compression stress in these
+74 . Two rods, one made of copper and the other of
+bones? Leg bones can be fractured when they
+steel, have the same dimensions. If the copper
+are subjected to stress greater than
+rod stretches by 0.15 mm under some stress,
+Is the boy in danger of breaking
+how much does the steel rod stretch under the
+his leg?
+same stress?
+73 . Two thin rods, one made of steel and the other
+Challenge Problems
+75 . A horizontal force is applied to a uniform sphere in
+direction exact toward the center of the sphere, as
+shown below. Find the magnitude of this force so
+that the sphere remains in static equilibrium. What
+is the frictional force of the incline on the sphere?
+76 . When a motor is set on a pivoted mount seen 77 . Two wheels A and B with weights w and 2w,
+below, its weight can be used to maintain respectively, are connected by a uniform rod
+tension in the drive belt. When the motor is not with weight w/2, as shown below. The wheels
+running the tensions and are equal. The are free to roll on the sloped surfaces.
+total mass of the platform and the motor is Determine the angle that the rod forms with the
+100.0 kg, and the diameter of the drive belt horizontal when the system is in equilibrium.
+pulley is when the motor is off, find: (a) Hint: There are five forces acting on the rod,
+the tension in the belt, and (b) the force at the which is two weights of the wheels, two normal
+hinged platform support at point C. Assume that reaction forces at points where the wheels make
+the center of mass of the motor plus platform is contacts with the wedge, and the weight of the
+at the center of the motor. rod.
+78 . Weights are gradually added to a pan until a wheel
+of mass M and radius R is pulled over an obstacle of
+height d, as shown below. What is the minimum
+mass of the weights plus the pan needed to
+accomplish this?
+Access for free at openstax.org
+
+12 • Chapter Review 597
+79 . In order to lift a shovelful of dirt, a gardener pushes
+downward on the end of the shovel and pulls
+upward at distance from the end, as shown
+below. The weight of the shovel is and acts at
+the point of application of Calculate the
+magnitudes of the forces and as functions of
+mg, and the weight W of the load. Why do 81 . The pole shown below is at a bend in a
+your answers not depend on the angle that the power line and is therefore subjected to more
+shovel makes with the horizontal? shear force than poles in straight parts of the
+line. The tension in each line is at
+the angles shown. The pole is 15.0 m tall, has an
+18.0 cm diameter, and can be considered to
+have half the strength of hardwood. (a) Calculate
+the compression of the pole. (b) Find how much
+it bends and in what direction. (c) Find the
+tension in a guy wire used to keep the pole
+straight if it is attached to the top of the pole at
+an angle of with the vertical. The guy wire
+is in the opposite direction of the bend.
+80 . A uniform rod of length 2R and mass M is
+attached to a small collar C and rests on a
+cylindrical surface of radius R, as shown below.
+If the collar can slide without friction along the
+vertical guide, find the angle for which the rod
+is in static equilibrium.
+
+598 12 • Chapter Review
+Access for free at openstax.org

@@ -1,0 +1,254 @@
+# REAL PDF — openstax_vol3.pdf, pages 250-255
+############################################################
+
+242 Chapter 5 | Relativity
+57. What is the velocity of an electron that has a (http://cnx.org/content/m58312/latest/#fs-
+momentum of 3.04×10−21 kg·m/s ? Note that you id1165036086155) , calculate the amount of mass
+convertedtoenergybythefusionof1.00kgofhydrogen.
+mustcalculatethevelocitytoatleastfourdigitstoseethe
+(b)Whatistheratioofmassdestroyedtotheoriginalmass,
+difference fromc.
+Δm/m ? (c) How does this compare with Δm/m for the
+fission of 1.00 kg of uranium?
+58. Findthevelocityofaprotonthathasamomentumof
+−19
+4.48×10 kg·m/s.
+66. There is approximately 10 34 J of energy available
+from fusion of hydrogen in the world’s oceans. (a) If
+10 33 J of this energy were utilized, what would be the
+5.9Relativistic Energy
+decrease in mass of the oceans? (b) How great a volume
+59. Whatistherestenergyofanelectron,givenitsmassis
+ofwaterdoesthiscorrespondto?(c)Commentonwhether
+9.11×10 −31 kg? Give your answer in joules and MeV. this is a significant fraction of the total mass of the oceans.
+67. Amuonhasarestmassenergyof105.7MeV,andit
+60. Find the rest energy in joules and MeV of a proton,
+decays into an electron and a massless particle. (a) If all
+given its mass is 1.67×10 −27 kg.
+thelostmassisconvertedintotheelectron’skineticenergy,
+find γ for the electron. (b) What is the electron’s velocity?
+61. If the rest energies of a proton and a neutron (the
+two constituents of nuclei) are 938.3 and 939.6 MeV,
+68. A π-mesonisaparticlethatdecaysintoamuonanda
+respectively, what is the difference in their mass in
+masslessparticle.The π-mesonhasarestmassenergyof
+kilograms?
+139.6MeV,andthemuonhasarestmassenergyof105.7
+MeV.Supposethe π-mesonisatrestandallofthemissing
+62. The Big Bang that began the universe is estimated
+massgoesintothemuon’skineticenergy.Howfastwillthe
+tohavereleased 10 68 J ofenergy.Howmanystarscould
+muon move?
+halfthisenergycreate,assumingtheaveragestar’smassis
+4.00×10 30 kg ? 69. (a) Calculate the relativistic kinetic energy of a
+1000-kgcarmovingat30.0m/sifthespeedoflightwere
+only 45.0 m/s. (b) Find the ratio of the relativistic kinetic
+63. A supernova explosion of a 2.00×10 31 kg star
+energy to classical.
+produces 1.00×1044 J of energy. (a) How many
+kilogramsofmassareconvertedtoenergyintheexplosion? 70. Alpha decay is nuclear decay in which a helium
+(b) What is the ratio Δm/m of mass destroyed to the nucleus is emitted. If the helium nucleus has a mass of
+original mass of the star? 6.80×10 −27 kg andisgiven5.00MeVofkineticenergy,
+what is its velocity?
+64. (a)UsingdatafromPotentialEnergyofaSystem
+(http://cnx.org/content/m58312/latest/#fs-
+71. (a) Beta decay is nuclear decay in which an electron
+id1165036086155) , calculate the mass converted to
+is emitted. If the electron is given 0.750 MeV of kinetic
+energybythefissionof1.00kgofuranium.(b)Whatisthe
+energy,whatisitsvelocity?(b)Commentonhowthehigh
+ratio of mass destroyed to the original mass, Δm/m?
+velocityisconsistentwiththekineticenergyasitcompares
+to the rest mass energy of the electron.
+65. (a)UsingdatafromPotentialEnergyofaSystem
+ADDITIONAL PROBLEMS
+72. (a)Atwhatrelativevelocityis γ =1.50? (b)Atwhat 74. Unreasonable Results (a) Find the value of γ
+relative velocity is γ =100? required for the following situation. An earthbound
+observermeasures23.9htohavepassedwhilesignalsfrom
+ahigh-velocityspaceprobeindicatethat24.0hhavepassed
+73. (a)Atwhatrelativevelocityis γ =2.00? (b)Atwhat on board. (b) What is unreasonable about this result? (c)
+relative velocity is γ =10.0? Which assumptions are unreasonable or inconsistent?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 243
+75. (a) How long does it take the astronaut in Example 83. An observer at origin of inertial frame S sees a
+5.5 to travel 4.30 ly at 0.99944c (as measured by the flashbulb go off at x=150km, y=15.0km, and
+earthboundobserver)?(b)Howlongdoesittakeaccording
+z=1.00km attime t=4.5×10−4s. Atwhattimeand
+totheastronaut?(c)Verifythatthesetwotimesarerelated
+through time dilation with γ =30.00 as given.
+position in the S′ system did the flash occur, if S′ is
+moving along shared x-direction with S at a velocity
+v=0.6c?
+76. (a) How fast would an athlete need to be running
+for a 100-m race to look 100 yd long? (b) Is the answer
+consistentwiththefactthatrelativisticeffectsaredifficult 84. An observer sees two events 1.5×10 −8 s apart at
+to observe in ordinary circumstances? Explain. a separation of 800 m. How fast must a second observer
+be moving relative to the first to see the two events occur
+simultaneously?
+77. (a)Findthevalueof γ forthefollowingsituation.An
+astronautmeasuresthelengthofhisspaceshiptobe100m,
+85. An observer standing by the railroad tracks sees two
+whileanearthboundobservermeasuresittobe25.0m.(b)
+bolts of lightning strike the ends of a 500-m-long train
+What is the speed of the spaceship relative to Earth?
+simultaneouslyattheinstantthemiddleofthetrainpasses
+him at 50 m/s. Use the Lorentz transformation to find the
+78. Aclockinaspaceshiprunsone-tenththerateatwhich
+time between the lightning strikes as measured by a
+an identical clock on Earth runs. What is the speed of the
+passenger seated in the middle of the train.
+spaceship?
+86. Two astronomical events are observed from Earth to
+79. An astronaut has a heartbeat rate of 66 beats per
+occur at a time of 1 s apart and a distance separation of
+minuteasmeasuredduringhisphysicalexamonEarth.The
+1.5×10 9 m from each other. (a) Determine whether
+heartbeat rate of the astronaut is measured when he is in
+separation of the two events is space like or time like. (b)
+a spaceship traveling at 0.5c with respect to Earth by an
+State what this implies about whether it is consistent with
+observer (A) in the ship and by an observer (B) on Earth.
+special relativity for one event to have caused the other?
+(a)DescribeanexperimentalmethodbywhichobserverB
+onEarthwillbeabletodeterminetheheartbeatrateofthe
+astronaut whenthe astronaut isinthe spaceship. (b)What 87. Two astronomical events are observed from Earth to
+will be the heartbeat rate(s) of the astronaut reported by occuratatimeof0.30sapartandadistanceseparationof
+observers A and B? 2.0×10 9 m fromeachother.Howfastmustaspacecraft
+travelfromthesiteofoneeventtowardtheothertomake
+80. A spaceship (A) is moving at speed c/2 with respect the events occur at the same time when measured in the
+to another spaceship (B). Observers in A and B set their frame of reference of the spacecraft?
+clockssothattheeventat(x,y,z,t)ofturningonalaserin
+spaceshipBhascoordinates(0,0,0,0)inAandalso(0,0,
+88. Aspacecraftstartsfrombeingatrestattheoriginand
+0,0)inB.AnobserverattheoriginofBturnsonthelaser
+acceleratesataconstantrateg,asseenfromEarth,takento
+at t=0 andturnsitoffat t=τ inhistime.Whatisthe
+beaninertialframe,untilitreachesaspeedofc/2.(a)Show
+timedurationbetweenonandoffasseenbyanobserverin that the increment of proper time is related to the elapsed
+A?
+time in Earth’s frame by: dτ= 1−v2/c2dt.
+81. Sametwoobserversasintheprecedingexercise,but (b)Findanexpressionfortheelapsedtimetoreachspeed
+now we look at two events occurring in spaceship A. A c/2asseeninEarth’sframe.(c)Usetherelationshipin(a)
+photon arrives at the origin of A at its time t=0 and toobtainasimilarexpressionfortheelapsedpropertimeto
+another photon arrives at (x=1.00m, 0, 0) at t=0 in reachc/2asseeninthespacecraft,anddeterminetheratio
+of the time seen from Earth with that on the spacecraft to
+theframeofshipA.(a)Findthecoordinates andtimes of
+reach the final speed.
+the two events as seen by an observer in frame B. (b) In
+whichframearethetwoeventssimultaneousandinwhich
+89. (a)Allbuttheclosestgalaxiesarerecedingfromour
+frame are they are not simultaneous?
+own Milky Way Galaxy. If a galaxy 12.0×10 9 ly away
+82. Same two observers as in the preceding exercises. A is receding from us at 0.900c, at what velocity relative to
+rod of length 1 m is laid out on the x-axis in the frame of usmustwesendanexploratoryprobetoapproachtheother
+Bfromoriginto (x=1.00m, 0, 0). Whatisthelengthof galaxy at 0.990c as measured from that galaxy? (b) How
+long will it take the probe to reach the other galaxy as
+therodobservedbyanobserverintheframeofspaceship
+measuredfromEarth?Youmayassumethatthevelocityof
+A?
+theothergalaxyremainsconstant.(c)Howlongwillitthen
+
+244 Chapter 5 | Relativity
+take for a radio signal to be beamed back? (All of this is toaccelerateamassof1kgby1 m/s2 whenitistraveling
+possible in principle, but not practical.)
+at a velocity ofc/2.
+90. SupposeaspaceshipheadingstraighttowardtheEarth
+100. A positron is an antimatter version of the electron,
+at0.750ccanshootacanisterat0.500crelativetotheship.
+having exactly the same mass. When a positron and an
+(a)WhatisthevelocityofthecanisterrelativetoEarth,ifit
+electronmeet,theyannihilate,convertingalloftheirmass
+isshotdirectlyatEarth?(b)Ifitisshotdirectlyawayfrom
+into energy. (a) Find the energy released, assuming
+Earth?
+negligiblekineticenergybeforetheannihilation.(b)Ifthis
+energy is given to a proton in the form of kinetic energy,
+91. Repeat the preceding problem with the ship heading what is its velocity? (c) If this energy is given to another
+directly away from Earth. electron in the form of kinetic energy, what is its velocity?
+92. IfaspaceshipisapproachingtheEarthat0.100cand 101. What is the kinetic energy in MeV of a π-meson
+a message capsule is sent toward it at 0.100c relative to
+that lives 1.40×10 −16 s as measured in the laboratory,
+Earth, what is the speed of the capsule relative to the ship?
+and 0.840×10 −16 s whenatrestrelativetoanobserver,
+93. (a) Suppose the speed of light were only 3000 m/s. given that its rest energy is 135 MeV?
+A jet fighter moving toward a target on the ground at 800
+m/sshootsbullets, each having amuzzle velocity of1000 102. Find the kinetic energy in MeV of a neutron with a
+m/s. What are the bullets’ velocity relative to the target? measuredlifespanof2065s,givenitsrestenergyis939.6
+(b)Ifthespeedoflightwasthissmall,wouldyouobserve MeV, and rest life span is 900s.
+relativistic effects in everyday life? Discuss.
+103. (a) Show that (pc)2/(mc2)2=γ2−1. This means
+94. If a galaxy moving away from the Earth has a speed
+of 1000 km/s and emits 656 nm light characteristic of thatatlargevelocities pc> >mc2. (b)Is E≈ pc when
+hydrogen (the most common element in the universe). (a) γ =30.0, as for the astronaut discussed in the twin
+What wavelength would we observe on Earth? (b) What
+paradox?
+type of electromagnetic radiation is this? (c) Why is the
+speed of Earth in its orbit negligible here?
+104. One cosmic ray neutron has a velocity of 0.250c
+95. Aspaceprobespeedingtowardstheneareststarmoves relativetotheEarth.(a)Whatistheneutron’stotalenergy
+at 0.250c and sends radio information at a broadcast in MeV? (b) Find its momentum. (c) Is E≈ pc in this
+frequency of 1.00 GHz. What frequency is received on situation?Discussintermsoftheequationgiveninpart(a)
+Earth? of the previous problem.
+96. Nearthecenterofourgalaxy,hydrogengasismoving 105. Whatis γ foraprotonhavingamassenergyof938.3
+directly away from us in its orbit about a black hole. We
+MeV accelerated through an effective potential of 1.0 TV
+receive1900nmelectromagneticradiationandknowthatit
+(teravolt)?
+was 1875 nm when emitted by the hydrogen gas. What is
+the speed of the gas?
+106. (a) What is the effective accelerating potential for
+electrons at the Stanford Linear Accelerator, if
+97. (a)Calculatethespeedofa 1.00-µg particleofdust γ =1.00×10 5 for them? (b) What is their total energy
+thathasthesamemomentumasaprotonmovingat0.999c.
+(nearly the same as kinetic in this case) in GeV?
+(b) What does the small speed tell us about the mass of
+a proton compared to even a tiny amount of macroscopic
+matter? 107. (a) Using data from Potential Energy of a
+System (http://cnx.org/content/m58312/latest/#fs-
+id1165036086155) , find the mass destroyed when the
+98. (a)Calculate γ foraprotonthathasamomentumof
+energyinabarrel ofcrude oil isreleased. (b)Given these
+1.00kg·m/s. (b)Whatisitsspeed?Suchprotonsforma barrelscontain200litersandassumingthedensityofcrude
+rare component of cosmic radiation with uncertain origins. oil is 750kg/m 3 , what is the ratio of mass destroyed to
+original mass, Δm/m?
+99. ShowthattherelativisticformofNewton’ssecondlaw
+is(a) F =m du 1 ; (b)Findtheforceneeded 108. (a) Calculate the energy released by the destruction
+dt 3/2
+⎛ 1−u2/c2⎞
+of1.00kgofmass.(b)Howmanykilogramscouldbelifted
+⎝ ⎠
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 245
+to a 10.0 km height by this amount of energy? fraction of a rocket’s mass would have to be destroyed
+to get it into a low Earth orbit, neglecting the decrease
+109. A Van de Graaff accelerator utilizes a 50.0 MV in gravity? (Assume an orbital altitude of 250 km, and
+potential differencetoaccelerate chargedparticles suchas calculate both the kinetic energy (classical) and the
+protons.(a)Whatisthevelocityofaprotonacceleratedby gravitationalpotentialenergyneeded.)(b)Iftheshiphasa
+such a potential? (b) An electron? massof 1.00×10 5 kg (100tons),whattotalyieldnuclear
+explosion in tons of TNT is needed?
+110. Suppose you use an average of 500kW·h of
+electric energy per month in your home. (a) How long
+113. Thesunproducesenergyatarateof 3.85×10 26 W
+would1.00gofmassconvertedtoelectricenergywithan
+by the fusion of hydrogen. About 0.7% of each kilogram
+efficiencyof38.0%lastyou?(b)Howmanyhomescould
+of hydrogen goes into the energy generated by the Sun.
+besuppliedatthe 500kW·h permonthrateforoneyear
+(a)Howmanykilogramsofhydrogenundergofusioneach
+by the energy from the described mass conversion?
+second? (b) If the sun is 90.0% hydrogen and half of this
+can undergo fusion before the sun changes character, how
+111. (a) A nuclear power plant converts energy from long could it produce energy at its current rate? (c) How
+nuclearfissionintoelectricitywithanefficiencyof35.0%. many kilograms of mass is the sun losing per second? (d)
+How much mass is destroyed in one year to produce a Whatfractionofitsmasswillithavelostinthetimefound
+continuous1000MWofelectricpower?(b)Doyouthinkit in part (b)?
+wouldbepossibletoobservethismasslossifthetotalmass
+of the fuel is 104 kg? 114. Show that E2−p2c2 for a particle is invariant
+under Lorentz transformations.
+112. Nuclear-powered rockets were researched for some
+years before safety concerns became paramount. (a) What
+
+246 Chapter 5 | Relativity
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

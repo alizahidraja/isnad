@@ -1,0 +1,296 @@
+# REAL PDF — openstax_vol2.pdf, pages 289-295
+############################################################
+
+Chapter 6 | Gauss's Law 279
+to make a 300-cm long rod, which is then painted with a 55. Theelectricfield10.0cmfromthesurfaceofacopper
+chargedpaintsothatoneobtainsauniformchargedensity. ball of radius 5.0 cm is directed toward the ball’s center
+Theradiusofeachrodis1cm,andweseekanelectricfield and has magnitude 4.0×102 N/C. How much charge is
+atapointthatis4cmfromthecenteroftherod.(d)Same
+on the surface of the ball?
+rod as (c), but we seek electric field at a point that is 500
+cm from the center of the rod.
+56. Charge is distributed throughout a spherical shell of
+innerradius r andouterradius r withavolumedensity
+50. A long silver rod of radius 3 cm has a charge of 1 2
+−5µC/cm on its surface. (a) Find the electric field at a givenby ρ= ρ
+0
+r
+1
+/r, where ρ
+0
+isaconstant.Determine
+point5cmfromthecenteroftherod(anoutsidepoint).(b) the electric field due to this charge as a function of r, the
+Findtheelectricfieldatapoint2cmfromthecenterofthe distance from the center of the shell.
+rod (an inside point).
+57. Chargeisdistributedthroughoutasphericalvolumeof
+51. The electric field at 2 cm from the center of long radiusRwithadensity ρ=αr2, where α isaconstant.
+copper rod of radius 1 cm has a magnitude 3 N/C and
+Determinetheelectricfieldduetothechargeatpointsboth
+directed outward from the axis of the rod. (a) How much
+inside and outside the sphere.
+charge per unit length exists on the copper rod? (b) What
+would be the electric flux through a cube of side 5 cm
+58. Consider a uranium nucleus to be sphere of radius
+situatedsuchthattherodpassesthroughoppositesidesof
+the cube perpendicularly? R=7.4×10 −15 m with a charge of 92e distributed
+uniformly throughout its volume. (a) What is the electric
+52. A long copper cylindrical shell of inner radius 2 cm force exerted on an electron when it is 3.0×10 −15 m
+and outer radius 3 cm surrounds concentrically a charged
+fromthecenterofthenucleus?(b)Whatistheacceleration
+long aluminum rod of radius 1 cm with a charge density
+of the electron at this point?
+of 4 pC/m. All charges on the aluminum rod reside at its
+surface. The inner surface of the copper shell has exactly
+59. The volume charge density of a spherical charge
+opposite charge to that of the aluminum rod while the
+outer surface of the copper shell has the same charge as distribution is given by ρ(r)= ρ 0 e−αr , where ρ 0 and
+thealuminumrod.Findthemagnitudeanddirectionofthe α areconstants.Whatistheelectricfieldproducedbythis
+electric field at points that are at the following distances
+charge distribution?
+fromthecenterofthealuminumrod:(a)0.5cm,(b)1.5cm,
+(c) 2.5 cm, (d) 3.5 cm, and (e) 7 cm.
+6.4Conductors in Electrostatic Equilibrium
+53. Charge is distributed uniformly with a density ρ
+60. An uncharged conductor with an internal cavity is
+throughout an infinitely long cylindrical volume of radius
+shown in the following figure. Use the closed surface S
+R.Showthatthefieldofthischargedistributionisdirected
+along with Gauss’ law to show that when a charge q is
+radially with respect to the cylinder and that
+placedinthecavityatotalcharge–qisinducedontheinner
+surface of the conductor. What is the charge on the outer
+ρr
+E= (r ≤R); surface of the conductor?
+2ε
+0
+ρR2
+E= (r ≥R).
+2ε r
+0
+54. Charge is distributed throughout a very long
+cylindricalvolumeofradiusRsuchthatthechargedensity
+increases with the distance r from the central axis of the
+cylinder according to ρ=αr, where α is a constant.
+Show that the field of this charge distribution is directed
+Figure 6.46 A charge inside a cavity of a metal. Charges at
+radially with respect to the cylinder and that
+the outer surface do not depend on how the charges are
+distributed at the inner surface since E field inside the body of
+αr2
+E= (r ≤R); the metal is zero.
+3ε
+0
+αR3
+E= (r ≥R). 61. An uncharged spherical conductor S of radius R has
+3ε r
+0 twosphericalcavitiesAandBofradiiaandb,respectively
+
+280 Chapter 6 | Gauss's Law
+as shown below. Two point charges +q
+a
+and +q
+b
+are 66. At the surface of any conductor in electrostatic
+placed at the center of the two cavities by using non- equilibrium, E=σ/ε 0 . Show that this equation is
+conducting supports. In addition, a point charge +q
+0
+is consistentwiththefactthat E=kq/r2 atthesurfaceofa
+placedoutsideatadistancerfromthecenterofthesphere. spherical conductor.
+(a) Draw approximate charge distributions in the metal
+althoughmetalspherehasnonetcharge.(b)Drawelectric
+67. Twoparallelplates10cmonasidearegivenequaland
+field lines. Draw enough lines to represent all distinctly
+different places. opposite charges of magnitude 5.0×10 −9 C. The plates
+are1.5mmapart.Whatistheelectricfieldatthecenterof
+the region between the plates?
+68. Twoparallelconductingplates,eachofcross-sectional
+area 400cm2, are 2.0 cm apart and uncharged. If
+1.0×1012 electronsaretransferredfromoneplatetothe
+other,whatare(a)thechargedensityoneachplate?(b)The
+electric field between the plates?
+69. Thesurfacechargedensityonalongstraightmetallic
+pipeis σ.Whatistheelectricfieldoutsideandinsidethe
+62. Apositivepointchargeisplacedattheanglebisector
+of two uncharged plane conductors that make an angle of pipe? Assume the pipe has a diameter of 2a.
+45°. See below. Draw the electric field lines.
+63. A long cylinder of copper of radius 3 cm is charged
+sothatithasauniformchargeperunitlengthonitssurface
+of 3 C/m. (a) Find the electric field inside and outside
+the cylinder. (b) Draw electric field lines in a plane
+perpendicular to the rod.
+64. Analuminumsphericalballofradius4cmischarged
+with 5µC of charge. A copper spherical shell of inner
+radius 6 cm and outer radius 8 cm surrounds it. A total
+charge of −8µC is put on the copper shell. (a) Find the
+electric field at all points in space, including points inside
+the aluminum and copper shell when copper shell and 70. Apointcharge q=−5.0×10−12 C isplacedatthe
+aluminumsphereareconcentric.(b)Findtheelectricfield
+centerofasphericalconductingshellofinnerradius3.5cm
+atallpointsinspace,includingpointsinsidethealuminum
+and outer radius 4.0 cm. The electric field just above the
+and copper shell when the centers of copper shell and
+surface of the conductor is directed radially outward and
+aluminum sphere are 1 cm apart.
+has magnitude 8.0 N/C. (a) What is the charge density on
+theinnersurfaceoftheshell?(b)Whatisthechargedensity
+65. A long cylinder of aluminum of radius R meters is ontheoutersurfaceoftheshell?(c)Whatisthenetcharge
+chargedsothatithasauniformchargeperunitlengthonits on the conductor?
+surface of λ.(a)Findtheelectric field inside andoutside
+thecylinder.(b)Plotelectricfieldasafunctionofdistance
+71. Asolidcylindricalconductorofradiusaissurrounded
+from the center of the rod.
+by a concentric cylindrical shell of inner radius b. The
+solid cylinder and the shell carry charges +Q and –Q,
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 281
+respectively.AssumingthatthelengthLofbothconductors thecylinders,for(a) r <a; (b) a<r <b; and(c)r >b.
+ismuchgreaterthanaorb,determinetheelectricfieldasa
+functionofr,thedistancefromthecommoncentralaxisof
+ADDITIONAL PROBLEMS
+72. Avectorfield → E (notnecessarily anelectric field; charge were proportional to 1/r2+σ rather than 1/r2.
+Determine the flux that passes through the surface of a
+→ ^
+note units) is given by E =3x2 k. Calculate sphere of radius R centered at the charge. Would Gauss’s
+∫ → E · ^ n da, whereSistheareashownbelow.Assume law remain valid?
+S
+that ^ n = ^ k. 77. The electric field in a region is given by
+→ ^
+E =a/(b+cx)i, where a=200N·m/C,
+b=2.0m, and c=2.0. Whatisthenetchargeenclosed
+by the shaded volume shown below?
+73. Repeat the preceding problem, with
+→ ^ ^
+E =2xi +3x2 k.
+78. Two equal and opposite charges of magnitude Q are
+74. A circular area S is concentric with the origin, has
+located on the x-axis at the points +a and –a, as shown
+radiusa,andliesintheyz-plane.Calculate ∫ → E · ^ n dA below. What is the net flux due to these charges through
+S a square surface of side 2a that lies in the yz-plane and
+→ ^ is centered at the origin? (Hint: Determine the flux due
+for E =3z2 i.
+to each charge separately, then use the principle of
+superposition. You may be able to make a symmetry
+75. (a) Calculate the electric flux through the open argument.)
+→ ^
+hemisphericalsurfaceduetotheelectricfield E =E k
+0
+(seebelow).(b)Ifthehemisphereisrotatedby 90° around
+thex-axis, what is the flux through it?
+79. Afellowstudentcalculatedthefluxthroughthesquare
+76. Suppose that the electric field of an isolated point for the system in the preceding problem and got 0. What
+
+282 Chapter 6 | Gauss's Law
+went wrong? asphericalvolumethatiscenteredat O andhasaradius
+1
+R. Without disturbing the charge remaining, charge is
+80. A 10cm×10cm pieceofaluminumfoilof0.1mm removedfromthesphericalvolumethatiscenteredat O
+2
+thickness has a charge of 20µC that spreads on both
+(seebelow).Showthattheelectricfieldeverywhereinthe
+wide side surfaces evenly. You may ignore the charges on empty region is given by
+the thin sides of the edges. (a) Find the charge density.
+→
+(b) Find the electric field 1 cm from the center, assuming → Q r
+E = ,
+approximate planar symmetry. 4πε R3
+0
+81. Two 10cm×10cm pieces of aluminum foil of where → r is the displacement vector directed from
+thickness 0.1 mm face each other with a separation of 5 O 1 toO 2 .
+mm.Oneofthefoilshasachargeof +30µC andtheother
+has −30µC. (a) Find the charge density at all surfaces,
+i.e., on those facing each other and those facing away. (b)
+Find the electric field between the plates near the center
+assuming planar symmetry.
+82. Twolargecopperplatesfacingeachotherhavecharge
+densities ±4.0C/m2 onthesurfacefacingtheotherplate,
+and zero in between the plates. Find the electric flux
+through a 3cm×4cm rectangular area between the
+plates,asshownbelow,forthefollowingorientationsofthe
+85. A non-conducting spherical shell of inner radius a
+area. (a) If the area is parallel to the plates, and (b) if the 1
+areaistilted θ=30° fromtheparalleldirection.Note,this and outer radius b
+1
+is uniformly charged with charged
+angle can also be θ=180°+30°. density ρ inside another non-conducting spherical shell
+1
+of inner radius a and outer radius b that is also
+2 2
+uniformly charged with charge density ρ . See below.
+2
+Find the electric field at space point P at a distance r
+from the common center such that (a) r >b , (b)
+2
+a <r <b , (c) b <r <a , (d) a <r <b , and
+2 2 1 2 1 1
+(e) r <a .
+1
+83. The infinite slab between the planes defined by
+z=−a/2 and z=a/2 containsauniformvolumecharge
+density ρ (seebelow).Whatistheelectricfieldproduced
+by this charge distribution, both inside and outside the
+distribution?
+86. Two non-conducting spheres of radii R and R
+1 2
+areuniformlychargedwithchargedensities ρ and ρ ,
+1 2
+respectively.Theyareseparatedatcenter-to-centerdistance
+84. A total charge Q is distributed uniformly throughout
+a (see below). Find the electric field at point P located
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 283
+at a distance r from the center of sphere 1 and is in the 89. Shownbelowaretwoconcentricconductingspherical
+direction θ fromthelinejoiningthetwospheresassuming shells of radii R and R , each of finite thickness much
+1 2
+theirchargedensitiesarenotaffectedbythepresenceofthe less than either radius. The inner and outer shell carry net
+othersphere.(Hint:Workonesphereatatimeandusethe charges q and q , respectively,whereboth q and q
+1 2 1 2
+superposition principle.)
+are positive. What is the electric field for (a) r <R ; (b)
+1
+R <r <R ; and(c) r >R ? (d)Whatisthenetcharge
+1 2 2
+ontheinnersurfaceoftheinnershell,theoutersurfaceof
+theinnershell,theinnersurfaceoftheoutershell,andthe
+outer surface of the outer shell?
+87. A disk of radius R is cut in a non-conducting large
+plate that is uniformly charged with charge density σ
+(coulomb per square meter). See below. Find the electric
+field at a height h above the center of the disk.
+(h > > R, h < < lorw). (Hint: Fill the hole with
+±σ.)
+90. A point charge of q=5.0×10 −8 C is placed at
+88. Concentric conducting spherical shells carry charges the center of an uncharged spherical conducting shell of
+Q and –Q, respectively (see below). The inner shell has inner radius 6.0 cm and outer radius 9.0 cm. Find the
+negligible thickness. Determine the electric field for (a) electric field at (a) r =4.0cm, (b) r =8.0cm, and (c)
+r <a; (b) a<r <b; (c) b<r <c; and (d) r >c. r =12.0cm. (d) What are the charges induced on the
+inner and outer surfaces of the shell?
+CHALLENGE PROBLEMS
+91. TheHubbleSpaceTelescopecanmeasuretheenergy have observed the flux at the Hubble with (for example,
+flux from distant objects such as supernovae and stars. Vega[3]), find the distance to that object and the size of
+Scientiststhenusethisdatatocalculatetheenergyemitted Hubble’s primary mirror, and calculate the total energy
+bythatobject.Chooseaninterstellarobjectwhichscientists flux.(Hint:TheHubbleinterceptsonlyasmallpartofthe
+3. http://adsabs.harvard.edu/abs/2004AJ....127.3508B
+
+284 Chapter 6 | Gauss's Law
+total flux.) itsradiusreaches2Ratthetime t . Determinetheelectric
+0
+field due to this charge as a function of time (a) at the
+92. Re-deriveGauss’slawforthegravitationalfield,with surfaceoftheballoon,(b)atthesurfaceofradiusR,and(c)
+→ g directed positively outward. atthesurfaceofradius2R.Ignoreanyeffectontheelectric
+fieldduetothematerialoftheballoonandassumethatthe
+radius increases uniformly with time.
+93. An infinite plate sheet of charge of surface charge
+density σ is shown below. What is the electric field at
+95. Find the electric field of a large conducting plate
+a distance x from the sheet? Compare the result of this
+containing a net charge q. Let A be area of one side of
+calculation with that of worked out in the text.
+theplate andhthethickness oftheplate (seebelow).The
+chargeonthemetalplatewilldistributemostlyonthetwo
+planar sides and very little on the edges if the plate is thin.
+94. A spherical rubber balloon carries a total charge Q
+distributeduniformlyoveritssurface.At t=0,theradius
+oftheballoonisR.Theballoonisthenslowlyinflateduntil
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

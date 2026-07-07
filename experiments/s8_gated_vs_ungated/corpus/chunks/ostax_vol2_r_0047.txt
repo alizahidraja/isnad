@@ -1,0 +1,263 @@
+# REAL PDF — openstax_vol2.pdf, pages 284-289
+############################################################
+
+274 Chapter 6 | Gauss's Law
+CHAPTER 6 REVIEW
+KEY TERMS
+area vector vector with magnitude equal to the area of a surface and direction perpendicular to the surface
+cylindrical symmetry system only varies with distance from the axis, not direction
+electric flux dot product of the electric field and the area through which it is passing
+flux quantity of something passing through a given area
+free electrons also called conduction electrons, these are the electrons in a conductor that are not bound to any
+particular atom, and hence are free to move around
+Gaussian surface any enclosed (usually imaginary) surface
+planar symmetry system only varies with distance from a plane
+spherical symmetry system only varies with the distance from the origin, not in direction
+KEY EQUATIONS
+Definition of electric flux, for uniform electric field → →
+Φ= E · A →EAcosθ
+Electric flux through an open surface → ^ → →
+Φ=∫ E ·n dA=∫ E ·d A
+S S
+Electric flux through a closed surface → ^ → →
+Φ=∮ E ·n dA=∮ E ·d A
+S S
+Gauss’s law Φ=∮ → E · ^ n dA= q ε enc
+S 0
+Gauss’s Law for systems with symmetry Φ=∮ → E · ^ n dA=E∮ dA=EA= q ε enc
+S S 0
+The magnitude of the electric field just outside the surface E=
+ε
+σ
+of a conductor 0
+SUMMARY
+6.1Electric Flux
+• Theelectricfluxthroughasurfaceisproportionaltothenumberoffieldlinescrossingthatsurface.Notethatthis
+means the magnitude is proportional to the portion of the field perpendicular to the area.
+• The electric flux is obtained by evaluating the surface integral
+→ ^ → →
+Φ=∮ E ·n dA=∮ E ·d A ,
+S S
+where the notation used here is for a closed surfaceS.
+6.2Explaining Gauss’s Law
+• Gauss’s law relates the electric flux through a closed surface to the net charge within that surface,
+Φ=∮ → E · ^ n dA= q ε enc,
+S 0
+where q is the total charge inside the Gaussian surfaceS.
+enc
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 275
+• Allsurfacesthatincludethesameamountofchargehavethesamenumberoffieldlinescrossingit,regardlessof
+the shape or size of the surface, as long as the surfaces enclose the same amount of charge.
+6.3Applying Gauss’s Law
+• Forachargedistributionwithcertainspatialsymmetries(spherical,cylindrical,andplanar),wecanfindaGaussian
+surfaceoverwhich → E · ^ n =E,whereEisconstantoverthesurface.Theelectricfieldisthendeterminedwith
+Gauss’s law.
+q
+• For spherical symmetry, the Gaussian surface is also a sphere, and Gauss’s law simplifies to 4πr2E=
+ε
+enc.
+0
+• For cylindrical symmetry, we use a cylindrical Gaussian surface, and find that Gauss’s law simplifies to
+q
+2πrLE=
+ε
+enc.
+0
+• Forplanarsymmetry,aconvenientGaussiansurfaceisaboxpenetratingtheplane,withtwofacesparalleltothe
+q
+plane and the remainder perpendicular, resulting in Gauss’s law being 2AE=
+ε
+enc.
+0
+6.4Conductors in Electrostatic Equilibrium
+• The electric field inside a conductor vanishes.
+• Any excess charge placed on a conductor resides entirely on the surface of the conductor.
+• The electric field is perpendicular to the surface of a conductor everywhere on that surface.
+σ
+• The magnitude of the electric field just above the surface of a conductor is given by E=
+ε
+.
+0
+CONCEPTUAL QUESTIONS
+7. (a)Iftheelectricfluxthroughaclosedsurfaceiszero,
+6.1Electric Flux is the electric field necessarily zero at all points on the
+surface? (b) What is the net charge inside the surface?
+1. Discuss how to orient a planar surface of area A in a
+uniform electric field of magnitude E to obtain (a) the
+0
+8. Discuss how Gauss’s law would be affected if the
+maximum flux and (b) the minimum flux through the area.
+electric field of a point charge did not vary as 1/r2.
+2. Whatarethemaximumandminimumvaluesoftheflux
+in the preceding question? 9. Discuss the similarities and differences between the
+gravitationalfieldofapointmassmandtheelectricfieldof
+a point chargeq.
+3. Thenetelectricfluxcrossingaclosedsurfaceisalways
+zero. True or false?
+10. Discuss whether Gauss’s law can be applied to other
+forces, and if so, which ones.
+4. Thenetelectric fluxcrossinganopensurfaceisnever
+zero. True or false?
+→
+11. Is the term E in Gauss’s law the electric field
+produced by just the charge inside the Gaussian surface?
+6.2Explaining Gauss’s Law
+5. Two concentric spherical surfaces enclose a point 12. ReformulateGauss’slawbychoosingtheunitnormal
+charge q. The radius of the outer sphere is twice that of of the Gaussian surface to be the one directed inward.
+theinnerone.Comparetheelectricfluxescrossingthetwo
+surfaces.
+6.3Applying Gauss’s Law
+6. Comparetheelectricfluxthroughthesurfaceofacube
+13. Would Gauss’s law be helpful for determining the
+ofsidelengthathathasachargeqatitscentertotheflux
+electric field of two equal but opposite charges a fixed
+throughasphericalsurfaceofradiusawithachargeqatits
+distance apart?
+center.
+
+276 Chapter 6 | Gauss's Law
+14. Discusstherolethatsymmetryplaysintheapplication
+of Gauss’s law. Give examples of continuous charge
+distributionsinwhichGauss’slawisusefulandnotuseful
+in determining the electric field.
+15. Discuss the restrictions on the Gaussian surface used
+to discuss planar symmetry. For example, is its length
+important?Doesthecross-sectionhavetobesquare?Must
+the end faces be on opposite sides of the sheet?
+6.4Conductors in Electrostatic Equilibrium
+16. Is the electric field inside a metal always zero?
+17. Underelectrostaticconditions,theexcesschargeona
+conductorresidesonitssurface.Doesthismeanthatallthe
+conduction electrons in a conductor are on the surface?
+19. The conductor in the preceding figure has an excess
+charge of –5.0µC. If a 2.0-µC point charge is placed
+18. A charge q is placed in the cavity of a conductor
+as shown below. Will a charge outside the conductor in the cavity, what is the net charge on the surface of the
+experience an electric field due to the presence ofq? cavity and on the outer surface of the conductor?
+PROBLEMS
+betweentheplateswhenthenormaltothecirclemakesan
+6.1Electric Flux angle of 5° with a line perpendicular to the plates. Note
+20. Auniformelectricfieldofmagnitude 1.1×104 N/C that this angle can also be given as 180°+5°.
+is perpendicular to a square sheet with sides 2.0 m long.
+What is the electric flux through the sheet? 25. A square surface of area 2cm2 is in a space of
+uniformelectricfieldofmagnitude 10 3 N/C.Theamount
+21. Calculate the flux through the sheet of the previous
+of flux through it depends on how the square is oriented
+problemiftheplaneofthesheetisatanangleof 60° tothe
+relative to the direction of the electric field. Find the
+field.Findthefluxforbothdirectionsoftheunitnormalto
+electric flux through the square, when the normal to it
+the sheet.
+makesthefollowingangleswithelectricfield:(a) 30°,(b)
+90°,and(c) 0°.Notethattheseanglescanalsobegiven
+22. Find the electric flux through a rectangular area
+as 180°+θ.
+3cm×2cm between two parallel plates where there is
+a constant electric field of 30 N/C for the following
+26. A vector field is pointed along the z-axis,
+orientations of the area: (a) parallel to the plates, (b)
+perpendicular to the plates, and (c) the normal to the area → v = α ^ z. (a) Find the flux of the vector field
+makinga 30° anglewiththedirectionoftheelectricfield.
+x2+y2
+Note that this angle can also be given as 180°+30°. througharectangleinthexy-planebetween a< x<b and
+c<y<d. (b) Do the same through a rectangle in the
+23. Theelectricfluxthroughasquare-shapedareaofside yz-planebetween a<z<b and c<y<d.(Leaveyour
+5 cm near a large charged sheet is found to be
+answer as an integral.)
+3×10 −5 N·m2/C whentheareaisparalleltotheplate.
+Find the charge density on the sheet. 27. Consider the uniform electric field
+→ ^ ^
+24. Two large rectangular aluminum plates of area E =(4.0 j +3.0 k)×10 3 N/C. What is its electric
+150cm2 face each other with a separation of 3 mm fluxthroughacircularareaofradius2.0mthatliesinthe
+xy-plane?
+betweenthem.Theplatesarechargedwithequalamountof
+oppositecharges, ±20µC.Thechargesontheplatesface
+28. Repeat the previous problem, given that the circular
+each other. Find the flux through a circle of radius 3 cm
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 6 | Gauss's Law 277
+area is (a) in theyz-plane and (b) 45° above thexy-plane.
+29. Aninfinitechargedwirewithchargeperunitlength λ
+liesalongthecentralaxisofacylindricalsurfaceofradius
+randlengthl.Whatisthefluxthroughthesurfacedueto
+the electric field of the charged wire?
+6.2Explaining Gauss’s Law
+30. Determine the electric flux through each surface
+whose cross-section is shown below.
+31. Findtheelectricfluxthroughtheclosedsurfacewhose
+cross-sections are shown below.
+32. A point charge q is located at the center of a cube
+whosesidesareoflengtha.Iftherearenootherchargesin
+thissystem,whatistheelectricfluxthroughonefaceofthe
+cube?
+33. Apointchargeof 10µC isatanunspecifiedlocation
+
+278 Chapter 6 | Gauss's Law
+insideacubeofside2cm.Findthenetelectricfluxthough the total chargeQon the sphere.
+the surfaces of the cube.
+42. Supposethatthechargedensityofthesphericalcharge
+34. A net flux of 1.0×104 N·m2/C passes inward distribution shown in Figure 6.23 is ρ(r)= ρ
+0
+r/R for
+through the surface of a sphere of radius 5 cm. (a) How r ≤R and zero for r >R. Obtain expressions for the
+muchchargeisinsidethesphere?(b)Howpreciselycanwe
+electric field both inside and outside the distribution.
+determinethelocationofthechargefromthisinformation?
+43. A very long, thin wire has a uniform linear charge
+35. Achargeqisplacedatoneofthecornersofacubeof
+densityof 50µC/m. Whatistheelectricfieldatadistance
+sidea,asshownbelow.Findthemagnitudeoftheelectric
+2.0 cm from the wire?
+flux through the shaded face due toq. Assume q>0.
+44. A charge of −30µC is distributed uniformly
+throughout a spherical volume of radius 10.0 cm.
+Determinetheelectricfieldduetothischargeatadistance
+of(a)2.0cm,(b)5.0cm,and(c)20.0cmfromthecenter
+of the sphere.
+45. Repeat your calculations for the preceding problem,
+given that the charge is distributed uniformly over the
+surface of a spherical conductor of radius 10.0 cm.
+46. A total charge Q is distributed uniformly throughout
+36. The electric flux through a cubical box 8.0 cm on a spherical shell of inner and outer radii r andr ,
+1 2
+a side is 1.2×10 3 N·m2/C. What is the total charge respectively.Showthattheelectric fieldduetothecharge
+enclosed by the box? is
+→ →
+E = 0 (r ≤r );
+3 t 4 h 7 . e . 0 s × ur T 1 f h a 0 c e 4 e? e N le · c m tri 2 c /C f . lu W x h t a h t ro is ug t h he a ne s t p c h h e a r r i g c e al en s c u l r o f s a e c d e b i y s → E = 4πε Q 0 r2 ⎛ ⎝ ⎜ r r 2 3 3 − − r r 1 1 3 3 ⎞ ⎠ ⎟^ r (r 1 ≤r 1 ≤r 2 );
+→ Q ^
+38. A cube whose sides are of length d is placed in a E = 4πε r2 r (r ≥r 2 ).
+0
+uniform electric field of magnitude E=4.0×10 3 N/C
+so that the field is perpendicular to two opposite faces of
+47. Whenachargeisplacedonametalsphere,itendsup
+the cube. What is the net flux through the cube?
+inequilibriumattheoutersurface.Usethisinformationto
+determine the electric field of +3.0µC charge put on a
+39. Repeat the previous problem, assuming that the
+5.0-cmaluminumsphericalballatthefollowingtwopoints
+electric field is directed along a body diagonal of the cube.
+inspace:(a)apoint1.0cmfromthecenteroftheball(an
+inside point) and (b) a point 10 cm from the center of the
+40. Atotalcharge 5.0×10 −6 C isdistributeduniformly ball (an outside point).
+throughoutacubicalvolumewhoseedgesare8.0cmlong.
+(a) What is the charge density in the cube? (b) What is
+48. A large sheet of charge has a uniform charge density
+the electric flux through a cube with 12.0-cm edges that
+of 10µC/m2. Whatistheelectricfieldduetothischarge
+isconcentricwiththechargedistribution?(c)Dothesame
+calculationforcubeswhoseedgesare10.0cmlongand5.0 at a point just above the surface of the sheet?
+cm long. (d) What is the electric flux through a spherical
+surface of radius 3.0 cm that is also concentric with the 49. Determineifapproximatecylindricalsymmetryholds
+charge distribution? for the following situations. State why or why not. (a) A
+300-cm long copper rod of radius 1 cm is charged with
++500 nC of charge and we seek electric field at a point 5
+6.3Applying Gauss’s Law cmfromthecenteroftherod.(b)A10-cmlongcopperrod
+ofradius 1cm ischargedwith +500nCofchargeandwe
+41. Recall that in the example of a uniform charged
+seekelectricfieldatapoint5cmfromthecenteroftherod.
+sphere, ρ 0 =Q/( 4 3 πR3 ). Rewrite theanswersintermsof (c)A150-cmwoodenrodisgluedtoa150-cmplasticrod
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

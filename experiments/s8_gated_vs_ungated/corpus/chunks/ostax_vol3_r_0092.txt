@@ -1,0 +1,570 @@
+# REAL PDF — openstax_vol3.pdf, pages 568-586
+############################################################
+
+560 Appendix B
+s min h day yr
+1 second 1 1.667×10−2 2.778×10−4 1.157×10 −5 3.169×10 −8
+1 minute 60 1 1.667×10−2 6.944×10−4
+1.901×10
+−6
+1 hour 3600 60 1 4.167×10−2 1.141×10−4
+1 day 8.640×104 1440 24 1
+2.738×10
+−3
+1 year 3.156×10 7 5.259×10 5 8.766×10 3 365.25 1
+Table B2Time
+m/s cm/s ft/s mi/h
+1 meter/second 1 102 3.281 2.237
+1 centimeter/second 10−2 1 3.281×10−2 2.237×10−2
+1 foot/second 0.3048 30.48 1 0.6818
+1 mile/hour 0.4470 44.70 1.467 1
+Table B3Speed
+Acceleration
+1m/s2=100cm/s2=3.281ft/s2
+1cm/s2=0.01m/s2=0.03281ft/s2
+1ft/s2=0.3048m/s2=30.48cm/s2
+1mi/h·s=1.467ft/s2
+kg g slug u
+1 kilogram 1 103 6.852×10−2
+6.024×10
+26
+1 gram 10−3 1 6.852×10 −5 6.024×10 23
+1 slug 14.59 1.459×104 1
+8.789×10
+27
+1 atomic mass unit
+1.661×10
+−27 1.661×10−24
+1.138×10
+−28 1
+1 metric ton 1000
+Table B4Mass
+N dyne lb
+1 newton 1 105 0.2248
+1 dyne 10−5 1 2.248×10 −6
+1 pound 4.448 4.448×10 5 1
+Table B5Force
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix B 561
+Pa dyne/cm2 atm cmHg lb/in.2
+1 pascal 1 10
+9.869×10
+−6 7.501×10−4 1.450×10−4
+1 dyne/ 10−1 1 9.869×10 −7 7.501×10 −5 1.450×10 −5
+centimeter2
+1 atmosphere 5 6 1 76 14.70
+1.013×10 1.013×10
+1 centimeter
+1.333×10
+3 1.333×104 1.316×10−2 1 0.1934
+mercury*
+1 pound/inch2
+6.895×10
+3 6.895×104 6.805×10−2 5.171 1
+1 bar 105
+1 torr 1 (mmHg)
+*Where the acceleration due to gravity is 9.80665m/s 2 and the temperature is 0°C
+Table B6Pressure
+J erg ft.lb
+1 joule 1 107 0.7376
+1 erg 10−7 1 −8
+7.376×10
+1 foot-pound 1.356 7 1
+1.356×10
+1 electron-volt
+1.602×10
+−19 1.602×10-12
+1.182×10
+−19
+1 calorie 4.186 7 3.088
+4.186×10
+1 British thermal unit
+1.055×10
+3
+1.055×10
+10 7.779×102
+1 kilowatt-hour 6
+3.600×10
+eV cal Btu
+1 joule
+6.242×10
+18 0.2389 9.481×10−4
+1 erg 6.242×1011
+2.389×10
+−8 9.481×10−11
+1 foot-pound 18 0.3239 −3
+8.464×10 1.285×10
+1 electron-volt 1
+3.827×10
+−20 1.519×10−22
+1 calorie 19 1 −3
+2.613×10 3.968×10
+1 British thermal unit 6.585×1021 2.520×102 1
+Table B7Work, Energy, Heat
+Power
+1W=1J/s
+1hp=746W=550ft·lb/s
+1Btu/h=0.293W
+Angle
+
+562 Appendix B
+1rad=57.30°=180°/π
+1°=0.01745rad=π/180rad
+1revolution =360°=2πrad
+1rev/min(rpm)=0.1047rad/s
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix C 563
+APPENDIX C |
+FUNDAMENTAL
+CONSTANTS
+Quantity Symbol Value
+Atomic mass unit u 1.660 538 782(83)×10 −27 kg
+931.494 028(23)MeV/c2
+Avogadro’s number N 23
+A 6.022 141 79(30)×10 particles/mol
+Bohr magneton µ = eℏ 9.274 009 15(23)×10−24 J/T
+B 2m
+e
+Bohr radius a = ℏ2 5.291 772 085 9(36)×10−11 m
+0 m e2k
+e e
+Boltzmann’s constant k = R 1.380 650 4(24)×10 −23 J/K
+B N
+A
+Compton wavelength λ C = m h e c 2.426 310 217 5(33)×10−12 m
+Coulomb constant k e=
+4π
+1
+ε
+8.987 551 788...×10 9 N·m2/C2(exact)
+0
+Deuteron mass m d 3.343 583 20(17)×10 −27 kg
+2.013 553 212 724(78)u
+1875.612 859MeV/c2
+Electron mass m e 9.109 382 15(45)×10 −31 kg
+5.485 799 094 3(23)×10−4 u
+0.510 998 910(13)MeV/c2
+Electron volt eV −19
+1.602 176 487(40)×10 J
+Elementary charge e −19
+1.602 176 487(40)×10 C
+Gas constant R 8.314 472(15)J/mol·K
+Gravitational constant G 6.674 28(67)×10−11 N·m2/kg2
+Table C1Fundamental Constants Note:These constants are the values recommended in
+2006 by CODATA, based on a least-squares adjustment of data from different measurements.
+The numbers in parentheses for the values represent the uncertainties of the last two digits.
+
+564 Appendix C
+Quantity Symbol Value
+Neutron mass m n 1.674 927 211(84)×10 −27 kg
+1.008 664 915 97(43)u
+939.565 346(23)MeV/c2
+Nuclear magneton µ n=
+2
+e
+m
+ℏ
+p
+5.050 783 24(13)×10 −27 J/T
+Permeability of free space µ 0 4π×10 −7 T·m/A(exact)
+Permittivity of free space ε = 1 8.854 187 817...×10−12 C2/N·m2(exact)
+0 µ c2
+0
+Planck’s constant h 6.626 068 96(33)×10 −34 J·s
+h
+ℏ= 1.054 571 628(53)×10 −34 J·s
+2π
+Proton mass m p 1.672 621 637(83)×10 −27 kg
+1.007 276 466 77(10)u
+938.272 013(23)MeV/c2
+Rydberg constant R H 1.097 373 156 852 7(73)×10 7 m−1
+Speed of light in vacuum c 8
+2.997 924 58×10 m/s(exact)
+Table C1Fundamental Constants Note:These constants are the values recommended in
+2006 by CODATA, based on a least-squares adjustment of data from different measurements.
+The numbers in parentheses for the values represent the uncertainties of the last two digits.
+Useful combinations of constants for calculations:
+hc=12,400eV·Å=1240eV·nm=1240MeV·fm
+ℏc=1973eV·Å=197.3eV·nm=197.3MeV·fm
+k
+e
+e2=14.40eV·Å=1.440eV·nm=1.440MeV·fm
+k T =0.02585eV atT =300K
+B
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix D 565
+APPENDIX D |
+ASTRONOMICAL DATA
+Celestial Mean Distance Period of Revolution Period of Eccentricity
+Object from Sun (million (d = days) (y = years) Rotation at of Orbit
+km) Equator
+Sun − − 27 d −
+Mercury 57.9 88 d 59 d 0.206
+Venus 108.2 224.7 d 243 d 0.007
+Earth 149.6 365.26 d 23 h 56 min 4 s 0.017
+Mars 227.9 687 d 24 h 37 min 23 s 0.093
+Jupiter 778.4 11.9 y 9 h 50 min 30 s 0.048
+Saturn 1426.7 29.5 6 10 h 14 min 0.054
+Uranus 2871.0 84.0 y 17 h 14 min 0.047
+Neptune 4498.3 164.8 y 16 h 0.009
+Earth’s 149.6 (0.386 from 27.3 d 27.3 d 0.055
+Moon Earth)
+Celestial Equatorial Diameter Mass (Earth = 1) Density (g/cm3)
+Object (km)
+Sun 1,392,000 333,000.00 1.4
+Mercury 4879 0.06 5.4
+Venus 12,104 0.82 5.2
+Earth 12,756 1.00 5.5
+Mars 6794 0.11 3.9
+Jupiter 142,984 317.83 1.3
+Saturn 120,536 95.16 0.7
+Uranus 51,118 14.54 1.3
+Neptune 49,528 17.15 1.6
+Earth’s 3476 0.01 3.3
+Moon
+Table D1Astronomical Data
+Other Data:
+Mass of Earth: 5.97×1024 kg
+Mass of the Moon: 7.36×1022 kg
+Mass of the Sun: 1.99×10 30 kg
+
+566 Appendix D
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix E 567
+APPENDIX E |
+MATHEMATICAL
+FORMULAS
+Quadratic formula
+If ax2+bx+c=0, then x= −b± b2−4ac
+2a
+Triangle of base b and height h Area = 1bh
+2
+Circle of radius r Circumference =2πr Area =πr2
+Sphere of radius r Surface area =4πr2 Volume = 4πr3
+3
+Cylinder of radius r and height h Area of curved surface =2πrh Volume =πr2h
+Table E1Geometry
+Trigonometry
+Trigonometric Identities
+1. sinθ=1/cscθ
+2. cosθ=1/secθ
+3. tanθ=1/cotθ
+4. sin ⎛ 90 0 −θ⎞ =cosθ
+⎝ ⎠
+5. cos ⎛ 90 0 −θ⎞ =sinθ
+⎝ ⎠
+6. tan ⎛ 90 0 −θ⎞ =cotθ
+⎝ ⎠
+7. sin2 θ+cos2 θ=1
+8. sec2 θ−tan2 θ=1
+9. tanθ=sinθ/cosθ
+10. sin⎛α±β⎞=sinαcosβ±cosαsinβ
+⎝ ⎠
+11. cos⎛α±β⎞=cosαcosβ∓sinαsinβ
+⎝ ⎠
+tanα±tanβ
+12. tan⎛α±β⎞=
+⎝ ⎠ 1∓tanαtanβ
+13. sin2θ=2sinθcosθ
+14. cos2θ=cos2 θ−sin2 θ=2cos2 θ−1=1−2sin2 θ
+
+568 Appendix E
+15. sinα+sinβ=2sin 1⎛α+β⎞cos 1⎛α−β⎞
+2⎝ ⎠ 2⎝ ⎠
+16. cosα+cosβ=2cos 1⎛α+β⎞cos 1⎛α−β⎞
+2⎝ ⎠ 2⎝ ⎠
+Triangles
+a b c
+1. Law of sines: = =
+sinα sinβ sinγ
+2. Law of cosines: c2=a2+b2−2abcosγ
+3. Pythagorean theorem: a2+b2=c2
+Series expansions
+1. Binomial theorem: (a+b) n =an +nan−1b+
+n(n−1)an−2b2
++
+n(n−1)(n−2)an−3b3
++···
+2! 3!
+2. (1±x) n =1± nx +
+n(n−1)x2
+±··· ⎛x2<1 ⎞
+1! 2! ⎝ ⎠
+3. (1±x)−n =1∓ nx +
+n(n+1)x2
+∓··· ⎛x2<1 ⎞
+1! 2! ⎝ ⎠
+x3 x5
+4. sinx= x− + −···
+3! 5!
+x2 x4
+5. cosx=1− + −···
+2! 4!
+6. tanx= x+
+x3
++
+2x5
++···
+3 15
+7. ex =1+x+ x2 +···
+2!
+8. ln(1+x)= x− 1x2+ 1x3 −···(|x|<1)
+2 3
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix E 569
+Derivatives
+d d
+1. ⎡af(x)⎤=a f(x)
+dx⎣ ⎦ dx
+d d d
+2. ⎡f(x)+g(x)⎤= f(x)+ g(x)
+dx⎣ ⎦ dx dx
+d d d
+3. ⎡f(x)g(x)⎤= f(x) g(x)+g(x) f(x)
+dx⎣ ⎦ dx dx
+d ⎡d ⎤du
+4. f(u)= f(u)
+dx ⎣du ⎦dx
+5. d xm =mxm−1
+dx
+d
+6. sinx=cosx
+dx
+d
+7. cosx=−sinx
+dx
+8. d tanx=sec2 x
+dx
+9. d cotx=−csc2 x
+dx
+d
+10. secx=tanxsecx
+dx
+d
+11. cscx=−cotxcscx
+dx
+12. d ex =ex
+dx
+13.
+d
+d
+x
+lnx= 1
+x
+14. d sin−1 x= 1
+dx 1−x2
+15. d cos−1x= − 1
+dx 1−x2
+16. d tan−1x= − 1
+dx 1+x2
+Integrals
+1. ∫af(x)dx=a∫ f(x)dx
+2. ∫⎡f(x)+g(x)⎤dx=∫ f(x)dx+∫g(x)dx
+⎣ ⎦
+∫xmdx = x
+m+1
+(m≠−1)
+3. m+1
+=lnx(m=−1)
+4. ∫sinxdx=−cosx
+5. ∫cosxdx=sinx
+6. ∫tanxdx=ln|secx|
+
+570 Appendix E
+7. ∫sin2 axdx= x − sin2ax
+2 4a
+8. ∫cos2 axdx= x + sin2ax
+2 4a
+9. ∫sinaxcosaxdx= −
+cos2ax
+4a
+10. ∫eax dx= 1
+a
+eax
+11. ∫xeaxdx=
+eax
+(ax−1)
+a2
+12. ∫lnaxdx= xlnax−x
+13. ⌠ dx = 1 atan−1 a x
+⌡a2+x2
+14. ⌠ ⌡a2 d − x x2 = 2 1 a ln| x x + − a a |
+15. ⌠ dx =sinh−1
+a
+x
+⌡ a2+x2
+16. ⌠ dx =sin−1
+a
+x
+⌡ a2−x2
+17. ∫ a2+x2dx= x a2+x2+ a2 sinh−1
+a
+x
+2 2
+18. ∫ a2−x2dx= x a2−x2+ a2 sin−1
+a
+x
+2 2
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix F 571
+APPENDIX F | CHEMISTRY
+
+572 Appendix F
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix G 573
+APPENDIX G | THE GREEK
+ALPHABET
+Name Capital Lowercase Name Capital Lowercase
+Alpha A α Nu N ν
+Beta B β Xi Ξ ξ
+Gamma Γ γ Omicron O ο
+Delta Δ δ Pi Π π
+Epsilon E ε Rho P ρ
+Zeta Z ζ Sigma Σ σ
+Eta H η Tau T τ
+Theta Θ θ Upsilon ϒ υ
+lota I ι Phi Φ ϕ
+Kappa K κ Chi X χ
+Lambda Λ λ Psi ψ ψ
+Mu M µ Omega Ω ω
+Table G1The Greek Alphabet
+
+574 Appendix G
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Answer Key 575
+ANSWER KEY
+CHAPTER 1
+CHECK YOUR UNDERSTANDING
+1.1.2.1% (to two significant figures)
+1.2. 15.1°
+1.3.air to water, because the condition that the second medium must have a smaller index of refraction is not satisfied
+1.4.9.3 cm
+1.5. AA′ becomes longer, A′B′ tilts further away from the surface, and the refracted ray tilts away from the normal.
+1.6.also 90.0%
+1.7.There will be only refraction but no reflection.
+CONCEPTUAL QUESTIONS
+1.Lightcanbemodeledasaraywhendevicesarelargecomparedtowavelength,andasawavewhendevicesarecomparableor
+small compared to wavelength.
+3.Thisfactsimplyprovesthatthespeedoflightisgreaterthanthatofsound.Ifoneknowsthedistance tothelocation ofthe
+lightningandthespeedofsound,onecould,inprinciple,determinethespeedoflightfromthedata.Inpractice,becausethespeed
+of light is so great, the data would have to be known to impractically high precision.
+5.Powder consists of many small particles with randomly oriented surfaces. This leads to diffuse reflection, reducing shine.
+7.“toward” when increasingn(air to water, water to glass); “away” when decreasingn(glass to air)
+9.Arayfromalegemergesfromwaterafterrefraction.Theobserverinairperceivesanapparentlocationforthesource,asifa
+ray traveled in a straight line. See the dashed ray below.
+11. The gemstone becomes invisible when its index of refraction is the same, or at least similar to, the water surrounding it.
+Becausediamondhasaparticularlyhighindexofrefraction,itcanstillsparkleasaresultoftotalinternalreflection,notinvisible.
+13. One can measure the critical angle by looking for the onset of total internal reflection as the angle of incidence is varied.
+Equation1.14can then be applied to compute the index of refraction.
+15.Inadditiontototalinternalreflection,raysthatrefractintoandoutofdiamondcrystalsaresubjecttodispersionduetovarying
+values of n across the spectrum, resulting in a sparkling display of colors.
+17.yes
+19.No. Sound waves are not transverse waves.
+21.Energy is absorbed into the filters.
+23. Sunsets are viewed with light traveling straight from the Sun toward us. When blue light is scattered out of this path, the
+remaining red light dominates the overall appearance of the setting Sun.
+25.The axis of polarization for the sunglasses has been rotated 90°.
+PROBLEMS
+27. 2.99705×10 8 m/s; 1.97×10 8 m/s
+29.ice at 0°C
+
+576 Answer Key
+31.1.03 ns
+33.337 m
+35.proof
+37.proof
+39.reflection, 70°; refraction, 45°
+41. 42°
+43.1.53
+45.a. 2.9 m; b. 1.4 m
+47.a. 24.42°; b. 31.33°
+49. 79.11°
+51.a. 1.43, fluorite; b. 44.2°
+53.a. 48.2°; b. 27.3°
+55. 46.5° for red, 46.0° for violet
+57.a. 0.04°; b. 1.3 m
+59. 72.8°
+61. 53.5° for red, 55.2° for violet
+63.0.500
+65.0.125 or 1/8
+67. 84.3°
+69. 0.250I
+0
+71.a. 0.500; b. 0.250; c. 0.187
+73. 67.54°
+75. 53.1°
+ADDITIONAL PROBLEMS
+77.114 radian/s
+79.3.72 mm
+81. 41.2°
+83.a. 1.92. The gem is not a diamond (it is zircon). b. 55.2°
+85.a.0.898;b.Wecannothave n<1.00,sincethiswouldimplyaspeedgreaterthanc.c.Therefractedangleistoobigrelative
+to the angle of incidence.
+87. 0.707B
+1
+89.a. 1.69×10−2°C/s; b. yes
+CHALLENGE PROBLEMS
+91.First part: 88.6°. The remainder depends on the complexity of the solution the reader constructs.
+93.proof; 1.33
+95.a. 0.750; b. 0.563; c. 1.33
+CHAPTER 2
+CONCEPTUAL QUESTIONS
+1.Virtualimagecannotbeprojectedonascreen.Youcannotdistinguisharealimagefromavirtualimagesimplybyjudgingfrom
+the image perceived with your eye.
+3. Yes, you can photograph a virtual image. For example, if you photograph your reflection from a plane mirror, you get a
+photographofavirtualimage.Thecamerafocusesthelightthatentersitslenstoformanimage;whetherthesourceofthelightis
+a real object or a reflection from mirror (i.e., a virtual image) does not matter.
+5. No, you can see the real image the same way you can see the virtual image. The retina of your eye effectively serves as a
+screen.
+7. The mirror should be half your size and its top edge should be at the level of your eyes. The size does not depend on your
+distance from the mirror.
+9.when the object is at infinity; see the mirror equation
+11.Yes,negativemagnificationsimplymeansthattheimageisupsidedown;thisdoesnotpreventtheimagefrombeinglarger
+thantheobject.Forinstance,foraconcavemirror,ifdistancetotheobjectislargerthanonefocaldistancebutsmallerthantwo
+focal distances the image will be inverted and magnified.
+13.answers may vary
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Answer Key 577
+15.The focal length of the lens is fixed, so the image distance changes as a function of object distance.
+17.Yes,thefocallengthwillchange.Thelensmaker’sequationshowsthatthefocallengthdependsontheindexofrefractionof
+themediumsurroundingthelens.Becausetheindexofrefractionofwaterdiffersfromthatofair,thefocallengthofthelenswill
+change when submerged in water.
+19.A relaxed, normal-vision eye will focus parallel rays of light onto the retina.
+21.Apersonwithaninternallenswillneedglassestoreadbecausetheirmusclescannotdistortthelensastheydowithbiological
+lenses,sotheycannotfocusonnearobjects.Tocorrectnearsightedness,thepoweroftheintraocularlensmustbelessthanthatof
+the removed lens.
+23.Microscopes create images of macroscopic size, so geometric optics applies.
+25.Theeyepiecewouldbemovedslightlyfartherfromtheobjectivesothattheimageformedbytheobjectivefallsjustbeyond
+the focal length of the eyepiece.
+PROBLEMS
+27.
+29.It is in the focal point of the big mirror and at the center of curvature of the small mirror.
+R
+31. f = ⇒R= +1.60m
+2
+33. d o=27.3cm
+35.Step 1: Image formation by a mirror is involved.
+Step 2: Draw the problem set up when possible.
+Step 3: Use thin-lens equations to solve this problem.
+Step 4: Find f.
+Step 5: Given: m=1.50, d o=0.120m.
+Step 6: No ray tracing is needed.
+d
+Step 7: Using m= i, d =−0.180m . Then, f =0.360m.
+d i
+o
+Step 8: The image is virtual because the image distance is negative. The focal length is positive, so the mirror is concave.
+37.a. for a convex mirror d <0⇒m>0.m= +0.111; b. d =−0.334cm (behind the cornea);
+i i
+c. f =−0.376cm, so thatR=−0.752cm
+39. m= h h i =− d d i =− − d d o = d d o =1⇒h i =h o
+o o o o

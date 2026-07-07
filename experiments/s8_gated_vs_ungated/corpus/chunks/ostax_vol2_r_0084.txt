@@ -1,0 +1,253 @@
+# REAL PDF — openstax_vol2.pdf, pages 523-529
+############################################################
+
+Chapter 11 | Magnetic Forces and Fields 513
+→ ^ (11.19)
+τ =−IABsinθi
+where A=ab is the area of the loop.
+Noticethatthistorqueisindependentofx;itisthereforeindependentofwherepointOislocatedintheplaneofthecurrent
+loop.Consequently,theloopexperiencesthesametorquefromthemagneticfieldaboutanyaxisintheplaneoftheloop
+and parallel to thex-axis.
+A closed-current loop is commonly referred to as a magnetic dipole and the term IA is known as its magnetic dipole
+moment µ. Actually, the magnetic dipole moment is a vector that is defined as
+→ ^ (11.20)
+µ =IAn
+where ^ n is a unit vector directed perpendicular to the plane of the loop (see Figure 11.16). The direction of ^ n is
+obtainedwiththeRHR-2—ifyoucurlthefingersofyourrighthandinthedirectionofcurrentflowintheloop,thenyour
+thumb points along ^ n. If the loop containsNturns of wire, then its magnetic dipole moment is given by
+→ ^ (11.21)
+µ =NIAn.
+Intermsofthemagneticdipolemoment,thetorqueonacurrentloopduetoauniformmagneticfieldcanbewrittensimply
+as
+→τ
+=
+→
+µ ×
+→
+B .
+(11.22)
+This equation holds for a current loop in a two-dimensional plane of arbitrary shape.
+UsingacalculationanalogoustothatfoundinCapacitanceforanelectricdipole,thepotentialenergyofamagneticdipole
+is
+→ → (11.23)
+U =− µ · B .
+Example 11.7
+Forces and Torques on Current-Carrying Loops
+Acircularcurrentloopofradius2.0cmcarriesacurrentof2.0mA.(a)Whatisthemagnitudeofitsmagnetic
+dipolemoment?(b)Ifthedipoleisorientedat30degreestoauniformmagneticfieldofmagnitude0.50T,what
+is the magnitude of the torque it experiences and what is its potential energy?
+Strategy
+Thedipolemomentisdefinedbythecurrenttimestheareaoftheloop.Theareaoftheloopcanbecalculatedfrom
+theareaofthecircle.Thetorqueontheloopandpotentialenergyarecalculatedfromidentifyingthemagnetic
+moment, magnetic field, and angle oriented in the field.
+Solution
+a. The magnetic momentμis calculated by the current times the area of the loop or πr2.
+µ =IA=(2.0×10 −3 A)(π(0.02 m)2)=2.5×10 −6 A·m2
+b. Thetorqueandpotentialenergyarecalculatedbyidentifyingthemagneticmoment,magneticfield,and
+
+514 Chapter 11 | Magnetic Forces and Fields
+the angle between these two vectors. The calculations of these quantities are:
+τ = → µ × → B = µBsinθ= ⎛ 2.5×10 −6 A·m2⎞ (0.50T)sin(30°)=6.3×10 −7 N·m
+⎝ ⎠
+U = − → µ · → B =−µBcosθ=− ⎛ 2.5×10 −6 A·m2⎞ (0.50T)cos(30°)=−1.1×10 −6 J.
+⎝ ⎠
+Significance
+Theconceptofmagneticmomentattheatomiclevelisdiscussedinthenextchapter.Theconceptofaligningthe
+magneticmomentwiththemagneticfieldisthefunctionalityofdeviceslikemagneticmotors,wherebyswitching
+theexternalmagneticfieldresultsinaconstantspinningoftheloopasittriestoalignwiththefieldtominimize
+its potential energy.
+11.4 Check Your Understanding
+Inwhatorientationwouldamagneticdipolehavetobetoproduce(a)amaximumtorqueinamagneticfield?
+(b) A maximum energy of the dipole?
+11.6 | The Hall Effect
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain a scenario where the magnetic and electric fields are crossed and their forces balance
+each other as a charged particle moves through a velocity selector
+• Compare how charge carriers move in a conductive material and explain how this relates to the
+Hall effect
+In 1879, E.H. Hall devised an experiment that can be used to identify the sign of the predominant charge carriers in a
+conductingmaterial.Fromahistoricalperspective,thisexperimentwasthefirsttodemonstratethatthechargecarriersin
+most metals are negative.
+Visit this website (https://openstaxcollege.org/l/21halleffect) to find more information about the Hall
+effect.
+Weinvestigate the Hall effect bystudying the motion ofthe free electrons along ametallic strip ofwidth linaconstant
+magneticfield(Figure11.17).Theelectronsaremovingfromlefttoright,sothemagneticforcetheyexperiencepushes
+them to the bottom edge ofthe strip. This leaves an excess ofpositive charge at the top edge ofthe strip, resulting in an
+electricfieldEdirectedfromtoptobottom.Thechargeconcentrationatbothedgesbuildsupuntiltheelectricforceonthe
+electronsinonedirectionisbalancedbythemagneticforceonthemintheoppositedirection.Equilibriumisreachedwhen:
+eE=ev
+d
+B (11.24)
+whereeisthemagnitudeoftheelectroncharge, v isthedriftspeedoftheelectrons,andEisthemagnitudeoftheelectric
+d
+field created by the separated charge. Solving this for the drift speed results in
+E (11.25)
+v d=
+B
+.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 515
+Figure 11.17 In the Hall effect, a potential difference between the top and bottom edges of
+the metal strip is produced when moving charge carriers are deflected by the magnetic field. (a)
+Hall effect for negative charge carriers; (b) Hall effect for positive charge carriers.
+Ascenariowheretheelectricandmagneticfieldsareperpendiculartooneanotheriscalledacrossed-fieldsituation.Ifthese
+fieldsproduceequalandoppositeforcesonachargedparticlewiththevelocitythatequatestheforces,theseparticlesare
+abletopassthroughanapparatus,calledavelocityselector,undeflected.ThisvelocityisrepresentedinEquation11.26.
+Anyothervelocityofachargedparticlesentintothesamefieldswouldbedeflectedbythemagneticforceorelectricforce.
+Going back to the Hall effect, if the current in the strip isI, then fromCurrent and Resistance, we know that
+I =nev
+d
+A (11.26)
+wherenisthenumberofchargecarrierspervolumeandAisthecross-sectionalareaofthestrip.Combiningtheequations
+for v andIresults in
+d
+⎛E⎞ (11.27)
+I =ne A.
+⎝B⎠
+The fieldEis related to the potential differenceVbetween the edges of the strip by
+V (11.28)
+E= .
+l
+ThequantityViscalledtheHallpotentialandcanbemeasuredwithavoltmeter.Finally,combiningtheequationsforIand
+Egives us
+IBl (11.29)
+V =
+neA
+where the upper edge of the strip inFigure 11.17is positive with respect to the lower edge.
+We can also combine Equation 11.24 and Equation 11.28 to get an expression for the Hall voltage in terms of the
+magnetic field:
+V =Blv d. (11.30)
+Whatifthechargecarriersarepositive,asinFigure 11.17?ForthesamecurrentI,themagnitudeofVisstillgivenby
+Equation11.29.However,theupperedgeisnownegativewithrespecttotheloweredge.Therefore,bysimplymeasuring
+the sign ofV, we can determine the sign of the majority charge carriers in a metal.
+Hallpotentialmeasurementsshowthatelectronsarethedominantchargecarriersinmostmetals.However,Hallpotentials
+indicate that for a few metals, such as tungsten, beryllium, and many semiconductors, the majority of charge carriers are
+positive.Itturnsoutthatconductionbypositivechargeiscausedbythemigrationofmissingelectronsites(calledholes)on
+ions.ConductionbyholesisstudiedlaterinCondensedMatterPhysics(http://cnx.org/content/m58591/latest/).
+
+516 Chapter 11 | Magnetic Forces and Fields
+TheHalleffectcanbeusedtomeasuremagneticfields.Ifamaterialwithaknowndensityofchargecarriersnisplacedin
+amagneticfieldandVismeasured,thenthefieldcanbedeterminedfromEquation11.29.Inresearchlaboratorieswhere
+thefieldsofelectromagnetsusedforprecisemeasurementshavetobeextremelysteady,a“Hallprobe”iscommonlyused
+as part of an electronic circuit that regulates the field.
+Example 11.8
+Velocity Selector
+An electron beam enters a crossed-field velocity selector with magnetic and electric fields of 2.0 mT and
+6.0×10 3 N/C, respectively.(a)Whatmustthevelocityoftheelectronbeambetotraversethecrossedfields
+undeflected?Iftheelectricfieldisturnedoff,(b)whatistheaccelerationoftheelectronbeamand(c)whatisthe
+radius of the circular motion that results?
+Strategy
+Theelectronbeamisnotdeflectedbyeitherofthemagneticorelectricfieldsiftheseforcesarebalanced.Based
+onthesebalancedforces,wecalculatethevelocityofthebeam.Withouttheelectricfield,onlythemagneticforce
+is used in Newton’s second law to find the acceleration. Lastly, the radius of the path is based on the resulting
+circular motion from the magnetic force.
+Solution
+a. The velocity of the unperturbed beam of electrons with crossed fields is calculated byEquation 11.25:
+v d= E
+B
+= 6×10 3
+−
+N
+3
+/C =3×10 6 m/s.
+2×10 T
+b. Theaccelerationiscalculatedfromthenetforcefromthemagneticfield,equaltomasstimesacceleration.
+The magnitude of the acceleration is:
+ma = qvB
+a = q m vB = (1.6×10 −19 C)(3×10 6 m/s)(2×10 −3 T) =1.1×10 15 m/s2.
+−31
+9.1×10 kg
+c. The radius of the path comes from a balance of the circular and magnetic forces, orEquation 11.25:
+−31 6
+r = mv = (9.1×10 kg)(3×10 m/s) =8.5×10 −3 m.
+qB −19 −3
+(1.6×10 C)(2×10 T)
+Significance
+Ifelectronsinthebeamhadvelocitiesaboveorbelowtheanswerinpart(a),thoseelectronswouldhaveastronger
+netforceexertedbyeitherthemagneticorelectricfield.Therefore,onlythoseelectronsatthisspecificvelocity
+would make it through.
+Example 11.9
+The Hall Potential in a Silver Ribbon
+Figure 11.18showsasilverribbonwhosecrosssectionis1.0cmby0.20cm.Theribboncarriesacurrentof
+100 A from left to right, and it lies in a uniform magnetic field of magnitude 1.5 T. Using a density value of
+n=5.9×10 28 electrons per cubic meter for silver, find the Hall potential between the edges of the ribbon.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 517
+Figure 11.18 Finding the Hall potential in a silver ribbon in a
+magnetic field is shown.
+Strategy
+Sincethemajorityofchargecarriersareelectrons,thepolarityoftheHallvoltageisthatindicatedinthefigure.
+The value of the Hall voltage is calculated usingEquation 11.29:
+IBl
+V = .
+neA
+Solution
+When calculating the Hall voltage, we need to know the current through the material, the magnetic field, the
+length, the number of charge carriers, and the area. Since all of these are given, the Hall voltage is calculated as:
+V = IBl = (100A)(1.5T) ⎛ ⎝ 1.0×10−2m ⎞ ⎠ =7.9×10 −6 V.
+neA ⎛
+5.9×10
+28
+/m
+3⎞⎛
+1.6×10
+−19
+C
+⎞⎛
+2.0×10
+−5 m2⎞
+⎝ ⎠⎝ ⎠⎝ ⎠
+Significance
+As in this example, the Hall potential is generally very small, and careful experimentation with sensitive
+equipment is required for its measurement.
+11.5 Check Your Understanding A Hall probe consists of a copper strip, n=8.5×10 28 electrons per
+cubicmeter,whichis2.0cmwideand0.10cmthick.WhatisthemagneticfieldwhenI=50AandtheHall
+potential is (a) 4.0µV and (b) 6.0µV?
+11.7 | Applications of Magnetic Forces and Fields
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how a mass spectrometer works to separate charges
+• Explain how a cyclotron works
+Beingabletomanipulateandsortchargedparticlesallowsdeeperexperimentationtounderstandwhatmatterismadeof.We
+firstlookatamassspectrometertoseehowwecanseparateionsbytheircharge-to-massratio.Thenwediscusscyclotrons
+as a method to accelerate charges to very high energies.
+Mass Spectrometer
+Themassspectrometerisadevicethatseparatesionsaccordingtotheircharge-to-massratios.Oneparticularversion,the
+Bainbridge mass spectrometer, is illustrated in Figure 11.19. Ions produced at a source are first sent through a velocity
+selector,wherethemagneticforceisequallybalancedwiththeelectricforce.Theseionsallemergewiththesamespeed
+v=E/B since any ion with a different velocity is deflected preferentially by either the electric or magnetic force, and
+
+518 Chapter 11 | Magnetic Forces and Fields
+ultimatelyblockedfromthenextstage.Theythenenterauniformmagneticfield B wheretheytravelinacircularpath
+0
+whose radiusRis given byEquation 11.3. The radius is measured by a particle detector located as shown in the figure.
+Figure 11.19 A schematic of the Bainbridge mass spectrometer, showing charged
+particles leaving a source, followed by a velocity selector where the electric and magnetic
+forces are balanced, followed by a region of uniform magnetic field where the particle is
+ultimately detected.
+Therelationshipbetweenthecharge-to-massratioq/mandtheradiusRisdeterminedbycombiningEquation 11.3and
+Equation 11.25:
+q E (11.31)
+m = BB R .
+0
+Since most ions are singly charged ⎛q=1.6×10 −19 C ⎞ , measured values of R can be used with this equation to
+⎝ ⎠
+determine the mass of ions. With modern instruments, masses can be determined to one part in 10 8 .
+Aninterestinguseofaspectrometerisaspartofasystemfordetectingverysmallleaksinaresearchapparatus.Inlow-
+temperaturephysicslaboratories,adeviceknownasadilutionrefrigeratorusesamixtureofHe-3,He-4,andothercryogens
+to reach temperatures well below 1 K. The performance of the refrigerator is severely hampered if even a minute leak
+betweenitsvariouscomponentsoccurs.Consequently,beforeitiscooleddowntothedesiredtemperature,therefrigerator
+issubjectedtoaleaktest.Asmallquantityofgaseousheliumisinjectedintooneofitscompartments,whileanadjacent,but
+supposedlyisolated,compartmentisconnectedtoahigh-vacuumpumptowhichamassspectrometerisattached.Aheated
+filamentionizesanyheliumatomsevacuatedbythepump.Thedetectionoftheseionsbythespectrometerthenindicatesa
+leak between the two compartments of the dilution refrigerator.
+Inconjunction with gas chromatography,mass spectrometers are used widely to identify unknownsubstances. While the
+gaschromatographyportionbreaksdownthesubstance,themassspectrometerseparatestheresultingionizedmolecules.
+This technique is used with fire debris to ascertain the cause, in law enforcement to identify illegal drugs, in security to
+identify explosives, and in many medicinal applications.
+Cyclotron
+The cyclotron was developed by E.O. Lawrence to accelerate charged particles (usually protons, deuterons, or alpha-
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

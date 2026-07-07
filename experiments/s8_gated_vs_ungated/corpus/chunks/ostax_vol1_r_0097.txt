@@ -1,0 +1,162 @@
+# REAL PDF — openstax_vol1.pdf, pages 594-599
+############################################################
+
+582 12 • Static Equilibrium and Elasticity
+is a scalar quantity and does not have any particular direction; that is, pressure acts equally in all possible
+directions. When you submerge your hand in water, you sense the same amount of pressure acting on the top
+surface of your hand as on the bottom surface, or on the side surface, or on the surface of the skin between your
+fingers. What you are perceiving in this case is an increase in pressure over what you are used to feeling when
+your hand is not submerged in water. What you feel when your hand is not submerged in the water is the normal
+pressure of one atmosphere, which serves as a reference point. The bulk stress is this increase in pressure, or
+over the normal level,
+When the bulk stress increases, the bulk strain increases in response, in accordance with Equation 12.33. The
+proportionality constant in this relation is called the bulk modulus, B, or
+12.39
+The minus sign that appears in Equation 12.39 is for consistency, to ensure that B is a positive quantity. Note that
+the minus sign is necessary because an increase in pressure (a positive quantity) always causes a decrease
+in volume, and decrease in volume is a negative quantity. The reciprocal of the bulk modulus is called
+compressibility or
+12.40
+The term ‘compressibility’ is used in relation to fluids (gases and liquids). Compressibility describes the change in
+the volume of a fluid per unit increase in pressure. Fluids characterized by a large compressibility are relatively easy
+to compress. For example, the compressibility of water is and the compressibility of acetone is
+This means that under a 1.0-atm increase in pressure, the relative decrease in volume is
+approximately three times as large for acetone as it is for water.
+EXAMPLE 12.9
+Hydraulic Press
+In a hydraulic press Figure 12.23, a 250-liter volume of oil is subjected to a 2300-psi pressure increase. If the
+compressibility of oil is find the bulk strain and the absolute decrease in the volume of oil when
+the press is operating.
+FIGURE 12.23 In a hydraulic press, when a small piston is displaced downward, the pressure in the oil is transmitted throughout the oil to
+the large piston, causing the large piston to move upward. A small force applied to a small piston causes a large pressing force, which the
+large piston exerts on an object that is either lifted or squeezed. The device acts as a mechanical lever.
+Strategy
+We must invert Equation 12.40 to find the bulk strain. First, we convert the pressure increase from psi to atm,
+and identify
+Access for free at openstax.org
+
+12.3 • Stress, Strain, and Elastic Modulus 583
+Solution
+Substituting values into the equation, we have
+Significance
+Notice that since the compressibility of water is 2.32 times larger than that of oil, if the working substance in the
+hydraulic press of this problem were changed to water, the bulk strain as well as the volume change would be 2.32
+times larger.
+CHECK YOUR UNDERSTANDING 12.11
+If the normal force acting on each face of a cubical piece of steel is changed by find the
+resulting change in the volume of the piece of steel.
+Shear Stress, Strain, and Modulus
+The concepts of shear stress and strain concern only solid objects or materials. Buildings and tectonic plates are
+examples of objects that may be subjected to shear stresses. In general, these concepts do not apply to fluids.
+Shear deformation occurs when two antiparallel forces of equal magnitude are applied tangentially to opposite
+surfaces of a solid object, causing no deformation in the transverse direction to the line of force, as in the typical
+example of shear stress illustrated in Figure 12.24. Shear deformation is characterized by a gradual shift of
+layers in the direction tangent to the acting forces. This gradation in occurs in the transverse direction along
+some distance Shear strain is defined by the ratio of the largest displacement to the transverse distance
+12.41
+Shear strain is caused by shear stress. Shear stress is due to forces that act parallel to the surface. We use the
+symbol for such forces. The magnitude per surface area A where shearing force is applied is the measure of
+shear stress
+12.42
+The shear modulus is the proportionality constant in Equation 12.33 and is defined by the ratio of stress to strain.
+Shear modulus is commonly denoted by S:
+12.43
+
+584 12 • Static Equilibrium and Elasticity
+FIGURE 12.24 An object under shear stress: Two antiparallel forces of equal magnitude are applied tangentially to opposite parallel
+surfaces of the object. The dashed-line contour depicts the resulting deformation. There is no change in the direction transverse to the
+acting forces and the transverse length is unaffected. Shear deformation is characterized by a gradual shift of layers in the direction
+tangent to the forces.
+EXAMPLE 12.10
+An Old Bookshelf
+A cleaning person tries to move a heavy, old bookcase on a carpeted floor by pushing tangentially on the surface of
+the very top shelf. However, the only noticeable effect of this effort is similar to that seen in Figure 12.24, and it
+disappears when the person stops pushing. The bookcase is 180.0 cm tall and 90.0 cm wide with four 30.0-cm-
+deep shelves, all partially loaded with books. The total weight of the bookcase and books is 600.0 N. If the person
+gives the top shelf a 50.0-N push that displaces the top shelf horizontally by 15.0 cm relative to the motionless
+bottom shelf, find the shear modulus of the bookcase.
+Strategy
+The only pieces of relevant information are the physical dimensions of the bookcase, the value of the tangential
+force, and the displacement this force causes. We identify and
+and we use Equation 12.43 to compute the shear modulus.
+Solution
+Substituting numbers into the equations, we obtain for the shear modulus
+We can also find shear stress and strain, respectively:
+Significance
+If the person in this example gave the shelf a healthy push, it might happen that the induced shear would collapse it
+to a pile of rubbish. Much the same shear mechanism is responsible for failures of earth-filled dams and levees; and,
+in general, for landslides.
+CHECK YOUR UNDERSTANDING 12.12
+Explain why the concepts of Young’s modulus and shear modulus do not apply to fluids.
+Access for free at openstax.org
+
+12.4 • Elasticity and Plasticity 585
+12.4 Elasticity and Plasticity
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the limit where a deformation of material is elastic
+• Describe the range where materials show plastic behavior
+• Analyze elasticity and plasticity on a stress-strain diagram
+We referred to the proportionality constant between stress and strain as the elastic modulus. But why do we call it
+that? What does it mean for an object to be elastic and how do we describe its behavior?
+Elasticity is the tendency of solid objects and materials to return to their original shape after the external forces
+(load) causing a deformation are removed. An object is elastic when it comes back to its original size and shape
+when the load is no longer present. Physical reasons for elastic behavior vary among materials and depend on the
+microscopic structure of the material. For example, the elasticity of polymers and rubbers is caused by stretching
+polymer chains under an applied force. In contrast, the elasticity of metals is caused by resizing and reshaping the
+crystalline cells of the lattices (which are the material structures of metals) under the action of externally applied
+forces.
+The two parameters that determine the elasticity of a material are its elastic modulus and its elastic limit. A high
+elastic modulus is typical for materials that are hard to deform; in other words, materials that require a high load to
+achieve a significant strain. An example is a steel band. A low elastic modulus is typical for materials that are easily
+deformed under a load; for example, a rubber band. If the stress under a load becomes too high, then when the load
+is removed, the material no longer comes back to its original shape and size, but relaxes to a different shape and
+size: The material becomes permanently deformed. The elastic limit is the stress value beyond which the material
+no longer behaves elastically but becomes permanently deformed.
+Our perception of an elastic material depends on both its elastic limit and its elastic modulus. For example, all
+rubbers are characterized by a low elastic modulus and a high elastic limit; hence, it is easy to stretch them and the
+stretch is noticeably large. Among materials with identical elastic limits, the most elastic is the one with the lowest
+elastic modulus.
+When the load increases from zero, the resulting stress is in direct proportion to strain in the way given by Equation
+12.33, but only when stress does not exceed some limiting value. For stress values within this linear limit, we can
+describe elastic behavior in analogy with Hooke’s law for a spring. According to Hooke’s law, the stretch value of a
+spring under an applied force is directly proportional to the magnitude of the force. Conversely, the response force
+from the spring to an applied stretch is directly proportional to the stretch. In the same way, the deformation of a
+material under a load is directly proportional to the load, and, conversely, the resulting stress is directly proportional
+to strain. The linearity limit (or the proportionality limit) is the largest stress value beyond which stress is no longer
+proportional to strain. Beyond the linearity limit, the relation between stress and strain is no longer linear. When
+stress becomes larger than the linearity limit but still within the elasticity limit, behavior is still elastic, but the
+relation between stress and strain becomes nonlinear.
+For stresses beyond the elastic limit, a material exhibits plastic behavior. This means the material deforms
+irreversibly and does not return to its original shape and size, even when the load is removed. When stress is
+gradually increased beyond the elastic limit, the material undergoes plastic deformation. Rubber-like materials
+show an increase in stress with the increasing strain, which means they become more difficult to stretch and,
+eventually, they reach a fracture point where they break. Ductile materials such as metals show a gradual decrease
+in stress with the increasing strain, which means they become easier to deform as stress-strain values approach the
+breaking point. Microscopic mechanisms responsible for plasticity of materials are different for different materials.
+We can graph the relationship between stress and strain on a stress-strain diagram. Each material has its own
+characteristic strain-stress curve. A typical stress-strain diagram for a ductile metal under a load is shown in Figure
+12.25. In this figure, strain is a fractional elongation (not drawn to scale). When the load is gradually increased, the
+linear behavior (red line) that starts at the no-load point (the origin) ends at the linearity limit at point H. For further
+load increases beyond point H, the stress-strain relation is nonlinear but still elastic. In the figure, this nonlinear
+region is seen between points H and E. Ever larger loads take the stress to the elasticity limit E, where elastic
+
+586 12 • Static Equilibrium and Elasticity
+behavior ends and plastic deformation begins. Beyond the elasticity limit, when the load is removed, for example at
+P, the material relaxes to a new shape and size along the green line. This is to say that the material becomes
+permanently deformed and does not come back to its initial shape and size when stress becomes zero.
+The material undergoes plastic deformation for loads large enough to cause stress to go beyond the elasticity limit
+at E. The material continues to be plastically deformed until the stress reaches the fracture point (breaking point).
+Beyond the fracture point, we no longer have one sample of material, so the diagram ends at the fracture point. For
+the completeness of this qualitative description, it should be said that the linear, elastic, and plasticity limits denote
+a range of values rather than one sharp point.
+FIGURE 12.25 Typical stress-strain plot for a metal under a load: The graph ends at the fracture point. The arrows show the direction of
+changes under an ever-increasing load. Points H and E are the linearity and elasticity limits, respectively. Between points H and E, the
+behavior is nonlinear. The green line originating at P illustrates the metal’s response when the load is removed. The permanent deformation
+has a strain value at the point where the green line intercepts the horizontal axis.
+The value of stress at the fracture point is called breaking stress (or ultimate stress). Materials with similar elastic
+properties, such as two metals, may have very different breaking stresses. For example, ultimate stress for
+aluminum is and for steel it may be as high as depending on the kind of steel. We can
+make a quick estimate, based on Equation 12.34, that for rods with a cross-sectional area, the breaking load
+for an aluminum rod is and the breaking load for a steel rod is about nine times larger.
+Access for free at openstax.org

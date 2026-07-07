@@ -1,0 +1,239 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 704-710
+############################################################
+
+692 14 • Fluid Mechanics
+FIGURE 14.37 (a) If fluid flow in a tube has negligible resistance, the speed is the same all across the tube. (b) When a viscous fluid flows
+through a tube, its speed at the walls is zero, increasing steadily to its maximum at the center of the tube. (c) The shape of a Bunsen burner
+flame is due to the velocity profile across the tube. (credit c: modification of work by "jasonwoodhead23"/Flickr)
+The resistance R to laminar flow of an incompressible fluid with viscosity through a horizontal tube of uniform
+radius r and length l, is given by
+14.18
+This equation is called Poiseuille’s law for resistance, named after the French scientist J. L. Poiseuille
+(1799–1869), who derived it in an attempt to understand the flow of blood through the body.
+Let us examine Poiseuille’s expression for R to see if it makes good intuitive sense. We see that resistance is directly
+proportional to both fluid viscosity and the length l of a tube. After all, both of these directly affect the amount of
+friction encountered—the greater either is, the greater the resistance and the smaller the flow. The radius r of a tube
+affects the resistance, which again makes sense, because the greater the radius, the greater the flow (all other
+factors remaining the same). But it is surprising that r is raised to the fourth power in Poiseuille’s law. This exponent
+means that any change in the radius of a tube has a very large effect on resistance. For example, doubling the radius
+of a tube decreases resistance by a factor of .
+Taken together, and give the following expression for flow rate:
+14.19
+This equation describes laminar flow through a tube. It is sometimes called Poiseuille’s law for laminar flow, or
+simply Poiseuille’s law (Figure 14.38).
+FIGURE 14.38 Poiseuille’s law applies to laminar flow of an incompressible fluid of viscosity through a tube of length l and radius r. The
+direction of flow is from greater to lower pressure. Flow rate Q is directly proportional to the pressure difference , and inversely
+Access for free at openstax.org
+
+14.7 • Viscosity and Turbulence 693
+proportional to the length l of the tube and viscosity of the fluid. Flow rate increases with radius by a factor of .
+EXAMPLE 14.8
+Using Flow Rate: Air Conditioning Systems
+An air conditioning system is being designed to supply air at a gauge pressure of 0.054 Pa at a temperature of
+The air is sent through an insulated, round conduit with a diameter of 18.00 cm. The conduit is 20-meters long and
+is open to a room at atmospheric pressure 101.30 kPa. The room has a length of 12 meters, a width of 6 meters,
+and a height of 3 meters. (a) What is the volume flow rate through the pipe, assuming laminar flow? (b) Estimate the
+length of time to completely replace the air in the room. (c) The builders decide to save money by using a conduit
+with a diameter of 9.00 cm. What is the new flow rate?
+Strategy
+Assuming laminar flow, Poiseuille’s law states that
+We need to compare the conduit radius before and after the flow rate reduction. Note that we are given the diameter
+of the conduit, so we must divide by two to get the radius.
+Solution
+a. Assuming a constant pressure difference and using the viscosity ,
+b. Assuming constant flow
+c. Using laminar flow, Poiseuille’s law yields
+Thus, the radius of the conduit decreases by half reduces the flow rate to 6.25% of the original value.
+Significance
+In general, assuming laminar flow, decreasing the radius has a more dramatic effect than changing the length. If the
+length is increased and all other variables remain constant, the flow rate is decreased:
+Doubling the length cuts the flow rate to one-half the original flow rate.
+If the radius is decreased and all other variables remain constant, the volume flow rate decreases by a much larger
+factor.
+
+694 14 • Fluid Mechanics
+Cutting the radius in half decreases the flow rate to one-sixteenth the original flow rate.
+Flow and Resistance as Causes of Pressure Drops
+Water pressure in homes is sometimes lower than normal during times of heavy use, such as hot summer days. The
+drop in pressure occurs in the water main before it reaches individual homes. Let us consider flow through the water
+main as illustrated in Figure 14.39. We can understand why the pressure to the home drops during times of
+heavy use by rearranging the equation for flow rate:
+In this case, is the pressure at the water works and R is the resistance of the water main. During times of heavy
+use, the flow rate Q is large. This means that must also be large. Thus must decrease. It is correct to
+think of flow and resistance as causing the pressure to drop from to . The equation is valid for
+both laminar and turbulent flows.
+FIGURE 14.39 During times of heavy use, there is a significant pressure drop in a water main, and supplied to users is significantly less
+than created at the water works. If the flow is very small, then the pressure drop is negligible, and .
+We can also use to analyze pressure drops occurring in more complex systems in which the tube
+radius is not the same everywhere. Resistance is much greater in narrow places, such as in an obstructed coronary
+artery. For a given flow rate Q, the pressure drop is greatest where the tube is most narrow. This is how water
+faucets control flow. Additionally, R is greatly increased by turbulence, and a constriction that creates turbulence
+greatly reduces the pressure downstream. Plaque in an artery reduces pressure and hence flow, both by its
+resistance and by the turbulence it creates.
+Measuring Turbulence
+An indicator called the Reynolds number can reveal whether flow is laminar or turbulent. For flow in a tube of
+uniform diameter, the Reynolds number is defined as
+14.20
+where is the fluid density, v its speed, its viscosity, and r the tube radius. The Reynolds number is a
+dimensionless quantity. Experiments have revealed that is related to the onset of turbulence. For below
+about 2000, flow is laminar. For above about 3000, flow is turbulent.
+Access for free at openstax.org
+
+14.7 • Viscosity and Turbulence 695
+For values of between about 2000 and 3000, flow is unstable—that is, it can be laminar, but small obstructions
+and surface roughness can make it turbulent, and it may oscillate randomly between being laminar and turbulent. In
+fact, the flow of a fluid with a Reynolds number between 2000 and 3000 is a good example of chaotic behavior. A
+system is defined to be chaotic when its behavior is so sensitive to some factor that it is extremely difficult to
+predict. It is difficult, but not impossible, to predict whether flow is turbulent or not when a fluid’s Reynold’s number
+falls in this range due to extremely sensitive dependence on factors like roughness and obstructions on the nature of
+the flow. A tiny variation in one factor has an exaggerated (or nonlinear) effect on the flow.
+EXAMPLE 14.9
+Using Flow Rate: Turbulent Flow or Laminar Flow
+In Example 14.8, we found the volume flow rate of an air conditioning system to be This
+calculation assumed laminar flow. (a) Was this a good assumption? (b) At what velocity would the flow become
+turbulent?
+Strategy
+To determine if the flow of air through the air conditioning system is laminar, we first need to find the velocity, which
+can be found by
+Then we can calculate the Reynold’s number, using the equation below, and determine if it falls in the range for
+laminar flow
+Solution
+a. Using the values given:
+Since the Reynolds number is 1835 < 2000, the flow is laminar and not turbulent. The assumption that the
+flow was laminar is valid.
+b. To find the maximum speed of the air to keep the flow laminar, consider the Reynold’s number.
+Significance
+When transferring a fluid from one point to another, it desirable to limit turbulence. Turbulence results in wasted
+energy, as some of the energy intended to move the fluid is dissipated when eddies are formed. In this case, the air
+conditioning system will become less efficient once the velocity exceeds 0.16 m/s, since this is the point at which
+turbulence will begin to occur.
+
+696 14 • Chapter Review
+Chapter Review
+Key Terms
+absolute pressure sum of gauge pressure and hydrostatic equilibrium state at which water is not
+atmospheric pressure flowing, or is static
+Archimedes’ principle buoyant force on an object ideal fluid fluid with negligible viscosity
+equals the weight of the fluid it displaces laminar flow type of fluid flow in which layers do not
+Bernoulli’s equation equation resulting from mix
+applying conservation of energy to an Pascal’s principle change in pressure applied to an
+incompressible frictionless fluid: enclosed fluid is transmitted undiminished to all
+throughout the fluid portions of the fluid and to the walls of its container
+Bernoulli’s principle Bernoulli’s equation applied at Poiseuille’s law rate of laminar flow of an
+constant depth:
+incompressible fluid in a tube:
+Poiseuille’s law for resistance resistance to laminar
+flow of an incompressible fluid in a tube:
+buoyant force net upward force on any object in any
+pressure force per unit area exerted perpendicular to
+fluid due to the pressure difference at different
+the area over which the force acts
+depths
+Reynolds number dimensionless parameter that can
+density mass per unit volume of a substance or
+reveal whether a particular flow is laminar or
+object
+turbulent
+flow rate abbreviated Q, it is the volume V that flows
+specific gravity ratio of the density of an object to a
+past a particular point during a time t, or
+fluid (usually water)
+fluids liquids and gases; a fluid is a state of matter
+turbulence fluid flow in which layers mix together via
+that yields to shearing forces
+eddies and swirls
+gauge pressure pressure relative to atmospheric
+turbulent flow type of fluid flow in which layers mix
+pressure
+together via eddies and swirls
+hydraulic jack simple machine that uses cylinders of
+viscosity measure of the internal friction in a fluid
+different diameters to distribute force
+Key Equations
+Density of a sample at constant density
+Pressure
+Pressure at a depth h in a fluid of constant density
+Change of pressure with height in a
+constant-density fluid
+Absolute pressure
+Pascal’s principle
+Volume flow rate
+Continuity equation (constant density)
+Continuity equation (general form)
+Bernoulli’s equation
+Viscosity
+Poiseuille’s law for resistance
+Poiseuille’s law
+Access for free at openstax.org
+
+14 • Chapter Review 697
+Summary
+14.1 Fluids, Density, and Pressure displaces.
+• A fluid is a state of matter that yields to sideways 14.5 Fluid Dynamics
+or shearing forces. Liquids and gases are both
+• Flow rate Q is defined as the volume V flowing
+fluids. Fluid statics is the physics of stationary
+past a point in time t, or where V is
+fluids.
+volume and t is time. The SI unit of flow rate is
+• Density is the mass per unit volume of a
+but other rates can be used, such as L/min.
+substance or object, defined as The SI
+• Flow rate and velocity are related by
+unit of density is
+where A is the cross-sectional area of the flow
+• Pressure is the force per unit perpendicular area
+and v is its average velocity.
+over which the force is applied, The SI
+• The equation of continuity states that for an
+unit of pressure is the pascal: .
+incompressible fluid, the mass flowing into a pipe
+• Pressure due to the weight of a liquid of constant
+must equal the mass flowing out of the pipe.
+density is given by , where p is the
+pressure, h is the depth of the liquid, is the 14.6 Bernoulli’s Equation
+density of the liquid, and g is the acceleration
+• Bernoulli’s equation states that the sum on each
+due to gravity.
+side of the following equation is constant, or the
+14.2 Measuring Pressure same at any two points in an incompressible
+frictionless fluid:
+• Gauge pressure is the pressure relative to
+atmospheric pressure.
+• Absolute pressure is the sum of gauge pressure
+and atmospheric pressure. • Bernoulli’s principle is Bernoulli’s equation
+• Open-tube manometers have U-shaped tubes applied to situations in which the height of the
+and one end is always open. They are used to fluid is constant. The terms involving depth (or
+measure pressure. A mercury barometer is a height h) subtract out, yielding
+device that measures atmospheric pressure.
+• The SI unit of pressure is the pascal (Pa), but
+several other units are commonly used. • Bernoulli’s principle has many applications,
+including entrainment and velocity
+14.3 Pascal's Principle and Hydraulics
+measurement.
+• Pressure is force per unit area.
+14.7 Viscosity and Turbulence
+• A change in pressure applied to an enclosed fluid
+is transmitted undiminished to all portions of the • Laminar flow is characterized by smooth flow of
+fluid and to the walls of its container. the fluid in layers that do not mix.
+• A hydraulic system is an enclosed fluid system • Turbulence is characterized by eddies and swirls
+used to exert forces. that mix layers of fluid together.
+• Fluid viscosity is due to friction within a fluid.
+14.4 Archimedes’ Principle and Buoyancy
+• Flow is proportional to pressure difference and
+• Buoyant force is the net upward force on any inversely proportional to resistance:
+object in any fluid. If the buoyant force is greater
+than the object’s weight, the object will rise to
+the surface and float. If the buoyant force is less
+• The pressure drop caused by flow and resistance
+than the object’s weight, the object will sink. If
+is given by .
+the buoyant force equals the object’s weight, the
+• The Reynolds number can reveal whether
+object can remain suspended at its present
+flow is laminar or turbulent. It is .
+depth. The buoyant force is always present and
+acting on any object immersed either partially or • For below about 2000, flow is laminar. For
+entirely in a fluid. above about 3000, flow is turbulent. For
+• Archimedes’ principle states that the buoyant values of between 2000 and 3000, it may be
+force on an object equals the weight of the fluid it either or both.

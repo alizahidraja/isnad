@@ -1,0 +1,193 @@
+# REAL PDF — openstax_vol1.pdf, pages 43-47
+############################################################
+
+1.7 • Solving Problems in Physics 31
+to apply broad physical principles—usually represented by equations—to specific situations is a very powerful form
+of knowledge. It is much more powerful than memorizing a list of facts. Analytical skills and problem-solving
+abilities can be applied to new situations whereas a list of facts cannot be made long enough to contain every
+possible circumstance. Such analytical skills are useful both for solving problems in this text and for applying
+physics in everyday life.
+As you are probably well aware, a certain amount of creativity and insight is required to solve problems. No rigid
+procedure works every time. Creativity and insight grow with experience. With practice, the basics of problem
+solving become almost automatic. One way to get practice is to work out the text’s examples for yourself as you
+read. Another is to work as many end-of-section problems as possible, starting with the easiest to build confidence
+and then progressing to the more difficult. After you become involved in physics, you will see it all around you, and
+you can begin to apply it to situations you encounter outside the classroom, just as is done in many of the
+applications in this text.
+Although there is no simple step-by-step method that works for every problem, the following three-stage process
+facilitates problem solving and makes it more meaningful. The three stages are strategy, solution, and significance.
+This process is used in examples throughout the book. Here, we look at each stage of the process in turn.
+Strategy
+Strategy is the beginning stage of solving a problem. The idea is to figure out exactly what the problem is and then
+develop a strategy for solving it. Some general advice for this stage is as follows:
+• Examine the situation to determine which physical principles are involved. It often helps to draw a simple
+sketch at the outset. You often need to decide which direction is positive and note that on your sketch. When
+you have identified the physical principles, it is much easier to find and apply the equations representing those
+principles. Although finding the correct equation is essential, keep in mind that equations represent physical
+principles, laws of nature, and relationships among physical quantities. Without a conceptual understanding of
+a problem, a numerical solution is meaningless.
+• Make a list of what is given or can be inferred from the problem as stated (identify the “knowns”). Many
+problems are stated very succinctly and require some inspection to determine what is known. Drawing a
+sketch can be very useful at this point as well. Formally identifying the knowns is of particular importance in
+applying physics to real-world situations. For example, the word stopped means the velocity is zero at that
+instant. Also, we can often take initial time and position as zero by the appropriate choice of coordinate
+system.
+• Identify exactly what needs to be determined in the problem (identify the unknowns). In complex problems,
+especially, it is not always obvious what needs to be found or in what sequence. Making a list can help identify
+the unknowns.
+• Determine which physical principles can help you solve the problem. Since physical principles tend to be
+expressed in the form of mathematical equations, a list of knowns and unknowns can help here. It is easiest if
+you can find equations that contain only one unknown—that is, all the other variables are known—so you can
+solve for the unknown easily. If the equation contains more than one unknown, then additional equations are
+needed to solve the problem. In some problems, several unknowns must be determined to get at the one
+needed most. In such problems it is especially important to keep physical principles in mind to avoid going
+astray in a sea of equations. You may have to use two (or more) different equations to get the final answer.
+Solution
+The solution stage is when you do the math. Substitute the knowns (along with their units) into the appropriate
+equation and obtain numerical solutions complete with units. That is, do the algebra, calculus, geometry, or
+arithmetic necessary to find the unknown from the knowns, being sure to carry the units through the calculations.
+This step is clearly important because it produces the numerical answer, along with its units. Notice, however, that
+this stage is only one-third of the overall problem-solving process.
+Significance
+After having done the math in the solution stage of problem solving, it is tempting to think you are done. But, always
+remember that physics is not math. Rather, in doing physics, we use mathematics as a tool to help us understand
+
+32 1 • Units and Measurement
+nature. So, after you obtain a numerical answer, you should always assess its significance:
+• Check your units. If the units of the answer are incorrect, then an error has been made and you should go back
+over your previous steps to find it. One way to find the mistake is to check all the equations you derived for
+dimensional consistency. However, be warned that correct units do not guarantee the numerical part of the
+answer is also correct.
+• Check the answer to see whether it is reasonable. Does it make sense? This step is extremely important: the
+goal of physics is to describe nature accurately. To determine whether the answer is reasonable, check both
+its magnitude and its sign, in addition to its units. The magnitude should be consistent with a rough estimate
+of what it should be. It should also compare reasonably with magnitudes of other quantities of the same type.
+The sign usually tells you about direction and should be consistent with your prior expectations. Your
+judgment will improve as you solve more physics problems, and it will become possible for you to make finer
+judgments regarding whether nature is described adequately by the answer to a problem. This step brings the
+problem back to its conceptual meaning. If you can judge whether the answer is reasonable, you have a
+deeper understanding of physics than just being able to solve a problem mechanically.
+• Check to see whether the answer tells you something interesting. What does it mean? This is the flip side of
+the question: Does it make sense? Ultimately, physics is about understanding nature, and we solve physics
+problems to learn a little something about how nature operates. Therefore, assuming the answer does make
+sense, you should always take a moment to see if it tells you something about the world that you find
+interesting. Even if the answer to this particular problem is not very interesting to you, what about the method
+you used to solve it? Could the method be adapted to answer a question that you do find interesting? In many
+ways, it is in answering questions such as these that science progresses.
+Access for free at openstax.org
+
+1 • Chapter Review 33
+Chapter Review
+Key Terms
+accuracy the degree to which a measured value law description, using concise language or a
+agrees with an accepted reference value for that mathematical formula, of a generalized pattern in
+measurement nature supported by scientific evidence and
+base quantity physical quantity chosen by repeated experiments
+convention and practical considerations such that meter SI unit for length, abbreviated m
+all other physical quantities can be expressed as method of adding percents the percent uncertainty
+algebraic combinations of them in a quantity calculated by multiplication or division
+base unit standard for expressing the measurement is the sum of the percent uncertainties in the items
+of a base quantity within a particular system of used to make the calculation.
+units; defined by a particular procedure used to metric system system in which values can be
+measure the corresponding base quantity calculated in factors of 10
+conversion factor a ratio that expresses how many of model representation of something often too difficult
+one unit are equal to another unit (or impossible) to display directly
+derived quantity physical quantity defined using order of magnitude the size of a quantity as it relates
+algebraic combinations of base quantities to a power of 10
+derived units units that can be calculated using percent uncertainty the ratio of the uncertainty of a
+algebraic combinations of the fundamental units measurement to the measured value, expressed as
+dimension expression of the dependence of a a percentage
+physical quantity on the base quantities as a physical quantity characteristic or property of an
+product of powers of symbols representing the base object that can be measured or calculated from
+quantities; in general, the dimension of a quantity other measurements
+has the form for some powers a, physics science concerned with describing the
+b, c, d, e, f, and g. interactions of energy, matter, space, and time;
+dimensionally consistent equation in which every especially interested in what fundamental
+term has the same dimensions and the arguments mechanisms underlie every phenomenon
+of any mathematical functions appearing in the precision the degree to which repeated
+equation are dimensionless measurements agree with each other
+dimensionless quantity with a dimension of second the SI unit for time, abbreviated s
+also called quantity of SI units the international system of units that
+dimension 1 or a pure number scientists in most countries have agreed to use;
+discrepancy the difference between the measured includes units such as meters, liters, and grams
+value and a given standard or expected value significant figures used to express the precision of a
+English units system of measurement used in the measuring tool used to measure a value
+United States; includes units of measure such as theory testable explanation for patterns in nature
+feet, gallons, and pounds supported by scientific evidence and verified
+estimation using prior experience and sound physical multiple times by various groups of researchers
+reasoning to arrive at a rough idea of a quantity’s uncertainty a quantitative measure of how much
+value; sometimes called an “order-of-magnitude measured values deviate from one another
+approximation,” a “guesstimate,” a “back-of-the- units standards used for expressing and comparing
+envelope calculation”, or a “Fermi calculation” measurements
+kilogram SI unit for mass, abbreviated kg
+Key Equations
+Percent uncertainty
+Summary
+1.1 The Scope and Scale of Physics • Physics operates on a vast range of scales of
+length, mass, and time. Scientists use the
+• Physics is about trying to find the simple laws
+concept of the order of magnitude of a number to
+that describe all natural phenomena.
+
+34 1 • Chapter Review
+track which phenomena occur on which scales. value of a physical quantity based on prior
+They also use orders of magnitude to compare experience and sound physical reasoning. Some
+the various scales. strategies that may help when making an
+• Scientists attempt to describe the world by estimate are as follows:
+formulating models, theories, and laws. ◦ Get big lengths from smaller lengths.
+◦ Get areas and volumes from lengths.
+1.2 Units and Standards
+◦ Get masses from volumes and densities.
+• Systems of units are built up from a small ◦ If all else fails, bound it.
+number of base units, which are defined by ◦ One “sig. fig.” is fine.
+accurate and precise measurements of ◦ Ask yourself: Does this make any sense?
+conventionally chosen base quantities. Other
+1.6 Significant Figures
+units are then derived as algebraic combinations
+of the base units. • Accuracy of a measured value refers to how close
+• Two commonly used systems of units are English a measurement is to an accepted reference
+units and SI units. All scientists and most of the value. The discrepancy in a measurement is the
+other people in the world use SI, whereas amount by which the measurement result differs
+nonscientists in the United States still tend to from this value.
+use English units. • Precision of measured values refers to how close
+• The SI base units of length, mass, and time are the agreement is between repeated
+the meter (m), kilogram (kg), and second (s), measurements. The uncertainty of a
+respectively. measurement is a quantification of this.
+• SI units are a metric system of units, meaning • The precision of a measuring tool is related to the
+values can be calculated by factors of 10. Metric size of its measurement increments. The smaller
+prefixes may be used with metric units to scale the measurement increment, the more precise
+the base units to sizes appropriate for almost any the tool.
+application. • Significant figures express the precision of a
+measuring tool.
+1.3 Unit Conversion
+• When multiplying or dividing measured values,
+• To convert a quantity from one unit to another, the final answer can contain only as many
+multiply by conversion factors in such a way that significant figures as the value with the least
+you cancel the units you want to get rid of and number of significant figures.
+introduce the units you want to end up with. • When adding or subtracting measured values,
+• Be careful with areas and volumes. Units obey the final answer cannot contain more decimal
+the rules of algebra so, for example, if a unit is places than the least-precise value.
+squared we need two factors to cancel it.
+1.7 Solving Problems in Physics
+1.4 Dimensional Analysis
+The three stages of the process for solving physics
+• The dimension of a physical quantity is just an problems used in this book are as follows:
+expression of the base quantities from which it is
+• Strategy: Determine which physical principles
+derived.
+are involved and develop a strategy for using
+• All equations expressing physical laws or
+them to solve the problem.
+principles must be dimensionally consistent. This
+• Solution: Do the math necessary to obtain a
+fact can be used as an aid in remembering
+numerical solution complete with units.
+physical laws, as a way to check whether claimed
+• Significance: Check the solution to make sure it
+relationships between physical quantities are
+makes sense (correct units, reasonable
+possible, and even to derive new physical laws.
+magnitude and sign) and assess its significance.
+1.5 Estimates and Fermi Calculations
+• An estimate is a rough educated guess at the
+Access for free at openstax.org

@@ -1,0 +1,302 @@
+# REAL PDF — openstax_vol3.pdf, pages 82-89
+############################################################
+
+74 Chapter 2 | Geometric Optics and Image Formation
+Thefigureshowsthreeraysfrommanyraysthatemanatefromthetipofthearrow.Thesethreerayscanbetracedbyusing
+the ray-tracing rules given above.
+• Ray 1 enters the lens parallel to the optical axis and passes through the focal point on the opposite side (rule 1).
+• Ray 2 passes through the center of the lens and is not deviated (rule 2).
+• Ray 3 passes through the focal point on its way to the lens and exits the lens parallel to the optical axis (rule 3).
+Thethreerayscrossatasinglepointontheoppositesideofthelens.Thus,theimageofthetipofthearrowislocatedat
+this point. All rays that come from the tip of the arrow and enter the lens are refracted and cross at the point shown.
+Afterlocatingtheimageofthetipofthearrow,weneedanotherpointoftheimagetoorienttheentireimageofthearrow.
+Wechosetolocatetheimagebaseofthearrow,whichisontheopticalaxis.Asexplainedinthesectiononsphericalmirrors,
+thebasewillbeontheopticalaxisjustabovetheimageofthetipofthearrow(duetothetop-bottomsymmetryofthelens).
+Thus,theimagespanstheopticalaxistothe(negative)heightshown.Raysfromanotherpointonthearrow,suchasthe
+middle of the arrow, cross at another common point, thus filling in the rest of the image.
+Althoughthreeraysaretracedinthisfigure,onlytwoarenecessarytolocateapointoftheimage.Itisbesttotraceraysfor
+which there are simple ray-tracing rules.
+Figure 2.22 Ray tracing is used to locate the image formed by a lens. Rays originating
+from the same point on the object are traced—the three chosen rays each follow one of the
+rules for ray tracing, so that their paths are easy to determine. The image is located at the
+point where the rays cross. In this case, a real image—one that can be projected on a
+screen—is formed.
+Several important distances appearinthefigure.Asforamirror,wedefine d tobetheobject distance, orthedistance
+o
+ofanobjectfromthecenterofalens.Theimagedistance d isdefinedtobethedistanceoftheimagefromthecenterof
+i
+alens.Theheightoftheobjectandtheheightoftheimageareindicatedby h and h ,respectively.Imagesthatappear
+o i
+upright relative to the object have positive heights, and those that are inverted have negative heights. By using the rules
+ofraytracingandmakingascaledrawingwithpaperandpencil,likethatinFigure2.22,wecanaccuratelydescribethe
+location and size of an image. But the real benefit of ray tracing is in visualizing how images are formed in a variety of
+situations.
+Oblique Parallel Rays and Focal Plane
+We have seen that rays parallel to the optical axis are directed to the focal point of a converging lens. In the case of a
+diverginglens,theycomeoutinadirectionsuchthattheyappeartobecomingfromthefocalpointontheoppositeside
+of the lens (i.e., the side from which parallel rays enter the lens). What happens to parallel rays that are not parallel to
+the optical axis (Figure 2.23)? In the case of a converging lens, these rays do not converge at the focal point. Instead,
+they come together on another point in the plane called the focal plane. The focal plane contains the focal point and is
+perpendicular tothe optical axis. Asshowninthe figure, parallel rays focus where the raythroughthe center ofthe lens
+crosses the focal plane.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 75
+Figure 2.23 Parallel oblique rays focus on a point in a focal plane.
+Thin-Lens Equation
+Raytracingallowsustogetaqualitativepictureofimageformation.Toobtainnumericinformation,wederiveapairof
+equations from a geometric analysis of ray tracing for thin lenses. These equations, called the thin-lens equation and the
+lens maker’s equation, allow us to quantitatively analyze thin lenses.
+Considerthethickbi-convexlensshowninFigure2.24.Theindexofrefractionofthesurroundingmediumis n (ifthe
+1
+lensisinair,then n =1.00)andthatofthelensis n .Theradiiofcurvaturesofthetwosidesare R andR .Wewish
+1 2 1 2
+to find a relation between the object distance d , the image distance d , and the parameters of the lens.
+o i
+Figure 2.24 Figure for deriving the lens maker’s equation. Here,tis the thickness of lens, n is the index of refraction of the
+1
+exterior medium, and n is the index of refraction of the lens. We take the limit of t→0 to obtain the formula for a thin lens.
+2
+Toderivethethin-lensequation,weconsidertheimageformedbythefirstrefractingsurface(i.e.,leftsurface)andthenuse
+thisimageastheobjectforthesecondrefractingsurface.Inthefigure,theimagefromthefirstrefractingsurfaceis Q′,
+whichisformedbyextendingbackwardstheraysfrominsidethelens(theseraysresultfromrefractionatthefirstsurface).
+Thisisshownbythedashedlinesinthefigure.Noticethatthisimageisvirtualbecausenoraysactuallypassthroughthe
+point Q′.Tofindtheimagedistance d′ correspondingtotheimage Q′,weuseEquation2.11.Inthiscase,theobject
+i
+distance is d
+o
+, the image distance is d′
+i
+, and the radius of curvature is R
+1
+. Inserting these intoEquation 2.3gives
+n n n −n (2.14)
+1+ 2 = 2 1.
+d
+o
+d′
+i
+R
+1
+The image is virtual and on the same side as the object, so d′
+i
+<0 and d o>0. The first surface is convex toward the
+
+76 Chapter 2 | Geometric Optics and Image Formation
+object, so R >0.
+1
+TofindtheobjectdistancefortheobjectQformedbyrefractionfromthesecondinterface,notethattheroleoftheindices
+ofrefraction n and n areinterchangedinEquation2.11.InFigure2.24,theraysoriginateinthemediumwithindex
+1 2
+n ,whereasinFigure2.15,theraysoriginateinthemediumwithindex n .Thus,wemustinterchange n and n in
+2 1 1 2
+Equation2.11.Inaddition,byconsultingagainFigure2.24,weseethattheobjectdistanceis d′ andtheimagedistance
+o
+is d . The radius of curvature is R Inserting these quantities intoEquation 2.11gives
+i 2
+n n n −n (2.15)
+2+ 1 = 1 2.
+d′ d R
+o i 2
+Theimageisrealandontheoppositesidefromtheobject,so d >0 and d′ >0.Thesecondsurfaceisconvexawayfrom
+i o
+theobject,so R <0.Equation 2.15canbesimplifiedbynotingthat d′ =|d′|+t,wherewehavetakentheabsolute
+2 o i
+valuebecause d′ isanegativenumber,whereasboth d′ andtarepositive.Wecandispensewiththeabsolutevalueifwe
+i o
+negate d′, which gives d′ =−d′+t. Inserting this intoEquation 2.15gives
+i o i
+n n n −n (2.16)
+2 + 1 = 1 2.
+−d′+t d R
+i i 2
+SummingEquation 2.14andEquation 2.16gives
+n n n n ⎛ ⎞ (2.17)
+1+ 1+ 2+ 2 =(n −n ) 1 − 1 .
+d
+o
+d
+i
+d′
+i
+−d′
+i
++t 2 1 ⎝R
+1
+R
+2
+⎠
+Inthethin-lensapproximation,weassumethatthelensisverythincomparedtothefirstimagedistance,or t≪d′ (or,
+i
+equivalently, t≪R andR ). In this case, the third and fourth terms on the left-hand side of Equation 2.17 cancel,
+1 2
+leaving us with
+n n ⎛ ⎞
+1+ 1 =(n −n ) 1 − 1 .
+d d 2 1 ⎝R R ⎠
+o i 1 2
+Dividing by n gives us finally
+1
+d 1 o + d 1 i = ⎛ ⎝ n n 2 1 −1 ⎞ ⎠ ⎛ ⎝R 1 1 − R 1 2 ⎞ ⎠ . (2.18)
+The left-hand side looks suspiciously like the mirror equation that we derived above for spherical mirrors. As done for
+spherical mirrors, we can use ray tracing and geometry to show that, for a thin lens,
+1 1 1 (2.19)
++ =
+d d f
+o i
+wherefisthefocallengthofthethinlens(thisderivationisleftasanexercise).Thisisthethin-lensequation.Thefocal
+length of a thin lens is the same to the left and to the right of the lens. Combining Equation 2.18 and Equation 2.19
+gives
+1 f = ⎛ ⎝ n n 2 1 −1 ⎞ ⎠ ⎛ ⎝R 1 1 − R 1 2 ⎞ ⎠ (2.20)
+whichiscalledthelensmaker’sequation.Itshowsthatthefocallengthofathinlensdependsonlyoftheradiiofcurvature
+andtheindexofrefractionofthelensandthatofthesurroundingmedium.Foralensinair, n =1.0 and n ≡n,sothe
+1 2
+lens maker’s equation reduces to
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 77
+⎛ ⎞ (2.21)
+1 =(n−1) 1 − 1 .
+f ⎝R R ⎠
+1 2
+Sign conventions for lenses
+To properly use the thin-lens equation, the followingsign conventionsmust be obeyed:
+1. d ispositiveiftheimageisonthesideoppositetheobject(i.e.,realimage);otherwise, d isnegative(i.e.,virtual
+i i
+image).
+2. fis positive for a converging lens and negative for a diverging lens.
+3. Ris positive for a surface convex toward the object, and negative for a surface concave toward object.
+Magnification
+By using a finite-size object on the optical axis and ray tracing, you can show that the magnificationmof an image is
+h d (2.22)
+m≡ i =− i
+h d
+o o
+(wherethethreelinesmean“isdefinedas”).Thisisexactlythesameequationasweobtainedformirrors(seeEquation
+2.8).If m>0,thentheimagehasthesameverticalorientationastheobject(calledan“upright”image).If m<0,then
+the image has the opposite vertical orientation as the object (called an “inverted” image).
+Using the Thin-Lens Equation
+Thethin-lensequationandthelensmaker’sequationarebroadlyapplicabletosituationsinvolvingthinlenses.Weexplore
+many features of image formation in the following examples.
+Considerathinconverginglens.Wheredoestheimageformandwhattypeofimageisformedastheobjectapproachesthe
+lensfrominfinity?Thismaybeseenbyusingthethin-lensequationforagivenfocallengthtoplottheimagedistanceasa
+function of object distance. In other words, we plot
+−1
+⎛ ⎞
+d = 1 − 1
+i ⎝f d ⎠
+o
+for a given value off. For f =1cm, the result is shown in part (a) ofFigure 2.25.
+Figure 2.25 (a) Image distance for a thin converging lens with f =1.0cm as a function of object distance. (b) Same thing
+but for a diverging lens with f =−1.0cm.
+An object much farther than the focal length f from the lens should produce an image near the focal plane, because the
+
+78 Chapter 2 | Geometric Optics and Image Formation
+secondtermontheright-handsideoftheequationabovebecomesnegligiblecomparedtothefirstterm,sowehave d ≈ f.
+i
+This can be seen in the plot of part (a) of the figure, which shows that the image distance approaches asymptotically the
+focal length of 1 cm for larger object distances. As the object approaches the focal plane, the image distance diverges to
+positiveinfinity.Thisisexpectedbecauseanobjectatthefocalplaneproducesparallelraysthatformanimageatinfinity
+(i.e.,veryfarfromthelens).Whentheobjectisfartherthanthefocallengthfromthelens,theimagedistanceispositive,so
+theimageisreal,ontheoppositesideofthelensfromtheobject,andinverted(because m=−d
+i
+/d
+o
+).Whentheobjectis
+closerthanthefocallengthfromthelens,theimagedistancebecomesnegative,whichmeansthattheimageisvirtual,on
+the same side of the lens as the object, and upright.
+Forathindiverginglensoffocallength f =−1.0cm,asimilarplotofimagedistancevs.objectdistanceisshowninpart
+(b).Inthiscase,theimagedistanceisnegativeforallpositiveobjectdistances,whichmeansthattheimageisvirtual,onthe
+samesideofthelensastheobject,andupright.Thesecharacteristicsmayalsobeseenbyray-tracingdiagrams(seeFigure
+2.26).
+Figure 2.26 The red dots show the focal points of the lenses. (a) A real, inverted image formed from an object that is farther
+than the focal length from a converging lens. (b) A virtual, upright image formed from an object that is closer than a focal length
+from the lens. (c) A virtual, upright image formed from an object that is farther than a focal length from a diverging lens.
+Toseeaconcreteexampleofuprightandinvertedimages,lookatFigure2.27,whichshowsimagesformedbyconverging
+lenseswhentheobject(theperson’sfaceinthiscase)isplaceatdifferentdistancesfromthelens.Inpart(a)ofthefigure,
+the person’s face is farther than one focal length from the lens, so the image is inverted. In part (b), the person’s face is
+closer than one focal length from the lens, so the image is upright.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 79
+Figure 2.27 (a) When a converging lens is held farther than one focal length from the man’s face, an inverted image is formed.
+Note that the image is in focus but the face is not, because the image is much closer to the camera taking this photograph than the
+face. (b) An upright image of the man’s face is produced when a converging lens is held at less than one focal length from his
+face. (credit a: modification of work by “DaMongMan”/Flickr; credit b: modification of work by Casey Fleser)
+Work through the following examples to better understand how thin lenses work.
+Problem-Solving Strategy: Lenses
+Step1.Determinewhetherraytracing,thethin-lensequation,orbothwouldbeuseful.Evenifraytracingisnotused,
+a careful sketch is always very useful. Write symbols and values on the sketch.
+Step 2. Identify what needs to be determined in the problem (identify the unknowns).
+Step 3. Make a list of what is given or can be inferred from the problem (identify the knowns).
+Step 4. If ray tracing is required, use the ray-tracing rules listed near the beginning of this section.
+Step5.Mostquantitative problemsrequiretheuseofthethin-lensequationand/orthelensmaker’sequation.Solve
+these for the unknowns and insert the given quantities or use both together to find two unknowns.
+Step7.Checktoseeiftheanswerisreasonable.Arethesignscorrect?Isthesketchorraytracingconsistentwiththe
+calculation?
+Example 2.3
+Using the Lens Maker’s Equation
+Findtheradiusofcurvatureofabiconcavelenssymmetricallygroundfromaglasswithindexofrefractive1.55
+so that its focal length in air is 20 cm (for a biconcave lens, both surfaces have the same radius of curvature).
+Strategy
+Use the thin-lens form of the lens maker’s equation:
+1 f = ⎛ ⎝ n n 2 1 −1 ⎞ ⎠ ⎛ ⎝R 1 1 − R 1 2 ⎞ ⎠
+where R <0 and R >0. Since we are making a symmetric biconcave lens, we have |R |=|R |.
+1 2 1 2
+
+80 Chapter 2 | Geometric Optics and Image Formation
+Solution
+We can determine the radiusRof curvature from
+1 f = ⎛ ⎝ n n 2 1 −1 ⎞ ⎠ ⎛ ⎝ − R 2⎞ ⎠ .
+Solving forRand inserting f =−20cm, n =1.55, andn =1.00 gives
+2 1
+R=−2f ⎛ ⎝ n n 2 1 −1 ⎞ ⎠ =−2(−20cm) ⎛ ⎝ 1 1 . . 5 0 5 0 −1 ⎞ ⎠ =22cm.
+Example 2.4
+Converging Lens and Different Object Distances
+Findthelocation,orientation,andmagnificationoftheimageforan3.0cmhighobjectateachofthefollowing
+positions in front of a convex lens of focal length 10.0 cm. (a)d o=50.0cm, (b)d o=5.00cm, and
+(c)d o=20.0cm.
+Strategy
+We start with the thin-lens equation 1 + 1 = 1 . Solve this for the image distance d and insert the given
+d d f i
+i o
+object distance and focal length.
+Solution
+a. For d o=50cm, f = +10cm, this gives
+−1
+⎛ ⎞
+d = 1 − 1
+i ⎝f d ⎠
+o
+−1
+⎛ 1 1 ⎞
+= −
+⎝10.0cm 50.0cm⎠
+=12.5cm
+Theimageispositive,sotheimage,isreal,isontheoppositesideofthelensfromtheobject,andis12.6
+cm from the lens. To find the magnification and orientation of the image, use
+d
+m=− i =− 12.5cm =−0.250.
+d o 50.0cm
+The negative magnification means that the image isinverted. Since |m|<1,the image issmaller than
+the object. The size of the image is given by
+|h
+i
+|=|m|h o=(0.250)(3.0cm)=0.75cm
+b. For d o=5.00cm, f = +10.0cm
+−1
+⎛ ⎞
+d = 1 − 1
+i ⎝f d ⎠
+o
+−1
+⎛ 1 1 ⎞
+= −
+⎝10.0cm 5.00cm⎠
+=−10.0cm
+Theimagedistanceisnegative,sotheimageisvirtual,isonthesamesideofthelensastheobject,andis
+10 cm from the lens. The magnification and orientation of the image are found from
+d
+m=− i =− −10.0cm = +2.00.
+d o 5.00cm
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

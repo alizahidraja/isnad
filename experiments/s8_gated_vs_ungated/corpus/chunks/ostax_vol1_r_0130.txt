@@ -1,0 +1,154 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 785-791
+############################################################
+
+16.4 • Energy and Power of a Wave 773
+4. The angular frequency can be found from the frequency:
+5. Calculate the time-averaged power:
+Significance
+The time-averaged power of a sinusoidal wave is proportional to the square of the amplitude of the wave and the
+square of the angular frequency of the wave. This is true for most mechanical waves. If either the angular frequency
+or the amplitude of the wave were doubled, the power would increase by a factor of four. The time-averaged power
+of the wave on a string is also proportional to the speed of the sinusoidal wave on the string. If the speed were
+doubled, by increasing the tension by a factor of four, the power would also be doubled.
+CHECK YOUR UNDERSTANDING 16.6
+Is the time-averaged power of a sinusoidal wave on a string proportional to the linear density of the string?
+The equations for the energy of the wave and the time-averaged power were derived for a sinusoidal wave on a
+string. In general, the energy of a mechanical wave and the power are proportional to the amplitude squared and to
+the angular frequency squared (and therefore the frequency squared).
+Another important characteristic of waves is the intensity of the waves. Waves can also be concentrated or spread
+out. Waves from an earthquake, for example, spread out over a larger area as they move away from a source, so they
+do less damage the farther they get from the source. Changing the area the waves cover has important effects. All
+these pertinent factors are included in the definition of intensity (I) as power per unit area:
+16.11
+where P is the power carried by the wave through area A. The definition of intensity is valid for any energy in transit,
+including that carried by waves. The SI unit for intensity is watts per square meter (W/m2). Many waves are
+spherical waves that move out from a source as a sphere. For example, a sound speaker mounted on a post above
+the ground may produce sound waves that move away from the source as a spherical wave. Sound waves are
+discussed in more detail in the next chapter, but in general, the farther you are from the speaker, the less intense the
+sound you hear. As a spherical wave moves out from a source, the surface area of the wave increases as the radius
+increases The intensity for a spherical wave is therefore
+16.12
+If there are no dissipative forces, the energy will remain constant as the spherical wave moves away from the
+source, but the intensity will decrease as the surface area increases.
+In the case of the two-dimensional circular wave, the wave moves out, increasing the circumference of the wave as
+the radius of the circle increases. If you toss a pebble in a pond, the surface ripple moves out as a circular wave. As
+the ripple moves away from the source, the amplitude decreases. The energy of the wave spreads around a larger
+circumference and the intensity decreases proportional to which is also the same in the case of a spherical wave,
+since intensity is proportional to the amplitude squared.
+
+774 16 • Waves
+16.5 Interference of Waves
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain how mechanical waves are reflected and transmitted at the boundaries of a medium
+• Define the terms interference and superposition
+• Find the resultant wave of two identical sinusoidal waves that differ only by a phase shift
+Up to now, we have been studying mechanical waves that propagate continuously through a medium, but we have
+not discussed what happens when waves encounter the boundary of the medium or what happens when a wave
+encounters another wave propagating through the same medium. Waves do interact with boundaries of the medium,
+and all or part of the wave can be reflected. For example, when you stand some distance from a rigid cliff face and
+yell, you can hear the sound waves reflect off the rigid surface as an echo. Waves can also interact with other waves
+propagating in the same medium. If you throw two rocks into a pond some distance from one another, the circular
+ripples that result from the two stones seem to pass through one another as they propagate out from where the
+stones entered the water. This phenomenon is known as interference. In this section, we examine what happens to
+waves encountering a boundary of a medium or another wave propagating in the same medium. We will see that
+their behavior is quite different from the behavior of particles and rigid bodies. Later, when we study modern
+physics, we will see that only at the scale of atoms do we see similarities in the properties of waves and particles.
+Reflection and Transmission
+When a wave propagates through a medium, it reflects when it encounters the boundary of the medium. The wave
+before hitting the boundary is known as the incident wave. The wave after encountering the boundary is known as
+the reflected wave. How the wave is reflected at the boundary of the medium depends on the boundary conditions;
+waves will react differently if the boundary of the medium is fixed in place or free to move (Figure 16.17). A fixed
+boundary condition exists when the medium at a boundary is fixed in place so it cannot move. A free boundary
+condition exists when the medium at the boundary is free to move.
+FIGURE 16.17 (a) One end of a string is fixed so that it cannot move. A wave propagating on the string, encountering this fixed boundary
+condition, is reflected out of phase with respect to the incident wave. (b) One end of a string is tied to a solid ring of negligible
+mass on a frictionless lab pole, where the ring is free to move. A wave propagating on the string, encountering this free boundary condition,
+is reflected in phase with respect to the wave.
+Part (a) of the Figure 16.17 shows a fixed boundary condition. Here, one end of the string is fixed to a wall so the end
+of the string is fixed in place and the medium (the string) at the boundary cannot move. When the wave is reflected,
+Access for free at openstax.org
+
+16.5 • Interference of Waves 775
+the amplitude of the reflected wave is exactly the same as the amplitude of the incident wave, but the reflected
+wave is reflected out of phase with respect to the incident wave. The phase change can be explained
+using Newton’s third law: Recall that Newton’s third law states that when object A exerts a force on object B, then
+object B exerts an equal and opposite force on object A. As the incident wave encounters the wall, the string exerts
+an upward force on the wall and the wall reacts by exerting an equal and opposite force on the string. The reflection
+at a fixed boundary is inverted. Note that the figure shows a crest of the incident wave reflected as a trough. If the
+incident wave were a trough, the reflected wave would be a crest.
+Part (b) of the figure shows a free boundary condition. Here, one end of the string is tied to a solid ring of negligible
+mass on a frictionless pole, so the end of the string is free to move up and down. As the incident wave encounters
+the boundary of the medium, it is also reflected. In the case of a free boundary condition, the reflected wave is in
+phase with respect to the incident wave. In this case, the wave encounters the free boundary applying an upward
+force on the ring, accelerating the ring up. The ring travels up to the maximum height equal to the amplitude of the
+wave and then accelerates down towards the equilibrium position due to the tension in the string. The figure shows
+the crest of an incident wave being reflected in phase with respect to the incident wave as a crest. If the incident
+wave were a trough, the reflected wave would also be a trough. The amplitude of the reflected wave would be equal
+to the amplitude of the incident wave.
+In some situations, the boundary of the medium is neither fixed nor free. Consider Figure 16.18(a), where a low-
+linear mass density string is attached to a string of a higher linear mass density. In this case, the reflected wave is
+out of phase with respect to the incident wave. There is also a transmitted wave that is in phase with respect to the
+incident wave. Both the transmitted and the reflected waves have amplitudes less than the amplitude of the
+incident wave. If the tension is the same in both strings, the wave speed is higher in the string with the lower linear
+mass density.
+FIGURE 16.18 Waves traveling along two types of strings: a thick string with a high linear density and a thin string with a low linear density.
+Both strings are under the same tension, so a wave moves faster on the low-density string than on the high-density string. (a) A wave
+moving from a low-density to a high-density medium results in a reflected wave that is out of phase with respect to the
+incident pulse (or wave) and a transmitted wave that is in phase with the incident wave. (b) When a wave moves from a high-density
+medium to a low-density medium, both the reflected and transmitted wave are in phase with respect to the incident wave.
+Part (b) of the figure shows a high-linear mass density string is attached to a string of a lower linear density. In this
+case, the reflected wave is in phase with respect to the incident wave. There is also a transmitted wave that is in
+phase with respect to the incident wave. Both the incident and the reflected waves have amplitudes less than the
+
+776 16 • Waves
+amplitude of the incident wave. Here you may notice that if the tension is the same in both strings, the wave speed
+is higher in the string with the lower linear mass density.
+Superposition and Interference
+Most waves do not look very simple. Complex waves are more interesting, even beautiful, but they look formidable.
+Most interesting mechanical waves consist of a combination of two or more traveling waves propagating in the same
+medium. The principle of superposition can be used to analyze the combination of waves.
+Consider two simple pulses of the same amplitude moving toward one another in the same medium, as shown in
+Figure 16.19. Eventually, the waves overlap, producing a wave that has twice the amplitude, and then continue on
+unaffected by the encounter. The pulses are said to interfere, and this phenomenon is known as interference.
+FIGURE 16.19 Two pulses moving toward one another experience interference. The term interference refers to what happens when two
+waves overlap.
+To analyze the interference of two or more waves, we use the principle of superposition. For mechanical waves, the
+principle of superposition states that if two or more traveling waves combine at the same point, the resulting
+position of the mass element of the medium, at that point, is the algebraic sum of the position due to the individual
+waves. This property is exhibited by many waves observed, such as waves on a string, sound waves, and surface
+water waves. Electromagnetic waves also obey the superposition principle, but the electric and magnetic fields of
+the combined wave are added instead of the displacement of the medium. Waves that obey the superposition
+principle are linear waves; waves that do not obey the superposition principle are said to be nonlinear waves. In this
+chapter, we deal with linear waves, in particular, sinusoidal waves.
+The superposition principle can be understood by considering the linear wave equation. In Mathematics of a Wave,
+we defined a linear wave as a wave whose mathematical representation obeys the linear wave equation. For a
+transverse wave on a string with an elastic restoring force, the linear wave equation is
+Access for free at openstax.org
+
+16.5 • Interference of Waves 777
+Any wave function where the argument of the function is linear is a solution to the
+linear wave equation and is a linear wave function. If wave functions and are solutions to the linear
+wave equation, the sum of the two functions is also a solution to the linear wave equation.
+Mechanical waves that obey superposition are normally restricted to waves with amplitudes that are small with
+respect to their wavelengths. If the amplitude is too large, the medium is distorted past the region where the
+restoring force of the medium is linear.
+Waves can interfere constructively or destructively. Figure 16.20 shows two identical sinusoidal waves that arrive at
+the same point exactly in phase. Figure 16.20(a) and (b) show the two individual waves, Figure 16.20(c) shows the
+resultant wave that results from the algebraic sum of the two linear waves. The crests of the two waves are precisely
+aligned, as are the troughs. This superposition produces constructive interference. Because the disturbances add,
+constructive interference produces a wave that has twice the amplitude of the individual waves, but has the same
+wavelength.
+Figure 16.21 shows two identical waves that arrive exactly out of phase, producing destructive interference.
+Figure 16.21(a) and (b) show the individual waves, and Figure 16.21(c) shows the superposition of the two waves.
+Because the troughs of one wave add the crest of the other wave, the resulting amplitude is zero for destructive
+interference—the waves completely cancel.
+FIGURE 16.20 Constructive interference of two identical waves produces a wave with twice the amplitude, but the same wavelength.
+
+778 16 • Waves
+FIGURE 16.21 Destructive interference of two identical waves, one with a phase shift of , produces zero amplitude, or
+complete cancellation.
+When linear waves interfere, the resultant wave is just the algebraic sum of the individual waves as stated in the
+principle of superposition. Figure 16.22 shows two waves (red and blue) and the resultant wave (black). The
+resultant wave is the algebraic sum of the two individual waves.
+Access for free at openstax.org

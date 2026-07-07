@@ -1,0 +1,221 @@
+# REAL PDF — openstax_vol2.pdf, pages 69-72
+############################################################
+
+Chapter 1 | Temperature and Heat 59
+PROBLEMS
+50. How much taller does the Eiffel Tower become at
+1.2Thermometers and Temperature Scales the end of a day when the temperature has increased by
+43. While traveling outside the United States, you feel 15°C? Itsoriginalheightis321mandyoucanassumeit
+sick. A companion gets you a thermometer, which says is made of steel.
+yourtemperatureis39.Whatscaleisthaton?Whatisyour
+Fahrenheit temperature? Should you seek medical help? 51. What is the change in length of a 3.00-cm-long
+column of mercury if its temperature changes from
+44. What are the following temperatures on the Kelvin 37.0°C to 40.0°C,assumingthemercuryisconstrained
+scale? to a cylinder but unconstrained in length? Your answer
+will show why thermometers contain bulbs at the bottom
+(a) 68.0°F, an indoor temperature sometimes
+instead of simple columns of liquid.
+recommended for energy conservation in winter
+(b) 134°F, one of the highest atmospheric temperatures 52. How large an expansion gap should be left between
+ever recorded on Earth (Death Valley, California, 1913) steel railroad rails if they may reach a maximum
+temperature 35.0°C greater than when they were laid?
+(c) 9890°F, the temperature of the surface of the Sun
+Their original length is 10.0 m.
+45. (a) Suppose a cold front blows into your locale and
+53. YouarelookingtobuyasmallpieceoflandinHong
+drops the temperature by 40.0 Fahrenheit degrees. How
+Kong. The price is “only” $60,000 per square meter. The
+manydegreesCelsiusdoesthetemperaturedecreasewhen
+land title says the dimensions are 20m×30m. By how
+it decreases by 40.0°F? (b) Show that any change in
+much would the total price change if you measured the
+temperatureinFahrenheitdegreesisnine-fifthsthechange
+parcel with a steel tape measure on a day when the
+in Celsius degrees
+temperaturewas 20°C abovethetemperaturethatthetape
+measurewasdesignedfor?Thedimensionsofthelanddo
+46. An Associated Press article on climate change said,
+not change.
+“Someoftheiceshelf’sdisappearancewasprobablyduring
+timeswhentheplanetwas36degreesFahrenheit(2degrees
+54. Global warming will produce rising sea levels partly
+Celsius) to 37 degrees Fahrenheit (3 degrees Celsius)
+duetomeltingicecapsandpartlyduetotheexpansionof
+warmer than it is today.” What mistake did the reporter
+waterasaverageoceantemperaturesrise.Togetsomeidea
+make?
+of the size of this effect, calculate the change in length of
+acolumnofwater1.00kmhighforatemperatureincrease
+47. (a)AtwhattemperaturedotheFahrenheitandCelsius
+of 1.00°C. Assume the column is not free to expand
+scales have the same numerical value? (b) At what
+sideways. As a model of the ocean, that is a reasonable
+temperature do the Fahrenheit and Kelvin scales have the
+approximation, as only parts of the ocean very close to
+same numerical value?
+the surface can expand sideways onto land, and only to a
+limiteddegree.Asanotherapproximation,neglectthefact
+48. A person taking a reading of the temperature in a that ocean warming is not uniform with depth.
+freezer in Celsius makes two mistakes: first omitting the
+negative sign and then thinking the temperature is
+55. (a)Supposeameterstickmadeofsteelandonemade
+Fahrenheit. That is, the person reads – x°C as x°F.
+of aluminum are the same length at 0°C. What is their
+Oddly enough, the result is the correct Fahrenheit
+differenceinlengthat 22.0°C?(b)Repeatthecalculation
+temperature. What is the original Celsius reading? Round
+for two 30.0-m-long surveyor’s tapes.
+your answer to three significant figures.
+56. (a)Ifa500-mLglassbeakerisfilledtothebrimwith
+1.3Thermal Expansion
+ethylalcoholatatemperatureof 5.00°C,howmuchwill
+overflowwhenthealcohol’stemperaturereachestheroom
+49. TheheightoftheWashingtonMonumentismeasured
+temperature of 22.0°C?(b)Howmuchlesswaterwould
+tobe170.00monadaywhenthetemperatureis 35.0°C.
+overflow under the same conditions?
+What will its height be on a day when the temperature
+falls to −10.0°C? Although the monument is made of
+57. Most cars have a coolant reservoir to catch radiator
+limestone,assumethatitscoefficientofthermalexpansion
+fluidthatmayoverflowwhentheengineishot.Aradiator
+is the same as that of marble. Give your answer to five
+ismadeofcopperandisfilledtoits16.0-Lcapacitywhen
+significant figures.
+at 10.0°C. What volume of radiator fluid will overflow
+
+60 Chapter 1 | Temperature and Heat
+when the radiator and fluid reach a temperature of hands back and forth for a total of 20 rubs, at a distance
+95.0°C, given that the fluid’s volume coefficient of of 7.50 cm per rub, and with an average frictional force
+of 40.0 N, what is the temperature increase? The mass of
+expansionis β=400×10 −6 /°C?(Youranswerwillbea
+tissues warmed is only 0.100 kg, mostly in the palms and
+conservativeestimate,asmostcarradiatorshaveoperating fingers.
+temperatures greater than 95.0°C).
+65. A 0.250-kg block of a pure material is heated from
+58. Aphysicistmakesacupofinstantcoffeeandnotices
+20.0°C to 65.0°C bytheadditionof4.35kJofenergy.
+that, as the coffee cools, its level drops 3.00 mm in the
+Calculate its specific heat and identify the substance of
+glasscup.Showthatthisdecreasecannotbeduetothermal
+which it is most likely composed.
+contraction by calculating the decrease in level if the
+350cm 3 of coffee is in a 7.00-cm-diameter cup and
+66. Suppose identical amounts of heat transfer into
+decreasesintemperaturefrom 95.0°C to 45.0°C.(Most different masses of copper and water, causing identical
+of the drop in level is actually due to escaping bubbles of changes in temperature. What is the ratio of the mass of
+air.) copper to water?
+59. The density of water at 0°C is very nearly 67. (a) The number of kilocalories in food is determined
+1000kg/m 3 (it is actually 999.84kg/m 3), whereas the bycalorimetrytechniquesinwhichthefoodisburnedand
+the amount of heat transfer is measured. How many
+density of ice at 0°C is 917kg/m 3 . Calculate the kilocalories per gram are there in a 5.00-g peanut if the
+energy from burning it is transferred to 0.500 kg of water
+pressure necessary to keep ice from expanding when it
+freezes, neglecting the effect such a large pressure would held in a 0.100-kg aluminum cup, causing a 54.9-°C
+haveonthefreezingtemperature.(Thisproblemgivesyou temperature increase? Assume the process takes place in
+only an indication of how large the forces associated with an ideal calorimeter, in other words a perfectly insulated
+freezing water might be.) container. (b) Compare your answer to the following
+labeling information found on a package of dry roasted
+peanuts:aservingof33gcontains200calories.Comment
+60. Show that β=3α, by calculating the infinitesimal
+on whether the values are consistent.
+changeinvolumedVofacubewithsidesoflengthLwhen
+the temperature changes bydT.
+68. Following vigorous exercise, the body temperature
+of an 80.0 kg person is 40.0°C. At what rate in watts
+mustthepersontransferthermalenergytoreducethebody
+1.4Heat Transfer, Specific Heat, and
+temperature to 37.0°C in 30.0 min, assuming the body
+Calorimetry continues to produce energy at the rate of 150 W?
+61. On a hot day, the temperature of an 80,000-L ⎛1watt =1joule/secondor1W=1J/s⎞
+⎝ ⎠
+swimming pool increases by 1.50°C. What is the net
+heattransferduringthisheating?Ignoreanycomplications, 69. In a study of healthy young men[1], doing 20 push-
+such as loss of water by evaporation.
+ups in 1 minute burned an amount of energy per kg that
+fora70.0-kgmancorrespondsto8.06calories(kcal).How
+62. To sterilize a 50.0-g glass baby bottle, we must raise muchwoulda70.0-kgman’stemperatureriseifhedidnot
+itstemperaturefrom 22.0°C to 95.0°C.Howmuchheat lose any heat during that time?
+transfer is required?
+70. A 1.28-kg sample of water at 10.0°C is in a
+63. The same heat transfer into identical masses of calorimeter.Youdropapieceofsteelwithamassof0.385
+different substances produces different temperature kg at 215°C into it. After the sizzling subsides, what is
+changes. Calculate the final temperature when 1.00 kcal the final equilibrium temperature? (Make the reasonable
+of heat transfers into 1.00 kg of the following, originally assumptionsthatanysteamproducedcondensesintoliquid
+at 20.0°C: (a) water; (b) concrete; (c) steel; and (d) water during the process of equilibration and that the
+mercury. evaporationandcondensationdon’taffecttheoutcome,as
+we’ll see in the next section.)
+64. Rubbing your hands together warms them by
+convertingworkintothermalenergy.Ifawomanrubsher 71. Repeat the preceding problem, assuming the water
+1. JW Vezina, “An examination of the differences between two methods of estimating energy expenditure in resistance
+training activities,”Journal of Strength and Conditioning Research, April 28, 2014, http://www.ncbi.nlm.nih.gov/pubmed/
+24402448
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 61
+is in a glass beaker with a mass of 0.200 kg, which in Ross Ice Shelf in Antarctica. It was an approximately
+turnisinacalorimeter.Thebeakerisinitially atthesame rectangular prism 160 km long, 40.0 km wide, and 250 m
+temperatureasthewater.Beforedoingtheproblem,should thick. (a) What is the mass of this iceberg, given that the
+the answer be higher or lower than the preceding answer? densityoficeis 917kg/m 3?(b)Howmuchheattransfer
+Comparing the mass and specific heat of the beaker to
+(injoules)isneededtomeltit?(c)Howmanyyearswould
+thoseofthewater,doyouthinkthebeakerwillmakemuch
+ittakesunlightalonetomelticethisthick,iftheiceabsorbs
+difference?
+an average of 100W/m2, 12.00 h per day?
+1.5Phase Changes 80. Howmanygramsofcoffeemustevaporatefrom350
+gofcoffeeina100-gglasscuptocoolthecoffeeandthe
+72. Howmuchheattransfer(inkilocalories)isrequiredto
+thawa0.450-kgpackageoffrozenvegetablesoriginallyat cupfrom 95.0°C to 45.0°C?Assumethecoffeehasthe
+0°C if their heat of fusion is the same as that of water? samethermalpropertiesaswaterandthattheaverageheat
+of vaporization is 2340 kJ/kg (560 kcal/g). Neglect heat
+lossesthroughprocessesotherthanevaporation,aswellas
+73. Abagcontaining 0°C iceismuchmoreeffectivein
+the change in mass of the coffee as it cools. Do the latter
+absorbing energy than one containing the same amount of two assumptions cause your answer to be higher or lower
+0°C water. (a) How much heat transfer is necessary to than the true answer?
+raise the temperature of 0.800 kg of water from 0°C to
+30.0°C? (b) How much heat transfer is required to first 81. (a) It is difficult to extinguish a fire on a crude oil
+melt 0.800 kg of 0°C ice and then raise its temperature? tanker, because each liter of crude oil releases
+(c) Explain how your answer supports the contention that 2.80×10 7 J of energy when burned. To illustrate this
+the ice is more effective. difficulty,calculatethenumberoflitersofwaterthatmust
+beexpendedtoabsorbtheenergyreleasedbyburning1.00
+74. (a) How much heat transfer is required to raise the L of crude oil, if the water’s temperature rises from
+temperatureofa0.750-kgaluminumpotcontaining2.50kg 20.0°C to 100°C, it boils, and the resulting steam’s
+of water from 30.0°C to the boiling point and then boil temperature rises to 300°C at constant pressure. (b)
+away0.750kgofwater?(b)Howlongdoesthistakeifthe Discuss additional complications caused by the fact that
+rate of heat transfer is 500 W? crude oil is less dense than water.
+75. Condensation on a glass of ice water causes the ice 82. The energy released from condensation in
+to melt faster than it would otherwise. If 8.00 g of vapor thunderstorms can be very large. Calculate the energy
+condenseonaglasscontainingbothwaterand200gofice, released into the atmosphere for a small storm of radius 1
+how many grams of the ice will melt as a result? Assume km,assumingthat1.0cmofrainisprecipitateduniformly
+nootherheattransferoccurs.Use L v forwaterat 37°C over this area.
+as a better approximation than L
+v
+for water at 100°C.)
+83. To help prevent frost damage, 4.00 kg of water at
+0°C is sprayed onto a fruit tree. (a) How much heat
+76. On a trip, you notice that a 3.50-kg bag of ice lasts
+transferoccursasthewaterfreezes?(b)Howmuchwould
+anaverage ofonedayinyourcooler.Whatistheaverage
+thetemperature ofthe200-kgtreedecrease ifthisamount
+power in watts entering the ice if it starts at 0°C and
+of heat transferred from the tree? Take the specific heat
+completely melts to 0°C water in exactly one day?
+to be 3.35kJ/kg·°C, and assume that no phase change
+occurs in the tree.
+77. On a certain dry sunny day, a swimming pool’s
+temperaturewouldriseby 1.50°C ifnotforevaporation.
+84. A0.250-kgaluminumbowlholding 0.800kg ofsoup
+What fraction of the water must evaporate to carry away
+precisely enough energy to keep the temperature constant? at 25.0°C is placed in a freezer. What is the final
+temperatureif388kJofenergyistransferredfromthebowl
+and soup, assuming the soup’s thermal properties are the
+78. (a) How much heat transfer is necessary to raise the
+same as that of water?
+temperature of a 0.200-kg piece of ice from −20.0°C to
+130.0°C,includingtheenergyneededforphasechanges?
+(b)Howmuchtimeisrequiredforeachstage,assuminga 85. A0.0500-kgicecubeat −30.0°C isplacedin0.400
+constant20.0kJ/srateofheattransfer?(c)Makeagraphof kg of 35.0-°C water in a very well-insulated container.
+temperature versus time for this process. What is the final temperature?
+79. In 1986, an enormous iceberg broke away from the

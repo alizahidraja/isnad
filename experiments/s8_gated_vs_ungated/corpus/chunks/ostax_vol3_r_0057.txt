@@ -1,0 +1,242 @@
+# REAL PDF — openstax_vol3.pdf, pages 339-344
+############################################################
+
+Chapter 7 | Quantum Mechanics 331
+hypothesis for the energy exchanges between radiation and the cavity walls in the blackbody radiation problem.
+Example 7.11
+Vibrational Energies of the Hydrogen Chloride Molecule
+The HCl diatomic molecule consists of one chlorine atom and one hydrogen atom. Because the chlorine atom
+is 35 times more massive than the hydrogen atom, the vibrations of the HCl molecule can be quite well
+approximatedbyassumingthattheClatomismotionlessandtheHatomperformsharmonicoscillationsdueto
+an elastic molecular force modeled by Hooke’s law. The infrared vibrational spectrum measured for hydrogen
+chloride has the lowest-frequency line centered at f =8.88×10 13 Hz. What is the spacing between the
+vibrational energies of this molecule? What is the force constantkof the atomic bond in the HCl molecule?
+Strategy
+Thelowest-frequencylinecorrespondstotheemissionoflowest-frequencyphotons.Thesephotonsareemitted
+when the molecule makes a transition between two adjacent vibrational energy levels. Assuming that energy
+levels are equally spaced, we use Equation 7.58 to estimate the spacing. The molecule is well approximated
+by treating the Cl atom as being infinitely heavy and the H atom as the mass m that performs the oscillations.
+Treating this molecular system as a classical oscillator, the force constant is found from the classical relation
+k=m ω 2.
+Solution
+The energy spacing is
+ΔE=h f =(4.14×10 −15 eV·s)(8.88×10 13 Hz)=0.368eV.
+The force constant is
+k=m ω 2=m (2πf)2=(1.67×10 −27 kg)(2π×8.88×10 13 Hz)2=520N/m.
+Significance
+The force between atoms in an HCl molecule is surprisingly strong. The typical energy released in energy
+transitions between vibrational levels is in the infrared range. As we will see later, transitions in between
+vibrational energy levels of a diatomic molecule often accompany transitions between rotational energy levels.
+7.8 CheckYourUnderstandingThevibrationalfrequencyofthehydrogeniodideHIdiatomicmoleculeis
+6.69×10 13 Hz. (a) What is the force constant of the molecular bond between the hydrogen and the iodine
+atoms?(b)Whatistheenergyoftheemittedphotonwhenthismoleculemakesatransitionbetweenadjacent
+vibrational energy levels?
+The quantum oscillator differs from the classic oscillator in three ways:
+First,thegroundstateofaquantumoscillatoris E =ℏω/2, notzero.Intheclassicalview,thelowestenergyiszero.The
+0
+nonexistence of a zero-energy state is common for all quantum-mechanical systems because of omnipresent fluctuations
+that are a consequence of the Heisenberg uncertainty principle. If a quantum particle sat motionless at the bottom of the
+potential well, its momentum as well as its position would have to be simultaneously exact, which would violate the
+Heisenberguncertaintyprinciple.Therefore,thelowest-energystatemustbecharacterizedbyuncertaintiesinmomentum
+and in position, so the ground state of a quantum particle must lie above the bottom of the potential well.
+Second, a particle in a quantum harmonic oscillator potential can be found with nonzero probability outside the interval
+−A≤ x≤ +A.Inaclassicformulationoftheproblem,theparticlewouldnothaveanyenergytobeinthisregion.The
+probability of finding a ground-state quantum particle in the classically forbidden region is about 16%.
+Third, the probability density distributions |ψ n(x)| 2 for a quantum oscillator in the ground low-energy state, ψ
+0
+(x), is
+largestatthemiddleofthewell (x=0).Fortheparticletobefoundwithgreatestprobabilityatthecenterofthewell,we
+expectthattheparticlespendsthemosttimethereasitoscillates.Thisisoppositetothebehaviorofaclassicaloscillator,
+in which the particle spends most of its time moving with relative small speeds near the turning points.
+
+332 Chapter 7 | Quantum Mechanics
+7.9 CheckYourUnderstandingFindtheexpectationvalueofthepositionforaparticleinthegroundstate
+of a harmonic oscillator using symmetry.
+Quantum probability density distributions change in character for excited states, becoming more like the classical
+distributionwhenthequantumnumbergetshigher.Weobservethischangealreadyforthefirstexcitedstateofaquantum
+oscillator because the distribution |ψ (x)| 2 peaks up around the turning points and vanishes at the equilibrium position,
+1
+as seen in Figure 7.13. In accordance with Bohr’s correspondence principle, in the limit of high quantum numbers, the
+quantum description of a harmonic oscillator converges to the classical description, which is illustrated in Figure 7.15.
+Theclassicalprobabilitydensitydistributioncorrespondingtothequantumenergyofthe n=12 stateisareasonablygood
+approximationofthequantumprobabilitydistributionforaquantumoscillatorinthisexcitedstate.Thisagreementbecomes
+increasingly better for highly excited states.
+Figure 7.15 The probability density distribution for finding the quantum harmonic oscillator in its n=12
+quantum state. The dashed curve shows the probability density distribution of a classical oscillator with the
+same energy.
+7.6 | The Quantum Tunneling of Particles through
+Potential Barriers
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe how a quantum particle may tunnel across a potential barrier
+• Identify important physical parameters that affect the tunneling probability
+• Identify the physical phenomena where quantum tunneling is observed
+• Explain how quantum tunneling is utilized in modern technologies
+Quantumtunnelingisaphenomenoninwhichparticlespenetrateapotentialenergybarrierwithaheightgreaterthanthe
+total energy of the particles. The phenomenon is interesting and important because it violates the principles of classical
+mechanics.QuantumtunnelingisimportantinmodelsoftheSunandhasawiderangeofapplications,suchasthescanning
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 333
+tunneling microscope and the tunnel diode.
+Tunneling and Potential Energy
+To illustrate quantum tunneling, consider a ball rolling along a surface with a kinetic energy of 100 J. As the ball rolls,
+itencountersahill.Thepotentialenergyoftheballplacedatopthehillis10J.Therefore,theball(with100Jofkinetic
+energy)easilyrollsoverthehillandcontinueson.Inclassicalmechanics,theprobabilitythattheballpassesoverthehill
+isexactly1—itmakesitovereverytime.If,however,theheightofthehillisincreased—aballplacedatopthehillhasa
+potentialenergyof200J—theballproceedsonlypartofthewayupthehill,stops,andreturnsinthedirectionitcame.The
+totalenergyoftheballisconvertedentirelyintopotentialenergybeforeitcanreachthetopofthehill.Wedonotexpect,
+even after repeated attempts, for the 100-J ball to ever be found beyond the hill. Therefore, the probability that the ball
+passesoverthehillisexactly0,andprobabilityitisturnedbackor“reflected”bythehillisexactly1.Theballnevermakes
+it over the hill. The existence of the ball beyond the hill is an impossibility or “energetically forbidden.”
+However, according to quantum mechanics, the ball has a wave function and this function is defined over all space. The
+wavefunctionmaybehighlylocalized,butthereisalwaysachancethatastheballencountersthehill,theballwillsuddenly
+be found beyond it. Indeed, this probability is appreciable if the “wave packet” of the ball is wider than the barrier.
+View this interactive simulation (https://openstaxcollege.org/l/21intquatanvid) for a simulation of
+tunneling.
+In the language of quantum mechanics, the hill is characterized by a potential barrier. A finite-height square barrier is
+described by the following potential-energy function:
+⎧ 0, whenx<0 (7.59)
+U(x)=⎨U , when0≤ x≤L
+0
+⎩
+0, whenx>L.
+The potential barrier is illustrated in Figure 7.16. When the height U of the barrier is infinite, the wave packet
+0
+representinganincidentquantumparticleisunabletopenetrateit,andthequantumparticlebouncesbackfromthebarrier
+boundary,justlikeaclassicalparticle.WhenthewidthLofthebarrierisinfiniteanditsheightisfinite,apartofthewave
+packetrepresentinganincidentquantumparticlecanfilterthroughthebarrierboundaryandeventuallyperishaftertraveling
+some distance inside the barrier.
+
+334 Chapter 7 | Quantum Mechanics
+Figure 7.16 A potential energy barrier of height U creates three
+0
+physical regions with three different wave behaviors. In region I
+where x<0, an incident wave packet (incident particle) moves in
+a potential-free zone and coexists with a reflected wave packet
+(reflected particle). In region II, a part of the incident wave that has
+not been reflected at x=0 moves as a transmitted wave in a
+constant potential U(x)= +U and tunnels through to region III
+0
+at x=L. In region III for x>L, a wave packet (transmitted
+particle) that has tunneled through the potential barrier moves as a
+free particle in potential-free zone. The energyEof the incident
+particle is indicated by the horizontal line.
+WhenboththewidthLandtheheight U arefinite,apartofthequantumwavepacketincidentononesideofthebarrier
+0
+canpenetratethebarrierboundaryandcontinueitsmotioninsidethebarrier,whereitisgraduallyattenuatedonitswayto
+theotherside.Apartoftheincidentquantumwavepacketeventuallyemergesontheothersideofthebarrierintheformof
+thetransmittedwavepacketthattunneledthroughthebarrier.Howmuchoftheincidentwavecantunnelthroughabarrier
+dependsonthebarrierwidthLanditsheight U ,andontheenergyEofthequantumparticleincidentonthebarrier.This
+0
+is the physics of tunneling.
+Barrier penetration by quantum wave functions was first analyzed theoretically by Friedrich Hund in 1927, shortly after
+Schrӧdinger published the equation that bears his name. A year later, George Gamow used the formalism of quantum
+mechanics to explain the radioactive α-decay of atomic nuclei as a quantum-tunneling phenomenon. The invention of
+the tunnel diode in 1957 made it clear that quantum tunneling is important to the semiconductor industry. In modern
+nanotechnologies, individual atoms are manipulated using a knowledge of quantum tunneling.
+Tunneling and the Wave Function
+Supposeauniformandtime-independent beamofelectrons orotherquantumparticles withenergyEtravelingalongthe
+x-axis(inthepositivedirectiontotheright)encountersapotentialbarrierdescribedbyEquation 7.59.Thequestionis:
+Whatistheprobabilitythatanindividualparticleinthebeamwilltunnelthroughthepotentialbarrier?Theanswercanbe
+found by solving the boundary-value problem for the time-independent Schrӧdinger equation for a particle in the beam.
+The general form of this equation is given byEquation 7.60, which we reproduce here:
+ℏ2 d2ψ(x) (7.60)
+− +U(x)ψ(x)=Eψ(x), where−∞< x< +∞.
+2m dx2
+InEquation 7.60,the potential function U(x)is defined byEquation 7.59.We assume that the given energyEofthe
+incomingparticleissmallerthantheheight U ofthepotentialbarrier, E<U ,becausethisistheinterestingphysical
+0 0
+case. Knowing the energy E of the incoming particle, our task is to solve Equation 7.60 for a function ψ(x) that is
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 335
+continuous and has continuous first derivatives for all x. In other words, we are looking for a “smooth-looking” solution
+(becausethisishowwavefunctionslook)thatcanbegivenaprobabilisticinterpretationsothat |ψ(x)|2=ψ*(x)ψ(x) is
+the probability density.
+We divide the real axis into three regions with the boundaries defined by the potential function in Equation 7.59
+(illustrated in Figure 7.16) and transcribe Equation 7.60 for each region. Denoting by ψ (x) the solution in region I
+I
+for x<0, by ψ (x) the solution in region II for 0≤ x≤L, and by ψ (x) the solution in region III for x>L, the
+II III
+stationary Schrӧdinger equation has the following forms in these three regions:
+−
+ℏ2 d2ψ
+I
+(x)
+=Eψ (x), in region I:−∞< x<0,
+(7.61)
+2m dx2 I
+−
+ℏ2 d2ψ
+II
+(x)
++U ψ (x)=Eψ (x), in region II:0≤ x≤L,
+(7.62)
+2m dx2 0 II II
+−
+ℏ2 d2ψ
+III
+(x)
+=Eψ (x), in region III:L< x< +∞.
+(7.63)
+2m dx2 III
+The continuity condition at region boundaries requires that:
+ψ (0)=ψ (0), at the boundary between regions I and II and (7.64)
+I II
+and
+ψ (L)=ψ (L), at the boundary between regions II and III. (7.65)
+II III
+The “smoothness” condition requires the first derivative of the solution be continuous at region boundaries:
+dψ
+d I x
+(x)|
+x=0 =
+dψ
+d II x
+(x)|
+x=0 , at the boundary between regions I and II;
+(7.66)
+and
+dψ
+d
+II
+x
+(x)|
+x=L=
+dψ
+d
+II
+x
+I
+(x)|
+x=L, at the boundary between regions II and III.
+(7.67)
+In what follows, we find the functions ψ (x), ψ (x), and ψ (x).
+I II III
+Wecaneasily verify(bysubstituting intotheoriginal equation anddifferentiating) that inregionsIandIII,thesolutions
+must be in the following general forms:
+ψ (x)= Ae+ikx +Be−ikx (7.68)
+I
+ψ (x)=Fe+ikx +Ge−ikx (7.69)
+III
+where k= 2mE/ℏ is a wave number and the complex exponent denotes oscillations,
+e±ikx
+=coskx±isinkx.
+(7.70)
+TheconstantsA,B,F,andGinEquation 7.68andEquation 7.69maybecomplex.Thesesolutionsareillustratedin
+Figure 7.16.InregionI,therearetwowaves—oneisincident(movingtotheright)andoneisreflected(movingtothe
+left)—sononeoftheconstantsAandBinEquation7.68mayvanish.InregionIII,thereisonlyonewave(movingtothe
+right),whichisthetransmittedwave,sotheconstantGmustbezeroinEquation 7.69, G=0.Wecanwriteexplicitly
+thattheincidentwaveis ψ (x)= Ae+ikx andthatthereflectedwaveis ψ (x)=Be−ikx,andthatthetransmittedwave
+in ref
+is ψ (x)=Fe+ikx. The amplitude of the incident wave is
+tra
+2 2
+|ψ (x)| =ψ* (x)ψ (x)= ⎛Ae+ikx⎞ * Ae+ikx = A* e−ikxAe+ikx = A* A=|A| .
+in in in ⎝ ⎠
+Similarly, the amplitude of the reflected wave is |ψ (x)|2=|B|2 and the amplitude of the transmitted wave is
+ref
+|ψ (x)|2=|F|2.Weknowfromthetheoryofwavesthatthesquareofthewaveamplitudeisdirectlyproportionaltothe
+tra
+wave intensity. If we want to know how much of the incident wave tunnels through the barrier, we need to compute the

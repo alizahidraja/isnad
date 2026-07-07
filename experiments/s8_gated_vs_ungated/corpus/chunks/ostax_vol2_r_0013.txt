@@ -1,0 +1,228 @@
+# REAL PDF — openstax_vol2.pdf, pages 72-75
+############################################################
+
+62 Chapter 1 | Temperature and Heat
+86. If you pour 0.0100 kg of 20.0°C water onto a 93. A man consumes 3000 kcal of food in one day,
+1.20-kgblockofice(whichisinitiallyat −15.0°C),what converting most of it to thermal energy to maintain body
+temperature. If he loses half this energy by evaporating
+is the final temperature? You may assume that the water
+water (through breathing and sweating), how many
+cools so rapidly that effects of the surroundings are
+kilograms of water evaporate?
+negligible.
+94. A firewalker runs across a bed of hot coals without
+87. Indigenous people sometimes cook in watertight
+sustaining burns. Calculate the heat transferred by
+basketsbyplacinghotrocksintowatertobringittoaboil.
+conduction into the sole of one foot of a firewalker given
+What mass of 500-°C granite must be placed in 4.00 kg
+that the bottom of the foot is a 3.00-mm-thick callus with
+of 15.0-°C water to bring its temperature to 100°C, if
+aconductivityatthelowendoftherangeforwoodandits
+0.0250kgofwaterescapesasvaporfromtheinitialsizzle?
+density is 300kg/m 3. The area of contact is 25.0cm2,
+You may neglect the effects of the surroundings.
+the temperature of the coals is 700°C, and the time in
+88. Whatwouldthefinaltemperatureofthepanandwater contact is 1.00 s. Ignore the evaporative cooling of sweat.
+be in Example 1.7 if 0.260 kg of water were placed in
+thepanand0.0100kgofthewaterevaporatedimmediately, 95. (a) What is the rate of heat conduction through the
+leaving the remainder to come to a common temperature 3.00-cm-thick fur of a large animal having a 1.40-m2
+with the pan?
+surfacearea?Assumethattheanimal’sskintemperatureis
+32.0°C, that the air temperature is −5.00°C, and that
+furhasthesamethermalconductivityasair.(b)Whatfood
+1.6Mechanisms of Heat Transfer
+intakewilltheanimalneedinonedaytoreplacethisheat
+89. (a)Calculatetherateofheatconductionthroughhouse transfer?
+walls that are 13.0 cm thick and have an average thermal
+conductivity twice that of glass wool. Assume there are
+96. A walrus transfers energy by conduction through its
+no windows or doors. The walls’ surface area is 120m2 blubberattherateof150Wwhenimmersedin −1.00°C
+and their inside surface is at 18.0°C, while their outside water. The walrus’s internal core temperature is 37.0°C,
+surface is at 5.00°C. (b) How many 1-kW room heaters andithasasurfaceareaof 2.00m2.Whatistheaverage
+would be needed to balance the heat transfer due to
+thicknessofitsblubber,whichhastheconductivityoffatty
+conduction?
+tissues without blood?
+90. The rate of heat conduction out of a window on a
+97. Compare the rate of heat conduction through a
+winterdayisrapidenoughtochilltheairnexttoit.Tosee
+13.0-cm-thick wall that has an area of 10.0m2 and a
+justhowrapidlythewindowstransferheatbyconduction,
+thermalconductivitytwicethatofglasswoolwiththerate
+calculate the rate of conduction in watts through a
+of heat conduction through a 0.750-cm-thick window that
+3.00-m2 window that is 0.634 cm thick (1/4 in.) if the
+has an area of 2.00m2, assuming the same temperature
+temperatures of the inner and outer surfaces are 5.00°C
+difference across each.
+and −10.0°C, respectively. (This rapid rate will not be
+maintained—the inner surface will cool, even to the point
+98. Suppose a person is covered head to foot by wool
+of frost formation.)
+clothing with average thickness of 2.00 cm and is
+transferring energy by conduction through the clothing at
+91. Calculatetherateofheatconductionoutofthehuman
+the rate of 50.0 W. What is the temperature difference
+body, assuming that the core internal temperature is
+37.0°C,theskintemperatureis 34.0°C,thethicknessof
+across the clothing, given the surface area is 1.40m2?
+thefattytissuesbetweenthecoreandtheskinaverages1.00
+99. Somestovetopsaresmoothceramicforeasycleaning.
+cm, and the surface area is 1.40m2.
+Iftheceramicis0.600cmthickandheatconductionoccurs
+throughthesameareaandatthesamerateascomputedin
+92. Supposeyoustandwithonefootonceramicflooring Example 1.11,what isthe temperature difference across
+and one foot on a wool carpet, making contact over an it?Ceramichasthesamethermalconductivityasglassand
+areaof 80.0cm2 witheachfoot.Boththeceramicandthe brick.
+carpet are2.00cmthickandare 10.0°C ontheirbottom
+sides.Atwhatratemustheattransferoccurfromeachfoot 100. Oneeasy waytoreduce heating (andcooling) costs
+to keep the top of the ceramic and carpet at 33.0°C? istoaddextrainsulationintheatticofahouse.Supposea
+single-storycubicalhousealreadyhad15cmoffiberglass
+insulation in the attic and in all the exterior surfaces. If
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 63
+you added an extra 8.0 cm of fiberglass to the attic, by capital cost of an investment. Acceptable payback times
+whatpercentagewouldtheheatingcostofthehousedrop? dependuponthebusinessorphilosophyonehas.(Forsome
+Take the house to have dimensions 10 m by 15 m by 3.0 industries,apaybackperiodisassmallas2years.)Suppose
+m. Ignore air infiltration and heat loss through windows you wish to install the extra insulation in the preceding
+anddoors,andassumethattheinteriorisuniformlyatone problem. If energy cost $1.00 per million joules and the
+temperature and the exterior is uniformly at another.
+insulation was $4.00 per square meter, then calculate the
+simplepaybacktime.Taketheaverage ΔT forthe120-day
+101. Manydecisionsaremadeonthebasisofthepayback heating season to be 15.0°C.
+period: the time it will take through savings to equal the
+ADDITIONAL PROBLEMS
+102. In1701,theDanishastronomerOleRømerproposed ⎛1watt =1joule/second or 1W=1J/s and
+⎝
+atemperaturescalewithtwofixedpoints,freezingwaterat
+1MW=1megawatt⎞. (a) Calculate the rate of
+7.5degrees,andboilingwaterat60.0degrees.Whatisthe ⎠
+boiling point of oxygen, 90.2 K, on the Rømer scale? temperatureincreaseindegreesCelsiuspersecond (°C/s)
+if the mass of the reactor core is 1.60×10 5 kg and it
+103. What is the percent error of thinking the melting
+hasanaveragespecificheatof 0.3349kJ/kg·°C.(b)How
+pointoftungstenis 3695°C insteadofthecorrectvalueof
+long would it take to obtain a temperature increase of
+3695 K?
+2000°C, which could cause some metals holding the
+radioactive materials to melt? (The initial rate of
+104. Anengineerwantstodesignastructureinwhichthe
+temperatureincreasewouldbegreaterthanthatcalculated
+differenceinlengthbetweenasteelbeamandanaluminum
+here because the heat transfer is concentrated in a smaller
+beam remains at 0.500 m regardless of temperature, for
+mass.Later,however,thetemperatureincreasewouldslow
+ordinarytemperatures.Whatmustthelengthsofthebeams
+down because the 500,000-kg steel containment vessel
+be?
+would also begin to heat up.)
+105. How much stress is created in a steel beam if its
+109. Youleaveapastryintherefrigerator onaplateand
+temperaturechangesfrom –15°C to 40°C butitcannot
+ask your roommate to take it out before you get home
+expand? For steel, the Young’s modulus
+so you can eat it at room temperature, the way you like
+Y =210×10 9 N/m2 from Stress, Strain, and it. Instead, your roommate plays video games for hours.
+Elastic Modulus (http://cnx.org/content/m58342/ Whenyoureturn,younoticethatthepastryisstillcold,but
+latest/#fs-id1163713086230) . (Ignore the change in thegameconsolehasbecomehot.Annoyed,andknowing
+area resulting from the expansion.) that the pastry will not be good if it is microwaved, you
+warmupthepastrybyunpluggingtheconsoleandputting
+itinacleantrashbag(whichactsasaperfectcalorimeter)
+106. Abrassrod ⎛Y =90×10 9 N/m2⎞ , withadiameter
+⎝ ⎠ with the pastry on the plate. After a while, you find that
+of0.800cm and a length of1.20m when the temperature theequilibriumtemperatureisanice,warm 38.3°C.You
+is 25°C,isfixedatbothends.Atwhattemperatureisthe know that the game console has a mass of 2.1 kg.
+force in it at 36,000 N? Approximate it as having a uniform initial temperature of
+45°C.Thepastryhasamassof0.16kgandaspecificheat
+107. Amercurythermometerstillinuseformeteorology of 3.0kJ/(kg·ºC), andisatauniforminitialtemperature
+hasabulbwithavolumeof 0.780cm 3 andatubeforthe of 4.0°C. The plate is at the same temperature and has
+mercury to expand into of inside diameter 0.130 mm. (a) a mass of 0.24 kg and a specific heat of 0.90J/(kg·ºC).
+Neglecting the thermal expansion ofthe glass, what isthe
+What is the specific heat of the console?
+spacingbetweenmarks 1°C apart?(b)Ifthethermometer
+is made of ordinary glass (not a good idea), what is the
+110. Two solid spheres, A and B, made of the same
+spacing?
+material, are at temperatures of 0°C and 100°C,
+respectively. The spheres are placed in thermal contact in
+108. Even when shut down after a period of normal use,
+an ideal calorimeter, and they reach an equilibrium
+alargecommercialnuclearreactortransfersthermalenergy
+temperatureof 20°C.Whichisthebiggersphere?Whatis
+at the rate of 150 MW by the radioactive decay of fission
+the ratio of their diameters?
+products. This heat transfer causes a rapid increase in
+temperature if the cooling system fails
+
+64 Chapter 1 | Temperature and Heat
+111. In some countries, liquid nitrogen is used on dairy −2°C,whatistherateofheatflowthroughthewall?(b)
+trucks instead of mechanical refrigerators. A 3.00-hour More realistically, the 3.5-inch space also contains 2-by-4
+delivery trip requires 200 L of liquid nitrogen, which has studs—wooden boards 1.5 inches by 3.5 inches oriented
+a density of 808kg/m 3 . (a) Calculate the heat transfer sothat3.5-inchdimensionextendsfromthedrywalltothe
+siding.Theyare“on16-inchcenters,”thatis,thecentersof
+necessary to evaporate this amount of liquid nitrogen and
+thestudsare16inchesapart.Whatistheheatcurrentinthis
+raise its temperature to 3.00°C. (Use c and assume it
+P situation? Don’t worry about one stud more or less.
+is constant over the temperature range.) This value is the
+amountofcoolingtheliquidnitrogensupplies.(b)Whatis
+119. Forthehumanbody,whatistherateofheattransfer
+this heat transfer rate in kilowatt-hours? (c) Compare the
+byconductionthroughthebody’stissuewiththefollowing
+amountofcoolingobtainedfrommeltinganidenticalmass
+conditions: the tissue thickness is 3.00 cm, the difference
+of 0-°C icewiththatfromevaporatingtheliquidnitrogen.
+in temperature is 2.00°C, and the skin area is 1.50m2.
+Howdoesthiscomparewiththeaverageheattransferrate
+112. Some gun fanciers make their own bullets, which
+tothebodyresultingfromanenergyintakeofabout2400
+involves melting lead and casting it into lead slugs. How
+kcal per day? (No exercise is included.)
+much heat transfer is needed to raise the temperature and
+melt 0.500 kg of lead, starting from 25.0°C?
+120. YouhaveaDewarflask(alaboratoryvacuumflask)
+thathasanopentopandstraightsides,asshownbelow.You
+113. A 0.800-kg iron cylinder at a temperature of fillitwithwaterandputitintothefreezer.Itiseffectively
+1.00×10 3 °C is dropped into an insulated chest of 1.00 aperfectinsulator,blockingallheattransfer,exceptonthe
+kgoficeatitsmeltingpoint.Whatisthefinaltemperature, top.Afteratime,iceformsonthesurfaceofthewater.The
+and how much ice has melted? liquid water and the bottom surface of the ice, in contact
+withtheliquidwater,areat 0°C.Thetopsurfaceoftheice
+114. Repeat the preceding problem with 2.00 kg of ice isatthesametemperatureastheairinthefreezer, −18°C.
+instead of 1.00 kg. Set the rate of heat flow through the ice equal to the rate
+oflossofheatoffusionasthewaterfreezes.Whentheice
+layeris0.700cmthick,findtherateinm/satwhichtheice
+115. Repeat the preceding problem with 0.500 kg of ice,
+is thickening.
+assuming that the ice is initially in a copper container of
+mass 1.50 kg in equilibrium with the ice.
+116. A30.0-gicecubeatitsmeltingpointisdroppedinto
+an aluminum calorimeter of mass 100.0 g in equilibrium
+at 24.0°C with 300.0 g of an unknown liquid. The final
+temperature is 4.0°C. What is the heat capacity of the
+liquid?
+117. (a) Calculate the rate of heat conduction through
+a double-paned window that has a 1.50-m2 area and is
+made of two panes of 0.800-cm-thick glass separated by
+a 1.00-cm air gap. The inside surface temperature is
+15.0°C, while that on the outside is −10.0°C. (Hint:
+Thereareidenticaltemperaturedropsacrossthetwoglass
+panes.Firstfindtheseandthenthetemperaturedropacross
+theairgap.Thisproblemignorestheincreasedheattransfer
+in the air gap due to convection.) (b) Calculate the rate 121. An infrared heater for a sauna has a surface area
+ofheatconductionthrougha1.60-cm-thickwindowofthe of 0.050m2 andanemissivityof0.84.Whattemperature
+same area and with the same temperatures. Compare your
+mustitrunatiftherequiredpoweris360W?Neglectthe
+answer with that for part (a).
+temperature of the environment.
+118. (a) An exterior wall of a house is 3 m tall and 10
+122. (a) Determine the power of radiation from the Sun
+m wide. It consists of a layer of drywall with an R factor
+bynotingthat theintensity oftheradiation atthedistance
+of0.56,alayer3.5inchesthickfilledwithfiberglassbatts,
+andalayerofinsulatedsidingwithanRfactorof2.6.The
+ofEarthis 1370W/m2.Hint:Thatintensitywillbefound
+wallisbuiltsowellthattherearenoleaksofairthroughit. everywhereonasphericalsurfacewithradiusequaltothat
+Whentheinsideofthewallisat 22°C andtheoutsideisat ofEarth’sorbit.(b)AssumingthattheSun’stemperatureis
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

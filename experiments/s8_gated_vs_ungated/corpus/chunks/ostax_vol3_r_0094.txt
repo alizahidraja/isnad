@@ -1,0 +1,384 @@
+# REAL PDF — openstax_vol3.pdf, pages 595-600
+############################################################
+
+Answer Key 587
+5.4. L=L 1−
+v2
+=(2.50km) 1−
+(0.750c)2
+=1.65km
+0 c2 c2
+5.5.Start with the definition of the proper time increment:
+dτ= −(ds)2/c2= dt2− ⎛dx2+dx2+dx2⎞ /c2.
+⎝ ⎠
+where(dx,dy,dx,cdt)aremeasuredintheinertialframeofanobserverwhodoesnotnecessarilyseethatparticleatrest.This
+therefore becomes
+dτ = −(ds)2/c2= dt2− ⎡ (dx)2+⎛dy⎞2+(dz)2⎤ /c2
+⎣ ⎝ ⎠ ⎦
+= dt 1− ⎡ ⎢ ⎛dx⎞ 2 + ⎛dy⎞ 2 + ⎛dz⎞ 2⎤ ⎥/c2
+⎝dt⎠ ⎝dt⎠ ⎝dt⎠
+⎣ ⎦
+= dt 1−v2/c2
+dt = γdτ.
+5.6. Although displacements perpendicular to the relative motion are the same in both frames of reference, the time interval
+between events differ, and differences indtand dt′ lead to different velocities seen from the two frames.
+5.7.We can substitute the data directly into the equation for relativistic Doppler frequency:
+f obs = f s 1 1 + − v c v c =(1.50GHz) 1 1 + − 0 0 . . 3 3 c c 5 5 0 0 c c =1.04GHz.
+5.8.Substitute the data into the given equation:
+−31 8
+p=γmu= mu = (9.11×10 kg)(0.985)(3.00×10 m/s) =1.56×10−21 kg-m/s.
+1−
+u2
+1−
+(0.985c) 2
+c2 c2
+⎛ ⎞
+⎜ ⎟
+K =⎛γ−1⎞mc2=⎜ 1 −1⎟mc2
+rel ⎝ ⎠
+⎜ u2 ⎟
+1−
+⎝ c2 ⎠
+5.9.
+⎛ ⎞
+⎜ ⎟
+=⎜ 1 −1⎟(9.11×10 −31 kg)(3.00×10 8 m/s)2=5.67×10 −13 J
+⎜ (0.992c) 2 ⎟
+1−
+⎝ c2 ⎠
+CONCEPTUAL QUESTIONS
+1.thesecondpostulate,involvingthespeedoflight;classicalphysicsalreadyincludedtheideathatthelawsofmechanics,atleast,
+werethesameinallinertialframes,butthevelocityofalightpulsewasdifferentindifferentframesmovingwithrespecttoeach
+other
+3.yes,providedtheplaneisflyingatconstantvelocityrelativetotheEarth;inthatcase,anobjectwithnoforceactingonitwithin
+theplanehasnochangeinvelocityrelativetotheplaneandnochangeinvelocityrelativetotheEarth;boththeplaneandthe
+ground are inertial frames for describing the motion of the object
+5.The observer moving with the process sees its interval of proper time, which is the shortest seen by any observer.
+7.The length of an object is greatest to an observer who is moving with the object, and therefore measures its proper length.
+9.a.No,notwithintheastronaut’sownframeofreference.b.HeseesEarthclockstobeintheirrestframemovingbyhim,and
+thereforeseesthemslowed.c.No,notwithintheastronaut’sownframeofreference.d.Yes,hemeasuresthedistancebetweenthe
+two stars to be shorter. e. The two observers agree on their relative speed.
+11. There is no measured change in wavelength or frequency in this case. The relativistic Doppler effect depends only on the
+relative velocity of the source and the observer, not any speed relative to a medium for the light waves.
+13.ItshowsthatthestarsaregettingmoredistantfromEarth,thattheuniverseisexpanding,anddoingsoatanacceleratingrate,
+with greater velocity for more distant stars.]
+15.Yes.Thiscanhappeniftheexternalforceisbalancedbyotherexternallyappliedforces,sothatthenetexternalforceiszero.
+17.Becauseitlosesthermalenergy,whichisthekineticenergyoftherandommotionofitsconstituentparticles,itsmassdecreases
+by an extremely small amount, as described by energy-mass equivalence.
+19.Yes,inprincipletherewouldbeasimilareffectonmassforanydecreaseinenergy,butthechangewouldbesosmallforthe
+energy changes in a chemical reaction that it would be undetectable in practice.
+21.Not according to special relativity. Nothing with mass can attain the speed of light.
+
+588 Answer Key
+PROBLEMS
+23.a. 1.0328; b. 1.15
+25.
+5.96×10
+−8
+s
+27.0.800c
+29.0.140c
+31.48.6 m
+33.Using the values given inExample5.3: a. 1.39 km; b. 0.433 km; c. 0.433 km
+35.a.10.0c;b.Theresultingspeedofthecanisterisgreaterthanc,animpossibility.c.Itisunreasonabletoassumethatthecanister
+will move toward the earth at 1.20c.
+37.The angleαapproaches 45°, and the t′- and x′-axes rotate toward the edge of the light cone.
+39.15 m/s east
+41.32 m/s
+43. a. The second ball approaches with velocity −v and comes to rest while the other ball continues with velocity −v; b. This
+conserves momentum.
+t ′=0; x ′=0;
+t ′=0; x ′=0; 1 1
+45.a.
+1 1
+; b. t ′=
+τ
+; x ′=
+−vτ
+t 2 ′=τ; x 2 ′=0 2 1−v2/c2 2 1−v2/c2
+47.0.615c
+49.0.696c
+51.(Proof)
+53. 4.09×10 −19 kg·m/s
+55.a. 3.000000015×10 13 kg·m/s; b. 1.000000005
+57.
+2.988×10
+8
+m/s
+59.0.512 MeV according to the number of significant figures stated. The exact value is closer to 0.511 MeV.
+61. 2.3×10 −30 kg; to two digits because the difference in rest mass energies is found to two digits
+63.a. 1.11×10 27 kg; b. 5.56×10 −5
+65.a. 7.1×10 −3 kg; b. 7.1×10 −3 =7.1×10 −3 ; c. Δ m m is greater for hydrogen
+67.a. 208; b. 0.999988c; six digits used to show difference from c
+69.a. 6.92×10 5 J; b. 1.54
+71.a.0.914c;b.Therestmassenergyofanelectronis0.511MeV,sothekineticenergyisapproximately150%oftherestmass
+energy. The electron should be traveling close to the speed of light.
+ADDITIONAL PROBLEMS
+73.a. 0.866c; b. 0.995c
+75.a. 4.303 y to four digits to show any effect; b. 0.1434 y; c. 1/ ⎛ 1−v2/c2⎞ =29.88.
+⎝ ⎠
+77.a. 4.00; b. v=0.867c
+79.a.AsendsaradiopulseateachheartbeattoB,whoknowstheirrelativevelocityandusesthetimedilationformulatocalculate
+the proper time interval between heartbeats from the observed signal. b. (66beats/min) 1−v2/c2=57.1beats/min
+81.a. first photon: (0, 0, 0) at t=t′; second photon:
+t′ =
+−vx/c2
+=
+−(c/2)(1.00m)/c2
+= − 0.57 c 7m =1.93×10 −9 s
+1−v2/c2 0.75
+x′ = x = 1.00m =1.15m
+1−v2/c2 0.75
+b. simultaneous in A, not simultaneous in B
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Answer Key 589
+⎛ 4.5×10−4s ⎞ −(0.6c) ⎛ 150×10 3 m ⎞
+t′ =
+t−vx/c2
+=
+⎝ ⎠ ⎝ c2 ⎠
+1−v2/c2 1−(0.6)2
+= 1.88×10−4 s
+83.
+x′ =
+x−vt
+=
+150×10 3 m−(0.60) ⎛ ⎝ 3.00×10 8 m/s ⎞ ⎠ ⎛ ⎝ 4.5×10−4 s ⎞ ⎠
+1−v2/c2 1−(0.6)2
+5
+= −1.01×10 m=−101km
+y = y′=15km
+z = z′=1km
+Δt =
+Δt′+vΔx′/c2
+1−v2/c2
+85.
+Δt′+v(500m)/c2
+0 = ;
+1−v2/c2
+since v≪c, we can ignore the term v2/c2 and find
+Δt′= − (50m/s)(500m) =−2.78×10 −13 s
+2
+⎛ 8 ⎞
+3.00×10 m/s
+⎝ ⎠
+The breakdown of Newtonian simultaneity is negligibly small, but not exactly zero, at realistic train speeds of 50 m/s.
+Δt′ =
+Δt−vΔx/c2
+1−v2/c2
+(v) ⎛ ⎝2.0×10 9 m ⎞ ⎠
+(0.30s)−
+2
+⎛ 8 ⎞
+87. 0 =
+⎝3.00×10 m/s⎠
+1−v2/c2
+v = (0.30s) ⎛ 3.00×10 8 m/s ⎞ 2
+⎛ 9 ⎞⎝ ⎠
+2.0×10 m
+⎝ ⎠
+v = 1.35×10 7 m/s
+89. Note that all answers to this problem are reported to five significant figures, to distinguish the results. a. 0.99947c; b.
+1.2064×1011 y; c.1.2058×1011 y
+91.a. –0.400c; b. –0.909c
+93.a.1.65km/s;b.Yes,ifthespeedoflightwerethissmall,speedsthatwecanachieveineverydaylifewouldbelargerthan1%
+of the speed of light and we could observe relativistic effects much more often.
+95.775 MHz
+97.a. 1.12×10 −8 m/s; b.Thesmallspeedtellsusthatthemassofaproteinissubstantiallysmallerthanthatofevenatiny
+amount of macroscopic matter.
+99.a.
+dp d ⎛ mu ⎞
+F = = ⎜ ⎟
+dt dt ⎝ 1−u2/c2⎠
+= du ⎛ ⎜ m ⎞ ⎟− 1 mu2 2 du
+dt ⎝ 1−u2/c2⎠ 2 ⎛ 1−u2/c2⎞ 3/2 dt;
+⎝ ⎠
+m du
+=
+3/2 dt
+⎛ 1−u2/c2⎞
+⎝ ⎠
+b.
+
+590 Answer Key
+m du
+F =
+3/2 dt
+⎛ 1−u2/c2⎞
+⎝ ⎠
+=
+1kg ⎛ 1m/s2⎞
+3/2⎝ ⎠
+⎛ 2⎞
+1−
+⎛1⎞
+⎝ ⎝2⎠ ⎠
+=1.53N
+101.90.0 MeV
+103.a. γ2−1; b. yes
+105.
+1.07×10
+3
+107.a. 6.56×10 −8 kg; b. m=(200L) ⎛ ⎝ 1m 3 /1000 L ⎞ ⎠ ⎛ ⎝ 750kg/m 3⎞ ⎠ =150kg; therefore, Δ m m =4.37×10 −10
+109.a. 0.314c; b. 0.99995c(Five digits used to show difference fromc)
+111.a.1.00kg;b.Thismuchmasswouldbemeasurable,butprobablynotobservablejustbylookingbecauseitis0.01%ofthe
+total mass.
+113.a. 6.06×1011 kg/s; b. 4.67×10 10 y; c. 4.27×10 9 kg; d. 0.32%
+CHAPTER 6
+CHECK YOUR UNDERSTANDING
+6.1.Bunsen’s burner
+6.2.The wavelength of the radiation maximum decreases with increasing temperature.
+6.3. T α/T β=1/ 3≅0.58, so the star β is hotter.
+6.4. −19
+3.3×10 J
+6.5.No, because then ΔE/E≈10−21
+6.6. −0.91 V; 1040 nm
+6.7. h=6.40×10 −34 J·s=4.0×10 −15 eV·s;−3.5%
+6.8. (Δλ) min =0m at a 0° angle; 71.0pm+0.5λ c=72.215pm
+6.9.121.5 nm and 91.1 nm; no, these spectral bands are in the ultraviolet
+6.10. v 2 =1.1×10 6 m/s≅0.0036c; L 2 =2ℏK 2 =3.4eV
+6.11.29 pm
+6.12. λ=2πna =2(3.324Å)=6.648Å
+0
+6.13. λ=2.14pm; K =261.56keV
+6.14. 0.052°
+6.15.doubles it
+CONCEPTUAL QUESTIONS
+1.yellow
+3.goes from red to violet through the rainbow of colors
+5.would not differ
+7.human eye does not see IR radiation
+9.No
+11.from the slope
+13.Answers may vary
+15.the particle character
+17.Answers may vary
+19.no; yes
+21.no
+23.right angle
+25.no
+27.They are at ground state.
+29.Answers may vary
+31.increase
+33.for largern
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Answer Key 591
+35.Yes, the excess of 13.6 eV will become kinetic energy of a free electron.
+37.no
+39.X-rays, best resolving power
+41.proton
+43.negligibly small de Broglie’s wavelengths
+45.to avoid collisions with air molecules
+47.Answers may vary
+49.Answers may vary
+51.yes
+53.yes
+PROBLEMS
+55.a. 0.81 eV; b. 2.1×10 23 ; c. 2 min 20 sec
+57.a. 7245 K; b. 3.62 μm
+59.about 3 K
+61. 4.835×10 18 Hz; 0.620 Å
+63.263 nm; no
+65.3.68 eV
+67.4.09 eV
+69.5.54 eV
+71.a. 1.89 eV; b. 459 THz; c. 1.21 V
+73.264 nm; UV
+75. 6
+1.95×10 m/s
+77. 1.66×10 −32 kg·m/s
+79.56.21 eV
+81. 6.63×10 −23 kg·m/s; 124 keV
+83.82.9 fm; 15 MeV
+85.(Proof)
+87. Δλ /Δλ =45.74%
+30 45
+89.121.5 nm
+91.a. 0.661 eV; b. –10.2 eV; c. 1.511 eV
+93.3038 THz
+95.97.33 nm
+97.a. h/π; b. 3.4 eV; c. – 6.8 eV; d. – 3.4 eV
+99. n=4
+101.365 nm; UV
+103.no
+105.7
+107.145.5 pm
+109.20 fm; 9 fm
+111.a. 2.103 eV; b. 0.846 nm
+113.80.9 pm
+115. −19
+2.21×10 m/s
+117.
+9.929×10
+32
+119. γ =1060; 0.00124 fm
+121.24.11 V
+123.a. P=2I/c=8.67×10 −6 N/m2; b. a=PA/m=8.67×10-4m/s2; c. 74.91 m/s
+125. x=4.965
+ADDITIONAL PROBLEMS
+127. 16 3
+7.124×10 W/m
+129.1.034 eV
+131.
+5.93×10
+18
+133.387.8 nm
+
+592 Answer Key
+135.a. 4.02×10 15 ; b. 0.533 mW
+137.a. 4.02×10 15 ; b. 0.533 mW; c. 0.644 mA; d. 2.57 ns
+139.a. 0.132 pm; b. 9.39 MeV; c. 0.047 MeV
+141.a. 2 kJ; b. 1.33×10 −5 kg·m/s; c. 1.33×10 −5 N; d. yes
+143.a. 0.003 nm; b. 105.56°
+145. n=3
+147.a. a 0 /2; b. −54.4eV/n2; c. a 0 /3, −122.4eV/n2
+149.a. 36; b. 18.2 nm; c. UV
+151.396 nm; 5.23 neV
+153.7.3 keV
+155.728 m/s; 1.5µV
+157. λ=hc/ K(2E +K)=3.705×10−12 m,K =100keV
+0
+159. Δλ c (electron) /Δλ c (proton) =m p/m e=1836
+161.(Proof)
+163. 5.1×10 17 Hz
+CHAPTER 7
+CHECK YOUR UNDERSTANDING
+7.1. (3+4i)(3−4i)=9−16i2=25
+7.2. A= 2/L
+7.3. (1/2−1/π)/2=9%
+7.4. 4.1×10 −8 eV; 1.1×10 −5 nm
+7.5. 0.5mω2x2ψ(x)* ψ(x)
+7.6.None.Thefirstfunctionhasadiscontinuity;thesecondfunctionisdouble-valued;andthethirdfunctiondivergessoisnot
+normalizable.
+7.7.a. 9.1%; b. 25%
+7.8.a. 295 N/m; b. 0.277 eV
+7.9. 〈 x〉 =0
+7.10. L
+proton
+/L
+electron
+= m e/m p=2.3%
+CONCEPTUAL QUESTIONS
+1. 1/ L, where L=length; 1/L, where L=length
+3. The wave function does not correspond directly to any measured quantity. It is a tool for predicting the values of physical
+quantities.
+5.The average value of the physical quantity for a large number of particles with the same wave function.
+7.Yes, if its position is completely unknown. Yes, if its momentum is completely unknown.
+9.No.Accordingtotheuncertaintyprinciple,iftheuncertaintyontheparticle’spositionissmall,theuncertaintyonitsmomentum
+is large. Similarly, if the uncertainty on the particle’s position is large, the uncertainty on its momentum is small.
+11.No, it means that predictions about the particle (expressed in terms of probabilities) are time-independent.
+13. No, because the probability of the particle existing in a narrow (infinitesimally small) interval at the discontinuity is
+undefined.
+15.No.Foraninfinitesquarewell,thespacingbetweenenergylevelsincreaseswiththequantumnumbern.Thesmallestenergy
+measuredcorrespondstothetransitionfromn=2to1,whichisthreetimesthegroundstateenergy.Thelargestenergymeasured
+correspondstoatransitionfrom n=∞ to1,whichisinfinity.(Note:Evenparticleswithextremelylargeenergiesremainbound
+to an infinite square well—they can never “escape”)
+17.No. This energy corresponds to n=0.25, butnmust be an integer.
+19. Because the smallest allowed value of the quantum number n for a simple harmonic oscillator is 0. No, because quantum
+mechanics and classical mechanics agree only in the limit of large n.
+21. Yes, within the constraints of the uncertainty principle. If the oscillating particle is localized, the momentum and therefore
+energy of the oscillator are distributed.
+23.doubling the barrier width
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

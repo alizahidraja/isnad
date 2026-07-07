@@ -1,0 +1,207 @@
+# REAL PDF — openstax_vol1.pdf, pages 85-93
+############################################################
+
+2.4 • Products of Vectors 73
+the direction of vector . (c) The orthogonal projection of vector onto the direction of vector .
+EXAMPLE 2.15
+The Scalar Product
+For the vectors shown in Figure 2.13, find the scalar product .
+Strategy
+From Figure 2.13, the magnitudes of vectors and are A = 10.0 and F = 20.0. Angle , between them, is the
+difference: . Substituting these values into Equation 2.27 gives the scalar product.
+Solution
+A straightforward calculation gives us
+CHECK YOUR UNDERSTANDING 2.11
+For the vectors given in Figure 2.13, find the scalar products and .
+In the Cartesian coordinate system, scalar products of the unit vector of an axis with other unit vectors of axes
+always vanish because these unit vectors are orthogonal:
+2.29
+In these equations, we use the fact that the magnitudes of all unit vectors are one: . For unit
+vectors of the axes, Equation 2.28 gives the following identities:
+2.30
+The scalar product can also be interpreted as either the product of B with the projection of vector onto
+the direction of vector (Figure 2.27(b)) or the product of A with the projection of vector onto the direction of
+vector (Figure 2.27(c)):
+For example, in the rectangular coordinate system in a plane, the scalar x-component of a vector is its dot product
+with the unit vector , and the scalar y-component of a vector is its dot product with the unit vector :
+Scalar multiplication of vectors is commutative,
+2.31
+and obeys the distributive law:
+
+74 2 • Vectors
+2.32
+We can use the commutative and distributive laws to derive various relations for vectors, such as expressing the dot
+product of two vectors in terms of their scalar components.
+CHECK YOUR UNDERSTANDING 2.12
+For vector in a rectangular coordinate system, use Equation 2.29 through Equation 2.32 to
+show that , , and .
+When the vectors in Equation 2.27 are given in their vector component forms,
+we can compute their scalar product as follows:
+Since scalar products of two different unit vectors of axes give zero, and scalar products of unit vectors with
+themselves give one (see Equation 2.29 and Equation 2.30), there are only three nonzero terms in this expression.
+Thus, the scalar product simplifies to
+2.33
+We can use Equation 2.33 for the scalar product in terms of scalar components of vectors to find the angle between
+two vectors. When we divide Equation 2.27 by AB, we obtain the equation for , into which we substitute
+Equation 2.33:
+2.34
+Angle between vectors and is obtained by taking the inverse cosine of the expression in Equation 2.34.
+EXAMPLE 2.16
+Angle between Two Forces
+Three dogs are pulling on a stick in different directions, as shown in Figure 2.28. The first dog pulls with force
+, the second dog pulls with force , and the third dog pulls
+with force . What is the angle between forces and ?
+Access for free at openstax.org
+
+2.4 • Products of Vectors 75
+FIGURE 2.28 Three dogs are playing with a stick.
+Strategy
+The components of force vector are , , and , whereas those of force
+vector are , , and . Computing the scalar product of these vectors and
+their magnitudes, and substituting into Equation 2.34 gives the angle of interest.
+Solution
+The magnitudes of forces and are
+and
+Substituting the scalar components into Equation 2.33 yields the scalar product
+Finally, substituting everything into Equation 2.34 gives the angle
+Significance
+Notice that when vectors are given in terms of the unit vectors of axes, we can find the angle between them without
+knowing the specifics about the geographic directions the unit vectors represent. Here, for example, the
++x-direction might be to the east and the +y-direction might be to the north. But, the angle between the forces in
+the problem is the same if the +x-direction is to the west and the +y-direction is to the south.
+CHECK YOUR UNDERSTANDING 2.13
+Find the angle between forces and in Example 2.16.
+
+76 2 • Vectors
+EXAMPLE 2.17
+The Work of a Force
+When force pulls on an object and when it causes its displacement , we say the force performs work. The
+amount of work the force does is the scalar product . If the stick in Example 2.16 moves momentarily and gets
+displaced by vector , how much work is done by the third dog in Example 2.16?
+Strategy
+We compute the scalar product of displacement vector with force vector , which is the pull
+from the third dog. Let’s use to denote the work done by force on displacement .
+Solution
+Calculating the work is a straightforward application of the dot product:
+Significance
+The SI unit of work is called the joule , where 1 J = 1 . The unit can be written as
+, so the answer can be expressed as .
+CHECK YOUR UNDERSTANDING 2.14
+How much work is done by the first dog and by the second dog in Example 2.16 on the displacement in Example
+2.17?
+The Vector Product of Two Vectors (the Cross Product)
+Vector multiplication of two vectors yields a vector product.
+VECTOR PRODUCT (CROSS PRODUCT)
+The vector product of two vectors and is denoted by and is often referred to as a cross product.
+The vector product is a vector that has its direction perpendicular to both vectors and . In other words,
+vector is perpendicular to the plane that contains vectors and , as shown in Figure 2.29. The
+magnitude of the vector product is defined as
+2.35
+where angle , between the two vectors, is measured from vector (first vector in the product) to vector
+(second vector in the product), as indicated in Figure 2.29, and is between and .
+According to Equation 2.35, the vector product vanishes for pairs of vectors that are either parallel or
+antiparallel because .
+Access for free at openstax.org
+
+2.4 • Products of Vectors 77
+FIGURE 2.29 The vector product of two vectors is drawn in three-dimensional space. (a) The vector product is a vector
+perpendicular to the plane that contains vectors and . Small squares drawn in perspective mark right angles between and , and
+between and so that if and lie on the floor, vector points vertically upward to the ceiling. (b) The vector product is a
+vector antiparallel to vector .
+On the line perpendicular to the plane that contains vectors and there are two alternative directions—either up
+or down, as shown in Figure 2.29—and the direction of the vector product may be either one of them. In the
+standard right-handed orientation, where the angle between vectors is measured counterclockwise from the first
+vector, vector points upward, as seen in Figure 2.29(a). If we reverse the order of multiplication, so that now
+comes first in the product, then vector must point downward, as seen in Figure 2.29(b). This means that
+vectors and are antiparallel to each other and that vector multiplication is not commutative but
+anticommutative. The anticommutative property means the vector product reverses the sign when the order of
+multiplication is reversed:
+2.36
+The corkscrew right-hand rule is a common mnemonic used to determine the direction of the vector product. As
+shown in Figure 2.30, a corkscrew is placed in a direction perpendicular to the plane that contains vectors and ,
+and its handle is turned in the direction from the first to the second vector in the product. The direction of the cross
+product is given by the progression of the corkscrew.
+You can also use your right hand, without the use of a corkscrew, by positioning your right hand so that your fingers
+point in the direction of A and they curl toward B. The cross product must be perpendicular to both A and B, and so
+you are choosing from only two possible directions. Your thumb now points toward the correct choice.
+
+78 2 • Vectors
+FIGURE 2.30 The corkscrew right-hand rule can be used to determine the direction of the cross product . Place a corkscrew in the
+direction perpendicular to the plane that contains vectors and , and turn it in the direction from the first to the second vector in the
+product. The direction of the cross product is given by the progression of the corkscrew. (a) Upward movement means the cross-product
+vector points up. (b) Downward movement means the cross-product vector points downward. (c) To find the direction of C = A × B using
+your right hand (be careful not to use your left hand or you will get the opposite direction!), with A and B placed tail-to-tail, position your
+right hand so that your fingers point in the direction of A and curl them toward B. Your extended thumb will point in the direction of the
+cross product. Make sure your thumb is perpendicular to the plan defined by the two crossed vectors, A and B.
+EXAMPLE 2.18
+The Torque of a Force
+The mechanical advantage that a familiar tool called a wrench provides (Figure 2.31) depends on magnitude F of the
+applied force, on its direction with respect to the wrench handle, and on how far from the nut this force is applied.
+The distance R from the nut to the point where force vector is attached is represented by the radial vector . The
+physical vector quantity that makes the nut turn is called torque (denoted by , and it is the vector product of the
+distance between the pivot to force with the force: .
+To loosen a rusty nut, a 20.00-N force is applied to the wrench handle at angle and at a distance of 0.25 m
+from the nut, as shown in Figure 2.31(a). Find the magnitude and direction of the torque applied to the nut. What
+would the magnitude and direction of the torque be if the force were applied at angle , as shown in Figure
+2.31(b)? For what value of angle does the torque have the largest magnitude?
+Access for free at openstax.org
+
+2.4 • Products of Vectors 79
+FIGURE 2.31 A wrench provides grip and mechanical advantage in applying torque to turn a nut. (a) Turn counterclockwise to loosen the
+nut. (b) Turn clockwise to tighten the nut.
+Strategy
+We adopt the frame of reference shown in Figure 2.31, where vectors and lie in the xy-plane and the origin is at
+the position of the nut. The radial direction along vector (pointing away from the origin) is the reference direction
+for measuring the angle because is the first vector in the vector product . Vector must lie along
+the z-axis because this is the axis that is perpendicular to the xy-plane, where both and lie. To compute the
+magnitude , we use Equation 2.35. To find the direction of , we use the corkscrew right-hand rule (Figure 2.30).
+Solution
+For the situation in (a), the corkscrew rule gives the direction of in the positive direction of the z-axis.
+Physically, it means the torque vector points out of the page, perpendicular to the wrench handle. We identify F =
+20.00 N and R = 0.25 m, and compute the magnitude using Equation 2.35:
+For the situation in (b), the corkscrew rule gives the direction of in the negative direction of the z-axis.
+Physically, it means the vector points into the page, perpendicular to the wrench handle. The magnitude of this
+torque is
+The torque has the largest value when , which happens when . Physically, it means the wrench is
+most effective—giving us the best mechanical advantage—when we apply the force perpendicular to the wrench
+handle. For the situation in this example, this best-torque value is .
+Significance
+When solving mechanics problems, we often do not need to use the corkscrew rule at all, as we’ll see now in the
+following equivalent solution. Notice that once we have identified that vector lies along the z-axis, we can
+write this vector in terms of the unit vector of the z-axis:
+In this equation, the number that multiplies is the scalar z-component of the vector . In the computation of
+this component, care must be taken that the angle is measured counterclockwise from (first vector) to
+
+80 2 • Vectors
+(second vector). Following this principle for the angles, we obtain for the situation in
+(a), and we obtain for the situation in (b). In the latter case, the angle is negative
+because the graph in Figure 2.31 indicates the angle is measured clockwise; but, the same result is obtained when
+this angle is measured counterclockwise because and . In this
+way, we obtain the solution without reference to the corkscrew rule. For the situation in (a), the solution is
+; for the situation in (b), the solution is .
+CHECK YOUR UNDERSTANDING 2.15
+For the vectors given in Figure 2.13, find the vector products and .
+Similar to the dot product (Equation 2.32), the cross product has the following distributive property:
+2.37
+The distributive property is applied frequently when vectors are expressed in their component forms, in terms of
+unit vectors of Cartesian axes.
+When we apply the definition of the cross product, Equation 2.35, to unit vectors , , and that define the positive
+x-, y-, and z-directions in space, we find that
+2.38
+All other cross products of these three unit vectors must be vectors of unit magnitudes because , , and are
+orthogonal. For example, for the pair and , the magnitude is . The direction of
+the vector product must be orthogonal to the xy-plane, which means it must be along the z-axis. The only unit
+vectors along the z-axis are or . By the corkscrew rule, the direction of vector must be parallel to the
+positive z-axis. Therefore, the result of the multiplication is identical to . We can repeat similar reasoning
+for the remaining pairs of unit vectors. The results of these multiplications are
+2.39
+Notice that in Equation 2.39, the three unit vectors , , and appear in the cyclic order shown in a diagram in
+Figure 2.32(a). The cyclic order means that in the product formula, follows and comes before , or follows
+and comes before , or follows and comes before . The cross product of two different unit vectors is always a
+third unit vector. When two unit vectors in the cross product appear in the cyclic order, the result of such a
+multiplication is the remaining unit vector, as illustrated in Figure 2.32(b). When unit vectors in the cross product
+appear in a different order, the result is a unit vector that is antiparallel to the remaining unit vector (i.e., the result is
+with the minus sign, as shown by the examples in Figure 2.32(c) and Figure 2.32(d). In practice, when the task is to
+find cross products of vectors that are given in vector component form, this rule for the cross-multiplication of unit
+vectors is very useful.
+Access for free at openstax.org

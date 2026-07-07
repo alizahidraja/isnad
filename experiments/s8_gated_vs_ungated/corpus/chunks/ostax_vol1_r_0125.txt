@@ -1,0 +1,217 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 757-760
+############################################################
+
+15 • Chapter Review 745
+15.3 Comparing Simple Harmonic Motion and function; that is, the initial position, velocity, and
+Circular Motion acceleration, when using a sine function? How
+about when a cosine function is used?
+10 . Can this analogy of SHM to circular motion be
+carried out with an object oscillating on a spring 15.5 Damped Oscillations
+vertically hung from the ceiling? Why or why not?
+15 . Give an example of a damped harmonic
+If given the choice, would you prefer to use a
+oscillator. (They are more common than
+sine function or a cosine function to model the
+undamped or simple harmonic oscillators.)
+motion?
+16 . How would a car bounce after a bump under
+11 . If the maximum speed of the mass attached to a
+each of these conditions?
+spring, oscillating on a frictionless table, was
+(a) overdamping
+increased, what characteristics of the rotating
+(b) underdamping
+disk would need to be changed?
+(c) critical damping
+15.4 Pendulums
+17 . Most harmonic oscillators are damped and, if
+12 . Pendulum clocks are made to run at the correct undriven, eventually come to a stop. Why?
+rate by adjusting the pendulum’s length.
+15.6 Forced Oscillations
+Suppose you move from one city to another
+where the acceleration due to gravity is slightly 18 . Why are soldiers in general ordered to “route
+greater, taking your pendulum clock with you, step” (walk out of step) across a bridge?
+will you have to lengthen or shorten the
+19 . Do you think there is any harmonic motion in the
+pendulum to keep the correct time, other factors
+physical world that is not damped harmonic
+remaining constant? Explain your answer.
+motion? Try to make a list of five examples of
+13 . A pendulum clock works by measuring the undamped harmonic motion and damped
+period of a pendulum. In the springtime the harmonic motion. Which list was easier to make?
+clock runs with perfect time, but in the summer
+20 . Some engineers use sound to diagnose
+and winter the length of the pendulum changes.
+performance problems with car engines.
+When most materials are heated, they expand.
+Occasionally, a part of the engine is designed
+Does the clock run too fast or too slow in the
+that resonates at the frequency of the engine.
+summer? What about the winter?
+The unwanted oscillations can cause noise that
+14 . With the use of a phase shift, the position of an irritates the driver or could lead to the part
+object may be modeled as a cosine or sine failing prematurely. In one case, a part was
+function. If given the option, which function located that had a length L made of a material
+would you choose? Assuming that the phase with a mass M. What can be done to correct this
+shift is zero, what are the initial conditions of problem?
+Problems
+15.1 Simple Harmonic Motion 25 . A stroboscope is set to flash every
+. What is the frequency of the
+21 . Prove that using will
+flashes?
+produce the same results for the period for the
+oscillations of a mass and a spring. Why do you 26 . A tire has a tread pattern with a crevice every
+think the cosine function was chosen? 2.00 cm. Each crevice makes a single vibration
+as the tire moves. What is the frequency of these
+22 . What is the period of 60.0 Hz of electrical
+vibrations if the car moves at 30.0 m/s?
+power?
+27 . Each piston of an engine makes a sharp sound
+23 . If your heart rate is 150 beats per minute during
+every other revolution of the engine. (a) How fast
+strenuous exercise, what is the time per beat in
+is a race car going if its eight-cylinder engine
+units of seconds?
+emits a sound of frequency 750 Hz, given that
+24 . Find the frequency of a tuning fork that takes the engine makes 2000 revolutions per
+to complete one oscillation. kilometer? (b) At how many revolutions per
+minute is the engine rotating?
+
+746 15 • Chapter Review
+28 . A type of cuckoo clock keeps time by having a 0.300-kg mass hangs from it, and a length of
+mass bouncing on a spring, usually something 0.750 m when a 1.95-kg mass hangs from it. (a)
+cute like a cherub in a chair. What force constant What is the force constant of the spring? (b)
+is needed to produce a period of 0.500 s for a What is the unloaded length of the spring?
+0.0150-kg mass?
+37 . The length of nylon rope from which a mountain
+29 . A mass is attached to a spring and hung climber is suspended has an effective force
+vertically. The mass is raised a short distance in constant of . (a) What is the
+the vertical direction and released. The mass frequency at which he bounces, given his mass
+oscillates with a frequency . If the mass is plus and the mass of his equipment are 90.0 kg?
+replaced with a mass nine times as large, and (b) How much would this rope stretch to break
+the experiment was repeated, what would be the climber’s fall if he free-falls 2.00 m before
+the frequency of the oscillations in terms of ? the rope runs out of slack? (Hint: Use
+conservation of energy.) (c) Repeat both parts of
+30 . A 0.500-kg mass suspended from a spring
+this problem in the situation where twice this
+oscillates with a period of 1.50 s. How much
+length of nylon rope is used.
+mass must be added to the object to change the
+period to 2.00 s? 15.3 Comparing Simple Harmonic Motion and
+Circular Motion
+31 . How much leeway (both percentage and mass)
+would you have in the selection of the mass of 38 . The motion of a mass on a spring hung vertically,
+the object in the previous problem if you did not where the mass oscillates up and down, can also
+wish the new period to be greater than 2.01 s or be modeled using the rotating disk. Instead of
+less than 1.99 s? the lights being placed horizontally along the top
+and pointing down, place the lights vertically and
+15.2 Energy in Simple Harmonic Motion
+have the lights shine on the side of the rotating
+32 . Fish are hung on a spring scale to determine disk. A shadow will be produced on a nearby
+their mass. (a) What is the force constant of the wall, and will move up and down. Write the
+spring in such a scale if it the spring stretches equations of motion for the shadow taking the
+8.00 cm for a 10.0 kg load? (b) What is the mass position at to be with the
+of a fish that stretches the spring 5.50 cm? (c) mass moving in the positive y-direction.
+How far apart are the half-kilogram marks on the
+39 . (a) A novelty clock has a 0.0100-kg-mass object
+scale?
+bouncing on a spring that has a force constant of
+33 . It is weigh-in time for the local under-85-kg 1.25 N/m. What is the maximum velocity of the
+rugby team. The bathroom scale used to assess object if the object bounces 3.00 cm above and
+eligibility can be described by Hooke’s law and is below its equilibrium position? (b) How many
+depressed 0.75 cm by its maximum load of 120 joules of kinetic energy does the object have at
+kg. (a) What is the spring’s effective force its maximum velocity?
+constant? (b) A player stands on the scales and
+40 . Reciprocating motion uses the rotation of a motor to
+depresses it by 0.48 cm. Is he eligible to play on
+produce linear motion up and down or back and
+this under-85-kg team?
+forth. This is how a reciprocating saw operates, as
+34 . One type of BB gun uses a spring-driven plunger shown below.
+to blow the BB from its barrel. (a) Calculate the
+force constant of its plunger’s spring if you must
+compress it 0.150 m to drive the 0.0500-kg
+plunger to a top speed of 20.0 m/s. (b) What
+force must be exerted to compress the spring?
+35 . When an 80.0-kg man stands on a pogo stick,
+If the motor rotates at 60 Hz and has a radius of 3.0
+the spring is compressed 0.120 m. (a) What is
+cm, estimate the maximum speed of the saw blade
+the force constant of the spring? (b) Will the
+as it moves left and right. This design is known as a
+spring be compressed more when he hops down
+scotch yoke.
+the road?
+41 . A student stands on the edge of a merry-go-
+36 . A spring has a length of 0.200 m when a
+Access for free at openstax.org
+
+15 • Chapter Review 747
+round which rotates five times a minute and has decrease its length by 5.00%?
+a radius of two meters one evening as the sun is
+15.5 Damped Oscillations
+setting. The student produces a shadow on the
+nearby building. (a) Write an equation for the 51 . The amplitude of a lightly damped oscillator
+position of the shadow. (b) Write an equation for decreases by during each cycle. What
+the velocity of the shadow. percentage of the mechanical energy of the
+oscillator is lost in each cycle?
+15.4 Pendulums
+15.6 Forced Oscillations
+42 . What is the length of a pendulum that has a
+period of 0.500 s? 52 . How much energy must the shock absorbers of a
+1200-kg car dissipate in order to damp a bounce
+43 . Some people think a pendulum with a period of
+that initially has a velocity of 0.800 m/s at the
+1.00 s can be driven with “mental energy” or
+equilibrium position? Assume the car returns to
+psycho kinetically, because its period is the
+its original vertical position.
+same as an average heartbeat. True or not, what
+is the length of such a pendulum? 53 . If a car has a suspension system with a force
+constant of , how much energy
+44 . What is the period of a 1.00-m-long pendulum?
+must the car’s shocks remove to dampen an
+45 . How long does it take a child on a swing to oscillation starting with a maximum
+complete one swing if her center of gravity is displacement of 0.0750 m?
+4.00 m below the pivot?
+54 . (a) How much will a spring that has a force
+46 . The pendulum on a cuckoo clock is 5.00-cm constant of 40.0 N/m be stretched by an object
+long. What is its frequency? with a mass of 0.500 kg when hung motionless
+from the spring? (b) Calculate the decrease in
+47 . Two parakeets sit on a swing with their
+gravitational potential energy of the 0.500-kg
+combined CMs 10.0 cm below the pivot. At what
+object when it descends this distance. (c) Part of
+frequency do they swing?
+this gravitational energy goes into the spring.
+48 . (a) A pendulum that has a period of 3.00000 s Calculate the energy stored in the spring by this
+and that is located where the acceleration due to stretch, and compare it with the gravitational
+gravity is is moved to a location where potential energy. Explain where the rest of the
+the acceleration due to gravity is . energy might go.
+What is its new period? (b) Explain why so many
+55 . Suppose you have a 0.750-kg object on a
+digits are needed in the value for the period,
+horizontal surface connected to a spring that has
+based on the relation between the period and
+a force constant of 150 N/m. There is simple
+the acceleration due to gravity.
+friction between the object and surface with a
+49 . A pendulum with a period of 2.00000 s in one static coefficient of friction . (a) How
+location ( ) is moved to a new far can the spring be stretched without moving
+location where the period is now 1.99796 s. the mass? (b) If the object is set into oscillation
+What is the acceleration due to gravity at its new with an amplitude twice the distance found in
+location? part (a), and the kinetic coefficient of friction is
+, what total distance does it travel
+50 . (a) What is the effect on the period of a
+before stopping? Assume it starts at the
+pendulum if you double its length? (b) What is
+maximum amplitude.
+the effect on the period of a pendulum if you
+Additional Problems
+56 . Suppose you attach an object with mass m to a spring without the mass attached and the
+vertical spring originally at rest, and let it bounce equilibrium position of the spring with the mass
+up and down. You release the object from rest at attached. (a) Show that the spring exerts an
+the spring’s original rest length, the length of the upward force of 2.00mg on the object at its
+spring in equilibrium, without the mass lowest point. (b) If the spring has a force
+attached. The amplitude of the motion is the constant of 10.0 N/m, is hung horizontally, and
+distance between the equilibrium position of the the position of the free end of the spring is

@@ -1,0 +1,194 @@
+# REAL PDF — openstax_vol1.pdf, pages 300-306
+############################################################
+
+288 6 • Applications of Newton's Laws
+Using the equation for drag force, we have
+Solving for the velocity, we obtain
+Assume the density of air is A 75-kg skydiver descending head first has a cross-sectional area of
+approximately and a drag coefficient of approximately . We find that
+This means a skydiver with a mass of 75 kg achieves a terminal velocity of about 350 km/h while traveling in a
+headfirst position, minimizing the area and his drag. In a spread-eagle position, that terminal velocity may decrease
+to about 200 km/h as the area increases. This terminal velocity becomes much smaller after the parachute opens.
+EXAMPLE 6.17
+Terminal Velocity of a Skydiver
+Find the terminal velocity of an 85-kg skydiver falling in a spread-eagle position. Assume that in the spread-eagle
+position, the diver has a cross-sectional area of .
+Strategy
+At terminal velocity, Thus, the drag force on the skydiver must equal the force of gravity (the person’s
+weight). Using the equation of drag force, we find
+Solution
+The terminal velocity can be written as
+Significance
+This result is consistent with the value for mentioned earlier. The 75-kg skydiver going feet first had a terminal
+velocity of He weighed less but had a smaller frontal area and so a smaller drag due to the air.
+CHECK YOUR UNDERSTANDING 6.10
+Find the terminal velocity of a 50-kg skydiver falling in spread-eagle fashion.
+The size of the object that is falling through air presents another interesting application of air drag. If you fall from a
+5-m-high branch of a tree, you will likely get hurt—possibly fracturing a bone. However, a small squirrel does this all
+the time, without getting hurt. You do not reach a terminal velocity in such a short distance, but the squirrel does.
+The following interesting quote on animal size and terminal velocity is from a 1928 essay by a British biologist, J. B.
+S. Haldane, titled “On Being the Right Size.”
+“To the mouse and any smaller animal, [gravity] presents practically no dangers. You can drop a mouse down a
+thousand-yard mine shaft; and, on arriving at the bottom, it gets a slight shock and walks away, provided that the
+ground is fairly soft. A rat is killed, a man is broken, and a horse splashes. For the resistance presented to movement
+by the air is proportional to the surface of the moving object. Divide an animal’s length, breadth, and height each by
+Access for free at openstax.org
+
+6.4 • Drag Force and Terminal Speed 289
+ten; its weight is reduced to a thousandth, but its surface only to a hundredth. So the resistance to falling in the case
+of the small animal is relatively ten times greater than the driving force.”
+The above quadratic dependence of air drag upon velocity does not hold if the object is very small, is going very
+slow, or is in a denser medium than air. Then we find that the drag force is proportional just to the velocity. This
+relationship is given by Stokes’ law.
+STOKES’ LAW
+For a spherical object falling in a medium, the drag force is
+6.6
+where r is the radius of the object, is the viscosity of the fluid, and v is the object’s velocity.
+Good examples of Stokes’ law are provided by microorganisms, pollen, and dust particles. Because each of these
+objects is so small, we find that many of these objects travel unaided only at a constant (terminal) velocity. Terminal
+velocities for bacteria (size about can be about To move at a greater speed, many bacteria swim using
+flagella (organelles shaped like little tails) that are powered by little motors embedded in the cell.
+Sediment in a lake can move at a greater terminal velocity (about so it can take days for it to reach the
+bottom of the lake after being deposited on the surface.
+If we compare animals living on land with those in water, you can see how drag has influenced evolution. Fish,
+dolphins, and even massive whales are streamlined in shape to reduce drag forces. Birds are streamlined and
+migratory species that fly large distances often have particular features such as long necks. Flocks of birds fly in the
+shape of a spearhead as the flock forms a streamlined pattern (Figure 6.32). In humans, one important example of
+streamlining is the shape of sperm, which need to be efficient in their use of energy.
+FIGURE 6.32 Geese fly in a V formation during their long migratory travels. This shape reduces drag and energy consumption for individual
+birds, and also allows them a better way to communicate. (credit: modification of work by “Julo”/Wikimedia Commons)
+INTERACTIVE
+In lecture demonstrations, we do measurements of the drag force (https://openstax.org/l/21dragforce) on different
+objects. The objects are placed in a uniform airstream created by a fan. Calculate the drag coefficient.
+The Calculus of Velocity-Dependent Frictional Forces
+When a body slides across a surface, the frictional force on it is approximately constant and given by
+Unfortunately, the frictional force on a body moving through a liquid or a gas does not behave so simply. This drag
+
+290 6 • Applications of Newton's Laws
+force is generally a complicated function of the body’s velocity. However, for a body moving in a straight line at
+moderate speeds through a liquid such as water, the frictional force can often be approximated by
+where b is a constant whose value depends on the dimensions and shape of the body and the properties of the
+liquid, and v is the velocity of the body. Two situations for which the frictional force can be represented by this
+equation are a motorboat moving through water and a small object falling slowly through a liquid.
+Let’s consider the object falling through a liquid. The free-body diagram of this object with the positive direction
+downward is shown in Figure 6.33. Newton’s second law in the vertical direction gives the differential equation
+where we have written the acceleration as As v increases, the frictional force –bv increases until it matches
+mg. At this point, there is no acceleration and the velocity remains constant at the terminal velocity From the
+previous equation,
+so
+FIGURE 6.33 Free-body diagram of an object falling through a resistive medium.
+We can find the object’s velocity by integrating the differential equation for v. First, we rearrange terms in this
+equation to obtain
+Assuming that integration of this equation yields
+or
+where are dummy variables of integration. With the limits given, we find
+Since and we obtain
+Access for free at openstax.org
+
+6.4 • Drag Force and Terminal Speed 291
+and
+Notice that as ∞ which is the terminal velocity.
+The position at any time may be found by integrating the equation for v. With
+Assuming
+which integrates to
+EXAMPLE 6.18
+Effect of the Resistive Force on a Motorboat
+A motorboat is moving across a lake at a speed when its motor suddenly freezes up and stops. The boat then
+slows down under the frictional force (a) What are the velocity and position of the boat as functions of
+time? (b) If the boat slows down from 4.0 to 1.0 m/s in 10 s, how far does it travel before stopping?
+Solution
+a. With the motor stopped, the only horizontal force on the boat is so from Newton’s second law,
+which we can write as
+Integrating this equation between the time zero when the velocity is and the time t when the velocity is ,
+we have
+Thus,
+which, since we can write this as
+Now from the definition of velocity,
+so we have
+With the initial position zero, we have
+
+292 6 • Applications of Newton's Laws
+and
+As time increases, and the position of the boat approaches a limiting value
+Although this tells us that the boat takes an infinite amount of time to reach the boat effectively stops
+after a reasonable time. For example, at we have
+whereas we also have
+Therefore, the boat’s velocity and position have essentially reached their final values.
+b. With and we have so
+and
+Now the boat’s limiting position is
+Significance
+In the both of the previous examples, we found “limiting” values. The terminal velocity is the same as the limiting
+velocity, which is the velocity of the falling object after a (relatively) long time has passed. Similarly, the limiting
+distance of the boat is the distance the boat will travel after a long amount of time has passed. Due to the properties
+of exponential decay, the time involved to reach either of these values is actually not too long (certainly not an
+infinite amount of time!) but they are quickly found by taking the limit to infinity.
+CHECK YOUR UNDERSTANDING 6.11
+Suppose the resistive force of the air on a skydiver can be approximated by . If the terminal velocity of a
+100-kg skydiver is 60 m/s, what is the value of b?
+Access for free at openstax.org
+
+6 • Chapter Review 293
+Chapter Review
+Key Terms
+banked curve curve in a road that is sloping in a friction between the tires and the road; the net
+manner that helps a vehicle negotiate the curve external force on the vehicle equals the horizontal
+centripetal force any net force causing uniform centripetal force in the absence of friction
+circular motion inertial force force that has no physical origin
+Coriolis force inertial force causing the apparent kinetic friction force that opposes the motion of two
+deflection of moving objects when viewed in a systems that are in contact and moving relative to
+rotating frame of reference each other
+drag force force that always opposes the motion of noninertial frame of reference accelerated frame of
+an object in a fluid; unlike simple friction, the drag reference
+force is proportional to some function of the velocity static friction force that opposes the motion of two
+of the object in that fluid systems that are in contact and are not moving
+friction force that opposes relative motion or relative to each other
+attempts at motion between systems in contact terminal velocity constant velocity achieved by a
+ideal banking sloping of a curve in a road, where the falling object, which occurs when the weight of the
+angle of the slope allows the vehicle to negotiate object is balanced by the upward drag force
+the curve at a certain speed without the aid of
+Key Equations
+Magnitude of static friction
+Magnitude of kinetic friction
+Centripetal force
+Ideal angle of a banked curve
+Drag force
+Stokes’ law
+Summary
+6.1 Solving Problems with Newton’s Laws kinematics and dynamics to solve these
+problems.
+• Newton’s laws of motion can be applied in
+numerous situations to solve motion problems. 6.2 Friction
+• Some problems contain multiple force vectors
+• Friction is a contact force that opposes the
+acting in different directions on an object. Be
+motion or attempted motion between two
+sure to draw diagrams, resolve all force vectors
+systems. Simple friction is proportional to the
+into horizontal and vertical components, and
+normal force N supporting the two systems.
+draw a free-body diagram. Always analyze the
+• The magnitude of static friction force between
+direction in which an object accelerates so that
+two materials stationary relative to each other is
+you can determine whether or
+determined using the coefficient of static friction,
+which depends on both materials.
+• The normal force on an object is not always equal
+• The kinetic friction force between two materials
+in magnitude to the weight of the object. If an
+moving relative to each other is determined using
+object is accelerating vertically, the normal force
+the coefficient of kinetic friction, which also
+is less than or greater than the weight of the
+depends on both materials and is always less
+object. Also, if the object is on an inclined plane,
+than the coefficient of static friction.
+the normal force is always less than the full
+weight of the object. 6.3 Centripetal Force
+• Some problems contain several physical
+• Centripetal force is a “center-seeking” force
+quantities, such as forces, acceleration, velocity,
+that always points toward the center of rotation.
+or position. You can apply concepts from
+It is perpendicular to linear velocity and has the

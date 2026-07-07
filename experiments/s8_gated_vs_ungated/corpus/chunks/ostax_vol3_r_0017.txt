@@ -1,0 +1,234 @@
+# REAL PDF — openstax_vol3.pdf, pages 104-111
+############################################################
+
+96 Chapter 2 | Geometric Optics and Image Formation
+obj obj
+d d
+m obj =− i ≈ − i (linear magnification y objective)
+obj obj
+d f
+o
+M eye =1 + 25cm (angular magnification y eyepiece)
+eye
+f
+Here, f obj and f eye arethefocallengthsoftheobjectiveandtheeyepiece,respectively.Weassumethatthefinalimage
+is formed at the near point of the eye, providing the largest magnification. Note that the angular magnification of the
+eyepieceisthesameasobtainedearlierforthesimplemagnifyingglass.Thisshouldnotbesurprising,becausetheeyepiece
+is essentially a magnifying glass, and the same physics applies here. The net magnification M of the compound
+net
+microscope is the product of the linear magnification of the objective and the angular magnification of the eyepiece:
+d obj⎛f eye +25cm ⎞ (2.34)
+M =m obj M eye =− i ⎝ ⎠ .
+net obj eye
+f f
+Example 2.11
+Microscope Magnification
+Calculatethemagnificationofanobjectplaced6.20mmfromacompoundmicroscopethathasa6.00mm-focal
+length objective and a 50.0 mm-focal length eyepiece. The objective and eyepiece are separated by 23.0 cm.
+Strategy
+ThissituationissimilartothatshowninFigure2.38.Tofindtheoverallmagnification,wemustknowthelinear
+magnificationoftheobjectiveandtheangularmagnificationoftheeyepiece.WecanuseEquation2.34,butwe
+need to use the thin-lens equation to find the image distance d obj of the objective.
+i
+Solution
+Solving the thin-lens equation for d obj gives
+i
+−1
+⎛ ⎞
+d obj =⎜ 1 − 1 ⎟
+i ⎝f obj d obj⎠
+o
+−1
+⎛ 1 1 ⎞
+= − =186mm=18.6cm
+⎝6.00mm 6.20mm⎠
+Inserting this result into Equation 2.34 along with the known values f obj =6.20mm=0.620cm and
+f eye =50.0mm=5.00cm gives
+obj eye
+d (f +25cm)
+M =− i
+net obj eye
+f f
+(18.6cm)(5.00cm+25cm)
+=−
+(0.600cm)(5.00cm)
+=−186
+Significance
+Boththeobjectiveandtheeyepiececontributetotheoverallmagnification,whichislargeandnegative,consistent
+withFigure2.38,wheretheimageisseentobelargeandinverted.Inthiscase,theimageisvirtualandinverted,
+which cannot happen for a single element (seeFigure 2.26).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 97
+Figure 2.39 A compound microscope with the image created at infinity.
+Wenowcalculatethemagnifyingpowerofamicroscopewhentheimageisatinfinity,asshowninFigure2.39,because
+thismakesforthemostrelaxedviewing.Themagnifyingpowerofthemicroscopeistheproductoflinearmagnification
+m obj oftheobjectiveandtheangularmagnification M eye oftheeyepiece.Weknowthat m obj =−d obj /d obj andfrom
+i o
+the thin-lens equation we obtain
+obj obj obj obj (2.35)
+m obj =−
+d
+i =1−
+d
+i =
+f −d
+i .
+obj obj obj
+d f f
+o
+Ifthefinalimageisatinfinity,thentheimagecreatedbytheobjectivemustbelocatedatthefocalpointoftheeyepiece.This
+maybeseenbyconsideringthethin-lensequationwith d =∞ orbyrecallingthatraysthatpassthroughthefocalpoint
+i
+exitthelensparalleltoeachother,whichisequivalenttofocusingatinfinity.Formanymicroscopes,thedistancebetween
+the image-side focal point ofthe objective andthe object-side focal point ofthe eyepiece isstandardized at L=16cm.
+Thisdistanceiscalledthetubelengthofthemicroscope.FromFigure 2.39,weseethat L= f obj −d obj.Insertingthis
+i
+intoEquation 2.35gives
+m obj = L = 16cm . (2.36)
+obj obj
+f f
+Wenowneedtocalculatetheangularmagnificationoftheeyepiecewiththeimageatinfinity.Todoso,wetaketheratio
+of the angle θ subtended by the image to the angle θ subtended by the object at the near point of the eye
+image object
+(this is the closest that the unaided eye can view the object, and thus this is the position where the object will form the
+largestimageontheretinaoftheunaidedeye).UsingFigure2.39andworkinginthesmall-angleapproximation,wehave
+θ ≈h obj /f eye and θ ≈h obj /25cm,where h obj istheheightoftheimageformedbytheobjective,whichis
+image i object i i
+the object of the eyepiece. Thus, the angular magnification of the eyepiece is
+θ h obj (2.37)
+M eye = image = i 25cm = 25cm .
+θ object f eye h obj f eye
+i
+The net magnifying power of the compound microscope with the image at infinity is therefore
+
+98 Chapter 2 | Geometric Optics and Image Formation
+obj eye (16cm)(25cm) (2.38)
+M =m M =− .
+net obj eye
+f f
+The focal distances must be in centimeters. The minus sign indicates that the final image is inverted. Note that the only
+variablesintheequationarethefocaldistancesoftheeyepieceandtheobjective,whichmakesthisequationparticularly
+useful.
+Telescopes
+Telescopes are meant for viewing distant objects and produce an image that is larger than the image produced in the
+unaidedeye.Telescopesgatherfarmorelightthantheeye,allowingdimobjectstobeobservedwithgreatermagnification
+and better resolution. Telescopes were invented around 1600,and Galileo was the first to use them to study the heavens,
+withmonumentalconsequences.HeobservedthemoonsofJupiter,thecratersandmountainsonthemoon,thedetailsof
+sunspots, and the fact that the Milky Way is composed of a vast number of individual stars.
+Figure 2.40 (a) Galileo made telescopes with a convex objective and a concave eyepiece. These produce an
+upright image and are used in spyglasses. (b) Most simple refracting telescopes have two convex lenses. The
+objective forms a real, inverted image at (or just within) the focal plane of the eyepiece. This image serves as the
+object for the eyepiece. The eyepiece forms a virtual, inverted image that is magnified.
+Part(a)ofFigure 2.40showsarefractingtelescopemadeoftwolenses.Thefirstlens,calledtheobjective,formsareal
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 99
+imagewithinthefocallengthofthesecondlens,whichiscalledtheeyepiece.Theimageoftheobjectivelensservesasthe
+objectfortheeyepiece,whichformsamagnifiedvirtualimagethatisobservedbytheeye.ThisdesigniswhatGalileoused
+to observe the heavens.
+Althoughthearrangementofthelensesinarefractingtelescopelookssimilartothatinamicroscope,thereareimportant
+differences.Inatelescope,therealobjectisfarawayandtheintermediateimageissmallerthantheobject.Inamicroscope,
+therealobjectisverycloseandtheintermediateimageislargerthantheobject.Inboththetelescopeandthemicroscope,
+the eyepiece magnifies the intermediate image; in the telescope, however, this is the only magnification.
+The most common two-lens telescope is shown in part (b) of the figure. The object is so far from the telescope that it
+is essentially at infinity compared with the focal lengths of the lenses (d obj ≈∞), so the incoming rays are essentially
+o
+parallelandfocusonthefocalplane.Thus,thefirstimageisproducedat d obj = f obj,asshowninthefigure,andisnot
+i
+largecomparedwithwhatyoumightseebylookingdirectlyattheobject.However,theeyepieceofthetelescopeeyepiece
+(likethemicroscopeeyepiece)allowsyoutogetnearerthanyournearpointtothisfirstimageandsomagnifiesit(because
+you are near to it, it subtends a larger angle from your eye and so forms a larger image on your retina). As for a simple
+magnifier,theangularmagnificationofatelescopeistheratiooftheanglesubtendedbytheimage[θ inpart(b)]to
+image
+the angle subtended by the real object [θ in part (b)]:
+object
+θ (2.39)
+M = image .
+θ
+object
+To obtain an expression for the magnification that involves only the lens parameters, note that the focal plane of the
+objectivelensliesveryclosetothefocalplanoftheeyepiece.Ifweassumethattheseplanesaresuperposed,wehavethe
+situation shown inFigure 2.41.
+Figure 2.41 The focal plane of the objective lens of a telescope is very near to the focal plane of the eyepiece. The angle
+θ subtended by the image viewed through the eyepiece is larger than the angle θ subtended by the object when
+image object
+viewed with the unaided eye.
+Wefurtherassumethattheangles θ and θ aresmall,sothatthesmall-angleapproximationholds(tanθ≈θ).
+object image
+If the image formed at the focal plane has heighth, then
+h
+θ ≈tanθ =
+object object obj
+f
+θ ≈tanθ =
+−h
+image image eye
+f
+
+100 Chapter 2 | Geometric Optics and Image Formation
+where the minus sign is introduced because the height is negative if we measure both angles in the counterclockwise
+direction. Inserting these expressions intoEquation 2.39gives
+−h f obj f obj (2.40)
+M = i =− .
+f eye h i f eye
+Thus,toobtainthegreatestangularmagnification,itisbesttohaveanobjectivewithalongfocallengthandaneyepiece
+withashortfocallength.ThegreatertheangularmagnificationM,thelargeranobjectwillappearwhenviewedthrougha
+telescope,makingmoredetailsvisible.Limitstoobservabledetailsareimposedbymanyfactors,includinglensqualityand
+atmosphericdisturbance.Typicaleyepieceshavefocallengthsof2.5cmor1.25cm.Iftheobjectiveofthetelescopehasa
+focallengthof1meter,thentheseeyepiecesresultinmagnificationsof 40× and 80× ,respectively.Thus,theangular
+magnifications make the image appear 40 times or 80 times closer than the real object.
+Theminussigninthemagnificationindicatestheimageisinverted,whichisunimportantforobservingthestarsbutisareal
+problemforotherapplications,suchastelescopesonshipsortelescopicgunsights.Ifanuprightimageisneeded,Galileo’s
+arrangementinpart(a)ofFigure 2.40canbeused.Butamorecommonarrangementistouseathirdconvexlensasan
+eyepiece, increasing the distance between the first two and inverting the image once again, as seen inFigure 2.42.
+Figure 2.42 This arrangement of three lenses in a telescope produces an upright final image. The first two lenses are far
+enough apart that the second lens inverts the image of the first. The third lens acts as a magnifier and keeps the image upright
+and in a location that is easy to view.
+Thelargestrefractingtelescopeintheworldisthe40-inchdiameterYerkestelescopelocatedatLakeGeneva,Wisconsin
+(Figure 2.43), and operated by the University of Chicago.
+Itisverydifficultandexpensivetobuildlargerefractingtelescopes.Youneedlargedefect-freelenses,whichinitselfisa
+technicallydemandingtask.Arefractingtelescopebasicallylookslikeatubewithasupportstructuretorotateitindifferent
+directions.Arefractingtelescopesuffersfromseveralproblems.Theaberrationoflensescausestheimagetobeblurred.
+Also, as the lenses become thicker for larger lenses, more light is absorbed, making faint stars more difficult to observe.
+Large lenses are also very heavy and deform under their own weight. Some of these problems with refracting telescopes
+areaddressedbyavoidingrefractionforcollectinglightandinsteadusingacurvedmirrorinitsplace,asdevisedbyIsaac
+Newton. These telescopes are called reflecting telescopes.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 101
+Figure 2.43 In 1897, the Yerkes Observatory in Wisconsin (USA) built
+a large refracting telescope with an objective lens that is 40 inches in
+diameter and has a tube length of 62 feet. (credit: Yerkes Observatory,
+University of Chicago)
+Reflecting Telescopes
+IsaacNewtondesignedthefirstreflectingtelescopearound1670tosolvetheproblemofchromaticaberrationthathappens
+inallrefractingtelescopes.Inchromaticaberration,lightofdifferentcolorsrefractsbyslightlydifferentamountsinthelens.
+Asaresult,arainbowappearsaroundtheimageandtheimageappearsblurred.Inthereflectingtelescope,lightraysfroma
+distantsourcefalluponthesurfaceofaconcavemirrorfixedatthebottomendofthetube.Theuseofamirrorinsteadofa
+lenseliminateschromaticaberration.Theconcavemirrorfocusestheraysonitsfocalplane.Thedesignproblemishowto
+observethefocusedimage.Newtonusedadesigninwhichthefocusedlightfromtheconcavemirrorwasreflectedtoone
+sideofthetubeintoaneyepiece[part(a)ofFigure2.44].Thisarrangementiscommoninmanyamateurtelescopesandis
+called theNewtonian design.
+Sometelescopesreflectthelightbacktowardthemiddleoftheconcavemirrorusingaconvexmirror.Inthisarrangement,
+thelight-gatheringconcavemirrorhasaholeinthemiddle[part(b)ofthefigure].Thelightthenisincidentonaneyepiece
+lens.Thisarrangement oftheobjective andeyepiece iscalled theCassegraindesign.Mostbigtelescopes, includingthe
+Hubble space telescope, are of this design. Other arrangements are also possible. In some telescopes, a light detector is
+placed right at the spot where light is focused by the curved mirror.
+Figure 2.44 Reflecting telescopes: (a) In the Newtonian design, the eyepiece is located at the side of the telescope; (b) in the
+Cassegrain design, the eyepiece is located past a hole in the primary mirror.
+Most astronomical research telescopes are now of the reflecting type. One of the earliest large telescopes of this kind is
+the Hale 200-inch (or 5-meter) telescope built on Mount Palomar in southern California, which has a 200 inch-diameter
+mirror.Oneofthelargesttelescopesintheworldisthe10-meterKecktelescopeattheKeckObservatoryonthesummitof
+
+102 Chapter 2 | Geometric Optics and Image Formation
+thedormantMaunaKeavolcanoinHawaii.TheKeckObservatoryoperatestwo10-metertelescopes.Eachisnotasingle
+mirror, but is instead made up of 36 hexagonal mirrors. Furthermore, the two telescopes on the Keck can work together,
+whichincreasestheirpowertoaneffective85-metermirror.TheHubbletelescope(Figure2.45)isanotherlargereflecting
+telescope with a 2.4 meter-diameter primary mirror. The Hubble was put into orbit around Earth in 1990.
+Figure 2.45 The Hubble space telescope as seen from the Space Shuttle Discovery. (credit:
+modification of work by NASA)
+The angular magnification M of a reflecting telescope is also given by Equation 2.36. For a spherical mirror, the focal
+lengthishalftheradiusofcurvature,somakingalargeobjectivemirrornotonlyhelpsthetelescopecollectmorelightbut
+also increases the magnification of the image.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

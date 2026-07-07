@@ -1,0 +1,155 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 647-652
+############################################################
+
+13.6 • Tidal Forces 635
+FIGURE 13.26 Dramatic evidence of tidal forces can be seen on Io. The eruption seen in blue is due to the internal heat created by the tidal
+forces exerted on Io by Jupiter. (credit: modification of work by NASA/JPL/University of Arizona)
+For some stars, the effect of tidal forces can be catastrophic. The tidal forces in very close binary systems can be
+strong enough to rip matter from one star to the other, once the tidal forces exceed the cohesive self-gravitational
+forces that hold the stars together. This effect can be seen in normal stars that orbit nearby compact stars, such as
+neutron stars or black holes. Figure 13.27 shows an artist’s rendition of this process. As matter falls into the
+compact star, it forms an accretion disc that becomes super-heated and radiates in the X-ray spectrum.
+FIGURE 13.27 Tidal forces from a compact object can tear matter away from an orbiting star. In addition to the accretion disc orbiting the
+compact object, material is often ejected along relativistic jets as shown. (credit: modification of work by ESO/L. Calçada/M. Kornmesser)
+The energy output of these binary systems can exceed the typical output of thousands of stars. Another example
+might be a quasar. Quasars are very distant and immensely bright objects, often exceeding the energy output of
+entire galaxies. It is the general consensus among astronomers that they are, in fact, massive black holes producing
+radiant energy as matter that has been tidally ripped from nearby stars falls into them.
+
+636 13 • Gravitation
+13.7 Einstein's Theory of Gravity
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe how the theory of general relativity approaches gravitation
+• Explain the principle of equivalence
+• Calculate the Schwarzschild radius of an object
+• Summarize the evidence for black holes
+Newton’s law of universal gravitation accurately predicts much of what we see within our solar system. Indeed, only
+Newton’s laws have been needed to accurately send every space vehicle on its journey. The paths of Earth-crossing
+asteroids, and most other celestial objects, can be accurately determined solely with Newton’s laws. Nevertheless,
+many phenomena have shown a discrepancy from what Newton’s laws predict, including the orbit of Mercury and
+the effect that gravity has on light. In this section, we examine a different way of envisioning gravitation.
+A Revolution in Perspective
+In 1905, Albert Einstein published his theory of special relativity. This theory is discussed in great detail in Relativity
+(http://openstax.org/books/university-physics-volume-3/pages/5-introduction), so we say only a few words here. In
+this theory, no motion can exceed the speed of light—it is the speed limit of the Universe. This simple fact has been
+verified in countless experiments. However, it has incredible consequences—space and time are no longer absolute.
+Two people moving relative to one another do not agree on the length of objects or the passage of time. Almost all of
+the mechanics you learned in previous chapters, while remarkably accurate even for speeds of many thousands of
+miles per second, begin to fail when approaching the speed of light.
+This speed limit on the Universe was also a challenge to the inherent assumption in Newton’s law of gravitation that
+gravity is an action-at-a-distance force. That is, without physical contact, any change in the position of one mass is
+instantly communicated to all other masses. This assumption does not come from any first principle, as Newton’s
+theory simply does not address the question. (The same was believed of electromagnetic forces, as well. It is fair to
+say that most scientists were not completely comfortable with the action-at-a-distance concept.)
+A second assumption also appears in Newton’s law of gravitation Equation 13.1. The masses are assumed to be
+exactly the same as those used in Newton’s second law, . We made that assumption in many of our
+derivations in this chapter. Again, there is no underlying principle that this must be, but experimental results are
+consistent with this assumption. In Einstein’s subsequent theory of general relativity (1916), both of these issues
+were addressed. His theory was a theory of space-time geometry and how mass (and acceleration) distort and
+interact with that space-time. It was not a theory of gravitational forces. The mathematics of the general theory is
+beyond the scope of this text, but we can look at some underlying principles and their consequences.
+The Principle of Equivalence
+Einstein came to his general theory in part by wondering why someone who was free falling did not feel their weight.
+Indeed, it is common to speak of astronauts orbiting Earth as being weightless, despite the fact that Earth’s gravity
+is still quite strong there. In Einstein’s general theory, there is no difference between free fall and being weightless.
+This is called the principle of equivalence. The equally surprising corollary to this is that there is no difference
+between a uniform gravitational field and a uniform acceleration in the absence of gravity. Let’s focus on this last
+statement. Although a perfectly uniform gravitational field is not feasible, we can approximate it very well.
+Within a reasonably sized laboratory on Earth, the gravitational field is essentially uniform. The corollary states
+that any physical experiments performed there have the identical results as those done in a laboratory accelerating
+at in deep space, well away from all other masses. Figure 13.28 illustrates the concept.
+Access for free at openstax.org
+
+13.7 • Einstein's Theory of Gravity 637
+FIGURE 13.28 According to the principle of equivalence, the results of all experiments performed in a laboratory in a uniform gravitational
+field are identical to the results of the same experiments performed in a uniformly accelerating laboratory.
+How can these two apparently fundamentally different situations be the same? The answer is that gravitation is not
+a force between two objects but is the result of each object responding to the effect that the other has on the space-
+time surrounding it. A uniform gravitational field and a uniform acceleration have exactly the same effect on space-
+time.
+A Geometric Theory of Gravity
+Euclidian geometry assumes a “flat” space in which, among the most commonly known attributes, a straight line is
+the shortest distance between two points, the sum of the angles of all triangles must be 180 degrees, and parallel
+lines never intersect. Non-Euclidean geometry was not seriously investigated until the nineteenth century, so it is
+not surprising that Euclidean space is inherently assumed in all of Newton’s laws.
+The general theory of relativity challenges this long-held assumption. Only empty space is flat. The presence of
+mass—or energy, since relativity does not distinguish between the two—distorts or curves space and time, or space-
+time, around it. The motion of any other mass is simply a response to this curved space-time. Figure 13.29 is a two-
+dimensional representation of a smaller mass orbiting in response to the distorted space created by the presence of
+a larger mass. In a more precise but confusing picture, we would also see space distorted by the orbiting mass, and
+both masses would be in motion in response to the total distortion of space. Note that the figure is a representation
+to help visualize the concept. These are distortions in our three-dimensional space and time. We do not see them as
+we would a dimple on a ball. We see the distortion only by careful measurements of the motion of objects and light
+as they move through space.
+
+638 13 • Gravitation
+FIGURE 13.29 A smaller mass orbiting in the distorted space-time of a larger mass. In fact, all mass or energy distorts space-time.
+For weak gravitational fields, the results of general relativity do not differ significantly from Newton’s law of
+gravitation. But for intense gravitational fields, the results diverge, and general relativity has been shown to predict
+the correct results. Even in our Sun’s relatively weak gravitational field at the distance of Mercury’s orbit, we can
+observe the effect. Starting in the mid-1800s, Mercury’s elliptical orbit has been carefully measured. However,
+although it is elliptical, its motion is complicated by the fact that the perihelion position of the ellipse slowly
+advances. Most of the advance is due to the gravitational pull of other planets, but a small portion of that
+advancement could not be accounted for by Newton’s law. At one time, there was even a search for a “companion”
+planet that would explain the discrepancy. But general relativity correctly predicts the measurements. Since then,
+many measurements, such as the deflection of light of distant objects by the Sun, have verified that general
+relativity correctly predicts the observations.
+We close this discussion with one final comment. We have often referred to distortions of space-time or distortions
+in both space and time. In both special and general relativity, the dimension of time has equal footing with each
+spatial dimension (differing in its place in both theories only by an ultimately unimportant scaling factor). Near a
+very large mass, not only is the nearby space “stretched out,” but time is dilated or “slowed.” We discuss these
+effects more in the next section.
+Black Holes
+Einstein’s theory of gravitation is expressed in one deceptively simple-looking tensor equation (tensors are a
+generalization of scalars and vectors), which expresses how a mass determines the curvature of space-time around
+it. The solutions to that equation yield one of the most fascinating predictions: the black hole. The prediction is that
+if an object is sufficiently dense, it will collapse in upon itself and be surrounded by an event horizon from which
+nothing can escape. The name “black hole,” which was coined by astronomer John Wheeler in 1969, refers to the
+fact that light cannot escape such an object. Karl Schwarzschild was the first person to note this phenomenon in
+1916, but at that time, it was considered mostly to be a mathematical curiosity.
+Surprisingly, the idea of a massive body from which light cannot escape dates back to the late 1700s.
+Independently, John Michell and Pierre-Simon Laplace used Newton’s law of gravitation to show that light leaving
+the surface of a star with enough mass could not escape. Their work was based on the fact that the speed of light
+had been measured by Ole Rømer in 1676. He noted discrepancies in the data for the orbital period of the moon Io
+Access for free at openstax.org
+
+13.7 • Einstein's Theory of Gravity 639
+about Jupiter. Rømer realized that the difference arose from the relative positions of Earth and Jupiter at different
+times and that he could find the speed of light from that difference. Michell and Laplace both realized that since light
+had a finite speed, there could be a star massive enough that the escape speed from its surface could exceed that
+speed. Hence, light always would fall back to the star. Oddly, observers far enough away from the very largest stars
+would not be able to see them, yet they could see a smaller star from the same distance.
+Recall that in Gravitational Potential Energy and Total Energy, we found that the escape speed, given by Equation
+13.6, is independent of the mass of the object escaping. Even though the nature of light was not fully understood at
+the time, the mass of light, if it had any, was not relevant. Hence, Equation 13.6 should be valid for light. Substituting
+c, the speed of light, for the escape velocity, we have
+Thus, we only need values for R and M such that the escape velocity exceeds c, and then light will not be able to
+escape. Michell posited that if a star had the density of our Sun and a radius that extended just beyond the orbit of
+Mars, then light would not be able to escape from its surface. He also conjectured that we would still be able to
+detect such a star from the gravitational effect it would have on objects around it. This was an insightful conclusion,
+as this is precisely how we infer the existence of such objects today. While we have yet to, and may never, visit a
+black hole, the circumstantial evidence for them has become so compelling that few astronomers doubt their
+existence.
+Before we examine some of that evidence, we turn our attention back to Schwarzschild’s solution to the tensor
+equation from general relativity. In that solution arises a critical radius, now called the Schwarzschild radius .
+For any mass M, if that mass were compressed to the extent that its radius becomes less than the Schwarzschild
+radius, then the mass will collapse to a singularity, and anything that passes inside that radius cannot escape. Once
+inside , the arrow of time takes all things to the singularity. (In a broad mathematical sense, a singularity is where
+the value of a function goes to infinity. In this case, it is a point in space of zero volume with a finite mass. Hence, the
+mass density and gravitational energy become infinite.) The Schwarzschild radius is given by
+13.12
+If you look at our escape velocity equation with , you will notice that it gives precisely this result. But that is
+merely a fortuitous accident caused by several incorrect assumptions. One of these assumptions is the use of the
+incorrect classical expression for the kinetic energy for light. Just how dense does an object have to be in order to
+turn into a black hole?
+EXAMPLE 13.15
+Calculating the Schwarzschild Radius
+Calculate the Schwarzschild radius for both the Sun and Earth. Compare the density of the nucleus of an atom to the
+density required to compress Earth’s mass uniformly to its Schwarzschild radius. The density of a nucleus is about
+.
+Strategy
+We use Equation 13.12 for this calculation. We need only the masses of Earth and the Sun, which we obtain from the
+astronomical data given in Appendix D.
+Solution
+Substituting the mass of the Sun, we have

@@ -1,0 +1,196 @@
+# REAL PDF — openstax_vol1.pdf, pages 334-340
+############################################################
+
+322 7 • Work and Kinetic Energy
+moving with the person?
+Strategy
+Since speeds are given, we can use to calculate the person’s kinetic energy. However, in part (a), the person’s
+speed is relative to the subway car (as given); in part (b), it is relative to the tracks; and in part (c), it is zero. If we
+denote the car frame by C, the track frame by T, and the person by P, the relative velocities in part (b) are related by
+We can assume that the central aisle and the tracks lie along the same line, but the direction the
+person is walking relative to the car isn’t specified, so we will give an answer for each possibility, ,
+as shown in Figure 7.10.
+FIGURE 7.10 The possible motions of a person walking in a train are (a) toward the front of the car and (b) toward the back of the car.
+Solution
+a.
+b. Therefore, the two possible values for kinetic energy relative to the track are
+and
+c. In a frame where as well.
+Significance
+You can see that the kinetic energy of an object can have very different values, depending on the frame of reference.
+However, the kinetic energy of an object can never be negative, since it is the product of the mass and the square of
+the speed, both of which are always positive or zero.
+CHECK YOUR UNDERSTANDING 7.6
+You are rowing a boat parallel to the banks of a river. Your kinetic energy relative to the banks is less than your
+kinetic energy relative to the water. Are you rowing with or against the current?
+The kinetic energy of a particle is a single quantity, but the kinetic energy of a system of particles can sometimes be
+divided into various types, depending on the system and its motion. For example, if all the particles in a system have
+the same velocity, the system is undergoing translational motion and has translational kinetic energy. If an object is
+rotating, it could have rotational kinetic energy, or if it’s vibrating, it could have vibrational kinetic energy. The kinetic
+energy of a system, relative to an internal frame of reference, may be called internal kinetic energy. The kinetic
+energy associated with random molecular motion may be called thermal energy. These names will be used in later
+chapters of the book, when appropriate. Regardless of the name, every kind of kinetic energy is the same physical
+quantity, representing energy associated with motion.
+Access for free at openstax.org
+
+7.3 • Work-Energy Theorem 323
+EXAMPLE 7.8
+Special Names for Kinetic Energy
+(a) A player lobs a mid-court pass with a 624-g basketball, which covers 15 m in 2 s. What is the basketball’s
+horizontal translational kinetic energy while in flight? (b) An average molecule of air, in the basketball in part (a), has
+a mass of 29 u, and an average speed of 500 m/s, relative to the basketball. There are about molecules
+inside it, moving in random directions, when the ball is properly inflated. What is the average translational kinetic
+energy of the random motion of all the molecules inside, relative to the basketball? (c) How fast would the
+basketball have to travel relative to the court, as in part (a), so as to have a kinetic energy equal to the amount in
+part (b)?
+Strategy
+In part (a), first find the horizontal speed of the basketball and then use the definition of kinetic energy in terms of
+mass and speed, . Then in part (b), convert unified units to kilograms and then use to get the
+average translational kinetic energy of one molecule, relative to the basketball. Then multiply by the number of
+molecules to get the total result. Finally, in part (c), we can substitute the amount of kinetic energy in part (b), and
+the mass of the basketball in part (a), into the definition , and solve for v.
+Solution
+a. The horizontal speed is (15 m)/(2 s), so the horizontal kinetic energy of the basketball is
+b. The average translational kinetic energy of a molecule is
+and the total kinetic energy of all the molecules is
+c.
+Significance
+In part (a), this kind of kinetic energy can be called the horizontal kinetic energy of an object (the basketball),
+relative to its surroundings (the court). If the basketball were spinning, all parts of it would have not just the average
+speed, but it would also have rotational kinetic energy. Part (b) reminds us that this kind of kinetic energy can be
+called internal or thermal kinetic energy. Notice that this energy is about a hundred times the energy in part (a). How
+to make use of thermal energy will be the subject of the chapters on thermodynamics. In part (c), since the energy in
+part (b) is about 100 times that in part (a), the speed should be about 10 times as big, which it is (76 compared to
+7.5 m/s).
+7.3 Work-Energy Theorem
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Apply the work-energy theorem to find information about the motion of a particle, given the forces acting
+on it
+• Use the work-energy theorem to find information about the forces acting on a particle, given information
+about its motion
+We have discussed how to find the work done on a particle by the forces that act on it, but how is that work
+manifested in the motion of the particle? According to Newton’s second law of motion, the sum of all the forces
+acting on a particle, or the net force, determines the rate of change in the momentum of the particle, or its motion.
+Therefore, we should consider the work done by all the forces acting on a particle, or the net work, to see what
+
+324 7 • Work and Kinetic Energy
+effect it has on the particle’s motion.
+Let’s start by looking at the net work done on a particle as it moves over an infinitesimal displacement, which is the
+dot product of the net force and the displacement: Newton’s second law tells us that
+so For the mathematical functions describing the motion of a physical
+particle, we can rearrange the differentials dt, etc., as algebraic quantities in this expression, that is,
+where we substituted the velocity for the time derivative of the displacement and used the commutative property of
+the dot product [Equation 2.30]. Since derivatives and integrals of scalars are probably more familiar to you at this
+point, we express the dot product in terms of Cartesian coordinates before we integrate between any two points A
+and B on the particle’s trajectory. This gives us the net work done on the particle:
+7.8
+In the middle step, we used the fact that the square of the velocity is the sum of the squares of its Cartesian
+components, and in the last step, we used the definition of the particle’s kinetic energy. This important result is
+called the work-energy theorem (Figure 7.11).
+WORK-ENERGY THEOREM
+The net work done on a particle equals the change in the particle’s kinetic energy:
+7.9
+FIGURE 7.11 Horse pulls are common events at state fairs. The work done by the horses pulling on the load results in a change in kinetic
+energy of the load, ultimately going faster. (credit: modification of work by “Jassen”/ Flickr)
+According to this theorem, when an object slows down, its final kinetic energy is less than its initial kinetic energy,
+the change in its kinetic energy is negative, and so is the net work done on it. If an object speeds up, the net work
+done on it is positive. When calculating the net work, you must include all the forces that act on an object. If you
+leave out any forces that act on an object, or if you include any forces that don’t act on it, you will get a wrong result.
+The importance of the work-energy theorem, and the further generalizations to which it leads, is that it makes some
+types of calculations much simpler to accomplish than they would be by trying to solve Newton’s second law. For
+example, in Newton’s Laws of Motion, we found the speed of an object sliding down a frictionless plane by solving
+Access for free at openstax.org
+
+7.3 • Work-Energy Theorem 325
+Newton’s second law for the acceleration and using kinematic equations for constant acceleration, obtaining
+where s is the displacement down the plane.
+We can also get this result from the work-energy theorem in Equation 7.1. Since only two forces are acting on the
+object-gravity and the normal force-and the normal force doesn't do any work, the net work is just the work done by
+gravity. The work dW is the dot product of the force of gravity or and the displacement .
+After taking the dot product and integrating from an initial position to a final position , one finds the net work
+as
+where y is positive up. The work-energy theorem says that this equals the change in kinetic energy:
+Using a right triangle, we can see that so the result for the final speed is the same.
+What is gained by using the work-energy theorem? The answer is that for a frictionless plane surface, not much.
+However, Newton’s second law is easy to solve only for this particular case, whereas the work-energy theorem gives
+the final speed for any shaped frictionless surface. For an arbitrary curved surface, the normal force is not constant,
+and Newton’s second law may be difficult or impossible to solve analytically. Constant or not, for motion along a
+surface, the normal force never does any work, because it’s perpendicular to the displacement. A calculation using
+the work-energy theorem avoids this difficulty and applies to more general situations.
+PROBLEM-SOLVING STRATEGY
+Work-Energy Theorem
+1. Draw a free-body diagram for each force on the object.
+2. Determine whether or not each force does work over the displacement in the diagram. Be sure to keep any
+positive or negative signs in the work done.
+3. Add up the total amount of work done by each force.
+4. Set this total work equal to the change in kinetic energy and solve for any unknown parameter.
+5. Check your answers. If the object is traveling at a constant speed or zero acceleration, the total work done
+should be zero and match the change in kinetic energy. If the total work is positive, the object must have sped
+up or increased kinetic energy. If the total work is negative, the object must have slowed down or decreased
+kinetic energy.
+EXAMPLE 7.9
+Loop-the-Loop
+The frictionless track for a toy car includes a loop-the-loop of radius R. How high, measured from the bottom of the
+loop, must the car be placed to start from rest on the approaching section of track and go all the way around the
+loop?
+
+326 7 • Work and Kinetic Energy
+FIGURE 7.12 A frictionless track for a toy car has a loop-the-loop in it. How high must the car start so that it can go around the loop without
+falling off?
+Strategy
+The free-body diagram at the final position of the object is drawn in Figure 7.12. The gravitational work is the only
+work done over the displacement that is not zero. Since the weight points in the same direction as the net vertical
+displacement, the total work done by the gravitational force is positive. From the work-energy theorem, the starting
+height determines the speed of the car at the top of the loop,
+where the notation is shown in the accompanying figure. At the top of the loop, the normal force and gravity are both
+down and the acceleration is centripetal, so
+The condition for maintaining contact with the track is that there must be some normal force, however slight; that is,
+. Substituting for and N, we can find the condition for .
+Solution
+Implement the steps in the strategy to arrive at the desired result:
+Significance
+On the surface of the loop, the normal component of gravity and the normal contact force must provide the
+centripetal acceleration of the car going around the loop. The tangential component of gravity slows down or speeds
+up the car. A child would find out how high to start the car by trial and error, but now that you know the work-energy
+theorem, you can predict the minimum height (as well as other more useful results) from physical principles. By
+using the work-energy theorem, you did not have to solve a differential equation to determine the height.
+CHECK YOUR UNDERSTANDING 7.7
+Suppose the radius of the loop-the-loop in Example 7.9 is 15 cm and the toy car starts from rest at a height of 45 cm
+above the bottom. What is its speed at the top of the loop?
+INTERACTIVE
+Watch this video (https://openstax.org/l/21rollcoas) to see a looping rollercoaster.
+In situations where the motion of an object is known, but the values of one or more of the forces acting on it are not
+known, you may be able to use the work-energy theorem to get some information about the forces. Work depends
+Access for free at openstax.org
+
+7.3 • Work-Energy Theorem 327
+on the force and the distance over which it acts, so the information is provided via their product.
+EXAMPLE 7.10
+Determining a Stopping Force
+A bullet has a mass of 40 grains (2.60 g) and a muzzle velocity of 1100 ft./s (335 m/s). It can penetrate eight 1-inch
+pine boards, each with thickness 0.75 inches. What is the average stopping force exerted by the wood, as shown in
+Figure 7.13?
+FIGURE 7.13 The boards exert a force to stop the bullet. As a result, the boards do work and the bullet loses kinetic energy.
+Strategy
+We can assume that under the general conditions stated, the bullet loses all its kinetic energy penetrating the
+boards, so the work-energy theorem says its initial kinetic energy is equal to the average stopping force times the
+distance penetrated. The change in the bullet’s kinetic energy and the net work done stopping it are both negative,
+so when you write out the work-energy theorem, with the net work equal to the average force times the stopping
+distance, that’s what you get. The total thickness of eight 1-inch pine boards that the bullet penetrates is
+Solution
+Applying the work-energy theorem, we get
+so
+Significance
+We could have used Newton’s second law and kinematics in this example, but the work-energy theorem also
+supplies an answer to less simple situations. The penetration of a bullet, fired vertically upward into a block of wood,
+is discussed in one section of Asif Shakur’s recent article [“Bullet-Block Science Video Puzzle.” The Physics Teacher
+(January 2015) 53(1): 15-16]. If the bullet is fired dead center into the block, it loses all its kinetic energy and
+penetrates slightly farther than if fired off-center. The reason is that if the bullet hits off-center, it has a little kinetic
+energy after it stops penetrating, because the block rotates. The work-energy theorem implies that a smaller change
+in kinetic energy results in a smaller penetration. You will understand more of the physics in this interesting article
+after you finish reading Angular Momentum.
+INTERACTIVE
+Learn more about work and energy in this PhET simulation (https://openstax.org/l/21ramp) called “the ramp.” Try
+changing the force pushing the box and the frictional force along the incline. The work and energy plots can be
+examined to note the total work done and change in kinetic energy of the box.

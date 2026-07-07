@@ -1,0 +1,163 @@
+# REAL PDF — openstax_vol1.pdf, pages 294-300
+############################################################
+
+282 6 • Applications of Newton's Laws
+example, on a merry-go-round or on a rotating planet. Noninertial (accelerated) frames of reference are used when
+it is useful to do so. Different frames of reference must be considered in discussing the motion of an astronaut in a
+spacecraft traveling at speeds near the speed of light, as you will appreciate in the study of the special theory of
+relativity.
+Let us now take a mental ride on a merry-go-round—specifically, a rapidly rotating playground merry-go-round
+(Figure 6.25). You take the merry-go-round to be your frame of reference because you rotate together. When
+rotating in that noninertial frame of reference, you feel an inertial force that tends to throw you off; this is often
+referred to as a centrifugal force (not to be confused with centripetal force). Centrifugal force is a commonly used
+term, but it does not actually exist. You must hang on tightly to counteract your inertia (which people often refer to
+as centrifugal force). In Earth’s frame of reference, there is no force trying to throw you off; we emphasize that
+centrifugal force is a fiction. You must hang on to make yourself go in a circle because otherwise you would go in a
+straight line, right off the merry-go-round, in keeping with Newton’s first law. But the force you exert acts toward the
+center of the circle.
+FIGURE 6.25 (a) A rider on a merry-go-round feels as if he is being thrown off. This inertial force is sometimes mistakenly called the
+centrifugal force in an effort to explain the rider’s motion in the rotating frame of reference. (b) In an inertial frame of reference and
+according to Newton’s laws, it is his inertia that carries him off (the unshaded rider has and heads in a straight line). A force,
+, is needed to cause a circular path.
+This inertial effect, carrying you away from the center of rotation if there is no centripetal force to cause circular
+motion, is put to good use in centrifuges (Figure 6.26). A centrifuge spins a sample very rapidly, as mentioned earlier
+in this chapter. Viewed from the rotating frame of reference, the inertial force throws particles outward, hastening
+their sedimentation. The greater the angular velocity, the greater the centrifugal force. But what really happens is
+that the inertia of the particles carries them along a line tangent to the circle while the test tube is forced in a
+circular path by a centripetal force.
+Access for free at openstax.org
+
+6.3 • Centripetal Force 283
+FIGURE 6.26 Centrifuges use inertia to perform their task. Particles in the fluid sediment settle out because their inertia carries them away
+from the center of rotation. The large angular velocity of the centrifuge quickens the sedimentation. Ultimately, the particles come into
+contact with the test tube walls, which then supply the centripetal force needed to make them move in a circle of constant radius.
+Let us now consider what happens if something moves in a rotating frame of reference. For example, what if you
+slide a ball directly away from the center of the merry-go-round, as shown in Figure 6.27? The ball follows a straight
+path relative to Earth (assuming negligible friction) and a path curved to the right on the merry-go-round’s surface. A
+person standing next to the merry-go-round sees the ball moving straight and the merry-go-round rotating
+underneath it. In the merry-go-round’s frame of reference, we explain the apparent curve to the right by using an
+inertial force, called the Coriolis force, which causes the ball to curve to the right. The Coriolis force can be used by
+anyone in that frame of reference to explain why objects follow curved paths and allows us to apply Newton’s laws
+in noninertial frames of reference.
+FIGURE 6.27 Looking down on the counterclockwise rotation of a merry-go-round, we see that a ball slid straight toward the edge follows a
+path curved to the right. The person slides the ball toward point B, starting at point A. Both points rotate to the shaded positions (A’ and B’)
+shown in the time that the ball follows the curved path in the rotating frame and a straight path in Earth’s frame.
+Up until now, we have considered Earth to be an inertial frame of reference with little or no worry about effects due
+to its rotation. Yet such effects do exist—in the rotation of weather systems, for example. Most consequences of
+Earth’s rotation can be qualitatively understood by analogy with the merry-go-round. Viewed from above the North
+Pole, Earth rotates counterclockwise, as does the merry-go-round in Figure 6.27. As on the merry-go-round, any
+motion in Earth’s Northern Hemisphere experiences a Coriolis force to the right. Just the opposite occurs in the
+Southern Hemisphere; there, the force is to the left. Because Earth’s angular velocity is small, the Coriolis force is
+usually negligible, but for large-scale motions, such as wind patterns, it has substantial effects.
+
+284 6 • Applications of Newton's Laws
+The Coriolis force causes hurricanes in the Northern Hemisphere to rotate in the counterclockwise direction,
+whereas tropical cyclones in the Southern Hemisphere rotate in the clockwise direction. (The terms hurricane,
+typhoon, and tropical storm are regionally specific names for cyclones, which are storm systems characterized by
+low pressure centers, strong winds, and heavy rains.) Figure 6.28 helps show how these rotations take place. Air
+flows toward any region of low pressure, and tropical cyclones contain particularly low pressures. Thus winds flow
+toward the center of a tropical cyclone or a low-pressure weather system at the surface. In the Northern
+Hemisphere, these inward winds are deflected to the right, as shown in the figure, producing a counterclockwise
+circulation at the surface for low-pressure zones of any type. Low pressure at the surface is associated with rising
+air, which also produces cooling and cloud formation, making low-pressure patterns quite visible from space.
+Conversely, wind circulation around high-pressure zones is clockwise in the Southern Hemisphere but is less visible
+because high pressure is associated with sinking air, producing clear skies.
+FIGURE 6.28 (a) The counterclockwise rotation of this Northern Hemisphere hurricane is a major consequence of the Coriolis force. (b)
+Without the Coriolis force, air would flow straight into a low-pressure zone, such as that found in tropical cyclones. (c) The Coriolis force
+deflects the winds to the right, producing a counterclockwise rotation. (d) Wind flowing away from a high-pressure zone is also deflected to
+the right, producing a clockwise rotation. (e) The opposite direction of rotation is produced by the Coriolis force in the Southern
+Hemisphere, leading to tropical cyclones. (credit a and credit e: modifications of work by NASA)
+The rotation of tropical cyclones and the path of a ball on a merry-go-round can just as well be explained by inertia
+and the rotation of the system underneath. When noninertial frames are used, inertial forces, such as the Coriolis
+force, must be invented to explain the curved path. There is no identifiable physical source for these inertial forces.
+In an inertial frame, inertia explains the path, and no force is found to be without an identifiable source. Either view
+allows us to describe nature, but a view in an inertial frame is the simplest in the sense that all forces have origins
+and explanations.
+6.4 Drag Force and Terminal Speed
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Express the drag force mathematically
+• Describe applications of the drag force
+• Define terminal velocity
+• Determine an object’s terminal velocity given its mass
+Another interesting force in everyday life is the force of drag on an object when it is moving in a fluid (either a gas or
+a liquid). You feel the drag force when you move your hand through water. You might also feel it if you move your
+Access for free at openstax.org
+
+6.4 • Drag Force and Terminal Speed 285
+hand during a strong wind. The faster you move your hand, the harder it is to move. You feel a smaller drag force
+when you tilt your hand so only the side goes through the air—you have decreased the area of your hand that faces
+the direction of motion.
+Drag Forces
+Like friction, the drag force always opposes the motion of an object. Unlike simple friction, the drag force is
+proportional to some function of the velocity of the object in that fluid. This functionality is complicated and
+depends upon the shape of the object, its size, its velocity, and the fluid it is in. For most large objects such as
+cyclists, cars, and baseballs not moving too slowly, the magnitude of the drag force is proportional to the square
+of the speed of the object. We can write this relationship mathematically as When taking into account
+other factors, this relationship becomes
+6.5
+where C is the drag coefficient, A is the area of the object facing the fluid, and is the density of the fluid. (Recall
+that density is mass per unit volume.) This equation can also be written in a more generalized fashion as
+where b is a constant equivalent to We have set the exponent n for these equations as 2 because when an
+object is moving at high velocity through air, the magnitude of the drag force is proportional to the square of the
+speed. As we shall see in Fluid Mechanics, for small particles moving at low speeds in a fluid, the exponent n is
+equal to 1.
+DRAG FORCE
+Drag force is proportional to the square of the speed of the object. Mathematically,
+where C is the drag coefficient, A is the area of the object facing the fluid, and is the density of the fluid.
+Athletes as well as car designers seek to reduce the drag force to lower their race times (Figure 6.29). Aerodynamic
+shaping of an automobile can reduce the drag force and thus increase a car’s gas mileage.
+FIGURE 6.29 From racing cars to bobsled racers, aerodynamic shaping is crucial to achieving top speeds. Bobsleds are designed for speed
+and are shaped like a bullet with tapered fins. (credit: “U.S. Army”/Wikimedia Commons)
+The value of the drag coefficient C is determined empirically, usually with the use of a wind tunnel (Figure 6.30).
+
+286 6 • Applications of Newton's Laws
+FIGURE 6.30 NASA researchers test a model plane in a wind tunnel. (credit: NASA/Ames)
+The drag coefficient can depend upon velocity, but we assume that it is a constant here. Table 6.2 lists some typical
+drag coefficients for a variety of objects. Notice that the drag coefficient is a dimensionless quantity. At highway
+speeds, over of the power of a car is used to overcome air drag. The most fuel-efficient cruising speed is about
+70–80 km/h (about 45–50 mi/h). For this reason, during the 1970s oil crisis in the United States, maximum speeds
+on highways were set at about 90 km/h (55 mi/h).
+Object C
+Airfoil 0.05
+Toyota Camry 0.28
+Ford Focus 0.32
+Honda Civic 0.36
+Ferrari Testarossa 0.37
+Dodge Ram Pickup 0.43
+Sphere 0.45
+Hummer H2 SUV 0.64
+Skydiver (feet first) 0.70
+TABLE 6.2 Typical Values of Drag
+Coefficient C
+Access for free at openstax.org
+
+6.4 • Drag Force and Terminal Speed 287
+Object C
+Bicycle 0.90
+Skydiver (horizontal) 1.0
+Circular flat plate 1.12
+TABLE 6.2 Typical Values of Drag
+Coefficient C
+Substantial research is under way in the sporting world to minimize drag. The dimples on golf balls are being
+redesigned, as are the clothes that athletes wear. Bicycle racers and some swimmers and runners wear full
+bodysuits. Australian Cathy Freeman wore a full body suit in the 2000 Sydney Olympics and won a gold medal in the
+400-m race. Many swimmers in the 2008 Beijing Olympics wore (Speedo) body suits; it might have made a
+difference in breaking many world records (Figure 6.31). Most elite swimmers (and cyclists) shave their body hair.
+Such innovations can have the effect of slicing away milliseconds in a race, sometimes making the difference
+between a gold and a silver medal. One consequence is that careful and precise guidelines must be continuously
+developed to maintain the integrity of the sport.
+FIGURE 6.31 Body suits, such as this LZR Racer Suit, have been credited with aiding in many world records after their release in 2008.
+Smoother “skin” and more compression forces on a swimmer’s body provide at least less drag. (credit: NASA/Kathy Barnstorff)
+Terminal Velocity
+Some interesting situations connected to Newton’s second law occur when considering the effects of drag forces
+upon a moving object. For instance, consider a skydiver falling through air under the influence of gravity. The two
+forces acting on him are the force of gravity and the drag force (ignoring the small buoyant force). The downward
+force of gravity remains constant regardless of the velocity at which the person is moving. However, as the person’s
+velocity increases, the magnitude of the drag force increases until the magnitude of the drag force is equal to the
+gravitational force, thus producing a net force of zero. A zero net force means that there is no acceleration, as shown
+by Newton’s second law. At this point, the person’s velocity remains constant and we say that the person has
+reached his terminal velocity Since is proportional to the speed squared, a heavier skydiver must go
+faster for to equal his weight. Let’s see how this works out more quantitatively.
+At the terminal velocity,
+Thus,

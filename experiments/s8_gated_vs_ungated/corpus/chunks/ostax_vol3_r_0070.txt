@@ -1,0 +1,306 @@
+# REAL PDF — openstax_vol3.pdf, pages 425-431
+############################################################
+
+Chapter 9 | Condensed Matter Physics 417
+U diss =α k r e2⎛ ⎝ 1− 1 n ⎞ ⎠ . (9.25)
+0
+Thisisthedissociationenergyofthesolid.Thedissociationenergycanalsobeusedtodescribethetotalenergyneeded
+tobreakamoleofasolidintoitsconstituentions,oftenexpressedinkJ/mole.Thedissociationenergycanbedetermined
+experimentally using the latent heat of vaporization. Sample values are given in the following table.
+F− Cl− Br− I−
+Li + 1036 853 807 757
+Na + 923 787 747 704
+K + 821 715 682 649
+Rb + 785 689 660 630
+Cs + 740 659 631 604
+Table 9.2Lattice Energy for Alkali Metal
+Halides
+Thus, we can determine the Madelung constant from the crystal structure and n from the lattice energy. For NaCl, we
+have r =2.81Å, n≈8,and U =7.84eV/ion pair. Thisdissociationenergyisrelativelylarge.Themostenergetic
+0 diss
+photon from the visible spectrum, for example, has an energy of approximately
+hf =(4.14×10 −15 eV·s)(7.5×1014 Hz)=3.1eV.
+Because the ions in crystals are so tightly bound, ionic crystals have the following general characteristics:
+1. They are fairly hard and stable.
+2. They vaporize at relatively high temperatures (1000 to 2000 K).
+3. They are transparent to visible radiation, because photons in the visible portion of the spectrum are not energetic
+enough to excite an electron from its ground state to an excited state.
+4. They are poor electrical conductors, because they contain effectively no free electrons.
+5. They are usually soluble in water, because the water molecule has a large dipole moment whose electric field is
+strong enough to break the electrostatic bonds between the ions.
+Example 9.3
+The Dissociation Energy of Salt
+Determinethedissociationenergyofsodiumchloride(NaCl)inkJ/mol.(Hint:TherepulsionconstantnofNaCl
+is approximately 8.)
+Strategy
+Asodiumchloridecrystalhasanequilibriumseparationof0.282nm.(Comparethisvaluewith0.236nmfora
+freediatomicunitofNaCl.)Thedissociationenergydependsontheseparationdistance,repulsionconstant,and
+MadelungconstantforanFCCstructure.Theseparationdistancedependsinturnonthemolarmassandmeasured
+density.Wecandetermine theseparationdistance,andthenusethisvaluetodetermine thedissociation energy
+for one mole of the solid.
+Solution
+TheatomicmassesofNaandClare23.0uand58.4u,sothemolarmassofNaClis58.4g/mol.Thedensityof
+NaCl is 2.16g/cm 3. The relationship between these quantities is
+
+418 Chapter 9 | Condensed Matter Physics
+M M
+ρ= = ,
+V 2N r3
+A 0
+where M is the mass of one mole of salt, N is Avogadro’s number, and r is the equilibrium separation
+A 0
+distance.Thefactor2isneededsinceboththesodiumandchlorideionsrepresentacubicvolume r3.Solving
+0
+for the distance, we get
+r3
+=
+M
+=
+58.4g/mol
+=2.23×10
+−23
+cm
+3
+,
+0 2N
+A
+ρ
+2
+⎛
+⎝ 6.03×10
+23⎞
+⎠
+⎛
+⎝ 2.160g/cm
+3⎞
+⎠
+or
+r =2.80×10 −8 cm=0.280nm.
+0
+The potential energy of one ion pair ⎛Na + Cl–⎞ is
+⎝ ⎠
+U =−α k r e2⎛ ⎝ 1− 1 n ⎞ ⎠ ,
+0
+where α is the Madelung constant, r is the equilibrium separation distance, and n is the repulsion constant.
+0
+NaCl is FCC, so the Madelung constant is α=1.7476. Substituting these values, we get
+U =−1.75 1.44eV·nm⎛ 1− 1⎞ =−7.88 eV .
+0.280nm ⎝ 8⎠ ion pair
+The dissociation energy of one mole of sodium chloride is therefore
+⎛23.052kcal⎞
+⎛ ⎞
+D= 7.88eV ⎜ 1mol ⎟=182kcal/mol=760kJ/mol.
+⎝ion pair⎠ 1eV
+⎝ ⎠
+ion pair
+Significance
+This theoretical value of the dissociation energy of 766 kJ/mol is close to the accepted experimental value of
+787 kJ/mol. Notice that for larger density, the equilibrium separation distance between ion pairs is smaller, as
+expected.Thissmallseparationdistancedrivesuptheforcebetweenionsandthereforethedissociationenergy.
+The conversion at the end of the equation took advantage of the conversion factor 1kJ=0.239kcal.
+9.3 Check Your Understanding If the dissociation energy were larger, would that make it easier or more
+difficult to break the solid apart?
+Covalent Bonding in Solids
+Crystals canalsobeformedbycovalent bonding.Forexample, covalent bondsareresponsible forholdingcarbonatoms
+togetherindiamondcrystals.Theelectronconfigurationofthecarbonatomis 1s22s22p2—aHecoreplusfourvalence
+electrons. This electron configuration is four electrons short of a full shell, so by sharing these four electrons with other
+carbonatomsinacovalentbond,theshellsofallcarbonatomsarefilled.Diamondhasamorecomplicatedstructurethan
+mostioniccrystals(Figure9.11).Eachcarbonatomisthecenterofaregulartetrahedron,andtheanglebetweenthebonds
+is 110°. This angle is a direct consequence of the directionality of theporbitals of carbon atoms.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 419
+Figure 9.11 Structure of the diamond crystal. (a) The single carbon atom represented by the dark blue sphere is covalently
+bonded to the four carbon atoms represented by the light blue spheres. (b) Gem-quality diamonds can be cleaved along smooth
+planes, which gives a large number of angles that cause total internal reflection of incident light, and thus gives diamonds their
+prized brilliance.
+Covalentlybondedcrystalsarenotasuniformasioniccrystalsbutarereasonablyhard,difficulttomelt,andareinsoluble
+inwater.Forexample,diamondhasanextremelyhighmeltingtemperature(4000K)andistransparenttovisiblelight.In
+comparison, covalently bonded tin (also known as alpha-tin, which is nonmetallic) is relatively soft, melts at 600 K, and
+reflectsvisiblelight.Twootherimportantexamplesofcovalentlybondedcrystalsaresiliconandgermanium.Bothofthese
+solidsareusedextensivelyinthemanufactureofdiodes,transistors,andintegratedcircuits.Wewillreturntothesematerials
+later in our discussion of semiconductors.
+Metallic Bonding in Solids
+As the name implies, metallic bonding is responsible for the formation of metallic crystals. The valence electrons are
+essentially free ofthe atoms and are able to move relatively easily throughout the metallic crystal. Bonding is due to the
+attractiveforcesbetweenthepositiveionsandtheconductionelectrons.Metallicbondsareweakerthanionicorcovalent
+bonds, with dissociation energies in the range 1−3eV.
+9.4 | Free Electron Model of Metals
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the classical free electron model of metals in terms of the concept electron number
+density
+• Explain the quantum free-electron model of metals in terms of Pauli’s exclusion principle
+• Calculate the energy levels and energy-level spacing of a free electron in a metal
+Metals,suchascopperandaluminum,areheldtogetherbybondsthatareverydifferentfromthoseofmolecules.Rather
+than sharing and exchanging electrons, a metal is essentially held together by a system of free electrons that wander
+throughoutthesolid.Thesimplestmodelofametalisthefreeelectronmodel.Thismodelviewselectronsasagas.Wefirst
+considerthesimpleone-dimensionalcaseinwhichelectronsmovefreelyalongaline,suchasthroughaverythinmetalrod.
+ThepotentialfunctionU(x)forthiscaseisaone-dimensionalinfinitesquarewellwherethewallsofthewellcorrespond
+totheedgesoftherod.Thismodelignorestheinteractionsbetweentheelectronsbutrespectstheexclusionprinciple.For
+thespecialcaseof T =0K, Nelectronsfilluptheenergylevels,fromlowesttohighest,twoatatime(spinupandspin
+down), until the highest energy level is filled. The highest energy filled is called theFermi energy.
+
+420 Chapter 9 | Condensed Matter Physics
+The one-dimensional free electron model can be improved by considering the three-dimensional case: electrons moving
+freelyinathree-dimensionalmetalblock.Thissystemismodeledbyathree-dimensionalinfinitesquarewell.Determining
+the allowed energy states requires us to solve the time-independent Schrödinger equation
+⎛ ⎞ (9.26)
+−
+h2 ⎜∂2
++
+∂2
++
+∂2
+⎟ψ(x, y, z)=Eψ(x, y, z),
+2m e⎝∂x2 ∂y2 ∂z2⎠
+where we assume that the potential energy inside the box is zero and infinity otherwise. The allowed wave functions
+describing the electron’s quantum states can be written as
+ψ(x, y, z)= ⎛ 2 sin n x πx⎞⎛ 2 sin n y πy⎞⎛ 2 sin n z πz⎞ , (9.27)
+⎝ L L ⎠⎝ L L ⎠⎝ L L ⎠
+x x y y z z
+where n x, n y, and n z arepositiveintegersrepresentingquantumnumberscorrespondingtothemotioninthex-,y-,and
+z-directions,respectively,and L x, L y, andL z arethedimensionsoftheboxinthosedirections.Equation9.27issimply
+theproductofthreeone-dimensionalwavefunctions.Theallowedenergiesofanelectroninacube (L=L x=L y=L z)
+are
+E=
+π2ℏ2
+⎛n2+n2+n2⎞ .
+(9.28)
+2mL2⎝ 1 2 3⎠
+Associated with each set of quantum numbers (n x, n y, n z) are two quantum states, spin up and spin down. In a real
+material,thenumberoffilledstatesisenormous.Forexample,inacubiccentimeterofmetal,thisnumberisontheorder
+of 1022. Counting how many particles are in which state is difficult work, which often requires the help of a powerful
+computer. The effort is worthwhile, however, because this information is often an effective way to check the model.
+Example 9.4
+Energy of a Metal Cube
+Considerasolidmetalcubeofedgelength2.0cm.(a)Whatisthelowestenergylevelforanelectronwithinthe
+metal? (b) What is the spacing between this level and the next energy level?
+Strategy
+Anelectroninametalcanbemodeledasawave.Thelowestenergycorrespondstothelargestwavelengthand
+smallest quantum number: n x, n y, n z=(1, 1, 1). Equation 9.28 supplies this “ground state” energy value.
+Sincetheenergyoftheelectronincreaseswiththequantumnumber,thenexthighestlevelinvolvesthesmallest
+increase in the quantum numbers, or (n x, n y, n z)=(2, 1, 1), (1, 2, 1), or (1, 1, 2).
+Solution
+The lowest energy level corresponds to the quantum numbers n x=n y=n z=1. From Equation 9.28, the
+energy of this level is
+E(1, 1, 1) =
+π2h2
+(12+12+12)
+2m
+e
+L2
+3π2 (1.05×10−34J·s)2
+=
+2(9.11×10 −31 kg)(2.00×10−2 m)2
+−34 −15
+=4.48×10 J=2.80×10 eV.
+Thenext-higherenergylevelisreachedbyincreasinganyoneofthethreequantumnumbersby1.Hence,there
+are actually three quantum states with the same energy. Suppose we increase n by 1. Then the energy becomes
+x
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 421
+E(2, 1, 1) =
+π2h2
+(22+12+12)
+2m
+e
+L2
+6π2(1.05×10−34J·s)2
+=
+2(9.11×10 −31 kg)(2.00×10−2 m)2
+−34 −15
+=8.96×10 J=5.60×10 eV.
+The energy spacing between the lowest energy state and the next-highest energy state is therefore
+−15
+E(2, 1, 1)−E(1, 1, 1)=2.80×10 eV.
+Significance
+This is a very small energy difference. Compare this value to the average kinetic energy of a particle, k T,
+B
+where k isBoltzmann’sconstantandTisthetemperature.Theproduct k T isabout1000timesgreaterthan
+B B
+the energy spacing.
+9.4 CheckYourUnderstandingWhathappenstothegroundstateenergyofanelectronifthedimensionsof
+the solid increase?
+Often,wearenotinterestedinthetotalnumberofparticlesinallstates,butratherthenumberofparticlesdNwithenergies
+in a narrow energy interval. This value can be expressed by
+dN =n(E)dE=g(E)dE·F
+wheren(E)istheelectronnumberdensity,orthenumberofelectronsperunitvolume;g(E)isthedensityofstates,or
+the number of allowed quantum states per unit energy; dE is the size of the energy interval; and F is the Fermi factor.
+TheFermifactoristheprobabilitythatthestatewillbefilled.Forexample,ifg(E)dEis100availablestates,butFisonly
+5%,thenthenumberofparticlesinthisnarrowenergyintervalisonlyfive.Findingg(E)requiressolvingSchrödinger’s
+equation(inthreedimensions)fortheallowedenergylevels.Thecalculation isinvolvedevenforacrudemodel,butthe
+result is simple:
+3/2 (9.29)
+g(E)=
+πV⎛8m
+e
+⎞
+E1/2 ,
+2 ⎝ h2 ⎠
+whereVisthevolumeofthesolid, m isthemassoftheelectron,andEistheenergyofthestate.Noticethatthedensity
+e
+of states increases with the square root of the energy. More states are available at high energy than at low energy. This
+expressiondoesnotprovideinformationofthedensityoftheelectronsinphysicalspace,butratherthedensityofenergy
+levelsin“energyspace.”Forexample,inourstudyoftheatomicstructure,welearnedthattheenergylevelsofahydrogen
+atom are much more widely spaced for small energy values (near than ground state) than for larger values.
+This equation tells us how many electron states are available in a three-dimensional metallic solid. However, it does not
+tellushowlikelythesestateswillbefilled.Thus,weneedtodeterminetheFermifactor,F.Considerthesimplecaseof
+T =0K.Fromclassicalphysics,weexpectthatalltheelectrons (∼1022 /cm 3 ) wouldsimplygointothegroundstate
+toachievethelowestpossibleenergy.However,thisviolatesPauli’sexclusionprinciple,whichstatesthatnotwoelectrons
+can be in the same quantum state. Hence, when we begin filling the states with electrons, the states with lowest energy
+become occupied first, then states with progressively higher energies. The last electronweputinhasthe highest energy.
+ThisenergyistheFermienergy E ofthefreeelectrongas.Astatewithenergy E<E isoccupiedbyasingleelectron,
+F F
+andastatewithenergy E>E isunoccupied.TodescribethisintermsofaprobabilityF(E)thatastateofenergyEis
+F
+occupied, we write for T =0K:
+F(E)=1 (E<E ) (9.30)
+F
+F(E)=0 (E>E ).
+F
+
+422 Chapter 9 | Condensed Matter Physics
+The density of states, Fermi factor, and electron number density are plotted against energy inFigure 9.12.
+Figure 9.12 (a) Density of states for a free electron gas; (b) probability that a state is occupied at T =0K; (c) density of
+occupied states at T =0K.
+A few notes are in order. First, the electron number density (last row) distribution drops off sharply at the Fermi energy.
+According to the theory, this energy is given by
+E =
+h2 ⎛3N⎞ 2/3
+.
+(9.31)
+F 8m
+e
+⎝πV⎠
+Fermi energies for selected materials are listed in the following table.
+Element Conduction Band Electron Density Free-Electron Model Fermi Energy
+⎛
+⎝10
+28
+m
+−3⎞
+⎠
+(eV)
+Al 18.1 11.7
+Ba 3.15 3.64
+Cu 8.47 7.00
+Au 5.90 5.53
+Fe 17.0 11.1
+Ag 5.86 5.49
+Table 9.3Conduction Electron Densities and Fermi Energies for Some Metals
+Notealsothatonlythegraphinpart(c)ofthefigure,whichanswersthequestion,“Howmanyparticlesarefoundinthe
+energyrange?”ischeckedbyexperiment.TheFermitemperatureoreffective“temperature”ofanelectronattheFermi
+energy is
+E (9.32)
+T = F.
+F k
+B
+Example 9.5
+Fermi Energy of Silver
+Metallicsilverisanexcellentconductor.Ithas 5.86×10 28 conductionelectronspercubicmeter.(a)Calculate
+itsFermienergy.(b)Comparethisenergytothethermalenergy k T oftheelectronsataroomtemperatureof
+B
+300 K.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

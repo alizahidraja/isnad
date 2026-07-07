@@ -1,0 +1,166 @@
+# REAL PDF — openstax_vol1.pdf, pages 288-294
+############################################################
+
+276 6 • Applications of Newton's Laws
+slows down.
+CHECK YOUR UNDERSTANDING 6.8
+The snowboarder is now moving down a hill with incline . What is the snowboarder's acceleration?
+6.3 Centripetal Force
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the equation for centripetal acceleration
+• Apply Newton’s second law to develop the equation for centripetal force
+• Use circular motion concepts in solving problems involving Newton’s laws of motion
+In Motion in Two and Three Dimensions, we examined the basic concepts of circular motion. An object undergoing
+circular motion, like one of the race cars shown at the beginning of this chapter, must be accelerating because it is
+changing the direction of its velocity. We proved that this centrally directed acceleration, called centripetal
+acceleration, is given by the formula
+where v is the velocity of the object, directed along a tangent line to the curve at any instant. If we know the angular
+velocity , then we can use
+Angular velocity gives the rate at which the object is turning through the curve, in units of rad/s. This acceleration
+acts along the radius of the curved path and is thus also referred to as a radial acceleration.
+An acceleration must be produced by a force. Any force or combination of forces can cause a centripetal or radial
+acceleration. Just a few examples are the tension in the rope on a tether ball, the force of Earth’s gravity on the
+Moon, friction between roller skates and a rink floor, a banked roadway’s force on a car, and forces on the tube of a
+spinning centrifuge. Any net force causing uniform circular motion is called a centripetal force. The direction of a
+centripetal force is toward the center of curvature, the same as the direction of centripetal acceleration. According
+to Newton’s second law of motion, net force is mass times acceleration: For uniform circular motion, the
+acceleration is the centripetal acceleration:. Thus, the magnitude of centripetal force is
+By substituting the expressions for centripetal acceleration we get two expressions for the
+centripetal force in terms of mass, velocity, angular velocity, and radius of curvature:
+6.3
+You may use whichever expression for centripetal force is more convenient. Centripetal force is always
+perpendicular to the path and points to the center of curvature, because is perpendicular to the velocity and
+points to the center of curvature. Note that if you solve the first expression for r, you get
+This implies that for a given mass and velocity, a large centripetal force causes a small radius of curvature—that is, a
+tight curve, as in Figure 6.20.
+Access for free at openstax.org
+
+6.3 • Centripetal Force 277
+FIGURE 6.20 The frictional force supplies the centripetal force and is numerically equal to it. Centripetal force is perpendicular to velocity
+and causes uniform circular motion. The larger the the smaller the radius of curvature r and the sharper the curve. The second curve
+has the same v, but a larger produces a smaller r′.
+EXAMPLE 6.15
+What Coefficient of Friction Do Cars Need on a Flat Curve?
+(a) Calculate the centripetal force exerted on a 900.0-kg car that negotiates a 500.0-m radius curve at 25.00 m/s.
+(b) Assuming an unbanked curve, find the minimum static coefficient of friction between the tires and the road,
+static friction being the reason that keeps the car from slipping (Figure 6.21).
+FIGURE 6.21 This car on level ground is moving away and turning to the left. The centripetal force causing the car to turn in a circular path
+is due to friction between the tires and the road. A minimum coefficient of friction is needed, or the car will move in a larger-radius curve
+and leave the roadway.
+
+278 6 • Applications of Newton's Laws
+Strategy
+a. We know that Thus,
+b. Figure 6.21 shows the forces acting on the car on an unbanked (level ground) curve. Friction is to the left,
+keeping the car from slipping, and because it is the only horizontal force acting on the car, the friction is the
+centripetal force in this case. We know that the maximum static friction (at which the tires roll but do not slip)
+is where is the static coefficient of friction and N is the normal force. The normal force equals the
+car’s weight on level ground, so Thus the centripetal force in this situation is
+Now we have a relationship between centripetal force and the coefficient of friction. Using the equation
+we obtain
+We solve this for noting that mass cancels, and obtain
+Substituting the knowns,
+(Because coefficients of friction are approximate, the answer is given to only two digits.)
+Significance
+The coefficient of friction found in Figure 6.21(b) is much smaller than is typically found between tires and roads.
+The car still negotiates the curve if the coefficient is greater than 0.13, because static friction is a responsive force,
+able to assume a value less than but no more than A higher coefficient would also allow the car to negotiate
+the curve at a higher speed, but if the coefficient of friction is less, the safe speed would be less than 25 m/s. Note
+that mass cancels, implying that, in this example, it does not matter how heavily loaded the car is to negotiate the
+turn. Mass cancels because friction is assumed proportional to the normal force, which in turn is proportional to
+mass. If the surface of the road were banked, the normal force would be greater, as discussed next.
+CHECK YOUR UNDERSTANDING 6.9
+A car moving at 96.8 km/h travels around a circular curve of radius 182.9 m on a flat country road. What must be the
+minimum coefficient of static friction to keep the car from slipping?
+Banked Curves
+Let us now consider banked curves, where the slope of the road helps you negotiate the curve (Figure 6.22). The
+greater the angle , the faster you can take the curve. Race tracks for bikes as well as cars, for example, often have
+steeply banked curves. In an “ideally banked curve,” the angle is such that you can negotiate the curve at a certain
+speed without the aid of friction between the tires and the road. We will derive an expression for for an ideally
+banked curve and consider an example related to it.
+Access for free at openstax.org
+
+6.3 • Centripetal Force 279
+FIGURE 6.22 The car on this banked curve is moving away and turning to the left.
+For ideal banking, the net external force equals the horizontal centripetal force in the absence of friction. The
+components of the normal force N in the horizontal and vertical directions must equal the centripetal force and the
+weight of the car, respectively. In cases in which forces are not parallel, it is most convenient to consider
+components along perpendicular axes—in this case, the vertical and horizontal directions.
+Figure 6.22 shows a free-body diagram for a car on a frictionless banked curve. If the angle is ideal for the speed
+and radius, then the net external force equals the necessary centripetal force. The only two external forces acting on
+the car are its weight and the normal force of the road (A frictionless surface can only exert a force
+perpendicular to the surface—that is, a normal force.) These two forces must add to give a net external force that is
+horizontal toward the center of curvature and has magnitude Because this is the crucial force and it is
+horizontal, we use a coordinate system with vertical and horizontal axes. Only the normal force has a horizontal
+component, so this must equal the centripetal force, that is,
+Because the car does not leave the surface of the road, the net vertical force must be zero, meaning that the vertical
+components of the two external forces must be equal in magnitude and opposite in direction. From Figure 6.22, we
+see that the vertical component of the normal force is and the only other vertical force is the car’s weight.
+These must be equal in magnitude; thus,
+Now we can combine these two equations to eliminate N and get an expression for , as desired. Solving the second
+equation for and substituting this into the first yields
+Taking the inverse tangent gives
+6.4
+This expression can be understood by considering how depends on v and r. A large is obtained for a large v and a
+small r. That is, roads must be steeply banked for high speeds and sharp curves. Friction helps, because it allows
+you to take the curve at greater or lower speed than if the curve were frictionless. Note that does not depend on
+the mass of the vehicle.
+
+280 6 • Applications of Newton's Laws
+EXAMPLE 6.16
+What Is the Ideal Speed to Take a Steeply Banked Tight Curve?
+Curves on some test tracks and race courses, such as Daytona International Speedway in Florida, are very steeply
+banked. This banking, with the aid of tire friction and very stable car configurations, allows the curves to be taken at
+very high speed. To illustrate, calculate the speed at which a 100.0-m radius curve banked at should be driven
+if the road were frictionless.
+Strategy
+We first note that all terms in the expression for the ideal angle of a banked curve except for speed are known; thus,
+we need only rearrange it so that speed appears on the left-hand side and then substitute known quantities.
+Solution
+Starting with
+we get
+Noting that we obtain
+Significance
+This is just about 87.5 km/h, consistent with a very steeply banked and rather sharp curve. Tire friction enables a
+vehicle to take the curve at significantly higher speeds.
+Airplanes also make turns by banking. The lift force, due to the force of the air on the wing, acts at right angles to the
+wing. When the airplane banks, the pilot is obtaining greater lift than necessary for level flight. The vertical
+component of lift balances the airplane’s weight, and the horizontal component accelerates the plane. The banking
+angle shown in Figure 6.23 is given by . We analyze the forces in the same way we treat the case of the car
+rounding a banked curve.
+FIGURE 6.23 In a banked turn, the horizontal component of lift is unbalanced and accelerates the plane. The normal component of lift
+balances the plane’s weight. The banking angle is given by . Compare the vector diagram with that shown in Figure 6.22.
+Access for free at openstax.org
+
+6.3 • Centripetal Force 281
+INTERACTIVE
+Join the ladybug (https://openstax.org/l/21ladybug_es) in an exploration of rotational motion. Rotate the merry-go-
+round to change its angle or choose a constant angular velocity or angular acceleration. Explore how circular motion
+relates to the bug’s xy-position, velocity, and acceleration using vectors or graphs.
+INTERACTIVE
+A circular motion requires a force, the so-called centripetal force, which is directed to the axis of rotation. This
+simplified model of a carousel (https://openstax.org/l/21carousel) demonstrates this force.
+Inertial Forces and Noninertial (Accelerated) Frames: The Coriolis Force
+What do taking off in a jet airplane, turning a corner in a car, riding a merry-go-round, and the circular motion of a
+tropical cyclone have in common? Each exhibits inertial forces—fictitious forces that merely seem to arise from
+motion, because the observer’s frame of reference is accelerating or rotating. When taking off in a jet, most people
+would agree it feels as if you are being pushed back into the seat as the airplane accelerates down the runway. Yet a
+physicist would say that you tend to remain stationary while the seat pushes forward on you. An even more common
+experience occurs when you make a tight curve in your car—say, to the right (Figure 6.24). You feel as if you are
+thrown (that is, forced) toward the left relative to the car. Again, a physicist would say that you are going in a straight
+line (recall Newton’s first law) but the car moves to the right, not that you are experiencing a force from the left.
+FIGURE 6.24 (a) The car driver feels herself forced to the left relative to the car when she makes a right turn. This is a fictitious inertial force
+arising from the use of the car as a frame of reference. (b) In Earth’s frame of reference, the driver moves in a straight line, obeying
+Newton’s first law, and the car moves to the right. There is no force to the left on the driver relative to Earth. Instead, there is a force to the
+right on the car to make it turn.
+We can reconcile these points of view by examining the frames of reference used. Let us concentrate on people in a
+car. Passengers instinctively use the car as a frame of reference, whereas a physicist might use Earth. The physicist
+might make this choice because Earth is nearly an inertial frame of reference, in which all forces have an identifiable
+physical origin. In such a frame of reference, Newton’s laws of motion take the form given in Newton’s Laws of
+Motion. The car is a noninertial frame of reference because it is accelerated to the side. The force to the left sensed
+by car passengers is an inertial force having no physical origin (it is due purely to the inertia of the passenger, not to
+some physical cause such as tension, friction, or gravitation). The car, as well as the driver, is actually accelerating to
+the right.
+A physicist will choose whatever reference frame is most convenient for the situation being analyzed. There is no
+problem to a physicist in including inertial forces and Newton’s second law, as usual, if that is more convenient, for

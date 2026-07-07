@@ -1,0 +1,210 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 665-672
+############################################################
+
+CHAPTER 14
+Fluid Mechanics
+FIGURE 14.1 This pressure map (left) and satellite photo (right) were used to model the path and impact of Hurricane Arthur as it
+traveled up the East Coast of the United States in July 2014. Computer models use force and energy equations to predict developing
+weather patterns. Scientists numerically integrate these time-dependent equations, along with the energy budgets of long- and short-
+wave solar energy, to model changes in the atmosphere. The pressure map on the left was created using the Weather Research and
+Forecasting Model designed at the National Center for Atmospheric Research. The colors represent the height of the 850-mbar pressure
+surface. (credit left: modification of work by The National Center for Atmospheric Research; credit right: modification of work by NRL
+Monterey Marine Meteorology Division, The National Oceanic and Atmospheric Administration)
+CHAPTER OUTLINE
+14.1 Fluids, Density, and Pressure
+14.2 Measuring Pressure
+14.3 Pascal's Principle and Hydraulics
+14.4 Archimedes’ Principle and Buoyancy
+14.5 Fluid Dynamics
+14.6 Bernoulli’s Equation
+14.7 Viscosity and Turbulence
+INTRODUCTION Picture yourself walking along a beach on the eastern shore of the United States. The air smells of
+sea salt and the sun warms your body. Suddenly, an alert appears on your cell phone. A tropical depression has
+formed into a hurricane. Atmospheric pressure has fallen to nearly 15% below average. As a result, forecasters
+expect torrential rainfall, winds in excess of 100 mph, and millions of dollars in damage. As you prepare to evacuate,
+you wonder: How can such a small drop in pressure lead to such a severe change in the weather?
+Pressure is a physical phenomenon that is responsible for much more than just the weather. Changes in pressure
+cause ears to “pop” during takeoff in an airplane. Changes in pressure can also cause scuba divers to suffer a
+sometimes fatal disorder known as the “bends,” which occurs when nitrogen dissolved in the water of the body at
+
+654 14 • Fluid Mechanics
+extreme depths returns to a gaseous state in the body as the diver surfaces. Pressure lies at the heart of the
+phenomena called buoyancy, which causes hot air balloons to rise and ships to float. Before we can fully understand
+the role that pressure plays in these phenomena, we need to discuss the states of matter and the concept of
+density.
+14.1 Fluids, Density, and Pressure
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• State the different phases of matter
+• Describe the characteristics of the phases of matter at the molecular or atomic level
+• Distinguish between compressible and incompressible materials
+• Define density and its related SI units
+• Compare and contrast the densities of various substances
+• Define pressure and its related SI units
+• Explain the relationship between pressure and force
+• Calculate force given pressure and area
+Matter most commonly exists as a solid, liquid, or gas; these states are known as the three common phases of
+matter. We will look at each of these phases in detail in this section.
+Characteristics of Solids
+Solids are rigid and have specific shapes and definite volumes. The atoms or molecules in a solid are in close
+proximity to each other, and there is a significant force between these molecules. Solids will take a form determined
+by the nature of these forces between the molecules. Although true solids are not incompressible, it nevertheless
+requires a large force to change the shape of a solid. In some cases, the force between molecules can cause the
+molecules to organize into a lattice as shown in Figure 14.2. The structure of this three-dimensional lattice is
+represented as molecules connected by rigid bonds (modeled as stiff springs), which allow limited freedom for
+movement. Even a large force produces only small displacements in the atoms or molecules of the lattice, and the
+solid maintains its shape. Solids also resist shearing forces. (Shearing forces are forces applied tangentially to a
+surface, as described in Static Equilibrium and Elasticity.)
+Characteristics of Fluids
+Liquids and gases are considered to be fluids because they yield to shearing forces, whereas solids resist them. Like
+solids, the molecules in a liquid are bonded to neighboring molecules, but possess many fewer of these bonds. The
+molecules in a liquid are not locked in place and can move with respect to each other. The distance between
+molecules is similar to the distances in a solid, and so liquids have definite volumes, but the shape of a liquid
+changes, depending on the shape of its container. Gases are not bonded to neighboring atoms and can have large
+separations between molecules. Gases have neither specific shapes nor definite volumes, since their molecules
+move to fill the container in which they are held (Figure 14.2).
+Access for free at openstax.org
+
+14.1 • Fluids, Density, and Pressure 655
+FIGURE 14.2 (a) Atoms in a solid are always in close contact with neighboring atoms, held in place by forces represented here by springs.
+(b) Atoms in a liquid are also in close contact but can slide over one another. Forces between the atoms strongly resist attempts to
+compress the atoms. (c) Atoms in a gas move about freely and are separated by large distances. A gas must be held in a closed container to
+prevent it from expanding freely and escaping.
+Liquids deform easily when stressed and do not spring back to their original shape once a force is removed. This
+occurs because the atoms or molecules in a liquid are free to slide about and change neighbors. That is, liquids flow
+(so they are a type of fluid), with the molecules held together by mutual attraction. When a liquid is placed in a
+container with no lid, it remains in the container. Because the atoms are closely packed, liquids, like solids, resist
+compression; an extremely large force is necessary to change the volume of a liquid.
+In contrast, atoms in gases are separated by large distances, and the forces between atoms in a gas are therefore
+very weak, except when the atoms collide with one another. This makes gases relatively easy to compress and
+allows them to flow (which makes them fluids). When placed in an open container, gases, unlike liquids, will escape.
+In this chapter, we generally refer to both gases and liquids simply as fluids, making a distinction between them only
+when they behave differently. There exists one other phase of matter, plasma, which exists at very high
+temperatures. At high temperatures, molecules may disassociate into atoms, and atoms disassociate into electrons
+(with negative charges) and protons (with positive charges), forming a plasma. Plasma will not be discussed in depth
+in this chapter because plasma has very different properties from the three other common phases of matter,
+discussed in this chapter, due to the strong electrical forces between the charges.
+Density
+Suppose a block of brass and a block of wood have exactly the same mass. If both blocks are dropped in a tank of
+water, why does the wood float and the brass sink (Figure 14.3)? This occurs because the brass has a greater
+density than water, whereas the wood has a lower density than water.
+
+656 14 • Fluid Mechanics
+FIGURE 14.3 (a) A block of brass and a block of wood both have the same weight and mass, but the block of wood has a much greater
+volume. (b) When placed in a fish tank filled with water, the cube of brass sinks and the block of wood floats. (The block of wood is the same
+in both pictures; it was turned on its side to fit on the scale.) (credit: modification of works by Joseph J. Trout, Stockton University)
+Density is an important characteristic of substances. It is crucial, for example, in determining whether an object
+sinks or floats in a fluid.
+DENSITY
+The average density of a substance or object is defined as its mass per unit volume,
+14.1
+where the Greek letter (rho) is the symbol for density, m is the mass, and V is the volume.
+The SI unit of density is . Table 14.1 lists some representative values. The cgs unit of density is the gram per
+cubic centimeter, , where
+The metric system was originally devised so that water would have a density of , equivalent to .
+Thus, the basic mass unit, the kilogram, was first devised to be the mass of 1000 mL of water, which has a volume of
+.
+Solids Liquids Gases
+( ) ( ) ( 101.3 kPa)
+Substance Substance Substance
+Aluminum Benzene Air
+Bone Blood Carbon dioxide
+Brass Ethyl alcohol Carbon monoxide
+Concrete Gasoline Helium
+TABLE 14.1 Densities of Some Common Substances
+Access for free at openstax.org
+
+14.1 • Fluids, Density, and Pressure 657
+Solids Liquids Gases
+( ) ( ) ( 101.3 kPa)
+Copper Glycerin Hydrogen
+Cork Mercury Methane
+Earth’s crust Olive oil Nitrogen
+Glass Nitrous oxide
+Gold Oxygen
+Granite
+Iron
+Lead
+Oak
+Pine
+Platinum
+Polystyrene
+Tungsten
+Uranium
+TABLE 14.1 Densities of Some Common Substances
+As you can see by examining Table 14.1, the density of an object may help identify its composition. The density of
+gold, for example, is about 2.5 times the density of iron, which is about 2.5 times the density of aluminum. Density
+also reveals something about the phase of the matter and its substructure. Notice that the densities of liquids and
+solids are roughly comparable, consistent with the fact that their atoms are in close contact. The densities of gases
+are much less than those of liquids and solids, because the atoms in gases are separated by large amounts of empty
+space. The gases are displayed for a standard temperature of and a standard pressure of 101.3 kPa, and
+there is a strong dependence of the densities on temperature and pressure. The densities of the solids and liquids
+displayed are given for the standard temperature of and the densities of solids and liquids depend on the
+temperature. The density of solids and liquids normally increase with decreasing temperature.
+Table 14.2 shows the density of water in various phases and temperature. The density of water increases with
+decreasing temperature, reaching a maximum at and then decreases as the temperature falls below .
+This behavior of the density of water explains why ice forms at the top of a body of water.
+Substance
+Ice
+Water
+TABLE 14.2 Densities of Water
+
+658 14 • Fluid Mechanics
+Substance
+Water
+Water
+Water
+Steam
+Sea water
+TABLE 14.2 Densities of Water
+The density of a substance is not necessarily constant throughout the volume of a substance. If the density is
+constant throughout a substance, the substance is said to be a homogeneous substance. A solid iron bar is an
+example of a homogeneous substance. The density is constant throughout, and the density of any sample of the
+substance is the same as its average density. If the density of a substance were not constant, the substance is said
+to be a heterogeneous substance. A chunk of Swiss cheese is an example of a heterogeneous material containing
+both the solid cheese and gas-filled voids. The density at a specific location within a heterogeneous material is
+called local density, and is given as a function of location, (Figure 14.4).
+FIGURE 14.4 Density may vary throughout a heterogeneous mixture. Local density at a point is obtained from dividing mass by volume in a
+small volume around a given point.
+Local density can be obtained by a limiting process, based on the average density in a small volume around the point
+in question, taking the limit where the size of the volume approaches zero,
+14.2
+where is the density, m is the mass, and V is the volume.
+Since gases are free to expand and contract, the densities of the gases vary considerably with temperature, whereas
+the densities of liquids vary little with temperature. Therefore, the densities of liquids are often treated as constant,
+with the density equal to the average density.
+Density is a dimensional property; therefore, when comparing the densities of two substances, the units must be
+taken into consideration. For this reason, a more convenient, dimensionless quantity called the specific gravity is
+often used to compare densities. Specific gravity is defined as the ratio of the density of the material to the density
+of water at and one atmosphere of pressure, which is :
+Access for free at openstax.org
+
+14.1 • Fluids, Density, and Pressure 659
+The comparison uses water because the density of water is , which was originally used to define the
+kilogram. Specific gravity, being dimensionless, provides a ready comparison among materials without having to
+worry about the unit of density. For instance, the density of aluminum is 2.7 in (2700 in ), but its
+specific gravity is 2.7, regardless of the unit of density. Specific gravity is a particularly useful quantity with regard to
+buoyancy, which we will discuss later in this chapter.
+Pressure
+You have no doubt heard the word ‘pressure’ used in relation to blood (high or low blood pressure) and in relation to
+weather (high- and low-pressure weather systems). These are only two of many examples of pressure in fluids.
+(Recall that we introduced the idea of pressure in Static Equilibrium and Elasticity, in the context of bulk stress and
+strain.)
+PRESSURE
+Pressure (p) is defined as the normal force F per unit area A over which the force is applied, or
+14.3
+To define the pressure at a specific point, the pressure is defined as the force dF exerted by a fluid over an
+infinitesimal element of area dA containing the point, resulting in .
+A given force can have a significantly different effect, depending on the area over which the force is exerted. For
+instance, a force applied to an area of has a pressure that is 100 times as great as the same force applied to
+an area of That is why a sharp needle is able to poke through skin when a small force is exerted, but applying
+the same force with a finger does not puncture the skin (Figure 14.5).
+FIGURE 14.5 (a) A person being poked with a finger might be irritated, but the force has little lasting effect. (b) In contrast, the same force
+applied to an area the size of the sharp end of a needle is enough to break the skin.
+Note that although force is a vector, pressure is a scalar. Pressure is a scalar quantity because it is defined to be
+proportional to the magnitude of the force acting perpendicular to the surface area. The SI unit for pressure is the
+pascal (Pa), named after the French mathematician and physicist Blaise Pascal (1623–1662), where
+Several other units are used for pressure, which we discuss later in the chapter.
+Variation of pressure with depth in a fluid of constant density
+Pressure is defined for all states of matter, but it is particularly important when discussing fluids. An important
+characteristic of fluids is that there is no significant resistance to the component of a force applied parallel to the

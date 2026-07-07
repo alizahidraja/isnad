@@ -1,0 +1,313 @@
+# REAL PDF — openstax_vol2.pdf, pages 471-479
+############################################################
+
+Chapter 10 | Direct-Current Circuits 461
+Significance
+Amethodtocheckthecalculationsistocomputethepowerdissipatedbytheresistorsandthepowersuppliedby
+the voltage sources:
+P R 1 =I 1 2R 1 =0.04W.
+P R 2 =I 2 2R 2 =0.45W.
+P R 3 =I 3 2R 3 =0.25W.
+P R 4 =I 1 2R 4 =0.08W.
+P R 5 =I 2 2R 5 =0.09W.
+P R 6 =I 2 2R 6 =0.18W.
+P =1.09W.
+dissipated
+P source=I
+1
+V
+1
++I
+2
+V
+3
++I
+3
+V
+2
+=0.10W+0.69W+0.30W=1.09W.
+The power supplied equals the power dissipated by the resistors.
+10.6 Check Your Understanding In considering the following schematic and the power supplied and
+consumed by a circuit, will a voltage source always provide power to the circuit, or can a voltage source
+consume power?
+Example 10.7
+Calculating Current by Using Kirchhoff’s Rules
+Find the current flowing in the circuit inFigure 10.30.
+
+462 Chapter 10 | Direct-Current Circuits
+Figure 10.30 This circuit consists of three resistors and two
+batteries connected in series. Note that the batteries are
+connected with opposite polarities.
+Strategy
+ThiscircuitcanbeanalyzedusingKirchhoff’srules.Thereisonlyoneloopandnonodes.Choosethedirection
+of current flow. For this example, we will use the clockwise direction from point a to point b. Consider Loop
+abcdaanduseFigure10.23towritetheloopequation.NotethataccordingtoFigure10.23,battery V will
+1
+be added and battery V will be subtracted.
+2
+Solution
+Applying the junction rule yields the following three equations. We have one unknown, so one equation is
+required:
+Loopabcda: −IR −V −IR +V −IR =0.
+1 1 2 2 3
+Simplify the equations by placing the unknowns on one side of the equations. Use the values given in the figure.
+I⎛R +R +R ⎞=V −V .
+⎝ 1 2 3⎠ 2 1
+I =
+V
+2
+−V
+1 = 24V−12V =0.20A.
+R +R +R 10.0Ω+30.0Ω+10.0Ω
+1 2 3
+Significance
+The power dissipated or consumed by the circuit equals the power supplied to the circuit, but notice that the
+currentinthebattery V isflowingthroughthebatteryfromthepositiveterminaltothenegativeterminaland
+1
+consumes power.
+P R 1 =I2R 1 =0.40W
+P R 2 =I2R 2 =1.20W
+P R 3 =I2R 3 =0.80W
+P V 1 =IV 1 =2.40W
+P =4.80W
+dissipated
+P source=IV
+2
+=4.80W
+The power supplied equals the power dissipated by the resistors and consumed by the battery V .
+1
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 463
+10.7 CheckYourUnderstandingWhenusingKirchhoff’slaws,youneedtodecidewhichloopstouseand
+the direction of current flow through each loop. In analyzing the circuit in Example 10.7, the direction of
+currentflowwaschosentobeclockwise,frompointatopointb.Howwouldtheresultschangeifthedirection
+of the current was chosen to be counterclockwise, from pointbto pointa?
+Multiple Voltage Sources
+Many devices require more than one battery. Multiple voltage sources, such as batteries, can be connected in series
+configurations, parallel configurations, or a combination of the two.
+Inseries,thepositiveterminalofonebatteryisconnectedtothenegativeterminalofanotherbattery.Anynumberofvoltage
+sources,includingbatteries,canbeconnectedinseries.TwobatteriesconnectedinseriesareshowninFigure10.31.Using
+Kirchhoff’s loop rule for the circuit in part (b) gives the result
+ε −Ir +ε −Ir −IR=0,
+1 1 2 2
+⎡(ε +ε )−I(r +r )⎤−IR=0.
+⎣ 1 2 1 2 ⎦
+Figure 10.31 (a) Two batteries connected in series with a load
+resistor. (b) The circuit diagram of the two batteries and the load
+resistor, with each battery modeled as an idealized emf source
+and an internal resistance.
+When voltage sources are inseries, their internal resistances can beadded together andtheir emfs can beadded together
+to get the total values. Series connections of voltage sources are common—for example, in flashlights, toys, and other
+appliances. Usually, the cells are in series in order to produce a larger total emf. InFigure 10.31, the terminal voltage is
+V
+terminal
+=⎛
+⎝
+ε
+1
+−Ir
+1
+⎞
+⎠
++⎛
+⎝
+ε
+2
+−Ir
+2
+⎞
+⎠
+=⎡
+⎣
+(ε
+1
++ε
+2
+)−I(r
+1
++r
+2
+)⎤
+⎦
+=(ε
+1
++ε
+2
+)+Ir eq.
+Note that the same current I is found in each battery because they are connected in series. The disadvantage of series
+connections of cells is that their internal resistances are additive.
+Batteriesareconnectedinseriestoincreasethevoltagesuppliedtothecircuit.Forinstance,anLEDflashlightmayhave
+two AAA cell batteries, each with a terminal voltage of 1.5 V, to provide 3.0 V to the flashlight.
+Any number of batteries can be connected in series. ForNbatteries in series, the terminal voltage is equal to
+N (10.6)
+V terminal =(ε 1 +ε 2 +⋯+ε N−1 +ε N)−I(r 1 +r 2 +⋯+r N−1 +r N)= ∑ ε i−Ir eq
+i=1
+
+464 Chapter 10 | Direct-Current Circuits
+N
+where the equivalent resistance is r eq= ∑ r i .
+i=1
+When a load is placed across voltage sources in series, as inFigure 10.32, we can find the current:
+⎛ε −Ir ⎞+⎛ε −Ir ⎞=IR,
+⎝ 1 1⎠ ⎝ 2 2⎠
+Ir +Ir +IR=ε +ε ,
+1 ε2 +ε 1 2
+I = 1 2 .
+r +r +R
+1 2
+As expected, the internal resistances increase the equivalent resistance.
+Figure 10.32 Two batteries connect in series to an LED bulb,
+as found in a flashlight.
+Voltagesources,suchasbatteries,canalsobeconnectedinparallel.Figure10.33showstwobatterieswithidenticalemfs
+inparallelandconnectedtoaloadresistance.Whenthebatteriesareconnectinparallel,thepositiveterminalsareconnected
+togetherandthenegativeterminalsareconnectedtogether,andtheloadresistanceisconnectedtothepositiveandnegative
+terminals. Normally, voltage sources in parallel have identical emfs. In this simple case, since the voltage sources are in
+parallel, the total emf is the same as the individual emfs of each battery.
+Figure 10.33 (a) Two batteries connect in parallel to a load resistor. (b)
+The circuit diagram shows the shows battery as an emf source and an
+internal resistor. The two emf sources have identical emfs (each labeled
+by ε) connected in parallel that produce the same emf.
+Consider the Kirchhoff analysis of the circuit in Figure 10.33(b). There are two loops and a node at point b and
+ε=ε =ε .
+1 2
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 465
+Nodeb: I +I −I =0.
+1 2
+ε−I r +I r −ε = 0,
+1 1 2 2
+Loopabcfa:
+I r = I r .
+1 1 2 2
+ε −I r −IR = 0,
+2 2 2
+Loopfcdef:
+ε−I r −IR = 0.
+2 2
+−1
+Solvingforthecurrentthroughtheloadresistorresultsin I = r
+eq
+ε +R ,where r eq= ⎛ ⎝r 1
+1
++r 1
+2
+⎞ ⎠ .Theterminalvoltageis
+⎛ ⎞
+ε
+equaltothepotentialdropacrosstheloadresistor IR= .Theparallelconnectionreducestheinternalresistance
+⎝r eq+R⎠
+and thus can produce a larger current.
+Any number of batteries can be connected in parallel. ForNbatteries in parallel, the terminal voltage is equal to
+−1 (10.7)
+V terminal =ε−I ⎛ ⎝r 1 1 +r 1 2 +⋯+r N 1 −1 +r 1 N ⎞ ⎠ =ε−Ir eq
+⎛ N ⎞ −1
+where the equivalent resistance is r eq=⎜∑
+r
+1⎟ .
+⎝i=1 i⎠
+Asanexample,somedieseltrucksusetwo12-Vbatteriesinparallel;theyproduceatotalemfof12Vbutcandeliverthe
+larger current needed to start a diesel engine.
+In summary, the terminal voltage of batteries in series is equal to the sum of the individual emfs minus the sum of the
+internal resistances times the current. When batteries are connected in parallel, they usually have equal emfs and the
+terminalvoltageisequaltotheemfminustheequivalentinternalresistancetimesthecurrent,wheretheequivalentinternal
+resistanceissmallerthantheindividualinternalresistances.Batteriesareconnectedinseriestoincreasetheterminalvoltage
+to the load. Batteries are connected in parallel to increase the current to the load.
+Solar Cell Arrays
+Another example dealing with multiple voltage sources is that of combinations of solar cells—wired in both series and
+parallel combinations toyieldadesiredvoltageandcurrent.Photovoltaic generation, whichistheconversionofsunlight
+directlyintoelectricity,isbaseduponthephotoelectriceffect.Thephotoelectriceffectisbeyondthescopeofthischapter
+and is covered in Photons and Matter Waves (http://cnx.org/content/m58757/latest/) , but in general, photons
+hitting the surface of a solar cell create an electric current in the cell.
+Mostsolarcellsaremadefrompuresilicon.Mostsinglecellshaveavoltageoutputofabout0.5V,whilethecurrentoutput
+isafunctionoftheamountofsunlightfallingonthecell(theincidentsolarradiationknownastheinsolation).Underbright
+noonsunlight,acurrentperunitareaofabout 100mA/cm2 ofcellsurfaceareaisproducedbytypicalsingle-crystalcells.
+Individualsolarcellsareconnectedelectricallyinmodulestomeetelectricalenergyneeds.Theycanbewiredtogetherin
+seriesorinparallel—connectedlikethebatteriesdiscussedearlier.Asolar-cellarrayormoduleusuallyconsistsofbetween
+36 and 72 cells, with a power output of 50 W to 140 W.
+Solar cells, like batteries, provide a direct current (dc) voltage. Current from a dc voltage source is unidirectional. Most
+household appliances need an alternating current (ac) voltage.
+
+466 Chapter 10 | Direct-Current Circuits
+10.4 | Electrical Measuring Instruments
+Learning Objectives
+By the end of the section, you will be able to:
+• Describe how to connect a voltmeter in a circuit to measure voltage
+• Describe how to connect an ammeter in a circuit to measure current
+• Describe the use of an ohmmeter
+Ohm’s law and Kirchhoff’s method are useful to analyze and design electrical circuits, providing you with the voltages
+across, the current through, and the resistance of the components that compose the circuit. To measure these parameters
+require instruments, and these instruments are described in this section.
+DC Voltmeters and Ammeters
+Whereas voltmeters measure voltage, ammeters measure current. Some of the meters in automobile dashboards, digital
+cameras,cellphones,andtuner-amplifiersareactuallyvoltmetersorammeters(Figure 10.34).Theinternalconstruction
+ofthesimplestofthesemetersandhowtheyareconnectedtothesystemtheymonitorgivefurtherinsightintoapplications
+of series and parallel connections.
+Figure 10.34 The fuel and temperature gauges (far right and
+far left, respectively) in this 1996 Volkswagen are voltmeters
+that register the voltage output of “sender” units. These units are
+proportional to the amount of gasoline in the tank and to the
+engine temperature. (credit: Christian Giersing)
+Measuring Current with an Ammeter
+Tomeasurethecurrentthroughadeviceorcomponent,theammeter isplacedinserieswiththedeviceorcomponent.A
+seriesconnectionisusedbecauseobjectsinserieshavethesamecurrentpassingthroughthem.(SeeFigure10.35,where
+the ammeter is represented by the symbol A.)
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 467
+Figure 10.35 (a) When an ammeter is used to measure the current through two resistors
+connected in series to a battery, a single ammeter is placed in series with the two resistors because
+the current is the same through the two resistors in series. (b) When two resistors are connected in
+parallel with a battery, three meters, or three separate ammeter readings, are necessary to measure
+the current from the battery and through each resistor. The ammeter is connected in series with the
+component in question.
+Ammeters need to have a very low resistance, a fraction of a milliohm. If the resistance is not negligible, placing the
+ammeterinthecircuitwouldchangetheequivalentresistanceofthecircuitandmodifythecurrentthatisbeingmeasured.
+Sincethecurrentinthecircuittravelsthroughthemeter,ammetersnormallycontainafusetoprotectthemeterfromdamage
+from currents which are too high.
+Measuring Voltage with a Voltmeter
+Avoltmeterisconnectedinparallelwithwhateverdeviceitismeasuring.Aparallelconnectionisusedbecauseobjectsin
+parallelexperiencethesamepotentialdifference.(SeeFigure10.36,wherethevoltmeterisrepresentedbythesymbolV.)
+Figure 10.36 To measure potential differences in this series
+circuit, the voltmeter (V) is placed in parallel with the voltage
+source or either of the resistors. Note that terminal voltage is
+measured between the positive terminal and the negative
+terminal of the battery or voltage source. It is not possible to
+connect a voltmeter directly across the emf without including
+the internal resistancerof the battery.
+Sincevoltmetersareconnectedinparallel,thevoltmetermusthaveaverylargeresistance.Digitalvoltmetersconvertthe
+
+468 Chapter 10 | Direct-Current Circuits
+analogvoltageintoadigitalvaluetodisplayonadigitalreadout(Figure10.37).Inexpensivevoltmetershaveresistances
+ontheorderof R =10MΩ, whereashigh-precisionvoltmetershaveresistancesontheorderof R =10GΩ.The
+M M
+value of the resistance may vary, depending on which scale is used on the meter.
+Figure 10.37 (a) An analog voltmeter uses a galvanometer to measure the voltage.
+(b) Digital meters use an analog-to-digital converter to measure the voltage. (credit:
+modification of works by Joseph J. Trout)
+Analog and Digital Meters
+You may encounter two types of meters in the physics lab: analog and digital. The term ‘analog’ refers to signals or
+information represented by a continuously variable physical quantity, such as voltage or current. An analog meter uses a
+galvanometer,which isessentially acoil ofwire with asmall resistance, inamagnetic field, with apointer attached that
+pointstoascale.Currentflowsthroughthecoil,causingthecoiltorotate.Tousethegalvanometerasanammeter,asmall
+resistance isplaced inparallel with the coil. Foravoltmeter,alargeresistance isplaced inseries with the coil. Adigital
+meterusesacomponentcalledananalog-to-digital(AtoD)converterandexpressesthecurrentorvoltageasaseriesofthe
+digits 0 and 1, which are used to run a digital display. Most analog meters have been replaced by digital meters.
+10.8 Check Your Understanding Digital meters are able to detect smaller currents than analog meters
+employinggalvanometers.Howdoesthisexplaintheirabilitytomeasurevoltageandcurrentmoreaccurately
+than analog meters?
+In this virtual lab (https://openstaxcollege.org/l/21cirreslabsim) simulation, you may construct circuits
+with resistors, voltage sources, ammeters and voltmeters to test your knowledge of circuit design.
+Ohmmeters
+Anohmmeterisaninstrumentusedtomeasuretheresistanceofacomponentordevice.Theoperationoftheohmmeteris
+basedonOhm’slaw.Traditionalohmmeterscontainedaninternalvoltagesource(suchasabattery)thatwouldbeconnected
+acrossthecomponenttobetested,producingacurrentthroughthecomponent.Agalvanometerwasthenusedtomeasure
+thecurrentandtheresistancewasdeducedusingOhm’slaw.Moderndigitalmetersuseaconstantcurrentsourcetopass
+currentthroughthecomponent,andthevoltagedifferenceacrossthecomponentismeasured.Ineithercase,theresistance
+ismeasuredusingOhm’slaw (R=V/I), wherethevoltageisknownandthecurrentismeasured,orthecurrentisknown
+and the voltage is measured.
+Thecomponentofinterestshouldbeisolatedfromthecircuit;otherwise,youwillbemeasuringtheequivalentresistanceof
+thecircuit.Anohmmetershouldneverbeconnectedtoa“live”circuit,onewithavoltagesourceconnectedtoitandcurrent
+running through it. Doing so can damage the meter.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

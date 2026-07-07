@@ -1,0 +1,232 @@
+# REAL PDF — openstax_vol2.pdf, pages 13-19
+############################################################
+
+Preface 3
+Chapter 2: Geometric Optics and Image Formation
+Chapter 3: Interference
+Chapter 4: Diffraction
+Unit 2: Modern Physics
+Chapter 5: Relativity
+Chapter 6: Photons and Matter Waves
+Chapter 7: Quantum Mechanics
+Chapter 8: Atomic Structure
+Chapter 9: Condensed Matter Physics
+Chapter 10: Nuclear Physics
+Chapter 11: Particle Physics and Cosmology
+Pedagogical foundation
+Throughout University Physics you will find derivations of concepts that present classical ideas and techniques, as well
+as modern applications and methods. Most chapters start with observations or experiments that place the material in a
+contextofphysicalexperience.Presentationsandexplanationsrelyonyearsofclassroomexperienceonthepartoflong-
+timephysicsprofessors,strivingforabalanceofclarityandrigorthathasprovensuccessfulwiththeirstudents.Throughout
+thetext,linksenablestudentstoreviewearliermaterialandthenreturntothepresentdiscussion,reinforcingconnections
+between topics. Key historical figures and experiments are discussed in the main text (rather than in boxes or sidebars),
+maintaining a focus on the development of physical intuition. Key ideas, definitions, and equations are highlighted in
+the text and listed in summary form at the end of each chapter. Examples and chapter-opening images often include
+contemporaryapplicationsfromdailylifeormodernscienceandengineeringthatstudentscanrelateto,fromsmartphones
+to the internet to GPS devices.
+Assessments that reinforce key concepts
+In-chapter Examples generally follow a three-part format of Strategy, Solution, and Significance to emphasize how to
+approach a problem, how to work with the equations, and how to check and generalize the result. Examples are often
+followedbyCheckYourUnderstandingquestionsandanswerstohelpreinforceforstudentstheimportantideasofthe
+examples.Problem-SolvingStrategiesineachchapterbreakdownmethodsofapproachingvarioustypesofproblemsinto
+stepsstudentscanfollowforguidance.Thebookalsoincludesexercisesattheendofeachchaptersostudentscanpractice
+what they’ve learned.
+Conceptual questionsdo not require calculation but test student learning of the key concepts.
+Problems categorized by section test student problem-solving skills and the ability to apply ideas to practical
+situations.
+AdditionalProblemsapplyknowledgeacrossthechapter,forcingstudentstoidentifywhatconceptsandequations
+areappropriateforsolvinggivenproblems.RandomlylocatedthroughouttheproblemsareUnreasonableResults
+exercises that ask students to evaluate the answer to a problem and explain why it is not reasonable and what
+assumptions made might not be correct.
+Challenge Problemsextend text ideas to interesting but difficult situations.
+Answers for selected exercises are available in anAnswer Keyat the end of the book.
+Additional resources
+Student and instructor resources
+We’vecompiledadditionalresourcesforbothstudentsandinstructors,includingGettingStartedGuides,PowerPointslides,
+andanswerandsolutionguidesforinstructorsandstudents.Instructorresourcesrequireaverifiedinstructoraccount,which
+youcanapplyforwhenyouloginorcreateyouraccountonOpenStax.org.Takeadvantageoftheseresourcestosupplement
+your OpenStax book.
+Community Hubs
+OpenStaxpartnerswiththeInstitutefortheStudyofKnowledgeManagementinEducation(ISKME)toofferCommunity
+HubsonOERCommons–aplatformforinstructorstosharecommunity-createdresourcesthatsupportOpenStaxbooks,
+free of charge. Through our Community Hubs, instructors can upload their own materials or download resources to use
+in their own courses, including additional ancillaries, teaching material, multimedia, and relevant course content. We
+
+4 Preface
+encourageinstructorstojointhehubsforthesubjectsmostrelevanttoyourteachingandresearchasanopportunitybothto
+enrich your courses and to engage with other faculty.
+To reach the Community Hubs, visit www.oercommons.org/hubs/OpenStax (https://www.oercommons.org/
+hubs/OpenStax).
+Partner resources
+OpenStaxpartnersareouralliesinthemissiontomakehigh-qualitylearningmaterialsaffordableandaccessibletostudents
+andinstructorseverywhere.TheirtoolsintegrateseamlesslywithourOpenStaxtitlesatalowcost.Toaccessthepartner
+resources for your text, visit your book page on OpenStax.org.
+About the authors
+Senior contributing authors
+Samuel J. Ling, Truman State University
+Dr.SamuelLinghastaughtintroductoryandadvancedphysicsforover25yearsatTrumanStateUniversity,whereheis
+currentlyProfessorofPhysicsandtheDepartmentChair.Dr.LinghastwoPhDsfromBostonUniversity,oneinChemistry
+andtheotherinPhysics,andhewasaResearchFellowattheIndianInstituteofScience,Bangalore,beforejoiningTruman.
+Dr.LingisalsoanauthorofAFirstCourseinVibrationsandWaves,publishedbyOxfordUniversityPress.Dr.Linghas
+considerableexperiencewithresearchinPhysicsEducationandhaspublishedresearchoncollaborativelearningmethodsin
+physicsteaching.HewasawardedaTrumanFellowandaJepsonfellowinrecognitionofhisinnovativeteachingmethods.
+Dr. Ling’s research publications have spanned Cosmology, Solid State Physics, and Nonlinear Optics.
+Jeff Sanny, Loyola Marymount University
+Dr. Jeff Sanny earned a BS in Physics from Harvey Mudd College in 1974 and a PhD in Solid State Physics from the
+UniversityofCalifornia–LosAngelesin1980.HejoinedthefacultyatLoyolaMarymountUniversityinthefallof1980.
+During his tenure, he has served as department Chair as well as Associate Dean. Dr. Sanny enjoys teaching introductory
+physics in particular. He is also passionate about providing students with research experience and has directed an active
+undergraduate student research group in space physics for many years.
+William Moebs, Formerly of Loyola Marymount University
+Dr. William Moebs earned a BS and PhD (1959 and 1965) from the University of Michigan. He then joined their staff
+as a Research Associate for one year, where he continued his doctoral research in particle physics. In 1966, he accepted
+an appointment to the Physics Department of Indiana Purdue Fort Wayne (IPFW), where he served as Department Chair
+from1971to1979.In1979,hemovedtoLoyolaMarymountUniversity(LMU),whereheservedasChairofthePhysics
+Department from 1979 to 1986. He retired from LMU in 2000. He has published research in particle physics, chemical
+kinetics, cell division, atomic physics, and physics teaching.
+Contributing authors
+Stephen D. Druger
+Alice Kolakowska, University of Memphis
+David Anderson, Albion College
+Daniel Bowman, Ferrum College
+Dedra Demaree, Georgetown University
+Edw. S. Ginsberg, University of Massachusetts
+Joseph Trout, Richard Stockton College
+Kevin Wheelock, Bellevue College
+David Smith, University of the Virgin Islands
+Takashi Sato, Kwantlen Polytechnic University
+Gerald Friedman, Santa Fe Community College
+Lev Gasparov, University of North Florida
+Lee LaRue, Paris Junior College
+Mark Lattery, University of Wisconsin
+Richard Ludlow, Daniel Webster College
+Patrick Motl, Indiana University Kokomo
+Tao Pang, University of Nevada, Las Vegas
+Kenneth Podolak, Plattsburgh State University
+Reviewers
+Salameh Ahmad, Rochester Institute of Technology–Dubai
+John Aiken, University of Colorado–Boulder
+Raymond Benge, Terrant County College
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Preface 5
+Gavin Buxton, Robert Morris University
+Erik Christensen, South Florida State College
+Clifton Clark, Fort Hays State University
+Nelson Coates, California Maritime Academy
+Herve Collin, Kapi’olani Community College
+Carl Covatto, Arizona State University
+Alejandro Cozzani, Imperial Valley College
+Danielle Dalafave, The College of New Jersey
+Nicholas Darnton, Georgia Institute of Technology
+Ethan Deneault, University of Tampa
+Kenneth DeNisco, Harrisburg Area Community College
+Robert Edmonds, Tarrant County College
+William Falls, Erie Community College
+Stanley Forrester, Broward College
+Umesh Garg, University of Notre Dame
+Maurizio Giannotti, Barry University
+Bryan Gibbs, Dallas County Community College
+Lynn Gillette, Pima Community College–West Campus
+Mark Giroux, East Tennessee State University
+Matthew Griffiths, University of New Haven
+Alfonso Hinojosa, University of Texas–Arlington
+Steuard Jensen, Alma College
+David Kagan, University of Massachusetts
+Sergei Katsev, University of Minnesota–Duluth
+Jill Leggett, Florida State College–Jacksonville
+Alfredo Louro, University of Calgary
+James Maclaren, Tulane University
+Ponn Maheswaranathan, Winthrop University
+Seth Major, Hamilton College
+Oleg Maksimov, Excelsior College
+Aristides Marcano, Delaware State University
+James McDonald, University of Hartford
+Ralph McGrew, SUNY–Broome Community College
+Paul Miller, West Virginia University
+Tamar More, University of Portland
+Farzaneh Najmabadi, University of Phoenix
+Richard Olenick, The University of Dallas
+Christopher Porter, Ohio State University
+Liza Pujji, Manakau Institute of Technology
+Baishali Ray, Young Harris University
+Andrew Robinson, Carleton University
+Aruvana Roy, Young Harris University
+Gajendra Tulsian, Daytona State College
+Adria Updike, Roger Williams University
+Clark Vangilder, Central Arizona University
+Steven Wolf, Texas State University
+Alexander Wurm, Western New England University
+Lei Zhang, Winston Salem State University
+Ulrich Zurcher, Cleveland State University
+
+Preface
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 7
+1 | TEMPERATURE AND
+HEAT
+Figure 1.1 These snowshoers on Mount Hood in Oregon are enjoying the heat flow and light caused by high temperature. All
+three mechanisms of heat transfer are relevant to this picture. The heat flowing out of the fire also turns the solid snow to liquid
+water and vapor. (credit: modification of work by “Mt. Hood Territory”/Flickr)
+Chapter Outline
+1.1Temperature and Thermal Equilibrium
+1.2Thermometers and Temperature Scales
+1.3Thermal Expansion
+1.4Heat Transfer, Specific Heat, and Calorimetry
+1.5Phase Changes
+1.6Mechanisms of Heat Transfer
+Introduction
+Heatandtemperatureareimportantconceptsforeachofus,everyday.Howwedressinthemorningdependsonwhether
+the day is hot or cold, and most of what we do requires energy that ultimately comes from the Sun. The study of heat
+and temperature is part of an area of physics known as thermodynamics. The laws of thermodynamics govern the flow
+ofenergythroughouttheuniverse.Theyarestudiedinallareasofscienceandengineering,fromchemistrytobiologyto
+environmental science.
+Inthischapter,weexploreheatandtemperature.Itisnotalwayseasytodistinguishtheseterms.Heatistheflowofenergy
+fromoneobjecttoanother.Thisflowofenergyiscausedbyadifferenceintemperature.Thetransferofheatcanchange
+temperature,ascanwork,anotherkindofenergytransferthatiscentraltothermodynamics.Wereturntothesebasicideas
+severaltimesthroughoutthenextfourchapters,andyouwillseethattheyaffecteverythingfromthebehaviorofatomsand
+molecules to cooking to our weather on Earth to the life cycles of stars.
+
+8 Chapter 1 | Temperature and Heat
+1.1 | Temperature and Thermal Equilibrium
+Learning Objectives
+By the end of this section, you will be able to:
+• Define temperature and describe it qualitatively
+• Explain thermal equilibrium
+• Explain the zeroth law of thermodynamics
+Heat is familiar to all of us. We can feel heat entering our bodies from the summer Sun or from hot coffee or tea after
+a winter stroll. We can also feel heat leaving our bodies as we feel the chill of night or the cooling effect of sweat after
+exercise.
+What is heat? How do we define it and how is it related to temperature? What are the effects of heat and how does it
+flowfromplacetoplace?Wewillfindthat,inspiteoftherichnessofthephenomena,asmallsetofunderlyingphysical
+principles unites these subjects and ties them to other fields. We start by examining temperature and how to define and
+measure it.
+Temperature
+Theconceptoftemperaturehasevolvedfromthecommonconceptsofhotandcold.Thescientificdefinitionoftemperature
+explains more than our senses of hot and cold. As you may have already learned, many physical quantities are defined
+solelyintermsofhowtheyareobservedormeasured,thatis,theyaredefinedoperationally.Temperatureisoperationally
+definedasthequantityofwhatwemeasurewithathermometer.Aswewillseeindetailinalaterchapteronthekinetic
+theoryofgases,temperatureisproportionaltotheaveragekineticenergyoftranslation,afactthatprovidesamorephysical
+definition.Differencesintemperaturemaintainthetransferofheat,orheattransfer,throughouttheuniverse.Heattransfer
+isthemovementofenergyfromoneplaceormaterialtoanotherasaresultofadifferenceintemperature.(Youwilllearn
+more aboutheat transferlater in this chapter.)
+Thermal Equilibrium
+Animportantconceptrelatedtotemperatureisthermalequilibrium.Twoobjectsareinthermalequilibriumiftheyarein
+closecontactthatallowseithertogainenergyfromtheother,butnevertheless,nonetenergyistransferredbetweenthem.
+Evenwhennotincontact,theyareinthermalequilibriumif,whentheyareplacedincontact,nonetenergyistransferred
+between them. If two objects remain in contact for a long time, they typically come to equilibrium. In other words, two
+objects in thermal equilibrium do not exchange energy.
+Experimentally,ifobjectAisinequilibriumwithobjectB,andobjectBisinequilibriumwithobjectC,then(asyoumay
+have already guessed) object A is in equilibrium with object C. That statement of transitivity is called the zeroth law of
+thermodynamics.(Thenumber“zeroth”wassuggestedbyBritishphysicistRalphFowlerinthe1930s.Thefirst,second,
+andthirdlawsofthermodynamicswerealreadynamedandnumberedthen.Thezerothlawhadseldombeenstated,butit
+needstobediscussedbeforetheothers,soFowlergaveitasmallernumber.)ConsiderthecasewhereAisathermometer.
+ThezerothlawtellsusthatifAreadsacertaintemperaturewheninequilibriumwithB,anditisthenplacedincontactwith
+C,itwillnotexchangeenergywithC;therefore,itstemperaturereadingwillremainthesame(Figure1.2).Inotherwords,
+if two objects are in thermal equilibrium, they have the same temperature.
+Figure 1.2 If thermometerAis in thermal equilibrium with
+objectB, andBis in thermal equilibrium withC, thenAis in
+thermal equilibrium withC. Therefore, the reading onAstays
+the same whenAis moved over to make contact withC.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

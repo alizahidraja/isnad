@@ -1,0 +1,238 @@
+# REAL PDF — crowell_lm.pdf, pages 564-569
+############################################################
+
+he fit the microscopic universe into the picture as well.
+ItshouldnotsurpriseusthatNewtonfailed. Althoughhewasafirm
+believer in the existence of atoms, there was no more experimental
+evidence for their existence than there had been when the ancient
+Greeksfirstpositedthemonpurelyphilosophicalgrounds. Alchemy
+labored under a tradition of secrecy and mysticism. Newton had
+already almost single-handedly transformed the fuzzyheaded field
+of “natural philosophy” into something we would recognize as the
+modern science of physics, and it would be unjust to criticize him
+for failing to change alchemy into modern chemistry as well. The
+time was not ripe. The microscope was a new invention, and it was
+cutting-edgesciencewhenNewton’scontemporaryHookediscovered
+that living things were made out of cells.
+21.1 The quest for the atomic force
+Newton was not the first of the age of reason. He was the last of
+the magicians. John Maynard Keynes
+Nevertheless it will be instructive to pick up Newton’s train of
+thought and see where it leads us with the benefit of modern hind-
+sight. In uniting the human and cosmic scales of existence, he had
+reimagined both as stages on which the actors were objects (trees
+and houses, planets and stars) that interacted through attractions
+and repulsions. He was already convinced that the objects inhab-
+iting the microworld were atoms, so it remained only to determine
+what kinds of forces they exerted on each other.
+His next insight was no less brilliant for his inability to bring it to
+fruition. He realized that the many human-scale forces — friction,
+sticky forces, the normal forces that keep objects from occupying
+the same space, and so on — must all simply be expressions of a
+more fundamental force acting between atoms. Tape sticks to paper
+because the atoms in the tape attract the atoms in the paper. My
+house doesn’t fall to the center of the earth because its atoms repel
+the atoms of the dirt under it.
+Here he got stuck. It was tempting to think that the atomic force
+was a form of gravity, which he knew to be universal, fundamental,
+and mathematically simple. Gravity, however, is always attractive,
+so how could he use it to explain the existence of both attractive
+and repulsive atomic forces? The gravitational force between ob-
+jects of ordinary size is also extremely small, which is why we never
+notice cars and houses attracting us gravitationally. It would be
+hard to understand how gravity could be responsible for anything
+as vigorous as the beating of a heart or the explosion of gunpowder.
+Newton went on to write a million words of alchemical notes filled
+withspeculationaboutsomeotherforce, perhapsa“divineforce”or
+“vegetative force” that would for example be carried by the sperm
+564 Chapter 21 Electricity and circuits
+
+to the egg.
+Luckily, we now know enough to investigate a di↵erent suspect as a
+candidate for the atomic force: electricity. Electric forces are often
+observed between objects that have been prepared by rubbing (or
+other surface interactions), for instance when clothes rub against
+each other in the dryer. A useful example is shown in figure a/1:
+stick two pieces of tape on a tabletop, and then put two more pieces
+on top of them. Lift each pair from the table, and then separate
+them. The two top pieces will then repel each other, a/2, as will
+the two bottom pieces. A bottom piece will attract a top piece,
+however, a/3. Electrical forces like these are similar in certain ways
+to gravity, the other force that we already know to be fundamental:
+Electrical forces are universal. Although some substances,
+•
+such as fur, rubber, and plastic, respond more strongly to
+electrical preparation than others, all matter participates in
+electrical forces to some degree. There is no such thing as a
+“nonelectric” substance. Matter is both inherently gravita-
+tional and inherently electrical.
+Four pieces of tape are pre-
+pared,1,asdescribedinthetext.
+Experiments show that the electrical force, like the gravita-
+Dependingonwhichcombination
+•
+tional force, is an inverse square force. That is, the electrical is tested, the interaction can be
+force between two spheres is proportional to 1/r2, where r is either repulsive, 2, or attractive,
+the center-to-center distance between them. 3.
+Furthermore, electrical forces make more sense than gravity as can-
+didates for the fundamental force between atoms, because we have
+observed that they can be either attractive or repulsive.
+21.2 Electrical forces
+Charge
+“Charge” is the technical term used to indicate that an object has
+been prepared so as to participate in electrical forces. This is to
+be distinguished from the common usage, in which the term is used
+indiscriminately for anything electrical. For example, although we
+speak colloquially of “charging” a battery, you may easily verify
+that a battery has no charge in the technical sense, e.g., it does not
+exert any electrical force on a piece of tape that has been prepared
+as described in the previous section.
+Two types of charge
+We can easily collect reams of data on electrical forces between
+di↵erent substances that have been charged in di↵erent ways. We
+find for example that cat fur prepared by rubbing against rabbit
+fur will attract glass that has been rubbed on silk. How can we
+make any sense of all this information? A vast simplification is
+Electrical forces 565
+
+achieved by noting that there are really only two types of charge.
+Suppose we pick cat fur rubbed on rabbit fur as a representative of
+type A, and glass rubbed on silk for type B. We will now find that
+there is no “type C.” Any object electrified by any method is either
+A-like, attracting things A attracts and repelling those it repels, or
+B-like, displayingthesameattractionsandrepulsionsasB.Thetwo
+types, A and B, always display opposite interactions. If A displays
+an attraction with some charged object, then B is guaranteed to
+undergo repulsion with it, and vice-versa.
+The coulomb
+Although there are only two types of charge, each type can come in
+di↵erentamounts. Themetricunitofchargeisthecoulomb(rhymes
+with “drool on”), defined as follows:
+One Coulomb (C) is the amount of charge such that a force of
+9.0 109 N occurs between two pointlike objects with charges
+⇥
+of 1 C separated by a distance of 1 m.
+The notation for an amount of charge is q. The numerical factor
+in the definition is historical in origin, and is not worth memoriz-
+ing. The definition is stated for pointlike, i.e., very small, objects,
+because otherwise di↵erent parts of them would be at di↵erent dis-
+tances from each other.
+A model of two types of charged particles
+Experiments show that all the methods of rubbing or otherwise
+charging objects involve two objects, and both of them end up get-
+ting charged. If one object acquires a certain amount of one type of
+charge, then the other ends up with an equal amount of the other
+type. Various interpretations of this are possible, but the simplest
+is that the basic building blocks of matter come in two flavors, one
+with each type of charge. Rubbing objects together results in the
+transfer of some of these particles from one object to the other. In
+thismodel,anobjectthathasnotbeenelectricallypreparedmayac-
+tuallypossessesagreatdealofboth typesofcharge,buttheamounts
+are equal and they are distributed in the same way throughout it.
+Since type A repels anything that type B attracts, and vice versa,
+the object will make a total force of zero on any other object. The
+rest of this chapter fleshes out this model and discusses how these
+mysterious particles can be understood as being internal parts of
+atoms.
+Use of positive and negative signs for charge
+Because the two types of charge tend to cancel out each other’s
+forces,itmakessensetolabelthemusingpositiveandnegativesigns,
+and to discuss the total charge of an object. It is entirely arbitrary
+which type of charge to call negative and which to call positive.
+Benjamin Franklin decided to describe the one we’ve been calling
+566 Chapter 21 Electricity and circuits
+
+“A” as negative, but it really doesn’t matter as long as everyone is
+consistent with everyone else. An object with a total charge of zero
+(equal amounts of both types) is referred to as electrically neutral.
+self-checkA
+Criticizethefollowingstatement: “Therearetwotypesofcharge,attrac-
+tiveandrepulsive.” .Answer,p.
+1014
+Coulomb’s law
+A large body of experimental observations can be summarized as
+follows:
+Coulomb’s law: The magnitude of the force acting between point-
+like charged objects at a center-to-center distance r is given by the
+equation
+q q
+1 2
+F = k| || |,
+| | r2
+where the constant k equals 9.0 109 Nm2/C2. The force is attrac-
+⇥ ·
+tive if the charges are of di↵erent signs, and repulsive if they have
+the same sign.
+Clever modern techniques have allowed the 1/r2 form of Coulomb’s
+law to be tested to incredible accuracy, showing that the exponent
+is in the range from 1.9999999999999998 to 2.0000000000000002.
+Note that Coulomb’s law is closely analogous to Newton’s law of
+gravity, where the magnitude of the force is Gm m /r2, except that
+1 2
+there is only one type of mass, not two, and gravitational forces
+are never repulsive. Because of this close analogy between the two
+types of forces, we can recycle a great deal of our knowledge of
+gravitational forces. For instance, there is an electrical equivalent
+of the shell theorem: the electrical forces exerted externally by a
+uniformly charged spherical shell are the same as if all the charge
+was concentrated at its center, and the forces exerted internally are
+zero.
+Conservation of charge
+An even more fundamental reason for using positive and negative
+signs for electrical charge is that experiments show that charge is
+conserved according to this definition: in any closed system, the
+total amount of charge is a constant. This is why we observe that
+rubbing initially uncharged substances together always has the re-
+sult that one gains a certain amount of one type of charge, while
+the other acquires an equal amount of the other type. Conservation
+of charge seems natural in our model in which matter is made of
+positive and negative particles. If the charge on each particle is a
+fixedpropertyofthattypeofparticle,andiftheparticlesthemselves
+Electrical forces 567
+
+can be neither created nor destroyed, then conservation of charge is
+inevitable.
+Electrical forces involving neutral objects
+As shown in figure b, an electrically charged object can attract ob-
+jects that are uncharged. How is this possible? The key is that
+even though each piece of paper has a total charge of zero, it has at
+least some charged particles in it that have some freedom to move.
+Suppose that the tape is positively charged, c. Mobile particles in
+the paper will respond to the tape’s forces, causing one end of the
+paper to become negatively charged and the other to become posi-
+tive. Theattractionbetweenthepaperandthetapeisnowstronger
+than the repulsion, because the negatively charged end is closer to
+the tape.
+self-checkB
+Whatwouldhavehappenedifthetapewasnegativelycharged? .
+A charged piece of tape at-
+tracts uncharged pieces of paper Answer,p. 1014
+fromadistance,andtheyleapup
+Discussion questions
+toit.
+A Iftheelectricalattractionbetweentwopointlikeobjectsatadistance
+of1mis9 109N,whycan’tweinferthattheirchargesare+1and 1C?
+⇥  
+Whatfurtherobservationswouldweneedtodoinordertoprovethis?
+B Anelectricallychargedpieceoftapewillbeattractedtoyourhand.
+Does that allow us to tell whether the mobile charged particles in your
+handarepositiveornegative,orboth?
+21.3 Current
+Unity of all types of electricity
+We are surrounded by things we have been told are “electrical,”
+but it’s far from obvious what they have in common to justify being
+groupedtogether. Whatrelationshipistherebetweenthewaysocks
+cling together and the way a battery lights a lightbulb? We have
+been told that both an electric eel and our own brains are somehow
+electrical in nature, but what do they have in common?
+The paper has zero total charge,
+butitdoeshavechargedparticles British physicist Michael Faraday (1791-1867) set out to address
+initthatcanmove. this problem. He investigated electricity from a variety of sources
+— including electric eels! — to see whether they could all produce
+the same e↵ects, such as shocks and sparks, attraction and repul-
+sion. “Heating” refers, for example, to the way a lightbulb filament
+gets hot enough to glow and emit light. Magnetic induction is an
+e↵ect discovered by Faraday himself that connects electricity and
+magnetism. We will not study this e↵ect, which is the basis for the
+electric generator, in detail until later in the book.
+568 Chapter 21 Electricity and circuits

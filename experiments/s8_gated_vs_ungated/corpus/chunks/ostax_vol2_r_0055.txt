@@ -1,0 +1,324 @@
+# REAL PDF — openstax_vol2.pdf, pages 343-348
+############################################################
+
+Chapter 7 | Electric Potential 333
+CHAPTER 7 REVIEW
+KEY TERMS
+electric dipole system of two equal but opposite charges a fixed distance apart
+electric dipole moment quantitydefinedas → p =q → d foralldipoles,wherethevectorpointsfromthenegativeto
+positive charge
+electric potential potential energy per unit charge
+electric potential difference thechangeinpotentialenergyofachargeqmovedbetweentwopoints,dividedbythe
+charge.
+electric potential energy potential energy stored in a system of charged objects due to the charges
+electron-volt energy given to a fundamental charge accelerated through a potential difference of one volt
+electrostatic precipitators filters that apply charges to particles in the air, then attract those charges to a filter,
+removing them from the airstream
+equipotential line two-dimensional representation of an equipotential surface
+equipotential surface surface (usually in three dimensions) on which all points are at the same potential
+grounding process of attaching a conductor to the earth to ensure that there is no potential difference between it and
+Earth
+ink jet printer smallinkdropletssprayedwithanelectricchargearecontrolledbyelectrostaticplatestocreateimageson
+paper
+photoconductor substance that is an insulator until it is exposed to light, when it becomes a conductor
+Van de Graaff generator machine that produces a large amount of excess charge, used for experiments with high
+voltage
+voltage changeinpotentialenergyofachargemovedfromonepointtoanother,dividedbythecharge;unitsofpotential
+difference are joules per coulomb, known as volt
+xerography dry copying process based on electrostatics
+KEY EQUATIONS
+Potential energy of a two-charge system qQ
+U(r)=k
+r
+Work done to assemble a system of charges N N q q
+W 12⋯N =
+2
+k∑∑
+r
+i
+ij
+j
+fori≠ j
+i j
+Potential difference ΔV = Δ q U orΔU =qΔV
+Electric potential U P→ →
+V = q = −∫ E ⋅d l
+R
+Potential difference between two points B→ →
+ΔV BA=V B−V A=−∫ E ·d l
+A
+Electric potential of a point charge kq
+V = r
+Electric potential of a system of point charges N
+q
+V P=k∑
+r
+i
+i
+1
+
+334 Chapter 7 | Electric Potential
+Electric dipole moment → →
+p =q d
+Electric potential due to a dipole → ^
+p · r
+V P=k
+r2
+Electric potential of a continuous charge distribution dq
+V P=k∫
+r
+Electric field components E x= − ∂
+∂
+V
+x
+, E y= − ∂
+∂
+V
+y
+, E z= − ∂
+∂
+V
+z
+Del operator in Cartesian coordinates → ^ ∂ ^ ∂ ^ ∂
+∇ = i + j + k
+∂x ∂y ∂z
+Electric field as gradient of potential → →
+E =− ∇ V
+Del operator in cylindrical coordinates → ∇ = ^ r ∂ ∂ r + φ ^1 r ∂ ∂ φ + ^ z ∂ ∂ z
+Del operator in spherical coordinates → ∇ = ^ r ∂ ∂ r + ^ θ1 r ∂ ∂ θ + φ ^ rs 1 inθ ∂ ∂ φ
+SUMMARY
+7.1Electric Potential Energy
+• TheworkdonetomoveachargefrompointAtoBinanelectricfieldispathindependent,andtheworkarounda
+closed path is zero. Therefore, the electric field and electric force are conservative.
+qQ
+• Wecandefineanelectricpotentialenergy,whichbetweenpointchargesis U(r)=k
+r
+,withthezeroreference
+taken to be at infinity.
+• Thesuperpositionprincipleholdsforelectricpotentialenergy;thepotentialenergyofasystemofmultiplecharges
+is the sum of the potential energies of the individual pairs.
+7.2Electric Potential and Potential Difference
+• Electric potential is potential energy per unit charge.
+• ThepotentialdifferencebetweenpointsAandB, V B−V A, thatis,thechangeinpotentialofachargeqmoved
+fromAtoB, is equal to the change in potential energy divided by the charge.
+• Potential difference is commonly called voltage, represented by the symbol ΔV:
+ΔV = Δ q U orΔU =qΔV.
+• Anelectron-voltistheenergygiventoafundamentalchargeacceleratedthroughapotentialdifferenceof1V.In
+equation form,
+⎛ −19 ⎞ ⎛ −19 ⎞ −19
+1eV= 1.60×10 C(1V)= 1.60× 10 C(1J/C)=1.60×10 J.
+⎝ ⎠ ⎝ ⎠
+7.3Calculations of Electric Potential
+• Electric potential is a scalar whereas electric field is a vector.
+• Addition of voltages as numbers gives the voltage due to a combination of point charges, allowing us to use the
+N
+q
+principle of superposition: V P=k∑
+r
+i.
+i
+1
+• An electric dipole consists of two equal and opposite charges a fixed distance apart, with a dipole moment
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 335
+→ p =q → d .
+dq
+• Continuous charge distributions may be calculated with V P=k∫
+r
+.
+7.4Determining Field from Potential
+• Justaswemayintegrateovertheelectricfieldtocalculatethepotential,wemaytakethederivativeofthepotential
+to calculate the electric field.
+• Thismaybedoneforindividualcomponentsoftheelectricfield,orwemaycalculatetheentireelectricfieldvector
+with the gradient operator.
+7.5Equipotential Surfaces and Conductors
+• Anequipotentialsurfaceisthecollectionofpointsinspacethatareallatthesamepotential.Equipotentiallinesare
+the two-dimensional representation of equipotential surfaces.
+• Equipotential surfaces are always perpendicular to electric field lines.
+• Conductors in static equilibrium are equipotential surfaces.
+• Topographic maps may be thought of as showing gravitational equipotential lines.
+7.6Applications of Electrostatics
+• Electrostatics is the study of electric fields in static equilibrium.
+• In addition to research using equipment such as a Van de Graaff generator, many practical applications of
+electrostatics exist, including photocopiers, laser printers, ink jet printers, and electrostatic air filters.
+CONCEPTUAL QUESTIONS
+difference?
+7.1Electric Potential Energy
+1. Would electric potential energy be meaningful if the 8. If the voltage between two points is zero, can a test
+electric field were not conservative? charge be moved between them with zero net work being
+done? Can this necessarily be done without exerting a
+force? Explain.
+2. Whydoweneedtobecarefulaboutworkdoneonthe
+system versus work donebythe system in calculations?
+9. What is the relationship between voltage and energy?
+More precisely, what is the relationship between potential
+3. Doestheorderinwhichweassembleasystemofpoint
+difference and electric potential energy?
+charges affect the total work done?
+10. Voltages are always measured between two points.
+Why?
+7.2Electric Potential and Potential Difference
+4. Discuss how potential difference and electric field
+11. Howareunitsofvoltsandelectron-voltsrelated?How
+strength are related. Give an example.
+do they differ?
+5. What is the strength of the electric field in a region
+12. Can a particle move in a direction of increasing
+where the electric potential is constant?
+electric potential, yet have its electric potential energy
+decrease? Explain
+6. If a proton is released from rest in an electric field,
+will it move in the direction of increasing or decreasing
+potential? Also answer this question for an electron and a
+7.3Calculations of Electric Potential
+neutron. Explain why.
+13. Comparetheelectricdipolemomentsofcharges ±Q
+7. Voltage is the common word for potential difference. separatedbyadistancedandcharges ±Q/2 separatedby
+Which term is more descriptive, voltage or potential
+a distanced/2.
+
+336 Chapter 7 | Electric Potential
+14. Would Gauss’s law be helpful for determining the 21. Is the electric potential necessarily constant over the
+electric field of a dipole? Why? surface of a conductor?
+15. In what region of space is the potential due to a 22. Underelectrostaticconditions,theexcesschargeona
+uniformly charged sphere the same as that of a point conductorresidesonitssurface.Doesthismeanthatallof
+charge? In what region does it differ from that of a point the conduction electrons in a conductor are on the surface?
+charge?
+23. Can a positively charged conductor be at a negative
+16. Canthepotentialofanonuniformlychargedspherebe potential? Explain.
+the same as that of a point charge? Explain.
+24. Can equipotential surfaces intersect?
+7.4Determining Field from Potential
+17. If the electric field is zero throughout a region, must 7.6Applications of Electrostatics
+the electric potential also be zero in that region? 25. Why are the metal support rods for satellite network
+dishes generally grounded?
+→
+18. Explain why knowledge of E (x, y, z) is not
+26. (a)Whyarefishreasonablysafeinanelectricalstorm?
+sufficient todetermine V(x,y,z).What about the other way
+(b)Whyareswimmersnonethelessorderedtogetoutofthe
+around?
+water in the same circumstance?
+27. Whatarethesimilaritiesanddifferencesbetweenthe
+7.5Equipotential Surfaces and Conductors
+processes in a photocopier and an electrostatic
+19. If two points are at the same potential, are there any precipitator?
+electric field lines connecting them?
+28. About what magnitude of potential is used to charge
+20. Suppose you have a map of equipotential surfaces the drum of a photocopy machine? A web search for
+spaced 1.0 V apart. What do the distances between the “xerography” may be of use.
+surfacesinaparticularregiontellyouaboutthestrengthof
+→
+the E in that region?
+PROBLEMS
+31. Toformahydrogenatom,aprotonisfixedatapoint
+7.1Electric Potential Energy and an electron is brought from far away to a distance of
+29. Consideracharge Q (+5.0µC) fixedatasitewith 0.529×10 −10 m, the average distance between proton
+1
+another charge Q (charge +3.0µC, mass 6.0µg) andelectroninahydrogenatom.Howmuchworkisdone?
+2
+movingintheneighboringspace.(a)Evaluatethepotential
+32. (a) What is the average power output of a heart
+energyof Q whenitis4.0cmfrom Q . (b)If Q starts
+2 1 2 defibrillator that dissipates 400 J of energy in 10.0 ms?
+fromrestfromapoint4.0cmfrom Q , whatwill beits (b) Considering the high-power output, why doesn’t the
+1
+speedwhenitis8.0cmfrom Q ?(Note: Q isheldfixed defibrillator produce serious burns?
+1 1
+in its place.)
+7.2Electric Potential and Potential Difference
+30. Two charges Q (+2.00µC) and Q (+2.00µC)
+1 2 33. Findtheratioofspeedsofanelectronandanegative
+are placed symmetrically along the x-axis at
+hydrogen ion (one having an extra electron) accelerated
+x= ±3.00cm. Consider a charge Q
+3
+of charge
+through the same voltage, assuming non-relativistic final
++4.00µC and mass 10.0 mg moving along the y-axis. speeds. Take the mass of the hydrogen ion to be
+−27
+If Q starts from rest at y=2.00cm, what is its speed 1.67×10 kg.
+3
+when it reaches y=4.00cm?
+34. Anevacuatedtubeusesanacceleratingvoltageof40
+kVtoaccelerateelectronstohitacopperplateandproduce
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 337
+X-rays. Non-relativistically, what would be the maximum
+speed of these electrons?
+35. Show that units of V/m and N/C for electric field
+strength are indeed equivalent.
+36. What is the strength of the electric field between
+two parallel conducting plates separated by 1.00 cm and
+having a potential difference (voltage) between them of
+44. Singly charged gas ions are accelerated from rest
+1.50×104 V?
+through a voltage of 13.0 V. At what temperature will the
+averagekineticenergyofgasmoleculesbethesameasthat
+37. The electric field strength between two parallel given these ions?
+conducting plates separated by 4.00 cm is
+7.50×104 V/m. (a) What is the potential difference
+7.3Calculations of Electric Potential
+betweentheplates?(b)Theplatewiththelowestpotential
+istakentobezerovolts.Whatisthepotential1.00cmfrom 45. A 0.500-cm-diameter plastic sphere, used in a static
+that plate and 3.00 cm from the other? electricity demonstration, has a uniformly distributed
+40.0-pCchargeonitssurface.Whatisthepotentialnearits
+surface?
+38. Thevoltageacrossamembraneformingacellwallis
+80.0 mV and the membrane is 9.00 nm thick. What is the
+electricfieldstrength?(Thevalueissurprisinglylarge,but 46. Howfarfroma 1.00-µC pointchargeisthepotential
+correct.) You may assume a uniform electric field.
+100 V? At what distance is it 2.00×102 V?
+39. Two parallel conducting plates are separated by 10.0
+cm,andoneofthemistakentobeatzerovolts.(a)What 47. Ifthepotentialduetoapointchargeis 5.00×102 V
+is the electric field strength between them, if the potential atadistanceof15.0m,whatarethesignandmagnitudeof
+8.00 cm from the zero volt plate (and 2.00 cm from the the charge?
+other) is 450 V? (b) What is the voltage between the
+plates?
+48. Innuclearfission,anucleussplitsroughlyinhalf.(a)
+What is the potential 2.00×10−14 m from a fragment
+40. Find the maximum potential difference between two
+thathas46protonsinit?(b)Whatisthepotentialenergyin
+parallel conducting plates separated by 0.500 cm of air,
+MeV of a similarly charged fragment at this distance?
+giventhemaximumsustainableelectricfieldstrengthinair
+to be 3.0×10 6 V/m.
+49. A research Van de Graaff generator has a 2.00-m-
+diameter metal sphere with a charge of 5.00 mC on it. (a)
+41. An electron is to be accelerated in a uniform electric Whatisthepotentialnearitssurface?(b)Atwhatdistance
+field having a strength of 2.00×10 6 V/m. (a) What from its center is the potential 1.00 MV? (c) An oxygen
+atomwiththreemissingelectronsisreleasedneartheVan
+energy in keV is given to the electron if it is accelerated
+de Graaff generator. What is its energy in MeV when the
+through0.400m?(b)Overwhatdistancewouldithaveto
+atom is at the distance found in part b?
+be accelerated to increase its energy by 50.0 GeV?
+50. Anelectrostaticpaintsprayerhasa0.200-m-diameter
+42. Use the definition of potential difference in terms of
+metal sphere at a potential of 25.0 kV that repels paint
+electricfieldtodeducetheformulaforpotentialdifference
+droplets onto a grounded object.
+between r =r
+a
+and r =r
+b
+for a point charge located at
+(a)What chargeisonthesphere? (b)What chargemusta
+the origin. Hereris the spherical radial coordinate.
+0.100-mg drop of paint have to arrive at the object with a
+speed of 10.0 m/s?
+43. The electric field in a region is pointed away from
+the z-axis and the magnitude depends upon the distance s
+51. (a) What is the potential between two points situated
+fromtheaxis.Themagnitudeoftheelectricfieldisgivenas
+E= α
+s
+where α isaconstant.Findthepotentialdifference 10cmand20cmfroma 3.0-µC pointcharge?(b)Towhat
+locationshouldthepointat20cmbemovedtoincreasethis
+betweenpoints P andP ,explicitlystatingthepathover
+1 2 potential difference by a factor of two?
+which you conduct the integration for the line integral.
+52. Find the potential at points P , P , P , andP in
+1 2 3 4

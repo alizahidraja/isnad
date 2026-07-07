@@ -1,0 +1,273 @@
+# REAL PDF — openstax_vol2.pdf, pages 496-501
+############################################################
+
+486 Chapter 10 | Direct-Current Circuits
+57. If you wish to take a picture of a bullet traveling at
+10.5RC Circuits 500m/s,thenaverybriefflashoflightproducedbyanRC
+dischargethroughaflashtubecanlimitblurring.Assuming
+49. The timing device in an automobile’s intermittent
+1.00 mm of motion during one RC constant is acceptable,
+wipersystemisbasedonanRCtimeconstantandutilizes
+a 0.500-µF capacitor and a variable resistor. Over what
+and given that the flash is driven by a 600-µF capacitor,
+what is the resistance in the flash tube?
+range must R be made to vary to achieve time constants
+from 2.00 to 15.0 s?
+10.6Household Wiring and Electrical Safety
+50. Aheartpacemakerfires72timesaminute,eachtime
+a25.0-nFcapacitorischarged(byabatteryinserieswitha 58. (a) How much power is dissipated in a short circuit
+resistor)to0.632ofitsfullvoltage.Whatisthevalueofthe of 240-V ac through a resistance of 0.250Ω? (b) What
+resistance? current flows?
+51. The duration of a photographic flash is related to an 59. What voltage is involved in a 1.44-kW short circuit
+RCtimeconstant,whichis 0.100µF foracertaincamera. through a 0.100-Ω resistance?
+(a) If the resistance of the flash lamp is 0.0400Ω during
+discharge, what is the size of the capacitor supplying its 60. Find the current through a person and identify the
+energy? (b) What is the time constant for charging the likelyeffectonherifshetouchesa120-Vacsource:(a)if
+capacitor, if the charging resistance is 800kΩ? sheisstandingonarubbermatandoffersatotalresistance
+of 300kΩ;(b)ifsheisstandingbarefootonwetgrassand
+52. A 2.00- and a 7.50-µF capacitor can be connected has a resistance of only 4000kΩ.
+inseriesorparallel,ascana25.0-anda 100-kΩ resistor.
+61. While taking a bath, a person touches the metal case
+Calculate the four RC time constants possible from
+ofaradio.Thepaththroughthepersontothedrainpipeand
+connecting the resulting capacitance and resistance in
+series.
+ground has a resistance of 4000Ω. What is the smallest
+voltageonthecaseoftheradiothatcouldcauseventricular
+fibrillation?
+53. A 500-Ω resistor,anuncharged 1.50-µF capacitor,
+and a 6.16-V emf are connected in series. (a) What is the
+62. Amanfoolishlytriestofishaburningpieceofbread
+initialcurrent?(b)WhatistheRCtimeconstant?(c)What
+from a toaster with a metal butter knife and comes into
+is the current after one time constant? (d) What is the
+contact with 120-V ac. He does not even feel it since,
+voltage on the capacitor after one time constant?
+luckily, he is wearing rubber-soled shoes. What is the
+minimumresistanceofthepaththecurrentfollowsthrough
+54. A heart defibrillator being used on a patient has an
+the person?
+RC time constant of 10.0 ms due to the resistance of the
+patient and the capacitance of the defibrillator. (a) If the
+63. (a) During surgery, a current as small as 20.0µA
+defibrillator has a capacitance of 8.00µF, what is the
+applied directly to the heart may cause ventricular
+resistanceofthepaththroughthepatient?(Youmayneglect
+fibrillation. If the resistance of the exposed heart is
+the capacitance of the patient and the resistance of the
+300Ω, what is the smallest voltage that poses this
+defibrillator.)(b)Iftheinitialvoltageis12.0kV,howlong
+danger?(b)Doesyouranswerimplythatspecialelectrical
+does it take to decline to 6.00×102 V?
+safety precautions are needed?
+55. AnECGmonitormusthaveanRCtimeconstantless
+64. (a) What is the resistance of a 220-V ac short circuit
+than 1.00×102µs to be able to measure variations in that generates a peak power of 96.8 kW? (b) What would
+voltage over small time intervals. (a) If the resistance of the average power be if the voltage were 120 V ac?
+the circuit (due mostly to that of the patient’s chest) is
+1.00kΩ,whatisthemaximumcapacitanceofthecircuit? 65. Aheartdefibrillatorpasses10.0Athroughapatient’s
+(b)Woulditbedifficultinpracticetolimitthecapacitance torso for 5.00 ms in an attempt to restore normal beating.
+to less than the value found in (a)? (a)Howmuchchargepassed?(b)Whatvoltagewasapplied
+if500Jofenergywasdissipated?(c)Whatwasthepath’s
+resistance?(d)Findthetemperatureincreasecausedinthe
+56. Usingtheexactexponentialtreatment,determinehow
+8.00 kg of affected tissue.
+much time is required to charge an initially uncharged
+100-pF capacitor through a 75.0-MΩ resistor to 90.0%
+66. A short circuit in a 120-V appliance cord has a
+of its final voltage.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 487
+0.500-Ω resistance. Calculate the temperature rise of the foracircuitbreakertointerruptthecurrent.Isthislikelyto
+2.00 g of surrounding materials, assuming their specific be damaging?
+heatcapacityis 0.200cal/g·°C andthatittakes0.0500s
+ADDITIONAL PROBLEMS
+67. AcircuitcontainsaDcellbattery,aswitch,a 20-Ω diameter. The resistivity of the graphite is
+resistor,andfour20-mFcapacitorsconnectedinseries.(a) ρ=1.38×10 −5 Ω/m.Thehomemaderesistorisplacein
+Whatistheequivalentcapacitanceofthecircuit?(b)What
+series with a switch, a 10.00-mF capacitor and a 0.50-V
+is the RC time constant? (c) How long before the current
+power source. (a) What is the RC time constant of the
+decreases to 50% of the initial value once the switch is
+circuit?(b)Whatisthepotentialdropacrossthepencil1.00
+closed? s after the switch is closed?
+68. AcircuitcontainsaD-cellbattery,aswitch,a 20-Ω 72. Therathersimplecircuitshownbelowisknownasa
+resistor, and three 20-mF capacitors. The capacitors are voltage divider. The symbol consisting of three horizontal
+connected in parallel, and the parallel connection of linesisrepresents“ground”andcanbedefinedasthepoint
+capacitors are connected in series with the switch, the where the potential is zero. The voltage divider is widely
+resistor and the battery. (a) What is the equivalent used in circuits and a single voltage source can be used
+capacitance of the circuit? (b) What is the RC time to provide reduced voltage to a load resistor as shown
+constant? (c) How long before the current decreases to in the second part of the figure. (a) What is the output
+50% of the initial value once the switch is closed? voltage V ofcircuit(a)intermsof R , R , andV ?
+out 1 2 in
+(b)Whatistheoutputvoltage V ofcircuit(b)interms
+out
+69. Considerthecircuitbelow.Thebatteryhasanemfof
+ε=30.00V andaninternalresistanceof r =1.00Ω. (a)
+of R
+1
+, R
+2
+, R L, andV
+in
+?
+Findtheequivalentresistanceofthecircuitandthecurrent
+outofthebattery.(b)Findthecurrentthrougheachresistor.
+(c)Findthepotentialdropacrosseachresistor.(d)Findthe
+powerdissipatedbyeachresistor.(e)Findthetotalpower
+supplied by the batteries.
+73. Three 300-Ω resistors are connect in series with an
+AAA battery with a rating of 3 AmpHours. (a) How long
+can the battery supply the resistors with power? (b) If the
+resistorsareconnectedinparallel,howlongcanthebattery
+last?
+74. Consider a circuit that consists of a real battery with
+70. A homemade capacitor is constructed of 2 sheets of
+an emf ε and an internal resistance of r connected to a
+aluminumfoilwithanareaof2.00squaremeters,separated
+variableresistorR.(a)Inorderfortheterminal voltageof
+bypaper,0.05mmthick,ofthesameareaandadielectric
+thebatterytobeequaltotheemfofthebattery,whatshould
+constant of 3.7. The homemade capacitor is connected in
+theresistanceofthevariableresistorbeadjustedto?(b)In
+series with a 100.00-Ω resistor, a switch, and a 6.00-V
+order to get the maximum current from the battery, what
+voltage source. (a) What is the RC time constant of the
+shouldtheresistancevariableresistorbeadjustedto?(c)In
+circuit? (b) What is the initial current through the circuit,
+order for the maximum power output of the battery to be
+when the switch is closed? (c) How long does it take the
+reached,whatshouldtheresistanceofthevariableresistor
+current to reach one third of its initial value?
+be set to?
+71. Astudentmakesahomemaderesistorfromagraphite
+75. Considerthecircuitshownbelow.Whatistheenergy
+pencil 5.00 cm long, where the graphite is 0.05 mm in
+
+488 Chapter 10 | Direct-Current Circuits
+storedineachcapacitoraftertheswitchhasbeenclosedfor
+a very long time?
+76. Consideracircuitconsistingofabatterywithanemf
+ε and an internal resistance of r connected in series with
+a resistor R and a capacitor C. Show that the total energy
+80. Two resistors, one having a resistance of 145Ω,
+suppliedbythebatterywhilechargingthebatteryisequal are connected in parallel to produce a total resistance of
+to ε2C. 150Ω. (a) What is the value of the second resistance?
+(b) What is unreasonable about this result? (c) Which
+assumptions are unreasonable or inconsistent?
+77. Consider the circuit shown below. The terminal
+voltagesofthebatteriesareshown.(a)Findtheequivalent
+resistance of the circuit and the current out of the battery. 81. Two resistors, one having a resistance of 900kΩ,
+(b) Find the current through each resistor. (c) Find the are connected in series to produce a total resistance of
+potential drop across each resistor. (d) Find the power 0.500MΩ.(a)Whatisthevalueofthesecondresistance?
+dissipatedbyeachresistor.(e)Findthetotalpowersupplied (b) What is unreasonable about this result? (c) Which
+by the batteries. assumptions are unreasonable or inconsistent?
+82. Apply the junction rule at pointashown below.
+78. Consider the circuit shown below. (a) What is the
+terminal voltage of the battery? (b) What is the potential
+drop across resistor R ?
+2
+83. ApplytheloopruletoLoopakledcbainthepreceding
+problem.
+79. Consider the circuit shown below. (a)Determine the
+equivalentresistanceandthecurrentfromthebatterywith 84. Find the currents flowing in the circuit in the
+switch S open. (b) Determine the equivalent resistance preceding problem. Explicitly show how you follow the
+1
+steps in the Problem-Solving Strategy: Series and
+and the current from the battery with switch S closed.
+1 Parallel Resistors.
+85. Considerthecircuitshownbelow.(a)Findthecurrent
+through each resistor. (b) Check the calculations by
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 489
+analyzing the power in the circuit. producesanaverage 0.500Wfromanaverage 3.00V.(a)
+Whatenergydoesitdissipate?(b)Howmuchchargemoves
+through the lamp? (c) Find the capacitance. (d) What is
+theresistanceofthelamp?(Sinceaveragevaluesaregiven
+for some quantities, the shape of the pulse profile is not
+needed.)
+87. A 160-µF capacitor charged to 450 V is discharged
+througha 31.2-kΩ resistor.(a)Findthetimeconstant.(b)
+Calculatethetemperatureincreaseoftheresistor,giventhat
+itsmassis2.50ganditsspecificheatis 1.67kJ/kg·°C,
+noting that most of the thermal energy is retained in the
+short time of the discharge. (c) Calculate the new
+86. A flashing lamp in a Christmas earring is based on
+resistance,assumingitispurecarbon.(d)Doesthischange
+an RC discharge of a capacitor through its resistance. The
+in resistance seem significant?
+effective duration of the flash is 0.250 s, during which it
+CHALLENGE PROBLEMS
+88. Some camera flashes use flash tubes that require a
+high voltage. They obtain a high voltage by charging
+capacitors in parallel and then internally changing the
+connections of the capacitors to place them in series.
+Consider a circuit that uses four AAA batteries connected
+in series to charge six 10-mF capacitors through an
+equivalent resistance of 100Ω. The connections are then
+switched internally to place the capacitors in series. The
+capacitors discharge through a lamp with a resistance of
+100Ω. (a) What is the RC time constant and the initial
+current out of the batteries while they are connected in
+parallel? (b) How long does it take for the capacitors to
+charge to 90% of the terminal voltages of the batteries?
+(c) What is the RC time constant and the initial current of
+thecapacitorsconnectedinseriesassumingitdischargesat
+90% offullcharge?(d)Howlongdoesittakethecurrent
+to decrease to 10% of the initial value?
+89. Considerthecircuitshownbelow.Eachbatteryhasan
+emf of 1.50 V and an internal resistance of 1.00Ω. (a) 90. Analog meters use a galvanometer, which essentially
+Whatisthecurrentthroughtheexternalresistor,whichhas consists of a coil of wire with a small resistance and a
+aresistanceof10.00ohms?(b)Whatistheterminalvoltage pointer with a scale attached. When current runs through
+of each battery? the coil, the pointer turns; the amount the pointer turns
+is proportional to the amount of current running through
+the coil. Galvanometers can be used to make an ammeter
+if a resistor is placed in parallel with the galvanometer.
+Consideragalvanometerthathasaresistanceof 25.00Ω
+andgivesafullscalereadingwhena 50-µA currentruns
+through it. The galvanometer is to be used to make an
+ammeterthathasafullscalereadingof10.00A,asshown
+below. Recall that an ammeter is connected in series with
+the circuit of interest, so all 10 A must run through the
+meter. (a) What is the current through the parallel resistor
+in the meter? (b) What is the voltage across the parallel
+resistor? (c) What is the resistance of the parallel resistor?
+
+490 Chapter 10 | Direct-Current Circuits
+I , V , I , andV .
+1 1 2 3
+93. Consider the circuit below. (a) What is the RC time
+constantofthecircuit?(b)Whatistheinitialcurrentinthe
+circuitoncetheswitchisclosed?(c)Howmuchtimepasses
+91. Analog meters use a galvanometer, which essentially between the instant the switch is closed and the time the
+consists of a coil of wire with a small resistance and a current has reached half of the initial current?
+pointer with a scale attached. When current runs through
+the coil, the point turns; the amount the pointer turns is
+proportional to the amount of current running through the
+coil. Galvanometers can be used to make a voltmeter if a
+resistorisplacedinserieswiththegalvanometer.Consider
+agalvanometerthathasaresistanceof 25.00Ω andgives
+afullscalereadingwhena 50-µA currentrunsthroughit.
+The galvanometer is to be used to make an voltmeter that
+hasafullscalereadingof10.00V,asshownbelow.Recall
+thatavoltmeterisconnectedinparallelwiththecomponent
+of interest, so the meter must have a high resistance or it
+willchangethecurrentrunningthroughthecomponent.(a)
+What is the potential drop across the series resistor in the
+meter? (b) What is the resistance of the parallel resistor?
+94. Consider the circuit below. (a) What is the initial
+currentthroughresistor R whentheswitchisclosed?(b)
+2
+Whatisthecurrentthroughresistor R whenthecapacitor
+2
+is fully charged, long after the switch is closed? (c) What
+happens if the switch is opened after it has been closed
+for some time? (d) If the switch has been closed for a
+timeperiodlongenoughforthecapacitor tobecomefully
+charged,andthentheswitchisopened,howlongbeforethe
+currentthroughresistor R reacheshalfofitsinitialvalue?
+1
+92. Consider the circuit shown below. Find
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

@@ -1,0 +1,320 @@
+# REAL PDF — openstax_vol2.pdf, pages 235-241
+############################################################
+
+Chapter 5 | Electric Charges and Fields 225
+40. Acertainlightningboltmoves40.0Cofcharge.How half a meter above the +12µC charge in a direction
+many fundamental units of charge is this?
+perpendicular to the line joining the two fixed charges
+41. A 2.5-g copper penny is given a charge of
+50. Inasaltcrystal,thedistancebetweenadjacentsodium
+−2.0×10 −9 C.(a)Howmanyexcesselectronsareonthe andchlorideionsis 2.82×10 −10 m. Whatistheforceof
+penny?(b)Bywhatpercentdotheexcesselectronschange
+attraction between the two singly charged ions?
+the mass of the penny?
+42. A 2.5-g copper penny is given a charge of 51. Protonsinanatomic nucleus aretypically 10 −15 m
+apart. What is the electric force of repulsion between
+4.0×10 −9 C.(a)Howmanyelectronsareremovedfrom
+nuclear protons?
+the penny? (b) If no more than one electron is removed
+fromanatom,whatpercentoftheatomsareionizedbythis
+52. Suppose Earth and the Moon each carried a net
+charging process?
+negative charge −Q. Approximate both bodies as point
+masses and point charges.
+5.2Conductors, Insulators, and Charging by (a)WhatvalueofQisrequiredtobalancethegravitational
+attraction between Earth and the Moon?
+Induction
+(b) Does the distance between Earth and the Moon affect
+43. Supposeaspeckofdustinanelectrostaticprecipitator
+your answer? Explain.
+has 1.0000×1012 protons in it and has a net charge of
+(c) How many electrons would be needed to produce this
+−5.00 nC (a very large charge for a small speck). How
+charge?
+many electrons does it have?
+53. Point charges q =50µC and q =−25µC are
+1 2
+44. Anamoebahas 1.00×10 16 protonsandanetcharge
+placed 1.0 m apart. What is the force on a third charge
+of0.300pC.(a)Howmanyfewerelectronsaretherethan
+q =20µC placed midway between q and q ?
+protons? (b) If you paired them up, what fraction of the 3 1 2
+protons would have no electrons?
+54. Where must q of the preceding problem be placed
+3
+45. A50.0-gballofcopperhasanetchargeof 2.00µC. so that the net force on it is zero?
+Whatfractionofthecopper’selectronshasbeenremoved?
+(Each copper atom has 29 protons, and copper has an 55. Two small balls, each of mass 5.0 g, are attached to
+atomic mass of 63.5.) silkthreads50cmlong,whichareinturntiedtothesame
+point on the ceiling, as shown below. When the balls are
+46. What net charge would you place on a 100-g piece given the same charge Q, the threads hang at 5.0° to the
+of sulfur if you put an extra electron on 1 in 1012 of its vertical, as shown below. What is the magnitude of Q?
+What are the signs of the two charges?
+atoms? (Sulfur has an atomic mass of 32.1 u.)
+47. How many coulombs of positive charge are there in
+4.00kgofplutonium,givenitsatomicmassis244andthat
+each plutonium atom has 94 protons?
+5.3Coulomb's Law
+48. Twopointparticleswithcharges +3µC and +5µC
+are held in place by 3-N forces on each charge in
+appropriate directions. (a) Draw a free-body diagram for
+each particle. (b) Find the distance between the charges.
+49. Two charges +3µC and +12µC are fixed 1 m
+apart,withthesecondonetotheright.Findthemagnitude
+and direction of the net force on a −2-nC charge when
+placedatthefollowinglocations:(a)halfwaybetweenthe
+two (b) half a meter to the left of the +3µC charge (c)
+
+226 Chapter 5 | Electric Charges and Fields
+61. Two fixed particles, each of charge 5.0×10 −6 C,
+are24cmapart.Whatforcedotheyexertonathirdparticle
+of charge −2.5×10 −6 C that is 13 cm from each of
+them?
+62. The charges
+q =2.0×10 −7 C,q =−4.0×10 −7 C, and
+1 2
+q =−1.0×10 −7 C are placed at the corners of the
+3
+triangle shown below. What is the force on q ?
+1
+56. Point charges Q =2.0µC and Q =4.0µC are
+1 2
+located at → r =(4.0 ^ i −2.0 ^ j +5.0 ^ k)m and
+1
+→ r =(8.0 ^ i +5.0 ^ j −9.0 ^ k)m. What is the force of
+2
+Q on Q ?
+2 1
+57. The net excess charge on two small spheres (small
+enoughtobetreatedaspointcharges)isQ.Showthatthe
+force of repulsion between the spheres is greatest when
+each sphere has an excess charge Q/2. Assume that the 63. What is the force on the charge q at the lower-right-
+distance between the spheres is so large compared with hand corner of the square shown here?
+their radii that the spheres can be treated as point charges.
+58. Two small, identical conducting spheres repel each
+otherwithaforceof0.050Nwhentheyare0.25mapart.
+After a conducting wire is connected between the spheres
+and then removed, they repel each other with a force of
+0.060 N. What is the original charge on each sphere?
+59. Acharge q=2.0µC isplacedatthepointPshown
+below. What is the force onq?
+64. Point charges q =10µC and q =−30µC are
+60. Whatisthenetelectricforceonthechargelocatedat 1 2
+the lower right-hand corner of the triangle shown here? ⎛ ^ ^⎞
+fixed at r = 3.0i −4.0j m and
+1 ⎝ ⎠
+⎛ ^ ^⎞
+r = 9.0i +6.0j m. What is the force of q onq ?
+2 ⎝ ⎠ 2 1
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 227
+field?
+5.4Electric Field
+65. A particle of charge 2.0×10 −8 C experiences an 71. The electric field in a particular thundercloud is
+upward force of magnitude 4.0×10 −6 N when it is 2.0×10 5 N/C. Whatistheaccelerationofanelectronin
+this field?
+placed in a particular point in an electric field. (a) What
+is the electric field at that point? (b) If a charge
+72. Asmallpieceofcorkwhosemassis2.0gisgivena
+q=−1.0×10 −8 C is placed there, what is the force on
+charge of 5.0×10 −7 C. What electric field is needed to
+it?
+place the cork in equilibrium under the combined electric
+and gravitational forces?
+66. On a typical clear day, the atmospheric electric field
+points downward and has a magnitude of approximately
+73. Iftheelectricfieldis 100N/C atadistanceof50cm
+100N/C.Comparethegravitational andelectric forceson
+from a point chargeq, what is the value ofq?
+a small dust particle of mass 2.0×10 −15 g that carries
+a single electron charge. What is the acceleration (both
+74. WhatistheelectricfieldofaprotonatthefirstBohr
+magnitude and direction) of the dust particle?
+orbit for hydrogen (r =5.29×10−11 m)? What is the
+force on the electron in that orbit?
+67. Consideranelectronthatis 10 −10 m fromanalpha
+particle (q=3.2×10 −19 C). (a) What is the electric 75. (a) What is the electric field of an oxygen nucleus at
+fieldduetothealphaparticleatthelocationoftheelectron? apointthatis 10 −10 m fromthenucleus?(b)Whatisthe
+(b) What is the electric field due to the electron at the
+forcethiselectric fieldexertsonasecondoxygennucleus
+locationofthealphaparticle?(c)Whatistheelectricforce
+placed at that point?
+on the alpha particle? On the electron?
+76. Two point charges, q =2.0×10 −7 C and
+68. Eachtheballsshownbelowcarriesachargeqandhas 1
+amassm.Thelengthofeachthreadisl,andatequilibrium, q =−6.0×10 −8 C, areheld25.0cmapart.(a)Whatis
+2
+theballsareseparatedbyanangle 2θ.Howdoes θ vary
+theelectricfieldatapoint5.0cmfromthenegativecharge
+withqandl? Show that θ satisfies
+andalongthelinebetweenthetwocharges?(b)Whatisthe
+force on an electron placed at that point?
+q2
+sin(θ)2 tan(θ)= .
+16πε gl2m
+0 77. Point charges q =50µC and q =−25µC are
+1 2
+placed1.0mapart.(a)Whatistheelectricfieldatapoint
+midway between them? (b) What is the force on a charge
+q =20µC situated there?
+3
+78. Can you arrange the two point charges
+q =−2.0×10 −6 C and q =4.0×10 −6 C along the
+1 2
+x-axis so that E=0 at the origin?
+79. Pointcharges q =q =4.0×10 −6 C arefixedon
+1 2
+the x-axis at x=−3.0m and x=3.0m. What charge
+q must be placed at the origin so that the electric field
+vanishes at x=0, y=3.0m?
+69. Whatistheelectricfieldatapointwheretheforceona 5.5Calculating Electric Fields of Charge
+⎛ ^ ^⎞
+−2.0×10 −6 −C charge is 4.0i −6.0j ×10 −6 N? Distributions
+⎝ ⎠
+80. A thin conducting plate 1.0 m on the side is given a
+charge of −2.0×10 −6 C. An electron is placed 1.0 cm
+70. A proton is suspended in the air by an electric field
+atthesurfaceofEarth.Whatisthestrengthofthiselectric abovethecenteroftheplate.Whatistheaccelerationofthe
+
+228 Chapter 5 | Electric Charges and Fields
+electron?
+81. Calculate the magnitude and direction of the electric
+field 2.0 m from a long wire that is charged uniformly at
+λ=4.0×10 −6 C/m.
+82. Two thin conducting plates, each 25.0 cm on a side,
+88. Charge is distributed along the entire x-axis with
+are situated parallel to one another and 5.0 mm apart. If
+uniformdensity λ. Howmuchworkdoestheelectricfield
+10−11 electrons are moved from one plate to the other,
+of this charge distribution do on an electron that moves
+what is the electric field between the plates? along they-axis from y=atoy=b?
+83. The charge per unit length on the thin rod shown
+89. Charge is distributed along the entire x-axis with
+belowis λ.WhatistheelectricfieldatthepointP?(Hint:
+uniform density λ and along the entire y-axis with
+x
+Solve this problem by first considering the electric field
+→ uniformdensity λ y. Calculatetheresultingelectricfieldat
+d E at P due to a small segment dx of the rod, which
+contains charge dq=λdx. Then find the net field by (a) → r =a ^ i +b ^ j and (b) → r =c ^ k.
+→
+integrating d E over the length of the rod.)
+90. A rod bent into the arc of a circle subtends an angle
+2θ at the center P of the circle (see below). If the rod is
+chargeduniformlywithatotalchargeQ,whatistheelectric
+field atP?
+84. The charge per unit length on the thin semicircular
+wire shown below is λ. What is the electric field at the
+pointP?
+91. A proton moves in the electric field
+→ ^
+E =200i N/C. (a) What are the force on and the
+85. Twothinparallelconductingplatesareplaced2.0cm
+accelerationoftheproton?(b)Dothesamecalculationfor
+apart.Eachplateis2.0cmonaside;oneplatecarriesanet
+an electron moving in this field.
+chargeof 8.0µC, andtheotherplatecarriesanetcharge
+of −8.0µC. What is the charge density on the inside
+92. Anelectronandaproton,eachstartingfromrest,are
+surfaceofeachplate?Whatistheelectricfieldbetweenthe acceleratedbythesameuniformelectricfieldof200N/C.
+plates? Determinethedistanceandtimeforeachparticletoacquire
+a kinetic energy of 3.2×10 −16 J.
+86. Athinconducingplate2.0monasideisgivenatotal
+chargeof −10.0µC.(a)Whatistheelectricfield 1.0cm
+93. Asphericalwaterdropletofradius 25µm carriesan
+above the plate? (b) What is the force on an electron at
+excess250electrons.Whatverticalelectricfieldisneeded
+thispoint?(c)Repeatthesecalculationsforapoint2.0cm
+to balance the gravitational force on the droplet at the
+above the plate. (d) When the electron moves from 1.0 to
+surface of the earth?
+2,0cmabovetheplate,howmuchworkisdoneonitbythe
+electric field?
+94. A proton enters the uniform electric field produced
+bythetwochargedplatesshownbelow.Themagnitudeof
+87. Atotalchargeqisdistributeduniformlyalongathin,
+straight rod of length L (see below). What is the electric the electric field is 4.0×10 5 N/C, and the speed of the
+field at P 1 ? AtP 2 ? proton when it enters is 1.5×10 7 m/s. What distance d
+hastheprotonbeendeflecteddownwardwhenitleavesthe
+plates?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 229
+95. Shown below is a small sphere of mass 0.25 g that
+carriesachargeof 9.0×10 −10 C. Thesphereisattached
+tooneendofaverythinsilkstring5.0cmlong.Theother
+end of the string is attached to a large vertical conducting
+platethathasachargedensityof 30×10 −6 C/m2. What
+is the angle that the string makes with the vertical?
+98. Fromadistanceof10cm,aprotonisprojectedwitha
+speedof v=4.0×10 6 m/s directlyatalarge,positively
+charged plate whose charge density is
+σ =2.0×10 −5 C/m2. (See below.) (a) Does the proton
+reach the plate? (b) If not, how far from the plate does it
+turn around?
+96. Two infinite rods, each carrying a uniform charge
+density λ, are parallel to one another and perpendicular
+totheplaneofthepage.(Seebelow.)Whatistheelectrical
+field at P ? AtP ?
+1 2
+99. A particle of mass m and charge −q moves along
+a straight line away from a fixed particle of charge Q.
+When the distance between the two particles is r , −q is
+0
+movingwithaspeed v . (a)Usethework-energytheorem
+0
+to calculate the maximum separation of the charges. (b)
+97. Positive charge is distributed with a uniform density What do you have to assume about v to make this
+0
+λ along the positive x-axis from rto∞, along the
+calculation?(c)Whatistheminimumvalueof v suchthat
+0
+positive y-axis from rto∞, and along a 90° arc of a
+−q escapes fromQ?
+circleofradiusr,asshownbelow.Whatistheelectricfield
+atO?
+5.6Electric Field Lines
+100. Which of the following electric field lines are
+incorrect for point charges? Explain why.
+
+230 Chapter 5 | Electric Charges and Fields
+square as shown.
+Draw the electric field of the charge distribution.
+104. Supposetheelectricfieldofanisolatedpointcharge
+decreased with distance as 1/r2+δ rather than as 1/r2.
+Showthatitisthenimpossibletodrawcontinousfieldlines
+so that their number per unit area is proportional toE.
+5.7Electric Dipoles
+105. Consider the equal and opposite charges shown
+below. (a) Show that at all points on the x-axis for which
+|x|≫a, E≈Qa/2πε x3 . (b) Show that at all points on
+0
+they-axis for which |y|≫a, E≈Qa/πε y3 .
+0
+101. In this exercise, you will practice drawing electric
+field lines. Make sure you represent both the magnitude
+anddirectionoftheelectricfieldadequately.Notethatthe
+numberoflinesintooroutofchargesisproportionaltothe
+charges. 106. (a) What is the dipole moment of the configuration
+(a) Draw the electric field lines map for two charges shown above? If Q=4.0µC, (b) what is the torque on
++20µC and −20µC situated 5 cm from each other.
+^
+thisdipolewithanelectricfieldof 4.0×10 5 N/Ci ?(c)
+(b) Draw the electric field lines map for two charges What is the torque on this dipole with an electric field of
++20µC and +20µC situated 5 cm from each other.
+^
+−4.0×10 5 N/Ci ?(d)Whatisthetorqueonthisdipole
+(c) Draw the electric field lines map for two charges
+^
++20µC and −30µC situated 5 cm from each other. with an electric field of ±4.0×10 5 N/Cj ?
+102. Drawtheelectricfieldforasystemofthreeparticles 107. A water molecule consists of two hydrogen atoms
+of charges +1µC, +2µC, and −3µC fixed at the bonded with one oxygen atom. The bond angle between
+the two hydrogen atoms is 104° (see below). Calculate
+corners of an equilateral triangle of side 2 cm.
+the net dipole moment of a water molecule that is placed
+in a uniform, horizontal electric field of magnitude
+103. Two charges of equal magnitude but opposite sign
+make up an electric dipole. A quadrupole consists of two 2.3×10 −8 N/C. (You are missing some information for
+electric dipoles are placed anti-parallel at two edges of a solving this problem; you will need to determine what
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

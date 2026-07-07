@@ -1,0 +1,199 @@
+# REAL PDF — openstax_vol1.pdf, pages 140-148
+############################################################
+
+128 3 • Motion Along a Straight Line
+One-Dimensional Motion Involving Gravity
+The best way to see the basic features of motion involving gravity is to start with the simplest situations and then
+progress toward more complex ones. So, we start by considering straight up-and-down motion with no air
+resistance or friction. These assumptions mean the velocity (if there is any) is vertical. If an object is dropped, we
+know the initial velocity is zero when in free fall. When the object has left contact with whatever held or threw it, the
+object is in free fall. When the object is thrown, it has the same initial speed in free fall as it did before it was
+released. When the object comes in contact with the ground or any other object, it is no longer in free fall and its
+acceleration of g is no longer valid. Under these circumstances, the motion is one-dimensional and has constant
+acceleration of magnitude g. We represent vertical displacement with the symbol y.
+KINEMATIC EQUATIONS FOR OBJECTS IN FREE FALL
+We assume here that acceleration equals −g (with the positive direction upward).
+3.15
+​
+3.16
+3.17
+PROBLEM-SOLVING STRATEGY
+Free Fall
+1. Decide on the sign of the acceleration of gravity. In Equation 3.15 through Equation 3.17, acceleration g is
+negative, which says the positive direction is upward and the negative direction is downward. In some
+problems, it may be useful to have acceleration g as positive, indicating the positive direction is downward.
+2. Draw a sketch of the problem. This helps visualize the physics involved.
+3. Record the knowns and unknowns from the problem description. This helps devise a strategy for selecting the
+appropriate equations to solve the problem.
+4. Decide which of Equation 3.15 through Equation 3.17 are to be used to solve for the unknowns.
+EXAMPLE 3.14
+Free Fall of a Ball
+Figure 3.27 shows the positions of a ball, at 1-s intervals, with an initial velocity of 4.9 m/s downward, that is thrown
+from the top of a 98-m-high building. (a) How much time elapses before the ball reaches the ground? (b) What is the
+velocity when it arrives at the ground?
+Access for free at openstax.org
+
+3.5 • Free Fall 129
+FIGURE 3.27 The positions and velocities at 1-s intervals of a ball thrown downward from a tall building at 4.9 m/s.
+Strategy
+Choose the origin at the top of the building with the positive direction upward and the negative direction downward.
+To find the time when the position is −98 m, we use Equation 3.16, with .
+Solution
+a. Substitute the given values into the equation:
+This simplifies to
+This is a quadratic equation with roots . The positive root is the one we are interested
+in, since time is the time when the ball is released at the top of the building. (The time
+represents the fact that a ball thrown upward from the ground would have been in the air for 5.0 s when it
+passed by the top of the building moving downward at 4.9 m/s.)
+b. Using Equation 3.15, we have
+Significance
+For situations when two roots are obtained from a quadratic equation in the time variable, we must look at the
+physical significance of both roots to determine which is correct. Since corresponds to the time when the ball
+was released, the negative root would correspond to a time before the ball was released, which is not physically
+meaningful. When the ball hits the ground, its velocity is not immediately zero, but as soon as the ball interacts with
+the ground, its acceleration is not g and it accelerates with a different value over a short time to zero velocity. This
+problem shows how important it is to establish the correct coordinate system and to keep the signs of g in the
+kinematic equations consistent.
+EXAMPLE 3.15
+Vertical Motion of a Baseball
+A batter hits a baseball straight upward at home plate and the ball is caught 5.0 s after it is struck (Figure 3.28). (a)
+What is the initial velocity of the ball? (b) What is the maximum height the ball reaches? (c) How long does it take to
+reach the maximum height? (d) What is the acceleration at the top of its path? (e) What is the velocity of the ball
+
+130 3 • Motion Along a Straight Line
+when it is caught? Assume the ball is hit and caught at the same location.
+FIGURE 3.28 A baseball hit straight up is caught by the catcher 5.0 s later.
+Strategy
+Choose a coordinate system with a positive y-axis that is straight up and with an origin that is at the spot where the
+ball is hit and caught.
+Solution
+a. Equation 3.16 gives
+which gives .
+b. At the maximum height, . With , Equation 3.17 gives
+or
+c. To find the time when , we use Equation 3.15:
+This gives . Since the ball rises for 2.5 s, the time to fall is 2.5 s.
+d. The acceleration is 9.8 m/s2 everywhere, even when the velocity is zero at the top of the path. Although the
+velocity is zero at the top, it is changing at the rate of 9.8 m/s2 downward.
+e. The velocity at can be determined with Equation 3.15:
+Significance
+The ball returns with the speed it had when it left. This is a general property of free fall for any initial velocity. We
+used a single equation to go from throw to catch, and did not have to break the motion into two segments, upward
+Access for free at openstax.org
+
+3.5 • Free Fall 131
+and downward. We are used to thinking that the effect of gravity is to create free fall downward toward Earth. It is
+important to understand, as illustrated in this example, that objects moving upward away from Earth are also in a
+state of free fall.
+CHECK YOUR UNDERSTANDING 3.7
+A chunk of ice breaks off a glacier and falls 30.0 m before it hits the water. Assuming it falls freely (there is no air
+resistance), how long does it take to hit the water? Which quantity increases faster, the speed of the ice chunk or its
+distance traveled?
+EXAMPLE 3.16
+Rocket Booster
+A small rocket with a booster blasts off and heads straight upward. When at a height of and velocity of 200.0
+m/s, it releases its booster. (a) What is the maximum height the booster attains? (b) What is the velocity of the
+booster at a height of 6.0 km? Neglect air resistance.
+FIGURE 3.29 A rocket releases its booster at a given height and velocity. How high and how fast does the booster go?
+Strategy
+We need to select the coordinate system for the acceleration of gravity, which we take as negative downward. We
+are given the initial velocity of the booster and its height. We consider the point of release as the origin. We know the
+velocity is zero at the maximum position within the acceleration interval; thus, the velocity of the booster is zero at
+its maximum height, so we can use this information as well. From these observations, we use Equation 3.17, which
+gives us the maximum height of the booster. We also use Equation 3.17 to give the velocity at 6.0 km. The initial
+velocity of the booster is 200.0 m/s.
+
+132 3 • Motion Along a Straight Line
+Solution
+a. From Equation 3.17, . With , we can solve for y:
+This solution gives the maximum height of the booster in our coordinate system, which has its origin at the
+point of release, so the maximum height of the booster is roughly 7.0 km.
+b. An altitude of 6.0 km corresponds to in the coordinate system we are using. The other initial
+conditions are .
+We have, from Equation 3.17,
+Significance
+We have both a positive and negative solution in (b). Since our coordinate system has the positive direction upward,
+the +142.8 m/s corresponds to a positive upward velocity at 6000 m during the upward leg of the trajectory of the
+booster. The value v = −142.8 m/s corresponds to the velocity at 6000 m on the downward leg. This example is also
+important in that an object is given an initial velocity at the origin of our coordinate system, but the origin is at an
+altitude above the surface of Earth, which must be taken into account when forming the solution.
+INTERACTIVE
+Engage the Phet simulation below to learn about graphing polynomials. The shape of the curve changes as the
+constants are adjusted. View the curves for the individual terms (for example, y = bx) to see how they add to
+generate the polynomial curve.
+Access multimedia content (https://openstax.org/l/21equatgraph)
+3.6 Finding Velocity and Displacement from Acceleration
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Derive the kinematic equations for constant acceleration using integral calculus.
+• Use the integral formulation of the kinematic equations in analyzing motion.
+• Find the functional form of velocity versus time given the acceleration function.
+• Find the functional form of position versus time given the velocity function.
+This section assumes you have enough background in calculus to be familiar with integration. In Instantaneous
+Velocity and Speed and Average and Instantaneous Acceleration we introduced the kinematic functions of velocity
+and acceleration using the derivative. By taking the derivative of the position function we found the velocity function,
+and likewise by taking the derivative of the velocity function we found the acceleration function. Using integral
+calculus, we can work backward and calculate the velocity function from the acceleration function, and the position
+function from the velocity function.
+Kinematic Equations from Integral Calculus
+Let’s begin with a particle with an acceleration a(t) which is a known function of time. Since the time derivative of the
+velocity function is acceleration,
+we can take the indefinite integral of both sides, finding
+Access for free at openstax.org
+
+3.6 • Finding Velocity and Displacement from Acceleration 133
+where C1 is a constant of integration. Since , the velocity is given by
+3.18
+Similarly, the time derivative of the position function is the velocity function,
+Thus, we can use the same mathematical manipulations we just used and find
+3.19
+where C2 is a second constant of integration.
+We can derive the kinematic equations for a constant acceleration using these integrals. With a(t) = a a constant,
+and doing the integration in Equation 3.18, we find
+If the initial velocity is v(0) = v0, then
+Then, C1 = v0 and
+which is Equation 3.12. Substituting this expression into Equation 3.19 gives
+Doing the integration, we find
+If x(0) = x0, we have
+so, C2 = x0. Substituting back into the equation for x(t), we finally have
+which is Equation 3.13.
+EXAMPLE 3.17
+Motion of a Motorboat
+A motorboat is traveling at a constant velocity of 5.0 m/s when it starts to accelerate opposite to the motion to arrive
+at the dock. Its acceleration is . (a) What is the velocity function of the motorboat? (b) At what time
+does the velocity reach zero? (c) What is the position function of the motorboat? (d) What is the displacement of the
+motorboat from the time it begins to accelerate opposite to the motion to when the velocity is zero? (e) Graph the
+velocity and position functions.
+
+134 3 • Motion Along a Straight Line
+Strategy
+(a) To get the velocity function we must integrate and use initial conditions to find the constant of integration. (b) We
+set the velocity function equal to zero and solve for t. (c) Similarly, we must integrate to find the position function
+and use initial conditions to find the constant of integration. (d) Since the initial position is taken to be zero, we only
+have to evaluate the position function at the time when the velocity is zero.
+Solution
+We take t = 0 to be the time when the boat starts to accelerate opposite to the motion.
+a. From the functional form of the acceleration we can solve Equation 3.18 to get v(t):
+At t = 0 we have v(0) = 5.0 m/s = 0 + C1, so C1 = 5.0 m/s or .
+b.
+c. Solve Equation 3.19:
+At t = 0, we set x(0) = 0 = x0, since we are only interested in the displacement from when the boat starts to
+accelerate opposite to the motion. We have
+Therefore, the equation for the position is
+d. Since the initial position is taken to be zero, we only have to evaluate the position function at the time when
+the velocity is zero. This occurs at t = 6.3 s. Therefore, the displacement is
+FIGURE 3.30 (a) Velocity of the motorboat as a function of time. The motorboat decreases its velocity to zero in 6.3 s. At times greater than
+this, velocity becomes negative—meaning, the boat is reversing direction. (b) Position of the motorboat as a function of time. At t = 6.3 s,
+the velocity is zero and the boat has stopped. At times greater than this, the velocity becomes negative—meaning, if the boat continues to
+move with the same acceleration, it reverses direction and heads back toward where it originated.
+Access for free at openstax.org
+
+3.6 • Finding Velocity and Displacement from Acceleration 135
+Significance
+The acceleration function is linear in time so the integration involves simple polynomials. In Figure 3.30, we see that
+if we extend the solution beyond the point when the velocity is zero, the velocity becomes negative and the boat
+reverses direction. This tells us that solutions can give us information outside our immediate interest and we should
+be careful when interpreting them.
+CHECK YOUR UNDERSTANDING 3.8
+A particle starts from rest and has an acceleration function . (a) What is the velocity
+function? (b) What is the position function? (c) When is the velocity zero?

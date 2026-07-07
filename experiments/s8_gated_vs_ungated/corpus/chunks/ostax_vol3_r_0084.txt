@@ -1,0 +1,199 @@
+# REAL PDF — openstax_vol3.pdf, pages 516-521
+############################################################
+
+508 Chapter 11 | Particle Physics and Cosmology
+ideas that are conjectured but still unproven.
+11.1 | Introduction to Particle Physics
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the four fundamental forces and what particles participate in them
+• Identify and describe fermions and bosons
+• Identify and describe the quark and lepton families
+• Distinguish between particles and antiparticles, and describe their interactions
+Elementary particle physics is the study of fundamental particles and their interactions in nature. Those who study
+elementaryparticlephysics—theparticlephysicists—differfromotherphysicistsinthescaleofthesystemsthattheystudy.
+Aparticlephysicistisnotcontenttostudythemicroscopicworldofcells,molecules,atoms,orevenatomicnuclei.They
+areinterestedinphysicalprocessesthatoccuratscalesevensmallerthanatomicnuclei.Atthesametime,theyengagethe
+mostprofoundmysteriesinnature:Howdidtheuniversebegin?Whatexplainsthepatternofmassesintheuniverse?Why
+is there more matter than antimatter in the universe? Why are energy and momentum conserved? How will the universe
+evolve?
+Four Fundamental Forces
+An important step to answering these questions is to understand particles and their interactions. Particle interactions are
+expressedintermsoffourfundamentalforces.Inorderofdecreasingstrength,theseforcesarethestrongnuclearforce,
+the electromagnetic force, theweak nuclear force, and the gravitational force.
+1. Strong nuclear force. The strong nuclear force is a very strong attractive force that acts only over very short
+distances (about 10 −15 m).The strongnuclear force isresponsible forbinding protonsandneutrons together in
+atomicnuclei.Notallparticlesparticipateinthestrongnuclearforce;forinstance,electronsandneutrinosarenot
+affected by it. As the name suggests, this force is much stronger than the other forces.
+2. Electromagnetic force. The electromagnetic force can act over very large distances (it has an infinite range) but
+is only 1/100 the strength of the strong nuclear force. Particles that interact through this force are said to have
+“charge.”Intheclassicaltheoryofstaticelectricity(Coulomb’slaw),theelectricforcevariesastheproductofthe
+chargesoftheinteractingparticles,andastheinversesquareofthedistancesbetweenthem.Incontrasttothestrong
+force,theelectromagneticforcecanbeattractiveorrepulsive(oppositechargesattractandlikechargesrepel).The
+magneticforcedependsinamorecomplicatedwayonthechargesandtheirmotions.Theunificationoftheelectric
+andmagneticforceintoasingleelectromagneticforce(anachievementofJamesClerkMaxwell)standsasoneof
+thegreatestintellectualachievementsofthenineteenthcentury.Thisforceiscentraltoscientificmodelsofatomic
+structure and molecular bonding.
+3. Weaknuclearforce.Theweaknuclearforceactsoververyshortdistances (10 −15 m ⎞ and,asitsnamesuggest,
+⎠
+isveryweak.Itisroughly 10 −6 thestrengthofthestrongnuclearforce.Thisforceismanifestedmostnotablyin
+decaysofelementaryparticlesandneutrinointeractions.Forexample,theneutroncandecaytoaproton,electron,
+and electron neutrino through the weak force. The weak force is vitally important because it is essential for
+understanding stellar nucleosynthesis—the process that creates new atomic nuclei in the cores of stars.
+4. Gravitationalforce.Liketheelectromagneticforce,thegravitationalforcecanactoverinfinitelylargedistances;
+however,itisonly 10 −38 asstrongasthestrongnuclearforce.InNewton’sclassicaltheoryofgravity,theforce
+ofgravityvariesastheproductofthemassesoftheinteractingparticlesandastheinversesquareofthedistance
+between them. This force is an attractive force that acts between all particles with mass. In modern theories of
+gravity, this force behavior is considered a special case for low-energy macroscopic interactions. Compared with
+the other forces of nature, gravity is by far the weakest.
+Thefundamentalforcesmaynotbetruly“fundamental”butmayactuallybedifferentaspectsofthesameforce.Justasthe
+electricandmagneticforceswereunifiedintoanelectromagneticforce,physicistsinthe1970sunifiedtheelectromagnetic
+forcewiththeweaknuclearforceintoanelectroweakforce.Anyscientifictheorythatattemptstounifytheelectroweak
+force and strong nuclear force is called a grand unified theory, and any theory that attempts to unify all four forces is
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 509
+called atheory of everything. We will return to the concept of unification later in this chapter.
+Classifications of Elementary Particles
+Alargenumberofsubatomicparticlesexistinnature.Theseparticlescanbeclassifiedintwoways:thepropertyofspinand
+participationinthefourfundamentalforces.Recallthatthespinofaparticleisanalogoustotherotationofamacroscopic
+object about its own axis. These types of classification are described separately below.
+Classification by spin
+Particlesofmattercanbedividedintofermionsandbosons.Fermionshavehalf-integralspin ⎛1ℏ, 3ℏ, … ⎞ andbosons
+⎝2 2 ⎠
+have integral spin (0ℏ, 1ℏ, 2ℏ, …). Familiar examples of fermions are electrons, protons, and neutrons. A familiar
+exampleofabosonisaphoton.Fermionsandbosonsbehaveverydifferentlyingroups.Forexample,whenelectronsare
+confinedtoasmallregionofspace,Pauli’sexclusionprinciplestatesthatnotwoelectronscanoccupythesamequantum-
+mechanical state. However, when photons are confined to a small region of space, there is no such limitation.
+Thebehavioroffermionsandbosonsingroupscanbeunderstoodintermsofthepropertyofindistinguishability.Particles
+aresaidtobe“indistinguishable”iftheyareidenticaltooneanother.Forexample,electronsareindistinguishablebecause
+everyelectronintheuniversehasexactlythesamemassandspinasallotherelectrons—“whenyou’veseenoneelectron,
+you’ve seen them all.” If you switch two indistinguishable particles in the same small region of space, the square of the
+wavefunctionthatdescribesthissystemandcanbemeasured ⎛ ⎝|ψ| 2⎞
+⎠
+isunchanged.Ifthiswerenotthecase,wecouldtell
+whetherornottheparticleshadbeenswitchedandtheparticlewouldnotbetrulyindistinguishable.Fermionsandbosons
+differ by whether the sign of the wave function (ψ)— not directly observable—flips:
+ψ →−ψ(indistinguishable fermions),
+ψ → +ψ(indistinguishable bosons).
+Fermionsaresaidtobe“antisymmetriconexchange”andbosonsare“symmetriconexchange.”Pauli’sexclusionprinciple
+is a consequence of exchange symmetry of fermions—a connection developed in a more advanced course in modern
+physics.TheelectronicstructureofatomsispredicatedonPauli’sexclusionprincipleandisthereforedirectlyrelatedtothe
+indistinguishability of electrons.
+Classification by force interactions
+Fermionscanbefurtherdividedintoquarksandleptons.Theprimarydifferencebetweenthesetwotypesofparticlesis
+thatquarksinteractviathestrongforceandleptonsdonot.Quarksandleptons(aswellasbosonstobediscussedlater)are
+organizedinFigure11.2.Theuppertworows(firstthreecolumnsinpurple)containsixquarks.Thesequarksarearranged
+intotwoparticlefamilies:up,charm,andtop(u,c,t),anddown,strange,andbottom(d,s,b).Membersofthesameparticle
+familysharethesamepropertiesbutdifferinmass(givenin MeV/c2).Forexample,themassofthetopquarkismuch
+greaterthanthecharmquark,andthemassofthecharmquarkismuchgreaterthantheupquark.Allquarksinteractwith
+one another through the strong nuclear force.
+
+510 Chapter 11 | Particle Physics and Cosmology
+Figure 11.2 The families of subatomic particles, categorized by the types of forces with
+which they interact. (credit: modification of work by “MissMJ”/Wikimedia Commons)
+Ordinary matter consists of two types of quarks: the up quark (elementary charge, q= +2/3) and the down quark
+(q=−1/3). Heavier quarks are unstable and quickly decay to lighter ones via the weak force. Quarks bind together in
+groupsoftwosandthreescalledhadronsviathestrongforce.Hadronsthatconsistoftwoquarksarecalledmesons,and
+those that consist of three quarks are called baryons. Examples of mesons include the pion and kaon, and examples of
+baryonsincludethefamiliarprotonandneutron.Aprotonistwoupquarksandadownquark (p=uud, q=+1) anda
+neutronisoneupquarkandtwodownquarks(n=udd, q=0).Propertiesofsamplemesonsandbaryonsaregivenin
+Table 11.1. Quarks participate in all four fundamental forces: strong, weak, electromagnetic, and gravitational.
+Thelowertworowsinthefigure(ingreen)containsixleptonsarrangedintotwoparticlefamilies:electron,muon,andtau
+(e, µ, τ),andelectronneutrino,muonneutrino,andtauneutrino(υ e, υ µ, υ τ ).Themuonisover200timesheavierthan
+anelectron,butisotherwisesimilartotheelectron.Thetauisabout3500timesheavierthantheelectron,butisotherwise
+similar to the muon and electron. Once created, the muon and tau quickly decay to lighter particles via the weak force.
+Leptonsdonotparticipateinthestrongforce.Quarksandleptonswillbediscussedlaterinthischapter.Leptonsparticipate
+in the weak, electromagnetic, and gravitational forces, but do not participate in the strong force.
+Bosons (shown in red) are the force carriers of the fermions. In this model, leptons and quarks interact with each other
+bysendingandreceivingbosons.Forexample,Coulombicinteractionoccurswhentwopositivelychargedparticlessend
+andreceive(exchange)photons.Thephotonsaresaidto“carry”theforcebetweenchargedparticles.Likewise,attraction
+betweentwoquarksinanatomicnucleusoccurswhentwoquarkssendandreceivegluons.Additionalexamplesinclude
+WandZbosons(whichcarryweaknuclearforce)andgravitons(whichcarrygravitationalforce).TheHiggsbosonisa
+special particle: When it interacts with other particles, it endows them not with force but with mass. In other words, the
+Higgsbosonhelpstoexplainswhyparticleshavemass.Theseassertionsarepartofatentativebutveryproductivescientific
+model (the Standard Model) discussed later.
+Particles and Antiparticles
+Inthelate1920s,thespecialtheoryofrelativityandquantummechanicswerecombinedintoarelativisticquantumtheory
+oftheelectron.Asurprisingresultofthistheorywasthepredictionoftwoenergystatesforeachelectron:Oneisassociated
+withtheelectron,andtheotherisassociatedwithanotherparticlewiththesamemassofanelectronbutwithachargeof
+e + . This particle is called the antielectron orpositron. The positron was discovered experimentally in the 1930s.
+Soonitwasdiscoveredthatforeveryparticleinnature,thereisacorrespondingantiparticle.Anantiparticlehasthesame
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 511
+massandlifetimeasitsassociatedparticle,andtheoppositesignofelectriccharge.Theseparticlesareproducedinhigh-
+energyreactions.Examplesofhigh-energyparticlesincludetheantimuon(µ+ ),anti-upquark(−u),andanti-downquark
+−
+(d). (Notethatantiparticlesforquarksaredesignatedwithanover-bar.)Manymesonsandbaryonscontainantiparticles.
+For example, the antiproton (− p) is −u−u − d and the positively charged pion (π+ ) is u − d. Some neutral particles, such as
+thephotonandthe π0 meson,aretheirownantiparticles.Sampleparticles,antiparticles,andtheirpropertiesarelistedin
+Table 11.1.
+Particle name Symbol Antiparticle Mass Average lifetime
+(MeV/c2
+)
+(s)
+Leptons
+Electron e−
+e
++ 0.511 Stable
+Electron υ e υ— e ≈0 Stable
+neutrino
+Muon µ− µ+ 105.7
+2.20×10
+−6
+Muon neutrino υ µ υ— µ ≈0 Stable
+Tau τ− τ+ 1784
+<4×10
+−13
+Tau neutrino υ τ υ— τ ≈0 Stable
+Hadrons
+Baryons Proton p − p 938.3 Stable
+Neutron n − n 939.6 920
+Lambda Λ 0 Λ — 0 1115.6 2.6×10 −10
+Sigma Σ + Σ− 1189.4 0.80×10 −10
+Xi Ξ + Ξ− 1315 2.9×10 −10
+Omega Ω + Ω− 1672 0.82×10 −10
+Mesons Pion π+ π− 139.6
+2.60×10
+−8
+π-Zero π0 π0 135.0
+0.83×10
+−16
+Kaon K + K− 493.7 1.24×10 −8
+k-Short K S 0 K — S 0 497.7 0.89×10 −10
+k-Long K 0 L K — 0 L 497.0 5.2×10 −8
+J/ψ J/ψ J/ψ 3100 7.1×10−21
+Upsilon Υ Υ 9460 1.2×10 −20
+Table 11.1Particles and their Properties
+Thesameforcesthatholdordinarymattertogetheralsoholdantimattertogether.Undertherightconditions,itispossible
+tocreateantiatomssuchasantihydrogen,antioxygen,andevenantiwater.Inantiatoms,positronsorbitanegativelycharged
+nucleus of antiprotons and antineutrons.Figure 11.3compares atoms and antiatoms.
+
+512 Chapter 11 | Particle Physics and Cosmology
+Figure 11.3 A comparison of the simplest atoms of matter and
+antimatter. (a) In the Bohr model, an antihydrogen atom consists
+of a positron that orbits an antiproton. (b) An antihelium atom
+consists of two positrons that orbit a nucleus of two antiprotons
+and two antineutrons.
+Antimattercannotexistforlonginnaturebecauseparticlesandantiparticlesannihilateeachothertoproducehigh-energy
+radiation. A common example is electron-positron annihilation. This process proceeds by the reaction
+e−+e + →2γ.
+Theelectronandpositronvanishcompletelyandtwophotonsareproducedintheirplace.(Itturnsoutthattheproduction
+of a single photon would violate conservation of energy and momentum.) This reaction can also proceed in the reverse
+direction:Twophotonscanannihilateeachothertoproduceanelectronandpositronpair.Or,asinglephotoncanproduce
+an electron-positron pair in the field of a nucleus, a process called pair production. Reactions of this kind are measured
+routinely in modern particle detectors. The existence of antiparticles in nature is not science fiction.
+Watch this video (https://openstaxcollege.org/l/21matter) to learn more about matter and antimatter
+particles.
+11.2 | Particle Conservation Laws
+Learning Objectives
+By the end of this section, you will be able to:
+• Distinguish three conservation laws: baryon number, lepton number, and strangeness
+• Use rules to determine the total baryon number, lepton number, and strangeness of particles
+before and after a reaction
+• Use baryon number, lepton number, and strangeness conservation to determine if particle
+reactions or decays occur
+Conservation laws are critical to an understanding of particle physics. Strong evidence exists that energy, momentum,
+and angular momentum are all conserved in all particle interactions. The annihilation of an electron and positron at rest,
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

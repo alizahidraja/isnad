@@ -1,0 +1,212 @@
+# REAL PDF — openstax_vol2.pdf, pages 501-509
+############################################################
+
+Chapter 10 | Direct-Current Circuits 491
+95. Consider the infinitely long chain of resistors shown
+below. What is the resistance between terminalsaandb?
+97. A 120-V immersion heater consists of a coil of wire
+that is placed in a cup to boil the water. The heater can
+boil one cup of 20.00°C water in 180.00 seconds. You
+buy one to use in your dorm room, but you are worried
+that you will overload the circuit and trip the 15.00-A,
+120-Vcircuit breaker,whichsupplies yourdormroom.In
+your dorm room, you have four 100.00-W incandescent
+96. Consider the circuit below. The capacitor has a
+lampsanda1500.00-Wspaceheater.(a)Whatisthepower
+capacitanceof10mF.Theswitchisclosedandafteralong
+ratingoftheimmersionheater?(b)Willittripthebreaker
+timethecapacitorisfullycharged.(a)Whatisthecurrent
+when everything is turned on? (c) If it you replace the
+througheachresistoralongtimeaftertheswitchisclosed?
+incandescentbulbswith18.00-WLED,willthebreakertrip
+(b) What is the voltage across each resistor a long time
+when everything is turned on?
+aftertheswitchisclosed?(c)Whatisthevoltageacrossthe
+capacitor a long time after the switch is closed? (d) What
+98. Findtheresistance thatmustbeplacedinserieswith
+is the charge on the capacitor a long time after the switch
+is closed? (e) The switch is then opened. The capacitor a 25.0-Ω galvanometerhavinga 50.0-µA sensitivity(the
+discharges through the resistors. How long from the time sameastheonediscussedinthetext)toallowittobeused
+before the current drops to one fifth of the initial value? as a voltmeter with a 3000-V full-scale reading. Include a
+circuit diagram with your solution.
+99. Findtheresistancethatmustbeplacedinparallelwith
+a 60.0-Ω galvanometerhavinga1.00-mAsensitivity(the
+sameastheonediscussedinthetext)toallowittobeused
+as an ammeter with a 25.0-A full-scale reading. Include a
+circuit diagram with your solution.
+
+492 Chapter 10 | Direct-Current Circuits
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 493
+11 | MAGNETIC FORCES
+AND FIELDS
+Figure 11.1 An industrial electromagnet is capable of lifting thousands of pounds of metallic waste. (credit: modification of
+work by “BedfordAl”/Flickr)
+Chapter Outline
+11.1Magnetism and Its Historical Discoveries
+11.2Magnetic Fields and Lines
+11.3Motion of a Charged Particle in a Magnetic Field
+11.4Magnetic Force on a Current-Carrying Conductor
+11.5Force and Torque on a Current Loop
+11.6The Hall Effect
+11.7Applications of Magnetic Forces and Fields
+Introduction
+For the past few chapters, we have been studying electrostatic forces and fields, which are caused by electric charges at
+rest.Theseelectricfieldscanmoveotherfreecharges,suchasproducingacurrentinacircuit;however,theelectrostatic
+forcesandfieldsthemselvescomefromotherstaticcharges.Inthischapter,weseethatwhenanelectricchargemoves,it
+generates other forces and fields. These additional forces and fields are what we commonly call magnetism.
+Before we examine the origins of magnetism, we first describe what it is and how magnetic fields behave. Once we are
+more familiar with magnetic effects, we can explain how they arise from the behavior of atoms and molecules, and how
+magnetismisrelatedtoelectricity.Theconnectionbetweenelectricityandmagnetismisfascinatingfromatheoreticalpoint
+of view, but it is also immensely practical, as shown by an industrial electromagnet that can lift thousands of pounds of
+metal.
+
+494 Chapter 11 | Magnetic Forces and Fields
+11.1 | Magnetism and Its Historical Discoveries
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain attraction and repulsion by magnets
+• Describe the historical and contemporary applications of magnetism
+Magnetism has been known since the time of the ancient Greeks, but it has always been a bit mysterious. You can see
+electricity in the flash of a lightning bolt, but when a compass needle points to magnetic north, you can’t see any force
+causing it to rotate. People learned about magnetic properties gradually, over many years, before several physicists of
+thenineteenthcenturyconnectedmagnetismwithelectricity.Inthissection,wereviewthebasicideasofmagnetismand
+describe how they fit into the picture of a magnetic field.
+Brief History of Magnetism
+Magnets are commonly found in everyday objects, such as toys, hangers, elevators, doorbells, and computer devices.
+Experimentationonthesemagnetsshowsthatallmagnetshavetwopoles:Oneislabelednorth(N)andtheotherislabeled
+south(S).Magneticpolesrepeliftheyarealike(bothNorbothS),theyattractiftheyareopposite(oneNandtheotherS),
+andbothpolesofamagnetattractunmagnetizedpiecesofiron.Animportantpointtonotehereisthatyoucannotisolate
+anindividualmagneticpole.Everypieceofamagnet,nomatterhowsmall,whichcontainsanorthpolemustalsocontain
+a south pole.
+Visitthiswebsite(https://openstaxcollege.org/l/21magnetcompass)foraninteractivedemonstrationof
+magnetic north and south poles.
+Anexampleofamagnetisacompassneedle.Itissimplyathinbarmagnetsuspendedatitscenter,soitisfreetorotatein
+ahorizontalplane.Earthitselfalsoactslikeaverylargebarmagnet,withitssouth-seekingpolenearthegeographicNorth
+Pole(Figure 11.2).ThenorthpoleofacompassisattractedtowardEarth’sgeographicNorthPolebecausethemagnetic
+polethatisnearthegeographicNorthPoleisactuallyasouthmagneticpole.Confusionarisesbecausethegeographicterm
+“NorthPole”hascometobeused(incorrectly)forthemagneticpolethatisneartheNorthPole.Thus,“northmagnetic
+pole”isactuallyamisnomer—itshouldbecalledthesouthmagneticpole.[NotethattheorientationofEarth’smagnetic
+fieldisnotpermanentbutchanges(“flips”)afterlongtimeintervals.Eventually,Earth’snorthmagneticpolemaybelocated
+near its geographic North Pole.]
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 495
+Figure 11.2 The north pole of a compass needle points toward
+the south pole of a magnet, which is how today’s magnetic field
+is oriented from inside Earth. It also points toward Earth’s
+geographic North Pole because the geographic North Pole is
+near the magnetic south pole.
+Backin1819,theDanishphysicistHansOerstedwasperformingalecturedemonstrationforsomestudentsandnoticedthat
+acompassneedlemovedwhenevercurrentflowedinanearbywire.Furtherinvestigationofthisphenomenonconvinced
+Oerstedthatanelectriccurrentcouldsomehowcauseamagneticforce.Hereportedthisfindingtoan1820meetingofthe
+French Academy of Science.
+Soonafterthisreport,Oersted’sinvestigationswererepeatedandexpandeduponbyotherscientists.Amongthosewhose
+workwasespeciallyimportantwereJean-BaptisteBiotandFelixSavart,whoinvestigatedtheforcesexertedonmagnetsby
+currents;AndréMarieAmpère,whostudiedtheforcesexertedbyonecurrentonanother;FrançoisArago,whofoundthat
+ironcouldbemagnetizedbyacurrent;andHumphryDavy,whodiscoveredthatamagnetexertsaforceonawirecarrying
+anelectriccurrent.Within10yearsofOersted’sdiscovery,MichaelFaradayfoundthattherelativemotionofamagnetand
+a metallic wire induced current in the wire. This finding showed not only that a current has a magnetic effect, but that a
+magnetcangenerateelectriccurrent.YouwillseelaterthatthenamesofBiot,Savart,Ampère,andFaradayarelinkedto
+some of the fundamental laws of electromagnetism.
+The evidence from these various experiments led Ampère to propose that electric current is the source of all magnetic
+phenomena.Toexplainpermanentmagnets,hesuggestedthatmattercontainsmicroscopiccurrentloopsthataresomehow
+alignedwhenamaterialismagnetized.Today,weknowthatpermanentmagnetsareactuallycreatedbythealignmentof
+spinningelectrons,asituationquitesimilartothatproposedbyAmpère.Thismodelofpermanentmagnetswasdeveloped
+byAmpèrealmostacenturybeforetheatomicnatureofmatterwasunderstood.(Forafullquantummechanicaltreatment
+of magnetic spins, see Quantum Mechanics (http://cnx.org/content/m58573/latest/) and Atomic Structure
+(http://cnx.org/content/m58583/latest/).)
+Contemporary Applications of Magnetism
+Today, magnetism plays many important roles in our lives. Physicists’ understanding of magnetism has enabled the
+developmentoftechnologiesthataffectbothindividualsandsociety.Theelectronictabletinyourpurseorbackpack,for
+example,wouldn’thavebeenpossiblewithouttheapplicationsofmagnetismandelectricityonasmallscale(Figure11.3).
+Weakchangesinamagneticfieldinathinfilmofironandchromiumwerediscoveredtobringaboutmuchlargerchanges
+inresistance,calledgiantmagnetoresistance.Informationcanthenberecordedmagneticallybasedonthedirectioninwhich
+theironlayerismagnetized.Asaresultofthediscoveryofgiantmagnetoresistanceanditsapplicationstodigitalstorage,
+the 2007 Nobel Prize in Physics was awarded to Albert Fert from France and Peter Grunberg from Germany.
+
+496 Chapter 11 | Magnetic Forces and Fields
+Figure 11.3 Engineering technology like computer storage
+would not be possible without a deep understanding of
+magnetism. (credit: Klaus Eifert)
+Allelectricmotors—withusesasdiverseaspoweringrefrigerators,startingcars,andmovingelevators—containmagnets.
+Generators, whether producing hydroelectric power or running bicycle lights, use magnetic fields. Recycling facilities
+employmagnetstoseparateironfromotherrefuse.Researchintousingmagneticcontainmentoffusionasafutureenergy
+sourcehasbeencontinuingforseveralyears.Magneticresonanceimaging(MRI)hasbecomeanimportantdiagnostictool
+in the field of medicine, and the use of magnetism to explore brain activity is a subject of contemporary research and
+development.Thelistofapplicationsalsoincludescomputerharddrives,taperecording,detectionofinhaledasbestos,and
+levitation of high-speed trains. Magnetism is involved in the structure of atomic energy levels, as well as the motion of
+cosmicraysandchargedparticlestrappedintheVanAllenbeltsaroundEarth.Onceagain,weseethatallthesedisparate
+phenomena are linked by a small number of underlying physical principles.
+11.2 | Magnetic Fields and Lines
+Learning Objectives
+By the end of this section, you will be able to:
+• Define the magnetic field based on a moving charge experiencing a force
+• Apply the right-hand rule to determine the direction of a magnetic force based on the motion of
+a charge in a magnetic field
+• Sketch magnetic field lines to understand which way the magnetic field points and how strong it
+is in a region of space
+We have outlined the properties of magnets, described how they behave, and listed some of the applications of magnetic
+properties.Eventhoughtherearenosuchthingsasisolatedmagneticcharges,wecanstilldefinetheattractionandrepulsion
+ofmagnetsasbasedonafield.Inthissection,wedefinethemagneticfield,determineitsdirectionbasedontheright-hand
+rule, and discuss how to draw magnetic field lines.
+Defining the Magnetic Field
+Amagneticfieldisdefinedbytheforcethatachargedparticleexperiencesmovinginthisfield,afterweaccountforthe
+gravitational and any additional electric forces possible on the charge. The magnitude of this force is proportional to the
+amountofchargeq,thespeedofthechargedparticlev,andthemagnitudeoftheappliedmagneticfield.Thedirectionof
+this force is perpendicular to both the direction of the moving charged particle and the direction of the applied magnetic
+→
+field.Basedontheseobservations,wedefinethemagneticfieldstrengthBbasedonthemagneticforce F onacharge
+qmoving at velocity → v as the cross product of the velocity and magnetic field, that is,
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 497
+→ → → (11.1)
+F =q v × B .
+→
+Infact,thisishowwedefinethemagneticfield B —intermsoftheforceonachargedparticlemovinginamagnetic
+field.Themagnitudeoftheforceisdeterminedfromthedefinitionofthecrossproductasitrelatestothemagnitudesof
+each of the vectors. In other words, the magnitude of the force satisfies
+F =qvBsinθ (11.2)
+whereθis the angle between the velocity and the magnetic field.
+The SI unit for magnetic field strength B is called the tesla (T) after the eccentric but brilliant inventor Nikola Tesla
+(1856–1943), where
+1N (11.3)
+1T= .
+A·m
+A smaller unit, called the gauss (G), where 1G=10−4T, is sometimes used. The strongest permanent magnets have
+fieldsnear2T;superconductingelectromagnetsmayattain10Tormore.Earth’smagneticfieldonitssurfaceisonlyabout
+5×10 −5 T, or 0.5 G.
+Problem-Solving Strategy: Direction of the Magnetic Field by the Right-Hand Rule
+Thedirectionofthemagneticforce → F isperpendiculartotheplaneformedby → v and → B , asdeterminedby
+theright-hand rule-1(or RHR-1), which is illustrated inFigure 11.4.
+1. Orientyourrighthandsothatyourfingerscurlintheplanedefinedbythevelocityandmagneticfieldvectors.
+2. Using your right hand, sweep from the velocity toward the magnetic field with your fingers through the
+smallest angle possible.
+3. The magnetic force is directed where your thumb is pointing.
+4. If the charge was negative, reverse the direction found by these steps.
+
+498 Chapter 11 | Magnetic Forces and Fields
+Figure 11.4 Magnetic fields exert forces on moving charges.
+The direction of the magnetic force on a moving charge is
+perpendicular to the plane formed by → v and → B and
+follows the right-hand rule-1 (RHR-1) as shown. The magnitude
+of the force is proportional to q, v, B, and the sine of the
+angle between → v and → B .
+Visitthiswebsite(https://openstaxcollege.org/l/21magfields)foradditionalpracticewiththedirectionof
+magnetic fields.
+There is no magnetic force on static charges. However, there is a magnetic force on charges moving at an angle to a
+magneticfield.Whenchargesarestationary,theirelectricfieldsdonotaffectmagnets.However,whenchargesmove,they
+producemagnetic fields that exert forces onothermagnets. Whenthere isrelative motion, aconnection between electric
+and magnetic forces emerges—each affects the other.
+Example 11.1
+An Alpha-Particle Moving in a Magnetic Field
+An alpha-particle ⎛q=3.2×10 −19 C ⎞ moves through a uniform magnetic field whose magnitude is 1.5 T.
+⎝ ⎠
+The field is directly parallel to the positive z-axis of the rectangular coordinate system of Figure 11.5. What
+is the magnetic force on the alpha-particle when it is moving (a) in the positive x-direction with a speed of
+5.0×104m/s? (b)inthenegativey-directionwithaspeedof 5.0×104m/s? (c)inthepositivez-directionwith
+a speed of 5.0×104m/s? (d) with a velocity → v = ⎛ 2.0 ^ i −3.0 ^ j +1.0 ^ k ⎞ ×104m/s?
+⎝ ⎠
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

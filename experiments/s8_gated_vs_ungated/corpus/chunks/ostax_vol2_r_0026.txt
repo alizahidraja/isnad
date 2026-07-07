@@ -1,0 +1,250 @@
+# REAL PDF — openstax_vol2.pdf, pages 144-149
+############################################################
+
+134 Chapter 3 | The First Law of Thermodynamics
+Molar heat capacity at constant pressure C p=C V+R
+Ratio of molar heat capacities γ =C p/C
+V
+Condition for an ideal gas in a quasi-static adiabatic process pVγ = constant
+SUMMARY
+3.1Thermodynamic Systems
+• Athermodynamicsystem,itsboundary,anditssurroundingsmustbedefinedwithalltherolesofthecomponents
+fully explained before we can analyze a situation.
+• Thermal equilibrium is reached with two objects if a third object is in thermal equilibrium with the other two
+separately.
+• Ageneralequationofstateforaclosedsystemhastheform f(p, V, T)=0, withanidealgasasanillustrative
+example.
+3.2Work, Heat, and Internal Energy
+• Positive(negative)workisdonebyathermodynamicsystemwhenitexpands(contracts)underanexternalpressure.
+• Heat is the energy transferred between two objects (or two parts of a system) because of a temperature difference.
+• Internal energy of a thermodynamic system is its total mechanical energy.
+3.3First Law of Thermodynamics
+• Theinternalenergyofathermodynamicsystemisafunctionofstateandthusisuniqueforeveryequilibriumstate
+of the system.
+• Theincreaseintheinternalenergyofthethermodynamicsystemisgivenbytheheataddedtothesystemlessthe
+work done by the system in any thermodynamics process.
+3.4Thermodynamic Processes
+• Thethermalbehaviorofasystemisdescribedintermsofthermodynamicvariables.Foranidealgas,thesevariables
+are pressure, volume, temperature, and number of molecules or moles of the gas.
+• For systems in thermodynamic equilibrium, the thermodynamic variables are related by an equation of state.
+• A heat reservoir is so large that when it exchanges heat with other systems, its temperature does not change.
+• A quasi-static process takes place so slowly that the system involved is always in thermodynamic equilibrium.
+• Areversibleprocessisonethatcanbemadetoretraceitspathandboththetemperatureandpressureareuniform
+throughout the system.
+• There are several types of thermodynamic processes, including (a) isothermal, where the system’s temperature is
+constant; (b) adiabatic, where no heat is exchanged by the system; (c) isobaric, where the system’s pressure is
+constant; and (d) isochoric, where the system’s volume is constant.
+• As a consequence of the first law of thermodymanics, here is a summary of the thermodymaic processes: (a)
+isothermal: ΔE =0, Q=W; (b) adiabatic: Q=0, ΔE =−W; (c) isobaric: ΔE =Q−W; and (d)
+int int int
+isochoric: W =0, ΔE =Q.
+int
+3.5Heat Capacities of an Ideal Gas
+• Foranidealgas,themolarcapacityatconstantpressure C
+p
+isgivenby C p=C V+R=dR/2+R,wheredis
+the number of degrees of freedom of each molecule/entity in the system.
+• A real gas has a specific heat close to but a little bit higher than that of the corresponding ideal gas with
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 135
+C p≃C V+R.
+3.6Adiabatic Processes for an Ideal Gas
+• A quasi-static adiabatic expansion of an ideal gas produces a steeper pV curve than that of the corresponding
+isotherm.
+• A realistic expansion can be adiabatic but rarely quasi-static.
+CONCEPTUAL QUESTIONS
+the source of energy needed to do this work?
+3.1Thermodynamic Systems
+1. Consider these scenarios and state whether work is 10. Ifthepressureandvolumeofasystemaregiven,isthe
+done by the system on the environment (SE) or by the temperature always uniquely determined?
+environmentonthesystem(ES):(a)openingacarbonated
+beverage; (b) filling a flat tire; (c) a sealed empty gas can 11. It is unlikely that a process can be isothermal unless
+expands on a hot day, bowing out the walls. itisaveryslowprocess.Explainwhy.Isthesametruefor
+isobaric and isochoric processes? Explain your answer.
+3.2Work, Heat, and Internal Energy
+2. Isitpossibletodeterminewhetherachangeininternal 3.5Heat Capacities of an Ideal Gas
+energyiscausedbyheattransferred,byworkperformed,or 12. Howcananobjecttransferheatiftheobjectdoesnot
+by a combination of the two? possess a discrete quantity of heat?
+3. Whenaliquidisvaporized,itschangeininternalenergy 13. Most materials expand when heated. One notable
+is not equal to the heat added. Why? exceptioniswaterbetween 0°C and 4°C, whichactually
+decreases in volume with the increase in temperature.
+4. Whydoesabicyclepumpfeelwarmasyouinflateyour Whichisgreaterforwaterinthistemperatureregion, C
+p
+tire?
+or C ?
+V
+5. Isitpossibleforthetemperatureofasystemtoremain
+constant when heat flows into or out of it? If so, give 14. Why are there two specific heats for gases C and
+p
+examples.
+C , yet only one given for solid?
+V
+3.3First Law of Thermodynamics
+3.6Adiabatic Processes for an Ideal Gas
+6. Whatdoesthefirstlawofthermodynamicstellusabout
+the energy of the universe? 15. Is it possible for γ to be smaller than unity?
+7. Does adding heat to a system always increase its
+16. Wouldyouexpect γ tobelargerforagasorasolid?
+internal energy?
+Explain.
+8. Agreatdealofeffort,time,andmoneyhasbeenspent
+17. There is no change in the internal energy of an ideal
+in the quest for a so-called perpetual-motion machine,
+gas undergoing an isothermal process since the internal
+which is defined as a hypothetical machine that operates
+energy depends only on the temperature. Is it therefore
+orproducesusefulworkindefinitely and/orahypothetical
+correcttosaythatanisothermalprocessisthesameasan
+machine that produces more work or energy than it
+adiabatic process for an ideal gas? Explain your answer.
+consumes. Explain, in terms of the first law of
+thermodynamics,whyorwhynotsuchamachineislikely
+to be constructed. 18. Does a gas do any work when it expands
+adiabatically?Ifso,whatisthesourceoftheenergyneeded
+to do this work?
+3.4Thermodynamic Processes
+9. Whenagasexpandsisothermally,itdoeswork.Whatis
+
+136 Chapter 3 | The First Law of Thermodynamics
+PROBLEMS
+3.1Thermodynamic Systems
+19. Agasfollows pV =bp+c
+T
+onanisothermalcurve,
+where p is the pressure, V is the volume, b is a constant,
+andcisafunctionoftemperature.Showthatatemperature
+scale under an isochoric process can be established with
+this gas and is identical to that of an ideal gas.
+20. A mole of gas has isobaric expansion coefficient
+dV/dT =R/p and isochoric pressure-temperature
+coefficient dp/dT = p/T.Findtheequationofstateofthe 29. (a) Calculate the work done by the gas along the
+closed path shown below. The curved section between R
+gas.
+andSissemicircular.(b)Iftheprocessiscarriedoutinthe
+opposite direction, what is the work done by the gas?
+21. Findtheequationofstateofasolidthathasanisobaric
+expansion coefficientdV/dT =2cT−bp and an
+isothermal pressure-volume coefficient dV/dp=−bT.
+3.2Work, Heat, and Internal Energy
+22. A gas at a pressure of 2.00 atm undergoes a quasi-
+static isobaric expansion from 3.00 to 5.00 L. How much
+work is done by the gas?
+23. It takes 500 J of work to compress quasi-statically 30. An ideal gas expands quasi-statically to three times
+0.50 mol of an ideal gas to one-fifth its original volume. its original volume. Which process requires more work
+Calculate the temperature of the gas, assuming it remains from the gas, an isothermal process or an isobaric one?
+constant during the compression. Determine the ratio of the work done in these processes.
+24. It is found that, when a dilute gas expands quasi- 31. A dilute gas at a pressure of 2.0 atm and a volume
+statically from 0.50 to 4.0 L, it does 250 J of work. of 4.0 L is taken through the following quasi-static steps:
+Assumingthatthegastemperatureremainsconstantat300 (a) an isobaric expansion to a volume of 10.0 L, (b) an
+K, how many moles of gas are present? isochoricchangetoapressureof0.50atm,(c)anisobaric
+compression to a volume of 4.0 L, and (d) an isochoric
+changetoapressureof2.0atm.ShowthesestepsonapV
+25. Inaquasi-staticisobaricexpansion,500Jofworkare
+diagramanddeterminefromyourgraphthenetworkdone
+done by the gas. If the gas pressure is 0.80 atm, what is
+by the gas.
+thefractionalincreaseinthevolumeofthegas,assumingit
+was originally at 20.0 L?
+32. Whatistheaveragemechanicalenergyoftheatomsof
+an ideal monatomic gas at 300 K?
+26. When a gas undergoes a quasi-static isobaric change
+involumefrom10.0to2.0L,15Jofworkfromanexternal
+source are required. What is the pressure of the gas? 33. What is the internal energy of 6.00 mol of an ideal
+monatomic gas at 200°C ?
+27. Anidealgasexpandsquasi-staticallyandisothermally
+from a state with pressure p and volume V to a state with 34. Calculatetheinternalenergyof15mgofheliumata
+volume 4V. Show that the work done by the gas in the temperature of 0°C.
+expansion is pV(ln 4).
+35. Two monatomic ideal gases A and B are at the same
+28. Asshownbelow,calculatetheworkdonebythegasin
+temperature.If1.0gofgasAhasthesameinternalenergy
+thequasi-staticprocessesrepresentedbythepaths(a)AB;
+as0.10gofgasB,whatare(a)theratioofthenumberof
+(b) ADB; (c) ACB; and (d) ADCB.
+moles of each gas and (b) the ration of the atomic masses
+of the two gases?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 3 | The First Law of Thermodynamics 137
+36. The van der Waals coefficients for oxygen are from a state with pressure p and volume V to a state with
+a=0.138J·m 3 /mol2 and b=3.18×10 −5 m 3 /mol. volume 4V. How much heat is added to the expanding gas?
+Use these values to draw a van der Waals isotherm of
+oxygenat100K.Onthesamegraph,drawisothermsofone 41. Asshownbelow,iftheheatabsorbedbythegasalong
+mole of an ideal gas. AB is 400 J, determine the quantities of heat absorbed
+along (a) ADB; (b) ACB; and (c) ADCB.
+37. Findtheworkdoneinthequasi-staticprocessesshown
+below. The states are given as (p, V) values for the points
+inthepVplane:1(3atm,4L),2(3atm,6L),3(5atm,4
+L),4(2atm,6L),5(4atm,2L),6(5atm,5L),and7(2
+atm, 5 L).
+42. DuringtheisobaricexpansionfromAtoBrepresented
+below,130Jofheatareremovedfromthegas.Whatisthe
+change in its internal energy?
+43. (a) What is the change in internal energy for the
+process represented by the closed path shown below? (b)
+Howmuchheatisexchanged?(c)Ifthepathistraversedin
+the opposite direction, how much heat is exchanged?
+3.3First Law of Thermodynamics
+44. When a gas expands along path AC shown below,
+38. Whenadilutegasexpandsquasi-statically from0.50 it does 400 J of work and absorbs either 200 or 400 J of
+to 4.0 L, it does 250 J of work. Assuming that the gas heat.(a)SupposeyouaretoldthatalongpathABC,thegas
+temperature remains constant at 300 K, (a) what is the absorbseither200or400Jofheat.Whichofthesevalues
+change in the internal energy of the gas? (b) How much is correct? (b) Give the correct answer from part (a), how
+heat is absorbed by the gas in this process? muchworkisdonebythegasalongABC?(c)AlongCD,
+theinternalenergyofthegasdecreasesby50J.Howmuch
+39. In a quasi-static isobaric expansion, 500 J of work heat is exchanged by the gas along this path?
+are done by the gas. The gas pressure is 0.80 atm and it
+was originally at 20.0 L. If the internal energy of the gas
+increasedby80Jintheexpansion,howmuchheatdoesthe
+gas absorb?
+40. Anidealgasexpandsquasi-staticallyandisothermally
+
+138 Chapter 3 | The First Law of Thermodynamics
+48. An ideal monatomic gas at a pressure of
+45. WhenagasexpandsalongAB(seebelow),itdoes500
+Jofworkandabsorbs250Jofheat.Whenthegasexpands 2.0×10 5 N/m2 and a temperature of 300 K undergoes
+alongAC,itdoes700Jofworkandabsorbs300Jofheat. a quasi-static isobaric expansion from
+(a) How much heat does the gas exchange along BC? (b) 2.0×10 3 to4.0×10 3 cm 3 . (a) What is the work done
+When the gas makes the transmission from C to A along
+bythegas?(b)Whatisthetemperatureofthegasafterthe
+CDA,800JofworkaredoneonitfromCtoD.Howmuch
+expansion?(c)Howmanymolesofgasarethere?(d)What
+heat does it exchange alongCDA?
+isthechangeininternalenergyofthegas?(e)Howmuch
+heat is added to the gas?
+49. Consider the process for steam in a cylinder shown
+below. Suppose the change in the internal energy in this
+process is 30 kJ. Find the heat entering the system.
+46. Adilutegasisstoredintheleftchamberofacontainer
+whose walls are perfectly insulating (see below), and the
+rightchamberisevacuated.Whenthepartitionisremoved,
+thegasexpandsandfillstheentirecontainer.Calculatethe
+workdonebythe gas.Doesthe internal energyofthe gas
+change in this process?
+50. Thestateof30molesofsteaminacylinderischanged
+in a cyclic manner from a-b-c-a, where the pressure and
+volume of the states are: a (30 atm, 20 L), b (50 atm, 20
+L),andc(50atm,45L).Assumeeachchangetakesplace
+along the line connecting the initial and final states in the
+pV plane. (a) Display the cycle in the pV plane. (b) Find
+the net work done by the steam in one cycle. (c) Find the
+netamountofheatflowinthesteamoverthecourseofone
+cycle.
+51. A monatomic ideal gas undergoes a quasi-static
+47. Ideal gases A and B are stored in the left and right
+process that is described by the function
+chambers of an insulated container, as shown below. The
+p(V)= p +3(V−V ), where the starting state is
+partition is removed and the gases mix. Is any work done 1 1
+inthisprocess?IfthetemperaturesofAandBareinitially ⎛p , V ⎞ andthefinalstate ⎛p , V ⎞.Assumethesystem
+⎝ 1 1⎠ ⎝ 2 2⎠
+equal, what happens to their common temperature after
+consists of n moles of the gas in a container that can
+they are mixed?
+exchangeheatwiththeenvironmentandwhosevolumecan
+changefreely.(a)Evaluatetheworkdonebythegasduring
+the change in the state. (b) Find the change in internal
+energyofthegas.(c)Findtheheatinputtothegasduring
+the change. (d) What are initial and final temperatures?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

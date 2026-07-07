@@ -1,0 +1,258 @@
+# REAL PDF — openstax_vol2.pdf, pages 540-546
+############################################################
+
+530 Chapter 11 | Magnetic Forces and Fields
+is deflected initially to the north in a circular arc, is its and carries a current of 2.0 A in the positive x-direction.
+charge positive or negative? (b) If B = 0.25 T and the Around the wire is the magnetic field of
+charge-to-mass ratio (q/m) of the particle is ⎛ ^ ^⎞
+3.0i ×4.0k ×10 −3 T. Findthemagneticforceonthis
+4.0×10 7 C/kg, whatistheradiusofthepath?(c)What ⎝ ⎠
+isthespeedoftheparticleafterithasmovedinthefieldfor segment.
+1.0×10 −5 s? for 2.0 s?
+81. A 5.0-m section of a long, straight wire carries a
+current of 10 A while in a uniform magnetic field of
+73. A proton, deuteron, and an alpha-particle are all
+acceleratedfromrestthroughthesamepotentialdifference. magnitude 8.0×10 −3 T. Calculate the magnitude of the
+They then enter the same magnetic field, moving force on the section if the angle between the field and the
+perpendiculartoit.Computetheratiosoftheradiioftheir direction of the current is (a) 45°; (b) 90°; (c) 0°; or (d)
+circular paths. Assume that m d=2m p and m α=4m p. 180°.
+82. An electromagnet produces a magnetic field of
+74. Asinglychargedionismovinginauniformmagnetic
+magnitude 1.5 T throughout a cylindrical region of radius
+field of 7.5×10−2T completes 10 revolutions in 6.0 cm. A straight wire carrying a current of 25 A passes
+3.47×10−4s. Identify the ion. through the field as shown in the accompanying figure.
+What is the magnetic force on the wire?
+75. Two particles have the same linear momentum, but
+particle A has four times the charge of particle B. If both
+particles move in a plane perpendicular to a uniform
+magneticfield,whatistheratio R A/R
+B
+oftheradiioftheir
+circular orbits?
+76. Auniformmagneticfieldofmagnitude B isdirected
+parallel to the z-axis. A proton enters the field with a
+velocity → v =(4 ^ j +3 ^ k)×10 6 m/s and travels in a
+helical pathwitharadiusof5.0cm.(a)Whatisthevalue
+of B?(b)Whatisthetimerequiredforonetriparoundthe
+helix?(c)Whereistheproton 5.0×10 −7 s afterentering
+the field?
+83. The current loop shown in the accompanying figure
+lies in the plane of the page, as does the magnetic field.
+77. An electron moving along the +x -axis at
+DeterminethenetforceandthenettorqueontheloopifI
+5.0×10 6 m/s enters a magnetic field that makes a 75o = 10 A andB= 1.5 T.
+anglewiththex-axisofmagnitude0.20T.Calculatethe(a)
+pitch and (b) radius of the trajectory.
+78. (a) A 0.750-m-long section of cable carrying current
+to a car starter motor makes an angle of 60º with Earth’s
+5.5×10 −5 T field. What is the current when the wire
+experiences a force of 7.0×10 −3 N? (b) If you run the
+wire between the poles of a strong horseshoe magnet,
+subjecting 5.00 cm of it to a 1.75-T field, what force is
+exerted on this segment of wire?
+84. A circular coil of radius 5.0 cm is wound with five
+turns and carries a current of 5.0 A. If the coil is placed
+79. (a) What is the angle between a wire carrying an
+in a uniform magnetic field of strength 5.0 T, what is the
+8.00-Acurrentandthe1.20-Tfielditisinif50.0cmofthe
+maximum torque on it?
+wire experiences a magnetic force of 2.40 N? (b) What is
+theforceonthewireifitisrotatedtomakeanangleof90º
+with the field? 85. A circular coil of wire of radius 5.0 cm has 20 turns
+and carries a current of 2.0 A. The coil lies in a magnetic
+field of magnitude 0.50 T that is directed parallel to the
+80. A 1.0-m-long segment of wire lies along the x-axis
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 531
+planeofthecoil.(a)Whatisthemagnetic dipolemoment 3cm×2 cm×1 cm(L×W×T) copper plate when a
+of the coil? (b) What is the torque on the coil?
+currentof1.5Aispassedthroughitinamagneticfieldof
+2.5 T perpendicular to the 3cm×2 cm.
+86. Acurrent-carryingcoilinamagneticfieldexperiences
+atorquethatis75%ofthemaximumpossibletorque.What
+94. The Hall effect is to be used to find the density of
+is the angle between the magnetic field and the normal to
+chargecarriersinanunknownmaterial.AHallvoltage40
+the plane of the coil?
+µV for3-Acurrentisobservedina3-Tmagneticfieldfor
+a rectangular sample with length 2 cm, width 1.5 cm, and
+87. A4.0-cmby6.0-cmrectangularcurrentloopcarriesa
+height0.4cm.Determinethedensityofthechargecarriers.
+currentof10A.Whatisthemagneticdipolemomentofthe
+loop?
+95. Show that the Hall voltage across wires made of the
+samematerial,carryingidenticalcurrents,andsubjectedto
+88. A circular coil with 200 turns has a radius of 2.0
+the same magnetic field is inversely proportional to their
+cm.(a)Whatcurrentthroughthecoilresultsinamagnetic
+dipole moment of 3.0 Am2? (b) What is the maximum diameters. (Hint: Consider how drift velocity depends on
+wire diameter.)
+torque that the coil will experience in a uniform field of
+strength 5.0×10−2T? (c) If the angle between μ and B
+96. A velocity selector in a mass spectrometer uses a
+is 45°, what is the magnitude of the torque on the coil?
+0.100-T magnetic field. (a) What electric field strength is
+(d) What is the magnetic potential energy of coil for this
+orientation? needed to select a speed of 4.0×10 6 m/s? (b) What is
+thevoltagebetweentheplatesiftheyareseparatedby1.00
+cm?
+89. Thecurrentthroughacircularwireloopofradius10
+cm is 5.0 A. (a) Calculate the magnetic dipole moment
+of the loop. (b) What is the torque on the loop if it is in 97. Findtheradiusofcurvatureofthepathofa25.0-MeV
+a uniform 0.20-T magnetic field such that µ and B are proton moving perpendicularly to the 1.20-T field of a
+cyclotron.
+directedat 30° toeachother?(c)Forthisposition,whatis
+the potential energy of the dipole?
+98. UnreasonableresultsToconstructanon-mechanical
+water meter, a 0.500-T magnetic field is placed across the
+90. A wire of length 1.0 m is wound into a single-turn
+supply water pipe to a home and the Hall voltage is
+planar loop. The loop carries a current of 5.0 A, and it is
+recorded.(a)Findtheflowratethrougha3.00-cm-diameter
+placed in a uniform magnetic field of strength 0.25 T. (a)
+pipe if the Hall voltage is 60.0 mV. (b) What would the
+Whatisthemaximumtorquethattheloopwillexperience
+Hallvoltagebeforthesameflowratethrougha10.0-cm-
+ifitissquare?(b)Ifitiscircular?(c)Atwhatanglerelative
+diameter pipe with the same field applied?
+to B would the normal to the circular coil have to be
+oriented so that the torque on it would be the same as the
+99. UnreasonableresultsAchargedparticlehavingmass
+maximum torque on the square coil?
+6.64×10 −27 kg (that of a helium atom) moving at
+91. Consider an electron rotating in a circular orbit of 8.70×10 5 m/s perpendicular to a 1.50-T magnetic field
+radius r. Show that the magnitudes of the magnetic dipole
+travelsinacircularpathofradius16.0mm.(a)Whatisthe
+momentμandtheangularmomentumLoftheelectronare
+chargeoftheparticle?(b)Whatisunreasonableaboutthis
+µ e
+related by: = . result? (c) Which assumptions are responsible?
+L 2m
+100. UnreasonableresultsAninventorwantstogenerate
+92. TheHalleffectistobeusedtofindthesignofcharge
+120-Vpowerbymovinga1.00-m-longwireperpendicular
+carriers in a semiconductor sample. The probe is placed
+between the poles of a magnet so that magnetic field is to Earth’s 5.00×10 −5 T field. (a) Find the speed with
+pointed up. A current is passed through a rectangular whichthewiremustmove.(b)Whatisunreasonableabout
+sample placed horizontally. As current is passed through this result? (c) Which assumption is responsible?
+thesampleintheeastdirection,thenorthsideofthesample
+is found to be at a higher potential than the south side. 101. Unreasonable results Frustrated by the small Hall
+Decideifthenumberdensityofchargecarriersispositively voltage obtained in blood flow measurements, a medical
+or negatively charged. physicist decides to increase the applied magnetic field
+strength to get a 0.500-V output for blood moving at 30.0
+93. The density of charge carriers for copper is cm/sina1.50-cm-diametervessel.(a)Whatmagneticfield
+8.47×10 28 electrons per cubic meter. What will be the strength is needed? (b) What is unreasonable about this
+result? (c) Which premise is responsible?
+Hall voltage reading from a probe made up of
+
+532 Chapter 11 | Magnetic Forces and Fields
+CHALLENGE PROBLEMS
+102. A particle of charge +q and mass m moves with
+velocity → v pointedinthe+y-directionasitcrossesthe
+0
+x-axis at x = R at a particular time. There is a negative
+charge –Q fixed at the origin, and there exists a uniform
+→
+magneticfield B pointedinthe+z-direction.Itisfound
+0
+that the particle describes a circle of radius R about –Q.
+→
+Find B in terms of the given quantities.
+0
+103. Aprotonofspeedv= 6×10 5 m/s entersaregionof
+uniformmagneticfieldofB=0.5Tatanangleof q=30°
+tothemagneticfield.Intheregionofmagneticfieldproton 107. The accompanied figure shows an arrangement for
+describesahelicalpathwithradiusRandpitchp(distance measuring mass of ions by an instrument called the mass
+between loops). FindRandp. spectrometer.Anionofmassmandcharge+qisproduced
+essentially at rest in source S, a chamber in which a gas
+discharge is taking place. The ion is accelerated by a
+104. A particle’s path is bent when it passes through a
+potential difference V and allowed to enter a region
+region of non-zero magnetic field although its speed acc
+remainsunchanged.Thisisveryusefulfor“beamsteering” →
+ofconstantmagneticfield B . Intheuniformmagnetic
+in particle accelerators. Consider a proton of speed 0
+field region, the ion moves in a semicircular path striking
+4×10 6 m/s entering a region of uniform magnetic field
+a photographic plate at a distance x from the entry point.
+0.2 T over a 5-cm-wide region. Magnetic field is
+perpendiculartothevelocityoftheparticle.Byhowmuch
+Derive a formula for mass m in terms of B
+0
+, q, V acc,
+andx.
+anglewillthepathoftheprotonbebent?(Hint:Theparticle
+comes out tangent to a circle.)
+105. Inaregionanon-uniformmagneticfieldexistssuch
+that B x=0, B y=0, andB z=ax, where a is a
+constant. At some time t, a wire of length L is carrying a
+108. AwireismadeintoacircularshapeofradiusRand
+current I is located along the x-axis from origin to x = L.
+pivoted along a central support. The two ends of the wire
+Find the magnetic force on the wire at this instant in time.
+aretouchingabrushthatisconnectedtoadcpowersource.
+Thestructureisbetweenthepolesofamagnetsuchthatwe
+106. AcopperrodofmassmandlengthLishungfromthe
+can assume there is a uniform magnetic field on the wire.
+ceiling using two springs of spring constant k. A uniform
+In terms of a coordinate system with origin at the center
+magneticfieldofmagnitude B 0 pointingperpendicularto ofthering,magneticfieldis B x=B
+0
+, B y=B z=0, and
+the rod and spring (coming out of the page in the figure)
+theringrotatesaboutthez-axis.Findthetorqueonthering
+existsinaregionofspacecoveringalengthwofthecopper
+when it is not in thexz-plane.
+rod. The ends of the rod are then connected by flexible
+copperwireacrosstheterminalsofabatteryofvoltageV.
+Determine the change in the length of the springs when a
+currentIrunsthroughthecopperrodinthedirectionshown
+in figure. (Ignore any force by the flexible wire.)
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 533
+metersandBinmillitesla.Calculatethemagneticforceon
+the segment of wire betweenx= 2.0 m andx= 4.0 m.
+110. A circular loop of wire of area 10 cm2 carries a
+current of 25 A. At a particular instant, the loop lies in
+the xy-plane and is subjected to a magnetic field
+→ ⎛ ^ ^ ^⎞
+B = 2.0i +6.0j +8.0k ×10 −3 T. As viewed
+⎝ ⎠
+from above the xy-plane, the current is circulating
+clockwise. (a) What is the magnetic dipole moment of
+the current loop? (b) At this instant, what is the magnetic
+109. A long-rigid wire lies along the x-axis and carries a torque on the loop?
+currentof2.5Ainthepositivex-direction.Aroundthewire
+→ ^ ^
+is the magnetic field B =2.0i +5.0x2 j, with x in
+
+534 Chapter 11 | Magnetic Forces and Fields
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 535
+12 | SOURCES OF
+MAGNETIC FIELDS
+Figure 12.1 An external hard drive attached to a computer works by magnetically encoding information that can be stored or
+retrieved quickly. A key idea in the development of digital devices is the ability to produce and use magnetic fields in this way.
+(credit: modification of work by “Miss Karen”/Flickr)
+Chapter Outline
+12.1The Biot-Savart Law
+12.2Magnetic Field Due to a Thin Straight Wire
+12.3Magnetic Force between Two Parallel Currents
+12.4Magnetic Field of a Current Loop
+12.5Ampère’s Law
+12.6Solenoids and Toroids
+12.7Magnetism in Matter
+Introduction
+In the preceding chapter, we saw that a moving charged particle produces a magnetic field. This connection between
+electricityandmagnetismisexploitedinelectromagneticdevices,suchasacomputerharddrive.Infact,itistheunderlying
+principle behind most of the technology in modern society, including telephones, television, computers, and the internet.
+In this chapter, we examine how magnetic fields are created by arbitrary distributions of electric current, using the Biot-
+Savartlaw.Thenwelookathowcurrent-carryingwirescreatemagneticfieldsanddeducetheforcesthatarisebetweentwo
+current-carryingwiresduetothesemagneticfields.Wealsostudythetorquesproducedbythemagneticfieldsofcurrent
+loops. We then generalize these results to an important law of electromagnetism, called Ampère’s law.
+We examine some devices that produce magnetic fields from currents in geometries based on loops, known as solenoids
+andtoroids.Finally,welookathowmaterialsbehaveinmagneticfieldsandcategorizematerialsbasedontheirresponses
+to magnetic fields.

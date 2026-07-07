@@ -1,0 +1,324 @@
+# REAL PDF — crowell_lm.pdf, pages 46-52
+############################################################
+
+Also, Galileo is doing something that would be frowned on in
+modern science: he is mixing experiments whose results he has ac-
+tually observed (building boats of di↵erent sizes), with experiments
+that he could not possibly have done (dropping an ant from the
+height of the moon). He now relates how he has done actual ex-
+periments with such planks, and found that, according to this op-
+erational definition, they are not strong in proportion to their sizes.
+The larger one breaks. He makes sure to tell the reader how impor-
+tant the result is, via Sagredo’s astonished response:
+SAGREDO: My brain already reels. My mind, like a cloud
+momentarily illuminated by a lightning flash, is for an instant
+filled with an unusual light, which now beckons to me and
+which now suddenly mingles and obscures strange, crude
+ideas. From what you have said it appears to me impossible
+to build two similar structures of the same material, but of
+different sizes and have them proportionately strong.
+Inotherwords,thisspecificexperiment,usingthingslikewooden
+planks that have no intrinsic scientific interest, has very wide impli-
+cations because it points out a general principle, that nature acts
+di↵erently on di↵erent scales.
+To finish the discussion, Galileo gives an explanation. He says
+that the strength of a plank (defined as, say, the weight of the heav-
+iest boulder you could put on the end without breaking it) is pro-
+portional to its cross-sectional area, that is, the surface area of the
+fresh wood that would be exposed if you sawed through it in the
+middle. Its weight, however, is proportional to its volume.1
+How do the volume and cross-sectional area of the longer plank
+compare with those of the shorter plank? We have already seen,
+while discussing conversions of the units of area and volume, that
+these quantities don’t act the way most people naively expect. You
+mightthinkthatthevolumeandareaofthelongerplankwouldboth
+be doubled compared to the shorter plank, so they would increase
+in proportion to each other, and the longer plank would be equally
+able to support its weight. You would be wrong, but Galileo knows
+that this is a common misconception, so he has Salviati address the
+point specifically:
+SALVIATI: ...Take, for example, a cube two inches on a
+side so that each face has an area of four square inches
+and the total area, i.e., the sum of the six faces, amounts
+to twenty-four square inches; now imagine this cube to be
+sawed through three times [with cuts in three perpendicular
+planes] so as to divide it into eight smaller cubes, each one
+inch on the side, each face one inch square, and the total
+1Galileo makes a slightly more complicated argument, taking into account
+the e↵ect of leverage (torque). The result I’m referring to comes out the same
+regardless of this e↵ect.
+46 Chapter 1 Scaling and estimation
+
+surface of each cube six square inches instead of twenty-
+four in the case of the larger cube. It is evident therefore,
+that the surface of the little cube is only one-fourth that of
+the larger, namely, the ratio of six to twenty-four; but the vol-
+ume of the solid cube itself is only one-eighth; the volume,
+and hence also the weight, diminishes therefore much more
+rapidly than the surface...You see, therefore, Simplicio, that
+I was not mistaken when ...I said that the surface of a small
+solid is comparatively greater than that of a large one.
+The same reasoning applies to the planks. Even though they
+are not cubes, the large one could be sawed into eight small ones,
+each with half the length, half the thickness, and half the width.
+The small plank, therefore, has more surface area in proportion to
+its weight, and is therefore able to support its own weight while the
+large one breaks.
+Scaling of area and volume for irregularly shaped objects
+You probably are not going to believe Galileo’s claim that this
+has deep implications for all of nature unless you can be convinced
+that the same is true for any shape. Every drawing you’ve seen so
+far has been of squares, rectangles, and rectangular solids. Clearly
+the reasoning about sawing things up into smaller pieces would not
+proveanythingabout, say, anegg, whichcannotbecutupintoeight
+smaller egg-shaped objects with half the length.
+Is it always true that something half the size has one quarter
+the surface area and one eighth the volume, even if it has an irreg-
+ular shape? Take the example of a child’s violin. Violins are made
+for small children in smaller size to accomodate their small bodies.
+Figure i shows a full-size violin, along with two violins made with
+half and 3/4 of the normal length.2 Let’s study the surface area of
+the front panels of the three violins.
+Consider the square in the interior of the panel of the full-size
+violin. In the 3/4-size violin, its height and width are both smaller
+by a factor of 3/4, so the area of the corresponding, smaller square
+becomes3/4 3/4 = 9/16oftheoriginalarea,not3/4oftheoriginal
+⇥
+area. Similarly, the corresponding square on the smallest violin has
+half the height and half the width of the original one, so its area is
+1/4 the original area, not half.
+The same reasoning works for parts of the panel near the edge,
+such as the part that only partially fills in the other square. The
+entire square scales down the same as a square in the interior, and
+in each violin the same fraction (about 70%) of the square is full, so
+the contribution of this part to the total area scales down just the i/The area of a shape is
+same. proportional to the square of its
+linear dimensions, even if the
+shapeisirregular.
+2The customary terms “half-size” and “3/4-size” actually don’t describe the
+sizes in any accurate way. They’re really just standard, arbitrary marketing
+labels.
+Section 1.2 Scaling of area and volume 47
+
+Since any small square region or any small region covering part
+of a square scales down like a square object, the entire surface area
+of an irregularly shaped object changes in the same manner as the
+surface area of a square: scaling it down by 3/4 reduces the area by
+a factor of 9/16, and so on.
+In general, we can see that any time there are two objects with
+thesameshape, butdi↵erentlineardimensions(i.e., onelookslikea
+reduced photo of the other), the ratio of their areas equals the ratio
+of the squares of their linear dimensions:
+2
+A L
+1 1
+= .
+A L
+2 ✓ 2◆
+Note that it doesn’t matter where we choose to measure the linear
+size, L, of an object. In the case of the violins, for instance, it could
+havebeenmeasuredvertically,horizontally,diagonally, orevenfrom
+the bottom of the left f-hole to the middle of the right f-hole. We
+just have to measure it in a consistent way on each violin. Since all
+the parts are assumed to shrink or expand in the same manner, the
+ratio L /L is independent of the choice of measurement.
+1 2
+It is also important to realize that it is completely unnecessary
+to have a formula for the area of a violin. It is only possible to
+derive simple formulas for the areas of certain shapes like circles,
+rectangles, triangles and so on, but that is no impediment to the
+type of reasoning we are using.
+Sometimes it is inconvenient to write all the equations in terms
+ofratios,especiallywhenmorethantwoobjectsarebeingcompared.
+A more compact way of rewriting the previous equation is
+j/The muffin comes out of
+the oven too hot to eat. Breaking A L2.
+/
+it up into four pieces increases
+its surface area while keeping The symbol “ ” means “is proportional to.” Scientists and engi-
+/
+the total volume the same. It neersoftenspeakaboutsuchrelationshipsverballyusingthephrases
+cools faster because of the “scaleslike”or“goeslike,”forinstance“areagoeslikelengthsquared.”
+greater surface-to-volume ratio.
+In general, smaller things have All of the above reasoning works just as well in the case of vol-
+greater surface-to-volume ratios, ume. Volume goes like length cubed:
+but in this example there is no
+easy way to compute the effect V L3.
+/
+exactly,becausethesmallpieces
+aren’t the same shape as the
+self-checkB
+originalmuffin.
+When a car or truck travels over a road, there is wear and tear on the
+roadsurface,whichincursacost. StudiesshowthatthecostC perkilo-
+meteroftravelisrelatedtotheweightperaxlew byC w4. Translate
+/
+thisintoastatementaboutratios. .Answer,p. 550
+If di↵erent objects are made of the same material with the same
+density, ⇢ = m/V, then their masses, m = ⇢V, are proportional to
+L3. (Thesymbolfordensityis⇢, thelower-caseGreekletter “rho.”)
+48 Chapter 1 Scaling and estimation
+
+An important point is that all of the above reasoning about
+scalingonlyappliestoobjectsthatarethesameshape. Forinstance,
+a piece of paper is larger than a pencil, but has a much greater
+surface-to-volume ratio.
+Scaling of the area of a triangle example 1
+. In figure k, the larger triangle has sides twice as long. How
+many times greater is its area?
+Correctsolution#1: Areascalesinproportiontothesquareofthe
+lineardimensions,sothelargertrianglehasfourtimesmorearea
+(22 = 4).
+k/Example 1. The big trian-
+Correct solution #2: You could cut the larger triangle into four of
+glehasfourtimesmoreareathan
+the smaller size, as shown in fig. (b), so its area is four times thelittleone.
+greater. (Thissolutioniscorrect,butitwouldnotworkforashape
+like a circle, which can’t be cut up into smaller circles.)
+Correct solution #3: The area of a triangle is given by
+A = bh/2, where b is the base and h is the height. The areas of
+the triangles are
+A = b h /2
+1 1 1
+A = b h /2
+2 2 2
+= (2b )(2h )/2
+1 1
+= 2b h
+1 1
+l/A tricky way of solving ex-
+A /A = (2b h )/(b h /2)
+2 1 1 1 1 1 ample1,explainedinsolution#2.
+= 4
+(Althoughthissolutioniscorrect,itisalotmoreworkthansolution
+#1, and it can only be used in this case because a triangle is a
+simplegeometricshape,andwehappentoknowaformulaforits
+area.)
+Correct solution #4: The area of a triangle is A = bh/2. The
+comparison of the areas will come out the same as long as the
+ratios of the linear sizes of the triangles is as specified, so let’s
+just say b = 1.00 m and b = 2.00 m. The heights are then also
+1 2
+h = 1.00 m and h = 2.00 m, giving areas A = 0.50 m2 and
+1 2 1
+A = 2.00 m2, so A /A = 4.00.
+2 2 1
+(The solution is correct, but it wouldn’t work with a shape for
+whose area we don’t have a formula. Also, the numerical cal-
+culation might make the answer of 4.00 appear inexact, whereas
+solution #1 makes it clear that it is exactly 4.)
+Incorrect solution: The area of a triangle is A = bh/2, and if you
+plug in b = 2.00 m and h = 2.00 m, you get A = 2.00 m2, so
+the bigger triangle has 2.00 times more area. (This solution is
+incorrectbecausenocomparisonhasbeenmadewiththesmaller
+triangle.)
+Section 1.2 Scaling of area and volume 49
+
+Scaling of the volume of a sphere example 2
+. In figure m, the larger sphere has a radius that is five times
+greater. How many times greater is its volume?
+Correct solution #1: Volume scales like the third power of the
+linear size, so the larger sphere has a volume that is 125 times
+greater (53 = 125).
+Correct solution #2: The volume of a sphere is V = (4/3)⇡r3, so
+m/Example 2. The big sphere
+4
+has 125 times more volume than V = ⇡r3
+1 3 1
+thelittleone.
+4
+V = ⇡r3
+2 3 2
+4
+= ⇡(5r )3
+1
+3
+500
+= ⇡r3
+3 1
+500 4
+V /V = ⇡r3 / ⇡r3 = 125
+2 1 3 1 3 1
+✓ ◆ ✓ ◆
+Incorrect solution: The volume of a sphere is V = (4/3)⇡r3, so
+4
+V = ⇡r3
+1 3 1
+4
+V = ⇡r3
+2 3 2
+4
+= ⇡ 5r3
+3 · 1
+20
+= ⇡r3
+3 1
+20 4
+V /V = ⇡r3 / ⇡r3 = 5
+2 1 3 1 3 1
+✓ ◆ ✓ ◆
+(The solution is incorrect because (5r )3 is not the same as 5r3.)
+1 1
+Scaling of a more complex shape example 3
+. The first letter “S” in figure n is in a 36-point font, the second in
+48-point. Howmanytimesmoreinkisrequiredtomakethelarger
+n/Example 3. The 48-point
+“S” has 1.78 times more area “S”? (Points are a unit of length used in typography.)
+thanthe36-point“S.”
+Correct solution: The amount of ink depends on the area to be
+covered with ink, and area is proportional to the square of the
+linear dimensions, so the amount of ink required for the second
+“S” is greater by a factor of (48/36)2 = 1.78.
+Incorrect solution: The length of the curve of the second “S” is
+longer by a factor of 48/36 = 1.33, so 1.33 times more ink is
+required.
+(The solution is wrong because it assumes incorrectly that the
+width of the curve is the same in both cases. Actually both the
+50 Chapter 1 Scaling and estimation
+
+widthandthelengthofthecurvearegreaterbyafactorof48/36,
+so the area is greater by a factor of (48/36)2 = 1.78.)
+Reasoning about ratios and proportionalities is one of the three
+essential mathematical skills, summarized on pp.532-533, that you
+need for success in this course.
+.Solvedproblem: atelescopegatherslight page59,problem11
+.Solvedproblem: distancefromanearthquake page59,problem12
+Discussion questions
+A A toy fire engine is 1/30 the size of the real one, but is constructed
+fromthesamemetalwiththesameproportions. Howmanytimessmaller
+is its weight? How many times less red paint would be needed to paint
+it?
+B Galileo spends a lot of time in his dialog discussing what really
+happens when things break. He discusses everything in terms of Aristo-
+tle’s now-discredited explanation that things are hard to break, because
+if something breaks, there has to be a gap between the two halves with
+nothing in between, at least initially. Nature, according to Aristotle, “ab-
+horsavacuum,”i.e.,naturedoesn’t“like”emptyspacetoexist. Ofcourse,
+airwillrushintothegapimmediately,butattheverymomentofbreaking,
+Aristotle imagined a vacuum in the gap. Is Aristotle’s explanation of why
+itishardtobreakthingsanexperimentallytestablestatement? Ifso,how
+coulditbetestedexperimentally?
+1.3 ? Scaling applied to biology
+Organisms of different sizes with the same shape
+The left-hand panel in figure o shows the approximate valid-
+ity of the proportionality m L3 for cockroaches (redrawn from
+/
+McMahon and Bonner). The scatter of the points around the curve
+indicatesthatsomecockroachesareproportionedslightlydi↵erently
+from others, but in general the data seem well described by m L3.
+/
+That means that the largest cockroaches the experimenter could
+raise (is there a 4-H prize?) had roughly the same shape as the
+smallest ones.
+Another relationship that should exist for animals of di↵erent
+sizes shaped in the same way is that between surface area and
+body mass. If all the animals have the same average density, then
+body mass should be proportional to the cube of the animal’s lin-
+ear size, m L3, while surface area should vary proportionately to
+/
+L2. Therefore, the animals’ surface areas should be proportional to
+m2/3. As shown in the right-hand panel of figure o, this relationship
+appears to hold quite well for the dwarf siren, a type of salamander.
+Noticehowthecurvebendsover,meaningthatthesurfaceareadoes
+not increase as quickly as body mass, e.g., a salamander with eight
+Section 1.3 ? Scaling applied to biology 51

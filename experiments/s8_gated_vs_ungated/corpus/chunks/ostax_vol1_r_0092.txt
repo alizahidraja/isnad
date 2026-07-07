@@ -1,0 +1,212 @@
+# REAL PDF — openstax_vol1.pdf, pages 562-568
+############################################################
+
+550 11 • Chapter Review
+Additional Problems
+78 . A marble is rolling across the floor at a speed of in 0.01 s. The proton follows a
+7.0 m/s when it starts up a plane inclined at circular path. If the radius of the cyclotron is 0.5
+to the horizontal. (a) How far along the plane km, (a) What is the angular momentum of the
+does the marble travel before coming to a rest? proton about the center at its maximum speed?
+(b) How much time elapses while the marble (b) What is the torque on the proton about the
+moves up the plane? center as it accelerates to maximum speed?
+79 . Repeat the preceding problem replacing the 85 . (a) What is the angular momentum of the Moon
+marble with a hollow sphere. Explain the new in its orbit around Earth? (b) How does this
+results. angular momentum compare with the angular
+momentum of the Moon on its axis? Remember
+80 . The mass of a hoop of radius 1.0 m is 6.0 kg. It
+that the Moon keeps one side toward Earth at all
+rolls across a horizontal surface with a speed of
+times.
+10.0 m/s. (a) How much work is required to stop
+the hoop? (b) If the hoop starts up a surface at 86 . A DVD is rotating at 500 rpm. What is the
+to the horizontal with a speed of 10.0 m/s, angular momentum of the DVD if has a radius of
+how far along the incline will it travel before 6.0 cm and mass 20.0 g?
+stopping and rolling back down?
+87 . A potter’s disk spins from rest up to 10 rev/s in
+81 . Repeat the preceding problem for a hollow 15 s. The disk has a mass 3.0 kg and radius 30.0
+sphere of the same radius and mass and initial cm. What is the angular momentum of the disk
+speed. Explain the differences in the results. at ?
+82 . A particle has mass 0.5 kg and is traveling along 88 . Suppose you start an antique car by exerting a
+the line at 2.0 m/s in the positive force of 300 N on its crank for 0.250 s. What is
+y-direction. What is the particle’s angular the angular momentum given to the engine if the
+momentum about the origin? handle of the crank is 0.300 m from the pivot
+and the force is exerted to create maximum
+83 . A 4.0-kg particle moves in a circle of radius 2.0
+torque the entire time?
+m. The angular momentum of the particle varies
+in time according to (a) What is the 89 . A solid cylinder of mass 2.0 kg and radius 20 cm
+torque on the particle about the center of the is rotating counterclockwise around a vertical
+circle at ? (b) What is the angular axis through its center at 600 rev/min. A second
+velocity of the particle at ? solid cylinder of the same mass and radius is
+rotating clockwise around the same vertical axis
+84 . A proton is accelerated in a cyclotron to
+Access for free at openstax.org
+
+11 • Chapter Review 551
+at 900 rev/min. If the cylinders couple so that torque on the structure.
+they rotate about the same vertical axis, what is
+92 . A thin meter stick of mass 150 g rotates around
+the angular velocity of the combination?
+an axis perpendicular to the stick’s long axis at
+90 . A boy stands at the center of a platform that is an angular velocity of 240 rev/min. What is the
+rotating without friction at 1.0 rev/s. The boy angular momentum of the stick if the rotation
+holds weights as far from his body as possible. axis (a) passes through the center of the stick?
+At this position the total moment of inertia of the (b) Passes through one end of the stick?
+boy, platform, and weights is The
+93 . A satellite in the shape of a sphere of mass
+boy draws the weights in close to his body,
+20,000 kg and radius 5.0 m is spinning about an
+thereby decreasing the total moment of inertia
+axis through its center of mass. It has a rotation
+to (a) What is the final angular
+rate of 8.0 rev/s. Two antennas deploy in the
+velocity of the platform? (b) By how much does
+plane of rotation extending from the center of
+the rotational kinetic energy increase?
+mass of the satellite. Each antenna can be
+91 . Eight children, each of mass 40 kg, climb on a approximated as a rod has mass 200.0 kg and
+small merry-go-round. They position themselves length 7.0 m. What is the new rotation rate of
+evenly on the outer edge and join hands. The the satellite?
+merry-go-round has a radius of 4.0 m and a
+94 . A top has moment of inertia
+moment of inertia . After the
+and radius 4.0 cm from the center of mass to the
+merry-go-round is given an angular velocity of
+pivot point. If it spins at 20.0 rev/s and is
+6.0 rev/min, the children walk inward and stop
+precessing, how many revolutions does it
+when they are 0.75 m from the axis of rotation.
+precess in 10.0 s?
+What is the new angular velocity of the merry-
+go-round? Assume there is negligible frictional
+Challenge Problems
+95 . The truck shown below is initially at rest with solid as shown below. When the rod has an angular
+cylindrical roll of paper sitting on its bed. If the truck velocity of 6.0 rad/s, the string makes an angle
+moves forward with a uniform acceleration a, what of with respect to the vertical. (a) If the
+distance s does it move before the paper rolls off its angular velocity is increased to 10.0 rad/s, what
+back end? (Hint: If the roll accelerates forward with is the new angle of the string? (b) Calculate the
+, then is accelerates backward relative to the truck initial and final angular momenta of the ball. (c)
+with an acceleration . Also, .) Can the rod spin fast enough so that the ball is
+horizontal?
+96 . A bowling ball of radius 8.5 cm is tossed onto a
+bowling lane with speed 9.0 m/s. The direction
+of the toss is to the left, as viewed by the
+observer, so the bowling ball starts to rotate
+counterclockwise when in contact with the floor.
+The coefficient of kinetic friction on the lane is
+0.3. (a) What is the time required for the ball to
+come to the point where it is not slipping? What
+is the distance d to the point where the ball is
+rolling without slipping? 98 . A bug flying horizontally at 1.0 m/s collides and
+sticks to the end of a uniform stick hanging
+97 . A small ball of mass 0.50 kg is attached by a
+vertically. After the impact, the stick swings out
+massless string to a vertical rod that is spinning
+
+552 11 • Chapter Review
+to a maximum angle of from the vertical 10 times that of the bug, calculate the length of
+before rotating back. If the mass of the stick is the stick.
+Access for free at openstax.org
+
+CHAPTER 12
+Static Equilibrium and Elasticity
+FIGURE 12.1 Two stilt walkers in standing position. All forces acting on each stilt walker balance out; neither changes its translational
+motion. In addition, all torques acting on each person balance out, and thus neither of them changes its rotational motion. The result is
+static equilibrium. (credit: modification of work by Stuart Redler)
+CHAPTER OUTLINE
+12.1 Conditions for Static Equilibrium
+12.2 Examples of Static Equilibrium
+12.3 Stress, Strain, and Elastic Modulus
+12.4 Elasticity and Plasticity
+INTRODUCTION In earlier chapters, you learned about forces and Newton’s laws for translational motion. You then
+studied torques and the rotational motion of a body about a fixed axis of rotation. You also learned that static
+equilibrium means no motion at all and that dynamic equilibrium means motion without acceleration.
+In this chapter, we combine the conditions for static translational equilibrium and static rotational equilibrium to
+describe situations typical for any kind of construction. What type of cable will support a suspension bridge? What
+type of foundation will support an office building? Will this prosthetic arm function correctly? These are examples of
+questions that contemporary engineers must be able to answer.
+The elastic properties of materials are especially important in engineering applications, including bioengineering.
+For example, materials that can stretch or compress and then return to their original form or position make good
+shock absorbers. In this chapter, you will learn about some applications that combine equilibrium with elasticity to
+construct real structures that last.
+
+554 12 • Static Equilibrium and Elasticity
+12.1 Conditions for Static Equilibrium
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Identify the physical conditions of static equilibrium.
+• Draw a free-body diagram for a rigid body acted on by forces.
+• Explain how the conditions for equilibrium allow us to solve statics problems.
+We say that a rigid body is in equilibrium when both its linear and angular acceleration are zero relative to an inertial
+frame of reference. This means that a body in equilibrium can be moving, but if so, its linear and angular velocities
+must be constant. We say that a rigid body is in static equilibrium when it is at rest in our selected frame of
+reference. Notice that the distinction between the state of rest and a state of uniform motion is artificial—that is, an
+object may be at rest in our selected frame of reference, yet to an observer moving at constant velocity relative to
+our frame, the same object appears to be in uniform motion with constant velocity. Because the motion is relative,
+what is in static equilibrium to us is in dynamic equilibrium to the moving observer, and vice versa. Since the laws of
+physics are identical for all inertial reference frames, in an inertial frame of reference, there is no distinction
+between static equilibrium and equilibrium.
+According to Newton’s second law of motion, the linear acceleration of a rigid body is caused by a net force acting on
+it, or
+12.1
+Here, the sum is of all external forces acting on the body, where m is its mass and is the linear acceleration of
+its center of mass (a concept we discussed in Linear Momentum and Collisions on linear momentum and collisions).
+In equilibrium, the linear acceleration is zero. If we set the acceleration to zero in Equation 12.1, we obtain the
+following equation:
+FIRST EQUILIBRIUM CONDITION
+The first equilibrium condition for the static equilibrium of a rigid body expresses translational equilibrium:
+12.2
+The first equilibrium condition, Equation 12.2, is the equilibrium condition for forces, which we encountered when
+studying applications of Newton’s laws.
+This vector equation is equivalent to the following three scalar equations for the components of the net force:
+12.3
+Analogously to Equation 12.1, we can state that the rotational acceleration of a rigid body about a fixed axis of
+rotation is caused by the net torque acting on the body, or
+12.4
+Here is the rotational inertia of the body in rotation about this axis and the summation is over all torques of
+external forces in Equation 12.2. In equilibrium, the rotational acceleration is zero. By setting to zero the right-hand
+side of Equation 12.4, we obtain the second equilibrium condition:
+SECOND EQUILIBRIUM CONDITION
+The second equilibrium condition for the static equilibrium of a rigid body expresses rotational equilibrium:
+Access for free at openstax.org
+
+12.1 • Conditions for Static Equilibrium 555
+12.5
+The second equilibrium condition, Equation 12.5, is the equilibrium condition for torques that we encountered when
+we studied rotational dynamics. It is worth noting that this equation for equilibrium is generally valid for rotational
+equilibrium about any axis of rotation (fixed or otherwise). Again, this vector equation is equivalent to three scalar
+equations for the vector components of the net torque:
+12.6
+The second equilibrium condition means that in equilibrium, there is no net external torque to cause rotation about
+any axis.
+The first and second equilibrium conditions are stated in a particular reference frame. The first condition involves
+only forces and is therefore independent of the origin of the reference frame. However, the second condition
+involves torque, which is defined as a cross product, where the position vector with respect to
+the axis of rotation of the point where the force is applied enters the equation. Therefore, torque depends on the
+location of the axis in the reference frame. However, when rotational and translational equilibrium conditions hold
+simultaneously in one frame of reference, then they also hold in any other inertial frame of reference, so that the net
+torque about any axis of rotation is still zero. The explanation for this is fairly straightforward.
+Suppose vector is the position of the origin of a new inertial frame of reference in the old inertial frame of
+reference S. From our study of relative motion, we know that in the new frame of reference the position vector
+of the point where the force is applied is related to via the equation
+Now, we can sum all torques of all external forces in a new reference frame,
+In the final step in this chain of reasoning, we used the fact that in equilibrium in the old frame of reference, S, the
+first term vanishes because of Equation 12.5 and the second term vanishes because of Equation 12.2. Hence, we
+see that the net torque in any inertial frame of reference is zero, provided that both conditions for equilibrium
+hold in an inertial frame of reference S.
+The practical implication of this is that when applying equilibrium conditions for a rigid body, we are free to choose
+any point as the origin of the reference frame. Our choice of reference frame is dictated by the physical specifics of
+the problem we are solving. In one frame of reference, the mathematical form of the equilibrium conditions may be
+quite complicated, whereas in another frame, the same conditions may have a simpler mathematical form that is
+easy to solve. The origin of a selected frame of reference is called the pivot point.
+In the most general case, equilibrium conditions are expressed by the six scalar equations (Equation 12.3 and
+Equation 12.6). For planar equilibrium problems with rotation about a fixed axis, which we consider in this chapter,
+we can reduce the number of equations to three. The standard procedure is to adopt a frame of reference where the
+z-axis is the axis of rotation. With this choice of axis, the net torque has only a z-component, all forces that have
+non-zero torques lie in the xy-plane, and therefore contributions to the net torque come from only the x- and
+y-components of external forces. Thus, for planar problems with the axis of rotation perpendicular to the xy-plane,
+we have the following three equilibrium conditions for forces and torques:
+12.7
+12.8
+12.9
+where the summation is over all N external forces acting on the body and over their torques. In Equation 12.9, we

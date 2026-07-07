@@ -1,0 +1,221 @@
+# REAL PDF — openstax_vol3.pdf, pages 272-277
+############################################################
+
+264 Chapter 6 | Photons and Matter Waves
+→
+dividedbythefactor 2π. Vector k iscalledthe“wavevector”orpropagationvector(thedirectioninwhichaphotonis
+moving).Thepropagationvectorshowsthedirectionofthephoton’slinearmomentumvector.Themagnitudeofthewave
+→
+vectoris k=| k |=2π/λ andiscalledthewavenumber.Noticethatthisequationdoesnotintroduceanynewphysics.
+We can verify that the magnitude of the vector inEquation 6.22is the same as that given byEquation 6.18.
+The Compton Effect
+The Compton effect is the term used for an unusual result observed when X-rays are scattered on some materials. By
+classicaltheory,whenanelectromagneticwaveisscatteredoffatoms,thewavelengthofthescatteredradiationisexpected
+tobethesameasthewavelengthoftheincidentradiation.Contrarytothispredictionofclassicalphysics,observationsshow
+thatwhenX-raysarescatteredoffsomematerials,suchasgraphite,thescatteredX-rayshavedifferentwavelengthsfrom
+thewavelength oftheincidentX-rays.Thisclassically unexplainable phenomenonwasstudiedexperimentally byArthur
+H.Comptonand his collaborators, and Compton gave its explanation in 1923.
+To explain the shift in wavelengths measured in the experiment, Compton used Einstein’s idea of light as a particle. The
+Comptoneffecthasaveryimportantplaceinthehistoryofphysicsbecauseitshowsthatelectromagneticradiationcannot
+be explained as a purely wave phenomenon. The explanation of the Compton effect gave a convincing argument to the
+physicscommunitythatelectromagneticwavescanindeedbehavelikeastreamofphotons,whichplacedtheconceptofa
+photon on firm ground.
+TheschematicsofCompton’sexperimentalsetupareshowninFigure6.11.Theideaoftheexperimentisstraightforward:
+Monochromatic X-rays with wavelength λ are incident on a sample of graphite (the “target”), where they interact with
+atomsinsidethesample;theylateremergeasscatteredX-rayswithwavelength λ′. Adetectorplacedbehindthetargetcan
+measuretheintensityofradiationscatteredinanydirection θ withrespecttothedirectionoftheincidentX-raybeam.This
+scattering angle, θ, istheangle between thedirection ofthescattered beam andthedirection oftheincident beam. In
+thisexperiment,weknowtheintensityandthewavelength λ oftheincoming(incident)beam;andforagivenscattering
+angle θ, we measure the intensity and the wavelength λ′ of the outgoing (scattered) beam. Typical results of these
+measurementsareshowninFigure 6.12,wherethex-axisisthewavelengthofthescatteredX-raysandthey-axisisthe
+intensityofthescatteredX-rays,measuredfordifferentscatteringangles(indicatedonthegraphs).Forallscatteringangles
+(exceptfor θ=0°), wemeasuretwointensitypeaks.Onepeakislocatedatthewavelength λ, whichisthewavelength
+oftheincidentbeam.Theotherpeakislocatedatsomeotherwavelength, λ′. Thetwopeaksareseparatedby Δλ, which
+dependsonthescatteringangle θ oftheoutgoingbeam(inthedirectionofobservation).Theseparation Δλ iscalledthe
+Compton shift.
+Figure 6.11 Experimental setup for studying Compton
+scattering.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 265
+Figure 6.12 Experimental data show the Compton effect for X-rays scattering off graphite at various angles: The intensity of
+the scattered beam has two peaks. One peak appears at the wavelength λ of the incident radiation and the second peak appears
+at wavelength λ′. The separation Δλ between the peaks depends on the scattering angle θ, which is the angular position of
+the detector inFigure 6.11. The experimental data in this figure are plotted in arbitrary units so that the height of the profile
+reflects the intensity of the scattered beam above background noise.
+Compton Shift
+As given by Compton, the explanation of the Compton shift is that in the target material, graphite, valence electrons are
+looselyboundintheatomsandbehavelikefreeelectrons.ComptonassumedthattheincidentX-rayradiationisastream
+ofphotons.Anincomingphotoninthisstreamcollideswithavalenceelectroninthegraphitetarget.Inthecourseofthis
+collision,theincomingphotontransferssomepartofitsenergyandmomentumtothetargetelectronandleavesthescene
+as a scattered photon. This model explains in qualitative terms why the scattered radiation has a longer wavelength than
+theincidentradiation.Putsimply,aphotonthathaslostsomeofitsenergyemergesasaphotonwithalowerfrequency,or
+equivalently,withalongerwavelength.Toshowthathismodelwascorrect,Comptonusedittoderivetheexpressionfor
+theComptonshift.Inhisderivation,heassumedthatbothphotonandelectronarerelativisticparticlesandthatthecollision
+obeystwocommonsenseprinciples:(1)theconservationoflinearmomentumand(2)theconservationoftotalrelativistic
+energy.
+In the following derivation of the Compton shift, E f and → p f denote the energy and momentum, respectively, of an
+incident photon with frequency f. The photon collides with a relativistic electron at rest, which means that immediately
+before the collision, the electron’s energy is entirely its rest mass energy, m c2. Immediately after the collision, the
+0
+electron has energy E and momentum → p , both of which satisfy Equation 6.19. Immediately after the collision, the
+→
+outgoingphotonhasenergy E˜ f, momentum p˜ f, andfrequency f′. Thedirectionoftheincidentphotonishorizontal
+fromlefttoright,andthedirectionoftheoutgoingphotonisattheangle θ, asillustratedinFigure6.11.Thescattering
+→
+angle θ is the angle between the momentum vectors → p f and p˜ f, and we can write their scalar product:
+→ → (6.23)
+p f· p˜ f = p f p˜ fcosθ.
+FollowingCompton’sargument,weassumethatthecollidingphotonandelectronformanisolatedsystem.Thisassumption
+isvalidforweaklyboundelectronsthat,toagoodapproximation,canbetreatedasfreeparticles.Ourfirstequationisthe
+conservation of energy for the photon-electron system:
+E
+f
++m
+0
+c2=E˜
+f
++E. (6.24)
+The left side of this equation is the energy of the system at the instant immediately before the collision, and the right
+side of the equation is the energy of the system at the instant immediately after the collision. Our second equation is the
+conservation of linear momentum for the photon–electron system where the electron is at rest at the instant immediately
+before the collision:
+→ → → (6.25)
+p f = p˜ f + p .
+
+266 Chapter 6 | Photons and Matter Waves
+Theleftsideofthisequationisthemomentumofthesystemrightbeforethecollision,andtherightsideoftheequation
+isthemomentumofthesystemrightaftercollision.TheentirephysicsofComptonscattering iscontainedinthesethree
+precedingequations––theremainingpartisalgebra.Atthispoint,wecouldjumptotheconcludingformulafortheCompton
+shift,butitisbeneficialtohighlightthemainalgebraicstepsthatleadtoCompton’sformula,whichwegivehereasfollows.
+We start with rearranging the terms inEquation 6.24and squaring it:
+2
+⎡
+⎣
+⎛
+⎝
+E
+f
+−E˜
+f
+⎞
+⎠
++m
+0
+c2⎤
+⎦
+=E2.
+In the next step, we substituteEquation 6.19for E2, simplify, and divide both sides by c2 to obtain
+2
+⎛ ⎝ E f /c−E˜ f /c⎞ ⎠ +2m 0 c⎛ ⎝ E f /c−E˜ f /c⎞ ⎠ = p2.
+Now we can useEquation 6.21to express this form of the energy equation in terms of momenta. The result is
+2 (6.26)
+⎛ ⎝ p f −p˜ f ⎞ ⎠ +2m 0 c⎛ ⎝ p f −p˜ f ⎞ ⎠ = p2.
+To eliminate p2, we turn to the momentum equationEquation 6.25, rearrange its terms, and square it to obtain
+⎛ ⎝ → p f − → p˜ f ⎞ ⎠ 2 = p2 and ⎛ ⎝ → p f − → p˜ f ⎞ ⎠ 2 = p2 f +p˜2 f −2 → p f· → p˜ f.
+Theproductofthemomentum vectors isgivenbyEquation 6.23.Whenwesubstitute thisresult for p2 inEquation
+6.26, we obtain the energy equation that contains the scattering angle θ:
+2
+⎛ ⎝ p f −p˜ f ⎞ ⎠ +2m 0 c⎛ ⎝ p f −p˜ f ⎞ ⎠ = p2 f +p˜2 f −2p f p˜ fcosθ.
+With further algebra, this result can be simplified to
+1 − p 1 = m 1 c(1−cosθ). (6.27)
+p˜ f f 0
+Now recall Equation 6.21 and write: 1/p˜
+f
+=λ′/h and 1/p
+f
+=λ/h. When these relations are substituted into
+Equation 6.27, we obtain the relation for the Compton shift:
+h (6.28)
+λ′−λ=
+m
+c(1−cosθ).
+0
+The factor h/m c is called theCompton wavelengthof the electron:
+0
+h (6.29)
+λ c= m c =0.00243nm=2.43pm.
+0
+Denoting the shift as Δλ=λ′−λ, the concluding result can be rewritten as
+Δλ=λ c(1−cosθ). (6.30)
+ThisformulafortheComptonshiftdescribesoutstandinglywelltheexperimentalresultsshowninFigure6.12.Scattering
+datameasuredformolybdenum,graphite,calcite,andmanyothertargetmaterialsareinaccordwiththistheoreticalresult.
+The nonshifted peak shown in Figure 6.12 is due to photon collisions with tightly bound inner electrons in the target
+material.Photonsthatcollidewiththeinnerelectronsofthetargetatomsinfactcollidewiththeentireatom.Inthisextreme
+case, the rest mass in Equation 6.29 must be changed to the rest mass of the atom. This type of shift is four orders of
+magnitude smaller than the shift caused by collisions with electrons and is so small that it can be neglected.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 267
+Comptonscatteringisanexampleofinelasticscattering,inwhichthescatteredradiationhasalongerwavelengththanthe
+wavelengthoftheincidentradiation.Intoday’susage,theterm“Comptonscattering”isusedfortheinelasticscatteringof
+photonsbyfree,chargedparticles.InComptonscattering,treatingphotonsasparticleswithmomentathatcanbetransferred
+tochargedparticlesprovidesthetheoreticalbackgroundtoexplainthewavelengthshiftsmeasuredinexperiments;thisis
+the evidence that radiation consists of photons.
+Example 6.8
+Compton Scattering
+An incident 71-pm X-ray is incident on a calcite target. Find the wavelength of the X-ray scattered at a 30°
+angle. What is the largest shift that can be expected in this experiment?
+Strategy
+TofindthewavelengthofthescatteredX-ray,firstwemustfindtheComptonshiftforthegivenscatteringangle,
+θ=30°. We use Equation 6.30. Then we add this shift to the incident wavelength to obtain the scattered
+wavelength.ThelargestComptonshiftoccursattheangle θ when 1−cosθ hasthelargestvalue,whichisfor
+the angle θ=180°.
+Solution
+The shift at θ=30° is
+Δλ=λ c(1−cos30°)=0.134λ c=(0.134)(2.43)pm=0.325pm.
+This gives the scattered wavelength:
+λ′=λ+Δλ=(71+0.325)pm=71.325pm.
+The largest shift is
+(Δλ)max=λ c(1−cos180 0 )=2(2.43pm)=4.86pm.
+Significance
+Thelargestshiftinwavelengthisdetectedforthebackscatteredradiation;however,mostofthephotonsfromthe
+incidentbeampassthroughthetargetandonlyasmallfractionofphotonsgetsbackscattered(typically,lessthan
+5%). Therefore, these measurements require highly sensitive detectors.
+6.8 Check Your Understanding An incident 71-pm X-ray is incident on a calcite target. Find the
+wavelength of the X-ray scattered at a 60° angle. What is the smallest shift that can be expected in this
+experiment?
+6.4 | Bohr’s Model of the Hydrogen Atom
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the difference between the absorption spectrum and the emission spectrum of radiation
+emitted by atoms
+• Describe the Rutherford gold foil experiment and the discovery of the atomic nucleus
+• Explain the atomic structure of hydrogen
+• Describe the postulates of the early quantum theory for the hydrogen atom
+• Summarize how Bohr’s quantum model of the hydrogen atom explains the radiation spectrum
+of atomic hydrogen
+Historically, Bohr’s model of the hydrogen atom is the very first model of atomic structure that correctly explained the
+
+268 Chapter 6 | Photons and Matter Waves
+radiationspectraofatomichydrogen.Themodelhasaspecialplaceinthehistoryofphysicsbecauseitintroducedanearly
+quantumtheory,whichbroughtaboutnewdevelopmentsinscientificthoughtandlaterculminatedinthedevelopmentof
+quantummechanics.TounderstandthespecificsofBohr’smodel,wemustfirstreviewthenineteenth-centurydiscoveries
+that prompted its formulation.
+When we use a prism to analyze white light coming from the sun, several dark lines in the solar spectrum are observed
+(Figure6.13).SolarabsorptionlinesarecalledFraunhoferlinesafterJosephvonFraunhofer,whoaccuratelymeasured
+their wavelengths. During 1854–1861, Gustav Kirchhoff and Robert Bunsen discovered that for the various chemical
+elements,thelineemissionspectrumofanelementexactlymatchesitslineabsorptionspectrum.Thedifferencebetween
+theabsorptionspectrumandtheemissionspectrumisexplainedinFigure6.14.Anabsorptionspectrumisobservedwhen
+lightpassesthroughagas.Thisspectrumappearsasblacklinesthatoccuronlyatcertainwavelengthsonthebackgroundof
+thecontinuousspectrumofwhitelight(Figure6.13).Themissingwavelengthstelluswhichwavelengthsoftheradiation
+are absorbed by the gas. The emission spectrum is observed when light is emitted by a gas. This spectrum is seen as
+colorfullinesontheblackbackground(seeFigure 6.15andFigure 6.16).Positionsoftheemissionlinestelluswhich
+wavelengthsoftheradiationareemittedbythegas.Eachchemicalelementhasitsowncharacteristicemissionspectrum.
+For each element, the positions of its emission lines are exactly the same as the positions of its absorption lines. This
+meansthatatomsofaspecificelementabsorbradiationonlyatspecificwavelengthsandradiationthatdoesnothavethese
+wavelengthsisnotabsorbedbytheelementatall.Thisalsomeansthattheradiationemittedbyatomsofeachelementhas
+exactly the same wavelengths as the radiation they absorb.
+Figure 6.13 In the solar emission spectrum in the visible range from 380 nm to 710 nm, Fraunhofer lines are observed as
+vertical black lines at specific spectral positions in the continuous spectrum. Highly sensitive modern instruments observe
+thousands of such lines.
+Figure 6.14 Observation of line spectra: (a) setup to observe absorption lines; (b) setup to
+observe emission lines. (a) White light passes through a cold gas that is contained in a glass
+flask. A prism is used to separate wavelengths of the passed light. In the spectrum of the passed
+light, some wavelengths are missing, which are seen as black absorption lines in the continuous
+spectrum on the viewing screen. (b) A gas is contained in a glass discharge tube that has
+electrodes at its ends. At a high potential difference between the electrodes, the gas glows and
+the light emitted from the gas passes through the prism that separates its wavelengths. In the
+spectrum of the emitted light, only specific wavelengths are present, which are seen as colorful
+emission lines on the screen.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

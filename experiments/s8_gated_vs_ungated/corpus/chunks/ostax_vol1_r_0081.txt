@@ -1,0 +1,205 @@
+# REAL PDF — openstax_vol1.pdf, pages 491-499
+############################################################
+
+10.5 • Calculating Moments of Inertia 479
+figure. This is a convenient choice because we can then integrate along the x-axis.
+FIGURE 10.25 Calculation of the moment of inertia I for a uniform thin rod about an axis through the center of the rod.
+We define dm to be a small element of mass making up the rod. The moment of inertia integral is an integral over
+the mass distribution. However, we know how to integrate over space, not over mass. We therefore need to find a
+way to relate mass to spatial variables. We do this using the linear mass density of the object, which is the mass
+per unit length. Since the mass density of this object is uniform, we can write
+If we take the differential of each side of this equation, we find
+since is constant. We chose to orient the rod along the x-axis for convenience—this is where that choice becomes
+very helpful. Note that a piece of the rod dl lies completely along the x-axis and has a length dx; in fact, in
+this situation. We can therefore write , giving us an integration variable that we know how to deal with.
+The distance of each piece of mass dm from the axis is given by the variable x, as shown in the figure. Putting this all
+together, we obtain
+The last step is to be careful about our limits of integration. The rod extends from to , since the
+axis is in the middle of the rod at . This gives us
+Next, we calculate the moment of inertia for the same uniform thin rod but with a different axis choice so we can
+compare the results. We would expect the moment of inertia to be smaller about an axis through the center of mass
+than the endpoint axis, just as it was for the barbell example at the start of this section. This happens because more
+mass is distributed farther from the axis of rotation.
+A uniform thin rod with axis at the end
+Now consider the same uniform thin rod of mass M and length L, but this time we move the axis of rotation to the
+end of the rod. We wish to find the moment of inertia about this new axis (Figure 10.26). The quantity dm is again
+defined to be a small element of mass making up the rod. Just as before, we obtain
+However, this time we have different limits of integration. The rod extends from to , since the axis is at
+the end of the rod at . Therefore we find
+
+480 10 • Fixed-Axis Rotation
+FIGURE 10.26 Calculation of the moment of inertia I for a uniform thin rod about an axis through the end of the rod.
+Note the rotational inertia of the rod about its endpoint is larger than the rotational inertia about its center
+(consistent with the barbell example) by a factor of four.
+The Parallel-Axis Theorem
+The similarity between the process of finding the moment of inertia of a rod about an axis through its middle and
+about an axis through its end is striking, and suggests that there might be a simpler method for determining the
+moment of inertia for a rod about any axis parallel to the axis through the center of mass. Such an axis is called a
+parallel axis. There is a theorem for this, called the parallel-axis theorem, which we state here but do not derive in
+this text.
+PARALLEL-AXIS THEOREM
+Let m be the mass of an object and let d be the distance from an axis through the object’s center of mass to a
+new axis. Then we have
+10.20
+Let’s apply this to the rod examples solved above:
+This result agrees with our more lengthy calculation from above. This is a useful equation that we apply in some of
+the examples and problems.
+CHECK YOUR UNDERSTANDING 10.5
+What is the moment of inertia of a cylinder of radius R and mass m about an axis through a point on the surface, as
+shown below?
+Access for free at openstax.org
+
+10.5 • Calculating Moments of Inertia 481
+A uniform thin disk about an axis through the center
+Integrating to find the moment of inertia of a two-dimensional object is a little bit trickier, but one shape is
+commonly done at this level of study—a uniform thin disk about an axis through its center (Figure 10.27).
+FIGURE 10.27 Calculating the moment of inertia for a thin disk about an axis through its center.
+Since the disk is thin, we can take the mass as distributed entirely in the xy-plane. We again start with the
+relationship for the surface mass density, which is the mass per unit surface area. Since it is uniform, the surface
+mass density is constant:
+Now we use a simplification for the area. The area can be thought of as made up of a series of thin rings, where each
+ring is a mass increment dm of radius r equidistant from the axis, as shown in part (b) of the figure. The infinitesimal
+area of each ring dA is therefore given by the length of each ring ( ) times the infinitesimal width of each ring dr:
+The full area of the disk is then made up from adding all the thin rings with a radius range from 0 to R. This radius
+range then becomes our limits of integration for dr, that is, we integrate from to . Putting this all
+together, we have
+Note that this agrees with the value given in Figure 10.20.
+Calculating the moment of inertia for compound objects
+Now consider a compound object such as that in Figure 10.28, which depicts a thin disk at the end of a thin rod. This
+cannot be easily integrated to find the moment of inertia because it is not a uniformly shaped object. However, if we
+go back to the initial definition of moment of inertia as a summation, we can reason that a compound object’s
+moment of inertia can be found from the sum of each part of the object:
+10.21
+It is important to note that the moments of inertia of the objects in Equation 10.21 are about a common axis. In the
+case of this object, that would be a rod of length L rotating about its end, and a thin disk of radius R rotating about an
+axis shifted off of the center by a distance , where R is the radius of the disk. Let’s define the mass of the rod
+to be and the mass of the disk to be
+
+482 10 • Fixed-Axis Rotation
+FIGURE 10.28 Compound object consisting of a disk at the end of a rod. The axis of rotation is located at A.
+The moment of inertia of the rod is simply , but we have to use the parallel-axis theorem to find the moment
+of inertia of the disk about the axis shown. The moment of inertia of the disk about its center is and we
+apply the parallel-axis theorem to find
+Adding the moment of inertia of the rod plus the moment of inertia of the disk with a shifted axis of rotation, we find
+the moment of inertia for the compound object to be
+Applying moment of inertia calculations to solve problems
+Now let’s examine some practical applications of moment of inertia calculations.
+EXAMPLE 10.11
+Person on a Merry-Go-Round
+A 25-kg child stands at a distance from the axis of a rotating merry-go-round (Figure 10.29). The merry-
+go-round can be approximated as a uniform solid disk with a mass of 500 kg and a radius of 2.0 m. Find the moment
+of inertia of this system.
+FIGURE 10.29 Calculating the moment of inertia for a child on a merry-go-round.
+Strategy
+This problem involves the calculation of a moment of inertia. We are given the mass and distance to the axis of
+rotation of the child as well as the mass and radius of the merry-go-round. Since the mass and size of the child are
+much smaller than the merry-go-round, we can approximate the child as a point mass. The notation we use is
+.
+Our goal is to find .
+Access for free at openstax.org
+
+10.5 • Calculating Moments of Inertia 483
+Solution
+For the child, , and for the merry-go-round, . Therefore
+Significance
+The value should be close to the moment of inertia of the merry-go-round by itself because it has much more mass
+distributed away from the axis than the child does.
+EXAMPLE 10.12
+Rod and Solid Sphere
+Find the moment of inertia of the rod and solid sphere combination about the two axes as shown below. The rod has
+length 0.5 m and mass 2.0 kg. The radius of the sphere is 20.0 cm and has mass 1.0 kg.
+Strategy
+Since we have a compound object in both cases, we can use the parallel-axis theorem to find the moment of inertia
+about each axis. In (a), the center of mass of the sphere is located at a distance from the axis of rotation. In
+(b), the center of mass of the sphere is located a distance R from the axis of rotation. In both cases, the moment of
+inertia of the rod is about an axis at one end. Refer to Table 10.4 for the moments of inertia for the individual
+objects.
+a. ;
+;
+b. ;
+;
+;
+Significance
+Using the parallel-axis theorem eases the computation of the moment of inertia of compound objects. We see that
+the moment of inertia is greater in (a) than (b). This is because the axis of rotation is closer to the center of mass of
+the system in (b). The simple analogy is that of a rod. The moment of inertia about one end is , but the
+moment of inertia through the center of mass along its length is .
+
+484 10 • Fixed-Axis Rotation
+EXAMPLE 10.13
+Angular Velocity of a Pendulum
+A pendulum in the shape of a rod (Figure 10.30) is released from rest at an angle of . It has a length 30 cm and
+mass 300 g. What is its angular velocity at its lowest point?
+FIGURE 10.30 A pendulum in the form of a rod is released from rest at an angle of
+Strategy
+Use conservation of energy to solve the problem. At the point of release, the pendulum has gravitational potential
+energy, which is determined from the height of the center of mass above its lowest point in the swing. At the bottom
+of the swing, all of the gravitational potential energy is converted into rotational kinetic energy.
+Solution
+The change in potential energy is equal to the change in rotational kinetic energy, .
+At the top of the swing: . At the bottom of the swing, with respect to the
+lowest point the rod swings.
+At the top of the swing, the rotational kinetic energy is . At the bottom of the swing, . Therefore:
+or
+Solving for , we have
+Inserting numerical values, we have
+Significance
+Note that the angular velocity of the pendulum does not depend on its mass.
+Access for free at openstax.org
+
+10.6 • Torque 485
+10.6 Torque
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe how the magnitude of a torque depends on the magnitude of the lever arm and the angle the
+force vector makes with the lever arm
+• Determine the sign (positive or negative) of a torque using the right-hand rule
+• Calculate individual torques about a common axis and sum them to find the net torque
+An important quantity for describing the dynamics of a rotating rigid body is torque. We see the application of torque
+in many ways in our world. We all have an intuition about torque, as when we use a large wrench to unscrew a
+stubborn bolt. Torque is at work in unseen ways, as when we press on the accelerator in a car, causing the engine to
+put additional torque on the drive train. Or every time we move our bodies from a standing position, we apply a
+torque to our limbs. In this section, we define torque and make an argument for the equation for calculating torque
+for a rigid body with fixed-axis rotation.
+Defining Torque
+So far we have defined many variables that are rotational equivalents to their translational counterparts. Let’s
+consider what the counterpart to force must be. Since forces change the translational motion of objects, the
+rotational counterpart must be related to changing the rotational motion of an object about an axis. We call this
+rotational counterpart torque.
+In everyday life, we rotate objects about an axis all the time, so intuitively we already know much about torque.
+Consider, for example, how we rotate a door to open it. First, we know that a door opens slowly if we push too close
+to its hinges; it is more efficient to rotate a door open if we push far from the hinges. Second, we know that we
+should push perpendicular to the plane of the door; if we push parallel to the plane of the door, we are not able to
+rotate it. Third, the larger the force, the more effective it is in opening the door; the harder you push, the more
+rapidly the door opens. The first point implies that the farther the force is applied from the axis of rotation, the
+greater the angular acceleration; the second implies that the effectiveness depends on the angle at which the force
+is applied; the third implies that the magnitude of the force must also be part of the equation. Note that for rotation
+in a plane, torque has two possible directions. Torque is either clockwise or counterclockwise relative to the chosen
+pivot point. Figure 10.31 shows counterclockwise rotations.
+FIGURE 10.31 Torque is the turning or twisting effectiveness of a force, illustrated here for door rotation on its hinges (as viewed from
+overhead). Torque has both magnitude and direction. (a) A counterclockwise torque is produced by a force acting at a distance r from the
+hinges (the pivot point). (b) A smaller counterclockwise torque is produced when a smaller force acts at the same distance r from the
+
+486 10 • Fixed-Axis Rotation
+hinges. (c) The same force as in (a) produces a smaller counterclockwise torque when applied at a smaller distance from the hinges. (d) A
+smaller counterclockwise torque is produced by the same magnitude force as (a) acting at the same distance as (a) but at an angle that is
+less than .
+Now let’s consider how to define torques in the general three-dimensional case.
+TORQUE
+When a force is applied to a point P whose position is relative to O (Figure 10.32), the torque around O is
+10.22
+FIGURE 10.32 The torque is perpendicular to the plane defined by and its direction is determined by the right-hand rule.
+From the definition of the cross product, the torque is perpendicular to the plane containing and has
+magnitude
+where is the angle between the vectors and . The SI unit of torque is newtons times meters, usually written as
+. The quantity is the perpendicular distance from O to the line determined by the vector and is
+called the lever arm. Note that the greater the lever arm, the greater the magnitude of the torque. In terms of the
+lever arm, the magnitude of the torque is
+10.23
+The cross product also tells us the sign of the torque. In Figure 10.32, the cross product is along the
+positive z-axis, which by convention is a positive torque. If is along the negative z-axis, this produces a
+negative torque.
+If we consider a disk that is free to rotate about an axis through the center, as shown in Figure 10.33, we can see
+how the angle between the radius and the force affects the magnitude of the torque. If the angle is zero, the
+torque is zero; if the angle is , the torque is maximum. The torque in Figure 10.33 is positive because the
+Access for free at openstax.org

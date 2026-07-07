@@ -1,0 +1,227 @@
+# REAL PDF — openstax_vol2.pdf, pages 75-81
+############################################################
+
+Chapter 1 | Temperature and Heat 65
+5780 K and that its emissivity is 1, find its radius.
+CHALLENGE PROBLEMS
+123. A pendulum is made of a rod of length L and equationtogetdL/dtmultipliedbya(verysimple)function
+negligible mass, but capable of thermal expansion, and of L on one side, and integrate both sides with respect to
+a weight of negligible size. (a) Show that when the time.Alternatively,youmaybeabletouseyourknowledge
+temperature increases by dT, the period of the pendulum ofthederivativesofvariousfunctionstoguessthesolution,
+increases by a fraction αLdT/2. (b) A clock controlled which has a simple dependence on t. (c) Will the water
+byabrasspendulumkeepstimecorrectlyat 10°C.Ifthe eventually freeze to the bottom of the flask?
+room temperature is 30°C, does the clock run faster or
+128. As the very first rudiment of climatology, estimate
+slower? What is its error in seconds per day?
+thetemperatureofEarth.Assumeitisaperfectsphereand
+its temperature is uniform. Ignore the greenhouse effect.
+124. Attemperaturesofafewhundredkelvinsthespecific
+ThermalradiationfromtheSunhasanintensity(the“solar
+heat capacity of copper approximately follows the
+constant”S)ofabout 1370W/m2 attheradiusofEarth’s
+empirical formula c=α+βT+δT−2, where
+orbit. (a) Assuming the Sun’s rays are parallel, what area
+α=349J/kg·K, β=0.107J/kg·K2, and mustSbemultipliedbytogetthetotalradiationintercepted
+by Earth? It will be easiest to answer in terms of Earth’s
+δ=4.58×10 5 J·kg·K. How much heat is needed to
+radius, R. (b) Assume that Earth reflects about 30% of
+raise the temperature of a 2.00-kg piece of copper from the solar energy it intercepts. In other words, Earth has
+20°C to 250°C? an albedo with a value of A=0.3. In terms of S, A,
+and R, what is the rate at which Earth absorbs energy
+125. Inacalorimeterofnegligibleheatcapacity,200gof from the Sun? (c) Find the temperature at which Earth
+steam at 150°C and 100 g of ice at −40°C are mixed. radiatesenergyatthesamerate.Assumethatattheinfrared
+wavelengths where it radiates, the emissivity e is 1. Does
+The pressure is maintained at 1 atm. What is the final
+your result show that the greenhouse effect is important?
+temperature, and how much steam, ice, and water are
+(d)HowdoesyouranswerdependonthetheareaofEarth?
+present?
+129. Let’s stop ignoring the greenhouse effect and
+126. An astronaut performing an extra-vehicular activity
+incorporate it into the previous problem in a very rough
+(space walk) shaded from the Sun is wearing a spacesuit
+way. Assume the atmosphere is a single layer, a spherical
+thatcanbeapproximatedasperfectlywhite (e=0) except
+shell around Earth, with an emissivity e=0.77 (chosen
+for a 5cm×8cm patch in the form of the astronaut’s
+simply to give the right answer) at infrared wavelengths
+nationalflag.Thepatchhasemissivity0.300.Thespacesuit
+emitted by Earth and by the atmosphere. However, the
+under the patch is 0.500 cm thick, with a thermal
+atmosphere is transparent to the Sun’s radiation (that is,
+conductivity k=0.0600W/m°C,anditsinnersurfaceis
+assume the radiation is at visible wavelengths with no
+atatemperatureof 20.0°C.Whatisthetemperatureofthe infrared), so the Sun’s radiation reaches the surface. The
+patch,andwhatistherateofheatlossthroughit?Assume greenhouse effect comes from the difference between the
+the patch is so thin that its outer surface is at the same atmosphere’s transmission of visible light and its rather
+temperature as the outer surface of the spacesuit under it. strong absorption of infrared. Note that the atmosphere’s
+Alsoassumethetemperatureofouterspaceis0K.Youwill radius isnotsignificantly different fromEarth’s,butsince
+get an equation that is very hard to solve in closed form, the atmosphere is a layer above Earth, it emits radiation
+soyoucansolveitnumericallywithagraphingcalculator, both upward and downward, so it has twice Earth’s area.
+with software, or even by trial and error with a calculator. There are three radiative energy transfers in this problem:
+solar radiation absorbed by Earth’s surface; infrared
+radiation from the surface, which is absorbed by the
+127. The goal in this problem is to find the growth of
+atmosphere according to its emissivity; and infrared
+an ice layer as a function of time. Call the thickness of
+radiation from the atmosphere, half of which is absorbed
+the ice layer L. (a) Derive an equation for dL/dt in terms
+by Earth and half of which goes out into space. Apply
+of L , the temperature T above the ice, and the properties
+themethodofthepreviousproblemtogetanequationfor
+of ice (which you can leave in symbolic form instead of
+Earth’ssurfaceandonefortheatmosphere,andsolvethem
+substituting the numbers). (b) Solve this differential
+forthetwounknowntemperatures,surfaceandatmosphere.
+equationassumingthatat t=0,youhave L=0. Ifyou
+have studied differential equations, you will know a
+techniqueforsolvingequationsofthistype:manipulatethe
+
+66 Chapter 1 | Temperature and Heat
+a. IntermsofEarth’sradius,theconstant σ,and
+the unknown temperature T of the surface, what
+s
+is the power of the infrared radiation from the
+surface?
+b. WhatisthepowerofEarth’sradiationabsorbed
+by the atmosphere?
+c. Intermsoftheunknowntemperature T ofthe
+e
+atmosphere, what is the power radiated from the
+atmosphere?
+d. Write an equation that says the power of the
+radiationtheatmosphereabsorbsfromEarthequals
+the power of the radiation it emits.
+e. Half of the power radiated by the atmosphere
+hits Earth. Write an equation that says that the
+power Earth absorbs from the atmosphere and the
+Sun equals the power that it emits.
+f. Solve your two equations for the unknown
+temperature of Earth.
+For steps that make this model less crude, see for
+example the lectures
+(https://openstaxcollege.org/l/
+21paulgormlec)by Paul O’Gorman.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 67
+2 | THE KINETIC THEORY OF
+GASES
+Figure 2.1 A volcanic eruption releases tons of gas and dust into the atmosphere. Most of the gas is water vapor, but several
+other gases are common, including greenhouse gases such as carbon dioxide and acidic pollutants such as sulfur dioxide.
+However, the emission of volcanic gas is not all bad: Many geologists believe that in the earliest stages of Earth’s formation,
+volcanic emissions formed the early atmosphere. (credit: modification of work by “Boaworm”/Wikimedia Commons)
+Chapter Outline
+2.1Molecular Model of an Ideal Gas
+2.2Pressure, Temperature, and RMS Speed
+2.3Heat Capacity and Equipartition of Energy
+2.4Distribution of Molecular Speeds
+Introduction
+Gasesareliterallyallaroundus—theairthatwebreatheisamixtureofgases.Othergasesincludethosethatmakebreads
+andcakessoft,thosethatmakedrinksfizzy,andthosethatburntoheatmanyhomes.Enginesandrefrigeratorsdependon
+the behaviors of gases, as we will see in later chapters.
+As we discussed in the preceding chapter, the study of heat and temperature is part of an area of physics known as
+thermodynamics,inwhichwerequireasystemtobemacroscopic,thatis,toconsistofahugenumber(suchas 10 23)of
+molecules.Webeginbyconsideringsomemacroscopicpropertiesofgases:volume,pressure,andtemperature.Thesimple
+model ofahypothetical “ideal gas” describes these properties ofagas veryaccurately undermany conditions. Wemove
+from the ideal gas model to a more widely applicable approximation, called the Van der Waals model.
+Tounderstandgasesevenbetter,wemustalsolookatthemonthemicroscopicscaleofmolecules.Ingases,themolecules
+interactweakly,sothemicroscopicbehaviorofgasesisrelativelysimple,andtheyserveasagoodintroductiontosystems
+ofmanymolecules.Themolecularmodelofgasesiscalledthekinetictheoryofgasesandisoneoftheclassicexamplesof
+a molecular model that explains everyday behavior.
+
+68 Chapter 2 | The Kinetic Theory of Gases
+2.1 | Molecular Model of an Ideal Gas
+Learning Objectives
+By the end of this section, you will be able to:
+• Apply the ideal gas law to situations involving the pressure, volume, temperature, and the
+number of molecules of a gas
+• Use the unit of moles in relation to numbers of molecules, and molecular and macroscopic
+masses
+• Explain the ideal gas law in terms of moles rather than numbers of molecules
+• Apply the van der Waals gas law to situations where the ideal gas law is inadequate
+Inthissection,weexplorethethermalbehaviorofgases.Ourword“gas”comesfromtheFlemishwordmeaning“chaos,”
+firstusedforvaporsbytheseventeenth-centurychemistJ.B.vanHelmont.Thetermwasmoreappropriatethanheknew,
+becausegasesconsistofmoleculesmovingandcollidingwitheachotheratrandom.Thisrandomnessmakestheconnection
+between the microscopic and macroscopic domains simpler for gases than for liquids or solids.
+Howdogasesdifferfromsolidsandliquids?Underordinaryconditions,suchasthoseoftheairaroundus,thedifference
+isthatthemoleculesofgasesaremuchfartherapartthanthoseofsolidsandliquids.Becausethetypicaldistancesbetween
+moleculesarelargecomparedtothesizeofamolecule,asillustratedinFigure2.2,theforcesbetweenthemareconsidered
+negligible, except when they come into contact with each other during collisions. Also, at temperatures well above the
+boilingtemperature,themotionofmoleculesisfast,andthegasesexpandrapidlytooccupyalloftheaccessiblevolume.
+Incontrast,inliquidsandsolids,moleculesareclosertogether,andthebehaviorofmoleculesinliquidsandsolidsishighly
+constrainedbythemolecules’interactionswithoneanother.Themacroscopicpropertiesofsuchsubstancesdependstrongly
+ontheforcesbetweenthemolecules,andsincemanymoleculesareinteracting,theresulting“many-bodyproblems”canbe
+extremely complicated (seeCondensed Matter Physics (http://cnx.org/content/m58591/latest/)).
+Figure 2.2 Atoms and molecules in a gas are typically widely
+separated. Because the forces between them are quite weak at
+these distances, the properties of a gas depend more on the
+number of atoms per unit volume and on temperature than on
+the type of atom.
+The Gas Laws
+Inthepreviouschapter,wesawoneconsequenceofthelargeintermolecularspacingingases:Gasesareeasilycompressed.
+Table 1.2 shows that gases have larger coefficients of volume expansion than either solids or liquids. These large
+coefficients mean that gases expand and contract very rapidly with temperature changes. We also saw (in the section on
+thermal expansion) that most gases expand at the same rate or have the same coefficient of volume expansion, β. This
+raisesaquestion:Whydoallgasesactinnearlythesameway,whenallthevariousliquidsandsolidshavewidelyvarying
+expansion rates?
+Tostudyhowthepressure,temperature,andvolumeofagasrelatetooneanother,considerwhathappenswhenyoupump
+airintoadeflatedcartire.Thetire’svolumefirstincreasesindirectproportiontotheamountofairinjected,withoutmuch
+increaseinthetirepressure.Oncethetirehasexpandedtonearlyitsfullsize,thetire’swallslimititsvolumeexpansion.
+Ifwecontinuetopumpairintothetire,thepressureincreases.Whenthecarisdrivenandthetiresflex,theirtemperature
+increases, and therefore the pressure increases even further (Figure 2.3).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 69
+Figure 2.3 (a) When air is pumped into a deflated tire, its volume first increases without much increase in pressure. (b) When
+the tire is filled to a certain point, the tire walls resist further expansion, and the pressure increases with more air. (c) Once the
+tire is inflated, its pressure increases with temperature.
+Figure 2.4 shows data from the experiments of Robert Boyle (1627–1691), illustrating what is now called Boyle’s law:
+Atconstanttemperatureandnumberofmolecules,theabsolutepressureofagasanditsvolumeareinverselyproportional.
+(RecallfromFluidMechanics(http://cnx.org/content/m58624/latest/)thattheabsolutepressureisthetruepressure
+andthegaugepressureistheabsolutepressureminustheambientpressure,typicallyatmosphericpressure.)Thegraphin
+Figure 2.4displays this relationship as an inverse proportionality of volume to pressure.
+Figure 2.4 Robert Boyle and his assistant found that volume and pressure are
+inversely proportional. Here their data are plotted asVversus 1/p; the linearity of the
+graph shows the inverse proportionality. The number shown as the volume is actually
+the height in inches of air in a cylindrical glass tube. The actual volume was that
+height multiplied by the cross-sectional area of the tube, which Boyle did not publish.
+The data are from Boyle’s bookA Defence of the Doctrine Touching the Spring and
+Weight of the Air…, p. 60.[1]
+Figure2.5showsexperimentaldataillustratingwhatiscalledCharles’slaw,afterJacquesCharles(1746–1823).Charles’s
+lawstatesthatatconstantpressureandnumberofmolecules,thevolumeofagasisproportionaltoitsabsolutetemperature.
+1. http://bvpb.mcu.es/en/consulta/registro.cmd?id=406806
+
+70 Chapter 2 | The Kinetic Theory of Gases
+Figure 2.5 Experimental data showing that at constant pressure, volume is
+approximately proportional to temperature. The best-fit line passes approximately
+through the origin.[2]
+SimilarisAmonton’sorGay-Lussac’slaw,whichstatesthatatconstantvolumeandnumberofmolecules,thepressureis
+proportional to the temperature. That law is the basis of the constant-volume gas thermometer, discussed in the previous
+chapter. (The histories of these laws and the appropriate credit for them are more complicated than can be discussed here.)
+It is known experimentally that for gases at low density (such that their molecules occupy a negligible fraction of the
+totalvolume)andattemperatureswellabovetheboilingpoint,theseproportionalitiesholdtoagoodapproximation.Not
+surprisingly,withtheotherquantitiesheldconstant,eitherpressureorvolumeisproportionaltothenumberofmolecules.
+More surprisingly, when the proportionalities are combined into a single equation, the constant of proportionality is
+independentofthecompositionofthegas.Theresultingequationforallgasesappliesinthelimitoflowdensityandhigh
+temperature; it’sthe same foroxygenasforhelium oruranium hexafluoride. Agasat that limit iscalled anideal gas;it
+obeys theideal gas law, which is also called the equation of state of an ideal gas.
+Ideal Gas Law
+The ideal gas law states that
+pV =Nk T, (2.1)
+B
+wherepistheabsolutepressureofagas,Visthevolumeitoccupies,Nisthenumberofmoleculesinthegas,andTis
+its absolute temperature.
+Theconstant k iscalledtheBoltzmannconstantinhonoroftheAustrianphysicistLudwigBoltzmann(1844–1906)and
+B
+has the value
+k =1.38×10 −23 J/K.
+B
+Theidealgaslawdescribesthebehaviorofanyrealgaswhenitsdensityislowenoughoritstemperaturehighenoughthat
+itisfarfromliquefaction.Thisencompassesmanypracticalsituations.Inthenextsection,we’llseewhyit’sindependent
+of the type of gas.
+Inmanysituations,theidealgaslawisappliedtoasampleofgaswithaconstantnumberofmolecules;forinstance,the
+gasmaybeinasealedcontainer.IfNisconstant,thensolvingforNshowsthatpV/Tisconstant.Wecanwritethatfactin
+a convenient form:
+2. http://chemed.chem.purdue.edu/genchem/history/charles.html
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

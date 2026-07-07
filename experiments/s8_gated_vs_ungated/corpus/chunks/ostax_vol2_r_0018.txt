@@ -1,0 +1,291 @@
+# REAL PDF — openstax_vol2.pdf, pages 99-106
+############################################################
+
+Chapter 2 | The Kinetic Theory of Gases 89
+Q=nC VΔT. (2.13)
+If the volume does not change, there is no overall displacement, so no work is done, and the only change in internal
+energyisduetotheheatflow ΔE =Q. (Thisstatementisdiscussedfurtherinthenextchapter.)Weusetheequation
+int
+E =3nRT/2 towrite ΔE =3nRΔT/2 andsubstitute ΔE forQtofind Q=3nRΔT/2,whichgivesthefollowing
+int int
+simple result for an ideal monatomic gas:
+C V = 3R.
+2
+It is independent of temperature, which justifies our use of finite differences instead of a derivative. This formula agrees
+well with experimental results.
+In the next chapter we discuss the molar specific heat at constant pressure C p, which is always greater than C V.
+Example 2.8
+Calculating Temperature
+Asampleof0.125kgofxenoniscontainedinarigidmetalcylinder,bigenoughthatthexenoncanbemodeled
+asanidealgas,atatemperatureof 20.0°C.Thecylinderismovedoutsideonahotsummerday.Asthexenon
+comesintoequilibriumbyreachingthetemperatureofitssurroundings,180Jofheatareconductedtoitthrough
+the cylinder walls. What is the equilibrium temperature? Ignore the expansion of the metal cylinder.
+Solution
+1. Identifytheknowns:Weknowtheinitialtemperature T is 20.0°C,theheatQis180J,andthemass
+1
+mof the xenon is 0.125 kg.
+2. Identify the unknown. We need the final temperature, so we’ll need ΔT.
+3. Determine which equations are needed. Because xenon gas is monatomic, we can use Q=3nRΔT/2.
+Then we need the number of moles, n=m/M.
+4. Substitute the known values into the equations and solve for the unknowns.
+The molar mass of xenon is 131.3 g, so we obtain
+125g
+n= =0.952mol,
+131.3g/mol
+2Q 2(180J)
+ΔT = = =15.2°C.
+3nR 3(0.952mol)(8.31J/mol·°C)
+Therefore, the final temperature is 35.2°C. The problem could equally well be solved in kelvin; as a
+kelvin is the same size as a degree Celsius of temperature change, you would get ΔT =15.2K.
+Significance
+Theheatingofanidealoralmostidealgasatconstantvolumeisimportantincarenginesandmanyotherpractical
+systems.
+2.6 CheckYourUnderstandingSuppose2molesofheliumgasat200Karemixedwith2molesofkrypton
+gas at 400 K in a calorimeter. What is the final temperature?
+Wewouldliketogeneralizeourresultstoidealgaseswithmorethanoneatompermolecule.Insuchsystems,themolecules
+canhaveotherformsofenergybesidetranslationalkineticenergy,suchasrotationalkineticenergyandvibrationalkinetic
+andpotentialenergies.Wewillseethatasimpleruleletsusdeterminetheaverageenergiespresentintheseformsandsolve
+
+90 Chapter 2 | The Kinetic Theory of Gases
+problems in much the same way as we have for monatomic gases.
+Degrees of Freedom
+– – – –
+In the previous section, we found that 1 2 mv2= 3 2 k B T and v2=3v2 x , from which it follows that 1 2 mv2 x = 1 2 k B T. The
+– –
+sameequationholdsfor v2 andfor v2.Thus,wecanlookatourenergyof 3k T asthesumofcontributionsof 1k T
+y z 2 B 2 B
+fromeachofthethreedimensionsoftranslationalmotion.Shiftingtothegasasawhole,weseethatthe3intheformula
+C V = 3R also reflects those three dimensions. We define a degree of freedom as an independent possible motion of a
+2
+molecule,suchaseachofthethreedimensionsoftranslation.Then,lettingdrepresentthenumberofdegreesoffreedom,
+d
+the molar heat capacity at constant volume of a monatomic ideal gas is C V = R, where d =3.
+2
+The branch of physics called statistical mechanics tells us, and experiment confirms, that C of any ideal gas is given
+V
+by this equation, regardless of the number of degrees of freedom. This fact follows from a more general result, the
+equipartitiontheorem,whichholdsinclassical(non-quantum)thermodynamicsforsystemsinthermalequilibriumunder
+technical conditions that are beyond our scope. Here, we mention only that in a system, the energy is shared among the
+degrees of freedom by collisions.
+Equipartition Theorem
+The energy of a thermodynamic system in equilibrium is partitioned equally among its degrees of freedom.
+Accordingly, the molar heat capacity of an ideal gas is proportional to its number of degrees of freedom,d:
+d (2.14)
+C V = R.
+2
+ThisresultisduetotheScottishphysicistJamesClerkMaxwell(1831−1871),whosenamewillappearseveralmoretimes
+in this book.
+For example, consider a diatomic ideal gas (a good model for nitrogen, N , and oxygen, O ). Such a gas has more
+2 2
+degrees of freedom than a monatomic gas. In addition to the three degrees of freedom for translation, it has two degrees
+offreedomforrotationperpendiculartoitsaxis.Furthermore,themoleculecanvibratealongitsaxis.Thismotionisoften
+modeledbyimaginingaspringconnectingthetwoatoms,andweknowfromsimpleharmonicmotionthatsuchmotionhas
+both kinetic and potential energy. Each of these forms of energy corresponds to a degree of freedom, giving two more.
+Wemightexpectthatforadiatomicgas,weshoulduse7asthenumberofdegreesoffreedom;classically,ifthemolecules
+of a gas had only translational kinetic energy, collisions between molecules would soon make them rotate and vibrate.
+However, as explained in the previous module, quantum mechanics controls which degrees of freedom are active. The
+result is shown in Figure 2.13. Both rotational and vibrational energies are limited to discrete values. For temperatures
+belowabout60K,theenergiesofhydrogenmoleculesaretoolowforacollisiontobringtherotationalstateorvibrational
+stateofamoleculefromthelowestenergytothesecondlowest,sotheonlyformofenergyistranslationalkineticenergy,
+and d =3 or C V =3R/2 as in a monatomic gas. Above that temperature, the two rotational degrees of freedom begin
+tocontribute, that is,somemolecules areexcited totherotational state withthesecond-lowest energy.(Thistemperature
+is much lower than that where rotations of monatomic gases contribute, because diatomic molecules have much higher
+rotationalinertiasandhencemuchlowerrotationalenergies.)Fromaboutroomtemperature(abitlessthan300K)toabout
+600K,therotationaldegreesoffreedomarefullyactive,butthevibrationalonesarenot,and d =5.Then,finally,above
+about 3000 K, the vibrational degrees of freedom are fully active, and d =7 as the classical theory predicted.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 91
+Figure 2.13 The molar heat capacity of hydrogen as a function of temperature (on a logarithmic
+scale). The three “steps” or “plateaus” show different numbers of degrees of freedom that the
+typical energies of molecules must achieve to activate. Translational kinetic energy corresponds to
+three degrees of freedom, rotational to another two, and vibrational to yet another two.
+Polyatomic molecules typically have one additional rotational degree of freedom at room temperature, since they have
+comparable moments ofinertia around any axis. Thus, at room temperature, they have d =6, and at high temperature,
+d =8. We usually assume that gases have the theoretical room-temperature values ofd.
+AsshowninTable2.3,theresultsagreewellwithexperimentsformanymonatomicanddiatomicgases,buttheagreement
+for triatomic gases is only fair. The differences arise from interactions that we have ignored between and within molecules.
+Gas C V/R at 25°C and 1 atm
+Ar 1.50
+He 1.50
+Ne 1.50
+CO 2.50
+H 2.47
+2
+N 2.50
+2
+O 2.53
+2
+F 2.8
+2
+CO 3.48
+2
+H S 3.13
+2
+N O 3.66
+2
+Table 2.3 C V/R for Various Monatomic,
+Diatomic, and Triatomic Gases
+Whataboutinternalenergyfordiatomicandpolyatomicgases?Forsuchgases, C isafunctionoftemperature(Figure
+V
+2.13), so we do not have the kind of simple result we have for monatomic ideal gases.
+
+92 Chapter 2 | The Kinetic Theory of Gases
+Molar Heat Capacity of Solid Elements
+Theideaofequipartitionleadstoanestimateofthemolarheatcapacityofsolidelementsatordinarytemperatures.Wecan
+model the atoms of a solid as attached to neighboring atoms by springs (Figure 2.14).
+Figure 2.14 In a simple model of a solid element, each atom
+is attached to others by six springs, two for each possible
+motion:x,y, andz. Each of the three motions corresponds to two
+degrees of freedom, one for kinetic energy and one for potential
+energy. Thus d =6.
+Analogouslytothediscussionofvibrationinthepreviousmodule,eachatomhassixdegreesoffreedom:onekineticand
+one potential for each of the x-, y-, and z-directions. Accordingly, the molar specific heat of a metal should be 3R. This
+result,knownastheLawofDulongandPetit,worksfairlywellexperimentallyatroomtemperature.(Foreveryelement,
+itfailsatlowtemperaturesforquantum-mechanicalreasons.Sincequantumeffectsareparticularlyimportantforlow-mass
+particles, the Law of Dulong and Petit already fails at room temperature for some light elements, such as beryllium and
+carbon. It also fails for some heavier elements for various reasons beyond what we can cover.)
+Problem-Solving Strategy: Heat Capacity and Equipartition
+The strategy for solving these problems is the same as the one in Phase Changes for the effects of heat transfer.
+The only new feature is that you should determine whether the case just presented—ideal gases at constant
+volume—applies to the problem. (For solid elements, looking up the specific heat capacity is generally better than
+estimating it from the Law of Dulong and Petit.) In the case of an ideal gas, determine the number d of degrees of
+freedom from the number of atoms in the gas molecule and use it to calculate C (or use C to solve ford).
+V V
+Example 2.9
+Calculating Temperature: Calorimetry with an Ideal Gas
+A300-gpieceofsolidgallium(ametalusedinsemiconductordevices)atitsmeltingpointofonly 30.0°C is
+incontactwith12.0molesofair(assumeddiatomic)at 95.0°C inaninsulatedcontainer.Whentheairreaches
+equilibriumwiththegallium,202gofthegalliumhavemelted.Basedonthosedata,whatistheheatoffusionof
+gallium? Assume the volume of the air does not change and there are no other heat transfers.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 93
+Strategy
+We’llusetheequation Q +Q =0. Assomeofthegalliumdoesn’tmelt,weknowthefinaltemperature
+hot cold
+is still the melting point. Then the only Q
+hot
+is the heat lost as the air cools, Q
+hot
+=n
+air
+C VΔT, where
+C V =5R/2. Theonly Q cold isthelatentheatoffusionofthegallium, Q cold =m Ga L f . Itispositivebecause
+heat flows into the gallium.
+Solution
+1. Set up the equation:
+n
+air
+C VΔT+m
+Ga
+L
+f
+=0.
+2. Substitute the known values and solve:
+⎛5⎞⎛ J ⎞
+(12.0mol) 8.31 (30.0°C−95.0°C)+(0.202kg)L =0.
+⎝2⎠⎝ mol·°C⎠ f
+We solve to find that the heat of fusion of gallium is 80.2 kJ/kg.
+2.4 | Distribution of Molecular Speeds
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the distribution of molecular speeds in an ideal gas
+• Find the average and most probable molecular speeds in an ideal gas
+Particles in an ideal gas all travel at relatively high speeds, but they do not travel at the same speed. The rms speed is
+onekindofaverage,butmanyparticlesmovefasterandmanymoveslower.Theactualdistributionofspeedshasseveral
+interesting implications for other areas of physics, as we will see in later chapters.
+The Maxwell-Boltzmann Distribution
+The motion of molecules in a gas is random in magnitude and direction for individual molecules, but a gas of many
+moleculeshasapredictabledistributionofmolecularspeeds.Thispredictabledistributionofmolecularspeedsisknownas
+theMaxwell-Boltzmanndistribution,afteritsoriginators,whocalculateditbasedonkinetictheory,andithassincebeen
+confirmed experimentally (Figure 2.15).
+To understand this figure, we must define a distribution function of molecular speeds, since with a finite number of
+molecules, the probability that a molecule will have exactly a given speed is 0.
+
+94 Chapter 2 | The Kinetic Theory of Gases
+Figure 2.15 The Maxwell-Boltzmann distribution of molecular speeds in an
+ideal gas. The most likely speed v is less than the rms speed v . Although
+p rms
+very high speeds are possible, only a tiny fraction of the molecules have speeds
+that are an order of magnitude greater than v rms.
+Wedefinethedistributionfunction f(v) bysayingthattheexpectednumber N(v , v ) ofparticleswithspeedsbetween
+1 2
+v and v is given by
+1 2
+v
+2
+N(v , v )=N∫ f(v)dv.
+1 2
+v
+1
+[Since N is dimensionless, the unit of f(v) is seconds per meter.] We can write this equation conveniently in differential
+form:
+dN =Nf(v)dv.
+Inthisform,wecanunderstandtheequationassayingthatthenumberofmoleculeswithspeedsbetweenvand v+dv is
+thetotalnumberofmoleculesinthesampletimesf(v)timesdv.Thatis,theprobabilitythatamolecule’sspeedisbetween
+vand v+dv isf(v)dv.
+We can now quote Maxwell’s result, although the proof is beyond our scope.
+Maxwell-Boltzmann Distribution of Speeds
+The distribution function for speeds of particles in an ideal gas at temperatureTis
+f(v)= 4 ⎛ m ⎞ 3/2 v2e −mv2 /2k B T . (2.15)
+π⎝2k T⎠
+B
+The factors before the v2 are a normalization constant; they make sure that N(0, ∞)=N by making sure that
+∞
+∫ f(v)dv=1. Let’sfocusonthedependenceonv.Thefactorof v2 meansthat f(0)=0 andforsmallv,thecurve
+0
+lookslikeaparabola.Thefactorof e
+−m
+0
+v2 /2k
+B
+T
+meansthat lim f(v)=0 andthegraphhasanexponentialtail,which
+v→∞
+indicatesthatafewmoleculesmaymoveatseveraltimesthermsspeed.Theinteractionofthesefactorsgivesthefunction
+the single-peaked shape shown in the figure.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 95
+Example 2.10
+Calculating the Ratio of Numbers of Molecules Near Given Speeds
+Inasampleofnitrogen (N , withamolarmassof28.0g/mol)atatemperatureof 273°C,findtheratioofthe
+2
+number of molecules with a speed very close to 300 m/s to the number with a speed very close to 100 m/s.
+Strategy
+Since we’re looking at a small range, we can approximate the number of molecules near 100 m/s as
+dN = f(100m/s)dv. Then the ratio we want is
+100
+dN f(300m/s)dv f(300m/s)
+300 = = .
+dN f(100m/s)dv f(100m/s)
+100
+All we have to do is take the ratio of the twofvalues.
+Solution
+1. Identify the knowns and convert to SI units if necessary.
+T =300K, k =1.38×10 −23 J/K
+B
+M =0.0280kg/molsom=4.65×10 −26 kg
+2. Substitute the values and solve.
+3/2
+4 ⎛ m ⎞ (300m/s)2 exp[−m(300m/s)2/2k T]
+f(300m/s)
+=
+π⎝2k
+B
+T⎠ B
+f(100m/s) 3/2
+4 ⎛ m ⎞ (100m/s)2 exp[−m(100m/s)2/2k T]
+π⎝2k
+B
+T⎠ B
+(300m/s)2 exp[−(4.65×10 −26 kg)(300m/s)2/2(1.38×10 −23 J/K)(300K)]
+=
+(100m/s)2 exp[−(4.65×10 −26 kg)(100m/s)2/2(1.38×10 −23 J/K)(300K)]
+=32 exp ⎡ ⎢− (4.65×10 −26 kg)[(300m/s)2−(100ms)2] ⎤ ⎥
+⎣ 2(1.38×10 −23 J/K)(300K) ⎦
+=5.74
+Figure 2.16shows that the curve is shifted to higher speeds at higher temperatures, with a broader range of speeds.
+Figure 2.16 The Maxwell-Boltzmann distribution is shifted to
+higher speeds and broadened at higher temperatures.

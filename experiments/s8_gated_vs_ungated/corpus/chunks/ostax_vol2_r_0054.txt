@@ -1,0 +1,225 @@
+# REAL PDF — openstax_vol2.pdf, pages 335-343
+############################################################
+
+Chapter 7 | Electric Potential 325
+Figure 7.37 The electric field between oppositely charged
+parallel plates. A portion is released at the positive plate.
+Strategy
+(a)Sincetheplatesaredescribedas“large”andthedistancebetweenthemisnot,wewillapproximateeachof
+them as an infinite plane, and apply the result from Gauss’s law in the previous chapter.
+B→ →
+(b) Use ΔV AB=−∫ E ·d l .
+A
+(c)Sincetheelectricfieldisconstant,findtheratioof100Vtothetotalpotentialdifference;thencalculatethis
+fraction of the distance.
+Solution
+a. The electric field is directed from the positive to the negative plate as shown in the figure, and its
+magnitude is given by
+E= ε σ = 6.81×10 −7 C/m2 =7.69×104 V/m.
+0 8.85×10−12 C2/N·m2
+b. Tofindthepotentialdifference ΔV betweentheplates,weuseapathfromthenegativetothepositive
+→ →
+plate that is directed against the field. The displacement vector d l and the electric field E are
+→ →
+antiparallelso E ·d l =−Edl. Thepotentialdifferencebetweenthepositiveplateandthenegative
+plate is then
+ΔV =−∫E·dl=E∫dl=El=(7.69×104 V/m)(6.50×10 −3 m)=500V.
+c. The total potential difference is 500 V, so 1/5 of the distance between the plates will be the distance
+between100-Vpotentialdifferences.Thedistancebetweentheplatesis6.5mm,sotherewillbe1.3mm
+between 100-V potential differences.
+Significance
+Youhavenowseenanumericalcalculationofthelocationsofequipotentialsbetweentwochargedparallelplates.
+
+326 Chapter 7 | Electric Potential
+7.12 Check Your UnderstandingWhat are the equipotential surfaces for an infinite line charge?
+Distribution of Charges on Conductors
+InExample7.19withapointcharge,wefoundthattheequipotentialsurfaceswereintheformofspheres,withthepoint
+charge at the center. Given that a conducting sphere in electrostatic equilibrium is a spherical equipotential surface, we
+shouldexpectthatwecouldreplaceoneofthesurfacesinExample7.19withaconductingsphereandhaveanidentical
+solution outside the sphere. Inside will be rather different, however.
+Figure 7.38 An isolated conducting sphere.
+Toinvestigatethis,considertheisolatedconductingsphereofFigure7.38thathasaradiusRandanexcesschargeq.To
+findtheelectricfieldbothinsideandoutsidethesphere,notethatthesphereisisolated,soitssurfacechangedistribution
+andtheelectricfieldofthatdistributionaresphericallysymmetric.Wecanthereforerepresentthefieldas → E =E(r) ^ r.
+TocalculateE(r),weapplyGauss’slawoveraclosedsphericalsurfaceSofradiusrthatisconcentricwiththeconducting
+sphere. Sinceris constant and ^ n = ^ r on the sphere,
+∮ → E · ^ n da=E(r)∮ da=E(r)4πr2.
+S
+For r < R, S is within the conductor, so recall from our previous study of Gauss’s law that q enc=0 and Gauss’s law
+gives E(r)=0, as expected inside a conductor at equilibrium. If r > R, S encloses the conductor so q enc=q. From
+Gauss’s law,
+q
+E(r)4πr2= ε .
+0
+The electric field of the sphere may therefore be written as
+E = 0 (r <R),
+E = 1 q ^ r (r ≥R).
+4πε
+0
+r2
+Asexpected,intheregion r ≥R, theelectricfieldduetoachargeqplacedonanisolatedconductingsphereofradiusR
+is identical to the electric field of a point chargeqlocated at the center of the sphere.
+Tofindtheelectricpotentialinsideandoutsidethesphere,notethatfor r ≥R, thepotentialmustbethesameasthatof
+an isolated point chargeqlocated at r =0,
+q
+V(r)=
+4π
+1
+rε r
+(r ≥R)
+0
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 327
+simply due to the similarity of the electric field.
+For r <R, E=0, soV(r) is constant in this region. Since V(R)=q/4πε R,
+0
+q
+V(r)= 1 (r <R).
+4πrε R
+0
+We will use this result to show that
+σ R =σ R ,
+1 1 2 2
+fortwoconductingspheresofradii R andR ,withsurfacechargedensities σ andσ respectively,thatareconnected
+1 2 1 2
+by a thin wire, as shown in Figure 7.39. The spheres are sufficiently separated so that each can be treated as if it were
+isolated (aside from the wire). Note that the connection by the wire means that this entire system must be an equipotential.
+Figure 7.39 Two conducting spheres are connected by a thin conducting wire.
+We have just seen that the electrical potential at the surface of an isolated, charged conducting sphere of radiusRis
+q
+V = 1 .
+4πrε R
+0
+Now, the spheres are connected by a conductor and are therefore at the same potential; hence
+q q
+1 1 = 1 2,
+4πrε R 4πrε R
+0 1 0 2
+and
+q q
+1 = 2.
+R R
+1 2
+Thenetchargeonaconductingsphereanditssurfacechargedensityarerelatedby q=σ(4πR2). Substitutingthisequation
+into the previous one, we find
+σ R =σ R .
+1 1 2 2
+Obviously,twospheresconnectedbyathinwiredonotconstituteatypicalconductorwithavariableradiusofcurvature.
+Nevertheless,thisresultdoesatleastprovideaqualitativeideaofhowchargedensityvariesoverthesurfaceofaconductor.
+The equation indicates that where the radius of curvature is large (pointsBandDinFigure 7.40), σ andEare small.
+Similarly, the charges tend to be denser where the curvature of the surface is greater, as demonstrated by the charge
+distributiononoddlyshapedmetal(Figure7.40).Thesurfacechargedensityishigheratlocationswithasmallradiusof
+curvature than at locations with a large radius of curvature.
+
+328 Chapter 7 | Electric Potential
+Figure 7.40 The surface charge density and the electric field
+of a conductor are greater at regions with smaller radii of
+curvature.
+A practical application of this phenomenon is the lightning rod, which is simply a grounded metal rod with a sharp end
+pointing upward. As positive charge accumulates in the ground due to a negatively charged cloud overhead, the electric
+fieldaroundthesharppointgetsverylarge.Whenthefieldreachesavalueofapproximately 3.0×10 6 N/C (thedielectric
+strength of the air), the free ions in the air are accelerated to such high energies that their collisions with air molecules
+actuallyionizethemolecules.TheresultingfreeelectronsintheairthenflowthroughtherodtoEarth,therebyneutralizing
+some ofthe positive charge.This keeps the electric field between the cloud andthe groundfromgetting largeenoughto
+produce a lightning bolt in the region around the rod.
+Animportantapplicationofelectricfieldsandequipotentiallinesinvolvestheheart.Theheartreliesonelectricalsignals
+to maintain its rhythm. The movement of electrical signals causes the chambers of the heart to contract and relax. When
+a person has a heart attack, the movement of these electrical signals may be disturbed. An artificial pacemaker and a
+defibrillator can be used to initiate the rhythm of electrical signals. The equipotential lines around the heart, the thoracic
+region,andtheaxisoftheheartareusefulwaysofmonitoringthestructureandfunctionsoftheheart.Anelectrocardiogram
+(ECG) measures the small electric signals being generated during the activity of the heart.
+Play around with this simulation (https://openstaxcollege.org/l/21pointcharsim) to move point charges
+around on the playing field and then view the electric field, voltages, equipotential lines, and more.
+7.6 | Applications of Electrostatics
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe some of the many practical applications of electrostatics, including several printing
+technologies
+• Relate these applications to Newton’s second law and the electric force
+The study of electrostatics has proven useful in many areas. This module covers just a few of the many applications of
+electrostatics.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 329
+The Van de Graaff Generator
+VandeGraaffgenerators(orVandeGraaffs)arenotonlyspectacular devices usedtodemonstrate highvoltage dueto
+static electricity—they are also used for serious research. The first was built by Robert Van de Graaff in 1931 (based on
+originalsuggestionsbyLordKelvin)foruseinnuclearphysicsresearch.Figure7.41showsaschematicofalargeresearch
+version.VandeGraaffsusebothsmoothandpointedsurfaces,andconductorsandinsulatorstogeneratelargestaticcharges
+and, hence, large voltages.
+Averylargeexcesschargecanbedepositedonthespherebecauseitmovesquicklytotheoutersurface.Practical limits
+arise because the large electric fields polarize and eventually ionize surrounding materials, creating free charges that
+neutralize excess charge or allow it to escape. Nevertheless, voltages of 15 million volts are well within practical limits.
+Figure 7.41 Schematic of Van de Graaff generator. A battery
+(A) supplies excess positive charge to a pointed conductor, the
+points of which spray the charge onto a moving insulating belt
+near the bottom. The pointed conductor (B) on top in the large
+sphere picks up the charge. (The induced electric field at the
+points is so large that it removes the charge from the belt.) This
+can be done because the charge does not remain inside the
+conducting sphere but moves to its outside surface. An ion
+source inside the sphere produces positive ions, which are
+accelerated away from the positive sphere to high velocities.
+Xerography
+Mostcopymachinesuseanelectrostaticprocesscalledxerography—awordcoinedfromtheGreekwordsxerosfordry
+andgraphosfor writing. The heart of the process is shown in simplified form inFigure 7.42.
+
+330 Chapter 7 | Electric Potential
+Figure 7.42 Xerography is a dry copying process based on electrostatics. The major steps in the
+process are the charging of the photoconducting drum, transfer of an image, creating a positive charge
+duplicate, attraction of toner to the charged parts of the drum, and transfer of toner to the paper. Not
+shown are heat treatment of the paper and cleansing of the drum for the next copy.
+Aselenium-coatedaluminumdrumissprayedwithpositivechargefrompointsonadevicecalledacorotron.Seleniumis
+asubstancewithaninterestingproperty—itisaphotoconductor.Thatis,seleniumisaninsulatorwheninthedarkanda
+conductor when exposed to light.
+Inthefirststageofthexerographyprocess,theconductingaluminumdrumisgroundedsothatanegativechargeisinduced
+underthethinlayerofuniformlypositivelychargedselenium.Inthesecondstage,thesurfaceofthedrumisexposedtothe
+imageofwhateveristobecopied.Inlocationswheretheimageislight,theseleniumbecomesconducting,andthepositive
+charge is neutralized. In dark areas, the positive charge remains, so the image has been transferred to the drum.
+The third stage takes a dry black powder, called toner, and sprays it with a negative charge so that it is attracted to the
+positiveregionsofthedrum.Next,ablankpieceofpaperisgivenagreaterpositivechargethanonthedrumsothatitwill
+pullthetonerfromthedrum.Finally,thepaperandelectrostaticallyheldtonerarepassedthroughheatedpressurerollers,
+which melt and permanently adhere the toner to the fibers of the paper.
+Laser Printers
+Laserprintersusethexerographicprocesstomakehigh-qualityimagesonpaper,employingalasertoproduceanimageon
+thephotoconductingdrumasshowninFigure7.43.Initsmostcommonapplication,thelaserprinterreceivesoutputfrom
+acomputer,anditcanachievehigh-qualityoutputbecauseoftheprecisionwithwhichlaserlightcanbecontrolled.Many
+laserprintersdosignificantinformationprocessing,suchasmakingsophisticatedlettersorfonts,andinthepastmayhave
+contained a computer more powerful than the one giving them the raw data to be printed.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 331
+Figure 7.43 In a laser printer, a laser beam is scanned across a photoconducting drum,
+leaving a positively charged image. The other steps for charging the drum and
+transferring the image to paper are the same as in xerography. Laser light can be very
+precisely controlled, enabling laser printers to produce high-quality images.
+Ink Jet Printers and Electrostatic Painting
+Theinkjetprinter,commonlyusedtoprintcomputer-generatedtextandgraphics,alsoemployselectrostatics.Anozzle
+makes a fine spray of tiny ink droplets, which are then given an electrostatic charge (Figure 7.44).
+Oncecharged,thedropletscanbedirected,usingpairsofchargedplates,withgreatprecisiontoformlettersandimageson
+paper.Inkjetprinterscanproducecolorimagesbyusingablackjetandthreeotherjetswithprimarycolors,usuallycyan,
+magenta,andyellow,muchasacolortelevisionproducescolor.(Thisismoredifficultwithxerography,requiringmultiple
+drums and toners.)
+Figure 7.44 The nozzle of an ink-jet printer produces small ink
+droplets, which are sprayed with electrostatic charge. Various computer-
+driven devices are then used to direct the droplets to the correct positions
+on a page.
+Electrostatic painting employs electrostatic charge to spray paint onto oddly shaped surfaces. Mutual repulsion of like
+charges causes the paint to fly away from its source. Surface tension forms drops, which are then attracted by unlike
+charges to the surface to be painted. Electrostatic painting can reach hard-to-get-to places, applying an even coat in a
+controlledmanner.Iftheobjectisaconductor,theelectricfieldisperpendiculartothesurface,tendingtobringthedrops
+in perpendicularly. Corners and points on conductors will receive extra paint. Felt can similarly be applied.
+Smoke Precipitators and Electrostatic Air Cleaning
+Anotherimportant application ofelectrostatics isfoundinaircleaners, bothlargeandsmall. Theelectrostatic partofthe
+processplacesexcess(usuallypositive)chargeonsmoke,dust,pollen,andotherparticlesintheairandthenpassestheair
+through an oppositely charged grid that attracts and retains the charged particles (Figure 7.45)
+Large electrostatic precipitators are used industrially to remove over 99% of the particles from stack gas emissions
+
+332 Chapter 7 | Electric Potential
+associated with the burning of coal and oil. Home precipitators, often in conjunction with the home heating and air
+conditioning system, are very effective in removing polluting particles, irritants, and allergens.
+Figure 7.45 (a) Schematic of an electrostatic precipitator. Air is passed through grids of opposite charge. The first grid charges
+airborne particles, while the second attracts and collects them. (b) The dramatic effect of electrostatic precipitators is seen by the
+absence of smoke from this power plant. (credit b: modification of work by “Cmdalgleish”/Wikimedia Commons)
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

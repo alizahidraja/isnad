@@ -1,0 +1,302 @@
+# REAL PDF — openstax_vol3.pdf, pages 156-164
+############################################################
+
+148 Chapter 4 | Diffraction
+Figure 4.4 Light passing through a single slit is diffracted in all directions and may interfere constructively or destructively,
+depending on the angle. The difference in path length for rays from either side of the slit is seen to beDsin θ.
+At the larger angle shown in part (c), the path lengths differ by 3λ/2 for rays from the top and bottom of the slit. One
+raytravelsadistance λ differentfromtherayfromthebottomandarrivesinphase,interferingconstructively.Tworays,
+each from slightly above those two, also add constructively. Most rays from the slit have another ray to interfere with
+constructively, and a maximum in intensity occurs at this angle. However, not all rays interfere constructively for this
+situation,sothemaximumisnotasintenseasthecentralmaximum.Finally,inpart(d),theangleshownislargeenoughto
+produceasecondminimum.Asseeninthefigure,thedifferenceinpathlengthforraysfromeithersideoftheslitisDsin
+θ, and we see that a destructive minimum is obtained when this distance is an integral multiple of the wavelength.
+Thus, to obtaindestructive interference for a single slit,
+Dsinθ=mλ, form= ±1, ±2, ±3, ...(destructive), (4.1)
+whereDistheslitwidth, λ isthelight’swavelength, θ istheanglerelativetotheoriginaldirectionofthelight,andm
+istheorderoftheminimum.Figure 4.5showsagraphofintensityforsingle-slitinterference,anditisapparentthatthe
+maximaoneithersideofthecentralmaximumaremuchlessintenseandnotaswide.ThiseffectisexploredinDouble-
+Slit Diffraction.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 149
+Figure 4.5 A graph of single-slit diffraction intensity showing
+the central maximum to be wider and much more intense than
+those to the sides. In fact, the central maximum is six times
+higher than shown here.
+Example 4.1
+Calculating Single-Slit Diffraction
+Visiblelightofwavelength550nmfallsonasingleslitandproducesitsseconddiffractionminimumatanangle
+of 45.0° relativetotheincidentdirectionofthelight,asinFigure4.6.(a)Whatisthewidthoftheslit?(b)At
+what angle is the first minimum produced?
+Figure 4.6 In this example, we analyze a graph of the single-
+slit diffraction pattern.
+Strategy
+From the given information, and assuming the screen is far away from the slit, we can use the equation
+Dsinθ=mλ first to findD, and again to find the angle for the first minimum θ .
+1
+
+150 Chapter 4 | Diffraction
+Solution
+a. Wearegiventhat λ=550nm, m=2,and θ =45.0°.Solvingtheequation Dsinθ=mλ forDand
+2
+substituting known values gives
+D= mλ = 2(550nm) = 1100×10 −9 m =1.56×10 −6 m.
+sinθ sin45.0° 0.707
+2
+b. Solving the equation Dsinθ=mλ for sinθ and substituting the known values gives
+1
+−9
+mλ 1(550×10 m)
+sinθ = = .
+1 D −6
+1.56×10 m
+Thus the angle θ is
+1
+θ =sin−10.354=20.7°.
+1
+Significance
+Weseethattheslitisnarrow(itisonlyafewtimesgreaterthanthewavelengthoflight).Thisisconsistentwith
+thefactthatlightmustinteractwithanobjectcomparableinsizetoitswavelengthinordertoexhibitsignificant
+waveeffectssuchasthissingle-slitdiffractionpattern.Wealsoseethatthecentralmaximumextends 20.7° on
+eithersideoftheoriginalbeam,forawidthofabout 41°.Theanglebetweenthefirstandsecondminimaisonly
+about 24° (45.0°−20.7°). Thus, the second maximum is only about half as wide as the central maximum.
+4.1 Check Your Understanding Suppose the slit width in Example 4.1 is increased to 1.8×10 −6 m.
+What are the new angular positions for the first, second, and third minima? Would a fourth minimum exist?
+4.2 | Intensity in Single-Slit Diffraction
+Learning Objectives
+By the end of this section, you will be able to:
+• Calculate the intensity relative to the central maximum of the single-slit diffraction peaks
+• Calculate the intensity relative to the central maximum of an arbitrary point on the screen
+Tocalculate theintensityofthediffractionpattern,wefollowthephasormethodusedforcalculations withaccircuitsin
+Alternating-Current Circuits (http://cnx.org/content/m58485/latest/) . If we consider that there are N Huygens
+sources across the slit shown in Figure 4.4, with each source separated by a distance D/N from its adjacent neighbors,
+thepathdifferencebetweenwavesfromadjacentsourcesreachingthearbitrarypointPonthescreenis (D/N)sinθ. This
+distance is equivalent to a phase difference of (2πD/λN)sinθ. The phasor diagram for the waves arriving at the point
+whoseangularpositionis θ isshowninFigure4.7.TheamplitudeofthephasorforeachHuygenswaveletis ΔE , the
+0
+amplitude of the resultant phasor isE, and the phase difference between the wavelets from the first and the last sources is
+ϕ=
+⎛2π⎞
+Dsinθ.
+⎝ λ ⎠
+With N →∞, the phasor diagram approaches a circular arc of length NΔE and radius r. Since the length of the arc
+0
+is NΔE for any ϕ, the radius r of the arc must decrease as ϕ increases (or equivalently, as the phasors form tighter
+0
+spirals).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 151
+Figure 4.7 (a) Phasor diagram corresponding to the angular
+position θ in the single-slit diffraction pattern. The phase
+difference between the wavelets from the first and last sources is
+ϕ=(2π/λ)Dsinθ. (b) The geometry of the phasor diagram.
+The phasor diagram for ϕ=0 (the center of the diffraction pattern) is shown in Figure 4.8(a) using N =30. In this
+case, the phasors are laid end to end in a straight line of length NΔE , the radius r goes to infinity, and the resultant
+0
+has its maximum value E=NΔE . The intensity of the light can be obtained using the relation I = 1cε E2 from
+0 2 0
+Electromagnetic Waves (http://cnx.org/content/m58495/latest/). The intensity of the maximum is then
+I = 1cε (NΔE )2= 1 ⎛NΔE ⎞2,
+0 2 0 0 2µ c⎝ 0⎠
+0
+where ε =1/µ c2.Thephasordiagramsforthefirsttwozerosofthediffractionpatternareshowninparts(b)and(d)of
+0 0
+the figure. In both cases, the phasors add to zero, after rotating through ϕ=2π rad for m=1 and 4π rad for m=2.
+Figure 4.8 Phasor diagrams (with 30 phasors) for various points on the single-slit diffraction
+pattern. Multiple rotations around a given circle have been separated slightly so that the phasors can
+be seen. (a) Central maximum, (b) first minimum, (c) first maximum beyond central maximum, (d)
+second minimum, and (e) second maximum beyond central maximum.
+Thenexttwomaximabeyondthecentralmaximaarerepresentedbythephasordiagramsofparts(c)and(e).Inpart(c),
+thephasorshaverotatedthrough ϕ=3π radandhaveformedaresultantphasorofmagnitude E .Thelengthofthearc
+1
+formed by the phasors is NΔE . Since this corresponds to 1.5 rotations around a circle of diameter E , we have
+0 1
+3πE ≈NΔE ,
+2 1 0
+
+152 Chapter 4 | Diffraction
+so
+2NΔE
+E = 0
+1 3π
+and
+I = 1 E2=
+4(NΔE
+0
+)2
+≈0.045I ,
+1 2µ 0 c 1 ⎛ ⎝ 9π2⎞ ⎠ ⎛ ⎝ 2µ 0 c⎞ ⎠ 0
+where
+(NΔE )2
+I = 0 .
+0 2µ c
+0
+Inpart(e),thephasorshaverotatedthrough ϕ=5π rad,correspondingto2.5rotationsaroundacircleofdiameter E
+2
+and arc length NΔE . This results in I ≈0.016I . The proof is left as an exercise for the student (Exercise 4.119).
+0 2 0
+Thesetwomaximaactuallycorrespondtovaluesof ϕ slightlylessthan 3π radand 5π rad.Sincethetotallengthofthe
+arcofthephasordiagramisalways NΔE , theradiusofthearcdecreasesas ϕ increases.Asaresult, E and E turn
+0 1 2
+outtobeslightlylargerforarcsthathavenotquitecurledthrough 3π radand 5π rad,respectively.Theexactvaluesof ϕ
+forthemaximaareinvestigatedinExercise4.120.Insolvingthatproblem,youwillfindthattheyarelessthan,butvery
+close to, ϕ=3π, 5π, 7π, …rad.
+TocalculatetheintensityatanarbitrarypointPonthescreen,wereturntothephasordiagramofFigure4.7.Sincethearc
+subtends an angle ϕ at the center of the circle,
+NΔE =rϕ
+0
+and
+⎛ϕ⎞ E
+sin = .
+⎝2⎠ 2r
+where E is the amplitude of the resultant field. Solving the second equation for E and then substituting r from the first
+equation, we find
+E=2rsin
+ϕ
+=2
+NΔE
+o sin
+ϕ
+.
+2 ϕ 2
+Now defining
+β=
+ϕ
+=
+πDsinθ (4.2)
+2 λ
+we obtain
+sinβ (4.3)
+E=NΔE
+0 β
+Thisequationrelatestheamplitudeoftheresultantfieldatanypointinthediffractionpatterntotheamplitude NΔE at
+0
+the central maximum. The intensity is proportional to the square of the amplitude, so
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 153
+2 (4.4)
+⎛sinβ⎞
+I =I
+0⎝ β ⎠
+where I =⎛NΔE ⎞2/2µ c is the intensity at the center of the pattern.
+0 ⎝ 0⎠ 0
+For the central maximum, ϕ=0, β is also zero and we see from l’Hôpital’s rule that limβ→0 ⎛
+⎝
+sinβ/β⎞
+⎠
+=1, so that
+limϕ→0 I =I
+0
+. Forthenextmaximum, ϕ=3π rad,wehave β=3π/2 radandwhensubstitutedintoEquation 4.4,
+it yields
+2
+I =I
+⎛sin3π/2⎞
+≈0.045I ,
+1 0⎝ 3π/2 ⎠ 0
+in agreement with what we found earlier in this section using the diameters and circumferences of phasor diagrams.
+Substituting ϕ=5π rad intoEquation 4.4yields a similar result for I .
+2
+A plot of Equation 4.4 is shown in Figure 4.9 and directly below it is a photograph of an actual diffraction pattern.
+Notice that the central peak is much brighter than the others, and that the zeros of the pattern are located at those points
+where sinβ=0, which occurs when β=mπ rad. This corresponds to
+πDsinθ
+=mπ,
+λ
+or
+Dsinθ=mλ,
+which isEquation 4.1.
+Figure 4.9 (a) The calculated intensity distribution of a single-slit diffraction pattern. (b) The
+actual diffraction pattern.
+
+154 Chapter 4 | Diffraction
+Example 4.2
+Intensity in Single-Slit Diffraction
+Lightofwavelength550nmpassesthroughaslitofwidth 2.00µm andproducesadiffractionpatternsimilar
+tothatshowninFigure4.9.(a)Findthelocationsofthefirsttwominimaintermsoftheanglefromthecentral
+maximumand(b)determinetheintensityrelativetothecentralmaximumatapointhalfwaybetweenthesetwo
+minima.
+Strategy
+The minima are given by Equation 4.1, Dsinθ=mλ. The first two minima are for m=1 and m=2.
+Equation 4.4andEquation 4.2can be used to determine the intensity once the angle has been worked out.
+Solution
+a. SolvingEquation 4.1for θ gives us θ m=sin−1(mλ/D), so that
+⎛ ⎛ −9 ⎞⎞
+(+1)550×10 m
+θ =sin−1⎜ ⎝ ⎠ ⎟= +16.0°
+1 ⎝ 2.00×10 −6 m ⎠
+and
+⎛ ⎛ −9 ⎞⎞
+(+2)550×10 m
+θ =sin−1⎜ ⎝ ⎠ ⎟= +33.4°.
+2 ⎝ 2.00×10 −6 m ⎠
+b. The halfway point between θ and θ is
+1 2
+θ=⎛θ +θ ⎞/2=(16.0°+33.4°)/2=24.7°.
+⎝ 1 2⎠
+Equation 4.2gives
+β=
+πDsinθ
+=
+π⎛
+⎝ 2.00×10
+−6
+m
+⎞
+⎠ sin(24.7°)
+=1.52πor4.77rad.
+λ ⎛ −9 ⎞
+550×10 m
+⎝ ⎠
+FromEquation 4.4, we can calculate
+I ⎛sinβ⎞ 2 ⎛sin(4.77)⎞ 2 ⎛−0.9985⎞ 2
+= = = =0.044.
+I o ⎝ β ⎠ ⎝ 4.77 ⎠ ⎝ 4.77 ⎠
+Significance
+This position, halfway between two minima, is very close to the location of the maximum, expected near
+β=3π/2, or1.5π.
+4.2 CheckYourUnderstandingFortheexperimentinExample 4.2,atwhatanglefromthecenteristhe
+third maximum and what is its intensity relative to the central maximum?
+IftheslitwidthDisvaried,theintensitydistributionchanges,asillustratedinFigure4.10.Thecentralpeakisdistributed
+overtheregionfrom sinθ=−λ/D to sinθ= +λ/D.Forsmall θ,thiscorrespondstoanangularwidth Δθ≈2λ/D.
+Hence, an increase in the slit width results in a decrease in the width of the central peak. For a slit with D≫λ, the
+central peak is very sharp, whereas if D≈λ, it becomes quite broad.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 4 | Diffraction 155
+Figure 4.10 Single-slit diffraction patterns for various slit widths. As the slit widthDincreases from D=λto5λ and then to
+10λ, the width of the central peak decreases as the angles for the first minima decrease as predicted byEquation 4.1.
+A diffraction experiment in optics can require a lot of preparation but this simulation
+(https://openstaxcollege.org/l/21diffrexpoptsi)byAndrewDuffyoffersnotonlyaquicksetupbutalsothe
+abilitytochangetheslitwidthinstantly.Runthesimulationandselect“Singleslit.”Youcanadjusttheslitwidth
+and see the effect on the diffraction pattern on a screen and as a graph.
+4.3 | Double-Slit Diffraction
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the combined effect of interference and diffraction with two slits, each with finite width
+• Determine the relative intensities of interference fringes within a diffraction pattern
+• Identify missing orders, if any
+WhenwestudiedinterferenceinYoung’sdouble-slitexperiment,weignoredthediffractioneffectineachslit.Weassumed
+thattheslitsweresonarrowthatonthescreenyousawonlytheinterferenceoflightfromjusttwopointsources.Iftheslit
+issmallerthanthewavelength,thenFigure 4.10(a)showsthatthereisjustaspreadingoflightandnopeaksortroughs
+onthescreen.Therefore,itwasreasonabletoleaveoutthediffractioneffectinthatchapter.However,ifyoumaketheslit
+wider,Figure 4.10(b)and(c)showthatyoucannotignorediffraction.Inthissection,westudythecomplicationstothe
+double-slit experiment that arise when you also need to take into account the diffraction effect of each slit.
+Tocalculate thediffraction pattern fortwo(oranynumberof)slits, weneedtogeneralize themethod wejustusedfora
+single slit. That is, across each slit, we place a uniform distribution of point sources that radiate Huygens wavelets, and
+thenwesumthewaveletsfromalltheslits.Thisgivestheintensityatanypointonthescreen.Althoughthedetailsofthat
+calculation can be complicated, the final result is quite simple:
+Two-Slit Diffraction Pattern
+ThediffractionpatternoftwoslitsofwidthDthatareseparatedbyadistancedistheinterferencepatternoftwopoint
+sources separated bydmultiplied by the diffraction pattern of a slit of widthD.
+In other words, the locations of the interference fringes are given by the equation dsinθ=mλ, the same as when we
+consideredtheslitstobepointsources,buttheintensitiesofthefringesarenowreducedbydiffractioneffects,according
+to Equation 4.4. [Note that in the chapter on interference, we wrote dsinθ=mλ and used the integer m to refer to
+interference fringes. Equation 4.1 also uses m, but this time to refer to diffraction minima. If both equations are used
+simultaneously, it is good practice to use a different variable (such as n) for one of these integers in order to keep them
+distinct.]
+Interferenceanddiffractioneffectsoperatesimultaneouslyandgenerallyproduceminimaatdifferentangles.Thisgivesrise
+toacomplicatedpatternonthescreen,inwhichsomeofthemaximaofinterferencefromthetwoslitsaremissingifthe

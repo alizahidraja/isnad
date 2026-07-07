@@ -1,0 +1,220 @@
+# REAL PDF — crowell_lm.pdf, pages 158-163
+############################################################
+
+.Solvedproblem: Moreaboutexample2 page183,problem20
+.Solvedproblem: Whydiditaccelerate? page183,problem18
+Discussion questions
+A When you fire a gun, the exploding gases push outward in all
+directions, causing the bullet to accelerate down the barrel. What third-
+law pairs are involved? [Hint: Remember that the gases themselves are
+anobject.]
+B Tam Anh grabs Sarah by the hand and tries to pull her. She tries
+to remain standing without moving. A student analyzes the situation as
+follows. “If Tam Anh’s force on Sarah is greater than her force on him,
+he can get her to move. Otherwise, she’ll be able to stay where she is.”
+What’swrongwiththisanalysis?
+C You hit a tennis ball against a wall. Explain any and all incorrect
+ideas in the following description of the physics involved: “According to
+Newton’s third law, there has to be a force opposite to your force on the
+ball. Theoppositeforceistheball’smass,whichresistsacceleration,and
+alsoairresistance.”
+5.2 Classification and behavior of forces
+One of the most basic and important tasks of physics is to classify
+the forces of nature. I have already referred informally to “types” of
+forces such as friction, magnetism, gravitational forces, and so on.
+Classification systems are creations of the human mind, so there is
+alwayssomedegreeofarbitrarinessinthem. Foronething, thelevel
+of detail that is appropriate for a classification system depends on
+whatyou’retryingtofindout. Somelinguists,the“lumpers,”liketo
+emphasize the similarities among languages, and a few extremists
+have even tried to find signs of similarities between words in lan-
+guages as di↵erent as English and Chinese, lumping the world’s lan-
+guages into only a few large groups. Other linguists, the “splitters,”
+might be more interested in studying the di↵erences in pronuncia-
+tion between English speakers in New York and Connecticut. The
+splitters call the lumpers sloppy, but the lumpers say that science
+isn’t worthwhile unless it can find broad, simple patterns within the
+seemingly complex universe.
+Scientific classification systems are also usually compromises be-
+tween practicality and naturalness. An example is the question of
+how to classify flowering plants. Most people think that biological
+classification is about discovering new species, naming them, and
+classifying them in the class-order-family-genus-species system ac-
+cording to guidelines set long ago. In reality, the whole system is in
+a constant state of flux and controversy. One very practical way of
+classifying flowering plants is according to whether their petals are
+separateorjoinedintoatubeorcone—thecriterionissoclearthat
+it can be applied to a plant seen from across the street. But here
+practicalityconflictswithnaturalness. Forinstance,thebegoniahas
+158 Chapter 5 Analysis of forces
+
+separate petals and the pumpkin has joined petals, but they are so
+similar in so many other ways that they are usually placed within
+the same order. Some taxonomists have come up with classification
+criteria that they claim correspond more naturally to the apparent
+relationships among plants, without having to make special excep-
+tions, but these may be far less practical, requiring for instance the
+examination of pollen grains under an electron microscope.
+Inphysics, therearetwomainsystemsofclassificationforforces.
+At this point in the course, you are going to learn one that is very
+practical and easy to use, and that splits the forces up into a rel-
+atively large number of types: seven very common ones that we’ll
+discuss explicitly in this chapter, plus perhaps ten less important
+ones such as surface tension, which we will not bother with right
+now.
+Physicists, however, are obsessed with finding simple patterns,
+so recognizing as many as fifteen or twenty types of forces strikes
+them as distasteful and overly complex. Since about the year 1900,
+h/A scientific classification
+physicshasbeenonanaggressiveprogramtodiscoverwaysinwhich system.
+these many seemingly di↵erent types of forces arise from a smaller
+number of fundamental ones. For instance, when you press your
+handstogether,theforcethatkeepsthemfrompassingthrougheach
+other may seem to have nothing to do with electricity, but at the
+atomic level, it actually does arise from electrical repulsion between
+atoms. By about 1950, all the forces of nature had been explained
+as arising from four fundamental types of forces at the atomic and
+nuclear level, and the lumping-together process didn’t stop there.
+By the 1960’s the length of the list had been reduced to three, and
+some theorists even believe that they may be able to reduce it to
+two or one. Although the unification of the forces of nature is one of
+the most beautiful and important achievements of physics, it makes
+much more sense to start this course with the more practical and
+easy system of classification. The unified system of four forces will
+be one of the highlights of the end of your introductory physics
+sequence.
+The practical classification scheme which concerns us now can
+be laid out in the form of the tree shown in figure i. The most
+specific types of forces are shown at the tips of the branches, and
+it is these types of forces that are referred to in the POFOSTITO
+mnemonic. For example, electrical and magnetic forces belong to
+the same general group, but Newton’s third law would never relate
+an electrical force to a magnetic force.
+Thebroadestdistinctionisthatbetweencontactandnoncontact
+forces, which has been discussed in ch. 4. Among the contact forces,
+we distinguish between those that involve solids only and those that
+have to do with fluids, a term used in physics to include both gases
+and liquids.
+Section 5.2 Classification and behavior of forces 159
+
+i/Apracticalclassificationschemeforforces.
+It should not be necessary to memorize this diagram by rote.
+It is better to reinforce your memory of this system by calling to
+mind your commonsense knowledge of certain ordinary phenomena.
+For instance, we know that the gravitational attraction between us
+and the planet earth will act even if our feet momentarily leave the
+ground, and that although magnets have mass and are a↵ected by
+gravity, most objects that have mass are nonmagnetic.
+Hitting a wall example 4
+. A bullet, flying horizontally, hits a steel wall. What type of force
+is there between the bullet and the wall?
+. Starting at the bottom of the tree, we determine that the force
+is a contact force, because it only occurs once the bullet touches
+the wall. Both objects are solid. The wall forms a vertical plane.
+Ifthenoseofthebulletwassomeshapelikeasphere,youmight
+imagine that it would only touch the wall at one point. Realisti-
+cally, however, we know that a lead bullet will flatten out a lot on
+impact, so there is a surface of contact between the two, and its
+160 Chapter 5 Analysis of forces
+
+orientation is vertical. The effect of the force on the bullet is to
+stop the horizontal motion of the bullet, and this horizontal ac-
+celeration must be produced by a horizontal force. The force is
+therefore perpendicular to the surface of contact, and it’s also re-
+pulsive (tending to keep the bullet from entering the wall), so it
+must be a normal force.
+Diagram i is meant to be as simple as possible while including
+most of the forces we deal with in everyday life. If you were an
+insect, you would be much more interested in the force of surface
+tension, which allowed you to walk on water. I have not included
+the nuclear forces, which are responsible for holding the nuclei of
+atoms, because they are not evident in everyday life.
+You should not be afraid to invent your own names for types of
+forces that do not fit into the diagram. For instance, the force that
+holds a piece of tape to the wall has been left o↵ of the tree, and if
+you were analyzing a situation involving scotch tape, you would be
+absolutely right to refer to it by some commonsense name such as
+“sticky force.”
+Ontheotherhand, ifyouarehavingtroubleclassifyingacertain
+force, you should also consider whether it is a force at all. For
+instance, if someone asks you to classify the force that the earth has
+because of its rotation, you would have great di culty creating a
+place for it on the diagram. That’s because it’s a type of motion,
+not a type of force!
+Normal forces
+A normal force, F , is a force that keeps one solid object from
+N
+passing through another. “Normal” is simply a fancy word for “per-
+pendicular,” meaning that the force is perpendicular to the surface
+of contact. Intuitively, it seems the normal force magically adjusts
+itself to provide whatever force is needed to keep the objects from
+occupyingthesamespace. Ifyourmusclespressyourhandstogether
+gently, there is a gentle normal force. Press harder, and the normal
+force gets stronger. How does the normal force know how strong to
+be? The answer is that the harder you jam your hands together,
+the more compressed your flesh becomes. Your flesh is acting like
+a spring: more force is required to compress it more. The same is
+true when you push on a wall. The wall flexes imperceptibly in pro-
+portion to your force on it. If you exerted enough force, would it be
+possible for two objects to pass through each other? No, typically
+the result is simply to strain the objects so much that one of them
+breaks.
+Gravitational forces
+Aswe’lldiscussinmoredetaillaterinthecourse, agravitational
+forceexistsbetweenanytwothingsthathavemass. Ineverydaylife,
+Section 5.2 Classification and behavior of forces 161
+
+the gravitational force between two cars or two people is negligible,
+so the only noticeable gravitational forces are the ones between the
+earth and various human-scale objects. We refer to these planet-
+earth-induced gravitational forces as weight forces, and as we have
+already seen, their magnitude is given by F = mg.
+W
+| |
+.Solvedproblem: Weightandmass page184,problem26
+Static and kinetic friction
+If you have pushed a refrigerator across a kitchen floor, you have
+felt a certain series of sensations. At first, you gradually increased
+your force on the refrigerator, but it didn’t move. Finally, you sup-
+plied enough force to unstick the fridge, and there was a sudden
+j/A model that correctly ex-
+jerk as the fridge started moving. Once the fridge was unstuck, you
+plainsmanypropertiesoffriction.
+The microscopic bumps and could reduce your force significantly and still keep it moving.
+holes in two surfaces dig into
+While you were gradually increasing your force, the floor’s fric-
+eachother.
+tional force on the fridge increased in response. The two forces on
+the fridge canceled, and the fridge didn’t accelerate. How did the
+floor know how to respond with just the right amount of force? Fig-
+urejshowsonepossiblemodel offrictionthatexplainsthisbehavior.
+(A scientific model is a description that we expect to be incomplete,
+approximate, or unrealistic in some ways, but that nevertheless suc-
+ceeds in explaining a variety of phenomena.) Figure j/1 shows a
+microscopic view of the tiny bumps and holes in the surfaces of the
+floor and the refrigerator. The weight of the fridge presses the two
+surfaces together, and some of the bumps in one surface will settle
+as deeply as possible into some of the holes in the other surface. In
+j/2, your leftward force on the fridge has caused it to ride up a little
+k/Static friction: the tray doesn’t
+higher on the bump in the floor labeled with a small arrow. Still
+sliponthewaiter’sfingers.
+more force is needed to get the fridge over the bump and allow it to
+start moving. Of course, this is occurring simultaneously at millions
+of places on the two surfaces.
+Once you had gotten the fridge moving at constant speed, you
+foundthatyouneededtoexertlessforceonit. Sincezerototalforce
+is needed to make an object move with constant velocity, the floor’s
+rightward frictional force on the fridge has apparently decreased
+somewhat, making it easier for you to cancel it out. Our model also
+gives a plausible explanation for this fact: as the surfaces slide past
+each other, they don’t have time to settle down and mesh with one
+another, so there is less friction.
+Even though this model is intuitively appealing and fairly suc-
+cessful, it should not be taken too seriously, and in some situations
+it is misleading. For instance, fancy racing bikes these days are
+made with smooth tires that have no tread — contrary to what
+l/Kineticfriction: thecarskids.
+we’d expect from our model, this does not cause any decrease in
+friction. Machinists know that two very smooth and clean metal
+162 Chapter 5 Analysis of forces

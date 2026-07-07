@@ -1,0 +1,239 @@
+# REAL PDF — openstax_vol1.pdf, pages 244-250
+############################################################
+
+232 5 • Newton's Laws of Motion
+motion. Because object A is moving to the right, friction by B must act to the left. Object B is moving to the left relative to B, so the friction
+by A on B is to the right. The friction force by object A on object B is the third law pair of the friction force by B on A, and therefore these two
+forces must be in opposite directions. Because object B is sliding down the incline, the friction force by the ramp must oppose it and act up
+the ramp.
+We now include any force that acts on the body. Here, no applied force is present. The weight of the object acts as a
+force pointing vertically downward, and the presence of the cord indicates a force of tension pointing away from the
+object. Object A has one interface and hence experiences a normal force, directed away from the interface. The
+source of this force is object B, and this normal force is labeled accordingly. Since object B s sliding down and object
+A s sliding up with respect to the interface, so the friction is directed downward parallel to the inclined plane.
+As noted in step 4 of the problem-solving strategy, we then construct the free-body diagram in Figure 5.32(b) using
+the same approach. Object B experiences two normal forces and two friction forces due to the presence of two
+contact surfaces. The interface with the inclined plane exerts external forces of and , and the interface with
+object B exerts the normal force and friction ; is directed away from object B, and is opposing
+the tendency of the relative motion of object B with respect to object A.
+Significance
+The object under consideration in each part of this problem was circled in gray. When you are first learning how to
+draw free-body diagrams, you will find it helpful to circle the object before deciding what forces are acting on that
+particular object. This focuses your attention, preventing you from considering forces that are not acting on the
+body. If the objects were not sliding as described, we would need to know more about the strength of the tension
+force in order to determine the directions of the friction forces.
+EXAMPLE 5.15
+Two Blocks in Contact
+A force is applied to two blocks in contact, as shown. Draw the reaction forces between the two blocks.
+Strategy
+Draw a free-body diagram for each block. Be sure to consider Newton’s third law at the interface where the two
+blocks touch.
+Solution
+Access for free at openstax.org
+
+5.7 • Drawing Free-Body Diagrams 233
+Significance
+is the action force of block 2 on block 1. is the reaction force of block 1 on block 2. We use these free-body
+diagrams in Applications of Newton’s Laws.
+EXAMPLE 5.16
+Block on the Table (Coupled Blocks)
+A block rests on the table, as shown. A light rope is attached to it and runs over a pulley. The other end of the rope is
+attached to a second block. The two blocks are said to be coupled. Block exerts a force due to its weight, which
+causes the system (two blocks and a string) to accelerate.
+Strategy
+We assume that the string has no mass so that we do not have to consider it as a separate object. Draw a free-body
+diagram for each block.
+Solution
+Significance
+Each block accelerates (notice the labels shown for and ); however, assuming the string remains taut, the
+magnitudes of acceleration are equal. Thus, we have . If we were to continue solving the problem, we
+could simply call the acceleration . Also, we use two free-body diagrams because we are usually finding tension T,
+which may require us to use a system of two equations in this type of problem. The tension is the same on both
+.
+
+234 5 • Newton's Laws of Motion
+CHECK YOUR UNDERSTANDING 5.10
+(a) Draw the free-body diagram for the situation shown. (b) Redraw it showing components; use x-axes parallel to
+the two ramps.
+INTERACTIVE
+Engage the simulation below to predict, qualitatively, how an external force will affect the speed and direction of an
+object’s motion. Explain the effects with the help of a free-body diagram. Use free-body diagrams to draw position,
+velocity, acceleration, and force graphs, and vice versa. Explain how the graphs relate to one another. Given a
+scenario or a graph, sketch all four graphs.
+Access multimedia content (https://openstax.org/l/21forcemotion)
+Access for free at openstax.org
+
+5 • Chapter Review 235
+Chapter Review
+Key Terms
+dynamics study of how forces affect the motion of accelerate
+objects and systems newton SI unit of force; 1 N is the force needed to
+external force force acting on an object or system accelerate an object with a mass of 1 kg at a rate of
+that originates outside of the object or system
+force push or pull on an object with a specific Newton’s first law of motion body at rest remains at
+magnitude and direction; can be represented by rest or, if in motion, remains in motion at constant
+vectors or expressed as a multiple of a standard velocity unless acted on by a net external force; also
+force known as the law of inertia
+free fall situation in which the only force acting on an Newton’s second law of motion acceleration of a
+object is gravity system is directly proportional to and in the same
+free-body diagram sketch showing all external forces direction as the net external force acting on the
+acting on an object or system; the system is system and is inversely proportional to its mass
+represented by a single isolated point, and the Newton’s third law of motion whenever one body
+forces are represented by vectors extending exerts a force on a second body, the first body
+outward from that point experiences a force that is equal in magnitude and
+Hooke’s law in a spring, a restoring force proportional opposite in direction to the force that it exerts
+to and in the opposite direction of the imposed normal force force supporting the weight of an
+displacement object, or a load, that is perpendicular to the surface
+inertia ability of an object to resist changes in its of contact between the load and its support; the
+motion surface applies this force to an object to support the
+inertial reference frame reference frame moving at weight of the object
+constant velocity relative to an inertial frame is also tension pulling force that acts along a stretched
+inertial; a reference frame accelerating relative to an flexible connector, such as a rope or cable
+inertial frame is not inertial thrust reaction force that pushes a body forward in
+law of inertia see Newton’s first law of motion response to a backward force
+net external force vector sum of all external forces weight force due to gravity acting on an object of
+acting on an object or system; causes a mass to mass m
+Key Equations
+Net external force
+Newton’s first law
+Newton’s second law, vector form
+Newton’s second law, scalar form
+Newton’s second law, component form
+Newton’s second law, momentum form
+Definition of weight, vector form
+Definition of weight, scalar form
+Newton’s third law
+Normal force on an object resting on a
+horizontal surface, vector form
+Normal force on an object resting on a
+horizontal surface, scalar form
+Normal force on an object resting on an
+inclined plane, scalar form
+
+236 5 • Chapter Review
+Restoring force by a spring displaced by
+x from the relaxed position
+Tension in a cable supporting an object
+of mass m at rest, scalar form
+Summary
+5.1 Forces 5.4 Mass and Weight
+• Dynamics is the study of how forces affect the • Mass is the quantity of matter in a substance.
+motion of objects, whereas kinematics simply • The weight of an object is the net force on a
+describes the way objects move. falling object, or its gravitational force. The object
+• Force is a push or pull that can be defined in experiences acceleration due to gravity.
+terms of various standards, and it is a vector that • Some upward resistance force from the air acts
+has both magnitude and direction. on all falling objects on Earth, so they can never
+• External forces are any outside forces that act on truly be in free fall.
+a body. A free-body diagram is a drawing of all • Careful distinctions must be made between free
+external forces acting on a body. fall and weightlessness using the definition of
+• The SI unit of force is the newton (N). weight as force due to gravity acting on an object
+of a certain mass.
+5.2 Newton's First Law
+5.5 Newton’s Third Law
+• According to Newton’s first law, there must be a
+cause for any change in velocity (a change in • Newton’s third law of motion represents a basic
+either magnitude or direction) to occur. This law symmetry in nature, with an experienced force
+is also known as the law of inertia. equal in magnitude and opposite in direction to
+• Friction is an external force that causes an object an exerted force.
+to slow down. • Two equal and opposite forces do not cancel
+• Inertia is the tendency of an object to remain at because they act on different systems.
+rest or remain in motion. Inertia is related to an • Action-reaction pairs include a swimmer pushing
+object’s mass. off a wall, helicopters creating lift by pushing air
+• If an object’s velocity relative to a given frame is down, and an octopus propelling itself forward by
+constant, then the frame is inertial. This means ejecting water from its body. Rockets, airplanes,
+that for an inertial reference frame, Newton’s first and cars are pushed forward by a thrust reaction
+law is valid. force.
+• Equilibrium is achieved when the forces on a • Choosing a system is an important analytical step
+system are balanced. in understanding the physics of a problem and
+• A net force of zero means that an object is either solving it.
+at rest or moving with constant velocity; that is, it
+5.6 Common Forces
+is not accelerating.
+• When an object rests on a surface, the surface
+5.3 Newton's Second Law
+applies a force to the object that supports the
+• An external force acts on a system from outside weight of the object. This supporting force acts
+the system, as opposed to internal forces, which perpendicular to and away from the surface. It is
+act between components within the system. called a normal force.
+• Newton’s second law of motion says that the net • When an object rests on a nonaccelerating
+external force on an object with a certain mass is horizontal surface, the magnitude of the normal
+directly proportional to and in the same direction force is equal to the weight of the object.
+as the acceleration of the object. • When an object rests on an inclined plane that
+• Newton’s second law can also describe net force makes an angle with the horizontal surface, the
+as the instantaneous rate of change of weight of the object can be resolved into
+momentum. Thus, a net external force causes components that act perpendicular and parallel
+nonzero acceleration. to the surface of the plane.
+• The pulling force that acts along a stretched
+flexible connector, such as a rope or cable, is
+Access for free at openstax.org
+
+5 • Chapter Review 237
+called tension. When a rope supports the weight fictitious forces occur because the observer is in
+of an object at rest, the tension in the rope is an accelerating or noninertial frame of reference.
+equal to the weight of the object. If the object is
+5.7 Drawing Free-Body Diagrams
+accelerating, tension is greater than weight, and
+if it is accelerating opposite to the motion, • To draw a free-body diagram, we draw the object
+tension is less than weight. of interest, draw all forces acting on that object,
+• The force of friction is a force experienced by a and resolve all force vectors into x- and
+moving object (or an object that has a tendency y-components. We must draw a separate free-
+to move) parallel to the interface opposing the body diagram for each object in the problem.
+motion (or its tendency). • A free-body diagram is a useful means of
+• The force developed in a spring obeys Hooke’s describing and analyzing all the forces that act on
+law, according to which its magnitude is a body to determine equilibrium according to
+proportional to the displacement and has a sense Newton’s first law or acceleration according to
+in the opposite direction of the displacement. Newton’s second law.
+• Real forces have a physical origin, whereas
+Conceptual Questions
+5.1 Forces mass? Which is an intrinsic, unchanging property
+of a body?
+1 . What properties do forces have that allow us to
+classify them as vectors? 7 . How much does a 70-kg astronaut weight in
+space, far from any celestial body? What is her
+5.2 Newton's First Law
+mass at this location?
+2 . Taking a frame attached to Earth as inertial,
+8 . Which of the following statements is accurate?
+which of the following objects cannot have
+(a) Mass and weight are the same thing
+inertial frames attached to them, and which are
+expressed in different units.
+inertial reference frames?
+(b) If an object has no weight, it must have no
+(a) A car moving at constant velocity
+mass.
+(b) A car that is accelerating
+(c) If the weight of an object varies, so must the
+(c) An elevator in free fall
+mass.
+(d) A space capsule orbiting Earth
+(d) Mass and inertia are different concepts.
+(e) An elevator descending uniformly
+(e) Weight is always proportional to mass.
+3 . A woman was transporting an open box of
+9 . When you stand on Earth, your feet push against
+cupcakes to a school party. The car in front of
+it with a force equal to your weight. Why doesn’t
+her stopped suddenly; she applied her brakes
+Earth accelerate away from you?
+immediately. She was wearing her seat belt and
+suffered no physical harm (just a great deal of 10 . How would you give the value of in vector
+embarrassment), but the cupcakes flew into the form?
+dashboard and became “smushcakes.” Explain
+5.5 Newton’s Third Law
+what happened.
+11 . Identify the action and reaction forces in the
+5.3 Newton's Second Law
+following situations: (a) Earth attracts the Moon,
+4 . Why can we neglect forces such as those holding (b) a boy kicks a football, (c) a rocket accelerates
+a body together when we apply Newton’s upward, (d) a car accelerates forward, (e) a high
+second law? jumper leaps, and (f) a bullet is shot from a gun.
+5 . A rock is thrown straight up. At the top of the 12 . Suppose that you are holding a cup of coffee in
+trajectory, the velocity is momentarily zero. Does your hand. Identify all forces on the cup and the
+this imply that the force acting on the object is reaction to each force.
+zero? Explain your answer.
+13 . (a) Why does an ordinary rifle recoil (kick
+5.4 Mass and Weight backward) when fired? (b) The barrel of a
+recoilless rifle is open at both ends. Describe
+6 . What is the relationship between weight and
+how Newton’s third law applies when one is

@@ -1,0 +1,102 @@
+# REAL PDF — openstax_vol2.pdf, pages 598-600
+############################################################
+
+588 Chapter 13 | Electromagnetic Induction
+Figure 13.8 (a) A solenoid connected to a source of emf. (b) Opening switch S terminates the current, which in turn induces
+an emf in the solenoid. (c) A potential difference between the ends of the sharply pointed rods is produced by inducing an emf
+in a coil. This potential difference is large enough to produce an arc between the sharp points.
+13.2
+CheckYourUnderstandingFindthedirectionoftheinducedcurrentinthewireloopshownbelowas
+the magnet enters, passes through, and leaves the loop.
+13.3 Check Your UnderstandingVerify the directions of the induced currents inFigure 13.3.
+Example 13.2
+A Circular Coil in a Changing Magnetic Field
+→
+A magnetic field B is directed outward perpendicular to the plane of a circular coil of radius r =0.50m
+(Figure 13.9). The field is cylindrically symmetrical with respect to the center of the coil, and its magnitude
+decaysexponentiallyaccordingto B=(1.5T)e −(5.0s −1 )t , whereBisinteslasandtisinseconds.(a)Calculate
+theemfinducedinthecoilatthetimes t =0, t =5.0×10−2s, and t =1.0s. (b)Determinethecurrent
+1 2 3
+in the coil at these three times if its resistance is 10Ω.
+Figure 13.9 A circular coil in a decreasing magnetic field.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 13 | Electromagnetic Induction 589
+Strategy
+Sincethemagneticfieldisperpendiculartotheplaneofthecoilandconstantovereachspotinthecoil,thedot
+productofthemagneticfield → B andnormaltotheareaunitvector ^ n turnsintoamultiplication.Themagnetic
+field can be pulled out of the integration, leaving the flux as the product of the magnetic field times area. We
+needtotakethetimederivativeoftheexponentialfunctiontocalculatetheemfusingFaraday’slaw.Thenweuse
+Ohm’s law to calculate the current.
+Solution
+→
+a. Since B is perpendicular to the plane of the coil, the magnetic flux is given by
+Φm =Bπr2=(1.5e−5.0t T)π(0.50m)2
+−(5.0s −1 )t
+=1.2e Wb.
+From Faraday’s law, the magnitude of the induced emf is
+ε= | dΦm| = |d (1.2e −(5.0s −1 )t Wb) | =6.0e −(5.0s −1 )t V.
+dt dt
+→
+Since B isdirectedoutofthepageandisdecreasing,theinducedcurrentmustflowcounterclockwise
+when viewed from above so that the magnetic field it produces through the coil also points out of the
+page. For all three times, the sense of ε is counterclockwise; its magnitudes are
+ε(t )=6.0V; ε(t )=4.7V; ε(t )=0.040V.
+1 2 3
+b. From Ohm’s law, the respective currents are
+I(t ) = ε(t 1 ) = 6.0V =0.60A;
+1 R 10Ω
+I(t ) = 4.7V =0.47A;
+2 10Ω
+and
+I(t )= 0.040V =4.0×10 −3 A.
+3 10Ω
+Significance
+Anemfvoltageiscreatedbyachangingmagneticfluxovertime.Ifweknowhowthemagneticfieldvarieswith
+time over a constant area, we can take its time derivative to calculate the induced emf.
+Example 13.3
+Changing Magnetic Field Inside a Solenoid
+The current through the windings of a solenoid with n=2000 turns per meter is changing at a rate
+dI/dt=3.0A/s. (SeeSourcesofMagneticFieldsforadiscussionofsolenoids.)Thesolenoidis50-cmlong
+andhasacross-sectionaldiameterof3.0cm.Asmallcoilconsistingof N =20 closelywoundturnswrappedin
+acircleofdiameter1.0cmisplacedinthemiddleofthesolenoidsuchthattheplaneofthecoilisperpendicular
+tothecentralaxisofthesolenoid.Assumingthattheinfinite-solenoid approximationisvalidatthelocationof
+the small coil, determine the magnitude of the emf induced in the coil.
+Strategy
+Themagneticfieldinthemiddleofthesolenoidisauniformvalueof µ nI. Thisfieldisproducingamaximum
+0
+
+590 Chapter 13 | Electromagnetic Induction
+magnetic flux through the coil as it is directed along the length of the solenoid. Therefore, the magnetic flux
+throughthecoilistheproductofthesolenoid’smagneticfieldtimestheareaofthecoil.Faraday’slawinvolves
+atimederivativeofthemagneticflux.Theonlyquantityvaryingintimeisthecurrent,therestcanbepulledout
+ofthetimederivative.Lastly,weincludethenumberofturnsinthecoiltodeterminetheinducedemfinthecoil.
+Solution
+Since the field of the solenoid is given by B= µ nI, the flux through each turn of the small coil is
+0
+⎛πd2⎞
+Φm= µ
+0
+nI
+⎝ 4 ⎠
+,
+wheredis the diameter of the coil. Now from Faraday’s law, the magnitude of the emf induced in the coil is
+ε = |N dΦm| = |Nµ n πd2 dI|
+dt 0 4 dt
+=20 ⎛ 4π×10 −7 T·m/s ⎞⎛ 2000m-1⎞
+π(0.010m)2
+(3.0A/s)
+⎝ ⎠⎝ ⎠ 4
+−5
+=1.2×10 V.
+Significance
+Whenthecurrentisturnedoninaverticalsolenoid,asshowninFigure13.10,theringhasaninducedemffrom
+thesolenoid’schangingmagneticfluxthatopposesthechange.Theresultisthattheringisfiredverticallyinto
+the air.
+Figure 13.10 The jumping ring. When a current is turned on
+in the vertical solenoid, a current is induced in the metal ring.
+The stray field produced by the solenoid causes the ring to jump
+off the solenoid.
+Visitthiswebsite(https://openstaxcollege.org/l/21flashmagind) forademonstrationofthejumpingring
+from MIT.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

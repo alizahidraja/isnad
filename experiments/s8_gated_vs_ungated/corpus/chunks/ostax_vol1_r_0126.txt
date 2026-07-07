@@ -1,0 +1,234 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 760-766
+############################################################
+
+748 15 • Chapter Review
+marked as , where is the new releases it from rest. The mass oscillates in
+equilibrium position if a 0.25-kg-mass object is SHM. (a) Determine the equations of motion. (b)
+hung from the spring? (c) If the spring has a Find the position, velocity, and acceleration of
+force constant of 10.0 N/m and a 0.25-kg-mass the mass at time
+object is set in motion as described, find the
+61 . Find the ratio of the new/old periods of a
+amplitude of the oscillations. (d) Find the
+pendulum if the pendulum were transported
+maximum velocity.
+from Earth to the Moon, where the acceleration
+57 . A diver on a diving board is undergoing SHM. Her due to gravity is .
+mass is 55.0 kg and the period of her motion is
+62 . At what rate will a pendulum clock run on the
+0.800 s. The next diver's period of simple
+Moon, where the acceleration due to gravity is
+harmonic oscillation is 1.05 s. What is the
+, if it keeps time accurately on Earth?
+second diver's mass if the mass of the board is
+That is, find the time (in hours) it takes the
+negligible?
+clock’s hour hand to make one revolution on the
+58 . Suppose a diving board with no one on it Moon.
+bounces up and down in a SHM with a frequency
+63 . If a pendulum-driven clock gains 5.00 s/day,
+of 4.00 Hz. The board has an effective mass of
+what fractional change in pendulum length must
+10.0 kg. What is the frequency of the SHM of a
+be made for it to keep perfect time?
+75.0-kg diver on the board?
+64 . A 2.00-kg object hangs, at rest, on a 1.00-m-
+59 . The device pictured in the following figure
+long string attached to the ceiling. A 100-g mass
+entertains infants while keeping them from
+is fired with a speed of 20 m/s at the 2.00-kg
+wandering. The child bounces in a harness
+mass, and the 100.00-g mass collides perfectly
+suspended from a door frame by a spring. (a) If
+elastically with the 2.00-kg mass. Write an
+the spring stretches 0.250 m while supporting
+equation for the motion of the hanging mass
+an 8.0-kg child, what is its force constant? (b)
+after the collision. Assume air resistance is
+What is the time for one complete bounce of this
+negligible.
+child? (c) What is the child’s maximum velocity if
+the amplitude of her bounce is 0.200 m? 65 . A 2.00-kg object hangs, at rest, on a 1.00-m-
+long string attached to the ceiling. A 100-g
+object is fired with a speed of 20 m/s at the
+2.00-kg object, and the two objects collide and
+stick together in a totally inelastic collision.
+Write an equation for the motion of the system
+after the collision. Assume air resistance is
+negligible.
+66 . Assume that a pendulum used to drive a
+grandfather clock has a length and
+a mass M at temperature It can
+be modeled as a physical pendulum as a rod
+oscillating around one end. By what percentage
+will the period change if the temperature
+increases by Assume the length of the
+rod changes linearly with temperature, where
+and the rod is made of brass
+FIGURE 15.34 (credit: Lisa Doehnert)
+60 . A mass is placed on a frictionless, horizontal
+67 . A 2.00-kg block lies at rest on a frictionless
+table. A spring , which can be
+table. A spring, with a spring constant of 100
+stretched or compressed, is placed on the table.
+N/m is attached to the wall and to the block. A
+A 5.00-kg mass is attached to one end of the
+second block of 0.50 kg is placed on top of the
+spring, the other end is anchored to the wall.
+first block. The 2.00-kg block is gently pulled to
+The equilibrium position is marked at zero. A
+a position and released from rest. There
+student moves the mass out to and
+Access for free at openstax.org
+
+15 • Chapter Review 749
+is a coefficient of friction of 0.45 between the motion that will allow the blocks to oscillate
+two blocks. (a) What is the period of the without the 0.50-kg block sliding off?
+oscillations? (b) What is the largest amplitude of
+Challenge Problems
+68 . A suspension bridge oscillates with an effective
+that is a solution, where N is
+force constant of . (a) How
+known as the Brunt-Väisälä frequency. Note that
+much energy is needed to make it oscillate with
+in a stable atmosphere, the density decreases
+an amplitude of 0.100 m? (b) If soldiers march
+with height and parcel oscillates up and down.
+across the bridge with a cadence equal to the
+bridge’s natural frequency and impart 71 . Consider the van der Waals potential
+of energy each second, how long
+, used to model
+does it take for the bridge’s oscillations to go
+from 0.100 m to 0.500 m amplitude. the potential energy function of two molecules, where
+the minimum potential is at . Find the force as
+69 . Near the top of the Citigroup Center building in
+a function of r. Consider a small displacement
+New York City, there is an object with mass of
+and use the binomial theorem:
+on springs that have adjustable
+,
+force constants. Its function is to dampen wind-
+to show that the force does approximate a Hooke’s
+driven oscillations of the building by oscillating
+law force.
+at the same frequency as the building is being
+driven—the driving force is transferred to the 72 . Suppose the length of a clock’s pendulum is
+object, which oscillates instead of the entire changed by 1.000%, exactly at noon one day.
+building. (a) What effective force constant What time will the clock read 24.00 hours later,
+should the springs have to make the object assuming it the pendulum has kept perfect time
+oscillate with a period of 2.00 s? (b) What energy before the change? Note that there are two
+is stored in the springs for a 2.00-m answers, and perform the calculation to four-
+displacement from equilibrium? digit precision.
+70 . Parcels of air (small volumes of air) in a stable 73 . (a) The springs of a pickup truck act like a single
+atmosphere (where the temperature increases
+spring with a force constant of .
+with height) can oscillate up and down, due to
+By how much will the truck be depressed by its
+the restoring force provided by the buoyancy of
+maximum load of 1000 kg? (b) If the pickup
+the air parcel. The frequency of the oscillations
+truck has four identical springs, what is the force
+are a measure of the stability of the atmosphere.
+constant of each?
+Assuming that the acceleration of an air parcel
+can be modeled as , prove
+
+750 15 • Chapter Review
+Access for free at openstax.org
+
+CHAPTER 16
+Waves
+FIGURE 16.1 From the world of renewable energy sources comes the electric power-generating buoy. Although there are many versions,
+this one converts the up-and-down motion, as well as side-to-side motion, of the buoy into rotational motion in order to turn an electric
+generator, which stores the energy in batteries.
+CHAPTER OUTLINE
+16.1 Traveling Waves
+16.2 Mathematics of Waves
+16.3 Wave Speed on a Stretched String
+16.4 Energy and Power of a Wave
+16.5 Interference of Waves
+16.6 Standing Waves and Resonance
+INTRODUCTION In this chapter, we study the physics of wave motion. We concentrate on mechanical waves, which
+are disturbances that move through a medium such as air or water. Like simple harmonic motion studied in the
+preceding chapter, the energy transferred through the medium is proportional to the amplitude squared. Surface
+water waves in the ocean are transverse waves in which the energy of the wave travels horizontally while the water
+oscillates up and down due to some restoring force. In the picture above, a buoy is used to convert the awesome
+power of ocean waves into electricity. The up-and-down motion of the buoy generated as the waves pass is
+converted into rotational motion that turns a rotor in an electric generator. The generator charges batteries, which
+are in turn used to provide a consistent energy source for the end user. This model was successfully tested by the US
+Navy in a project to provide power to coastal security networks and was able to provide an average power of 350 W.
+The buoy survived the difficult ocean environment, including operation off the New Jersey coast through Hurricane
+Irene in 2011.
+The concepts presented in this chapter will be the foundation for many interesting topics, from the transmission of
+information to the concepts of quantum mechanics.
+
+752 16 • Waves
+16.1 Traveling Waves
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the basic characteristics of wave motion
+• Define the terms wavelength, amplitude, period, frequency, and wave speed
+• Explain the difference between longitudinal and transverse waves, and give examples of each type
+• List the different types of waves
+We saw in Oscillations that oscillatory motion is an important type of behavior that can be used to model a wide
+range of physical phenomena. Oscillatory motion is also important because oscillations can generate waves, which
+are of fundamental importance in physics. Many of the terms and equations we studied in the chapter on oscillations
+apply equally well to wave motion (Figure 16.2).
+FIGURE 16.2 An ocean wave is probably the first picture that comes to mind when you hear the word “wave.” Although this breaking wave,
+and ocean waves in general, have apparent similarities to the basic wave characteristics we will discuss, the mechanisms driving ocean
+waves are highly complex and beyond the scope of this chapter. It may seem natural, and even advantageous, to apply the concepts in this
+chapter to ocean waves, but ocean waves are nonlinear, and the simple models presented in this chapter do not fully explain them. (credit:
+Steve Jurvetson)
+Types of Waves
+A wave is a disturbance that propagates, or moves from the place it was created. There are three basic types of
+waves: mechanical waves, electromagnetic waves, and matter waves.
+Basic mechanical waves are governed by Newton’s laws and require a medium. A medium is the substance
+mechanical waves propagate through, and the medium produces an elastic restoring force when it is deformed.
+Mechanical waves transfer energy and momentum, without transferring mass. Some examples of mechanical waves
+are water waves, sound waves, and seismic waves. The medium for water waves is water; for sound waves, the
+medium is usually air. (Sound waves can travel in other media as well; we will look at that in more detail in Sound.)
+For surface water waves, the disturbance occurs on the surface of the water, perhaps created by a rock thrown into
+a pond or by a swimmer splashing the surface repeatedly. For sound waves, the disturbance is a change in air
+pressure, perhaps created by the oscillating cone inside a speaker or a vibrating tuning fork. In both cases, the
+disturbance is the oscillation of the molecules of the fluid. In mechanical waves, energy and momentum transfer
+with the motion of the wave, whereas the mass oscillates around an equilibrium point. (We discuss this in Energy
+and Power of a Wave.) Earthquakes generate seismic waves from several types of disturbances, including the
+disturbance of Earth’s surface and pressure disturbances under the surface. Seismic waves travel through the solids
+and liquids that form Earth. In this chapter, we focus on mechanical waves.
+Access for free at openstax.org
+
+16.1 • Traveling Waves 753
+Electromagnetic waves are associated with oscillations in electric and magnetic fields and do not require a medium.
+Examples include gamma rays, X-rays, ultraviolet waves, visible light, infrared waves, microwaves, and radio waves.
+Electromagnetic waves can travel through a vacuum at the speed of light, For
+example, light from distant stars travels through the vacuum of space and reaches Earth. Electromagnetic waves
+have some characteristics that are similar to mechanical waves; they are covered in more detail in Electromagnetic
+Waves (http://openstax.org/books/university-physics-volume-2/pages/16-introduction).
+Matter waves are a central part of the branch of physics known as quantum mechanics. These waves are associated
+with protons, electrons, neutrons, and other fundamental particles found in nature. The theory that all types of
+matter have wave-like properties was first proposed by Louis de Broglie in 1924. Matter waves are discussed in
+Photons and Matter Waves (http://openstax.org/books/university-physics-volume-3/pages/6-introduction).
+Mechanical Waves
+Mechanical waves exhibit characteristics common to all waves, such as amplitude, wavelength, period, frequency,
+and energy. All wave characteristics can be described by a small set of underlying principles.
+The simplest mechanical waves repeat themselves for several cycles and are associated with simple harmonic
+motion. These simple harmonic waves can be modeled using some combination of sine and cosine functions. For
+example, consider the simplified surface water wave that moves across the surface of water as illustrated in Figure
+16.3. Unlike complex ocean waves, in surface water waves, the medium, in this case water, moves vertically,
+oscillating up and down, whereas the disturbance of the wave moves horizontally through the medium. In Figure
+16.3, the waves causes a seagull to move up and down in simple harmonic motion as the wave crests and troughs
+(peaks and valleys) pass under the bird. The crest is the highest point of the wave, and the trough is the lowest part
+of the wave. The time for one complete oscillation of the up-and-down motion is the wave’s period T. The wave’s
+frequency is the number of waves that pass through a point per unit time and is equal to The period can be
+expressed using any convenient unit of time but is usually measured in seconds; frequency is usually measured in
+hertz (Hz), where
+The length of the wave is called the wavelength and is represented by the Greek letter lambda , which is
+measured in any convenient unit of length, such as a centimeter or meter. The wavelength can be measured
+between any two similar points along the medium that have the same height and the same slope. In Figure 16.3, the
+wavelength is shown measured between two crests. As stated above, the period of the wave is equal to the time for
+one oscillation, but it is also equal to the time for one wavelength to pass through a point along the wave’s path.
+The amplitude of the wave (A) is a measure of the maximum displacement of the medium from its equilibrium
+position. In the figure, the equilibrium position is indicated by the dotted line, which is the height of the water if
+there were no waves moving through it. In this case, the wave is symmetrical, the crest of the wave is a distance
+above the equilibrium position, and the trough is a distance below the equilibrium position. The units for the
+amplitude can be centimeters or meters, or any convenient unit of distance.
+FIGURE 16.3 An idealized surface water wave passes under a seagull that bobs up and down in simple harmonic motion. The wave has a

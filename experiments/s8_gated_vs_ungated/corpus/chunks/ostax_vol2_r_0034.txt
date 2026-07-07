@@ -1,0 +1,270 @@
+# REAL PDF — openstax_vol2.pdf, pages 188-195
+############################################################
+
+178 Chapter 4 | The Second Law of Thermodynamics
+efficiency of the Carnot engine. 82. ACarnotcycleworkingbetween 100°C and 30°C
+isusedtodrivearefrigeratorbetween −10°C and 30°C.
+81. A Carnot engine working between two heat baths of How much energy must the Carnot engine produce per
+temperatures 600 K and 273 K completes each cycle in 5 second so that the refrigerator is able to discard 10 J of
+sec. In each cycle, the engine absorbs 10 kJ of heat. Find energy per second?
+the power of the engine.
+CHALLENGE PROBLEMS
+83. (a)Aninfinitesimalamountofheatisaddedreversibly i. Isobaric intake stroke (OA). A mixture of
+toasystem.Bycombiningthefirstandsecondlaws,show gasoline and air is drawn into the combustion
+that dU =TdS−dW.(b)Whenheatisaddedtoanideal chamberatatmosphericpressure p asthepiston
+0
+gas, its temperature and volume change from expands, increasing the volume of the cylinder
+T 1 andV 1 toT 2 andV 2 .Showthattheentropychangeof from zero to V A .
+nmoles of the gas is given by ii. Adiabatic compression stroke (AB). The
+T V temperature of the mixture rises as the piston
+ΔS=nC v ln T 2+nRln V 2. compresses it adiabatically from a volume
+1 1
+V toV .
+A B
+iii. Ignitionatconstantvolume(BC).Themixture
+84. Using the result of the preceding problem, show that
+is ignited by a spark. The combustion happens so
+foranidealgasundergoinganadiabaticprocess, TV γ−1 fastthatthereisessentiallynomotionofthepiston.
+is constant. Duringthisprocess,theaddedheat Q causesthe
+1
+pressuretoincreasefrom p
+B
+top
+C
+attheconstant
+85. With the help of the two preceding problems, show
+volume V (=V ).
+that ΔS betweenstates1and2ofnmolesanidealgasis B C
+given by iv. Adiabaticexpansion(CD).Theheatedmixture
+of gasoline and air expands against the piston,
+T p
+ΔS=nC p ln T 2−nRlnp 2. increasing the volume from V C toV D . This is
+1 1
+calledthepowerstroke,asitisthepartofthecycle
+that delivers most of the power to the crankshaft.
+86. A cylinder contains 500 g of helium at 120 atm and v. Constant-volume exhaust (DA). When the
+20°C. The valve is leaky, and all the gas slowly escapes exhaust valve opens, some of the combustion
+isothermally into the atmosphere. Use the results of the products escape. There is almost no movement of
+preceding problem to determine the resulting change in the piston during this part of the cycle, so the
+entropy of the universe. volume remains constant at V A(=V D). Most of
+theavailableenergyislosthere,asrepresentedby
+87. A diatomic ideal gas is brought from an initial the heat exhaust Q .
+2
+equilibriumstateat p =0.50atm and T =300K toa
+1 1 vi. Isobariccompression(AO).Theexhaustvalve
+finalstagewith p =0.20atm and T =500K. Usethe remains open, and the compression from V to
+2 1 A
+results of the previous problem to determine the entropy zerodrivesouttheremainingcombustionproducts.
+change per mole of the gas.
+(a) Using (i) e=W/Q ; (ii) W =Q −Q ; and (iii)
+1 1 2
+88. The gasoline internal combustion engine operates in
+Q
+1
+=nC v(T C−T B), Q
+2
+=nC v(T D−T A), show that
+acycleconsistingofsixparts.Fourofthesepartsinvolve,
+among other things, friction, heat exchange through finite e=1−
+T D−T
+A.
+temperature differences, and accelerations of the piston; it
+T C−T
+B
+is irreversible. Nevertheless, it is represented by the ideal
+(b)Usethefactthatsteps(ii)and(iv)areadiabatictoshow
+reversible Otto cycle, which is illustrated below. The
+that
+workingsubstanceofthecycleisassumedtobeair.Thesix
+steps of theOtto cycleare as follows: e=1− 1 ,
+γ−1
+r
+where r =V A/V
+B
+. The quantity r is called the
+compression ratioof the engine.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 179
+(c) In practice, r is kept less than around 7. For larger of about 30%to35% compared with 25%to30% for
+values, the gasoline-air mixture is compressed to gasoline engines.
+temperatures so high that it explodes before the finely
+timed spark is delivered. This preignition causes engine
+knockandlossofpower.Showthatfor r =6 and γ =1.4
+(the value for air), e=0.51, or an efficiency of 51%.
+Because of the many irreversible processes, an actual
+internal combustion engine has an efficiency much less
+thanthisidealvalue.Atypicalefficiencyforatunedengine
+is about 25%to30%.
+90. Consider an ideal gas Joule cycle, also called the
+Brayton cycle, shown below. Find the formula for
+efficiency of the engine using this cycle in terms of P ,
+1
+P , and γ.
+2
+89. An ideal diesel cycle is shown below. This cycle
+consistsoffivestrokes.Inthiscase,onlyairisdrawninto
+the chamber during the intake stroke OA. The air is then
+compressedadiabaticallyfromstateAtostateB,raisingits
+temperaturehighenoughsothatwhenfuelisaddedduring
+the power stroke BC, it ignites. After ignition ends at C,
+thereisafurtheradiabaticpowerstrokeCD.Finally,there
+isanexhaustatconstantvolumeasthepressuredropsfrom
+p to p ,followedbyafurtherexhaustwhenthepiston 91. Derive a formula for the coefficient of performance
+D A
+ofarefrigeratorusinganidealgasasaworkingsubstance
+compresses the chamber volume to zero.
+operating in the cycle shown below in terms of the
+(a) Use W =Q
+1
+−Q
+2
+, Q
+1
+=nC p(T C−T B), and properties of the three states labeled 1, 2, and 3.
+Q
+2
+=nC v(T D−T A) to show that
+e= W =1− T D−T A .
+Q
+1
+γ(T C−T B)
+(b)Usethefactthat A→B and C→D areadiabaticto
+show that
+γ γ
+⎛VC⎞ ⎛VB⎞
+−
+e=1− 1
+γ
+⎝
+⎛
+V
+V
+D
+C
+⎠
+⎞
+⎝
+⎛
+V
+VB
+A ⎠
+⎞
+.
+−
+⎝VD ⎠ ⎝VA ⎠
+(c) Since there is no preignition (remember, the chamber
+does not contain any fuel during the compression), the
+92. Two moles of nitrogen gas, with γ =7/5 for ideal
+compression ratio can be larger than that for a gasoline
+engine.Typically, V A/V B=15andV D/V C=5.Forthese diatomic gases, occupies a volume of 10−2m 3 in an
+insulated cylinder at temperature 300 K. The gas is
+valuesand γ =1.4, showthat ε=0.56,oranefficiency
+adiabatically and reversibly compressed to a volume of 5
+of 56%. Diesel engines actually operate at an efficiency
+L. The piston of the cylinder is locked in its place, and
+
+180 Chapter 4 | The Second Law of Thermodynamics
+the insulation around the cylinder is removed. The heat- gas,(c)thechangeintheinternalenergyofthegas,and(d)
+conducting cylinder is then placed in a 300-K bath. Heat the change in entropy of the gas.
+from the compressed gas leaves the gas, and the
+temperature of the gas becomes 300 K again. The gas is 93. A Carnot refrigerator, working between 0°C and
+thenslowlyexpandedatthefixedtemperature300Kuntil
+30°C is used to cool a bucket of water containing
+the volume of the gas becomes 10−2m 3, thus making a
+10−2 m 3 ofwaterat 30°C to 5°C in2hours.Findthe
+complete cycle for the gas. For the entire cycle, calculate
+total amount of work needed.
+(a)theworkdonebythegas,(b)theheatintooroutofthe
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 181
+5 | ELECTRIC CHARGES
+AND FIELDS
+Figure 5.1 Electric charges exist all around us. They can cause objects to be repelled from each other or to be attracted to each
+other. (credit: modification of work by Sean McGrath)
+Chapter Outline
+5.1Electric Charge
+5.2Conductors, Insulators, and Charging by Induction
+5.3Coulomb's Law
+5.4Electric Field
+5.5Calculating Electric Fields of Charge Distributions
+5.6Electric Field Lines
+5.7Electric Dipoles
+Introduction
+BackwhenwewerestudyingNewton’slaws,weidentifiedseveralphysicalphenomenaasforces.Wedidsobasedonthe
+effecttheyhadonaphysicalobject:Specifically,theycausedtheobjecttoaccelerate.Later,whenwestudiedimpulseand
+momentum,weexpandedthisideatoidentifyaforceasanyphysicalphenomenonthatchangedthemomentumofanobject.
+In either case, the result is the same: We recognize a force by the effect that it has on an object.
+InGravitation(http://cnx.org/content/m58344/latest/),weexaminedtheforceofgravity,whichactsonallobjects
+withmass.Inthischapter,webeginthestudyoftheelectricforce,whichactsonallobjectswithapropertycalledcharge.
+Theelectricforceismuchstrongerthangravity(inmostsystemswherebothappear),butitcanbeaforceofattractionora
+forceofrepulsion,whichleadstoverydifferenteffectsonobjects.Theelectricforcehelpskeepatomstogether,soitisof
+
+182 Chapter 5 | Electric Charges and Fields
+fundamentalimportanceinmatter.Butitalsogovernsmosteverydayinteractionswedealwith,fromchemicalinteractions
+to biological processes.
+5.1 | Electric Charge
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the concept of electric charge
+• Explain qualitatively the force electric charge creates
+Youarecertainlyfamiliarwithelectronicdevicesthatyouactivatewiththeclickofaswitch,fromcomputerstocellphones
+totelevision.Andyouhavecertainlyseenelectricityinaflashoflightningduringaheavythunderstorm.Butyouhavealso
+mostlikelyexperiencedelectricaleffectsinotherways,maybewithoutrealizingthatanelectricforcewasinvolved.Let’s
+take a look at some of these activities and see what we can learn from them about electric charges and forces.
+Discoveries
+Youhaveprobablyexperiencedthephenomenonofstaticelectricity:Whenyoufirsttakeclothesoutofadryer,many(not
+all)ofthemtendtosticktogether;forsomefabrics,theycanbeverydifficulttoseparate.Anotherexampleoccursifyou
+takeawoolensweateroffquickly—youcanfeel(andhear)thestaticelectricitypullingonyourclothes,andperhapseven
+yourhair.Ifyoucombyourhaironadrydayandthenputthecombclosetoathinstreamofwatercomingoutofafaucet,
+you will find that the water stream bends toward (is attracted to) the comb (Figure 5.2).
+Figure 5.2 An electrically charged comb attracts a stream of
+water from a distance. Note that the water is not touching the
+comb. (credit: Jane Whitney)
+Supposeyoubringthecombclosetosomesmallstripsofpaper;thestripsofpaperareattractedtothecombandevencling
+toit(Figure 5.3).Inthekitchen,quicklypullalengthofplasticclingwrapofftheroll;itwilltendtoclingtomostany
+nonmetallicmaterial(suchasplastic,glass,orfood).Ifyourubaballoononawallforafewseconds,itwillsticktothe
+wall.Probablythemostannoyingeffectofstaticelectricityisgettingshockedbyadoorknob(orafriend)aftershuffling
+your feet on some types of carpeting.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 5 | Electric Charges and Fields 183
+Figure 5.3 After being used to comb hair, this comb attracts
+small strips of paper from a distance, without physical contact.
+Investigation of this behavior helped lead to the concept of the
+electric force. (credit: Jane Whitney)
+Manyofthesephenomenahavebeenknownforcenturies.TheancientGreekphilosopherThalesofMiletus(624–546BCE)
+recordedthatwhenamber(ahard,translucent,fossilizedresinfromextincttrees)wasvigorouslyrubbedwithapieceoffur,
+aforcewascreatedthatcausedthefurandtheambertobeattractedtoeachother(Figure5.4).Additionally,hefoundthat
+therubbedamberwouldnotonlyattractthefur,andthefurattracttheamber,buttheybothcouldaffectother(nonmetallic)
+objects, even if not in contact with those objects (Figure 5.5).
+Figure 5.4 Borneo amber is mined in Sabah, Malaysia, from shale-sandstone-mudstone veins.
+When a piece of amber is rubbed with a piece of fur, the amber gains more electrons, giving it a
+net negative charge. At the same time, the fur, having lost electrons, becomes positively charged.
+(credit: “Sebakoamber”/Wikimedia Commons)
+
+184 Chapter 5 | Electric Charges and Fields
+Figure 5.5 When materials are rubbed together, charges can be separated, particularly if one material has a greater affinity for
+electrons than another. (a) Both the amber and cloth are originally neutral, with equal positive and negative charges. Only a tiny
+fraction of the charges are involved, and only a few of them are shown here. (b) When rubbed together, some negative charge is
+transferred to the amber, leaving the cloth with a net positive charge. (c) When separated, the amber and cloth now have net
+charges, but the absolute value of the net positive and negative charges will be equal.
+TheEnglishphysicistWilliamGilbert(1544–1603)alsostudiedthisattractiveforce,usingvarioussubstances.Heworked
+withamber,and,inaddition,heexperimentedwithrockcrystalandvariouspreciousandsemi-preciousgemstones.Healso
+experimentedwithseveralmetals.Hefoundthatthemetalsneverexhibitedthisforce,whereasthemineralsdid.Moreover,
+althoughanelectrifiedamberrodwouldattractapieceoffur,itwouldrepelanotherelectrifiedamberrod;similarly,two
+electrified pieces of fur would repel each other.
+Thissuggestedthereweretwotypesofanelectricproperty;thispropertyeventuallycametobecalledelectriccharge.The
+differencebetweenthetwotypesofelectricchargeisinthedirectionsoftheelectricforcesthateachtypeofchargecauses:
+Theseforcesarerepulsivewhenthesametypeofchargeexistsontwointeractingobjectsandattractivewhenthecharges
+are of opposite types. The SI unit of electric charge is the coulomb (C), after the French physicist Charles-Augustin de
+Coulomb(1736–1806).
+Themostpeculiaraspectofthisnewforceisthatitdoesnotrequirephysicalcontactbetweenthetwoobjectsinorderto
+causeanacceleration.Thisisanexampleofaso-called“long-range”force.(Or,asAlbertEinsteinlaterphrasedit,“action
+atadistance.”)Withtheexceptionofgravity,allotherforceswehavediscussedsofaractonlywhenthetwointeracting
+objects actually touch.
+TheAmericanphysicistandstatesmanBenjaminFranklinfoundthathecouldconcentratechargeina“Leydenjar,”which
+wasessentiallyaglassjarwithtwosheetsofmetalfoil,oneinsideandoneoutside,withtheglassbetweenthem(Figure
+5.6). This created a large electric force between the two foil sheets.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

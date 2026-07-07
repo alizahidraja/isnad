@@ -1,0 +1,171 @@
+# REAL PDF — openstax_vol1.pdf, pages 568-574
+############################################################
+
+556 12 • Static Equilibrium and Elasticity
+simplified the notation by dropping the subscript z, but we understand here that the summation is over all
+contributions along the z-axis, which is the axis of rotation. In Equation 12.9, the z-component of torque from the
+force is
+12.10
+where is the length of the lever arm of the force and is the magnitude of the force (as you saw in Fixed-Axis
+Rotation). The angle is the angle between vectors and measuring from vector to vector in the
+counterclockwise direction (Figure 12.2). When using Equation 12.10, we often compute the magnitude of torque
+and assign its sense as either positive or negative depending on the direction of rotation caused by this
+torque alone. In Equation 12.9, net torque is the sum of terms, with each term computed from Equation 12.10, and
+each term must have the correct sense. Similarly, in Equation 12.7, we assign the sign to force components in the
+x-direction and the sign to components in the x-direction. The same rule must be consistently followed in
+Equation 12.8, when computing force components along the y-axis.
+FIGURE 12.2 Torque of a force: (a) When the torque of a force causes counterclockwise rotation about the axis of rotation, we say that its
+sense is positive, which means the torque vector is parallel to the axis of rotation. (b) When torque of a force causes clockwise rotation
+about the axis, we say that its sense is negative, which means the torque vector is antiparallel to the axis of rotation.
+INTERACTIVE
+View this demonstration (https://openstax.org/l/21rigsquare) to see two forces act on a rigid square in two
+dimensions. At all times, the static equilibrium conditions given by Equation 12.7 through Equation 12.9 are
+satisfied. You can vary magnitudes of the forces and their lever arms and observe the effect these changes have on
+the square.
+In many equilibrium situations, one of the forces acting on the body is its weight. In free-body diagrams, the weight
+vector is attached to the center of gravity of the body. For all practical purposes, the center of gravity is identical to
+the center of mass, as you learned in Linear Momentum and Collisions on linear momentum and collisions. Only in
+situations where a body has a large spatial extension so that the gravitational field is nonuniform throughout its
+volume, are the center of gravity and the center of mass located at different points. In practical situations, however,
+even objects as large as buildings or cruise ships are located in a uniform gravitational field on Earth’s surface,
+where the acceleration due to gravity has a constant magnitude of In these situations, the center of
+gravity is identical to the center of mass. Therefore, throughout this chapter, we use the center of mass (CM) as the
+point where the weight vector is attached. Recall that the CM has a special physical meaning: When an external
+force is applied to a body at exactly its CM, the body as a whole undergoes translational motion and such a force
+does not cause rotation.
+When the CM is located off the axis of rotation, a net gravitational torque occurs on an object. Gravitational torque
+is the torque caused by weight. This gravitational torque may rotate the object if there is no support present to
+Access for free at openstax.org
+
+12.1 • Conditions for Static Equilibrium 557
+balance it. The magnitude of the gravitational torque depends on how far away from the pivot the CM is located. For
+example, in the case of a tipping truck (Figure 12.3), the pivot is located on the line where the tires make contact
+with the road’s surface. If the CM is located high above the road’s surface, the gravitational torque may be large
+enough to turn the truck over. Passenger cars with a low-lying CM, close to the pavement, are more resistant to
+tipping over than are trucks.
+FIGURE 12.3 The distribution of mass affects the position of the center of mass (CM), where the weight vector is attached. If the center
+of gravity is within the area of support, the truck returns to its initial position after tipping [see the left panel in (b)]. But if the center of
+gravity lies outside the area of support, the truck turns over [see the right panel in (b)]. Both vehicles in (b) are out of equilibrium. Notice
+that the car in (a) is in equilibrium: The low location of its center of gravity makes it hard to tip over.
+INTERACTIVE
+If you tilt a box so that one edge remains in contact with the table beneath it, then one edge of the base of support
+becomes a pivot. As long as the center of gravity of the box remains over the base of support, gravitational torque
+rotates the box back toward its original position of stable equilibrium. When the center of gravity moves outside of
+the base of support, gravitational torque rotates the box in the opposite direction, and the box rolls over. View this
+demonstration (https://openstax.org/l/21unstable) to experiment with stable and unstable positions of a box.
+EXAMPLE 12.1
+Center of Gravity of a Car
+A passenger car with a 2.5-m wheelbase has 52% of its weight on the front wheels on level ground, as illustrated in
+Figure 12.4. Where is the CM of this car located with respect to the rear axle?
+
+558 12 • Static Equilibrium and Elasticity
+FIGURE 12.4 The weight distribution between the axles of a car. Where is the center of gravity located? (credit "car": modification of work
+by Jane Whitney)
+Strategy
+We do not know the weight w of the car. All we know is that when the car rests on a level surface, 0.52w pushes
+down on the surface at contact points of the front wheels and 0.48w pushes down on the surface at contact points
+of the rear wheels. Also, the contact points are separated from each other by the distance At these
+contact points, the car experiences normal reaction forces with magnitudes and on the
+front and rear axles, respectively. We also know that the car is an example of a rigid body in equilibrium whose
+entire weight w acts at its CM. The CM is located somewhere between the points where the normal reaction forces
+act, somewhere at a distance x from the point where acts. Our task is to find x. Thus, we identify three forces
+acting on the body (the car), and we can draw a free-body diagram for the extended rigid body, as shown in Figure
+12.5.
+FIGURE 12.5 The free-body diagram for the car clearly indicates force vectors acting on the car and distances to the center of mass (CM).
+When CM is selected as the pivot point, these distances are lever arms of normal reaction forces. Notice that vector magnitudes and lever
+arms do not need to be drawn to scale, but all quantities of relevance must be clearly labeled.
+We are almost ready to write down equilibrium conditions Equation 12.7 through Equation 12.9 for the car, but first
+we must decide on the reference frame. Suppose we choose the x-axis along the length of the car, the y-axis
+vertical, and the z-axis perpendicular to this xy-plane. With this choice we only need to write Equation 12.7 and
+Equation 12.9 because all the y-components are identically zero. Now we need to decide on the location of the pivot
+point. We can choose any point as the location of the axis of rotation (z-axis). Suppose we place the axis of rotation
+at CM, as indicated in the free-body diagram for the car. At this point, we are ready to write the equilibrium
+conditions for the car.
+Solution
+Each equilibrium condition contains only three terms because there are forces acting on the car. The first
+equilibrium condition, Equation 12.7, reads
+12.11
+This condition is trivially satisfied because when we substitute the data, Equation 12.11 becomes
+The second equilibrium condition, Equation 12.9, reads
+12.12
+Access for free at openstax.org
+
+12.1 • Conditions for Static Equilibrium 559
+where is the torque of force is the gravitational torque of force w, and is the torque of force When
+the pivot is located at CM, the gravitational torque is identically zero because the lever arm of the weight with
+respect to an axis that passes through CM is zero. The lines of action of both normal reaction forces are
+perpendicular to their lever arms, so in Equation 12.10, we have for both forces. From the free-body
+diagram, we read that torque causes clockwise rotation about the pivot at CM, so its sense is negative; and
+torque causes counterclockwise rotation about the pivot at CM, so its sense is positive. With this information, we
+write the second equilibrium condition as
+12.13
+With the help of the free-body diagram, we identify the force magnitudes and and their
+corresponding lever arms and We can now write the second equilibrium condition, Equation
+12.13, explicitly in terms of the unknown distance x:
+12.14
+Here the weight w cancels and we can solve the equation for the unknown position x of the CM. The answer is
+Solution
+Choosing the pivot at the position of the front axle does not change the result. The free-body diagram for this pivot
+location is presented in Figure 12.6. For this choice of pivot point, the second equilibrium condition is
+12.15
+When we substitute the quantities indicated in the diagram, we obtain
+12.16
+The answer obtained by solving Equation 12.13 is, again,
+FIGURE 12.6 The equivalent free-body diagram for the car; the pivot is clearly indicated.
+Significance
+This example shows that when solving static equilibrium problems, we are free to choose the pivot location. For
+different choices of the pivot point we have different sets of equilibrium conditions to solve. However, all choices
+lead to the same solution to the problem.
+CHECK YOUR UNDERSTANDING 12.1
+Solve Example 12.1 by choosing the pivot at the location of the rear axle.
+CHECK YOUR UNDERSTANDING 12.2
+Explain which one of the following situations satisfies both equilibrium conditions: (a) a tennis ball that does not
+spin as it travels in the air; (b) a pelican that is gliding in the air at a constant velocity at one altitude; or (c) a
+crankshaft in the engine of a parked car.
+
+560 12 • Static Equilibrium and Elasticity
+A special case of static equilibrium occurs when all external forces on an object act at or along the axis of rotation or
+when the spatial extension of the object can be disregarded. In such a case, the object can be effectively treated like
+a point mass. In this special case, we need not worry about the second equilibrium condition, Equation 12.9,
+because all torques are identically zero and the first equilibrium condition (for forces) is the only condition to be
+satisfied. The free-body diagram and problem-solving strategy for this special case were outlined in Newton’s Laws
+of Motion and Applications of Newton’s Laws. You will see a typical equilibrium situation involving only the first
+equilibrium condition in the next example.
+INTERACTIVE
+View this demonstration (https://openstax.org/l/21pulleyknot) to see three weights that are connected by strings
+over pulleys and tied together in a knot. You can experiment with the weights to see how they affect the equilibrium
+position of the knot and, at the same time, see the vector-diagram representation of the first equilibrium condition
+at work.
+EXAMPLE 12.2
+A Breaking Tension
+A small pan of mass 42.0 g is supported by two strings, as shown in Figure 12.7. The maximum tension that the
+string can support is 2.80 N. Mass is added gradually to the pan until one of the strings snaps. Which string is it?
+How much mass must be added for this to occur?
+FIGURE 12.7 Mass is added gradually to the pan until one of the strings snaps.
+Strategy
+This mechanical system consisting of strings, masses, and the pan is in static equilibrium. Specifically, the knot that
+ties the strings to the pan is in static equilibrium. The knot can be treated as a point; therefore, we need only the first
+equilibrium condition. The three forces pulling at the knot are the tension in the 5.0-cm string, the tension in
+the 10.0-cm string, and the weight of the pan holding the masses. We adopt a rectangular coordinate system with
+the y-axis pointing opposite to the direction of gravity and draw the free-body diagram for the knot (see Figure
+12.8). To find the tension components, we must identify the direction angles and that the strings make with
+the horizontal direction that is the x-axis. As you can see in Figure 12.7, the strings make two sides of a right
+triangle. We can use the Pythagorean theorem to solve this triangle, shown in Figure 12.8, and find the sine and
+cosine of the angles and Then we can resolve the tensions into their rectangular components, substitute in
+the first condition for equilibrium (Equation 12.7 and Equation 12.8), and solve for the tensions in the strings. The
+string with a greater tension will break first.
+Access for free at openstax.org
+
+12.1 • Conditions for Static Equilibrium 561
+FIGURE 12.8 Free-body diagram for the knot in Example 12.2.
+Solution
+The weight w pulling on the knot is due to the mass M of the pan and mass m added to the pan, or
+With the help of the free-body diagram in Figure 12.8, we can set up the equilibrium conditions for the knot:
+From the free-body diagram, the magnitudes of components in these equations are
+We substitute these components into the equilibrium conditions and simplify. We then obtain two equilibrium
+equations for the tensions:
+The equilibrium equation for the x-direction tells us that the tension in the 5.0-cm string is twice the tension
+in the 10.0-cm string. Therefore, the shorter string will snap. When we use the first equation to eliminate from
+the second equation, we obtain the relation between the mass on the pan and the tension in the shorter string:
+The string breaks when the tension reaches the critical value of The preceding equation can be solved
+for the critical mass m that breaks the string:

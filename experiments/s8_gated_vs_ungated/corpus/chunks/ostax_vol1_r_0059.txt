@@ -1,0 +1,238 @@
+# REAL PDF — openstax_vol1.pdf, pages 350-355
+############################################################
+
+338 7 • Chapter Review
+How much instantaneous power does she exert 83 . When jogging at 13 km/h on a level surface, a
+at ? 70-kg man uses energy at a rate of
+approximately 850 W. Using the facts that the
+82 . A typical automobile engine has an efficiency of
+“human engine” is approximately 25% efficient,
+25%. Suppose that the engine of a 1000-kg
+determine the rate at which this man uses
+automobile has a maximum power output of 140
+energy when jogging up a slope at this
+hp. What is the maximum grade that the
+same speed. Assume that the frictional retarding
+automobile can climb at 50 km/h if the frictional
+force is the same in both cases.
+retarding force on it is 300 N?
+Additional Problems
+84 . A cart is pulled a distance D on a flat, horizontal from the origin to a point 5 meters to the right on
+surface by a constant force F that acts at an angle the x-axis.
+with the horizontal direction. The other forces on the
+89 . A boy pulls a 5-kg cart with a 20-N force at an
+object during this time are gravity ( ), normal
+angle of above the horizontal for a length of
+forces ( ) and ( ), and rolling frictions
+time. Over this time frame, the cart moves a
+and , as shown below. What is the work done by
+distance of 12 m on the horizontal floor. (a) Find
+each force?
+the work done on the cart by the boy. (b) What
+will be the work done by the boy if he pulled with
+the same force horizontally instead of at an
+angle of above the horizontal over the same
+distance?
+90 . A crate of mass 200 kg is to be brought from a
+site on the ground floor to a third floor
+apartment. The workers know that they can
+either use the elevator first, then slide it along
+the third floor to the apartment, or first slide the
+crate to another location marked C below, and
+85 . Consider a particle on which several forces act, then take the elevator to the third floor and slide
+one of which is known to be constant in time: it on the third floor a shorter distance. The
+As a result, the particle trouble is that the third floor is very rough
+moves along the x-axis from to in compared to the ground floor. Given that the
+coefficient of kinetic friction between the crate
+some time interval. What is the work done by
+and the ground floor is 0.100 and between the
+?
+crate and the third floor surface is 0.300, find
+86 . Consider a particle on which several forces act, the work needed by the workers for each path
+one of which is known to be constant in time: shown from A to E. Assume that the force the
+As a result, the particle workers need to do is just enough to slide the
+moves first along the x-axis from to crate at constant velocity (zero acceleration).
+and then parallel to the y-axis from Note: The work by the elevator against the force
+to What is the work done by ? of gravity is not done by the workers.
+87 . Consider a particle on which several forces act,
+one of which is known to be constant in time:
+As a result, the particle
+moves along a straight path from a Cartesian
+coordinate of (0 m, 0 m) to (5 m, 6 m). What is
+the work done by ?
+88 . Consider a particle on which a force acts that
+depends on the position of the particle. This
+force is given by Find the
+work done by this force when the particle moves
+Access for free at openstax.org
+
+7 • Chapter Review 339
+constant of the spring.
+94 . You are driving your car on a straight road with a
+coefficient of friction between the tires and the
+road of 0.55. A large piece of debris falls in front
+of your view and you immediate slam on the
+brakes, leaving a skid mark of 30.5 m (100-feet)
+long before coming to a stop. A policeman sees
+your car stopped on the road, looks at the skid
+mark, and gives you a ticket for traveling over
+the 13.4 m/s (30 mph) speed limit. Should you
+fight the speeding ticket in court?
+95 . A crate is being pushed across a rough floor
+91 . A hockey puck of mass 0.17 kg is shot across a surface. If no force is applied on the crate, the
+rough floor with the roughness different at crate will slow down and come to a stop. If the
+different places, which can be described by a crate of mass 50 kg moving at speed 8 m/s
+position-dependent coefficient of kinetic comes to rest in 10 seconds, what is the rate at
+friction. For a puck moving along the x-axis, the which the frictional force on the crate takes
+coefficient of kinetic friction is the following energy away from the crate?
+function of x, where x is in m:
+96 . Suppose a horizontal force of 20 N is required to
+Find the work done by the
+maintain a speed of 8 m/s of a 50 kg crate. (a)
+kinetic frictional force on the hockey puck when
+What is the power of this force? (b) Note that the
+it has moved (a) from to , and (b)
+acceleration of the crate is zero despite the fact
+from to .
+that 20 N force acts on the crate horizontally.
+92 . A horizontal force of 20 N is required to keep a What happens to the energy given to the crate as
+5.0 kg box traveling at a constant speed up a a result of the work done by this 20 N force?
+frictionless incline for a vertical height change of
+97 . Grains from a hopper falls at a rate of 10 kg/s
+3.0 m. (a) What is the work done by gravity
+vertically onto a conveyor belt that is moving
+during this change in height? (b) What is the
+horizontally at a constant speed of 2 m/s. (a)
+work done by the normal force? (c) What is the
+What force is needed to keep the conveyor belt
+work done by the horizontal force?
+moving at the constant velocity? (b) What is the
+93 . A 7.0-kg box slides along a horizontal minimum power of the motor driving the
+frictionless floor at 1.7 m/s and collides with a conveyor belt?
+relatively massless spring that compresses 23
+98 . A cyclist in a race must climb a hill at a speed
+cm before the box comes to a stop. (a) How
+of 8 m/s. If the mass of the bike and the biker
+much kinetic energy does the box have before it
+together is 80 kg, what must be the power
+collides with the spring? (b) Calculate the work
+output of the biker to achieve the goal?
+done by the spring. (c) Determine the spring
+Challenge Problems
+99 . Shown below is a 40-kg crate that is pushed at
+constant velocity a distance 8.0 m along a
+incline by the horizontal force The coefficient
+of kinetic friction between the crate and the
+incline is Calculate the work done by
+(a) the applied force, (b) the frictional force, (c)
+the gravitational force, and (d) the net force.
+100 . The surface of the preceding problem is
+modified so that the coefficient of kinetic friction
+
+340 7 • Chapter Review
+is decreased. The same horizontal force is (Hint: You will probably need to consult a table
+applied to the crate, and after being pushed 8.0 of integrals.)
+m, its speed is 5.0 m/s. How much work is now
+105 . Answer the preceding problem using polar
+done by the force of friction? Assume that the
+coordinates.
+crate starts at rest.
+106 . Constant power P is delivered to a car of mass m
+101 . The force F(x) varies with position, as shown
+by its engine. Show that if air resistance can be
+below. Find the work done by this force on a
+ignored, the distance covered in a time t by the
+particle as it moves from to
+car, starting from rest, is given by
+107 . Suppose that the air resistance a car encounters
+is independent of its speed. When the car travels
+at 15 m/s, its engine delivers 20 hp to its
+wheels. (a) What is the power delivered to the
+wheels when the car travels at 30 m/s? (b) How
+much energy does the car use in covering 10 km
+at 15 m/s? At 30 m/s? Assume that the engine is
+25% efficient. (c) Answer the same questions if
+the force of air resistance is proportional to the
+102 . Find the work done by the same force in
+speed of the automobile. (d) What do these
+Example 7.4, between the same points,
+results, plus your experience with gasoline
+, over a circular
+consumption, tell you about air resistance?
+arc of radius 2 m, centered at (0, 2 m). Evaluate
+the path integral using Cartesian coordinates. 108 . Consider a linear spring, as in Figure 7.7(a), with
+(Hint: You will probably need to consult a table mass M uniformly distributed along its length.
+of integrals.) The left end of the spring is fixed, but the right
+end, at the equilibrium position is moving
+103 . Answer the preceding problem using polar
+with speed v in the x-direction. What is the total
+coordinates.
+kinetic energy of the spring? (Hint: First express
+104 . Find the work done by the same force in the kinetic energy of an infinitesimal element of
+Example 7.4, between the same points, the spring dm in terms of the total mass,
+, over a circular equilibrium length, speed of the right-hand end,
+arc of radius 2 m, centered at (2 m, 0). Evaluate and position along the spring; then integrate.)
+the path integral using Cartesian coordinates.
+Access for free at openstax.org
+
+CHAPTER 8
+Potential Energy and Conservation of Energy
+FIGURE 8.1 Shown here is part of a Ball Machine sculpture by George Rhoads. A ball in this contraption is lifted, rolls, falls, bounces, and
+collides with various objects, but throughout its travels, its kinetic energy changes in definite, predictable amounts, which depend on its
+position and the objects with which it interacts. (credit: modification of work by Roland Tanglao)
+CHAPTER OUTLINE
+8.1 Potential Energy of a System
+8.2 Conservative and Non-Conservative Forces
+8.3 Conservation of Energy
+8.4 Potential Energy Diagrams and Stability
+8.5 Sources of Energy
+INTRODUCTION In George Rhoads’ rolling ball sculpture, the principle of conservation of energy governs the
+changes in the ball’s kinetic energy and relates them to changes and transfers for other types of energy associated
+with the ball’s interactions. In this chapter, we introduce the important concept of potential energy. This will enable
+us to formulate the law of conservation of mechanical energy and to apply it to simple systems, making solving
+problems easier. In the final section on sources of energy, we will consider energy transfers and the general law of
+conservation of energy. Throughout this book, the law of conservation of energy will be applied in increasingly more
+detail, as you encounter more complex and varied systems, and other forms of energy.
+8.1 Potential Energy of a System
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Relate the difference of potential energy to work done on a particle for a system without friction or air
+drag
+• Explain the meaning of the zero of the potential energy function for a system
+• Calculate and apply the gravitational potential energy for an object near Earth’s surface and the elastic
+potential energy of a mass-spring system
+In Work, we saw that the work done on an object by the constant gravitational force, near the surface of Earth, over
+
+342 8 • Potential Energy and Conservation of Energy
+any displacement is a function only of the difference in the positions of the end-points of the displacement. This
+property allows us to define a different kind of energy for the system than its kinetic energy, which is called
+potential energy. We consider various properties and types of potential energy in the following subsections.
+Potential Energy Basics
+In Motion in Two and Three Dimensions, we analyzed the motion of a projectile, like kicking a football in Figure 8.2.
+For this example, let’s ignore friction and air resistance and begin the analysis immediately after the kick, at the start
+of the projectile motion of the ball. As the football rises, the work done by the gravitational force on the football is
+negative, because the ball’s displacement is positive vertically and the force due to gravity is negative vertically. We
+also noted that the ball slowed down until it reached its highest point in the motion, thereby decreasing the ball’s
+kinetic energy. This loss in kinetic energy translates to a gain in gravitational potential energy of the football-Earth
+system.
+As the football falls toward Earth, the work done on the football is now positive, because the displacement and the
+gravitational force both point vertically downward. The ball also speeds up, which indicates an increase in kinetic
+energy. Therefore, energy is converted from gravitational potential energy back into kinetic energy.
+FIGURE 8.2 As a football starts its descent toward the wide receiver, gravitational potential energy is converted back into kinetic energy.
+Based on this scenario, we can define the difference of potential energy from point A to point B as the negative of
+the work done:
+8.1
+This formula explicitly states a potential energy difference, not just an absolute potential energy. Therefore, we
+need to define potential energy at a given position in such a way as to state standard values of potential energy on
+their own, rather than potential energy differences. We do this by rewriting the potential energy function in terms of
+an arbitrary constant,
+8.2
+The choice of the potential energy at a starting location of is made out of convenience in the given problem. Most
+importantly, whatever choice is made should be stated and kept consistent throughout the given problem. There are
+some well-accepted choices of initial potential energy. For example, the lowest height in a problem is usually
+defined as zero potential energy, or if an object is in space, the farthest point away from the system is often defined
+as zero potential energy. Then, the potential energy, with respect to zero at is just
+As long as there is no friction or air resistance, the change in kinetic energy of the football equals negative of the
+change in gravitational potential energy of the football. This can be generalized to any potential energy:
+8.3
+Access for free at openstax.org

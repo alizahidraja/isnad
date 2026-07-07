@@ -1,0 +1,260 @@
+# REAL PDF — openstax_vol1.pdf, pages 518-523
+############################################################
+
+506 10 • Chapter Review
+merry-go-round at a distance of 3.0 m from its forearm is , what is the rotational
+axis of rotation. The merry-go-round accelerates kinetic energy of the forearm?
+from rest up to 0.4 rev/s in 10 s. If the
+58 . A diver goes into a somersault during a dive by
+coefficient of static friction between the child
+tucking her limbs. If her rotational kinetic energy
+and the surface of the merry-go-round is 0.6,
+is 100 J and her moment of inertia in the tuck is
+does the child fall off before 5 s?
+, what is her rotational rate during
+52 . A bicycle wheel with radius 0.3 m rotates from the somersault?
+rest to 3 rev/s in 5 s. What is the magnitude and
+59 . An aircraft is coming in for a landing at 300
+direction of the total acceleration vector at the
+meters height when the propeller falls off. The
+edge of the wheel at 1.0 s?
+aircraft is flying at 40.0 m/s horizontally. The
+53 . The angular velocity of a flywheel with radius 1.0 propeller has a rotation rate of 20 rev/s, a
+m varies according to . Plot moment of inertia of , and a mass of
+from for . 200 kg. Neglect air resistance so the rotation
+Analyze these results to explain when rate does not change as the propeller falls. (a)
+and when for a point on the flywheel at With what translational velocity does the
+a radius of 1.0 m. propeller hit the ground? (b) What is the rotation
+rate of the propeller at impact?
+10.4 Moment of Inertia and Rotational Kinetic Energy
+60 . An aircraft is coming in for a landing at 300
+54 . A system of point particles is shown in the
+meters height when the propeller falls off. When
+following figure. Each particle has mass 0.3 kg
+it comes off, the propeller has a rotation rate of
+and they all lie in the same plane. (a) What is the
+20 rev/s, a moment of inertia of , and
+moment of inertia of the system about the given
+a mass of 200 kg. If air resistance is present and
+axis? (b) If the system rotates at 5 rev/s, what is
+reduces the propeller’s rotational kinetic energy
+its rotational kinetic energy?
+at impact by 30%, what is the propeller’s
+rotation rate at impact?
+61 . A neutron star of mass and radius
+10 km rotates with a period of 0.02 seconds.
+What is its rotational kinetic energy?
+62 . An electric sander consisting of a rotating disk of
+mass 0.7 kg and radius 10 cm rotates at 15 rev/
+s. When applied to a rough wooden wall the
+rotation rate decreases by 20%. (a) What is the
+final rotational kinetic energy of the rotating
+disk? (b) How much has its rotational kinetic
+energy decreased?
+55 . (a) Calculate the rotational kinetic energy of
+63 . A system consists of a disk of mass 2.0 kg and
+Earth on its axis. (b) What is the rotational
+radius 50 cm upon which is mounted an annular
+kinetic energy of Earth in its orbit around the
+cylinder of mass 1.0 kg with inner radius 20 cm
+Sun?
+and outer radius 30 cm (see below). The system
+56 . Calculate the rotational kinetic energy of a 12-kg rotates about an axis through the center of the
+motorcycle wheel if its angular velocity is 120 disk and annular cylinder at 10 rev/s. (a) What is
+rad/s and its inner radius is 0.280 m and outer the moment of inertia of the system? (b) What is
+radius 0.330 m. its rotational kinetic energy?
+57 . A baseball pitcher throws the ball in a motion
+where there is rotation of the forearm about the
+elbow joint as well as other movements. If the
+linear velocity of the ball relative to the elbow
+joint is 20.0 m/s at a distance of 0.480 m from
+the joint and the moment of inertia of the
+Access for free at openstax.org
+
+10 • Chapter Review 507
+10.5 Calculating Moments of Inertia
+64 . While punting a football, a kicker rotates their
+leg about the hip joint. The moment of inertia of 69 . A solid sphere of radius 10 cm is allowed to rotate
+freely about an axis. The sphere is given a sharp
+the leg is and its rotational kinetic
+blow so that its center of mass starts from the
+energy is 175 J. (a) What is the angular velocity
+position shown in the following figure with speed 15
+of the leg? (b) What is the velocity of tip of the
+cm/s. What is the maximum angle that the diameter
+punter’s shoe if it is 1.05 m from the hip joint?
+makes with the vertical?
+65 . Using the parallel axis theorem, what is the moment
+of inertia of the rod of mass m about the axis shown
+below?
+70 . Calculate the moment of inertia by direct integration
+of a thin rod of mass M and length L about an axis
+through the rod at L/3, as shown below. Check your
+66 . Find the moment of inertia of the rod in the
+answer with the parallel-axis theorem.
+previous problem by direct integration.
+67 . A uniform rod of mass 1.0 kg and length 2.0 m is
+free to rotate about one end (see the following
+figure). If the rod is released from rest at an
+angle of with respect to the horizontal, what 10.6 Torque
+is the speed of the tip of the rod as it passes the
+71 . Two flywheels of negligible mass and different radii
+horizontal position?
+are bonded together and rotate about a common
+axis (see below). The smaller flywheel of radius 30
+cm has a cord that has a pulling force of 50 N on it.
+What pulling force needs to be applied to the cord
+connecting the larger flywheel of radius 50 cm such
+that the combination does not rotate?
+68 . A pendulum consists of a rod of mass 2 kg and
+length 1 m with a solid sphere at one end with
+mass 0.3 kg and radius 20 cm (see the following
+figure). If the pendulum is released from rest at
+an angle of , what is the angular velocity at
+the lowest point?
+
+508 10 • Chapter Review
+72 . The cylinder head bolts on a car are to be
+tightened with a torque of 62.0 N . If a
+mechanic uses a wrench of length 20 cm, what
+perpendicular force must he exert on the end of
+the wrench to tighten a bolt correctly?
+73 . (a) When opening a door, you push on it
+perpendicularly with a force of 55.0 N at a
+distance of 0.850 m from the hinges. What
+torque are you exerting relative to the hinges?
+(b) Does it matter if you push at the same height
+as the hinges? There is only one pair of hinges.
+74 . When tightening a bolt, you push
+perpendicularly on a wrench with a force of 165
+N at a distance of 0.140 m from the center of the
+78 . A seesaw has length 10.0 m and uniform mass 10.0
+bolt. How much torque are you exerting in
+kg and is resting at an angle of with respect to
+newton-meters (relative to the center of the
+the ground (see the following figure). The pivot is
+bolt)?
+located at 6.0 m. What magnitude of force needs to
+75 . What hanging mass must be placed on the cord be applied perpendicular to the seesaw at the raised
+to keep the pulley from rotating (see the end so as to allow the seesaw to barely start to
+following figure)? The mass on the frictionless rotate?
+plane is 5.0 kg. The mass on the plane is
+connected to a cord that wraps around the
+pulley’s inner radius of 20 cm. The hanging mass
+is connected to a cord that wraps around the
+pulley’s outer radius of 30 cm.
+79 . A pendulum consists of a rod of mass 1 kg and
+length 1 m connected to a pivot with a solid
+sphere attached at the other end with mass 0.5
+kg and radius 30 cm. What is the torque about
+the pivot when the pendulum makes an angle of
+76 . A simple pendulum consists of a massless tether
+with respect to the vertical?
+50 cm in length connected to a pivot and a small
+mass of 1.0 kg attached at the other end. What
+80 . A torque of is required to raise a
+is the torque about the pivot when the pendulum
+drawbridge (see the following figure). What is the
+makes an angle of with respect to the
+tension necessary to produce this torque? Would it
+vertical?
+be easier to raise the drawbridge if the angle were
+77 . Calculate the torque about the z-axis that is out of larger or smaller?
+the page at the origin in the following figure, given
+that
+.
+Access for free at openstax.org
+
+10 • Chapter Review 509
+coefficient of friction between steel and stone is
+0.20, calculate the angular acceleration of the
+grindstone. (b) How many turns will the stone
+make before coming to rest?
+85 . Suppose you exert a force of 180 N tangential to
+a 0.280-m-radius, 75.0-kg grindstone (a solid
+disk). (a)What torque is exerted? (b) What is the
+angular acceleration assuming negligible
+opposing friction? (c) What is the angular
+acceleration if there is an opposing frictional
+force of 20.0 N exerted 1.50 cm from the axis?
+86 . A flywheel ( ) starting from rest
+acquires an angular velocity of 200.0 rad/s while
+subject to a constant torque from a motor for 5
+81 . A horizontal beam of length 3 m and mass 2.0 kg
+s. (a) What is the angular acceleration of the
+has a mass of 1.0 kg and width 0.2 m sitting at the
+flywheel? (b) What is the magnitude of the
+end of the beam (see the following figure). What is
+torque?
+the torque of the system about the support at the
+wall? 87 . A constant torque is applied to a rigid body
+whose moment of inertia is around
+the axis of rotation. If the wheel starts from rest
+and attains an angular velocity of 20.0 rad/s in
+10.0 s, what is the applied torque?
+88 . A torque of 50.0 N-m is applied to a grinding
+wheel ( ) for 20 s. (a) If it starts
+from rest, what is the angular velocity of the
+grinding wheel after the torque is removed? (b)
+Through what angle does the wheel move while
+the torque is applied?
+89 . A flywheel ( ) rotating at 500.0
+rev/min is brought to rest by friction in 2.0 min.
+What is the frictional torque on the flywheel?
+90 . A uniform cylindrical grinding wheel of mass
+50.0 kg and diameter 1.0 m is turned on by an
+electric motor. The friction in the bearings is
+negligible. (a) What torque must be applied to
+82 . What force must be applied to end of a rod along the wheel to bring it from rest to 120 rev/min in
+the x-axis of length 2.0 m in order to produce a 20 revolutions? (b) A tool whose coefficient of
+torque on the rod about the origin of kinetic friction with the wheel is 0.60 is pressed
+? perpendicularly against the wheel with a force of
+40.0 N. What torque must be supplied by the
+83 . What is the torque about the origin of the force
+motor to keep the wheel rotating at a constant
+if it is applied at the
+angular velocity?
+point whose position is:
+91 . Suppose when Earth was created, it was not
+rotating. However, after the application of a
+10.7 Newton’s Second Law for Rotation uniform torque for 6 days according to the
+current length of a day, it was rotating at 1 rev/
+84 . You have a grindstone (a disk) that is 90.0 kg,
+day. (a) What was the angular acceleration
+has a 0.340-m radius, and is turning at 90.0
+during the 6 days? (b) What torque was applied
+rpm, and you press a steel axe against it with a
+to Earth during this period? (c) What force
+radial force of 20.0 N. (a) Assuming the kinetic
+tangent to Earth at its equator would produce
+
+510 10 • Chapter Review
+this torque?
+92 . A pulley of moment of inertia is mounted on a
+wall as shown in the following figure. Light strings are
+wrapped around two circumferences of the pulley and
+weights are attached. What are (a) the angular
+acceleration of the pulley and (b) the linear acceleration
+of each weight? Assume the following data:
+.
+95 . A uniform rod of mass and length is held vertically
+by two strings of negligible mass, as shown below.
+(a) Immediately after the string is cut, what is the
+linear acceleration of the free end of the stick? (b) Of
+the middle of the stick?
+93 . A block of mass 3 kg slides down an inclined
+plane at an angle of with a massless tether 96 . A thin stick of mass 0.2 kg and length is
+attached to a pulley with mass 1 kg and radius attached to the rim of a metal disk of mass
+0.5 m at the top of the incline (see the following and radius . The stick is free
+figure). The pulley can be approximated as a to rotate around a horizontal axis through its other
+disk. The coefficient of kinetic friction on the end (see the following figure). (a) If the combination
+plane is 0.4. What is the acceleration of the is released with the stick horizontal, what is the
+block? speed of the center of the disk when the stick is
+vertical? (b) What is the acceleration of the center of
+the disk at the instant the stick is released? (c) At
+the instant the stick passes through the vertical?
+94 . The cart shown below moves across the table top as the
+block falls. What is the acceleration of the cart? Neglect
+friction and assume the following
+data:
+Access for free at openstax.org

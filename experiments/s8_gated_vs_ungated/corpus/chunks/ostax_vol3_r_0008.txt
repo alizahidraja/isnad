@@ -1,0 +1,185 @@
+# REAL PDF — openstax_vol3.pdf, pages 46-52
+############################################################
+
+38 Chapter 1 | The Nature of Light
+where n isthemediuminwhichtheincidentandreflectedlighttraveland n istheindexofrefractionofthemedium
+1 2
+thatformstheinterfacethatreflectsthelight.ThisequationisknownasBrewster’slawand θ isknownasBrewster’s
+b
+angle, named after the nineteenth-century Scottish physicist who discovered them.
+ThisOpenSourcePhysicsanimation(https://openstaxcollege.org/l/21phyaniincref)showsincident,
+reflected,andrefractedlightasraysandEMwaves.Tryrotatingtheanimationfor3Dvisualizationandalsochange
+the angle of incidence. Near Brewster’s angle, the reflected light becomes highly polarized.
+Example 1.8
+Calculating Polarization by Reflection
+(a)Atwhatanglewilllighttravelinginairbecompletelypolarizedhorizontallywhenreflectedfromwater?(b)
+From glass?
+Strategy
+Allweneedtosolvetheseproblemsaretheindicesofrefraction.Airhas n =1.00, waterhas n =1.333,
+1 2
+n
+and crown glass has n 2 ′ =1.520. The equation tanθ b = n 2 1 can be directly applied to find θ b in each case.
+Solution
+a. Putting the known quantities into the equation
+n
+tanθ b = n 2
+1
+gives
+n
+tanθ b = n 2 1 = 1 1 .3 .0 3 0 3 =1.333.
+Solving for the angle θ yields
+b
+θ =tan−1 1.333=53.1°.
+b
+b. Similarly, for crown glass and air,
+n′
+tanθ b ′ = n 2 1 = 1 1 .5 .0 2 0 0 =1.52.
+Thus,
+θ′ =tan−1 1.52=56.7°.
+b
+Significance
+Lightreflectedattheseanglescouldbecompletelyblockedbyagoodpolarizingfilterheldwithitsaxisvertical.
+Brewster’sangleforwaterandairaresimilartothoseforglassandair,sothatsunglassesareequallyeffective
+forlightreflectedfromeitherwaterorglassundersimilarcircumstances.Lightthatisnotreflectedisrefracted
+intothesemedia.Therefore,atanincidentangleequaltoBrewster’sangle,therefractedlightisslightlypolarized
+vertically.Itisnotcompletelypolarizedvertically,becauseonlyasmallfractionoftheincidentlightisreflected,
+so a significant amount of horizontally polarized light is refracted.
+1.7 Check YourUnderstanding What happens at Brewster’sangle ifthe original incident light isalready
+100% vertically polarized?
+Atomic Explanation of Polarizing Filters
+Polarizing filters have a polarization axis that acts as a slit. This slit passes EM waves (often visible light) that have an
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 39
+electricfieldparalleltotheaxis.Thisisaccomplishedwithlongmoleculesalignedperpendiculartotheaxis,asshownin
+Figure 1.39.
+Figure 1.39 Long molecules are aligned perpendicular to the
+axis of a polarizing filter. In an EM wave, the component of the
+electric field perpendicular to these molecules passes through
+the filter, whereas the component parallel to the molecules is
+absorbed.
+Figure 1.40illustrates howthecomponentoftheelectric fieldparallel tothelongmolecules isabsorbed.AnEMwave
+iscomposed ofoscillating electric andmagnetic fields. Theelectric field isstrongcompared withthemagnetic field and
+ismoreeffectiveinexertingforceonchargesinthemolecules.Themostaffectedchargedparticlesaretheelectrons,since
+electronmassesaresmall.Ifanelectronisforcedtooscillate,itcanabsorbenergyfromtheEMwave.Thisreducesthefield
+inthewaveand,hence,reducesitsintensity.Inlongmolecules,electronscanmoreeasilyoscillateparalleltothemolecule
+than in the perpendicular direction. The electrons are bound to the molecule and are more restricted in their movement
+perpendiculartothemolecule.Thus,theelectronscanabsorbEMwavesthathaveacomponentoftheirelectricfieldparallel
+to the molecule. The electrons are much less responsive to electric fields perpendicular to the molecule and allow these
+fields to pass. Thus, the axis of the polarizing filter is perpendicular to the length of the molecule.
+Figure 1.40 Diagram of an electron in a long molecule oscillating parallel to the molecule. The oscillation of the electron
+absorbs energy and reduces the intensity of the component of the EM wave that is parallel to the molecule.
+Polarization by Scattering
+Ifyouholdyourpolarizingsunglassesinfrontofyouandrotatethemwhilelookingatbluesky,youwillseetheskyget
+brightanddim.Thisisaclearindicationthatlightscatteredbyairispartiallypolarized.Figure1.41helpsillustratehow
+
+40 Chapter 1 | The Nature of Light
+thishappens.SincelightisatransverseEMwave,itvibratestheelectronsofairmoleculesperpendiculartothedirection
+thatitistraveling.Theelectronsthenradiatelikesmallantennae.Sincetheyareoscillatingperpendiculartothedirectionof
+thelightray,theyproduceEMradiationthatispolarizedperpendiculartothedirectionoftheray.Whenviewingthelight
+alongalineperpendiculartotheoriginalray,asinthefigure,therecanbenopolarizationinthescatteredlightparalleltothe
+originalray,becausethatwouldrequiretheoriginalraytobealongitudinalwave.Alongotherdirections,acomponentof
+theotherpolarizationcanbeprojectedalongthelineofsight,andthescatteredlightisonlypartiallypolarized.Furthermore,
+multiple scattering can bring light to your eyes from other directions and can contain different polarizations.
+Figure 1.41 Polarization by scattering. Unpolarized light scattering from air molecules shakes their electrons
+perpendicular to the direction of the original ray. The scattered light therefore has a polarization perpendicular to the
+original direction and none parallel to the original direction.
+Photographsoftheskycanbedarkenedbypolarizingfilters,atrickusedbymanyphotographerstomakecloudsbrighterby
+contrast.Scatteringfromotherparticles,suchassmokeordust,canalsopolarizelight.Detectingpolarizationinscattered
+EM waves can be a useful analytical tool in determining the scattering source.
+Arangeofopticaleffectsareusedinsunglasses.Besidesbeingpolarizing,sunglassesmayhavecoloredpigmentsembedded
+in them, whereas others use either a nonreflective or reflective coating. A recent development is photochromic lenses,
+whichdarkeninthesunlightandbecomeclearindoors.Photochromiclensesareembeddedwithorganicmicrocrystalline
+molecules that change their properties when exposed to UV in sunlight, but become clear in artificial lighting with no UV.
+Liquid Crystals and Other Polarization Effects in Materials
+Although you are undoubtedly aware of liquid crystal displays (LCDs) found in watches, calculators, computer screens,
+cellphones,flatscreentelevisions,andmanyotherplaces,youmaynotbeawarethattheyarebasedonpolarization.Liquid
+crystals are so named because their molecules can be aligned even though they are in a liquid. Liquid crystals have the
+propertythattheycanrotatethepolarizationoflightpassingthroughthemby 90°.Furthermore,thispropertycanbeturned
+offbytheapplicationofavoltage,asillustratedinFigure1.42.Itispossibletomanipulatethischaracteristicquicklyand
+in small, well-defined regions to create the contrast patterns we see in so many LCD devices.
+InflatscreenLCDtelevisions,alargelightisgeneratedatthebackoftheTV.Thelighttravelstothefrontscreenthrough
+millionsoftinyunitscalledpixels(pictureelements).OneoftheseisshowninFigure1.42(a)and(b).Eachunithasthree
+cells,withred,blue,orgreenfilters,eachcontrolledindependently.Whenthevoltageacrossaliquidcrystalisswitchedoff,
+theliquidcrystalpassesthelightthroughtheparticularfilter.Wecanvarythepicturecontrastbyvaryingthestrengthofthe
+voltage applied to the liquid crystal.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 41
+Figure 1.42 (a) Polarized light is rotated 90° by a liquid crystal and then passed by a polarizing filter that has its axis
+perpendicular to the direction of the original polarization. (b) When a voltage is applied to the liquid crystal, the polarized light is
+not rotated and is blocked by the filter, making the region dark in comparison with its surroundings. (c) LCDs can be made color
+specific, small, and fast enough to use in laptop computers and TVs. (credit c: modification of work by Jane Whitney)
+Manycrystalsandsolutionsrotatetheplaneofpolarizationoflightpassingthroughthem.Suchsubstancesaresaidtobe
+opticallyactive.Examplesincludesugarwater,insulin,andcollagen(Figure1.43).Inadditiontodependingonthetype
+ofsubstance,theamountanddirectionofrotationdependonseveralotherfactors.Amongtheseistheconcentrationofthe
+substance,thedistancethelighttravelsthroughit,andthewavelengthoflight.Opticalactivityisduetotheasymmetrical
+shapeofmoleculesinthesubstance,suchasbeinghelical.Measurementsoftherotationofpolarizedlightpassingthrough
+substancescanthusbeusedtomeasureconcentrations,astandardtechniqueforsugars.Itcanalsogiveinformationonthe
+shapes of molecules, such as proteins, and factors that affect their shapes, such as temperature and pH.
+Figure 1.43 Optical activity is the ability of some substances to rotate the
+plane of polarization of light passing through them. The rotation is detected
+with a polarizing filter or analyzer.
+Glassandplasticbecomeopticallyactivewhenstressed:thegreaterthestress,thegreatertheeffect.Opticalstressanalysis
+oncomplicatedshapescanbeperformedbymakingplasticmodelsofthemandobservingthemthroughcrossedfilters,as
+seeninFigure1.44.Itisapparentthattheeffectdependsonwavelengthaswellasstress.Thewavelengthdependenceis
+
+42 Chapter 1 | The Nature of Light
+sometimes also used for artistic purposes.
+Figure 1.44 Optical stress analysis of a plastic lens placed
+between crossed polarizers. (credit: “Infopro”/Wikimedia
+Commons)
+Anotherinterestingphenomenonassociatedwithpolarizedlightistheabilityofsomecrystalstosplitanunpolarizedbeam
+oflightintotwopolarizedbeams.Thisoccursbecausethecrystalhasonevaluefortheindexofrefractionofpolarizedlight
+but a different value for the index of refraction of light polarized in the perpendicular direction, so that each component
+hasitsownangleofrefraction.Suchcrystalsaresaidtobebirefringent,and,whenalignedproperly,twoperpendicularly
+polarizedbeamswillemergefromthecrystal(Figure1.45).Birefringentcrystalscanbeusedtoproducepolarizedbeams
+fromunpolarizedlight.Somebirefringentmaterialspreferentiallyabsorboneofthepolarizations.Thesematerialsarecalled
+dichroicandcanproducepolarizationbythispreferentialabsorption.Thisisfundamentallyhowpolarizingfiltersandother
+polarizers work.
+Figure 1.45 Birefringent materials, such as the common mineral calcite, split unpolarized beams of light into two with two
+different values of index of refraction.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 43
+CHAPTER 1 REVIEW
+KEY TERMS
+birefringent refers to crystals that split an unpolarized beam of light into two beams
+Brewster’s angle angle of incidence at which the reflected light is completely polarized
+Brewster’s law n
+tanθ b = n 2,where n 1 isthemediuminwhichtheincidentandreflectedlighttraveland n 2 isthe
+1
+index of refraction of the medium that forms the interface that reflects the light
+corner reflector object consisting of two (or three) mutually perpendicular reflecting surfaces, so that the light that
+enters is reflected back exactly parallel to the direction from which it came
+critical angle incident angle that produces an angle of refraction of 90°
+direction of polarization direction parallel to the electric field for EM waves
+dispersion spreading of light into its spectrum of wavelengths
+fiber optics field of study of the transmission of light down fibers of plastic or glass, applying the principle of total
+internal reflection
+geometric optics part of optics dealing with the ray aspect of light
+horizontally polarized oscillations are in a horizontal plane
+Huygens’s principle everypointonawavefrontisasourceofwaveletsthatspreadoutintheforwarddirectionatthe
+same speed as the wave itself; the new wave front is a plane tangent to all of the wavelets
+index of refraction for a material, the ratio of the speed of light in a vacuum to that in a material
+law of reflection angle of reflection equals the angle of incidence
+law of refraction whenalightraycrossesfromonemediumtoanother,itchangesdirectionbyanamountthatdepends
+on the index of refraction of each medium and the sines of the angle of incidence and angle of refraction
+Malus’s law where I is the intensity of the polarized wave before passing through the filter
+0
+optically active substances that rotate the plane of polarization of light passing through them
+polarization attributethatwaveoscillationshaveadefinitedirectionrelativetothedirectionofpropagationofthewave
+polarized refers to waves having the electric and magnetic field oscillations in a definite direction
+ray straight line that originates at some point
+refraction changing of a light ray’s direction when it passes through variations in matter
+total internal reflection phenomenon at the boundary between two media such that all the light is reflected and no
+refraction occurs
+unpolarized refers to waves that are randomly polarized
+vertically polarized oscillations are in a vertical plane
+wave optics part of optics dealing with the wave aspect of light
+KEY EQUATIONS
+Speed of light c=2.99792458×10 8 m/s≈3.00×10 8 m/s
+Index of refraction n= c
+v
+Law of reflection θ r=θ
+i

@@ -1,0 +1,192 @@
+# REAL PDF — openstax_vol3.pdf, pages 19-26
+############################################################
+
+Chapter 1 | The Nature of Light 11
+Solution
+Rearranging the equation n=c/v forvgives us
+c
+v= n.
+Theindexofrefractionforzirconisgivenas1.923inTable1.1,andcisgiveninEquation1.1.Enteringthese
+values in the equation gives
+8
+v= 3.00×10 m/s =1.56×10 8 m/s.
+1.923
+Significance
+Thisspeedisslightlylargerthanhalfthespeedoflightinavacuumandisstillhighcomparedwithspeedswe
+normallyexperience.TheonlysubstancelistedinTable1.1thathasagreaterindexofrefractionthanzirconis
+diamond.Weshallseelaterthatthelargeindexofrefractionforzirconmakesitsparklemorethanglass,butless
+than diamond.
+1.1 CheckYourUnderstandingTable1.1showsthatethanolandfreshwaterhaveverysimilarindicesof
+refraction. By what percentage do the speeds of light in these liquids differ?
+The Ray Model of Light
+YouhavealreadystudiedsomeofthewavecharacteristicsoflightinthepreviouschapteronElectromagnetic Waves
+(http://cnx.org/content/m58495/latest/) .Inthischapter,westartmainlywiththeraycharacteristics.Therearethree
+waysinwhichlightcantravelfromasourcetoanotherlocation(Figure1.4).Itcancomedirectlyfromthesourcethrough
+emptyspace,suchasfromtheSuntoEarth.Orlightcantravelthroughvariousmedia,suchasairandglass,totheobserver.
+Light can also arrive after being reflected, such as by a mirror. In all of these cases, we can model the path of light as a
+straight line called aray.
+Figure 1.4 Three methods for light to travel from a source to another location. (a) Light reaches the upper atmosphere of Earth,
+traveling through empty space directly from the source. (b) Light can reach a person by traveling through media like air and
+glass. (c) Light can also reflect from an object like a mirror. In the situations shown here, light interacts with objects large enough
+that it travels in straight lines, like a ray.
+Experimentsshowthatwhenlightinteractswithanobjectseveraltimeslargerthanitswavelength,ittravelsinstraightlines
+andactslikearay.Itswavecharacteristicsarenotpronouncedinsuchsituations.Sincethewavelengthofvisiblelightis
+lessthanamicron(athousandthofamillimeter),itactslikearayinthemanycommonsituationsinwhichitencounters
+objectslargerthanamicron.Forexample,whenvisiblelightencountersanythinglargeenoughthatwecanobserveitwith
+unaided eyes, such as a coin, it acts like a ray, with generally negligible wave characteristics.
+Inallofthesecases,wecanmodelthepathoflightasstraightlines.Lightmaychangedirectionwhenitencountersobjects
+(suchasamirror)orinpassingfromonematerialtoanother(suchasinpassingfromairtoglass),butitthencontinuesin
+astraightlineorasaray.Theword“ray”comesfrommathematicsandheremeansastraightlinethatoriginatesatsome
+
+12 Chapter 1 | The Nature of Light
+point.Itisacceptabletovisualizelightraysaslaserrays.Theraymodeloflightdescribesthepathoflightasstraightlines.
+Sincelightmovesinstraightlines,changingdirectionswhenitinteractswithmaterials,itspathisdescribedbygeometry
+andsimpletrigonometry.Thispartofoptics,wheretherayaspectoflightdominates,isthereforecalledgeometricoptics.
+Twolawsgovernhowlightchangesdirectionwhenitinteractswithmatter.Thesearethelawofreflection,forsituations
+in which light bounces off matter, and the law of refraction, for situations in which light passes through matter. We will
+examine more about each of these laws in upcoming sections of this chapter.
+1.2 | The Law of Reflection
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain the reflection of light from polished and rough surfaces
+• Describe the principle and applications of corner reflectors
+Wheneverwelookintoamirror,orsquintatsunlightglintingfromalake,weareseeingareflection.Whenyoulookata
+pieceofwhitepaper,youareseeinglightscatteredfromit.Largetelescopesusereflectiontoformanimageofstarsand
+other astronomical objects.
+Thelaw of reflectionstates that the angle of reflection equals the angle of incidence, or
+θ r=θ
+i
+(1.3)
+ThelawofreflectionisillustratedinFigure1.5,whichalsoshowshowtheangleofincidenceandangleofreflectionare
+measured relative to the perpendicular to the surface at the point where the light ray strikes.
+Figure 1.5 The law of reflection states that the angle of
+reflection equals the angle of incidence—θ r=θ
+i
+. The angles
+are measured relative to the perpendicular to the surface at the
+point where the ray strikes the surface.
+Weexpecttoseereflectionsfromsmoothsurfaces,butFigure1.6illustrateshowaroughsurfacereflectslight.Sincethe
+lightstrikesdifferentpartsofthesurfaceatdifferentangles,itisreflectedinmanydifferentdirections,ordiffused.Diffused
+light is what allows us to see a sheet of paper from any angle, as shown in Figure 1.7(a). People, clothing, leaves, and
+wallsallhaveroughsurfacesandcanbeseenfromallsides.Amirror,ontheotherhand,hasasmoothsurface(compared
+withthewavelengthoflight)andreflectslightatspecificangles,asillustratedinFigure 1.7(b).WhentheMoonreflects
+from a lake, as shown inFigure 1.7(c), a combination of these effects takes place.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 13
+Figure 1.6 Light is diffused when it reflects from a rough surface.
+Here, many parallel rays are incident, but they are reflected at many
+different angles, because the surface is rough.
+Figure 1.7 (a) When a sheet of paper is illuminated with many parallel incident rays, it can be seen at many different angles,
+because its surface is rough and diffuses the light. (b) A mirror illuminated by many parallel rays reflects them in only one
+direction, because its surface is very smooth. Only the observer at a particular angle sees the reflected light. (c) Moonlight is
+spread out when it is reflected by the lake, because the surface is shiny but uneven. (credit c: modification of work by Diego
+Torres Silvestre)
+Whenyouseeyourselfinamirror,itappearsthattheimageisactuallybehindthemirror(Figure 1.8).Weseethelight
+comingfromadirectiondeterminedbythelawofreflection.Theanglesaresuchthattheimageisexactlythesamedistance
+behindthemirrorasyoustandinfrontofthemirror.Ifthemirrorisonthewallofaroom,theimagesinitareallbehindthe
+mirror,whichcanmaketheroomseembigger.Althoughthesemirrorimagesmakeobjectsappeartobewheretheycannot
+be (like behind a solid wall), the images are not figments of your imagination. Mirror images can be photographed and
+videotapedbyinstrumentsandlookjustastheydowithoureyes(whichareopticalinstrumentsthemselves).Theprecise
+mannerinwhichimagesareformedbymirrorsandlensesisdiscussedinanupcomingchapteronGeometricOpticsand
+Image Formation.
+
+14 Chapter 1 | The Nature of Light
+Figure 1.8 (a) Your image in a mirror is behind the mirror. The two rays shown are those that strike the mirror at just the
+correct angles to be reflected into the eyes of the person. The image appears to be behind the mirror at the same distance away as
+(b) if you were looking at your twin directly, with no mirror.
+Corner Reflectors (Retroreflectors)
+A light ray that strikes an object consisting of two mutually perpendicular reflecting surfaces is reflected back exactly
+paralleltothedirectionfromwhichitcame(Figure 1.9).Thisistruewheneverthereflectingsurfacesareperpendicular,
+and it is independent of the angle of incidence. (For proof, see at the end of this section.) Such an object is called a
+corner reflector, since the light bounces from its inside corner. Corner reflectors are a subclass of retroreflectors, which
+allreflectraysbackinthedirectionsfromwhichtheycame.Althoughthegeometryoftheproofismuchmorecomplex,
+cornerreflectorscanalsobebuiltwiththreemutuallyperpendicularreflectingsurfacesandareusefulinthree-dimensional
+applications.
+Figure 1.9 A light ray that strikes two mutually perpendicular
+reflecting surfaces is reflected back exactly parallel to the
+direction from which it came.
+Many inexpensive reflector buttons on bicycles, cars, and warning signs have corner reflectors designed to return light
+in the direction from which it originated. Rather than simply reflecting light over a wide angle, retroreflection ensures
+high visibility if the observer and the light source are located together, such as a car’s driver and headlights. The Apollo
+astronautsplacedatruecornerreflectorontheMoon(Figure 1.10).LasersignalsfromEarthcanbebouncedfromthat
+corner reflector to measure the gradually increasing distance to the Moon of a few centimeters per year.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 15
+Figure 1.10 (a) Astronauts placed a corner reflector on the Moon to measure its gradually increasing orbital distance. (b) The
+bright spots on these bicycle safety reflectors are reflections of the flash of the camera that took this picture on a dark night.
+(credit a: modification of work by NASA; credit b: modification of work by “Julo”/Wikimedia Commons)
+Workingonthesameprincipleastheseopticalreflectors,cornerreflectorsareroutinelyusedasradarreflectors(Figure
+1.11)forradio-frequencyapplications.Undermostcircumstances,smallboatsmadeoffiberglassorwooddonotstrongly
+reflectradiowavesemittedbyradarsystems.Tomaketheseboatsvisibletoradar(toavoidcollisions,forexample),radar
+reflectors are attached to boats, usually in high places.
+Figure 1.11 A radar reflector hoisted on a sailboat is a type of
+corner reflector. (credit: Tim Sheerman-Chase)
+As a counterexample, if you are interested in building a stealth airplane, radar reflections should be minimized to evade
+detection. One of the design considerations would then be to avoid building 90° corners into the airframe.
+1.3 | Refraction
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe how rays change direction upon entering a medium
+• Apply the law of refraction in problem solving
+Youmayoftennoticesomeoddthingswhenlookingintoafishtank.Forexample,youmayseethesamefishappearingto
+beintwodifferentplaces(Figure1.12).Thishappensbecauselightcomingfromthefishtoyouchangesdirectionwhenit
+
+16 Chapter 1 | The Nature of Light
+leavesthetank,andinthiscase,itcantraveltwodifferentpathstogettoyoureyes.Thechangingofalightray’sdirection
+(looselycalledbending)whenitpassesthroughsubstancesofdifferentrefractiveindicesiscalledrefractionandisrelated
+tochangesinthespeedoflight, v=c/n.Refractionisresponsibleforatremendousrangeofopticalphenomena,fromthe
+action of lenses to data transmission through optical fibers.
+Figure 1.12 (a) Looking at the fish tank as shown, we can see the same fish in two different locations, because light changes
+directions when it passes from water to air. In this case, the light can reach the observer by two different paths, so the fish seems
+to be in two different places. This bending of light is called refraction and is responsible for many optical phenomena. (b) This
+image shows refraction of light from a fish near the top of a fish tank.
+Figure1.13showshowarayoflightchangesdirectionwhenitpassesfromonemediumtoanother.Asbefore,theangles
+aremeasuredrelativetoaperpendiculartothesurfaceatthepointwherethelightraycrossesit.(Someoftheincidentlight
+isreflectedfromthesurface,butfornowweconcentrateonthelightthatistransmitted.)Thechangeindirectionofthelight
+raydependsontherelativevaluesoftheindicesofrefraction(ThePropagationofLight)ofthetwomediainvolved.In
+thesituationsshown,medium2hasagreaterindexofrefractionthanmedium1.NotethatasshowninFigure1.13(a),the
+directionoftheraymovesclosertotheperpendicularwhenitprogressesfromamediumwithalowerindexofrefraction
+to one with a higher index of refraction. Conversely, as shown in Figure 1.13(b), the direction of the ray moves away
+fromtheperpendicularwhenitprogressesfromamediumwithahigherindexofrefractiontoonewithalowerindexof
+refraction. The path is exactly reversible.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 17
+Figure 1.13 The change in direction of a light ray depends on how the index of refraction
+changes when it crosses from one medium to another. In the situations shown here, the index of
+refraction is greater in medium 2 than in medium 1. (a) A ray of light moves closer to the
+perpendicular when entering a medium with a higher index of refraction. (b) A ray of light
+moves away from the perpendicular when entering a medium with a lower index of refraction.
+Theamountthatalightraychangesitsdirectiondependsbothontheincidentangleandtheamountthatthespeedchanges.
+For a ray at a given incident angle, a large change in speed causes a large change in direction and thus a large change
+in angle. The exact mathematical relationship is the law of refraction, or Snell’s law, after the Dutch mathematician
+WillebrordSnell(1591–1626), who discovered it in 1621. The law of refraction is stated in equation form as
+n sinθ =n sinθ . (1.4)
+1 1 2 2
+Here n and n aretheindicesofrefractionformedia1and2,and θ and θ aretheanglesbetweentheraysandthe
+1 2 1 2
+perpendicularinmedia1and2.Theincomingrayiscalledtheincidentray,theoutgoingrayiscalledtherefractedray,and
+the associated angles are the incident angle and the refracted angle, respectively.
+Snell’s experiments showed that the law of refraction is obeyed and that a characteristic index of refraction n could be
+assignedtoagivenmediumanditsvaluemeasured.Snellwasnotawarethatthespeedoflightvariedindifferentmedia,a
+key fact used when we derive the law of refraction theoretically using Huygens’s principle inHuygens’s Principle.
+Example 1.2
+Determining the Index of Refraction
+Findtheindexofrefractionformedium2inFigure1.13(a),assumingmedium1isairandgiventhattheincident
+angle is 30.0° and the angle of refraction is 22.0°.
+Strategy
+The index of refraction for air is taken to be 1 in most cases (and up to four significant figures, it is 1.000).
+Thus, n =1.00 here. From the given information, θ =30.0° and θ =22.0°. With this information, the
+1 1 2
+only unknown in Snell’s law is n , so we can use Snell’s law to find it.
+2
+Solution
+From Snell’s law we have
+n sinθ = n sinθ
+1 1 2 2
+sinθ
+n = n 1.
+2 1sinθ
+2

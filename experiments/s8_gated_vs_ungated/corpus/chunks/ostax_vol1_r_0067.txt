@@ -1,0 +1,204 @@
+# REAL PDF — openstax_vol1.pdf, pages 394-403
+############################################################
+
+382 9 • Linear Momentum and Collisions
+9.2 Impulse and Collisions
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain what an impulse is, physically
+• Describe what an impulse does
+• Relate impulses to collisions
+• Apply the impulse-momentum theorem to solve problems
+We have defined momentum to be the product of mass and velocity. Therefore, if an object’s velocity should change
+(due to the application of a force on the object), then necessarily, its momentum changes as well. This indicates a
+connection between momentum and force. The purpose of this section is to explore and describe that connection.
+Suppose you apply a force on a free object for some amount of time. Clearly, the larger the force, the larger the
+object’s change of momentum will be. Alternatively, the more time you spend applying this force, again the larger
+the change of momentum will be, as depicted in Figure 9.5. The amount by which the object’s motion changes is
+therefore proportional to the magnitude of the force, and also to the time interval over which the force is applied.
+FIGURE 9.5 The change in momentum of an object is proportional to the length of time during which the force is applied. If a force is
+exerted on the lower ball for twice as long as on the upper ball, then the change in the momentum of the lower ball is twice that of the
+upper ball.
+Mathematically, if a quantity is proportional to two (or more) things, then it is proportional to the product of those
+things. The product of a force and a time interval (over which that force acts) is called impulse, and is given the
+symbol
+IMPULSE
+Let be the force applied to an object over some differential time interval dt (Figure 9.6). The resulting
+impulse on the object is defined as
+9.2
+Access for free at openstax.org
+
+9.2 • Impulse and Collisions 383
+FIGURE 9.6 A force applied by a tennis racquet to a tennis ball over a time interval generates an impulse acting on the ball.
+The total impulse over the interval is
+9.3
+Equation 9.2 and Equation 9.3 together say that when a force is applied for an infinitesimal time interval dt, it
+causes an infinitesimal impulse , and the total impulse given to the object is defined to be the sum (integral) of all
+these infinitesimal impulses.
+To calculate the impulse using Equation 9.3, we need to know the force function F(t), which we often don’t.
+However, a result from calculus is useful here: Recall that the average value of a function over some interval is
+calculated by
+where . Applying this to the time-dependent force function, we obtain
+9.4
+Therefore, from Equation 9.3,
+9.5
+The idea here is that you can calculate the impulse on the object even if you don’t know the details of the force as a
+function of time; you only need the average force. In fact, though, the process is usually reversed: You determine the
+impulse (by measurement or calculation) and then calculate the average force that caused that impulse.
+To calculate the impulse, a useful result follows from writing the force in Equation 9.3 as :
+
+384 9 • Linear Momentum and Collisions
+For a constant force , this simplifies to
+That is,
+9.6
+Note that the integral form, Equation 9.3, applies to constant forces as well; in that case, since the force is
+independent of time, it comes out of the integral, which can then be trivially evaluated.
+EXAMPLE 9.1
+The Arizona Meteor Crater
+Approximately 50,000 years ago, a large (radius of 25 m) iron-nickel meteorite collided with Earth at an estimated
+speed of in what is now the northern Arizona desert, in the United States. The impact produced a
+crater that is still visible today (Figure 9.7); it is approximately 1200 m (three-quarters of a mile) in diameter, 170 m
+deep, and has a rim that rises 45 m above the surrounding desert plain. Iron-nickel meteorites typically have a
+density of . Use impulse considerations to estimate the average force and the maximum force that
+the meteor applied to Earth during the impact.
+FIGURE 9.7 The Arizona Meteor Crater in Flagstaff, Arizona (often referred to as the Barringer Crater after the person who first suggested
+its origin and whose family owns the land). (credit: modification of work by “Shane.torgerson”/Wikimedia Commons)
+Strategy
+It is conceptually easier to reverse the question and calculate the force that Earth applied on the meteor in order to
+stop it. Therefore, we’ll calculate the force on the meteor and then use Newton’s third law to argue that the force
+from the meteor on Earth was equal in magnitude and opposite in direction.
+Using the given data about the meteor, and making reasonable guesses about the shape of the meteor and impact
+time, we first calculate the impulse using Equation 9.6. We then use the relationship between force and impulse
+Equation 9.5 to estimate the average force during impact. Next, we choose a reasonable force function for the
+impact event, calculate the average value of that function Equation 9.4, and set the resulting expression equal to the
+calculated average force. This enables us to solve for the maximum force.
+Access for free at openstax.org
+
+9.2 • Impulse and Collisions 385
+Solution
+Define upward to be the +y-direction. For simplicity, assume the meteor is traveling vertically downward prior to
+impact. In that case, its initial velocity is , and the force Earth exerts on the meteor points upward,
+. The situation at is depicted below.
+The average force during the impact is related to the impulse by
+From Equation 9.6, , so we have
+The mass is equal to the product of the meteor’s density and its volume:
+If we assume (guess) that the meteor was roughly spherical, we have
+Thus we obtain
+The problem says the velocity at impact was (the final velocity is zero); also, we guess that the
+primary impact lasted about . Substituting these values gives
+This is the average force applied during the collision. Notice that this force vector points in the same direction as the
+change of velocity vector .
+Next, we calculate the maximum force. The impulse is related to the force function by
+
+386 9 • Linear Momentum and Collisions
+We need to make a reasonable choice for the force as a function of time. We define to be the moment the
+meteor first touches the ground. Then we assume the force is a maximum at impact, and rapidly drops to zero. A
+function that does this is
+(The parameter represents how rapidly the force decreases to zero.) The average force is
+where . Since we already have a numeric value for , we can use the result of the integral to
+obtain .
+Choosing (this is a common choice, as you will see in later chapters), and guessing that , this
+integral evaluates to
+Thus, the maximum force has a magnitude of
+The complete force function, including the direction, is
+This is the force Earth applied to the meteor; by Newton’s third law, the force the meteor applied to Earth is
+which is the answer to the original question.
+Significance
+The graph of this function contains important information. Let’s graph (the magnitude of) both this function and the
+average force together (Figure 9.8).
+FIGURE 9.8 A graph of the average force (in red) and the force as a function of time (blue) of the meteor impact. The areas under the curves
+Access for free at openstax.org
+
+9.2 • Impulse and Collisions 387
+are equal to each other, and are numerically equal to the applied impulse.
+Notice that the area under each plot has been filled in. For the plot of the (constant) force , the area is a
+rectangle, corresponding to . As for the plot of F(t), recall from calculus that the area under the plot of a
+function is numerically equal to the integral of that function, over the specified interval; so here, that is
+. Thus, the areas are equal, and both represent the impulse that the meteor applied to Earth
+during the two-second impact. The average force on Earth sounds like a huge force, and it is. Nevertheless, Earth
+barely noticed it. The acceleration Earth obtained was just
+which is completely immeasurable. That said, the impact created seismic waves that nowadays could be detected
+by modern monitoring equipment.
+EXAMPLE 9.2
+The Benefits of Impulse
+A car traveling at 27 m/s collides with a building. The collision with the building causes the car to come to a stop in
+approximately 1 second. The driver, who weighs 860 N, is protected by a combination of a variable-tension seatbelt
+and an airbag (Figure 9.9). (In effect, the driver collides with the seatbelt and airbag and not with the building.) The
+airbag and seatbelt slow his velocity, such that he comes to a stop in approximately 2.5 s.
+a. What average force does the driver experience during the collision?
+b. Without the seatbelt and airbag, his collision time (with the steering wheel) would have been approximately
+0.20 s. What force would he experience in this case?
+FIGURE 9.9 The motion of a car and its driver at the instant before and the instant after colliding with the wall. The restrained driver
+experiences a large backward force from the seatbelt and airbag, which causes his velocity to decrease to zero. (The forward force from the
+seatbelt is much smaller than the backward force, so we neglect it in the solution.)
+Strategy
+We are given the driver’s weight, his initial and final velocities, and the time of collision; we are asked to calculate a
+force. Impulse seems the right way to tackle this; we can combine Equation 9.5 and Equation 9.6.
+Solution
+a. Define the +x-direction to be the direction the car is initially moving. We know
+and
+
+388 9 • Linear Momentum and Collisions
+Since J is equal to both those things, they must be equal to each other:
+We need to convert this weight to the equivalent mass, expressed in SI units:
+Remembering that , and noting that the final velocity is zero, we solve for the force:
+The negative sign implies that the force slows him down. For perspective, this is about 1.1 times his own
+weight.
+b. Same calculation, just the different time interval:
+which is about 14 times his own weight. Big difference!
+Significance
+You see that the value of an airbag is how greatly it reduces the force on the vehicle occupants. For this reason, they
+have been required on all passenger vehicles in the United States since 1991, and have been commonplace
+throughout Europe and Asia since the mid-1990s. The change of momentum in a crash is the same, with or without
+an airbag; the force, however, is vastly different.
+Effect of Impulse
+Since an impulse is a force acting for some amount of time, it causes an object’s motion to change. Recall Equation
+9.6:
+Because is the momentum of a system, is the change of momentum . This gives us the following
+relation, called the impulse-momentum theorem (or relation).
+IMPULSE-MOMENTUM THEOREM
+An impulse applied to a system changes the system’s momentum, and that change of momentum is exactly
+equal to the impulse that was applied:
+9.7
+The impulse-momentum theorem is depicted graphically in Figure 9.10.
+Access for free at openstax.org
+
+9.2 • Impulse and Collisions 389
+FIGURE 9.10 Illustration of impulse-momentum theorem. (a) A ball with initial velocity and momentum receives an impulse . (b)
+This impulse is added vectorially to the initial momentum. (c) Thus, the impulse equals the change in momentum, . (d) After the
+impulse, the ball moves off with its new momentum
+There are two crucial concepts in the impulse-momentum theorem:
+1. Impulse is a vector quantity; an impulse of, say, is very different from an impulse of
+; they cause completely opposite changes of momentum.
+2. An impulse does not cause momentum; rather, it causes a change in the momentum of an object. Thus, you
+must subtract the initial momentum from the final momentum, and—since momentum is also a vector
+quantity—you must take careful account of the signs of the momentum vectors.
+The most common questions asked in relation to impulse are to calculate the applied force, or the change of velocity
+that occurs as a result of applying an impulse. The general approach is the same.
+PROBLEM-SOLVING STRATEGY
+Impulse-Momentum Theorem
+1. Express the impulse as force times the relevant time interval.
+2. Express the impulse as the change of momentum, usually .
+3. Equate these and solve for the desired quantity.
+
+390 9 • Linear Momentum and Collisions
+EXAMPLE 9.3
+Moving the Enterprise
+FIGURE 9.11 The fictional starship Enterprise from the Star Trek adventures operated on so-called “impulse engines” that combined
+matter with antimatter to produce energy.
+When Captain Picard commands, “Take us out,” the starship Enterprise (Figure 9.11) starts from rest to a final speed
+of . Assuming this maneuver is completed in 60 s, what average force did the impulse engines
+apply to the ship?
+Strategy
+We are asked for a force; we know the initial and final speeds (and hence the change in speed), and we know the
+time interval over which this all happened. In particular, we know the amount of time that the force acted. This
+suggests using the impulse-momentum relation. To use that, though, we need the mass of the Enterprise. An
+internet search gives a best estimate of the mass of the Enterprise (in the 2009 movie) as .
+Solution
+Because this problem involves only one direction (i.e., the direction of the force applied by the engines), we only
+need the scalar form of the impulse-momentum theorem Equation 9.7, which is
+with
+and
+Equating these expressions gives
+Solving for the magnitude of the force and inserting the given values leads to
+Access for free at openstax.org

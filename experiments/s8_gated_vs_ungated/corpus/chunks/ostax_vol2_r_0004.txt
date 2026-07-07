@@ -1,0 +1,245 @@
+# REAL PDF — openstax_vol2.pdf, pages 19-26
+############################################################
+
+Chapter 1 | Temperature and Heat 9
+A thermometer measures its own temperature. It is through the concepts of thermal equilibrium and the zeroth law of
+thermodynamicsthatwecansaythatathermometermeasuresthetemperatureofsomethingelse,andtomakesenseofthe
+statement that two objects are at the same temperature.
+Intherestofthischapter,wewilloftenreferto“systems”insteadof“objects.”Asinthechapteronlinearmomentumand
+collisions,asystemconsistsofoneormoreobjects—butinthermodynamics,werequireasystemtobemacroscopic,that
+is,toconsistofahugenumber(suchas 10 23)ofmolecules.Thenwecansaythatasystemisinthermalequilibriumwith
+itselfifallpartsofitareatthesametemperature.(Wewillreturntothedefinitionofathermodynamicsysteminthechapter
+on the first law of thermodynamics.)
+1.2 | Thermometers and Temperature Scales
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe several different types of thermometers
+• Convert temperatures between the Celsius, Fahrenheit, and Kelvin scales
+Anyphysicalpropertythatdependsconsistentlyandreproduciblyontemperaturecanbeusedasthebasisofathermometer.
+For example, volume increases with temperature for most substances. This property is the basis for the common alcohol
+thermometer and the original mercury thermometers. Other properties used to measure temperature include electrical
+resistance, color, and the emission of infrared radiation (Figure 1.3).
+
+10 Chapter 1 | Temperature and Heat
+Figure 1.3 Because many physical properties depend on temperature, the variety of thermometers is remarkable. (a) In this
+common type of thermometer, the alcohol, containing a red dye, expands more rapidly than the glass encasing it. When the
+thermometer’s temperature increases, the liquid from the bulb is forced into the narrow tube, producing a large change in the
+length of the column for a small change in temperature. (b) Each of the six squares on this plastic (liquid crystal) thermometer
+contains a film of a different heat-sensitive liquid crystal material. Below 95°F, all six squares are black. When the plastic
+thermometer is exposed to a temperature of 95°F, the first liquid crystal square changes color. When the temperature reaches
+above 96.8°F, the second liquid crystal square also changes color, and so forth. (c) A firefighter uses a pyrometer to check the
+temperature of an aircraft carrier’s ventilation system. The pyrometer measures infrared radiation (whose emission varies with
+temperature) from the vent and quickly produces a temperature readout. Infrared thermometers are also frequently used to
+measure body temperature by gently placing them in the ear canal. Such thermometers are more accurate than the alcohol
+thermometers placed under the tongue or in the armpit. (credit b: modification of work by Tess Watson; credit c: modification of
+work by Lamel J. Hinton, U.S. Navy)
+Thermometersmeasuretemperatureaccordingtowell-definedscalesofmeasurement.Thethreemostcommontemperature
+scales are Fahrenheit, Celsius, and Kelvin. Temperature scales are created by identifying two reproducible temperatures.
+The freezing and boiling temperatures of water at standard atmospheric pressure are commonly used.
+OntheCelsiusscale,thefreezingpointofwateris 0°C andtheboilingpointis 100°C. Theunitoftemperatureonthis
+scaleisthedegreeCelsius (°C).TheFahrenheitscale(stillthemostfrequentlyusedforcommonpurposesintheUnited
+States)hasthefreezingpointofwaterat 32°F andtheboilingpointat 212°F. ItsunitisthedegreeFahrenheit(°F).
+Youcanseethat100Celsiusdegreesspanthesamerangeas180Fahrenheitdegrees.Thus,atemperaturedifferenceofone
+degree on the Celsius scale is 1.8 times as large as a difference of one degree on the Fahrenheit scale, or ΔT = 9 ΔT .
+F 5 C
+The definition of temperature in terms of molecular motion suggests that there should be a lowest possible temperature,
+where the average kinetic energy of molecules is zero (or the minimum allowed by quantum mechanics). Experiments
+confirmtheexistenceofsuchatemperature,calledabsolutezero.Anabsolutetemperaturescaleisonewhosezeropoint
+isabsolutezero.Suchscalesareconvenientinsciencebecauseseveralphysicalquantities,suchasthevolumeofanideal
+gas, are directly related to absolute temperature.
+TheKelvinscaleistheabsolutetemperaturescalethatiscommonlyusedinscience.TheSItemperatureunitisthekelvin,
+which is abbreviated K (not accompanied by a degree sign). Thus 0 K is absolute zero. The freezing and boiling points
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 11
+ofwaterare273.15Kand373.15K,respectively.Therefore,temperaturedifferencesarethesameinunitsofkelvinsand
+degrees Celsius, or ΔT C=ΔT K.
+The relationships between the three common temperature scales are shown in Figure 1.4. Temperatures on these scales
+can be converted using the equations inTable 1.1.
+Figure 1.4 Relationships between the Fahrenheit, Celsius, and Kelvin temperature scales are shown. The relative sizes
+of the scales are also shown.
+To convert from… Use this equation…
+Celsius to Fahrenheit T = 9T +32
+F 5 C
+Fahrenheit to Celsius T = 5⎛T −32⎞
+C 9⎝ F ⎠
+Celsius to Kelvin T =T +273.15
+K C
+Kelvin to Celsius T =T −273.15
+C K
+Fahrenheit to Kelvin T = 5⎛T −32⎞+273.15
+K 9⎝ F ⎠
+Kelvin to Fahrenheit T = 9⎛T −273.15⎞+32
+F 5⎝ K ⎠
+Table 1.1Temperature Conversions
+To convert between Fahrenheit and Kelvin, convert to Celsius as an intermediate step.
+Example 1.1
+Converting between Temperature Scales: Room Temperature
+“Roomtemperature”isgenerallydefinedinphysicstobe 25°C.(a)Whatisroomtemperaturein °F?(b)What
+is it in K?
+Strategy
+Toanswerthesequestions,allweneedtodoischoosethecorrectconversionequationsandsubstitutetheknown
+values.
+Solution
+To convert from °C to °F, use the equation
+
+12 Chapter 1 | Temperature and Heat
+T = 9T +32.
+F 5 C
+Substitute the known value into the equation and solve:
+T = 9 (25°C)+32=77°F.
+F 5
+Similarly, we find that T =T +273.15=298K.
+K C
+The Kelvin scale is part of the SI system of units, so its actual definition is more complicated than the one given above.
+First,itisnotdefinedintermsofthefreezingandboilingpointsofwater,butintermsofthetriplepoint.Thetriplepoint
+is the unique combination of temperature and pressure at which ice, liquid water, and water vapor can coexist stably. As
+willbediscussedinthesectiononphasechanges,thecoexistenceisachievedbyloweringthepressureandconsequently
+the boiling point to reach the freezing point. The triple-point temperature is defined as 273.16 K. This definition has the
+advantage that although the freezing temperature and boiling temperature of water depend on pressure, there is only one
+triple-point temperature.
+Second, even with two points on the scale defined, different thermometers give somewhat different results for other
+temperatures. Therefore, a standard thermometer is required. Metrologists (experts in the science of measurement) have
+chosentheconstant-volumegasthermometerforthispurpose.Avesselofconstantvolumefilledwithgasissubjectedto
+temperaturechanges,andthemeasuredtemperatureisproportionaltothechangeinpressure.Using“TP”torepresentthe
+triple point,
+p
+T = p T TP .
+TP
+Theresultsdependsomewhatonthechoiceofgas,butthelessdensethegasinthebulb,thebettertheresultsfordifferent
+gasesagree.Iftheresultsareextrapolatedtozerodensity,theresultsagreequitewell,withzeropressurecorrespondingto
+a temperature of absolute zero.
+Constant-volumegasthermometersarebigandcometoequilibriumslowly,sotheyareusedmostlyasstandardstocalibrate
+other thermometers.
+Visitthissite(https://openstaxcollege.org/l/21consvolgasth)tolearnmoreabouttheconstant-volumegas
+thermometer.
+1.3 | Thermal Expansion
+Learning Objectives
+By the end of this section, you will be able to:
+• Answer qualitative questions about the effects of thermal expansion
+• Solve problems involving thermal expansion, including those involving thermal stress
+Theexpansionofalcoholinathermometerisoneofmanycommonlyencounteredexamplesofthermalexpansion,which
+isthechangeinsizeorvolumeofagivensystemasitstemperaturechanges.Themostvisibleexampleistheexpansionof
+hotair.Whenairisheated,itexpandsandbecomeslessdensethanthesurroundingair,whichthenexertsan(upward)force
+onthehotairandmakessteamandsmokerise,hotairballoonsfloat,andsoforth.Thesamebehaviorhappensinallliquids
+andgases,drivingnaturalheattransferupwardinhomes,oceans,andweathersystems,aswewilldiscussinanupcoming
+section. Solidsalsoundergothermal expansion. Railroad tracks andbridges,forexample, haveexpansion joints toallow
+them to freely expand and contract with temperature changes, as shown inFigure 1.5.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 13
+Figure 1.5 (a) Thermal expansion joints like these in the (b) Auckland Harbour Bridge in New Zealand allow bridges to
+change length without buckling. (credit: modification of works by “ŠJů”/Wikimedia Commons)
+What is the underlying cause of thermal expansion? As previously mentioned, an increase in temperature means an
+increase in the kinetic energy of individual atoms. In a solid, unlike in a gas, the molecules are held in place by forces
+from neighboring molecules; as we saw in Oscillations (http://cnx.org/content/m58360/latest/) , the forces can
+be modeled as in harmonic springs described by the Lennard-Jones potential. Energy in Simple Harmonic Motion
+(http://cnx.org/content/m58362/latest/#CNX_UPhysics_15_02_LennaJones) shows that such potentials are
+asymmetricalinthatthepotentialenergyincreasesmoresteeplywhenthemoleculesgetclosertoeachotherthanwhenthey
+getfartheraway.Thus,atagivenkineticenergy,thedistancemovedisgreaterwhenneighborsmoveawayfromeachother
+thanwhentheymovetowardeach other.Theresult isthat increased kinetic energy(increased temperature) increases the
+average distance between molecules—the substance expands.
+Formostsubstancesunderordinaryconditions,itisanexcellentapproximationthatthereisnopreferreddirection(thatis,
+thesolidis“isotropic”),andanincreaseintemperature increasesthesolid’ssizebyacertainfractionineachdimension.
+Therefore, if the solid is free to expand or contract, its proportions stay the same; only its overall size changes.
+Linear Thermal Expansion
+According to experiments, the dependence of thermal expansion on temperature, substance, and original length is
+summarized in the equation
+dL (1.1)
+=αL
+dT
+where ΔL isthechangeinlength L,ΔT isthechangeintemperature,and α isthecoefficientoflinearexpansion,
+a material property that varies slightly with temperature. As α is nearly constant and also very small, for practical
+purposes, we use the linear approximation:
+ΔL=αLΔT. (1.2)
+Table 1.2 lists representative values of the coefficient of linear expansion. As noted earlier, ΔT is the same whether it
+isexpressedinunitsofdegreesCelsiusorkelvins;thus, α mayhaveunitsof 1/°C or1/Kwiththesamevalueineither
+case. Approximating α as a constant is quite accurate for small changes in temperature and sufficient for most practical
+purposes, even for large changes in temperature. We examine this approximation more closely in the next example.
+
+14 Chapter 1 | Temperature and Heat
+Material Coefficient of Linear Coefficient of Volume
+Expansion α(1/°C) Expansion β(1/°C)
+Solids
+Aluminum −6 −6
+25×10 75×10
+Brass −6 −6
+19×10 56×10
+Copper −6 −6
+17×10 51×10
+Gold −6 −6
+14×10 42×10
+Iron or steel −6 −6
+12×10 35×10
+Invar (nickel-iron alloy) −6 −6
+0.9×10 2.7×10
+Lead −6 −6
+29×10 87×10
+Silver −6 −6
+18×10 54×10
+Glass (ordinary) −6 −6
+9×10 27×10
+Glass (Pyrex®) −6 −6
+3×10 9×10
+Quartz −6 −6
+0.4×10 1×10
+Concrete, brick −6 −6
+~12×10 ~36×10
+Marble (average) −6 −6
+2.5×10 7.5×10
+Liquids
+Ether −6
+1650×10
+Ethyl alcohol −6
+1100×10
+Gasoline −6
+950×10
+Glycerin −6
+500×10
+Mercury −6
+180×10
+Water −6
+210×10
+Gases
+Air and most other gases at −6
+3400×10
+atmospheric pressure
+Table 1.2Thermal Expansion Coefficients
+Thermalexpansionisexploitedinthebimetallicstrip(Figure1.6).Thisdevicecanbeusedasathermometerifthecurving
+stripisattachedtoapointeronascale.Itcanalsobeusedtoautomaticallycloseoropenaswitchatacertaintemperature,
+as in older or analog thermostats.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 15
+Figure 1.6 The curvature of a bimetallic strip depends on
+temperature. (a) The strip is straight at the starting temperature,
+where its two components have the same length. (b) At a higher
+temperature, this strip bends to the right, because the metal on
+the left has expanded more than the metal on the right. At a
+lower temperature, the strip would bend to the left.
+Example 1.2
+Calculating Linear Thermal Expansion
+The main span of San Francisco’s Golden Gate Bridge is 1275 m long at its coldest. The bridge is exposed to
+temperaturesrangingfrom –15°C to 40°C.Whatisitschangeinlengthbetweenthesetemperatures?Assume
+that the bridge is made entirely of steel.
+Strategy
+Use the equation for linear thermal expansion ΔL=αLΔT to calculate the change in length, ΔL. Use the
+coefficient of linear expansion α for steel from Table 1.2, and note that the change in temperature ΔT is
+55°C.
+Solution
+Substitute all of the known values into the equation to solve for ΔL:
+⎛ −6⎞
+ΔL=αLΔT = 12×10 (1275m)(55°C)=0.84m.
+⎝ °C ⎠
+Significance
+Although not large compared with the length of the bridge, this change in length is observable. It is generally
+spread over many expansion joints so that the expansion at each joint is small.
+Thermal Expansion in Two and Three Dimensions
+Unconstrainedobjectsexpandinalldimensions,asillustratedinFigure 1.7.Thatis,theirareasandvolumes,aswellas
+theirlengths,increasewithtemperature.Becausetheproportionsstaythesame,holesandcontainervolumesalsogetlarger
+withtemperature.Ifyoucutaholeinametalplate,theremainingmaterialwillexpandexactlyasitwouldifthepieceyou
+removed were still in place. The piece would get bigger, so the hole must get bigger too.
+Thermal Expansion in Two Dimensions
+For small temperature changes, the change in area ΔA is given by
+ΔA=2αAΔT (1.3)
+where ΔA isthechangeinarea A, ΔT isthechangeintemperature,and α isthecoefficientoflinearexpansion,

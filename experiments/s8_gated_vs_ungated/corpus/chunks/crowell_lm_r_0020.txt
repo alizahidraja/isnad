@@ -1,0 +1,295 @@
+# REAL PDF — crowell_lm.pdf, pages 131-137
+############################################################
+
+Weight
+In physics, an object’s weight, F , is defined as the earth’s
+W
+gravitational force on it. The SI unit of weight is therefore the
+Newton. People commonly refer to the kilogram as a unit of weight,
+butthekilogramisaunitofmass, notweight. Notethatanobject’s
+weight is not a fixed property of that object. Objects weigh more
+in some places than in others, depending on the local strength of
+gravity. It is their mass that always stays the same. A baseball
+pitcher who can throw a 90-mile-per-hour fastball on earth would
+not be able to throw any faster on the moon, because the ball’s
+inertia would still be the same.
+Positive and negative signs of force
+We’ll start by considering only cases of one-dimensional center-
+of-massmotioninwhichalltheforcesareparalleltothedirectionof
+motion, i.e., either directly forward or backward. In one dimension,
+plus and minus signs can be used to indicate directions of forces, as
+showninfigurec. Wecanthenrefergenericallytoadditionofforces,
+c/Forces are applied to a
+ratherthanhavingtospeaksometimesofadditionandsometimesof
+saxophone. In this example,
+subtraction. We add the forces shown in the figure and get 11 N. In
+positive signs have been used
+general, weshouldchooseaone-dimensionalcoordinatesystemwith consistently for forces to the
+its x axis parallel the direction of motion. Forces that point along right, and negative signs for
+the positive x axis are positive, and forces in the opposite direction forces to the left. (The forces
+are negative. Forces that are not directly along the x axis cannot be are being applied to different
+placesonthesaxophone, butthe
+immediately incorporated into this scheme, but that’s OK, because
+numericalvalueofaforcecarries
+we’re avoiding those cases for now.
+noinformationaboutthat.)
+Discussion questions
+A In chapter 0, I defined 1 N as the force that would accelerate a
+1-kgmassfromrestto1m/sin1s. Anticipatingthefollowingsection,you
+mightguessthat2Ncouldbedefinedastheforcethatwouldaccelerate
+thesamemasstotwicethespeed,ortwicethemasstothesamespeed.
+Isthereaneasierwaytodefine2Nbasedonthedefinitionof1N?
+4.2 Newton’s first law
+We are now prepared to make a more powerful restatement of the
+principle of inertia.1
+Newton’s first law
+If the total force acting on an object is zero, its center of mass
+continues in the same state of motion.
+In other words, an object initially at rest is predicted to remain
+at rest if the total force acting on it is zero, and an object in motion
+1Page81listsplacesinthisbookwherewedescribeexperimentaltestsofthe
+principle of inertia and Newton’s first law.
+Section 4.2 Newton’s first law 131
+
+remainsinmotionwiththesamevelocityinthesamedirection. The
+converse of Newton’s first law is also true: if we observe an object
+moving with constant velocity along a straight line, then the total
+force on it must be zero.
+In a future physics course or in another textbook, you may en-
+counter the term “net force,” which is simply a synonym for total
+force.
+What happens if the total force on an object is not zero? It
+accelerates. Numericalpredictionoftheresultingaccelerationisthe
+topic of Newton’s second law, which we’ll discuss in the following
+section.
+This is the first of Newton’s three laws of motion. It is not
+important to memorize which of Newton’s three laws are numbers
+one, two, and three. If a future physics teacher asks you something
+like, “Which of Newton’s laws are you thinking of?,” a perfectly
+acceptable answer is “The one about constant velocity when there’s
+zero total force.” The concepts are more important than any spe-
+cific formulation of them. Newton wrote in Latin, and I am not
+aware of any modern textbook that uses a verbatim translation of
+his statement of the laws of motion. Clear writing was not in vogue
+in Newton’s day, and he formulated his three laws in terms of a con-
+cept now called momentum, only later relating it to the concept of
+force. Nearly all modern texts, including this one, start with force
+and do momentum later.
+An elevator example 1
+.Anelevatorhasaweightof5000N.Comparetheforcesthatthe
+cablemustexerttoraiseitatconstantvelocity,loweritatconstant
+velocity, and just keep it hanging.
+. In all three cases the cable must pull up with a force of exactly
+5000 N. Most people think you’d need at least a little more than
+5000Ntomakeitgoup,andalittlelessthan5000Ntoletitdown,
+but that’s incorrect. Extra force from the cable is only necessary
+forspeedingthecarupwhenitstartsgoinguporslowingitdown
+whenitfinishesgoingdown. Decreasedforceisneededtospeed
+the car up when it gets going down and to slow it down when it
+finishes going up. But when the elevator is cruising at constant
+velocity, Newton’s first law says that you just need to cancel the
+force of the earth’s gravity.
+Tomanystudents, thestatementintheexamplethatthecable’s
+upward force “cancels” the earth’s downward gravitational force im-
+plies that there has been a contest, and the cable’s force has won,
+vanquishing the earth’s gravitational force and making it disappear.
+That is incorrect. Both forces continue to exist, but because they
+add up numerically to zero, the elevator has no center-of-mass ac-
+celeration. We know that both forces continue to exist because they
+both have side-e↵ects other than their e↵ects on the car’s center-of-
+132 Chapter 4 Force and motion
+
+mass motion. The force acting between the cable and the car con-
+tinues to produce tension in the cable and keep the cable taut. The
+earth’s gravitational force continues to keep the passengers (whom
+we are considering as part of the elevator-object) stuck to the floor
+and to produce internal stresses in the walls of the car, which must
+hold up the floor.
+Terminal velocity for falling objects example 2
+.Anobjectlikeafeatherthatisnotdenseorstreamlineddoesnot
+fall with constant acceleration, because air resistance is nonneg-
+ligible. In fact, its acceleration tapers off to nearly zero within a
+fractionofasecond,andthefeatherfinishesdroppingatconstant
+speed (known as its terminal velocity). Why does this happen?
+.Newton’sfirstlawtellsusthatthetotalforceonthefeathermust
+have been reduced to nearly zero after a short time. There are
+two forces acting on the feather: a downward gravitational force
+from the planet earth, and an upward frictional force from the air.
+As the feather speeds up, the air friction becomes stronger and
+stronger, and eventually it cancels out the earth’s gravitational
+force, so the feather just continues with constant velocity without
+speeding up any more.
+The situation for a skydiver is exactly analogous. It’s just that the
+skydiver experiences perhaps a million times more gravitational
+force than the feather, and it is not until she is falling very fast
+that the force of air friction becomes as strong as the gravita-
+tional force. It takes her several seconds to reach terminal veloc-
+ity, which is on the order of a hundred miles per hour.
+More general combinations of forces
+It is too constraining to restrict our attention to cases where
+all the forces lie along the line of the center of mass’s motion. For
+one thing, we can’t analyze any case of horizontal motion, since
+any object on earth will be subject to a vertical gravitational force!
+For instance, when you are driving your car down a straight road,
+there are both horizontal forces and vertical forces. However, the
+vertical forces have no e↵ect on the center of mass motion, because
+the road’s upward force simply counteracts the earth’s downward
+gravitational force and keeps the car from sinking into the ground.
+Later in the book we’ll deal with the most general case of many
+forces acting on an object at any angles, using the mathematical
+technique of vector addition, but the following slight generalization
+of Newton’s first law allows us to analyze a great many cases of
+interest:
+Suppose that an object has two sets of forces acting on it, one
+set along the line of the object’s initial motion and another set per-
+pendicular to the first set. If both sets of forces cancel, then the
+object’s center of mass continues in the same state of motion.
+Section 4.2 Newton’s first law 133
+
+A passenger riding the subway example 3
+. Describe the forces acting on a person standing in a subway
+train that is cruising at constant velocity.
+. No force is necessary to keep the person moving relative to
+the ground. He will not be swept to the back of the train if the
+floor is slippery. There are two vertical forces on him, the earth’s
+downward gravitational force and the floor’s upward force, which
+cancel. There are no horizontal forces on him at all, so of course
+the total horizontal force is zero.
+Forces on a sailboat example 4
+.Ifasailboatiscruisingatconstantvelocitywiththewindcoming
+from directly behind it, what must be true about the forces acting
+on it?
+. The forces acting on the boat must be canceling each other
+out. The boat is not sinking or leaping into the air, so evidently
+the vertical forces are canceling out. The vertical forces are the
+downward gravitational force exerted by the planet earth and an
+upward force from the water.
+The air is making a forward force on the sail, and if the boat is
+not accelerating horizontally then the water’s backward frictional
+d/Example4.
+force must be canceling it out.
+ContrarytoAristotle,moreforceisnotneededinordertomaintain
+a higher speed. Zero total force is always needed to maintain
+constant velocity. Consider the following made-up numbers:
+boat moving at boat moving at
+a low, constant ahigh,constant
+velocity velocity
+forward force of 10,000 N 20,000 N
+the wind on the
+sail ...
+backwardforceof 10,000 N 20,000 N
+   
+the water on the
+hull ...
+total force on the 0 N 0 N
+boat ...
+The faster boat still has zero total force on it. The forward force
+on it is greater, and the backward force smaller (more negative),
+but that’s irrelevant because Newton’s first law has to do with the
+total force, not the individual forces.
+Thisexampleisquiteanalogoustotheoneaboutterminalvelocity
+of falling objects, since there is a frictional force that increases
+with speed. After casting off from the dock and raising the sail,
+theboatwillacceleratebriefly,andthenreachitsterminalvelocity,
+at which the water’s frictional force has become as great as the
+wind’s force on the sail.
+134 Chapter 4 Force and motion
+
+A car crash example 5
+. If you drive your car into a brick wall, what is the mysterious
+force that slams your face into the steering wheel?
+. Your surgeon has taken physics, so she is not going to believe
+your claim that a mysterious force is to blame. She knows that
+your face was just following Newton’s first law. Immediately after
+your car hit the wall, the only forces acting on your head were
+the same canceling-out forces that had existed previously: the
+earth’s downward gravitational force and the upward force from
+your neck. There were no forward or backward forces on your
+head, but the car did experience a backward force from the wall,
+so the car slowed down and your face caught up.
+Discussion questions
+A Newton said that objects continue moving if no forces are acting
+onthem,buthispredecessorAristotlesaidthataforcewasnecessaryto
+keepanobjectmoving. WhydoesAristotle’stheoryseemmoreplausible,
+even though we now believe it to be wrong? What insight was Aristotle
+missingaboutthereasonwhythingsseemtoslowdownnaturally? Give
+anexample.
+B Inthefigurewhatwouldhavetobetrueaboutthesaxophone’sinitial
+motion if the forces shown were to result in continued one-dimensional
+motionofitscenterofmass?
+C This figure requires an ever further generalization of the preceding
+discussion. Afterstudyingtheforces,whatdoesyourphysicalintuitiontell DiscussionquestionB.
+youwillhappen? Canyoustateinwordshowtogeneralizetheconditions
+forone-dimensionalmotiontoincludesituationslikethisone?
+4.3 Newton’s second law
+What about cases where the total force on an object is not zero,
+so that Newton’s first law doesn’t apply? The object will have an
+acceleration. The way we’ve defined positive and negative signs
+of force and acceleration guarantees that positive forces produce
+positive accelerations, and likewise for negative values. How much
+acceleration will it have? It will clearly depend on both the object’s DiscussionquestionC.
+mass and on the amount of force.
+Experiments with any particular object show that its acceler-
+ation is directly proportional to the total force applied to it. This
+mayseemwrong, sinceweknowofmanycaseswheresmallamounts
+of force fail to move an object at all, and larger forces get it going.
+This apparent failure of proportionality actually results from for-
+getting that there is a frictional force in addition to the force we
+apply to move the object. The object’s acceleration is exactly pro-
+portional to the total force on it, not to any individual force on it.
+In the absence of friction, even a very tiny force can slowly change
+the velocity of a very massive object.
+Section 4.3 Newton’s second law 135
+
+Experiments (e.g., the one described in example 11 on p. 140)
+also show that the acceleration is inversely proportional to the ob-
+ject’s mass, and combining these two proportionalities gives the fol-
+lowing way of predicting the acceleration of any object:
+Newton’s second law
+a = F /m,
+total
+where
+m is an object’s mass, a measure of its resistance
+to changes in its motion
+F is the sum of the forces acting on it, and
+total
+a is the acceleration of the object’s center of mass.
+Wearepresentlyrestrictedtothecasewheretheforcesofinterest
+are parallel to the direction of motion.
+We have already encountered the SI unit of force, which is the
+newton (N). It is designed so that the units in Newton’s second law
+all work out if we use SI units: m/s2 for acceleration and kg (not
+grams!) for mass.
+Rocket science example 6
+. The Falcon 9 launch vehicle, built and operated by the private
+company SpaceX, has mass m = 5.1 105 kg. At launch, it
+⇥
+has two forces acting on it: an upward thrust F = 5.9 106 N
+t
+⇥
+and a downward gravitational force of F = 5.0 106 N. Find its
+g
+⇥
+acceleration.
+. Let’s choose our coordinate system such that positive is up.
+Thenthedownwardforceofgravityisconsiderednegative. Using
+Newton’s second law,
+F
+total
+a =
+m
+F F
+t g
+=  
+m
+(5.9 106 N) (5.0 106 N)
+e/Example6 = ⇥
+5.1
+ 
+105 kg
+⇥
+⇥
+= 1.6 m/s2,
+where as noted above, units of N/kg (newtons per kilogram) are
+the same as m/s2.
+136 Chapter 4 Force and motion

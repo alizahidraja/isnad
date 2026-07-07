@@ -1,0 +1,265 @@
+# REAL PDF — openstax_vol2.pdf, pages 114-119
+############################################################
+
+104 Chapter 2 | The Kinetic Theory of Gases
+52. Thepartialpressureofcarbondioxideinthelungsis temperatureof1.5molofairfrom 25.0°C to 33.0°C at
+about470Pawhenthetotalpressureinthelungsis1.0atm. constant volume? Assume air is completely diatomic. (b)
+Whatpercentageoftheairmoleculesinthelungsiscarbon Repeattheproblemforthesamenumberofmolesofxenon,
+dioxide? Compare your result to the percentage of carbon Xe.
+dioxide in the atmosphere, about 0.033%.
+59. Asealed,rigidcontainerof0.560molofanunknown
+53. Dry air consists of approximately ideal gas at a temperature of 30.0°C is cooled to
+78%nitrogen, 21%oxygen, and1%argon bymole,with −40.0°C.Intheprocess,980Jofheatareremovedfrom
+traceamountsofothergases.Atankofcompresseddryair the gas. Is the gas monatomic, diatomic, or polyatomic?
+hasavolumeof1.76cubicfeetatagaugepressureof2200
+pounds per square inch and a temperature of 293 K. How
+60. A sample of neon gas (Ne, molar mass
+much oxygen does it contain in moles?
+M =20.2g/mol) atatemperatureof 13.0°C isputinto
+a steel container of mass 47.2 g that’s at a temperature of
+54. (a) Using data from the previous problem, find the
+−40.0°C.Thefinaltemperatureis−28.0°C.(Noheatis
+massofnitrogen,oxygen,andargonin1molofdryair.The
+molarmassof N is28.0g/mol,thatof O is32.0g/mol, exchangedwiththesurroundings,andyoucanneglectany
+2 2 changeinthevolumeofthecontainer.)Whatisthemassof
+and that of argon is 39.9 g/mol. (b) Dry air is mixed with
+the sample of neon?
+pentane (C H , molar mass 72.2 g/mol), an important
+5 12
+constituentofgasoline,inanair-fuelratioof15:1bymass 61. A steel container of mass 135 g contains 24.0 g of
+(roughly typical for car engines). Find the partial pressure ammonia, NH , which has a molar mass of 17.0 g/mol.
+3
+of pentane in this mixture at an overall pressure of 1.00
+Thecontainerandgasareinequilibriumat 12.0°C.How
+atm.
+much heat has to be removed to reach a temperature of
+−20.0°C ? Ignore the change in volume of the steel.
+55. (a)Giventhatairis 21% oxygen,findtheminimum
+atmospheric pressure that gives a relatively safe partial
+pressureofoxygenof0.16atm. (b)What istheminimum 62. Asealedroomhasavolumeof 24m 3.It’sfilledwith
+pressure that gives a partial pressure of oxygen above the air,whichmaybeassumedtobediatomic,atatemperature
+quicklyfatal level of0.06atm? (c)Theairpressureatthe
+of 24°C and a pressure of 9.83×104 Pa. A 1.00-kg
+summitofMountEverest(8848m)is0.334atm.Whyhave
+block of ice at its melting point is placed in the room.
+a few people climbed it without oxygen, while some who
+Assumethewallsoftheroomtransfernoheat.Whatisthe
+havetried,eventhoughtheyhadtrainedathighelevation,
+equilibrium temperature?
+had to turn back?
+63. Heliox,amixtureofheliumandoxygen,issometimes
+56. (a) If the partial pressure of water vapor is 8.05 torr,
+given to hospital patients who have trouble breathing,
+whatisthedewpoint? (760torr=1atm=101, 325Pa⎞
+⎠ becausethelowmassofheliummakesiteasiertobreathe
+(b)Onawarmdaywhentheairtemperatureis 35°C and than air. Suppose helium at 25°C is mixed with oxygen
+thedewpointis 25°C,whatarethepartialpressureofthe at 35°C tomakeamixturethatis 70% heliumbymole.
+water in the air and the relative humidity?
+What is the final temperature? Ignore any heat flow to or
+fromthesurroundings,andassumethefinalvolumeisthe
+sum of the initial volumes.
+2.3Heat Capacity and Equipartition of Energy
+57. To give a helium atom nonzero angular momentum 64. Professional divers sometimes use heliox, consisting
+requires about 21.2 eV of energy (that is, 21.2 eV is the of 79% helium and 21% oxygen by mole. Suppose a
+difference between the energies of the lowest-energy or perfectly rigid scuba tank with a volume of 11 L contains
+ground state and the lowest-energy state with angular
+heliox at an absolute pressure of 2.1×10 7 Pa at a
+momentum). The electron-volt or eV is defined as
+temperatureof 31°C.(a)Howmanymolesofheliumand
+1.60×10 −19 J. Find the temperature T where this
+howmanymolesofoxygenareinthetank?(b)Thediver
+amount of energy equals k
+B
+T/2. Does this explain why
+goes down to a point where the sea temperature is 27°C
+we can ignore the rotational energy of helium for most whileusinganegligibleamountofthemixture.Asthegas
+purposes?(Theresultsforothermonatomicgases,andfor inthetankreachesthisnewtemperature,howmuchheatis
+diatomicgasesrotatingaroundtheaxisconnectingthetwo removed from it?
+atoms, have comparable orders of magnitude.)
+65. In car racing, one advantage of mixing liquid nitrous
+58. (a) How much heat must be added to raise the oxide (N O) with air is that the boiling of the “nitrous”
+2
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 105
+absorbs latent heat of vaporization and thus cools the air with the units given on those axes.
+andultimately thefuel-airmixture,allowingmorefuel-air
+mixture to go into each cylinder. As a very rough look
+at this process, suppose 1.0 mol of nitrous oxide gas at
+its boiling point, −88°C, is mixed with 4.0 mol of air
+(assumed diatomic) at 30°C. What is the final
+temperatureofthemixture?Usethemeasuredheatcapacity
+of N O at 25°C,whichis 30.4J/mol°C.(Theprimary
+2
+advantageofnitrousoxideisthatitconsistsof1/3oxygen,
+whichismorethanaircontains,soitsuppliesmoreoxygen
+to burn the fuel. Another advantage is that its
+decompositionintonitrogenandoxygenreleasesenergyin
+the cylinder.)
+70. Using a numerical integration method such as
+Simpson’srule, findthe fraction ofmolecules inasample
+2.4Distribution of Molecular Speeds
+of oxygen gas at a temperature of 250 K that have speeds
+66. Inasampleofhydrogensulfide (M =34.1g/mol) at between100m/sand150m/s.Themolarmassofoxygen
+⎛O ⎞ is32.0g/mol.Aprecisiontotwosignificantdigitsis
+atemperature of 3.00×102 K, estimate theratioofthe ⎝ 2⎠
+enough.
+number of molecules that have speeds very close to v
+rms
+to the number that have speeds very close to 2v rms.
+71. Find (a) the most probable speed, (b) the average
+speed,and(c)thermsspeedfornitrogenmoleculesat295
+67. Using the approximation K.
+v 1+Δv
+∫ f(v)dv≈ f(v )Δv for small Δv, estimate the 72. Repeattheprecedingproblemfornitrogenmolecules
+1
+v
+1 at 2950 K.
+fraction of nitrogen molecules at a temperature of
+3.00×102 K thathavespeedsbetween290m/sand291 73. At what temperature is the average speed of carbon
+m/s. dioxide molecules (M =44.0g/mol) 510 m/s?
+68. Usingthemethodoftheprecedingproblem,estimate 74. Themostprobablespeedformoleculesofagasat296
+thefractionofnitricoxide(NO)moleculesatatemperature K is 263 m/s. What is the molar mass of the gas? (You
+of250Kthathaveenergiesbetween 3.45×10−21 J and might like to figure out what the gas is likely to be.)
+3.50×10−21 J.
+75. a)Atwhattemperaturedooxygenmoleculeshavethe
+same average speed as helium atoms (M =4.00g/mol)
+69. Bycountingsquaresinthefollowingfigure,estimate
+thefractionofargonatomsat T =300K thathavespeeds haveat300K?b)Whatistheanswertothesamequestion
+about most probable speeds? c) What is the answer to the
+between 600 m/s and 800 m/s. The curve is correctly
+same question about rms speeds?
+normalized.Thevalueofasquareisitslengthasmeasured
+on the x-axis times its height as measured on the y-axis,
+ADDITIONAL PROBLEMS
+76. In the deep space between galaxies, the density of airis 78%N , 21%O , and1%Ar,(b)Findthedensity
+2 2
+molecules (which are mostly single atoms) can be as low
+of the atmosphere on Venus, assuming that it’s
+as 10 6 atoms/m 3 , and the temperature is a frigid 2.7 96%CO and4%N ,withatemperatureof737Kanda
+2 2
+K. What is the pressure? (b) What volume (in m 3) is pressure of 92.0 atm.
+occupiedby1molofgas?(c)Ifthisvolumeisacube,what
+is the length of its sides in kilometers? 78. The air inside a hot-air balloon has a temperature
+of 370 K and a pressure of 101.3 kPa, the same as that
+77. (a) Find the density in SI units of air at a pressure of the air outside. Using the composition of air as
+of 1.00 atm and a temperature of 20°C, assuming that 78%N
+2
+, 21%O
+2
+, and1%Ar, find the density of the air
+
+106 Chapter 2 | The Kinetic Theory of Gases
+inside the balloon. a thunderstorm is coming, usually the humidity is high
+and the air pressure is low. Do those conditions give an
+79. When an air bubble rises from the bottom to the top advantage or disadvantage to home-run hitters?
+of a freshwater lake, its volume increases by 80%. If the
+temperatures at the bottom and the top of the lake are 4.0 85. Themeanfreepathforheliumatacertaintemperature
+and 10 °C, respectively, how deep is the lake? and pressure is 2.10×10 −7 m. The radius of a helium
+atom can be taken as 1.10×10−11 m. What is the
+80. (a) Use the ideal gas equation to estimate the measureofthedensityofheliumunderthoseconditions(a)
+temperature at which 1.00 kg of steam (molar mass in molecules per cubic meter and (b) in moles per cubic
+M =18.0g/mol) at a pressure of 1.50×10 6 Pa meter?
+occupies a volume of 0.220m 3. (b) The van der Waals
+86. The mean free path for methane at a temperature
+constants for water are a=0.5537Pa·m 6 /mol2 and
+of 269 K and a pressure of 1.11×10 5 Pa is
+b=3.049×10 −5 m 3 /mol. Use the Van der Waals 4.81×10 −8 m. Findtheeffectiveradiusrofthemethane
+equationofstatetoestimatethetemperatureunderthesame
+molecule.
+conditions. (c) The actual temperature is 779 K. Which
+estimate is better?
+87. Inthechapteronfluidmechanics,Bernoulli’sequation
+for the flow of incompressible fluids was explained in
+81. One process for decaffeinating coffee uses carbon
+terms of changes affecting a small volume dV of fluid.
+dioxide (M =44.0g/mol) at a molar density of about Such volumes are a fundamental idea in the study of the
+14,600mol/m 3 andatemperatureofabout 60°C.(a)Is flow of compressible fluids such as gases as well. For the
+equations of hydrodynamics to apply, the mean free path
+CO a solid, liquid, gas, or supercritical fluid under those
+2 must be much less than the linear size of such a volume,
+conditions? (b) The van der Waals constants for carbon
+dioxide are a=0.3658Pa·m 6 /mol2 and a≈dV1/3 . Forairinthestratosphereatatemperatureof
+220 K and a pressure of 5.8 kPa, how big should a be for
+b=4.286×10 −5 m 3 /mol. Using the van der Waals it to be 100 times the mean free path? Take the effective
+equation,estimatethepressureof CO 2 atthattemperature radius of air molecules to be 1.88×10−11 m, which is
+and density. roughly correct for N .
+2
+82. On a winter day when the air temperature is 0°C,
+88. Findthetotalnumberofcollisionsbetweenmolecules
+the relative humidity is 50%. Outside air comes inside
+in1.00sin1.00Lofnitrogengasatstandardtemperature
+and is heated to a room temperature of 20°C. What is and pressure (0°C, 1.00 atm). Use 1.88×10 −10 m as
+therelativehumidityoftheairinsidetheroom.(Doesthis
+theeffectiveradiusofanitrogenmolecule.(Thenumberof
+problem show why inside air is so dry in winter?)
+collisionspersecondisthereciprocalofthecollisiontime.)
+Keep in mind that each collision involves two molecules,
+83. Onawarmdaywhentheairtemperatureis 30°C,a soifonemoleculecollidesonceinacertainperiodoftime,
+metal can is slowly cooled by adding bits of ice to liquid the collision of the molecule it hit cannot be counted.
+waterinit.Condensationfirstappearswhenthecanreaches
+15°C. What is the relative humidity of the air? 89. (a)Estimatethespecificheatcapacityofsodiumfrom
+theLawofDulongandPetit.Themolarmassofsodiumis
+23.0 g/mol. (b) What is the percent error of your estimate
+84. (a) People often think of humid air as “heavy.”
+Compare the densities of air with 0% relative humidity from the known value, 1230J/kg ·°C?
+and 100% relative humidity when both are at 1 atm and
+30°C. Assume that the dry air is an ideal gas composed 90. Asealed,perfectlyinsulatedcontainercontains0.630
+of molecules with a molar mass of 29.0 g/mol and the molofairat 20.0°C andanironstirringbarofmass40.0
+moist air is the same gas mixed with water vapor. (b) As g.Thestirringbarismagneticallydriventoakineticenergy
+discussed in the chapter on the applications of Newton’s of50.0Jandallowedtoslowdownbyairresistance.What
+laws,theairresistancefeltbyprojectilessuchasbaseballs is the equilibrium temperature?
+andgolfballsisapproximately F =CρAv2/2,where ρ
+D
+isthemassdensityoftheair,Aisthecross-sectionalareaof
+91. Find the ratio f(v p)/f(v rms) for hydrogen gas
+theprojectile,andCistheprojectile’sdragcoefficient.For (M =2.02g/mol) at a temperature of 77.0 K.
+afixedairpressure,describequalitativelyhowtherangeof
+a projectile changes with the relative humidity. (c) When
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 2 | The Kinetic Theory of Gases 107
+92. Unreasonable results. (a) Find the temperature of 93. Unreasonable results. (a) Find the average speed of
+0.360kgofwater,modeledasanidealgas,atapressureof hydrogensulfide, H S,moleculesatatemperatureof250
+2
+1.01×10 5 Pa ifithasavolumeof 0.615m 3.(b)What K. Its molar mass is 31.4 g/mol (b) The result isn’t very
+is unreasonable about this answer? How could you get a unreasonable,butwhyisitlessreliablethanthosefor,say,
+better answer? neon or nitrogen?
+CHALLENGE PROBLEMS
+94. An airtight dispenser for drinking water is ∞
+97. Verify the normalization equation ∫ f(v)dv=1.
+25cm×10cm in horizontal dimensions and 20 cm tall.
+0
+Ithasatapofnegligiblevolumethatopensatthelevelof
+In doing the integral, first make the substitution
+thebottomofthedispenser.Initially,itcontainswatertoa m v
+level 3.0 cm from the top and air at the ambient pressure, u= 2k T v= v p . This “scaling” transformation gives
+B
+1.00 atm, from there to the top. When the tap is opened,
+youallfeaturesoftheanswerexceptfortheintegral,which
+water will flow out until the gauge pressure at the bottom
+is a dimensionless numerical factor. You’ll need the
+of the dispenser, and thus at the opening of the tap, is 0.
+formula
+Whatvolumeofwaterflowsout?Assumethetemperature
+is constant, the dispenser is perfectly rigid, and the water
+∫
+∞ x2e−x2
+dx=
+π
+has a constant density of 1000kg/m 3. 0 4
+to find the numerical factor and verify the normalization.
+95. Eight bumper cars, each with a mass of 322 kg, are
+runninginaroom21.0mlongand13.0mwide.Theyhave
+k T
+no drivers, so they just bounce around on their own. The 98. Verify that v ¯ = π 8 B m . Make the same scaling
+rmsspeedofthecarsis2.50m/s.Repeatingthearguments
+transformation as in the preceding problem.
+ofPressure,Temperature,andRMSSpeed,findthe
+average force per unit length (analogous to pressure) that
+the cars exert on the walls. 99. Verify that v rms= v – 2= 3k m B T .
+2k T
+96. Verify that v p= m B .
+
+108 Chapter 2 | The Kinetic Theory of Gases
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

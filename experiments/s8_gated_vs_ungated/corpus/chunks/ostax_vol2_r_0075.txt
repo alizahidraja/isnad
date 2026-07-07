@@ -1,0 +1,262 @@
+# REAL PDF — openstax_vol2.pdf, pages 463-471
+############################################################
+
+Chapter 10 | Direct-Current Circuits 453
+10.3 | Kirchhoff's Rules
+Learning Objectives
+By the end of the section, you will be able to:
+• State Kirchhoff’s junction rule
+• State Kirchhoff’s loop rule
+• Analyze complex circuits using Kirchhoff’s rules
+We have just seen that some circuits may be analyzed by reducing a circuit to a single voltage source and an equivalent
+resistance. Many complex circuits cannot be analyzed with the series-parallel techniques developed in the preceding
+sections.Inthissection,weelaborateontheuseofKirchhoff’srulestoanalyzemorecomplexcircuits.Forexample,the
+circuitinFigure10.19isknownasamulti-loopcircuit,whichconsistsofjunctions.Ajunction,alsoknownasanode,is
+aconnectionofthreeormorewires.Inthiscircuit,thepreviousmethodscannotbeused,becausenotalltheresistorsarein
+clearseriesorparallelconfigurationsthatcanbereduced.Giveitatry.Theresistors R and R areinseriesandcanbe
+1 2
+reduced to an equivalent resistance. The same is true of resistors R and R . But what do you do then?
+4 5
+Even though this circuit cannot be analyzed using the methods already learned, two circuit analysis rules can be used to
+analyze any circuit, simple or complex. The rules are known as Kirchhoff’s rules, after their inventor Gustav Kirchhoff
+(1824–1887).
+Figure 10.19 This circuit cannot be reduced to a combination
+of series and parallel connections. However, we can use
+Kirchhoff’s rules to analyze it.
+Kirchhoff’s Rules
+• Kirchhoff’sfirstrule—thejunctionrule.Thesumofallcurrentsenteringajunctionmustequalthesumofall
+currents leaving the junction:
+(10.4)
+∑I =∑I .
+in out
+• Kirchhoff’s second rule—the loop rule. The algebraic sum of changes in potential around any closed circuit
+path (loop) must be zero:
+(10.5)
+∑V =0.
+We now provide explanations of these two rules, followed by problem-solving hints for applying them and a worked
+example that uses them.
+Kirchhoff’s First Rule
+Kirchhoff’sfirstrule(thejunctionrule)appliestothechargeenteringandleavingajunction(Figure 10.20).Asstated
+
+454 Chapter 10 | Direct-Current Circuits
+earlier,ajunction,ornode,isaconnectionofthreeormorewires.Currentistheflowofcharge,andchargeisconserved;
+thus, whatever charge flows into the junction must flow out.
+Figure 10.20 Charge must be conserved, so the sum of
+currents into a junction must be equal to the sum of currents out
+of the junction.
+Although it is an over-simplification, an analogy can be made with water pipes connected in a plumbing junction. If the
+wiresinFigure10.20werereplacedbywaterpipes,andthewaterwasassumedtobeincompressible,thevolumeofwater
+flowing into the junction must equal the volume of water flowing out of the junction.
+Kirchhoff’s Second Rule
+Kirchhoff’s second rule (the loop rule) applies to potential differences. The loop rule is stated in terms of potential V
+rather than potential energy, but the two are related since U =qV. In a closed loop, whatever energy is supplied by a
+voltagesource,theenergymustbetransferredintootherformsbythedevicesintheloop,sincetherearenootherwaysin
+which energy can be transferred into or out of the circuit. Kirchhoff’s loop rule states that the algebraic sum of potential
+differences,includingvoltagesuppliedbythevoltagesourcesandresistiveelements,inanyloopmustbeequaltozero.For
+example, consider a simple loop with no junctions, as inFigure 10.21.
+Figure 10.21 A simple loop with no junctions. Kirchhoff’s
+loop rule states that the algebraic sum of the voltage differences
+is equal to zero.
+Thecircuitconsistsofavoltagesourceandthreeexternalloadresistors.Thelabelsa,b,c,anddserveasreferences,and
+havenoothersignificance.Theusefulnessoftheselabelswillbecomeapparentsoon.TheloopisdesignatedasLoopabcda,
+andthelabelshelpkeeptrackofthevoltagedifferencesaswetravelaroundthecircuit.Startatpointaandtraveltopoint
+b.Thevoltageofthevoltagesourceisaddedtotheequationandthepotentialdropoftheresistor R issubtracted.From
+1
+pointbtoc,thepotentialdropacross R issubtracted.Fromctod,thepotentialdropacross R issubtracted.Frompoints
+2 3
+dtoa, nothing is done because there are no components.
+Figure10.22showsagraphofthevoltageaswetravelaroundtheloop.Voltageincreasesaswecrossthebattery,whereas
+voltagedecreasesaswetravelacrossaresistor.Thepotentialdrop,orchangeintheelectricpotential,isequaltothecurrent
+through the resistor times the resistance of the resistor. Since the wires have negligible resistance, the voltage remains
+constant as we cross the wires connecting the components.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 455
+Figure 10.22 A voltage graph as we travel around the circuit. The voltage
+increases as we cross the battery and decreases as we cross each resistor. Since
+the resistance of the wire is quite small, we assume that the voltage remains
+constant as we cross the wires connecting the components.
+Then Kirchhoff’s loop rule states
+V−IR −IR −IR =0.
+1 2 3
+The loop equation can be used to find the current through the loop:
+I = V = 12.00V =2.00A.
+R +R +R 1.00Ω+2.00Ω+3.00Ω
+1 2 2
+Thisloopcouldhavebeenanalyzedusingthepreviousmethods,butwewilldemonstratethepowerofKirchhoff’smethod
+in the next section.
+Applying Kirchhoff’s Rules
+ByapplyingKirchhoff’srules,wegenerate asetoflinearequationsthatallowustofindtheunknownvaluesincircuits.
+Thesemaybecurrents,voltages,orresistances.Eachtimearuleisapplied,itproducesanequation.Ifthereareasmany
+independent equations as unknowns, then the problem can be solved.
+Using Kirchhoff’s method of analysis requires several steps, as listed in the following procedure.
+Problem-Solving Strategy: Kirchhoff’s Rules
+1. Labelpointsinthecircuitdiagramusinglowercaselettersa,b,c,….Theselabelssimplyhelpwithorientation.
+2. Locate the junctions in the circuit. The junctions are points where three or more wires connect. Label each
+junction with the currents and directions into and out of it. Make sure at least one current points into the
+junction and at least one current points out of the junction.
+3. Choosetheloopsinthecircuit.Everycomponentmustbecontainedinatleastoneloop,butacomponentmay
+be contained in more than one loop.
+4. Apply the junction rule. Again, some junctions should not be included in the analysis. You need only use
+enough nodes to include every current.
+5. Apply the loop rule. Use the map inFigure 10.23.
+
+456 Chapter 10 | Direct-Current Circuits
+Figure 10.23 Each of these resistors and voltage sources is
+traversed fromatob. (a) When moving across a resistor in the same
+direction as the current flow, subtract the potential drop. (b) When
+moving across a resistor in the opposite direction as the current flow,
+add the potential drop. (c) When moving across a voltage source
+from the negative terminal to the positive terminal, add the potential
+drop. (d) When moving across a voltage source from the positive
+terminal to the negative terminal, subtract the potential drop.
+Let’sexaminesomestepsinthisproceduremoreclosely.Whenlocatingthejunctionsinthecircuit,donotbeconcerned
+about the direction of the currents. If the direction of current flow is not obvious, choosing any direction is sufficient as
+longasatleastonecurrentpointsintothejunctionandatleastonecurrentpointsoutofthejunction.Ifthearrowisinthe
+oppositedirectionoftheconventionalcurrentflow,theresultforthecurrentinquestionwillbenegativebuttheanswerwill
+still be correct.
+Thenumberofnodesdependsonthecircuit.Eachcurrentshouldbeincludedinanodeandthusincludedinatleastone
+junctionequation.Donotincludenodesthatarenotlinearlyindependent,meaningnodesthatcontainthesameinformation.
+Consider Figure 10.24. There are two junctions in this circuit: Junction b and Junction e. Points a, c, d, and f are not
+junctions, because ajunctionmusthavethreeormoreconnections. TheequationforJunctionbis I =I +I ,andthe
+1 2 3
+equation for Junctioneis I +I =I . These are equivalent equations, so it is necessary to keep only one of them.
+2 3 1
+Figure 10.24 At first glance, this circuit contains two
+junctions, Junctionband Junctione, but only one should be
+considered because their junction equations are equivalent.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 457
+Whenchoosingtheloopsinthecircuit,youneedenoughloopssothateachcomponentiscoveredonce,withoutrepeating
+loops. Figure 10.25 shows four choices for loops to solve a sample circuit; choices (a), (b), and (c) have a sufficient
+amount of loops to solve the circuit completely. Option (d) reflects more loops than necessary to solve the circuit.
+Figure 10.25 Panels (a)–(c) are sufficient for the analysis of the circuit. In each case, the two loops shown contain all
+the circuit elements necessary to solve the circuit completely. Panel (d) shows three loops used, which is more than
+necessary. Any two loops in the system will contain all information needed to solve the circuit. Adding the third loop
+provides redundant information.
+ConsiderthecircuitinFigure10.26(a).Letusanalyzethiscircuittofindthecurrentthrougheachresistor.First,labelthe
+circuit as shown in part (b).
+Figure 10.26 (a) A multi-loop circuit. (b) Label the circuit to help with orientation.
+Next,determinethejunctions.Inthiscircuit,pointsbandeeachhavethreewiresconnected,makingthemjunctions.Start
+toapplyKirchhoff’sjunctionrule ⎛∑I =∑I ⎞ bydrawingarrowsrepresentingthecurrentsandlabelingeacharrow,
+⎝ in out⎠
+asshowninFigure10.27(b).Junctionbshowsthat I =I +I andJunctioneshowsthat I +I =I .SinceJunction
+1 2 3 2 3 1
+
+458 Chapter 10 | Direct-Current Circuits
+egivesthesameinformationofJunctionb,itcanbedisregarded.Thiscircuithasthreeunknowns,soweneedthreelinearly
+independent equations to analyze it.
+Figure 10.27 (a) This circuit has two junctions, labeledband
+e, but only nodebis used in the analysis. (b) Labeled arrows
+represent the currents into and out of the junctions.
+Nextweneedtochoosetheloops.InFigure10.28,Loopabefaincludesthevoltagesource V andresistors R and R
+1 1 2
+.Theloopstartsatpointa,thentravelsthroughpointsb,e,andf,andthenbacktopointa.Thesecondloop,Loopebcde,
+starts at pointeand includes resistors R and R , and the voltage source V .
+2 3 2
+Figure 10.28 Choose the loops in the circuit.
+NowwecanapplyKirchhoff’slooprule,usingthemapinFigure 10.23.Startingatpointaandmovingtopointb,the
+resistor R iscrossedinthesamedirectionasthecurrentflow I ,sothepotentialdrop I R issubtracted.Movingfrom
+1 1 1 1
+pointbtopointe,theresistor R iscrossedinthesamedirection asthecurrentflow I sothepotential drop I R is
+2 2 2 2
+subtracted. Moving from point e to point f, the voltage source V is crossed from the negative terminal to the positive
+1
+terminal,so V isadded.Therearenocomponentsbetweenpointsfanda.Thesumofthevoltagedifferencesmustequal
+1
+zero:
+Loopabefa: −I R −I R +V =0orV =I R +I R .
+1 1 2 2 1 1 1 1 2 2
+Finally,wecheckloopebcde.Westartatpointeandmovetopointb,crossing R intheoppositedirectionasthecurrent
+2
+flow I .Thepotentialdrop I R isadded.Next,wecross R and R inthesamedirectionasthecurrentflow I and
+2 2 2 3 4 3
+subtractthepotentialdrops I R and I R . Notethatthecurrentisthesamethroughresistors R and R ,becausethey
+3 3 3 4 3 4
+areconnected inseries.Finally,thevoltagesourceiscrossedfromthepositiveterminal tothenegative terminal, andthe
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 459
+voltage source V is subtracted. The sum of these voltage differences equals zero and yields the loop equation
+2
+Loopebcde:I R −I ⎛R +R ⎞−V =0.
+2 2 3⎝ 3 4⎠ 2
+We now have three equations, which we can solve for the three unknowns.
+(1)Junctionb:I −I −I =0.
+1 2 3
+(2)Loopabefa: I R +I R =V .
+1 1 2 2 1
+(3)Loopebcde:I R −I ⎛R +R ⎞=V .
+2 2 3⎝ 3 4⎠ 2
+Tosolvethethreeequationsforthethreeunknowncurrents,startbyeliminatingcurrent I .FirstaddEq.(1)times R to
+2 2
+Eq. (2). The result is labeled as Eq. (4):
+⎛R +R ⎞I −R I =V .
+⎝ 1 2⎠ 1 2 3 1
+(4)6ΩI −3ΩI =24V.
+1 3
+Next, subtract Eq. (3) from Eq. (2). The result is labeled as Eq. (5):
+I R +I ⎛R +R ⎞=V −V .
+1 1 3⎝ 3 4⎠ 1 2
+(5)3ΩI +7ΩI =−5V.
+1 3
+We can solve Eqs. (4) and (5) for current I . Adding seven times Eq. (4) and three times Eq. (5) results in
+1
+51ΩI =153V, or I =3.00A. Using Eq. (4) results in I =−2.00A. Finally, Eq. (1) yields
+1 1 3
+I =I −I =5.00A. Onewaytocheckthatthesolutionsareconsistentistocheckthepowersuppliedbythevoltage
+2 1 3
+sources and the power dissipated by the resistors:
+P =I V +I V =130W,
+in 1 1 3 2
+P =I2R +I2R +I2R +I2R =130W.
+out 1 1 2 2 3 3 3 4
+Notethatthesolutionforthecurrent I isnegative.Thisisthecorrectanswer,butsuggeststhatthearroworiginallydrawn
+3
+in the junction analysis is the direction opposite of conventional current flow. The power supplied by the second voltage
+source is 58 W and not −58 W.
+Example 10.6
+Calculating Current by Using Kirchhoff’s Rules
+Find the currents flowing in the circuit inFigure 10.29.
+
+460 Chapter 10 | Direct-Current Circuits
+Figure 10.29 This circuit is combination of series and parallel
+configurations of resistors and voltage sources. This circuit cannot
+be analyzed using the techniques discussed inElectromotive
+Forcebut can be analyzed using Kirchhoff’s rules.
+Strategy
+This circuit is sufficiently complex that the currents cannot be found using Ohm’s law and the series-parallel
+techniques—itisnecessarytouseKirchhoff’srules.Currentshavebeenlabeled I , I , and I inthefigure,
+1 2 3
+andassumptionshavebeenmadeabouttheirdirections.Locationsonthediagramhavebeenlabeledwithletters
+athroughh.Inthesolution,weapplythejunctionandlooprules,seekingthreeindependentequationstoallow
+us to solve for the three unknown currents.
+Solution
+Applying the junction and loop rules yields the following three equations. We have three unknowns, so three
+equations are required.
+Junctionc: I +I =I .
+1 2 3
+Loopabcdefa: I ⎛R +R ⎞−I ⎛R +R +R ⎞=V −V .
+1⎝ 1 4⎠ 2⎝ 2 5 6⎠ 1 3
+Loopcdefc: I ⎛R +R +R ⎞+I R =V +V .
+2⎝ 2 5 6⎠ 3 3 2 3
+Simplify the equations by placing the unknowns on one side of the equations.
+Junctionc: I +I −I =0.
+1 2 3
+Loopabcdefa: I (3Ω)−I (8Ω)=0.5V−2.30V.
+1 2
+Loopcdefc: I (8Ω)+I (1Ω)=0.6V+2.30V.
+2 3
+Simplifytheequations.Thefirstloopequationcanbesimplifiedbydividingbothsidesby3.00.Thesecondloop
+equation can be simplified by dividing both sides by 6.00.
+Junctionc: I +I −I =0.
+1 2 3
+Loopabcdefa: I (3Ω)−I (8Ω)=−1.8V.
+1 2
+Loopcdefc: I (8Ω)+I (1Ω)=2.9V.
+2 3
+The results are
+I =0.20A, I =0.30A, I =0.50A.
+1 2 3
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

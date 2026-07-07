@@ -1,0 +1,296 @@
+# REAL PDF — openstax_vol2.pdf, pages 479-486
+############################################################
+
+Chapter 10 | Direct-Current Circuits 469
+10.5 | RC Circuits
+Learning Objectives
+By the end of the section, you will be able to:
+• Describe the charging process of a capacitor
+• Describe the discharging process of a capacitor
+• List some applications of RC circuits
+Whenyouuseaflashcamera,ittakesafewsecondstochargethecapacitorthatpowerstheflash.Thelightflashdischarges
+the capacitor in a tiny fraction of a second. Why does charging take longer than discharging? This question and several
+other phenomena that involve charging and discharging capacitors are discussed in this module.
+Circuits with Resistance and Capacitance
+An RC circuit is a circuit containing resistance and capacitance. As presented in Capacitance, the capacitor is an
+electrical component that stores electric charge, storing energy in an electric field.
+Figure 10.38(a)showsasimpleRCcircuitthatemploysadc(directcurrent)voltagesource ε,aresistorR,acapacitor
+C,andatwo-positionswitch.Thecircuitallowsthecapacitortobechargedordischarged,dependingonthepositionofthe
+switch.WhentheswitchismovedtopositionA,thecapacitorcharges,resultinginthecircuitinpart(b).Whentheswitch
+is moved to positionB, the capacitor discharges through the resistor.
+Figure 10.38 (a) AnRCcircuit with a two-pole switch that can be used to charge and discharge a capacitor. (b) When the
+switch is moved to positionA, the circuit reduces to a simple series connection of the voltage source, the resistor, the capacitor,
+and the switch. (c) When the switch is moved to positionB, the circuit reduces to a simple series connection of the resistor, the
+capacitor, and the switch. The voltage source is removed from the circuit.
+Charging a Capacitor
+WecanuseKirchhoff’sloopruletounderstandthechargingofthecapacitor.Thisresultsintheequation ε−V R−V c=0.
+This equation can be used to model the charge as a function of time as the capacitor charges. Capacitance is defined as
+q
+C=q/V, so the voltage across the capacitor is V C=
+C
+. Using Ohm’s law, the potential drop across the resistor is
+V R=IR, and the current is defined as I =dq/dt.
+ε−V R−V c=0,
+q
+ε−IR− =0,
+C
+dq q
+ε−R − =0.
+dt C
+This differential equation can be integrated to find an equation for the charge on the capacitor as a function of time.
+
+470 Chapter 10 | Direct-Current Circuits
+dq q
+ε−R − =0,
+dt C
+dq εC−q
+= ,
+dt RC
+q
+t
+⌠ dq = 1 ∫dt.
+⌡
+εC−q RC
+0
+0
+Let u=εC−q, then du=−dq. The result is
+q
+t
+− ⌠d u u = R 1 C ∫dt,
+⌡
+0
+0
+ln
+⎛εC−q⎞
+= − 1 t,
+⎝ εC ⎠ RC
+t
+εC−q =e − RC .
+εC
+Simplifying results in an equation for the charge on the charging capacitor as a function of time:
+q(t)=Cε ⎛ ⎜1−e − R t C ⎞ ⎟=Q ⎛ 1−e −τ t⎞ . (10.8)
+⎝ ⎠
+⎝ ⎠
+AgraphofthechargeonthecapacitorversustimeisshowninFigure10.39(a).Firstnotethatastimeapproachesinfinity,
+theexponentialgoestozero,sothechargeapproachesthemaximumcharge Q=Cε andhasunitsofcoulombs.Theunits
+ofRCare seconds, units of time. This quantity is known as thetime constant:
+τ=RC. (10.9)
+Attime t=τ=RC,thechargeisequalto 1−e−1=1−0.368=0.632 ofthemaximumcharge Q=Cε.Noticethat
+thetimeratechangeofthechargeistheslopeatapointofthechargeversustimeplot.Theslopeofthegraphislargeat
+time t=0.0s and approaches zero as time increases.
+As the charge on the capacitor increases, the current through the resistor decreases, as shown in Figure 10.39(b). The
+current through the resistor can be found by taking the time derivative of the charge.
+I(t)= dq = d ⎡ ⎢Cε ⎛ ⎜1−e − R t C ⎞ ⎟ ⎤ ⎥,
+dt dt
+⎣ ⎝ ⎠⎦
+t t t
+I(t)=Cε ⎛ ⎝R 1 C ⎞ ⎠ e − RC = R ε e − RC =I o e − RC ,
+I(t)=I e−t/τ . (10.10)
+0
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 471
+ε
+Attime t=0.00s, thecurrentthroughtheresistoris I = .Astimeapproachesinfinity,thecurrentapproacheszero.
+0 R
+At time t=τ, the current through the resistor is I(t=τ)=I e−1=0.368I .
+0 0
+Figure 10.39 (a) Charge on the capacitor versus time as the capacitor charges. (b) Current through the resistor versus
+time. (c) Voltage difference across the capacitor. (d) Voltage difference across the resistor.
+Figure 10.39(c) and Figure 10.39(d) show the voltage differences across the capacitor and the resistor, respectively.
+As the charge on the capacitor increases, the current decreases, as does the voltage difference across the resistor
+V R(t)=⎛
+⎝
+I
+0
+R⎞
+⎠
+e−t/τ =εe−t/τ . The voltage difference across the capacitor increases asV C(t)=ε⎛
+⎝
+1−e−t/τ⎞
+⎠
+.
+Discharging a Capacitor
+WhentheswitchinFigure 10.38(a)ismovedtopositionB,thecircuitreducestothecircuitinpart(c),andthecharged
+capacitorisallowedtodischargethroughtheresistor.Agraphofthechargeonthecapacitorasafunctionoftimeisshown
+inFigure 10.40(a).UsingKirchhoff’sloopruletoanalyzethecircuitasthecapacitordischargesresultsintheequation
+q dq q
+−V R−V c=0, which simplifies to IR+
+C
+=0. Using the definition of current
+dt
+R= −
+C
+and integrating the loop
+equation yields an equation for the charge on the capacitor as a function of time:
+q(t)=Qe−t/τ
+.
+(10.11)
+Here, Q is the initial charge on the capacitor and τ=RC is the time constant of the circuit. As shown in the graph, the
+charge decreases exponentially from the initial charge, approaching zero as time approaches infinity.
+The current as a function of time can be found by taking the time derivative of the charge:
+
+472 Chapter 10 | Direct-Current Circuits
+I(t)= − Q e−t/τ . (10.12)
+RC
+Thenegativesignshowsthatthecurrentflowsintheoppositedirectionofthecurrentfoundwhenthecapacitorischarging.
+Figure10.40(b)showsanexampleofaplotofchargeversustimeandcurrentversustime.Aplotofthevoltagedifference
+acrossthecapacitorandthevoltagedifferenceacrosstheresistorasafunctionoftimeareshowninparts(c)and(d)ofthe
+figure. Note that the magnitudes of the charge, current, and voltage all decrease exponentially, approaching zero as time
+increases.
+Figure 10.40 (a) Charge on the capacitor versus time as the capacitor discharges. (b) Current through the resistor versus
+time. (c) Voltage difference across the capacitor. (d) Voltage difference across the resistor.
+Now we can explain why the flash camera mentioned at the beginning of this section takes so much longer to charge
+thandischarge:Theresistancewhilechargingissignificantlygreaterthanwhiledischarging.Theinternalresistanceofthe
+batteryaccountsformostoftheresistancewhilecharging.Asthebatteryages,theincreasinginternalresistancemakesthe
+charging process even slower.
+Example 10.8
+The Relaxation Oscillator
+One application of an RC circuit is the relaxation oscillator, as shown below. The relaxation oscillator consists
+of a voltage source, a resistor, a capacitor, and a neon lamp. The neon lamp acts like an open circuit (infinite
+resistance)untilthepotentialdifferenceacrosstheneonlampreachesaspecificvoltage.Atthatvoltage,thelamp
+actslikeashortcircuit(zeroresistance),andthecapacitordischargesthroughtheneonlampandproduceslight.
+Intherelaxationoscillatorshown,thevoltagesourcechargesthecapacitoruntilthevoltageacrossthecapacitor
+is80V.Whenthishappens,theneoninthelampbreaksdownandallowsthecapacitortodischargethroughthe
+lamp, producing a bright flash. After the capacitor fully discharges through the neon lamp, it begins to charge
+again,andtheprocessrepeats.Assumingthatthetimeittakesthecapacitortodischargeisnegligible,whatisthe
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 473
+time interval between flashes?
+Strategy
+The time period can be found from considering the equation V C(t)=ε⎛
+⎝
+1−e−t/τ⎞
+⎠
+, whereτ=(R+r)C.
+Solution
+The neon lamp flashes when the voltage across the capacitor reaches 80 V. The RC time constant is equal to
+τ=(R+r)C=(101Ω) ⎛ 50×10 −3 F ⎞ =5.05s. We can solve the voltage equation for the time it takes the
+⎝ ⎠
+capacitor to reach 80 V:
+V C(t) = ε⎛
+⎝
+1−e−t/τ⎞
+⎠
+,
+e−t/τ
+= 1−
+V
+C
+ε
+(t)
+,
+ln
+⎛
+⎝
+e−t/τ⎞
+⎠ = ln
+⎛
+⎝ 1−
+V C
+ε
+(t)⎞
+⎠ ,
+t = −τln ⎛ ⎝ 1− V C ε (t)⎞ ⎠ =−5.05s·ln ⎛ ⎝ 1− 1 8 0 0 0 V V ⎞ ⎠ =8.13s.
+Significance
+Oneapplicationoftherelaxationoscillatorisforcontrollingindicatorlightsthatflashatafrequencydetermined
+by the values for R and C. In this example, the neon lamp will flash every 8.13 seconds, a frequency of
+f = 1 = 1 =0.123Hz. The relaxation oscillator has many other practical uses. It is often used in
+T 8.13s
+electronic circuits, where the neon lamp is replaced by a transistor or a device known as a tunnel diode. The
+description of the transistor and tunnel diode is beyond the scope of this chapter, but you can think of them as
+voltagecontrolledswitches.Theyarenormallyopenswitches,butwhentherightvoltageisapplied,theswitch
+closesandconducts.The“switch”canbeusedtoturnonanothercircuit,turnonalight,orrunasmallmotor.A
+relaxation oscillator can be used to make the turn signals of your car blink or your cell phone to vibrate.
+RCcircuitshavemanyapplications.Theycanbeusedeffectivelyastimersforapplicationssuchasintermittentwindshield
+wipers,pacemakers,andstrobelights.Somemodelsofintermittentwindshieldwipersuseavariableresistortoadjustthe
+interval between sweeps of the wiper. Increasing the resistance increases the RC time constant, which increases the time
+between the operation of the wipers.
+Anotherapplicationisthepacemaker.Theheartrateisnormallycontrolledbyelectricalsignals,whichcausethemuscles
+of the heart to contract and pump blood. When the heart rhythm is abnormal (the heartbeat is too high or too low), pace
+makerscanbeusedtocorrectthisabnormality.Pacemakershavesensorsthatdetectbodymotionandbreathingtoincrease
+theheartrateduringphysicalactivities,thusmeetingtheincreasedneedforbloodandoxygen,andanRCtimingcircuitcan
+be used to control the time between voltage signals to the heart.
+Lookingaheadtothestudyofaccircuits(Alternating-CurrentCircuits),acvoltagesvaryassinefunctionswithspecific
+frequencies.Periodicvariationsinvoltage,orelectricsignals,areoftenrecordedbyscientists.Thesevoltagesignalscould
+comefrommusicrecordedbyamicrophoneoratmosphericdatacollectedbyradar.Occasionally,thesesignalscancontain
+
+474 Chapter 10 | Direct-Current Circuits
+unwanted frequencies known as “noise.”RCfilters can be used to filter out the unwanted frequencies.
+Inthestudyofelectronics,apopulardeviceknownasa555timerprovidestimedvoltagepulses.Thetimebetweenpulses
+is controlled by anRCcircuit. These are just a few of the countless applications ofRCcircuits.
+Example 10.9
+Intermittent Windshield Wipers
+A relaxation oscillator is used to control a pair of windshield wipers. The relaxation oscillator consists of a
+10.00-mF capacitor and a 10.00-kΩ variable resistor known as a rheostat. A knob connected to the variable
+resistor allows the resistance to be adjusted from 0.00Ω to 10.00kΩ. The output of the capacitor is used to
+controlavoltage-controlledswitch.Theswitchisnormallyopen,butwhentheoutputvoltagereaches10.00V,
+the switch closes, energizing an electric motor and discharging the capacitor. The motor causes the windshield
+wiperstosweeponceacrossthewindshieldandthecapacitorbeginstochargeagain.Towhatresistanceshould
+the rheostat be adjusted for the period of the wiper blades be 10.00 seconds?
+Strategy
+Theresistanceconsiderstheequation V (t)=V⎛ 1−e−t/τ⎞ , where τ=RC. Thecapacitance,outputvoltage,
+out ⎝ ⎠
+and voltage of the battery are given. We need to solve this equation for the resistance.
+Solution
+Theoutputvoltagewillbe10.00Vandthevoltageofthebatteryis12.00V.Thecapacitanceisgivenas10.00
+mF. Solving for the resistance yields
+V (t) = V⎛ 1−e−t/τ⎞ ,
+out ⎝ ⎠
+e−t/RC = 1−
+V
+out
+(t)
+,
+V
+ln ⎛e−t/RC⎞ = ln ⎛ 1− V out (t)⎞ ,
+⎝ ⎠ ⎝ V ⎠
+− t = ln ⎛ 1− V out (t)⎞ ,
+RC ⎝ V ⎠
+R = −t = −10.00s =558.11Ω.
+Cln ⎛ ⎝ 1− VC V (t)⎞ ⎠ 10×10 −3 Fln ⎛ ⎝ 1−1 1 0 2 V V ⎞ ⎠
+Significance
+Increasing the resistance increases the time delay between operations of the windshield wipers. When the
+resistanceiszero,thewindshieldwipersruncontinuously.Atthemaximumresistance,theperiodoftheoperation
+of the wipers is:
+t=−RCln ⎛ 1− V out (t)⎞ =− ⎛ 10×10 −3 F ⎞⎛ 10×10 3 Ω ⎞ ln ⎛ 1− 10V⎞ =179.18s=2.98min.
+⎝ V ⎠ ⎝ ⎠⎝ ⎠ ⎝ 12V⎠
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 475
+TheRCcircuithasthousandsofusesandisaveryimportantcircuittostudy.Notonlycanitbeusedtotimecircuits,itcan
+alsobeusedtofilteroutunwantedfrequenciesinacircuitandusedinpowersupplies,liketheoneforyourcomputer,to
+help turn ac voltage to dc voltage.
+10.6 | Household Wiring and Electrical Safety
+Learning Objectives
+By the end of the section, you will be able to:
+• List the basic concepts involved in house wiring
+• Define the terms thermal hazard and shock hazard
+• Describe the effects of electrical shock on human physiology and their relationship to the
+amount of current through the body
+• Explain the function of fuses and circuit breakers
+Electricitypresentstwoknownhazards:thermalandshock.Athermalhazardisoneinwhichanexcessiveelectriccurrent
+causes undesired thermal effects, such as starting a fire in the wall of a house. A shock hazard occurs when an electric
+currentpassesthroughaperson.Shocksrangeinseverityfrompainful,butotherwiseharmless,toheart-stoppinglethality.
+Inthissection,weconsiderthesehazardsandthevariousfactorsaffectingtheminaquantitativemanner.Wealsoexamine
+systems and devices for preventing electrical hazards.
+Thermal Hazards
+Electricpowercausesundesiredheatingeffectswheneverelectricenergyisconvertedintothermalenergyataratefaster
+thanitcanbesafelydissipated.Aclassicexampleofthisistheshortcircuit,alow-resistancepathbetweenterminalsofa
+voltagesource.Anexample ofashortcircuit isshowninFigure 10.41.Atoasterispluggedintoacommonhousehold
+electricaloutlet.Insulationonwiresleadingtoanappliancehaswornthrough,allowingthetwowirestocomeintocontact,
+or “short.” As a result, thermal energy can quickly raise the temperature of surrounding materials, melting the insulation
+and perhaps causing a fire.
+Thecircuitdiagramshowsasymbolthatconsistsofasinewaveenclosedinacircle.Thissymbolrepresentsanalternating
+current (ac) voltage source. In an ac voltage source, the voltage oscillates between a positive and negative maximum
+amplitude. Up to now, we have been considering direct current (dc) voltage sources, but many of the same concepts are
+applicable to ac circuits.
+Figure 10.41 A short circuit is an undesired low-resistance path across a voltage source. (a) Worn insulation on the wires of
+a toaster allow them to come into contact with a low resistancer. Since P=V2/r, thermal power is created so rapidly that
+the cord melts or burns. (b) A schematic of the short circuit.
+Another serious thermal hazard occurs when wires supplying power to an appliance are overloaded. Electrical wires and
+appliances are often rated for the maximum current they can safely handle. The term “overloaded” refers to a condition
+wherethecurrentexceedstheratedmaximumcurrent.Ascurrentflowsthroughawire,thepowerdissipatedinthesupply
+wiresis P=I2R , where R istheresistanceofthewiresandIisthecurrentflowingthroughthewires.IfeitherIor
+W W

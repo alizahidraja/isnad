@@ -1,0 +1,216 @@
+# REAL PDF — openstax_vol2.pdf, pages 570-576
+############################################################
+
+560 Chapter 12 | Sources of Magnetic Fields
+and
+µ NI (12.33)
+B= 0 (within the toroid).
+2πr
+Themagneticfieldisdirectedinthecounterclockwisedirectionforthewindingsshown.Whenthecurrentinthecoilsis
+reversed, the direction of the magnetic field also reverses.
+The magnetic field inside a toroid is not uniform, as it varies inversely with the distance r from the axis OO’. However,
+if the central radius R (the radius midway between the inner and outer radii of the toroid) is much larger than the cross-
+sectionaldiameterofthecoilsr,thevariationisfairlysmall,andthemagnitudeofthemagneticfieldmaybecalculatedby
+Equation 12.33where r =R.
+12.7 | Magnetism in Matter
+Learning Objectives
+By the end of this section, you will be able to:
+• Classify magnetic materials as paramagnetic, diamagnetic, or ferromagnetic, based on their
+response to a magnetic field
+• Sketch how magnetic dipoles align with the magnetic field in each type of substance
+• Define hysteresis and magnetic susceptibility, which determines the type of magnetic material
+Whyarecertainmaterialsmagneticandothersnot?Andwhydocertainsubstancesbecomemagnetizedbyafield,whereas
+others are unaffected? To answer such questions, we need an understanding of magnetism on a microscopic level.
+Withinanatom,everyelectrontravelsinanorbitandspinsonaninternalaxis.Bothtypesofmotionproducecurrentloops
+andthereforemagneticdipoles.Foraparticularatom,thenetmagneticdipolemomentisthevectorsumofthemagnetic
+dipolemoments.Valuesof µ forseveraltypesofatomsaregiveninTable12.1.Noticethatsomeatomshaveazeronet
+dipole moment and that the magnitudes of the nonvanishing moments are typically 10 −23 A·m2.
+Atom Magnetic Moment ⎛ ⎝10 −24 A·m 2⎞ ⎠
+H 9.27
+He 0
+Li 9.27
+O 13.9
+Na 9.27
+S 13.9
+Table 12.1Magnetic Moments of Some Atoms
+Ahandfulofmatterhasapproximately 10 26 atomsandions,eachwithitsmagneticdipolemoment.Ifnoexternalmagnetic
+fieldispresent,themagneticdipolesarerandomlyoriented—asmanyarepointedupasdown,asmanyarepointedeastas
+west,andsoon.Consequently,thenetmagneticdipolemomentofthesampleiszero.However,ifthesampleisplacedin
+amagneticfield,thesedipolestendtoalignwiththefield(seeEquation 12.14),andthisalignmentdetermineshowthe
+samplerespondstothefield.Onthebasisofthisresponse,amaterialissaidtobeeitherparamagnetic,ferromagnetic,or
+diamagnetic.
+Inaparamagneticmaterial,onlyasmallfraction(roughlyone-third)ofthemagneticdipolesarealignedwiththeapplied
+field.Sinceeachdipoleproducesitsownmagneticfield,thisalignmentcontributesanextramagneticfield,whichenhances
+theappliedfield.Whenaferromagneticmaterialisplacedinamagneticfield,itsmagneticdipolesalsobecomealigned;
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 561
+furthermore,theybecomelockedtogethersothatapermanentmagnetization results,evenwhenthefieldisturnedoffor
+reversed.Thispermanentmagnetizationhappensinferromagneticmaterialsbutnotparamagneticmaterials.Diamagnetic
+materials are composed of atoms that have no net magnetic dipole moment. However, when a diamagnetic material is
+placed in a magnetic field, a magnetic dipole moment is directed opposite to the applied field and therefore produces a
+magnetic field that opposes the applied field. We now consider each type of material in greater detail.
+Paramagnetic Materials
+Forsimplicity,weassumeoursampleisalong,cylindricalpiecethatcompletelyfillstheinteriorofalong,tightlywound
+solenoid.Whenthereisnocurrentinthesolenoid,themagneticdipolesinthesamplearerandomlyorientedandproduce
+no net magnetic field. With a solenoid current, the magnetic field due to the solenoid exerts a torque on the dipoles that
+tends to align them with the field. In competition with the aligning torque are thermal collisions that tend to randomize
+theorientationsofthedipoles.Therelativeimportanceofthesetwocompetingprocessescanbeestimatedbycomparing
+theenergiesinvolved.FromEquation12.14,theenergydifferencebetweenamagneticdipolealignedwithandagainsta
+magnetic field is U B=2µB. If µ =9.3×10−24A·m2 (the value of atomic hydrogen) andB= 1.0 T, then
+U B=1.9×10 −23 J.
+At a room temperature of 27°C, the thermal energy per atom is
+U T ≈kT =(1.38×10 −23 J/K)(300K)=4.1×10−21J,
+whichisabout220timesgreaterthan U B. Clearly,energyexchangesinthermalcollisionscanseriouslyinterferewiththe
+alignment of the magnetic dipoles. As a result, only a small fraction of the dipoles is aligned at any instant.
+The four sketches of Figure 12.23 furnish a simple model of this alignment process. In part (a), before the field of the
+solenoid(notshown)containingtheparamagneticsampleisapplied,themagneticdipolesarerandomlyorientedandthere
+is no net magnetic dipole moment associated with the material. With the introduction of the field, a partial alignment of
+thedipolestakesplace,asdepictedinpart(b).Thecomponentofthenetmagneticdipolemomentthatisperpendicularto
+thefieldvanishes.Wemaythenrepresentthesamplebypart(c),whichshowsacollectionofmagneticdipolescompletely
+aligned with the field. By treating these dipoles as current loops, we can picture the dipole alignment as equivalent to a
+current around the surface of the material, as in part (d). This fictitious surface current produces its own magnetic field,
+which enhances the field of the solenoid.
+Figure 12.23 The alignment process in a paramagnetic material filling a solenoid (not shown). (a) Without
+an applied field, the magnetic dipoles are randomly oriented. (b) With a field, partial alignment occurs. (c) An
+equivalent representation of part (b). (d) The internal currents cancel, leaving an effective surface current that
+produces a magnetic field similar to that of a finite solenoid.
+
+562 Chapter 12 | Sources of Magnetic Fields
+→
+We can express the total magnetic field B in the material as
+→ → → (12.34)
+B = B
+0
++ B m,
+→ →
+where B 0 isthefieldduetothecurrent I 0 inthesolenoidand B m isthefieldduetothesurfacecurrent I m around
+→ →
+the sample. Now B m is usually proportional to B 0 , a fact we express by
+→ → (12.35)
+B m= χ B
+0
+,
+where χ isadimensionlessquantitycalledthemagneticsusceptibility.Valuesof χ forsomeparamagneticmaterialsare
+giveninTable12.2.Sincethealignmentofmagneticdipolesissoweak, χ isverysmallforparamagneticmaterials.By
+combiningEquation 12.34andEquation 12.35, we obtain:
+→ → → → (12.36)
+B = B + χ B =(1+ χ) B .
+0 0 0
+For a sample within an infinite solenoid, this becomes
+B=(1+ χ)µ nI. (12.37)
+0
+This expression tells us that the insertion of a paramagnetic material into a solenoid increases the field by a factor of
+(1+ χ). However, since χ is so small, the field isn’t enhanced very much.
+The quantity
+µ =(1+ χ)µ . (12.38)
+0
+is called the magnetic permeability of a material. In terms of µ, Equation 12.37can be written as
+B= µnI (12.39)
+for the filled solenoid.
+Paramagnetic Materials χ Diamagnetic Materials χ
+Aluminum −5 Bismuth −5
+2.2×10 −1.7×10
+Calcium −5 Carbon (diamond) −5
+1.4×10 −2.2×10
+Chromium 3.1×10−4 Copper
+−9.7×10
+−6
+Magnesium −5 Lead −5
+1.2×10 −1.8×10
+Oxygen gas (1 atm) −6 Mercury −5
+1.8×10 −2.8×10
+Oxygen liquid (90 K) −3 Hydrogen gas (1 atm) −9
+3.5×10 −2.2×10
+Tungsten −5 Nitrogen gas (1 atm) −9
+6.8×10 −6.7×10
+Table 12.2Magnetic Susceptibilities *Note: Unless otherwise specified, values given are for
+room temperature.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 563
+Paramagnetic Materials χ Diamagnetic Materials χ
+Air (1 atm) 3.6×10 −7 Water −9.1×10 −6
+Table 12.2Magnetic Susceptibilities *Note: Unless otherwise specified, values given are for
+room temperature.
+Diamagnetic Materials
+Amagneticfieldalwaysinducesamagneticdipoleinanatom.Thisinduceddipolepointsoppositetotheappliedfield,so
+itsmagnetic field isalsodirected opposite totheapplied field. Inparamagnetic andferromagnetic materials, theinduced
+magneticdipoleismaskedbymuchstrongerpermanentmagneticdipolesoftheatoms.However,indiamagneticmaterials,
+whose atoms have no permanent magnetic dipole moments, the effect of the induced dipole is observable.
+We can now describe the magnetic effects of diamagnetic materials with the same model developed for paramagnetic
+materials. In this case, however, the fictitious surface current flows opposite to the solenoid current, and the magnetic
+susceptibility χ is negative. Values of χ for some diamagnetic materials are also given inTable 12.2.
+Water is a common diamagnetic material. Animals are mostly composed of water. Experiments have been
+performedonfrogs (https://openstaxcollege.org/l/21frogs) andmice (https://openstaxcollege.org/l/
+21mice) indivergingmagneticfields.Thewatermoleculesarerepelledfromtheappliedmagneticfieldagainst
+gravity until the animal reaches an equilibrium. The result is that the animal is levitated by the magnetic field.
+Ferromagnetic Materials
+Common magnets are made of a ferromagnetic material such as iron or one of its alloys. Experiments reveal that a
+ferromagneticmaterialconsistsoftinyregionsknownasmagneticdomains.Theirvolumestypicallyrangefrom 10−12
+to 10 −8 m 3 , andtheycontainabout 10 17 to 1021 atoms.Withinadomain,themagneticdipolesarerigidlyalignedin
+thesamedirectionbycouplingamongtheatoms.Thiscoupling,whichisduetoquantummechanicaleffects,issostrong
+thateventhermalagitation atroomtemperature cannotbreakit.Theresultisthateachdomainhasanetdipolemoment.
+Some materials have weaker coupling and are ferromagnetic only at lower temperatures.
+Ifthedomainsinaferromagneticsamplearerandomlyoriented,asshowninFigure12.24,thesamplehasnonetmagnetic
+dipole moment and is said to be unmagnetized. Suppose that we fill the volume of a solenoid with an unmagnetized
+→
+ferromagnetic sample. When the magnetic field B of the solenoid is turned on, the dipole moments of the domains
+0
+rotate so that they align somewhat with the field, as depicted in Figure 12.24. In addition, the aligned domains tend to
+increase in size at the expense of unaligned ones. The net effect of these two processes is the creation of a net magnetic
+dipole moment for the ferromagnet that is directed along the applied magnetic field. This net magnetic dipole moment
+is much larger than that of a paramagnetic sample, and the domains, with their large numbers of atoms, do not become
+misaligned by thermal agitation. Consequently, the field due to the alignment of the domains is quite large.
+
+564 Chapter 12 | Sources of Magnetic Fields
+Figure 12.24 (a) Domains are randomly oriented in an unmagnetized ferromagnetic sample such as iron. The arrows represent
+the orientations of the magnetic dipoles within the domains. (b) In an applied magnetic field, the domains align somewhat with
+the field. (c) The domains of a single crystal of nickel. The white lines show the boundaries of the domains. These lines are
+produced by iron oxide powder sprinkled on the crystal.
+Besides iron, only four elements contain the magnetic domains needed to exhibit ferromagnetic behavior: cobalt, nickel,
+gadolinium, and dysprosium. Many alloys of these elements are also ferromagnetic. Ferromagnetic materials can be
+described using Equation 12.34 through Equation 12.39, the paramagnetic equations. However, the value of χ for
+ferromagnetic material is usually on the order of 10 3 to 104, and it also depends on the history of the magnetic
+field to which the material has been subject. A typical plot of B (the total field in the material) versus B (the applied
+0
+field) for an initially unmagnetized piece of iron is shown in Figure 12.25. Some sample numbers are (1) for
+⎛ ⎞
+B =1.0×10−4T, B=0.60T, and χ = 0.60 −1≈6.0×10 3; (2) for B =6.0×10−4T, B=1.5T,
+0 ⎝ 1.0×10−4⎠ 0
+⎛ ⎞
+and χ = 1.5 −1≈2.5×10 3 .
+⎝ 6.0×10−4⎠
+Figure 12.25 (a) The magnetic fieldBin annealed iron as a
+function of the applied field B .
+0
+When B isvariedoverarangeofpositiveandnegativevalues,BisfoundtobehaveasshowninFigure 12.26.Note
+0
+that the same B (corresponding to the same current in the solenoid) can produce different values of B in the material.
+0
+ThemagneticfieldBproducedinaferromagneticmaterialbyanappliedfield B dependsonthemagnetichistoryofthe
+0
+material.Thiseffectiscalledhysteresis,andthecurveofFigure12.26iscalledahysteresisloop.NoticethatBdoesnot
+disappearwhen B =0 (i.e.,whenthecurrentinthesolenoidisturnedoff).Theironstaysmagnetized,whichmeansthat
+0
+it has become a permanent magnet.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 565
+Figure 12.26 A typical hysteresis loop for a ferromagnet.
+When the material is first magnetized, it follows a curve from 0
+toa. When B is reversed, it takes the path shown fromatob.
+0
+If B is reversed again, the material follows the curve frombto
+0
+a.
+Liketheparamagnetic sample ofFigure 12.23,thepartial alignment ofthedomainsinaferromagnet isequivalent toa
+currentflowingaroundthesurface.Abarmagnetcanthereforebepicturedasatightlywoundsolenoidwithalargecurrent
+circulatingthroughitscoils(thesurfacecurrent).YoucanseeinFigure 12.27thatthismodelfitsquitewell.Thefields
+ofthebarmagnetandthefinitesolenoidarestrikinglysimilar.Thefigurealsoshowshowthepolesofthebarmagnetare
+identified. To form closed loops, the field lines outside the magnet leave the north (N) pole and enter the south (S) pole,
+whereas inside the magnet, they leave S and enter N.
+Figure 12.27 Comparison of the magnetic fields of a finite solenoid and a bar magnet.
+Ferromagnetic materials are found in computer hard disk drives and permanent data storage devices (Figure 12.28). A
+materialusedinyourharddiskdrivesiscalledaspinvalve,whichhasalternatinglayersofferromagnetic(aligningwith
+theexternalmagneticfield)andantiferromagnetic(eachatomisalignedoppositetothenext)metals.Itwasobservedthat

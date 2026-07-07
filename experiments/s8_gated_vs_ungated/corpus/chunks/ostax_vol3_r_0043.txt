@@ -1,0 +1,196 @@
+# REAL PDF — openstax_vol3.pdf, pages 261-267
+############################################################
+
+Chapter 6 | Photons and Matter Waves 253
+However,asshowninFigure6.6,theRayleigh–Jeanslawfailstocorrectlyreproduceexperimentalresults.Inthelimitof
+shortwavelengths,theRayleigh–Jeanslawpredictsinfiniteradiationintensity,whichisinconsistentwiththeexperimental
+resultsinwhichradiationintensityhasfinitevaluesintheultravioletregionofthespectrum.Thisdivergencebetweenthe
+resultsofclassicaltheoryandexperiments,whichcametobecalledtheultravioletcatastrophe,showshowclassicalphysics
+fails to explain the mechanism of blackbody radiation.
+Figure 6.6 The ultraviolet catastrophe: The Rayleigh–Jeans
+law does not explain the observed blackbody emission spectrum.
+The blackbody radiation problem was solved in 1900 by Max Planck. Planck used the same idea as the Rayleigh–Jeans
+modelinthesensethathetreatedtheelectromagneticwavesbetweenthewallsinsidethecavityclassically,andassumed
+that the radiation is in equilibrium with the cavity walls. The innovative idea that Planck introduced in his model is the
+assumptionthatthecavityradiationoriginatesfromatomicoscillationsinsidethecavitywalls,andthattheseoscillations
+canhaveonlydiscretevaluesofenergy.Therefore,theradiationtrappedinsidethecavitywallscanexchangeenergywith
+the walls only in discrete amounts. Planck’s hypothesis of discrete energy values, which he called quanta, assumes that
+theoscillatorsinsidethecavitywallshavequantizedenergies.Thiswasabrandnewideathatwentbeyondtheclassical
+physics of the nineteenth century because, as you learned in a previous chapter, in the classical picture, the energy of an
+oscillatorcantakeonanycontinuousvalue.Planckassumedthattheenergyofanoscillator(E )canhaveonlydiscrete,
+n
+or quantized, values:
+E n=nhf, wheren=1, 2, 3, ... (6.9)
+InEquation6.9,fisthefrequencyofPlanck’soscillator.Thenaturalnumbernthatenumeratesthesediscreteenergiesis
+called aquantum number. The physical constanthis calledPlanck’s constant:
+h=6.626×10 −34 J·s= 4.136×10 −15 eV·s (6.10)
+Each discrete energy value corresponds to a quantum state of a Planck oscillator. Quantum states are enumerated by
+quantumnumbers.Forexample,whenPlanck’soscillatorisinitsfirst n=1 quantumstate,itsenergyis E =hf; when
+1
+it is in the n=2 quantum state, its energy is E =2hf; when it is in the n=3 quantum state, E =3hf; and so on.
+2 3
+NotethatEquation6.9showsthatthereareinfinitelymanyquantumstates,whichcanberepresentedasasequence{hf,
+2hf,3hf,…,(n–1)hf,nhf,(n+1)hf,…}.Eachtwoconsecutivequantumstatesinthissequenceareseparatedbyanenergy
+jump, ΔE=hf. Anoscillatorinthewallcanreceiveenergyfromtheradiationinthecavity(absorption),oritcangive
+awayenergytotheradiationinthecavity(emission).Theabsorptionprocesssendstheoscillatortoahigherquantumstate,
+andtheemissionprocesssendstheoscillatortoalowerquantumstate.Whicheverwaythisexchangeofenergygoes,the
+smallestamountofenergythatcanbeexchangedishf.Thereisnoupperlimittohowmuchenergycanbeexchanged,but
+whateverisexchangedmustbeanintegermultipleofhf.Iftheenergypacketdoesnothavethisexactamount,itisneither
+
+254 Chapter 6 | Photons and Matter Waves
+absorbed nor emitted at the wall of the blackbody.
+Planck’s Quantum Hypothesis
+Planck’s hypothesis of energy quanta states that the amount of energy emitted by the oscillator is carried by the
+quantum of radiation, ΔE:
+ΔE=hf
+Recall that the frequency of electromagnetic radiation is related to its wavelength and to the speed of light by the
+fundamental relation fλ=c. This means that we can express Equation 6.10 equivalently in terms of wavelength λ.
+Whenincludedinthecomputationoftheenergydensityofablackbody,Planck’shypothesisgivesthefollowingtheoretical
+expression for the power intensity of emitted radiation per unit wavelength:
+I(λ, T)=
+2πhc2
+1
+(6.11)
+λ5 e hc/λk B T −1
+wherecisthespeedoflightinvacuumand k isBoltzmann’sconstant, k =1.380×10 −23 J/K. Thetheoreticalformula
+B B
+expressedinEquation 6.11iscalledPlanck’sblackbodyradiationlaw.Thislawisinagreement withtheexperimental
+blackbody radiation curve (see Figure 6.7). In addition, Wien’s displacement law and Stefan’s law can both be derived
+fromEquation6.11.ToderiveWien’sdisplacementlaw,weusedifferentialcalculustofindthemaximumoftheradiation
+intensity curve I(λ, T). To derive Stefan’s law and find the value of the Stefan–Boltzmann constant, we use integral
+calculusandintegrate I(λ, T) tofindthetotalpowerradiatedbyablackbodyatonetemperatureintheentirespectrumof
+wavelengths from λ=0 to λ=∞. This derivation is left as an exercise later in this chapter.
+Figure 6.7 Planck’s theoretical result (continuous curve) and
+the experimental blackbody radiation curve (dots).
+Example 6.3
+Planck’s Quantum Oscillator
+AquantumoscillatorinthecavitywallinFigure 6.2isvibratingatafrequencyof 5.0×1014Hz. Calculate
+the spacing between its energy levels.
+Strategy
+EnergystatesofaquantumoscillatoraregivenbyEquation6.9.Theenergyspacing ΔE isobtainedbyfinding
+the energy difference between two adjacent quantum states for quantum numbersn+ 1 andn.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 255
+Solution
+We can substitute the given frequency and Planck’s constant directly into the equation:
+ΔE=E n+1 −E n=(n+1)hf −nhf =hf =(6.626×10 −34 J·s)(5.0×1014Hz)=3.3×10 −19 J
+Significance
+Notethatwedonotspecifywhatkindofmaterial wasusedtobuildthecavity.Here,aquantumoscillator isa
+theoretical model of an atom or molecule of material in the wall.
+6.4 Check Your Understanding A molecule is vibrating at a frequency of 5.0×1014Hz. What is the
+smallest spacing between its vibrational energy levels?
+Example 6.4
+Quantum Theory Applied to a Classical Oscillator
+A 1.0-kg mass oscillates at the end of a spring with a spring constant of 1000 N/m. The amplitude of these
+oscillationsis0.10m.Usetheconceptofquantizationtofindtheenergyspacingforthisclassicaloscillator.Is
+the energy quantization significant for macroscopic systems, such as this oscillator?
+Strategy
+We use Equation 6.10 as though the system were a quantum oscillator, but with the frequency f of the mass
+vibratingonaspring.Toevaluatewhetherornotquantizationhasasignificanteffect,wecomparethequantum
+energy spacing with the macroscopic total energy of this classical oscillator.
+Solution
+For the spring constant, k=1.0×10 3 N/m, the frequencyfof the mass, m=1.0kg, is
+f = 2 1 π m k = 2 1 π 1.0× 1. 1 0 0 k 3 g N/m ≃5.0Hz
+The energy quantum that corresponds to this frequency is
+ΔE=hf =(6.626×10 −34 J·s)(5.0Hz)=3.3×10 −33 J
+When vibrations have amplitude A=0.10m, the energy of oscillations is
+E= 1kA2= 1 (1000N/m)(0.1m)2=5.0J
+2 2
+Significance
+Thus, for a classical oscillator, we have ΔE/E≈10 −34 . We see that the separation of the energy levels is
+immeasurablysmall.Therefore,forallpracticalpurposes,theenergyofaclassicaloscillatortakesoncontinuous
+values. This is why classical principles may be applied to macroscopic systems encountered in everyday life
+without loss of accuracy.
+6.5 CheckYourUnderstandingWouldtheresultinExample6.4bedifferentifthemasswerenot1.0kg
+but a tiny mass of 1.0µg, and the amplitude of vibrations were 0.10µm?
+WhenPlanckfirstpublishedhisresult,thehypothesisofenergyquantawasnottakenseriouslybythephysicscommunity
+because it did not follow from any established physics theory at that time. It was perceived, even by Planck himself, as
+ausefulmathematical trickthatledtoagoodtheoretical“fit”totheexperimentalcurve.Thisperceptionwaschangedin
+1905whenEinsteinpublishedhisexplanationofthephotoelectriceffect,inwhichhegavePlanck’senergyquantumanew
+meaning: that of a particle of light.
+
+256 Chapter 6 | Photons and Matter Waves
+6.2 | Photoelectric Effect
+Learning Objectives
+By the end of this section you will be able to:
+• Describe physical characteristics of the photoelectric effect
+• Explain why the photoelectric effect cannot be explained by classical physics
+• Describe how Einstein’s idea of a particle of radiation explains the photoelectric effect
+When a metal surface is exposed to a monochromatic electromagnetic wave of sufficiently short wavelength (or
+equivalently,aboveathresholdfrequency),theincidentradiationisabsorbedandtheexposedsurfaceemitselectrons.This
+phenomenon is known as thephotoelectric effect. Electrons that are emitted in this process are calledphotoelectrons.
+TheexperimentalsetuptostudythephotoelectriceffectisshownschematicallyinFigure 6.8.Thetargetmaterialserves
+astheanode,whichbecomestheemitterofphotoelectronswhenitisilluminatedbymonochromaticradiation.Wecallthis
+electrode the photoelectrode.Photoelectrons are collected at the cathode, which is kept at a lower potential with respect
+totheanode.Thepotentialdifferencebetweentheelectrodescanbeincreasedordecreased,oritspolaritycanbereversed.
+Theelectrodesareenclosedinanevacuatedglasstubesothatphotoelectronsdonotlosetheirkineticenergyoncollisions
+with air molecules in the space between electrodes.
+When the target material is not exposed to radiation, no current is registered in this circuit because the circuit is broken
+(note,thereisagapbetweentheelectrodes).Butwhenthetargetmaterialisconnectedtothenegativeterminalofabattery
+andexposedtoradiation,acurrentisregisteredinthiscircuit;thiscurrentiscalledthephotocurrent.Supposethatwenow
+reversethepotentialdifferencebetweentheelectrodessothatthetargetmaterialnowconnectswiththepositiveterminal
+of a battery, and then we slowly increase the voltage. The photocurrent gradually dies out and eventually stops flowing
+completelyatsomevalueofthisreversedvoltage.Thepotentialdifferenceatwhichthephotocurrentstopsflowingiscalled
+thestopping potential.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 257
+Figure 6.8 An experimental setup to study the photoelectric effect. The
+anode and cathode are enclosed in an evacuated glass tube. The voltmeter
+measures the electric potential difference between the electrodes, and the
+ammeter measures the photocurrent. The incident radiation is
+monochromatic.
+Characteristics of the Photoelectric Effect
+Thephotoelectriceffecthasthreeimportantcharacteristicsthatcannotbeexplainedbyclassicalphysics:(1)theabsenceof
+alagtime,(2)theindependenceofthekineticenergyofphotoelectronsontheintensityofincidentradiation,and(3)the
+presence of a cut-off frequency. Let’s examine each of these characteristics.
+The absence of lag time
+Whenradiationstrikesthetargetmaterialintheelectrode,electronsareemittedalmostinstantaneously,evenatverylow
+intensitiesofincidentradiation.Thisabsenceoflagtimecontradictsourunderstandingbasedonclassicalphysics.Classical
+physicspredictsthatforlow-energyradiation,itwouldtakesignificanttimebeforeirradiatedelectronscouldgainsufficient
+energy to leave the electrode surface; however, such an energy buildup is not observed.
+The intensity of incident radiation and the kinetic energy of photoelectrons
+Typical experimental curves are shown in Figure 6.9, in which the photocurrent is plotted versus the applied potential
+differencebetweentheelectrodes.Forthepositivepotentialdifference,thecurrentsteadilygrowsuntilitreachesaplateau.
+Furtheringthepotentialincreasebeyondthispointdoesnotincreasethephotocurrentatall.Ahigherintensityofradiation
+produces a higher value of photocurrent. For the negative potential difference, as the absolute value of the potential
+differenceincreases,thevalueofthephotocurrentdecreasesandbecomeszeroatthestoppingpotential.Foranyintensity
+of incident radiation, whether the intensity is high or low, the value of the stopping potential always stays at one value.
+To understand why this result is unusual from the point of view of classical physics, we first have to analyze the
+energy of photoelectrons. A photoelectron that leaves the surface has kinetic energy K. It gained this energy from the
+incident electromagnetic wave. In the space between the electrodes, a photoelectron moves in the electric potential and
+its energy changes by the amount qΔV, where ΔV is the potential difference and q=−e. Because no forces are
+present but electric force, by applying the work-energy theorem, we obtain the energy balance ΔK−eΔV =0 for
+the photoelectron, where ΔK is the change in the photoelectron’s kinetic energy. When the stopping potential −ΔV
+s
+is applied, the photoelectron loses its initial kinetic energy K and comes to rest. Thus, its energy balance becomes
+i
+
+258 Chapter 6 | Photons and Matter Waves
+(0−K i)−e(−ΔV s)=0, sothat K i=eΔV s. Inthepresenceofthestoppingpotential,thelargestkineticenergy K max
+thataphotoelectroncanhaveisitsinitialkineticenergy,whichithasatthesurfaceofthephotoelectrode.Therefore,the
+largest kinetic energy of photoelectrons can be directly measured by measuring the stopping potential:
+K max=eΔV s. (6.12)
+At this point we can see where the classical theory is at odds with the experimental results. In classical theory, the
+photoelectronabsorbselectromagneticenergyinacontinuousway;thismeansthatwhentheincidentradiationhasahigh
+intensity, the kinetic energy in Equation 6.12 is expected to be high. Similarly, when the radiation has a low intensity,
+thekineticenergyisexpectedtobelow.Buttheexperimentshowsthatthemaximumkineticenergyofphotoelectronsis
+independent of the light intensity.
+Figure 6.9 The detected photocurrent plotted versus the
+applied potential difference shows that for any intensity of
+incident radiation, whether the intensity is high (upper curve) or
+low (lower curve), the value of the stopping potential is always
+the same.
+The presence of a cut-off frequency
+Foranymetalsurface,thereisaminimumfrequencyofincidentradiationbelowwhichphotocurrentdoesnotoccur.The
+value of this cut-off frequency for the photoelectric effect is a physical property of the metal: Different materials have
+differentvaluesofcut-offfrequency.Experimentaldatashowatypicallineartrend(seeFigure6.10).Thekineticenergyof
+photoelectronsatthesurfacegrowslinearlywiththeincreasingfrequencyofincidentradiation.Measurementsforallmetal
+surfacesgivelinearplotswithoneslope.Noneoftheseobservedphenomenaisinaccordwiththeclassicalunderstanding
+ofnature.Accordingtotheclassicaldescription,thekineticenergyofphotoelectronsshouldnotdependonthefrequency
+of incident radiation at all, and there should be no cut-off frequency. Instead, in the classical picture, electrons receive
+energyfromtheincidentelectromagneticwaveinacontinuousway,andtheamountofenergytheyreceivedependsonly
+ontheintensityoftheincidentlightandnothingelse.Sointheclassicalunderstanding,aslongasthelightisshining,the
+photoelectric effect is expected to continue.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

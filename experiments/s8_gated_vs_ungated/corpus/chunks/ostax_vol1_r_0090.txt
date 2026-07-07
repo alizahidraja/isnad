@@ -1,0 +1,291 @@
+# REAL PDF — openstax_vol1.pdf, pages 552-558
+############################################################
+
+540 11 • Angular Momentum
+The wheel moves toward the person, perpendicular to the forces she exerts on it.
+We all know how easy it is for a bicycle to tip over when sitting on it at rest. But when riding the bicycle at a good
+pace, tipping it over involves changing the angular momentum vector of the spinning wheels.
+INTERACTIVE
+View the video on gyroscope precession (https://openstax.org/l/21gyrovideo) for a complete demonstration of
+precession of the bicycle wheel.
+Also, when a spinning disk is put in a box such as a Blu-Ray player, try to move it. It is easy to translate the box in a
+given direction but difficult to rotate it about an axis perpendicular to the axis of the spinning disk, since we are
+putting a torque on the box that will cause the angular momentum vector of the spinning disk to precess.
+We can calculate the precession rate of the top in Figure 11.21. From Figure 11.21, we see that the magnitude of
+the torque is
+Thus,
+The angle the top precesses through in time dt is
+The precession angular velocity is and from this equation we see that
+11.12
+In this derivation, we assumed that that is, that the precession angular velocity is much less than the
+angular velocity of the gyroscope disk. The precession angular velocity adds a small component to the angular
+momentum along the z-axis. This is seen in a slight bob up and down as the gyroscope precesses, referred to as
+nutation.
+Earth itself acts like a gigantic gyroscope. Its angular momentum is along its axis and currently points at Polaris, the
+North Star. But Earth is slowly precessing (once in about 26,000 years) due to the torque of the Sun and the Moon
+on its nonspherical shape.
+EXAMPLE 11.10
+Period of Precession
+A gyroscope spins with its tip on the ground and is spinning with negligible frictional resistance. The disk of the
+gyroscope has mass 0.3 kg and is spinning at 20 rev/s. Its center of mass is 5.0 cm from the pivot and the radius of
+the disk is 5.0 cm. What is the precessional period of the gyroscope?
+Strategy
+We use Equation 11.12 to find the precessional angular velocity of the gyroscope. This allows us to find the period of
+precession.
+Solution
+The moment of inertia of the disk is
+Access for free at openstax.org
+
+11.4 • Precession of a Gyroscope 541
+The angular velocity of the disk is
+We can now substitute in Equation 11.12. The precessional angular velocity is
+The precessional period of the gyroscope is
+Significance
+The precessional angular frequency of the gyroscope, 3.12 rad/s, or about 0.5 rev/s, is much less than the angular
+velocity 20 rev/s of the gyroscope disk. Therefore, we don’t expect a large component of the angular momentum to
+arise due to precession, and Equation 11.12 is a good approximation of the precessional angular velocity.
+CHECK YOUR UNDERSTANDING 11.5
+A top has a precession frequency of 5.0 rad/s on Earth. What is its precession frequency on the Moon?
+
+542 11 • Chapter Review
+Chapter Review
+Key Terms
+angular momentum rotational analog of linear when no external torque is applied to the system
+momentum, found by taking the product of moment precession circular motion of the pole of the axis of a
+of inertia and angular velocity spinning object around another axis due to a torque
+law of conservation of angular momentum angular rolling motion combination of rotational and
+momentum is conserved, that is, the initial angular translational motion with or without slipping
+momentum is equal to the final angular momentum
+Key Equations
+Velocity of center of mass of rolling object
+Acceleration of center of mass of rolling object
+Displacement of center of mass of rolling object
+Acceleration of an object rolling without slipping
+Angular momentum
+Derivative of angular momentum equals torque
+Angular momentum of a system of particles
+For a system of particles, derivative of angular
+momentum equals torque
+Angular momentum of a rotating rigid body
+Conservation of angular momentum
+Conservation of angular momentum
+Precessional angular velocity
+Summary
+11.1 Rolling Motion product of the position vector in the given
+coordinate system and the particle’s linear
+• In rolling motion without slipping, a static friction
+momentum.
+force is present between the rolling object and
+• The angular momentum of a system of
+the surface. The relations
+all
+particles about a designated origin is the vector
+apply, such that the linear velocity, acceleration,
+sum of the individual momenta of the particles
+and distance of the center of mass are the
+that make up the system.
+angular variables multiplied by the radius of the
+• The net torque on a system about a given origin is
+object.
+the time derivative of the angular momentum
+• In rolling motion with slipping, a kinetic friction
+force arises between the rolling object and the about that origin: .
+surface. In this case, • A rigid rotating body has angular momentum
+. directed along the axis of rotation. The
+• Energy conservation can be used to analyze time derivative of the angular momentum
+rolling motion. Energy is conserved in rolling gives the net torque on a rigid body
+motion without slipping. Energy is not conserved and is directed along the axis of rotation.
+in rolling motion with slipping due to the heat
+11.3 Conservation of Angular Momentum
+generated by kinetic friction.
+• In the absence of external torques, a system’s
+11.2 Angular Momentum
+total angular momentum is conserved. This is the
+• The angular momentum of a single rotational counterpart to linear momentum being
+particle about a designated origin is the vector conserved when the external force on a system is
+Access for free at openstax.org
+
+11 • Chapter Review 543
+zero. 11.4 Precession of a Gyroscope
+• For a rigid body that changes its angular
+• When a gyroscope is set on a pivot near the
+momentum in the absence of a net external
+surface of Earth, it precesses around a vertical
+torque, conservation of angular momentum gives
+axis, since the torque is always horizontal and
+. This equation says that the
+perpendicular to If the gyroscope is not
+angular velocity is inversely proportional to the
+spinning, it acquires angular momentum in the
+moment of inertia. Thus, if the moment of inertia
+direction of the torque, and it rotates about a
+decreases, the angular velocity must increase to
+horizontal axis, falling over just as we would
+conserve angular momentum.
+expect.
+• Systems containing both point particles and rigid
+• The precessional angular velocity is given by
+bodies can be analyzed using conservation of
+angular momentum. The angular momentum of , where r is the distance from the
+all bodies in the system must be taken about a pivot to the center of mass of the gyroscope, I is
+common axis. the moment of inertia of the gyroscope’s spinning
+disk, M is its mass, and is the angular
+frequency of the gyroscope disk.
+Conceptual Questions
+11.1 Rolling Motion origin it has linear momentum. What conditions
+must exist for this particle’s angular momentum
+1 . Can a round object released from rest at the top
+to be zero about the chosen origin?
+of a frictionless incline undergo rolling motion?
+10 . If you know the velocity of a particle, can you
+2 . A cylindrical can of radius R is rolling across a
+say anything about the particle’s angular
+horizontal surface without slipping. (a) After one
+momentum?
+complete revolution of the can, what is the
+distance that its center of mass has moved? (b) 11.3 Conservation of Angular Momentum
+Would this distance be greater or smaller if
+11 . What is the purpose of the small propeller at the
+slipping occurred?
+back of a helicopter that rotates in the plane
+3 . A wheel is released from the top on an incline. Is perpendicular to the large propeller?
+the wheel most likely to slip if the incline is
+12 . Suppose a child walks from the outer edge of a
+steep or gently sloped?
+rotating merry-go-round to the inside. Does the
+4 . Which rolls down an inclined plane faster, a angular velocity of the merry-go-round increase,
+hollow cylinder or a solid sphere? Both have the decrease, or remain the same? Explain your
+same mass and radius. answer. Assume the merry-go-round is spinning
+without friction.
+5 . A hollow sphere and a hollow cylinder of the
+same radius and mass roll up an incline without 13 . As the rope of a tethered ball winds around a
+slipping and have the same initial center of mass pole, what happens to the angular velocity of the
+velocity. Which object reaches a greater height ball?
+before stopping?
+14 . Suppose the polar ice sheets broke free and
+11.2 Angular Momentum floated toward Earth’s equator without melting.
+What would happen to Earth’s angular velocity?
+6 . Can you assign an angular momentum to a
+particle without first defining a reference point? 15 . Explain why stars spin faster when they
+collapse.
+7 . For a particle traveling in a straight line, are
+there any points about which the angular 16 . Competitive divers pull their limbs in and curl up
+momentum is zero? Assume the line intersects their bodies when they do flips. Just before entering
+the origin. the water, they fully extend their limbs to enter
+straight down (see below). Explain the effect of both
+8 . Under what conditions does a rigid body have
+actions on their angular velocities. Also explain the
+angular momentum but not linear momentum?
+effect on their angular momentum.
+9 . If a particle is moving with respect to a chosen
+
+544 11 • Chapter Review
+11.4 Precession of a Gyroscope
+17 . Gyroscopes used in guidance systems to
+indicate directions in space must have an
+angular momentum that does not change in
+direction. When placed in the vehicle, they are
+put in a compartment that is separated from the
+main fuselage, such that changes in the
+orientation of the fuselage does not affect the
+orientation of the gyroscope. If the space vehicle
+is subjected to large forces and accelerations
+how can the direction of the gyroscopes angular
+momentum be constant at all times?
+18 . Earth precesses about its vertical axis with a
+period of 26,000 years. Discuss whether
+Equation 11.12 can be used to calculate the
+precessional angular velocity of Earth.
+Problems
+11.1 Rolling Motion 10.0 m to the bottom in 2.60 s. Find the moment
+of inertia of the body in terms of its mass m and
+19 . What is the angular velocity of a 75.0-cm-
+radius r.
+diameter tire on an automobile traveling at 90.0
+km/h? 26 . A yo-yo can be thought of a solid cylinder of
+mass m and radius r that has a light string
+20 . A boy rides his bicycle 2.00 km. The wheels have
+wrapped around its circumference (see below).
+radius 30.0 cm. What is the total angle the tires
+One end of the string is held fixed in space. If the
+rotate through during his trip?
+cylinder falls as the string unwinds without
+21 . If the boy on the bicycle in the preceding slipping, what is the acceleration of the cylinder?
+problem accelerates from rest to a speed of 10.0
+m/s in 10.0 s, what is the angular acceleration of
+the tires?
+22 . Formula One race cars have 66-cm-diameter
+tires. If a Formula One averages a speed of 300
+km/h during a race, what is the angular
+displacement in revolutions of the wheels if the
+race car maintains this speed for 1.5 hours?
+23 . A marble rolls down an incline at from rest.
+27 . A solid cylinder of radius 10.0 cm rolls down an
+(a) What is its acceleration? (b) How far does it
+incline with slipping. The angle of the incline is
+go in 3.0 s?
+The coefficient of kinetic friction on the
+24 . Repeat the preceding problem replacing the surface is 0.400. What is the angular
+marble with a solid cylinder. Explain the new acceleration of the solid cylinder? What is the
+result. linear acceleration?
+25 . A rigid body with a cylindrical cross-section is 28 . A bowling ball rolls up a ramp 0.5 m high without
+released from the top of a incline. It rolls slipping to storage. It has an initial velocity of its
+Access for free at openstax.org
+
+11 • Chapter Review 545
+center of mass of 3.0 m/s. (a) What is its velocity angle with respect to the ground. The radius
+at the top of the ramp? (b) If the ramp is 1 m vector to the bird and its momentum vector lie in
+high does it make it to the top? the xy-plane. What is the bird’s angular
+momentum about the point where you are
+29 . A 40.0-kg solid cylinder is rolling across a
+standing?
+horizontal surface at a speed of 6.0 m/s. How
+much work is required to stop it? 36 . A Formula One race car with mass 750.0 kg is
+speeding through a course in Monaco and enters
+30 . A 40.0-kg solid sphere is rolling across a
+a circular turn at 220.0 km/h in the
+horizontal surface with a speed of 6.0 m/s. How
+counterclockwise direction about the origin of
+much work is required to stop it? Compare
+the circle. At another part of the course, the car
+results with the preceding problem.
+enters a second circular turn at 180 km/h also in
+31 . A solid cylinder rolls up an incline at an angle of the counterclockwise direction. If the radius of
+If it starts at the bottom with a speed of 10 curvature of the first turn is 130.0 m and that of
+m/s, how far up the incline does it travel? the second is 100.0 m, compare the angular
+momenta of the race car in each turn taken
+32 . A solid cylindrical wheel of mass M and radius R
+about the origin of the circular turn.
+is pulled by a force applied to the center of the
+wheel at to the horizontal (see the following 37 . A particle of mass 5.0 kg has position vector
+figure). If the wheel is to roll without slipping, at a particular instant of
+what is the maximum value of The time when its velocity is with
+respect to the origin. (a) What is the angular
+coefficients of static and kinetic friction are
+momentum of the particle? (b) If a force
+acts on the particle at this instant,
+what is the torque about the origin?
+38 . Use the right-hand rule to determine the
+directions of the angular momenta about the
+origin of the particles as shown below. The
+z-axis is out of the page.
+33 . A hollow cylinder that is rolling without slipping
+is given an initial velocity and rolls up an incline
+to a vertical height of 1.0 m. If a hollow sphere
+of the same mass and radius is given the same
+initial velocity, how high vertically does it roll up
+the incline?
+39 . Suppose the particles in the preceding problem
+11.2 Angular Momentum have masses
+34 . A 0.2-kg particle is travelling along the line . The velocities of the particles are
+with a velocity . What is the
+, ,
+angular momentum of the particle about the
+, . (a) Calculate
+origin?
+the angular momentum of each particle about
+35 . A bird flies overhead from where you stand at an the origin. (b) What is the total angular
+altitude of 300.0 m and at a speed horizontal to momentum of the four-particle system about the
+the ground of 20.0 m/s. The bird has a mass of origin?
+2.0 kg. The radius vector to the bird makes an
+40 . Two particles of equal mass travel with the same

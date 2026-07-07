@@ -1,0 +1,252 @@
+# REAL PDF — crowell_lm.pdf, pages 467-472
+############################################################
+
+(2)Avibratingsystemresonatesatitsownnaturalfrequency.1 That
+is, the amplitude of the steady-state response is greatest in propor-
+tion to the amount of driving force when the driving force matches
+the natural frequency of vibration.
+An opera singer breaking a wine glass example 5
+In order to break a wineglass by singing, an opera singer must
+first tap the glass to find its natural frequency of vibration, and
+then sing the same note back.
+Collapse of the Nimitz Freeway in an earthquake example 6
+I led off the chapter with the dramatic collapse of the Tacoma
+Narrows Bridge, mainly because it was well documented by a
+local physics professor, and an unknown person made a movie
+of the collapse. The collapse of a section of the Nimitz Freeway
+in Oakland, CA, during a 1989 earthquake is however a simpler
+The collapsed section of the
+example to analyze.
+NimitzFreeway.
+Anearthquakeconsistsofmanylow-frequencyvibrationsthatoc-
+cur simultaneously, which is why it sounds like a rumble of inde-
+terminate pitch rather than a low hum. The frequencies that we
+can hear are not even the strongest ones; most of the energy is
+in the form of vibrations in the range of frequencies from about 1
+Hz to 10 Hz.
+Now all the structures we build are resting on geological layers
+of dirt, mud, sand, or rock. When an earthquake wave comes
+along, the topmost layer acts like a system with a certain natural
+frequency of vibration, sort of like a cube of jello on a plate being
+shaken from side to side. The resonant frequency of the layer
+depends on how stiff it is and also on how deep it is. The ill-
+fated section of the Nimitz freeway was built on a layer of mud,
+andanalysisbygeologistSusanE.HoughoftheU.S.Geological
+Survey shows that the mud layer’s resonance was centered on
+about 2.5 Hz, and had a width covering a range from about 1 Hz
+to 4 Hz.
+When the earthquake wave came along with its mixture of fre-
+quencies,themudrespondedstronglytothosethatwerecloseto
+its own natural 2.5 Hz frequency. Unfortunately, an engineering
+analysisafterthequakeshowedthattheoverpassitselfhadares-
+onantfrequencyof2.5Hzaswell! Themudrespondedstronglyto
+the earthquake waves with frequencies close to 2.5 Hz, and the
+bridge responded strongly to the 2.5 Hz vibrations of the mud,
+causing sections of it to collapse.
+Collapse of the Tacoma Narrows Bridge example 7
+Let’s now examine the more conceptually difficult case of the
+Tacoma Narrows Bridge. The surprise here is that the wind was
+Putting energy into vibrations 467
+
+steady. If the wind was blowing at constant velocity, why did it
+shake the bridge back and forth? The answer is a little compli-
+cated. Basedonfilmfootageandafter-the-factwindtunnelexper-
+iments, it appears that two different mechanisms were involved.
+The first mechanism was the one responsible for the initial, rel-
+atively weak vibrations, and it involved resonance. As the wind
+moved over the bridge, it began acting like a kite or an airplane
+wing. Asshowninthefigure,itestablishedswirlingpatternsofair
+flow around itself, of the kind that you can see in a moving cloud
+of smoke. As one of these swirls moved off of the bridge, there
+was an abrupt change in air pressure, which resulted in an up or
+down force on the bridge. We see something similar when a flag
+flaps in the wind, except that the flag’s surface is usually verti-
+cal. This back-and-forth sequence of forces is exactly the kind of
+periodic driving force that would excite a resonance. The faster
+thewind,themorequicklytheswirlswouldgetacrossthebridge,
+andthehigherthefrequencyofthedrivingforcewouldbe. Atjust
+the right velocity, the frequency would be the right one to excite
+the resonance. The wind-tunnel models, however, show that the
+patternofvibrationofthebridgeexcitedbythismechanismwould
+have been a different one than the one that finally destroyed the
+bridge.
+The bridge was probably destroyed by a different mechanism, in
+which its vibrations at its own natural frequency of 0.2 Hz set up
+analternatingpatternofwindgustsintheairimmediatelyaround
+it, which then increased the amplitude of the bridge’s vibrations.
+This vicious cycle fed upon itself, increasing the amplitude of the
+vibrations until the bridge finally collapsed.
+As long as we’re on the subject of collapsing bridges, it is worth
+bringing up the reports of bridges falling down when soldiers march-
+ing over them happened to step in rhythm with the bridge’s natural
+frequency of oscillation. This is supposed to have happened in 1831
+in Manchester, England, and again in 1849 in Anjou, France. Many
+modern engineers and scientists, however, are suspicious of the anal-
+ysis of these reports. It is possible that the collapses had more to do
+with poor construction and overloading than with resonance. The
+Nimitz Freeway and Tacoma Narrows Bridge are far better docu-
+mented, and occurred in an era when engineers’ abilities to analyze
+the vibrations of a complex structure were much more advanced.
+Emission and absorption of light waves by atoms example 8
+Inaverythingas,theatomsaresufficientlyfarapartthattheycan
+actasindividualvibratingsystems. Althoughthevibrationsareof
+averystrangeandabstracttypedescribedbythetheoryofquan-
+tum mechanics, they nevertheless obey the same basic rules as
+ordinary mechanical vibrations. When a thin gas made of a cer-
+tain element is heated, it emits light waves with certain specific
+468 Chapter 18 Resonance
+
+frequencies, which are like a fingerprint of that element. As with
+allothervibrations,theseatomicvibrationsrespondmoststrongly
+to a driving force that matches their own natural frequency. Thus
+if we have a relatively cold gas with light waves of various fre-
+quencies passing through it, the gas will absorb light at precisely
+those frequencies at which it would emit light if heated.
+(3) When a system is driven at resonance, the steady-state vibra-
+tions have an amplitude that is proportional to Q.
+This is fairly intuitive. The steady-state behavior is an equilibrium
+between energy input from the driving force and energy loss due to
+damping. A low-Q oscillator, i.e., one with strong damping, dumps
+its energy faster, resulting in lower-amplitude steady-state motion.
+self-checkC
+Ifanoperasingerisshoppingforawineglassthatshecanimpressher
+friendsbybreaking,whatshouldshelookfor? .Answer,p. 554
+Piano strings ringing in sympathy with a sung note example 9
+. A sufficiently loud musical note sung near a piano with the lid
+raisedcancausethecorrespondingstringsinthepianotovibrate.
+(A piano has a set of three strings for each note, all struck by the
+same hammer.) Why would this trick be unlikely to work with a
+violin?
+.Ifyouhave heardthesoundofa violinbeingplucked(thepizzi-
+cato effect), you know that the note dies away very quickly. In
+otherwords,aviolin’sQismuchlowerthanapiano’s. Thismeans
+that its resonances are much weaker in amplitude.
+Our fourth and final fact about resonance is perhaps the most sur-
+prising. Itgivesusawaytodeterminenumericallyhowwidearange
+of driving frequencies will produce a strong response. As shown in
+the graph, resonances do not suddenly fall o↵ to zero outside a cer-
+tainfrequencyrange. Itisusualtodescribethewidthofaresonance
+by its full width at half-maximum (FWHM) as illustrated in figure
+g.
+(4) The FWHM of a resonance is related to its Q and its resonant
+frequency f by the equation
+res
+f
+res
+FWHM = .
+Q
+The definition of the full width at
+(This equation is only a good approximation when Q is large.) halfmaximum.
+Why? Itisnotimmediatelyobviousthatthereshouldbeanylogical
+relationshipbetweenQandtheFWHM.Here’stheidea. Aswehave
+Putting energy into vibrations 469
+
+seen already, the reason why the response of an oscillator is smaller
+away from resonance is that much of the driving force is being used
+to make the system act as if it had a di↵erent k. Roughly speak-
+ing, the half-maximum points on the graph correspond to the places
+where the amount of the driving force being wasted in this way is
+the same as the amount of driving force being used productively to
+replace the energy being dumped out by the damping force. If the
+damping force is strong, then a large amount of force is needed to
+counteractit, andwecanwastequiteabitofdrivingforceonchang-
+ing k before it becomes comparable to the damping force. If, on the
+other hand, the damping force is weak, then even a small amount of
+force being wasted on changing k will become significant in propor-
+tion, and we cannot get very far from the resonant frequency before
+the two are comparable.
+Changing the pitch of a wind instrument example 10
+. A saxophone player normally selects which note to play by
+choosing a certain fingering, which gives the saxophone a cer-
+tainresonantfrequency. Themusiciancanalso,however,change
+the pitch significantly by altering the tightness of her lips. This
+corresponds to driving the horn slightly off of resonance. If the
+pitch can be altered by about 5% up or down (about one musi-
+cal half-step) without too much effort, roughly what is the Q of a
+saxophone?
+. Five percent is the width on one side of the resonance, so the
+full width is about 10%, FWHM / f = 0.1. This implies a Q
+res
+of about 10, i.e., once the musician stops blowing, the horn will
+continuesoundingforabout10cyclesbeforeitsenergyfallsoffby
+a factor of 535. (Blues and jazz saxophone players will typically
+choose a mouthpiece that has a low Q, so that they can produce
+thebluesypitch-slidestypicaloftheirstyle. “Legit,”i.e.,classically
+oriented players, use a higher-Q setup because their style only
+calls for enough pitch variation to produce a vibrato.)
+Decay of a saxophone tone example 11
+. If a typical saxophone setup has a Q of about 10, how long will
+it take for a 100-Hz tone played on a baritone saxophone to die
+downbyafactorof535inenergy,aftertheplayersuddenlystops
+blowing?
+. A Q of 10 means that it takes 10 cycles for the vibrations to die
+down in energy by a factor of 535. Ten cycles at a frequency of
+100 Hz would correspond to a time of 0.1 seconds, which is not
+verylong. Thisiswhyasaxophonenotedoesn’t“ring”likeanote
+played on a piano or an electric guitar.
+Q of a radio receiver example 12
+. A radio receiver used in the FM band needs to be tuned in to
+within about 0.1 MHz for signals at about 100 MHz. What is its
+Q?
+470 Chapter 18 Resonance
+
+.Q = f /FWHM = 1000. ThisisanextremelyhighQ compared
+res
+to most mechanical systems.
+Q of a stereo speaker example 13
+We have already given one reason why a stereo speaker should
+havealowQ: otherwiseitwouldcontinueringingaftertheendof
+the musical note on the recording. The second reason is that we
+want it to be able to respond to a large range of frequencies.
+Nuclear magnetic resonance example 14
+If you have ever played with a magnetic compass, you have un- Example 14. 1. A compass
+doubtedly noticed that if you shake it, it takes some time to settle needlevibratesabouttheequilib-
+down, h/1. As it settles down, it acts like a damped oscillator of rium position under the influence
+of the earth’s magnetic forces. 2.
+thetypewehavebeendiscussing. Thecompassneedleissimply
+The orientation of a proton’s spin
+a small magnet, and the planet earth is a big magnet. The mag-
+vibrates around its equilibrium
+netic forces between them tend to bring the needle to an equilib-
+direction under the influence of
+rium position in which it lines up with the planet-earth-magnet. the magnetic forces coming from
+the surrounding electrons and
+EssentiallythesamephysicsliesbehindthetechniquecalledNu-
+nuclei.
+clear Magnetic Resonance (NMR). NMR is a technique used to
+deducethemolecularstructureofunknownchemicalsubstances,
+anditisalsousedformakingmedicalimagesoftheinsideofpeo-
+ple’s bodies. If you ever have an NMR scan, they will actually tell
+you you are undergoing “magnetic resonance imaging” or “MRI,”
+because people are scared of the word “nuclear.” In fact, the
+nuclei being referred to are simply the non-radioactive nuclei of
+atoms found naturally in your body.
+Here’s how NMR works. Your body contains large numbers of
+hydrogen atoms, each consisting of a small, lightweight electron
+orbiting around a large, heavy proton. That is, the nucleus of a
+hydrogen atom is just one proton. A proton is always spinning
+on its own axis, and the combination of its spin and its electrical
+charge causes it to behave like a tiny magnet. The principle is
+identical to that of an electromagnet, which consists of a coil of
+wire through which electrical charges pass; the circling motion of
+A member of the author’s
+thechargesinthecoilofwiremakesitmagnetic,andinthesame
+family, who turned out to be
+way,thecirclingmotionoftheproton’schargemakesitmagnetic. healthy.
+Now a proton in one of your body’s hydrogen atoms finds itself
+surroundedbymanyotherwhirling,electricallychargedparticles:
+itsownelectron,plustheelectronsandnucleioftheothernearby
+atoms. These neighbors act like magnets, and exert magnetic
+forcesontheproton,h/2. Thek ofthevibratingprotonissimplya
+measure of the total strength of these magnetic forces. Depend-
+ing on the structure of the molecule in which the hydrogen atom
+finds itself, there will be a particular set of magnetic forces acting
+on the proton and a particular value of k. The NMR apparatus
+bombards the sample with radio waves, and if the frequency of
+A three-dimensional computer
+the radio waves matches the resonant frequency of the proton,
+reconstruction of the shape of a
+the proton will absorb radio-wave energy strongly and oscillate
+human brain, based on magnetic
+resonancedata.
+Putting energy into vibrations 471

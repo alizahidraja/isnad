@@ -1,0 +1,202 @@
+# REAL PDF — openstax_vol2.pdf, pages 443-450
+############################################################
+
+Chapter 10 | Direct-Current Circuits 433
+Figure 10.2 A variety of voltage sources. (a) The Brazos Wind Farm in Fluvanna, Texas; (b) the Krasnoyarsk Dam in Russia;
+(c) a solar farm; (d) a group of nickel metal hydride batteries. The voltage output of each device depends on its construction and
+load. The voltage output equals emf only if there is no load. (credit a: modification of work by Stig Nygaard; credit b:
+modification of work by "vadimpl"/Wikimedia Commons; credit c: modification of work by "The tdog"/Wikimedia Commons;
+credit d: modification of work by "Itrados"/Wikimedia Commons)
+Iftheelectromotiveforceisnotaforceatall,thenwhatistheemfandwhatisasourceofemf?Toanswerthesequestions,
+considerasimplecircuitofa12-Vlampattachedtoa12-Vbattery,asshowninFigure10.3.Thebatterycanbemodeled
+asatwo-terminaldevicethatkeepsoneterminalatahigherelectricpotentialthanthesecondterminal.Thehigherelectric
+potentialissometimescalledthepositiveterminalandislabeledwithaplussign.Thelower-potentialterminalissometimes
+called the negative terminal and labeled with a minus sign. This is the source of the emf.
+Figure 10.3 A source of emf maintains one terminal at a higher electric potential
+than the other terminal, acting as a source of current in a circuit.
+
+434 Chapter 10 | Direct-Current Circuits
+Whentheemfsourceisnotconnectedtothelamp,thereisnonetflowofchargewithintheemfsource.Oncethebatteryis
+connectedtothelamp,chargesflowfromoneterminalofthebattery,throughthelamp(causingthelamptolight),andback
+totheotherterminalofthebattery.Ifweconsiderpositive(conventional)currentflow,positivechargesleavethepositive
+terminal, travel through the lamp, and enter the negative terminal.
+Positivecurrentflowisusefulformostofthecircuitanalysisinthischapter,butinmetallicwiresandresistors,electrons
+contributethemosttocurrent,flowingintheoppositedirectionofpositivecurrentflow.Therefore,itismorerealisticto
+considerthemovementofelectronsfortheanalysisofthecircuitinFigure10.3.Theelectronsleavethenegativeterminal,
+travelthroughthelamp,andreturntothepositiveterminal.Inorderfortheemfsourcetomaintainthepotentialdifference
+betweenthetwoterminals,negativecharges(electrons)mustbemovedfromthepositiveterminaltothenegativeterminal.
+The emf source acts as a charge pump, moving negative charges from the positive terminal to the negative terminal to
+maintainthepotentialdifference.Thisincreasesthepotentialenergyofthechargesand,therefore,theelectricpotentialof
+the charges.
+Theforceonthenegativechargefromtheelectricfieldisintheoppositedirectionoftheelectricfield,asshowninFigure
+10.3.Inorderforthenegativechargestobemovedtothenegativeterminal,workmustbedoneonthenegativecharges.
+Thisrequiresenergy,whichcomesfromchemicalreactionsinthebattery.Thepotentialiskepthighonthepositiveterminal
+and low on the negative terminal to maintain the potential difference between the two terminals. The emf is equal to the
+⎛ dW⎞
+workdoneonthechargeperunitcharge ε= whenthereisnocurrentflowing.Sincetheunitforworkisthejoule
+⎝ dq⎠
+and the unit for charge is the coulomb, the unit for emf is the volt (1V=1J/C).
+Theterminalvoltage V ofabatteryisvoltagemeasuredacrosstheterminalsofthebatterywhenthereisnoload
+terminal
+connectedtotheterminal.Anidealbatteryisanemfsourcethatmaintainsaconstantterminalvoltage,independentofthe
+currentbetweenthetwoterminals.Anidealbatteryhasnointernalresistance,andtheterminalvoltageisequaltotheemf
+ofthebattery.Inthenextsection,wewillshowthatarealbatterydoeshaveinternalresistanceandtheterminalvoltageis
+always less than the emf of the battery.
+The Origin of Battery Potential
+Thecombinationofchemicalsandthemakeupoftheterminalsinabatterydetermineitsemf.Theleadacidbatteryusedin
+carsandothervehiclesisoneofthemostcommoncombinationsofchemicals.Figure10.4showsasinglecell(oneofsix)
+ofthisbattery.Thecathode(positive)terminalofthecellisconnectedtoaleadoxideplate,whereastheanode(negative)
+terminal is connected to a lead plate. Both plates are immersed in sulfuric acid, the electrolyte for the system.
+Figure 10.4 Chemical reactions in a lead-acid cell separate charge,
+sending negative charge to the anode, which is connected to the lead plates.
+The lead oxide plates are connected to the positive or cathode terminal of
+the cell. Sulfuric acid conducts the charge, as well as participates in the
+chemical reaction.
+Knowing a little about how the chemicals in a lead-acid battery interact helps in understanding the potential created by
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 435
+thebattery.Figure 10.5showstheresultofasinglechemicalreaction.Twoelectronsareplacedontheanode,makingit
+negative,providedthatthecathodesuppliestwoelectrons.Thisleavesthecathodepositivelycharged,becauseithaslost
+two electrons. In short, a separation of charge has been driven by a chemical reaction.
+Note that the reaction does not take place unless there is a complete circuit to allow two electrons to be supplied to the
+cathode. Under many circumstances, these electrons come from the anode, flow through a resistance, and return to the
+cathode.Notealsothatsincethechemicalreactionsinvolvesubstanceswithresistance,itisnotpossibletocreatetheemf
+without an internal resistance.
+Figure 10.5 In a lead-acid battery, two electrons are forced onto the
+anode of a cell, and two electrons are removed from the cathode of the cell.
+The chemical reaction in a lead-acid battery places two electrons on the
+anode and removes two from the cathode. It requires a closed circuit to
+proceed, since the two electrons must be supplied to the cathode.
+Internal Resistance and Terminal Voltage
+The amount of resistance to the flow of current within the voltage source is called the internal resistance. The internal
+resistancerofabatterycanbehaveincomplexways.Itgenerallyincreasesasabatteryisdepleted,duetotheoxidationof
+theplatesorthereductionoftheacidityoftheelectrolyte.However,internalresistancemayalsodependonthemagnitude
+and direction of the current through a voltage source, its temperature, and even its history. The internal resistance of
+rechargeablenickel-cadmiumcells,forexample,dependsonhowmanytimesandhowdeeplytheyhavebeendepleted.A
+simple model for a battery consists of an idealized emf source ε and an internal resistancer(Figure 10.6).
+
+436 Chapter 10 | Direct-Current Circuits
+Figure 10.6 A battery can be modeled as an idealized emf
+(ε) with an internal resistance (r). The terminal voltage of the
+battery is V =ε−Ir.
+terminal
+Supposeanexternalresistor,knownastheloadresistanceR,isconnectedtoavoltagesourcesuchasabattery,asinFigure
+10.7.Thefigureshowsamodelofabatterywithanemf ε,aninternalresistancer,andaloadresistorRconnectedacross
+its terminals. Using conventional current flow, positive charges leave the positive terminal of the battery, travel through
+theresistor,andreturntothenegativeterminalofthebattery.Theterminalvoltageofthebatterydependsontheemf,the
+internal resistance, and the current, and is equal to
+V =ε−Ir. (10.1)
+terminal
+Foragivenemfandinternalresistance,theterminalvoltagedecreasesasthecurrentincreasesduetothepotentialdropIr
+of the internal resistance.
+Figure 10.7 Schematic of a voltage source and its load
+resistorR. Since the internal resistanceris in series with the
+load, it can significantly affect the terminal voltage and the
+current delivered to the load.
+AgraphofthepotentialdifferenceacrosseachelementthecircuitisshowninFigure 10.8.AcurrentIrunsthroughthe
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 437
+circuit,andthepotentialdropacrosstheinternalresistorisequaltoIr.Theterminalvoltageisequalto ε−Ir,whichis
+equaltothepotentialdropacrosstheloadresistor IR=ε−Ir.Aswithpotentialenergy,itisthechangeinvoltagethat
+isimportant.Whentheterm“voltage”isused,weassumethatitisactuallythechangeinthepotential,or ΔV.However,
+Δ is often omitted for convenience.
+Figure 10.8 A graph of the voltage through the circuit of a
+battery and a load resistance. The electric potential increases the
+emf of the battery due to the chemical reactions doing work on
+the charges. There is a decrease in the electric potential in the
+battery due to the internal resistance. The potential decreases
+due to the internal resistance (−Ir), making the terminal
+voltage of the battery equal to (ε−Ir). The voltage then
+ε
+decreases by (IR). The current is equal to I = .
+r+R
+ε
+Thecurrentthroughtheloadresistoris I = .Weseefromthisexpressionthatthesmallertheinternalresistancer,the
+r+R
+greaterthecurrentthevoltagesourcesuppliestoitsloadR.Asbatteriesaredepleted,rincreases.Ifrbecomesasignificant
+fraction of the load resistance, then the current is significantly reduced, as the following example illustrates.
+Example 10.1
+Analyzing a Circuit with a Battery and a Load
+A given battery has a 12.00-V emf and an internal resistance of 0.100Ω. (a) Calculate its terminal voltage
+when connected to a 10.00-Ω load. (b) What is the terminal voltage when connected to a 0.500-Ω load? (c)
+Whatpowerdoesthe 0.500-Ω loaddissipate?(d)Iftheinternalresistancegrowsto 0.500Ω,findthecurrent,
+terminal voltage, and power dissipated by a 0.500-Ω load.
+Strategy
+Theanalysisabovegaveanexpressionforcurrentwheninternalresistanceistakenintoaccount.Oncethecurrent
+isfound,theterminalvoltagecanbecalculatedbyusingtheequation V =ε−Ir.Oncecurrentisfound,
+terminal
+we can also find the power dissipated by the resistor.
+Solution
+a. Enteringthegivenvaluesfortheemf,loadresistance,andinternalresistanceintotheexpressionabove
+yields
+I = ε = 12.00V =1.188A.
+R+r 10.10Ω
+
+438 Chapter 10 | Direct-Current Circuits
+Enter the known values into the equation V =ε−Ir to get the terminal voltage:
+terminal
+V =ε−Ir =12.00V −(1.188A)(0.100Ω)=11.90V.
+terminal
+Theterminalvoltagehereisonlyslightlylowerthantheemf,implyingthatthecurrentdrawnbythislight
+load is not significant.
+b. Similarly, with R =0.500Ω, the current is
+load
+I = ε = 12.00V =20.00A.
+R+r 0.600Ω
+The terminal voltage is now
+V =ε−Ir =12.00V−(20.00A)(0.100Ω)=10.00V.
+terminal
+The terminal voltage exhibits a more significant reduction compared with emf, implying 0.500Ω is a
+heavy load for this battery. A “heavy load” signifies a larger draw of current from the source but not a
+larger resistance.
+c. The power dissipated by the 0.500-Ω load can be found using the formula P=I2R. Entering the
+known values gives
+P=I2R=(20.0A)2(0.500Ω)=2.00×102 W.
+V2
+Notethatthispowercanalsobeobtainedusingtheexpression orIV,whereVistheterminalvoltage
+R
+(10.0 V in this case).
+d. Here,theinternalresistancehasincreased,perhapsduetothedepletionofthebattery,tothepointwhere
+itisasgreatastheloadresistance.Asbefore,wefirstfindthecurrentbyenteringtheknownvaluesinto
+the expression, yielding
+I = ε = 12.00V =12.00A.
+R+r 1.00Ω
+Now the terminal voltage is
+V =ε−Ir =12.00V−(12.00A)(0.500Ω)=6.00V,
+terminal
+and the power dissipated by the load is
+P=I2R=(12.00A)2(0.500Ω)=72.00W.
+Weseethattheincreasedinternalresistancehassignificantlydecreasedtheterminalvoltage,current,and
+power delivered to a load.
+Significance
+The internal resistance of a battery can increase for many reasons. For example, the internal resistance of a
+rechargeablebatteryincreasesasthenumberoftimesthebatteryisrechargedincreases.Theincreasedinternal
+resistancemayhavetwoeffectsonthebattery.First,theterminalvoltagewilldecrease.Second,thebatterymay
+overheat due to the increased power dissipated by the internal resistance.
+10.1 CheckYourUnderstandingIfyouplaceawiredirectlyacrossthetwoterminalofabattery,effectively
+shorting out the terminals, the battery will begin to get hot. Why do you suppose this happens?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 439
+Battery Testers
+Batterytesters,suchasthoseinFigure 10.9,usesmallloadresistorstointentionallydrawcurrenttodeterminewhether
+theterminalpotentialdropsbelowanacceptablelevel.Althoughitisdifficulttomeasuretheinternalresistanceofabattery,
+batterytesterscanprovideameasurementoftheinternalresistanceofthebattery.Ifinternalresistanceishigh,thebattery
+is weak, as evidenced by its low terminal voltage.
+Figure 10.9 Battery testers measure terminal voltage under a load to determine the condition of a battery. (a) A US Navy
+electronics technician uses a battery tester to test large batteries aboard the aircraft carrier USSNimitz. The battery tester she uses
+has a small resistance that can dissipate large amounts of power. (b) The small device shown is used on small batteries and has a
+digital display to indicate the acceptability of the terminal voltage. (credit a: modification of work by Jason A. Johnston; credit b:
+modification of work by Keith Williamson)
+Somebatteriescanberechargedbypassingacurrentthroughtheminthedirectionoppositetothecurrenttheysupplyto
+anappliance.Thisisdoneroutinelyincarsandinbatteriesforsmallelectricalappliancesandelectronicdevices(Figure
+10.10).Thevoltageoutputofthebatterychargermustbegreaterthantheemfofthebatterytoreversethecurrentthrough
+it. This causes the terminal voltage of the battery to be greater than the emf, since V =ε−Ir andIis now negative.
+Figure 10.10 A car battery charger reverses the normal direction of current through a
+battery, reversing its chemical reaction and replenishing its chemical potential.
+Itisimportanttounderstandtheconsequencesoftheinternalresistanceofemfsources,suchasbatteriesandsolarcells,but
+often,theanalysisofcircuitsisdonewiththeterminalvoltageofthebattery,aswehavedoneintheprevioussections.The
+terminalvoltageisreferredtoassimplyasV,droppingthesubscript“terminal.”Thisisbecausetheinternalresistanceof
+the battery is difficult to measure directly and can change over time.

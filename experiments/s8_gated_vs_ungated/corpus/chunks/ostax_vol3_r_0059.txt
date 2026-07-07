@@ -1,0 +1,218 @@
+# REAL PDF — openstax_vol3.pdf, pages 351-356
+############################################################
+
+Chapter 7 | Quantum Mechanics 343
+Figure 7.21 In STM, a surface at a constant potential is being scanned by a narrow tip
+moving along the surface. When the STM tip moves close to surface atoms, electrons can
+tunnel from the surface to the tip. This tunneling-electron current is continually monitored
+while the tip is in motion. The amount of current at location (x,y) gives information about
+the elevation of the tip above the surface at this location. In this way, a detailed
+topographical map of the surface is created and displayed on a computer monitor.
+Figure 7.22 An STM image of a carbon nanotube: Atomic-
+scale resolution allows us to see individual atoms on the surface.
+STM images are in gray scale, and coloring is added to bring up
+details to the human eye. (credit: Taner Yildirim, NIST)
+Resonant Quantum Tunneling
+Quantumtunnelinghasnumerousapplicationsinsemiconductordevicessuchaselectroniccircuitcomponentsorintegrated
+circuits that are designed at nanoscales; hence, the term ‘ nanotechnology.’ For example, a diode (an electric-circuit
+element that causes an electron current in one direction to be different from the current in the opposite direction, when
+the polarity of the bias voltage is reversed) can be realized by a tunneling junction between two different types of
+semiconductingmaterials.Insuchatunneldiode,electronstunnelthroughasinglepotentialbarrieratacontactbetween
+two different semiconductors. At the junction, tunneling-electron current changes nonlinearly with the applied potential
+difference across the junction and may rapidly decrease as the bias voltage is increased. This is unlike the Ohm’s law
+behavior that we are familiar with in household circuits. This kind of rapid behavior (caused by quantum tunneling) is
+desirable in high-speed electronic devices.
+Another kind of electronic nano-device utilizes resonant tunneling of electrons through potential barriers that occur in
+quantumdots.Aquantumdotisasmallregionofasemiconductornanocrystalthatisgrown,forexample,inasiliconor
+aluminumarsenidecrystal.Figure 7.23(a)showsaquantumdotofgalliumarsenideembeddedinanaluminumarsenide
+wafer. The quantum-dot region acts as a potential well of a finite height (shown in Figure 7.23(b)) that has two finite-
+heightpotentialbarriersatdotboundaries.Similarly,asforaquantumparticleinabox(thatis,aninfinitepotentialwell),
+lower-lyingenergiesofaquantumparticletrappedinafinite-heightpotentialwellarequantized.Thedifferencebetween
+theboxandthewellpotentialsisthataquantumparticleinaboxhasaninfinitenumberofquantizedenergiesandistrapped
+intheboxindefinitely,whereasaquantumparticletrappedinapotentialwellhasafinitenumberofquantizedenergylevels
+
+344 Chapter 7 | Quantum Mechanics
+and can tunnel through potential barriers at well boundaries to the outside of the well. Thus, a quantum dot of gallium
+arsenidesittinginaluminumarsenideisapotentialwellwherelow-lyingenergiesofanelectronarequantized,indicatedas
+E inpart(b)inthefigure.Whentheenergy E ofanelectronintheoutsideregionofthedotdoesnotmatchits
+dot electron
+energy E thatitwouldhaveinthedot,theelectrondoesnottunnelthroughtheregionofthedotandthereisnocurrent
+dot
+throughsuchacircuitelement,evenifitwerekeptatanelectricvoltagedifference(bias).However,whenthisvoltagebias
+ischangedinsuchawaythatoneofthebarriersislowered,sothat E and E becomealigned,asseeninpart(c)
+dot electron
+ofthefigure,anelectroncurrentflowsthroughthedot.Whenthevoltagebiasisnowincreased,thisalignmentislostand
+thecurrentstopsflowing.Whenthevoltagebiasisincreasedfurther,theelectrontunnelingbecomesimprobableuntilthe
+bias voltage reaches avalue forwhich the outside electron energymatches the next electron energylevel inthe dot.The
+word ‘resonance’ in the device name means that the tunneling-electron current occurs only when a selected energy level
+is matched by tuning an applied voltage bias, such as in the operation mechanism of the resonant-tunneling diode just
+described. Resonant-tunneling diodes are used as super-fast nano-switches.
+Figure 7.23 Resonant-tunneling diode: (a) A quantum dot of gallium arsenide embedded in aluminum arsenide.
+(b) Potential well consisting of two potential barriers of a quantum dot with no voltage bias. Electron energies
+E in aluminum arsenide are not aligned with their energy levels E in the quantum dot, so electrons do
+electron dot
+not tunnel through the dot. (c) Potential well of the dot with a voltage bias across the device. A suitably tuned
+voltage difference distorts the well so that electron-energy levels in the dot are aligned with their energies in
+aluminum arsenide, causing the electrons to tunnel through the dot.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 345
+CHAPTER 7 REVIEW
+KEY TERMS
+anti-symmetric function odd function
+Born interpretation states that the square of a wave function is the probability density
+complex function function containing both real and imaginary parts
+Copenhagen interpretation statesthatwhenanobserverisnotlookingorwhenameasurementisnotbeingmade,the
+particle has many values of measurable quantities, such as position
+correspondence principle in the limit of large energies, the predictions of quantum mechanics agree with the
+predictions of classical mechanics
+energy levels states of definite energy, often represented by horizontal lines in an energy “ladder” diagram
+energy quantum number index that labels the allowed energy states
+energy-time uncertainty principle energy-time relation for uncertainties in the simultaneous measurements of the
+energy of a quantum state and of its lifetime
+even function in one dimension, a function symmetric with the origin of the coordinate system
+expectation value average value of the physical quantity assuming a large number of particles with the same wave
+function
+field emission electron emission from conductor surfaces when a strong external electric field is applied in normal
+direction to conductor’s surface
+ground state energy lowest energy state in the energy spectrum
+Heisenberg’s uncertainty principle places limits on what can be known from a simultaneous measurements of
+positionandmomentum;statesthatiftheuncertaintyonpositionissmallthentheuncertaintyonmomentumislarge,
+and vice versa
+infinite square well potential function that is zero in a fixed range and infinitely beyond this range
+momentum operator operator that corresponds to the momentum of a particle
+nanotechnology technologythatisbasedonmanipulationofnanostructuressuchasmoleculesorindividualatomsto
+produce nano-devices such as integrated circuits
+normalization condition requires that the probability density integrated over the entire physical space results in the
+number one
+odd function in one dimension, a function antisymmetric with the origin of the coordinate system
+position operator operator that corresponds to the position of a particle
+potential barrier potential function that rises and falls with increasing values of position
+principal quantum number energy quantum number
+probability density square of the particle’s wave function
+quantum dot smallregionofasemiconductornanocrystalembeddedinanothersemiconductornanocrystal,actingasa
+potential well for electrons
+quantum tunneling phenomenonwhereparticlespenetratethroughapotentialenergybarrierwithaheightgreaterthan
+the total energy of the particles
+resonant tunneling tunnelingofelectronsthroughafinite-heightpotentialwellthatoccursonlywhenelectronenergies
+match an energy level in the well, occurs in quantum dots
+resonant-tunneling diode quantum dot with an applied voltage bias across it
+scanning tunneling microscope (STM) devicethatutilizesquantum-tunnelingphenomenonatmetallicsurfacesto
+obtain images of nanoscale structures
+
+346 Chapter 7 | Quantum Mechanics
+Schrӧdinger’s time-dependent equation
+equationinspaceandtimethatallowsustodeterminewavefunctionsofa
+quantum particle
+Schrӧdinger’s time-independent equation equation in space that allows us to determine wave functions of a
+quantum particle; this wave function must be multiplied by a time-
+modulation factor to obtain the time-dependent wave function
+standing wave state stationary state for which the real and imaginary parts of Ψ(x, t) oscillate up and down like a
+standing wave (often modeled with sine and cosine functions)
+state reduction hypothetical process in which an observed or detected particle “jumps into” a definite state, often
+described in terms of the collapse of the particle’s wave function
+stationary state state for which the probability density function, |Ψ(x, t)| 2, does not vary in time
+time-modulation factor factor e−iωt thatmultipliesthetime-independentwavefunctionwhenthepotentialenergyof
+the particle is time independent
+transmission probability also called tunneling probability, the probability that a particle will tunnel through a
+potential barrier
+tunnel diode electron tunneling-junction between two different semiconductors
+tunneling probability alsocalledtransmissionprobability,theprobabilitythataparticlewilltunnelthroughapotential
+barrier
+wave function function that represents the quantum state of a particle (quantum system)
+wave function collapse equivalent to state reduction
+wave packet superposition of many plane matter waves that can be used to represent a localized particle
+KEY EQUATIONS
+Normalization condition in one dimension ∞
+P(x=−∞, +∞)= ∫ |Ψ(x, t)| 2dx=1
+−∞
+Probability of finding a particle in a narrow interval of P(x, x+dx)=Ψ* (x, t)Ψ(x, t)dx
+position in one dimension (x, x+dx)
+Expectation value of position in one dimension ∞
+〈 x〉 = ∫ Ψ* (x, t)xΨ(x, t)dx
+−∞
+Heisenberg’s position-momentum uncertainty principle ℏ
+ΔxΔp≥
+2
+Heisenberg’s energy-time uncertainty principle ℏ
+ΔEΔt≥
+2
+Schrӧdinger’s time-dependent equation ℏ2 ∂2Ψ(x, t) ∂2Ψ(x, t)
+− +U(x, t)Ψ(x, t)=iℏ
+2m ∂x2 ∂t
+General form of the wave function for a time- Ψ(x, t)=ψ(x)e−iωt
+independent potential in one dimension
+Schrӧdinger’s time-independent equation ℏ2 d2ψ(x)
+− +U(x)ψ(x)=Eψ(x)
+2m dx2
+Schrӧdinger’s equation (free particle) ℏ2 ∂2ψ(x)
+− =Eψ(x)
+2m ∂x2
+Allowed energies (particle in box of lengthL)
+E
+n=n2π2ℏ2
+, n=1, 2, 3, ...
+2mL2
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 347
+Stationary states (particle in a box of lengthL) ψ n(x)=
+L
+2 sin n
+L
+πx , n=1, 2, 3, ...
+Potential-energy function of a harmonic oscillator U(x)= 1mω2x2
+2
+Stationary Schrӧdinger equation
+−
+ℏ
+d2ψ(x)
++
+1mω2x2ψ(x)=Eψ(x)
+2m dx2 2
+The energy spectrum E n= ⎛
+⎝
+n+ 1
+2
+⎞
+⎠
+ℏω, n=0, 1, 2, 3, ...
+The energy wave functions −β2x2
+/2
+ψ n(x)=N n e H n(βx), n=0, 1, 2, 3, ...
+Potential barrier ⎧ 0, whenx<0
+U(x)=⎨U , when0≤ x≤L
+0
+⎩
+0, whenx>L
+Definition of the transmission coefficient |ψ (x)|2
+T(L, E)= tra
+|ψ (x)|2
+in
+A parameter in the transmission coefficient β2= 2m (U −E)
+ℏ2 0
+Transmission coefficient, exact T(L, E)= 1
+cosh2βL+(γ/2)2sinh2βL
+Transmission coefficient, approximate E ⎛ E ⎞ −2βL
+T(L, E)=16 1− e
+U ⎝ U ⎠
+0 0
+SUMMARY
+7.1Wave Functions
+• In quantum mechanics, the state of a physical system is represented by a wave function.
+• InBorn’sinterpretation,thesquareoftheparticle’swavefunctionrepresentstheprobabilitydensityoffindingthe
+particle around a specific location in space.
+• Wave functions must first be normalized before using them to make predictions.
+• The expectation value is the average value of a quantity that requires a wave function and an integration.
+7.2The Heisenberg Uncertainty Principle
+• The Heisenberg uncertainty principle states that it is impossible to simultaneously measure the x-components of
+positionandofmomentumofaparticlewithanarbitrarilyhighprecision.Theproductofexperimentaluncertainties
+is always larger than or equal to ℏ/2.
+• Thelimitationsofthisprinciplehavenothingtodowiththequalityoftheexperimentalapparatusbutoriginatein
+the wave-like nature of matter.
+• Theenergy-timeuncertaintyprincipleexpressestheexperimentalobservationthataquantumstatethatexistsonly
+for a short time cannot have a definite energy.
+7.3The Schrӧdinger Equation
+• TheSchrӧdingerequationisthefundamentalequationofwavequantummechanics.Itallowsustomakepredictions
+about wave functions.
+• Whenaparticlemovesinatime-independentpotential,asolutionofthetime-dependentSchrӧdingerequationisa

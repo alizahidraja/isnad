@@ -1,0 +1,248 @@
+# REAL PDF — openstax_vol3.pdf, pages 146-150
+############################################################
+
+138 Chapter 3 | Interference
+3.3Multiple-Slit Interference
+• Interference from multiple slits (N >2) produces principal as well as secondary maxima.
+• As the number of slits is increased, the intensity of the principal maxima increases and the width decreases.
+3.4Interference in Thin Films
+• When light reflects from a medium having an index of refraction greater than that of the medium in which it is
+traveling, a 180° phase change (or a λ/2 shift) occurs.
+• Thin-filminterferenceoccursbetweenthelightreflectedfromthetopandbottomsurfacesofafilm.Inadditionto
+the path length difference, there can be a phase change.
+3.5The Michelson Interferometer
+• Whenthemirrorinonearmoftheinterferometermovesadistanceof λ/2 eachfringeintheinterferencepattern
+moves to the position previously occupied by the adjacent fringe.
+CONCEPTUAL QUESTIONS
+by reflection? By refraction?
+3.1Young's Double-Slit Interference
+1. Young’s double-slit experiment breaks a single light 8. Isthereaphasechangeinthelightreflectedfromeither
+beamintotwosources.Wouldthesamepatternbeobtained surface of a contact lens floating on a person’s tear layer?
+fortwoindependentsourcesoflight,suchastheheadlights Theindexofrefractionofthelensisabout1.5,anditstop
+of a distant car? Explain. surface is dry.
+2. Is it possible to create a experimental setup in which 9. Inplacingasampleonamicroscopeslide,aglasscover
+there is only destructive interference? Explain. isplacedoverawaterdropontheglassslide.Lightincident
+fromabovecanreflectfromthetopandbottomoftheglass
+cover and from the glass slide below the water drop. At
+3. Why won’t two small sodium lamps, held close
+whichsurfaceswilltherebeaphasechangeinthereflected
+together, produce an interference pattern on a distant
+light?
+screen? What if the sodium lamps were replaced by two
+laser pointers held close together?
+10. Answer the above question if the fluid between the
+two pieces of crown glass is carbon disulfide.
+3.2Mathematics of Interference
+11. Whilecontemplatingthefoodvalueofasliceofham,
+4. Suppose you use the same double slit to perform
+you notice a rainbow of color reflected from its moist
+Young’s double-slit experiment in air and then repeat the
+surface. Explain its origin.
+experimentinwater.Dotheanglestothesamepartsofthe
+interferencepatterngetlargerorsmaller?Doesthecolorof
+the light change? Explain. 12. An inventor notices that a soap bubble is dark at its
+thinnest andrealizes that destructive interference istaking
+place for all wavelengths. How could she use this
+5. Why is monochromatic light used in the double slit
+knowledge to make a nonreflective coating for lenses that
+experiment? What would happen if white light were used?
+is effective at all wavelengths? That is, what limits would
+there be on the index of refraction and thickness of the
+coating? How might this be impractical?
+3.4Interference in Thin Films
+6. What effect does increasing the wedge angle have on 13. A nonreflective coating like the one described in
+the spacing of interference fringes? If the wedge angle is
+Example 3.3 works ideally for a single wavelength and
+too large, fringes are not observed. Why?
+for perpendicular incidence. What happens for other
+wavelengths and other incident directions? Be specific.
+7. Howisthedifference inpathstakenbytwooriginally
+in-phase light waves related to whether they interfere
+14. Why is it much more difficult to see interference
+constructively or destructively? How can this be affected
+fringes for light reflected from a thick piece of glass than
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 139
+fromathinfilm?Woulditbeeasierifmonochromaticlight
+were used? 3.5The Michelson Interferometer
+15. DescribehowaMichelsoninterferometercanbeused
+to measure the index of refraction of a gas (including air).
+PROBLEMS
+27. (a) If the first-order maximum for monochromatic
+3.2Mathematics of Interference light falling on a double slit is at an angle of 10.0°, at
+16. Atwhatangleisthefirst-ordermaximumfor450-nm whatangleisthesecond-ordermaximum?(b)Whatisthe
+wavelength blue light falling on double slits separated by angle of the first minimum? (c) What is the highest-order
+0.0500 mm? maximum possible here?
+17. Calculate the angle for the third-order maximum of 28. Shown below is a double slit located a distance x
+580-nm wavelength yellow light falling on double slits from a screen, with the distance from the center of the
+separated by 0.100 mm. screen given by y. When the distance d between the slits
+is relatively large, numerous bright spots appear, called
+18. What is the separation between two slits for which
+fringes.Showthat,forsmallangles(where sinθ≈θ,with
+610-nm orange light has its first maximum at an angle of θ in radians), the distance between fringes is given by
+30.0°? Δy= xλ/d
+19. Findthe distance between twoslits that produces the
+firstminimumfor410-nmvioletlightatanangleof 45.0°.
+20. Calculate the wavelength of light that has its third
+minimumatanangleof 30.0° whenfallingondoubleslits
+separated by 3.00µm. Explicitly show how you follow
+the steps from the Problem-Solving Strategy: Wave
+Optics, located at the end of the chapter.
+21. Whatisthewavelengthoflightfallingondoubleslits
+separatedby 2.00µm ifthethird-ordermaximumisatan
+angle of 60.0°?
+29. Using the result of the preceding problem, (a)
+calculate the distance between fringes for 633-nm light
+22. At what angle is the fourth-order maximum for the falling on double slits separated by 0.0800 mm, located
+situation in the preceding problem? 3.00 m from a screen. (b) What would be the distance
+between fringes if the entire apparatus were submersed in
+water, whose index of refraction is 1.33?
+23. Whatisthehighest-ordermaximumfor400-nmlight
+falling on double slits separated by 25.0µm?
+30. Using the result of the problem two problems prior,
+findthewavelengthoflightthatproducesfringes7.50mm
+24. Findthelargestwavelengthoflightfallingondouble
+apart on a screen 2.00 m from double slits separated by
+slitsseparatedby 1.20µm forwhichthereisafirst-order 0.120 mm.
+maximum. Is this in the visible part of the spectrum?
+31. Inadouble-slitexperiment,thefifthmaximumis2.8
+25. Whatisthesmallestseparationbetweentwoslitsthat cm from the central maximum on a screen that is 1.5 m
+will produce a second-order maximum for 720-nm red awayfromtheslits.Iftheslitsare0.15mmapart,whatis
+light? the wavelength of the light being used?
+26. (a) What is the smallest separation between two slits 32. The source in Young’s experiment emits at two
+thatwillproduceasecond-ordermaximumforanyvisible wavelengths. On the viewing screen, the fourth maximum
+light? (b) For all visible light? forone wavelength is located at the same spot as the fifth
+
+140 Chapter 3 | Interference
+maximumfortheotherwavelength.Whatistheratioofthe to its surface. Take the wavelength to be 680 nm, and
+two wavelengths? assume the same index of refraction as water.
+33. If500-nmand650-nmlightilluminatestwoslitsthat 43. Afilmofsoapywater(n=1.33)ontopofaplastic
+are separated by 0.50 mm, how far apart are the second- cuttingboardhasathicknessof233nm.Whatcolorismost
+ordermaximaforthesetwowavelengthsonascreen2.0m strongly reflected if it is illuminated perpendicular to its
+away? surface?
+34. Red light of wavelength of 700 nm falls on a double 44. What are the three smallest non-zero thicknesses of
+slit separated by 400 nm. (a) At what angle is the first- soapy water (n=1.33) on Plexiglas if it appears green
+order maximum in the diffraction pattern? (b) What is
+(constructively reflecting 520-nm light) when illuminated
+unreasonableaboutthisresult?(c)Whichassumptionsare
+perpendicularly by white light?
+unreasonable or inconsistent?
+45. Suppose you have a lens system that is to be used
+primarilyfor700-nmredlight.Whatisthesecondthinnest
+3.3Multiple-Slit Interference
+coating of fluorite (magnesium fluoride) that would be
+35. Ten narrow slits are equally spaced 0.25 mm apart nonreflective for this wavelength?
+and illuminated with yellow light of wavelength 580 nm.
+(a) What are the angular positions of the third and fourth
+46. (a) As a soap bubble thins it becomes dark, because
+principal maxima? (b) What is the separation of these
+the path length difference becomes small compared with
+maxima on a screen 2.0 m from the slits?
+thewavelengthoflightandthereisaphaseshiftatthetop
+surface.Ifitbecomesdarkwhenthepathlengthdifference
+36. The width of bright fringes can be calculated as the islessthanone-fourththewavelength,whatisthethickest
+separationbetweenthetwoadjacentdarkfringesoneither the bubble can be and appear dark at all visible
+side.Findtheangularwidthsofthethird-andfourth-order wavelengths? Assume the same index of refraction as
+bright fringes from the preceding problem. water. (b) Discuss the fragility of the film considering the
+thickness found.
+37. For a three-slit interference pattern, find the ratio of
+thepeakintensitiesofasecondarymaximumtoaprincipal 47. Tosavemoneyonmakingmilitaryaircraftinvisibleto
+maximum. radar,aninventordecidestocoatthemwithanonreflective
+material having an index of refraction of 1.20, which is
+38. What is the angular width of the central fringe of between that of air and the surface of the plane. This, he
+the interference pattern of (a) 20 slits separated by reasons, should be much cheaper than designing Stealth
+bombers. (a) What thickness should the coating be to
+d =2.0×10 −3 mm? (b) 50 slits with the same
+inhibit the reflection of 4.00-cm wavelength radar? (b)
+separation? Assume that λ=600nm.
+What is unreasonable about this result? (c) Which
+assumptions are unreasonable or inconsistent?
+3.4Interference in Thin Films
+39. A soap bubble is 100 nm thick and illuminated by 3.5The Michelson Interferometer
+white light incident perpendicular to its surface. What 48. A Michelson interferometer has two equal arms. A
+wavelengthandcolorofvisiblelightismostconstructively mercury light of wavelength 546 nm is used for the
+reflected, assuming the same index of refraction as water? interferometerandstablefringesarefound.Oneofthearms
+is moved by 1.5µm. How many fringes will cross the
+40. Anoilslickonwateris120nmthickandilluminated
+observing field?
+by white light incident perpendicular to its surface. What
+color does the oil appear (what is the most constructively
+49. What is the distance moved by the traveling mirror
+reflected wavelength), given its index of refraction is 1.40?
+of a Michelson interferometer that corresponds to 1500
+fringes passing by a point of the observation screen?
+41. Calculate the minimum thickness of an oil slick on
+Assume that the interferometer is illuminated with a 606
+water that appears blue when illuminated by white light
+nm spectral line of krypton-86.
+perpendiculartoitssurface.Takethebluewavelengthtobe
+470 nm and the index of refraction of oil to be 1.40.
+50. When the traveling mirror of a Michelson
+interferometer is moved 2.40×10 −5 m, 90 fringes pass
+42. Find the minimum thickness of a soap bubble that
+by a point on the observation screen. What is the
+appearsredwhenilluminatedbywhitelightperpendicular
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 141
+wavelength of the light used?
+51. In a Michelson interferometer, light of wavelength
+632.8 nm from a He-Ne laser is used. When one of the
+mirrorsismovedbyadistanceD,8fringesmovepastthe
+field of view. What is the value of the distanceD?
+52. Achamber5.0cmlongwithflat,parallelwindowsat
+theendsisplacedinonearmofaMichelsoninterferometer
+(see below). The light used has a wavelength of 500 nm
+in a vacuum. While all the air is being pumped out of the
+chamber, 29 fringes pass by a point on the observation
+screen. What is the refractive index of the air?
+ADDITIONAL PROBLEMS
+53. For 600-nm wavelength light and a slit separation of immersedinwater(n=1.333).ThelightsourceisaHe-
+0.12 mm, what are the angular positions of the first and Ne laser, λ=632.9nm in vacuum. (a) What is the
+third maxima in the double slit interference pattern?
+wavelengthofthislightinwater?(b)Whatistheanglefor
+the third order maximum for two slits separated by 0.100
+54. If the light source in the preceding problem is mm.
+changed, the angular position of the third maximum is
+foundtobe 0.57°.What isthe wavelength oflight being
+61. A double-slit experiment is to be set up so that the
+used now? bright fringes appear 1.27 cm apart on a screen 2.13 m
+away from the two slits. The light source was wavelength
+55. Red light (λ=710.nm) illuminates double slits 500 nm. What should be the separation between the two
+separated by a distance d =0.150mm. The screen and slits?
+theslitsare3.00mapart.(a)Findthedistanceonthescreen
+betweenthecentralmaximumandthethirdmaximum.(b) 62. Aneffectanalogoustotwo-slitinterferencecanoccur
+What is the distance between the second and the fourth with sound waves, instead of light. In an open field, two
+maxima? speakers placed 1.30 m apart are powered by a single-
+function generator producing sine waves at 1200-Hz
+frequency. A student walks along a line 12.5 m away and
+56. Two sources as in phase and emit waves with
+parallel to the line between the speakers. She hears an
+λ=0.42m. Determine whether constructive or
+alternating pattern of loud and quiet, due to constructive
+destructive interference occurs at points whose distances
+and destructive interference. What is (a) the wavelength
+fromthetwosourcesare(a)0.84and0.42m,(b)0.21and
+of this sound and (b) the distance between the central
+0.42m,(c)1.26and0.42m,(d)1.87and1.45m,(e)0.63
+maximumandthefirstmaximum(loud)positionalongthis
+and 0.84 m and (f) 1.47 and 1.26 m.
+line?
+57. Twoslits 4.0×10 −6 m apartareilluminatedbylight 63. A hydrogen gas discharge lamp emits visible light
+ofwavelength600nm.Whatisthehighestorderfringein at four wavelengths, λ= 410, 434, 486, and 656 nm.
+the interference pattern? (a) If light from this lamp falls on a N slits separated by
+0.025mm,howfarfromthecentralmaximumarethethird
+58. Suppose that the highest order fringe that can be maxima when viewed on a screen 2.0 m from the slits?
+observed is the eighth in a double-slit experiment where (b) By what distance are the second and third maxima
+550-nm wavelength light is used. What is the minimum separated for l=486nm?
+separation of the slits?
+64. Monochromatic light of frequency 5.5×1014 Hz
+59. The interference pattern of a He-Ne laser light
+falls on 10 slits separated by 0.020 mm. What is the
+(λ=632.9nm) passingthroughtwoslits0.031mmapart
+separation between the first and third maxima on a screen
+is projected on a screen 10.0 m away. Determine the that is 2.0 m from the slits?
+distance between the adjacent bright fringes.
+65. Eightslitsequallyseparatedby0.149mmisuniformly
+60. Young’s double-slit experiment is performed

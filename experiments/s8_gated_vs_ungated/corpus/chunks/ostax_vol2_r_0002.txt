@@ -1,0 +1,164 @@
+# REAL PDF — openstax_vol2.pdf, pages 8-13
+############################################################
+
+9.1 Electrical Current . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 386
+9.2 Model of Conduction in Metals . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 391
+9.3 Resistivity and Resistance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 397
+9.4 Ohm's Law . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 406
+9.5 Electrical Energy and Power . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 409
+9.6 Superconductors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 415
+Chapter10: Direct-Current Circuits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 431
+10.1 Electromotive Force . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 432
+10.2 Resistors in Series and Parallel . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 440
+10.3 Kirchhoff's Rules . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 453
+10.4 Electrical Measuring Instruments . . . . . . . . . . . . . . . . . . . . . . . . . . . . 466
+10.5 RC Circuits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 469
+10.6 Household Wiring and Electrical Safety . . . . . . . . . . . . . . . . . . . . . . . . . 475
+Chapter11: Magnetic Forces and Fields . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 493
+11.1 Magnetism and Its Historical Discoveries . . . . . . . . . . . . . . . . . . . . . . . . 494
+11.2 Magnetic Fields and Lines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 496
+11.3 Motion of a Charged Particle in a Magnetic Field . . . . . . . . . . . . . . . . . . . . 501
+11.4 Magnetic Force on a Current-Carrying Conductor . . . . . . . . . . . . . . . . . . . . 506
+11.5 Force and Torque on a Current Loop . . . . . . . . . . . . . . . . . . . . . . . . . . 511
+11.6 The Hall Effect . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 514
+11.7 Applications of Magnetic Forces and Fields . . . . . . . . . . . . . . . . . . . . . . . 517
+Chapter12: Sources of Magnetic Fields . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 535
+12.1 The Biot-Savart Law . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 536
+12.2 Magnetic Field Due to a Thin Straight Wire . . . . . . . . . . . . . . . . . . . . . . . 540
+12.3 Magnetic Force between Two Parallel Currents . . . . . . . . . . . . . . . . . . . . . 543
+12.4 Magnetic Field of a Current Loop . . . . . . . . . . . . . . . . . . . . . . . . . . . . 546
+12.5 Ampère’s Law . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 549
+12.6 Solenoids and Toroids . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 555
+12.7 Magnetism in Matter . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 560
+Chapter13: Electromagnetic Induction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 581
+13.1 Faraday’s Law . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 582
+13.2 Lenz's Law . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 586
+13.3 Motional Emf . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 591
+13.4 Induced Electric Fields . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 598
+13.5 Eddy Currents . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 602
+13.6 Electric Generators and Back Emf . . . . . . . . . . . . . . . . . . . . . . . . . . . . 606
+13.7 Applications of Electromagnetic Induction . . . . . . . . . . . . . . . . . . . . . . . . 613
+Chapter14: Inductance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 627
+14.1 Mutual Inductance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 628
+14.2 Self-Inductance and Inductors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 631
+14.3 Energy in a Magnetic Field . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 637
+14.4 RL Circuits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 639
+14.5 Oscillations in an LC Circuit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 645
+14.6 RLC Series Circuits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 648
+Chapter15: Alternating-Current Circuits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 661
+15.1 AC Sources . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 662
+15.2 Simple AC Circuits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 663
+15.3 RLC Series Circuits with AC . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 670
+15.4 Power in an AC Circuit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 675
+15.5 Resonance in an AC Circuit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 679
+15.6 Transformers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 684
+Chapter16: Electromagnetic Waves . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 699
+16.1 Maxwell’s Equations and Electromagnetic Waves . . . . . . . . . . . . . . . . . . . . 700
+16.2 Plane Electromagnetic Waves . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 706
+16.3 Energy Carried by Electromagnetic Waves . . . . . . . . . . . . . . . . . . . . . . . 712
+16.4 Momentum and Radiation Pressure . . . . . . . . . . . . . . . . . . . . . . . . . . . 717
+16.5 The Electromagnetic Spectrum . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 722
+Appendix A:Units . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 741
+Appendix B:Conversion Factors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 745
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Appendix C:Fundamental Constants . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 749
+Appendix D:Astronomical Data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 751
+Appendix E:Mathematical Formulas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 753
+Appendix F:Chemistry . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 757
+Appendix G:The Greek Alphabet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 759
+Index . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 807
+
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Preface 1
+PREFACE
+WelcometoUniversityPhysics,anOpenStaxresource.Thistextbookwaswrittentoincreasestudentaccesstohigh-quality
+learning materials, maintaining highest standards of academic rigor at little to no cost.
+About OpenStax
+OpenStax is a nonprofit based at Rice University, and it’s our mission to improve student access to education. Our first
+openlylicensedcollegetextbookwaspublishedin2012andourlibraryhassincescaledtoover25booksusedbyhundreds
+ofthousandsofstudentsacrosstheglobe.OpenStaxTutor,ourlow-costpersonalizedlearningtool,isbeingusedincollege
+courses throughout the country. The OpenStax mission is made possible through the generous support of philanthropic
+foundations. Through these partnerships and with the help of additional low-cost resources from our OpenStax partners,
+OpenStax is breaking down the most common barriers to learning and empowering students and instructors to succeed.
+About OpenStax's resources
+Customization
+University Physics is licensed under a Creative Commons Attribution 4.0 International (CC BY) license, which means
+thatyoucandistribute,remix,andbuilduponthecontent,aslongasyouprovideattributiontoOpenStaxanditscontent
+contributors.
+Because our books are openly licensed, you are free to use the entire book or pick and choose the sections that are most
+relevanttotheneedsofyourcourse.Feelfreetoremixthecontentbyassigningyourstudentscertainchaptersandsections
+inyoursyllabusintheorderthatyouprefer.Youcanevenprovideadirectlinkinyoursyllabustothesectionsintheweb
+view of your book.
+InstructorsalsohavetheoptionofcreatingacustomizedversionoftheirOpenStaxbook.Thecustomversioncanbemade
+availabletostudentsinlow-costprintordigitalformthroughtheircampusbookstore.VisityourbookpageonOpenStax.org
+for more information.
+Errata
+All OpenStax textbooks undergo a rigorous review process. However, like any professional-grade textbook, errors
+sometimesoccur.Sinceourbooksarewebbased,wecanmakeupdatesperiodicallywhendeemedpedagogicallynecessary.
+Ifyouhaveacorrectiontosuggest,submititthroughthelinkonyourbookpageonOpenStax.org.Subjectmatterexperts
+reviewallerratasuggestions.OpenStaxiscommittedtoremainingtransparentaboutallupdates,soyouwillalsofindalist
+of past errata changes on your book page on OpenStax.org.
+Format
+You can access this textbook for free in web view or PDF through OpenStax.org, and for a low cost in print.
+About University Physics
+UniversityPhysicsisdesignedforthetwo-orthree-semestercalculus-basedphysicscourse.Thetexthasbeendeveloped
+tomeetthescopeandsequenceofmostuniversityphysicscoursesandprovidesafoundationforacareerinmathematics,
+science,orengineering.Thebookprovidesanimportantopportunityforstudentstolearnthecoreconceptsofphysicsand
+understand how those concepts apply to their lives and to the world around them.
+Due to the comprehensive nature of the material, we are offering the book in three volumes for flexibility and efficiency.
+Coverage and scope
+Our University Physics textbook adheres to the scope and sequence of most two- and three-semester physics courses
+nationwide. We have worked to make physics interesting and accessible to students while maintaining the mathematical
+rigor inherent in the subject. With this objective in mind, the content of this textbook has been developed and arranged
+toprovidealogicalprogressionfromfundamentaltomoreadvancedconcepts,buildinguponwhatstudentshavealready
+learned and emphasizing connections between topics and between theory and applications. The goal of each section is
+to enable students not just to recognize concepts, but to work with them in ways that will be useful in later courses and
+futurecareers.Theorganizationandpedagogicalfeaturesweredevelopedandvettedwithfeedbackfromscienceeducators
+dedicated to the project.
+
+2 Preface
+VOLUME I
+Unit 1: Mechanics
+Chapter 1: Units and Measurement
+Chapter 2: Vectors
+Chapter 3: Motion Along a Straight Line
+Chapter 4: Motion in Two and Three Dimensions
+Chapter 5: Newton’s Laws of Motion
+Chapter 6: Applications of Newton’s Laws
+Chapter 7: Work and Kinetic Energy
+Chapter 8: Potential Energy and Conservation of Energy
+Chapter 9: Linear Momentum and Collisions
+Chapter 10: Fixed-Axis Rotation
+Chapter 11: Angular Momentum
+Chapter 12: Static Equilibrium and Elasticity
+Chapter 13: Gravitation
+Chapter 14: Fluid Mechanics
+Unit 2: Waves and Acoustics
+Chapter 15: Oscillations
+Chapter 16: Waves
+Chapter 17: Sound
+VOLUME II
+Unit 1: Thermodynamics
+Chapter 1: Temperature and Heat
+Chapter 2: The Kinetic Theory of Gases
+Chapter 3: The First Law of Thermodynamics
+Chapter 4: The Second Law of Thermodynamics
+Unit 2: Electricity and Magnetism
+Chapter 5: Electric Charges and Fields
+Chapter 6: Gauss’s Law
+Chapter 7: Electric Potential
+Chapter 8: Capacitance
+Chapter 9: Current and Resistance
+Chapter 10: Direct-Current Circuits
+Chapter 11: Magnetic Forces and Fields
+Chapter 12: Sources of Magnetic Fields
+Chapter 13: Electromagnetic Induction
+Chapter 14: Inductance
+Chapter 15: Alternating-Current Circuits
+Chapter 16: Electromagnetic Waves
+VOLUME III
+Unit 1: Optics
+Chapter 1: The Nature of Light
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

@@ -1,0 +1,194 @@
+# REAL PDF — openstax_vol3.pdf, pages 431-437
+############################################################
+
+Chapter 9 | Condensed Matter Physics 423
+Solution
+a. FromEquation 9.31, the Fermi energy is
+E
+F
+=
+2
+h
+m
+2
+e
+(3π2n e) 2/3
+= (1.05×10 −34 J·s)2 ×[(3π2(5.86×10 28 m −3 )] 2/3
+−31
+2(9.11×10 kg)
+−19
+=8.79×10 J=5.49eV.
+This is a typical value of the Fermi energy for metals, as can be seen fromTable 9.3.
+b. WecanassociateaFermitemperature T withtheFermienergybywriting k T =E . Wethenfind
+F B F F
+for the Fermi temperature
+−19
+T = 8.79×10 J =6.37×104 K,
+F −23
+1.38×10 J/K
+whichismuchhigherthanroomtemperatureandalsothetypicalmeltingpoint (∼10 3 K) ofametal.
+The ratio of the Fermi energy of silver to the room-temperature thermal energy is
+E T
+F = F ≈210.
+k T T
+B
+Tovisualizehowthequantumstatesarefilled,wemightimaginepouringwaterslowlyintoaglass,suchasthatofFigure
+9.13.Thefirstdropsofwater(theelectrons)occupythebottomoftheglass(thestateswithlowestenergy).Asthelevel
+rises,statesofhigherandhigherenergyareoccupied.Furthermore,sincetheglasshasawideopeningandanarrowstem,
+morewateroccupiesthetopoftheglassthanthebottom.Thisreflectsthefactthatthedensityofstatesg(E)isproportional
+to E1/2,sothereisarelativelylargenumberofhigherenergyelectronsinafreeelectrongas.Finally,theleveltowhich
+the glass is filled corresponds to the Fermi energy.
+Figure 9.13 An analogy of how electrons fill energy states in a
+metal. As electrons fill energy states, lowest to highest, the
+number of available states increases. The highest energy state
+(corresponding to the water line) is the Fermi energy. (credit:
+modification of work by “Didriks”/Flickr)
+Supposethatat T =0K,thenumberofconductionelectronsperunitvolumeinoursampleis n
+e
+.Sinceeachfieldstate
+
+424 Chapter 9 | Condensed Matter Physics
+has one electron, the number of filled states per unit volume is the same as the number of electrons per unit volume.
+9.5 | Band Theory of Solids
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe two main approaches to determining the energy levels of an electron in a crystal
+• Explain the presence of energy bands and gaps in the energy structure of a crystal
+• Explain why some materials are good conductors and others are good insulators
+• Differentiate between an insulator and a semiconductor
+Thefreeelectronmodelexplainsmanyimportantpropertiesofconductorsbutisweakinatleasttwoareas.First,itassumes
+aconstantpotentialenergywithinthesolid.(Recallthataconstantpotentialenergyisassociatedwithnoforces.)Figure
+9.14comparestheassumptionofaconstantpotentialenergy(dottedline)withtheperiodicCoulombpotential,whichdrops
+as −1/r ateachlatticepoint,whereristhedistancefromtheioncore(solidline).Second,thefreeelectronmodelassumes
+animpenetrablebarrieratthesurface.Thisassumptionisnotvalid,becauseundercertainconditions,electronscanescape
+thesurface—suchasinthephotoelectriceffect.Inadditiontotheseassumptions,thefreeelectronmodeldoesnotexplain
+thedramaticdifferencesinelectronicpropertiesofconductors,semiconductors,andinsulators.Therefore,amorecomplete
+model is needed.
+Figure 9.14 The periodic potential used to model electrons in a
+conductor. Each ion in the solid is the source of a Coulomb potential.
+Notice that the free electron model is productive because the average
+of this field is approximately constant.
+WecanproduceanimprovedmodelbysolvingSchrödinger’sequationfortheperiodicpotentialshowninFigure 9.14.
+However,thesolutionrequirestechnicalmathematicsfarbeyondourscope.Weagainseekaqualitativeargumentbasedon
+quantum mechanics to find a way forward.
+We first review the argument used to explain the energy structure of a covalent bond. Consider two identical hydrogen
+atomssofarapartthatthereisnointeractionwhatsoeverbetweenthem.Furthersupposethattheelectronineachatomis
+inthesamegroundstate:a1selectronwithanenergyof −13.6eV (ignorespin).Whenthehydrogenatomsarebrought
+closertogether,theindividualwavefunctionsoftheelectronsoverlapand,bytheexclusionprinciple,cannolongerbein
+thesamequantumstate,whichsplitstheoriginalequivalentenergylevelsintotwodifferentenergylevels.Theenergiesof
+these levels depend on the interatomic distance, α (Figure 9.15).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 425
+Iffourhydrogenatomsarebroughttogether,fourlevelsareformedfromthefourpossiblesymmetries—asinglesinewave
+“hump”ineachwell,alternatingupanddown,andsoon.InthelimitofaverylargenumberNofatoms,weexpectaspread
+of nearly continuous bands of electronic energy levels in a solid (see Figure 9.15(c)). Each of these bands is known as
+anenergyband.(Theallowedstatesofenergyandwavenumberarestilltechnicallyquantized,butforlargenumbersof
+atoms, these states are so close together that they are consider to be continuous or “in the continuum.”)
+Energybandsdifferinthenumberofelectronstheyhold.Inthe1sand2senergybands,eachenergylevelholdsuptotwo
+electrons (spin up and spin down), so this band has a maximum occupancy of 2N electrons. In the 2p energy band, each
+energy level holds up to six electrons, so this band has a maximum occupancy of 6Nelectrons (Figure 9.16).
+Figure 9.15 The dependence of energy-level splitting on the average distance between (a) two atoms, (b) four atoms, and (c) a
+large number of atoms. For a large number of electrons, a continuous band of energies is produced.
+Figure 9.16 A simple representation of the energy structure of
+a solid. Electrons belong to energy bands separated by energy
+gaps.
+Eachenergybandisseparatedfromtheotherbyanenergygap.Theelectricalpropertiesofconductorsandinsulatorscan
+beunderstoodintermsofenergybandsandgaps.Thehighestenergybandthatisfilledisknownasavalenceband.The
+nextavailable bandintheenergystructureisknownasaconductionband.Inaconductor,thehighestenergybandthat
+contains electrons is partially filled, whereas in an insulator, the highest energy band containing electrons is completely
+filled. The difference between a conductor and insulator is illustrated inFigure 9.17.
+A conductor differs from an insulator in how its electrons respond to an applied electric field. If a significant number of
+electronsaresetintomotionbythefield,thematerialisaconductor.Intermsofthebandmodel,electronsinthepartially
+filledconductionbandgainkineticenergyfromtheelectricfieldbyfillinghigherenergystatesintheconductionband.By
+contrast,inaninsulator,electronsbelongtocompletelyfilledbands.Whenthefieldisapplied,theelectronscannotmake
+suchtransitions(acquirekineticenergyfromtheelectricfield)duetotheexclusionprinciple.Asaresult,thematerialdoes
+not conduct electricity.
+
+426 Chapter 9 | Condensed Matter Physics
+Figure 9.17 Comparison of a conductor and insulator. The highest energy band is partially filled in a conductor
+but completely filled in an insulator.
+Visitthissimulation (https://openstaxcollege.org/l/21bandstructure) tolearnabouttheoriginofenergy
+bandsincrystalsofatomsandhowthestructureofbandsdetermineshowamaterialconductselectricity.Explore
+how band structure creates a lattice of many wells.
+A semiconductor has a similar energy structure to an insulator except it has a relatively small energy gap between the
+lowest completely filled band and the next available unfilled band. This type of material forms the basis of modern
+electronics.At T =0K,thesemiconductorandinsulatorbothhavecompletelyfilledbands.Theonlydifferenceisinthe
+sizeoftheenergygap(orbandgap)E betweenthehighestenergybandthatisfilled(thevalenceband)andthenext-higher
+g
+emptyband(theconductionband).Inasemiconductor,thisgapissmallenoughthatasubstantialnumberofelectronsfrom
+thevalencebandarethermallyexcitedintotheconductionbandatroomtemperature.Theseelectronsaretheninanearly
+emptybandandcanrespondtoanappliedfield.Asageneralruleofthumb,thebandgapofasemiconductorisabout1eV.
+(SeeTable9.4forsilicon.)Abandgapofgreaterthanapproximately1eVisconsideredaninsulator.Forcomparison,the
+energy gap of diamond (an insulator) is several electron-volts.
+Material Energy Gap E
+g
+(eV)
+Si 1.14
+Ge 0.67
+GaAs 1.43
+GaP 2.26
+GaSb 0.69
+InAs 0.35
+InP 1.35
+InSb 0.16
+C(diamond) 5.48
+Table 9.4Energy Gap for Various
+Materials at 300 K Note: Except for
+diamond, the materials listed are all
+semiconductors.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 427
+9.6 | Semiconductors and Doping
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe changes to the energy structure of a semiconductor due to doping
+• Distinguish between an n-type and p-type semiconductor
+• Describe the Hall effect and explain its significance
+• Calculate the charge, drift velocity, and charge carrier number density of a semiconductor using
+information from a Hall effect experiment
+Intheprecedingsection,weconsideredonlythecontributiontotheelectriccurrentduetoelectronsoccupyingstatesinthe
+conductionband.However,movinganelectronfromthevalencebandtotheconductionbandleavesanunoccupiedstateor
+holeintheenergystructureofthevalenceband,whichanearbyelectroncanmoveinto.Astheseholesarefilledbyother
+electrons,newholesarecreated.Theelectriccurrentassociatedwiththisfillingcanbeviewedasthecollectivemotionof
+many negatively charged electrons or the motion of the positively charged electron holes.
+Toillustrate,considertheone-dimensionallatticeinFigure 9.18.Assumethateachlatticeatomcontributesonevalence
+electrontothecurrent.Astheholeontherightisfilled,thisholemovestotheleft.Thecurrentcanbeinterpretedastheflow
+ofpositivechargetotheleft.Thedensityofholes,orthenumberofholesperunitvolume,isrepresentedbyp.Eachelectron
+thattransitions intotheconductionbandleavesbehindahole.Iftheconductionbandisoriginally empty,theconduction
+electron densitypis equal to the hole density, that is, n= p.
+Figure 9.18 The motion of holes in a crystal lattice. As
+electrons shift to the right, an electron hole moves to the left.
+Asmentioned,asemiconductorisamaterialwithafilledvalenceband,anunfilledconductionband,andarelativelysmall
+energy gap between the bands. Excess electrons or holes can be introduced into the material by the substitution into the
+crystal lattice of an impurity atom, which is an atom of a slightly different valence number. This process is known as
+doping. For example, suppose we add an arsenic atom to a crystal of silicon (Figure 9.19(a)).
+
+428 Chapter 9 | Condensed Matter Physics
+Figure 9.19 (a) A donor impurity and (b) an acceptor impurity. The introduction to impurities and acceptors into a
+semiconductor significantly changes the electronic properties of this material.
+Arsenichasfivevalenceelectrons,whereassiliconhasonlyfour.Thisextraelectronmustthereforegointotheconduction
+band,sincethereisnoroominthevalenceband.Thearsenicionleftbehindhasanetpositivechargethatweaklybindsthe
+delocalizedelectron.Thebindingisweakbecausethesurroundingatomiclatticeshieldstheion’selectricfield.Asaresult,
+thebindingenergyoftheextraelectronisonlyabout0.02eV.Inotherwords,theenergyleveloftheimpurityelectronis
+inthebandgapbelowtheconductionbandby0.02eV,amuchsmallervaluethantheenergyofthegap,1.14eV.Atroom
+temperature,thisimpurityelectroniseasilyexcitedintotheconductionbandandthereforecontributestotheconductivity
+(Figure9.20(a)).Animpuritywithanextraelectronisknownasadonorimpurity,andthedopedsemiconductoriscalled
+ann-type semiconductorbecause the primary carriers of charge (electrons) are negative.
+Figure 9.20 (a) The extra electron from a donor impurity is excited into the conduction band; (b) formation of an impurity
+band in ann-type semiconductor.
+Byaddingmoredonorimpurities,wecancreateanimpurityband,anewenergybandcreatedbysemiconductordoping,as
+showninFigure9.20(b).TheFermilevelisnowbetweenthisbandandtheconductionband.Atroomtemperature,many
+impurityelectronsarethermallyexcitedintotheconductionbandandcontributetotheconductivity.Conductioncanthen
+alsooccurintheimpuritybandasvacanciesarecreatedthere.Notethatchangesintheenergyofanelectroncorrespondtoa
+changeinthemotion(velocitiesorkineticenergy)ofthesechargecarrierswiththesemiconductor,butnotthebulkmotion
+of the semiconductor itself.
+Doping can also be accomplished using impurity atoms that typically have one fewer valence electron than the
+semiconductoratoms.Forexample,Al,whichhasthreevalenceelectrons,canbesubstitutedforSi,asshowninFigure
+9.19(b). Such an impurity is known as an acceptor impurity, and the doped semiconductor is called a p-type
+semiconductor,becausetheprimarycarriersofcharge(holes)arepositive.Ifaholeistreatedasapositiveparticleweakly
+boundtotheimpuritysite,thenanemptyelectronstateiscreatedinthebandgapjustabovethevalenceband.Whenthis
+state is filled by an electron thermally excited from the valence band (Figure 9.21(a)), a mobile hole is created in the
+valence band. By adding more acceptor impurities, we can create an impurity band, as shown inFigure 9.21(b).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

@@ -1,0 +1,223 @@
+# REAL PDF — openstax_vol3.pdf, pages 75-82
+############################################################
+
+Chapter 2 | Geometric Optics and Image Formation 67
+2.3 | Images Formed by Refraction
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe image formation by a single refracting surface
+• Determine the location of an image and calculate its properties by using a ray diagram
+• Determine the location of an image and calculate its properties by using the equation for a
+single refracting surface
+Whenraysoflightpropagatefromonemediumtoanother,theseraysundergorefraction,whichiswhenlightwavesarebent
+attheinterfacebetweentwomedia.Therefractingsurfacecanformanimageinasimilarfashiontoareflectingsurface,
+except that the law of refraction (Snell’s law) is at the heart of the process instead of the law of reflection.
+Refraction at a Plane Interface—Apparent Depth
+Ifyoulookatastraightrodpartiallysubmergedinwater,itappearstobendatthesurface(Figure2.13).Thereasonbehind
+thiscuriouseffectisthattheimageoftherodinsidethewaterformsalittleclosertothesurfacethantheactualpositionof
+therod,soitdoesnotlineupwiththepartoftherodthatisabovethewater.Thesamephenomenonexplainswhyafishin
+water appears to be closer to the surface than it actually is.
+Figure 2.13 Bending of a rod at a water-air interface. PointP
+on the rod appears to be at pointQ, which is where the image of
+pointPforms due to refraction at the air-water interface.
+To study image formation as a result of refraction, consider the following questions:
+1. What happens to the rays of light when they enter or pass through a different medium?
+2. Do the refracted rays originating from a single point meet at some point or diverge away from each other?
+Tobeconcrete, weconsider asimple system consisting oftwomedia separated byaplane interface (Figure 2.14).The
+objectisinonemediumandtheobserverisintheother.Forinstance,whenyoulookatafishfromabovethewatersurface,
+thefishisinmedium1(thewater)withrefractiveindex1.33,andyoureyeisinmedium2(theair)withrefractiveindex
+1.00,andthesurfaceofthewateristheinterface.Thedepththatyou“see”istheimageheight h andiscalledtheapparent
+i
+depth. The actual depth of the fish is the object height h .
+o
+
+68 Chapter 2 | Geometric Optics and Image Formation
+Figure 2.14 Apparent depth due to refraction. The real object
+at pointPcreates an image at pointQ. The image is not at the
+same depth as the object, so the observer sees the image at an
+“apparent depth.”
+Theapparentdepth h dependsontheangleatwhichyouviewtheimage.Foraviewfromabove(theso-called“normal”
+i
+view), we can approximate the refraction angle θ to be small, and replace sin θ in Snell’s law by tan θ. With this
+approximation, you can use the triangles ΔOPR and ΔOQR to show that the apparent depth is given by
+h i =
+⎛
+⎝
+n
+n
+2⎞
+⎠ h o.
+(2.10)
+1
+The derivation of this result is left as an exercise. Thus, a fish appears at 3/4 of the real depth when viewed from above.
+Refraction at a Spherical Interface
+Spherical shapes play an important role in optics primarily because high-quality spherical shapes are far easier to
+manufacturethanothercurvedsurfaces.Tostudyrefractionatasinglesphericalsurface,weassumethatthemediumwith
+the spherical surface at one end continues indefinitely (a “semi-infinite” medium).
+Refraction at a convex surface
+ConsiderapointsourceoflightatpointPinfrontofaconvexsurfacemadeofglass(seeFigure2.15).LetRbetheradius
+ofcurvature, n betherefractiveindexofthemediuminwhichobjectpointPislocated,and n betherefractiveindex
+1 2
+of the medium with the spherical surface. We want to know what happens as a result of refraction at this interface.
+Figure 2.15 Refraction at a convex surface (n >n ).
+2 1
+Becauseofthesymmetryinvolved,itissufficienttoexamineraysinonlyoneplane.Thefigureshowsarayoflightthat
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 69
+startsattheobjectpointP,refractsattheinterface,andgoesthroughtheimagepoint P′.Wederiveaformularelatingthe
+object distance d , the image distance d , and the radius of curvatureR.
+o i
+Applying Snell’s law to the ray emanating from point P gives n sinθ =n sinθ . We work in the small-angle
+1 1 2 2
+approximation, so sinθ≈θ and Snell’s law then takes the form
+n θ ≈n θ .
+1 1 2 2
+From the geometry of the figure, we see that
+θ =α+ϕ, θ =ϕ−β.
+1 2
+Inserting these expressions into Snell’s law gives
+n (α+ϕ)≈n (ϕ−β).
+1 2
+Using the diagram, we calculate the tangent of the angles α, β, andϕ:
+h h h
+tanα≈ , tanβ≈ , tanϕ≈ .
+d d R
+o i
+Again using the small-angle approximation, we find that tanθ≈θ, so the above relationships become
+h h h
+α≈ , β≈ , ϕ≈ .
+d d R
+o i
+Putting these angles into Snell’s law gives
+⎛h h⎞ ⎛h h⎞
+n + =n − .
+1⎝d R⎠ 2⎝R d ⎠
+o i
+We can write this more conveniently as
+n n n −n (2.11)
+1+ 2 = 2 1.
+d d R
+o i
+Iftheobjectisplacedataspecialpointcalledthefirstfocus,ortheobjectfocus F ,thentheimageisformedatinfinity,
+1
+as shown in part (a) ofFigure 2.16.
+Figure 2.16 (a) First focus (called the “object focus”) for refraction at a convex surface. (b) Second focus (called “image
+focus”) for refraction at a convex surface.
+We can find the location f of the first focus F by setting d =∞ in the preceding equation.
+1 1 i
+
+70 Chapter 2 | Geometric Optics and Image Formation
+n n n −n (2.12)
+1+ 2 = 2 1
+f ∞ R
+1
+n R (2.13)
+f 1 = n − 1 n
+2 1
+Similarly,wecandefineasecondfocusorimagefocus F wheretheimageisformedforanobjectthatisfaraway[part
+2
+(b)]. The location of the second focus F
+2
+is obtained fromEquation 2.11by setting d o=∞:
+n n n −n
+1+ 2 = 2 1
+∞ f R
+2
+n R
+f 2 = n − 2 n .
+2 1
+Note that the object focus is at a different distance from the vertex than the image focus because n ≠n .
+1 2
+Sign convention for single refracting surfaces
+Although we derived this equation for refraction at a convex surface, the same expression holds for a concave surface,
+provided we use the following sign convention:
+1. R>0 if surface is convex toward object; otherwise, R<0.
+2. d >0 if image is real and on opposite side from the object; otherwise, d <0.
+i i
+2.4 | Thin Lenses
+Learning Objectives
+By the end of this section, you will be able to:
+• Use ray diagrams to locate and describe the image formed by a lens
+• Employ the thin-lens equation to describe and locate the image formed by a lens
+Lensesarefoundinahugearrayofopticalinstruments,rangingfromasimplemagnifyingglasstoacamera’szoomlensto
+the eye itself. In this section, we use the Snell’s law to explore the properties of lenses and how they form images.
+The word “lens” derives from the Latin word for a lentil bean, the shape of which is similar to a convex lens. However,
+notalllenseshavethesameshape.Figure2.17showsavarietyofdifferentlensshapes.Thevocabularyusedtodescribe
+lensesisthesameasthatusedforsphericalmirrors:Theaxisofsymmetryofalensiscalledtheopticalaxis,wherethis
+axis intersects the lens surface is called the vertex of the lens, and so forth.
+Figure 2.17 Various types of lenses: Note that a converging lens has a thicker “waist,” whereas a
+diverging lens has a thinner waist.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 71
+A convex or converging lens is shaped so that all light rays that enter it parallel to its optical axis intersect (or focus)
+at a single point on the optical axis on the opposite side of the lens, as shown in part (a) of Figure 2.18. Likewise, a
+concave or diverging lens is shaped so that all rays that enter it parallel to its optical axis diverge, as shown in part (b).
+To understand more precisely how a lens manipulates light, look closely at the top ray that goes through the converging
+lensinpart(a).Becausetheindexofrefractionofthelensisgreaterthanthatofair,Snell’slawtellsusthattherayisbent
+towardtheperpendiculartotheinterfaceasitentersthelens.Likewise,whentherayexitsthelens,itisbentawayfromthe
+perpendicular.Thesamereasoningappliestothediverginglenses,asshowninpart(b).Theoveralleffectisthatlightrays
+arebenttowardtheopticalaxisforaconverginglensandawayfromtheopticalaxisfordiverginglenses.Foraconverging
+lens,thepointatwhichtherayscrossisthefocalpointFofthelens.Foradiverginglens,thepointfromwhichtherays
+appeartooriginateisthe(virtual)focalpoint.Thedistancefromthecenterofthelenstoitsfocalpointisthefocallengthf
+of the lens.
+Figure 2.18 Rays of light entering (a) a converging lens and (b) a diverging lens, parallel to its axis, converge at its focal
+pointF. The distance from the center of the lens to the focal point is the lens’s focal lengthf. Note that the light rays are
+bent upon entering and exiting the lens, with the overall effect being to bend the rays toward the optical axis.
+Alensisconsideredtobethinifitsthicknesstismuchlessthantheradiiofcurvatureofbothsurfaces,asshowninFigure
+2.19.Inthiscase,theraysmaybeconsideredtobendonceatthecenterofthelens.Forthecasedrawninthefigure,light
+ray1isparalleltotheopticalaxis,sotheoutgoingrayisbentonceatthecenterofthelensandgoesthroughthefocalpoint.
+Anotherimportantcharacteristicofthinlensesisthatlightraysthatpassthroughthecenterofthelensareundeviated,as
+shown by light ray 2.
+
+72 Chapter 2 | Geometric Optics and Image Formation
+Figure 2.19 In the thin-lens approximation, the thicknessdof the lens is much, much less than the radii R and R of
+1 2
+curvature of the surfaces of the lens. Light rays are considered to bend at the center of the lens, such as light ray 1. Light ray 2
+passes through the center of the lens and is undeviated in the thin-lens approximation.
+AsnotedintheinitialdiscussionofSnell’slaw,thepathsoflightraysareexactlyreversible.Thismeansthatthedirection
+ofthearrowscouldbereversedforalloftheraysinFigure2.18.Forexample,ifapoint-lightsourceisplacedatthefocal
+point of a convex lens, as shown inFigure 2.20, parallel light rays emerge from the other side.
+Figure 2.20 A small light source, like a light bulb filament,
+placed at the focal point of a convex lens results in parallel rays
+of light emerging from the other side. The paths are exactly the
+reverse of those shown inFigure 2.18in converging and
+diverging lenses. This technique is used in lighthouses and
+sometimes in traffic lights to produce a directional beam of light
+from a source that emits light in all directions.
+Ray Tracing and Thin Lenses
+Ray tracingis the technique of determining or following (tracing) the paths taken by light rays.
+Raytracingforthinlensesisverysimilartothetechniqueweusedwithsphericalmirrors.Asformirrors,raytracingcan
+accurately describe the operation of a lens. The rules for ray tracing for thin lenses are similar to those of spherical mirrors:
+1. Arayenteringaconverginglensparalleltotheopticalaxispassesthroughthefocalpointontheothersideofthe
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 73
+lens(ray1inpart(a)ofFigure 2.21).Arayenteringadiverginglensparalleltotheopticalaxisexitsalongthe
+line that passes through the focal point on thesameside of the lens (ray 1 in part (b) of the figure).
+2. Araypassingthroughthecenter ofeither aconvergingoradiverginglensisnotdeviated (ray2inparts(a)and
+(b)).
+3. Foraconverginglens,araythatpassesthroughthefocalpointexitsthelensparalleltotheopticalaxis(ray3inpart
+(a)).Foradiverginglens,araythatapproachesalongthelinethatpassesthroughthefocalpointontheopposite
+side exits the lens parallel to the axis (ray 3 in part (b)).
+Figure 2.21 Thin lenses have the same focal lengths on either side. (a) Parallel light rays entering a converging lens from the
+right cross at its focal point on the left. (b) Parallel light rays entering a diverging lens from the right seem to come from the
+focal point on the right.
+Thin lenses workquite well formonochromatic light (i.e., light ofa single wavelength). However,forlight that contains
+several wavelengths (e.g., white light), the lenses work less well. The problem is that, as we learned in the previous
+chapter,theindexofrefractionofamaterialdependsonthewavelengthoflight.Thisphenomenonisresponsibleformany
+colorfuleffects,suchasrainbows.Unfortunately,thisphenomenonalsoleadstoaberrationsinimagesformedbylenses.In
+particular,becausethefocaldistanceofthelensdependsontheindexofrefraction,italsodependsonthewavelengthofthe
+incidentlight.Thismeansthatlightofdifferentwavelengthswillfocusatdifferentpoints,resultingisso-called“chromatic
+aberrations.”Inparticular,theedgesofanimageofawhiteobjectwillbecomecoloredandblurred.Speciallensescalled
+doubletsarecapableofcorrectingchromaticaberrations.Adoubletisformedbygluingtogetheraconverginglensanda
+diverging lens. The combined doublet lens produces significantly reduced chromatic aberrations.
+Image Formation by Thin Lenses
+Weuseraytracingtoinvestigatedifferenttypesofimagesthatcanbecreatedbyalens.Insomecircumstances,alensforms
+a real image, such as when a movie projector casts an image onto a screen. In other cases, the image is a virtual image,
+whichcannotbeprojectedontoascreen.Where,forexample,istheimageformedbyeyeglasses?Weuseraytracingfor
+thin lenses to illustrate how they form images, and then we develop equations to analyze quantitatively the properties of
+thin lenses.
+Consideranobjectsomedistanceawayfromaconverginglens,asshowninFigure2.22.Tofindthelocationandsizeof
+theimage,wetracethepathsofselectedlightraysoriginatingfromonepointontheobject,inthiscase,thetipofthearrow.

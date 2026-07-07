@@ -1,0 +1,219 @@
+# REAL PDF — openstax_vol1.pdf, pages 185-194
+############################################################
+
+4.4 • Uniform and Nonuniform Circular Motion 173
+Object Centripetal Acceleration (m/s2 or factors of g)
+Satellite in geosynchronous orbit 0.233
+Outer edge of a CD when playing
+Jet in a barrel roll (2–3 g)
+Roller coaster (5 g)
+Electron orbiting a proton in a simple Bohr model of the atom
+TABLE 4.1 Typical Centripetal Accelerations
+Equations of Motion for Uniform Circular Motion
+A particle executing circular motion can be described by its position vector Figure 4.20 shows a particle
+executing circular motion in a counterclockwise direction. As the particle moves on the circle, its position vector
+sweeps out the angle with the x-axis. Vector making an angle with the x-axis is shown with its components
+along the x- and y-axes. The magnitude of the position vector is and is also the radius of the circle, so that
+in terms of its components,
+4.28
+Here, is a constant called the angular frequency of the particle. The angular frequency has units of radians (rad)
+per second and is simply the number of radians of angular measure through which the particle passes per second.
+The angle that the position vector has at any particular time is .
+If T is the period of motion, or the time to complete one revolution ( rad), then
+FIGURE 4.20 The position vector for a particle in circular motion with its components along the x- and y-axes. The particle moves
+counterclockwise. Angle is the angular frequency in radians per second multiplied by t.
+Velocity and acceleration can be obtained from the position function by differentiation:
+4.29
+It can be shown from Figure 4.20 that the velocity vector is tangential to the circle at the location of the particle,
+with magnitude Similarly, the acceleration vector is found by differentiating the velocity:
+
+174 4 • Motion in Two and Three Dimensions
+4.30
+From this equation we see that the acceleration vector has magnitude and is directed opposite the position
+vector, toward the origin, because
+EXAMPLE 4.11
+Circular Motion of a Proton
+A proton has speed and is moving in a circle in the xy plane of radius r = 0.175 m. What is its position
+in the xy plane at time At t = 0, the position of the proton is and it circles
+counterclockwise. Sketch the trajectory.
+Solution
+According to Equation 3.5,
+Since the period T is the time it takes an object to go once around a circle, and the distance around a circle is 2πr, we
+have:
+From the given data, the proton has period and angular frequency:
+The position of the particle at with A = 0.175 m is
+From this result we see that the proton is located slightly below the x-axis. This is shown in Figure 4.21.
+Access for free at openstax.org
+
+4.4 • Uniform and Nonuniform Circular Motion 175
+FIGURE 4.21 Position vector of the proton at The trajectory of the proton is shown. The angle through which
+the proton travels along the circle is 5.712 rad, which a little less than one complete revolution.
+Significance
+We picked the initial position of the particle to be on the x-axis. This was completely arbitrary. If a different starting
+position were given, we would have a different final position at t = 200 ns.
+Nonuniform Circular Motion
+Circular motion does not have to be at a constant speed. A particle can travel in a circle and speed up or slow down,
+showing an acceleration in the direction of the motion.
+In uniform circular motion, the particle executing circular motion has a constant speed and the circle is at a fixed
+radius. If the speed of the particle is changing as well, then we introduce an additional acceleration in the direction
+tangential to the circle. Such accelerations occur at a point on a top that is changing its spin rate, or any accelerating
+rotor. In Displacement and Velocity Vectors we showed that centripetal acceleration is the time rate of change of the
+direction of the velocity vector. If the speed of the particle is changing, then it has a tangential acceleration that is
+the time rate of change of the magnitude of the velocity:
+4.31
+The direction of tangential acceleration is tangent to the circle whereas the direction of centripetal acceleration is
+radially inward toward the center of the circle. Thus, a particle in circular motion with a tangential acceleration has a
+total acceleration that is the vector sum of the centripetal and tangential accelerations:
+4.32
+The acceleration vectors are shown in Figure 4.22. Note that the two acceleration vectors and are
+perpendicular to each other, with in the radial direction and in the tangential direction. The total acceleration
+points at an angle between and
+
+176 4 • Motion in Two and Three Dimensions
+FIGURE 4.22 The centripetal acceleration points toward the center of the circle. The tangential acceleration is tangential to the circle at the
+particle’s position. The total acceleration is the vector sum of the tangential and centripetal accelerations, which are perpendicular.
+EXAMPLE 4.12
+Total Acceleration during Circular Motion
+A particle moves in a circle of radius r = 2.0 m. During the time interval from t = 1.5 s to t = 4.0 s its speed varies with
+time according to
+What is the total acceleration of the particle at t = 2.0 s?
+Strategy
+We are given the speed of the particle and the radius of the circle, so we can calculate centripetal acceleration
+easily. The direction of the centripetal acceleration is toward the center of the circle. We find the magnitude of the
+tangential acceleration by taking the derivative with respect to time of using Equation 4.31 and evaluating it at
+t = 2.0 s. We use this and the magnitude of the centripetal acceleration to find the total acceleration.
+Solution
+Centripetal acceleration is
+directed toward the center of the circle. Tangential acceleration is
+Total acceleration is
+and from the tangent to the circle. See Figure 4.23.
+Access for free at openstax.org
+
+4.5 • Relative Motion in One and Two Dimensions 177
+FIGURE 4.23 The tangential and centripetal acceleration vectors. The net acceleration is the vector sum of the two accelerations.
+Significance
+The directions of centripetal and tangential accelerations can be described more conveniently in terms of a polar
+coordinate system, with unit vectors in the radial and tangential directions. This coordinate system, which is used for
+motion along curved paths, is discussed in detail later in the book.
+4.5 Relative Motion in One and Two Dimensions
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the concept of reference frames.
+• Write the position and velocity vector equations for relative motion.
+• Draw the position and velocity vectors for relative motion.
+• Analyze one-dimensional and two-dimensional relative motion problems using the position and velocity
+vector equations.
+Motion does not happen in isolation. If you’re riding in a train moving at 10 m/s east, this velocity is measured
+relative to the ground on which you’re traveling. However, if another train passes you at 15 m/s east, your velocity
+relative to this other train is different from your velocity relative to the ground. Your velocity relative to the other
+train is 5 m/s west. To explore this idea further, we first need to establish some terminology.
+Reference Frames
+To discuss relative motion in one or more dimensions, we first introduce the concept of reference frames. When we
+say an object has a certain velocity, we must state it has a velocity with respect to a given reference frame. In most
+examples we have examined so far, this reference frame has been Earth. If you say a person is sitting in a train
+moving at 10 m/s east, then you imply the person on the train is moving relative to the surface of Earth at this
+velocity, and Earth is the reference frame. We can expand our view of the motion of the person on the train and say
+Earth is spinning in its orbit around the Sun, in which case the motion becomes more complicated. In this case, the
+solar system is the reference frame. In summary, all discussion of relative motion must define the reference frames
+involved. We now develop a method to refer to reference frames in relative motion. This method makes an
+approximation that breaks down near the speed of light, where the more accurate methods or special relativity are
+needed, but is extremely accurate for everyday speeds (Relativity (http://openstax.org/books/university-physics-
+volume-3/pages/5-introduction)).
+Relative Motion in One Dimension
+We introduce relative motion in one dimension first, because the velocity vectors simplify to having only two
+possible directions. Take the example of the person sitting in a train moving east. If we choose east as the positive
+direction and Earth as the reference frame, then we can write the velocity of the train with respect to the Earth as
+east, where the subscripts TE refer to train and Earth. Let’s now say the person gets up out of her
+seat and walks toward the back of the train at 2 m/s. This tells us she has a velocity relative to the reference frame
+
+178 4 • Motion in Two and Three Dimensions
+of the train. Since the person is walking west, in the negative direction, we write her velocity with respect to the train
+as We can add the two velocity vectors to find the velocity of the person with respect to Earth. This
+relative velocity is written as
+4.33
+Note the ordering of the subscripts for the various reference frames in Equation 4.33. The subscripts for the
+coupling reference frame, which is the train, appear consecutively in the right-hand side of the equation. Figure 4.24
+shows the correct order of subscripts when forming the vector equation.
+FIGURE 4.24 When constructing the vector equation, the subscripts for the coupling reference frame appear consecutively on the inside.
+The subscripts on the left-hand side of the equation are the same as the two outside subscripts on the right-hand side of the equation.
+Adding the vectors, we find so the person is moving 8 m/s east with respect to Earth. Graphically,
+this is shown in Figure 4.25.
+FIGURE 4.25 Velocity vectors of the train with respect to Earth, person with respect to the train, and person with respect to Earth.
+Relative Velocity in Two Dimensions
+We can now apply these concepts to describing motion in two dimensions. Consider a particle P and reference
+frames S and as shown in Figure 4.26. The position of the origin of as measured in S is the position of P
+as measured in is and the position of P as measured in S is
+FIGURE 4.26 The positions of particle P relative to frames S and are and respectively.
+From Figure 4.26 we see that
+4.34
+The relative velocities are the time derivatives of the position vectors. Therefore,
+4.35
+The velocity of a particle relative to S is equal to its velocity relative to plus the velocity of relative to S.
+Access for free at openstax.org
+
+4.5 • Relative Motion in One and Two Dimensions 179
+We can extend Equation 4.35 to any number of reference frames. For particle P with velocities
+in frames A, B, and C,
+4.36
+We can also see how the accelerations are related as observed in two reference frames by differentiating Equation
+4.35:
+4.37
+We see that if the velocity of relative to S is a constant, then and
+4.38
+This says the acceleration of a particle is the same as measured by two observers moving at a constant velocity
+relative to each other.
+EXAMPLE 4.13
+Motion of a Car Relative to a Truck
+A truck is traveling south at a speed of 70 km/h toward an intersection. A car is traveling east toward the
+intersection at a speed of 80 km/h (Figure 4.27). What is the velocity of the car relative to the truck?
+FIGURE 4.27 A car travels east toward an intersection while a truck travels south toward the same intersection.
+Strategy
+First, we must establish the reference frame common to both vehicles, which is Earth. Then, we write the velocities
+of each with respect to the reference frame of Earth, which enables us to form a vector equation that links the car,
+the truck, and Earth to solve for the velocity of the car with respect to the truck.
+Solution
+The velocity of the car with respect to Earth is The velocity of the truck with respect to Earth is
+Using the velocity addition rule, the relative motion equation we are seeking is
+
+180 4 • Motion in Two and Three Dimensions
+Here, is the velocity of the car with respect to the truck, and Earth is the connecting reference frame. Since we
+have the velocity of the truck with respect to Earth, the negative of this vector is the velocity of Earth with respect to
+the truck: The vector diagram of this equation is shown in Figure 4.28.
+FIGURE 4.28 Vector diagram of the vector equation .
+We can now solve for the velocity of the car with respect to the truck:
+and
+Significance
+Drawing a vector diagram showing the velocity vectors can help in understanding the relative velocity of the two
+objects.
+CHECK YOUR UNDERSTANDING 4.6
+A boat heads due north, moving at 4.5 m/s relative to the water of a river that is running east at 3.0 m/s. What is the
+velocity of the boat with respect to Earth?
+EXAMPLE 4.14
+Flying a Plane in a Wind
+A pilot must fly a plane due north to reach their destination. The plane can fly at 300 km/h in still air. A wind is
+blowing out of the northeast at 90 km/h. (a) In what direction must the pilot head the plane to fly due north? (b)
+What is the speed of the plane relative to the ground?
+Strategy
+The pilot must point the plane somewhat east of north to compensate for the wind velocity. We need to construct a
+vector equation that contains the velocity of the plane with respect to the ground, the velocity of the plane with
+respect to the air, and the velocity of the air with respect to the ground. Since these last two quantities are known,
+we can solve for the velocity of the plane with respect to the ground. We can graph the vectors and use this diagram
+to evaluate the magnitude of the plane’s velocity with respect to the ground. The diagram will also tell us the angle
+the plane’s velocity makes with north with respect to the air, which is the direction the pilot must head the plane.
+Access for free at openstax.org
+
+4.5 • Relative Motion in One and Two Dimensions 181
+Solution
+The vector equation is where P = plane, A = air, and G = ground. From the geometry in Figure
+4.29, we can solve easily for the magnitude of the velocity of the plane with respect to the ground and the angle of
+the plane’s heading,
+FIGURE 4.29 Vector diagram for Equation 4.34 showing the vectors
+Known quantities:
+(a) In the x direction we have the following:
+•
+•
+• east of north
+(b) In the y direction we have the following:
+•
+•
+•

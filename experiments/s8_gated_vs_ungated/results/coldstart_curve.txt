@@ -1,0 +1,21 @@
+Coverage-vs-Calibration Curve
+==============================
+
+Calibration claims: 899
+Evaluation claims:  2103
+Serving budget: B=10%
+
+Hypothesis: coverage rises as calibration data increases (cold-start artifact).
+
+  Audits/narrator    Coverage
+  ────────────────── ────────
+  10                    0.100
+  20                    0.100
+  40                    0.058
+  80                    0.058
+  160                   0.058
+
+✗ Coverage does NOT increase with calibration data — cold-start hypothesis not supported.
+  Coverage at 10 audits: 0.100
+  Coverage at 160 audits: 0.059
+  Ratio: 0.59x

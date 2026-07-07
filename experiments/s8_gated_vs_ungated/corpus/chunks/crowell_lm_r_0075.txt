@@ -1,0 +1,269 @@
+# REAL PDF — crowell_lm.pdf, pages 508-515
+############################################################
+
+3 The figure shows one wavelength of a steady sinusoidal wave
+traveling to the right along a string. Define a coordinate system
+in which the positive x axis points to the right and the positive y
+axis up, such that the flattened string would have y = 0. Copy
+Problem3.
+the figure, and label with y = 0 all the appropriate parts of the
+string. Similarly, label with v = 0 all parts of the string whose
+velocities are zero, and with a = 0 all parts whose accelerations
+are zero. There is more than one point whose velocity is of the
+greatest magnitude. Pick one of these, and indicate the direction of
+its velocity vector. Do the same for a point having the maximum
+magnitude of acceleration. Explain all your answers.
+[Problem by Arnold Arons.]
+4 (a) Find an equation for the relationship between the Doppler-
+shifted frequency of a wave and the frequency of the original wave,
+for the case of a stationary observer and a source moving directly
+toward or away from the observer.
+(b) Check that the units of your answer make sense.
+(c) Check that the dependence on v makes sense.
+s
+5 Suggest a quantitative experiment to look for any deviation
+fromtheprincipleofsuperpositionforsurfacewavesinwater. Make
+it simple and practical.
+6 The musical note middle C has a frequency of 262 Hz. What
+are its period and wavelength? p
+7 Singing that is o↵-pitch by more than about 1% sounds bad.
+How fast would a singer have to be moving relative to the rest of
+a band to make this much of a change in pitch due to the Doppler
+e↵ect?
+8 In section 19.2, we saw that the speed of waves on a string
+depends on the ratio of T/µ, i.e., the speed of the wave is greater if
+thestringisundermoretension, andlessifithasmoreinertia. This
+is true in general: the speed of a mechanical wave always depends
+on the medium’s inertia in relation to the restoring force (tension,
+sti↵ness, resistance to compression,...). Based on these ideas, ex-
+plain why the speed of sound in air is significantly greater on a hot
+day, while the speed of sound in liquids and solids shows almost no
+variation with temperature.
+508 Chapter 19 Free waves
+
+Across-sectionalviewofahumanbody,showingthevocaltract.
+Chapter 20
+Bounded waves
+Speech is what separates humans most decisively from animals. No
+other species can master syntax, and even though chimpanzees can
+learnavocabularyofhandsigns, thereisanunmistakabledi↵erence
+between a human infant and a baby chimp: starting from birth, the
+human experiments with the production of complex speech sounds.
+Since speech sounds are instinctive for us, we seldom think about
+them consciously. How do we do control sound waves so skillfully?
+Mostly we do it by changing the shape of a connected set of hollow
+cavities in our chest, throat, and head. Somehow by moving the
+boundaries of this space in and out, we can produce all the vowel
+sounds. Up until now, we have been studying only those properties
+of waves that can be understood as if they existed in an infinite,
+openspace. Inthischapterweaddresswhathappenswhenawaveis
+confined within a certain space, or when a wave pattern encounters
+the boundary between two di↵erent media, as when a light wave
+moving through air encounters a glass windowpane.
+509
+
+A diver photographed this fish,
+and its reflection, from underwa-
+ter. The reflection is the one on
+top, and is formed by light waves
+that went up to the surface of
+thewater,butwerethenreflected
+backdownintothewater.
+20.1 Reflection, transmission, and absorption
+Reflection and transmission
+Soundwavescanechobackfromacli↵, andlightwavesarereflected
+from the surface of a pond. We use the word reflection, normally
+applied only to light waves in ordinary speech, to describe any such
+case of a wave rebounding from a barrier. Figure b shows a circular
+water wave being reflected from a straight wall. In this chapter,
+we will concentrate mainly on reflection of waves that move in one
+dimension, as in figure c.
+Wave reflection does not surprise us. After all, a material object
+such as a rubber ball would bounce back in the same way. But
+waves are not objects, and there are some surprises in store.
+First,onlypartofthewaveisusuallyreflected. Lookingoutthrough
+a window, we see light waves that passed through it, but a person
+standing outside would also be able to see her reflection in the glass.
+A light wave that strikes the glass is partly reflected and partly
+transmitted (passed) by the glass. The energy of the original wave
+is split between the two. This is di↵erent from the behavior of the
+rubber ball, which must go one way or the other, not both.
+Second, consider what you see if you are swimming underwater and
+you look up at the surface. You see your own reflection. This is
+utterly counterintuitive, since we would expect the light waves to
+burst forth to freedom in the wide-open air. A material projectile
+shot up toward the surface would never rebound from the water-air
+510 Chapter 20 Bounded waves
+
+boundary! Figure a shows a similar example.
+Whatisitaboutthedi↵erencebetweentwomediathatcauseswaves
+to be partly reflected at the boundary between them? Is it their
+density? Their chemical composition? Ultimately all that matters
+is the speed of the wave in the two media. A wave is partially
+reflected and partially transmitted at the boundary between media in
+which it has di↵erent speeds. For example, the speed of light waves
+in window glass is about 30% less than in air, which explains why
+Circular water waves are re-
+windows always make reflections. Figures d/1 and 2 show examples
+flected from a boundary on the
+of wave pulses being reflected at the boundary between two coil
+top.
+springs of di↵erent weights, in which the wave speed is di↵erent.
+Reflectionssuchasbandc, whereawaveencountersamassivefixed
+object, can usually be understood on the same basis as cases like
+d/1 and 2 later in this section, where two media meet. Example c,
+for instance, is like a more extreme version of example d/1. If the
+heavy coil spring in d/1 was made heavier and heavier, it would end
+up acting like the fixed wall to which the light spring in c has been
+attached.
+self-checkA
+In figure c, the reflected pulse is upside-down, but its depth is just as
+bigastheoriginalpulse’sheight. Howdoestheenergyofthereflected
+pulsecomparewiththatoftheoriginal? .Answer,p. 555
+Fish have internal ears. example 1
+Why don’t fish have ear-holes? The speed of sound waves in
+a fish’s body is not much different from their speed in water, so
+sound waves are not strongly reflected from a fish’s skin. They
+pass right through its body, so fish can have internal ears.
+Whale songs traveling long distances example 2
+Sound waves travel at drastically different speeds through rock,
+water, and air. Whale songs are thus strongly reflected at both
+the bottom and the surface. The sound waves can travel hun-
+dreds of miles, bouncing repeatedly between the bottom and the
+surface, and still be detectable. Sadly, noise pollution from ships
+has nearly shut down this cetacean version of the internet.
+Long-distance radio communication. example 3
+Radio communication can occur between stations on opposite
+sides of the planet. The mechanism is similar to the one ex-
+plained in example 2, but the three media involved are the earth,
+A wave on a spring, initially
+the atmosphere, and the ionosphere.
+traveling to the left, is reflected
+fromthefixedend.
+self-checkB
+Sonar is a method for ships and submarines to detect each other by
+producingsoundwavesandlisteningforechoes. Whatpropertieswould
+anunderwaterobjecthavetohaveinordertobeinvisibletosonar? .
+Answer,p. 555
+Reflection, transmission, and absorption 511
+
+The use of the word “reflection” naturally brings to mind the cre-
+ation of an image by a mirror, but this might be confusing, because
+we do not normally refer to “reflection” when we look at surfaces
+thatarenotshiny. Nevertheless,reflectionishowweseethesurfaces
+of all objects, not just polished ones. When we look at a sidewalk,
+for example, we are actually seeing the reflecting of the sun from
+the concrete. The reason we don’t see an image of the sun at our
+feet is simply that the rough surface blurs the image so drastically.
+1. A wave in the lighter spring, where the wave speed is greater,
+travelstotheleftandisthenpartlyreflectedandpartlytransmittedatthe
+boundary with the heavier coil spring, which has a lower wave speed.
+The reflection is inverted. 2. A wave moving to the right in the heavier
+spring is partly reflected at the boundary with the lighter spring. The
+reflectionisuninverted.
+512 Chapter 20 Bounded waves
+
+Inverted and uninverted reflections
+Notice how the pulse reflected back to the right in example d/1
+comes back upside-down, whereas the one reflected back to the left
+in 2 returns in its original upright form. This is true for other waves
+as well. In general, there are two possible types of reflections, a
+reflection back into a faster medium and a reflection back into a
+slower medium. One type will always be an inverting reflection and
+one noninverting.
+It’s important to realize that when we discuss inverted and unin-
+verted reflections on a string, we are talking about whether the
+wave is flipped across the direction of motion (i.e., upside-down in
+these drawings). The reflected pulse will always be reversed front
+to back, as shown in figure e. This is because it is traveling in the 1. An uninverted reflection.
+The reflected pulse is reversed
+other direction. The leading edge of the pulse is what gets reflected
+front to back, but is not upside-
+first, so it is still ahead when it starts back to the left — it’s just
+down. 2. An inverted reflection.
+that “ahead” is now in the opposite direction.
+The reflected pulse is reversed
+both front to back and top to
+Absorption
+bottom.
+So far we have tacitly assumed that wave energy remains as wave
+energy,andisnotconvertedtoanyotherform. Ifthiswastrue,then
+the world would become more and more full of sound waves, which
+could never escape into the vacuum of outer space. In reality, any
+mechanicalwaveconsistsofatravelingpatternofvibrationsofsome
+physical medium, and vibrations of matter always produce heat, as
+when you bend a coat-hangar back and forth and it becomes hot.
+We can thus expect that in mechanical waves such as water waves,
+sound waves, or waves on a string, the wave energy will gradually
+be converted into heat. This is referred to as absorption.
+The wave su↵ers a decrease in amplitude, as shown in figure f. The
+decrease in amplitude amounts to the same fractional change for
+each unit of distance covered. For example, if a wave decreases
+from amplitude 2 to amplitude 1 over a distance of 1 meter, then A pulse traveling through a
+highlyabsorptivemedium.
+after traveling another meter it will have an amplitude of 1/2. That
+is, the reduction in amplitude is exponential. This can be proven
+as follows. By the principle of superposition, we know that a wave
+of amplitude 2 must behave like the superposition of two identical
+wavesofamplitude1. Ifasingleamplitude-1wavewoulddiedownto
+amplitude 1/2 over a certain distance, then two amplitude-1 waves
+superposed on top of one another to make amplitude 1+1 = 2 must
+die down to amplitude 1/2+1/2 = 1 over the same distance.
+self-checkC
+As a wave undergoes absorption, it loses energy. Does this mean that
+itslowsdown? .Answer,p. 555
+In many cases, this frictional heating e↵ect is quite weak. Sound
+waves in air, for instance, dissipate into heat extremely slowly, and
+thesoundofchurchmusicinacathedralmayreverberateforasmuch
+Reflection, transmission, and absorption 513
+
+as 3 or 4 seconds before it becomes inaudible. During this time it
+has traveled over a kilometer! Even this very gradual dissipation
+of energy occurs mostly as heating of the church’s walls and by the
+leaking of sound to the outside (where it will eventually end up as
+heat). Under the right conditions (humid air and low frequency), a
+sound wave in a straight pipe could theoretically travel hundreds of
+kilometers before being noticeably attenuated.
+In general, the absorption of mechanical waves depends a great
+deal on the chemical composition and microscopic structure of the
+medium. Ripples on the surface of antifreeze, for instance, die out
+extremely rapidly compared to ripples on water. For sound waves
+and surface waves in liquids and gases, what matters is the viscosity
+of the substance, i.e., whether it flows easily like water or mercury
+ormoresluggishlylikemolassesorantifreeze. Thisexplainswhyour
+intuitive expectation of strong absorption of sound in water is incor-
+rect. Water is a very weak absorber of sound (viz. whale songs and
+sonar),andourincorrectintuitionarisesfromfocusingonthewrong
+X-rays are light waves with a
+property of the substance: water’s high density, which is irrelevant,
+very high frequency. They are
+rather than its low viscosity, which is what matters.
+absorbed strongly by bones, but
+weaklybyflesh. Light is an interesting case, since although it can travel through
+matter, it is not itself a vibration of any material substance. Thus
+we can look at the star Sirius, 1014 km away from us, and be as-
+sured that none of its light was absorbed in the vacuum of outer
+space during its 9-year journey to us. The Hubble Space Telescope
+routinely observes light that has been on its way to us since the
+early history of the universe, billions of years ago. Of course the
+energy of light can be dissipated if it does pass through matter (and
+the light from distant galaxies is often absorbed if there happen to
+be clouds of gas or dust in between).
+Soundproofing example 4
+Typicalamateurmusicianssettingouttosoundprooftheirgarages
+tend to think that they should simply cover the walls with the
+densest possible substance. In fact, sound is not absorbed very
+stronglyevenbypassingthroughseveralinchesofwood. Abetter
+strategy for soundproofing is to create a sandwich of alternating
+layers of materials in which the speed of sound is very different,
+to encourage reflection.
+Theclassicdesignisalternatinglayersoffiberglassandplywood.
+The speed of sound in plywood is very high, due to its stiffness,
+while its speed in fiberglass is essentially the same as its speed
+in air. Both materials are fairly good sound absorbers, but sound
+waves passing through a few inches of them are still not going
+to be absorbed sufficiently. The point of combining them is that
+a sound wave that tries to get out will be strongly reflected at
+each of the fiberglass-plywood boundaries, and will bounce back
+and forth many times like a ping pong ball. Due to all the back-
+514 Chapter 20 Bounded waves

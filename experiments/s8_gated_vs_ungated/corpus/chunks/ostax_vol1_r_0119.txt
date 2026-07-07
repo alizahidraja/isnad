@@ -1,0 +1,260 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 717-723
+############################################################
+
+14 • Chapter Review 705
+Additional Problems
+104 . Before digital storage devices, such as the What mass of water does she displace? (b) What
+memory in your cell phone, music was stored on is her volume? (c) Calculate her density. (d) If
+vinyl disks with grooves with varying depths cut her lung capacity is 1.75 L, is she able to float
+into the disk. A phonograph used a needle, without treading water with her lungs filled with
+which moved over the grooves, measuring the air?
+depth of the grooves. The pressure exerted by a
+111 . Some fish have a density slightly less than that
+phonograph needle on a record is surprisingly
+of water and must exert a force (swim) to stay
+large. If the equivalent of 1.00 g is supported by
+submerged. What force must an 85.0-kg grouper
+a needle, the tip of which is a circle with a
+exert to stay submerged in salt water if its body
+0.200-mm radius, what pressure is exerted on
+density is
+the record in Pa?
+112 . The human circulation system has
+105 . Water towers store water above the level of
+approximately capillary vessels. Each
+consumers for times of heavy use, eliminating
+vessel has a diameter of about . Assuming
+the need for high-speed pumps. How high above
+cardiac output is 5 L/min, determine the average
+a user must the water level be to create a gauge
+velocity of blood flow through each capillary
+pressure of ?
+vessel.
+106 . The aqueous humor in a person’s eye is exerting
+113 . The flow rate of blood through a
+a force of 0.300 N on the area of the
+-radius capillary is
+cornea. What pressure is this in mm Hg?
+. (a) What is the speed of the
+107 . (a) Convert normal blood pressure readings of blood flow? (b) Assuming all the blood in the
+120 over 80 mm Hg to newtons per meter body passes through capillaries, how many of
+squared using the relationship for pressure due them must there be to carry a total flow of
+to the weight of a fluid rather than a ?
+conversion factor. (b) Explain why the blood
+114 . The left ventricle of a resting adult’s heart
+pressure of an infant would likely be smaller
+pumps blood at a flow rate of ,
+than that of an adult. Specifically, consider the
+increasing its pressure by 110 mm Hg, its speed
+smaller height to which blood must be pumped.
+from zero to 30.0 cm/s, and its height by 5.00
+108 . Pressure cookers have been around for more cm. (All numbers are averaged over the entire
+than 300 years, although their use has greatly heartbeat.) Calculate the total power output of
+declined in recent years (early models had a the left ventricle. Note that most of the power is
+nasty habit of exploding). How much force must used to increase blood pressure.
+the latches holding the lid onto a pressure
+115 . A sump pump (used to drain water from the
+cooker be able to withstand if the circular lid is
+basement of houses built below the water table)
+in diameter and the gauge pressure
+is draining a flooded basement at the rate of
+inside is 300 atm? Neglect the weight of the lid.
+0.750 L/s, with an output pressure of
+109 . Bird bones have air pockets in them to reduce . (a) The water enters a hose
+their weight—this also gives them an average with a 3.00-cm inside diameter and rises 2.50 m
+density significantly less than that of the bones above the pump. What is its pressure at this
+of other animals. Suppose an ornithologist point? (b) The hose goes over the foundation
+weighs a bird bone in air and in water and finds wall, losing 0.500 m in height, and widens to
+its mass is 45.0 g and its apparent mass when 4.00 cm in diameter. What is the pressure now?
+submerged is 3.60 g (assume the bone is You may neglect frictional losses in both parts of
+watertight). (a) What mass of water is displaced? the problem.
+(b) What is the volume of the bone? (c) What is
+116 . A glucose solution being administered with an IV
+its average density?
+has a flow rate of . What will the
+110 . In an immersion measurement of a woman’s
+new flow rate be if the glucose is replaced by
+density, she is found to have a mass of 62.0 kg in
+whole blood having the same density but a
+air and an apparent mass of 0.0850 kg when
+viscosity 2.50 times that of the glucose? All
+completely submerged with lungs empty. (a)
+
+706 14 • Chapter Review
+other factors remain constant. increase blood flow by a factor of 10?
+117 . A small artery has a length of and 119 . Suppose a blood vessel’s radius is decreased to
+a radius of . If the pressure drop 90.0% of its original value by plaque deposits
+across the artery is 1.3 kPa, what is the flow rate and the body compensates by increasing the
+through the artery? (Assume that the pressure difference along the vessel to keep the
+temperature is .) flow rate constant. By what factor must the
+pressure difference increase? (b) If turbulence is
+118 . Angioplasty is a technique in which arteries
+created by the obstruction, what additional
+partially blocked with plaque are dilated to
+effect would it have on the flow rate?
+increase blood flow. By what factor must the
+radius of an artery be increased in order to
+Challenge Problems
+120 . The pressure on the dam shown early in the that of a rectangular solid 13.0 m wide by 20.0
+problems section increases with depth. m long by 2.75 m high. The house is heated by a
+Therefore, there is a net torque on the dam. Find forced air gas heater. The main uptake air duct of
+the net torque. the heater is 0.300 m in diameter. What is the
+average speed of air in the duct if it carries a
+121 . The temperature of the atmosphere is not
+volume equal to that of the house’s interior
+always constant and can increase or decrease
+every 15 minutes?
+with height. In a neutral atmosphere, where
+there is not a significant amount of vertical 126 . A garden hose with a diameter of 2.0 cm is used
+mixing, the temperature decreases at a rate of to fill a bucket, which has a volume of 0.10 cubic
+approximately 6.5 K per km. The magnitude of meters. It takes 1.2 minutes to fill. An adjustable
+the decrease in temperature as height increases nozzle is attached to the hose to decrease the
+is known as the lapse rate (The symbol is diameter of the opening, which increases the
+the upper case Greek letter gamma.) Assume speed of the water. The hose is held level to the
+that the surface pressure is ground at a height of 1.0 meters and the
+where and diameter is decreased until a flower bed 3.0
+the lapse rate is . Estimate the meters away is reached. (a) What is the volume
+flow rate of the water through the nozzle when
+pressure 3.0 km above the surface of Earth.
+the diameter is 2.0 cm? (b) What is the speed of
+122 . A submarine is stranded on the bottom of the
+the water coming out of the hose? (c) What does
+ocean with its hatch 25.0 m below the surface.
+the speed of the water coming out of the hose
+Calculate the force needed to open the hatch
+need to be to reach the flower bed 3.0 meters
+from the inside, given it is circular and 0.450 m
+away? (d) What is the diameter of the nozzle
+in diameter. Air pressure inside the submarine is
+needed to reach the flower bed?
+1.00 atm.
+127 . A frequently quoted rule of thumb in aircraft
+123 . Logs sometimes float vertically in a lake because
+design is that wings should produce about 1000
+one end has become water-logged and denser
+N of lift per square meter of wing. (The fact that
+than the other. What is the average density of a
+a wing has a top and bottom surface does not
+uniform-diameter log that floats with 20.0% of
+double its area.) (a) At takeoff, an aircraft travels
+its length above water?
+at 60.0 m/s, so that the air speed relative to the
+bottom of the wing is 60.0 m/s. Given the sea
+124 . Scurrilous con artists have been known to
+represent gold-plated tungsten ingots as pure level density of air as , how fast must
+gold and sell them at prices much below gold it move over the upper surface to create the
+value but high above the cost of tungsten. With ideal lift? (b) How fast must air move over the
+what accuracy must you be able to measure the upper surface at a cruising speed of 245 m/s
+mass of such an ingot in and out of water to tell and at an altitude where air density is one-fourth
+that it is almost pure tungsten rather than pure that at sea level? (Note that this is not all of the
+gold? aircraft’s lift—some comes from the body of the
+plane, some from engine thrust, and so on.
+125 . The inside volume of a house is equivalent to
+Furthermore, Bernoulli’s principle gives an
+Access for free at openstax.org
+
+14 • Chapter Review 707
+approximate answer because flow over the wing 130 . During a marathon race, a runner’s blood flow
+creates turbulence.) increases to 10.0 times her resting rate. Her
+blood’s viscosity has dropped to 95.0% of its
+128 . Two pipes of equal and constant diameter leave a
+normal value, and the blood pressure difference
+water pumping station and dump water out of an
+across the circulatory system has increased by
+open end that is open to the atmosphere (see the
+50.0%. By what factor has the average radii of
+following figure). The water enters at a pressure of
+her blood vessels increased?
+two atmospheres and a speed of .
+One pipe drops a height of 10 m. What is the velocity 131 . Water supplied to a house by a water main has a
+of the water as the water leaves each pipe? pressure of early on a
+summer day when neighborhood use is low. This
+pressure produces a flow of 20.0 L/min through
+a garden hose. Later in the day, pressure at the
+exit of the water main and entrance to the house
+drops, and a flow of only 8.00 L/min is obtained
+through the same hose. (a) What pressure is now
+being supplied to the house, assuming
+resistance is constant? (b) By what factor did the
+flow rate in the water main increase in order to
+cause this decrease in delivered pressure? The
+pressure at the entrance of the water main is
+, and the original flow rate
+129 . Fluid originally flows through a tube at a rate of was 200 L/min. (c) How many more users are
+. To illustrate the sensitivity of flow there, assuming each would consume 20.0 L/
+rate to various factors, calculate the new flow min in the morning?
+rate for the following changes with all other
+132 . Gasoline is piped underground from refineries to
+factors remaining the same as in the original
+major users. The flow rate is
+conditions. (a) Pressure difference increases by
+(about 500 gal/min), the viscosity of gasoline is
+a factor of 1.50. (b) A new fluid with 3.00 times
+, and its density is
+greater viscosity is substituted. (c) The tube is
+(a) What minimum diameter must
+replaced by one having 4.00 times the length.
+the pipe have if the Reynolds number is to be
+(d) Another tube is used with a radius 0.100
+less than 2000? (b) What pressure difference
+times the original. (e) Yet another tube is
+must be maintained along each kilometer of the
+substituted with a radius 0.100 times the
+pipe to maintain this flow rate?
+original and half the length, and the pressure
+difference is increased by a factor of 1.50.
+
+708 14 • Chapter Review
+Access for free at openstax.org
+
+CHAPTER 15
+Oscillations
+FIGURE 15.1 (a) The Comcast Building in Philadelphia, Pennsylvania, looming high above the skyline, is approximately 305 meters (1000
+feet) tall. At this height, the top floors can oscillate back and forth due to seismic activity and fluctuating winds. (b) Shown above is a
+schematic drawing of a tuned, liquid-column mass damper, installed at the top of the Comcast, consisting of a 300,000-gallon reservoir of
+water to reduce oscillations.
+CHAPTER OUTLINE
+15.1 Simple Harmonic Motion
+15.2 Energy in Simple Harmonic Motion
+15.3 Comparing Simple Harmonic Motion and Circular Motion
+15.4 Pendulums
+15.5 Damped Oscillations
+15.6 Forced Oscillations
+INTRODUCTION We begin the study of oscillations with simple systems of pendulums and springs. Although these
+systems may seem quite basic, the concepts involved have many real-life applications. For example, the Comcast
+Building in Philadelphia, Pennsylvania, stands approximately 305 meters (1000 feet) tall. As buildings are built
+taller, they can act as inverted, physical pendulums, with the top floors oscillating due to seismic activity and
+fluctuating winds. In the Comcast Building, a tuned-mass damper is used to reduce the oscillations. Installed at the
+top of the building is a tuned, liquid-column mass damper, consisting of a 300,000-gallon reservoir of water. This U-
+shaped tank allows the water to oscillate freely at a frequency that matches the natural frequency of the building.
+Damping is provided by tuning the turbulence levels in the moving water using baffles.
+
+710 15 • Oscillations
+15.1 Simple Harmonic Motion
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Define the terms period and frequency
+• List the characteristics of simple harmonic motion
+• Explain the concept of phase shift
+• Write the equations of motion for the system of a mass and spring undergoing simple harmonic motion
+• Describe the motion of a mass oscillating on a vertical spring
+When you pluck a guitar string, the resulting sound has a steady tone and lasts a long time (Figure 15.2). The string
+vibrates around an equilibrium position, and one oscillation is completed when the string starts from the initial
+position, travels to one of the extreme positions, then to the other extreme position, and returns to its initial
+position. We define periodic motion to be any motion that repeats itself at regular time intervals, such as exhibited
+by the guitar string or by a child swinging on a swing. In this section, we study the basic characteristics of
+oscillations and their mathematical description.
+FIGURE 15.2 When a guitar string is plucked, the string oscillates up and down in periodic motion. The vibrating string causes the
+surrounding air molecules to oscillate, producing sound waves. (credit: Yutaka Tsutano)
+Period and Frequency in Oscillations
+In the absence of friction, the time to complete one oscillation remains constant and is called the period (T). Its
+units are usually seconds, but may be any convenient unit of time. The word ‘period’ refers to the time for some
+event whether repetitive or not, but in this chapter, we shall deal primarily in periodic motion, which is by definition
+repetitive.
+A concept closely related to period is the frequency of an event. Frequency (f) is defined to be the number of events
+per unit time. For periodic motion, frequency is the number of oscillations per unit time. The relationship between
+frequency and period is
+15.1
+The SI unit for frequency is the hertz (Hz) and is defined as one cycle per second:
+A cycle is one complete oscillation.
+Access for free at openstax.org

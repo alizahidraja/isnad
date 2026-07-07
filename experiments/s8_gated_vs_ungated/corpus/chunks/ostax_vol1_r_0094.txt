@@ -1,0 +1,183 @@
+# REAL PDF — openstax_vol1.pdf, pages 574-580
+############################################################
+
+562 12 • Static Equilibrium and Elasticity
+Significance
+Suppose that the mechanical system considered in this example is attached to a ceiling inside an elevator going up.
+As long as the elevator moves up at a constant speed, the result stays the same because the weight does not
+change. If the elevator moves up with acceleration, the critical mass is smaller because the weight of
+becomes larger by an apparent weight due to the acceleration of the elevator. Still, in all cases the shorter string
+breaks first.
+12.2 Examples of Static Equilibrium
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Identify and analyze static equilibrium situations
+• Set up a free-body diagram for an extended object in static equilibrium
+• Set up and solve static equilibrium conditions for objects in equilibrium in various physical situations
+All examples in this chapter are planar problems. Accordingly, we use equilibrium conditions in the component form
+of Equation 12.7 to Equation 12.9. We introduced a problem-solving strategy in Example 12.1 to illustrate the
+physical meaning of the equilibrium conditions. Now we generalize this strategy in a list of steps to follow when
+solving static equilibrium problems for extended rigid bodies. We proceed in five practical steps.
+PROBLEM-SOLVING STRATEGY
+Static Equilibrium
+1. Identify the object to be analyzed. For some systems in equilibrium, it may be necessary to consider more
+than one object. Identify all forces acting on the object. Identify the questions you need to answer. Identify
+the information given in the problem. In realistic problems, some key information may be implicit in the
+situation rather than provided explicitly.
+2. Set up a free-body diagram for the object. (a) Choose the xy-reference frame for the problem. Draw a free-
+body diagram for the object, including only the forces that act on it. When suitable, represent the forces in
+terms of their components in the chosen reference frame. As you do this for each force, cross out the original
+force so that you do not erroneously include the same force twice in equations. Label all forces—you will need
+this for correct computations of net forces in the x- and y-directions. For an unknown force, the direction must
+be assigned arbitrarily; think of it as a ‘working direction’ or ‘suspected direction.’ The correct direction is
+determined by the sign that you obtain in the final solution. A plus sign means that the working direction is
+the actual direction. A minus sign means that the actual direction is opposite to the assumed working
+direction. (b) Choose the location of the rotation axis; in other words, choose the pivot point with respect to
+which you will compute torques of acting forces. On the free-body diagram, indicate the location of the pivot
+and the lever arms of acting forces—you will need this for correct computations of torques. In the selection of
+the pivot, keep in mind that the pivot can be placed anywhere you wish, but the guiding principle is that the
+best choice will simplify as much as possible the calculation of the net torque along the rotation axis.
+3. Set up the equations of equilibrium for the object. (a) Use the free-body diagram to write a correct equilibrium
+condition Equation 12.7 for force components in the x-direction. (b) Use the free-body diagram to write a
+correct equilibrium condition Equation 12.11 for force components in the y-direction. (c) Use the free-body
+diagram to write a correct equilibrium condition Equation 12.9 for torques along the axis of rotation. Use
+Equation 12.10 to evaluate torque magnitudes and senses.
+4. Simplify and solve the system of equations for equilibrium to obtain unknown quantities. At this point, your
+work involves algebra only. Keep in mind that the number of equations must be the same as the number of
+unknowns. If the number of unknowns is larger than the number of equations, the problem cannot be solved.
+5. Evaluate the expressions for the unknown quantities that you obtained in your solution. Your final answers
+Access for free at openstax.org
+
+12.2 • Examples of Static Equilibrium 563
+should have correct numerical values and correct physical units. If they do not, then use the previous steps to
+track back a mistake to its origin and correct it. Also, you may independently check for your numerical answers
+by shifting the pivot to a different location and solving the problem again, which is what we did in Example
+12.1.
+Note that setting up a free-body diagram for a rigid-body equilibrium problem is the most important component in
+the solution process. Without the correct setup and a correct diagram, you will not be able to write down correct
+conditions for equilibrium. Also note that a free-body diagram for an extended rigid body that may undergo
+rotational motion is different from a free-body diagram for a body that experiences only translational motion (as you
+saw in the chapters on Newton’s laws of motion). In translational dynamics, a body is represented as its CM, where
+all forces on the body are attached and no torques appear. This does not hold true in rotational dynamics, where an
+extended rigid body cannot be represented by one point alone. The reason for this is that in analyzing rotation, we
+must identify torques acting on the body, and torque depends both on the acting force and on its lever arm. Here,
+the free-body diagram for an extended rigid body helps us identify external torques.
+EXAMPLE 12.3
+The Torque Balance
+Three masses are attached to a uniform meter stick, as shown in Figure 12.9. The mass of the meter stick is 150.0 g
+and the masses to the left of the fulcrum are and Find the mass that balances the
+system when it is attached at the right end of the stick, and the normal reaction force at the fulcrum when the
+system is balanced.
+FIGURE 12.9 In a torque balance, a horizontal beam is supported at a fulcrum (indicated by S) and masses are attached to both sides of the
+fulcrum. The system is in static equilibrium when the beam does not rotate. It is balanced when the beam remains level.
+Strategy
+For the arrangement shown in the figure, we identify the following five forces acting on the meter stick:
+is the weight of mass is the weight of mass
+is the weight of the entire meter stick; is the weight of unknown mass
+is the normal reaction force at the support point S.
+We choose a frame of reference where the direction of the y-axis is the direction of gravity, the direction of the x-axis
+is along the meter stick, and the axis of rotation (the z-axis) is perpendicular to the x-axis and passes through the
+support point S. In other words, we choose the pivot at the point where the meter stick touches the support. This is
+a natural choice for the pivot because this point does not move as the stick rotates. Now we are ready to set up the
+free-body diagram for the meter stick. We indicate the pivot and attach five vectors representing the five forces
+along the line representing the meter stick, locating the forces with respect to the pivot Figure 12.10. At this stage,
+we can identify the lever arms of the five forces given the information provided in the problem. For the three hanging
+masses, the problem is explicit about their locations along the stick, but the information about the location of the
+weight w is given implicitly. The key word here is “uniform.” We know from our previous studies that the CM of a
+uniform stick is located at its midpoint, so this is where we attach the weight w, at the 50-cm mark.
+
+564 12 • Static Equilibrium and Elasticity
+FIGURE 12.10 Free-body diagram for the meter stick. The pivot is chosen at the support point S.
+Solution
+With Figure 12.9 and Figure 12.10 for reference, we begin by finding the lever arms of the five forces acting on the
+stick:
+Now we can find the five torques with respect to the chosen pivot:
+The second equilibrium condition (equation for the torques) for the meter stick is
+When substituting torque values into this equation, we can omit the torques giving zero contributions. In this way
+the second equilibrium condition is
+12.17
+Selecting the -direction to be parallel to the first equilibrium condition for the stick is
+Substituting the forces, the first equilibrium condition becomes
+12.18
+We solve these equations simultaneously for the unknown values and In Equation 12.17, we cancel the g
+factor and rearrange the terms to obtain
+To obtain we divide both sides by so we have
+Access for free at openstax.org
+
+12.2 • Examples of Static Equilibrium 565
+12.19
+To find the normal reaction force, we rearrange the terms in Equation 12.18, converting grams to kilograms:
+12.20
+Significance
+Notice that Equation 12.17 is independent of the value of g. The torque balance may therefore be used to measure
+mass, since variations in g-values on Earth’s surface do not affect these measurements. This is not the case for a
+spring balance because it measures the force.
+CHECK YOUR UNDERSTANDING 12.3
+Repeat Example 12.3 using the left end of the meter stick to calculate the torques; that is, by placing the pivot at the
+left end of the meter stick.
+In the next example, we show how to use the first equilibrium condition (equation for forces) in the vector form
+given by Equation 12.7 and Equation 12.8. We present this solution to illustrate the importance of a suitable choice
+of reference frame. Although all inertial reference frames are equivalent and numerical solutions obtained in one
+frame are the same as in any other, an unsuitable choice of reference frame can make the solution quite lengthy and
+convoluted, whereas a wise choice of reference frame makes the solution straightforward. We show this in the
+equivalent solution to the same problem. This particular example illustrates an application of static equilibrium to
+biomechanics.
+EXAMPLE 12.4
+Forces in the Forearm
+A weightlifter is holding a 50.0-lb weight (equivalent to 222.4 N) with his forearm, as shown in Figure 12.11. His
+forearm is positioned at with respect to his upper arm. The forearm is supported by a contraction of the
+biceps muscle, which causes a torque around the elbow. Assuming that the tension in the biceps acts along the
+vertical direction given by gravity, what tension must the muscle exert to hold the forearm at the position shown?
+What is the force on the elbow joint? Assume that the forearm’s weight is negligible. Give your final answers in SI
+units.
+
+566 12 • Static Equilibrium and Elasticity
+FIGURE 12.11 The forearm is rotated around the elbow (E) by a contraction of the biceps muscle, which causes tension
+Strategy
+We identify three forces acting on the forearm: the unknown force at the elbow; the unknown tension in the
+muscle; and the weight with magnitude We adopt the frame of reference with the x-axis along the
+forearm and the pivot at the elbow. The vertical direction is the direction of the weight, which is the same as the
+direction of the upper arm. The x-axis makes an angle with the vertical. The y-axis is perpendicular to the
+x-axis. Now we set up the free-body diagram for the forearm. First, we draw the axes, the pivot, and the three
+vectors representing the three identified forces. Then we locate the angle and represent each force by its x- and
+y-components, remembering to cross out the original force vector to avoid double counting. Finally, we label the
+forces and their lever arms. The free-body diagram for the forearm is shown in Figure 12.12. At this point, we are
+ready to set up equilibrium conditions for the forearm. Each force has x- and y-components; therefore, we have two
+equations for the first equilibrium condition, one equation for each component of the net force acting on the
+forearm.
+FIGURE 12.12 Free-body diagram for the forearm: The pivot is located at point E (elbow).
+Notice that in our frame of reference, contributions to the second equilibrium condition (for torques) come only from
+the y-components of the forces because the x-components of the forces are all parallel to their lever arms, so that
+for any of them we have in Equation 12.10. For the y-components we have in Equation 12.10.
+Also notice that the torque of the force at the elbow is zero because this force is attached at the pivot. So the
+contribution to the net torque comes only from the torques of and of
+Solution
+We see from the free-body diagram that the x-component of the net force satisfies the equation
+Access for free at openstax.org
+
+12.2 • Examples of Static Equilibrium 567
+12.21
+and the y-component of the net force satisfies
+12.22
+Equation 12.21 and Equation 12.22 are two equations of the first equilibrium condition (for forces). Next, we read
+from the free-body diagram that the net torque along the axis of rotation is
+12.23
+Equation 12.23 is the second equilibrium condition (for torques) for the forearm. The free-body diagram shows that
+the lever arms are and At this point, we do not need to convert inches into SI units,
+because as long as these units are consistent in Equation 12.23, they cancel out. Using the free-body diagram again,
+we find the magnitudes of the component forces:
+We substitute these magnitudes into Equation 12.21, Equation 12.22, and Equation 12.23 to obtain, respectively,
+When we simplify these equations, we see that we are left with only two independent equations for the two
+unknown force magnitudes, F and T, because Equation 12.21 for the x-component is equivalent to Equation 12.22
+for the y-component. In this way, we obtain the first equilibrium condition for forces
+12.24
+and the second equilibrium condition for torques
+12.25
+The magnitude of tension in the muscle is obtained by solving Equation 12.25:
+The force at the elbow is obtained by solving Equation 12.24:
+The negative sign in the equation tells us that the actual force at the elbow is antiparallel to the working direction
+adopted for drawing the free-body diagram. In the final answer, we convert the forces into SI units of force. The
+answer is
+Significance
+Two important issues here are worth noting. The first concerns conversion into SI units, which can be done at the
+very end of the solution as long as we keep consistency in units. The second important issue concerns the hinge

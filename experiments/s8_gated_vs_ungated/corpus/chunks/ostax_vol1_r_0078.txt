@@ -1,0 +1,194 @@
+# REAL PDF — openstax_vol1.pdf, pages 470-477
+############################################################
+
+458 10 • Fixed-Axis Rotation
+b. Here the angular velocity decreases from 26.2 rad/s (250 rpm) to zero, so that is −26.2 rad/s, and is
+given to be –87.3 . Thus,
+Significance
+Note that the angular acceleration as the mechanic spins the wheel is small and positive; it takes 5 s to produce an
+appreciable angular velocity. When she hits the brake, the angular acceleration is large and negative. The angular
+velocity quickly goes to zero.
+CHECK YOUR UNDERSTANDING 10.1
+The fan blades on a turbofan jet engine (shown below) accelerate from rest up to a rotation rate of 40.0 rev/s in 20
+s. The increase in angular velocity of the fan is constant in time. (The GE90-110B1 turbofan engine mounted on a
+Boeing 777, as shown, is currently the largest turbofan engine in the world, capable of thrusts of 330–510 kN.)
+(a) What is the average angular acceleration?
+(b) What is the instantaneous angular acceleration at any time during the first 20 s?
+FIGURE 10.9 (credit: “Bubinator”/ Wikimedia Commons)
+EXAMPLE 10.3
+Wind Turbine
+A wind turbine (Figure 10.10) in a wind farm is being shut down for maintenance. It takes 30 s for the turbine to go
+from its operating angular velocity to a complete stop in which the angular velocity function is
+, where is the time in seconds. If the turbine is rotating counterclockwise
+looking into the page, (a) what are the directions of the angular velocity and acceleration vectors? (b) What is the
+average angular acceleration? (c) What is the instantaneous angular acceleration at
+Access for free at openstax.org
+
+10.1 • Rotational Variables 459
+FIGURE 10.10 A wind turbine that is rotating counterclockwise, as seen head on.
+Strategy
+a. We are given the rotational sense of the turbine, which is counterclockwise in the plane of the page. Using the
+right hand rule (Figure 10.5), we can establish the directions of the angular velocity and acceleration vectors.
+b. We calculate the initial and final angular velocities to get the average angular acceleration. We establish the
+sign of the angular acceleration from the results in (a).
+c. We are given the functional form of the angular velocity, so we can find the functional form of the angular
+acceleration function by taking its derivative with respect to time.
+Solution
+a. Since the turbine is rotating counterclockwise, angular velocity points out of the page. But since the angular
+velocity is decreasing, the angular acceleration points into the page, in the opposite sense to the angular
+velocity.
+b. The initial angular velocity of the turbine, setting . The final angular velocity is zero, so
+the average angular acceleration is
+c. Taking the derivative of the angular velocity with respect to time gives
+Significance
+We found from the calculations in (a) and (b) that the angular acceleration and the average angular acceleration
+are negative. The turbine has an angular acceleration in the opposite sense to its angular velocity.
+We now have a basic vocabulary for discussing fixed-axis rotational kinematics and relationships between rotational
+variables. We discuss more definitions and connections in the next section.
+
+460 10 • Fixed-Axis Rotation
+10.2 Rotation with Constant Angular Acceleration
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Derive the kinematic equations for rotational motion with constant angular acceleration
+• Select from the kinematic equations for rotational motion with constant angular acceleration the
+appropriate equations to solve for unknowns in the analysis of systems undergoing fixed-axis rotation
+• Use solutions found with the kinematic equations to verify the graphical analysis of fixed-axis rotation
+with constant angular acceleration
+In the preceding section, we defined the rotational variables of angular displacement, angular velocity, and angular
+acceleration. In this section, we work with these definitions to derive relationships among these variables and use
+these relationships to analyze rotational motion for a rigid body about a fixed axis under a constant angular
+acceleration. This analysis forms the basis for rotational kinematics. If the angular acceleration is constant, the
+equations of rotational kinematics simplify, similar to the equations of linear kinematics discussed in Motion along a
+Straight Line and Motion in Two and Three Dimensions. We can then use this simplified set of equations to describe
+many applications in physics and engineering where the angular acceleration of the system is constant. Rotational
+kinematics is also a prerequisite to the discussion of rotational dynamics later in this chapter.
+Kinematics of Rotational Motion
+Using our intuition, we can begin to see how the rotational quantities , and t are related to one another. For
+example, we saw in the preceding section that if a flywheel has an angular acceleration in the same direction as its
+angular velocity vector, its angular velocity increases with time and its angular displacement also increases. On the
+contrary, if the angular acceleration is opposite to the angular velocity vector, its angular velocity decreases with
+time. We can describe these physical situations and many others with a consistent set of rotational kinematic
+equations under a constant angular acceleration. The method to investigate rotational motion in this way is called
+kinematics of rotational motion.
+To begin, we note that if the system is rotating under a constant acceleration, then the average angular velocity
+follows a simple relation because the angular velocity is increasing linearly with time. The average angular velocity is
+just half the sum of the initial and final values:
+10.9
+From the definition of the average angular velocity, we can find an equation that relates the angular position,
+average angular velocity, and time:
+Solving for , we have
+10.10
+where we have set . This equation can be very useful if we know the average angular velocity of the system.
+Then we could find the angular displacement over a given time period. Next, we find an equation relating , , and t.
+To determine this equation, we start with the definition of angular acceleration:
+We rearrange this to get and then we integrate both sides of this equation from initial values to final
+values, that is, from to t and . In uniform rotational motion, the angular acceleration is constant so it can
+be pulled out of the integral, yielding two definite integrals:
+Access for free at openstax.org
+
+10.2 • Rotation with Constant Angular Acceleration 461
+Setting , we have
+We rearrange this to obtain
+10.11
+where is the initial angular velocity. Equation 10.11 is the rotational counterpart to the linear kinematics
+equation . With Equation 10.11, we can find the angular velocity of an object at any specified time t
+given the initial angular velocity and the angular acceleration.
+Let’s now do a similar treatment starting with the equation . We rearrange it to obtain and
+integrate both sides from initial to final values again, noting that the angular acceleration is constant and does not
+have a time dependence. However, this time, the angular velocity is not constant (in general), so we substitute in
+what we derived above:
+where we have set . Now we rearrange to obtain
+10.12
+Equation 10.12 is the rotational counterpart to the linear kinematics equation found in Motion Along a Straight Line
+for position as a function of time. This equation gives us the angular position of a rotating rigid body at any time t
+given the initial conditions (initial angular position and initial angular velocity) and the angular acceleration.
+We can find an equation that is independent of time by solving for t in Equation 10.11 and substituting into Equation
+10.12. Equation 10.12 becomes
+or
+10.13
+Equation 10.10 through Equation 10.13 describe fixed-axis rotation for constant acceleration and are summarized
+in Table 10.1.
+
+462 10 • Fixed-Axis Rotation
+Angular displacement from average angular velocity
+Angular velocity from angular acceleration
+Angular displacement from angular velocity and angular acceleration
+Angular velocity from angular displacement and angular acceleration
+TABLE 10.1 Kinematic Equations
+Applying the Equations for Rotational Motion
+Now we can apply the key kinematic relations for rotational motion to some simple examples to get a feel for how
+the equations can be applied to everyday situations.
+EXAMPLE 10.4
+Calculating the Acceleration of a Fishing Reel
+A deep-sea fisherman hooks a big fish that swims away from the boat, pulling the fishing line from his fishing reel.
+The whole system is initially at rest, and the fishing line unwinds from the reel at a radius of 4.50 cm from its axis of
+rotation. The reel is given an angular acceleration of for 2.00 s (Figure 10.11).
+(a) What is the final angular velocity of the reel after 2 s?
+(b) How many revolutions does the reel make?
+FIGURE 10.11 Fishing line coming off a rotating reel moves linearly.
+Strategy
+Identify the knowns and compare with the kinematic equations for constant acceleration. Look for the appropriate
+equation that can be solved for the unknown, using the knowns given in the problem description.
+Solution
+a. We are given and t and want to determine . The most straightforward equation to use is ,
+since all terms are known besides the unknown variable we are looking for. We are given that (it starts
+from rest), so
+b. We are asked to find the number of revolutions. Because , we can find the number of
+revolutions by finding in radians. We are given and t, and we know is zero, so we can obtain by using
+Access for free at openstax.org
+
+10.2 • Rotation with Constant Angular Acceleration 463
+Converting radians to revolutions gives
+Significance
+This example illustrates that relationships among rotational quantities are highly analogous to those among linear
+quantities. The answers to the questions are realistic. After unwinding for two seconds, the reel is found to spin at
+220 rad/s, which is 2100 rpm. (No wonder reels sometimes make high-pitched sounds.)
+In the preceding example, we considered a fishing reel with a positive angular acceleration. Now let us consider
+what happens with a negative angular acceleration.
+EXAMPLE 10.5
+Calculating the Duration When the Fishing Reel Slows Down and Stops
+Now the fisherman applies a brake to the spinning reel, achieving an angular acceleration of . How long
+does it take the reel to come to a stop?
+Strategy
+We are asked to find the time t for the reel to come to a stop. The initial and final conditions are different from those
+in the previous problem, which involved the same fishing reel. Now we see that the initial angular velocity is
+and the final angular velocity is zero. The angular acceleration is given as
+Examining the available equations, we see all quantities but t are known in , making it easiest to use
+this equation.
+Solution
+The equation states
+We solve the equation algebraically for t and then substitute the known values as usual, yielding
+Significance
+Note that care must be taken with the signs that indicate the directions of various quantities. Also, note that the time
+to stop the reel is fairly small because the acceleration is rather large. Fishing lines sometimes snap because of the
+accelerations involved, and fishermen often let the fish swim for a while before applying brakes on the reel. A tired
+fish is slower, requiring a smaller acceleration.
+CHECK YOUR UNDERSTANDING 10.2
+A centrifuge used in DNA extraction spins at a maximum rate of 7000 rpm, producing a “g-force” on the sample that
+is 6000 times the force of gravity. If the centrifuge takes 10 seconds to come to rest from the maximum spin rate:
+(a) What is the angular acceleration of the centrifuge? (b) What is the angular displacement of the centrifuge during
+this time?
+
+464 10 • Fixed-Axis Rotation
+EXAMPLE 10.6
+Angular Acceleration of a Propeller
+Figure 10.12 shows a graph of the angular velocity of a propeller on an aircraft as a function of time. Its angular
+velocity starts at 30 rad/s and drops linearly to 0 rad/s over the course of 5 seconds. (a) Find the angular
+acceleration of the object and verify the result using the kinematic equations. (b) Find the angle through which the
+propeller rotates during these 5 seconds and verify your result using the kinematic equations.
+FIGURE 10.12 A graph of the angular velocity of a propeller versus time.
+Strategy
+a. Since the angular velocity varies linearly with time, we know that the angular acceleration is constant and
+does not depend on the time variable. The angular acceleration is the slope of the angular velocity vs. time
+graph, . To calculate the slope, we read directly from Figure 10.12, and see that at
+and at . Then, we can verify the result using .
+b. We use the equation since the time derivative of the angle is the angular velocity, we can find the
+angular displacement by integrating the angular velocity, which from the figure means taking the area under
+the angular velocity graph. In other words:
+Then we use the kinematic equations for constant acceleration to verify the result.
+Solution
+a. Calculating the slope, we get
+We see that this is exactly Equation 10.11 with a little rearranging of terms.
+b. We can find the area under the curve by calculating the area of the right triangle, as shown in Figure 10.13.
+Access for free at openstax.org

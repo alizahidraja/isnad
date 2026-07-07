@@ -1,0 +1,269 @@
+# REAL PDF — openstax_vol2.pdf, pages 535-540
+############################################################
+
+Chapter 11 | Magnetic Forces and Fields 525
+17. What is the direction of the velocity of a negative 21. (a) Aircraft sometimes acquire small static charges.
+charge that experiences the magnetic force shown in each Suppose a supersonic jet has a 0.500-μC charge and flies
+of the three cases, assuming it moves perpendicular toB? duewestataspeedof660.m/soverEarth’ssouthmagnetic
+pole, where the 8.00×10 −5 −T magnetic field points
+straight down into the ground. What are the direction and
+the magnitude of the magnetic force on the plane? (b)
+Discusswhetherthevalueobtainedinpart(a)impliesthis
+is a significant or negligible effect.
+22. (a) A cosmic ray proton moving toward Earth at
+5.00×10 7 m/s experiences a magnetic force of
+1.70×10 −16 N. What is the strength of the magnetic
+field if there is a 45º angle between it and the proton’s
+velocity?(b)Isthevalueobtainedinparta.consistentwith
+theknownstrengthofEarth’smagneticfieldonitssurface?
+Discuss.
+23. An electron moving at 4.00×10 3 m/s in a 1.25-T
+magnetic field experiences a magnetic force of
+1.40×10 −16 N. What angle does the velocity of the
+electron make with the magnetic field? There are two
+answers.
+18. Repeat previous exercise for a positive charge. 24. (a) A physicist performing a sensitive measurement
+wants to limit the magnetic force on a moving charge in
+19. What is the direction of the magnetic field that her equipment to less than 1.00×10−12 N. What is the
+producesthemagneticforceonapositivechargeasshown greatestthechargecanbeifitmovesatamaximumspeed
+ineachofthethreecases,assuming → B isperpendicular of 30.0 m/s in Earth’s field? (b) Discuss whether it would
+bedifficulttolimitthechargetolessthanthevaluefoundin
+to → v ? (a)bycomparingitwithtypicalstaticelectricityandnoting
+that static is often absent.
+11.3Motion of a Charged Particle in a Magnetic
+Field
+25. A cosmic-ray electron moves at 7.5×10 6 m/s
+perpendiculartoEarth’smagneticfieldatanaltitudewhere
+thefieldstrengthis 1.0×10 −5 T. Whatistheradiusofthe
+circular path the electron follows?
+26. (a) Viewers of Star Trek have heard of an antimatter
+drive on the Starship Enterprise. One possibility for such
+a futuristic energy source is to store antimatter charged
+particles in a vacuum chamber, circulating in a magnetic
+field, and then extract them as needed. Antimatter
+annihilates normal matter, producing pure energy. What
+strength magnetic field is needed to hold antiprotons,
+moving at 5.0×10 7 m/s in a circular path 2.00 m in
+radius? Antiprotons have the same mass as protons but
+the opposite (negative) charge. (b) Is this field strength
+obtainable with today’s technology or is it a futuristic
+20. Repeat previous exercise for a negative charge. possibility?
+
+526 Chapter 11 | Magnetic Forces and Fields
+27. (a) An oxygen-16 ion with a mass of
+2.66×10 −26 kg travels at 5.0×10 6 m/s perpendicular
+to a 1.20-T magnetic field, which makes it move in a
+circulararcwitha0.231-mradius.Whatpositivechargeis
+ontheion?(b)Whatistheratioofthischargetothecharge
+ofanelectron?(c)Discusswhytheratiofoundin(b)should
+be an integer.
+28. An electron in a TV CRT moves with a speed of
+6.0×10 7 m/s, in a direction perpendicular to Earth’s
+field, which has a strength of 5.0×10 −5 T. (a) What
+strengthelectricfieldmustbeappliedperpendiculartothe
+Earth’sfieldtomaketheelectronmovesinastraightline?
+(b) If this is done between plates separated by 1.00 cm,
+what is the voltage applied? (Note that TVs are usually
+surrounded by a ferromagnetic material to shield against
+external magnetic fields and avoid the need for such a
+correction.)
+29. (a)Atwhatspeedwillaprotonmoveinacircularpath
+ofthesameradiusastheelectroninthepreviousexercise?
+(b)Whatwouldtheradiusofthepathbeiftheprotonhad
+thesamespeedastheelectron?(c)Whatwouldtheradius
+beiftheprotonhadthesamekineticenergyastheelectron?
+(d) The same momentum?
+30. (a) What voltage will accelerate electrons to a speed
+of 6.00×10 −7 m/s? (b) Find the radius of curvature of
+thepathofaprotonacceleratedthroughthispotentialina
+0.500-Tfieldandcomparethiswiththeradiusofcurvature
+of an electron accelerated through the same potential.
+31. An alpha-particle ⎛m=6.64×10 −27 kg,
+⎝
+q=3.2×10 −19 C ⎞ travelsinacircularpathofradius25
+⎠
+cm in a uniform magnetic field of magnitude 1.5 T. (a)
+34. Whatisthedirectionofacurrentthatexperiencesthe
+What is the speed of the particle? (b) What is the kinetic
+magneticforceshownineachofthethreecases,assuming
+energy in electron-volts? (c) Through what potential
+→
+differencemusttheparticlebeacceleratedinordertogive the current runs perpendicular to B ?
+it this kinetic energy?
+32. A particle of charge q and mass m is accelerated
+from rest through a potential difference V, after which it
+encounters a uniform magnetic field B. If the particle
+movesinaplaneperpendicular toB,whatistheradiusof
+its circular orbit?
+11.4Magnetic Force on a Current-Carrying
+Conductor
+33. What is the direction of the magnetic force on the
+current in each of the six cases?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 527
+37. (a)Adcpowerlineforalight-railsystemcarries1000
+Aatanangleof30.0ºtoEarth’s 5.0×10 −5 T field.What
+is the force on a 100-m section of this line? (b) Discuss
+practical concerns this presents, if any.
+38. A wire carrying a 30.0-A current passes between the
+poles of a strong magnet that is perpendicular to its field
+and experiences a 2.16-N force on the 4.00 cm of wire in
+the field. What is the average field strength?
+11.5Force and Torque on a Current Loop
+39. (a) By how many percent is the torque of a motor
+decreased if its permanent magnets lose 5.0% of their
+strength?(b)Howmanypercentwouldthecurrentneedto
+be increased to return the torque to original values?
+40. (a)Whatisthemaximumtorqueona150-turnsquare
+loopofwire18.0cmonasidethatcarriesa50.0-Acurrent
+in a 1.60-T field? (b) What is the torque whenθis 10.9º?
+41. Find the current through a loop needed to create a
+maximum torque of 9.0N·m. The loop has 50 square
+turnsthatare15.0cmonasideandisinauniform0.800-T
+35. What is the direction of the magnetic field that magnetic field.
+producesthemagneticforceshownonthecurrentsineach
+→
+of the three cases, assuming B is perpendicular toI? 42. Calculate the magnetic field strength needed on a
+200-turn square loop 20.0 cm on a side to create a
+maximumtorqueof300N⋅miftheloopiscarrying25.0
+A.
+43. Since the equation for torque on a current-carrying
+loopisτ=NIABsinθ,theunitsofN⋅mmustequalunits
+of A ⋅ m2T. Verify this.
+44. (a) At what angle θ is the torque on a current loop
+90.0%ofmaximum?(b)50.0%ofmaximum?(c)10.0%of
+maximum?
+45. A proton has a magnetic field due to its spin. The
+field is similar to that created by a circular current loop
+0.65×10 −15 m inradiuswithacurrentof 1.05×104A.
+Find the maximum torque on a proton in a 2.50-T field.
+(This is a significant torque on a small particle.)
+46. (a) A 200-turn circular loop of radius 50.0 cm is
+vertical,withitsaxisonaneast-westline.Acurrentof100
+A circulates clockwise in the loop when viewed from the
+east.Earth’sfieldhereisduenorth,paralleltotheground,
+36. (a) What is the force per meter on a lightning bolt at with a strength of 3.0×10 −5 T. What are the direction
+the equator that carries 20,000 A perpendicular to Earth’s and magnitude of the torque on the loop? (b) Does this
+3.0×10 −5 T field?(b)Whatisthedirectionoftheforce device have any practical applications as a motor?
+ifthecurrentisstraightupandEarth’sfielddirectionisdue
+north, parallel to the ground?
+
+528 Chapter 11 | Magnetic Forces and Fields
+and B = 0.250 T. When the electric field is turned off, the
+charged particle travels in a circular path of radius 3.33
+mm. Determine the charge-to-mass ratio of the particle.
+52. AHallprobegivesareadingof 1.5µ V foracurrent
+of2Awhenitisplacedinamagneticfieldof1T.Whatis
+themagneticfieldinaregionwherethereadingis 2µ V
+for 1.7 A of current?
+47. Repeatthepreviousproblem,butwiththelooplying
+flat on the ground with its current circulating
+counterclockwise (whenviewed fromabove)inalocation 11.7Applications of Magnetic Forces and
+whereEarth’sfieldisnorth,butatanangle45.0°belowthe Fields
+horizontal and with a strength of 6.0×10 −5 T. 53. A physicist is designing a cyclotron to accelerate
+protonstoone-tenththespeedoflight.Themagneticfield
+will have a strength of 1.5 T. Determine (a) the rotational
+period of the circulating protons and (b) the maximum
+radius of the protons’ orbit.
+54. The strengths of the fields in the velocity selector of
+a Bainbridge mass spectrometer are B = 0.500 T and E =
+1.2×10 5 V/m, and the strength of the magnetic field
+11.6The Hall Effect
+thatseparatestheionsis B o=0.750T. Astreamofsingly
+48. Astripofcopperisplacedinauniformmagneticfield chargedLiionsisfoundtobendinacirculararcofradius
+of magnitude 2.5 T. The Hall electric field is measured 2.32 cm. What is the mass of the Li ions?
+to be 1.5×10 −3 V/m. (a) What is the drift speed of the
+conduction electrons? (b) Assuming that n = 8.0×10 28 55. The magnetic field in a cyclotron is 1.25 T, and the
+maximum orbital radius of the circulating protons is 0.40
+electrons per cubic meter and that the cross-sectional area
+m.(a)Whatisthekineticenergyoftheprotonswhenthey
+ofthestripis 5.0×10 −6 m2, calculatethecurrentinthe are ejected from the cyclotron? (b) What is this energy
+strip. (c) What is the Hall coefficient 1/nq? in MeV? (c) Through what potential difference would a
+protonhavetobeacceleratedtoacquirethiskineticenergy?
+49. The cross-sectional dimensions of the copper strip (d) What is the period of the voltage source used to
+shownare2.0cmby2.0mm.Thestripcarriesacurrentof accelerate the protons? (e) Repeat the calculations for
+100A,anditisplacedinamagneticfieldofmagnitudeB= alpha-particles.
+1.5T.WhatarethevalueandpolarityoftheHallpotential
+in the copper strip? 56. A mass spectrometer is being used to separate
+commonoxygen-16fromthemuchrareroxygen-18,taken
+from a sample of old glacial ice. (The relative abundance
+oftheseoxygenisotopesisrelatedtoclimatictemperature
+atthetimetheicewasdeposited.)Theratioofthemasses
+of these two ions is 16 to 18, the mass of oxygen-16 is
+2.66×10 −26 kg, and they are singly charged and travel
+at 5.00×10 6 m/s ina1.20-Tmagneticfield.Whatisthe
+separation between their pathswhentheyhitatargetafter
+50. The magnitudes of the electric and magnetic fields traversing a semicircle?
+in a velocity selector are 1.8×10 5 V/m and 0.080 T,
+respectively. (a) What speed must a proton have to pass 57. (a)Triplychargeduranium-235anduranium-238ions
+throughtheselector?(b)Alsocalculatethespeedsrequired are being separated in a mass spectrometer. (The much
+for an alpha-particle and a singly ionized sO16 atom to rarer uranium-235 is used as reactor fuel.) The masses
+pass through the selector. of the ions are 3.90×10 −25 kg and 3.95×10 −25 kg,
+respectively,andtheytravelat 3.0×10 5 m/s ina0.250-T
+51. A charged particle moves through a velocity selector
+field. What is the separation between their paths when
+at constant velocity. In the selector, E = 1.0×104N/C they hit a target after traversing a semicircle? (b) Discuss
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 529
+whether this distance between their paths seems to be big from uranium-238.
+enough to be practical in the separation of uranium-235
+ADDITIONAL PROBLEMS
+58. Calculatethemagneticforceonahypotheticalparticle → v =(2.0 ^ i −4.0 ^ k)×10 6 m/s enters a region where
+of charge 1.0×10 −19 C moving with a velocity of
+→ ^ ^
+6.0×104 ^ im/s in a magnetic field of 1.2 ^ kT. E =(5.0i −2.0j)×104 V/m and
+→ ^ ^
+B =(1.0i +4.0k)×10−2T. Whatistheinitialforce
+59. Repeat the previous problem with a new magnetic
+on it?
+^ ^
+field of (0.4i +1.2k)T.
+65. An electron moving with a velocity
+60. Anelectronisprojectedintoauniformmagneticfield → v = ⎛ 4.0 ^ i +3.0 ^ j +2.0 ^ k ⎞ ×10 6 m/s entersaregion
+⎝ ⎠
+^ ^
+(0.5i +0.8k)T with a velocity of where there is a uniform electric field and a uniform
+^ ^ magnetic field. The magnetic field is given by
+(3.0i +4.0j)×10 6 m/s. Whatisthemagneticforceon
+→ ⎛ ^ ^ ^⎞
+the electron? B = ⎝ 1.0i −2.0j +4.0k ⎠ ×10−2T. If the electron
+travelsthrougharegionwithoutbeingdeflected,whatisthe
+61. The mass and charge of a water droplet are
+electric field?
+1.0×10−4g and 2.0×10 −8 C, respectively. If the
+droplet is given an initial horizontal velocity of 66. Ataparticularinstant,anelectronistravelingwestto
+^ eastwithakineticenergyof10keV.Earth’smagneticfield
+5.0×10 5 im/s, whatmagneticfieldwillkeepitmoving
+has a horizontal component of 1.8×10 −5 T north and a
+in this direction? Why must gravity be considered here?
+verticalcomponentof 5.0×10 −5 T down.(a)Whatisthe
+pathoftheelectron?(b)Whatistheradiusofcurvatureof
+62. Four different proton velocities are given. For each
+the path?
+case, determine the magnetic force on the proton in terms
+of e, v , and B .
+0 0
+67. Repeatthecalculationsofthepreviousproblemfora
+proton with the same kinetic energy.
+68. What magnetic field is required in order to confine a
+protonmovingwithaspeedof 4.0×10 6 m/s toacircular
+orbit of radius 10 cm?
+69. Anelectronandaprotonmovewiththesamespeedin
+aplaneperpendiculartoauniformmagneticfield.Compare
+the radii and periods of their orbits.
+70. Aprotonandanalpha-particle have the same kinetic
+energyandbothmoveinaplaneperpendiculartoauniform
+63. Anelectronofkineticenergy2000eVpassesbetween
+magnetic field. Compare the periods of their orbits.
+parallelplatesthatare1.0cmapartandkeptatapotential
+difference of 300 V. What is the strength of the uniform
+magnetic field B that will allow the electron to travel 71. Asinglychargediontakes 2.0×10 −3 s tocomplete
+undeflected through the plates? Assume E and B are eightrevolutionsinauniformmagneticfieldofmagnitude
+perpendicular. 2.0×10−2T. What is the mass of the ion?
+64. An alpha-particle ⎛m=6.64×10 −27 kg, 72. A particle moving downward at a speed of
+⎝
+q=3.2×10 −19 C ⎞ moving with a velocity 6.0×10 6 m/s enters a uniform magnetic field that is
+⎠
+horizontalanddirectedfromeasttowest.(a)Iftheparticle

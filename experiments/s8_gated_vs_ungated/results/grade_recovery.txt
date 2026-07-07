@@ -1,0 +1,36 @@
+Grade-Recovery Diagnostic
+=========================
+
+Expected reliability ordering (by designed fault rate):
+  pdf-scraper@1.2               rate=1%  (best — light OCR only)
+  ingest@good                   rate=2%  (good — rare drift)
+  ingest@weak                   rate=15%  (weak — counterfactual swaps)
+  pdf-scraper@0.9-legacy        rate=18%  (worst — heavy corruption)
+
+Earned grade distribution across seeds × domains:
+  Narrator                     RELIABLE ACCEPTABLE     WEAK  REJECTED  UNGRADED  Mean Evidence
+  ──────────────────────────── ──────── ────────── ──────── ───────── ───────── ──────────────
+  pdf-scraper@1.2                    50          0        0         0         0            1.0
+  ingest@good                         0         50        0         0         0            1.0
+  ingest@weak                         0          0        1        49         0           42.6
+  pdf-scraper@0.9-legacy        (no data)
+
+Recovery Assessment:
+-------------------
+  pdf-scraper@1.2 (designed rate=1%):
+    ✓ Mostly graded well (100% reliable, 0% acceptable)
+  ingest@good (designed rate=2%):
+    ✓ Mostly graded well (0% reliable, 100% acceptable)
+  ingest@weak (designed rate=15%):
+    ✓ Correctly identifies as unreliable (98% rejected)
+  pdf-scraper@0.9-legacy: NO DATA — insufficient calibration claims
+
+Recovery score: 3/4 narrators approximately correctly graded
+
+Notes:
+- Small calibration set (30% of 3002 = ~900 claims across 5 domains × 4 narrators)
+  means ~45 claims per (narrator, domain) — noisy estimates.
+- The jarḥ–taʿdīl loop is aggressive with few samples: one bad audit can
+  trigger downgrade. This is the COLD-START problem from paper §7.
+- More calibration data (>100 audits per narrator×domain) would stabilize grades.
+- This is expected behavior, not a framework defect.

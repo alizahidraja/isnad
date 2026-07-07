@@ -1,0 +1,209 @@
+# REAL PDF — openstax_vol2.pdf, pages 57-64
+############################################################
+
+Chapter 1 | Temperature and Heat 47
+blast furnace glows from yellow to white. Infrared radiation is the predominant form radiated by objects cooler than the
+electricelementandthesteel.Theradiatedenergyasafunctionofwavelengthdependsonitsintensity,whichisrepresented
+in Figure 1.29 by the height of the distribution. (Electromagnetic Waves explains more about the electromagnetic
+spectrum,andPhotonsandMatterWaves(http://cnx.org/content/m58757/latest/)discusseswhythedecreasein
+wavelength corresponds to an increase in energy.)
+Figure 1.29 (a) A graph of the spectrum of electromagnetic waves emitted from an ideal
+radiator at three different temperatures. The intensity or rate of radiation emission increases
+dramatically with temperature, and the spectrum shifts down in wavelength toward the visible
+and ultraviolet parts of the spectrum. The shaded portion denotes the visible part of the spectrum.
+It is apparent that the shift toward the ultraviolet with temperature makes the visible appearance
+shift from red to white to blue as temperature increases. (b) Note the variations in color
+corresponding to variations in flame temperature.
+Therateofheattransferbyradiationalsodependsontheobject’scolor.Blackisthemosteffective,andwhiteistheleast
+effective.Onaclearsummerday,blackasphaltinaparkinglotishotterthanadjacentgraysidewalk,becauseblackabsorbs
+betterthangray(Figure 1.30).Thereverseisalsotrue—blackradiatesbetterthangray.Thus,onaclearsummernight,
+the asphalt is colder than the gray sidewalk, because black radiates the energy more rapidly than gray. A perfectly black
+object would be an ideal radiator and an ideal absorber, as it would capture all the radiation that falls on it. In contrast,
+aperfectlywhiteobjectoraperfectmirrorwouldreflectallradiation,andaperfectlytransparentobjectwouldtransmitit
+all(Figure 1.31).Suchobjectswouldnotemitanyradiation.Mathematically,thecolorisrepresentedbytheemissivity
+e. A “blackbody” radiator would have an e=1, whereas a perfect reflector or transmitter would have e=0. For real
+examples,tungstenlightbulbfilamentshaveaneofabout0.5,andcarbonblack(amaterialusedinprintertoner)hasan
+emissivity of about 0.95.
+
+48 Chapter 1 | Temperature and Heat
+Figure 1.30 The darker pavement is hotter than the lighter pavement (much more of the ice on the right has
+melted), although both have been in the sunlight for the same time. The thermal conductivities of the pavements are
+the same.
+Figure 1.31 A black object is a good absorber and a good radiator, whereas a white, clear, or silver object is a
+poor absorber and a poor radiator.
+Toseethat,considerasilverobjectandablackobjectthatcanexchangeheatbyradiationandareinthermalequilibrium.
+We know from experience that they will stay in equilibrium (the result of a principle that will be discussed at length in
+SecondLawofThermodynamics).Fortheblackobject’stemperaturetostayconstant,itmustemitasmuchradiation
+asitabsorbs,soitmustbeasgoodatradiatingasabsorbing.Similarconsiderationsshowthatthesilverobjectmustradiate
+as little as it absorbs. Thus, one property, emissivity, controls both radiation and absorption.
+Finally,theradiatedheatisproportionaltotheobject’ssurfacearea,sinceeverypartofthesurfaceradiates.Ifyouknock
+apart the coals of a fire, the radiation increases noticeably due to an increase in radiating surface area.
+The rate of heat transfer by emitted radiation is described by theStefan-Boltzmann law of radiation:
+P=σAeT4,
+where σ =5.67×10 −8 J/s·m2·K4 istheStefan-Boltzmannconstant,acombinationoffundamentalconstantsofnature;
+Ais the surface area of the object; andTis its temperature in kelvins.
+The proportionality to the fourth power of the absolute temperature is a remarkably strong temperature dependence. It
+allows the detection of even small temperature variations. Images called thermographs can be used medically to detect
+regionsofabnormallyhightemperatureinthebody,perhapsindicativeofdisease.Similartechniquescanbeusedtodetect
+heatleaksinhomes(Figure1.32),optimizeperformanceofblastfurnaces,improvecomfortlevelsinworkenvironments,
+and even remotely map Earth’s temperature profile.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 49
+Figure 1.32 A thermograph of part of a building shows temperature variations,
+indicating where heat transfer to the outside is most severe. Windows are a major
+region of heat transfer to the outside of homes. (credit: US Army)
+TheStefan-Boltzmannequationneedsonlyslightrefinementtodealwithasimplecaseofanobject’sabsorptionofradiation
+from its surroundings. Assuming that an object with a temperature T is surrounded by an environment with uniform
+1
+temperature T , thenet rate of heat transfer by radiationis
+2
+P =σeA⎛T 4−T 4⎞ , (1.10)
+net ⎝ 2 1 ⎠
+whereeistheemissivityoftheobjectalone.Inotherwords,itdoesnotmatterwhetherthesurroundingsarewhite,gray,
+or black: The balance of radiation into and out of the object depends on how well it emits and absorbs radiation. When
+T >T , the quantity P is positive, that is, the net heat transfer is from hot to cold.
+2 1 net
+Beforedoinganexample,wehaveacomplicationtodiscuss:differentemissivitiesatdifferentwavelengths.Ifthefraction
+ofincidentradiationanobjectreflectsisthesameatallvisiblewavelengths,theobjectisgray;ifthefractiondependson
+thewavelength,theobjecthassomeothercolor.Forinstance,aredorreddishobjectreflectsredlightmorestronglythan
+othervisiblewavelengths.Becauseitabsorbslessred,itradiateslessredwhenhot.Differentialreflectionandabsorptionof
+wavelengthsoutsidethevisiblerangehavenoeffectonwhatwesee,buttheymayhavephysicallyimportanteffects.Skinis
+averygoodabsorberandemitterofinfraredradiation,havinganemissivityof0.97intheinfraredspectrum.Thus,inspite
+oftheobviousvariationsinskincolor,weareallnearlyblackintheinfrared.Thishighinfraredemissivityiswhywecan
+soeasilyfeelradiationonourskin.Itisalsothebasisfortheeffectivenessofnight-visionscopesusedbylawenforcement
+and the military to detect human beings.
+Example 1.13
+Calculating the Net Heat Transfer of a Person
+What is the rate of heat transfer by radiation of an unclothed person standing in a dark room whose ambient
+temperatureis 22.0°C?Thepersonhasanormalskintemperatureof 33.0°C andasurfaceareaof 1.50m2.
+The emissivity of skin is 0.97 in the infrared, the part of the spectrum where the radiation takes place.
+Strategy
+We can solve this by using the equation for the rate of radiative heat transfer.
+
+50 Chapter 1 | Temperature and Heat
+Solution
+Insert the temperature values T =295K and T =306K, so that
+2 1
+Q ⎛ ⎞
+=σeA T 4−T 4
+t ⎝ 2 1 ⎠
+=
+⎛
+5.67×10
+−8 J/s·m2·K4⎞
+(0.97)
+⎛ 1.50m2⎞⎡ (295K)4−(306K)4⎤
+⎝ ⎠ ⎝ ⎠⎣ ⎦
+=−99J/s=−99W.
+Significance
+Thisvalueisasignificantrateofheattransfertotheenvironment(notetheminussign),consideringthataperson
+atrestmayproduceenergyattherateof125Wandthatconductionandconvectionarealsotransferringenergyto
+theenvironment.Indeed,wewouldprobablyexpectthispersontofeelcold.Clothingsignificantlyreducesheat
+transfer to the environment by all mechanisms, because clothing slows down both conduction and convection,
+and has a lower emissivity (especially if it is light-colored) than skin.
+TheaveragetemperatureofEarthisthesubjectofmuchcurrentdiscussion.EarthisinradiativecontactwithboththeSun
+anddarkspace,sowecannotusetheequationforanenvironmentatauniformtemperature. Earthreceivesalmostallits
+energyfromradiationoftheSunandreflectssomeofitbackintoouterspace.Conversely,darkspaceisverycold,about3
+K,sothatEarthradiatesenergyintothedarksky.Therateofheattransferfromsoilandgrassescanbesorapidthatfrost
+may occur on clear summer evenings, even in warm latitudes.
+The average temperature of Earth is determined by its energy balance. To a first approximation, it is the temperature at
+which Earth radiates heat to space as fast as it receives energy from the Sun.
+An important parameter in calculating the temperature of Earth is its emissivity (e). On average, it is about 0.65, but
+calculationofthisvalueiscomplicatedbythegreatday-to-dayvariationinthehighlyreflectivecloudcoverage.Because
+cloudshaveloweremissivitythaneitheroceansorlandmasses,theyreflectsomeoftheradiationbacktothesurface,greatly
+reducingheattransferintodarkspace,justastheygreatlyreduceheattransferintotheatmosphereduringtheday.There
+is negative feedback (in which a change produces an effect that opposes that change) between clouds and heat transfer;
+highertemperaturesevaporatemorewatertoformmoreclouds,whichreflectmoreradiationbackintospace,reducingthe
+temperature.
+Theoften-mentionedgreenhouseeffectisdirectlyrelatedtothevariationofEarth’semissivitywithwavelength(Figure
+1.33).ThegreenhouseeffectisanaturalphenomenonresponsibleforprovidingtemperaturessuitableforlifeonEarthand
+formakingVenusunsuitableforhumanlife.MostoftheinfraredradiationemittedfromEarthisabsorbedbycarbondioxide
+(CO )andwater(H O)intheatmosphereandthenre-radiatedintoouterspaceorbacktoEarth.Re-radiationbackto
+2 2
+Earthmaintainsitssurfacetemperatureabout 40°C higherthanitwouldbeiftherewerenoatmosphere.(Theglasswalls
+and roof of a greenhouse increase the temperature inside by blocking convective heat losses, not radiative losses.)
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 51
+Figure 1.33 The greenhouse effect is the name given to the increase of Earth’s
+temperature due to absorption of radiation in the atmosphere. The atmosphere is
+transparent to incoming visible radiation and most of the Sun’s infrared. The Earth
+absorbs that energy and re-emits it. Since Earth’s temperature is much lower than the
+Sun’s, it re-emits the energy at much longer wavelengths, in the infrared. The
+atmosphere absorbs much of that infrared radiation and radiates about half of the
+energy back down, keeping Earth warmer than it would otherwise be. The amount of
+trapping depends on concentrations of trace gases such as carbon dioxide, and an
+increase in the concentration of these gases increases Earth’s surface temperature.
+Thegreenhouseeffectiscentraltothediscussionofglobalwarmingduetoemissionofcarbondioxideandmethane(and
+othergreenhousegases)intoEarth’satmospherefromindustry,transportation,andfarming.Changesinglobalclimatecould
+leadtomoreintensestorms,precipitationchanges(affectingagriculture),reductioninrainforestbiodiversity,andrisingsea
+levels.
+Youcanexploreasimulationofthegreenhouseeffect(https://openstaxcollege.org/l/21simgreeneff)
+thattakesthepointofviewthattheatmospherescatters(redirects)infraredradiationratherthanabsorbingitand
+reradiatingit.Youmaywanttorunthesimulationfirstwithnogreenhousegasesintheatmosphereandthenlook
+at how adding greenhouse gases affects the infrared radiation from the Earth and the Earth’s temperature.
+Problem-Solving Strategy: Effects of Heat Transfer
+1. Examine the situation to determine what type of heat transfer is involved.
+2. Identify the type(s) of heat transfer—conduction, convection, or radiation.
+3. Identify exactly what needs to be determined in the problem (identify the unknowns). A written list is useful.
+4. Make a list of what is given or what can be inferred from the problem as stated (identify the knowns).
+5. Solve the appropriate equation for the quantity to be determined (the unknown).
+6. For conduction, use the equation P=
+kAΔT
+. Table 1.5 lists thermal conductivities. For convection,
+d
+determinetheamountofmattermovedandtheequation Q=mcΔT,alongwith Q=mL or Q=mL ifa
+f V
+
+52 Chapter 1 | Temperature and Heat
+substancechangesphase.Forradiation,theequation P =σeA⎛T 4−T 4⎞ givesthenetheattransferrate.
+net ⎝ 2 1 ⎠
+7. Substitute the knowns along with their units into the appropriate equation and obtain numerical solutions
+complete with units.
+8. Check the answer to see if it is reasonable. Does it make sense?
+1.9 Check Your Understanding How much greater is the rate of heat radiation when a body is at the
+temperature 40°C than when it is at the temperature 20°C?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 53
+CHAPTER 1 REVIEW
+KEY TERMS
+absolute temperature scale scale, such as Kelvin, with a zero point that is absolute zero
+absolute zero temperature at which the average kinetic energy of molecules is zero
+calorie (cal) energy needed to change the temperature of 1.00 g of water by 1.00°C
+calorimeter container that prevents heat transfer in or out
+calorimetry study of heat transfer inside a container impervious to heat
+Celsius scale temperature scale in which the freezing point of water is 0°C and the boiling point of water is 100°C
+coefficient of linear expansion (α) material property that gives the change in length, per unit length, per 1-°C
+change in temperature; a constant used in the calculation of linear expansion; the coefficient of linear expansion
+depends to some degree on the temperature of the material
+coefficient of volume expansion (β) similar to α but gives the change in volume, per unit volume, per 1-°C
+change in temperature
+conduction heat transfer through stationary matter by physical contact
+convection heat transfer by the macroscopic movement of fluid
+critical point foragivensubstance,thecombinationoftemperatureandpressureabovewhichtheliquidandgasphases
+are indistinguishable
+critical pressure pressure at the critical point
+critical temperature temperature at the critical point
+degree Celsius (°C) unit on the Celsius temperature scale
+degree Fahrenheit (°F) unit on the Fahrenheit temperature scale
+emissivity measure of how well an object radiates
+Fahrenheit scale temperature scale in which the freezing point of water is 32°F and the boiling point of water is
+212°F
+greenhouse effect warmingoftheearththatisduetogasessuchascarbondioxideandmethanethatabsorbinfrared
+radiation from Earth’s surface and reradiate it in all directions, thus sending some of it back toward Earth
+heat energy transferred solely due to a temperature difference
+heat of fusion energyperunitmassrequiredtochangeasubstancefromthesolidphasetotheliquidphase,orreleased
+when the substance changes from liquid to solid
+heat of sublimation energy per unit mass required to change a substance from the solid phase to the vapor phase
+heat of vaporization energy per unit mass required to change a substance from the liquid phase to the vapor phase
+heat transfer movement of energy from one place or material to another as a result of a difference in temperature
+Kelvin scale (K) temperature scale in which 0 K is the lowest possible temperature, representing absolute zero
+kilocalorie (kcal) energy needed to change the temperature of 1.00 kg of water between 14.5°C and 15.5°C
+latent heat coefficient general term for the heats of fusion, vaporization, and sublimation
+mechanical equivalent of heat work needed to produce the same effects as heat transfer
+net rate of heat transfer by radiation P =σeA⎛T 4−T 4⎞
+net ⎝ 2 1 ⎠
+phase diagram graph of pressure vs. temperature of a particular substance, showing at which pressures and
+temperatures the phases of the substance occur

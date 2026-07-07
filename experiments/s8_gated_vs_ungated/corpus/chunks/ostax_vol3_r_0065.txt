@@ -1,0 +1,265 @@
+# REAL PDF — openstax_vol3.pdf, pages 389-398
+############################################################
+
+Chapter 8 | Atomic Structure 381
+Figure 8.18 An electron transition from the n=3 to the n=2 shell
+of a hydrogen atom.
+Tounderstandatomictransitionsinmulti-electronatoms,itisnecessarytoconsidermanyeffects,includingtheCoulomb
+repulsion between electrons and internal magnetic interactions (spin-orbit and spin-spin couplings). Fortunately, many
+propertiesofthesesystemscanbeunderstoodbyneglectinginteractionsbetweenelectronsandrepresentingeachelectron
+by its own single-particle wave function ψ .
+nlm
+Atomic transitions must obey selection rules. These rules follow from principles of quantum mechanics and symmetry.
+Selection rules classify transitions as either allowed or forbidden. (Forbidden transitions do occur, but the probability of
+the typical forbidden transition is very small.) For a hydrogen-like atom, atomic transitions that involve electromagnetic
+interactions (the emission and absorption of photons) obey the following selection rule:
+Δl= ±1, (8.37)
+wherelis associated with the magnitude of orbital angular momentum,
+L= l(l+1)ℏ. (8.38)
+Formulti-electron atoms,similar rulesapply.Toillustrate thisrule,considertheobservedatomic transitions inhydrogen
+(H), sodium (Na), and mercury (Hg) (Figure 8.19). The horizontal lines in this diagram correspond to atomic energy
+levels, and the transitions allowed by this selection rule are shown by lines drawn between these levels. The energies of
+thesestatesareontheorderofafewelectronvolts,andphotonsemittedintransitionsareinthevisiblerange.Technically,
+atomic transitions can violate the selection rule, but such transitions are uncommon.
+
+382 Chapter 8 | Atomic Structure
+Figure 8.19 Energy-level diagrams for (a) hydrogen, (b) sodium, and (c) mercury. For comparison, hydrogen
+energy levels are shown in the sodium diagram.
+Thehydrogenatomhasthesimplestenergy-leveldiagram.Ifweneglectelectronspin,allstateswiththesamevalueofn
+havethesametotalenergy.However,spin-orbitcouplingsplitsthe n=2 statesintotwoangularmomentumstates(sand
+p)ofslightlydifferentenergies.(Theselevelsarenotverticallydisplaced,becausetheenergysplittingistoosmalltoshow
+up in this diagram.) Likewise, spin-orbit coupling splits the n=3 states into three angular momentum states (s,p, andd).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 383
+Theenergy-leveldiagramforhydrogenissimilartosodium,becausebothatomshaveoneelectronintheoutershell.The
+valenceelectronofsodiummovesintheelectricfieldofanucleusshieldedbyelectronsintheinnershells,soitdoesnot
+experience a simple 1/r Coulomb potential and its total energy depends on both n and l. Interestingly, mercury has two
+separate energy-level diagrams; these diagrams correspond to two net spin states of its 6s(valence) electrons.
+Example 8.6
+The Sodium Doublet
+Thespectrumofsodiumisanalyzedwithaspectrometer.Twocloselyspacedlineswithwavelengths589.00nm
+and589.59nmareobserved.(a)Ifthedoubletcorrespondstotheexcited(valence)electronthattransitionsfrom
+someexcitedstatedowntothe3sstate,whatwastheoriginalelectronangularmomentum?(b)Whatistheenergy
+difference between these two excited states?
+Strategy
+Sodium and hydrogen belong to the same column or chemical group of the periodic table, so sodium is
+“hydrogen-like.” The outermost electron in sodium is in the 3s (l=0) subshell and can be excited to higher
+energy levels. As for hydrogen, subsequent transitions to lower energy levels must obey the selection rule:
+Δl= ±1.
+Wemustfirstdeterminethequantumnumberoftheinitialstatethatsatisfiestheselectionrule.Then,wecanuse
+this number to determine the magnitude of orbital angular momentum of the initial state.
+Solution
+a. Allowedtransitionsmustobeytheselectionrule.Ifthequantumnumberoftheinitialstateis l=0,the
+transitionisforbiddenbecause Δl=0.Ifthequantumnumberoftheinitialstateis l=2, 3, 4,…the
+transitionisforbiddenbecause Δl>1. Therefore,thequantumoftheinitialstatemustbe l=1.The
+orbital angular momentum of the initial state is
+L= l(l+1)ℏ=1.41ℏ.
+b. Because the final state for both transitions is the same (3s), the difference in energies of the photons is
+equal to the difference in energies of the two excited states. Using the equation
+⎛c⎞
+ΔE=hf =h ,
+⎝λ⎠
+we have
+⎛ ⎞
+ΔE =hc 1 − 1
+⎝λ λ ⎠
+1 2
+⎛ ⎞
+⎛ −15 ⎞⎛ 8 ⎞ 1 1
+= 4.14×10 eVs 3.00×10 m/s × −
+⎝ ⎠⎝ ⎠ ⎝ −9 −9 ⎠
+589.00×10 m 589.59×10 m
+−3
+=2.11×10 eV.
+Significance
+To understand the difficulty of measuring this energy difference, we compare this difference with the average
+energy of the two photons emitted in the transition. Given an average wavelength of 589.30 nm, the average
+energy of the photons is
+−15 8
+hc (4.14×10 eVs)(3.00×10 m/s)
+E= = =2.11eV.
+λ −9
+589.30×10 m
+The energy difference ΔE is about 0.1% (1 part in 1000) of this average energy. However, a sensitive
+spectrometer can measure the difference.
+Atomic Fluorescence
+Fluorescence occurs when an electron in an atom is excited several steps above the ground state by the absorption of a
+high-energyultraviolet (UV)photon.Onceexcited, theelectron “de-excites” intwoways.Theelectron candropbackto
+
+384 Chapter 8 | Atomic Structure
+thegroundstate,emittingaphotonofthesameenergythatexcitedit,oritcandropinaseriesofsmallersteps,emitting
+severallow-energyphotons.Someofthesephotonsmaybeinthevisiblerange.Fluorescentdyeinclothescanmakecolors
+seembrighterinsunlightbyconvertingUVradiationintovisiblelight.Fluorescentlightsaremoreefficientinconverting
+electricalenergyintovisiblelightthanincandescentfilaments(aboutfourtimesasefficient).Figure8.20showsascorpion
+illuminated by a UV lamp. Proteins near the surface of the skin emit a characteristic blue light.
+Figure 8.20 A scorpion glows blue under a UV lamp. (credit: Ken Bosma)
+X-rays
+The study of atomic energy transitions enables us to understand X-rays and X-ray technology. Like all electromagnetic
+radiation,X-raysaremadeofphotons.X-rayphotonsareproducedwhenelectronsintheoutermostshellsofanatomdrop
+totheinnershells.(HydrogenatomsdonotemitX-rays,becausetheelectronenergylevelsaretoocloselyspacedtogether
+topermittheemissionofhigh-frequencyradiation.)Transitionsofthiskindarenormallyforbiddenbecausethelowerstates
+arealreadyfilled.However,ifaninnershellhasavacancy(aninnerelectronismissing,perhapsfrombeingknockedaway
+byahigh-speedelectron),anelectronfromoneoftheoutershellscandropinenergytofillthevacancy.Theenergygapfor
+such a transition is relatively large, so wavelength of the radiated X-ray photon is relatively short.
+X-rays can also be produced by bombarding a metal target with high-energy electrons, as shown in Figure 8.21. In the
+figure, electrons are boiled off a filament and accelerated by an electric field into a tungsten target. According to the
+classicaltheoryofelectromagnetism,anychargedparticlethatacceleratesemitsradiation.Thus,whentheelectronstrikes
+thetungstentarget,andsuddenlyslowsdown,theelectronemitsbrakingradiation.(Brakingradiationreferstoradiation
+producedbyanychargedparticlethatisslowedbyamedium.)Inthiscase,brakingradiationcontainsacontinuousrange
+of frequencies, because the electrons will collide with the target atoms in slightly different ways.
+Braking radiation is not the only type of radiation produced in this interaction. In some cases, an electron collides with
+anotherinner-shellelectronofatargetatom,andknockstheelectronoutoftheatom—billiardballstyle.Theemptystateis
+filled when an electron in a higher shell drops into the state (drop in energy level) and emits an X-ray photon.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 385
+Figure 8.21 A sketch of an X-ray tube. X-rays are emitted from
+the tungsten target.
+Historically,X-rayspectrallineswerelabeledwithletters(K,L,M,N,…).Theseletterscorrespondtotheatomicshells(
+n=1, 2, 3, 4, …).X-raysproducedbyatransitionfromanyhighershelltotheK(n=1)shellarelabeledasKX-rays.
+X-raysproducedinatransitionfromtheL(n=2)shellarecalled K
+α
+X-rays;X-raysproducedinatransitionfromthe
+M(n=3)shellarecalled K
+β
+X-rays;X-raysproducedinatransitionfromtheN(n=4)shellarecalled K
+γ
+X-rays;
+andsoforth.TransitionsfromhighershellstoLandMshellsarelabeledsimilarly.Thesetransitionsarerepresentedbyan
+energy-level diagram inFigure 8.22.
+Figure 8.22 X-ray transitions in an atom.
+ThedistributionofX-raywavelengthsproducedbystrikingmetalwithabeamofelectronsisgiveninFigure8.23.X-ray
+transitionsinthetargetmetalappearaspeaksontopofthebrakingradiationcurve.Photonfrequenciescorrespondingtothe
+spikesintheX-raydistributionarecalledcharacteristicfrequencies,becausetheycanbeusedtoidentifythetargetmetal.
+The sharp cutoff wavelength (just below the K peak) corresponds to an electron that loses all of its energy to a single
+γ
+photon. Radiation of shorter wavelengths is forbidden by the conservation of energy.
+
+386 Chapter 8 | Atomic Structure
+Figure 8.23 X-ray spectrum from a silver target. The peaks correspond to characteristic
+frequencies of X-rays emitted by silver when struck by an electron beam.
+Example 8.7
+X-Rays from Aluminum
+Estimate the characteristic energy and frequency of the K
+α
+X-ray for aluminum (Z =13).
+Strategy
+A K
+α
+X-ray is produced by the transition of an electron in the L (n=2) shell to the K (n=1) shell. An
+electronintheLshell“sees”acharge Z =13−1=12, becauseoneelectronintheKshellshieldsthenuclear
+charge.(Recall,twoelectronsarenotintheKshellbecausetheotherelectronstateisvacant.)Thefrequencyof
+the emitted photon can be estimated from the energy difference between theLandKshells.
+Solution
+TheenergydifferencebetweentheLandKshellsinahydrogenatomis10.2eV.Assumingthatotherelectrons
+intheLshellorinhigher-energyshellsdonotshieldthenuclearcharge,theenergydifferencebetweentheLand
+Kshells in an atom with Z =13 is approximately
+ΔE L→K ≈(Z−1)2(10.2 eV) =(13−1)2(10.2eV)=1.47×10 3 eV. (8.39)
+Based on the relationship f =⎛
+⎝
+ΔE
+L→K
+⎞
+⎠
+/h, the frequency of the X-ray is
+3
+f = 1.47×10 eV =3.55×10 17 Hz.
+−15
+4.14×10 eV·s
+Significance
+The wavelength of the typical X-ray is 0.1–10 nm. In this case, the wavelength is:
+λ= c = 3.0×10 8 m/s =8.5×10 −10 =0.85nm.
+f 17
+3.55×10 Hz
+Hence, the transitionL → Kin aluminum produces X-ray radiation.
+X-rayproductionprovidesanimportanttestofquantummechanics.AccordingtotheBohrmodel,theenergyofa K X-ray
+α
+dependsonthenuclearchargeoratomicnumber,Z.IfZislarge,Coulombforcesintheatomarelarge,energydifferences
+(ΔE)arelarge,and,therefore,theenergyofradiatedphotonsislarge.Toillustrate,considerasingleelectroninamulti-
+electron atom. Neglecting interactions between the electrons, the allowed energy levels are
+Z2(13.6eV) (8.40)
+E n= − ,
+n2
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 387
+wheren=1,2,…andZistheatomicnumberofthenucleus.However,anelectronintheL(n=2)shell“sees”acharge
+Z−1,becauseoneelectronintheKshellshieldsthenuclearcharge.(RecallthatthereisonlyoneelectronintheKshell
+becausetheotherelectronwas“knockedout.”)Therefore,theapproximateenergiesoftheelectronintheLandKshellsare
+(Z−1)2(13.6eV)
+E L ≈ − 22
+(Z−1)2(13.6eV)
+E K ≈ − 12 .
+The energy carried away by a photon in a transition from theLshell to theKshell is therefore
+⎛ ⎞
+ΔE L→K =(Z−1)2(13.6eV) ⎝ 1 1 2 − 2 1 2⎠
+=(Z−1)2(10.2eV),
+whereZis the atomic number. In general, the X-ray photon energy for a transition from an outer shell to theKshell is
+ΔE
+L→K
+=hf =constant×(Z−1)2,
+or
+(Z−1)=constant f, (8.41)
+wherefis the frequency of a K X-ray. This equation isMoseley’s law. For large values ofZ, we have approximately
+α
+Z ≈constant f.
+Thispredictioncanbecheckedbymeasuringfforavarietyofmetaltargets.ThismodelissupportedifaplotofZversus
+f data(calledaMoseleyplot)islinear.Comparisonofmodelpredictionsandexperimentalresults,forboththeKandL
+series,isshowninFigure8.24.ThedatasupportthemodelthatX-raysareproducedwhenanoutershellelectrondropsin
+energy to fill a vacancy in an inner shell.
+8.3 Check Your Understanding X-rays are produced by bombarding a metal target with high-energy
+electrons.Ifthetargetisreplacedbyanotherwithtwotimestheatomicnumber,whathappenstothefrequency
+of X-rays?
+
+388 Chapter 8 | Atomic Structure
+Figure 8.24 A Moseley plot. These data were adapted from
+Moseley’s original data (H. G. J. Moseley,Philos. Mag. (6)
+77:703, 1914).
+Example 8.8
+Characteristic X-Ray Energy
+Calculate the approximate energy of a K X-ray from a tungsten anode in an X-ray tube.
+α
+Strategy
+TwoelectronsoccupyafilledKshell.Avacancyinthisshellwouldleaveoneelectron,sotheeffectivecharge
+foranelectronintheLshellwouldbeZ−1ratherthanZ.Fortungsten, Z =74, sotheeffectivechargeis73.
+Thisnumbercanbeusedtocalculatetheenergy-leveldifferencebetweentheLandKshells,and,therefore,the
+energy carried away by a photon in the transition L→K.
+Solution
+The effectiveZis 73, so the K X-ray energy is given by
+α
+E Kα =ΔE=E i −E f =E 2 −E 1 ,
+where
+E = −
+Z2
+E = −
+732
+(13.6eV)=−72.5keV
+1 12 0 1
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 8 | Atomic Structure 389
+and
+E = −
+Z2
+E = −
+732
+(13.6eV)=−18.1keV.
+2 22 0 4
+Thus,
+E Kα =−18.1keV−(−72.5keV)=54.4keV.
+Significance
+ThislargephotonenergyistypicalofX-rays.X-rayenergiesbecomeprogressivelylargerforheavierelements
+becausetheirenergyincreasesapproximatelyas Z2.Anaccelerationvoltageofmorethan50,000voltsisneeded
+to “knock out” an inner electron from a tungsten atom.
+X-ray Technology
+X-rayshavemanyapplications, suchasinmedical diagnostics (Figure 8.25),inspection ofluggage atairports (Figure
+8.26),andevendetectionofcracksincrucialaircraftcomponents.ThemostcommonX-rayimagesareduetoshadows.
+BecauseX-rayphotonshavehighenergy,theypenetratematerialsthatareopaquetovisiblelight.ThemoreenergyanX-
+ray photon has, the more material it penetrates. The depth of penetration is related to the density of the material, as well
+as to the energy of the photon. The denser the material, the fewer X-ray photons get through and the darker the shadow.
+X-raysareeffectiveatidentifyingbonebreaksandtumors;however,overexposuretoX-rayscandamagecellsinbiological
+organisms.
+Figure 8.25 (a) An X-ray image of a person’s teeth. (b) A typical X-ray machine in a dentist’s office produces
+relatively low-energy radiation to minimize patient exposure. (credit a: modification of work by “Dmitry
+G”/Wikimedia Commons)

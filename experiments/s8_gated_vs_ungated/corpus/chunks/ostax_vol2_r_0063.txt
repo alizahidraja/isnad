@@ -1,0 +1,196 @@
+# REAL PDF — openstax_vol2.pdf, pages 394-400
+############################################################
+
+384 Chapter 8 | Capacitance
+voltageacrossthecapacitortoavoiddielectricbreakdown. the surface charge density on the surface of the dielectric.
+(b)Whenthevoltageequalsthevaluefoundinpart(a),find
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 385
+9 | CURRENT AND
+RESISTANCE
+Figure 9.1 Magnetic resonance imaging (MRI) uses superconducting magnets and produces high-resolution images without
+the danger of radiation. The image on the left shows the spacing of vertebrae along a human spinal column, with the circle
+indicating where the vertebrae are too close due to a ruptured disc. On the right is a picture of the MRI instrument, which
+surrounds the patient on all sides. A large amount of electrical current is required to operate the electromagnets (credit right:
+modification of work by “digital cat”/Flickr).
+Chapter Outline
+9.1Electrical Current
+9.2Model of Conduction in Metals
+9.3Resistivity and Resistance
+9.4Ohm's Law
+9.5Electrical Energy and Power
+9.6Superconductors
+Introduction
+Inthischapter,westudytheelectricalcurrentthroughamaterial,wheretheelectricalcurrentistherateofflowofcharge.
+We also examine a characteristic of materials known as the resistance. Resistance is a measure of how much a material
+impedestheflowofcharge,anditwillbeshownthattheresistancedependsontemperature.Ingeneral,agoodconductor,
+suchascopper,gold,orsilver,hasverylowresistance.Somematerials,calledsuperconductors,havezeroresistanceatvery
+low temperatures.
+Highcurrentsarerequiredfortheoperationofelectromagnets.Superconductorscanbeusedtomakeelectromagnetsthat
+are 10 times stronger than the strongest conventional electromagnets. These superconducting magnets are used in the
+constructionofmagneticresonanceimaging(MRI)devicesthatcanbeusedtomakehigh-resolutionimagesofthehuman
+body. The chapter-opening picture shows an MRI image of the vertebrae of a human subject and the MRI device itself.
+Superconducting magnets have many other uses. For example, superconducting magnets are used in the Large Hadron
+Collider (LHC) to curve the path of protons in the ring.
+
+386 Chapter 9 | Current and Resistance
+9.1 | Electrical Current
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe an electrical current
+• Define the unit of electrical current
+• Explain the direction of current flow
+Uptonow,wehaveconsideredprimarilystaticcharges.Whenchargesdidmove,theywereacceleratedinresponsetoan
+electricalfieldcreatedbyavoltagedifference.Thechargeslostpotentialenergyandgainedkineticenergyastheytraveled
+through a potential difference where the electrical field did work on the charge.
+Although charges do not require a material to flow through, the majority of this chapter deals with understanding the
+movementofchargesthroughamaterial.Therateatwhichthechargesflowpastalocation—thatis,theamountofcharge
+perunittime—isknownastheelectricalcurrent.Whenchargesflowthroughamedium,thecurrentdependsonthevoltage
+applied, thematerial throughwhichthechargesflow,andthestate ofthematerial. Ofparticular interest isthemotion of
+chargesinaconductingwire.Inpreviouschapters,chargeswereacceleratedduetotheforceprovidedbyanelectricalfield,
+losing potential energy and gaining kinetic energy. In this chapter, we discuss the situation of the force provided by an
+electricalfieldinaconductor,wherechargeslosekineticenergytothematerialreachingaconstantvelocity,knownasthe
+“driftvelocity.”Thisisanalogoustoanobjectfallingthroughtheatmosphereandlosingkineticenergytotheair,reaching
+a constant terminal velocity.
+Ifyouhaveevertakenacourseinfirstaidorsafety,youmayhaveheardthatintheeventofelectricshock,itisthecurrent,
+notthevoltage,whichistheimportantfactorontheseverityoftheshockandtheamountofdamagetothehumanbody.
+Currentismeasuredinunitscalledamperes;youmayhavenoticedthatcircuitbreakersinyourhomeandfusesinyourcar
+are rated in amps (or amperes). But what is the ampere and what does it measure?
+Defining Current and the Ampere
+Electricalcurrentisdefinedtobetherateatwhichchargeflows.Whenthereisalargecurrentpresent,suchasthatusedto
+runarefrigerator,alargeamountofchargemovesthroughthewireinasmallamountoftime.Ifthecurrentissmall,such
+asthatusedtooperateahandheldcalculator,asmallamountofchargemovesthroughthecircuitoveralongperiodoftime.
+Electrical Current
+The average electrical currentIis the rate at which charge flows,
+ΔQ (9.1)
+I ave = Δt ,
+where ΔQ istheamountofchargepassingthroughagivenareaintime Δt (Figure9.2).TheSIunitforcurrentis
+ΔQ
+theampere(A),namedfortheFrenchphysicistAndré-MarieAmpère(1775–1836).Since I = ,weseethatan
+Δt
+ampere is defined as one coulomb of charge passing through a given area per second:
+C (9.2)
+1A≡1 .
+s
+Theinstantaneous electrical current,orsimplytheelectrical current,isthetime derivative ofthechargethatflows
+and is found by taking the limit of the average electrical current as Δt→0:
+ΔQ dQ (9.3)
+I = lim = .
+Δt→0Δt dt
+Most electrical appliances are rated in amperes (or amps) required for proper operation, as are fuses and circuit breakers.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 387
+Figure 9.2 The rate of flow of charge is current. An ampere is
+the flow of one coulomb of charge through an area in one
+second. A current of one amp would result from 6.25×10 18
+electrons flowing through the areaAeach second.
+Example 9.1
+Calculating the Average Current
+Themainpurposeofabatteryinacarortruckistoruntheelectricstartermotor,whichstartstheengine.The
+operation of starting the vehicle requires a large current to be supplied by the battery. Once the engine starts,
+a device called an alternator takes over supplying the electric power required for running the vehicle and for
+charging the battery.
+(a) What is the average current involved when a truck battery sets in motion 720 C of charge in 4.00 s while
+starting an engine? (b) How long does it take 1.00 C of charge to flow from the battery?
+Strategy
+ΔQ
+Wecanusethedefinitionoftheaveragecurrentintheequation I = tofindtheaveragecurrentinpart(a),
+Δt
+ΔQ
+sincechargeandtimearegiven.Forpart(b),onceweknowtheaveragecurrent,wecanitsdefinition I =
+Δt
+to find the time required for 1.00 C of charge to flow from the battery.
+Solution
+a. Entering the given values for charge and time into the definition of current gives
+I =
+ΔQ
+= 720C =180C/s=180A.
+Δt 4.00s
+ΔQ
+b. Solving the relationship I = for time Δt and entering the known values for charge and current gives
+Δt
+Δt=
+ΔQ
+= 1.00C =5.56×10 −3 s=5.56ms.
+I 180C/s
+Significance
+a. This large value for current illustrates the fact that a large charge is moved in a small amount of time. The
+currentsinthese“startermotors”arefairlylargetoovercometheinertiaoftheengine.b.Ahighcurrentrequires
+ashorttimetosupplyalargeamountofcharge.Thislargecurrentisneededtosupplythelargeamountofenergy
+needed to start the engine.
+Example 9.2
+Calculating Instantaneous Currents
+Consider a charge moving through a cross-section of a wire where the charge is modeled as
+Q(t)=Q
+M
+⎛
+⎝
+1−e−t/τ⎞
+⎠
+. Here, Q
+M
+is the charge after a long period of time, as time approaches infinity, with
+
+388 Chapter 9 | Current and Resistance
+unitsofcoulombs,and τ isatimeconstantwithunitsofseconds(seeFigure9.3).Whatisthecurrentthrough
+the wire?
+Figure 9.3 A graph of the charge moving through a cross-
+section of a wire over time.
+Strategy
+dQ
+Thecurrentthroughthecross-sectioncanbefoundfrom I = .Noticefromthefigurethatthechargeincreases
+dt
+to Q and the derivative decreases, approaching zero, as time increases (Figure 9.4).
+M
+Solution
+The derivative can be found using d eu =eudu .
+dx dx
+I = d d Q t = d d t ⎡ ⎣ Q M ⎛ ⎝ 1−e−t/τ⎞ ⎠ ⎤ ⎦ = Q τ Me−t/τ .
+Figure 9.4 A graph of the current flowing through the wire
+over time.
+Significance
+The current through the wire in question decreases exponentially,as shown in Figure 9.4.Inlater chapters, it
+willbeshownthatatime-dependent currentappearswhenacapacitor chargesordischargesthrougharesistor.
+Recallthatacapacitorisadevicethatstorescharge.YouwilllearnabouttheresistorinModelofConduction
+in Metals.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 389
+9.1 Check Your Understanding Handheld calculators often use small solar cells to supply the energy
+requiredtocompletethecalculationsneededtocompleteyournextphysicsexam.Thecurrentneededtorun
+yourcalculatorcanbeassmallas0.30mA.Howlongwouldittakefor1.00Cofchargetoflowfromthesolar
+cells? Can solar cells be used, instead of batteries, to start traditional internal combustion engines presently
+used in most cars and trucks?
+9.2 CheckYourUnderstandingCircuitbreakersinahomeareratedinamperes,normallyinarangefrom
+10ampsto30amps,andareusedtoprotecttheresidentsfromharmandtheirappliancesfromdamagedueto
+large currents. A single 15-amp circuit breaker may be used to protect several outlets in the living room,
+whereasasingle20-ampcircuitbreakermaybeusedtoprotecttherefrigeratorinthekitchen.Whatcanyou
+deduce from this about current used by the various appliances?
+Current in a Circuit
+Inthepreviousparagraphs,wedefinedthecurrentasthechargethatflowsthroughacross-sectionalareaperunittime.In
+orderforchargetoflowthroughanappliance,suchastheheadlightshowninFigure9.5,theremustbeacompletepath(or
+circuit)fromthepositiveterminaltothenegativeterminal.Considerasimplecircuitofacarbattery,aswitch,aheadlight
+lamp,andwiresthatprovideacurrentpathbetweenthecomponents.Inorderforthelamptolight,theremustbeacomplete
+pathforcurrentflow.Inotherwords,achargemustbeabletoleavethepositiveterminalofthebattery,travelthroughthe
+component,andbacktothenegativeterminalofthebattery.Theswitchistheretocontrolthecircuit.Part(a)ofthefigure
+showsthesimplecircuitofacarbattery,aswitch,aconductingpath,andaheadlightlamp.Alsoshownistheschematicof
+thecircuit[part(b)].Aschematicisagraphicalrepresentationofacircuitandisveryusefulinvisualizingthemainfeatures
+ofacircuit.Schematicsusestandardizedsymbolstorepresentthecomponentsinacircuitsandsolidlinestorepresentthe
+wiresconnectingthecomponents.Thebatteryisshownasaseriesoflongandshortlines,representingthehistoricvoltaic
+pile. The lamp is shown as a circle with a loop inside, representing the filament of an incandescent bulb. The switch is
+shownastwopointswithaconductingbartoconnectthetwopointsandthewiresconnectingthecomponentsareshown
+as solid lines. The schematic in part (c) shows the direction of current flow when the switch is closed.
+Figure 9.5 (a) A simple electric circuit of a headlight (lamp), a battery, and a switch. When the switch is closed,
+an uninterrupted path for current to flow through is supplied by conducting wires connecting a load to the
+terminals of a battery. (b) In this schematic, the battery is represented by parallel lines, which resemble plates in
+the original design of a battery. The longer lines indicate the positive terminal. The conducting wires are shown as
+solid lines. The switch is shown, in the open position, as two terminals with a line representing a conducting bar
+that can make contact between the two terminals. The lamp is represented by a circle encompassing a filament, as
+would be seen in an incandescent light bulb. (c) When the switch is closed, the circuit is complete and current
+flows from the positive terminal to the negative terminal of the battery.
+When the switch is closed in Figure 9.5(c), there is a complete path for charges to flow, from the positive terminal of
+the battery, through the switch, then through the headlight and back to the negative terminal of the battery. Note that the
+directionofcurrentflowisfrompositivetonegative.Thedirectionofconventionalcurrentisalwaysrepresentedinthe
+direction that positive charge would flow, from the positive terminal to the negative terminal.

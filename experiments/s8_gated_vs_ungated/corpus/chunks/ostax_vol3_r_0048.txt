@@ -1,0 +1,232 @@
+# REAL PDF — openstax_vol3.pdf, pages 287-294
+############################################################
+
+Chapter 6 | Photons and Matter Waves 279
+Significance
+We see from these estimates that De Broglie’s wavelengths of macroscopic objects such as a ball are
+immeasurably small. Therefore, even if they exist, they are not detectable and do not affect the motion of
+macroscopic objects.
+6.11 CheckYourUnderstandingWhatisdeBroglie’swavelengthofanonrelativisticprotonwithakinetic
+energy of 1.0 eV?
+Usingtheconceptoftheelectronmatterwave,deBroglieprovidedarationaleforthequantizationoftheelectron’sangular
+momentum inthehydrogenatom,whichwaspostulated inBohr’squantumtheory.Thephysicalexplanation forthefirst
+Bohrquantizationconditioncomesnaturallywhenweassumethatanelectroninahydrogenatombehavesnotlikeaparticle
+butlike awave.Toseeitclearly,imagine astretched guitar stringthat isclamped atbothendsandvibrates inoneofits
+normal modes. If the length of the string is l (Figure 6.18), the wavelengths of these vibrations cannot be arbitrary but
+mustbesuchthatanintegerknumberofhalf-wavelengths λ/2 fitexactlyonthedistancelbetweentheends.Thisisthe
+condition l=kλ/2 forastandingwaveonastring.Nowsupposethatinsteadofhavingthestringclampedatthewalls,
+we bend its length into a circle and fasten its ends to each other. This produces a circular string that vibrates in normal
+modes, satisfying the same standing-wave condition, but the number of half-wavelengths must now be an even number
+k, k=2n, andthelengthlisnowconnectedtotheradius r
+n
+ofthecircle.Thismeansthattheradiiarenotarbitrarybut
+must satisfy the following standing-wave condition:
+λ (6.59)
+2πr n=2n .
+2
+If an electron in the nth Bohr orbit moves as a wave, by Equation 6.59 its wavelength must be equal to λ=2πr n/n.
+Assuming that Equation 6.58 is valid, the electron wave of this wavelength corresponds to the electron’s linear
+momentum, p=h/λ=nh/(2πr n)=nℏ/r n. In a circular orbit, therefore, the electron’s angular momentum must be
+nℏ (6.60)
+L n=r
+n
+p=r
+n r
+=nℏ.
+n
+ThisequationisthefirstofBohr’squantizationconditions,givenbyEquation6.36.Providingaphysicalexplanationfor
+Bohr’s quantization condition is a convincing theoretical argument for the existence of matter waves.
+Figure 6.18 Standing-wave pattern: (a) a stretched string clamped at the walls; (b) an electron wave trapped in the third Bohr
+orbit in the hydrogen atom.
+Example 6.12
+The Electron Wave in the Ground State of Hydrogen
+Find the de Broglie wavelength of an electron in the ground state of hydrogen.
+
+280 Chapter 6 | Photons and Matter Waves
+Strategy
+We combine the first quantization condition in Equation 6.60 with Equation 6.36 and use Equation 6.38
+for the first Bohr radius with n=1.
+Solution
+When n=1 and r n=a
+0
+=0.529Å, the Bohr quantization condition gives a
+0
+p=1·ℏ⇒ p=ℏ/a
+0
+. The
+electron wavelength is:
+λ=h/p=h/ℏ/a =2πa =2π(0.529Å)=3.324Å.
+0 0
+Significance
+We obtain the same result when we useEquation 6.58directly.
+6.12 CheckYourUnderstandingFindthedeBrogliewavelengthofanelectroninthethirdexcitedstateof
+hydrogen.
+Experimentalconfirmationofmatterwavescamein1927whenC.DavissonandL.Germerperformedaseriesofelectron-
+scatteringexperimentsthatclearlyshowedthatelectronsdobehavelikewaves.DavissonandGermerdidnotsetuptheir
+experimenttoconfirmdeBroglie’shypothesis:Theconfirmationcameasabyproductoftheirroutineexperimentalstudies
+of metal surfaces under electron bombardment.
+Intheparticularexperimentthatprovidedtheveryfirstevidenceofelectronwaves(knowntodayastheDavisson–Germer
+experiment), they studied a surface of nickel. Their nickel sample was specially prepared in a high-temperature oven to
+changeitsusualpolycrystallinestructuretoaforminwhichlargesingle-crystaldomainsoccupythevolume.Figure6.19
+shows the experimental setup. Thermal electrons are released from a heated element (usually made of tungsten) in the
+electrongunandacceleratedthroughapotentialdifference ΔV, becomingawell-collimatedbeamofelectronsproduced
+byanelectrongun.ThekineticenergyKoftheelectronsisadjustedbyselectingavalueofthepotentialdifferenceinthe
+electrongun.Thisproducesabeamofelectronswithasetvalueoflinearmomentum,inaccordancewiththeconservation
+of energy:
+p2 (6.61)
+eΔV =K = ⇒ p= 2meΔV.
+2m
+Theelectronbeamisincidentonthenickelsampleinthedirectionnormaltoitssurface.Atthesurface,itscattersinvarious
+directions. The intensity of the beam scattered in a selected direction φ is measured by a highly sensitive detector. The
+detector’sangularpositionwithrespecttothedirectionoftheincidentbeamcanbevariedfrom φ=0° to φ=90°. The
+entiresetupisenclosedinavacuumchambertopreventelectroncollisionswithairmolecules,assuchthermalcollisions
+would change the electrons’ kinetic energy and are not desirable.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 281
+Figure 6.19 Schematics of the experimental setup of the
+Davisson–Germer diffraction experiment. A well-collimated
+beam of electrons is scattered off the nickel target. The kinetic
+energy of electrons in the incident beam is selected by adjusting
+a variable potential, ΔV, in the electron gun. Intensity of the
+scattered electron beam is measured for a range of scattering
+angles φ, whereas the distance between the detector and the
+target does not change.
+Whenthenickeltargethasapolycrystallineformwithmanyrandomlyorientedmicroscopiccrystals,theincidentelectrons
+scatteroffitssurfaceinvariousrandomdirections.Asaresult,theintensityofthescatteredelectronbeamismuchthesame
+inanydirection,resemblingadiffusereflectionoflightfromaporoussurface.However,whenthenickeltargethasaregular
+crystallinestructure,theintensityofthescatteredelectronbeamshowsaclearmaximumataspecificangleandtheresults
+show a clear diffraction pattern (see Figure 6.20). Similar diffraction patterns formed by X-rays scattered by various
+crystallinesolidswerestudiedin1912byfather-and-sonphysicistsWilliamH.BraggandWilliamL.Bragg.TheBragglaw
+inX-raycrystallographyprovidesaconnectionbetweenthewavelength λ oftheradiationincidentonacrystallinelattice,
+the lattice spacing, and the position of the interference maximum in the diffracted radiation (seeDiffraction).
+The lattice spacing of the Davisson–Germer target, determined with X-ray crystallography, was measured to be
+a=2.15Å. Unlike X-ray crystallography in which X-rays penetrate the sample, in the original Davisson–Germer
+experiment, only the surface atoms interact with the incident electron beam. For the surface diffraction, the maximum
+intensity of the reflected electron beam is observed for scattering angles that satisfy the condition nλ=asinφ (see
+Figure6.21).Thefirst-ordermaximum(for n=1)ismeasuredatascatteringangleof φ≈50° at ΔV ≈54V, which
+gives the wavelength of the incident radiation as λ=(2.15Å)sin50°=1.64Å. On the other hand, a 54-V potential
+acceleratestheincidentelectronstokineticenergiesof K =54eV. Theirmomentum,calculatedfromEquation6.61,is
+p=2.478×10 −5 eV·s/m. When we substitute this result inEquation 6.58, the de Broglie wavelength is obtained as
+λ= h p = 4.136×10 −15 eV·s =1.67Å. (6.62)
+−5
+2.478×10 eV·s/m
+The same result is obtained when we use K =54eV in Equation 6.61. The proximity of this theoretical result to the
+Davisson–Germer experimental value of λ=1.64Å is a convincing argument for the existence of de Broglie matter
+waves.
+
+282 Chapter 6 | Photons and Matter Waves
+Figure 6.20 The experimental results of electron diffraction
+on a nickel target for the accelerating potential in the electron
+gun of about ΔV =54V: The intensity maximum is
+registered at the scattering angle of about φ=50°.
+Figure 6.21 In the surface diffraction of a monochromatic
+electromagnetic wave on a crystalline lattice structure, the in-
+phase incident beams are reflected from atoms on the surface. A
+ray reflected from the left atom travels an additional distance
+D=asinφ to the detector, whereais the lattice spacing. The
+reflected beams remain in-phase whenDis an integer multiple
+of their wavelength λ. The intensity of the reflected waves has
+pronounced maxima for angles φ satisfying nλ=asinφ.
+Diffraction lines measured with low-energy electrons, such as those used in the Davisson–Germer experiment, are quite
+broad(see Figure 6.20)because the incident electrons are scattered onlyfromthe surface. The resolution ofdiffraction
+images greatly improves when a higher-energy electron beam passes through a thin metal foil. This occurs because the
+diffraction image is created by scattering off many crystalline planes inside the volume, and the maxima produced in
+scattering at Bragg angles are sharp (seeFigure 6.22).
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 283
+Figure 6.22 Diffraction patterns obtained in scattering on a crystalline solid: (a) with X-rays, and (b) with electrons. The
+observed pattern reflects the symmetry of the crystalline structure of the sample.
+Since the work of Davisson and Germer, de Broglie’s hypothesis has been extensively tested with various experimental
+techniques, andtheexistence ofdeBroglie waveshasbeenconfirmed fornumerouselementary particles. Neutronshave
+been used in scattering experiments to determine crystalline structures of solids from interference patterns formed by
+neutronmatterwaves.Theneutronhaszerochargeanditsmassiscomparablewiththemassofapositivelychargedproton.
+Bothneutronsandprotonscanbeseenasmatterwaves.Therefore,thepropertyofbeingamatterwaveisnotspecificto
+electricallychargedparticlesbutistrueofallparticlesinmotion.Matterwavesofmoleculesaslargeascarbon C have
+60
+beenmeasured.Allphysicalobjects,smallorlarge,haveanassociatedmatterwaveaslongastheyremaininmotion.The
+universal character of de Broglie matter waves is firmly established.
+Example 6.13
+Neutron Scattering
+Supposethataneutronbeamisusedinadiffractionexperimentonatypicalcrystallinesolid.Estimatethekinetic
+energyofaneutron(ineV)intheneutronbeamandcompareitwithkineticenergyofanidealgasinequilibrium
+at room temperature.
+Strategy
+We assume that a typical crystal spacing a is of the order of 1.0 Å. To observe a diffraction pattern on such
+a lattice, the neutron wavelength λ must be on the same order of magnitude as the lattice spacing. We use
+Equation 6.61 to find the momentum p and kinetic energy K. To compare this energy with the energy
+E T of ideal gas in equilibrium at room temperature T =300K, we use the relation K = 3k B T, where
+2
+k B=8.62×10 −5 eV/K is the Boltzmann constant.
+Solution
+We evaluatepcto compare it with the neutron’s rest mass energy E =940MeV:
+0
+p= h ⇒ pc= hc = 1.241×10 −6 eV·m =12.41keV.
+λ λ −10
+10 m
+
+284 Chapter 6 | Photons and Matter Waves
+We see that p2c2≪E2 so K ≪E and we can use the nonrelativistic kinetic energy:
+0 0
+K = p2 = h2 = (6.63×10 −34 J·s)2 =1.32×10 −20 J=82.7meV.
+2m n 2λ2m n (2×10 −20 m2)(1.66×10 −27 kg)
+Kinetic energy of ideal gas in equilibrium at 300 K is:
+K T = 3k B T = 3 (8.62×10 −5 eV/K)(300K)=38.8MeV.
+2 2
+We see that these energies are of the same order of magnitude.
+Significance
+Neutronswithenergiesinthisrange,whichistypicalforanidealgasatroomtemperature,arecalled“thermal
+neutrons.”
+Example 6.14
+Wavelength of a Relativistic Proton
+In a supercollider at CERN, protons can be accelerated to velocities of 0.75c. What are their de Broglie
+wavelengths at this speed? What are their kinetic energies?
+Strategy
+Therestmassenergyofaprotonis E =m c2=(1.672×10 −27 kg)(2.998×10 8 m/s)2=938MeV. When
+0 0
+the proton’s velocity is known, we have β=0.75 and βγ =0.75/ 1−0.752=1.714. We obtain the
+wavelength λ and kinetic energyKfrom relativistic relations.
+Solution
+h hc hc 1.241eV·µm
+λ= p = pc = βγE = 1.714(938MeV) =0.77fm
+0
+K =E (γ−1)=938MeV(1/ 1−0.752−1)=480.1MeV
+0
+Significance
+Noticethatbecauseaprotonis1835timesmoremassivethananelectron,ifthisexperimentwereperformedwith
+electrons,asimplerescalingoftheseresultswouldgiveustheelectron’swavelengthof (1835)0.77fm=1.4pm
+and its kinetic energy of 480.1MeV/1835=261.6keV.
+6.13 CheckYourUnderstandingFindthedeBrogliewavelengthandkineticenergyofafreeelectronthat
+travels at a speed of 0.75c.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 285
+6.6 | Wave-Particle Duality
+Learning Objectives
+By the end of this section, you will be able to:
+• Identify phenomena in which electromagnetic waves behave like a beam of photons and
+particles behave like waves
+• Describe the physics principles behind electron microscopy
+• Summarize the evolution of scientific thought that led to the development of quantum
+mechanics
+Theenergyofradiationdetectedbyaradio-signalreceivingantennacomesastheenergyofanelectromagneticwave.The
+same energy of radiation detected by a photocurrent in the photoelectric effect comes as the energy of individual photon
+particles.Therefore,thequestionarisesaboutthenatureofelectromagneticradiation:Isaphotonawaveorisitaparticle?
+Similarquestionsmaybeaskedaboutotherknownformsofenergy.Forexample,anelectronthatformspartofanelectric
+currentinacircuitbehaveslikeaparticle movinginunisonwithotherelectrons insidetheconductor.Thesameelectron
+behaves as a wave when it passes through a solid crystalline structure and forms a diffraction image. Is an electron a
+wave or is it a particle? The same question can be extended to all particles of matter—elementary particles, as well as
+compoundmolecules—askingabouttheirtruephysicalnature.Atourpresentstateofknowledge,suchquestionsaboutthe
+truenatureofthingsdonothaveconclusiveanswers.Allwecansayisthatwave-particledualityexistsinnature:Under
+someexperimentalconditions,aparticleappearstoactasaparticle,andunderdifferentexperimentalconditions,aparticle
+appearstoactawave.Conversely,undersomephysicalcircumstanceselectromagneticradiationactsasawave,andunder
+other physical circumstances, radiation acts as a beam of photons.
+This dualistic interpretation is not a new physics concept brought about by specific discoveries in the twentieth century.
+It was already present in a debate between Isaac Newton and Christiaan Huygens about the nature of light, beginning
+in the year 1670. According to Newton, a beam of light is a collection of corpuscles of light. According to Huygens,
+lightisawave.Thecorpuscular hypothesisfailed in1803,whenThomasYoungannouncedhisdouble-slit interference
+experiment withlight(seeFigure 6.23),whichfirmlyestablished lightasawave.InJamesClerkMaxwell’stheoryof
+electromagnetism (completed by the year 1873), light is an electromagnetic wave. Maxwell’s classical view of radiation
+asanelectromagneticwaveisstillvalidtoday;however,itisunabletoexplainblackbodyradiationandthephotoelectric
+effect, where light acts as a beam of photons.

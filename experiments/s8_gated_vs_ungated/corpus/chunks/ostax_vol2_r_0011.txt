@@ -1,0 +1,267 @@
+# REAL PDF — openstax_vol2.pdf, pages 64-69
+############################################################
+
+54 Chapter 1 | Temperature and Heat
+radiation
+energy transferred by electromagnetic waves directly as a result of a temperature difference
+rate of conductive heat transfer rate of heat transfer from one material to another
+specific heat amount of heat necessary to change the temperature of 1.00 kg of a substance by 1.00°C; also called
+“specific heat capacity”
+Stefan-Boltzmann law of radiation P=σAeT4, where σ =5.67×10 −8 J/s·m2·K4 is the Stefan-Boltzmann
+constant,Ais the surface area of the object,Tis the absolute temperature, andeis the emissivity
+sublimation phase change from solid to gas
+temperature quantity measured by a thermometer, which reflects the mechanical energy of molecules in a system
+thermal conductivity property of a material describing its ability to conduct heat
+thermal equilibrium conditioninwhichheatnolongerflowsbetweentwoobjectsthatareincontact;thetwoobjects
+have the same temperature
+thermal expansion change in size or volume of an object with change in temperature
+thermal stress stress caused by thermal expansion or contraction
+triple point pressure and temperature at which a substance exists in equilibrium as a solid, liquid, and gas
+vapor gas at a temperature below the boiling temperature
+vapor pressure pressure at which a gas coexists with its solid or liquid phase
+zeroth law of thermodynamics lawthatstatesthatiftwoobjectsareinthermalequilibrium,andathirdobjectisin
+thermal equilibrium with one of those objects, it is also in thermal equilibrium with the other object
+KEY EQUATIONS
+Linear thermal expansion ΔL=αLΔT
+Thermal expansion in two dimensions ΔA=2αAΔT
+Thermal expansion in three dimensions ΔV = βVΔT
+Heat transfer Q=mcΔT
+Transfer of heat in a calorimeter Q +Q =0
+cold hot
+Heat due to phase change (melting and freezing) Q=mL
+f
+Heat due to phase change (evaporation and condensation) Q=mL v
+Rate of conductive heat transfer P=
+kA⎛
+⎝
+T h−T
+c
+⎞
+⎠
+d
+Net rate of heat transfer by radiation P =σeA⎛T 4−T 4⎞
+net ⎝ 2 1 ⎠
+SUMMARY
+1.1Temperature and Thermal Equilibrium
+• Temperatureisoperationallydefinedasthequantitymeasuredbyathermometer.Itisproportionaltotheaverage
+kinetic energy of atoms and molecules in a system.
+• Thermal equilibrium occurs when two bodies are in contact with each other and can freely exchange energy.
+Systems are in thermal equilibrium when they have the same temperature.
+• The zeroth law of thermodynamics states that when two systems, A and B, are in thermal equilibrium with each
+other, andBis in thermal equilibrium with a third systemC, thenAis also in thermal equilibrium withC.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 55
+1.2Thermometers and Temperature Scales
+• Three types of thermometers are alcohol, liquid crystal, and infrared radiation (pyrometer).
+• The three main temperature scales are Celsius, Fahrenheit, and Kelvin. Temperatures can be converted from one
+scale to another using temperature conversion equations.
+• Thethreephasesofwater(ice,liquidwater,andwatervapor)cancoexistatasinglepressureandtemperatureknown
+as the triple point.
+1.3Thermal Expansion
+• Thermalexpansionistheincreaseofthesize(length,area,orvolume)ofabodyduetoachangeintemperature,
+usually a rise. Thermal contraction is the decrease in size due to a change in temperature, usually a fall in
+temperature.
+• Thermal stress is created when thermal expansion or contraction is constrained.
+1.4Heat Transfer, Specific Heat, and Calorimetry
+• Heat and work are the two distinct methods of energy transfer.
+• Heattransfertoanobjectwhenitstemperaturechangesisoftenapproximatedwellby Q=mcΔT, wheremisthe
+object’s mass andcis the specific heat of the substance.
+1.5Phase Changes
+• Mostsubstanceshavethreedistinctphases(underordinaryconditionsonEarth),andtheydependontemperature
+and pressure.
+• Two phases coexist (i.e., they are in thermal equilibrium) at a set of pressures and temperatures.
+• Phase changes occur at fixed temperatures for a given substance at a given pressure, and these temperatures are
+called boiling, freezing (or melting), and sublimation points.
+1.6Mechanisms of Heat Transfer
+• Heat is transferred by three different methods: conduction, convection, and radiation.
+• Heat conduction is the transfer of heat between two objects in direct contact with each other.
+• The rate of heat transfer P (energy per unit time) is proportional to the temperature difference T
+h
+−T
+c
+and the
+contact areaAand inversely proportional to the distancedbetween the objects.
+• Convection is heat transfer by the macroscopic movement of mass. Convection can be natural or forced, and
+generally transfers thermal energy faster than conduction. Convection that occurs along with a phase change can
+transfer energy from cold regions to warm ones.
+• Radiation is heat transfer through the emission or absorption of electromagnetic waves.
+• The rate of radiative heat transfer is proportional to the emissivity e. For a perfect blackbody, e=1, whereas a
+perfectly white, clear, or reflective body has e=0, with real objects having values ofebetween 1 and 0.
+• The rate of heat transfer depends on the surface area and the fourth power of the absolute temperature:
+P=σeAT4,
+where σ =5.67×10 −8 J/s·m2·K4 istheStefan-Boltzmannconstantandeistheemissivityofthebody.Thenet
+rate of heat transfer from an object by radiation is
+Q ⎛ ⎞
+net =σeA T 4−T 4 ,
+t ⎝ 2 1 ⎠
+where T isthetemperatureoftheobjectsurroundedbyanenvironmentwithuniformtemperature T andeisthe
+1 2
+
+56 Chapter 1 | Temperature and Heat
+emissivity of the object.
+CONCEPTUAL QUESTIONS
+make a new kind of gun. He plans to jam a bullet against
+1.1Temperature and Thermal Equilibrium analuminumrodinsideaclosedinvartube.Whenheheats
+thetube,therodwillexpandmorethanthetubeandavery
+1. What does it mean to say that two systems are in
+strong force will build up. Then, by a method yet to be
+thermal equilibrium?
+determined,hewillopenthetubeinasplitsecondandlet
+the force of the rod launch the bullet at very high speed.
+2. Give an example in which A has some kind of non-
+What is he overlooking?
+thermalequilibriumrelationshipwithB,andBhasthesame
+relationship with C, but A does not have that relationship
+withC.
+1.4Heat Transfer, Specific Heat, and
+Calorimetry
+1.2Thermometers and Temperature Scales
+11. How is heat transfer related to temperature?
+3. Ifathermometerisallowedtocometoequilibriumwith
+the air, and a glass of water is not in equilibrium with the 12. Describe a situation in which heat transfer occurs.
+air,whatwillhappentothethermometerreadingwhenitis
+placed in the water?
+13. Whenheattransfersintoasystem,istheenergystored
+as heat? Explain briefly.
+4. Give an example of a physical property that varies
+with temperature and describe how it is used to measure
+14. The brakes in a car increase in temperature by ΔT
+temperature.
+when bringing the car to rest from a speed v. How much
+greater would ΔT be if the car initially had twice the
+speed? You may assume the car stops fast enough that no
+1.3Thermal Expansion
+heat transfers out of the brakes.
+5. Pouringcoldwaterintohotglassorceramiccookware
+can easily break it. What causes the breaking? Explain
+why Pyrex®, a glass with a small coefficient of linear
+1.5Phase Changes
+expansion, is less susceptible.
+15. A pressure cooker contains water and steam in
+equilibriumatapressuregreaterthanatmosphericpressure.
+6. Onemethodofgettingatightfit,sayofametalpegin
+How does this greater pressure increase cooking speed?
+a hole in a metal block, is to manufacture the peg slightly
+larger than the hole. The peg is then inserted when at a
+different temperature than the block. Should the block be 16. As shown below, which is the phase diagram for
+hotterorcolderthanthepegduringinsertion?Explainyour carbondioxide,whatisthevaporpressureofsolidcarbon
+answer. dioxide(dryice)at −78.5°C? (Notethattheaxesinthe
+figure are nonlinear and the graph is not to scale.)
+7. Doesitreallyhelptorunhotwateroveratightmetallid
+onaglassjarbeforetryingtoopenit?Explainyouranswer.
+8. When a cold alcohol thermometer is placed in a hot
+liquid, the column of alcohol goes down slightly before
+going up. Explain why.
+9. Calculatethelengthofa1-meterrodofamaterialwith
+thermal expansion coefficient α when the temperature is
+raisedfrom300Kto600K.Takingyouranswerasthenew
+initial length, find the length after the rod is cooled back
+downto300K.Isyouranswer1meter?Shoulditbe?How
+can you account for the result you got?
+10. Notingthelargestressesthatcanbecausedbythermal
+expansion,anamateurweaponinventordecidestouseitto
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 57
+25. In winter, it is often warmer in San Francisco than
+in Sacramento, 150 km inland. In summer, it is nearly
+always hotter in Sacramento. Explain how the bodies of
+water surrounding San Francisco moderate its extreme
+temperatures.
+26. Freeze-driedfoodshavebeendehydratedinavacuum.
+Duringtheprocess,thefoodfreezesandmustbeheatedto
+facilitatedehydration.Explainbothhowthevacuumspeeds
+up dehydration and why the food freezes as a result.
+27. In a physics classroom demonstration, an instructor
+inflates a balloon by mouth and then cools it in liquid
+nitrogen. When cold, the shrunken balloon has a small
+amountoflightblueliquidinit,aswellassomesnow-like
+crystals. As it warms up, the liquid boils, and part of the
+crystals sublime, with some crystals lingering for a while
+andthenproducingaliquid.Identifytheblueliquidandthe
+two solids in the cold balloon. Justify your identifications
+using data fromTable 1.4.
+17. Cancarbondioxidebeliquefied atroomtemperature
+(20°C)? If so, how? If not, why not? (See the phase 1.6Mechanisms of Heat Transfer
+diagram in the preceding problem.)
+28. What are the main methods of heat transfer from the
+hot core of Earth to its surface? From Earth’s surface to
+18. What is the distinction between gas and vapor? outer space?
+19. Heat transfer can cause temperature and phase 29. When our bodies get too warm, they respond by
+changes. What else can cause these changes? sweatingandincreasingbloodcirculationtothesurfaceto
+transfer thermal energy away from the core. What effect
+20. How does the latent heat of fusion of water help will those processes have on a person in a 40.0-°C hot
+slow the decrease of air temperatures, perhaps preventing tub?
+temperaturesfromfallingsignificantlybelow 0°C, inthe
+vicinity of large bodies of water? 30. Shown below is a cut-away drawing of a thermos
+bottle (also known as a Dewar flask), which is a device
+designed specifically to slow down all forms of heat
+21. Whatisthetemperatureoficerightafteritisformed
+transfer.Explainthefunctionsofthevariousparts,suchas
+by freezing water?
+thevacuum,thesilveringofthewalls,thethin-walledlong
+glassneck,therubbersupport,theairlayer,andthestopper.
+22. Ifyouplace 0°C iceinto 0°C waterinaninsulated
+container,whatwillthenetresultbe?Willtherebelessice
+andmoreliquidwater,ormoreiceandlessliquidwater,or
+will the amounts stay the same?
+23. Whateffectdoescondensationonaglassoficewater
+have on the rate at which the ice melts? Will the
+condensation speed up the melting process or slow it
+down?
+24. In Miami, Florida, which has a very humid climate
+and numerous bodies of water nearby, it is unusual for
+temperatures to rise above about 38°C (100°F). In the
+desertclimateofPhoenix,Arizona,however,temperatures
+rise above that almost every day in July and August.
+Explain how the evaporation of water helps limit high
+temperatures in humid climates.
+
+58 Chapter 1 | Temperature and Heat
+33. Onewaytomakeafireplacemoreenergy-efficientis
+tohaveroomaircirculatearoundtheoutsideofthefirebox
+andbackintotheroom.Detailthemethodsofheattransfer
+involved.
+34. Oncold,clearnightshorseswillsleepunderthecover
+of large trees. How does this help them keep warm?
+35. When watching a circus during the day in a large,
+dark-colored tent, you sense significant heat transfer from
+the tent. Explain why this occurs.
+36. Satellitesdesignedtoobservetheradiationfromcold
+(3 K) dark space have sensors that are shaded from the
+Sun, Earth, and the Moon and are cooled to very low
+temperatures. Why must the sensors be at low
+temperature?
+37. Why are thermometers that are used in weather
+stations shielded from the sunshine? What does a
+thermometer measure if it is shielded from the sunshine?
+31. Someelectricstoveshaveaflatceramicsurfacewith What does it measure if it is not?
+heating elements hidden beneath. A pot placed over a
+heatingelementwillbeheated,whilethesurfaceonlyafew 38. Puttingalidonaboilingpotgreatlyreducestheheat
+centimeters away is safe to touch. Why is ceramic, with a transfer necessary to keep it boiling. Explain why.
+conductivity less than that of a metal but greater than that
+of a good insulator, an ideal choice for the stove top? 39. Yourhousewillbeemptyforawhileincoldweather,
+and you want to save energy and money. Should you turn
+32. Loose-fitting white clothing covering most of the thethermostatdowntothelowestlevelthatwillprotectthe
+body, shown below, is ideal for desert dwellers, both in house from damage such as freezing pipes, or leave it at
+the hot Sun and during cold evenings. Explain how such thenormaltemperature?(Ifyoudon’tlikecomingbacktoa
+clothing is advantageous during both day and night. coldhouse,imaginethatatimercontrolstheheatingsystem
+so the house will be warm when you get back.) Explain
+your answer.
+40. You pour coffee into an unlidded cup, intending to
+drinkit5minuteslater.Youcanaddcreamwhenyoupour
+the cup or right before you drink it. (The cream is at the
+same temperature either way. Assume that the cream and
+coffeecomeintothermalequilibriumwitheachothervery
+quickly.) Which way will give you hotter coffee? What
+feature of this question is different from the previous one?
+41. Broiling is a method of cooking by radiation, which
+produces somewhat different results from cooking by
+conduction or convection. A gas flame or electric heating
+elementproducesaveryhightemperatureclosetothefood
+and above it. Why is radiation the dominant heat-transfer
+method in this situation?
+42. On a cold winter morning, why does the metal of a
+bike feel colder than the wood of a porch?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

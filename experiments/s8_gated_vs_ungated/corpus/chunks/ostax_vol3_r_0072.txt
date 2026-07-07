@@ -1,0 +1,236 @@
+# REAL PDF — openstax_vol3.pdf, pages 437-444
+############################################################
+
+Chapter 9 | Condensed Matter Physics 429
+Figure 9.21 (a) An electron from the conduction band is excited into the empty state resulting from the acceptor impurity; (b)
+formation of an impurity band in ap-type semiconductor.
+The electric current of a doped semiconductor can be due to the motion of a majority carrier, in which holes are
+contributedbyanimpurityatom,orduetoaminoritycarrier,inwhichholesarecontributedpurelybythermalexcitations
+ofelectronsacrosstheenergygap.Inann-typesemiconductor,majoritycarriersarefreeelectronscontributedbyimpurity
+atoms,andminoritycarriersarefreeelectronsproducedbythermalexcitationsfromthevalencetotheconductionband.In
+a p-type semiconductor, the majority carriers are free holes contributed by impurity atoms, and minority carriers are free
+holesleftbythefillingofstatesduetothermalexcitationofelectronsacrossthegap.Ingeneral,thenumberofmajority
+carriersfarexceedstheminoritycarriers.Theconceptofamajorityandminoritycarrierswillbeusedinthenextsectionto
+explain the operation of diodes and transistors.
+In studying p- and n-type doping, it is natural to ask: Do “electron holes” really act like particles? The existence of
+holesinadopedp-typesemiconductorisdemonstratedbytheHalleffect.TheHalleffectistheproductionofapotential
+difference due to the motion of a conductor through an external magnetic field (see The Hall Effect (http://cnx.org/
+content/m58744/latest/)).AschematicoftheHalleffectisshowninFigure9.22(a).Asemiconductorstripisbathed
+in a uniform magnetic field (which points into the paper). As the electron holes move from left to right through the
+semiconductor, a Lorentz force drives these charges toward the upper end of the strip. (Recall that the motion of the
+positively charged carriers is determined by the right-hand rule.) Positive charge continues to collect on the upper edge
+of the strip until the force associated with the downward electric field between the upper and lower edges of the strip
+(F E=Eq) just balances the upward magnetic force (F B=qvB). Setting these forces equal to each other, we have
+E=vB. The voltage that develops across the strip is therefore
+V =vBw, (9.33)
+H
+where V is the Hall voltage; v is the hole’s drift velocity, or average velocity of a particle that moves in a partially
+H
+random fashion; B is the magnetic field strength; and w is the width of the strip. Note that the Hall voltage is transverse
+tothevoltagethatinitiallyproducescurrentthroughthematerial.Ameasurementofthesignofthisvoltage(orpotential
+difference)confirmsthecollectionofholesonthetopsideofthestrip.ThemagnitudeoftheHallvoltageyieldsthedrift
+velocity (v) of the majority carriers.
+AdditionalinformationcanalsobeextractedfromtheHallvoltage.Notethattheelectroncurrentdensity(theamountof
+current per unit cross-sectional area of the semiconductor strip) is
+j=nqv, (9.34)
+whereqisthemagnitudeofthecharge,nisthenumberofchargecarriersperunitvolume,andvisthedriftvelocity.The
+currentdensityiseasilydeterminedbydividingthetotalcurrentbythecross-sectionalareaofthestrip,qischargeofthe
+hole(themagnitudeofthechargeofasingleelectron),anduisdeterminedbytheHalleffectEquation9.34.Hence,the
+aboveexpressionfortheelectroncurrentdensitygivesthenumberofchargecarriersperunitvolume,n.Asimilaranalysis
+can be conducted for negatively charged carriers in ann-type material (seeFigure 9.22).
+
+430 Chapter 9 | Condensed Matter Physics
+Figure 9.22 The Hall effect. (a) Positively charged electron holes are drawn to the left by a uniform magnetic field that
+points downward. An electric field is generated to the right. (b) Negative charged electrons are drawn to the left by a
+magnetic field that points up. An electric field is generated to the left.
+9.7 | Semiconductor Devices
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe what occurs when n- and p-type materials are joined together using the concept of
+diffusion and drift current (zero applied voltage)
+• Explain the response of a p-n junction to a forward and reverse bias voltage
+• Describe the function of a transistor in an electric circuit
+• Use the concept of a p-n junction to explain its applications in audio amplifiers and computers
+Semiconductors have many applications in modern electronics. We describe some basic semiconductor devices in this
+section. A great advantage of using semiconductors for circuit elements is the fact that many thousands or millions of
+semiconductordevicescanbecombinedonthesametinypieceofsiliconandconnectedbyconductingpaths.Theresulting
+structure is called an integrated circuit (ic), and ic chips are the basis of many modern devices, from computers and
+smartphones to the internet and global communications networks.
+Diodes
+Perhaps the simplest device that can be created with a semiconductor is a diode. A diode is a circuit element that
+allows electric current to flow in only one direction, like a one-way valve (see Model of Conduction in Metals
+(http://cnx.org/content/m58730/latest/) ). A diode is created by joining a p-type semiconductor to an n-type
+semiconductor(Figure9.23).Thejunctionbetweenthesematerialsiscalledap-njunction.Acomparisonoftheenergy
+bandsofasilicon-baseddiodeisshowninFigure9.23(b).Thepositionsofthevalenceandconductionbandsarethesame,
+buttheimpuritylevelsarequitedifferent.Whenap-njunctionisformed,electronsfromtheconductionbandofthen-type
+materialdiffusetothep-side,wheretheycombinewithholesinthevalenceband.Thismigrationofchargeleavespositive
+ionized donor ions on the n-side and negative ionized acceptor ions on the p-side, producing a narrow double layer of
+chargeatthep-njunctioncalledthedepletionlayer.Theelectricfieldassociatedwiththedepletionlayerpreventsfurther
+diffusion. The potential energy for electrons across thep-njunction is given byFigure 9.24.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 431
+Figure 9.23 (a) Representation of ap-njunction. (b) A comparison of the energy bands ofp-type and
+n-type silicon prior to equilibrium.
+
+432 Chapter 9 | Condensed Matter Physics
+Figure 9.24 At equilibrium, (a) excess charge resides near the interface and the
+net current is zero, and (b) the potential energy difference for electrons (in light
+blue) prevents further diffusion of electrons into thep-side.
+Thebehaviorofasemiconductordiodecannowbeunderstood.Ifthepositivesideofthebatteryisconnectedtothen-type
+material, the depletion layer is widened, and the potential energy difference across the p-n junction is increased. Few or
+noneoftheelectrons(holes)haveenoughenergytoclimbthepotentialbarrier,andcurrentissignificantlyreduced.Thisis
+calledthereversebiasconfiguration.Ontheotherhand,ifthepositivesideofabatteryisconnectedtothep-typematerial,
+thedepletionlayerisnarrowed,thepotentialenergydifferenceacrossthep-njunctionisreduced,andelectrons(holes)flow
+easily.Thisiscalledtheforwardbiasconfigurationofthediode.Insum,thediodeallowscurrenttoflowfreelyinone
+direction but prevents current flow in the opposite direction. In this sense, the semiconductor diode is a one-way valve.
+We can estimate the mathematical relationship between the current and voltage for a diode using the electric potential
+concept.ConsiderNnegativelychargedmajoritycarriers(electronsdonatedbyimpurityatoms)inthen-typematerialanda
+potentialbarrierVacrossthep-njunction.AccordingtotheMaxwell-Boltzmanndistribution,thefractionofelectronsthat
+haveenoughenergytodiffuseacrossthepotentialbarrieris Ne
+−eV/k
+B
+T
+.However,ifabatteryofvoltage V isappliedin
+b
+theforward-biasconfiguration,thisfractionimprovesto Ne
+−e⎛
+⎝
+V−Vb ⎞ ⎠/k
+B
+T
+.Theelectriccurrentduetothemajoritycarriers
+from then-side to thep-side is therefore
+I =Ne
+−eV/k
+B
+T
+e
+eVb/k
+B
+T
+=I e
+eVb/k
+B
+T
+,
+(9.35)
+0
+where I is the current with no applied voltage and T is the temperature. Current due to the minority carriers (thermal
+0
+excitationofelectronsfromthevalencebandtotheconductionbandonthep-sideandsubsequentattractiontothen-side)
+is −I , independent of the bias voltage. The net current is therefore
+0
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 433
+I =I
+⎛
+e
+eVb/k
+B
+T
+−1
+⎞
+.
+(9.36)
+net 0⎝ ⎠
+AsamplegraphofthecurrentversusbiasvoltageisgiveninFigure9.25.Intheforwardbiasconfiguration,smallchanges
+in the bias voltage lead to large changes in the current. In the reverse bias configuration, the current is I ≈−I . For
+net 0
+extremevaluesofreversebias,theatomsinthematerialareionizedwhichtriggersanavalancheofcurrent.Thiscaseoccurs
+at thebreakdown voltage.
+Figure 9.25 Current versus voltage across ap-njunction (diode). In the
+forward bias configuration, electric current flows easily. However, in the
+reverse bias configuration, electric current flow very little.
+Example 9.6
+Diode Current
+Attachingthepositiveendofabatterytothep-sideandthenegativeendtothen-sideofasemiconductordiode
+producesacurrentof 4.5×10−1 A. Thereversesaturation currentis 2.2×10 −8 A. (Thereversesaturation
+currentisthecurrentofadiodeinareversebiasconfigurationsuchasthis.)Thebatteryvoltageis0.12V.What
+is the diode temperature?
+Strategy
+Thefirstarrangementisaforwardbiasconfiguration,andthesecondisthereversebiasconfiguration.Ineither
+case,Equation 9.2gives the current.
+Solution
+The current in the forward and reverse bias configurations is given by
+I =I
+⎛
+e
+eVb/k
+B
+T
+−1
+⎞
+.
+net 0⎝ ⎠
+The current with no bias is related to the reverse saturation current by
+I ≈ −I =2.2×10 −8 .
+0 sat
+Therefore
+I net = 4.5×10−1 A =2.0×10 8 .
+I −8
+0 2.2×10 A
+Equation 9.2can be written as
+
+434 Chapter 9 | Condensed Matter Physics
+I
+net+1=e
+eVb/k
+B
+T
+.
+I
+0
+Thisratioismuchgreaterthanone,sothesecondtermontheleft-handsideoftheequationvanishes.Takingthe
+natural log of both sides gives
+eV
+b
+=19.
+k T
+B
+The temperature is therefore
+T =
+eV b⎛1 ⎞
+=
+e(0.12V) ⎛1 ⎞
+=73K.
+k
+B
+⎝19⎠
+8.617×10
+−5
+eV/K
+⎝19⎠
+Significance
+Thecurrentmovingthroughadiodeintheforwardandreversebiasconfigurationissensitivetothetemperature
+ofthediode.Ifthepotentialenergysuppliedbythebatteryislargecomparedtothethermalenergyofthediode’s
+surroundings, k T, then the forward bias current is very large compared to the reverse saturation current.
+B
+9.5 Check Your Understanding How does the magnitude of the forward bias current compare with the
+reverse bias current?
+Createap-njunctionandobservethebehaviorofasimplecircuitforforwardandreversebiasvoltages.Visitthis
+site (https://openstaxcollege.org/l/21semiconductor)to learn more about semiconductor diodes.
+Junction Transistor
+Ifdiodesareone-wayvalves,transistorsareone-wayvalvesthatcanbecarefullyopenedandclosedtocontrolcurrent.A
+specialkindoftransistorisajunctiontransistor.Ajunctiontransistorhasthreeparts,includingann-typesemiconductor,
+also called the emitter; a thin p-type semiconductor, which is the base; and another n-type semiconductor, called the
+collector(Figure9.26).Whenapositiveterminalisconnectedtothep-typelayer(thebase),asmallcurrentofelectrons,
+calledthebasecurrent I B, flowstotheterminal.Thiscausesalargecollectorcurrent I c toflowthroughthecollector.
+The base current can be adjusted to control the large collector current. The current gain is therefore
+I c= βI B. (9.37)
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 9 | Condensed Matter Physics 435
+Figure 9.26 A junction transistor has three parts: emitter, base,
+and collector. Voltage applied to the base acts as a valve to control
+electric current from the emitter to the collector.
+Ajunctiontransistorcanbeusedtoamplifythevoltagefromamicrophonetodrivealoudspeaker.Inthisapplication,sound
+wavescauseadiaphragminsidethemicrophonetomoveinandoutrapidly(Figure9.27).Whenthediaphragmisinthe
+“in” position, a tiny positive voltage is applied to the base of the transistor. This opens the transistor “valve” and allows
+alargeelectrical current flow tothe loudspeaker.When the diaphragm is inthe “out” position, atiny negative voltage is
+appliedtothebaseofthetransistor,whichshutsoffthetransistorvalvesothatnocurrentflowstotheloudspeaker.This
+shutsthetransistor“valve”offsonocurrentflowstotheloudspeaker.Inthisway,currenttothespeakeriscontrolledbythe
+sound waves, and the sound is amplified. Any electric device that amplifies a signal is called anamplifier.
+Figure 9.27 An audio amplifier based on a junction transistor. Voltage applied to the base by a microphone acts as a
+valve to control a larger electric current that passes through a loudspeaker.

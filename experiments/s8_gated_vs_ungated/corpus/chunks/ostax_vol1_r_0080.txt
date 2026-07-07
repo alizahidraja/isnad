@@ -1,0 +1,197 @@
+# REAL PDF — openstax_vol1.pdf, pages 483-491
+############################################################
+
+10.4 • Moment of Inertia and Rotational Kinetic Energy 471
+10.16
+The units of Equation 10.16 are joules (J). The equation in this form is complete, but awkward; we need to find a
+way to generalize it.
+Moment of Inertia
+If we compare Equation 10.16 to the way we wrote kinetic energy in Work and Kinetic Energy, , this
+suggests we have a new rotational variable to add to our list of our relations between rotational and translational
+variables. The quantity is the counterpart for mass in the equation for rotational kinetic energy. This is an
+important new term for rotational motion. This quantity is called the moment of inertia I, with units of :
+10.17
+For now, we leave the expression in summation form, representing the moment of inertia of a system of point
+particles rotating about a fixed axis. We note that the moment of inertia of a single point particle about a fixed axis is
+simply , with r being the distance from the point particle to the axis of rotation. In the next section, we explore
+the integral form of this equation, which can be used to calculate the moment of inertia of some regular-shaped rigid
+bodies.
+The moment of inertia is the quantitative measure of rotational inertia, just as in translational motion, and mass is
+the quantitative measure of linear inertia—that is, the more massive an object is, the more inertia it has, and the
+greater is its resistance to change in linear velocity. Similarly, the greater the moment of inertia of a rigid body or
+system of particles, the greater is its resistance to change in angular velocity about a fixed axis of rotation. It is
+interesting to see how the moment of inertia varies with r, the distance to the axis of rotation of the mass particles in
+Equation 10.17. Rigid bodies and systems of particles with more mass concentrated at a greater distance from the
+axis of rotation have greater moments of inertia than bodies and systems of the same mass, but concentrated near
+the axis of rotation. In this way, we can see that a hollow cylinder has more rotational inertia than a solid cylinder of
+the same mass when rotating about an axis through the center. Substituting Equation 10.17 into Equation 10.16, the
+expression for the kinetic energy of a rotating rigid body becomes
+10.18
+We see from this equation that the kinetic energy of a rotating rigid body is directly proportional to the moment of
+inertia and the square of the angular velocity. This is exploited in flywheel energy-storage devices, which are
+designed to store large amounts of rotational kinetic energy. Many carmakers are now testing flywheel energy
+storage devices in their automobiles, such as the flywheel, or kinetic energy recovery system, shown in Figure
+10.18.
+
+472 10 • Fixed-Axis Rotation
+FIGURE 10.18 A KERS (kinetic energy recovery system) flywheel used in cars. (credit: “cmonville”/Flickr)
+The rotational and translational quantities for kinetic energy and inertia are summarized in Table 10.4. The
+relationship column is not included because a constant doesn’t exist by which we could multiply the rotational
+quantity to get the translational quantity, as can be done for the variables in Table 10.3.
+Rotational Translational
+TABLE 10.4 Rotational and
+Translational Kinetic Energies and
+Inertia
+EXAMPLE 10.8
+Moment of Inertia of a System of Particles
+Six small washers are spaced 10 cm apart on a rod of negligible mass and 0.5 m in length. The mass of each washer
+is 20 g. The rod rotates about an axis located at 25 cm, as shown in Figure 10.19. (a) What is the moment of inertia
+of the system? (b) If the two washers closest to the axis are removed, what is the moment of inertia of the remaining
+four washers? (c) If the system with six washers rotates at 5 rev/s, what is its rotational kinetic energy?
+Access for free at openstax.org
+
+10.4 • Moment of Inertia and Rotational Kinetic Energy 473
+FIGURE 10.19 Six washers are spaced 10 cm apart on a rod of negligible mass and rotating about a vertical axis.
+Strategy
+a. We use the definition for moment of inertia for a system of particles and perform the summation to evaluate
+this quantity. The masses are all the same so we can pull that quantity in front of the summation symbol.
+b. We do a similar calculation.
+c. We insert the result from (a) into the expression for rotational kinetic energy.
+Solution
+a. .
+b. .
+c. .
+Significance
+We can see the individual contributions to the moment of inertia. The masses close to the axis of rotation have a
+very small contribution. When we removed them, it had a very small effect on the moment of inertia.
+In the next section, we generalize the summation equation for point particles and develop a method to calculate
+moments of inertia for rigid bodies. For now, though, Figure 10.20 gives values of moment of inertia for common
+object shapes around specified axes.
+
+474 10 • Fixed-Axis Rotation
+FIGURE 10.20 Moment of inertia for common shapes of objects.
+Applying Rotational Kinetic Energy
+Now let’s apply the ideas of rotational kinetic energy and the moment of inertia table to get a feeling for the energy
+associated with a few rotating objects. The following examples will also help get you comfortable using these
+equations. First, let’s look at a general problem-solving strategy for rotational energy.
+PROBLEM-SOLVING STRATEGY
+Rotational Energy
+1. Determine that energy or work is involved in the rotation.
+2. Determine the system of interest. A sketch usually helps.
+3. Analyze the situation to determine the types of work and energy involved.
+4. If there are no losses of energy due to friction and other nonconservative forces, mechanical energy is
+conserved, that is, .
+5. If nonconservative forces are present, mechanical energy is not conserved, and other forms of energy, such as
+heat and light, may enter or leave the system. Determine what they are and calculate them as necessary.
+6. Eliminate terms wherever possible to simplify the algebra.
+7. Evaluate the numerical solution to see if it makes sense in the physical situation presented in the wording of
+the problem.
+Access for free at openstax.org
+
+10.4 • Moment of Inertia and Rotational Kinetic Energy 475
+EXAMPLE 10.9
+Calculating Helicopter Energies
+A typical small rescue helicopter has four blades: Each is 4.00 m long and has a mass of 50.0 kg (Figure 10.21). The
+blades can be approximated as thin rods that rotate about one end of an axis perpendicular to their length. The
+helicopter has a total loaded mass of 1000 kg. (a) Calculate the rotational kinetic energy in the blades when they
+rotate at 300 rpm. (b) Calculate the translational kinetic energy of the helicopter when it flies at 20.0 m/s, and
+compare it with the rotational energy in the blades.
+FIGURE 10.21 (a) Sketch of a four-blade helicopter. (b) A water rescue operation featuring a helicopter from the Auckland Westpac Rescue
+Helicopter Service. (credit b: modification of work by “111 Emergency”/Flickr)
+Strategy
+Rotational and translational kinetic energies can be calculated from their definitions. The wording of the problem
+gives all the necessary constants to evaluate the expressions for the rotational and translational kinetic energies.
+Solution
+a. The rotational kinetic energy is
+We must convert the angular velocity to radians per second and calculate the moment of inertia before we can
+find K. The angular velocity is
+The moment of inertia of one blade is that of a thin rod rotated about its end, listed in Figure 10.20. The total I
+is four times this moment of inertia because there are four blades. Thus,
+Entering and I into the expression for rotational kinetic energy gives
+b. Entering the given values into the equation for translational kinetic energy, we obtain
+To compare kinetic energies, we take the ratio of translational kinetic energy to rotational kinetic energy. This
+ratio is
+
+476 10 • Fixed-Axis Rotation
+Significance
+The ratio of translational energy to rotational kinetic energy is only 0.380. This ratio tells us that most of the kinetic
+energy of the helicopter is in its spinning blades.
+EXAMPLE 10.10
+Energy in a Baton
+A person hurls a baton into the air with a velocity of 30.0 m/s at an angle of with respect to the horizontal
+(Figure 10.22). It has a mass of 1.0 kg and is rotating at 10.0 rev/s. The moment of inertia of the baton is given as
+where . (a) What is the total energy of the baton when it leaves the hand? (b) How high does
+the baton go from the elevation of the hand, neglecting air resistance?
+FIGURE 10.22 A baton is hurled into the air at an initial angle of .
+Strategy
+We use the definitions of rotational and linear kinetic energy to find the total energy of the system. The problem
+states to neglect air resistance, so we don’t have to worry about energy loss. In part (b), we use conservation of
+mechanical energy to find the maximum height of the baton.
+Solution
+a. Moment of inertia: .
+Angular velocity: .
+The rotational kinetic energy is therefore
+The translational kinetic energy is
+Thus, the total energy in the baton is
+b. We use conservation of mechanical energy. Since the baton is launched at an angle, we need to write the total
+energies of the system in terms of its linear kinetic energies using the velocity in the x- and y-directions. The
+total energy when the baton leaves the hand is
+Access for free at openstax.org
+
+10.5 • Calculating Moments of Inertia 477
+The total energy at maximum height is
+By conservation of mechanical energy, so we have, after canceling like terms,
+Since , we find
+Significance
+In part (b), the solution demonstrates how energy conservation is an alternative method to solve a problem that
+normally would be solved using kinematics. In the absence of air resistance, the rotational kinetic energy was not a
+factor in the solution for the maximum height.
+CHECK YOUR UNDERSTANDING 10.4
+A nuclear submarine propeller has a moment of inertia of . If the submerged propeller has a rotation
+rate of 4.0 rev/s when the engine is cut, what is the rotation rate of the propeller after 5.0 s when water resistance
+has taken 50,000 J out of the system?
+10.5 Calculating Moments of Inertia
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Calculate the moment of inertia for uniformly shaped, rigid bodies
+• Apply the parallel axis theorem to find the moment of inertia about any axis parallel to one already known
+• Calculate the moment of inertia for compound objects
+In the preceding section, we defined the moment of inertia but did not show how to calculate it. In this section, we
+show how to calculate the moment of inertia for several standard types of objects, as well as how to use known
+moments of inertia to find the moment of inertia for a shifted axis or for a compound object. This section is very
+useful for seeing how to apply a general equation to complex objects (a skill that is critical for more advanced
+physics and engineering courses).
+Moment of Inertia
+We defined the moment of inertia I of an object to be for all the point masses that make up the object.
+Because r is the distance to the axis of rotation from each piece of mass that makes up the object, the moment of
+inertia for any object depends on the chosen axis. To see this, let’s take a simple example of two masses at the end
+of a massless (negligibly small mass) rod (Figure 10.23) and calculate the moment of inertia about two different
+axes. In this case, the summation over the masses is simple because the two masses at the end of the barbell can
+be approximated as point masses, and the sum therefore has only two terms.
+In the case with the axis in the center of the barbell, each of the two masses m is a distance R away from the axis,
+giving a moment of inertia of
+In the case with the axis at the end of the barbell—passing through one of the masses—the moment of inertia is
+
+478 10 • Fixed-Axis Rotation
+From this result, we can conclude that it is twice as hard to rotate the barbell about the end than about its center.
+FIGURE 10.23 (a) A barbell with an axis of rotation through its center; (b) a barbell with an axis of rotation through one end.
+In this example, we had two point masses and the sum was simple to calculate. However, to deal with objects that
+are not point-like, we need to think carefully about each of the terms in the equation. The equation asks us to sum
+over each ‘piece of mass’ a certain distance from the axis of rotation. But what exactly does each ‘piece of mass’
+mean? Recall that in our derivation of this equation, each piece of mass had the same magnitude of velocity, which
+means the whole piece had to have a single distance r to the axis of rotation. However, this is not possible unless we
+take an infinitesimally small piece of mass dm, as shown in Figure 10.24.
+FIGURE 10.24 Using an infinitesimally small piece of mass to calculate the contribution to the total moment of inertia.
+The need to use an infinitesimally small piece of mass dm suggests that we can write the moment of inertia by
+evaluating an integral over infinitesimal masses rather than doing a discrete sum over finite masses:
+10.19
+This, in fact, is the form we need to generalize the equation for complex shapes. It is best to work out specific
+examples in detail to get a feel for how to calculate the moment of inertia for specific shapes. This is the focus of
+most of the rest of this section.
+A uniform thin rod with an axis through the center
+Consider a uniform (density and shape) thin rod of mass M and length L as shown in Figure 10.25. We want a thin
+rod so that we can assume the cross-sectional area of the rod is small and the rod can be thought of as a string of
+masses along a one-dimensional straight line. In this example, the axis of rotation is perpendicular to the rod and
+passes through the midpoint for simplicity. Our task is to calculate the moment of inertia about this axis. We orient
+the axes so that the z-axis is the axis of rotation and the x-axis passes through the length of the rod, as shown in the
+Access for free at openstax.org

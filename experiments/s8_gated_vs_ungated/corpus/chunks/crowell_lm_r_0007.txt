@@ -1,0 +1,274 @@
+# REAL PDF — crowell_lm.pdf, pages 39-46
+############################################################
+
+Exercise 0: Models and idealization
+Equipment:
+co↵ee filters
+ramps (one per group)
+balls of various sizes
+sticky tape
+vacuum pump and “guinea and feather” apparatus (one)
+The motion of falling objects has been recognized since ancient times as an important piece of
+physics, but the motion is inconveniently fast, so in our everyday experience it can be hard to
+tellexactlywhatobjectsaredoingwhentheyfall. Inthisexerciseyouwilluseseveraltechniques
+to get around this problem and study the motion. Your goal is to construct a scientific model of
+falling. A model means an explanation that makes testable predictions. Often models contain
+simplifications or idealizations that make them easier to work with, even though they are not
+strictly realistic.
+1. One method of making falling easier to observe is to use objects like feathers that we know
+from everyday experience will not fall as fast. You will use co↵ee filters, in stacks of various
+sizes, to test the following two hypotheses and see which one is true, or whether neither is true:
+Hypothesis 1A: When an object is dropped, it rapidly speeds up to a certain natural falling
+speed, and then continues to fall at that speed. The falling speed is proportional to the object’s
+weight. (A proportionality is not just a statement that if one thing gets bigger, the other does
+too. It says that if one becomes three times bigger, the other also gets three times bigger, etc.)
+Hypothesis 1B: Di↵erent objects fall the same way, regardless of weight.
+Test these hypotheses and discuss your results with your instructor.
+2. A second way to slow down the action is to let a ball roll down a ramp. The steeper the
+ramp, the closer to free fall. Based on your experience in part 1, write a hypothesis about what
+will happen when you race a heavier ball against a lighter ball down the same ramp, starting
+them both from rest.
+Hypothesis:
+Show your hypothesis to your instructor, and then test it.
+You have probably found that falling was more complicated than you thought! Is there more
+than one factor that a↵ects the motion of a falling object? Can you imagine certain idealized
+situations that are simpler? Try to agree verbally with your group on an informal model of
+falling that can make predictions about the experiments described in parts 3 and 4.
+3. You have three balls: a standard “comparison ball” of medium weight, a light ball, and a
+heavy ball. Suppose you stand on a chair and (a) drop the light ball side by side with the
+comparison ball, then (b) drop the heavy ball side by side with the comparison ball, then (c)
+join the light and heavy balls together with sticky tape and drop them side by side with the
+comparison ball.
+Use your model to make a prediction:
+Test your prediction.
+Exercise 0: Models and idealization 39
+
+4. Your instructor will pump nearly all the air out of a chamber containing a feather and a
+heavier object, then let them fall side by side in the chamber.
+Use your model to make a prediction:
+40 Chapter 0 Introduction and review
+
+Life would be very different if you
+werethesizeofaninsect.
+Chapter 1
+Scaling and estimation
+1.1 Introduction
+Whycan’taninsectbethesizeofadog? Someskinnystretched-
+out cells in your spinal cord are a meter tall — why does nature
+display no single cells that are not just a meter tall, but a meter
+wide,andameterthickaswell? Believeitornot,thesearequestions
+thatcanbeansweredfairlyeasilywithoutknowingmuchmoreabout
+physics than you already do. The only mathematical technique you
+really need is the humble conversion, applied to area and volume.
+a/Amoebas this size are
+Area and volume seldomencountered.
+Area can be defined by saying that we can copy the shape of
+interest onto graph paper with 1 cm 1 cm squares and count the
+⇥
+number of squares inside. Fractions of squares can be estimated by
+eye. We then say the area equals the number of squares, in units of
+square cm. Although this might seem less “pure” than computing
+areas using formulae like A = ⇡r2 for a circle or A = wh/2 for a
+triangle, those formulae are not useful as definitions of area because
+they cannot be applied to irregularly shaped areas.
+Unitsofsquarecmaremorecommonlywrittenascm2 inscience.
+Of course, the unit of measurement symbolized by “cm” is not an
+41
+
+algebrasymbolstandingforanumberthatcanbeliterallymultiplied
+by itself. But it is advantageous to write the units of area that way
+and treat the units as if they were algebra symbols. For instance,
+if you have a rectangle with an area of 6m2 and a width of 2 m,
+then calculating its length as (6 m2)/(2 m) = 3 m gives a result
+that makes sense both numerically and in terms of units. This
+algebra-style treatment of the units also ensures that our methods
+of converting units work out correctly. For instance, if we accept
+the fraction
+100 cm
+1 m
+as a valid way of writing the number one, then one times one equals
+one, so we should also say that one can be represented by
+100 cm 100 cm
+,
+1 m ⇥ 1 m
+which is the same as
+10000 cm2
+.
+1 m2
+That means the conversion factor from square meters to square cen-
+timeters is a factor of 104, i.e., a square meter has 104 square cen-
+timeters in it.
+All of the above can be easily applied to volume as well, using
+one-cubic-centimeter blocks instead of squares on graph paper.
+To many people, it seems hard to believe that a square meter
+equals 10000 square centimeters, or that a cubic meter equals a
+million cubic centimeters — they think it would make more sense if
+there were 100 cm2 in 1m2, and 100 cm3 in 1m3, but that would be
+incorrect. The examples shown in figure b aim to make the correct
+answer more believable, using the traditional U.S. units of feet and
+yards. (One foot is 12 inches, and one yard is three feet.)
+b/Visualizing conversions of
+area and volume using traditional
+U.S.units.
+self-checkA
+Basedonfigureb,convinceyourselfthatthereare9ft2inasquareyard,
+and27ft3inacubicyard,thendemonstratethesamethingsymbolically
+(i.e.,withthemethodusingfractionsthatequalone). .Answer,p.
+550
+42 Chapter 1 Scaling and estimation
+
+.Solvedproblem: convertingmm2 tocm2 page59,problem10
+.Solvedproblem: scalingaliter page60,problem19
+Discussion question
+A Howmanysquarecentimetersarethereinasquareinch? (1inch=
+2.54cm)Firstfindanapproximateanswerbymakingadrawing,thende-
+rivetheconversionfactormoreaccuratelyusingthesymbolicmethod.
+c/GalileoGalilei(1564-1642)wasaRenaissanceItalianwhobroughtthe
+scientific method to bear on physics, creating the modern version of the
+science. Coming from a noble but very poor family, Galileo had to drop
+outofmedicalschoolattheUniversityofPisawhenheranoutofmoney.
+Eventually becoming a lecturer in mathematics at the same school, he
+began a career as a notorious troublemaker by writing a burlesque ridi-
+culingtheuniversity’sregulations—hewasforcedtoresign,butfounda
+new teaching position at Padua. He invented the pendulum clock, inves-
+tigatedthemotionoffallingbodies,anddiscoveredthemoonsofJupiter.
+The thrust of his life’s work was to discredit Aristotle’s physics by con-
+fronting it with contradictory experiments, a program that paved the way
+for Newton’s discovery of the relationship between force and motion. In
+chapter3we’llcometothestoryofGalileo’sultimatefateatthehandsof
+theChurch.
+1.2 Scaling of area and volume
+Great fleas have lesser fleas
+Upon their backs to bite ’em.
+And lesser fleas have lesser still,
+And so ad infinitum.
+Jonathan Swift
+Now how do these conversions of area and volume relate to the
+questions I posed about sizes of living things? Well, imagine that
+you are shrunk like Alice in Wonderland to the size of an insect.
+One way of thinking about the change of scale is that what used
+to look like a centimeter now looks like perhaps a meter to you,
+becauseyou’resomuchsmaller. Ifareaandvolumescaledaccording
+to most people’s intuitive, incorrect expectations, with 1 m2 being
+the same as 100 cm2, then there would be no particular reason
+why nature should behave any di↵erently on your new, reduced
+scale. But nature does behave di↵erently now that you’re small.
+For instance, you will find that you can walk on water, and jump
+to many times your own height. The physicist Galileo Galilei had
+the basic insight that the scaling of area and volume determines
+how natural phenomena behave di↵erently on di↵erent scales. He
+first reasoned about mechanical structures, but later extended his
+insightstolivingthings,takingthethen-radicalpointofviewthatat
+thefundamentallevel, alivingorganismshouldfollowthesamelaws
+Section 1.2 Scaling of area and volume 43
+
+of nature as a machine. We will follow his lead by first discussing
+machines and then living things.
+Galileo on the behavior of nature on large and small scales
+One of the world’s most famous pieces of scientific writing is
+Galileo’s Dialogues Concerning the Two New Sciences. Galileo was
+anentertainingwriterwhowantedtoexplainthingsclearlytolaypeo-
+ple,andheliveneduphisworkbycastingitintheformofadialogue
+among three people. Salviati is really Galileo’s alter ego. Simplicio
+is the stupid character, and one of the reasons Galileo got in trouble
+with the Church was that there were rumors that Simplicio repre-
+sentedthePope. Sagredoistheearnestandintelligentstudent,with
+whom the reader is supposed to identify. (The following excerpts
+are from the 1914 translation by Crew and de Salvio.)
+SAGREDO: Yes,thatiswhatImean;andIreferespeciallyto
+his last assertion which I have always regarded as false...;
+namely, that in speaking of these and other similar machines
+one cannot argue from the small to the large, because many
+devices which succeed on a small scale do not work on a
+d/The small boat holds up large scale. Now, since mechanics has its foundations in ge-
+justfine. ometry, where mere size [ is unimportant], I do not see that
+thepropertiesofcircles,triangles,cylinders,conesandother
+solid figures will change with their size. If, therefore, a large
+machine be constructed in such a way that its parts bear to
+one another the same ratio as in a smaller one, and if the
+smaller is sufficiently strong for the purpose for which it is
+designed, I do not see why the larger should not be able to
+withstandanysevereanddestructiveteststowhichitmaybe
+e/A larger boat built with
+subjected.
+the same proportions as the
+small one will collapse under its Salviati contradicts Sagredo:
+ownweight.
+SALVIATI: ...Please observe, gentlemen, how facts which
+atfirstseemimprobablewill,evenonscantexplanation,drop
+thecloakwhichhashiddenthemandstandforthinnakedand
+simplebeauty. Whodoesnotknowthatahorsefallingfroma
+heightofthreeorfourcubitswillbreakhisbones,whileadog
+falling from the same height or a cat from a height of eight
+or ten cubits will suffer no injury? Equally harmless would be
+f/A boat this large needs to
+thefallofagrasshopperfromatowerorthefallofanantfrom
+have timbers that are thicker
+the distance of the moon.
+comparedtoitssize.
+ThepointGalileoismakinghereisthatsmallthingsaresturdier
+inproportiontotheirsize. Therearealotofobjectionsthatcouldbe
+raised, however. Afterall, whatdoesitreallymeanforsomethingto
+be “strong”, to be “strong in proportion to its size,” or to be strong
+“out of proportion to its size?” Galileo hasn’t given operational
+definitions of things like “strength,” i.e., definitions that spell out
+how to measure them numerically.
+44 Chapter 1 Scaling and estimation
+
+Also, a cat is shaped di↵erently from a horse — an enlarged
+photograph of a cat would not be mistaken for a horse, even if the
+photo-doctoring experts at the National Inquirer made it look like a
+person was riding on its back. A grasshopper is not even a mammal,
+and it has an exoskeleton instead of an internal skeleton. The whole
+argument would be a lot more convincing if we could do some iso-
+lation of variables, a scientific term that means to change only one
+thingatatime, isolatingitfromtheothervariablesthatmighthave
+an e↵ect. If size is the variable whose e↵ect we’re interested in see-
+ing, then we don’t really want to compare things that are di↵erent
+in size but also di↵erent in other ways.
+SALVIATI: ...we asked the reason why [shipbuilders] em-
+ployed stocks, scaffolding, and bracing of larger dimensions
+for launching a big vessel than they do for a small one; and
+[an old man] answered that they did this in order to avoid the
+dangeroftheshippartingunderitsownheavyweight,adan-
+ger to which small boats are not subject?
+After this entertaining but not scientifically rigorous beginning,
+Galileo starts to do something worthwhile by modern standards.
+He simplifies everything by considering the strength of a wooden
+g/Galileo discusses planks
+plank. The variables involved can then be narrowed down to the
+made of wood, but the concept
+type of wood, the width, the thickness, and the length. He also
+may be easier to imagine with
+gives an operational definition of what it means for the plank to clay. All three clay rods in the
+have a certain strength “in proportion to its size,” by introducing figure were originally the same
+the concept of a plank that is the longest one that would not snap shape. The medium-sized one
+under its own weight if supported at one end. If you increased was twice the height, twice the
+length, and twice the width of
+its length by the slightest amount, without increasing its width or
+the small one, and similarly the
+thickness, it would break. He says that if one plank is the same
+large one was twice as big as
+shape as another but a di↵erent size, appearing like a reduced or
+the medium one in all its linear
+enlarged photograph of the other, then the planks would be strong
+dimensions. The big one has
+“inproportiontotheirsizes”ifbothwerejustbarelyabletosupport four times the linear dimensions
+their own weight. of the small one, 16 times the
+cross-sectional area when cut
+perpendicular to the page, and
+64timesthevolume. Thatmeans
+that the big one has 64 times the
+weight to support, but only 16
+times the strength compared to
+thesmallestone.
+h/1. This plank is as long as it
+can be without collapsing under
+its own weight. If it was a hun-
+dredth of an inch longer, it would
+collapse. 2. This plank is made
+outofthesamekindofwood. Itis
+twice as thick, twice as long, and
+twice as wide. It will collapse un-
+deritsownweight.
+Section 1.2 Scaling of area and volume 45

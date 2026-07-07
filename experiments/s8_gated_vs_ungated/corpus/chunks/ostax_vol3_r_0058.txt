@@ -1,0 +1,280 @@
+# REAL PDF — openstax_vol3.pdf, pages 344-351
+############################################################
+
+336 Chapter 7 | Quantum Mechanics
+squareoftheamplitudeofthetransmittedwave.Thetransmissionprobabilityortunnelingprobabilityistheratioofthe
+transmitted intensity (|F| 2) to the incident intensity (|A| 2), written as
+T(L, E)= |ψ tra (x)|2 = |F| 2 =|F| 2 (7.71)
+|ψ (x)|2 |A| 2 A
+in
+whereListhewidthofthebarrierandEisthetotalenergyoftheparticle.Thisistheprobabilityanindividualparticlein
+theincidentbeamwilltunnelthroughthepotentialbarrier.Intuitively,weunderstandthatthisprobabilitymustdependon
+the barrier height U .
+0
+In region II, the terms in equationEquation 7.62can be rearranged to
+d2ψ (x) (7.72)
+II = β2ψ (x)
+dx2 II
+where β2 is positive because U >E and the parameter β is a real number,
+0
+β2= 2m (U −E). (7.73)
+ℏ2 0
+ThegeneralsolutiontoEquation 7.72isnotoscillatory (unlikeintheotherregions)andisintheformofexponentials
+that describe a gradual attenuation of ψ (x),
+II
+−βx +βx (7.74)
+ψ (x)=Ce +De .
+II
+The two types of solutions in the three regions are illustrated inFigure 7.17.
+Figure 7.17 Three types of solutions to the stationary
+Schrӧdinger equation for the quantum-tunneling problem:
+Oscillatory behavior in regions I and III where a quantum particle
+moves freely, and exponential-decay behavior in region II (the
+barrier region) where the particle moves in the potential U .
+0
+Nowweusetheboundaryconditionstofindequationsfortheunknownconstants.Equation7.68andEquation7.74are
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 337
+substituted intoEquation 7.64to give
+A+B=C+D. (7.75)
+Equation 7.74andEquation 7.69are substituted intoEquation 7.65to give
+Ce
+−βL
++De
++βL =Fe+ikL
+.
+(7.76)
+Similarly, we substituteEquation 7.68andEquation 7.74intoEquation 7.66, differentiate, and obtain
+−ik(A−B)= β(D−C). (7.77)
+Similarly, the boundary conditionEquation 7.67reads explicitly
+β
+⎛
+De
++βL
+−Ce
+−βL⎞ =−ikFe+ikL
+.
+(7.78)
+⎝ ⎠
+We now have four equations for five unknown constants. However, because the quantity we are after is the transmission
+coefficient,definedinEquation7.71bythefractionF/A,thenumberofequationsisexactlyrightbecausewhenwedivide
+eachoftheaboveequationsbyA,weenduphavingonlyfourunknownfractions:B/A,C/A,D/A,andF/A,threeofwhich
+canbeeliminatedtofindF/A.TheactualalgebrathatleadstoexpressionforF/Aisprettylengthy,butitcanbedoneeither
+by hand or with a help of computer software. The end result is
+F e−ikL (7.79)
+= .
+A cosh(βL)+i(γ/2)sinh(βL)
+In derivingEquation 7.79, to avoid the clutter, we use the substitutions γ ≡ β/k−k/β,
+coshy=
+ey +e −y
+, andsinhy=
+ey −e −y
+.
+2 2
+WesubstituteEquation7.79intoEquation7.71andobtaintheexactexpressionforthetransmissioncoefficientforthe
+barrier,
+⎛F⎞ F e+ikL e−ikL
+T(L, E)= * = ·
+⎝A⎠ A cosh(βL)−i(γ/2)sinh(βL) cosh(βL)+i(γ/2)sinh(βL)
+or
+T(L, E)= 1 (7.80)
+cosh2(βL)+(γ/2)2sinh2(βL)
+where
+⎛γ⎞ 2
+= 1
+⎛1−E/U
+0+
+E/U
+0 −2
+⎞
+.
+⎝2⎠ 4⎝ E/U 1−E/U ⎠
+0 0
+For a wide and high barrier that transmits poorly,Equation 7.80can be approximated by
+E ⎛ E ⎞ −2βL (7.81)
+T(L, E)=16 1− e .
+U ⎝ U ⎠
+0 0
+WhetheritistheexactexpressionEquation7.80ortheapproximateexpressionEquation7.81,weseethatthetunneling
+effectverystronglydependsonthewidthLofthepotentialbarrier.Inthelaboratory,wecanadjustboththepotentialheight
+U and the widthLto design nano-devices with desirable transmission coefficients.
+0
+
+338 Chapter 7 | Quantum Mechanics
+Example 7.12
+Transmission Coefficient
+Two copper nanowires are insulated by a copper oxide nano-layer that provides a 10.0-eV potential barrier.
+Estimate the tunneling probability between the nanowires by 7.00-eV electrons through a 5.00-nm thick oxide
+layer. What if the thickness of the layer were reduced to just 1.00 nm? What if the energy of electrons were
+increased to 9.00 eV?
+Strategy
+Treating the insulating oxide layer as a finite-height potential barrier, we use Equation 7.81. We identify
+U =10.0eV, E =7.00eV, E =9.00eV, L =5.00nm,and L =1.00nm.WeuseEquation 7.73
+0 1 2 1 2
+to compute the exponent. Also, we need the rest mass of the electron m=511keV/c2 and Planck’s constant
+ℏ=0.1973keV·nm/c.Itistypicalforthistypeofestimatetodealwithverysmallquantitiesthatareoftennot
+suitable for handheld calculators. To make correct estimates of orders, we make the conversion ey =10 y/ln10.
+Solution
+Constants:
+2m
+2(511keV/c2)
+1
+= =26, 254 ,
+ℏ2 (0.1973keV·nm/c)2 keV·(nm)2
+β= 2m (U −E)= 26, 254 (10.0eV−E) = 26.254(10.0eV−E)/eV 1 .
+ℏ2 0 keV·(nm)2 nm
+For a lower-energy electron with E =7.00eV:
+1
+β = 26.254(10.00eV−E )/eV 1 = 26.254(10.00−7.00) 1 = 8.875 ,
+1 1 nm nm nm
+T(L, E )=16 E 1 ⎛ 1− E 1 ⎞ e −2β 1 L =16 7 ⎛ 1− 7 ⎞ e−17.75L/nm =3.36e−17.75L/nm .
+1 U ⎝ U ⎠ 10⎝ 10⎠
+0 0
+For a higher-energy electron with E =9.00eV:
+2
+β = 26.254(10.00eV−E )/eV 1 = 26.254(10.00−9.00) 1 = 5.124 ,
+2 2 nm nm nm
+T(L, E )=16 E 2 ⎛ 1− E 2 ⎞ e −2β 2 L =16 9 ⎛ 1− 9 ⎞ e−5.12L/nm =1.44e−5.12L/nm .
+2 U ⎝ U ⎠ 10⎝ 10⎠
+0 0
+For a broad barrier with L =5.00nm:
+1
+T(L , E )=3.36e −17.75L 1/nm =3.36e−17.75·5.00nm/nm =3.36e−88 =3.36(6.2×10 −39 )=2.1%×10 −36 ,
+1 1
+T(L , E )=1.44e −5.12L 1/nm =1.44e−5.12·5.00nm/nm =1.44e−25.6 =1.44(7.62×10−12)=1.1%×10 −9 .
+1 2
+For a narrower barrier with L =1.00nm:
+2
+T(L , E )=3.36e −17.75L 2/nm =3.36e−17.75·1.00nm/nm =3.36e−17.75 =3.36(5.1×10 −7 )=1.7%×10−4,
+2 1
+T(L , E )=1.44e −5.12L 2/nm =1.44e−5.12·1.00nm/nm =1.44e−5.12 =1.44(5.98×10 −3 )=0.86%.
+2 2
+Significance
+Weseefromtheseestimatesthattheprobabilityoftunnelingisaffectedmorebythewidthofthepotentialbarrier
+thanbytheenergyofanincidentparticle.Intoday’stechnologies,wecanmanipulateindividualatomsonmetal
+surfacestocreatepotentialbarriersthatarefractionsofananometer,givingrisetomeasurabletunnelingcurrents.
+Oneofmanyapplicationsofthistechnologyisthescanningtunnelingmicroscope(STM),whichwediscusslater
+in this section.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 339
+7.10 Check Your Understanding A proton with kinetic energy 1.00 eV is incident on a square potential
+barrier with height 10.00 eV. If the proton is to have the same transmission probability as an electron of the
+same energy, what must the width of the barrier be relative to the barrier width encountered by an electron?
+Radioactive Decay
+In 1928, Gamow identified quantum tunneling as the mechanism responsible for the radioactive decay of atomic nuclei.
+Heobservedthatsomeisotopesofthorium,uranium,andbismuthdisintegratebyemitting α-particles(whicharedoubly
+ionized helium atoms or, simply speaking, helium nuclei). In the process of emitting an α-particle, the original nucleus
+is transformed into a new nucleus that has two fewer neutrons and two fewer protons than the original nucleus. The α
+-particlesemittedbyoneisotopehaveapproximatelythesamekineticenergies.Whenwelookatvariationsoftheseenergies
+among isotopes of various elements, the lowest kinetic energy is about 4 MeV and the highest is about 9 MeV, so these
+energies are of the same order of magnitude. This is about where the similarities between various isotopes end.
+When we inspect half-lives (a half-life is the time in which a radioactive sample loses half of its nuclei due to decay),
+different isotopes differ widely.Forexample, the half-life ofpolonium-214 is 160µs and the half-life ofuranium is 4.5
+billionyears.Gamowexplainedthisvariationbyconsideringa‘spherical-box’modelofthenucleus,where α-particlescan
+bouncebackandforthbetweenthewallsasfreeparticles.Theconfinementisprovidedbyastrongnuclearpotentialata
+spherical wall ofthe box.The thickness ofthis wall, however,is not infinite but finite, soin principle, a nuclear particle
+hasachancetoescapethisnuclearconfinement.Ontheinsidewalloftheconfiningbarrierisahighnuclearpotentialthat
+keeps the α-particle in a small confinement. But when an α-particle gets out to the other side of this wall, it is subject
+toelectrostaticCoulombrepulsionandmovesawayfromthenucleus.ThisideaisillustratedinFigure7.18.ThewidthL
+ofthepotentialbarrierthatseparatesan α-particlefromtheoutsideworlddependsontheparticle’skineticenergyE.This
+widthisthedistancebetweenthepointmarkedbythenuclearradiusRandthepoint R wherean α-particleemergeson
+0
+theothersideofthebarrier, L=R −R.Atthedistance R ,itskineticenergymustatleastmatchtheelectrostaticenergy
+0 0
+ofrepulsion, E=(4πε )−1Ze2/R (where +Ze isthechargeofthenucleus).Inthiswaywecanestimatethewidthof
+0 0
+the nuclear barrier,
+e2 Z
+L= −R.
+4πε E
+0
+Weseefromthisestimatethatthehighertheenergyof α-particle,thenarrowerthewidthofthebarrierthatitistotunnel
+through.Wealsoknowthatthewidthofthepotentialbarrieristhemostimportantparameterintunnelingprobability.Thus,
+highly energetic α-particles have a good chance to escape the nucleus, and, for such nuclei, the nuclear disintegration
+half-life is short. Notice that this process is highly nonlinear, meaning a small increase in the α-particle energy has a
+disproportionately largeenhancingeffectonthetunnelingprobabilityand,consequently,onshorteningthehalf-life.This
+explainswhythehalf-lifeofpoloniumthatemits8-MeV α-particlesisonlyhundredsofmillisecondsandthehalf-lifeof
+uranium that emits 4-MeV α-particles is billions of years.
+
+340 Chapter 7 | Quantum Mechanics
+Figure 7.18 The potential energy barrier for an α-particle
+bound in the nucleus: To escape from the nucleus, an α-particle
+with energyEmust tunnel across the barrier from distanceRto
+distance R away from the center.
+0
+Field Emission
+Field emission is a process of emitting electrons from conducting surfaces due to a strong external electric field that is
+applied in the direction normal to the surface (Figure 7.19). As we know from our study of electric fields in earlier
+chapters,anappliedexternalelectricfieldcausestheelectronsinaconductortomovetoitssurfaceandstaythereaslong
+as the present external field is not excessively strong. In this situation, we have a constant electric potential throughout
+the inside of the conductor, including its surface. In the language of potential energy, we say that an electron inside
+the conductor has a constant potential energy U(x)=−U (here, the x means inside the conductor). In the situation
+0
+represented in Figure 7.19, where the external electric field is uniform and has magnitude E , if an electron happens
+g
+to be outside the conductor at a distance x away from its surface, its potential energy would have to be U(x)=−eE
+g
+x
+(here, x denotes distance to the surface). Taking the origin at the surface, so that x=0 is the location of the surface,
+wecanrepresentthepotential energyofconductionelectrons inametal asthepotential energybarriershowninFigure
+7.20.Intheabsenceoftheexternalfield,thepotentialenergybecomesastepbarrierdefinedby U(x≤0)=−U andby
+0
+U(x>0)=0.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 7 | Quantum Mechanics 341
+Figure 7.19 A normal-direction external electric field at the
+surface of a conductor: In a strong field, the electrons on a
+conducting surface may get detached from it and accelerate
+against the external electric field away from the surface.
+Figure 7.20 The potential energy barrier at the surface of a metallic conductor in the
+presence of an external uniform electric field E normal to the surface: It becomes a
+g
+step-function barrier when the external field is removed. The work function of the metal
+is indicated by ϕ.
+Whenanexternalelectricfieldisstrong,conductionelectronsatthesurfacemaygetdetachedfromitandacceleratealong
+electricfieldlinesinadirectionantiparalleltotheexternalfield,awayfromthesurface.Inshort,conductionelectronsmay
+escapefromthesurface.Thefieldemissioncanbeunderstoodasthequantumtunnelingofconductionelectronsthrough
+thepotentialbarrierattheconductor’ssurface.Thephysicalprincipleatworkhereisverysimilartothemechanismof α
+-emission from a radioactive nucleus.
+
+342 Chapter 7 | Quantum Mechanics
+Suppose a conduction electron has a kinetic energy E (the average kinetic energy of an electron in a metal is the work
+function ϕ forthemetalandcanbemeasured,asdiscussedforthephotoelectriceffectinPhotonsandMatterWaves),
+andanexternal electric field canbelocally approximated byauniformelectric field ofstrength E .ThewidthLofthe
+g
+potential barrier that the electron must cross is the distance from the conductor’s surface to the point outside the surface
+where its kinetic energy matches the value of its potential energy in the external field. In Figure 7.20, this distance is
+measured along the dashed horizontal line U(x)=E from x=0 to the intercept with U(x)=−eE
+g
+x, so the barrier
+width is
+e−1E e−1ϕ
+L= = .
+E E
+g g
+WeseethatLisinverselyproportionaltothestrength E ofanexternalfield.Whenweincreasethestrengthoftheexternal
+g
+field,thepotentialbarrieroutsidetheconductorbecomessteeperanditswidthdecreasesforanelectronwithagivenkinetic
+energy. In turn, the probability that an electron will tunnel across the barrier (conductor surface) becomes exponentially
+larger. The electrons that emerge on the other side of this barrier form a current (tunneling-electron current) that can
+be detected above the surface. The tunneling-electron current is proportional to the tunneling probability. The tunneling
+probabilitydependsnonlinearlyonthebarrierwidthL,andLcanbechangedbyadjusting E .Therefore,thetunneling-
+g
+electron current can be tuned by adjusting the strength of an external electric field at the surface. When the strength of
+anexternalelectricfieldisconstant,thetunneling-electroncurrenthasdifferentvaluesatdifferentelevationsLabovethe
+surface.
+Thequantumtunnelingphenomenonatmetallicsurfaces,whichwehavejustdescribed,isthephysicalprinciplebehindthe
+operationofthescanningtunnelingmicroscope(STM),inventedin1981byGerdBinnigandHeinrichRohrer.TheSTM
+deviceconsistsofascanningtip(aneedle,usuallymadeoftungsten,platinum-iridium,orgold);apiezoelectricdevicethat
+controlsthetip’selevationinatypicalrangeof0.4to0.7nmabovethesurfacetobescanned;somedevicethatcontrolsthe
+motionofthetipalongthesurface;andacomputertodisplayimages.Whilethesampleiskeptatasuitablevoltagebias,
+thescanningtipmovesalongthesurface(Figure7.21),andthetunneling-electroncurrentbetweenthetipandthesurface
+isregisteredateachposition.Theamountofthecurrentdependsontheprobabilityofelectrontunnelingfromthesurfaceto
+thetip,which,inturn,dependsontheelevationofthetipabovethesurface.Hence,ateachtipposition,thedistancefrom
+thetiptothesurfaceismeasuredbymeasuringhowmanyelectronstunneloutfromthesurfacetothetip.Thismethodcan
+giveanunprecedentedresolutionofabout0.001nm,whichisabout1%oftheaveragediameterofanatom.Inthisway,we
+can see individual atoms on the surface, as in the image of a carbon nanotube inFigure 7.22.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

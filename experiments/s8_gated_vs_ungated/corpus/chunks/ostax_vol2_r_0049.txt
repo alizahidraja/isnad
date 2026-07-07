@@ -1,0 +1,364 @@
+# REAL PDF — openstax_vol2.pdf, pages 295-303
+############################################################
+
+Chapter 7 | Electric Potential 285
+7 | ELECTRIC POTENTIAL
+Figure 7.1 The energy released in a lightning strike is an excellent illustration of the vast quantities of energy that may be
+stored and released by an electric potential difference. In this chapter, we calculate just how much energy can be released in a
+lightning strike and how this varies with the height of the clouds from the ground. (credit: modification of work by Anthony
+Quintano)
+Chapter Outline
+7.1Electric Potential Energy
+7.2Electric Potential and Potential Difference
+7.3Calculations of Electric Potential
+7.4Determining Field from Potential
+7.5Equipotential Surfaces and Conductors
+7.6Applications of Electrostatics
+Introduction
+InElectricChargesandFields,wejustscratchedthesurface(oratleastrubbedit)ofelectricalphenomena.Twoterms
+commonlyusedtodescribeelectricity areitsenergyandvoltage,whichweshowinthischapterisdirectlyrelatedtothe
+potential energy in a system.
+Weknow,forexample,thatgreatamountsofelectricalenergycanbestoredinbatteries,aretransmittedcross-countryvia
+currentsthroughpowerlines,andmayjumpfromcloudstoexplodethesapoftrees.Inasimilarmanner,atthemolecular
+level, ions cross cell membranes and transfer information.
+We also know about voltages associated with electricity. Batteries are typically a few volts, the outlets in your home
+frequently produce 120 volts, and power lines can be as high as hundreds of thousands of volts. But energy and voltage
+arenotthesamething.Amotorcyclebattery,forexample,issmallandwouldnotbeverysuccessfulinreplacingamuch
+largercarbattery,yeteachhasthesamevoltage.Inthischapter,weexaminetherelationshipbetweenvoltageandelectrical
+energy, and begin to explore some of the many applications of electricity.
+
+286 Chapter 7 | Electric Potential
+7.1 | Electric Potential Energy
+Learning Objectives
+By the end of this section, you will be able to:
+• Define the work done by an electric force
+• Define electric potential energy
+• Apply work and potential energy in systems with electric charges
+When a free positive charge q is accelerated by an electric field, it is given kinetic energy (Figure 7.2). The process is
+analogoustoanobjectbeingacceleratedbyagravitationalfield,asifthechargeweregoingdownanelectricalhillwhereits
+electricpotentialenergyisconvertedintokineticenergy,althoughofcoursethesourcesoftheforcesareverydifferent.Let
+usexploretheworkdoneonachargeqbytheelectricfieldinthisprocess,sothatwemaydevelopadefinitionofelectric
+potential energy.
+Figure 7.2 A charge accelerated by an electric field is
+analogous to a mass going down a hill. In both cases, potential
+energy decreases as kinetic energy increases, – ΔU = ΔK.
+Work is done by a force, but since this force is conservative, we
+can write W = –ΔU.
+TheelectrostaticorCoulombforceisconservative,whichmeansthattheworkdoneonqisindependentofthepathtaken,as
+wewilldemonstratelater.Thisisexactlyanalogoustothegravitationalforce.Whenaforceisconservative,itispossibleto
+defineapotentialenergyassociatedwiththeforce.Itisusuallyeasiertoworkwiththepotentialenergy(becauseitdepends
+only on position) than to calculate the work directly.
+Toshowthisexplicitly,consideranelectriccharge +q fixedattheoriginandmoveanothercharge +Q towardqinsuch
+→ →
+a manner that, at each instant, the applied force F exactly balances the electric force F e on Q (Figure 7.3). The
+→
+workdonebytheappliedforce F onthechargeQchangesthepotentialenergyofQ.Wecallthispotentialenergythe
+electrical potential energyofQ.
+Figure 7.3 Displacement of “test” chargeQin the presence of
+fixed “source” chargeq.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 287
+→
+The work W done by the applied force F when the particle moves from P to P may be calculated by
+12 1 2
+P
+2→ →
+W =∫ F ·d l .
+12
+P
+1
+→ →
+Since the applied force F balances the electric force F e on Q, the two forces have equal magnitude and opposite
+directions. Therefore, the applied force is
+→ → kqQ^
+F =−Fe = − r,
+r2
+wherewehavedefinedpositivetobepointingawayfromtheoriginandristhedistancefromtheorigin.Thedirectionsof
+boththedisplacementandtheappliedforceinthesysteminFigure7.3areparallel,andthustheworkdoneonthesystem
+is positive.
+WeusetheletterUtodenoteelectricpotentialenergy,whichhasunitsofjoules(J).Whenaconservativeforcedoesnegative
+work,thesystemgainspotentialenergy.Whenaconservativeforcedoespositivework,thesystemlosespotentialenergy,
+ΔU =−W. InthesysteminFigure7.3,theCoulombforceactsintheoppositedirectiontothedisplacement;therefore,
+the work is negative. However, we have increased the potential energy in the two-charge system.
+Example 7.1
+Kinetic Energy of a Charged Particle
+A +3.0-nC chargeQisinitiallyatrestadistanceof10cm(r )froma +5.0-nC chargeqfixedattheorigin
+1
+(Figure 7.4). Naturally, the Coulomb force acceleratesQaway fromq, eventually reaching 15 cm (r ).
+2
+Figure 7.4 The chargeQis repelled byq, thus having work
+done on it and gaining kinetic energy.
+a. What is the work done by the electric field between r and r ?
+1 2
+b. How much kinetic energy doesQhave at r ?
+2
+Strategy
+Calculate the work with the usual definition. SinceQstarted from rest, this is the same as the kinetic energy.
+Solution
+Integrating force over distance, we obtain
+r
+W 12 =∫ r r 1 2→ F ·d → r = ⌠ ⌡ 2 k r q 2 Q dr = ⎡ ⎣ − kq r Q⎤ ⎦r r 1 2 =kqQ ⎡ ⎣ − r 2 1 +r 1 1 ⎤ ⎦
+r
+1
+=
+⎛
+8.99×10
+9 Nm2/C2⎞⎛
+5.0×10
+−9
+C
+⎞⎛
+3.0×10
+−9
+C
+⎞⎡ −1
++
+1 ⎤
+⎝ ⎠⎝ ⎠⎝ ⎠⎣0.15m 0.10m⎦
+−7
+=4.5×10 J.
+This is also the value of the kinetic energy at r .
+2
+Significance
+ChargeQwasinitiallyatrest;theelectricfieldofqdidworkonQ,sonowQhaskineticenergyequaltothework
+done by the electric field.
+
+288 Chapter 7 | Electric Potential
+7.1 Check Your UnderstandingIfQhas a mass of 4.00µg, what is the speed ofQat r ?
+2
+In this example, the work W done to accelerate a positive charge from rest is positive and results from a loss in U, or a
+negative ΔU.AvalueforUcanbefoundatanypointbytakingonepointasareferenceandcalculatingtheworkneeded
+to move a charge to the other point.
+Electric Potential Energy
+Work W done to accelerate a positive charge from rest is positive and results from a loss in U, or a negative ΔU.
+Mathematically,
+W =−ΔU. (7.1)
+Gravitationalpotentialenergyandelectricpotentialenergyarequiteanalogous.Potentialenergyaccountsforworkdoneby
+aconservativeforceandgivesaddedinsightregardingenergyandenergytransformationwithoutthenecessityofdealing
+withtheforcedirectly.Itismuchmorecommon,forexample,tousetheconceptofelectricpotentialenergythantodeal
+with the Coulomb force directly in real-world applications.
+InpolarcoordinateswithqattheoriginandQlocatedatr,thedisplacementelementvectoris d → l = ^ r dr andthusthe
+work becomes
+r
+2
+W 12 =−kqQ⌠ ⌡ r 1 2 ^ r · ^ rdr =kqQ r 1 2 −kqQ r 1 1 .
+r
+1
+Noticethatthisresultonlydependsontheendpointsandisotherwiseindependentofthepathtaken.Toexplorethisfurther,
+compare path P to P with path P P P P inFigure 7.5.
+1 2 1 3 4 2
+Figure 7.5 Two paths for displacement P to P . The work
+1 2
+on segments P P and P P are zero due to the electrical
+1 3 4 2
+force being perpendicular to the displacement along these paths.
+Therefore, work on paths P P and P P P P are equal.
+1 2 1 3 4 2
+Thesegments P P and P P arearcsofcirclescenteredatq.SincetheforceonQpointseithertowardorawayfrom
+1 3 4 2
+q,noworkisdonebyaforcebalancingtheelectricforce,becauseitisperpendiculartothedisplacementalongthesearcs.
+Therefore, the only work done is along segment P P , which is identical to P P .
+3 4 1 2
+Oneimplicationofthisworkcalculationisthatifweweretogoaroundthepath P P P P P , thenetworkwouldbe
+1 3 4 2 1
+zero(Figure7.6).Recallthatthisishowwedeterminewhetheraforceisconservativeornot.Hence,becausetheelectric
+→ →
+force is related to the electric field by F =q E , the electric field is itself conservative. That is,
+→ →
+∮ E ·d l =0.
+Note thatQis a constant.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 289
+Figure 7.6 A closed path in an electric field. The net work
+around this path is zero.
+Anotherimplicationisthatwemaydefineanelectricpotentialenergy.Recallthattheworkdonebyaconservativeforce
+isalsoexpressedasthedifferenceinthepotentialenergycorrespondingtothatforce.Therefore,thework W tobringa
+ref
+charge from a reference point to a point of interest may be written as
+r → →
+W =∫ F ·d l
+ref
+r
+ref
+and, byEquation 7.1, the difference in potential energy (U −U ) of the test chargeQbetween the two points is
+2 1
+r → →
+ΔU =−∫ F ·d l .
+r
+ref
+Therefore, we can write a general expression for the potential energy of two point charges (in spherical coordinates):
+r r
+ΔU =− ⌠ ⌡ k r q 2 Q dr =− ⎡ ⎣ − kq r Q⎤ ⎦r ref =kqQ ⎡ ⎣ 1 r −r 1 ref ⎤ ⎦ .
+r
+ref
+We may take the second term to be an arbitrary constant reference level, which serves as the zero reference:
+qQ
+U(r)=k r −U ref .
+A convenient choice of reference that relies on our common sense is that when the two charges are infinitely far apart,
+there is no interaction between them. (Recall the discussion of reference potential energy in Potential Energy and
+Conservation of Energy (http://cnx.org/content/m58311/latest/) .)Takingthepotentialenergyofthisstatetobe
+zeroremovestheterm U fromtheequation(justlikewhenwesaythegroundiszeropotentialenergyinagravitational
+ref
+potential energy problem), and the potential energy ofQwhen it is separated fromqby a distancerassumes the form
+qQ (7.2)
+U(r)=k r (zero reference atr =∞).
+ThisformulaissymmetricalwithrespecttoqandQ,soitisbestdescribedasthepotentialenergyofthetwo-chargesystem.
+Example 7.2
+Potential Energy of a Charged Particle
+A +3.0-nC chargeQisinitiallyatrestadistanceof10cm(r )froma +5.0-nC chargeqfixedattheorigin
+1
+(Figure 7.7). Naturally, the Coulomb force acceleratesQaway fromq, eventually reaching 15 cm (r ).
+2
+
+290 Chapter 7 | Electric Potential
+Figure 7.7 The chargeQis repelled byq, thus having work
+done on it and losing potential energy.
+What is the change in the potential energy of the two-charge system from r to r ?
+1 2
+Strategy
+r
+Calculatethepotentialenergywiththedefinitiongivenabove: ΔU =−∫
+2→
+F ·d → r . SinceQstartedfrom
+12
+r
+1
+rest, this is the same as the kinetic energy.
+Solution
+We have
+r
+ΔU 12 =−∫ r r 1 2→ F ·d → r =− ⌠ ⌡ 2 k r q 2 Q dr =− ⎡ ⎣ − kq r Q⎤ ⎦r r 1 2 =kqQ ⎡ ⎣r 1 2 −r 1 1 ⎤ ⎦
+r
+1
+=
+⎛
+8.99×10
+9 Nm2/C2⎞⎛
+5.0×10
+−9
+C
+⎞⎛
+3.0×10
+−9
+C
+⎞⎡ 1
+−
+1 ⎤
+⎝ ⎠⎝ ⎠⎝ ⎠⎣0.15m 0.10m⎦
+−7
+=−4.5×10 J.
+Significance
+Thechangeinthepotentialenergyisnegative,asexpected,andequalinmagnitudetothechangeinkineticenergy
+in this system. Recall fromExample 7.1that the change in kinetic energy was positive.
+7.2 CheckYourUnderstandingWhatisthepotentialenergyofQrelativetothezeroreferenceatinfinityat
+r in the above example?
+2
+Due to Coulomb’s law, the forces due to multiple charges on a test charge Q superimpose; they may be calculated
+individuallyandthenadded.Thisimpliesthattheworkintegralsandhencetheresultingpotentialenergiesexhibitthesame
+behavior. To demonstrate this, we consider an example of assembling a system of four charges.
+Example 7.3
+Assembling Four Positive Charges
+Find the amount of work an external agent must do in assembling four charges +2.0µC,
++3.0µC, +4.0µC, and +5.0µC attheverticesofasquareofside1.0cm,startingeachchargefrominfinity
+(Figure 7.8).
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 7 | Electric Potential 291
+Figure 7.8 How much work is needed to assemble this charge
+configuration?
+Strategy
+Webringinthechargesoneatatime,givingthemstartinglocationsatinfinityandcalculatingtheworktobring
+them in from infinity to their final location. We do this in order of increasing charge.
+Solution
+Step1.Firstbringthe +2.0-µC chargetotheorigin.Sincetherearenootherchargesatafinitedistancefrom
+this charge yet, no work is done in bringing it from infinity,
+W =0.
+1
+Step 2. While keeping the +2.0-µC charge fixed at the origin, bring the +3.0-µC charge to
+(x, y, z)=(1.0cm, 0, 0) (Figure 7.9).Now,theappliedforcemustdoworkagainsttheforceexertedbythe
++2.0-µC chargefixedattheorigin.Theworkdoneequalsthechangeinthepotentialenergyofthe +3.0-µC
+charge:
+⎛ −6 ⎞⎛ −6 ⎞
+W 2 =k q r 1 1 q 2 2 = ⎛ ⎝ 9.0×10 9N C ·m 2 2⎞ ⎠ ⎝ 2.0×10 1.0× C 1 ⎠⎝ 0 3 − .0 2 × m 10 C ⎠ =5.4J.
+Figure 7.9 Step 2. Work W to bring the +3.0-µC charge
+2
+from infinity.
+Step3.Whilekeepingthechargesof +2.0µC and +3.0µC fixedintheirplaces,bringinthe +4.0-µC charge
+to (x, y, z)=(1.0cm, 1.0cm, 0) (Figure 7.10). The work done in this step is
+q q q q
+W
+3
+=k
+r
+1 3+k
+r
+2 3
+13 23
+⎡⎛ −6 ⎞⎛ −6 ⎞ ⎛ −6 ⎞⎛ −6 ⎞⎤
+=
+⎛
+9.0×10
+9N·m2⎞
+⎢⎝
+2.0×10 C
+⎠⎝
+4.0×10 C
+⎠
++
+⎝
+3.0×10 C
+⎠⎝
+4.0×10 C
+⎠⎥=15.9J.
+⎝ C2 ⎠ ⎣ 2×10−2 m 1.0×10−2 m ⎦
+
+292 Chapter 7 | Electric Potential
+Figure 7.10 Step 3. The work W to bring the +4.0-µC
+3
+charge from infinity.
+Step 4. Finally, while keeping the first three charges in their places, bring the +5.0-µC charge to
+(x, y, z)=(0, 1.0cm, 0) (Figure 7.11). The work done here is
+⎡q q q ⎤
+W 4 =kq 4⎣r 1 +r 2 +r 3 ⎦ ,
+14 24 34
+⎡⎛ −6 ⎞ ⎛ −6 ⎞ ⎛ −6 ⎞⎤
+=
+⎛
+9.0×10
+9N·m2⎞
+⎛
+5.0×10
+−6
+C
+⎞⎢⎝
+2.0×10 C
+⎠
++
+⎝
+3.0×10 C
+⎠
++
+⎝
+4.0×10 C
+⎠⎥=36.5J.
+⎝ C2 ⎠⎝ ⎠ ⎣1.0×10−2 m 2×10−2 m 1.0×10−2 m⎦
+Figure 7.11 Step 4. The work W to bring the +5.0-µC
+4
+charge from infinity.
+Hence,thetotalworkdonebytheappliedforceinassemblingthefourchargesisequaltothesumoftheworkin
+bringing each charge from infinity to its final position:
+W =W +W +W +W =0+5.4J+15.9J+36.5J=57.8J.
+T 1 2 3 4
+Significance
+Theworkoneachchargedependsonlyonitspairwiseinteractionswiththeothercharges.Nomorecomplicated
+interactionsneedtobeconsidered;theworkonthethirdchargeonlydependsonitsinteractionwiththefirstand
+second charges, the interaction between the first and second charge does not affect the third.
+7.3 CheckYourUnderstandingIstheelectricalpotentialenergyoftwopointchargespositiveornegativeif
+the charges are of the same sign? Opposite signs? How does this relate to the work necessary to bring the
+charges into proximity from infinity?
+Notethattheelectricalpotentialenergyispositiveifthetwochargesareofthesametype,eitherpositiveornegative,and
+negativeifthetwochargesareofoppositetypes.Thismakessenseifyouthinkofthechangeinthepotentialenergy ΔU
+asyoubringthetwochargescloserormovethemfartherapart.Dependingontherelativetypesofcharges,youmayhave
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

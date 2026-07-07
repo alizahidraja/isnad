@@ -1,0 +1,262 @@
+# REAL PDF — openstax_vol2.pdf, pages 529-535
+############################################################
+
+Chapter 11 | Magnetic Forces and Fields 519
+particles) to large kinetic energies. These particles are then used for nuclear-collision experiments to produce radioactive
+isotopes. A cyclotron is illustrated in Figure 11.20. The particles move between two flat, semi-cylindrical metallic
+containersD1andD2,calleddees.Thedeesareenclosedinalargermetalcontainer,andtheapparatusisplacedbetween
+thepolesofanelectromagnetthatprovidesauniformmagneticfield.Airisremovedfromthelargecontainersothatthe
+particlesneitherloseenergynoraredeflectedbecauseofcollisionswithairmolecules.Thedeesareconnectedtoahigh-
+frequencyvoltagesourcethatprovidesanalternatingelectricfieldinthesmallregionbetweenthem.Becausethedeesare
+made of metal, their interiors are shielded from the electric field.
+Figure 11.20 The inside of a cyclotron. A uniform magnetic field is applied as
+circulating protons travel through the dees, gaining energy as they traverse through
+the gap between the dees.
+SupposeapositivelychargedparticleisinjectedintothegapbetweenthedeeswhenD2isatapositivepotentialrelative
+toD1.TheparticleisthenacceleratedacrossthegapandentersD1aftergainingkineticenergyqV,whereVistheaverage
+potentialdifferencetheparticleexperiencesbetweenthedees.WhentheparticleisinsideD1,onlytheuniformmagnetic
+→
+field B of the electromagnet acts on it, so the particle moves in a circle of radius
+r = mv (11.32)
+qB
+with a period of
+T =
+2πm
+.
+(11.33)
+qB
+TheperiodofthealternatingvoltagecourseissetatT,sowhiletheparticleisinsideD1,movingalongitssemicircularorbit
+inatimeT/2,thepolarityofthedeesisreversed.Whentheparticlereentersthegap,D1ispositivewithrespecttoD2,and
+theparticleisagainacceleratedacrossthegap,therebygainingakineticenergyqV.TheparticlethenentersD2,circulates
+inaslightlylargercircle,andemergesfromD2afterspendingatimeT/2inthisdee.Thisprocessrepeatsuntiltheorbitof
+theparticlereachestheboundaryofthedees.Atthatpoint,theparticle(actually,abeamofparticles)isextractedfromthe
+cyclotron and used for some experimental purpose.
+Theoperationofthecyclotrondependsonthefactthat,inauniformmagneticfield,aparticle’sorbitalperiodisindependent
+ofitsradiusanditskinetic energy.Consequently,theperiodofthealternating voltage sourceneedonlybesetattheone
+valuegivenbyEquation 11.33.Withthatsetting,theelectricfieldacceleratesparticleseverytimetheyarebetweenthe
+dees.
+If the maximum orbital radius in the cyclotron is R, then from Equation 11.32, the maximum speed of a circulating
+particle of massmand chargeqis
+qBR (11.34)
+v max= m .
+
+520 Chapter 11 | Magnetic Forces and Fields
+Thus, its kinetic energy when ejected from the cyclotron is
+q2B2R2 (11.35)
+1 2 mv max 2= 2m .
+Themaximumkineticenergyattainablewiththistypeofcyclotronisapproximately30MeV.Abovethisenergy,relativistic
+effects become important, which causes the orbital period to increase with the radius. Up to energies of several hundred
+MeV,therelativisticeffectscanbecompensatedforbymakingthemagneticfieldgraduallyincreasewiththeradiusofthe
+orbit. However, for higher energies, much more elaborate methods must be used to accelerate particles.
+Particles are accelerated to very high energies with either linear accelerators or synchrotrons. The linear accelerator
+accelerates particles continuously with the electric field of an electromagnetic wave that travels down a long evacuated
+tube. The Stanford Linear Accelerator (SLAC) is about 3.3 km long and accelerates electrons and positrons (positively
+chargedelectrons)toenergiesof50GeV.Thesynchrotronisconstructedsothatitsbendingmagneticfieldincreaseswith
+particle speed in such a way that the particles stay in an orbit of fixed radius. The world’s highest-energy synchrotron is
+located at CERN, which is on the Swiss-French border near Geneva. CERN has been of recent interest with the verified
+discoveryoftheHiggsBoson(seeParticle Physics and Cosmology (http://cnx.org/content/m58767/latest/) ).
+This synchrotron can accelerate beams of approximately 10 13 protons to energies of about 10 3 GeV.
+Example 11.10
+Accelerating Alpha-Particles in a Cyclotron
+Acyclotronusedtoacceleratealpha-particles(m=6.64×10 −27 kg, q=3.2×10 −19 C)hasaradiusof0.50
+m and a magnetic field of 1.8 T. (a) What is the period of revolution of the alpha-particles? (b) What is their
+maximum kinetic energy?
+Strategy
+a. The period of revolution is approximately the distance traveled in a circle divided by the speed.
+Identifying that the magnetic force applied is the centripetal force, we can derive the period formula.
+b. Thekineticenergycanbefoundfromthemaximumspeedofthebeam,correspondingtothemaximum
+radius within the cyclotron.
+Solution
+a. By identifying the mass, charge, and magnetic field in the problem, we can calculate the period:
+T = 2πm =
+2π⎛
+⎝ 6.64×10
+−27
+kg
+⎞
+⎠ =7.3×10 −8 s.
+qB ⎛ −19 ⎞
+3.2×10 C(1.8T)
+⎝ ⎠
+b. By identifying the charge, magnetic field, radius of path, and the mass, we can calculate the maximum
+kinetic energy:
+2
+1 2 mv max 2= q2 2 B m 2R2 = ⎛ ⎝ 3.2×1 2 0 ( − 6 1 .6 9 5 C × ⎞ ⎠ 1 (1 0 . − 8 2 T 7 ) k 2 g (0 ) .50m)2 =6.2×10−12J=39MeV.
+11.6 CheckYourUnderstandingAcyclotronistobedesignedtoaccelerateprotonstokineticenergiesof
+20 MeV using a magnetic field of 2.0 T. What is the required radius of the cyclotron?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 521
+CHAPTER 11 REVIEW
+KEY TERMS
+cosmic rays comprised of particles that originate mainly from outside the solar system and reach Earth
+cyclotron device used to accelerate charged particles to large kinetic energies
+dees largemetalcontainersusedincyclotronsthatservecontainastreamofchargedparticlesastheirspeedisincreased
+gauss G, unit of the magnetic field strength; 1G=10−4T
+Hall effect creation of voltage across a current-carrying conductor by a magnetic field
+helical motion superpositionofcircularmotionwithastraight-linemotionthatisfollowedbyachargedparticlemoving
+in a region of magnetic field at an angle to the field
+magnetic dipole closed-current loop
+magnetic dipole moment termIAof the magnetic dipole, also called µ
+magnetic field lines continuous curves that show the direction of a magnetic field; these lines point in the same
+direction as a compass points, toward the magnetic south pole of a bar magnet
+magnetic force force applied to a charged particle moving through a magnetic field
+mass spectrometer device that separates ions according to their charge-to-mass ratios
+motor (dc) loopofwireinamagneticfield;whencurrentispassedthroughtheloops,themagneticfieldexertstorqueon
+the loops, which rotates a shaft; electrical energy is converted into mechanical work in the process
+north magnetic pole currentlywhereacompasspointstonorth,nearthegeographicNorthPole;thisistheeffective
+southpoleofabarmagnetbuthasflippedbetweentheeffectivenorthandsouthpolesofabarmagnetmultipletimes
+over the age of Earth
+right-hand rule-1 usingyourrighthandtodetermine thedirection ofeitherthemagnetic force,velocity ofacharged
+particle, or magnetic field
+south magnetic pole currently where a compass points to the south, near the geographic South Pole; this is the
+effective north pole of a bar magnet but has flipped just like the north magnetic pole
+tesla SI unit for magnetic field: 1 T = 1 N/A-m
+velocity selector apparatus where the crossed electric and magnetic fields produce equal and opposite forces on a
+charged particle moving with a specific velocity; this particle moves through the velocity selector not affected by
+either field while particles moving with different velocities are deflected by the apparatus
+KEY EQUATIONS
+Force on a charge in a magnetic field → → →
+F =q v × B
+Magnitude of magnetic force F =qvBsinθ
+Radius of a particle’s path in a magnetic field r = mv
+qB
+Period of a particle’s motion in a magnetic field
+T =
+2πm
+qB
+Force on a current-carrying wire in a uniform magnetic field → → →
+F =I l × B
+Magnetic dipole moment → ^
+µ =NIAn
+Torque on a current loop →τ
+=
+→
+µ ×
+→
+B
+
+522 Chapter 11 | Magnetic Forces and Fields
+Energy of a magnetic dipole → →
+U =− µ · B
+Drift velocity in crossed electric and magnetic fields E
+v d=
+B
+Hall potential IBl
+V =
+neA
+Hall potential in terms of drift velocity V =Blv
+d
+Charge-to-mass ratio in a mass spectrometer q E
+m = BB R
+0
+Maximum speed of a particle in a cyclotron qBR
+v max= m
+SUMMARY
+11.1Magnetism and Its Historical Discoveries
+• Magnets have two types of magnetic poles, called the north magnetic pole and the south magnetic pole. North
+magnetic poles are those that are attracted toward Earth’s geographic North Pole.
+• Like poles repel and unlike poles attract.
+• DiscoveriesofhowmagnetsrespondtocurrentsbyOerstedandotherscreatedaframeworkthatledtotheinvention
+of modern electronic devices, electric motors, and magnetic imaging technology.
+11.2Magnetic Fields and Lines
+• Charges moving across a magnetic field experience a force determined by → F =q → v × → B . The force is
+perpendicular to the plane formed by → v and → B .
+• Thedirectionoftheforceonamovingchargeisgivenbytherighthandrule1(RHR-1):Sweepyourfingersina
+velocity,magneticfieldplane.Startbypointingtheminthedirectionofvelocityandsweeptowardsthemagnetic
+field. Your thumb points in the direction of the magnetic force for positive charges.
+• Magnetic fields can be pictorially represented by magnetic field lines, which have the following properties:
+1. The field is tangent to the magnetic field line.
+2. Field strength is proportional to the line density.
+3. Field lines cannot cross.
+4. Field lines form continuous, closed loops.
+• Magnetic poles always occur in pairs of north and south—it is not possible to isolate north and south poles.
+11.3Motion of a Charged Particle in a Magnetic Field
+• A magnetic force can supply centripetal force and cause a charged particle to move in a circular path of radius
+mv
+r = .
+qB
+• Theperiodofcircularmotionforachargedparticlemovinginamagneticfieldperpendiculartotheplaneofmotion
+is T =
+2πm
+.
+qB
+• Helicalmotionresultsifthevelocityofthechargedparticlehasacomponentparalleltothemagneticfieldaswell
+as a component perpendicular to the magnetic field.
+11.4Magnetic Force on a Current-Carrying Conductor
+• An electrical current produces a magnetic field around the wire.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 11 | Magnetic Forces and Fields 523
+• Thedirectionalityofthemagneticfieldproducedisdeterminedbytherighthandrule-2,whereyourthumbpoints
+in the direction of the current and your fingers wrap around the wire in the direction of the magnetic field.
+→ → →
+• Themagneticforceoncurrent-carryingconductorsisgivenby F =I l × B whereIisthecurrentandlis
+the length of a wire in a uniform magnetic fieldB.
+11.5Force and Torque on a Current Loop
+• The net force on a current-carrying loop of any plane shape in a uniform magnetic field is zero.
+• The net torque τ on a current-carrying loop of any shape in a uniform magnetic field is calculated using
+τ= → µ × → B where →µ is the magnetic dipole moment and → B is the magnetic field strength.
+• Themagneticdipolemoment µ istheproductofthenumberofturnsofwireN,thecurrentintheloopI,andthe
+area of the loopAor → µ =NIA ^ n.
+11.6The Hall Effect
+• Perpendicular electric and magnetic fields exert equal and opposite forces for a specific velocity of entering
+E
+particles,therebyactingasavelocityselector.Thevelocitythatpassesthroughundeflectediscalculatedby v= .
+B
+• TheHalleffectcanbeusedtomeasurethesignofthemajorityofchargecarriersformetals.Itcanalsobeusedto
+measure a magnetic field.
+11.7Applications of Magnetic Forces and Fields
+• Amassspectrometerisadevicethatseparatesionsaccordingtotheircharge-to-massratiosbyfirstsendingthem
+through a velocity selector, then a uniform magnetic field.
+• Cyclotronsareusedtoacceleratechargedparticlestolargekineticenergiesthroughappliedelectricandmagnetic
+fields.
+CONCEPTUAL QUESTIONS
+increasing the magnetic force on the charge? Does
+11.2Magnetic Fields and Lines changing the direction of the field necessarily mean a
+change in the force on the charge?
+1. Discuss the similarities and differences between the
+electrical force on a charge and the magnetic force on a
+charge. 5. An electron passes through a magnetic field without
+beingdeflected.Whatdoyouconcludeaboutthemagnetic
+field?
+2. (a) Is it possible for the magnetic force on a charge
+movinginamagneticfieldtobezero?(b)Isitpossiblefor
+theelectricforceonachargemovinginanelectricfieldto 6. If a charged particle moves in a straight line, can you
+be zero? (c) Is it possible for the resultant of the electric conclude that there is no magnetic field present?
+and magnetic forces on a charge moving simultaneously
+through both fields to be zero? 7. How could you determine which pole of an
+electromagnet is north and which pole is south?
+11.3Motion of a Charged Particle in a Magnetic
+11.4Magnetic Force on a Current-Carrying
+Field
+3. Atagiveninstant,anelectronandaprotonaremoving Conductor
+with the same velocity in a constant magnetic field. 8. Describe the error that results from accidently using
+Compare the magnetic forces on these particles. Compare yourleftratherthanyourrighthandwhendeterminingthe
+their accelerations. direction of a magnetic force.
+4. Does increasing the magnitude of a uniform magnetic 9. Considering the magnetic force law, are the velocity
+fieldthroughwhichachargeistravelingnecessarilymean
+
+524 Chapter 11 | Magnetic Forces and Fields
+andmagneticfieldalwaysperpendicular?Aretheforceand difficulty does this cause in the use of a compass?
+velocity always perpendicular? What about the force and
+magnetic field?
+11.6The Hall Effect
+10. Why can a nearby magnet distort a cathode ray tube
+13. Hall potentials are much larger for poor conductors
+television picture?
+than for good conductors. Why?
+11. A magnetic field exerts a force on the moving
+electrons ina current carrying wire. What exerts the force
+11.7Applications of Magnetic Forces and
+on a wire?
+Fields
+12. There are regions where the magnetic field of earth 14. Describetheprimaryfunctionoftheelectricfieldand
+is almost perpendicular to the surface of Earth. What the magnetic field in a cyclotron.
+PROBLEMS
+11.2Magnetic Fields and Lines
+15. What is the direction of the magnetic force on a
+positive charge that moves as shown in each of the six
+cases?
+16. Repeat previous exercise for a negative charge.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

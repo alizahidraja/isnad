@@ -1,0 +1,267 @@
+# REAL PDF — openstax_vol2.pdf, pages 546-554
+############################################################
+
+536 Chapter 12 | Sources of Magnetic Fields
+12.1 | The Biot-Savart Law
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how to derive a magnetic field from an arbitrary current in a line segment
+• Calculate magnetic field from the Biot-Savart law in specific geometries, such as a current in a
+line and a current in a circular arc
+Wehaveseenthatmassproducesagravitationalfieldandalsointeractswiththatfield.Chargeproducesanelectricfield
+andalsointeractswiththatfield.Sincemovingcharge(thatis,current)interactswithamagneticfield,wemightexpectthat
+it also creates that field—and it does.
+TheequationusedtocalculatethemagneticfieldproducedbyacurrentisknownastheBiot-Savartlaw.Itisanempirical
+law named in honor of two scientists who investigated the interaction between a straight, current-carrying wire and a
+permanentmagnet.Thislawenablesustocalculatethemagnitudeanddirectionofthemagneticfieldproducedbyacurrent
+→ →
+inawire.TheBiot-SavartlawstatesthatatanypointP(Figure12.2),themagneticfield d B duetoanelement d l
+of a current-carrying wire is given by
+d → B = µ 0 Id → l × ^ r . (12.1)
+4π r2
+→
+Figure 12.2 A current element Id l produces a magnetic field at
+pointPgiven by the Biot-Savart law.
+The constant µ is known as thepermeability of free spaceand is exactly
+0
+µ =4π×10 −7 T⋅m/A (12.2)
+0
+→
+intheSIsystem.Theinfinitesimalwiresegment d l isinthesamedirectionasthecurrentI(assumedpositive),risthe
+distance from d → l toPand ^ r is a unit vector that points from d → l toP, as shown in the figure.
+Thedirectionof d → B isdeterminedbyapplyingtheright-handruletothevectorproduct d → l × ^ r. Themagnitudeof
+→
+d B is
+dB= µ 0 Idlsinθ (12.3)
+4π r2
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 537
+where θ istheanglebetween d → l and ^ r. Noticethatif θ=0, then d → B = → 0 . Thefieldproducedbyacurrent
+→ →
+element Id l has no component parallel to d l .
+Themagneticfieldduetoafinitelengthofcurrent-carryingwireisfoundbyintegratingEquation 12.3alongthewire,
+giving us the usual form of the Biot-Savart law.
+Biot-Savart law
+→ →
+The magnetic field B due to an element d l of a current-carrying wire is given by
+→ B = µ 0 ⌠ Id → l × ^ r . (12.4)
+4π ⌡ r2
+wire
+Since this is a vector integral, contributions from different current elements may not point in the same direction.
+Consequently,theintegralisoftendifficulttoevaluate,evenforfairlysimplegeometries.Thefollowingstrategymaybe
+helpful.
+Problem-Solving Strategy: Solving Biot-Savart Problems
+To solve Biot-Savart law problems, the following steps are helpful:
+1. IdentifythattheBiot-Savartlawisthechosenmethodtosolvethegivenproblem.Ifthereissymmetryinthe
+→ →
+problem comparing B and d l , Ampère’s law may be the preferred method to solve the question.
+2. Drawthecurrentelementlength d → l andtheunitvector ^ r, notingthat d → l pointsinthedirectionof
+the current and ^ r points from the current element toward the point where the field is desired.
+3. Calculatethecrossproduct d → l × ^ r. Theresultantvectorgivesthedirectionofthemagneticfieldaccording
+to the Biot-Savart law.
+4. UseEquation12.4andsubstituteallgivenquantitiesintotheexpressiontosolveforthemagneticfield.Note
+all variables that remain constant over the entire length of the wire may be factored out of the integration.
+5. Usetheright-handruletoverifythedirectionofthemagneticfieldproducedfromthecurrentortowritedown
+the direction of the magnetic field if only the magnitude was solved for in the previous part.
+Example 12.1
+Calculating Magnetic Fields of Short Current Segments
+Ashortwireoflength1.0cmcarriesacurrentof2.0Aintheverticaldirection(Figure 12.3).Therestofthe
+wireisshieldedsoitdoesnotaddtothemagneticfieldproducedbythewire.Calculatethemagneticfieldatpoint
+P, which is 1 meter from the wire in thex-direction.
+
+538 Chapter 12 | Sources of Magnetic Fields
+Figure 12.3 A small line segment carries a currentIin the vertical direction.
+What is the magnetic field at a distancexfrom the segment?
+Strategy
+We can determine the magnetic field at point P using the Biot-Savart law. Since the current segment is much
+smallerthanthedistancex,wecandroptheintegralfromtheexpression.Theintegrationisconvertedbackinto
+a summation, but only for small dl, which we now write as Δl. Another way to think about it is that each of
+theradiusvaluesisnearlythesame,nomatterwherethecurrentelementisonthelinesegment,if Δl issmall
+comparedtox.Theangle θ iscalculatedusingatangentfunction.Usingthenumbersgiven,wecancalculatethe
+magnetic field atP.
+Solution
+The angle between Δ → l and ^ r is calculated from trigonometry, knowing the distances l and x from the
+problem:
+θ=tan−1⎛ 1m ⎞
+=89.4°.
+⎝0.01m⎠
+The magnetic field at pointPis calculated by the Biot-Savart law:
+B= µ 0 IΔlsinθ =(1×10 −7 T⋅m/A) ⎛ ⎜ 2A(0.01m)sin(89.4°) ⎞ ⎟=2.0×10 −9 T.
+4π r2 ⎝ (1m)2 ⎠
+From the right-hand rule and the Biot-Savart law, the field is directed into the page.
+Significance
+This approximation is only good if the length of the line segment is very small compared to the distance from
+thecurrentelementtothepoint.Ifnot,theintegralformoftheBiot-Savartlawmustbeusedovertheentireline
+segment to calculate the magnetic field.
+12.1 CheckYourUnderstandingUsingExample12.1,atwhatdistancewouldPhavetobetomeasurea
+magnetic field half of the given answer?
+Example 12.2
+Calculating Magnetic Field of a Circular Arc of Wire
+A wire carries a current I in a circular arc with radius R swept through an arbitrary angle θ (Figure 12.4).
+Calculate the magnetic field at the center of this arc at pointP.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 539
+Figure 12.4 A wire segment carrying a currentI. The path
+→ ^
+d l and radial direction r are indicated.
+Strategy
+WecandeterminethemagneticfieldatpointPusingtheBiot-Savartlaw.Theradialandpathlengthdirections
+arealwaysatarightangle,sothecrossproductturnsintomultiplication.Wealsoknowthatthedistancealongthe
+pathdlisrelatedtotheradiustimestheangle θ (inradians).Thenwecanpullallconstantsoutoftheintegration
+and solve for the magnetic field.
+Solution
+The Biot-Savart law starts with the following equation:
+→ B = µ 0 ⌠ Id → l × ^ r .
+4π ⌡ r2
+wire
+As we integrate along the arc, all the contributions to the magnetic field are in the same direction (out of the
+page),sowecanworkwiththemagnitude ofthefield. Thecrossproductturnsintomultiplication because the
+pathdland the radial direction are perpendicular. We can also substitute the arc length formula, dl=rdθ:
+B= µ 0 ⌠ Irdθ .
+4π ⌡ r2
+wire
+Thecurrentandradiuscanbepulledoutoftheintegralbecausetheyarethesameregardlessofwhereweareon
+the path. This leaves only the integral over the angle,
+µ I
+B= 0 ∫ dθ.
+4πr
+wire
+The angle varies on the wire from 0 to θ; hence, the result is
+µ Iθ
+B= 0 .
+4πr
+Significance
+The direction of the magnetic field at point P is determined by the right-hand rule, as shown in the previous
+chapter. If there are other wires in the diagram along with the arc, and you are asked to find the net magnetic
+field,findeachcontributionfromawireorarcandaddtheresultsbysuperpositionofvectors.Makesuretopay
+attentiontothedirectionofeachcontribution.Alsonotethatinasymmetricsituation,likeastraightorcircular
+wire, contributions from opposite sides of pointPcancel each other.
+12.2 Check Your Understanding The wire loop forms a full circle of radius R and current I. What is the
+magnitude of the magnetic field at the center?
+
+540 Chapter 12 | Sources of Magnetic Fields
+12.2 | Magnetic Field Due to a Thin Straight Wire
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how the Biot-Savart law is used to determine the magnetic field due to a thin, straight
+wire.
+• Determine the dependence of the magnetic field from a thin, straight wire based on the
+distance from it and the current flowing in the wire.
+• Sketch the magnetic field created from a thin, straight wire by using the second right-hand rule.
+How much current is needed to produce a significant magnetic field, perhaps as strong as Earth’s field? Surveyors will
+tellyouthatoverheadelectricpowerlinescreatemagneticfieldsthatinterferewiththeircompassreadings.Indeed,when
+Oersted discovered in 1820 that a current in a wire affected a compass needle, he was not dealing with extremely large
+currents.Howdoestheshapeofwirescarryingcurrentaffecttheshapeofthemagneticfieldcreated?WenotedinChapter
+28thatacurrentloopcreatedamagneticfieldsimilartothatofabarmagnet,butwhataboutastraightwire?Wecanuse
+the Biot-Savart law to answer all of these questions, including determining the magnetic field of a long straight wire.
+Figure12.5showsasectionofaninfinitelylong,straightwirethatcarriesacurrentI.Whatisthemagneticfieldatapoint
+P, located a distanceRfrom the wire?
+Figure 12.5 A section of a thin, straight current-carrying wire. The independent variable θ has the limits
+θ and θ .
+1 2
+Let’sbeginbyconsideringthemagneticfieldduetothecurrentelement Id → x locatedatthepositionx.Usingtheright-
+hand rule 1 from the previous chapter, d → x × ^ r points out of the page for any element along the wire. At point P,
+therefore,themagneticfieldsduetoallcurrentelementshavethesamedirection.Thismeansthatwecancalculatethenet
+field there by evaluating the scalar sum of the contributions of the elements. With |d → x × ^ r|=(dx)(1)sinθ, we have
+from the Biot-Savart law
+B= µ 0 ⌠ Isinθdx . (12.5)
+4π ⌡ r2
+wire
+The wire is symmetrical about point O, so we can set the limits of the integration from zero to infinity and double the
+answer, rather than integrate from negative infinity to positive infinity. Based on the picture and geometry, we can write
+expressions forrand sinθ in terms ofxandR, namely:
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 541
+r = x2+R2
+R
+sinθ = .
+x2+R2
+Substituting these expressions intoEquation 12.5, the magnetic field integration becomes
+∞ (12.6)
+B= µ o I⌠ Rdx .
+2π ⌡ (x2+R2) 3/2
+0
+Evaluating the integral yields
+B= µ o I⎡ ⎢ x ⎤ ⎥ ∞ . (12.7)
+2πR ⎣(x2+R2) 1/2⎦ 0
+Substituting the limits gives us the solution
+µ I (12.8)
+B= o .
+2πR
+Themagneticfieldlinesoftheinfinitewirearecircularandcenteredatthewire(Figure 12.6),andtheyareidenticalin
+everyplaneperpendiculartothewire.Sincethefielddecreaseswithdistancefromthewire,thespacingofthefieldlines
+mustincreasecorrespondinglywithdistance.Thedirectionofthismagneticfieldmaybefoundwithasecondformofthe
+right-handrule(illustratedinFigure12.6).Ifyouholdthewirewithyourrighthandsothatyourthumbpointsalongthe
+→
+current, then your fingers wrap around the wire in the same sense as B .
+→
+Figure 12.6 Some magnetic field lines of an infinite wire. The direction of B can be found with a form of
+the right-hand rule.
+Thedirectionofthefieldlinescanbeobservedexperimentallybyplacingseveralsmallcompassneedlesonacirclenear
+thewire,asillustratedinFigure12.7.Whenthereisnocurrentinthewire,theneedlesalignwithEarth’smagneticfield.
+However, when a large current is sent through the wire, the compass needles all point tangent to the circle. Iron filings
+sprinkled on a horizontal surface also delineate the field lines, as shown inFigure 12.7.
+
+542 Chapter 12 | Sources of Magnetic Fields
+Figure 12.7 The shape of the magnetic field lines of a long wire can be seen
+using (a) small compass needles and (b) iron filings.
+Example 12.3
+Calculating Magnetic Field Due to Three Wires
+Threewiressitatthecornersofasquare,allcarryingcurrentsof2ampsintothepageasshowninFigure12.8.
+Calculatethemagnitudeofthemagneticfieldattheothercornerofthesquare,pointP,ifthelengthofeachside
+of the square is 1 cm.
+Figure 12.8 Three wires have current flowing into the page.
+The magnetic field is determined at the fourth corner of the
+square.
+Strategy
+Themagneticfieldduetoeachwireatthedesiredpointiscalculated.Thediagonaldistanceiscalculatedusingthe
+Pythagoreantheorem.Next,thedirectionofeachmagneticfield’scontributionisdeterminedbydrawingacircle
+centeredatthepointofthewireandouttowardthedesiredpoint.Thedirectionofthemagneticfieldcontribution
+from that wire is tangential to the curve. Lastly, working with these vectors, the resultant is calculated.
+Solution
+Wires 1 and 3 both have the same magnitude of magnetic field contribution at pointP:
+B =B = µ o I = (4π×10 −7 T⋅m/A)(2A) =4×10 −5 T.
+1 3 2πR 2π(0.01m)
+Wire 2 has a longer distance and a magnetic field contribution at pointPof:
+B = µ o I = (4π×10 −7 T⋅m/A)(2A) =3×10 −5 T.
+2 2πR 2π(0.01414m)
+The vectors for each of these magnetic field contributions are shown.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 12 | Sources of Magnetic Fields 543
+The magnetic field in thex-direction has contributions from wire 3 and thex-component of wire 2:
+B netx=−4×10 −5 T−2.83×10 −5 Tcos(45°)=−6×10 −5 T.
+They-component is similarly the contributions from wire 1 and they-component of wire 2:
+B nety=−4×10 −5 T−2.83×10 −5 Tsin(45°)=−6×10 −5 T.
+Therefore, the net magnetic field is the resultant of these two components:
+B net = B n 2 etx+B n 2 ety
+B = (−6×10 −5 T)2+(−6×10 −5 T)2
+net
+B =8×10 −5 T.
+net
+Significance
+Thegeometryinthisproblemresultsinthemagneticfieldcontributionsinthex-andy-directionshavingthesame
+magnitude. This is not necessarily the case if the currents were different values or if the wires were located in
+differentpositions.Regardlessofthenumericalresults,workingonthecomponentsofthevectorswillyieldthe
+resulting magnetic field at the point in need.
+12.3 Check Your Understanding Using Example 12.3, keeping the currents the same in wires 1 and 3,
+whatshouldthecurrentbeinwire2tocounteractthemagneticfieldsfromwires1and3sothatthereisnonet
+magnetic field at point P?
+12.3 | Magnetic Force between Two Parallel Currents
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how parallel wires carrying currents can attract or repel each other
+• Define the ampere and describe how it is related to current-carrying wires
+• Calculate the force of attraction or repulsion between two current-carrying wires
+Youmightexpectthattwocurrent-carryingwiresgeneratesignificantforcesbetweenthem,sinceordinarycurrentsproduce
+magnetic fields and these fields exert significant forces on ordinary currents. But you might not expect that the force
+betweenwiresisusedtodefinetheampere.Itmightalsosurpriseyoutolearnthatthisforcehassomethingtodowithwhy
+large circuit breakers burn up when they attempt to interrupt large currents.
+Theforcebetweentwolong,straight,andparallelconductorsseparatedbyadistancercanbefoundbyapplyingwhatwe
+havedevelopedintheprecedingsections.Figure 12.9showsthewires,theircurrents,thefieldcreatedbyonewire,and
+theconsequentforcetheotherwireexperiencesfromthecreatedfield.Letusconsiderthefieldproducedbywire1andthe
+force it exerts on wire 2 (call the force F ). The field due to I at a distanceris
+2 1

@@ -1,0 +1,256 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 710-714
+############################################################
+
+698 14 • Chapter Review
+Conceptual Questions
+14.1 Fluids, Density, and Pressure leak outside a river levee can effectively stop the
+flow of water under the levee. Explain how the small
+1 . Which of the following substances are fluids at
+amount of water inside the column of sandbags is
+room temperature and atmospheric pressure:
+able to balance the much larger body of water
+air, mercury, water, glass?
+behind the levee.
+2 . Why are gases easier to compress than liquids
+and solids?
+3 . Explain how the density of air varies with
+altitude.
+4 . The image shows a glass of ice water filled to the
+brim. Will the water overflow when the ice
+melts? Explain your answer.
+12 . Is there a net force on a dam due to atmospheric
+pressure? Explain your answer.
+13 . Does atmospheric pressure add to the gas
+pressure in a rigid tank? In a toy balloon? When,
+in general, does atmospheric pressure not affect
+the total pressure in a fluid?
+14 . You can break a strong wine bottle by pounding
+a cork into it with your fist, but the cork must
+press directly against the liquid filling the
+5 . How is pressure related to the sharpness of a
+bottle—there can be no air between the cork and
+knife and its ability to cut?
+liquid. Explain why the bottle breaks only if there
+6 . Why is a force exerted by a static fluid on a is no air between the cork and liquid.
+surface always perpendicular to the surface?
+14.2 Measuring Pressure
+7 . Imagine that in a remote location near the North
+15 . Explain why the fluid reaches equal levels on
+Pole, a chunk of ice floats in a lake. Next to the
+either side of a manometer if both sides are
+lake, a glacier with the same volume as the
+open to the atmosphere, even if the tubes are of
+floating ice sits on land. If both chunks of ice
+different diameters.
+should melt due to rising global temperatures,
+and the melted ice all goes into the lake, which
+14.3 Pascal's Principle and Hydraulics
+one would cause the level of the lake to rise the
+most? Explain. 16 . Suppose the master cylinder in a hydraulic
+system is at a greater height than the cylinder it
+8 . In ballet, dancing en pointe (on the tips of the
+is controlling. Explain how this will affect the
+toes) is much harder on the toes than normal
+force produced at the cylinder that is being
+dancing or walking. Explain why, in terms of
+controlled.
+pressure.
+14.4 Archimedes’ Principle and Buoyancy
+9 . Atmospheric pressure exerts a large force (equal
+to the weight of the atmosphere above your 17 . More force is required to pull the plug in a full
+body—about 10 tons) on the top of your body bathtub than when it is empty. Does this
+when you are lying on the beach sunbathing. contradict Pascal’s principle? Explain your
+Why are you able to get up? answer.
+10 . Why does atmospheric pressure decrease more 18 . Do fluids exert buoyant forces in a “weightless”
+rapidly than linearly with altitude? environment, such as in the space shuttle?
+Explain your answer.
+11 . The image shows how sandbags placed around a
+Access for free at openstax.org
+
+14 • Chapter Review 699
+19 . Will the same ship float higher in salt water than 28 . Why is it preferable for airplanes to take off into
+in freshwater? Explain your answer. the wind rather than with the wind?
+20 . Marbles dropped into a partially filled bathtub 29 . Roofs are sometimes pushed off vertically during
+sink to the bottom. Part of their weight is a tropical cyclone, and buildings sometimes
+supported by buoyant force, yet the downward explode outward when hit by a tornado. Use
+force on the bottom of the tub increases by Bernoulli’s principle to explain these
+exactly the weight of the marbles. Explain why. phenomena.
+14.5 Fluid Dynamics 30 . It is dangerous to stand close to railroad tracks
+when a rapidly moving commuter train passes.
+21 . Many figures in the text show streamlines.
+Explain why atmospheric pressure would push
+Explain why fluid velocity is greatest where
+you toward the moving train.
+streamlines are closest together. (Hint: Consider
+the relationship between fluid velocity and the 31 . Water pressure inside a hose nozzle can be less
+cross-sectional area through which the fluid than atmospheric pressure due to the Bernoulli
+flows.) effect. Explain in terms of energy how the water
+can emerge from the nozzle against the
+14.6 Bernoulli’s Equation
+opposing atmospheric pressure.
+22 . You can squirt water from a garden hose a
+32 . David rolled down the window on his car while
+considerably greater distance by partially
+driving on the freeway. An empty plastic bag on
+covering the opening with your thumb. Explain
+the floor promptly flew out the window. Explain
+how this works.
+why.
+23 . Water is shot nearly vertically upward in a
+33 . Based on Bernoulli’s equation, what are three
+decorative fountain and the stream is observed
+forms of energy in a fluid? (Note that these
+to broaden as it rises. Conversely, a stream of
+forms are conservative, unlike heat transfer and
+water falling straight down from a faucet
+other dissipative forms not included in
+narrows. Explain why.
+Bernoulli’s equation.)
+24 . Look back to Figure 14.29. Answer the following
+34 . The old rubber boot shown below has two leaks. To
+two questions. Why is less than atmospheric?
+what maximum height can the water squirt from
+Why is greater than ?
+Leak 1? How does the velocity of water emerging
+25 . A tube with a narrow segment designed to from Leak 2 differ from that of Leak 1? Explain your
+enhance entrainment is called a Venturi, such as responses in terms of energy.
+shown below. Venturis are very commonly used
+in carburetors and aspirators. How does this
+structure bolster entrainment?
+26 . Some chimney pipes have a T-shape, with a
+35 . Water pressure inside a hose nozzle can be less
+crosspiece on top that helps draw up gases
+than atmospheric pressure due to the Bernoulli
+whenever there is even a slight breeze. Explain
+effect. Explain in terms of energy how the water
+how this works in terms of Bernoulli’s principle.
+can emerge from the nozzle against the
+27 . Is there a limit to the height to which an opposing atmospheric pressure.
+entrainment device can raise a fluid? Explain
+your answer.
+
+700 14 • Chapter Review
+14.7 Viscosity and Turbulence 39 . Doppler ultrasound can be used to measure the
+speed of blood in the body. If there is a partial
+36 . Explain why the viscosity of a liquid decreases
+constriction of an artery, where would you
+with temperature, that is, how might an increase
+expect blood speed to be greatest: at or after
+in temperature reduce the effects of cohesive
+the constriction? What are the two distinct
+forces in a liquid? Also explain why the viscosity
+causes of higher resistance in the constriction?
+of a gas increases with temperature, that is, how
+does increased gas temperature create more 40 . Sink drains often have a device such as that shown
+collisions between atoms and molecules? below to help speed the flow of water. How does
+this work?
+37 . When paddling a canoe upstream, it is wisest to
+travel as near to the shore as possible. When
+canoeing downstream, it is generally better to
+stay near the middle. Explain why.
+38 . Plumbing usually includes air-filled tubes near water
+faucets (see the following figure). Explain why they
+are needed and how they work.
+Problems
+14.1 Fluids, Density, and Pressure Archimedes’ principle.)
+41 . Gold is sold by the troy ounce (31.103 g). What 45 . Suppose you have a coffee mug with a circular
+is the volume of 1 troy ounce of pure gold? cross-section and vertical sides (uniform radius).
+What is its inside radius if it holds 375 g of
+42 . Mercury is commonly supplied in flasks
+coffee when filled to a depth of 7.50 cm?
+containing 34.5 kg (about 76 lb.). What is the
+Assume coffee has the same density as water.
+volume in liters of this much mercury?
+46 . A rectangular gasoline tank can hold 50.0 kg of
+43 . What is the mass of a deep breath of air having a
+gasoline when full. What is the depth of the tank
+volume of 2.00 L? Discuss the effect taking such
+if it is 0.500-m wide by 0.900-m long? (b)
+a breath has on your body’s volume and density.
+Discuss whether this gas tank has a reasonable
+44 . A straightforward method of finding the density volume for a passenger car.
+of an object is to measure its mass and then
+47 . A trash compactor can compress its contents to
+measure its volume by submerging it in a
+0.350 times their original volume. Neglecting the
+graduated cylinder. What is the density of a
+mass of air expelled, by what factor is the
+240-g rock that displaces of water?
+density of the rubbish increased?
+(Note that the accuracy and practical
+applications of this technique are more limited 48 . A 2.50-kg steel gasoline can holds 20.0 L of
+than a variety of others that are based on gasoline when full. What is the average density
+of the full gas can, taking into account the
+Access for free at openstax.org
+
+14 • Chapter Review 701
+volume occupied by steel as well as by gasoline? balloon uses water and the manometer
+connected to the jar contains mercury. Express
+49 . What is the density of 18.0-karat gold that is a
+in units of centimeters of water for the balloon
+mixture of 18 parts gold, 5 parts silver, and 1
+and millimeters of mercury for the jar, taking
+part copper? (These values are parts by mass,
+for each.
+not volume.) Assume that this is a simple
+mixture having an average density equal to the 57 . How tall must a water-filled manometer be to
+weighted densities of its constituents. measure blood pressure as high as 300 mm Hg?
+50 . The tip of a nail exerts tremendous pressure 58 . Assuming bicycle tires are perfectly flexible and
+when hit by a hammer because it exerts a large support the weight of bicycle and rider by
+force over a small area. What force must be pressure alone, calculate the total area of the
+exerted on a nail with a circular tip of 1.00-mm tires in contact with the ground if a bicycle and
+diameter to create a pressure of rider have a total mass of 80.0 kg, and the gauge
+(This high pressure is pressure in the tires is .
+possible because the hammer striking the nail is
+14.3 Pascal's Principle and Hydraulics
+brought to rest in such a short distance.)
+59 . How much pressure is transmitted in the
+51 . A glass tube contains mercury. What would be
+hydraulic system considered in Example 14.3?
+the height of the column of mercury which
+Express your answer in atmospheres.
+would create pressure equal to 1.00 atm?
+60 . What force must be exerted on the master
+52 . The greatest ocean depths on Earth are found in
+cylinder of a hydraulic lift to support the weight
+the Marianas Trench near the Philippines.
+of a 2000-kg car (a large car) resting on a second
+Calculate the pressure due to the ocean at the
+cylinder? The master cylinder has a 2.00-cm
+bottom of this trench, given its depth is 11.0 km
+diameter and the second cylinder has a 24.0-cm
+and assuming the density of seawater is
+diameter.
+constant all the way down.
+61 . A host pours the remnants of several bottles of
+53 . Verify that the SI unit of is .
+wine into a jug after a party. The host then
+54 . What pressure is exerted on the bottom of a gas inserts a cork with a 2.00-cm diameter into the
+tank that is 0.500-m wide and 0.900-m long and bottle, placing it in direct contact with the wine.
+can hold 50.0 kg of gasoline when full? The host is amazed when the host pounds the
+cork into place and the bottom of the jug (with a
+55 . A dam is used to hold back a river. The dam has a
+14.0-cm diameter) breaks away. Calculate the
+height and a width Assume
+extra force exerted against the bottom if he
+that the density of the water is (a)
+pounded the cork with a 120-N force.
+Determine the net force on the dam. (b) Why does
+the thickness of the dam increase with depth? 62 . A certain hydraulic system is designed to exert a
+force 100 times as large as the one put into it.
+(a) What must be the ratio of the area of the
+cylinder that is being controlled to the area of
+the master cylinder? (b) What must be the ratio
+of their diameters? (c) By what factor is the
+distance through which the output force moves
+reduced relative to the distance through which
+the input force moves? Assume no losses due to
+friction.
+63 . Verify that work input equals work output for a
+hydraulic system assuming no losses due to
+friction. Do this by showing that the distance the
+14.2 Measuring Pressure
+output force moves is reduced by the same
+56 . Find the gauge and absolute pressures in the factor that the output force is increased. Assume
+balloon and peanut jar shown in Figure 14.12, the volume of the fluid is constant. What effect
+assuming the manometer connected to the would friction within the fluid and between

@@ -1,0 +1,178 @@
+# REAL PDF — openstax_vol1.pdf, pages 464-470
+############################################################
+
+452 10 • Fixed-Axis Rotation
+10.1 Rotational Variables
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the physical meaning of rotational variables as applied to fixed-axis rotation
+• Explain how angular velocity is related to tangential speed
+• Calculate the instantaneous angular velocity given the angular position function
+• Find the angular velocity and angular acceleration in a rotating system
+• Calculate the average angular acceleration when the angular velocity is changing
+• Calculate the instantaneous angular acceleration given the angular velocity function
+So far in this text, we have mainly studied translational motion, including the variables that describe it:
+displacement, velocity, and acceleration. Now we expand our description of motion to rotation—specifically,
+rotational motion about a fixed axis. We will find that rotational motion is described by a set of related variables
+similar to those we used in translational motion.
+Angular Velocity
+Uniform circular motion (discussed previously in Motion in Two and Three Dimensions) is motion in a circle at
+constant speed. Although this is the simplest case of rotational motion, it is very useful for many situations, and we
+use it here to introduce rotational variables.
+In Figure 10.2, we show a particle moving in a circle. The coordinate system is fixed and serves as a frame of
+reference to define the particle’s position. Its position vector from the origin of the circle to the particle sweeps out
+the angle , which increases in the counterclockwise direction as the particle moves along its circular path. The
+angle is called the angular position of the particle. As the particle moves in its circular path, it also traces an arc
+length s. The particle may complete more than one revolution around the circle, and so the angle may be greater
+than , and the arc length s may be greater than the circumference, .
+FIGURE 10.2 A particle follows a circular path. As it moves counterclockwise, it sweeps out a positive angle with respect to the x-axis and
+traces out an arc length s.
+The angle is related to the radius of the circle and the arc length by
+10.1
+The angle , the angular position of the particle along its path, has units of radians (rad). There are radians in
+Note that the radian measure is a ratio of length measurements, and therefore is a dimensionless quantity. As
+the particle moves along its circular path, its angular position changes and it undergoes angular displacements
+We can write infinitesimal displacement tangent to the circle using polar coordinates, as shown in Figure 10.3.
+10.2
+Access for free at openstax.org
+
+10.1 • Rotational Variables 453
+FIGURE 10.3 The position vector and arc-length vector both lie in the xy-plane and are perpendicular to each other. Note that as the
+point rotates, the coordinate system also rotates and the directions of the unit vectors change.
+The magnitude of the angular velocity, denoted by , is the time rate of change of the angle as the particle moves
+in its circular path. The instantaneous angular velocity is defined as the limit in which in the average
+angular velocity :
+10.3
+where is the angle of rotation (Figure 10.2). The units of angular velocity are radians per second (rad/s). Angular
+velocity can also be referred to as the rotation rate in radians per second. In many situations, we are given the
+rotation rate in revolutions/s or cycles/s. To find the angular velocity, we must multiply revolutions/s by , since
+there are radians in one complete revolution. Since the direction of a positive angle in a circle is
+counterclockwise, we take counterclockwise rotations as being positive and clockwise rotations as negative.
+We can see how angular velocity is related to the tangential speed of the particle by differentiating Equation 10.1
+with respect to time. We rewrite Equation 10.1 as
+Taking the derivative with respect to time and noting that the radius r is a constant, we have
+where . Here is just the tangential speed of the particle in Figure 10.2. Thus, by using Equation 10.3,
+we arrive at
+10.4
+That is, the tangential speed of the particle is its angular velocity times the radius of the circle. From Equation 10.4,
+we see that the tangential speed of the particle increases with its distance from the axis of rotation for a constant
+angular velocity. This effect is shown in Figure 10.4. Two particles are placed at different radii on a rotating disk with
+a constant angular velocity. As the disk rotates, the tangential speed increases linearly with the radius from the axis
+of rotation. In Figure 10.4, we see that and . But the disk has a constant angular velocity, so
+. This means or . Thus, since , .
+
+454 10 • Fixed-Axis Rotation
+FIGURE 10.4 Two particles on a rotating disk have different tangential speeds, depending on their distance to the axis of rotation.
+Up until now, we have discussed the magnitude of the angular velocity which is a scalar quantity—the
+change in angular position with respect to time. The vector is the vector associated with the angular velocity and
+points along the axis of rotation. This is useful because when a rigid body is rotating, we want to know both the axis
+of rotation and the direction that the body is rotating about the axis, clockwise or counterclockwise. The angular
+velocity gives us this information. The angular velocity has a direction determined by what is called the right-
+hand rule. The right-hand rule is such that if the fingers of your right hand wrap counterclockwise from the x-axis
+(the direction in which increases) toward the y-axis, your thumb points in the direction of the positive z-axis
+(Figure 10.5). An angular velocity that points along the positive z-axis therefore corresponds to a
+counterclockwise rotation, whereas an angular velocity that points along the negative z-axis corresponds to a
+clockwise rotation.
+FIGURE 10.5 For counterclockwise rotation in the coordinate system shown, the angular velocity points in the positive z-direction by the
+right-hand-rule.
+One can state a cross product relation to the vector of the tangential velocity as stated in Equation 10.4. Therefore,
+we have
+10.5
+Access for free at openstax.org
+
+10.1 • Rotational Variables 455
+That is, the tangential velocity is the cross product of the angular velocity and the position vector, as shown in Figure
+10.6. From part (a) of this figure, we see that with the angular velocity in the positive z-direction, the rotation in the
+xy-plane is counterclockwise. In part (b), the angular velocity is in the negative z-direction, giving a clockwise
+rotation in the xy-plane.
+FIGURE 10.6 The vectors shown are the angular velocity, position, and tangential velocity. (a) The angular velocity points in the positive
+z-direction, giving a counterclockwise rotation in the xy-plane. (b) The angular velocity points in the negative z-direction, giving a clockwise
+rotation.
+EXAMPLE 10.1
+Rotation of a Flywheel
+A flywheel rotates such that it sweeps out an angle at the rate of radians. The wheel rotates
+counterclockwise when viewed in the plane of the page. (a) What is the angular velocity of the flywheel? (b) What
+direction is the angular velocity? (c) How many radians does the flywheel rotate through in 30 s? (d) What is the
+tangential speed of a point on the flywheel 10 cm from the axis of rotation?
+Strategy
+The functional form of the angular position of the flywheel is given in the problem as , so by taking the
+derivative with respect to time, we can find the angular velocity. We use the right-hand rule to find the angular
+velocity. To find the angular displacement of the flywheel during 30 s, we seek the angular displacement , where
+the change in angular position is between 0 and 30 s. To find the tangential speed of a point at a distance from the
+axis of rotation, we multiply its distance times the angular velocity of the flywheel.
+Solution
+a. . We see that the angular velocity is a constant.
+b. By the right-hand rule, we curl the fingers in the direction of rotation, which is counterclockwise in the plane of
+the page, and the thumb points in the direction of the angular velocity, which is out of the page.
+c. .
+d. .
+Significance
+In 30 s, the flywheel has rotated through quite a number of revolutions, about 215 if we divide the angular
+displacement by . A massive flywheel can be used to store energy in this way, if the losses due to friction are
+minimal. Recent research has considered superconducting bearings on which the flywheel rests, with zero energy
+loss due to friction.
+Angular Acceleration
+We have just discussed angular velocity for uniform circular motion, but not all motion is uniform. Envision an ice
+skater spinning with his arms outstretched—when he pulls his arms inward, his angular velocity increases. Or think
+about a computer’s hard disk slowing to a halt as the angular velocity decreases. We will explore these situations
+
+456 10 • Fixed-Axis Rotation
+later, but we can already see a need to define an angular acceleration for describing situations where changes.
+The faster the change in , the greater the angular acceleration. We define the instantaneous angular acceleration
+as the derivative of angular velocity with respect to time:
+10.6
+where we have taken the limit of the average angular acceleration, as .
+The units of angular acceleration are (rad/s)/s, or .
+In the same way as we defined the vector associated with angular velocity , we can define , the vector associated
+with angular acceleration (Figure 10.7). If the angular velocity is along the positive z-axis, as in Figure 10.5, and
+is positive, then the angular acceleration is positive and points along the axis. Similarly, if the angular velocity
+is along the positive z-axis and is negative, then the angular acceleration is negative and points along the
+axis.
+FIGURE 10.7 The rotation is counterclockwise in both (a) and (b) with the angular velocity in the same direction. (a) The angular
+acceleration is in the same direction as the angular velocity, which increases the rotation rate. (b) The angular acceleration is in the
+opposite direction to the angular velocity, which decreases the rotation rate.
+We can express the tangential acceleration vector as a cross product of the angular acceleration and the position
+vector. This expression can be found by taking the time derivative of and is left as an exercise:
+10.7
+The vector relationships for the angular acceleration and tangential acceleration are shown in Figure 10.8.
+FIGURE 10.8 (a) The angular acceleration is the positive z-direction and produces a tangential acceleration in a counterclockwise sense. (b)
+The angular acceleration is in the negative z-direction and produces a tangential acceleration in the clockwise sense.
+We can relate the tangential acceleration of a point on a rotating body at a distance from the axis of rotation in the
+same way that we related the tangential speed to the angular velocity. If we differentiate Equation 10.4 with respect
+to time, noting that the radius r is constant, we obtain
+Access for free at openstax.org
+
+10.1 • Rotational Variables 457
+10.8
+Thus, the tangential acceleration is the radius times the angular acceleration. Equation 10.4 and Equation 10.8
+are important for the discussion of rolling motion (see Angular Momentum).
+Let’s apply these ideas to the analysis of a few simple fixed-axis rotation scenarios. Before doing so, we present a
+problem-solving strategy that can be applied to rotational kinematics: the description of rotational motion.
+PROBLEM-SOLVING STRATEGY
+Rotational Kinematics
+1. Examine the situation to determine that rotational kinematics (rotational motion) is involved.
+2. Identify exactly what needs to be determined in the problem (identify the unknowns). A sketch of the situation
+is useful.
+3. Make a complete list of what is given or can be inferred from the problem as stated (identify the knowns).
+4. Solve the appropriate equation or equations for the quantity to be determined (the unknown). It can be useful
+to think in terms of a translational analog, because by now you are familiar with the equations of translational
+motion.
+5. Substitute the known values along with their units into the appropriate equation and obtain numerical
+solutions complete with units. Be sure to use units of radians for angles.
+6. Check your answer to see if it is reasonable: Does your answer make sense?
+Now let’s apply this problem-solving strategy to a few specific examples.
+EXAMPLE 10.2
+A Spinning Bicycle Wheel
+A bicycle mechanic mounts a bicycle on the repair stand and starts the rear wheel spinning from rest to a final
+angular velocity of 250 rpm in 5.00 s. (a) Calculate the average angular acceleration in . (b) If she now hits the
+brakes, causing an angular acceleration of −87.3 , how long does it take the wheel to stop?
+Strategy
+The average angular acceleration can be found directly from its definition because the final angular velocity
+and time are given. We see that and is 5.00 s. For part (b), we know the
+angular acceleration and the initial angular velocity. We can find the stopping time by using the definition of average
+angular acceleration and solving for , yielding
+Solution
+a. Entering known information into the definition of angular acceleration, we get
+Because is in revolutions per minute (rpm) and we want the standard units of for angular
+acceleration, we need to convert from rpm to rad/s:
+Entering this quantity into the expression for , we get

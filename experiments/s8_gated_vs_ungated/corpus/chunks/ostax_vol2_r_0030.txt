@@ -1,0 +1,355 @@
+# REAL PDF — openstax_vol2.pdf, pages 167-174
+############################################################
+
+Chapter 4 | The Second Law of Thermodynamics 157
+where Q is the heat dumped to the cold reservoir by the gas.
+c
+4. Adiabaticcompression.Thegasisthermallyisolatedandreturnedtoitsinitialstatebycompression.Inthisprocess,
+work W is done on the gas. Because the compression is adiabatic, the temperature of the gas rises—from
+4
+T
+c
+toT
+h
+in this particular case. The reasoning of step 2 now gives
+γ−1 γ−1
+T c V P =T h V M .
+The total work done by the gas in the Carnot cycle is given by
+W =W +W −W −W .
+1 2 3 4
+ThisworkisequaltotheareaenclosedbytheloopshowninthepVdiagramofFigure4.12.Becausetheinitialandfinal
+statesofthesystemarethesame,thechangeoftheinternalenergyofthegasinthecyclemustbezero,thatis, ΔE =0.
+int
+The first law of thermodynamics then gives
+W =Q−ΔE
+int
+=(Q
+h
+−Q c)−0,
+and
+W =Q
+h
+−Q c.
+To find the efficiency of this engine, we first divide Q c byQ h :
+Q
+c =
+T
+c
+lnV O/V
+P .
+Q
+h
+T
+h
+lnV N/V
+M
+When the adiabatic constant from step 2 is divided by that of step 4, we find
+V V
+O N
+= .
+V V
+P M
+Substituting this into the equation for Q c/Q
+h
+, we obtain
+Q T
+c = c.
+Q T
+h h
+Finally, withEquation 4.2, we find that the efficiency of this ideal gas Carnot engine is given by
+T (4.5)
+e=1− c.
+T
+h
+An engine does not necessarily have to follow a Carnot engine cycle. All engines, however, have the same net effect,
+namelytheabsorptionofheatfromahotreservoir,theproductionofwork,andthediscardingofheattoacoldreservoir.
+This leads us to ask: Do all reversible cycles operating between the same two reservoirs have the same efficiency? The
+answer to this question comes from the second law of thermodynamics discussed earlier: All reversible engine cycles
+produceexactlythesameefficiency.Also,asyoumightexpect,allrealenginesoperatingbetweentworeservoirsareless
+efficientthanreversibleenginesoperatingbetweenthesametworeservoirs.Thistooisaconsequenceofthesecondlawof
+thermodynamics shown earlier.
+The cycle of an ideal gas Carnot refrigerator is represented by the pV diagram of Figure 4.13. It is a Carnot engine
+operating in reverse. The refrigerator extracts heat Q from a cold-temperature reservoir at T when the ideal gas
+c c
+expandsisothermally.Thegasisthencompressedadiabaticallyuntilitstemperaturereaches T , afterwhichanisothermal
+h
+compression of the gas results in heat Q being discarded to a high-temperature reservoir at T . Finally, the cycle is
+h h
+completed by an adiabatic expansion of the gas, causing its temperature to drop to T c.
+
+158 Chapter 4 | The Second Law of Thermodynamics
+Figure 4.13 The work done on the gas in one cycle of the
+Carnot refrigerator is shown and given by the area enclosed by
+the loopMPONM.
+TheworkdoneontheidealgasisequaltotheareaenclosedbythepathofthepVdiagram.Fromthefirstlaw,thisworkis
+given by
+W =Q
+h
+−Q c.
+An analysis just like the analysis done for the Carnot engine gives
+Q Q
+c = h.
+T T
+c h
+When combined withEquation 4.3, this yields
+T (4.6)
+K = c
+R T
+h
+−T
+c
+for the coefficient of performance of the ideal-gas Carnot refrigerator. Similarly, we can work out the coefficient of
+performance for a Carnot heat pump as
+Q T (4.7)
+K = h = h .
+P Q
+h
+−Q
+c
+T
+h
+−T
+c
+WehavejustfoundequationsrepresentingtheefficiencyofaCarnotengineandthecoefficientofperformanceofaCarnot
+refrigerator or a Carnot heat pump, assuming an ideal gas for the working substance in both devices. However, these
+equations are more general than their derivations imply. We will soon show that they are both valid no matter what the
+working substance is.
+Carnot summarized his study of the Carnot engine and Carnot cycle into what is now known asCarnot’s principle:
+Carnot’s Principle
+No engine working between two reservoirs at constant temperatures can have a greater efficiency than a reversible
+engine.
+Thisprinciplecanbeviewedasanotherstatementofthesecondlawofthermodynamicsandcanbeshowntobeequivalent
+to the Kelvin statement and the Clausius statement.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 159
+Example 4.2
+The Carnot Engine
+A Carnot engine has an efficiency of 0.60 and the temperature of its cold reservoir is 300 K. (a) What is the
+temperatureofthehotreservoir?(b)Iftheenginedoes300Jofworkpercycle,howmuchheatisremovedfrom
+thehigh-temperature reservoirpercycle?(c)Howmuchheatisexhaustedtothelow-temperature reservoirper
+cycle?
+Strategy
+From the temperature dependence of the thermal efficiency of the Carnot engine, we can find the temperature
+of the hot reservoir. Then, from the definition of the efficiency, we can find the heat removed when the work
+donebytheengineisgiven.Finally,energyconservationwillleadtohowmuchheatmustbedumpedtothecold
+reservoir.
+Solution
+a. From e=1−T c/T
+h
+we have
+300K
+0.60=1− ,
+T
+h
+so that the temperature of the hot reservoir is
+T = 300K =750K.
+h 1−0.60
+b. By definition, the efficiency of the engine is e=W/Q, so that the heat removed from the high-
+temperature reservoir per cycle is
+Q h = W e = 3 0 0 .6 0 0 J =500J.
+c. From the first law, the heat exhausted to the low-temperature reservoir per cycle by the engine is
+Q c=Q
+h
+−W =500J−300J=200J.
+Significance
+ACarnotenginehasthemaximumpossibleefficiencyofconvertingheatintoworkbetweentworeservoirs,but
+thisdoesnotnecessarilymeanitis 100% efficient.Asthedifferenceintemperaturesofthehotandcoldreservoir
+increases, the efficiency of a Carnot engine increases.
+Example 4.3
+A Carnot Heat Pump
+Imagine a Carnot heat pump operates between an outside temperature of 0°C and an inside temperature of
+20.0°C. What is the work needed if the heat delivered to the inside of the house is 30.0 kJ?
+Strategy
+Because the heat pump is assumed to be a Carnot pump, its performance coefficient is given by
+K
+P
+=Q
+h
+/W =T
+h
+/(T
+h
+−T c). Thus, we can find the workWfrom the heat delivered Q
+h
+.
+Solution
+The work needed is obtained from
+W =Q
+h
+/K
+P
+=Q
+h
+(T
+h
+−T c)/T
+h
+=30kJ×(293K−273K)/293K=2kJ.
+Significance
+We note that this work depends not only on the heat delivered to the house but also on the temperatures
+outsideandinside.Thedependenceonthetemperatureoutsidemakesthemimpracticaltouseinareaswherethe
+
+160 Chapter 4 | The Second Law of Thermodynamics
+temperature is much colder outside than room temperature.
+In terms of energy costs, the heat pump is a very economical means for heating buildings (Figure 4.14). Contrast this
+methodwithturningelectricalenergydirectlyintoheatwithresistiveheatingelements.Inthiscase,oneunitofelectrical
+energyfurnishesatmostonlyoneunitofheat.Unfortunately,heatpumpshaveproblemsthatdolimittheirusefulness.They
+are quite expensive to purchase compared to resistive heating elements, and, as the performance coefficient for a Carnot
+heatpumpshows,theybecomelesseffectiveastheoutsidetemperaturedecreases.Infact,belowabout –10°C,theheat
+they furnish is less than the energy used to operate them.
+Figure 4.14 A photograph of a heat pump (large box) located
+outside a house. This heat pump is located in a warm climate
+area, like the southern United States, since it would be far too
+inefficient located in the northern half of the United States.
+(credit: modification of work by Peter Stevens)
+4.3
+Check Your Understanding A Carnot engine operates between reservoirs at 400°C and 30°C. (a)
+Whatistheefficiencyoftheengine?(b)Iftheenginedoes5.0Jofworkpercycle,howmuchheatpercycle
+doesitabsorbfromthehigh-temperaturereservoir?(c)Howmuchheatpercycledoesitexhausttothecold-
+temperature reservoir? (d) What temperatures at the cold reservoir would give the minimum and maximum
+efficiency?
+4.4 Check Your Understanding A Carnot refrigerator operates between two heat reservoirs whose
+temperaturesare 0°C and 25°C.(a)Whatisthecoefficientofperformanceoftherefrigerator?(b)If200Jof
+work are done on the working substance per cycle, how much heat per cycle is extracted from the cold
+reservoir? (c) How much heat per cycle is discarded to the hot reservoir?
+4.6 | Entropy
+Learning Objectives
+By the end of this section you will be able to:
+• Describe the meaning of entropy
+• Calculate the change of entropy for some simple processes
+Thesecondlawofthermodynamicsisbestexpressedintermsofachangeinthethermodynamicvariableknownasentropy,
+which is represented by the symbol S. Entropy, like internal energy, is a state function. This means that when a system
+makesatransitionfromonestateintoanother,thechangeinentropy ΔS isindependentofpathanddependsonlyonthe
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 161
+thermodynamic variables of the two states.
+We first consider ΔS for a system undergoing a reversible process at a constant temperature. In this case, the change in
+entropy of the system is given by
+Q (4.8)
+ΔS= ,
+T
+whereQistheheatexchangedbythesystemkeptatatemperatureT(inkelvin).Ifthesystemabsorbsheat—thatis,with
+Q>0—the entropy of the system increases. As an example, suppose a gas is kept at a constant temperature of 300 K
+while it absorbs 10 J of heat in a reversible process. Then fromEquation 4.8, the entropy change of the gas is
+ΔS= 10J =0.033J/K.
+300K
+Similarly,ifthegasloses5.0Jofheat;thatis, Q=−5.0J,attemperature T =200K,wehavetheentropychangeofthe
+system given by
+ΔS= −5.0J =−0.025J/K.
+200K
+Example 4.4
+Entropy Change of Melting Ice
+Heatisslowlyaddedtoa50-gchunkoficeat 0°C untilitcompletelymeltsintowateratthesametemperature.
+What is the entropy change of the ice?
+Strategy
+Becausetheprocessisslow,wecanapproximateitasareversibleprocess.Thetemperatureisaconstant,andwe
+can therefore useEquation 4.8in the calculation.
+Solution
+The ice is melted by the addition of heat:
+Q=mL =50g×335J/g=16.8kJ.
+f
+In this reversible process, the temperature of the ice-water mixture is fixed at 0°C or 273 K. Now from
+ΔS=Q/T, the entropy change of the ice is
+ΔS= 16.8kJ =61.5J/K
+273K
+when it melts to water at 0°C.
+Significance
+Duringaphasechange,thetemperatureisconstant,allowingustouseEquation4.8tosolvethisproblem.The
+same equation could also be used if we changed from a liquid to a gas phase, since the temperature does not
+change during that process either.
+Thechangeinentropyofasystemforanarbitrary,reversibletransitionforwhichthetemperatureisnotnecessarilyconstant
+isdefinedbymodifying ΔS=Q/T.ImagineasystemmakingatransitionfromstateAtoBinsmall,discretesteps.The
+temperatures associated with these states are T A and T B, respectively. During each step of the transition, the system
+exchanges heat ΔQ i reversibly at a temperature T i. This can be accomplished experimentally byplacing the system in
+thermal contact with a large number of heat reservoirs of varying temperatures T , as illustrated in Figure 4.15. The
+i
+change in entropy for each step is ΔS i=Q i/T i. The net change in entropy of the system for the transition is
+
+162 Chapter 4 | The Second Law of Thermodynamics
+ΔS=S B−S A=∑ ΔS i=∑ Δ
+T
+Q i . (4.9)
+i i i
+We now take the limit as ΔQ i→0, and the number of steps approaches infinity. Then, replacing the summation by an
+integral, we obtain
+B (4.10)
+dQ
+ΔS=S B−S A= ⌠
+⌡ T
+,
+A
+wheretheintegralistakenbetweentheinitialstateAandthefinalstateB.Thisequationisvalidonlyifthetransitionfrom
+AtoBis reversible.
+Figure 4.15 The gas expands at constant pressure as its temperature is increased in small steps through the
+use of a series of heat reservoirs.
+Asanexample,letusdeterminethenetentropychangeofareversibleenginewhileitundergoesasingleCarnotcycle.Inthe
+adiabaticsteps2and4ofthecycleshowninFigure4.11,noheatexchangetakesplace,so ΔS =ΔS =∫ dQ/T =0.
+2 4
+Instep1,theengineabsorbsheat Q atatemperature T , soitsentropychangeis ΔS =Q /T . Similarly,instep3,
+h h 1 h h
+ΔS
+3
+=−Q c/T c. The net entropy change of the engine in one cycle of operation is then
+Q Q
+ΔS E=ΔS
+1
++ΔS
+2
++ΔS
+3
++ΔS
+4
+=
+T
+h−
+T
+c.
+h c
+However, we know that for a Carnot engine,
+Q Q
+h = c,
+T T
+h c
+so
+ΔS E=0.
+There is no net change in the entropy of the Carnot engine over a complete cycle. Although this result was obtained for
+a particular case, its validity can be shown to be far more general: There is no net change in the entropy of a system
+undergoing any complete reversible cyclic process. Mathematically, we write this statement as
+dQ (4.11)
+∮dS=∮ =0
+T
+where ∮ represents the integral over aclosed reversible path.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 4 | The Second Law of Thermodynamics 163
+WecanuseEquation4.11toshowthattheentropychangeofasystemundergoingareversibleprocessbetweentwogiven
+statesispathindependent.Anarbitrary,closedpathforareversiblecyclethatpassesthroughthestatesAandBisshown
+inFigure 4.16.FromEquation 4.11, ∮dS=0 forthisclosedpath.Wemaysplitthisintegralintotwosegments,one
+along I, which leads fromAtoB, the other along II, which leads fromBtoA. Then
+⎡ B ⎤ ⎡ A ⎤
+∫ dS +⎢∫ dS⎥ =0.
+⎣ ⎦I II
+A ⎣ B ⎦
+Since the process is reversible,
+⎡ B ⎤ ⎡ B ⎤
+∫ dS = ∫ dS .
+⎣ ⎦I ⎣ ⎦II
+A A
+Figure 4.16 The closed loop passing through statesAandB
+represents a reversible cycle.
+Hence,theentropychangeingoingfromAtoBisthesameforpathsIandII.SincepathsIandIIarearbitrary,reversible
+paths,theentropychangeinatransitionbetweentwoequilibriumstatesisthesameforallthereversibleprocessesjoining
+these states. Entropy, like internal energy, is therefore a state function.
+Whathappensiftheprocessisirreversible?Whentheprocessisirreversible,weexpecttheentropyofaclosedsystem,or
+the system and its environment (the universe), to increase. Therefore we can rewrite this expression as
+ΔS≥0, (4.12)
+whereSisthetotalentropyoftheclosedsystemortheentireuniverse,andtheequalsignisforareversibleprocess.The
+fact is theentropy statement of the second law of thermodynamics:
+Second Law of Thermodynamics (Entropy statement)
+The entropy of a closed system and the entire universe never decreases.
+We can show that this statement is consistent with the Kelvin statement, the Clausius statement, and the Carnot principle.
+Example 4.5
+Entropy Change of a System during an Isobaric Process
+Determinetheentropychangeofanobjectofmassmandspecificheatcthatiscooledrapidly(andirreversibly)

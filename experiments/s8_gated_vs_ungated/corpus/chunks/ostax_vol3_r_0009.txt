@@ -1,0 +1,249 @@
+# REAL PDF — openstax_vol3.pdf, pages 52-57
+############################################################
+
+44 Chapter 1 | The Nature of Light
+Law of refraction (Snell’s law) n sinθ =n sinθ
+1 1 2 2
+Critical angle
+θ
+c=sin−1⎛
+⎝
+n
+n
+2⎞
+⎠
+forn
+1
+>n
+2
+1
+Malus’s law I =I cos2 θ
+0
+Brewster’s law n
+tanθ b = n 2
+1
+SUMMARY
+1.1The Propagation of Light
+• The speed of light in a vacuum is c=2.99792458×10 8 m/s≈3.00×10 8 m/s.
+• Theindexofrefractionofamaterialis n=c/v, wherevisthespeedoflightinamaterialandcisthespeedof
+light in a vacuum.
+• Theraymodeloflightdescribesthepathoflightasstraightlines.Thepartofopticsdealingwiththerayaspectof
+light is called geometric optics.
+• Lightcantravelinthreewaysfromasourcetoanotherlocation:(1)directlyfromthesourcethroughemptyspace;
+(2) through various media; and (3) after being reflected from a mirror.
+1.2The Law of Reflection
+• When a light ray strikes a smooth surface, the angle of reflection equals the angle of incidence.
+• A mirror has a smooth surface and reflects light at specific angles.
+• Light is diffused when it reflects from a rough surface.
+1.3Refraction
+• The change of a light ray’s direction when it passes through variations in matter is called refraction.
+• Thelawofrefraction,alsocalledSnell’slaw,relatestheindicesofrefractionfortwomediaataninterfacetothe
+change in angle of a light ray passing through that interface.
+1.4Total Internal Reflection
+• The incident angle that produces an angle of refraction of 90° is called the critical angle.
+• Totalinternalreflectionisaphenomenonthatoccursattheboundarybetweentwomedia,suchthatiftheincident
+angle in the first medium is greater than the critical angle, then all the light is reflected back into that medium.
+• Fiberopticsinvolvesthetransmissionoflightdownfibersofplasticorglass,applyingtheprincipleoftotalinternal
+reflection.
+• Cladding prevents light from being transmitted between fibers in a bundle.
+• Diamonds sparkle due to total internal reflection coupled with a large index of refraction.
+1.5Dispersion
+• The spreading of white light into its full spectrum of wavelengths is called dispersion.
+• Rainbowsareproducedbyacombinationofrefractionandreflection,andinvolvethedispersionofsunlightintoa
+continuous distribution of colors.
+• Dispersion produces beautiful rainbows but also causes problems in certain optical systems.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 45
+1.6Huygens’s Principle
+• AccordingtoHuygens’sprinciple,everypointonawavefrontisasourceofwaveletsthatspreadoutintheforward
+direction at the same speed as the wave itself. The new wave front is tangent to all of the wavelets.
+• A mirror reflects an incoming wave at an angle equal to the incident angle, verifying the law of reflection.
+• ThelawofrefractioncanbeexplainedbyapplyingHuygens’sprincipletoawavefrontpassingfromonemedium
+to another.
+• The bending of a wave around the edges of an opening or an obstacle is called diffraction.
+1.7Polarization
+• Polarizationistheattributethatwaveoscillationshaveadefinitedirectionrelativetothedirectionofpropagation
+ofthewave.ThedirectionofpolarizationisdefinedtobethedirectionparalleltotheelectricfieldoftheEMwave.
+• Unpolarized light is composed of many rays having random polarization directions.
+• Unpolarizedlightcanbepolarizedbypassingitthroughapolarizingfilterorotherpolarizingmaterial.Theprocess
+of polarizing light decreases its intensity by a factor of 2.
+• The intensity, I, of polarized light after passing through a polarizing filter is I =I cos2 θ, where I is the
+0 0
+incident intensity and θ is the angle between the direction of polarization and the axis of the filter.
+• Polarization is also produced by reflection.
+• Brewster’slawstatesthatreflectedlightiscompletelypolarizedattheangleofreflection θ ,knownasBrewster’s
+b
+angle.
+• Polarization can also be produced by scattering.
+• Several types of optically active substances rotate the direction of polarization of light passing through them.
+CONCEPTUAL QUESTIONS
+1.1The Propagation of Light 1.3Refraction
+1. Underwhatconditionscanlightbemodeledlikearay? 6. Diffusion by reflection from a rough surface is
+Like a wave? described in this chapter. Light can also be diffused by
+refraction.Describehowthisoccursinaspecificsituation,
+2. Why is the index of refraction always greater than or such as light interacting with crushed ice.
+equal to 1?
+7. Will light change direction toward or away from the
+3. Doesthefactthatthelightflashfromlightningreaches perpendicular when it goes from air to water? Water to
+you before its sound prove that the speed of light is glass? Glass to air?
+extremely large or simply that it is greater than the speed
+of sound? Discuss how you could use this effect to get an 8. Explainwhyanobjectinwateralwaysappearstobeat
+estimate of the speed of light. a depth shallower than it actually is?
+4. Speculate as to what physical process might be 9. Explain why a person’s legs appear very short when
+responsible for light traveling more slowly in a medium wading in a pool. Justify your explanation with a ray
+than in a vacuum. diagram showing the path of rays from the feet to the eye
+of an observer who is out of the water.
+1.2The Law of Reflection 10. Explain why an oar that is partially submerged in
+water appears bent.
+5. Usingthelawofreflection,explainhowpowdertakes
+the shine off of a person’s nose. What is the name of the
+optical effect?
+1.4Total Internal Reflection
+11. Aringwithacolorlessgemstoneisdroppedintowater.
+
+46 Chapter 1 | The Nature of Light
+The gemstone becomes invisible when submerged. Can it 17. DoesHuygens’sprincipleapplytoalltypesofwaves?
+be a diamond? Explain.
+18. If diffraction is observed for some phenomenon, it is
+12. The most common type of mirage is an illusion that evidencethatthephenomenonisawave.Doesthereverse
+light from faraway objects is reflected by a pool of water hold true? That is, if diffraction is not observed, does that
+that is not really there. Mirages are generally observed in mean the phenomenon is not a wave?
+deserts, when there is a hot layer of air near the ground.
+Given that the refractive index of air is lower for air at
+higher temperatures, explain how mirages can be formed. 1.7Polarization
+19. Can a sound wave in air be polarized? Explain.
+13. How can you use total internal reflection to estimate
+the index of refraction of a medium?
+20. No light passes through two perfect polarizing filters
+with perpendicular axes. However, if a third polarizing
+filter is placed between the original two, some light can
+1.5Dispersion
+pass.Whyisthis?Underwhatcircumstancesdoesmostof
+14. Isitpossiblethattotalinternalreflectionplaysarole the light pass?
+in rainbows? Explain in terms of indices of refraction and
+angles, perhaps referring to that shown below. Some of 21. Explain what happens to the energy carried by light
+us have seen the formation of a double rainbow; is it that it is dimmed by passing it through two crossed
+physically possible to observe a triple rainbow? polarizing filters.
+22. Whenparticlesscatteringlightaremuchsmallerthan
+its wavelength, the amount of scattering is proportional to
+1. Does this mean there is more scattering for small λ
+λ
+thanlarge λ?Howdoesthisrelatetothefactthatthesky
+is blue?
+23. Usingtheinformationgivenintheprecedingquestion,
+explain why sunsets are red.
+24. When light is reflected at Brewster’s angle from a
+(credit: "Chad"/Flickr) smooth surface, it is 100% polarized parallel to the
+surface.Partofthelightwillberefractedintothesurface.
+15. A high-quality diamond may be quite clear and Describe how you would do an experiment to determine
+colorless, transmitting all visible wavelengths with little thepolarizationoftherefractedlight.Whatdirectionwould
+absorption. Explain how it can sparkle with flashes of youexpectthepolarizationtohaveandwouldyouexpectit
+brilliant color when illuminated by white light. to be 100%?
+25. If you lie on a beach looking at the water with your
+1.6Huygens’s Principle
+headtippedslightlysideways,yourpolarizedsunglassesdo
+16. Howdowaveeffectsdependonthesizeoftheobject not work very well. Why not?
+with which the wave interacts? For example, why does
+soundbendaroundthecornerofabuildingwhilelightdoes
+not?
+PROBLEMS
+28. Calculate the index of refraction for a medium in
+1.1The Propagation of Light whichthespeedoflightis 2.012×10 8 m/s, andidentify
+26. What is the speed of light in water? In glycerine? the most likely substance based onTable 1.1.
+27. What is the speed of light in air? In crown glass? 29. In what substance in Table 1.1 is the speed of light
+8
+2.290×10 m/s?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 1 | The Nature of Light 47
+30. There was a major collision of an asteroid with the
+Moon in medieval times. It was described by monks at
+Canterbury Cathedral in England as a red glow on and
+aroundtheMoon.HowlongaftertheasteroidhittheMoon,
+whichis 3.84×10 5 km away,wouldthelightfirstarrive
+on Earth?
+31. Components of some computers communicate with
+each other through optical fibers having an index of
+refraction n=1.55. Whattimeinnanosecondsisrequired
+for a signal to travel 0.200 m through such a fiber?
+32. Comparethetimeittakesforlighttotravel1000mon
+the surface of Earth and in outer space.
+33. How far does light travel underwater during a time
+36. On the Moon’s surface, lunar astronauts placed a
+interval of 1.50×10 −6 s? corner reflector, off which a laser beam is periodically
+reflected. The distance tothe Mooniscalculated fromthe
+round-trip time. What percent correction is needed to
+account for the delay in time due to the slowing of light
+1.2The Law of Reflection
+in Earth’s atmosphere? Assume the distance to the Moon
+34. Suppose a man stands in front of a mirror as shown
+isprecisely 3.84×10 8 m andEarth’satmosphere(which
+below. His eyes are 1.65 m above the floor and the top of
+his head is 0.13 m higher. Find the height above the floor varies in density with altitude) is equivalent to a layer
+of the top and bottom of the smallest mirror in which he 30.0 km thick with a constant index of refraction
+can see both the top of his head and his feet. How is this n=1.000293.
+distance related to the man’s height?
+37. A flat mirror is neither converging nor diverging. To
+prove this, consider two rays originating from the same
+point and diverging at an angle θ (see below). Show that
+after striking a plane mirror, the angle between their
+directions remains θ.
+35. Show that when light reflects from two mirrors that
+meeteachotheratarightangle,theoutgoingrayisparallel 1.3Refraction
+to the incoming ray, as illustrated below.
+Unlessotherwisespecified,forproblems1through10,the
+indicesofrefractionofglassandwatershouldbetakento
+be 1.50 and 1.333, respectively.
+38. Alightbeaminairhasanangleofincidenceof 35°
+at the surface of a glass plate. What are the angles of
+reflection and refraction?
+
+48 Chapter 1 | The Nature of Light
+39. Alightbeaminairisincidentonthesurfaceofapond, to air is 48.6°, as discussed at the end of Example 1.4,
+makinganangleof 20° withrespecttothesurface.What regarding the critical angle for light traveling in a
+are the angles of reflection and refraction? polystyrene (a type of plastic) pipe surrounded by air.
+40. When a light ray crosses from water into glass, it 47. (a)AttheendofExample 1.4,itwasstatedthatthe
+emerges at an angle of 30° with respect to the normal of criticalangleforlightgoingfromdiamondtoairis 24.4°.
+the interface. What is its angle of incidence? Verify this. (b) What is the critical angle for light going
+from zircon to air?
+41. A pencil flashlight submerged in water sends a light
+beam toward the surface at an angle of incidence of 30°. 48. Anopticalfiberusesflintglasscladwithcrownglass.
+What is the angle of refraction in air? What is the critical angle?
+42. Light rays from the Sun make a 30° angle to the 49. At what minimum angle will you get total internal
+reflectionoflighttravelinginwaterandreflectedfromice?
+vertical when seen from below the surface of a body of
+water. At what angle above the horizon is the Sun?
+50. Supposeyouareusingtotalinternalreflectiontomake
+an efficient corner reflector. If there is air outside and the
+43. Thepathofalightbeaminairgoesfromanangleof
+incidenceof 35° toanangleofrefractionof 22° whenit
+incidentangleis 45.0°,whatmustbetheminimumindex
+of refraction of the material from which the reflector is
+enters a rectangular block of plastic. What is the index of
+made?
+refraction of the plastic?
+51. You can determine the index of refraction of a
+44. Ascubadivertraininginapoollooksathisinstructor
+substancebydeterminingitscriticalangle.(a)Whatisthe
+as shown below. What angle does the ray from the
+index of refraction of a substance that has a critical angle
+instructor’s face make with the perpendicular to the water
+atthepointwheretherayenters?Theanglebetweentheray of 68.4° whensubmergedinwater?Whatisthesubstance,
+in the water and the perpendicular to the water is 25.0°. basedonTable 1.1?(b)Whatwouldthecriticalanglebe
+for this substance in air?
+52. A ray of light, emitted beneath the surface of an
+unknown liquid with air above it, undergoes total internal
+reflectionasshownbelow.Whatistheindexofrefraction
+for the liquid and its likely identification?
+45. (a) Using information in the preceding problem, find
+53. Light rays fall normally on the vertical surface of
+the height of the instructor’s head above the water, noting
+the glass prism (n=1.50) shown below. (a) What is the
+thatyouwillfirsthavetocalculatetheangleofincidence.
+(b)Findtheapparentdepthofthediver’sheadbelowwater largestvaluefor ϕ suchthattherayistotallyreflectedat
+as seen by the instructor. theslantedface?(b)Repeatthecalculationofpart(a)ifthe
+prism is immersed in water.
+1.4Total Internal Reflection
+46. Verifythatthecriticalangleforlightgoingfromwater
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

@@ -1,0 +1,228 @@
+# REAL PDF — openstax_vol3.pdf, pages 116-119
+############################################################
+
+108 Chapter 2 | Geometric Optics and Image Formation
+(e) Repeat (a)–(d) for a point object off the axis. the eye, the rays entering the eye must be parallel. Why?
+20. Why is your vision so blurry when you open your
+2.4Thin Lenses eyeswhileswimmingunderwater?Howdoesafacemask
+enable clear vision?
+14. You can argue that a flat piece of glass, such as in a
+window, is like a lens with an infinite focal length. If so,
+wheredoesitformanimage?Thatis,howare d and d 21. Ithasbecomecommontoreplacethecataract-clouded
+i o
+lens of the eye with an internal lens. This intraocular lens
+related?
+canbechosensothatthepersonhasperfectdistantvision.
+Will the person be able to read without glasses? If the
+15. Whenyoufocusacamera,youadjustthedistanceof personwasnearsighted,isthepoweroftheintraocularlens
+the lens from the film. If the camera lens acts like a thin greater or less than the removed lens?
+lens, why can it not be a fixed distance from the film for
+both near and distant objects?
+22. If the cornea is to be reshaped (this can be done
+surgicallyorwithcontactlenses)tocorrectmyopia,should
+16. A thin lens has two focal points, one on either side its curvature be made greater or smaller? Explain.
+of the lens at equal distances from its center, and should
+behave the same for light entering from either side. Look
+backward and forward through a pair of eyeglasses and
+2.8Microscopes and Telescopes
+comment on whether they are thin lenses.
+23. Geometric optics describes the interaction of light
+with macroscopic objects. Why, then, is it correct to use
+17. Will the focal length of a lens change when it is
+geometric optics to analyze a microscope’s image?
+submerged in water? Explain.
+24. The image produced by the microscope in Figure
+2.38 cannot be projected. Could extra lenses or mirrors
+2.5The Eye
+project it? Explain.
+18. If the lens of a person’s eye is removed because of
+cataracts(ashasbeendonesinceancienttimes),whywould
+25. If you want your microscope or telescope to project
+youexpectaneyeglasslensofabout16Dtobeprescribed?
+a real image onto a screen, how would you change the
+placement of the eyepiece relative to the objective?
+19. Whenlaserlightisshoneintoarelaxednormal-vision
+eyetorepairatearbyspot-weldingtheretinatothebackof
+PROBLEMS
+parallel rays; the other keeps light from escaping without
+2.1Images Formed by Plane Mirrors beingputintothebeam.Whereisthefilamentofthelight
+inrelationtothefocalpointorradiusofcurvatureofeach
+26. Consider a pair of flat mirrors that are positioned so
+mirror?
+thattheyformanangleof120°.Anobjectisplacedonthe
+bisectorbetweenthemirrors.Constructaraydiagramasin
+Figure 2.4to show how many images are formed.
+27. Consider a pair of flat mirrors that are positioned so
+thattheyformanangleof60°.Anobjectisplacedonthe
+bisectorbetweenthemirrors.Constructaraydiagramasin
+Figure 2.4to show how many images are formed.
+28. By using more than one flat mirror, construct a ray
+diagram showing how to create an inverted image.
+2.2Spherical Mirrors
+29. Thefollowingfigureshowsalightbulbbetweentwo
+30. Why are diverging mirrors often used for rearview
+sphericalmirrors.Onemirrorproducesabeamoflightwith
+mirrorsinvehicles?Whatisthemaindisadvantageofusing
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 109
+such a mirror compared with a flat one? 41. Referring to the electric room heater considered in
+problem5,calculatetheintensityofIRradiationin W/m2
+31. Some telephoto cameras use a mirror rather than a projectedbytheconcavemirroronaperson3.00maway.
+lens.Whatradiusofcurvaturemirrorisneededtoreplacea Assumethattheheatingelement radiates1500Wandhas
+800 mm-focal length telephoto lens?
+anareaof 100cm2,andthathalfoftheradiatedpoweris
+reflected and focused by the mirror.
+32. Calculate the focal length of a mirror formed by the
+shiny back of a spoon that has a 3.00 cm radius of
+curvature.
+42. Two mirrors are inclined at an angle of 60° and an
+object is placed at a point that is equidistant from the two
+mirrors.Useaprotractortodrawraysaccuratelyandlocate
+33. Electric room heaters use a concave mirror to reflect
+all images. You may have to draw several figures so that
+infrared(IR)radiationfromhotcoils.NotethatIRradiation
+that rays for different images do not clutter your drawing.
+follows the same law of reflection as visible light. Given
+that the mirror has a radius of curvature of 50.0 cm and
+produces an image of the coils 3.00 m away from the 43. Two parallel mirrors are facing each other and are
+mirror, where are the coils? separated by a distance of 3 cm. A point object is placed
+betweenthemirrors1cmfromoneofthemirrors.Findthe
+coordinates of all the images.
+34. Find the magnification of the heater element in the
+previous problem. Note that its large magnitude helps
+spread out the reflected energy.
+2.3Images Formed by Refraction
+35. What is the focal length of a makeup mirror that 44. Anobjectislocatedinair30cmfromthevertexofa
+produces a magnification of 1.50 when a person’s face is concavesurfacemadeofglasswitharadiusofcurvature10
+12.0cmaway?Explicitlyshowhowyoufollowthestepsin cm. Where does the image by refraction form and what is
+theProblem-Solving Strategy: Spherical Mirrors. its magnification? Use n =1 and n =1.5.
+air glass
+36. A shopper standing 3.00 m from a convex security
+45. Anobjectislocatedinair30cmfromthevertexofa
+mirror sees his image with a magnification of 0.250. (a)
+convexsurfacemadeofglasswitharadiusofcurvature80
+Where is his image? (b) What is the focal length of the
+cm. Where does the image by refraction form and what is
+mirror? (c) What is its radius of curvature?
+its magnification?
+37. An object 1.50 cm high is held 3.00 cm from a
+46. Anobjectislocatedinwater15cmfromthevertexof
+person’s cornea, and its reflected image is measured to be
+aconcavesurfacemadeofglasswitharadiusofcurvature
+0.167cmhigh.(a)Whatisthemagnification?(b)Whereis
+10cm.Wheredoestheimagebyrefractionformandwhat
+the image? (c) Find the radius of curvature of the convex
+is its magnification? Use n =4/3 and n =1.5.
+mirror formed by the cornea. (Note that this technique is water glass
+usedbyoptometriststomeasurethecurvatureofthecornea
+for contact lens fitting. The instrument used is called a 47. An object is located in water 30 cm from the vertex
+keratometer, or curve measurer.) of a convex surface made of Plexiglas with a radius of
+curvature of 80 cm. Where does the image form by
+38. Ray tracing for a flat mirror shows that the image is refractionandwhatisitsmagnification? n =4/3 and
+water
+located a distance behind the mirror equal to the distance
+n =1.65.
+oftheobjectfromthemirror.Thisisstatedas d
+i
+=−d
+o
+, Plexiglas
+sincethisisanegativeimagedistance(itisavirtualimage).
+What is the focal length of a flat mirror? 48. An object is located in air 5 cm from the vertex of a
+concavesurfacemadeofglasswitharadiusofcurvature20
+cm. Where does the image form by refraction and what is
+39. Show that, for a flat mirror, h
+i
+=h
+o
+, given that the
+its magnification? Use n =1 and n =1.5.
+air glass
+imageisthesamedistancebehindthemirrorasthedistance
+of the object from the mirror.
+49. Derive the spherical interface equation for refraction
+ataconcavesurface.(Hint:Followthederivationinthetext
+40. Usethelawofreflectiontoprovethatthefocallength
+for the convex surface.)
+ofamirrorishalfitsradiusofcurvature.Thatis,provethat
+f =R/2.Notethisistrueforasphericalmirroronlyifits
+diameter is small compared with its radius of curvature.
+
+110 Chapter 2 | Geometric Optics and Image Formation
+the sun on the film, given the sun is 1.40×10 6 km in
+2.4Thin Lenses
+diameter and is 1.50×10 8 km away?
+50. How far from the lens must the film in a camera be,
+ifthelenshasa35.0-mmfocallengthandisbeingusedto
+photograph a flower 75.0 cm away? Explicitly show how 60. Use the thin-lens equation to show that the
+youfollowthestepsintheProblem-Solving Strategy: magnification for a thin lens is determined by its focal
+Lenses. length and the object distance and is given by
+m= f/(f −d o).
+51. A certain slide projector has a 100 mm-focal length
+lens. (a) How far away is the screen if a slide is placed 61. Anobjectofheight3.0cmisplaced5.0cminfrontof
+103mm from the lens and produces a sharp image? (b)If aconverginglensoffocallength20cmandobservedfrom
+the slide is 24.0 by 36.0 mm, what are the dimensions of the other side. Where and how large is the image?
+theimage?Explicitlyshowhowyoufollowthestepsinthe
+Problem-Solving Strategy: Lenses.
+62. Anobjectofheight3.0cmisplacedat5.0cminfront
+ofadiverginglensoffocallength20cmandobservedfrom
+52. Adoctorexaminesamolewitha15.0-cmfocallength the other side. Where and how large is the image?
+magnifyingglassheld13.5cmfromthemole.(a)Whereis
+theimage?(b)Whatisitsmagnification?(c)Howbigisthe
+63. An object of height 3.0 cm is placed at 25 cm in
+image of a 5.00 mm diameter mole?
+frontofadiverginglensoffocallength20cm.Behindthe
+diverging lens, there is a converging lens of focal length
+53. A camera with a 50.0-mm focal length lens is being 20cm.Thedistancebetweenthelensesis5.0cm.Findthe
+usedtophotographapersonstanding3.00maway.(a)How location and size of the final image.
+far from the lens must the film be? (b) If the film is 36.0
+mm high, what fraction of a 1.75-m-tall person will fit on
+64. Two convex lenses of focal lengths 20 cm and 10
+it? (c) Discuss how reasonable this seems, based on your
+cm are placed 30 cm apart, with the lens with the longer
+experience in taking or posing for photographs.
+focal length on the right. An object of height 2.0 cm is
+placed midway between them and observed through each
+54. A camera lens used for taking close-up photographs lens from the left and from the right. Describe what you
+hasafocallengthof22.0mm.Thefarthestitcanbeplaced will see, such as where the image(s) will appear, whether
+fromthefilmis33.0mm.(a)Whatistheclosestobjectthat they will be upright or inverted and their magnifications.
+canbephotographed?(b)Whatisthemagnificationofthis
+closest object?
+2.5The Eye
+55. Suppose your 50.0 mm-focal length camera lens is
+51.0 mm away from the film in the camera. (a) How far Unlessotherwisestated,thelens-to-retinadistanceis2.00
+awayisanobjectthatisinfocus?(b)Whatistheheightof cm.
+the object if its image is 2.00 cm high?
+65. Whatisthepoweroftheeyewhenviewinganobject
+50.0 cm away?
+56. What is the focal length of a magnifying glass that
+producesamagnificationof3.00whenheld5.00cmfrom
+66. Calculatethepoweroftheeyewhenviewinganobject
+an object, such as a rare coin?
+3.00 m away.
+57. The magnification of a book held 7.50 cm from a
+67. Theprintinmanybooksaverages3.50mminheight.
+10.0cm-focallengthlensis3.00.(a)Findthemagnification
+How high is the image of the print on the retina when the
+for the book when it is held 8.50 cm from the magnifier.
+book is held 30.0 cm from the eye?
+(b) Repeat for the book held 9.50 cm from the magnifier.
+(c) Comment on how magnification changes as the object
+68. Suppose a certain person’s visual acuity is such that
+distance increases as in these two calculations.
+he can see objects clearly that form an image 4.00µm
+highonhisretina.Whatisthemaximumdistanceatwhich
+58. Supposea200mm-focallengthtelephotolensisbeing
+he can read the 75.0-cm-high letters on the side of an
+usedtophotographmountains10.0kmaway.(a)Whereis
+airplane?
+theimage?(b)Whatistheheightoftheimageofa1000m
+high cliff on one of the mountains?
+69. People who do very detailed work close up, such
+as jewelers, often can see objects clearly at much closer
+59. A camera with a 100 mm-focal length lens is used
+distance than the normal 25 cm. (a) What is the power of
+to photograph the sun. What is the height of the image of
+the eyes of a woman who can see an object clearly at a
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

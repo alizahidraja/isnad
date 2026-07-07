@@ -1,0 +1,188 @@
+# REAL PDF — openstax_vol2.pdf, pages 26-31
+############################################################
+
+16 Chapter 1 | Temperature and Heat
+which varies slightly with temperature. (The derivation of this equation is analogous to that of the more important
+equation for three dimensions, below.)
+Figure 1.7 In general, objects expand in all directions as temperature increases. In these drawings, the original
+boundaries of the objects are shown with solid lines, and the expanded boundaries with dashed lines. (a) Area increases
+because both length and width increase. The area of a circular plug also increases. (b) If the plug is removed, the hole it
+leaves becomes larger with increasing temperature, just as if the expanding plug were still in place. (c) Volume also
+increases, because all three dimensions increase.
+Thermal Expansion in Three Dimensions
+dV dV
+The relationship between volume and temperature is given by = βVΔT, where β is the coefficient of
+dT dT
+volume expansion. As you can show inExercise 1.60, β=3α. This equation is usually written as
+ΔV = βVΔT. (1.4)
+Note that the values of β inTable 1.2are equal to 3α except for rounding.
+Volumeexpansionisdefinedforliquids,butlinearandareaexpansionarenot,asaliquid’schangesinlineardimensions
+and area depend on the shape of its container. Thus,Table 1.2shows liquids’ values of β but not α.
+In general, objects expand with increasing temperature. Water is the most important exception to this rule. Water does
+expandwithincreasingtemperature(itsdensitydecreases)attemperaturesgreaterthan 4°C(40°F).However,itisdensest
+at +4°C andexpandswithdecreasingtemperaturebetween +4°C and 0°C (40°Fto32°F),asshowninFigure1.8.
+Astrikingeffectofthisphenomenonisthefreezingofwaterinapond.Whenwaternearthesurfacecoolsdownto 4°C,
+itisdenserthantheremainingwaterandthussinkstothebottom.This“turnover”leavesalayerofwarmerwaternearthe
+surface,whichisthencooled.However,ifthetemperatureinthesurfacelayerdropsbelow 4°C,thatwaterislessdense
+thanthewaterbelow,andthusstaysnearthetop.Asaresult,thepondsurfacecanfreezeover.Thelayeroficeinsulatesthe
+liquidwaterbelowitfromlowairtemperatures.Fishandotheraquaticlifecansurvivein 4°C waterbeneathice,dueto
+this unusual characteristic of water.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 17
+Figure 1.8 This curve shows thedensity of wateras a function of temperature. Note that the
+thermal expansion at low temperatures is very small. The maximum density at 4°C is only
+0.0075% greater than the density at 2°C, and 0.012% greater than that at 0°C. The
+decrease of density below 4°C occurs because the liquid water approachs the solid crystal
+form of ice, which contains more empty space than the liquid.
+Example 1.3
+Calculating Thermal Expansion
+Supposeyour60.0-L (15.9-gal-gal)steelgasolinetankisfullofgasthatiscoolbecauseithasjustbeenpumped
+fromanundergroundreservoir.Now,boththetankandthegasolinehaveatemperatureof 15.0°C. Howmuch
+gasoline has spilled by the time they warm to 35.0°C?
+Strategy
+Thetankandgasolineincreaseinvolume,butthegasolineincreasesmore,sotheamountspilledisthedifference
+intheirvolumechanges.Wecanusetheequationforvolumeexpansiontocalculatethechangeinvolumeofthe
+gasoline and of the tank. (The gasoline tank can be treated as solid steel.)
+Solution
+1. Use the equation for volume expansion to calculate the increase in volume of the steel tank:
+ΔV s= β s V sΔT.
+2. The increase in volume of the gasoline is given by this equation:
+ΔV gas= β gas V gasΔT.
+3. Find the difference in volume to determine the amount spilled as
+V
+spill
+=ΔV gas−ΔV s.
+Alternatively,we can combine these three equations into a single equation. (Note that the original volumes are
+equal.)
+V
+spill
+=⎛
+⎝
+β gas−β
+s
+⎞
+⎠
+VΔT
+⎡ −6 ⎤
+= (950−35)×10 /°C(60.0L)(20.0°C)
+⎣ ⎦
+=1.10L.
+Significance
+Thisamountissignificant,particularlyfora60.0-Ltank.Theeffectissostrikingbecausethegasolineandsteel
+
+18 Chapter 1 | Temperature and Heat
+expand quickly. The rate of change in thermal properties is discussed later in this chapter.
+Ifyoutrytocapthetanktightlytopreventoverflow,youwillfindthatitleaksanyway,eitheraroundthecapor
+byburstingthetank.Tightlyconstrictingtheexpandinggasisequivalenttocompressingit,andbothliquidsand
+solidsresistcompressionwithextremelylargeforces.Toavoidrupturingrigidcontainers,thesecontainershave
+air gaps, which allow them to expand and contract without stressing them.
+1.1 Check Your Understanding Does a given reading ona gasoline gauge indicate more gasoline in cold
+weather or in hot weather, or does the temperature not matter?
+Thermal Stress
+If you change the temperature of an object while preventing it from expanding or contracting, the object is subjected to
+stressthatiscompressiveiftheobjectwouldexpandintheabsenceofconstraintandtensileifitwouldcontract.Thisstress
+resulting from temperature changes is known asthermal stress. It can be quite large and can cause damage.
+Toavoidthisstress,engineersmaydesigncomponentssotheycanexpandandcontractfreely.Forinstance,inhighways,
+gapsaredeliberatelyleftbetweenblockstopreventthermalstressfromdeveloping.Whennogapscanbeleft,engineers
+must consider thermal stress in their designs. Thus, the reinforcing rods in concrete are made of steel because steel’s
+coefficient of linear expansion is nearly equal to that of concrete.
+Tocalculatethethermalstressinarodwhoseendsarebothfixedrigidly,wecanthinkofthestressasdevelopingintwo
+steps. First, let the ends be free to expand (or contract) and find the expansion (or contraction). Second, find the stress
+necessarytocompress(orextend)therodtoitsoriginallengthbythemethodsyoustudiedinStatic Equilibrium and
+Elasticity(http://cnx.org/content/m58339/latest/)onstaticequilibriumandelasticity.Inotherwords,the ΔL ofthe
+thermal expansion equals the ΔL of the elastic distortion (except that the signs are opposite).
+Example 1.4
+Calculating Thermal Stress
+Concrete blocks are laid out next to each other on a highway without any space between them, so they cannot
+expand.Theconstructioncrewdidtheworkonawinterdaywhenthetemperaturewas 5°C.Findthestressin
+theblocksonahotsummerdaywhenthetemperatureis 38°C.ThecompressiveYoung’smodulusofconcrete
+is Y =20×10 9 N/m2.
+Strategy
+According to the chapter on static equilibrium and elasticity, the stressF/Ais given by
+F =YΔL
+,
+A L
+0
+whereYistheYoung’smodulusofthematerial—concrete, inthiscase.Inthermalexpansion, ΔL=αL ΔT.
+0
+We combine these two equations by noting that the two ΔL’s are equal, as stated above. Because we are not
+given L orA, we can obtain a numerical answer only if they both cancel out.
+0
+Solution
+We substitute the thermal-expansion equation into the elasticity equation to get
+F =Y αL 0 ΔT =YαΔT,
+A L
+0
+and as we hoped, L has canceled andAappears only inF/A, the notation for the quantity we are calculating.
+0
+Now we need only insert the numbers:
+F = ⎛ 20×10 9 N/m2⎞⎛ 12×10 −6 /°C ⎞ (38°C−5°C)=7.9×10 6 N/m2.
+A ⎝ ⎠⎝ ⎠
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 1 | Temperature and Heat 19
+Significance
+Theultimatecompressivestrengthofconcreteis 20×10 6 N/m2, sotheblocksareunlikelytobreak.However,
+the ultimate shear strength of concrete is only 2×10 6 N/m2, so some might chip off.
+1.2 Check Your Understanding Two objects A and B have the same dimensions and are constrained
+identically.AismadeofamaterialwithahigherthermalexpansioncoefficientthanB.Iftheobjectsareheated
+identically, willAfeel a greater stress thanB?
+1.4 | Heat Transfer, Specific Heat, and Calorimetry
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain phenomena involving heat as a form of energy transfer
+• Solve problems involving heat transfer
+We have seen in previous chapters that energy is one of the fundamental concepts of physics. Heat is a type of energy
+transfer that is caused by a temperature difference, and it can change the temperature of an object. As we learned earlier
+in this chapter, heat transfer is the movement of energy from one place or material to another as a result of a difference
+in temperature. Heat transfer is fundamental to such everyday activities as home heating and cooking, as well as many
+industrial processes. It also forms a basis for the topics in the remainder of this chapter.
+We also introduce the concept of internal energy, which can be increased or decreased by heat transfer. We discuss
+anotherwaytochangetheinternalenergyofasystem,namelydoingworkonit.Thus,wearebeginningthestudyofthe
+relationshipofheatandwork,whichisthebasisofenginesandrefrigeratorsandthecentraltopic(andoriginofthename)
+of thermodynamics.
+Internal Energy and Heat
+A thermal system has internal energy (also called thermal energy), which is the sum of the mechanical energies of its
+molecules.Asystem’sinternalenergyisproportionaltoitstemperature.Aswesawearlierinthischapter,iftwoobjectsat
+differenttemperaturesarebroughtintocontactwitheachother,energyistransferredfromthehottertothecolderobjectuntil
+thebodiesreachthermalequilibrium(thatis,theyareatthesametemperature).Noworkisdonebyeitherobjectbecause
+no force acts through a distance (as we discussed in Work and Kinetic Energy (http://cnx.org/content/m58307/
+latest/)).Theseobservationsrevealthatheatisenergytransferredspontaneouslyduetoatemperaturedifference.Figure
+1.9shows an example of heat transfer.
+Figure 1.9 (a) Here, the soft drink has a higher temperature than the ice, so they are not in thermal equilibrium. (b) When the
+soft drink and ice are allowed to interact, heat is transferred from the drink to the ice due to the difference in temperatures until
+they reach the same temperature, T′, achieving equilibrium. In fact, since the soft drink and ice are both in contact with the
+surrounding air and the bench, the ultimate equilibrium temperature will be the same as that of the surroundings.
+
+20 Chapter 1 | Temperature and Heat
+The meaning of“heat” in physics is different from its ordinary meaning. Forexample, in conversation, we may say “the
+heatwasunbearable,”butinphysics,wewouldsaythatthetemperaturewashigh.Heatisaformofenergyflow,whereas
+temperature is not. Incidentally, humans are sensitive toheat flowrather than to temperature.
+Sinceheatisaformofenergy,itsSIunitisthejoule(J).Anothercommonunitofenergyoftenusedforheatisthecalorie
+(cal), defined as the energy needed to change the temperature of 1.00 g of water by 1.00°C —specifically, between
+14.5°C and 15.5°C,sincethereisaslighttemperaturedependence.Alsocommonlyusedisthekilocalorie(kcal),which
+is the energy needed to change the temperature of 1.00 kg of water by 1.00°C. Since mass is most often specified in
+kilograms,thekilocalorieisconvenient.Confusingly,foodcalories(sometimescalled“bigcalories,”abbreviatedCal)are
+actually kilocalories, a fact not easily determined from package labeling.
+Mechanical Equivalent of Heat
+It is also possible to change the temperature of a substance by doing work, which transfers energy into or out of a
+system.Thisrealizationhelpedestablishthatheatisaformofenergy.JamesPrescottJoule(1818–1889)performedmany
+experimentstoestablishthemechanicalequivalentofheat—theworkneededtoproducethesameeffectsasheattransfer.
+In the units used for these two quantities, the value for this equivalence is
+1.000kcal=4186J.
+Weconsiderthisequationtorepresenttheconversionbetweentwounitsofenergy.(Othernumbersthatyoumayseerefer
+to calories defined for temperature ranges other than 14.5°C to 15.5°C.)
+Figure1.10showsoneofJoule’smostfamousexperimentalsetupsfordemonstratingthatworkandheatcanproducethe
+sameeffectsandmeasuringthemechanicalequivalentofheat.Ithelpedestablishtheprincipleofconservationofenergy.
+Gravitationalpotentialenergy(U)wasconvertedintokineticenergy(K),andthenrandomizedbyviscosityandturbulence
+into increased average kinetic energy of atoms and molecules in the system, producing a temperature increase. Joule’s
+contributions to thermodynamics were so significant that the SI unit of energy was named after him.
+Figure 1.10 Joule’s experiment established the equivalence of heat and
+work. As the masses descended, they caused the paddles to do work,
+W =mgh, on the water. The result was a temperature increase, ΔT,
+measured by the thermometer. Joule found that ΔT was proportional toW
+and thus determined the mechanical equivalent of heat.
+Increasing internal energy by heat transfer gives the same result as increasing it by doing work. Therefore, although a
+system has a well-defined internal energy, we cannot say that it has a certain “heat content” or “work content.” A well-
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

@@ -1,0 +1,263 @@
+# REAL PDF — openstax_vol3.pdf, pages 207-214
+############################################################
+
+Chapter 5 | Relativity 199
+Solution
+a. Identify the knowns (from part a):
+Δt=3.33×10 −9 s;v=6.00×10 7 m/s;d =0.200m.
+b. Identify the unknown: τ.
+c. Express the answer as an equation:
+Δt = γΔτ=
+Δτ
+1−v2/c2
+Δτ = Δt 1−v2/c2.
+d. Do the calculation:
+2
+⎛ 7 ⎞
+Δτ = ⎛ 3.33×10 −9 s ⎞ 1− 6.00×10 m/s
+⎝ ⎠ ⎝ 8 ⎠
+3.00×10 m/s
+−9
+=3.26×10 s.
+Significance
+The time of travel is shorter in the electron frame of reference. Because the problem requires finding the time
+interval measured in different reference frames for the same process, relativity is involved. If we had tried to
+calculate the time in the electron rest frame by simply dividing the 0.200 m by the speed, the result would be
+slightly incorrect because of the relativistic speed of the electron.
+5.2 Check Your UnderstandingWhat is γ if v=0.650c?
+The Twin Paradox
+An intriguing consequence of time dilation is that a space traveler moving at a high velocity relative to Earth would age
+lessthantheastronaut’searthboundtwin.Thisisoftenknownasthetwinparadox.Imaginetheastronautmovingatsucha
+velocitythat γ =30.0, asinFigure5.7.Atripthattakes2.00yearsinherframewouldtake60.0yearsintheearthbound
+twin’sframe.Supposetheastronauttravels1.00yeartoanotherstarsystem,brieflyexploresthearea,andthentravels1.00
+year back. An astronaut who was 40 years old at the start of the trip would be would be 42 when the spaceship returns.
+Everything on Earth, however, would have aged 60.0 years. The earthbound twin, if still alive, would be 100 years old.
+ThesituationwouldseemdifferenttotheastronautinFigure5.7.Becausemotionisrelative,thespaceshipwouldseemto
+bestationaryandEarthwouldappeartomove.(Thisisthesensationyouhavewhenflyinginajet.)Lookingoutthewindow
+ofthespaceship,theastronautwouldseetimeslowdownonEarthbyafactorof γ =30.0. Seenfromthespaceship,the
+earthbound sibling will have aged only 2/30, or 0.07, of a year, whereas the astronaut would have aged 2.00 years.
+
+200 Chapter 5 | Relativity
+Figure 5.7 The twin paradox consists of the conflicting
+conclusions about which twin ages more as a result of a long
+space journey at relativistic speed.
+Theparadoxhereisthatthetwotwinscannotbothbecorrect. Aswithallparadoxes,conflicting conclusions comefrom
+a false premise. In fact, the astronaut’s motion is significantly different from that of the earthbound twin. The astronaut
+accelerates to a high velocity and then decelerates to view the star system. To return to Earth, she again accelerates and
+decelerates.Thespacecraftisnotinasingleinertialframetowhichthetimedilationformulacanbedirectlyapplied.That
+is,theastronauttwinchangesinertialreferences.Theearthboundtwindoesnotexperiencetheseaccelerationsandremains
+inthesameinertialframe.Thus,thesituationisnotsymmetric,anditisincorrecttoclaimthattheastronautobservesthe
+sameeffectsashertwin.Thelackofsymmetrybetweenthetwinswillbestillmoreevidentwhenweanalyzethejourney
+later in this chapter in terms of the path the astronaut follows through four-dimensional space-time.
+In1971,AmericanphysicistsJosephHafeleandRichardKeatingverifiedtimedilationatlowrelativevelocitiesbyflying
+extremelyaccurateatomicclocksaroundtheworldoncommercialaircraft.Theymeasuredelapsedtimetoanaccuracyof
+afewnanosecondsandcompareditwiththetimemeasuredbyclocksleftbehind.HafeleandKeating’sresultswerewithin
+experimentaluncertaintiesofthepredictionsofrelativity.Bothspecialandgeneralrelativityhadtobetakenintoaccount,
+because gravity and accelerations were involved as well as relative motion.
+5.3 Check Your Understanding a. A particle travels at 1.90×10 8 m/s and lives 2.10×10 −8 s when at
+rest relative to an observer. How long does the particle live as viewed in the laboratory?
+b.SpacecraftAandBpassinoppositedirectionsatarelativespeedof 4.00×10 7 m/s. Aninternalclockin
+spacecraftAcausesittoemitaradiosignalfor1.00s.ThecomputerinspacecraftBcorrectsforthebeginning
+andendofthesignalhavingtraveleddifferentdistances,tocalculatethetimeintervalduringwhichshipAwas
+emitting the signal. What is the time interval that the computer in spacecraftBcalculates?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 201
+5.4 | Length Contraction
+Learning Objectives
+By the end of this section, you will be able to:
+• Explain how simultaneity and length contraction are related.
+• Describe the relation between length contraction and time dilation and use it to derive the
+length-contraction equation.
+ThelengthofthetraincarinFigure 5.8isthesameforallthepassengers.Allofthemwouldagreeonthesimultaneous
+locationofthetwoendsofthecarandobtainthesameresultforthedistancebetweenthem.Butsimultaneouseventsinone
+inertialframeneednotbesimultaneousinanother.Ifthetraincouldtravelatrelativisticspeeds,anobserverontheground
+wouldseethesimultaneouslocationsofthetwoendpointsofthecaratadifferentdistanceapartthanobserversinsidethe
+car. Measured distances need not be the same for different observers when relativistic speeds are involved.
+Figure 5.8 People might describe distances differently, but at
+relativistic speeds, the distances really are different. (credit:
+“russavia”/Flickr)
+Proper Length
+Twoobserverspassingeachotheralwaysseethesamevalueoftheirrelativespeed.Eventhoughtimedilationimpliesthat
+the train passenger and the observer standing alongside the tracks measure different times for the train to pass, they still
+agreethatrelativespeed,whichisdistancedividedbyelapsedtime,isthesame.Ifanobserveronthegroundandoneonthe
+trainmeasureadifferenttimeforthelengthofthetraintopassthegroundobserver,agreeingontheirrelativespeedmeans
+they must also see different distances traveled.
+ThemuondiscussedinExample 5.3illustratesthisconcept(Figure 5.9).ToanobserveronEarth,themuontravelsat
+0.950cfor 7.05 μs from the time it is produced until it decays. Therefore, it travels a distance relative to Earth of:
+L =vΔt=(0.950)(3.00×10 8 m/s)(7.05×10 −6 s ⎞ =2.01km.
+0 ⎠
+In the muon frame, the lifetime of the muon is 2.20 μs. In this frame of reference, the Earth, air, and ground have only
+enough time to travel:
+L=vΔτ=(0.950)(3.00×10 8 m/s)(2.20×10 −6 s)km=0.627km.
+Thedistancebetweenthesametwoevents(productionanddecayofamuon)dependsonwhomeasuresitandhowtheyare
+moving relative to it.
+
+202 Chapter 5 | Relativity
+Proper Length
+Properlength L isthedistancebetweentwopointsmeasuredbyanobserverwhoisatrestrelativetobothofthe
+0
+points.
+Theearthboundobservermeasurestheproperlength L becausethepointsatwhichthemuonisproducedanddecaysare
+0
+stationaryrelativetoEarth.Tothemuon,Earth,air,andcloudsaremoving,sothedistanceLitseesisnottheproperlength.
+Figure 5.9 (a) The earthbound observer sees the muon travel 2.01 km. (b) The same path has length 0.627 km seen from the
+muon’s frame of reference. The Earth, air, and clouds are moving relative to the muon in its frame, and have smaller lengths
+along the direction of travel.
+Length Contraction
+Torelatedistancesmeasuredbydifferentobservers,notethatthevelocityrelativetotheearthboundobserverinourmuon
+example is given by
+L
+v= 0.
+Δt
+Thetimerelativetotheearthboundobserveris Δt, becausetheobjectbeingtimedismovingrelativetothisobserver.The
+velocity relative to the moving observer is given by
+L
+v= .
+Δτ
+Themovingobservertravelswiththemuonandthereforeobservesthepropertime Δτ. Thetwovelocitiesareidentical;
+thus,
+L 0 = L .
+Δt Δτ
+We know that Δt=γΔτ. Substituting this equation into the relationship above gives
+L (5.3)
+L=
+γ
+0.
+Substituting for γ gives an equation relating the distances measured by different observers.
+Length Contraction
+Length contraction is the decrease in the measured length of an object from its proper length when measured in a
+reference frame that is moving with respect to the object:
+(5.4)
+v2
+L=L 1−
+0 c2
+where L is the length of the object in its rest frame, andLis the length in the frame moving with velocityv.
+0
+Ifwemeasurethelengthofanythingmovingrelativetoourframe,wefinditslengthLtobesmallerthantheproperlength
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 203
+L thatwouldbemeasurediftheobjectwerestationary.Forexample,inthemuon’srestframe,thedistanceEarthmoves
+0
+betweenwherethemuonwasproducedandwhereitdecayedisshorterthanthedistancetraveledasseenfromtheEarth’s
+frame. Those points are fixed relative to Earth but are moving relative to the muon. Clouds and other objects are also
+contracted along the direction of motion as seen from muon’s rest frame.
+Thus, two observers measure different distances along their direction of relative motion, depending on which one is
+measuring distances between objects at rest.
+Butwhataboutdistancesmeasuredinadirectionperpendiculartotherelativemotion?Imaginetwoobserversmovingalong
+theirx-axesandpassingeachotherwhileholdingmetersticksverticallyinthey-direction.Figure5.10showstwometer
+sticksMand M′ thatareatrestinthereferenceframesoftwoboysSand S′, respectively.Asmallpaintbrushisattached
+tothetop(the100-cmmark)ofstick M′. Supposethat S′ ismovingtotherightataveryhighspeedvrelativetoS,andthe
+sticksareorientedsothattheyareperpendicular,ortransverse,totheirrelativevelocityvector.Thesticksareheldsothat
+astheypasseachother,theirlowerends(the0-cmmarks)coincide.AssumethatwhenSlooksathisstickMafterwards,
+hefindsalinepaintedonit,justbelowthetopofthestick.Becausethebrushisattachedtothetopoftheotherboy’sstick
+M′, S can only conclude that stick M′ is less than 1.0 m long.
+Figure 5.10 Meter sticks M and M′ are stationary in the reference
+frames of observers S and S′, respectively. As the sticks pass, a
+small brush attached to the 100-cm mark of M′ paints a line on M.
+Now when the boys approach each other, S′, like S, sees a meter stick moving toward him with speed v. Because their
+situationsaresymmetric,eachboymustmakethesamemeasurementofthestickintheotherframe.So,ifSmeasuresstick
+M′ tobelessthan1.0mlong, S′ mustmeasurestickMtobealsolessthan1.0mlong,and S′ mustseehispaintbrush
+passoverthetopofstickMandnotpaintalineonit.Inotherwords,afterthesameevent,oneboyseesapaintedlineona
+stick, while the other does not see such a line on that same stick!
+Einstein’sfirstpostulaterequiresthatthelawsofphysics(as,forexample,appliedtopainting)predictthatSand S′, who
+arebothininertialframes,makethesameobservations;thatis,Sand S′ musteitherbothseealinepaintedonstickM,or
+bothnotseethatline.WearethereforeforcedtoconcludeouroriginalassumptionthatSsawalinepaintedbelowthetop
+ofhisstickwaswrong!Instead,Sfindsthelinepaintedrightatthe100-cmmarkonM.Thenbothboyswillagreethata
+lineispaintedonM,andtheywillalsoagreethatbothsticksareexactly1mlong.Weconcludethenthatmeasurementsof
+a transverselength must be the samein different inertial frames.
+Example 5.5
+Calculating Length Contraction
+Suppose an astronaut, such as the twin in the twin paradox discussion, travels so fast that γ =30.00. (a) The
+astronauttravelsfromEarthtotheneareststarsystem,AlphaCentauri,4.300lightyears(ly)awayasmeasured
+byanearthboundobserver.HowfarapartareEarthandAlphaCentauriasmeasuredbytheastronaut?(b)Interms
+ofc,whatistheastronaut’svelocityrelativetoEarth?YoumayneglectthemotionofEarthrelativetothesun
+(Figure 5.11).
+
+204 Chapter 5 | Relativity
+Figure 5.11 (a) The earthbound observer measures the proper distance between Earth and Alpha Centauri. (b) The
+astronaut observes a length contraction because Earth and Alpha Centauri move relative to her ship. She can travel this
+shorter distance in a smaller time (her proper time) without exceeding the speed of light.
+Strategy
+First,notethatalightyear(ly)isaconvenientunitofdistanceonanastronomicalscale—itisthedistancelight
+travels in a year. For part (a), the 4.300-ly distance between Alpha Centauri and Earth is the proper distance
+L , because it is measured by an earthbound observer to whom both stars are (approximately) stationary. To
+0
+theastronaut,EarthandAlphaCentauriaremovingpastatthesamevelocity,sothedistancebetweenthemisthe
+contractedlengthL.Inpart(b),wearegiven γ, sowecanfindvbyrearrangingthedefinitionof γ toexpressv
+in terms ofc.
+Solution for (a)
+For part (a):
+a. Identify the knowns: L =4.300ly;γ =30.00.
+0
+b. Identify the unknown:L.
+L
+c. Express the answer as an equation: L=
+γ
+0.
+d. Do the calculation:
+L
+L = γ 0
+4.300ly
+=
+30.00
+=0.1433ly.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 5 | Relativity 205
+Solution for (b)
+For part (b):
+a. Identify the known: γ =30.00.
+b. Identify the unknown:vin terms ofc.
+c. Express the answer as an equation. Start with:
+γ = 1 .
+v2
+1−
+c2
+Then solve for the unknownv/cby first squaring both sides and then rearranging:
+γ2 = 1
+v2
+1−
+c2
+v2
+1
+= 1−
+c2 γ2
+v 1
+c = 1− .
+γ2
+d. Do the calculation:
+v 1
+c = 1−
+γ2
+1
+= 1−
+(30.00)2
+=0.99944
+or
+v=0.9994c.
+Significance
+Remember not to round off calculations until the final answer, or you could get erroneous results. This is
+especially true for special relativity calculations, where the differences might only be revealed after several
+decimalplaces.Therelativisticeffectislargehere ⎛γ =30.00⎞, andweseethatvisapproaching(notequaling)
+⎝ ⎠
+thespeedoflight.Becausethedistanceasmeasuredbytheastronautissomuchsmaller,theastronautcantravel
+it in much less time in her frame.
+Peopletravelingatextremelyhighvelocitiescouldcoververylargedistances(thousandsorevenmillionsoflightyears)and
+ageonlyafewyearsontheway.However,likeemigrantsinpastcenturieswholefttheirhome,thesepeoplewouldleavethe
+Earththeyknowforever.Eveniftheyreturned,thousandstomillionsofyearswouldhavepassedonEarth,obliteratingmost
+ofwhatnowexists.Thereisalsoamoreseriouspracticalobstacletotravelingatsuchvelocities;immenselygreaterenergies
+wouldbeneededtoachievesuchhighvelocitiesthanclassicalphysicspredictscanbeattained.Thiswillbediscussedlater
+in the chapter.
+Why don’t we notice length contraction in everyday life? The distance to the grocery store does not seem to depend on
+v2
+whether we are moving or not. Examining the equation L=L 1− , we see that at low velocities (v<<c), the
+0 c2
+lengthsarenearlyequal,whichistheclassicalexpectation.Butlengthcontractionisreal,ifnotcommonlyexperienced.For
+example,achargedparticlesuchasanelectrontravelingatrelativisticvelocityhaselectricfieldlinesthatarecompressed
+alongthedirectionofmotionasseenbyastationaryobserver(Figure 5.12).Astheelectronpassesadetector,suchasa
+coilofwire,itsfieldinteractsmuchmorebriefly,aneffectobservedatparticleacceleratorssuchasthe3-km-longStanford
+LinearAccelerator(SLAC).Infact,toanelectrontravelingdownthebeampipeatSLAC,theacceleratorandEarthareall
+movingbyandarelengthcontracted.Therelativisticeffectissogreatthattheacceleratorisonly0.5mlongtotheelectron.
+Itisactuallyeasiertogettheelectronbeamdownthepipe,becausethebeamdoesnothavetobeaspreciselyaimedtoget

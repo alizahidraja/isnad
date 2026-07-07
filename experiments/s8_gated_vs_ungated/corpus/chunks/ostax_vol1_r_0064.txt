@@ -1,0 +1,226 @@
+# REAL PDF — openstax_vol1.pdf, pages 378-382
+############################################################
+
+366 8 • Potential Energy and Conservation of Energy
+generate electricity (Figure 8.15). However, in another important physical process, known as the photoelectric
+effect, energetic radiation impinging on certain materials is directly converted into electricity. Materials that do this
+are called photovoltaics (PV in Figure 8.14). Some solar power systems use lenses or mirrors to concentrate the
+Sun’s rays, before converting their energy through photovoltaics, and these are qualified as CSP in Figure 8.14.
+FIGURE 8.15 Solar cell arrays found in a sunny area converting the solar energy into stored electrical energy. (credit: modification of work
+by Sarah Swenty, U.S. Fish and Wildlife Service)
+As we finish this chapter on energy and work, it is relevant to draw some distinctions between two sometimes
+misunderstood terms in the area of energy use. As we mentioned earlier, the “law of conservation of energy” is a
+very useful principle in analyzing physical processes. It cannot be proven from basic principles but is a very good
+bookkeeping device, and no exceptions have ever been found. It states that the total amount of energy in an isolated
+system always remains constant. Related to this principle, but remarkably different from it, is the important
+philosophy of energy conservation. This concept has to do with seeking to decrease the amount of energy used by
+an individual or group through reducing activities (e.g., turning down thermostats, driving fewer kilometers) and/or
+increasing conversion efficiencies in the performance of a particular task, such as developing and using more
+efficient room heaters, cars that have greater miles-per-gallon ratings, energy-efficient compact fluorescent lights,
+etc.
+Since energy in an isolated system is not destroyed, created, or generated, you might wonder why we need to be
+concerned about our energy resources, since energy is a conserved quantity. The problem is that the final result of
+most energy transformations is waste heat, that is, work that has been “degraded” in the energy transformation. We
+will discuss this idea in more detail in the chapters on thermodynamics.
+Access for free at openstax.org
+
+8 • Chapter Review 367
+Chapter Review
+Key Terms
+conservative force force that does work independent non-conservative force force that does work that
+of path depends on path
+conserved quantity one that cannot be created or non-renewable energy source that is not renewable,
+destroyed, but may be transformed between but is depleted by human consumption
+different forms of itself potential energy function of position, energy
+energy conservation total energy of an isolated possessed by an object relative to the system
+system is constant considered
+equilibrium point position where the assumed potential energy diagram graph of a particle’s
+conservative, net force on a particle, given by the potential energy as a function of position
+slope of its potential energy curve, is zero potential energy difference negative of the work
+exact differential is the total differential of a function done acting between two points in space
+and requires the use of partial derivatives if the renewable energy source that is replenished by
+function involves more than one dimension natural processes, over human time scales
+mechanical energy sum of the kinetic and potential turning point position where the velocity of a
+energies particle, in one-dimensional motion, changes sign
+Key Equations
+Difference of potential energy
+Potential energy with respect to zero of
+potential energy at
+Gravitational potential energy near Earth’s surface
+Potential energy for an ideal spring
+Work done by conservative force over a closed path
+Condition for conservative force in two dimensions
+Conservative force is the negative derivative of potential energy
+Conservation of energy with no
+non-conservative forces
+Summary
+8.1 Potential Energy of a System is conservative if the work done over any closed
+path is zero.
+• For a single-particle system, the difference of
+• A non-conservative force is one for which the
+potential energy is the opposite of the work done
+work done depends on the path.
+by the forces acting on the particle as it moves
+• For a conservative force, the infinitesimal work is
+from one position to another.
+an exact differential. This implies conditions on
+• Since only differences of potential energy are
+the derivatives of the force’s components.
+physically meaningful, the zero of the potential
+• The component of a conservative force, in a
+energy function can be chosen at a convenient
+particular direction, equals the negative of the
+location.
+derivative of the potential energy for that force,
+• The potential energies for Earth’s constant
+with respect to a displacement in that direction.
+gravity, near its surface, and for a Hooke’s law
+force are linear and quadratic functions of 8.3 Conservation of Energy
+position, respectively.
+• A conserved quantity is a physical property that
+8.2 Conservative and Non-Conservative Forces stays constant regardless of the path taken.
+• A form of the work-energy theorem says that the
+• A conservative force is one for which the work
+change in the mechanical energy of a particle
+done is independent of path. Equivalently, a force
+equals the work done on it by non-conservative
+
+368 8 • Chapter Review
+forces. • The negative of the slope of the potential energy
+• If non-conservative forces do no work and there curve, for a particle, equals the one-dimensional
+are no external forces, the mechanical energy of component of the conservative force on the
+a particle stays constant. This is a statement of particle. At an equilibrium point, the slope is zero
+the conservation of mechanical energy and there and is a stable (unstable) equilibrium for a
+is no change in the total mechanical energy. potential energy minimum (maximum).
+• For one-dimensional particle motion, in which
+8.5 Sources of Energy
+the mechanical energy is constant and the
+potential energy is known, the particle’s position, • Energy can be transferred from one system to
+as a function of time, can be found by evaluating another and transformed or converted from one
+an integral that is derived from the conservation type into another. Some of the basic types of
+of mechanical energy. energy are kinetic, potential, thermal, and
+electromagnetic.
+8.4 Potential Energy Diagrams and Stability
+• Renewable energy sources are those that are
+• Interpreting a one-dimensional potential energy replenished by ongoing natural processes, over
+diagram allows you to obtain qualitative, and human time scales. Examples are wind, water,
+some quantitative, information about the motion geothermal, and solar power.
+of a particle. • Non-renewable energy sources are those that are
+• At a turning point, the potential energy equals depleted by consumption, over human time
+the mechanical energy and the kinetic energy is scales. Examples are fossil fuel and nuclear
+zero, indicating that the direction of the velocity power.
+reverses there.
+Conceptual Questions
+8.1 Potential Energy of a System 5 . What is the dominant factor that affects the
+speed of an object that started from rest down a
+1 . The kinetic energy of a system must always be
+frictionless incline if the only work done on the
+positive or zero. Explain whether this is true for
+object is from gravitational forces?
+the potential energy of a system.
+6 . Two people observe a leaf falling from a tree.
+2 . The force exerted by a diving board is
+One person is standing on a ladder and the other
+conservative, provided the internal friction is
+is on the ground. If each person were to
+negligible. Assuming friction is negligible,
+compare the energy of the leaf observed, would
+describe changes in the potential energy of a
+each person find the following to be the same or
+diving board as a swimmer drives from it,
+different for the leaf, from the point where it falls
+starting just before the swimmer steps on the
+off the tree to when it hits the ground: (a) the
+board until just after their feet leave it.
+kinetic energy of the leaf; (b) the change in
+3 . Describe the gravitational potential energy gravitational potential energy; (c) the final
+transfers and transformations for a javelin, gravitational potential energy?
+starting from the point at which an athlete picks
+8.2 Conservative and Non-Conservative Forces
+up the javelin and ending when the javelin is
+stuck into the ground after being thrown. 7 . What is the physical meaning of a non-
+conservative force?
+4 . A couple of soccer balls of equal mass are
+kicked off the ground at the same speed but at 8 . A bottle rocket is shot straight up in the air with
+different angles. Soccer ball A is kicked off at an a speed . If the air resistance is ignored,
+angle slightly above the horizontal, whereas ball the bottle would go up to a height of
+B is kicked slightly below the vertical. How do approximately . However, the rocket goes
+each of the following compare for ball A and ball up to only before returning to the ground.
+B? (a) The initial kinetic energy and (b) the What happened? Explain, giving only a
+change in gravitational potential energy from the qualitative response.
+ground to the highest point? If the energy in part
+9 . An external force acts on a particle during a trip
+(a) differs from part (b), explain why there is a
+from one point to another and back to that same
+difference between the two energies.
+point. This particle is only affected by
+Access for free at openstax.org
+
+8 • Chapter Review 369
+conservative forces. Does this particle’s kinetic 14 . In a common physics demonstration, a bowling ball
+energy and potential energy change as a result is suspended from the ceiling by a rope.
+of this trip? The professor pulls the ball away from its
+equilibrium position and holds it adjacent to his
+8.3 Conservation of Energy
+nose, as shown below. He releases the ball so that it
+10 . When a body slides down an inclined plane, swings directly away from him. Does he get struck
+does the work of friction depend on the body’s by the ball on its return swing? What is he trying to
+initial speed? Answer the same question for a show in this demonstration?
+body sliding down a curved surface.
+11 . Consider the following scenario. A car for which
+friction is not negligible accelerates from rest down
+a hill, running out of gasoline after a short distance
+(see below). The driver lets the car coast farther
+down the hill, then up and over a small crest. He
+then coasts down that hill into a gas station, where
+he brakes to a stop and fills the tank with gasoline.
+15 . A child jumps up and down on a bed, reaching a
+Identify the forms of energy the car has, and how
+higher height after each bounce. Explain how the
+they are changed and transferred in this series of
+child can increase his maximum gravitational
+events.
+potential energy with each bounce.
+16 . Can a non-conservative force increase the
+mechanical energy of the system?
+17 . Neglecting air resistance, how much would I
+have to raise the vertical height if I wanted to
+double the impact speed of a falling object?
+18 . A box is dropped onto a spring at its equilibrium
+position. The spring compresses with the box
+attached and comes to rest. Since the spring is
+in the vertical position, does the change in the
+12 . A dropped ball bounces to one-half its original
+gravitational potential energy of the box while
+height. Discuss the energy transformations that
+the spring is compressing need to be considered
+take place.
+in this problem?
+13 . “ constant is a special case of the
+work-energy theorem.” Discuss this statement.
+Problems
+8.1 Potential Energy of a System 21 . A camera weighing 10 N falls from a small drone
+hovering overhead and enters free fall.
+19 . Using values from Table 8.1, how many DNA
+What is the gravitational potential energy change
+molecules could be broken by the energy carried
+of the camera from the drone to the ground if
+by a single electron in the beam of an old-
+you take a reference point of (a) the ground
+fashioned TV tube? (These electrons were not
+being zero gravitational potential energy? (b)
+dangerous in themselves, but they did create
+The drone being zero gravitational potential
+dangerous X-rays. Later-model tube TVs had
+energy? What is the gravitational potential
+shielding that absorbed X-rays before they
+energy of the camera (c) before it falls from the
+escaped and exposed viewers.)
+drone and (d) after the camera lands on the
+20 . If the energy in fusion bombs were used to ground if the reference point of zero gravitational
+supply the energy needs of the world, how many potential energy is taken to be a second person
+of the 9-megaton variety would be needed for a looking out of a building from the ground?
+year’s supply of energy (using data from this
+22 . Someone drops a pebble off of a docked
+equation)?
+cruise ship, above the water level. A

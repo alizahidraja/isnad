@@ -1,0 +1,215 @@
+# REAL PDF — openstax_vol1.pdf, pages 423-433
+############################################################
+
+9.4 • Types of Collisions 411
+Now we can calculate the initial speed of the car:
+Significance
+This is an example of the type of analysis done by investigators of major car accidents. A great deal of legal and
+financial consequences depend on an accurate analysis and calculation of momentum and energy.
+This collision converted some of the initial kinetic energy to other forms (presumably the deformation of the car and
+truck and some heat and sound):
+Change in kinetic energy =
+CHECK YOUR UNDERSTANDING 9.8
+Suppose there had been no friction (the collision happened on ice); that would make zero, and thus
+, which is obviously wrong. What is the mistake in this conclusion?
+Subatomic Collisions and Momentum
+Conservation of momentum is crucial to our understanding of atomic and subatomic particles because much of
+what we know about these particles comes from collision experiments.
+At the beginning of the twentieth century, there was considerable interest in, and debate about, the structure of the
+atom. It was known that atoms contain two types of electrically charged particles: negatively charged electrons and
+positively charged protons. (The existence of an electrically neutral particle was suspected, but would not be
+confirmed until 1932.) The question was, how were these particles arranged in the atom? Were they distributed
+uniformly throughout the volume of the atom (as J.J. Thomson proposed), or arranged at the corners of regular
+polygons (which was Gilbert Lewis’ model), or rings of negative charge that surround the positively charged
+nucleus—rather like the planetary rings surrounding Saturn (as suggested by Hantaro Nagaoka), or something else?
+The New Zealand physicist Ernest Rutherford (along with the German physicist Hans Geiger and the British physicist
+Ernest Marsden) performed the crucial experiment in 1909. They bombarded a thin sheet of gold foil with a beam of
+high-energy (that is, high-speed) alpha-particles (the nucleus of a helium atom). The alpha-particles collided with
+the gold atoms, and their subsequent velocities were detected and analyzed, using conservation of momentum and
+conservation of energy.
+If the charges of the gold atoms were distributed uniformly (per Thomson), then the alpha-particles should collide
+with them and nearly all would be deflected through many angles, all small; the Nagaoka model would produce a
+similar result. If the atoms were arranged as regular polygons (Lewis), the alpha-particles would deflect at a
+relatively small number of angles.
+What actually happened is that nearly none of the alpha-particles were deflected. Those that were, were deflected
+at large angles, some close to —those alpha-particles reversed direction completely (Figure 9.21). None of the
+existing atomic models could explain this. Eventually, Rutherford developed a model of the atom that was much
+closer to what we now have—again, using conservation of momentum and energy as his starting point.
+
+412 9 • Linear Momentum and Collisions
+FIGURE 9.21 The Thomson and Rutherford models of the atom. The Thomson model predicted that nearly all of the incident alpha-
+particles would be scattered and at small angles. Rutherford and Geiger found that nearly none of the alpha particles were scattered, but
+those few that were deflected did so through very large angles. The results of Rutherford’s experiments were inconsistent with the
+Thomson model. Rutherford used conservation of momentum and energy to develop a new, and better model of the atom—the nuclear
+model.
+9.5 Collisions in Multiple Dimensions
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Express momentum as a two-dimensional vector
+• Write equations for momentum conservation in component form
+• Calculate momentum in two dimensions, as a vector quantity
+It is far more common for collisions to occur in two dimensions; that is, the angle between the initial velocity vectors
+is neither zero nor . Let’s see what complications arise from this.
+The first idea we need is that momentum is a vector; like all vectors, it can be expressed as a sum of perpendicular
+components (usually, though not always, an x-component and a y-component, and a z-component if necessary).
+Thus, when we write down the statement of conservation of momentum for a problem, our momentum vectors can
+be, and usually will be, expressed in component form.
+The second idea we need comes from the fact that momentum is related to force:
+Expressing both the force and the momentum in component form,
+Access for free at openstax.org
+
+9.5 • Collisions in Multiple Dimensions 413
+Remember, these equations are simply Newton’s second law, in vector form and in component form. We know that
+Newton’s second law is true in each direction, independently of the others. It follows therefore (via Newton’s third
+law) that conservation of momentum is also true in each direction independently.
+These two ideas motivate the solution to two-dimensional problems: We write down the expression for conservation
+of momentum twice: once in the x-direction and once in the y-direction.
+9.18
+This procedure is shown graphically in Figure 9.22.
+FIGURE 9.22 (a) For two-dimensional momentum problems, break the initial momentum vectors into their x- and y-components. (b) Add
+the x- and y-components together separately. This gives you the x- and y-components of the final momentum, which are shown as red
+dashed vectors. (c) Adding these components together gives the final momentum.
+We solve each of these two component equations independently to obtain the x- and y-components of the desired
+velocity vector:
+
+414 9 • Linear Momentum and Collisions
+(Here, m represents the total mass of the system.) Finally, combine these components using the Pythagorean
+theorem,
+PROBLEM-SOLVING STRATEGY
+Conservation of Momentum in Two Dimensions
+The method for solving a two-dimensional (or even three-dimensional) conservation of momentum problem is
+generally the same as the method for solving a one-dimensional problem, except that you have to conserve
+momentum in both (or all three) dimensions simultaneously:
+1. Identify a closed system.
+2. Write down the equation that represents conservation of momentum in the x-direction, and solve it for the
+desired quantity. If you are calculating a vector quantity (velocity, usually), this will give you the x-component
+of the vector.
+3. Write down the equation that represents conservation of momentum in the y-direction, and solve. This will
+give you the y-component of your vector quantity.
+4. Assuming you are calculating a vector quantity, use the Pythagorean theorem to calculate its magnitude, using
+the results of steps 3 and 4.
+EXAMPLE 9.14
+Traffic Collision
+A small car of mass 1200 kg traveling east at 60 km/hr collides at an intersection with a truck of mass 3000 kg that
+is traveling due north at 40 km/hr (Figure 9.23). The two vehicles are locked together. What is the velocity of the
+combined wreckage?
+Access for free at openstax.org
+
+9.5 • Collisions in Multiple Dimensions 415
+FIGURE 9.23 A large truck moving north is about to collide with a small car moving east. The final momentum vector has both x- and
+y-components.
+Strategy
+First off, we need a closed system. The natural system to choose is the (car + truck), but this system is not closed;
+friction from the road acts on both vehicles. We avoid this problem by restricting the question to finding the velocity
+at the instant just after the collision, so that friction has not yet had any effect on the system. With that restriction,
+momentum is conserved for this system.
+Since there are two directions involved, we do conservation of momentum twice: once in the x-direction and once in
+the y-direction.
+Solution
+Before the collision the total momentum is
+After the collision, the wreckage has momentum
+Since the system is closed, momentum must be conserved, so we have
+We have to be careful; the two initial momenta are not parallel. We must add vectorially (Figure 9.24).
+
+416 9 • Linear Momentum and Collisions
+FIGURE 9.24 Graphical addition of momentum vectors. Notice that, although the car’s velocity is larger than the truck’s, its momentum is
+smaller.
+If we define the +x-direction to point east and the +y-direction to point north, as in the figure, then (conveniently),
+Therefore, in the x-direction:
+and in the y-direction:
+Applying the Pythagorean theorem gives
+As for its direction, using the angle shown in the figure,
+This angle is east of north, or counterclockwise from the +x-direction.
+Significance
+As a practical matter, accident investigators usually work in the “opposite direction”; they measure the distance of
+skid marks on the road (which gives the stopping distance) and use the work-energy theorem along with
+conservation of momentum to determine the speeds and directions of the cars prior to the collision. We saw that
+analysis in an earlier section.
+CHECK YOUR UNDERSTANDING 9.9
+Suppose the initial velocities were not at right angles to each other. How would this change both the physical result
+Access for free at openstax.org
+
+9.5 • Collisions in Multiple Dimensions 417
+and the mathematical analysis of the collision?
+EXAMPLE 9.15
+Exploding Scuba Tank
+A common scuba tank is an aluminum cylinder that weighs 31.7 pounds empty (Figure 9.25). When full of
+compressed air, the internal pressure is between 2500 and 3000 psi (pounds per square inch). Suppose such a tank,
+which had been sitting motionless, suddenly explodes into three pieces. The first piece, weighing 10 pounds, shoots
+off horizontally at 235 miles per hour; the second piece (7 pounds) shoots off at 172 miles per hour, also in the
+horizontal plane, but at a angle to the first piece. What is the mass and initial velocity of the third piece? (Do all
+work, and express your final answer, in SI units.)
+FIGURE 9.25 A scuba tank explodes into three pieces.
+Strategy
+To use conservation of momentum, we need a closed system. If we define the system to be the scuba tank, this is
+not a closed system, since gravity is an external force. However, the problem asks for just the initial velocity of the
+third piece, so we can neglect the effect of gravity and consider the tank by itself as a closed system. Notice that, for
+this system, the initial momentum vector is zero.
+We choose a coordinate system where all the motion happens in the xy-plane. We then write down the equations for
+conservation of momentum in each direction, thus obtaining the x- and y-components of the momentum of the third
+piece, from which we obtain its magnitude (via the Pythagorean theorem) and its direction. Finally, dividing this
+momentum by the mass of the third piece gives us the velocity.
+Solution
+First, let’s get all the conversions to SI units out of the way:
+Now apply conservation of momentum in each direction.
+
+418 9 • Linear Momentum and Collisions
+x-direction:
+y-direction:
+From our chosen coordinate system, we write the x-components as
+For the y-direction, we have
+This gives the magnitude of :
+The velocity of the third piece is therefore
+Access for free at openstax.org
+
+9.6 • Center of Mass 419
+The direction of its velocity vector is the same as the direction of its momentum vector:
+Because is below the -axis, the actual angle is from the +x-direction.
+Significance
+The enormous velocities here are typical; an exploding tank of any compressed gas can easily punch through the
+wall of a house and cause significant injury, or death. Fortunately, such explosions are extremely rare, on a
+percentage basis.
+CHECK YOUR UNDERSTANDING 9.10
+Notice that the mass of the air in the tank was neglected in the analysis and solution. How would the solution
+method changed if the air was included? How large a difference do you think it would make in the final answer?
+9.6 Center of Mass
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the meaning and usefulness of the concept of center of mass
+• Calculate the center of mass of a given system
+• Apply the center of mass concept in two and three dimensions
+• Calculate the velocity and acceleration of the center of mass
+We have been avoiding an important issue up to now: When we say that an object moves (more correctly,
+accelerates) in a way that obeys Newton’s second law, we have been ignoring the fact that all objects are actually
+made of many constituent particles. A car has an engine, steering wheel, seats, passengers; a football is leather and
+rubber surrounding air; a brick is made of atoms. There are many different types of particles, and they are generally
+not distributed uniformly in the object. How do we include these facts into our calculations?
+Then too, an extended object might change shape as it moves, such as a water balloon or a cat falling (Figure 9.26).
+This implies that the constituent particles are applying internal forces on each other, in addition to the external force
+that is acting on the object as a whole. We want to be able to handle this, as well.
+
+420 9 • Linear Momentum and Collisions
+FIGURE 9.26 As the cat falls, its body performs complicated motions so it can land on its feet, but one point in the system moves with the
+simple uniform acceleration of gravity.
+The problem before us, then, is to determine what part of an extended object is obeying Newton’s second law when
+an external force is applied and to determine how the motion of the object as a whole is affected by both the internal
+and external forces.
+Be warned: To treat this new situation correctly, we must be rigorous and completely general. We won’t make any
+assumptions about the nature of the object, or of its constituent particles, or either the internal or external forces.
+Thus, the arguments will be complex.
+Internal and External Forces
+Suppose we have an extended object of mass M, made of N interacting particles. Let’s label their masses as ,
+where . Note that
+9.19
+If we apply some net external force on the object, every particle experiences some “share” or some fraction of
+that external force. Let:
+Notice that these fractions of the total force are not necessarily equal; indeed, they virtually never are. (They can be,
+but they usually aren’t.) In general, therefore,
+Next, we assume that each of the particles making up our object can interact with (apply forces on) every other
+particle of the object. We won’t try to guess what kind of forces they are; but since these forces are the result of
+particles of the object acting on other particles of the same object, we refer to them as internal forces ; thus:
+the net internal force that the jth particle experiences from all the other particles that make up the object.
+Now, the net force, internal plus external, on the jth particle is the vector sum of these:
+9.20
+where again, this is for all N particles; .
+Access for free at openstax.org

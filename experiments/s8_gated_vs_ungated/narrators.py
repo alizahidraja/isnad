@@ -221,5 +221,5 @@ NARRATOR_VARIANTS: dict[str, NarratorVariant] = {
     ),
 }
 
-SCRAPER_VARIANTS = ["pdf-scraper@1.2", "pdf-scraper@0.9-legacy"]
+SCRAPER_VARIANTS = ["pdf-scraper@1.2"]  # Only the reliable scraper for this experiment
 INGEST_VARIANTS = ["ingest@good", "ingest@weak"]

@@ -1,0 +1,197 @@
+# REAL PDF — openstax_vol3.pdf, pages 277-281
+############################################################
+
+Chapter 6 | Photons and Matter Waves 269
+Figure 6.15 The emission spectrum of atomic hydrogen: The spectral positions of emission lines are characteristic for
+hydrogen atoms. (credit: “Merikanto”/Wikimedia Commons)
+Figure 6.16 The emission spectrum of atomic iron: The spectral positions of emission lines are characteristic for iron atoms.
+Emissionspectraoftheelementshavecomplexstructures;theybecomeevenmorecomplexforelementswithhigheratomic
+numbers.Thesimplestspectrum,showninFigure 6.15,belongstothehydrogenatom.Onlyfourlinesarevisibletothe
+humaneye.AsyoureadfromrighttoleftinFigure 6.15,theselinesare:red(656nm),calledtheH-α line;aqua(486
+nm),blue(434nm),andviolet(410nm).Thelineswithwavelengthsshorterthan400nmappearintheultravioletpartof
+thespectrum(Figure6.15,farleft)andareinvisibletothehumaneye.Thereareinfinitelymanyinvisiblespectrallinesin
+the series for hydrogen.
+Anempiricalformulatodescribethepositions(wavelengths) λ ofthehydrogenemissionlinesinthisserieswasdiscovered
+in 1885 by JohannBalmer. It is known as theBalmer formula:
+⎛ ⎞ (6.31)
+1 =R 1 − 1 .
+λ H⎝ 22 n2⎠
+Theconstant R =1.09737×10 7 m−1 iscalledtheRydbergconstantforhydrogen.InEquation 6.31,thepositive
+H
+integerntakesonvalues n=3, 4, 5, 6 forthefourvisiblelinesinthisseries.Theseriesofemissionlinesgivenbythe
+Balmer formula is called the Balmer series for hydrogen. Other emission lines of hydrogen that were discovered in the
+twentieth century are described by theRydberg formula, which summarizes all of the experimental data:
+⎛ ⎞ (6.32)
+1 λ =R H ⎝ ⎜ n 1 2 f − n 1 i 2 ⎠ ⎟, wheren i=n f +1, n f +2, n f +3, ...
+When n f =1, the series of spectral lines is called the Lyman series. When n f =2, the series is called the Balmer
+series, and in this case, the Rydberg formula coincides with the Balmer formula. When n f =3, the series is called the
+Paschen series. When n f =4, the series is called the Brackett series. When n f =5, the series is called the Pfund
+series.When n f =6, wehavetheHumphreysseries.Asyoumayguess,thereareinfinitelymanysuchspectralbands
+in the spectrum of hydrogen because n can be any positive integer number.
+f
+The Rydberg formula for hydrogen gives the exact positions of the spectral lines as they are observed in a laboratory;
+however, at the beginning of the twentieth century, nobody could explain why it worked so well. The Rydberg formula
+remained unexplained until the first successful model of the hydrogen atom was proposed in 1913.
+
+270 Chapter 6 | Photons and Matter Waves
+Example 6.9
+Limits of the Balmer Series
+Calculate the longest and the shortest wavelengths in the Balmer series.
+Strategy
+WecanuseeithertheBalmerformulaortheRydbergformula.Thelongestwavelengthisobtainedwhen 1/n
+i
+islargest,whichiswhen n i=n f +1=3, because n f =2 fortheBalmerseries.Thesmallestwavelengthis
+obtained when 1/n i is smallest, which is 1/n i→0 when n i→∞.
+Solution
+The long-wave limit:
+1 =R ⎛ 1 − 1 ⎞ =(1.09737×10 7 ) 1⎛1 − 1⎞ ⇒λ=656.3nm
+λ H⎝ 22 32⎠ m⎝4 9⎠
+The short-wave limit:
+1 =R ⎛ 1 −0 ⎞ =(1.09737×10 7 ) 1⎛1⎞ ⇒λ=364.6nm
+λ H⎝ 22 ⎠ m⎝4⎠
+Significance
+Note that there are infinitely many spectral lines lying between these two limits.
+6.9 Check Your UnderstandingWhat are the limits of the Lyman series? Can you see these spectral lines?
+Thekeytounlockingthemysteryofatomicspectraisinunderstandingatomicstructure.Scientistshavelongknownthat
+matterismadeofatoms.Accordingtonineteenth-centuryscience,atomsarethesmallestindivisiblequantitiesofmatter.
+This scientific belief was shattered by a series of groundbreaking experiments that proved the existence of subatomic
+particles, such as electrons, protons, and neutrons.
+The electron was discovered and identified as the smallest quantity of electric charge by J.J. Thomson in 1897 in his
+cathode ray experiments, also known as β-ray experiments: A β-ray is a beam of electrons. In 1904, Thomson proposed
+the first model of atomic structure, known as the “plum pudding” model, in which an atom consisted of an unknown
+positively charged matter with negative electrons embedded in it like plums in a pudding. Around 1900, E. Rutherford,
+and independently, Paul Ulrich Villard, classified all radiation known at that time as α-rays, β-rays, and γ-rays (a γ-ray
+is a beam ofhighly energetic photons). In1907,Rutherford and Thomas Royds used spectroscopy methods to show that
+positively charged particles of α-radiation (called α-particles) are in fact doubly ionized atoms of helium. In 1909,
+Rutherford, Ernest Marsden, and Hans Geiger used α-particles in their famous scattering experiment that disproved
+Thomson’s model (seeLinear Momentum and Collisions (http://cnx.org/content/m58317/latest/)).
+In the Rutherford gold foil experiment (also known as the Geiger–Marsden experiment), α-particles were incident on
+a thin gold foil and were scattered by gold atoms inside the foil (see Types of Collisions (http://cnx.org/content/
+m58321/latest/#CNX_UPhysics_09_04_TvsR)).Theoutgoingparticlesweredetectedbya 360° scintillationscreen
+surroundingthegoldtarget(foradetaileddescriptionoftheexperimentalsetup,seeLinearMomentumandCollisions
+(http://cnx.org/content/m58317/latest/) ). When a scattered particle struck the screen, a tiny flash of light
+(scintillation)wasobservedatthatlocation.Bycountingthescintillationsseenatvariousangleswithrespecttothedirection
+oftheincidentbeam,thescientistscoulddeterminewhatfractionoftheincidentparticleswerescatteredandwhatfraction
+werenotdeflectedatall.Iftheplumpuddingmodelwerecorrect,therewouldbenoback-scattered α-particles.However,
+theresultsoftheRutherfordexperimentshowedthat,althoughasizablefractionof α-particlesemergedfromthefoilnot
+scatteredatallasthoughthefoilwerenotintheirway,asignificantfractionof α-particleswereback-scatteredtowardthe
+source.Thiskindofresultwaspossibleonlywhenmostofthemassandtheentirepositivechargeofthegoldatomwere
+concentrated in a tiny space inside the atom.
+In1911,Rutherfordproposedanuclearmodeloftheatom.InRutherford’smodel,anatomcontainedapositivelycharged
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 6 | Photons and Matter Waves 271
+nucleus of negligible size, almost like a point, but included almost the entire mass of the atom. The atom also contained
+negativeelectronsthatwerelocatedwithintheatombutrelativelyfarawayfromthenucleus.Tenyearslater,Rutherford
+coined the name proton for the nucleus of hydrogen and the name neutron for a hypothetical electrically neutral particle
+thatwouldmediatethebindingofpositiveprotonsinthenucleus(theneutronwasdiscoveredin1932byJamesChadwick).
+Rutherford iscredited with the discovery ofthe atomic nucleus; however,the Rutherford model ofatomic structure does
+not explain the Rydberg formula for the hydrogen emission lines.
+Bohr’smodelofthehydrogenatom,proposedbyNielsBohrin1913,wasthefirstquantummodelthatcorrectlyexplained
+the hydrogen emission spectrum. Bohr’s model combines the classical mechanics of planetary motion with the quantum
+conceptofphotons.OnceRutherfordhadestablishedtheexistenceoftheatomicnucleus,Bohr’sintuitionthatthenegative
+electroninthehydrogenatommustrevolvearoundthepositivenucleusbecamealogicalconsequenceoftheinverse-square-
+distancelawofelectrostaticattraction.RecallthatCoulomb’slawdescribingtheattractionbetweentwooppositecharges
+has a similar form to Newton’s universal law of gravitation in the sense that the gravitational force and the electrostatic
+force are both decreasing as 1/r2, where r is the separation distance between the bodies. In the same way as Earth
+revolves around the sun, the negative electron in the hydrogen atom can revolve around the positive nucleus. However,
+an accelerating charge radiates its energy. Classically, if the electron moved around the nucleus in a planetary fashion, it
+wouldbeundergoingcentripetalacceleration,andthuswouldberadiatingenergythatwouldcauseittospiraldownintothe
+nucleus.Suchaplanetaryhydrogenatomwouldnotbestable,whichiscontrarytowhatweknowaboutordinaryhydrogen
+atoms that do not disintegrate. Moreover, the classical motion of the electron is not able to explain the discrete emission
+spectrum of hydrogen.
+To circumvent these two difficulties, Bohr proposed the following threepostulates of Bohr’s model:
+1. Thenegativeelectronmovesaroundthepositivenucleus(proton)inacircularorbit.Allelectronorbitsarecentered
+at the nucleus. Not all classically possible orbits are available to an electron bound to the nucleus.
+2. Theallowedelectronorbitssatisfythefirstquantizationcondition:Inthenthorbit,theangularmomentum L of
+n
+the electron can take only discrete values:
+L n=nℏ, wheren=1, 2, 3, ... (6.33)
+Thispostulatesaysthattheelectron’sangularmomentumisquantized.Denotedby r n and v n, respectively,the
+radius of thenth orbit and the electron’s speed in it, the first quantization condition can be expressed explicitly as
+m
+e
+v
+n
+r n=nℏ. (6.34)
+3. Anelectronisallowedtomaketransitionsfromoneorbitwhereitsenergyis E toanotherorbitwhereitsenergyis
+n
+E m. Whenanatomabsorbsaphoton,theelectronmakesatransitiontoahigher-energyorbit.Whenanatomemits
+aphoton,theelectrontransitstoalower-energyorbit.Electrontransitionswiththesimultaneousphotonabsorption
+or photon emission take place instantaneously. The allowed electron transitions satisfy the second quantization
+condition:
+hf =|E n−E m| (6.35)
+where hf is the energy of either an emitted or an absorbed photon with frequency f. The second quantization
+condition states that an electron’s change in energy in the hydrogen atom is quantized.
+ThesethreepostulatesoftheearlyquantumtheoryofthehydrogenatomallowustoderivenotonlytheRydbergformula,
+butalsothevalueoftheRydbergconstantandotherimportantpropertiesofthehydrogenatomsuchasitsenergylevels,
+itsionizationenergy,andthesizesofelectronorbits.NotethatinBohr’smodel,alongwithtwononclassicalquantization
+postulates,wealsohavetheclassicaldescriptionoftheelectronasaparticlethatissubjectedtotheCoulombforce,andits
+motionmustobeyNewton’slawsofmotion.Thehydrogenatom,asanisolatedsystem,mustobeythelawsofconservation
+ofenergyandmomentuminthewayweknowfromclassicalphysics.Havingthistheoreticalframeworkinmind,weare
+ready to proceed with our analysis.
+
+272 Chapter 6 | Photons and Matter Waves
+Electron Orbits
+To obtain the size r of the electron’s nth orbit and the electron’s speed v in it, we turn to Newtonian mechanics. As
+n n
+achargedparticle,theelectronexperiencesanelectrostatic pulltowardthepositivelychargednucleusinthecenterofits
+circularorbit.Thiselectrostaticpullisthecentripetalforcethatcausestheelectrontomoveinacirclearoundthenucleus.
+Therefore, the magnitude of centripetal force is identified with the magnitude of the electrostatic force:
+m e v n 2 1 e2 (6.36)
+r n = 4πε 0 r n 2 .
+Here, e denotes the value of the elementary charge. The negative electron and positive proton have the same value of
+charge, |q|=e. WhenEquation6.36iscombinedwiththefirstquantizationconditiongivenbyEquation6.34,wecan
+solve for the speed, v n, and for the radius, r n:
+v n= 4π 1 ε e ℏ 2 1 n (6.37)
+0
+r n=4πε
+0 m
+ℏ2
+e2
+n2.
+(6.38)
+e
+Note that these results tell us that the electron’s speed as well as the radius of its orbit depend only on the index n
+that enumerates the orbit because all other quantities in the preceding equations are fundamental constants. We see from
+Equation6.38thatthesizeoftheorbitgrowsasthesquareofn.Thismeansthatthesecondorbitisfourtimesaslargeas
+thefirstorbit,andthethirdorbitisninetimesaslargeasthefirstorbit,andsoon.WealsoseefromEquation6.37thatthe
+electron’sspeedintheorbitdecreasesastheorbitsizeincreases.Theelectron’sspeedislargestinthefirstBohrorbit,for
+n=1, whichistheorbitclosesttothenucleus.TheradiusofthefirstBohrorbitiscalledtheBohrradiusofhydrogen,
+denoted as a . Its value is obtained by setting n=1 inEquation 6.38:
+0
+a =4πε
+ℏ2
+=5.29×10−11m=0.529Å.
+(6.39)
+0 0 m e2
+e
+We can substitute a inEquation 6.38to express the radius of thenth orbit in terms of a :
+0 0
+r n=a
+0
+n2. (6.40)
+Thisresultmeansthattheelectronorbitsinhydrogenatomarequantizedbecausetheorbitalradiustakesononlyspecific
+values of a , 4a , 9a , 16a , ... given byEquation 6.40, and no other values are allowed.
+0 0 0 0
+Electron Energies
+Thetotalenergy E ofanelectroninthenthorbitisthesumofitskineticenergy K anditselectrostaticpotentialenergy
+n n
+U n. UtilizingEquation 6.37, we find that
+m e4 (6.41)
+K n= 1m e v n 2= 1 e 1 .
+2 32π2ε2 ℏ2 n2
+0
+Recallthattheelectrostaticpotentialenergyofinteractionbetweentwocharges q and q thatareseparatedbyadistance
+1 2
+r is (1/4πε )q q /r . Here, q = +e isthechargeofthenucleusinthehydrogenatom(thechargeoftheproton),
+12 0 1 2 12 1
+q
+2
+=−e isthechargeoftheelectronand r
+12
+=r
+n
+istheradiusofthenthorbit.NowweuseEquation6.38tofindthe
+potential energy of the electron:
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

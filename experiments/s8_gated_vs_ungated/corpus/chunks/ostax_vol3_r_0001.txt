@@ -1,0 +1,153 @@
+# REAL PDF — openstax_vol3.pdf, pages 3-8
+############################################################
+
+University Physics Volume 3
+SENIOR CONTRIBUTING AUTHORS
+SAMUEL J. LING, TRUMAN STATE UNIVERSITY
+JEFF SANNY, LOYOLA MARYMOUNT UNIVERSITY
+WILLIAM MOEBS, PHD
+
+OpenStax
+Rice University
+6100 Main Street MS-375
+Houston, Texas 77005
+To learn more about OpenStax, visit https://openstax.org.
+Individual print copies and bulk orders can be purchased through our website.
+©2018 Rice University. Textbook content produced by OpenStax is licensed under a Creative Commons Attribution 4.0
+International License (CC BY 4.0). Under this license, any user of this textbook or the textbook contents herein must provide
+proper attribution as follows:
+- If you redistribute this textbook in a digital format (including but not limited to PDF and HTML), then you must retain on
+every page the following attribution:
+“Download for free at https://openstax.org/details/books/university-physics-volume-3.”
+- If you redistribute this textbook in a print format, then you must include on every physical page the following attribution:
+“Download for free at https://openstax.org/details/books/university-physics-volume-3.”
+- If you redistribute part of this textbook, then you must retain in every digital format page view (including but not limited
+to PDF and HTML) and on every physical printed page the following attribution:
+“Download for free at https://openstax.org/details/books/university-physics-volume-3.”
+- If you use this textbook as a bibliographic reference, please include https://openstax.org/details/books/university-
+physics-volume-3 in your citation.
+For questions regarding this licensing, please contact support@openstax.org.
+Trademarks
+The OpenStax name, OpenStax logo, OpenStax book covers, OpenStax CNX name, OpenStax CNX logo, OpenStax Tutor name,
+Openstax Tutor logo, Connexions name, Connexions logo, Rice University name, and Rice University logo are not subject to the
+license and may not be reproduced without the prior and express written consent of Rice University.
+PRINT BOOK ISBN-10 1-938168-18-6
+PRINT BOOK ISBN-13 978-1-938168-18-5
+PDF VERSION ISBN-10 1-947172-22-0
+PDF VERSION ISBN-13 978-1-947172-22-7
+ENHANCED TEXTBOOK ISBN-10 1-947172-22-0
+ENHANCED TEXTBOOK ISBN-13 978-1-947172-22-7
+Revision Number UP3-2016-002(05/18)-MJ
+Original Publication Year 2016
+
+OPENSTAX
+OpenStax provides free, peer-reviewed, openly licensed textbooks for introductory college and Advanced Placement® courses and low-cost,
+personalized courseware that helps students learn. A nonprofit ed tech initiative based at Rice University, we’re committed to helping students
+access the tools they need to complete their courses and meet their educational goals.
+RICE UNIVERSITY
+OpenStax, OpenStax CNX, and OpenStax Tutor are initiatives of Rice University. As a leading research university with a distinctive commitment
+to undergraduate education, Rice University aspires to path-breaking research, unsurpassed teaching, and contributions to the betterment of
+our world. It seeks to fulfill this mission by cultivating a diverse community of learning and discovery that produces leaders across the spectrum
+of human endeavor.
+FOUNDATION SUPPORT
+OpenStax is grateful for the tremendous support of our sponsors. Without their strong engagement, the goal of free access to
+high-quality textbooks would remain just a dream.
+Laura and John Arnold Foundation (LJAF) actively seeks opportunities to invest in organizations and thought leaders
+that have a sincere interest in implementing fundamental changes that not only yield immediate gains, but also
+repair broken systems for future generations. LJAF currently focuses its strategic investments on education, criminal
+justice, research integrity, and public accountability.
+The William and Flora Hewlett Foundation has been making grants since 1967 to help solve social and
+environmental problems at home and around the world. The Foundation concentrates its resources on activities in
+education, the environment, global development and population, performing arts, and philanthropy, and makes
+grants to support disadvantaged communities in the San Francisco Bay Area.
+Calvin K. Kazanjian was the founder and president of Peter Paul (Almond Joy), Inc. He firmly believed that the more
+people understood about basic economics the happier and more prosperous they would be. Accordingly, he
+established the Calvin K. Kazanjian Economics Foundation Inc, in 1949 as a philanthropic, nonpolitical educational
+organization to support efforts that enhanced economic understanding.
+Guided by the belief that every life has equal value, the Bill & Melinda Gates Foundation works to help all people
+lead healthy, productive lives. In developing countries, it focuses on improving people’s health with vaccines and
+other life-saving tools and giving them the chance to lift themselves out of hunger and extreme poverty. In the
+United States, it seeks to significantly improve education so that all young people have the opportunity to reach
+their full potential. Based in Seattle, Washington, the foundation is led by CEO Jeff Raikes and Co-chair William H.
+Gates Sr., under the direction of Bill and Melinda Gates and Warren Buffett.
+The Maxfield Foundation supports projects with potential for high impact in science, education, sustainability, and
+other areas of social importance.
+Our mission at The Michelson 20MM Foundation is to grow access and success by eliminating unnecessary hurdles
+to affordability. We support the creation, sharing, and proliferation of more effective, more affordable educational
+content by leveraging disruptive technologies, open educational resources, and new models for collaboration
+between for-profit, nonprofit, and public entities.
+The Bill and Stephanie Sick Fund supports innovative projects in the areas of Education, Art, Science and
+Engineering.
+
+new school year.
+new classes.
+new books.
+free books.
+new assignments.
+free app.
+new app.
+OpenStax + SE
+Get free textbooks for over 30
+college courses in the free
+OpenStax + SE app.
+Download it now on the App Store
+or get it on Google Play.
+
+Table of Contents
+Preface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+Unit 1. Optics
+Chapter1: The Nature of Light . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+1.1 The Propagation of Light . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+1.2 The Law of Reflection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+1.3 Refraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+1.4 Total Internal Reflection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+1.5 Dispersion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+1.6 Huygens’s Principle . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+1.7 Polarization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+Chapter2: Geometric Optics and Image Formation . . . . . . . . . . . . . . . . . . . . . . . 53
+2.1 Images Formed by Plane Mirrors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 54
+2.2 Spherical Mirrors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 56
+2.3 Images Formed by Refraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+2.4 Thin Lenses . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 70
+2.5 The Eye . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 82
+2.6 The Camera . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89
+2.7 The Simple Magnifier . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 91
+2.8 Microscopes and Telescopes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 94
+Chapter3: Interference . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 117
+3.1 Young's Double-Slit Interference . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 117
+3.2 Mathematics of Interference . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 121
+3.3 Multiple-Slit Interference . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 124
+3.4 Interference in Thin Films . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 126
+3.5 The Michelson Interferometer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 132
+Chapter4: Diffraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 145
+4.1 Single-Slit Diffraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 146
+4.2 Intensity in Single-Slit Diffraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 150
+4.3 Double-Slit Diffraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 155
+4.4 Diffraction Gratings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 157
+4.5 Circular Apertures and Resolution . . . . . . . . . . . . . . . . . . . . . . . . . . . . 162
+4.6 X-Ray Diffraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 168
+4.7 Holography . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 171
+Unit 2. Modern Physics
+Chapter5: Relativity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 185
+5.1 Invariance of Physical Laws . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 186
+5.2 Relativity of Simultaneity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 188
+5.3 Time Dilation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 191
+5.4 Length Contraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 201
+5.5 The Lorentz Transformation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 206
+5.6 Relativistic Velocity Transformation . . . . . . . . . . . . . . . . . . . . . . . . . . . . 216
+5.7 Doppler Effect for Light . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 220
+5.8 Relativistic Momentum . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 223
+5.9 Relativistic Energy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 225
+Chapter6: Photons and Matter Waves . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 247
+6.1 Blackbody Radiation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 248
+6.2 Photoelectric Effect . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 256
+6.3 The Compton Effect . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 262
+6.4 Bohr’s Model of the Hydrogen Atom . . . . . . . . . . . . . . . . . . . . . . . . . . . 267
+6.5 De Broglie’s Matter Waves . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 277
+6.6 Wave-Particle Duality . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 285
+Chapter7: Quantum Mechanics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 303
+7.1 Wave Functions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 304
+7.2 The Heisenberg Uncertainty Principle . . . . . . . . . . . . . . . . . . . . . . . . . . . 315
+7.3 The Schrӧdinger Equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 318
+7.4 The Quantum Particle in a Box . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 321
+7.5 The Quantum Harmonic Oscillator . . . . . . . . . . . . . . . . . . . . . . . . . . . . 327

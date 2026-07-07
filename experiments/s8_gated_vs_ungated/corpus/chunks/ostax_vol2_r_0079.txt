@@ -1,0 +1,243 @@
+# REAL PDF — openstax_vol2.pdf, pages 491-496
+############################################################
+
+Chapter 10 | Direct-Current Circuits 481
+• Whenmultiplevoltagesourcesareinparallel,theirinternalresistancescombinetoanequivalentresistancethatis
+less than the individual resistance and provides a higher current than a single cell.
+• Solar cells can be wired in series or parallel to provide increased voltage or current, respectively.
+10.4Electrical Measuring Instruments
+• Voltmeters measure voltage, and ammeters measure current. Analog meters are based on the combination of a
+resistorandagalvanometer,adevicethatgivesananalogreadingofcurrentorvoltage.Digitalmetersarebasedon
+analog-to-digital converters and provide a discrete or digital measurement of the current or voltage.
+• Avoltmeterisplacedinparallelwiththevoltagesourcetoreceivefullvoltageandmusthavealargeresistanceto
+limit its effect on the circuit.
+• Anammeterisplacedinseriestogetthefullcurrentflowingthroughabranchandmusthaveasmallresistanceto
+limit its effect on the circuit.
+• Standard voltmeters and ammeters alter the circuit they are connected to and are thus limited in accuracy.
+• Ohmmeters are used to measure resistance. The component in which the resistance is to be measured should be
+isolated (removed) from the circuit.
+10.5RC Circuits
+• AnRCcircuit is one that has both a resistor and a capacitor.
+• The time constant τ for anRCcircuit is τ=RC.
+• Whenaninitiallyuncharged (q=0 at t=0) capacitorinserieswitharesistorischargedbyadcvoltagesource,
+the capacitor asymptotically approaches the maximum charge.
+• As the charge on the capacitor increases, the current exponentially decreases from the initial current: I =ε/R.
+0
+• IfacapacitorwithaninitialchargeQisdischargedthrougharesistorstartingat t=0,thenitschargedecreases
+exponentially.Thecurrentflowsintheoppositedirection,comparedtowhenitcharges,andthemagnitudeofthe
+charge decreases with time.
+10.6Household Wiring and Electrical Safety
+• The two types of electric hazards are thermal (excessive power) and shock (current through a person). Electrical
+safety systems and devices are employed to prevent thermal and shock hazards.
+• Shock severity is determined by current, path, duration, and ac frequency.
+• Circuit breakers and fuses interrupt excessive currents to prevent thermal hazards.
+• Thethree-wiresystemguardsagainstthermalandshockhazards,utilizinglive/hot,neutral,andgroundwires,and
+grounding the neutral wire and case of the appliance.
+• A ground fault circuit interrupter (GFCI) prevents shock by detecting the loss of current to unintentional paths.
+CONCEPTUAL QUESTIONS
+3. Show that the power dissipated by the load resistor is
+10.1Electromotive Force maximumwhentheresistanceoftheloadresistorisequal
+to the internal resistance of the battery.
+1. What effect will the internal resistance of a
+rechargeable battery have on the energy being used to
+recharge the battery?
+10.2Resistors in Series and Parallel
+2. A battery with an internal resistance of r and an emf 4. A voltage occurs across an open switch. What is the
+of 10.00 V is connected to a load resistor R=r. As the power dissipated by the open switch?
+battery ages, the internal resistance triples. How much is
+the current through the load resistor reduced? 5. Theseverityofashockdependsonthemagnitudeofthe
+currentthroughyourbody.Wouldyouprefertobeinseries
+orinparallelwitharesistance,suchastheheatingelement
+
+482 Chapter 10 | Direct-Current Circuits
+of a toaster, if you were shocked by it? Explain. starter system requires 24 V, while normal operation of
+the truck’sother electrical components utilizes 12V.How
+6. Supposeyouaredoingaphysicslabthatasksyoutoput couldthefourbatteriesbeconnectedtoproduce24V?To
+a resistor into a circuit, but all the resistors supplied have produce 12 V? Why is 24 V better than 12 V for starting
+a larger resistance than the requested value. How would the truck’s engine (a very heavy load)?
+you connect the available resistances to attempt to get the
+smaller value asked for?
+10.4Electrical Measuring Instruments
+7. Some light bulbs have three power settings (not 13. Whatwouldhappenifyouplacedavoltmeterinseries
+including zero), obtained from multiple filaments that are with a component to be tested?
+individually switched and wired in parallel. What is the
+minimum number of filaments needed for three power
+14. What is the basic operation of an ohmmeter as it
+settings?
+measures a resistor?
+15. Why should you not connect an ammeter directly
+10.3Kirchhoff's Rules
+across a voltage source as shown below?
+8. Can all of the currents going into the junction shown
+below be positive? Explain.
+9. Considerthecircuitshownbelow.Doestheanalysisof
+thecircuitrequireKirchhoff’smethod,orcanitberedrawn
+tosimplifythecircuit?Ifitisacircuitofseriesandparallel
+connections, what is the equivalent resistance? 10.5RC Circuits
+16. Abattery,switch,capacitor,andlampareconnectedin
+series.Describewhathappenstothelampwhentheswitch
+is closed.
+17. WhenmakinganECGmeasurement,itisimportantto
+measure voltage variations over small time intervals. The
+time is limited bythe RC constant ofthe circuit—it is not
+possible to measure time variations shorter than RC. How
+would you manipulate R and C in the circuit to allow the
+necessary measurements?
+10. Do batteries in a circuit always supply power to a
+10.6Household Wiring and Electrical Safety
+circuit, or can they absorb power in a circuit? Give an
+example. 18. Why isn’t a short circuit necessarily a shock hazard?
+11. What are the advantages and disadvantages of 19. Weareoftenadvisedtonotflickelectricswitcheswith
+connecting batteries in series? In parallel? wethands,dryyourhandfirst.Wearealsoadvisedtonever
+throw water on an electric fire. Why?
+12. Semi-tractortrucksusefourlarge12-Vbatteries.The
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 483
+PROBLEMS
+powerisdissipatedinsidethebattery?(c)Atwhatrate(in
+10.1Electromotive Force °C/min)willitstemperatureincreaseifitsmassis20.0kg
+20. A car battery with a 12-V emf and an internal andithasaspecificheatof 0.300kcal/kg ·°C,assuming
+resistance of 0.050Ω is being charged with a current of no heat escapes?
+60A.Notethatinthisprocess,thebatteryisbeingcharged.
+(a) What is the potential difference across its terminals?
+(b) At what rate is thermal energy being dissipated in the 10.2Resistors in Series and Parallel
+battery?(c)Atwhatrateiselectricenergybeingconverted
+into chemical energy? 26. (a) What is the resistance of a 1.00×102-Ω, a
+2.50-kΩ,anda 4.00-kΩ resistorconnectedinseries?(b)
+21. The label on a battery-powered radio recommends In parallel?
+the use of a rechargeable nickel-cadmium cell (nicads),
+although it has a 1.25-V emf, whereas an alkaline cell 27. Whatarethelargestandsmallestresistancesyoucan
+has a 1.58-V emf. The radio has a 3.20Ω resistance. obtainbyconnectinga 36.0-Ω,a 50.0-Ω,anda 700-Ω
+(a) Draw a circuit diagram of the radio and its battery. resistor together?
+Now, calculate the power delivered to the radio (b) when
+using a nicad cells, each having an internal resistance of
+28. An 1800-W toaster, a 1400-W speaker, and a 75-W
+0.0400Ω,and(c)whenusinganalkalinecell,havingan
+lamp are plugged into the same outlet in a 15-A fuse and
+internal resistance of 0.200Ω. (d) Does this difference
+120-V circuit. (The three devices are in parallel when
+seem significant, considering that the radio’s effective plugged into the same socket.) (a) What current is drawn
+resistance is lowered when its volume is turned up? by each device? (b) Will this combination blow the 15-A
+fuse?
+22. An automobile starter motor has an equivalent
+resistanceof 0.0500Ω andissuppliedbya12.0-Vbattery 29. Your car’s 30.0-W headlight and 2.40-kW starter are
+with a 0.0100-Ω internal resistance. (a) What is the ordinarily connected in parallel in a 12.0-V system. What
+power would one headlight and the starter consume if
+current to the motor? (b) What voltage is applied to it?
+connectedinseriestoa12.0-Vbattery?(Neglectanyother
+(c)Whatpowerissuppliedtothemotor?(d)Repeatthese
+resistanceinthecircuitandanychangeinresistanceinthe
+calculationsforwhenthebatteryconnectionsarecorroded
+two devices.)
+andadd 0.0900Ω tothecircuit.(Significantproblemsare
+caused by even small amounts of unwanted resistance in
+low-voltage, high-current applications.) 30. (a)Givena48.0-Vbatteryand 24.0-Ω and 96.0-Ω
+resistors, find the current and power for each when
+connectedinseries.(b)Repeatwhentheresistancesarein
+23. (a)Whatistheinternalresistanceofavoltagesource
+parallel.
+if its terminal potential drops by 2.00 V when the current
+supplied increases by 5.00 A? (b) Can the emf of the
+voltage source be found with the information supplied? 31. Referringtotheexamplecombiningseriesandparallel
+circuits and Figure 10.16, calculate I in the following
+3
+24. A person with body resistance between his hands of two different ways: (a) from the known values of I and
+10.0kΩ accidentally grasps the terminals of a 20.0-kV I ;(b)usingOhm’slawfor R .Inbothparts,explicitly
+2 3
+power supply. (Do NOT do this!) (a) Draw a circuit
+show how you follow the steps in the Problem-Solving
+diagram to represent the situation. (b) If the internal
+Strategy: Series and Parallel Resistors.
+resistance of the power supply is 2000Ω, what is the
+currentthroughhisbody?(c)Whatisthepowerdissipated
+32. ReferringtoFigure10.16,(a)Calculate P andnote
+inhisbody?(d)Ifthepowersupplyistobemadesafeby 3
+increasing its internal resistance, what should the internal how it compares with P found in the first two example
+3
+resistance be for the maximum current in this situation to
+problemsinthismodule.(b)Findthetotalpowersupplied
+be1.00mAorless?(e)Willthismodificationcompromise
+by the source and compare it with the sum of the powers
+the effectiveness of the power supply for driving low-
+dissipated by the resistors.
+resistance devices? Explain your reasoning.
+33. Refer to Figure 10.17 and the discussion of lights
+25. A 12.0-V emf automobile battery has a terminal
+dimmingwhenaheavyappliancecomeson.(a)Giventhe
+voltageof16.0Vwhenbeingchargedbyacurrentof10.0
+voltage source is 120 V, the wire resistance is 0.800Ω,
+A. (a) What is the battery’s internal resistance? (b) What
+
+484 Chapter 10 | Direct-Current Circuits
+andthebulbisnominally75.0W,whatpowerwillthebulb
+dissipateifatotalof15.0Apassesthroughthewireswhen
+the motor comes on? Assume negligible change in bulb
+resistance. (b) What power is consumed by the motor?
+34. Showthatiftworesistors R and R arecombined
+1 2
+and one is much greater than the other (R ≫R ), (a)
+1 2
+their series resistance is very nearly equal to the greater
+resistanceR and(b)theirparallelresistanceisverynearly
+1
+equal to smaller resistance R .
+2
+35. Consider the circuit shown below. The terminal
+voltage of the battery is V =18.00V. (a) Find the
+equivalent resistance of the circuit. (b) Find the current
+through each resistor. (c) Find the potential drop across
+eachresistor.(d)Findthepowerdissipatedbyeachresistor.
+(e) Find the power supplied by the battery.
+38. Consider the circuit shown below. Find
+V , I , andI .
+1 2 3
+10.3Kirchhoff's Rules
+36. Considerthecircuitshownbelow.(a)Findthevoltage
+across each resistor. (b)What is the power supplied to the
+circuit and the power dissipated or consumed by the
+circuit?
+39. Consider the circuit shown below. Find
+V , V , andR .
+1 2 4
+40. Consider the circuit shown below. Find
+37. Consider the circuits shown below. (a) What is the I , I , andI .
+1 2 3
+current through each resistor in part (a)? (b) What is the
+current through each resistor in part (b)? (c) What is the
+powerdissipatedorconsumedbyeachcircuit?(d)Whatis
+the power supplied to each circuit?
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 10 | Direct-Current Circuits 485
+ofRandV.
+45. A child’s electronic toy is supplied by three 1.58-V
+alkaline cells having internal resistances of 0.0200Ω in
+series with a 1.53-V carbon-zinc dry cell having a
+0.100-Ω internal resistance. The load resistance is
+10.0Ω. (a) Draw a circuit diagram of the toy and its
+batteries.(b)Whatcurrentflows?(c)Howmuchpoweris
+suppliedtotheload?(d)Whatistheinternalresistanceof
+thedrycellifitgoesbad,resultinginonly0.500Wbeing
+supplied to the load?
+41. Consider the circuit shown below. (a) Find
+I , I , I , I , andI . (b)Findthepowersuppliedbythe 46. ApplythejunctionruletoJunctionbshownbelow.Is
+1 2 3 4 5
+any new information gained by applying the junction rule
+voltage sources. (c) Find the power dissipated by the
+ate?
+resistors.
+42. Considerthecircuitshownbelow.Writethethreeloop
+equations for the loops shown.
+47. ApplytheloopruletoLoopafedcbainthepreceding
+problem.
+10.4Electrical Measuring Instruments
+43. Considerthecircuitshownbelow.Writeequationsfor 48. Suppose you measure the terminal voltage of a
+the three currents in terms ofRandV. 1.585-V alkaline cell having an internal resistance of
+0.100Ω by placing a 1.00-kΩ voltmeter across its
+terminals (see below). (a) What current flows? (b) Find
+the terminal voltage. (c) To see how close the measured
+terminal voltage is to the emf, calculate their ratio.
+44. Considerthecircuitshownintheprecedingproblem.
+Write equations for the power supplied by the voltage
+sources and the power dissipated by the resistors in terms

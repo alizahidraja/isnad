@@ -1,0 +1,262 @@
+# REAL PDF — openstax_vol3.pdf, pages 132-139
+############################################################
+
+124 Chapter 3 | Interference
+Example 3.2
+Calculating the Highest Order Possible
+Interferencepatternsdonothaveaninfinitenumberoflines,sincethereisalimittohowbigmcanbe.Whatis
+the highest-order constructive interference possible with the system described in the preceding example?
+Strategy
+Theequation dsinθ=mλ (for m=0, ±1, ±2, ±3…)describesconstructiveinterferencefromtwoslits.For
+fixedvaluesof dandλ,thelargermis,thelarger sinθ is.However,themaximumvaluethat sinθ canhaveis
+1,foranangleof 90°.(Largeranglesimplythatlightgoesbackwardanddoesnotreachthescreenatall.)Letus
+find what value ofmcorresponds to this maximum diffraction angle.
+Solution
+Solving the equation dsinθ=mλ formgives
+m=
+dsinθ
+.
+λ
+Taking sinθ=1 and substituting the values of dandλ from the preceding example gives
+(0.0100mm)(1)
+m= ≈15.8.
+633nm
+Therefore, the largest integermcan be is 15, or m=15.
+Significance
+Thenumberoffringesdependsonthewavelengthandslitseparation.Thenumberoffringesisverylargeforlarge
+slitseparations.However,recall(seeThePropagationofLightandtheintroductionforthischapter)thatwave
+interferenceisonlyprominentwhenthewaveinteractswithobjectsthatarenotlargecomparedtothewavelength.
+Therefore,iftheslitseparationandthesizesoftheslitsbecomemuchgreaterthanthewavelength,theintensity
+pattern of light on the screen changes, so there are simply two bright lines cast by the slits, as expected, when
+lightbehaveslikerays.Wealsonotethatthefringesgetfainterfartherawayfromthecenter.Consequently,not
+all 15 fringes may be observable.
+3.1 CheckYourUnderstandingInthesystemusedintheprecedingexamples,atwhatanglesarethefirst
+and the second bright fringes formed?
+3.3 | Multiple-Slit Interference
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the locations and intensities of secondary maxima for multiple-slit interference
+Analyzing the interference of light passing through two slits lays out the theoretical framework of interference and
+gives us a historical insight into Thomas Young’s experiments. However, much of the modern-day application of slit
+interferenceusesnotjusttwoslitsbutmany,approachinginfinityforpracticalpurposes.Thekeyopticalelementiscalled
+a diffraction grating, an important tool in optical analysis, which we discuss in detail in Diffraction. Here, we start the
+analysisofmultiple-slitinterferencebytakingtheresultsfromouranalysisofthedoubleslit(N =2)andextendingitto
+configurations with three, four, and much larger numbers of slits.
+Figure3.9showsthesimplestcaseofmultiple-slitinterference,withthreeslits,or N =3.Thespacingbetweenslitsisd,
+andthepathlengthdifferencebetweenadjacentslitsis dsinθ,sameasthecaseforthedoubleslit.Whatisnewisthatthe
+pathlengthdifferenceforthefirstandthethirdslitsis 2dsinθ.Theconditionforconstructiveinterferenceisthesameas
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 125
+for the double slit, that is
+dsinθ=mλ.
+When this condition is met, 2dsinθ is automatically a multiple of λ, so all three rays combine constructively, and the
+bright fringes that occur here are called principal maxima. But what happens when the path length difference between
+adjacentslitsisonly λ/2?Wecanthinkofthefirstandsecondraysasinterferingdestructively,butthethirdrayremains
+unaltered.Insteadofobtainingadarkfringe,oraminimum,aswedidforthedoubleslit,weseeasecondarymaximum
+with intensity lower than the principal maxima.
+Figure 3.9 Interference with three slits. Different pairs of
+emerging rays can combine constructively or destructively at the
+same time, leading to secondary maxima.
+In general, for N slits, these secondary maxima occur whenever an unpaired ray is present that does not go away due to
+destructiveinterference.Thisoccursat (N−2) evenlyspacedpositionsbetweentheprincipalmaxima.Theamplitudeof
+theelectromagneticwaveiscorrespondinglydiminishedto 1/N ofthewaveattheprincipalmaxima,andthelightintensity,
+beingproportionaltothesquareofthewaveamplitude,isdiminishedto 1/N2 oftheintensitycomparedtotheprincipal
+maxima.AsFigure 3.10shows,adarkfringeislocatedbetweeneverymaximum(principalorsecondary).AsNgrows
+larger and the number of bright and dark fringes increase, the widths of the maxima become narrower due to the closely
+locatedneighboringdarkfringes.Becausethetotalamountoflightenergyremainsunaltered,narrowermaximarequirethat
+each maximum reaches a correspondingly higher intensity.
+
+126 Chapter 3 | Interference
+Figure 3.10 Interference fringe patterns for two, three and four slits. As the number of slits increases, more secondary
+maxima appear, but the principal maxima become brighter and narrower. (a) Graph and (b) photographs of fringe patterns.
+3.4 | Interference in Thin Films
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe the phase changes that occur upon reflection
+• Describe fringes established by reflected rays of a common source
+• Explain the appearance of colors in thin films
+Thebrightcolorsseeninanoilslickfloatingonwaterorinasunlitsoapbubblearecausedbyinterference.Thebrightest
+colors are those that interfere constructively. This interference is between light reflected from different surfaces of a thin
+film; thus, the effect is known asthin-film interference.
+Aswenoted before, interference effects are most prominent whenlight interacts with something having asize similar to
+itswavelength.Athinfilmisonehavingathicknesstsmallerthanafewtimesthewavelengthoflight, λ.Sincecoloris
+associatedindirectlywith λ andbecauseallinterferencedependsinsomewayontheratioof λ tothesizeoftheobject
+involved, we should expect to see different colors for different thicknesses of a film, as inFigure 3.11.
+Figure 3.11 These soap bubbles exhibit brilliant colors when
+exposed to sunlight. (credit: Scott Robinson)
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 127
+What causes thin-film interference? Figure 3.12 shows how light reflected from the top and bottom surfaces of a film
+can interfere. Incident light is only partially reflected from the top surface of the film (ray 1). The remainder enters the
+filmandisitselfpartiallyreflectedfromthebottomsurface.Partofthelightreflectedfromthebottomsurfacecanemerge
+fromthetopofthefilm(ray2)andinterferewithlightreflectedfromthetop(ray1).Theraythatentersthefilmtravelsa
+greaterdistance,soitmaybeinoroutofphasewiththerayreflectedfromthetop.However,considerforamoment,again,
+thebubblesinFigure 3.11.Thebubblesaredarkestwheretheyarethinnest.Furthermore,ifyouobserveasoapbubble
+carefully,youwillnoteitgetsdarkatthepointwhereitbreaks.Forverythinfilms,thedifferenceinpathlengthsofrays1
+and2inFigure3.12isnegligible,sowhyshouldtheyinterferedestructivelyandnotconstructively?Theansweristhata
+phase change can occur upon reflection, as discussed next.
+Figure 3.12 Light striking a thin film is partially reflected
+(ray 1) and partially refracted at the top surface. The refracted
+ray is partially reflected at the bottom surface and emerges as
+ray 2. These rays interfere in a way that depends on the
+thickness of the film and the indices of refraction of the various
+media.
+Changes in Phase due to Reflection
+Wesawearlier(Waves (http://cnx.org/content/m58367/latest/) )thatreflectionofmechanicalwavescaninvolvea
+180° phasechange.Forexample,atravelingwaveonastringisinverted(i.e.,a 180° phasechange)uponreflectionat
+aboundarytowhichaheavierstringistied.However,ifthesecondstringislighter(ormoreprecisely,ofalowerlinear
+density), no inversion occurs. Light waves produce the same effect, but the deciding parameter for light is the index of
+refraction. Light waves undergo a 180° or π radians phase change upon reflection at an interface beyond which is a
+mediumofhigherindexofrefraction.Nophasechangetakesplacewhenreflectingfromamediumoflowerrefractiveindex
+(Figure3.13).Becauseoftheperiodicnatureofwaves,thisphasechangeorinversionisequivalentto ±λ/2 indistance
+travelled, or path length. Both the path length and refractive indices are important factors in thin-film interference.
+
+128 Chapter 3 | Interference
+Figure 3.13 Reflection at an interface for light traveling from a
+medium with index of refraction n to a medium with index of
+1
+refraction n , n <n , causes the phase of the wave to change
+2 1 2
+by π radians.
+IfthefilminFigure3.12isasoapbubble(essentiallywaterwithaironbothsides),thenaphaseshiftof λ/2 occursfor
+ray1butnotforray2.Thus,whenthefilmisverythinandthepathlengthdifferencebetweenthetworaysisnegligible,
+they are exactly out of phase, and destructive interference occurs at all wavelengths. Thus, the soap bubble is dark here.
+The thickness of the film relative to the wavelength of light is the other crucial factor in thin-film interference. Ray 2 in
+Figure 3.12travelsagreaterdistancethanray1.Forlightincidentperpendiculartothesurface,ray2travelsadistance
+approximately 2t farther than ray 1. When this distance is an integral or half-integral multiple of the wavelength in the
+medium (λ n=λ/n, where λ is the wavelength in vacuum and n is the index of refraction), constructive or destructive
+interference occurs, depending also on whether there is a phase change in either ray.
+Example 3.3
+Calculating the Thickness of a Nonreflective Lens Coating
+Sophisticated camerasuseaseriesofseverallenses.Lightcanreflectfromthesurfacesofthesevariouslenses
+anddegradeimageclarity.Tolimitthesereflections,lensesarecoatedwithathinlayerofmagnesiumfluoride,
+which causes destructive thin-film interference. What is the thinnest this film can be, if its index of refraction
+is1.38anditisdesignedtolimitthereflectionof550-nmlight,normallythemostintensevisiblewavelength?
+Assume the index of refraction of the glass is 1.52.
+Strategy
+RefertoFigure3.12anduse n =1.00 forair, n =1.38,and n =1.52.Bothray1andray2havea λ/2
+1 2 3
+shiftuponreflection.Thus,toobtaindestructiveinterference,ray2needstotravelahalfwavelengthfartherthan
+ray 1. For rays incident perpendicularly, the path length difference is 2t.
+Solution
+To obtain destructive interference here,
+λ
+2t= n2
+2
+where λ
+n2
+is the wavelength in the film and is given by λ
+n2
+=λ/n
+2
+. Thus,
+λ/n
+2t= 2.
+2
+Solving fortand entering known values yields
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 3 | Interference 129
+t= λ/n 2 = (500nm)/1.38 =90.6nm.
+4 4
+Significance
+Filmssuchastheoneinthisexamplearemosteffectiveinproducingdestructiveinterferencewhenthethinnest
+layer is used, since light over a broader range of incident angles is reduced in intensity. These films are called
+nonreflectivecoatings;thisisonlyanapproximatelycorrectdescription,though,sinceotherwavelengthsareonly
+partially cancelled. Nonreflective coatings are also used in car windows and sunglasses.
+Combining Path Length Difference with Phase Change
+Thin-filminterferenceismostconstructiveormostdestructivewhenthepathlengthdifferenceforthetworaysisanintegral
+or half-integral wavelength. That is, for rays incident perpendicularly,
+2t=λ n, 2λ n, 3λ n,…or2t=λ n/2, 3λ n/2, 5λ n/2,….
+To know whether interference is constructive or destructive, you must also determine if there is a phase change upon
+reflection. Thin-film interference thus depends on film thickness, the wavelength of light, and the refractive indices. For
+white light incident on a film that varies in thickness, you can observe rainbow colors of constructive interference for
+various wavelengths as the thickness varies.
+Example 3.4
+Soap Bubbles
+(a)Whatarethethreesmallestthicknessesofasoapbubblethatproduceconstructiveinterferenceforredlight
+withawavelengthof650nm?Theindexofrefractionofsoapistakentobethesameasthatofwater.(b)What
+three smallest thicknesses give destructive interference?
+Strategy
+Use Figure 3.12 to visualize the bubble, which acts as a thin film between two layers of air. Thus
+n =n =1.00 forair,and n =1.333 forsoap(equivalenttowater).Thereisa λ/2 shiftforray1reflected
+1 3 2
+fromthetopsurfaceofthebubbleandnoshiftforray2reflectedfromthebottomsurface.Togetconstructive
+interference, then, the path length difference (2t) must be a half-integral multiple of the wavelength—the first
+three being λ n/2, 3λ n/2, and 5λ n/2. To get destructive interference, the path length difference must be an
+integral multiple of the wavelength—the first three being 0, λ
+n
+, and 2λ
+n
+.
+Solution
+a. Constructive interference occurs here when
+2t c= λ
+2
+n , 3
+2
+λ n , 5
+2
+λ n , ….
+Thus, the smallest constructive thickness t is
+c
+t c= λ
+4
+n = λ
+4
+/n = (650nm
+4
+)/1.333 =122nm.
+The next thickness that gives constructive interference is t′
+c
+=3λ n/4, so that
+t′ =366nm.
+c
+Finally, the third thickness producing constructive interference is t′
+c
+=5λ n/4, so that
+t′ =610nm.
+c
+b.Fordestructiveinterference,thepathlengthdifferencehereisanintegralmultipleofthewavelength.Thefirst
+occurs for zero thickness, since there is a phase change at the top surface, that is,
+
+130 Chapter 3 | Interference
+t =0,
+d
+the very thin (or negligibly thin) case discussed above. The first non-zero thickness producing destructive
+interference is
+2t′
+d
+=λ n.
+Substituting known values gives
+t′ =
+λ
+=
+λ/n
+=
+(650nm)/1.333
+=244nm.
+d 2 2 2
+Finally, the third destructive thickness is 2t
+d
+″ =2λ
+n
+, so that
+t″ d =λ n= n λ = 6 1 5 . 0 33 n 3 m =488nm.
+Significance
+Ifthebubblewereilluminatedwithpureredlight,wewouldseebrightanddarkbandsatveryuniformincreases
+in thickness. First would be a dark band at 0 thickness, then bright at 122 nm thickness, then dark at 244 nm,
+brightat366nm,darkat488nm,andbrightat610nm.Ifthebubblevariedsmoothlyinthickness,likeasmooth
+wedge, then the bands would be evenly spaced.
+3.2 Check Your Understanding Going further with Example 3.4, what are the next two thicknesses of
+soap bubble that would lead to (a) constructive interference, and (b) destructive interference?
+Anotherexampleofthin-filminterferencecanbeseenwhenmicroscopeslidesareseparated(seeFigure3.14).Theslides
+are very flat, so that the wedge of air between them increases in thickness very uniformly. A phase change occurs at the
+secondsurfacebutnotthefirst,soadarkbandformswheretheslidestouch.Therainbowcolorsofconstructiveinterference
+repeat,goingfromviolettoredagainandagainasthedistancebetweentheslidesincreases.Asthelayerofairincreases,the
+bandsbecomemoredifficulttosee,becauseslightchangesinincidentanglehavegreatereffectsonpathlengthdifferences.
+Ifmonochromaticlightinsteadofwhitelightisused,thenbrightanddarkbandsareobtainedratherthanrepeatingrainbow
+colors.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

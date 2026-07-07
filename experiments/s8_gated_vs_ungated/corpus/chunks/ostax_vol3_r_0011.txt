@@ -1,0 +1,161 @@
+# REAL PDF — openstax_vol3.pdf, pages 63-69
+############################################################
+
+Chapter 2 | Geometric Optics and Image Formation 55
+Locating an Image in a Plane Mirror
+Thelawofreflectiontellsusthattheangleofincidenceisthesameastheangleofreflection.ApplyingthistotrianglesPAB
+andQABinFigure2.2andusingbasicgeometryshowsthattheyarecongruenttriangles.ThismeansthatthedistancePB
+fromthe object tothe mirror isthe same asthe distance BQfromthe mirror tothe image. The object distance (denoted
+d )isthedistancefromthemirrortotheobject(or,moregenerally,fromthecenteroftheopticalelementthatcreatesits
+o
+image).Similarly,theimagedistance(denoted d )isthedistancefromthemirrortotheimage(or,moregenerally,from
+i
+thecenteroftheopticalelementthatcreatesit).Ifwemeasuredistancesfromthemirror,thentheobjectandimagearein
+opposite directions, so for a plane mirror, the object and image distances should have the opposite signs:
+d o=−d
+i
+. (2.1)
+An extended object such as the container in Figure 2.2 can be treated as a collection of points, and we can apply the
+method above to locate the image of each point on the extended object, thus forming the extended image.
+Multiple Images
+Ifanobjectissituatedinfrontoftwomirrors,youmayseeimagesinbothmirrors.Inaddition,theimageinthefirstmirror
+mayactasanobjectforthesecondmirror,sothesecondmirrormayformanimageoftheimage.Ifthemirrorsareplaced
+paralleltoeachotherandtheobjectisplacedatapointotherthanthemidpointbetweenthem,thenthisprocessofimage-
+of-an-imagecontinueswithoutend,asyoumayhavenoticedwhenstandinginahallwaywithmirrorsoneachside.Thisis
+showninFigure2.3,whichshowsthreeimagesproducedbytheblueobject.Noticethateachreflectionreversesfrontand
+back,justlikepullingaright-handgloveinsideoutproducesaleft-handglove(thisiswhyareflectionofyourrighthand
+isalefthand).Thus,thefrontsandbacksofimages1and2arebothinvertedwithrespecttotheobject,andthefrontand
+back of image 3 is inverted with respect to image 2, which is the object for image 3.
+Figure 2.3 Two parallel mirrors can produce, in theory, an infinite number of images of an object
+placed off center between the mirrors. Three of these images are shown here. The front and back of
+each image is inverted with respect to its object. Note that the colors are only to identify the images.
+For normal mirrors, the color of an image is essentially the same as that of its object.
+Youmayhavenoticedthatimage3issmallerthantheobject,whereasimages1and2arethesamesizeastheobject.The
+ratiooftheimageheightwithrespecttotheobjectheightiscalledmagnification.Morewillbesaidaboutmagnificationin
+the next section.
+Infinite reflections may terminate. For instance, two mirrors at right angles form three images, as shown in part (a) of
+Figure 2.4. Images 1 and 2 result from rays that reflect from only a single mirror, but image 1,2 is formed by rays that
+reflectfrombothmirrors.Thisisshownintheray-tracingdiagraminpart(b)ofFigure2.4.Tofindimage1,2,youhave
+to look behind the corner of the two mirrors.
+
+56 Chapter 2 | Geometric Optics and Image Formation
+Figure 2.4 Two mirrors can produce multiple images. (a) Three images of a plastic head are visible in the two mirrors at a right
+angle. (b) A single object reflecting from two mirrors at a right angle can produce three images, as shown by the green, purple,
+and red images.
+2.2 | Spherical Mirrors
+Learning Objectives
+By the end of this section, you will be able to:
+• Describe image formation by spherical mirrors.
+• Use ray diagrams and the mirror equation to calculate the properties of an image in a spherical
+mirror.
+Theimageinaplanemirrorhasthesamesizeastheobject,isupright,andisthesamedistancebehindthemirrorasthe
+objectisinfrontofthemirror.Acurvedmirror,ontheotherhand,canformimagesthatmaybelargerorsmallerthanthe
+objectandmayformeitherinfrontofthemirrororbehindit.Ingeneral,anycurvedsurfacewillformanimage,although
+some images make be so distorted as to be unrecognizable (think of fun house mirrors).
+Becausecurvedmirrorscancreatesucharichvarietyofimages,theyareusedinmanyopticaldevicesthatfindmanyuses.
+We will concentrate on spherical mirrors for the most part, because they are easier to manufacture than mirrors such as
+parabolic mirrors and so are more common.
+Curved Mirrors
+Wecandefinetwogeneraltypesofsphericalmirrors.Ifthereflectingsurfaceistheoutersideofthesphere,themirroris
+called aconvex mirror. If the inside surface is the reflecting surface, it is called aconcave mirror.
+Symmetryisoneofthemajorhallmarksofmanyopticaldevices,includingmirrorsandlenses.Thesymmetryaxisofsuch
+opticalelementsisoftencalledtheprincipalaxisoropticalaxis.Forasphericalmirror,theopticalaxispassesthroughthe
+mirror’s center of curvature and the mirror’svertex, as shown inFigure 2.5.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 57
+Figure 2.5 A spherical mirror is formed by cutting out a piece of a sphere and silvering either the
+inside or outside surface. A concave mirror has silvering on the interior surface (think “cave”), and a
+convex mirror has silvering on the exterior surface.
+Considerraysthatareparalleltotheopticalaxisofaparabolicmirror,asshowninpart(a)ofFigure 2.6.Followingthe
+lawofreflection,theseraysarereflectedsothattheyconvergeatapoint,calledthefocalpoint.Part(b)ofthisfigureshows
+asphericalmirrorthatislargecomparedwithitsradiusofcurvature.Forthismirror,thereflectedraysdonotcrossatthe
+samepoint,sothemirrordoesnothaveawell-definedfocalpoint.Thisiscalledsphericalaberrationandresultsinablurred
+imageofanextendedobject.Part(c)showsasphericalmirrorthatissmallcomparedtoitsradiusofcurvature.Thismirror
+isagoodapproximationofaparabolicmirror,soraysthatarriveparalleltotheopticalaxisarereflectedtoawell-defined
+focal point. The distance along the optical axis from the mirror to the focal point is called thefocal lengthof the mirror.
+Figure 2.6 (a) Parallel rays reflected from a parabolic mirror cross at a single point called the
+focal pointF. (b) Parallel rays reflected from a large spherical mirror do not cross at a common
+point. (c) If a spherical mirror is small compared with its radius of curvature, it better
+approximates the central part of a parabolic mirror, so parallel rays essentially cross at a
+common point. The distance along the optical axis from the mirror to the focal point is the focal
+lengthfof the mirror.
+A convex spherical mirror also has a focal point, as shown in Figure 2.7. Incident rays parallel to the optical axis are
+reflected from the mirror and seem to originate from point F at focal length f behind the mirror. Thus, the focal point is
+virtual because no real rays actually pass through it; they only appear to originate from it.
+
+58 Chapter 2 | Geometric Optics and Image Formation
+Figure 2.7 (a) Rays reflected by a convex spherical mirror: Incident rays of light parallel to the
+optical axis are reflected from a convex spherical mirror and seem to originate from a well-defined
+focal point at focal distancefon the opposite side of the mirror. The focal point is virtual because no
+real rays pass through it. (b) Photograph of a virtual image formed by a convex mirror. (credit b:
+modification of work by Jenny Downing)
+How does the focal length of a mirror relate to the mirror’s radius of curvature? Figure 2.8 shows a single ray that is
+reflectedbyasphericalconcavemirror.Theincidentrayisparalleltotheopticalaxis.Thepointatwhichthereflectedray
+crossestheopticalaxisisthefocalpoint.Notethatallincidentraysthatareparalleltotheopticalaxisarereflectedthrough
+the focal point—we only show one ray for simplicity. We want to find how the focal length FP (denoted by f) relates to
+the radius of curvature of the mirror, R, whose length is R=CF+FP. The law of reflection tells us that angles OXC
+andCXFarethesame,andbecausetheincidentrayisparalleltotheopticalaxis,anglesOXCandXCParealsothesame.
+Thus,triangle CXFisanisosceles triangle with CF =FX.Iftheangle θ issmall(sothat sinθ≈θ;thisiscalled the
+“small-angle approximation”), then FX ≈FP or CF ≈FP. Inserting this into the equation for the radiusR, we get
+R=CF+FP=FP+FP=2FP=2f
+Figure 2.8 Reflection in a concave mirror. In the small-angle
+approximation, a ray that is parallel to the optical axisCPis
+reflected through the focal pointFof the mirror.
+In other words, in the small-angle approximation, the focal length f of a concave spherical mirror is half of its radius of
+curvature,R:
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 2 | Geometric Optics and Image Formation 59
+R (2.2)
+f = .
+2
+In this chapter, we assume that the small-angle approximation (also called the paraxial approximation) is always valid.
+Inthisapproximation,allraysareparaxialrays,whichmeansthattheymakeasmallanglewiththeopticalaxisandareat
+adistancemuchlessthantheradiusofcurvaturefromtheopticalaxis.Inthiscase,theirangles θ ofreflectionaresmall
+angles, so sinθ≈tanθ≈θ.
+Using Ray Tracing to Locate Images
+Tofindthelocationofanimageformedbyasphericalmirror,wefirstuseraytracing,whichisthetechniqueofdrawing
+raysandusingthelawofreflectiontodeterminethereflectedrays(later,forlenses,weusethelawofrefractiontodetermine
+refracted rays). Combined with some basic geometry, we can use ray tracing to find the focal point, the image location,
+andotherinformationabouthowamirrormanipulateslight.Infact,wealreadyusedraytracingabovetolocatethefocal
+pointofsphericalmirrors,ortheimagedistanceofflatmirrors.Tolocatetheimageofanobject,youmustlocateatleast
+twopointsoftheimage.Locatingeachpointrequiresdrawingatleasttworaysfromapointontheobjectandconstructing
+their reflected rays. The point at which the reflected rays intersect, either in real space or in virtual space, is where the
+corresponding point of the image is located. To make ray tracing easier, we concentrate on four “principal” rays whose
+reflections are easy to construct.
+Figure 2.9 shows a concave mirror and a convex mirror, each with an arrow-shaped object in front of it. These are the
+objectswhoseimageswewanttolocatebyraytracing.Todoso,wedrawraysfrompointQthatisontheobjectbutnoton
+theopticalaxis.Wechoosetodrawourrayfromthetipoftheobject.Principalray1goesfrompointQandtravelsparallel
+totheopticalaxis.Thereflectionofthisraymustpassthroughthefocalpoint,asdiscussedabove.Thus,fortheconcave
+mirror,thereflectionofprincipalray1goesthroughfocalpointF,asshowninpart(b)ofthefigure.Fortheconvexmirror,
+the backward extension of the reflection of principal ray 1 goes through the focal point (i.e., a virtual focus). Principal
+ray 2 travels first on the line going through the focal point and then is reflected back along a line parallel to the optical
+axis.Principalray3travelstowardthecenterofcurvatureofthemirror,soitstrikesthemirroratnormalincidenceandis
+reflected back along the line from which it came. Finally, principal ray 4 strikes the vertex of the mirror and is reflected
+symmetrically about the optical axis.
+
+60 Chapter 2 | Geometric Optics and Image Formation
+Figure 2.9 The four principal rays shown for both (a) a concave mirror and (b) a convex mirror. The
+image forms where the rays intersect (for real images) or where their backward extensions intersect (for
+virtual images).
+Thefourprincipalraysintersectatpoint Q′,whichiswheretheimageofpointQislocated.Tolocatepoint Q′,drawing
+anytwooftheseprinciplerayswouldsuffice.Wearethusfreetochoosewhicheveroftheprincipalrayswedesiretolocate
+the image. Drawing more than two principal rays is sometimes useful to verify that the ray tracing is correct.
+Tocompletelylocatetheextendedimage,weneedtolocateasecondpointintheimage,sothatweknowhowtheimage
+isoriented.Todothis,wetracetheprincipalraysfromthebaseoftheobject.Inthiscase,allfourprincipalraysrunalong
+theopticalaxis,reflectfromthemirror,andthenrunbackalongtheopticalaxis.Thedifficultyisthat,becausetheserays
+arecollinear,wecannotdetermineauniquepointwheretheyintersect.Allweknowisthatthebaseoftheimageisonthe
+opticalaxis.However,becausethemirrorissymmetricalfromtoptobottom,itdoesnotchangetheverticalorientationof
+theobject.Thus,becausetheobjectisvertical,theimagemustbevertical.Therefore,theimageofthebaseoftheobjectis
+on the optical axis directly above the image of the tip, as drawn in the figure.
+For the concave mirror, the extended image in this case forms between the focal point and the center of curvature of the
+mirror.Itisinvertedwithrespecttotheobject,isarealimage,andissmallerthantheobject.Werewetomovetheobject
+closertoorfartherfromthemirror,thecharacteristicsoftheimagewouldchange.Forexample,weshow,asalaterexercise,
+thatanobjectplacedbetweenaconcavemirroranditsfocalpointleadstoavirtualimagethatisuprightandlargerthanthe
+object.Fortheconvexmirror,theextendedimageformsbetweenthefocalpointandthemirror.Itisuprightwithrespectto
+the object, is a virtual image, and is smaller than the object.
+Summary of Ray-Tracing Rules
+Ray tracing is very useful for mirrors. The rules for ray tracing are summarized here for reference:
+• Araytravellingparalleltotheopticalaxisofasphericalmirrorisreflectedalongalinethatgoesthroughthefocal
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9

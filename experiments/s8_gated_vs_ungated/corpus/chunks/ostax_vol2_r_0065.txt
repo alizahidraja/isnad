@@ -1,0 +1,259 @@
+# REAL PDF — openstax_vol2.pdf, pages 405-411
+############################################################
+
+Chapter 9 | Current and Resistance 395
+v = I = 20.00A =−4.54×10−4 m/s.
+d nqA (8.34×10 28 /m 3 )(−1.60×10 −19 C)(3.30×10 −6 m2)
+Significance
+Theminussignindicatesthatthenegativechargesaremovinginthedirectionoppositetoconventionalcurrent.
+The small value for drift velocity (on the order of 10−4 m/s) confirms that the signal moves on the order of
+1012 times faster (about 10 8 m/s) than the charges that carry it.
+9.3 Check Your Understanding In Example 9.4, the drift velocity was calculated for a 2.053-mm
+diameter(12-gauge)copperwirecarryinga20-ampcurrent.Wouldthedriftvelocitychangefora1.628-mm
+diameter (14-gauge) wire carrying the same 20-amp current?
+Current Density
+Althoughitisoftenconvenienttoattachanegativeorpositivesigntoindicatetheoveralldirectionofmotionofthecharges,
+dQ
+current is a scalar quantity, I = . It is often necessary to discuss the details of the motion of the charge, instead of
+dt
+→
+discussing the overall motion of the charges. In such cases, it is necessary to discuss the current density, J , a vector
+quantity.Thecurrentdensityistheflowofchargethroughaninfinitesimalarea,dividedbythearea.Thecurrentdensity
+musttakeintoaccountthelocalmagnitudeanddirectionofthechargeflow,whichvariesfrompointtopoint.Theunitof
+current density is ampere per meter squared, and the direction is defined as the direction of net flow of positive charges
+through the area.
+The relationship between the current and the current density can be seen in Figure 9.12. The differential current flow
+→
+through the area d A is found as
+→ →
+dI = J ·d A =JdAcosθ,
+→
+where θ istheanglebetweentheareaandthecurrentdensity.Thetotalcurrentpassingthrougharea d A canbefound
+by integrating over the area,
+→ → (9.5)
+I = ∬ J ·d A .
+area
+Consider the magnitude of the current density, which is the current divided by the area:
+J = I = n|q|Av d =n|q|v .
+A A d
+Thus, the current density is → J =nq → v . If q is positive, → v is in the same direction as the electrical field → E .
+d d
+Ifqisnegative, → v isintheoppositedirectionof → E .Eitherway,thedirectionofthecurrentdensity → J isinthe
+d
+→
+direction of the electrical field E .
+
+396 Chapter 9 | Current and Resistance
+→
+Figure 9.12 The current density J is defined as the
+current passing through an infinitesimal cross-sectional area
+divided by the area. The direction of the current density is the
+direction of the net flow of positive charges and the magnitude
+is equal to the current divided by the infinitesimal area.
+Example 9.4
+Calculating the Current Density in a Wire
+Thecurrentsuppliedtoalampwitha100-Wlightbulbis0.87amps.Thelampiswiredusingacopperwirewith
+diameter 2.588 mm (10-gauge). Find the magnitude of the current density.
+Strategy
+Thecurrentdensityisthecurrentmovingthroughaninfinitesimalcross-sectionalareadividedbythearea.Wecan
+I
+calculatethemagnitudeofthecurrentdensityusing J = .Thecurrentisgivenas0.87A.Thecross-sectional
+A
+area can be calculated to be A=5.26mm2.
+Solution
+Calculate the current density using the given current I =0.87A and the area, found to be A=5.26mm2.
+J = I = 0.87A =1.65×10 5 A .
+A 5.26×10 −6 m2 m2
+Significance
+The current density in a conducting wire depends on the current through the conducting wire and the cross-
+sectionalareaofthewire.Foragivencurrent,asthediameterofthewireincreases,thechargedensitydecreases.
+9.4 CheckYourUnderstandingThecurrentdensityisproportionaltothecurrentandinverselyproportional
+tothearea.Ifthecurrentdensityinaconductingwireincreases,whatwouldhappentothedriftvelocityofthe
+charges in the wire?
+What is the significance of the current density? The current density is proportional to the current, and the current is the
+numberofchargesthatpassthroughacross-sectionalareapersecond.Thechargesmovethroughtheconductor,accelerated
+by the electric force provided by the electrical field. The electrical field is created when a voltage is applied across the
+conductor.InOhm’sLaw,wewillusethisrelationshipbetweenthecurrentdensityandtheelectricalfieldtoexaminethe
+relationship between the current through a conductor and the voltage applied.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 397
+9.3 | Resistivity and Resistance
+Learning Objectives
+By the end of this section, you will be able to:
+• Differentiate between resistance and resistivity
+• Define the term conductivity
+• Describe the electrical component known as a resistor
+• State the relationship between resistance of a resistor and its length, cross-sectional area, and
+resistivity
+• State the relationship between resistivity and temperature
+What drives current? We can think of various devices—such as batteries, generators, wall outlets, and so on—that are
+necessarytomaintainacurrent.Allsuchdevicescreateapotentialdifferenceandarereferredtoasvoltagesources.When
+avoltagesourceisconnectedtoaconductor,itappliesapotentialdifferenceVthatcreatesanelectricalfield.Theelectrical
+field,inturn,exertsforceonfreecharges,causingcurrent.Theamountofcurrentdependsnotonlyonthemagnitudeofthe
+voltage,butalsoonthecharacteristicsofthematerialthatthecurrentisflowingthrough.Thematerialcanresisttheflowof
+thecharges,andthemeasureofhowmuchamaterialresiststheflowofchargesisknownastheresistivity.Thisresistivity
+is crudely analogous to the friction between two materials that resists motion.
+Resistivity
+→
+Whenavoltageisappliedtoaconductor,anelectricalfield E iscreated,andchargesintheconductorfeelaforcedue
+→
+totheelectricalfield.Thecurrentdensity J thatresultsdependsontheelectricalfieldandthepropertiesofthematerial.
+This dependence can be very complex. In some materials, including metals at a given temperature, the current density is
+approximately proportional to the electrical field. In these cases, the current density can be modeled as
+→ →
+J =σ E ,
+where σ istheelectricalconductivity.Theelectricalconductivityisanalogoustothermalconductivityandisameasureof
+amaterial’sabilitytoconductortransmitelectricity.Conductorshaveahigherelectricalconductivitythaninsulators.Since
+the electrical conductivity is σ =J/E, the units are
+σ = [J] = A/m2 = A .
+[E] V/m V·m
+Here,wedefineaunitnamedtheohmwiththeGreeksymboluppercaseomega, Ω.TheunitisnamedafterGeorgSimon
+Ohm,whomwewilldiscusslaterinthischapter.The Ω isusedtoavoidconfusionwiththenumber0.Oneohmequalsone
+volt per amp: 1Ω =1V/A. The units of electrical conductivity are therefore (Ω ·m)−1.
+Conductivity is an intrinsic property of a material. Another intrinsic property of a material is the resistivity, or electrical
+resistivity.Theresistivityofamaterialisameasureofhowstronglyamaterialopposestheflowofelectricalcurrent.The
+symbol for resistivity is the lowercase Greek letter rho, ρ, and resistivity is the reciprocal of electrical conductivity:
+ρ= σ 1 .
+TheunitofresistivityinSIunitsistheohm-meter (Ω ·m).Wecandefinetheresistivityintermsoftheelectricalfieldand
+the current density,
+E (9.6)
+ρ= .
+J
+Thegreatertheresistivity,thelargerthefieldneededtoproduceagivencurrentdensity.Thelowertheresistivity,thelarger
+
+398 Chapter 9 | Current and Resistance
+thecurrentdensityproducedbyagivenelectricalfield.Goodconductorshaveahighconductivityandlowresistivity.Good
+insulators have a low conductivity and a high resistivity. Table 9.1 lists resistivity and conductivity values for various
+materials.
+Material Conductivity, σ Resistivity, ρ Temperature
+(Ω ·m)−1 (Ω ·m) Coefficient, α
+(°C)−1
+Conductors
+Silver 6.29×10 7 1.59×10 −8 0.0038
+Copper 5.95×10 7 1.68×10 −8 0.0039
+Gold 4.10×10 7 2.44×10 −8 0.0034
+Aluminum 3.77×10 7 2.65×10 −8 0.0039
+Tungsten 1.79×10 7 5.60×10 −8 0.0045
+Iron 1.03×10 7 9.71×10 −8 0.0065
+Platinum 0.94×10 7 10.60×10 −8 0.0039
+Steel 0.50×10 7 20.00×10 −8
+Lead 0.45×10 7 22.00×10 −8
+Manganin (Cu, Mn, Ni alloy) 0.21×10 7 48.20×10 −8 0.000002
+Constantan (Cu, Ni alloy) 0.20×10 7 49.00×10 −8 0.00003
+Mercury 0.10×10 7 98.00×10 −8 0.0009
+Nichrome (Ni, Fe, Cr alloy) 0.10×10 7 100.00×10 −8 0.0004
+Semiconductors[1]
+Carbon (pure) −6 −5 −0.0005
+2.86×10 3.50×10
+Carbon −6 −5 −0.0005
+(2.86−1.67)×10 (3.5−60)×10
+Germanium (pure) −3 −0.048
+600×10
+Germanium −3 −0.050
+(1−600)×10
+Silicon (pure) 2300 −0.075
+Silicon 0.1−2300 −0.07
+Insulators
+Amber
+2.00×10
+−15 5×1014
+Glass 10 −9 −10−14 10 9 −1014
+Lucite −13 13
+<10 >10
+Table 9.1Resistivities and Conductivities of Various Materials at 20 °C [1] Values depend
+strongly on amounts and types of impurities.
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9
+
+Chapter 9 | Current and Resistance 399
+Material Conductivity, σ Resistivity, ρ Temperature
+(Ω ·m)−1 (Ω ·m) Coefficient, α
+(°C)−1
+Mica 10−11−10 −15 1011−10 15
+Quartz (fused) −15 16
+2.00×10 75×10
+Rubber (hard) −13 −16 13 16
+10 −10 10 −10
+Sulfur −15 15
+10 10
+TeflonTM
+−13 13
+<10 >10
+Wood 10 −8 −10−11 10 8 −1011
+Table 9.1Resistivities and Conductivities of Various Materials at 20 °C [1] Values depend
+strongly on amounts and types of impurities.
+Thematerialslistedinthetableareseparatedintocategoriesofconductors,semiconductors,andinsulators,basedonbroad
+groupings of resistivity. Conductors have the smallest resistivity, and insulators have the largest; semiconductors have
+intermediate resistivity. Conductors have varying but large, free charge densities, whereas most charges in insulators are
+boundtoatomsandarenotfreetomove.Semiconductorsareintermediate,havingfarfewerfreechargesthanconductors,
+but having properties that make the number of free charges depend strongly on the type and amount of impurities in the
+semiconductor.Theseuniquepropertiesofsemiconductorsareputtouseinmodernelectronics,aswewillexploreinlater
+chapters.
+Example 9.5
+Current Density, Resistance, and Electrical field for a Current-Carrying Wire
+Calculate the current density, resistance, and electrical field of a 5-m length of copper wire with a diameter of
+2.053 mm (12-gauge) carrying a current of I =10mA.
+Strategy
+We can calculate the current density by first finding the cross-sectional area of the wire, which is
+A=3.31mm2, and the definition of current density J = I . The resistance can be found using the length
+A
+ofthewire L=5.00m,thearea,andtheresistivityofcopper ρ=1.68×10 −8 Ω ·m,where R= ρ L .The
+A
+resistivity and current density can be used to find the electrical field.
+Solution
+First, we calculate the current density:
+J = I = 10×10 −3 A =3.02×10 3 A .
+A 3.31×10 −6 m2 m2
+The resistance of the wire is
+R= ρ L = ⎛ 1.68×10 −8 Ω ·m ⎞ 5.00m =0.025Ω.
+A ⎝ ⎠ 3.31×10 −6 m2
+Finally, we can find the electrical field:
+⎛ ⎞
+E= ρJ =1.68×10 −8 Ω ·m 3.02×10 3 A =5.07×10 −5V .
+⎝ m2⎠ m
+
+400 Chapter 9 | Current and Resistance
+Significance
+Fromtheseresults,itisnotsurprisingthatcopperisusedforwiresforcarryingcurrentbecausetheresistanceis
+quite small. Note that the current density and electrical field are independent of the length of the wire, but the
+voltage depends on the length.
+9.5 CheckYourUnderstandingCopperwiresuseroutinelyusedforextensioncordsandhousewiringfor
+severalreasons.Copperhasthehighestelectricalconductivityrating,andthereforethelowestresistivityrating,
+ofallnonpreciousmetals.Alsoimportantisthetensilestrength,wherethetensilestrengthisameasureofthe
+forcerequiredtopullanobjecttothepointwhereitbreaks.Thetensilestrengthofamaterialisthemaximum
+amountoftensilestressitcantakebeforebreaking.Copperhasahightensilestrength, 2×10 8 N .Athird
+m2
+importantcharacteristicisductility.Ductilityisameasureofamaterial’sabilitytobedrawnintowiresanda
+measureoftheflexibilityofthematerial,andcopperhasahighductility.Summarizing,foraconductortobea
+suitablecandidateformakingwire,thereareatleastthreeimportantcharacteristics:lowresistivity,hightensile
+strength, and high ductility. What other materials are used for wiring and what are the advantages and
+disadvantages?
+Viewthisinteractive simulation (https://openstaxcollege.org/l/21resistwire) toseewhattheeffectsof
+the cross-sectional area, the length, and the resistivity of a wire are on the resistance of a conductor. Adjust the
+variables using slide bars and see if the resistance becomes smaller or larger.
+Temperature Dependence of Resistivity
+LookingbackatTable9.1,youwillseeacolumnlabeled“TemperatureCoefficient.”Theresistivityofsomematerialshas
+astrongtemperaturedependence.Insomematerials,suchascopper,theresistivityincreaseswithincreasingtemperature.
+Infact,inmostconductingmetals,theresistivityincreaseswithincreasingtemperature.Theincreasingtemperaturecauses
+increasedvibrationsoftheatomsinthelatticestructureofthemetals,whichimpedethemotionoftheelectrons.Inother
+materials, such as carbon, the resistivity decreases with increasing temperature. In many materials, the dependence is
+approximately linear and can be modeled using a linear equation:
+ρ≈ ρ ⎡1+α⎛T−T ⎞⎤, (9.7)
+0⎣ ⎝ 0⎠⎦
+where ρ istheresistivityofthematerialattemperatureT, α isthetemperaturecoefficientofthematerial,and ρ isthe
+0
+resistivity at T , usually taken as T =20.00°C.
+0 0
+Note also that the temperature coefficient α is negative for the semiconductors listed in Table 9.1, meaning that their
+resistivitydecreaseswithincreasingtemperature.Theybecomebetterconductorsathighertemperature,becauseincreased
+thermal agitation increases the number of free charges available to carry current. This property of decreasing ρ with
+temperature is also related to the type and amount of impurities present in the semiconductors.
+Resistance
+Wenowconsidertheresistance ofawireorcomponent.Theresistance isameasureofhowdifficultitistopasscurrent
+throughawireorcomponent.Resistancedependsontheresistivity.Theresistivityisacharacteristicofthematerialusedto
+fabricate a wire or other electrical component, whereas the resistance is a characteristic of the wire or component.
+Tocalculatetheresistance,considerasectionofconductingwirewithcross-sectionalareaA,lengthL,andresistivity ρ.
+Abatteryisconnectedacrosstheconductor,providingapotential difference ΔV acrossit(Figure 9.13).Thepotential
+→ →
+difference produces an electrical field that is proportional to the current density, according to E = ρ J .
+This OpenStax book is available for free at http://cnx.org/content/col12074/1.9

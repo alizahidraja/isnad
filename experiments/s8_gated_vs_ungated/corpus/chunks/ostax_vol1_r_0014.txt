@@ -1,0 +1,200 @@
+# REAL PDF — openstax_vol1.pdf, pages 70-77
+############################################################
+
+58 2 • Vectors
+In many applications, the magnitudes and directions of vector quantities are known and we need to find the
+resultant of many vectors. For example, imagine 400 cars moving on the Golden Gate Bridge in San Francisco in a
+strong wind. Each car gives the bridge a different push in various directions and we would like to know how big the
+resultant push can possibly be. We have already gained some experience with the geometric construction of vector
+sums, so we know the task of finding the resultant by drawing the vectors and measuring their lengths and angles
+may become intractable pretty quickly, leading to huge errors. Worries like this do not appear when we use
+analytical methods. The very first step in an analytical approach is to find vector components when the direction and
+magnitude of a vector are known.
+Let us return to the right triangle in Figure 2.18. The quotient of the adjacent side to the hypotenuse A is the
+cosine function of direction angle , , and the quotient of the opposite side to the hypotenuse A
+is the sine function of , . When magnitude A and direction are known, we can solve these
+relations for the scalar components:
+2.17
+When calculating vector components with Equation 2.17, care must be taken with the angle. The direction angle
+of a vector is the angle measured counterclockwise from the positive direction on the x-axis to the vector. The
+clockwise measurement gives a negative angle.
+EXAMPLE 2.5
+Components of Displacement Vectors
+A rescue party for a missing child follows a search dog named Trooper. Trooper wanders a lot and makes many trial
+sniffs along many different paths. Trooper eventually finds the child and the story has a happy ending, but his
+displacements on various legs seem to be truly convoluted. On one of the legs he walks 200.0 m southeast, then he
+runs north some 300.0 m. On the third leg, he examines the scents carefully for 50.0 m in the direction west of
+north. On the fourth leg, Trooper goes directly south for 80.0 m, picks up a fresh scent and turns west of south
+for 150.0 m. Find the scalar components of Trooper’s displacement vectors and his displacement vectors in vector
+component form for each leg.
+Strategy
+Let’s adopt a rectangular coordinate system with the positive x-axis in the direction of geographic east, with the
+positive y-direction pointed to geographic north. Explicitly, the unit vector of the x-axis points east and the unit
+vector of the y-axis points north. Trooper makes five legs, so there are five displacement vectors. We start by
+identifying their magnitudes and direction angles, then we use Equation 2.17 to find the scalar components of the
+displacements and Equation 2.12 for the displacement vectors.
+Solution
+On the first leg, the displacement magnitude is and the direction is southeast. For direction angle
+we can take either measured clockwise from the east direction or measured counterclockwise from
+the east direction. With the first choice, . With the second choice, . We can use either one of
+these two angles. The components are
+The displacement vector of the first leg is
+On the second leg of Trooper’s wanderings, the magnitude of the displacement is and the direction is
+north. The direction angle is . We obtain the following results:
+Access for free at openstax.org
+
+2.2 • Coordinate Systems and Components of a Vector 59
+On the third leg, the displacement magnitude is and the direction is west of north. The direction
+angle measured counterclockwise from the eastern direction is . This gives the following
+answers:
+On the fourth leg of the excursion, the displacement magnitude is and the direction is south. The
+direction angle can be taken as either or . We obtain
+On the last leg, the magnitude is and the angle is west of south),
+which gives
+CHECK YOUR UNDERSTANDING 2.6
+If Trooper runs 20 m west before taking a rest, what is his displacement vector?
+Polar Coordinates
+To describe locations of points or vectors in a plane, we need two orthogonal directions. In the Cartesian coordinate
+system these directions are given by unit vectors and along the x-axis and the y-axis, respectively. The Cartesian
+coordinate system is very convenient to use in describing displacements and velocities of objects and the forces
+acting on them. However, it becomes cumbersome when we need to describe the rotation of objects. When
+describing rotation, we usually work in the polar coordinate system.
+In the polar coordinate system, the location of point P in a plane is given by two polar coordinates (Figure 2.20).
+The first polar coordinate is the radial coordinate r, which is the distance of point P from the origin. The second
+polar coordinate is an angle that the radial vector makes with some chosen direction, usually the positive
+x-direction. In polar coordinates, angles are measured in radians, or rads. The radial vector is attached at the origin
+and points away from the origin to point P. This radial direction is described by a unit radial vector . The second unit
+vector is a vector orthogonal to the radial direction . The positive direction indicates how the angle changes
+in the counterclockwise direction. In this way, a point P that has coordinates (x, y) in the rectangular system can be
+described equivalently in the polar coordinate system by the two polar coordinates . Equation 2.17 is valid for
+any vector, so we can use it to express the x- and y-coordinates of vector . In this way, we obtain the connection
+between the polar coordinates and rectangular coordinates of point P:
+2.18
+
+60 2 • Vectors
+FIGURE 2.20 Using polar coordinates, the unit vector defines the positive direction along the radius r (radial direction) and, orthogonal to
+it, the unit vector defines the positive direction of rotation by the angle .
+EXAMPLE 2.6
+Polar Coordinates
+A treasure hunter finds one silver coin at a location 20.0 m away from a dry well in the direction north of east
+and finds one gold coin at a location 10.0 m away from the well in the direction north of west. What are the polar
+and rectangular coordinates of these findings with respect to the well?
+Strategy
+The well marks the origin of the coordinate system and east is the +x-direction. We identify radial distances from the
+locations to the origin, which are (for the silver coin) and (for the gold coin). To find the
+angular coordinates, we convert to radians: . We use Equation 2.18 to find the x- and
+y-coordinates of the coins.
+Solution
+The angular coordinate of the silver coin is , whereas the angular coordinate of the gold coin is
+. Hence, the polar coordinates of the silver coin are and those of the
+gold coin are . We substitute these coordinates into Equation 2.18 to obtain rectangular
+coordinates. For the gold coin, the coordinates are
+For the silver coin, the coordinates are
+Vectors in Three Dimensions
+To specify the location of a point in space, we need three coordinates (x, y, z), where coordinates x and y specify
+locations in a plane, and coordinate z gives a vertical position above or below the plane. Three-dimensional space
+has three orthogonal directions, so we need not two but three unit vectors to define a three-dimensional coordinate
+system. In the Cartesian coordinate system, the first two unit vectors are the unit vector of the x-axis and the unit
+vector of the y-axis . The third unit vector is the direction of the z-axis (Figure 2.21). The order in which the axes
+are labeled, which is the order in which the three unit vectors appear, is important because it defines the orientation
+Access for free at openstax.org
+
+2.2 • Coordinate Systems and Components of a Vector 61
+of the coordinate system. The order x-y-z, which is equivalent to the order - - , defines the standard right-
+handed coordinate system (positive orientation). Notice that while previously the y-axis was used for the upward
+direction, in three dimensions we usually choose z to represent the vertical. A right-handed coordinate system with
+z up and with one of the remaining axes pointing to the right and the other out of the page must have the y-axis
+pointing right and x out of the page, as illustrated here.
+FIGURE 2.21 Three unit vectors define a Cartesian system in three-dimensional space. The order in which these unit vectors appear
+defines the orientation of the coordinate system. The order shown here defines the right-handed orientation.
+In three-dimensional space, vector has three vector components: the x-component , which is the part
+of vector along the x-axis; the y-component , which is the part of along the y-axis; and the
+z-component , which is the part of the vector along the z-axis. A vector in three-dimensional space is the
+vector sum of its three vector components (Figure 2.22):
+2.19
+If we know the coordinates of its origin and of its end , its scalar components are obtained
+by taking their differences: and are given by Equation 2.13 and the z-component is given by
+2.20
+Magnitude A is obtained by generalizing Equation 2.15 to three dimensions:
+2.21
+This expression for the vector magnitude comes from applying the Pythagorean theorem twice. As seen in Figure
+2.22, the diagonal in the xy-plane has length and its square adds to the square to give . Note that
+when the z-component is zero, the vector lies entirely in the xy-plane and its description is reduced to two
+dimensions.
+
+62 2 • Vectors
+FIGURE 2.22 A vector in three-dimensional space is the vector sum of its three vector components.
+EXAMPLE 2.7
+Takeoff of a Drone
+During a takeoff of IAI Heron (Figure 2.23), its position with respect to a control tower is 100 m above the ground,
+300 m to the east, and 200 m to the north. One minute later, its position is 250 m above the ground, 1200 m to the
+east, and 2100 m to the north. What is the drone’s displacement vector with respect to the control tower? What is
+the magnitude of its displacement vector?
+FIGURE 2.23 The drone IAI Heron in flight. (credit: SSgt Reynaldo Ramon, USAF)
+Strategy
+We take the origin of the Cartesian coordinate system as the control tower. The direction of the +x-axis is given by
+unit vector to the east, the direction of the +y-axis is given by unit vector to the north, and the direction of the
++z-axis is given by unit vector , which points up from the ground. The drone’s first position is the origin (or,
+equivalently, the beginning) of the displacement vector and its second position is the end of the displacement
+vector.
+Solution
+We identify b(300.0 m, 200.0 m, 100.0 m) and e(1200 m, 2100 m, 250 m), and use Equation 2.13 and Equation
+2.20 to find the scalar components of the drone’s displacement vector:
+Access for free at openstax.org
+
+2.3 • Algebra of Vectors 63
+We substitute these components into Equation 2.19 to find the displacement vector:
+We substitute into Equation 2.21 to find the magnitude of the displacement:
+CHECK YOUR UNDERSTANDING 2.7
+If the average velocity vector of the drone in the displacement in Example 2.7 is ,
+what is the magnitude of the drone’s velocity vector?
+2.3 Algebra of Vectors
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Apply analytical methods of vector algebra to find resultant vectors and to solve vector equations for
+unknown vectors.
+• Interpret physical situations in terms of vector expressions.
+Vectors can be added together and multiplied by scalars. Vector addition is associative (Equation 2.8) and
+commutative (Equation 2.7), and vector multiplication by a sum of scalars is distributive (Equation 2.9). Also, scalar
+multiplication by a sum of vectors is distributive:
+2.22
+In this equation, is any number (a scalar). For example, a vector antiparallel to vector can
+be expressed simply by multiplying by the scalar :
+2.23
+EXAMPLE 2.8
+Direction of Motion
+In a Cartesian coordinate system where denotes geographic east, denotes geographic north, and denotes
+altitude above sea level, a military convoy advances its position through unknown territory with velocity
+. If the convoy had to retreat, in what geographic direction would it be moving?
+Solution
+The velocity vector has the third component , which says the convoy is climbing at a rate of 100
+m/h through mountainous terrain. At the same time, its velocity is 4.0 km/h to the east and 3.0 km/h to the north, so
+it moves on the ground in direction north of east. If the convoy had to retreat, its new velocity
+vector would have to be antiparallel to and be in the form , where is a positive number. Thus, the
+velocity of the retreat would be . The negative sign of the third component
+indicates the convoy would be descending. The direction angle of the retreat velocity is
+south of west. Therefore, the convoy would be moving on the ground in direction south of west while
+descending on its way back.
+The generalization of the number zero to vector algebra is called the null vector, denoted by . All components of
+
+64 2 • Vectors
+the null vector are zero, , so the null vector has no length and no direction.
+Two vectors and are equal vectors if and only if their difference is the null vector:
+This vector equation means we must have simultaneously , , and . Hence,
+we can write if and only if the corresponding components of vectors and are equal:
+2.24
+Two vectors are equal when their corresponding scalar components are equal.
+Resolving vectors into their scalar components (i.e., finding their scalar components) and expressing them
+analytically in vector component form (given by Equation 2.19) allows us to use vector algebra to find sums or
+differences of many vectors analytically (i.e., without using graphical methods). For example, to find the resultant of
+two vectors and , we simply add them component by component, as follows:
+In this way, using Equation 2.24, scalar components of the resultant vector are the sums of
+corresponding scalar components of vectors and :
+Analytical methods can be used to find components of a resultant of many vectors. For example, if we are to sum up
+vectors , where each vector is , the resultant vector is
+Therefore, scalar components of the resultant vector are
+2.25
+Having found the scalar components, we can write the resultant in vector component form:
+Analytical methods for finding the resultant and, in general, for solving vector equations are very important in
+physics because many physical quantities are vectors. For example, we use this method in kinematics to find
+Access for free at openstax.org

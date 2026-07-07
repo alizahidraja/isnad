@@ -1,0 +1,163 @@
+# REAL PDF — openstax_vol1.pdf, pages 39-43
+############################################################
+
+1.6 • Significant Figures 27
+The precision of measurements refers to how close the agreement is between repeated independent
+measurements (which are repeated under the same conditions). Consider the example of the paper measurements.
+The precision of the measurements refers to the spread of the measured values. One way to analyze the precision of
+the measurements is to determine the range, or difference, between the lowest and the highest measured values. In
+this case, the lowest value was 10.9 in. and the highest value was 11.2 in. Thus, the measured values deviated from
+each other by, at most, 0.3 in. These measurements were relatively precise because they did not vary too much in
+value. However, if the measured values had been 10.9 in., 11.1 in., and 11.9 in., then the measurements would not
+be very precise because there would be significant variation from one measurement to another. Notice that the
+concept of precision depends only on the actual measurements acquired and does not depend on an accepted
+reference value.
+The measurements in the paper example are both accurate and precise, but in some cases, measurements are
+accurate but not precise, or they are precise but not accurate. Let’s consider an example of a GPS attempting to
+locate the position of a restaurant in a city. Think of the restaurant location as existing at the center of a bull’s-eye
+target and think of each GPS attempt to locate the restaurant as a black dot. In Figure 1.12(a), we see the GPS
+measurements are spread out far apart from each other, but they are all relatively close to the actual location of the
+restaurant at the center of the target. This indicates a low-precision, high-accuracy measuring system. However, in
+Figure 1.12(b), the GPS measurements are concentrated quite closely to one another, but they are far away from the
+target location. This indicates a high-precision, low-accuracy measuring system.
+FIGURE 1.12 A GPS attempts to locate a restaurant at the center of the bull’s-eye. The black dots represent each attempt to pinpoint the
+location of the restaurant. (a) The dots are spread out quite far apart from one another, indicating low precision, but they are each rather
+close to the actual location of the restaurant, indicating high accuracy. (b) The dots are concentrated rather closely to one another,
+indicating high precision, but they are rather far away from the actual location of the restaurant, indicating low accuracy. (credit a and credit
+b: modification of works by "DarkEvil"/Wikimedia Commons)
+Accuracy, Precision, Uncertainty, and Discrepancy
+The precision of a measuring system is related to the uncertainty in the measurements whereas the accuracy is
+related to the discrepancy from the accepted reference value. Uncertainty is a quantitative measure of how much
+your measured values deviate from one another. There are many different methods of calculating uncertainty, each
+of which is appropriate to different situations. Some examples include taking the range (that is, the largest minus
+the smallest) or finding the standard deviation of the measurements. Discrepancy (or “measurement error”) is the
+difference between the measured value and a given standard or expected value. If the measurements are not very
+precise, then the uncertainty of the values is high. If the measurements are not very accurate, then the discrepancy
+of the values is high.
+Recall our example of measuring paper length; we obtained measurements of 11.1 in., 11.2 in., and 10.9 in., and the
+accepted value was 11.0 in. We might average the three measurements to say our best guess is 11.1 in.; in this
+case, our discrepancy is 11.1 – 11.0 = 0.1 in., which provides a quantitative measure of accuracy. We might
+calculate the uncertainty in our best guess by using half of the range of our measured values: 0.15 in. Then we
+would say the length of the paper is 11.1 in. plus or minus 0.15 in. The uncertainty in a measurement, A, is often
+denoted as δA (read “delta A”), so the measurement result would be recorded as A ± δA. Returning to our paper
+example, the measured length of the paper could be expressed as 11.1 ± 0.15 in. Since the discrepancy of 0.1 in. is
+less than the uncertainty of 0.15 in., we might say the measured value agrees with the accepted reference value to
+
+28 1 • Units and Measurement
+within experimental uncertainty.
+Some factors that contribute to uncertainty in a measurement include the following:
+• Limitations of the measuring device
+• The skill of the person taking the measurement
+• Irregularities in the object being measured
+• Any other factors that affect the outcome (highly dependent on the situation)
+In our example, such factors contributing to the uncertainty could be the smallest division on the ruler is 1/16 in.,
+the person using the ruler has bad eyesight, the ruler is worn down on one end, or one side of the paper is slightly
+longer than the other. At any rate, the uncertainty in a measurement must be calculated to quantify its precision. If a
+reference value is known, it makes sense to calculate the discrepancy as well to quantify its accuracy.
+Percent uncertainty
+Another method of expressing uncertainty is as a percent of the measured value. If a measurement A is expressed
+with uncertainty δA, the percent uncertainty is defined as
+EXAMPLE 1.7
+Calculating Percent Uncertainty: A Bag of Apples
+A grocery store sells 5-lb bags of apples. Let’s say we purchase four bags during the course of a month and weigh
+the bags each time. We obtain the following measurements:
+• Week 1 weight: 4.8 lb
+• Week 2 weight: 5.3 lb
+• Week 3 weight: 4.9 lb
+• Week 4 weight: 5.4 lb
+We then determine the average weight of the 5-lb bag of apples is 5.1 ± 0.3 lb from using half of the range. What is
+the percent uncertainty of the bag’s weight?
+Strategy
+First, observe that the average value of the bag’s weight, A, is 5.1 lb. The uncertainty in this value, is 0.3 lb. We
+can use the following equation to determine the percent uncertainty of the weight:
+1.1
+Solution
+Substitute the values into the equation:
+Significance
+We can conclude the average weight of a bag of apples from this store is 5.1 lb ± 6%. Notice the percent uncertainty
+is dimensionless because the units of weight in lb canceled those in A = 5.1 lb when we took the ratio.
+CHECK YOUR UNDERSTANDING 1.8
+A high school track coach has just purchased a new stopwatch. The stopwatch manual states the stopwatch has an
+uncertainty of ±0.05 s. Runners on the track coach’s team regularly clock 100-m sprints of 11.49 s to 15.01 s. At the
+Access for free at openstax.org
+
+1.6 • Significant Figures 29
+school’s last track meet, the first-place sprinter came in at 12.04 s and the second-place sprinter came in at 12.07
+s. Will the coach’s new stopwatch be helpful in timing the sprint team? Why or why not?
+Uncertainties in calculations
+Uncertainty exists in anything calculated from measured quantities. For example, the area of a floor calculated from
+measurements of its length and width has an uncertainty because the length and width have uncertainties. How big
+is the uncertainty in something you calculate by multiplication or division? If the measurements going into the
+calculation have small uncertainties (a few percent or less), then the method of adding percents can be used for
+multiplication or division. This method states the percent uncertainty in a quantity calculated by multiplication or
+division is the sum of the percent uncertainties in the items used to make the calculation. For example, if a floor has
+a length of 4.00 m and a width of 3.00 m, with uncertainties of 2% and 1%, respectively, then the area of the floor is
+12.0 m2 and has an uncertainty of 3%. (Expressed as an area, this is 0.36 m2 [ ], which we round to
+0.4 m2 since the area of the floor is given to a tenth of a square meter.)
+Precision of Measuring Tools and Significant Figures
+An important factor in the precision of measurements involves the precision of the measuring tool. In general, a
+precise measuring tool is one that can measure values in very small increments. For example, a standard ruler can
+measure length to the nearest millimeter whereas a caliper can measure length to the nearest 0.01 mm. The caliper
+is a more precise measuring tool because it can measure extremely small differences in length. The more precise
+the measuring tool, the more precise the measurements.
+When we express measured values, we can only list as many digits as we measured initially with our measuring tool.
+For example, if we use a standard ruler to measure the length of a stick, we may measure it to be 36.7 cm. We can’t
+express this value as 36.71 cm because our measuring tool is not precise enough to measure a hundredth of a
+centimeter. It should be noted that the last digit in a measured value has been estimated in some way by the person
+performing the measurement. For example, the person measuring the length of a stick with a ruler notices the stick
+length seems to be somewhere in between 36.6 cm and 36.7 cm, and he or she must estimate the value of the last
+digit. Using the method of significant figures, the rule is that the last digit written down in a measurement is the
+first digit with some uncertainty. To determine the number of significant digits in a value, start with the first
+measured value at the left and count the number of digits through the last digit written on the right. For example, the
+measured value 36.7 cm has three digits, or three significant figures. Significant figures indicate the precision of the
+measuring tool used to measure a value.
+Zeros
+Special consideration is given to zeros when counting significant figures. The zeros in 0.053 are not significant
+because they are placeholders that locate the decimal point. There are two significant figures in 0.053. The zeros in
+10.053 are not placeholders; they are significant. This number has five significant figures. The zeros in 1300 may or
+may not be significant, depending on the style of writing numbers. They could mean the number is known to the last
+digit or they could be placeholders. So 1300 could have two, three, or four significant figures. To avoid this
+ambiguity, we should write 1300 in scientific notation as or depending on
+whether it has two, three, or four significant figures. Zeros are significant except when they serve only as
+placeholders.
+Significant figures in calculations
+When combining measurements with different degrees of precision with the mathematical operations of addition,
+subtraction, multiplication, or division, then the number of significant digits in the final answer can be no greater
+than the number of significant digits in the least-precise measured value. There are two different rules, one for
+multiplication and division and the other for addition and subtraction.
+1. For multiplication and division, the result should have the same number of significant figures as the quantity
+with the least number of significant figures entering into the calculation. For example, the area of a circle can
+be calculated from its radius using A = πr2. Let’s see how many significant figures the area has if the radius has
+only two—say, r = 1.2 m. Using a calculator with an eight-digit output, we would calculate
+
+30 1 • Units and Measurement
+But because the radius has only two significant figures, it limits the calculated quantity to two significant
+figures, or
+although π is good to at least eight digits.
+2. For addition and subtraction, the answer can contain no more decimal places than the least-precise
+measurement. Suppose we buy 7.56 kg of potatoes in a grocery store as measured with a scale with precision
+0.01 kg, then we drop off 6.052 kg of potatoes at your laboratory as measured by a scale with precision 0.001
+kg. Then, we go home and add 13.7 kg of potatoes as measured by a bathroom scale with precision 0.1 kg.
+How many kilograms of potatoes do we now have and how many significant figures are appropriate in the
+answer? The mass is found by simple addition and subtraction:
+Next, we identify the least-precise measurement: 13.7 kg. This measurement is expressed to the 0.1 decimal
+place, so our final answer must also be expressed to the 0.1 decimal place. Thus, the answer is rounded to the
+tenths place, giving us 15.2 kg.
+Significant figures in this text
+In this text, most numbers are assumed to have three significant figures. Furthermore, consistent numbers of
+significant figures are used in all worked examples. An answer given to three digits is based on input good to at least
+three digits, for example. If the input has fewer significant figures, the answer will also have fewer significant figures.
+Care is also taken that the number of significant figures is reasonable for the situation posed. In some topics,
+particularly in optics, more precise numbers are needed and we use more than three significant figures. Finally, if a
+number is exact, such as the two in the formula for the circumference of a circle, C = 2πr, it does not affect the
+number of significant figures in a calculation. Likewise, conversion factors such as 100 cm/1 m are considered exact
+and do not affect the number of significant figures in a calculation.
+1.7 Solving Problems in Physics
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the process for developing a problem-solving strategy.
+• Explain how to find the numerical solution to a problem.
+• Summarize the process for assessing the significance of the numerical solution to a problem.
+FIGURE 1.13 Problem-solving skills are essential to your success in physics. (credit: “scui3asteveo”/Flickr)
+Problem-solving skills are clearly essential to success in a quantitative course in physics. More important, the ability
+Access for free at openstax.org

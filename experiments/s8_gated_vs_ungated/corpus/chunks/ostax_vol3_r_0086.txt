@@ -1,0 +1,208 @@
+# REAL PDF — openstax_vol3.pdf, pages 528-534
+############################################################
+
+520 Chapter 11 | Particle Physics and Cosmology
+Name Symbol Quarks Charge (e) Spin Mass (GeV/c2 )
+Charmed eta η
+0
+c−c 0 0 2.98
+Neutral D 0 −uc 0 0 1.86
+D
+Neutral D *0 −uc 0 1 2.01
+D
+Positive D + − 1 0 1.87
+D dc
+Neutral B B 0 − db 0 0 5.26
+Upsilon ϒ − 0 1 9.46
+bb
+Table 11.5Meson Quarks
+Color
+Quarks are fermions that obey Pauli’s exclusion principle, so it might be surprising to learn that three quarks can bind
+togetherwithinanucleus.Forexample,howcantwoupquarksexistinthesamesmallregionofspacewithinaproton?The
+solutionistoinventathirdnewpropertytodistinguishthem.Thispropertyiscalledcolor,anditplaysthesameroleinthe
+strongnuclearinteractionaschargedoesinelectromagneticinteractions.Forthisreason,quarkcolorissometimescalled
+“strong charge.”
+Quarks come in three colors: red, green, and blue. (These are just labels—quarks are not actually colored.) Each type of
+quark (u, d, c, s, b, t) canpossessanyothercolors.Forexample,threestrangequarksexist:aredstrangequark,agreen
+strangequark,andabluestrangequark.Antiquarkshaveanticolor.Quarksthatbindtogethertoformhadrons(baryonsand
+mesons)mustbecolorneutral,colorless,or“white.”Thus,abaryonmustcontainared,blue,andgreenquark.Likewise,a
+mesoncontainseitherared-antired,blue-antiblue,orgreen-antigreenquarkpair.Thus,twoquarkscanbefoundinthesame
+spin state in a hadron, without violating Pauli’s exclusion principle, because their colors are different.
+Quark Confinement
+ThefirststrongevidencefortheexistenceofquarkscamefromaseriesofexperimentsperformedattheStanfordLinear
+AcceleratorCenter(SLAC)andatCERNaround1970.Thisexperimentwasdesignedtoprobethestructureoftheproton,
+muchlikeRutherfordstudiedstructureinsidetheatomwithhis α-particlescatteringexperiments.Electronswerecollided
+with protons with energy in excess of 20 GeV. At this energy, E≈ pc, so the de Broglie wavelength of an electron is
+λ= h p = h E c ≈6×10 −17 m. (11.1)
+Thewavelengthoftheelectronismuchsmallerthanthediameteroftheproton(about 10 −15 m). Thus,likeanautomobile
+traveling through a rocky mountain range, electrons can be used to probe the structure of the nucleus.
+TheSLACexperimentsfoundthatsomeelectronsweredeflectedatverylargeangles,indicatingsmallscatteringcenters
+withintheproton.Thescatteringdistributionwasconsistentwithelectronsbeingscatteredfromsiteswithspin1/2,thespin
+ofquarks.TheexperimentsatCERNusedneutrinosinsteadofelectrons.Thisexperimentalsofoundevidenceforthetiny
+scatteringcenters.Inbothexperiments,theresultssuggestedthatthechargesofthescatteringparticleswereeither +2/3e
+or −1/3e, in agreement with the quark model.
+Watch thisvideo (https://openstaxcollege.org/l/21quarks)to learn more about quarks.
+The quark model has been extremely successful in organizing the complex world of subatomic particles. Interestingly,
+however, no experiment has ever produced an isolated quark. All quarks have fractional charge and should therefore be
+easilydistinguishablefromtheknownelementaryparticles,whosechargesareallanintegermultipleofe.Whyareisolated
+quarks not observed? In current models of particle interactions, the answer is expressed in terms of quark confinement.
+Quarkconfinementreferstotheconfinementofquarksingroupsoftwoorthreeinasmallregionofspace.Thequarksare
+completelyfreetomoveaboutinthisspace,andsendandreceivegluons(thecarriersofthestrongforce).However,ifthese
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 521
+quarksstraytoofarfromoneanother,thestrongforcepullsthembackit.Thisactionislikenedtoabola,aweaponused
+forhunting(Figure11.5).Thestonesaretiedtoacentralpointbyastring,sononeoftherockscanmovetoofarfromthe
+others.Thebolacorrespondstoabaryon,thestonescorrespondtoquarks,andthestringcorrespondstothegluonsthathold
+the system together.
+Figure 11.5 A baryon is analogous to a bola, a weapon used
+for hunting. The rocks in this image correspond to the baryon
+quarks. The quarks are free to move about but must remain close
+to the other quarks.
+11.4 | Particle Accelerators and Detectors
+Learning Objectives
+By the end of this section, you will be able to:
+• Compare and contrast different types of particle accelerators
+• Describe the purpose, components, and function of a typical colliding beam machine
+• Explain the role of each type of subdetector of a typical multipurpose particle detector
+• Use the curvature of a charge track to determine the momentum of a particle
+Thegoalofexperimentalparticlephysicsistoaccuratelymeasureelementaryparticles.Theprimarymethodusedtoachieve
+this end is to produce these particles in high-energy collisions and then measure the products of using highly sensitive
+particledetectors.Theseexperimentsareusedtotestandrevisescientificmodelsofparticleinteractions.Thepurposeof
+thissectionistodescribeparticleacceleratorsanddetectors.Modernmachinesarebasedonearlierones,soitishelpfulto
+present a brief history of accelerators and detectors.
+Early Particle Accelerators
+A particle accelerator is a machine designed to accelerate charged particles. This acceleration is usually achieved with
+strongelectricfields,magneticfields,orboth.AsimpleexampleofaparticleacceleratoristheVandeGraaffaccelerator
+(see Electric Potential (http://cnx.org/content/m58427/latest/) ). This type of accelerator collects charges on a
+hollowmetalsphereusingamovingbelt.Whentheelectrostaticpotentialdifferenceofthesphereissufficientlylarge,the
+field is used to accelerate particles through an evacuated tube. Energies produced by a Van de Graaff accelerator are not
+large enough to create new particles, but the machine was important for early exploration of the atomic nucleus.
+Largerenergiescanbeproducedbyalinearaccelerator(calleda“linac”).Chargedparticlesproducedatthebeginningofthe
+linacareacceleratedbyacontinuouslineofchargedhollowtubes.Thevoltagebetweenagivenpairoftubesissettodraw
+thechargedparticlein,andoncetheparticlearrives,thevoltagebetweenthenextpairoftubesissettopushthecharged
+particle out. In other words, voltages are applied in such a way that the tubes deliver a series of carefully synchronized
+electrickicks(Figure 11.6).Modernlinacsemployradiofrequency(RF)cavitiesthatsetuposcillatingelectromagnetic
+
+522 Chapter 11 | Particle Physics and Cosmology
+fields,whichpropeltheparticleforwardlikeasurferonanoceanwave.Linacscanaccelerateelectronstoover100MeV.
+(Electronswithkineticenergiesgreaterthan2MeVaremovingveryclosetothespeedoflight.)Inmodernparticleresearch,
+linear accelerators are often used in the first stage of acceleration.
+Figure 11.6 In a linear accelerator, charged tubes accelerate particles in a series of electromagnetic kicks. Each tube is longer
+than the preceding tube because the particle is moving faster as it accelerates.
+Example 11.5
+Accelerating Tubes
+Alinearacceleratordesignedtoproduceabeamof800-MeVprotonshas2000acceleratingtubesseparatedby
+gaps. What average voltage must be applied between tubes to achieve the desired energy? (Hint: U =qV.)
+Strategy
+The energy given to the proton in each gap between tubes is U =qV, where q is the proton’s charge
+and V is the potential difference (voltage) across the gap. Since q=q e=1.6×10 −19 C and
+1eV=(1V) ⎛ 1.6×10 −19 C ⎞ , the proton gains 1 eV in energy for each volt across the gap that it passes
+⎝ ⎠
+through.Theacvoltageappliedtothetubesistimedsothatitaddstotheenergyineachgap.Theeffectivevoltage
+is the sum of the gap voltages and equals 800 MV to give each proton an energy of 800 MeV.
+Solution
+Thereare2000gapsandthesumofthevoltagesacrossthemis800MV.Therefore,theaveragevoltageapplied
+is 0.4 MV or 400 kV.
+Significance
+Avoltageofthismagnitudeisnotdifficulttoachieveinavacuum.Muchlargergapvoltageswouldberequired
+for higher energy, such as those at the 50-GeV SLAC facility. Synchrotrons are aided by the circular path of
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 523
+theacceleratedparticles,whichcanorbitmanytimes,effectivelymultiplyingthenumberofaccelerationsbythe
+number of orbits. This makes it possible to reach energies greater than 1 TeV.
+11.5 CheckYourUnderstandingHowmuchenergydoesanelectronreceiveinacceleratingthrougha1-V
+potential difference?
+Thenext-generationacceleratorafterthelinacisthecyclotron(Figure 11.7).Acyclotronusesalternatingelectricfields
+andfixedmagnetstoaccelerateparticlesinacircularspiralpath.Aparticleatthecenterofthecyclotronisfirstaccelerated
+byanelectricfieldinagapbetweentwoD-shapedmagnets(Dees).AstheparticlecrossesovertheD-shapedmagnet,the
+particleisbentintoacircularpathbyaLorentzforce.(TheLorentzforcewasdiscussedinMagneticForcesandFields
+(http://cnx.org/content/m58737/latest/) .)Assumingnoenergylosses,themomentumoftheparticleisrelatedtoits
+radius of curvature by
+p=0.3Br (11.2)
+wherepisthemomentuminGeV/c,Bisinteslas,andristheradiusofthetrajectory(“orbit”)inmeters.Thisexpression
+is valid to classical and relativistic velocities. The circular trajectory returns the particle to the electric field gap, the
+electric field is reversed, and the process continues. As the particle is accelerated, the radius of curvature gets larger and
+larger—spirally outward—until the electrons leave the device.
+Figure 11.7 Cyclotrons use a magnetic field to cause particles
+to move in circular orbits. As the particles pass between the
+plates of the “Dees,” the voltage across the gap is reversed so
+the particles are accelerated twice in each orbit.
+Watch thisvideo (https://openstaxcollege.org/l/21cyclotron)to learn more about cyclotrons.
+A synchrotron is a circular accelerator that uses alternating voltage and increasing magnetic field strength to accelerate
+particles to higher energies. Charged particles are accelerated by RF cavities, and steered and focused by magnets. RF
+cavitiesaresynchronizedtodeliver“kicks”totheparticlesastheypassby,hencethename.Steeringhigh-energyparticles
+requiresstrongmagneticfields,sosuperconductingmagnetsareoftenusedtoreduceheatlosses.Asthechargedparticles
+move in a circle, they radiate energy: According to classical theory, any charged particle that accelerates (and circular
+motion is an accelerated motion) also radiates. In a synchrotron, such radiation is called synchrotron radiation. This
+radiation is useful for many other purposes, such as medical and materials research.
+
+524 Chapter 11 | Particle Physics and Cosmology
+Example 11.6
+The Energy of an Electron in a Cyclotron
+Anelectronisacceleratedusingacyclotron.Ifthemagneticfieldis1.5Tandtheradiusofthe“Dees”is1.2m,
+what is the kinetic energy of the outgoing particle?
+Strategy
+Iftheradiusoforbitoftheelectronexceedstheradiusofthe“Dees,”theelectronexitsthedevice.So,theradius
+of the “Dees” places an upper limit on the radius and, therefore, the momentum and energy of the accelerated
+particle.Theexitmomentumoftheparticleisdeterminedusingtheradiusoforbitandstrengthofthemagnetic
+field. The exit energy of the particle can be determined the particle momentum (Relativity).
+Solution
+Assuming no energy losses, the momentum of the particle in the cyclotron is
+p=0.3Br =0.3(1.5T⎞⎛1.2m⎞=0.543GeV/c.
+⎠⎝ ⎠
+Themomentumenergy pc2=0.543GeV=543MeV ismuchlargerthantherestmassenergyoftheelectron,
+mc2=0.511MeV, sorelativisticexpressionfortheenergyoftheelectronmustbeused(seeRelativity).The
+total energy of the electron is
+E = (pc)2+(mc2)2= (543)2+(0.511)2≈543MeVand
+total
+K =E
+total
+−mc2=543GeV−0.511GeV≈543MeV.
+Significance
+Thetotalenergyoftheelectronismuchlargerthanitsrestmassenergy.Inotherwords,thetotalenergyofthe
+electronisalmostallintheformofkineticenergy.Cyclotronscanbeusedtoconductnuclearphysicsexperiments
+or in particle therapy to treat cancer.
+11.6 Check Your Understanding A charged particle of a certain momentum travels in an arc through a
+uniform magnetic field. What happens if the magnetic field is doubled?
+Colliding Beam Machines
+New particles can be created by colliding particles at high energies. According to Einstein’s mass-energy relation, the
+energies of the colliding particles are converted into mass energy of the created particle. The most efficient way to do
+thisiswithparticle-colliding beammachines.Acollidingbeammachinecreatestwocounter-rotatingbeamsinacircular
+accelerator,storesthebeamsatconstantenergy,andthenatthedesiredmoment,focusesthebeamsononeanotheratthe
+center of a sensitive detector.
+TheprototypicalcollidingbeammachineistheCornellElectronStorageRing,locatedinIthaca,NewYork(Figure11.8).
+Electrons(e−)andpositrons(e + )arecreatedatthebeginningofthelinearacceleratorandareacceleratedupto150MeV.
+Theparticlesaretheninjectedintotheinnersynchrotronring,wheretheyareacceleratedbyRFcavitiesto4.5to6GeV.
+When the beams are up to speed, they are transferred and “stored” in an outer storage ring at the same energy. The two
+counter-rotatingbeamstravelthroughthesameevacuatedpipe,butarekeptapartuntilcollisionsaredesired.Theelectrons
+and positrons circle the machine in bunches 390,000 times every second.
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 525
+Figure 11.8 The Cornell Electron Storage Ring uses a linear accelerator and
+a synchrotron to accelerate electrons and positrons to 4.5–6 GeV. The particles
+are held in the outer storage ring at that energy until they are made to collide
+in a particle detector. (credit: modification of work by Laboratory of Nuclear
+Studies, Cornell Electron Storage Ring)
+Whenanelectronandpositroncollide,theyannihilateeachothertoproduceaphoton,whichexistsfortooshortatimeto
+bedetected.Thephotonproduceseitheraleptonpair(e.g.,anelectronandposition,muonorantimuon,ortauandantitau)
+oraquarkpair.Ifquarksareproduced,mesonsform,suchas c−c and b − b. Thesemesonsarecreatednearlyatrestsincethe
+initialtotalmomentumoftheelectron-positronsystemiszero.Note,mesonscannotbecreatedatjustanycollidingenergy
+butonlyat“resonant”energiesthatcorrespondtotheuniquemassesofthemesons(Table 11.5).Themesonscreatedin
+thiswayarehighlyunstableanddecayquicklyintolighterparticles,suchaselectrons,protons,andphotons.Thecollision
+“fragments” provide valuable information about particle interactions.
+Asthefieldofparticlephysicsadvances,collidingbeammachinesarebecomingmorepowerful.TheLargeHadronCollider
+(LHC), currently the largest accelerator in the world, collides protons at beam energies exceeding 6 TeV. The center-of-
+mass energy (W) refers to the total energy available to create new particles in a colliding machine, or the total energy of
+incomingparticlesinthecenter-of-massframe.(Theconceptofacenter-of-massframeofreferenceisdiscussedinLinear
+Momentum and Collisions (http://cnx.org/content/m58317/latest/) .)Therefore,theLHCisabletoproduceone
+or more particles with a total mass exceeding 12 TeV. The center-of-mass energy is given by:
+2 2 (11.3)
+W2=2⎡E E +(p c)(p c)⎤+(m c2) +(m c2) ,
+⎣ 1 2 1 2 ⎦ 1 2
+where E and E are the total energies of the incoming particles (1 and 2), p and p are the magnitudes of their
+1 2 1 2
+momenta, and m and m are their rest masses.
+1 2

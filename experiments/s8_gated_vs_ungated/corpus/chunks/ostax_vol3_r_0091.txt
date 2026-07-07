@@ -1,0 +1,329 @@
+# REAL PDF — openstax_vol3.pdf, pages 559-568
+############################################################
+
+Chapter 11 | Particle Physics and Cosmology 551
+44. Experimental results indicate an isolate particle with
+charge +2/3—an isolated quark. What quark could this 11.5The Standard Model
+be? Why would this discovery be important? 54. UsingtheHeisenberguncertainlyprinciple,determine
+therangeoftheweakforceifthisforceisproducedbythe
+45. Express the β decays n→ p+e−+ −ν and exchange of a Z boson.
+p→n+e+ +ν in terms of β decays of quarks. Check
+55. Use the Heisenberg uncertainly principle to estimate
+toseethattheconservationlawsforcharge,leptonnumber, the range of a weak nuclear decay involving a graviton.
+and baryon number are satisfied by the quark β decays.
+56. (a) The following decay is mediated by the
+electroweak force:
+11.4Particle Accelerators and Detectors
+p→n+e + +υ e.
+46. A charged particle in a 2.0-T magnetic field is bent
+in a circle of radius 75 cm. What is the momentum of the Draw the Feynman diagram for the decay.
+particle?
+(b)Thefollowingscatteringismediatedbytheelectroweak
+force:
+47. A proton track passes through a magnetic field with
+radiusof50cm.Themagneticfieldstrengthis1.5T.What
+υ e+e−→υ e+e−.
+is the total energy of the proton? Draw the Feynman diagram for the scattering.
+48. Derive the equation p=0.3Br using the concepts 57. Assuming conservation of momentum, what is the
+of centripetal acceleration (Motion in Two and Three energy of each γ ray produced in the decay of a neutral
+Dimensions (http://cnx.org/content/m58288/
+pion at rest, in the reaction π0 →γ+γ ?
+latest/)) and relativistic momentum (Relativity)
+49. Assume that beam energy of an electron-positron 58. What is the wavelength of a 50-GeV electron, which
+colliderisapproximately4.73GeV.Whatisthetotalmass isproducedatSLAC?Thisprovidesanideaofthelimitto
+(W)ofaparticleproducedintheannihilationofanelectron the detail it can probe.
+and positron in this collider? What meson might be
+produced? 59. The primary decay mode for the negative pion is
+π−→ µ−+ −ν µ. (a) What is the energy release in MeV
+50. At full energy, protons in the 2.00-km-diameter
+in this decay? (b) Using conservation of momentum, how
+Fermilab synchrotron travel at nearly the speed of light,
+muchenergydoeseachofthedecayproductsreceive,given
+since their energy is about 1000 times their rest mass the π− is at rest when it decays? You may assume the
+energy.(a)Howlongdoesittakeforaprotontocomplete
+muon antineutrino is massless and has momentum
+one trip around? (b) How many times per second will it
+p=E/c, just like a photon.
+pass through the target area?
+51. Supposea W− createdinaparticledetectorlivesfor 60. Supposeyouaredesigningaprotondecayexperiment
+and you can detect 50 percent of the proton decays in a
+5.00×10 −25 s.Whatdistancedoesitmoveinthistimeif tankofwater.(a)Howmanykilogramsofwaterwouldyou
+itistravelingat0.900c?(Notethatthetimeislongerthan need to see one decay per month, assuming a lifetime of
+thegiven W− lifetime,whichcanbeduetothestatistical
+10 31 y? (b)Howmanycubicmetersofwateristhis?(c)
+nature of decay or time dilation.)
+Iftheactuallifetimeis 10 33 y,howlongwouldyouhave
+52. What length track does a π+ traveling at 0.100c to wait on an average to see a single proton decay?
+leave in a bubble chamber if it is created there and lives
+for 2.60×10 −8 s?(Thosemovingfasterorlivinglonger
+11.6The Big Bang
+may escape the detector before decaying.)
+61. If the speed of a distant galaxy is 0.99c, what is the
+distance of the galaxy from an Earth-bound observer?
+53. The 3.20-km-long SLAC produces a beam of
+50.0-GeVelectrons.Ifthereare15,000acceleratingtubes,
+whataveragevoltagemustbeacrossthegapsbetweenthem 62. The distance of a galaxy from our solar system is 10
+to achieve this energy? Mpc.(a)Whatistherecessionalvelocityofthegalaxy?(b)
+Bywhatfractionisthestarlightfromthisgalaxyredshifted
+
+552 Chapter 11 | Particle Physics and Cosmology
+(that is, what is itszvalue)? from the average value of the Hubble constant,
+H =20km/s·Mly. To do this, calculate the time it
+0
+63. Ifagalaxyis153Mpcawayfromus,howfastdowe wouldtaketotravel0.307Mpcataconstantexpansionrate
+expect it to be moving and in what direction? of20km/s.(b)Ifsomehowaccelerationoccurs,wouldthe
+actualageoftheuniversebegreaterorlessthanthatfound
+64. Onaverage,howfarawayaregalaxiesthataremoving here? Explain.
+away from us at 2.0% of the speed of light?
+68. TheAndromedaGalaxyistheclosestlargegalaxyand
+isvisibletothenakedeye.Estimateitsbrightnessrelative
+65. Our solar system orbits the center of the Milky Way
+Galaxy. Assuming a circular orbit 30,000 ly in radius and totheSun,assumingithasluminosity 1012 timesthatof
+anorbitalspeedof250km/s,howmanyyearsdoesittake the Sun and lies 0.613 Mpc away.
+foronerevolution?Notethatthisisapproximate,assuming
+constant speed and circular orbit, but it is representative
+69. Showthatthevelocityofastarorbitingitsgalaxyina
+of the time for our system and local stars to make one
+circularorbitisinverselyproportionaltothesquarerootof
+revolution around the galaxy.
+its orbital radius, assuming the mass of the stars inside its
+orbitactslikeasinglemassatthecenterofthegalaxy.You
+66. (a)Whatistheapproximatevelocityrelativetousof may use an equation from a previous chapter to support
+agalaxyneartheedgeoftheknownuniverse,some10Gly yourconclusion,butyoumustjustifyitsuseanddefineall
+away?(b)Whatfractionofthespeedoflightisthis?Note terms used.
+that we have observed galaxies moving away from us at
+greater than 0.9c.
+67. (a) Calculate the approximate age of the universe
+ADDITIONAL PROBLEMS
+70. Experimentalresultssuggestthatamuondecaystoan 74. When an electron and positron collide at the SLAC
+electron and photon. How is this possible? facility, they each have 50.0-GeV kinetic energies. What
+is the total collision energy available, taking into account
+71. Each of the following reactions is missing a single theannihilationenergy?Notethattheannihilationenergyis
+particle. Identify the missing particle for each reaction. insignificant, because the electrons are highly relativistic.
+−
+(a)p+p →n+ ?
+75. The core of a star collapses during a supernova,
+0
+(b)p+p→p+Λ + ? forming a neutron star. Angular momentum of the core is
+(c)π? +p→Σ−+ ? conserved, so the neutron star spins rapidly. If the initial
+(d)K−+n→Λ 0 + ? core radius is 5.0×10 5 km and it collapses to 10.0 km,
+find the neutron star’s angular velocity in revolutions per
+(e)τ+ →e + +υ e+ ?
+second, given the core’s angular velocity was originally 1
+(f)
+−υ
+e+p→n+ ? revolution per 30.0 days.
+72. Becauseofenergylossduetosynchrotronradiationin 76. Usingthesolutionfromthepreviousproblem,findthe
+the LHC at CERN, only 5.00 MeV is added to the energy increaseinrotationalkineticenergy,giventhecore’smass
+ofeachprotonduringeachrevolutionaroundthemainring. is 1.3 times that of our Sun. Where does this increase in
+How many revolutions are needed to produce 7.00-TeV kinetic energy come from?
+(7000 GeV) protons, if they are injected with an initial
+energy of 8.00 GeV? 77. (a) What Hubble constant corresponds to an
+approximate age of the universe of 10 10 y? To get an
+73. Aprotonandanantiprotoncollidehead-on,witheach approximate value, assume the expansion rate is constant
+having a kinetic energy of 7.00 TeV (such as in the LHC and calculate the speed at which two galaxies must move
+atCERN).Howmuchcollisionenergyisavailable,taking apart to be separated by 1 Mly (present average galactic
+into account the annihilation of the two masses? (Note
+separation)inatimeof 10 10 y.(b)Similarly,whatHubble
+that this is not significantly greater than the extremely
+constant corresponds to a universe approximately
+relativistic kinetic energy.)
+2×10 10 years old?
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Chapter 11 | Particle Physics and Cosmology 553
+CHALLENGE PROBLEMS
+78. Electrons and positrons are collided in a circular photon and the poor efficiency of the neutrino detectors.
+accelerator. Derive the expression for the center-of-mass Thus,thefactthatneutrinoswereobservedwithinhoursof
+energy of the particle. thebrighteningofthesupernovaonlyplacesanupperlimit
+ontheneutrino’smass.(Hint:Youmayneedtouseaseries
+79. Theintensityofcosmicrayradiationdecreasesrapidly expansiontofindvfortheneutrino,sinceits γ issolarge.)
+with increasing energy, but there are occasionally
+extremely energetic cosmic rays that create a shower of
+83. AssumingacircularorbitfortheSunaboutthecenter
+radiation from all the particles they create by striking a
+oftheMilkyWayGalaxy,calculateitsorbitalspeedusing
+nucleus in the atmosphere. Suppose a cosmic ray particle
+the following information: The mass of the galaxy is
+having an energy of 10 10 GeV converts its energy into equivalent to a single mass 1.5×1011 times that of the
+particles with masses averaging 200MeV/c2. Sun (or 3×1041 kg), located 30,000 ly away.
+(a)Howmanyparticlesarecreated?(b)Iftheparticlesrain
+down on a 1.00-km2 area, how many particles are there 84. (a) What is the approximate force of gravity on a
+per square meter? 70-kg person due to the Andromeda Galaxy, assuming its
+total mass is 10 13 that of our Sun and acts like a single
+80. (a)Calculatetherelativisticquantity γ = 1 mass 0.613 Mpc away? (b) What is the ratio of this force
+1−v2/c2 totheperson’sweight?NotethatAndromedaistheclosest
+for 1.00-TeV protons produced at Fermilab. (b) If such a large galaxy.
+proton created a π+ having the same speed, how long
+85. (a) A particle and its antiparticle are at rest relative
+would its life be in the laboratory? (c) How far could it
+to an observer and annihilate (completely destroying both
+travel in this time?
+masses),creatingtwo γ raysofequalenergy.Whatisthe
+81. Plans for an accelerator that produces a secondary characteristic γ-rayenergyyouwouldlookforifsearching
+beam of K mesons to scatter from nuclei, for the purpose for evidence of proton-antiproton annihilation? (The fact
+ofstudyingthestrongforce,callforthemtohaveakinetic thatsuchradiationisrarelyobservedisevidencethatthere
+energyof500MeV.(a)Whatwouldtherelativisticquantity is very little antimatter in the universe.) (b) How does
+γ = 1 be for these particles? (b) How long this compare with the 0.511-MeV energy associated with
+1−v2/c2 electron-positron annihilation?
+wouldtheiraveragelifetimebeinthelaboratory?(c)How
+far could they travel in this time? 86. The peak intensity of the CMBR occurs at a
+wavelength of 1.1 mm. (a) What is the energy in eV of a
+82. In supernovae, neutrinos are produced in huge 1.1-mmphoton?(b)Thereareapproximately 10 9 photons
+amounts. They were detected from the 1987A supernova for each massive particle in deep space. Calculate the
+in the Magellanic Cloud, which is about 120,000 light-
+energy of 10 9 such photons. (c) If the average massive
+years away fromEarth (relatively close toourMilky Way
+particle in space has a mass half that of a proton, what
+Galaxy). If neutrinos have a mass, they cannot travel at
+energywouldbecreatedbyconvertingitsmasstoenergy?
+thespeedoflight,butiftheirmassissmall,theirvelocity
+(d) Does this imply that space is “matter dominated”?
+wouldbealmostthatoflight.(a)Supposeaneutrinowith
+Explain briefly.
+a 7-eV/c2 mass has a kinetic energy of 700 keV. Find
+the relativistic quantity γ = 1 for it. (b) If the 87. (a) Use the Heisenberg uncertainty principle to
+1−v2/c2
+calculatetheuncertaintyinenergyforacorrespondingtime
+neutrino leaves the 1987A supernova at the same time as interval of 10 −43 s. (b) Compare this energy with the
+a photon and both travel to Earth, how much sooner does
+thephotonarrive?Thisisnotalargetimedifference,given 10 19 GeV unification-of-forces energy and discuss why
+thatitisimpossibletoknowwhichneutrinoleftwithwhich they are similar.
+
+554 Chapter 11 | Particle Physics and Cosmology
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix A 555
+APPENDIX A | UNITS
+Quantity Common Unit Unit in Terms of Base SI
+Symbol Units
+Acceleration → m/s2 m/s2
+a
+Amount of substance n mole mol
+Angle θ, ϕ radian (rad)
+Angular acceleration → α rad/s2 s−2
+Angular frequency ω rad/s s−1
+Angular momentum →
+L
+kg·m2/s kg·m2/s
+Angular velocity →ω rad/s s−1
+Area A m2 m2
+Atomic number Z
+Capacitance C farad (F) A2·s4/kg·m2
+Charge q, Q, e coulomb (C) A·s
+Charge density:
+Line λ C/m A·s/m
+Surface σ C/m2 A·s/m2
+Volume ρ C/m3 3
+A·s/m
+Conductivity σ 1/Ω·m A2·s 3 /kg·m 3
+Current I ampere A
+Current density → A/m2 A/m2
+J
+Density ρ kg/m3 kg/m3
+Dielectric constant κ
+Electric dipole moment → p C·m A·s·m
+Electric field → N/C 3
+E kg·m/A·s
+Electric flux Φ N·m2/C kg·m 3 /A·s 3
+Electromotive force ε volt (V) kg·m2/A·s 3
+Energy E,U,K joule (J) kg·m2/s2
+Entropy S J/K kg·m2/s2·K
+Table A1Units Used in Physics (Fundamental units in bold)
+
+556 Appendix A
+Quantity Common Unit Unit in Terms of Base SI
+Symbol Units
+Force →
+F
+newton (N) kg·m/s2
+Frequency f hertz (Hz) s−1
+Heat Q joule (J) kg·m2/s2
+Inductance L henry (H) kg·m2/A2·s2
+Length: ℓ, L meter m
+Displacement Δx, Δ → r
+Distance d, h
+Position x, y, z, → r
+Magnetic dipole →µ N·J/T A·m2
+moment
+Magnetic field → B tesla(T)= ⎛ ⎝ Wb/m2⎞ ⎠ kg/A·s2
+Magnetic flux Φm weber (Wb) kg·m2/A·s2
+Mass m, M kilogram kg
+Molar specific heat C J/mol·K kg·m2/s2·mol·K
+Moment of inertia I kg·m2 kg·m2
+Momentum → p kg·m/s kg·m/s
+Period T s s
+Permeability of free µ
+0
+N/A2=(H/m) kg·m/A2·s2
+space
+Permittivity of free ε
+0
+C2/N·m2=(F/m) A2·s4/kg·m 3
+space
+Potential V volt(V)=(J/C) kg·m2/A·s 3
+Power P watt(W)=(J/s) kg·m2/s 3
+Pressure p pascal(Pa)= ⎛ N/m2⎞ kg/m·s2
+⎝ ⎠
+Resistance R ohm(Ω)=(V/A) kg·m2/A2·s 3
+Specific heat c J/kg·K m2/s2·K
+Speed ν m/s m/s
+Temperature T kelvin K
+Time t second s
+Torque →τ N·m kg·m2/s2
+Table A1Units Used in Physics (Fundamental units in bold)
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix A 557
+Quantity Common Unit Unit in Terms of Base SI
+Symbol Units
+Velocity → m/s m/s
+v
+Volume V m3 m3
+Wavelength λ m m
+Work W joule(J)=(N·m) kg·m2/s2
+Table A1Units Used in Physics (Fundamental units in bold)
+
+558 Appendix A
+This OpenStax book is available for free at http://cnx.org/content/col12067/1.9
+
+Appendix B 559
+APPENDIX B | CONVERSION
+FACTORS
+m cm km
+1 meter 1 102 10−3
+1 centimeter 10−2 1 10−5
+1 kilometer 103 105 1
+1 inch 2.540×10−2 2.540
+2.540×10
+−5
+1 foot 0.3048 30.48 3.048×10−4
+1 mile 1609 1.609×104 1.609
+1 angstrom 10−10
+1 fermi 10−15
+1 light-year 9.460×1012
+in. ft mi
+1 meter 39.37 3.281 6.214×10−4
+1 centimeter 0.3937 3.281×10−2
+6.214×10
+−6
+1 kilometer 3.937×104
+3.281×10
+3 0.6214
+1 inch 1 8.333×10−2
+1.578×10
+−5
+1 foot 12 1 1.894×10−4
+1 mile 6.336×104 5280 1
+Table B1Length
+Area
+1cm2=0.155in.2
+1m2=104 cm2=10.76ft2
+1in.2=6.452cm2
+1ft2=144in.2=0.0929m2
+Volume
+3 −3 3 3 3
+1liter=1000cm =10 m =0.03531ft =61.02in.
+3 3
+1ft =0.02832m =28.32liters=7.477gallons
+1gallon=3.788liters

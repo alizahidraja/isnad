@@ -1,0 +1,173 @@
+# OpenStax Vol.1 Mechanics — REAL PDF, pages 766-773
+############################################################
+
+754 16 • Waves
+wavelength , which is the distance between adjacent identical parts of the wave. The amplitude A of the wave is the maximum
+displacement of the wave from the equilibrium position, which is indicated by the dotted line. In this example, the medium moves up and
+down, whereas the disturbance of the surface propagates parallel to the surface at a speed v.
+The water wave in the figure moves through the medium with a propagation velocity The magnitude of the wave
+velocity is the distance the wave travels in a given time, which is one wavelength in the time of one period, and the
+wave speed is the magnitude of wave velocity. In equation form, this is
+16.1
+This fundamental relationship holds for all types of waves. For water waves, v is the speed of a surface wave; for
+sound, v is the speed of sound; and for visible light, v is the speed of light.
+Transverse and Longitudinal Waves
+We have seen that a simple mechanical wave consists of a periodic disturbance that propagates from one place to
+another through a medium. In Figure 16.4(a), the wave propagates in the horizontal direction, whereas the medium
+is disturbed in the vertical direction. Such a wave is called a transverse wave. In a transverse wave, the wave may
+propagate in any direction, but the disturbance of the medium is perpendicular to the direction of propagation. In
+contrast, in a longitudinal wave or compressional wave, the disturbance is parallel to the direction of propagation.
+Figure 16.4(b) shows an example of a longitudinal wave. The size of the disturbance is its amplitude A and is
+completely independent of the speed of propagation v.
+FIGURE 16.4 (a) In a transverse wave, the medium oscillates perpendicular to the wave velocity. Here, the spring moves vertically up and
+down, while the wave propagates horizontally to the right. (b) In a longitudinal wave, the medium oscillates parallel to the propagation of
+the wave. In this case, the spring oscillates back and forth, while the wave propagates to the right.
+A simple graphical representation of a section of the spring shown in Figure 16.4(b) is shown in Figure 16.5. Figure
+16.5(a) shows the equilibrium position of the spring before any waves move down it. A point on the spring is marked
+with a blue dot. Figure 16.5(b) through (g) show snapshots of the spring taken one-quarter of a period apart,
+sometime after the end of` the spring is oscillated back and forth in the x-direction at a constant frequency. The
+disturbance of the wave is seen as the compressions and the expansions of the spring. Note that the blue dot
+oscillates around its equilibrium position a distance A, as the longitudinal wave moves in the positive x-direction
+with a constant speed. The distance A is the amplitude of the wave. The y-position of the dot does not change as the
+wave moves through the spring. The wavelength of the wave is measured in part (d). The wavelength depends on
+the speed of the wave and the frequency of the driving force.
+Access for free at openstax.org
+
+16.1 • Traveling Waves 755
+FIGURE 16.5 (a) This is a simple, graphical representation of a section of the stretched spring shown in Figure 16.4(b), representing the
+spring’s equilibrium position before any waves are induced on the spring. A point on the spring is marked by a blue dot. (b–g) Longitudinal
+waves are created by oscillating the end of the spring (not shown) back and forth along the x-axis. The longitudinal wave, with a wavelength
+, moves along the spring in the +x-direction with a wave speed v. For convenience, the wavelength is measured in (d). Note that the point
+on the spring that was marked with the blue dot moves back and forth a distance A from the equilibrium position, oscillating around the
+equilibrium position of the point.
+Waves may be transverse, longitudinal, or a combination of the two. Examples of transverse waves are the waves on
+stringed instruments or surface waves on water, such as ripples moving on a pond. Sound waves in air and water are
+longitudinal. With sound waves, the disturbances are periodic variations in pressure that are transmitted in fluids.
+Fluids do not have appreciable shear strength, and for this reason, the sound waves in them are longitudinal waves.
+Sound in solids can have both longitudinal and transverse components, such as those in a seismic wave.
+Earthquakes generate seismic waves under Earth’s surface with both longitudinal and transverse components
+(called compressional or P-waves and shear or S-waves, respectively). The components of seismic waves have
+important individual characteristics—they propagate at different speeds, for example. Earthquakes also have
+surface waves that are similar to surface waves on water. Ocean waves also have both transverse and longitudinal
+components.
+EXAMPLE 16.1
+Wave on a String
+A student takes a 30.00-m-long string and attaches one end to the wall in the physics lab. The student then holds
+the free end of the rope, keeping the tension constant in the rope. The student then begins to send waves down the
+string by moving the end of the string up and down with a frequency of 2.00 Hz. The maximum displacement of the
+end of the string is 20.00 cm. The first wave hits the lab wall 6.00 s after it was created. (a) What is the speed of the
+wave? (b) What is the period of the wave? (c) What is the wavelength of the wave?
+Strategy
+a. The speed of the wave can be derived by dividing the distance traveled by the time.
+b. The period of the wave is the inverse of the frequency of the driving force.
+c. The wavelength can be found from the speed and the period
+
+756 16 • Waves
+Solution
+a. The first wave traveled 30.00 m in 6.00 s:
+b. The period is equal to the inverse of the frequency:
+c. The wavelength is equal to the velocity times the period:
+Significance
+The frequency of the wave produced by an oscillating driving force is equal to the frequency of the driving force.
+CHECK YOUR UNDERSTANDING 16.1
+When a guitar string is plucked, the guitar string oscillates as a result of waves moving through the string. The
+vibrations of the string cause the air molecules to oscillate, forming sound waves. The frequency of the sound waves
+is equal to the frequency of the vibrating string. Is the wavelength of the sound wave always equal to the wavelength
+of the waves on the string?
+EXAMPLE 16.2
+Characteristics of a Wave
+A transverse mechanical wave propagates in the positive x-direction through a spring (as shown in Figure 16.4(a))
+with a constant wave speed, and the medium oscillates between and around an equilibrium position. The
+graph in Figure 16.6 shows the height of the spring (y) versus the position (x), where the x-axis points in the
+direction of propagation. The figure shows the height of the spring versus the x-position at as a dotted
+line and the wave at as a solid line. Assume the wave has not traveled more than 1 wavelength in this
+time. (a) Determine the wavelength and amplitude of the wave. (b) Find the propagation velocity of the wave. (c)
+Calculate the period and frequency of the wave.
+FIGURE 16.6 A transverse wave shown at two instants of time.
+Strategy
+a. The amplitude and wavelength can be determined from the graph.
+b. Since the velocity is constant, the velocity of the wave can be found by dividing the distance traveled by the
+Access for free at openstax.org
+
+16.2 • Mathematics of Waves 757
+wave by the time it took the wave to travel the distance.
+c. The period can be found from and the frequency from
+Solution
+a. Read the wavelength from the graph, looking at the purple arrow in Figure 16.7. Read the amplitude by
+looking at the green arrow. The wavelength is and the amplitude is
+FIGURE 16.7 Characteristics of the wave marked on a graph of its displacement.
+b. The distance the wave traveled from time to time can be seen in the graph. Consider the
+red arrow, which shows the distance the crest has moved in 3 s. The distance is
+The velocity is
+c. The period is and the frequency is
+Significance
+Note that the wavelength can be found using any two successive identical points that repeat, having the same height
+and slope. You should choose two points that are most convenient. The displacement can also be found using any
+convenient point.
+CHECK YOUR UNDERSTANDING 16.2
+The propagation velocity of a transverse or longitudinal mechanical wave may be constant as the wave disturbance
+moves through the medium. Consider a transverse mechanical wave: Is the velocity of the medium also constant?
+16.2 Mathematics of Waves
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Model a wave, moving with a constant wave velocity, with a mathematical expression
+• Calculate the velocity and acceleration of the medium
+• Show how the velocity of the medium differs from the wave velocity (propagation velocity)
+In the previous section, we described periodic waves by their characteristics of wavelength, period, amplitude, and
+wave speed of the wave. Waves can also be described by the motion of the particles of the medium through which
+the waves move. The position of particles of the medium can be mathematically modeled as wave functions, which
+can be used to find the position, velocity, and acceleration of the particles of the medium of the wave at any time.
+
+758 16 • Waves
+Pulses
+A pulse can be described as wave consisting of a single disturbance that moves through the medium with a constant
+amplitude. The pulse moves as a pattern that maintains its shape as it propagates with a constant wave speed.
+Because the wave speed is constant, the distance the pulse moves in a time is equal to (Figure 16.8).
+FIGURE 16.8 The pulse at time is centered on with amplitude A. The pulse moves as a pattern with a constant shape, with a
+constant maximum value A. The velocity is constant and the pulse moves a distance in a time The distance traveled is
+measured with any convenient point on the pulse. In this figure, the crest is used.
+Modeling a One-Dimensional Sinusoidal Wave using a Wave Function
+Consider a string kept at a constant tension where one end is fixed and the free end is oscillated between
+and by a mechanical device at a constant frequency. Figure 16.9 shows snapshots of the wave at
+an interval of an eighth of a period, beginning after one period
+Access for free at openstax.org
+
+16.2 • Mathematics of Waves 759
+FIGURE 16.9 Snapshots of a transverse wave moving through a string under tension, beginning at time and taken at intervals of
+Colored dots are used to highlight points on the string. Points that are a wavelength apart in the x-direction are highlighted with the same
+color dots.
+Notice that each select point on the string (marked by colored dots) oscillates up and down in simple harmonic
+motion, between and with a period T. The wave on the string is sinusoidal and is translating in the
+positive x-direction as time progresses.
+At this point, it is useful to recall from your study of algebra that if f(x) is some function, then is the same
+function translated in the positive x-direction by a distance d. The function is the same function translated
+in the negative x-direction by a distance d. We want to define a wave function that will give the y-position of each
+segment of the string for every position x along the string for every time t.
+Looking at the first snapshot in Figure 16.9, the y-position of the string between and can be modeled as
+a sine function. This wave propagates down the string one wavelength in one period, as seen in the last snapshot.
+The wave therefore moves with a constant wave speed of
+Recall that a sine function is a function of the angle , oscillating between and , and repeating every
+radians (Figure 16.10). However, the y-position of the medium, or the wave function, oscillates between and
+, and repeats every wavelength .
+
+760 16 • Waves
+FIGURE 16.10 A sine function oscillates between and every radians.
+To construct our model of the wave using a periodic function, consider the ratio of the angle and the position,
+Using and multiplying the sine function by the amplitude A, we can now model the y-position of the string
+as a function of the position x:
+The wave on the string travels in the positive x-direction with a constant velocity v, and moves a distance vt in a time
+t. The wave function can now be defined by
+It is often convenient to rewrite this wave function in a more compact form. Multiplying through by the ratio
+leads to the equation
+The value is defined as the wave number. The symbol for the wave number is k and has units of inverse meters,
+16.2
+Recall from Oscillations that the angular frequency is defined as The second term of the wave function
+becomes
+The wave function for a simple harmonic wave on a string reduces to
+where A is the amplitude, is the wave number, is the angular frequency, the minus sign is for waves
+moving in the positive x-direction, and the plus sign is for waves moving in the negative x-direction. The velocity of
+the wave is equal to
+16.3
+Think back to our discussion of a mass on a spring, when the position of the mass was modeled as
+The angle is a phase shift, added to allow for the fact that the mass may have initial
+Access for free at openstax.org

@@ -1,0 +1,188 @@
+# REAL PDF — openstax_vol1.pdf, pages 171-178
+############################################################
+
+4.2 • Acceleration Vector 159
+FIGURE 4.10 A skier has an acceleration of down a slope of The origin of the coordinate system is at the ski lodge.
+Strategy
+Since we are evaluating the components of the motion equations in the x and y directions, we need to find the
+components of the acceleration and put them into the kinematic equations. The components of the acceleration are
+found by referring to the coordinate system in Figure 4.10. Then, by inserting the components of the initial position
+and velocity into the motion equations, we can solve for her position and velocity at a later time t.
+Solution
+(a) The origin of the coordinate system is at the top of the hill with y-axis vertically upward and the x-axis horizontal.
+By looking at the trajectory of the skier, the x-component of the acceleration is positive and the y-component is
+negative. Since the angle is down the slope, we find
+Inserting the initial position and velocity into Equation 4.12 and Equation 4.13 for x, we have
+For y, we have
+(b) Now that we have the equations of motion for x and y as functions of time, we can evaluate them at t = 10.0 s:
+
+160 4 • Motion in Two and Three Dimensions
+The position and velocity at t = 10.0 s are, finally,
+The magnitude of the velocity of the skier at 10.0 s is 25 m/s, which is 60 mi/h.
+Significance
+It is useful to know that, given the initial conditions of position, velocity, and acceleration of an object, we can find
+the position, velocity, and acceleration at any later time.
+With Equation 4.8 through Equation 4.10 we have completed the set of expressions for the position, velocity, and
+acceleration of an object moving in two or three dimensions. If the trajectories of the objects look something like the
+“Red Arrows” in the opening picture for the chapter, then the expressions for the position, velocity, and acceleration
+can be quite complicated. In the sections to follow we examine two special cases of motion in two and three
+dimensions by looking at projectile motion and circular motion.
+INTERACTIVE
+At this University of Colorado Boulder website (https://openstax.org/l/21phetmotladyb), you can explore the
+position velocity and acceleration of a ladybug with an interactive simulation that allows you to change these
+parameters.
+4.3 Projectile Motion
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Use one-dimensional motion in perpendicular directions to analyze projectile motion.
+• Calculate the range, time of flight, and maximum height of a projectile that is launched and impacts a flat,
+horizontal surface.
+• Find the time of flight and impact velocity of a projectile that lands at a different height from that of
+launch.
+• Calculate the trajectory of a projectile.
+Projectile motion is the motion of an object thrown or projected into the air, subject only to acceleration as a result
+of gravity. The applications of projectile motion in physics and engineering are numerous. Some examples include
+meteors as they enter Earth’s atmosphere, fireworks, and the motion of any ball in sports. Such objects are called
+projectiles and their path is called a trajectory. The motion of falling objects as discussed in Motion Along a Straight
+Line is a simple one-dimensional type of projectile motion in which there is no horizontal movement. In this section,
+we consider two-dimensional projectile motion, and our treatment neglects the effects of air resistance.
+The most important fact to remember here is that motions along perpendicular axes are independent and thus can
+be analyzed separately. We discussed this fact in Displacement and Velocity Vectors, where we saw that vertical and
+horizontal motions are independent. The key to analyzing two-dimensional projectile motion is to break it into two
+motions: one along the horizontal axis and the other along the vertical. (This choice of axes is the most sensible
+because acceleration resulting from gravity is vertical; thus, there is no acceleration along the horizontal axis when
+air resistance is negligible.) As is customary, we call the horizontal axis the x-axis and the vertical axis the y-axis. It
+is not required that we use this choice of axes; it is simply convenient in the case of gravitational acceleration. In
+other cases we may choose a different set of axes. Figure 4.11 illustrates the notation for displacement, where we
+define to be the total displacement, and and are its component vectors along the horizontal and vertical axes,
+respectively. The magnitudes of these vectors are s, x, and y.
+Access for free at openstax.org
+
+4.3 • Projectile Motion 161
+FIGURE 4.11 The total displacement s of a soccer ball at a point along its path. The vector has components and along the horizontal
+and vertical axes. Its magnitude is s and it makes an angle Φ with the horizontal.
+To describe projectile motion completely, we must include velocity and acceleration, as well as displacement. We
+must find their components along the x- and y-axes. Let’s assume all forces except gravity (such as air resistance
+and friction, for example) are negligible. Defining the positive direction to be upward, the components of
+acceleration are then very simple:
+Because gravity is vertical, If this means the initial velocity in the x direction is equal to the final
+velocity in the x direction, or With these conditions on acceleration and velocity, we can write the
+kinematic Equation 4.11 through Equation 4.18 for motion in a uniform gravitational field, including the rest of the
+kinematic equations for a constant acceleration from Motion with Constant Acceleration. The kinematic equations
+for motion in a uniform gravitational field become kinematic equations with
+Horizontal Motion
+4.19
+Vertical Motion
+4.20
+4.21
+4.22
+4.23
+Using this set of equations, we can analyze projectile motion, keeping in mind some important points.
+PROBLEM-SOLVING STRATEGY
+Projectile Motion
+1. Resolve the motion into horizontal and vertical components along the x- and y-axes. The magnitudes of the
+components of displacement along these axes are x and y. The magnitudes of the components of velocity
+are where v is the magnitude of the velocity and θ is its direction relative to the
+horizontal, as shown in Figure 4.12.
+
+162 4 • Motion in Two and Three Dimensions
+2. Treat the motion as two independent one-dimensional motions: one horizontal and the other vertical. Use the
+kinematic equations for horizontal and vertical motion presented earlier.
+3. Solve for the unknowns in the two separate motions: one horizontal and one vertical. Note that the only
+common variable between the motions is time t. The problem-solving procedures here are the same as those
+for one-dimensional kinematics and are illustrated in the following solved examples.
+4. Recombine quantities in the horizontal and vertical directions to find the total displacement and velocity
+Solve for the magnitude and direction of the displacement and velocity using
+where Φ is the direction of the displacement
+FIGURE 4.12 (a) We analyze two-dimensional projectile motion by breaking it into two independent one-dimensional motions along the
+vertical and horizontal axes. (b) The horizontal motion is simple, because and is a constant. (c) The velocity in the vertical
+direction begins to decrease as the object rises. At its highest point, the vertical velocity is zero. As the object falls toward Earth again, the
+vertical velocity increases again in magnitude but points in the opposite direction to the initial vertical velocity. (d) The x and y motions are
+recombined to give the total velocity at any given point on the trajectory.
+EXAMPLE 4.7
+A Fireworks Projectile Explodes High and Away
+During a fireworks display, a shell is shot into the air with an initial speed of 70.0 m/s at an angle of above the
+horizontal, as illustrated in Figure 4.13. The fuse is timed to ignite the shell just as it reaches its highest point above
+the ground. (a) Calculate the height at which the shell explodes. (b) How much time passes between the launch of
+the shell and the explosion? (c) What is the horizontal displacement of the shell when it explodes? (d) What is the
+total displacement from the point of launch to the highest point?
+Access for free at openstax.org
+
+4.3 • Projectile Motion 163
+FIGURE 4.13 The trajectory of a fireworks shell. The fuse is set to explode the shell at the highest point in its trajectory, which is found to be
+at a height of 233 m and 125 m away horizontally.
+Strategy
+The motion can be broken into horizontal and vertical motions in which and We can then define
+and to be zero and solve for the desired quantities.
+Solution
+(a) By “height” we mean the altitude or vertical position y above the starting point. The highest point in any
+trajectory, called the apex, is reached when Since we know the initial and final velocities, as well as the
+initial position, we use the following equation to find y:
+Because and are both zero, the equation simplifies to
+Solving for y gives
+Now we must find the component of the initial velocity in the y direction. It is given by where
+is the initial velocity of 70.0 m/s and is the initial angle. Thus,
+and y is
+Thus, we have
+Note that because up is positive, the initial vertical velocity is positive, as is the maximum height, but the
+acceleration resulting from gravity is negative. Note also that the maximum height depends only on the vertical
+component of the initial velocity, so that any projectile with a 67.6-m/s initial vertical component of velocity reaches
+a maximum height of 233 m (neglecting air resistance). The numbers in this example are reasonable for large
+fireworks displays, the shells of which do reach such heights before exploding. In practice, air resistance is not
+completely negligible, so the initial velocity would have to be somewhat larger than that given to reach the same
+height.
+
+164 4 • Motion in Two and Three Dimensions
+(b) As in many physics problems, there is more than one way to solve for the time the projectile reaches its highest
+point. In this case, the easiest method is to use Because at the apex, this equation reduces
+to simply
+or
+This time is also reasonable for large fireworks. If you are able to see the launch of fireworks, notice that several
+seconds pass before the shell explodes. Another way of finding the time is by using This is
+left for you as an exercise to complete.
+(c) Because air resistance is negligible, and the horizontal velocity is constant, as discussed earlier. The
+horizontal displacement is the horizontal velocity multiplied by time as given by where is equal to
+zero. Thus,
+where is the x-component of the velocity, which is given by
+Time t for both motions is the same, so x is
+Horizontal motion is a constant velocity in the absence of air resistance. The horizontal displacement found here
+could be useful in keeping the fireworks fragments from falling on spectators. When the shell explodes, air
+resistance has a major effect, and many fragments land directly below.
+(d) The horizontal and vertical components of the displacement were just calculated, so all that is needed here is to
+find the magnitude and direction of the displacement at the highest point:
+Note that the angle for the displacement vector is less than the initial angle of launch. To see why this is, review
+Figure 4.11, which shows the curvature of the trajectory toward the ground level.
+When solving Example 4.7(a), the expression we found for y is valid for any projectile motion when air resistance is
+negligible. Call the maximum height y = h. Then,
+This equation defines the maximum height of a projectile above its launch position and it depends only on the
+vertical component of the initial velocity.
+CHECK YOUR UNDERSTANDING 4.3
+A rock is thrown horizontally off a cliff high with a velocity of 15.0 m/s. (a) Define the origin of the
+coordinate system. (b) Which equation describes the horizontal motion? (c) Which equations describe the vertical
+motion? (d) What is the rock’s velocity at the point of impact?
+Access for free at openstax.org
+
+4.3 • Projectile Motion 165
+EXAMPLE 4.8
+Calculating Projectile Motion: Tennis Player
+A tennis player wins a match at Arthur Ashe stadium and hits a ball into the stands at 30 m/s and at an angle
+above the horizontal (Figure 4.14). On its way down, the ball is caught by a spectator 10 m above the point where
+the ball was hit. (a) Calculate the time it takes the tennis ball to reach the spectator. (b) What are the magnitude and
+direction of the ball’s velocity at impact?
+FIGURE 4.14 The trajectory of a tennis ball hit into the stands.
+Strategy
+Again, resolving this two-dimensional motion into two independent one-dimensional motions allows us to solve for
+the desired quantities. The time a projectile is in the air is governed by its vertical motion alone. Thus, we solve for t
+first. While the ball is rising and falling vertically, the horizontal motion continues at a constant velocity. This
+example asks for the final velocity. Thus, we recombine the vertical and horizontal results to obtain at final time t,
+determined in the first part of the example.
+Solution
+(a) While the ball is in the air, it rises and then falls to a final position 10.0 m higher than its starting altitude. We can
+find the time for this by using Equation 4.22:
+If we take the initial position to be zero, then the final position is y = 10 m. The initial vertical velocity is the
+vertical component of the initial velocity:
+Substituting into Equation 4.22 for y gives us
+Rearranging terms gives a quadratic equation in t:
+Use of the quadratic formula yields t = 3.79 s and t = 0.54 s. Since the ball is at a height of 10 m at two times during
+its trajectory—once on the way up and once on the way down—we take the longer solution for the time it takes the
+ball to reach the spectator:

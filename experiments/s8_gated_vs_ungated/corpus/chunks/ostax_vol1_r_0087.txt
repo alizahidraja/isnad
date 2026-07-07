@@ -1,0 +1,192 @@
+# REAL PDF — openstax_vol1.pdf, pages 529-536
+############################################################
+
+11.1 • Rolling Motion 517
+FIGURE 11.3 (a) A wheel is pulled across a horizontal surface by a force . The force of static friction is large enough to
+keep it from slipping. (b) The linear velocity and acceleration vectors of the center of mass and the relevant expressions for . Point P
+is at rest relative to the surface. (c) Relative to the center of mass (CM) frame, point P has linear velocity .
+From Figure 11.3(a), we see the force vectors involved in preventing the wheel from slipping. In (b), point P that
+touches the surface is at rest relative to the surface. Relative to the center of mass, point P has velocity ,
+where R is the radius of the wheel and is the wheel’s angular velocity about its axis. Since the wheel is rolling, the
+velocity of P with respect to the surface is its velocity with respect to the center of mass plus the velocity of the
+center of mass with respect to the surface:
+Since the velocity of P relative to the surface is zero, , this says that
+11.1
+Thus, the velocity of the wheel’s center of mass is its radius times the angular velocity about its axis. We show the
+correspondence of the linear variable on the left side of the equation with the angular variable on the right side of
+the equation. This is done below for the linear acceleration.
+If we differentiate Equation 11.1 on the left side of the equation, we obtain an expression for the linear acceleration
+of the center of mass. On the right side of the equation, R is a constant and since we have
+11.2
+Furthermore, we can find the distance the wheel travels in terms of angular variables by referring to Figure 11.4. As
+the wheel rolls from point A to point B, its outer surface maps onto the ground by exactly the distance travelled,
+which is We see from Figure 11.4 that the length of the outer surface that maps onto the ground is the arc
+length ​ . Equating the two distances, we obtain
+11.3
+FIGURE 11.4 As the wheel rolls on the surface, the arc length from A to B maps onto the surface, corresponding to the distance
+
+518 11 • Angular Momentum
+that the center of mass has moved.
+EXAMPLE 11.1
+Rolling Down an Inclined Plane
+A solid cylinder rolls down an inclined plane without slipping, starting from rest. It has mass m and radius r. (a) What
+is its acceleration? (b) What condition must the coefficient of static friction satisfy so the cylinder does not slip?
+Strategy
+Draw a sketch and free-body diagram, and choose a coordinate system. We put x in the direction down the plane
+and y upward perpendicular to the plane. Identify the forces involved. These are the normal force, the force of
+gravity, and the force due to friction. Write down Newton’s laws in the x- and y-directions, and Newton’s law for
+rotation, and then solve for the acceleration and force due to friction.
+Solution
+a. The free-body diagram and sketch are shown in Figure 11.5, including the normal force, components of the
+weight, and the static friction force. There is barely enough friction to keep the cylinder rolling without
+slipping. Since there is no slipping, the magnitude of the friction force is less than or equal to . Writing
+down Newton’s laws in the x- and y-directions, we have
+FIGURE 11.5 A solid cylinder rolls down an inclined plane without slipping from rest. The coordinate system has x in the direction
+down the inclined plane and y perpendicular to the plane. The free-body diagram is shown with the normal force, the static friction
+force, and the components of the weight . Friction makes the cylinder roll down the plane rather than slip.
+Substituting in from the free-body diagram,
+we can then solve for the linear acceleration of the center of mass from these equations:
+However, it is useful to express the linear acceleration in terms of the moment of inertia. For this, we write
+down Newton’s second law for rotation,
+The torques are calculated about the axis through the center of mass of the cylinder. The only nonzero torque
+is provided by the friction force. We have
+Access for free at openstax.org
+
+11.1 • Rolling Motion 519
+Finally, the linear acceleration is related to the angular acceleration by
+These equations can be used to solve for in terms of the moment of inertia, where we have
+dropped the x-subscript. We rewrite in terms of the vertical component of gravity and the friction force,
+and make the following substitutions.
+From this we obtain
+Note that this result is independent of the coefficient of static friction, .
+Since we have a solid cylinder, from Figure 10.20, we have and
+Therefore, we have
+b. Because slipping does not occur, . Solving for the friction force,
+Substituting this expression into the condition for no slipping, and noting that , we have
+or
+For the solid cylinder, this becomes
+Significance
+a. The linear acceleration is linearly proportional to Thus, the greater the angle of the incline, the greater
+the linear acceleration, as would be expected. The angular acceleration, however, is linearly proportional to
+and inversely proportional to the radius of the cylinder. Thus, the larger the radius, the smaller the
+angular acceleration.
+b. For no slipping to occur, the coefficient of static friction must be greater than or equal to . Thus, the
+greater the angle of incline, the greater the coefficient of static friction must be to prevent the cylinder from
+slipping.
+
+520 11 • Angular Momentum
+CHECK YOUR UNDERSTANDING 11.1
+A hollow cylinder is on an incline at an angle of The coefficient of static friction on the surface is . (a)
+Does the cylinder roll without slipping? (b) Will a solid cylinder roll without slipping?
+It is worthwhile to repeat the equation derived in this example for the acceleration of an object rolling without
+slipping:
+11.4
+This is a very useful equation for solving problems involving rolling without slipping. Note that the acceleration is
+less than that of an object sliding down a frictionless plane with no rotation. The acceleration will also be different
+for two rotating objects with different rotational inertias.
+Rolling Motion with Slipping
+In the case of rolling motion with slipping, we must use the coefficient of kinetic friction, which gives rise to the
+kinetic friction force since static friction is not present. The situation is shown in Figure 11.6. In the case of slipping,
+, because point P on the wheel is not at rest on the surface, and . Thus,
+.
+FIGURE 11.6 (a) Kinetic friction arises between the wheel and the surface because the wheel is slipping. (b) The simple relationships
+between the linear and angular variables are no longer valid.
+EXAMPLE 11.2
+Rolling Down an Inclined Plane with Slipping
+A solid cylinder rolls down an inclined plane from rest and undergoes slipping (Figure 11.7). It has mass m and
+radius r. (a) What is its linear acceleration? (b) What is its angular acceleration about an axis through the center of
+mass?
+Strategy
+Draw a sketch and free-body diagram showing the forces involved. The free-body diagram is similar to the no-
+slipping case except for the friction force, which is kinetic instead of static. Use Newton’s second law to solve for the
+acceleration in the x-direction. Use Newton’s second law of rotation to solve for the angular acceleration.
+Access for free at openstax.org
+
+11.1 • Rolling Motion 521
+Solution
+FIGURE 11.7 A solid cylinder rolls down an inclined plane from rest and undergoes slipping. The coordinate system has x in the direction
+down the inclined plane and y upward perpendicular to the plane. The free-body diagram shows the normal force, kinetic friction force, and
+the components of the weight
+The sum of the forces in the y-direction is zero, so the friction force is now
+Newton’s second law in the x-direction becomes
+or
+The friction force provides the only torque about the axis through the center of mass, so Newton’s second law of
+rotation becomes
+Solving for , we have
+Significance
+We write the linear and angular accelerations in terms of the coefficient of kinetic friction. The linear acceleration is
+the same as that found for an object sliding down an inclined plane with kinetic friction. The angular acceleration
+about the axis of rotation is linearly proportional to the normal force, which depends on the cosine of the angle of
+inclination. As , this force goes to zero, and, thus, the angular acceleration goes to zero.
+Conservation of Mechanical Energy in Rolling Motion
+In the preceding chapter, we introduced rotational kinetic energy. Any rolling object carries rotational kinetic energy,
+as well as translational kinetic energy and potential energy if the system requires. Including the gravitational
+potential energy, the total mechanical energy of an object rolling is
+In the absence of any nonconservative forces that would take energy out of the system in the form of heat, the total
+energy of a rolling object without slipping is conserved and is constant throughout the motion. Examples where
+energy is not conserved are a rolling object that is slipping, production of heat as a result of kinetic friction, and a
+rolling object encountering air resistance.
+You may ask why a rolling object that is not slipping conserves energy, since the static friction force is
+
+522 11 • Angular Momentum
+nonconservative. The answer can be found by referring back to Figure 11.3. Point P in contact with the surface is at
+rest with respect to the surface. Therefore, its infinitesimal displacement with respect to the surface is zero, and
+the incremental work done by the static friction force is zero. We can apply energy conservation to our study of
+rolling motion to bring out some interesting results.
+EXAMPLE 11.3
+Curiosity Rover
+The Curiosity rover, shown in Figure 11.8, was deployed on Mars on August 6, 2012. The wheels of the rover have a
+radius of 25 cm. Suppose astronauts arrive on Mars in the year 2050 and find the now-inoperative Curiosity on the
+side of a basin. While they are dismantling the rover, an astronaut accidentally loses a grip on one of the wheels,
+which rolls without slipping down into the bottom of the basin 25 meters below. If the wheel has a mass of 5 kg,
+what is its velocity at the bottom of the basin?
+FIGURE 11.8 The NASA Mars Science Laboratory rover Curiosity during testing on June 3, 2011. The location is inside the Spacecraft
+Assembly Facility at NASA’s Jet Propulsion Laboratory in Pasadena, California. (credit: NASA/JPL-Caltech)
+Strategy
+We use mechanical energy conservation to analyze the problem. At the top of the hill, the wheel is at rest and has
+only potential energy. At the bottom of the basin, the wheel has rotational and translational kinetic energy, which
+must be equal to the initial potential energy by energy conservation. Since the wheel is rolling without slipping, we
+use the relation to relate the translational variables to the rotational variables in the energy conservation
+equation. We then solve for the velocity. From Figure 11.8, we see that a hollow cylinder is a good approximation for
+the wheel, so we can use this moment of inertia to simplify the calculation.
+Solution
+Energy at the top of the basin equals energy at the bottom:
+Access for free at openstax.org
+
+11.2 • Angular Momentum 523
+The known quantities are .
+We rewrite the energy conservation equation eliminating by using We have
+or
+On Mars, the acceleration of gravity is which gives the magnitude of the velocity at the bottom of the
+basin as
+Significance
+This is a fairly accurate result considering that Mars has very little atmosphere, and the loss of energy due to air
+resistance would be minimal. The result also assumes that the terrain is smooth, such that the wheel wouldn’t
+encounter rocks and bumps along the way.
+Also, in this example, the kinetic energy, or energy of motion, is equally shared between linear and rotational
+motion. If we look at the moments of inertia in Figure 10.20, we see that the hollow cylinder has the largest moment
+of inertia for a given radius and mass. If the wheels of the rover were solid and approximated by solid cylinders, for
+example, there would be more kinetic energy in linear motion than in rotational motion. This would give the wheel a
+larger linear velocity than the hollow cylinder approximation. Thus, the solid cylinder would reach the bottom of the
+basin faster than the hollow cylinder.
+11.2 Angular Momentum
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Describe the vector nature of angular momentum
+• Find the total angular momentum and torque about a designated origin of a system of particles
+• Calculate the angular momentum of a rigid body rotating about a fixed axis
+• Calculate the torque on a rigid body rotating about a fixed axis
+• Use conservation of angular momentum in the analysis of objects that change their rotation rate
+Why does Earth keep on spinning? What started it spinning to begin with? Why doesn’t Earth’s gravitational
+attraction bring the Moon crashing in toward Earth? And how does an ice skater manage to spin faster and faster
+simply by pulling her arms in? Why does she not have to exert a torque to spin faster?
+Questions like these have answers based in angular momentum, the rotational analog to linear momentum. In this
+chapter, we first define and then explore angular momentum from a variety of viewpoints. First, however, we
+investigate the angular momentum of a single particle. This allows us to develop angular momentum for a system of
+particles and for a rigid body that is cylindrically symmetric.
+Angular Momentum of a Single Particle
+Figure 11.9 shows a particle at a position with linear momentum with respect to the origin. Even if the
+particle is not rotating about the origin, we can still define an angular momentum in terms of the position vector and
+the linear momentum.
+ANGULAR MOMENTUM OF A PARTICLE
+The angular momentum of a particle is defined as the cross-product of and , and is perpendicular to the

@@ -1,0 +1,175 @@
+# REAL PDF — openstax_vol1.pdf, pages 238-244
+############################################################
+
+226 5 • Newton's Laws of Motion
+FIGURE 5.26 The weight of a tightrope walker causes a wire to sag by . The system of interest is the point in the wire at which the
+tightrope walker is standing.
+Strategy
+As you can see in Figure 5.26, the wire is bent under the person’s weight. Thus, the tension on either side of the
+person has an upward component that can support his weight. As usual, forces are vectors represented pictorially
+by arrows that have the same direction as the forces and lengths proportional to their magnitudes. The system is the
+tightrope walker, and the only external forces acting on him are his weight and the two tensions (left tension)
+and (right tension). It is reasonable to neglect the weight of the wire. The net external force is zero, because the
+system is static. We can use trigonometry to find the tensions. One conclusion is possible at the outset—we can see
+from Figure 5.26(b) that the magnitudes of the tensions and must be equal. We know this because there is
+no horizontal acceleration in the rope and the only forces acting to the left and right are and . Thus, the
+magnitude of those horizontal components of the forces must be equal so that they cancel each other out.
+Whenever we have two-dimensional vector problems in which no two vectors are parallel, the easiest method of
+solution is to pick a convenient coordinate system and project the vectors onto its axes. In this case, the best
+coordinate system has one horizontal axis (x) and one vertical axis (y).
+Solution
+First, we need to resolve the tension vectors into their horizontal and vertical components. It helps to look at a new
+free-body diagram showing all horizontal and vertical components of each force acting on the system (Figure 5.27).
+FIGURE 5.27 When the vectors are projected onto vertical and horizontal axes, their components along these axes must add to zero, since
+the tightrope walker is stationary. The small angle results in T being much greater than w.
+Consider the horizontal components of the forces (denoted with a subscript x):
+The net external horizontal force since the person is stationary. Thus,
+Access for free at openstax.org
+
+5.6 • Common Forces 227
+Now observe Figure 5.27. You can use trigonometry to determine the magnitude of and :
+Equating TLx and TRx:
+Thus,
+as predicted. Now, considering the vertical components (denoted by a subscript y), we can solve for T. Again, since
+the person is stationary, Newton’s second law implies that . Thus, as illustrated in the free-body diagram,
+We can use trigonometry to determine the relationships among and T. As we determined from the
+analysis in the horizontal direction, :
+Now we can substitute the vales for and , into the net force equation in the vertical direction:
+and
+so
+and the tension is
+Significance
+The vertical tension in the wire acts as a force that supports the weight of the tightrope walker. The tension is almost
+six times the 686-N weight of the tightrope walker. Since the wire is nearly horizontal, the vertical component of its
+tension is only a fraction of the tension in the wire. The large horizontal components are in opposite directions and
+cancel, so most of the tension in the wire is not used to support the weight of the tightrope walker.
+If we wish to create a large tension, all we have to do is exert a force perpendicular to a taut flexible connector, as
+
+228 5 • Newton's Laws of Motion
+illustrated in Figure 5.26. As we saw in Example 5.13, the weight of the tightrope walker acts as a force
+perpendicular to the rope. We saw that the tension in the rope is related to the weight of the tightrope walker in the
+following way:
+We can extend this expression to describe the tension T created when a perpendicular force is exerted at the
+middle of a flexible connector:
+The angle between the horizontal and the bent connector is represented by . In this case, T becomes large as
+approaches zero. Even the relatively small weight of any flexible connector will cause it to sag, since an infinite
+tension would result if it were horizontal (i.e., and sin ). For example, Figure 5.28 shows a situation
+where we wish to pull a car out of the mud when no tow truck is available. Each time the car moves forward, the
+chain is tightened to keep it as straight as possible. The tension in the chain is given by and since is
+small, T is large. This situation is analogous to the tightrope walker, except that the tensions shown here are those
+transmitted to the car and the tree rather than those acting at the point where is applied.
+FIGURE 5.28 We can create a large tension in the chain—and potentially a big mess—by pushing on it perpendicular to its length, as shown.
+CHECK YOUR UNDERSTANDING 5.9
+One end of a 3.0-m rope is tied to a tree; the other end is tied to a car stuck in the mud. The motorist pulls sideways
+on the midpoint of the rope, displacing it a distance of 0.25 m. If he exerts a force of 200.0 N under these
+conditions, determine the force exerted on the car.
+In Applications of Newton’s Laws, we extend the discussion on tension in a cable to include cases in which the
+angles shown are not equal.
+Friction
+Friction is a resistive force opposing motion or its tendency. Imagine an object at rest on a horizontal surface. The
+net force acting on the object must be zero, leading to equality of the weight and the normal force, which act in
+opposite directions. If the surface is tilted, the normal force balances the component of the weight perpendicular to
+the surface. If the object does not slide downward, the component of the weight parallel to the inclined plane is
+balanced by friction. Friction is discussed in greater detail in the next chapter.
+Spring force
+A spring is a special medium with a specific atomic structure that has the ability to restore its shape, if deformed. To
+restore its shape, a spring exerts a restoring force that is proportional to and in the opposite direction in which it is
+stretched or compressed. This is the statement of a law known as Hooke’s law, which has the mathematical form
+5.11
+The constant of proportionality k is a measure of the spring’s stiffness. The line of action of this force is parallel to
+the spring axis, and the sense of the force is in the opposite direction of the displacement vector (Figure 5.29). The
+displacement must be measured from the relaxed position; when the spring is relaxed.
+Access for free at openstax.org
+
+5.6 • Common Forces 229
+FIGURE 5.29 A spring exerts its force proportional to a displacement, whether it is compressed or stretched. (a) The spring is in a relaxed
+position and exerts no force on the block. (b) The spring is compressed by displacement of the object and exerts restoring force
+(c) The spring is stretched by displacement of the object and exerts restoring force
+Real Forces and Inertial Frames
+There is another distinction among forces: Some forces are real, whereas others are not. Real forces have some
+physical origin, such as a gravitational pull. In contrast, fictitious forces arise simply because an observer is in an
+accelerating or noninertial frame of reference, such as one that rotates (like a merry-go-round) or undergoes linear
+acceleration (like a car slowing down). For example, if a satellite is heading due north above Earth’s Northern
+Hemisphere, then to an observer on Earth, it will appear to experience a force to the west that has no physical origin.
+Instead, Earth is rotating toward the east and moves east under the satellite. In Earth’s frame, this looks like a
+westward force on the satellite, or it can be interpreted as a violation of Newton’s first law (the law of inertia). We
+can identify a fictitious force by asking the question, “What is the reaction force?” If we cannot name the reaction
+force, then the force we are considering is fictitious. In the example of the satellite, the reaction force would have to
+be an eastward force on Earth. Recall that an inertial frame of reference is one in which all forces are real and,
+equivalently, one in which Newton’s laws have the simple forms given in this chapter.
+Earth’s rotation is slow enough that Earth is nearly an inertial frame. You ordinarily must perform precise
+experiments to observe fictitious forces and the slight departures from Newton’s laws, such as the effect just
+described. On a large scale, such as for the rotation of weather systems and ocean currents, the effects can be easily
+observed (Figure 5.30).
+FIGURE 5.30 Hurricane Fran is shown heading toward the southeastern coast of the United States in September 1996. Notice the
+characteristic “eye” shape of the hurricane. This is a result of the Coriolis effect, which is the deflection of objects (in this case, air) when
+considered in a rotating frame of reference, like the spin of Earth. This hurricane shows a counter-clockwise rotation because it is a low
+pressure storm. (credit "runner": modification of work by "Greenwich Photography"/Flickr)
+The crucial factor in determining whether a frame of reference is inertial is whether it accelerates or rotates relative
+to a known inertial frame. Unless stated otherwise, all phenomena discussed in this text are in inertial frames.
+
+230 5 • Newton's Laws of Motion
+The forces discussed in this section are real forces, but they are not the only real forces. Lift and thrust, for example,
+are more specialized real forces. In the long list of forces, are some more basic than others? Are some different
+manifestations of the same underlying force? The answer to both questions is yes, as you will see in the treatment of
+modern physics later in the text.
+INTERACTIVE
+Explore forces and motion in this interactive simulation (https://openstax.org/l/21ramp) as you push household
+objects up and down a ramp. Lower and raise the ramp to see how the angle of inclination affects the parallel forces.
+Graphs show forces, energy, and work.
+INTERACTIVE
+Stretch and compress springs in the simulation below to explore the relationships among force, spring constant, and
+displacement. Investigate what happens when two springs are connected in series and in parallel.
+Access multimedia content (https://openstax.org/l/21hookeslaw)
+5.7 Drawing Free-Body Diagrams
+LEARNING OBJECTIVES
+By the end of this section, you will be able to:
+• Explain the rules for drawing a free-body diagram
+• Construct free-body diagrams for different situations
+The first step in describing and analyzing most phenomena in physics involves the careful drawing of a free-body
+diagram. Free-body diagrams have been used in examples throughout this chapter. Remember that a free-body
+diagram must only include the external forces acting on the body of interest. Once we have drawn an accurate free-
+body diagram, we can apply Newton’s first law if the body is in equilibrium (balanced forces; that is, ) or
+Newton’s second law if the body is accelerating (unbalanced force; that is, ).
+In Forces, we gave a brief problem-solving strategy to help you understand free-body diagrams. Here, we add some
+details to the strategy that will help you in constructing these diagrams.
+PROBLEM-SOLVING STRATEGY
+Constructing Free-Body Diagrams
+Observe the following rules when constructing a free-body diagram:
+1. Draw the object under consideration; it does not have to be artistic. At first, you may want to draw a circle
+around the object of interest to be sure you focus on labeling the forces acting on the object. If you are
+treating the object as a particle (no size or shape and no rotation), you may wish to represent the object as a
+point. We often place this point at the origin of an xy-coordinate system, which should be included in the free
+body diagram.
+2. Include all forces that act on the object, representing these forces as vectors. Consider the types of forces
+described in Common Forces—normal force, friction, tension, and spring force—as well as weight and applied
+force. Do not include the net force on the object. With the exception of gravity, all of the forces we have
+discussed require direct contact with the object. However, forces that the object exerts on its environment
+must not be included. We never include both forces of an action-reaction pair.
+3. Convert the free-body diagram into a more detailed diagram showing the x- and y-components of a given
+force (this is often helpful when solving a problem using Newton’s first or second law). In this case, place a
+squiggly line through the original vector to show that it is no longer in play—it has been replaced by its x- and
+y-components.
+4. If there are two or more objects, or bodies, in the problem, draw a separate free-body diagram for each object.
+Access for free at openstax.org
+
+5.7 • Drawing Free-Body Diagrams 231
+Note: If there is acceleration, we do not directly include it in the free-body diagram; however, it may help to indicate
+acceleration outside the free-body diagram. You can label it in a different color to indicate that it is separate from
+the free-body diagram.
+Let’s apply the problem-solving strategy in drawing a free-body diagram for a sled. In Figure 5.31(a), a sled is pulled
+by force P at an angle of . In part (b), we show a free-body diagram for this situation, as described by steps 1 and
+2 of the problem-solving strategy. In part (c), we show all forces in terms of their x- and y-components, in keeping
+with step 3.
+FIGURE 5.31 (a) A moving sled is shown as (b) a free-body diagram and (c) a free-body diagram with force components.
+EXAMPLE 5.14
+Two Blocks on an Inclined Plane
+Construct the free-body diagram for object A and object B in Figure 5.32. Assume that the rope pulls object A so
+that it slides upward, and that object B is sliding down the slope.
+Strategy
+We follow the four steps listed in the problem-solving strategy.
+Solution
+We start by creating a diagram for the first object of interest. In Figure 5.32(a), object A is isolated (circled) and
+represented by a dot.
+FIGURE 5.32 (a) The free-body diagram for isolated object A. (b) The free-body diagram for isolated object B. Comparing the two drawings,
+we see that friction acts in the opposite direction in the two figures. Friction always acts opposite the direction of motion or intended
