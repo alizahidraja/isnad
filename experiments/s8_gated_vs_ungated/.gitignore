@@ -1,3 +1,4 @@
 *.pdf
 results/*_backup*
 results/seed_*/
+corpus/pdfs/
