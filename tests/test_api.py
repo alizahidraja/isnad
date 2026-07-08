@@ -117,7 +117,36 @@ class TestEvidence:
             assert r.status_code == 200
 
 
+class TestClaimsList:
+    def test_list_claims_empty(self):
+        r = client.get("/v1/claims")
+        assert r.status_code == 200
+        assert r.json()["total"] == 0
+
+    def test_list_claims_with_data(self):
+        client.post("/v1/claims", json={
+            "claim_text": "F = ma", "domain": "physics",
+            "chain": [{"narrator_id": "source:openstax"}],
+        }, headers={"X-API-Key": "isnad-admin"})
+        r = client.get("/v1/claims")
+        assert r.status_code == 200
+        assert r.json()["total"] >= 1
+
+    def test_list_claims_filter_by_domain(self):
+        client.post("/v1/claims", json={
+            "claim_text": "p = mv", "domain": "physics",
+            "chain": [{"narrator_id": "src"}],
+        }, headers={"X-API-Key": "isnad-admin"})
+        r = client.get("/v1/claims?domain=physics")
+        assert r.status_code == 200
+        for c in r.json()["claims"]:
+            assert c["domain"] == "physics"
+
+
 class TestMetrics:
     def test_metrics(self):
         r = client.get("/v1/metrics")
         assert r.status_code == 200
+        data = r.json()
+        assert "corroboration_fires_total" in data
+        assert "bayesian_grade_changes_total" in data

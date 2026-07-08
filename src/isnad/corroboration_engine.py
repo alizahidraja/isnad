@@ -20,6 +20,7 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
+from isnad.corroboration import SharedLineageDetector
 from isnad.types import ChainGrade, NarratorGrade
 
 
@@ -72,10 +73,12 @@ class CorroborationEngine:
         min_independent_chains: int = 2,
         corroboration_cap: ChainGrade = ChainGrade.HASAN,
         min_gate_grade: ChainGrade = ChainGrade.HASAN,
+        correlation_detector: SharedLineageDetector | None = None,
     ):
         self.min_independent_chains = min_independent_chains
         self.corroboration_cap = corroboration_cap
         self.min_gate_grade = min_gate_grade
+        self._correlation_detector = correlation_detector or SharedLineageDetector()
 
     def evaluate(
         self,
@@ -125,14 +128,15 @@ class CorroborationEngine:
                 "source": chain.get("source", ""),
             })
 
-        # Filter: must have different narrator sets
+        # Filter: must be truly independent (narrator sets + lineage detection)
         independent = []
         for c in corroborating:
-            c_narrators = set(c["narrators"])
-            base_set = set(base_narrators)
-            if c_narrators & base_set:
-                continue  # shared narrator — not independent
-            independent.append(c)
+            c_narrators = c["narrators"]
+            # Use SharedLineageDetector for madār-aware independence check
+            if self._correlation_detector.are_independent(
+                base_narrators, c_narrators, narrator_metadata or {}
+            ):
+                independent.append(c)
 
         if len(independent) < self.min_independent_chains:
             return CorroborationResult(

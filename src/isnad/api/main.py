@@ -10,6 +10,7 @@ Wire-up from paper §8 feedback:
 
 from __future__ import annotations
 
+import json
 import logging
 import os
 import time
@@ -19,7 +20,7 @@ from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
 from typing import Any
 
-from fastapi import Depends, FastAPI, HTTPException, Security
+from fastapi import Depends, FastAPI, HTTPException, Query, Security
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import APIKeyHeader
 from pydantic import BaseModel, Field
@@ -47,6 +48,13 @@ from isnad.types import (
 
 logger = logging.getLogger("isnad.api")
 
+# ── Prometheus-style metrics counters ───────────────────────────
+_metrics_counters: dict[str, int] = {
+    "corroboration_fires_total": 0,
+    "bayesian_grade_changes_total": 0,
+    "claims_submitted_total": 0,
+}
+
 # ── Auth ───────────────────────────────────────────────────────
 
 API_KEYS = {
@@ -73,6 +81,37 @@ def require_admin(role: str = Depends(require_auth)) -> str:
 
 
 # ── Policy selection via env var ─────────────────────────────────
+
+
+def _parse_seed_config() -> list[tuple[str, str, NarratorGrade]]:
+    """Parse ISNAD_SEED_CONFIG env var for additional warm-start narrators.
+
+    Format: JSON array of {narrator_id, domain, grade}.
+    """
+    raw = os.environ.get("ISNAD_SEED_CONFIG", "")
+    if not raw:
+        return []
+    try:
+        entries = json.loads(raw)
+        seeds: list[tuple[str, str, NarratorGrade]] = []
+        grade_map = {
+            "reliable": NarratorGrade.RELIABLE,
+            "acceptable": NarratorGrade.ACCEPTABLE,
+            "weak": NarratorGrade.WEAK,
+            "rejected": NarratorGrade.REJECTED,
+            "ungraded": NarratorGrade.UNGRADED,
+        }
+        for e in entries:
+            seeds.append((
+                e["narrator_id"],
+                e.get("domain", "general"),
+                grade_map.get(e.get("grade", "ungraded"), NarratorGrade.UNGRADED),
+            ))
+        logger.info(f"Loaded {len(seeds)} seed narrators from ISNAD_SEED_CONFIG")
+        return seeds
+    except (json.JSONDecodeError, KeyError, TypeError) as exc:
+        logger.warning(f"Invalid ISNAD_SEED_CONFIG: {exc}")
+        return []
 
 
 def _build_policy() -> TransitionPolicy:
@@ -125,12 +164,21 @@ def _build_critic():
 
 # ── Dependency Injection ─────────────────────────────────────────
 
-# Warm-start seeds (reliable sources from §8 experiment)
+# Warm-start seeds: built-in defaults + env-configurable extras
 _WARM_START_SEEDS: list[tuple[str, str, NarratorGrade]] = [
+    # Reliable sources from §8 experiment
     ("source:openstax", "physics", NarratorGrade.RELIABLE),
     ("source:crowell", "physics", NarratorGrade.RELIABLE),
     ("pdf-scraper@1.2", "physics", NarratorGrade.RELIABLE),
+    # Common narrators for corroboration demo
+    ("openstax_v3", "physics", NarratorGrade.RELIABLE),
+    ("wikisource", "physics", NarratorGrade.RELIABLE),
+    ("pdf_scraper_a", "physics", NarratorGrade.ACCEPTABLE),
+    ("pdf_scraper_b", "physics", NarratorGrade.ACCEPTABLE),
+    ("ingest_model_a", "physics", NarratorGrade.ACCEPTABLE),
+    ("ingest_model_b", "physics", NarratorGrade.ACCEPTABLE),
 ]
+_WARM_START_SEEDS.extend(_parse_seed_config())
 
 
 def get_db() -> Generator[Session, None, None]:
@@ -156,10 +204,13 @@ def get_registry(session: Session = Depends(get_db)) -> RegistryDB:
     policy = _build_policy()
     reg = RegistryDB(session=session, transition_policy=policy)
     reg.load()
-    # Seed warm-start narrators on first access
-    for nid, dom, grade in _WARM_START_SEEDS:
-        if reg.registry.get(nid, dom) is None:
-            reg.registry.register(nid, dom, grade=grade)
+    # Seed warm-start narrators once per process lifetime
+    if not getattr(get_registry, "_seeded", False):
+        for nid, dom, grade in _WARM_START_SEEDS:
+            if reg.registry.get(nid, dom) is None:
+                reg.registry.register(nid, dom, grade=grade)
+        reg.flush()
+        get_registry._seeded = True  # type: ignore[attr-defined]
     return reg
 
 
@@ -266,7 +317,44 @@ async def health() -> dict:
 @app.get("/v1/metrics")
 async def metrics() -> dict:
     state = get_state()
-    return {"claims_total": len(state.claims), "timestamp": time.time()}
+    return {
+        "claims_total": len(state.claims),
+        "timestamp": time.time(),
+        "corroboration_fires_total": _metrics_counters["corroboration_fires_total"],
+        "bayesian_grade_changes_total": _metrics_counters["bayesian_grade_changes_total"],
+        "claims_submitted_total": _metrics_counters["claims_submitted_total"],
+    }
+
+
+@app.get("/v1/claims")
+async def list_claims(
+    domain: str | None = Query(default=None),
+    limit: int = Query(default=50, ge=1, le=500),
+    offset: int = Query(default=0, ge=0),
+) -> dict:
+    """List claims with optional domain filter and pagination."""
+    state = get_state()
+    all_claims = list(state.claims.values())
+    if domain:
+        all_claims = [c for c in all_claims if c.get("domain") == domain]
+    total = len(all_claims)
+    page = all_claims[offset : offset + limit]
+    return {
+        "total": total,
+        "limit": limit,
+        "offset": offset,
+        "claims": [
+            {
+                "claim_id": c["claim_id"],
+                "claim_text": c["claim_text"][:200],
+                "chain_grade": c["chain_grade"],
+                "action": c["action"],
+                "domain": c.get("domain", "general"),
+                "corroborating_claims": c.get("corroborating_claims", 0),
+            }
+            for c in page
+        ],
+    }
 
 
 @app.post("/v1/claims", response_model=ClaimResponse)
@@ -329,6 +417,9 @@ async def submit_claim(
 
     # Use upgraded grade if corroboration fired
     effective_grade: ChainGrade = corr_result.upgraded_grade if corr_result.upgraded else cg
+    if corr_result.upgraded:
+        _metrics_counters["corroboration_fires_total"] += 1
+    _metrics_counters["claims_submitted_total"] += 1
 
     # ── Content verdict — pluggable critic (HybridCritic / TF-IDF fallback) ──
     existing_texts = [c.get("normalized_text", "") for c in state.claims.values()]
@@ -438,6 +529,10 @@ async def submit_evidence(body: EvidenceSubmit, reg: RegistryDB = Depends(get_re
         ev_action = EvidenceAction(body.action)
     except ValueError as e:
         raise HTTPException(400, f"Invalid type: {e}")
+    old_narrator = reg.registry.get(body.narrator_id, body.domain)
+    old_grade = old_narrator.grade if old_narrator else None
     new_grade = reg.registry.record_evidence(body.narrator_id, body.domain, ev_type, ev_action, body.description)
     reg.flush()
+    if old_grade is not None and new_grade != old_grade:
+        _metrics_counters["bayesian_grade_changes_total"] += 1
     return {"narrator_id": body.narrator_id, "domain": body.domain, "new_grade": new_grade.value}
