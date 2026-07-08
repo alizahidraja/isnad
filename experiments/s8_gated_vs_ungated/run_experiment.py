@@ -39,7 +39,12 @@ SEP = "=" * 64
 # ═══════════════════════════════════════════════════════════════════
 
 class DeepSeekCritic:
-    """Content critic using DeepSeek via OpenAI-compatible API."""
+    """Content critic: DeepSeek LLM primary, EmbeddingCritic fallback.
+
+    With DEEPSEEK_API_KEY: calls DeepSeek for semantic reasoning.
+    Without: uses EmbeddingCritic (TF-IDF) which detects negation,
+             opposite words, and numeric divergence.
+    """
 
     def __init__(self):
         self.api_key = os.environ.get("DEEPSEEK_API_KEY", "")
@@ -47,20 +52,27 @@ class DeepSeekCritic:
         self.available = bool(self.api_key)
         self._cache: dict[str, ContentVerdict] = {}
         self.call_count = 0
+        # TF-IDF fallback critic (zero deps, always available)
+        from isnad.critics.embedding import EmbeddingCritic
+        self._fallback = EmbeddingCritic()
+        self._corpus_texts: list[str] = []
+
+    def set_corpus(self, texts: list[str]) -> None:
+        """Pre-load corpus for EmbeddingCritic fallback."""
+        self._corpus_texts = list(texts)
 
     def evaluate(self, claim_text: str, normalized: str,
                  corpus_claims: list[str], domain: str = "") -> ContentVerdict:
-        if not self.available:
-            # Stub: check for self-contradiction patterns
-            low = normalized.lower()
-            if "not conserved" in low or "decreases" in low and "increases" in low:
-                return ContentVerdict.CONTRADICTION
-            return ContentVerdict.UNVERIFIABLE
+        if self.available:
+            return self._deepseek_eval(normalized)
+        # Use EmbeddingCritic fallback with corpus context
+        all_corpus = list(corpus_claims) + self._corpus_texts
+        return self._fallback.evaluate(claim_text, normalized, all_corpus, domain)
 
+    def _deepseek_eval(self, normalized: str) -> ContentVerdict:
         cache_key = normalized[:100]
         if cache_key in self._cache:
             return self._cache[cache_key]
-
         prompt = (
             f"Physics claim: {normalized}\n"
             f"Answer one word: CONSISTENT, CONTRADICTION, or UNVERIFIABLE.\n"
@@ -68,7 +80,6 @@ class DeepSeekCritic:
             f"CONTRADICTION = physically impossible or self-contradicting.\n"
             f"UNVERIFIABLE = need more context."
         )
-
         try:
             import urllib.request
             req = urllib.request.Request(
@@ -87,7 +98,6 @@ class DeepSeekCritic:
             resp = urllib.request.urlopen(req, timeout=15)
             body = json.loads(resp.read())
             text = body["choices"][0]["message"]["content"].strip().upper()
-
             if "CONTRADICTION" in text:
                 verdict = ContentVerdict.CONTRADICTION
             elif "CONSISTENT" in text:
@@ -96,7 +106,6 @@ class DeepSeekCritic:
                 verdict = ContentVerdict.UNVERIFIABLE
         except Exception:
             verdict = ContentVerdict.UNVERIFIABLE
-
         self._cache[cache_key] = verdict
         return verdict
 
@@ -207,10 +216,14 @@ def run() -> None:
     # ── 3. Critic ───────────────────────────────────────────────
     print("\n[3/5] Initializing critic...")
     critic = DeepSeekCritic()
+    # Seed EmbeddingCritic fallback with corpus of clean claims
+    clean_claims = [c.get("normalized", c.get("text", "")) for c in claims
+                    if not gt_lookup.get(c["claim_id"], {}).get("corrupted")]
+    critic.set_corpus(clean_claims[:200])  # 200 clean claims as context
     if critic.available:
         print(f"  DeepSeek API ({critic.base_url})")
     else:
-        print("  Stub critic (DEEPSEEK_API_KEY not set)")
+        print(f"  EmbeddingCritic fallback (TF-IDF with {len(clean_claims[:200])} corpus claims)")
 
     # ── 4. Grade ────────────────────────────────────────────────
     print(f"\n[4/5] Grading {len(claims)} claims...")

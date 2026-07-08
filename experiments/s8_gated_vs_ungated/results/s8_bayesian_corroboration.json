@@ -10,17 +10,17 @@
     "hasan": 167,
     "daif": 0,
     "mawdu": 333,
-    "consistent": 0,
-    "contradiction": 1,
-    "unverifiable": 499,
+    "consistent": 180,
+    "contradiction": 21,
+    "unverifiable": 299,
     "corroboration_upgrades": 0,
     "corroboration_checks": 0
   },
-  "served": 0,
-  "review": 167,
+  "served": 58,
+  "review": 109,
   "quarantined": 333,
   "corrupted_served": 0,
-  "elapsed_s": 0.0,
+  "elapsed_s": 0.4,
   "sample_graded": [
     {
       "claim_id": "b960dd1b51720574e40826b581316a76c7813ba3b51863760ec3e24d6c55b327",
@@ -58,7 +58,7 @@
         "ingest_model_a"
       ],
       "chain_grade": "hasan",
-      "content_verdict": "unverifiable",
+      "content_verdict": "contradiction",
       "action": "review"
     },
     {
@@ -97,7 +97,7 @@
         "ingest_model_b"
       ],
       "chain_grade": "mawdu",
-      "content_verdict": "unverifiable",
+      "content_verdict": "consistent",
       "action": "reject_and_quarantine_narrator"
     },
     {
@@ -136,7 +136,7 @@
         "ingest_model_c"
       ],
       "chain_grade": "mawdu",
-      "content_verdict": "unverifiable",
+      "content_verdict": "consistent",
       "action": "reject_and_quarantine_narrator"
     },
     {
@@ -175,7 +175,7 @@
         "ingest_model_a"
       ],
       "chain_grade": "mawdu",
-      "content_verdict": "unverifiable",
+      "content_verdict": "consistent",
       "action": "reject_and_quarantine_narrator"
     },
     {
@@ -214,8 +214,8 @@
         "ingest_model_b"
       ],
       "chain_grade": "hasan",
-      "content_verdict": "unverifiable",
-      "action": "review"
+      "content_verdict": "consistent",
+      "action": "serve_with_caveat"
     }
   ]
 }

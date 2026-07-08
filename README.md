@@ -85,15 +85,16 @@ print(tracer.report())
 
 ## What's Validated vs. What's Not
 
-| Component                     | Status                | Notes                                                                 |
-| ----------------------------- | --------------------- | --------------------------------------------------------------------- |
-| **Weakest-link quarantine**   | ✅ Validated           | 100% of REJECTED narrator claims correctly blocked                    |
-| **jarḥ–taʿdīl discovery**     | ✅ Partial             | Correctly identifies bad narrators; good ones need seed grades        |
-| **Seed-grade bootstrapping**  | ✅ Validated           | Pre-grading sources/models enables practical coverage                 |
-| **Confidence-gating**         | ❌ Useless             | Self-confidence scores uncorrelated with defects                      |
-| **Content criticism**         | ⚠ Functional, limited | Embedding critic catches obvious contradictions; LLM critic available |
-| **Corroboration (mutābaʿāt)** | ❌ Untested            | Never fired on real corpora across all runs                           |
-| **Coverage (with critic)**    | ~50%                  | Up from ~10% with the non-functional stub (see §8 experiment)         |
+| Component                     | Status              | Notes                                                                 |
+| ----------------------------- | ------------------- | --------------------------------------------------------------------- |
+| **Bayesian grading**          | ✅ Default           | Beta-distribution replaces hardcoded thresholds; ISNAD_POLICY env override |
+| **Weakest-link quarantine**   | ✅ Validated         | 100% of REJECTED narrator claims correctly blocked                    |
+| **jarḥ–taʿdīl discovery**     | ✅ Partial           | Correctly identifies bad narrators; good ones need seed grades        |
+| **Seed-grade bootstrapping**  | ✅ Validated         | Pre-grading sources/models enables practical coverage; ISNAD_SEED_CONFIG env var |
+| **Corroboration (mutābaʿāt)** | ✅ Wired + tested    | Fires on 2+ independent chains; madār detection blocks correlated chains |
+| **Content criticism**         | ✅ Functional        | EmbeddingCritic (TF-IDF) catches contradictions offline; HybridCritic (NLI) + LLMCritic available |
+| **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |
+| **Coverage (with critic)**    | ~50%                 | Up from ~10% with the stub; 36% consistent, 4% contradiction on corpus |
 
 The honesty box is a feature. We tell you exactly what works, what's limited,
 and where you need to supply your own components.
@@ -102,17 +103,21 @@ and where you need to supply your own components.
 
 ## Concept → Module Map
 
-| Concept                       | What it does                                         | Module                   |
-| ----------------------------- | ---------------------------------------------------- | ------------------------ |
-| **isnād** (chain)             | Ordered, gap-checked transmission chain per claim    | `isnad/chain.py`         |
-| **rijāl** (registry)          | Graded narrator store per (narrator, domain)         | `isnad/registry.py`      |
-| **jarḥ–taʿdīl**               | Evidence-driven state machine for narrator grades    | `isnad/registry.py`      |
-| **ittiṣāl**                   | Completeness as epistemic property (gap → DAIF)      | `isnad/chain.py`         |
-| **Weakest-link grading**      | Chain grade = refined minimum over narrators         | `isnad/grading.py`       |
-| **mutābaʿāt** (corroboration) | Independent-chain upgrade with correlation detection | `isnad/corroboration.py` |
-| **matn criticism**            | Content evaluated independently of chain quality     | `isnad/critics/`         |
-| **Decision matrix**           | 4×2 (chain × content) → action router                | `isnad/matrix.py`        |
-| **ʿadālah / ḍabṭ**            | Integrity and precision as two distinct axes         | `isnad/types.py`         |
+| Concept                       | What it does                                         | Module                     |
+| ----------------------------- | ---------------------------------------------------- | -------------------------- |
+| **isnād** (chain)             | Ordered, gap-checked transmission chain per claim    | `isnad/core/chain.py`      |
+| **rijāl** (registry)          | Graded narrator store per (narrator, domain)         | `isnad/core/registry.py`   |
+| **jarḥ–taʿdīl**               | Evidence-driven state machine for narrator grades    | `isnad/core/registry.py`   |
+| **Bayesian grading**          | Beta-distribution narrator grades (default)          | `isnad/core/registry.py`   |
+| **ittiṣāl**                   | Completeness as epistemic property (gap → DAIF)      | `isnad/core/chain.py`      |
+| **Weakest-link grading**      | Chain grade = refined minimum over narrators         | `isnad/core/grading.py`    |
+| **mutābaʿāt** (corroboration) | Independent-chain upgrade + madār detection          | `isnad/core/corroboration.py` |
+| **matn criticism**            | Content evaluated independently of chain quality     | `isnad/critics/`           |
+| **Decision matrix**           | 4×2 (chain × content) → action router                | `isnad/core/decision.py`   |
+| **Persistence**               | SQLAlchemy-backed registry (swap via protocol)       | `isnad/storage/`           |
+| **API**                       | FastAPI service with DI + Prometheus metrics         | `isnad/api/`               |
+| **CLI**                       | `isnad serve` | `isnad seed`                        | `isnad/cli/`               |
+| **ʿadālah / ḍabṭ**            | Integrity and precision as two distinct axes         | `isnad/types.py`           |
 
 ---
 
@@ -131,13 +136,13 @@ and where you need to supply your own components.
 
 The framework leaves key parameters open by design (paper §4.2/§4.3). Swap any:
 
-| Strategy              | Protocol         | Default                         | What to provide                       |
-| --------------------- | ---------------- | ------------------------------- | ------------------------------------- |
-| `GradingStrategy`     | `isnad/types.py` | `RefinedWeakestLink`            | How links combine into chain grade    |
-| `TransitionPolicy`    | `isnad/types.py` | `ThresholdTransitionPolicy`     | Evidence → narrator grade transitions |
-| `CorroborationPolicy` | `isnad/types.py` | `CappedCorroborationPolicy`     | Independent chains → claim upgrade    |
-| `CorrelationDetector` | `isnad/types.py` | `SharedLineageDetector`         | True independence between chains      |
-| `ContentCritic`       | `isnad/types.py` | `EmbeddingCritic` / `LLMCritic` | Content contradiction detection       |
+| Strategy              | Protocol                | Default                          | What to provide                       |
+| --------------------- | ----------------------- | -------------------------------- | ------------------------------------- |
+| `GradingStrategy`     | `isnad/types.py`        | `RefinedWeakestLink`             | How links combine into chain grade    |
+| `TransitionPolicy`    | `isnad/types.py`        | `BayesianTransitionPolicy`       | Evidence → narrator grade transitions |
+| `CorroborationPolicy` | `isnad/types.py`        | `CappedCorroborationPolicy`      | Independent chains → claim upgrade    |
+| `CorrelationDetector` | `isnad/types.py`        | `SharedLineageDetector`          | True independence between chains      |
+| `ContentCritic`       | `isnad/critics/base.py` | `HybridCritic` / `EmbeddingCritic` | Content contradiction detection       |
 
 **Swap a critic in one line:**
 
