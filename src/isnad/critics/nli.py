@@ -23,12 +23,14 @@ from typing import Any
 from isnad.types import ContentVerdict
 
 _SENTENCE_TRANSFORMERS_AVAILABLE = False
+_CrossEncoder: Any = None
 try:
-    from sentence_transformers import CrossEncoder
+    from sentence_transformers import CrossEncoder as _CrossEncoderImpl  # noqa: F811
 
+    _CrossEncoder = _CrossEncoderImpl
     _SENTENCE_TRANSFORMERS_AVAILABLE = True
 except ImportError:
-    CrossEncoder = None
+    pass
 
 
 class LocalNLICritic:
@@ -81,7 +83,7 @@ class LocalNLICritic:
             return None
 
         try:
-            self._model = CrossEncoder(
+            self._model = _CrossEncoder(
                 self.model_name,
                 device="cpu",  # safe default; can override
             )
