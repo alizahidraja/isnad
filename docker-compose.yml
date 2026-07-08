@@ -1,7 +1,21 @@
 version: "3.9"
 
 services:
-  postgres:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ISNAD_API_KEYS=isnad-admin:admin,isnad-reader:reader
+      - ISNAD_DATABASE_URL=postgresql://isnad:isnad@db:5432/isnad
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: unless-stopped
+
+  db:
     image: postgres:16-alpine
     environment:
       POSTGRES_USER: isnad
@@ -11,6 +25,23 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U isnad"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
 
 volumes:
   pgdata:
