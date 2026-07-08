@@ -24,11 +24,11 @@ from isnad.types import ContentVerdict
 
 _SENTENCE_TRANSFORMERS_AVAILABLE = False
 try:
-    from sentence_transformers import CrossEncoder  # type: ignore[import-not-found]
+    from sentence_transformers import CrossEncoder
 
     _SENTENCE_TRANSFORMERS_AVAILABLE = True
 except ImportError:
-    CrossEncoder = None  # type: ignore
+    CrossEncoder = None
 
 
 class LocalNLICritic:
@@ -81,7 +81,7 @@ class LocalNLICritic:
             return None
 
         try:
-            self._model = CrossEncoder(  # type: ignore[call-arg]
+            self._model = CrossEncoder(
                 self.model_name,
                 device="cpu",  # safe default; can override
             )
@@ -118,7 +118,7 @@ class LocalNLICritic:
         pairs = [(cc, normalized_claim) for cc in corpus_sample]
 
         try:
-            scores = model.predict(pairs)  # type: ignore[union-attr]
+            scores = model.predict(pairs)
         except Exception:
             return ContentVerdict.UNVERIFIABLE
 
@@ -184,7 +184,7 @@ class HybridCritic:
         if not _SENTENCE_TRANSFORMERS_AVAILABLE:
             return None
         try:
-            from sentence_transformers import SentenceTransformer  # type: ignore[import-not-found]
+            from sentence_transformers import SentenceTransformer
 
             self._embed_model = SentenceTransformer(self.embed_model_name)
         except Exception:
@@ -210,7 +210,7 @@ class HybridCritic:
         try:
             claim_vec = embed_model.encode(normalized_claim)
             corpus_vecs = embed_model.encode(corpus_claims)
-            from sentence_transformers import util  # type: ignore[import-not-found]
+            from sentence_transformers import util
 
             scores = util.cos_sim(claim_vec, corpus_vecs)[0]
             top_indices = scores.argsort(descending=True)[: self.top_k]

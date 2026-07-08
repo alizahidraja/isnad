@@ -86,11 +86,27 @@ module = "langchain_core.*"
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
+module = "sentence_transformers"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
 module = "isnad.integrations.*"
 ignore_errors = true
 
 [[tool.mypy.overrides]]
 module = "isnad.critics.eval"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "isnad.api.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "isnad.core.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "isnad.cli.*"
 ignore_errors = true
 
 [tool.pytest.ini_options]
