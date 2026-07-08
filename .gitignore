@@ -24,6 +24,7 @@ uv.lock
 # Database
 *.db
 *.db-journal
+!data/.gitkeep
 
 # OS
 .DS_Store

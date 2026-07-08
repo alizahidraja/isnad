@@ -15,7 +15,7 @@ Key properties tested:
 - corroboration_support flag actually changes outcomes (not dead code).
 """
 
-from isnad.grading import grade_chain
+from isnad.core.grading import grade_chain
 from isnad.types import ChainGrade, NarratorGrade, TransformType
 
 

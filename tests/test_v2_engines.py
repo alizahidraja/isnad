@@ -1,8 +1,8 @@
 """Tests for Bayesian grading engine and corroboration engine."""
 
 
-from isnad.corroboration_engine import CorroborationEngine
-from isnad.grading_bayesian import BayesianTransitionPolicy, BetaState, CalibratedThresholdPolicy
+from isnad.core.corroboration import CorroborationEngine
+from isnad.core.registry import BayesianTransitionPolicy, BetaState, CalibratedThresholdPolicy
 from isnad.types import ChainGrade, NarratorGrade
 
 

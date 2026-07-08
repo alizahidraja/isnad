@@ -50,7 +50,7 @@ all = [
 ]
 
 [project.scripts]
-isnad = "isnad.cli:main"
+isnad = "isnad.cli.main:main"
 
 [build-system]
 requires = ["uv_build>=0.11.25,<0.12.0"]

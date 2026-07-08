@@ -12,11 +12,11 @@ Ingested from OpenStax Vol. 3 through:
 Contradicting an existing "p = mv" claim.
 """
 
-from isnad.chain import Chain, ChainLinkSpec, make_claim_id, normalize_claim_text
-from isnad.grading import grade_chain
+from isnad.core.chain import Chain, ChainLinkSpec, make_claim_id, normalize_claim_text
+from isnad.core.grading import grade_chain
 from isnad.matn import DeterministicRuleCritic
-from isnad.matrix import decide, describe_action
-from isnad.registry import Registry
+from isnad.core.decision import decide, describe_action
+from isnad.core.registry import Registry
 from isnad.types import (
     Action,
     AdalahGrade,

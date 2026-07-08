@@ -19,7 +19,7 @@ import os
 import random
 import sys
 
-from isnad.registry import Registry
+from isnad.core.registry import Registry
 from isnad.types import AdalahGrade, DabtGrade, EvidenceAction, EvidenceType, NarratorGrade
 
 _exp_dir = os.path.dirname(os.path.abspath(__file__))

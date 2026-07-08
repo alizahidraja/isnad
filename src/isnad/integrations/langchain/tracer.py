@@ -17,14 +17,14 @@ from __future__ import annotations
 import uuid
 from typing import Any
 
-from isnad.chain import Chain, ChainLinkSpec
-from isnad.grading import grade_chain
+from isnad.core.chain import Chain, ChainLinkSpec
+from isnad.core.grading import grade_chain
 from isnad.matn import DeterministicRuleCritic
-from isnad.matrix import decide, describe_action
-from isnad.registry import Registry
+from isnad.core.decision import decide, describe_action
+from isnad.core.registry import Registry
+from isnad.critics.base import ContentCritic
 from isnad.types import (
     Action,
-    ContentCritic,
     NarratorGrade,
     TransformType,
 )

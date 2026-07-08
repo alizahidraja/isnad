@@ -15,7 +15,7 @@ import os
 import random
 import sys
 
-from isnad.chain import Chain, ChainLinkSpec
+from isnad.core.chain import Chain, ChainLinkSpec
 from isnad.types import TransformType
 
 # Add experiment dir to path for local imports

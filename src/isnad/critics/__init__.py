@@ -1,20 +1,24 @@
 """Content critics for ISNAD — real matn criticism.
 
-The bundled deterministic critic is a non-functional stub on real text.
-These implementations provide WORKING content criticism:
+Bundled critics:
+- EmbeddingCritic: fast, cheap, offline — TF-IDF cosine similarity
+- LocalNLICritic: semantic entailment via DeBERTa cross-encoder
+- HybridCritic: two-stage (MiniLM retrieval -> NLI judgment)
+- LLMCritic: LLM-backed with retrieval-augmented context
 
-- EmbeddingCritic: fast, cheap, offline — uses cosine similarity
-- LLMCritic: higher quality — uses an LLM with retrieved context
-
-Both implement the existing ContentCritic protocol and are pluggable
-via the framework's public interface.
-
-IMPORTANT: These critics have measured limitations. See CRITIC_EVAL.md
-for precision/recall and false-consistent rates before deploying.
+All implement ContentCritic protocol from .base
 """
 
-from isnad.critics.embedding import EmbeddingCritic
+from isnad.critics.base import ContentCritic
+from isnad.critics.embedding import EmbeddingCritic, TFIDFIndex
 from isnad.critics.llm import LLMCritic
 from isnad.critics.nli import HybridCritic, LocalNLICritic
 
-__all__ = ["EmbeddingCritic", "LLMCritic", "LocalNLICritic", "HybridCritic"]
+__all__ = [
+    "ContentCritic",
+    "EmbeddingCritic",
+    "HybridCritic",
+    "LLMCritic",
+    "LocalNLICritic",
+    "TFIDFIndex",
+]

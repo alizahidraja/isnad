@@ -5,10 +5,11 @@ import os
 import pytest
 from fastapi.testclient import TestClient
 
-from isnad.api.main import _app_state, app
-from isnad.db import drop_db, init_db, reset_engine
+from isnad.api.app import app
+from isnad.api.endpoints.claims import _app_state, get_state
+from isnad.storage.sqlalchemy import drop_db, init_db, reset_engine
 
-TEST_DB_URL = "sqlite:///isnad_test.db"
+TEST_DB_URL = "sqlite:///data/isnad_test.db"
 
 client = TestClient(app)
 

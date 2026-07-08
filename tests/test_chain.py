@@ -6,7 +6,7 @@ Verifies paper §4.1 commitments:
 - Each link carries all required metadata.
 """
 
-from isnad.chain import Chain, ChainLinkSpec, make_claim_id, normalize_claim_text
+from isnad.core.chain import Chain, ChainLinkSpec, make_claim_id, normalize_claim_text
 from isnad.types import ChainStatus, TransformType
 
 

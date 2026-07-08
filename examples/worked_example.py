@@ -5,11 +5,11 @@ Run: make demo   OR   uv run python examples/worked_example.py
 This traces the paper's photon-momentum claim through the full pipeline.
 """
 
-from isnad.chain import Chain, ChainLinkSpec, normalize_claim_text
-from isnad.grading import grade_chain
+from isnad.core.chain import Chain, ChainLinkSpec, normalize_claim_text
+from isnad.core.grading import grade_chain
 from isnad.matn import DeterministicRuleCritic
-from isnad.matrix import decide, describe_action
-from isnad.registry import Registry
+from isnad.core.decision import decide, describe_action
+from isnad.core.registry import Registry
 from isnad.types import (
     AdalahGrade,
     DabtGrade,

@@ -15,7 +15,7 @@ import os
 from collections.abc import Callable
 from typing import Any
 
-from isnad.registry import Registry
+from isnad.core.registry import Registry
 from isnad.types import (
     AdalahGrade,
     ContentVerdict,

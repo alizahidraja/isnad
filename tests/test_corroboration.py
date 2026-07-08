@@ -9,7 +9,7 @@ Verifies paper §4.3 commitments:
 
 import pytest
 
-from isnad.corroboration import (
+from isnad.core.corroboration import (
     CappedCorroborationPolicy,
     SharedLineageDetector,
     evaluate_corroboration,

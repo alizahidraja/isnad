@@ -6,7 +6,7 @@ Verifies paper §4.4: every cell routes to the correct action, including:
 - All 8 core cells (plus unverifiable variants).
 """
 
-from isnad.matrix import decide, describe_action
+from isnad.core.decision import decide, describe_action
 from isnad.types import Action, ChainGrade, ContentVerdict
 
 

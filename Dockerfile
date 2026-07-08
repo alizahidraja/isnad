@@ -7,8 +7,8 @@ ENV SENTENCE_TRANSFORMERS_HOME=/app/.cache/sentence_transformers
 
 # ── Builder stage ──────────────────────────────────────────────
 FROM base AS builder
-RUN pip install uv
-COPY pyproject.toml ./
+RUN pip install --no-cache-dir uv
+COPY pyproject.toml README.md ./
 COPY src/ src/
 RUN uv pip install --system ".[api,nli]"
 
@@ -22,10 +22,11 @@ FROM base AS prod
 COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
 COPY --from=builder /app/.cache /app/.cache
 COPY src/ src/
-COPY pyproject.toml ./
+COPY pyproject.toml README.md ./
+RUN mkdir -p /app/data
 
 # Default: Bayesian policy (set ISNAD_POLICY=threshold to use threshold)
 ENV ISNAD_POLICY=bayesian
 
 EXPOSE 8000
-CMD ["uvicorn", "isnad.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "isnad.api.app:app", "--host", "0.0.0.0", "--port", "8000"]

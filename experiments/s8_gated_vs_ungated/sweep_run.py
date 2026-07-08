@@ -24,11 +24,11 @@ _exp_dir = os.path.dirname(os.path.abspath(__file__))
 if _exp_dir not in sys.path:
     sys.path.insert(0, _exp_dir)
 
-from isnad.chain import Chain, ChainLinkSpec
-from isnad.grading import grade_chain
+from isnad.core.chain import Chain, ChainLinkSpec
+from isnad.core.grading import grade_chain
 from isnad.matn import DeterministicRuleCritic
-from isnad.matrix import decide
-from isnad.registry import Registry
+from isnad.core.decision import decide
+from isnad.core.registry import Registry
 from isnad.types import (
     Action,
     ContentVerdict,

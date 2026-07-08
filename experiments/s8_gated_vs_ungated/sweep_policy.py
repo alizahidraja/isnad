@@ -4,7 +4,7 @@ Provides a configurable downgrade threshold so the sweep can test how
 sensitivity to adverse evidence affects coverage without editing framework code.
 
 USAGE (via the framework's pluggable interface):
-    from isnad.registry import Registry
+    from isnad.core.registry import Registry
     from sweep_policy import ConfigurableTransitionPolicy
 
     policy = ConfigurableTransitionPolicy(downgrade_threshold=10)

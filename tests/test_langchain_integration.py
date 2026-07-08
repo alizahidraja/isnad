@@ -9,7 +9,7 @@ from __future__ import annotations
 import pytest
 
 from isnad.integrations.langchain import CriticAdapter, isnad_track, seed_registry
-from isnad.registry import Registry
+from isnad.core.registry import Registry
 from isnad.types import (
     ContentVerdict,
     NarratorGrade,

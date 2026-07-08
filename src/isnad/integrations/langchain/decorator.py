@@ -12,9 +12,9 @@ import uuid
 from collections.abc import Callable
 from typing import Any
 
-from isnad.chain import Chain, ChainLinkSpec
-from isnad.grading import grade_chain
-from isnad.registry import Registry
+from isnad.core.chain import Chain, ChainLinkSpec
+from isnad.core.grading import grade_chain
+from isnad.core.registry import Registry
 from isnad.types import TransformType
 
 

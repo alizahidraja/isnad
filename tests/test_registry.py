@@ -9,8 +9,8 @@ Verifies paper §4.2 commitments:
 - BayesianTransitionPolicy as the new default.
 """
 
-from isnad.grading_bayesian import BayesianTransitionPolicy
-from isnad.registry import Registry, ThresholdTransitionPolicy
+from isnad.core.registry import BayesianTransitionPolicy
+from isnad.core.registry import Registry, ThresholdTransitionPolicy
 from isnad.types import (
     AdalahGrade,
     DabtGrade,
