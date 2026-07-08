@@ -1,7 +1,7 @@
 # §8 Validation Experiment: Gated vs. Ungated Serving
 
 Validates the ISNAD framework against the experiment specified in §8 of
-"Grading the Narrators" (Raja, 2026, DOI: 10.5281/zenodo.21211291).
+"Grading the Narrators" (Raja, 2026, DOI: 10.5281/zenodo.21211290).
 
 **Question:** At a fixed human-review budget, does rijāl-gated serving
 reduce the served-error rate relative to ungated serving?
@@ -99,12 +99,12 @@ python audit_sample.py     # Human audit CSVs
 
 ## Serving Conditions Tested
 
-| # | Condition | What it does |
-|---|---|---|
-| 1 | **Ungated** | Serve everything; spend review budget on random claims |
-| 2 | **Confidence-gated** | Route lowest-confidence claims to review (status-quo baseline) |
-| 3 | **ISNAD-gated** | Full framework: chain grading → matn criticism → decision matrix → prioritized review |
-| 4 | **ISNAD, no corroboration** | Same as 3 with mutābaʿāt disabled (ablation) |
+| #   | Condition                   | What it does                                                                          |
+| --- | --------------------------- | ------------------------------------------------------------------------------------- |
+| 1   | **Ungated**                 | Serve everything; spend review budget on random claims                                |
+| 2   | **Confidence-gated**        | Route lowest-confidence claims to review (status-quo baseline)                        |
+| 3   | **ISNAD-gated**             | Full framework: chain grading → matn criticism → decision matrix → prioritized review |
+| 4   | **ISNAD, no corroboration** | Same as 3 with mutābaʿāt disabled (ablation)                                          |
 
 ---
 
@@ -129,11 +129,11 @@ python audit_sample.py     # Human audit CSVs
 
 ## Headline Numbers (B=10%, 10 seeds, default policy)
 
-| Metric | Ungated | Confidence | ISNAD |
-|---|---|---|---|
-| Served-error rate | 14.7% | 14.6% | **1.1%** |
-| Coverage | 100% | 100% | **7.9%** |
-| Review precision | 15.7% | 17.1% | 14.0% |
+| Metric            | Ungated | Confidence | ISNAD    |
+| ----------------- | ------- | ---------- | -------- |
+| Served-error rate | 14.7%   | 14.6%      | **1.1%** |
+| Coverage          | 100%    | 100%       | **7.9%** |
+| Review precision  | 15.7%   | 17.1%      | 14.0%    |
 
 **ISNAD reduces error by 13.5 points** vs. confidence-gated at its achievable
 coverage. However, coverage is only 7.9% — the cold-start calibration quarantines
@@ -146,11 +146,11 @@ grades are unreliable.
 
 Standard selective-prediction evaluation — error at equal coverage:
 
-| Target Coverage | ISNAD Coverage | ISNAD Error | Confidence Error | ISNAD Advantage |
-|---|---|---|---|---|
-| 20% | 0.071 | 0.0000 | 0.1654 | **+16.5 points** |
-| 50% | 0.071 | 0.0000 | 0.1461 | **+14.6 points** |
-| 90% | 0.071 | 0.0000 | 0.1531 | **+15.3 points** |
+| Target Coverage | ISNAD Coverage | ISNAD Error | Confidence Error | ISNAD Advantage  |
+| --------------- | -------------- | ----------- | ---------------- | ---------------- |
+| 20%             | 0.071          | 0.0000      | 0.1654           | **+16.5 points** |
+| 50%             | 0.071          | 0.0000      | 0.1461           | **+14.6 points** |
+| 90%             | 0.071          | 0.0000      | 0.1531           | **+15.3 points** |
 
 ISNAD cannot reach coverage > ~10% — it refuses to serve claims whose
 narrators it cannot grade. This is the cold-start ceiling (paper §7).
@@ -189,24 +189,24 @@ narrators it cannot grade. This is the cold-start ceiling (paper §7).
 
 ## File Map
 
-| File | Purpose |
-|---|---|
-| `corpus/fetch.py` | Download real PDFs, extract text, chunk |
-| `corpus/CHECKSUMS.txt` | SHA-256 checksums of downloaded PDFs |
-| `corpus/EXTRACT_SAMPLES.md` | Raw text excerpts from PDFs (proof of realness) |
-| `extract.py` | Atomic claim extraction from chunks |
-| `narrators.py` | Narrator definitions and fault classes |
-| `inject.py` | Fault injection and chain assignment |
-| `ground_truth.py` | **FIREWALL** — Injection manifest |
-| `calibrate.py` | Phase 1: jarḥ–taʿdīl calibration |
-| `run.py` | Phase 2: gated vs. ungated evaluation |
-| `analyze.py` | Metrics and RESULTS.md generation |
-| `risk_coverage.py` | Risk–coverage curves + matched-coverage comparison |
-| `sweep_policy.py` | Configurable TransitionPolicy for threshold sweep |
-| `sweep_run.py` | Transition-policy sweep across thresholds |
-| `diagnose_grades.py` | Grade-recovery diagnostic |
-| `diagnose_coldstart.py` | Coverage-vs-calibration curve |
-| `audit_sample.py` | Human audit CSV export |
-| `ANALYSIS_PLAN.md` | Preregistered hypotheses + Deviations |
-| `DIAGNOSIS.md` | Starting-state diagnosis |
-| `results/RESULTS.md` | Complete honest report |
+| File                        | Purpose                                            |
+| --------------------------- | -------------------------------------------------- |
+| `corpus/fetch.py`           | Download real PDFs, extract text, chunk            |
+| `corpus/CHECKSUMS.txt`      | SHA-256 checksums of downloaded PDFs               |
+| `corpus/EXTRACT_SAMPLES.md` | Raw text excerpts from PDFs (proof of realness)    |
+| `extract.py`                | Atomic claim extraction from chunks                |
+| `narrators.py`              | Narrator definitions and fault classes             |
+| `inject.py`                 | Fault injection and chain assignment               |
+| `ground_truth.py`           | **FIREWALL** — Injection manifest                  |
+| `calibrate.py`              | Phase 1: jarḥ–taʿdīl calibration                   |
+| `run.py`                    | Phase 2: gated vs. ungated evaluation              |
+| `analyze.py`                | Metrics and RESULTS.md generation                  |
+| `risk_coverage.py`          | Risk–coverage curves + matched-coverage comparison |
+| `sweep_policy.py`           | Configurable TransitionPolicy for threshold sweep  |
+| `sweep_run.py`              | Transition-policy sweep across thresholds          |
+| `diagnose_grades.py`        | Grade-recovery diagnostic                          |
+| `diagnose_coldstart.py`     | Coverage-vs-calibration curve                      |
+| `audit_sample.py`           | Human audit CSV export                             |
+| `ANALYSIS_PLAN.md`          | Preregistered hypotheses + Deviations              |
+| `DIAGNOSIS.md`              | Starting-state diagnosis                           |
+| `results/RESULTS.md`        | Complete honest report                             |

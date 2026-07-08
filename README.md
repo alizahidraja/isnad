@@ -5,7 +5,7 @@
 [![CI](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml/badge.svg)](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![DOI: 10.5281/zenodo.21211291](https://zenodo.org/badge/DOI/10.5281/zenodo.21211291.svg)](https://doi.org/10.5281/zenodo.21211291)
+[![DOI: 10.5281/zenodo.21211290](https://zenodo.org/badge/DOI/10.5281/zenodo.21211290.svg)](https://doi.org/10.5281/zenodo.21211290)
 
 **🌐 Full project home: https://alizahidraja.com/isnad**
 
@@ -85,15 +85,15 @@ print(tracer.report())
 
 ## What's Validated vs. What's Not
 
-| Component | Status | Notes |
-|---|---|---|
-| **Weakest-link quarantine** | ✅ Validated | 100% of REJECTED narrator claims correctly blocked |
-| **jarḥ–taʿdīl discovery** | ✅ Partial | Correctly identifies bad narrators; good ones need seed grades |
-| **Seed-grade bootstrapping** | ✅ Validated | Pre-grading sources/models enables practical coverage |
-| **Confidence-gating** | ❌ Useless | Self-confidence scores uncorrelated with defects |
-| **Content criticism** | ⚠ Functional, limited | Embedding critic catches obvious contradictions; LLM critic available |
-| **Corroboration (mutābaʿāt)** | ❌ Untested | Never fired on real corpora across all runs |
-| **Coverage (with critic)** | ~50% | Up from ~10% with the non-functional stub (see §8 experiment) |
+| Component                     | Status                | Notes                                                                 |
+| ----------------------------- | --------------------- | --------------------------------------------------------------------- |
+| **Weakest-link quarantine**   | ✅ Validated           | 100% of REJECTED narrator claims correctly blocked                    |
+| **jarḥ–taʿdīl discovery**     | ✅ Partial             | Correctly identifies bad narrators; good ones need seed grades        |
+| **Seed-grade bootstrapping**  | ✅ Validated           | Pre-grading sources/models enables practical coverage                 |
+| **Confidence-gating**         | ❌ Useless             | Self-confidence scores uncorrelated with defects                      |
+| **Content criticism**         | ⚠ Functional, limited | Embedding critic catches obvious contradictions; LLM critic available |
+| **Corroboration (mutābaʿāt)** | ❌ Untested            | Never fired on real corpora across all runs                           |
+| **Coverage (with critic)**    | ~50%                  | Up from ~10% with the non-functional stub (see §8 experiment)         |
 
 The honesty box is a feature. We tell you exactly what works, what's limited,
 and where you need to supply your own components.
@@ -102,28 +102,28 @@ and where you need to supply your own components.
 
 ## Concept → Module Map
 
-| Concept | What it does | Module |
-|---|---|---|
-| **isnād** (chain) | Ordered, gap-checked transmission chain per claim | `isnad/chain.py` |
-| **rijāl** (registry) | Graded narrator store per (narrator, domain) | `isnad/registry.py` |
-| **jarḥ–taʿdīl** | Evidence-driven state machine for narrator grades | `isnad/registry.py` |
-| **ittiṣāl** | Completeness as epistemic property (gap → DAIF) | `isnad/chain.py` |
-| **Weakest-link grading** | Chain grade = refined minimum over narrators | `isnad/grading.py` |
+| Concept                       | What it does                                         | Module                   |
+| ----------------------------- | ---------------------------------------------------- | ------------------------ |
+| **isnād** (chain)             | Ordered, gap-checked transmission chain per claim    | `isnad/chain.py`         |
+| **rijāl** (registry)          | Graded narrator store per (narrator, domain)         | `isnad/registry.py`      |
+| **jarḥ–taʿdīl**               | Evidence-driven state machine for narrator grades    | `isnad/registry.py`      |
+| **ittiṣāl**                   | Completeness as epistemic property (gap → DAIF)      | `isnad/chain.py`         |
+| **Weakest-link grading**      | Chain grade = refined minimum over narrators         | `isnad/grading.py`       |
 | **mutābaʿāt** (corroboration) | Independent-chain upgrade with correlation detection | `isnad/corroboration.py` |
-| **matn criticism** | Content evaluated independently of chain quality | `isnad/critics/` |
-| **Decision matrix** | 4×2 (chain × content) → action router | `isnad/matrix.py` |
-| **ʿadālah / ḍabṭ** | Integrity and precision as two distinct axes | `isnad/types.py` |
+| **matn criticism**            | Content evaluated independently of chain quality     | `isnad/critics/`         |
+| **Decision matrix**           | 4×2 (chain × content) → action router                | `isnad/matrix.py`        |
+| **ʿadālah / ḍabṭ**            | Integrity and precision as two distinct axes         | `isnad/types.py`         |
 
 ---
 
 ## The Decision Matrix
 
-| | Content CONSISTENT | Content CONTRADICTION |
-|---|---|---|
-| **Ṣaḥīḥ** (sound chain) | **SERVE** — cache | **REVIEW** — ʿilal signal (highest-value case) |
-| **Ḥasan** (good chain) | **SERVE WITH CAVEAT** | **REVIEW** — hold, do not serve |
-| **Ḍaʿīf** (weak chain) | **REVIEW** — seek corroboration | **QUARANTINE** |
-| **Mawḍūʿ** (fabricated) | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR** |
+|                         | Content CONSISTENT               | Content CONTRADICTION                          |
+| ----------------------- | -------------------------------- | ---------------------------------------------- |
+| **Ṣaḥīḥ** (sound chain) | **SERVE** — cache                | **REVIEW** — ʿilal signal (highest-value case) |
+| **Ḥasan** (good chain)  | **SERVE WITH CAVEAT**            | **REVIEW** — hold, do not serve                |
+| **Ḍaʿīf** (weak chain)  | **REVIEW** — seek corroboration  | **QUARANTINE**                                 |
+| **Mawḍūʿ** (fabricated) | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR**               |
 
 ---
 
@@ -131,13 +131,13 @@ and where you need to supply your own components.
 
 The framework leaves key parameters open by design (paper §4.2/§4.3). Swap any:
 
-| Strategy | Protocol | Default | What to provide |
-|---|---|---|---|
-| `GradingStrategy` | `isnad/types.py` | `RefinedWeakestLink` | How links combine into chain grade |
-| `TransitionPolicy` | `isnad/types.py` | `ThresholdTransitionPolicy` | Evidence → narrator grade transitions |
-| `CorroborationPolicy` | `isnad/types.py` | `CappedCorroborationPolicy` | Independent chains → claim upgrade |
-| `CorrelationDetector` | `isnad/types.py` | `SharedLineageDetector` | True independence between chains |
-| `ContentCritic` | `isnad/types.py` | `EmbeddingCritic` / `LLMCritic` | Content contradiction detection |
+| Strategy              | Protocol         | Default                         | What to provide                       |
+| --------------------- | ---------------- | ------------------------------- | ------------------------------------- |
+| `GradingStrategy`     | `isnad/types.py` | `RefinedWeakestLink`            | How links combine into chain grade    |
+| `TransitionPolicy`    | `isnad/types.py` | `ThresholdTransitionPolicy`     | Evidence → narrator grade transitions |
+| `CorroborationPolicy` | `isnad/types.py` | `CappedCorroborationPolicy`     | Independent chains → claim upgrade    |
+| `CorrelationDetector` | `isnad/types.py` | `SharedLineageDetector`         | True independence between chains      |
+| `ContentCritic`       | `isnad/types.py` | `EmbeddingCritic` / `LLMCritic` | Content contradiction detection       |
 
 **Swap a critic in one line:**
 
@@ -158,7 +158,7 @@ critic = LLMCritic(api_key="sk-...")                  # LLM-backed, higher quali
 ## Ecosystem
 
 - 🌐 **Site:** https://alizahidraja.com/isnad
-- 📄 **Paper (DOI):** https://doi.org/10.5281/zenodo.21211291
+- 📄 **Paper (DOI):** https://doi.org/10.5281/zenodo.21211290
 - 💾 **Software (DOI):** https://doi.org/10.5281/zenodo.21216873
 - 📦 **PyPI:** https://pypi.org/project/isnad/
 - 📝 **Companion gist:** https://gist.github.com/alizahidraja/56beaadf493976182f38aa602b8958e2
@@ -176,7 +176,7 @@ critic = LLMCritic(api_key="sk-...")                  # LLM-backed, higher quali
   title   = {Grading the Narrators: An Isnād–Rijāl Framework for
              Claim-Level Provenance in Multi-Agent Knowledge Systems},
   year    = 2026,
-  doi     = {10.5281/zenodo.21211291},
+  doi     = {10.5281/zenodo.21211290},
 }
 
 @software{raja2026isnad,

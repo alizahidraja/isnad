@@ -183,7 +183,7 @@ def main() -> None:
     print("  whether the conflict signals a defect or a genuine regime")
     print("  distinction.  This is what rijāl methodology adds over")
     print("  plain execution-provenance logging.\n")
-    print("  📄 Paper:  https://doi.org/10.5281/zenodo.21211291")
+    print("  📄 Paper:  https://doi.org/10.5281/zenodo.21211290")
     print("  📋 Gist:   https://gist.github.com/alizahidraja/56beaadf493976182f38aa602b8958e2")
     print("=" * 64)
 

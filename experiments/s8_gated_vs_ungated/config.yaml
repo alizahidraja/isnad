@@ -1,18 +1,18 @@
 # §8 Validation Experiment Configuration
 # Gated vs. Ungated Serving at Fixed Human-Review Budget
-# Paper: "Grading the Narrators" (Raja, 2026, DOI: 10.5281/zenodo.21211291)
+# Paper: "Grading the Narrators" (Raja, 2026, DOI: 10.5281/zenodo.21211290)
 
 # ── Models ──────────────────────────────────────────────────────────────────
 models:
-  extraction: "deepseek-chat"       # cheap, capable — matches paper's case study
-  matn_critic: "deterministic"       # "deterministic" or "deepseek-chat" (cached)
+  extraction: "deepseek-chat" # cheap, capable — matches paper's case study
+  matn_critic: "deterministic" # "deterministic" or "deepseek-chat" (cached)
   extraction_temperature: 0.0
   max_tokens_per_call: 4096
 
 # ── Corpus ──────────────────────────────────────────────────────────────────
 corpus:
-  chunk_size_chars: 15000            # ~15K chars/chunk (matches paper)
-  min_claims_target: 3000            # stop extraction when ≥ this many claims
+  chunk_size_chars: 15000 # ~15K chars/chunk (matches paper)
+  min_claims_target: 3000 # stop extraction when ≥ this many claims
   sources:
     - name: "OpenStax University Physics Vol. 1"
       url: "https://openstax.org/books/university-physics-volume-1/pages/1-introduction"
@@ -43,7 +43,7 @@ narrators:
       type: "generative"
       fault_rate: 0.15
 
-  incomplete_chain_rate: 0.05        # ~5% chains marked incomplete (exercise ittiṣāl)
+  incomplete_chain_rate: 0.05 # ~5% chains marked incomplete (exercise ittiṣāl)
 
 # ── Domains ────────────────────────────────────────────────────────────────
 domains:
@@ -54,18 +54,18 @@ domains:
 
 # ── Calibration ────────────────────────────────────────────────────────────
 calibration:
-  split_ratio: 0.30                  # 30% calibration / 70% evaluation
-  audit_budget_per_narrator: 40      # claims audited per (narrator, domain)
+  split_ratio: 0.30 # 30% calibration / 70% evaluation
+  audit_budget_per_narrator: 40 # claims audited per (narrator, domain)
   audit_seed: 42
 
 # ── Evaluation ─────────────────────────────────────────────────────────────
 evaluation:
-  budgets: [0.02, 0.05, 0.10, 0.20]  # B ∈ {2%, 5%, 10%, 20%}
-  seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]            # 10 seeds for CIs
+  budgets: [0.02, 0.05, 0.10, 0.20] # B ∈ {2%, 5%, 10%, 20%}
+  seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] # 10 seeds for CIs
 
 # ── Cost guard (hard limit) ────────────────────────────────────────────────
 cost:
-  max_estimated_usd: 15.0             # abort if estimated > this
+  max_estimated_usd: 15.0 # abort if estimated > this
   deepseek_chat_input_per_1k: 0.00014
   deepseek_chat_output_per_1k: 0.00028
 

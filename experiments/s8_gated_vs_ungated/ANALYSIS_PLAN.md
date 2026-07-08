@@ -1,7 +1,7 @@
 # Analysis Plan — §8 Gated vs. Ungated Validation Experiment
 
 **Preregistered:** 2026-07-06  
-**Paper:** "Grading the Narrators" (Raja, 2026, DOI: 10.5281/zenodo.21211291)  
+**Paper:** "Grading the Narrators" (Raja, 2026, DOI: 10.5281/zenodo.21211290)  
 **Status:** Committed before any results exist.
 
 ---
