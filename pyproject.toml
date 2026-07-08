@@ -42,6 +42,9 @@ api = [
     "fastapi>=0.115",
     "uvicorn>=0.32",
 ]
+nli = [
+    "sentence-transformers>=3.0",
+]
 all = [
     "isnad[dev,anthropic]",
 ]

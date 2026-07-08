@@ -1,19 +1,14 @@
-"""Embedding-based content critic for ISNAD.
+"""Embedding-based content critic for ISNAD — TF-IDF weighted, zero-dependency.
 
-Fast, cheap, offline critic using cosine similarity over word overlap
-(default) or a pluggable embedding function.
+The DEFAULT critic.  Works out of the box with no downloads, no API keys.
+Uses TF-IDF (Term Frequency × Inverse Document Frequency) weighting for
+much better similarity than raw word-overlap.
 
-How it works:
-1. Embed the incoming claim
-2. Find the most similar existing corpus claims (cosine similarity)
-3. If a near-duplicate is found → CONSISTENT
-4. If a similar claim with contradictory signals is found → CONTRADICTION
-5. Otherwise → UNVERIFIABLE
+Upgrade path (optional):
+    pip install isnad[nli]  →  enables HybridCritic (MiniLM embeddings)
+    pip install sentence-transformers  →  enables LocalNLICritic (DeBERTa NLI)
 
-IMPORTANT: The default word-overlap embedding is a lightweight reference.
-For production, supply a real embedding model via the `embed_fn` parameter.
-The contradiction detection uses simple negation/numeric-difference heuristics
-— a known limitation. See CRITIC_EVAL.md for measured performance.
+For production: use LocalNLICritic or LLMCritic for highest accuracy.
 """
 
 from __future__ import annotations
@@ -21,124 +16,131 @@ from __future__ import annotations
 import math
 import re
 from collections import Counter
-from collections.abc import Callable
-from typing import Any
+from typing import Any, Callable
 
-from isnad.types import ContentVerdict
+from isnad.types import ContentCritic, ContentVerdict
 
 
-def _default_embed(text: str) -> dict[str, float]:
-    """Default word-overlap embedding — fast, no dependencies.
+def _tokenize(text: str) -> list[str]:
+    """Tokenize text into words, keeping numbers and units."""
+    return re.findall(r"[a-z0-9]+(?:/[a-z0-9²³]+)?", text.lower())
 
-    For production, replace with sentence-transformers or an API call.
+
+class TFIDFIndex:
+    """Lightweight TF-IDF index — zero dependencies, corpus-aware weighting.
+
+    Builds an inverted index from the corpus and computes TF-IDF vectors
+    for similarity scoring.  Much better than raw word-overlap because
+    rare terms get higher weight and common words are discounted.
     """
-    words = re.findall(r"[a-z0-9]+", text.lower())
-    total = max(1, len(words))
-    return {w: c / total for w, c in Counter(words).items()}
 
+    def __init__(self, corpus: list[str] | None = None):
+        self._doc_freq: Counter[str] = Counter()
+        self._doc_count = 0
+        self._docs: list[list[str]] = []
+        if corpus:
+            self.fit(corpus)
 
-def _cosine_similarity(a: dict[str, float], b: dict[str, float]) -> float:
-    """Cosine similarity between two sparse vectors."""
-    if not a or not b:
-        return 0.0
-    dot = sum(a.get(k, 0.0) * b.get(k, 0.0) for k in set(a) | set(b))
-    norm_a = math.sqrt(sum(v * v for v in a.values()))
-    norm_b = math.sqrt(sum(v * v for v in b.values()))
-    if norm_a == 0 or norm_b == 0:
-        return 0.0
-    return dot / (norm_a * norm_b)
+    def fit(self, corpus: list[str]) -> None:
+        """Build TF-IDF index from corpus documents."""
+        self._doc_count = len(corpus)
+        self._docs = []
+        self._doc_freq = Counter()
+        for doc in corpus:
+            tokens = list(set(_tokenize(doc)))  # unique terms per doc for DF
+            self._docs.append(_tokenize(doc))  # all terms for TF
+            for t in tokens:
+                self._doc_freq[t] += 1
+
+    def tfidf_vector(self, text: str) -> dict[str, float]:
+        """Compute TF-IDF vector for a text."""
+        tokens = _tokenize(text)
+        if not tokens:
+            return {}
+        tf = Counter(tokens)
+        vec: dict[str, float] = {}
+        for term, count in tf.items():
+            df = self._doc_freq.get(term, 0)
+            if df == 0:
+                df = 1  # smooth unseen terms
+            idf = math.log((self._doc_count + 1) / (df + 1)) + 1.0
+            vec[term] = (count / len(tokens)) * idf
+        return vec
+
+    def cosine_similarity(self, a: dict[str, float], b: dict[str, float]) -> float:
+        """Cosine similarity between two TF-IDF vectors."""
+        if not a or not b:
+            return 0.0
+        dot = sum(a.get(k, 0.0) * b.get(k, 0.0) for k in set(a) | set(b))
+        norm_a = math.sqrt(sum(v * v for v in a.values()))
+        norm_b = math.sqrt(sum(v * v for v in b.values()))
+        if norm_a == 0 or norm_b == 0:
+            return 0.0
+        return dot / (norm_a * norm_b)
 
 
 def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
     """Heuristic contradiction detection between two similar claims.
 
-    Checks for:
-    - Negation patterns (is/is not, does/does not)
-    - Numeric differences (>2x or <0.5x) on same quantities
-    - Opposite direction words (increases/decreases, positive/negative)
-
-    This is a known limitation — a real system would use an LLM
-    or structured knowledge representation.
+    Checks negation patterns, opposite words, and numeric divergence.
     """
-    c_lower = claim.lower()
-    cc_lower = corpus_claim.lower()
+    c_low = claim.lower()
+    cc_low = corpus_claim.lower()
 
-    # Negation pattern
-    negation_pairs = [
-        (" is ", " is not "),
-        (" does ", " does not "),
-        (" can ", " cannot "),
-        (" has ", " has no "),
-    ]
-    for pos, neg in negation_pairs:
-        if (pos in c_lower and neg in cc_lower) or (neg in c_lower and pos in cc_lower):
+    # Negation
+    for pos, neg in [
+        (" is ", " is not "), (" does ", " does not "),
+        (" can ", " cannot "), (" has ", " has no "),
+    ]:
+        if (pos in c_low and neg in cc_low) or (neg in c_low and pos in cc_low):
             return True
 
     # Opposite words
-    opposites = [
-        ("increases", "decreases"),
-        ("positive", "negative"),
-        ("attractive", "repulsive"),
-        ("up", "down"),
-        ("faster", "slower"),
-        ("higher", "lower"),
-        ("larger", "smaller"),
-        ("hotter", "colder"),
-    ]
-    for a, b in opposites:
-        if (a in c_lower and b in cc_lower) or (b in c_lower and a in cc_lower):
+    for a, b in [
+        ("increases", "decreases"), ("positive", "negative"),
+        ("attractive", "repulsive"), ("faster", "slower"),
+        ("higher", "lower"), ("larger", "smaller"),
+        ("up", "down"), ("hotter", "colder"),
+        ("clockwise", "counterclockwise"), ("left", "right"),
+    ]:
+        if (a in c_low and b in cc_low) or (b in c_low and a in cc_low):
             return True
 
-    # Numeric divergence
-    nums_claim = [float(n) for n in re.findall(r"\d+\.?\d*", claim)]
-    nums_corpus = [float(n) for n in re.findall(r"\d+\.?\d*", corpus_claim)]
-    if nums_claim and nums_corpus:
-        for nc in nums_claim:
-            for ncc in nums_corpus:
-                if nc > 0 and ncc > 0:
-                    ratio = max(nc, ncc) / min(nc, ncc)
-                    if ratio > 3.0:
-                        # Same quantity context?
-                        if any(w in c_lower for w in ["equal", "same", "constant"]):
-                            continue
-                        return True
-
+    # Numeric divergence >3x
+    nums_c = [float(n) for n in re.findall(r"\d+\.?\d*", claim)]
+    nums_cc = [float(n) for n in re.findall(r"\d+\.?\d*", corpus_claim)]
+    for nc in nums_c:
+        for ncc in nums_cc:
+            if nc > 0 and ncc > 0 and max(nc, ncc) / min(nc, ncc) > 3.0:
+                if not any(w in c_low for w in ["equal", "same", "constant"]):
+                    return True
     return False
 
 
 class EmbeddingCritic:
-    """Embedding-based content critic — fast, offline.
+    """Default content critic — TF-IDF weighted, zero dependencies.
+
+    Works immediately with no installs, no downloads, no API keys.
+    For better accuracy: pip install isnad[nli] and use HybridCritic.
 
     This is one instantiation of a parameter the framework leaves open
     (see paper §4.4).  Swap freely.
 
     Args:
-        embed_fn: Function mapping text → vector (dict or list).
-            Default: word-overlap (fast, no deps, limited accuracy).
-        similarity_threshold: Cosine sim above which claims are "similar".
-        contradiction_threshold: Cosine sim above which we check for
-            contradiction signals.
-
-    Example:
-        critic = EmbeddingCritic()
-        corpus = ["force equals mass times acceleration",
-                   "momentum is mass times velocity"]
-        result = critic.evaluate("F = ma", "f = m a", corpus, "physics")
-        # → ContentVerdict.CONSISTENT
+        similarity_threshold: Cosine sim above which claims are "consistent".
+        contradiction_threshold: Cosine sim above which we check contradictions.
     """
 
     def __init__(
         self,
-        embed_fn: Callable[[str], Any] | None = None,
-        similarity_threshold: float = 0.85,
-        contradiction_threshold: float = 0.60,
+        similarity_threshold: float = 0.75,
+        contradiction_threshold: float = 0.50,
     ):
-        self._embed = embed_fn or _default_embed
         self.similarity_threshold = similarity_threshold
         self.contradiction_threshold = contradiction_threshold
-
-        # Cache embeddings for corpus claims
-        self._cache: dict[str, Any] = {}
+        self._index: TFIDFIndex | None = None
+        self._corpus_texts: list[str] = []
+        self._vectors: list[dict[str, float]] = []
 
     def evaluate(
         self,
@@ -147,50 +149,33 @@ class EmbeddingCritic:
         corpus_claims: list[str],
         domain: str = "",
     ) -> ContentVerdict:
-        """Evaluate a claim against the corpus.
-
-        Returns:
-            CONSISTENT if ≥1 corpus claim is highly similar without contradiction.
-            CONTRADICTION if a similar claim conflicts.
-            UNVERIFIABLE if no strong match.
-        """
+        """Evaluate a claim against the corpus using TF-IDF similarity."""
         if not corpus_claims:
             return ContentVerdict.UNVERIFIABLE
 
-        claim_vec = self._embed(normalized_claim)
+        # Build index on first call or when corpus changes
+        if self._index is None or corpus_claims != self._corpus_texts:
+            self._index = TFIDFIndex(corpus_claims)
+            self._corpus_texts = list(corpus_claims)
+            self._vectors = [self._index.tfidf_vector(c) for c in corpus_claims]
+
+        claim_vec = self._index.tfidf_vector(normalized_claim)
 
         best_sim = 0.0
-        best_text = ""
-
-        for cc in corpus_claims:
-            if cc not in self._cache:
-                self._cache[cc] = self._embed(cc)
-            cc_vec = self._cache[cc]
-
-            sim = _cosine_similarity(
-                self._vec_to_dict(claim_vec),
-                self._vec_to_dict(cc_vec),
-            )
-
+        best_idx = 0
+        for i, cv in enumerate(self._vectors):
+            sim = self._index.cosine_similarity(claim_vec, cv)
             if sim > best_sim:
                 best_sim = sim
-                best_text = cc
+                best_idx = i
 
-        if best_sim >= self.contradiction_threshold and _has_contradiction_signal(
-            normalized_claim, best_text
-        ):
-            return ContentVerdict.CONTRADICTION
+        # Check contradiction first (lower threshold, more specific)
+        if best_sim >= self.contradiction_threshold:
+            best_text = self._corpus_texts[best_idx]
+            if _has_contradiction_signal(normalized_claim, best_text):
+                return ContentVerdict.CONTRADICTION
 
         if best_sim >= self.similarity_threshold:
             return ContentVerdict.CONSISTENT
 
         return ContentVerdict.UNVERIFIABLE
-
-    @staticmethod
-    def _vec_to_dict(vec: Any) -> dict[str, float]:
-        """Convert various vector formats to {str: float} dict."""
-        if isinstance(vec, dict):
-            return {str(k): float(v) for k, v in vec.items()}
-        if isinstance(vec, list):
-            return {str(i): float(v) for i, v in enumerate(vec)}
-        return {}

@@ -57,7 +57,6 @@ class LLMCritic:
         model: str = "claude-sonnet-4-20250514",
         top_k: int = 5,
         cache_dir: str | None = None,
-        embed_fn: Callable[[str], Any] | None = None,
     ):
         self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY", "")
         self.model = model
@@ -65,9 +64,7 @@ class LLMCritic:
         self.cache_dir = Path(cache_dir) if cache_dir else None
         if self.cache_dir:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
-
-        # Use EmbeddingCritic as retriever for top-k corpus claims
-        self._retriever = EmbeddingCritic(embed_fn=embed_fn)
+        self._retriever = EmbeddingCritic()  # TF-IDF, zero-deps
 
     def evaluate(
         self,
@@ -83,27 +80,19 @@ class LLMCritic:
         if not corpus_claims:
             return ContentVerdict.UNVERIFIABLE
 
-        # Retrieve top-k similar corpus claims
+        # Retrieve top-k similar corpus claims using TF-IDF
+        self._retriever.evaluate(  # builds index if needed
+            normalized_claim, normalized_claim, corpus_claims,
+        )
+        # Reuse the built index to get similarities
+        if self._retriever._index is None:
+            return ContentVerdict.UNVERIFIABLE
+        claim_vec = self._retriever._index.tfidf_vector(normalized_claim)
         scored = []
-        for cc in corpus_claims:
-            from isnad.critics.embedding import _cosine_similarity, _default_embed
-
-            claim_vec = (
-                _default_embed(normalized_claim)
-                if self._retriever._embed == _default_embed
-                else self._retriever._embed(normalized_claim)
-            )
-            cc_vec = (
-                _default_embed(cc)
-                if self._retriever._embed == _default_embed
-                else self._retriever._embed(cc)
-            )
-            sim = _cosine_similarity(
-                _vec_to_dict(claim_vec),
-                _vec_to_dict(cc_vec),
-            )
+        for i, cc in enumerate(corpus_claims):
+            cv = self._retriever._vectors[i] if i < len(self._retriever._vectors) else {}
+            sim = self._retriever._index.cosine_similarity(claim_vec, cv)
             scored.append((sim, cc))
-
         scored.sort(key=lambda x: -x[0])
         context = [cc for _, cc in scored[: self.top_k]]
 

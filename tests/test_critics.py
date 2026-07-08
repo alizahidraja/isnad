@@ -86,12 +86,13 @@ class TestEmbeddingCritic:
         )
 
     def test_custom_embed_fn(self) -> None:
-        def my_embed(text: str) -> dict[str, float]:
-            return {"custom": 1.0}
-
-        critic = EmbeddingCritic(embed_fn=my_embed)
-        result = critic.evaluate("x", "x", ["x"])
-        # Custom embed makes everything identical → threshold met → CONSISTENT
+        """EmbeddingCritic accepts no embed_fn — uses built-in TF-IDF.
+        For custom embeddings, use HybridCritic."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate("force equals mass times acceleration",
+                                  "force equals mass times acceleration",
+                                  ["force equals mass times acceleration"])
+        # TF-IDF with identical text → very high similarity → CONSISTENT
         assert result == ContentVerdict.CONSISTENT
 
     def test_numeric_divergence_contradiction(self) -> None:
