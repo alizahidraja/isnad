@@ -1,0 +1,221 @@
+{
+  "config": {
+    "policy": "bayesian",
+    "critic": "stub",
+    "claims": 500,
+    "error_rate": 0.15
+  },
+  "stats": {
+    "sahih": 0,
+    "hasan": 167,
+    "daif": 0,
+    "mawdu": 333,
+    "consistent": 0,
+    "contradiction": 1,
+    "unverifiable": 499,
+    "corroboration_upgrades": 0,
+    "corroboration_checks": 0
+  },
+  "served": 0,
+  "review": 167,
+  "quarantined": 333,
+  "corrupted_served": 0,
+  "elapsed_s": 0.0,
+  "sample_graded": [
+    {
+      "claim_id": "b960dd1b51720574e40826b581316a76c7813ba3b51863760ec3e24d6c55b327",
+      "source": "openstax",
+      "chunk": "ostax_vol1_r_0006_c1",
+      "domain": "mechanics",
+      "text": "the equation is not dimensionally cons equals tent",
+      "normalized": "the equation is not dimensionally cons equals tent",
+      "model_confidence": 0.84,
+      "chain": [
+        {
+          "narrator_id": "openstax_v3",
+          "step": 0,
+          "transform_type": "pass_through",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "pdf_scraper_a",
+          "step": 1,
+          "transform_type": "destructive",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "ingest_model_a",
+          "step": 2,
+          "transform_type": "generative",
+          "domain": "physics",
+          "version": "v1"
+        }
+      ],
+      "chain_complete": true,
+      "_narrator_ids": [
+        "openstax_v3",
+        "pdf_scraper_a",
+        "ingest_model_a"
+      ],
+      "chain_grade": "hasan",
+      "content_verdict": "unverifiable",
+      "action": "review"
+    },
+    {
+      "claim_id": "47ce092684d27b46f453498180b01252d0142b57776de072e4906a4278245bda",
+      "source": "openstax",
+      "chunk": "ostax_vol3_r_0039_c1",
+      "domain": "optics-waves",
+      "text": "\u2022 Relativisticmomentumapproachesinfinityasuapproachesc.Thisimpliesthatanobjectwithmasscannotreach\nthe speed of light.",
+      "normalized": "\u2022 relativisticmomentumapproachesinfinityasuapproachesc.thisimpliesthatanobjectwithmasscannotreach the speed of light.",
+      "model_confidence": 0.86,
+      "chain": [
+        {
+          "narrator_id": "crowell_lm",
+          "step": 0,
+          "transform_type": "pass_through",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "pdf_scraper_b",
+          "step": 1,
+          "transform_type": "destructive",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "ingest_model_b",
+          "step": 2,
+          "transform_type": "generative",
+          "domain": "physics",
+          "version": "v1"
+        }
+      ],
+      "chain_complete": true,
+      "_narrator_ids": [
+        "crowell_lm",
+        "pdf_scraper_b",
+        "ingest_model_b"
+      ],
+      "chain_grade": "mawdu",
+      "content_verdict": "unverifiable",
+      "action": "reject_and_quarantine_narrator"
+    },
+    {
+      "claim_id": "cbb4a319750c7c65edb4447b39d63ee056a13fa2b801a16ab4d7f45b19cdc18b",
+      "source": "crowell",
+      "chunk": "crowell_lm_r_0078_c1",
+      "domain": "general",
+      "text": "As in part a, analyze the size and direction of the e\u21b5ect.",
+      "normalized": "as in part a, analyze the size and direction of the e\u21b5ect.",
+      "model_confidence": 0.85,
+      "chain": [
+        {
+          "narrator_id": "wikisource",
+          "step": 0,
+          "transform_type": "pass_through",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "pdf_scraper_a",
+          "step": 1,
+          "transform_type": "destructive",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "ingest_model_c",
+          "step": 2,
+          "transform_type": "generative",
+          "domain": "physics",
+          "version": "v1"
+        }
+      ],
+      "chain_complete": true,
+      "_narrator_ids": [
+        "wikisource",
+        "pdf_scraper_a",
+        "ingest_model_c"
+      ],
+      "chain_grade": "mawdu",
+      "content_verdict": "unverifiable",
+      "action": "reject_and_quarantine_narrator"
+    },
+    {
+      "claim_id": "b7492dd8adba39dcc1b0e971a24a9d8ce97c3ed0cb2cbd7c1ee11a5e1025ced8",
+      "source": "openstax",
+      "chunk": "ostax_vol1_r_0027_c1",
+      "domain": "mechanics",
+      "text": "One minute after\nairplane?",
+      "normalized": "one minute after airplane?",
+      "model_confidence": 0.85,
+      "chain": [
+        {
+          "narrator_id": "openstax_v3",
+          "step": 0,
+          "transform_type": "pass_through",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "pdf_scraper_b",
+          "step": 1,
+          "transform_type": "destructive",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "ingest_model_a",
+          "step": 2,
+          "transform_type": "generative",
+          "domain": "physics",
+          "version": "v1"
+        }
+      ],
+      "chain_complete": true,
+      "_narrator_ids": [
+        "openstax_v3",
+        "pdf_scraper_b",
+        "ingest_model_a"
+      ],
+      "chain_grade": "mawdu",
+      "content_verdict": "unverifiable",
+      "action": "reject_and_quarantine_narrator"
+    },
+    {
+      "claim_id": "803c83dc65dfcb1510ea192f8771069fcf714ced433d849257f7deea9dcced63",
+      "source": "crowell",
+      "chunk": "crowell_lm_r_0042_c1",
+      "domain": "general",
+      "text": "Considerthefollowingdatafromaseriesofthree\nsuch experiments:",
+      "normalized": "considerthefollowingdatafromaseriesofthree such experiments:",
+      "model_confidence": 0.85,
+      "chain": [
+        {
+          "narrator_id": "crowell_lm",
+          "step": 0,
+          "transform_type": "pass_through",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "pdf_scraper_a",
+          "step": 1,
+          "transform_type": "destructive",
+          "domain": "physics"
+        },
+        {
+          "narrator_id": "ingest_model_b",
+          "step": 2,
+          "transform_type": "generative",
+          "domain": "physics",
+          "version": "v1"
+        }
+      ],
+      "chain_complete": true,
+      "_narrator_ids": [
+        "crowell_lm",
+        "pdf_scraper_a",
+        "ingest_model_b"
+      ],
+      "chain_grade": "hasan",
+      "content_verdict": "unverifiable",
+      "action": "review"
+    }
+  ]
+}
