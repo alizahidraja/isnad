@@ -11,13 +11,6 @@ No fastapi, no sentence_transformers, no langchain imports allowed here.
 Only stdlib + pydantic + sqlalchemy (for DTOs/storage).
 """
 
-from isnad.core.registry import (
-    BayesianTransitionPolicy,
-    Narrator,
-    Registry,
-    RegistryDB,
-    ThresholdTransitionPolicy,
-)
 from isnad.core.chain import (
     Chain,
     ChainLinkSpec,
@@ -27,7 +20,6 @@ from isnad.core.chain import (
     normalize_claim_text,
     store_claim,
 )
-from isnad.core.grading import RefinedWeakestLink, grade_chain
 from isnad.core.corroboration import (
     CappedCorroborationPolicy,
     CorroborationEngine,
@@ -35,6 +27,14 @@ from isnad.core.corroboration import (
     evaluate_corroboration,
 )
 from isnad.core.decision import decide, describe_action
+from isnad.core.grading import RefinedWeakestLink, grade_chain
+from isnad.core.registry import (
+    BayesianTransitionPolicy,
+    Narrator,
+    Registry,
+    RegistryDB,
+    ThresholdTransitionPolicy,
+)
 
 __all__ = [
     # registry

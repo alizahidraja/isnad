@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session
 from isnad.core.registry import BayesianTransitionPolicy, RegistryDB, ThresholdTransitionPolicy
 from isnad.critics.embedding import EmbeddingCritic
 from isnad.critics.nli import HybridCritic
-from isnad.storage.sqlalchemy import get_session_factory, init_db
+from isnad.storage.sqlalchemy import get_session_factory
 from isnad.types import NarratorGrade, TransitionPolicy
 
 logger = logging.getLogger("isnad.api")

@@ -31,7 +31,7 @@ def seed() -> None:
         print("ISNAD_SEED_CONFIG is empty. Set it to a JSON array of {narrator_id, domain, grade}.")
         sys.exit(1)
 
-    from isnad.core.registry import RegistryDB, NarratorGrade
+    from isnad.core.registry import NarratorGrade, RegistryDB
 
     grade_map = {
         "reliable": NarratorGrade.RELIABLE,

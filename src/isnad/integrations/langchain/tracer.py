@@ -18,11 +18,11 @@ import uuid
 from typing import Any
 
 from isnad.core.chain import Chain, ChainLinkSpec
-from isnad.core.grading import grade_chain
-from isnad.matn import DeterministicRuleCritic
 from isnad.core.decision import decide, describe_action
+from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
 from isnad.critics.base import ContentCritic
+from isnad.matn import DeterministicRuleCritic
 from isnad.types import (
     Action,
     NarratorGrade,

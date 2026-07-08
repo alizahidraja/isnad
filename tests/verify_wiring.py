@@ -15,15 +15,21 @@ reset_engine()
 drop_db("sqlite:///data/isnad_verify.db")
 init_db("sqlite:///data/isnad_verify.db")
 
-from isnad.core.registry import Registry, RegistryDB, ThresholdTransitionPolicy
-from isnad.core.registry import BayesianTransitionPolicy
-from isnad.core.corroboration import CorroborationEngine
-from isnad.core.corroboration import SharedLineageDetector
+from isnad.core.corroboration import CorroborationEngine, SharedLineageDetector
 from isnad.core.grading import grade_chain
-from isnad.core.decision import decide
+from isnad.core.registry import (
+    BayesianTransitionPolicy,
+    Registry,
+    RegistryDB,
+    ThresholdTransitionPolicy,
+)
 from isnad.types import (
-    ChainGrade, ContentVerdict, EvidenceAction, EvidenceType,
-    NarratorGrade, TransformType,
+    ChainGrade,
+    ContentVerdict,
+    EvidenceAction,
+    EvidenceType,
+    NarratorGrade,
+    TransformType,
 )
 
 SEP = "─" * 60
@@ -99,6 +105,7 @@ check("Version bump → UNGRADED", g6 == NarratorGrade.UNGRADED,
 # ISNAD_POLICY env var
 os.environ["ISNAD_POLICY"] = "threshold"
 from isnad.api.dependencies import _build_policy
+
 policy_t = _build_policy()
 check("ISNAD_POLICY=threshold → ThresholdTransitionPolicy",
       isinstance(policy_t, ThresholdTransitionPolicy))
@@ -263,8 +270,8 @@ print(f"\n{SEP}")
 print("5. CRITIC FALLBACK — HybridCritic gracefully degrades")
 print(SEP)
 
-from isnad.critics.nli import HybridCritic
 from isnad.critics.embedding import EmbeddingCritic
+from isnad.critics.nli import HybridCritic
 
 # If sentence-transformers not installed, HybridCritic returns UNVERIFIABLE
 hc = HybridCritic()
@@ -273,7 +280,6 @@ check("HybridCritic empty corpus → UNVERIFIABLE",
       result_empty == ContentVerdict.UNVERIFIABLE)
 
 # EmbeddingCritic works without deps — test with high word overlap
-from isnad.critics.embedding import _has_contradiction_signal
 
 ec = EmbeddingCritic()
 # Test 1: exact match → CONSISTENT
@@ -317,3 +323,4 @@ if passed == total:
 else:
     print(f"\n{FAIL} {total - passed} CHECK(S) FAILED.")
     sys.exit(1)
+# ruff: noqa: E402

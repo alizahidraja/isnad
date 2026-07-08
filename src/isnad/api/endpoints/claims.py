@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import logging
-import time
 import uuid
 from dataclasses import dataclass, field
 from typing import Any
@@ -12,14 +11,13 @@ from fastapi import Depends, HTTPException, Query
 from fastapi.routing import APIRouter
 
 from isnad.api.auth import require_auth
-from isnad.api.auth import require_auth
 from isnad.api.dependencies import _metrics_counters, get_critic, get_registry
 from isnad.core.chain import Chain, ChainLinkSpec, store_claim
 from isnad.core.corroboration import CorroborationEngine
 from isnad.core.decision import decide, describe_action
 from isnad.core.grading import grade_chain
 from isnad.core.registry import RegistryDB
-from isnad.types import ChainGrade, ContentVerdict, TransformType
+from isnad.types import ContentVerdict, TransformType
 
 logger = logging.getLogger("isnad.api")
 router = APIRouter(prefix="/v1", tags=["claims"])

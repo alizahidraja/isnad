@@ -23,35 +23,47 @@ import time
 os.environ["ISNAD_DATABASE_URL"] = "sqlite:///data/isnad_full_verify.db"
 os.environ.pop("ISNAD_POLICY", None)
 
-from isnad.storage.sqlalchemy import drop_db, init_db, reset_engine, get_session
+from isnad.storage.sqlalchemy import drop_db, get_session, init_db, reset_engine
 
 reset_engine()
 drop_db("sqlite:///data/isnad_full_verify.db")
 init_db("sqlite:///data/isnad_full_verify.db")
 
 # ── Imports ──────────────────────────────────────────────────────
-from isnad.types import (
-    NarratorGrade, ChainGrade, TransformType, NarratorType,
-    AdalahGrade, DabtGrade, Action, ContentVerdict,
-    EvidenceType, EvidenceAction,
-)
-from isnad.models import Base, RijalClaim, ChainLink, NarratorRegistry, NarratorEvidence
-from isnad.core.registry import Registry, RegistryDB, ThresholdTransitionPolicy, Narrator
-from isnad.core.registry import BayesianTransitionPolicy, BetaState
-from isnad.core.chain import Chain, ChainLinkSpec, normalize_claim_text, make_claim_id, store_claim
-from isnad.core.grading import grade_chain, RefinedWeakestLink
+from fastapi.testclient import TestClient
+
+from isnad.api.app import app
+from isnad.api.dependencies import _build_policy, _metrics_counters
+from isnad.api.endpoints.claims import _app_state
+from isnad.core.chain import Chain, ChainLinkSpec, make_claim_id, normalize_claim_text, store_claim
 from isnad.core.corroboration import (
-    CappedCorroborationPolicy, SharedLineageDetector, evaluate_corroboration,
+    CappedCorroborationPolicy,
+    CorroborationEngine,
+    SharedLineageDetector,
+    evaluate_corroboration,
 )
-from isnad.core.corroboration import CorroborationEngine
+from isnad.core.decision import decide, describe_action
+from isnad.core.grading import grade_chain
+from isnad.core.registry import (
+    BayesianTransitionPolicy,
+    Registry,
+    ThresholdTransitionPolicy,
+)
 from isnad.critics.embedding import EmbeddingCritic, TFIDFIndex
 from isnad.critics.nli import HybridCritic, LocalNLICritic
-from isnad.core.decision import decide, describe_action
-
-from fastapi.testclient import TestClient
-from isnad.api.app import app
-from isnad.api.endpoints.claims import _app_state
-from isnad.api.dependencies import _build_policy, _metrics_counters
+from isnad.models import Base, NarratorEvidence, NarratorRegistry, RijalClaim
+from isnad.types import (
+    Action,
+    AdalahGrade,
+    ChainGrade,
+    ContentVerdict,
+    DabtGrade,
+    EvidenceAction,
+    EvidenceType,
+    NarratorGrade,
+    NarratorType,
+    TransformType,
+)
 
 SEP = "═" * 64
 PASS = "✅"
@@ -861,6 +873,7 @@ os.environ["ISNAD_SEED_CONFIG"] = json.dumps([
     {"narrator_id": "env_seed_2", "domain": "physics", "grade": "acceptable"},
 ])
 from isnad.api.dependencies import _parse_seed_config
+
 seeds = _parse_seed_config()
 check("ISNAD_SEED_CONFIG parsed 2 narrators", len(seeds) == 2)
 check("Seed 1: reliable", seeds[0][2] == NarratorGrade.RELIABLE)
@@ -903,3 +916,4 @@ else:
     print(f"{PASS} Bayesian engine, corroboration with madar detection,")
     print(f"{PASS} SQLAlchemy persistence, HybridCritic fallback,")
     print(f"{PASS} decision matrix, API endpoints — all wired and verified.\n")
+# ruff: noqa: E402

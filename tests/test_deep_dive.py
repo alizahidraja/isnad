@@ -33,17 +33,20 @@ _parent = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file
 sys.path.insert(0, os.path.join(_parent, "src"))
 
 from isnad.core.chain import Chain, ChainLinkSpec
-from isnad.core.grading import grade_chain
-from isnad.core.decision import decide, describe_action
-from isnad.core.registry import Registry, BayesianTransitionPolicy
 from isnad.core.corroboration import (
     CorroborationEngine,
-    SharedLineageDetector,
-    evaluate_corroboration,
 )
+from isnad.core.decision import decide
+from isnad.core.grading import grade_chain
+from isnad.core.registry import Registry
 from isnad.types import (
-    Action, ChainGrade, ContentVerdict, EvidenceAction, EvidenceType,
-    NarratorGrade, TransformType,
+    Action,
+    ChainGrade,
+    ContentVerdict,
+    EvidenceAction,
+    EvidenceType,
+    NarratorGrade,
+    TransformType,
 )
 
 SEP = "═" * 72
@@ -68,7 +71,7 @@ def note(msg: str) -> None:
 # ═══════════════════════════════════════════════════════════════════
 print(f"\n{SEP}")
 print("ISNAD PIPELINE DEEP-DIVE")
-print(f"FACT: 'momentum is mass times velocity' (p = mv)")
+print("FACT: 'momentum is mass times velocity' (p = mv)")
 print(SEP)
 
 # ── Setup: build the canonical chain ────────────────────────────
@@ -461,3 +464,4 @@ Observations from the deep-dive:
    pair, the action is always the same. Human reviewers are the only way
    out of REVIEW and QUARANTINE states.
 """)
+# ruff: noqa: E402

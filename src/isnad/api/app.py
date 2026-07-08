@@ -4,13 +4,13 @@ from __future__ import annotations
 
 import logging
 from contextlib import asynccontextmanager
-from typing import Any
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from isnad.api.endpoints.claims import router as claims_router
-from isnad.api.endpoints.health import metrics_router, router as health_router
+from isnad.api.endpoints.health import metrics_router
+from isnad.api.endpoints.health import router as health_router
 from isnad.api.endpoints.narrators import router as narrators_router
 from isnad.storage.sqlalchemy import init_db
 
