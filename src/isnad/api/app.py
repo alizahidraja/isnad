@@ -38,7 +38,9 @@ def create_app() -> FastAPI:
         version="2.0.0",
         lifespan=_lifespan,
     )
-    app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+    app.add_middleware(
+        CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]
+    )
 
     app.include_router(health_router)
     app.include_router(metrics_router)  # /metrics (Prometheus scrape target)

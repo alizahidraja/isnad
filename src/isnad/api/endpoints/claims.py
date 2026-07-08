@@ -33,8 +33,7 @@ class AppState:
 
     def find_corroborating(self, normalized_text: str, exclude_id: str) -> list[str]:
         return [
-            cid for cid in self._corroboration_index.get(normalized_text, [])
-            if cid != exclude_id
+            cid for cid in self._corroboration_index.get(normalized_text, []) if cid != exclude_id
         ]
 
 
@@ -58,11 +57,15 @@ async def list_claims(
     total = len(all_claims)
     page = all_claims[offset : offset + limit]
     return {
-        "total": total, "limit": limit, "offset": offset,
+        "total": total,
+        "limit": limit,
+        "offset": offset,
         "claims": [
             {
-                "claim_id": c["claim_id"], "claim_text": c["claim_text"][:200],
-                "chain_grade": c["chain_grade"], "action": c["action"],
+                "claim_id": c["claim_id"],
+                "claim_text": c["claim_text"][:200],
+                "chain_grade": c["chain_grade"],
+                "action": c["action"],
                 "domain": c.get("domain", "general"),
                 "corroborating_claims": c.get("corroborating_claims", 0),
             }
@@ -100,7 +103,9 @@ async def submit_claim(
 
     link_narrator_ids = [l.narrator_id for l in chain.links]
     link_grades = [reg.registry.get_grade(l.narrator_id, l.domain) for l in chain.links]
-    cg = grade_chain(link_grades, [l.transform_type for l in chain.links], is_complete=chain.is_complete)
+    cg = grade_chain(
+        link_grades, [l.transform_type for l in chain.links], is_complete=chain.is_complete
+    )
 
     # Corroboration
     all_claim_records = list(state.claims.values())
@@ -117,8 +122,10 @@ async def submit_claim(
 
     corr_engine = CorroborationEngine()
     corr_result = corr_engine.evaluate(
-        claim_text=normalized, base_chain_grade=cg,
-        base_narrators=link_narrator_ids, all_chains=all_chain_dicts,
+        claim_text=normalized,
+        base_chain_grade=cg,
+        base_narrators=link_narrator_ids,
+        all_chains=all_chain_dicts,
         narrator_metadata=narrator_metadata,
     )
     effective_grade = corr_result.upgraded_grade if corr_result.upgraded else cg
@@ -128,7 +135,11 @@ async def submit_claim(
 
     # Content verdict
     existing_texts = [c.get("normalized_text", "") for c in state.claims.values()]
-    cv = critic.evaluate(claim_text, normalized, existing_texts, domain) if critic else ContentVerdict.UNVERIFIABLE
+    cv = (
+        critic.evaluate(claim_text, normalized, existing_texts, domain)
+        if critic
+        else ContentVerdict.UNVERIFIABLE
+    )
     action = decide(effective_grade, cv)
 
     claim_id = str(uuid.uuid4())
@@ -136,14 +147,18 @@ async def submit_claim(
     corroborating = state.find_corroborating(normalized, claim_id)
 
     record = {
-        "claim_id": claim_id, "claim_text": claim_text,
-        "normalized_text": normalized, "chain_grade": effective_grade.value,
-        "content_verdict": cv.value, "action": action.value,
+        "claim_id": claim_id,
+        "claim_text": claim_text,
+        "normalized_text": normalized,
+        "chain_grade": effective_grade.value,
+        "content_verdict": cv.value,
+        "action": action.value,
         "description": describe_action(effective_grade, cv),
         "chain": chain.to_jsonb(),
         "served": action.value in ("serve", "serve_with_caveat"),
         "quarantined": action.value in ("quarantine", "reject_and_quarantine_narrator"),
-        "domain": domain, "page_slug": page_slug,
+        "domain": domain,
+        "page_slug": page_slug,
         "corroborating_claims": len(corroborating),
         "narrator_ids": link_narrator_ids,
         "corroboration_result": {
@@ -159,8 +174,13 @@ async def submit_claim(
     state.claims[claim_id] = record
 
     try:
-        store_claim(session=reg.session, claim_text=claim_text,
-                    page_slug=page_slug, chain=chain, chain_grade=effective_grade.value)
+        store_claim(
+            session=reg.session,
+            claim_text=claim_text,
+            page_slug=page_slug,
+            chain=chain,
+            chain_grade=effective_grade.value,
+        )
     except Exception as exc:
         logger.warning(f"Failed to persist claim to DB: {exc}")
 
@@ -184,4 +204,9 @@ async def get_claim_chain(claim_id: str) -> dict:
     if claim_id not in state.claims:
         raise HTTPException(404)
     r = state.claims[claim_id]
-    return {"claim_id": claim_id, "chain": r["chain"], "chain_grade": r["chain_grade"], "action": r["action"]}
+    return {
+        "claim_id": claim_id,
+        "chain": r["chain"],
+        "chain_grade": r["chain_grade"],
+        "action": r["action"],
+    }

@@ -81,7 +81,9 @@ class LLMCritic:
 
         # Retrieve top-k similar corpus claims using TF-IDF
         self._retriever.evaluate(  # builds index if needed
-            normalized_claim, normalized_claim, corpus_claims,
+            normalized_claim,
+            normalized_claim,
+            corpus_claims,
         )
         # Reuse the built index to get similarities
         if self._retriever._index is None:

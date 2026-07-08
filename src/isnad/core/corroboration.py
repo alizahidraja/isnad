@@ -271,6 +271,7 @@ def find_corroborating_claims(
         if c.get("normalized_text") == normalized_claim and c.get("claim_id") != claim_id
     ]
 
+
 # ===========================================================================
 # CorroborationEngine — information-theoretic with SharedLineageDetector
 # ===========================================================================
@@ -398,11 +399,13 @@ class CorroborationEngine:
                 cg = ChainGrade(cg_raw)
             except ValueError:
                 cg = ChainGrade.DAIF
-            corroborating.append({
-                "grade": cg,
-                "narrators": chain.get("narrator_ids", []),
-                "source": chain.get("source", ""),
-            })
+            corroborating.append(
+                {
+                    "grade": cg,
+                    "narrators": chain.get("narrator_ids", []),
+                    "source": chain.get("source", ""),
+                }
+            )
 
         # Filter: must be truly independent (narrator sets + lineage detection)
         independent = []
@@ -427,9 +430,7 @@ class CorroborationEngine:
             )
 
         # Minimum-grade gate: at least one corroborating chain must clear threshold
-        gating_passed = any(
-            c["grade"] >= self.min_gate_grade for c in independent
-        )
+        gating_passed = any(c["grade"] >= self.min_gate_grade for c in independent)
         if not gating_passed:
             return CorroborationResult(
                 base_grade=base_chain_grade,
@@ -438,8 +439,7 @@ class CorroborationEngine:
                 independent_chains=len(independent),
                 effective_weight=float(len(independent)),
                 upgraded=False,
-                reason=f"No corroborating chain meets min grade "
-                f"{self.min_gate_grade.value}",
+                reason=f"No corroborating chain meets min grade {self.min_gate_grade.value}",
             )
 
         # Information-theoretic corroboration (HadithRank-style)
@@ -478,8 +478,7 @@ class CorroborationEngine:
                 independent_chains=len(independent),
                 effective_weight=effective_weight,
                 upgraded=False,
-                reason=f"Effective weight {effective_weight:.1f} < "
-                f"{self.min_independent_chains}",
+                reason=f"Effective weight {effective_weight:.1f} < {self.min_independent_chains}",
             )
 
         # Apply capped upgrade

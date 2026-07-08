@@ -234,8 +234,7 @@ class CalibratedThresholdPolicy:
             1
             for e in evidence_history
             if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-            and EvidenceType(str(e.get("evidence_type", "")))
-            == EvidenceType.CORROBORATION_OUTCOME
+            and EvidenceType(str(e.get("evidence_type", ""))) == EvidenceType.CORROBORATION_OUTCOME
         )
 
         if action == EvidenceAction.JARH:
@@ -443,9 +442,7 @@ class Registry:
 
     def __init__(self, transition_policy: TransitionPolicy | None = None):
         self._narrators: dict[tuple[str, str], Narrator] = {}
-        self.transition_policy: TransitionPolicy = (
-            transition_policy or BayesianTransitionPolicy()
-        )
+        self.transition_policy: TransitionPolicy = transition_policy or BayesianTransitionPolicy()
 
     # ------------------------------------------------------------------
     # CRUD
@@ -611,9 +608,7 @@ class RegistryDB:
         transition_policy: TransitionPolicy | None = None,
     ):
         self.session = session
-        self.registry = Registry(
-            transition_policy=transition_policy or BayesianTransitionPolicy()
-        )
+        self.registry = Registry(transition_policy=transition_policy or BayesianTransitionPolicy())
 
     def load(self) -> None:
         """Load all narrators from the database into the in-memory registry."""

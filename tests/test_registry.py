@@ -187,8 +187,10 @@ class TestBayesianTransitionPolicy:
         """Beta(2,1): mean=0.67 → WEAK (just barely above 0.50)."""
         reg = Registry()
         new_grade = reg.record_evidence(
-            "model-A", "physics",
-            EvidenceType.EVAL_HARNESS, EvidenceAction.TADIL,
+            "model-A",
+            "physics",
+            EvidenceType.EVAL_HARNESS,
+            EvidenceAction.TADIL,
             "Passed eval",
         )
         assert new_grade == NarratorGrade.WEAK
@@ -198,13 +200,17 @@ class TestBayesianTransitionPolicy:
         reg = Registry()
         for i in range(5):
             reg.record_evidence(
-                "model-B", "physics",
-                EvidenceType.CORROBORATION_OUTCOME, EvidenceAction.TADIL,
+                "model-B",
+                "physics",
+                EvidenceType.CORROBORATION_OUTCOME,
+                EvidenceAction.TADIL,
                 f"Pass {i}",
             )
         reg.record_evidence(
-            "model-B", "physics",
-            EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH,
+            "model-B",
+            "physics",
+            EvidenceType.POST_HOC_AUDIT,
+            EvidenceAction.JARH,
             "Minor error",
         )
         assert reg.get_grade("model-B", "physics") == NarratorGrade.ACCEPTABLE
@@ -214,8 +220,10 @@ class TestBayesianTransitionPolicy:
         reg = Registry()
         for i in range(10):
             reg.record_evidence(
-                "model-C", "physics",
-                EvidenceType.CORROBORATION_OUTCOME, EvidenceAction.TADIL,
+                "model-C",
+                "physics",
+                EvidenceType.CORROBORATION_OUTCOME,
+                EvidenceAction.TADIL,
                 f"Pass {i}",
             )
         assert reg.get_grade("model-C", "physics") == NarratorGrade.RELIABLE
@@ -225,8 +233,10 @@ class TestBayesianTransitionPolicy:
         reg = Registry()
         for i in range(3):
             reg.record_evidence(
-                "model-D", "physics",
-                EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH,
+                "model-D",
+                "physics",
+                EvidenceType.POST_HOC_AUDIT,
+                EvidenceAction.JARH,
                 f"Failure {i}",
             )
         assert reg.get_grade("model-D", "physics") == NarratorGrade.REJECTED
@@ -255,8 +265,10 @@ class TestBayesianTransitionPolicy:
         # The Bayesian policy derives grades from posterior, not sticky states.
         # After 1 TADIL, state is built from all evidence.
         new_grade = reg.record_evidence(
-            "model-G", "general",
-            EvidenceType.HUMAN_REVIEW, EvidenceAction.TADIL,
+            "model-G",
+            "general",
+            EvidenceType.HUMAN_REVIEW,
+            EvidenceAction.TADIL,
             "Human review passed",
         )
         # With 1 positive, 0 adverse → Beta(2,1), mean=0.67 → WEAK

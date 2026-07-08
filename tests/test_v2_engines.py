@@ -1,6 +1,5 @@
 """Tests for Bayesian grading engine and corroboration engine."""
 
-
 from isnad.core.corroboration import CorroborationEngine
 from isnad.core.registry import BayesianTransitionPolicy, BetaState, CalibratedThresholdPolicy
 from isnad.types import ChainGrade, NarratorGrade
@@ -50,7 +49,8 @@ class TestBayesianTransitionPolicy:
     def test_version_bump_resets(self):
         policy = BayesianTransitionPolicy()
         result = policy.evaluate_transition(
-            NarratorGrade.RELIABLE, [],
+            NarratorGrade.RELIABLE,
+            [],
             {"evidence_type": "version_bump", "action": "neutral"},
         )
         assert result == NarratorGrade.UNGRADED
@@ -60,7 +60,8 @@ class TestBayesianTransitionPolicy:
         # 5 positive, 1 adverse → should be high confidence
         history = [{"action": "tadil"} for _ in range(5)] + [{"action": "jarh"}]
         result = policy.evaluate_transition(
-            NarratorGrade.UNGRADED, history,
+            NarratorGrade.UNGRADED,
+            history,
             {"evidence_type": "post_hoc_audit", "action": "tadil"},
         )
         assert result in (NarratorGrade.RELIABLE, NarratorGrade.ACCEPTABLE)
@@ -77,7 +78,8 @@ class TestCalibratedThresholdPolicy:
         policy = CalibratedThresholdPolicy(downgrade_threshold=5)
         history = [{"action": "jarh"} for _ in range(5)]
         result = policy.evaluate_transition(
-            NarratorGrade.RELIABLE, history,
+            NarratorGrade.RELIABLE,
+            history,
             {"evidence_type": "post_hoc_audit", "action": "jarh"},
         )
         assert result == NarratorGrade.ACCEPTABLE
@@ -88,7 +90,8 @@ class TestCalibratedThresholdPolicy:
         history = [{"action": "tadil", "evidence_type": "corroboration_outcome"} for _ in range(6)]
         history += [{"action": "tadil", "evidence_type": "post_hoc_audit"} for _ in range(4)]
         result = policy.evaluate_transition(
-            NarratorGrade.WEAK, history,
+            NarratorGrade.WEAK,
+            history,
             {"evidence_type": "corroboration_outcome", "action": "tadil"},
         )
         assert result == NarratorGrade.ACCEPTABLE
@@ -103,9 +106,18 @@ class TestCorroborationEngine:
 
     def test_needs_independent_chains(self):
         engine = CorroborationEngine(min_independent_chains=2)
-        result = engine.evaluate("F=ma", ChainGrade.DAIF, ["n1", "n2"], [
-            {"claim_text": "F=ma", "chain_grade": "hasan", "narrator_ids": ["n1", "n3"]},  # shares n1
-        ])
+        result = engine.evaluate(
+            "F=ma",
+            ChainGrade.DAIF,
+            ["n1", "n2"],
+            [
+                {
+                    "claim_text": "F=ma",
+                    "chain_grade": "hasan",
+                    "narrator_ids": ["n1", "n3"],
+                },  # shares n1
+            ],
+        )
         assert not result.upgraded
 
     def test_daif_upgraded_with_good_corroboration(self):

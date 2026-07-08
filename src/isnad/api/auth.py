@@ -8,9 +8,12 @@ from fastapi import Depends, HTTPException, Security
 from fastapi.security import APIKeyHeader
 
 _API_KEYS = {
-    k: r for k, r in [
-        kv.split(":") for kv in
-        os.environ.get("ISNAD_API_KEYS", "isnad-admin:admin,isnad-reader:reader").split(",")
+    k: r
+    for k, r in [
+        kv.split(":")
+        for kv in os.environ.get("ISNAD_API_KEYS", "isnad-admin:admin,isnad-reader:reader").split(
+            ","
+        )
         if ":" in kv
     ]
 } or {"isnad-admin": "admin"}

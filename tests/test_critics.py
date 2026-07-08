@@ -89,9 +89,11 @@ class TestEmbeddingCritic:
         """EmbeddingCritic accepts no embed_fn — uses built-in TF-IDF.
         For custom embeddings, use HybridCritic."""
         critic = EmbeddingCritic()
-        result = critic.evaluate("force equals mass times acceleration",
-                                  "force equals mass times acceleration",
-                                  ["force equals mass times acceleration"])
+        result = critic.evaluate(
+            "force equals mass times acceleration",
+            "force equals mass times acceleration",
+            ["force equals mass times acceleration"],
+        )
         # TF-IDF with identical text → very high similarity → CONSISTENT
         assert result == ContentVerdict.CONSISTENT
 

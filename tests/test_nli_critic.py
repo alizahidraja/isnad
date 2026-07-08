@@ -1,6 +1,5 @@
 """Tests for NLI-based critics — graceful degradation, interface compliance."""
 
-
 from isnad.critics.nli import HybridCritic, LocalNLICritic
 from isnad.types import ContentVerdict
 
@@ -10,8 +9,10 @@ class TestLocalNLICritic:
         """Without sentence-transformers, returns UNVERIFIABLE."""
         critic = LocalNLICritic()
         result = critic.evaluate(
-            "F = ma", "f = m a",
-            ["force equals mass times acceleration"], "physics",
+            "F = ma",
+            "f = m a",
+            ["force equals mass times acceleration"],
+            "physics",
         )
         assert result == ContentVerdict.UNVERIFIABLE
 

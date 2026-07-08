@@ -88,19 +88,26 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
 
     # Negation
     for pos, neg in [
-        (" is ", " is not "), (" does ", " does not "),
-        (" can ", " cannot "), (" has ", " has no "),
+        (" is ", " is not "),
+        (" does ", " does not "),
+        (" can ", " cannot "),
+        (" has ", " has no "),
     ]:
         if (pos in c_low and neg in cc_low) or (neg in c_low and pos in cc_low):
             return True
 
     # Opposite words
     for a, b in [
-        ("increases", "decreases"), ("positive", "negative"),
-        ("attractive", "repulsive"), ("faster", "slower"),
-        ("higher", "lower"), ("larger", "smaller"),
-        ("up", "down"), ("hotter", "colder"),
-        ("clockwise", "counterclockwise"), ("left", "right"),
+        ("increases", "decreases"),
+        ("positive", "negative"),
+        ("attractive", "repulsive"),
+        ("faster", "slower"),
+        ("higher", "lower"),
+        ("larger", "smaller"),
+        ("up", "down"),
+        ("hotter", "colder"),
+        ("clockwise", "counterclockwise"),
+        ("left", "right"),
     ]:
         if (a in c_low and b in cc_low) or (b in c_low and a in cc_low):
             return True

@@ -227,5 +227,8 @@ class HybridCritic:
             )
 
         return self._nli_critic.evaluate(
-            claim_text, normalized_claim, top_corpus, domain,
+            claim_text,
+            normalized_claim,
+            top_corpus,
+            domain,
         )
