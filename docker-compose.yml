@@ -8,6 +8,10 @@ services:
     environment:
       - ISNAD_API_KEYS=isnad-admin:admin,isnad-reader:reader
       - ISNAD_DATABASE_URL=postgresql://isnad:isnad@db:5432/isnad
+      - ISNAD_POLICY=bayesian
+      - SENTENCE_TRANSFORMERS_HOME=/app/.cache/sentence_transformers
+    volumes:
+      - nli_cache:/app/.cache/sentence_transformers
     depends_on:
       db:
         condition: service_healthy
@@ -45,3 +49,4 @@ services:
 
 volumes:
   pgdata:
+  nli_cache:

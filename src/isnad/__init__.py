@@ -34,11 +34,13 @@ from isnad.corroboration import (
     SharedLineageDetector,
     evaluate_corroboration,
 )
-from isnad.critics import EmbeddingCritic, LLMCritic
+from isnad.corroboration_engine import CorroborationEngine
+from isnad.critics import EmbeddingCritic, HybridCritic, LLMCritic, LocalNLICritic
 from isnad.grading import RefinedWeakestLink, grade_chain
+from isnad.grading_bayesian import BayesianTransitionPolicy
 from isnad.matn import DeterministicRuleCritic
 from isnad.matrix import decide, describe_action
-from isnad.registry import Registry, ThresholdTransitionPolicy
+from isnad.registry import Registry, RegistryDB, ThresholdTransitionPolicy
 from isnad.types import (
     Action,
     AdalahGrade,
@@ -67,17 +69,23 @@ __all__ = [
     "CappedCorroborationPolicy",
     "SharedLineageDetector",
     "evaluate_corroboration",
+    "CorroborationEngine",
     # grading
     "RefinedWeakestLink",
     "grade_chain",
+    "BayesianTransitionPolicy",
     # matn
     "DeterministicRuleCritic",
     "LLMCritic",
+    "HybridCritic",
+    "LocalNLICritic",
+    "EmbeddingCritic",
     # matrix
     "decide",
     "describe_action",
     # registry
     "Registry",
+    "RegistryDB",
     "ThresholdTransitionPolicy",
     # types
     "Action",

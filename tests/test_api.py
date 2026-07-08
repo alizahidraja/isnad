@@ -1,16 +1,29 @@
-"""Tests for ISNAD API v2 — DI, async support, corroboration indexing."""
+"""Tests for ISNAD API v3 — DI, SQLAlchemy persistence, corroboration indexing."""
+
+import os
 
 import pytest
 from fastapi.testclient import TestClient
 
 from isnad.api.main import _app_state, app
+from isnad.db import drop_db, init_db, reset_engine
+
+TEST_DB_URL = "sqlite:///isnad_test.db"
 
 client = TestClient(app)
 
 
 @pytest.fixture(autouse=True)
 def reset_state():
-    """Reset app state between tests — no global singleton Registry."""
+    """Reset app state and initialize a clean test DB between tests."""
+    # Set env var so DB module re-reads it on engine creation
+    os.environ["ISNAD_DATABASE_URL"] = TEST_DB_URL
+    reset_engine()
+    drop_db(TEST_DB_URL)
+    init_db(TEST_DB_URL)
+    _app_state.claims.clear()
+    _app_state._corroboration_index.clear()
+    yield
     _app_state.claims.clear()
     _app_state._corroboration_index.clear()
 
@@ -57,6 +70,7 @@ class TestClaims:
             "normalized_text": "energy is conserved",
             "chain": [{"narrator_id": "source:A"}],
         }, headers={"X-API-Key": "isnad-admin"})
+        assert r1.status_code == 200
         r2 = client.post("/v1/claims", json={
             "claim_text": "Energy is conserved in all systems",
             "normalized_text": "energy is conserved",

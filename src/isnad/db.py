@@ -21,9 +21,14 @@ DATABASE_URL = os.environ.get(
 )
 
 
+def _get_db_url() -> str:
+    """Re-read DATABASE_URL from env var (allows test overrides)."""
+    return os.environ.get("ISNAD_DATABASE_URL", DATABASE_URL)
+
+
 def create_engine_from_url(url: str | None = None) -> Engine:
     """Create a SQLAlchemy engine from the given URL or env var."""
-    db_url = url or DATABASE_URL
+    db_url = url or _get_db_url()
     connect_args: dict[str, object] = {}
     if db_url.startswith("sqlite"):
         connect_args["check_same_thread"] = False

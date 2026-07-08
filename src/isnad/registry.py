@@ -17,6 +17,7 @@ from datetime import UTC, datetime
 
 from sqlalchemy.orm import Session
 
+from isnad.grading_bayesian import BayesianTransitionPolicy
 from isnad.models import (
     NarratorEvidence,
     NarratorRegistry,
@@ -211,7 +212,9 @@ class Registry:
 
     def __init__(self, transition_policy: TransitionPolicy | None = None):
         self._narrators: dict[tuple[str, str], Narrator] = {}
-        self.transition_policy: TransitionPolicy = transition_policy or ThresholdTransitionPolicy()
+        self.transition_policy: TransitionPolicy = (
+            transition_policy or BayesianTransitionPolicy()
+        )
 
     # ------------------------------------------------------------------
     # CRUD
@@ -377,7 +380,9 @@ class RegistryDB:
         transition_policy: TransitionPolicy | None = None,
     ):
         self.session = session
-        self.registry = Registry(transition_policy=transition_policy)
+        self.registry = Registry(
+            transition_policy=transition_policy or BayesianTransitionPolicy()
+        )
 
     def load(self) -> None:
         """Load all narrators from the database into the in-memory registry."""
