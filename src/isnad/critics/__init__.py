@@ -15,5 +15,6 @@ for precision/recall and false-consistent rates before deploying.
 
 from isnad.critics.embedding import EmbeddingCritic
 from isnad.critics.llm import LLMCritic
+from isnad.critics.nli import HybridCritic, LocalNLICritic
 
-__all__ = ["EmbeddingCritic", "LLMCritic"]
+__all__ = ["EmbeddingCritic", "LLMCritic", "LocalNLICritic", "HybridCritic"]
