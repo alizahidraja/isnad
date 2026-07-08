@@ -23,13 +23,12 @@ Mathematical basis:
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from isnad.types import (
     EvidenceAction,
     EvidenceType,
     NarratorGrade,
-    TransitionPolicy,
 )
 
 

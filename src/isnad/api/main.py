@@ -16,18 +16,18 @@ from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
 from typing import Any
 
-from fastapi import Depends, FastAPI, HTTPException, Request, Security
+from fastapi import Depends, FastAPI, HTTPException, Security
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import APIKeyHeader
 from pydantic import BaseModel, Field
 
 from isnad.chain import Chain, ChainLinkSpec
+from isnad.critics.embedding import EmbeddingCritic
 from isnad.grading import grade_chain
 from isnad.matrix import decide, describe_action
 from isnad.registry import Registry
 from isnad.types import (
     Action,
-    ChainGrade,
     ContentVerdict,
     EvidenceAction,
     EvidenceType,
@@ -72,6 +72,14 @@ _shared_registry = Registry()
 _shared_registry.register("source:openstax", "physics", grade=NarratorGrade.RELIABLE)
 _shared_registry.register("source:crowell", "physics", grade=NarratorGrade.RELIABLE)
 _shared_registry.register("pdf-scraper@1.2", "physics", grade=NarratorGrade.RELIABLE)
+
+# Pluggable content critic — swap for NLI or LLM in production
+_shared_critic = EmbeddingCritic()  # TF-IDF, zero-deps, works out of the box
+
+
+def get_critic():
+    """Dependency-injected critic — swappable per deployment."""
+    return _shared_critic
 
 
 @dataclass
@@ -169,6 +177,7 @@ async def metrics() -> dict:
 async def submit_claim(
     body: ClaimSubmit,
     reg: Registry = Depends(get_registry),
+    critic: Any = Depends(get_critic),
     role: str = Depends(require_auth),
 ) -> dict:
     state = get_state()
@@ -189,11 +198,16 @@ async def submit_claim(
     link_grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
     cg = grade_chain(link_grades, [l.transform_type for l in chain.links], is_complete=chain.is_complete)
 
-    cv = ContentVerdict.UNVERIFIABLE  # caller supplies real critic
+    normalized = body.normalized_text or body.claim_text.lower().strip()
+
+    # Content verdict — uses the pluggable critic (TF-IDF by default)
+    existing_texts = [c.get("normalized_text", "") for c in state.claims.values()]
+    cv = critic.evaluate(
+        body.claim_text, normalized, existing_texts, body.domain,
+    ) if critic else ContentVerdict.UNVERIFIABLE
     action = decide(cg, cv)
 
     claim_id = str(uuid.uuid4())
-    normalized = body.normalized_text or body.claim_text.lower().strip()
 
     # Index for corroboration (O(1) lookup)
     state.index_claim(claim_id, normalized)

@@ -34,8 +34,9 @@ from isnad.corroboration import (
     SharedLineageDetector,
     evaluate_corroboration,
 )
+from isnad.critics import EmbeddingCritic, LLMCritic
 from isnad.grading import RefinedWeakestLink, grade_chain
-from isnad.matn import DeterministicRuleCritic, LLMCritic
+from isnad.matn import DeterministicRuleCritic
 from isnad.matrix import decide, describe_action
 from isnad.registry import Registry, ThresholdTransitionPolicy
 from isnad.types import (

@@ -20,8 +20,6 @@ for testing and offline demonstration.
 
 from __future__ import annotations
 
-import os
-
 from isnad.types import ContentVerdict
 
 # ===========================================================================
@@ -114,85 +112,9 @@ class DeterministicRuleCritic:
 
 
 # ===========================================================================
-# LLM-backed critic (optional, reference integration)
+# LLM-backed critic — MOVED to isnad.critics.llm
 # ===========================================================================
-
-
-class LLMCritic:
-    """LLM-backed content critic using Anthropic's API.
-
-    This is one instantiation of a parameter the framework leaves open
-    (see paper §4.4).  Swap freely.
-
-    REFERENCE INTEGRATION STUB: Sends the claim + corpus context to an
-    Anthropic model and parses the structured response.  A production
-    version would add batching, caching, confidence scores, multi-model
-    ensemble, and domain-specific prompting templates.
-    """
-
-    def __init__(self, api_key: str | None = None, model: str = "claude-sonnet-4-20250514"):
-        self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY", "")
-        self.model = model
-
-    def evaluate(
-        self,
-        claim_text: str,
-        normalized_claim: str,
-        corpus_claims: list[str],
-        domain: str = "",
-    ) -> ContentVerdict:
-        """Evaluate a claim against the corpus using an LLM.
-
-        Returns UNVERIFIABLE if no API key is set (graceful degradation).
-        """
-        if not self.api_key:
-            return ContentVerdict.UNVERIFIABLE
-
-        try:
-            import anthropic
-
-            client = anthropic.Anthropic(api_key=self.api_key)
-
-            corpus_text = "\n".join(
-                f"- {c}"
-                for c in corpus_claims[:20]  # limit context window
-            )
-            prompt = self._build_prompt(claim_text, corpus_text, domain)
-
-            response = client.messages.create(
-                model=self.model,
-                max_tokens=256,
-                messages=[{"role": "user", "content": prompt}],
-            )
-
-            # response.content is a list of ContentBlock union types;
-            # the first block is typically TextBlock with a .text attribute
-            block = response.content[0]
-            verdict_text = getattr(block, "text", "").strip().upper()
-            return self._parse_verdict(verdict_text)
-
-        except Exception:
-            # Graceful degradation: any failure → UNVERIFIABLE
-            return ContentVerdict.UNVERIFIABLE
-
-    @staticmethod
-    def _build_prompt(claim_text: str, corpus_text: str, domain: str) -> str:
-        domain_line = f"Domain: {domain}\n" if domain else ""
-        return (
-            "You are a content critic for a knowledge base. "
-            "Evaluate whether the following claim contradicts existing corpus claims.\n\n"
-            f"{domain_line}"
-            f"New claim: {claim_text}\n\n"
-            f"Existing corpus claims:\n{corpus_text}\n\n"
-            "Respond with exactly one word: "
-            "CONSISTENT, CONTRADICTION, or UNVERIFIABLE."
-        )
-
-    @staticmethod
-    def _parse_verdict(text: str) -> ContentVerdict:
-        text = text.strip().upper()
-        if "CONSISTENT" in text:
-            return ContentVerdict.CONSISTENT
-        if "CONTRADICTION" in text:
-            return ContentVerdict.CONTRADICTION
-        return ContentVerdict.UNVERIFIABLE
+# The LLMCritic has been consolidated into isnad.critics.llm.LLMCritic
+# which includes retrieval-augmented context and disk caching.
+# Import from there: from isnad.critics import LLMCritic
+# This module retains only the DeterministicRuleCritic for testing/offline use.

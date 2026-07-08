@@ -18,10 +18,9 @@ not installed, the critic gracefully degrades to UNVERIFIABLE.
 
 from __future__ import annotations
 
-import os
-from typing import Any, Callable
+from typing import Any
 
-from isnad.types import ContentCritic, ContentVerdict
+from isnad.types import ContentVerdict
 
 _SENTENCE_TRANSFORMERS_AVAILABLE = False
 try:

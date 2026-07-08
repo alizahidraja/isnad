@@ -16,9 +16,8 @@ from __future__ import annotations
 import math
 import re
 from collections import Counter
-from typing import Any, Callable
 
-from isnad.types import ContentCritic, ContentVerdict
+from isnad.types import ContentVerdict
 
 
 def _tokenize(text: str) -> list[str]:

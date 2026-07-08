@@ -1,10 +1,9 @@
 """Tests for Bayesian grading engine and corroboration engine."""
 
-import pytest
 
-from isnad.grading_bayesian import BayesianTransitionPolicy, BetaState, CalibratedThresholdPolicy
 from isnad.corroboration_engine import CorroborationEngine
-from isnad.types import ChainGrade, EvidenceAction, EvidenceType, NarratorGrade
+from isnad.grading_bayesian import BayesianTransitionPolicy, BetaState, CalibratedThresholdPolicy
+from isnad.types import ChainGrade, NarratorGrade
 
 
 class TestBetaState:

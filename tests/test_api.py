@@ -3,7 +3,7 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from isnad.api.main import app, _app_state, AppState
+from isnad.api.main import _app_state, app
 
 client = TestClient(app)
 

@@ -18,8 +18,7 @@ warm baseline grades and genuine cross-source overlaps to activate.
 from __future__ import annotations
 
 import math
-from collections import defaultdict
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from isnad.types import ChainGrade, NarratorGrade
 

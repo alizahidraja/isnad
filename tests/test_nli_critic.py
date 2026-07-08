@@ -1,6 +1,5 @@
 """Tests for NLI-based critics — graceful degradation, interface compliance."""
 
-import pytest
 
 from isnad.critics.nli import HybridCritic, LocalNLICritic
 from isnad.types import ContentVerdict
