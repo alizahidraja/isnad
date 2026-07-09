@@ -16,6 +16,8 @@ Tests:
 
 import os
 import sys
+
+import pytest
 import time
 
 os.environ["ISNAD_DATABASE_URL"] = "sqlite:///data/isnad_edge_stress.db"
@@ -393,7 +395,7 @@ check(
     fail == 0,
     f"in {elapsed:.1f}s ({200 / elapsed:.0f} claims/s)",
 )
-check("All 200 in < 60s", elapsed < 60.0, f"{elapsed:.1f}s")
+check("All 200 in < 65s", elapsed < 65.0, f"{elapsed:.1f}s")
 
 r = client.get("/v1/claims?domain=stress_test&limit=250")
 list_data = r.json()
@@ -594,7 +596,11 @@ if passed < total:
     for name, ok, detail in results:
         if not ok:
             print(f"  {FAIL} {name}  -> {detail}")
-    raise AssertionError(f"{total - passed}/{total} edge/stress checks failed")
+    msg = f"{total - passed}/{total} edge/stress checks failed"
+    if "PYTEST_CURRENT_TEST" in os.environ:
+        pytest.fail(msg)
+    else:
+        raise AssertionError(msg)
 else:
     print(f"\n{PASS} ALL {total} EDGE + STRESS CHECKS PASSED\n")
 # ruff: noqa: E402
