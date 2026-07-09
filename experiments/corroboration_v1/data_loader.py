@@ -20,7 +20,7 @@ import requests
 
 WIKIPEDIA_TOPICS = [
     "Quantum mechanics",
-    "Wave-particle duality",
+    "Wave–particle duality",
     "Black hole",
     "General relativity",
     "DNA",
@@ -35,7 +35,7 @@ WIKIPEDIA_TOPICS = [
 
 # Pairs that should yield overlapping factual claims
 OVERLAP_PAIRS = [
-    ("Quantum mechanics", "Wave-particle duality"),
+    ("Quantum mechanics", "Wave–particle duality"),
     ("Black hole", "General relativity"),
     ("DNA", "Natural selection"),
     ("Atom", "Periodic table"),
