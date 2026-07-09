@@ -170,11 +170,13 @@ class TestCappedCorroborationPolicy:
         result = pol.compute_corroborated_grade(
             ChainGrade.DAIF,
             [ChainGrade.HASAN, ChainGrade.HASAN, ChainGrade.DAIF],
-            [1.0, 0.5, 1.0],  # middle one correlated
+            [1.0, 0.5, 1.0],  # second chain correlated (0.5 < 0.8)
         )
-        # DAIF chains are excluded from effective count (only HASAN+ help)
-        # Effective = 1.0 (HASAN independent) + 0.5 (HASAN correlated) = 1.5 < 2
-        assert result == ChainGrade.DAIF
+        # Independent: [HASAN(1.0), DAIF(1.0)]
+        # Effective = (ln(0.10) + ln(0.30) + ln(0.30)) / ln(0.10) ≈ 2.04 ≥ 2.0
+        # DAIF chain contributes to error reduction even though below gate;
+        # min gate passes via the HASAN chain.
+        assert result == ChainGrade.HASAN
 
 
 class TestEvaluateCorroborationIntegration:

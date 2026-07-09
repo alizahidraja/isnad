@@ -128,25 +128,44 @@ class SharedLineageDetector:
 
 
 class CappedCorroborationPolicy:
-    """Default corroboration policy: capped, minimum-gated, correlation-discounted.
+    """Default corroboration policy: information-theoretic, capped, minimum-gated.
 
     This is one instantiation of a parameter the framework leaves open
     (see paper §4.3).  Swap freely.
+
+    Uses HadithRank-style information-theoretic corroboration:
+    multiple independent transmission chains asserting the same claim
+    reduce the combined error probability multiplicatively.
 
     Rules:
     - Base grade is the grade of the chain under evaluation.
     - Corroboration can upgrade at most one tier.
     - Corroboration can never reach SAHIH (automatically capped).
-    - At least one corroborating chain must be HASAN or above (minimum gate).
-    - Correlated chains (independence_score < 0.8) are discounted: they
-      contribute partial weight rather than full weight.
+    - At least one independent corroborating chain must be HASAN or above
+      (minimum gate).
+    - Chains with independence_score below INDEPENDENCE_THRESHOLD (0.8)
+      are excluded: correlated chains do not count as independent.
+    - All independent chains (including DAIF) contribute to the
+      combined error reduction; even weak corroboration adds weight.
+    - The combined log-error ratio must reach MIN_EFFECTIVE_WEIGHT
+      for an upgrade to fire.
     """
 
-    # Constants (reference defaults — see paper §8 for calibration experiment)
+    # Error probabilities per grade tier (HadithRank calibration).
+    # These are reference defaults — calibrate for your domain.
+    ERROR_PROBS: dict[ChainGrade, float] = {
+        ChainGrade.SAHIH: 0.01,
+        ChainGrade.HASAN: 0.10,
+        ChainGrade.DAIF: 0.30,
+        ChainGrade.MAWDU: 0.90,
+    }
+
     MAX_UPGRADE_TIERS: int = 1
     MIN_GATE_GRADE: ChainGrade = ChainGrade.HASAN
     INDEPENDENCE_THRESHOLD: float = 0.8
-    EFFECTIVE_CHAINS_FOR_UPGRADE: int = 2  # need ≥2 effective independent chains
+    MIN_EFFECTIVE_WEIGHT: float = 2.0  # need ≥2 HASAN-equivalent chains of evidence
+
+    # ── public API ──────────────────────────────────────────────────────
 
     def compute_corroborated_grade(
         self,
@@ -155,6 +174,11 @@ class CappedCorroborationPolicy:
         independence_scores: list[float],
     ) -> ChainGrade:
         """Compute the corroboration-upgraded chain grade.
+
+        Uses information-theoretic error multiplication:
+        combined_log_error = Σ ln(p_i)  for each independent chain + base.
+        effective_weight = combined_log_error / ln(p_hasan).
+        Upgrade fires when effective_weight ≥ MIN_EFFECTIVE_WEIGHT.
 
         Args:
             base_grade: Grade of the chain being evaluated.
@@ -165,6 +189,8 @@ class CappedCorroborationPolicy:
         Returns:
             The new ChainGrade after corroboration.
         """
+        import math
+
         if not corroborating_chains:
             return base_grade
 
@@ -172,36 +198,41 @@ class CappedCorroborationPolicy:
         if base_grade == ChainGrade.MAWDU:
             return base_grade
 
-        # --- Minimum gate: at least one corroborating chain must clear threshold ---
-        gating_passed = any(
-            grade >= self.MIN_GATE_GRADE and score >= self.INDEPENDENCE_THRESHOLD
-            for grade, score in zip(corroborating_chains, independence_scores, strict=True)
-        )
-        if not gating_passed:
+        # --- Filter: only chains that pass independence threshold ---
+        independent_grades: list[ChainGrade] = []
+        for grade, score in zip(
+            corroborating_chains, independence_scores, strict=True
+        ):
+            if score >= self.INDEPENDENCE_THRESHOLD:
+                independent_grades.append(grade)
+
+        if not independent_grades:
             return base_grade
 
-        # --- Count effective corroborating chains (discount correlated) ---
-        effective_count: float = 0.0
-        for grade, score in zip(corroborating_chains, independence_scores, strict=True):
-            if grade == ChainGrade.MAWDU:
-                continue  # rejected chains contribute nothing
-            if grade == ChainGrade.DAIF:
-                continue  # DAIF chains cannot corroborate an upgrade
-            if score < self.INDEPENDENCE_THRESHOLD:
-                continue  # correlated chains don't count independently
-            weight = min(1.0, score)  # independence score as weight
-            effective_count += weight
+        # --- Minimum-grade gate: at least one chain must clear threshold ---
+        if not any(g >= self.MIN_GATE_GRADE for g in independent_grades):
+            return base_grade
 
-        # --- Need enough effective independent chains ---
-        if effective_count < self.EFFECTIVE_CHAINS_FOR_UPGRADE:
+        # --- Information-theoretic corroboration ---
+        # Each chain at grade G_i has an implied error probability p_i.
+        # Combined error ∝ ∏ p_i (multiplicative reduction).
+        # Effective weight = log-reduction normalised by HASAN baseline.
+        err = self.ERROR_PROBS
+        combined_log_error = sum(
+            math.log(max(err.get(g, 0.30), 0.001)) for g in independent_grades
+        )
+        combined_log_error += math.log(max(err.get(base_grade, 0.30), 0.001))
+
+        hasan_log = math.log(err[ChainGrade.HASAN])
+        effective_weight = combined_log_error / max(hasan_log, -10.0)
+
+        if effective_weight < self.MIN_EFFECTIVE_WEIGHT:
             return base_grade
 
         # --- Upgrade: at most one tier, never to SAHIH ---
         if base_grade == ChainGrade.DAIF:
             return ChainGrade.HASAN  # DAIF → HASAN (cap)
-        if base_grade == ChainGrade.HASAN:
-            return ChainGrade.HASAN  # HASAN stays HASAN (corroboration cannot reach SAHIH)
-
+        # HASAN stays HASAN; SAHIH stays SAHIH
         return base_grade
 
 
@@ -273,14 +304,14 @@ def find_corroborating_claims(
 
 
 # ===========================================================================
-# CorroborationEngine — information-theoretic with SharedLineageDetector
+# CorroborationEngine — delegates grade math to CappedCorroborationPolicy
 # ===========================================================================
 
 """Corroboration Engine — operational mutābaʿāt (independent-chain upgrade).
 
-Implements the HadithRank-style information-theoretic corroboration:
-multiple independent transmission chains asserting the same claim reduce
-the combined error probability multiplicatively.
+Finds corroborating chains across a corpus, checks independence via
+SharedLineageDetector, and delegates the grade-upgrade decision to
+CappedCorroborationPolicy (information-theoretic error multiplication).
 
 Key rules (paper §4.3):
 - Chains must be truly independent (disjoint narrator sets, different sources)
@@ -288,16 +319,15 @@ Key rules (paper §4.3):
 - Minimum-grade gate: at least one corroborating chain must clear threshold
 - Correlation discount: shared model family / upstream source → partial weight
 
-Status: EXPERIMENTAL.  Corroboration has not fired on real corpora in the
-§8 experiment.  This engine implements the rule correctly; it requires
-warm baseline grades and genuine cross-source overlaps to activate.
+Matching is exact on claim_text.  For semantic / embedding-based matching
+pre-process claims externally and canonicalise to a shared key before
+passing to this engine.
 """
 
 
 import math
 from dataclasses import dataclass
 
-# SharedLineageDetector is defined above in this file
 from isnad.types import ChainGrade, NarratorGrade
 
 
@@ -307,9 +337,9 @@ class CorroborationResult:
 
     base_grade: ChainGrade
     upgraded_grade: ChainGrade
-    corroborating_chains: int
-    independent_chains: int  # after correlation discount
-    effective_weight: float
+    corroborating_chains: int  # matching chains (excl. base chain itself)
+    independent_chains: int    # after correlation discount
+    effective_weight: float    # info-theoretic log-error ratio
     upgraded: bool
     reason: str = ""
 
@@ -329,10 +359,10 @@ class CorroborationEngine:
     """Engine for cross-claim corroboration (mutābaʿāt).
 
     Finds independent chains for a given claim and applies the
-    information-theoretic corroboration upgrade.
+    information-theoretic corroboration upgrade via CappedCorroborationPolicy.
 
     Usage:
-        engine = CorroborationEngine()
+        engine = CorroborationEngine(min_independent_chains=1)
         result = engine.evaluate(
             claim_text="F = ma",
             base_chain_grade=ChainGrade.DAIF,
@@ -347,15 +377,28 @@ class CorroborationEngine:
 
     def __init__(
         self,
-        min_independent_chains: int = 2,
+        min_independent_chains: int = 1,
         corroboration_cap: ChainGrade = ChainGrade.HASAN,
         min_gate_grade: ChainGrade = ChainGrade.HASAN,
         correlation_detector: SharedLineageDetector | None = None,
+        policy: CappedCorroborationPolicy | None = None,
     ):
+        """Args:
+            min_independent_chains: Minimum number of *corroborating*
+                (not counting the base) independent chains required.
+                Default 1 = one corroborating chain + base = two total.
+            corroboration_cap: Highest grade reachable via corroboration.
+            min_gate_grade: At least one corroborating chain must meet
+                this grade for upgrade to be considered.
+            correlation_detector: Optional custom SharedLineageDetector.
+            policy: Optional custom CappedCorroborationPolicy for the
+                upgrade decision math.
+        """
         self.min_independent_chains = min_independent_chains
         self.corroboration_cap = corroboration_cap
         self.min_gate_grade = min_gate_grade
         self._correlation_detector = correlation_detector or SharedLineageDetector()
+        self._policy = policy or CappedCorroborationPolicy()
 
     def evaluate(
         self,
@@ -367,8 +410,12 @@ class CorroborationEngine:
     ) -> CorroborationResult:
         """Evaluate corroboration for a claim.
 
+        Matching is exact on claim_text.  Pre-canonicalise claims that
+        are semantically equivalent but textually different before
+        calling this method.
+
         Args:
-            claim_text: Normalized claim text.
+            claim_text: Normalized claim text (exact match).
             base_chain_grade: Grade of the claim's own chain.
             base_narrators: Narrator IDs in the base claim's chain.
             all_chains: List of all claim chain dicts with keys:
@@ -389,10 +436,14 @@ class CorroborationEngine:
                 reason="MAWDU chains cannot be corroborated",
             )
 
-        # Find corroborating chains
+        # Find corroborating chains — exclude the base chain itself
+        base_narrator_set = set(base_narrators)
         corroborating = []
         for chain in all_chains:
             if chain.get("claim_text", "") != claim_text:
+                continue
+            # Exclude the base chain (same narrator set)
+            if set(chain.get("narrator_ids", [])) == base_narrator_set:
                 continue
             cg_raw = chain.get("chain_grade", "daif")
             try:
@@ -410,10 +461,8 @@ class CorroborationEngine:
         # Filter: must be truly independent (narrator sets + lineage detection)
         independent = []
         for c in corroborating:
-            c_narrators = c["narrators"]
-            # Use SharedLineageDetector for madār-aware independence check
             if self._correlation_detector.are_independent(
-                base_narrators, c_narrators, narrator_metadata or {}
+                base_narrators, c["narrators"], narrator_metadata or {}
             ):
                 independent.append(c)
 
@@ -425,73 +474,49 @@ class CorroborationEngine:
                 independent_chains=len(independent),
                 effective_weight=0.0,
                 upgraded=False,
-                reason=f"Need ≥{self.min_independent_chains} independent chains, "
-                f"have {len(independent)}",
+                reason=(
+                    f"Need ≥{self.min_independent_chains} independent chains, "
+                    f"have {len(independent)}"
+                ),
             )
 
-        # Minimum-grade gate: at least one corroborating chain must clear threshold
-        gating_passed = any(c["grade"] >= self.min_gate_grade for c in independent)
-        if not gating_passed:
+        # Minimum-grade gate: at least one chain must clear threshold
+        if not any(c["grade"] >= self.min_gate_grade for c in independent):
             return CorroborationResult(
                 base_grade=base_chain_grade,
                 upgraded_grade=base_chain_grade,
                 corroborating_chains=len(corroborating),
                 independent_chains=len(independent),
-                effective_weight=float(len(independent)),
+                effective_weight=0.0,
                 upgraded=False,
                 reason=f"No corroborating chain meets min grade {self.min_gate_grade.value}",
             )
 
-        # Information-theoretic corroboration (HadithRank-style)
-        # Each independent chain at grade G_i has an implied error probability p_i.
-        # Combined error probability ∝ ∏ p_i (multiplicative reduction).
-        # Effective weight = log-reduction in error probability.
-        error_probs = {
-            ChainGrade.SAHIH: 0.01,
-            ChainGrade.HASAN: 0.10,
-            ChainGrade.DAIF: 0.30,
-            ChainGrade.MAWDU: 0.90,
-        }
-
-        combined_log_error = 0.0
-        for c in independent:
-            p = error_probs.get(c["grade"], 0.30)
-            combined_log_error += math.log(max(p, 0.001))
-
-        # Base chain's own error
-        base_p = error_probs.get(base_chain_grade, 0.30)
-        combined_log_error += math.log(max(base_p, 0.001))
-
-        # Effective weight: how many independent chains at HASAN-grade
-        # would produce this error reduction
-        hasan_log_p = math.log(error_probs[ChainGrade.HASAN])
-        effective_weight = combined_log_error / max(hasan_log_p, -10.0)
-
-        # Upgrade decision
-        can_upgrade = effective_weight >= self.min_independent_chains
-
-        if not can_upgrade:
-            return CorroborationResult(
-                base_grade=base_chain_grade,
-                upgraded_grade=base_chain_grade,
-                corroborating_chains=len(corroborating),
-                independent_chains=len(independent),
-                effective_weight=effective_weight,
-                upgraded=False,
-                reason=f"Effective weight {effective_weight:.1f} < {self.min_independent_chains}",
+        # Delegate grade computation to CappedCorroborationPolicy
+        independence_scores = [
+            self._correlation_detector.compute_independence_score(
+                base_narrators, c["narrators"], narrator_metadata or {}
             )
+            for c in independent
+        ]
+        corroborating_grades = [c["grade"] for c in independent]
 
-        # Apply capped upgrade
-        if base_chain_grade == ChainGrade.DAIF:
-            upgraded = ChainGrade.HASAN
-        elif base_chain_grade == ChainGrade.HASAN:
-            upgraded = ChainGrade.HASAN  # cap — cannot reach SAHIH
-        else:
-            upgraded = base_chain_grade
+        upgraded = self._policy.compute_corroborated_grade(
+            base_grade=base_chain_grade,
+            corroborating_chains=corroborating_grades,
+            independence_scores=independence_scores,
+        )
 
-        # Cap at corroboration ceiling
-        if upgraded > self.corroboration_cap:
-            upgraded = self.corroboration_cap
+        # Compute effective weight for reporting
+        err = self._policy.ERROR_PROBS
+        combined_log = sum(
+            math.log(max(err.get(g, 0.30), 0.001)) for g in corroborating_grades
+        )
+        combined_log += math.log(max(err.get(base_chain_grade, 0.30), 0.001))
+        hasan_log = math.log(err[ChainGrade.HASAN])
+        effective_weight = combined_log / max(hasan_log, -10.0)
+
+        upgraded_flag = upgraded != base_chain_grade
 
         return CorroborationResult(
             base_grade=base_chain_grade,
@@ -499,7 +524,14 @@ class CorroborationEngine:
             corroborating_chains=len(corroborating),
             independent_chains=len(independent),
             effective_weight=effective_weight,
-            upgraded=(upgraded != base_chain_grade),
-            reason=f"Upgraded via {len(independent)} independent chains "
-            f"(effective weight={effective_weight:.1f})",
+            upgraded=upgraded_flag,
+            reason=(
+                f"Upgraded via {len(independent)} independent chains "
+                f"(effective weight={effective_weight:.1f})"
+                if upgraded_flag
+                else (
+                    f"Effective weight {effective_weight:.1f} < "
+                    f"{self._policy.MIN_EFFECTIVE_WEIGHT}"
+                )
+            ),
         )
