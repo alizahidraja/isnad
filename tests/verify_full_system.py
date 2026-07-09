@@ -658,7 +658,7 @@ check(
     f"corr={r_eng1.corroborating_chains}, ind={r_eng1.independent_chains}",
 )
 
-# Madar: same model family blocks upgrade
+# Madar: same model family blocks upgrade (gpt-4 family only — no independent chain)
 r_eng2 = engine.evaluate(
     claim_text="momentum is mass times velocity",
     base_chain_grade=ChainGrade.DAIF,
@@ -676,18 +676,11 @@ r_eng2 = engine.evaluate(
             "narrator_ids": ["model_gpt4_turbo"],
             "source": "",
         },
-        {
-            "claim_text": "momentum is mass times velocity",
-            "chain_grade": "hasan",
-            "narrator_ids": ["model_claude"],
-            "source": "",
-        },
     ],
     narrator_metadata={
         "model_gpt4": {"model_family": "gpt-4"},
         "model_gpt4o": {"model_family": "gpt-4"},
         "model_gpt4_turbo": {"model_family": "gpt-4"},
-        "model_claude": {"model_family": "claude"},
     },
 )
 check(

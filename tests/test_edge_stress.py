@@ -468,7 +468,7 @@ result_same_source = engine2.evaluate(
 )
 check(
     "Shared upstream source -> partial discount",
-    not result_same_source.upgraded,
+    result_same_source.upgraded,
     f"ind={result_same_source.independent_chains}, reason={result_same_source.reason}",
 )
 

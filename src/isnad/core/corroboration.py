@@ -387,18 +387,24 @@ class CorroborationEngine:
             min_independent_chains: Minimum number of *corroborating*
                 (not counting the base) independent chains required.
                 Default 1 = one corroborating chain + base = two total.
+                Also sets the effective-weight threshold on the policy.
             corroboration_cap: Highest grade reachable via corroboration.
             min_gate_grade: At least one corroborating chain must meet
                 this grade for upgrade to be considered.
             correlation_detector: Optional custom SharedLineageDetector.
             policy: Optional custom CappedCorroborationPolicy for the
-                upgrade decision math.
+                upgrade decision math.  If not provided, one is created
+                with MIN_EFFECTIVE_WEIGHT = min_independent_chains.
         """
         self.min_independent_chains = min_independent_chains
         self.corroboration_cap = corroboration_cap
         self.min_gate_grade = min_gate_grade
         self._correlation_detector = correlation_detector or SharedLineageDetector()
-        self._policy = policy or CappedCorroborationPolicy()
+        if policy is not None:
+            self._policy = policy
+        else:
+            self._policy = CappedCorroborationPolicy()
+            self._policy.MIN_EFFECTIVE_WEIGHT = float(min_independent_chains)
 
     def evaluate(
         self,
