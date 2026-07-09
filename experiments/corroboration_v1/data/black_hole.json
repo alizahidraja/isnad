@@ -1,0 +1,32 @@
+{
+  "topic": "Black hole",
+  "page_id": 4650,
+  "url": "https://en.wikipedia.org/wiki/Black_hole",
+  "summary": "A black hole is an astronomical body so compact that its gravity prevents anything, including light, from escaping. Albert Einstein's theory of general relativity, which describes gravitation as the curvature of spacetime, predicts that any sufficiently compact mass will form a black hole. The boundary of no escape is called the event horizon. In general relativity, crossing a black hole's event horizon traps an object inside but produces no locally detectable change. General relativity also predicts that every black hole should have a central singularity, where the curvature of spacetime is infinite.\nObjects whose gravitational fields are too strong for light to escape were first considered in the 18th century. In 1916, the first solution of general relativity that would characterise a black hole was found. By the late 1950s, this solution began to be interpreted physically as a region of space from which nothing can escape. Black holes were long considered a mathematical curiosity; it was not until the 1960s that theoretical work showed they were a generic prediction of general relativity. The first widely accepted black hole was Cygnus X-1, identified by several researchers independently in 1971.\nBlack holes typically form when very massive stars collapse at the end of their life cycle. After a black hole has formed, it can grow by absorbing mass from its surroundings. Supermassive black holes of millions of solar masses may form by absorbing stars and merging with other black holes, or via direct collapse of gas clouds. There is consensus that supermassive black holes exist in the centres of most galaxies.\nQuantum field theory in curved spacetime predicts that event horizons emit Hawking radiation, with its rate of emission being inversely proportional to its mass. This causes the black hole to lose mass very slowly, provided it is not accreting matter. However, even the smallest class of black holes observed, stellar black holes, are gaining mass from the cosmic microwave background faster than they are losing mass via Hawking radiation.\nThe presence of a black hole can be inferred through its interaction with matter and electromagnetic radiation such as visible light. Matter falling toward a black hole can form an accretion disk of infalling plasma, heated by friction and emitting light. In extreme cases, this creates a quasar, some of the brightest objects in the universe. Merging black holes can be detected by the gravitational waves they emit. If stars are orbiting a black hole, their motions can be used to determine the black hole's mass and location. In this way, astronomers have identified numerous stellar black hole candidates in binary systems and established that the radio source known as Sagittarius A*, at the core of the Milky Way galaxy, contains a supermassive black hole of about 4.3 million solar masses.",
+  "sentences": [
+    "A black hole is an astronomical body so compact that its gravity prevents anything, including light, from escaping.",
+    "Albert Einstein's theory of general relativity, which describes gravitation as the curvature of spacetime, predicts that any sufficiently compact mass will form a black hole.",
+    "The boundary of no escape is called the event horizon.",
+    "In general relativity, crossing a black hole's event horizon traps an object inside but produces no locally detectable change.",
+    "General relativity also predicts that every black hole should have a central singularity, where the curvature of spacetime is infinite.",
+    "Objects whose gravitational fields are too strong for light to escape were first considered in the 18th century.",
+    "In 1916, the first solution of general relativity that would characterise a black hole was found.",
+    "By the late 1950s, this solution began to be interpreted physically as a region of space from which nothing can escape.",
+    "Black holes were long considered a mathematical curiosity; it was not until the 1960s that theoretical work showed they were a generic prediction of general relativity.",
+    "The first widely accepted black hole was Cygnus X-1, identified by several researchers independently in 1971.",
+    "Black holes typically form when very massive stars collapse at the end of their life cycle.",
+    "After a black hole has formed, it can grow by absorbing mass from its surroundings.",
+    "Supermassive black holes of millions of solar masses may form by absorbing stars and merging with other black holes, or via direct collapse of gas clouds.",
+    "There is consensus that supermassive black holes exist in the centres of most galaxies.",
+    "Quantum field theory in curved spacetime predicts that event horizons emit Hawking radiation, with its rate of emission being inversely proportional to its mass.",
+    "This causes the black hole to lose mass very slowly, provided it is not accreting matter.",
+    "However, even the smallest class of black holes observed, stellar black holes, are gaining mass from the cosmic microwave background faster than they are losing mass via Hawking radiation.",
+    "The presence of a black hole can be inferred through its interaction with matter and electromagnetic radiation such as visible light.",
+    "Matter falling toward a black hole can form an accretion disk of infalling plasma, heated by friction and emitting light.",
+    "In extreme cases, this creates a quasar, some of the brightest objects in the universe.",
+    "Merging black holes can be detected by the gravitational waves they emit.",
+    "If stars are orbiting a black hole, their motions can be used to determine the black hole's mass and location.",
+    "In this way, astronomers have identified numerous stellar black hole candidates in binary systems and established that the radio source known as Sagittarius A*, at the core of the Milky Way galaxy, contains a supermassive black hole of about 4.3 million solar masses."
+  ],
+  "fetched_at": "2026-07-09T11:28:13Z"
+}

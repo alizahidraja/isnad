@@ -1,0 +1,32 @@
+{
+  "topic": "DNA",
+  "page_id": 7955,
+  "url": "https://en.wikipedia.org/wiki/DNA",
+  "summary": "Deoxyribonucleic acid (; DNA) is a polymer composed of two polynucleotide chains that coil around each other to form a double helix. The polymer carries genetic instructions for the development, functioning, growth and reproduction of all known organisms and many viruses. DNA and ribonucleic acid (RNA) are nucleic acids. Alongside proteins, lipids and complex carbohydrates (polysaccharides), nucleic acids are one of the four major types of macromolecules that are essential for all known forms of life.\nThe two DNA strands are known as polynucleotides as they are composed of simpler monomeric units called nucleotides. Each nucleotide is composed of one of four nitrogen-containing nucleobases (cytosine [C], guanine [G], adenine [A] or thymine [T]), a sugar called deoxyribose, and a phosphate group. The nucleotides are joined to one another in a chain by covalent bonds (known as the phosphodiester linkage) between the sugar of one nucleotide and the phosphate of the next, resulting in an alternating sugar-phosphate backbone. The nitrogenous bases of the two separate polynucleotide strands are bound together, according to base pairing rules (A with T and C with G), with hydrogen bonds to make double-stranded DNA. The complementary nitrogenous bases are divided into two groups, the single-ringed pyrimidines and the double-ringed purines. In DNA, the pyrimidines are thymine and cytosine; the purines are adenine and guanine.\nBoth strands of double-stranded DNA store the same biological information. This information is replicated when the two strands separate. The two strands of DNA run in opposite directions to each other and are thus antiparallel. Attached to each sugar is one of four types of nucleobases (or bases). It is the sequence of these four nucleobases along the backbone that encodes genetic information. RNA strands are created using DNA strands as a template in a process called transcription, where DNA bases are exchanged for their corresponding bases except in the case of thymine (T), for which RNA substitutes uracil (U). Under the genetic code, these RNA strands specify the sequence of amino acids within proteins in a process called translation.\nWithin eukaryotic cells, DNA is organized into long structures called chromosomes. Before typical cell division, these chromosomes are duplicated in the process of DNA replication, providing a complete set of chromosomes for each daughter cell. Eukaryotic organisms (animals, plants, fungi and protists) store most of their DNA inside the cell nucleus as nuclear DNA, and some in the mitochondria as mitochondrial DNA or in chloroplasts as chloroplast DNA. In contrast, prokaryotes (bacteria and archaea) store their DNA only in the cytoplasm, in circular chromosomes. Within eukaryotic chromosomes, chromatin proteins, such as histones, compact and organize DNA. These compacting structures guide the interactions between DNA and other proteins, helping control which parts of the DNA are transcribed.",
+  "sentences": [
+    "Deoxyribonucleic acid (; DNA) is a polymer composed of two polynucleotide chains that coil around each other to form a double helix.",
+    "The polymer carries genetic instructions for the development, functioning, growth and reproduction of all known organisms and many viruses.",
+    "DNA and ribonucleic acid (RNA) are nucleic acids.",
+    "Alongside proteins, lipids and complex carbohydrates (polysaccharides), nucleic acids are one of the four major types of macromolecules that are essential for all known forms of life.",
+    "The two DNA strands are known as polynucleotides as they are composed of simpler monomeric units called nucleotides.",
+    "Each nucleotide is composed of one of four nitrogen-containing nucleobases (cytosine [C], guanine [G], adenine [A] or thymine [T]), a sugar called deoxyribose, and a phosphate group.",
+    "The nucleotides are joined to one another in a chain by covalent bonds (known as the phosphodiester linkage) between the sugar of one nucleotide and the phosphate of the next, resulting in an alternating sugar-phosphate backbone.",
+    "The nitrogenous bases of the two separate polynucleotide strands are bound together, according to base pairing rules (A with T and C with G), with hydrogen bonds to make double-stranded DNA.",
+    "The complementary nitrogenous bases are divided into two groups, the single-ringed pyrimidines and the double-ringed purines.",
+    "In DNA, the pyrimidines are thymine and cytosine; the purines are adenine and guanine.",
+    "Both strands of double-stranded DNA store the same biological information.",
+    "This information is replicated when the two strands separate.",
+    "The two strands of DNA run in opposite directions to each other and are thus antiparallel.",
+    "Attached to each sugar is one of four types of nucleobases (or bases).",
+    "It is the sequence of these four nucleobases along the backbone that encodes genetic information.",
+    "RNA strands are created using DNA strands as a template in a process called transcription, where DNA bases are exchanged for their corresponding bases except in the case of thymine (T), for which RNA substitutes uracil (U).",
+    "Under the genetic code, these RNA strands specify the sequence of amino acids within proteins in a process called translation.",
+    "Within eukaryotic cells, DNA is organized into long structures called chromosomes.",
+    "Before typical cell division, these chromosomes are duplicated in the process of DNA replication, providing a complete set of chromosomes for each daughter cell.",
+    "Eukaryotic organisms (animals, plants, fungi and protists) store most of their DNA inside the cell nucleus as nuclear DNA, and some in the mitochondria as mitochondrial DNA or in chloroplasts as chloroplast DNA.",
+    "In contrast, prokaryotes (bacteria and archaea) store their DNA only in the cytoplasm, in circular chromosomes.",
+    "Within eukaryotic chromosomes, chromatin proteins, such as histones, compact and organize DNA.",
+    "These compacting structures guide the interactions between DNA and other proteins, helping control which parts of the DNA are transcribed."
+  ],
+  "fetched_at": "2026-07-09T11:28:15Z"
+}

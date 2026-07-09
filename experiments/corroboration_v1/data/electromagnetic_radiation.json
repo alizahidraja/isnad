@@ -1,0 +1,19 @@
+{
+  "topic": "Electromagnetic radiation",
+  "page_id": 9426,
+  "url": "https://en.wikipedia.org/wiki/Electromagnetic_radiation",
+  "summary": "In physics, electromagnetic radiation (EMR) or an electromagnetic wave (EMW) is a self-propagating wave of the electromagnetic field that carries momentum and radiant energy through space. It encompasses a broad spectrum, classified by frequency (inversely proportional to wavelength), ranging from radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, to gamma rays. All forms of EMR travel at the speed of light in a vacuum and exhibit wave\u2013particle duality, behaving both as waves and as discrete particles called photons.\nElectromagnetic radiation is produced by accelerating charged particles such as from the Sun and other celestial bodies or artificially generated for various applications. Its interaction with matter depends on wavelength, influencing its uses in communication, medicine, industry, and scientific research. Radio waves enable broadcasting and wireless communication, infrared is used in thermal imaging, visible light is essential for vision, and higher-energy radiation, such as X-rays and gamma rays, is applied in medical imaging, cancer treatment, and industrial inspection. Higher energy EMR, especially in the UV and above, has been associated with negative health effects.\nIn quantum mechanics, an alternate way of viewing EMR is that it consists of photons, uncharged elementary particles with zero rest mass which are the quanta of the electromagnetic field, responsible for all electromagnetic interactions. Quantum electrodynamics is the theory of how EMR interacts with matter on an atomic level. Quantum effects provide additional sources of EMR, such as the transition of electrons to lower energy levels in an atom and black-body radiation.",
+  "sentences": [
+    "In physics, electromagnetic radiation (EMR) or an electromagnetic wave (EMW) is a self-propagating wave of the electromagnetic field that carries momentum and radiant energy through space.",
+    "It encompasses a broad spectrum, classified by frequency (inversely proportional to wavelength), ranging from radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, to gamma rays.",
+    "All forms of EMR travel at the speed of light in a vacuum and exhibit wave\u2013particle duality, behaving both as waves and as discrete particles called photons.",
+    "Electromagnetic radiation is produced by accelerating charged particles such as from the Sun and other celestial bodies or artificially generated for various applications.",
+    "Its interaction with matter depends on wavelength, influencing its uses in communication, medicine, industry, and scientific research.",
+    "Radio waves enable broadcasting and wireless communication, infrared is used in thermal imaging, visible light is essential for vision, and higher-energy radiation, such as X-rays and gamma rays, is applied in medical imaging, cancer treatment, and industrial inspection.",
+    "Higher energy EMR, especially in the UV and above, has been associated with negative health effects.",
+    "In quantum mechanics, an alternate way of viewing EMR is that it consists of photons, uncharged elementary particles with zero rest mass which are the quanta of the electromagnetic field, responsible for all electromagnetic interactions.",
+    "Quantum electrodynamics is the theory of how EMR interacts with matter on an atomic level.",
+    "Quantum effects provide additional sources of EMR, such as the transition of electrons to lower energy levels in an atom and black-body radiation."
+  ],
+  "fetched_at": "2026-07-09T11:30:14Z"
+}
