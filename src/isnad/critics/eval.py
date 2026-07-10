@@ -21,7 +21,6 @@ from isnad.types import ContentVerdict
 
 _exp_dir = os.path.dirname(os.path.abspath(__file__))
 _parent = os.path.dirname(_exp_dir)
-_parent = os.path.dirname(_exp_dir)
 
 
 def build_eval_set(claims_path: str | None, n: int = 500) -> list[dict]:

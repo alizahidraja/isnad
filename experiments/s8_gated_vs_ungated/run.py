@@ -192,7 +192,7 @@ def run_condition(
 
         # --- Second pass: cross-claim corroboration (mutābaʿāt) ---
         if enable_corroboration:
-            from isnad.corroboration import evaluate_corroboration
+            from isnad.core.corroboration import evaluate_corroboration
 
             # Build lookup by normalized text for cross-source matching
             by_norm: dict[str, list[dict]] = {}

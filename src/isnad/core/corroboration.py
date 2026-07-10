@@ -13,10 +13,14 @@ implements correlation detection as required by the paper (§7, Limitations).
 
 from __future__ import annotations
 
+import math
+from dataclasses import dataclass
+
 from isnad.types import (
     ChainGrade,
     CorrelationDetector,
     CorroborationPolicy,
+    NarratorGrade,
 )
 
 # ===========================================================================
@@ -189,8 +193,6 @@ class CappedCorroborationPolicy:
         Returns:
             The new ChainGrade after corroboration.
         """
-        import math
-
         if not corroborating_chains:
             return base_grade
 
@@ -200,9 +202,7 @@ class CappedCorroborationPolicy:
 
         # --- Filter: only chains that pass independence threshold ---
         independent_grades: list[ChainGrade] = []
-        for grade, score in zip(
-            corroborating_chains, independence_scores, strict=True
-        ):
+        for grade, score in zip(corroborating_chains, independence_scores, strict=True):
             if score >= self.INDEPENDENCE_THRESHOLD:
                 independent_grades.append(grade)
 
@@ -218,9 +218,7 @@ class CappedCorroborationPolicy:
         # Combined error ∝ ∏ p_i (multiplicative reduction).
         # Effective weight = log-reduction normalised by HASAN baseline.
         err = self.ERROR_PROBS
-        combined_log_error = sum(
-            math.log(max(err.get(g, 0.30), 0.001)) for g in independent_grades
-        )
+        combined_log_error = sum(math.log(max(err.get(g, 0.30), 0.001)) for g in independent_grades)
         combined_log_error += math.log(max(err.get(base_grade, 0.30), 0.001))
 
         hasan_log = math.log(err[ChainGrade.HASAN])
@@ -304,31 +302,22 @@ def find_corroborating_claims(
 
 
 # ===========================================================================
-# CorroborationEngine — delegates grade math to CappedCorroborationPolicy
+# CorroborationEngine — operational mutābaʿāt (independent-chain upgrade)
+#
+# Finds corroborating chains across a corpus, checks independence via
+# SharedLineageDetector, and delegates the grade-upgrade decision to
+# CappedCorroborationPolicy (information-theoretic error multiplication).
+#
+# Key rules (paper §4.3):
+# - Chains must be truly independent (disjoint narrator sets, different sources)
+# - Upgrade is capped below SAHIH (cannot reach sound tier via corroboration alone)
+# - Minimum-grade gate: at least one corroborating chain must clear threshold
+# - Correlation discount: shared model family / upstream source → partial weight
+#
+# Matching is exact on claim_text.  For semantic / embedding-based matching
+# pre-process claims externally and canonicalise to a shared key before
+# passing to this engine.
 # ===========================================================================
-
-"""Corroboration Engine — operational mutābaʿāt (independent-chain upgrade).
-
-Finds corroborating chains across a corpus, checks independence via
-SharedLineageDetector, and delegates the grade-upgrade decision to
-CappedCorroborationPolicy (information-theoretic error multiplication).
-
-Key rules (paper §4.3):
-- Chains must be truly independent (disjoint narrator sets, different sources)
-- Upgrade is capped below SAHIH (cannot reach sound tier via corroboration alone)
-- Minimum-grade gate: at least one corroborating chain must clear threshold
-- Correlation discount: shared model family / upstream source → partial weight
-
-Matching is exact on claim_text.  For semantic / embedding-based matching
-pre-process claims externally and canonicalise to a shared key before
-passing to this engine.
-"""
-
-
-import math
-from dataclasses import dataclass
-
-from isnad.types import ChainGrade, NarratorGrade
 
 
 @dataclass
@@ -338,8 +327,8 @@ class CorroborationResult:
     base_grade: ChainGrade
     upgraded_grade: ChainGrade
     corroborating_chains: int  # matching chains (excl. base chain itself)
-    independent_chains: int    # after correlation discount
-    effective_weight: float    # info-theoretic log-error ratio
+    independent_chains: int  # after correlation discount
+    effective_weight: float  # info-theoretic log-error ratio
     upgraded: bool
     reason: str = ""
 
@@ -384,17 +373,17 @@ class CorroborationEngine:
         policy: CappedCorroborationPolicy | None = None,
     ):
         """Args:
-            min_independent_chains: Minimum number of *corroborating*
-                (not counting the base) independent chains required.
-                Default 1 = one corroborating chain + base = two total.
-                Also sets the effective-weight threshold on the policy.
-            corroboration_cap: Highest grade reachable via corroboration.
-            min_gate_grade: At least one corroborating chain must meet
-                this grade for upgrade to be considered.
-            correlation_detector: Optional custom SharedLineageDetector.
-            policy: Optional custom CappedCorroborationPolicy for the
-                upgrade decision math.  If not provided, one is created
-                with MIN_EFFECTIVE_WEIGHT = min_independent_chains.
+        min_independent_chains: Minimum number of *corroborating*
+            (not counting the base) independent chains required.
+            Default 1 = one corroborating chain + base = two total.
+            Also sets the effective-weight threshold on the policy.
+        corroboration_cap: Highest grade reachable via corroboration.
+        min_gate_grade: At least one corroborating chain must meet
+            this grade for upgrade to be considered.
+        correlation_detector: Optional custom SharedLineageDetector.
+        policy: Optional custom CappedCorroborationPolicy for the
+            upgrade decision math.  If not provided, one is created
+            with MIN_EFFECTIVE_WEIGHT = min_independent_chains.
         """
         self.min_independent_chains = min_independent_chains
         self.corroboration_cap = corroboration_cap
@@ -443,11 +432,13 @@ class CorroborationEngine:
                 cg = ChainGrade(cg_raw)
             except ValueError:
                 cg = ChainGrade.DAIF
-            corroborating_raw.append({
-                "grade": cg,
-                "narrators": chain.get("narrator_ids", []),
-                "source": chain.get("source", ""),
-            })
+            corroborating_raw.append(
+                {
+                    "grade": cg,
+                    "narrators": chain.get("narrator_ids", []),
+                    "source": chain.get("source", ""),
+                }
+            )
 
         return self._evaluate_core(
             base_chain_grade=base_chain_grade,
@@ -502,11 +493,13 @@ class CorroborationEngine:
                     grade = ChainGrade(grade)
                 except ValueError:
                     grade = ChainGrade.DAIF
-            normalised.append({
-                "grade": grade,
-                "narrators": c.get("narrators", []),
-                "source": c.get("source", ""),
-            })
+            normalised.append(
+                {
+                    "grade": grade,
+                    "narrators": c.get("narrators", []),
+                    "source": c.get("source", ""),
+                }
+            )
 
         return self._evaluate_core(
             base_chain_grade=base_chain_grade,
@@ -540,7 +533,8 @@ class CorroborationEngine:
 
         # Filter by independence
         independent = [
-            c for c in corroborating_chains
+            c
+            for c in corroborating_chains
             if self._correlation_detector.are_independent(
                 base_narrators, c["narrators"], narrator_metadata
             )
@@ -587,9 +581,7 @@ class CorroborationEngine:
             independence_scores=independence_scores,
         )
 
-        effective_weight = self._compute_effective_weight(
-            base_chain_grade, grades
-        )
+        effective_weight = self._compute_effective_weight(base_chain_grade, grades)
         upgraded_flag = upgraded != base_chain_grade
 
         return CorroborationResult(
@@ -604,8 +596,7 @@ class CorroborationEngine:
                 f"(effective weight={effective_weight:.1f})"
                 if upgraded_flag
                 else (
-                    f"Effective weight {effective_weight:.1f} < "
-                    f"{self._policy.MIN_EFFECTIVE_WEIGHT}"
+                    f"Effective weight {effective_weight:.1f} < {self._policy.MIN_EFFECTIVE_WEIGHT}"
                 )
             ),
         )
@@ -617,9 +608,7 @@ class CorroborationEngine:
     ) -> float:
         """Compute information-theoretic effective weight."""
         err = self._policy.ERROR_PROBS
-        combined = sum(
-            math.log(max(err.get(g, 0.30), 0.001)) for g in corroborating_grades
-        )
+        combined = sum(math.log(max(err.get(g, 0.30), 0.001)) for g in corroborating_grades)
         combined += math.log(max(err.get(base_grade, 0.30), 0.001))
         hasan_log = math.log(err[ChainGrade.HASAN])
         return combined / max(hasan_log, -10.0)

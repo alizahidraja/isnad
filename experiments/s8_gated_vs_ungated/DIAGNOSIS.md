@@ -34,7 +34,7 @@ Source distribution: crowell 3168, openstax 623 — wildly imbalanced.
 
 `run.py` line 179: `corroboration_support=False  # per-claim, not cross-chain`
 
-The `evaluate_corroboration()` function from `isnad.corroboration` is NEVER
+The `evaluate_corroboration()` function from `isnad.core.corroboration` is NEVER
 called in the evaluation loop. Conditions 3 (ISNAD) and 4 (ISNAD no corrob.)
 produce IDENTICAL results across all 10 seeds:
 
