@@ -1,0 +1,20 @@
+======================================================================
+CORROBORATION EXPERIMENT v2 — SEMANTIC MATCHING
+======================================================================
+
+Total claims tested:   603
+  cross_source                    500 claims,  500 corroborated (100.0%)
+  cross_topic                     103 claims,  103 corroborated (100.0%)
+
+Corroboration fired:   603 (100.0%)
+Grade upgraded:        603 (100.0%)
+
+────────────────────────────────────────
+Sample upgrades (first 10):
+  [cross_source] DNA↔DNA                   daif   → hasan  sim=0.762 weight=3.5
+  [cross_source] Atom↔Atom                 daif   → hasan  sim=0.751 weight=1.5
+  [cross_source] Electromagnetic radiation daif   → hasan  sim=0.991 weight=1.5
+  [cross_source] Natural selection↔Evoluti daif   → hasan  sim=0.751 weight=2.5
+  [cross_source] Evolution↔Evolution       daif   → hasan  sim=0.868 weight=1.5
+  [cross_source] Black hole↔Black hole     daif   → hasan  sim=0.881 weight=1.5
+  [cross_source] DNA↔DNA                   daif   → hasan  sim=0.858 weight=1.5

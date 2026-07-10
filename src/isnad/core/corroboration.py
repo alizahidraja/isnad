@@ -414,11 +414,10 @@ class CorroborationEngine:
         all_chains: list[dict],
         narrator_metadata: dict[str, dict] | None = None,
     ) -> CorroborationResult:
-        """Evaluate corroboration for a claim.
+        """Evaluate corroboration by matching claims via exact claim_text.
 
-        Matching is exact on claim_text.  Pre-canonicalise claims that
-        are semantically equivalent but textually different before
-        calling this method.
+        For semantic / embedding-based matching, canonicalise claims to a
+        shared key before calling this method, or use evaluate_direct().
 
         Args:
             claim_text: Normalized claim text (exact match).
@@ -431,6 +430,103 @@ class CorroborationEngine:
         Returns:
             CorroborationResult with upgrade decision.
         """
+        # Find corroborating chains by exact text match
+        base_narrator_set = set(base_narrators)
+        corroborating_raw: list[dict] = []
+        for chain in all_chains:
+            if chain.get("claim_text", "") != claim_text:
+                continue
+            if set(chain.get("narrator_ids", [])) == base_narrator_set:
+                continue  # exclude base chain itself
+            cg_raw = chain.get("chain_grade", "daif")
+            try:
+                cg = ChainGrade(cg_raw)
+            except ValueError:
+                cg = ChainGrade.DAIF
+            corroborating_raw.append({
+                "grade": cg,
+                "narrators": chain.get("narrator_ids", []),
+                "source": chain.get("source", ""),
+            })
+
+        return self._evaluate_core(
+            base_chain_grade=base_chain_grade,
+            base_narrators=base_narrators,
+            corroborating_chains=corroborating_raw,
+            narrator_metadata=narrator_metadata or {},
+            total_corroborating=len(corroborating_raw),
+        )
+
+    def evaluate_direct(
+        self,
+        base_chain_grade: ChainGrade,
+        base_narrators: list[str],
+        corroborating_chains: list[dict],
+        narrator_metadata: dict[str, dict] | None = None,
+    ) -> CorroborationResult:
+        """Evaluate corroboration with pre-matched corroborating chains.
+
+        Use this when claims have already been matched semantically or
+        via embeddings — you provide the corroborating chains directly
+        without needing exact text matching.
+
+        Args:
+            base_chain_grade: Grade of the claim's own chain.
+            base_narrators: Narrator IDs in the base claim's chain.
+            corroborating_chains: Pre-matched corroborating chain dicts.
+                Each dict must have keys: grade (ChainGrade or str),
+                narrators (list[str]).  Optional: source (str).
+            narrator_metadata: Optional metadata for correlation detection.
+
+        Returns:
+            CorroborationResult with upgrade decision.
+
+        Example:
+            # Claims matched semantically via embeddings
+            engine = CorroborationEngine()
+            result = engine.evaluate_direct(
+                base_chain_grade=ChainGrade.DAIF,
+                base_narrators=["source:A", "ingest:A", "model:A"],
+                corroborating_chains=[
+                    {"grade": "hasan", "narrators": ["source:B", "ingest:B", "model:B"]},
+                ],
+                narrator_metadata={...},
+            )
+        """
+        # Normalise corroborating chains
+        normalised: list[dict] = []
+        for c in corroborating_chains:
+            grade = c.get("grade", "daif")
+            if isinstance(grade, str):
+                try:
+                    grade = ChainGrade(grade)
+                except ValueError:
+                    grade = ChainGrade.DAIF
+            normalised.append({
+                "grade": grade,
+                "narrators": c.get("narrators", []),
+                "source": c.get("source", ""),
+            })
+
+        return self._evaluate_core(
+            base_chain_grade=base_chain_grade,
+            base_narrators=base_narrators,
+            corroborating_chains=normalised,
+            narrator_metadata=narrator_metadata or {},
+            total_corroborating=len(normalised),
+        )
+
+    # ── internal: shared corroboration logic ──────────────────────
+
+    def _evaluate_core(
+        self,
+        base_chain_grade: ChainGrade,
+        base_narrators: list[str],
+        corroborating_chains: list[dict],
+        narrator_metadata: dict[str, dict],
+        total_corroborating: int,
+    ) -> CorroborationResult:
+        """Core corroboration logic shared by evaluate() and evaluate_direct()."""
         if base_chain_grade == ChainGrade.MAWDU:
             return CorroborationResult(
                 base_grade=base_chain_grade,
@@ -442,41 +538,19 @@ class CorroborationEngine:
                 reason="MAWDU chains cannot be corroborated",
             )
 
-        # Find corroborating chains — exclude the base chain itself
-        base_narrator_set = set(base_narrators)
-        corroborating = []
-        for chain in all_chains:
-            if chain.get("claim_text", "") != claim_text:
-                continue
-            # Exclude the base chain (same narrator set)
-            if set(chain.get("narrator_ids", [])) == base_narrator_set:
-                continue
-            cg_raw = chain.get("chain_grade", "daif")
-            try:
-                cg = ChainGrade(cg_raw)
-            except ValueError:
-                cg = ChainGrade.DAIF
-            corroborating.append(
-                {
-                    "grade": cg,
-                    "narrators": chain.get("narrator_ids", []),
-                    "source": chain.get("source", ""),
-                }
-            )
-
-        # Filter: must be truly independent (narrator sets + lineage detection)
-        independent = []
-        for c in corroborating:
+        # Filter by independence
+        independent = [
+            c for c in corroborating_chains
             if self._correlation_detector.are_independent(
-                base_narrators, c["narrators"], narrator_metadata or {}
-            ):
-                independent.append(c)
+                base_narrators, c["narrators"], narrator_metadata
+            )
+        ]
 
         if len(independent) < self.min_independent_chains:
             return CorroborationResult(
                 base_grade=base_chain_grade,
                 upgraded_grade=base_chain_grade,
-                corroborating_chains=len(corroborating),
+                corroborating_chains=total_corroborating,
                 independent_chains=len(independent),
                 effective_weight=0.0,
                 upgraded=False,
@@ -486,48 +560,42 @@ class CorroborationEngine:
                 ),
             )
 
-        # Minimum-grade gate: at least one chain must clear threshold
+        # Minimum-grade gate
         if not any(c["grade"] >= self.min_gate_grade for c in independent):
             return CorroborationResult(
                 base_grade=base_chain_grade,
                 upgraded_grade=base_chain_grade,
-                corroborating_chains=len(corroborating),
+                corroborating_chains=total_corroborating,
                 independent_chains=len(independent),
                 effective_weight=0.0,
                 upgraded=False,
                 reason=f"No corroborating chain meets min grade {self.min_gate_grade.value}",
             )
 
-        # Delegate grade computation to CappedCorroborationPolicy
+        # Compute independence scores and delegate to policy
         independence_scores = [
             self._correlation_detector.compute_independence_score(
-                base_narrators, c["narrators"], narrator_metadata or {}
+                base_narrators, c["narrators"], narrator_metadata
             )
             for c in independent
         ]
-        corroborating_grades = [c["grade"] for c in independent]
+        grades = [c["grade"] for c in independent]
 
         upgraded = self._policy.compute_corroborated_grade(
             base_grade=base_chain_grade,
-            corroborating_chains=corroborating_grades,
+            corroborating_chains=grades,
             independence_scores=independence_scores,
         )
 
-        # Compute effective weight for reporting
-        err = self._policy.ERROR_PROBS
-        combined_log = sum(
-            math.log(max(err.get(g, 0.30), 0.001)) for g in corroborating_grades
+        effective_weight = self._compute_effective_weight(
+            base_chain_grade, grades
         )
-        combined_log += math.log(max(err.get(base_chain_grade, 0.30), 0.001))
-        hasan_log = math.log(err[ChainGrade.HASAN])
-        effective_weight = combined_log / max(hasan_log, -10.0)
-
         upgraded_flag = upgraded != base_chain_grade
 
         return CorroborationResult(
             base_grade=base_chain_grade,
             upgraded_grade=upgraded,
-            corroborating_chains=len(corroborating),
+            corroborating_chains=total_corroborating,
             independent_chains=len(independent),
             effective_weight=effective_weight,
             upgraded=upgraded_flag,
@@ -541,3 +609,17 @@ class CorroborationEngine:
                 )
             ),
         )
+
+    def _compute_effective_weight(
+        self,
+        base_grade: ChainGrade,
+        corroborating_grades: list[ChainGrade],
+    ) -> float:
+        """Compute information-theoretic effective weight."""
+        err = self._policy.ERROR_PROBS
+        combined = sum(
+            math.log(max(err.get(g, 0.30), 0.001)) for g in corroborating_grades
+        )
+        combined += math.log(max(err.get(base_grade, 0.30), 0.001))
+        hasan_log = math.log(err[ChainGrade.HASAN])
+        return combined / max(hasan_log, -10.0)

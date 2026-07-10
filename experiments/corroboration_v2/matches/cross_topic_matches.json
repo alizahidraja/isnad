@@ -1,0 +1,723 @@
+[
+  {
+    "topic_reg": "Dark matter",
+    "topic_sim": "Natural selection",
+    "text_reg": "Cambridge, New York: Cambridge University Press.",
+    "text_sim": "Cambridge, New York: Cambridge University Press.",
+    "similarity": 0.9999999403953552
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "Atoms with the same number of protons but different numbers of neutrons are called isotopes of the same chemical element.",
+    "text_sim": "Atoms with the same number of protons but a different number of neutrons are called isotopes of the same element.",
+    "similarity": 0.9842590093612671
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Nuclear fusion",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on 8 December 2015.",
+    "similarity": 0.9821742177009583
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "CRISPR",
+    "text_reg": "Archived from the original (PDF) on 24 January 2005.",
+    "text_sim": "Archived from the original (PDF) on 5 December 2017.",
+    "similarity": 0.9631247520446777
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on 18 December 2017.",
+    "similarity": 0.9511969685554504
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "CRISPR",
+    "text_reg": "Archived from the original (PDF) on 26 January 2021.",
+    "text_sim": "Archived from the original (PDF) on 5 December 2017.",
+    "similarity": 0.9452651739120483
+  },
+  {
+    "topic_reg": "Milky Way",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on March 9, 2012.",
+    "text_sim": "Archived from the original on 19 May 2011.",
+    "similarity": 0.9410558938980103
+  },
+  {
+    "topic_reg": "Cell (biology)",
+    "topic_sim": "Mitosis",
+    "text_reg": "The centrosome is the main microtubule organizing center in the animal cell that produces the microtubules key components of the cytoskeleton.",
+    "text_sim": "The centrosome is the coordinating center for the cell's microtubules.",
+    "similarity": 0.9381130933761597
+  },
+  {
+    "topic_reg": "CRISPR",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 25 November 2016.",
+    "text_sim": "Archived from the original on 18 December 2017.",
+    "similarity": 0.9375740885734558
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "Atoms with the same number of protons but different numbers of neutrons are called isotopes of the same chemical element.",
+    "text_sim": "Atoms with equal numbers of protons but a different number of neutrons are different isotopes of the same element.",
+    "similarity": 0.9334990978240967
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on 1 December 2017.",
+    "similarity": 0.9221219420433044
+  },
+  {
+    "topic_reg": "CRISPR",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 25 November 2016.",
+    "text_sim": "Archived from the original on 1 December 2017.",
+    "similarity": 0.9206558465957642
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 8 December 2015.",
+    "text_sim": "Archived from the original on 18 December 2017.",
+    "similarity": 0.9135515689849854
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 28 September 2006.",
+    "text_sim": "Archived from the original on 19 May 2011.",
+    "similarity": 0.912469744682312
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "CRISPR",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on 25 November 2016.",
+    "similarity": 0.9122227430343628
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Entropy",
+    "text_reg": "Archived from the original on 16 January 2023.",
+    "text_sim": "Archived from the original on 27 May 2022.",
+    "similarity": 0.9074737429618835
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Milky Way",
+    "text_reg": "Archived from the original on 28 September 2006.",
+    "text_sim": "Archived from the original on March 9, 2012.",
+    "similarity": 0.9024028778076172
+  },
+  {
+    "topic_reg": "Natural selection",
+    "topic_sim": "Evolution",
+    "text_reg": "Disruptive (or diversifying) selection is selection favouring extreme trait values over intermediate trait values.",
+    "text_sim": "Secondly, disruptive selection is selection for extreme trait values and often results in two different values becoming most common, with selection against the average value.",
+    "similarity": 0.9007583856582642
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "CRISPR",
+    "text_reg": "Archived from the original on 28 September 2006.",
+    "text_sim": "Archived from the original on 25 November 2016.",
+    "similarity": 0.8989368677139282
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 8 December 2015.",
+    "text_sim": "Archived from the original on 1 December 2017.",
+    "similarity": 0.8965705633163452
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "All elements have multiple isotopes, variants with the same number of protons but different numbers of neutrons.",
+    "text_sim": "Atoms with equal numbers of protons but a different number of neutrons are different isotopes of the same element.",
+    "similarity": 0.8939926624298096
+  },
+  {
+    "topic_reg": "CRISPR",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 25 November 2016.",
+    "text_sim": "Archived from the original on 19 May 2011.",
+    "similarity": 0.8920226097106934
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Atom",
+    "text_reg": "Nuclear fusion is a reaction in which two or more atomic nuclei combine to form a larger nucleus.",
+    "text_sim": "Nuclear fusion occurs when multiple atomic particles join to form a heavier nucleus, such as through the energetic collision of two nuclei.",
+    "similarity": 0.8911491632461548
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Nuclear fusion",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on 28 September 2006.",
+    "similarity": 0.8909080624580383
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 28 September 2006.",
+    "text_sim": "Archived from the original on 18 December 2017.",
+    "similarity": 0.8907266855239868
+  },
+  {
+    "topic_reg": "Cell (biology)",
+    "topic_sim": "Evolution",
+    "text_reg": "Eukaryotic cells were created some 2.2 billion years ago in a process called eukaryogenesis.",
+    "text_sim": "The eukaryotic cells emerged between 1.6 and 2.7 billion years ago.",
+    "similarity": 0.8899333477020264
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on 19 May 2011.",
+    "similarity": 0.8893914818763733
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 28 September 2006.",
+    "text_sim": "Archived from the original on 1 December 2017.",
+    "similarity": 0.8860819339752197
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "CRISPR",
+    "text_reg": "Archived from the original on 8 December 2015.",
+    "text_sim": "Archived from the original on 25 November 2016.",
+    "similarity": 0.8846417665481567
+  },
+  {
+    "topic_reg": "Standard Model",
+    "topic_sim": "Atom",
+    "text_reg": "Fermions respect the Pauli exclusion principle, meaning that two identical fermions cannot simultaneously occupy the same quantum state in the same atom.",
+    "text_sim": "Fermions obey the Pauli exclusion principle which prohibits identical fermions, such as multiple protons, from occupying the same quantum state at the same time.",
+    "similarity": 0.8823596239089966
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Milky Way",
+    "text_reg": "Archived from the original on 8 December 2015.",
+    "text_sim": "Archived from the original on March 9, 2012.",
+    "similarity": 0.8805814385414124
+  },
+  {
+    "topic_reg": "Greenhouse effect",
+    "topic_sim": "Solar System",
+    "text_reg": "In the absence of a greenhouse effect, the surface of Venus would be expected to have a temperature of 232 K (\u221241 \u00b0C; \u221242 \u00b0F).",
+    "text_sim": "Venus has a surface temperatures over 400 \u00b0C (752 \u00b0F), mainly due to the amount of greenhouse gases in the atmosphere.",
+    "similarity": 0.8799737095832825
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Milky Way",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on March 9, 2012.",
+    "similarity": 0.8752443194389343
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "All elements have multiple isotopes, variants with the same number of protons but different numbers of neutrons.",
+    "text_sim": "Atoms with the same number of protons but a different number of neutrons are called isotopes of the same element.",
+    "similarity": 0.8746286630630493
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 8 December 2015.",
+    "text_sim": "Archived from the original on 19 May 2011.",
+    "similarity": 0.8741228580474854
+  },
+  {
+    "topic_reg": "CRISPR",
+    "topic_sim": "Milky Way",
+    "text_reg": "Archived from the original on 25 November 2016.",
+    "text_sim": "Archived from the original on March 9, 2012.",
+    "similarity": 0.8704671859741211
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Entropy",
+    "text_reg": "Archived from the original on 28 September 2006.",
+    "text_sim": "Archived from the original on 27 May 2022.",
+    "similarity": 0.8700152039527893
+  },
+  {
+    "topic_reg": "Chemical bond",
+    "topic_sim": "Atom",
+    "text_reg": "Next came Niels Bohr's 1913 model of a nuclear atom with electron orbits.",
+    "text_sim": "In 1913, the physicist Niels Bohr proposed a new model in which the electrons of an atom were assumed to orbit the nucleus but could only do so in a finite set of orbits, and could jump between these orbits only in discrete changes of energy corresponding to absorption or radiation of a photon.",
+    "similarity": 0.8675132393836975
+  },
+  {
+    "topic_reg": "Milky Way",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on March 9, 2012.",
+    "text_sim": "Archived from the original on 18 December 2017.",
+    "similarity": 0.8660957217216492
+  },
+  {
+    "topic_reg": "Milky Way",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on March 9, 2012.",
+    "text_sim": "Archived from the original on 1 December 2017.",
+    "similarity": 0.8654624819755554
+  },
+  {
+    "topic_reg": "Enzyme",
+    "topic_sim": "Evolution",
+    "text_reg": "Horizontal gene transfer may spread these genes to unrelated species, especially bacteria where they can replace endogenous genes of the same function, leading to hon-homologous gene displacement.",
+    "text_sim": "Horizontal gene transfer is the transfer of genetic material from one organism to another organism that is not its offspring; this is most common among bacteria.",
+    "similarity": 0.8652304410934448
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Natural selection",
+    "text_reg": "Archived from the original on 28 September 2006.",
+    "text_sim": "Archived from the original on 25 February 2001.",
+    "similarity": 0.8628154397010803
+  },
+  {
+    "topic_reg": "Solar System",
+    "topic_sim": "Milky Way",
+    "text_reg": "The plane of the ecliptic lies at an angle of about 60\u00b0 to the galactic plane.",
+    "text_sim": "The galactic plane is inclined by about 60\u00b0 to the ecliptic (the path of the Sun in the sky).",
+    "similarity": 0.8555505871772766
+  },
+  {
+    "topic_reg": "Cell (biology)",
+    "topic_sim": "Evolution",
+    "text_reg": "Cells emerged around 4 billion years ago.",
+    "text_sim": "The eukaryotic cells emerged between 1.6 and 2.7 billion years ago.",
+    "similarity": 0.8555346131324768
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "The chemical elements are what the periodic table classifies and organizes.",
+    "text_sim": "The chemical elements are often displayed in a periodic table that is laid out to display recurring chemical properties, and elements with the same number of valence electrons form a group that is aligned in the same column of the table.",
+    "similarity": 0.8502532243728638
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 16 January 2023.",
+    "text_sim": "Archived from the original on 18 December 2017.",
+    "similarity": 0.8490878343582153
+  },
+  {
+    "topic_reg": "Entropy",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 27 May 2022.",
+    "text_sim": "Archived from the original on 19 May 2011.",
+    "similarity": 0.8484563231468201
+  },
+  {
+    "topic_reg": "Solar System",
+    "topic_sim": "Milky Way",
+    "text_reg": "The plane of the ecliptic lies at an angle of about 60\u00b0 to the galactic plane.",
+    "text_sim": "The galactic plane is 60 degrees tilted from the ecliptic of the Earth's orbit of the Sun.",
+    "similarity": 0.8470378518104553
+  },
+  {
+    "topic_reg": "Black hole",
+    "topic_sim": "Milky Way",
+    "text_reg": "In this way, astronomers have identified numerous stellar black hole candidates in binary systems and established that the radio source known as Sagittarius A*, at the core of the Milky Way galaxy, contains a supermassive black hole of about 4.3 million solar masses.",
+    "text_sim": "The Galactic Center is an intense radio source known as Sagittarius A*, a supermassive black hole with a mass of 4.100 (\u00b1 0.034) million solar masses.",
+    "similarity": 0.8445609211921692
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "They are probably close to a predicted island of stability, where superheavy nuclides should be more long-lived than otherwise expected: predictions for the longest-lived nuclides on the island range from microseconds to millions of years.",
+    "text_sim": "Predictions for the half-life of the most stable nuclide on the island range from a few minutes to millions of years.",
+    "similarity": 0.8425973057746887
+  },
+  {
+    "topic_reg": "Natural selection",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 25 February 2001.",
+    "text_sim": "Archived from the original on 19 May 2011.",
+    "similarity": 0.8395016193389893
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Black hole",
+    "text_reg": "In February 2016, the Advanced LIGO team announced that they had detected gravitational waves from a black hole merger.",
+    "text_sim": "In late 2015, the LIGO Scientific Collaboration and Virgo Collaboration made the first direct detection of gravitational waves, named GW150914, representing the first observation of a black hole merger.",
+    "similarity": 0.8388303518295288
+  },
+  {
+    "topic_reg": "Quantum mechanics",
+    "topic_sim": "Electromagnetic radiation",
+    "text_reg": "In 1900, Max Planck proposed the hypothesis that energy is radiated and absorbed in discrete \"quanta\" (or energy packets), yielding a calculation that precisely matched the observed patterns of black-body radiation.",
+    "text_sim": "In 1900, Max Planck developed a new theory of black-body radiation that explained the observed spectrum.",
+    "similarity": 0.8386526703834534
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 16 January 2023.",
+    "text_sim": "Archived from the original on 1 December 2017.",
+    "similarity": 0.8383082747459412
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Black hole",
+    "text_reg": "Even more remarkably, there is a general set of laws known as black hole mechanics, which is analogous to the laws of thermodynamics.",
+    "text_sim": "These laws describe the behaviour of a black hole in a manner analogous to the laws of thermodynamics.",
+    "similarity": 0.8370789289474487
+  },
+  {
+    "topic_reg": "Natural selection",
+    "topic_sim": "Evolution",
+    "text_reg": "Darwin's ideas were inspired by the observations that he had made on the second voyage of HMS Beagle (1831\u20131836), and by the work of a political economist, Thomas Robert Malthus, who, in An Essay on the Principle of Population (1798), noted that population (if unchecked) increases exponentially, whereas the food supply grows only arithmetically; thus, inevitable limitations of resources would have demographic implications, leading to a \"struggle for existence\".",
+    "text_sim": "Partly influenced by An Essay on the Principle of Population (1798) by Thomas Robert Malthus, Darwin noted that population growth would lead to a \"struggle for existence\" in which favourable variations prevailed as others perished.",
+    "similarity": 0.8365055322647095
+  },
+  {
+    "topic_reg": "Dark matter",
+    "topic_sim": "Natural selection",
+    "text_reg": "Cambridge, New York: Cambridge University Press.",
+    "text_sim": "Oxford; New York: Oxford University Press.",
+    "similarity": 0.8355792760848999
+  },
+  {
+    "topic_reg": "Cell (biology)",
+    "topic_sim": "Evolution",
+    "text_reg": "Cells emerged on Earth about four billion years ago.",
+    "text_sim": "The eukaryotic cells emerged between 1.6 and 2.7 billion years ago.",
+    "similarity": 0.8349524140357971
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Natural selection",
+    "text_reg": "Archived from the original on 8 December 2015.",
+    "text_sim": "Archived from the original on 25 February 2001.",
+    "similarity": 0.8342286944389343
+  },
+  {
+    "topic_reg": "Entropy",
+    "topic_sim": "Milky Way",
+    "text_reg": "Archived from the original on 27 May 2022.",
+    "text_sim": "Archived from the original on March 9, 2012.",
+    "similarity": 0.8340985774993896
+  },
+  {
+    "topic_reg": "Natural selection",
+    "topic_sim": "Evolution",
+    "text_reg": "The uncommon disruptive selection also acts during transition periods when the current mode is sub-optimal, but alters the trait in more than one direction.",
+    "text_sim": "Secondly, disruptive selection is selection for extreme trait values and often results in two different values becoming most common, with selection against the average value.",
+    "similarity": 0.8340281844139099
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Atom",
+    "text_reg": "Since smaller nuclei have a larger surface-area-to-volume ratio, the binding energy per nucleon due to the nuclear force generally increases with the size of the nucleus but approaches a limiting value corresponding to that of a nucleus with a diameter of about four nucleons.",
+    "text_sim": "For heavier nuclei, the binding energy per nucleon begins to decrease.",
+    "similarity": 0.8333926200866699
+  },
+  {
+    "topic_reg": "Enzyme",
+    "topic_sim": "Mitosis",
+    "text_reg": "This causes a slow accumulation of mutations and results in the development of cancers.",
+    "text_sim": "Certain types of cancers can arise from such mutations.",
+    "similarity": 0.8331992030143738
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "Atoms with the same number of protons but different numbers of neutrons are called isotopes of the same chemical element.",
+    "text_sim": "Atoms of the same element have the same number of protons, called the atomic number.",
+    "similarity": 0.8323220610618591
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "CRISPR",
+    "text_reg": "Archived from the original on 16 January 2023.",
+    "text_sim": "Archived from the original on 25 November 2016.",
+    "similarity": 0.8317273259162903
+  },
+  {
+    "topic_reg": "Entropy",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 27 May 2022.",
+    "text_sim": "Archived from the original on 18 December 2017.",
+    "similarity": 0.8314239382743835
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Black hole",
+    "text_reg": "Using this formalism, it can be shown that black holes emit a blackbody spectrum of particles known as Hawking radiation leading to the possibility that they evaporate over time.",
+    "text_sim": "However, black holes slowly evaporate by emitting Hawking radiation.",
+    "similarity": 0.8304319977760315
+  },
+  {
+    "topic_reg": "Black hole",
+    "topic_sim": "Thermodynamics",
+    "text_reg": "These laws are mathematical analogues of the laws of thermodynamics.",
+    "text_sim": "In the various theoretical descriptions of thermodynamics these laws may be expressed in seemingly differing forms, but the most prominent formulations are the following.",
+    "similarity": 0.8261400461196899
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Black hole",
+    "text_reg": "On 11 February 2016, the Advanced LIGO team announced that they had directly detected gravitational waves from a pair of black holes merging.",
+    "text_sim": "In late 2015, the LIGO Scientific Collaboration and Virgo Collaboration made the first direct detection of gravitational waves, named GW150914, representing the first observation of a black hole merger.",
+    "similarity": 0.8256163597106934
+  },
+  {
+    "topic_reg": "Entropy",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 27 May 2022.",
+    "text_sim": "Archived from the original on 1 December 2017.",
+    "similarity": 0.8245241045951843
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Atom",
+    "text_reg": "Non-fusion processes that contribute include the s-process and r-process in neutron merger and supernova nucleosynthesis, responsible for elements heavier than iron.",
+    "text_sim": "Elements heavier than iron were produced in supernovae and colliding neutron stars through the r-process, and in AGB stars through the s-process, both of which involve the capture of neutrons by atomic nuclei.",
+    "similarity": 0.8222111463546753
+  },
+  {
+    "topic_reg": "Entropy",
+    "topic_sim": "CRISPR",
+    "text_reg": "Archived from the original on 27 May 2022.",
+    "text_sim": "Archived from the original on 25 November 2016.",
+    "similarity": 0.8214418888092041
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Natural selection",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on 25 February 2001.",
+    "similarity": 0.8209298849105835
+  },
+  {
+    "topic_reg": "Dark matter",
+    "topic_sim": "Milky Way",
+    "text_reg": "One of the observations that served as evidence for the existence of galactic halos of dark matter was the shape of galaxy rotation curves.",
+    "text_sim": "The rotation curve of the Milky Way agrees with the universal rotation curve of spiral galaxies, the best evidence for the existence of dark matter in galaxies.",
+    "similarity": 0.820014476776123
+  },
+  {
+    "topic_reg": "Natural selection",
+    "topic_sim": "Milky Way",
+    "text_reg": "Archived from the original on 25 February 2001.",
+    "text_sim": "Archived from the original on March 9, 2012.",
+    "similarity": 0.8199922442436218
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Atom",
+    "text_reg": "The net result of the opposing electrostatic and strong nuclear forces is that the binding energy per nucleon generally increases with increasing size, up to the elements iron and nickel, and then decreases for heavier nuclei.",
+    "text_sim": "For heavier nuclei, the binding energy per nucleon begins to decrease.",
+    "similarity": 0.819247841835022
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Atom",
+    "text_reg": "When a nucleon such as a proton or neutron is added to a nucleus, the nuclear force attracts it to all the other nucleons of the nucleus (if the atom is small enough), but primarily to its immediate neighbors due to the short range of the force.",
+    "text_sim": "The protons and neutrons in the nucleus are attracted to each other by the nuclear force.",
+    "similarity": 0.817244291305542
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Entropy",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on 27 May 2022.",
+    "similarity": 0.8171387314796448
+  },
+  {
+    "topic_reg": "Chemical bond",
+    "topic_sim": "Atom",
+    "text_reg": "A chemical bond is the association of atoms or ions to form molecules, crystals, and other structures.",
+    "text_sim": "Atoms can attach to one or more other atoms by chemical bonds to form chemical compounds such as molecules or crystals.",
+    "similarity": 0.8157839179039001
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "Thomson in 1904, often called the plum-pudding model.",
+    "text_sim": "Thomson's model is popularly known as the plum pudding model, though neither Thomson nor his colleagues used this analogy.",
+    "similarity": 0.815720796585083
+  },
+  {
+    "topic_reg": "DNA",
+    "topic_sim": "Evolution",
+    "text_reg": "Within eukaryotic cells, DNA is organized into long structures called chromosomes.",
+    "text_sim": "Within cells, each long strand of DNA is called a chromosome.",
+    "similarity": 0.8149369955062866
+  },
+  {
+    "topic_reg": "Electromagnetic radiation",
+    "topic_sim": "Atom",
+    "text_reg": "Dark bands in the absorption spectrum are due to the atoms in an intervening medium between source and observer.",
+    "text_sim": "Thus the atoms behave like a filter that forms a series of dark absorption bands in the energy output.",
+    "similarity": 0.8138658404350281
+  },
+  {
+    "topic_reg": "Standard Model",
+    "topic_sim": "Atom",
+    "text_reg": "Strong interaction\nGluons mediate the strong interactions, which binds quarks to each other by influencing the color charge, with the interactions being described in the theory of quantum chromodynamics (QCD).",
+    "text_sim": "The quarks are held together by the strong interaction (or strong force), which is mediated by gluons.",
+    "similarity": 0.8129438757896423
+  },
+  {
+    "topic_reg": "Cell (biology)",
+    "topic_sim": "Mitosis",
+    "text_reg": "Centrosomes are composed of two centrioles which lie perpendicular to each other in which each has an organization like a cartwheel, which separate during cell division and help in the formation of the mitotic spindle.",
+    "text_sim": "Although centrosomes help organize microtubule assembly, they are not essential for the formation of the spindle apparatus, since they are absent from plants, and are not absolutely required for animal cell mitosis.",
+    "similarity": 0.812006950378418
+  },
+  {
+    "topic_reg": "Entropy",
+    "topic_sim": "Natural selection",
+    "text_reg": "Archived from the original on 27 May 2022.",
+    "text_sim": "Archived from the original on 25 February 2001.",
+    "similarity": 0.8106279969215393
+  },
+  {
+    "topic_reg": "General relativity",
+    "topic_sim": "Nuclear fusion",
+    "text_reg": "Archived from the original on 18 December 2015.",
+    "text_sim": "Archived from the original on 16 January 2023.",
+    "similarity": 0.809869647026062
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Milky Way",
+    "text_reg": "Archived from the original (PDF) on 24 January 2005.",
+    "text_sim": "Archived from the original on March 9, 2012.",
+    "similarity": 0.8095003366470337
+  },
+  {
+    "topic_reg": "Cell (biology)",
+    "topic_sim": "Mitosis",
+    "text_reg": "The centrosome is the main microtubule organizing center in the animal cell that produces the microtubules key components of the cytoskeleton.",
+    "text_sim": "Although centrosomes help organize microtubule assembly, they are not essential for the formation of the spindle apparatus, since they are absent from plants, and are not absolutely required for animal cell mitosis.",
+    "similarity": 0.8078113794326782
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "Furthermore, electrons obey the Pauli exclusion principle: different electrons must always be in different states.",
+    "text_sim": "Due to the nature of electrons to obey the Pauli exclusion principle, in which no two electrons may be found in the same quantum state, bound electrons pair up with each other, with one member of each pair in a spin up state and the other in the opposite, spin down state.",
+    "similarity": 0.8075055480003357
+  },
+  {
+    "topic_reg": "Natural selection",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 25 February 2001.",
+    "text_sim": "Archived from the original on 18 December 2017.",
+    "similarity": 0.8060020804405212
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Atom",
+    "text_reg": "A nuclear fusion process that produces atomic nuclei lighter than nickel-62 is generally exothermic, due to the positive gradient of the nuclear binding energy curve.",
+    "text_sim": "The fusion of two nuclei that create larger nuclei with lower atomic numbers than iron and nickel\u2014a total nucleon number of about 60\u2014is usually an exothermic process that releases more energy than is required to bring them together.",
+    "similarity": 0.8054825067520142
+  },
+  {
+    "topic_reg": "Black hole",
+    "topic_sim": "Entropy",
+    "text_reg": "It also predicts that all black holes have entropy which scales with their surface area.",
+    "text_sim": "The entropy of a black hole is proportional to the surface area of the black hole's event horizon.",
+    "similarity": 0.8051938414573669
+  },
+  {
+    "topic_reg": "Catalysis",
+    "topic_sim": "Enzyme",
+    "text_reg": "Most biocatalysts are enzymes, but other nonprotein-based classes of biomolecules also exhibit catalytic properties including ribozymes, and synthetic deoxyribozymes.",
+    "text_sim": "Other biological catalysts include catalytic RNA molecules, or ribozymes, which are sometimes classified as enzymes despite being composed of RNA rather than protein.",
+    "similarity": 0.8036138415336609
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Entropy",
+    "text_reg": "Archived from the original (PDF) on 26 January 2021.",
+    "text_sim": "Archived from the original on 27 May 2022.",
+    "similarity": 0.8035914301872253
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Chemical bond",
+    "text_reg": "Atoms can form covalent bonds to each other by sharing electrons in pairs, creating an overlap of valence orbitals.",
+    "text_sim": "In valence bond theory, bonding is conceptualized as being built up from electron pairs that are localized and shared by two atoms via the overlap of atomic orbitals.",
+    "similarity": 0.80344158411026
+  },
+  {
+    "topic_reg": "Dark matter",
+    "topic_sim": "Natural selection",
+    "text_reg": "Cambridge, New York: Cambridge University Press.",
+    "text_sim": "Cambridge, MA: Belknap Press of Harvard University Press.",
+    "similarity": 0.8032519817352295
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Atom",
+    "text_reg": "As they approach each other, all the protons in one nucleus repel all the protons in the other.",
+    "text_sim": "The protons and neutrons in the nucleus are attracted to each other by the nuclear force.",
+    "similarity": 0.8029096126556396
+  },
+  {
+    "topic_reg": "Nuclear fusion",
+    "topic_sim": "Entropy",
+    "text_reg": "Archived from the original on 8 December 2015.",
+    "text_sim": "Archived from the original on 27 May 2022.",
+    "similarity": 0.8023270964622498
+  },
+  {
+    "topic_reg": "Periodic table",
+    "topic_sim": "Atom",
+    "text_reg": "All elements have multiple isotopes, variants with the same number of protons but different numbers of neutrons.",
+    "text_sim": "Within a single element, the number of neutrons may vary, determining the isotope of that element.",
+    "similarity": 0.8021061420440674
+  },
+  {
+    "topic_reg": "Natural selection",
+    "topic_sim": "Evolution",
+    "text_reg": "When different organisms in a population possess different versions of a gene affecting a certain phenotypic trait, each of these versions is known as an allele.",
+    "text_sim": "However, while this simple correspondence between an allele and a trait works in some cases, most traits are influenced by multiple genes in a quantitative or epistatic manner.",
+    "similarity": 0.8020460605621338
+  },
+  {
+    "topic_reg": "Quantum mechanics",
+    "topic_sim": "Electromagnetic radiation",
+    "text_reg": "The first complete quantum field theory, quantum electrodynamics, provides a fully quantum description of the electromagnetic interaction.",
+    "text_sim": "A quantum theory of the interaction between electromagnetic radiation and matter such as electrons is described by the theory of quantum electrodynamics.",
+    "similarity": 0.8017096519470215
+  },
+  {
+    "topic_reg": "Natural selection",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original on 25 February 2001.",
+    "text_sim": "Archived from the original on 1 December 2017.",
+    "similarity": 0.8012776374816895
+  },
+  {
+    "topic_reg": "CRISPR",
+    "topic_sim": "Evolution",
+    "text_reg": "Archived from the original (PDF) on 5 December 2017.",
+    "text_sim": "Archived from the original on 1 December 2017.",
+    "similarity": 0.8005467653274536
+  }
+]
