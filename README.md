@@ -119,6 +119,8 @@ and where you need to supply your own components.
 | **CLI**                       | `isnad serve` | `isnad seed`                        | `isnad/cli/`               |
 | **ʿadālah / ḍabṭ**            | Integrity and precision as two distinct axes         | `isnad/types.py`           |
 
+> 🗺️ **Full architecture diagram:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) — 3 tabs: System Architecture, Claim Lifecycle (data flow), and Validation Matrix (what's proven vs what's not). Open in [draw.io](https://app.diagrams.net/) or VS Code Draw.io extension.
+
 ---
 
 ## The Decision Matrix
@@ -214,6 +216,7 @@ Full methodology, results, negative controls, and paper gap analysis in:
 - 📝 **Companion gist:** https://gist.github.com/alizahidraja/56beaadf493976182f38aa602b8958e2
 - 🧪 **§8 Experiment & results:** [`experiments/s8_gated_vs_ungated/`](experiments/s8_gated_vs_ungated/)
 - 🔬 **Semantic Corroboration v2:** [`experiments/corroboration_v2/`](experiments/corroboration_v2/)
+- 🗺️ **Architecture Diagram:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) — 3 tabs: System, Data Flow, Validation Matrix
 - 🔌 **LangChain integration:** [`src/isnad/integrations/langchain/`](src/isnad/integrations/langchain/)
 - 📊 **Critic evaluation:** [`src/isnad/critics/CRITIC_EVAL.md`](src/isnad/critics/CRITIC_EVAL.md)
 
