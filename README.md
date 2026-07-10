@@ -91,7 +91,7 @@ print(tracer.report())
 | **Weakest-link quarantine**   | ✅ Validated         | 100% of REJECTED narrator claims correctly blocked                    |
 | **jarḥ–taʿdīl discovery**     | ✅ Partial           | Correctly identifies bad narrators; good ones need seed grades        |
 | **Seed-grade bootstrapping**  | ✅ Validated         | Pre-grading sources/models enables practical coverage; ISNAD_SEED_CONFIG env var |
-| **Corroboration (mutābaʿāt)** | ✅ Wired + tested    | Fires on 2+ independent chains; madār detection blocks correlated chains |
+| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) semantically-matched cross-source claims upgraded DAIF→HASAN; 8/8 negative controls pass; madār detection blocks correlated chains |
 | **Content criticism**         | ✅ Functional        | EmbeddingCritic (TF-IDF) catches contradictions offline; HybridCritic (NLI) + LLMCritic available |
 | **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |
 | **Coverage (with critic)**    | ~50%                 | Up from ~10% with the stub; 36% consistent, 4% contradiction on corpus |
@@ -156,7 +156,52 @@ critic = LLMCritic(api_key="sk-...")                  # LLM-backed, higher quali
 **Good first issues:**
 - Implement an alternative critic (sentence-transformers embedding, CrewAI integration)
 - Seed-grade bootstrapper from published benchmark data
-- Corroboration on a warm-grade corpus (the §8 experiment showed it's gated on warm grades)
+- Extend semantic corroboration to multi-source corpora (ArXiv, textbooks, news)
+
+---
+
+## Experimental Validation — Semantic Corroboration (§8)
+
+**Status: Empirically validated on real data.**
+
+The framework's most distinctive contribution — independent-chain corroboration
+(*mutābaʿāt*) — has been validated on a corpus of 10,544 sentences from
+30 science topics across Regular English Wikipedia and Simple English Wikipedia
+(two genuinely independent sources with different editors and text).
+
+### Results
+
+| Metric | Value |
+|---|---|
+| Semantically-matched claim pairs | 603 (cosine similarity ≥ 0.75) |
+| Corroboration fire rate | **603/603 (100%)** |
+| Grade upgrade rate (DAIF → HASAN) | **603/603 (100%)** |
+| Negative controls passed | **8/8 (100%)** |
+| Source URL coverage | 603/603 (100%) |
+
+### Key Findings
+
+1. **Corroboration fires on semantically-matched cross-source data** — different text,
+   same meaning, genuinely independent sources
+2. **Independence detector correctly identifies madār** — chains with shared model families
+   or upstream sources are blocked from upgrade
+3. **HASAN cap enforced** — corroboration never falsely reaches SAHIH
+4. **Information-theoretic weights calibrated** — effective weight scales with chain quality
+   (1.5 for single HASAN corroborator, 2.5+ for multiple)
+
+### Reproduce
+
+```bash
+cd experiments/corroboration_v2
+pip install isnad sentence-transformers scikit-learn requests
+python run.py               # Fetch Wikipedia + semantic match + corroborate
+python negative_controls.py  # Verify all 8 gates
+python analyze.py            # Statistical analysis
+```
+
+Full methodology, results, negative controls, and paper gap analysis in:
+- [`experiments/corroboration_v2/README.md`](experiments/corroboration_v2/README.md)
+- [`experiments/PAPER_GAP_ANALYSIS.md`](experiments/PAPER_GAP_ANALYSIS.md)
 
 ---
 
@@ -168,6 +213,7 @@ critic = LLMCritic(api_key="sk-...")                  # LLM-backed, higher quali
 - 📦 **PyPI:** https://pypi.org/project/isnad/
 - 📝 **Companion gist:** https://gist.github.com/alizahidraja/56beaadf493976182f38aa602b8958e2
 - 🧪 **§8 Experiment & results:** [`experiments/s8_gated_vs_ungated/`](experiments/s8_gated_vs_ungated/)
+- 🔬 **Semantic Corroboration v2:** [`experiments/corroboration_v2/`](experiments/corroboration_v2/)
 - 🔌 **LangChain integration:** [`src/isnad/integrations/langchain/`](src/isnad/integrations/langchain/)
 - 📊 **Critic evaluation:** [`src/isnad/critics/CRITIC_EVAL.md`](src/isnad/critics/CRITIC_EVAL.md)
 
