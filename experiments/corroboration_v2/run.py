@@ -43,71 +43,51 @@ MATCHES_DIR = _exp_dir / "matches"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 MATCHES_DIR.mkdir(parents=True, exist_ok=True)
 
-# Narrator IDs — COMPLETELY DISJOINT for regular vs simple Wikipedia
+# Narrator IDs — COMPLETELY DISJOINT for regular vs simple Wikipedia.
+# These reflect the ACTUAL pipeline: source → ingestion.  No LLM.
+# Claims are raw extracted sentences, not LLM-processed.
+
 REG_SOURCE = "source:wikipedia"
-REG_INGEST = "ingest:wiki_direct"
-REG_MODEL = "model:wiki_gpt4"
-
+REG_INGEST = "ingest:wiki_ocr"      # OCR extraction (WEAK → DAIF baseline)
 SIM_SOURCE = "source:wikipedia_simple"
-SIM_INGEST = "ingest:simple_direct"
-SIM_MODEL = "model:simple_gpt4"
-
-# Weak variant for DAIF→HASAN upgrade testing
-REG_INGEST_WEAK = "ingest:wiki_ocr"
+SIM_INGEST = "ingest:simple_direct"  # Direct extraction (RELIABLE → HASAN)
 
 NARRATOR_GRADES: dict[str, NarratorGrade] = {
     REG_SOURCE: NarratorGrade.ACCEPTABLE,
-    REG_INGEST: NarratorGrade.RELIABLE,
-    REG_MODEL: NarratorGrade.RELIABLE,
+    REG_INGEST: NarratorGrade.WEAK,       # WEAK OCR → DAIF chain
     SIM_SOURCE: NarratorGrade.ACCEPTABLE,
-    SIM_INGEST: NarratorGrade.RELIABLE,
-    SIM_MODEL: NarratorGrade.RELIABLE,
-    REG_INGEST_WEAK: NarratorGrade.WEAK,
+    SIM_INGEST: NarratorGrade.RELIABLE,   # Direct → HASAN chain
 }
 
 NARRATOR_METADATA: dict[str, dict[str, Any]] = {
     REG_SOURCE: {"upstream_source": "en.wikipedia.org", "model_family": None},
     REG_INGEST: {"upstream_source": None, "model_family": "scraper_wiki"},
-    REG_MODEL: {"upstream_source": None, "model_family": "openai_gpt4"},
     SIM_SOURCE: {"upstream_source": "simple.wikipedia.org", "model_family": None},
     SIM_INGEST: {"upstream_source": None, "model_family": "scraper_simple"},
-    SIM_MODEL: {"upstream_source": None, "model_family": "anthropic_claude"},
-    REG_INGEST_WEAK: {"upstream_source": None, "model_family": "scraper_wiki"},
 }
 
 
 # ===========================================================================
-# Chain building
+# Chain building — source → ingest only (no LLM — claims are raw sentences)
 # ===========================================================================
 
-def build_reg_chain() -> Chain:
+def build_reg_weak_chain() -> Chain:
+    """Weak chain: Wikipedia source → OCR ingestion (DAIF)."""
     return Chain([
         ChainLinkSpec(narrator_id=REG_SOURCE, step=0,
                       transform_type=TransformType.PASS_THROUGH, domain="general"),
         ChainLinkSpec(narrator_id=REG_INGEST, step=1,
                       transform_type=TransformType.DESTRUCTIVE, domain="general"),
-        ChainLinkSpec(narrator_id=REG_MODEL, step=2,
-                      transform_type=TransformType.GENERATIVE, domain="general"),
     ])
 
-def build_reg_weak_chain() -> Chain:
-    return Chain([
-        ChainLinkSpec(narrator_id=REG_SOURCE, step=0,
-                      transform_type=TransformType.PASS_THROUGH, domain="general"),
-        ChainLinkSpec(narrator_id=REG_INGEST_WEAK, step=1,
-                      transform_type=TransformType.DESTRUCTIVE, domain="general"),
-        ChainLinkSpec(narrator_id=REG_MODEL, step=2,
-                      transform_type=TransformType.GENERATIVE, domain="general"),
-    ])
 
 def build_sim_chain() -> Chain:
+    """Strong chain: Simple Wikipedia source → direct ingestion (HASAN)."""
     return Chain([
         ChainLinkSpec(narrator_id=SIM_SOURCE, step=0,
                       transform_type=TransformType.PASS_THROUGH, domain="general"),
         ChainLinkSpec(narrator_id=SIM_INGEST, step=1,
                       transform_type=TransformType.DESTRUCTIVE, domain="general"),
-        ChainLinkSpec(narrator_id=SIM_MODEL, step=2,
-                      transform_type=TransformType.GENERATIVE, domain="general"),
     ])
 
 

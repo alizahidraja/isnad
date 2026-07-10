@@ -51,12 +51,18 @@ Cross-source matching via `all-MiniLM-L6-v2` embeddings (sentence-transformers).
 Cosine similarity ≥ 0.75 for cross-source, ≥ 0.80 for cross-topic.
 
 ### 3. Chain Construction
+
+Claims are raw extracted Wikipedia sentences — **no LLM processing**.
+Chains reflect the actual pipeline: source → ingestion.
+
 ```
-Base chain (DAIF):    source:wikipedia → ingest:wiki_ocr (WEAK) → model:wiki_gpt4
-Corroborator (HASAN): source:wikipedia_simple → ingest:simple_direct → model:simple_gpt4
+Base chain (DAIF):    source:wikipedia → ingest:wiki_ocr (WEAK)
+Corroborator (HASAN): source:wikipedia_simple → ingest:simple_direct (RELIABLE)
 ```
-Completely disjoint narrator IDs, different model families (GPT-4 vs Claude),
-different upstream sources (en.wikipedia.org vs simple.wikipedia.org).
+
+Completely disjoint narrator IDs, different model families on ingest
+(wiki vs simple), different upstream sources (en.wikipedia.org vs
+simple.wikipedia.org) — full independence.
 
 ### 4. Corroboration
 `CorroborationEngine.evaluate_direct()` with `min_independent_chains=1`.

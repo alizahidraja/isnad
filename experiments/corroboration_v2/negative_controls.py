@@ -41,10 +41,10 @@ class ControlResult:
 
 
 def build_reg_chain() -> Chain:
+    """Weak chain: source → OCR ingest (no LLM — claims are raw sentences)."""
     return Chain([
         ChainLinkSpec("source:wikipedia", 0, transform_type=TransformType.PASS_THROUGH, domain="general"),
         ChainLinkSpec("ingest:wiki_ocr", 1, transform_type=TransformType.DESTRUCTIVE, domain="general"),
-        ChainLinkSpec("model:wiki_gpt4", 2, transform_type=TransformType.GENERATIVE, domain="general"),
     ])
 
 
