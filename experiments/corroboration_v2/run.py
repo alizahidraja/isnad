@@ -128,15 +128,20 @@ class ClaimRecord:
     text: str
     normalized: str
     topic: str
-    phase: str  # "within_topic", "cross_topic"
+    phase: str  # "cross_source", "cross_topic"
+    # Source provenance — for paper-quality traceability
+    url_reg: str = ""
+    url_sim: str = ""
+    page_id_reg: int = 0
+    page_id_sim: int = 0
     # Regular Wikipedia chain (base, may be weak)
-    reg_chain: Chain
-    reg_grade: ChainGrade
-    reg_narrator_ids: list[str]
+    reg_chain: Chain | None = None
+    reg_grade: ChainGrade | None = None
+    reg_narrator_ids: list[str] = field(default_factory=list)
     # Simple Wikipedia chain (corroborating, independent)
-    sim_chain: Chain
-    sim_grade: ChainGrade
-    sim_narrator_ids: list[str]
+    sim_chain: Chain | None = None
+    sim_grade: ChainGrade | None = None
+    sim_narrator_ids: list[str] = field(default_factory=list)
     # Corroboration result
     corroborated: bool = False
     upgraded_grade: ChainGrade | None = None
@@ -196,42 +201,52 @@ def run_phase_ab(
     match_pairs: list[MatchPair],
     registry: Registry,
     phase: str,
+    all_data: dict[str, dict[str, Any]] | None = None,
 ) -> list[ClaimRecord]:
     """Run corroboration on semantically matched claim pairs.
 
-    For each pair, build:
-      - Regular Wikipedia chain (DAIF, weak ingest) as base
-      - Simple Wikipedia chain (HASAN) as corroborator
-    The claims have DIFFERENT text but the SAME meaning.
-    We canonicalize both to the regular Wikipedia claim text as the key
-    so the CorroborationEngine can match them.
+    Args:
+        match_pairs: Semantically matched claim pairs.
+        registry: Narrator registry.
+        phase: Phase label ("cross_source" or "cross_topic").
+        all_data: Optional topic data dict for source URL lookup.
     """
     records = []
     rng = random.Random(42)
-    # Shuffle to sample diverse pairs
     pairs = list(match_pairs)
     rng.shuffle(pairs)
-
-    # Limit to avoid memory issues if there are thousands
     max_pairs = 500
     pairs = pairs[:max_pairs]
+
+    # Build URL lookup from all_data
+    url_lookup: dict[str, dict[str, str]] = {}
+    if all_data:
+        for topic, sources in all_data.items():
+            for src in ("regular", "simple"):
+                td = sources.get(src)
+                if td and td.url:
+                    url_lookup.setdefault(topic, {})[src] = td.url
 
     for mp in pairs:
         norm = normalize_claim(mp.text_reg)
 
-        # Regular Wikipedia WEAK chain (DAIF baseline)
         reg_chain = build_reg_weak_chain()
         reg_grade = _grade_chain(reg_chain, registry)
 
-        # Simple Wikipedia chain (HASAN, independent)
         sim_chain = build_sim_chain()
         sim_grade = _grade_chain(sim_chain, registry)
+
+        # Look up source URLs
+        reg_url = url_lookup.get(mp.topic_reg, {}).get("regular", "")
+        sim_url = url_lookup.get(mp.topic_sim, {}).get("simple", "")
 
         rec = ClaimRecord(
             text=mp.text_reg,
             normalized=norm,
             topic=f"{mp.topic_reg}↔{mp.topic_sim}",
             phase=phase,
+            url_reg=reg_url,
+            url_sim=sim_url,
             reg_chain=reg_chain, reg_grade=reg_grade,
             reg_narrator_ids=reg_chain.narrator_ids,
             sim_chain=sim_chain, sim_grade=sim_grade,
@@ -365,10 +380,10 @@ def main() -> None:
 
     engine = CorroborationEngine(min_independent_chains=1)
 
-    records_a = run_phase_ab(cross_pairs, registry, "cross_source")
+    records_a = run_phase_ab(cross_pairs, registry, "cross_source", all_data)
     print(f"  Phase A (cross-source): {len(records_a)} claim pairs")
 
-    records_b = run_phase_ab(intra_pairs, registry, "cross_topic")
+    records_b = run_phase_ab(intra_pairs, registry, "cross_topic", all_data)
     print(f"  Phase B (cross-topic):  {len(records_b)} claim pairs")
 
     all_records = records_a + records_b
@@ -383,16 +398,19 @@ def main() -> None:
     results_json = []
     for rec in all_records:
         results_json.append({
-            "text": rec.text[:200],
+            "text_reg": rec.text[:300],
+            "text_sim": getattr(rec, 'text_sim', ''),  # if we add it later
             "topic": rec.topic,
             "phase": rec.phase,
-            "reg_grade": rec.reg_grade.value,
-            "sim_grade": rec.sim_grade.value,
+            "url_reg": rec.url_reg,
+            "url_sim": rec.url_sim,
+            "reg_grade": rec.reg_grade.value if rec.reg_grade else "unknown",
+            "sim_grade": rec.sim_grade.value if rec.sim_grade else "unknown",
             "corroborated": rec.corroborated,
             "upgraded_grade": rec.upgraded_grade.value if rec.upgraded_grade else None,
-            "effective_weight": rec.effective_weight,
+            "effective_weight": round(rec.effective_weight, 2),
             "reason": rec.reason,
-            "similarity": rec.similarity,
+            "similarity": round(rec.similarity, 4),
         })
 
     with open(OUTPUT_DIR / "results_v2.json", "w") as f:

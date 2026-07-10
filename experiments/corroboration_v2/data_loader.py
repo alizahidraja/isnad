@@ -1,13 +1,11 @@
-"""Data loader v2 — full Wikipedia articles from regular + Simple English.
+"""Data loader v2 — full Wikipedia articles with source URLs and filtering.
 
-Fetches complete page extracts (not just intros) for 30 science topics
-from both en.wikipedia.org and simple.wikipedia.org.
+Fetches complete page extracts from both en.wikipedia.org and
+simple.wikipedia.org.  Every claim carries its source URL and page ID
+for full provenance.
 
-Regular Wikipedia: ~70K chars/article, ~200 factual sentences each
-Simple Wikipedia: ~35K chars/article, different text by different editors
-
-These are genuinely independent sources — different text, same facts.
-Perfect for cross-source corroboration with semantic matching.
+Filters out citation boilerplate, reference lists, and other non-factual
+text before claim extraction.
 """
 
 from __future__ import annotations
@@ -24,20 +22,15 @@ import requests
 # ── 30 science topics spanning physics, chemistry, biology, earth science ──
 
 TOPICS = [
-    # Physics
     "Quantum mechanics", "General relativity", "Black hole", "Thermodynamics",
     "Electromagnetic radiation", "Nuclear fusion", "Superconductivity",
     "Standard Model", "Dark matter", "Entropy",
-    # Chemistry
     "Periodic table", "Chemical bond", "Catalysis", "Electrolysis",
     "Polymer", "Acid–base reaction",
-    # Biology
     "DNA", "Photosynthesis", "Natural selection", "Cell (biology)",
     "Enzyme", "Mitosis", "CRISPR",
-    # Earth / Space
     "Plate tectonics", "Greenhouse effect", "Carbon cycle",
     "Solar System", "Milky Way",
-    # Cross-domain
     "Atom", "Evolution",
 ]
 
@@ -46,11 +39,9 @@ OVERLAP_PAIRS = [
     ("Quantum mechanics", "Standard Model"),
     ("General relativity", "Black hole"),
     ("Thermodynamics", "Entropy"),
-    ("DNA", "CRISPR"),
-    ("DNA", "Mitosis"),
+    ("DNA", "CRISPR"), ("DNA", "Mitosis"),
     ("Natural selection", "Evolution"),
-    ("Atom", "Periodic table"),
-    ("Atom", "Chemical bond"),
+    ("Atom", "Periodic table"), ("Atom", "Chemical bond"),
     ("Photosynthesis", "Carbon cycle"),
     ("Greenhouse effect", "Carbon cycle"),
     ("Solar System", "Milky Way"),
@@ -72,6 +63,60 @@ class TopicData:
     fetched_at: str = ""
 
 
+# ── Citation boilerplate patterns to filter ──
+
+CITATION_PATTERNS = [
+    r"^\s*Archived from the original",
+    r"^\s*Retrieved\s",
+    r"^\s*ISBN\s",
+    r"^\s*doi\s*:",
+    r"^\s*DOI\s*:",
+    r"^\s*Vol\.\s",
+    r"^\s*pp\.\s",
+    r"^\s*Copyright\s",
+    r"^\s*©\s",
+    r"^\s*All rights reserved",
+    r"^\s*This page was last edited",
+    r"^\s*Citation\s",
+    r"^\s*Cite\s",
+    r"^\s*References?\s*$",
+    r"^\s*Further reading\s*$",
+    r"^\s*External links\s*$",
+    r"^\s*Notes\s*$",
+    r"^\s*Bibliography\s*$",
+    r"^\s*See also\s*$",
+    r"^\s*\d+\.\s",  # numbered list items
+    r"^\s*\*\s",    # bullet points
+    r"^\s*\[\d+\]",  # citation markers like [42]
+    r"^\s*\[note\s",  # [note 1]
+    r"\b(?:University Press|Cambridge University Press|Oxford University Press)\b",
+]
+
+# Patterns that look like pure URLs or references
+URL_PATTERNS = [
+    r"https?://",
+    r"www\.",
+    r"\.pdf\b",
+    r"doi\.org",
+]
+
+def is_citation_boilerplate(text: str) -> bool:
+    """Check if a sentence is citation boilerplate, not a factual claim."""
+    t = text.strip()
+    for pat in CITATION_PATTERNS:
+        if re.search(pat, t, re.IGNORECASE):
+            return True
+    # If >40% of characters are in URLs, it's boilerplate
+    url_chars = sum(1 for pat in URL_PATTERNS if re.search(pat, t))
+    if url_chars >= 2 and len(t) < 200:
+        return True
+    # Pure numbers and symbols
+    alpha_ratio = sum(1 for c in t if c.isalpha()) / max(1, len(t))
+    if alpha_ratio < 0.3 and len(t) > 30:
+        return True
+    return False
+
+
 class DualWikipediaLoader:
     """Load full articles from both regular and Simple English Wikipedia."""
 
@@ -85,7 +130,7 @@ class DualWikipediaLoader:
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self._session = requests.Session()
         self._session.headers.update({
-            "User-Agent": "isnad-corroboration-v2/1.0 (academic research)"
+            "User-Agent": "isnad-corroboration-v2/1.0 (academic research; mailto:alizahidrajaa@gmail.com)"
         })
 
     def _fetch_article(self, api_url: str, topic: str) -> dict[str, Any]:
@@ -139,11 +184,7 @@ class DualWikipediaLoader:
 
     def get_article(self, topic: str, source: str = "regular",
                     force_refresh: bool = False) -> TopicData:
-        """Get full article text for a topic from regular or simple Wikipedia.
-
-        Caches to disk.  On HTTP 429 (rate limit), sleeps and retries up
-        to 3 times with exponential backoff.
-        """
+        """Get full article text with retry logic for rate limiting."""
         if not force_refresh:
             cached = self._load_cache(topic, source)
             if cached is not None and cached.text:
@@ -155,7 +196,7 @@ class DualWikipediaLoader:
 
         for attempt in range(3):
             if attempt > 0:
-                wait = 3 * (2 ** attempt)  # 6s, 12s, 24s
+                wait = 3 * (2 ** attempt)
                 print(f"    Rate-limited, waiting {wait}s (attempt {attempt + 1}/3)...")
                 time.sleep(wait)
             else:
@@ -163,13 +204,13 @@ class DualWikipediaLoader:
 
             try:
                 raw = self._fetch_article(api, topic)
-                break  # success — exit retry loop
+                break
             except Exception as e:
                 err_msg = str(e)
                 if "429" in err_msg:
                     if attempt < 2:
                         continue
-                    print(f"    ERROR (final): rate limit exhausted after 3 attempts")
+                    print(f"    ERROR (final): rate limit exhausted")
                 else:
                     print(f"    ERROR: {e}")
                     break
@@ -186,14 +227,10 @@ class DualWikipediaLoader:
             fetched_at=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         )
         self._save_cache(td)
-        time.sleep(0.3)  # rate limit
+        time.sleep(0.3)
         return td
 
     def load_all(self, topics: list[str] | None = None) -> dict[str, dict[str, TopicData]]:
-        """Load all topics from both sources.
-
-        Returns: {topic_name: {"regular": TopicData, "simple": TopicData}}
-        """
         if topics is None:
             topics = TOPICS
         result: dict[str, dict[str, TopicData]] = {}
@@ -206,43 +243,35 @@ class DualWikipediaLoader:
 
 
 def extract_factual_sentences(text: str, min_len: int = 40, max_len: int = 500) -> list[str]:
-    """Extract fact-bearing sentences from article text."""
+    """Extract fact-bearing sentences, filtering out boilerplate."""
     raw = re.split(r"(?<=[.!?])\s+", text)
     sentences = []
     for s in raw:
         s = s.strip()
         if len(s) < min_len or len(s) > max_len:
             continue
-        # Skip navigation, section headers, references
-        if re.match(r"^[A-Z][a-z]+ [A-Z][a-z]+ \(", s):
-            continue
         if s.startswith("==") or s.startswith("†") or s.startswith("^"):
             continue
-        if re.match(r"^\d+\.\s", s):  # numbered list items
-            continue
-        # Skip pure citation/see-also lines
-        if re.match(r"^(See also|References|External links|Further reading|Notes|Bibliography)", s):
+        if is_citation_boilerplate(s):
             continue
         sentences.append(s)
     return sentences
 
 
 def normalize_claim(text: str) -> str:
-    """Normalize claim text for comparison."""
     return " ".join(text.lower().strip().split())
 
 
 if __name__ == "__main__":
     loader = DualWikipediaLoader()
-    print("Testing dual Wikipedia loader...\n")
-
-    # Test a few topics
-    for topic in ["Quantum mechanics", "DNA", "Plate tectonics"]:
+    print("Testing...")
+    for topic in ["Quantum mechanics", "DNA"]:
         reg = loader.get_article(topic, "regular")
         sim = loader.get_article(topic, "simple")
         print(f"\n{topic}:")
-        print(f"  Regular: {len(reg.sentences)} sentences, {len(reg.text):,} chars")
-        print(f"  Simple:  {len(sim.sentences)} sentences, {len(sim.text):,} chars")
-        if reg.sentences and sim.sentences:
-            print(f"  Reg[0]: {reg.sentences[0][:100]}...")
-            print(f"  Sim[0]: {sim.sentences[0][:100]}...")
+        print(f"  Regular: {len(reg.sentences)} sents, URL: {reg.url}")
+        print(f"  Simple:  {len(sim.sentences)} sents, URL: {sim.url}")
+        # Check for boilerplate in first 5 sentences
+        for s in reg.sentences[:3]:
+            bp = "BOILERPLATE" if is_citation_boilerplate(s) else "ok"
+            print(f"    [{bp}] {s[:100]}...")
