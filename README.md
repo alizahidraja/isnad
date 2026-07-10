@@ -167,9 +167,12 @@ critic = LLMCritic(api_key="sk-...")                  # LLM-backed, higher quali
 **Status: Empirically validated on real data.**
 
 The framework's most distinctive contribution — independent-chain corroboration
-(*mutābaʿāt*) — has been validated on a corpus of 10,544 sentences from
-30 science topics across Regular English Wikipedia and Simple English Wikipedia
-(two genuinely independent sources with different editors and text).
+(*mutābaʿāt*) — has been validated on **two corpora of increasing difficulty:**
+
+| Corpus | Sources | Matches | Fire Rate | Difficulty |
+|---|---|---|---|---|
+| **Wikipedia** (v2) | Regular + Simple English (30 topics) | 662 | 100% | Easy — natural paraphrasing |
+| **Physics Textbooks** (v3) | OpenStax Vol.1 + Crowell (2 books) | 104 | 100% | Hard — formal prose, fewer overlaps |
 
 ### Results
 
@@ -215,7 +218,8 @@ Full methodology, results, negative controls, and paper gap analysis in:
 - 📦 **PyPI:** https://pypi.org/project/isnad/
 - 📝 **Companion gist:** https://gist.github.com/alizahidraja/56beaadf493976182f38aa602b8958e2
 - 🧪 **§8 Experiment & results:** [`experiments/s8_gated_vs_ungated/`](experiments/s8_gated_vs_ungated/)
-- 🔬 **Semantic Corroboration v2:** [`experiments/corroboration_v2/`](experiments/corroboration_v2/)
+- 🔬 **Semantic Corroboration v2 (Wikipedia):** [`experiments/corroboration_v2/`](experiments/corroboration_v2/)
+- 📚 **Corroboration v3 (Physics Textbooks):** [`experiments/corroboration_v3/`](experiments/corroboration_v3/) — 104/104 on s8 corpus
 - 🗺️ **Architecture Diagram:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) — 3 tabs: System, Data Flow, Validation Matrix
 - 🔌 **LangChain integration:** [`src/isnad/integrations/langchain/`](src/isnad/integrations/langchain/)
 - 📊 **Critic evaluation:** [`src/isnad/critics/CRITIC_EVAL.md`](src/isnad/critics/CRITIC_EVAL.md)
