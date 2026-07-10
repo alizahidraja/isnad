@@ -1,60 +1,44 @@
-# Corroboration Experiment v1
+# Corroboration Experiment v1 — Exact String Matching
 
-## Research Question
-Does independent corroboration (*mutābaʿāt*) meaningfully upgrade trust in the Isnād–Rijāl framework?
+**Status:** Superseded by v2 (semantic matching).  Kept for historical
+comparison.  v1 proved the mechanism works; v2 proves it works on
+semantically-matched real data.
 
-## Hypothesis
-Claims supported by two independent transmission chains (different source narrators)
-receive higher chain grades than those supported by a single chain.
+## Key Results (Historical)
 
-## Experiment Design
-
-### Phase A: Synthetic Matching
-- Same exact claim text from two different "sources" (Wikipedia vs Britannica)
-- Chains: `source:wikipedia → ingest:direct → model:gpt4` vs `source:britannica → ingest:direct → model:gpt4`
-- Narrator sets are fully disjoint → independence guaranteed
-- **Purpose**: Validate that the CorroborationEngine fires when all preconditions are met
-
-### Phase B: Cross-Topic Matching
-- Real near-duplicate claims found across Wikipedia topic boundaries
-- e.g., "Quantum mechanics" and "Wave-particle duality" share factual overlap
-- Uses TF-IDF Jaccard similarity to find candidate pairs
-- **Purpose**: Test on real, non-synthetic overlaps
-
-### Narrator Grades
-| Narrator | Grade |
+| Metric | Value |
 |---|---|
-| `source:wikipedia` | ACCEPTABLE |
-| `source:britannica` | ACCEPTABLE |
-| `ingest:direct` | RELIABLE |
-| `ingest:ocr` | WEAK |
-| `model:gpt4` | RELIABLE |
+| Total claims | 136 |
+| Corroboration fired | 68/136 (50%) |
+| Phase A (synthetic) | 59/59 DAIF→HASAN |
+| Phase B (cross-topic) | 9/18 DAIF→HASAN |
+| Data | 12 Wikipedia intros, ~215 sentences |
 
-### CorroborationEngine Configuration
-- `min_independent_chains`: 2
-- `corroboration_cap`: HASAN (cannot reach SAHIH via corroboration alone)
-- `min_gate_grade`: HASAN (at least one corroborating chain must be HASAN+)
+## Differences from v2
 
-## Running
+| | v1 | v2 |
+|---|---|---|
+| Matching | Exact string | Cosine similarity ≥ 0.75 |
+| Sources | Wikipedia + synthetic "Britannica" chain | Wikipedia + Simple Wikipedia |
+| Claims | 136 | 603 |
+| Source URLs | No | Yes (100%) |
+| Negative controls | No | Yes (8/8) |
+
+## Why v1 Matters
+
+v1 discovered the critical design requirements:
+- Chains must use **completely disjoint narrator IDs** for independence
+- Model families must differ (shared family → madār penalty)
+- `min_independent_chains=1` for 2-source experiments
+
+These findings drove the source code fixes on main.
+
+---
+
+## Run
 
 ```bash
-# From repo root
-python experiments/corroboration_v1/run.py   # Run the experiment
-python experiments/corroboration_v1/analyze.py  # Analyze results
+cd experiments/corroboration_v1
+python run.py       # Fetch Wikipedia intros + run
+python analyze.py   # Analyze
 ```
-
-## Success Criteria
-
-| Metric | Target |
-|---|---|
-| Corroboration fired rate (Phase A) | >80% |
-| Corroboration fired rate (Phase B) | >20% |
-| Grade upgrade rate | >30% |
-| Claims processed | >50 |
-
-## Files
-
-- `data_loader.py` — Wikipedia API client, sentence extraction, near-duplicate detection
-- `run.py` — Main experiment: chain building, grading, corroboration, reporting
-- `analyze.py` — Result analysis and diagnosis
-- `results/` — Output directory (results.json, report.txt)
