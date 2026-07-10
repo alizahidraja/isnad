@@ -1,0 +1,16 @@
+{
+  "topic": "Acid\u2013base reaction",
+  "source": "simple",
+  "page_id": 543247,
+  "url": "https://simple.wikipedia.org/wiki/Acid%E2%80%93base_reaction",
+  "text": "An acid-base reaction is a chemical reaction between an acid and a base. The products of such a reaction are a salt and water. This reaction may also regarded as neutralization reaction.\nThe reaction can be simplified to\n\nOH\u2212(aq) + H+(aq) \u2014> H2O\nThe other ions remain constant because they are not affected by the reaction. They are called spectator ions.\n\n\n== Acids and oxides ==\nAn example of an acid-oxide reaction is sulfuric acid and copper(II) oxide reacting to form copper sulfate and water:\n\nH2SO4 + CuO \u2014> CuSO4 + H2O\nAnother example of an acid-oxide reaction is hydrochloric acid reacting with sodium oxide to form sodium chloride and water:\n\n2 HCl + Na2O \u2014> 2 NaCl + H2O\nThe general equation is:\n\nacid + oxide \u2014> salt + water\n\n\n== Acids and hydroxides ==\nThis is one of the more common acid-base reactions. This reaction is one of the few processes to make sodium chloride and water using hydrochloric acid and sodium hydroxide:\n\nHCl + NaOH \u2014> NaCl + H2O\n\n\n== Acids and carbonates ==\nAn acid can also react with a carbonate, which is a relatively weak base. An example is hydrochloric acid reacting with sodium carbonate to form sodium chloride, carbon dioxide and water:\n\n2 HCl + Na2CO3 \u2014> 2 NaCl + CO2 + H2O\nThe products of an acid-carbonate reaction is a soluble salt, carbon dioxide and water.",
+  "sentences": [
+    "An acid-base reaction is a chemical reaction between an acid and a base.",
+    "The products of such a reaction are a salt and water.",
+    "This reaction may also regarded as neutralization reaction.",
+    "The reaction can be simplified to\n\nOH\u2212(aq) + H+(aq) \u2014> H2O\nThe other ions remain constant because they are not affected by the reaction.",
+    "This reaction is one of the few processes to make sodium chloride and water using hydrochloric acid and sodium hydroxide:\n\nHCl + NaOH \u2014> NaCl + H2O\n\n\n== Acids and carbonates ==\nAn acid can also react with a carbonate, which is a relatively weak base.",
+    "An example is hydrochloric acid reacting with sodium carbonate to form sodium chloride, carbon dioxide and water:\n\n2 HCl + Na2CO3 \u2014> 2 NaCl + CO2 + H2O\nThe products of an acid-carbonate reaction is a soluble salt, carbon dioxide and water."
+  ],
+  "fetched_at": "2026-07-09T13:09:09Z"
+}

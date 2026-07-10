@@ -1,0 +1,26 @@
+{
+  "topic": "Entropy",
+  "source": "simple",
+  "page_id": 41462,
+  "url": "https://simple.wikipedia.org/wiki/Entropy",
+  "text": "The entropy of an object is a measure of the amount of energy which is unavailable to do work. Entropy is also a measure of the number of possible arrangements the atoms in a system can have. In this sense, entropy is a measure of uncertainty or randomness. The higher the entropy of an object, the more uncertain we are about the states of the atoms making up that object because there are more states to decide from. A law of physics says that it takes work to make the entropy of an object or system  smaller; without work, entropy can never become smaller \u2013 you could say that everything slowly goes to disorder (higher entropy).\nThe word entropy came from the study of heat and energy in the period 1850 to 1900. Some very useful mathematical ideas about probability calculations emerged from the study of entropy. These ideas are now used in information theory, statistical mechanics, chemistry and other areas of study. \nEntropy is simply a quantitative measure of what the second law of thermodynamics describes: the spreading of energy until it is evenly spread. The meaning of entropy is different in different fields. It can mean:\n\nInformation entropy, which is a measure of information communicated by systems that are affected by data noise.\nThermodynamic entropy is part of the science of heat energy. It is a measure of how organized or disorganized energy is in a system of atoms or molecules.\n\n\n== Energy Dispersal ==\nEntropy measures how energy spreads and becomes less useful for work. When energy in a system disperses more evenly, there are more possible ways the particles can be arranged. This increase in possible arrangements makes the system more disordered, which is why higher entropy means greater energy dispersal and less available energy to do work.\nWhen an ice cube melts, for example, the molecules move from an orderly, solid structure to a freely moving liquid where energy is more dispersed.\n\n\n== References ==",
+  "sentences": [
+    "The entropy of an object is a measure of the amount of energy which is unavailable to do work.",
+    "Entropy is also a measure of the number of possible arrangements the atoms in a system can have.",
+    "In this sense, entropy is a measure of uncertainty or randomness.",
+    "The higher the entropy of an object, the more uncertain we are about the states of the atoms making up that object because there are more states to decide from.",
+    "A law of physics says that it takes work to make the entropy of an object or system  smaller; without work, entropy can never become smaller \u2013 you could say that everything slowly goes to disorder (higher entropy).",
+    "The word entropy came from the study of heat and energy in the period 1850 to 1900.",
+    "Some very useful mathematical ideas about probability calculations emerged from the study of entropy.",
+    "These ideas are now used in information theory, statistical mechanics, chemistry and other areas of study.",
+    "Entropy is simply a quantitative measure of what the second law of thermodynamics describes: the spreading of energy until it is evenly spread.",
+    "The meaning of entropy is different in different fields.",
+    "It can mean:\n\nInformation entropy, which is a measure of information communicated by systems that are affected by data noise.",
+    "Thermodynamic entropy is part of the science of heat energy.",
+    "It is a measure of how organized or disorganized energy is in a system of atoms or molecules.",
+    "When energy in a system disperses more evenly, there are more possible ways the particles can be arranged.",
+    "This increase in possible arrangements makes the system more disordered, which is why higher entropy means greater energy dispersal and less available energy to do work.",
+    "When an ice cube melts, for example, the molecules move from an orderly, solid structure to a freely moving liquid where energy is more dispersed."
+  ],
+  "fetched_at": "2026-07-09T13:08:03Z"
+}
