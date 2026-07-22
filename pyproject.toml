@@ -121,6 +121,8 @@ dev = [
     "pytest-asyncio>=1.4.0",
     "pytest-cov>=7.1.0",
     "ruff>=0.15.20",
+    "fastapi>=0.115",
+    "httpx>=0.28",
 ]
 
 [tool.ruff.lint.per-file-ignores]

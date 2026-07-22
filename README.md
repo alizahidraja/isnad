@@ -90,7 +90,7 @@ print(tracer.report())
 | **Bayesian grading**          | ✅ Default           | Beta-distribution replaces hardcoded thresholds; ISNAD_POLICY env override |
 | **Weakest-link quarantine**   | ✅ Validated         | 100% of REJECTED narrator claims correctly blocked                    |
 | **jarḥ–taʿdīl discovery**     | ✅ Partial           | Correctly identifies bad narrators; good ones need seed grades        |
-| **Seed-grade bootstrapping**  | ✅ Validated         | Pre-grading sources/models enables practical coverage; ISNAD_SEED_CONFIG env var |
+| **Seed-grade bootstrapping**  | ✅ Validated         | Pre-grading sources/models improves coverage from ~5% to ~10%; critical for non-zero serving; ISNAD_SEED_CONFIG env var |
 | **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) semantically-matched cross-source claims upgraded DAIF→HASAN; 8/8 negative controls pass; madār detection blocks correlated chains |
 | **Content criticism**         | ✅ Functional        | EmbeddingCritic (TF-IDF) catches contradictions offline; HybridCritic (NLI) + LLMCritic available |
 | **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |

@@ -95,11 +95,12 @@ A null result (no significant difference) or negative result (ISNAD worse) is re
   The extraction method, model, dedup, and confidence capture are unchanged.
 - **Seeds increased from 5 to 10.** Narrower CIs via more randomness samples.
   The primary hypothesis, metrics, and decision rule are unchanged.
-- **Cross-source corroboration overlap: 0.** The synthetic corpus produces
-  no identical normalized claims across OpenStax and Crowell sources.
-  Consequently, the corroboration ablation (condition 4) is untestable —
-  conditions 3 and 4 produce identical results. This is flagged prominently
-  in RESULTS.md.
+- **Corpus updated 2026-07-21.** The original run used pre-generated text. The final
+  corpus uses 411 real PDF-extracted chunks from OpenStax Vol.1-3 and Crowell
+  Light & Matter (verified by SHA-256 checksums in corpus/CHECKSUMS.txt) plus
+  6 synthetic overlap-test chunks. Real PDFs are gitignored; download via
+  corpus/fetch.py. See corpus/ATTRIBUTION.md for provenance. Cross-source
+  overlap count on real text: 71 (v3 run adds verified physics formula matches).
 - **Transition-policy sweep preregistered 2026-07-06.** A secondary (not primary)
   analysis sweeps the downgrade threshold ∈ {3, 6, 10, 15, 25} to characterize
   the coverage-collapse finding. Hypothesis: looser thresholds reduce
