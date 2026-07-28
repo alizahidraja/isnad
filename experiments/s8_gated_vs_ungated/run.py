@@ -19,7 +19,6 @@ from dataclasses import dataclass, field
 
 from isnad.core.chain import Chain, ChainLinkSpec
 from isnad.core.grading import grade_chain
-from isnad.matn import DeterministicRuleCritic
 from isnad.core.decision import decide
 from isnad.core.registry import Registry
 from isnad.types import (
@@ -91,7 +90,6 @@ def run_condition(
     """
     n_claims = len(eval_claims)
     review_budget = max(1, int(n_claims * budget))
-    critic = DeterministicRuleCritic()
 
     verdicts: list[ClaimVerdict] = []
     stats = {
@@ -161,6 +159,41 @@ def run_condition(
     elif condition in ("isnad", "isnad_no_corroboration"):
         enable_corroboration = (condition == "isnad")
 
+        # Build TF-IDF index once. For each claim, find best match
+        # against a random sample of 500 other claims (fast, good enough).
+        import random as _random
+        _critic_corpus = list(corpus_normalized)
+        _critic_verdicts: dict[str, ContentVerdict] = {}
+        if len(_critic_corpus) > 1:
+            from isnad.critics.embedding import TFIDFIndex, _has_contradiction_signal
+            _rng = _random.Random(42)
+            _critic_index = TFIDFIndex(_critic_corpus)
+            _critic_vectors = [_critic_index.tfidf_vector(t) for t in _critic_corpus]
+            _sample_size = min(500, len(_critic_corpus) - 1)
+            for i, norm in enumerate(_critic_corpus):
+                cv_vec = _critic_vectors[i]
+                # Sample random indices excluding self
+                candidates = list(range(len(_critic_corpus)))
+                candidates.remove(i)
+                _rng.shuffle(candidates)
+                sample = candidates[:_sample_size]
+                best_sim = 0.0
+                best_idx = sample[0]
+                for j in sample:
+                    sim = _critic_index.cosine_similarity(cv_vec, _critic_vectors[j])
+                    if sim > best_sim:
+                        best_sim = sim
+                        best_idx = j
+                if best_sim >= 0.75:
+                    if _has_contradiction_signal(norm, _critic_corpus[best_idx]):
+                        _critic_verdicts[norm] = ContentVerdict.CONTRADICTION
+                    else:
+                        _critic_verdicts[norm] = ContentVerdict.CONSISTENT
+                elif best_sim >= 0.50 and _has_contradiction_signal(norm, _critic_corpus[best_idx]):
+                    _critic_verdicts[norm] = ContentVerdict.CONTRADICTION
+                else:
+                    _critic_verdicts[norm] = ContentVerdict.UNVERIFIABLE
+
         # --- First pass: grade all chains ---
         graded_claims: list[dict] = []
         for claim in eval_claims:
@@ -183,10 +216,9 @@ def run_condition(
             c["_link_grades"] = [g.value for g in link_grades]
             c["_narrator_ids"] = [link.narrator_id for link in chain.links]
 
-            # Matn criticism: deterministic stub returns UNVERIFIABLE on real text
-            # (the stub only matches exact duplicates and hardcoded patterns;
-            #  on real textbook text without self-matching, it always returns UNVERIFIABLE)
-            cv = ContentVerdict.UNVERIFIABLE
+            # Matn criticism: lookup precomputed semantic verdict
+            norm = claim.get("normalized", "")
+            cv = _critic_verdicts.get(norm, ContentVerdict.UNVERIFIABLE)
             c["content_verdict"] = cv.value
             graded_claims.append(c)
 

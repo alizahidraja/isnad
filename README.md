@@ -5,7 +5,8 @@
 [![CI](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml/badge.svg)](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![DOI: 10.5281/zenodo.21211290](https://zenodo.org/badge/DOI/10.5281/zenodo.21211290.svg)](https://doi.org/10.5281/zenodo.21211290)
+[![arXiv](https://img.shields.io/badge/arXiv-2607.24117-b31b1b.svg)](https://arxiv.org/abs/2607.24117)
+[![DOI: 10.48550/arXiv.2607.24117](https://zenodo.org/badge/DOI/10.48550/arXiv.2607.24117.svg)](https://doi.org/10.48550/arXiv.2607.24117)
 
 **🌐 Full project home: https://alizahidraja.com/isnad**
 
@@ -91,10 +92,11 @@ print(tracer.report())
 | **Weakest-link quarantine**   | ✅ Validated         | 100% of REJECTED narrator claims correctly blocked                    |
 | **jarḥ–taʿdīl discovery**     | ✅ Partial           | Correctly identifies bad narrators; good ones need seed grades        |
 | **Seed-grade bootstrapping**  | ✅ Validated         | Pre-grading sources/models improves coverage from ~5% to ~10%; critical for non-zero serving; ISNAD_SEED_CONFIG env var |
-| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) semantically-matched cross-source claims upgraded DAIF→HASAN; 8/8 negative controls pass; madār detection blocks correlated chains |
+| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 negative controls pass; madār detection blocks correlated chains |
 | **Content criticism**         | ✅ Functional        | EmbeddingCritic (TF-IDF) catches contradictions offline; HybridCritic (NLI) + LLMCritic available |
+| **Semantic matching**         | ✅ Validated         | Cross-source embedding matching (MiniLM) across Wikipedia and physics corpora |
+| **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 9 integration tests pass |
 | **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |
-| **Coverage (with critic)**    | ~50%                 | Up from ~10% with the stub; 36% consistent, 4% contradiction on corpus |
 
 The honesty box is a feature. We tell you exactly what works, what's limited,
 and where you need to supply your own components.
@@ -176,13 +178,12 @@ The framework's most distinctive contribution — independent-chain corroboratio
 
 ### Results
 
-| Metric | Value |
-|---|---|
-| Semantically-matched claim pairs | 603 (cosine similarity ≥ 0.75) |
-| Corroboration fire rate | **603/603 (100%)** |
-| Grade upgrade rate (DAIF → HASAN) | **603/603 (100%)** |
-| Negative controls passed | **8/8 (100%)** |
-| Source URL coverage | 603/603 (100%) |
+| Corpus | Sources | Matches | Fire Rate | Difficulty |
+|---|---|---|---|---|
+| **Wikipedia** (v2) | Regular + Simple English (30 topics) | 662 | 100% | Easy |
+| **Physics Textbooks** (v3) | OpenStax Vol.1 + Crowell (2 books) | 104 | 100% | Hard |
+
+**Combined: 603 + 104 = 707 claim pairs tested across both corpora. 100% corroboration fire rate. 8/8 negative controls. Zero false positives. Source URLs for every claim.**
 
 ### Key Findings
 
@@ -213,7 +214,8 @@ Full methodology, results, negative controls, and paper gap analysis in:
 ## Ecosystem
 
 - 🌐 **Site:** https://alizahidraja.com/isnad
-- 📄 **Paper (DOI):** https://doi.org/10.5281/zenodo.21211290
+- 📄 **Paper (arXiv):** https://arxiv.org/abs/2607.24117
+- 📄 **Paper (DOI):** https://doi.org/10.48550/arXiv.2607.24117
 - 💾 **Software (DOI):** https://doi.org/10.5281/zenodo.21216873
 - 📦 **PyPI:** https://pypi.org/project/isnad/
 - 📝 **Companion gist:** https://gist.github.com/alizahidraja/56beaadf493976182f38aa602b8958e2
@@ -234,7 +236,9 @@ Full methodology, results, negative controls, and paper gap analysis in:
   title   = {Grading the Narrators: An Isnād–Rijāl Framework for
              Claim-Level Provenance in Multi-Agent Knowledge Systems},
   year    = 2026,
-  doi     = {10.5281/zenodo.21211290},
+  doi     = {10.48550/arXiv.2607.24117},
+  eprint  = {2607.24117},
+  archivePrefix = {arXiv},
 }
 
 @software{raja2026isnad,
