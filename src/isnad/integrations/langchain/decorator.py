@@ -57,17 +57,15 @@ def isnad_track(
                 claims = [str(result)]
 
             for _claim_text in claims:
-                chain = Chain(
-                    [
-                        ChainLinkSpec(
-                            narrator_id=narrator_id,
-                            step=0,
-                            domain=domain,
-                            transform_type=transform_type,
-                            trace_id=str(uuid.uuid4())[:8],
-                        )
-                    ]
-                )
+                chain = Chain([
+                    ChainLinkSpec(
+                        narrator_id=narrator_id,
+                        step=0,
+                        domain=domain,
+                        transform_type=transform_type,
+                        trace_id=str(uuid.uuid4())[:8],
+                    )
+                ])
 
                 # Register narrator if not already present
                 if (narrator_id, domain) not in registry:

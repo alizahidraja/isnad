@@ -81,19 +81,11 @@ BASE_NARRATORS = {
     "ingest_model_a": "Model — LLM that paraphrases faithfully",
 }
 
-canonical_chain = Chain(
-    [
-        ChainLinkSpec(
-            "openstax_v3", 0, transform_type=TransformType.PASS_THROUGH, domain="physics"
-        ),
-        ChainLinkSpec(
-            "pdf_scraper_a", 1, transform_type=TransformType.DESTRUCTIVE, domain="physics"
-        ),
-        ChainLinkSpec(
-            "ingest_model_a", 2, transform_type=TransformType.GENERATIVE, domain="physics"
-        ),
-    ]
-)
+canonical_chain = Chain([
+    ChainLinkSpec("openstax_v3", 0, transform_type=TransformType.PASS_THROUGH, domain="physics"),
+    ChainLinkSpec("pdf_scraper_a", 1, transform_type=TransformType.DESTRUCTIVE, domain="physics"),
+    ChainLinkSpec("ingest_model_a", 2, transform_type=TransformType.GENERATIVE, domain="physics"),
+])
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -186,13 +178,11 @@ print(f"\n{SEP}")
 print("E. INCOMPLETE CHAIN (munqaṭiʿ) → DAIF cap")
 print(SEP)
 
-gap_chain = Chain(
-    [
-        ChainLinkSpec("openstax_v3", 0, domain="physics"),
-        # STEP 1 MISSING — gap in transmission
-        ChainLinkSpec("ingest_model_a", 2, domain="physics"),
-    ]
-)
+gap_chain = Chain([
+    ChainLinkSpec("openstax_v3", 0, domain="physics"),
+    # STEP 1 MISSING — gap in transmission
+    ChainLinkSpec("ingest_model_a", 2, domain="physics"),
+])
 check("E1. Gap chain is munqaṭiʿ", not gap_chain.is_complete)
 reg5 = Registry()
 reg5.register("openstax_v3", "physics", grade=NarratorGrade.RELIABLE)
@@ -221,19 +211,11 @@ reg_f.register("openstax_v3", "physics", grade=NarratorGrade.RELIABLE)
 reg_f.register("pdf_scraper_a", "physics", grade=NarratorGrade.WEAK)  # ← bad scraper
 reg_f.register("ingest_model_a", "physics", grade=NarratorGrade.RELIABLE)  # ← good model
 
-repair_chain = Chain(
-    [
-        ChainLinkSpec(
-            "openstax_v3", 0, transform_type=TransformType.PASS_THROUGH, domain="physics"
-        ),
-        ChainLinkSpec(
-            "pdf_scraper_a", 1, transform_type=TransformType.DESTRUCTIVE, domain="physics"
-        ),
-        ChainLinkSpec(
-            "ingest_model_a", 2, transform_type=TransformType.GENERATIVE, domain="physics"
-        ),
-    ]
-)
+repair_chain = Chain([
+    ChainLinkSpec("openstax_v3", 0, transform_type=TransformType.PASS_THROUGH, domain="physics"),
+    ChainLinkSpec("pdf_scraper_a", 1, transform_type=TransformType.DESTRUCTIVE, domain="physics"),
+    ChainLinkSpec("ingest_model_a", 2, transform_type=TransformType.GENERATIVE, domain="physics"),
+])
 grades_f = [reg_f.get_grade(l.narrator_id, l.domain) for l in repair_chain.links]
 transforms_f = [l.transform_type for l in repair_chain.links]
 
@@ -357,19 +339,11 @@ check(
 )
 
 # Chain with bumped narrator → HASAN (UNGRADED caps)
-bumped_chain = Chain(
-    [
-        ChainLinkSpec(
-            "openstax_v3", 0, transform_type=TransformType.PASS_THROUGH, domain="physics"
-        ),
-        ChainLinkSpec(
-            "pdf_scraper_a", 1, transform_type=TransformType.PASS_THROUGH, domain="physics"
-        ),
-        ChainLinkSpec(
-            "ingest_model_a", 2, transform_type=TransformType.GENERATIVE, domain="physics"
-        ),
-    ]
-)
+bumped_chain = Chain([
+    ChainLinkSpec("openstax_v3", 0, transform_type=TransformType.PASS_THROUGH, domain="physics"),
+    ChainLinkSpec("pdf_scraper_a", 1, transform_type=TransformType.PASS_THROUGH, domain="physics"),
+    ChainLinkSpec("ingest_model_a", 2, transform_type=TransformType.GENERATIVE, domain="physics"),
+])
 reg_ver.register("openstax_v3", "physics", grade=NarratorGrade.RELIABLE)
 reg_ver.register("pdf_scraper_a", "physics", grade=NarratorGrade.RELIABLE)
 grades_ver = [reg_ver.get_grade(l.narrator_id, l.domain) for l in bumped_chain.links]

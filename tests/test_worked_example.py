@@ -40,42 +40,40 @@ def test_paper_worked_example_hasan_contradiction() -> None:
     Contradicts existing "p = mv" claim → routed to review, not served.
     """
     # --- 1. Build the transmission chain ---
-    chain = Chain(
-        [
-            ChainLinkSpec(
-                "openstax-v3",
-                step=0,
-                version="latest",
-                transform_type=TransformType.PASS_THROUGH,
-                domain="physics-quantum",
-                trace_id="trace-001",
-            ),
-            ChainLinkSpec(
-                "pdf-scraper",
-                step=1,
-                version="1.2",
-                transform_type=TransformType.DESTRUCTIVE,
-                domain="physics-quantum",
-                trace_id="trace-002",
-            ),
-            ChainLinkSpec(
-                "ingest-analysis",
-                step=2,
-                version="v",
-                transform_type=TransformType.GENERATIVE,
-                domain="physics-quantum",
-                trace_id="trace-003",
-            ),
-            ChainLinkSpec(
-                "ingest-renderer",
-                step=3,
-                version="v",
-                transform_type=TransformType.GENERATIVE,
-                domain="physics-quantum",
-                trace_id="trace-004",
-            ),
-        ]
-    )
+    chain = Chain([
+        ChainLinkSpec(
+            "openstax-v3",
+            step=0,
+            version="latest",
+            transform_type=TransformType.PASS_THROUGH,
+            domain="physics-quantum",
+            trace_id="trace-001",
+        ),
+        ChainLinkSpec(
+            "pdf-scraper",
+            step=1,
+            version="1.2",
+            transform_type=TransformType.DESTRUCTIVE,
+            domain="physics-quantum",
+            trace_id="trace-002",
+        ),
+        ChainLinkSpec(
+            "ingest-analysis",
+            step=2,
+            version="v",
+            transform_type=TransformType.GENERATIVE,
+            domain="physics-quantum",
+            trace_id="trace-003",
+        ),
+        ChainLinkSpec(
+            "ingest-renderer",
+            step=3,
+            version="v",
+            transform_type=TransformType.GENERATIVE,
+            domain="physics-quantum",
+            trace_id="trace-004",
+        ),
+    ])
 
     assert chain.is_complete, "Chain must be complete (ittiṣāl holds)"
     assert len(chain.links) == 4
@@ -176,34 +174,32 @@ def test_paper_worked_example_sahih_contradiction() -> None:
     the reviewer which to trust more.
     """
     # --- Build the same chain ---
-    chain = Chain(
-        [
-            ChainLinkSpec(
-                "openstax-v3",
-                step=0,
-                domain="physics-quantum",
-                transform_type=TransformType.PASS_THROUGH,
-            ),
-            ChainLinkSpec(
-                "pdf-scraper",
-                step=1,
-                domain="physics-quantum",
-                transform_type=TransformType.DESTRUCTIVE,
-            ),
-            ChainLinkSpec(
-                "ingest-analysis",
-                step=2,
-                domain="physics-quantum",
-                transform_type=TransformType.GENERATIVE,
-            ),
-            ChainLinkSpec(
-                "ingest-renderer",
-                step=3,
-                domain="physics-quantum",
-                transform_type=TransformType.GENERATIVE,
-            ),
-        ]
-    )
+    chain = Chain([
+        ChainLinkSpec(
+            "openstax-v3",
+            step=0,
+            domain="physics-quantum",
+            transform_type=TransformType.PASS_THROUGH,
+        ),
+        ChainLinkSpec(
+            "pdf-scraper",
+            step=1,
+            domain="physics-quantum",
+            transform_type=TransformType.DESTRUCTIVE,
+        ),
+        ChainLinkSpec(
+            "ingest-analysis",
+            step=2,
+            domain="physics-quantum",
+            transform_type=TransformType.GENERATIVE,
+        ),
+        ChainLinkSpec(
+            "ingest-renderer",
+            step=3,
+            domain="physics-quantum",
+            transform_type=TransformType.GENERATIVE,
+        ),
+    ])
 
     # --- Registry: all narrators RELIABLE in physics-quantum ---
     reg = Registry()

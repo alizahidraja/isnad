@@ -432,13 +432,11 @@ class CorroborationEngine:
                 cg = ChainGrade(cg_raw)
             except ValueError:
                 cg = ChainGrade.DAIF
-            corroborating_raw.append(
-                {
-                    "grade": cg,
-                    "narrators": chain.get("narrator_ids", []),
-                    "source": chain.get("source", ""),
-                }
-            )
+            corroborating_raw.append({
+                "grade": cg,
+                "narrators": chain.get("narrator_ids", []),
+                "source": chain.get("source", ""),
+            })
 
         return self._evaluate_core(
             base_chain_grade=base_chain_grade,
@@ -493,13 +491,11 @@ class CorroborationEngine:
                     grade = ChainGrade(grade)
                 except ValueError:
                     grade = ChainGrade.DAIF
-            normalised.append(
-                {
-                    "grade": grade,
-                    "narrators": c.get("narrators", []),
-                    "source": c.get("source", ""),
-                }
-            )
+            normalised.append({
+                "grade": grade,
+                "narrators": c.get("narrators", []),
+                "source": c.get("source", ""),
+            })
 
         return self._evaluate_core(
             base_chain_grade=base_chain_grade,

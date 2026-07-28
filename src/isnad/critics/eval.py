@@ -49,15 +49,13 @@ def build_eval_set(claims_path: str | None, n: int = 500) -> list[dict]:
             if o.get("domain") == c.get("domain") and o["claim_id"] != c["claim_id"]
         ]
         random.shuffle(domain_claims)
-        eval_entries.append(
-            {
-                "claim_text": c["text"],
-                "normalized": c["normalized"],
-                "corpus": domain_claims[:20],
-                "true_label": "consistent",
-                "domain": c.get("domain", "general"),
-            }
-        )
+        eval_entries.append({
+            "claim_text": c["text"],
+            "normalized": c["normalized"],
+            "corpus": domain_claims[:20],
+            "true_label": "consistent",
+            "domain": c.get("domain", "general"),
+        })
 
     # Contradiction examples: inject known contradictions
     contradiction_templates = [
@@ -78,15 +76,13 @@ def build_eval_set(claims_path: str | None, n: int = 500) -> list[dict]:
             break
         # Find a real claim to use as context
         ctx = random.sample(all_claims, min(10, len(all_claims))) if all_claims else []
-        eval_entries.append(
-            {
-                "claim_text": contra,
-                "normalized": contra.lower(),
-                "corpus": [orig] + [c["normalized"] for c in ctx],
-                "true_label": "contradiction",
-                "domain": "general",
-            }
-        )
+        eval_entries.append({
+            "claim_text": contra,
+            "normalized": contra.lower(),
+            "corpus": [orig] + [c["normalized"] for c in ctx],
+            "true_label": "contradiction",
+            "domain": "general",
+        })
 
     return eval_entries
 
@@ -169,18 +165,16 @@ def generate_report(results: dict[str, dict]) -> str:
             f"{m['f1']:.3f} | {fc:.3f} | {m['accuracy']:.3f} |"
         )
 
-    lines.extend(
-        [
-            "",
-            "## Interpretation",
-            "",
-            "- **Precision:** Of contradictions flagged, how many are real?",
-            "- **Recall:** Of real contradictions, how many were caught?",
-            "- **False-Consistent Rate:** Contradictions called CONSISTENT — "
-            "the DANGEROUS error (passing a wrong claim as fine).",
-            "",
-        ]
-    )
+    lines.extend([
+        "",
+        "## Interpretation",
+        "",
+        "- **Precision:** Of contradictions flagged, how many are real?",
+        "- **Recall:** Of real contradictions, how many were caught?",
+        "- **False-Consistent Rate:** Contradictions called CONSISTENT — "
+        "the DANGEROUS error (passing a wrong claim as fine).",
+        "",
+    ])
 
     # Per-critic analysis
     for name, m in results.items():
@@ -207,25 +201,23 @@ def generate_report(results: dict[str, dict]) -> str:
         )
         lines.append("")
 
-    lines.extend(
-        [
-            "## Limitations",
-            "",
-            "- **Synthetic contradictions** — injected from templates, not real model errors.",
-            "- **Single domain** — physics only. Performance on other domains unknown.",
-            "- **Embedding critic** uses word-overlap, not semantic embeddings — "
-            "contradictions with different vocabulary will be missed.",
-            "- **LLM critic** quality depends on the model used and prompt design.",
-            "- **Small eval set** — claims sampled from §8 corpus, not independently curated.",
-            "- **No ground-truth contradiction corpus** for physics.",
-            "",
-            "## Recommendation",
-            "",
-            "For practical deployment: use the LLM critic (with caching) for HASAN-tier claims, "
-            "with the false-consistent rate monitored in production. For offline/demo use, "
-            "the embedding critic provides a reasonable baseline with known limitations.",
-        ]
-    )
+    lines.extend([
+        "## Limitations",
+        "",
+        "- **Synthetic contradictions** — injected from templates, not real model errors.",
+        "- **Single domain** — physics only. Performance on other domains unknown.",
+        "- **Embedding critic** uses word-overlap, not semantic embeddings — "
+        "contradictions with different vocabulary will be missed.",
+        "- **LLM critic** quality depends on the model used and prompt design.",
+        "- **Small eval set** — claims sampled from §8 corpus, not independently curated.",
+        "- **No ground-truth contradiction corpus** for physics.",
+        "",
+        "## Recommendation",
+        "",
+        "For practical deployment: use the LLM critic (with caching) for HASAN-tier claims, "
+        "with the false-consistent rate monitored in production. For offline/demo use, "
+        "the embedding critic provides a reasonable baseline with known limitations.",
+    ])
 
     return "\n".join(lines)
 

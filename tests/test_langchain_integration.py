@@ -18,13 +18,11 @@ from isnad.types import (
 
 class TestSeedRegistry:
     def test_creates_registry_from_dict(self) -> None:
-        reg = seed_registry(
-            {
-                "source:my-docs": "reliable",
-                "model:gpt-4o": "acceptable",
-                "model:gpt-3.5": "weak",
-            }
-        )
+        reg = seed_registry({
+            "source:my-docs": "reliable",
+            "model:gpt-4o": "acceptable",
+            "model:gpt-3.5": "weak",
+        })
         assert isinstance(reg, Registry)
         assert reg.get_grade("source:my-docs", "general") == NarratorGrade.RELIABLE
         assert reg.get_grade("model:gpt-4o", "general") == NarratorGrade.ACCEPTABLE

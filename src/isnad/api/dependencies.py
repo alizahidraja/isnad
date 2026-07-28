@@ -42,13 +42,11 @@ def _parse_seed_config() -> list[tuple[str, str, NarratorGrade]]:
             "ungraded": NarratorGrade.UNGRADED,
         }
         for e in entries:
-            seeds.append(
-                (
-                    e["narrator_id"],
-                    e.get("domain", "general"),
-                    grade_map.get(e.get("grade", "ungraded"), NarratorGrade.UNGRADED),
-                )
-            )
+            seeds.append((
+                e["narrator_id"],
+                e.get("domain", "general"),
+                grade_map.get(e.get("grade", "ungraded"), NarratorGrade.UNGRADED),
+            ))
         logger.info(f"Loaded {len(seeds)} seed narrators from ISNAD_SEED_CONFIG")
         return seeds
     except (json.JSONDecodeError, KeyError, TypeError) as exc:

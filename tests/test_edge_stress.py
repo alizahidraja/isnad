@@ -66,9 +66,10 @@ with get_session() as session:
     check("First store -> OK", c1 is not None)
 
     # Re-store same text (was the bug)
-    chain2 = Chain(
-        [ChainLinkSpec("src", 0, domain="physics"), ChainLinkSpec("model-v2", 1, domain="physics")]
-    )
+    chain2 = Chain([
+        ChainLinkSpec("src", 0, domain="physics"),
+        ChainLinkSpec("model-v2", 1, domain="physics"),
+    ])
     try:
         c2 = store_claim(session, "F = ma", "physics/intro", chain2, chain_grade="sahih")
         check("Re-store same text -> NO crash", True)
@@ -207,14 +208,12 @@ for i in range(50):
         claim_text = f"other claim about concept {i}"
         chain_grade = "daif"
         narrator_ids = [f"src_other_{i}"]
-    all_chains.append(
-        {
-            "claim_text": claim_text,
-            "chain_grade": chain_grade,
-            "narrator_ids": narrator_ids,
-            "source": f"page_{i}",
-        }
-    )
+    all_chains.append({
+        "claim_text": claim_text,
+        "chain_grade": chain_grade,
+        "narrator_ids": narrator_ids,
+        "source": f"page_{i}",
+    })
 
 result_50 = engine.evaluate(
     claim_text="force equals mass times acceleration",

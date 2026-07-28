@@ -17,60 +17,50 @@ class TestChainConstruction:
         assert chain.chain_status == ChainStatus.MUNQATI
 
     def test_consecutive_chain_is_complete(self) -> None:
-        chain = Chain(
-            [
-                ChainLinkSpec("source-A", step=0),
-                ChainLinkSpec("scraper-v1", step=1),
-                ChainLinkSpec("ingest-model", step=2),
-            ]
-        )
+        chain = Chain([
+            ChainLinkSpec("source-A", step=0),
+            ChainLinkSpec("scraper-v1", step=1),
+            ChainLinkSpec("ingest-model", step=2),
+        ])
         assert chain.is_complete
         assert chain.chain_status == ChainStatus.COMPLETE
 
     def test_gap_makes_chain_munqati(self) -> None:
         """An incomplete chain (gap) is munqaṭiʿ — ittiṣāl failure."""
-        chain = Chain(
-            [
-                ChainLinkSpec("source-A", step=0),
-                ChainLinkSpec("ingest-model", step=2),  # gap at step 1
-            ]
-        )
+        chain = Chain([
+            ChainLinkSpec("source-A", step=0),
+            ChainLinkSpec("ingest-model", step=2),  # gap at step 1
+        ])
         assert not chain.is_complete
         assert chain.chain_status == ChainStatus.MUNQATI
 
     def test_narrator_ids_are_ordered(self) -> None:
-        chain = Chain(
-            [
-                ChainLinkSpec("source-B", step=0),
-                ChainLinkSpec("scraper", step=1),
-            ]
-        )
+        chain = Chain([
+            ChainLinkSpec("source-B", step=0),
+            ChainLinkSpec("scraper", step=1),
+        ])
         assert chain.narrator_ids == ["source-B", "scraper"]
 
     def test_links_carry_transform_type(self) -> None:
-        chain = Chain(
-            [
-                ChainLinkSpec(
-                    "scraper-v1",
-                    step=0,
-                    transform_type=TransformType.DESTRUCTIVE,
-                ),
-                ChainLinkSpec(
-                    "ingest-model",
-                    step=1,
-                    transform_type=TransformType.GENERATIVE,
-                ),
-            ]
-        )
+        chain = Chain([
+            ChainLinkSpec(
+                "scraper-v1",
+                step=0,
+                transform_type=TransformType.DESTRUCTIVE,
+            ),
+            ChainLinkSpec(
+                "ingest-model",
+                step=1,
+                transform_type=TransformType.GENERATIVE,
+            ),
+        ])
         assert chain.links[0].transform_type == TransformType.DESTRUCTIVE
         assert chain.links[1].transform_type == TransformType.GENERATIVE
 
     def test_jsonb_serialization(self) -> None:
-        chain = Chain(
-            [
-                ChainLinkSpec("src", step=0, version="1.0", trace_id="abc123"),
-            ]
-        )
+        chain = Chain([
+            ChainLinkSpec("src", step=0, version="1.0", trace_id="abc123"),
+        ])
         jsonb = chain.to_jsonb()
         assert len(jsonb) == 1
         assert jsonb[0]["narrator_id"] == "src"

@@ -117,18 +117,16 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
             cv = self.critic.evaluate(text, text, [], self.domain)
             action = decide(cg, cv)
 
-            self._graded_claims.append(
-                {
-                    "claim_text": text,
-                    "chain": chain,
-                    "link_grades": link_grades,
-                    "link_transforms": link_transforms,
-                    "chain_grade": cg,
-                    "content_verdict": cv,
-                    "action": action,
-                    "description": describe_action(cg, cv),
-                }
-            )
+            self._graded_claims.append({
+                "claim_text": text,
+                "chain": chain,
+                "link_grades": link_grades,
+                "link_transforms": link_transforms,
+                "chain_grade": cg,
+                "content_verdict": cv,
+                "action": action,
+                "description": describe_action(cg, cv),
+            })
 
     # ── Public API ──────────────────────────────────────────────
 

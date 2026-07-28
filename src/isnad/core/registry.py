@@ -639,7 +639,8 @@ class RegistryDB:
         """Persist all narrators and their evidence to the database."""
         for narrator in self.registry.all_narrators():
             row = (
-                self.session.query(NarratorRegistry)
+                self.session
+                .query(NarratorRegistry)
                 .filter_by(
                     narrator_id=narrator.narrator_id,
                     domain_tag=narrator.domain_tag,

@@ -125,15 +125,13 @@ check("AdalahGrade + DabtGrade distinct axes", AdalahGrade.HIGH != DabtGrade.HIG
 
 check(
     "Action covers all matrix outputs",
-    len(
-        {
-            Action.SERVE,
-            Action.SERVE_WITH_CAVEAT,
-            Action.REVIEW,
-            Action.QUARANTINE,
-            Action.REJECT_AND_QUARANTINE_NARRATOR,
-        }
-    )
+    len({
+        Action.SERVE,
+        Action.SERVE_WITH_CAVEAT,
+        Action.REVIEW,
+        Action.QUARANTINE,
+        Action.REJECT_AND_QUARANTINE_NARRATOR,
+    })
     == 5,
 )
 
@@ -145,16 +143,14 @@ check(
 
 check(
     "EvidenceType includes all evidence classes",
-    len(
-        {
-            EvidenceType.EVAL_HARNESS,
-            EvidenceType.POST_HOC_AUDIT,
-            EvidenceType.CORROBORATION_OUTCOME,
-            EvidenceType.HUMAN_REVIEW,
-            EvidenceType.VERSION_BUMP,
-            EvidenceType.BOOTSTRAP_SEED,
-        }
-    )
+    len({
+        EvidenceType.EVAL_HARNESS,
+        EvidenceType.POST_HOC_AUDIT,
+        EvidenceType.CORROBORATION_OUTCOME,
+        EvidenceType.HUMAN_REVIEW,
+        EvidenceType.VERSION_BUMP,
+        EvidenceType.BOOTSTRAP_SEED,
+    })
     == 6,
 )
 
@@ -358,23 +354,19 @@ print(f"\n{SEP}")
 print("LAYER 3 — CHAIN CONSTRUCTION")
 print(SEP)
 
-chain = Chain(
-    [
-        ChainLinkSpec(
-            "source:openstax", 0, transform_type=TransformType.PASS_THROUGH, domain="physics"
-        ),
-        ChainLinkSpec(
-            "pdf-scraper@1.2", 1, transform_type=TransformType.DESTRUCTIVE, domain="physics"
-        ),
-        ChainLinkSpec(
-            "ingest_model",
-            2,
-            transform_type=TransformType.GENERATIVE,
-            domain="physics",
-            version="v1",
-        ),
-    ]
-)
+chain = Chain([
+    ChainLinkSpec(
+        "source:openstax", 0, transform_type=TransformType.PASS_THROUGH, domain="physics"
+    ),
+    ChainLinkSpec("pdf-scraper@1.2", 1, transform_type=TransformType.DESTRUCTIVE, domain="physics"),
+    ChainLinkSpec(
+        "ingest_model",
+        2,
+        transform_type=TransformType.GENERATIVE,
+        domain="physics",
+        version="v1",
+    ),
+])
 check("Complete chain is complete", chain.is_complete)
 check("Chain has 3 links", len(chain) == 3)
 check(
@@ -383,12 +375,10 @@ check(
 )
 
 # Gap → munqati
-chain_gap = Chain(
-    [
-        ChainLinkSpec("a", 0),
-        ChainLinkSpec("c", 2),
-    ]
-)
+chain_gap = Chain([
+    ChainLinkSpec("a", 0),
+    ChainLinkSpec("c", 2),
+])
 check("Gap (step 1 missing) → munqati", not chain_gap.is_complete)
 check("Chain status MUNQATI", chain_gap.chain_status.value == "munqati")
 
@@ -1069,12 +1059,10 @@ check(
 os.environ.pop("ISNAD_POLICY")
 
 # Seed config env var
-os.environ["ISNAD_SEED_CONFIG"] = json.dumps(
-    [
-        {"narrator_id": "env_seed_1", "domain": "physics", "grade": "reliable"},
-        {"narrator_id": "env_seed_2", "domain": "physics", "grade": "acceptable"},
-    ]
-)
+os.environ["ISNAD_SEED_CONFIG"] = json.dumps([
+    {"narrator_id": "env_seed_1", "domain": "physics", "grade": "reliable"},
+    {"narrator_id": "env_seed_2", "domain": "physics", "grade": "acceptable"},
+])
 from isnad.api.dependencies import _parse_seed_config
 
 seeds = _parse_seed_config()
