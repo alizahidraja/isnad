@@ -2,11 +2,12 @@
 
 **Grade the narrators, not just log them.** Claim-level provenance for multi-agent knowledge systems — adapted from classical hadith transmission science.
 
+> **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) | **Paper DOI:** [10.48550/arXiv.2607.24117](https://doi.org/10.48550/arXiv.2607.24117) | **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873)
+
 [![CI](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml/badge.svg)](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2607.24117-b31b1b.svg)](https://arxiv.org/abs/2607.24117)
-[![DOI: 10.48550/arXiv.2607.24117](https://zenodo.org/badge/DOI/10.48550/arXiv.2607.24117.svg)](https://doi.org/10.48550/arXiv.2607.24117)
 
 **🌐 Full project home: https://alizahidraja.com/isnad**
 
@@ -81,6 +82,34 @@ tracer = IsnadTracer(registry=reg, critic=EmbeddingCritic())
 chain.invoke("What is F=ma?", config={"callbacks": [tracer]})
 print(tracer.report())
 ```
+
+---
+
+## Citation
+
+If you use ISNAD in your research, please cite:
+
+```bibtex
+@article{raja2026grading,
+  author  = {Ali Zahid Raja},
+  title   = {Grading the Narrators: An Isnād–Rijāl Framework for
+             Claim-Level Provenance in Multi-Agent Knowledge Systems},
+  year    = 2026,
+  doi     = {10.48550/arXiv.2607.24117},
+  eprint  = {2607.24117},
+  archivePrefix = {arXiv},
+}
+
+@software{raja2026isnad,
+  author  = {Ali Zahid Raja},
+  title   = {Isnād–Rijāl Framework: Reference Implementation},
+  year    = 2026,
+  doi     = {10.5281/zenodo.21216873},
+  orcid   = {0009-0003-7875-4590},
+}
+```
+
+GitHub users: click **"Cite this repository"** on the repo sidebar (powered by [`CITATION.cff`](CITATION.cff)).
 
 ---
 
