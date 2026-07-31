@@ -17,7 +17,7 @@ from __future__ import annotations
 import uuid
 from typing import Any
 
-from isnad.core.chain import Chain, ChainLinkSpec
+from isnad.core.chain import Chain, ChainLinkSpec, grades_for_chain
 from isnad.core.decision import decide, describe_action
 from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
@@ -96,16 +96,15 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
 
     def on_llm_start(self, serialized: dict[str, Any], prompts: list[Any], **kwargs: Any) -> None:
         model = serialized.get("name", serialized.get("id", "llm"))
-        self._add_link(f"model:{model}", TransformType.GENERATIVE)
+        version = self._extract_model_version(kwargs)
+        self._add_link(f"model:{model}", TransformType.GENERATIVE, version=version)
 
     def on_chain_end(self, outputs: Any, **kwargs: Any) -> None:
         # Extract claims from chain output
         claim_texts = self._extract_claims(outputs)
         for text in claim_texts:
             chain = Chain(list(self._links))
-            link_grades = [
-                self.registry.get_grade(link.narrator_id, link.domain) for link in chain.links
-            ]
+            link_grades = grades_for_chain(self.registry, chain)
             link_transforms = [link.transform_type for link in chain.links]
 
             cg = grade_chain(
@@ -176,7 +175,13 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
 
     # ── Internal ────────────────────────────────────────────────
 
-    def _add_link(self, narrator_id: str, transform_type: TransformType) -> None:
+    def _add_link(
+        self,
+        narrator_id: str,
+        transform_type: TransformType,
+        *,
+        version: str | None = None,
+    ) -> None:
         self._links.append(
             ChainLinkSpec(
                 narrator_id=narrator_id,
@@ -184,9 +189,26 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
                 transform_type=transform_type,
                 domain=self.domain,
                 trace_id=f"{self._run_id}-{self._step}",
+                version=version or "unknown",
             )
         )
         self._step += 1
+
+    @staticmethod
+    def _extract_model_version(kwargs: dict[str, Any]) -> str | None:
+        """Pull resolved model version from LangChain callback metadata when present."""
+        meta = kwargs.get("metadata") or {}
+        if isinstance(meta, dict):
+            for key in ("model_version", "ls_model_version", "model_version_id"):
+                val = meta.get(key)
+                if val:
+                    return str(val)
+        invocation = kwargs.get("invocation_params") or {}
+        if isinstance(invocation, dict):
+            val = invocation.get("model_version")
+            if val:
+                return str(val)
+        return None
 
     @staticmethod
     def _extract_claims(outputs: Any) -> list[str]:

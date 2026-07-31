@@ -142,6 +142,76 @@ class TestNarrators:
         assert r1.json()["grade"] == "reliable"
         assert r2.json()["grade"] == "weak"
 
+    def test_versioned_registration(self):
+        r = client.post(
+            "/v1/narrators",
+            json={
+                "narrator_id": "ingest-model-v3",
+                "domain": "physics",
+                "model_version": "1.0",
+                "grade": "reliable",
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        body = r.json()
+        assert body["resolved_narrator_id"] == "ingest-model-v3@1.0"
+        r2 = client.get("/v1/narrators/ingest-model-v3?domain=physics&version=1.0")
+        assert r2.json()["grade"] == "reliable"
+
+
+class TestVersionDriftAPI:
+    def test_new_version_does_not_inherit_grade(self):
+        client.post(
+            "/v1/narrators",
+            json={
+                "narrator_id": "openstax-textbook",
+                "domain": "physics",
+                "model_version": "2024",
+                "grade": "reliable",
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        client.post(
+            "/v1/narrators",
+            json={
+                "narrator_id": "ingest-model-v3",
+                "domain": "physics",
+                "model_version": "1.0",
+                "grade": "reliable",
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "The photon momentum is p = h/lambda",
+                "domain": "physics",
+                "chain": [
+                    {
+                        "narrator_id": "openstax-textbook",
+                        "version": "2024",
+                        "transform_type": "pass_through",
+                    },
+                    {
+                        "narrator_id": "ingest-model-v3",
+                        "version": "2.0",
+                        "transform_type": "generative",
+                    },
+                ],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        body = r.json()
+        assert body["link_grades"] == ["reliable", "ungraded"]
+        assert body["resolved_narrator_ids"] == [
+            "openstax-textbook@2024",
+            "ingest-model-v3@2.0",
+        ]
+        assert body["version_drift_detected"] is True
+        assert body["action"] == "review"
+
 
 class TestEvidence:
     def test_jarh_downgrades(self):

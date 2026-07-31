@@ -19,6 +19,7 @@ from datetime import UTC, datetime
 
 from sqlalchemy.orm import Session
 
+from isnad.core.identity import is_unknown_version, resolve_narrator_id
 from isnad.models import (
     NarratorEvidence,
     NarratorRegistry,
@@ -486,6 +487,45 @@ class Registry:
         """Return a narrator's grade, defaulting to UNGRADED if unknown."""
         narrator = self.get(narrator_id, domain_tag)
         return narrator.grade if narrator else NarratorGrade.UNGRADED
+
+    def get_grade_for_link(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        version: str | None,
+    ) -> NarratorGrade:
+        """Return grade for a chain link, resolving alias@version when version is known."""
+        resolved = resolve_narrator_id(narrator_id, version)
+        return self.get_grade(resolved, domain_tag)
+
+    def register_versioned(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        version: str | None,
+        *,
+        narrator_type: NarratorType = NarratorType.MODEL,
+        grade: NarratorGrade = NarratorGrade.UNGRADED,
+        adalah: AdalahGrade = AdalahGrade.UNASSESSED,
+        dabt: DabtGrade = DabtGrade.UNASSESSED,
+        known_error_rate: float | None = None,
+        model_family: str | None = None,
+        upstream_source: str | None = None,
+    ) -> Narrator:
+        """Register a narrator under alias@version when version is supplied."""
+        resolved = resolve_narrator_id(narrator_id, version)
+        return self.register(
+            resolved,
+            domain_tag,
+            narrator_type=narrator_type,
+            grade=grade,
+            adalah=adalah,
+            dabt=dabt,
+            known_error_rate=known_error_rate,
+            model_version=version if not is_unknown_version(version) else None,
+            model_family=model_family,
+            upstream_source=upstream_source,
+        )
 
     def get_metadata(self, narrator_id: str, domain_tag: str) -> dict[str, object]:
         """Return metadata for correlation detection etc."""

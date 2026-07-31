@@ -12,12 +12,19 @@ from fastapi.routing import APIRouter
 
 from isnad.api.auth import require_auth
 from isnad.api.dependencies import _metrics_counters, get_critic, get_registry
-from isnad.core.chain import Chain, ChainLinkSpec, store_claim
+from isnad.core.chain import (
+    Chain,
+    ChainLinkSpec,
+    grades_for_chain,
+    resolved_narrator_ids_for_chain,
+    store_claim,
+)
+from isnad.core.identity import is_unknown_version, resolve_narrator_id
 from isnad.core.corroboration import CorroborationEngine
 from isnad.core.decision import decide, describe_action
 from isnad.core.grading import grade_chain
-from isnad.core.registry import RegistryDB
-from isnad.types import ContentVerdict, TransformType
+from isnad.core.registry import Registry, RegistryDB
+from isnad.types import ContentVerdict, NarratorGrade, TransformType
 
 logger = logging.getLogger("isnad.api")
 router = APIRouter(prefix="/v1", tags=["claims"])
@@ -42,6 +49,29 @@ _app_state = AppState()
 
 def get_state() -> AppState:
     return _app_state
+
+
+def _version_drift_detected(registry: Registry, chain: Chain) -> bool:
+    """True when a versioned link has no grade but a sibling alias/version does."""
+    for link in chain.links:
+        if is_unknown_version(link.version):
+            continue
+        resolved = resolve_narrator_id(link.narrator_id, link.version)
+        if registry.get_grade(resolved, link.domain) != NarratorGrade.UNGRADED:
+            continue
+        if registry.get_grade(link.narrator_id, link.domain) != NarratorGrade.UNGRADED:
+            return True
+        prefix = f"{link.narrator_id}@"
+        for narrator in registry.all_narrators():
+            if narrator.domain_tag != link.domain:
+                continue
+            if (
+                narrator.narrator_id.startswith(prefix)
+                and narrator.narrator_id != resolved
+                and narrator.grade != NarratorGrade.UNGRADED
+            ):
+                return True
+    return False
 
 
 @router.get("/claims")
@@ -101,8 +131,8 @@ async def submit_claim(
     ]
     chain = Chain(specs)
 
-    link_narrator_ids = [l.narrator_id for l in chain.links]
-    link_grades = [reg.registry.get_grade(l.narrator_id, l.domain) for l in chain.links]
+    resolved_narrator_ids = resolved_narrator_ids_for_chain(chain)
+    link_grades = grades_for_chain(reg.registry, chain)
     cg = grade_chain(
         link_grades, [l.transform_type for l in chain.links], is_complete=chain.is_complete
     )
@@ -113,18 +143,20 @@ async def submit_claim(
         {
             "claim_text": rec.get("normalized_text", ""),
             "chain_grade": rec.get("chain_grade", "daif"),
-            "narrator_ids": rec.get("narrator_ids", []),
+            "narrator_ids": rec.get("resolved_narrator_ids", rec.get("narrator_ids", [])),
             "source": rec.get("page_slug", ""),
         }
         for rec in all_claim_records
     ]
-    narrator_metadata = {nid: reg.registry.get_metadata(nid, domain) for nid in link_narrator_ids}
+    narrator_metadata = {
+        nid: reg.registry.get_metadata(nid, domain) for nid in resolved_narrator_ids
+    }
 
     corr_engine = CorroborationEngine()
     corr_result = corr_engine.evaluate(
         claim_text=normalized,
         base_chain_grade=cg,
-        base_narrators=link_narrator_ids,
+        base_narrators=resolved_narrator_ids,
         all_chains=all_chain_dicts,
         narrator_metadata=narrator_metadata,
     )
@@ -160,7 +192,10 @@ async def submit_claim(
         "domain": domain,
         "page_slug": page_slug,
         "corroborating_claims": len(corroborating),
-        "narrator_ids": link_narrator_ids,
+        "narrator_ids": [l.narrator_id for l in chain.links],
+        "resolved_narrator_ids": resolved_narrator_ids,
+        "link_grades": [g.value for g in link_grades],
+        "version_drift_detected": _version_drift_detected(reg.registry, chain),
         "corroboration_result": {
             "upgraded": corr_result.upgraded,
             "base_grade": cg.value,

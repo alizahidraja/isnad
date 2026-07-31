@@ -130,6 +130,19 @@ GitHub users: click **"Cite this repository"** on the repo sidebar (powered by [
 The honesty box is a feature. We tell you exactly what works, what's limited,
 and where you need to supply your own components.
 
+### Endpoint identity (model version drift)
+
+For **model narrators**, grades are keyed by **`alias@version`** when a chain link
+supplies a resolved version (e.g. `ingest-model-v3@2.0`). Deploying a new model
+behind the same service name creates a **new registry identity** — track record
+does **not** carry forward. That reset is intentional (paper §4.2).
+
+- Register with `model_version` via the API or `Registry.register_versioned()`
+- Pass `version` on each chain link (or use `@version` in seed keys for LangChain)
+- Legacy alias-only registrations still work when `version` is omitted or `unknown`
+
+Demo: `uv run python examples/endpoint_identity_drift_demo.py`
+
 ---
 
 ## Concept → Module Map
@@ -137,7 +150,7 @@ and where you need to supply your own components.
 | Concept                       | What it does                                         | Module                     |
 | ----------------------------- | ---------------------------------------------------- | -------------------------- |
 | **isnād** (chain)             | Ordered, gap-checked transmission chain per claim    | `isnad/core/chain.py`      |
-| **rijāl** (registry)          | Graded narrator store per (narrator, domain)         | `isnad/core/registry.py`   |
+| **rijāl** (registry)          | Graded narrator store per (alias@version, domain)    | `isnad/core/registry.py`   |
 | **jarḥ–taʿdīl**               | Evidence-driven state machine for narrator grades    | `isnad/core/registry.py`   |
 | **Bayesian grading**          | Beta-distribution narrator grades (default)          | `isnad/core/registry.py`   |
 | **ittiṣāl**                   | Completeness as epistemic property (gap → DAIF)      | `isnad/core/chain.py`      |
