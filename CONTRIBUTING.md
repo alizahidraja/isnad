@@ -78,6 +78,14 @@ Same pattern applies to `TransitionPolicy`, `CorroborationPolicy`, `CorrelationD
 - The worked example test (`tests/test_worked_example.py`) is the integration anchor — keep it passing.
 - Run `make coverage` to check coverage.
 
+### Run CI tests before merging
+```
+uv run ruff check src/isnad tests && \
+uv run ruff format --check src/isnad tests && \
+uv run mypy src/isnad && \
+uv run pytest -v --tb=short
+```
+
 ## Code of Conduct
 
 See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).

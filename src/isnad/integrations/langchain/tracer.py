@@ -96,7 +96,7 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
 
     def on_llm_start(self, serialized: dict[str, Any], prompts: list[Any], **kwargs: Any) -> None:
         model = serialized.get("name", serialized.get("id", "llm"))
-        version = self._extract_model_version(kwargs)
+        version = self._extract_model_version(serialized, kwargs)
         self._add_link(f"model:{model}", TransformType.GENERATIVE, version=version)
 
     def on_chain_end(self, outputs: Any, **kwargs: Any) -> None:
@@ -195,19 +195,43 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
         self._step += 1
 
     @staticmethod
-    def _extract_model_version(kwargs: dict[str, Any]) -> str | None:
-        """Pull resolved model version from LangChain callback metadata when present."""
-        meta = kwargs.get("metadata") or {}
-        if isinstance(meta, dict):
-            for key in ("model_version", "ls_model_version", "model_version_id"):
-                val = meta.get(key)
-                if val:
-                    return str(val)
-        invocation = kwargs.get("invocation_params") or {}
-        if isinstance(invocation, dict):
-            val = invocation.get("model_version")
-            if val:
-                return str(val)
+    def _extract_model_version(
+        serialized: dict[str, Any],
+        kwargs: dict[str, Any],
+    ) -> str | None:
+        """Pull resolved model version from LangChain callback kwargs.
+
+        Providers nest identity differently — walk a priority chain of known
+        metadata, invocation_params, and serialized init kwargs.
+        """
+
+        def _pick(mapping: Any, keys: tuple[str, ...]) -> str | None:
+            if not isinstance(mapping, dict):
+                return None
+            for key in keys:
+                val = mapping.get(key)
+                if val is not None and str(val).strip():
+                    return str(val).strip()
+            return None
+
+        meta = kwargs.get("metadata")
+        if version := _pick(
+            meta,
+            ("model_version", "ls_model_version", "model_version_id", "ls_model_name"),
+        ):
+            return version
+
+        invocation = kwargs.get("invocation_params")
+        if version := _pick(
+            invocation,
+            ("model_version", "model", "model_name", "model_id"),
+        ):
+            return version
+
+        ser_kwargs = serialized.get("kwargs")
+        if version := _pick(ser_kwargs, ("model_version", "model", "model_name")):
+            return version
+
         return None
 
     @staticmethod

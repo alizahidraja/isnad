@@ -44,7 +44,7 @@ def main() -> None:
             ChainLinkSpec(
                 "openstax-v3",
                 step=0,
-                version="latest",
+                version="2024",
                 domain="physics-quantum",
                 trace_id="trace-001",
                 transform_type=TransformType.PASS_THROUGH,
@@ -89,7 +89,7 @@ def main() -> None:
     reg.register_versioned(
         "openstax-v3",
         "physics-quantum",
-        "latest",
+        "2024",
         narrator_type=NarratorType.SOURCE,
         grade=NarratorGrade.RELIABLE,
         adalah=AdalahGrade.HIGH,

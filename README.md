@@ -139,7 +139,7 @@ does **not** carry forward. That reset is intentional (paper §4.2).
 
 - Register with `model_version` via the API or `Registry.register_versioned()`
 - Pass `version` on each chain link (or use `@version` in seed keys for LangChain)
-- Legacy alias-only registrations still work when `version` is omitted or `unknown`
+- Legacy alias-only registrations still work when `version` is omitted, `unknown`, or a non-resolved tag (`latest`, `dev`, `canary`)
 
 Demo: `uv run python examples/endpoint_identity_drift_demo.py`
 

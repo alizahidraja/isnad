@@ -10,6 +10,7 @@ import pytest
 
 from isnad.core.registry import Registry
 from isnad.integrations.langchain import CriticAdapter, isnad_track, seed_registry
+from isnad.integrations.langchain.tracer import IsnadTracer
 from isnad.types import (
     ContentVerdict,
     NarratorGrade,
@@ -102,3 +103,53 @@ class TestCriticAdapter:
 
         critic = CriticAdapter(bad_critic)
         assert critic.evaluate("x", "x", [], "g") == ContentVerdict.UNVERIFIABLE
+
+
+class TestExtractModelVersion:
+    def test_openai_style_invocation_model(self) -> None:
+        version = IsnadTracer._extract_model_version(
+            {},
+            {"invocation_params": {"model": "gpt-4o-2024-08-06"}},
+        )
+        assert version == "gpt-4o-2024-08-06"
+
+    def test_anthropic_style_invocation_model(self) -> None:
+        version = IsnadTracer._extract_model_version(
+            {},
+            {"invocation_params": {"model": "claude-3-5-sonnet-20241022"}},
+        )
+        assert version == "claude-3-5-sonnet-20241022"
+
+    def test_metadata_model_version_takes_priority(self) -> None:
+        version = IsnadTracer._extract_model_version(
+            {},
+            {
+                "metadata": {"model_version": "2.0"},
+                "invocation_params": {"model": "gpt-4o"},
+            },
+        )
+        assert version == "2.0"
+
+    def test_langsmith_ls_model_version(self) -> None:
+        version = IsnadTracer._extract_model_version(
+            {},
+            {"metadata": {"ls_model_version": "2024-08-06"}},
+        )
+        assert version == "2024-08-06"
+
+    def test_serialized_kwargs_fallback(self) -> None:
+        version = IsnadTracer._extract_model_version(
+            {"kwargs": {"model_name": "gpt-4o-mini"}},
+            {},
+        )
+        assert version == "gpt-4o-mini"
+
+    def test_skips_empty_values_and_falls_through(self) -> None:
+        version = IsnadTracer._extract_model_version(
+            {"kwargs": {"model_version": "  ", "model": "gpt-4o"}},
+            {"metadata": {"model_version": ""}, "invocation_params": {"model_version": None}},
+        )
+        assert version == "gpt-4o"
+
+    def test_returns_none_when_no_identity_found(self) -> None:
+        assert IsnadTracer._extract_model_version({}, {}) is None

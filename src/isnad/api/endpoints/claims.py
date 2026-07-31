@@ -19,10 +19,10 @@ from isnad.core.chain import (
     resolved_narrator_ids_for_chain,
     store_claim,
 )
-from isnad.core.identity import is_unknown_version, resolve_narrator_id
 from isnad.core.corroboration import CorroborationEngine
 from isnad.core.decision import decide, describe_action
 from isnad.core.grading import grade_chain
+from isnad.core.identity import is_unknown_version, resolve_narrator_id
 from isnad.core.registry import Registry, RegistryDB
 from isnad.types import ContentVerdict, NarratorGrade, TransformType
 
@@ -61,16 +61,8 @@ def _version_drift_detected(registry: Registry, chain: Chain) -> bool:
             continue
         if registry.get_grade(link.narrator_id, link.domain) != NarratorGrade.UNGRADED:
             return True
-        prefix = f"{link.narrator_id}@"
-        for narrator in registry.all_narrators():
-            if narrator.domain_tag != link.domain:
-                continue
-            if (
-                narrator.narrator_id.startswith(prefix)
-                and narrator.narrator_id != resolved
-                and narrator.grade != NarratorGrade.UNGRADED
-            ):
-                return True
+        if registry.has_graded_sibling_versions(link.narrator_id, link.domain, resolved):
+            return True
     return False
 
 
