@@ -7,16 +7,14 @@ from fastapi.routing import APIRouter
 
 from isnad.api.auth import require_admin
 from isnad.api.dependencies import _metrics_counters, get_registry
+from isnad.core.identity import resolve_narrator_id
 from isnad.core.registry import RegistryDB
 from isnad.types import EvidenceAction, EvidenceType, NarratorGrade
 
 router = APIRouter(prefix="/v1", tags=["narrators"])
 
 
-@router.post("/narrators")
-async def register_narrator(
-    body: dict, reg: RegistryDB = Depends(get_registry), _: str = Depends(require_admin)
-) -> dict:
+def _parse_grade(raw: str) -> NarratorGrade:
     grade_map = {
         "reliable": NarratorGrade.RELIABLE,
         "acceptable": NarratorGrade.ACCEPTABLE,
@@ -24,21 +22,48 @@ async def register_narrator(
         "rejected": NarratorGrade.REJECTED,
         "ungraded": NarratorGrade.UNGRADED,
     }
-    grade = grade_map.get(body.get("grade", "ungraded"), NarratorGrade.UNGRADED)
-    reg.registry.register(body["narrator_id"], body.get("domain", "general"), grade=grade)
+    return grade_map.get(raw, NarratorGrade.UNGRADED)
+
+
+def _resolve_from_body(body: dict) -> tuple[str, str, str | None]:
+    narrator_id = body["narrator_id"]
+    domain = body.get("domain", "general")
+    version = body.get("model_version")
+    resolved = resolve_narrator_id(narrator_id, version)
+    return resolved, domain, version
+
+
+@router.post("/narrators")
+async def register_narrator(
+    body: dict, reg: RegistryDB = Depends(get_registry), _: str = Depends(require_admin)
+) -> dict:
+    grade = _parse_grade(body.get("grade", "ungraded"))
+    resolved, domain, version = _resolve_from_body(body)
+    reg.registry.register_versioned(
+        body["narrator_id"],
+        domain,
+        version,
+        grade=grade,
+    )
     reg.flush()
     return {
         "narrator_id": body["narrator_id"],
-        "domain": body.get("domain", "general"),
+        "resolved_narrator_id": resolved,
+        "model_version": version,
+        "domain": domain,
         "grade": grade.value,
     }
 
 
 @router.get("/narrators/{narrator_id}")
 async def get_narrator(
-    narrator_id: str, domain: str = "general", reg: RegistryDB = Depends(get_registry)
+    narrator_id: str,
+    domain: str = "general",
+    version: str | None = None,
+    reg: RegistryDB = Depends(get_registry),
 ) -> dict:
-    narrator = reg.registry.get(narrator_id, domain)
+    resolved = resolve_narrator_id(narrator_id, version)
+    narrator = reg.registry.get(resolved, domain)
     if not narrator:
         raise HTTPException(404)
     return {
@@ -47,6 +72,7 @@ async def get_narrator(
         "grade": narrator.grade.value,
         "adalah": narrator.adalah_grade.value,
         "dabt": narrator.dabt_grade.value,
+        "model_version": narrator.model_version,
         "is_active": narrator.is_active,
     }
 
@@ -60,11 +86,12 @@ async def submit_evidence(
         ev_action = EvidenceAction(body.get("action", "tadil"))
     except ValueError as e:
         raise HTTPException(400, f"Invalid type: {e}")
-    old_narrator = reg.registry.get(body["narrator_id"], body.get("domain", "general"))
+    resolved, domain, version = _resolve_from_body(body)
+    old_narrator = reg.registry.get(resolved, domain)
     old_grade = old_narrator.grade if old_narrator else None
     new_grade = reg.registry.record_evidence(
-        body["narrator_id"],
-        body.get("domain", "general"),
+        resolved,
+        domain,
         ev_type,
         ev_action,
         body.get("description", ""),
@@ -74,6 +101,8 @@ async def submit_evidence(
         _metrics_counters["bayesian_grade_changes_total"] += 1
     return {
         "narrator_id": body["narrator_id"],
-        "domain": body.get("domain", "general"),
+        "resolved_narrator_id": resolved,
+        "model_version": version,
+        "domain": domain,
         "new_grade": new_grade.value,
     }

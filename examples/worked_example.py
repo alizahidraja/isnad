@@ -5,7 +5,7 @@ Run: make demo   OR   uv run python examples/worked_example.py
 This traces the paper's photon-momentum claim through the full pipeline.
 """
 
-from isnad.core.chain import Chain, ChainLinkSpec, normalize_claim_text
+from isnad.core.chain import Chain, ChainLinkSpec, grades_for_chain, normalize_claim_text
 from isnad.core.grading import grade_chain
 from isnad.matn import DeterministicRuleCritic
 from isnad.core.decision import decide, describe_action
@@ -44,7 +44,7 @@ def main() -> None:
             ChainLinkSpec(
                 "openstax-v3",
                 step=0,
-                version="latest",
+                version="2024",
                 domain="physics-quantum",
                 trace_id="trace-001",
                 transform_type=TransformType.PASS_THROUGH,
@@ -86,45 +86,46 @@ def main() -> None:
     hr("2. CONSULT THE RIJĀL REGISTRY (NARRATOR GRADES)")
 
     reg = Registry()
-    reg.register(
+    reg.register_versioned(
         "openstax-v3",
         "physics-quantum",
+        "2024",
         narrator_type=NarratorType.SOURCE,
         grade=NarratorGrade.RELIABLE,
         adalah=AdalahGrade.HIGH,
     )
-    reg.register(
+    reg.register_versioned(
         "pdf-scraper",
         "physics-quantum",
+        "1.2",
         narrator_type=NarratorType.SCRAPER,
         grade=NarratorGrade.RELIABLE,
         dabt=DabtGrade.HIGH,
-        model_version="1.2",
     )
-    reg.register(
+    reg.register_versioned(
         "ingest-analysis",
         "physics-quantum",
+        "v",
         narrator_type=NarratorType.MODEL,
         grade=NarratorGrade.UNGRADED,
-        model_version="v",
     )
-    reg.register(
+    reg.register_versioned(
         "ingest-renderer",
         "physics-quantum",
+        "v",
         narrator_type=NarratorType.MODEL,
         grade=NarratorGrade.UNGRADED,
-        model_version="v",
     )
 
     for link in chain.links:
-        grade = reg.get_grade(link.narrator_id, link.domain)
+        grade = reg.get_grade_for_link(link.narrator_id, link.domain, link.version)
         label = f"({grade.value.upper()})"
-        print(f"   {link.narrator_id} / {link.domain}: {label}")
+        print(f"   {link.narrator_id}@{link.version} / {link.domain}: {label}")
 
     # ── Chain grading ─────────────────────────────────────────
     hr("3. GRADE THE CHAIN (WEAKEST-LINK RULE)")
 
-    link_grades = [reg.get_grade(link.narrator_id, link.domain) for link in chain.links]
+    link_grades = grades_for_chain(reg, chain)
     link_transforms = [link.transform_type for link in chain.links]
     chain_grade = grade_chain(link_grades, link_transforms, is_complete=chain.is_complete)
 
@@ -161,10 +162,15 @@ def main() -> None:
     hr("6. VARIANT: BOTH INGEST MODELS GRADED RELIABLE")
 
     reg2 = Registry()
-    for nid in ["openstax-v3", "pdf-scraper", "ingest-analysis", "ingest-renderer"]:
-        reg2.register(nid, "physics-quantum", grade=NarratorGrade.RELIABLE)
+    for link in chain.links:
+        reg2.register_versioned(
+            link.narrator_id,
+            link.domain,
+            link.version,
+            grade=NarratorGrade.RELIABLE,
+        )
 
-    link_grades2 = [reg2.get_grade(link.narrator_id, link.domain) for link in chain.links]
+    link_grades2 = grades_for_chain(reg2, chain)
     chain_grade2 = grade_chain(link_grades2, link_transforms, is_complete=chain.is_complete)
     action2 = decide(chain_grade2, content_verdict)
     desc2 = describe_action(chain_grade2, content_verdict)

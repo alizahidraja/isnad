@@ -11,11 +11,16 @@ from __future__ import annotations
 
 import hashlib
 from datetime import UTC, datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy.orm import Session
 
+from isnad.core.identity import resolve_narrator_id
 from isnad.models import ChainLink, RijalClaim
-from isnad.types import ChainStatus, TransformType
+from isnad.types import ChainStatus, NarratorGrade, TransformType
+
+if TYPE_CHECKING:
+    from isnad.core.registry import Registry
 
 
 def normalize_claim_text(text: str) -> str:
@@ -123,6 +128,19 @@ class Chain:
         ids = " → ".join(self.narrator_ids) if self._links else "(empty)"
         status = "complete" if self.is_complete else "munqaṭiʿ"
         return f"Chain({ids}) [{status}]"
+
+
+def resolved_narrator_ids_for_chain(chain: Chain) -> list[str]:
+    """Resolve alias@version ids for each link (grade lookup keys)."""
+    return [resolve_narrator_id(link.narrator_id, link.version) for link in chain.links]
+
+
+def grades_for_chain(registry: Registry, chain: Chain) -> list[NarratorGrade]:
+    """Look up per-link narrator grades using version-aware registry keys."""
+    return [
+        registry.get_grade_for_link(link.narrator_id, link.domain, link.version)
+        for link in chain.links
+    ]
 
 
 # ===========================================================================

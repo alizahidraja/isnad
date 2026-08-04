@@ -19,6 +19,7 @@ from datetime import UTC, datetime
 
 from sqlalchemy.orm import Session
 
+from isnad.core.identity import is_unknown_version, parse_narrator_id, resolve_narrator_id
 from isnad.models import (
     NarratorEvidence,
     NarratorRegistry,
@@ -442,7 +443,49 @@ class Registry:
 
     def __init__(self, transition_policy: TransitionPolicy | None = None):
         self._narrators: dict[tuple[str, str], Narrator] = {}
+        self._alias_graded: dict[tuple[str, str], set[str]] = {}
         self.transition_policy: TransitionPolicy = transition_policy or BayesianTransitionPolicy()
+
+    # ------------------------------------------------------------------
+    # Alias index (graded versions per alias+domain)
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _alias_for(narrator_id: str) -> str:
+        return parse_narrator_id(narrator_id)[0]
+
+    def _index_set_grade(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        grade: NarratorGrade,
+    ) -> None:
+        alias = self._alias_for(narrator_id)
+        key = (alias, domain_tag)
+        if grade == NarratorGrade.UNGRADED:
+            bucket = self._alias_graded.get(key)
+            if bucket is not None:
+                bucket.discard(narrator_id)
+                if not bucket:
+                    del self._alias_graded[key]
+        else:
+            self._alias_graded.setdefault(key, set()).add(narrator_id)
+
+    def _rebuild_alias_index(self) -> None:
+        """Rebuild graded-alias index from all narrators (e.g. after DB load)."""
+        self._alias_graded.clear()
+        for narrator in self._narrators.values():
+            self._index_set_grade(narrator.narrator_id, narrator.domain_tag, narrator.grade)
+
+    def has_graded_sibling_versions(
+        self,
+        alias: str,
+        domain: str,
+        exclude_resolved: str,
+    ) -> bool:
+        """True if another graded registry entry exists for the same alias in domain."""
+        graded = self._alias_graded.get((alias, domain), set())
+        return any(nid != exclude_resolved for nid in graded)
 
     # ------------------------------------------------------------------
     # CRUD
@@ -476,6 +519,7 @@ class Registry:
                 model_family=model_family,
                 upstream_source=upstream_source,
             )
+            self._index_set_grade(narrator_id, domain_tag, grade)
         return self._narrators[key]
 
     def get(self, narrator_id: str, domain_tag: str) -> Narrator | None:
@@ -486,6 +530,45 @@ class Registry:
         """Return a narrator's grade, defaulting to UNGRADED if unknown."""
         narrator = self.get(narrator_id, domain_tag)
         return narrator.grade if narrator else NarratorGrade.UNGRADED
+
+    def get_grade_for_link(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        version: str | None,
+    ) -> NarratorGrade:
+        """Return grade for a chain link, resolving alias@version when version is known."""
+        resolved = resolve_narrator_id(narrator_id, version)
+        return self.get_grade(resolved, domain_tag)
+
+    def register_versioned(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        version: str | None,
+        *,
+        narrator_type: NarratorType = NarratorType.MODEL,
+        grade: NarratorGrade = NarratorGrade.UNGRADED,
+        adalah: AdalahGrade = AdalahGrade.UNASSESSED,
+        dabt: DabtGrade = DabtGrade.UNASSESSED,
+        known_error_rate: float | None = None,
+        model_family: str | None = None,
+        upstream_source: str | None = None,
+    ) -> Narrator:
+        """Register a narrator under alias@version when version is supplied."""
+        resolved = resolve_narrator_id(narrator_id, version)
+        return self.register(
+            resolved,
+            domain_tag,
+            narrator_type=narrator_type,
+            grade=grade,
+            adalah=adalah,
+            dabt=dabt,
+            known_error_rate=known_error_rate,
+            model_version=version if not is_unknown_version(version) else None,
+            model_family=model_family,
+            upstream_source=upstream_source,
+        )
 
     def get_metadata(self, narrator_id: str, domain_tag: str) -> dict[str, object]:
         """Return metadata for correlation detection etc."""
@@ -530,6 +613,7 @@ class Registry:
             new_evidence=narrator.evidence_log[-1],
         )
         narrator.grade = new_grade
+        self._index_set_grade(narrator_id, domain_tag, new_grade)
         return new_grade
 
     # ------------------------------------------------------------------
@@ -557,6 +641,7 @@ class Registry:
             EvidenceAction.NEUTRAL,
             f"Version bumped to {new_version}; grade reset to UNGRADED",
         )
+        self._index_set_grade(narrator_id, domain_tag, NarratorGrade.UNGRADED)
 
     # ------------------------------------------------------------------
     # Quarantine
@@ -576,6 +661,7 @@ class Registry:
             EvidenceAction.JARH,
             f"Quarantined: {reason}" if reason else "Quarantined",
         )
+        self._index_set_grade(narrator_id, domain_tag, NarratorGrade.REJECTED)
 
     # ------------------------------------------------------------------
     # Bulk access
@@ -634,6 +720,7 @@ class RegistryDB:
                     ev.description,
                     ev.metadata_json,
                 )
+        self.registry._rebuild_alias_index()
 
     def flush(self) -> None:
         """Persist all narrators and their evidence to the database."""

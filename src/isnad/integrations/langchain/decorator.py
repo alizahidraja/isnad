@@ -12,7 +12,7 @@ import uuid
 from collections.abc import Callable
 from typing import Any
 
-from isnad.core.chain import Chain, ChainLinkSpec
+from isnad.core.chain import Chain, ChainLinkSpec, grades_for_chain
 from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
 from isnad.types import TransformType
@@ -71,9 +71,7 @@ def isnad_track(
                 if (narrator_id, domain) not in registry:
                     registry.register(narrator_id, domain)
 
-                link_grades = [
-                    registry.get_grade(link.narrator_id, link.domain) for link in chain.links
-                ]
+                link_grades = grades_for_chain(registry, chain)
                 link_transforms = [link.transform_type for link in chain.links]
 
                 wrapper._last_grade = grade_chain(  # type: ignore[attr-defined]

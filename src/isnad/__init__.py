@@ -14,7 +14,7 @@ Quickstart::
     reg = Registry()
     reg.register("src", "physics", grade=NarratorGrade.RELIABLE)
     reg.register("model-v1", "physics", grade=NarratorGrade.UNGRADED)
-    grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
+    grades = [reg.get_grade_for_link(l.narrator_id, l.domain, l.version) for l in chain.links]
     cg = grade_chain(grades, [l.transform_type for l in chain.links],
                      is_complete=chain.is_complete)
     cv = DeterministicRuleCritic().evaluate("p=mv", "p=mv", ["p=h/lambda"])
@@ -25,7 +25,13 @@ __version__ = "2.0.4"
 __author__ = "Ali Zahid Raja"
 
 # Public API — re-exports
-from isnad.core.chain import Chain, ChainLinkSpec, make_claim_id, normalize_claim_text
+from isnad.core.chain import (
+    Chain,
+    ChainLinkSpec,
+    grades_for_chain,
+    make_claim_id,
+    normalize_claim_text,
+)
 from isnad.core.corroboration import (
     CappedCorroborationPolicy,
     CorroborationEngine,
@@ -34,6 +40,7 @@ from isnad.core.corroboration import (
 )
 from isnad.core.decision import decide, describe_action
 from isnad.core.grading import RefinedWeakestLink, grade_chain
+from isnad.core.identity import is_unknown_version, parse_narrator_id, resolve_narrator_id
 from isnad.core.registry import (
     BayesianTransitionPolicy,
     Narrator,
@@ -71,8 +78,12 @@ __all__ = [
     # chain
     "Chain",
     "ChainLinkSpec",
+    "grades_for_chain",
     "make_claim_id",
     "normalize_claim_text",
+    "is_unknown_version",
+    "parse_narrator_id",
+    "resolve_narrator_id",
     # core — corroboration
     "CappedCorroborationPolicy",
     "CorroborationEngine",

@@ -48,9 +48,12 @@ def seed_registry(
     Example:
         reg = seed_registry({
             "source:my-docs": "reliable",
-            "model:gpt-4o": "acceptable",
+            "model:gpt-4o@2024-04-09": "acceptable",
             "model:gpt-3.5": "weak",
         })
+
+    For model narrators, include ``@version`` in the narrator_id (or register via
+    ``Registry.register_versioned``) so grades do not carry across deployments.
     """
     reg = Registry()
     grade_map = {
