@@ -43,11 +43,13 @@ from isnad.core.grading import RefinedWeakestLink, grade_chain
 from isnad.core.identity import is_unknown_version, parse_narrator_id, resolve_narrator_id
 from isnad.core.registry import (
     BayesianTransitionPolicy,
+    GradeWithFreshness,
     Narrator,
     Registry,
     RegistryDB,
     ThresholdTransitionPolicy,
 )
+from isnad.core.volatility import FixedVolatilityPolicy
 from isnad.critics import (
     ContentCritic,
     EmbeddingCritic,
@@ -67,11 +69,13 @@ from isnad.types import (
     DabtGrade,
     EvidenceAction,
     EvidenceType,
+    FreshnessStatus,
     GradingStrategy,
     NarratorGrade,
     NarratorType,
     TransformType,
     TransitionPolicy,
+    VolatilityPolicy,
 )
 
 __all__ = [
@@ -98,9 +102,12 @@ __all__ = [
     "BayesianTransitionPolicy",
     "ThresholdTransitionPolicy",
     # core — registry
+    "GradeWithFreshness",
     "Narrator",
     "Registry",
     "RegistryDB",
+    # core — volatility
+    "FixedVolatilityPolicy",
     # critics
     "ContentCritic",
     "EmbeddingCritic",
@@ -120,9 +127,11 @@ __all__ = [
     "DabtGrade",
     "EvidenceAction",
     "EvidenceType",
+    "FreshnessStatus",
     "GradingStrategy",
     "NarratorGrade",
     "NarratorType",
     "TransformType",
     "TransitionPolicy",
+    "VolatilityPolicy",
 ]

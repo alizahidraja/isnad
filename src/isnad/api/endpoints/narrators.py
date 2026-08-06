@@ -66,10 +66,16 @@ async def get_narrator(
     narrator = reg.registry.get(resolved, domain)
     if not narrator:
         raise HTTPException(404)
+    freshness = reg.registry.effective_grade(resolved, domain)
     return {
         "narrator_id": narrator.narrator_id,
         "domain_tag": narrator.domain_tag,
-        "grade": narrator.grade.value,
+        "grade": freshness.grade.value,
+        "stored_grade": narrator.grade.value,
+        "freshness": freshness.freshness.value,
+        "needs_recheck": freshness.needs_recheck,
+        "graded_at": narrator.graded_at.isoformat() if narrator.graded_at else None,
+        "valid_until": narrator.valid_until.isoformat() if narrator.valid_until else None,
         "adalah": narrator.adalah_grade.value,
         "dabt": narrator.dabt_grade.value,
         "model_version": narrator.model_version,
