@@ -43,13 +43,13 @@ criticism (matn), not chain quality (isnād).
 from __future__ import annotations
 
 from datetime import UTC, datetime
-from enum import Enum
+from enum import StrEnum
 from typing import Any
 
 from pydantic import BaseModel, Field
 
 
-class Role(str, Enum):
+class Role(StrEnum):
     """What the transmitter did at this step."""
 
     RETRIEVAL = "retrieval"  # fetched documents from a store
@@ -60,7 +60,7 @@ class Role(str, Enum):
     SOURCE = "source"  # origin document / external source
 
 
-class ChainIntegrity(str, Enum):
+class ChainIntegrity(StrEnum):
     """How soundly was this claim transmitted through the chain?"""
 
     SAHIH = "sahih"  # sound — complete chain, all narrators reliable
@@ -70,7 +70,7 @@ class ChainIntegrity(str, Enum):
     UNGRADED = "ungraded"  # chain not yet assessed
 
 
-class OriginStrength(str, Enum):
+class OriginStrength(StrEnum):
     """How trustworthy is the SOURCE this claim originated from?
 
     Separated from chain integrity.  A pristine chain from an unverified
@@ -85,7 +85,7 @@ class OriginStrength(str, Enum):
     COMPROMISED = "compromised"  # known injection/poisoning source
 
 
-class CorroborationVerdict(str, Enum):
+class CorroborationVerdict(StrEnum):
     """Independence status — first-class, never a silent boolean."""
 
     VERIFIED = "verified"  # independence structurally confirmed
@@ -179,7 +179,10 @@ class TransmitterNode(BaseModel):
     narrator_id: str = Field(description="Stable narrator identifier")
     model_version: str | None = Field(
         default=None,
-        description="Resolved model version. NULL = unknown (record this fact, don't fall back silently).",
+        description=(
+            "Resolved model version. NULL = unknown "
+            "(record this fact, don't fall back silently)."
+        ),
     )
     step: int = Field(ge=0, description="Zero-indexed position in chain")
 

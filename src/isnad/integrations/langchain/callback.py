@@ -250,32 +250,44 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
         self, serialized: dict[str, Any], inputs: Any, *, run_id: str,
         parent_run_id: str | None = None, **kwargs: Any,
     ) -> None:
-        self._safe(lambda: self._on_chain_start(serialized, inputs, run_id, parent_run_id, kwargs))
+        self._safe(
+            lambda: self._on_chain_start(serialized, inputs, run_id, parent_run_id, kwargs)
+        )
 
     def on_retriever_end(
         self, documents: list[Any], *, run_id: str,
         parent_run_id: str | None = None, **kwargs: Any,
     ) -> None:
-        self._safe(lambda: self._on_retriever_end(documents, run_id, parent_run_id, kwargs))
+        self._safe(
+            lambda: self._on_retriever_end(documents, run_id, parent_run_id, kwargs)
+        )
 
     def on_tool_start(
         self, serialized: dict[str, Any], input_str: str, *, run_id: str,
         parent_run_id: str | None = None, **kwargs: Any,
     ) -> None:
-        self._safe(lambda: self._on_tool_start(serialized, input_str, run_id, parent_run_id, kwargs))
+        self._safe(
+            lambda: self._on_tool_start(
+                serialized, input_str, run_id, parent_run_id, kwargs
+            )
+        )
 
     def on_llm_start(
         self, serialized: dict[str, Any], prompts: list[Any], *, run_id: str,
         parent_run_id: str | None = None, **kwargs: Any,
     ) -> None:
-        self._safe(lambda: self._on_llm_start(serialized, prompts, run_id, parent_run_id, kwargs))
+        self._safe(
+            lambda: self._on_llm_start(serialized, prompts, run_id, parent_run_id, kwargs)
+        )
 
     def on_chat_model_start(
         self, serialized: dict[str, Any], messages: list[list[Any]], *, run_id: str,
         parent_run_id: str | None = None, **kwargs: Any,
     ) -> None:
         self._safe(
-            lambda: self._on_chat_model_start(serialized, messages, run_id, parent_run_id, kwargs)
+            lambda: self._on_chat_model_start(
+                serialized, messages, run_id, parent_run_id, kwargs
+            )
         )
 
     def on_llm_end(self, response: Any, *, run_id: str, **kwargs: Any) -> None:
