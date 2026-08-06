@@ -2,19 +2,29 @@
 
 Grades are keyed by alias@version when a resolved version is supplied on the
 chain link.  Legacy alias-only lookups remain for missing/unknown versions.
+
+Non-resolved tags (latest, dev, canary, unknown, "") are treated as
+aliases not versions: a model behind "latest" silently changes without
+the registry key shifting.  The caller resolves the actual version
+before grading.
 """
 
 from __future__ import annotations
 
 VERSION_SEPARATOR = "@"
 UNKNOWN_VERSIONS = frozenset({"", "unknown"})
+NON_RESOLVED_VERSIONS = frozenset({"", "unknown", "latest", "dev", "canary"})
 
 
 def is_unknown_version(version: str | None) -> bool:
-    """Return True when version should fall back to legacy alias-only lookup."""
+    """Return True when version should fall back to legacy alias-only lookup.
+
+    Covers both ""/"unknown" (legacy) and "latest"/"dev"/"canary"
+    (non-resolved tags that silently drift).
+    """
     if version is None:
         return True
-    return version.strip().lower() in UNKNOWN_VERSIONS
+    return version.strip().lower() in NON_RESOLVED_VERSIONS
 
 
 def resolve_narrator_id(narrator_id: str, version: str | None) -> str:
