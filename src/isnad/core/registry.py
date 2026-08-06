@@ -20,6 +20,7 @@ from datetime import UTC, datetime
 from sqlalchemy.orm import Session
 
 from isnad.core.identity import is_unknown_version, parse_narrator_id, resolve_narrator_id
+from isnad.core.volatility import FixedVolatilityPolicy
 from isnad.models import (
     NarratorEvidence,
     NarratorRegistry,
@@ -29,10 +30,55 @@ from isnad.types import (
     DabtGrade,
     EvidenceAction,
     EvidenceType,
+    FreshnessStatus,
     NarratorGrade,
     NarratorType,
     TransitionPolicy,
+    VolatilityPolicy,
 )
+
+# ===========================================================================
+# Grade freshness — the time-decay half of the grade-expiry fix
+# ===========================================================================
+
+# One-tier staleness downgrade across the positive-trust ordinal.
+# REJECTED is active containment and never decays; WEAK reverts to
+# UNGRADED (no longer trusted until re-earned).
+_STALE_DOWNGRADE: dict[NarratorGrade, NarratorGrade] = {
+    NarratorGrade.RELIABLE: NarratorGrade.ACCEPTABLE,
+    NarratorGrade.ACCEPTABLE: NarratorGrade.WEAK,
+    NarratorGrade.WEAK: NarratorGrade.UNGRADED,
+}
+
+
+def _as_utc(value: datetime | None) -> datetime | None:
+    """Normalize a datetime to timezone-aware UTC.
+
+    SQLite stores timezone-aware columns as naive datetimes, so values
+    reloaded from the DB need an explicit UTC zone before comparison.
+    """
+    if value is None:
+        return None
+    if value.tzinfo is None:
+        return value.replace(tzinfo=UTC)
+    return value.astimezone(UTC)
+
+
+@dataclass
+class GradeWithFreshness:
+    """A narrator grade plus its time-decay state.
+
+    `grade` is the *effective* (possibly degraded) grade to use at lookup
+    time.  `freshness`/`needs_recheck` say why, so a caller can surface a
+    caveat or trigger a re-validation before relying on the grade.
+    """
+
+    grade: NarratorGrade
+    freshness: FreshnessStatus
+    needs_recheck: bool
+    graded_at: datetime | None = None
+    valid_until: datetime | None = None
+
 
 # ===========================================================================
 # Default TransitionPolicy implementation
@@ -392,6 +438,8 @@ class Narrator:
         model_family: str | None = None,
         upstream_source: str | None = None,
         is_active: bool = True,
+        graded_at: datetime | None = None,
+        valid_until: datetime | None = None,
     ):
         self.narrator_id = narrator_id
         self.domain_tag = domain_tag
@@ -404,6 +452,8 @@ class Narrator:
         self.model_family = model_family
         self.upstream_source = upstream_source
         self.is_active = is_active
+        self.graded_at = graded_at
+        self.valid_until = valid_until
         self.evidence_log: list[dict[str, object]] = []
 
     def add_evidence(
@@ -441,10 +491,15 @@ class Registry:
     persistence, use RegistryDB backed by SQLAlchemy.
     """
 
-    def __init__(self, transition_policy: TransitionPolicy | None = None):
+    def __init__(
+        self,
+        transition_policy: TransitionPolicy | None = None,
+        volatility_policy: VolatilityPolicy | None = None,
+    ):
         self._narrators: dict[tuple[str, str], Narrator] = {}
         self._alias_graded: dict[tuple[str, str], set[str]] = {}
         self.transition_policy: TransitionPolicy = transition_policy or BayesianTransitionPolicy()
+        self.volatility_policy: VolatilityPolicy = volatility_policy or FixedVolatilityPolicy()
 
     # ------------------------------------------------------------------
     # Alias index (graded versions per alias+domain)
@@ -503,10 +558,26 @@ class Registry:
         model_version: str | None = None,
         model_family: str | None = None,
         upstream_source: str | None = None,
+        graded_at: datetime | None = None,
+        valid_until: datetime | None = None,
     ) -> Narrator:
-        """Register a new narrator or return existing one."""
+        """Register a new narrator or return existing one.
+
+        Registering with an explicit (non-UNGRADED) grade starts the
+        freshness clock: the grade is treated as validated right now and
+        expires after the volatility policy's TTL.  Passing an explicit
+        `graded_at` (e.g. for deterministic tests) starts the clock from
+        that instant; passing both `graded_at` and `valid_until` (e.g. from
+        a DB load) preserves them exactly.
+        """
         key = (narrator_id, domain_tag)
         if key not in self._narrators:
+            if grade is not NarratorGrade.UNGRADED and valid_until is None:
+                if graded_at is None:
+                    graded_at = datetime.now(UTC)
+                valid_until = self.volatility_policy.valid_until(
+                    narrator_type, domain_tag, now=graded_at
+                )
             self._narrators[key] = Narrator(
                 narrator_id=narrator_id,
                 domain_tag=domain_tag,
@@ -518,6 +589,8 @@ class Registry:
                 model_version=model_version,
                 model_family=model_family,
                 upstream_source=upstream_source,
+                graded_at=graded_at,
+                valid_until=valid_until,
             )
             self._index_set_grade(narrator_id, domain_tag, grade)
         return self._narrators[key]
@@ -526,10 +599,127 @@ class Registry:
         """Look up a narrator by (narrator_id, domain_tag)."""
         return self._narrators.get((narrator_id, domain_tag))
 
-    def get_grade(self, narrator_id: str, domain_tag: str) -> NarratorGrade:
-        """Return a narrator's grade, defaulting to UNGRADED if unknown."""
+    def effective_grade(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        now: datetime | None = None,
+    ) -> GradeWithFreshness:
+        """The time-decayed grade to use at lookup time (the expiry fix).
+
+        Three windows, defined by the volatility policy:
+        - FRESH:  within the TTL — the stored grade is returned as-is.
+        - STALE:  inside the grace window at the end of the TTL — the grade
+          is downgraded one tier and flagged `needs_recheck`.
+        - EXPIRED: past best-before — reverts to UNGRADED until re-earned.
+
+        REJECTED (active containment) never decays.  Grades without a
+        freshness clock (never graded, or legacy/indefinite rows) are
+        returned unchanged.
+
+        Args:
+            narrator_id: The narrator identifier.
+            domain_tag: The domain key.
+            now: Reference time; defaults to the current UTC time.  Used to
+                make the decay deterministic in tests.
+
+        Returns:
+            A GradeWithFreshness with the effective grade and its state.
+        """
+        if now is None:
+            now = datetime.now(UTC)
+        elif now.tzinfo is None:
+            now = now.replace(tzinfo=UTC)
+
         narrator = self.get(narrator_id, domain_tag)
-        return narrator.grade if narrator else NarratorGrade.UNGRADED
+        if narrator is None:
+            return GradeWithFreshness(
+                grade=NarratorGrade.UNGRADED,
+                freshness=FreshnessStatus.EXPIRED,
+                needs_recheck=False,
+            )
+
+        grade = narrator.grade
+        # REJECTED is active containment — never time-decayed.
+        if grade == NarratorGrade.REJECTED:
+            return GradeWithFreshness(
+                grade=grade,
+                freshness=FreshnessStatus.FRESH,
+                needs_recheck=False,
+                graded_at=_as_utc(narrator.graded_at),
+                valid_until=_as_utc(narrator.valid_until),
+            )
+
+        # No clock → nothing to decay (never graded, or legacy/indefinite row).
+        if grade == NarratorGrade.UNGRADED or narrator.valid_until is None:
+            return GradeWithFreshness(
+                grade=grade,
+                freshness=FreshnessStatus.FRESH,
+                needs_recheck=False,
+                graded_at=_as_utc(narrator.graded_at),
+                valid_until=_as_utc(narrator.valid_until),
+            )
+
+        graded_at = _as_utc(narrator.graded_at)
+        valid_until = _as_utc(narrator.valid_until)
+        if graded_at is None:
+            return GradeWithFreshness(
+                grade=grade,
+                freshness=FreshnessStatus.FRESH,
+                needs_recheck=False,
+                graded_at=None,
+                valid_until=valid_until,
+            )
+
+        stale_start = valid_until - self.volatility_policy.stale_window(
+            narrator.narrator_type, narrator.domain_tag
+        )
+        if now > valid_until:
+            return GradeWithFreshness(
+                grade=NarratorGrade.UNGRADED,
+                freshness=FreshnessStatus.EXPIRED,
+                needs_recheck=True,
+                graded_at=graded_at,
+                valid_until=valid_until,
+            )
+        if now >= stale_start:
+            return GradeWithFreshness(
+                grade=_STALE_DOWNGRADE.get(grade, grade),
+                freshness=FreshnessStatus.STALE,
+                needs_recheck=True,
+                graded_at=graded_at,
+                valid_until=valid_until,
+            )
+        return GradeWithFreshness(
+            grade=grade,
+            freshness=FreshnessStatus.FRESH,
+            needs_recheck=False,
+            graded_at=graded_at,
+            valid_until=valid_until,
+        )
+
+    def get_grade(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        now: datetime | None = None,
+    ) -> NarratorGrade:
+        """Return the *effective* (time-decayed) grade, UNGRADED if unknown.
+
+        Time-aware: a grade past its best-before is no longer trusted at
+        lookup time, even though the stored grade is preserved.  See
+        effective_grade() for the window logic.
+        """
+        return self.effective_grade(narrator_id, domain_tag, now=now).grade
+
+    def needs_recheck(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        now: datetime | None = None,
+    ) -> bool:
+        """True when the grade is in its stale window or already expired."""
+        return self.effective_grade(narrator_id, domain_tag, now=now).needs_recheck
 
     def get_grade_for_link(
         self,
@@ -614,6 +804,18 @@ class Registry:
         )
         narrator.grade = new_grade
         self._index_set_grade(narrator_id, domain_tag, new_grade)
+
+        # Every evidence event (re)validates the grade → restart the clock.
+        # UNGRADED and REJECTED carry no clock: UNGRADED is unassessed,
+        # REJECTED is active containment and never time-decays.
+        if new_grade in (NarratorGrade.UNGRADED, NarratorGrade.REJECTED):
+            narrator.graded_at = None
+            narrator.valid_until = None
+        else:
+            narrator.graded_at = datetime.now(UTC)
+            narrator.valid_until = self.volatility_policy.valid_until(
+                narrator.narrator_type, narrator.domain_tag, now=narrator.graded_at
+            )
         return new_grade
 
     # ------------------------------------------------------------------
@@ -636,6 +838,9 @@ class Registry:
         narrator.adalah_grade = AdalahGrade.UNASSESSED
         narrator.dabt_grade = DabtGrade.UNASSESSED
         narrator.known_error_rate = None
+        # A version bump is a new narrator: no reputation, no freshness clock.
+        narrator.graded_at = None
+        narrator.valid_until = None
         narrator.add_evidence(
             EvidenceType.VERSION_BUMP,
             EvidenceAction.NEUTRAL,
@@ -656,12 +861,75 @@ class Registry:
         narrator.grade = NarratorGrade.REJECTED
         narrator.adalah_grade = AdalahGrade.COMPROMISED
         narrator.is_active = False
+        # Quarantine is active containment with no time limit: no clock.
+        narrator.graded_at = None
+        narrator.valid_until = None
         narrator.add_evidence(
             EvidenceType.HUMAN_REVIEW,
             EvidenceAction.JARH,
             f"Quarantined: {reason}" if reason else "Quarantined",
         )
         self._index_set_grade(narrator_id, domain_tag, NarratorGrade.REJECTED)
+
+    # ------------------------------------------------------------------
+    # Event-driven invalidation + freshness renewal (the expiry fix)
+    # ------------------------------------------------------------------
+
+    def flag_contradiction(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        description: str = "",
+    ) -> NarratorGrade:
+        """Event-driven invalidation: log an independent-chain contradiction.
+
+        Part 2 of the fix.  A contradiction between a narrator's claim and
+        an independent chain is adverse (jarḥ) evidence, which the
+        TransitionPolicy weighs toward a downgrade.  It also restarts the
+        freshness clock (see record_evidence), so the contradiction is
+        immediately the state we grade from — not something we rediscover
+        after a TTL expiry.
+
+        Returns the new narrator grade.
+        """
+        return self.record_evidence(
+            narrator_id,
+            domain_tag,
+            EvidenceType.CORROBORATION_OUTCOME,
+            EvidenceAction.JARH,
+            description or "Claim contradicted by an independent chain",
+        )
+
+    def renew_grade(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        reason: str = "corroboration",
+    ) -> bool:
+        """Renew a grade's freshness window without changing the grade.
+
+        Part 3 of the fix: corroboration is a proxy freshness signal.  When
+        independent chains keep agreeing with a narrator, the world has not
+        changed on them — so we extend the window instead of letting the
+        clock expire.  Does nothing for UNGRADED or REJECTED narrators.
+
+        Returns True if the window was renewed.
+        """
+        narrator = self.get(narrator_id, domain_tag)
+        if narrator is None:
+            return False
+        if narrator.grade in (NarratorGrade.UNGRADED, NarratorGrade.REJECTED):
+            return False
+        narrator.graded_at = datetime.now(UTC)
+        narrator.valid_until = self.volatility_policy.valid_until(
+            narrator.narrator_type, narrator.domain_tag, now=narrator.graded_at
+        )
+        narrator.add_evidence(
+            EvidenceType.CORROBORATION_OUTCOME,
+            EvidenceAction.TADIL,
+            f"Grade freshness renewed via {reason}; trust window restarted",
+        )
+        return True
 
     # ------------------------------------------------------------------
     # Bulk access
@@ -711,6 +979,8 @@ class RegistryDB:
                 model_version=row.model_version,
                 model_family=row.model_family,
                 upstream_source=row.upstream_source,
+                graded_at=row.graded_at,
+                valid_until=row.valid_until,
             )
             # Load evidence log
             for ev in row.evidence_log:
@@ -750,6 +1020,8 @@ class RegistryDB:
             row.model_family = narrator.model_family
             row.upstream_source = narrator.upstream_source
             row.is_active = narrator.is_active
+            row.graded_at = narrator.graded_at
+            row.valid_until = narrator.valid_until
 
             # Append new evidence entries
             existing_ids = {str(e.id) for e in row.evidence_log}

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISNAD Chain Viewer</title>
+<style>
+  :root {
+    --stone: #FAF8F5;
+    --brown: #2D2A26;
+    --muted: #8B8580;
+    --accent: #C44B3C;
+    --border: #E5E1DB;
+    --fade: #B8B0A8;
+    --card: #FFFFFF;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Iowan Old Style', Charter, Georgia, serif;
+    background: var(--stone);
+    color: var(--brown);
+    line-height: 1.6;
+    padding: 2rem 1.5rem 4rem;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .mono {
+    font-family: 'SF Mono', 'Cascadia Code', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  /* Nav */
+  .nav { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .nav-btn {
+    padding: 0.4em 0.85em;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card);
+    font-family: inherit;
+    font-size: 0.82rem;
+    cursor: pointer;
+    color: var(--brown);
+    box-shadow: var(--shadow);
+  }
+  .nav-btn:hover { border-color: var(--muted); }
+  .nav-btn.active { background: var(--brown); color: var(--card); border-color: var(--brown); }
+  .nav-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* Claim block */
+  .claim-block { margin-bottom: 1.5rem; }
+  .claim-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); margin-bottom: 0.25rem;
+  }
+  .claim-text { font-size: 1.12rem; line-height: 1.55; }
+
+  /* Verdict */
+  .verdict-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .verdict-status { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .verdict-badge {
+    font-size: 0.65rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.06em; padding: 0.2em 0.6em; border-radius: 3px;
+  }
+  .badge-warning { background: #FDF0ED; color: var(--accent); border: 1px solid #F5D2C8; }
+  .badge-ok { background: #EDF5ED; color: #3B7340; border: 1px solid #C8E0C8; }
+  .badge-caveat { background: #FFF8E7; color: #8B6D20; border: 1px solid #F0E0B0; }
+  .badge-bad { background: #F5EDED; color: #8B3B3B; border: 1px solid #E0C8C8; }
+  .verdict-summary { font-size: 1.02rem; line-height: 1.5; }
+  .verdict-constraint { color: var(--muted); font-size: 0.85rem; margin-top: 0.25rem; }
+  .verdict-toggle {
+    display: inline-block; margin-top: 0.75rem; font-size: 0.82rem;
+    color: var(--accent); cursor: pointer; background: none; border: none;
+    font-family: inherit; padding: 0;
+  }
+  .verdict-toggle:hover { text-decoration: underline; }
+
+  /* Expanded chain */
+  .chain-expanded { display: none; margin-top: 1.75rem; }
+  .chain-expanded.open { display: block; }
+  .section-label {
+    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); margin-bottom: 0.75rem; margin-top: 1.75rem;
+  }
+  .section-label:first-child { margin-top: 0; }
+
+  /* Origin */
+  .origin-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.6rem 0.75rem; background: none; border: 1px solid var(--border);
+    border-radius: 4px; margin-bottom: 0.25rem;
+  }
+  .origin-name { font-weight: 600; }
+  .origin-badge {
+    font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 0.15em 0.5em; border-radius: 3px;
+    background: #EDF5ED; color: #3B7340;
+  }
+  .origin-badge.reputable { background: #EDF0F5; color: #3B5B8B; }
+  .origin-badge.unknown { background: #F5F3F0; color: var(--muted); }
+  .origin-meta { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; padding-left: 0.75rem; }
+
+  /* Connector */
+  .connector { text-align: center; color: var(--fade); font-size: 0.78rem; padding: 0.12rem 0; margin-left: 1.5rem; }
+
+  /* Node */
+  .node { margin-left: 1.5rem; margin-bottom: 0.25rem; }
+  .node-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 4px; padding: 0.75rem 0.85rem; box-shadow: var(--shadow);
+  }
+  .node-card.weakest-link {
+    border-left: 3px solid var(--accent);
+    padding-left: calc(0.85rem - 2px);
+  }
+  .node-card.weakest-link::before {
+    content: "BINDING CONSTRAINT";
+    display: block; font-size: 0.58rem; letter-spacing: 0.07em;
+    color: var(--accent); font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace;
+    margin-bottom: 0.35rem;
+  }
+  .node-header { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+  .node-role {
+    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); min-width: 5.5em;
+  }
+  .node-id { font-size: 0.88rem; font-weight: 600; }
+  .node-version { font-size: 0.72rem; color: var(--muted); margin-left: 0.25rem; }
+  .node-grade-row { display: flex; gap: 0.85rem; margin-top: 0.35rem; font-size: 0.78rem; color: var(--muted); }
+  .node-grade-item { display: flex; gap: 0.3rem; }
+  .grade-value { font-weight: 600; color: var(--brown); }
+  .grade-value.de-emphasised { color: var(--fade); }
+  .node-inputs { font-size: 0.76rem; color: var(--muted); margin-top: 0.35rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .input-tag {
+    font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace;
+    font-size: 0.72em; background: #F5F3F0; padding: 0.15em 0.45em; border-radius: 3px;
+  }
+
+  /* Corroboration */
+  .corrob-section { margin-top: 2rem; }
+  .independence-block {
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    margin-top: 0.5rem; margin-bottom: 1rem;
+    padding: 0.75rem 0.85rem; border-radius: 4px;
+  }
+  .independence-block.verified { background: #EDF5ED; border: 1px solid #C8E0C8; }
+  .independence-block.unverified { background: #FFF8E7; border: 1px solid #F0E0B0; }
+  .independence-block.shared_ancestry_detected { background: #FDF0ED; border: 1px solid #F5D2C8; }
+  .independence-icon { font-size: 1.1rem; flex-shrink: 0; }
+  .independence-text { font-size: 0.83rem; line-height: 1.5; }
+  .independence-text strong { color: var(--brown); }
+  .independence-block.shared_ancestry_detected .independence-text strong { color: var(--accent); }
+
+  .corrob-chain {
+    margin-bottom: 0.75rem; padding: 0.75rem 0.85rem;
+    background: var(--card); border: 1px solid var(--border);
+    border-left: 3px solid var(--fade); border-radius: 4px;
+    opacity: 0.75;
+  }
+  .corrob-chain.shared-ancestry { border-left-color: var(--accent); opacity: 0.85; }
+  .corrob-chain.verified-independent { border-left-color: #3B7340; opacity: 1; background: #FAFDFA; }
+  .corrob-chain-title { font-size: 0.75rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .corrob-chain-meta { font-size: 0.73rem; color: var(--muted); margin-bottom: 0.35rem; }
+  .corrob-chain-meta.warn { color: var(--accent); }
+  .corrob-chain-meta.ok { color: #3B7340; }
+  .corrob-chain-summary { font-size: 0.8rem; color: var(--muted); }
+
+  /* Diagnosis */
+  .diagnosis {
+    background: #FFF8E7; border: 1px solid #F0E0B0;
+    border-radius: 4px; padding: 1rem 1.25rem; margin-top: 1.5rem;
+    font-size: 0.88rem; line-height: 1.55;
+  }
+  .diagnosis-label {
+    font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.06em; color: #8B6D20; margin-bottom: 0.35rem;
+  }
+
+  /* What's validated vs indicative */
+  .honest-limits {
+    margin-top: 2.5rem; padding: 1rem 1.25rem;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 4px; font-size: 0.8rem; color: var(--muted);
+  }
+  .honest-limits-title {
+    font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.5rem;
+  }
+  .honest-limits ul { padding-left: 1.25rem; }
+  .honest-limits li { margin-bottom: 0.3rem; }
+  .honest-limits .validated { color: #3B7340; }
+  .honest-limits .indicative { color: var(--accent); }
+
+  /* No corroboration message */
+  .no-corroboration {
+    font-size: 0.83rem; color: var(--muted);
+    padding: 1rem 0.85rem; background: #F5F3F0;
+    border: 1px solid var(--border); border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 1rem; }
+    .node { margin-left: 0.75rem; }
+    .connector { margin-left: 0.75rem; }
+    .node-grade-row { flex-direction: column; gap: 0.1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+  .verdict-toggle:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+
+<h2 style="font-size:1.1rem;font-weight:600;color:var(--muted);margin-bottom:0.5rem;">
+  ISNAD Chain Viewer
+</h2>
+
+<div class="nav" id="nav"></div>
+<div id="viewer"></div>
+
+<div class="honest-limits" id="limits"></div>
+
+<script>
+// ── Fixture data ──────────────────────────────────────────────────
+
+const FIXTURES = {
+  "1-clean-chain": {
+    "schema_version":"0.1","trace_id":"fixture-1-clean-chain",
+    "claim_text":"The momentum of a photon is given by p = h/\u03bb, where h is Planck's constant and \u03bb is the wavelength.",
+    "claim_domain":"physics",
+    "chain":[
+      {"node_id":"source-opensci","parent_ids":[],"role":"source","narrator_id":"source:openstax-university-physics-vol3","model_version":null,"step":0,"input_documents":[],"output_claim":null,"grade":{"narrator_id":"source:openstax-university-physics-vol3","role":"source","domain":"physics","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"verified","model_version":null,"model_family":null,"upstream_source":"openstax.org","known_error_rate":null,"evidence_count":95},"timestamp":"2026-02-01T09:00:00Z","metadata":{"document":"OpenStax University Physics Volume 3","chapter":"Photons and Matter Waves"}},
+      {"node_id":"extraction-opensci","parent_ids":["source-opensci"],"role":"extraction","narrator_id":"model:claude-3.5-sonnet","model_version":"claude-3-5-sonnet-20241022","step":1,"input_documents":[{"source":"openstax.org","doc_id":"university-physics-vol3-ch6","content_hash":"e3f4a5b6...","title":"OpenStax University Physics Vol.3, Ch.6: Photons and Matter Waves","retrieved_at_step":0}],"output_claim":"Photon momentum p = h/\u03bb.","grade":{"narrator_id":"model:claude-3.5-sonnet","role":"extraction","domain":"physics","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"unknown","model_version":"claude-3-5-sonnet-20241022","model_family":"claude-3","upstream_source":"openstax.org","known_error_rate":0.03,"evidence_count":72},"timestamp":"2026-02-01T09:00:03Z","metadata":{}},
+      {"node_id":"synthesis-opensci","parent_ids":["extraction-opensci"],"role":"synthesis","narrator_id":"model:claude-3.5-sonnet","model_version":"claude-3-5-sonnet-20241022","step":2,"input_documents":[{"source":"openstax.org","doc_id":"university-physics-vol3-ch6","content_hash":"e3f4a5b6...","title":"OpenStax University Physics Vol.3, Ch.6","retrieved_at_step":1}],"output_claim":"The momentum of a photon is given by p = h/\u03bb, where h is Planck's constant and \u03bb is the wavelength.","grade":{"narrator_id":"model:claude-3.5-sonnet","role":"synthesis","domain":"physics","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"unknown","model_version":"claude-3-5-sonnet-20241022","model_family":"claude-3","upstream_source":"openstax.org","known_error_rate":0.03,"evidence_count":72},"timestamp":"2026-02-01T09:00:06Z","metadata":{}}
+    ],
+    "corroborating_chains":[[
+      {"node_id":"source-hyperphysics","parent_ids":[],"role":"source","narrator_id":"source:hyperphysics-photon","model_version":null,"step":0,"input_documents":[],"output_claim":null,"grade":{"narrator_id":"source:hyperphysics-photon","role":"source","domain":"physics","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"reputable","model_version":null,"model_family":null,"upstream_source":"hyperphysics.phy-astr.gsu.edu","known_error_rate":null,"evidence_count":60},"timestamp":"2026-02-01T09:05:00Z","metadata":{"document":"HyperPhysics \u2014 Photon Momentum"}},
+      {"node_id":"extraction-hyperphysics","parent_ids":["source-hyperphysics"],"role":"extraction","narrator_id":"model:gpt-4o","model_version":"gpt-4o-2024-08-06","step":1,"input_documents":[{"source":"hyperphysics.phy-astr.gsu.edu","doc_id":"photon-momentum","content_hash":"f4a5b6c7...","title":"HyperPhysics \u2014 Photon Momentum","retrieved_at_step":0}],"output_claim":"p = h/\u03bb for photon momentum.","grade":{"narrator_id":"model:gpt-4o","role":"extraction","domain":"physics","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"unknown","model_version":"gpt-4o-2024-08-06","model_family":"gpt-4","upstream_source":"hyperphysics.phy-astr.gsu.edu","known_error_rate":0.04,"evidence_count":58},"timestamp":"2026-02-01T09:05:03Z","metadata":{}},
+      {"node_id":"synthesis-hyperphysics","parent_ids":["extraction-hyperphysics"],"role":"synthesis","narrator_id":"model:gpt-4o","model_version":"gpt-4o-2024-08-06","step":2,"input_documents":[{"source":"hyperphysics.phy-astr.gsu.edu","doc_id":"photon-momentum","content_hash":"f4a5b6c7...","title":"HyperPhysics \u2014 Photon Momentum","retrieved_at_step":1}],"output_claim":"The momentum of a photon is given by p = h/\u03bb, where h is Planck's constant and \u03bb is the wavelength.","grade":{"narrator_id":"model:gpt-4o","role":"synthesis","domain":"physics","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"unknown","model_version":"gpt-4o-2024-08-06","model_family":"gpt-4","upstream_source":"hyperphysics.phy-astr.gsu.edu","known_error_rate":0.04,"evidence_count":58},"timestamp":"2026-02-01T09:05:06Z","metadata":{}}
+    ]],
+    "chain_integrity":"sahih","origin_strength":"verified",
+    "independence":"verified",
+    "independence_detail":"Two genuinely independent sources (OpenStax and HyperPhysics), different model families (claude-3 and gpt-4), different upstream origins.",
+    "contradictions":[],
+    "binding_constraint":"No binding constraint \u2014 all narrators are \u1e63a\u1e25\u012b\u1e25-tier, chain is complete, origin is verified.",
+    "binding_step":null,
+    "created_at":"2026-02-01T10:00:00Z","capture_source":"manual"
+  },
+
+  "2-weak-extraction": {
+    "schema_version":"0.1","trace_id":"fixture-2-weak-extraction",
+    "claim_text":"Newton's second law states that the net force on an object equals its mass times its acceleration: F = ma.",
+    "claim_domain":"physics",
+    "chain":[
+      {"node_id":"source-openstax-vol1","parent_ids":[],"role":"source","narrator_id":"source:openstax-university-physics-vol1","model_version":null,"step":0,"input_documents":[],"output_claim":null,"grade":{"narrator_id":"source:openstax-university-physics-vol1","role":"source","domain":"physics","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"verified","model_version":null,"model_family":null,"upstream_source":"openstax.org","known_error_rate":null,"evidence_count":88},"timestamp":"2026-02-03T12:00:00Z","metadata":{"document":"OpenStax University Physics Volume 1","chapter":"Newton's Laws of Motion"}},
+      {"node_id":"extraction-weak","parent_ids":["source-openstax-vol1"],"role":"extraction","narrator_id":"model:gpt-3.5-turbo","model_version":"gpt-3.5-turbo-0125","step":1,"input_documents":[{"source":"openstax.org","doc_id":"university-physics-vol1-ch5","content_hash":"a1b2c3d4...","title":"OpenStax University Physics Vol.1, Ch.5: Newton's Laws of Motion","retrieved_at_step":0}],"output_claim":"F = ma (Newton's second law).","grade":{"narrator_id":"model:gpt-3.5-turbo","role":"extraction","domain":"physics","chain_integrity":"daif","adalah":"suspect","dabt":"low","origin_strength":"unknown","model_version":"gpt-3.5-turbo-0125","model_family":"gpt-3.5","upstream_source":"openstax.org","known_error_rate":0.18,"evidence_count":34},"timestamp":"2026-02-03T12:00:05Z","metadata":{"note":"18% calibrated error rate in physics extraction"}},
+      {"node_id":"synthesis-strong","parent_ids":["extraction-weak"],"role":"synthesis","narrator_id":"model:claude-3.5-sonnet","model_version":"claude-3-5-sonnet-20241022","step":2,"input_documents":[{"source":"openstax.org","doc_id":"university-physics-vol1-ch5","content_hash":"a1b2c3d4...","title":"OpenStax University Physics Vol.1, Ch.5","retrieved_at_step":1}],"output_claim":"Newton's second law states that the net force on an object equals its mass times its acceleration: F = ma.","grade":{"narrator_id":"model:claude-3.5-sonnet","role":"synthesis","domain":"physics","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"unknown","model_version":"claude-3-5-sonnet-20241022","model_family":"claude-3","upstream_source":"openstax.org","known_error_rate":0.03,"evidence_count":72},"timestamp":"2026-02-03T12:00:08Z","metadata":{"note":"Strong synthesis cannot repair destructive extraction step"}}
+    ],
+    "corroborating_chains":[],
+    "chain_integrity":"daif","origin_strength":"verified",
+    "independence":"unverified",
+    "independence_detail":"No corroborating chains available. Single-chain claim.",
+    "contradictions":[],
+    "binding_constraint":"The extraction step (gpt-3.5-turbo) is the weakest link. Calibrated 18% error rate in physics extraction. The extraction is a destructive transformation \u2014 information lost here cannot be recovered by the stronger synthesis downstream.",
+    "binding_step":1,
+    "created_at":"2026-02-03T12:30:00Z","capture_source":"manual"
+  },
+
+  "3-false-corroboration": {
+    "schema_version":"0.1","trace_id":"fixture-3-false-corroboration",
+    "claim_text":"The average global temperature has risen by 1.2\u00b0C since pre-industrial levels, with 2023 being the warmest year on record.",
+    "claim_domain":"climate",
+    "chain":[
+      {"node_id":"source-noaa-report","parent_ids":[],"role":"source","narrator_id":"source:noaa-2024-annual","model_version":null,"step":0,"input_documents":[],"output_claim":null,"grade":{"narrator_id":"source:noaa-2024-annual","role":"source","domain":"climate","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"verified","model_version":null,"model_family":null,"upstream_source":"noaa.gov","known_error_rate":null,"evidence_count":120},"timestamp":"2026-01-15T10:00:00Z","metadata":{"document":"NOAA Annual Climate Report 2024"}},
+      {"node_id":"extraction-session-1","parent_ids":["source-noaa-report"],"role":"extraction","narrator_id":"model:gpt-4o","model_version":"gpt-4o-2024-08-06","step":1,"input_documents":[{"source":"noaa.gov","doc_id":"noaa-2024-annual","content_hash":"a1b2c3d4...","title":"NOAA Annual Climate Report 2024","retrieved_at_step":0}],"output_claim":"NOAA reports 1.2\u00b0C warming since pre-industrial; 2023 warmest year.","grade":{"narrator_id":"model:gpt-4o","role":"extraction","domain":"climate","chain_integrity":"hasan","adalah":"acceptable","dabt":"acceptable","origin_strength":"unknown","model_version":"gpt-4o-2024-08-06","model_family":"gpt-4","upstream_source":"noaa.gov","known_error_rate":null,"evidence_count":45},"timestamp":"2026-01-15T10:00:05Z","metadata":{}},
+      {"node_id":"synthesis-session-1","parent_ids":["extraction-session-1"],"role":"synthesis","narrator_id":"model:claude-3.5-sonnet","model_version":"claude-3-5-sonnet-20241022","step":2,"input_documents":[{"source":"internal-report","doc_id":"report-2026-01-15","content_hash":"b2c3d4e5...","title":"Session 1 Synthesis","retrieved_at_step":1}],"output_claim":"The average global temperature has risen by 1.2\u00b0C since pre-industrial levels, with 2023 being the warmest year on record.","grade":{"narrator_id":"model:claude-3.5-sonnet","role":"synthesis","domain":"climate","chain_integrity":"hasan","adalah":"acceptable","dabt":"acceptable","origin_strength":"unknown","model_version":"claude-3-5-sonnet-20241022","model_family":"claude-3","upstream_source":"noaa.gov","known_error_rate":null,"evidence_count":38},"timestamp":"2026-01-15T10:00:10Z","metadata":{}}
+    ],
+    "corroborating_chains":[
+      [{"node_id":"source-session-2","parent_ids":[],"role":"source","narrator_id":"source:internal-report-2026-01-15","model_version":null,"step":0,"input_documents":[],"output_claim":null,"grade":{"narrator_id":"source:internal-report-2026-01-15","role":"source","domain":"climate","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"unknown","model_version":null,"model_family":null,"upstream_source":"noaa.gov","known_error_rate":null,"evidence_count":0},"timestamp":"2026-01-15T10:30:00Z","metadata":{"note":"This IS the report Session 1 wrote. Not independent."}},
+       {"node_id":"extraction-session-2","parent_ids":["source-session-2"],"role":"extraction","narrator_id":"model:gpt-4o","model_version":"gpt-4o-2024-08-06","step":1,"input_documents":[{"source":"internal-report","doc_id":"report-2026-01-15","content_hash":"b2c3d4e5...","title":"Session 1 Synthesis","retrieved_at_step":0}],"output_claim":"1.2\u00b0C warming; 2023 warmest year per NOAA via internal report.","grade":{"narrator_id":"model:gpt-4o","role":"extraction","domain":"climate","chain_integrity":"hasan","adalah":"acceptable","dabt":"acceptable","origin_strength":"unknown","model_version":"gpt-4o-2024-08-06","model_family":"gpt-4","upstream_source":"noaa.gov","known_error_rate":null,"evidence_count":45},"timestamp":"2026-01-15T10:30:05Z","metadata":{}},
+       {"node_id":"synthesis-session-2","parent_ids":["extraction-session-2"],"role":"synthesis","narrator_id":"model:gemini-2.0-flash","model_version":"gemini-2.0-flash-001","step":2,"input_documents":[{"source":"internal-report","doc_id":"report-2026-01-15","content_hash":"b2c3d4e5...","title":"Session 1 Synthesis","retrieved_at_step":1}],"output_claim":"The average global temperature has risen by 1.2\u00b0C since pre-industrial levels, with 2023 being the warmest year on record.","grade":{"narrator_id":"model:gemini-2.0-flash","role":"synthesis","domain":"climate","chain_integrity":"hasan","adalah":"acceptable","dabt":"acceptable","origin_strength":"unknown","model_version":"gemini-2.0-flash-001","model_family":"gemini","upstream_source":"noaa.gov","known_error_rate":null,"evidence_count":22},"timestamp":"2026-01-15T10:30:10Z","metadata":{}}],
+      [{"node_id":"source-session-3","parent_ids":[],"role":"source","narrator_id":"source:internal-report-2026-01-15","model_version":null,"step":0,"input_documents":[],"output_claim":null,"grade":{"narrator_id":"source:internal-report-2026-01-15","role":"source","domain":"climate","chain_integrity":"sahih","adalah":"high","dabt":"high","origin_strength":"unknown","model_version":null,"model_family":null,"upstream_source":"noaa.gov","known_error_rate":null,"evidence_count":0},"timestamp":"2026-01-15T11:00:00Z","metadata":{"note":"Same internal report. Still not independent."}},
+       {"node_id":"extraction-session-3","parent_ids":["source-session-3"],"role":"extraction","narrator_id":"model:llama-3.1-70b","model_version":"llama-3.1-70b-instruct","step":1,"input_documents":[{"source":"internal-report","doc_id":"report-2026-01-15","content_hash":"b2c3d4e5...","title":"Session 1 Synthesis","retrieved_at_step":0}],"output_claim":"Global temperatures +1.2\u00b0C from pre-industrial baseline; peak in 2023.","grade":{"narrator_id":"model:llama-3.1-70b","role":"extraction","domain":"climate","chain_integrity":"hasan","adalah":"acceptable","dabt":"acceptable","origin_strength":"unknown","model_version":"llama-3.1-70b-instruct","model_family":"llama-3","upstream_source":"noaa.gov","known_error_rate":null,"evidence_count":18},"timestamp":"2026-01-15T11:00:05Z","metadata":{}},
+       {"node_id":"synthesis-session-3","parent_ids":["extraction-session-3"],"role":"synthesis","narrator_id":"model:claude-3.5-sonnet","model_version":"claude-3-5-sonnet-20241022","step":2,"input_documents":[{"source":"internal-report","doc_id":"report-2026-01-15","content_hash":"b2c3d4e5...","title":"Session 1 Synthesis","retrieved_at_step":1}],"output_claim":"The average global temperature has risen by 1.2\u00b0C since pre-industrial levels, with 2023 being the warmest year on record.","grade":{"narrator_id":"model:claude-3.5-sonnet","role":"synthesis","domain":"climate","chain_integrity":"hasan","adalah":"acceptable","dabt":"acceptable","origin_strength":"unknown","model_version":"claude-3-5-sonnet-20241022","model_family":"claude-3","upstream_source":"noaa.gov","known_error_rate":null,"evidence_count":38},"timestamp":"2026-01-15T11:00:10Z","metadata":{}}]
+    ],
+    "chain_integrity":"hasan","origin_strength":"verified",
+    "independence":"shared_ancestry_detected",
+    "independence_detail":"Five transmitters across three chains, all tracing to one upstream source (noaa.gov). Document hash b2c3... is identical across all three chains. Sessions 2 and 3 read the report session 1 wrote. This is NOT independent corroboration.",
+    "contradictions":[],
+    "binding_constraint":"All three 'corroborating' chains originate from the same NOAA report. The apparent consensus is an artifact of one source echoed through different models \u2014 a textbook mad\u0101r (pivot narrator) pattern.",
+    "binding_step":0,
+    "created_at":"2026-01-15T12:00:00Z","capture_source":"manual"
+  }
+};
+
+// ── Rendering ──────────────────────────────────────────────────────
+
+const LABELS = {
+  "1-clean-chain": "1. Clean Chain",
+  "2-weak-extraction": "2. Weak Extraction",
+  "3-false-corroboration": "3. False Corroboration"
+};
+
+const BADGE_CLASS = {
+  verified: 'badge-ok', unverified: 'badge-caveat',
+  shared_ancestry_detected: 'badge-warning'
+};
+const BADGE_TEXT = {
+  verified: 'VERIFIED INDEPENDENT',
+  unverified: 'UNVERIFIED',
+  shared_ancestry_detected: 'SHARED ANCESTRY DETECTED'
+};
+
+const IND_CLASS = {
+  verified: 'verified', unverified: 'unverified',
+  shared_ancestry_detected: 'shared_ancestry_detected'
+};
+const IND_ICON = {
+  verified: '\u2713', unverified: '\u25CB',
+  shared_ancestry_detected: '\u26A0'
+};
+const IND_LABEL = {
+  verified: 'Independence verified',
+  unverified: 'Independence unverified',
+  shared_ancestry_detected: 'Shared ancestry detected'
+};
+
+const INTEGRITY_LABEL = {
+  sahih: '\u1e63a\u1e25\u012b\u1e25 (sound)',
+  hasan: '\u1e25asan (good)',
+  daif: '\u1e0da\u02bf\u012bf (weak)',
+  mawdu: 'maw\u1e0d\u016b\u02bf (rejected)',
+  ungraded: 'ungraded'
+};
+
+function originBadgeClass(s) {
+  if (s==='verified'||s==='attested') return '';
+  if (s==='reputable') return 'reputable';
+  return 'unknown';
+}
+
+function renderNode(node, isWeakest) {
+  const g = node.grade;
+  const inputs = node.input_documents || [];
+  const version = node.model_version ? ` <span class="node-version">@${esc(node.model_version)}</span>` : '';
+  const hasErrorRate = g.known_error_rate !== null && g.known_error_rate !== undefined;
+
+  let inputsHTML = '';
+  if (inputs.length) {
+    inputsHTML = '<div class="node-inputs">consumed: ' +
+      inputs.map(d => `<span class="input-tag">${esc(d.source)}/${esc(d.doc_id||'')}</span>`).join(' ') +
+      '</div>';
+  }
+
+  const erText = hasErrorRate ? `<span class="node-grade-item">error: <span class="grade-value${g.chain_integrity==='daif'?' de-emphasised':''}">${(g.known_error_rate*100).toFixed(0)}%</span></span>` : '';
+
+  return `<div class="node">
+    <div class="node-card${isWeakest?' weakest-link':''}">
+      <div class="node-header">
+        <span class="node-role">${esc(node.role)}</span>
+        <span class="node-id">${esc(node.narrator_id)}</span>${version}
+      </div>
+      <div class="node-grade-row">
+        <span class="node-grade-item">chain: <span class="grade-value${g.chain_integrity==='daif'||g.chain_integrity==='mawdu'?' de-emphasised':''}">${INTEGRITY_LABEL[g.chain_integrity]||g.chain_integrity}</span></span>
+        <span class="node-grade-item">\u02bfad\u0101lah: <span class="grade-value">${esc(g.adalah)}</span></span>
+        <span class="node-grade-item">\u1e0dab\u1e6d: <span class="grade-value">${esc(g.dabt)}</span></span>
+        ${erText}
+      </div>${inputsHTML}
+    </div>
+  </div>`;
+}
+
+function renderOrigin(node) {
+  const g = node.grade;
+  const meta = node.metadata || {};
+  const title = meta.document || meta.chapter || node.narrator_id;
+  return `<div class="section-label">Origin</div>
+    <div class="origin-row">
+      <span class="origin-name">${esc(title)}</span>
+      <span class="origin-badge ${originBadgeClass(g.origin_strength)}">${esc(g.origin_strength).toUpperCase()}</span>
+    </div>
+    <div class="origin-meta">
+      ${esc(g.upstream_source||'')} \u00b7 ${INTEGRITY_LABEL[g.chain_integrity]||''} \u00b7 \u02bfad\u0101lah: ${esc(g.adalah)} \u00b7 \u1e0dab\u1e6d: ${esc(g.dabt)} \u00b7 ${g.evidence_count} evidence entries
+    </div>`;
+}
+
+function renderCorroboratingChains(trace) {
+  const chains = trace.corroborating_chains || [];
+  if (!chains.length) {
+    return `<div class="corrob-section">
+      <div class="section-label">Corroborating Chains</div>
+      <div class="no-corroboration">No corroborating chains available. This claim rests on a single transmission path.</div>
+    </div>`;
+  }
+
+  const isShared = trace.independence === 'shared_ancestry_detected';
+  const isVerified = trace.independence === 'verified';
+
+  let html = `<div class="corrob-section">
+    <div class="section-label">Corroborating Chains (${chains.length} chain${chains.length>1?'s':''})</div>
+    <div class="independence-block ${IND_CLASS[trace.independence]}">
+      <span class="independence-icon" aria-hidden="true">${IND_ICON[trace.independence]}</span>
+      <div class="independence-text">
+        <strong>${IND_LABEL[trace.independence]}</strong><br>
+        ${esc(trace.independence_detail)}
+      </div>
+    </div>`;
+
+  chains.forEach((chain, i) => {
+    const chainLabel = String.fromCharCode(66 + i); // B, C, ...
+    const narratorIds = chain.map(n => n.narrator_id).join(' → ');
+    const sources = new Set();
+    chain.forEach(n => {
+      if (n.grade.upstream_source) sources.add(n.grade.upstream_source);
+      (n.input_documents||[]).forEach(d => { if (d.source) sources.add(d.source); });
+    });
+    const sourcesList = [...sources].join(', ');
+    const corrClass = isShared ? 'shared-ancestry' : (isVerified ? 'verified-independent' : '');
+    const metaClass = isShared ? 'warn' : (isVerified ? 'ok' : '');
+
+    html += `<div class="corrob-chain ${corrClass}">
+      <div class="corrob-chain-title">Chain ${chainLabel} — ${chain.length} nodes</div>
+      <div class="corrob-chain-meta ${metaClass}">${isShared ? '\u26A0 Same upstream source' : '\u2713 Independent source'}: ${esc(sourcesList)}</div>
+      <div class="corrob-chain-summary"><span class="mono">${esc(narratorIds)}</span></div>
+    </div>`;
+  });
+
+  html += '</div>';
+  return html;
+}
+
+function renderDiagnosis(trace) {
+  const isShared = trace.independence === 'shared_ancestry_detected';
+  const isWeak = trace.chain_integrity === 'daif' || trace.chain_integrity === 'mawdu';
+  const isClean = trace.chain_integrity === 'sahih' && trace.independence === 'verified';
+
+  let text = '';
+  if (isClean) {
+    text = 'All narrators are \u1e63a\u1e25\u012b\u1e25-tier, the chain is complete, the origin is verified, and corroboration is genuinely independent. This is the baseline: a claim that deserves high confidence.';
+  } else if (isWeak) {
+    text = `The extraction step (gpt-3.5-turbo) is the weakest link in this chain. It has a calibrated ${trace.chain[1].grade.known_error_rate ? (trace.chain[1].grade.known_error_rate*100).toFixed(0)+'%' : 'elevated'} error rate in physics extraction. The extraction is a <strong>destructive transformation</strong> — information lost here cannot be recovered by the stronger synthesis model downstream. The chain is capped at \u1e0da\u02bf\u012bf (weak).<br><br><strong>Honest limit:</strong> The synthesis model (claude-3.5-sonnet) is \u1e63a\u1e25\u012b\u1e25-tier, but it cannot repair information lost in a destructive step. This is the weakest-link rule operating as designed.`;
+  } else if (isShared) {
+    text = 'Three chains agree on the claim — but they are <strong>not independent</strong>. Session 1 extracted the claim from NOAA and wrote it into an internal report. Sessions 2 and 3 read that same report and reproduced the claim. Five transmitters, three different models, one upstream source. This is a textbook <em>mad\u0101r</em> (pivot narrator) pattern: the apparent consensus is an artifact of one source echoed through different models.<br><br><strong>Honest limit:</strong> Independence detection here is structural (shared document hash, shared upstream source). It does <em>not</em> check for more subtle correlations like shared training data or correlated model blind spots. This is an indicative signal, not a verified one.';
+  }
+
+  return `<div class="diagnosis">
+    <div class="diagnosis-label">What this means</div>
+    ${text}
+  </div>`;
+}
+
+function renderLimits(trace) {
+  const validated = ['Weakest-link chain grading is 100% validated on the physics corpus.'];
+  const indicative = [];
+
+  if (trace.independence === 'shared_ancestry_detected') {
+    indicative.push('Independence detection is structural (shared document hash, shared upstream source). It does not detect correlated training data or shared model blind spots. This is an indicative signal.');
+  }
+  if (trace.independence === 'verified') {
+    indicative.push('Independence is confirmed structurally (disjoint sources, different model families). Subtle correlations like shared training data are not checked.');
+  }
+  if (trace.chain_integrity === 'daif') {
+    indicative.push('The narrator grade for gpt-3.5-turbo is based on calibrated error rate (18%) from the §8 experiment. This grade is empirical but corpus-specific.');
+  }
+  indicative.push('Corroboration rarely fires on dense technical corpora (§8.4: 5 overlaps in 20,000 claims). The mechanism is validated but corpus-dependent.');
+
+  return `<div class="honest-limits-title">What\u2019s Validated vs. Indicative</div>
+    <ul>
+      ${validated.map(v => `<li class="validated">\u2713 Validated: ${v}</li>`).join('')}
+      ${indicative.map(v => `<li class="indicative">\u2192 Indicative: ${v}</li>`).join('')}
+    </ul>`;
+}
+
+function render(traceId) {
+  const trace = FIXTURES[traceId];
+  if (!trace) return;
+
+  const chain = trace.chain || [];
+  const source = chain[0];
+  const rest = chain.slice(1);
+  const bindingStep = trace.binding_step;
+  const badgeClass = BADGE_CLASS[trace.independence] || 'badge-caveat';
+  const badgeText = BADGE_TEXT[trace.independence] || trace.independence.toUpperCase();
+
+  let html = `<div class="claim-block">
+    <div class="claim-label">Claim</div>
+    <div class="claim-text">${esc(trace.claim_text)}</div>
+  </div>
+
+  <div class="verdict-card">
+    <div class="verdict-status">
+      <span class="verdict-badge ${badgeClass}">${badgeText}</span>
+    </div>
+    <div class="verdict-summary" id="verdict-summary-${traceId}"></div>
+    <div class="verdict-constraint">
+      Chain integrity: ${INTEGRITY_LABEL[trace.chain_integrity]} · Origin: ${esc(trace.origin_strength)} · Binding constraint: ${esc(trace.binding_constraint.substring(0,80))}${trace.binding_constraint.length>80?'...':''}
+    </div>
+    <button class="verdict-toggle" onclick="toggleChain('${traceId}')" aria-expanded="false" id="toggle-${traceId}">\u25B6 Show chain</button>
+  </div>
+
+  <div class="chain-expanded" id="expanded-${traceId}">
+    ${source ? renderOrigin(source) : ''}
+    ${source ? '<div class="connector">\u2502<br>\u25BC</div>' : ''}
+    ${rest.map((n,i) => {
+      const isWeakest = bindingStep !== null && bindingStep !== undefined && (i+1) === bindingStep;
+      return renderNode(n, isWeakest) + (i < rest.length-1 ? '<div class="connector">\u2502<br>\u25BC</div>' : '');
+    }).join('')}
+    ${renderCorroboratingChains(trace)}
+    ${renderDiagnosis(trace)}
+  </div>
+
+  <div class="honest-limits">${renderLimits(trace)}</div>`;
+
+  document.getElementById('viewer').innerHTML = html;
+
+  // Set summary text
+  const summaries = {
+    '1-clean-chain': '<strong>High confidence</strong> — sound chain, verified independent corroboration from separate sources (OpenStax + HyperPhysics).',
+    '2-weak-extraction': '<strong>Low confidence</strong> — chain degraded at the extraction step (gpt-3.5-turbo, calibrated 18% error rate). Strong origin, weak transmission.',
+    '3-false-corroboration': '<strong>Moderate confidence</strong> — three chains agree, but all trace to one upstream source (NOAA). Not independent corroboration.'
+  };
+  document.getElementById('verdict-summary-'+traceId).innerHTML = summaries[traceId] || '';
+}
+
+function renderNav() {
+  const nav = document.getElementById('nav');
+  nav.innerHTML = Object.keys(FIXTURES).map(id =>
+    `<button class="nav-btn" id="nav-${id}" onclick="selectFixture('${id}')">${LABELS[id]}</button>`
+  ).join('');
+}
+
+let currentFixture = '3-false-corroboration';
+
+function selectFixture(id) {
+  currentFixture = id;
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('nav-'+id).classList.add('active');
+  render(id);
+}
+
+function toggleChain(id) {
+  const el = document.getElementById('expanded-'+id);
+  const btn = document.getElementById('toggle-'+id);
+  const isOpen = el.classList.toggle('open');
+  btn.textContent = isOpen ? '\u25BC Hide chain' : '\u25B6 Show chain';
+  btn.setAttribute('aria-expanded', isOpen);
+}
+
+function esc(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+renderNav();
+selectFixture('3-false-corroboration');
+</script>
+</body>
+</html>

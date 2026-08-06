@@ -96,6 +96,14 @@ class NarratorDTO(BaseModel):
         default=None, description="Upstream origin for madār detection"
     )
     is_active: bool = True
+    graded_at: datetime | None = Field(
+        default=None,
+        description="When the current grade was last validated by evidence (UTC)",
+    )
+    valid_until: datetime | None = Field(
+        default=None,
+        description="Grade best-before (graded_at + volatility TTL); NULL = never expires",
+    )
 
 
 class EvidenceDTO(BaseModel):
@@ -254,6 +262,16 @@ class NarratorRegistry(Base):
         String(256), nullable=True, comment="Upstream source for correlation detection"
     )
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    graded_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True),
+        nullable=True,
+        comment="When the current grade was last validated by evidence (UTC)",
+    )
+    valid_until: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True),
+        nullable=True,
+        comment="Grade best-before (graded_at + volatility TTL); NULL = never expires",
+    )
 
     # Relationships
     evidence_log: Mapped[list[NarratorEvidence]] = relationship(

@@ -1,0 +1,223 @@
+{
+  "schema_version": "0.1",
+  "trace_id": "fixture-1-clean-chain",
+  "claim_text": "The momentum of a photon is given by p = h/λ, where h is Planck's constant and λ is the wavelength.",
+  "claim_domain": "physics",
+
+  "chain": [
+    {
+      "node_id": "source-opensci",
+      "parent_ids": [],
+      "role": "source",
+      "narrator_id": "source:openstax-university-physics-vol3",
+      "model_version": null,
+      "step": 0,
+      "input_documents": [],
+      "output_claim": null,
+      "grade": {
+        "narrator_id": "source:openstax-university-physics-vol3",
+        "role": "source",
+        "domain": "physics",
+        "chain_integrity": "sahih",
+        "adalah": "high",
+        "dabt": "high",
+        "origin_strength": "verified",
+        "model_version": null,
+        "model_family": null,
+        "upstream_source": "openstax.org",
+        "known_error_rate": null,
+        "evidence_count": 95
+      },
+      "timestamp": "2026-02-01T09:00:00Z",
+      "metadata": {
+        "document": "OpenStax University Physics Volume 3",
+        "chapter": "Photons and Matter Waves",
+        "url": "https://openstax.org/books/university-physics-volume-3"
+      }
+    },
+    {
+      "node_id": "extraction-opensci",
+      "parent_ids": ["source-opensci"],
+      "role": "extraction",
+      "narrator_id": "model:claude-3.5-sonnet",
+      "model_version": "claude-3-5-sonnet-20241022",
+      "step": 1,
+      "input_documents": [
+        {
+          "source": "openstax.org",
+          "doc_id": "university-physics-vol3-ch6",
+          "content_hash": "e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
+          "title": "OpenStax University Physics Vol.3, Ch.6: Photons and Matter Waves",
+          "retrieved_at_step": 0
+        }
+      ],
+      "output_claim": "Photon momentum p = h/λ.",
+      "grade": {
+        "narrator_id": "model:claude-3.5-sonnet",
+        "role": "extraction",
+        "domain": "physics",
+        "chain_integrity": "sahih",
+        "adalah": "high",
+        "dabt": "high",
+        "origin_strength": "unknown",
+        "model_version": "claude-3-5-sonnet-20241022",
+        "model_family": "claude-3",
+        "upstream_source": "openstax.org",
+        "known_error_rate": 0.03,
+        "evidence_count": 72
+      },
+      "timestamp": "2026-02-01T09:00:03Z",
+      "metadata": { "temperature": 0.0, "tokens": 98 }
+    },
+    {
+      "node_id": "synthesis-opensci",
+      "parent_ids": ["extraction-opensci"],
+      "role": "synthesis",
+      "narrator_id": "model:claude-3.5-sonnet",
+      "model_version": "claude-3-5-sonnet-20241022",
+      "step": 2,
+      "input_documents": [
+        {
+          "source": "openstax.org",
+          "doc_id": "university-physics-vol3-ch6",
+          "content_hash": "e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
+          "title": "OpenStax University Physics Vol.3, Ch.6",
+          "retrieved_at_step": 1
+        }
+      ],
+      "output_claim": "The momentum of a photon is given by p = h/λ, where h is Planck's constant and λ is the wavelength.",
+      "grade": {
+        "narrator_id": "model:claude-3.5-sonnet",
+        "role": "synthesis",
+        "domain": "physics",
+        "chain_integrity": "sahih",
+        "adalah": "high",
+        "dabt": "high",
+        "origin_strength": "unknown",
+        "model_version": "claude-3-5-sonnet-20241022",
+        "model_family": "claude-3",
+        "upstream_source": "openstax.org",
+        "known_error_rate": 0.03,
+        "evidence_count": 72
+      },
+      "timestamp": "2026-02-01T09:00:06Z",
+      "metadata": { "temperature": 0.2, "tokens": 187 }
+    }
+  ],
+
+  "corroborating_chains": [
+    [
+      {
+        "node_id": "source-hyperphysics",
+        "parent_ids": [],
+        "role": "source",
+        "narrator_id": "source:hyperphysics-photon",
+        "model_version": null,
+        "step": 0,
+        "input_documents": [],
+        "output_claim": null,
+        "grade": {
+          "narrator_id": "source:hyperphysics-photon",
+          "role": "source",
+          "domain": "physics",
+          "chain_integrity": "sahih",
+          "adalah": "high",
+          "dabt": "high",
+          "origin_strength": "reputable",
+          "model_version": null,
+          "model_family": null,
+          "upstream_source": "hyperphysics.phy-astr.gsu.edu",
+          "known_error_rate": null,
+          "evidence_count": 60
+        },
+        "timestamp": "2026-02-01T09:05:00Z",
+        "metadata": {
+          "document": "HyperPhysics — Photon Momentum",
+          "url": "http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/photom.html"
+        }
+      },
+      {
+        "node_id": "extraction-hyperphysics",
+        "parent_ids": ["source-hyperphysics"],
+        "role": "extraction",
+        "narrator_id": "model:gpt-4o",
+        "model_version": "gpt-4o-2024-08-06",
+        "step": 1,
+        "input_documents": [
+          {
+            "source": "hyperphysics.phy-astr.gsu.edu",
+            "doc_id": "photon-momentum",
+            "content_hash": "f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4",
+            "title": "HyperPhysics — Photon Momentum",
+            "retrieved_at_step": 0
+          }
+        ],
+        "output_claim": "p = h/λ for photon momentum.",
+        "grade": {
+          "narrator_id": "model:gpt-4o",
+          "role": "extraction",
+          "domain": "physics",
+          "chain_integrity": "sahih",
+          "adalah": "high",
+          "dabt": "high",
+          "origin_strength": "unknown",
+          "model_version": "gpt-4o-2024-08-06",
+          "model_family": "gpt-4",
+          "upstream_source": "hyperphysics.phy-astr.gsu.edu",
+          "known_error_rate": 0.04,
+          "evidence_count": 58
+        },
+        "timestamp": "2026-02-01T09:05:03Z",
+        "metadata": { "temperature": 0.0 }
+      },
+      {
+        "node_id": "synthesis-hyperphysics",
+        "parent_ids": ["extraction-hyperphysics"],
+        "role": "synthesis",
+        "narrator_id": "model:gpt-4o",
+        "model_version": "gpt-4o-2024-08-06",
+        "step": 2,
+        "input_documents": [
+          {
+            "source": "hyperphysics.phy-astr.gsu.edu",
+            "doc_id": "photon-momentum",
+            "content_hash": "f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4",
+            "title": "HyperPhysics — Photon Momentum",
+            "retrieved_at_step": 1
+          }
+        ],
+        "output_claim": "The momentum of a photon is given by p = h/λ, where h is Planck's constant and λ is the wavelength.",
+        "grade": {
+          "narrator_id": "model:gpt-4o",
+          "role": "synthesis",
+          "domain": "physics",
+          "chain_integrity": "sahih",
+          "adalah": "high",
+          "dabt": "high",
+          "origin_strength": "unknown",
+          "model_version": "gpt-4o-2024-08-06",
+          "model_family": "gpt-4",
+          "upstream_source": "hyperphysics.phy-astr.gsu.edu",
+          "known_error_rate": 0.04,
+          "evidence_count": 58
+        },
+        "timestamp": "2026-02-01T09:05:06Z",
+        "metadata": { "temperature": 0.1 }
+      }
+    ]
+  ],
+
+  "chain_integrity": "sahih",
+  "origin_strength": "verified",
+
+  "independence": "verified",
+  "independence_detail": "Two genuinely independent sources (OpenStax and HyperPhysics), different model families (claude-3 and gpt-4), different upstream origins (openstax.org vs hyperphysics.phy-astr.gsu.edu). No shared narrator IDs, no shared model family, no shared upstream source. Independence structurally confirmed.",
+
+  "contradictions": [],
+
+  "binding_constraint": "No binding constraint — all narrators are ṣaḥīḥ-tier, chain is complete, origin is verified. This is the baseline: a claim that deserves high confidence.",
+  "binding_step": null,
+
+  "created_at": "2026-02-01T10:00:00Z",
+  "capture_source": "manual"
+}

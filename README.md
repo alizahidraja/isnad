@@ -74,14 +74,16 @@ pip install isnad[langchain]
 ```
 
 ```python
-from isnad.integrations.langchain import IsnadTracer, seed_registry
-from isnad.critics import EmbeddingCritic
+from isnad.integrations.langchain import IsnadCallbackHandler, seed_registry
 
 reg = seed_registry({"source:docs": "reliable", "model:gpt-4o": "acceptable"})
-tracer = IsnadTracer(registry=reg, critic=EmbeddingCritic())
-chain.invoke("What is F=ma?", config={"callbacks": [tracer]})
-print(tracer.report())
+handler = IsnadCallbackHandler(registry=reg, domain="physics")
+chain.invoke("What is F=ma?", config={"callbacks": [handler]})
+trace = handler.to_trace()  # isnad_trace v0.1 JSON
 ```
+
+Also available: `IsnadTracer` (older flat-list reporter with built-in report()) and
+`AsyncIsnadCallbackHandler` for async pipelines.
 
 ---
 
@@ -206,6 +208,89 @@ critic = LLMCritic(api_key="sk-...")                  # LLM-backed, higher quali
 
 ---
 
+## Trace Capture & Chain Viewer
+
+ISNAD now ships a **capture → schema → viewer** pipeline that makes transmission
+chains visible. The contract is [isnad_trace v0.1](docs/trace-schema.md) — a
+versioned JSON schema aligned with W3C PROV-DM and PROV-AGENT (arXiv 2508.02866).
+
+### Capture (LangChain callback)
+
+```python
+from isnad.integrations.langchain import IsnadCallbackHandler, seed_registry
+
+reg = seed_registry({"source:my-docs": "reliable", "model:gpt-4o": "acceptable"})
+handler = IsnadCallbackHandler(registry=reg, domain="physics")
+
+# Attach to any LangChain/LangGraph pipeline
+chain.invoke("What is F=ma?", config={"callbacks": [handler]})
+
+trace = handler.to_trace()
+print(trace.model_dump_json(indent=2))  # isnad_trace v0.1
+```
+
+Key properties:
+- **Tree from run_id/parent_run_id** — LangChain already provides the tree;
+  the handler reconstructs it without timestamps or heuristics.
+- **Input provenance** — every retrieved document is recorded with source,
+  doc_id, and content hash. Full content is redacted by default.
+- **Model version captured** — resolved model version (e.g. `gpt-4o-2024-08-06`)
+  from response metadata, not the endpoint alias. Records `null` explicitly when
+  unavailable.
+- **Shared ancestry detection** — overlapping retrieval sets, shared model
+  families, or shared upstream sources are flagged as
+  `shared_ancestry_detected`.
+- **Never breaks your pipeline** — every callback is wrapped in try/except.
+- **Async support** — `AsyncIsnadCallbackHandler` for async LangChain runs.
+
+**Runnable demo** (no API keys required):
+```bash
+python examples/isnad_langchain_demo.py
+```
+
+### Viewer
+
+Open `viewer/index.html` in a browser. Three hand-built fixtures demonstrate
+the framework's key signals:
+
+| Fixture | What it shows |
+|---------|--------------|
+| 1. Clean chain | Ṣaḥīḥ-tier chain, verified independent corroboration (OpenStax + HyperPhysics). Baseline. |
+| 2. Weak extraction | Ḍaʿīf chain (gpt-3.5-turbo at 18% error rate) but **verified origin**. Two axes kept separate. |
+| 3. False corroboration | Five transmitters across three chains, all tracing to one NOAA source. Renders as a **warning**, not consensus. |
+
+The viewer renders fixture 3 by default — it is the most important case.
+
+### What the viewer shows — and what it doesn't
+
+**Validated signals** (mechanisms confirmed empirically or structurally):
+
+| Signal | Status | Source |
+|--------|--------|--------|
+| Weakest-link chain grading | ✅ Validated | §8 experiment: 100% of REJECTED narrator claims correctly blocked |
+| jarḥ–taʿdīl narrator discovery | ✅ Partial | Correctly identifies injected weak narrators; requires seed grades |
+| Corroboration negative controls | ✅ Validated | 8/8 correctly rejected; madār detection blocks correlated chains |
+| Two-axis separation (chain ≠ origin) | ✅ Structural | Schema enforces separate enums; viewer renders them independently |
+| Tree reconstruction from run_id/parent_run_id | ✅ Structural | Tested: linear chains, siblings, missing parents handled safely |
+
+**Indicative signals** (displayed honestly, not validated):
+
+| Signal | Status | Honest limit |
+|--------|--------|-------------|
+| Independence detection | ⚠ Indicative | Structural only (shared doc hashes, upstream sources, model families). Does not detect correlated training data or shared model blind spots. |
+| Narrator grades | ⚠ Indicative | Only calibrated where seed-grade data exists. Cold-start coverage is ~10%. |
+| Corroboration fire rate | ⚠ Corpus-dependent | 100% on Wikipedia; rarely fires on dense technical corpora (5/20K). |
+| Origin strength | ⚠ Indicative | Derived from ʿadālah grade. No cryptographic attestation (complementary: Live Verify). |
+| Content verdict | ⚠ Not captured | The trace schema has space for `content_verdict` but the callback handler does not populate it — the bundled critic is a stub on real text. |
+
+**What is NOT shown:**
+- No numeric confidence (never `87.3`). Grades are ordinal bands: ṣaḥīḥ/ḥasan/ḍaʿīf/mawḍūʿ.
+- No colour-alone confidence encoding. The viewer respects `prefers-reduced-motion` and visible keyboard focus.
+- No collapsed axes. Chain integrity and origin strength are always separate.
+- No implicit corroboration. `unverified` independence is not rendered as agreement.
+
+---
+
 ## Experimental Validation — Semantic Corroboration (§8)
 
 **Status: Empirically validated on real data.**
@@ -266,6 +351,9 @@ Full methodology, results, negative controls, and paper gap analysis in:
 - 📚 **Corroboration v3 (Physics Textbooks):** [`experiments/corroboration_v3/`](experiments/corroboration_v3/) — 104/104 on s8 corpus
 - 🗺️ **Architecture Diagram:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) — 3 tabs: System, Data Flow, Validation Matrix
 - 🔌 **LangChain integration:** [`src/isnad/integrations/langchain/`](src/isnad/integrations/langchain/)
+- 🔗 **Trace schema spec:** [`docs/trace-schema.md`](docs/trace-schema.md) — v0.1 with PROV/PROV-AGENT mapping
+- 👁️ **Chain viewer:** [`viewer/index.html`](viewer/index.html) — open in browser, renders all 3 fixtures
+- 🧪 **Trace capture demo:** [`examples/isnad_langchain_demo.py`](examples/isnad_langchain_demo.py) — runnable without API keys
 - 📊 **Critic evaluation:** [`src/isnad/critics/CRITIC_EVAL.md`](src/isnad/critics/CRITIC_EVAL.md)
 
 ---

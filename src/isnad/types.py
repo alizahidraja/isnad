@@ -9,6 +9,7 @@ Faithful to the paper's epistemic commitments:
 
 from __future__ import annotations
 
+from datetime import datetime, timedelta
 from enum import Enum
 from typing import Protocol
 
@@ -64,6 +65,27 @@ class NarratorGrade(Enum):
     @property
     def is_at_least_acceptable(self) -> bool:
         return self in (NarratorGrade.RELIABLE, NarratorGrade.ACCEPTABLE)
+
+
+# ---------------------------------------------------------------------------
+# Freshness of a narrator grade — the time-decay half of the expiry fix
+# ---------------------------------------------------------------------------
+
+
+class FreshnessStatus(Enum):
+    """Freshness of a narrator grade relative to its volatility window.
+
+    A grade is a truth-statement about a window of time, not a permanent
+    attribute.  The window is defined by the VolatilityPolicy:
+        - FRESH:  inside the window, grade used as stored.
+        - STALE:  in the grace window — downgraded one tier + needs re-check.
+        - EXPIRED: past best-before — reverts to UNGRADED until re-earned.
+    REJECTED (active containment) never decays.
+    """
+
+    FRESH = "fresh"
+    STALE = "stale"
+    EXPIRED = "expired"
 
 
 # ---------------------------------------------------------------------------
@@ -262,6 +284,36 @@ class TransitionPolicy(Protocol):
         evidence_history: list[dict[str, object]],
         new_evidence: dict[str, object],
     ) -> NarratorGrade: ...
+
+
+class VolatilityPolicy(Protocol):
+    """Protocol for how long a narrator grade stays trustworthy.
+
+    This is one instantiation of a parameter the framework leaves open
+    (see paper §4.2).  Swap freely.
+
+    Defines the time-decay half of the grade-expiry fix:
+    - time_to_live(): how long a grade is trusted after it is (re)validated.
+    - stale_window(): the grace period at the end of the TTL during which
+      the grade is downgraded one tier and flagged for re-check instead of
+      being treated as expired outright.
+    - valid_until():   convenience — the expiry instant given a reference now.
+
+    The default implementation (FixedVolatilityPolicy) derives TTLs from
+    configuration (narrator type + optional per-domain overrides) rather
+    than a hardcoded table.
+    """
+
+    def time_to_live(self, narrator_type: NarratorType, domain: str) -> timedelta: ...
+
+    def stale_window(self, narrator_type: NarratorType, domain: str) -> timedelta: ...
+
+    def valid_until(
+        self,
+        narrator_type: NarratorType,
+        domain: str,
+        now: datetime | None = None,
+    ) -> datetime: ...
 
 
 class CorroborationPolicy(Protocol):

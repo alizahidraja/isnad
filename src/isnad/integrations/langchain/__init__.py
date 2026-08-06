@@ -26,8 +26,19 @@ Usage (5 lines):
     print(tracer.report())
 """
 
+from isnad.integrations.langchain.callback import (
+    AsyncIsnadCallbackHandler,
+    IsnadCallbackHandler,
+)
 from isnad.integrations.langchain.decorator import isnad_track
 from isnad.integrations.langchain.helpers import CriticAdapter, seed_registry
 from isnad.integrations.langchain.tracer import IsnadTracer
 
-__all__ = ["IsnadTracer", "isnad_track", "seed_registry", "CriticAdapter"]
+__all__ = [
+    "AsyncIsnadCallbackHandler",
+    "CriticAdapter",
+    "IsnadCallbackHandler",
+    "IsnadTracer",
+    "isnad_track",
+    "seed_registry",
+]

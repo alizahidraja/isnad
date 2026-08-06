@@ -1,27 +1,20 @@
 """Narrator identity resolution — versioned registry keys for endpoint drift.
 
 Grades are keyed by alias@version when a resolved version is supplied on the
-chain link.  Legacy alias-only lookups remain for missing or non-resolved
-versions (unknown, latest, dev, canary, etc.).
+chain link.  Legacy alias-only lookups remain for missing/unknown versions.
 """
 
 from __future__ import annotations
 
 VERSION_SEPARATOR = "@"
-# Versions that must not form alias@version registry keys (moving targets / placeholders).
-NON_RESOLVED_VERSIONS = frozenset({"", "unknown", "latest", "dev", "canary"})
-UNKNOWN_VERSIONS = NON_RESOLVED_VERSIONS
+UNKNOWN_VERSIONS = frozenset({"", "unknown"})
 
 
 def is_unknown_version(version: str | None) -> bool:
-    """Return True when version should fall back to legacy alias-only lookup.
-
-    Non-resolved tags (``latest``, ``dev``, ``canary``) are not stable
-    fingerprints — treating them like ``unknown`` avoids phantom identities.
-    """
+    """Return True when version should fall back to legacy alias-only lookup."""
     if version is None:
         return True
-    return version.strip().lower() in NON_RESOLVED_VERSIONS
+    return version.strip().lower() in UNKNOWN_VERSIONS
 
 
 def resolve_narrator_id(narrator_id: str, version: str | None) -> str:

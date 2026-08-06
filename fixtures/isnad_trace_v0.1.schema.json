@@ -1,0 +1,486 @@
+{
+  "$defs": {
+    "ChainIntegrity": {
+      "description": "How soundly was this claim transmitted through the chain?",
+      "enum": [
+        "sahih",
+        "hasan",
+        "daif",
+        "mawdu",
+        "ungraded"
+      ],
+      "title": "ChainIntegrity",
+      "type": "string"
+    },
+    "ContradictionFlag": {
+      "description": "Where two chains reach contradictory claims, carry the contradiction.\n\nThe classical system rejected a narration by a reliable transmitter that\ncontradicted a stronger one on the *contradiction* (sh\u0101dhdh), not on any\nchain defect \u2014 contradiction routed to content criticism (matn) rather\nthan being settled by chain quality (isn\u0101d).",
+      "properties": {
+        "claim_a": {
+          "description": "First contradictory claim text",
+          "title": "Claim A",
+          "type": "string"
+        },
+        "chain_a_node_ids": {
+          "description": "Node IDs for chain A",
+          "items": {
+            "type": "string"
+          },
+          "title": "Chain A Node Ids",
+          "type": "array"
+        },
+        "claim_b": {
+          "description": "Second contradictory claim text",
+          "title": "Claim B",
+          "type": "string"
+        },
+        "chain_b_node_ids": {
+          "description": "Node IDs for chain B",
+          "items": {
+            "type": "string"
+          },
+          "title": "Chain B Node Ids",
+          "type": "array"
+        },
+        "resolved": {
+          "default": false,
+          "description": "Has a human reviewer adjudicated?",
+          "title": "Resolved",
+          "type": "boolean"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Adjudication result if resolved",
+          "title": "Resolution"
+        }
+      },
+      "required": [
+        "claim_a",
+        "chain_a_node_ids",
+        "claim_b",
+        "chain_b_node_ids"
+      ],
+      "title": "ContradictionFlag",
+      "type": "object"
+    },
+    "CorroborationVerdict": {
+      "description": "Independence status \u2014 first-class, never a silent boolean.",
+      "enum": [
+        "verified",
+        "unverified",
+        "shared_ancestry_detected"
+      ],
+      "title": "CorroborationVerdict",
+      "type": "string"
+    },
+    "DocumentRef": {
+      "description": "Input provenance: what a transmitter consumed before it spoke.\n\nRecords document identity (source, id, hash), not full content.\nContent is redacted by default \u2014 full capture is opt-in.",
+      "properties": {
+        "source": {
+          "description": "Source identifier, e.g. 'arxiv', 'wikipedia'",
+          "title": "Source",
+          "type": "string"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Document identifier within source",
+          "title": "Doc Id"
+        },
+        "content_hash": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "SHA-256 of document content for integrity",
+          "title": "Content Hash"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Human-readable title",
+          "title": "Title"
+        },
+        "retrieved_at_step": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Which chain step retrieved this document",
+          "title": "Retrieved At Step"
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "title": "DocumentRef",
+      "type": "object"
+    },
+    "Grade": {
+      "description": "A transmitter's grade for a specific (narrator, role, domain) triplet.\n\nOrdinal first, numeric only where calibration data exists.\nThe schema keeps adalah (integrity) and dabt (precision) as distinct axes.",
+      "properties": {
+        "narrator_id": {
+          "description": "Stable identifier, e.g. 'model:gpt-4o'",
+          "title": "Narrator Id",
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/$defs/Role",
+          "description": "What the transmitter did at this step"
+        },
+        "domain": {
+          "default": "general",
+          "description": "Domain tag for per-domain grading",
+          "title": "Domain",
+          "type": "string"
+        },
+        "chain_integrity": {
+          "$ref": "#/$defs/ChainIntegrity",
+          "default": "ungraded",
+          "description": "Transmission quality: how soundly does this narrator relay claims?"
+        },
+        "adalah": {
+          "default": "unassessed",
+          "description": "\u02bfAd\u0101lah \u2014 integrity / manipulation-resistance axis",
+          "title": "Adalah",
+          "type": "string"
+        },
+        "dabt": {
+          "default": "unassessed",
+          "description": "\u1e0cab\u1e6d \u2014 precision / error-rate axis",
+          "title": "Dabt",
+          "type": "string"
+        },
+        "origin_strength": {
+          "$ref": "#/$defs/OriginStrength",
+          "default": "unknown",
+          "description": "How trustworthy is the source this narrator originated from?"
+        },
+        "model_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Resolved model version, not alias. Required when role=synthesis.",
+          "title": "Model Version"
+        },
+        "model_family": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "For correlation (mad\u0101r) detection",
+          "title": "Model Family"
+        },
+        "upstream_source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Upstream origin for shared-ancestry detection",
+          "title": "Upstream Source"
+        },
+        "known_error_rate": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Calibrated error rate; NULL = uncalibrated",
+          "title": "Known Error Rate"
+        },
+        "evidence_count": {
+          "default": 0,
+          "description": "Number of evidence log entries for this narrator",
+          "title": "Evidence Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "narrator_id",
+        "role"
+      ],
+      "title": "Grade",
+      "type": "object"
+    },
+    "OriginStrength": {
+      "description": "How trustworthy is the SOURCE this claim originated from?\n\nSeparated from chain integrity.  A pristine chain from an unverified\nsource must be visibly different from a degraded chain from a sound one.",
+      "enum": [
+        "verified",
+        "attested",
+        "reputable",
+        "unknown",
+        "suspect",
+        "compromised"
+      ],
+      "title": "OriginStrength",
+      "type": "string"
+    },
+    "Role": {
+      "description": "What the transmitter did at this step.",
+      "enum": [
+        "retrieval",
+        "extraction",
+        "synthesis",
+        "tool",
+        "human",
+        "source"
+      ],
+      "title": "Role",
+      "type": "string"
+    },
+    "TransmitterNode": {
+      "description": "One step in a transmission chain \u2014 what produced the claim at this step.\n\nThis is the core provenance record.  Each node records:\n- what it is (narrator_id, role, model_version)\n- what it consumed (input_documents, parent_ids)\n- what it produced (output_claim)\n- how reliable it is (grade)",
+      "properties": {
+        "node_id": {
+          "description": "Stable node identifier, e.g. run_id from LangChain",
+          "title": "Node Id",
+          "type": "string"
+        },
+        "parent_ids": {
+          "description": "Parent node IDs \u2014 chain edges",
+          "items": {
+            "type": "string"
+          },
+          "title": "Parent Ids",
+          "type": "array"
+        },
+        "role": {
+          "$ref": "#/$defs/Role",
+          "description": "retrieval, extraction, synthesis, tool, human, source"
+        },
+        "narrator_id": {
+          "description": "Stable narrator identifier",
+          "title": "Narrator Id",
+          "type": "string"
+        },
+        "model_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Resolved model version. NULL = unknown (record this fact, don't fall back silently).",
+          "title": "Model Version"
+        },
+        "step": {
+          "description": "Zero-indexed position in chain",
+          "minimum": 0,
+          "title": "Step",
+          "type": "integer"
+        },
+        "input_documents": {
+          "description": "Documents/prior outputs consumed before producing the claim. This is the primary source of input provenance \u2014 without it, independence cannot be checked.",
+          "items": {
+            "$ref": "#/$defs/DocumentRef"
+          },
+          "title": "Input Documents",
+          "type": "array"
+        },
+        "output_claim": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The claim text produced at this step. NULL for retrieval/tool steps.",
+          "title": "Output Claim"
+        },
+        "grade": {
+          "$ref": "#/$defs/Grade",
+          "description": "Per (narrator, role, domain) grade"
+        },
+        "timestamp": {
+          "description": "ISO-8601 timestamp of this transformation",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "metadata": {
+          "additionalProperties": true,
+          "description": "Provider-specific metadata (temperature, token counts, etc.)",
+          "title": "Metadata",
+          "type": "object"
+        }
+      },
+      "required": [
+        "node_id",
+        "role",
+        "narrator_id",
+        "step",
+        "grade"
+      ],
+      "title": "TransmitterNode",
+      "type": "object"
+    }
+  },
+  "description": "isnad_trace v0.1 \u2014 the serializable chain capture.\n\nVersioned, self-describing, with an explicit PROV mapping.\nThis is the contract between capture and rendering.",
+  "properties": {
+    "schema_version": {
+      "default": "0.1",
+      "description": "Schema version \u2014 bump on breaking changes",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "trace_id": {
+      "description": "Unique trace identifier",
+      "title": "Trace Id",
+      "type": "string"
+    },
+    "claim_text": {
+      "description": "The final claim text being evaluated",
+      "title": "Claim Text",
+      "type": "string"
+    },
+    "claim_domain": {
+      "default": "general",
+      "description": "Domain tag for the claim",
+      "title": "Claim Domain",
+      "type": "string"
+    },
+    "chain": {
+      "description": "Ordered transmission chain (source \u2192 ... \u2192 synthesis)",
+      "items": {
+        "$ref": "#/$defs/TransmitterNode"
+      },
+      "title": "Chain",
+      "type": "array"
+    },
+    "corroborating_chains": {
+      "description": "Independent chains asserting the same claim",
+      "items": {
+        "items": {
+          "$ref": "#/$defs/TransmitterNode"
+        },
+        "type": "array"
+      },
+      "title": "Corroborating Chains",
+      "type": "array"
+    },
+    "chain_integrity": {
+      "$ref": "#/$defs/ChainIntegrity",
+      "description": "Chain grade: weakest-link, refined by transform type"
+    },
+    "origin_strength": {
+      "$ref": "#/$defs/OriginStrength",
+      "description": "Origin strength: best source grade across all chains"
+    },
+    "independence": {
+      "$ref": "#/$defs/CorroborationVerdict",
+      "default": "unverified",
+      "description": "Independence status of corroborating chains"
+    },
+    "independence_detail": {
+      "default": "",
+      "description": "Human-readable explanation of the independence verdict",
+      "title": "Independence Detail",
+      "type": "string"
+    },
+    "contradictions": {
+      "description": "Contradictory claims from other chains \u2014 routed to content criticism",
+      "items": {
+        "$ref": "#/$defs/ContradictionFlag"
+      },
+      "title": "Contradictions",
+      "type": "array"
+    },
+    "binding_constraint": {
+      "description": "Which link is the binding constraint, and why?",
+      "title": "Binding Constraint",
+      "type": "string"
+    },
+    "binding_step": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Zero-indexed step of the binding constraint link",
+      "title": "Binding Step"
+    },
+    "created_at": {
+      "description": "ISO-8601 timestamp of trace creation",
+      "title": "Created At",
+      "type": "string"
+    },
+    "capture_source": {
+      "default": "manual",
+      "description": "How was this trace captured? 'langchain', 'manual', 'prov-agent'",
+      "title": "Capture Source",
+      "type": "string"
+    }
+  },
+  "required": [
+    "trace_id",
+    "claim_text",
+    "chain",
+    "chain_integrity",
+    "origin_strength",
+    "binding_constraint"
+  ],
+  "title": "TraceV01",
+  "type": "object"
+}

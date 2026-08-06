@@ -1,0 +1,319 @@
+{
+  "schema_version": "0.1",
+  "trace_id": "fixture-3-false-corroboration",
+  "claim_text": "The average global temperature has risen by 1.2°C since pre-industrial levels, with 2023 being the warmest year on record.",
+  "claim_domain": "climate",
+
+  "chain": [
+    {
+      "node_id": "source-noaa-report",
+      "parent_ids": [],
+      "role": "source",
+      "narrator_id": "source:noaa-2024-annual",
+      "model_version": null,
+      "step": 0,
+      "input_documents": [],
+      "output_claim": null,
+      "grade": {
+        "narrator_id": "source:noaa-2024-annual",
+        "role": "source",
+        "domain": "climate",
+        "chain_integrity": "sahih",
+        "adalah": "high",
+        "dabt": "high",
+        "origin_strength": "verified",
+        "model_version": null,
+        "model_family": null,
+        "upstream_source": "noaa.gov",
+        "known_error_rate": null,
+        "evidence_count": 120
+      },
+      "timestamp": "2026-01-15T10:00:00Z",
+      "metadata": {
+        "document": "NOAA Annual Climate Report 2024",
+        "url": "https://www.noaa.gov/climate/2024"
+      }
+    },
+    {
+      "node_id": "extraction-session-1",
+      "parent_ids": ["source-noaa-report"],
+      "role": "extraction",
+      "narrator_id": "model:gpt-4o",
+      "model_version": "gpt-4o-2024-08-06",
+      "step": 1,
+      "input_documents": [
+        {
+          "source": "noaa.gov",
+          "doc_id": "noaa-2024-annual",
+          "content_hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+          "title": "NOAA Annual Climate Report 2024",
+          "retrieved_at_step": 0
+        }
+      ],
+      "output_claim": "NOAA reports 1.2°C warming since pre-industrial; 2023 warmest year.",
+      "grade": {
+        "narrator_id": "model:gpt-4o",
+        "role": "extraction",
+        "domain": "climate",
+        "chain_integrity": "hasan",
+        "adalah": "acceptable",
+        "dabt": "acceptable",
+        "origin_strength": "unknown",
+        "model_version": "gpt-4o-2024-08-06",
+        "model_family": "gpt-4",
+        "upstream_source": "noaa.gov",
+        "known_error_rate": null,
+        "evidence_count": 45
+      },
+      "timestamp": "2026-01-15T10:00:05Z",
+      "metadata": { "temperature": 0.0, "tokens": 142 }
+    },
+    {
+      "node_id": "synthesis-session-1",
+      "parent_ids": ["extraction-session-1"],
+      "role": "synthesis",
+      "narrator_id": "model:claude-3.5-sonnet",
+      "model_version": "claude-3-5-sonnet-20241022",
+      "step": 2,
+      "input_documents": [
+        {
+          "source": "internal-report",
+          "doc_id": "report-2026-01-15",
+          "content_hash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+          "title": "Session 1 Synthesis",
+          "retrieved_at_step": 1
+        }
+      ],
+      "output_claim": "The average global temperature has risen by 1.2°C since pre-industrial levels, with 2023 being the warmest year on record.",
+      "grade": {
+        "narrator_id": "model:claude-3.5-sonnet",
+        "role": "synthesis",
+        "domain": "climate",
+        "chain_integrity": "hasan",
+        "adalah": "acceptable",
+        "dabt": "acceptable",
+        "origin_strength": "unknown",
+        "model_version": "claude-3-5-sonnet-20241022",
+        "model_family": "claude-3",
+        "upstream_source": "noaa.gov",
+        "known_error_rate": null,
+        "evidence_count": 38
+      },
+      "timestamp": "2026-01-15T10:00:10Z",
+      "metadata": { "temperature": 0.3, "tokens": 256 }
+    }
+  ],
+
+  "corroborating_chains": [
+    [
+      {
+        "node_id": "source-session-2",
+        "parent_ids": [],
+        "role": "source",
+        "narrator_id": "source:internal-report-2026-01-15",
+        "model_version": null,
+        "step": 0,
+        "input_documents": [],
+        "output_claim": null,
+        "grade": {
+          "narrator_id": "source:internal-report-2026-01-15",
+          "role": "source",
+          "domain": "climate",
+          "chain_integrity": "sahih",
+          "adalah": "high",
+          "dabt": "high",
+          "origin_strength": "unknown",
+          "model_version": null,
+          "model_family": null,
+          "upstream_source": "noaa.gov",
+          "known_error_rate": null,
+          "evidence_count": 0
+        },
+        "timestamp": "2026-01-15T10:30:00Z",
+        "metadata": {
+          "note": "This IS the report Session 1 wrote. Not an independent source."
+        }
+      },
+      {
+        "node_id": "extraction-session-2",
+        "parent_ids": ["source-session-2"],
+        "role": "extraction",
+        "narrator_id": "model:gpt-4o",
+        "model_version": "gpt-4o-2024-08-06",
+        "step": 1,
+        "input_documents": [
+          {
+            "source": "internal-report",
+            "doc_id": "report-2026-01-15",
+            "content_hash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+            "title": "Session 1 Synthesis",
+            "retrieved_at_step": 0
+          }
+        ],
+        "output_claim": "1.2°C warming; 2023 warmest year per NOAA via internal report.",
+        "grade": {
+          "narrator_id": "model:gpt-4o",
+          "role": "extraction",
+          "domain": "climate",
+          "chain_integrity": "hasan",
+          "adalah": "acceptable",
+          "dabt": "acceptable",
+          "origin_strength": "unknown",
+          "model_version": "gpt-4o-2024-08-06",
+          "model_family": "gpt-4",
+          "upstream_source": "noaa.gov",
+          "known_error_rate": null,
+          "evidence_count": 45
+        },
+        "timestamp": "2026-01-15T10:30:05Z",
+        "metadata": { "temperature": 0.0 }
+      },
+      {
+        "node_id": "synthesis-session-2",
+        "parent_ids": ["extraction-session-2"],
+        "role": "synthesis",
+        "narrator_id": "model:gemini-2.0-flash",
+        "model_version": "gemini-2.0-flash-001",
+        "step": 2,
+        "input_documents": [
+          {
+            "source": "internal-report",
+            "doc_id": "report-2026-01-15",
+            "content_hash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+            "title": "Session 1 Synthesis",
+            "retrieved_at_step": 1
+          }
+        ],
+        "output_claim": "The average global temperature has risen by 1.2°C since pre-industrial levels, with 2023 being the warmest year on record.",
+        "grade": {
+          "narrator_id": "model:gemini-2.0-flash",
+          "role": "synthesis",
+          "domain": "climate",
+          "chain_integrity": "hasan",
+          "adalah": "acceptable",
+          "dabt": "acceptable",
+          "origin_strength": "unknown",
+          "model_version": "gemini-2.0-flash-001",
+          "model_family": "gemini",
+          "upstream_source": "noaa.gov",
+          "known_error_rate": null,
+          "evidence_count": 22
+        },
+        "timestamp": "2026-01-15T10:30:10Z",
+        "metadata": { "temperature": 0.1 }
+      }
+    ],
+    [
+      {
+        "node_id": "source-session-3",
+        "parent_ids": [],
+        "role": "source",
+        "narrator_id": "source:internal-report-2026-01-15",
+        "model_version": null,
+        "step": 0,
+        "input_documents": [],
+        "output_claim": null,
+        "grade": {
+          "narrator_id": "source:internal-report-2026-01-15",
+          "role": "source",
+          "domain": "climate",
+          "chain_integrity": "sahih",
+          "adalah": "high",
+          "dabt": "high",
+          "origin_strength": "unknown",
+          "model_version": null,
+          "model_family": null,
+          "upstream_source": "noaa.gov",
+          "known_error_rate": null,
+          "evidence_count": 0
+        },
+        "timestamp": "2026-01-15T11:00:00Z",
+        "metadata": {
+          "note": "Same internal report. Still not independent."
+        }
+      },
+      {
+        "node_id": "extraction-session-3",
+        "parent_ids": ["source-session-3"],
+        "role": "extraction",
+        "narrator_id": "model:llama-3.1-70b",
+        "model_version": "llama-3.1-70b-instruct",
+        "step": 1,
+        "input_documents": [
+          {
+            "source": "internal-report",
+            "doc_id": "report-2026-01-15",
+            "content_hash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+            "title": "Session 1 Synthesis",
+            "retrieved_at_step": 0
+          }
+        ],
+        "output_claim": "Global temperatures +1.2°C from pre-industrial baseline; peak in 2023.",
+        "grade": {
+          "narrator_id": "model:llama-3.1-70b",
+          "role": "extraction",
+          "domain": "climate",
+          "chain_integrity": "hasan",
+          "adalah": "acceptable",
+          "dabt": "acceptable",
+          "origin_strength": "unknown",
+          "model_version": "llama-3.1-70b-instruct",
+          "model_family": "llama-3",
+          "upstream_source": "noaa.gov",
+          "known_error_rate": null,
+          "evidence_count": 18
+        },
+        "timestamp": "2026-01-15T11:00:05Z",
+        "metadata": { "temperature": 0.0 }
+      },
+      {
+        "node_id": "synthesis-session-3",
+        "parent_ids": ["extraction-session-3"],
+        "role": "synthesis",
+        "narrator_id": "model:claude-3.5-sonnet",
+        "model_version": "claude-3-5-sonnet-20241022",
+        "step": 2,
+        "input_documents": [
+          {
+            "source": "internal-report",
+            "doc_id": "report-2026-01-15",
+            "content_hash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+            "title": "Session 1 Synthesis",
+            "retrieved_at_step": 1
+          }
+        ],
+        "output_claim": "The average global temperature has risen by 1.2°C since pre-industrial levels, with 2023 being the warmest year on record.",
+        "grade": {
+          "narrator_id": "model:claude-3.5-sonnet",
+          "role": "synthesis",
+          "domain": "climate",
+          "chain_integrity": "hasan",
+          "adalah": "acceptable",
+          "dabt": "acceptable",
+          "origin_strength": "unknown",
+          "model_version": "claude-3-5-sonnet-20241022",
+          "model_family": "claude-3",
+          "upstream_source": "noaa.gov",
+          "known_error_rate": null,
+          "evidence_count": 38
+        },
+        "timestamp": "2026-01-15T11:00:10Z",
+        "metadata": { "temperature": 0.2 }
+      }
+    ]
+  ],
+
+  "chain_integrity": "hasan",
+  "origin_strength": "verified",
+
+  "independence": "shared_ancestry_detected",
+  "independence_detail": "Five transmitters across three chains, all tracing to one upstream source (noaa.gov). Two chains share model family (claude-3), two chains share model family (gpt-4). Document hash b2c3... is identical across all three chains — sessions 2 and 3 read the report session 1 wrote. This is NOT independent corroboration.",
+
+  "contradictions": [],
+
+  "binding_constraint": "All three 'corroborating' chains originate from the same NOAA report. The apparent consensus is an artifact of one source echoed through different models — a textbook madār (pivot narrator) pattern. The claim is only as strong as the single NOAA source.",
+  "binding_step": 0,
+
+  "created_at": "2026-01-15T12:00:00Z",
+  "capture_source": "manual"
+}

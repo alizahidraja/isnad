@@ -1,0 +1,131 @@
+{
+  "schema_version": "0.1",
+  "trace_id": "fixture-2-weak-extraction",
+  "claim_text": "Newton's second law states that the net force on an object equals its mass times its acceleration: F = ma.",
+  "claim_domain": "physics",
+
+  "chain": [
+    {
+      "node_id": "source-openstax-vol1",
+      "parent_ids": [],
+      "role": "source",
+      "narrator_id": "source:openstax-university-physics-vol1",
+      "model_version": null,
+      "step": 0,
+      "input_documents": [],
+      "output_claim": null,
+      "grade": {
+        "narrator_id": "source:openstax-university-physics-vol1",
+        "role": "source",
+        "domain": "physics",
+        "chain_integrity": "sahih",
+        "adalah": "high",
+        "dabt": "high",
+        "origin_strength": "verified",
+        "model_version": null,
+        "model_family": null,
+        "upstream_source": "openstax.org",
+        "known_error_rate": null,
+        "evidence_count": 88
+      },
+      "timestamp": "2026-02-03T12:00:00Z",
+      "metadata": {
+        "document": "OpenStax University Physics Volume 1",
+        "chapter": "Newton's Laws of Motion",
+        "url": "https://openstax.org/books/university-physics-volume-1"
+      }
+    },
+    {
+      "node_id": "extraction-weak",
+      "parent_ids": ["source-openstax-vol1"],
+      "role": "extraction",
+      "narrator_id": "model:gpt-3.5-turbo",
+      "model_version": "gpt-3.5-turbo-0125",
+      "step": 1,
+      "input_documents": [
+        {
+          "source": "openstax.org",
+          "doc_id": "university-physics-vol1-ch5",
+          "content_hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1",
+          "title": "OpenStax University Physics Vol.1, Ch.5: Newton's Laws of Motion",
+          "retrieved_at_step": 0
+        }
+      ],
+      "output_claim": "F = ma (Newton's second law).",
+      "grade": {
+        "narrator_id": "model:gpt-3.5-turbo",
+        "role": "extraction",
+        "domain": "physics",
+        "chain_integrity": "daif",
+        "adalah": "suspect",
+        "dabt": "low",
+        "origin_strength": "unknown",
+        "model_version": "gpt-3.5-turbo-0125",
+        "model_family": "gpt-3.5",
+        "upstream_source": "openstax.org",
+        "known_error_rate": 0.18,
+        "evidence_count": 34
+      },
+      "timestamp": "2026-02-03T12:00:05Z",
+      "metadata": {
+        "temperature": 0.0,
+        "tokens": 56,
+        "note": "gpt-3.5-turbo has elevated error rate in physics extraction (18% calibrated). Known to drop qualifiers and units."
+      }
+    },
+    {
+      "node_id": "synthesis-strong",
+      "parent_ids": ["extraction-weak"],
+      "role": "synthesis",
+      "narrator_id": "model:claude-3.5-sonnet",
+      "model_version": "claude-3-5-sonnet-20241022",
+      "step": 2,
+      "input_documents": [
+        {
+          "source": "openstax.org",
+          "doc_id": "university-physics-vol1-ch5",
+          "content_hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1",
+          "title": "OpenStax University Physics Vol.1, Ch.5",
+          "retrieved_at_step": 1
+        }
+      ],
+      "output_claim": "Newton's second law states that the net force on an object equals its mass times its acceleration: F = ma.",
+      "grade": {
+        "narrator_id": "model:claude-3.5-sonnet",
+        "role": "synthesis",
+        "domain": "physics",
+        "chain_integrity": "sahih",
+        "adalah": "high",
+        "dabt": "high",
+        "origin_strength": "unknown",
+        "model_version": "claude-3-5-sonnet-20241022",
+        "model_family": "claude-3",
+        "upstream_source": "openstax.org",
+        "known_error_rate": 0.03,
+        "evidence_count": 72
+      },
+      "timestamp": "2026-02-03T12:00:08Z",
+      "metadata": {
+        "temperature": 0.2,
+        "tokens": 201,
+        "note": "Strong synthesis model. But it cannot repair information lost by the extraction step — the extraction is destructive (DESTRUCTIVE transform type). The strict weakest-link minimum applies."
+      }
+    }
+  ],
+
+  "corroborating_chains": [],
+
+  "chain_integrity": "daif",
+  "origin_strength": "verified",
+
+  "independence": "unverified",
+  "independence_detail": "No corroborating chains available. Single-chain claim.",
+
+  "contradictions": [],
+
+  "binding_constraint": "The extraction step (gpt-3.5-turbo) is the weakest link. It has a calibrated 18% error rate in physics extraction, ʿadālah: suspect, ḍabṭ: low. The extraction is a destructive transformation — information lost here cannot be recovered by the stronger synthesis model downstream. The chain is capped at ḍaʿīf.",
+  "binding_step": 1,
+
+  "created_at": "2026-02-03T12:30:00Z",
+  "capture_source": "manual"
+}
