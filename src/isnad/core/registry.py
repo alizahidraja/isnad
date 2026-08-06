@@ -982,6 +982,12 @@ class RegistryDB:
                 graded_at=row.graded_at,
                 valid_until=row.valid_until,
             )
+            # Preserve stored clocks exactly.  register() starts a fresh clock
+            # for non-UNGRADED grades without one, which would clobber legacy
+            # rows that carry a grade but no graded_at/valid_until (NULL = never
+            # expires).  Restore the persisted values so loading is lossless.
+            narrator.graded_at = row.graded_at
+            narrator.valid_until = row.valid_until
             # Load evidence log
             for ev in row.evidence_log:
                 narrator.add_evidence(
