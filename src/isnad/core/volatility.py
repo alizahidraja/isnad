@@ -22,6 +22,10 @@ never needs to edit code to tune freshness:
                             {"model":0.5,"scraper":1.0,"source":2.0,"human":3.0}
     ISNAD_TTL_DOMAIN_DAYS    JSON: domain -> TTL days (overrides)
     ISNAD_STALE_RATIO        grace window as fraction of TTL (default 0.2)
+
+The defaults are reference values, not empirically calibrated (see paper
+§8) — they are priors over how fast sources drift, not measurements.
+Calibrate ISNAD_TTL_* against your observed drift before trusting them.
 """
 
 from __future__ import annotations
@@ -59,6 +63,9 @@ class FixedVolatilityPolicy:
     The default VolatilityPolicy.  TTL = base_days * type_factor, with an
     optional per-domain override replacing the result.  The stale window is
     the final `stale_ratio` of the TTL.
+
+    This is one instantiation of a parameter the framework leaves open
+    (see paper §4.2/§4.3).  Swap freely.
     """
 
     def __init__(
