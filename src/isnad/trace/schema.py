@@ -129,9 +129,7 @@ class Grade(BaseModel):
         default=None,
         description="Resolved model version, not alias. Required when role=synthesis.",
     )
-    model_family: str | None = Field(
-        default=None, description="For correlation (madār) detection"
-    )
+    model_family: str | None = Field(default=None, description="For correlation (madār) detection")
     upstream_source: str | None = Field(
         default=None, description="Upstream origin for shared-ancestry detection"
     )
@@ -172,16 +170,13 @@ class TransmitterNode(BaseModel):
     """
 
     node_id: str = Field(description="Stable node identifier, e.g. run_id from LangChain")
-    parent_ids: list[str] = Field(
-        default_factory=list, description="Parent node IDs — chain edges"
-    )
+    parent_ids: list[str] = Field(default_factory=list, description="Parent node IDs — chain edges")
     role: Role = Field(description="retrieval, extraction, synthesis, tool, human, source")
     narrator_id: str = Field(description="Stable narrator identifier")
     model_version: str | None = Field(
         default=None,
         description=(
-            "Resolved model version. NULL = unknown "
-            "(record this fact, don't fall back silently)."
+            "Resolved model version. NULL = unknown (record this fact, don't fall back silently)."
         ),
     )
     step: int = Field(ge=0, description="Zero-indexed position in chain")
@@ -243,9 +238,7 @@ class TraceV01(BaseModel):
     )
     trace_id: str = Field(description="Unique trace identifier")
     claim_text: str = Field(description="The final claim text being evaluated")
-    claim_domain: str = Field(
-        default="general", description="Domain tag for the claim"
-    )
+    claim_domain: str = Field(default="general", description="Domain tag for the claim")
 
     # The transmission chain — ordered list of transmitter nodes
     chain: list[TransmitterNode] = Field(
@@ -283,9 +276,7 @@ class TraceV01(BaseModel):
     )
 
     # Binding constraint — what limits this claim's trust?
-    binding_constraint: str = Field(
-        description="Which link is the binding constraint, and why?"
-    )
+    binding_constraint: str = Field(description="Which link is the binding constraint, and why?")
     binding_step: int | None = Field(
         default=None, description="Zero-indexed step of the binding constraint link"
     )

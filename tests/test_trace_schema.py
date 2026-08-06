@@ -1,4 +1,5 @@
 """Tests for isnad_trace schema, fixtures, shared-ancestry detection, and tree reconstruction."""
+
 from __future__ import annotations
 
 import json
@@ -20,6 +21,7 @@ PROJECT_DIR = Path(__file__).resolve().parent.parent
 
 
 # ── Schema round-trip ────────────────────────────────────────────
+
 
 def _load_fixture(name: str) -> TraceV01:
     path = FIXTURES_DIR / f"{name}.json"
@@ -78,6 +80,7 @@ def test_schema_round_trip_all_fixtures():
 
 # ── Two-axis scoring ─────────────────────────────────────────────
 
+
 def test_two_axes_never_collapsed():
     """Chain integrity and origin strength are separate axes."""
     # Fixture 2: daif chain but verified origin
@@ -100,6 +103,7 @@ def test_origin_strength_preserved_when_chain_degrades():
 
 
 # ── Tree reconstruction from parent_ids ──────────────────────────
+
 
 def test_tree_reconstruction_from_parent_ids():
     """Given parent_ids, we can reconstruct the tree structure."""
@@ -140,6 +144,7 @@ def test_tree_reconstruction_all_fixtures():
 
 # ── Shared-ancestry detection ────────────────────────────────────
 
+
 def _collect_upstream_sources(trace: TraceV01) -> dict[str, set[str]]:
     """Collect upstream sources for each chain (including the base chain)."""
     result: dict[str, set[str]] = {}
@@ -171,8 +176,7 @@ def test_shared_ancestry_fixture_3_all_share_noaa():
     # All chains should include noaa.gov
     for chain_name, chain_sources in sources.items():
         assert "noaa.gov" in chain_sources, (
-            f"Chain '{chain_name}' missing noaa.gov upstream source. "
-            f"Sources found: {chain_sources}"
+            f"Chain '{chain_name}' missing noaa.gov upstream source. Sources found: {chain_sources}"
         )
 
 
@@ -195,8 +199,7 @@ def test_shared_ancestry_fixture_1_disjoint_sources():
     overlap = base_sources & corr_sources
     # Model families like "claude-3" or "gpt-4" may appear but actual sources shouldn't
     no_source_overlap = not any(
-        s for s in overlap
-        if "openstax" in s or "hyperphysics" in s or "noaa" in s
+        s for s in overlap if "openstax" in s or "hyperphysics" in s or "noaa" in s
     )
     # At minimum, the document-level sources are different
     assert "openstax.org" not in corr_sources or "hyperphysics.phy-astr.gsu.edu" not in base_sources
@@ -245,6 +248,7 @@ def test_shared_ancestry_independence_enum_never_boolean():
 
 # ── Contradiction flag ───────────────────────────────────────────
 
+
 def test_contradiction_representation():
     """Contradiction is a flag, not resolved by score."""
     from isnad.trace.schema import ContradictionFlag
@@ -261,6 +265,7 @@ def test_contradiction_representation():
 
 # ── DocumentRef ──────────────────────────────────────────────────
 
+
 def test_document_ref_content_not_full_text():
     """DocumentRef records identity, not full content. Content is redacted by default."""
     doc = DocumentRef(
@@ -276,6 +281,7 @@ def test_document_ref_content_not_full_text():
 
 # ── Rendering smoke test ─────────────────────────────────────────
 
+
 def test_viewer_html_exists():
     """The viewer HTML file exists and is parseable."""
     viewer_path = PROJECT_DIR / "viewer" / "index.html"
@@ -289,7 +295,7 @@ def test_viewer_html_exists():
     assert "ISNAD Chain Viewer" in html
     # Must reference fixture 3 (false corroboration) since that's the demo
     assert "SHARED ANCESTRY DETECTED" in html
-    assert ("mad\u0101r" in html or "pivot narrator" in html)  # diagnostic term present
+    assert "mad\u0101r" in html or "pivot narrator" in html  # diagnostic term present
 
 
 def test_viewer_html_renders_all_three_states():

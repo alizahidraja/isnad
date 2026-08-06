@@ -247,47 +247,61 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
     # ── Callback hooks ──────────────────────────────────────────
 
     def on_chain_start(
-        self, serialized: dict[str, Any], inputs: Any, *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        serialized: dict[str, Any],
+        inputs: Any,
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
-        self._safe(
-            lambda: self._on_chain_start(serialized, inputs, run_id, parent_run_id, kwargs)
-        )
+        self._safe(lambda: self._on_chain_start(serialized, inputs, run_id, parent_run_id, kwargs))
 
     def on_retriever_end(
-        self, documents: list[Any], *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        documents: list[Any],
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
-        self._safe(
-            lambda: self._on_retriever_end(documents, run_id, parent_run_id, kwargs)
-        )
+        self._safe(lambda: self._on_retriever_end(documents, run_id, parent_run_id, kwargs))
 
     def on_tool_start(
-        self, serialized: dict[str, Any], input_str: str, *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        serialized: dict[str, Any],
+        input_str: str,
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
         self._safe(
-            lambda: self._on_tool_start(
-                serialized, input_str, run_id, parent_run_id, kwargs
-            )
+            lambda: self._on_tool_start(serialized, input_str, run_id, parent_run_id, kwargs)
         )
 
     def on_llm_start(
-        self, serialized: dict[str, Any], prompts: list[Any], *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        serialized: dict[str, Any],
+        prompts: list[Any],
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
-        self._safe(
-            lambda: self._on_llm_start(serialized, prompts, run_id, parent_run_id, kwargs)
-        )
+        self._safe(lambda: self._on_llm_start(serialized, prompts, run_id, parent_run_id, kwargs))
 
     def on_chat_model_start(
-        self, serialized: dict[str, Any], messages: list[list[Any]], *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        serialized: dict[str, Any],
+        messages: list[list[Any]],
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
         self._safe(
-            lambda: self._on_chat_model_start(
-                serialized, messages, run_id, parent_run_id, kwargs
-            )
+            lambda: self._on_chat_model_start(serialized, messages, run_id, parent_run_id, kwargs)
         )
 
     def on_llm_end(self, response: Any, *, run_id: str, **kwargs: Any) -> None:
@@ -313,20 +327,26 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
 
     # ── Internal handlers ───────────────────────────────────────
 
-    def _on_chain_start(self, serialized: dict, inputs: Any, run_id: str,
-                        parent_run_id: str | None, kwargs: dict) -> None:
+    def _on_chain_start(
+        self, serialized: dict, inputs: Any, run_id: str, parent_run_id: str | None, kwargs: dict
+    ) -> None:
         name = serialized.get("name", serialized.get("id", "chain"))
         self._add_node(
-            run_id=run_id, parent_run_id=parent_run_id,
-            narrator_id=str(name), role=Role.SOURCE,
+            run_id=run_id,
+            parent_run_id=parent_run_id,
+            narrator_id=str(name),
+            role=Role.SOURCE,
         )
 
-    def _on_retriever_end(self, documents: list, run_id: str,
-                          parent_run_id: str | None, kwargs: dict) -> None:
+    def _on_retriever_end(
+        self, documents: list, run_id: str, parent_run_id: str | None, kwargs: dict
+    ) -> None:
         # Build the node
         self._add_node(
-            run_id=run_id, parent_run_id=parent_run_id,
-            narrator_id="retriever", role=Role.RETRIEVAL,
+            run_id=run_id,
+            parent_run_id=parent_run_id,
+            narrator_id="retriever",
+            role=Role.RETRIEVAL,
         )
         node = self._nodes.get(run_id)
         if node and documents:
@@ -352,21 +372,27 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
                         )
                     )
 
-    def _on_tool_start(self, serialized: dict, input_str: str, run_id: str,
-                       parent_run_id: str | None, kwargs: dict) -> None:
+    def _on_tool_start(
+        self, serialized: dict, input_str: str, run_id: str, parent_run_id: str | None, kwargs: dict
+    ) -> None:
         name = serialized.get("name", "tool")
         self._add_node(
-            run_id=run_id, parent_run_id=parent_run_id,
-            narrator_id=f"tool:{name}", role=Role.TOOL,
+            run_id=run_id,
+            parent_run_id=parent_run_id,
+            narrator_id=f"tool:{name}",
+            role=Role.TOOL,
         )
 
-    def _on_llm_start(self, serialized: dict, prompts: list, run_id: str,
-                      parent_run_id: str | None, kwargs: dict) -> None:
+    def _on_llm_start(
+        self, serialized: dict, prompts: list, run_id: str, parent_run_id: str | None, kwargs: dict
+    ) -> None:
         model = serialized.get("name", serialized.get("id", "llm"))
         model_version = _model_version_from_metadata(kwargs)
         self._add_node(
-            run_id=run_id, parent_run_id=parent_run_id,
-            narrator_id=f"model:{model}", role=Role.SYNTHESIS,
+            run_id=run_id,
+            parent_run_id=parent_run_id,
+            narrator_id=f"model:{model}",
+            role=Role.SYNTHESIS,
             model_version=model_version,
         )
         # Record prompts as input documents (hashed by default)
@@ -385,14 +411,17 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
                         )
                     )
 
-    def _on_chat_model_start(self, serialized: dict, messages: list, run_id: str,
-                             parent_run_id: str | None, kwargs: dict) -> None:
+    def _on_chat_model_start(
+        self, serialized: dict, messages: list, run_id: str, parent_run_id: str | None, kwargs: dict
+    ) -> None:
         # Same as on_llm_start — chat models are a subclass
         model = serialized.get("name", serialized.get("id", "llm"))
         model_version = _model_version_from_metadata(kwargs)
         self._add_node(
-            run_id=run_id, parent_run_id=parent_run_id,
-            narrator_id=f"model:{model}", role=Role.SYNTHESIS,
+            run_id=run_id,
+            parent_run_id=parent_run_id,
+            narrator_id=f"model:{model}",
+            role=Role.SYNTHESIS,
             model_version=model_version,
         )
 
@@ -453,9 +482,7 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
                 chain_integrity=_narrator_grade_to_chain_integrity(narrator.grade.value),
                 adalah=narrator.adalah_grade.value,
                 dabt=narrator.dabt_grade.value,
-                origin_strength=_adalah_to_origin_strength(
-                    narrator.adalah_grade.value, None
-                ),
+                origin_strength=_adalah_to_origin_strength(narrator.adalah_grade.value, None),
                 model_version=model_version or narrator.model_version,
                 model_family=narrator.model_family,
                 upstream_source=narrator.upstream_source,
@@ -495,7 +522,8 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
 
         # Find roots (nodes with no parent in our edges)
         roots = [
-            nid for nid in self._nodes
+            nid
+            for nid in self._nodes
             if nid not in self._edges or self._edges[nid] not in self._nodes
         ]
 
@@ -577,9 +605,12 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
 
         # Best origin strength across all nodes
         origin_order = [
-            OriginStrength.VERIFIED, OriginStrength.ATTESTED,
-            OriginStrength.REPUTABLE, OriginStrength.UNKNOWN,
-            OriginStrength.SUSPECT, OriginStrength.COMPROMISED,
+            OriginStrength.VERIFIED,
+            OriginStrength.ATTESTED,
+            OriginStrength.REPUTABLE,
+            OriginStrength.UNKNOWN,
+            OriginStrength.SUSPECT,
+            OriginStrength.COMPROMISED,
         ]
         origin_strength = OriginStrength.UNKNOWN
         for node in chain:
@@ -592,8 +623,10 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
 
         # Binding constraint: find the weakest node
         weakest_order = [
-            ChainIntegrity.MAWDU, ChainIntegrity.DAIF,
-            ChainIntegrity.HASAN, ChainIntegrity.SAHIH,
+            ChainIntegrity.MAWDU,
+            ChainIntegrity.DAIF,
+            ChainIntegrity.HASAN,
+            ChainIntegrity.SAHIH,
         ]
         binding_step = 0
         binding_node = chain[0] if chain else None
@@ -610,7 +643,8 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
         binding_constraint = (
             f"Bounded by {binding_node.role.value} step "
             f"({binding_node.narrator_id}, grade: {binding_node.grade.chain_integrity.value})"
-            if binding_node else "No binding constraint identified"
+            if binding_node
+            else "No binding constraint identified"
         )
 
         claim_text = self._final_claim or "(no claim captured)"
@@ -685,39 +719,66 @@ class AsyncIsnadCallbackHandler(AsyncCallbackHandler):  # type: ignore[misc,vali
         )
 
     async def on_chain_start(
-        self, serialized: dict[str, Any], inputs: Any, *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        serialized: dict[str, Any],
+        inputs: Any,
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
-        self._sync.on_chain_start(serialized, inputs, run_id=run_id,
-                                   parent_run_id=parent_run_id, **kwargs)
+        self._sync.on_chain_start(
+            serialized, inputs, run_id=run_id, parent_run_id=parent_run_id, **kwargs
+        )
 
     async def on_retriever_end(
-        self, documents: list[Any], *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        documents: list[Any],
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
-        self._sync.on_retriever_end(documents, run_id=run_id,
-                                     parent_run_id=parent_run_id, **kwargs)
+        self._sync.on_retriever_end(documents, run_id=run_id, parent_run_id=parent_run_id, **kwargs)
 
     async def on_tool_start(
-        self, serialized: dict[str, Any], input_str: str, *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        serialized: dict[str, Any],
+        input_str: str,
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
-        self._sync.on_tool_start(serialized, input_str, run_id=run_id,
-                                  parent_run_id=parent_run_id, **kwargs)
+        self._sync.on_tool_start(
+            serialized, input_str, run_id=run_id, parent_run_id=parent_run_id, **kwargs
+        )
 
     async def on_llm_start(
-        self, serialized: dict[str, Any], prompts: list[Any], *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        serialized: dict[str, Any],
+        prompts: list[Any],
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
-        self._sync.on_llm_start(serialized, prompts, run_id=run_id,
-                                 parent_run_id=parent_run_id, **kwargs)
+        self._sync.on_llm_start(
+            serialized, prompts, run_id=run_id, parent_run_id=parent_run_id, **kwargs
+        )
 
     async def on_chat_model_start(
-        self, serialized: dict[str, Any], messages: list[list[Any]], *, run_id: str,
-        parent_run_id: str | None = None, **kwargs: Any,
+        self,
+        serialized: dict[str, Any],
+        messages: list[list[Any]],
+        *,
+        run_id: str,
+        parent_run_id: str | None = None,
+        **kwargs: Any,
     ) -> None:
-        self._sync.on_chat_model_start(serialized, messages, run_id=run_id,
-                                        parent_run_id=parent_run_id, **kwargs)
+        self._sync.on_chat_model_start(
+            serialized, messages, run_id=run_id, parent_run_id=parent_run_id, **kwargs
+        )
 
     async def on_llm_end(self, response: Any, *, run_id: str, **kwargs: Any) -> None:
         self._sync.on_llm_end(response, run_id=run_id, **kwargs)

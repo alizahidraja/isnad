@@ -1,5 +1,6 @@
 """Tests for IsnadCallbackHandler — tree reconstruction, input provenance,
 shared ancestry detection, and safety (callback exceptions never break pipeline)."""
+
 from __future__ import annotations
 
 import uuid
@@ -25,6 +26,7 @@ from isnad.types import NarratorGrade
 
 class FakeDoc:
     """Minimal document stand-in for tests."""
+
     def __init__(self, content: str, metadata: dict | None = None):
         self.page_content = content
         self.metadata = metadata or {}
@@ -32,6 +34,7 @@ class FakeDoc:
 
 class FakeLLMResponse:
     """Minimal LLM response for tests."""
+
     def __init__(self, text: str):
         self.content = text
 
@@ -39,21 +42,28 @@ class FakeLLMResponse:
 def make_registry() -> Registry:
     """Create a seeded registry for tests."""
     reg = Registry()
-    reg.register("source:arxiv", "physics",
-                 narrator_type="source",
-                 grade=NarratorGrade.RELIABLE)
-    reg.register("model:gpt-4o", "physics",
-                 narrator_type="model",
-                 grade=NarratorGrade.ACCEPTABLE,
-                 model_family="gpt-4")
-    reg.register("model:gpt-3.5", "physics",
-                 narrator_type="model",
-                 grade=NarratorGrade.WEAK,
-                 model_family="gpt-3.5")
-    reg.register("model:claude-3.5", "physics",
-                 narrator_type="model",
-                 grade=NarratorGrade.ACCEPTABLE,
-                 model_family="claude-3")
+    reg.register("source:arxiv", "physics", narrator_type="source", grade=NarratorGrade.RELIABLE)
+    reg.register(
+        "model:gpt-4o",
+        "physics",
+        narrator_type="model",
+        grade=NarratorGrade.ACCEPTABLE,
+        model_family="gpt-4",
+    )
+    reg.register(
+        "model:gpt-3.5",
+        "physics",
+        narrator_type="model",
+        grade=NarratorGrade.WEAK,
+        model_family="gpt-3.5",
+    )
+    reg.register(
+        "model:claude-3.5",
+        "physics",
+        narrator_type="model",
+        grade=NarratorGrade.ACCEPTABLE,
+        model_family="claude-3",
+    )
     return reg
 
 
@@ -70,7 +80,8 @@ class TestTreeReconstruction:
         rid = new_id()
         handler.on_chain_start(
             serialized={"name": "rag", "id": "rag"},
-            inputs={}, run_id=rid,
+            inputs={},
+            run_id=rid,
         )
         handler.on_chain_end(outputs={"output": "F=ma"}, run_id=rid)
         trace = handler.to_trace()
@@ -84,12 +95,15 @@ class TestTreeReconstruction:
 
         handler.on_chain_start(serialized={"name": "rag"}, inputs={}, run_id=r1)
         handler.on_retriever_end(
-            documents=[FakeDoc("E=mc²")], run_id=r2, parent_run_id=r1,
+            documents=[FakeDoc("E=mc²")],
+            run_id=r2,
+            parent_run_id=r1,
         )
         handler.on_llm_start(
             serialized={"name": "gpt-4o", "id": "gpt-4o"},
             prompts=["what is E=mc²?"],
-            run_id=r3, parent_run_id=r1,
+            run_id=r3,
+            parent_run_id=r1,
             metadata={"ls_model_name": "gpt-4o-2024-08-06"},
         )
         handler.on_llm_end(response=FakeLLMResponse("E=mc²"), run_id=r3)
@@ -132,7 +146,8 @@ class TestInputProvenance:
                 FakeDoc("F=ma", {"source": "openstax.org", "id": "ch5"}),
                 FakeDoc("p=h/λ", {"source": "hyperphysics", "id": "photon"}),
             ],
-            run_id=r2, parent_run_id=r1,
+            run_id=r2,
+            parent_run_id=r1,
         )
         handler.on_chain_end(outputs={"output": "F=ma"}, run_id=r1)
 
@@ -157,7 +172,8 @@ class TestInputProvenance:
         handler.on_chain_start(serialized={"name": "rag"}, inputs={}, run_id=r1)
         handler.on_retriever_end(
             documents=[FakeDoc("F=ma", {"source": "openstax.org", "id": "ch5"})],
-            run_id=r2, parent_run_id=r1,
+            run_id=r2,
+            parent_run_id=r1,
         )
         handler.on_chain_end(outputs={"output": "F=ma"}, run_id=r1)
 
@@ -174,7 +190,8 @@ class TestInputProvenance:
         handler.on_chain_start(serialized={"name": "rag"}, inputs={}, run_id=r1)
         handler.on_retriever_end(
             documents=[FakeDoc("sensitive content here", {"source": "db"})],
-            run_id=r2, parent_run_id=r1,
+            run_id=r2,
+            parent_run_id=r1,
         )
         handler.on_chain_end(outputs={"output": "ok"}, run_id=r1)
 
@@ -193,7 +210,8 @@ class TestInputProvenance:
         handler.on_llm_start(
             serialized={"name": "gpt-4o", "id": "gpt-4o"},
             prompts=["hello"],
-            run_id=r2, parent_run_id=r1,
+            run_id=r2,
+            parent_run_id=r1,
             metadata={"ls_model_name": "gpt-4o-2024-08-06"},
         )
         handler.on_llm_end(response=FakeLLMResponse("hi"), run_id=r2)
@@ -218,7 +236,8 @@ class TestTwoAxisScoring:
         handler.on_llm_start(
             serialized={"name": "gpt-3.5", "id": "gpt-3.5"},
             prompts=["hello"],
-            run_id=r2, parent_run_id=r1,
+            run_id=r2,
+            parent_run_id=r1,
         )
         handler.on_llm_end(response=FakeLLMResponse("hi"), run_id=r2)
         handler.on_chain_end(outputs={"output": "hi"}, run_id=r1)
@@ -235,10 +254,10 @@ class TestTwoAxisScoring:
     def test_verified_and_weak_are_distinguishable(self):
         """A daif chain must be distinguishable from a sahih/unverified one."""
         reg = make_registry()
-        reg.register("source:noaa", "climate",
-                     narrator_type="source", grade=NarratorGrade.RELIABLE)
-        reg.register("model:bad-extractor", "climate",
-                     narrator_type="model", grade=NarratorGrade.WEAK)
+        reg.register("source:noaa", "climate", narrator_type="source", grade=NarratorGrade.RELIABLE)
+        reg.register(
+            "model:bad-extractor", "climate", narrator_type="model", grade=NarratorGrade.WEAK
+        )
 
         handler = IsnadCallbackHandler(registry=reg, domain="climate")
         r1, r2 = new_id("root"), new_id("extract")
@@ -246,7 +265,9 @@ class TestTwoAxisScoring:
         handler.on_chain_start(serialized={"name": "rag"}, inputs={}, run_id=r1)
         handler.on_llm_start(
             serialized={"name": "bad-extractor", "id": "bad"},
-            prompts=["..."], run_id=r2, parent_run_id=r1,
+            prompts=["..."],
+            run_id=r2,
+            parent_run_id=r1,
         )
         handler.on_chain_end(outputs={"output": "claim"}, run_id=r1)
 
@@ -269,11 +290,15 @@ class TestSharedAncestryDetection:
     def test_single_chain_is_unverified(self):
         from isnad.trace.schema import TransmitterNode, Grade, Role
 
-        chain = [TransmitterNode(
-            node_id="n1", role=Role.SOURCE,
-            narrator_id="src", step=0,
-            grade=Grade(narrator_id="src", role=Role.SOURCE, domain="test"),
-        )]
+        chain = [
+            TransmitterNode(
+                node_id="n1",
+                role=Role.SOURCE,
+                narrator_id="src",
+                step=0,
+                grade=Grade(narrator_id="src", role=Role.SOURCE, domain="test"),
+            )
+        ]
         verdict, _ = _detect_shared_ancestry([chain])
         assert verdict == CorroborationVerdict.UNVERIFIED
 
@@ -281,13 +306,17 @@ class TestSharedAncestryDetection:
         from isnad.trace.schema import TransmitterNode, Grade, Role
 
         node1 = TransmitterNode(
-            node_id="n1", role=Role.SOURCE,
-            narrator_id="shared-source", step=0,
+            node_id="n1",
+            role=Role.SOURCE,
+            narrator_id="shared-source",
+            step=0,
             grade=Grade(narrator_id="shared-source", role=Role.SOURCE, domain="test"),
         )
         node2 = TransmitterNode(
-            node_id="n2", role=Role.SOURCE,
-            narrator_id="shared-source", step=0,
+            node_id="n2",
+            role=Role.SOURCE,
+            narrator_id="shared-source",
+            step=0,
             grade=Grade(narrator_id="shared-source", role=Role.SOURCE, domain="test"),
         )
         verdict, detail = _detect_shared_ancestry([[node1], [node2]])
@@ -298,16 +327,22 @@ class TestSharedAncestryDetection:
         from isnad.trace.schema import TransmitterNode, Grade, Role
 
         node1 = TransmitterNode(
-            node_id="n1", role=Role.SOURCE,
-            narrator_id="src-a", step=0,
-            grade=Grade(narrator_id="src-a", role=Role.SOURCE, domain="test",
-                        upstream_source="noaa.gov"),
+            node_id="n1",
+            role=Role.SOURCE,
+            narrator_id="src-a",
+            step=0,
+            grade=Grade(
+                narrator_id="src-a", role=Role.SOURCE, domain="test", upstream_source="noaa.gov"
+            ),
         )
         node2 = TransmitterNode(
-            node_id="n2", role=Role.SOURCE,
-            narrator_id="src-b", step=0,
-            grade=Grade(narrator_id="src-b", role=Role.SOURCE, domain="test",
-                        upstream_source="noaa.gov"),
+            node_id="n2",
+            role=Role.SOURCE,
+            narrator_id="src-b",
+            step=0,
+            grade=Grade(
+                narrator_id="src-b", role=Role.SOURCE, domain="test", upstream_source="noaa.gov"
+            ),
         )
         verdict, detail = _detect_shared_ancestry([[node1], [node2]])
         assert verdict == CorroborationVerdict.SHARED_ANCESTRY_DETECTED
@@ -317,19 +352,25 @@ class TestSharedAncestryDetection:
         from isnad.trace.schema import TransmitterNode, Grade, Role, DocumentRef
 
         node1 = TransmitterNode(
-            node_id="n1", role=Role.SOURCE,
-            narrator_id="src-a", step=0,
-            grade=Grade(narrator_id="src-a", role=Role.SOURCE, domain="test",
-                        upstream_source="openstax.org"),
+            node_id="n1",
+            role=Role.SOURCE,
+            narrator_id="src-a",
+            step=0,
+            grade=Grade(
+                narrator_id="src-a", role=Role.SOURCE, domain="test", upstream_source="openstax.org"
+            ),
             input_documents=[
                 DocumentRef(source="openstax.org", doc_id="ch1", content_hash="abc123"),
             ],
         )
         node2 = TransmitterNode(
-            node_id="n2", role=Role.SOURCE,
-            narrator_id="src-b", step=0,
-            grade=Grade(narrator_id="src-b", role=Role.SOURCE, domain="test",
-                        upstream_source="hyperphysics"),
+            node_id="n2",
+            role=Role.SOURCE,
+            narrator_id="src-b",
+            step=0,
+            grade=Grade(
+                narrator_id="src-b", role=Role.SOURCE, domain="test", upstream_source="hyperphysics"
+            ),
             input_documents=[
                 DocumentRef(source="hyperphysics", doc_id="photon", content_hash="def456"),
             ],
@@ -348,10 +389,14 @@ class TestCallbackSafety:
 
         # This should not raise, even with garbage inputs
         handler.on_chain_start(
-            serialized=None, inputs=None, run_id=new_id(),  # type: ignore
+            serialized=None,
+            inputs=None,
+            run_id=new_id(),  # type: ignore
         )
         handler.on_llm_start(
-            serialized=None, prompts=None, run_id=new_id(),  # type: ignore
+            serialized=None,
+            prompts=None,
+            run_id=new_id(),  # type: ignore
         )
         handler.on_chain_end(outputs=None, run_id=new_id())  # type: ignore
 
@@ -383,7 +428,8 @@ class TestModelVersionTracking:
         handler.on_llm_start(
             serialized={"name": "unknown-model", "id": "unknown"},
             prompts=["test"],
-            run_id=r2, parent_run_id=r1,
+            run_id=r2,
+            parent_run_id=r1,
             # No metadata or invocation_params
         )
         handler.on_chain_end(outputs={"output": "ok"}, run_id=r1)
@@ -425,7 +471,9 @@ class TestDemoOutput:
 
         result = subprocess.run(
             [sys.executable, str(demo_path)],
-            capture_output=True, text=True, timeout=10,
+            capture_output=True,
+            text=True,
+            timeout=10,
         )
         assert result.returncode == 0, f"Demo failed: {result.stderr}"
 
