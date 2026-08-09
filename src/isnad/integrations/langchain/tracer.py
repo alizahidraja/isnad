@@ -17,7 +17,7 @@ from __future__ import annotations
 import uuid
 from typing import Any
 
-from isnad.core.chain import Chain, ChainLinkSpec, grades_for_chain
+from isnad.core.chain import Chain, ChainLinkSpec, adalah_grades_for_chain, grades_for_chain
 from isnad.core.decision import decide, describe_action
 from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
@@ -105,12 +105,14 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
         for text in claim_texts:
             chain = Chain(list(self._links))
             link_grades = grades_for_chain(self.registry, chain)
+            link_adalah_grades = adalah_grades_for_chain(self.registry, chain)
             link_transforms = [link.transform_type for link in chain.links]
 
             cg = grade_chain(
                 link_grades,
                 link_transforms,
                 is_complete=chain.is_complete,
+                link_adalah_grades=link_adalah_grades,
             )
 
             cv = self.critic.evaluate(text, text, [], self.domain)

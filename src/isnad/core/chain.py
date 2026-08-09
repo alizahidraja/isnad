@@ -17,7 +17,7 @@ from sqlalchemy.orm import Session
 
 from isnad.core.identity import resolve_narrator_id
 from isnad.models import ChainLink, RijalClaim
-from isnad.types import ChainStatus, NarratorGrade, TransformType
+from isnad.types import AdalahGrade, ChainStatus, NarratorGrade, TransformType
 
 if TYPE_CHECKING:
     from isnad.core.registry import Registry
@@ -141,6 +141,16 @@ def grades_for_chain(registry: Registry, chain: Chain) -> list[NarratorGrade]:
         registry.get_grade_for_link(link.narrator_id, link.domain, link.version)
         for link in chain.links
     ]
+
+
+def adalah_grades_for_chain(registry: Registry, chain: Chain) -> list[AdalahGrade]:
+    """Look up per-link ʿadālah (integrity) grades, mirroring grades_for_chain().
+
+    Kept as a separate axis (issue #11) rather than folded into NarratorGrade —
+    a narrator's precision/accuracy track record and its integrity status are
+    distinct properties (paper §4.2) and should be checked independently.
+    """
+    return [registry.get_adalah_grade(link.narrator_id, link.domain) for link in chain.links]
 
 
 # ===========================================================================

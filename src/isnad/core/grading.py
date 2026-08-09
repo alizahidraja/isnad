@@ -19,6 +19,7 @@ This is one instantiation of a parameter the framework leaves open
 from __future__ import annotations
 
 from isnad.types import (
+    AdalahGrade,
     ChainGrade,
     GradingStrategy,
     NarratorGrade,
@@ -70,6 +71,7 @@ class RefinedWeakestLink:
         is_complete: bool,
         *,
         corroboration_support: bool = False,
+        link_adalah_grades: list[AdalahGrade] | None = None,
     ) -> ChainGrade:
         """Compute the chain grade by walking the chain link-by-link.
 
@@ -79,6 +81,11 @@ class RefinedWeakestLink:
             is_complete: Whether the chain has no gaps (ittiṣāl holds).
             corroboration_support: Whether independent corroboration supports
                 the claim, allowing generative links to raise the floor.
+            link_adalah_grades: Optional per-link ʿadālah (integrity) grades,
+                aligned with link_narrator_grades. Kept as a separate axis
+                (issue #11): a narrator with a good precision/accuracy grade
+                but COMPROMISED integrity still poisons the chain — integrity
+                failure is not something a strong NarratorGrade can offset.
 
         Returns:
             The computed ChainGrade.
@@ -92,6 +99,13 @@ class RefinedWeakestLink:
 
         # --- Any REJECTED narrator → MAWDU immediately ---
         if NarratorGrade.REJECTED in link_narrator_grades:
+            return ChainGrade.MAWDU
+
+        # --- Any COMPROMISED ʿadālah → MAWDU immediately ---
+        # A separate axis from NarratorGrade on purpose (issue #11): integrity
+        # failure poisons the chain even when the collapsed NarratorGrade for
+        # that narrator still looks acceptable.
+        if link_adalah_grades and AdalahGrade.COMPROMISED in link_adalah_grades:
             return ChainGrade.MAWDU
 
         # --- Walk the chain, maintaining a running floor ---
@@ -139,6 +153,7 @@ def grade_chain(
     *,
     strategy: GradingStrategy | None = None,
     corroboration_support: bool = False,
+    link_adalah_grades: list[AdalahGrade] | None = None,
 ) -> ChainGrade:
     """Grade a claim chain.
 
@@ -148,6 +163,8 @@ def grade_chain(
         is_complete: Chain completeness (ittiṣāl).
         strategy: Optional custom GradingStrategy.
         corroboration_support: Whether corroboration supports the claim.
+        link_adalah_grades: Optional per-link ʿadālah (integrity) grades —
+            see RefinedWeakestLink.compute_chain_grade for details.
 
     Returns:
         ChainGrade for the claim.
@@ -158,4 +175,5 @@ def grade_chain(
         link_transform_types=link_transform_types,
         is_complete=is_complete,
         corroboration_support=corroboration_support,
+        link_adalah_grades=link_adalah_grades,
     )

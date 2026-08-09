@@ -241,6 +241,7 @@ class GradingStrategy(Protocol):
         is_complete: bool,
         *,
         corroboration_support: bool = False,
+        link_adalah_grades: list[AdalahGrade] | None = None,
     ) -> ChainGrade: ...
 
 

@@ -6,7 +6,9 @@ import pytest
 from fastapi.testclient import TestClient
 
 from isnad.api.app import app
+from isnad.api.dependencies import get_critic
 from isnad.api.endpoints.claims import _app_state
+from isnad.critics.embedding import EmbeddingCritic
 from isnad.storage.sqlalchemy import drop_db, init_db, reset_engine
 
 TEST_DB_URL = "sqlite:///data/isnad_test.db"
@@ -277,3 +279,54 @@ class TestMetrics:
         data = r.json()
         assert "corroboration_fires_total" in data
         assert "bayesian_grade_changes_total" in data
+
+
+class TestReviewQueue:
+    """Issue #11: contradictions must reach a human, linked to both sides —
+    not just gate the new claim in isolation. Forces EmbeddingCritic so the
+    contradiction fires deterministically regardless of whether the optional
+    NLI extra is installed in this environment.
+    """
+
+    @pytest.fixture(autouse=True)
+    def force_embedding_critic(self):
+        app.dependency_overrides[get_critic] = lambda: EmbeddingCritic()
+        yield
+        app.dependency_overrides.pop(get_critic, None)
+
+    def _submit(self, claim_text: str) -> dict:
+        r = client.post(
+            "/v1/claims",
+            json={"claim_text": claim_text, "chain": [{"narrator_id": "src"}]},
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        return r.json()
+
+    def test_contradiction_creates_review_queue_entry_with_conflicting_claim_ids(self):
+        claim1 = self._submit("the object moves at a speed of 10 meters per second")
+        claim2 = self._submit("the object moves at a speed of 100 meters per second")
+
+        assert claim2["content_verdict"] == "contradiction"
+        assert claim2["action"] == "review"
+
+        rq = client.get("/v1/review-queue")
+        assert rq.status_code == 200
+        items = rq.json()["items"]
+        matching = [i for i in items if i["claim_id"] == claim2["claim_id"]]
+        assert len(matching) == 1
+        assert claim1["claim_id"] in matching[0]["conflicting_claim_ids"]
+
+    def test_review_queue_item_detail(self):
+        self._submit("the object moves at a speed of 10 meters per second")
+        self._submit("the object moves at a speed of 100 meters per second")
+
+        rq = client.get("/v1/review-queue")
+        item_id = rq.json()["items"][0]["id"]
+        r = client.get(f"/v1/review-queue/{item_id}")
+        assert r.status_code == 200
+        assert r.json()["id"] == item_id
+
+    def test_review_queue_item_404(self):
+        r = client.get("/v1/review-queue/00000000-0000-0000-0000-000000000000")
+        assert r.status_code == 404

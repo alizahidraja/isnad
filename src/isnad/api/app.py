@@ -12,6 +12,7 @@ from isnad.api.endpoints.claims import router as claims_router
 from isnad.api.endpoints.health import metrics_router
 from isnad.api.endpoints.health import router as health_router
 from isnad.api.endpoints.narrators import router as narrators_router
+from isnad.api.endpoints.review import router as review_router
 from isnad.storage.sqlalchemy import init_db
 
 logger = logging.getLogger("isnad.api")
@@ -46,6 +47,7 @@ def create_app() -> FastAPI:
     app.include_router(metrics_router)  # /metrics (Prometheus scrape target)
     app.include_router(claims_router)
     app.include_router(narrators_router)
+    app.include_router(review_router)
 
     return app
 

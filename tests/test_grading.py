@@ -16,7 +16,7 @@ Key properties tested:
 """
 
 from isnad.core.grading import grade_chain
-from isnad.types import ChainGrade, NarratorGrade, TransformType
+from isnad.types import AdalahGrade, ChainGrade, NarratorGrade, TransformType
 
 
 class TestWeakestLink:
@@ -205,5 +205,54 @@ class TestChainWalkingOrder:
             [NarratorGrade.RELIABLE] * 3,
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE, TransformType.PASS_THROUGH],
             is_complete=True,
+        )
+        assert result == ChainGrade.SAHIH
+
+
+class TestAdalahIntegrityAxis:
+    """Issue #11: ʿadālah (integrity) is a separate axis from NarratorGrade —
+    a chain-integrity-only view can't offset a compromised origin. A narrator
+    whose adalah has failed poisons the chain even when its collapsed
+    NarratorGrade still looks fine (the "fabricated pristine chain" case)."""
+
+    def test_compromised_adalah_forces_mawdu_despite_reliable_grades(self) -> None:
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
+            [TransformType.PASS_THROUGH] * 3,
+            is_complete=True,
+            link_adalah_grades=[
+                AdalahGrade.HIGH,
+                AdalahGrade.COMPROMISED,
+                AdalahGrade.HIGH,
+            ],
+        )
+        assert result == ChainGrade.MAWDU
+
+    def test_no_compromised_adalah_leaves_grade_unaffected(self) -> None:
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
+            [TransformType.PASS_THROUGH] * 2,
+            is_complete=True,
+            link_adalah_grades=[AdalahGrade.HIGH, AdalahGrade.ACCEPTABLE],
+        )
+        assert result == ChainGrade.SAHIH
+
+    def test_omitting_adalah_grades_is_backward_compatible(self) -> None:
+        """Default None must not change existing behavior for callers that
+        don't yet pass this axis."""
+        result = grade_chain(
+            [NarratorGrade.RELIABLE] * 3,
+            [TransformType.PASS_THROUGH] * 3,
+            is_complete=True,
+        )
+        assert result == ChainGrade.SAHIH
+
+    def test_unassessed_adalah_does_not_trigger_mawdu(self) -> None:
+        """Only COMPROMISED is a hard block — UNASSESSED is the neutral default."""
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
+            [TransformType.PASS_THROUGH] * 2,
+            is_complete=True,
+            link_adalah_grades=[AdalahGrade.UNASSESSED, AdalahGrade.UNASSESSED],
         )
         assert result == ChainGrade.SAHIH
