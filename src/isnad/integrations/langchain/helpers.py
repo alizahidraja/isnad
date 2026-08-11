@@ -173,5 +173,6 @@ class CriticAdapter:
             model: Model name.
         """
         from isnad.critics.llm import LLMCritic
+
         critic = LLMCritic(base_url=base_url, api_key=api_key, model=model)
         return cls(lambda claim, corpus, domain: critic.evaluate(claim, claim, corpus, domain))

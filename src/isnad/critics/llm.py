@@ -76,6 +76,7 @@ class LLMCritic:
         """Call LLM — OpenAI-compatible first, Anthropic fallback."""
         if self.base_url and self.api_key:
             import httpx
+
             resp = httpx.post(
                 f"{self.base_url.rstrip('/')}/chat/completions",
                 headers={
@@ -98,6 +99,7 @@ class LLMCritic:
         anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
         if anthropic_key:
             import anthropic
+
             client = anthropic.Anthropic(api_key=anthropic_key)
             model = self.model if self.model != "deepseek-chat" else "claude-sonnet-4-20250514"
             response = client.messages.create(
