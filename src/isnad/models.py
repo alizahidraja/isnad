@@ -206,6 +206,12 @@ class ChainLink(Base):
         default=TransformType.PASS_THROUGH.value,
     )
     domain: Mapped[str] = mapped_column(String(128), default="general")
+    input_snapshot: Mapped[str | None] = mapped_column(
+        Text, nullable=True, comment="Claim text state entering this link's transformation"
+    )
+    output_snapshot: Mapped[str | None] = mapped_column(
+        Text, nullable=True, comment="Claim text state leaving this link's transformation"
+    )
 
     # Relationship
     claim: Mapped[RijalClaim] = relationship("RijalClaim", back_populates="links")

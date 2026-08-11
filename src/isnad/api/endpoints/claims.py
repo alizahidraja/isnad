@@ -11,7 +11,7 @@ from fastapi import Depends, HTTPException, Query
 from fastapi.routing import APIRouter
 
 from isnad.api.auth import require_auth
-from isnad.api.dependencies import _metrics_counters, get_critic, get_registry
+from isnad.api.dependencies import _metrics_counters, get_critic, get_fidelity_critic, get_registry
 from isnad.core.chain import (
     Chain,
     ChainLinkSpec,
@@ -22,6 +22,7 @@ from isnad.core.chain import (
 )
 from isnad.core.corroboration import CorroborationEngine
 from isnad.core.decision import decide, describe_action
+from isnad.core.fidelity import compute_fidelity_verdicts
 from isnad.core.grading import grade_chain
 from isnad.core.identity import is_unknown_version, resolve_narrator_id
 from isnad.core.registry import Registry, RegistryDB
@@ -133,6 +134,7 @@ async def submit_claim(
     body: dict,
     reg: RegistryDB = Depends(get_registry),
     critic: Any = Depends(get_critic),
+    fidelity_critic: Any = Depends(get_fidelity_critic),
     _: str = Depends(require_auth),
 ) -> dict:
     state = get_state()
@@ -150,6 +152,8 @@ async def submit_claim(
             transform_type=TransformType(link.get("transform_type", "pass_through")),
             domain=domain,
             trace_id=link.get("trace_id", str(uuid.uuid4())[:8]),
+            input_snapshot=link.get("input_snapshot"),
+            output_snapshot=link.get("output_snapshot"),
         )
         for i, link in enumerate(chain_data)
     ]
@@ -158,11 +162,13 @@ async def submit_claim(
     resolved_narrator_ids = resolved_narrator_ids_for_chain(chain)
     link_grades = grades_for_chain(reg.registry, chain)
     link_adalah_grades = adalah_grades_for_chain(reg.registry, chain)
+    link_fidelity_verdicts = compute_fidelity_verdicts(chain, fidelity_critic)
     cg = grade_chain(
         link_grades,
         [l.transform_type for l in chain.links],
         is_complete=chain.is_complete,
         link_adalah_grades=link_adalah_grades,
+        link_fidelity_verdicts=link_fidelity_verdicts,
     )
 
     # Content verdict — computed BEFORE corroboration (issue #11: corroboration
@@ -234,6 +240,7 @@ async def submit_claim(
         "narrator_ids": [l.narrator_id for l in chain.links],
         "resolved_narrator_ids": resolved_narrator_ids,
         "link_grades": [g.value for g in link_grades],
+        "link_fidelity_verdicts": [v.value for v in link_fidelity_verdicts],
         "version_drift_detected": _version_drift_detected(reg.registry, chain),
         "corroboration_result": {
             "upgraded": corr_result.upgraded,

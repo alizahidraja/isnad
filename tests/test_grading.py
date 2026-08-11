@@ -16,7 +16,7 @@ Key properties tested:
 """
 
 from isnad.core.grading import grade_chain
-from isnad.types import AdalahGrade, ChainGrade, NarratorGrade, TransformType
+from isnad.types import AdalahGrade, ChainGrade, ContentVerdict, NarratorGrade, TransformType
 
 
 class TestWeakestLink:
@@ -254,5 +254,70 @@ class TestAdalahIntegrityAxis:
             [TransformType.PASS_THROUGH] * 2,
             is_complete=True,
             link_adalah_grades=[AdalahGrade.UNASSESSED, AdalahGrade.UNASSESSED],
+        )
+        assert result == ChainGrade.SAHIH
+
+
+class TestFidelityAxis:
+    """Issue #11, direction 3: per-generative-link transformation fidelity —
+    a third axis distinct from NarratorGrade and AdalahGrade. A CONTRADICTION
+    verdict caps that specific link's contribution at DAIF regardless of the
+    narrator's own historical grade, and blocks it from repairing the floor
+    via corroboration — surfacing exactly *where* a chain degraded."""
+
+    def test_contradiction_caps_generative_link_at_daif_despite_reliable_grade(self) -> None:
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
+            [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
+            is_complete=True,
+            link_fidelity_verdicts=[ContentVerdict.UNVERIFIABLE, ContentVerdict.CONTRADICTION],
+        )
+        assert result == ChainGrade.DAIF
+
+    def test_contradiction_blocks_corroboration_repair(self) -> None:
+        """Without a contradicted fidelity verdict, a WEAK destructive link
+        would normally be repaired to SAHIH by a RELIABLE generative link
+        with corroboration_support (see TestDestructivePermanentCap). A
+        contradicted fidelity verdict on that same generative link must
+        block the repair — its own output didn't hold together, so it can't
+        vouch for anything upstream either."""
+        grades = [NarratorGrade.WEAK, NarratorGrade.RELIABLE]
+        transforms = [TransformType.DESTRUCTIVE, TransformType.GENERATIVE]
+
+        repaired = grade_chain(grades, transforms, is_complete=True, corroboration_support=True)
+        assert repaired == ChainGrade.SAHIH  # control: repair works without fidelity check
+
+        blocked = grade_chain(
+            grades,
+            transforms,
+            is_complete=True,
+            corroboration_support=True,
+            link_fidelity_verdicts=[ContentVerdict.UNVERIFIABLE, ContentVerdict.CONTRADICTION],
+        )
+        assert blocked == ChainGrade.DAIF  # repair blocked by contradicted fidelity
+
+    def test_consistent_fidelity_has_no_effect(self) -> None:
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
+            [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
+            is_complete=True,
+            link_fidelity_verdicts=[ContentVerdict.UNVERIFIABLE, ContentVerdict.CONSISTENT],
+        )
+        assert result == ChainGrade.SAHIH
+
+    def test_unverifiable_fidelity_has_no_effect(self) -> None:
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
+            [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
+            is_complete=True,
+            link_fidelity_verdicts=[ContentVerdict.UNVERIFIABLE, ContentVerdict.UNVERIFIABLE],
+        )
+        assert result == ChainGrade.SAHIH
+
+    def test_omitting_fidelity_verdicts_is_backward_compatible(self) -> None:
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
+            [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
+            is_complete=True,
         )
         assert result == ChainGrade.SAHIH

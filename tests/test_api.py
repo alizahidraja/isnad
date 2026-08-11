@@ -6,10 +6,11 @@ import pytest
 from fastapi.testclient import TestClient
 
 from isnad.api.app import app
-from isnad.api.dependencies import get_critic
+from isnad.api.dependencies import get_critic, get_fidelity_critic
 from isnad.api.endpoints.claims import _app_state
 from isnad.critics.embedding import EmbeddingCritic
 from isnad.storage.sqlalchemy import drop_db, init_db, reset_engine
+from isnad.types import ContentVerdict
 
 TEST_DB_URL = "sqlite:///data/isnad_test.db"
 
@@ -330,3 +331,125 @@ class TestReviewQueue:
     def test_review_queue_item_404(self):
         r = client.get("/v1/review-queue/00000000-0000-0000-0000-000000000000")
         assert r.status_code == 404
+
+
+class _FakeFidelityCritic:
+    """Deterministic stand-in for LocalNLICritic — avoids depending on
+    whether the optional NLI extra is installed, and on real model output."""
+
+    def __init__(self, verdict: ContentVerdict):
+        self.verdict = verdict
+
+    def evaluate(self, claim_text, normalized_claim, corpus_claims, domain):
+        return self.verdict
+
+
+class TestTransformationFidelity:
+    """Issue #11, direction 3, end-to-end: a generative link whose output
+    contradicts its own input caps the served chain_grade at DAIF, even when
+    the narrator itself is seeded RELIABLE — surfacing mid-chain drift that
+    NarratorGrade alone would miss."""
+
+    def _seed_reliable(self, narrator_id: str):
+        client.post(
+            "/v1/narrators",
+            json={"narrator_id": narrator_id, "domain": "physics", "grade": "reliable"},
+            headers={"X-API-Key": "isnad-admin"},
+        )
+
+    def test_contradicted_fidelity_caps_chain_at_daif(self):
+        app.dependency_overrides[get_fidelity_critic] = lambda: _FakeFidelityCritic(
+            ContentVerdict.CONTRADICTION
+        )
+        try:
+            self._seed_reliable("source:openstax")
+            self._seed_reliable("model:summarizer")
+            r = client.post(
+                "/v1/claims",
+                json={
+                    "claim_text": "the object moves at a speed of 100 meters per second",
+                    "domain": "physics",
+                    "chain": [
+                        {
+                            "narrator_id": "source:openstax",
+                            "transform_type": "pass_through",
+                        },
+                        {
+                            "narrator_id": "model:summarizer",
+                            "transform_type": "generative",
+                            "input_snapshot": "the object moves at a speed of 10 meters per second",
+                            "output_snapshot": "the object moves at a speed of 100 meters per second",
+                        },
+                    ],
+                },
+                headers={"X-API-Key": "isnad-admin"},
+            )
+            assert r.status_code == 200
+            body = r.json()
+            assert body["link_grades"] == ["reliable", "reliable"]
+            assert body["link_fidelity_verdicts"] == ["unverifiable", "contradiction"]
+            assert body["chain_grade"] == "daif"
+        finally:
+            app.dependency_overrides.pop(get_fidelity_critic, None)
+
+    def test_consistent_fidelity_does_not_cap_chain(self):
+        app.dependency_overrides[get_fidelity_critic] = lambda: _FakeFidelityCritic(
+            ContentVerdict.CONSISTENT
+        )
+        try:
+            self._seed_reliable("source:openstax2")
+            self._seed_reliable("model:summarizer2")
+            r = client.post(
+                "/v1/claims",
+                json={
+                    "claim_text": "force equals mass times acceleration",
+                    "domain": "physics",
+                    "chain": [
+                        {
+                            "narrator_id": "source:openstax2",
+                            "transform_type": "pass_through",
+                        },
+                        {
+                            "narrator_id": "model:summarizer2",
+                            "transform_type": "generative",
+                            "input_snapshot": "F = ma",
+                            "output_snapshot": "force equals mass times acceleration",
+                        },
+                    ],
+                },
+                headers={"X-API-Key": "isnad-admin"},
+            )
+            assert r.status_code == 200
+            body = r.json()
+            assert body["chain_grade"] == "sahih"
+        finally:
+            app.dependency_overrides.pop(get_fidelity_critic, None)
+
+    def test_no_snapshots_defaults_to_unverifiable_no_penalty(self):
+        """Without snapshots, fidelity checking is skipped entirely — a
+        generative link's grade is unaffected regardless of the configured
+        fidelity critic."""
+        app.dependency_overrides[get_fidelity_critic] = lambda: _FakeFidelityCritic(
+            ContentVerdict.CONTRADICTION
+        )
+        try:
+            self._seed_reliable("source:openstax3")
+            self._seed_reliable("model:summarizer3")
+            r = client.post(
+                "/v1/claims",
+                json={
+                    "claim_text": "energy cannot be created or destroyed",
+                    "domain": "physics",
+                    "chain": [
+                        {"narrator_id": "source:openstax3", "transform_type": "pass_through"},
+                        {"narrator_id": "model:summarizer3", "transform_type": "generative"},
+                    ],
+                },
+                headers={"X-API-Key": "isnad-admin"},
+            )
+            assert r.status_code == 200
+            body = r.json()
+            assert body["link_fidelity_verdicts"] == ["unverifiable", "unverifiable"]
+            assert body["chain_grade"] == "sahih"
+        finally:
+            app.dependency_overrides.pop(get_fidelity_critic, None)

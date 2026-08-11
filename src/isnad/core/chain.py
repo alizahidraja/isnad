@@ -56,6 +56,8 @@ class ChainLinkSpec:
         trace_id: str = "",
         domain: str = "general",
         confidence: float | None = None,
+        input_snapshot: str | None = None,
+        output_snapshot: str | None = None,
     ):
         self.narrator_id = narrator_id
         self.step = step
@@ -64,6 +66,12 @@ class ChainLinkSpec:
         self.trace_id = trace_id
         self.domain = domain
         self.confidence = confidence
+        # Claim text entering/leaving this link's transformation — only
+        # meaningful for GENERATIVE links, used by core/fidelity.py to check
+        # whether the output actually follows from the input (issue #11,
+        # direction 3: surface *where* a chain degraded, not just that it did).
+        self.input_snapshot = input_snapshot
+        self.output_snapshot = output_snapshot
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -74,6 +82,8 @@ class ChainLinkSpec:
             "trace_id": self.trace_id,
             "domain": self.domain,
             "confidence": self.confidence,
+            "input_snapshot": self.input_snapshot,
+            "output_snapshot": self.output_snapshot,
             "timestamp": datetime.now(UTC).isoformat(),
         }
 
@@ -215,6 +225,8 @@ def store_claim(
             trace_id=link_spec.trace_id,
             domain=link_spec.domain,
             confidence=link_spec.confidence,
+            input_snapshot=link_spec.input_snapshot,
+            output_snapshot=link_spec.output_snapshot,
         )
         session.add(link)
 
@@ -237,6 +249,8 @@ def get_chain_from_db(session: Session, claim_id: str) -> Chain | None:
             trace_id=link.trace_id,
             domain=link.domain,
             confidence=link.confidence,
+            input_snapshot=link.input_snapshot,
+            output_snapshot=link.output_snapshot,
         )
         for link in links
     ]
