@@ -1,18 +1,24 @@
-"""LLM-backed content critic for ISNAD.
+"""LLM-backed content critic for ISNAD — provider-agnostic.
 
 Higher-quality content criticism using an LLM with retrieved corpus context.
-Retrieves top-k similar corpus claims (via EmbeddingCritic's retriever),
-then asks an LLM to judge: CONSISTENT, CONTRADICTION, or UNVERIFIABLE.
+Supports OpenAI-compatible APIs (DeepSeek, OpenAI, local vLLM) and Anthropic.
 
 Features:
+- Provider-agnostic: pass base_url + api_key for any OpenAI-compatible endpoint
+- Falls back to Anthropic if ANTHROPIC_API_KEY is set and no base_url provided
 - Cached on disk (keyed by claim + context hash) — re-runs are free
-- Configurable model (default: claude-sonnet-4-20250514)
-- Cost-guarded (prints estimated cost before running)
-- Graceful degradation: returns UNVERIFIABLE if no API key
+- Graceful degradation: returns UNVERIFIABLE if no credentials
+- Domain-agnostic prompt
 
-IMPORTANT: Requires an Anthropic API key. Set ANTHROPIC_API_KEY env var.
-The critic quality depends on the LLM's reasoning — false-CONSISTENT and
-false-CONTRADICTION errors are possible. See CRITIC_EVAL.md.
+Usage:
+    # DeepSeek
+    critic = LLMCritic(
+        base_url="https://api.deepseek.com/v1",
+        api_key=os.environ["DEEPSEEK_API_KEY"],
+        model="deepseek-chat",
+    )
+    # Anthropic
+    critic = LLMCritic()  # reads ANTHROPIC_API_KEY from env
 """
 
 from __future__ import annotations
@@ -34,36 +40,74 @@ def _hash_claim(claim: str) -> str:
 class LLMCritic:
     """LLM-backed content critic with retrieval-augmented context.
 
-    This is one instantiation of a parameter the framework leaves open
-    (see paper §4.4).  Swap freely.
+    Provider-agnostic: supports any OpenAI-compatible endpoint (DeepSeek,
+    OpenAI, local vLLM) via base_url + api_key. Falls back to Anthropic
+    when ANTHROPIC_API_KEY is set and no base_url is provided.
 
     Args:
-        api_key: Anthropic API key (default: ANTHROPIC_API_KEY env var).
-        model: Anthropic model to use.
+        base_url: OpenAI-compatible API base URL (e.g. https://api.deepseek.com/v1).
+        api_key: API key for the provider.
+        model: Model name to use (default: deepseek-chat).
         top_k: Number of similar corpus claims to retrieve as context.
         cache_dir: Directory for on-disk cache (None = no caching).
-
-    Example:
-        critic = LLMCritic(api_key="sk-...")
-        corpus = ["force equals mass times acceleration"]
-        result = critic.evaluate("F = ma", "f = m a", corpus, "physics")
-        # → ContentVerdict.CONSISTENT
     """
 
     def __init__(
         self,
+        base_url: str | None = None,
         api_key: str | None = None,
-        model: str = "claude-sonnet-4-20250514",
+        model: str = "deepseek-chat",
         top_k: int = 5,
         cache_dir: str | None = None,
     ):
-        self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY", "")
+        self.base_url = base_url or ""
+        self.api_key = api_key or ""
         self.model = model
         self.top_k = top_k
         self.cache_dir = Path(cache_dir) if cache_dir else None
         if self.cache_dir:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
-        self._retriever = EmbeddingCritic()  # TF-IDF, zero-deps
+        self._retriever = EmbeddingCritic()
+
+    def _has_credentials(self) -> bool:
+        return bool(self.base_url and self.api_key) or bool(os.environ.get("ANTHROPIC_API_KEY"))
+
+    def _call_llm(self, prompt: str) -> str:
+        """Call LLM — OpenAI-compatible first, Anthropic fallback."""
+        if self.base_url and self.api_key:
+            import httpx
+            resp = httpx.post(
+                f"{self.base_url.rstrip('/')}/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {self.api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": self.model,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 32,
+                    "temperature": 0.0,
+                },
+                timeout=30,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            if data.get("choices"):
+                return (data["choices"][0]["message"].get("content") or "").strip().upper()
+
+        anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        if anthropic_key:
+            import anthropic
+            client = anthropic.Anthropic(api_key=anthropic_key)
+            model = self.model if self.model != "deepseek-chat" else "claude-sonnet-4-20250514"
+            response = client.messages.create(
+                model=model,
+                max_tokens=32,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            return getattr(response.content[0], "text", "").strip().upper()
+
+        raise RuntimeError("No LLM credentials available")
 
     def evaluate(
         self,
@@ -73,21 +117,16 @@ class LLMCritic:
         domain: str = "",
     ) -> ContentVerdict:
         """Evaluate a claim against the corpus using LLM + retrieval."""
-        if not self.api_key:
+        if not self._has_credentials():
             return ContentVerdict.UNVERIFIABLE
-
         if not corpus_claims:
             return ContentVerdict.UNVERIFIABLE
 
-        # Retrieve top-k similar corpus claims using TF-IDF
-        self._retriever.evaluate(  # builds index if needed
-            normalized_claim,
-            normalized_claim,
-            corpus_claims,
-        )
-        # Reuse the built index to get similarities
+        # Retrieve top-k similar corpus claims via TF-IDF
+        self._retriever.evaluate(normalized_claim, normalized_claim, corpus_claims)
         if self._retriever._index is None:
             return ContentVerdict.UNVERIFIABLE
+
         claim_vec = self._retriever._index.tfidf_vector(normalized_claim)
         scored = []
         for i, cc in enumerate(corpus_claims):
@@ -97,7 +136,7 @@ class LLMCritic:
         scored.sort(key=lambda x: -x[0])
         context = [cc for _, cc in scored[: self.top_k]]
 
-        # Check cache
+        # Cache check
         cache_key = _hash_claim(normalized_claim + "||" + "||".join(context))
         if self.cache_dir:
             cache_file = self.cache_dir / f"{cache_key}.json"
@@ -108,30 +147,24 @@ class LLMCritic:
                 except (json.JSONDecodeError, KeyError, ValueError):
                     pass
 
-        # Call LLM
-        try:
-            import anthropic
+        # Domain-agnostic prompt
+        domain_hint = f" in the {domain} domain" if domain else ""
+        context_text = "\n".join(f"- {c}" for c in context)
+        prompt = (
+            f"You are a content critic{domain_hint}. "
+            f"Judge whether this claim is CONSISTENT with, CONTRADICTS, "
+            f"or is UNVERIFIABLE against the corpus context.\n\n"
+            f"Claim: {normalized_claim}\n\n"
+            f"Corpus context:\n{context_text}\n\n"
+            f"Rules:\n"
+            f"- CONSISTENT: the claim states the same fact as a corpus claim\n"
+            f"- CONTRADICTION: the claim asserts something opposite or incompatible\n"
+            f"- UNVERIFIABLE: the corpus has no relevant information\n\n"
+            f"Answer with exactly one word: CONSISTENT, CONTRADICTION, or UNVERIFIABLE."
+        )
 
-            client = anthropic.Anthropic(api_key=self.api_key)
-            context_text = "\n".join(f"- {c}" for c in context)
-            prompt = (
-                f"You are a physics content critic. "
-                f"Judge whether this claim is CONSISTENT with, CONTRADICTS, "
-                f"or is UNVERIFIABLE against the corpus context.\n\n"
-                f"Claim: {normalized_claim}\n\n"
-                f"Corpus context:\n{context_text}\n\n"
-                f"Rules:\n"
-                f"- CONSISTENT: the claim states the same fact as a corpus claim\n"
-                f"- CONTRADICTION: the claim asserts something opposite or incompatible\n"
-                f"- UNVERIFIABLE: the corpus has no relevant information\n\n"
-                f"Answer with exactly one word: CONSISTENT, CONTRADICTION, or UNVERIFIABLE."
-            )
-            response = client.messages.create(
-                model=self.model,
-                max_tokens=32,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            text = getattr(response.content[0], "text", "").strip().upper()
+        try:
+            text = self._call_llm(prompt)
         except Exception:
             return ContentVerdict.UNVERIFIABLE
 
@@ -143,7 +176,6 @@ class LLMCritic:
 
         verdict = ContentVerdict(verdict_str.lower())
 
-        # Cache result
         if self.cache_dir:
             cache_file = self.cache_dir / f"{cache_key}.json"
             cache_file.write_text(json.dumps({"verdict": verdict.value}))

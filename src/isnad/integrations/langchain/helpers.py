@@ -11,7 +11,6 @@
 
 from __future__ import annotations
 
-import os
 from collections.abc import Callable
 from typing import Any
 
@@ -158,48 +157,21 @@ class CriticAdapter:
     @classmethod
     def llm_backed(
         cls,
+        base_url: str | None = None,
         api_key: str | None = None,
-        model: str = "claude-sonnet-4-20250514",
+        model: str = "deepseek-chat",
     ) -> CriticAdapter:
-        """Create a CriticAdapter backed by an Anthropic LLM.
+        """Create a CriticAdapter backed by an LLM (provider-agnostic).
 
-        REFERENCE INTEGRATION STUB.  A production critic should add
-        caching, batching, confidence calibration, and multi-model
-        ensemble for reliability.
+        Uses the LLMCritic from isnad.critics.llm which supports
+        OpenAI-compatible endpoints (DeepSeek, OpenAI, vLLM) and
+        Anthropic fallback.
 
         Args:
-            api_key: Anthropic API key (defaults to ANTHROPIC_API_KEY env var).
-            model: Anthropic model to use.
+            base_url: OpenAI-compatible API base URL.
+            api_key: API key (defaults to DEEPSEEK_API_KEY or ANTHROPIC_API_KEY env vars).
+            model: Model name.
         """
-        api_key = api_key or os.environ.get("ANTHROPIC_API_KEY", "")
-
-        def _llm_evaluate(claim: str, corpus: list[str], domain: str) -> ContentVerdict:
-            if not api_key:
-                return ContentVerdict.UNVERIFIABLE
-
-            try:
-                import anthropic
-
-                client = anthropic.Anthropic(api_key=api_key)
-                corpus_text = "\n".join(f"- {c}" for c in corpus[:10])
-                prompt = (
-                    f"Does this claim contradict the existing corpus?\n\n"
-                    f"Claim: {claim}\n\n"
-                    f"Corpus:\n{corpus_text}\n\n"
-                    f"Answer with one word: CONSISTENT, CONTRADICTION, or UNVERIFIABLE."
-                )
-                response = client.messages.create(
-                    model=model,
-                    max_tokens=16,
-                    messages=[{"role": "user", "content": prompt}],
-                )
-                text = getattr(response.content[0], "text", "").strip().upper()
-                if "CONSISTENT" in text:
-                    return ContentVerdict.CONSISTENT
-                if "CONTRADICTION" in text:
-                    return ContentVerdict.CONTRADICTION
-                return ContentVerdict.UNVERIFIABLE
-            except Exception:
-                return ContentVerdict.UNVERIFIABLE
-
-        return cls(_llm_evaluate)
+        from isnad.critics.llm import LLMCritic
+        critic = LLMCritic(base_url=base_url, api_key=api_key, model=model)
+        return cls(lambda claim, corpus, domain: critic.evaluate(claim, claim, corpus, domain))
