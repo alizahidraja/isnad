@@ -407,3 +407,53 @@ class EvidenceAction(Enum):
     JARH = "jarh"  # criticism — adverse evidence
     TADIL = "tadil"  # accreditation — positive evidence
     NEUTRAL = "neutral"  # logged for record, no grade impact
+
+
+class EvidenceAxis(Enum):
+    """Which reliability axis a piece of evidence bears on (ʿadālah vs ḍabṭ).
+
+    The classical science splits transmitter criticism into two axes that are
+    handled very differently over time:
+
+    - INTEGRITY (ʿadālah): honesty / manipulation-resistance. An established
+      integrity impugnment (jarḥ against ʿadālah) is *permanent* in the
+      record — the corpus is protected regardless of later good conduct. This
+      evidence never ages out of a threshold policy's window, and favorable
+      precision evidence can never lift a grade capped by an integrity strike.
+    - PRECISION (ḍabṭ): accuracy / error rate. Precision genuinely changes over
+      time (cf. the mukhtaliṭūn, whose narrations were dated relative to the
+      onset of decline). Precision evidence is windowed and recoverable.
+    - UNSPECIFIED: axis not declared by the caller. Treated as INTEGRITY-class
+      (non-forgettable) by design: forgetting is a privilege a caller earns by
+      explicitly declaring a jarḥ to be a precision lapse. Absent that
+      declaration, impugnment persists — al-jarḥ muqaddam ʿalā al-taʿdīl.
+
+    See issue #9 (finding #1) and its conceptual follow-up: a windowed policy
+    that forgets *integrity* evidence silently reintroduces the
+    fabricator-rehabilitation path. Axis-tagging closes it.
+    """
+
+    INTEGRITY = "integrity"  # ʿadālah — permanent, never forgotten
+    PRECISION = "precision"  # ḍabṭ — windowed, recoverable
+    UNSPECIFIED = "unspecified"  # not declared → treated as INTEGRITY-class
+
+
+def default_axis_for(evidence_type: EvidenceType) -> EvidenceAxis:
+    """The axis to assume for an evidence type when a caller does not specify one.
+
+    Some evidence types name their axis unambiguously and resolve to it:
+
+    - EVAL_HARNESS and CORROBORATION_OUTCOME are accuracy signals (ḍabṭ) — a
+      failed eval or a contradicted claim is a *precision* fault, recoverable.
+
+    The rest stay UNSPECIFIED (→ integrity-class, permanent) because they can
+    surface either fabrication or error and must be resolved conservatively:
+
+    - POST_HOC_AUDIT can catch a hallucinated error *or* a poisoned source.
+    - HUMAN_REVIEW is whatever the reviewer found; let them pass an explicit axis.
+
+    A caller who knows better should always pass an explicit axis; this only
+    picks a safe default for the common case where none is given.
+    """
+    precision_types = {EvidenceType.EVAL_HARNESS, EvidenceType.CORROBORATION_OUTCOME}
+    return EvidenceAxis.PRECISION if evidence_type in precision_types else EvidenceAxis.UNSPECIFIED

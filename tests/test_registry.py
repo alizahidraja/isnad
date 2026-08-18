@@ -21,6 +21,7 @@ from isnad.types import (
     AdalahGrade,
     DabtGrade,
     EvidenceAction,
+    EvidenceAxis,
     EvidenceType,
     NarratorGrade,
 )
@@ -216,17 +217,26 @@ class TestThresholdRatchetRegression:
     """
 
     def _seed(
-        self, reg: Registry, nid: str, action: EvidenceAction, etype: EvidenceType, n: int
+        self,
+        reg: Registry,
+        nid: str,
+        action: EvidenceAction,
+        etype: EvidenceType,
+        n: int,
+        axis: EvidenceAxis = EvidenceAxis.PRECISION,
     ) -> None:
+        # These scenarios model *precision* (ḍabṭ) lapses — audit-detected error
+        # rate, which the tradition treats as recoverable over time. Integrity
+        # (ʿadālah) behaviour is covered by TestIntegrityAxisPermanence below.
         for i in range(n):
-            reg.record_evidence(nid, "physics", etype, action, f"ev {i}")
+            reg.record_evidence(nid, "physics", etype, action, f"ev {i}", axis=axis)
 
     def test_sustained_favorable_recovers_a_downgraded_narrator(self, policy) -> None:
         """Past the threshold + sustained recent taʿdīl → narrator fully recovers.
 
-        The core of the ratchet: recovery must be possible. Drive a RELIABLE
-        narrator down one tier, then feed a long clean corroborated streak and
-        require it to climb *all the way back* to RELIABLE.
+        The core of the ratchet: recovery must be possible for a *precision*
+        lapse. Drive a RELIABLE narrator down one tier, then feed a long clean
+        corroborated streak and require it to climb all the way back to RELIABLE.
         """
         down, up, window = _thresholds(policy)
         reg = Registry(transition_policy=policy)
@@ -305,6 +315,259 @@ class TestThresholdRatchetRegression:
             reg, "scraper-v2", EvidenceAction.TADIL, EvidenceType.CORROBORATION_OUTCOME, window + 3
         )
         assert reg.get_grade("scraper-v2", "physics") != NarratorGrade.REJECTED
+
+
+@pytest.mark.parametrize("policy", _threshold_policies(), ids=lambda p: type(p).__name__)
+class TestIntegrityAxisPermanence:
+    """Issue #9 conceptual follow-up — ʿadālah (integrity) does not forget.
+
+    The sliding-window ratchet fix, applied uniformly, would forget integrity
+    strikes too — silently reopening the fabricator-rehabilitation path. The
+    axis split makes integrity (ʿadālah) jarḥ permanent and non-forgettable,
+    while precision (ḍabṭ) jarḥ stays windowed and recoverable. These tests pin
+    that asymmetry.
+    """
+
+    def _seed(self, reg, nid, action, etype, n, axis) -> None:
+        for i in range(n):
+            reg.record_evidence(nid, "physics", etype, action, f"ev {i}", axis=axis)
+
+    def test_integrity_jarh_caps_grade_and_tadil_cannot_lift_it(self, policy) -> None:
+        """A precision-clean streak can never lift a grade held by an integrity strike.
+
+        This is al-jarḥ muqaddam ʿalā al-taʿdīl: impugnment of integrity
+        outranks any amount of later accreditation.
+        """
+        down, up, window = _thresholds(policy)
+        reg = Registry(transition_policy=policy)
+        reg.register("liar", "physics", grade=NarratorGrade.RELIABLE)
+
+        # One threshold's worth of integrity strikes → permanent one-tier cap.
+        self._seed(
+            reg,
+            "liar",
+            EvidenceAction.JARH,
+            EvidenceType.HUMAN_REVIEW,
+            down,
+            EvidenceAxis.INTEGRITY,
+        )
+        assert reg.get_grade("liar", "physics") == NarratorGrade.ACCEPTABLE
+
+        # A flood of corroborated precision taʿdīl must NOT restore RELIABLE.
+        self._seed(
+            reg,
+            "liar",
+            EvidenceAction.TADIL,
+            EvidenceType.CORROBORATION_OUTCOME,
+            (window + up) * 2,
+            EvidenceAxis.PRECISION,
+        )
+        assert reg.get_grade("liar", "physics") == NarratorGrade.ACCEPTABLE
+
+    def test_integrity_strikes_never_age_out(self, policy) -> None:
+        """Integrity jarḥ separated by a long clean gap still accumulates.
+
+        Unlike precision jarḥ, integrity strikes are not windowed: strikes far
+        apart in history still sum toward the permanent cap.
+        """
+        down, _, window = _thresholds(policy)
+        reg = Registry(transition_policy=policy)
+        reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
+
+        # One integrity strike short of a second downgrade, then a long clean
+        # precision streak (longer than the window), then the strike that
+        # completes the second threshold. The old strikes must not have expired.
+        self._seed(
+            reg, "n", EvidenceAction.JARH, EvidenceType.HUMAN_REVIEW, down, EvidenceAxis.INTEGRITY
+        )
+        self._seed(
+            reg,
+            "n",
+            EvidenceAction.TADIL,
+            EvidenceType.CORROBORATION_OUTCOME,
+            window + 5,
+            EvidenceAxis.PRECISION,
+        )
+        # Second full threshold of integrity strikes → second permanent tier down.
+        self._seed(
+            reg, "n", EvidenceAction.JARH, EvidenceType.HUMAN_REVIEW, down, EvidenceAxis.INTEGRITY
+        )
+        assert reg.get_grade("n", "physics") == NarratorGrade.WEAK
+
+    def test_unspecified_axis_is_treated_as_integrity(self, policy) -> None:
+        """An untagged jarḥ is non-forgettable by default (conservative).
+
+        Forgetting is a privilege a caller earns by explicitly declaring
+        PRECISION. Absent that, impugnment persists.
+        """
+        down, up, window = _thresholds(policy)
+        reg = Registry(transition_policy=policy)
+        reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
+
+        # UNSPECIFIED (the default) adverse evidence → one permanent tier down.
+        for i in range(down):
+            reg.record_evidence(
+                "n", "physics", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH, ""
+            )
+        assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
+
+        # Precision taʿdīl cannot lift it back to RELIABLE — untagged jarḥ stuck.
+        self._seed(
+            reg,
+            "n",
+            EvidenceAction.TADIL,
+            EvidenceType.CORROBORATION_OUTCOME,
+            window + up,
+            EvidenceAxis.PRECISION,
+        )
+        assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
+
+
+class TestAxisCallerBehaviour:
+    """Behaviour of real callers and the untagged default (issue #9 v2).
+
+    The axis split changes what an *untagged* jarḥ means: it is treated as
+    integrity (permanent), not precision (recoverable). These tests pin that
+    deliberate choice for the framework's own call sites and for the default,
+    so the change is documented behaviour rather than an accident.
+    """
+
+    def test_untagged_jarh_is_permanent_by_default(self) -> None:
+        """An untagged adverse sequence does NOT recover — conservative default.
+
+        This is the intended v2 behaviour: forgetting is a privilege earned by
+        tagging PRECISION. A caller that logs bare jarḥ gets integrity
+        semantics. (Framework call sites tag their axis; see the other tests.)
+        """
+        reg = Registry(transition_policy=ThresholdTransitionPolicy())
+        reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
+        for _ in range(3):
+            reg.record_evidence(
+                "n", "physics", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH, ""
+            )
+        assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
+
+        # A flood of favorable evidence cannot lift an untagged (integrity) cap.
+        for _ in range(30):
+            reg.record_evidence(
+                "n", "physics", EvidenceType.CORROBORATION_OUTCOME, EvidenceAction.TADIL, ""
+            )
+        assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
+
+    def test_flag_contradiction_is_precision_and_recovers(self) -> None:
+        """A contradiction is a precision signal — windowed and recoverable.
+
+        flag_contradiction is the corroboration path. A factual disagreement
+        must not be a permanent integrity strike, or a single contradicted
+        claim would cap a narrator forever (the issue #9 ratchet, back again).
+        """
+        reg = Registry(transition_policy=ThresholdTransitionPolicy())
+        reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
+        for _ in range(3):
+            reg.flag_contradiction("n", "physics", "contradicted by independent chain")
+        assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
+
+        for _ in range(12):
+            reg.record_evidence(
+                "n", "physics", EvidenceType.CORROBORATION_OUTCOME, EvidenceAction.TADIL, ""
+            )
+        assert reg.get_grade("n", "physics") == NarratorGrade.RELIABLE
+
+    def test_quarantine_is_a_permanent_integrity_strike(self) -> None:
+        """Quarantine logs an INTEGRITY jarḥ and lands (and stays) REJECTED."""
+        reg = Registry(transition_policy=ThresholdTransitionPolicy())
+        reg.register("q", "physics", grade=NarratorGrade.RELIABLE)
+        reg.quarantine("q", "physics", "poisoned source")
+        assert reg.get_grade("q", "physics") == NarratorGrade.REJECTED
+
+
+class TestEvidenceAxisPersistence:
+    """The ʿadālah/ḍabṭ axis must survive a database round-trip.
+
+    It rides in metadata_json (no schema migration). If it were dropped, a
+    reloaded integrity strike would become UNSPECIFIED — which is still
+    integrity-class (conservative), so the failure direction is safe; these
+    tests pin the intended lossless behaviour anyway.
+    """
+
+    def _round_trip(self, seed_fn):
+        import tempfile
+
+        from isnad.storage.sqlalchemy import (
+            create_engine_from_url,
+            init_db,
+            reset_engine,
+        )
+
+        with tempfile.TemporaryDirectory() as d:
+            url = f"sqlite:///{d}/axis.db"
+            reset_engine()
+            init_db(url)
+            engine = create_engine_from_url(url)
+            from sqlalchemy.orm import Session
+
+            from isnad.core.registry import RegistryDB
+
+            with Session(engine) as s:
+                rdb = RegistryDB(session=s)
+                seed_fn(rdb)
+                rdb.flush()
+                s.commit()
+            with Session(engine) as s:
+                rdb2 = RegistryDB(session=s)
+                rdb2.load()
+                grade = rdb2.registry.get_grade("n", "physics")
+            reset_engine()
+            return grade
+
+    def test_integrity_strike_survives_reload_and_stays_permanent(self) -> None:
+        def seed(rdb):
+            rdb.registry.transition_policy = ThresholdTransitionPolicy()
+            rdb.registry.register("n", "physics", grade=NarratorGrade.RELIABLE)
+            # One integrity strike short of a downgrade before the reload; the
+            # strike must persist so it still counts afterwards.
+            for _ in range(3):
+                rdb.registry.record_evidence(
+                    "n",
+                    "physics",
+                    EvidenceType.HUMAN_REVIEW,
+                    EvidenceAction.JARH,
+                    "integrity",
+                    axis=EvidenceAxis.INTEGRITY,
+                )
+
+        grade = self._round_trip(seed)
+        # 3 integrity strikes (threshold 3) → capped one tier down, permanently.
+        assert grade == NarratorGrade.ACCEPTABLE
+
+    def test_distinct_integrity_strikes_are_not_merged_on_persist(self) -> None:
+        """Integrity permanence relies on every strike surviving the flush dedup.
+
+        RegistryDB.flush dedups on description+created_at (issue #9 finding #4).
+        Distinct integrity strikes that happen to share a description must still
+        be persisted as separate rows — if they collapse, integrity_jarh
+        under-counts and a fabricator is under-contained after reload. This
+        drives many same-description strikes through the real record_evidence
+        path and asserts the reloaded count still forces REJECTED.
+        """
+
+        def seed(rdb):
+            rdb.registry.transition_policy = ThresholdTransitionPolicy()
+            rdb.registry.register("n", "physics", grade=NarratorGrade.RELIABLE)
+            # 9 integrity strikes, all with the SAME description → threshold*3,
+            # enough to force REJECTED only if none are merged away.
+            for _ in range(9):
+                rdb.registry.record_evidence(
+                    "n",
+                    "physics",
+                    EvidenceType.HUMAN_REVIEW,
+                    EvidenceAction.JARH,
+                    "integrity violation",  # identical description on purpose
+                    axis=EvidenceAxis.INTEGRITY,
+                )
+
+        grade = self._round_trip(seed)
+        assert grade == NarratorGrade.REJECTED
 
 
 class TestBayesianTransitionPolicy:

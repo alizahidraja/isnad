@@ -9,7 +9,7 @@ from isnad.api.auth import require_admin
 from isnad.api.dependencies import _metrics_counters, get_registry
 from isnad.core.identity import resolve_narrator_id
 from isnad.core.registry import RegistryDB
-from isnad.types import EvidenceAction, EvidenceType, NarratorGrade
+from isnad.types import EvidenceAction, EvidenceAxis, EvidenceType, NarratorGrade
 
 router = APIRouter(prefix="/v1", tags=["narrators"])
 
@@ -84,6 +84,12 @@ async def submit_evidence(
     try:
         ev_type = EvidenceType(body.get("evidence_type", "post_hoc_audit"))
         ev_action = EvidenceAction(body.get("action", "tadil"))
+        # Axis marks a jarḥ as bearing on integrity (ʿadālah, permanent) or
+        # precision (ḍabṭ, windowed/recoverable). If the caller omits it,
+        # record_evidence derives a safe default from the evidence type
+        # (unambiguously-precision types → PRECISION, else UNSPECIFIED). See
+        # EvidenceAxis / default_axis_for.
+        ev_axis = EvidenceAxis(body["axis"]) if "axis" in body else None
     except ValueError as e:
         raise HTTPException(400, f"Invalid type: {e}")
     resolved, domain, version = _resolve_from_body(body)
@@ -95,6 +101,7 @@ async def submit_evidence(
         ev_type,
         ev_action,
         body.get("description", ""),
+        axis=ev_axis,
     )
     reg.flush()
     if old_grade is not None and new_grade != old_grade:
