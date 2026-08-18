@@ -272,10 +272,15 @@ class TransitionPolicy(Protocol):
     This is one instantiation of a parameter the framework leaves open
     (see paper §4.2).  Swap freely.
 
-    The default implementation (ThresholdTransitionPolicy) uses:
-    - threshold counts for adverse evidence → downgrade
-    - sustained corroborated accuracy → upgrade (requires N positive evals)
+    The framework default (``BayesianTransitionPolicy``) derives grades from a
+    Beta-distribution posterior mean, so it has no fixed "N adverse events"
+    cutoff. The simpler ``ThresholdTransitionPolicy`` is also available and uses:
+    - windowed threshold counts for adverse evidence → downgrade
+    - sustained corroborated accuracy → upgrade (requires N recent positive evals)
     - version bump → reset to UNGRADED
+
+    (Both count over a sliding window of recent evidence and are edge-triggered
+    on the arriving evidence — see issue #9.)
     """
 
     def evaluate_transition(
