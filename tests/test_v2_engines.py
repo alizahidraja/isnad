@@ -124,16 +124,30 @@ class TestConfigurableTransitionPolicyRatchet:
 
     def test_downgraded_narrator_recovers(self):
         from isnad.core.registry import Registry
+        from isnad.types import EvidenceAxis
 
         policy = self._policy(downgrade_threshold=3)
         reg = Registry(transition_policy=policy)
         reg.register("n", "d", grade=NarratorGrade.RELIABLE)
+        # Precision (ḍabṭ) lapse — recoverable.
         for _ in range(3):
-            reg.record_evidence("n", "d", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH, "")
+            reg.record_evidence(
+                "n",
+                "d",
+                EvidenceType.POST_HOC_AUDIT,
+                EvidenceAction.JARH,
+                "",
+                axis=EvidenceAxis.PRECISION,
+            )
         assert reg.get_grade("n", "d") == NarratorGrade.ACCEPTABLE
         for _ in range(policy.window + policy.upgrade_sustained_count):
             reg.record_evidence(
-                "n", "d", EvidenceType.CORROBORATION_OUTCOME, EvidenceAction.TADIL, ""
+                "n",
+                "d",
+                EvidenceType.CORROBORATION_OUTCOME,
+                EvidenceAction.TADIL,
+                "",
+                axis=EvidenceAxis.PRECISION,
             )
         assert reg.get_grade("n", "d") == NarratorGrade.RELIABLE
 

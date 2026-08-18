@@ -24,9 +24,8 @@ _exp_dir = os.path.dirname(os.path.abspath(__file__))
 if _exp_dir not in sys.path:
     sys.path.insert(0, _exp_dir)
 
+from isnad.core.registry import threshold_transition
 from isnad.types import (
-    EvidenceAction,
-    EvidenceType,
     NarratorGrade,
     TransitionPolicy,
 )
@@ -43,14 +42,13 @@ class ConfigurableTransitionPolicy:
     values mean more evidence is needed before a narrator is penalized,
     reducing the cold-start over-penalization observed in the §8 experiment.
 
-    All other rules (upgrade requires sustained corroborated accuracy,
-    REJECTED is sticky, version bump resets, human review can restore)
-    match the framework's ThresholdTransitionPolicy — including its
-    sliding-window + edge-trigger ratchet fix (issue #9 finding #1). Counts are
-    taken over the last ``window`` evidence entries and a transition fires only
-    on the arriving evidence kind, so raising ``downgrade_threshold`` is no
-    longer the only lever against the §8.6 "more evidence reduced coverage"
-    effect — that effect was the ratchet, not threshold miscalibration.
+    All transition rules are shared with the framework's threshold policy family
+    via ``threshold_transition`` — including the issue #9 ratchet fix
+    (sliding-window + edge-trigger) and its axis-split follow-up (integrity jarḥ
+    is permanent, precision jarḥ is windowed and recoverable). So raising
+    ``downgrade_threshold`` is no longer the only lever against the §8.6 "more
+    evidence reduced coverage" effect — that effect was the ratchet, not
+    threshold miscalibration.
     """
 
     def __init__(
@@ -73,67 +71,13 @@ class ConfigurableTransitionPolicy:
         evidence_history: list[dict[str, object]],
         new_evidence: dict[str, object],
     ) -> NarratorGrade:
-        """Compute new narrator grade given history and new evidence.
-
-        Args:
-            current_grade: Current ordinal grade.
-            evidence_history: Prior evidence entries.
-            new_evidence: New evidence to incorporate.
-
-        Returns:
-            New NarratorGrade after transition.
-        """
-        evidence_type = EvidenceType(str(new_evidence.get("evidence_type", "")))
-        action = EvidenceAction(str(new_evidence.get("action", EvidenceAction.NEUTRAL.value)))
-
-        # --- Version bump → reset ---
-        if evidence_type == EvidenceType.VERSION_BUMP:
-            return NarratorGrade.UNGRADED
-
-        # --- REJECTED is sticky ---
-        if current_grade == NarratorGrade.REJECTED:
-            if evidence_type == EvidenceType.HUMAN_REVIEW and action == EvidenceAction.TADIL:
-                return NarratorGrade.WEAK
-            return NarratorGrade.REJECTED
-
-        # --- Count adverse and favorable events over a sliding window ---
-        # Recent evidence only, incl. the arriving entry (issue #9 finding #1).
-        recent = ([*evidence_history, new_evidence])[-self.window :]
-        adverse_count = sum(
-            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+        """Compute new narrator grade (see ``threshold_transition``)."""
+        return threshold_transition(
+            current_grade,
+            evidence_history,
+            new_evidence,
+            downgrade_threshold=self.downgrade_threshold,
+            upgrade_sustained_count=self.upgrade_sustained_count,
+            upgrade_min_corroborated=self.upgrade_min_corroborated,
+            window=self.window,
         )
-        favorable_count = sum(
-            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-        )
-        corroborated_favorable = sum(
-            1
-            for e in recent
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-            and EvidenceType(str(e.get("evidence_type", ""))) == EvidenceType.CORROBORATION_OUTCOME
-        )
-
-        # --- Downgrade: a fresh jarḥ crosses the CONFIGURABLE threshold ---
-        # Edge-triggered: only arriving adverse evidence can downgrade.
-        if action == EvidenceAction.JARH and adverse_count >= self.downgrade_threshold:
-            downgrade_map = {
-                NarratorGrade.RELIABLE: NarratorGrade.ACCEPTABLE,
-                NarratorGrade.ACCEPTABLE: NarratorGrade.WEAK,
-                NarratorGrade.WEAK: NarratorGrade.REJECTED,
-                NarratorGrade.UNGRADED: NarratorGrade.WEAK,
-            }
-            return downgrade_map.get(current_grade, NarratorGrade.WEAK)
-
-        # --- Upgrade: a fresh taʿdīl completes sustained corroborated accuracy ---
-        if (
-            action == EvidenceAction.TADIL
-            and favorable_count >= self.upgrade_sustained_count
-            and corroborated_favorable >= self.upgrade_min_corroborated
-        ):
-            upgrade_map = {
-                NarratorGrade.UNGRADED: NarratorGrade.WEAK,
-                NarratorGrade.WEAK: NarratorGrade.ACCEPTABLE,
-                NarratorGrade.ACCEPTABLE: NarratorGrade.RELIABLE,
-            }
-            return upgrade_map.get(current_grade, current_grade)
-
-        return current_grade

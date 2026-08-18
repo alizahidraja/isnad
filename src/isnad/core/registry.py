@@ -16,6 +16,7 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 from datetime import UTC, datetime
+from uuid import uuid4
 
 from sqlalchemy.orm import Session
 
@@ -29,12 +30,14 @@ from isnad.types import (
     AdalahGrade,
     DabtGrade,
     EvidenceAction,
+    EvidenceAxis,
     EvidenceType,
     FreshnessStatus,
     NarratorGrade,
     NarratorType,
     TransitionPolicy,
     VolatilityPolicy,
+    default_axis_for,
 )
 
 # ===========================================================================
@@ -131,6 +134,158 @@ class BetaState:
             return NarratorGrade.WEAK
         else:
             return NarratorGrade.REJECTED
+
+
+# ===========================================================================
+# Shared jarḥ–taʿdīl machinery for the threshold policy family
+# ===========================================================================
+
+# One-tier ordinal moves, shared by every threshold-family policy.
+_DOWNGRADE_MAP: dict[NarratorGrade, NarratorGrade] = {
+    NarratorGrade.RELIABLE: NarratorGrade.ACCEPTABLE,
+    NarratorGrade.ACCEPTABLE: NarratorGrade.WEAK,
+    NarratorGrade.WEAK: NarratorGrade.REJECTED,
+    NarratorGrade.UNGRADED: NarratorGrade.WEAK,
+}
+_UPGRADE_MAP: dict[NarratorGrade, NarratorGrade] = {
+    NarratorGrade.UNGRADED: NarratorGrade.WEAK,
+    NarratorGrade.WEAK: NarratorGrade.ACCEPTABLE,
+    NarratorGrade.ACCEPTABLE: NarratorGrade.RELIABLE,
+}
+
+
+def _is_integrity_jarh(entry: dict[str, object]) -> bool:
+    """True if an evidence entry is an integrity (ʿadālah) impugnment.
+
+    A jarḥ is integrity-class when its axis is INTEGRITY *or* UNSPECIFIED —
+    absent an explicit precision declaration, impugnment is treated as
+    permanent (al-jarḥ muqaddam ʿalā al-taʿdīl). Only an explicit PRECISION
+    tag makes a jarḥ forgettable. Non-jarḥ entries are never integrity strikes.
+    """
+    if EvidenceAction(str(entry.get("action", ""))) != EvidenceAction.JARH:
+        return False
+    axis = EvidenceAxis(str(entry.get("axis", EvidenceAxis.UNSPECIFIED.value)))
+    return axis != EvidenceAxis.PRECISION
+
+
+_GRADE_RANK: dict[NarratorGrade, int] = {
+    NarratorGrade.REJECTED: 0,
+    NarratorGrade.WEAK: 1,
+    NarratorGrade.ACCEPTABLE: 2,
+    NarratorGrade.UNGRADED: 2,  # ḥasan-ceiling — ranks with ACCEPTABLE, not below
+    NarratorGrade.RELIABLE: 3,
+}
+
+
+def _clamp_to_cap(grade: NarratorGrade, cap: NarratorGrade) -> NarratorGrade:
+    """Return ``grade`` unless it exceeds the integrity ``cap``, then the cap.
+
+    Uses a ceiling-aware rank so UNGRADED (ḥasan-ceiling) is not mistaken for
+    the ordinal floor. When a grade sits at or below the cap it is returned
+    unchanged; only grades *above* the permanent integrity ceiling are pulled
+    down to it.
+    """
+    return grade if _GRADE_RANK[grade] <= _GRADE_RANK[cap] else cap
+
+
+def _integrity_cap(integrity_jarh_count: int, downgrade_threshold: int) -> NarratorGrade:
+    """The best grade still reachable given accumulated integrity strikes.
+
+    Integrity strikes are *permanent*: each full threshold's worth of them
+    lowers the ceiling one ordinal tier, independent of any windowed precision
+    recovery below it. Enough of them force REJECTED. This is the axis that
+    does not forget — the classical protection of the corpus against a proven
+    liar, restored after issue #9's window made all jarḥ forgettable.
+    """
+    tiers_down = integrity_jarh_count // max(1, downgrade_threshold)
+    ladder = [
+        NarratorGrade.RELIABLE,
+        NarratorGrade.ACCEPTABLE,
+        NarratorGrade.WEAK,
+        NarratorGrade.REJECTED,
+    ]
+    return ladder[min(tiers_down, len(ladder) - 1)]
+
+
+def threshold_transition(
+    current_grade: NarratorGrade,
+    evidence_history: list[dict[str, object]],
+    new_evidence: dict[str, object],
+    *,
+    downgrade_threshold: int,
+    upgrade_sustained_count: int,
+    upgrade_min_corroborated: int,
+    window: int,
+) -> NarratorGrade:
+    """Shared jarḥ–taʿdīl transition for the whole threshold policy family.
+
+    Encodes the issue #9 fix and its conceptual follow-up so all three
+    threshold policies behave identically:
+
+    - **Version bump** → UNGRADED; **REJECTED** is sticky (human review restores
+      to WEAK). These orthogonal paths are untouched by the axis logic.
+    - **Integrity (ʿadālah) jarḥ** — INTEGRITY or UNSPECIFIED — accumulates over
+      the *entire* history and never ages out. It imposes a permanent ceiling
+      (``_integrity_cap``); an arriving integrity jarḥ ratchets down to it.
+    - **Precision (ḍabṭ) jarḥ** — explicitly PRECISION-tagged — is counted over
+      the sliding ``window`` and is edge-triggered, so it is recoverable.
+    - **Upgrade** fires on an arriving taʿdīl completing a windowed clean streak,
+      then is clamped to the permanent integrity cap: precision recovery can
+      never lift a grade past what integrity allows. The axes are never averaged.
+    """
+    evidence_type = EvidenceType(str(new_evidence.get("evidence_type", "")))
+    action = EvidenceAction(str(new_evidence.get("action", EvidenceAction.NEUTRAL.value)))
+    axis = EvidenceAxis(str(new_evidence.get("axis", EvidenceAxis.UNSPECIFIED.value)))
+
+    if evidence_type == EvidenceType.VERSION_BUMP:
+        return NarratorGrade.UNGRADED
+
+    if current_grade == NarratorGrade.REJECTED:
+        if evidence_type == EvidenceType.HUMAN_REVIEW and action == EvidenceAction.TADIL:
+            return NarratorGrade.WEAK
+        return NarratorGrade.REJECTED
+
+    all_evidence = [*evidence_history, new_evidence]
+
+    # Integrity strikes accumulate forever and cap everything below them.
+    integrity_jarh = sum(1 for e in all_evidence if _is_integrity_jarh(e))
+    integrity_cap = _integrity_cap(integrity_jarh, downgrade_threshold)
+
+    # An arriving integrity jarḥ ratchets down to the permanent cap.
+    if action == EvidenceAction.JARH and axis != EvidenceAxis.PRECISION:
+        return _clamp_to_cap(current_grade, integrity_cap)
+
+    # Precision counts over the sliding window only.
+    recent = all_evidence[-window:]
+    precision_adverse = sum(
+        1
+        for e in recent
+        if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+        and EvidenceAxis(str(e.get("axis", EvidenceAxis.UNSPECIFIED.value)))
+        == EvidenceAxis.PRECISION
+    )
+    favorable_count = sum(
+        1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
+    )
+    corroborated_favorable = sum(
+        1
+        for e in recent
+        if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
+        and EvidenceType(str(e.get("evidence_type", ""))) == EvidenceType.CORROBORATION_OUTCOME
+    )
+
+    if action == EvidenceAction.JARH and precision_adverse >= downgrade_threshold:
+        return _DOWNGRADE_MAP.get(current_grade, NarratorGrade.WEAK)
+
+    if (
+        action == EvidenceAction.TADIL
+        and favorable_count >= upgrade_sustained_count
+        and corroborated_favorable >= upgrade_min_corroborated
+    ):
+        upgraded = _UPGRADE_MAP.get(current_grade, current_grade)
+        return _clamp_to_cap(upgraded, integrity_cap)
+
+    return current_grade
 
 
 class BayesianTransitionPolicy:
@@ -266,56 +421,16 @@ class CalibratedThresholdPolicy:
         evidence_history: list[dict[str, object]],
         new_evidence: dict[str, object],
     ) -> NarratorGrade:
-        """Compute new narrator grade from evidence."""
-        evidence_type = EvidenceType(str(new_evidence.get("evidence_type", "")))
-        action = EvidenceAction(str(new_evidence.get("action", EvidenceAction.NEUTRAL.value)))
-
-        if evidence_type == EvidenceType.VERSION_BUMP:
-            return NarratorGrade.UNGRADED
-
-        if current_grade == NarratorGrade.REJECTED:
-            if evidence_type == EvidenceType.HUMAN_REVIEW and action == EvidenceAction.TADIL:
-                return NarratorGrade.WEAK
-            return NarratorGrade.REJECTED
-
-        # Sliding window over recent evidence, incl. the arriving entry (issue #9).
-        recent = ([*evidence_history, new_evidence])[-self.window :]
-        adverse_count = sum(
-            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+        """Compute new narrator grade from evidence (see ``threshold_transition``)."""
+        return threshold_transition(
+            current_grade,
+            evidence_history,
+            new_evidence,
+            downgrade_threshold=self.downgrade_threshold,
+            upgrade_sustained_count=self.upgrade_sustained_count,
+            upgrade_min_corroborated=self.upgrade_min_corroborated,
+            window=self.window,
         )
-        favorable_count = sum(
-            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-        )
-        corroborated_favorable = sum(
-            1
-            for e in recent
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-            and EvidenceType(str(e.get("evidence_type", ""))) == EvidenceType.CORROBORATION_OUTCOME
-        )
-
-        # Edge-triggered: only the arriving evidence kind drives a transition.
-        if action == EvidenceAction.JARH and adverse_count >= self.downgrade_threshold:
-            downgrade_map = {
-                NarratorGrade.RELIABLE: NarratorGrade.ACCEPTABLE,
-                NarratorGrade.ACCEPTABLE: NarratorGrade.WEAK,
-                NarratorGrade.WEAK: NarratorGrade.REJECTED,
-                NarratorGrade.UNGRADED: NarratorGrade.WEAK,
-            }
-            return downgrade_map.get(current_grade, NarratorGrade.WEAK)
-
-        if (
-            action == EvidenceAction.TADIL
-            and favorable_count >= self.upgrade_sustained_count
-            and corroborated_favorable >= self.upgrade_min_corroborated
-        ):
-            upgrade_map = {
-                NarratorGrade.UNGRADED: NarratorGrade.WEAK,
-                NarratorGrade.WEAK: NarratorGrade.ACCEPTABLE,
-                NarratorGrade.ACCEPTABLE: NarratorGrade.RELIABLE,
-            }
-            return upgrade_map.get(current_grade, current_grade)
-
-        return current_grade
 
 
 class ThresholdTransitionPolicy:
@@ -358,6 +473,25 @@ class ThresholdTransitionPolicy:
     A narrator that *keeps* producing adverse evidence still reaches REJECTED,
     so active containment is preserved.
 
+    **Axis split (issue #9 conceptual follow-up) — ʿadālah does not forget.**
+    A pure sliding window forgets *all* jarḥ, including integrity (ʿadālah)
+    strikes — which silently reintroduces the fabricator-rehabilitation path
+    the framework exists to prevent. The tradition permits recovery only for
+    *precision* (ḍabṭ), never for integrity. So evidence carries an
+    ``EvidenceAxis``:
+
+    - **Integrity jarḥ** (INTEGRITY, or UNSPECIFIED by conservative default)
+      accumulates over the narrator's *entire* history and never ages out. Each
+      threshold's worth lowers a permanent ceiling one tier; enough force
+      REJECTED. This axis is intentionally a ratchet.
+    - **Precision jarḥ** (explicitly PRECISION-tagged) is windowed and
+      recoverable, exactly as the base ratchet fix intends.
+
+    **Integrity dominates:** the permanent integrity ceiling caps the grade, and
+    the windowed precision recovery only operates *below* that cap. Precision
+    taʿdīl can never lift a grade held down by an integrity strike. The two axes
+    are never averaged.
+
     A production deployment would calibrate these thresholds and the window via
     the §8 gated-vs-ungated served-error experiment.  The constants here are
     reference defaults, not validated values.
@@ -388,80 +522,16 @@ class ThresholdTransitionPolicy:
         evidence_history: list[dict[str, object]],
         new_evidence: dict[str, object],
     ) -> NarratorGrade:
-        """Compute the new narrator grade given history and new evidence.
-
-        Args:
-            current_grade: The narrator's current ordinal grade.
-            evidence_history: Prior evidence entries (dicts with 'action', 'evidence_type').
-            new_evidence: The new evidence dict (must have 'action', 'evidence_type').
-
-        Returns:
-            The new NarratorGrade after applying the transition.
-        """
-        evidence_type = EvidenceType(str(new_evidence.get("evidence_type", "")))
-        action = EvidenceAction(str(new_evidence.get("action", EvidenceAction.NEUTRAL.value)))
-
-        # --- Version bump → reset to UNGRADED ---
-        if evidence_type == EvidenceType.VERSION_BUMP:
-            return NarratorGrade.UNGRADED
-
-        # --- REJECTED is sticky (containment) ---
-        if current_grade == NarratorGrade.REJECTED:
-            # Only human review can restore from REJECTED
-            if evidence_type == EvidenceType.HUMAN_REVIEW and action == EvidenceAction.TADIL:
-                return NarratorGrade.WEAK  # restore to weak, let evidence rebuild
-            return NarratorGrade.REJECTED
-
-        # --- Count adverse (jarḥ) and favorable (taʿdīl) events ---
-        # Over a sliding window of the most recent evidence only (issue #9
-        # finding #1): the new evidence plus the last (window - 1) history
-        # entries. Counting the full history made the adverse count monotonic
-        # and ratcheted every narrator to REJECTED with no recovery.
-        recent = ([*evidence_history, new_evidence])[-self.window :]
-        adverse_count = sum(
-            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+        """Compute the new narrator grade (see ``threshold_transition``)."""
+        return threshold_transition(
+            current_grade,
+            evidence_history,
+            new_evidence,
+            downgrade_threshold=self.DOWNGRADE_THRESHOLD,
+            upgrade_sustained_count=self.UPGRADE_SUSTAINED_COUNT,
+            upgrade_min_corroborated=self.UPGRADE_MIN_CORROBORATED,
+            window=self.window,
         )
-        favorable_count = sum(
-            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-        )
-        corroborated_favorable = sum(
-            1
-            for e in recent
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-            and EvidenceType(str(e.get("evidence_type", ""))) == EvidenceType.CORROBORATION_OUTCOME
-        )
-
-        # --- Downgrade: a fresh jarḥ pushes recent adverse over threshold ---
-        # Edge-triggered: only the arrival of adverse evidence can downgrade.
-        # Without this gate the branch was level-triggered — it fired on *every*
-        # call (including taʿdīl) while enough adverse evidence sat in the
-        # window, re-creating the ratchet even with a sliding window (issue #9).
-        if action == EvidenceAction.JARH and adverse_count >= self.DOWNGRADE_THRESHOLD:
-            downgrade_map = {
-                NarratorGrade.RELIABLE: NarratorGrade.ACCEPTABLE,
-                NarratorGrade.ACCEPTABLE: NarratorGrade.WEAK,
-                NarratorGrade.WEAK: NarratorGrade.REJECTED,
-                NarratorGrade.UNGRADED: NarratorGrade.WEAK,
-            }
-            return downgrade_map.get(current_grade, NarratorGrade.WEAK)
-
-        # --- Upgrade: a fresh taʿdīl completes a sustained clean streak ---
-        # Symmetric edge trigger: only the arrival of favorable evidence can
-        # upgrade, so a fresh jarḥ can never promote a narrator even if the
-        # window still holds enough older favorable events.
-        if (
-            action == EvidenceAction.TADIL
-            and favorable_count >= self.UPGRADE_SUSTAINED_COUNT
-            and corroborated_favorable >= self.UPGRADE_MIN_CORROBORATED
-        ):
-            upgrade_map = {
-                NarratorGrade.UNGRADED: NarratorGrade.WEAK,
-                NarratorGrade.WEAK: NarratorGrade.ACCEPTABLE,
-                NarratorGrade.ACCEPTABLE: NarratorGrade.RELIABLE,
-            }
-            return upgrade_map.get(current_grade, current_grade)
-
-        return current_grade
 
 
 # ===========================================================================
@@ -509,11 +579,21 @@ class Narrator:
         action: EvidenceAction,
         description: str = "",
         metadata: dict[str, object] | None = None,
+        axis: EvidenceAxis = EvidenceAxis.UNSPECIFIED,
     ) -> None:
-        """Log an evidence entry."""
+        """Log an evidence entry.
+
+        ``axis`` records whether an adverse (jarḥ) event bears on the narrator's
+        integrity (ʿadālah) or precision (ḍabṭ). It governs whether threshold
+        policies may let the evidence age out of their window; UNSPECIFIED is
+        treated conservatively as integrity-class (never forgotten). See
+        ``EvidenceAxis``.
+        """
         entry: dict[str, object] = {
+            "uid": str(uuid4()),  # stable identity for collision-proof persistence dedup
             "evidence_type": evidence_type.value,
             "action": action.value,
+            "axis": axis.value,
             "description": description,
             "metadata": metadata or {},
             "created_at": datetime.now(UTC).isoformat(),
@@ -843,6 +923,7 @@ class Registry:
         action: EvidenceAction,
         description: str = "",
         metadata: dict[str, object] | None = None,
+        axis: EvidenceAxis | None = None,
     ) -> NarratorGrade:
         """Log evidence against a narrator and compute the new grade.
 
@@ -851,10 +932,18 @@ class Registry:
         TransitionPolicy so implementations can swap the arithmetic
         without touching the registry structure.
 
+        ``axis`` marks an adverse event as bearing on integrity (ʿadālah) or
+        precision (ḍabṭ); threshold policies only let *precision* jarḥ age out
+        of their window. When omitted, the axis is derived from the evidence
+        type (``default_axis_for``): unambiguously-precision types resolve to
+        PRECISION, the rest to UNSPECIFIED (integrity-class). See
+        ``EvidenceAxis``.
+
         Returns the new narrator grade.
         """
+        resolved_axis = default_axis_for(evidence_type) if axis is None else axis
         narrator = self.register(narrator_id, domain_tag)
-        narrator.add_evidence(evidence_type, action, description, metadata)
+        narrator.add_evidence(evidence_type, action, description, metadata, resolved_axis)
 
         new_grade = self.transition_policy.evaluate_transition(
             current_grade=narrator.grade,
@@ -927,6 +1016,7 @@ class Registry:
             EvidenceType.HUMAN_REVIEW,
             EvidenceAction.JARH,
             f"Quarantined: {reason}" if reason else "Quarantined",
+            axis=EvidenceAxis.INTEGRITY,  # the archetypal ʿadālah strike — permanent
         )
         self._index_set_grade(narrator_id, domain_tag, NarratorGrade.REJECTED)
 
@@ -949,6 +1039,11 @@ class Registry:
         immediately the state we grade from — not something we rediscover
         after a TTL expiry.
 
+        This is a *precision* (ḍabṭ) signal — a factual disagreement, not an
+        integrity violation — so it is windowed and recoverable, not permanent.
+        A caller who has evidence that the contradiction reflects deliberate
+        manipulation should log an INTEGRITY-axis jarḥ (or quarantine) instead.
+
         Returns the new narrator grade.
         """
         return self.record_evidence(
@@ -957,6 +1052,7 @@ class Registry:
             EvidenceType.CORROBORATION_OUTCOME,
             EvidenceAction.JARH,
             description or "Claim contradicted by an independent chain",
+            axis=EvidenceAxis.PRECISION,
         )
 
     def renew_grade(
@@ -1053,14 +1149,24 @@ class RegistryDB:
             # expires).  Restore the persisted values so loading is lossless.
             narrator.graded_at = row.graded_at
             narrator.valid_until = row.valid_until
-            # Load evidence log
+            # Load evidence log. The axis (ʿadālah/ḍabṭ) rides in metadata_json
+            # until it earns a dedicated column, so integrity vs precision
+            # survives a round-trip. Missing axis → UNSPECIFIED (conservative:
+            # treated as integrity, non-forgettable).
             for ev in row.evidence_log:
+                meta = dict(ev.metadata_json or {})
+                axis = EvidenceAxis(str(meta.pop("__axis__", EvidenceAxis.UNSPECIFIED.value)))
+                uid = str(meta.pop("__uid__", ""))
                 narrator.add_evidence(
                     EvidenceType(ev.evidence_type),
                     EvidenceAction(ev.action),
                     ev.description,
-                    ev.metadata_json,
+                    meta,
+                    axis,
                 )
+                # Preserve the persisted uid so a re-flush does not duplicate it.
+                if uid:
+                    narrator.evidence_log[-1]["uid"] = uid
         self.registry._rebuild_alias_index()
 
     def flush(self) -> None:
@@ -1094,21 +1200,28 @@ class RegistryDB:
             row.graded_at = narrator.graded_at
             row.valid_until = narrator.valid_until
 
-            # Append new evidence entries
-            existing_ids = {str(e.id) for e in row.evidence_log}
+            # Append new evidence entries. Dedup on each entry's stable uid so
+            # distinct strikes are never merged (issue #9: integrity permanence
+            # depends on every strike surviving — a description+timestamp key
+            # could collapse same-instant same-description strikes).
+            existing_ids = {str((e.metadata_json or {}).get("__uid__")) for e in row.evidence_log}
             for entry in narrator.evidence_log:
-                # Simple dedup by description+timestamp
-                key = f"{entry.get('description', '')}{entry.get('created_at', '')}"
-                if key not in existing_ids:
-                    ev = NarratorEvidence(
-                        narrator_id=narrator.narrator_id,
-                        domain_tag=narrator.domain_tag,
-                        evidence_type=entry.get("evidence_type", ""),
-                        action=entry.get("action", ""),
-                        description=str(entry.get("description", "")),
-                        metadata_json=entry.get("metadata", {}),
-                    )
-                    self.session.add(ev)
-                    existing_ids.add(key)
+                uid = str(entry.get("uid", ""))
+                if uid and uid in existing_ids:
+                    continue
+                # Persist axis + uid inside metadata_json (no schema migration).
+                meta = dict(entry.get("metadata", {}) or {})
+                meta["__axis__"] = str(entry.get("axis", EvidenceAxis.UNSPECIFIED.value))
+                meta["__uid__"] = uid
+                ev = NarratorEvidence(
+                    narrator_id=narrator.narrator_id,
+                    domain_tag=narrator.domain_tag,
+                    evidence_type=entry.get("evidence_type", ""),
+                    action=entry.get("action", ""),
+                    description=str(entry.get("description", "")),
+                    metadata_json=meta,
+                )
+                self.session.add(ev)
+                existing_ids.add(uid)
 
         self.session.flush()
