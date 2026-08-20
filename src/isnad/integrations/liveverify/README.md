@@ -38,17 +38,14 @@ from isnad.integrations.liveverify import verify_claim, seal_to_narrator, regist
 from isnad.core.registry import Registry
 
 # Verify a claim whose text carries a verify: line
-result = verify_claim(
-    "MSc Computer Science, Edinburgh University\n"
-    "verify:degrees.ed.ac.uk/c"
-)
+result = verify_claim("MSc Computer Science, Edinburgh University\nverify:degrees.ed.ac.uk/c")
 
 # Map the result onto ISNAD's trust axes
 sealed = seal_to_narrator(result)
 print(sealed.narrator_id)  # "verify:degrees.ed.ac.uk"
-print(sealed.grade)        # RELIABLE (integrity anchored by crypto)
-print(sealed.adalah)       # HIGH
-print(sealed.dabt)         # UNASSESSED  ← precision NOT claimed
+print(sealed.grade)  # RELIABLE (integrity anchored by crypto)
+print(sealed.adalah)  # HIGH
+print(sealed.dabt)  # UNASSESSED  ← precision NOT claimed
 
 # Or register directly into a registry (bootstraps day-one integrity)
 reg = Registry()
