@@ -1,0 +1,46 @@
+name: Release
+
+# Triggered manually from the Actions tab, or on a push to main with a
+# version-bump commit message.  Bumps the version, tags, and publishes
+# to PyPI.
+#
+# Branch flow (see CONTRIBUTING.md):
+#   feature/*  ->  working  (CI runs)  ->  main  (this workflow releases)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "pyproject.toml"
+      - "CITATION.cff"
+      - "README.md"
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  release:
+    if: contains(github.event.head_commit.message, 'bump:') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Run tests before release
+        run: |
+          uv sync --all-extras
+          uv run pytest -q --tb=short
+
+      - name: Build
+        run: uv build
+
+      - name: Publish to PyPI
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: uv publish --no-build

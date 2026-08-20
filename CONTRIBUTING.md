@@ -1,91 +1,99 @@
-# Contributing to Isnād
+# Contributing to ISNAD
 
-The Isnād–Rijāl framework is designed to be a collaborative research codebase — modular, well-typed, and tested. Contributions are welcome.
+## Branch Flow
 
-## Getting started
+We use a two-stage integration model. **Every change goes to `working` first,
+then to `main`.** `main` is a release branch; `working` is the integration
+branch where things get tested together before they ship.
+
+```
+feature/*  ──PR──▶  working  ──PR──▶  main  ──▶  PyPI release
+                      │                  │
+                 CI runs here      release workflow runs
+                 (lint, format,    (bumps version, publishes)
+                  type, tests)
+```
+
+### Why two stages?
+
+- `working` is where multiple contributors' changes land and get tested
+  together. Merge conflicts are caught here, not on `main`.
+- `main` is always releasable. Only code that has passed CI on `working`
+  gets merged in.
+- Merging to `main` (with a `bump:` commit) triggers the PyPI release.
+
+### Step-by-step
+
+1. **Create a feature branch** from `working`:
+   ```bash
+   git checkout working
+   git pull
+   git checkout -b feature/my-change
+   ```
+
+2. **Make your change**, commit, push:
+   ```bash
+   git push -u origin feature/my-change
+   ```
+
+3. **Open a PR** from `feature/my-change` → **`working`**. CI runs
+   automatically (lint, format, type check, tests). Get it reviewed and merged.
+
+4. **When ready to release**, open a PR from `working` → `main`. Before
+   merging, bump the version:
+   ```bash
+   python scripts/bump_version.py patch   # or minor, or major
+   ```
+   Commit with a message starting `bump:`:
+   ```bash
+   git commit -am "bump: patch release"
+   ```
+
+5. **Merge to `main`**. The release workflow runs tests, builds, and
+   publishes to PyPI.
+
+## Versioning
+
+The version lives in **three places** — keep them in lockstep:
+
+| File | Field |
+|------|-------|
+| `pyproject.toml` | `[project] version` |
+| `src/isnad/__init__.py` | `__version__` |
+| `CITATION.cff` | `version` |
+
+**Never edit these by hand.** Use the bump script, which updates all three
+and fails loudly if they've drifted apart:
 
 ```bash
-git clone https://github.com/alizahidraja/isnad.git
-cd isnad
-make install
-make test
+python scripts/bump_version.py patch     # 2.0.9 -> 2.0.10
+python scripts/bump_version.py minor     # 2.0.9 -> 2.1.0
+python scripts/bump_version.py major     # 2.0.9 -> 3.0.0
+python scripts/bump_version.py patch --dry-run   # preview only
 ```
 
-## Development workflow
+## Quality Gates (run in CI on every PR)
 
-- **uv** manages dependencies: `uv sync --all-extras`
-- **ruff** formats/lints: `make lint` (or `make lint-fix` to auto-fix)
-- **mypy** type-checks in strict mode: `make typecheck`
-- **pytest** runs the suite: `make test`
-- **All three at once:** `make check`
-
-CI enforces all three on push/PR.
-
-## Code conventions
-
-- Full type hints everywhere. No `Any` without justification.
-- Docstrings on all public functions and classes.
-- The paper's epistemic commitments are non-negotiable — see each module's docstring.
-- Pluggable strategies must implement their Protocol and note in their docstring: *"This is one instantiation of a parameter the framework leaves open (see paper §4.2/§4.3). Swap freely."*
-- Reference stubs must be labeled as such in docstrings with a note on what production needs.
-
-## How to add a new strategy (the most common contribution)
-
-The framework has five pluggable strategy interfaces (see `isnad/types.py`). Here's the pattern:
-
-1. Create a class implementing the Protocol.
-2. Pass it to the relevant function instead of the default.
-
-```python
-from isnad.types import GradingStrategy, NarratorGrade, TransformType, ChainGrade
-
-class MyGradingStrategy:
-    """Custom chain-grading heuristic. Swap freely."""
-    def compute_chain_grade(
-        self,
-        link_narrator_grades: list[NarratorGrade],
-        link_transform_types: list[TransformType],
-        is_complete: bool,
-        *,
-        corroboration_support: bool = False,
-    ) -> ChainGrade:
-        # Your logic
-        ...
-
-# Use it
-from isnad import grade_chain
-result = grade_chain(grades, transforms, is_complete=True, strategy=MyGradingStrategy())
+```bash
+uv sync --all-extras
+uv run ruff check src/isnad tests        # lint
+uv run ruff format --check src/isnad tests  # formatting
+uv run mypy src/isnad                    # types
+uv run pytest -v --tb=short              # tests
 ```
 
-Same pattern applies to `TransitionPolicy`, `CorroborationPolicy`, `CorrelationDetector`, and `ContentCritic`.
+## Pull Request Checklist
 
-## Good first issues
+- [ ] Target branch is `working` (not `main`)
+- [ ] Tests pass locally: `uv run pytest -q`
+- [ ] Lint clean: `uv run ruff check src/isnad tests`
+- [ ] Format clean: `uv run ruff format --check src/isnad tests`
+- [ ] No `bump:` commit (version bumps happen only on the `working` → `main` PR)
+- [ ] If you changed behavior, update the docs and add a test
 
-1. **Alternative `CorrelationDetector` using embedding similarity** — compare model output embeddings to detect correlated blind spots, not just shared model family names. Replace or extend `SharedLineageDetector`.
+## Notes for Reviewers
 
-2. **Seed-grade bootstrapper** — implement a `bootstrap_registry()` that initializes narrator grades from published benchmark accuracies (MMLU, HumanEval, etc.) and source reputation data. See paper §7 ("Registry cold start").
-
-3. **Domain-specific `ContentCritic`** — add a physics critic that normalizes formulas (unit-canonicalization, symbol resolution) before comparing, or a medical critic with UMLS-based concept normalization.
-
-4. **Calibrated `TransitionPolicy`** — if you have pipeline data from a real deployment, contribute your calibrated thresholds (downgrade/upgrade counts) as an alternative `TransitionPolicy`.
-
-5. **Pipeline adapter** — write a connector that maps LangChain/CrewAI/Autogen traces into the `ChainLinkSpec` format, populating `trace_id`, `version`, and `transform_type` automatically.
-
-## Tests
-
-- Every epistemic commitment from the paper must have at least one explicit test.
-- New strategy implementations must include tests demonstrating protocol conformance.
-- The worked example test (`tests/test_worked_example.py`) is the integration anchor — keep it passing.
-- Run `make coverage` to check coverage.
-
-### Run CI tests before merging
-```
-uv run ruff check src/isnad tests && \
-uv run ruff format --check src/isnad tests && \
-uv run mypy src/isnad && \
-uv run pytest -v --tb=short
-```
-
-## Code of Conduct
-
-See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+- `main` is protected — the version must be bumped and committed with a
+  `bump:` message before the release workflow fires.
+- The `scripts/bump_version.py` script asserts all three version locations
+  agree, so drift is impossible if everyone uses it.
