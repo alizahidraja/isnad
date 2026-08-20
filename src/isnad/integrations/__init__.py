@@ -1,6 +1,7 @@
-"""ISNAD integrations for agent frameworks.
+"""ISNAD integrations for agent frameworks and external trust protocols.
 
-Currently provides LangChain/LangGraph integration.
+- `langchain` — capture isnād traces from LangChain/LangGraph pipelines
+- `liveverify` — consume Live Verify seals as high-trust narrator inputs
 """
 
 __all__: list[str] = []
