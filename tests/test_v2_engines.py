@@ -2,7 +2,7 @@
 
 from isnad.core.corroboration import CorroborationEngine
 from isnad.core.registry import BayesianTransitionPolicy, BetaState, CalibratedThresholdPolicy
-from isnad.types import ChainGrade, NarratorGrade
+from isnad.types import ChainGrade, EvidenceAction, EvidenceType, NarratorGrade
 
 
 class TestBetaState:
@@ -95,6 +95,57 @@ class TestCalibratedThresholdPolicy:
             {"evidence_type": "corroboration_outcome", "action": "tadil"},
         )
         assert result == NarratorGrade.ACCEPTABLE
+
+
+class TestConfigurableTransitionPolicyRatchet:
+    """The §8 experiment's ConfigurableTransitionPolicy shares the ratchet fix.
+
+    It lives under experiments/ and is loaded here directly from its file. This
+    pins that the issue #9 finding #1 fix (sliding window + edge trigger) was
+    applied there too: a downgraded narrator recovers, and a persistently
+    failing one is still contained.
+    """
+
+    @staticmethod
+    def _policy(**kw):
+        import importlib.util
+        import pathlib
+
+        path = (
+            pathlib.Path(__file__).resolve().parent.parent
+            / "experiments"
+            / "s8_gated_vs_ungated"
+            / "sweep_policy.py"
+        )
+        spec = importlib.util.spec_from_file_location("sweep_policy", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module.ConfigurableTransitionPolicy(**kw)
+
+    def test_downgraded_narrator_recovers(self):
+        from isnad.core.registry import Registry
+
+        policy = self._policy(downgrade_threshold=3)
+        reg = Registry(transition_policy=policy)
+        reg.register("n", "d", grade=NarratorGrade.RELIABLE)
+        for _ in range(3):
+            reg.record_evidence("n", "d", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH, "")
+        assert reg.get_grade("n", "d") == NarratorGrade.ACCEPTABLE
+        for _ in range(policy.window + policy.upgrade_sustained_count):
+            reg.record_evidence(
+                "n", "d", EvidenceType.CORROBORATION_OUTCOME, EvidenceAction.TADIL, ""
+            )
+        assert reg.get_grade("n", "d") == NarratorGrade.RELIABLE
+
+    def test_persistent_adverse_still_reaches_rejected(self):
+        from isnad.core.registry import Registry
+
+        policy = self._policy(downgrade_threshold=3)
+        reg = Registry(transition_policy=policy)
+        reg.register("bad", "d", grade=NarratorGrade.RELIABLE)
+        for _ in range(9):
+            reg.record_evidence("bad", "d", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH, "")
+        assert reg.get_grade("bad", "d") == NarratorGrade.REJECTED
 
 
 class TestCorroborationEngine:

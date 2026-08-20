@@ -237,6 +237,13 @@ class CalibratedThresholdPolicy:
     Rather than hardcoding (3 adverse, 5 positive), these thresholds are
     calibrated from historical performance data via the §8 experiment
     methodology.  The thresholds can be set per-domain and per-narrator-type.
+
+    Shares the sliding-window + edge-trigger ratchet fix of
+    ``ThresholdTransitionPolicy`` (issue #9 finding #1): counts are taken over
+    the last ``window`` evidence entries, and a transition fires only on the
+    kind of evidence that just arrived. The window defaults to
+    ``max(downgrade_threshold, upgrade_sustained_count)`` so both branches stay
+    reachable whatever the calibrated thresholds are.
     """
 
     def __init__(
@@ -244,10 +251,14 @@ class CalibratedThresholdPolicy:
         downgrade_threshold: int = 5,
         upgrade_sustained_count: int = 10,
         upgrade_min_corroborated: int = 5,
+        window: int | None = None,
     ):
         self.downgrade_threshold = downgrade_threshold
         self.upgrade_sustained_count = upgrade_sustained_count
         self.upgrade_min_corroborated = upgrade_min_corroborated
+        self.window = (
+            max(downgrade_threshold, upgrade_sustained_count) if window is None else window
+        )
 
     def evaluate_transition(
         self,
@@ -267,31 +278,23 @@ class CalibratedThresholdPolicy:
                 return NarratorGrade.WEAK
             return NarratorGrade.REJECTED
 
+        # Sliding window over recent evidence, incl. the arriving entry (issue #9).
+        recent = ([*evidence_history, new_evidence])[-self.window :]
         adverse_count = sum(
-            1
-            for e in evidence_history
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
         )
         favorable_count = sum(
-            1
-            for e in evidence_history
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
+            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
         )
         corroborated_favorable = sum(
             1
-            for e in evidence_history
+            for e in recent
             if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
             and EvidenceType(str(e.get("evidence_type", ""))) == EvidenceType.CORROBORATION_OUTCOME
         )
 
-        if action == EvidenceAction.JARH:
-            adverse_count += 1
-        elif action == EvidenceAction.TADIL:
-            favorable_count += 1
-            if evidence_type == EvidenceType.CORROBORATION_OUTCOME:
-                corroborated_favorable += 1
-
-        if adverse_count >= self.downgrade_threshold:
+        # Edge-triggered: only the arriving evidence kind drives a transition.
+        if action == EvidenceAction.JARH and adverse_count >= self.downgrade_threshold:
             downgrade_map = {
                 NarratorGrade.RELIABLE: NarratorGrade.ACCEPTABLE,
                 NarratorGrade.ACCEPTABLE: NarratorGrade.WEAK,
@@ -301,7 +304,8 @@ class CalibratedThresholdPolicy:
             return downgrade_map.get(current_grade, NarratorGrade.WEAK)
 
         if (
-            favorable_count >= self.upgrade_sustained_count
+            action == EvidenceAction.TADIL
+            and favorable_count >= self.upgrade_sustained_count
             and corroborated_favorable >= self.upgrade_min_corroborated
         ):
             upgrade_map = {
@@ -315,20 +319,47 @@ class CalibratedThresholdPolicy:
 
 
 class ThresholdTransitionPolicy:
-    """Default jarḥ–taʿdīl transition policy.
+    """Threshold jarḥ–taʿdīl transition policy over a sliding evidence window.
 
     This is one instantiation of a parameter the framework leaves open
-    (see paper §4.2).  Swap freely.
+    (see paper §4.2).  Swap freely.  The framework default is
+    ``BayesianTransitionPolicy``; this policy is retained as a simple,
+    interpretable alternative.
 
     Rules:
-    - Downgrade fires when accumulated adverse evidence crosses a threshold.
-    - Upgrade requires sustained corroborated accuracy (N positive evals).
+    - Downgrade fires when adverse evidence *within the recent window* crosses
+      a threshold.
+    - Upgrade requires sustained corroborated accuracy *within the recent
+      window* (N positive evals).
     - Version bump resets to UNGRADED.
     - ʿAdālah COMPROMISED → REJECTED (active containment).
     - REJECTED is sticky — requires explicit human review to restore.
 
-    A production deployment would calibrate these thresholds via the
-    §8 gated-vs-ungated served-error experiment.  The constants here are
+    **Ratchet fix (issue #9 finding #1) — sliding window + edge trigger.**
+    The original policy counted adverse (jarḥ) evidence over the narrator's
+    *entire* history and checked the downgrade branch on every call. Two
+    independent defects combined into a ratchet: (a) the adverse count never
+    decayed, so it was monotonic; and (b) the downgrade was *level*-triggered,
+    firing on every subsequent call — including pure taʿdīl — while the count
+    stayed above threshold. Together they marched every narrator
+    RELIABLE → ACCEPTABLE → WEAK → REJECTED with no path to recovery, and left
+    the upgrade branch unreachable.
+
+    Both defects are fixed here:
+
+    1. **Sliding window.** Adverse and favorable counts are taken over only the
+       last ``window`` evidence entries, so stale jarḥ ages out and sustained
+       good behaviour can recover a narrator.
+    2. **Edge trigger.** A downgrade fires only when the *arriving* evidence is
+       a jarḥ, and an upgrade only when the arriving evidence is a taʿdīl. A
+       transition is driven by the evidence that just arrived, not by counts
+       left standing in the window from earlier calls.
+
+    A narrator that *keeps* producing adverse evidence still reaches REJECTED,
+    so active containment is preserved.
+
+    A production deployment would calibrate these thresholds and the window via
+    the §8 gated-vs-ungated served-error experiment.  The constants here are
     reference defaults, not validated values.
     """
 
@@ -336,6 +367,20 @@ class ThresholdTransitionPolicy:
     DOWNGRADE_THRESHOLD: int = 3  # adverse events to trigger downgrade
     UPGRADE_SUSTAINED_COUNT: int = 5  # positive events for upgrade eligibility
     UPGRADE_MIN_CORROBORATED: int = 3  # of those, must be corroboration outcomes
+
+    # Default window: the smallest that still admits the reference upgrade rule
+    # (needs UPGRADE_SUSTAINED_COUNT recent favorable events). Chosen so the
+    # policy trades no magic number for another — see class docstring.
+    DEFAULT_WINDOW: int = 5
+
+    def __init__(self, window: int | None = None):
+        """Args:
+        window: How many of the most recent evidence entries count toward
+            the transition. Older evidence ages out. Defaults to
+            ``DEFAULT_WINDOW`` (5). Must be >= ``UPGRADE_SUSTAINED_COUNT`` for
+            the upgrade branch to remain reachable.
+        """
+        self.window = self.DEFAULT_WINDOW if window is None else window
 
     def evaluate_transition(
         self,
@@ -368,32 +413,30 @@ class ThresholdTransitionPolicy:
             return NarratorGrade.REJECTED
 
         # --- Count adverse (jarḥ) and favorable (taʿdīl) events ---
+        # Over a sliding window of the most recent evidence only (issue #9
+        # finding #1): the new evidence plus the last (window - 1) history
+        # entries. Counting the full history made the adverse count monotonic
+        # and ratcheted every narrator to REJECTED with no recovery.
+        recent = ([*evidence_history, new_evidence])[-self.window :]
         adverse_count = sum(
-            1
-            for e in evidence_history
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
         )
         favorable_count = sum(
-            1
-            for e in evidence_history
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
+            1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
         )
         corroborated_favorable = sum(
             1
-            for e in evidence_history
+            for e in recent
             if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
             and EvidenceType(str(e.get("evidence_type", ""))) == EvidenceType.CORROBORATION_OUTCOME
         )
 
-        if action == EvidenceAction.JARH:
-            adverse_count += 1
-        elif action == EvidenceAction.TADIL:
-            favorable_count += 1
-            if evidence_type == EvidenceType.CORROBORATION_OUTCOME:
-                corroborated_favorable += 1
-
-        # --- Downgrade: adverse evidence crosses threshold ---
-        if adverse_count >= self.DOWNGRADE_THRESHOLD:
+        # --- Downgrade: a fresh jarḥ pushes recent adverse over threshold ---
+        # Edge-triggered: only the arrival of adverse evidence can downgrade.
+        # Without this gate the branch was level-triggered — it fired on *every*
+        # call (including taʿdīl) while enough adverse evidence sat in the
+        # window, re-creating the ratchet even with a sliding window (issue #9).
+        if action == EvidenceAction.JARH and adverse_count >= self.DOWNGRADE_THRESHOLD:
             downgrade_map = {
                 NarratorGrade.RELIABLE: NarratorGrade.ACCEPTABLE,
                 NarratorGrade.ACCEPTABLE: NarratorGrade.WEAK,
@@ -402,9 +445,13 @@ class ThresholdTransitionPolicy:
             }
             return downgrade_map.get(current_grade, NarratorGrade.WEAK)
 
-        # --- Upgrade: sustained corroborated accuracy ---
+        # --- Upgrade: a fresh taʿdīl completes a sustained clean streak ---
+        # Symmetric edge trigger: only the arrival of favorable evidence can
+        # upgrade, so a fresh jarḥ can never promote a narrator even if the
+        # window still holds enough older favorable events.
         if (
-            favorable_count >= self.UPGRADE_SUSTAINED_COUNT
+            action == EvidenceAction.TADIL
+            and favorable_count >= self.UPGRADE_SUSTAINED_COUNT
             and corroborated_favorable >= self.UPGRADE_MIN_CORROBORATED
         ):
             upgrade_map = {
