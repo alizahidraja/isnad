@@ -4,6 +4,7 @@ These lock in the DEMONSTRATION's behavior — that the six scenarios produce
 exactly the caught/missed split the README claims, and that the ground-truth
 firewall holds (grading never imports ground truth).
 """
+
 from __future__ import annotations
 
 import subprocess
@@ -19,7 +20,9 @@ RUN_PY = EXP_DIR / "run.py"
 def _run() -> str:
     result = subprocess.run(
         [sys.executable, str(RUN_PY)],
-        capture_output=True, text=True, timeout=30,
+        capture_output=True,
+        text=True,
+        timeout=30,
     )
     assert result.returncode == 0, f"run.py failed:\n{result.stderr}"
     return result.stdout

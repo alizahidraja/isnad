@@ -87,34 +87,6 @@ Also available: `IsnadTracer` (older flat-list reporter with built-in report()) 
 
 ---
 
-## Citation
-
-If you use ISNAD in your research, please cite:
-
-```bibtex
-@article{raja2026grading,
-  author  = {Ali Zahid Raja},
-  title   = {Grading the Narrators: An Isnād–Rijāl Framework for
-             Claim-Level Provenance in Multi-Agent Knowledge Systems},
-  year    = 2026,
-  doi     = {10.48550/arXiv.2607.24117},
-  eprint  = {2607.24117},
-  archivePrefix = {arXiv},
-}
-
-@software{raja2026isnad,
-  author  = {Ali Zahid Raja},
-  title   = {Isnād–Rijāl Framework: Reference Implementation},
-  year    = 2026,
-  doi     = {10.5281/zenodo.21216873},
-  orcid   = {0009-0003-7875-4590},
-}
-```
-
-GitHub users: click **"Cite this repository"** on the repo sidebar (powered by [`CITATION.cff`](CITATION.cff)).
-
----
-
 ## What's Validated vs. What's Not
 
 | Component                     | Status              | Notes                                                                 |
@@ -210,7 +182,7 @@ critic = LLMCritic(api_key="sk-...")                  # LLM-backed, higher quali
 
 ## Trace Capture & Chain Viewer
 
-ISNAD now ships a **capture → schema → viewer** pipeline that makes transmission
+ISNAD ships a **capture → schema → viewer** pipeline that makes transmission
 chains visible. The contract is [isnad_trace v0.1](docs/trace-schema.md) — a
 versioned JSON schema aligned with W3C PROV-DM and PROV-AGENT (arXiv 2508.02866).
 
@@ -291,6 +263,71 @@ The viewer renders fixture 3 by default — it is the most important case.
 
 ---
 
+## Live Verify Integration
+
+ISNAD composes with [**Live Verify**](https://github.com/live-verify/live-verify) — Paul
+Hammant's cryptographic document-attestation protocol. Live Verify seals a
+document's **visible text** to an issuer's **domain** via a SHA-256 hash plus a
+`verify:` lookup; anyone can confirm the document is unaltered and issuer-attested.
+
+The two frameworks answer the same question from opposite ends of the pipeline.
+A Live Verify seal is an **ideal high-trust narrator input** to an ISNAD chain:
+its integrity axis (ʿadālah) is anchored by cryptography rather than by
+accumulated track record — bootstrapping a source narrator to a high grade
+**on day one**, solving the cold-start problem.
+
+```python
+from isnad.integrations.liveverify import verify_claim, register_sealed_source
+from isnad.core.registry import Registry
+
+result = verify_claim(
+    "MSc Computer Science, Edinburgh University\n"
+    "verify:degrees.ed.ac.uk/c"
+)
+
+reg = Registry()
+sealed = register_sealed_source(reg, result, domain="education")
+print(sealed.grade)   # RELIABLE — integrity anchored by crypto
+print(sealed.adalah)  # HIGH
+print(sealed.dabt)    # UNASSESSED — precision NOT claimed
+```
+
+**Honest limit:** Live Verify proves **authenticity**, not **truth**. The seal
+anchors ʿadālah (integrity) and origin strength, but leaves ḍabṭ (precision)
+unassessed and leaves content to the matn critic. A verified document can still
+be a genuine, domain-attested lie.
+
+See [`src/isnad/integrations/liveverify/`](src/isnad/integrations/liveverify/) —
+including a byte-compatible normalization port held against Live Verify's own
+cross-platform fixtures.
+
+---
+
+## Controlled A/B Demonstration
+
+**Question:** does the trust layer change the output trajectory on identical
+queries — visibly, per-query, not just in aggregate?
+
+[`experiments/verified_vs_unverified/`](experiments/verified_vs_unverified/) runs six
+hand-authored queries through an identical pipeline with the trust layer **off**
+then **on**, and reports what each produced:
+
+| Outcome | Scenarios |
+|---------|-----------|
+| **Caught** | weak-narrator corruption, ʿilal contradiction |
+| **Missed (honestly)** | stale-grade drift (#4), fabricated-clean chain (#11) |
+| **Recovered** | DAIF chain upgraded by corroboration |
+
+**2 caught, 2 missed, 0 false positives** — deterministic, no LLM or API keys.
+The miss cases are the point: they map to the two open issues the framework
+hasn't yet solved, shown as prominently as the successes.
+
+```bash
+python experiments/verified_vs_unverified/run.py
+```
+
+---
+
 ## Experimental Validation — Semantic Corroboration (§8)
 
 **Status: Empirically validated on real data.**
@@ -302,13 +339,6 @@ The framework's most distinctive contribution — independent-chain corroboratio
 |---|---|---|---|---|
 | **Wikipedia** (v2) | Regular + Simple English (30 topics) | 662 | 100% | Easy — natural paraphrasing |
 | **Physics Textbooks** (v3) | OpenStax Vol.1 + Crowell (2 books) | 104 | 100% | Hard — formal prose, fewer overlaps |
-
-### Results
-
-| Corpus | Sources | Matches | Fire Rate | Difficulty |
-|---|---|---|---|---|
-| **Wikipedia** (v2) | Regular + Simple English (30 topics) | 662 | 100% | Easy |
-| **Physics Textbooks** (v3) | OpenStax Vol.1 + Crowell (2 books) | 104 | 100% | Hard |
 
 **Combined: 603 + 104 = 707 claim pairs tested across both corpora. 100% corroboration fire rate. 8/8 negative controls. Zero false positives. Source URLs for every claim.**
 
@@ -351,8 +381,10 @@ Full methodology, results, negative controls, and paper gap analysis in:
 - 📚 **Corroboration v3 (Physics Textbooks):** [`experiments/corroboration_v3/`](experiments/corroboration_v3/) — 104/104 on s8 corpus
 - 🗺️ **Architecture Diagram:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) — 3 tabs: System, Data Flow, Validation Matrix
 - 🔌 **LangChain integration:** [`src/isnad/integrations/langchain/`](src/isnad/integrations/langchain/)
+- 🔏 **Live Verify integration:** [`src/isnad/integrations/liveverify/`](src/isnad/integrations/liveverify/) — consume a `verify:` seal as a high-trust narrator
 - 🔗 **Trace schema spec:** [`docs/trace-schema.md`](docs/trace-schema.md) — v0.1 with PROV/PROV-AGENT mapping
 - 👁️ **Chain viewer:** [`viewer/index.html`](viewer/index.html) — open in browser, renders all 3 fixtures
+- 🧪 **A/B demonstration:** [`experiments/verified_vs_unverified/`](experiments/verified_vs_unverified/) — trust layer off vs on, per-query
 - 🧪 **Trace capture demo:** [`examples/isnad_langchain_demo.py`](examples/isnad_langchain_demo.py) — runnable without API keys
 - 📊 **Critic evaluation:** [`src/isnad/critics/CRITIC_EVAL.md`](src/isnad/critics/CRITIC_EVAL.md)
 
