@@ -77,6 +77,7 @@ reg = seed_registry({
 
 | Limitation | Status |
 |---|---|
+| **Boundary vetting** | Not built in — source legitimacy is the operator's responsibility. See [README scope section](../../../../README.md#scope-and-limitations). |
 | **Content critic** | Default stub is non-functional on real text. Supply your own. |
 | **Corroboration** | Validated on Wikipedia + physics corpora (707 pairs, 100% fire rate) |
 | **Cold-start** | Coverage ≈ 0% without seed grades. Seed-grade your narrators. |

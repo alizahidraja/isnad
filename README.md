@@ -30,6 +30,47 @@ serve, review, or quarantine.
 
 ---
 
+## Scope and limitations
+
+ISNAD grades **post-entry provenance** — who handled a claim after it entered
+your pipeline and how much you trust them — not whether the upstream source or
+the final answer is objectively true.
+
+**What ISNAD covers:**
+
+- Ordered transmission chains (isnād) and narrator grades (rijāl)
+- Weakest-link chain grading and the serve / review / quarantine decision matrix
+- Matn (content) criticism **against your existing corpus** — contradiction detection
+- Corroboration when **independent** chains agree (with lineage / madār discounting)
+
+**What ISNAD does not cover:**
+
+- **Source legitimacy at the boundary** — ISNAD does not verify that a URL,
+  publisher, or retriever `metadata["source"]` is authentic. Registry grades are
+  **operator-assigned assertions**, not auto-verified facts.
+- **Novel claim truth** — matn catches contradictions with known corpus; claims
+  that are new and unverifiable are not auto-fact-checked against ground truth.
+- **Faithful transmission of bad input** — a `RELIABLE` fake publisher plus a
+  clean pipeline can yield a high chain grade. ISNAD reports faithful handling,
+  not source truth.
+
+**Boundary vetting is the operator's responsibility.** Before a source enters
+the pipeline:
+
+- Vet sources before registering them as `RELIABLE` (allowlists, domain
+  verification, human onboarding)
+- Register unknown sources as `UNGRADED` with `adalah=SUSPECT` until vetted
+- Do not treat LangChain retriever source tags as verified identity — map URLs
+  to pre-vetted narrator IDs
+- Use matn, corroboration, and human review as **downstream** gates; they narrow
+  risk but do not replace boundary vetting
+
+See Component-level validation status and endpoint-identity behavior
+in [What's Validated vs. What's Not](#whats-validated-vs-whats-not) and
+[Endpoint identity](#endpoint-identity-model-version-drift) below.
+
+---
+
 ## 60-Second Quickstart
 
 ```bash
@@ -48,7 +89,7 @@ chain = Chain([
     ChainLinkSpec("ingest-model-v3", 2),
 ])
 
-# Seed-grade known narrators (required for coverage — see §8 experiment)
+# Seed-grade known narrators (operator-assigned — see Scope and limitations)
 reg = Registry()
 reg.register("openstax-textbook", "physics", grade=NarratorGrade.RELIABLE)
 reg.register("pdf-scraper-v2", "physics", grade=NarratorGrade.RELIABLE)
@@ -76,7 +117,7 @@ pip install isnad[langchain]
 ```python
 from isnad.integrations.langchain import IsnadCallbackHandler, seed_registry
 
-reg = seed_registry({"source:docs": "reliable", "model:gpt-4o": "acceptable"})
+reg = seed_registry({"source:docs": "reliable", "model:gpt-4o": "acceptable"})  # operator-assigned grades
 handler = IsnadCallbackHandler(registry=reg, domain="physics")
 chain.invoke("What is F=ma?", config={"callbacks": [handler]})
 trace = handler.to_trace()  # isnad_trace v0.1 JSON
