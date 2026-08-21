@@ -311,25 +311,32 @@ class TestReviewQueue:
         assert claim2["content_verdict"] == "contradiction"
         assert claim2["action"] == "review"
 
-        rq = client.get("/v1/review-queue")
+        rq = client.get("/v1/review-queue", headers={"X-API-Key": "isnad-admin"})
         assert rq.status_code == 200
         items = rq.json()["items"]
         matching = [i for i in items if i["claim_id"] == claim2["claim_id"]]
         assert len(matching) == 1
         assert claim1["claim_id"] in matching[0]["conflicting_claim_ids"]
 
+    def test_review_queue_requires_auth(self):
+        r = client.get("/v1/review-queue")
+        assert r.status_code == 401
+
     def test_review_queue_item_detail(self):
         self._submit("the object moves at a speed of 10 meters per second")
         self._submit("the object moves at a speed of 100 meters per second")
 
-        rq = client.get("/v1/review-queue")
+        rq = client.get("/v1/review-queue", headers={"X-API-Key": "isnad-admin"})
         item_id = rq.json()["items"][0]["id"]
-        r = client.get(f"/v1/review-queue/{item_id}")
+        r = client.get(f"/v1/review-queue/{item_id}", headers={"X-API-Key": "isnad-admin"})
         assert r.status_code == 200
         assert r.json()["id"] == item_id
 
     def test_review_queue_item_404(self):
-        r = client.get("/v1/review-queue/00000000-0000-0000-0000-000000000000")
+        r = client.get(
+            "/v1/review-queue/00000000-0000-0000-0000-000000000000",
+            headers={"X-API-Key": "isnad-admin"},
+        )
         assert r.status_code == 404
 
 
