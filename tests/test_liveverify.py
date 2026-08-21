@@ -262,20 +262,48 @@ def _verified_result(domain: str = "degrees.ed.ac.uk") -> VerificationResult:
     )
 
 
+def _endorsed_result(domain: str = "degrees.ed.ac.uk") -> VerificationResult:
+    """A verified seal WITH an independent authorizedBy endorser."""
+    return VerificationResult(
+        verified=True,
+        status="VERIFIED",
+        domain=domain,
+        payload={"status": "verified"},
+        authorized_by="gov.uk/v1",
+        authority_basis="Accredited by the UK Higher Education regulator",
+        self_verified=False,
+    )
+
+
 class TestSealToNarrator:
-    def test_verified_seal_bootstraps_reliable_with_high_integrity(self):
-        sealed = seal_to_narrator(_verified_result())
+    def test_endorsed_seal_bootstraps_reliable_with_high_integrity(self):
+        """An INDEPENDENTLY-ENDORSED seal anchors integrity (tazkiyah satisfied)."""
+        sealed = seal_to_narrator(_endorsed_result())
         assert sealed.grade == NarratorGrade.RELIABLE
         assert sealed.adalah == AdalahGrade.HIGH
-        assert sealed.origin_strength == "verified"
+        assert sealed.origin_strength == "verified-attested"
+        assert sealed.self_verified is False
+
+    def test_self_verified_seal_does_not_seed_integrity(self):
+        """Self-verification proves tamper-evidence + origin, NOT integrity.
+
+        The domain confirming the claim is the domain making it.  A
+        self-verified seal must render UNASSESSED/UNGRADED — integrity is not
+        seeded (classical tazkiyah requires an independent critic).
+        """
+        sealed = seal_to_narrator(_verified_result())
+        assert sealed.self_verified is True
+        assert sealed.adalah == AdalahGrade.UNASSESSED
+        assert sealed.grade == NarratorGrade.UNGRADED
+        assert sealed.origin_strength == "self-attested"
 
     def test_verified_seal_does_not_claim_precision(self):
-        """The seal anchors integrity, NOT precision. This is the honesty line."""
-        sealed = seal_to_narrator(_verified_result())
+        """Even an endorsed seal anchors integrity, NOT precision."""
+        sealed = seal_to_narrator(_endorsed_result())
         assert sealed.dabt == DabtGrade.UNASSESSED
 
     def test_narrator_id_is_namespaced(self):
-        sealed = seal_to_narrator(_verified_result("degrees.ed.ac.uk"))
+        sealed = seal_to_narrator(_endorsed_result("degrees.ed.ac.uk"))
         assert sealed.narrator_id == "verify:degrees.ed.ac.uk"
 
     def test_revoked_is_compromised(self):
@@ -301,15 +329,24 @@ class TestSealToNarrator:
 class TestRegisterSealedSource:
     def test_registers_and_lookupable(self):
         reg = Registry()
-        sealed = register_sealed_source(reg, _verified_result(), domain="physics")
+        sealed = register_sealed_source(reg, _endorsed_result(), domain="physics")
         narrator = reg.get(sealed.narrator_id, "physics")
         assert narrator is not None
         assert narrator.grade == NarratorGrade.RELIABLE
         assert narrator.adalah_grade == AdalahGrade.HIGH
         assert narrator.dabt_grade == DabtGrade.UNASSESSED
 
-    def test_upstream_source_recorded_for_correlation_detection(self):
+    def test_self_verified_registers_ungraded(self):
+        """A self-verified seal registers UNGRADED/UNASSESSED — no integrity seed."""
         reg = Registry()
         sealed = register_sealed_source(reg, _verified_result(), domain="physics")
+        narrator = reg.get(sealed.narrator_id, "physics")
+        assert narrator is not None
+        assert narrator.grade == NarratorGrade.UNGRADED
+        assert narrator.adalah_grade == AdalahGrade.UNASSESSED
+
+    def test_upstream_source_recorded_for_correlation_detection(self):
+        reg = Registry()
+        sealed = register_sealed_source(reg, _endorsed_result(), domain="physics")
         narrator = reg.get(sealed.narrator_id, "physics")
         assert narrator.upstream_source == "degrees.ed.ac.uk"
