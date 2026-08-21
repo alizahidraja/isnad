@@ -61,10 +61,15 @@ class BetaState:
         return math.sqrt(self.variance)
 
     def confidence_interval(self, width: float = 0.95) -> tuple[float, float]:
-        """Approximate 95% confidence interval using normal approximation."""
+        """Approximate confidence interval via the normal approximation.
+
+        ``width`` is the two-tailed confidence mass; common values map to
+        z-scores (0.90→1.645, 0.95→1.96, 0.99→2.576), unknown widths fall
+        back to the 95% z-score.
+        """
         m = self.mean
         s = self.std
-        z = 1.96  # 95%
+        z = {0.90: 1.645, 0.95: 1.96, 0.99: 2.576}.get(width, 1.96)
         return (max(0.0, m - z * s), min(1.0, m + z * s))
 
     def update(self, positive: bool) -> None:
@@ -165,6 +170,21 @@ def _integrity_cap(integrity_jarh_count: int, integrity_strikes_per_tier: int) -
     return ladder[min(tiers_down, len(ladder) - 1)]
 
 
+def _epoch_evidence(evidence_history: list[dict[str, object]]) -> list[dict[str, object]]:
+    """Return evidence after the last VERSION_BUMP (an epoch boundary).
+
+    A version bump is a new narrator (paper §4.2): reputation does not carry
+    forward.  Evidence logged before the latest VERSION_BUMP belongs to the
+    previous version and must not count toward the new grade — otherwise a
+    bump merely resets the *displayed* grade while old evidence silently
+    re-inflates it on the next event.
+    """
+    for i in range(len(evidence_history) - 1, -1, -1):
+        if str(evidence_history[i].get("evidence_type", "")) == EvidenceType.VERSION_BUMP.value:
+            return evidence_history[i + 1 :]
+    return evidence_history
+
+
 def threshold_transition(
     current_grade: NarratorGrade,
     evidence_history: list[dict[str, object]],
@@ -204,7 +224,7 @@ def threshold_transition(
             return NarratorGrade.WEAK
         return NarratorGrade.REJECTED
 
-    all_evidence = [*evidence_history, new_evidence]
+    all_evidence = [*_epoch_evidence(evidence_history), new_evidence]
 
     # Integrity strikes accumulate forever and cap everything below them.
     # `integrity_strikes_per_tier` defaults to the downgrade threshold when
@@ -338,16 +358,15 @@ class BayesianTransitionPolicy:
                 return NarratorGrade.WEAK
             return NarratorGrade.REJECTED
 
-        # Count evidence from history + new evidence
+        # Count evidence from history + new evidence.  A VERSION_BUMP is an
+        # epoch boundary: evidence before the latest bump belongs to the prior
+        # version and must not count.
+        history = _epoch_evidence(evidence_history)
         positive = sum(
-            1
-            for e in evidence_history
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
+            1 for e in history if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
         )
         adverse = sum(
-            1
-            for e in evidence_history
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+            1 for e in history if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
         )
 
         if action == EvidenceAction.TADIL:

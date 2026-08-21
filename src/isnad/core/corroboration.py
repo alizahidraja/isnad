@@ -164,7 +164,6 @@ class CappedCorroborationPolicy:
         ChainGrade.MAWDU: 0.90,
     }
 
-    MAX_UPGRADE_TIERS: int = 1
     MIN_GATE_GRADE: ChainGrade = ChainGrade.HASAN
     INDEPENDENCE_THRESHOLD: float = 0.8
     MIN_EFFECTIVE_WEIGHT: float = 2.0  # need ≥2 HASAN-equivalent chains of evidence
@@ -276,29 +275,6 @@ def evaluate_corroboration(
         corroborating_chains=corroborating_chain_grades,
         independence_scores=scores,
     )
-
-
-def find_corroborating_claims(
-    normalized_claim: str,
-    claim_id: str,
-    all_claims: list[dict[str, object]],
-) -> list[dict[str, object]]:
-    """Find claims with the same normalized text but different claim_ids.
-
-    Args:
-        normalized_claim: The normalized claim text to match.
-        claim_id: The claim_id to exclude (the claim under evaluation).
-        all_claims: List of claim dicts with keys: claim_id, normalized_text,
-            narrator_ids, chain_grade.
-
-    Returns:
-        List of matching claim dicts that are not the same claim.
-    """
-    return [
-        c
-        for c in all_claims
-        if c.get("normalized_text") == normalized_claim and c.get("claim_id") != claim_id
-    ]
 
 
 # ===========================================================================

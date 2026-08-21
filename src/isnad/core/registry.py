@@ -42,6 +42,7 @@ from isnad.types import (
     FreshnessStatus,
     NarratorGrade,
     NarratorType,
+    Role,
     TransitionPolicy,
     VolatilityPolicy,
     default_axis_for,
@@ -144,7 +145,13 @@ class EvidenceProvenanceSummary:
 
 
 class Narrator:
-    """A narrator with its domain-conditioned grade and evidence log."""
+    """A narrator with its domain-conditioned grade and evidence log.
+
+    ``role`` is ``None`` for the default/integrity record (one per
+    ``(narrator, domain)``) and a ``Role`` for role-scoped *precision* records
+    (one per ``(narrator, role, domain)``).  Integrity (ʿadālah) is only ever
+    stored on the default record and is shared across roles.
+    """
 
     def __init__(
         self,
@@ -161,6 +168,7 @@ class Narrator:
         is_active: bool = True,
         graded_at: datetime | None = None,
         valid_until: datetime | None = None,
+        role: Role | None = None,
     ):
         self.narrator_id = narrator_id
         self.domain_tag = domain_tag
@@ -175,6 +183,7 @@ class Narrator:
         self.is_active = is_active
         self.graded_at = graded_at
         self.valid_until = valid_until
+        self.role = role
         self.evidence_log: list[dict[str, object]] = []
 
     def add_evidence(
@@ -228,6 +237,7 @@ class Registry:
         volatility_policy: VolatilityPolicy | None = None,
     ):
         self._narrators: dict[tuple[str, str], Narrator] = {}
+        self._role_records: dict[tuple[str, str, str], Narrator] = {}
         self._alias_graded: dict[tuple[str, str], set[str]] = {}
         self.transition_policy: TransitionPolicy = transition_policy or BayesianTransitionPolicy()
         self.volatility_policy: VolatilityPolicy = volatility_policy or FixedVolatilityPolicy()
@@ -240,28 +250,43 @@ class Registry:
     def _alias_for(narrator_id: str) -> str:
         return parse_narrator_id(narrator_id)[0]
 
-    def _index_set_grade(
-        self,
-        narrator_id: str,
-        domain_tag: str,
-        grade: NarratorGrade,
-    ) -> None:
+    def _narrator_is_graded(self, narrator_id: str, domain_tag: str) -> bool:
+        """True if ANY record (default or any role) for this (narrator, domain) is graded.
+
+        A narrator counts as "graded" for version-drift purposes if any of its
+        records holds a non-UNGRADED grade — otherwise a role record's UNGRADED
+        would wrongly mask a graded default record (or vice versa).
+        """
+        default = self._narrators.get((narrator_id, domain_tag))
+        if default is not None and default.grade != NarratorGrade.UNGRADED:
+            return True
+        for (nid, _role, dom), rec in self._role_records.items():
+            if nid == narrator_id and dom == domain_tag and rec.grade != NarratorGrade.UNGRADED:
+                return True
+        return False
+
+    def _index_set_grade(self, narrator_id: str, domain_tag: str) -> None:
+        """Refresh the alias index for a narrator across all its records."""
         alias = self._alias_for(narrator_id)
         key = (alias, domain_tag)
-        if grade == NarratorGrade.UNGRADED:
+        if self._narrator_is_graded(narrator_id, domain_tag):
+            self._alias_graded.setdefault(key, set()).add(narrator_id)
+        else:
             bucket = self._alias_graded.get(key)
             if bucket is not None:
                 bucket.discard(narrator_id)
                 if not bucket:
                     del self._alias_graded[key]
-        else:
-            self._alias_graded.setdefault(key, set()).add(narrator_id)
 
     def _rebuild_alias_index(self) -> None:
         """Rebuild graded-alias index from all narrators (e.g. after DB load)."""
         self._alias_graded.clear()
-        for narrator in self._narrators.values():
-            self._index_set_grade(narrator.narrator_id, narrator.domain_tag, narrator.grade)
+        seen: set[tuple[str, str]] = set()
+        for narrator in [*self._narrators.values(), *self._role_records.values()]:
+            key = (narrator.narrator_id, narrator.domain_tag)
+            if key not in seen:
+                seen.add(key)
+                self._index_set_grade(narrator.narrator_id, narrator.domain_tag)
 
     def has_graded_sibling_versions(
         self,
@@ -277,6 +302,11 @@ class Registry:
     # CRUD
     # ------------------------------------------------------------------
 
+    @staticmethod
+    def _role_key(narrator_id: str, role: Role, domain_tag: str) -> tuple[str, str, str]:
+        """Storage key for a role-scoped precision record."""
+        return (narrator_id, role.value, domain_tag)
+
     def register(
         self,
         narrator_id: str,
@@ -291,25 +321,47 @@ class Registry:
         upstream_source: str | None = None,
         graded_at: datetime | None = None,
         valid_until: datetime | None = None,
+        role: Role | None = None,
     ) -> Narrator:
-        """Register a new narrator or return existing one.
+        """Register a new narrator or return the existing one.
 
-        Registering with an explicit (non-UNGRADED) grade starts the
-        freshness clock: the grade is treated as validated right now and
-        expires after the volatility policy's TTL.  Passing an explicit
-        `graded_at` (e.g. for deterministic tests) starts the clock from
-        that instant; passing both `graded_at` and `valid_until` (e.g. from
-        a DB load) preserves them exactly.
+        ``role=None`` (default) registers the integrity + default-precision
+        record keyed ``(narrator, domain)`` — the legacy behaviour.  ``role``
+        given registers a *role-scoped precision* record keyed
+        ``(narrator, role, domain)``.  Identity (narrator_type, version,
+        family, upstream) is inherited from the default record when it exists,
+        and integrity (ʿadālah) is always read from the default record, never
+        written to a role record.
+
+        Registering with an explicit (non-UNGRADED) grade starts the freshness
+        clock: the grade is treated as validated right now and expires after
+        the volatility policy's TTL.
         """
-        key = (narrator_id, domain_tag)
-        if key not in self._narrators:
+        if role is None:
+            store = self._narrators
+            key: tuple[str, str] | tuple[str, str, str] = (narrator_id, domain_tag)
+        else:
+            store = self._role_records
+            key = self._role_key(narrator_id, role, domain_tag)
+            # Identity is per-narrator, not per-role.  Inherit narrator_type
+            # (drives the volatility TTL), model_version/family/upstream from
+            # the default record when one exists, so a role record never
+            # drifts its identity or decay window.
+            default = self._narrators.get((narrator_id, domain_tag))
+            if default is not None:
+                narrator_type = default.narrator_type
+                model_version = default.model_version
+                model_family = default.model_family
+                upstream_source = default.upstream_source
+
+        if key not in store:
             if grade is not NarratorGrade.UNGRADED and valid_until is None:
                 if graded_at is None:
                     graded_at = datetime.now(UTC)
                 valid_until = self.volatility_policy.valid_until(
                     narrator_type, domain_tag, now=graded_at
                 )
-            self._narrators[key] = Narrator(
+            store[key] = Narrator(
                 narrator_id=narrator_id,
                 domain_tag=domain_tag,
                 narrator_type=narrator_type,
@@ -322,18 +374,26 @@ class Registry:
                 upstream_source=upstream_source,
                 graded_at=graded_at,
                 valid_until=valid_until,
+                role=role,
             )
-            self._index_set_grade(narrator_id, domain_tag, grade)
-        return self._narrators[key]
+            self._index_set_grade(narrator_id, domain_tag)
+        return store[key]
 
-    def get(self, narrator_id: str, domain_tag: str) -> Narrator | None:
-        """Look up a narrator by (narrator_id, domain_tag)."""
-        return self._narrators.get((narrator_id, domain_tag))
+    def get(self, narrator_id: str, domain_tag: str, role: Role | None = None) -> Narrator | None:
+        """Look up a narrator by ``(narrator_id, domain_tag[, role])``.
+
+        ``role=None`` returns the default/integrity record; a ``Role`` returns
+        the role-scoped precision record (if one exists).
+        """
+        if role is None:
+            return self._narrators.get((narrator_id, domain_tag))
+        return self._role_records.get(self._role_key(narrator_id, role, domain_tag))
 
     def effective_grade(
         self,
         narrator_id: str,
         domain_tag: str,
+        role: Role | None = None,
         now: datetime | None = None,
     ) -> GradeWithFreshness:
         """The time-decayed grade to use at lookup time (the expiry fix).
@@ -348,9 +408,15 @@ class Registry:
         freshness clock (never graded, or legacy/indefinite rows) are
         returned unchanged.
 
+        ``role=None`` returns the default record's grade (legacy behaviour).
+        ``role=<Role>`` returns the role's precision grade, floored by the
+        shared integrity state (a quarantined narrator is REJECTED in every
+        role).
+
         Args:
             narrator_id: The narrator identifier.
             domain_tag: The domain key.
+            role: Optional task role for per-role precision grading (issue #3).
             now: Reference time; defaults to the current UTC time.  Used to
                 make the decay deterministic in tests.
 
@@ -362,6 +428,9 @@ class Registry:
         elif now.tzinfo is None:
             now = now.replace(tzinfo=UTC)
 
+        if role is not None:
+            return self._effective_role_grade(narrator_id, role, domain_tag, now)
+
         narrator = self.get(narrator_id, domain_tag)
         if narrator is None:
             return GradeWithFreshness(
@@ -369,7 +438,53 @@ class Registry:
                 freshness=FreshnessStatus.EXPIRED,
                 needs_recheck=False,
             )
+        return self._decay_record(narrator, now)
 
+    def _effective_role_grade(
+        self,
+        narrator_id: str,
+        role: Role,
+        domain_tag: str,
+        now: datetime,
+    ) -> GradeWithFreshness:
+        """Effective grade for a role: precision floored by shared integrity.
+
+        Integrity (ʿadālah) is per (narrator, domain) and spans roles.  The
+        floor is deliberately conservative: a narrator whose default record is
+        COMPROMISED **or** REJECTED is REJECTED in every role, regardless of
+        any role-scoped precision evidence.  This errs on the side of
+        under-trust (the framework's bias) — it can over-reject a role whose
+        own precision is good, but it can never let a quarantined or
+        REJECTED narrator slip through on a role's precision.
+        """
+        default = self.get(narrator_id, domain_tag)
+        if default is not None and (
+            default.adalah_grade == AdalahGrade.COMPROMISED
+            or default.grade == NarratorGrade.REJECTED
+        ):
+            return GradeWithFreshness(
+                grade=NarratorGrade.REJECTED,
+                freshness=FreshnessStatus.FRESH,
+                needs_recheck=False,
+                graded_at=_as_utc(default.graded_at),
+                valid_until=_as_utc(default.valid_until),
+            )
+
+        role_rec = self.get(narrator_id, domain_tag, role=role)
+        if role_rec is not None:
+            return self._decay_record(role_rec, now)
+
+        if default is not None:
+            return self._decay_record(default, now)
+
+        return GradeWithFreshness(
+            grade=NarratorGrade.UNGRADED,
+            freshness=FreshnessStatus.EXPIRED,
+            needs_recheck=False,
+        )
+
+    def _decay_record(self, narrator: Narrator, now: datetime) -> GradeWithFreshness:
+        """Apply the freshness windows to a single narrator record."""
         grade = narrator.grade
         # REJECTED is active containment — never time-decayed.
         if grade == NarratorGrade.REJECTED:
@@ -433,24 +548,27 @@ class Registry:
         self,
         narrator_id: str,
         domain_tag: str,
+        role: Role | None = None,
         now: datetime | None = None,
     ) -> NarratorGrade:
         """Return the *effective* (time-decayed) grade, UNGRADED if unknown.
 
         Time-aware: a grade past its best-before is no longer trusted at
         lookup time, even though the stored grade is preserved.  See
-        effective_grade() for the window logic.
+        effective_grade() for the window logic.  ``role`` selects a
+        role-scoped precision grade (issue #3).
         """
-        return self.effective_grade(narrator_id, domain_tag, now=now).grade
+        return self.effective_grade(narrator_id, domain_tag, role=role, now=now).grade
 
     def needs_recheck(
         self,
         narrator_id: str,
         domain_tag: str,
+        role: Role | None = None,
         now: datetime | None = None,
     ) -> bool:
         """True when the grade is in its stale window or already expired."""
-        return self.effective_grade(narrator_id, domain_tag, now=now).needs_recheck
+        return self.effective_grade(narrator_id, domain_tag, role=role, now=now).needs_recheck
 
     def get_adalah_grade(self, narrator_id: str, domain_tag: str) -> AdalahGrade:
         """Return a narrator's ʿadālah (integrity) grade, defaulting to UNASSESSED.
@@ -469,10 +587,11 @@ class Registry:
         narrator_id: str,
         domain_tag: str,
         version: str | None,
+        role: Role | None = None,
     ) -> NarratorGrade:
         """Return grade for a chain link, resolving alias@version when version is known."""
         resolved = resolve_narrator_id(narrator_id, version)
-        return self.get_grade(resolved, domain_tag)
+        return self.get_grade(resolved, domain_tag, role=role)
 
     def register_versioned(
         self,
@@ -487,6 +606,7 @@ class Registry:
         known_error_rate: float | None = None,
         model_family: str | None = None,
         upstream_source: str | None = None,
+        role: Role | None = None,
     ) -> Narrator:
         """Register a narrator under alias@version when version is supplied."""
         resolved = resolve_narrator_id(narrator_id, version)
@@ -501,6 +621,7 @@ class Registry:
             model_version=version if not is_unknown_version(version) else None,
             model_family=model_family,
             upstream_source=upstream_source,
+            role=role,
         )
 
     def get_metadata(self, narrator_id: str, domain_tag: str) -> dict[str, object]:
@@ -515,7 +636,12 @@ class Registry:
             "model_version": narrator.model_version,
         }
 
-    def evidence_provenance(self, narrator_id: str, domain_tag: str) -> EvidenceProvenanceSummary:
+    def evidence_provenance(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        role: Role | None = None,
+    ) -> EvidenceProvenanceSummary:
         """Summarize where a narrator's grade came from (issue #6).
 
         Classifies each evidence entry as PRIOR (benchmark seed/eval harness),
@@ -531,9 +657,11 @@ class Registry:
         not change how grades are computed; it makes visible whether a grade
         is an assumption or an observation.
 
+        ``role`` scopes the summary to a role's precision evidence (issue #3).
+
         Returns an all-zero summary for an unknown narrator (no evidence).
         """
-        narrator = self.get(narrator_id, domain_tag)
+        narrator = self.get(narrator_id, domain_tag, role=role)
         if narrator is None:
             return EvidenceProvenanceSummary()
 
@@ -568,6 +696,7 @@ class Registry:
         description: str = "",
         metadata: dict[str, object] | None = None,
         axis: EvidenceAxis | None = None,
+        role: Role | None = None,
     ) -> NarratorGrade:
         """Log evidence against a narrator and compute the new grade.
 
@@ -583,10 +712,14 @@ class Registry:
         PRECISION, the rest to UNSPECIFIED (integrity-class). See
         ``EvidenceAxis``.
 
+        ``role`` scopes the evidence to a role's precision record (issue #3).
+        With a role, only the role's grade is recomputed; integrity is read
+        from the shared default record and never written here.
+
         Returns the new narrator grade.
         """
         resolved_axis = default_axis_for(evidence_type) if axis is None else axis
-        narrator = self.register(narrator_id, domain_tag)
+        narrator = self.register(narrator_id, domain_tag, role=role)
         narrator.add_evidence(evidence_type, action, description, metadata, resolved_axis)
 
         new_grade = self.transition_policy.evaluate_transition(
@@ -595,7 +728,7 @@ class Registry:
             new_evidence=narrator.evidence_log[-1],
         )
         narrator.grade = new_grade
-        self._index_set_grade(narrator_id, domain_tag, new_grade)
+        self._index_set_grade(narrator_id, domain_tag)
 
         # Every evidence event (re)validates the grade → restart the clock.
         # UNGRADED and REJECTED carry no clock: UNGRADED is unassessed,
@@ -638,7 +771,25 @@ class Registry:
             EvidenceAction.NEUTRAL,
             f"Version bumped to {new_version}; grade reset to UNGRADED",
         )
-        self._index_set_grade(narrator_id, domain_tag, NarratorGrade.UNGRADED)
+        self._index_set_grade(narrator_id, domain_tag)
+
+        # Role-scoped precision is void too: a new version is a new narrator.
+        # Mirror the default record: reset the grade and clocks, log a
+        # VERSION_BUMP, and keep the evidence log intact as an append-only
+        # audit trail (the same rule as the default record).
+        for key in list(self._role_records):
+            if key[0] == narrator_id and key[2] == domain_tag:
+                rec = self._role_records[key]
+                rec.grade = NarratorGrade.UNGRADED
+                rec.dabt_grade = DabtGrade.UNASSESSED
+                rec.known_error_rate = None
+                rec.graded_at = None
+                rec.valid_until = None
+                rec.add_evidence(
+                    EvidenceType.VERSION_BUMP,
+                    EvidenceAction.NEUTRAL,
+                    f"Version bumped to {new_version}; role precision reset",
+                )
 
     # ------------------------------------------------------------------
     # Quarantine
@@ -662,7 +813,8 @@ class Registry:
             f"Quarantined: {reason}" if reason else "Quarantined",
             axis=EvidenceAxis.INTEGRITY,  # the archetypal ʿadālah strike — permanent
         )
-        self._index_set_grade(narrator_id, domain_tag, NarratorGrade.REJECTED)
+        self._index_set_grade(narrator_id, domain_tag)
+        # Integrity spans roles: quarantine lives on the default record only;
 
     # ------------------------------------------------------------------
     # Event-driven invalidation + freshness renewal (the expiry fix)
@@ -673,6 +825,7 @@ class Registry:
         narrator_id: str,
         domain_tag: str,
         description: str = "",
+        role: Role | None = None,
     ) -> NarratorGrade:
         """Event-driven invalidation: log an independent-chain contradiction.
 
@@ -697,6 +850,7 @@ class Registry:
             EvidenceAction.JARH,
             description or "Claim contradicted by an independent chain",
             axis=EvidenceAxis.PRECISION,
+            role=role,
         )
 
     def record_survival(
@@ -708,6 +862,7 @@ class Registry:
         *,
         self_verified: bool = False,
         description: str = "",
+        role: Role | None = None,
     ) -> NarratorGrade:
         """Record that a claim survived independent verification (issue #25).
 
@@ -737,7 +892,7 @@ class Registry:
 
         Returns the narrator's grade (unchanged if refused or duplicate).
         """
-        narrator = self.register(narrator_id, domain_tag)
+        narrator = self.register(narrator_id, domain_tag, role=role)
         current_grade = narrator.grade
 
         # Tazkiyah guard: self-verified survival is not survival.
@@ -760,6 +915,7 @@ class Registry:
             description or f"Claim {claim_id} survived independent verification via {source}",
             metadata={"claim_id": claim_id, "source": source},
             axis=EvidenceAxis.PRECISION,
+            role=role,
         )
 
     def renew_grade(
@@ -767,6 +923,7 @@ class Registry:
         narrator_id: str,
         domain_tag: str,
         reason: str = "corroboration",
+        role: Role | None = None,
     ) -> bool:
         """Renew a grade's freshness window without changing the grade.
 
@@ -777,7 +934,7 @@ class Registry:
 
         Returns True if the window was renewed.
         """
-        narrator = self.get(narrator_id, domain_tag)
+        narrator = self.get(narrator_id, domain_tag, role=role)
         if narrator is None:
             return False
         if narrator.grade in (NarratorGrade.UNGRADED, NarratorGrade.REJECTED):
@@ -804,13 +961,13 @@ class Registry:
     # ------------------------------------------------------------------
 
     def all_narrators(self) -> list[Narrator]:
-        return list(self._narrators.values())
+        return [*self._narrators.values(), *self._role_records.values()]
 
     def __len__(self) -> int:
-        return len(self._narrators)
+        return len(self._narrators) + len(self._role_records)
 
-    def __contains__(self, key: tuple[str, str]) -> bool:
-        return key in self._narrators
+    def __contains__(self, key: tuple[str, ...]) -> bool:
+        return key in self._narrators or key in self._role_records
 
 
 # ===========================================================================
@@ -836,6 +993,7 @@ class RegistryDB:
         """Load all narrators from the database into the in-memory registry."""
         rows = self.session.query(NarratorRegistry).all()
         for row in rows:
+            role = Role(row.role) if row.role else None
             narrator = self.registry.register(
                 narrator_id=row.narrator_id,
                 domain_tag=row.domain_tag,
@@ -849,6 +1007,7 @@ class RegistryDB:
                 upstream_source=row.upstream_source,
                 graded_at=row.graded_at,
                 valid_until=row.valid_until,
+                role=role,
             )
             # Preserve stored clocks exactly.  register() starts a fresh clock
             # for non-UNGRADED grades without one, which would clobber legacy
@@ -879,12 +1038,14 @@ class RegistryDB:
     def flush(self) -> None:
         """Persist all narrators and their evidence to the database."""
         for narrator in self.registry.all_narrators():
+            role_val = narrator.role.value if narrator.role else ""
             row = (
                 self.session
                 .query(NarratorRegistry)
                 .filter_by(
                     narrator_id=narrator.narrator_id,
                     domain_tag=narrator.domain_tag,
+                    role=role_val,
                 )
                 .first()
             )
@@ -892,6 +1053,7 @@ class RegistryDB:
                 row = NarratorRegistry(
                     narrator_id=narrator.narrator_id,
                     domain_tag=narrator.domain_tag,
+                    role=role_val,
                 )
                 self.session.add(row)
 
@@ -923,6 +1085,7 @@ class RegistryDB:
                 ev = NarratorEvidence(
                     narrator_id=narrator.narrator_id,
                     domain_tag=narrator.domain_tag,
+                    role=role_val,
                     evidence_type=entry.get("evidence_type", ""),
                     action=entry.get("action", ""),
                     description=str(entry.get("description", "")),

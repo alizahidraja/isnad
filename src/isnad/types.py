@@ -10,7 +10,7 @@ Faithful to the paper's epistemic commitments:
 from __future__ import annotations
 
 from datetime import datetime, timedelta
-from enum import Enum
+from enum import Enum, StrEnum
 from typing import Protocol
 
 # ---------------------------------------------------------------------------
@@ -160,6 +160,24 @@ class NarratorType(Enum):
     SCRAPER = "scraper"  # extraction tool
     MODEL = "model"  # LLM / ML model
     HUMAN = "human"  # human contributor / reviewer
+
+
+class Role(StrEnum):
+    """What a transmitter did at a chain step (the task, not the agent).
+
+    Distinct from ``NarratorType`` (who/what the agent *is*).  Precision (ḍabṭ)
+    is graded per ``(narrator, role, domain)`` because competence is
+    task-specific: a model can extract faithfully and synthesize carelessly
+    (issue #3).  Integrity (ʿadālah) is NOT per-role — it is a judgment of the
+    person and is shared across roles.
+    """
+
+    RETRIEVAL = "retrieval"  # fetched documents from a store
+    EXTRACTION = "extraction"  # extracted claims from documents
+    SYNTHESIS = "synthesis"  # generated/synthesized a claim
+    TOOL = "tool"  # executed an external tool
+    HUMAN = "human"  # human review or input
+    SOURCE = "source"  # origin document / external source
 
 
 # ---------------------------------------------------------------------------

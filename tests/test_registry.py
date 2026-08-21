@@ -101,6 +101,26 @@ class TestVersionBumpReset:
         assert len(narrator.evidence_log) == 1
         assert narrator.evidence_log[0]["evidence_type"] == EvidenceType.VERSION_BUMP.value
 
+    def test_version_bump_is_an_epoch_boundary(self) -> None:
+        """Old evidence must not re-inflate the grade after a version bump.
+
+        A bump is a new narrator (paper §4.2): evidence before the latest
+        VERSION_BUMP belongs to the prior version and must not count.
+        """
+        reg = Registry()
+        reg.register("m", "d")
+        reg.record_evidence("m", "d", EvidenceType.SURVIVAL, EvidenceAction.TADIL)
+        reg.record_evidence("m", "d", EvidenceType.SURVIVAL, EvidenceAction.TADIL)
+        assert reg.get_grade("m", "d") == NarratorGrade.ACCEPTABLE
+
+        reg.bump_version("m", "d", "v2")
+        assert reg.get_grade("m", "d") == NarratorGrade.UNGRADED
+
+        # One post-bump jarḥ must grade on post-bump evidence alone (REJECTED),
+        # not blended with the two pre-bump taʿdīl (which would soften it).
+        reg.record_evidence("m", "d", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH)
+        assert reg.get_grade("m", "d") == NarratorGrade.REJECTED
+
 
 class TestJarhTadilStateMachine:
     """The jarḥ–taʿdīl loop is a state machine, not a formula (paper §4.2)."""

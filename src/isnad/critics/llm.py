@@ -27,7 +27,6 @@ import hashlib
 import json
 import os
 from pathlib import Path
-from typing import Any
 
 from isnad.critics.embedding import EmbeddingCritic
 from isnad.types import ContentVerdict
@@ -183,11 +182,3 @@ class LLMCritic:
             cache_file.write_text(json.dumps({"verdict": verdict.value}))
 
         return verdict
-
-
-def _vec_to_dict(vec: Any) -> dict[str, float]:
-    if isinstance(vec, dict):
-        return {str(k): float(v) for k, v in vec.items()}
-    if isinstance(vec, list):
-        return {str(i): float(v) for i, v in enumerate(vec)}
-    return {}

@@ -12,7 +12,6 @@ before grading.
 from __future__ import annotations
 
 VERSION_SEPARATOR = "@"
-UNKNOWN_VERSIONS = frozenset({"", "unknown"})
 NON_RESOLVED_VERSIONS = frozenset({"", "unknown", "latest", "dev", "canary"})
 
 

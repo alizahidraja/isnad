@@ -32,6 +32,7 @@ def seed() -> None:
         sys.exit(1)
 
     from isnad.core.registry import NarratorGrade, RegistryDB
+    from isnad.types import Role
 
     grade_map = {
         "reliable": NarratorGrade.RELIABLE,
@@ -48,7 +49,9 @@ def seed() -> None:
             nid = entry["narrator_id"]
             dom = entry.get("domain", "general")
             grade = grade_map.get(entry.get("grade", "ungraded"), NarratorGrade.UNGRADED)
-            reg.registry.register(nid, dom, grade=grade)
+            role_raw = entry.get("role")
+            role = Role(role_raw) if role_raw else None
+            reg.registry.register(nid, dom, grade=grade, role=role)
         reg.flush()
         print(f"Seeded {len(config)} narrators.")
 
