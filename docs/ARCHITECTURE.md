@@ -283,6 +283,8 @@ Narrator(
 | `bump_version(...)` | Model version bump → reset to UNGRADED |
 | `quarantine(...)` | Set REJECTED + COMPROMISED, deactivate |
 | `flag_contradiction(...)` | Independent-chain contradiction → jarḥ evidence |
+| `record_survival(...)` | Claim survived independent (endorsed) verification → taʿdīl; tazkiyah-guarded, claim-scoped dedup (issue #25) |
+| `evidence_provenance(...)` | Report whether a grade is prior-derived or observation-backed (issue #6) |
 | `renew_grade(...)` | Extend freshness window (corroboration proxy) |
 
 ### RegistryDB — persistence wrapper
