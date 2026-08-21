@@ -38,9 +38,11 @@ jobs:
           uv run pytest -q --tb=short
 
       - name: Build
-        run: uv build
+        run: |
+          rm -rf dist
+          uv build
 
       - name: Publish to PyPI
         env:
           UV_PUBLISH_TOKEN: ${{ secrets.PYPI_TOKEN }}
-        run: uv publish --no-build
+        run: uv publish
