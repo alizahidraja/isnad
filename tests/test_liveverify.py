@@ -350,3 +350,107 @@ class TestRegisterSealedSource:
         sealed = register_sealed_source(reg, _endorsed_result(), domain="physics")
         narrator = reg.get(sealed.narrator_id, "physics")
         assert narrator.upstream_source == "degrees.ed.ac.uk"
+
+
+# ---------------------------------------------------------------------------
+# Authority-chain fields (tazkiyah / self-verified) + remaining edge paths
+# ---------------------------------------------------------------------------
+
+
+class TestAuthorityFields:
+    def test_no_metadata_is_self_verified(self):
+        from isnad.integrations.liveverify.client import _authority_fields
+
+        assert _authority_fields(None) == (None, None, True)
+
+    def test_authorized_by_marks_endorsed(self):
+        from isnad.integrations.liveverify.client import _authority_fields
+
+        ab, basis, sv = _authority_fields({"authorizedBy": "gov.uk/v1", "authorityBasis": "gov"})
+        assert ab == "gov.uk/v1"
+        assert basis == "gov"
+        assert sv is False
+
+    def test_no_authorized_by_is_self_verified(self):
+        from isnad.integrations.liveverify.client import _authority_fields
+
+        _, _, sv = _authority_fields({"authorityBasis": "self-described"})
+        assert sv is True
+
+
+class TestRemainingEdgePaths:
+    def test_build_verification_url_hashes_hosted_at(self):
+        from isnad.integrations.liveverify.client import build_verification_url
+
+        url = build_verification_url(
+            "verify:example.com/c", "abc123", {"hashesHostedAt": "https://host.example/"}
+        )
+        assert url == "https://host.example/abc123"
+
+    def test_to_https_without_prefix(self):
+        from isnad.integrations.liveverify.client import _to_https
+
+        assert _to_https("example.com/c") == "https://example.com/c"
+
+    def test_verify_claim_empty_cert_text(self):
+        result = verify_claim("verify:example.com/c")
+        assert not result.verified
+        assert result.status == "empty"
+
+    def test_verify_claim_network_error(self, monkeypatch):
+        import urllib.error
+        import urllib.request
+
+        def _raise(*args, **kwargs):
+            raise urllib.error.URLError("connection refused")
+
+        monkeypatch.setattr(urllib.request, "urlopen", _raise)
+        result = verify_claim("some claim\nverify:example.com/c")
+        assert not result.verified
+        assert result.status == "network-error"
+
+    def test_verify_claim_custom_affirming_status(self, monkeypatch):
+        import json
+        import urllib.request
+
+        meta = {"responseTypes": {"MATCH": {"class": "affirming"}}}
+
+        class _Resp:
+            status = 200
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+            def read(self):
+                return json.dumps({"status": "match"}).encode()
+
+        def _fake(*args, **kwargs):
+            return _Resp()
+
+        monkeypatch.setattr(urllib.request, "urlopen", _fake)
+        result = verify_claim("some claim\nverify:example.com/c", metadata=meta)
+        assert result.verified
+        assert result.status == "MATCH"
+
+    def test_verify_claim_non_json_body(self, monkeypatch):
+        import urllib.request
+
+        class _Resp:
+            status = 200
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+            def read(self):
+                return b"<html>not json</html>"
+
+        monkeypatch.setattr(urllib.request, "urlopen", lambda *a, **k: _Resp())
+        result = verify_claim("some claim\nverify:example.com/c")
+        assert not result.verified
+        assert result.status == "no-status"

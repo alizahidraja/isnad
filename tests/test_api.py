@@ -460,3 +460,24 @@ class TestTransformationFidelity:
             assert body["chain_grade"] == "sahih"
         finally:
             app.dependency_overrides.pop(get_fidelity_critic, None)
+
+
+class TestObservabilityAndReviewEdgeCases:
+    """Close coverage gaps: Prometheus scrape target + review 404 on bad UUID."""
+
+    def test_prometheus_metrics_endpoint(self):
+        r = client.get("/metrics")
+        assert r.status_code == 200
+        assert "# HELP isnad_claims_total" in r.text
+        assert "isnad_claims_total" in r.text
+
+    def test_review_queue_item_invalid_uuid_is_404(self):
+        r = client.get("/v1/review-queue/not-a-uuid", headers={"X-API-Key": "isnad-admin"})
+        assert r.status_code == 404
+
+    def test_review_queue_item_unknown_uuid_is_404(self):
+        r = client.get(
+            "/v1/review-queue/00000000-0000-0000-0000-000000000000",
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 404
