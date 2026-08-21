@@ -259,9 +259,7 @@ def threshold_transition(
     # `integrity_strikes_per_tier` defaults to the downgrade threshold when
     # unset, keeping integrity and precision on the same footing (issue #21).
     strikes_per_tier = (
-        downgrade_threshold
-        if integrity_strikes_per_tier is None
-        else integrity_strikes_per_tier
+        downgrade_threshold if integrity_strikes_per_tier is None else integrity_strikes_per_tier
     )
     integrity_jarh = sum(1 for e in all_evidence if _is_integrity_jarh(e))
     integrity_cap = _integrity_cap(integrity_jarh, strikes_per_tier)

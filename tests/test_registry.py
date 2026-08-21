@@ -440,13 +440,21 @@ class TestIntegrityStrikeGranularity:
         # 2 integrity strikes < 3 → no cap yet.
         for _ in range(2):
             reg.record_evidence(
-                "n", "physics", EvidenceType.HUMAN_REVIEW, EvidenceAction.JARH, "",
+                "n",
+                "physics",
+                EvidenceType.HUMAN_REVIEW,
+                EvidenceAction.JARH,
+                "",
                 axis=EvidenceAxis.INTEGRITY,
             )
         assert reg.get_grade("n", "physics") == NarratorGrade.RELIABLE
         # 3rd strike completes one threshold → one tier down.
         reg.record_evidence(
-            "n", "physics", EvidenceType.HUMAN_REVIEW, EvidenceAction.JARH, "",
+            "n",
+            "physics",
+            EvidenceType.HUMAN_REVIEW,
+            EvidenceAction.JARH,
+            "",
             axis=EvidenceAxis.INTEGRITY,
         )
         assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
@@ -456,7 +464,11 @@ class TestIntegrityStrikeGranularity:
         reg = Registry(transition_policy=ThresholdTransitionPolicy(integrity_strikes_per_tier=1))
         reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
         reg.record_evidence(
-            "n", "physics", EvidenceType.HUMAN_REVIEW, EvidenceAction.JARH, "",
+            "n",
+            "physics",
+            EvidenceType.HUMAN_REVIEW,
+            EvidenceAction.JARH,
+            "",
             axis=EvidenceAxis.INTEGRITY,
         )
         assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
@@ -467,7 +479,11 @@ class TestIntegrityStrikeGranularity:
         reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
         for _ in range(3):
             reg.record_evidence(
-                "n", "physics", EvidenceType.HUMAN_REVIEW, EvidenceAction.JARH, "",
+                "n",
+                "physics",
+                EvidenceType.HUMAN_REVIEW,
+                EvidenceAction.JARH,
+                "",
                 axis=EvidenceAxis.INTEGRITY,
             )
         assert reg.get_grade("n", "physics") == NarratorGrade.REJECTED
@@ -479,7 +495,11 @@ class TestIntegrityStrikeGranularity:
         reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
         # 1 precision strike < 3 → no downgrade (proves precision axis unaffected).
         reg.record_evidence(
-            "n", "physics", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH, "",
+            "n",
+            "physics",
+            EvidenceType.POST_HOC_AUDIT,
+            EvidenceAction.JARH,
+            "",
             axis=EvidenceAxis.PRECISION,
         )
         assert reg.get_grade("n", "physics") == NarratorGrade.RELIABLE
