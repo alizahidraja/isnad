@@ -43,6 +43,7 @@ from isnad.core.grading import RefinedWeakestLink, grade_chain
 from isnad.core.identity import is_unknown_version, parse_narrator_id, resolve_narrator_id
 from isnad.core.registry import (
     BayesianTransitionPolicy,
+    CalibratedThresholdPolicy,
     Narrator,
     Registry,
     RegistryDB,
@@ -96,6 +97,7 @@ __all__ = [
     "RefinedWeakestLink",
     "grade_chain",
     "BayesianTransitionPolicy",
+    "CalibratedThresholdPolicy",
     "ThresholdTransitionPolicy",
     # core — registry
     "Narrator",

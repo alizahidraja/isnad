@@ -166,8 +166,9 @@ Demo: `uv run python examples/endpoint_identity_drift_demo.py`
 | ----------------------------- | ---------------------------------------------------- | -------------------------- |
 | **isnād** (chain)             | Ordered, gap-checked transmission chain per claim    | `isnad/core/chain.py`      |
 | **rijāl** (registry)          | Graded narrator store per (alias@version, domain)    | `isnad/core/registry.py`   |
-| **jarḥ–taʿdīl**               | Evidence-driven state machine for narrator grades    | `isnad/core/registry.py`   |
-| **Bayesian grading**          | Beta-distribution narrator grades (default)          | `isnad/core/registry.py`   |
+| **jarḥ–taʿdīl**               | Evidence-driven state machine for narrator grades    | `isnad/core/policies.py`   |
+| **Bayesian grading**          | Beta-distribution narrator grades (default)          | `isnad/core/policies.py`   |
+| **Threshold policies**        | Sliding-window + edge-trigger + axis split           | `isnad/core/policies.py`   |
 | **ittiṣāl**                   | Completeness as epistemic property (gap → DAIF)      | `isnad/core/chain.py`      |
 | **Weakest-link grading**      | Chain grade = refined minimum over narrators         | `isnad/core/grading.py`    |
 | **mutābaʿāt** (corroboration) | Independent-chain upgrade + madār detection          | `isnad/core/corroboration.py` |
