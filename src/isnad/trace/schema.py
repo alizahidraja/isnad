@@ -159,6 +159,48 @@ class DocumentRef(BaseModel):
     )
 
 
+class ReasoningCapture(BaseModel):
+    """A model's hidden chain-of-thought, captured from a reasoning-model response.
+
+    Reasoning models (OpenAI o-series, DeepSeek-R1, Anthropic extended
+    thinking, Gemini thinking) emit hidden reasoning before their final
+    answer.  This reasoning is a *load-bearing transmission step* — it is
+    often where a model over-commits, drops evidence, or reasons from a
+    flawed premise — and it is currently invisible in most provenance traces.
+
+    Capture is **hash-by-default**: the raw reasoning text is NOT stored;
+    only its SHA-256 and a short preview.  Reasoning is unfiltered and is
+    where secrets/PII leak, so full-text capture is opt-in (consistent with
+    ``capture_full_content`` on the callback handler).
+
+    Provider fidelity is uneven, so this is a tri-state:
+    - ``content_hash`` set → reasoning captured (raw text seen).
+    - ``redacted == True`` → the provider withheld/redacted the reasoning
+      (e.g. Anthropic's ``redacted_thinking``); nothing usable was seen.
+    - both absent → the model/provider exposed no reasoning at all.
+    """
+
+    content_hash: str | None = Field(
+        default=None,
+        description="SHA-256 of the raw reasoning text (when seen). NULL if absent/redacted.",
+    )
+    preview: str | None = Field(
+        default=None,
+        description="Short, truncated preview of the reasoning (first ~120 chars). "
+        "Always present when content_hash is set, even if full capture is off.",
+    )
+    source: str | None = Field(
+        default=None,
+        description="Which provider/field exposed it: 'deepseek', 'anthropic', "
+        "'openai', 'content_blocks', or 'unknown'.",
+    )
+    redacted: bool = Field(
+        default=False,
+        description="True when the provider explicitly withheld the reasoning "
+        "(e.g. a 'redacted_thinking' block). Distinct from absent.",
+    )
+
+
 class TransmitterNode(BaseModel):
     """One step in a transmission chain — what produced the claim at this step.
 
@@ -193,6 +235,14 @@ class TransmitterNode(BaseModel):
     output_claim: str | None = Field(
         default=None,
         description="The claim text produced at this step. NULL for retrieval/tool steps.",
+    )
+
+    # Hidden reasoning (reasoning models only) — optional, hash-by-default
+    reasoning: ReasoningCapture | None = Field(
+        default=None,
+        description="A model's chain-of-thought, captured where the provider exposes it. "
+        "Hash + preview only by default (raw reasoning is unfiltered and may contain "
+        "secrets/PII). None when the model is not a reasoning model or exposed no reasoning.",
     )
 
     # Grade — separate axes
