@@ -491,3 +491,47 @@ class TestDemoOutput:
         trace = TraceV01.model_validate(data)
         assert trace.capture_source == "langchain"
         assert len(trace.chain) >= 2  # at minimum: root + llm
+
+
+class TestRoleScopedGradeLookup:
+    """The callback must carry each link's role into the registry lookup (issue #3)."""
+
+    def test_llm_node_uses_synthesis_role_grade(self):
+        from isnad.types import Role
+
+        reg = Registry()
+        reg.register("model:gpt-4o", "physics", grade=NarratorGrade.ACCEPTABLE)
+        reg.register("model:gpt-4o", "physics", role=Role.SYNTHESIS, grade=NarratorGrade.WEAK)
+
+        handler = IsnadCallbackHandler(registry=reg, domain="physics")
+        handler.on_llm_start(
+            serialized={"name": "gpt-4o", "id": "gpt-4o"},
+            prompts=["what is F=ma?"],
+            run_id="r-llm",
+        )
+        trace = handler.to_trace()
+        assert trace is not None
+        node = next(n for n in trace.chain if n.narrator_id == "model:gpt-4o")
+        assert node.role == Role.SYNTHESIS
+        # The synthesis role is WEAK → DAIF, not the default ACCEPTABLE → HASAN.
+        assert node.grade.chain_integrity == ChainIntegrity.DAIF
+
+    def test_quarantined_narrator_reports_rejected_in_role(self):
+        from isnad.types import Role
+
+        reg = Registry()
+        reg.register("model:gpt-4o", "physics", grade=NarratorGrade.RELIABLE)
+        reg.register("model:gpt-4o", "physics", role=Role.SYNTHESIS, grade=NarratorGrade.RELIABLE)
+        reg.quarantine("model:gpt-4o", "physics", "caught fabricating")
+
+        handler = IsnadCallbackHandler(registry=reg, domain="physics")
+        handler.on_llm_start(
+            serialized={"name": "gpt-4o", "id": "gpt-4o"},
+            prompts=["what is F=ma?"],
+            run_id="r-llm",
+        )
+        trace = handler.to_trace()
+        assert trace is not None
+        node = next(n for n in trace.chain if n.narrator_id == "model:gpt-4o")
+        # Integrity floor: the synthesis role is quarantined → MAWDU.
+        assert node.grade.chain_integrity == ChainIntegrity.MAWDU

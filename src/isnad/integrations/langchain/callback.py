@@ -478,20 +478,30 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
         if parent_run_id:
             self._edges[run_id] = parent_run_id
 
-        # Look up grade from registry
-        narrator = self.registry.get(narrator_id, self.domain)
+        # Look up grade from registry — role-scoped precision, integrity from
+        # the default (person) record (issue #3).
+        narrator = self.registry.get(narrator_id, self.domain, role=role) or self.registry.get(
+            narrator_id, self.domain
+        )
+        identity = self.registry.get(narrator_id, self.domain)  # integrity + identity
         if narrator:
+            # chain_integrity uses the effective (integrity-floored) grade so a
+            # quarantined narrator reports REJECTED even in a role whose own
+            # precision record is untainted.
+            effective = self.registry.get_grade(narrator_id, self.domain, role=role)
             grade = Grade(
                 narrator_id=narrator_id,
                 role=role,
                 domain=self.domain,
-                chain_integrity=_narrator_grade_to_chain_integrity(narrator.grade.value),
-                adalah=narrator.adalah_grade.value,
+                chain_integrity=_narrator_grade_to_chain_integrity(effective.value),
+                adalah=(identity.adalah_grade.value if identity else "unassessed"),
                 dabt=narrator.dabt_grade.value,
-                origin_strength=_adalah_to_origin_strength(narrator.adalah_grade.value, None),
-                model_version=model_version or narrator.model_version,
-                model_family=narrator.model_family,
-                upstream_source=narrator.upstream_source,
+                origin_strength=_adalah_to_origin_strength(
+                    identity.adalah_grade.value if identity else None, None
+                ),
+                model_version=model_version or (identity.model_version if identity else None),
+                model_family=identity.model_family if identity else None,
+                upstream_source=identity.upstream_source if identity else None,
                 known_error_rate=narrator.known_error_rate,
                 evidence_count=len(narrator.evidence_log),
             )

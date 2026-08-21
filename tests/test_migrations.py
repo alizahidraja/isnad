@@ -52,9 +52,12 @@ def test_alembic_upgrade_head_succeeds_on_fresh_db(tmp_path):
     conn = sqlite3.connect(str(db_path))
     narrator_cols = [r[1] for r in conn.execute("PRAGMA table_info(narrator_registry)")]
     chain_cols = [r[1] for r in conn.execute("PRAGMA table_info(chain_links)")]
+    evidence_cols = [r[1] for r in conn.execute("PRAGMA table_info(narrator_evidence)")]
     conn.close()
 
     assert "graded_at" in narrator_cols
     assert "valid_until" in narrator_cols
+    assert "role" in narrator_cols
     assert "input_snapshot" in chain_cols
     assert "output_snapshot" in chain_cols
+    assert "role" in evidence_cols

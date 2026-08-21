@@ -48,16 +48,7 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
-
-class Role(StrEnum):
-    """What the transmitter did at this step."""
-
-    RETRIEVAL = "retrieval"  # fetched documents from a store
-    EXTRACTION = "extraction"  # extracted claims from documents
-    SYNTHESIS = "synthesis"  # generated/synthesized a claim
-    TOOL = "tool"  # executed an external tool
-    HUMAN = "human"  # human review or input
-    SOURCE = "source"  # origin document / external source
+from isnad.types import Role as Role
 
 
 class ChainIntegrity(StrEnum):

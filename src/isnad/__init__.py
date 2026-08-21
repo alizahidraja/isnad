@@ -72,6 +72,7 @@ from isnad.types import (
     GradingStrategy,
     NarratorGrade,
     NarratorType,
+    Role,
     TransformType,
     TransitionPolicy,
     provenance_of,
@@ -129,6 +130,7 @@ __all__ = [
     "GradingStrategy",
     "NarratorGrade",
     "NarratorType",
+    "Role",
     "TransformType",
     "TransitionPolicy",
 ]

@@ -231,12 +231,17 @@ class ChainLink(Base):
 
 
 class NarratorRegistry(Base):
-    """Narrator registry: one row per (narrator, domain)."""
+    """Narrator registry: one row per (narrator, domain, role).
+
+    ``role=""`` is the default/integrity record; a non-empty role is a
+    role-scoped precision record (issue #3).
+    """
 
     __tablename__ = "narrator_registry"
 
     narrator_id: Mapped[str] = mapped_column(String(128), primary_key=True)
     domain_tag: Mapped[str] = mapped_column(String(128), primary_key=True)
+    role: Mapped[str] = mapped_column(String(128), primary_key=True, default="")
     narrator_type: Mapped[str] = mapped_column(
         String(32),
         nullable=False,
@@ -300,6 +305,7 @@ class NarratorEvidence(Base):
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
     narrator_id: Mapped[str] = mapped_column(String(128), nullable=False)
     domain_tag: Mapped[str] = mapped_column(String(128), nullable=False)
+    role: Mapped[str] = mapped_column(String(128), nullable=False, default="")
     evidence_type: Mapped[str] = mapped_column(
         String(32),
         nullable=False,
@@ -320,11 +326,15 @@ class NarratorEvidence(Base):
     # Composite FK to narrator_registry
     __table_args__ = (
         ForeignKeyConstraint(
-            ["narrator_id", "domain_tag"],
-            ["narrator_registry.narrator_id", "narrator_registry.domain_tag"],
+            ["narrator_id", "domain_tag", "role"],
+            [
+                "narrator_registry.narrator_id",
+                "narrator_registry.domain_tag",
+                "narrator_registry.role",
+            ],
             ondelete="CASCADE",
         ),
-        Index("ix_narrator_evidence_narrator", "narrator_id", "domain_tag"),
+        Index("ix_narrator_evidence_narrator", "narrator_id", "domain_tag", "role"),
         Index("ix_narrator_evidence_created", "created_at"),
     )
 

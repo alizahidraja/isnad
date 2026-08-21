@@ -143,6 +143,7 @@ Also available: `IsnadTracer` (older flat-list reporter with built-in report()) 
 | **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |
 | **Evidence provenance**       | ✅ Implemented       | `evidence_provenance()` reports whether a grade is prior-derived (benchmark) or observation-backed (audit/corroboration) — issue #6 |
 | **Survival primitive**        | ✅ Implemented       | `record_survival()` records that a claim survived independent (endorsed) verification — issue #25 |
+| **Per-role precision**        | ✅ Implemented       | Precision (ḍabṭ) graded per (narrator, role, domain); integrity stays per-narrator — issue #3 |
 
 ### Evidence provenance — assumption vs. observation (issue #6)
 
@@ -187,6 +188,50 @@ reg.record_survival("model:gpt-4o", "physics", "claim-2", "blog.example",
 
 Survival is a *precision* (ḍabṭ) signal — it never seeds ʿadālah (integrity),
 and it never rehabilitates a REJECTED (quarantined) narrator.
+
+### Per-role precision — competence is task-specific (issue #3)
+
+A single grade per model assumes reliability is a property of the *model*.
+It isn't: a model can extract faithfully from noisy HTML and over-reach badly
+when synthesizing across sources.  ISNAD therefore grades **precision (ḍabṭ)
+per (narrator, role, domain)** while keeping **integrity (ʿadālah) per
+(narrator, domain)** — the classical distinction (a narrator could be "thiqa
+in fiqh, weak in ḥadīth").
+
+```python
+from isnad.types import Role
+
+reg = Registry()
+reg.register("model:gpt-4o", "physics", grade=NarratorGrade.RELIABLE)
+reg.register("model:gpt-4o", "physics", role=Role.EXTRACTION, grade=NarratorGrade.RELIABLE)
+reg.register("model:gpt-4o", "physics", role=Role.SYNTHESIS, grade=NarratorGrade.WEAK)
+
+reg.get_grade("model:gpt-4o", "physics")                      # RELIABLE (default)
+reg.get_grade("model:gpt-4o", "physics", role=Role.EXTRACTION)  # RELIABLE
+reg.get_grade("model:gpt-4o", "physics", role=Role.SYNTHESIS)   # WEAK — over-reaches here
+
+# Integrity spans roles: a quarantine floors EVERY role to REJECTED.
+reg.quarantine("model:gpt-4o", "physics", "caught fabricating")
+reg.get_grade("model:gpt-4o", "physics", role=Role.EXTRACTION)  # REJECTED
+```
+
+`role=None` (the default, and every legacy caller) keeps the old
+`(narrator, domain)` key unchanged.
+
+**Honest limits (this is the point):**
+
+- **Cold-start is worse per role.** A per-role UNGRADED is more honest than a
+  wrong cross-role grade, but it means coverage drops until each role earns
+  its own evidence.  This is a deliberate trade, not an accident.
+- **Integrity is domain-scoped, not global.** Quarantining a narrator in
+  `physics` does not auto-quarantine it in `biology`.
+- **Sub-quarantine integrity strikes are per-role.** `quarantine()` (active
+  containment) spans every role; a single evidence-driven *jarḥ al-ʿadālah*
+  recorded against one role lowers that role but not its siblings.  Full
+  cross-role propagation of sub-quarantine integrity strikes is future work.
+
+See `docs/rfc-issue3-role-grading.md` for the full design and what is
+*deliberately* out of scope.
 
 The honesty box is a feature. We tell you exactly what works, what's limited,
 and where you need to supply your own components.
