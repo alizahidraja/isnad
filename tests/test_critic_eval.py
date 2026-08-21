@@ -120,3 +120,66 @@ class TestGenerateReport:
         }
         report = eval_mod.generate_report(results)
         assert "Acceptable" in report
+
+
+class TestBuildEvalSetWithCorpus:
+    def test_builds_consistent_entries_from_corpus(self, tmp_path):
+        import json
+
+        claims = [
+            {
+                "claim_id": "c1",
+                "text": "energy is conserved",
+                "normalized": "energy is conserved",
+                "domain": "physics",
+            },
+            {
+                "claim_id": "c2",
+                "text": "the atom has a nucleus",
+                "normalized": "the atom has a nucleus",
+                "domain": "physics",
+            },
+            {
+                "claim_id": "c3",
+                "text": "gravity is attractive",
+                "normalized": "gravity is attractive",
+                "domain": "physics",
+            },
+        ]
+        path = tmp_path / "claims.json"
+        path.write_text(json.dumps(claims))
+
+        entries = eval_mod.build_eval_set(str(path), n=6)
+        # 3 consistent entries from corpus + up to 3 contradiction templates.
+        assert any(e["true_label"] == "consistent" for e in entries)
+        assert any(e["true_label"] == "contradiction" for e in entries)
+        consistent = [e for e in entries if e["true_label"] == "consistent"]
+        assert all(e["domain"] == "physics" for e in consistent)
+
+
+class TestEvaluateCriticUnverifiable:
+    def test_unverifiable_verdicts_are_counted_not_miscounted(self):
+        class AlwaysUnverifiable:
+            def evaluate(self, claim_text, normalized, corpus, domain):
+                return ContentVerdict.UNVERIFIABLE
+
+        entries = [
+            {
+                "claim_text": "a",
+                "normalized": "a",
+                "corpus": ["b"],
+                "true_label": "contradiction",
+                "domain": "general",
+            },
+            {
+                "claim_text": "c",
+                "normalized": "c",
+                "corpus": [],
+                "true_label": "consistent",
+                "domain": "general",
+            },
+        ]
+        m = eval_mod.evaluate_critic(AlwaysUnverifiable(), entries)
+        assert m["tp"] == 0 and m["fp"] == 0 and m["tn"] == 0 and m["fn"] == 0
+        assert m["unverifiable"] == 2
+        assert m["precision"] == 0.0 and m["recall"] == 0.0 and m["accuracy"] == 0.0

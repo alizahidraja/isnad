@@ -535,3 +535,49 @@ class TestRoleScopedGradeLookup:
         node = next(n for n in trace.chain if n.narrator_id == "model:gpt-4o")
         # Integrity floor: the synthesis role is quarantined → MAWDU.
         assert node.grade.chain_integrity == ChainIntegrity.MAWDU
+
+
+class TestErrorHandlersNeverBreakPipeline:
+    """Callbacks are wrapped so errors in the pipeline never raise (README promise)."""
+
+    def test_sync_error_handlers_log_do_not_raise(self):
+        handler = IsnadCallbackHandler(registry=make_registry(), domain="physics")
+        handler.on_llm_error(ValueError("boom"), run_id="r1")
+        handler.on_retriever_error(ValueError("boom"), run_id="r2")
+        handler.on_tool_error(ValueError("boom"), run_id="r3")
+        handler.on_chain_error(ValueError("boom"), run_id="r4")
+        # Reaching here means none raised.
+
+    def test_node_capture_swallows_exceptions(self):
+        """A malformed serialized dict must not propagate out of _add_node."""
+        handler = IsnadCallbackHandler(registry=make_registry(), domain="physics")
+        # _safe wraps all callbacks; a bad serialized value should be swallowed.
+        handler.on_llm_start(serialized={"name": "gpt-4o"}, prompts=None, run_id="r1")
+
+
+class TestAsyncHandler:
+    def test_async_handler_delegates_to_sync(self):
+        from isnad.integrations.langchain.callback import AsyncIsnadCallbackHandler
+
+        handler = AsyncIsnadCallbackHandler(registry=make_registry(), domain="physics")
+
+        async def _run():
+            await handler.on_chain_start(serialized={"name": "rag"}, inputs={}, run_id="r1")
+            await handler.on_llm_start(
+                serialized={"name": "gpt-4o"}, prompts=["x"], run_id="r2", parent_run_id="r1"
+            )
+            await handler.on_llm_end(response=FakeLLMResponse("x"), run_id="r2")
+            await handler.on_chain_end(outputs={"output": "x"}, run_id="r1")
+            await handler.on_llm_error(ValueError("boom"), run_id="r2")
+            await handler.on_retriever_error(ValueError("boom"), run_id="r1")
+            await handler.on_tool_error(ValueError("boom"), run_id="r1")
+            await handler.on_chain_error(ValueError("boom"), run_id="r1")
+
+        import asyncio
+
+        asyncio.run(_run())
+        trace = handler.to_trace()
+        assert trace is not None
+        assert len(trace.chain) >= 2
+        handler.reset()
+        assert handler.to_trace() is None or len(handler.to_trace().chain) == 0
