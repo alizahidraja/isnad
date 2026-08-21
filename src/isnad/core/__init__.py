@@ -1,11 +1,16 @@
 """Core module — pure logic with zero heavy dependencies.
 
 What lives here:
-- registry.py  — Registry, Narrator, BayesianTransitionPolicy, ThresholdTransitionPolicy
-- chain.py     — Chain, ChainLinkSpec, store_claim
-- grading.py   — RefinedWeakestLink, grade_chain
+- registry.py   — Registry, Narrator, GradeWithFreshness (the store)
+- policies.py   — BayesianTransitionPolicy, ThresholdTransitionPolicy,
+                  CalibratedThresholdPolicy, BetaState (grading arithmetic)
+- chain.py      — Chain, ChainLinkSpec, store_claim
+- grading.py    — RefinedWeakestLink, grade_chain
 - corroboration.py — CorroborationEngine, SharedLineageDetector, CappedCorroborationPolicy
-- decision.py  — decide, describe_action (the decision matrix)
+- decision.py   — decide, describe_action (the decision matrix)
+- fidelity.py   — per-link transformation fidelity (issue #11)
+- identity.py   — alias@version narrator identity
+- volatility.py — grade TTL / stale-window / expiry
 
 No fastapi, no sentence_transformers, no langchain imports allowed here.
 Only stdlib + pydantic + sqlalchemy (for DTOs/storage).

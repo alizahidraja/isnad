@@ -29,6 +29,7 @@ from isnad.trace.schema import (
     DocumentRef,
     Grade,
     OriginStrength,
+    ReasoningCapture,
     Role,
     TraceV01,
     TransmitterNode,
@@ -437,6 +438,11 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
             if not self._final_claim:
                 self._final_claim = output_text
 
+        # Capture hidden reasoning (reasoning models only).
+        reasoning = self._extract_reasoning(response)
+        if reasoning is not None:
+            node.reasoning = reasoning
+
     def _on_tool_end(self, output: Any, run_id: str, kwargs: dict) -> None:
         node = self._nodes.get(run_id)
         if not node:
@@ -562,6 +568,92 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
                     if hasattr(g0, "text"):
                         return str(g0.text)
             return str(response) if response else None
+        except Exception:
+            return None
+
+    @staticmethod
+    def _extract_reasoning(response: Any) -> ReasoningCapture | None:
+        """Extract hidden reasoning from a reasoning-model response.
+
+        Best-effort, provider-agnostic, hash-by-default.  Returns a
+        ReasoningCapture (hash + preview + source), or None when the
+        response exposes no reasoning at all.
+
+        Sources tried, in order (matching how LangChain surfaces it):
+
+        1. LangChain canonical ``content_blocks`` — blocks with
+           ``type == "reasoning"`` carry a ``reasoning`` string (either the
+           thought summary or raw CoT).  Also detects Anthropic's
+           ``redacted_thinking`` and ``thinking`` blocks.
+        2. ``additional_kwargs["reasoning_content"]`` — DeepSeek-R1 and
+           OpenAI o-series put raw/summary reasoning here.
+        3. ``message.additional_kwargs["reasoning_content"]`` on a
+           generation's message (DeepSeek via LangChain).
+
+        A ``redacted_thinking`` block yields a ReasoningCapture with
+        ``redacted=True`` and no hash — the provider withheld the text, which
+        is a distinct state from "no reasoning exposed".
+
+        Honest limit: providers expose reasoning inconsistently (OpenAI
+        o-series exposes only an opt-in summary, not raw tokens).  This
+        captures what is there and marks what is not — it does not pretend
+        the raw chain-of-thought is available when the vendor withheld it.
+        """
+        if not _LANGCHAIN_AVAILABLE:
+            return None
+        try:
+            reasoning_text: str | None = None
+            source: str | None = None
+            redacted = False
+
+            # 1. LangChain canonical content_blocks.
+            blocks = getattr(response, "content_blocks", None)
+            if blocks:
+                for block in blocks:
+                    btype = block.get("type") if isinstance(block, dict) else None
+                    if btype == "reasoning":
+                        reasoning_text = block.get("reasoning")
+                        source = "content_blocks"
+                        if reasoning_text:
+                            break
+                    elif btype == "redacted_thinking":
+                        redacted = True
+                        source = "anthropic"
+                    elif btype == "thinking":
+                        reasoning_text = block.get("thinking")
+                        source = "anthropic"
+                        if reasoning_text:
+                            break
+
+            # 2/3. additional_kwargs on the response or its message.
+            if not reasoning_text and not redacted:
+                add_kwargs = getattr(response, "additional_kwargs", None)
+                if add_kwargs and isinstance(add_kwargs, dict):
+                    rc = add_kwargs.get("reasoning_content")
+                    if rc:
+                        reasoning_text = str(rc)
+                        source = "additional_kwargs"
+            if not reasoning_text and not redacted:
+                gens = getattr(response, "generations", None)
+                if gens and len(gens) > 0:
+                    msg = getattr(gens[0], "message", None)
+                    add_kwargs = getattr(msg, "additional_kwargs", None) or {}
+                    rc = add_kwargs.get("reasoning_content")
+                    if rc:
+                        reasoning_text = str(rc)
+                        source = "additional_kwargs"
+
+            if redacted and not reasoning_text:
+                return ReasoningCapture(redacted=True, source=source)
+            if not reasoning_text:
+                return None
+
+            return ReasoningCapture(
+                content_hash=_hash_content(reasoning_text),
+                preview=reasoning_text[:120],
+                source=source,
+                redacted=False,
+            )
         except Exception:
             return None
 

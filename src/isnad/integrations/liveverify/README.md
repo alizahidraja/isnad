@@ -43,25 +43,39 @@ result = verify_claim("MSc Computer Science, Edinburgh University\nverify:degree
 # Map the result onto ISNAD's trust axes
 sealed = seal_to_narrator(result)
 print(sealed.narrator_id)  # "verify:degrees.ed.ac.uk"
-print(sealed.grade)  # RELIABLE (integrity anchored by crypto)
-print(sealed.adalah)  # HIGH
+print(sealed.self_verified)  # True when no independent authorizedBy endorser
+print(sealed.grade)  # UNGRADED (self-verified: integrity NOT seeded)
+print(sealed.adalah)  # UNASSESSED
 print(sealed.dabt)  # UNASSESSED  ← precision NOT claimed
 
-# Or register directly into a registry (bootstraps day-one integrity)
+# Or register directly into a registry
 reg = Registry()
 sealed = register_sealed_source(reg, result, domain="education")
 ```
 
-## The honest limit: authenticity ≠ truth
+## The honest limit: self-verification vs. endorsement (tazkiyah)
 
 A `verified` seal proves the issuer stands behind this exact text, **unaltered**.
-It does **not** prove the underlying claim is **true**.  The mapping respects
-that line:
+It does **not** prove the underlying claim is **true**.  And whether it anchors
+**integrity** depends on *who* is vouching:
 
-| ISNAD axis | What the seal provides | What the seal does NOT provide |
+| Case | ʿadālah | grade | origin |
+|------|---------|-------|--------|
+| `verified` **with** independent `authorizedBy` endorser | **HIGH** | **RELIABLE** | verified-attested |
+| `verified` **self-verified** (no endorser) | **UNASSESSED** | **UNGRADED** | self-attested |
+
+Classical rijāl is explicit that declaring a narrator reliable (tazkiyah)
+must come from an *independent* critic — self-testimony establishes nothing.
+Live Verify encodes the same rule as **amber vs green**: a self-verified seal
+proves tamper-evidence and origin, not integrity.  The domain confirming the
+claim is the domain making it.  So ISNAD seeds integrity **only** for an
+independently-endorsed seal; a self-verified seal is a strong *origin* signal
+and nothing more.
+
+| ISNAD axis | What an *endorsed* seal provides | What it does NOT provide |
 |------------|------------------------|-------------------------------|
-| ʿadālah (integrity) | **HIGH** — cryptographically anchored, unaltered, issuer-attested | — |
-| origin strength | **verified** — the issuer domain is the trust root | — |
+| ʿadālah (integrity) | **HIGH** — cryptographically anchored AND independently endorsed | — |
+| origin strength | **verified-attested** — issuer domain + endorser | — |
 | ḍabṭ (precision) | — | **UNASSESSED** — a genuine document can still be factually wrong |
 | matn (content) | — | **unchanged** — the content critic must still judge truth |
 
@@ -90,13 +104,25 @@ Tests hold it to two independent guarantees:
 |--------|------|
 | `normalize.py` | Byte-compatible port of Live Verify text normalization |
 | `client.py` | Protocol client: extract verify: URL → normalize → hash → GET |
-| `adapter.py` | Map a verification result onto ISNAD's two trust axes |
+| `adapter.py` | Map a verification result onto ISNAD's two trust axes (self-verification aware) |
+| `issuer.py` | **Inverse direction** — seal ISNAD verdicts as Live Verify issuer files |
+| `issue.py` | CLI: `python -m isnad.integrations.liveverify.issue` |
+
+## ISNAD as issuer
+
+ISNAD can also *produce* seals, not just consume them.  `issuer.py` renders a
+graded claim as a canonical verdict, hashes it, and writes the publishable
+files.  The `authorityBasis` states plainly that this is **self-attested** —
+amber in Live Verify, which is correct: ISNAD has no independent endorser.
+
+See `examples/issuer_demo/` for an end-to-end run.
 
 ## Status codes → ISNAD mapping
 
 | Live Verify status | ʿadālah | NarratorGrade | origin |
 |-------------------|---------|---------------|--------|
-| `verified` | HIGH | RELIABLE | verified |
+| `verified` **endorsed** | HIGH | RELIABLE | verified-attested |
+| `verified` **self-verified** | UNASSESSED | UNGRADED | self-attested |
 | `revoked` / `suspended` | COMPROMISED | REJECTED | compromised |
 | `expired` / `superseded` / `lapsed` | ACCEPTABLE | ACCEPTABLE | attested |
 | `404` / network error | UNASSESSED | UNGRADED | unknown |

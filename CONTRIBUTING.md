@@ -91,6 +91,28 @@ uv run pytest -v --tb=short              # tests
 - [ ] No `bump:` commit (version bumps happen only on the `working` → `main` PR)
 - [ ] If you changed behavior, update the docs and add a test
 
+## Code Map — where things live
+
+| Concern | Location |
+|---------|----------|
+| The store (Narrator, Registry, RegistryDB) | `src/isnad/core/registry.py` |
+| Grading arithmetic (transition policies, axis split) | `src/isnad/core/policies.py` |
+| Grade freshness / time-decay | `src/isnad/core/volatility.py` |
+| Chain construction & persistence | `src/isnad/core/chain.py` |
+| Weakest-link grading | `src/isnad/core/grading.py` |
+| Corroboration + madār detection | `src/isnad/core/corroboration.py` |
+| Decision matrix | `src/isnad/core/decision.py` |
+| Content critics | `src/isnad/critics/` |
+| Trace schema (capture ↔ viewer) | `src/isnad/trace/` |
+| LangChain integration | `src/isnad/integrations/langchain/` |
+| Live Verify integration (consumer + issuer) | `src/isnad/integrations/liveverify/` |
+| Ordinal types, enums, protocols | `src/isnad/types.py` |
+| Pydantic DTOs + SQLAlchemy ORM | `src/isnad/models.py` |
+
+**Rule of thumb:** the store and the grading arithmetic are separate files on
+purpose.  If you're adding a new *transition policy*, put it in `policies.py`,
+not `registry.py`.  If you're adding a new *grading strategy*, `grading.py`.
+
 ## Notes for Reviewers
 
 - `main` is protected — the version must be bumped and committed with a

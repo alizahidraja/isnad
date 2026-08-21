@@ -141,6 +141,28 @@ Also available: `IsnadTracer` (older flat-list reporter with built-in report()) 
 | **Semantic matching**         | ✅ Validated         | Cross-source embedding matching (MiniLM) across Wikipedia and physics corpora |
 | **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 9 integration tests pass |
 | **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |
+| **Evidence provenance**       | ✅ Implemented       | `evidence_provenance()` reports whether a grade is prior-derived (benchmark) or observation-backed (audit/corroboration) — issue #6 |
+
+### Evidence provenance — assumption vs. observation (issue #6)
+
+A narrator's grade can come from a **population prior** (a benchmark seed or
+an eval harness: "this model class is ~85% accurate") or from **observed
+in-pipeline instances** (a post-hoc audit, or independent-chain corroboration:
+"we watched THIS transmitter's claims survive or fail").  Classical rijāl
+graded on observed instances, never priors.
+
+```python
+reg = Registry()
+reg.record_evidence("model:gpt-4o", "physics", EvidenceType.BOOTSTRAP_SEED, EvidenceAction.TADIL)
+s = reg.evidence_provenance("model:gpt-4o", "physics")
+s.prior_only          # True — an unvalidated assumption
+s.observation_backed  # False — no observed instance yet
+```
+
+`prior_only == True` is the state issue #6 flags as dangerous: however
+confident the prior looks, it is not evidence about this transmission.  The
+framework does not change how it grades — it makes the *assumption vs.
+observation* distinction visible.
 
 The honesty box is a feature. We tell you exactly what works, what's limited,
 and where you need to supply your own components.
@@ -166,8 +188,9 @@ Demo: `uv run python examples/endpoint_identity_drift_demo.py`
 | ----------------------------- | ---------------------------------------------------- | -------------------------- |
 | **isnād** (chain)             | Ordered, gap-checked transmission chain per claim    | `isnad/core/chain.py`      |
 | **rijāl** (registry)          | Graded narrator store per (alias@version, domain)    | `isnad/core/registry.py`   |
-| **jarḥ–taʿdīl**               | Evidence-driven state machine for narrator grades    | `isnad/core/registry.py`   |
-| **Bayesian grading**          | Beta-distribution narrator grades (default)          | `isnad/core/registry.py`   |
+| **jarḥ–taʿdīl**               | Evidence-driven state machine for narrator grades    | `isnad/core/policies.py`   |
+| **Bayesian grading**          | Beta-distribution narrator grades (default)          | `isnad/core/policies.py`   |
+| **Threshold policies**        | Sliding-window + edge-trigger + axis split           | `isnad/core/policies.py`   |
 | **ittiṣāl**                   | Completeness as epistemic property (gap → DAIF)      | `isnad/core/chain.py`      |
 | **Weakest-link grading**      | Chain grade = refined minimum over narrators         | `isnad/core/grading.py`    |
 | **mutābaʿāt** (corroboration) | Independent-chain upgrade + madār detection          | `isnad/core/corroboration.py` |

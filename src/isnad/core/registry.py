@@ -13,7 +13,6 @@ a living, evidence-driven registry of transmitter reliability.
 
 from __future__ import annotations
 
-import math
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from uuid import uuid4
@@ -21,6 +20,13 @@ from uuid import uuid4
 from sqlalchemy.orm import Session
 
 from isnad.core.identity import is_unknown_version, parse_narrator_id, resolve_narrator_id
+from isnad.core.policies import (
+    BayesianTransitionPolicy,
+    BetaState,
+    CalibratedThresholdPolicy,
+    ThresholdTransitionPolicy,
+    threshold_transition,
+)
 from isnad.core.volatility import FixedVolatilityPolicy
 from isnad.models import (
     NarratorEvidence,
@@ -31,6 +37,7 @@ from isnad.types import (
     DabtGrade,
     EvidenceAction,
     EvidenceAxis,
+    EvidenceProvenance,
     EvidenceType,
     FreshnessStatus,
     NarratorGrade,
@@ -38,7 +45,18 @@ from isnad.types import (
     TransitionPolicy,
     VolatilityPolicy,
     default_axis_for,
+    provenance_of,
 )
+
+# Re-exported for backward compatibility: these used to live in registry.py.
+# They now live in policies.py but remain importable from here.
+__all__ = [
+    "BayesianTransitionPolicy",
+    "BetaState",
+    "CalibratedThresholdPolicy",
+    "ThresholdTransitionPolicy",
+    "threshold_transition",
+]
 
 # ===========================================================================
 # Grade freshness — the time-decay half of the grade-expiry fix
@@ -83,455 +101,41 @@ class GradeWithFreshness:
     valid_until: datetime | None = None
 
 
-# ===========================================================================
-# Default TransitionPolicy implementation
-# ===========================================================================
-
-
 @dataclass
-class BetaState:
-    """Beta distribution state for one narrator in one domain."""
+class EvidenceProvenanceSummary:
+    """Where a narrator's grade came from — priors vs observed instances.
 
-    alpha: float = 1.0  # successes + 1 (prior)
-    beta: float = 1.0  # failures + 1 (prior)
-    total_evidence: int = 0
+    Issue #6: a grade built on benchmark priors is a *population estimate*;
+    a grade built on observed in-pipeline instances is a *record about this
+    transmitter*.  Classical rijāl graded on observed instances, never priors.
+
+    This summary lets a caller answer "is this narrator's grade an assumption
+    or an observation?" — a signal about the grade, not a new grading axis.
+
+    `prior_only` is the state issue #6 flags as dangerous: a grade with zero
+    observed-instance evidence is an unvalidated assumption, however
+    confident the benchmark prior looks.
+    """
+
+    prior_count: int = 0
+    observed_count: int = 0
+    human_count: int = 0
+    meta_count: int = 0
 
     @property
-    def mean(self) -> float:
-        return self.alpha / (self.alpha + self.beta)
+    def total_grade_evidence(self) -> int:
+        """Count of evidence entries that actually bear on the grade (excl. meta)."""
+        return self.prior_count + self.observed_count + self.human_count
 
     @property
-    def variance(self) -> float:
-        ab = self.alpha + self.beta
-        return (self.alpha * self.beta) / (ab * ab * (ab + 1))
+    def prior_only(self) -> bool:
+        """True when the grade rests on priors with no observed instance."""
+        return self.observed_count == 0 and self.human_count == 0 and self.prior_count > 0
 
     @property
-    def std(self) -> float:
-        return math.sqrt(self.variance)
-
-    def confidence_interval(self, width: float = 0.95) -> tuple[float, float]:
-        """Approximate 95% confidence interval using normal approximation."""
-        m = self.mean
-        s = self.std
-        z = 1.96  # 95%
-        return (max(0.0, m - z * s), min(1.0, m + z * s))
-
-    def update(self, positive: bool) -> None:
-        if positive:
-            self.alpha += 1.0
-        else:
-            self.beta += 1.0
-        self.total_evidence += 1
-
-    def to_grade(self) -> NarratorGrade:
-        """Map posterior mean to ordinal grade."""
-        mu = self.mean
-        if mu >= 0.90:
-            return NarratorGrade.RELIABLE
-        elif mu >= 0.75:
-            return NarratorGrade.ACCEPTABLE
-        elif mu >= 0.50:
-            return NarratorGrade.WEAK
-        else:
-            return NarratorGrade.REJECTED
-
-
-# ===========================================================================
-# Shared jarḥ–taʿdīl machinery for the threshold policy family
-# ===========================================================================
-
-# One-tier ordinal moves, shared by every threshold-family policy.
-_DOWNGRADE_MAP: dict[NarratorGrade, NarratorGrade] = {
-    NarratorGrade.RELIABLE: NarratorGrade.ACCEPTABLE,
-    NarratorGrade.ACCEPTABLE: NarratorGrade.WEAK,
-    NarratorGrade.WEAK: NarratorGrade.REJECTED,
-    NarratorGrade.UNGRADED: NarratorGrade.WEAK,
-}
-_UPGRADE_MAP: dict[NarratorGrade, NarratorGrade] = {
-    NarratorGrade.UNGRADED: NarratorGrade.WEAK,
-    NarratorGrade.WEAK: NarratorGrade.ACCEPTABLE,
-    NarratorGrade.ACCEPTABLE: NarratorGrade.RELIABLE,
-}
-
-
-def _is_integrity_jarh(entry: dict[str, object]) -> bool:
-    """True if an evidence entry is an integrity (ʿadālah) impugnment.
-
-    A jarḥ is integrity-class when its axis is INTEGRITY *or* UNSPECIFIED —
-    absent an explicit precision declaration, impugnment is treated as
-    permanent (al-jarḥ muqaddam ʿalā al-taʿdīl). Only an explicit PRECISION
-    tag makes a jarḥ forgettable. Non-jarḥ entries are never integrity strikes.
-    """
-    if EvidenceAction(str(entry.get("action", ""))) != EvidenceAction.JARH:
-        return False
-    axis = EvidenceAxis(str(entry.get("axis", EvidenceAxis.UNSPECIFIED.value)))
-    return axis != EvidenceAxis.PRECISION
-
-
-_GRADE_RANK: dict[NarratorGrade, int] = {
-    NarratorGrade.REJECTED: 0,
-    NarratorGrade.WEAK: 1,
-    NarratorGrade.ACCEPTABLE: 2,
-    NarratorGrade.UNGRADED: 2,  # ḥasan-ceiling — ranks with ACCEPTABLE, not below
-    NarratorGrade.RELIABLE: 3,
-}
-
-
-def _clamp_to_cap(grade: NarratorGrade, cap: NarratorGrade) -> NarratorGrade:
-    """Return ``grade`` unless it exceeds the integrity ``cap``, then the cap.
-
-    Uses a ceiling-aware rank so UNGRADED (ḥasan-ceiling) is not mistaken for
-    the ordinal floor. When a grade sits at or below the cap it is returned
-    unchanged; only grades *above* the permanent integrity ceiling are pulled
-    down to it.
-    """
-    return grade if _GRADE_RANK[grade] <= _GRADE_RANK[cap] else cap
-
-
-def _integrity_cap(integrity_jarh_count: int, downgrade_threshold: int) -> NarratorGrade:
-    """The best grade still reachable given accumulated integrity strikes.
-
-    Integrity strikes are *permanent*: each full threshold's worth of them
-    lowers the ceiling one ordinal tier, independent of any windowed precision
-    recovery below it. Enough of them force REJECTED. This is the axis that
-    does not forget — the classical protection of the corpus against a proven
-    liar, restored after issue #9's window made all jarḥ forgettable.
-    """
-    tiers_down = integrity_jarh_count // max(1, downgrade_threshold)
-    ladder = [
-        NarratorGrade.RELIABLE,
-        NarratorGrade.ACCEPTABLE,
-        NarratorGrade.WEAK,
-        NarratorGrade.REJECTED,
-    ]
-    return ladder[min(tiers_down, len(ladder) - 1)]
-
-
-def threshold_transition(
-    current_grade: NarratorGrade,
-    evidence_history: list[dict[str, object]],
-    new_evidence: dict[str, object],
-    *,
-    downgrade_threshold: int,
-    upgrade_sustained_count: int,
-    upgrade_min_corroborated: int,
-    window: int,
-) -> NarratorGrade:
-    """Shared jarḥ–taʿdīl transition for the whole threshold policy family.
-
-    Encodes the issue #9 fix and its conceptual follow-up so all three
-    threshold policies behave identically:
-
-    - **Version bump** → UNGRADED; **REJECTED** is sticky (human review restores
-      to WEAK). These orthogonal paths are untouched by the axis logic.
-    - **Integrity (ʿadālah) jarḥ** — INTEGRITY or UNSPECIFIED — accumulates over
-      the *entire* history and never ages out. It imposes a permanent ceiling
-      (``_integrity_cap``); an arriving integrity jarḥ ratchets down to it.
-    - **Precision (ḍabṭ) jarḥ** — explicitly PRECISION-tagged — is counted over
-      the sliding ``window`` and is edge-triggered, so it is recoverable.
-    - **Upgrade** fires on an arriving taʿdīl completing a windowed clean streak,
-      then is clamped to the permanent integrity cap: precision recovery can
-      never lift a grade past what integrity allows. The axes are never averaged.
-    """
-    evidence_type = EvidenceType(str(new_evidence.get("evidence_type", "")))
-    action = EvidenceAction(str(new_evidence.get("action", EvidenceAction.NEUTRAL.value)))
-    axis = EvidenceAxis(str(new_evidence.get("axis", EvidenceAxis.UNSPECIFIED.value)))
-
-    if evidence_type == EvidenceType.VERSION_BUMP:
-        return NarratorGrade.UNGRADED
-
-    if current_grade == NarratorGrade.REJECTED:
-        if evidence_type == EvidenceType.HUMAN_REVIEW and action == EvidenceAction.TADIL:
-            return NarratorGrade.WEAK
-        return NarratorGrade.REJECTED
-
-    all_evidence = [*evidence_history, new_evidence]
-
-    # Integrity strikes accumulate forever and cap everything below them.
-    integrity_jarh = sum(1 for e in all_evidence if _is_integrity_jarh(e))
-    integrity_cap = _integrity_cap(integrity_jarh, downgrade_threshold)
-
-    # An arriving integrity jarḥ ratchets down to the permanent cap.
-    if action == EvidenceAction.JARH and axis != EvidenceAxis.PRECISION:
-        return _clamp_to_cap(current_grade, integrity_cap)
-
-    # Precision counts over the sliding window only.
-    recent = all_evidence[-window:]
-    precision_adverse = sum(
-        1
-        for e in recent
-        if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
-        and EvidenceAxis(str(e.get("axis", EvidenceAxis.UNSPECIFIED.value)))
-        == EvidenceAxis.PRECISION
-    )
-    favorable_count = sum(
-        1 for e in recent if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-    )
-    corroborated_favorable = sum(
-        1
-        for e in recent
-        if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-        and EvidenceType(str(e.get("evidence_type", ""))) == EvidenceType.CORROBORATION_OUTCOME
-    )
-
-    if action == EvidenceAction.JARH and precision_adverse >= downgrade_threshold:
-        return _DOWNGRADE_MAP.get(current_grade, NarratorGrade.WEAK)
-
-    if (
-        action == EvidenceAction.TADIL
-        and favorable_count >= upgrade_sustained_count
-        and corroborated_favorable >= upgrade_min_corroborated
-    ):
-        upgraded = _UPGRADE_MAP.get(current_grade, current_grade)
-        return _clamp_to_cap(upgraded, integrity_cap)
-
-    return current_grade
-
-
-class BayesianTransitionPolicy:
-    """Bayesian transition policy using Beta distribution updates.
-
-    This is one instantiation of a parameter the framework leaves open
-    (see paper §4.2).  Swap freely.
-
-    Each narrator×domain maintains a Beta(α, β) state.  Evidence updates
-    the posterior.  Grades are derived from the posterior mean with
-    calibrated thresholds.
-
-    Key advantages over threshold counting:
-    - Continuous confidence (posterior mean + credible interval)
-    - Graceful with small samples (prior provides regularization)
-    - Natural uncertainty quantification
-    - No arbitrary "3 adverse events" cutoff
-    """
-
-    def __init__(self):
-        self._states: dict[tuple[str, str], BetaState] = {}
-
-    def get_state(self, narrator_id: str, domain: str) -> BetaState:
-        key = (narrator_id, domain)
-        if key not in self._states:
-            self._states[key] = BetaState()
-        return self._states[key]
-
-    def seed_grade(
-        self,
-        narrator_id: str,
-        domain: str,
-        prior_mean: float,
-        prior_weight: float = 10.0,
-    ) -> None:
-        """Seed a narrator with a prior belief.
-
-        Args:
-            narrator_id: The narrator identifier.
-            domain: Domain tag.
-            prior_mean: Expected reliability (0.0–1.0).
-            prior_weight: Strength of prior (pseudo-observations).
-        """
-        alpha = prior_mean * prior_weight
-        beta = (1.0 - prior_mean) * prior_weight
-        key = (narrator_id, domain)
-        self._states[key] = BetaState(alpha=alpha + 1, beta=beta + 1)
-
-    def evaluate_transition(
-        self,
-        current_grade: NarratorGrade,
-        evidence_history: list[dict[str, object]],
-        new_evidence: dict[str, object],
-    ) -> NarratorGrade:
-        """Compute new narrator grade from evidence.
-
-        Note: This method signature matches the TransitionPolicy protocol
-        but the Bayesian approach uses its own internal state rather than
-        counting from the evidence_history list. For the protocol interface,
-        we derive the grade from accumulated evidence counts.
-
-        For full Bayesian usage, use get_state().update() and get_state().to_grade()
-        directly through the calibration loop.
-        """
-        # Count evidence from history + new evidence
-        positive = sum(
-            1
-            for e in evidence_history
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
-        )
-        adverse = sum(
-            1
-            for e in evidence_history
-            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
-        )
-
-        action = EvidenceAction(str(new_evidence.get("action", EvidenceAction.NEUTRAL.value)))
-        if action == EvidenceAction.TADIL:
-            positive += 1
-        elif action == EvidenceAction.JARH:
-            adverse += 1
-
-        # Build Beta state from counts
-        state = BetaState(alpha=float(positive + 1), beta=float(adverse + 1))
-        state.total_evidence = positive + adverse
-
-        # Version bump resets
-        evidence_type = EvidenceType(str(new_evidence.get("evidence_type", "")))
-        if evidence_type == EvidenceType.VERSION_BUMP:
-            return NarratorGrade.UNGRADED
-
-        return state.to_grade()
-
-
-# ── Calibrated Threshold Policy (data-driven) ────────────────────
-
-
-class CalibratedThresholdPolicy:
-    """Threshold-based policy with thresholds LEARNED from calibration data.
-
-    This is one instantiation of a parameter the framework leaves open
-    (see paper §4.2).  Swap freely.
-
-    Rather than hardcoding (3 adverse, 5 positive), these thresholds are
-    calibrated from historical performance data via the §8 experiment
-    methodology.  The thresholds can be set per-domain and per-narrator-type.
-
-    Shares the sliding-window + edge-trigger ratchet fix of
-    ``ThresholdTransitionPolicy`` (issue #9 finding #1): counts are taken over
-    the last ``window`` evidence entries, and a transition fires only on the
-    kind of evidence that just arrived. The window defaults to
-    ``max(downgrade_threshold, upgrade_sustained_count)`` so both branches stay
-    reachable whatever the calibrated thresholds are.
-    """
-
-    def __init__(
-        self,
-        downgrade_threshold: int = 5,
-        upgrade_sustained_count: int = 10,
-        upgrade_min_corroborated: int = 5,
-        window: int | None = None,
-    ):
-        self.downgrade_threshold = downgrade_threshold
-        self.upgrade_sustained_count = upgrade_sustained_count
-        self.upgrade_min_corroborated = upgrade_min_corroborated
-        self.window = (
-            max(downgrade_threshold, upgrade_sustained_count) if window is None else window
-        )
-
-    def evaluate_transition(
-        self,
-        current_grade: NarratorGrade,
-        evidence_history: list[dict[str, object]],
-        new_evidence: dict[str, object],
-    ) -> NarratorGrade:
-        """Compute new narrator grade from evidence (see ``threshold_transition``)."""
-        return threshold_transition(
-            current_grade,
-            evidence_history,
-            new_evidence,
-            downgrade_threshold=self.downgrade_threshold,
-            upgrade_sustained_count=self.upgrade_sustained_count,
-            upgrade_min_corroborated=self.upgrade_min_corroborated,
-            window=self.window,
-        )
-
-
-class ThresholdTransitionPolicy:
-    """Threshold jarḥ–taʿdīl transition policy over a sliding evidence window.
-
-    This is one instantiation of a parameter the framework leaves open
-    (see paper §4.2).  Swap freely.  The framework default is
-    ``BayesianTransitionPolicy``; this policy is retained as a simple,
-    interpretable alternative.
-
-    Rules:
-    - Downgrade fires when adverse evidence *within the recent window* crosses
-      a threshold.
-    - Upgrade requires sustained corroborated accuracy *within the recent
-      window* (N positive evals).
-    - Version bump resets to UNGRADED.
-    - ʿAdālah COMPROMISED → REJECTED (active containment).
-    - REJECTED is sticky — requires explicit human review to restore.
-
-    **Ratchet fix (issue #9 finding #1) — sliding window + edge trigger.**
-    The original policy counted adverse (jarḥ) evidence over the narrator's
-    *entire* history and checked the downgrade branch on every call. Two
-    independent defects combined into a ratchet: (a) the adverse count never
-    decayed, so it was monotonic; and (b) the downgrade was *level*-triggered,
-    firing on every subsequent call — including pure taʿdīl — while the count
-    stayed above threshold. Together they marched every narrator
-    RELIABLE → ACCEPTABLE → WEAK → REJECTED with no path to recovery, and left
-    the upgrade branch unreachable.
-
-    Both defects are fixed here:
-
-    1. **Sliding window.** Adverse and favorable counts are taken over only the
-       last ``window`` evidence entries, so stale jarḥ ages out and sustained
-       good behaviour can recover a narrator.
-    2. **Edge trigger.** A downgrade fires only when the *arriving* evidence is
-       a jarḥ, and an upgrade only when the arriving evidence is a taʿdīl. A
-       transition is driven by the evidence that just arrived, not by counts
-       left standing in the window from earlier calls.
-
-    A narrator that *keeps* producing adverse evidence still reaches REJECTED,
-    so active containment is preserved.
-
-    **Axis split (issue #9 conceptual follow-up) — ʿadālah does not forget.**
-    A pure sliding window forgets *all* jarḥ, including integrity (ʿadālah)
-    strikes — which silently reintroduces the fabricator-rehabilitation path
-    the framework exists to prevent. The tradition permits recovery only for
-    *precision* (ḍabṭ), never for integrity. So evidence carries an
-    ``EvidenceAxis``:
-
-    - **Integrity jarḥ** (INTEGRITY, or UNSPECIFIED by conservative default)
-      accumulates over the narrator's *entire* history and never ages out. Each
-      threshold's worth lowers a permanent ceiling one tier; enough force
-      REJECTED. This axis is intentionally a ratchet.
-    - **Precision jarḥ** (explicitly PRECISION-tagged) is windowed and
-      recoverable, exactly as the base ratchet fix intends.
-
-    **Integrity dominates:** the permanent integrity ceiling caps the grade, and
-    the windowed precision recovery only operates *below* that cap. Precision
-    taʿdīl can never lift a grade held down by an integrity strike. The two axes
-    are never averaged.
-
-    A production deployment would calibrate these thresholds and the window via
-    the §8 gated-vs-ungated served-error experiment.  The constants here are
-    reference defaults, not validated values.
-    """
-
-    # Reference thresholds (not empirically calibrated — see paper §8)
-    DOWNGRADE_THRESHOLD: int = 3  # adverse events to trigger downgrade
-    UPGRADE_SUSTAINED_COUNT: int = 5  # positive events for upgrade eligibility
-    UPGRADE_MIN_CORROBORATED: int = 3  # of those, must be corroboration outcomes
-
-    # Default window: the smallest that still admits the reference upgrade rule
-    # (needs UPGRADE_SUSTAINED_COUNT recent favorable events). Chosen so the
-    # policy trades no magic number for another — see class docstring.
-    DEFAULT_WINDOW: int = 5
-
-    def __init__(self, window: int | None = None):
-        """Args:
-        window: How many of the most recent evidence entries count toward
-            the transition. Older evidence ages out. Defaults to
-            ``DEFAULT_WINDOW`` (5). Must be >= ``UPGRADE_SUSTAINED_COUNT`` for
-            the upgrade branch to remain reachable.
-        """
-        self.window = self.DEFAULT_WINDOW if window is None else window
-
-    def evaluate_transition(
-        self,
-        current_grade: NarratorGrade,
-        evidence_history: list[dict[str, object]],
-        new_evidence: dict[str, object],
-    ) -> NarratorGrade:
-        """Compute the new narrator grade (see ``threshold_transition``)."""
-        return threshold_transition(
-            current_grade,
-            evidence_history,
-            new_evidence,
-            downgrade_threshold=self.DOWNGRADE_THRESHOLD,
-            upgrade_sustained_count=self.UPGRADE_SUSTAINED_COUNT,
-            upgrade_min_corroborated=self.UPGRADE_MIN_CORROBORATED,
-            window=self.window,
-        )
+    def observation_backed(self) -> bool:
+        """True when at least one observed in-pipeline instance exists."""
+        return self.observed_count > 0
 
 
 # ===========================================================================
@@ -910,6 +514,46 @@ class Registry:
             "narrator_type": narrator.narrator_type.value,
             "model_version": narrator.model_version,
         }
+
+    def evidence_provenance(self, narrator_id: str, domain_tag: str) -> EvidenceProvenanceSummary:
+        """Summarize where a narrator's grade came from (issue #6).
+
+        Classifies each evidence entry as PRIOR (benchmark seed/eval harness),
+        OBSERVED (post-hoc audit / corroboration), HUMAN (reviewer verdict),
+        or META (version bump).  Returns counts plus two derived flags:
+
+        - `prior_only`: the grade rests on population priors with no observed
+          instance — an unvalidated assumption, however confident the prior.
+        - `observation_backed`: at least one observed in-pipeline instance
+          exists — a record about THIS transmitter, not its population.
+
+        This is a *signal about the grade*, not a new grading axis.  It does
+        not change how grades are computed; it makes visible whether a grade
+        is an assumption or an observation.
+
+        Returns an all-zero summary for an unknown narrator (no evidence).
+        """
+        narrator = self.get(narrator_id, domain_tag)
+        if narrator is None:
+            return EvidenceProvenanceSummary()
+
+        summary = EvidenceProvenanceSummary()
+        for entry in narrator.evidence_log:
+            etype_raw = entry.get("evidence_type", "")
+            try:
+                etype = EvidenceType(str(etype_raw))
+            except ValueError:
+                continue
+            provenance = provenance_of(etype)
+            if provenance == EvidenceProvenance.PRIOR:
+                summary.prior_count += 1
+            elif provenance == EvidenceProvenance.OBSERVED:
+                summary.observed_count += 1
+            elif provenance == EvidenceProvenance.HUMAN:
+                summary.human_count += 1
+            else:
+                summary.meta_count += 1
+        return summary
 
     # ------------------------------------------------------------------
     # jarḥ–taʿdīl state machine

@@ -200,7 +200,8 @@ directly from hadith methodology — "we don't know what happened in that gap."
 
 ## Loop 2: The Registry (rijāl)
 
-**File:** `core/registry.py` (full implementation), `core/volatility.py` (freshness)
+**Files:** `core/registry.py` (store: Narrator, Registry, RegistryDB),
+`core/policies.py` (grading arithmetic: transition policies), `core/volatility.py` (freshness)
 
 The computational equivalent of the classical rijāl compendium — a living,
 evidence-driven registry of transmitter reliability.
@@ -235,10 +236,14 @@ evidence types, not formulas:
 Each event is logged immutably.  The `TransitionPolicy` (pluggable Protocol)
 decides whether the grade changes.
 
-**4. Three transition policies:**
-- `ThresholdTransitionPolicy` — count adverse events: 3 jarḥ = downgrade, 5 taʿdīl = upgrade
+**4. Three transition policies (all in `core/policies.py`):**
+- `ThresholdTransitionPolicy` — sliding window + edge trigger; 3 jarḥ = downgrade, 5 taʿdīl = upgrade
 - `BayesianTransitionPolicy` (default) — Beta(α, β) per narrator; posterior mean → grade
 - `CalibratedThresholdPolicy` — thresholds learned from calibration data
+
+All three threshold policies share `threshold_transition`, which also encodes
+the axis split (issue #9 follow-up): integrity (ʿadālah) jarḥ is permanent and
+never ages out; precision (ḍabṭ) jarḥ is windowed and recoverable.
 
 **5. REJECTED is sticky.**  Only explicit human review can restore from
 REJECTED.  This is active containment, not a passive label.
