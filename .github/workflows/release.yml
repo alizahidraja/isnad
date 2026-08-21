@@ -15,6 +15,7 @@ on:
       - "pyproject.toml"
       - "CITATION.cff"
       - "README.md"
+  workflow_dispatch:
 
 permissions:
   contents: write
