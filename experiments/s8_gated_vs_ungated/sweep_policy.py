@@ -57,6 +57,7 @@ class ConfigurableTransitionPolicy:
         upgrade_sustained_count: int = 5,
         upgrade_min_corroborated: int = 3,
         window: int | None = None,
+        integrity_strikes_per_tier: int | None = None,
     ):
         self.downgrade_threshold = downgrade_threshold
         self.upgrade_sustained_count = upgrade_sustained_count
@@ -64,6 +65,7 @@ class ConfigurableTransitionPolicy:
         self.window = (
             max(downgrade_threshold, upgrade_sustained_count) if window is None else window
         )
+        self.integrity_strikes_per_tier = integrity_strikes_per_tier
 
     def evaluate_transition(
         self,
@@ -80,4 +82,5 @@ class ConfigurableTransitionPolicy:
             upgrade_sustained_count=self.upgrade_sustained_count,
             upgrade_min_corroborated=self.upgrade_min_corroborated,
             window=self.window,
+            integrity_strikes_per_tier=self.integrity_strikes_per_tier,
         )
