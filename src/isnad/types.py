@@ -239,6 +239,60 @@ class EvidenceType(Enum):
     BOOTSTRAP_SEED = "bootstrap_seed"  # initial seed grade from benchmarks
 
 
+class EvidenceProvenance(Enum):
+    """Where a piece of grading evidence came from — prior or observed instance.
+
+    Issue #6 ("ground rijāl grading in observed in-pipeline survival, not
+    benchmark priors") points at a real epistemic distinction the framework
+    previously buried: a grade can be built on a *population prior* (a
+    benchmark says this model class is ~85% accurate) or on *observed
+    instances* (we watched THIS transmitter's claims survive or fail inside
+    the pipeline).  Classical rijāl graded individuals on observed instances,
+    never on priors.
+
+    - PRIOR:      a population estimate — benchmark seeds, eval harnesses.
+      Says nothing about whether THIS transmission is in the 85 or the 15.
+    - OBSERVED:   an observed instance inside the operator's own pipeline —
+      a post-hoc audit of a served claim, or an independent-chain
+      corroboration/contradiction.  Slow to accumulate, but it is a record
+      about this transmitter rather than a population estimate.
+    - HUMAN:      a human reviewer verdict.  Observed, but by a named human
+      critic rather than an automated instance.
+    - META:       not grade evidence at all — a lifecycle event (version
+      bump) that resets the record.
+
+    This classification is a *signal about the grade*, not a new grading
+    axis.  It lets a caller answer "is this narrator's grade an assumption
+    or an observation?" without changing how grades are computed.
+    """
+
+    PRIOR = "prior"
+    OBSERVED = "observed"
+    HUMAN = "human"
+    META = "meta"
+
+
+_PRIOR_EVIDENCE = {EvidenceType.BOOTSTRAP_SEED, EvidenceType.EVAL_HARNESS}
+_OBSERVED_EVIDENCE = {EvidenceType.POST_HOC_AUDIT, EvidenceType.CORROBORATION_OUTCOME}
+
+
+def provenance_of(evidence_type: EvidenceType) -> EvidenceProvenance:
+    """Classify an evidence type as prior, observed, human, or meta.
+
+    - BOOTSTRAP_SEED / EVAL_HARNESS → PRIOR (a population estimate).
+    - POST_HOC_AUDIT / CORROBORATION_OUTCOME → OBSERVED (an in-pipeline instance).
+    - HUMAN_REVIEW → HUMAN.
+    - VERSION_BUMP → META (a reset, not grade evidence).
+    """
+    if evidence_type in _PRIOR_EVIDENCE:
+        return EvidenceProvenance.PRIOR
+    if evidence_type in _OBSERVED_EVIDENCE:
+        return EvidenceProvenance.OBSERVED
+    if evidence_type == EvidenceType.HUMAN_REVIEW:
+        return EvidenceProvenance.HUMAN
+    return EvidenceProvenance.META
+
+
 # ---------------------------------------------------------------------------
 # Pluggable strategy protocols
 # ---------------------------------------------------------------------------

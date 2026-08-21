@@ -37,6 +37,7 @@ from isnad.types import (
     DabtGrade,
     EvidenceAction,
     EvidenceAxis,
+    EvidenceProvenance,
     EvidenceType,
     FreshnessStatus,
     NarratorGrade,
@@ -44,6 +45,7 @@ from isnad.types import (
     TransitionPolicy,
     VolatilityPolicy,
     default_axis_for,
+    provenance_of,
 )
 
 # Re-exported for backward compatibility: these used to live in registry.py.
@@ -97,6 +99,43 @@ class GradeWithFreshness:
     needs_recheck: bool
     graded_at: datetime | None = None
     valid_until: datetime | None = None
+
+
+@dataclass
+class EvidenceProvenanceSummary:
+    """Where a narrator's grade came from — priors vs observed instances.
+
+    Issue #6: a grade built on benchmark priors is a *population estimate*;
+    a grade built on observed in-pipeline instances is a *record about this
+    transmitter*.  Classical rijāl graded on observed instances, never priors.
+
+    This summary lets a caller answer "is this narrator's grade an assumption
+    or an observation?" — a signal about the grade, not a new grading axis.
+
+    `prior_only` is the state issue #6 flags as dangerous: a grade with zero
+    observed-instance evidence is an unvalidated assumption, however
+    confident the benchmark prior looks.
+    """
+
+    prior_count: int = 0
+    observed_count: int = 0
+    human_count: int = 0
+    meta_count: int = 0
+
+    @property
+    def total_grade_evidence(self) -> int:
+        """Count of evidence entries that actually bear on the grade (excl. meta)."""
+        return self.prior_count + self.observed_count + self.human_count
+
+    @property
+    def prior_only(self) -> bool:
+        """True when the grade rests on priors with no observed instance."""
+        return self.observed_count == 0 and self.human_count == 0 and self.prior_count > 0
+
+    @property
+    def observation_backed(self) -> bool:
+        """True when at least one observed in-pipeline instance exists."""
+        return self.observed_count > 0
 
 
 # ===========================================================================
@@ -475,6 +514,46 @@ class Registry:
             "narrator_type": narrator.narrator_type.value,
             "model_version": narrator.model_version,
         }
+
+    def evidence_provenance(self, narrator_id: str, domain_tag: str) -> EvidenceProvenanceSummary:
+        """Summarize where a narrator's grade came from (issue #6).
+
+        Classifies each evidence entry as PRIOR (benchmark seed/eval harness),
+        OBSERVED (post-hoc audit / corroboration), HUMAN (reviewer verdict),
+        or META (version bump).  Returns counts plus two derived flags:
+
+        - `prior_only`: the grade rests on population priors with no observed
+          instance — an unvalidated assumption, however confident the prior.
+        - `observation_backed`: at least one observed in-pipeline instance
+          exists — a record about THIS transmitter, not its population.
+
+        This is a *signal about the grade*, not a new grading axis.  It does
+        not change how grades are computed; it makes visible whether a grade
+        is an assumption or an observation.
+
+        Returns an all-zero summary for an unknown narrator (no evidence).
+        """
+        narrator = self.get(narrator_id, domain_tag)
+        if narrator is None:
+            return EvidenceProvenanceSummary()
+
+        summary = EvidenceProvenanceSummary()
+        for entry in narrator.evidence_log:
+            etype_raw = entry.get("evidence_type", "")
+            try:
+                etype = EvidenceType(str(etype_raw))
+            except ValueError:
+                continue
+            provenance = provenance_of(etype)
+            if provenance == EvidenceProvenance.PRIOR:
+                summary.prior_count += 1
+            elif provenance == EvidenceProvenance.OBSERVED:
+                summary.observed_count += 1
+            elif provenance == EvidenceProvenance.HUMAN:
+                summary.human_count += 1
+            else:
+                summary.meta_count += 1
+        return summary
 
     # ------------------------------------------------------------------
     # jarḥ–taʿdīl state machine

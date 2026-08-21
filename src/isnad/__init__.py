@@ -67,12 +67,14 @@ from isnad.types import (
     CorroborationPolicy,
     DabtGrade,
     EvidenceAction,
+    EvidenceProvenance,
     EvidenceType,
     GradingStrategy,
     NarratorGrade,
     NarratorType,
     TransformType,
     TransitionPolicy,
+    provenance_of,
 )
 
 __all__ = [
@@ -121,7 +123,9 @@ __all__ = [
     "CorrelationDetector",
     "DabtGrade",
     "EvidenceAction",
+    "EvidenceProvenance",
     "EvidenceType",
+    "provenance_of",
     "GradingStrategy",
     "NarratorGrade",
     "NarratorType",
