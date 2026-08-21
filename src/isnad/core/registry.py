@@ -971,9 +971,15 @@ class Registry:
         narrator.valid_until = self.volatility_policy.valid_until(
             narrator.narrator_type, narrator.domain_tag, now=narrator.graded_at
         )
+        # Record the renewal as NEUTRAL — it must NOT feed the upgrade
+        # thresholds.  Writing CORROBORATION_OUTCOME + TADIL here (as the
+        # original PR did) silently manufactured upgrade evidence: five
+        # renewals plus one neutral audit promoted a WEAK narrator to
+        # ACCEPTABLE with nothing ever evaluating its correctness.  A
+        # freshness renewal extends the clock, nothing more.
         narrator.add_evidence(
             EvidenceType.CORROBORATION_OUTCOME,
-            EvidenceAction.TADIL,
+            EvidenceAction.NEUTRAL,
             f"Grade freshness renewed via {reason}; trust window restarted",
         )
         return True
@@ -1029,6 +1035,12 @@ class RegistryDB:
                 graded_at=row.graded_at,
                 valid_until=row.valid_until,
             )
+            # Preserve stored clocks exactly.  register() starts a fresh clock
+            # for non-UNGRADED grades without one, which would clobber legacy
+            # rows that carry a grade but no graded_at/valid_until (NULL = never
+            # expires).  Restore the persisted values so loading is lossless.
+            narrator.graded_at = row.graded_at
+            narrator.valid_until = row.valid_until
             # Load evidence log
             for ev in row.evidence_log:
                 narrator.add_evidence(
