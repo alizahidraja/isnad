@@ -30,49 +30,25 @@ from isnad.core.registry import Registry
 from isnad.integrations.liveverify.client import VerificationResult
 from isnad.types import AdalahGrade, DabtGrade, NarratorGrade, NarratorType
 
-# Status → ʿadālah (integrity) mapping.
-# verified → HIGH (cryptographically anchored)
-# revoked / suspended / punitive → COMPROMISED (issuer withdrew; holder failed)
-# expired / superseded / administrative → ACCEPTABLE (still authentic, not current)
-# not-found / network-error / anything else → UNASSESSED (cannot judge integrity)
-_ADALAH_MAP = {
-    "VERIFIED": AdalahGrade.HIGH,
-    "REVOKED": AdalahGrade.COMPROMISED,
-    "SUSPENDED": AdalahGrade.COMPROMISED,
-    "EXPIRED": AdalahGrade.ACCEPTABLE,
-    "SUPERSEDED": AdalahGrade.ACCEPTABLE,
-    "LAPSED": AdalahGrade.ACCEPTABLE,
-}
-
-# Status → NarratorGrade (the composite ordinal used by chain grading).
-# A verified seal bootstraps a SOURCE narrator to RELIABLE on day one —
-# but only the *integrity* half.  ḍabṭ (precision) stays unassessed, so the
-# narrator is not handed a top precision grade it hasn't earned.
-_NARRATOR_GRADE_MAP = {
-    "VERIFIED": NarratorGrade.RELIABLE,
-    "REVOKED": NarratorGrade.REJECTED,
-    "SUSPENDED": NarratorGrade.REJECTED,
-    "EXPIRED": NarratorGrade.ACCEPTABLE,
-    "SUPERSEDED": NarratorGrade.ACCEPTABLE,
-    "LAPSED": NarratorGrade.ACCEPTABLE,
-}
-
 
 @dataclass
 class SealedSource:
     """A Live Verify-sealed source, ready to register as an ISNAD narrator.
 
-    `adalah` is anchored by cryptography; `dabt` is deliberately UNASSESSED.
-    `origin_strength` reflects the seal, not the content.
+    `adalah` is anchored by cryptography only when the seal is independently
+    endorsed; `dabt` is deliberately UNASSESSED.  `origin_strength` reflects
+    the seal, not the content.
     """
 
     narrator_id: str  # e.g. "verify:degrees.ed.ac.uk"
     grade: NarratorGrade
     adalah: AdalahGrade
     dabt: DabtGrade
-    origin_strength: str  # "verified" | "revoked" | "unknown" ...
+    origin_strength: str  # "verified-attested" | "self-attested" | "revoked" | ...
     domain: str
     verified: bool
+    self_verified: bool
+    authority_basis: str | None = None
     payload: dict | None = None
 
 
@@ -83,25 +59,56 @@ def seal_to_narrator(result: VerificationResult) -> SealedSource:
     a Live Verify source is distinguishable from a plain source.  The domain
     is the one the document named, never the hosting host.
 
-    Honest limit: this anchors ʿadālah (integrity) and origin, but sets
-    ḍabṭ (precision) to UNASSESSED.  A verified document is unaltered and
-    issuer-attested; it can still be factually wrong.  The content critic
-    still has to do its job.
+    **Self-verification (tazkiyah).**  Classical rijāl is explicit that
+    declaring a narrator reliable (tazkiyah) must come from an *independent*
+    critic — self-testimony establishes nothing.  Live Verify encodes the same
+    principle: a self-verified seal (no independent ``authorizedBy`` endorser)
+    proves tamper-evidence and origin, but NOT integrity — the domain
+    confirming the claim is the domain making it.  Live Verify renders it
+    amber, not green.
+
+    So the mapping splits:
+
+    - ``VERIFIED`` **with** an independent endorser → ʿadālah HIGH,
+      grade RELIABLE, origin ``verified-attested``.  Integrity IS seeded.
+    - ``VERIFIED`` **self-verified** → ʿadālah UNASSESSED, grade UNGRADED,
+      origin ``self-attested``.  Integrity is NOT seeded — a self-verified
+      seal is a strong *origin* signal and nothing more.
+
+    Honest limit: even an endorsed seal anchors ʿadālah and origin, but sets
+    ḍabṭ (precision) to UNASSESSED and leaves content to the matn critic.
+    A verified document can still be a genuine, domain-attested lie.
     """
     domain = result.domain
     narrator_id = f"verify:{domain}" if domain else "verify:unknown"
     status = result.status.upper()
 
-    grade = _NARRATOR_GRADE_MAP.get(status, NarratorGrade.UNGRADED)
-    adalah = _ADALAH_MAP.get(status, AdalahGrade.UNASSESSED)
-
     origin_strength = "unknown"
-    if result.verified:
-        origin_strength = "verified"
+
+    # Verified with an independent endorser: integrity IS anchored.
+    if result.verified and not result.self_verified:
+        grade = NarratorGrade.RELIABLE
+        adalah = AdalahGrade.HIGH
+        origin_strength = "verified-attested"
+    # Verified but self-verified: tamper-evidence + origin only.  No integrity.
+    elif result.verified:
+        grade = NarratorGrade.UNGRADED
+        adalah = AdalahGrade.UNASSESSED
+        origin_strength = "self-attested"
+    # Revoked / suspended → COMPROMISED (issuer withdrew; punitive).
     elif status in ("REVOKED", "SUSPENDED"):
+        grade = NarratorGrade.REJECTED
+        adalah = AdalahGrade.COMPROMISED
         origin_strength = "compromised"
+    # Expired / superseded / administrative → ACCEPTABLE (authentic, not current).
     elif status in ("EXPIRED", "SUPERSEDED", "LAPSED"):
-        origin_strength = "attested"  # still issuer-attested, but not current
+        grade = NarratorGrade.ACCEPTABLE
+        adalah = AdalahGrade.ACCEPTABLE
+        origin_strength = "attested"
+    # Everything else (not-found, network error, no status) → unassessed.
+    else:
+        grade = NarratorGrade.UNGRADED
+        adalah = AdalahGrade.UNASSESSED
 
     return SealedSource(
         narrator_id=narrator_id,
@@ -111,6 +118,8 @@ def seal_to_narrator(result: VerificationResult) -> SealedSource:
         origin_strength=origin_strength,
         domain=domain,
         verified=result.verified,
+        self_verified=result.self_verified,
+        authority_basis=result.authority_basis,
         payload=result.payload,
     )
 

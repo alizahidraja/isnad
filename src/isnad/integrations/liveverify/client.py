@@ -43,6 +43,22 @@ class VerificationResult:
     verify: line — never the hosting host.  `payload` is the full JSON body
     when the endpoint returned JSON (may include `tx`, `allowedDomains`,
     etc.).
+
+    Authority-chain fields (populated from verification-meta.json):
+
+    - `authorized_by` — the issuer's ``authorizedBy`` value if declared,
+      else None.  Presence means the issuer *claims* an independent endorser.
+    - `authority_basis` — the issuer's one-line ``authorityBasis`` statement
+      if declared, else None.  This is the issuer describing itself, not an
+      endorsement.
+    - `self_verified` — True when no independent ``authorizedBy`` endorser is
+      present.  A self-verified seal proves tamper-evidence and origin, NOT
+      integrity — the domain confirming the claim is the domain making it
+      (Live Verify renders this amber, not green).
+
+    NOTE: we do not yet walk the full authority chain to a sovereign root.
+    Presence of an independent ``authorizedBy`` endorser is the signal used
+    here.  A deeper walk (endorser → ... → root) is a future refinement.
     """
 
     verified: bool
@@ -50,6 +66,9 @@ class VerificationResult:
     domain: str
     payload: dict | None = None
     error: str | None = None
+    authorized_by: str | None = None
+    authority_basis: str | None = None
+    self_verified: bool = True
 
 
 # ---------------------------------------------------------------------------
@@ -160,6 +179,28 @@ def fetch_verification_meta(base_url: str, timeout: float = 10.0) -> dict | None
     return None
 
 
+def _authority_fields(metadata: dict | None) -> tuple[str | None, str | None, bool]:
+    """Extract authority-chain fields from verification-meta.json.
+
+    Returns (authorized_by, authority_basis, self_verified).
+
+    ``authorized_by`` is the issuer's declared ``authorizedBy`` endorser (or
+    None).  ``authority_basis`` is the issuer's one-line self-description (or
+    None).  ``self_verified`` is True when there is no independent
+    ``authorizedBy`` endorser — absence of a chain is NOT evidence of one.
+
+    We do not walk the full chain to a sovereign root here; presence of an
+    independent endorser is the signal for this pass.  See
+    VerificationResult for the limitation note.
+    """
+    if not metadata:
+        return None, None, True
+    authorized_by = metadata.get("authorizedBy")
+    authority_basis = metadata.get("authorityBasis")
+    self_verified = not bool(authorized_by)
+    return authorized_by, authority_basis, self_verified
+
+
 def verify_claim(
     raw_text: str,
     *,
@@ -242,16 +283,39 @@ def verify_claim(
 
     if payload and "status" in payload:
         status = str(payload["status"]).upper()
+        authorized_by, authority_basis, self_verified = _authority_fields(metadata)
         if status == "VERIFIED":
-            return VerificationResult(verified=True, status=status, domain=domain, payload=payload)
+            return VerificationResult(
+                verified=True,
+                status=status,
+                domain=domain,
+                payload=payload,
+                authorized_by=authorized_by,
+                authority_basis=authority_basis,
+                self_verified=self_verified,
+            )
         # Custom affirming statuses from metadata responseTypes.
         if metadata and "responseTypes" in metadata:
             rt = metadata["responseTypes"].get(status)
             if rt and rt.get("class") == "affirming":
                 return VerificationResult(
-                    verified=True, status=status, domain=domain, payload=payload
+                    verified=True,
+                    status=status,
+                    domain=domain,
+                    payload=payload,
+                    authorized_by=authorized_by,
+                    authority_basis=authority_basis,
+                    self_verified=self_verified,
                 )
-        return VerificationResult(verified=False, status=status, domain=domain, payload=payload)
+        return VerificationResult(
+            verified=False,
+            status=status,
+            domain=domain,
+            payload=payload,
+            authorized_by=authorized_by,
+            authority_basis=authority_basis,
+            self_verified=self_verified,
+        )
 
     # No JSON status — not verified.
     return VerificationResult(
