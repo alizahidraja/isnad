@@ -768,6 +768,18 @@ class Registry:
         """True when the grade is in its stale window or already expired."""
         return self.effective_grade(narrator_id, domain_tag, now=now).needs_recheck
 
+    def get_adalah_grade(self, narrator_id: str, domain_tag: str) -> AdalahGrade:
+        """Return a narrator's ʿadālah (integrity) grade, defaulting to UNASSESSED.
+
+        This is the axis distinct from the precision-oriented NarratorGrade
+        (paper §4.2): a narrator can be generally accurate (good NarratorGrade)
+        while its integrity has been separately compromised (issue #11 —
+        chain-integrity and origin-strength must be distinguishable, not
+        collapsed into one grade).
+        """
+        narrator = self.get(narrator_id, domain_tag)
+        return narrator.adalah_grade if narrator else AdalahGrade.UNASSESSED
+
     def get_grade_for_link(
         self,
         narrator_id: str,

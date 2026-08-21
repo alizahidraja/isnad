@@ -19,7 +19,9 @@ This is one instantiation of a parameter the framework leaves open
 from __future__ import annotations
 
 from isnad.types import (
+    AdalahGrade,
     ChainGrade,
+    ContentVerdict,
     GradingStrategy,
     NarratorGrade,
     TransformType,
@@ -70,6 +72,8 @@ class RefinedWeakestLink:
         is_complete: bool,
         *,
         corroboration_support: bool = False,
+        link_adalah_grades: list[AdalahGrade] | None = None,
+        link_fidelity_verdicts: list[ContentVerdict] | None = None,
     ) -> ChainGrade:
         """Compute the chain grade by walking the chain link-by-link.
 
@@ -79,6 +83,19 @@ class RefinedWeakestLink:
             is_complete: Whether the chain has no gaps (ittiṣāl holds).
             corroboration_support: Whether independent corroboration supports
                 the claim, allowing generative links to raise the floor.
+            link_adalah_grades: Optional per-link ʿadālah (integrity) grades,
+                aligned with link_narrator_grades. Kept as a separate axis
+                (issue #11): a narrator with a good precision/accuracy grade
+                but COMPROMISED integrity still poisons the chain — integrity
+                failure is not something a strong NarratorGrade can offset.
+            link_fidelity_verdicts: Optional per-link transformation-fidelity
+                verdicts (see core/fidelity.py), aligned with
+                link_narrator_grades. A third axis, distinct from both of the
+                above: does this specific generative link's output actually
+                follow from its own input, right now — not the narrator's
+                general track record. CONTRADICTION caps that link's
+                contribution at DAIF regardless of NarratorGrade (issue #11,
+                direction 3: surface *where* a chain degraded).
 
         Returns:
             The computed ChainGrade.
@@ -94,14 +111,34 @@ class RefinedWeakestLink:
         if NarratorGrade.REJECTED in link_narrator_grades:
             return ChainGrade.MAWDU
 
+        # --- Any COMPROMISED ʿadālah → MAWDU immediately ---
+        # A separate axis from NarratorGrade on purpose (issue #11): integrity
+        # failure poisons the chain even when the collapsed NarratorGrade for
+        # that narrator still looks acceptable.
+        if link_adalah_grades and AdalahGrade.COMPROMISED in link_adalah_grades:
+            return ChainGrade.MAWDU
+
+        fidelity = link_fidelity_verdicts or [ContentVerdict.UNVERIFIABLE] * len(
+            link_narrator_grades
+        )
+
         # --- Walk the chain, maintaining a running floor ---
         # Start at SAHIH — no floor yet, best possible grade
         floor: ChainGrade = ChainGrade.SAHIH
 
-        for narrator_grade, transform_type in zip(
-            link_narrator_grades, link_transform_types, strict=True
+        for narrator_grade, transform_type, fidelity_verdict in zip(
+            link_narrator_grades, link_transform_types, fidelity, strict=True
         ):
             link_equiv = _narrator_to_chain_grade(narrator_grade)
+
+            # Transformation fidelity: this specific output contradicted its
+            # own input — cap this link's contribution regardless of the
+            # narrator's general NarratorGrade. This runs before the
+            # transform-type logic below, so a contradicted generative link
+            # also can't raise the floor via corroboration (its capped grade
+            # no longer clears is_at_least_acceptable).
+            if fidelity_verdict == ContentVerdict.CONTRADICTION:
+                link_equiv = ChainGrade.min(link_equiv, ChainGrade.DAIF)
 
             if transform_type == TransformType.DESTRUCTIVE:
                 # Destructive: permanent floor at this link's grade
@@ -114,6 +151,10 @@ class RefinedWeakestLink:
                     # this link REPLACES the floor with its own grade.
                     # It can repair upstream damage (raise a lowered floor)
                     # OR introduce corruption (lower a high floor).
+                    # Note: link_equiv was already capped at DAIF above if this
+                    # link's own fidelity verdict was CONTRADICTION, so a
+                    # contradicted generative link can never use this branch
+                    # to raise the floor past DAIF — it can only lower it.
                     floor = link_equiv
                 else:
                     # Without corroboration, or WEAK generative:
@@ -139,6 +180,8 @@ def grade_chain(
     *,
     strategy: GradingStrategy | None = None,
     corroboration_support: bool = False,
+    link_adalah_grades: list[AdalahGrade] | None = None,
+    link_fidelity_verdicts: list[ContentVerdict] | None = None,
 ) -> ChainGrade:
     """Grade a claim chain.
 
@@ -148,6 +191,11 @@ def grade_chain(
         is_complete: Chain completeness (ittiṣāl).
         strategy: Optional custom GradingStrategy.
         corroboration_support: Whether corroboration supports the claim.
+        link_adalah_grades: Optional per-link ʿadālah (integrity) grades —
+            see RefinedWeakestLink.compute_chain_grade for details.
+        link_fidelity_verdicts: Optional per-link transformation-fidelity
+            verdicts (core/fidelity.py) — see
+            RefinedWeakestLink.compute_chain_grade for details.
 
     Returns:
         ChainGrade for the claim.
@@ -158,4 +206,6 @@ def grade_chain(
         link_transform_types=link_transform_types,
         is_complete=is_complete,
         corroboration_support=corroboration_support,
+        link_adalah_grades=link_adalah_grades,
+        link_fidelity_verdicts=link_fidelity_verdicts,
     )

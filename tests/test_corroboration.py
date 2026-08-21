@@ -11,6 +11,7 @@ import pytest
 
 from isnad.core.corroboration import (
     CappedCorroborationPolicy,
+    CorroborationEngine,
     SharedLineageDetector,
     evaluate_corroboration,
 )
@@ -206,3 +207,59 @@ class TestEvaluateCorroborationIntegration:
         )
         # All share gpt-4 family → heavily penalized → no upgrade
         assert result == ChainGrade.DAIF
+
+
+class TestContentAwareGating:
+    """Issue #11 — the shādhdh gate: a corroboration bonus must not be usable
+    to paper over a live content contradiction, however many "independent"
+    chains agree (the fabricated-chain-with-parallel-sub-chains exploit)."""
+
+    def test_live_contradiction_blocks_upgrade_even_with_strong_corroboration(self) -> None:
+        engine = CorroborationEngine(min_independent_chains=1)
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["narr-A"],
+            corroborating_chains=[
+                {"grade": "hasan", "narrators": ["narr-B"]},
+                {"grade": "sahih", "narrators": ["narr-C"]},
+            ],
+            has_live_contradiction=True,
+        )
+        assert result.upgraded is False
+        assert result.upgraded_grade == ChainGrade.DAIF
+        assert "contradiction" in result.reason.lower()
+
+    def test_without_live_contradiction_upgrade_still_fires(self) -> None:
+        """Control: the same inputs upgrade normally when there's no
+        contradiction — proving has_live_contradiction is the actual gate,
+        not a change to the underlying upgrade math."""
+        engine = CorroborationEngine(min_independent_chains=1)
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["narr-A"],
+            corroborating_chains=[
+                {"grade": "hasan", "narrators": ["narr-B"]},
+                {"grade": "sahih", "narrators": ["narr-C"]},
+            ],
+            has_live_contradiction=False,
+        )
+        assert result.upgraded is True
+        assert result.upgraded_grade == ChainGrade.HASAN
+
+    def test_live_contradiction_gate_applies_via_evaluate_too(self) -> None:
+        """Same gate through the exact-text-match evaluate() entry point."""
+        engine = CorroborationEngine(min_independent_chains=1)
+        result = engine.evaluate(
+            claim_text="fabricated claim",
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["narr-A"],
+            all_chains=[
+                {
+                    "claim_text": "fabricated claim",
+                    "chain_grade": "sahih",
+                    "narrator_ids": ["narr-B"],
+                },
+            ],
+            has_live_contradiction=True,
+        )
+        assert result.upgraded is False

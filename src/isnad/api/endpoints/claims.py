@@ -11,20 +11,24 @@ from fastapi import Depends, HTTPException, Query
 from fastapi.routing import APIRouter
 
 from isnad.api.auth import require_auth
-from isnad.api.dependencies import _metrics_counters, get_critic, get_registry
+from isnad.api.dependencies import _metrics_counters, get_critic, get_fidelity_critic, get_registry
 from isnad.core.chain import (
     Chain,
     ChainLinkSpec,
+    adalah_grades_for_chain,
     grades_for_chain,
     resolved_narrator_ids_for_chain,
     store_claim,
 )
 from isnad.core.corroboration import CorroborationEngine
 from isnad.core.decision import decide, describe_action
+from isnad.core.fidelity import compute_fidelity_verdicts
 from isnad.core.grading import grade_chain
 from isnad.core.identity import is_unknown_version, resolve_narrator_id
 from isnad.core.registry import Registry, RegistryDB
-from isnad.types import ContentVerdict, NarratorGrade, TransformType
+from isnad.critics.embedding import TFIDFIndex
+from isnad.models import ReviewQueue
+from isnad.types import Action, ContentVerdict, NarratorGrade, TransformType
 
 logger = logging.getLogger("isnad.api")
 router = APIRouter(prefix="/v1", tags=["claims"])
@@ -49,6 +53,35 @@ _app_state = AppState()
 
 def get_state() -> AppState:
     return _app_state
+
+
+def _find_best_matching_claim_id(
+    normalized: str, existing_texts: list[str], existing_claim_ids: list[str]
+) -> str | None:
+    """Locate the existing claim closest to `normalized`, for linking conflicts.
+
+    Used only to populate ReviewQueue.conflicting_claim_ids when a
+    CONTRADICTION verdict fires — deliberately independent of whichever
+    ContentCritic produced that verdict (TF-IDF, NLI, or LLM-backed), so
+    this doesn't touch the ContentCritic protocol at all. This is a locator,
+    not a trust decision — the verdict itself still comes from the
+    configured critic.
+    """
+    if not existing_texts:
+        return None
+    index = TFIDFIndex(existing_texts)
+    claim_vec = index.tfidf_vector(normalized)
+    vectors = [index.tfidf_vector(t) for t in existing_texts]
+    best_sim = 0.0
+    best_idx: int | None = None
+    for i, vec in enumerate(vectors):
+        sim = index.cosine_similarity(claim_vec, vec)
+        if sim > best_sim:
+            best_sim = sim
+            best_idx = i
+    if best_idx is None:
+        return None
+    return existing_claim_ids[best_idx]
 
 
 def _version_drift_detected(registry: Registry, chain: Chain) -> bool:
@@ -101,6 +134,7 @@ async def submit_claim(
     body: dict,
     reg: RegistryDB = Depends(get_registry),
     critic: Any = Depends(get_critic),
+    fidelity_critic: Any = Depends(get_fidelity_critic),
     _: str = Depends(require_auth),
 ) -> dict:
     state = get_state()
@@ -118,6 +152,8 @@ async def submit_claim(
             transform_type=TransformType(link.get("transform_type", "pass_through")),
             domain=domain,
             trace_id=link.get("trace_id", str(uuid.uuid4())[:8]),
+            input_snapshot=link.get("input_snapshot"),
+            output_snapshot=link.get("output_snapshot"),
         )
         for i, link in enumerate(chain_data)
     ]
@@ -125,12 +161,35 @@ async def submit_claim(
 
     resolved_narrator_ids = resolved_narrator_ids_for_chain(chain)
     link_grades = grades_for_chain(reg.registry, chain)
+    link_adalah_grades = adalah_grades_for_chain(reg.registry, chain)
+    link_fidelity_verdicts = compute_fidelity_verdicts(chain, fidelity_critic)
     cg = grade_chain(
-        link_grades, [l.transform_type for l in chain.links], is_complete=chain.is_complete
+        link_grades,
+        [l.transform_type for l in chain.links],
+        is_complete=chain.is_complete,
+        link_adalah_grades=link_adalah_grades,
+        link_fidelity_verdicts=link_fidelity_verdicts,
+    )
+
+    # Content verdict — computed BEFORE corroboration (issue #11: corroboration
+    # must be able to see a live contradiction before it decides to upgrade).
+    existing_records = list(state.claims.values())
+    existing_texts = [c.get("normalized_text", "") for c in existing_records]
+    existing_claim_ids = [c.get("claim_id", "") for c in existing_records]
+    cv = (
+        critic.evaluate(claim_text, normalized, existing_texts, domain)
+        if critic
+        else ContentVerdict.UNVERIFIABLE
+    )
+    has_live_contradiction = cv == ContentVerdict.CONTRADICTION
+    matched_claim_id = (
+        _find_best_matching_claim_id(normalized, existing_texts, existing_claim_ids)
+        if has_live_contradiction
+        else None
     )
 
     # Corroboration
-    all_claim_records = list(state.claims.values())
+    all_claim_records = existing_records
     all_chain_dicts: list[dict] = [
         {
             "claim_text": rec.get("normalized_text", ""),
@@ -151,19 +210,13 @@ async def submit_claim(
         base_narrators=resolved_narrator_ids,
         all_chains=all_chain_dicts,
         narrator_metadata=narrator_metadata,
+        has_live_contradiction=has_live_contradiction,
     )
     effective_grade = corr_result.upgraded_grade if corr_result.upgraded else cg
     if corr_result.upgraded:
         _metrics_counters["corroboration_fires_total"] += 1
     _metrics_counters["claims_submitted_total"] += 1
 
-    # Content verdict
-    existing_texts = [c.get("normalized_text", "") for c in state.claims.values()]
-    cv = (
-        critic.evaluate(claim_text, normalized, existing_texts, domain)
-        if critic
-        else ContentVerdict.UNVERIFIABLE
-    )
     action = decide(effective_grade, cv)
 
     claim_id = str(uuid.uuid4())
@@ -187,6 +240,7 @@ async def submit_claim(
         "narrator_ids": [l.narrator_id for l in chain.links],
         "resolved_narrator_ids": resolved_narrator_ids,
         "link_grades": [g.value for g in link_grades],
+        "link_fidelity_verdicts": [v.value for v in link_fidelity_verdicts],
         "version_drift_detected": _version_drift_detected(reg.registry, chain),
         "corroboration_result": {
             "upgraded": corr_result.upgraded,
@@ -210,6 +264,31 @@ async def submit_claim(
         )
     except Exception as exc:
         logger.warning(f"Failed to persist claim to DB: {exc}")
+
+    # Route to human review — including a link to the specific claim this one
+    # contradicts (issue #11: contradiction should surface both sides to a
+    # reviewer, not just gate the new claim in isolation).
+    if action in (
+        Action.REVIEW,
+        Action.QUARANTINE,
+        Action.REJECT_AND_QUARANTINE_NARRATOR,
+    ):
+        try:
+            reg.session.add(
+                ReviewQueue(
+                    claim_id=claim_id,
+                    page_slug=page_slug,
+                    claim_text=claim_text,
+                    chain_grade=effective_grade.value,
+                    content_verdict=cv.value,
+                    matrix_action=action.value,
+                    conflicting_claim_ids=[matched_claim_id] if matched_claim_id else [],
+                    notes=describe_action(effective_grade, cv),
+                )
+            )
+            reg.session.flush()
+        except Exception as exc:
+            logger.warning(f"Failed to enqueue claim for review: {exc}")
 
     return record
 

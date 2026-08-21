@@ -402,6 +402,8 @@ class CorroborationEngine:
         base_narrators: list[str],
         all_chains: list[dict],
         narrator_metadata: dict[str, dict] | None = None,
+        *,
+        has_live_contradiction: bool = False,
     ) -> CorroborationResult:
         """Evaluate corroboration by matching claims via exact claim_text.
 
@@ -415,6 +417,10 @@ class CorroborationEngine:
             all_chains: List of all claim chain dicts with keys:
                 claim_text, chain_grade, narrator_ids.
             narrator_metadata: Optional metadata for correlation detection.
+            has_live_contradiction: True when content criticism has flagged
+                this claim as contradicting an existing claim (issue #11 —
+                the corroboration bonus must not be usable to paper over a
+                live contradiction; withhold any upgrade in that case).
 
         Returns:
             CorroborationResult with upgrade decision.
@@ -444,6 +450,7 @@ class CorroborationEngine:
             corroborating_chains=corroborating_raw,
             narrator_metadata=narrator_metadata or {},
             total_corroborating=len(corroborating_raw),
+            has_live_contradiction=has_live_contradiction,
         )
 
     def evaluate_direct(
@@ -452,6 +459,8 @@ class CorroborationEngine:
         base_narrators: list[str],
         corroborating_chains: list[dict],
         narrator_metadata: dict[str, dict] | None = None,
+        *,
+        has_live_contradiction: bool = False,
     ) -> CorroborationResult:
         """Evaluate corroboration with pre-matched corroborating chains.
 
@@ -466,6 +475,10 @@ class CorroborationEngine:
                 Each dict must have keys: grade (ChainGrade or str),
                 narrators (list[str]).  Optional: source (str).
             narrator_metadata: Optional metadata for correlation detection.
+            has_live_contradiction: True when content criticism has flagged
+                this claim as contradicting an existing claim (issue #11 —
+                withhold any corroboration upgrade in that case, rather than
+                letting fake-independent parallel chains paper over it).
 
         Returns:
             CorroborationResult with upgrade decision.
@@ -503,6 +516,7 @@ class CorroborationEngine:
             corroborating_chains=normalised,
             narrator_metadata=narrator_metadata or {},
             total_corroborating=len(normalised),
+            has_live_contradiction=has_live_contradiction,
         )
 
     # ── internal: shared corroboration logic ──────────────────────
@@ -514,6 +528,8 @@ class CorroborationEngine:
         corroborating_chains: list[dict],
         narrator_metadata: dict[str, dict],
         total_corroborating: int,
+        *,
+        has_live_contradiction: bool = False,
     ) -> CorroborationResult:
         """Core corroboration logic shared by evaluate() and evaluate_direct()."""
         if base_chain_grade == ChainGrade.MAWDU:
@@ -525,6 +541,21 @@ class CorroborationEngine:
                 effective_weight=0.0,
                 upgraded=False,
                 reason="MAWDU chains cannot be corroborated",
+            )
+
+        # --- Shādhdh gate (issue #11): a live contradiction must not be ---
+        # --- papered over by a corroboration bonus, however many         ---
+        # --- "independent" chains agree — the contradiction itself takes ---
+        # --- precedence over chain-side upgrade math.                   ---
+        if has_live_contradiction:
+            return CorroborationResult(
+                base_grade=base_chain_grade,
+                upgraded_grade=base_chain_grade,
+                corroborating_chains=total_corroborating,
+                independent_chains=0,
+                effective_weight=0.0,
+                upgraded=False,
+                reason="Corroboration withheld: claim has a live content contradiction outstanding",
             )
 
         # Filter by independence

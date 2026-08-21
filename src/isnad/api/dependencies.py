@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 
 from isnad.core.registry import BayesianTransitionPolicy, RegistryDB, ThresholdTransitionPolicy
 from isnad.critics.embedding import EmbeddingCritic
-from isnad.critics.nli import HybridCritic
+from isnad.critics.nli import HybridCritic, LocalNLICritic
 from isnad.storage.sqlalchemy import get_session_factory
 from isnad.types import NarratorGrade, TransitionPolicy
 
@@ -132,3 +132,37 @@ _shared_critic = _build_critic()
 
 def get_critic():
     return _shared_critic
+
+
+# ── Fidelity critic builder (issue #11, direction 3) ───────────
+def _build_fidelity_critic():
+    """Build the critic used for per-link transformation-fidelity checks.
+
+    Deliberately does NOT fall back to EmbeddingCritic: fidelity checking
+    needs a directional entailment/contradiction judgment (does this link's
+    output follow from its own input), which a symmetric-similarity critic
+    like TF-IDF cannot meaningfully provide. Returns None when no NLI-capable
+    critic is available — core/fidelity.py treats that as "skip, no
+    penalty," matching the framework's existing "no data → no penalty"
+    pattern.
+    """
+    try:
+        critic = LocalNLICritic()
+        if critic._load_model() is None:
+            logger.info(
+                "LocalNLICritic: sentence-transformers not installed; "
+                "fidelity checking disabled (all links UNVERIFIABLE)"
+            )
+            return None
+        logger.info("Using LocalNLICritic for transformation-fidelity checks")
+        return critic
+    except Exception:
+        logger.info("LocalNLICritic unavailable; fidelity checking disabled")
+        return None
+
+
+_shared_fidelity_critic = _build_fidelity_critic()
+
+
+def get_fidelity_critic():
+    return _shared_fidelity_critic
