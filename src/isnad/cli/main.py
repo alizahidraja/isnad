@@ -1,8 +1,8 @@
-"""ISNAD CLI — entry point for serve, seed, and eval commands.
+"""ISNAD CLI — entry point for serve and seed commands.
 
 Usage:
-    isnad serve          Start the API server
-    isnad seed --config  Seed narrators from JSON config
+    isnad serve            Start the API server
+    isnad seed             Seed narrators from ISNAD_SEED_CONFIG env var
 """
 
 from __future__ import annotations
@@ -53,13 +53,19 @@ def seed() -> None:
         print(f"Seeded {len(config)} narrators.")
 
 
-def main() -> None:
-    """CLI dispatcher."""
-    if len(sys.argv) < 2:
+def main(argv: list[str] | None = None) -> None:
+    """CLI dispatcher.
+
+    Args:
+        argv: Command-line arguments (defaults to sys.argv). Injectable for
+            testing.
+    """
+    args = sys.argv if argv is None else ["isnad", *argv]
+    if len(args) < 2:
         print("Usage: isnad [serve|seed]")
         sys.exit(1)
 
-    cmd = sys.argv[1]
+    cmd = args[1]
     if cmd == "serve":
         serve()
     elif cmd == "seed":

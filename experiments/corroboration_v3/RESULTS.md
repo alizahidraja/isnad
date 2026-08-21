@@ -86,7 +86,7 @@ sim=0.860 | "The SI unit for pressure is the pascal (Pa)..."
 | Matching | Exact string | Cosine ≥ 0.75 | Cosine ≥ 0.80 |
 | Corpus | 12 intros | 30 articles | 2 textbooks |
 | Sentences | 215 | 10,544 | 22,372 |
-| Matches | 136 | 662 | **104** |
+| Matches | 136 | 662 (raw) / 603 (filtered) | **104** |
 | Fire rate | 50% | 100% | **100%** |
 | Independence | Synthetic chain | Simple Wikipedia | Different authors |
 | Difficulty | Easy | Medium | **Hard** |

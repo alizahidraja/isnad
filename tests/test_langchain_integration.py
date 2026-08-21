@@ -153,3 +153,68 @@ class TestExtractModelVersion:
 
     def test_returns_none_when_no_identity_found(self) -> None:
         assert IsnadTracer._extract_model_version({}, {}) is None
+
+
+class TestTracerLifecycle:
+    """The tracer's callback lifecycle and report methods (no LangChain run needed)."""
+
+    def _tracer(self) -> IsnadTracer:
+        reg = seed_registry({"source:docs": "reliable", "model:gpt-4o": "acceptable"})
+        return IsnadTracer(registry=reg)
+
+    def test_empty_report(self):
+        assert self._tracer().report() == "No claims recorded."
+
+    def test_empty_graded_chains(self):
+        assert self._tracer().graded_chains() == []
+
+    def test_chain_start_adds_link(self):
+        tracer = self._tracer()
+        tracer.on_chain_start({"name": "rag", "id": "rag"}, {})
+        assert len(tracer._links) == 1
+        assert tracer._links[0].narrator_id == "rag"
+        assert tracer._links[0].transform_type.value == "pass_through"
+
+    def test_llm_start_extracts_version(self):
+        tracer = self._tracer()
+        tracer.on_llm_start(
+            {"name": "gpt-4o", "id": "gpt-4o"},
+            ["prompt"],
+            invocation_params={"model": "gpt-4o-2024-08-06"},
+        )
+        assert tracer._links[0].narrator_id == "model:gpt-4o"
+        assert tracer._links[0].version == "gpt-4o-2024-08-06"
+        assert tracer._links[0].transform_type.value == "generative"
+
+    def test_retriever_end_adds_destructive_links(self):
+        tracer = self._tracer()
+
+        class Doc:
+            metadata = {"source": "openstax.org"}
+
+        tracer.on_retriever_end([Doc(), Doc()], run_id="r1")
+        assert len(tracer._links) == 2
+        assert all(l.transform_type.value == "destructive" for l in tracer._links)
+        assert all(l.narrator_id == "retriever:openstax.org" for l in tracer._links)
+
+    def test_tool_start_adds_destructive_link(self):
+        tracer = self._tracer()
+        tracer.on_tool_start({"name": "calculator"}, "")
+        assert tracer._links[0].narrator_id == "tool:calculator"
+        assert tracer._links[0].transform_type.value == "destructive"
+
+    def test_full_flow_produces_graded_claim_and_report(self):
+        tracer = self._tracer()
+        tracer.on_chain_start({"name": "rag"}, {})
+        tracer.on_llm_start({"name": "gpt-4o", "id": "gpt-4o"}, ["p"])
+        tracer.on_chain_end({"output": "F = ma"})
+
+        graded = tracer.graded_chains()
+        assert len(graded) == 1
+        assert graded[0]["claim_text"] == "F = ma"
+        assert "chain_grade" in graded[0]
+        assert "action" in graded[0]
+
+        report = tracer.report()
+        assert "ISNAD Report — 1 claims" in report
+        assert "F = ma" in report

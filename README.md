@@ -378,7 +378,7 @@ The framework's most distinctive contribution — independent-chain corroboratio
 
 | Corpus | Sources | Matches | Fire Rate | Difficulty |
 |---|---|---|---|---|
-| **Wikipedia** (v2) | Regular + Simple English (30 topics) | 662 | 100% | Easy — natural paraphrasing |
+| **Wikipedia** (v2) | Regular + Simple English (30 topics) | 603 | 100% | Easy — natural paraphrasing |
 | **Physics Textbooks** (v3) | OpenStax Vol.1 + Crowell (2 books) | 104 | 100% | Hard — formal prose, fewer overlaps |
 
 **Combined: 603 + 104 = 707 claim pairs tested across both corpora. 100% corroboration fire rate. 8/8 negative controls. Zero false positives. Source URLs for every claim.**

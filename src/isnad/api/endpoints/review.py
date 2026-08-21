@@ -16,6 +16,7 @@ from fastapi import Depends, HTTPException
 from fastapi.routing import APIRouter
 from sqlalchemy.orm import Session
 
+from isnad.api.auth import require_auth
 from isnad.api.dependencies import get_db
 from isnad.models import ReviewQueue
 
@@ -41,8 +42,15 @@ def _serialize(row: ReviewQueue) -> dict:
 
 
 @router.get("/review-queue")
-async def list_review_queue(session: Session = Depends(get_db)) -> dict:
-    """List unresolved review-queue items, most recent first."""
+async def list_review_queue(
+    session: Session = Depends(get_db), _: str = Depends(require_auth)
+) -> dict:
+    """List unresolved review-queue items, most recent first.
+
+    Requires auth: this is the internal human-review surface, exposing claim
+    text and contradiction links — unlike the public claim/narrator read
+    endpoints, which are the verification surface.
+    """
     rows = (
         session
         .query(ReviewQueue)
@@ -54,7 +62,9 @@ async def list_review_queue(session: Session = Depends(get_db)) -> dict:
 
 
 @router.get("/review-queue/{item_id}")
-async def get_review_queue_item(item_id: str, session: Session = Depends(get_db)) -> dict:
+async def get_review_queue_item(
+    item_id: str, session: Session = Depends(get_db), _: str = Depends(require_auth)
+) -> dict:
     try:
         parsed_id = UUID(item_id)
     except ValueError:
