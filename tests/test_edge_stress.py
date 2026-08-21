@@ -183,9 +183,15 @@ for i in range(20):
     grades_seen.append(g)
 
 final = reg_osc.get_grade("pingpong", "physics")
+# REJECTED is active containment (paper §4.4) and is sticky: once a narrator
+# drops to REJECTED, only an explicit human-review taʿdīl restores it (to WEAK).
+# The ping-pong's first JARH pushes the ungraded narrator to REJECTED, and it
+# stays there through the subsequent oscillation — precision evidence cannot
+# rehabilitate a REJECTED narrator.  This is the documented design, now
+# enforced in BOTH the threshold and Bayesian policies.
 check(
-    "Ping-pong converges to WEAK (Beta(11,11) mean=0.5)",
-    final == NarratorGrade.WEAK,
+    "REJECTED is sticky: ping-pong cannot self-recover without human review",
+    final == NarratorGrade.REJECTED,
     f"got {final.value}",
 )
 check("No crash during 20 rapid transitions", len(grades_seen) == 20)

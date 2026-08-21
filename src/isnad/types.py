@@ -234,6 +234,7 @@ class EvidenceType(Enum):
     EVAL_HARNESS = "eval_harness"  # per-narrator evaluation harness result
     POST_HOC_AUDIT = "post_hoc_audit"  # audit of served claims
     CORROBORATION_OUTCOME = "corroboration_outcome"  # corroboration/contradiction
+    SURVIVAL = "survival"  # a claim survived independent (endorsed) verification
     HUMAN_REVIEW = "human_review"  # human reviewer verdict
     VERSION_BUMP = "version_bump"  # model version change → reset
     BOOTSTRAP_SEED = "bootstrap_seed"  # initial seed grade from benchmarks
@@ -273,14 +274,19 @@ class EvidenceProvenance(Enum):
 
 
 _PRIOR_EVIDENCE = {EvidenceType.BOOTSTRAP_SEED, EvidenceType.EVAL_HARNESS}
-_OBSERVED_EVIDENCE = {EvidenceType.POST_HOC_AUDIT, EvidenceType.CORROBORATION_OUTCOME}
+_OBSERVED_EVIDENCE = {
+    EvidenceType.POST_HOC_AUDIT,
+    EvidenceType.CORROBORATION_OUTCOME,
+    EvidenceType.SURVIVAL,
+}
 
 
 def provenance_of(evidence_type: EvidenceType) -> EvidenceProvenance:
     """Classify an evidence type as prior, observed, human, or meta.
 
     - BOOTSTRAP_SEED / EVAL_HARNESS → PRIOR (a population estimate).
-    - POST_HOC_AUDIT / CORROBORATION_OUTCOME → OBSERVED (an in-pipeline instance).
+    - POST_HOC_AUDIT / CORROBORATION_OUTCOME / SURVIVAL → OBSERVED (an
+      in-pipeline instance).
     - HUMAN_REVIEW → HUMAN.
     - VERSION_BUMP → META (a reset, not grade evidence).
     """
@@ -524,5 +530,6 @@ def default_axis_for(evidence_type: EvidenceType) -> EvidenceAxis:
         EvidenceType.EVAL_HARNESS,
         EvidenceType.CORROBORATION_OUTCOME,
         EvidenceType.POST_HOC_AUDIT,
+        EvidenceType.SURVIVAL,
     }
     return EvidenceAxis.PRECISION if evidence_type in precision_types else EvidenceAxis.UNSPECIFIED

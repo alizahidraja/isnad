@@ -319,6 +319,25 @@ class BayesianTransitionPolicy:
         For full Bayesian usage, use get_state().update() and get_state().to_grade()
         directly through the calibration loop.
         """
+        evidence_type = EvidenceType(str(new_evidence.get("evidence_type", "")))
+        action = EvidenceAction(str(new_evidence.get("action", EvidenceAction.NEUTRAL.value)))
+
+        # Version bump resets
+        if evidence_type == EvidenceType.VERSION_BUMP:
+            return NarratorGrade.UNGRADED
+
+        # REJECTED is sticky (active containment) — mirroring the threshold
+        # policies.  Only an explicit human-review taʿdīl restores to WEAK;
+        # no amount of positive *precision* evidence (survival, corroboration,
+        # audit) may rehabilitate a narrator whose integrity (ʿadālah) was
+        # compromised.  Without this guard, a quarantined fabricator climbs
+        # back to RELIABLE on a flood of plausible-but-verified claims — the
+        # exact failure the axis split exists to prevent.
+        if current_grade == NarratorGrade.REJECTED:
+            if evidence_type == EvidenceType.HUMAN_REVIEW and action == EvidenceAction.TADIL:
+                return NarratorGrade.WEAK
+            return NarratorGrade.REJECTED
+
         # Count evidence from history + new evidence
         positive = sum(
             1
@@ -331,7 +350,6 @@ class BayesianTransitionPolicy:
             if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
         )
 
-        action = EvidenceAction(str(new_evidence.get("action", EvidenceAction.NEUTRAL.value)))
         if action == EvidenceAction.TADIL:
             positive += 1
         elif action == EvidenceAction.JARH:
@@ -340,11 +358,6 @@ class BayesianTransitionPolicy:
         # Build Beta state from counts
         state = BetaState(alpha=float(positive + 1), beta=float(adverse + 1))
         state.total_evidence = positive + adverse
-
-        # Version bump resets
-        evidence_type = EvidenceType(str(new_evidence.get("evidence_type", "")))
-        if evidence_type == EvidenceType.VERSION_BUMP:
-            return NarratorGrade.UNGRADED
 
         return state.to_grade()
 

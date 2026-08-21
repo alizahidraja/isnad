@@ -142,6 +142,7 @@ Also available: `IsnadTracer` (older flat-list reporter with built-in report()) 
 | **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 9 integration tests pass |
 | **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |
 | **Evidence provenance**       | ✅ Implemented       | `evidence_provenance()` reports whether a grade is prior-derived (benchmark) or observation-backed (audit/corroboration) — issue #6 |
+| **Survival primitive**        | ✅ Implemented       | `record_survival()` records that a claim survived independent (endorsed) verification — issue #25 |
 
 ### Evidence provenance — assumption vs. observation (issue #6)
 
@@ -163,6 +164,29 @@ s.observation_backed  # False — no observed instance yet
 confident the prior looks, it is not evidence about this transmission.  The
 framework does not change how it grades — it makes the *assumption vs.
 observation* distinction visible.
+
+### Survival — the positive observed-instance signal (issue #25)
+
+`record_survival()` records that a specific claim survived independent
+verification.  It is claim-scoped (bound to a claim_id + source) and carries
+the **tazkiyah guard**: a self-verified seal (amber — the domain vouching for
+itself) is refused, because survival must come from an *independent* verifier.
+Only an endorsed (green) verification counts.
+
+```python
+reg = Registry()
+reg.register("model:gpt-4o", "physics", grade=NarratorGrade.UNGRADED)
+
+reg.record_survival("model:gpt-4o", "physics", "claim-1", "gov.uk",
+                    self_verified=False)  # recorded (endorsed)
+reg.record_survival("model:gpt-4o", "physics", "claim-1", "gov.uk",
+                    self_verified=False)  # no-op (deduped: same claim + source)
+reg.record_survival("model:gpt-4o", "physics", "claim-2", "blog.example",
+                    self_verified=True)   # refused (self-verified ≠ survival)
+```
+
+Survival is a *precision* (ḍabṭ) signal — it never seeds ʿadālah (integrity),
+and it never rehabilitates a REJECTED (quarantined) narrator.
 
 The honesty box is a feature. We tell you exactly what works, what's limited,
 and where you need to supply your own components.

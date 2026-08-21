@@ -699,6 +699,69 @@ class Registry:
             axis=EvidenceAxis.PRECISION,
         )
 
+    def record_survival(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        claim_id: str,
+        source: str,
+        *,
+        self_verified: bool = False,
+        description: str = "",
+    ) -> NarratorGrade:
+        """Record that a claim survived independent verification (issue #25).
+
+        The positive observed-instance signal that #6 wanted: a claim produced
+        by this narrator was independently verified against an external
+        authority and held up.
+
+        **Tazkiyah guard.**  Survival must come from an *independent* verifier.
+        A self-verified seal (amber — the domain vouching for itself) proves
+        tamper-evidence and origin, NOT accuracy.  So a self-verified
+        "survival" is refused: we return the current grade unchanged and log
+        nothing.  Only an *endorsed* verification (green) is genuine survival.
+
+        **Claim-scoped dedup.**  The event binds to (claim_id, source), stored
+        in the evidence entry's metadata.  Re-verifying the same claim does
+        not double-count: if a SURVIVAL entry with this claim_id+source
+        already exists for this narrator, this call is a no-op.  This resists
+        farming — survival accumulates per *new* claim, not per re-check.
+
+        Dedup is derived from the evidence log (the source of truth), not a
+        parallel set — so it survives a RegistryDB round-trip like any other
+        evidence.
+
+        This is a *precision* (ḍabṭ) signal: it is windowed and recoverable,
+        exactly like corroboration.  It feeds the existing jarḥ–taʿdīl loop;
+        it does not seed ʿadālah (integrity).
+
+        Returns the narrator's grade (unchanged if refused or duplicate).
+        """
+        narrator = self.register(narrator_id, domain_tag)
+        current_grade = narrator.grade
+
+        # Tazkiyah guard: self-verified survival is not survival.
+        if self_verified:
+            return current_grade
+
+        # Claim-scoped dedup: has this claim already survived for this narrator?
+        for entry in narrator.evidence_log:
+            if EvidenceType(str(entry.get("evidence_type", ""))) != EvidenceType.SURVIVAL:
+                continue
+            meta = entry.get("metadata", {}) or {}
+            if meta.get("claim_id") == claim_id and meta.get("source") == source:
+                return current_grade
+
+        return self.record_evidence(
+            narrator_id,
+            domain_tag,
+            EvidenceType.SURVIVAL,
+            EvidenceAction.TADIL,
+            description or f"Claim {claim_id} survived independent verification via {source}",
+            metadata={"claim_id": claim_id, "source": source},
+            axis=EvidenceAxis.PRECISION,
+        )
+
     def renew_grade(
         self,
         narrator_id: str,
