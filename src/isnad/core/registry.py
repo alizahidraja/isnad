@@ -188,16 +188,23 @@ def _clamp_to_cap(grade: NarratorGrade, cap: NarratorGrade) -> NarratorGrade:
     return grade if _GRADE_RANK[grade] <= _GRADE_RANK[cap] else cap
 
 
-def _integrity_cap(integrity_jarh_count: int, downgrade_threshold: int) -> NarratorGrade:
+def _integrity_cap(integrity_jarh_count: int, integrity_strikes_per_tier: int) -> NarratorGrade:
     """The best grade still reachable given accumulated integrity strikes.
 
-    Integrity strikes are *permanent*: each full threshold's worth of them
-    lowers the ceiling one ordinal tier, independent of any windowed precision
-    recovery below it. Enough of them force REJECTED. This is the axis that
-    does not forget — the classical protection of the corpus against a proven
-    liar, restored after issue #9's window made all jarḥ forgettable.
+    Integrity strikes are *permanent*: each ``integrity_strikes_per_tier`` of
+    them lowers the ceiling one ordinal tier, independent of any windowed
+    precision recovery below it. Enough of them force REJECTED. This is the
+    axis that does not forget — the classical protection of the corpus against
+    a proven liar, restored after issue #9's window made all jarḥ forgettable.
+
+    ``integrity_strikes_per_tier`` is configurable (issue #21): the classical
+    *matrūk* standard argues one proven lie should cap immediately (a value of
+    1), while the threshold-consistent default keeps integrity and precision
+    on the same footing (value = the policy's downgrade threshold). Callers
+    may tune it per deployment without touching the precision axis.
     """
-    tiers_down = integrity_jarh_count // max(1, downgrade_threshold)
+    strikes = max(1, integrity_strikes_per_tier)
+    tiers_down = integrity_jarh_count // strikes
     ladder = [
         NarratorGrade.RELIABLE,
         NarratorGrade.ACCEPTABLE,
@@ -216,6 +223,7 @@ def threshold_transition(
     upgrade_sustained_count: int,
     upgrade_min_corroborated: int,
     window: int,
+    integrity_strikes_per_tier: int | None = None,
 ) -> NarratorGrade:
     """Shared jarḥ–taʿdīl transition for the whole threshold policy family.
 
@@ -248,8 +256,15 @@ def threshold_transition(
     all_evidence = [*evidence_history, new_evidence]
 
     # Integrity strikes accumulate forever and cap everything below them.
+    # `integrity_strikes_per_tier` defaults to the downgrade threshold when
+    # unset, keeping integrity and precision on the same footing (issue #21).
+    strikes_per_tier = (
+        downgrade_threshold
+        if integrity_strikes_per_tier is None
+        else integrity_strikes_per_tier
+    )
     integrity_jarh = sum(1 for e in all_evidence if _is_integrity_jarh(e))
-    integrity_cap = _integrity_cap(integrity_jarh, downgrade_threshold)
+    integrity_cap = _integrity_cap(integrity_jarh, strikes_per_tier)
 
     # An arriving integrity jarḥ ratchets down to the permanent cap.
     if action == EvidenceAction.JARH and axis != EvidenceAxis.PRECISION:
@@ -407,6 +422,7 @@ class CalibratedThresholdPolicy:
         upgrade_sustained_count: int = 10,
         upgrade_min_corroborated: int = 5,
         window: int | None = None,
+        integrity_strikes_per_tier: int | None = None,
     ):
         self.downgrade_threshold = downgrade_threshold
         self.upgrade_sustained_count = upgrade_sustained_count
@@ -414,6 +430,7 @@ class CalibratedThresholdPolicy:
         self.window = (
             max(downgrade_threshold, upgrade_sustained_count) if window is None else window
         )
+        self.integrity_strikes_per_tier = integrity_strikes_per_tier
 
     def evaluate_transition(
         self,
@@ -430,6 +447,7 @@ class CalibratedThresholdPolicy:
             upgrade_sustained_count=self.upgrade_sustained_count,
             upgrade_min_corroborated=self.upgrade_min_corroborated,
             window=self.window,
+            integrity_strikes_per_tier=self.integrity_strikes_per_tier,
         )
 
 
@@ -507,14 +525,19 @@ class ThresholdTransitionPolicy:
     # policy trades no magic number for another — see class docstring.
     DEFAULT_WINDOW: int = 5
 
-    def __init__(self, window: int | None = None):
+    def __init__(self, window: int | None = None, integrity_strikes_per_tier: int | None = None):
         """Args:
         window: How many of the most recent evidence entries count toward
             the transition. Older evidence ages out. Defaults to
             ``DEFAULT_WINDOW`` (5). Must be >= ``UPGRADE_SUSTAINED_COUNT`` for
             the upgrade branch to remain reachable.
+        integrity_strikes_per_tier: How many permanent integrity (ʿadālah)
+            strikes lower the ceiling one tier. Defaults to
+            ``DOWNGRADE_THRESHOLD`` (issue #21); set to 1 for a strict
+            single-proven-lie-caps-immediately standard.
         """
         self.window = self.DEFAULT_WINDOW if window is None else window
+        self.integrity_strikes_per_tier = integrity_strikes_per_tier
 
     def evaluate_transition(
         self,
@@ -531,6 +554,7 @@ class ThresholdTransitionPolicy:
             upgrade_sustained_count=self.UPGRADE_SUSTAINED_COUNT,
             upgrade_min_corroborated=self.UPGRADE_MIN_CORROBORATED,
             window=self.window,
+            integrity_strikes_per_tier=self.integrity_strikes_per_tier,
         )
 
 

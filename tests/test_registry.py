@@ -424,6 +424,67 @@ class TestIntegrityAxisPermanence:
         assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
 
 
+class TestIntegrityStrikeGranularity:
+    """Issue #21 — how many integrity strikes lower the ceiling one tier.
+
+    ``integrity_strikes_per_tier`` is now configurable. Default (None) keeps
+    integrity on the same footing as precision (one tier per downgrade
+    threshold's worth). Setting it to 1 gives the strict
+    single-proven-lie-caps-immediately standard.
+    """
+
+    def test_default_matches_downgrade_threshold(self):
+        # ThresholdTransitionPolicy: DOWNGRADE_THRESHOLD = 3.
+        reg = Registry(transition_policy=ThresholdTransitionPolicy())
+        reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
+        # 2 integrity strikes < 3 → no cap yet.
+        for _ in range(2):
+            reg.record_evidence(
+                "n", "physics", EvidenceType.HUMAN_REVIEW, EvidenceAction.JARH, "",
+                axis=EvidenceAxis.INTEGRITY,
+            )
+        assert reg.get_grade("n", "physics") == NarratorGrade.RELIABLE
+        # 3rd strike completes one threshold → one tier down.
+        reg.record_evidence(
+            "n", "physics", EvidenceType.HUMAN_REVIEW, EvidenceAction.JARH, "",
+            axis=EvidenceAxis.INTEGRITY,
+        )
+        assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
+
+    def test_single_strike_caps_immediately(self):
+        # Strict: integrity_strikes_per_tier=1 → one proven lie caps a tier.
+        reg = Registry(transition_policy=ThresholdTransitionPolicy(integrity_strikes_per_tier=1))
+        reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
+        reg.record_evidence(
+            "n", "physics", EvidenceType.HUMAN_REVIEW, EvidenceAction.JARH, "",
+            axis=EvidenceAxis.INTEGRITY,
+        )
+        assert reg.get_grade("n", "physics") == NarratorGrade.ACCEPTABLE
+
+    def test_single_strike_parameter_reaches_rejected_with_enough_strikes(self):
+        # With 1-per-tier, 3 strikes walk RELIABLE → ACCEPTABLE → WEAK → REJECTED.
+        reg = Registry(transition_policy=ThresholdTransitionPolicy(integrity_strikes_per_tier=1))
+        reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
+        for _ in range(3):
+            reg.record_evidence(
+                "n", "physics", EvidenceType.HUMAN_REVIEW, EvidenceAction.JARH, "",
+                axis=EvidenceAxis.INTEGRITY,
+            )
+        assert reg.get_grade("n", "physics") == NarratorGrade.REJECTED
+
+    def test_strikes_per_tier_affects_only_integrity_not_precision(self):
+        # Precision jarḥ still uses downgrade_threshold, independent of
+        # integrity_strikes_per_tier.
+        reg = Registry(transition_policy=ThresholdTransitionPolicy(integrity_strikes_per_tier=1))
+        reg.register("n", "physics", grade=NarratorGrade.RELIABLE)
+        # 1 precision strike < 3 → no downgrade (proves precision axis unaffected).
+        reg.record_evidence(
+            "n", "physics", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH, "",
+            axis=EvidenceAxis.PRECISION,
+        )
+        assert reg.get_grade("n", "physics") == NarratorGrade.RELIABLE
+
+
 class TestAxisCallerBehaviour:
     """Behaviour of real callers and the untagged default (issue #9 v2).
 
