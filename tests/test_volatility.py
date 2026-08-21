@@ -161,6 +161,43 @@ class TestVolatilityConfiguration:
         with pytest.raises(ValueError):
             FixedVolatilityPolicy(stale_ratio=1.5)
 
+    def test_invalid_base_days_rejected(self) -> None:
+        with pytest.raises(ValueError):
+            FixedVolatilityPolicy(base_days=0)
+
+    def test_type_factors_explicit_arg(self) -> None:
+        policy = FixedVolatilityPolicy(base_days=90, type_factors={"model": 0.25})
+        assert policy.time_to_live(NarratorType.MODEL, "general") == timedelta(days=22.5)
+
+    def test_type_factors_and_domain_days_env_override(self, monkeypatch) -> None:
+        monkeypatch.setenv("ISNAD_TTL_TYPE_FACTORS", '{"scraper": 0.5}')
+        monkeypatch.setenv("ISNAD_TTL_DOMAIN_DAYS", '{"physics": 10}')
+        policy = FixedVolatilityPolicy(base_days=90)
+        assert policy.time_to_live(NarratorType.SCRAPER, "general") == timedelta(days=45)
+        assert policy.time_to_live(NarratorType.MODEL, "physics") == timedelta(days=10)
+
+    def test_invalid_env_json_is_ignored(self, monkeypatch) -> None:
+        monkeypatch.setenv("ISNAD_TTL_TYPE_FACTORS", "not-json")
+        monkeypatch.setenv("ISNAD_TTL_DOMAIN_DAYS", '["not", "a", "dict"]')
+        policy = FixedVolatilityPolicy(base_days=90)
+        # Falls back to defaults: model factor 0.5, no domain override.
+        assert policy.time_to_live(NarratorType.MODEL, "physics") == timedelta(days=45)
+
+    def test_non_numeric_env_values_are_ignored(self, monkeypatch) -> None:
+        monkeypatch.setenv("ISNAD_TTL_TYPE_FACTORS", '{"model": "not-a-float"}')
+        monkeypatch.setenv("ISNAD_TTL_DOMAIN_DAYS", '{"physics": "also-not-a-float"}')
+        policy = FixedVolatilityPolicy(base_days=90)
+        assert policy.time_to_live(NarratorType.MODEL, "physics") == timedelta(days=45)
+
+    def test_stale_ratio_explicit_arg(self) -> None:
+        policy = FixedVolatilityPolicy(base_days=90, stale_ratio=0.5)
+        assert policy.stale_window(NarratorType.MODEL, "general") == timedelta(days=90 * 0.5 * 0.5)
+
+    def test_repr_is_informative(self) -> None:
+        policy = FixedVolatilityPolicy(base_days=90)
+        assert "base_days=90.0" in repr(policy)
+        assert "stale_ratio=" in repr(policy)
+
     def test_env_override(self, monkeypatch) -> None:
         monkeypatch.setenv("ISNAD_TTL_BASE_DAYS", "7")
         policy = FixedVolatilityPolicy()
