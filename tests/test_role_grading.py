@@ -207,3 +207,52 @@ class TestAliasIndexNotCorruptedByRoles:
 class TestSurvivalClassification:
     def test_survival_is_observed(self) -> None:
         assert provenance_of(EvidenceType.SURVIVAL) == EvidenceProvenance.OBSERVED
+
+
+class TestRoleIdentityAndIntegrity:
+    def test_role_inherits_narrator_type_from_default(self) -> None:
+        """narrator_type drives the volatility TTL; a role must not default to MODEL."""
+        from isnad.types import NarratorType
+
+        reg = Registry()
+        reg.register("src", "d", narrator_type=NarratorType.SOURCE, grade=NarratorGrade.RELIABLE)
+        reg.register("src", "d", role=Role.SOURCE, grade=NarratorGrade.RELIABLE)
+        role_rec = reg.get("src", "d", role=Role.SOURCE)
+        assert role_rec.narrator_type == NarratorType.SOURCE
+
+    def test_adalah_is_unassessed_when_only_role_record_exists(self) -> None:
+        """Integrity lives on the default record; no default → UNASSESSED."""
+        reg = Registry()
+        reg.register("m", "d", role=Role.SYNTHESIS, grade=NarratorGrade.WEAK)
+        assert reg.get_adalah_grade("m", "d") == AdalahGrade.UNASSESSED
+
+    def test_rejected_default_floors_role_even_without_quarantine(self) -> None:
+        """Conservative floor: a REJECTED default record floors every role."""
+        reg = Registry()
+        reg.register("m", "d", grade=NarratorGrade.REJECTED)
+        reg.register("m", "d", role=Role.SYNTHESIS, grade=NarratorGrade.RELIABLE)
+        assert reg.get_grade("m", "d", role=Role.SYNTHESIS) == NarratorGrade.REJECTED
+
+    def test_flag_contradiction_routes_to_role(self) -> None:
+        """A role-scoped contradiction only impugns that role's precision."""
+        reg = Registry()
+        reg.register("m", "d", role=Role.SYNTHESIS, grade=NarratorGrade.RELIABLE)
+        reg.register("m", "d", role=Role.RETRIEVAL, grade=NarratorGrade.RELIABLE)
+        reg.flag_contradiction("m", "d", "contradicted", role=Role.SYNTHESIS)
+        # The synthesis role's precision was impugned; retrieval was not.
+        assert reg.evidence_provenance("m", "d", role=Role.SYNTHESIS).observed_count == 1
+        assert reg.evidence_provenance("m", "d", role=Role.RETRIEVAL).observed_count == 0
+
+    def test_renew_grade_scoped_to_role(self) -> None:
+        """Freshness renewal applies to the role it targets, not the default."""
+        from datetime import UTC, datetime, timedelta
+
+        reg = Registry()
+        reg.register(
+            "m",
+            "d",
+            role=Role.SYNTHESIS,
+            grade=NarratorGrade.ACCEPTABLE,
+            graded_at=datetime.now(UTC) - timedelta(days=200),
+        )
+        assert reg.renew_grade("m", "d", role=Role.SYNTHESIS) is True

@@ -328,9 +328,10 @@ class Registry:
         ``role=None`` (default) registers the integrity + default-precision
         record keyed ``(narrator, domain)`` — the legacy behaviour.  ``role``
         given registers a *role-scoped precision* record keyed
-        ``(narrator, role, domain)``; its integrity (ʿadālah) and identity
-        (version, family, upstream) are read from the default record, never
-        stored locally.
+        ``(narrator, role, domain)``.  Identity (narrator_type, version,
+        family, upstream) is inherited from the default record when it exists,
+        and integrity (ʿadālah) is always read from the default record, never
+        written to a role record.
 
         Registering with an explicit (non-UNGRADED) grade starts the freshness
         clock: the grade is treated as validated right now and expires after
@@ -342,6 +343,16 @@ class Registry:
         else:
             store = self._role_records
             key = self._role_key(narrator_id, role, domain_tag)
+            # Identity is per-narrator, not per-role.  Inherit narrator_type
+            # (drives the volatility TTL), model_version/family/upstream from
+            # the default record when one exists, so a role record never
+            # drifts its identity or decay window.
+            default = self._narrators.get((narrator_id, domain_tag))
+            if default is not None:
+                narrator_type = default.narrator_type
+                model_version = default.model_version
+                model_family = default.model_family
+                upstream_source = default.upstream_source
 
         if key not in store:
             if grade is not NarratorGrade.UNGRADED and valid_until is None:
@@ -438,11 +449,13 @@ class Registry:
     ) -> GradeWithFreshness:
         """Effective grade for a role: precision floored by shared integrity.
 
-        Integrity (ʿadālah) is per (narrator, domain) and spans roles: a
-        quarantined (COMPROMISED) narrator is REJECTED in every role
-        regardless of any role-scoped precision evidence.  Otherwise the
-        role's own precision record — or, absent one, the default record's
-        precision — is time-decayed as usual.
+        Integrity (ʿadālah) is per (narrator, domain) and spans roles.  The
+        floor is deliberately conservative: a narrator whose default record is
+        COMPROMISED **or** REJECTED is REJECTED in every role, regardless of
+        any role-scoped precision evidence.  This errs on the side of
+        under-trust (the framework's bias) — it can over-reject a role whose
+        own precision is good, but it can never let a quarantined or
+        REJECTED narrator slip through on a role's precision.
         """
         default = self.get(narrator_id, domain_tag)
         if default is not None and (

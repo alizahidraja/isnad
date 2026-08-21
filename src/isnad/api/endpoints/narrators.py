@@ -77,18 +77,21 @@ async def get_narrator(
     reg: RegistryDB = Depends(get_registry),
 ) -> dict:
     resolved = resolve_narrator_id(narrator_id, version)
-    narrator = reg.registry.get(resolved, domain, role=_parse_role(role))
+    role_val = _parse_role(role)
+    narrator = reg.registry.get(resolved, domain, role=role_val)
     if not narrator:
         raise HTTPException(404)
+    # Integrity + identity are per-narrator (the default record), not per-role.
+    default = reg.registry.get(resolved, domain)
     return {
         "narrator_id": narrator.narrator_id,
         "domain_tag": narrator.domain_tag,
         "role": narrator.role.value if narrator.role else None,
-        "grade": reg.registry.get_grade(resolved, domain, role=_parse_role(role)).value,
+        "grade": reg.registry.get_grade(resolved, domain, role=role_val).value,
         "adalah": reg.registry.get_adalah_grade(resolved, domain).value,
         "dabt": narrator.dabt_grade.value,
-        "model_version": narrator.model_version,
-        "is_active": narrator.is_active,
+        "model_version": (default.model_version if default else narrator.model_version),
+        "is_active": (default.is_active if default else narrator.is_active),
     }
 
 
