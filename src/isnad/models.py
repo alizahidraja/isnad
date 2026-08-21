@@ -15,7 +15,6 @@ from __future__ import annotations
 from datetime import UTC, datetime
 from uuid import UUID, uuid4
 
-from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy import (
     JSON,
     Boolean,
@@ -31,11 +30,8 @@ from sqlalchemy import (
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 from isnad.types import (
-    Action,
     AdalahGrade,
-    ChainGrade,
     ChainStatus,
-    ContentVerdict,
     DabtGrade,
     EvidenceAction,
     EvidenceType,
@@ -51,88 +47,6 @@ from isnad.types import (
 
 class Base(DeclarativeBase):
     pass
-
-
-# ===========================================================================
-# Pydantic DTOs — wire format / validation boundary
-# ===========================================================================
-
-
-class ChainLinkDTO(BaseModel):
-    """A single link in a claim's transmission chain."""
-
-    model_config = ConfigDict(use_enum_values=True)
-
-    step: int = Field(..., ge=0, description="Zero-indexed position in chain")
-    narrator_id: str = Field(..., description="e.g. 'pdf-scraper', 'ingest:M@v'")
-    version: str = Field(default="unknown")
-    confidence: float | None = Field(default=None, ge=0.0, le=1.0)
-    trace_id: str = Field(default="")
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC))
-    transform_type: TransformType = Field(
-        default=TransformType.PASS_THROUGH,
-        description="Destructive vs generative vs pass-through",
-    )
-    domain: str = Field(default="general")
-
-
-class NarratorDTO(BaseModel):
-    """A narrator entry from the registry."""
-
-    model_config = ConfigDict(use_enum_values=True)
-
-    narrator_id: str
-    domain_tag: str
-    narrator_type: NarratorType
-    grade: NarratorGrade = NarratorGrade.UNGRADED
-    adalah_grade: AdalahGrade = AdalahGrade.UNASSESSED
-    dabt_grade: DabtGrade = DabtGrade.UNASSESSED
-    known_error_rate: float | None = Field(default=None, ge=0.0, le=1.0)
-    model_version: str | None = None
-    model_family: str | None = Field(
-        default=None, description="Shared model family for correlation detection"
-    )
-    upstream_source: str | None = Field(
-        default=None, description="Upstream origin for madār detection"
-    )
-    is_active: bool = True
-    graded_at: datetime | None = Field(
-        default=None,
-        description="When the current grade was last validated by evidence (UTC)",
-    )
-    valid_until: datetime | None = Field(
-        default=None,
-        description="Grade best-before (graded_at + volatility TTL); NULL = never expires",
-    )
-
-
-class EvidenceDTO(BaseModel):
-    """An immutable evidence log entry (jarḥ–taʿdīl event)."""
-
-    model_config = ConfigDict(use_enum_values=True)
-
-    narrator_id: str
-    domain_tag: str
-    evidence_type: EvidenceType
-    action: EvidenceAction = EvidenceAction.NEUTRAL
-    description: str = ""
-    metadata_json: dict[str, object] = Field(default_factory=dict)
-    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
-
-
-class ReviewQueueItemDTO(BaseModel):
-    """An item in the human review queue."""
-
-    model_config = ConfigDict(use_enum_values=True)
-
-    claim_id: str
-    page_slug: str
-    claim_text: str
-    chain_grade: ChainGrade
-    content_verdict: ContentVerdict
-    matrix_action: Action
-    conflicting_claim_ids: list[str] = Field(default_factory=list)
-    notes: str = ""
 
 
 # ===========================================================================

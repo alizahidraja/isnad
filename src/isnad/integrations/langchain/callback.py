@@ -45,13 +45,11 @@ try:
         AsyncCallbackHandler,
         BaseCallbackHandler,
     )
-    from langchain_core.documents import Document  # type: ignore[import-not-found]
 
     _LANGCHAIN_AVAILABLE = True
 except ImportError:
     BaseCallbackHandler = object  # type: ignore[misc,assignment]
     AsyncCallbackHandler = object  # type: ignore[misc,assignment]
-    Document = object  # type: ignore[misc,assignment]
 
 
 # ── Helpers ─────────────────────────────────────────────────────

@@ -106,7 +106,6 @@ The framework has five core components, plus the decision matrix that combines t
 | review_queue table | `isnad/models.py` | `ReviewQueue` (ORM) |
 | JSONB narrator_chain | `isnad/models.py` | `RijalClaim.narrator_chain` |
 | Lifecycle (supersession) | `isnad/models.py` | `RijalClaim.valid_from/valid_until/superseded_by` |
-| Pydantic DTOs | `isnad/models.py` | `ChainLinkDTO`, `NarratorDTO`, `EvidenceDTO`, `ReviewQueueItemDTO` |
 | Database session | `isnad/storage/sqlalchemy.py` | `get_session()`, `init_db()`, `get_engine()` |
 | Persistence protocol | `isnad/storage/base.py` | `RegistryPersistence` protocol |
 | Alembic migrations | `alembic/` | Initial migration: all 5 tables + indexes |
@@ -174,7 +173,7 @@ result = grade_chain(
 isnad/
 ├── __init__.py            Public API re-exports
 ├── types.py               All enums, protocols, ordinal types
-├── models.py              Pydantic DTOs + SQLAlchemy ORM (5 tables)
+├── models.py              SQLAlchemy ORM (5 tables)
 ├── matn.py                DeterministicRuleCritic (reference stub)
 ├── core/                  Core engine
 │   ├── chain.py           Chain, ChainLinkSpec, store_claim()
