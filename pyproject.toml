@@ -46,7 +46,7 @@ nli = [
     "sentence-transformers>=3.0",
 ]
 all = [
-    "isnad[dev,anthropic]",
+    "isnad[dev,anthropic,langchain,api,nli]",
 ]
 
 [project.scripts]
