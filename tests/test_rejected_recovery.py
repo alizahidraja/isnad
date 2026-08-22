@@ -95,3 +95,29 @@ class TestThresholdPrecisionRejectedRecovers:
         for _ in range(4):
             reg.record_evidence("m", "d", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH)
         assert reg.get_grade("m", "d") == NarratorGrade.REJECTED
+
+
+class TestStickinessDrivenByCompromisedFlag:
+    def test_register_with_compromised_adalah_is_sticky(self) -> None:
+        """Stickiness keys on adalah=COMPROMISED, not on the quarantine() method."""
+        from isnad.types import AdalahGrade
+
+        for policy in [BayesianTransitionPolicy(), ThresholdTransitionPolicy()]:
+            reg = Registry(transition_policy=policy)
+            reg.register(
+                "m", "d", grade=NarratorGrade.REJECTED, adalah=AdalahGrade.COMPROMISED
+            )
+            for i in range(20):
+                reg.record_survival("m", "d", f"c-{i}", "gov.uk")
+            assert reg.get_grade("m", "d") == NarratorGrade.REJECTED
+
+    def test_register_rejected_without_compromised_is_recoverable(self) -> None:
+        """The mirror case: REJECTED without COMPROMISED is precision-driven."""
+        reg = Registry(transition_policy=BayesianTransitionPolicy())
+        reg.register("m", "d", grade=NarratorGrade.REJECTED)
+        for i in range(10):
+            reg.record_survival("m", "d", f"c-{i}", "gov.uk")
+        assert reg.get_grade("m", "d") in (
+            NarratorGrade.ACCEPTABLE,
+            NarratorGrade.RELIABLE,
+        )
