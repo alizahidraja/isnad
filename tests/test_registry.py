@@ -184,9 +184,16 @@ class TestJarhTadilStateMachine:
         assert new_grade == NarratorGrade.REJECTED
 
     def test_human_review_can_restore_from_rejected(self) -> None:
-        """Threshold policy: HUMAN_REVIEW + TADIL restores REJECTED → WEAK."""
+        """Threshold policy: HUMAN_REVIEW + TADIL restores a quarantined
+        (COMPROMISED) narrator REJECTED → WEAK.
+
+        The human-review escape hatch is for *integrity*-driven REJECTED
+        (quarantine). A precision-driven REJECTED recovers via precision
+        evidence instead (issue #40).
+        """
         reg = Registry(transition_policy=ThresholdTransitionPolicy())
-        reg.register("poisoned-source", "general", grade=NarratorGrade.REJECTED)
+        reg.register("poisoned-source", "general", grade=NarratorGrade.RELIABLE)
+        reg.quarantine("poisoned-source", "general", "caught")
 
         new_grade = reg.record_evidence(
             "poisoned-source",

@@ -102,8 +102,10 @@ _DOWNGRADE_MAP: dict[NarratorGrade, NarratorGrade] = {
     NarratorGrade.ACCEPTABLE: NarratorGrade.WEAK,
     NarratorGrade.WEAK: NarratorGrade.REJECTED,
     NarratorGrade.UNGRADED: NarratorGrade.WEAK,
+    NarratorGrade.REJECTED: NarratorGrade.REJECTED,  # precision jarḥ cannot sink lower
 }
 _UPGRADE_MAP: dict[NarratorGrade, NarratorGrade] = {
+    NarratorGrade.REJECTED: NarratorGrade.WEAK,  # precision-driven REJECTED is recoverable (#40)
     NarratorGrade.UNGRADED: NarratorGrade.WEAK,
     NarratorGrade.WEAK: NarratorGrade.ACCEPTABLE,
     NarratorGrade.ACCEPTABLE: NarratorGrade.RELIABLE,
@@ -195,14 +197,19 @@ def threshold_transition(
     upgrade_min_corroborated: int,
     window: int,
     integrity_strikes_per_tier: int | None = None,
+    is_compromised: bool = False,
 ) -> NarratorGrade:
     """Shared jarḥ–taʿdīl transition for the whole threshold policy family.
 
     Encodes the issue #9 fix and its conceptual follow-up so all three
     threshold policies behave identically:
 
-    - **Version bump** → UNGRADED; **REJECTED** is sticky (human review restores
-      to WEAK). These orthogonal paths are untouched by the axis logic.
+    - **Version bump** → UNGRADED.
+    - **REJECTED is sticky only when integrity-driven** — ``is_compromised``
+      (quarantine → ʿadālah COMPROMISED). A precision-driven REJECTED is
+      recoverable (issue #40): it fell on the precision axis, not on a
+      permanent impugnment. Human review restores an integrity REJECTED to
+      WEAK.
     - **Integrity (ʿadālah) jarḥ** — INTEGRITY or UNSPECIFIED — accumulates over
       the *entire* history and never ages out. It imposes a permanent ceiling
       (``_integrity_cap``); an arriving integrity jarḥ ratchets down to it.
@@ -219,7 +226,11 @@ def threshold_transition(
     if evidence_type == EvidenceType.VERSION_BUMP:
         return NarratorGrade.UNGRADED
 
-    if current_grade == NarratorGrade.REJECTED:
+    # Sticky only when integrity-driven (quarantine → COMPROMISED). A
+    # precision-driven REJECTED falls through and is recomputed below;
+    # the integrity cap still holds a REJECTED reached via enough
+    # integrity strikes.
+    if current_grade == NarratorGrade.REJECTED and is_compromised:
         if evidence_type == EvidenceType.HUMAN_REVIEW and action == EvidenceAction.TADIL:
             return NarratorGrade.WEAK
         return NarratorGrade.REJECTED
@@ -339,6 +350,8 @@ class BayesianTransitionPolicy:
         current_grade: NarratorGrade,
         evidence_history: list[dict[str, object]],
         new_evidence: dict[str, object],
+        *,
+        is_compromised: bool = False,
     ) -> NarratorGrade:
         """Compute new narrator grade from evidence.
 
@@ -357,14 +370,12 @@ class BayesianTransitionPolicy:
         if evidence_type == EvidenceType.VERSION_BUMP:
             return NarratorGrade.UNGRADED
 
-        # REJECTED is sticky (active containment) — mirroring the threshold
-        # policies.  Only an explicit human-review taʿdīl restores to WEAK;
-        # no amount of positive *precision* evidence (survival, corroboration,
-        # audit) may rehabilitate a narrator whose integrity (ʿadālah) was
-        # compromised.  Without this guard, a quarantined fabricator climbs
-        # back to RELIABLE on a flood of plausible-but-verified claims — the
-        # exact failure the axis split exists to prevent.
-        if current_grade == NarratorGrade.REJECTED:
+        # REJECTED is sticky only when integrity-driven (quarantine →
+        # COMPROMISED).  Only an explicit human-review taʿdīl restores it to
+        # WEAK.  A *precision*-driven REJECTED is recoverable (issue #40): the
+        # narrator fell on the Beta posterior, not on a permanent impugnment,
+        # so it must be able to climb back on precision evidence.
+        if current_grade == NarratorGrade.REJECTED and is_compromised:
             if evidence_type == EvidenceType.HUMAN_REVIEW and action == EvidenceAction.TADIL:
                 return NarratorGrade.WEAK
             return NarratorGrade.REJECTED
@@ -438,6 +449,8 @@ class CalibratedThresholdPolicy:
         current_grade: NarratorGrade,
         evidence_history: list[dict[str, object]],
         new_evidence: dict[str, object],
+        *,
+        is_compromised: bool = False,
     ) -> NarratorGrade:
         """Compute new narrator grade from evidence (see ``threshold_transition``)."""
         return threshold_transition(
@@ -449,6 +462,7 @@ class CalibratedThresholdPolicy:
             upgrade_min_corroborated=self.upgrade_min_corroborated,
             window=self.window,
             integrity_strikes_per_tier=self.integrity_strikes_per_tier,
+            is_compromised=is_compromised,
         )
 
 
@@ -545,6 +559,8 @@ class ThresholdTransitionPolicy:
         current_grade: NarratorGrade,
         evidence_history: list[dict[str, object]],
         new_evidence: dict[str, object],
+        *,
+        is_compromised: bool = False,
     ) -> NarratorGrade:
         """Compute the new narrator grade (see ``threshold_transition``)."""
         return threshold_transition(
@@ -556,4 +572,5 @@ class ThresholdTransitionPolicy:
             upgrade_min_corroborated=self.UPGRADE_MIN_CORROBORATED,
             window=self.window,
             integrity_strikes_per_tier=self.integrity_strikes_per_tier,
+            is_compromised=is_compromised,
         )

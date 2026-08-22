@@ -309,3 +309,37 @@ class TestIntegrityCapInvariant:
 
             cap = ladder[min(strikes, 3)]
             assert reg.get_grade("m", "d") == cap, (seed, strikes, cap)
+
+
+class TestPrecisionRecoverableInvariant:
+    """#40: precision evidence can never *permanently* reject a narrator.
+
+    After an arbitrary mix of precision jarḥ/taʿdīl, a long corroborated clean
+    run must recover the narrator — a precision-driven REJECTED is recoverable,
+    unlike an integrity-driven (quarantine) one.
+    """
+
+    def test_precision_jarh_never_permanently_rejects(self) -> None:
+        from isnad.core.registry import BayesianTransitionPolicy, ThresholdTransitionPolicy
+
+        for seed in range(10):
+            rng = random.Random(seed)
+            for policy in [BayesianTransitionPolicy(), ThresholdTransitionPolicy()]:
+                reg = Registry(transition_policy=policy)
+                reg.register("m", "d")
+                for _ in range(25):
+                    if rng.random() < 0.5:
+                        reg.record_evidence(
+                            "m", "d", EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH
+                        )
+                    else:
+                        reg.record_survival("m", "d", f"c-{rng.randint(0, 9999)}", "gov.uk")
+                # A long corroborated clean run recovers from any precision REJECTED.
+                for i in range(60):
+                    reg.record_evidence(
+                        "m", "d", EvidenceType.CORROBORATION_OUTCOME, EvidenceAction.TADIL
+                    )
+                assert reg.get_grade("m", "d") != NarratorGrade.REJECTED, (
+                    seed,
+                    type(policy).__name__,
+                )
