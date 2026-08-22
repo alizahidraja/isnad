@@ -13,8 +13,8 @@
 > mind. **§1–5 and §7 Tiers 1–2 use ISNAD as it exists today** — registry,
 > per-domain grades, chain completeness, madār detection, the
 > precision/integrity axis, versioned identity — applied to a supply chain
-> rather than a multi-agent pipeline. **§6, §7 Tier 3 and §8 are where the
-> case points beyond ISNAD** — semantic critics, period-sliced grades,
+> rather than a multi-agent pipeline. **§6, §7 Tier 3, §8 and §11 are where
+> the case points beyond ISNAD** — semantic critics, period-sliced grades,
 > evidence-not-grade federation, reproducible traces. The attack was strongest
 > exactly where the second half lives; the first half is what would have
 > stood in its way regardless.
@@ -25,7 +25,9 @@
 > release claim would have said on each side of the CVE (correctly
 > `verified` for the backdoored release — authentic ≠ safe), the sideways
 > endorser chain an open-source release can have, and why a revocation is
-> the kind of evidence record §6 item 5 wants. See also §10.
+> the kind of evidence record §6 item 5 wants. See also §10, and §11 for
+> the return direction: ISNAD evidence gating Live Verify issuance, so the
+> backdoored release is never verified in the first place.
 
 ## Terms used here (for the reader arriving cold)
 
@@ -515,6 +517,80 @@ what this document is and is not:
 | 29 Mar 2024 | `REVOKED`; endorsers `RESTRICTED` | `HUMAN_REVIEW` → integrity strike on `JiaT75@xz` |
 | Answers | "Is this what the issuer issued?" | "How much should I trust the hands it passed through?" |
 | Human | at the threshold, deciding | at the review queue, adjudicating |
+
+## 11. If this had been in place back then: non-verification ahead of the CVE
+
+§7 and §8 establish that the strongest xz signal — tarball content absent
+from the tagged tree — fires at upload time, with no judgement required.
+§10 notes that Live Verify, on its own, would have said `verified` for 5.6.0
+and then revoked it five weeks later. Put those together and the conclusion
+is direct: **the ISNAD decision should have gated the Live Verify status,
+and 5.6.0 should never have been verified in the first place.**
+
+**What should have happened on 24 February 2024.** The operator is the
+distribution portal. Its ingest pipeline is an ISNAD pipeline; its Live
+Verify endpoint is the human-facing output of that pipeline; a bot sits
+between them.
+
+1. 5.6.0 is uploaded. The portal rebuilds from tag `v5.6.0`; the result does
+   not match the tarball, and the `m4` file that differs has no commit. The
+   chain is *munqaṭiʿ* — `MUNQATI`, capped `DAIF`. The release manager
+   `JiaT75@xz` is `HASAN` at best, on eighteen months of history. Decision:
+   `REVIEW`.
+2. The bot maps `REVIEW` to the Live Verify status and publishes the hash as
+   `PENDING`, not `OK`. The claim is known; it is not stood behind.
+3. The Fedora maintainer reading "please include 5.6.1, it fixes a valgrind
+   issue" selects the claim and sees amber: *known to the portal, checks not
+   passed, do not ship.* The Debian triager reading Hans Jansen's bug sees
+   the same. Neither needs to understand `ifunc` or read a diff.
+4. 29 March. `HUMAN_REVIEW` lands; the integrity strike on `JiaT75@xz` is
+   recorded; the endorsers `RESTRICT` with reason `cve-2024-3094`. The claim
+   that was never `OK` now also carries the reason.
+
+The "verified, then revoked" sequence happens only when the issuer is the
+project — that is, when the attacker runs the endpoint and nothing gates it.
+A relying party was never obliged to treat that as more than
+self-attestation. With the portal as issuer and ISNAD gating issuance, Live
+Verify never stands behind the backdoored release at all. The operator
+should have had this, and the portals that exist now should build it.
+
+**The mapping.** ISNAD's decision at upload should drive the Live Verify
+status directly, with no human in between for the routine cases:
+
+| ISNAD decision at upload | Live Verify issuer action |
+| --- | --- |
+| `SERVE` | publish, `Status: OK` |
+| `SERVE_WITH_CAVEAT` | publish, `Status: OK`, with `More:` pointing at the caveat |
+| `REVIEW` | publish, `Status: PENDING` (amber) |
+| `QUARANTINE` / `REJECT_AND_QUARANTINE_NARRATOR` | do not publish — or `RESTRICTED` with a fixed reason code if already in the wild |
+
+`PENDING` is a status Live Verify does not yet have; its companion document
+proposes it. It should be amber, not red (red is revoked or tampered — a
+definite negative; pending is "the operator's process is incomplete"). It
+should never expire into `OK`; it flips only by explicit action. And it
+should exist as a status rather than a 404, because the person deciding needs
+to tell *"never heard of this artifact"* from *"we know it, we are checking,
+do not ship yet."*
+
+**What `OK` must continue to mean.** The gate is on *structural* evidence —
+tarball matches tag, provenance attested, rebuilders agree. When the bot
+flips `PENDING` to `OK`, the claim still reads "is an official release," not
+"is safe." The moment `OK` is read as "scanned and clean," the portal has
+turned Live Verify into the safety signal neither project claims to be, and
+a semantic payload that passes every structural check — the Landlock-typo
+era — goes out under a green tick. The bot narrows *when* the operator is
+willing to stand behind an artifact; it does not change *what* standing
+behind it means. This is the same rule as §8's: the machine may hold and
+may release; it may not convict, and it may not certify.
+
+**The loop closes.** §10 gives the composition in one direction: a Live
+Verify seal is a narrator input to ISNAD; a Live Verify revocation is an
+evidence record for ISNAD (§6 item 5). This section is the return direction:
+**ISNAD evidence gates Live Verify issuance.** Evidence in, status out,
+revocation back in as evidence. The two projects should be built as a
+cycle, not a hand-off — and at a distribution portal the cycle runs with no
+human in it until something is ambiguous, which is what both projects say
+human attention is for.
 
 ---
 
