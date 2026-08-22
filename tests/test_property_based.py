@@ -272,3 +272,40 @@ class TestFuzzNoCrash:
                 g = reg.get_grade(n, d, role=role)
                 assert isinstance(g, NarratorGrade)
                 assert g in GRADES
+
+
+class TestIntegrityCapInvariant:
+    """Integrity strikes impose a permanent ceiling that precision cannot lift (#30)."""
+
+    def test_random_strike_count_caps_precision_grade(self) -> None:
+        from isnad.types import EvidenceAxis
+
+        ladder = [
+            NarratorGrade.RELIABLE,
+            NarratorGrade.ACCEPTABLE,
+            NarratorGrade.WEAK,
+            NarratorGrade.REJECTED,
+        ]
+        for seed in range(15):
+            rng = random.Random(seed)
+            reg = Registry()
+            reg.register("m", "d")
+            for i in range(30):
+                reg.record_survival("m", "d", f"c-{i}", "gov.uk")
+            assert reg.get_grade("m", "d") == NarratorGrade.RELIABLE
+
+            strikes = rng.randint(0, 5)
+            for _ in range(strikes):
+                reg.record_evidence(
+                    "m",
+                    "d",
+                    EvidenceType.HUMAN_REVIEW,
+                    EvidenceAction.JARH,
+                    axis=EvidenceAxis.INTEGRITY,
+                )
+            # A flood of precision evidence cannot lift past the permanent ceiling.
+            for i in range(30):
+                reg.record_survival("m", "d", f"d-{i}", "gov.uk")
+
+            cap = ladder[min(strikes, 3)]
+            assert reg.get_grade("m", "d") == cap, (seed, strikes, cap)

@@ -292,10 +292,21 @@ class BayesianTransitionPolicy:
     - Graceful with small samples (prior provides regularization)
     - Natural uncertainty quantification
     - No arbitrary "3 adverse events" cutoff
+
+    The axis split (issues #9/#20) applies here too: integrity (ʿadālah) jarḥ
+    accumulates permanently and imposes a ceiling (``_integrity_cap``), while
+    precision (ḍabṭ) jarḥ feeds the recoverable Beta posterior.  The posterior
+    grade is clamped to the integrity ceiling, so a narrator whose integrity
+    is impugned can never be lifted back up by precision evidence alone.
+
+    ``integrity_strikes_per_tier`` (issue #21, configurable) sets how many
+    permanent integrity strikes lower the ceiling one tier.  Default 1 — the
+    classical matrūk bias: one proven integrity impugnment caps immediately.
     """
 
-    def __init__(self):
+    def __init__(self, integrity_strikes_per_tier: int = 1):
         self._states: dict[tuple[str, str], BetaState] = {}
+        self.integrity_strikes_per_tier = integrity_strikes_per_tier
 
     def get_state(self, narrator_id: str, domain: str) -> BetaState:
         key = (narrator_id, domain)
@@ -358,27 +369,34 @@ class BayesianTransitionPolicy:
                 return NarratorGrade.WEAK
             return NarratorGrade.REJECTED
 
-        # Count evidence from history + new evidence.  A VERSION_BUMP is an
-        # epoch boundary: evidence before the latest bump belongs to the prior
-        # version and must not count.
+        # A VERSION_BUMP is an epoch boundary: evidence before the latest bump
+        # belongs to the prior version and must not count.
         history = _epoch_evidence(evidence_history)
+        all_evidence = [*history, new_evidence]
+
+        # Integrity (ʿadālah) jarḥ — JARH with axis != PRECISION — accumulates
+        # permanently and imposes a ceiling.  Precision (ḍabṭ) evidence drives
+        # the recoverable Beta posterior, which is then clamped to that ceiling.
+        integrity_jarh = sum(1 for e in all_evidence if _is_integrity_jarh(e))
+        integrity_cap = _integrity_cap(integrity_jarh, self.integrity_strikes_per_tier)
+
         positive = sum(
-            1 for e in history if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
+            1
+            for e in all_evidence
+            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
         )
-        adverse = sum(
-            1 for e in history if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+        precision_adverse = sum(
+            1
+            for e in all_evidence
+            if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+            and EvidenceAxis(str(e.get("axis", EvidenceAxis.UNSPECIFIED.value)))
+            == EvidenceAxis.PRECISION
         )
 
-        if action == EvidenceAction.TADIL:
-            positive += 1
-        elif action == EvidenceAction.JARH:
-            adverse += 1
+        state = BetaState(alpha=float(positive + 1), beta=float(precision_adverse + 1))
+        state.total_evidence = positive + precision_adverse
 
-        # Build Beta state from counts
-        state = BetaState(alpha=float(positive + 1), beta=float(adverse + 1))
-        state.total_evidence = positive + adverse
-
-        return state.to_grade()
+        return _clamp_to_cap(state.to_grade(), integrity_cap)
 
 
 class CalibratedThresholdPolicy:
