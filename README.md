@@ -144,6 +144,8 @@ Also available: `IsnadTracer` (older flat-list reporter with built-in report()) 
 | **Evidence provenance**       | ✅ Implemented       | `evidence_provenance()` reports whether a grade is prior-derived (benchmark) or observation-backed (audit/corroboration) — issue #6 |
 | **Survival primitive**        | ✅ Implemented       | `record_survival()` records that a claim survived independent (endorsed) verification — issue #25 |
 | **Per-role precision**        | ✅ Implemented       | Precision (ḍabṭ) graded per (narrator, role, domain); integrity stays per-narrator — issue #3 |
+| **Integrity ladder (Bayesian)** | ✅ Implemented     | Default policy enforces integrity strikes-per-tier — a permanent ʿadālah ceiling that precision cannot lift — issue #30 |
+| **Precision recoverability**  | ✅ Implemented       | Precision-driven REJECTED is recoverable; only integrity (COMPROMISED) is sticky — issue #40 |
 
 ### Evidence provenance — assumption vs. observation (issue #6)
 
@@ -520,6 +522,9 @@ Full methodology, results, negative controls, and paper gap analysis in:
 - 🧪 **A/B demonstration:** [`experiments/verified_vs_unverified/`](experiments/verified_vs_unverified/) — trust layer off vs on, per-query
 - 🧪 **Trace capture demo:** [`examples/isnad_langchain_demo.py`](examples/isnad_langchain_demo.py) — runnable without API keys
 - 📊 **Critic evaluation:** [`src/isnad/critics/CRITIC_EVAL.md`](src/isnad/critics/CRITIC_EVAL.md)
+- 🛡️ **Security policy:** [`SECURITY.md`](SECURITY.md) — how to report a vulnerability; honesty is a security property
+- ⚠️ **Threat model:** [`THREAT_MODEL.md`](THREAT_MODEL.md) — what ISNAD defends against and deliberately does not
+- 🕵️ **Case study (xz backdoor as a sleeper narrator):** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md) — by Paul Hammant (Live Verify)
 
 ---
 
