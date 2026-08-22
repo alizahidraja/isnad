@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -44,6 +45,11 @@ _PATTERNS: dict[Path, tuple[re.Pattern[str], str]] = {
         'version: "{version}"',
     ),
 }
+
+
+# date-released is refreshed to today on every bump so the citation metadata
+# never drifts from the actual release date.
+_DATE_RELEASED_PATTERN = re.compile(r'^date-released: "[0-9-]+"$', re.MULTILINE)
 
 
 def read_current() -> tuple[int, int, int]:
@@ -88,6 +94,18 @@ def apply(new_version: tuple[int, int, int], dry_run: bool) -> None:
         else:
             path.write_text(new_text)
             print(f"updated {path.relative_to(ROOT)} -> {version_str}")
+
+    # Refresh the release date in CITATION.cff to today so the metadata never
+    # drifts from the actual release date.
+    today = date.today().isoformat()
+    citation = ROOT / "CITATION.cff"
+    text = citation.read_text()
+    new_text, count = _DATE_RELEASED_PATTERN.subn(f'date-released: "{today}"', text)
+    if count == 1:
+        if dry_run:
+            print(f"[dry-run] {citation.relative_to(ROOT)}: date-released -> {today}")
+        else:
+            citation.write_text(new_text)
 
 
 def main() -> None:
