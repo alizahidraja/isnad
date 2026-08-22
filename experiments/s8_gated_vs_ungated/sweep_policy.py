@@ -72,6 +72,8 @@ class ConfigurableTransitionPolicy:
         current_grade: NarratorGrade,
         evidence_history: list[dict[str, object]],
         new_evidence: dict[str, object],
+        *,
+        is_compromised: bool = False,
     ) -> NarratorGrade:
         """Compute new narrator grade (see ``threshold_transition``)."""
         return threshold_transition(
@@ -83,4 +85,5 @@ class ConfigurableTransitionPolicy:
             upgrade_min_corroborated=self.upgrade_min_corroborated,
             window=self.window,
             integrity_strikes_per_tier=self.integrity_strikes_per_tier,
+            is_compromised=is_compromised,
         )

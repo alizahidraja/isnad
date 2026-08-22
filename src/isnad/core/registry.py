@@ -722,10 +722,17 @@ class Registry:
         narrator = self.register(narrator_id, domain_tag, role=role)
         narrator.add_evidence(evidence_type, action, description, metadata, resolved_axis)
 
+        # Integrity (ʿadālah) lives on the default record, shared across roles.
+        # is_compromised drives the REJECTED-stickiness decision (issue #40):
+        # only a quarantined (COMPROMISED) narrator's REJECTED is permanent.
+        default = self.get(narrator_id, domain_tag)
+        is_compromised = default is not None and default.adalah_grade == AdalahGrade.COMPROMISED
+
         new_grade = self.transition_policy.evaluate_transition(
             current_grade=narrator.grade,
             evidence_history=narrator.evidence_log[:-1],  # all prior
             new_evidence=narrator.evidence_log[-1],
+            is_compromised=is_compromised,
         )
         narrator.grade = new_grade
         self._index_set_grade(narrator_id, domain_tag)

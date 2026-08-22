@@ -368,6 +368,8 @@ class TransitionPolicy(Protocol):
         current_grade: NarratorGrade,
         evidence_history: list[dict[str, object]],
         new_evidence: dict[str, object],
+        *,
+        is_compromised: bool = False,
     ) -> NarratorGrade: ...
 
 
