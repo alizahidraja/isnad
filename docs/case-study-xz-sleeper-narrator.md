@@ -27,6 +27,74 @@
 > endorser chain an open-source release can have, and why a revocation is
 > the kind of evidence record §6 item 5 wants. See also §10.
 
+## Terms used here (for the reader arriving cold)
+
+You need to know what a hash and a CVE are; this box supplies the rest. ISNAD
+borrows the classical hadith-science method for grading transmitted reports,
+so some terms are Arabic. Every term below is used in this document; none is
+defined elsewhere in it.
+
+**ISNAD's own objects**
+
+- **Claim** — the unit ISNAD grades: one statement, with the chain of hands it
+  passed through. Never "a source" or "a body of work" as a whole.
+- **Narrator** — any identity that transmits a claim: a source, a scraper, a
+  model, a maintainer account. Graded per *domain* (a narrator can be reliable
+  on one subject and weak on another).
+- **Registry** (*rijāl*, "the men" — the graded roster of transmitters) — the
+  operator's local table of narrator grades. There is no global registry.
+- **Operator** — whoever runs an ISNAD pipeline and owns its registry. The
+  operator decides which narrators are admitted at all; ISNAD grades what
+  happens after that.
+- **Chain grade** — the grade of a whole transmission chain, capped by its
+  weakest link. The tiers this document uses, best to worst: **`SAHIH`**
+  (*ṣaḥīḥ*, sound), **`HASAN`** (*ḥasan*, good), **`DAIF`** (*ḍaʿīf*, weak).
+  There is a fourth, fabricated, below these.
+- **Matn** — the *content* of a claim, criticised separately from the chain
+  that carried it. A sound chain can carry a contradicted claim; "matn
+  criticism" is checking the content against what the operator already holds.
+- **Critic** — a pluggable component that performs matn criticism and returns
+  `CONSISTENT` or `CONTRADICTION`.
+- **Decision matrix** — chain grade × matn verdict → an action:
+  `SERVE`, `SERVE_WITH_CAVEAT`, `REVIEW` (hold for a human), `QUARANTINE`,
+  `REJECT_AND_QUARANTINE_NARRATOR`.
+- **Evidence** — a logged event that moves a narrator's grade: an eval
+  result, a post-hoc audit, a corroboration outcome, a `HUMAN_REVIEW`. Every
+  grade change has an evidence trail.
+- **Trace** — the JSON record of how one claim was handled: its chain, the
+  grades in force, the decision.
+
+**Chain-structure terms**
+
+- **Ittiṣāl / munqaṭiʿ (`MUNQATI`)** — *continuity* / *broken*. A chain with
+  a gap — a hop nobody can account for — is *munqaṭiʿ* and is automatically
+  capped at `DAIF`. In this document: a release tarball containing content
+  that exists in no commit.
+- **Madār** — "the pivot": the point where several apparently independent
+  chains turn out to converge on one upstream. Agreement among chains that
+  share a madār is an **echo**, not corroboration. In this document: the sock
+  puppets.
+- **Corroboration** — when genuinely independent chains carry the same claim,
+  its grade can be lifted — but only to `HASAN`, never `SAHIH`, and never
+  across a shared madār.
+
+**How narrators are judged**
+
+- **ʿAdālah / ḍabṭ** — the two axes a narrator is graded on. *ʿAdālah* is
+  **integrity** (honesty): a strike here is permanent. *Ḍabṭ* is
+  **precision** (accuracy): a strike here is windowed and recoverable.
+  Automated checks can only ever record precision strikes — a machine knows
+  an answer was *wrong*, not that it was a *lie*; integrity strikes come only
+  from human review.
+- **Al-jarḥ muqaddam ʿalā al-taʿdīl** — "impugnment outranks praise": one
+  established fabrication outweighs any quantity of prior good record. The
+  rule that answers "but look at my 10,000 good commits."
+- **Mukhtaliṭūn / ikhtilāṭ** — transmitters who were sound and then declined
+  (classically through age), and the *condition* of having declined. The
+  classical critics did not discard such a narrator's whole record; they
+  **dated the decline** and accepted what came before it. Referenced in §6 as
+  a remedy for a narrator who was genuine for two years and then was not.
+
 ---
 
 ## 1. What happened (established facts)
