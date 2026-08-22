@@ -104,9 +104,7 @@ class TestStickinessDrivenByCompromisedFlag:
 
         for policy in [BayesianTransitionPolicy(), ThresholdTransitionPolicy()]:
             reg = Registry(transition_policy=policy)
-            reg.register(
-                "m", "d", grade=NarratorGrade.REJECTED, adalah=AdalahGrade.COMPROMISED
-            )
+            reg.register("m", "d", grade=NarratorGrade.REJECTED, adalah=AdalahGrade.COMPROMISED)
             for i in range(20):
                 reg.record_survival("m", "d", f"c-{i}", "gov.uk")
             assert reg.get_grade("m", "d") == NarratorGrade.REJECTED
