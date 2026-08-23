@@ -60,3 +60,18 @@ jobs:
             git push origin "$TAG"
             echo "Created and pushed tag $TAG"
           fi
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")"
+          TAG="v${VERSION}"
+          # A formal GitHub Release (not just a tag) so "what's new" is
+          # visible and Zenodo can archive per version.  Idempotent.
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists — skipping."
+          else
+            gh release create "$TAG" --title "$TAG" --generate-notes
+            echo "Created GitHub Release $TAG"
+          fi
