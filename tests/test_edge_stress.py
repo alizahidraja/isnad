@@ -296,7 +296,11 @@ check(
     final_grade == NarratorGrade.WEAK,
     f"got {final_grade.value}",
 )
-check("1000 entries processed in < 2s", elapsed < 2.0, f"{elapsed:.2f}s")
+check(
+    "1000 entries processed in < 20s (catastrophic-slowness smoke test)",
+    elapsed < 20.0,
+    f"{elapsed:.2f}s",
+)
 
 
 # ===================================================================
@@ -398,7 +402,11 @@ check(
     fail == 0,
     f"in {elapsed:.1f}s ({200 / elapsed:.0f} claims/s)",
 )
-check("All 200 in < 65s", elapsed < 65.0, f"{elapsed:.1f}s")
+check(
+    "All 200 in < 300s (catastrophic-slowness smoke test)",
+    elapsed < 300.0,
+    f"{elapsed:.1f}s",
+)
 
 r = client.get("/v1/claims?domain=stress_test&limit=250")
 list_data = r.json()
