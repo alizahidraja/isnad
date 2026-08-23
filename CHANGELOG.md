@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.4.0] — 2026-08-23
+
+### Added
+
+- Audit record DAG support: `chain[].upstream_ids[]` makes branching/merging
+  agent graphs explicit, not just linear chains.
+- `human_oversight[]` evidence (Art. 14 / SDAIA human-oversight pillar).
+- `redact_fn` PII-redaction hook (`isnad export --redact`).
+- `grading_strategy{name, version, parameters}`, `weakest_link.grade`,
+  `source_documents.licence`, `integrity.canonicalisation`, `record_version` 1.0.
+- Examples: `multi_agent_dag.py` (branching DAG + the honest "weakest_link
+  misses the sleeper's first lie" case) and `ci_gate.py` (fail a build on a
+  degraded chain).
+- `docs/evidence-mapping.md` now includes Art. 4 AI literacy and the verified
+  banner; README gains "Who this is for" and "Open problems".
+
 ## [2.3.0] — 2026-08-23
 
 ### Added

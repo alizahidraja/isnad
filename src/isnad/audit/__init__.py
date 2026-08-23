@@ -10,14 +10,18 @@ for an informational field-by-field mapping — which is not legal advice.
 """
 
 from isnad.audit.chainlog import ChainBreak, ChainEntry, append_record, verify_chain
-from isnad.audit.exporter import build_audit_record
+from isnad.audit.exporter import build_audit_record, build_audit_record_from_nodes
 from isnad.audit.schema import (
     AuditRecord,
     ChainNodeAudit,
     Environment,
+    GradingStrategy,
+    HumanOversight,
     Integrity,
+    RedactFn,
     SourceDocument,
     WeakestLink,
+    apply_redact,
 )
 
 __all__ = [
@@ -26,10 +30,15 @@ __all__ = [
     "ChainEntry",
     "ChainNodeAudit",
     "Environment",
+    "GradingStrategy",
+    "HumanOversight",
     "Integrity",
+    "RedactFn",
     "SourceDocument",
     "WeakestLink",
     "append_record",
+    "apply_redact",
     "build_audit_record",
+    "build_audit_record_from_nodes",
     "verify_chain",
 ]

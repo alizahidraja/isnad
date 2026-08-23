@@ -10,46 +10,58 @@
     "claim_id",
     "claim_text",
     "final_grade",
-    "grading_strategy_name",
-    "grading_strategy_version",
+    "grading_strategy",
     "chain",
     "weakest_link",
     "source_documents",
+    "human_oversight",
     "environment",
     "integrity"
   ],
   "properties": {
-    "record_id": { "type": "string" },
+    "record_id": { "type": "string", "format": "uuid" },
     "record_version": { "type": "string" },
     "generated_at": { "type": "string", "format": "date-time" },
     "claim_id": { "type": "string" },
     "claim_text": { "type": "string" },
     "final_grade": { "type": "string" },
-    "grading_strategy_name": { "type": "string" },
-    "grading_strategy_version": { "type": "string" },
+    "grading_strategy": {
+      "type": "object",
+      "required": ["name", "version", "parameters"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "parameters": { "type": "object" }
+      }
+    },
     "chain": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["narrator_id", "narrator_type", "grade", "grade_rationale"],
+        "required": ["narrator_id", "narrator_type", "grade", "grade_rationale", "upstream_ids"],
         "properties": {
           "narrator_id": { "type": "string" },
-          "narrator_type": { "type": "string", "enum": ["human", "model", "scraper", "tool", "dataset"] },
+          "narrator_type": {
+            "type": "string",
+            "enum": ["human", "model", "scraper", "tool", "dataset", "retriever"]
+          },
           "grade": { "type": "string" },
           "grade_rationale": { "type": "string" },
           "model_identifier": { "type": ["string", "null"] },
           "model_version": { "type": ["string", "null"] },
           "invocation_timestamp": { "type": ["string", "null"], "format": "date-time" },
           "input_hash": { "type": ["string", "null"] },
-          "output_hash": { "type": ["string", "null"] }
+          "output_hash": { "type": ["string", "null"] },
+          "upstream_ids": { "type": "array", "items": { "type": "string" } }
         }
       }
     },
     "weakest_link": {
       "type": "object",
-      "required": ["narrator_id", "why"],
+      "required": ["narrator_id", "grade", "why"],
       "properties": {
         "narrator_id": { "type": "string" },
+        "grade": { "type": "string" },
         "why": { "type": "string" }
       }
     },
@@ -61,25 +73,40 @@
         "properties": {
           "uri": { "type": "string" },
           "retrieved_at": { "type": ["string", "null"], "format": "date-time" },
-          "content_hash": { "type": ["string", "null"] }
+          "content_hash": { "type": ["string", "null"] },
+          "licence": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "human_oversight": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["actor_ref", "action", "timestamp", "note"],
+        "properties": {
+          "actor_ref": { "type": "string" },
+          "action": { "type": "string" },
+          "timestamp": { "type": "string", "format": "date-time" },
+          "note": { "type": "string" }
         }
       }
     },
     "environment": {
       "type": "object",
-      "required": ["isnad_version", "python_version", "host_fingerprint"],
+      "required": ["isnad_version", "python_version", "platform"],
       "properties": {
         "isnad_version": { "type": "string" },
         "python_version": { "type": "string" },
-        "host_fingerprint": { "type": "string" }
+        "platform": { "type": "string" }
       }
     },
     "integrity": {
       "type": "object",
-      "required": ["record_hash", "hash_algorithm"],
+      "required": ["record_hash", "hash_algorithm", "canonicalisation", "detached_signature"],
       "properties": {
         "record_hash": { "type": "string" },
         "hash_algorithm": { "type": "string" },
+        "canonicalisation": { "type": "string" },
         "detached_signature": { "type": ["string", "null"] }
       }
     }

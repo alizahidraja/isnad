@@ -13,6 +13,8 @@ from isnad.audit import (
     AuditRecord,
     ChainNodeAudit,
     Environment,
+    GradingStrategy,
+    HumanOversight,
     Integrity,
     SourceDocument,
     WeakestLink,
@@ -43,15 +45,15 @@ def _record() -> AuditRecord:
         claim_id="c1",
         claim_text="p = mv",
         final_grade="hasan",
-        grading_strategy_name="RefinedWeakestLink",
-        grading_strategy_version="1",
+        grading_strategy=GradingStrategy("RefinedWeakestLink", "1"),
         chain=[
             ChainNodeAudit("src", "dataset", "reliable", "r"),
-            ChainNodeAudit("m", "model", "acceptable", "r"),
+            ChainNodeAudit("m", "model", "acceptable", "r", upstream_ids=["src"]),
         ],
-        weakest_link=WeakestLink("m", "lowest grade"),
+        weakest_link=WeakestLink("m", "acceptable", "lowest grade"),
         source_documents=[SourceDocument("https://e/x")],
-        environment=Environment("2.3.0", "3.12", "deadbeef"),
+        human_oversight=[],
+        environment=Environment("2.4.0", "3.12", "darwin"),
     )
 
 
@@ -79,11 +81,11 @@ class TestAuditRecord:
             "claim_id",
             "claim_text",
             "final_grade",
-            "grading_strategy_name",
-            "grading_strategy_version",
+            "grading_strategy",
             "chain",
             "weakest_link",
             "source_documents",
+            "human_oversight",
             "environment",
             "integrity",
         }
@@ -184,3 +186,63 @@ class TestExporter:
             with Session(engine) as s, pytest.raises(KeyError):
                 build_audit_record("nope", s, Registry())
             reset_engine()
+
+
+class TestRedaction:
+    def test_redact_fn_is_applied_before_hashing(self) -> None:
+        from isnad.audit import build_audit_record_from_nodes
+
+        def redact(field: str, value: object) -> object:
+            if field == "claim_text":
+                return "<redacted>"
+            return value
+
+        rec = build_audit_record_from_nodes(
+            claim_id="c1",
+            claim_text="a user's private medical history",
+            final_grade="hasan",
+            grading_strategy=GradingStrategy("RefinedWeakestLink", "1"),
+            nodes=[ChainNodeAudit("m", "model", "acceptable", "r")],
+            weakest_link=WeakestLink("m", "acceptable", "lowest"),
+            redact_fn=redact,
+        )
+        assert rec.claim_text == "<redacted>"
+        # The hash commits to the redacted form.
+        assert rec.integrity.record_hash == canonical_hash(rec.to_dict(include_integrity=False))
+
+
+class TestDagAndOversight:
+    def test_build_from_nodes_supports_dag_upstream_ids(self) -> None:
+        from isnad.audit import build_audit_record_from_nodes
+
+        nodes = [
+            ChainNodeAudit("src", "dataset", "reliable", "r"),
+            ChainNodeAudit("retriever", "retriever", "acceptable", "r", upstream_ids=["src"]),
+            ChainNodeAudit("model", "model", "weak", "r", upstream_ids=["retriever", "src"]),
+        ]
+        rec = build_audit_record_from_nodes(
+            claim_id="c1",
+            claim_text="x",
+            final_grade="daif",
+            grading_strategy=GradingStrategy("RefinedWeakestLink", "1"),
+            nodes=nodes,
+            weakest_link=WeakestLink("model", "weak", "lowest"),
+        )
+        assert rec.chain[1].upstream_ids == ["src"]
+        assert rec.chain[2].upstream_ids == ["retriever", "src"]  # branch/merge, not linear
+
+    def test_human_oversight_is_carried(self) -> None:
+        from isnad.audit import build_audit_record_from_nodes
+
+        oversight = [HumanOversight("reviewer-1", "approved", utcnow_iso(), "checked the diff")]
+        rec = build_audit_record_from_nodes(
+            claim_id="c1",
+            claim_text="x",
+            final_grade="hasan",
+            grading_strategy=GradingStrategy("RefinedWeakestLink", "1"),
+            nodes=[ChainNodeAudit("m", "model", "acceptable", "r")],
+            weakest_link=WeakestLink("m", "acceptable", "lowest"),
+            human_oversight=oversight,
+        )
+        assert rec.human_oversight[0].actor_ref == "reviewer-1"
+        assert rec.human_oversight[0].action == "approved"
