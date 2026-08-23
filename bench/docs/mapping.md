@@ -34,6 +34,15 @@
 `max_rank` was verified equal to `max(rank_no)` over the chain's links
 (sampled 5/5). `hukum` is the scholar's free-text chain verdict.
 
+> **Correction (found during implementation):** `max_rank` is *not* a clean
+> weakest-link signal. The corpus encodes **chain discontinuities** as synthetic
+> sentinel narrators — `موضع تعليق` (taʿlīq), `موضع إرسال` (irsāl),
+> `موضع انقطاع` (inqiṭāʿ) — assigned `rank_no=12` with `rank=NULL`. They appear
+> in 51,803 of 577,024 chains (~9%). These are the classical *ittiṣāl* gaps, and
+> they map directly onto ISNAD's `is_complete=False`. The benchmark therefore
+> (a) treats a sentinel node as a chain gap, and (b) computes the true
+> weakest-link rank from **non-sentinel** narrators only.
+
 ---
 
 ## 2. The ground-truth ladder: Ibn Ḥajar's 12 tiers
@@ -94,10 +103,13 @@ split.
 
 ### 3.3 Chain computation
 
-Each `sanad` is a `PASS_THROUGH` chain (every narrator faithfully transmits),
-`is_complete=True` unless the `hukum` text flags `إرسال` / `تعليق` / `انقطاع`
-(discontinuity — which ISNAD caps at DAIF). We run `grade_chain` over the
-mapped `NarratorGrade` list; corroboration and transform refinement are
+Each `sanad` is a `PASS_THROUGH` chain (every narrator faithfully transmits).
+A sentinel node (`موضع تعليق` / `موضع إرسال` / `موضع انقطاع`) makes the chain
+`is_complete=False` (ISNAD caps it at DAIF) and is excluded from the narrator
+list. Because the gap is read from the chain **structure** (`sanad_rawis`), not
+from the `hukum` text, there is no circularity: `is_complete` is an independent
+signal, and the `hukum` verdict is the ground-truth label. We run `grade_chain`
+over the mapped `NarratorGrade` list; corroboration and transform refinement are
 introduced as **ablation layers** (see §4), not baked into the primary number.
 
 ---
@@ -122,11 +134,11 @@ number.
    engine enabled should close the gap. This is the benchmark's direct test of
    the mutābaʿāt mechanism.
 
-3. **Ittiṣāl (continuity).** Classical grading penalizes `إرسال`/`تعليق`
-   (breaks). ISNAD encodes this as `is_complete=False → DAIF`. We derive
-   `is_complete` from the `hukum` text, which is itself the scholar's verdict —
-   so this is partially circular; we report a *continuity-agnostic* number
-   (drop the flag) alongside the primary.
+3. **Ittiṣāl (continuity).** Classical grading penalises `إرسال`/`تعليق`/`انقطاع`
+   (breaks). ISNAD encodes this as `is_complete=False → DAIF`. The corpus marks
+   these breaks as sentinel nodes, so `is_complete` is read from chain structure
+   (independent of the verdict), and continuity disagreement is measured, not
+   assumed away.
 
 4. **The two-axis split at ranks 10–12** (matrūk = SUSPECT vs COMPROMISED) is a
    judgment call. Flagged for domain review; it does not affect the

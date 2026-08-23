@@ -110,9 +110,13 @@ ignore_errors = true
 module = "isnad.cli.*"
 ignore_errors = true
 
+[[tool.mypy.overrides]]
+module = "bench.*"
+disable_error_code = ["import-untyped"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
 asyncio_mode = "auto"
 # NLI/LLM critics download large models or need API keys, so they are
 # excluded from the default (CI) run.  Run them explicitly with:
