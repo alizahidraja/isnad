@@ -74,6 +74,25 @@ ISNAD's corroboration engine is the right next mechanism to wire in.
 | 1,223 | severity: classical ḍaʿīf vs ISNAD mawḍūʿ | ISNAD stricter (rejected narrator). |
 | 680 | continuity: taʿlīq gap | collector's known hanging form. |
 
+## The human ceiling (M3)
+
+How well do the scholars agree with *each other*, from 127,863 jarḥ–taʿdīl
+statements by 945 critics?
+
+| Quantity | Cohen's κ |
+|---|---:|
+| ISNAD vs consensus (strict) | **0.871** |
+| critic vs consensus | 0.450 |
+| critic vs critic | 0.331 |
+
+Unanimous agreement: 36.8% of narrators with ≥2 critics.
+
+The honest reading: the ground truth itself is **contested** — scholars disagree
+with each other at κ = 0.33. A single scholar tracks the consensus at κ = 0.45.
+ISNAD tracks the consensus at κ = 0.87 — i.e. it **faithfully implements the
+scholars' consensus**; it is not "better than the scholars", it is a
+deterministic reflection of their average opinion.
+
 ## The three things this validates
 
 1. **The weakest-link rule is right.** Given the scholars' own narrator grades,
@@ -92,6 +111,9 @@ ISNAD's corroboration engine is the right next mechanism to wire in.
   of scope for the chain path).
 - The rank→grade mapping is the author's best-effort reading of Ibn Ḥajar's
   Taqrīb; preregistered and frozen. Ranks 6–7 and 10–12 flagged for review.
-- The human ceiling (inter-critic κ from `aqwal`) is the next milestone (M3).
+- The human ceiling is measured (M3): scholars disagree with each other at
+  κ = 0.33, and a single scholar tracks the consensus at κ = 0.45; ISNAD at
+  0.87 is a faithful implementation of the consensus, not a claim of
+  superiority over the scholars.
 - "Mawḍūʿ" is a *chain*-level flag ("a rejected narrator is present"), not a
   matn-level "fabricated" verdict.

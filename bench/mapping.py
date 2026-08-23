@@ -132,3 +132,68 @@ def chain_grade_from_hukum(hukum: str | None) -> ChainGrade | None:
     if "متصل" in hukum or "ثقات" in hukum:
         return ChainGrade.SAHIH
     return None
+
+
+# ---------------------------------------------------------------------------
+# Critic statements (aqwal.qawl) -> NarratorGrade
+#
+# Used by M3 (the human ceiling): how well do the critics agree with each other
+# on a narrator? Keyword order matters — strongest verdicts first.
+# ---------------------------------------------------------------------------
+
+_REJECTED_QAWL = ("متروك", "منكر", "كذاب", "وضاع", "ليس بثقة", "يضع الحديث", "متهم")
+_WEAK_QAWL = (
+    "ضعيف",
+    "ضعفه",
+    "ضعفوه",
+    "ليس بالقوي",
+    "لين الحديث",
+    "ليس بشيء",
+    "فيه نظر",
+    "لا يتابع",
+    "الضعفاء",
+)
+_UNGRADED_QAWL = ("مجهول", "لا يعرف", "لم أعرفه", "لا أعرفه", "لا يدرى", "مستور")
+_RELIABLE_QAWL = (
+    "ثقة",
+    "وثق",
+    "ثبت",
+    "حافظ",
+    "الثقات",
+    "صحابي",
+    "صحبة",
+    "أثنى عليه",
+    "محله الصدق",
+    "صالح الحديث",
+)
+_ACCEPTABLE_QAWL = (
+    "صدوق",
+    "مقبول",
+    "لا بأس",
+    "ليس به بأس",
+    "صالح",
+    "شيخ صالح",
+)
+
+
+def grade_from_qawl(qawl: str | None) -> NarratorGrade | None:
+    """Classify a critic's jarḥ–taʿdīl statement into a NarratorGrade.
+
+    Returns ``None`` for statements that are biographical references ("mentioned
+    in book X") or otherwise carry no grade, so the human-ceiling analysis can
+    report its coverage honestly rather than guessing.
+    """
+    if not qawl:
+        return None
+    q = qawl.strip()
+    if any(k in q for k in _REJECTED_QAWL):
+        return NarratorGrade.REJECTED
+    if any(k in q for k in _WEAK_QAWL):
+        return NarratorGrade.WEAK
+    if any(k in q for k in _UNGRADED_QAWL):
+        return NarratorGrade.UNGRADED
+    if any(k in q for k in _RELIABLE_QAWL):
+        return NarratorGrade.RELIABLE
+    if any(k in q for k in _ACCEPTABLE_QAWL):
+        return NarratorGrade.ACCEPTABLE
+    return None

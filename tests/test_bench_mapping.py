@@ -7,6 +7,7 @@ from isnad.types import AdalahGrade, ChainGrade, DabtGrade, NarratorGrade
 from bench.mapping import (
     SENTINEL_NAMES,
     chain_grade_from_hukum,
+    grade_from_qawl,
     is_sentinel,
     narrator_grade_from_rank,
 )
@@ -107,3 +108,33 @@ class TestHukumClassification:
         assert chain_grade_from_hukum(None) is None
         assert chain_grade_from_hukum("") is None
         assert chain_grade_from_hukum("نص غير مصنف") is None
+
+
+class TestQawlClassification:
+    def test_reliable(self):
+        assert grade_from_qawl("ثقة") == NarratorGrade.RELIABLE
+        assert grade_from_qawl("ذكره في الثقات") == NarratorGrade.RELIABLE
+        assert grade_from_qawl("له صحبة") == NarratorGrade.RELIABLE
+
+    def test_acceptable(self):
+        assert grade_from_qawl("صدوق") == NarratorGrade.ACCEPTABLE
+        assert grade_from_qawl("لا بأس به") == NarratorGrade.ACCEPTABLE
+
+    def test_weak(self):
+        assert grade_from_qawl("ضعيف") == NarratorGrade.WEAK
+        assert grade_from_qawl("ذكره في الضعفاء") == NarratorGrade.WEAK
+
+    def test_rejected(self):
+        assert grade_from_qawl("متروك الحديث") == NarratorGrade.REJECTED
+        assert grade_from_qawl("كذاب") == NarratorGrade.REJECTED
+        assert grade_from_qawl("ليس بثقة") == NarratorGrade.REJECTED
+
+    def test_ungraded(self):
+        assert grade_from_qawl("مجهول") == NarratorGrade.UNGRADED
+
+    def test_biographical_is_none(self):
+        assert grade_from_qawl("ذكره في تاريخ دمشق") is None
+        assert grade_from_qawl(None) is None
+
+    def test_thiqah_wins_over_saduq(self):
+        assert grade_from_qawl("ثقة صدوق") == NarratorGrade.RELIABLE

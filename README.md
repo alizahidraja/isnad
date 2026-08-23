@@ -227,7 +227,7 @@ See `examples/langchain_middleware_demo.py`. The listable shape is the
 | **Precision recoverability**  | ✅ Implemented       | Precision-driven REJECTED is recoverable; only integrity (COMPROMISED) is sticky — issue #40 |
 | **Period-sliced grades**      | ✅ Implemented       | `get_grade_as_of()` re-derives a narrator's grade at any past instant — the ikhtilāṭ remedy — issue #43 |
 | **End-to-end benchmark**      | ✅ Measured          | Adversarial corruption-detection: weak narrators 100% caught, 0 false positives; the content critic is the binding constraint — issue #50 |
-| **ISNAD-Bench (classical ground truth)** | ✅ Measured | Weakest-link grading vs 577,024 scholar-graded chains: Cohen's κ = 0.87 strict / 0.76 lenient (shuffled control 0.05); 88% of the remaining gap is mutābaʿa — `bench/docs/RESULTS.md` |
+| **ISNAD-Bench (classical ground truth)** | ✅ Measured | Weakest-link grading vs 577,024 scholar-graded chains: Cohen's κ = 0.87 strict / 0.76 lenient (shuffled control 0.05); human ceiling = scholars-vs-scholars κ = 0.33; 88% of the remaining gap is mutābaʿa — `bench/docs/RESULTS.md` |
 
 **Ungraded-narrator policy.** An *ungraded* narrator caps a chain at **ḍaʿīf** by
 default — the classical treatment of a *majhūl* (unknown) narrator, whom scholars
