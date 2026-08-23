@@ -12,7 +12,13 @@ key is needed — matching the framework's "no data → no penalty" pattern.
 
 from __future__ import annotations
 
-from isnad.critics.llm import LLMCritic, _hash_claim
+from isnad.critics.llm import (
+    LLMCritic,
+    PROVIDERS,
+    _hash_claim,
+    list_providers,
+    resolve_provider,
+)
 from isnad.types import ContentVerdict
 
 
@@ -110,3 +116,182 @@ class TestDeepSeekConvenience:
         critic = LLMCritic(base_url="https://custom.example/v1", api_key="sk-explicit")
         assert critic.base_url == "https://custom.example/v1"
         assert critic.api_key == "sk-explicit"
+
+
+class TestProviderResolution:
+    def _clear_keys(self, monkeypatch) -> None:
+        for name in (
+            "ANTHROPIC_API_KEY",
+            "DEEPSEEK_API_KEY",
+            "OPENROUTER_API_KEY",
+            "OPENAI_API_KEY",
+            "GEMINI_API_KEY",
+            "GOOGLE_API_KEY",
+            "GROQ_API_KEY",
+            "TOGETHER_API_KEY",
+            "ISNAD_LLM_PROVIDER",
+            "ISNAD_LLM_MODEL",
+            "ISNAD_LLM_API_KEY",
+            "ISNAD_LLM_BASE_URL",
+        ):
+            monkeypatch.delenv(name, raising=False)
+
+    def test_openrouter_env_var(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        monkeypatch.setenv("OPENROUTER_API_KEY", "sk-or")
+        monkeypatch.setenv("ISNAD_LLM_MODEL", "openai/gpt-4o-mini")
+        critic = LLMCritic()
+        assert critic.provider == "openrouter"
+        assert critic.base_url == "https://openrouter.ai/api/v1"
+        assert critic.api_key == "sk-or"
+        assert critic.model == "openai/gpt-4o-mini"
+        assert critic._has_credentials() is True
+
+    def test_openrouter_without_model_is_not_ready(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        monkeypatch.setenv("OPENROUTER_API_KEY", "sk-or")
+        critic = LLMCritic()
+        assert critic.provider == "openrouter"
+        assert critic._has_credentials() is False  # requires an explicit model
+
+    def test_anthropic_provider(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant")
+        critic = LLMCritic()
+        assert critic.provider == "anthropic"
+        assert critic.api_key == "sk-ant"
+        assert critic._has_credentials() is True
+
+    def test_openai_provider(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        monkeypatch.setenv("OPENAI_API_KEY", "sk-oai")
+        monkeypatch.setenv("ISNAD_LLM_MODEL", "gpt-4o")
+        critic = LLMCritic()
+        assert critic.provider == "openai"
+        assert critic.base_url == "https://api.openai.com/v1"
+        assert critic.model == "gpt-4o"
+
+    def test_gemini_provider(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        monkeypatch.setenv("GEMINI_API_KEY", "sk-gem")
+        monkeypatch.setenv("ISNAD_LLM_MODEL", "gemini-2.5-flash")
+        critic = LLMCritic()
+        assert critic.provider == "gemini"
+        assert critic.base_url == "https://generativelanguage.googleapis.com/v1beta/openai/"
+
+    def test_ollama_no_key_needed(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        critic = LLMCritic(provider="ollama", model="llama3.1")
+        assert critic.base_url == "http://localhost:11434/v1"
+        assert critic.api_key == ""
+        assert critic._has_credentials() is True
+
+    def test_explicit_provider_arg_beats_env(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        monkeypatch.setenv("DEEPSEEK_API_KEY", "sk-env")
+        critic = LLMCritic(provider="openrouter", model="openai/gpt-4o", api_key="sk-or")
+        assert critic.provider == "openrouter"
+        assert critic.api_key == "sk-or"
+
+    def test_unknown_provider_raises(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        import pytest
+
+        with pytest.raises(ValueError):
+            LLMCritic(provider="not-a-real-provider")
+
+    def test_llm_provider_env_disambiguates(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        monkeypatch.setenv("DEEPSEEK_API_KEY", "sk-ds")
+        monkeypatch.setenv("OPENAI_API_KEY", "sk-oai")
+        monkeypatch.setenv("ISNAD_LLM_PROVIDER", "openai")
+        monkeypatch.setenv("ISNAD_LLM_MODEL", "gpt-4o")
+        critic = LLMCritic()
+        assert critic.provider == "openai"
+
+    def test_generic_custom_endpoint(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        monkeypatch.setenv("ISNAD_LLM_BASE_URL", "https://llm.internal/v1")
+        monkeypatch.setenv("ISNAD_LLM_API_KEY", "sk-internal")
+        monkeypatch.setenv("ISNAD_LLM_MODEL", "my-model")
+        critic = LLMCritic()
+        assert critic.provider == "custom"
+        assert critic.base_url == "https://llm.internal/v1"
+        assert critic.api_key == "sk-internal"
+        assert critic.model == "my-model"
+        assert critic._has_credentials() is True
+
+    def test_list_providers_is_superset(self) -> None:
+        names = list_providers()
+        for expected in (
+            "deepseek",
+            "openrouter",
+            "openai",
+            "anthropic",
+            "gemini",
+            "groq",
+            "together",
+            "ollama",
+            "custom",
+        ):
+            assert expected in names
+        assert set(names) == set(PROVIDERS)
+
+    def test_resolve_provider_none_when_unconfigured(self, monkeypatch) -> None:
+        self._clear_keys(monkeypatch)
+        assert resolve_provider(None, None) is None
+
+
+class TestOpenAICompatCall:
+    def _fake_httpx(self, monkeypatch, response_text: str) -> dict:
+        import sys
+        import types
+
+        captured: dict = {}
+
+        class FakeResp:
+            def raise_for_status(self) -> None:
+                pass
+
+            def json(self):
+                return {"choices": [{"message": {"content": response_text}}]}
+
+        class FakeHttpx:
+            @staticmethod
+            def post(url, headers, json, timeout):
+                captured["url"] = url
+                captured["headers"] = headers
+                captured["json"] = json
+                captured["timeout"] = timeout
+                return FakeResp()
+
+        fake_module = types.ModuleType("httpx")
+        fake_module.post = FakeHttpx.post
+        monkeypatch.setitem(sys.modules, "httpx", fake_module)
+        return captured
+
+    def test_openai_compat_call_shape(self, monkeypatch) -> None:
+        captured = self._fake_httpx(monkeypatch, "CONTRADICTION")
+        critic = LLMCritic(provider="openrouter", api_key="sk-or", model="openai/gpt-4o")
+        result = critic._call_openai_compat("test prompt")
+        assert result == "CONTRADICTION"
+        assert captured["url"] == "https://openrouter.ai/api/v1/chat/completions"
+        assert captured["headers"]["Authorization"] == "Bearer sk-or"
+        assert captured["json"]["model"] == "openai/gpt-4o"
+        assert captured["json"]["temperature"] == 0.0
+
+    def test_openrouter_attribution_headers(self, monkeypatch) -> None:
+        monkeypatch.setenv("ISNAD_LLM_REFERER", "https://example.com")
+        monkeypatch.setenv("ISNAD_LLM_TITLE", "my-app")
+        captured = self._fake_httpx(monkeypatch, "CONSISTENT")
+        critic = LLMCritic(provider="openrouter", api_key="sk-or", model="openai/gpt-4o")
+        critic._call_openai_compat("test prompt")
+        assert captured["headers"]["HTTP-Referer"] == "https://example.com"
+        assert captured["headers"]["X-OpenRouter-Title"] == "my-app"
+
+    def test_missing_model_raises(self) -> None:
+        import pytest
+
+        critic = LLMCritic(provider="openrouter", api_key="sk-or")
+        with pytest.raises(RuntimeError):
+            critic._call_openai_compat("test prompt")

@@ -385,9 +385,16 @@ The framework leaves key parameters open by design (paper §4.2/§4.3). Swap any
 ```python
 from isnad.critics import EmbeddingCritic, LLMCritic
 
-critic = EmbeddingCritic()                            # offline, fast
-critic = LLMCritic(api_key="sk-...")                  # LLM-backed, higher quality
+critic = EmbeddingCritic()                                      # offline, fast
+critic = LLMCritic(provider="openrouter", model="openai/gpt-4o-mini")  # any LLM via OpenRouter
+critic = LLMCritic(provider="anthropic", model="claude-sonnet-4-20250514")  # Anthropic
+critic = LLMCritic()                                            # auto-detects from env
 ```
+
+The LLM critic is **provider-agnostic** — OpenRouter, OpenAI, DeepSeek, Anthropic,
+Gemini, Groq, Together, or any OpenAI-compatible endpoint (including a local
+Ollama server).  Name a provider, or set `ISNAD_LLM_PROVIDER` + a key env var.
+`list_providers()` enumerates the known providers.
 
 **Good first issues:**
 - Implement an alternative critic (sentence-transformers embedding, CrewAI integration)

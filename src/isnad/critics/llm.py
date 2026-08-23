@@ -1,24 +1,33 @@
 """LLM-backed content critic for ISNAD — provider-agnostic.
 
 Higher-quality content criticism using an LLM with retrieved corpus context.
-Supports OpenAI-compatible APIs (DeepSeek, OpenAI, local vLLM) and Anthropic.
+Works with any OpenAI-compatible endpoint (OpenRouter, OpenAI, DeepSeek,
+Gemini, Groq, Together, Ollama) and Anthropic via its SDK.
+
+Pick a provider by name, or just set the right environment variable:
+
+    critic = LLMCritic(provider="openrouter", model="openai/gpt-4o-mini")
+    critic = LLMCritic(provider="openai", model="gpt-4o")
+    critic = LLMCritic(provider="anthropic", model="claude-sonnet-4-20250514")
+    critic = LLMCritic()  # auto-detects from the environment
+
+Environment variables (all optional; explicit constructor args win):
+- ISNAD_LLM_PROVIDER  — provider name (disambiguates when several keys are set)
+- ISNAD_LLM_MODEL     — model name (required for providers with no default)
+- ISNAD_LLM_API_KEY   — generic key for custom endpoints
+- ISNAD_LLM_BASE_URL  — generic base URL for custom OpenAI-compatible endpoints
+- Provider-specific keys: OPENROUTER_API_KEY, OPENAI_API_KEY, DEEPSEEK_API_KEY,
+  ANTHROPIC_API_KEY, GEMINI_API_KEY / GOOGLE_API_KEY, GROQ_API_KEY,
+  TOGETHER_API_KEY.
 
 Features:
-- Provider-agnostic: pass base_url + api_key for any OpenAI-compatible endpoint
-- Falls back to Anthropic if ANTHROPIC_API_KEY is set and no base_url provided
 - Cached on disk (keyed by claim + context hash) — re-runs are free
-- Graceful degradation: returns UNVERIFIABLE if no credentials
+- Graceful degradation: returns UNVERIFIABLE if not configured
 - Domain-agnostic prompt
 
-Usage:
-    # DeepSeek
-    critic = LLMCritic(
-        base_url="https://api.deepseek.com/v1",
-        api_key=os.environ["DEEPSEEK_API_KEY"],
-        model="deepseek-chat",
-    )
-    # Anthropic
-    critic = LLMCritic()  # reads ANTHROPIC_API_KEY from env
+Honesty note: provider base URLs are recorded from public docs (verified
+2026-08). The HTTP path is tested with a mock; live calls require the
+provider's own key and are the user's responsibility to verify.
 """
 
 from __future__ import annotations
@@ -26,6 +35,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from dataclasses import dataclass
 from pathlib import Path
 
 from isnad.critics.embedding import EmbeddingCritic
@@ -36,39 +46,205 @@ def _hash_claim(claim: str) -> str:
     return hashlib.sha256(claim.encode()).hexdigest()[:16]
 
 
+# =========================================================================
+# Provider catalog
+# =========================================================================
+
+
+@dataclass(frozen=True)
+class ProviderSpec:
+    """A named LLM provider: base URL, credential env vars, default model.
+
+    ``base_url=None`` marks a non-OpenAI-compatible backend (Anthropic's
+    Messages API, called through its own SDK).
+    """
+
+    name: str
+    base_url: str | None
+    env_vars: tuple[str, ...]
+    default_model: str | None
+    requires_model: bool = False
+    needs_key: bool = True
+    doc: str = ""
+
+
+# Base URLs are recorded from each provider's public documentation (verified
+# 2026-08). ``openrouter``/``openai``/``gemini``/``groq``/``together``/
+# ``ollama`` have no single default model, so they require an explicit model
+# name (``requires_model=True``).
+PROVIDERS: dict[str, ProviderSpec] = {
+    "deepseek": ProviderSpec(
+        "deepseek",
+        "https://api.deepseek.com/v1",
+        ("DEEPSEEK_API_KEY",),
+        "deepseek-chat",
+        doc="DeepSeek's OpenAI-compatible endpoint.",
+    ),
+    "openrouter": ProviderSpec(
+        "openrouter",
+        "https://openrouter.ai/api/v1",
+        ("OPENROUTER_API_KEY",),
+        None,
+        requires_model=True,
+        doc="OpenRouter — one key, many models (use a full slug, e.g. 'openai/gpt-4o').",
+    ),
+    "openai": ProviderSpec(
+        "openai",
+        "https://api.openai.com/v1",
+        ("OPENAI_API_KEY",),
+        None,
+        requires_model=True,
+        doc="OpenAI's native endpoint.",
+    ),
+    "anthropic": ProviderSpec(
+        "anthropic",
+        None,
+        ("ANTHROPIC_API_KEY",),
+        None,
+        doc="Anthropic Messages API via the anthropic SDK (not OpenAI-compatible).",
+    ),
+    "gemini": ProviderSpec(
+        "gemini",
+        "https://generativelanguage.googleapis.com/v1beta/openai/",
+        ("GEMINI_API_KEY", "GOOGLE_API_KEY"),
+        None,
+        requires_model=True,
+        doc="Google Gemini via its OpenAI-compatibility layer.",
+    ),
+    "groq": ProviderSpec(
+        "groq",
+        "https://api.groq.com/openai/v1",
+        ("GROQ_API_KEY",),
+        None,
+        requires_model=True,
+        doc="Groq's OpenAI-compatible endpoint.",
+    ),
+    "together": ProviderSpec(
+        "together",
+        "https://api.together.xyz/v1",
+        ("TOGETHER_API_KEY",),
+        None,
+        requires_model=True,
+        doc="Together AI's OpenAI-compatible endpoint.",
+    ),
+    "ollama": ProviderSpec(
+        "ollama",
+        "http://localhost:11434/v1",
+        (),
+        None,
+        requires_model=True,
+        needs_key=False,
+        doc="Local Ollama server (no API key).",
+    ),
+    "custom": ProviderSpec(
+        "custom",
+        None,
+        (),
+        None,
+        requires_model=True,
+        doc="Any OpenAI-compatible endpoint: pass base_url + api_key + model.",
+    ),
+}
+
+
+def _first_env(*names: str) -> str:
+    """First non-empty value among the given env var names."""
+    for name in names:
+        value = os.environ.get(name, "")
+        if value:
+            return value
+    return ""
+
+
+# Detection order when no provider is named explicitly. deepseek/anthropic
+# first for backward compatibility with the v2.4.3 defaults.
+_DETECT_ORDER = ("deepseek", "anthropic", "openai", "openrouter", "gemini", "groq", "together")
+
+
+def resolve_provider(provider: str | None, base_url: str | None) -> ProviderSpec | None:
+    """Resolve the active provider from explicit args and the environment.
+
+    Precedence:
+    1. explicit ``provider`` name
+    2. ``ISNAD_LLM_PROVIDER`` env var
+    3. explicit ``base_url`` (any OpenAI-compatible endpoint)
+    4. ``ISNAD_LLM_BASE_URL`` env var
+    5. provider-specific API-key env vars (documented order)
+    6. none -> not configured (graceful UNVERIFIABLE)
+    """
+    name = (provider or os.environ.get("ISNAD_LLM_PROVIDER", "") or "").strip().lower()
+    if name:
+        if name not in PROVIDERS:
+            raise ValueError(
+                f"Unknown LLM provider {name!r}. Known providers: {', '.join(PROVIDERS)}."
+            )
+        return PROVIDERS[name]
+    if base_url or os.environ.get("ISNAD_LLM_BASE_URL", ""):
+        return PROVIDERS["custom"]
+    for candidate in _DETECT_ORDER:
+        spec = PROVIDERS[candidate]
+        if _first_env(*spec.env_vars):
+            return spec
+    return None
+
+
+def list_providers() -> list[str]:
+    """Names of the known providers, for help text and discovery."""
+    return list(PROVIDERS)
+
+
 class LLMCritic:
     """LLM-backed content critic with retrieval-augmented context.
 
-    Provider-agnostic: supports any OpenAI-compatible endpoint (DeepSeek,
-    OpenAI, local vLLM) via base_url + api_key. Falls back to Anthropic
-    when ANTHROPIC_API_KEY is set and no base_url is provided.
+    Provider-agnostic: name a provider (``openrouter``, ``openai``,
+    ``deepseek``, ``anthropic``, ``gemini``, ``groq``, ``together``,
+    ``ollama``) or pass a raw OpenAI-compatible ``base_url``. When no
+    provider is named, the constructor auto-detects one from the
+    environment (see module docstring).
 
     Args:
-        base_url: OpenAI-compatible API base URL (e.g. https://api.deepseek.com/v1).
-        api_key: API key for the provider.
-        model: Model name to use (default: deepseek-chat).
+        provider: Named provider (see ``list_providers()``). Default: auto-detect.
+        base_url: OpenAI-compatible API base URL (overrides the provider default).
+        api_key: API key for the provider (overrides env vars).
+        model: Model name to use (required for providers with no default).
         top_k: Number of similar corpus claims to retrieve as context.
         cache_dir: Directory for on-disk cache (None = no caching).
     """
 
     def __init__(
         self,
+        provider: str | None = None,
         base_url: str | None = None,
         api_key: str | None = None,
-        model: str = "deepseek-chat",
+        model: str | None = None,
         top_k: int = 5,
         cache_dir: str | None = None,
     ):
-        self.base_url = base_url or ""
-        self.api_key = api_key or ""
-        # DeepSeek convenience: a DEEPSEEK_API_KEY env var defaults to the
-        # OpenAI-compatible DeepSeek endpoint (deepseek-chat) when no explicit
-        # base_url/api_key is passed.
-        deepseek_key = os.environ.get("DEEPSEEK_API_KEY", "")
-        if not self.api_key and deepseek_key:
-            self.api_key = deepseek_key
-            self.base_url = self.base_url or "https://api.deepseek.com/v1"
-        self.model = model
+        self._spec = resolve_provider(provider, base_url)
+        self.provider = self._spec.name if self._spec else None
+
+        # Credentials: explicit args > provider env var(s) > generic env var.
+        key = api_key or ""
+        if not key and self._spec:
+            key = _first_env(*self._spec.env_vars)
+        if not key:
+            key = os.environ.get("ISNAD_LLM_API_KEY", "")
+        self.api_key = key
+
+        # Base URL: explicit arg > provider default > generic env var.
+        url = base_url or ""
+        if not url and self._spec:
+            url = self._spec.base_url or ""
+        if not url:
+            url = os.environ.get("ISNAD_LLM_BASE_URL", "")
+        self.base_url = url
+
+        # Model: explicit arg > generic env var > provider default.
+        model_name = model or os.environ.get("ISNAD_LLM_MODEL", "") or ""
+        if not model_name and self._spec:
+            model_name = self._spec.default_model or ""
+        self.model = model_name
+
         self.top_k = top_k
         self.cache_dir = Path(cache_dir) if cache_dir else None
         if self.cache_dir:
@@ -76,46 +252,84 @@ class LLMCritic:
         self._retriever = EmbeddingCritic()
 
     def _has_credentials(self) -> bool:
-        return bool(self.base_url and self.api_key) or bool(os.environ.get("ANTHROPIC_API_KEY"))
+        """True if a real LLM call is possible (not just "a key exists").
+
+        A provider that requires an explicit model name (OpenRouter, OpenAI,
+        Gemini, ...) with no model set is treated as "not configured" rather
+        than silently sending an empty model — the framework's no-data →
+        no-penalty pattern.
+        """
+        if self._spec is None:
+            return False
+        if self._spec.requires_model and not self.model:
+            return False
+        if not self._spec.needs_key:
+            return bool(self.base_url)
+        if self.provider == "anthropic":
+            return bool(self.api_key)
+        return bool(self.base_url and self.api_key)
 
     def _call_llm(self, prompt: str) -> str:
-        """Call LLM — OpenAI-compatible first, Anthropic fallback."""
-        if self.base_url and self.api_key:
-            import httpx
+        """Dispatch to the resolved provider backend."""
+        if self.provider == "anthropic":
+            return self._call_anthropic(prompt)
+        return self._call_openai_compat(prompt)
 
-            resp = httpx.post(
-                f"{self.base_url.rstrip('/')}/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {self.api_key}",
-                    "Content-Type": "application/json",
-                },
-                json={
-                    "model": self.model,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "max_tokens": 32,
-                    "temperature": 0.0,
-                },
-                timeout=30,
+    def _call_openai_compat(self, prompt: str) -> str:
+        """Call any OpenAI-compatible ``chat/completions`` endpoint via httpx."""
+        if not (self.base_url and self.api_key):
+            raise RuntimeError("No LLM credentials available")
+        if not self.model:
+            raise RuntimeError(
+                f"Provider {self.provider!r} requires an explicit model name "
+                "(set model= or ISNAD_LLM_MODEL)."
             )
-            resp.raise_for_status()
-            data = resp.json()
-            if data.get("choices"):
-                return (data["choices"][0]["message"].get("content") or "").strip().upper()
 
-        anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
-        if anthropic_key:
-            import anthropic
+        import httpx
 
-            client = anthropic.Anthropic(api_key=anthropic_key)
-            model = self.model if self.model != "deepseek-chat" else "claude-sonnet-4-20250514"
-            response = client.messages.create(
-                model=model,
-                max_tokens=32,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            return getattr(response.content[0], "text", "").strip().upper()
+        headers = {"Content-Type": "application/json"}
+        if self.api_key:
+            headers["Authorization"] = f"Bearer {self.api_key}"
+        # OpenRouter app attribution (optional; used for rankings only).
+        if self.provider == "openrouter":
+            referer = os.environ.get("ISNAD_LLM_REFERER", "")
+            title = os.environ.get("ISNAD_LLM_TITLE", "")
+            if referer:
+                headers["HTTP-Referer"] = referer
+            if title:
+                headers["X-OpenRouter-Title"] = title
 
-        raise RuntimeError("No LLM credentials available")
+        resp = httpx.post(
+            f"{self.base_url.rstrip('/')}/chat/completions",
+            headers=headers,
+            json={
+                "model": self.model,
+                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": 32,
+                "temperature": 0.0,
+            },
+            timeout=30,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("choices"):
+            return (data["choices"][0]["message"].get("content") or "").strip().upper()
+        return ""
+
+    def _call_anthropic(self, prompt: str) -> str:
+        """Call the Anthropic Messages API via the ``anthropic`` SDK."""
+        if not self.api_key:
+            raise RuntimeError("No LLM credentials available")
+        import anthropic
+
+        client = anthropic.Anthropic(api_key=self.api_key)
+        model = self.model or "claude-sonnet-4-20250514"
+        response = client.messages.create(
+            model=model,
+            max_tokens=32,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return getattr(response.content[0], "text", "").strip().upper()
 
     def evaluate(
         self,
