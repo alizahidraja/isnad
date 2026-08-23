@@ -10,7 +10,6 @@ Run:  python examples/multi_agent_handoff.py
 
 from __future__ import annotations
 
-import json
 import tempfile
 
 from sqlalchemy.orm import Session

@@ -47,15 +47,17 @@ reg.register("source:openstax-vol3", "physics", grade=NarratorGrade.RELIABLE)
 reg.register("pdf-scraper@1.2", "physics", grade=NarratorGrade.RELIABLE)
 reg.register("ingest-model-v3", "physics", grade=NarratorGrade.ACCEPTABLE)
 
-link_grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
-chain_grade = grade_chain(link_grades, [l.transform_type for l in chain.links], is_complete=True)
+link_grades = [reg.get_grade(link.narrator_id, link.domain) for link in chain.links]
+chain_grade = grade_chain(
+    link_grades, [link.transform_type for link in chain.links], is_complete=True
+)
 content_verdict = ContentVerdict.CONSISTENT
 
 # ---------------------------------------------------------------------------
 # Step 2 — render, seal, write
 # ---------------------------------------------------------------------------
 
-narrator_chain = [l.narrator_id for l in chain.links]
+narrator_chain = [link.narrator_id for link in chain.links]
 verdict_text = render_verdict(
     claim_text=claim_text,
     chain_grade=chain_grade.value,
@@ -75,6 +77,6 @@ print("Sealed verdict:")
 print(f"  chain grade: {chain_grade.value}")
 print(f"  hash:        {sealed.hash}")
 print(f"  files →      {out_dir}")
-print(f"\nTo verify: serve the dir (python3 -m http.server 8000) and select the")
-print(f"claim text below, then run verify_claim() or Paul's extension.")
+print("\nTo verify: serve the dir (python3 -m http.server 8000) and select the")
+print("claim text below, then run verify_claim() or Paul's extension.")
 print(f"\n{sealed.page_body}")

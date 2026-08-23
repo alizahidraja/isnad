@@ -19,7 +19,6 @@ from __future__ import annotations
 from datetime import UTC, datetime
 
 from isnad import Registry
-from isnad.types import NarratorGrade
 
 
 def main() -> None:
@@ -42,7 +41,7 @@ def main() -> None:
 
     # The backdoor is discovered; the operator quarantines the narrator.
     reg.quarantine("jia", "compression", "caught injecting a backdoor")
-    print(f"\n  the backdoor is discovered and Jia is quarantined")
+    print("\n  the backdoor is discovered and Jia is quarantined")
     print(f"  live grade now: {reg.get_grade('jia', 'compression').value}")
 
     print("\n" + "-" * 68)

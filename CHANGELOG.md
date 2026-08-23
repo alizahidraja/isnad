@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.6.0] — 2026-08-23
+
+### Added
+
+- **ISNAD-Bench** (`bench/`): a preregistered, reproducible benchmark grading
+  577,024 real hadith chains against classical ground truth — Cohen's κ = 0.87
+  vs the scholarly consensus (human ceiling κ = 0.33), with corroboration,
+  human-ceiling, and ikhtilāṭ analyses plus negative controls.
+- `--json` machine-readable export for the benchmark; `py.typed` marker.
+- `lenient_unknown` opt-in on `grade_chain(...)`.
+
+### Changed
+
+- **Default flipped to strict:** an UNGRADED narrator now caps a chain at ḍaʿīf
+  (the classical *majhūl* treatment) instead of ḥasan. The old behaviour is
+  opt-in via `lenient_unknown=True`. Measured at 0.11 κ (0.76 → 0.87).
+
+## [2.5.0] — 2026-08-23
+
+### Added
+
+- Multi-provider LLM critic: OpenRouter, OpenAI, DeepSeek, Anthropic, Gemini,
+  Groq, Together, Ollama, and any OpenAI-compatible endpoint, via a named-provider
+  catalog + `ISNAD_LLM_*` env vars.
+
 ## [2.4.0] — 2026-08-23
 
 ### Added

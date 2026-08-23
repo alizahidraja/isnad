@@ -19,7 +19,7 @@ import tempfile
 
 from sqlalchemy.orm import Session
 
-from isnad.core.chain import Chain, ChainLinkSpec, store_claim
+from isnad.core.chain import Chain, ChainLinkSpec
 from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
 from isnad.storage.sqlalchemy import create_engine_from_url, init_db, reset_engine
@@ -35,9 +35,11 @@ _ORDER = {
 
 
 def _grade_from_registry(chain: Chain, reg: Registry) -> ChainGrade:
-    grades = [reg.get_grade_for_link(l.narrator_id, l.domain, l.version) for l in chain.links]
+    grades = [
+        reg.get_grade_for_link(link.narrator_id, link.domain, link.version) for link in chain.links
+    ]
     return grade_chain(
-        grades, [l.transform_type for l in chain.links], is_complete=chain.is_complete
+        grades, [link.transform_type for link in chain.links], is_complete=chain.is_complete
     )
 
 

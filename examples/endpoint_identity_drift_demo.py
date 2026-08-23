@@ -64,10 +64,11 @@ def main() -> None:
     link_grades = grades_for_chain(reg, chain)
     for link, grade in zip(chain.links, link_grades, strict=True):
         print(
-            f"  {link.narrator_id:20s}  chain version={link.version:6s}  → grade={grade.value.upper()}"
+            f"  {link.narrator_id:20s}  chain version={link.version:6s}  "
+            f"→ grade={grade.value.upper()}"
         )
 
-    transforms = [l.transform_type for l in chain.links]
+    transforms = [link.transform_type for link in chain.links]
     chain_grade = grade_chain(link_grades, transforms, is_complete=True)
     verdict = critic.evaluate(claim, claim, [], "physics")
     action = decide(chain_grade, verdict)

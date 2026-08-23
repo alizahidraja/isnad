@@ -17,11 +17,8 @@ import json
 import uuid
 from typing import Any
 
-from isnad.core.registry import Registry
 from isnad.integrations.langchain.callback import IsnadCallbackHandler
 from isnad.integrations.langchain.helpers import seed_registry
-from isnad.types import AdalahGrade, DabtGrade, NarratorGrade, NarratorType
-
 
 # ── Fake components (no API keys needed) ────────────────────────
 

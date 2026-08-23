@@ -15,8 +15,6 @@ Run:  python examples/multi_agent_dag.py
 
 from __future__ import annotations
 
-import json
-
 from isnad.audit import (
     ChainNodeAudit,
     GradingStrategy,
