@@ -4,6 +4,10 @@ Honest, early-stage integration of ISNAD claim-level provenance
 into LangChain/LangGraph agent pipelines.
 
 Key components:
+- IsnadMiddleware:  AgentMiddleware that grades + gates claims at ingest (the
+                     listable policy layer; forward-looking, targets langchain's
+                     middleware API)
+- IsnadCallbackHandler / AsyncIsnadCallbackHandler: trace-capture callbacks
 - IsnadTracer:  BaseCallbackHandler that records transmission chains
 - isnad_track:  Decorator for simple functions
 - seed_registry: Helper to bootstrap narrator grades

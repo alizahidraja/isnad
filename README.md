@@ -190,6 +190,21 @@ trace = handler.to_trace()  # isnad_trace v0.1 JSON
 Also available: `IsnadTracer` (older flat-list reporter with built-in report()) and
 `AsyncIsnadCallbackHandler` for async pipelines.
 
+**The policy layer — `IsnadMiddleware`.** The callback *captures* traces; the
+middleware *gates* claims — it grades each tool output and model response the
+moment they enter the agent and blocks (quarantines) MAWDU chains. Framing:
+*"PIIMiddleware stops sensitive data leaving; IsnadMiddleware stops untrustworthy
+claims entering."*
+
+```python
+from isnad.integrations.langchain import IsnadMiddleware
+
+mw = IsnadMiddleware(reg, domain="physics")  # wrap_tool_call grades + gates
+```
+
+See `examples/langchain_middleware_demo.py`. The listable shape is the
+`langchain-isnad` PyPI package (see issue #63).
+
 ---
 
 ## What's Validated vs. What's Not
