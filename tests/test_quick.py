@@ -13,7 +13,7 @@ def test_grade_returns_verdict_with_weakest_and_why() -> None:
     reg.register("ingest", "physics", grade=NarratorGrade.ACCEPTABLE)
 
     v = grade("p = mv", ["openstax", "pdf-scraper", "ingest"], reg, domain="physics")
-    assert v.chain_grade == ChainGrade.HASAN  # ungraded → ḥasan ceiling
+    assert v.chain_grade == ChainGrade.DAIF  # ungraded → ḍaʿīf (strict default)
     assert v.weakest_link == "pdf-scraper"
     assert "pdf-scraper" in v.why and "ungraded" in v.why
     assert v.action is None  # no content verdict → no matrix action

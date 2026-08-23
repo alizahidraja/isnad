@@ -1,8 +1,7 @@
 """ISNAD-Bench: measure ISNAD's chain grading against classical ground truth.
 
 Run:  uv run python -m bench.run [--db PATH] [--limit N | --sample N]
-      uv run python -m bench.run --strict          # classical majhūl → ḍaʿīf
-      uv run python -m bench.run --corroboration    # (default) mutābaʿa ablation
+      uv run python -m bench.run --lenient        # ungraded → ḥasan (opt-in)
 
 The primary question, stated once:
 
@@ -81,11 +80,11 @@ def _grade_one_chain(
 
 
 def _chain_grade_from_narrators(
-    narrator_grades: list[NarratorGrade], is_complete: bool, strict_unknown: bool = False
+    narrator_grades: list[NarratorGrade], is_complete: bool, lenient_unknown: bool = False
 ) -> str:
     transforms = [TransformType.PASS_THROUGH] * len(narrator_grades)
     return str(
-        grade_chain(narrator_grades, transforms, is_complete, strict_unknown=strict_unknown).value
+        grade_chain(narrator_grades, transforms, is_complete, lenient_unknown=lenient_unknown).value
     )
 
 
@@ -153,7 +152,7 @@ _PassResult = tuple[list[str], list[str], list[str | None], int, int]
 def _run_pass(
     chains: Iterator[RawChain],
     rank_map: dict[int, NarratorGrade] | None = None,
-    strict_unknown: bool = False,
+    lenient_unknown: bool = False,
 ) -> _PassResult:
     """Grade every chain; return (y_true, y_pred, buckets, unclassified, skipped)."""
     y_true: list[str] = []
@@ -172,7 +171,7 @@ def _run_pass(
         if not narrator_grades:
             n_skipped_empty += 1
             continue
-        pred = _chain_grade_from_narrators(narrator_grades, is_complete, strict_unknown)
+        pred = _chain_grade_from_narrators(narrator_grades, is_complete, lenient_unknown)
         y_true.append(true.value)
         y_pred.append(pred)
         buckets.append(_bucket(true.value, pred, has_gap, has_taliq, rank_nos, chain.hukum))
@@ -180,7 +179,7 @@ def _run_pass(
 
 
 def _corroboration_analysis(
-    db_path: str, id_set: set[int], strict_unknown: bool
+    db_path: str, id_set: set[int], lenient_unknown: bool
 ) -> tuple[int, int]:
     """For each "weak-alone → ḥasan" chain, does an independent route exist?
 
@@ -201,7 +200,7 @@ def _corroboration_analysis(
         narrator_grades, is_complete, _rank_nos, _taliq, _gap = _grade_one_chain(chain.nodes)
         if not narrator_grades:
             continue
-        pred = _chain_grade_from_narrators(narrator_grades, is_complete, strict_unknown)
+        pred = _chain_grade_from_narrators(narrator_grades, is_complete, lenient_unknown)
         if true.value == "daif" and pred in ("hasan", "sahih") and "توبع" in (chain.hukum or ""):
             weak_alone.append((chain.group_id, indep))
 
@@ -228,7 +227,7 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=None, help="process first N sanads")
     parser.add_argument("--sample", type=int, default=None, help="random sample of N sanads")
     parser.add_argument("--seed", type=int, default=0, help="RNG seed for sampling/controls")
-    parser.add_argument("--strict", action="store_true", help="UNGRADED → ḍaʿīf (classical majhūl)")
+    parser.add_argument("--lenient", action="store_true", help="UNGRADED → ḥasan (opt-in)")
     parser.add_argument("--no-controls", action="store_true", help="skip negative controls")
     parser.add_argument("--no-corroboration", action="store_true", help="skip mutābaʿa ablation")
     args = parser.parse_args()
@@ -237,10 +236,10 @@ def main() -> None:
 
     print("=" * 72)
     print("ISNAD-Bench: chain-grade agreement vs classical ground truth")
-    if args.strict:
-        print("mode: STRICT (ungraded narrator → ḍaʿīf, classical majhūl)")
+    if args.lenient:
+        print("mode: lenient (ungraded narrator → ḥasan ceiling, opt-in)")
     else:
-        print("mode: lenient (ungraded narrator → ḥasan ceiling, ISNAD default)")
+        print("mode: STRICT (ungraded narrator → ḍaʿīf, classical majhūl — default)")
     print("=" * 72)
 
     all_ids = _load_sanad_ids(args.db)
@@ -253,7 +252,7 @@ def main() -> None:
     id_set = set(ids)
 
     y_true, y_pred, buckets, n_unclassified, n_skipped = _run_pass(
-        iter_chains(args.db, id_set), strict_unknown=args.strict
+        iter_chains(args.db, id_set), lenient_unknown=args.lenient
     )
 
     n = len(y_true)
@@ -302,7 +301,7 @@ def main() -> None:
 
         shuffled_map = _shuffled_rank_map(rng)
         yt_s, yp_s, _, _, _ = _run_pass(
-            iter_chains(args.db, id_set), rank_map=shuffled_map, strict_unknown=args.strict
+            iter_chains(args.db, id_set), rank_map=shuffled_map, lenient_unknown=args.lenient
         )
         cm_shuf = confusion_matrix(yt_s, yp_s, CLASSES)
         print(
@@ -312,7 +311,7 @@ def main() -> None:
     # Corroboration ablation (mutābaʿa)
     if not args.no_corroboration:
         print("\n--- Corroboration ablation (mutābaʿa) ---")
-        n_wa, n_ind = _corroboration_analysis(args.db, id_set, args.strict)
+        n_wa, n_ind = _corroboration_analysis(args.db, id_set, args.lenient)
         if n_wa:
             print(f"  weak-alone → ḥasan chains:            {n_wa}")
             print(f"  with an independent corroborating route: {n_ind} ({n_ind / n_wa:.1%})")

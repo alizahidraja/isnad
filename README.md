@@ -229,12 +229,12 @@ See `examples/langchain_middleware_demo.py`. The listable shape is the
 | **End-to-end benchmark**      | ✅ Measured          | Adversarial corruption-detection: weak narrators 100% caught, 0 false positives; the content critic is the binding constraint — issue #50 |
 | **ISNAD-Bench (classical ground truth)** | ✅ Measured | Weakest-link grading vs 577,024 scholar-graded chains: Cohen's κ = 0.87 strict / 0.76 lenient (shuffled control 0.05); 88% of the remaining gap is mutābaʿa — `bench/docs/RESULTS.md` |
 
-**Ungraded-narrator policy.** By default an *ungraded* narrator caps a chain at
-ḥasan (epistemic humility: no evidence → refuse ṣaḥīḥ, don't punish the absence
-of a grade). Pass `strict_unknown=True` to `grade_chain(...)` to instead cap at
-ḍaʿīf — the classical treatment of a *majhūl* (unknown) narrator, whom scholars
-judged weak. ISNAD-Bench measures the gap between the two at 0.11 κ; the choice
-is yours and is documented rather than hidden.
+**Ungraded-narrator policy.** An *ungraded* narrator caps a chain at **ḍaʿīf** by
+default — the classical treatment of a *majhūl* (unknown) narrator, whom scholars
+judged weak. Pass `lenient_unknown=True` to `grade_chain(...)` to instead cap
+at ḥasan (epistemic humility: no evidence → refuse ṣaḥīḥ, don't punish the
+absence of a grade). ISNAD-Bench measures the gap between the two at 0.11 κ
+(0.87 strict vs 0.76 lenient); the choice is documented, not hidden.
 
 ### Evidence provenance — assumption vs. observation (issue #6)
 

@@ -1,13 +1,13 @@
 # ISNAD-Bench — Results (v2)
 
 **Headline:** ISNAD's weakest-link chain grading reproduces 1,200 years of
-classical hadith scholars' chain verdicts with **Cohen's κ = 0.871** in strict
-mode (classical majhūl) and **0.761** in lenient mode (ISNAD default), across
-**577,024** scholar-graded chains — with a shuffled-rank control at κ = 0.047.
+classical hadith scholars' chain verdicts with **Cohen's κ = 0.871** (the strict
+default) and **0.761** (lenient opt-in), across **577,024** scholar-graded
+chains — with a shuffled-rank control at κ = 0.047.
 
 > Reproduce:
-> `uv run python -m bench.run --seed 0` (lenient) ·
-> `uv run python -m bench.run --seed 0 --strict` (classical majhūl)
+> `uv run python -m bench.run --seed 0` (strict, default) ·
+> `uv run python -m bench.run --seed 0 --lenient` (ungraded → ḥasan)
 >
 > Data: `emadjumaah/hadith-kg` (CC-BY-4.0), `hadith-kg.db`,
 > SHA-256 `d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6`.
@@ -18,15 +18,13 @@ ISNAD has two deliberate stances on a narrator it has never graded:
 
 | Mode | UNGRADED narrator | 3-way κ | 4-way κ | Agreement |
 |---|---|---|---:|---:|
-| **lenient** (default) | caps at ḥasan (epistemic humility) | 0.7610 | 0.7548 | 82.4% |
-| **strict** (`strict_unknown=True`) | caps at ḍaʿīf (classical majhūl) | **0.8714** | **0.8571** | **89.7%** |
+| **strict** (default) | caps at ḍaʿīf (classical majhūl) | **0.8714** | **0.8571** | **89.7%** |
+| lenient (`lenient_unknown=True`) | caps at ḥasan (epistemic humility) | 0.7610 | 0.7548 | 82.4% |
 
-The gap between them is the measured cost of the default leniency: **0.11 κ**.
-Classical scholars treat an *unknown* narrator as making the chain weak; ISNAD's
-default treats "ungraded" as a ḥasan ceiling (don't claim ṣaḥīḥ, but don't
-punish the absence of a grade). Both are honest, documented choices — the
-benchmark just quantifies them. The strict mode is opt-in in the library via
-`grade_chain(..., strict_unknown=True)`.
+The gap between them is the measured cost of leniency: **0.11 κ**. Classical
+scholars treat an *unknown* narrator as making the chain weak; ISNAD's default
+agrees. The lenient mode is opt-in in the library via
+`grade_chain(..., lenient_unknown=True)` and is documented, not hidden.
 
 ## Negative controls
 

@@ -309,7 +309,7 @@ class TestReviewQueue:
         claim2 = self._submit("the object moves at a speed of 100 meters per second")
 
         assert claim2["content_verdict"] == "contradiction"
-        assert claim2["action"] == "review"
+        assert claim2["action"] == "quarantine"  # ungraded narrator → ḍaʿīf (strict default)
 
         rq = client.get("/v1/review-queue", headers={"X-API-Key": "isnad-admin"})
         assert rq.status_code == 200

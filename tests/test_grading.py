@@ -47,30 +47,30 @@ class TestWeakestLink:
         )
         assert result == ChainGrade.MAWDU
 
-    def test_ungraded_narrator_caps_at_hasan(self) -> None:
+    def test_ungraded_narrator_caps_at_daif_by_default(self) -> None:
+        # Strict is the default: an ungraded narrator is a classical majhūl.
         result = grade_chain(
             [NarratorGrade.RELIABLE, NarratorGrade.UNGRADED],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=True,
-        )
-        assert result == ChainGrade.HASAN
-
-    def test_ungraded_narrator_caps_at_daif_when_strict(self) -> None:
-        # strict_unknown mirrors the classical majhūl (unknown) narrator: weak.
-        result = grade_chain(
-            [NarratorGrade.RELIABLE, NarratorGrade.UNGRADED],
-            [TransformType.PASS_THROUGH] * 2,
-            is_complete=True,
-            strict_unknown=True,
         )
         assert result == ChainGrade.DAIF
 
-    def test_strict_unknown_does_not_affect_graded_narrators(self) -> None:
+    def test_ungraded_narrator_caps_at_hasan_when_lenient(self) -> None:
+        # lenient_unknown=True is the opt-in epistemic-humility mode.
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.UNGRADED],
+            [TransformType.PASS_THROUGH] * 2,
+            is_complete=True,
+            lenient_unknown=True,
+        )
+        assert result == ChainGrade.HASAN
+
+    def test_lenient_unknown_does_not_affect_graded_narrators(self) -> None:
         result = grade_chain(
             [NarratorGrade.RELIABLE, NarratorGrade.ACCEPTABLE],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=True,
-            strict_unknown=True,
         )
         assert result == ChainGrade.HASAN
 
@@ -198,18 +198,18 @@ class TestChainWalkingOrder:
 
     def test_repair_then_degradation(self) -> None:
         """WEAK destructive → RELIABLE gen (repairs to SAHIH) → UNGRADED
-        pass-through (caps at HASAN). Order matters."""
+        pass-through (caps at DAIF under the strict default). Order matters."""
         result = grade_chain(
             [NarratorGrade.WEAK, NarratorGrade.RELIABLE, NarratorGrade.UNGRADED],
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE, TransformType.PASS_THROUGH],
             is_complete=True,
             corroboration_support=True,
         )
-        assert result == ChainGrade.HASAN
+        assert result == ChainGrade.DAIF
 
     def test_degradation_then_repair(self) -> None:
-        """UNGRADED pass → caps at HASAN. Then RELIABLE gen with corr
-        replaces floor at SAHIH."""
+        """UNGRADED pass → caps at DAIF (strict default). Then RELIABLE gen
+        with corroboration replaces the floor at SAHIH."""
         result = grade_chain(
             [NarratorGrade.UNGRADED, NarratorGrade.RELIABLE],
             [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
