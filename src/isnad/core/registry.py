@@ -86,6 +86,26 @@ def _as_utc(value: datetime | None) -> datetime | None:
     return value.astimezone(UTC)
 
 
+def _evidence_time(entry: dict[str, object]) -> datetime | None:
+    """Parse an evidence entry's ``created_at`` (ISO 8601) or return None.
+
+    Used by period-sliced re-derivation (issue #43) to slice the append-only
+    evidence log by a past instant.
+    """
+    raw = entry.get("created_at", "")
+    if not raw:
+        return None
+    try:
+        t = datetime.fromisoformat(str(raw))
+    except (ValueError, TypeError):
+        return None
+    # Normalise to UTC-aware: in-memory entries are aware, but a SQLite
+    # round-trip returns naive datetimes (see _as_utc).
+    if t.tzinfo is None:
+        return t.replace(tzinfo=UTC)
+    return t.astimezone(UTC)
+
+
 @dataclass
 class GradeWithFreshness:
     """A narrator grade plus its time-decay state.
@@ -560,6 +580,61 @@ class Registry:
         """
         return self.effective_grade(narrator_id, domain_tag, role=role, now=now).grade
 
+    def get_grade_as_of(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        as_of: datetime,
+        role: Role | None = None,
+    ) -> NarratorGrade:
+        """Re-derive a narrator's grade as of a past instant (period-sliced).
+
+        This is the ikhtilāṭ remedy (issue #43): a narrator who was sound and
+        then declined — or was quarantined — has their record *dated*, not
+        discarded.  Querying ``as_of`` before the decline returns the
+        pre-decline grade; after it, the post-decline grade.  The grade is
+        recomputed from the append-only evidence log up to ``as_of``; it does
+        not read the narrator's current (mutated) grade, so it is an honest
+        reconstruction, not a guess.
+
+        A quarantine is replayed as the direct REJECTED + COMPROMISED action it
+        recorded (via the ``__quarantine__`` marker), so the slice after a
+        quarantine is REJECTED, matching live behaviour.
+        """
+        narrator = self.get(narrator_id, domain_tag, role=role)
+        if narrator is None:
+            return NarratorGrade.UNGRADED
+        as_of = as_of.replace(tzinfo=UTC) if as_of.tzinfo is None else as_of.astimezone(UTC)
+        filtered = [
+            e
+            for e in narrator.evidence_log
+            if _evidence_time(e) is not None and _evidence_time(e) <= as_of
+        ]
+        return self._grade_from_evidence(filtered)
+
+    def _grade_from_evidence(self, evidence: list[dict[str, object]]) -> NarratorGrade:
+        """Replay the transition policy over an ordered evidence log.
+
+        Starts from UNGRADED and applies each entry in order, tracking the
+        integrity (quarantine) state.  A ``__quarantine__`` entry is replayed
+        as the direct REJECTED + COMPROMISED action it records, mirroring
+        ``quarantine()``.
+        """
+        grade = NarratorGrade.UNGRADED
+        compromised = False
+        for i, entry in enumerate(evidence):
+            if (entry.get("metadata", {}) or {}).get("__quarantine__"):
+                grade = NarratorGrade.REJECTED
+                compromised = True
+                continue
+            grade = self.transition_policy.evaluate_transition(
+                current_grade=grade,
+                evidence_history=evidence[:i],
+                new_evidence=entry,
+                is_compromised=compromised,
+            )
+        return grade
+
     def needs_recheck(
         self,
         narrator_id: str,
@@ -819,6 +894,9 @@ class Registry:
             EvidenceAction.JARH,
             f"Quarantined: {reason}" if reason else "Quarantined",
             axis=EvidenceAxis.INTEGRITY,  # the archetypal ʿadālah strike — permanent
+            metadata={"__quarantine__": True},  # marks this as active containment, not a
+            # mere integrity jarḥ — lets period-sliced re-derivation (issue #43)
+            # reconstruct the direct REJECTED + COMPROMISED action.
         )
         self._index_set_grade(narrator_id, domain_tag)
         # Integrity spans roles: quarantine lives on the default record only;
@@ -1040,6 +1118,11 @@ class RegistryDB:
                 # Preserve the persisted uid so a re-flush does not duplicate it.
                 if uid:
                     narrator.evidence_log[-1]["uid"] = uid
+                # Preserve the original created_at so period-sliced re-derivation
+                # (issue #43) works after a reload — otherwise every entry would
+                # be stamped with the *load* time, erasing the timeline.
+                if ev.created_at is not None:
+                    narrator.evidence_log[-1]["created_at"] = ev.created_at.isoformat()
         self.registry._rebuild_alias_index()
 
     def flush(self) -> None:
@@ -1097,6 +1180,7 @@ class RegistryDB:
                     action=entry.get("action", ""),
                     description=str(entry.get("description", "")),
                     metadata_json=meta,
+                    created_at=_evidence_time(entry) or datetime.now(UTC),
                 )
                 self.session.add(ev)
                 existing_ids.add(uid)
