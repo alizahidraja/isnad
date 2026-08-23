@@ -36,13 +36,18 @@ ISNAD can **export a tamper-evident audit record** for any graded claim — a
 machine-readable artifact for governance record-keeping. One command:
 
 ```bash
-isnad export --claim <id> --format json    # or jsonl|csv; --verify; --chain-log
+isnad export --claim <id> --format json    # or jsonl|csv; --verify; --redact; --chain-log
 ```
 
-Each record captures the full chain (who handled the claim, in order, with
-per-link grades and a rationale), the weakest link, source-document hashes, the
-environment, and a SHA-256 integrity hash over the canonical form of its own
-payload — plus an optional tamper-evident hash chain (no blockchain).
+Each record captures the full chain (who handled the claim, in order, as an
+explicit **DAG** via `upstream_ids`), the weakest link, source-document hashes,
+**human-oversight evidence**, the environment, and a SHA-256 integrity hash
+over the RFC 8785-canonical form of its own payload — plus an optional
+tamper-evident hash chain (no blockchain) and a PII-redaction hook.
+
+**Who this is for:** teams running production AI who will be asked what their
+system did and how they know. The record answers that question; it does not
+answer "are we compliant?"
 
 **ISNAD produces evidence artifacts; it does not confer conformity with any
 regulation.** See [`docs/evidence-mapping.md`](docs/evidence-mapping.md) for an
@@ -58,7 +63,10 @@ assert record.integrity.record_hash == canonical_hash(record.to_dict(include_int
 ```
 
 Demos (no API keys): [`examples/audit_export_langchain.py`](examples/audit_export_langchain.py),
-[`examples/multi_agent_handoff.py`](examples/multi_agent_handoff.py).
+[`examples/multi_agent_handoff.py`](examples/multi_agent_handoff.py),
+[`examples/multi_agent_dag.py`](examples/multi_agent_dag.py) (branching DAG +
+the honest miss), [`examples/ci_gate.py`](examples/ci_gate.py) (fail a build on
+a degraded chain).
 
 ---
 
@@ -561,6 +569,12 @@ Full methodology, results, negative controls, and paper gap analysis in:
 - 🕵️ **Case study (xz backdoor as a sleeper narrator):** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md) — by Paul Hammant (Live Verify)
 - ⏳ **Period-sliced grades (the ikhtilāṭ remedy):** [`docs/period-sliced-grades.md`](docs/period-sliced-grades.md) · demo: [`examples/sleeper_narrator_demo.py`](examples/sleeper_narrator_demo.py)
 - 🎯 **Adversarial benchmark:** [`experiments/adversarial_benchmark/run.py`](experiments/adversarial_benchmark/run.py) — the honest "does it actually work?" number, including the misses
+
+---
+
+## Open problems
+
+- **Chain independence** ([tracking issue](https://github.com/alizahidraja/isnad/issues/54)) — the framework's hardest unsolved problem, stated publicly: topology cannot prove two chains are independent, and no amount of structural checking fully discharges the assumption.
 
 ---
 

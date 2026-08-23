@@ -67,6 +67,13 @@ def seed() -> None:
 # ── Audit-evidence commands ─────────────────────────────────────────────────
 
 
+def _redact_claim_text(field: str, value: object) -> object:
+    """Redact claim text only — the main PII surface — leaving structure intact."""
+    if field == "claim_text":
+        return "<redacted>"
+    return value
+
+
 def _load_registry_and_session():
     from isnad.core.registry import RegistryDB
     from isnad.storage.sqlalchemy import get_session, init_db
@@ -113,6 +120,9 @@ def _export(argv: list[str]) -> int:
     parser.add_argument("--format", choices=["json", "jsonl", "csv"], default="json")
     parser.add_argument("--out", default=None, help="write to file instead of stdout")
     parser.add_argument("--verify", action="store_true", help="recompute the hash and check")
+    parser.add_argument(
+        "--redact", action="store_true", help="redact claim text (PII) before hashing"
+    )
     parser.add_argument("--chain-log", default=None, help="append the hash to a chain log")
     args = parser.parse_args(argv)
 
@@ -120,7 +130,9 @@ def _export(argv: list[str]) -> int:
 
     registry, session = _load_registry_and_session()
     try:
-        record = build_audit_record(args.claim, session, registry)
+        record = build_audit_record(
+            args.claim, session, registry, redact_fn=_redact_claim_text if args.redact else None
+        )
     finally:
         session.close()
 
