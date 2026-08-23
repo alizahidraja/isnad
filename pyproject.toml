@@ -114,6 +114,15 @@ ignore_errors = true
 testpaths = ["tests"]
 pythonpath = ["src"]
 asyncio_mode = "auto"
+# NLI/LLM critics download large models or need API keys, so they are
+# excluded from the default (CI) run.  Run them explicitly with:
+#   uv run pytest -m nli          # semantic critics (downloads ~500MB)
+#   uv run pytest -m llm          # LLM critic (needs ANTHROPIC_API_KEY)
+markers = [
+    "nli: semantic critics that download sentence-transformers models",
+    "llm: LLM-backed critic that needs an API key",
+]
+addopts = "-m 'not nli and not llm'"
 
 [dependency-groups]
 dev = [
