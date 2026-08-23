@@ -32,13 +32,17 @@ from isnad.integrations.langchain.callback import (
 )
 from isnad.integrations.langchain.decorator import isnad_track
 from isnad.integrations.langchain.helpers import CriticAdapter, seed_registry
+from isnad.integrations.langchain.middleware import GateResult, IsnadMiddleware, gate
 from isnad.integrations.langchain.tracer import IsnadTracer
 
 __all__ = [
     "AsyncIsnadCallbackHandler",
     "CriticAdapter",
+    "GateResult",
     "IsnadCallbackHandler",
+    "IsnadMiddleware",
     "IsnadTracer",
+    "gate",
     "isnad_track",
     "seed_registry",
 ]
