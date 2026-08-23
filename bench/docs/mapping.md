@@ -121,12 +121,11 @@ The benchmark must report them separately, not bury them in a single accuracy
 number.
 
 1. **UNGRADED → ḍaʿīf (default) vs ḥasan (lenient opt-in).** Classical scholars
-   treat a *majhūl* (unknown) narrator as making the chain weak. ISNAD now
-   **defaults** to the same (ungraded caps at ḍaʿīf via `strict_unknown`'s
-   successor, `lenient_unknown=False`). The earlier lenient stance — ungraded
-   caps at ḥasan (never claim ṣaḥīḥ without evidence) — is opt-in via
-   `lenient_unknown=True`. ISNAD-Bench measures the gap at 0.11 κ; the default
-   is strict, matching the method ISNAD claims descent from.
+   treat a *majhūl* (unknown) narrator as making the chain weak. ISNAD
+   **defaults** to the same (ungraded caps at ḍaʿīf, via `lenient_unknown=False`).
+   The earlier lenient stance — ungraded caps at ḥasan (never claim ṣaḥīḥ without
+   evidence) — is opt-in via `lenient_unknown=True`. ISNAD-Bench measures the gap
+   at 0.11 κ; the default is strict, matching the method ISNAD claims descent from.
 
 2. **Maqbūl (rank 6/7) is corroboration-dependent.** Classical `مقبول` means
    "accepted only in mutābaʿāt/shawāhid" — ḥasan *with* an independent

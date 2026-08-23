@@ -110,10 +110,6 @@ ignore_errors = true
 module = "isnad.cli.*"
 ignore_errors = true
 
-[[tool.mypy.overrides]]
-module = "bench.*"
-disable_error_code = ["import-untyped"]
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src", "."]

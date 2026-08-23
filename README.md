@@ -342,6 +342,38 @@ Demo: `uv run python examples/endpoint_identity_drift_demo.py`
 
 ---
 
+## ISNAD-Bench — measured against 1,200 years of ground truth
+
+The strongest evidence ISNAD works is not a claim — it's a number.
+**ISNAD-Bench** grades 577,024 real hadith chains (each graded by classical
+scholars) with ISNAD's weakest-link rule and measures agreement:
+
+| Quantity | Cohen's κ |
+|---|---:|
+| **ISNAD vs scholarly consensus** (strict default) | **0.871** |
+| a single scholar vs consensus | 0.450 |
+| scholars vs scholars (the human ceiling) | 0.331 |
+
+**How to read it:** ISNAD reproduces the scholars' *consensus* at κ = 0.87 — not
+because it is "better than the scholars" (they disagree with each other at
+κ = 0.33), but because it faithfully implements their method. The benchmark is
+preregistered, carries negative controls (shuffled grades → κ = 0.05), and
+buckets every disagreement. Full write-up:
+[`bench/docs/RESULTS.md`](bench/docs/RESULTS.md).
+
+```bash
+uv run python -m bench.run               # strict (default), full corpus
+uv run python -m bench.run --lenient     # ungraded → ḥasan
+uv run python -m bench.human_ceiling     # the human ceiling
+uv run python -m bench.ikhtilat          # the mukhtaliṭūn (period-sliced grades)
+```
+
+The dataset (`emadjumaah/hadith-kg`, CC-BY-4.0, 1.6 GB) is gitignored and pinned
+by SHA-256 — see [`bench/README.md`](bench/README.md) for the audit discipline
+that produced this.
+
+---
+
 ## Concept → Module Map
 
 | Concept                       | What it does                                         | Module                     |

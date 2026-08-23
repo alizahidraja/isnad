@@ -230,17 +230,19 @@ def main() -> None:
     parser.add_argument("--lenient", action="store_true", help="UNGRADED → ḥasan (opt-in)")
     parser.add_argument("--no-controls", action="store_true", help="skip negative controls")
     parser.add_argument("--no-corroboration", action="store_true", help="skip mutābaʿa ablation")
+    parser.add_argument("--json", action="store_true", help="emit machine-readable JSON")
     args = parser.parse_args()
 
     rng = random.Random(args.seed)
 
-    print("=" * 72)
-    print("ISNAD-Bench: chain-grade agreement vs classical ground truth")
-    if args.lenient:
-        print("mode: lenient (ungraded narrator → ḥasan ceiling, opt-in)")
-    else:
-        print("mode: STRICT (ungraded narrator → ḍaʿīf, classical majhūl — default)")
-    print("=" * 72)
+    if not args.json:
+        print("=" * 72)
+        print("ISNAD-Bench: chain-grade agreement vs classical ground truth")
+        if args.lenient:
+            print("mode: lenient (ungraded narrator → ḥasan ceiling, opt-in)")
+        else:
+            print("mode: STRICT (ungraded narrator → ḍaʿīf, classical majhūl — default)")
+        print("=" * 72)
 
     all_ids = _load_sanad_ids(args.db)
     if args.sample is not None:
@@ -256,10 +258,11 @@ def main() -> None:
     )
 
     n = len(y_true)
-    print(
-        f"\ncorpus: {len(ids)} chains selected · {n} graded · "
-        f"{n_unclassified} unclassified hukum · {n_skipped} empty skipped"
-    )
+    if not args.json:
+        print(
+            f"\ncorpus: {len(ids)} chains selected · {n} graded · "
+            f"{n_unclassified} unclassified hukum · {n_skipped} empty skipped"
+        )
     if n == 0:
         print("no gradable chains — aborting")
         return
@@ -267,19 +270,7 @@ def main() -> None:
     cm = confusion_matrix(y_true, y_pred, CLASSES)
     kappa = cohens_kappa(cm, CLASSES)
     wkappa = linear_weighted_kappa(cm, CLASSES)
-
-    print("\n--- Full 4-way (sahih / hasan / daif / mawdu) ---")
-    print(f"  Cohen's kappa (unweighted):   {kappa:.4f}")
-    print(f"  linear-weighted kappa:        {wkappa:.4f}")
-    _report_matrix(cm, CLASSES)
-    print("  per-class:")
     pc = per_class_metrics(y_true, y_pred, CLASSES)
-    for c in CLASSES:
-        m = pc[c]
-        print(
-            f"    {c:>7}  P={m['precision']:.3f}  R={m['recall']:.3f}  "
-            f"F1={m['f1']:.3f}  (n={m['support']})"
-        )
 
     # Collapsed 3-way: classical isnād verdicts are three-tiered.
     collapse = {"sahih": "sahih", "hasan": "hasan", "daif": "weak", "mawdu": "weak"}
@@ -287,46 +278,85 @@ def main() -> None:
     yp3 = [collapse[p] for p in y_pred]
     cm3 = confusion_matrix(yt3, yp3, ["sahih", "hasan", "weak"])
     kappa3 = cohens_kappa(cm3, ["sahih", "hasan", "weak"])
-    print("\n--- Collapsed 3-way (sahih / hasan / weak) — apples-to-apples ---")
-    print(f"  Cohen's kappa:                {kappa3:.4f}")
-    _report_matrix(cm3, ["sahih", "hasan", "weak"])
 
-    # Negative controls
+    majority_kappa: float | None = None
+    shuffled_kappa: float | None = None
+    mode: str | None = None
     if not args.no_controls:
-        print("\n--- Negative controls (reported beside the real number) ---")
         mode = Counter(y_true).most_common(1)[0][0]
-        y_majority = [mode] * n
-        cm_maj = confusion_matrix(y_true, y_majority, CLASSES)
-        print(f"  majority-class kappa:  {cohens_kappa(cm_maj, CLASSES):.4f}  (predict '{mode}')")
-
+        cm_maj = confusion_matrix(y_true, [mode] * n, CLASSES)
+        majority_kappa = cohens_kappa(cm_maj, CLASSES)
         shuffled_map = _shuffled_rank_map(rng)
         yt_s, yp_s, _, _, _ = _run_pass(
             iter_chains(args.db, id_set), rank_map=shuffled_map, lenient_unknown=args.lenient
         )
         cm_shuf = confusion_matrix(yt_s, yp_s, CLASSES)
+        shuffled_kappa = cohens_kappa(cm_shuf, CLASSES)
+
+    n_wa: int | None = None
+    n_ind: int | None = None
+    if not args.no_corroboration:
+        n_wa, n_ind = _corroboration_analysis(args.db, id_set, args.lenient)
+
+    counts = Counter(b for b in buckets if b is not None)
+    agree = sum(1 for b in buckets if b is None)
+
+    if args.json:
+        import json
+
+        summary = {
+            "mode": "lenient" if args.lenient else "strict",
+            "chains_selected": len(ids),
+            "chains_graded": n,
+            "unclassified_hukum": n_unclassified,
+            "empty_skipped": n_skipped,
+            "kappa_4way": kappa,
+            "kappa_linear_weighted": wkappa,
+            "kappa_3way": kappa3,
+            "agreement": agree / n,
+            "per_class": pc,
+            "controls": {"majority_kappa": majority_kappa, "shuffled_kappa": shuffled_kappa},
+            "corroboration": {"weak_alone": n_wa, "independent_route": n_ind},
+            "disagreement_buckets": dict(counts),
+        }
+        print(json.dumps(summary, indent=2, ensure_ascii=False))
+        return
+
+    print("\n--- Full 4-way (sahih / hasan / daif / mawdu) ---")
+    print(f"  Cohen's kappa (unweighted):   {kappa:.4f}")
+    print(f"  linear-weighted kappa:        {wkappa:.4f}")
+    _report_matrix(cm, CLASSES)
+    print("  per-class:")
+    for c in CLASSES:
+        m = pc[c]
         print(
-            f"  shuffled-rank kappa:   {cohens_kappa(cm_shuf, CLASSES):.4f}  (rank→grade scrambled)"
+            f"    {c:>7}  P={m['precision']:.3f}  R={m['recall']:.3f}  "
+            f"F1={m['f1']:.3f}  (n={m['support']})"
         )
 
-    # Corroboration ablation (mutābaʿa)
+    print("\n--- Collapsed 3-way (sahih / hasan / weak) — apples-to-apples ---")
+    print(f"  Cohen's kappa:                {kappa3:.4f}")
+    _report_matrix(cm3, ["sahih", "hasan", "weak"])
+
+    if not args.no_controls:
+        print("\n--- Negative controls (reported beside the real number) ---")
+        print(f"  majority-class kappa:  {majority_kappa:.4f}  (predict '{mode}')")
+        print(f"  shuffled-rank kappa:   {shuffled_kappa:.4f}  (rank→grade scrambled)")
+
     if not args.no_corroboration:
         print("\n--- Corroboration ablation (mutābaʿa) ---")
-        n_wa, n_ind = _corroboration_analysis(args.db, id_set, args.lenient)
-        if n_wa:
+        if n_wa and n_ind is not None:
             print(f"  weak-alone → ḥasan chains:            {n_wa}")
             print(f"  with an independent corroborating route: {n_ind} ({n_ind / n_wa:.1%})")
             print("  → classical scholars would grade those ḥasan via mutābaʿa; the")
             print("    remainder are chains ISNAD over-grades without corroboration.")
 
-    # Error analysis
     print("\n--- Disagreement analysis (the honest part) ---")
-    counts = Counter(b for b in buckets if b is not None)
     if counts:
         for label, cnt in counts.most_common():
             print(f"  {cnt:>7}  {label}")
     else:
         print("  (no disagreements)")
-    agree = sum(1 for b in buckets if b is None)
     print(f"\n  agreement: {agree}/{n} ({agree / n:.1%})")
 
 

@@ -59,7 +59,11 @@ def main() -> None:
     print(f"\nnarrators flagged ikhtilāṭ:          {len(ikhtilat_ids)}")
     print(f"explicit decline in the rank text:  {len(decline_texts)}")
 
-    pre = Counter(g.value for t in decline_texts if (g := grade_from_qawl(t)) is not None)
+    pre: Counter[str] = Counter()
+    for t in decline_texts:
+        grade = grade_from_qawl(t)
+        if grade is not None:
+            pre[grade.value] += 1
     print("\npre-decline grade (from 'was X, then declined' texts):")
     for g, n in pre.most_common():
         print(f"  {n:>4}  {g}")
