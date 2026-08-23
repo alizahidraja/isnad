@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0] — 2026-08-23
+
+### Added
+
+- **Audit evidence layer** (`isnad.audit`): `AuditRecord` schema + JSON Schema,
+  `build_audit_record()` exporter, RFC 8785-canonical SHA-256 integrity, and
+  tamper-evident hash chaining (no blockchain). CLI: `isnad export | verify |
+  verify-chain`. Produces *evidence artifacts* — does not certify compliance.
+- `docs/evidence-mapping.md` — informational field-by-field mapping of the
+  audit record to the EU AI Act, ISO/IEC 42001, NIST AI RMF, and SDAIA
+  (not legal advice).
+- Examples: `audit_export_langchain.py`, `multi_agent_handoff.py`.
+
 ## [1.0.0] — 2026-07-06
 
 ### Added

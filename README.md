@@ -30,6 +30,38 @@ serve, review, or quarantine.
 
 ---
 
+## Audit & Compliance Evidence
+
+ISNAD can **export a tamper-evident audit record** for any graded claim — a
+machine-readable artifact for governance record-keeping. One command:
+
+```bash
+isnad export --claim <id> --format json    # or jsonl|csv; --verify; --chain-log
+```
+
+Each record captures the full chain (who handled the claim, in order, with
+per-link grades and a rationale), the weakest link, source-document hashes, the
+environment, and a SHA-256 integrity hash over the canonical form of its own
+payload — plus an optional tamper-evident hash chain (no blockchain).
+
+**ISNAD produces evidence artifacts; it does not confer conformity with any
+regulation.** See [`docs/evidence-mapping.md`](docs/evidence-mapping.md) for an
+*informational* (not legal) mapping of each field to the EU AI Act, ISO/IEC
+42001, the NIST AI RMF, and the SDAIA framework — and the explicit statement of
+what ISNAD deliberately does *not* provide.
+
+```python
+from isnad.audit import build_audit_record
+
+record = build_audit_record(claim_id, session, registry)  # -> AuditRecord
+assert record.integrity.record_hash == canonical_hash(record.to_dict(include_integrity=False))
+```
+
+Demos (no API keys): [`examples/audit_export_langchain.py`](examples/audit_export_langchain.py),
+[`examples/multi_agent_handoff.py`](examples/multi_agent_handoff.py).
+
+---
+
 ## Scope and limitations
 
 ISNAD grades **post-entry provenance** — who handled a claim after it entered
