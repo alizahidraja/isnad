@@ -112,7 +112,7 @@ ignore_errors = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
 asyncio_mode = "auto"
 # NLI/LLM critics download large models or need API keys, so they are
 # excluded from the default (CI) run.  Run them explicitly with:

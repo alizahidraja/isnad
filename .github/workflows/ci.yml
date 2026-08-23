@@ -31,7 +31,7 @@ jobs:
         run: uv run ruff format --check src/isnad tests
 
       - name: Type check (mypy)
-        run: uv run mypy src/isnad
+        run: uv run mypy src/isnad bench
 
       - name: Test (pytest)
         run: uv run pytest -v --tb=short

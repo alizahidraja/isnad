@@ -133,9 +133,9 @@ def test_paper_worked_example_hasan_contradiction() -> None:
         is_complete=chain.is_complete,
     )
 
-    # Two ungraded links → HASAN tier (not SAHIH, not DAIF)
-    assert chain_grade == ChainGrade.HASAN, (
-        f"Expected HASAN (complete but two ungraded links), got {chain_grade}"
+    # Two ungraded links → DAIF tier (classical majhūl, strict default)
+    assert chain_grade == ChainGrade.DAIF, (
+        f"Expected DAIF (complete but two ungraded links), got {chain_grade}"
     )
 
     # --- 4. Matn criticism: detect contradiction ---
@@ -154,16 +154,16 @@ def test_paper_worked_example_hasan_contradiction() -> None:
     # --- 5. Decision matrix ---
     action = decide(chain_grade, content_verdict)
 
-    # ḥasan × contradiction → REVIEW; do not serve
-    assert action == Action.REVIEW, f"Expected REVIEW (ḥasan × contradiction), got {action}"
+    # ḍaʿīf × contradiction → QUARANTINE (strict default); do not serve
+    assert action == Action.QUARANTINE, f"Expected QUARANTINE (ḍaʿīf × contradiction), got {action}"
 
-    # Verify it's NOT served
+    # Verify it's NOT served or reviewed as ḥasan
     assert action != Action.SERVE
     assert action != Action.SERVE_WITH_CAVEAT
-    assert action != Action.QUARANTINE
+    assert action != Action.REVIEW
 
     description = describe_action(chain_grade, content_verdict)
-    assert "review" in description.lower()
+    assert "quarantine" in description.lower()
 
 
 def test_paper_worked_example_sahih_contradiction() -> None:

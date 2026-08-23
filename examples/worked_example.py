@@ -129,7 +129,7 @@ def main() -> None:
 
     print(f"   Narrator grades:  {' → '.join(g.value.upper() for g in link_grades)}")
     print(f"   Transform types:  {' → '.join(t.value.upper() for t in link_transforms)}")
-    print(f"\n   ▶ Chain grade: {chain_grade.value.upper()}  (two ungraded links → ḥasan-tier)")
+    print(f"\n   ▶ Chain grade: {chain_grade.value.upper()}  (two ungraded links → ḍaʿīf, strict)")
 
     # ── Matn criticism ────────────────────────────────────────
     hr("4. MATN CRITICISM (CONTENT CHECK, INDEPENDENT OF CHAIN)")

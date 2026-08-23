@@ -130,7 +130,7 @@ reg.register("ingest-model", "physics", grade=NarratorGrade.ACCEPTABLE)
 
 verdict = grade("p = mv", ["openstax", "pdf-scraper", "ingest-model"], reg, domain="physics")
 print(verdict.why)
-# 'claim "p = mv" → chain HASAN (weakest: pdf-scraper, ungraded)'
+# 'claim "p = mv" → chain DAIF (weakest: pdf-scraper, ungraded → ḍaʿīf by default)'
 ```
 
 The full expert API (chain objects, critics, the decision matrix) is below.
@@ -227,6 +227,14 @@ See `examples/langchain_middleware_demo.py`. The listable shape is the
 | **Precision recoverability**  | ✅ Implemented       | Precision-driven REJECTED is recoverable; only integrity (COMPROMISED) is sticky — issue #40 |
 | **Period-sliced grades**      | ✅ Implemented       | `get_grade_as_of()` re-derives a narrator's grade at any past instant — the ikhtilāṭ remedy — issue #43 |
 | **End-to-end benchmark**      | ✅ Measured          | Adversarial corruption-detection: weak narrators 100% caught, 0 false positives; the content critic is the binding constraint — issue #50 |
+| **ISNAD-Bench (classical ground truth)** | ✅ Measured | Weakest-link grading vs 577,024 scholar-graded chains: Cohen's κ = 0.87 strict / 0.76 lenient (shuffled control 0.05); human ceiling = scholars-vs-scholars κ = 0.33; 88% of the remaining gap is mutābaʿa — `bench/docs/RESULTS.md` |
+
+**Ungraded-narrator policy.** An *ungraded* narrator caps a chain at **ḍaʿīf** by
+default — the classical treatment of a *majhūl* (unknown) narrator, whom scholars
+judged weak. Pass `lenient_unknown=True` to `grade_chain(...)` to instead cap
+at ḥasan (epistemic humility: no evidence → refuse ṣaḥīḥ, don't punish the
+absence of a grade). ISNAD-Bench measures the gap between the two at 0.11 κ
+(0.87 strict vs 0.76 lenient); the choice is documented, not hidden.
 
 ### Evidence provenance — assumption vs. observation (issue #6)
 
@@ -331,6 +339,38 @@ does **not** carry forward. That reset is intentional (paper §4.2).
 - Legacy alias-only registrations still work when `version` is omitted, `unknown`, or a non-resolved tag (`latest`, `dev`, `canary`)
 
 Demo: `uv run python examples/endpoint_identity_drift_demo.py`
+
+---
+
+## ISNAD-Bench — measured against 1,200 years of ground truth
+
+The strongest evidence ISNAD works is not a claim — it's a number.
+**ISNAD-Bench** grades 577,024 real hadith chains (each graded by classical
+scholars) with ISNAD's weakest-link rule and measures agreement:
+
+| Quantity | Cohen's κ |
+|---|---:|
+| **ISNAD vs scholarly consensus** (strict default) | **0.871** |
+| a single scholar vs consensus | 0.450 |
+| scholars vs scholars (the human ceiling) | 0.331 |
+
+**How to read it:** ISNAD reproduces the scholars' *consensus* at κ = 0.87 — not
+because it is "better than the scholars" (they disagree with each other at
+κ = 0.33), but because it faithfully implements their method. The benchmark is
+preregistered, carries negative controls (shuffled grades → κ = 0.05), and
+buckets every disagreement. Full write-up:
+[`bench/docs/RESULTS.md`](bench/docs/RESULTS.md).
+
+```bash
+uv run python -m bench.run               # strict (default), full corpus
+uv run python -m bench.run --lenient     # ungraded → ḥasan
+uv run python -m bench.human_ceiling     # the human ceiling
+uv run python -m bench.ikhtilat          # the mukhtaliṭūn (period-sliced grades)
+```
+
+The dataset (`emadjumaah/hadith-kg`, CC-BY-4.0, 1.6 GB) is gitignored and pinned
+by SHA-256 — see [`bench/README.md`](bench/README.md) for the audit discipline
+that produced this.
 
 ---
 

@@ -338,7 +338,7 @@ check(
     reg_ver.get_grade("ingest_model_a", "physics") == NarratorGrade.UNGRADED,
 )
 
-# Chain with bumped narrator → HASAN (UNGRADED caps)
+# Chain with bumped narrator → DAIF (UNGRADED caps under the strict default)
 bumped_chain = Chain([
     ChainLinkSpec("openstax_v3", 0, transform_type=TransformType.PASS_THROUGH, domain="physics"),
     ChainLinkSpec("pdf_scraper_a", 1, transform_type=TransformType.PASS_THROUGH, domain="physics"),
@@ -349,8 +349,8 @@ reg_ver.register("pdf_scraper_a", "physics", grade=NarratorGrade.RELIABLE)
 grades_ver = [reg_ver.get_grade(l.narrator_id, l.domain) for l in bumped_chain.links]
 cg_ver = grade_chain(grades_ver, [l.transform_type for l in bumped_chain.links], is_complete=True)
 check(
-    "I3. Chain with bumped UNGRADED → HASAN (cap)",
-    cg_ver == ChainGrade.HASAN,
+    "I3. Chain with bumped UNGRADED → DAIF (strict default)",
+    cg_ver == ChainGrade.DAIF,
     f"got {cg_ver.value}",
 )
 note("   Paper §4.2: version drift is a new narrator, not inherited reputation.")

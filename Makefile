@@ -21,7 +21,7 @@ lint-fix:
 	uv run ruff format src/isnad tests examples
 
 typecheck:
-	uv run mypy src/isnad
+	uv run mypy src/isnad bench
 
 check: lint typecheck test
 	@echo "All checks passed."

@@ -24,6 +24,8 @@ uv.lock
 # Database
 *.db
 *.db-journal
+*.db-wal
+*.db-shm
 !data/.gitkeep
 
 # OS

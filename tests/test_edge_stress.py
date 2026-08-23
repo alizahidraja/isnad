@@ -147,7 +147,9 @@ cg_unknown = grade_chain(
     is_complete=True,
 )
 check(
-    "UNGRADED + RELIABLE -> HASAN (cap)", cg_unknown == ChainGrade.HASAN, f"got {cg_unknown.value}"
+    "UNGRADED + RELIABLE -> DAIF (strict default)",
+    cg_unknown == ChainGrade.DAIF,
+    f"got {cg_unknown.value}",
 )
 
 r = client.post(
@@ -160,7 +162,7 @@ r = client.post(
 )
 check("API claim with unknown narrator -> 200", r.status_code == 200)
 check(
-    "Grade is not empty (defaults to UNGRADED->HASAN cap)",
+    "Grade is not empty (defaults to UNGRADED->DAIF, strict)",
     r.json()["chain_grade"] != "",
     f"grade={r.json()['chain_grade']}",
 )
