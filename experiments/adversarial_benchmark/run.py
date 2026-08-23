@@ -218,9 +218,9 @@ def _measure_llm_critic(cases, reg) -> None:
     critic = LLMCritic()
     if not critic._has_credentials():
         print(
-            "\n  LLMCritic: skipped (no ANTHROPIC_API_KEY / api_key). It is the"
-            "\n  lever for the numeric/domain contradictions the NLI critic misses —"
-            "\n  implemented + mocked-tested, but unmeasured without a key."
+            "\n  LLMCritic: skipped (no ANTHROPIC_API_KEY / DEEPSEEK_API_KEY / api_key)."
+            "\n  Set one to measure it — it is the lever for the numeric/domain"
+            "\n  contradictions the NLI critic misses."
         )
         return
 
