@@ -31,12 +31,15 @@ def main() -> None:
 
     # ── Step 1: Build a seeded registry ──────────────────────
     print("\n1. Building seeded registry (warm-start for coverage)...")
-    reg = seed_registry({
-        "source:physics-textbook": "reliable",
-        "retriever:vector-db": "acceptable",
-        "model:claude-sonnet": "acceptable",
-        "model:untrusted-model": "weak",
-    }, domain="physics")
+    reg = seed_registry(
+        {
+            "source:physics-textbook": "reliable",
+            "retriever:vector-db": "acceptable",
+            "model:claude-sonnet": "acceptable",
+            "model:untrusted-model": "weak",
+        },
+        domain="physics",
+    )
     print(f"   Registered {len(reg)} narrators")
 
     # ── Step 2: Create the tracer ────────────────────────────
@@ -56,8 +59,7 @@ def main() -> None:
 
     # Simulate a chain output — two claims
     simulated_output = {
-        "answer": "Force equals mass times acceleration. "
-                  "This is Newton's Second Law."
+        "answer": "Force equals mass times acceleration. This is Newton's Second Law."
     }
     tracer.on_chain_end(simulated_output)
 

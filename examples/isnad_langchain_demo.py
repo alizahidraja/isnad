@@ -25,8 +25,10 @@ from isnad.types import AdalahGrade, DabtGrade, NarratorGrade, NarratorType
 
 # ── Fake components (no API keys needed) ────────────────────────
 
+
 class FakeDocument:
     """Minimal Document stand-in — matches LangChain's Document interface."""
+
     def __init__(self, page_content: str, metadata: dict[str, Any] | None = None):
         self.page_content = page_content
         self.metadata = metadata or {}
@@ -34,20 +36,27 @@ class FakeDocument:
 
 class FakeRetriever:
     """Returns hardcoded physics documents."""
+
     def __init__(self):
         self._docs = [
             FakeDocument(
                 "The momentum of a photon is given by p = h/λ, "
                 "where h is Planck's constant (6.626 × 10⁻³⁴ J·s) "
                 "and λ is the wavelength.",
-                {"source": "openstax.org", "id": "physics-vol3-ch6",
-                 "title": "Photons and Matter Waves"},
+                {
+                    "source": "openstax.org",
+                    "id": "physics-vol3-ch6",
+                    "title": "Photons and Matter Waves",
+                },
             ),
             FakeDocument(
                 "Photons have zero rest mass but carry momentum p = E/c = h/λ. "
                 "This was experimentally confirmed by Compton scattering in 1923.",
-                {"source": "hyperphysics.phy-astr.gsu.edu", "id": "photon-momentum",
-                 "title": "Photon Momentum"},
+                {
+                    "source": "hyperphysics.phy-astr.gsu.edu",
+                    "id": "photon-momentum",
+                    "title": "Photon Momentum",
+                },
             ),
         ]
 
@@ -57,6 +66,7 @@ class FakeRetriever:
 
 class FakeLLM:
     """Returns a canned response — no API call."""
+
     def invoke(self, prompt: str, config: dict | None = None, **kwargs) -> str:
         return (
             "The momentum of a photon is given by p = h/λ, "
@@ -67,6 +77,7 @@ class FakeLLM:
 
 
 # ── The pipeline ────────────────────────────────────────────────
+
 
 def run_demo() -> None:
     """Run the demo: build a registry, run a mock RAG pipeline, print the trace."""
@@ -155,6 +166,7 @@ def run_demo() -> None:
 
 class FakeLLMResponse:
     """Minimal stand-in for an LLM response object."""
+
     def __init__(self, text: str):
         self.content = text
 

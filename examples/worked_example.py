@@ -39,42 +39,40 @@ def main() -> None:
     # ── Build the transmission chain ──────────────────────────
     hr("1. BUILD THE ISNĀD (TRANSMISSION CHAIN)")
 
-    chain = Chain(
-        [
-            ChainLinkSpec(
-                "openstax-v3",
-                step=0,
-                version="2024",
-                domain="physics-quantum",
-                trace_id="trace-001",
-                transform_type=TransformType.PASS_THROUGH,
-            ),
-            ChainLinkSpec(
-                "pdf-scraper",
-                step=1,
-                version="1.2",
-                domain="physics-quantum",
-                trace_id="trace-002",
-                transform_type=TransformType.DESTRUCTIVE,
-            ),
-            ChainLinkSpec(
-                "ingest-analysis",
-                step=2,
-                version="v",
-                domain="physics-quantum",
-                trace_id="trace-003",
-                transform_type=TransformType.GENERATIVE,
-            ),
-            ChainLinkSpec(
-                "ingest-renderer",
-                step=3,
-                version="v",
-                domain="physics-quantum",
-                trace_id="trace-004",
-                transform_type=TransformType.GENERATIVE,
-            ),
-        ]
-    )
+    chain = Chain([
+        ChainLinkSpec(
+            "openstax-v3",
+            step=0,
+            version="2024",
+            domain="physics-quantum",
+            trace_id="trace-001",
+            transform_type=TransformType.PASS_THROUGH,
+        ),
+        ChainLinkSpec(
+            "pdf-scraper",
+            step=1,
+            version="1.2",
+            domain="physics-quantum",
+            trace_id="trace-002",
+            transform_type=TransformType.DESTRUCTIVE,
+        ),
+        ChainLinkSpec(
+            "ingest-analysis",
+            step=2,
+            version="v",
+            domain="physics-quantum",
+            trace_id="trace-003",
+            transform_type=TransformType.GENERATIVE,
+        ),
+        ChainLinkSpec(
+            "ingest-renderer",
+            step=3,
+            version="v",
+            domain="physics-quantum",
+            trace_id="trace-004",
+            transform_type=TransformType.GENERATIVE,
+        ),
+    ])
 
     for link in chain.links:
         xform = link.transform_type.value.upper()

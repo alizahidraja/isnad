@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://alizahidraja.com/isnad/schemas/audit-record-v1.json",
+  "title": "ISNAD AuditRecord v1",
+  "type": "object",
+  "required": [
+    "record_id",
+    "record_version",
+    "generated_at",
+    "claim_id",
+    "claim_text",
+    "final_grade",
+    "grading_strategy_name",
+    "grading_strategy_version",
+    "chain",
+    "weakest_link",
+    "source_documents",
+    "environment",
+    "integrity"
+  ],
+  "properties": {
+    "record_id": { "type": "string" },
+    "record_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "claim_id": { "type": "string" },
+    "claim_text": { "type": "string" },
+    "final_grade": { "type": "string" },
+    "grading_strategy_name": { "type": "string" },
+    "grading_strategy_version": { "type": "string" },
+    "chain": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["narrator_id", "narrator_type", "grade", "grade_rationale"],
+        "properties": {
+          "narrator_id": { "type": "string" },
+          "narrator_type": { "type": "string", "enum": ["human", "model", "scraper", "tool", "dataset"] },
+          "grade": { "type": "string" },
+          "grade_rationale": { "type": "string" },
+          "model_identifier": { "type": ["string", "null"] },
+          "model_version": { "type": ["string", "null"] },
+          "invocation_timestamp": { "type": ["string", "null"], "format": "date-time" },
+          "input_hash": { "type": ["string", "null"] },
+          "output_hash": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "weakest_link": {
+      "type": "object",
+      "required": ["narrator_id", "why"],
+      "properties": {
+        "narrator_id": { "type": "string" },
+        "why": { "type": "string" }
+      }
+    },
+    "source_documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["uri"],
+        "properties": {
+          "uri": { "type": "string" },
+          "retrieved_at": { "type": ["string", "null"], "format": "date-time" },
+          "content_hash": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "required": ["isnad_version", "python_version", "host_fingerprint"],
+      "properties": {
+        "isnad_version": { "type": "string" },
+        "python_version": { "type": "string" },
+        "host_fingerprint": { "type": "string" }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "required": ["record_hash", "hash_algorithm"],
+      "properties": {
+        "record_hash": { "type": "string" },
+        "hash_algorithm": { "type": "string" },
+        "detached_signature": { "type": ["string", "null"] }
+      }
+    }
+  }
+}
