@@ -30,6 +30,7 @@ class RawChain:
     sanad_id: int
     hukum: str | None
     nodes: tuple[Node, ...]
+    group_id: int | None = None
 
 
 def _load_rawis(conn: sqlite3.Connection) -> dict[int, tuple[int | None, str | None, str | None]]:
@@ -52,8 +53,9 @@ def iter_chains(
     try:
         rawis = _load_rawis(conn)
 
-        rows = conn.execute("SELECT id, hukum FROM sanads").fetchall()
+        rows = conn.execute("SELECT id, hukum, group_id FROM sanads").fetchall()
         hukum_by_id = {r["id"]: r["hukum"] for r in rows}
+        group_by_id = {r["id"]: r["group_id"] for r in rows}
         sanad_set = set(hukum_by_id) if sanad_ids is None else set(sanad_ids)
 
         cur = conn.execute("SELECT sanad_id, pos, rawi_id FROM sanad_rawis ORDER BY sanad_id, pos")
@@ -64,12 +66,22 @@ def iter_chains(
                 continue
             if sid != current_sid:
                 if current_sid is not None and nodes:
-                    yield RawChain(current_sid, hukum_by_id.get(current_sid), tuple(nodes))
+                    yield RawChain(
+                        current_sid,
+                        hukum_by_id.get(current_sid),
+                        tuple(nodes),
+                        group_by_id.get(current_sid),
+                    )
                 current_sid = sid
                 nodes = []
             rank_no, rank, name = rawis.get(rid, (None, None, None))
             nodes.append(Node(rid, rank_no, rank, name))
         if current_sid is not None and nodes:
-            yield RawChain(current_sid, hukum_by_id.get(current_sid), tuple(nodes))
+            yield RawChain(
+                current_sid,
+                hukum_by_id.get(current_sid),
+                tuple(nodes),
+                group_by_id.get(current_sid),
+            )
     finally:
         conn.close()

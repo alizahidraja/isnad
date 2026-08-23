@@ -12,7 +12,7 @@ def _make_db(path: str) -> None:
     conn.executescript(
         """
         CREATE TABLE rawis (id INTEGER, rank_no INTEGER, rank TEXT, name TEXT);
-        CREATE TABLE sanads (id INTEGER, hukum TEXT);
+        CREATE TABLE sanads (id INTEGER, hukum TEXT, group_id INTEGER);
         CREATE TABLE sanad_rawis (sanad_id INTEGER, pos INTEGER, rawi_id INTEGER);
         """
     )
@@ -20,8 +20,8 @@ def _make_db(path: str) -> None:
     conn.execute("INSERT INTO rawis VALUES (2, 3, 'ثقة', 'الزهري')")
     conn.execute("INSERT INTO rawis VALUES (3, 8, 'ضعيف الحديث', 'فلان')")
     conn.execute("INSERT INTO rawis VALUES (4, 12, NULL, 'موضع إرسال')")
-    conn.execute("INSERT INTO sanads VALUES (10, 'إسناده متصل ، رجاله ثقات')")
-    conn.execute("INSERT INTO sanads VALUES (20, 'إسناد ضعيف لأن به موضع إرسال')")
+    conn.execute("INSERT INTO sanads VALUES (10, 'إسناده متصل ، رجاله ثقات', 1)")
+    conn.execute("INSERT INTO sanads VALUES (20, 'إسناد ضعيف لأن به موضع إرسال', 1)")
     conn.execute("INSERT INTO sanad_rawis VALUES (10, 0, 2), (10, 1, 1)")
     conn.execute("INSERT INTO sanad_rawis VALUES (20, 0, 2), (20, 1, 4), (20, 2, 1)")
     conn.commit()

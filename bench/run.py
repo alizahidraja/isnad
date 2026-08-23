@@ -1,6 +1,8 @@
 """ISNAD-Bench: measure ISNAD's chain grading against classical ground truth.
 
 Run:  uv run python -m bench.run [--db PATH] [--limit N | --sample N]
+      uv run python -m bench.run --strict          # classical majhūl → ḍaʿīf
+      uv run python -m bench.run --corroboration    # (default) mutābaʿa ablation
 
 The primary question, stated once:
 
@@ -19,11 +21,11 @@ from __future__ import annotations
 import argparse
 import random
 import sqlite3
-from collections import Counter
+from collections import Counter, defaultdict
 from collections.abc import Iterator, Sequence
 
 from bench.data import Node, RawChain, iter_chains
-from bench.mapping import chain_grade_from_hukum, narrator_grade_from_rank
+from bench.mapping import chain_grade_from_hukum, is_sentinel, narrator_grade_from_rank
 from bench.metrics import (
     cohens_kappa,
     confusion_matrix,
@@ -38,6 +40,9 @@ CLASSES = [g.value for g in (ChainGrade.SAHIH, ChainGrade.HASAN, ChainGrade.DAIF
 # Sentinel names (gap markers) → whether the gap is the grade-preserving taʿlīq
 # form or a genuine break (irsāl / inqiṭāʿ).
 _TALIQ = "موضع تعليق"
+
+# The corroboration bucket label (must match _bucket exactly).
+_CORROBORATION_BUCKET = "corroboration: weak-alone → ḥasan-with-mutābaʿa"
 
 _GradeResult = tuple[list[NarratorGrade], bool, list[int], bool, bool]
 
@@ -75,9 +80,25 @@ def _grade_one_chain(
     return narrator_grades, not has_gap, rank_nos, has_taliq, has_gap
 
 
-def _chain_grade_from_narrators(narrator_grades: list[NarratorGrade], is_complete: bool) -> str:
+def _chain_grade_from_narrators(
+    narrator_grades: list[NarratorGrade], is_complete: bool, strict_unknown: bool = False
+) -> str:
     transforms = [TransformType.PASS_THROUGH] * len(narrator_grades)
-    return str(grade_chain(narrator_grades, transforms, is_complete).value)
+    return str(
+        grade_chain(narrator_grades, transforms, is_complete, strict_unknown=strict_unknown).value
+    )
+
+
+def _independence_set(nodes: tuple[Node, ...]) -> frozenset[int]:
+    """Narrator ids excluding companions (rank 1) and gap sentinels.
+
+    Two routes of the same hadith that share *only* the companion are treated as
+    independent (the madār-free comparison), since the companion is the common
+    origin of every route.
+    """
+    return frozenset(
+        n.rawi_id for n in nodes if not is_sentinel(n.name, n.rank_no, n.rank) and n.rank_no != 1
+    )
 
 
 def _bucket(
@@ -106,7 +127,7 @@ def _bucket(
         # Classical "weak alone, ḥasan with mutābaʿa (corroboration)" — ISNAD
         # grants ḥasan directly from ACCEPTABLE narrators (§4.2 divergence).
         if "توبع" in hukum:
-            return "corroboration: weak-alone → ḥasan-with-mutābaʿa"
+            return _CORROBORATION_BUCKET
         if any(r in (7, 9) for r in rank_nos):
             return "leniency: majhūl → ḥasan ceiling"
         # A gap is asserted in the verdict text but no sentinel node exists in
@@ -130,7 +151,9 @@ _PassResult = tuple[list[str], list[str], list[str | None], int, int]
 
 
 def _run_pass(
-    chains: Iterator[RawChain], rank_map: dict[int, NarratorGrade] | None = None
+    chains: Iterator[RawChain],
+    rank_map: dict[int, NarratorGrade] | None = None,
+    strict_unknown: bool = False,
 ) -> _PassResult:
     """Grade every chain; return (y_true, y_pred, buckets, unclassified, skipped)."""
     y_true: list[str] = []
@@ -149,11 +172,46 @@ def _run_pass(
         if not narrator_grades:
             n_skipped_empty += 1
             continue
-        pred = _chain_grade_from_narrators(narrator_grades, is_complete)
+        pred = _chain_grade_from_narrators(narrator_grades, is_complete, strict_unknown)
         y_true.append(true.value)
         y_pred.append(pred)
         buckets.append(_bucket(true.value, pred, has_gap, has_taliq, rank_nos, chain.hukum))
     return y_true, y_pred, buckets, n_unclassified, n_skipped_empty
+
+
+def _corroboration_analysis(
+    db_path: str, id_set: set[int], strict_unknown: bool
+) -> tuple[int, int]:
+    """For each "weak-alone → ḥasan" chain, does an independent route exist?
+
+    Classical "ḍaʿīf, becomes ḥasan if corroborated" is a *conditional* verdict.
+    This answers: how many of the chains ISNAD over-grades actually have an
+    independent corroborating route (same meaning group, disjoint non-companion
+    narrators) — i.e. how many would classical scholars *also* grade ḥasan, via
+    mutābaʿa, if corroboration were taken into account.
+    """
+    routes: dict[int | None, list[frozenset[int]]] = defaultdict(list)
+    weak_alone: list[tuple[int | None, frozenset[int]]] = []
+    for chain in iter_chains(db_path, id_set):
+        true = chain_grade_from_hukum(chain.hukum)
+        if true is None:
+            continue
+        indep = _independence_set(chain.nodes)
+        routes[chain.group_id].append(indep)
+        narrator_grades, is_complete, _rank_nos, _taliq, _gap = _grade_one_chain(chain.nodes)
+        if not narrator_grades:
+            continue
+        pred = _chain_grade_from_narrators(narrator_grades, is_complete, strict_unknown)
+        if true.value == "daif" and pred in ("hasan", "sahih") and "توبع" in (chain.hukum or ""):
+            weak_alone.append((chain.group_id, indep))
+
+    independent = 0
+    for gid, indep in weak_alone:
+        for other in routes.get(gid, []):
+            if other != indep and other.isdisjoint(indep):
+                independent += 1
+                break
+    return len(weak_alone), independent
 
 
 def _report_matrix(cm: dict[str, dict[str, int]], classes: Sequence[str]) -> None:
@@ -170,13 +228,19 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=None, help="process first N sanads")
     parser.add_argument("--sample", type=int, default=None, help="random sample of N sanads")
     parser.add_argument("--seed", type=int, default=0, help="RNG seed for sampling/controls")
+    parser.add_argument("--strict", action="store_true", help="UNGRADED → ḍaʿīf (classical majhūl)")
     parser.add_argument("--no-controls", action="store_true", help="skip negative controls")
+    parser.add_argument("--no-corroboration", action="store_true", help="skip mutābaʿa ablation")
     args = parser.parse_args()
 
     rng = random.Random(args.seed)
 
     print("=" * 72)
     print("ISNAD-Bench: chain-grade agreement vs classical ground truth")
+    if args.strict:
+        print("mode: STRICT (ungraded narrator → ḍaʿīf, classical majhūl)")
+    else:
+        print("mode: lenient (ungraded narrator → ḥasan ceiling, ISNAD default)")
     print("=" * 72)
 
     all_ids = _load_sanad_ids(args.db)
@@ -188,7 +252,9 @@ def main() -> None:
         ids = all_ids
     id_set = set(ids)
 
-    y_true, y_pred, buckets, n_unclassified, n_skipped = _run_pass(iter_chains(args.db, id_set))
+    y_true, y_pred, buckets, n_unclassified, n_skipped = _run_pass(
+        iter_chains(args.db, id_set), strict_unknown=args.strict
+    )
 
     n = len(y_true)
     print(
@@ -235,11 +301,23 @@ def main() -> None:
         print(f"  majority-class kappa:  {cohens_kappa(cm_maj, CLASSES):.4f}  (predict '{mode}')")
 
         shuffled_map = _shuffled_rank_map(rng)
-        yt_s, yp_s, _, _, _ = _run_pass(iter_chains(args.db, id_set), rank_map=shuffled_map)
+        yt_s, yp_s, _, _, _ = _run_pass(
+            iter_chains(args.db, id_set), rank_map=shuffled_map, strict_unknown=args.strict
+        )
         cm_shuf = confusion_matrix(yt_s, yp_s, CLASSES)
         print(
             f"  shuffled-rank kappa:   {cohens_kappa(cm_shuf, CLASSES):.4f}  (rank→grade scrambled)"
         )
+
+    # Corroboration ablation (mutābaʿa)
+    if not args.no_corroboration:
+        print("\n--- Corroboration ablation (mutābaʿa) ---")
+        n_wa, n_ind = _corroboration_analysis(args.db, id_set, args.strict)
+        if n_wa:
+            print(f"  weak-alone → ḥasan chains:            {n_wa}")
+            print(f"  with an independent corroborating route: {n_ind} ({n_ind / n_wa:.1%})")
+            print("  → classical scholars would grade those ḥasan via mutābaʿa; the")
+            print("    remainder are chains ISNAD over-grades without corroboration.")
 
     # Error analysis
     print("\n--- Disagreement analysis (the honest part) ---")
