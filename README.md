@@ -130,7 +130,7 @@ reg.register("ingest-model", "physics", grade=NarratorGrade.ACCEPTABLE)
 
 verdict = grade("p = mv", ["openstax", "pdf-scraper", "ingest-model"], reg, domain="physics")
 print(verdict.why)
-# 'claim "p = mv" → chain HASAN (weakest: pdf-scraper, ungraded)'
+# 'claim "p = mv" → chain DAIF (weakest: pdf-scraper, ungraded → ḍaʿīf by default)'
 ```
 
 The full expert API (chain objects, critics, the decision matrix) is below.
