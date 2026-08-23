@@ -179,6 +179,7 @@ Also available: `IsnadTracer` (older flat-list reporter with built-in report()) 
 | **Integrity ladder (Bayesian)** | ✅ Implemented     | Default policy enforces integrity strikes-per-tier — a permanent ʿadālah ceiling that precision cannot lift — issue #30 |
 | **Precision recoverability**  | ✅ Implemented       | Precision-driven REJECTED is recoverable; only integrity (COMPROMISED) is sticky — issue #40 |
 | **Period-sliced grades**      | ✅ Implemented       | `get_grade_as_of()` re-derives a narrator's grade at any past instant — the ikhtilāṭ remedy — issue #43 |
+| **End-to-end benchmark**      | ✅ Measured          | Adversarial corruption-detection: weak narrators 100% caught, 0 false positives; the content critic is the binding constraint — issue #50 |
 
 ### Evidence provenance — assumption vs. observation (issue #6)
 
@@ -559,6 +560,7 @@ Full methodology, results, negative controls, and paper gap analysis in:
 - ⚠️ **Threat model:** [`THREAT_MODEL.md`](THREAT_MODEL.md) — what ISNAD defends against and deliberately does not
 - 🕵️ **Case study (xz backdoor as a sleeper narrator):** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md) — by Paul Hammant (Live Verify)
 - ⏳ **Period-sliced grades (the ikhtilāṭ remedy):** [`docs/period-sliced-grades.md`](docs/period-sliced-grades.md) · demo: [`examples/sleeper_narrator_demo.py`](examples/sleeper_narrator_demo.py)
+- 🎯 **Adversarial benchmark:** [`experiments/adversarial_benchmark/run.py`](experiments/adversarial_benchmark/run.py) — the honest "does it actually work?" number, including the misses
 
 ---
 
