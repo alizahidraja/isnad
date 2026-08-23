@@ -1,6 +1,8 @@
 # Isnād–Rijāl Framework
 
-**Grade the narrators, not just log them.** Claim-level provenance for multi-agent knowledge systems — adapted from classical hadith transmission science.
+**ISNAD grades the sources behind every claim your AI system produces — and tells you what to do about it.** Every claim carries a complete transmission chain; every transmitter carries a reliability grade that moves with evidence; chains are graded by their weakest link and routed to an action: accept, review, or quarantine.
+
+*(The name and the design descend from 1,200 years of hadith transmission science — the lineage is the reason to believe the design is sound, not a prerequisite for using it.)*
 
 > **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) | **Paper DOI:** [10.48550/arXiv.2607.24117](https://doi.org/10.48550/arXiv.2607.24117) | **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873)
 
@@ -111,7 +113,29 @@ in [What's Validated vs. What's Not](#whats-validated-vs-whats-not) and
 
 ---
 
-## 60-Second Quickstart
+## 30-Second Quickstart
+
+```bash
+pip install isnad
+```
+
+```python
+from isnad import Registry, grade
+from isnad.types import NarratorGrade
+
+reg = Registry()
+reg.register("openstax", "physics", grade=NarratorGrade.RELIABLE)
+reg.register("pdf-scraper", "physics", grade=NarratorGrade.UNGRADED)
+reg.register("ingest-model", "physics", grade=NarratorGrade.ACCEPTABLE)
+
+verdict = grade("p = mv", ["openstax", "pdf-scraper", "ingest-model"], reg, domain="physics")
+print(verdict.why)
+# 'claim "p = mv" → chain HASAN (weakest: pdf-scraper, ungraded)'
+```
+
+The full expert API (chain objects, critics, the decision matrix) is below.
+
+## 60-Second Quickstart (expert API)
 
 ```bash
 pip install isnad

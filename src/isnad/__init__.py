@@ -57,6 +57,7 @@ from isnad.critics import (
     LocalNLICritic,
 )
 from isnad.matn import DeterministicRuleCritic
+from isnad.quick import Verdict, grade
 from isnad.types import (
     Action,
     AdalahGrade,
@@ -85,6 +86,9 @@ __all__ = [
     "grades_for_chain",
     "make_claim_id",
     "normalize_claim_text",
+    # one-call convenience
+    "Verdict",
+    "grade",
     "is_unknown_version",
     "parse_narrator_id",
     "resolve_narrator_id",
