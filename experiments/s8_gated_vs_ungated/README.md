@@ -21,10 +21,11 @@ python analyze.py               # 6. Metrics + RESULTS.md
 
 ### Self-Contained Runner (no PDFs, no downloads)
 
-Uses pre-extracted claims from `results/claims.json` (20K claims, 8MB).
-Runs the full ISNAD pipeline with Bayesian grading + EmbeddingCritic content
-criticism + corroboration detection. Falls back to TF-IDF critic when no
-LLM API key is set.
+Runs the full ISNAD pipeline on pre-extracted claims (Bayesian grading +
+EmbeddingCritic content criticism + corroboration). The 20K-claim corpus
+(`results/claims.json`) is **not committed** — generate it with the full
+pipeline above, or fetch it from Zenodo 10.5281/zenodo.21216873. Falls back
+to TF-IDF critic when no LLM API key is set.
 
 ```bash
 python run_experiment.py                     # EmbeddingCritic (TF-IDF) fallback

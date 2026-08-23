@@ -1,4 +1,7 @@
+# Source PDFs and generated claim data are not committed (see Zenodo 10.5281/zenodo.21216873).
+# fetch.py + provenance markdown are tracked; extracted .txt claims are not.
 *.pdf
-results/*_backup*
-results/seed_*/
+corpus/*.txt
 corpus/pdfs/
+results/
+!results/RESULTS.md

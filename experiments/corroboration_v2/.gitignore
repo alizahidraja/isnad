@@ -1,2 +1,4 @@
+# Fetched/generated data is not committed — run.py re-fetches it.
+data/
 matches/
 results/
