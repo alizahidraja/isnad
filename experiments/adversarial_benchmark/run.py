@@ -155,9 +155,9 @@ def _build_cases() -> list[Case]:
 
 
 def _run_case(case: Case, reg: Registry, critic: DeterministicRuleCritic) -> Result:
-    chain = Chain(
-        [ChainLinkSpec(nid, i, domain="physics") for i, nid in enumerate(case.chain_narrators)]
-    )
+    chain = Chain([
+        ChainLinkSpec(nid, i, domain="physics") for i, nid in enumerate(case.chain_narrators)
+    ])
     grades = [reg.get_grade_for_link(l.narrator_id, l.domain, l.version) for l in chain.links]
     chain_grade = grade_chain(grades, [l.transform_type for l in chain.links], is_complete=True)
     verdict = critic.evaluate(case.claim, case.claim.lower(), CORPUS, "physics")
@@ -171,7 +171,49 @@ def _run_case(case: Case, reg: Registry, critic: DeterministicRuleCritic) -> Res
     )
 
 
+def _measure_semantic_critics(cases, reg) -> None:
+    """Measure the model-backed critics (opt-in, not CI-safe).
+
+    These download ~500MB of models, so they run only with ``--semantic``.
+    """
+    try:
+        from isnad.critics.nli import HybridCritic, LocalNLICritic
+    except ImportError:
+        print("\nsentence-transformers not installed; skipping semantic critics.")
+        return
+
+    for name, critic in [
+        ("LocalNLICritic (NLI cross-encoder)", LocalNLICritic()),
+        ("HybridCritic (MiniLM -> NLI)", HybridCritic()),
+    ]:
+        tp = fn = tn = fp = 0
+        sem = sem_caught = 0
+        for case in cases:
+            r = _run_case(case, reg, critic)
+            if case.kind == "semantic-contradiction":
+                sem += 1
+                sem_caught += r.caught
+            if case.good:
+                tn += r.served
+                fp += 0 if r.served else 1
+            else:
+                tp += r.caught
+                fn += 0 if r.caught else 1
+        print(
+            f"  {name:32} recall={tp}/{tp + fn}={tp / max(1, tp + fn):.0%}  "
+            f"FPR={fp / max(1, fp + tn):.0%}  semantic={sem_caught}/{sem}"
+        )
+
+
 def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--semantic", action="store_true", help="also measure the model-backed critics"
+    )
+    args = parser.parse_args()
+
     reg = Registry()
     for nid, (grade, ntype) in NARRATORS.items():
         reg.register(nid, "physics", grade=grade, narrator_type=ntype)
@@ -213,7 +255,9 @@ def main() -> None:
         rate = f"{caught / denom:.0%}" if denom else "n/a"
         print(f"  {kind:24} {caught:>7} {missed:>7} {rate:>7}")
     g = by_kind["good"]
-    print(f"  {'good (served vs flagged)':24} {g['tn']:>7} {g['fp']:>7} {g['tn'] / max(1, g['tn'] + g['fp']):>7.0%}")
+    print(
+        f"  {'good (served vs flagged)':24} {g['tn']:>7} {g['fp']:>7} {g['tn'] / max(1, g['tn'] + g['fp']):>7.0%}"
+    )
 
     print("\nsummary:")
     print(f"  bad-claim recall (fraction of corruptions caught): {recall:.0%}")
@@ -230,6 +274,14 @@ def main() -> None:
     print("  semantic-contradiction row above is its honest, quantitative size.")
     print("- This corpus is synthetic and physics-only. Real recall will differ.")
     print("-" * 70)
+
+    if args.semantic:
+        print("\nsemantic critics (model-backed, not CI-safe):")
+        _measure_semantic_critics(cases, reg)
+        print(
+            "\n  (The NLI critic improves semantic recall, but still misses"
+            "\n   numeric/domain-specific contradictions — the remaining gap."
+        )
 
 
 if __name__ == "__main__":
