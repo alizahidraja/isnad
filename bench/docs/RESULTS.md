@@ -93,6 +93,27 @@ ISNAD tracks the consensus at κ = 0.87 — i.e. it **faithfully implements the
 scholars' consensus**; it is not "better than the scholars", it is a
 deterministic reflection of their average opinion.
 
+## Ikhtilāṭ (M4) — the period-sliced grades
+
+The *mukhtaliṭūn* are narrators who were sound and then declined. The scholars
+**dated the decline** rather than discarding the record — the exact case
+ISNAD's `get_grade_as_of()` was built for (issue #43).
+
+| Finding | Value |
+|---|---:|
+| narrators flagged ikhtilāṭ | 161 (0.32%) |
+| chains touching a declined narrator | 203,159 (35.2%) |
+| κ on declined-narrator chains | 0.855 |
+| κ on clean chains | 0.858 |
+
+The honest reading: the static grade does **not** hurt agreement here
+(0.855 ≈ 0.858) — but only because the consensus itself is a *static* grade, so
+the loss is invisible in this corpus. The decline is recorded in the scholars'
+own text ("thiqah, became confused before death"), and its cost shows up only in
+timestamped AI pipelines (the xz sleeper-narrator), which the classical corpus
+cannot time-label. The design is validated; the quantitative value lives in
+`get_grade_as_of()`'s own guarantees (see `tests/test_period_sliced.py`).
+
 ## The three things this validates
 
 1. **The weakest-link rule is right.** Given the scholars' own narrator grades,
