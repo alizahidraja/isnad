@@ -28,14 +28,23 @@ from isnad.types import (
 )
 
 
-def _narrator_to_chain_grade(ng: NarratorGrade) -> ChainGrade:
-    """Map a narrator grade to the corresponding chain grade tier."""
+def _narrator_to_chain_grade(ng: NarratorGrade, *, strict_unknown: bool = False) -> ChainGrade:
+    """Map a narrator grade to the corresponding chain grade tier.
+
+    UNGRADED is the one deliberate leniency. By default it caps the chain at
+    ḥasan (epistemic humility: we have no evidence, so we refuse ṣaḥīḥ but do
+    not punish the absence of a grade). With ``strict_unknown=True`` it caps
+    at ḍaʿīf instead, matching the classical treatment of a majhūl (unknown)
+    narrator, whom the scholars judged weak.
+    """
     mapping = {
         NarratorGrade.RELIABLE: ChainGrade.SAHIH,
         NarratorGrade.ACCEPTABLE: ChainGrade.HASAN,
         NarratorGrade.WEAK: ChainGrade.DAIF,
         NarratorGrade.REJECTED: ChainGrade.MAWDU,
-        NarratorGrade.UNGRADED: ChainGrade.HASAN,  # ungraded → ḥasan ceiling
+        NarratorGrade.UNGRADED: (
+            ChainGrade.DAIF if strict_unknown else ChainGrade.HASAN
+        ),  # ungraded → ḥasan ceiling (lenient) or ḍaʿīf (strict)
     }
     return mapping[ng]
 
@@ -74,6 +83,7 @@ class RefinedWeakestLink:
         corroboration_support: bool = False,
         link_adalah_grades: list[AdalahGrade] | None = None,
         link_fidelity_verdicts: list[ContentVerdict] | None = None,
+        strict_unknown: bool = False,
     ) -> ChainGrade:
         """Compute the chain grade by walking the chain link-by-link.
 
@@ -96,6 +106,9 @@ class RefinedWeakestLink:
                 general track record. CONTRADICTION caps that link's
                 contribution at DAIF regardless of NarratorGrade (issue #11,
                 direction 3: surface *where* a chain degraded).
+            strict_unknown: Treat an UNGRADED narrator as capping the chain at
+                ḍaʿīf (strict, classical majhūl) instead of ḥasan (lenient,
+                default). See ``_narrator_to_chain_grade`` for the reasoning.
 
         Returns:
             The computed ChainGrade.
@@ -129,7 +142,7 @@ class RefinedWeakestLink:
         for narrator_grade, transform_type, fidelity_verdict in zip(
             link_narrator_grades, link_transform_types, fidelity, strict=True
         ):
-            link_equiv = _narrator_to_chain_grade(narrator_grade)
+            link_equiv = _narrator_to_chain_grade(narrator_grade, strict_unknown=strict_unknown)
 
             # Transformation fidelity: this specific output contradicted its
             # own input — cap this link's contribution regardless of the
@@ -182,6 +195,7 @@ def grade_chain(
     corroboration_support: bool = False,
     link_adalah_grades: list[AdalahGrade] | None = None,
     link_fidelity_verdicts: list[ContentVerdict] | None = None,
+    strict_unknown: bool = False,
 ) -> ChainGrade:
     """Grade a claim chain.
 
@@ -196,6 +210,8 @@ def grade_chain(
         link_fidelity_verdicts: Optional per-link transformation-fidelity
             verdicts (core/fidelity.py) — see
             RefinedWeakestLink.compute_chain_grade for details.
+        strict_unknown: Treat UNGRADED narrators as ḍaʿīf (strict) instead of
+            ḥasan (lenient, default).
 
     Returns:
         ChainGrade for the claim.
@@ -208,4 +224,5 @@ def grade_chain(
         corroboration_support=corroboration_support,
         link_adalah_grades=link_adalah_grades,
         link_fidelity_verdicts=link_fidelity_verdicts,
+        strict_unknown=strict_unknown,
     )

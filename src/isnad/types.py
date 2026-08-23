@@ -343,6 +343,7 @@ class GradingStrategy(Protocol):
         corroboration_support: bool = False,
         link_adalah_grades: list[AdalahGrade] | None = None,
         link_fidelity_verdicts: list[ContentVerdict] | None = None,
+        strict_unknown: bool = False,
     ) -> ChainGrade: ...
 
 

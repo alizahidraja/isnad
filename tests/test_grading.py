@@ -55,6 +55,25 @@ class TestWeakestLink:
         )
         assert result == ChainGrade.HASAN
 
+    def test_ungraded_narrator_caps_at_daif_when_strict(self) -> None:
+        # strict_unknown mirrors the classical majhūl (unknown) narrator: weak.
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.UNGRADED],
+            [TransformType.PASS_THROUGH] * 2,
+            is_complete=True,
+            strict_unknown=True,
+        )
+        assert result == ChainGrade.DAIF
+
+    def test_strict_unknown_does_not_affect_graded_narrators(self) -> None:
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.ACCEPTABLE],
+            [TransformType.PASS_THROUGH] * 2,
+            is_complete=True,
+            strict_unknown=True,
+        )
+        assert result == ChainGrade.HASAN
+
     def test_empty_chain_returns_daif(self) -> None:
         result = grade_chain([], [], is_complete=False)
         assert result == ChainGrade.DAIF
