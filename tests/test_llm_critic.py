@@ -92,3 +92,21 @@ def test_hash_claim_stable():
     assert _hash_claim("hello") == _hash_claim("hello")
     assert len(_hash_claim("hello")) == 16
     assert _hash_claim("hello") != _hash_claim("world")
+
+
+class TestDeepSeekConvenience:
+    def test_deepseek_env_var_sets_defaults(self, monkeypatch) -> None:
+        """DEEPSEEK_API_KEY defaults to the DeepSeek endpoint + model."""
+        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+        monkeypatch.setenv("DEEPSEEK_API_KEY", "sk-test")
+        critic = LLMCritic()
+        assert critic.api_key == "sk-test"
+        assert critic.base_url == "https://api.deepseek.com/v1"
+        assert critic.model == "deepseek-chat"
+        assert critic._has_credentials() is True
+
+    def test_explicit_args_override_deepseek_env(self, monkeypatch) -> None:
+        monkeypatch.setenv("DEEPSEEK_API_KEY", "sk-env")
+        critic = LLMCritic(base_url="https://custom.example/v1", api_key="sk-explicit")
+        assert critic.base_url == "https://custom.example/v1"
+        assert critic.api_key == "sk-explicit"

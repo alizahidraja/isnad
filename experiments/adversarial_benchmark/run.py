@@ -13,7 +13,7 @@ Run:  python experiments/adversarial_benchmark/run.py
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from isnad import Chain, ChainLinkSpec, Registry, decide, grade_chain
 from isnad.matn import DeterministicRuleCritic
@@ -80,7 +80,7 @@ def _build_cases() -> list[Case]:
     cases: list[Case] = []
 
     # 1. Good claims, clean SAHIH chains — should be served, not flagged.
-    for i, claim in enumerate(CORPUS):
+    for claim in CORPUS:
         cases.append(
             Case(
                 claim=claim,
@@ -158,8 +158,8 @@ def _run_case(case: Case, reg: Registry, critic: DeterministicRuleCritic) -> Res
     chain = Chain([
         ChainLinkSpec(nid, i, domain="physics") for i, nid in enumerate(case.chain_narrators)
     ])
-    grades = [reg.get_grade_for_link(l.narrator_id, l.domain, l.version) for l in chain.links]
-    chain_grade = grade_chain(grades, [l.transform_type for l in chain.links], is_complete=True)
+    grades = [reg.get_grade_for_link(x.narrator_id, x.domain, x.version) for x in chain.links]
+    chain_grade = grade_chain(grades, [x.transform_type for x in chain.links], is_complete=True)
     verdict = critic.evaluate(case.claim, case.claim.lower(), CORPUS, "physics")
     action = decide(chain_grade, verdict)
     return Result(
@@ -204,6 +204,44 @@ def _measure_semantic_critics(cases, reg) -> None:
             f"FPR={fp / max(1, fp + tn):.0%}  semantic={sem_caught}/{sem}"
         )
 
+    _measure_llm_critic(cases, reg)
+
+
+def _measure_llm_critic(cases, reg) -> None:
+    """Measure the LLM critic if credentials are present; else skip honestly.
+
+    A keyless LLM critic returns UNVERIFIABLE for everything, which would be a
+    misleading 0% — so it is skipped with a clear message instead.
+    """
+    from isnad.critics.llm import LLMCritic
+
+    critic = LLMCritic()
+    if not critic._has_credentials():
+        print(
+            "\n  LLMCritic: skipped (no ANTHROPIC_API_KEY / DEEPSEEK_API_KEY / api_key)."
+            "\n  Set one to measure it — it is the lever for the numeric/domain"
+            "\n  contradictions the NLI critic misses."
+        )
+        return
+
+    tp = fn = tn = fp = 0
+    sem = sem_caught = 0
+    for case in cases:
+        r = _run_case(case, reg, critic)
+        if case.kind == "semantic-contradiction":
+            sem += 1
+            sem_caught += r.caught
+        if case.good:
+            tn += r.served
+            fp += 0 if r.served else 1
+        else:
+            tp += r.caught
+            fn += 0 if r.caught else 1
+    print(
+        f"  {'LLMCritic':32} recall={tp}/{tp + fn}={tp / max(1, tp + fn):.0%}  "
+        f"FPR={fp / max(1, fp + tn):.0%}  semantic={sem_caught}/{sem}"
+    )
+
 
 def main() -> None:
     import argparse
@@ -224,7 +262,7 @@ def main() -> None:
 
     # Confusion matrix, keyed by case kind.
     by_kind: dict[str, dict[str, int]] = {}
-    for case, r in zip(cases, results):
+    for case, r in zip(cases, results, strict=True):
         k = by_kind.setdefault(case.kind, {"tp": 0, "fn": 0, "tn": 0, "fp": 0})
         if case.good:
             k["tn" if r.served else "fp"] += 1
@@ -255,9 +293,8 @@ def main() -> None:
         rate = f"{caught / denom:.0%}" if denom else "n/a"
         print(f"  {kind:24} {caught:>7} {missed:>7} {rate:>7}")
     g = by_kind["good"]
-    print(
-        f"  {'good (served vs flagged)':24} {g['tn']:>7} {g['fp']:>7} {g['tn'] / max(1, g['tn'] + g['fp']):>7.0%}"
-    )
+    good_rate = g["tn"] / max(1, g["tn"] + g["fp"])
+    print(f"  {'good (served vs flagged)':24} {g['tn']:>7} {g['fp']:>7} {good_rate:>7.0%}")
 
     print("\nsummary:")
     print(f"  bad-claim recall (fraction of corruptions caught): {recall:.0%}")

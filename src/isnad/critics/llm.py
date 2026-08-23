@@ -61,6 +61,13 @@ class LLMCritic:
     ):
         self.base_url = base_url or ""
         self.api_key = api_key or ""
+        # DeepSeek convenience: a DEEPSEEK_API_KEY env var defaults to the
+        # OpenAI-compatible DeepSeek endpoint (deepseek-chat) when no explicit
+        # base_url/api_key is passed.
+        deepseek_key = os.environ.get("DEEPSEEK_API_KEY", "")
+        if not self.api_key and deepseek_key:
+            self.api_key = deepseek_key
+            self.base_url = self.base_url or "https://api.deepseek.com/v1"
         self.model = model
         self.top_k = top_k
         self.cache_dir = Path(cache_dir) if cache_dir else None
