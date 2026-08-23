@@ -42,11 +42,13 @@ number is computed. Read that first; it is the benchmark's credibility.
 | M3 | Human ceiling via per-critic agreement (`aqwal`) | inter-critic κ vs ISNAD-vs-consensus κ |
 | M4 | Ikhtilāṭ → period-sliced grades (`get_grade_as_of`) | validates the flagship #43 feature |
 
-## Run (when implemented)
+## Run
 
 ```bash
-uv run python bench/run.py            # full corpus
-uv run python bench/run.py --sample   # CI smoke test on a committed fixture
+uv run python -m bench.run            # strict (default), full corpus
+uv run python -m bench.run --lenient  # ungraded → ḥasan
+uv run python -m bench.run --sample 2000  # quick smoke test
+uv run python -m bench.human_ceiling  # M3: inter-critic agreement
 ```
 
 ## Honesty rules (non-negotiable)
@@ -55,3 +57,17 @@ uv run python bench/run.py --sample   # CI smoke test on a committed fixture
 - Every disagreement is bucketed: mapping ambiguity / missing grade / weakest-link-vs-nuance / continuity / genuine bug.
 - Negative controls (majority-class, shuffled-grade) are reported beside the real number.
 - The human ceiling is reported beside ISNAD — it is the honest upper bound.
+
+## Audit & review discipline
+
+Every change to this benchmark — and every number it produces — passes through
+a standing **multi-persona audit** before it is trusted:
+
+- **Honesty/Auditor** — is the claim scoped? is a limit hidden or stated?
+- **Measurement scientist** — is the metric right for the class imbalance? is
+  the mapping preregistered and un-tuned?
+- **Security/Threat** — data provenance, no keys, supply-chain integrity.
+- **DevEx/Adopter** — is the one-command story intact?
+- **Maintainer** — tests, lint, mypy, docs stay green.
+
+These are not optional; a number without this audit is not shipped.
