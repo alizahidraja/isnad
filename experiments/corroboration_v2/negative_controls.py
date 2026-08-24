@@ -109,6 +109,9 @@ def run_controls() -> list[ControlResult]:
     )
 
     # ── C3: All corroborators below grade gate ────────────────────
+    # Attested-distinct lineage so independence passes and the *grade gate* is
+    # what blocks the upgrade (issue #54: unattested chains fail independence
+    # first, which would mask the gate this control targets).
     r = engine.evaluate(
         "earth is round",
         ChainGrade.DAIF,
@@ -117,7 +120,11 @@ def run_controls() -> list[ControlResult]:
             {"claim_text": "earth is round", "chain_grade": "daif", "narrator_ids": ["n2"]},
             {"claim_text": "earth is round", "chain_grade": "daif", "narrator_ids": ["n3"]},
         ],
-        {},
+        {
+            "n1": {"model_family": "f1", "upstream_source": "s1"},
+            "n2": {"model_family": "f2", "upstream_source": "s2"},
+            "n3": {"model_family": "f3", "upstream_source": "s3"},
+        },
     )
     results.append(
         ControlResult(
@@ -212,13 +219,18 @@ def run_controls() -> list[ControlResult]:
     )
 
     # ── C7: Single corroborator with effective weight < threshold (min_independent_chains=2) ──
+    # Attested-distinct lineage so the one corroborator counts as independent and
+    # the *count gate* (need ≥2) is what blocks the upgrade (issue #54).
     engine2 = CorroborationEngine(min_independent_chains=2)
     r = engine2.evaluate(
         "F=ma",
         ChainGrade.DAIF,
         ["n1"],
         [{"claim_text": "F=ma", "chain_grade": "hasan", "narrator_ids": ["n2"]}],
-        {},
+        {
+            "n1": {"model_family": "f1", "upstream_source": "s1"},
+            "n2": {"model_family": "f2", "upstream_source": "s2"},
+        },
     )
     results.append(
         ControlResult(
