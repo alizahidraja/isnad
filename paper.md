@@ -102,7 +102,6 @@ Drafting and review of the final text were performed with human oversight.
 
 # Acknowledgements
 
-The author thanks the reviewers of this submission, and Paul Hammant for the
-co-authored case study on Live Verify integration.
+The author thanks the reviewers of this submission.
 
 # References
