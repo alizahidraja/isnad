@@ -28,7 +28,9 @@ if str(_EXP) not in sys.path:
 from calibrate import calibrate  # noqa: E402
 
 
-def _build_synthetic(domain: str = "physics", n_good: int = 30, n_bad: int = 30) -> tuple[list, list]:
+def _build_synthetic(
+    domain: str = "physics", n_good: int = 30, n_bad: int = 30
+) -> tuple[list, list]:
     """A tiny corpus: a reliable source/scraper, one clean ingest, one broken ingest.
 
     ``ingest@bad`` corrupts every claim it touches, so the audit drives it to
