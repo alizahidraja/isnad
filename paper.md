@@ -86,8 +86,9 @@ emits a tamper-evident, SHA-256-hashed record of each decision.
 The framework is validated in two ways. The companion paper [@raja2026grading]
 presents a 20,000-claim experiment showing the weakest-link rule correctly
 quarantines every claim from a rejected narrator. ISNAD-Bench, a preregistered
-benchmark shipped with the software, grades 577,024 real hadith chains against
-the scholars' own verdicts and reaches **Cohen's κ = 0.871** with the consensus
+benchmark shipped with the software, grades 577,024 real hadith chains from a
+public, CC-BY-4.0 knowledge graph [@hadith_kg] against the scholars' own
+verdicts and reaches **Cohen's κ = 0.871** with the consensus
 — where the scholars themselves agree with each other at only κ = 0.331,
 demonstrating that ISNAD faithfully implements, rather than exceeds, its
 source method. The software carries a Zenodo DOI, is published on PyPI, and its
@@ -98,9 +99,9 @@ library.
 # AI usage disclosure
 
 Generative AI assistance was used during the development of this software and
-in the drafting of this paper — primarily Anthropic Claude and DeepSeek — for
-code generation, documentation, and benchmark analysis. Drafting and review of
-the final text were performed with human oversight.
+in the drafting of this paper — Claude Pro and DeepSeek V4 — for code
+generation, documentation, and benchmark analysis. Drafting and review of the
+final text were performed with human oversight.
 
 # Acknowledgements
 
