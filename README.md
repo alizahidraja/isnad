@@ -216,7 +216,7 @@ See `examples/langchain_middleware_demo.py`. The listable shape is the
 | **jarḥ–taʿdīl discovery**     | ✅ Partial           | Correctly identifies bad narrators; good ones need seed grades        |
 | **Seed-grade bootstrapping**  | ✅ Validated         | Pre-grading sources/models improves coverage from ~5% to ~10%; critical for non-zero serving; ISNAD_SEED_CONFIG env var |
 | **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 negative controls pass; madār detection blocks correlated chains |
-| **Content criticism**         | ✅ Functional        | EmbeddingCritic (TF-IDF) catches contradictions offline; HybridCritic (NLI) + LLMCritic available |
+| **Content criticism**         | ✅ Functional        | Tiered: LLMCritic (~90% semantic, needs key) > HybridCritic/LocalNLI (~30–40%, offline) > EmbeddingCritic (word-overlap). `best_available_critic()` picks the best runnable one — see `docs/critics.md` |
 | **Semantic matching**         | ✅ Validated         | Cross-source embedding matching (MiniLM) across Wikipedia and physics corpora |
 | **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 9 integration tests pass |
 | **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |
@@ -339,13 +339,17 @@ The framework leaves key parameters open by design (paper §4.2/§4.3). Swap any
 **Swap a critic in one line:**
 
 ```python
-from isnad.critics import EmbeddingCritic, LLMCritic
+from isnad.critics import best_available_critic, EmbeddingCritic, LLMCritic
 
-critic = EmbeddingCritic()                                      # offline, fast
+critic = best_available_critic()           # strongest offline critic (NLI if installed, else TF-IDF)
+critic = best_available_critic(prefer_llm=True)  # use the LLM tier if a key is present
+critic = EmbeddingCritic()                 # TF-IDF, always works, obvious contradictions
 critic = LLMCritic(provider="openrouter", model="openai/gpt-4o-mini")  # any LLM via OpenRouter
-critic = LLMCritic(provider="anthropic", model="claude-sonnet-4-20250514")  # Anthropic
-critic = LLMCritic()                                            # auto-detects from env
 ```
+
+Critic tiers are documented with their measured recall in
+[`docs/critics.md`](docs/critics.md) — the honest headline is that the semantic
+gap is solved by the LLM tier (~90%), while the no-key ceiling is NLI (~40%).
 
 The LLM critic is **provider-agnostic** — OpenRouter, OpenAI, DeepSeek, Anthropic,
 Gemini, Groq, Together, or any OpenAI-compatible endpoint (including a local
