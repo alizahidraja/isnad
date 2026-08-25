@@ -13,6 +13,36 @@
 
 ---
 
+## Reproducibility update (2026-08-26, issue #92)
+
+The original §8.2 numbers ("ingest@weak driven to rejected in 49/50 cells",
+"4,057 claims quarantined = 29%") were produced by the **pre-#9** threshold
+policy — the version that monotonically ratcheted every narrator to REJECTED
+(the bug fixed in issue #9). They are **not** reproducible from the corrected
+code and are retracted here.
+
+`calibrate.py` is now pinned to the **post-#9** `ThresholdTransitionPolicy`
+(sliding window + edge trigger), and the registry snapshots are regenerated.
+The honest, current result:
+
+| Narrator | Designed fault | Recovered grade (50 cells) |
+|---|---|---|
+| `source:*` | 0% | RELIABLE 50/50 (seed, now honored — #90) |
+| `pdf-scraper@1.2` | 1% | RELIABLE 50/50 (seed) |
+| `ingest@good` | 2% | ACCEPTABLE 50/50 (seed) |
+| `ingest@weak` | 15% | **WEAK 34/50, REJECTED 3/50, UNGRADED 9/50, ACCEPTABLE 4/50** |
+| `pdf-scraper@0.9-legacy` | 18% | missed (0/50 — too rare to grade) |
+
+With `ingest@weak` REJECTED in only 3 of 50 (narrator, domain) cells, the
+quarantine count is **3,165 of 140,010 eval claims (2.3%)**, not 4,057 of
+14,001 (29%). The weakest-link quarantine *mechanism* is unchanged and
+unit-tested; only the specific grade-recovery numbers were wrong.
+
+The §8.2 grade-recovery claim is corrected accordingly in the paper-v2
+tracking issue (#51).
+
+---
+
 ## Four Things That Must Be Said First
 
 ### 1. Corroboration was not tested IN THIS EXPERIMENT — zero times across all runs.
@@ -60,7 +90,9 @@ Confidence-gating is no better than random.
 
 ## What Gets Rejected — and Why
 
-100% of rejections (4,057 claims, 29%) come from `ingest@weak` being REJECTED:
+Rejections come from `ingest@weak` being REJECTED in the 3 of 50 cells where the
+post-#9 policy drives it that far (3,165 claims, 2.3% of eval). The chain trace
+when it fires:
 
 ```
 Step 0: source:openstax           RELIABLE ✓     [→]
@@ -69,6 +101,10 @@ Step 2: ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]  ← BREAK
 
 Chain grade: MAWDU → REJECT_AND_QUARANTINE_NARRATOR
 ```
+
+> **Note:** the original "4,057 claims (29%)" figure required `ingest@weak` to
+> be REJECTED in 49/50 cells, which was the pre-#9 ratchet — see the
+> reproducibility update above.
 
 Full chain trace: `results/rejected_claims_diagnostic.txt`
 
