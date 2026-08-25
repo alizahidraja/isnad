@@ -327,9 +327,19 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
     # ── Internal handlers ───────────────────────────────────────
 
     def _on_chain_start(
-        self, serialized: dict, inputs: Any, run_id: str, parent_run_id: str | None, kwargs: dict
+        self,
+        serialized: dict | None,
+        inputs: Any,
+        run_id: str,
+        parent_run_id: str | None,
+        kwargs: dict,
     ) -> None:
-        name = serialized.get("name", serialized.get("id", "chain"))
+        # LangGraph passes serialized=None and the node name via kwargs.
+        name = "chain"
+        if isinstance(serialized, dict):
+            name = serialized.get("name", serialized.get("id", "chain"))
+        if name == "chain":
+            name = str(kwargs.get("name") or "chain")
         self._add_node(
             run_id=run_id,
             parent_run_id=parent_run_id,
@@ -513,8 +523,8 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
             )
 
         node = TransmitterNode(
-            node_id=run_id,
-            parent_ids=[parent_run_id] if parent_run_id else [],
+            node_id=str(run_id),
+            parent_ids=[str(parent_run_id)] if parent_run_id else [],
             role=role,
             narrator_id=narrator_id,
             model_version=model_version,
@@ -522,7 +532,7 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
             grade=grade,
             timestamp=datetime.now(UTC).isoformat(),
         )
-        self._nodes[run_id] = node
+        self._nodes[str(run_id)] = node
         self._step += 1
 
     def _build_chain(self) -> list[TransmitterNode]:

@@ -38,6 +38,15 @@ anthropic = [
 langchain = [
     "langchain-core>=0.3",
 ]
+langgraph = [
+    "langgraph>=0.2",
+]
+crewai = [
+    "crewai>=0.80",
+]
+llamaindex = [
+    "llama-index-core>=0.11",
+]
 api = [
     "fastapi>=0.115",
     "uvicorn>=0.32",
@@ -133,6 +142,7 @@ dev = [
     "ruff>=0.15.20,<0.16",
     "fastapi>=0.115",
     "httpx>=0.28",
+    "langgraph>=0.2",
 ]
 
 [tool.ruff.lint.per-file-ignores]
