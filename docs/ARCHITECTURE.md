@@ -113,11 +113,17 @@ src/isnad/
 │   ├── identity.py              alias@version resolution
 │   └── volatility.py            Grade TTL / stale window / expiry
 │
+├── audit/                       ── Audit evidence layer ──
+│   ├── schema.py                AuditRecord + JSON Schema
+│   ├── canonical.py             RFC 8785 canonicalization
+│   ├── exporter.py              build + emit tamper-evident records
+│   └── chainlog.py              hash-chain (prev_hash) integrity
+│
 ├── critics/                     ── Content criticism ──
 │   ├── base.py                  ContentCritic Protocol
 │   ├── embedding.py             TF-IDF cosine similarity critic
 │   ├── nli.py                   HybridCritic (MiniLM + DeBERTa NLI)
-│   ├── llm.py                   LLM-backed critic (Anthropic)
+│   ├── llm.py                   LLM-backed critic (provider-agnostic)
 │   └── eval.py                  Evaluation harness for critics
 │
 ├── storage/                     ── Persistence ──
@@ -134,18 +140,22 @@ src/isnad/
 │       └── health.py            Health + Prometheus /metrics
 │
 ├── cli/                         ── CLI ──
-│   └── main.py                  isnad serve, isnad seed
+│   └── main.py                  isnad serve | seed | export | verify | verify-chain
 │
 ├── trace/                       ── Trace schema ──
 │   ├── __init__.py              Public API
 │   └── schema.py                TraceV01, TransmitterNode, Grade, etc.
 │
 ├── integrations/
-│   └── langchain/               ── LangChain integration ──
-│       ├── callback.py          IsnadCallbackHandler (tree-based, sync+async)
-│       ├── tracer.py            IsnadTracer (older, flat-list, report())
-│       ├── helpers.py           seed_registry(), CriticAdapter
-│       └── decorator.py         @isnad_track decorator
+│   ├── langchain/               ── LangChain integration ──
+│   │   ├── callback.py          IsnadCallbackHandler (tree-based, sync+async)
+│   │   ├── tracer.py            IsnadTracer (older, flat-list, report())
+│   │   ├── helpers.py           seed_registry(), CriticAdapter
+│   │   └── decorator.py         @isnad_track decorator
+│   └── liveverify/              ── Live Verify integration ──
+│       ├── client.py            verify: seal lookup (consumer)
+│       ├── issuer.py            create sealed verdicts (issuer)
+│       └── adapter.py           register_sealed_source — seal → high-trust narrator
 
 viewer/
 └── index.html                   Self-contained chain viewer (3 fixtures)
@@ -215,9 +225,10 @@ evidence-driven registry of transmitter reliability.
 
 ### Key design decisions
 
-**1. Domain-conditioned grading.**  The key is `(narrator_id, domain)` —
-never just `narrator_id`.  A model precise on physics may be unreliable on
-medicine.  Classical scholars did this too.
+**1. Domain- and role-conditioned grading.**  The key is `(narrator_id, domain,
+role)` — never just `narrator_id`.  A model precise on physics may be unreliable
+on medicine, and the same model can extract faithfully yet over-reach when
+synthesizing (issue #3).  Classical scholars did this too.
 
 **2. Two axes per narrator.**  `adalah` (ʿadālah — integrity/manipulation-
 resistance) and `dabt` (ḍabṭ — precision/error-rate) are stored separately:
@@ -254,6 +265,16 @@ never ages out; precision (ḍabṭ) jarḥ is windowed and recoverable.
 
 **5. REJECTED is sticky.**  Only explicit human review can restore from
 REJECTED.  This is active containment, not a passive label.
+
+**6. The integrity ladder (issue #30).**  The default policy enforces a
+strikes-per-tier ladder on the integrity axis: an integrity (ʿadālah) strike is
+permanent and cannot be lifted by good precision — precision cannot buy back
+compromised integrity.
+
+**7. Period-sliced grades (issue #43).**  `get_grade_as_of(narrator, domain,
+as_of)` re-derives a narrator's grade at any past instant from the append-only
+evidence log — the *ikhtilāṭ* (decline) remedy: a narrator who was sound and then
+declined is *dated*, not discarded.
 
 ### Narrator class
 
@@ -335,6 +356,11 @@ if chain is incomplete (munqaṭiʿ):
 if any narrator is REJECTED:
     return MAWDU
 ```
+
+**Ungraded narrators.**  An UNGRADED narrator caps the chain at **ḍaʿīf** by
+default — the classical *majhūl* treatment (you cannot vouch for what you do not
+know).  Pass `lenient_unknown=True` to cap at ḥasan instead (epistemic humility:
+refuse ṣaḥīḥ, do not punish the absence of a grade).
 
 ### Why generative links can repair
 
@@ -587,6 +613,9 @@ Two commands:
 ```bash
 isnad serve              # Start API server (uvicorn)
 isnad seed --config      # Seed narrators from ISNAD_SEED_CONFIG env var
+isnad export --claim <id> --format json   # Emit a tamper-evident AuditRecord
+isnad verify --record <path>              # Recompute a record's hash
+isnad verify-chain --chain <path>         # Walk a tamper-evident hash chain
 ```
 
 Environment variables: `ISNAD_HOST`, `ISNAD_PORT`, `ISNAD_DATABASE_URL`,
@@ -751,7 +780,8 @@ def answer_question(query: str) -> str:
 ### CriticAdapter
 
 Wraps any callable as a ContentCritic.  Includes a reference LLM-backed
-example using Anthropic.
+example (provider-agnostic — Anthropic by default, any OpenAI-compatible
+endpoint via `base_url`).
 
 ---
 
