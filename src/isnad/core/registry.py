@@ -803,10 +803,19 @@ class Registry:
         With a role, only the role's grade is recomputed; integrity is read
         from the shared default record and never written here.
 
+        Integrity (ʿadālah) is a judgment of the person, not a role: an
+        integrity-axis jarḥ is always recorded against the shared default record
+        regardless of the ``role`` argument, so it floors every sibling role
+        (issue #29), exactly as ``quarantine`` does. Only *precision* (ḍabṭ)
+        evidence stays role-scoped.
+
         Returns the new narrator grade.
         """
         resolved_axis = default_axis_for(evidence_type) if axis is None else axis
-        narrator = self.register(narrator_id, domain_tag, role=role)
+        # Integrity spans roles → route to the default record; precision is
+        # role-scoped (issue #29).
+        target_role = None if resolved_axis == EvidenceAxis.INTEGRITY else role
+        narrator = self.register(narrator_id, domain_tag, role=target_role)
         narrator.add_evidence(evidence_type, action, description, metadata, resolved_axis)
 
         # Integrity (ʿadālah) lives on the default record, shared across roles.

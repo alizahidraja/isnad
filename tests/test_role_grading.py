@@ -13,9 +13,18 @@ keeps the ``(narrator, domain)`` key and today's behaviour bit-for-bit.
 
 from __future__ import annotations
 
-from isnad.core.registry import Registry
+import pytest
+
+from isnad.core.registry import (
+    BayesianTransitionPolicy,
+    CalibratedThresholdPolicy,
+    Registry,
+    ThresholdTransitionPolicy,
+)
 from isnad.types import (
     AdalahGrade,
+    EvidenceAction,
+    EvidenceAxis,
     EvidenceProvenance,
     EvidenceType,
     NarratorGrade,
@@ -106,6 +115,113 @@ class TestIntegritySpansRoles:
         reg.register("m", "d", role=Role.SYNTHESIS, grade=NarratorGrade.WEAK)
         # Integrity is read from the default record, not the role record.
         assert reg.get_adalah_grade("m", "d") == AdalahGrade.HIGH
+
+    @pytest.mark.parametrize(
+        "policy",
+        [ThresholdTransitionPolicy(), CalibratedThresholdPolicy(), BayesianTransitionPolicy()],
+        ids=lambda p: type(p).__name__,
+    )
+    def test_integrity_jarh_on_one_role_floors_sibling_roles(self, policy) -> None:
+        """Issue #29: an integrity strike is a judgment of the person.
+
+        Integrity-axis evidence routes to the shared default record (like
+        quarantine), not the role it was logged under. Enough strikes drive that
+        shared record to REJECTED, which floors every role — including siblings
+        the evidence was never logged against. Parametrized across all policies
+        so the propagation is not masked by the default (Bayesian) policy, where
+        a single strike already tanks the record.
+        """
+        # Strikes needed for the shared record to reach REJECTED. Threshold
+        # policies ratchet one tier per `downgrade_threshold` integrity strikes
+        # (3 tiers from RELIABLE); Bayesian tanks the posterior almost at once.
+        down = getattr(policy, "downgrade_threshold", None) or getattr(
+            policy, "DOWNGRADE_THRESHOLD", 1
+        )
+        strikes = down * 3 if not isinstance(policy, BayesianTransitionPolicy) else 3
+
+        reg = Registry(transition_policy=policy)
+        reg.register("agent", "d", grade=NarratorGrade.RELIABLE, role=Role.SYNTHESIS)
+        reg.register("agent", "d", grade=NarratorGrade.RELIABLE, role=Role.RETRIEVAL)
+
+        for i in range(strikes):
+            reg.record_evidence(
+                "agent",
+                "d",
+                EvidenceType.HUMAN_REVIEW,
+                EvidenceAction.JARH,
+                f"fabrication {i}",
+                axis=EvidenceAxis.INTEGRITY,
+                role=Role.SYNTHESIS,
+            )
+
+        # The strike was logged against SYNTHESIS; RETRIEVAL is floored anyway.
+        assert reg.get_grade("agent", "d") == NarratorGrade.REJECTED
+        assert reg.get_grade("agent", "d", role=Role.SYNTHESIS) == NarratorGrade.REJECTED
+        assert reg.get_grade("agent", "d", role=Role.RETRIEVAL) == NarratorGrade.REJECTED
+
+    def test_sub_quarantine_integrity_does_not_yet_grade_floor_siblings(self) -> None:
+        """Known limit (issue #29): propagation is at the REJECTED boundary only.
+
+        This fix routes integrity to the shared record and floors every role once
+        that record hits REJECTED (quarantine boundary). It does NOT yet apply a
+        *graded* sub-quarantine floor — a threshold-policy narrator one tier down
+        from integrity strikes (below REJECTED) does not lower sibling roles.
+        That graded floor needs policy-aware flooring undefined under Bayesian;
+        it is left for design guidance. This test pins the gap so it is visible.
+        """
+        reg = Registry(transition_policy=ThresholdTransitionPolicy())
+        # Register the default record too, so the integrity strikes start from a
+        # graded RELIABLE and demonstrably ratchet one tier (not from UNGRADED).
+        reg.register("agent", "d", grade=NarratorGrade.RELIABLE)
+        reg.register("agent", "d", grade=NarratorGrade.RELIABLE, role=Role.SYNTHESIS)
+        reg.register("agent", "d", grade=NarratorGrade.RELIABLE, role=Role.RETRIEVAL)
+
+        # One threshold's worth of integrity strikes → shared record one tier
+        # down (ACCEPTABLE), which is below the REJECTED floor boundary.
+        for i in range(3):
+            reg.record_evidence(
+                "agent",
+                "d",
+                EvidenceType.HUMAN_REVIEW,
+                EvidenceAction.JARH,
+                f"fabrication {i}",
+                axis=EvidenceAxis.INTEGRITY,
+                role=Role.SYNTHESIS,
+            )
+
+        assert reg.get_grade("agent", "d") == NarratorGrade.ACCEPTABLE
+        # Sibling is NOT yet floored — the documented gap, not a passing feature.
+        assert reg.get_grade("agent", "d", role=Role.RETRIEVAL) == NarratorGrade.RELIABLE
+
+    @pytest.mark.parametrize(
+        "policy",
+        [ThresholdTransitionPolicy(), CalibratedThresholdPolicy(), BayesianTransitionPolicy()],
+        ids=lambda p: type(p).__name__,
+    )
+    def test_precision_jarh_stays_role_scoped(self, policy) -> None:
+        """The counterpart: a precision lapse in one role must NOT touch siblings.
+
+        Only integrity crosses roles. Precision (ḍabṭ) is role-specific — bad at
+        synthesis does not mean bad at retrieval.
+        """
+        reg = Registry(transition_policy=policy)
+        reg.register("agent", "d", grade=NarratorGrade.RELIABLE, role=Role.SYNTHESIS)
+        reg.register("agent", "d", grade=NarratorGrade.RELIABLE, role=Role.RETRIEVAL)
+
+        for i in range(6):
+            reg.record_evidence(
+                "agent",
+                "d",
+                EvidenceType.POST_HOC_AUDIT,
+                EvidenceAction.JARH,
+                f"error {i}",
+                axis=EvidenceAxis.PRECISION,
+                role=Role.SYNTHESIS,
+            )
+
+        # Synthesis degrades; retrieval is untouched.
+        assert reg.get_grade("agent", "d", role=Role.SYNTHESIS) != NarratorGrade.RELIABLE
+        assert reg.get_grade("agent", "d", role=Role.RETRIEVAL) == NarratorGrade.RELIABLE
 
 
 class TestRoleScopedEvidence:
