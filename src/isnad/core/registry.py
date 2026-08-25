@@ -248,6 +248,24 @@ class Narrator:
         return (self.narrator_id, self.domain_tag)
 
 
+@dataclass
+class Dispute:
+    """A narrator's contestation of their current grade (issue #38).
+
+    A dispute is *logged* (NEUTRAL — no grade change) and surfaced for operator
+    adjudication.  It is the audit trail that makes contestability possible:
+    the original strike, the dispute, and the eventual adjudication all sit in
+    the append-only evidence log.
+    """
+
+    narrator_id: str
+    domain_tag: str
+    reason: str
+    disputed_grade: str
+    disputed_adalah: str
+    created_at: str
+
+
 # ===========================================================================
 # Registry — the in-memory (narrator, domain) graded store
 # ===========================================================================
@@ -912,6 +930,87 @@ class Registry:
         )
         self._index_set_grade(narrator_id, domain_tag)
         # Integrity spans roles: quarantine lives on the default record only;
+
+    # ------------------------------------------------------------------
+    # Contestability (issue #38)
+    # ------------------------------------------------------------------
+
+    def dispute(self, narrator_id: str, domain_tag: str, reason: str = "") -> Dispute:
+        """Record a narrator's contestation of their current grade.
+
+        A dispute is *logged* (NEUTRAL — no grade change) and returned for
+        surfacing to an operator.  It is the audit trail that makes a mistaken
+        permanent strike contestable rather than silently irreversible.
+        """
+        narrator = self.get(narrator_id, domain_tag)
+        if narrator is None:
+            raise KeyError(f"no narrator {narrator_id!r} in domain {domain_tag!r}")
+        dispute = Dispute(
+            narrator_id=narrator_id,
+            domain_tag=domain_tag,
+            reason=reason,
+            disputed_grade=narrator.grade.value,
+            disputed_adalah=narrator.adalah_grade.value,
+            created_at=datetime.now(UTC).isoformat(),
+        )
+        narrator.add_evidence(
+            EvidenceType.DISPUTE,
+            EvidenceAction.NEUTRAL,
+            reason or "Grade disputed",
+            metadata={
+                "disputed_grade": dispute.disputed_grade,
+                "disputed_adalah": dispute.disputed_adalah,
+            },
+        )
+        return dispute
+
+    def adjudicate(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        *,
+        overturn: bool,
+        target_grade: NarratorGrade = NarratorGrade.ACCEPTABLE,
+        target_adalah: AdalahGrade = AdalahGrade.ACCEPTABLE,
+        reason: str = "",
+    ) -> NarratorGrade:
+        """Adjudicate a dispute (issue #38).
+
+        An operator's human decision.  ``overturn=True`` is the one mechanism
+        that overrides the automatic integrity ladder: it restores the grade
+        and integrity to the targets (default ACCEPTABLE) and reactivates the
+        narrator.  The override is documented (an ADJUDICATION evidence entry)
+        and the original strike + dispute remain in the append-only log, so the
+        reversal is auditable, never silent.
+
+        ``overturn=False`` upholds the current grade (logs the decision, no
+        change).
+        """
+        narrator = self.register(narrator_id, domain_tag)
+        if overturn:
+            narrator.add_evidence(
+                EvidenceType.ADJUDICATION,
+                EvidenceAction.TADIL,
+                reason or "Strike overturned by operator",
+                axis=EvidenceAxis.INTEGRITY,
+                metadata={"overturned": True},
+            )
+            narrator.grade = target_grade
+            narrator.adalah_grade = target_adalah
+            narrator.is_active = True
+            narrator.graded_at = datetime.now(UTC)
+            narrator.valid_until = self.volatility_policy.valid_until(
+                narrator.narrator_type, domain_tag, now=narrator.graded_at
+            )
+            self._index_set_grade(narrator_id, domain_tag)
+        else:
+            narrator.add_evidence(
+                EvidenceType.ADJUDICATION,
+                EvidenceAction.NEUTRAL,
+                reason or "Dispute upheld",
+                metadata={"overturned": False},
+            )
+        return narrator.grade
 
     # ------------------------------------------------------------------
     # Event-driven invalidation + freshness renewal (the expiry fix)

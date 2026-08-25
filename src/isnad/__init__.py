@@ -44,6 +44,7 @@ from isnad.core.identity import is_unknown_version, parse_narrator_id, resolve_n
 from isnad.core.registry import (
     BayesianTransitionPolicy,
     CalibratedThresholdPolicy,
+    Dispute,
     Narrator,
     Registry,
     RegistryDB,
@@ -110,6 +111,7 @@ __all__ = [
     "Narrator",
     "Registry",
     "RegistryDB",
+    "Dispute",
     # critics
     "ContentCritic",
     "EmbeddingCritic",
