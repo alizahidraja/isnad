@@ -299,6 +299,25 @@ class Registry:
     def _alias_for(narrator_id: str) -> str:
         return parse_narrator_id(narrator_id)[0]
 
+    def _is_narrator_compromised(self, narrator_id: str) -> bool:
+        """True if the narrator is *actively* integrity-rejected anywhere.
+
+        Derived, not stored: a narrator is compromised if some domain's default
+        record is both REJECTED and COMPROMISED (a quarantine).  Integrity is a
+        judgment of the person, so it spans domains (#28) and roles (#29).  The
+        ``grade == REJECTED`` guard avoids a stale COMPROMISED marker: a human
+        review that restores the grade (REJECTED → WEAK) does not leave the
+        narrator floored everywhere.
+        """
+        for (nid, _domain), rec in self._narrators.items():
+            if (
+                nid == narrator_id
+                and rec.adalah_grade == AdalahGrade.COMPROMISED
+                and rec.grade == NarratorGrade.REJECTED
+            ):
+                return True
+        return False
+
     def _narrator_is_graded(self, narrator_id: str, domain_tag: str) -> bool:
         """True if ANY record (default or any role) for this (narrator, domain) is graded.
 
@@ -481,6 +500,13 @@ class Registry:
         if role is not None:
             return self._effective_role_grade(narrator_id, role, domain_tag, now)
 
+        if self._is_narrator_compromised(narrator_id):
+            return GradeWithFreshness(
+                grade=NarratorGrade.REJECTED,
+                freshness=FreshnessStatus.FRESH,
+                needs_recheck=False,
+            )
+
         narrator = self.get(narrator_id, domain_tag)
         if narrator is None:
             return GradeWithFreshness(
@@ -508,16 +534,19 @@ class Registry:
         REJECTED narrator slip through on a role's precision.
         """
         default = self.get(narrator_id, domain_tag)
-        if default is not None and (
-            default.adalah_grade == AdalahGrade.COMPROMISED
-            or default.grade == NarratorGrade.REJECTED
+        if self._is_narrator_compromised(narrator_id) or (
+            default is not None
+            and (
+                default.adalah_grade == AdalahGrade.COMPROMISED
+                or default.grade == NarratorGrade.REJECTED
+            )
         ):
             return GradeWithFreshness(
                 grade=NarratorGrade.REJECTED,
                 freshness=FreshnessStatus.FRESH,
                 needs_recheck=False,
-                graded_at=_as_utc(default.graded_at),
-                valid_until=_as_utc(default.valid_until),
+                graded_at=_as_utc(default.graded_at) if default else None,
+                valid_until=_as_utc(default.valid_until) if default else None,
             )
 
         role_rec = self.get(narrator_id, domain_tag, role=role)
@@ -684,6 +713,8 @@ class Registry:
         chain-integrity and origin-strength must be distinguishable, not
         collapsed into one grade).
         """
+        if self._is_narrator_compromised(narrator_id):
+            return AdalahGrade.COMPROMISED
         narrator = self.get(narrator_id, domain_tag)
         return narrator.adalah_grade if narrator else AdalahGrade.UNASSESSED
 
@@ -824,7 +855,12 @@ class Registry:
         Returns the new narrator grade.
         """
         resolved_axis = default_axis_for(evidence_type) if axis is None else axis
-        narrator = self.register(narrator_id, domain_tag, role=role)
+        # Integrity (ʿadālah) is shared across roles: route integrity-class
+        # evidence to the default record (which floors every role), not the
+        # role record (#29).  The strikes-per-tier ladder still governs — a
+        # single strike does not immediately COMPROMISE.
+        effective_role = role if resolved_axis != EvidenceAxis.INTEGRITY else None
+        narrator = self.register(narrator_id, domain_tag, role=effective_role)
         narrator.add_evidence(evidence_type, action, description, metadata, resolved_axis)
 
         # Integrity (ʿadālah) lives on the default record, shared across roles.
