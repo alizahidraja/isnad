@@ -197,7 +197,10 @@ def _detect_shared_ancestry(
                     f"Chains {i} and {j} share model family: {families_a & families_b}",
                 )
 
-    return CorroborationVerdict.VERIFIED, "No shared ancestry detected."
+    return CorroborationVerdict.ASSUMED, (
+        "No shared ancestry detected — independence is assumed from topology, "
+        "not proven (correlated blind spots are undetectable)."
+    )
 
 
 # ── Sync callback handler ───────────────────────────────────────

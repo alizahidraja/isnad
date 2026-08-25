@@ -77,9 +77,17 @@ class OriginStrength(StrEnum):
 
 
 class CorroborationVerdict(StrEnum):
-    """Independence status — first-class, never a silent boolean."""
+    """Independence status — first-class, never a silent boolean.
 
-    VERIFIED = "verified"  # independence structurally confirmed
+    The honest three-way split (issue #54):
+    - SHARED_ANCESTRY_DETECTED — dependence *proven* (shared lineage found).
+    - ASSUMED — no shared lineage found, but independence is *assumed from
+      topology*, not proven; correlated blind spots are undetectable.
+    - UNVERIFIED — not yet checked.
+    """
+
+    VERIFIED = "verified"  # legacy: kept for serialization compatibility
+    ASSUMED = "assumed"  # no shared ancestry, but independence is assumed, not proven
     UNVERIFIED = "unverified"  # default: not yet checked
     SHARED_ANCESTRY_DETECTED = "shared_ancestry_detected"  # correlated chains found
 
