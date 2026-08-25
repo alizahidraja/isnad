@@ -19,7 +19,7 @@ import os
 import random
 import sys
 
-from isnad.core.registry import Registry
+from isnad.core.registry import Registry, ThresholdTransitionPolicy
 from isnad.types import AdalahGrade, DabtGrade, EvidenceAction, EvidenceType, NarratorGrade
 
 _exp_dir = os.path.dirname(os.path.abspath(__file__))
@@ -56,7 +56,13 @@ def calibrate(
         eval_claims.extend(domain_claims[split:])
 
     # Initialize registry
-    reg = Registry()
+    # Pin the transition policy explicitly (issue #92). The paper's §8 used the
+    # threshold policy (its §8.6 sweeps the downgrade threshold); the repo's
+    # default later drifted to Bayesian, which changed the recovered grades and
+    # broke reproducibility of the committed artifacts. This is the *post-#9*
+    # threshold policy (sliding window + edge trigger), not the pre-#9 ratchet
+    # that produced the paper's original §8.2 numbers.
+    reg = Registry(transition_policy=ThresholdTransitionPolicy())
 
     # Register all narrator+domain combinations with SEED GRADES
     # Known-reliable narrators are pre-graded (paper §7 bootstrap):
