@@ -12,6 +12,29 @@
   independence must be demonstrated, not assumed. Populate `model_family` /
   `upstream_source` on `register()` to keep corroboration firing. Thanks to
   @AusafMo.
+- **Bayesian REJECTED threshold tightened (issue #91).** The weak/rejected
+  boundary in `BetaState.to_grade()` moved from 0.50 → 0.60, so a narrator with
+  ~>40% observed error is quarantined instead of lingering as WEAK. The three
+  thresholds are now configurable on `BayesianTransitionPolicy`.
+
+### Fixed
+
+- **Seed grades are no longer clobbered (issue #90).**
+  `register(grade=RELIABLE)` followed by its `BOOTSTRAP_SEED` marker keeps the
+  seed (previously it collapsed to WEAK when the Bayesian posterior recomputed
+  from a `Beta(1,1)` prior). The seed rides in the evidence metadata as a prior
+  that real observations then update.
+- **API fails closed with no default credential (issue #93).** Removed the
+  hardcoded `isnad-admin:admin` default; with no `ISNAD_API_KEYS` configured,
+  authenticated endpoints return 503. CORS is opt-in via `ISNAD_CORS_ORIGINS`.
+- **Version reporting (issue #99).** The FastAPI app and `/v1/health` now report
+  `__version__` instead of a hardcoded `"2.0.0"`.
+
+### Performance
+
+- **Lazy `sentence_transformers` import.** Importing the API (or
+  `isnad.critics.nli`) no longer eagerly pulls in torch; the NLI critic builds
+  lazily on first use. CI also no longer installs the unused `nli` extra.
 
 ## [2.6.0] — 2026-08-23
 
