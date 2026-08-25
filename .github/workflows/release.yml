@@ -35,7 +35,7 @@ jobs:
 
       - name: Run tests before release
         run: |
-          uv sync --all-extras
+          uv sync --extra langchain
           uv run pytest -q --tb=short
 
       - name: Build
