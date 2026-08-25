@@ -6,6 +6,7 @@ import json
 import logging
 import os
 from collections.abc import Generator
+from typing import Any
 
 from fastapi import Depends
 from sqlalchemy.orm import Session
@@ -127,14 +128,24 @@ def get_registry(session: Session = Depends(get_db)) -> RegistryDB:
     return reg
 
 
-_shared_critic = _build_critic()
+_shared_critic: Any = None
+_critic_built = False
 
 
 def get_critic():
+    """Return the (lazily built, cached) content critic.
+
+    Built on first request rather than at import time so importing the API
+    never eagerly imports sentence-transformers/torch (which dominates test
+    collection time).
+    """
+    global _shared_critic, _critic_built
+    if not _critic_built:
+        _shared_critic = _build_critic()
+        _critic_built = True
     return _shared_critic
 
 
-# ── Fidelity critic builder (issue #11, direction 3) ───────────
 def _build_fidelity_critic():
     """Build the critic used for per-link transformation-fidelity checks.
 
@@ -161,8 +172,18 @@ def _build_fidelity_critic():
         return None
 
 
-_shared_fidelity_critic = _build_fidelity_critic()
+_shared_fidelity_critic: Any = None
+_fidelity_built = False
 
 
 def get_fidelity_critic():
+    """Return the (lazily built, cached) transformation-fidelity critic.
+
+    ``None`` means "no NLI-capable critic available" — fidelity checking is
+    skipped (all links UNVERIFIABLE), not penalized.
+    """
+    global _shared_fidelity_critic, _fidelity_built
+    if not _fidelity_built:
+        _shared_fidelity_critic = _build_fidelity_critic()
+        _fidelity_built = True
     return _shared_fidelity_critic
