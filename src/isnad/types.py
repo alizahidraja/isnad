@@ -254,6 +254,8 @@ class EvidenceType(Enum):
     CORROBORATION_OUTCOME = "corroboration_outcome"  # corroboration/contradiction
     SURVIVAL = "survival"  # a claim survived independent (endorsed) verification
     HUMAN_REVIEW = "human_review"  # human reviewer verdict
+    DISPUTE = "dispute"  # a narrator contests their grade (issue #38)
+    ADJUDICATION = "adjudication"  # an operator resolves a dispute (issue #38)
     VERSION_BUMP = "version_bump"  # model version change → reset
     BOOTSTRAP_SEED = "bootstrap_seed"  # initial seed grade from benchmarks
 
