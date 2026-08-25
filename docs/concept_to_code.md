@@ -90,7 +90,7 @@ The framework has five core components, plus the decision matrix that combines t
 | EmbeddingCritic (TF-IDF — DEFAULT) | `isnad/critics/embedding.py` | `EmbeddingCritic`, `TFIDFIndex` |
 | LocalNLICritic (DeBERTa cross-encoder) | `isnad/critics/nli.py` | `LocalNLICritic` |
 | HybridCritic (MiniLM → NLI, 2-stage) | `isnad/critics/nli.py` | `HybridCritic` |
-| LLMCritic (Anthropic Claude) | `isnad/critics/llm.py` | `LLMCritic` |
+| LLMCritic (provider-agnostic: OpenRouter / OpenAI / DeepSeek / Anthropic / Gemini / …) | `isnad/critics/llm.py` | `LLMCritic` |
 | Decision matrix | `isnad/core/decision.py` | `decide()`, `describe_action()` |
 | Action routing | `isnad/types.py` | `Action` enum |
 | Review queue | `isnad/models.py` | `ReviewQueue` (ORM) |

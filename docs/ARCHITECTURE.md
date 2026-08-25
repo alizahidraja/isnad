@@ -1,5 +1,12 @@
 # ISNAD Architecture — Complete Guide
 
+> **Note (2026-08):** parts of this guide predate recent changes. The registry is
+> now keyed by **(narrator, domain, role)** (issue #3), the default policy
+> enforces an **integrity ladder** (issue #30), and an UNGRADED narrator now
+> caps at **ḍaʿīf** by default (`lenient_unknown=True` restores the old ḥasan
+> ceiling). See the README and the code for current behaviour; issue #46 tracks
+> the full refresh.
+>
 > For anyone who wants to understand, extend, or contribute to the ISNAD
 > framework.  Start here.
 
@@ -414,7 +421,7 @@ Returns `CONSISTENT` / `CONTRADICTION` / `UNVERIFIABLE`.
 | `EmbeddingCritic` | TF-IDF cosine similarity | Catches obvious contradictions | `scikit-learn` |
 | `HybridCritic` | MiniLM retrieval → DeBERTa NLI | Good semantic coverage | `sentence-transformers` |
 | `LocalNLICritic` | DeBERTa cross-encoder | Best offline quality | `sentence-transformers` |
-| `LLMCritic` | LLM-prompted judgment | Highest quality | API key |
+| `LLMCritic` | LLM-prompted judgment (provider-agnostic: OpenRouter/OpenAI/DeepSeek/Anthropic/Gemini/…) | Highest quality | API key |
 
 ### Key principle
 
@@ -515,7 +522,7 @@ version bump is a new narrator, not inherited reputation.
 |-------|---------|-------------|
 | `rijal_claims` | One row per claim | claim_id, claim_text, narrator_chain (JSONB), chain_grade |
 | `chain_links` | Normalized link table | claim_id (FK), step, narrator_id, version, transform_type |
-| `narrator_registry` | One row per (narrator, domain) | narrator_id, domain_tag, grade, model_family, upstream_source |
+| `narrator_registry` | One row per (narrator, domain, role) | narrator_id, domain_tag, role, grade, model_family, upstream_source |
 | `narrator_evidence` | Append-only jarḥ–taʿdīl log | narrator_id, domain_tag (FK), evidence_type, action |
 | `review_queue` | Claims awaiting human adjudication | claim_id, chain_grade, content_verdict, matrix_action |
 
@@ -757,7 +764,7 @@ example using Anthropic.
          │
  3. to_trace() → isnad_trace v0.1 JSON
          │
- 4. Registry looks up narrator grades per (narrator, domain)
+ 4. Registry looks up narrator grades per (narrator, domain, role)
     (time-decayed via effective_grade)
          │
  5. grade_chain() computes weakest-link with transform-type refinement
