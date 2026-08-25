@@ -13,6 +13,20 @@ jobs:
       matrix:
         python-version: ["3.12", "3.13"]
 
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: isnad_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
       - uses: actions/checkout@v4
 
@@ -23,6 +37,11 @@ jobs:
 
       - name: Install dependencies
         run: uv sync --all-extras
+
+      - name: Migrate (Postgres)
+        env:
+          ISNAD_DATABASE_URL: postgresql+psycopg2://postgres:postgres@localhost:5432/isnad_test
+        run: uv run alembic upgrade head
 
       - name: Lint (ruff)
         run: uv run ruff check src/isnad tests examples bench

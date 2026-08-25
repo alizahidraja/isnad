@@ -145,21 +145,25 @@ def upgrade() -> None:
         "narrator_evidence",
         sa.Column("role", sa.String(128), nullable=False, server_default=""),
     )
-    # Rebuild PK/FK to include role.
-    with op.batch_alter_table("narrator_registry") as batch:
-        batch.drop_constraint("narrator_registry_pkey", type_="primary")
-        batch.create_primary_key("narrator_registry_pkey", ["narrator_id", "domain_tag", "role"])
-    with op.batch_alter_table("narrator_evidence") as batch:
-        batch.drop_constraint(
-            "narrator_evidence_narrator_id_fkey", type_="foreignkey"
-        )
-        batch.create_foreign_key(
-            "narrator_evidence_narrator_id_fkey",
-            "narrator_registry",
-            ["narrator_id", "domain_tag", "role"],
-            ["narrator_id", "domain_tag", "role"],
-            ondelete="CASCADE",
-        )
+    # Order matters on PostgreSQL: the FK depends on the PK index, so drop the
+    # FK first, then the PK, then recreate both with role in the key.
+    op.drop_constraint(
+        "narrator_evidence_narrator_id_domain_tag_fkey",
+        "narrator_evidence",
+        type_="foreignkey",
+    )
+    op.drop_constraint("narrator_registry_pkey", "narrator_registry", type_="primary")
+    op.create_primary_key(
+        "narrator_registry_pkey", "narrator_registry", ["narrator_id", "domain_tag", "role"]
+    )
+    op.create_foreign_key(
+        "narrator_evidence_narrator_id_domain_tag_role_fkey",
+        "narrator_evidence",
+        "narrator_registry",
+        ["narrator_id", "domain_tag", "role"],
+        ["narrator_id", "domain_tag", "role"],
+        ondelete="CASCADE",
+    )
 
 
 def downgrade() -> None:
@@ -230,18 +234,21 @@ def downgrade() -> None:
         )
         return
 
-    # PostgreSQL downgrade.
-    with op.batch_alter_table("narrator_evidence") as batch:
-        batch.drop_constraint("narrator_evidence_narrator_id_fkey", type_="foreignkey")
-        batch.create_foreign_key(
-            "narrator_evidence_narrator_id_fkey",
-            "narrator_registry",
-            ["narrator_id", "domain_tag"],
-            ["narrator_id", "domain_tag"],
-            ondelete="CASCADE",
-        )
-    with op.batch_alter_table("narrator_registry") as batch:
-        batch.drop_constraint("narrator_registry_pkey", type_="primary")
-        batch.create_primary_key("narrator_registry_pkey", ["narrator_id", "domain_tag"])
+    # PostgreSQL downgrade: drop role from the keys (FK first, then PK).
+    op.drop_constraint(
+        "narrator_evidence_narrator_id_domain_tag_role_fkey",
+        "narrator_evidence",
+        type_="foreignkey",
+    )
+    op.drop_constraint("narrator_registry_pkey", "narrator_registry", type_="primary")
+    op.create_primary_key("narrator_registry_pkey", "narrator_registry", ["narrator_id", "domain_tag"])
+    op.create_foreign_key(
+        "narrator_evidence_narrator_id_domain_tag_fkey",
+        "narrator_evidence",
+        "narrator_registry",
+        ["narrator_id", "domain_tag"],
+        ["narrator_id", "domain_tag"],
+        ondelete="CASCADE",
+    )
     op.drop_column("narrator_evidence", "role")
     op.drop_column("narrator_registry", "role")
