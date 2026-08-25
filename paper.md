@@ -31,9 +31,9 @@ registry); a chain is graded by its weakest link; and the result is routed to
 one of three actions — serve, review, or quarantine. The library ships with a
 pluggable grading engine, content criticism, independent-chain corroboration, a
 tamper-evident audit record, and integrations for LangChain, LangGraph,
-CrewAI, LlamaIndex, and OpenTelemetry. It is Apache-2.0 licensed, tested by a
-600-test suite on Python 3.12 and 3.13, and installable with `pip install
-isnad`.
+CrewAI, LlamaIndex, and OpenTelemetry. It is Apache-2.0 licensed, tested by an
+automated suite of over 600 tests on Python 3.12 and 3.13, and installable with
+`pip install isnad`.
 
 # Statement of need
 
@@ -91,8 +91,9 @@ the scholars' own verdicts and reaches **Cohen's κ = 0.871** with the consensus
 — where the scholars themselves agree with each other at only κ = 0.331,
 demonstrating that ISNAD faithfully implements, rather than exceeds, its
 source method. The software carries a Zenodo DOI, is published on PyPI, and its
-grading primitive (`isnad bench --config`, `isnad ingest --otlp`) is designed so
-a third party can run it on their own data without adopting the library.
+command-line entry points (`isnad bench --config`, `isnad ingest --otlp`) are
+designed so a third party can run it on their own data without adopting the
+library.
 
 # AI usage disclosure
 
