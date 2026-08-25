@@ -6,6 +6,7 @@ import time
 
 from fastapi.routing import APIRouter
 
+from isnad import __version__
 from isnad.api.dependencies import _metrics_counters
 from isnad.api.endpoints.claims import get_state
 
@@ -15,7 +16,7 @@ metrics_router = APIRouter(tags=["observability"])
 
 @router.get("/health")
 async def health() -> dict:
-    return {"status": "ok", "version": "2.0.0"}
+    return {"status": "ok", "version": __version__}
 
 
 @router.get("/metrics")
