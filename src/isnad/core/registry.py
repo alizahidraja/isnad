@@ -861,6 +861,13 @@ class Registry:
         # single strike does not immediately COMPROMISE.
         effective_role = role if resolved_axis != EvidenceAxis.INTEGRITY else None
         narrator = self.register(narrator_id, domain_tag, role=effective_role)
+        # Capture an operator-assigned seed grade so the Bayesian policy can use
+        # it as a persistent prior (issue #90): register(grade=RELIABLE) followed
+        # by its BOOTSTRAP_SEED marker must keep the seed, not collapse to WEAK on
+        # the first recompute. The grade rides in the evidence metadata so it
+        # survives a DB round-trip.
+        if evidence_type == EvidenceType.BOOTSTRAP_SEED:
+            metadata = {**(metadata or {}), "__seed_grade__": narrator.grade.value}
         narrator.add_evidence(evidence_type, action, description, metadata, resolved_axis)
 
         # Integrity (ʿadālah) lives on the default record, shared across roles.
