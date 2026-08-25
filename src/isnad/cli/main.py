@@ -1,4 +1,4 @@
-"""ISNAD CLI — serve, seed, and audit-evidence commands.
+"""ISNAD CLI — serve, seed, audit-evidence, and ingest commands.
 
 Usage:
     isnad serve                 Start the API server
@@ -6,6 +6,7 @@ Usage:
     isnad export --claim ID     Emit an AuditRecord (json|jsonl|csv) to stdout
     isnad verify --record PATH  Recompute a record hash; exit 0/1
     isnad verify-chain --chain PATH  Walk a hash chain; exit 0/1
+    isnad ingest --otlp PATH    Grade an OpenTelemetry GenAI trace
 
 The audit commands emit **evidence artifacts**, not compliance certificates.
 """
@@ -169,6 +170,42 @@ def _export(argv: list[str]) -> int:
     return 0
 
 
+def _ingest(argv: list[str]) -> int:
+    """Grade an OpenTelemetry GenAI trace (issue #73)."""
+    parser = argparse.ArgumentParser(
+        prog="isnad ingest", description="Grade an OpenTelemetry GenAI trace."
+    )
+    parser.add_argument("--otlp", required=True, help="path to an OTLP/JSON trace export")
+    parser.add_argument("--domain", default="general", help="domain tag for registry lookup")
+    parser.add_argument(
+        "--lenient", action="store_true", help="ungraded narrator → ḥasan (default: strict ḍaʿīf)"
+    )
+    args = parser.parse_args(argv)
+
+    from isnad.integrations.otel import ingest_trace, parse_otlp_json
+
+    registry, session = _load_registry_and_session()
+    try:
+        with open(args.otlp) as f:
+            data = json.load(f)
+        spans = parse_otlp_json(data)
+        result = ingest_trace(spans, registry, args.domain, lenient_unknown=args.lenient)
+    finally:
+        session.close()
+
+    print(json.dumps(result.to_dict(), indent=2, ensure_ascii=False))
+
+    summary = (
+        f"trace {result.trace_id}: {result.transmitter_count} transmitters → {result.chain_grade}"
+    )
+    if result.weakest_link:
+        summary += f" (weakest: {result.weakest_link})"
+    if result.claim_text is None:
+        summary += " — claim text not present in spans (chain grade only)"
+    print(summary, file=sys.stderr)
+    return 0
+
+
 def _verify(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(prog="isnad verify", description="Recompute a record hash.")
     parser.add_argument("--record", required=True, help="path to an AuditRecord JSON")
@@ -212,7 +249,7 @@ def main(argv: list[str] | None = None) -> None:
     """
     args = sys.argv if argv is None else ["isnad", *argv]
     if len(args) < 2:
-        print("Usage: isnad [serve|seed|export|verify|verify-chain]")
+        print("Usage: isnad [serve|seed|export|verify|verify-chain|ingest]")
         sys.exit(1)
 
     cmd = args[1]
@@ -227,9 +264,11 @@ def main(argv: list[str] | None = None) -> None:
         sys.exit(_verify(rest))
     elif cmd == "verify-chain":
         sys.exit(_verify_chain(rest))
+    elif cmd == "ingest":
+        sys.exit(_ingest(rest))
     else:
         print(f"Unknown command: {cmd}")
-        print("Usage: isnad [serve|seed|export|verify|verify-chain]")
+        print("Usage: isnad [serve|seed|export|verify|verify-chain|ingest]")
         sys.exit(1)
 
 
