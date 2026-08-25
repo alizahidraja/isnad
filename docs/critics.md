@@ -2,13 +2,13 @@
 
 The content critic (matn criticism) checks whether a claim *contradicts* the
 corpus, independently of chain quality. This is the framework's historically
-weakest link (issue #34), so the critic tiers are documented with their measured
+weakest link (issue #34), so the critic tiers are documented with their expected
 recall rather than marketed as equal.
 
 `best_available_critic()` returns the strongest tier the current environment
 can actually run.
 
-| Tier | Critic | Semantic recall (synthetic adversarial corpus) | Requirements |
+| Tier | Critic | Recall — expected, not yet committed (synthetic corpus) | Requirements |
 |---|---|---|---|
 | 1 | `LLMCritic` | ~90% | API key (OpenRouter / OpenAI / DeepSeek / Anthropic / …) |
 | 2 | `HybridCritic` | ~40% | `sentence-transformers` (~500 MB models, offline) |
@@ -18,7 +18,10 @@ can actually run.
 
 Numbers are from the bundled adversarial benchmark
 (`experiments/adversarial_benchmark/run.py --semantic`) on a synthetic 20-claim
-physics corpus — indicative, not definitive. The honest headline: **the semantic
+physics corpus — indicative, not definitive. The LLM number needs an API key and
+the NLI numbers need a ~500 MB model download; neither run's output is committed
+to the repo (issue #96), so treat the LLM/NLI figures as *expected*, not
+*measured*. The honest headline: **the semantic
 gap is solved by the LLM critic, but the no-key ceiling is ~40% (NLI)**. There
 is no offline critic that approaches the LLM tier today.
 

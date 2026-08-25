@@ -149,8 +149,8 @@ from isnad.critics import EmbeddingCritic
 # Build a chain: source → scraper → model
 chain = Chain([
     ChainLinkSpec("openstax-textbook", 0, domain="physics"),
-    ChainLinkSpec("pdf-scraper-v2", 1),
-    ChainLinkSpec("ingest-model-v3", 2),
+    ChainLinkSpec("pdf-scraper-v2", 1, domain="physics"),
+    ChainLinkSpec("ingest-model-v3", 2, domain="physics"),
 ])
 
 # Seed-grade known narrators (operator-assigned — see Scope and limitations)
@@ -215,7 +215,7 @@ See `examples/langchain_middleware_demo.py`. The listable shape is the
 | **Weakest-link quarantine**   | ✅ Validated         | 100% of REJECTED narrator claims correctly blocked                    |
 | **jarḥ–taʿdīl discovery**     | ✅ Partial           | Correctly identifies bad narrators; good ones need seed grades        |
 | **Seed-grade bootstrapping**  | ✅ Validated         | Pre-grading sources/models improves coverage from ~5% to ~10%; critical for non-zero serving; ISNAD_SEED_CONFIG env var |
-| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 negative controls pass; madār detection blocks correlated chains |
+| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 negative controls pass; madār detection blocks correlated chains. **Requires attested distinct lineage** (`model_family` / `upstream_source`) — unattested chains no longer corroborate (issue #54) |
 | **Content criticism**         | ✅ Functional        | Tiered: LLMCritic (~90% semantic, needs key) > HybridCritic/LocalNLI (~30–40%, offline) > EmbeddingCritic (word-overlap). `best_available_critic()` picks the best runnable one — see `docs/critics.md` |
 | **Semantic matching**         | ✅ Validated         | Cross-source embedding matching (MiniLM) across Wikipedia and physics corpora |
 | **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 9 integration tests pass |
@@ -315,12 +315,12 @@ that produced this.
 
 ## The Decision Matrix
 
-|                         | Content CONSISTENT               | Content CONTRADICTION                          |
-| ----------------------- | -------------------------------- | ---------------------------------------------- |
-| **Ṣaḥīḥ** (sound chain) | **SERVE** — cache                | **REVIEW** — ʿilal signal (highest-value case) |
-| **Ḥasan** (good chain)  | **SERVE WITH CAVEAT**            | **REVIEW** — hold, do not serve                |
-| **Ḍaʿīf** (weak chain)  | **REVIEW** — seek corroboration  | **QUARANTINE**                                 |
-| **Mawḍūʿ** (fabricated) | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR**               |
+|                         | Content CONSISTENT               | Content CONTRADICTION                          | Content UNVERIFIABLE                       |
+| ----------------------- | -------------------------------- | ---------------------------------------------- | ------------------------------------------ |
+| **Ṣaḥīḥ** (sound chain) | **SERVE** — cache                | **REVIEW** — ʿilal signal (highest-value case) | **SERVE WITH CAVEAT**                      |
+| **Ḥasan** (good chain)  | **SERVE WITH CAVEAT**            | **REVIEW** — hold, do not serve                | **REVIEW**                                 |
+| **Ḍaʿīf** (weak chain)  | **REVIEW** — seek corroboration  | **QUARANTINE**                                 | **REVIEW**                                 |
+| **Mawḍūʿ** (fabricated) | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR**               | **REJECT + QUARANTINE NARRATOR**           |
 
 ---
 
@@ -499,6 +499,12 @@ Corroboration (*mutābaʿāt*) validated on two corpora: **707 claim pairs, 100%
 fire rate, 8/8 negative controls, zero false positives** (Wikipedia 603/603,
 physics textbooks 104/104). Methodology and paper-gap analysis:
 `experiments/corroboration_v2/README.md` · `experiments/PAPER_GAP_ANALYSIS.md`.
+
+Since PR #83, corroboration requires **attested distinct lineage**: a chain whose
+narrators carry no `model_family` / `upstream_source` is scored *unknown* (below
+the gate) and does not corroborate — independence must be demonstrated, not
+assumed from empty metadata. The validated corpora above record lineage, so the
+numbers hold.
 
 ## Ecosystem
 

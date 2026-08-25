@@ -109,7 +109,7 @@ src/isnad/
 │   ├── registry.py              Narrator store, jarḥ–taʿdīl, freshness
 │   ├── grading.py               Weakest-link chain grade computation
 │   ├── corroboration.py         Independent-chain upgrade + madār detection
-│   ├── decision.py              4×2 matrix: chain × content → action
+│   ├── decision.py              4×3 matrix: chain × content → action
 │   ├── identity.py              alias@version resolution
 │   └── volatility.py            Grade TTL / stale window / expiry
 │
@@ -390,11 +390,22 @@ upgraded.  This is *mutābaʿāt* from hadith science.
 ### Independence detection (SharedLineageDetector)
 
 ```
-Check 1: Shared narrator IDs?         → score = 0.0 (hard correlation)
-Check 2: Shared model family?         → penalty = 0.4 per shared family
-Check 3: Shared upstream source?      → penalty = 0.3 per shared source
+Shared narrator IDs?                  → score = 0.0 (hard correlation)
+Both chains carry lineage, no shared  → score = 1.0 (independent, earned)
+  signal (family / upstream source)
+Shared model family?                  → penalty = 0.4 per shared family
+Shared upstream source?               → penalty = 0.3 per shared source
+Either chain has NO lineage metadata  → UNKNOWN_LINEAGE_SCORE = 0.5
+                                          (below the gate — independence
+                                           must be demonstrated, not assumed)
 Threshold: score ≥ 0.8                → considered independent
 ```
+
+**Independence must be shown, not assumed (issue #54, PR #83).** When either
+chain carries no lineage metadata, independence cannot be demonstrated, so the
+score is the below-gate `UNKNOWN_LINEAGE_SCORE` and the chains do **not**
+corroborate. Populate `model_family` / `upstream_source` on `register()` so
+distinctness can actually be observed.
 
 **The madār problem:** Naive set-disjointness of narrator IDs is explicitly
 wrong.  Two chains with no shared narrators can still be correlated — same
@@ -460,15 +471,21 @@ each other's internals.  They combine only at the decision matrix.
 
 **File:** `core/decision.py`
 
-The 4×2 router: chain_grade × content_verdict → action.
+The 4×3 router: chain_grade × content_verdict → action.
 
 ```
-                 CONSISTENT              CONTRADICTION
-SAHIH            SERVE (cache)           REVIEW (ʿilal — highest-value case)
-HASAN            SERVE_WITH_CAVEAT       REVIEW (hold; do not serve)
-DAIF             REVIEW (seek corrob.)   QUARANTINE
-MAWDU            REJECT_AND_QUARANTINE   REJECT_AND_QUARANTINE
+                 CONSISTENT               CONTRADICTION                       UNVERIFIABLE
+SAHIH            SERVE (cache)            REVIEW (ʿilal — highest-value)      SERVE_WITH_CAVEAT
+HASAN            SERVE_WITH_CAVEAT        REVIEW (hold; do not serve)         REVIEW
+DAIF             REVIEW (seek corrob.)    QUARANTINE                          REVIEW
+MAWDU            REJECT_AND_QUARANTINE    REJECT_AND_QUARANTINE               REJECT_AND_QUARANTINE
 ```
+
+**The third column is not a formality.** A critic that cannot evaluate a
+claim returns UNVERIFIABLE rather than defaulting to CONSISTENT — the
+classical *tawaqquf* (suspension of judgment). Under a weak critic, most
+claims are UNVERIFIABLE, which is why content criticism (not chain grading)
+is the binding constraint on serving coverage.
 
 **Three key defaults:**
 1. Contradictions go to humans by default (LLMs are unreliable at reconciling
