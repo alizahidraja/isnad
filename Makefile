@@ -13,12 +13,12 @@ demo:
 	uv run python examples/worked_example.py
 
 lint:
-	uv run ruff check src/isnad tests examples
-	uv run ruff format --check src/isnad tests examples
+	uv run ruff check src/isnad tests examples bench
+	uv run ruff format --check src/isnad tests examples bench
 
 lint-fix:
-	uv run ruff check --fix src/isnad tests examples
-	uv run ruff format src/isnad tests examples
+	uv run ruff check --fix src/isnad tests examples bench
+	uv run ruff format src/isnad tests examples bench
 
 typecheck:
 	uv run mypy src/isnad bench

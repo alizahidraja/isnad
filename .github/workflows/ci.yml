@@ -25,10 +25,10 @@ jobs:
         run: uv sync --all-extras
 
       - name: Lint (ruff)
-        run: uv run ruff check src/isnad tests
+        run: uv run ruff check src/isnad tests examples bench
 
       - name: Format check (ruff)
-        run: uv run ruff format --check src/isnad tests
+        run: uv run ruff format --check src/isnad tests examples bench
 
       - name: Type check (mypy)
         run: uv run mypy src/isnad bench
