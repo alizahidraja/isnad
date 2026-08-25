@@ -206,6 +206,37 @@ def _ingest(argv: list[str]) -> int:
     return 0
 
 
+def _bench(argv: list[str]) -> int:
+    """Grade a corpus — config-driven (self-contained) or classical (repo)."""
+    parser = argparse.ArgumentParser(
+        prog="isnad bench", description="Grade a claim corpus through a narrator set."
+    )
+    parser.add_argument(
+        "--config", default=None, help="JSON config: {domain, narrators, claims}"
+    )
+    args = parser.parse_args(argv)
+
+    if args.config:
+        with open(args.config) as f:
+            config = json.load(f)
+        from isnad.bench import run_config
+
+        print(json.dumps(run_config(config), indent=2, ensure_ascii=False))
+        return 0
+
+    print(
+        "Usage:\n"
+        "  isnad bench --config mine.json   # grade YOUR corpus + narrators\n"
+        "\n"
+        "The classical ISNAD-Bench (hadith ground truth) needs the repo checkout\n"
+        "and the hadith-kg.db dataset:\n"
+        "  uv run python -m bench.run\n"
+        "See bench/README.md and bench/docs/RESULTS.md.",
+        file=sys.stderr,
+    )
+    return 1
+
+
 def _verify(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(prog="isnad verify", description="Recompute a record hash.")
     parser.add_argument("--record", required=True, help="path to an AuditRecord JSON")
@@ -249,7 +280,7 @@ def main(argv: list[str] | None = None) -> None:
     """
     args = sys.argv if argv is None else ["isnad", *argv]
     if len(args) < 2:
-        print("Usage: isnad [serve|seed|export|verify|verify-chain|ingest]")
+        print("Usage: isnad [serve|seed|export|verify|verify-chain|ingest|bench]")
         sys.exit(1)
 
     cmd = args[1]
@@ -266,9 +297,11 @@ def main(argv: list[str] | None = None) -> None:
         sys.exit(_verify_chain(rest))
     elif cmd == "ingest":
         sys.exit(_ingest(rest))
+    elif cmd == "bench":
+        sys.exit(_bench(rest))
     else:
         print(f"Unknown command: {cmd}")
-        print("Usage: isnad [serve|seed|export|verify|verify-chain|ingest]")
+        print("Usage: isnad [serve|seed|export|verify|verify-chain|ingest|bench]")
         sys.exit(1)
 
 
