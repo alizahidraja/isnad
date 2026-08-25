@@ -24,6 +24,7 @@ Only stdlib + the ordinal types in ``isnad.types``.
 
 from __future__ import annotations
 
+import contextlib
 import math
 from dataclasses import dataclass
 
@@ -37,6 +38,19 @@ from isnad.types import (
 # ===========================================================================
 # Beta state — the Bayesian policy's per-narrator posterior
 # ===========================================================================
+
+# Seed-grade prior mapping (issue #90). When an operator seeds a narrator via
+# ``register(grade=...)`` followed by a ``BOOTSTRAP_SEED`` evidence marker, the
+# seed is treated as a Beta prior at this mean, with ``_SEED_PRIOR_WEIGHT``
+# pseudo-observations of strength. Without this, a single BOOTSTRAP_SEED marker
+# recomputed from a Beta(1,1) prior and collapsed a RELIABLE seed to WEAK.
+_SEED_PRIOR_MEAN: dict[NarratorGrade, float] = {
+    NarratorGrade.RELIABLE: 0.96,
+    NarratorGrade.ACCEPTABLE: 0.85,
+    NarratorGrade.WEAK: 0.70,
+    NarratorGrade.REJECTED: 0.30,
+}
+_SEED_PRIOR_WEIGHT: float = 10.0
 
 
 @dataclass
@@ -79,17 +93,27 @@ class BetaState:
             self.beta += 1.0
         self.total_evidence += 1
 
-    def to_grade(self) -> NarratorGrade:
-        """Map posterior mean to ordinal grade."""
+    def to_grade(
+        self,
+        reliable_threshold: float = 0.90,
+        acceptable_threshold: float = 0.75,
+        weak_threshold: float = 0.60,
+    ) -> NarratorGrade:
+        """Map posterior mean to ordinal grade.
+
+        Thresholds are reference defaults (issue #91), mapping the posterior
+        mean (≈ 1 − observed error rate for a Beta(1,1) prior) onto the ordinal
+        tiers. The weak/rejected boundary was tightened from 0.50 to 0.60 so
+        REJECTED is reachable at ≈ >40% error, not the old lenient >50%.
+        """
         mu = self.mean
-        if mu >= 0.90:
+        if mu >= reliable_threshold:
             return NarratorGrade.RELIABLE
-        elif mu >= 0.75:
+        if mu >= acceptable_threshold:
             return NarratorGrade.ACCEPTABLE
-        elif mu >= 0.50:
+        if mu >= weak_threshold:
             return NarratorGrade.WEAK
-        else:
-            return NarratorGrade.REJECTED
+        return NarratorGrade.REJECTED
 
 
 # ===========================================================================
@@ -315,9 +339,19 @@ class BayesianTransitionPolicy:
     classical matrūk bias: one proven integrity impugnment caps immediately.
     """
 
-    def __init__(self, integrity_strikes_per_tier: int = 1):
+    def __init__(
+        self,
+        integrity_strikes_per_tier: int = 1,
+        *,
+        reliable_threshold: float = 0.90,
+        acceptable_threshold: float = 0.75,
+        weak_threshold: float = 0.60,
+    ):
         self._states: dict[tuple[str, str], BetaState] = {}
         self.integrity_strikes_per_tier = integrity_strikes_per_tier
+        self.reliable_threshold = reliable_threshold
+        self.acceptable_threshold = acceptable_threshold
+        self.weak_threshold = weak_threshold
 
     def get_state(self, narrator_id: str, domain: str) -> BetaState:
         key = (narrator_id, domain)
@@ -391,10 +425,26 @@ class BayesianTransitionPolicy:
         integrity_jarh = sum(1 for e in all_evidence if _is_integrity_jarh(e))
         integrity_cap = _integrity_cap(integrity_jarh, self.integrity_strikes_per_tier)
 
+        # Issue #90: an operator-assigned seed (register(grade=...) followed by a
+        # BOOTSTRAP_SEED marker) must survive as a prior, not collapse to WEAK on
+        # the first recompute. The seed grade rides in the BOOTSTRAP_SEED evidence
+        # metadata; here it seeds the Beta prior with _SEED_PRIOR_WEIGHT
+        # pseudo-observations. Real observations then update it (a seeded RELIABLE
+        # narrator caught by a JARH still falls).
+        seed_grade: NarratorGrade | None = None
+        for e in all_evidence:
+            if str(e.get("evidence_type", "")) == EvidenceType.BOOTSTRAP_SEED.value:
+                meta = e.get("metadata", {}) or {}
+                raw = meta.get("__seed_grade__")
+                if raw:
+                    with contextlib.suppress(ValueError):
+                        seed_grade = NarratorGrade(str(raw))
+
         positive = sum(
             1
             for e in all_evidence
             if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.TADIL
+            and str(e.get("evidence_type", "")) != EvidenceType.BOOTSTRAP_SEED.value
         )
         precision_adverse = sum(
             1
@@ -402,12 +452,29 @@ class BayesianTransitionPolicy:
             if EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
             and EvidenceAxis(str(e.get("axis", EvidenceAxis.UNSPECIFIED.value)))
             == EvidenceAxis.PRECISION
+            and str(e.get("evidence_type", "")) != EvidenceType.BOOTSTRAP_SEED.value
         )
 
-        state = BetaState(alpha=float(positive + 1), beta=float(precision_adverse + 1))
+        prior_alpha = prior_beta = 1.0
+        if seed_grade in _SEED_PRIOR_MEAN:
+            m = _SEED_PRIOR_MEAN[seed_grade]
+            prior_alpha = m * _SEED_PRIOR_WEIGHT
+            prior_beta = (1.0 - m) * _SEED_PRIOR_WEIGHT
+
+        state = BetaState(
+            alpha=prior_alpha + float(positive),
+            beta=prior_beta + float(precision_adverse),
+        )
         state.total_evidence = positive + precision_adverse
 
-        return _clamp_to_cap(state.to_grade(), integrity_cap)
+        return _clamp_to_cap(
+            state.to_grade(
+                reliable_threshold=self.reliable_threshold,
+                acceptable_threshold=self.acceptable_threshold,
+                weak_threshold=self.weak_threshold,
+            ),
+            integrity_cap,
+        )
 
 
 class CalibratedThresholdPolicy:

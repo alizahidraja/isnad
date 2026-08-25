@@ -185,16 +185,28 @@ for i in range(20):
     grades_seen.append(g)
 
 final = reg_osc.get_grade("pingpong", "physics")
-# #40: REJECTED reached by *precision* evidence is recoverable.  These jarḥ
-# are POST_HOC_AUDIT → PRECISION, so the narrator oscillates and settles at
-# WEAK — it is NOT stuck at REJECTED.  Only an *integrity*-driven REJECTED
-# (quarantine → COMPROMISED) is sticky; that path is pinned elsewhere.
+# #91: 10 jarḥ vs 10 taʿdīl (50% error) → posterior mean 0.5, which under the
+# tightened weak/rejected boundary (0.60) now settles at REJECTED — correctly,
+# a narrator wrong half the time is quarantined. It is NOT stuck there, though:
+# precision REJECTED is recoverable (#40), asserted right below.
 check(
-    "Precision ping-pong recovers (REJECTED not sticky for precision)",
-    final != NarratorGrade.REJECTED,
+    "Precision ping-pong settles at REJECTED (50% error), no crash",
+    final == NarratorGrade.REJECTED and len(grades_seen) == 20,
     f"got {final.value}",
 )
-check("No crash during 20 rapid transitions", len(grades_seen) == 20)
+
+# #40: precision-driven REJECTED is recoverable — a sustained taʿdīl streak
+# lifts it back above the REJECTED band (only integrity REJECTED is sticky).
+for i in range(10):
+    reg_osc.record_evidence(
+        "pingpong", "physics", EvidenceType.POST_HOC_AUDIT, EvidenceAction.TADIL, f"recover {i}"
+    )
+recovered = reg_osc.get_grade("pingpong", "physics")
+check(
+    "Precision REJECTED recovers on sustained taʿdīl (not sticky)",
+    recovered != NarratorGrade.REJECTED,
+    f"got {recovered.value}",
+)
 
 
 # ===================================================================
