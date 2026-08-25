@@ -358,24 +358,24 @@ class TestRegisterSealedSource:
 
 
 class TestAuthorityFields:
-    def test_no_metadata_is_self_verified(self):
+    def test_no_metadata(self):
         from isnad.integrations.liveverify.client import _authority_fields
 
-        assert _authority_fields(None) == (None, None, True)
+        assert _authority_fields(None) == (None, None)
 
-    def test_authorized_by_marks_endorsed(self):
+    def test_extracts_authorized_by_and_basis(self):
         from isnad.integrations.liveverify.client import _authority_fields
 
-        ab, basis, sv = _authority_fields({"authorizedBy": "gov.uk/v1", "authorityBasis": "gov"})
+        ab, basis = _authority_fields({"authorizedBy": "gov.uk/v1", "authorityBasis": "gov"})
         assert ab == "gov.uk/v1"
         assert basis == "gov"
-        assert sv is False
 
-    def test_no_authorized_by_is_self_verified(self):
+    def test_no_authorized_by(self):
         from isnad.integrations.liveverify.client import _authority_fields
 
-        _, _, sv = _authority_fields({"authorityBasis": "self-described"})
-        assert sv is True
+        ab, basis = _authority_fields({"authorityBasis": "self-described"})
+        assert ab is None
+        assert basis == "self-described"
 
 
 class TestRemainingEdgePaths:

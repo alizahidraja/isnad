@@ -27,8 +27,11 @@ from isnad.integrations.liveverify.adapter import (
     seal_to_narrator,
 )
 from isnad.integrations.liveverify.client import (
+    AuthorityChain,
+    AuthorityChainEntry,
     VerificationResult,
     verify_claim,
+    walk_authority_chain,
 )
 from isnad.integrations.liveverify.issuer import (
     SealedVerdict,
@@ -41,6 +44,8 @@ from isnad.integrations.liveverify.issuer import (
 from isnad.integrations.liveverify.normalize import normalize_text, sha256_hex
 
 __all__ = [
+    "AuthorityChain",
+    "AuthorityChainEntry",
     "SealedSource",
     "SealedVerdict",
     "VerificationResult",
@@ -52,6 +57,7 @@ __all__ = [
     "seal_verdict",
     "sha256_hex",
     "verify_claim",
+    "walk_authority_chain",
     "write_issuer_files",
     "write_verification_meta",
 ]

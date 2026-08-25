@@ -56,9 +56,11 @@ class VerificationResult:
       integrity — the domain confirming the claim is the domain making it
       (Live Verify renders this amber, not green).
 
-    NOTE: we do not yet walk the full authority chain to a sovereign root.
-    Presence of an independent ``authorizedBy`` endorser is the signal used
-    here.  A deeper walk (endorser → ... → root) is a future refinement.
+    NOTE: the authority chain is now *walked* (issuer → endorser(s) → root)
+    via ``walk_authority_chain``; ``self_verified`` is True only when that walk
+    fails to confirm a real authority.  A self-declared ``authorizedBy`` that
+    does not resolve to an authority file is treated as self-verified (amber),
+    never endorsed (green).
     """
 
     verified: bool
@@ -69,6 +71,87 @@ class VerificationResult:
     authorized_by: str | None = None
     authority_basis: str | None = None
     self_verified: bool = True
+    authority_chain: AuthorityChain | None = None
+
+
+@dataclass
+class AuthorityChainEntry:
+    """One level of the walked authority chain."""
+
+    domain: str
+    issuer: str | None
+    role: str | None
+
+
+@dataclass
+class AuthorityChain:
+    """The result of walking an issuer's ``authorizedBy`` up toward a root.
+
+    ``confirmed`` is True only when the chain resolves to at least one real
+    authority (``role`` is ``endorser`` or ``root-authority``).  An
+    ``authorizedBy`` that does not resolve to an authority file — or that 404s
+    — is a *self-attested* claim, not an endorsement.  This is the gap issue
+    #37 closes: presence of ``authorizedBy`` is no longer treated as proof.
+    """
+
+    entries: list[AuthorityChainEntry]
+    reached_root: bool
+    confirmed: bool
+    error: str | None = None
+
+
+def walk_authority_chain(
+    authorized_by: str | None,
+    *,
+    max_depth: int = 3,
+    timeout: float = 10.0,
+    fetch_meta=None,
+) -> AuthorityChain:
+    """Walk an issuer's ``authorizedBy`` up toward a sovereign root.
+
+    Fetches each authority's ``verification-meta.json`` and checks its ``role``
+    (``endorser`` or ``root-authority``).  Recurses on the endorser's own
+    ``authorizedBy`` until a root is reached, the chain ends, or a failure is
+    hit (bounded by ``max_depth`` and cycle detection).
+
+    Honest semantics:
+    - ``confirmed=True`` → the ``authorizedBy`` actually resolves to a real
+      authority; the endorsement is not merely self-declared.
+    - ``confirmed=False`` → the ``authorizedBy`` could not be confirmed (no
+      ``authorizedBy``, non-authority target, or fetch failure) — treat as
+      self-verified (amber), never green.
+    """
+    fetch_meta = fetch_meta or fetch_verification_meta
+    entries: list[AuthorityChainEntry] = []
+    if not authorized_by:
+        return AuthorityChain(entries, reached_root=False, confirmed=False, error="no authorizedBy")
+    current = authorized_by
+    seen: set[str] = set()
+    for _ in range(max_depth):
+        if current in seen:
+            return AuthorityChain(
+                entries, reached_root=False, confirmed=bool(entries), error="cycle"
+            )
+        seen.add(current)
+        meta = fetch_meta(current, timeout=timeout)
+        if meta is None:
+            return AuthorityChain(
+                entries, reached_root=False, confirmed=False, error=f"unreachable: {current}"
+            )
+        role = meta.get("role")
+        if role not in ("endorser", "root-authority"):
+            return AuthorityChain(
+                entries, reached_root=False, confirmed=False, error=f"not an authority: {current}"
+            )
+        entries.append(AuthorityChainEntry(extract_domain(current), meta.get("issuer"), role))
+        if role == "root-authority":
+            return AuthorityChain(entries, reached_root=True, confirmed=True)
+        current = meta.get("authorizedBy")
+        if not current:
+            return AuthorityChain(
+                entries, reached_root=False, confirmed=True, error="endorser has no parent"
+            )
+    return AuthorityChain(entries, reached_root=False, confirmed=True, error="max depth reached")
 
 
 # ---------------------------------------------------------------------------
@@ -179,26 +262,16 @@ def fetch_verification_meta(base_url: str, timeout: float = 10.0) -> dict | None
     return None
 
 
-def _authority_fields(metadata: dict | None) -> tuple[str | None, str | None, bool]:
-    """Extract authority-chain fields from verification-meta.json.
+def _authority_fields(metadata: dict | None) -> tuple[str | None, str | None]:
+    """Extract the issuer's declared authority fields from verification-meta.json.
 
-    Returns (authorized_by, authority_basis, self_verified).
-
-    ``authorized_by`` is the issuer's declared ``authorizedBy`` endorser (or
-    None).  ``authority_basis`` is the issuer's one-line self-description (or
-    None).  ``self_verified`` is True when there is no independent
-    ``authorizedBy`` endorser — absence of a chain is NOT evidence of one.
-
-    We do not walk the full chain to a sovereign root here; presence of an
-    independent endorser is the signal for this pass.  See
-    VerificationResult for the limitation note.
+    Returns (authorized_by, authority_basis).  ``authorized_by`` is the
+    issuer's *self-declared* endorser (or None) — it is NOT evidence of an
+    endorsement; ``walk_authority_chain`` determines that.
     """
     if not metadata:
-        return None, None, True
-    authorized_by = metadata.get("authorizedBy")
-    authority_basis = metadata.get("authorityBasis")
-    self_verified = not bool(authorized_by)
-    return authorized_by, authority_basis, self_verified
+        return None, None
+    return metadata.get("authorizedBy"), metadata.get("authorityBasis")
 
 
 def verify_claim(
@@ -206,6 +279,7 @@ def verify_claim(
     *,
     metadata: dict | None = None,
     timeout: float = 10.0,
+    fetch_meta=None,
 ) -> VerificationResult:
     """Verify a claim's text against its issuer endpoint.
 
@@ -217,9 +291,13 @@ def verify_claim(
         raw_text: The claim text INCLUDING the verify:/vfy: line.
         metadata: Optional verification-meta.json (or None to auto-fetch).
         timeout: HTTP timeout in seconds.
+        fetch_meta: Injectable meta-fetcher for the authority-chain walk
+            (defaults to ``fetch_verification_meta``). Tests inject a stub here.
 
     Returns:
-        A VerificationResult.  `verified` is the machine-readable verdict.
+        A VerificationResult.  `verified` is the machine-readable verdict;
+        ``self_verified`` is True only when the authority chain fails to
+        confirm a real endorser.
     """
     base_url, url_index = extract_verification_url(raw_text)
     if base_url is None:
@@ -241,6 +319,12 @@ def verify_claim(
     # Fetch meta if not supplied (for document-specific normalization).
     if metadata is None:
         metadata = fetch_verification_meta(base_url, timeout=timeout)
+
+    # Authority chain (issue #37): a self-declared ``authorizedBy`` is NOT
+    # endorsement — the chain must actually resolve to a real authority.
+    authorized_by, authority_basis = _authority_fields(metadata)
+    authority_chain = walk_authority_chain(authorized_by, timeout=timeout, fetch_meta=fetch_meta)
+    self_verified = not authority_chain.confirmed
 
     normalized = normalize_text(cert_text, metadata)
     hash_ = sha256_hex(normalized)
@@ -283,7 +367,6 @@ def verify_claim(
 
     if payload and "status" in payload:
         status = str(payload["status"]).upper()
-        authorized_by, authority_basis, self_verified = _authority_fields(metadata)
         if status == "VERIFIED":
             return VerificationResult(
                 verified=True,
@@ -293,6 +376,7 @@ def verify_claim(
                 authorized_by=authorized_by,
                 authority_basis=authority_basis,
                 self_verified=self_verified,
+                authority_chain=authority_chain,
             )
         # Custom affirming statuses from metadata responseTypes.
         if metadata and "responseTypes" in metadata:
@@ -306,6 +390,7 @@ def verify_claim(
                     authorized_by=authorized_by,
                     authority_basis=authority_basis,
                     self_verified=self_verified,
+                    authority_chain=authority_chain,
                 )
         return VerificationResult(
             verified=False,
@@ -315,6 +400,7 @@ def verify_claim(
             authorized_by=authorized_by,
             authority_basis=authority_basis,
             self_verified=self_verified,
+            authority_chain=authority_chain,
         )
 
     # No JSON status — not verified.
