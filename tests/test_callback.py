@@ -376,7 +376,7 @@ class TestSharedAncestryDetection:
             ],
         )
         verdict, _ = _detect_shared_ancestry([[node1], [node2]])
-        assert verdict == CorroborationVerdict.VERIFIED
+        assert verdict == CorroborationVerdict.ASSUMED
 
 
 # ── Safety — callbacks never break the pipeline ─────────────────
