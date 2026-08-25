@@ -96,9 +96,10 @@ a third party can run it on their own data without adopting the library.
 
 # AI usage disclosure
 
-Generative AI assistance was used during the development of this software and in
-the drafting of this paper, including code generation and documentation.
-Drafting and review of the final text were performed with human oversight.
+Generative AI assistance was used during the development of this software and
+in the drafting of this paper — primarily Anthropic Claude and DeepSeek — for
+code generation, documentation, and benchmark analysis. Drafting and review of
+the final text were performed with human oversight.
 
 # Acknowledgements
 
