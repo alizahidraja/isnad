@@ -61,21 +61,24 @@ It does **not** prove the underlying claim is **true**.  And whether it anchors
 
 | Case | ʿadālah | grade | origin |
 |------|---------|-------|--------|
-| `verified` **with** independent `authorizedBy` endorser | **HIGH** | **RELIABLE** | verified-attested |
+| `verified` with a **verified** endorser | **HIGH** | **RELIABLE** | verified-attested |
+| `verified` with a **claimed-but-unverified** `authorizedBy` | **UNASSESSED** | **ACCEPTABLE** | attested-unverified-endorser |
 | `verified` **self-verified** (no endorser) | **UNASSESSED** | **UNGRADED** | self-attested |
 
 Classical rijāl is explicit that declaring a narrator reliable (tazkiyah)
 must come from an *independent* critic — self-testimony establishes nothing.
-Live Verify encodes the same rule as **amber vs green**: a self-verified seal
-proves tamper-evidence and origin, not integrity.  The domain confirming the
-claim is the domain making it.  So ISNAD seeds integrity **only** for an
-independently-endorsed seal; a self-verified seal is a strong *origin* signal
-and nothing more.
+The same rule applies to an endorsement that has only been **claimed**: an
+`authorizedBy` value is a one-directional pointer the issuer writes about
+itself, cryptographically unbound until someone checks the endorser's hash
+commitment (issue #37).  So ISNAD seeds integrity **only** for a *verified*
+endorsement.  A claimed-but-unverified endorser, like a self-verified seal, is
+a strong *origin* signal and nothing more — its `authorizedBy` does not
+elevate trust until it is actually verified.
 
-| ISNAD axis | What an *endorsed* seal provides | What it does NOT provide |
+| ISNAD axis | What a *verified-endorsed* seal provides | What it does NOT provide |
 |------------|------------------------|-------------------------------|
-| ʿadālah (integrity) | **HIGH** — cryptographically anchored AND independently endorsed | — |
-| origin strength | **verified-attested** — issuer domain + endorser | — |
+| ʿadālah (integrity) | **HIGH** — cryptographically anchored AND an endorsement that was *verified* | — |
+| origin strength | **verified-attested** — issuer domain + verified endorser | — |
 | ḍabṭ (precision) | — | **UNASSESSED** — a genuine document can still be factually wrong |
 | matn (content) | — | **unchanged** — the content critic must still judge truth |
 
@@ -121,7 +124,8 @@ See `examples/issuer_demo/` for an end-to-end run.
 
 | Live Verify status | ʿadālah | NarratorGrade | origin |
 |-------------------|---------|---------------|--------|
-| `verified` **endorsed** | HIGH | RELIABLE | verified-attested |
+| `verified` **verified-endorsed** | HIGH | RELIABLE | verified-attested |
+| `verified` **claimed endorser (unverified)** | UNASSESSED | ACCEPTABLE | attested-unverified-endorser |
 | `verified` **self-verified** | UNASSESSED | UNGRADED | self-attested |
 | `revoked` / `suspended` | COMPROMISED | REJECTED | compromised |
 | `expired` / `superseded` / `lapsed` | ACCEPTABLE | ACCEPTABLE | attested |

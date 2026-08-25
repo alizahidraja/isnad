@@ -251,6 +251,32 @@ def test_verify_claim_domain_comes_from_verify_line_not_host(mock_issuer):
     assert result.domain == mock_issuer
 
 
+def test_end_to_end_claimed_endorser_yields_ungraded(mock_issuer):
+    """Production path (issue #37): a real fetched seal whose meta declares an
+    authorizedBy endorser must NOT bootstrap RELIABLE.
+
+    Exercises the full composition verify_claim → _authority_fields →
+    VerificationResult → seal_to_narrator, not a hand-built struct. The meta
+    carries a self-declared authorizedBy; nothing verifies it, so
+    endorsement_verified stays False and the narrator lands UNGRADED.
+    """
+    base = f"verify:{mock_issuer}/verified"
+    # Meta the issuer serves about itself — declares an endorser it wrote itself.
+    metadata = {"authorizedBy": "gov.uk/v1", "authorityBasis": "self-declared"}
+    result = verify_claim(_claim_with(base), metadata=metadata)
+
+    assert result.verified is True
+    assert result.authorized_by == "gov.uk/v1"
+    assert result.self_verified is False
+    # The construction site leaves endorsement_verified at its default.
+    assert result.endorsement_verified is False
+
+    sealed = seal_to_narrator(result)
+    assert sealed.grade == NarratorGrade.UNGRADED
+    assert sealed.adalah == AdalahGrade.UNASSESSED
+    assert sealed.origin_strength == "attested-unverified-endorser"
+
+
 # ---------------------------------------------------------------------------
 # 4. Adapter — mapping verification onto ISNAD's two trust axes
 # ---------------------------------------------------------------------------
@@ -276,9 +302,26 @@ def _endorsed_result(domain: str = "degrees.ed.ac.uk") -> VerificationResult:
 
 
 class TestSealToNarrator:
-    def test_endorsed_seal_bootstraps_reliable_with_high_integrity(self):
-        """An INDEPENDENTLY-ENDORSED seal anchors integrity (tazkiyah satisfied)."""
-        sealed = seal_to_narrator(_endorsed_result())
+    def test_claimed_but_unverified_endorser_does_not_seed_reliable(self):
+        """Issue #37: a self-declared authorizedBy is NOT a verified endorsement.
+
+        `authorizedBy` is a one-directional pointer the issuer writes about
+        itself. Until the endorsement is actually verified (the endorser's hash
+        commitment checked, or its endpoint walked), its mere presence must not
+        mint RELIABLE + integrity HIGH — that is unverified tazkiyah. It renders
+        as a caveated tier: authentic origin, integrity NOT anchored.
+        """
+        sealed = seal_to_narrator(_endorsed_result())  # authorized_by set, not verified
+        # Parity with self-verified: an unverified endorsement buys no grade tier.
+        assert sealed.grade == NarratorGrade.UNGRADED
+        assert sealed.adalah == AdalahGrade.UNASSESSED
+        assert sealed.origin_strength == "attested-unverified-endorser"
+
+    def test_verified_endorser_still_bootstraps_reliable(self):
+        """When the endorsement IS verified, integrity is anchored as before."""
+        result = _endorsed_result()
+        result.endorsement_verified = True
+        sealed = seal_to_narrator(result)
         assert sealed.grade == NarratorGrade.RELIABLE
         assert sealed.adalah == AdalahGrade.HIGH
         assert sealed.origin_strength == "verified-attested"
@@ -329,7 +372,19 @@ class TestSealToNarrator:
 class TestRegisterSealedSource:
     def test_registers_and_lookupable(self):
         reg = Registry()
+        # Claimed-but-unverified endorser → UNGRADED, integrity not seeded (#37).
         sealed = register_sealed_source(reg, _endorsed_result(), domain="physics")
+        narrator = reg.get(sealed.narrator_id, "physics")
+        assert narrator is not None
+        assert narrator.grade == NarratorGrade.UNGRADED
+        assert narrator.adalah_grade == AdalahGrade.UNASSESSED
+        assert narrator.dabt_grade == DabtGrade.UNASSESSED
+
+    def test_verified_endorser_registers_reliable(self):
+        reg = Registry()
+        result = _endorsed_result()
+        result.endorsement_verified = True
+        sealed = register_sealed_source(reg, result, domain="physics")
         narrator = reg.get(sealed.narrator_id, "physics")
         assert narrator is not None
         assert narrator.grade == NarratorGrade.RELIABLE

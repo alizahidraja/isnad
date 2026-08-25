@@ -55,10 +55,20 @@ class VerificationResult:
       present.  A self-verified seal proves tamper-evidence and origin, NOT
       integrity — the domain confirming the claim is the domain making it
       (Live Verify renders this amber, not green).
+    - `endorsement_verified` — True only when a declared ``authorizedBy``
+      endorsement has actually been *checked* (the endorser's hash commitment
+      confirmed, or its endpoint walked to a root). Presence of ``authorized_by``
+      alone does NOT set this: it is a one-directional pointer the issuer writes
+      about itself, cryptographically unbound until verified (issue #37). No
+      verification path exists yet, so this stays False; a claimed-but-unchecked
+      endorser must not seed integrity.
 
-    NOTE: we do not yet walk the full authority chain to a sovereign root.
-    Presence of an independent ``authorizedBy`` endorser is the signal used
-    here.  A deeper walk (endorser → ... → root) is a future refinement.
+    NOTE: we do not yet walk the full authority chain to a sovereign root, nor
+    check the endorser's hash commitment. The Live Verify spec's own chain walk
+    is display-only (fetch, show ``description``, recurse on ``authorizedBy``) —
+    it does not verify the endorsement, so implementing it as-is would not set
+    ``endorsement_verified``. A real check requires confirming the endorser's
+    hash of the issuer's meta; its wire format is not yet specified here.
     """
 
     verified: bool
@@ -69,6 +79,7 @@ class VerificationResult:
     authorized_by: str | None = None
     authority_basis: str | None = None
     self_verified: bool = True
+    endorsement_verified: bool = False
 
 
 # ---------------------------------------------------------------------------
@@ -189,9 +200,11 @@ def _authority_fields(metadata: dict | None) -> tuple[str | None, str | None, bo
     None).  ``self_verified`` is True when there is no independent
     ``authorizedBy`` endorser — absence of a chain is NOT evidence of one.
 
-    We do not walk the full chain to a sovereign root here; presence of an
-    independent endorser is the signal for this pass.  See
-    VerificationResult for the limitation note.
+    Presence of ``authorized_by`` means an endorser was *claimed*, NOT verified:
+    it is a one-directional self-declaration, cryptographically unbound until
+    checked (issue #37).  This function does not verify it, so it never sets
+    ``endorsement_verified`` — that stays False until a real endorsement check
+    (hash commitment / walked chain) is implemented.  See VerificationResult.
     """
     if not metadata:
         return None, None, True

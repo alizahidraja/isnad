@@ -67,16 +67,26 @@ def seal_to_narrator(result: VerificationResult) -> SealedSource:
     confirming the claim is the domain making it.  Live Verify renders it
     amber, not green.
 
-    So the mapping splits:
+    So the mapping splits by whether an endorsement is *verified*, not merely
+    *claimed* (issue #37):
 
-    - ``VERIFIED`` **with** an independent endorser → ʿadālah HIGH,
-      grade RELIABLE, origin ``verified-attested``.  Integrity IS seeded.
+    - ``VERIFIED`` **with a verified endorser** → ʿadālah HIGH, grade RELIABLE,
+      origin ``verified-attested``.  Integrity IS seeded — an independent critic
+      has actually vouched (tazkiyah satisfied).
+    - ``VERIFIED`` **with a claimed-but-unverified endorser** → ʿadālah
+      UNASSESSED, grade UNGRADED, origin ``attested-unverified-endorser``.
+      The seal is authentic (tamper-evident, origin-attested), but its
+      ``authorizedBy`` is a self-declared pointer no one has checked. It is
+      treated at parity with a self-verified seal: an unverified endorsement is
+      no endorsement, so it earns no grade tier over one — unverified tazkiyah
+      establishes nothing. (The distinct ``origin_strength`` still records that
+      an endorser was *claimed*, for diagnostics.)
     - ``VERIFIED`` **self-verified** → ʿadālah UNASSESSED, grade UNGRADED,
       origin ``self-attested``.  Integrity is NOT seeded — a self-verified
       seal is a strong *origin* signal and nothing more.
 
-    Honest limit: even an endorsed seal anchors ʿadālah and origin, but sets
-    ḍabṭ (precision) to UNASSESSED and leaves content to the matn critic.
+    Honest limit: even a verified-endorsed seal anchors ʿadālah and origin, but
+    sets ḍabṭ (precision) to UNASSESSED and leaves content to the matn critic.
     A verified document can still be a genuine, domain-attested lie.
     """
     domain = result.domain
@@ -85,11 +95,18 @@ def seal_to_narrator(result: VerificationResult) -> SealedSource:
 
     origin_strength = "unknown"
 
-    # Verified with an independent endorser: integrity IS anchored.
-    if result.verified and not result.self_verified:
+    # Verified with a *verified* endorser: integrity IS anchored.
+    if result.verified and not result.self_verified and result.endorsement_verified:
         grade = NarratorGrade.RELIABLE
         adalah = AdalahGrade.HIGH
         origin_strength = "verified-attested"
+    # Verified with a *claimed-but-unverified* endorser: authentic origin, but
+    # the endorsement is unchecked → parity with self-verified, no tier bought
+    # (issue #37). The origin string still records that an endorser was claimed.
+    elif result.verified and not result.self_verified:
+        grade = NarratorGrade.UNGRADED
+        adalah = AdalahGrade.UNASSESSED
+        origin_strength = "attested-unverified-endorser"
     # Verified but self-verified: tamper-evidence + origin only.  No integrity.
     elif result.verified:
         grade = NarratorGrade.UNGRADED
