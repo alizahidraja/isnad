@@ -36,7 +36,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: uv sync --all-extras
+        # Install the dev group + langchain-core only. The nli/llm extras pull
+        # sentence-transformers/torch (~2GB) and are excluded from the default
+        # run (`-m "not nli and not llm"`), so installing them wastes time and
+        # slows test collection with an eager torch import.
+        run: uv sync --extra langchain
 
       - name: Migrate (Postgres)
         env:

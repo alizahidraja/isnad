@@ -24,13 +24,25 @@ from isnad.types import ContentVerdict
 
 _SENTENCE_TRANSFORMERS_AVAILABLE = False
 _CrossEncoder: Any = None
-try:
-    from sentence_transformers import CrossEncoder as _CrossEncoderImpl  # noqa: F811
 
-    _CrossEncoder = _CrossEncoderImpl
-    _SENTENCE_TRANSFORMERS_AVAILABLE = True
-except ImportError:
-    pass
+
+def _ensure_sentence_transformers() -> bool:
+    """Lazily import sentence_transformers; True when available.
+
+    Deferred so importing this module (and therefore ``isnad.api``) stays cheap:
+    sentence_transformers pulls in torch (~2GB), which otherwise dominates test
+    collection and import time even when the NLI critic is never used.
+    """
+    global _SENTENCE_TRANSFORMERS_AVAILABLE, _CrossEncoder
+    if _CrossEncoder is None:
+        try:
+            from sentence_transformers import CrossEncoder
+
+            _CrossEncoder = CrossEncoder
+            _SENTENCE_TRANSFORMERS_AVAILABLE = True
+        except ImportError:
+            _SENTENCE_TRANSFORMERS_AVAILABLE = False
+    return _SENTENCE_TRANSFORMERS_AVAILABLE
 
 
 class LocalNLICritic:
@@ -79,7 +91,7 @@ class LocalNLICritic:
         if self._model is not None:
             return self._model
 
-        if not _SENTENCE_TRANSFORMERS_AVAILABLE:
+        if not _ensure_sentence_transformers():
             return None
 
         try:
@@ -183,7 +195,7 @@ class HybridCritic:
     def _load_embed_model(self) -> Any:
         if self._embed_model is not None:
             return self._embed_model
-        if not _SENTENCE_TRANSFORMERS_AVAILABLE:
+        if not _ensure_sentence_transformers():
             return None
         try:
             from sentence_transformers import SentenceTransformer
