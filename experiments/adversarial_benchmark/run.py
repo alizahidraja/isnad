@@ -298,10 +298,23 @@ def main() -> None:
     good_rate = g["tn"] / max(1, g["tn"] + g["fp"])
     print(f"  {'good (served vs flagged)':24} {g['tn']:>7} {g['fp']:>7} {good_rate:>7.0%}")
 
-    print("\nsummary:")
-    print(f"  bad-claim recall (fraction of corruptions caught): {recall:.0%}")
-    print(f"  false-positive rate (good claims flagged):        {fpr:.0%}")
-    print(f"  overall accuracy:                                 {(tp + tn) / len(cases):.0%}")
+    print("\nsummary — split by mechanism (the honest headline):")
+    nar_caught = by_kind["weak-narrator"]["tp"]
+    nar_total = by_kind["weak-narrator"]["tp"] + by_kind["weak-narrator"]["fn"]
+    crit_kinds = ("pattern-contradiction", "semantic-contradiction")
+    crit_caught = sum(by_kind[k]["tp"] for k in crit_kinds)
+    crit_total = sum(by_kind[k]["tp"] + by_kind[k]["fn"] for k in crit_kinds)
+    nar_rate = f"{nar_caught / max(1, nar_total):.0%}"
+    crit_rate = f"{crit_caught / max(1, crit_total):.0%}"
+    print(f"  narrator grading:   {nar_caught}/{nar_total} = {nar_rate}  (weak-narrator)")
+    print(f"  content criticism:  {crit_caught}/{crit_total} = {crit_rate}  (contradictions)")
+    acc = f"{(tp + tn) / len(cases):.0%}"
+    print(f"  overall:            {recall:.0%} recall, {fpr:.0%} FPR, {acc} accuracy")
+
+    print("\nbaselines (same corpus, for comparison):")
+    print(f"  {'no-gating (serve everything)':38} recall 0%   FPR 0%")
+    print(f"  {'confidence-gating':38} ≈ random — self-reported confidence is noise (§8)")
+    print(f"  {'LLM-judge':38} run with --semantic (needs an API key)")
 
     print("\n" + "-" * 70)
     print("HONEST LIMITS (the point of the benchmark):")
