@@ -24,6 +24,7 @@ Only stdlib + the ordinal types in ``isnad.types``.
 
 from __future__ import annotations
 
+import contextlib
 import math
 from dataclasses import dataclass
 
@@ -436,10 +437,8 @@ class BayesianTransitionPolicy:
                 meta = e.get("metadata", {}) or {}
                 raw = meta.get("__seed_grade__")
                 if raw:
-                    try:
+                    with contextlib.suppress(ValueError):
                         seed_grade = NarratorGrade(str(raw))
-                    except ValueError:
-                        pass
 
         positive = sum(
             1
