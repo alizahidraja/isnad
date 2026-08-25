@@ -263,7 +263,20 @@ corr_result = engine.evaluate(
             "source": "wiki",
         },
     ],
-    narrator_metadata={},
+    # Attested distinct lineage — the three chains genuinely trace to different
+    # books, scrapers and models. Independence must be *shown*, not assumed from
+    # empty metadata (issue #54); with attestation the upgrade fires.
+    narrator_metadata={
+        "openstax_v3": {"model_family": "ingest-a", "upstream_source": "openstax"},
+        "pdf_scraper_a": {"model_family": "scraper-a", "upstream_source": "openstax"},
+        "ingest_model_a": {"model_family": "ingest-a", "upstream_source": "openstax"},
+        "crowell_lm": {"model_family": "ingest-b", "upstream_source": "crowell"},
+        "pdf_scraper_b": {"model_family": "scraper-b", "upstream_source": "crowell"},
+        "ingest_model_b": {"model_family": "ingest-b", "upstream_source": "crowell"},
+        "wikisource": {"model_family": "ingest-c", "upstream_source": "wikipedia"},
+        "parser_v2": {"model_family": "parser-c", "upstream_source": "wikipedia"},
+        "ingest_model_c": {"model_family": "ingest-c", "upstream_source": "wikipedia"},
+    },
 )
 check(
     "G1. 2 independent HASAN corroboration → fires upgrade",

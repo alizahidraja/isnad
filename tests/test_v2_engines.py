@@ -191,16 +191,33 @@ class TestCorroborationEngine:
             {"claim_text": "E=mc^2", "chain_grade": "hasan", "narrator_ids": ["n3", "n4"]},
             {"claim_text": "E=mc^2", "chain_grade": "hasan", "narrator_ids": ["n5", "n6"]},
         ]
-        result = engine.evaluate("E=mc^2", ChainGrade.DAIF, ["n1", "n2"], chains)
+        # Attested distinct lineage → demonstrable independence (issue #54).
+        metadata = {
+            n: {"model_family": f"f{n}", "upstream_source": f"s{n}"}
+            for n in ["n1", "n2", "n3", "n4", "n5", "n6"]
+        }
+        result = engine.evaluate(
+            "E=mc^2", ChainGrade.DAIF, ["n1", "n2"], chains, narrator_metadata=metadata
+        )
         assert result.upgraded
         assert result.upgraded_grade == ChainGrade.HASAN
+
+    # Attested distinct lineage so chains clear the independence check (issue
+    # #54) and these tests isolate the gate / weight logic they actually target.
+    _LINEAGE = {
+        "n1": {"model_family": "f1", "upstream_source": "s1"},
+        "n3": {"model_family": "f3", "upstream_source": "s3"},
+        "n4": {"model_family": "f4", "upstream_source": "s4"},
+    }
 
     def test_min_grade_gate_blocks_weak(self):
         engine = CorroborationEngine(min_independent_chains=1, min_gate_grade=ChainGrade.HASAN)
         chains = [
             {"claim_text": "x", "chain_grade": "daif", "narrator_ids": ["n3"]},
         ]
-        result = engine.evaluate("x", ChainGrade.DAIF, ["n1"], chains)
+        result = engine.evaluate(
+            "x", ChainGrade.DAIF, ["n1"], chains, narrator_metadata=self._LINEAGE
+        )
         assert not result.upgraded
         assert "min grade" in result.reason.lower()
 
@@ -210,6 +227,8 @@ class TestCorroborationEngine:
             {"claim_text": "p=mv", "chain_grade": "hasan", "narrator_ids": ["n3"]},
             {"claim_text": "p=mv", "chain_grade": "hasan", "narrator_ids": ["n4"]},
         ]
-        result = engine.evaluate("p=mv", ChainGrade.DAIF, ["n1"], chains)
+        result = engine.evaluate(
+            "p=mv", ChainGrade.DAIF, ["n1"], chains, narrator_metadata=self._LINEAGE
+        )
         assert result.effective_weight > 0
         assert result.upgraded

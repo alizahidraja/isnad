@@ -204,6 +204,12 @@ print(SEP)
 
 engine = CorroborationEngine(correlation_detector=SharedLineageDetector())
 
+# Attested distinct lineage per narrator so independence is *demonstrable*
+# (issue #54): the 10 corroborating chains genuinely trace to different sources.
+edge4_metadata: dict[str, dict[str, object]] = {
+    "base_src_A": {"model_family": "fam_base", "upstream_source": "src_base"},
+    "base_model_Z": {"model_family": "fam_base", "upstream_source": "src_base"},
+}
 all_chains: list[dict] = []
 for i in range(50):
     if i < 10:
@@ -214,6 +220,11 @@ for i in range(50):
         claim_text = f"other claim about concept {i}"
         chain_grade = "daif"
         narrator_ids = [f"src_other_{i}"]
+    for nid in narrator_ids:
+        edge4_metadata[nid] = {
+            "model_family": f"fam_{i}",
+            "upstream_source": f"src_{i}",
+        }
     all_chains.append({
         "claim_text": claim_text,
         "chain_grade": chain_grade,
@@ -226,7 +237,7 @@ result_50 = engine.evaluate(
     base_chain_grade=ChainGrade.DAIF,
     base_narrators=["base_src_A", "base_model_Z"],
     all_chains=all_chains,
-    narrator_metadata={},
+    narrator_metadata=edge4_metadata,
 )
 check(
     "50 claims, 10 corroborating -> upgrade fires",
@@ -485,7 +496,10 @@ check(
     f"ind={result_same_source.independent_chains}, reason={result_same_source.reason}",
 )
 
-# No metadata -> assume independent
+# No metadata -> independence UNKNOWN, not assumed (issue #54).
+# Absent lineage evidence, independence cannot be demonstrated, so unattested
+# chains no longer corroborate — the framework stops assuming independence
+# exactly when it knows the least.
 result_no_meta = engine2.evaluate(
     claim_text="speed of light is constant",
     base_chain_grade=ChainGrade.DAIF,
@@ -507,12 +521,14 @@ result_no_meta = engine2.evaluate(
     narrator_metadata={},
 )
 check(
-    "No metadata -> assumed independent -> upgrade",
-    result_no_meta.upgraded,
+    "No metadata -> independence unproven -> NO upgrade (issue #54)",
+    not result_no_meta.upgraded,
     f"ind={result_no_meta.independent_chains}",
 )
 
-# Partial metadata
+# Partial metadata -> independence still unprovable (issue #54).
+# Only the base chain carries lineage; the corroborators carry none, so their
+# distinctness cannot be observed and they do not count as independent.
 result_partial_meta = engine2.evaluate(
     claim_text="newton discovered gravity",
     base_chain_grade=ChainGrade.DAIF,
@@ -534,8 +550,8 @@ result_partial_meta = engine2.evaluate(
     narrator_metadata={"historian_1": {"model_family": "gpt-4"}},
 )
 check(
-    "Partial metadata -> independent (no shared lineage detected)",
-    result_partial_meta.upgraded,
+    "Partial metadata -> distinctness unprovable -> NO upgrade (issue #54)",
+    not result_partial_meta.upgraded,
     f"ind={result_partial_meta.independent_chains}",
 )
 

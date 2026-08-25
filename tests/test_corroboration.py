@@ -21,15 +21,23 @@ from isnad.types import ChainGrade
 class TestSharedLineageDetector:
     """Correlation detection: shared model family / upstream source (madār)."""
 
-    def test_disjoint_narrators_with_no_metadata_are_independent(self) -> None:
+    def test_no_metadata_is_unknown_lineage_not_full_independence(self) -> None:
+        """No lineage metadata → independence is UNKNOWN, not assumed (issue #54).
+
+        Disjoint narrator IDs alone do not demonstrate independence — two
+        distinct IDs can still share a corpus or model. Absent lineage evidence
+        the score is the below-gate UNKNOWN_LINEAGE_SCORE, and the chains are not
+        treated as independent. (Previously this returned 1.0.)
+        """
         det = SharedLineageDetector()
         score = det.compute_independence_score(
             ["narrator-A", "narrator-B"],
             ["narrator-C", "narrator-D"],
             {},
         )
-        assert score == 1.0
-        assert det.are_independent(["narrator-A"], ["narrator-B"], {})
+        assert score == SharedLineageDetector.UNKNOWN_LINEAGE_SCORE
+        assert score < 1.0
+        assert not det.are_independent(["narrator-A"], ["narrator-B"], {})
 
     def test_shared_narrator_ids_are_correlated(self) -> None:
         """Naive set-disjointness is wrong — but shared IDs ARE correlated."""
@@ -183,13 +191,25 @@ class TestCappedCorroborationPolicy:
 class TestEvaluateCorroborationIntegration:
     """End-to-end corroboration evaluation with correlation detection."""
 
-    def test_independent_chains_upgrade_daif(self) -> None:
+    def test_attested_independent_chains_upgrade_daif(self) -> None:
+        """Demonstrable independence (distinct attested lineage) upgrades DAIF.
+
+        After issue #54, upgrade requires lineage evidence on every chain so
+        distinctness can actually be observed — empty metadata is now 'unknown',
+        below the gate, and does not upgrade (see TestIssue54IndependenceLimit).
+        """
         result = evaluate_corroboration(
             base_grade=ChainGrade.DAIF,
             corroborating_chain_grades=[ChainGrade.HASAN, ChainGrade.HASAN],
             base_narrators=["narr-A", "narr-B"],
             corroborating_narrators=[["narr-C"], ["narr-D", "narr-E"]],
-            narrator_metadata={},
+            narrator_metadata={
+                "narr-A": {"model_family": "fam-a", "upstream_source": "src-a"},
+                "narr-B": {"model_family": "fam-a", "upstream_source": "src-a"},
+                "narr-C": {"model_family": "fam-c", "upstream_source": "src-c"},
+                "narr-D": {"model_family": "fam-d", "upstream_source": "src-d"},
+                "narr-E": {"model_family": "fam-d", "upstream_source": "src-d"},
+            },
         )
         assert result == ChainGrade.HASAN
 
@@ -214,6 +234,14 @@ class TestContentAwareGating:
     to paper over a live content contradiction, however many "independent"
     chains agree (the fabricated-chain-with-parallel-sub-chains exploit)."""
 
+    # Attested-distinct lineage so independence is demonstrated (issue #54);
+    # this isolates the live-contradiction gate from the independence change.
+    _ATTESTED_LINEAGE = {
+        "narr-A": {"model_family": "fam-a", "upstream_source": "src-a"},
+        "narr-B": {"model_family": "fam-b", "upstream_source": "src-b"},
+        "narr-C": {"model_family": "fam-c", "upstream_source": "src-c"},
+    }
+
     def test_live_contradiction_blocks_upgrade_even_with_strong_corroboration(self) -> None:
         engine = CorroborationEngine(min_independent_chains=1)
         result = engine.evaluate_direct(
@@ -223,6 +251,7 @@ class TestContentAwareGating:
                 {"grade": "hasan", "narrators": ["narr-B"]},
                 {"grade": "sahih", "narrators": ["narr-C"]},
             ],
+            narrator_metadata=self._ATTESTED_LINEAGE,
             has_live_contradiction=True,
         )
         assert result.upgraded is False
@@ -237,6 +266,7 @@ class TestContentAwareGating:
         result = engine.evaluate_direct(
             base_chain_grade=ChainGrade.DAIF,
             base_narrators=["narr-A"],
+            narrator_metadata=self._ATTESTED_LINEAGE,
             corroborating_chains=[
                 {"grade": "hasan", "narrators": ["narr-B"]},
                 {"grade": "sahih", "narrators": ["narr-C"]},
@@ -263,3 +293,85 @@ class TestContentAwareGating:
             has_live_contradiction=True,
         )
         assert result.upgraded is False
+
+
+class TestIssue54IndependenceLimit:
+    """Issue #54 — corroboration assumes independence when it knows the least.
+
+    The detector checks three *structural* signals (shared narrator ID, shared
+    model family, shared upstream source). Two chains that share NONE of them can
+    still be correlated — the paper's §7 concedes this is undetectable in
+    principle. This suite does NOT claim to detect that. It pins the narrower,
+    fixable defect the issue abstracts: when there is *no lineage metadata at
+    all*, the detector scored full independence (1.0) and corroboration fired —
+    i.e. the framework assumed independence precisely when it had no evidence for
+    it. The honest fix scores unknown lineage *below* the gate: independence must
+    be demonstrated, not assumed.
+    """
+
+    def test_unknown_lineage_is_not_scored_as_fully_independent(self) -> None:
+        """No metadata → the score must NOT be 1.0 (full independence)."""
+        det = SharedLineageDetector()
+        score = det.compute_independence_score(
+            ["narrator-A", "narrator-B"],
+            ["narrator-C", "narrator-D"],
+            {},  # nothing known about lineage
+        )
+        assert score < 1.0, "unknown lineage must not read as fully independent"
+        assert score < CappedCorroborationPolicy.INDEPENDENCE_THRESHOLD, (
+            "unknown lineage must fall below the corroboration gate"
+        )
+
+    def test_unknown_lineage_does_not_upgrade_by_default(self) -> None:
+        """Two clean-looking chains sharing none of the 3 signals, but with no
+        attested lineage, must NOT upgrade a DAIF claim — independence unproven.
+        """
+        result = evaluate_corroboration(
+            base_grade=ChainGrade.DAIF,
+            corroborating_chain_grades=[ChainGrade.HASAN, ChainGrade.HASAN],
+            base_narrators=["narr-A"],
+            corroborating_narrators=[["narr-C"], ["narr-D"]],
+            narrator_metadata={},  # no lineage attestation
+        )
+        assert result == ChainGrade.DAIF, "unproven independence must not upgrade"
+
+    def test_attested_distinct_lineage_still_upgrades(self) -> None:
+        """Independence you can *demonstrate* still works: distinct model
+        families + distinct upstream sources for every narrator → upgrade fires.
+        """
+        result = evaluate_corroboration(
+            base_grade=ChainGrade.DAIF,
+            corroborating_chain_grades=[ChainGrade.HASAN, ChainGrade.HASAN],
+            base_narrators=["narr-A"],
+            corroborating_narrators=[["narr-C"], ["narr-D"]],
+            narrator_metadata={
+                "narr-A": {"model_family": "fam-a", "upstream_source": "src-a"},
+                "narr-C": {"model_family": "fam-c", "upstream_source": "src-c"},
+                "narr-D": {"model_family": "fam-d", "upstream_source": "src-d"},
+            },
+        )
+        assert result == ChainGrade.HASAN
+
+    def test_correlated_blind_spot_is_acknowledged_undetectable(self) -> None:
+        """The undetectable case, pinned as a known limit (not a passing check).
+
+        Two chains with fully-distinct, attested lineage that nonetheless share a
+        corpus-wide blind spot WILL still upgrade — the detector cannot see
+        content-level correlation. This test documents that the framework upgrades
+        here *by design gap*, so the behaviour is visible and not silently
+        mistaken for a guarantee. See issue #54.
+        """
+        result = evaluate_corroboration(
+            base_grade=ChainGrade.DAIF,
+            corroborating_chain_grades=[ChainGrade.HASAN, ChainGrade.HASAN],
+            base_narrators=["narr-A"],
+            corroborating_narrators=[["narr-C"], ["narr-D"]],
+            narrator_metadata={
+                "narr-A": {"model_family": "fam-a", "upstream_source": "src-a"},
+                "narr-C": {"model_family": "fam-c", "upstream_source": "src-c"},
+                "narr-D": {"model_family": "fam-d", "upstream_source": "src-d"},
+            },
+        )
+        # Structurally distinct → upgrades, even though a shared blind spot would
+        # make this wrong. Topology cannot discharge independence (paper §7).
+        assert result == ChainGrade.HASAN

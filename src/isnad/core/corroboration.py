@@ -39,7 +39,30 @@ class SharedLineageDetector:
     production version would incorporate structured model lineage data
     (e.g., model cards, training-data provenance) and possibly embedding
     similarity of model outputs to detect correlated blind spots.
+
+    **Independence must be demonstrated, not assumed (issue #54).** Topology can
+    only ever *falsify* independence (by finding a shared signal), never *prove*
+    it — the paper's §7 concedes that a correlated pair sharing none of the three
+    signals, and content-level correlated error, are undetectable here. So the
+    detector distinguishes three cases, not two:
+
+    - **Known-distinct lineage** — both chains carry lineage metadata and it
+      differs → high independence (earned).
+    - **Unknown lineage** — no metadata to reason about → ``UNKNOWN_LINEAGE_SCORE``,
+      deliberately *below* the corroboration gate. Absent evidence of
+      independence, the framework no longer assumes it (previously this returned
+      1.0 — "most independent when we know least", the exact inversion issue #54
+      warns against).
+    - **Shared signal detected** → penalised toward 0.
+
+    This is an honesty calibration, not a detection mechanism: it narrows the
+    independence *assumption*, it does not claim to detect correlated blind spots.
     """
+
+    # Independence we cannot rule out but also cannot demonstrate. Below the
+    # default gate (0.8) so unattested chains do not silently corroborate; a
+    # caller who can attest distinct lineage supplies metadata and clears it.
+    UNKNOWN_LINEAGE_SCORE: float = 0.5
 
     def are_independent(
         self,
@@ -66,12 +89,17 @@ class SharedLineageDetector:
     ) -> float:
         """Compute an independence score in [0.0, 1.0].
 
-        1.0 = fully independent; 0.0 = fully correlated (same lineage).
+        1.0 = demonstrably independent; 0.0 = fully correlated (same lineage);
+        ``UNKNOWN_LINEAGE_SCORE`` = independence neither shown nor ruled out.
 
         Penalties applied for:
         - Shared narrator IDs (hard correlation): score = 0.0
         - Shared model family: -0.4 penalty per shared family
         - Shared upstream source: -0.3 penalty per shared source
+
+        With no lineage metadata on either side, independence cannot be
+        demonstrated, so the score is ``UNKNOWN_LINEAGE_SCORE`` (below the gate),
+        not 1.0 — see the class docstring and issue #54.
         """
         set_a = set(chain_a_narrators)
         set_b = set(chain_b_narrators)
@@ -112,10 +140,15 @@ class SharedLineageDetector:
 
         shared_sources = sources_a & sources_b
 
-        # No metadata at all → assume independent (score 1.0)
-        has_any_metadata = bool(families_a or families_b or sources_a or sources_b)
-        if not has_any_metadata:
-            return 1.0
+        # Independence must be *demonstrable* to score high. That needs lineage
+        # metadata on BOTH sides so a difference can actually be observed. If
+        # either side is missing it, distinctness is unknown → below-gate score
+        # (issue #54). Previously this returned 1.0 whenever no metadata existed
+        # at all — assuming independence exactly when least was known.
+        side_a_known = bool(families_a or sources_a)
+        side_b_known = bool(families_b or sources_b)
+        if not (side_a_known and side_b_known):
+            return self.UNKNOWN_LINEAGE_SCORE
 
         # Compute penalty
         penalty = 0.0
