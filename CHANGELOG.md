@@ -1,5 +1,18 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- **Corroboration now requires attested distinct lineage (issue #54, PR #83).**
+  `SharedLineageDetector.compute_independence_score()` no longer returns full
+  independence (`1.0`) when neither chain carries lineage metadata. Absent lineage
+  evidence, independence is *unknown* (`UNKNOWN_LINEAGE_SCORE = 0.5`, below the
+  corroboration gate), so unattested chains no longer silently corroborate —
+  independence must be demonstrated, not assumed. Populate `model_family` /
+  `upstream_source` on `register()` to keep corroboration firing. Thanks to
+  @AusafMo.
+
 ## [2.6.0] — 2026-08-23
 
 ### Added

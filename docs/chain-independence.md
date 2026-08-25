@@ -41,6 +41,14 @@ it can never *prove independence* — it can only fail to find shared signals.
   dependence was found, and corroboration is discounted.
 - Corroboration is **capped at ḥasan** regardless — it can never reach ṣaḥīḥ by
   corroboration alone, so the over-trust ceiling is bounded.
+- **The corroboration engine no longer assumes independence from empty
+  metadata (PR #83).** `SharedLineageDetector` now returns an `UNKNOWN_LINEAGE_SCORE`
+  (0.5, below the gate) when either chain carries no lineage metadata — the
+  chains are excluded from corroboration rather than silently trusted as
+  independent. Independence must be *demonstrated* (attested distinct
+  `model_family` / `upstream_source`) before it counts. Previously empty
+  metadata scored `1.0` — the framework assumed independence exactly when it
+  knew the least.
 
 ## Candidate approaches (none chosen yet)
 
