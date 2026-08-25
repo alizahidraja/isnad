@@ -30,9 +30,7 @@ Then, in another shell:
 from isnad.integrations.liveverify.client import verify_claim
 
 # The claim page text (verdict + verify: line) — exactly what was hashed.
-result = verify_claim(
-    "ISNAD Claim Verdict\n...\nverify:localhost:8000/verify"
-)
+result = verify_claim("ISNAD Claim Verdict\n...\nverify:localhost:8000/verify")
 print(result.verified)  # True
 ```
 
