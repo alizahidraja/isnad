@@ -49,7 +49,7 @@ def summarize(results: dict) -> dict:
             stats[f"{m}_mean"] = mean
             stats[f"{m}_ci95"] = ci
 
-        summary[f"{cond}_b{int(budget*100):02d}"] = {
+        summary[f"{cond}_b{int(budget * 100):02d}"] = {
             "condition": cond,
             "budget": budget,
             "n_seeds": n,
@@ -61,12 +61,10 @@ def summarize(results: dict) -> dict:
 def primary_comparison(results: dict) -> dict:
     """Primary preregistered comparison at B=10%."""
     isnad_entries = [
-        e for e in results.values()
-        if e["condition"] == "isnad" and e["budget"] == 0.10
+        e for e in results.values() if e["condition"] == "isnad" and e["budget"] == 0.10
     ]
     conf_entries = [
-        e for e in results.values()
-        if e["condition"] == "confidence" and e["budget"] == 0.10
+        e for e in results.values() if e["condition"] == "confidence" and e["budget"] == 0.10
     ]
 
     isnad_errors = [e["served_error_rate"] for e in isnad_entries]
@@ -84,7 +82,7 @@ def primary_comparison(results: dict) -> dict:
     isnad_mean = sum(isnad_errors) / n
     conf_mean = sum(conf_errors) / n
 
-    significant = (mean_diff + ci_diff < 0)  # CI entirely below zero
+    significant = mean_diff + ci_diff < 0  # CI entirely below zero
     direction = "ISNAD lower" if mean_diff < 0 else "confidence lower"
 
     return {
@@ -106,8 +104,8 @@ def generate_report(results: dict) -> str:
     lines = [
         "# §8 Validation Experiment — Results",
         "",
-        f"**Date:** 2026-07-06",
-        f"**Analysis Plan:** ANALYSIS_PLAN.md (preregistered before results)",
+        "**Date:** 2026-07-06",
+        "**Analysis Plan:** ANALYSIS_PLAN.md (preregistered before results)",
         "",
         "## Primary Result: ISNAD-gated vs. Confidence-gated at B=10%",
         "",
@@ -122,8 +120,8 @@ def generate_report(results: dict) -> str:
         ci = primary["ci95_difference"]
         sig = "✓ Significant" if primary["significant"] else "✗ Not significant"
 
-        lines.append(f"| Condition | Served-Error Rate (mean ± 95% CI) |")
-        lines.append(f"|---|---|")
+        lines.append("| Condition | Served-Error Rate (mean ± 95% CI) |")
+        lines.append("|---|---|")
         lines.append(f"| ISNAD-gated | {isnad_err:.4f} |")
         lines.append(f"| Confidence-gated | {conf_err:.4f} |")
         lines.append(f"| Difference (ISNAD − confidence) | {diff:+.4f} ± {ci:.4f} |")
@@ -133,20 +131,20 @@ def generate_report(results: dict) -> str:
         if primary["significant"] and diff < 0:
             lines.append(
                 f"**Conclusion:** ISNAD-gated serving reduced the served-error rate "
-                f"by {abs(diff):.2%} (95% CI [{diff-ci:.4f}, {diff+ci:.4f}]) "
+                f"by {abs(diff):.2%} (95% CI [{diff - ci:.4f}, {diff + ci:.4f}]) "
                 f"relative to confidence-gated serving at B=10% on this corpus. "
                 f"The §8 hypothesis is **supported** on this corpus."
             )
         elif primary["significant"] and diff > 0:
             lines.append(
-                f"**Conclusion:** ISNAD-gated serving INCREASED the served-error rate "
-                f"at B=10%. The §8 hypothesis is **refuted** on this corpus."
+                "**Conclusion:** ISNAD-gated serving INCREASED the served-error rate "
+                "at B=10%. The §8 hypothesis is **refuted** on this corpus."
             )
         else:
             lines.append(
-                f"**Conclusion:** The difference was not statistically significant. "
-                f"The §8 hypothesis is **inconclusive** on this corpus — a larger "
-                f"corpus or more seeds may be needed."
+                "**Conclusion:** The difference was not statistically significant. "
+                "The §8 hypothesis is **inconclusive** on this corpus — a larger "
+                "corpus or more seeds may be needed."
             )
 
     lines.extend([
@@ -160,7 +158,7 @@ def generate_report(results: dict) -> str:
     for cond in ["ungated", "confidence", "isnad", "isnad_no_corroboration"]:
         row = f"| {cond} |"
         for b in [0.02, 0.05, 0.10, 0.20]:
-            key = f"{cond}_b{int(b*100):02d}"
+            key = f"{cond}_b{int(b * 100):02d}"
             if key in summary:
                 row += f" {summary[key]['served_error_rate_mean']:.4f} |"
             else:
@@ -227,9 +225,11 @@ def main() -> None:
 
     print("\n=== Summary Table ===")
     for key, s in sorted(summary.items()):
-        print(f"  {key}: coverage={s['coverage_mean']:.3f}  "
-              f"error={s['served_error_rate_mean']:.4f}±{s['served_error_rate_ci95']:.4f}  "
-              f"prec={s['review_precision_mean']:.3f}")
+        print(
+            f"  {key}: coverage={s['coverage_mean']:.3f}  "
+            f"error={s['served_error_rate_mean']:.4f}±{s['served_error_rate_ci95']:.4f}  "
+            f"prec={s['review_precision_mean']:.3f}"
+        )
 
     report = generate_report(results)
     report_path = os.path.join(_exp_dir, "results", "RESULTS.md")

@@ -84,22 +84,36 @@ def calibrate(
         for domain in domains:
             if nid.startswith("source:") or nid in SEED_RELIABLE:
                 # Seed-grade as RELIABLE with HIGH integrity/precision
-                reg.register(nid, domain,
-                             grade=NarratorGrade.RELIABLE,
-                             adalah=AdalahGrade.HIGH,
-                             dabt=DabtGrade.HIGH)
-                reg.record_evidence(nid, domain, EvidenceType.BOOTSTRAP_SEED,
-                                    EvidenceAction.TADIL,
-                                    "Seed-graded from known reliability")
+                reg.register(
+                    nid,
+                    domain,
+                    grade=NarratorGrade.RELIABLE,
+                    adalah=AdalahGrade.HIGH,
+                    dabt=DabtGrade.HIGH,
+                )
+                reg.record_evidence(
+                    nid,
+                    domain,
+                    EvidenceType.BOOTSTRAP_SEED,
+                    EvidenceAction.TADIL,
+                    "Seed-graded from known reliability",
+                )
             elif nid in SEED_ACCEPTABLE:
                 # Seed-grade as ACCEPTABLE (known low fault rate)
-                reg.register(nid, domain,
-                             grade=NarratorGrade.ACCEPTABLE,
-                             adalah=AdalahGrade.ACCEPTABLE,
-                             dabt=DabtGrade.ACCEPTABLE)
-                reg.record_evidence(nid, domain, EvidenceType.BOOTSTRAP_SEED,
-                                    EvidenceAction.TADIL,
-                                    "Seed-graded from known low fault rate")
+                reg.register(
+                    nid,
+                    domain,
+                    grade=NarratorGrade.ACCEPTABLE,
+                    adalah=AdalahGrade.ACCEPTABLE,
+                    dabt=DabtGrade.ACCEPTABLE,
+                )
+                reg.record_evidence(
+                    nid,
+                    domain,
+                    EvidenceType.BOOTSTRAP_SEED,
+                    EvidenceAction.TADIL,
+                    "Seed-graded from known low fault rate",
+                )
             else:
                 reg.register(nid, domain)  # UNGRADED — discovered through audit
 
@@ -110,11 +124,11 @@ def calibrate(
     SEED_GRADED_PREFIXES = ("source:",)
     SEED_GRADED_IDS = {"pdf-scraper@1.2", "ingest@good"}
 
-    print(f"\nCalibrating on {len(cal_claims)} claims "
-          f"({len(eval_claims)} held out for evaluation)")
+    print(f"\nCalibrating on {len(cal_claims)} claims ({len(eval_claims)} held out for evaluation)")
 
     # Group cal claims by (narrator, domain)
     from collections import defaultdict
+
     by_narrator_domain: dict[tuple[str, str], list[dict]] = defaultdict(list)
     for c in cal_claims:
         for nid in [c.get("assigned_scraper", ""), c.get("assigned_ingest", "")]:
@@ -146,7 +160,8 @@ def calibrate(
             is_defective = gt.get("corrupted", False)
             if is_defective:
                 reg.record_evidence(
-                    nid, domain,
+                    nid,
+                    domain,
                     EvidenceType.POST_HOC_AUDIT,
                     EvidenceAction.JARH,
                     f"Claim {c['claim_id'][:8]}... was corrupted",
@@ -154,7 +169,8 @@ def calibrate(
             else:
                 correct += 1
                 reg.record_evidence(
-                    nid, domain,
+                    nid,
+                    domain,
                     EvidenceType.POST_HOC_AUDIT,
                     EvidenceAction.TADIL,
                     f"Claim {c['claim_id'][:8]}... was correct",
@@ -165,7 +181,8 @@ def calibrate(
         if correct >= audit_budget * 0.8:
             for _ in range(3):
                 reg.record_evidence(
-                    nid, domain,
+                    nid,
+                    domain,
                     EvidenceType.CORROBORATION_OUTCOME,
                     EvidenceAction.TADIL,
                     f"Sustained accuracy: {correct}/{len(audited)} correct",
@@ -176,8 +193,8 @@ def calibrate(
     # Report earned grades
     print("\nEarned narrator grades:")
     print(f"  {'Narrator':<30} {'Domain':<20} {'Grade':<12}")
-    print(f"  {'─'*30} {'─'*20} {'─'*12}")
-    for (nid, domain) in sorted(by_narrator_domain.keys()):
+    print(f"  {'─' * 30} {'─' * 20} {'─' * 12}")
+    for nid, domain in sorted(by_narrator_domain.keys()):
         grade = reg.get_grade(nid, domain)
         print(f"  {nid:<30} {domain:<20} {grade.value:<12}")
 
@@ -224,7 +241,10 @@ def main() -> None:
         domains = ["mechanics", "electromagnetism", "optics-waves", "modern-quantum", "general"]
 
         reg, cal_claims, eval_claims = calibrate(
-            enriched, gt, domains, seed=seed * 42,
+            enriched,
+            gt,
+            domains,
+            seed=seed * 42,
         )
 
         # Save

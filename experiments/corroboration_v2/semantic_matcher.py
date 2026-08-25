@@ -43,17 +43,20 @@ class SemanticMatcher:
             return
         print(f"  Loading embedding model: {self.model_name} ...")
         from sentence_transformers import SentenceTransformer
+
         t0 = time.time()
         self._model = SentenceTransformer(self.model_name)
         print(f"  Loaded in {time.time() - t0:.1f}s")
         self._loaded = True
 
-    def encode(self, sentences: list[str], batch_size: int = 64,
-               show_progress: bool = True) -> np.ndarray:
+    def encode(
+        self, sentences: list[str], batch_size: int = 64, show_progress: bool = True
+    ) -> np.ndarray:
         """Encode a list of sentences into embeddings."""
         self._load()
         return self._model.encode(
-            sentences, batch_size=batch_size,
+            sentences,
+            batch_size=batch_size,
             show_progress_bar=show_progress,
             convert_to_numpy=True,
         )
@@ -106,17 +109,21 @@ class SemanticMatcher:
                     if score >= threshold:
                         # Don't match claims from the exact same topic
                         # (we want cross-topic corroboration when possible)
-                        pairs.append(MatchPair(
-                            topic_reg=claims_reg[idx]["topic"],
-                            topic_sim=claims_sim[i + j]["topic"],
-                            text_reg=claims_reg[idx]["text"],
-                            text_sim=claims_sim[i + j]["text"],
-                            similarity=score,
-                        ))
+                        pairs.append(
+                            MatchPair(
+                                topic_reg=claims_reg[idx]["topic"],
+                                topic_sim=claims_sim[i + j]["topic"],
+                                text_reg=claims_reg[idx]["text"],
+                                text_sim=claims_sim[i + j]["text"],
+                                similarity=score,
+                            )
+                        )
 
             if (i // batch_size) % 5 == 0:
-                print(f"    processed {batch_end}/{len(texts_sim)} claims, "
-                      f"{len(pairs)} pairs found so far")
+                print(
+                    f"    processed {batch_end}/{len(texts_sim)} claims, "
+                    f"{len(pairs)} pairs found so far"
+                )
 
         # Deduplicate: keep best match per (text_reg, text_sim) pair
         pairs.sort(key=lambda p: -p.similarity)
@@ -163,13 +170,15 @@ class SemanticMatcher:
                     continue  # skip same-topic (those are exact-match already)
                 score = float(sim_matrix[i][j])
                 if score >= threshold:
-                    pairs.append(MatchPair(
-                        topic_reg=topics[i],
-                        topic_sim=topics[j],
-                        text_reg=texts[i],
-                        text_sim=texts[j],
-                        similarity=score,
-                    ))
+                    pairs.append(
+                        MatchPair(
+                            topic_reg=topics[i],
+                            topic_sim=topics[j],
+                            text_reg=texts[i],
+                            text_sim=texts[j],
+                            similarity=score,
+                        )
+                    )
 
         pairs.sort(key=lambda p: -p.similarity)
         print(f"  Found {len(pairs)} cross-topic pairs within regular Wikipedia")
@@ -181,13 +190,20 @@ def save_matches(pairs: list[MatchPair], path: Path) -> None:
     """Save match pairs to JSON."""
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w") as f:
-        json.dump([{
-            "topic_reg": p.topic_reg,
-            "topic_sim": p.topic_sim,
-            "text_reg": p.text_reg,
-            "text_sim": p.text_sim,
-            "similarity": p.similarity,
-        } for p in pairs], f, indent=2)
+        json.dump(
+            [
+                {
+                    "topic_reg": p.topic_reg,
+                    "topic_sim": p.topic_sim,
+                    "text_reg": p.text_reg,
+                    "text_sim": p.text_sim,
+                    "similarity": p.similarity,
+                }
+                for p in pairs
+            ],
+            f,
+            indent=2,
+        )
     print(f"  Saved {len(pairs)} matches to {path}")
 
 

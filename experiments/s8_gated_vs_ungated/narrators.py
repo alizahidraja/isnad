@@ -10,7 +10,6 @@ import random
 import re
 from dataclasses import dataclass, field
 
-
 # ===========================================================================
 # Fault classes — rule-based, deterministic given seed
 # ===========================================================================
@@ -200,8 +199,12 @@ NARRATOR_VARIANTS: dict[str, NarratorVariant] = {
         narrator_type="destructive",
         fault_rate=0.18,
         fault_classes=[
-            "ocr_noise", "negation_drop", "digit_swap",
-            "unit_corruption", "formula_mangling", "truncation",
+            "ocr_noise",
+            "negation_drop",
+            "digit_swap",
+            "unit_corruption",
+            "formula_mangling",
+            "truncation",
         ],
     ),
     "ingest@good": NarratorVariant(
@@ -215,7 +218,9 @@ NARRATOR_VARIANTS: dict[str, NarratorVariant] = {
         narrator_type="generative",
         fault_rate=0.15,
         fault_classes=[
-            "entity_swap", "sign_flip", "fabricated_numeric",
+            "entity_swap",
+            "sign_flip",
+            "fabricated_numeric",
             "regime_confusion",
         ],
     ),

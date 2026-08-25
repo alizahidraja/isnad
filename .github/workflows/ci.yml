@@ -44,10 +44,10 @@ jobs:
         run: uv run alembic upgrade head
 
       - name: Lint (ruff)
-        run: uv run ruff check src/isnad tests examples bench
+        run: uv run ruff check src/isnad tests examples bench experiments
 
       - name: Format check (ruff)
-        run: uv run ruff format --check src/isnad tests examples bench
+        run: uv run ruff format --check src/isnad tests examples bench experiments
 
       - name: Type check (mypy)
         run: uv run mypy src/isnad bench

@@ -22,16 +22,36 @@ import requests
 # ── 30 science topics spanning physics, chemistry, biology, earth science ──
 
 TOPICS = [
-    "Quantum mechanics", "General relativity", "Black hole", "Thermodynamics",
-    "Electromagnetic radiation", "Nuclear fusion", "Superconductivity",
-    "Standard Model", "Dark matter", "Entropy",
-    "Periodic table", "Chemical bond", "Catalysis", "Electrolysis",
-    "Polymer", "Acid–base reaction",
-    "DNA", "Photosynthesis", "Natural selection", "Cell (biology)",
-    "Enzyme", "Mitosis", "CRISPR",
-    "Plate tectonics", "Greenhouse effect", "Carbon cycle",
-    "Solar System", "Milky Way",
-    "Atom", "Evolution",
+    "Quantum mechanics",
+    "General relativity",
+    "Black hole",
+    "Thermodynamics",
+    "Electromagnetic radiation",
+    "Nuclear fusion",
+    "Superconductivity",
+    "Standard Model",
+    "Dark matter",
+    "Entropy",
+    "Periodic table",
+    "Chemical bond",
+    "Catalysis",
+    "Electrolysis",
+    "Polymer",
+    "Acid–base reaction",
+    "DNA",
+    "Photosynthesis",
+    "Natural selection",
+    "Cell (biology)",
+    "Enzyme",
+    "Mitosis",
+    "CRISPR",
+    "Plate tectonics",
+    "Greenhouse effect",
+    "Carbon cycle",
+    "Solar System",
+    "Milky Way",
+    "Atom",
+    "Evolution",
 ]
 
 # Pairs likely to have semantic overlap (for targeted matching)
@@ -39,9 +59,11 @@ OVERLAP_PAIRS = [
     ("Quantum mechanics", "Standard Model"),
     ("General relativity", "Black hole"),
     ("Thermodynamics", "Entropy"),
-    ("DNA", "CRISPR"), ("DNA", "Mitosis"),
+    ("DNA", "CRISPR"),
+    ("DNA", "Mitosis"),
     ("Natural selection", "Evolution"),
-    ("Atom", "Periodic table"), ("Atom", "Chemical bond"),
+    ("Atom", "Periodic table"),
+    ("Atom", "Chemical bond"),
     ("Photosynthesis", "Carbon cycle"),
     ("Greenhouse effect", "Carbon cycle"),
     ("Solar System", "Milky Way"),
@@ -86,7 +108,7 @@ CITATION_PATTERNS = [
     r"^\s*Bibliography\s*$",
     r"^\s*See also\s*$",
     r"^\s*\d+\.\s",  # numbered list items
-    r"^\s*\*\s",    # bullet points
+    r"^\s*\*\s",  # bullet points
     r"^\s*\[\d+\]",  # citation markers like [42]
     r"^\s*\[note\s",  # [note 1]
     r"\b(?:University Press|Cambridge University Press|Oxford University Press)\b",
@@ -99,6 +121,7 @@ URL_PATTERNS = [
     r"\.pdf\b",
     r"doi\.org",
 ]
+
 
 def is_citation_boilerplate(text: str) -> bool:
     """Check if a sentence is citation boilerplate, not a factual claim."""
@@ -135,7 +158,8 @@ class DualWikipediaLoader:
 
     def _fetch_article(self, api_url: str, topic: str) -> dict[str, Any]:
         params = {
-            "action": "query", "format": "json",
+            "action": "query",
+            "format": "json",
             "prop": "extracts|info",
             "explaintext": True,
             "inprop": "url",
@@ -175,15 +199,23 @@ class DualWikipediaLoader:
         path = self._cache_path(td.topic, td.source)
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, "w") as f:
-            json.dump({
-                "topic": td.topic, "source": td.source,
-                "page_id": td.page_id, "url": td.url,
-                "text": td.text, "sentences": td.sentences,
-                "fetched_at": td.fetched_at,
-            }, f, indent=2)
+            json.dump(
+                {
+                    "topic": td.topic,
+                    "source": td.source,
+                    "page_id": td.page_id,
+                    "url": td.url,
+                    "text": td.text,
+                    "sentences": td.sentences,
+                    "fetched_at": td.fetched_at,
+                },
+                f,
+                indent=2,
+            )
 
-    def get_article(self, topic: str, source: str = "regular",
-                    force_refresh: bool = False) -> TopicData:
+    def get_article(
+        self, topic: str, source: str = "regular", force_refresh: bool = False
+    ) -> TopicData:
         """Get full article text with retry logic for rate limiting."""
         if not force_refresh:
             cached = self._load_cache(topic, source)
@@ -196,7 +228,7 @@ class DualWikipediaLoader:
 
         for attempt in range(3):
             if attempt > 0:
-                wait = 3 * (2 ** attempt)
+                wait = 3 * (2**attempt)
                 print(f"    Rate-limited, waiting {wait}s (attempt {attempt + 1}/3)...")
                 time.sleep(wait)
             else:
@@ -210,7 +242,7 @@ class DualWikipediaLoader:
                 if "429" in err_msg:
                     if attempt < 2:
                         continue
-                    print(f"    ERROR (final): rate limit exhausted")
+                    print("    ERROR (final): rate limit exhausted")
                 else:
                     print(f"    ERROR: {e}")
                     break
@@ -220,10 +252,12 @@ class DualWikipediaLoader:
         sentences = extract_factual_sentences(text)
 
         td = TopicData(
-            topic=topic, source=source,
+            topic=topic,
+            source=source,
             page_id=raw.get("page_id", 0),
             url=raw.get("url", ""),
-            text=text, sentences=sentences,
+            text=text,
+            sentences=sentences,
             fetched_at=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         )
         self._save_cache(td)

@@ -24,6 +24,7 @@ _EXP_DIR = Path(__file__).resolve().parent
 _SRC = _EXP_DIR.parent.parent / "src"
 sys.path.insert(0, str(_SRC))
 
+from fixtures import CORROBORATING_CHAIN_FOR_E, NARRATORS, SCENARIOS
 from isnad.core.chain import Chain, ChainLinkSpec
 from isnad.core.corroboration import evaluate_corroboration
 from isnad.core.decision import decide, describe_action
@@ -37,8 +38,6 @@ from isnad.types import (
     NarratorType,
     TransformType,
 )
-
-from fixtures import CORROBORATING_CHAIN_FOR_E, NARRATORS, SCENARIOS
 
 # ---------------------------------------------------------------------------
 # Registry — seed grades from the manifest (NOT from ground truth)
@@ -102,8 +101,9 @@ class DemonstrationCritic:
     around the two cases the framework SHOULD admit it misses.
     """
 
-    def evaluate(self, claim_text: str, normalized: str,
-                 corpus_claims: list[str], domain: str) -> ContentVerdict:
+    def evaluate(
+        self, claim_text: str, normalized: str, corpus_claims: list[str], domain: str
+    ) -> ContentVerdict:
         c = normalized.lower()
         # Obvious negation — the content critic catches this independently of chain.
         if "not conserved" in c:
@@ -131,8 +131,7 @@ def run_off() -> dict:
     return {"served": True, "action": "served (ungated)", "reason": "no trust layer"}
 
 
-def run_on(chain: Chain, reg: Registry, critic: DemonstrationCritic,
-           claim: str) -> dict:
+def run_on(chain: Chain, reg: Registry, critic: DemonstrationCritic, claim: str) -> dict:
     """Trust layer ON: full ISNAD pipeline."""
     link_grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
     transforms = [l.transform_type for l in chain.links]
@@ -181,9 +180,7 @@ def main() -> None:
                 corroborating_chain_grades=[ChainGrade.SAHIH],
                 base_narrators=chain.narrator_ids,
                 corroborating_narrators=[chain2.narrator_ids],
-                narrator_metadata={
-                    nid: reg.get_metadata(nid, "physics") for nid in NARRATORS
-                },
+                narrator_metadata={nid: reg.get_metadata(nid, "physics") for nid in NARRATORS},
             )
             on["corroborated_grade"] = upgraded.value
             # Re-decide with the upgraded grade so the report reflects recovery.
@@ -218,18 +215,20 @@ def main() -> None:
         print(f"  ground truth: {'CORRECT' if s.correct else 'CORRUPTED'} ({s.failure_mode})")
         print(f"  OFF:          {r['off']['action']}")
         if "chain_grade" in on:
-            print(f"  ON:           grade={on['chain_grade']}, "
-                  f"content={on['content_verdict']}, action={on['action']}")
+            print(
+                f"  ON:           grade={on['chain_grade']}, "
+                f"content={on['content_verdict']}, action={on['action']}"
+            )
             if "corroborated_grade" in on:
                 print(f"                corroborated grade={on['corroborated_grade']}")
         if r["caught"]:
-            print(f"  ▶ CAUGHT:     the trust layer blocked a corrupted claim")
+            print("  ▶ CAUGHT:     the trust layer blocked a corrupted claim")
         elif r["missed"]:
             print(f"  ▶ MISSED:     the trust layer served a corrupted claim — {s.failure_mode}")
         elif r["false_positive"]:
-            print(f"  ▶ FALSE +VE:  the trust layer blocked a correct claim")
+            print("  ▶ FALSE +VE:  the trust layer blocked a correct claim")
         else:
-            print(f"  ▶ OK:         correct claim, served (or correctly reviewed)")
+            print("  ▶ OK:         correct claim, served (or correctly reviewed)")
         if s.note:
             print(f"  note:         {s.note}")
 

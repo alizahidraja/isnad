@@ -13,38 +13,37 @@ from __future__ import annotations
 
 import json
 import os
-import random
 import sys
-from collections import defaultdict
 
 _exp_dir = os.path.dirname(os.path.abspath(__file__))
 if _exp_dir not in sys.path:
     sys.path.insert(0, _exp_dir)
 
+
 from isnad.core.chain import Chain, ChainLinkSpec
-from isnad.core.grading import grade_chain
 from isnad.core.decision import decide
+from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
 from isnad.types import (
     Action,
-    ChainGrade,
     ContentVerdict,
     NarratorGrade,
     TransformType,
 )
-
-from sweep_policy import ConfigurableTransitionPolicy
 
 
 def _rebuild_chain(claim: dict) -> Chain:
     links = claim.get("chain_json", [])
     specs = []
     for i, link in enumerate(links):
-        specs.append(ChainLinkSpec(
-            narrator_id=link["narrator_id"], step=i,
-            transform_type=TransformType(link.get("transform_type", "pass_through")),
-            domain=link.get("domain", "general"),
-        ))
+        specs.append(
+            ChainLinkSpec(
+                narrator_id=link["narrator_id"],
+                step=i,
+                transform_type=TransformType(link.get("transform_type", "pass_through")),
+                domain=link.get("domain", "general"),
+            )
+        )
     return Chain(specs)
 
 
@@ -101,7 +100,8 @@ def compute_risk_coverage_curve(
         key=lambda x: _action_priority(x[1]),
     )
     n_servable = sum(
-        1 for _, action in sorted_claims
+        1
+        for _, action in sorted_claims
         if action not in (Action.REJECT_AND_QUARANTINE_NARRATOR, Action.QUARANTINE)
     )
 
@@ -229,7 +229,10 @@ def main() -> None:
 
     # ISNAD risk-coverage curve (default policy)
     isnad_curve = compute_risk_coverage_curve(
-        eval_claims, gt_lookup, reg, domains,
+        eval_claims,
+        gt_lookup,
+        reg,
+        domains,
         cal_claims=json.load(open(os.path.join(cal_dir, "cal_claims.json"))),
         seed=42,
     )
@@ -253,17 +256,21 @@ def main() -> None:
     matched = matched_coverage_comparison(isnad_curve, conf_curve, targets)
 
     print("\n=== MATCHED-COVERAGE COMPARISON ===")
-    print(f"  {'Target Cov':>10s}  {'ISNAD Cov':>10s}  {'ISNAD Err':>10s}  {'Conf Cov':>10s}  {'Conf Err':>10s}  {'Advantage':>10s}")
-    print(f"  {'─'*10}  {'─'*10}  {'─'*10}  {'─'*10}  {'─'*10}  {'─'*10}")
+    print(
+        f"  {'Target Cov':>10s}  {'ISNAD Cov':>10s}  {'ISNAD Err':>10s}  {'Conf Cov':>10s}  {'Conf Err':>10s}  {'Advantage':>10s}"
+    )
+    print(f"  {'─' * 10}  {'─' * 10}  {'─' * 10}  {'─' * 10}  {'─' * 10}  {'─' * 10}")
     for m in matched:
-        print(f"  {m['target_coverage']:>10.0%}  {m['isnad_actual_coverage']:>10.3f}  "
-              f"{m['isnad_error']:>10.4f}  {m['confidence_actual_coverage']:>10.3f}  "
-              f"{m['confidence_error']:>10.4f}  {m['isnad_advantage']:>+10.4f}")
+        print(
+            f"  {m['target_coverage']:>10.0%}  {m['isnad_actual_coverage']:>10.3f}  "
+            f"{m['isnad_error']:>10.4f}  {m['confidence_actual_coverage']:>10.3f}  "
+            f"{m['confidence_error']:>10.4f}  {m['isnad_advantage']:>+10.4f}"
+        )
 
     with open(os.path.join(results_dir, "matched_coverage.json"), "w") as f:
         json.dump(matched, f, indent=2)
 
-    print(f"\nSaved to results/risk_coverage_*.csv and results/matched_coverage.json")
+    print("\nSaved to results/risk_coverage_*.csv and results/matched_coverage.json")
 
 
 if __name__ == "__main__":

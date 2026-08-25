@@ -17,8 +17,8 @@ This is one instantiation of a parameter the framework leaves open
 
 from __future__ import annotations
 
-import sys
 import os
+import sys
 
 _exp_dir = os.path.dirname(os.path.abspath(__file__))
 if _exp_dir not in sys.path:
@@ -27,7 +27,6 @@ if _exp_dir not in sys.path:
 from isnad.core.registry import threshold_transition
 from isnad.types import (
     NarratorGrade,
-    TransitionPolicy,
 )
 
 

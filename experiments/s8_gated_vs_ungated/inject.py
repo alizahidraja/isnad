@@ -115,19 +115,21 @@ def assign_narrators(
         c["chain_json"] = chain.to_jsonb()
 
         # Record ground truth
-        gt.add(InjectionRecord(
-            claim_id=claim["claim_id"],
-            corrupted=fault_type != "none",
-            fault_type=fault_type,
-            responsible_narrator=responsible,
-            original_text=original_text,
-            corrupted_text=corrupted_text,
-            domain=c["domain"],
-            chain_complete=chain_complete,
-            assigned_scraper=scraper_id,
-            assigned_ingest=ingest_id,
-            model_confidence=claim.get("model_confidence", 0.0),
-        ))
+        gt.add(
+            InjectionRecord(
+                claim_id=claim["claim_id"],
+                corrupted=fault_type != "none",
+                fault_type=fault_type,
+                responsible_narrator=responsible,
+                original_text=original_text,
+                corrupted_text=corrupted_text,
+                domain=c["domain"],
+                chain_complete=chain_complete,
+                assigned_scraper=scraper_id,
+                assigned_ingest=ingest_id,
+                model_confidence=claim.get("model_confidence", 0.0),
+            )
+        )
 
         enriched.append(c)
 
@@ -158,22 +160,26 @@ def main() -> None:
             json.dump(enriched, f, indent=2)
 
         with open(os.path.join(seed_dir, "ground_truth.json"), "w") as f:
-            json.dump([
-                {
-                    "claim_id": r.claim_id,
-                    "corrupted": r.corrupted,
-                    "fault_type": r.fault_type,
-                    "responsible_narrator": r.responsible_narrator,
-                    "original_text": r.original_text,
-                    "corrupted_text": r.corrupted_text,
-                    "domain": r.domain,
-                    "chain_complete": r.chain_complete,
-                    "assigned_scraper": r.assigned_scraper,
-                    "assigned_ingest": r.assigned_ingest,
-                    "model_confidence": r.model_confidence,
-                }
-                for r in gt.records
-            ], f, indent=2)
+            json.dump(
+                [
+                    {
+                        "claim_id": r.claim_id,
+                        "corrupted": r.corrupted,
+                        "fault_type": r.fault_type,
+                        "responsible_narrator": r.responsible_narrator,
+                        "original_text": r.original_text,
+                        "corrupted_text": r.corrupted_text,
+                        "domain": r.domain,
+                        "chain_complete": r.chain_complete,
+                        "assigned_scraper": r.assigned_scraper,
+                        "assigned_ingest": r.assigned_ingest,
+                        "model_confidence": r.model_confidence,
+                    }
+                    for r in gt.records
+                ],
+                f,
+                indent=2,
+            )
 
         print(f"  seed={seed}: {gt.summary()}")
 
@@ -183,4 +189,5 @@ def main() -> None:
 if __name__ == "__main__":
     # Import here to avoid circular
     from extract import load_claims
+
     main()

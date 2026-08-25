@@ -15,11 +15,11 @@ from __future__ import annotations
 import json
 import os
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from isnad.core.chain import Chain, ChainLinkSpec
-from isnad.core.grading import grade_chain
 from isnad.core.decision import decide
+from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
 from isnad.types import (
     Action,
@@ -53,13 +53,15 @@ def _rebuild_chain(claim: dict) -> Chain:
     links = claim.get("chain_json", [])
     specs = []
     for i, link in enumerate(links):
-        specs.append(ChainLinkSpec(
-            narrator_id=link["narrator_id"],
-            step=i,
-            version=link.get("version", "unknown"),
-            transform_type=TransformType(link.get("transform_type", "pass_through")),
-            domain=link.get("domain", "general"),
-        ))
+        specs.append(
+            ChainLinkSpec(
+                narrator_id=link["narrator_id"],
+                step=i,
+                version=link.get("version", "unknown"),
+                transform_type=TransformType(link.get("transform_type", "pass_through")),
+                domain=link.get("domain", "general"),
+            )
+        )
     chain = Chain(specs)
     return chain
 
@@ -67,11 +69,11 @@ def _rebuild_chain(claim: dict) -> Chain:
 def _isnad_gated_priority(action: Action) -> int:
     """Priority for review-queue consumption: lower = review first."""
     priority = {
-        Action.REVIEW: 0,                        # ʿilal / ḥasan×contradiction
-        Action.SERVE_WITH_CAVEAT: 1,             # review if budget allows
-        Action.QUARANTINE: 2,                    # hold
+        Action.REVIEW: 0,  # ʿilal / ḥasan×contradiction
+        Action.SERVE_WITH_CAVEAT: 1,  # review if budget allows
+        Action.QUARANTINE: 2,  # hold
         Action.REJECT_AND_QUARANTINE_NARRATOR: 3,  # already contained
-        Action.SERVE: 99,                        # never review
+        Action.SERVE: 99,  # never review
     }
     return priority.get(action, 50)
 
@@ -93,8 +95,11 @@ def run_condition(
 
     verdicts: list[ClaimVerdict] = []
     stats = {
-        "served": 0, "reviewed": 0, "errors_served": 0,
-        "reviewed_defective": 0, "quarantined": 0,
+        "served": 0,
+        "reviewed": 0,
+        "errors_served": 0,
+        "reviewed_defective": 0,
+        "quarantined": 0,
         "corroboration_upgrades": 0,
     }
 
@@ -102,6 +107,7 @@ def run_condition(
         # Serve everything, review random subset
         indices = list(range(n_claims))
         import random
+
         rng = random.Random(42)
         rng.shuffle(indices)
         review_set = set(indices[:review_budget])
@@ -157,15 +163,17 @@ def run_condition(
             verdicts.append(v)
 
     elif condition in ("isnad", "isnad_no_corroboration"):
-        enable_corroboration = (condition == "isnad")
+        enable_corroboration = condition == "isnad"
 
         # Build TF-IDF index once. For each claim, find best match
         # against a random sample of 500 other claims (fast, good enough).
         import random as _random
+
         _critic_corpus = list(corpus_normalized)
         _critic_verdicts: dict[str, ContentVerdict] = {}
         if len(_critic_corpus) > 1:
             from isnad.critics.embedding import TFIDFIndex, _has_contradiction_signal
+
             _rng = _random.Random(42)
             _critic_index = TFIDFIndex(_critic_corpus)
             _critic_vectors = [_critic_index.tfidf_vector(t) for t in _critic_corpus]
@@ -207,7 +215,8 @@ def run_condition(
             link_transforms = [link.transform_type for link in chain.links]
 
             cg = grade_chain(
-                link_grades, link_transforms,
+                link_grades,
+                link_transforms,
                 is_complete=claim.get("chain_complete", True),
                 corroboration_support=False,
             )
@@ -235,15 +244,16 @@ def run_condition(
 
             # Narrator metadata for correlation detection
             narrator_metadata: dict[str, dict] = {}
-            for nid in set(
-                n for c in graded_claims for n in c.get("_narrator_ids", [])
-            ):
+            for nid in set(n for c in graded_claims for n in c.get("_narrator_ids", [])):
                 if nid.startswith("source:"):
                     narrator_metadata[nid] = {"model_family": None, "upstream_source": nid}
                 elif "pdf-scraper" in nid:
                     narrator_metadata[nid] = {"model_family": "scraper", "upstream_source": None}
                 elif "ingest" in nid:
-                    narrator_metadata[nid] = {"model_family": nid.rsplit("@",1)[0] if "@" in nid else nid, "upstream_source": None}
+                    narrator_metadata[nid] = {
+                        "model_family": nid.rsplit("@", 1)[0] if "@" in nid else nid,
+                        "upstream_source": None,
+                    }
 
             corroboration_applied = 0
             for norm, claims in by_norm.items():
@@ -251,7 +261,7 @@ def run_condition(
                     continue
                 # Check for claims from different sources (different narrator chains)
                 for i, c_a in enumerate(claims):
-                    for c_b in claims[i + 1:]:
+                    for c_b in claims[i + 1 :]:
                         # Must have different sources (different chains)
                         if c_a.get("source") == c_b.get("source"):
                             continue
@@ -298,15 +308,14 @@ def run_condition(
         # Sort by review priority
         sorted_graded = sorted(
             graded_claims,
-            key=lambda c: _isnad_gated_priority(
-                Action(c.get("matrix_action", "serve"))
-            ),
+            key=lambda c: _isnad_gated_priority(Action(c.get("matrix_action", "serve"))),
         )
 
         reviewed_count = 0
         for claim in sorted_graded:
             v = ClaimVerdict(
-                claim_id=claim["claim_id"], condition=condition,
+                claim_id=claim["claim_id"],
+                condition=condition,
                 action=claim.get("matrix_action", ""),
                 chain_grade=claim.get("chain_grade", ""),
                 content_verdict=claim.get("content_verdict", ""),
@@ -384,10 +393,7 @@ def main() -> None:
             reg.register(nid, domain, grade=NarratorGrade(data["grade"]))
 
         # Build corpus for matn criticism
-        corpus_normalized = set(
-            c.get("normalized", "") for c in eval_claims
-            if c.get("normalized")
-        )
+        corpus_normalized = set(c.get("normalized", "") for c in eval_claims if c.get("normalized"))
 
         # Build GT lookup
         gt_lookup = {r["claim_id"]: r for r in gt_records}
@@ -397,13 +403,17 @@ def main() -> None:
         for condition in conditions:
             for budget in budgets:
                 verdicts, stats = run_condition(
-                    eval_claims, gt_lookup, reg,
-                    corpus_normalized, budget, condition,
+                    eval_claims,
+                    gt_lookup,
+                    reg,
+                    corpus_normalized,
+                    budget,
+                    condition,
                 )
 
                 total_claims = len(eval_claims)
                 served = stats["served"]
-                key = f"s{seed}_{condition}_b{int(budget*100):02d}"
+                key = f"s{seed}_{condition}_b{int(budget * 100):02d}"
                 all_results[key] = {
                     "seed": seed,
                     "condition": condition,
@@ -415,17 +425,17 @@ def main() -> None:
                     "served_error_rate": stats["errors_served"] / max(1, served),
                     "reviewed": stats["reviewed"],
                     "reviewed_defective": stats["reviewed_defective"],
-                    "review_precision": (
-                        stats["reviewed_defective"] / max(1, stats["reviewed"])
-                    ),
+                    "review_precision": (stats["reviewed_defective"] / max(1, stats["reviewed"])),
                     "quarantined": stats["quarantined"],
                     "corroboration_upgrades": stats.get("corroboration_upgrades", 0),
                 }
 
-                print(f"  {condition:25s} B={budget:.0%}  "
-                      f"coverage={all_results[key]['coverage']:.3f}  "
-                      f"error_rate={all_results[key]['served_error_rate']:.4f}  "
-                      f"review_prec={all_results[key]['review_precision']:.3f}")
+                print(
+                    f"  {condition:25s} B={budget:.0%}  "
+                    f"coverage={all_results[key]['coverage']:.3f}  "
+                    f"error_rate={all_results[key]['served_error_rate']:.4f}  "
+                    f"review_prec={all_results[key]['review_precision']:.3f}"
+                )
 
     # Save all results
     results_dir = os.path.join(exp_dir, "results")

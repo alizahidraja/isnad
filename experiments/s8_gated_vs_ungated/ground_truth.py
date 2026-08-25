@@ -90,6 +90,6 @@ class GroundTruth:
         return (
             f"GroundTruth: {self.total_claims} claims, "
             f"{self.corrupted_count} corrupted "
-            f"({100*self.corrupted_count/max(1,self.total_claims):.1f}%), "
+            f"({100 * self.corrupted_count / max(1, self.total_claims):.1f}%), "
             f"{self.incomplete_count} incomplete chains"
         )

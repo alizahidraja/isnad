@@ -17,7 +17,8 @@ class TestMainDispatcher:
             cli_main.main([])
         assert e.value.code == 1
         assert (
-            "Usage: isnad [serve|seed|export|verify|verify-chain|ingest|bench]" in capsys.readouterr().out
+            "Usage: isnad [serve|seed|export|verify|verify-chain|ingest|bench]"
+            in capsys.readouterr().out
         )
 
     def test_unknown_command_exits_1(self, capsys):

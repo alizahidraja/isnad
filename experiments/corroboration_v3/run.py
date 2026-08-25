@@ -20,18 +20,22 @@ Key honesty constraints:
 from __future__ import annotations
 
 import json
-import re
 import random
+import re
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-import numpy as np
-
 from isnad import (
-    Chain, ChainGrade, ChainLinkSpec, CorroborationEngine,
-    NarratorGrade, Registry, TransformType, grade_chain,
+    Chain,
+    ChainGrade,
+    ChainLinkSpec,
+    CorroborationEngine,
+    NarratorGrade,
+    Registry,
+    TransformType,
+    grade_chain,
 )
 
 _exp_dir = Path(__file__).parent
@@ -49,8 +53,8 @@ SOURCE_OSTAX = "source:openstax_vol1"
 SOURCE_CROWELL = "source:crowell_lm"
 SCRAPER_OSTAX = "scraper:ostax_pdf"
 SCRAPER_CROWELL = "scraper:crowell_pdf"
-INGEST_OSTAX_WEAK = "ingest:ostax_ocr"     # WEAK → DAIF baseline
-INGEST_OSTAX_GOOD = "ingest:ostax_direct"   # ACCEPTABLE → HASAN
+INGEST_OSTAX_WEAK = "ingest:ostax_ocr"  # WEAK → DAIF baseline
+INGEST_OSTAX_GOOD = "ingest:ostax_direct"  # ACCEPTABLE → HASAN
 INGEST_CROWELL_GOOD = "ingest:crowell_direct"  # ACCEPTABLE → HASAN
 
 NARRATOR_GRADES: dict[str, NarratorGrade] = {
@@ -80,22 +84,44 @@ CROSS_SOURCE_THRESHOLD = 0.80  # higher than Wikipedia (0.75) — textbook text 
 # ── Boilerplate filtering ────────────────────────────────────────────────
 
 CITATION_PATTERNS = [
-    r"^\s*Archived from", r"^\s*Retrieved\s", r"^\s*ISBN\s", r"^\s*doi:",
-    r"^\s*©", r"^\s*All rights reserved", r"^\s*This page was last edited",
-    r"^\s*References?\s*$", r"^\s*Further reading", r"^\s*External links",
-    r"^\s*Bibliography", r"^\s*See also", r"^\s*Notes\s*$",
-    r"^\s*\d+\.\s", r"^\s*\[\d+\]", r"^\s*\[note\s",
+    r"^\s*Archived from",
+    r"^\s*Retrieved\s",
+    r"^\s*ISBN\s",
+    r"^\s*doi:",
+    r"^\s*©",
+    r"^\s*All rights reserved",
+    r"^\s*This page was last edited",
+    r"^\s*References?\s*$",
+    r"^\s*Further reading",
+    r"^\s*External links",
+    r"^\s*Bibliography",
+    r"^\s*See also",
+    r"^\s*Notes\s*$",
+    r"^\s*\d+\.\s",
+    r"^\s*\[\d+\]",
+    r"^\s*\[note\s",
     # OpenStax-specific boilerplate
-    r"^\s*LEARNING OBJECTIVES", r"^\s*OpenStax", r"^\s*Rice University",
-    r"^\s*Access for free at", r"^\s*Download for free at",
-    r"^\s*SENIOR CONTRIBUTING", r"^\s*Creative Commons",
-    r"^\s*CC BY", r"^\s*Individual print copies",
-    r"^\s*If you redistribute", r"^\s*proper attribution",
-    r"^\s*Problem-Solving Strategy", r"^\s*Check Your Understanding",
-    r"^\s*Example\s+\d+", r"^\s*Strategy\s*$",
-    r"^\s*Significance\s*$", r"^\s*Solution\s*$",
+    r"^\s*LEARNING OBJECTIVES",
+    r"^\s*OpenStax",
+    r"^\s*Rice University",
+    r"^\s*Access for free at",
+    r"^\s*Download for free at",
+    r"^\s*SENIOR CONTRIBUTING",
+    r"^\s*Creative Commons",
+    r"^\s*CC BY",
+    r"^\s*Individual print copies",
+    r"^\s*If you redistribute",
+    r"^\s*proper attribution",
+    r"^\s*Problem-Solving Strategy",
+    r"^\s*Check Your Understanding",
+    r"^\s*Example\s+\d+",
+    r"^\s*Strategy\s*$",
+    r"^\s*Significance\s*$",
+    r"^\s*Solution\s*$",
     # Problem/answer markers
-    r"^\s*\d+\.\d+\s", r"^\s*Answer\s*$", r"^\s*Discuss\s",
+    r"^\s*\d+\.\d+\s",
+    r"^\s*Answer\s*$",
+    r"^\s*Discuss\s",
 ]
 
 
@@ -112,6 +138,7 @@ def is_boilerplate(text: str) -> bool:
 
 
 # ── Data loading ─────────────────────────────────────────────────────────
+
 
 def load_physics_corpus() -> dict[str, list[str]]:
     """Load sentences from physics corpus, keyed by source book.
@@ -147,12 +174,12 @@ def load_physics_corpus() -> dict[str, list[str]]:
             sources[src].append(s)
 
     for src, sents in sources.items():
-        print(f"  {src}: {len(sents)} factual sentences "
-              f"({sum(len(s) for s in sents):,} chars)")
+        print(f"  {src}: {len(sents)} factual sentences ({sum(len(s) for s in sents):,} chars)")
     return sources
 
 
 # ── Semantic matching ────────────────────────────────────────────────────
+
 
 def semantic_match(
     claims_a: list[str],
@@ -164,14 +191,12 @@ def semantic_match(
     from sentence_transformers import SentenceTransformer
     from sklearn.metrics.pairwise import cosine_similarity
 
-    print(f"  Loading embedding model...")
+    print("  Loading embedding model...")
     model = SentenceTransformer("all-MiniLM-L6-v2")
 
     print(f"  Encoding {len(claims_a)} + {len(claims_b)} claims...")
-    emb_a = model.encode(claims_a, batch_size=64, show_progress_bar=True,
-                         convert_to_numpy=True)
-    emb_b = model.encode(claims_b, batch_size=64, show_progress_bar=True,
-                         convert_to_numpy=True)
+    emb_a = model.encode(claims_a, batch_size=64, show_progress_bar=True, convert_to_numpy=True)
+    emb_b = model.encode(claims_b, batch_size=64, show_progress_bar=True, convert_to_numpy=True)
 
     print(f"  Computing {len(claims_a)} × {len(claims_b)} similarities...")
     # Process in batches
@@ -202,37 +227,66 @@ def semantic_match(
 
 # ── Chain building ───────────────────────────────────────────────────────
 
+
 def setup_registry() -> Registry:
     reg = Registry()
     for nid, grade in NARRATOR_GRADES.items():
         meta = NARRATOR_METADATA.get(nid, {})
-        reg.register(narrator_id=nid, domain_tag="general", grade=grade,
-                     model_family=meta.get("model_family"),
-                     upstream_source=meta.get("upstream_source"))
+        reg.register(
+            narrator_id=nid,
+            domain_tag="general",
+            grade=grade,
+            model_family=meta.get("model_family"),
+            upstream_source=meta.get("upstream_source"),
+        )
     return reg
 
 
 def build_ostax_weak_chain() -> Chain:
     """OpenStax chain with WEAK OCR ingest → DAIF baseline."""
     return Chain([
-        ChainLinkSpec(narrator_id=SOURCE_OSTAX, step=0,
-                      transform_type=TransformType.PASS_THROUGH, domain="general"),
-        ChainLinkSpec(narrator_id=SCRAPER_OSTAX, step=1,
-                      transform_type=TransformType.DESTRUCTIVE, domain="general"),
-        ChainLinkSpec(narrator_id=INGEST_OSTAX_WEAK, step=2,
-                      transform_type=TransformType.DESTRUCTIVE, domain="general"),
+        ChainLinkSpec(
+            narrator_id=SOURCE_OSTAX,
+            step=0,
+            transform_type=TransformType.PASS_THROUGH,
+            domain="general",
+        ),
+        ChainLinkSpec(
+            narrator_id=SCRAPER_OSTAX,
+            step=1,
+            transform_type=TransformType.DESTRUCTIVE,
+            domain="general",
+        ),
+        ChainLinkSpec(
+            narrator_id=INGEST_OSTAX_WEAK,
+            step=2,
+            transform_type=TransformType.DESTRUCTIVE,
+            domain="general",
+        ),
     ])
 
 
 def build_crowell_chain() -> Chain:
     """Crowell chain with good ingest → HASAN."""
     return Chain([
-        ChainLinkSpec(narrator_id=SOURCE_CROWELL, step=0,
-                      transform_type=TransformType.PASS_THROUGH, domain="general"),
-        ChainLinkSpec(narrator_id=SCRAPER_CROWELL, step=1,
-                      transform_type=TransformType.DESTRUCTIVE, domain="general"),
-        ChainLinkSpec(narrator_id=INGEST_CROWELL_GOOD, step=2,
-                      transform_type=TransformType.DESTRUCTIVE, domain="general"),
+        ChainLinkSpec(
+            narrator_id=SOURCE_CROWELL,
+            step=0,
+            transform_type=TransformType.PASS_THROUGH,
+            domain="general",
+        ),
+        ChainLinkSpec(
+            narrator_id=SCRAPER_CROWELL,
+            step=1,
+            transform_type=TransformType.DESTRUCTIVE,
+            domain="general",
+        ),
+        ChainLinkSpec(
+            narrator_id=INGEST_CROWELL_GOOD,
+            step=2,
+            transform_type=TransformType.DESTRUCTIVE,
+            domain="general",
+        ),
     ])
 
 
@@ -243,6 +297,7 @@ def grade_chain_fn(chain: Chain, registry: Registry) -> ChainGrade:
 
 
 # ── Main ─────────────────────────────────────────────────────────────────
+
 
 @dataclass
 class PhysicsClaimRecord:
@@ -276,8 +331,9 @@ def main() -> None:
 
     # ── Semantic match ──
     print("\n── Semantic Matching ──")
-    matches = semantic_match(ostax_sents, crowell_sents,
-                             threshold=CROSS_SOURCE_THRESHOLD, max_pairs=500)
+    matches = semantic_match(
+        ostax_sents, crowell_sents, threshold=CROSS_SOURCE_THRESHOLD, max_pairs=500
+    )
 
     if not matches:
         print("\n⚠️  ZERO semantic matches found above threshold.")
@@ -314,10 +370,12 @@ def main() -> None:
         result = engine.evaluate_direct(
             base_chain_grade=ostax_grade,
             base_narrators=ostax_chain.narrator_ids,
-            corroborating_chains=[{
-                "grade": crowell_grade.value,
-                "narrators": crowell_chain.narrator_ids,
-            }],
+            corroborating_chains=[
+                {
+                    "grade": crowell_grade.value,
+                    "narrators": crowell_chain.narrator_ids,
+                }
+            ],
             narrator_metadata=NARRATOR_METADATA,
         )
 
@@ -342,65 +400,73 @@ def main() -> None:
     print("RESULTS")
     print(f"{'=' * 70}")
     print(f"  Semantic matches found:     {total}")
-    print(f"  Corroboration fired:        {fired}/{total} ({fired/max(1,total)*100:.1f}%)")
+    print(f"  Corroboration fired:        {fired}/{total} ({fired / max(1, total) * 100:.1f}%)")
 
     # Grade distribution
     from collections import Counter
+
     ostax_grades = Counter(r.ostax_grade for r in records)
     crowell_grades = Counter(r.crowell_grade for r in records)
     print(f"  OpenStax grades:            {dict(ostax_grades)}")
     print(f"  Crowell grades:             {dict(crowell_grades)}")
 
     if fired == 0:
-        print(f"\n  ⚠️  ZERO upgrades. Honest diagnosis:")
+        print("\n  ⚠️  ZERO upgrades. Honest diagnosis:")
         if all(r.ostax_grade == "hasan" for r in records):
-            print(f"     All OpenStax chains are HASAN (not DAIF).")
-            print(f"     Corroboration fires but HASAN cap prevents upgrade.")
-            print(f"     Need a genuinely WEAK narrator for DAIF baseline.")
-            print(f"     Check: WEAK OCR ingest should produce DAIF chain.")
-            print(f"     If not, the RefinedWeakestLink might be elevating the grade.")
+            print("     All OpenStax chains are HASAN (not DAIF).")
+            print("     Corroboration fires but HASAN cap prevents upgrade.")
+            print("     Need a genuinely WEAK narrator for DAIF baseline.")
+            print("     Check: WEAK OCR ingest should produce DAIF chain.")
+            print("     If not, the RefinedWeakestLink might be elevating the grade.")
         if all(r.crowell_grade == "hasan" for r in records):
-            print(f"     All Crowell corroborators are HASAN.")
-            print(f"     Gate check: HASAN ≥ HASAN → passes.")
+            print("     All Crowell corroborators are HASAN.")
+            print("     Gate check: HASAN ≥ HASAN → passes.")
         # Show independence scores
         from isnad import SharedLineageDetector
+
         det = SharedLineageDetector()
         chain_a = build_ostax_weak_chain()
         chain_b = build_crowell_chain()
         score = det.compute_independence_score(
-            chain_a.narrator_ids, chain_b.narrator_ids, NARRATOR_METADATA)
+            chain_a.narrator_ids, chain_b.narrator_ids, NARRATOR_METADATA
+        )
         print(f"     Independence score: {score:.1f}")
         if score < 0.8:
-            print(f"     ⚠️  Independence FAILS — chains share lineage")
+            print("     ⚠️  Independence FAILS — chains share lineage")
         # Check actual grades
-        print(f"\n  Chain grade trace:")
+        print("\n  Chain grade trace:")
         ostax_g = [reg.get_grade(l.narrator_id, l.domain).value for l in chain_a.links]
         crowell_g = [reg.get_grade(l.narrator_id, l.domain).value for l in chain_b.links]
         print(f"     OpenStax narrators: {ostax_g} → {grade_chain_fn(chain_a, reg).value}")
         print(f"     Crowell narrators:  {crowell_g} → {grade_chain_fn(chain_b, reg).value}")
 
     # Show sample matches
-    print(f"\n  Sample matches:")
+    print("\n  Sample matches:")
     rng = random.Random(42)
     for r in rng.sample(records, min(5, len(records))):
         tag = "🔥" if r.corroborated else "—"
-        print(f"\n  [{tag}] sim={r.similarity:.3f}  "
-              f"{r.ostax_grade}→{r.upgraded_grade}  weight={r.effective_weight:.1f}")
+        print(
+            f"\n  [{tag}] sim={r.similarity:.3f}  "
+            f"{r.ostax_grade}→{r.upgraded_grade}  weight={r.effective_weight:.1f}"
+        )
         print(f"    OSTAX: {r.text_ostax[:130]}...")
         print(f"    CROWL: {r.text_crowell[:130]}...")
 
     # Save
-    results = [{
-        "text_ostax": r.text_ostax,
-        "text_crowell": r.text_crowell,
-        "similarity": round(r.similarity, 4),
-        "ostax_grade": r.ostax_grade,
-        "crowell_grade": r.crowell_grade,
-        "corroborated": r.corroborated,
-        "upgraded_grade": r.upgraded_grade,
-        "effective_weight": round(r.effective_weight, 2),
-        "reason": r.reason,
-    } for r in records]
+    results = [
+        {
+            "text_ostax": r.text_ostax,
+            "text_crowell": r.text_crowell,
+            "similarity": round(r.similarity, 4),
+            "ostax_grade": r.ostax_grade,
+            "crowell_grade": r.crowell_grade,
+            "corroborated": r.corroborated,
+            "upgraded_grade": r.upgraded_grade,
+            "effective_weight": round(r.effective_weight, 2),
+            "reason": r.reason,
+        }
+        for r in records
+    ]
 
     with open(OUTPUT_DIR / "results_v3.json", "w") as f:
         json.dump(results, f, indent=2)
@@ -411,13 +477,15 @@ def main() -> None:
     print("HONEST BOTTOM LINE")
     print(f"{'=' * 70}")
     if fired > 0:
-        print(f"  ✓ Corroboration fired on {fired}/{total} claims ({fired/max(1,total)*100:.0f}%)")
+        print(
+            f"  ✓ Corroboration fired on {fired}/{total} claims ({fired / max(1, total) * 100:.0f}%)"
+        )
     else:
-        print(f"  ✗ Corroboration did NOT produce grade upgrades.")
-        print(f"  This is an HONEST result — the physics corpus is harder:")
-        print(f"    • Fewer cross-source overlaps than Wikipedia")
-        print(f"    • Higher baseline narrator grades (RELIABLE sources)")
-        print(f"    • Different textbooks phrase physics differently")
+        print("  ✗ Corroboration did NOT produce grade upgrades.")
+        print("  This is an HONEST result — the physics corpus is harder:")
+        print("    • Fewer cross-source overlaps than Wikipedia")
+        print("    • Higher baseline narrator grades (RELIABLE sources)")
+        print("    • Different textbooks phrase physics differently")
     print("=" * 70)
 
 

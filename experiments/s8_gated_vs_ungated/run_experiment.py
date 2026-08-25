@@ -15,20 +15,23 @@ import os
 import random
 import sys
 import time
-from dataclasses import dataclass
 
 _exp_dir = os.path.dirname(os.path.abspath(__file__))
 _parent = os.path.dirname(os.path.dirname(_exp_dir))
 sys.path.insert(0, os.path.join(_parent, "src"))
 
 from isnad.core.chain import Chain, ChainLinkSpec
+from isnad.core.corroboration import evaluate_corroboration
+from isnad.core.decision import decide
 from isnad.core.grading import grade_chain
-from isnad.core.decision import decide, describe_action
 from isnad.core.registry import Registry
-from isnad.core.corroboration import evaluate_corroboration, SharedLineageDetector
 from isnad.types import (
-    Action, ChainGrade, ContentVerdict, EvidenceAction, EvidenceType,
-    NarratorGrade, TransformType,
+    ChainGrade,
+    ContentVerdict,
+    EvidenceAction,
+    EvidenceType,
+    NarratorGrade,
+    TransformType,
 )
 
 SEP = "=" * 64
@@ -37,6 +40,7 @@ SEP = "=" * 64
 # ═══════════════════════════════════════════════════════════════════
 # DeepSeek LLM Critic
 # ═══════════════════════════════════════════════════════════════════
+
 
 class DeepSeekCritic:
     """Content critic: DeepSeek LLM primary, EmbeddingCritic fallback.
@@ -54,6 +58,7 @@ class DeepSeekCritic:
         self.call_count = 0
         # TF-IDF fallback critic (zero deps, always available)
         from isnad.critics.embedding import EmbeddingCritic
+
         self._fallback = EmbeddingCritic()
         self._corpus_texts: list[str] = []
 
@@ -61,8 +66,9 @@ class DeepSeekCritic:
         """Pre-load corpus for EmbeddingCritic fallback."""
         self._corpus_texts = list(texts)
 
-    def evaluate(self, claim_text: str, normalized: str,
-                 corpus_claims: list[str], domain: str = "") -> ContentVerdict:
+    def evaluate(
+        self, claim_text: str, normalized: str, corpus_claims: list[str], domain: str = ""
+    ) -> ContentVerdict:
         if self.available:
             return self._deepseek_eval(normalized)
         # Use EmbeddingCritic fallback with corpus context
@@ -82,12 +88,14 @@ class DeepSeekCritic:
         )
         try:
             import urllib.request
+
             req = urllib.request.Request(
                 f"{self.base_url}/v1/chat/completions",
                 data=json.dumps({
                     "model": "deepseek-chat",
                     "messages": [{"role": "user", "content": prompt}],
-                    "max_tokens": 10, "temperature": 0,
+                    "max_tokens": 10,
+                    "temperature": 0,
                 }).encode(),
                 headers={
                     "Authorization": f"Bearer {self.api_key}",
@@ -113,6 +121,7 @@ class DeepSeekCritic:
 # ═══════════════════════════════════════════════════════════════════
 # Main
 # ═══════════════════════════════════════════════════════════════════
+
 
 def run() -> None:
     print(f"\n{SEP}")
@@ -140,16 +149,26 @@ def run() -> None:
         c["chain"] = [
             {"narrator_id": src, "step": 0, "transform_type": "pass_through", "domain": "physics"},
             {"narrator_id": scr, "step": 1, "transform_type": "destructive", "domain": "physics"},
-            {"narrator_id": mod, "step": 2, "transform_type": "generative", "domain": "physics", "version": "v1"},
+            {
+                "narrator_id": mod,
+                "step": 2,
+                "transform_type": "generative",
+                "domain": "physics",
+                "version": "v1",
+            },
         ]
         c["chain_complete"] = True
         c["_narrator_ids"] = [ln["narrator_id"] for ln in c["chain"]]
 
     # Inject errors into 15% of claims
     ERROR_PAIRS = [
-        ("force", "power"), ("mass", "weight"), ("velocity", "speed"),
-        ("acceleration", "velocity"), ("energy", "entropy"),
-        ("increases", "decreases"), ("conserved", "not conserved"),
+        ("force", "power"),
+        ("mass", "weight"),
+        ("velocity", "speed"),
+        ("acceleration", "velocity"),
+        ("energy", "entropy"),
+        ("increases", "decreases"),
+        ("conserved", "not conserved"),
         ("attractive", "repulsive"),
     ]
     n_corrupt = int(len(claims) * 0.15)
@@ -187,28 +206,45 @@ def run() -> None:
             # Good scraper: ACCEPTABLE
             reg.register(nid, "physics", grade=NarratorGrade.ACCEPTABLE)
             for _ in range(5):
-                reg.record_evidence(nid, "physics", EvidenceType.EVAL_HARNESS,
-                                   EvidenceAction.TADIL, "Verified")
+                reg.record_evidence(
+                    nid, "physics", EvidenceType.EVAL_HARNESS, EvidenceAction.TADIL, "Verified"
+                )
         elif nid == "pdf_scraper_b":
             # Bad scraper: REJECTED (injects errors)
             reg.register(nid, "physics", grade=NarratorGrade.UNGRADED)
             for _ in range(5):
-                reg.record_evidence(nid, "physics", EvidenceType.POST_HOC_AUDIT,
-                                   EvidenceAction.JARH, "Corruption detected")
+                reg.record_evidence(
+                    nid,
+                    "physics",
+                    EvidenceType.POST_HOC_AUDIT,
+                    EvidenceAction.JARH,
+                    "Corruption detected",
+                )
         elif nid == "ingest_model_c":
             # Weak model: barely acceptable
             reg.register(nid, "physics", grade=NarratorGrade.UNGRADED)
             for _ in range(2):
-                reg.record_evidence(nid, "physics", EvidenceType.CORROBORATION_OUTCOME,
-                                   EvidenceAction.TADIL, "OK")
+                reg.record_evidence(
+                    nid, "physics", EvidenceType.CORROBORATION_OUTCOME, EvidenceAction.TADIL, "OK"
+                )
             for _ in range(3):
-                reg.record_evidence(nid, "physics", EvidenceType.POST_HOC_AUDIT,
-                                   EvidenceAction.JARH, "Hallucination")
+                reg.record_evidence(
+                    nid,
+                    "physics",
+                    EvidenceType.POST_HOC_AUDIT,
+                    EvidenceAction.JARH,
+                    "Hallucination",
+                )
         else:  # ingest_model_a, ingest_model_b: good models
             reg.register(nid, "physics", grade=NarratorGrade.UNGRADED)
             for _ in range(7):
-                reg.record_evidence(nid, "physics", EvidenceType.CORROBORATION_OUTCOME,
-                                   EvidenceAction.TADIL, "Corroborated")
+                reg.record_evidence(
+                    nid,
+                    "physics",
+                    EvidenceType.CORROBORATION_OUTCOME,
+                    EvidenceAction.TADIL,
+                    "Corroborated",
+                )
 
     for nid in sorted(all_narrators):
         print(f"    {nid:22s} → {reg.get_grade(nid, 'physics').value}")
@@ -217,8 +253,11 @@ def run() -> None:
     print("\n[3/5] Initializing critic...")
     critic = DeepSeekCritic()
     # Seed EmbeddingCritic fallback with corpus of clean claims
-    clean_claims = [c.get("normalized", c.get("text", "")) for c in claims
-                    if not gt_lookup.get(c["claim_id"], {}).get("corrupted")]
+    clean_claims = [
+        c.get("normalized", c.get("text", ""))
+        for c in claims
+        if not gt_lookup.get(c["claim_id"], {}).get("corrupted")
+    ]
     critic.set_corpus(clean_claims[:200])  # 200 clean claims as context
     if critic.available:
         print(f"  DeepSeek API ({critic.base_url})")
@@ -230,25 +269,38 @@ def run() -> None:
     t0 = time.time()
     graded: list[dict] = []
     stats: dict[str, int] = {g.value: 0 for g in ChainGrade}
-    stats.update({"consistent": 0, "contradiction": 0, "unverifiable": 0,
-                   "corroboration_upgrades": 0, "corroboration_checks": 0})
+    stats.update({
+        "consistent": 0,
+        "contradiction": 0,
+        "unverifiable": 0,
+        "corroboration_upgrades": 0,
+        "corroboration_checks": 0,
+    })
 
     for idx, claim in enumerate(claims):
         if idx % 100 == 0:
             print(f"  {idx}/{len(claims)}...")
 
-        chain = Chain([ChainLinkSpec(
-            narrator_id=ln["narrator_id"], step=ln["step"],
-            version=ln.get("version", "unknown"),
-            transform_type=TransformType(ln.get("transform_type", "pass_through")),
-            domain=ln.get("domain", "physics"),
-        ) for ln in claim.get("chain", [])])
+        chain = Chain([
+            ChainLinkSpec(
+                narrator_id=ln["narrator_id"],
+                step=ln["step"],
+                version=ln.get("version", "unknown"),
+                transform_type=TransformType(ln.get("transform_type", "pass_through")),
+                domain=ln.get("domain", "physics"),
+            )
+            for ln in claim.get("chain", [])
+        ])
 
         link_grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
-        cg = grade_chain(link_grades, [l.transform_type for l in chain.links],
-                         is_complete=claim.get("chain_complete", True))
-        cv = critic.evaluate(claim.get("text", ""), claim.get("normalized", ""),
-                             [], claim.get("domain", "physics"))
+        cg = grade_chain(
+            link_grades,
+            [l.transform_type for l in chain.links],
+            is_complete=claim.get("chain_complete", True),
+        )
+        cv = critic.evaluate(
+            claim.get("text", ""), claim.get("normalized", ""), [], claim.get("domain", "physics")
+        )
         action = decide(cg, cv)
 
         stats[cg.value] += 1
@@ -280,7 +332,7 @@ def run() -> None:
         if len(matched) < 2:
             continue
         for i, c_a in enumerate(matched):
-            for c_b in matched[i + 1:]:
+            for c_b in matched[i + 1 :]:
                 if c_a.get("source") == c_b.get("source"):
                     continue
                 try:
@@ -303,12 +355,17 @@ def run() -> None:
     # ── 5. Results ──────────────────────────────────────────────
     served = sum(1 for c in graded if c.get("action") in ("serve", "serve_with_caveat"))
     review = sum(1 for c in graded if c.get("action") == "review")
-    quar = sum(1 for c in graded if c.get("action") in ("quarantine", "reject_and_quarantine_narrator"))
-    corrupted_served = sum(1 for c in graded
-                          if c.get("action") in ("serve", "serve_with_caveat")
-                          and gt_lookup.get(c["claim_id"], {}).get("corrupted"))
+    quar = sum(
+        1 for c in graded if c.get("action") in ("quarantine", "reject_and_quarantine_narrator")
+    )
+    corrupted_served = sum(
+        1
+        for c in graded
+        if c.get("action") in ("serve", "serve_with_caveat")
+        and gt_lookup.get(c["claim_id"], {}).get("corrupted")
+    )
 
-    print(f"\n[5/5] Results ({elapsed:.1f}s, {len(claims)/max(0.01,elapsed):.0f} claims/s)")
+    print(f"\n[5/5] Results ({elapsed:.1f}s, {len(claims) / max(0.01, elapsed):.0f} claims/s)")
     print(f"\n{SEP}")
     print("GRADE DISTRIBUTION")
     print(SEP)
@@ -321,16 +378,24 @@ def run() -> None:
     print(f"\n{SEP}")
     print("DECISIONS")
     print(SEP)
-    print(f"  SERVED:       {served:5d} ({served/len(claims)*100:5.1f}%)  [corrupted: {corrupted_served}]")
-    print(f"  REVIEW:       {review:5d} ({review/len(claims)*100:5.1f}%)")
-    print(f"  QUARANTINED:  {quar:5d} ({quar/len(claims)*100:5.1f}%)")
+    print(
+        f"  SERVED:       {served:5d} ({served / len(claims) * 100:5.1f}%)  [corrupted: {corrupted_served}]"
+    )
+    print(f"  REVIEW:       {review:5d} ({review / len(claims) * 100:5.1f}%)")
+    print(f"  QUARANTINED:  {quar:5d} ({quar / len(claims) * 100:5.1f}%)")
 
     print(f"\n{SEP}")
     print("CONTENT VERDICTS")
     print(SEP)
-    print(f"  CONSISTENT:     {stats['consistent']:5d} ({stats['consistent']/len(claims)*100:5.1f}%)")
-    print(f"  CONTRADICTION:  {stats['contradiction']:5d} ({stats['contradiction']/len(claims)*100:5.1f}%)")
-    print(f"  UNVERIFIABLE:   {stats['unverifiable']:5d} ({stats['unverifiable']/len(claims)*100:5.1f}%)")
+    print(
+        f"  CONSISTENT:     {stats['consistent']:5d} ({stats['consistent'] / len(claims) * 100:5.1f}%)"
+    )
+    print(
+        f"  CONTRADICTION:  {stats['contradiction']:5d} ({stats['contradiction'] / len(claims) * 100:5.1f}%)"
+    )
+    print(
+        f"  UNVERIFIABLE:   {stats['unverifiable']:5d} ({stats['unverifiable'] / len(claims) * 100:5.1f}%)"
+    )
 
     print(f"\n{SEP}")
     print("CORROBORATION")
@@ -342,15 +407,25 @@ def run() -> None:
     # Save
     out = os.path.join(_exp_dir, "results", "s8_bayesian_corroboration.json")
     with open(out, "w") as f:
-        json.dump({
-            "config": {"policy": "bayesian", "critic": "deepseek" if critic.available else "stub",
-                       "claims": len(claims), "error_rate": 0.15},
-            "stats": stats,
-            "served": served, "review": review, "quarantined": quar,
-            "corrupted_served": corrupted_served,
-            "elapsed_s": round(elapsed, 2),
-            "sample_graded": graded[:5],
-        }, f, indent=2)
+        json.dump(
+            {
+                "config": {
+                    "policy": "bayesian",
+                    "critic": "deepseek" if critic.available else "stub",
+                    "claims": len(claims),
+                    "error_rate": 0.15,
+                },
+                "stats": stats,
+                "served": served,
+                "review": review,
+                "quarantined": quar,
+                "corrupted_served": corrupted_served,
+                "elapsed_s": round(elapsed, 2),
+                "sample_graded": graded[:5],
+            },
+            f,
+            indent=2,
+        )
     print(f"\n  → {out}")
     print(f"\n{SEP}\nDONE\n{SEP}")
 

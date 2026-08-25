@@ -137,6 +137,7 @@ dev = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["E402", "E501", "B007", "F401", "F541", "F811", "F841", "I001", "E741"]
+"experiments/*" = ["E402", "E501", "E741", "N806", "B007", "C401", "F841", "B905", "F401", "F541", "I001", "SIM103", "SIM115", "SIM108"]
 "src/isnad/api/*" = ["B008", "E501", "E402", "E741", "B904"]
 "src/isnad/core/corroboration.py" = ["E402"]
 "src/isnad/critics/embedding.py" = ["SIM102"]

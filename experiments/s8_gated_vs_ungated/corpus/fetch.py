@@ -15,7 +15,6 @@ Chunks are saved to corpus/chunks/ (committed for reproducibility).
 """
 
 import hashlib
-import os
 import re
 import sys
 import time
@@ -115,7 +114,7 @@ def download_pdf(source: dict, pdf_dir: Path) -> tuple[bool, str]:
 
     if not is_valid_pdf(pdf_path):
         pdf_path.unlink()
-        return False, f"Not a valid PDF (magic bytes: %PDF expected)"
+        return False, "Not a valid PDF (magic bytes: %PDF expected)"
 
     if size < source["expected_size_min"]:
         pdf_path.unlink()
@@ -160,6 +159,7 @@ def _extract_basic(pdf_path: Path) -> list[dict]:
     for lib in ["fitz", "pymupdf"]:
         try:
             import fitz  # pymupdf
+
             pages = []
             doc = fitz.open(pdf_path)
             for i, page in enumerate(doc):
@@ -197,7 +197,11 @@ def chunk_text(pages: list[dict], source_name: str, source_license: str) -> list
                     "text": current_chunk.strip(),
                     "source": source_name,
                     "license": source_license,
-                    "pages": f"{current_pages[0]}-{current_pages[-1]}" if len(current_pages) > 1 else str(current_pages[0]) if current_pages else "",
+                    "pages": f"{current_pages[0]}-{current_pages[-1]}"
+                    if len(current_pages) > 1
+                    else str(current_pages[0])
+                    if current_pages
+                    else "",
                 })
                 current_chunk = para
                 current_pages = [page["page"]]
@@ -215,7 +219,11 @@ def chunk_text(pages: list[dict], source_name: str, source_license: str) -> list
             "text": current_chunk.strip(),
             "source": source_name,
             "license": source_license,
-            "pages": f"{current_pages[0]}-{current_pages[-1]}" if len(current_pages) > 1 else str(current_pages[0]) if current_pages else "",
+            "pages": f"{current_pages[0]}-{current_pages[-1]}"
+            if len(current_pages) > 1
+            else str(current_pages[0])
+            if current_pages
+            else "",
         })
 
     return chunks
@@ -225,13 +233,13 @@ def save_chunks(chunks: list[dict], chunks_dir: Path, prefix: str) -> int:
     """Save chunks to text files. Returns number of chunks saved."""
     chunks_dir.mkdir(parents=True, exist_ok=True)
     for i, chunk in enumerate(chunks):
-        fname = f"{prefix}_chunk_{i+1:03d}.txt"
+        fname = f"{prefix}_chunk_{i + 1:03d}.txt"
         fpath = chunks_dir / fname
         with open(fpath, "w") as f:
             f.write(f"# Source: {chunk['source']}\n")
             f.write(f"# License: {chunk['license']}\n")
             f.write(f"# Pages: {chunk['pages']}\n")
-            f.write(f"# Chunk: {i+1}/{len(chunks)}\n")
+            f.write(f"# Chunk: {i + 1}/{len(chunks)}\n")
             f.write("#" * 60 + "\n\n")
             f.write(chunk["text"])
     return len(chunks)
@@ -268,7 +276,9 @@ def main() -> None:
     import argparse
 
     parser = argparse.ArgumentParser(description="Download and extract real PDFs for §8 experiment")
-    parser.add_argument("--verify-only", action="store_true", help="Verify existing PDFs without downloading")
+    parser.add_argument(
+        "--verify-only", action="store_true", help="Verify existing PDFs without downloading"
+    )
     args = parser.parse_args()
 
     corpus_dir = Path(__file__).parent
@@ -314,7 +324,7 @@ def main() -> None:
             checksums[source["filename"]] = result
         else:
             print(f"  ✗ {source['name']}: {result}")
-            print(f"  → This source will be SKIPPED. Continuing with remaining sources.")
+            print("  → This source will be SKIPPED. Continuing with remaining sources.")
 
     if not checksums:
         print("\nERROR: No PDFs could be downloaded or found.")
@@ -326,9 +336,11 @@ def main() -> None:
 
     # Step 2: Extract text from PDFs
     print("\n── Step 2: Extract Text ──\n")
-    extract_sample_path.write_text("# PDF Text Extraction Samples\n\n"
-                                    "Real text extracted from downloaded PDFs.\n"
-                                    "Generated: " + time.strftime("%Y-%m-%d %H:%M:%S") + "\n")
+    extract_sample_path.write_text(
+        "# PDF Text Extraction Samples\n\n"
+        "Real text extracted from downloaded PDFs.\n"
+        "Generated: " + time.strftime("%Y-%m-%d %H:%M:%S") + "\n"
+    )
 
     total_chunks = 0
 
@@ -341,7 +353,7 @@ def main() -> None:
         pages = extract_text_from_pdf(pdf_path)
 
         if not pages:
-            print(f"    No text extracted — skipping")
+            print("    No text extracted — skipping")
             continue
 
         # Save extract sample
@@ -357,12 +369,24 @@ def main() -> None:
 
     # Clean up: remove old pre-generated chunks that have been replaced
     old_patterns = [
-        "openstax_vol1_mechanics", "openstax_vol2_em", "openstax_vol3_modern",
-        "crowell_light_matter", "extended_physics", "extended_physics_2",
-        "mechanics_extended", "em_optics_extended", "modern_extended",
-        "crowell_extended", "dense_physics", "quick_reference",
-        "review_facts", "overlap_corpus", "openstax_overlap",
-        "crowell_overlap", "astro_medical_materials", "bulk_claims",
+        "openstax_vol1_mechanics",
+        "openstax_vol2_em",
+        "openstax_vol3_modern",
+        "crowell_light_matter",
+        "extended_physics",
+        "extended_physics_2",
+        "mechanics_extended",
+        "em_optics_extended",
+        "modern_extended",
+        "crowell_extended",
+        "dense_physics",
+        "quick_reference",
+        "review_facts",
+        "overlap_corpus",
+        "openstax_overlap",
+        "crowell_overlap",
+        "astro_medical_materials",
+        "bulk_claims",
     ]
     removed = 0
     for f in list(chunks_dir.glob("*.txt")):
@@ -378,7 +402,7 @@ def main() -> None:
     # Summary
     print(f"\n{'=' * 60}")
     print(f"DONE. {len(checksums)} PDFs processed, {total_chunks} chunks created.")
-    print(f"Next: run extract.py to extract atomic claims from chunks.")
+    print("Next: run extract.py to extract atomic claims from chunks.")
     print(f"{'=' * 60}")
 
 

@@ -21,8 +21,14 @@ from pathlib import Path
 from typing import Any
 
 from isnad import (
-    Chain, ChainGrade, ChainLinkSpec, CorroborationEngine,
-    NarratorGrade, Registry, TransformType, grade_chain,
+    Chain,
+    ChainGrade,
+    ChainLinkSpec,
+    CorroborationEngine,
+    NarratorGrade,
+    Registry,
+    TransformType,
+    grade_chain,
 )
 
 _exp_dir = Path(__file__).parent
@@ -30,9 +36,11 @@ if str(_exp_dir) not in sys.path:
     sys.path.insert(0, str(_exp_dir))
 
 from data_loader import (
-    TOPICS, DualWikipediaLoader, extract_factual_sentences, normalize_claim,
+    TOPICS,
+    DualWikipediaLoader,
+    normalize_claim,
 )
-from semantic_matcher import SemanticMatcher, MatchPair, save_matches, load_matches
+from semantic_matcher import MatchPair, SemanticMatcher, load_matches, save_matches
 
 # ===========================================================================
 # Configuration
@@ -48,15 +56,15 @@ MATCHES_DIR.mkdir(parents=True, exist_ok=True)
 # Claims are raw extracted sentences, not LLM-processed.
 
 REG_SOURCE = "source:wikipedia"
-REG_INGEST = "ingest:wiki_ocr"      # OCR extraction (WEAK → DAIF baseline)
+REG_INGEST = "ingest:wiki_ocr"  # OCR extraction (WEAK → DAIF baseline)
 SIM_SOURCE = "source:wikipedia_simple"
 SIM_INGEST = "ingest:simple_direct"  # Direct extraction (RELIABLE → HASAN)
 
 NARRATOR_GRADES: dict[str, NarratorGrade] = {
     REG_SOURCE: NarratorGrade.ACCEPTABLE,
-    REG_INGEST: NarratorGrade.WEAK,       # WEAK OCR → DAIF chain
+    REG_INGEST: NarratorGrade.WEAK,  # WEAK OCR → DAIF chain
     SIM_SOURCE: NarratorGrade.ACCEPTABLE,
-    SIM_INGEST: NarratorGrade.RELIABLE,   # Direct → HASAN chain
+    SIM_INGEST: NarratorGrade.RELIABLE,  # Direct → HASAN chain
 }
 
 NARRATOR_METADATA: dict[str, dict[str, Any]] = {
@@ -71,23 +79,40 @@ NARRATOR_METADATA: dict[str, dict[str, Any]] = {
 # Chain building — source → ingest only (no LLM — claims are raw sentences)
 # ===========================================================================
 
+
 def build_reg_weak_chain() -> Chain:
     """Weak chain: Wikipedia source → OCR ingestion (DAIF)."""
     return Chain([
-        ChainLinkSpec(narrator_id=REG_SOURCE, step=0,
-                      transform_type=TransformType.PASS_THROUGH, domain="general"),
-        ChainLinkSpec(narrator_id=REG_INGEST, step=1,
-                      transform_type=TransformType.DESTRUCTIVE, domain="general"),
+        ChainLinkSpec(
+            narrator_id=REG_SOURCE,
+            step=0,
+            transform_type=TransformType.PASS_THROUGH,
+            domain="general",
+        ),
+        ChainLinkSpec(
+            narrator_id=REG_INGEST,
+            step=1,
+            transform_type=TransformType.DESTRUCTIVE,
+            domain="general",
+        ),
     ])
 
 
 def build_sim_chain() -> Chain:
     """Strong chain: Simple Wikipedia source → direct ingestion (HASAN)."""
     return Chain([
-        ChainLinkSpec(narrator_id=SIM_SOURCE, step=0,
-                      transform_type=TransformType.PASS_THROUGH, domain="general"),
-        ChainLinkSpec(narrator_id=SIM_INGEST, step=1,
-                      transform_type=TransformType.DESTRUCTIVE, domain="general"),
+        ChainLinkSpec(
+            narrator_id=SIM_SOURCE,
+            step=0,
+            transform_type=TransformType.PASS_THROUGH,
+            domain="general",
+        ),
+        ChainLinkSpec(
+            narrator_id=SIM_INGEST,
+            step=1,
+            transform_type=TransformType.DESTRUCTIVE,
+            domain="general",
+        ),
     ])
 
 
@@ -95,13 +120,15 @@ def _grade_chain(chain: Chain, registry: Registry) -> ChainGrade:
     """Grade a chain using the registry."""
     link_grades = [registry.get_grade(l.narrator_id, l.domain) for l in chain.links]
     link_transforms = [l.transform_type for l in chain.links]
-    return grade_chain(link_grades, link_transforms, is_complete=chain.is_complete,
-                       corroboration_support=False)
+    return grade_chain(
+        link_grades, link_transforms, is_complete=chain.is_complete, corroboration_support=False
+    )
 
 
 # ===========================================================================
 # Result types
 # ===========================================================================
+
 
 @dataclass
 class ClaimRecord:
@@ -140,16 +167,19 @@ class ExperimentReport:
     records: list[ClaimRecord] = field(default_factory=list)
 
     def summary(self) -> str:
-        lines = ["=" * 70, "CORROBORATION EXPERIMENT v2 — SEMANTIC MATCHING",
-                  "=" * 70, ""]
+        lines = ["=" * 70, "CORROBORATION EXPERIMENT v2 — SEMANTIC MATCHING", "=" * 70, ""]
         lines.append(f"Total claims tested:   {self.total}")
         for phase, count in sorted(self.phase_counts.items()):
             f = self.phase_fired.get(phase, 0)
             pct = f / max(1, count) * 100
             lines.append(f"  {phase:30s} {count:4d} claims, {f:4d} corroborated ({pct:.1f}%)")
         lines.append("")
-        lines.append(f"Corroboration fired:   {self.fired} ({self.fired / max(1, self.total) * 100:.1f}%)")
-        lines.append(f"Grade upgraded:        {self.upgraded} ({self.upgraded / max(1, self.total) * 100:.1f}%)")
+        lines.append(
+            f"Corroboration fired:   {self.fired} ({self.fired / max(1, self.total) * 100:.1f}%)"
+        )
+        lines.append(
+            f"Grade upgraded:        {self.upgraded} ({self.upgraded / max(1, self.total) * 100:.1f}%)"
+        )
         lines.append("")
         lines.append("─" * 40)
         lines.append("Sample upgrades (first 10):")
@@ -167,13 +197,18 @@ class ExperimentReport:
 # Experiment
 # ===========================================================================
 
+
 def setup_registry() -> Registry:
     reg = Registry()
     for nid, grade in NARRATOR_GRADES.items():
         meta = NARRATOR_METADATA.get(nid, {})
-        reg.register(narrator_id=nid, domain_tag="general", grade=grade,
-                     model_family=meta.get("model_family"),
-                     upstream_source=meta.get("upstream_source"))
+        reg.register(
+            narrator_id=nid,
+            domain_tag="general",
+            grade=grade,
+            model_family=meta.get("model_family"),
+            upstream_source=meta.get("upstream_source"),
+        )
     return reg
 
 
@@ -227,9 +262,11 @@ def run_phase_ab(
             phase=phase,
             url_reg=reg_url,
             url_sim=sim_url,
-            reg_chain=reg_chain, reg_grade=reg_grade,
+            reg_chain=reg_chain,
+            reg_grade=reg_grade,
             reg_narrator_ids=reg_chain.narrator_ids,
-            sim_chain=sim_chain, sim_grade=sim_grade,
+            sim_chain=sim_chain,
+            sim_grade=sim_grade,
             sim_narrator_ids=sim_chain.narrator_ids,
             similarity=mp.similarity,
         )
@@ -294,6 +331,7 @@ def build_report(records: list[ClaimRecord]) -> ExperimentReport:
 # Main
 # ===========================================================================
 
+
 def main() -> None:
     print("=" * 70)
     print("CORROBORATION EXPERIMENT v2 — SEMANTIC MATCHING")
@@ -335,7 +373,10 @@ def main() -> None:
         print(f"  Loaded {len(cross_pairs)} cached cross-source matches")
     else:
         cross_pairs = matcher.find_cross_source_matches(
-            claims_reg, claims_sim, threshold=0.75, top_k_per_query=3,
+            claims_reg,
+            claims_sim,
+            threshold=0.75,
+            top_k_per_query=3,
         )
         save_matches(cross_pairs, cross_source_path)
 
@@ -379,7 +420,7 @@ def main() -> None:
     for rec in all_records:
         results_json.append({
             "text_reg": rec.text[:300],
-            "text_sim": getattr(rec, 'text_sim', ''),  # if we add it later
+            "text_sim": getattr(rec, "text_sim", ""),  # if we add it later
             "topic": rec.topic,
             "phase": rec.phase,
             "url_reg": rec.url_reg,
@@ -404,14 +445,18 @@ def main() -> None:
     print(f"\n{'=' * 70}")
     print("KEY METRICS:")
     print(f"  Total claims:        {report.total}")
-    print(f"  Corroboration fired: {report.fired}/{report.total} "
-          f"({report.fired/max(1,report.total)*100:.1f}%)")
-    print(f"  Grade upgraded:      {report.upgraded}/{report.total} "
-          f"({report.upgraded/max(1,report.total)*100:.1f}%)")
+    print(
+        f"  Corroboration fired: {report.fired}/{report.total} "
+        f"({report.fired / max(1, report.total) * 100:.1f}%)"
+    )
+    print(
+        f"  Grade upgraded:      {report.upgraded}/{report.total} "
+        f"({report.upgraded / max(1, report.total) * 100:.1f}%)"
+    )
     for phase in sorted(report.phase_counts):
         c = report.phase_counts[phase]
         f = report.phase_fired.get(phase, 0)
-        print(f"  {phase:30s} {f}/{c} ({f/max(1,c)*100:.1f}%)")
+        print(f"  {phase:30s} {f}/{c} ({f / max(1, c) * 100:.1f}%)")
 
     if report.fired > 0:
         print(f"\n✓ Semantic corroboration FIRED on {report.fired} claims!")

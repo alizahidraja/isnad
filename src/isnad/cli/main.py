@@ -211,9 +211,7 @@ def _bench(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         prog="isnad bench", description="Grade a claim corpus through a narrator set."
     )
-    parser.add_argument(
-        "--config", default=None, help="JSON config: {domain, narrators, claims}"
-    )
+    parser.add_argument("--config", default=None, help="JSON config: {domain, narrators, claims}")
     args = parser.parse_args(argv)
 
     if args.config:

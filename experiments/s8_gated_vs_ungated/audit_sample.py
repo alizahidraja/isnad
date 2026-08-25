@@ -14,7 +14,6 @@ import csv
 import json
 import os
 import random
-import sys
 
 _exp_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -47,8 +46,13 @@ def export_audit_samples(results_dir: str, seed: int = 999) -> None:
     with open(served_path, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "claim_id", "claim_text", "original_text", "domain",
-            "model_confidence", "condition", "system_verdict",
+            "claim_id",
+            "claim_text",
+            "original_text",
+            "domain",
+            "model_confidence",
+            "condition",
+            "system_verdict",
             "human_verdict",
         ])
         for c in served_sample:
@@ -73,8 +77,13 @@ def export_audit_samples(results_dir: str, seed: int = 999) -> None:
     with open(review_path, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "claim_id", "claim_text", "original_text", "fault_type",
-            "domain", "condition", "system_verdict",
+            "claim_id",
+            "claim_text",
+            "original_text",
+            "fault_type",
+            "domain",
+            "condition",
+            "system_verdict",
             "human_verdict",
         ])
         for c in review_sample:
@@ -90,10 +99,10 @@ def export_audit_samples(results_dir: str, seed: int = 999) -> None:
                 "",
             ])
 
-    print(f"Audit samples exported:")
+    print("Audit samples exported:")
     print(f"  Served:  {served_path}  ({len(served_sample)} claims)")
     print(f"  Review:  {review_path}  ({len(review_sample)} claims)")
-    print(f"\nFill in the blank 'human_verdict' column and compare with system verdicts.")
+    print("\nFill in the blank 'human_verdict' column and compare with system verdicts.")
 
 
 def main() -> None:

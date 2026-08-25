@@ -24,11 +24,13 @@ _exp_dir = os.path.dirname(os.path.abspath(__file__))
 if _exp_dir not in sys.path:
     sys.path.insert(0, _exp_dir)
 
+from sweep_policy import ConfigurableTransitionPolicy
+
 from isnad.core.chain import Chain, ChainLinkSpec
-from isnad.core.grading import grade_chain
-from isnad.matn import DeterministicRuleCritic
 from isnad.core.decision import decide
+from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
+from isnad.matn import DeterministicRuleCritic
 from isnad.types import (
     Action,
     ContentVerdict,
@@ -37,7 +39,6 @@ from isnad.types import (
     NarratorGrade,
     TransformType,
 )
-from sweep_policy import ConfigurableTransitionPolicy
 
 # Designed fault rates for grade-recovery scoring
 DESIGNED_RATES: dict[str, float] = {
@@ -86,16 +87,23 @@ def calibrate_with_policy(
             if gt is None:
                 continue
             if gt.get("corrupted", False):
-                reg.record_evidence(nid, domain, EvidenceType.POST_HOC_AUDIT,
-                                    EvidenceAction.JARH, "defective")
+                reg.record_evidence(
+                    nid, domain, EvidenceType.POST_HOC_AUDIT, EvidenceAction.JARH, "defective"
+                )
             else:
                 correct += 1
-                reg.record_evidence(nid, domain, EvidenceType.POST_HOC_AUDIT,
-                                    EvidenceAction.TADIL, "correct")
+                reg.record_evidence(
+                    nid, domain, EvidenceType.POST_HOC_AUDIT, EvidenceAction.TADIL, "correct"
+                )
         if correct >= max(1, len(audited)) * 0.7:
             for _ in range(2):
-                reg.record_evidence(nid, domain, EvidenceType.CORROBORATION_OUTCOME,
-                                    EvidenceAction.TADIL, "sustained")
+                reg.record_evidence(
+                    nid,
+                    domain,
+                    EvidenceType.CORROBORATION_OUTCOME,
+                    EvidenceAction.TADIL,
+                    "sustained",
+                )
 
     return reg
 
@@ -153,8 +161,7 @@ def evaluate_isnad_gated(
 
 def grade_recovery_score(reg: Registry, domains: list[str]) -> dict:
     """Compute grade-recovery accuracy."""
-    narrator_ids = ["pdf-scraper@1.2", "pdf-scraper@0.9-legacy",
-                    "ingest@good", "ingest@weak"]
+    narrator_ids = ["pdf-scraper@1.2", "pdf-scraper@0.9-legacy", "ingest@good", "ingest@weak"]
     results = {}
     correct = 0
     for nid in narrator_ids:
@@ -164,10 +171,12 @@ def grade_recovery_score(reg: Registry, domains: list[str]) -> dict:
         # For good narrators (rate <= 2%): should be RELIABLE or ACCEPTABLE
         # For bad narrators (rate >= 15%): should be WEAK or REJECTED
         rate = DESIGNED_RATES.get(nid, 0.5)
-        good_grade_count = sum(1 for g in grades
-                               if g in (NarratorGrade.RELIABLE, NarratorGrade.ACCEPTABLE))
-        bad_grade_count = sum(1 for g in grades
-                              if g in (NarratorGrade.REJECTED, NarratorGrade.WEAK))
+        good_grade_count = sum(
+            1 for g in grades if g in (NarratorGrade.RELIABLE, NarratorGrade.ACCEPTABLE)
+        )
+        bad_grade_count = sum(
+            1 for g in grades if g in (NarratorGrade.REJECTED, NarratorGrade.WEAK)
+        )
         total = len(grades)
 
         if rate <= 0.05:
@@ -193,11 +202,14 @@ def _rebuild_chain(claim: dict) -> Chain:
     links = claim.get("chain_json", [])
     specs = []
     for i, link in enumerate(links):
-        specs.append(ChainLinkSpec(
-            narrator_id=link["narrator_id"], step=i,
-            transform_type=TransformType(link.get("transform_type", "pass_through")),
-            domain=link.get("domain", "general"),
-        ))
+        specs.append(
+            ChainLinkSpec(
+                narrator_id=link["narrator_id"],
+                step=i,
+                transform_type=TransformType(link.get("transform_type", "pass_through")),
+                domain=link.get("domain", "general"),
+            )
+        )
     return Chain(specs)
 
 
@@ -249,11 +261,13 @@ def main() -> None:
         }
         all_sweep.append(entry)
 
-        print(f"threshold={thresh:>2d}  "
-              f"coverage={metrics['coverage']:.3f}  "
-              f"error={metrics['served_error_rate']:.4f}  "
-              f"recovery={recovery['recovery_score']}  "
-              f"prec={metrics['review_precision']:.3f}")
+        print(
+            f"threshold={thresh:>2d}  "
+            f"coverage={metrics['coverage']:.3f}  "
+            f"error={metrics['served_error_rate']:.4f}  "
+            f"recovery={recovery['recovery_score']}  "
+            f"prec={metrics['review_precision']:.3f}"
+        )
 
     # Save
     sweep_path = os.path.join(results_dir, "sweep_results.json")
@@ -264,16 +278,20 @@ def main() -> None:
     with open(csv_path, "w") as f:
         f.write("threshold,coverage,served_error_rate,review_precision,recovery_score\n")
         for e in all_sweep:
-            f.write(f"{e['downgrade_threshold']},{e['coverage']:.4f},"
-                    f"{e['served_error_rate']:.4f},{e['review_precision']:.3f},"
-                    f"{e['recovery_score']}\n")
+            f.write(
+                f"{e['downgrade_threshold']},{e['coverage']:.4f},"
+                f"{e['served_error_rate']:.4f},{e['review_precision']:.3f},"
+                f"{e['recovery_score']}\n"
+            )
 
     print(f"\nSaved to {sweep_path} and {csv_path}")
 
     # Summary
     best_cov = max(all_sweep, key=lambda x: x["coverage"])
-    print(f"\nBest coverage: {best_cov['coverage']:.3f} at threshold={best_cov['downgrade_threshold']} "
-          f"(error={best_cov['served_error_rate']:.4f})")
+    print(
+        f"\nBest coverage: {best_cov['coverage']:.3f} at threshold={best_cov['downgrade_threshold']} "
+        f"(error={best_cov['served_error_rate']:.4f})"
+    )
 
 
 if __name__ == "__main__":

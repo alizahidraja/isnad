@@ -11,7 +11,6 @@ import hashlib
 import json
 import os
 import re
-import sys
 from collections import defaultdict
 from dataclasses import dataclass
 
@@ -81,13 +80,35 @@ def _domain_for_chunk(chunk_name: str) -> str:
 
 def _assign_domain(text: str, source_domain: str) -> str:
     text_lower = text.lower()
-    if any(w in text_lower for w in ["quantum", "photon", "planck", "bohr", "wave function", "schr\u00f6dinger"]):
+    if any(
+        w in text_lower
+        for w in ["quantum", "photon", "planck", "bohr", "wave function", "schr\u00f6dinger"]
+    ):
         return "modern-quantum"
-    if any(w in text_lower for w in ["electric", "magnetic", "charge", "current", "circuit", "coulomb", "faraday"]):
+    if any(
+        w in text_lower
+        for w in ["electric", "magnetic", "charge", "current", "circuit", "coulomb", "faraday"]
+    ):
         return "electromagnetism"
-    if any(w in text_lower for w in ["optics", "light", "lens", "mirror", "refraction", "diffraction", "interference"]):
+    if any(
+        w in text_lower
+        for w in ["optics", "light", "lens", "mirror", "refraction", "diffraction", "interference"]
+    ):
         return "optics-waves"
-    if any(w in text_lower for w in ["force", "momentum", "energy", "velocity", "acceleration", "mass", "newton", "kinetic", "gravity"]):
+    if any(
+        w in text_lower
+        for w in [
+            "force",
+            "momentum",
+            "energy",
+            "velocity",
+            "acceleration",
+            "mass",
+            "newton",
+            "kinetic",
+            "gravity",
+        ]
+    ):
         return "mechanics"
     return source_domain
 
@@ -112,7 +133,7 @@ def extract_claims_from_chunks(chunks_dir: str) -> list[Claim]:
             if not section:
                 continue
             chunk_num += 1
-            chunk_name = f"{fname.replace('.txt','')}_c{chunk_num}"
+            chunk_name = f"{fname.replace('.txt', '')}_c{chunk_num}"
 
             # Split into sentences
             raw_parts = re.split(r"(?<=[.!?;:])\s+", section)
@@ -145,11 +166,17 @@ def extract_claims_from_chunks(chunks_dir: str) -> list[Claim]:
                     base_conf = 0.85 if has_formula else 0.78
                     confidence = min(0.95, base_conf + hash(atom[:20]) % 10 / 100)
 
-                    claims.append(Claim(
-                        claim_id=cid, source=source, chunk=chunk_name,
-                        domain=domain, text=atom, normalized=normalized,
-                        model_confidence=round(confidence, 3),
-                    ))
+                    claims.append(
+                        Claim(
+                            claim_id=cid,
+                            source=source,
+                            chunk=chunk_name,
+                            domain=domain,
+                            text=atom,
+                            normalized=normalized,
+                            model_confidence=round(confidence, 3),
+                        )
+                    )
 
     # Deduplicate within each source, but ALLOW cross-source duplicates
     # (identical normalized text from different sources → separate claim entries
@@ -167,19 +194,29 @@ def extract_claims_from_chunks(chunks_dir: str) -> list[Claim]:
         print(f"  Cross-source overlaps detected: {cross_source} claims appear in ≥2 sources")
         for norm, srcs in list(seen.items())[:5]:
             if len(srcs) >= 2:
-                print(f"    \"{norm[:60]}...\" from {srcs}")
+                print(f'    "{norm[:60]}..." from {srcs}')
 
     return deduped
 
 
 def save_claims(claims: list[Claim], path: str) -> None:
     with open(path, "w") as f:
-        json.dump([
-            {"claim_id": c.claim_id, "source": c.source, "chunk": c.chunk,
-             "domain": c.domain, "text": c.text, "normalized": c.normalized,
-             "model_confidence": c.model_confidence}
-            for c in claims
-        ], f, indent=2)
+        json.dump(
+            [
+                {
+                    "claim_id": c.claim_id,
+                    "source": c.source,
+                    "chunk": c.chunk,
+                    "domain": c.domain,
+                    "text": c.text,
+                    "normalized": c.normalized,
+                    "model_confidence": c.model_confidence,
+                }
+                for c in claims
+            ],
+            f,
+            indent=2,
+        )
 
 
 def load_claims(path: str) -> list[dict]:
@@ -205,8 +242,10 @@ def main() -> None:
     print(f"Saved to {out_path}")
 
     if len(claims) < 3000:
-        print(f"\u26a0  Target: \u22653000 claims. Got {len(claims)}. "
-              f"The LLM-based extraction in a real run would decompose further.")
+        print(
+            f"\u26a0  Target: \u22653000 claims. Got {len(claims)}. "
+            f"The LLM-based extraction in a real run would decompose further."
+        )
 
 
 if __name__ == "__main__":
