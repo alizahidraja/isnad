@@ -189,6 +189,7 @@ class Narrator:
         graded_at: datetime | None = None,
         valid_until: datetime | None = None,
         role: Role | None = None,
+        max_evidence_entries: int | None = None,
     ):
         self.narrator_id = narrator_id
         self.domain_tag = domain_tag
@@ -204,6 +205,7 @@ class Narrator:
         self.graded_at = graded_at
         self.valid_until = valid_until
         self.role = role
+        self.max_evidence_entries = max_evidence_entries
         self.evidence_log: list[dict[str, object]] = []
 
     def add_evidence(
@@ -232,6 +234,13 @@ class Narrator:
             "created_at": datetime.now(UTC).isoformat(),
         }
         self.evidence_log.append(entry)
+        # Retention (issue #39): bound the log when configured. This drops the
+        # OLDEST entries, so ``get_grade_as_of`` (period slicing) can no longer
+        # re-derive grades from before the retained window — a documented
+        # memory-vs-fidelity trade-off. Default (None) keeps everything.
+        limit = self.max_evidence_entries
+        if limit is not None and len(self.evidence_log) > limit:
+            del self.evidence_log[: len(self.evidence_log) - limit]
 
     @property
     def key(self) -> tuple[str, str]:
@@ -255,12 +264,14 @@ class Registry:
         self,
         transition_policy: TransitionPolicy | None = None,
         volatility_policy: VolatilityPolicy | None = None,
+        max_evidence_entries: int | None = None,
     ):
         self._narrators: dict[tuple[str, str], Narrator] = {}
         self._role_records: dict[tuple[str, str, str], Narrator] = {}
         self._alias_graded: dict[tuple[str, str], set[str]] = {}
         self.transition_policy: TransitionPolicy = transition_policy or BayesianTransitionPolicy()
         self.volatility_policy: VolatilityPolicy = volatility_policy or FixedVolatilityPolicy()
+        self.max_evidence_entries = max_evidence_entries
 
     # ------------------------------------------------------------------
     # Alias index (graded versions per alias+domain)
@@ -395,6 +406,7 @@ class Registry:
                 graded_at=graded_at,
                 valid_until=valid_until,
                 role=role,
+                max_evidence_entries=self.max_evidence_entries,
             )
             self._index_set_grade(narrator_id, domain_tag)
         return store[key]

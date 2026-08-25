@@ -54,6 +54,39 @@
   (not legal advice).
 - Examples: `audit_export_langchain.py`, `multi_agent_handoff.py`.
 
+## [2.2.0] — 2026-08-23
+
+### Added
+
+- **Period-sliced grades** (`get_grade_as_of()`) — re-derive a narrator's grade
+  at any past instant from the append-only evidence log; the ikhtilāṭ (decline)
+  remedy (issue #43).
+
+## [2.1.0] — 2026-08-21
+
+### Added
+
+- **Per-role precision grading** — integrity (ʿadālah) per narrator, precision
+  (ḍabṭ) per (narrator, role, domain) (issue #3).
+
+## [2.0.0] — 2026-07-09
+
+### Added
+
+- The core framework: isnād chains, the rijāl registry, weakest-link grading,
+  the 4×2 decision matrix, and content critics.
+- Trace capture, the chain viewer, and the `isnad_trace` v0.1 schema
+  (W3C PROV-aligned).
+- Per-generative-link transformation-fidelity checking (issue #11).
+- jarḥ–taʿdīl split by axis — integrity (ʿadālah) never forgets; precision
+  (ḍabṭ) ages out (issues #9, #20).
+- Live Verify integration — a `verify:` seal as a high-trust narrator input.
+- LangChain integration (callback, tracer, decorator).
+- The verified-vs-unverified A/B demonstration (issue #7).
+
+> 2.0.x shipped 14 patch releases (2.0.1–2.0.14) over six weeks of rapid
+> iteration; this entry consolidates them.
+
 ## [1.0.0] — 2026-07-06
 
 ### Added
