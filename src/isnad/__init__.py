@@ -49,6 +49,8 @@ from isnad.core.registry import (
     Registry,
     RegistryDB,
     ThresholdTransitionPolicy,
+    accuracy_to_grade,
+    seed_from_benchmark,
 )
 from isnad.critics import (
     ContentCritic,
@@ -112,6 +114,8 @@ __all__ = [
     "Registry",
     "RegistryDB",
     "Dispute",
+    "accuracy_to_grade",
+    "seed_from_benchmark",
     # critics
     "ContentCritic",
     "EmbeddingCritic",
