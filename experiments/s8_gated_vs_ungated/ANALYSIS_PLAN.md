@@ -22,7 +22,8 @@ Primary comparator: ISNAD-gated vs. confidence-gated (current-practice baseline 
 
 ### 3.1 Corpus & claims
 - Sources: OpenStax University Physics Vols. 1–3 (CC BY 4.0) + Crowell *Light and Matter* (CC BY-SA).
-- Atomic claim extraction via LLM (deepseek-chat), ≥ 3,000 claims after dedup.
+- Sentence-level span extraction via a deterministic heuristic segmenter + filter
+  (`extract.py` — issue #94), ≥ 3,000 spans after dedup.
 - Claims normalized; duplicates across sources linked as corroborating chains.
 
 ### 3.2 Narrator pipeline
@@ -83,7 +84,7 @@ A null result (no significant difference) or negative result (ISNAD worse) is re
 - The reviewer is simulated-perfect → review-queue precision is the realistic metric; lower-than-1.0 precision erodes real-world benefit.
 - Faults are synthetic rule-based corruptions → real fault distributions may differ.
 - Single corpus domain (undergraduate physics) limits external validity.
-- Single extraction model (deepseek-chat) — different extractors may produce different claim distributions.
+- Single deterministic extraction method (issue #94) — different extractors may produce different span distributions.
 
 ## 8. Deviations
 
