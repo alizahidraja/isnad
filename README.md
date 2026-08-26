@@ -476,7 +476,7 @@ The viewer renders fixture 3 by default — it is the most important case.
 | Signal | Status | Honest limit |
 |--------|--------|-------------|
 | Independence detection | ⚠ Indicative | Structural only (shared doc hashes, upstream sources, model families). Does not detect correlated training data or shared model blind spots. |
-| Narrator grades | ⚠ Indicative | Only calibrated where seed-grade data exists. Cold-start coverage is ~10%. |
+| Narrator grades | ⚠ Indicative | Only calibrated where seed-grade data exists. Cold-start coverage is critic-bound: ~75% with the stub/embedding critic, **~100% with the LLM critic** — see `experiments/cold_start_coverage/RESULTS.md` |
 | Corroboration fire rate | ⚠ Corpus-dependent | 100% on Wikipedia; rarely fires on dense technical corpora (5/20K). |
 | Origin strength | ⚠ Indicative | Derived from ʿadālah grade. No cryptographic attestation (complementary: Live Verify). |
 | Content verdict | ⚠ Not captured | The trace schema has space for `content_verdict` but the callback handler does not populate it — the bundled critic is a stub on real text. |
