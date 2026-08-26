@@ -58,6 +58,48 @@ class TestLocalNLICriticSemantic:
         assert result in (ContentVerdict.UNVERIFIABLE, ContentVerdict.CONSISTENT)
 
 
+class TestLocalNLICriticDecisionLogic:
+    """Pin the issue-#110 decision logic without needing the real model.
+
+    These inject a fake model so the label-order + softmax + contradiction-first
+    + margin behaviour is covered in CI (the real model tests are marked nli).
+    """
+
+    class _FakeModel:
+        def __init__(self, outputs):
+            self.outputs = outputs
+
+        def predict(self, pairs, apply_softmax=False):
+            return self.outputs
+
+    def _critic(self, outputs, **kw):
+        c = LocalNLICritic(**kw)
+        c._model = self._FakeModel(outputs)
+        return c
+
+    def test_clear_contradiction(self):
+        c = self._critic([[0.9, 0.05, 0.05]])
+        assert c.evaluate("x", "x", ["f"], "p") == ContentVerdict.CONTRADICTION
+
+    def test_contradiction_wins_over_entailment_with_margin(self):
+        # contra=0.8, entail=0.5: contradiction clearly dominates → CONTRADICTION
+        c = self._critic([[0.8, 0.5, 0.0]])
+        assert c.evaluate("x", "x", ["f"], "p") == ContentVerdict.CONTRADICTION
+
+    def test_clear_entailment(self):
+        c = self._critic([[0.05, 0.9, 0.05]])
+        assert c.evaluate("x", "x", ["f"], "p") == ContentVerdict.CONSISTENT
+
+    def test_ambiguous_returns_unverifiable(self):
+        # contra and entailment both moderate, no clear winner → UNVERIFIABLE
+        c = self._critic([[0.6, 0.6, 0.0]])
+        assert c.evaluate("x", "x", ["f"], "p") == ContentVerdict.UNVERIFIABLE
+
+    def test_single_output_treated_as_entailment(self):
+        c = self._critic([[0.85]])
+        assert c.evaluate("x", "x", ["f"], "p") == ContentVerdict.CONSISTENT
+
+
 class TestHybridCritic:
     def test_empty_corpus(self) -> None:
         assert HybridCritic().evaluate("x", "x", []) == ContentVerdict.UNVERIFIABLE

@@ -15,20 +15,19 @@ physics corpus; see `experiments/critic_eval/RESULTS.md`):
 | Critic | Contra. recall | False-consistent (danger) | 3-way acc | Requirements |
 |---|---|---|---|---|
 | `LLMCritic` (DeepSeek) | **1.000** | **0.000** | 1.000 | API key |
+| `LocalNLICritic` | 0.760 | 0.000 | 0.417 | `sentence-transformers` |
+| `HybridCritic` | 0.720 | 0.040 | 0.433 | `sentence-transformers` |
 | `EmbeddingCritic` | 0.120 | 0.320 | 0.550 | nothing |
-| `HybridCritic` | 0.160 | 0.840 | 0.383 | `sentence-transformers` |
-| `LocalNLICritic` | 0.120 | 0.880 | 0.383 | `sentence-transformers` |
 
-**The honest headline.** Only the LLM tier works: it catches 100% of the genuine
-contradictions with zero false-consistents. The offline critics all recall
-~12–16% on *genuine* physics contradictions — and, crucially, the NLI critics
-(`LocalNLICritic`, `HybridCritic`) have an **84–88% false-consistent rate**: the
-cross-encoder's topic similarity is mistaken for entailment, so a weak model
-confidently *mislabels contradictions as CONSISTENT*. That is the dangerous
-failure (a wrong claim served as correct), and it is *worse* than the
-`EmbeddingCritic` (32% false-consistent, perfect precision) — a word-overlap
-critic is the safer offline default, not the NLI one. See the follow-up issue on
-recalibrating/reordering the NLI decision.
+**The honest headline.** Only the LLM tier is near-perfect (100% recall, zero
+false-consistents). The offline NLI critics, after fixing three defects (issue
+#110 — swapped label order, raw logits vs probability thresholds, and
+max-over-whole-corpus "different fact" false positives), now *safely* recall
+~72–76% of genuine contradictions with near-zero false-consistents — they are
+conservative (low 3-way accuracy, most non-contradictions return UNVERIFIABLE),
+which is the correct under-trust bias. The `EmbeddingCritic` remains the
+safest zero-dependency option (perfect precision, lowest false-consistent), just
+low-recall.
 
 > These replace the earlier "~90% LLM / ~40% NLI / ~30% LocalNLI" figures, which
 > were estimated on a template-injected (word-swap) set the critics trivially
@@ -47,6 +46,8 @@ The factory never returns a critic it cannot run: it degrades LLM → NLI →
 TF-IDF, and the `LLMCritic` itself returns `UNVERIFIABLE` (never crashes) when
 no key is configured.
 
-> **Note:** given the measured NLI false-consistent rate, a production gate that
-> must auto-serve HASAN-tier claims should not rely on the offline NLI critics
-> alone; either use the LLM tier or keep claims in review.
+> **Note:** the offline NLI critics are now *safe* (near-zero false-consistent),
+> but conservative — they return UNVERIFIABLE for most non-contradictions, so a
+> production gate that must auto-serve HASAN-tier claims still needs the LLM
+> tier (or a larger review budget); the NLI critics are best for *catching*
+> contradictions, not for affirming consistency.

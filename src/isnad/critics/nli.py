@@ -48,21 +48,32 @@ def _ensure_sentence_transformers() -> bool:
 class LocalNLICritic:
     """Local NLI-based content critic — semantic entailment/contradiction.
 
-    Uses a cross-encoder model fine-tuned for NLI (Natural Language
-    Inference).  For each corpus claim, computes:
-    - ENTAILMENT score: the claim is supported by the corpus
-    - CONTRADICTION score: the claim conflicts with the corpus
-    - NEUTRAL score: no relationship
+    Uses a cross-encoder fine-tuned for NLI. For each *retrieved* corpus claim it
+    computes entailment / contradiction / neutral probabilities, then decides:
 
-    This is one instantiation of a parameter the framework leaves open
-    (see paper §4.4).  Swap freely.
+    - CONTRADICTION if a same-subject corpus claim clearly contradicts the claim.
+    - CONSISTENT if a same-subject corpus claim clearly entails it.
+    - UNVERIFIABLE otherwise.
+
+    Issue #110 — this critic previously had three defects, all fixed here:
+
+    1. **Label order** — the cross-encoder outputs `[contradiction, entailment,
+       neutral]`, but the code read `[contradiction, neutral, entailment]`, so
+       "neutral" was treated as "entailment".
+    2. **Raw logits vs probability thresholds** — the thresholds were compared
+       against raw logits (unbounded), not softmax probabilities.
+    3. **Max over the whole corpus** — a claim was flagged against *every* corpus
+       fact, so a "different fact" was spuriously read as a contradiction. The
+       critic now retrieves the top-k *similar* claims first (TF-IDF), and only
+       judges against those.
 
     Args:
         model_name: HuggingFace cross-encoder model for NLI.
-            Default: 'cross-encoder/nli-deberta-v3-small' (fast, ~500MB)
-        entailment_threshold: Score above which claim is CONSISTENT.
-        contradiction_threshold: Score above which claim is CONTRADICTION.
-        max_corpus_claims: Max corpus claims to check per evaluation.
+        entailment_threshold: entailment probability above which CONSISTENT.
+        contradiction_threshold: contradiction probability above which CONTRADICTION.
+        entailment_margin: entailment must exceed contradiction by this much.
+        contradiction_margin: contradiction must exceed entailment by this much.
+        retrieve_top_k: how many similar corpus claims to retrieve before NLI.
 
     Example:
         critic = LocalNLICritic()
@@ -70,21 +81,25 @@ class LocalNLICritic:
             "F = ma", "f = m a",
             ["force equals mass times acceleration"], "physics"
         )
-        # → ContentVerdict.CONSISTENT (entailment)
     """
 
     def __init__(
         self,
         model_name: str = "cross-encoder/nli-deberta-v3-small",
-        entailment_threshold: float = 0.65,
-        contradiction_threshold: float = 0.55,
-        max_corpus_claims: int = 20,
+        entailment_threshold: float = 0.7,
+        contradiction_threshold: float = 0.5,
+        entailment_margin: float = 0.2,
+        contradiction_margin: float = 0.2,
+        retrieve_top_k: int = 10,
     ):
         self.model_name = model_name
         self.entailment_threshold = entailment_threshold
         self.contradiction_threshold = contradiction_threshold
-        self.max_corpus_claims = max_corpus_claims
+        self.entailment_margin = entailment_margin
+        self.contradiction_margin = contradiction_margin
+        self.retrieve_top_k = retrieve_top_k
         self._model: Any = None
+        self._tfidf_cache: dict[tuple[str, ...], tuple[Any, list[dict[str, float]]]] = {}
 
     def _load_model(self) -> Any:
         """Lazy-load the cross-encoder model."""
@@ -104,6 +119,24 @@ class LocalNLICritic:
 
         return self._model
 
+    def _retrieve_topk(self, claim: str, corpus: list[str]) -> list[str]:
+        """Return the most TF-IDF-similar corpus claims (same-subject retrieval)."""
+        from isnad.critics.embedding import TFIDFIndex
+
+        key = tuple(corpus)
+        if key not in self._tfidf_cache:
+            idx = TFIDFIndex(corpus)
+            vecs = [idx.tfidf_vector(c) for c in corpus]
+            self._tfidf_cache[key] = (idx, vecs)
+        idx, vecs = self._tfidf_cache[key]
+
+        claim_vec = idx.tfidf_vector(claim)
+        ranked = sorted(
+            ((idx.cosine_similarity(claim_vec, vecs[i]), i) for i in range(len(corpus))),
+            reverse=True,
+        )
+        return [corpus[i] for _, i in ranked[: self.retrieve_top_k]]
+
     def evaluate(
         self,
         claim_text: str,
@@ -113,10 +146,7 @@ class LocalNLICritic:
     ) -> ContentVerdict:
         """Evaluate a claim against the corpus using NLI.
 
-        Returns:
-            CONSISTENT if ≥1 corpus claim strongly entails the claim.
-            CONTRADICTION if ≥1 corpus claim contradicts it.
-            UNVERIFIABLE if neither threshold is met or model unavailable.
+        Returns CONSISTENT / CONTRADICTION / UNVERIFIABLE (see class docstring).
         """
         if not corpus_claims:
             return ContentVerdict.UNVERIFIABLE
@@ -125,37 +155,47 @@ class LocalNLICritic:
         if model is None:
             return ContentVerdict.UNVERIFIABLE
 
-        # Truncate corpus for performance
-        corpus_sample = corpus_claims[: self.max_corpus_claims]
+        # Retrieve same-subject claims first — a claim is only judged against
+        # facts it is actually about, so a "different fact" isn't read as a
+        # contradiction (issue #110, defect 3).
+        sample = corpus_claims
+        if self.retrieve_top_k and len(corpus_claims) > self.retrieve_top_k:
+            sample = self._retrieve_topk(normalized_claim, corpus_claims)
 
-        # Build NLI pairs: (corpus_premise, claim_hypothesis)
-        pairs = [(cc, normalized_claim) for cc in corpus_sample]
-
+        pairs = [(cc, normalized_claim) for cc in sample]
         try:
-            scores = model.predict(pairs)
+            scores = model.predict(pairs, apply_softmax=True)
         except Exception:
             return ContentVerdict.UNVERIFIABLE
 
-        # scores[i] = [contradiction_score, neutral_score, entailment_score]
-        # (DeBERTa NLI models output in this order)
-
-        max_entailment = 0.0
-        max_contradiction = 0.0
-
+        # scores[i] = [contradiction, entailment, neutral] probabilities
+        # (softmax-normalized — see the model's config: label 0=contradiction,
+        # 1=entailment, 2=neutral).
+        best_contradiction = 0.0
+        best_entailment = 0.0
         for score in scores:
             if len(score) >= 3:
-                max_contradiction = max(max_contradiction, float(score[0]))
-                max_entailment = max(max_entailment, float(score[2]))
+                best_contradiction = max(best_contradiction, float(score[0]))
+                best_entailment = max(best_entailment, float(score[1]))
             elif len(score) == 1:
-                # Some models output a single score (entailment-like)
-                max_entailment = max(max_entailment, float(score[0]))
+                best_entailment = max(best_entailment, float(score[0]))
 
-        # Decision logic — entailment overrides contradiction if both high
-        if max_entailment >= self.entailment_threshold:
-            return ContentVerdict.CONSISTENT
-
-        if max_contradiction >= self.contradiction_threshold:
+        # Contradiction takes precedence (the framework's principle: a live
+        # contradiction is never papered over by a similarity match), but only
+        # when it *clearly* dominates entailment — the cross-encoder spuriously
+        # gives same-topic text a high entailment, and without the margin a
+        # contradiction would be mislabeled CONSISTENT (issue #110).
+        if (
+            best_contradiction >= self.contradiction_threshold
+            and best_contradiction - best_entailment >= self.contradiction_margin
+        ):
             return ContentVerdict.CONTRADICTION
+
+        if (
+            best_entailment >= self.entailment_threshold
+            and best_entailment - best_contradiction >= self.entailment_margin
+        ):
+            return ContentVerdict.CONSISTENT
 
         return ContentVerdict.UNVERIFIABLE
 
@@ -169,9 +209,6 @@ class HybridCritic:
     Uses a fast embedding model to retrieve top-k relevant corpus claims,
     then applies the LocalNLICritic for precise entailment/contradiction.
 
-    Much faster than running NLI on the full corpus while maintaining
-    the accuracy of semantic NLI.
-
     Requires: pip install sentence-transformers
     """
 
@@ -180,8 +217,8 @@ class HybridCritic:
         embed_model: str = "all-MiniLM-L6-v2",
         nli_model: str = "cross-encoder/nli-deberta-v3-small",
         top_k: int = 10,
-        entailment_threshold: float = 0.65,
-        contradiction_threshold: float = 0.55,
+        entailment_threshold: float = 0.7,
+        contradiction_threshold: float = 0.5,
     ):
         self.embed_model_name = embed_model
         self.nli_model_name = nli_model
@@ -232,12 +269,14 @@ class HybridCritic:
         except Exception:
             return ContentVerdict.UNVERIFIABLE
 
-        # Stage 2: NLI judgment on top-k
+        # Stage 2: NLI judgment on top-k (delegates to the fixed LocalNLI).
         if self._nli_critic is None:
             self._nli_critic = LocalNLICritic(
                 model_name=self.nli_model_name,
                 entailment_threshold=self.entailment_threshold,
                 contradiction_threshold=self.contradiction_threshold,
+                # already retrieved top-k; don't re-retrieve inside LocalNLI
+                retrieve_top_k=0,
             )
 
         return self._nli_critic.evaluate(
