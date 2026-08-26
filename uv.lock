@@ -1553,7 +1553,7 @@ wheels = [
 
 [[package]]
 name = "isnad"
-version = "2.6.0"
+version = "2.7.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
@@ -1565,8 +1565,11 @@ dependencies = [
 [package.optional-dependencies]
 all = [
     { name = "anthropic" },
+    { name = "crewai" },
     { name = "fastapi" },
     { name = "langchain-core" },
+    { name = "langgraph" },
+    { name = "llama-index-core" },
     { name = "mypy" },
     { name = "pre-commit" },
     { name = "pytest" },
@@ -1623,7 +1626,7 @@ requires-dist = [
     { name = "anthropic", marker = "extra == 'anthropic'", specifier = ">=0.40" },
     { name = "crewai", marker = "extra == 'crewai'", specifier = ">=0.80" },
     { name = "fastapi", marker = "extra == 'api'", specifier = ">=0.115" },
-    { name = "isnad", extras = ["dev", "anthropic", "langchain", "api", "nli"], marker = "extra == 'all'" },
+    { name = "isnad", extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llamaindex", "api", "nli"], marker = "extra == 'all'" },
     { name = "langchain-core", marker = "extra == 'langchain'", specifier = ">=0.3" },
     { name = "langgraph", marker = "extra == 'langgraph'", specifier = ">=0.2" },
     { name = "llama-index-core", marker = "extra == 'llamaindex'", specifier = ">=0.11" },

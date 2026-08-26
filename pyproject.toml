@@ -10,7 +10,7 @@ license = { text = "Apache-2.0" }
 requires-python = ">=3.12"
 keywords = ["provenance", "multi-agent", "trust", "knowledge-base", "epistemology", "isnad", "lineage", "audit", "governance", "ai-safety", "llm-agents"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3.12",
@@ -65,7 +65,7 @@ nli = [
     "sentence-transformers>=3.0",
 ]
 all = [
-    "isnad[dev,anthropic,langchain,api,nli]",
+    "isnad[dev,anthropic,langchain,langgraph,crewai,llamaindex,api,nli]",
 ]
 
 [project.scripts]

@@ -1,6 +1,6 @@
 # Isnād–Rijāl Framework
 
-**ISNAD grades the sources behind every claim your AI system produces — and tells you what to do about it.** Every claim carries a complete transmission chain; every transmitter carries a reliability grade that moves with evidence; chains are graded by their weakest link and routed to an action: accept, review, or quarantine.
+**ISNAD grades the sources behind every claim your LLM produces — and tells you what to do about it.** In a RAG pipeline or a multi-agent system, a claim passes through many hands: a scraper retrieves it, an agent compiles it, another model serves it. Each hand can drop, distort, or hallucinate. ISNAD attaches a complete transmission chain to every claim, grades every transmitter in that chain, and routes the result to an action: accept, review, or quarantine.
 
 *(The name and the design descend from 1,200 years of hadith transmission science — the lineage is the reason to believe the design is sound, not a prerequisite for using it.)*
 
@@ -18,9 +18,11 @@
 ## What & Why
 
 In modern AI pipelines, a factual claim passes through many hands — a scraper
-extracts it, a model compiles it, another serves it. Each hand can drop, distort,
-or invent. Existing tools record *what* happened. ISNAD grades *who* transformed
-the claim, so it can tell you **how much to trust the result**.
+extracts it, an agent compiles it, another serves it. Each hand can drop,
+distort, or invent. Existing observability tools record *what* happened. ISNAD
+grades *who* transformed the claim, so it can tell you **how much to trust the
+result** — and export the whole judgement as a tamper-evident audit trail for
+governance review.
 
 The framework adapts **hadith transmission science** — one of history's most
 rigorous epistemologies, refined over twelve centuries — into a Python library
@@ -78,6 +80,12 @@ regulation.** See [`docs/evidence-mapping.md`](docs/evidence-mapping.md) for an
 *informational* (not legal) mapping of each field to the EU AI Act, ISO/IEC
 42001, the NIST AI RMF, and the SDAIA framework — and the explicit statement of
 what ISNAD deliberately does *not* provide.
+
+**The core library is Apache-2.0, permanently.** See
+[`LICENSING.md`](LICENSING.md) for the public commitment: `src/isnad/` stays
+Apache-2.0 forever; any future commercial surface would live in a separate repo
+under its own licence, and the line is drawn so the core is never partially
+closed.
 
 ```python
 from isnad.audit import build_audit_record
