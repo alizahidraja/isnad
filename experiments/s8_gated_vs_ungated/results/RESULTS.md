@@ -1,8 +1,8 @@
 # §8 Validation Experiment — Final Honest Results
 
-**Date:** 2026-07-07 (s8 experiment) | Updated 2026-07-09 (corroboration cross-ref)
+**Date:** 2026-07-07 (s8 experiment) | Updated 2026-08-26 (reproducibility + extraction fixes)
 **Branch:** s8-scale (merged to main)
-**Corpus:** 20,000 claims from real PDFs (OpenStax Vol.1-3 + Crowell)
+**Corpus:** 22,307 sentence-level spans from real PDFs (OpenStax Vol.1-3 + Crowell)
 
 > **Update (2026-07-09):** Corroboration is no longer untested.
 > The semantic corroboration experiment (v2) validates `mutābaʿāt` on
@@ -13,33 +13,46 @@
 
 ---
 
-## Reproducibility update (2026-08-26, issue #92)
+## Reproducibility update (2026-08-26, issues #92 + #94)
 
-The original §8.2 numbers ("ingest@weak driven to rejected in 49/50 cells",
-"4,057 claims quarantined = 29%") were produced by the **pre-#9** threshold
-policy — the version that monotonically ratcheted every narrator to REJECTED
-(the bug fixed in issue #9). They are **not** reproducible from the corrected
-code and are retracted here.
+Two corrections to the original paper's §8:
 
-`calibrate.py` is now pinned to the **post-#9** `ThresholdTransitionPolicy`
-(sliding window + edge trigger), and the registry snapshots are regenerated.
-The honest, current result:
+1. **Extraction method (#94).** The corpus was described as "20,000 atomic
+   claims extracted via deepseek-chat". In fact the extractor was a regex
+   splitter that (a) rewrote every "X is Y" into "X equals Y" — garbling prose
+   ("the glass is sitting" → "the glass equals sitting") and breaking formula
+   matching against the content critic — and (b) passed multiple-choice answer
+   prefixes, questions, and OCR fragments through as "claims". The extractor is
+   now a **deterministic heuristic segmenter + filter** (`extract.py`) producing
+   **sentence-level spans**, not LLM "atomic claims". This is the honest unit of
+   analysis: the experiment validates the transmission-grading *mechanics*, not
+   claim semantics.
+
+2. **Transition policy (#92).** The §8.2 figures ("ingest@weak rejected in 49/50
+   cells", "4,057 quarantined = 29%") were produced by the **pre-#9** threshold
+   policy (the monotonic ratchet fixed in issue #9) and are not reproducible from
+   the corrected code.
+
+`calibrate.py` is pinned to the **post-#9** `ThresholdTransitionPolicy`, and the
+registry snapshots are regenerated from the cleaned corpus. The honest, current
+result (50 cells = 10 seeds × 5 domains):
 
 | Narrator | Designed fault | Recovered grade (50 cells) |
 |---|---|---|
 | `source:*` | 0% | RELIABLE 50/50 (seed, now honored — #90) |
 | `pdf-scraper@1.2` | 1% | RELIABLE 50/50 (seed) |
 | `ingest@good` | 2% | ACCEPTABLE 50/50 (seed) |
-| `ingest@weak` | 15% | **WEAK 34/50, REJECTED 3/50, UNGRADED 9/50, ACCEPTABLE 4/50** |
+| `ingest@weak` | 15% | **WEAK 28/50, UNGRADED 14/50, ACCEPTABLE 6/50, REJECTED 2/50** |
 | `pdf-scraper@0.9-legacy` | 18% | missed (0/50 — too rare to grade) |
 
-With `ingest@weak` REJECTED in only 3 of 50 (narrator, domain) cells, the
-quarantine count is **3,165 of 140,010 eval claims (2.3%)**, not 4,057 of
-14,001 (29%). The weakest-link quarantine *mechanism* is unchanged and
-unit-tested; only the specific grade-recovery numbers were wrong.
+With `ingest@weak` REJECTED in only 2 of 50 cells, the quarantine count is
+**1,818 of 156,170 eval claims (1.2%)**, not 4,057 of 14,001 (29%). The
+weakest-link quarantine *mechanism* is unchanged and unit-tested; only the
+specific grade-recovery numbers were wrong.
 
-The §8.2 grade-recovery claim is corrected accordingly in the paper-v2
-tracking issue (#51).
+Both corrections are tracked in the paper-v2 issue (#51). The serving-coverage
+sweep (`run.py`) is regenerated separately; the numbers below predate this
+corpus and are marked accordingly.
 
 ---
 

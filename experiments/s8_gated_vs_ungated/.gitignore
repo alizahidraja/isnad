@@ -2,6 +2,7 @@
 # fetch.py + provenance markdown are tracked; extracted .txt claims are not.
 *.pdf
 corpus/*.txt
+corpus/chunks/
 corpus/pdfs/
 results/
 !results/RESULTS.md
