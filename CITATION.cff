@@ -19,7 +19,7 @@ identifiers:
     description: Paper
 url: "https://doi.org/10.5281/zenodo.21216873"
 repository-code: "https://github.com/alizahidraja/isnad"
-version: "2.6.1"
+version: "2.6.2"
 date-released: "2026-08-24"
 year: 2026
 license: Apache-2.0
