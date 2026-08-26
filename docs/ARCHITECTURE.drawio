@@ -1,181 +1,149 @@
-<mxfile host="app.diagrams.net" modified="2026-07-22T00:00:00.000Z" agent="isnad-arch" version="24.0.0">
+<mxfile host="app.diagrams.net" modified="2026-08-26T00:00:00.000Z" agent="isnad-arch" version="24.0.0">
   <diagram id="architecture" name="1. System Architecture">
-    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1650" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1650" pageHeight="1250" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="arch_title" value="ISNAD–RIJĀL Framework v2.7.0 — Complete Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+        <mxCell id="arch_title" value="ISNAD–RIJĀL Framework v2.7.0 — Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
           <mxGeometry x="350" y="15" width="950" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="arch_sub" value="Every module, class, method, and validation status — nothing omitted." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="350" y="55" width="950" height="20" as="geometry" />
+        <mxCell id="arch_sub" value="Claim-level provenance: chains (isnād) · graded narrators (rijāl) · weakest-link grading · content criticism · serve/review/quarantine · tamper-evident, signable audit" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="250" y="55" width="1150" height="20" as="geometry" />
         </mxCell>
 
-        <!-- LAYER 0: TYPES -->
         <mxCell id="l0_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;dashed=1;opacity=50;" vertex="1" parent="1">
-          <mxGeometry x="40" y="90" width="1560" height="180" as="geometry" />
+          <mxGeometry x="40" y="90" width="1560" height="175" as="geometry" />
         </mxCell>
         <mxCell id="l0_label" value="LAYER 0 — Types &amp; Enums (src/isnad/types.py)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
           <mxGeometry x="55" y="92" width="350" height="20" as="geometry" />
         </mxCell>
 
-        <mxCell id="grade_box" value="&lt;b&gt;Ordinal Grades&lt;/b&gt;&lt;br&gt;NarratorGrade (5 tiers)&lt;br&gt;ChainGrade (4 tiers)&lt;br&gt;AdalahGrade (5)&lt;br&gt;DabtGrade (4)&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Ordered comparison | .min()&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="120" width="240" height="105" as="geometry" />
+        <mxCell id="grade_box" value="&lt;b&gt;Ordinal Grades&lt;/b&gt;&lt;br&gt;NarratorGrade (5 tiers)&lt;br&gt;ChainGrade (4 tiers)&lt;br&gt;AdalahGrade (5) · DabtGrade (4)&lt;br&gt;FreshnessStatus (3)&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Ordered comparison | .min()&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="250" height="110" as="geometry" />
         </mxCell>
 
-        <mxCell id="taxonomy_box" value="&lt;b&gt;Taxonomy&lt;/b&gt;&lt;br&gt;TransformType (3)&lt;br&gt;NarratorType (4)&lt;br&gt;ContentVerdict (3)&lt;br&gt;Action (5)&lt;br&gt;ChainStatus (4)&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ All enums fully defined&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="320" y="120" width="240" height="105" as="geometry" />
+        <mxCell id="taxonomy_box" value="&lt;b&gt;Taxonomy&lt;/b&gt;&lt;br&gt;TransformType (3) · NarratorType (4)&lt;br&gt;Role (6) — per-role precision&lt;br&gt;ContentVerdict (3) · Action (5)&lt;br&gt;ChainStatus (4)&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ All enums fully defined&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="330" y="118" width="250" height="110" as="geometry" />
         </mxCell>
 
-        <mxCell id="evidence_box" value="&lt;b&gt;Evidence System&lt;/b&gt;&lt;br&gt;EvidenceType (6)&lt;br&gt;EvidenceAction (3)&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Immutable jarḥ–taʿdīl log&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="580" y="120" width="240" height="105" as="geometry" />
+        <mxCell id="evidence_box" value="&lt;b&gt;Evidence System&lt;/b&gt;&lt;br&gt;EvidenceType (9)&lt;br&gt;EvidenceAction (3) · EvidenceAxis (3)&lt;br&gt;EvidenceProvenance (4) — prior vs observed&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Immutable jarḥ–taʿdīl log&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="600" y="118" width="250" height="110" as="geometry" />
         </mxCell>
 
-        <mxCell id="protocol_box" value="&lt;b&gt;Pluggable Protocols&lt;/b&gt;&lt;br&gt;GradingStrategy&lt;br&gt;TransitionPolicy&lt;br&gt;CorroborationPolicy&lt;br&gt;CorrelationDetector&lt;br&gt;ContentCritic&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Swap any implementation&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="840" y="120" width="240" height="105" as="geometry" />
+        <mxCell id="protocol_box" value="&lt;b&gt;Pluggable Protocols&lt;/b&gt;&lt;br&gt;GradingStrategy · TransitionPolicy&lt;br&gt;CorroborationPolicy · CorrelationDetector&lt;br&gt;ContentCritic · VolatilityPolicy&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Swap any implementation&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="870" y="118" width="250" height="110" as="geometry" />
         </mxCell>
 
-        <mxCell id="models_box" value="&lt;b&gt;DTOs &amp; ORM (models.py)&lt;/b&gt;&lt;br&gt;Pydantic: ChainLinkDTO, NarratorDTO&lt;br&gt;SQLAlchemy: RijalClaim, ChainLink&lt;br&gt;NarratorRegistry, Evidence, ReviewQueue&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ DB &amp; wire format&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="1100" y="120" width="270" height="105" as="geometry" />
+        <mxCell id="models_box" value="&lt;b&gt;ORM (models.py)&lt;/b&gt;&lt;br&gt;SQLAlchemy: RijalClaim, ChainLink&lt;br&gt;NarratorRegistry, NarratorEvidence, ReviewQueue&lt;br&gt;Normalized chain_links + append-only evidence log&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ DB schema&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="118" width="280" height="110" as="geometry" />
         </mxCell>
 
-        <!-- LAYER 1: CORE -->
         <mxCell id="l1_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#0077b6;dashed=1;opacity=40;" vertex="1" parent="1">
-          <mxGeometry x="40" y="285" width="1560" height="330" as="geometry" />
+          <mxGeometry x="40" y="280" width="1560" height="340" as="geometry" />
         </mxCell>
         <mxCell id="l1_label" value="LAYER 1 — Core Engine (src/isnad/core/)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#0077b6;" vertex="1" parent="1">
-          <mxGeometry x="55" y="288" width="300" height="20" as="geometry" />
+          <mxGeometry x="55" y="283" width="300" height="20" as="geometry" />
         </mxCell>
 
-        <mxCell id="chain_box" value="&lt;b&gt;chain.py — Transmission Chain&lt;/b&gt;&lt;br&gt;&lt;br&gt;🔗 &lt;b&gt;ChainLinkSpec&lt;/b&gt;: narrator_id, step, version,&lt;br&gt;   transform_type, trace_id, domain, confidence&lt;br&gt;🔗 &lt;b&gt;Chain&lt;/b&gt;: ordered links, gap-checked&lt;br&gt;   .is_complete → ittiṣāl&lt;br&gt;   .chain_status → COMPLETE | MUNQATI&lt;br&gt;   .narrator_ids → ordered list&lt;br&gt;   .to_jsonb() → serialization&lt;br&gt;🔗 &lt;b&gt;store_claim()&lt;/b&gt; → RijalClaim ORM&lt;br&gt;🔗 &lt;b&gt;make_claim_id()&lt;/b&gt; → SHA-256&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ 10 tests pass&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="315" width="290" height="155" as="geometry" />
+        <mxCell id="chain_box" value="&lt;b&gt;chain.py&lt;/b&gt;&lt;br&gt;🔗 ChainLinkSpec · Chain&lt;br&gt;   .is_complete → ittiṣāl (gap → DAIF)&lt;br&gt;   .narrator_ids, .to_jsonb()&lt;br&gt;🔗 store_claim() · get_chain_from_db()&lt;br&gt;🔗 make_claim_id() — SHA-256&lt;br&gt;🔗 grades_for_chain() · adalah_grades_for_chain()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="290" height="140" as="geometry" />
         </mxCell>
 
-        <mxCell id="reg_box" value="&lt;b&gt;registry.py — Rijāl Registry&lt;/b&gt;&lt;br&gt;&lt;br&gt;📋 &lt;b&gt;Narrator&lt;/b&gt;: (id, domain) keyed, evidence_log&lt;br&gt;📋 &lt;b&gt;Registry&lt;/b&gt;: in-memory store&lt;br&gt;   .register(), .get_grade(), .get_metadata()&lt;br&gt;   .record_evidence() → jarḥ–taʿdīl state machine&lt;br&gt;   .quarantine(), .bump_version()&lt;br&gt;📋 &lt;b&gt;RegistryDB&lt;/b&gt;: SQLAlchemy-backed&lt;br&gt;   .load(), .flush()&lt;br&gt;📋 &lt;b&gt;TransitionPolicies&lt;/b&gt;:&lt;br&gt;   BayesianTransitionPolicy (DEFAULT)&lt;br&gt;   ThresholdTransitionPolicy (fallback)&lt;br&gt;   CalibratedThresholdPolicy&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Bayesian default | 21 tests pass&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="370" y="315" width="290" height="180" as="geometry" />
+        <mxCell id="reg_box" value="&lt;b&gt;registry.py&lt;/b&gt;&lt;br&gt;📋 Registry (in-memory) · RegistryDB (SQLAlchemy)&lt;br&gt;📋 register() · get_grade() · record_evidence()&lt;br&gt;📋 seed() · seed_from_benchmark() · accuracy_to_grade()&lt;br&gt;📋 quarantine() · bump_version() · dispute()/adjudicate()&lt;br&gt;📋 get_grade_as_of() — period-sliced (ikhtilāṭ)&lt;br&gt;📋 record_survival() · evidence_provenance() · renew_grade()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="370" y="310" width="300" height="140" as="geometry" />
         </mxCell>
 
-        <mxCell id="grading_box" value="&lt;b&gt;grading.py — Chain Grading&lt;/b&gt;&lt;br&gt;&lt;br&gt;⚖️ &lt;b&gt;RefinedWeakestLink&lt;/b&gt; (default)&lt;br&gt;   Walks chain step-by-step:&lt;br&gt;   → DESTRUCTIVE: permanent hard floor&lt;br&gt;   → GENERATIVE: can repair (corroboration-gated)&lt;br&gt;   → PASS_THROUGH: standard min&lt;br&gt;   → Incomplete chain → DAIF cap&lt;br&gt;⚖️ &lt;b&gt;grade_chain()&lt;/b&gt; convenience&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ 17 tests pass | Pluggable&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="680" y="315" width="270" height="155" as="geometry" />
+        <mxCell id="policies_box" value="&lt;b&gt;policies.py&lt;/b&gt;&lt;br&gt;⚙️ BayesianTransitionPolicy (DEFAULT, Beta posterior)&lt;br&gt;⚙️ ThresholdTransitionPolicy · CalibratedThresholdPolicy&lt;br&gt;⚙️ Integrity strikes-per-tier ladder (ʿadālah permanent)&lt;br&gt;⚙️ Precision recoverable; REJECTED sticky only if COMPROMISED" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="690" y="310" width="300" height="140" as="geometry" />
         </mxCell>
 
-        <mxCell id="corr_box" value="&lt;b&gt;corroboration.py — Mutābaʿāt&lt;/b&gt;&lt;br&gt;&lt;br&gt;🔄 &lt;b&gt;SharedLineageDetector&lt;/b&gt;&lt;br&gt;   .are_independent() — madār detection&lt;br&gt;   .compute_independence_score()&lt;br&gt;   Penalties: shared IDs (0.0), family (-0.4), source (-0.3)&lt;br&gt;🔄 &lt;b&gt;CappedCorroborationPolicy&lt;/b&gt;&lt;br&gt;   Info-theoretic error multiplication&lt;br&gt;   ERROR_PROBS: SAHIH=0.01, HASAN=0.10, DAIF=0.30, MAWDU=0.90&lt;br&gt;   MIN_EFFECTIVE_WEIGHT = 2.0 (configurable)&lt;br&gt;🔄 &lt;b&gt;CorroborationEngine&lt;/b&gt;&lt;br&gt;   .evaluate() — exact text matching&lt;br&gt;   .evaluate_direct() — pre-matched chains&lt;br&gt;   _evaluate_core() — shared logic&lt;br&gt;   _compute_effective_weight() — log-error ratio&lt;br&gt;🔄 &lt;b&gt;evaluate_corroboration()&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Empirically validated (707 pairs, 100%)&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ 8/8 negative controls | 15 tests pass&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="970" y="315" width="340" height="215" as="geometry" />
+        <mxCell id="grading_box" value="&lt;b&gt;grading.py&lt;/b&gt;&lt;br&gt;⚖️ RefinedWeakestLink (default)&lt;br&gt;   DESTRUCTIVE → hard floor&lt;br&gt;   GENERATIVE → repair (corroboration-gated)&lt;br&gt;   Incomplete → DAIF · REJECTED → MAWDU&lt;br&gt;⚖️ fidelity verdicts cap a contradicted link&lt;br&gt;⚖️ grade_chain() convenience" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="310" width="290" height="140" as="geometry" />
         </mxCell>
 
-        <mxCell id="decision_box" value="&lt;b&gt;decision.py — Decision Matrix&lt;/b&gt;&lt;br&gt;&lt;br&gt;🎯 &lt;b&gt;decide(chain_grade, content_verdict)&lt;/b&gt;&lt;br&gt;   4×2 matrix → Action enum&lt;br&gt;   SERVE | SERVE_WITH_CAVEAT | REVIEW&lt;br&gt;   QUARANTINE | REJECT_AND_QUARANTINE&lt;br&gt;🎯 &lt;b&gt;describe_action()&lt;/b&gt; — human-readable&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ All 12 cells tested&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="505" width="290" height="100" as="geometry" />
+        <mxCell id="corr_box" value="&lt;b&gt;corroboration.py&lt;/b&gt;&lt;br&gt;🔄 SharedLineageDetector — madār detection&lt;br&gt;   shared IDs (0.0) · family (−0.4) · source (−0.3)&lt;br&gt;   UNKNOWN_LINEAGE_SCORE (0.5) — independence must be attested (#83)&lt;br&gt;🔄 CappedCorroborationPolicy — capped at HASAN&lt;br&gt;🔄 CorroborationEngine · evaluate_corroboration()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="470" width="340" height="130" as="geometry" />
         </mxCell>
 
-        <mxCell id="matn_box" value="&lt;b&gt;matn.py — Content Criticism&lt;/b&gt;&lt;br&gt;&lt;br&gt;📝 &lt;b&gt;DeterministicRuleCritic&lt;/b&gt;&lt;br&gt;   REFERENCE STUB — 8 hardcoded patterns&lt;br&gt;   .add_pattern(), .evaluate()&lt;br&gt;&lt;font color=&quot;#ffc107&quot;&gt;⚠️ STUB — limited pattern coverage&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3cd;strokeColor=#ffc107;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="680" y="505" width="270" height="100" as="geometry" />
+        <mxCell id="decision_box" value="&lt;b&gt;decision.py — 4×3 matrix&lt;/b&gt;&lt;br&gt;🎯 decide(chain_grade, content_verdict) → Action&lt;br&gt;   SAHIH/HASAN/DAIF/MAWDU × CONSISTENT/CONTRADICTION/UNVERIFIABLE&lt;br&gt;   SERVE · SERVE_WITH_CAVEAT · REVIEW · QUARANTINE · REJECT_AND_QUARANTINE_NARRATOR&lt;br&gt;🎯 describe_action() — human-readable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="420" y="470" width="300" height="130" as="geometry" />
         </mxCell>
 
-        <mxCell id="storage_box" value="&lt;b&gt;storage/ — Persistence&lt;/b&gt;&lt;br&gt;&lt;br&gt;💾 &lt;b&gt;StorageBackend (protocol)&lt;/b&gt;&lt;br&gt;💾 &lt;b&gt;SQLAlchemyStorage&lt;/b&gt;&lt;br&gt;   .save_claim(), .save_narrator()&lt;br&gt;   .save_evidence(), .get_chain()&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ SQLAlchemy | Swap via protocol&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="370" y="520" width="290" height="85" as="geometry" />
+        <mxCell id="identity_box" value="&lt;b&gt;identity.py · fidelity.py · volatility.py&lt;/b&gt;&lt;br&gt;🔑 alias@version resolution (endpoint drift)&lt;br&gt;🔑 compute_fidelity_verdicts() — per-link I/O snapshots&lt;br&gt;🔑 FixedVolatilityPolicy — grade TTL / stale / expired" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="740" y="470" width="300" height="130" as="geometry" />
         </mxCell>
 
-        <!-- LAYER 2: CRITICS -->
+        <mxCell id="storage_box" value="&lt;b&gt;storage/ · matn.py&lt;/b&gt;&lt;br&gt;💾 RegistryPersistence protocol · SQLAlchemy sessions&lt;br&gt;📝 DeterministicRuleCritic — reference stub (offline demo)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="470" width="240" height="130" as="geometry" />
+        </mxCell>
+
         <mxCell id="l2_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#28a745;dashed=1;opacity=40;" vertex="1" parent="1">
-          <mxGeometry x="40" y="625" width="1560" height="155" as="geometry" />
+          <mxGeometry x="40" y="630" width="1560" height="175" as="geometry" />
         </mxCell>
-        <mxCell id="l2_label" value="LAYER 2 — Content Critics (src/isnad/critics/)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#28a745;" vertex="1" parent="1">
-          <mxGeometry x="55" y="628" width="320" height="20" as="geometry" />
-        </mxCell>
-
-        <mxCell id="critic_base" value="&lt;b&gt;base.py&lt;/b&gt;&lt;br&gt;ContentCritic protocol&lt;br&gt;.evaluate(claim, norm, corpus, domain)&lt;br&gt;→ ContentVerdict&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Protocol defined&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="655" width="220" height="75" as="geometry" />
+        <mxCell id="l2_label" value="LAYER 2 — Content Critics (src/isnad/critics/) — measured, not estimated" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#28a745;" vertex="1" parent="1">
+          <mxGeometry x="55" y="633" width="420" height="20" as="geometry" />
         </mxCell>
 
-        <mxCell id="critic_embed" value="&lt;b&gt;embedding.py — EmbeddingCritic&lt;/b&gt;&lt;br&gt;📊 TF-IDF weighted cosine sim&lt;br&gt;📊 _has_contradiction_signal()&lt;br&gt;📊 TFIDFIndex, cosine_similarity&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Default critic | Functional&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="310" y="655" width="230" height="75" as="geometry" />
+        <mxCell id="critic_llm" value="&lt;b&gt;LLMCritic&lt;/b&gt; — 1.000 recall / 0.000 false-consistent&lt;br&gt;Provider-agnostic: DeepSeek · OpenRouter · OpenAI · Anthropic&lt;br&gt;Gemini · Groq · Together · Ollama (local, no key)&lt;br&gt;best_available_critic() prefers this by default" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="660" width="380" height="90" as="geometry" />
         </mxCell>
 
-        <mxCell id="critic_nli" value="&lt;b&gt;nli.py — NLI Critics&lt;/b&gt;&lt;br&gt;🤖 LocalNLICritic (DeBERTa cross-encoder)&lt;br&gt;🤖 HybridCritic (MiniLM → NLI)&lt;br&gt;🤖 ~500MB model download&lt;br&gt;&lt;font color=&quot;#0077b6&quot;&gt;✅ Functional | Optional dep&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="560" y="655" width="250" height="75" as="geometry" />
+        <mxCell id="critic_nli" value="&lt;b&gt;LocalNLICritic / HybridCritic&lt;/b&gt;&lt;br&gt;Fixed (#110): label order, softmax, retrieval, contradiction-first&lt;br&gt;LocalNLI 0.760 recall / 0.000 false-consistent&lt;br&gt;Hybrid 0.720 / 0.040" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="460" y="660" width="380" height="90" as="geometry" />
         </mxCell>
 
-        <mxCell id="critic_llm" value="&lt;b&gt;llm.py — LLMCritic&lt;/b&gt;&lt;br&gt;🧠 Anthropic Claude-backed&lt;br&gt;🧠 Retrieval-augmented context&lt;br&gt;🧠 Disk caching&lt;br&gt;&lt;font color=&quot;#ffc107&quot;&gt;⚠️ Needs API key | Not benchmarked&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3cd;strokeColor=#ffc107;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="830" y="655" width="240" height="75" as="geometry" />
+        <mxCell id="critic_embed" value="&lt;b&gt;EmbeddingCritic&lt;/b&gt; (TF-IDF)&lt;br&gt;0.120 recall / 0.320 false-consistent&lt;br&gt;Safest zero-dependency option, low recall&lt;br&gt;TFIDFIndex" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="860" y="660" width="350" height="90" as="geometry" />
         </mxCell>
 
-        <mxCell id="critic_eval" value="&lt;b&gt;eval.py — Critic Harness&lt;/b&gt;&lt;br&gt;🧪 evaluate_critics()&lt;br&gt;🧪 generate_contradictions()&lt;br&gt;🧪 Benchmark runner&lt;br&gt;&lt;font color=&quot;#0077b6&quot;&gt;✅ Wired&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="1090" y="655" width="220" height="75" as="geometry" />
+        <mxCell id="critic_eval" value="&lt;b&gt;eval.py + experiments/critic_eval/&lt;/b&gt;&lt;br&gt;Committed 60-case labeled eval set&lt;br&gt;Runner writes RESULTS.md + results.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="660" width="340" height="90" as="geometry" />
         </mxCell>
 
-        <!-- LAYER 3: API & INTEGRATIONS -->
         <mxCell id="l3_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#e91e63;dashed=1;opacity=40;" vertex="1" parent="1">
-          <mxGeometry x="40" y="790" width="1560" height="105" as="geometry" />
+          <mxGeometry x="40" y="815" width="1560" height="175" as="geometry" />
         </mxCell>
-        <mxCell id="l3_label" value="LAYER 3 — API, CLI &amp; Integrations" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#e91e63;" vertex="1" parent="1">
-          <mxGeometry x="55" y="793" width="250" height="20" as="geometry" />
-        </mxCell>
-
-        <mxCell id="api_box" value="&lt;b&gt;api/ — FastAPI Service&lt;/b&gt;&lt;br&gt;🔌 POST/GET /v1/claims, /v1/narrators, /v1/evidence&lt;br&gt;🔌 GET /v1/health, /v1/metrics (Prometheus)&lt;br&gt;🔌 Auth middleware, DI, SQLAlchemy sessions&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ All endpoints tested&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e91e63;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="820" width="460" height="60" as="geometry" />
+        <mxCell id="l3_label" value="LAYER 3 — Audit, API, CLI &amp; Integrations" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#e91e63;" vertex="1" parent="1">
+          <mxGeometry x="55" y="818" width="300" height="20" as="geometry" />
         </mxCell>
 
-        <mxCell id="cli_box" value="&lt;b&gt;cli/ — CLI&lt;/b&gt;&lt;br&gt;🖥️ isnad serve (uvicorn)&lt;br&gt;🖥️ isnad seed (env config)&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Wired&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e91e63;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="540" y="820" width="250" height="60" as="geometry" />
+        <mxCell id="audit_box" value="&lt;b&gt;audit/&lt;/b&gt;&lt;br&gt;🛡 AuditRecord DAG (upstream_ids) · RFC 8785 canonical hash&lt;br&gt;🛡 chainlog.py — linear hash chain&lt;br&gt;🛡 merkle_log.py — Merkle batch log (parallel agents)&lt;br&gt;🛡 sign.py — detached signatures (HMAC + Ed25519)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e91e63;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="845" width="360" height="90" as="geometry" />
         </mxCell>
 
-        <mxCell id="langchain_box" value="&lt;b&gt;integrations/langchain/&lt;/b&gt;&lt;br&gt;🔌 IsnadTracer — callback handler&lt;br&gt;🔌 isnad_trace decorator&lt;br&gt;🔌 seed_registry() helper&lt;br&gt;🔌 CriticAdapter&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ 9 tests pass&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e91e63;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="810" y="820" width="330" height="60" as="geometry" />
+        <mxCell id="api_box" value="&lt;b&gt;api/&lt;/b&gt;&lt;br&gt;🔌 /v1/claims · /v1/narrators · /v1/review-queue · /v1/health · /v1/metrics&lt;br&gt;🔌 Fail-closed auth (no default credential) · Pydantic validation&lt;br&gt;🔌 LLM-first critic via best_available_critic()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e91e63;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="440" y="845" width="400" height="90" as="geometry" />
         </mxCell>
 
-        <!-- EXPERIMENTS -->
-        <mxCell id="exp_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#ff9800;dashed=1;opacity=40;" vertex="1" parent="1">
-          <mxGeometry x="40" y="905" width="1560" height="105" as="geometry" />
-        </mxCell>
-        <mxCell id="exp_label" value="EXPERIMENTS — Validated Empirical Results" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#e65100;" vertex="1" parent="1">
-          <mxGeometry x="55" y="908" width="300" height="20" as="geometry" />
+        <mxCell id="cli_box" value="&lt;b&gt;cli/&lt;/b&gt;&lt;br&gt;🖥 serve · seed · export · verify · verify-chain · verify-merkle · ingest · bench" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e91e63;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="860" y="845" width="350" height="90" as="geometry" />
         </mxCell>
 
-        <mxCell id="exp_v1" value="&lt;b&gt;corroboration_v1&lt;/b&gt;&lt;br&gt;Exact string matching&lt;br&gt;136 pairs, 50% fire&lt;br&gt;Historical — superseded by v2/v3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
-          <mxGeometry x="60" y="935" width="250" height="55" as="geometry" />
+        <mxCell id="integ_box" value="&lt;b&gt;integrations/&lt;/b&gt;&lt;br&gt;🔌 langchain (callback · tracer · middleware) · langgraph · crewai · llamaindex&lt;br&gt;🔌 otel — isnad ingest --otlp&lt;br&gt;🔌 liveverify — crypto-anchored ʿadālah for sources" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e91e63;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="845" width="340" height="90" as="geometry" />
         </mxCell>
 
-        <mxCell id="exp_v2" value="&lt;b&gt;corroboration_v2&lt;/b&gt;&lt;br&gt;Semantic matching (Wikipedia)&lt;br&gt;603 pairs, 100% fire&lt;br&gt;Regular vs Simple Wikipedia&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Paper-ready&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=10;align=center;" vertex="1" parent="1">
-          <mxGeometry x="340" y="935" width="280" height="55" as="geometry" />
-        </mxCell>
-
-        <mxCell id="exp_v3" value="&lt;b&gt;corroboration_v3&lt;/b&gt;&lt;br&gt;Physics textbooks (OpenStax+Crowell)&lt;br&gt;104 pairs, 100% fire&lt;br&gt;Different authors, different publishers&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Paper-ready&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=10;align=center;" vertex="1" parent="1">
-          <mxGeometry x="650" y="935" width="310" height="55" as="geometry" />
-        </mxCell>
-
-        <mxCell id="exp_s8" value="&lt;b&gt;s8_gated_vs_ungated&lt;/b&gt;&lt;br&gt;20K claims, 4 conditions&lt;br&gt;Serving coverage: 10% (bounded by review budget)&lt;br&gt;~0% error rate at budget ceiling&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Validated&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ff9800;fontSize=10;align=center;" vertex="1" parent="1">
-          <mxGeometry x="990" y="935" width="320" height="55" as="geometry" />
-        </mxCell>
-
-        <!-- LEGEND -->
         <mxCell id="legend_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#cccccc;" vertex="1" parent="1">
-          <mxGeometry x="40" y="1020" width="700" height="55" as="geometry" />
+          <mxGeometry x="40" y="1010" width="700" height="55" as="geometry" />
         </mxCell>
         <mxCell id="leg_g" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;" vertex="1" parent="1">
-          <mxGeometry x="55" y="1032" width="18" height="18" as="geometry" />
+          <mxGeometry x="55" y="1022" width="18" height="18" as="geometry" />
         </mxCell>
-        <mxCell id="leg_gt" value="Validated / Tested / Production-ready" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;align=left;" vertex="1" parent="1">
-          <mxGeometry x="80" y="1033" width="200" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="leg_y" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3cd;strokeColor=#ffc107;" vertex="1" parent="1">
-          <mxGeometry x="55" y="1053" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="leg_yt" value="Wired but limited / Needs API key / Stub" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;align=left;" vertex="1" parent="1">
-          <mxGeometry x="80" y="1054" width="220" height="18" as="geometry" />
+        <mxCell id="leg_gt" value="Validated / Tested / Measured" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1023" width="200" height="18" as="geometry" />
         </mxCell>
         <mxCell id="leg_b" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;" vertex="1" parent="1">
-          <mxGeometry x="310" y="1032" width="18" height="18" as="geometry" />
+          <mxGeometry x="310" y="1022" width="18" height="18" as="geometry" />
         </mxCell>
-        <mxCell id="leg_bt" value="Implemented, functional, not stress-tested" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;align=left;" vertex="1" parent="1">
-          <mxGeometry x="335" y="1033" width="220" height="18" as="geometry" />
+        <mxCell id="leg_bt" value="Implemented, functional" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1023" width="180" height="18" as="geometry" />
         </mxCell>
-        <mxCell id="leg_o" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ff9800;" vertex="1" parent="1">
-          <mxGeometry x="310" y="1053" width="18" height="18" as="geometry" />
+        <mxCell id="leg_y" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3cd;strokeColor=#ffc107;" vertex="1" parent="1">
+          <mxGeometry x="55" y="1043" width="18" height="18" as="geometry" />
         </mxCell>
-        <mxCell id="leg_ot" value="Experiment / Historical / Superseded" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;align=left;" vertex="1" parent="1">
-          <mxGeometry x="335" y="1054" width="220" height="18" as="geometry" />
+        <mxCell id="leg_yt" value="Reference stub / needs a key or model" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1044" width="220" height="18" as="geometry" />
         </mxCell>
-
       </root>
     </mxGraphModel>
   </diagram>
@@ -199,7 +167,7 @@
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="lc2" value="&lt;b&gt;2. EXTRACTION&lt;/b&gt;&lt;br&gt;Sentence split, OCR,&lt;br&gt;LLM claim extraction&lt;br&gt;&lt;br&gt;&lt;i&gt;Creates ChainLinkSpec&lt;/i&gt;&lt;br&gt;&lt;i&gt;narrator, step, transform&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontSize=10;align=center;" vertex="1" parent="1">
+        <mxCell id="lc2" value="&lt;b&gt;2. EXTRACTION&lt;/b&gt;&lt;br&gt;Sentence-level segmentation + filter&lt;br&gt;(deterministic heuristic, issue #94)&lt;br&gt;&lt;br&gt;&lt;i&gt;Creates ChainLinkSpec&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontSize=10;align=center;" vertex="1" parent="1">
           <mxGeometry x="300" y="80" width="180" height="80" as="geometry" />
         </mxCell>
         <mxCell id="a2" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#1976d2;" edge="1" parent="1">
@@ -209,7 +177,7 @@
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="lc3" value="&lt;b&gt;3. CHAIN BUILDING&lt;/b&gt;&lt;br&gt;Chain(links) → gap check&lt;br&gt;.is_complete → ittiṣāl&lt;br&gt;.narrator_ids → ordered&lt;br&gt;&lt;br&gt;&lt;i&gt;store_claim() → DB&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontSize=10;align=center;" vertex="1" parent="1">
+        <mxCell id="lc3" value="&lt;b&gt;3. CHAIN BUILDING&lt;/b&gt;&lt;br&gt;Chain(links) → gap check&lt;br&gt;.is_complete → ittiṣāl&lt;br&gt;&lt;br&gt;&lt;i&gt;store_claim() → DB&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontSize=10;align=center;" vertex="1" parent="1">
           <mxGeometry x="550" y="80" width="180" height="80" as="geometry" />
         </mxCell>
         <mxCell id="a3" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#1976d2;" edge="1" parent="1">
@@ -219,7 +187,7 @@
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="lc4" value="&lt;b&gt;4. NARRATOR GRADING&lt;/b&gt;&lt;br&gt;Registry.get_grade(narrator, domain)&lt;br&gt;BayesianTransitionPolicy (default)&lt;br&gt;Beta(α,β) posterior → grade&lt;br&gt;&lt;br&gt;&lt;i&gt;Domain-conditioned lookups&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontSize=10;align=center;" vertex="1" parent="1">
+        <mxCell id="lc4" value="&lt;b&gt;4. NARRATOR GRADING&lt;/b&gt;&lt;br&gt;Registry.get_grade(narrator, domain, role)&lt;br&gt;Evidence-backed seeds (Registry.seed)&lt;br&gt;Bayesian posterior (default)&lt;br&gt;&lt;br&gt;&lt;i&gt;Domain- and role-conditioned&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontSize=10;align=center;" vertex="1" parent="1">
           <mxGeometry x="800" y="70" width="200" height="100" as="geometry" />
         </mxCell>
         <mxCell id="a4" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#1976d2;" edge="1" parent="1">
@@ -243,7 +211,7 @@
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="lc6a" value="&lt;b&gt;6a. CORROBORATION&lt;/b&gt;&lt;br&gt;evaluate_direct() or evaluate()&lt;br&gt;1) Independence check (madār)&lt;br&gt;2) Min grade gate (≥ HASAN)&lt;br&gt;3) Count gate (≥ min_independent)&lt;br&gt;4) Info-theoretic weight → upgrade?&lt;br&gt;&lt;br&gt;&lt;i&gt;DAIF → HASAN (capped, never SAHIH)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=10;align=center;" vertex="1" parent="1">
+        <mxCell id="lc6a" value="&lt;b&gt;6a. CORROBORATION&lt;/b&gt;&lt;br&gt;evaluate_corroboration()&lt;br&gt;1) Independence check (madār, attested lineage)&lt;br&gt;2) Min grade gate (≥ HASAN)&lt;br&gt;3) Count gate (≥ min_independent)&lt;br&gt;4) Info-theoretic weight → upgrade?&lt;br&gt;&lt;br&gt;&lt;i&gt;DAIF → HASAN (capped, never SAHIH)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=10;align=center;" vertex="1" parent="1">
           <mxGeometry x="220" y="260" width="260" height="120" as="geometry" />
         </mxCell>
         <mxCell id="a5b" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#28a745;" edge="1" parent="1">
@@ -256,7 +224,7 @@
           <mxGeometry x="500" y="225" width="180" height="15" as="geometry" />
         </mxCell>
 
-        <mxCell id="lc7" value="&lt;b&gt;7. CONTENT CRITICISM&lt;/b&gt;&lt;br&gt;EmbeddingCritic / HybridCritic&lt;br&gt;.evaluate(claim, norm, corpus, domain)&lt;br&gt;→ ContentVerdict: CONSISTENT | CONTRADICTION | UNVERIFIABLE&lt;br&gt;&lt;br&gt;&lt;i&gt;Independent of chain grade&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontSize=10;align=center;" vertex="1" parent="1">
+        <mxCell id="lc7" value="&lt;b&gt;7. CONTENT CRITICISM&lt;/b&gt;&lt;br&gt;best_available_critic() — LLM if key/local, else NLI, else TF-IDF&lt;br&gt;.evaluate(claim, norm, corpus, domain)&lt;br&gt;→ CONSISTENT | CONTRADICTION | UNVERIFIABLE&lt;br&gt;&lt;br&gt;&lt;i&gt;Independent of chain grade&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontSize=10;align=center;" vertex="1" parent="1">
           <mxGeometry x="140" y="430" width="440" height="80" as="geometry" />
         </mxCell>
         <mxCell id="a6a" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#1976d2;" edge="1" parent="1">
@@ -266,18 +234,18 @@
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="lc8" value="&lt;b&gt;8. DECISION MATRIX&lt;/b&gt;&lt;br&gt;decide(chain_grade, content_verdict) → Action&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;2&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;CONSISTENT&lt;/td&gt;&lt;td&gt;CONTRADICTION&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SAHIH&lt;/td&gt;&lt;td bgcolor=&quot;#d4edda&quot;&gt;SERVE&lt;/td&gt;&lt;td bgcolor=&quot;#fff3cd&quot;&gt;REVIEW&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;HASAN&lt;/td&gt;&lt;td bgcolor=&quot;#cce5ff&quot;&gt;CAVEAT&lt;/td&gt;&lt;td bgcolor=&quot;#fff3cd&quot;&gt;REVIEW&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DAIF&lt;/td&gt;&lt;td bgcolor=&quot;#fff3cd&quot;&gt;REVIEW&lt;/td&gt;&lt;td bgcolor=&quot;#f8d7da&quot;&gt;QUARANTINE&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MAWDU&lt;/td&gt;&lt;td bgcolor=&quot;#f8d7da&quot;&gt;REJECT&lt;/td&gt;&lt;td bgcolor=&quot;#f8d7da&quot;&gt;REJECT&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e91e63;fontSize=9;align=center;" vertex="1" parent="1">
-          <mxGeometry x="145" y="560" width="430" height="140" as="geometry" />
+        <mxCell id="lc8" value="&lt;b&gt;8. DECISION MATRIX (4×3)&lt;/b&gt;&lt;br&gt;decide(chain_grade, content_verdict) → Action&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;2&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;CONSISTENT&lt;/td&gt;&lt;td&gt;CONTRADICTION&lt;/td&gt;&lt;td&gt;UNVERIFIABLE&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SAHIH&lt;/td&gt;&lt;td bgcolor=&quot;#d4edda&quot;&gt;SERVE&lt;/td&gt;&lt;td bgcolor=&quot;#fff3cd&quot;&gt;REVIEW&lt;/td&gt;&lt;td bgcolor=&quot;#cce5ff&quot;&gt;CAVEAT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;HASAN&lt;/td&gt;&lt;td bgcolor=&quot;#cce5ff&quot;&gt;CAVEAT&lt;/td&gt;&lt;td bgcolor=&quot;#fff3cd&quot;&gt;REVIEW&lt;/td&gt;&lt;td bgcolor=&quot;#fff3cd&quot;&gt;REVIEW&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DAIF&lt;/td&gt;&lt;td bgcolor=&quot;#fff3cd&quot;&gt;REVIEW&lt;/td&gt;&lt;td bgcolor=&quot;#f8d7da&quot;&gt;QUARANTINE&lt;/td&gt;&lt;td bgcolor=&quot;#fff3cd&quot;&gt;REVIEW&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MAWDU&lt;/td&gt;&lt;td bgcolor=&quot;#f8d7da&quot;&gt;REJECT&lt;/td&gt;&lt;td bgcolor=&quot;#f8d7da&quot;&gt;REJECT&lt;/td&gt;&lt;td bgcolor=&quot;#f8d7da&quot;&gt;REJECT&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e91e63;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="145" y="560" width="430" height="150" as="geometry" />
         </mxCell>
 
         <mxCell id="feedback" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#e91e63;dashed=1;startArrow=classic;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="580" y="630" as="sourcePoint" />
+            <mxPoint x="580" y="640" as="sourcePoint" />
             <mxPoint x="1000" y="120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="feedback_label" value="&lt;b&gt;jarḥ–taʿdīl FEEDBACK LOOP&lt;/b&gt;&lt;br&gt;Decision → Evidence → Registry update&lt;br&gt;Narrator grades evolve over time" style="text;html=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#e91e63;align=center;" vertex="1" parent="1">
-          <mxGeometry x="580" y="640" width="280" height="30" as="geometry" />
+          <mxGeometry x="580" y="650" width="280" height="30" as="geometry" />
         </mxCell>
 
         <mxCell id="lc6b" value="&lt;b&gt;6b. NO CORROBORATION&lt;/b&gt;&lt;br&gt;Chain grade used as-is&lt;br&gt;(may already be DAIF/HASAN)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
@@ -304,7 +272,6 @@
             <mxPoint x="580" y="490" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-
       </root>
     </mxGraphModel>
   </diagram>
@@ -314,81 +281,74 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="vtitle" value="Validation Status — What's Proven vs What's Not (as of July 2026)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+        <mxCell id="vtitle" value="Validation Status — What's Measured vs What's Not (as of August 2026)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
           <mxGeometry x="300" y="15" width="800" height="35" as="geometry" />
         </mxCell>
 
         <mxCell id="pv_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;opacity=30;" vertex="1" parent="1">
-          <mxGeometry x="40" y="70" width="1320" height="310" as="geometry" />
+          <mxGeometry x="40" y="70" width="1320" height="330" as="geometry" />
         </mxCell>
-        <mxCell id="pv_label" value="✅ EMPIRICALLY VALIDATED — Production Ready" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#155724;" vertex="1" parent="1">
+        <mxCell id="pv_label" value="✅ MEASURED / VALIDATED" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#155724;" vertex="1" parent="1">
           <mxGeometry x="55" y="75" width="400" height="25" as="geometry" />
         </mxCell>
 
-        <mxCell id="pv1" value="&lt;b&gt;Corroboration fires on real data&lt;/b&gt;&lt;br&gt;603/603 (Wikipedia) + 104/104 (Physics)&lt;br&gt;100% fire rate on semantically-matched&lt;br&gt;cross-source claim pairs. 8/8 controls.&lt;br&gt;DAIF → HASAN, never falsely reaches SAHIH." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="110" width="300" height="90" as="geometry" />
+        <mxCell id="pv1" value="&lt;b&gt;Content critics — measured&lt;/b&gt;&lt;br&gt;LLM (DeepSeek): 1.000 recall / 0.000 false-consistent&lt;br&gt;LocalNLI: 0.760 / 0.000 · Hybrid: 0.720 / 0.040&lt;br&gt;Embedding: 0.120 / 0.320&lt;br&gt;60-case committed eval set (experiments/critic_eval/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="110" width="310" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="pv2" value="&lt;b&gt;Independence detection (madār)&lt;/b&gt;&lt;br&gt;Shared narrator IDs → blocked&lt;br&gt;Shared model family → blocked (0.6 &lt; 0.8)&lt;br&gt;Shared upstream source → blocked (0.7 &lt; 0.8)&lt;br&gt;All gates verified independently.&lt;br&gt;evaluate_direct() for semantic matching." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="380" y="110" width="300" height="90" as="geometry" />
+        <mxCell id="pv2" value="&lt;b&gt;Corroboration — validated&lt;/b&gt;&lt;br&gt;603/603 (Wikipedia) + 104/104 (physics) pairs&lt;br&gt;8/8 negative controls pass&lt;br&gt;Requires attested distinct lineage (madār, #83)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="390" y="110" width="300" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="pv3" value="&lt;b&gt;Bayesian narrator grading&lt;/b&gt;&lt;br&gt;Beta-distribution default policy&lt;br&gt;Jarḥ evidence → REJECTED (3 JARH)&lt;br&gt;Taʿdīl evidence → RELIABLE (10 TADIL)&lt;br&gt;21/21 wiring checks pass.&lt;br&gt;Version bump → UNGRADED reset." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="700" y="110" width="300" height="90" as="geometry" />
+        <mxCell id="pv3" value="&lt;b&gt;Weakest-link grading — validated&lt;/b&gt;&lt;br&gt;REJECTED → MAWDU → quarantine (100%)&lt;br&gt;Incomplete → DAIF cap · generative repair gated&lt;br&gt;ISNAD-Bench: κ=0.871 vs scholarly consensus&lt;br&gt;(human ceiling κ=0.33)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="710" y="110" width="310" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="pv4" value="&lt;b&gt;Chain grading &amp; weakest-link&lt;/b&gt;&lt;br&gt;All RELIABLE → SAHIH&lt;br&gt;RELIABLE + WEAK → DAIF&lt;br&gt;Incomplete chain → DAIF cap&lt;br&gt;REJECTED narrator → MAWDU&lt;br&gt;Generative can repair (corroboration-gated)&lt;br&gt;17 grading tests pass." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="1020" y="110" width="300" height="90" as="geometry" />
+        <mxCell id="pv4" value="&lt;b&gt;Cold-start seeding — evidence-backed&lt;/b&gt;&lt;br&gt;Registry.seed() survives the Bayesian posterior (#90/#114)&lt;br&gt;seed_from_benchmark() / accuracy_to_grade() — per-role&lt;br&gt;Coverage is critic-bound: LLM ~63% vs embedding ~56% (new claims)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="110" width="300" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="pv5" value="&lt;b&gt;Decision matrix (all 12 cells)&lt;/b&gt; | &lt;b&gt;API endpoints (all tested)&lt;/b&gt; | &lt;b&gt;LangChain (9 tests)&lt;/b&gt; | &lt;b&gt;EmbeddingCritic (TF-IDF, functional)&lt;/b&gt; | &lt;b&gt;Database persistence (SQLAlchemy)&lt;/b&gt; | &lt;b&gt;Semantic matching pipeline (MiniLM)&lt;/b&gt; | &lt;b&gt;evaluate_direct() API&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="215" width="1260" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="pv6" value="&lt;b&gt;738 tests pass | 21 wiring checks | 38 public exports | ruff clean | 0 unused imports | v2.7.0 on PyPI&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=center;" vertex="1" parent="1">
-          <mxGeometry x="60" y="280" width="1260" height="40" as="geometry" />
+
+        <mxCell id="pv5" value="&lt;b&gt;Decision matrix (12 cells) · API endpoints · DB persistence · detached signatures (HMAC + Ed25519) · Merkle batch log · Live Verify integration · 738 tests · ruff/mypy clean&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="1280" height="55" as="geometry" />
         </mxCell>
 
         <mxCell id="pp_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3cd;strokeColor=#ffc107;opacity=30;" vertex="1" parent="1">
-          <mxGeometry x="40" y="400" width="1320" height="180" as="geometry" />
+          <mxGeometry x="40" y="420" width="1320" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="pp_label" value="⚠️ PARTIALLY VALIDATED — Wired but needs more testing" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#856404;" vertex="1" parent="1">
-          <mxGeometry x="55" y="405" width="450" height="25" as="geometry" />
-        </mxCell>
-
-        <mxCell id="pp1" value="&lt;b&gt;NLI Critics (HybridCritic, LocalNLICritic)&lt;/b&gt;&lt;br&gt;DeBERTa cross-encoder model works.&lt;br&gt;Graceful degradation when model absent.&lt;br&gt;Not tested at scale (slow inference).&lt;br&gt;Needs sentence-transformers dependency." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffc107;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="440" width="400" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="pp2" value="&lt;b&gt;LLMCritic (Anthropic)&lt;/b&gt;&lt;br&gt;Wired with retrieval-augmented context.&lt;br&gt;Needs API key. Not benchmarked.&lt;br&gt;No standardized test corpus.&lt;br&gt;Caching works but cost unknown." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffc107;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="480" y="440" width="400" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="pp3" value="&lt;b&gt;jarḥ–taʿdīl discovery loop&lt;/b&gt;&lt;br&gt;Correctly identifies bad narrators.&lt;br&gt;Good narrators need seed grades.&lt;br&gt;Full feedback loop not exercised on real data.&lt;br&gt;Bayesian thresholds are reference defaults." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffc107;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="900" y="440" width="420" height="70" as="geometry" />
+        <mxCell id="pp_label" value="⚠️ PARTIAL / REFERENCE — documented honestly" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#856404;" vertex="1" parent="1">
+          <mxGeometry x="55" y="425" width="450" height="25" as="geometry" />
         </mxCell>
 
-        <mxCell id="pp4" value="&lt;b&gt;DeterministicRuleCritic&lt;/b&gt; (matn.py) — REFERENCE STUB — 8 hardcoded patterns only | &lt;b&gt;S8 gated vs ungated&lt;/b&gt; — Coverage limited to review budget (10%) | &lt;b&gt;Cross-topic matching&lt;/b&gt; — 51% boilerplate in raw matches | &lt;b&gt;Semantic critic in s8&lt;/b&gt; — 99.5% UNVERIFIABLE on physics text, chain grades are the real bottleneck" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffc107;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="520" width="1260" height="50" as="geometry" />
+        <mxCell id="pp1" value="&lt;b&gt;Offline critics on new claims&lt;/b&gt;&lt;br&gt;NLI critics are safe but conservative — return UNVERIFIABLE&lt;br&gt;for most non-contradictions (correct under-trust bias),&lt;br&gt;so auto-serving needs the LLM tier." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffc107;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="460" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pp2" value="&lt;b&gt;DeterministicRuleCritic&lt;/b&gt;&lt;br&gt;Reference stub — 8 hardcoded patterns, offline demo only.&lt;br&gt;The real serving critic is best_available_critic() (LLM-first)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffc107;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="480" y="460" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pp3" value="&lt;b&gt;Accuracy → grade bands&lt;/b&gt;&lt;br&gt;0.90/0.75/0.60 are reference defaults (documented).&lt;br&gt;Bayesian thresholds are likewise reference defaults.&lt;br&gt;Operator should calibrate per deployment." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffc107;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="900" y="460" width="420" height="70" as="geometry" />
         </mxCell>
 
         <mxCell id="nd_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8d7da;strokeColor=#dc3545;opacity=30;" vertex="1" parent="1">
-          <mxGeometry x="40" y="600" width="1320" height="130" as="geometry" />
+          <mxGeometry x="40" y="610" width="1320" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="nd_label" value="❌ NOT YET DONE — Future Work" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#721c24;" vertex="1" parent="1">
-          <mxGeometry x="55" y="605" width="300" height="25" as="geometry" />
-        </mxCell>
-
-        <mxCell id="nd1" value="&lt;b&gt;Real LLM-generated claims&lt;/b&gt;&lt;br&gt;All current claims are extracted sentences.&lt;br&gt;No LLM hallucination/confabulation testing.&lt;br&gt;Would exercise content critics more deeply." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="60" y="640" width="300" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="nd2" value="&lt;b&gt;Human ground truth validation&lt;/b&gt;&lt;br&gt;Claims verified by semantic overlap,&lt;br&gt;not checked against authoritative refs.&lt;br&gt;Would strengthen paper §8." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="380" y="640" width="300" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="nd3" value="&lt;b&gt;Full pipeline integration test&lt;/b&gt;&lt;br&gt;Chain→Grade→Critic→Corroborate→Decide&lt;br&gt;Only individual steps tested.&lt;br&gt;End-to-end flow not exercised.&lt;br&gt;Confidence-gating — proven useless." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="700" y="640" width="300" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="nd4" value="&lt;b&gt;Multi-source beyond Wikipedia/Physics&lt;/b&gt;&lt;br&gt;Britannica (JS-rendered, blocked)&lt;br&gt;ArXiv, textbooks, news — not tested.&lt;br&gt;Would strengthen independence claims." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="1020" y="640" width="300" height="70" as="geometry" />
+        <mxCell id="nd_label" value="❌ OPEN / KNOWN LIMITS — tracked" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#721c24;" vertex="1" parent="1">
+          <mxGeometry x="55" y="615" width="300" height="25" as="geometry" />
         </mxCell>
 
-        <mxCell id="tests_note" value="&lt;b&gt;Test suite:&lt;/b&gt; 738 tests (pytest) | &lt;b&gt;Wiring:&lt;/b&gt; 21 checks | &lt;b&gt;Full system:&lt;/b&gt; 145 checks | &lt;b&gt;Coverage:&lt;/b&gt; All 16 test files, all core modules | &lt;b&gt;Version:</b> 2.7.0 on PyPI | &lt;b&gt;Paper:&lt;/b&gt; arXiv:2607.24117" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
-          <mxGeometry x="60" y="750" width="1260" height="40" as="geometry" />
+        <mxCell id="nd1" value="&lt;b&gt;Chain independence&lt;/b&gt; (#54)&lt;br&gt;Topology cannot prove independence — correlated&lt;br&gt;blind spots / content-level correlated error are&lt;br&gt;undetectable. Documented, not hidden." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="650" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nd2" value="&lt;b&gt;Live Verify issuer revocation&lt;/b&gt; (#122)&lt;br&gt;revocation-on-regrade is unimplemented — a published&lt;br&gt;verdict stays &quot;verified&quot; forever, overstating currency." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="380" y="650" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nd3" value="&lt;b&gt;Human ground-truth validation&lt;/b&gt;&lt;br&gt;Claims verified by semantic overlap, not checked&lt;br&gt;against authoritative references — would strengthen §8." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="700" y="650" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nd4" value="&lt;b&gt;Broader multi-source corpora&lt;/b&gt;&lt;br&gt;ArXiv / textbooks / news not yet exercised;&lt;br&gt;would strengthen independence claims." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="650" width="300" height="70" as="geometry" />
         </mxCell>
 
+        <mxCell id="tests_note" value="&lt;b&gt;Test suite:&lt;/b&gt; 738 tests (pytest) | &lt;b&gt;ruff + mypy:&lt;/b&gt; clean | &lt;b&gt;Version:&lt;/b&gt; 2.7.0 on PyPI | &lt;b&gt;Paper:&lt;/b&gt; arXiv:2607.24117" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="1260" height="40" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
