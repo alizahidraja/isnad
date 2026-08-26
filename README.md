@@ -47,6 +47,28 @@ explicit **DAG** via `upstream_ids`), the weakest link, source-document hashes,
 over the RFC 8785-canonical form of its own payload — plus an optional
 tamper-evident hash chain (no blockchain) and a PII-redaction hook.
 
+**Two tamper-evidence logs.** There are two ways to anchor a stream of audit
+records against post-hoc modification:
+
+- **Linear hash chain** (`isnad.audit.chainlog`, `isnad verify-chain`) — each
+  record's hash is linked to the previous one. Correct and simple, but
+  **strictly sequential**: every appender must read the previous hash first, so
+  parallel agents race on it.
+- **Merkle batch log** (`isnad.audit.merkle_log`, `isnad verify-merkle`) —
+  records enter as independent *leaves* with no back-reference, so any number of
+  agents can produce them concurrently; a **seal** step then commits the ordered
+  batch to a Merkle root, and batch roots chain via `prev_root`. Ships
+  `build_batch`, `seal_batches`, `verify_batches`, and O(log n)
+  `prove_inclusion`/`verify_inclusion` (RFC 6962 domain-separated hashing;
+  odd nodes promoted, not duplicated).
+
+**Which to use:** linear for a single sequential writer; Merkle for mass
+parallel agent batches. Both detect modification, deletion-of-middle, and
+reordering. Neither detects *tail truncation* (dropping the last entries) — that
+needs a trusted head/count, out of scope — and both commit to each record's
+self-integrity hash, so they detect post-hoc modification, not a forger who can
+rewrite records and rebuild the chain (see [#97]).
+
 **Who this is for:** teams running production AI who will be asked what their
 system did and how they know. The record answers that question; it does not
 answer "are we compliant?"

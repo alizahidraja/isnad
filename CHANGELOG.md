@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- **Merkle batch tamper-evidence log** (`isnad.audit.merkle_log`, `isnad
+  verify-merkle`) — a parallel-friendly alternative to the linear hash chain
+  (issue #69, thanks @AusafMo). Records enter as independent leaves (no
+  back-reference), a seal step commits the ordered batch to a Merkle root, and
+  batch roots chain via `prev_root`. Ships `build_batch`, `seal_batches`,
+  `verify_batches`, and O(log n) inclusion proofs. See the README's audit
+  section for linear-vs-Merkle guidance.
+
 ## [2.6.1] — 2026-08-26
 
 ### Changed

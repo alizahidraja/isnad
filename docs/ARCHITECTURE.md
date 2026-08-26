@@ -117,7 +117,8 @@ src/isnad/
 │   ├── schema.py                AuditRecord + JSON Schema
 │   ├── canonical.py             RFC 8785 canonicalization
 │   ├── exporter.py              build + emit tamper-evident records
-│   └── chainlog.py              hash-chain (prev_hash) integrity
+│   ├── chainlog.py              linear hash-chain (prev_hash) integrity
+│   └── merkle_log.py            Merkle batch log (parallel agents, CT-style)
 │
 ├── critics/                     ── Content criticism ──
 │   ├── base.py                  ContentCritic Protocol
@@ -140,7 +141,7 @@ src/isnad/
 │       └── health.py            Health + Prometheus /metrics
 │
 ├── cli/                         ── CLI ──
-│   └── main.py                  isnad serve | seed | export | verify | verify-chain
+│   └── main.py                  isnad serve | seed | export | verify | verify-chain | verify-merkle
 │
 ├── trace/                       ── Trace schema ──
 │   ├── __init__.py              Public API
@@ -633,6 +634,7 @@ isnad seed --config      # Seed narrators from ISNAD_SEED_CONFIG env var
 isnad export --claim <id> --format json   # Emit a tamper-evident AuditRecord
 isnad verify --record <path>              # Recompute a record's hash
 isnad verify-chain --chain <path>         # Walk a tamper-evident hash chain
+isnad verify-merkle --log <path>          # Verify a Merkle batch log (parallel agents)
 ```
 
 Environment variables: `ISNAD_HOST`, `ISNAD_PORT`, `ISNAD_DATABASE_URL`,
