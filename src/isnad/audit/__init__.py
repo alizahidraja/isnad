@@ -37,6 +37,9 @@ from isnad.audit.schema import (
     apply_redact,
 )
 from isnad.audit.sign import (
+    ed25519_keypair,
+    ed25519_signer,
+    ed25519_verifier,
     hmac_signer,
     hmac_verifier,
     sign_detached,
@@ -63,6 +66,9 @@ __all__ = [
     "build_audit_record",
     "build_audit_record_from_nodes",
     "build_batch",
+    "ed25519_keypair",
+    "ed25519_signer",
+    "ed25519_verifier",
     "hmac_signer",
     "hmac_verifier",
     "prove_inclusion",
