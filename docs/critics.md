@@ -38,8 +38,8 @@ low-recall.
 ```python
 from isnad.critics import best_available_critic, LLMCritic
 
-critic = best_available_critic()             # offline: NLI if installed, else TF-IDF
-critic = best_available_critic(prefer_llm=True)  # use the LLM tier if a key is present
+critic = best_available_critic()             # LLM if a key/local server is set, else NLI, else TF-IDF
+critic = best_available_critic(prefer_llm=False)  # force an offline critic
 critic = LLMCritic(provider="ollama", model="llama3.1")  # local LLM — no key, no cloud
 ```
 

@@ -12,8 +12,7 @@ from fastapi import Depends
 from sqlalchemy.orm import Session
 
 from isnad.core.registry import BayesianTransitionPolicy, RegistryDB, ThresholdTransitionPolicy
-from isnad.critics.embedding import EmbeddingCritic
-from isnad.critics.nli import HybridCritic, LocalNLICritic
+from isnad.critics.nli import LocalNLICritic
 from isnad.storage.sqlalchemy import get_session_factory
 from isnad.types import NarratorGrade, TransitionPolicy
 
@@ -82,23 +81,12 @@ def _build_policy() -> TransitionPolicy:
 
 # ── Critic builder ─────────────────────────────────────────────
 def _build_critic():
-    try:
-        critic = HybridCritic(
-            embed_model="all-MiniLM-L6-v2",
-            nli_model="cross-encoder/nli-deberta-v3-small",
-            top_k=10,
-        )
-        emb = critic._load_embed_model()
-        if emb is None:
-            logger.info(
-                "HybridCritic: sentence-transformers not installed; falling back to EmbeddingCritic"
-            )
-            return EmbeddingCritic()
-        logger.info("Using HybridCritic (MiniLM -> NLI)")
-        return critic
-    except Exception:
-        logger.info("HybridCritic unavailable; falling back to EmbeddingCritic (TF-IDF)")
-        return EmbeddingCritic()
+    """Build the serving critic: LLM if a key/local server is present, else NLI, else TF-IDF."""
+    from isnad.critics import best_available_critic
+
+    critic = best_available_critic()
+    logger.info(f"Serving critic: {type(critic).__name__}")
+    return critic
 
 
 # ── FastAPI dependencies ───────────────────────────────────────
