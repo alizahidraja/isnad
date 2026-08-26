@@ -6,8 +6,10 @@ retriever callbacks to capture each transformation step as an ISNAD
 narrator link.
 
 LIMITATIONS:
-- The default content critic is a non-functional stub on real text.
-  Supply a real critic for practical coverage.
+- The default content critic is `best_available_critic()` (LLM if a key is
+  present, else NLI, else TF-IDF). Without any LLM key or NLI install it
+  degrades to the word-overlap EmbeddingCritic, which returns UNVERIFIABLE on
+  most real prose — supply an LLM-backed critic for practical coverage.
 - Corroboration is experimentally untested.
 - Seed-grade your known narrators before use.
 """
@@ -21,8 +23,8 @@ from isnad.core.chain import Chain, ChainLinkSpec, adalah_grades_for_chain, grad
 from isnad.core.decision import decide, describe_action
 from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
+from isnad.critics import best_available_critic
 from isnad.critics.base import ContentCritic
-from isnad.matn import DeterministicRuleCritic
 from isnad.types import (
     Action,
     NarratorGrade,
@@ -53,9 +55,11 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
         chain.invoke("...", config={"callbacks": [tracer]})
         print(tracer.report())
 
-    LIMITATIONS: The bundled content critic is a non-functional reference
-    stub on real text. For practical coverage, pass `critic=my_critic` to
-    the constructor with an LLM- or embedding-backed ContentCritic.
+    LIMITATIONS: The default content critic is `best_available_critic()` —
+    LLM if a key is present, else NLI, else TF-IDF. Without any LLM key or NLI
+    install it degrades to the word-overlap EmbeddingCritic, which returns
+    UNVERIFIABLE on most real prose — pass `critic=my_critic` for practical
+    coverage.
     """
 
     def __init__(
@@ -70,7 +74,7 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
             )
         super().__init__()
         self.registry = registry
-        self.critic = critic or DeterministicRuleCritic()
+        self.critic = critic or best_available_critic()
         self.domain = domain
 
         # Per-run state
@@ -167,7 +171,10 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
             if gc["action"] in (Action.SERVE, Action.SERVE_WITH_CAVEAT)
         )
         lines.append(f"\nServed: {served}/{len(self._graded_claims)}")
-        lines.append("Note: Default critic is a stub. Supply a real one for coverage.")
+        lines.append(
+            "Note: Default critic degrades to word-overlap without an LLM key or NLI. "
+            "Supply a real one for coverage."
+        )
         lines.append("See: experiments/s8_gated_vs_ungated/results/RESULTS.md")
         return "\n".join(lines)
 

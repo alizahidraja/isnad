@@ -363,8 +363,8 @@ The framework leaves key parameters open by design (paper §4.2/§4.3). Swap any
 ```python
 from isnad.critics import best_available_critic, EmbeddingCritic, LLMCritic
 
-critic = best_available_critic()           # strongest offline critic (NLI if installed, else TF-IDF)
-critic = best_available_critic(prefer_llm=True)  # use the LLM tier if a key is present
+critic = best_available_critic()           # LLM if a key/local server is set, else NLI, else TF-IDF
+critic = best_available_critic(prefer_llm=False)  # force an offline critic
 critic = EmbeddingCritic()                 # TF-IDF, always works, obvious contradictions
 critic = LLMCritic(provider="openrouter", model="openai/gpt-4o-mini")  # any LLM via OpenRouter
 critic = LLMCritic(provider="ollama", model="llama3.1")  # local LLM — no API key, no cloud

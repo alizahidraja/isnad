@@ -26,13 +26,17 @@ def _sentence_transformers_available() -> bool:
     return True
 
 
-def best_available_critic(*, prefer_llm: bool = False, **kwargs: Any) -> ContentCritic:
+def best_available_critic(*, prefer_llm: bool = True, **kwargs: Any) -> ContentCritic:
     """Return the strongest content critic this environment can actually run.
 
     Preference order (highest semantic recall first):
 
-    1. ``LLMCritic`` — the strongest tier, but needs an API key; selected only
-       when ``prefer_llm=True`` and credentials are present.
+    1. ``LLMCritic`` — the strongest tier (measured 100% recall / 0% false-
+       consistent). Auto-detected from any configured provider key
+       (``DEEPSEEK_API_KEY`` etc.) or a local server via
+       ``ISNAD_LLM_PROVIDER=ollama`` + ``ISNAD_LLM_MODEL``. Selected by default
+       when credentials are present (``prefer_llm=True``); pass
+       ``prefer_llm=False`` to force an offline critic.
     2. ``HybridCritic`` — semantic NLI offline, needs ``sentence-transformers``
        (~500 MB of models, downloaded on first use).
     3. ``EmbeddingCritic`` — TF-IDF, catches obvious contradictions, always works.
