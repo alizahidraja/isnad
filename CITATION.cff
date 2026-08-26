@@ -20,7 +20,7 @@ identifiers:
 url: "https://doi.org/10.5281/zenodo.21216873"
 repository-code: "https://github.com/alizahidraja/isnad"
 version: "2.7.0"
-date-released: "2026-08-24"
+date-released: "2026-08-26"
 year: 2026
 license: Apache-2.0
 type: software
@@ -42,8 +42,8 @@ abstract: >
   independent corroboration, and dual chain+content criticism — to AI pipelines.
   Implements the architecture described in "Grading the Narrators" (Raja, 2026,
   arXiv:2607.24117).  Empirically validated on 707 cross-source claim pairs
-  across Wikipedia and physics textbook corpora with 100% corroboration rate
-  and 8/8 negative controls.
+  across Wikipedia and physics textbook corpora with 100% corroboration rate,
+  8/8 negative controls (Wikipedia corpus).
 preferred-citation:
   authors:
     - family-names: Raja

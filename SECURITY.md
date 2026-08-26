@@ -20,8 +20,8 @@ version.
 
 | Version | Supported |
 | ------- | --------- |
-| 2.1.x   | ✅ |
-| < 2.1   | ❌ |
+| 2.7.x   | ✅ |
+| < 2.7   | ❌ |
 
 ## Reporting a vulnerability
 

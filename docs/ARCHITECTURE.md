@@ -424,7 +424,8 @@ The detector catches this via shared upstream sources.
 
 Operational engine: finds corroborating chains by exact text match or
 pre-matched via `evaluate_direct()`.  Validated on Wikipedia + physics
-textbooks (707 claim pairs, 100% fire rate, 8/8 negative controls).
+textbooks (707 claim pairs, 100% fire rate, 8/8 negative controls —
+Wikipedia corpus only; physics controls pending, #127).
 
 ---
 

@@ -237,7 +237,7 @@ See `examples/langchain_middleware_demo.py`. The listable shape is the
 | **Weakest-link quarantine**   | ✅ Validated         | 100% of REJECTED narrator claims correctly blocked                    |
 | **jarḥ–taʿdīl discovery**     | ✅ Partial           | Correctly identifies bad narrators; good ones need seed grades        |
 | **Seed-grade bootstrapping**  | ✅ Validated         | Evidence-backed `Registry.seed()` / `seed_from_benchmark()` — seeds survive the Bayesian posterior and are critic-bound: LLM critic ~63% coverage on new claims, embedding ~56% (see `experiments/cold_start_coverage/RESULTS.md`) |
-| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 negative controls pass; madār detection blocks correlated chains. **Requires attested distinct lineage** (`model_family` / `upstream_source`) — unattested chains no longer corroborate (issue #54) |
+| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 negative controls pass (Wikipedia only — physics pending, #127); madār detection blocks correlated chains. **Requires attested distinct lineage** (`model_family` / `upstream_source`) — unattested chains no longer corroborate (issue #54) |
 | **Content criticism**         | ✅ Measured          | `LLMCritic` (DeepSeek) 1.000 recall / 0.000 false-consistent > `LocalNLICritic` 0.760 > `HybridCritic` 0.720 > `EmbeddingCritic` 0.120 — measured on the committed eval set; see `docs/critics.md` |
 | **Semantic matching**         | ✅ Validated         | Cross-source embedding matching (MiniLM) across Wikipedia and physics corpora |
 | **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 62 integration tests pass |
@@ -467,7 +467,7 @@ The viewer renders fixture 3 by default — it is the most important case.
 |--------|--------|--------|
 | Weakest-link chain grading | ✅ Validated | §8 experiment: 100% of REJECTED narrator claims correctly blocked |
 | jarḥ–taʿdīl narrator discovery | ✅ Partial | Correctly identifies injected weak narrators; requires seed grades |
-| Corroboration negative controls | ✅ Validated | 8/8 correctly rejected; madār detection blocks correlated chains |
+| Corroboration negative controls | ⚠️ Wikipedia only | 8/8 correctly rejected (Wikipedia); physics corpus controls pending (#127); madār detection blocks correlated chains |
 | Two-axis separation (chain ≠ origin) | ✅ Structural | Schema enforces separate enums; viewer renders them independently |
 | Tree reconstruction from run_id/parent_run_id | ✅ Structural | Tested: linear chains, siblings, missing parents handled safely |
 
@@ -539,8 +539,9 @@ six hand-authored queries with the trust layer off vs on — **2 caught, 2 misse
 ## Experimental Validation — Semantic Corroboration (§8)
 
 Corroboration (*mutābaʿāt*) validated on two corpora: **707 claim pairs, 100%
-fire rate, 8/8 negative controls, zero false positives** (Wikipedia 603/603,
-physics textbooks 104/104). Methodology and paper-gap analysis:
+fire rate, zero false positives** (Wikipedia 603/603, physics textbooks
+104/104). **8/8 negative controls on the Wikipedia corpus only** — physics
+negative controls are outstanding (#127). Methodology and paper-gap analysis:
 `experiments/corroboration_v2/README.md` · `experiments/PAPER_GAP_ANALYSIS.md`.
 
 Since PR #83, corroboration requires **attested distinct lineage**: a chain whose
