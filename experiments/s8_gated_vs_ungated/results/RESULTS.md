@@ -138,7 +138,7 @@ real text, neither condition is met.
 
 ---
 
-## Critic false-consistent measurement (#126, added 2026-08-27)
+## Critic false-consistent measurement (#126, added 2026-08-27, corrected 2026-08-27)
 
 To trust a content critic to unlock the coverage ceiling, its *dangerous* error —
 a corrupted claim labelled CONSISTENT (which the matrix would SERVE) — must be
@@ -147,19 +147,28 @@ injection manifest, splitting faults by the two-axis divide (#124):
 
 | Fault class | n | LLM false-CONSISTENT | Meaning |
 |---|---|---|---|
-| **semantic** (meaning-changing) | 13 | **2 (15.4%)** | the critic's actual job |
-| transmission (OCR/digit noise) | 191 | 141 (73.8%) | same meaning — chain grader's job |
-| mixed | 8 | 7 (87.5%) | — |
+| **content** (meaning-changing) | 92 | **36 (39.1%)** | the critic's actual job |
+| transmission (OCR char substitution) | 108 | 107 (99.1%) | same meaning — chain grader's job |
+| mixed | 12 | 9 (75.0%) | — |
 
-**Honest reading:** on the faults content criticism exists to catch (semantic
-corruption), the LLM critic misses 2 of 13 — a 15.4% false-consistent rate,
-down from the naive 78% that counts transmission noise as a critic failure.
-The 2 misses are *numeric* corruptions ("180%"→"170%") and a truncation
-ecge — not clean entity swaps. **The safety gate does not yet clear ~0**, so the
-LLM critic is not yet safe to unlock coverage on semantic faults either; the
-matched-coverage re-run stays open. The transmission-noise "misses" are the
-critic correctly seeing unchanged meaning — those are caught by the chain
-grader, which is precisely the two-axis split #124 exists to make explicit.
+Per-fault-type (the honest detail):
+
+| Fault | n | CONSISTENT | CONTRADICTION | UNVERIFIABLE |
+|---|---|---|---|---|
+| ocr_noise | 108 | 107 | 0 | 1 |
+| **fabricated_numeric** | 79 | **33** | 32 | 14 |
+| entity_swap | 10 | 1 | 7 | 2 |
+
+**Honest reading:** on content corruption, the LLM critic (DeepSeek) fails to
+catch **39%** (36/92) — and on fabricated numbers specifically it is roughly
+50/50 (33 vs 32). The safety gate is **emphatically not cleared**: the critic
+is not safe to unlock coverage, and §8.4's matched-coverage re-run stays open.
+This is a citable negative result: even an LLM-tier critic does not reliably
+detect meaning-changing corruption in this corpus.
+
+**Correction note (important):** an earlier version of this measurement reported
+15.4% by misclassifying `fabricated_numeric` as "transmission" noise. It is not —
+"L3"→"L2.61" changes the claim. The corrected number is 39.1%.
 
 Run: `python critic_false_consistent.py` (uses `best_available_critic()`;
 `DEEPSEEK_API_KEY` set → LLM tier, `--offline` → TF-IDF).
