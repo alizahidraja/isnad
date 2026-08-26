@@ -21,6 +21,7 @@ from isnad.types import (
     DabtGrade,
     NarratorGrade,
     NarratorType,
+    Role,
 )
 
 # ── Registry seeding ───────────────────────────────────────────
@@ -29,6 +30,8 @@ from isnad.types import (
 def seed_registry(
     narrator_grades: dict[str, str],
     domain: str = "general",
+    *,
+    role: Role | None = None,
 ) -> Registry:
     """Build a Registry from a simple dict of narrator_id → grade.
 
@@ -94,13 +97,17 @@ def seed_registry(
             adalah = AdalahGrade.COMPROMISED
             dabt = DabtGrade.LOW
 
-        reg.register(
+        # Seed as an evidence-backed prior (issue #33): a bare register() is
+        # clobbered to WEAK by the Bayesian policy on the first evidence.
+        reg.seed(
             narrator_id,
             domain,
+            grade,
             narrator_type=ntype,
-            grade=grade,
             adalah=adalah,
             dabt=dabt,
+            role=role,
+            source="operator",
         )
 
     return reg

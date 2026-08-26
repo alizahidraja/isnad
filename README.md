@@ -382,9 +382,26 @@ Gemini, Groq, Together, **Ollama (local)**, or any OpenAI-compatible endpoint.
 Name a provider, or set `ISNAD_LLM_PROVIDER` + a key env var. `list_providers()`
 enumerates the known providers.
 
+**Cold-start bootstrapping (issue #33).** A new pipeline starts with every
+narrator UNGRADED, so the strict default caps everything at ḍaʿīf and nothing
+serves. Seed grades are the fix — and they should be **evidence-backed priors**
+(`Registry.seed` records `BOOTSTRAP_SEED` evidence, so the seed survives the
+Bayesian posterior's first recompute and is visible in the evidence log):
+
+```python
+from isnad import Registry, seed_from_benchmark
+
+reg = Registry()
+reg.seed("source:openstax", "physics", NarratorGrade.RELIABLE, source="publisher")
+reg.seed("model:gpt-4o@v1", "physics", NarratorGrade.ACCEPTABLE, source="benchmark")
+seed_from_benchmark(reg, "model:gpt-4o@v1", "physics", 0.93, benchmark="mmlu")  # accuracy → grade
+# a Live Verify seal seeds a source's integrity on day one:
+from isnad.integrations.liveverify import register_sealed_source
+register_sealed_source(reg, verify_result, domain="education")
+```
+
 **Good first issues:**
 - Implement an alternative critic (sentence-transformers embedding, CrewAI integration)
-- Seed-grade bootstrapper from published benchmark data
 - Extend semantic corroboration to multi-source corpora (ArXiv, textbooks, news)
 
 ---

@@ -122,7 +122,7 @@ def get_registry(session: Session = Depends(get_db)) -> RegistryDB:
     if not getattr(get_registry, "_seeded", False):
         for nid, dom, grade in _WARM_START_SEEDS:
             if reg.registry.get(nid, dom) is None:
-                reg.registry.register(nid, dom, grade=grade)
+                reg.registry.seed(nid, dom, grade, source="warm-start")
         reg.flush()
         get_registry._seeded = True  # type: ignore[attr-defined]
     return reg

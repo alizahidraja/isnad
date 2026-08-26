@@ -57,10 +57,17 @@ def seed() -> None:
         for entry in config:
             nid = entry["narrator_id"]
             dom = entry.get("domain", "general")
-            grade = grade_map.get(entry.get("grade", "ungraded"), NarratorGrade.UNGRADED)
             role_raw = entry.get("role")
             role = Role(role_raw) if role_raw else None
-            reg.registry.register(nid, dom, grade=grade, role=role)
+            source = entry.get("source", "operator")
+            # A benchmark accuracy may be given instead of (or to override) a
+            # grade — cold-start bootstrapping (issue #33).
+            if "accuracy" in entry:
+                accuracy = float(entry["accuracy"])
+                reg.registry.seed_from_benchmark(nid, dom, accuracy, role=role, benchmark=source)
+            else:
+                grade = grade_map.get(entry.get("grade", "ungraded"), NarratorGrade.UNGRADED)
+                reg.registry.seed(nid, dom, grade, role=role, source=source)
         reg.flush()
         print(f"Seeded {len(config)} narrators.")
 

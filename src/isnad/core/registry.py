@@ -271,6 +271,54 @@ class Dispute:
 # ===========================================================================
 
 
+def accuracy_to_grade(accuracy: float) -> NarratorGrade:
+    """Map a benchmark accuracy (0.0–1.0) to an ordinal narrator grade.
+
+    Cold-start bootstrapping helper (issue #33): a model's published benchmark
+    accuracy seeds its precision (ḍabṭ) grade. Reference thresholds (the same
+    bands as ``BetaState.to_grade``):
+
+    - ≥ 0.90 → RELIABLE (≤ ~10% error)
+    - ≥ 0.75 → ACCEPTABLE (≤ ~25% error)
+    - ≥ 0.60 → WEAK (≤ ~40% error)
+    - < 0.60 → REJECTED (> ~40% error)
+    """
+    if accuracy >= 0.90:
+        return NarratorGrade.RELIABLE
+    if accuracy >= 0.75:
+        return NarratorGrade.ACCEPTABLE
+    if accuracy >= 0.60:
+        return NarratorGrade.WEAK
+    return NarratorGrade.REJECTED
+
+
+def seed_from_benchmark(
+    reg: Registry,
+    narrator_id: str,
+    domain: str,
+    accuracy: float,
+    *,
+    role: Role | None = None,
+    benchmark: str = "published",
+) -> NarratorGrade:
+    """Seed a narrator's precision grade from a published benchmark accuracy.
+
+    Cold-start bootstrapper (issue #33): wraps ``Registry.seed`` so the seed is
+    recorded as ``BOOTSTRAP_SEED`` evidence carrying the benchmark name and the
+    accuracy (provenance: prior, not observation — see issue #6).
+    """
+    grade = accuracy_to_grade(accuracy)
+    reg.seed(
+        narrator_id,
+        domain,
+        grade,
+        role=role,
+        source=f"benchmark:{benchmark}",
+        metadata={"benchmark_accuracy": accuracy},
+    )
+    return grade
+
+
 class Registry:
     """The Rijāl Registry: stores and manages narrator grades per domain.
 
@@ -759,6 +807,57 @@ class Registry:
             upstream_source=upstream_source,
             role=role,
         )
+
+    def seed(
+        self,
+        narrator_id: str,
+        domain_tag: str,
+        grade: NarratorGrade,
+        *,
+        narrator_type: NarratorType = NarratorType.MODEL,
+        adalah: AdalahGrade = AdalahGrade.UNASSESSED,
+        dabt: DabtGrade = DabtGrade.UNASSESSED,
+        role: Role | None = None,
+        source: str = "operator",
+        metadata: dict[str, object] | None = None,
+    ) -> Narrator:
+        """Seed a narrator's grade as an *evidence-backed prior* (issue #33).
+
+        A seed is a population prior — benchmark accuracy for a model, publisher
+        reputation for a source, an extraction-fidelity suite for a scraper — not
+        an observed instance. It is recorded as ``BOOTSTRAP_SEED`` evidence (with
+        the seed source in metadata) so that:
+
+        - it survives the Bayesian posterior's first recompute (issue #90: the
+          seed grade is read back from the evidence metadata as the prior);
+        - it is visible in the append-only evidence log with its provenance
+          (issue #6: a seed is an assumption, not an observation);
+        - ``evidence_provenance()`` reports it as prior-derived.
+
+        Prefer this over a bare ``register(grade=...)`` for cold-start
+        bootstrapping: a bare register is silently clobbered to WEAK by the
+        Bayesian policy on the first piece of evidence.
+        """
+        narrator = self.register(
+            narrator_id,
+            domain_tag,
+            narrator_type=narrator_type,
+            grade=grade,
+            adalah=adalah,
+            dabt=dabt,
+            role=role,
+        )
+        seed_meta = {"seed_source": source, **(metadata or {})}
+        self.record_evidence(
+            narrator_id,
+            domain_tag,
+            EvidenceType.BOOTSTRAP_SEED,
+            EvidenceAction.TADIL,
+            description=f"Seed grade from {source}",
+            metadata=seed_meta,
+            role=role,
+        )
+        return narrator
 
     def get_metadata(self, narrator_id: str, domain_tag: str) -> dict[str, object]:
         """Return metadata for correlation detection etc."""
