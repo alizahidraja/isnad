@@ -24,7 +24,22 @@ from isnad.types import ContentVerdict
 
 class TestGracefulDegradation:
     def test_no_credentials_returns_unverifiable(self, monkeypatch):
-        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+        # Clear *all* provider keys, not just Anthropic's — a lingering
+        # DEEPSEEK_API_KEY (or any other) would otherwise auto-detect and
+        # make this test environment-sensitive.
+        for key in (
+            "ANTHROPIC_API_KEY",
+            "DEEPSEEK_API_KEY",
+            "OPENAI_API_KEY",
+            "OPENROUTER_API_KEY",
+            "GEMINI_API_KEY",
+            "GOOGLE_API_KEY",
+            "GROQ_API_KEY",
+            "TOGETHER_API_KEY",
+            "ISNAD_LLM_API_KEY",
+            "ISNAD_LLM_PROVIDER",
+        ):
+            monkeypatch.delenv(key, raising=False)
         critic = LLMCritic()  # no base_url, no api_key
         assert (
             critic.evaluate("F = ma", "f = ma", ["F = ma"], "physics")

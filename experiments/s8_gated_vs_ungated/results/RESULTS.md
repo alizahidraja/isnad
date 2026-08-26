@@ -138,6 +138,34 @@ real text, neither condition is met.
 
 ---
 
+## Critic false-consistent measurement (#126, added 2026-08-27)
+
+To trust a content critic to unlock the coverage ceiling, its *dangerous* error —
+a corrupted claim labelled CONSISTENT (which the matrix would SERVE) — must be
+measured, not assumed. `critic_false_consistent.py` does this against the
+injection manifest, splitting faults by the two-axis divide (#124):
+
+| Fault class | n | LLM false-CONSISTENT | Meaning |
+|---|---|---|---|
+| **semantic** (meaning-changing) | 13 | **2 (15.4%)** | the critic's actual job |
+| transmission (OCR/digit noise) | 191 | 141 (73.8%) | same meaning — chain grader's job |
+| mixed | 8 | 7 (87.5%) | — |
+
+**Honest reading:** on the faults content criticism exists to catch (semantic
+corruption), the LLM critic misses 2 of 13 — a 15.4% false-consistent rate,
+down from the naive 78% that counts transmission noise as a critic failure.
+The 2 misses are *numeric* corruptions ("180%"→"170%") and a truncation
+ecge — not clean entity swaps. **The safety gate does not yet clear ~0**, so the
+LLM critic is not yet safe to unlock coverage on semantic faults either; the
+matched-coverage re-run stays open. The transmission-noise "misses" are the
+critic correctly seeing unchanged meaning — those are caught by the chain
+grader, which is precisely the two-axis split #124 exists to make explicit.
+
+Run: `python critic_false_consistent.py` (uses `best_available_critic()`;
+`DEEPSEEK_API_KEY` set → LLM tier, `--offline` → TF-IDF).
+
+---
+
 ## What Was Validated and What Wasn't
 
 | Claim | Status | Evidence |
