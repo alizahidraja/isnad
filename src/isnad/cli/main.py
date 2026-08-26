@@ -64,9 +64,7 @@ def seed() -> None:
             # grade — cold-start bootstrapping (issue #33).
             if "accuracy" in entry:
                 accuracy = float(entry["accuracy"])
-                reg.registry.seed_from_benchmark(
-                    nid, dom, accuracy, role=role, benchmark=source
-                )
+                reg.registry.seed_from_benchmark(nid, dom, accuracy, role=role, benchmark=source)
             else:
                 grade = grade_map.get(entry.get("grade", "ungraded"), NarratorGrade.UNGRADED)
                 reg.registry.seed(nid, dom, grade, role=role, source=source)
