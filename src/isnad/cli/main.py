@@ -269,6 +269,24 @@ def _verify_chain(argv: list[str]) -> int:
     return 1
 
 
+def _verify_merkle(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(
+        prog="isnad verify-merkle",
+        description="Verify a Merkle batch log (parallel-friendly tamper-evidence).",
+    )
+    parser.add_argument("--log", required=True, help="path to a Merkle batch log JSONL")
+    args = parser.parse_args(argv)
+
+    from isnad.audit import read_batch_log, verify_batches
+
+    break_ = verify_batches(read_batch_log(args.log))
+    if break_ is None:
+        print("batch log intact")
+        return 0
+    print(f"batch log broken at batch {break_.index}: {break_.reason}")
+    return 1
+
+
 def main(argv: list[str] | None = None) -> None:
     """CLI dispatcher.
 
@@ -277,8 +295,9 @@ def main(argv: list[str] | None = None) -> None:
             testing.
     """
     args = sys.argv if argv is None else ["isnad", *argv]
+    usage = "Usage: isnad [serve|seed|export|verify|verify-chain|verify-merkle|ingest|bench]"
     if len(args) < 2:
-        print("Usage: isnad [serve|seed|export|verify|verify-chain|ingest|bench]")
+        print(usage)
         sys.exit(1)
 
     cmd = args[1]
@@ -293,13 +312,15 @@ def main(argv: list[str] | None = None) -> None:
         sys.exit(_verify(rest))
     elif cmd == "verify-chain":
         sys.exit(_verify_chain(rest))
+    elif cmd == "verify-merkle":
+        sys.exit(_verify_merkle(rest))
     elif cmd == "ingest":
         sys.exit(_ingest(rest))
     elif cmd == "bench":
         sys.exit(_bench(rest))
     else:
         print(f"Unknown command: {cmd}")
-        print("Usage: isnad [serve|seed|export|verify|verify-chain|ingest|bench]")
+        print(usage)
         sys.exit(1)
 
 

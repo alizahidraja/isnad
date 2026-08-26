@@ -11,6 +11,19 @@ for an informational field-by-field mapping — which is not legal advice.
 
 from isnad.audit.chainlog import ChainBreak, ChainEntry, append_record, verify_chain
 from isnad.audit.exporter import build_audit_record, build_audit_record_from_nodes
+from isnad.audit.merkle_log import (
+    BatchBreak,
+    InclusionProof,
+    MerkleBatch,
+    build_batch,
+    prove_inclusion,
+    read_batch_log,
+    record_to_leaf,
+    seal_batches,
+    verify_batches,
+    verify_inclusion,
+    write_batch_log,
+)
 from isnad.audit.schema import (
     AuditRecord,
     ChainNodeAudit,
@@ -26,13 +39,16 @@ from isnad.audit.schema import (
 
 __all__ = [
     "AuditRecord",
+    "BatchBreak",
     "ChainBreak",
     "ChainEntry",
     "ChainNodeAudit",
     "Environment",
     "GradingStrategy",
     "HumanOversight",
+    "InclusionProof",
     "Integrity",
+    "MerkleBatch",
     "RedactFn",
     "SourceDocument",
     "WeakestLink",
@@ -40,5 +56,13 @@ __all__ = [
     "apply_redact",
     "build_audit_record",
     "build_audit_record_from_nodes",
+    "build_batch",
+    "prove_inclusion",
+    "read_batch_log",
+    "record_to_leaf",
+    "seal_batches",
+    "verify_batches",
     "verify_chain",
+    "verify_inclusion",
+    "write_batch_log",
 ]
