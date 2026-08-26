@@ -433,12 +433,20 @@ class CorrelationDetector(Protocol):
     (see paper §4.3, §7 — the madār problem).  Swap freely.
 
     The default implementation checks:
+    - shared narrator IDs (hard correlation)
+    - shared retrieved-document hashes (hard correlation — the madār case)
     - shared model family (same base model / provider lineage)
     - shared upstream source (both trace to the same origin)
 
     Naive set-disjointness of narrator IDs is *wrong*; this detector
     captures correlated chains that share no explicit narrator but
     still fail together.
+
+    The document-hash and lineage signals arrive as optional keyword-only
+    arguments on the default implementation; custom detectors may ignore
+    them (the protocol signatures below stay minimal for backward
+    compatibility — callers pass document hashes through the concrete
+    ``SharedLineageDetector``, not through this protocol).
     """
 
     def are_independent(

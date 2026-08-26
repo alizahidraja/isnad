@@ -69,14 +69,27 @@ class SharedLineageDetector:
         chain_a_narrators: list[str],
         chain_b_narrators: list[str],
         narrator_metadata: dict[str, dict[str, object]],
+        *,
+        chain_a_document_hashes: set[str] | None = None,
+        chain_b_document_hashes: set[str] | None = None,
     ) -> bool:
         """Check if two chains are truly independent.
 
         Returns True only if the chains are *disjoint* in narrator IDs AND
-        not correlated via shared lineage.
+        not correlated via shared lineage or shared retrieval documents.
+
+        ``chain_a_document_hashes`` / ``chain_b_document_hashes`` are optional
+        sets of retrieved-document content hashes per chain. When both are
+        provided, any overlap is hard correlation (the madār case: two chains
+        reading the same source are one source). When absent, the document
+        check is skipped and the lineage signals alone decide.
         """
         score = self.compute_independence_score(
-            chain_a_narrators, chain_b_narrators, narrator_metadata
+            chain_a_narrators,
+            chain_b_narrators,
+            narrator_metadata,
+            chain_a_document_hashes=chain_a_document_hashes,
+            chain_b_document_hashes=chain_b_document_hashes,
         )
         # Independence requires score above 0.8
         return score >= 0.8
@@ -86,26 +99,50 @@ class SharedLineageDetector:
         chain_a_narrators: list[str],
         chain_b_narrators: list[str],
         narrator_metadata: dict[str, dict[str, object]],
+        *,
+        chain_a_document_hashes: set[str] | None = None,
+        chain_b_document_hashes: set[str] | None = None,
     ) -> float:
         """Compute an independence score in [0.0, 1.0].
 
-        1.0 = demonstrably independent; 0.0 = fully correlated (same lineage);
-        ``UNKNOWN_LINEAGE_SCORE`` = independence neither shown nor ruled out.
+        1.0 = demonstrably independent; 0.0 = fully correlated (same lineage
+        or same retrieved documents); ``UNKNOWN_LINEAGE_SCORE`` = independence
+        neither shown nor ruled out.
 
-        Penalties applied for:
-        - Shared narrator IDs (hard correlation): score = 0.0
-        - Shared model family: -0.4 penalty per shared family
-        - Shared upstream source: -0.3 penalty per shared source
+        Correlation signals, in order of severity:
+        - Shared narrator IDs (hard): score = 0.0.
+        - Shared retrieved-document hashes (hard, the madār case): score = 0.0.
+          Two chains that retrieved the same document are one source regardless
+          of model family. Requires both hash sets to be provided.
+        - Shared model family: -0.4 penalty per shared family.
+        - Shared upstream source: -0.3 penalty per shared source.
 
         With no lineage metadata on either side, independence cannot be
         demonstrated, so the score is ``UNKNOWN_LINEAGE_SCORE`` (below the gate),
         not 1.0 — see the class docstring and issue #54.
+
+        Document hashes are a chain property, not a narrator property, so they
+        arrive as optional keyword-only args rather than inside
+        ``narrator_metadata``. ``None`` means "not provided" and skips the check;
+        non-overlap is not evidence of independence and never raises the score.
         """
         set_a = set(chain_a_narrators)
         set_b = set(chain_b_narrators)
 
         # --- Shared narrator IDs → directly correlated ---
         if set_a & set_b:
+            return 0.0
+
+        # --- Shared retrieved-document hashes → hard correlation (madār). ---
+        # Checked before the unknown-lineage fallback: this is hard evidence
+        # that dominates lineage metadata, and matches the callback's
+        # SHARED_ANCESTRY_DETECTED verdict on any shared hash. If either set is
+        # absent we have no information and fall through (no penalty, no bonus).
+        if (
+            chain_a_document_hashes is not None
+            and chain_b_document_hashes is not None
+            and (set(chain_a_document_hashes) & set(chain_b_document_hashes))
+        ):
             return 0.0
 
         # --- Check model family overlap ---
@@ -413,6 +450,7 @@ class CorroborationEngine:
         narrator_metadata: dict[str, dict] | None = None,
         *,
         has_live_contradiction: bool = False,
+        base_document_hashes: set[str] | None = None,
     ) -> CorroborationResult:
         """Evaluate corroboration by matching claims via exact claim_text.
 
@@ -424,12 +462,16 @@ class CorroborationEngine:
             base_chain_grade: Grade of the claim's own chain.
             base_narrators: Narrator IDs in the base claim's chain.
             all_chains: List of all claim chain dicts with keys:
-                claim_text, chain_grade, narrator_ids.
+                claim_text, chain_grade, narrator_ids. Optional:
+                document_hashes (list[str] or set[str]) for each chain, used
+                by the correlation detector's madār check.
             narrator_metadata: Optional metadata for correlation detection.
             has_live_contradiction: True when content criticism has flagged
                 this claim as contradicting an existing claim (issue #11 —
                 the corroboration bonus must not be usable to paper over a
                 live contradiction; withhold any upgrade in that case).
+            base_document_hashes: Retrieved-document content hashes of the
+                base chain, used for the madār check against corroborators.
 
         Returns:
             CorroborationResult with upgrade decision.
@@ -451,6 +493,7 @@ class CorroborationEngine:
                 "grade": cg,
                 "narrators": chain.get("narrator_ids", []),
                 "source": chain.get("source", ""),
+                "document_hashes": set(chain.get("document_hashes", []) or []),
             })
 
         return self._evaluate_core(
@@ -460,6 +503,7 @@ class CorroborationEngine:
             narrator_metadata=narrator_metadata or {},
             total_corroborating=len(corroborating_raw),
             has_live_contradiction=has_live_contradiction,
+            base_document_hashes=base_document_hashes,
         )
 
     def evaluate_direct(
@@ -470,6 +514,7 @@ class CorroborationEngine:
         narrator_metadata: dict[str, dict] | None = None,
         *,
         has_live_contradiction: bool = False,
+        base_document_hashes: set[str] | None = None,
     ) -> CorroborationResult:
         """Evaluate corroboration with pre-matched corroborating chains.
 
@@ -482,12 +527,15 @@ class CorroborationEngine:
             base_narrators: Narrator IDs in the base claim's chain.
             corroborating_chains: Pre-matched corroborating chain dicts.
                 Each dict must have keys: grade (ChainGrade or str),
-                narrators (list[str]).  Optional: source (str).
+                narrators (list[str]).  Optional: source (str),
+                document_hashes (list[str] or set[str]) for the madār check.
             narrator_metadata: Optional metadata for correlation detection.
             has_live_contradiction: True when content criticism has flagged
                 this claim as contradicting an existing claim (issue #11 —
                 withhold any corroboration upgrade in that case, rather than
                 letting fake-independent parallel chains paper over it).
+            base_document_hashes: Retrieved-document content hashes of the
+                base chain, used for the madār check against corroborators.
 
         Returns:
             CorroborationResult with upgrade decision.
@@ -517,6 +565,7 @@ class CorroborationEngine:
                 "grade": grade,
                 "narrators": c.get("narrators", []),
                 "source": c.get("source", ""),
+                "document_hashes": set(c.get("document_hashes", []) or []),
             })
 
         return self._evaluate_core(
@@ -526,6 +575,7 @@ class CorroborationEngine:
             narrator_metadata=narrator_metadata or {},
             total_corroborating=len(normalised),
             has_live_contradiction=has_live_contradiction,
+            base_document_hashes=base_document_hashes,
         )
 
     # ── internal: shared corroboration logic ──────────────────────
@@ -539,6 +589,7 @@ class CorroborationEngine:
         total_corroborating: int,
         *,
         has_live_contradiction: bool = False,
+        base_document_hashes: set[str] | None = None,
     ) -> CorroborationResult:
         """Core corroboration logic shared by evaluate() and evaluate_direct()."""
         if base_chain_grade == ChainGrade.MAWDU:
@@ -572,7 +623,11 @@ class CorroborationEngine:
             c
             for c in corroborating_chains
             if self._correlation_detector.are_independent(
-                base_narrators, c["narrators"], narrator_metadata
+                base_narrators,
+                c["narrators"],
+                narrator_metadata,
+                chain_a_document_hashes=base_document_hashes,
+                chain_b_document_hashes=c.get("document_hashes"),
             )
         ]
 
@@ -605,7 +660,11 @@ class CorroborationEngine:
         # Compute independence scores and delegate to policy
         independence_scores = [
             self._correlation_detector.compute_independence_score(
-                base_narrators, c["narrators"], narrator_metadata
+                base_narrators,
+                c["narrators"],
+                narrator_metadata,
+                chain_a_document_hashes=base_document_hashes,
+                chain_b_document_hashes=c.get("document_hashes"),
             )
             for c in independent
         ]

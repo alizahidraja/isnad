@@ -111,6 +111,132 @@ class TestSharedLineageDetector:
         )
         assert score == 1.0  # different families → independent
 
+    def test_shared_document_hashes_are_hard_correlation(self) -> None:
+        """Shared retrieved-document hash → hard correlation (the madār case).
+
+        Two chains with different narrators and different model families that
+        both retrieved the same document are one source, not two. This is the
+        callback's SHARED_ANCESTRY_DETECTED signal, now in the core detector.
+        """
+        det = SharedLineageDetector()
+        metadata = {
+            "agent-1": {"model_family": "claude"},
+            "agent-2": {"model_family": "gemini"},
+        }
+        score = det.compute_independence_score(
+            ["agent-1"],
+            ["agent-2"],
+            metadata,
+            chain_a_document_hashes={"doc-hash-123"},
+            chain_b_document_hashes={"doc-hash-123"},
+        )
+        assert score == 0.0
+        assert not det.are_independent(
+            ["agent-1"],
+            ["agent-2"],
+            metadata,
+            chain_a_document_hashes={"doc-hash-123"},
+            chain_b_document_hashes={"doc-hash-123"},
+        )
+
+    def test_disjoint_document_hashes_do_not_raise_score(self) -> None:
+        """Non-overlapping document hashes are NOT evidence of independence.
+
+        Absent lineage metadata, disjoint doc hashes must fall through to the
+        unknown-lineage score, never raise it.
+        """
+        det = SharedLineageDetector()
+        score = det.compute_independence_score(
+            ["agent-1"],
+            ["agent-2"],
+            {},
+            chain_a_document_hashes={"doc-a"},
+            chain_b_document_hashes={"doc-b"},
+        )
+        assert score == SharedLineageDetector.UNKNOWN_LINEAGE_SCORE
+
+    def test_missing_document_hashes_skips_the_check(self) -> None:
+        """None document hashes (not provided) → check skipped, backward compatible."""
+        det = SharedLineageDetector()
+        metadata = {
+            "agent-1": {"model_family": "claude"},
+            "agent-2": {"model_family": "gemini"},
+        }
+        score = det.compute_independence_score(
+            ["agent-1"],
+            ["agent-2"],
+            metadata,
+        )
+        assert score == 1.0  # unchanged from pre-doc-hash behaviour
+
+    def test_one_sided_document_hashes_is_no_information(self) -> None:
+        """One side present + one absent → no overlap detectable, no penalty."""
+        det = SharedLineageDetector()
+        metadata = {
+            "agent-1": {"model_family": "claude"},
+            "agent-2": {"model_family": "gemini"},
+        }
+        score = det.compute_independence_score(
+            ["agent-1"],
+            ["agent-2"],
+            metadata,
+            chain_a_document_hashes={"doc-a"},
+        )
+        assert score == 1.0  # different families, and doc overlap unprovable
+
+
+class TestSharedLineageDetectorDocHashesThroughEngine:
+    """Document-hash correlation must flow through CorroborationEngine."""
+
+    def test_engine_withholds_upgrade_on_shared_document_hashes(self) -> None:
+        """Fixture-3 case: chains that read the same report must not corroborate."""
+        engine = CorroborationEngine(min_independent_chains=1)
+        # Base chain is DAIF, one corroborating chain is HASAN — would normally
+        # upgrade to HASAN — but both retrieved the same document.
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["source:A", "model:A"],
+            corroborating_chains=[
+                {
+                    "grade": "hasan",
+                    "narrators": ["source:B", "model:B"],
+                    "document_hashes": ["shared-report"],
+                }
+            ],
+            narrator_metadata={
+                "source:A": {"model_family": None, "upstream_source": "noaa.gov"},
+                "model:A": {"model_family": "fam-a", "upstream_source": "noaa.gov"},
+                "source:B": {"model_family": None, "upstream_source": "noaa.gov"},
+                "model:B": {"model_family": "fam-b", "upstream_source": "noaa.gov"},
+            },
+            base_document_hashes={"shared-report"},
+        )
+        assert result.upgraded is False
+        assert result.independent_chains == 0
+
+    def test_engine_upgrades_on_distinct_documents_and_lineage(self) -> None:
+        """Distinct docs + distinct lineage → upgrade still fires."""
+        engine = CorroborationEngine(min_independent_chains=1)
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["source:A", "model:A"],
+            corroborating_chains=[
+                {
+                    "grade": "hasan",
+                    "narrators": ["source:B", "model:B"],
+                    "document_hashes": ["report-b"],
+                }
+            ],
+            narrator_metadata={
+                "source:A": {"model_family": None, "upstream_source": "openstax.org"},
+                "model:A": {"model_family": "fam-a", "upstream_source": "openstax.org"},
+                "source:B": {"model_family": None, "upstream_source": "hyperphysics.org"},
+                "model:B": {"model_family": "fam-b", "upstream_source": "hyperphysics.org"},
+            },
+            base_document_hashes={"report-a"},
+        )
+        assert result.upgraded is True
+
 
 class TestCappedCorroborationPolicy:
     """Corroboration: capped, minimum-gated, correlation-discounted."""
