@@ -92,6 +92,10 @@ module = "anthropic"
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
+module = "cryptography.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
 module = "langchain_core.*"
 ignore_missing_imports = true
 
