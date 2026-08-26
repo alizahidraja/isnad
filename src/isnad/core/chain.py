@@ -58,6 +58,7 @@ class ChainLinkSpec:
         confidence: float | None = None,
         input_snapshot: str | None = None,
         output_snapshot: str | None = None,
+        document_hashes: list[str] | None = None,
     ):
         self.narrator_id = narrator_id
         self.step = step
@@ -72,6 +73,10 @@ class ChainLinkSpec:
         # direction 3: surface *where* a chain degraded, not just that it did).
         self.input_snapshot = input_snapshot
         self.output_snapshot = output_snapshot
+        # Retrieved-document content hashes for this link — used by the
+        # corroboration engine's madār check (issue #125): two chains that
+        # retrieved the same document are one source, not two.
+        self.document_hashes = document_hashes or []
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -84,6 +89,7 @@ class ChainLinkSpec:
             "confidence": self.confidence,
             "input_snapshot": self.input_snapshot,
             "output_snapshot": self.output_snapshot,
+            "document_hashes": list(self.document_hashes),
             "timestamp": datetime.now(UTC).isoformat(),
         }
 
@@ -227,6 +233,7 @@ def store_claim(
             confidence=link_spec.confidence,
             input_snapshot=link_spec.input_snapshot,
             output_snapshot=link_spec.output_snapshot,
+            document_hashes=list(link_spec.document_hashes),
         )
         session.add(link)
 
@@ -251,6 +258,7 @@ def get_chain_from_db(session: Session, claim_id: str) -> Chain | None:
             confidence=link.confidence,
             input_snapshot=link.input_snapshot,
             output_snapshot=link.output_snapshot,
+            document_hashes=list(link.document_hashes or []),
         )
         for link in links
     ]

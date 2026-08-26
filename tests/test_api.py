@@ -127,6 +127,46 @@ class TestClaims:
     def test_claim_404(self):
         assert client.get("/v1/claims/nonexistent").status_code == 404
 
+    def test_document_hashes_round_trip_in_chain(self):
+        """Chain links carry document_hashes through submission → retrieval (#125)."""
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "the object moves at 10 m/s",
+                "chain": [
+                    {
+                        "narrator_id": "source:docs",
+                        "transform_type": "pass_through",
+                        "document_hashes": ["doc-hash-abc"],
+                    }
+                ],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        cid = r.json()["claim_id"]
+        r2 = client.get(f"/v1/claims/{cid}/chain")
+        links = r2.json()["chain"]
+        assert any("doc-hash-abc" in link.get("document_hashes", []) for link in links)
+
+    def test_corroboration_result_carries_chain_independence(self):
+        """The response surfaces per-chain independence score + provenance (#125)."""
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "momentum is conserved",
+                "chain": [{"narrator_id": "source:A"}],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        body = r.json()
+        corr = body["corroboration_result"]
+        # chain_independence must be a list (empty here — no corroborating
+        # chains — but the field must exist, not be absent).
+        assert "chain_independence" in corr
+        assert isinstance(corr["chain_independence"], list)
+
 
 class TestNarrators:
     def test_register_and_get(self):
