@@ -36,6 +36,12 @@ from isnad.audit.schema import (
     WeakestLink,
     apply_redact,
 )
+from isnad.audit.sign import (
+    hmac_signer,
+    hmac_verifier,
+    sign_detached,
+    verify_detached,
+)
 
 __all__ = [
     "AuditRecord",
@@ -57,12 +63,16 @@ __all__ = [
     "build_audit_record",
     "build_audit_record_from_nodes",
     "build_batch",
+    "hmac_signer",
+    "hmac_verifier",
     "prove_inclusion",
     "read_batch_log",
     "record_to_leaf",
     "seal_batches",
+    "sign_detached",
     "verify_batches",
     "verify_chain",
+    "verify_detached",
     "verify_inclusion",
     "write_batch_log",
 ]

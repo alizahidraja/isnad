@@ -19,7 +19,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from isnad import Registry, Verdict, grade
-from isnad.types import ChainGrade, TransformType
+from isnad.core.decision import decide
+from isnad.critics.base import ContentCritic
+from isnad.types import Action, ChainGrade, TransformType
 
 # ── LangChain availability guard (mirrors the callback's pattern) ────────────
 _LANGCHAIN_MIDDLEWARE_AVAILABLE = False
@@ -55,6 +57,7 @@ class GateResult:
 
     verdict: Verdict
     gated: bool
+    action: Action | None = None
 
 
 def gate(
@@ -65,13 +68,20 @@ def gate(
     domain: str = "general",
     quarantine: bool = True,
     transform_types: list[TransformType] | None = None,
+    critic: ContentCritic | None = None,
+    corpus: list[str] | None = None,
 ) -> GateResult:
     """Grade a claim's chain and decide whether to gate it.
 
-    Gating is TRUE when the chain grade is ``MAWDU`` — a REJECTED narrator
-    transmitted the claim — and ``quarantine`` is enabled.  This is the active
-    containment from the decision matrix, fired at the moment a claim enters
-    the system rather than after it has been served.
+    Without a critic, gating is TRUE when the chain grade is ``MAWDU`` — a
+    REJECTED narrator transmitted the claim — and ``quarantine`` is enabled
+    (active containment, no content judgment).
+
+    With a ``critic`` + ``corpus``, the full decision matrix runs: the claim's
+    content is criticized against the corpus and routed to serve / review /
+    quarantine. Gating is then TRUE for QUARANTINE or
+    REJECT_AND_QUARANTINE_NARRATOR — so a contradiction (not just a bad
+    narrator) also blocks the claim.
 
     This function has no LangChain dependency and is the unit-testable core.
     """
@@ -82,8 +92,17 @@ def gate(
         domain=domain,
         transform_types=transform_types,
     )
-    gated = quarantine and verdict.chain_grade == ChainGrade.MAWDU
-    return GateResult(verdict=verdict, gated=gated)
+    chain_grade = verdict.chain_grade
+
+    if critic is not None and corpus is not None:
+        content = critic.evaluate(claim, claim.lower(), corpus, domain)
+        action = decide(chain_grade, content)
+        gated = action in (Action.QUARANTINE, Action.REJECT_AND_QUARANTINE_NARRATOR)
+    else:
+        action = Action.REJECT_AND_QUARANTINE_NARRATOR if chain_grade == ChainGrade.MAWDU else None
+        gated = quarantine and chain_grade == ChainGrade.MAWDU
+
+    return GateResult(verdict=verdict, gated=gated, action=action)
 
 
 class IsnadMiddleware(AgentMiddleware):  # type: ignore[misc,valid-type]
@@ -95,11 +114,21 @@ class IsnadMiddleware(AgentMiddleware):  # type: ignore[misc,valid-type]
         quarantine: When True, block (gate) claims whose chain is MAWDU.
     """
 
-    def __init__(self, registry: Registry, *, domain: str = "general", quarantine: bool = True):
+    def __init__(
+        self,
+        registry: Registry,
+        *,
+        domain: str = "general",
+        quarantine: bool = True,
+        critic: ContentCritic | None = None,
+        corpus: list[str] | None = None,
+    ):
         super().__init__()
         self.registry = registry
         self.domain = domain
         self.quarantine = quarantine
+        self.critic = critic
+        self.corpus = corpus or []
 
     def _gate(self, claim: str, narrator_id: str, transform: TransformType) -> GateResult:
         # v1 grades a single link (the arriving narrator).  Multi-link chain
@@ -112,6 +141,8 @@ class IsnadMiddleware(AgentMiddleware):  # type: ignore[misc,valid-type]
             domain=self.domain,
             quarantine=self.quarantine,
             transform_types=[transform],
+            critic=self.critic,
+            corpus=self.corpus,
         )
 
     @wrap_tool_call

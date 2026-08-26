@@ -9,6 +9,7 @@ from typing import Any
 
 from fastapi import Depends, HTTPException, Query
 from fastapi.routing import APIRouter
+from pydantic import BaseModel, Field
 
 from isnad.api.auth import require_auth
 from isnad.api.dependencies import _metrics_counters, get_critic, get_fidelity_critic, get_registry
@@ -46,6 +47,27 @@ class AppState:
         return [
             cid for cid in self._corroboration_index.get(normalized_text, []) if cid != exclude_id
         ]
+
+
+class ChainLinkIn(BaseModel):
+    """A single transmission-chain link in a claim-submission request."""
+
+    narrator_id: str
+    version: str = "unknown"
+    transform_type: TransformType = TransformType.PASS_THROUGH
+    trace_id: str = ""
+    input_snapshot: str | None = None
+    output_snapshot: str | None = None
+
+
+class ClaimSubmitIn(BaseModel):
+    """Validated claim-submission body (issue #93)."""
+
+    claim_text: str = Field(min_length=1)
+    domain: str = "general"
+    page_slug: str = "default"
+    normalized_text: str | None = None
+    chain: list[ChainLinkIn] = Field(default_factory=list)
 
 
 _app_state = AppState()
@@ -131,29 +153,29 @@ async def list_claims(
 
 @router.post("/claims")
 async def submit_claim(
-    body: dict,
+    body: ClaimSubmitIn,
     reg: RegistryDB = Depends(get_registry),
     critic: Any = Depends(get_critic),
     fidelity_critic: Any = Depends(get_fidelity_critic),
     _: str = Depends(require_auth),
 ) -> dict:
     state = get_state()
-    chain_data = body.get("chain", [])
-    domain = body.get("domain", "general")
-    claim_text = body.get("claim_text", "")
-    normalized = body.get("normalized_text") or claim_text.lower().strip()
-    page_slug = body.get("page_slug", "default")
+    chain_data = body.chain
+    domain = body.domain
+    claim_text = body.claim_text
+    normalized = body.normalized_text or claim_text.lower().strip()
+    page_slug = body.page_slug
 
     specs = [
         ChainLinkSpec(
-            narrator_id=link.get("narrator_id", f"step-{i}"),
+            narrator_id=link.narrator_id,
             step=i,
-            version=link.get("version", "unknown"),
-            transform_type=TransformType(link.get("transform_type", "pass_through")),
+            version=link.version,
+            transform_type=link.transform_type,
             domain=domain,
-            trace_id=link.get("trace_id", str(uuid.uuid4())[:8]),
-            input_snapshot=link.get("input_snapshot"),
-            output_snapshot=link.get("output_snapshot"),
+            trace_id=link.trace_id or str(uuid.uuid4())[:8],
+            input_snapshot=link.input_snapshot,
+            output_snapshot=link.output_snapshot,
         )
         for i, link in enumerate(chain_data)
     ]
@@ -263,7 +285,7 @@ async def submit_claim(
             chain_grade=effective_grade.value,
         )
     except Exception as exc:
-        logger.warning(f"Failed to persist claim to DB: {exc}")
+        logger.error(f"Failed to persist claim to DB (audit trail will diverge): {exc}")
 
     # Route to human review — including a link to the specific claim this one
     # contradicts (issue #11: contradiction should surface both sides to a

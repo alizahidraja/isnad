@@ -1,0 +1,71 @@
+"""Detached signatures for audit records (issue #97).
+
+``integrity.record_hash`` is a *self*-hash: anyone who can rewrite the record
+can recompute it, so it detects accidental corruption and post-hoc modification
+but not a forger who rebuilds the whole record. A **detached signature** over
+the canonical payload fixes that: an operator signs the canonical JSON with
+their key and the signature is stored in ``integrity.detached_signature``.
+
+Stdlib-only and signer-agnostic — the caller supplies ``signer`` / ``verifier``
+callables (Ed25519, a Sigstore/cosign-backed function, …). A dependency-free
+HMAC-SHA256 signer/verifier is provided for shared-secret deployments.
+
+.. code-block:: python
+
+    from isnad.audit import sign_detached, verify_detached, hmac_signer, hmac_verifier
+
+    sign_detached(record, hmac_signer("my-secret"))
+    assert verify_detached(record, hmac_verifier("my-secret"))
+"""
+
+from __future__ import annotations
+
+import hashlib
+import hmac
+from collections.abc import Callable
+
+from isnad.audit.canonical import canonical_json
+from isnad.audit.schema import AuditRecord
+
+# A detached signature covers the canonical JSON of the record *payload* (the
+# exact object `record_hash` commits to, excluding `integrity` itself).
+Signer = Callable[[str], str]
+Verifier = Callable[[str, str], bool]
+
+
+def sign_detached(record: AuditRecord, signer: Signer) -> AuditRecord:
+    """Sign the record's canonical payload and store the detached signature."""
+    payload = canonical_json(record.to_dict(include_integrity=False))
+    record.integrity.detached_signature = signer(payload)
+    return record
+
+
+def verify_detached(record: AuditRecord, verifier: Verifier) -> bool:
+    """Verify the stored detached signature against the canonical payload.
+
+    Returns False when there is no signature (a self-hashed record is not
+    tamper-evident against a forger).
+    """
+    if not record.integrity.detached_signature:
+        return False
+    payload = canonical_json(record.to_dict(include_integrity=False))
+    return verifier(payload, record.integrity.detached_signature)
+
+
+def hmac_signer(secret: str) -> Signer:
+    """A dependency-free HMAC-SHA256 signer for shared-secret deployments."""
+
+    def sign(payload: str) -> str:
+        return hmac.new(secret.encode(), payload.encode(), hashlib.sha256).hexdigest()
+
+    return sign
+
+
+def hmac_verifier(secret: str) -> Verifier:
+    """The matching HMAC-SHA256 verifier (constant-time compare)."""
+
+    def verify(payload: str, signature: str) -> bool:
+        expected = hmac.new(secret.encode(), payload.encode(), hashlib.sha256).hexdigest()
+        return hmac.compare_digest(expected, signature)
+
+    return verify
