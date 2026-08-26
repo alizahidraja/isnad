@@ -341,6 +341,8 @@ that produced this.
 
 > 🗺️ **Full architecture diagram:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) — 3 tabs: System Architecture, Claim Lifecycle (data flow), and Validation Matrix (what's proven vs what's not). Open in [draw.io](https://app.diagrams.net/) or VS Code Draw.io extension.
 
+![ISNAD system architecture](docs/images/architecture.png)
+
 ---
 
 ## The Decision Matrix
@@ -466,6 +468,8 @@ the framework's key signals:
 | 3. False corroboration | Five transmitters across three chains, all tracing to one NOAA source. Renders as a **warning**, not consensus. |
 
 The viewer renders fixture 3 by default — it is the most important case.
+
+![ISNAD chain viewer demo — false corroboration, weak extraction, clean chain](docs/images/viewer-demo.gif)
 
 ### What the viewer shows — and what it doesn't
 
