@@ -42,7 +42,7 @@ from isnad.integrations.liveverify.adapter import (
 )
 from isnad.integrations.liveverify.client import VerificationResult
 from isnad.core.registry import Registry
-from isnad.types import AdalahGrade, DabtGrade, NarratorGrade
+from isnad.types import AdalahGrade, DabtGrade, EvidenceAction, EvidenceType, NarratorGrade
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "liveverify"
 
@@ -350,6 +350,20 @@ class TestRegisterSealedSource:
         sealed = register_sealed_source(reg, _endorsed_result(), domain="physics")
         narrator = reg.get(sealed.narrator_id, "physics")
         assert narrator.upstream_source == "degrees.ed.ac.uk"
+
+    def test_endorsed_seal_is_evidence_backed(self):
+        """An endorsed (RELIABLE) seal must survive subsequent evidence, not be
+        clobbered to WEAK by the Bayesian posterior (issue #33)."""
+        reg = Registry()
+        sealed = register_sealed_source(reg, _endorsed_result(), domain="physics")
+        reg.record_evidence(
+            sealed.narrator_id,
+            "physics",
+            EvidenceType.POST_HOC_AUDIT,
+            EvidenceAction.TADIL,
+            "one good audit",
+        )
+        assert reg.get_grade(sealed.narrator_id, "physics") == NarratorGrade.RELIABLE
 
 
 # ---------------------------------------------------------------------------

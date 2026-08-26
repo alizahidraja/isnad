@@ -137,13 +137,30 @@ def register_sealed_source(
     describes.  Only the integrity half is seeded; precision stays unassessed.
     """
     sealed = seal_to_narrator(result)
-    registry.register(
-        sealed.narrator_id,
-        domain,
-        narrator_type=NarratorType.SOURCE,
-        grade=sealed.grade,
-        adalah=sealed.adalah,
-        dabt=sealed.dabt,
-        upstream_source=sealed.domain,
-    )
+    if sealed.grade == NarratorGrade.UNGRADED:
+        # Self-verified or unassessed — nothing is seeded; record the origin
+        # signal only (no evidence-backed prior to clobber).
+        registry.register(
+            sealed.narrator_id,
+            domain,
+            narrator_type=NarratorType.SOURCE,
+            grade=sealed.grade,
+            adalah=sealed.adalah,
+            dabt=sealed.dabt,
+            upstream_source=sealed.domain,
+        )
+    else:
+        # A crypto-anchored integrity seed — evidence-backed so it survives the
+        # Bayesian posterior's first recompute (issue #33).
+        registry.seed(
+            sealed.narrator_id,
+            domain,
+            sealed.grade,
+            narrator_type=NarratorType.SOURCE,
+            adalah=sealed.adalah,
+            dabt=sealed.dabt,
+            source="live-verify",
+            metadata={"verified": sealed.verified, "origin_strength": sealed.origin_strength},
+            upstream_source=sealed.domain,
+        )
     return sealed

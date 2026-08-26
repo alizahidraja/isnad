@@ -820,6 +820,8 @@ class Registry:
         role: Role | None = None,
         source: str = "operator",
         metadata: dict[str, object] | None = None,
+        upstream_source: str | None = None,
+        model_family: str | None = None,
     ) -> Narrator:
         """Seed a narrator's grade as an *evidence-backed prior* (issue #33).
 
@@ -846,6 +848,8 @@ class Registry:
             adalah=adalah,
             dabt=dabt,
             role=role,
+            upstream_source=upstream_source,
+            model_family=model_family,
         )
         seed_meta = {"seed_source": source, **(metadata or {})}
         self.record_evidence(
