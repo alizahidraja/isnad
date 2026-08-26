@@ -14,6 +14,16 @@ Coverage on 20 clean claims (15 verbatim corpus facts + 5 paraphrases):
 | HybridCritic (MiniLM → NLI) | 10% |
 | LocalNLICritic (DeBERTa NLI) | 5% |
 
+On **genuinely new** claims (a 300-claim sweep of clean §8 eval claims, not
+curated paraphrases), the critic is correctly conservative — a new fact the
+corpus doesn't know is UNVERIFIABLE → REVIEW — so the ceiling is lower:
+
+| Critic | Coverage (new claims) |
+|---|---|
+| LLMCritic (DeepSeek) | 63% |
+| EmbeddingCritic (TF-IDF) | 56% |
+| DeterministicRuleCritic (stub) | 0% |
+
 ## Reading
 
 - The **seed fix (#114) works**: a cold-start registry with evidence-backed seeds
