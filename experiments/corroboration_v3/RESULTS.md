@@ -77,6 +77,28 @@ sim=0.860 | "The SI unit for pressure is the pascal (Pa)..."
 | Shared upstream sources | None (openstax.org vs lightandmatter.com) |
 | Independence score | **1.0** |
 
+## Negative controls (added 2026-08-27 — closes the honesty gap)
+
+The paper's §8.5 admitted v3 ran **no** negative controls. That gap is now closed.
+`negative_controls.py` runs **9/9** deterministic controls against the v3 narrator
+configuration (no corpus load, no embedding model, no API key):
+
+| Control | Category | Result |
+|---|---|---|
+| C1: No matching text | matching | ✅ |
+| C2: Shared model family (madār) | independence | ✅ |
+| C3: All DAIF corroborators | grade gate | ✅ |
+| C4: MAWDU base chain | mawdu | ✅ |
+| C5: HASAN cap (no SAHIH) | cap | ✅ |
+| C6: Shared upstream source | independence | ✅ |
+| C7: min=2 chains, only 1 corroborator | count gate | ✅ |
+| C8: Empty all_chains | matching | ✅ |
+| C9: Shared retrieved-document hash (#125) | independence | ✅ |
+
+C9 is the new signal from #125 (document-hash overlap = hard correlation) that v2
+predated. A 100% fire rate is now backed by a discrimination check: corroboration
+fires when it should *and* refuses when it shouldn't.
+
 ---
 
 ## Comparison Across Experiments
