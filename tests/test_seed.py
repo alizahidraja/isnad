@@ -77,10 +77,18 @@ class TestSeedFromBenchmark:
         """Per-role precision (issue #3): a model can be RELIABLE at extraction but
         only ACCEPTABLE at synthesis, each seeded from its own benchmark."""
         reg = Registry()
-        seed_from_benchmark(reg, "model:y@v2", "physics", 0.95, role=Role.EXTRACTION, benchmark="extraction")
-        seed_from_benchmark(reg, "model:y@v2", "physics", 0.85, role=Role.SYNTHESIS, benchmark="synthesis")
-        assert reg.get_grade("model:y@v2", "physics", role=Role.EXTRACTION) == NarratorGrade.RELIABLE
-        assert reg.get_grade("model:y@v2", "physics", role=Role.SYNTHESIS) == NarratorGrade.ACCEPTABLE
+        seed_from_benchmark(
+            reg, "model:y@v2", "physics", 0.95, role=Role.EXTRACTION, benchmark="extraction"
+        )
+        seed_from_benchmark(
+            reg, "model:y@v2", "physics", 0.85, role=Role.SYNTHESIS, benchmark="synthesis"
+        )
+        assert (
+            reg.get_grade("model:y@v2", "physics", role=Role.EXTRACTION) == NarratorGrade.RELIABLE
+        )
+        assert (
+            reg.get_grade("model:y@v2", "physics", role=Role.SYNTHESIS) == NarratorGrade.ACCEPTABLE
+        )
 
 
 class TestSeedRegistryHelper:
