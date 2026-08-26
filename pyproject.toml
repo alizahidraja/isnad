@@ -8,21 +8,31 @@ authors = [
 ]
 license = { text = "Apache-2.0" }
 requires-python = ">=3.12"
-keywords = ["provenance", "multi-agent", "trust", "knowledge-base", "epistemology", "isnad"]
+keywords = ["provenance", "multi-agent", "trust", "knowledge-base", "epistemology", "isnad", "lineage", "audit", "governance", "ai-safety", "llm-agents"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
-
+    "Intended Audience :: Developers",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+
 dependencies = [
     "sqlalchemy>=2.0,<3.0",
     "pydantic>=2.0,<3.0",
     "alembic>=1.13,<2.0",
     "psycopg2-binary>=2.9,<3.0",
 ]
+
+[project.urls]
+Homepage = "https://alizahidraja.com/isnad"
+Repository = "https://github.com/alizahidraja/isnad"
+Documentation = "https://github.com/alizahidraja/isnad#readme"
+Paper = "https://arxiv.org/abs/2607.24117"
+Benchmark = "https://github.com/alizahidraja/isnad/blob/main/bench/docs/RESULTS.md"
+Issues = "https://github.com/alizahidraja/isnad/issues"
 
 [project.optional-dependencies]
 dev = [
