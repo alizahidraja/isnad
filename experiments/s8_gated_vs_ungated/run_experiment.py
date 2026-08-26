@@ -1,11 +1,12 @@
-"""§8 Experiment Runner — Bayesian + Corroboration + DeepSeek LLM Critic.
+"""§8 Experiment Runner — Bayesian + Corroboration + best_available_critic.
 
 Self-contained: no PDFs, no 500MB models. Uses claims.json directly.
-DeepSeek as content critic (fallback to stub if no API key).
+Content critic via best_available_critic() (#126): LLM if a key is set,
+else HybridCritic (NLI), else the offline EmbeddingCritic (TF-IDF).
 
 Usage:
     DEEPSEEK_API_KEY=sk-... python run_experiment.py
-    python run_experiment.py  # stub critic (fast, all UNVERIFIABLE)
+    python run_experiment.py  # offline critic (fast, TF-IDF)
 """
 
 from __future__ import annotations
@@ -37,85 +38,45 @@ from isnad.types import (
 SEP = "=" * 64
 
 
-# ═══════════════════════════════════════════════════════════════════
-# DeepSeek LLM Critic
-# ═══════════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════
+# Content critic — best_available_critic() (#126)
+# ═══════════════════════════════════════════════════════════════
 
 
 class DeepSeekCritic:
-    """Content critic: DeepSeek LLM primary, EmbeddingCritic fallback.
+    """Thin adapter over ``best_available_critic()`` (#126).
 
-    With DEEPSEEK_API_KEY: calls DeepSeek for semantic reasoning.
-    Without: uses EmbeddingCritic (TF-IDF) which detects negation,
-             opposite words, and numeric divergence.
+    Replaces the previous hand-rolled DeepSeek HTTP critic.  ``best_available_critic``
+    resolves to the strongest critic this environment can actually run:
+    LLMCritic (any configured provider key), HybridCritic (NLI), or the offline
+    EmbeddingCritic (TF-IDF) — and degrades honestly down the list.
+
+    The ``available`` / ``call_count`` / ``base_url`` attributes are kept only
+    for the runner's reporting; the verdict comes from the delegated critic.
     """
 
     def __init__(self):
-        self.api_key = os.environ.get("DEEPSEEK_API_KEY", "")
-        self.base_url = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
-        self.available = bool(self.api_key)
-        self._cache: dict[str, ContentVerdict] = {}
-        self.call_count = 0
-        # TF-IDF fallback critic (zero deps, always available)
-        from isnad.critics.embedding import EmbeddingCritic
+        from isnad.critics import best_available_critic
 
-        self._fallback = EmbeddingCritic()
+        self._critic = best_available_critic()
+        self.available = type(self._critic).__name__ == "LLMCritic"
+        self.call_count = 0
+        self.base_url = getattr(self._critic, "base_url", "") or "(offline critic)"
         self._corpus_texts: list[str] = []
 
     def set_corpus(self, texts: list[str]) -> None:
-        """Pre-load corpus for EmbeddingCritic fallback."""
+        """Pre-load corpus for the offline critic's fallback path."""
         self._corpus_texts = list(texts)
 
     def evaluate(
         self, claim_text: str, normalized: str, corpus_claims: list[str], domain: str = ""
     ) -> ContentVerdict:
-        if self.available:
-            return self._deepseek_eval(normalized)
-        # Use EmbeddingCritic fallback with corpus context
-        all_corpus = list(corpus_claims) + self._corpus_texts
-        return self._fallback.evaluate(claim_text, normalized, all_corpus, domain)
-
-    def _deepseek_eval(self, normalized: str) -> ContentVerdict:
-        cache_key = normalized[:100]
-        if cache_key in self._cache:
-            return self._cache[cache_key]
-        prompt = (
-            f"Physics claim: {normalized}\n"
-            f"Answer one word: CONSISTENT, CONTRADICTION, or UNVERIFIABLE.\n"
-            f"CONSISTENT = plausible physics statement.\n"
-            f"CONTRADICTION = physically impossible or self-contradicting.\n"
-            f"UNVERIFIABLE = need more context."
-        )
-        try:
-            import urllib.request
-
-            req = urllib.request.Request(
-                f"{self.base_url}/v1/chat/completions",
-                data=json.dumps({
-                    "model": "deepseek-chat",
-                    "messages": [{"role": "user", "content": prompt}],
-                    "max_tokens": 10,
-                    "temperature": 0,
-                }).encode(),
-                headers={
-                    "Authorization": f"Bearer {self.api_key}",
-                    "Content-Type": "application/json",
-                },
-            )
-            self.call_count += 1
-            resp = urllib.request.urlopen(req, timeout=15)
-            body = json.loads(resp.read())
-            text = body["choices"][0]["message"]["content"].strip().upper()
-            if "CONTRADICTION" in text:
-                verdict = ContentVerdict.CONTRADICTION
-            elif "CONSISTENT" in text:
-                verdict = ContentVerdict.CONSISTENT
-            else:
-                verdict = ContentVerdict.UNVERIFIABLE
-        except Exception:
-            verdict = ContentVerdict.UNVERIFIABLE
-        self._cache[cache_key] = verdict
-        return verdict
+        # best_available_critic critics take their corpus from the evaluate()
+        # call.  Merge the pre-loaded clean corpus with the per-call corpus so
+        # the offline critic has context even when the runner passes [].
+        merged = list(corpus_claims) + self._corpus_texts
+        self.call_count += 1
+        return self._critic.evaluate(claim_text, normalized, merged, domain)
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -411,7 +372,7 @@ def run() -> None:
             {
                 "config": {
                     "policy": "bayesian",
-                    "critic": "deepseek" if critic.available else "stub",
+                    "critic": "llm" if critic.available else "offline",
                     "claims": len(claims),
                     "error_rate": 0.15,
                 },
