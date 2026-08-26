@@ -167,12 +167,7 @@ def _detect_shared_ancestry(
         }
 
     def _doc_hashes(chain: list[TransmitterNode]) -> set[str]:
-        return {
-            d.content_hash
-            for n in chain
-            for d in n.input_documents
-            if d.content_hash
-        }
+        return {d.content_hash for n in chain for d in n.input_documents if d.content_hash}
 
     for i, chain_a in enumerate(chains):
         for j, chain_b in enumerate(chains):

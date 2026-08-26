@@ -202,9 +202,7 @@ async def submit_claim(
     chain = Chain(specs)
 
     # Base chain's retrieved-document hashes (madār check against corroborators).
-    base_document_hashes: set[str] = {
-        h for link in chain.links for h in link.document_hashes if h
-    }
+    base_document_hashes: set[str] = {h for link in chain.links for h in link.document_hashes if h}
 
     resolved_narrator_ids = resolved_narrator_ids_for_chain(chain)
     link_grades = grades_for_chain(reg.registry, chain)

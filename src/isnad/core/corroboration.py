@@ -184,10 +184,7 @@ class SharedLineageDetector:
         # that dominates lineage metadata, and matches the callback's
         # SHARED_ANCESTRY_DETECTED verdict on any shared hash. If either set is
         # absent we have no information and fall through (no penalty, no bonus).
-        if (
-            chain_a_document_hashes is not None
-            and chain_b_document_hashes is not None
-        ):
+        if chain_a_document_hashes is not None and chain_b_document_hashes is not None:
             shared_hashes = set(chain_a_document_hashes) & set(chain_b_document_hashes)
             if shared_hashes:
                 return IndependenceAssessment(
@@ -714,9 +711,7 @@ class CorroborationEngine:
 
         # Filter by independence
         independent = [
-            c
-            for c, a in zip(corroborating_chains, assessments, strict=True)
-            if a.is_independent
+            c for c, a in zip(corroborating_chains, assessments, strict=True) if a.is_independent
         ]
 
         if len(independent) < self.min_independent_chains:
@@ -750,9 +745,7 @@ class CorroborationEngine:
         # Compute independence scores (for the independent chains only) and
         # delegate to the policy.
         independent_assessments = [
-            a
-            for c, a in zip(corroborating_chains, assessments, strict=True)
-            if a.is_independent
+            a for c, a in zip(corroborating_chains, assessments, strict=True) if a.is_independent
         ]
         independence_scores = [a.score for a in independent_assessments]
         grades = [c["grade"] for c in independent]
