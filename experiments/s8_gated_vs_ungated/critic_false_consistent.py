@@ -19,6 +19,12 @@ Honesty contract:
 - Reports on the *meaningful* subset: corrupted claims whose text was actually
   mutated (``original_text != corrupted_text``).  "Corrupted" records with no
   text change are noise for this measurement.
+- Splits faults by the two-axis divide (#124): **semantic** (meaning-changing —
+  entity swap, sign flip, regime confusion) vs **transmission** (OCR/digit noise,
+  same meaning).  The headline false-consistent rate is computed on *semantic*
+  corruptions only, because that is the fault class content criticism exists to
+  catch; transmission noise is the isnād chain grader's responsibility, and a
+  critic that reads a typo as CONSISTENT is doing its job correctly.
 
 Usage:
     python critic_false_consistent.py               # best available critic
@@ -39,6 +45,27 @@ if _exp_dir not in sys.path:
 
 from isnad.critics import best_available_critic
 from isnad.types import ContentVerdict
+
+
+# Fault classes (issue #124's two-axis split, applied to measurement):
+#   semantic     — the corruption CHANGES MEANING (entity swap, sign flip,
+#                  regime confusion). This is what content criticism (matn)
+#                  is responsible for catching.
+#   transmission — the corruption is byte/digit noise with the SAME meaning
+#                  (OCR noise, fabricated numeric). Content criticism is the
+#                  WRONG tool here; the isnād chain grader catches these via
+#                  the narrator's ḍabṭ (precision) grade.
+_SEMANTIC_FAULTS = ("entity_swap", "sign_flip", "regime_confusion", "negation_drop")
+
+
+def _classify(fault_type: str) -> str:
+    parts = list(fault_type.split("+"))
+    sem = [p for p in parts if any(s in p for s in _SEMANTIC_FAULTS)]
+    if sem and len(sem) < len(parts):
+        return "mixed"
+    if sem:
+        return "semantic"
+    return "transmission"
 
 
 def load_manifest(seed: int) -> list[dict]:
@@ -87,9 +114,14 @@ def run_measurement(seed: int, max_claims: int | None, offline: bool = False) ->
     else:
         critic = best_available_critic()
 
-    false_consistent = 0
-    caught = 0  # CONTRADICTION — the critic correctly flagged the corruption
-    unverifiable = 0
+    # Per-class tallies, because the two-axis split matters (issue #124): a
+    # false-CONSISTENT on a *semantic* corruption is the dangerous error (the
+    # critic's actual job); a "false-CONSISTENT" on transmission noise is the
+    # critic correctly recognising unchanged meaning.
+    tally: dict[str, dict[str, int]] = {
+        cls: {"false_consistent": 0, "caught": 0, "unverifiable": 0}
+        for cls in ("semantic", "transmission", "mixed")
+    }
     for r in mutated:
         verdict = critic.evaluate(
             r["corrupted_text"],
@@ -97,22 +129,38 @@ def run_measurement(seed: int, max_claims: int | None, offline: bool = False) ->
             clean_corpus,
             r.get("domain", "general"),
         )
+        k = _classify(r["fault_type"])
         if verdict == ContentVerdict.CONSISTENT:
-            false_consistent += 1
+            tally[k]["false_consistent"] += 1
         elif verdict == ContentVerdict.CONTRADICTION:
-            caught += 1
+            tally[k]["caught"] += 1
         else:
-            unverifiable += 1
+            tally[k]["unverifiable"] += 1
+
+    # The headline number is the false-consistent rate on *semantic* corruptions
+    # only — the fault class content criticism exists to catch.
+    sem = tally["semantic"]
+    sem_total = sum(sem.values())
+    false_consistent = sem["false_consistent"]
 
     n = len(mutated)
     return {
         "critic": critic_identity(critic),
         "seed": seed,
         "mutated_corrupted": n,
-        "false_consistent": false_consistent,
-        "false_consistent_rate": (false_consistent / n) if n else 0.0,
-        "caught_contradiction": caught,
-        "unverifiable": unverifiable,
+        "semantic_total": sem_total,
+        "semantic_false_consistent": false_consistent,
+        "semantic_false_consistent_rate": (false_consistent / sem_total) if sem_total else 0.0,
+        "semantic_caught": sem["caught"],
+        "semantic_unverifiable": sem["unverifiable"],
+        "by_class": {
+            k: {
+                "false_consistent": v["false_consistent"],
+                "caught": v["caught"],
+                "unverifiable": v["unverifiable"],
+            }
+            for k, v in tally.items()
+        },
     }
 
 
@@ -129,26 +177,45 @@ def main() -> None:
 
     result = run_measurement(args.seed, args.max, offline=args.offline)
 
+    by_class = result["by_class"]
     print("=" * 70)
     print("CRITIC FALSE-CONSISTENT MEASUREMENT (#126 safety gate)")
     print("=" * 70)
-    print(f"  Critic:                {result['critic']}")
-    print(f"  Seed:                  {result['seed']}")
-    print(f"  Mutated corruptions:   {result['mutated_corrupted']}")
+    print(f"  Critic:              {result['critic']}")
+    print(f"  Seed:                {result['seed']}")
+    print(f"  Mutated corruptions: {result['mutated_corrupted']}")
+    print()
+    print("  The headline number is the false-consistent rate on *semantic* corruptions")
+    print("  (meaning-changing: entity swap, sign flip, regime confusion) — the fault")
+    print("  class content criticism exists to catch. Transmission noise (OCR, numeric)")
+    print("  is the isnād chain grader's job, not the critic's (§124 two-axis split).")
+    print()
+    for cls in ("semantic", "mixed", "transmission"):
+        v = by_class[cls]
+        total = sum(v.values())
+        fc = v["false_consistent"]
+        print(
+            f"  {cls:14s} n={total:3d}  false-CONSISTENT={fc:3d} ({fc / total:.1%})"
+            if total
+            else f"  {cls:14s} n=0"
+        )
+    print()
+    sem = result
+    sem_total = sem["semantic_total"]
     print(
-        f"  False-CONSISTENT:      {result['false_consistent']} "
-        f"({result['false_consistent_rate']:.1%})"
+        f"  SEMANTIC false-consistent: {sem['semantic_false_consistent']}/"
+        f"{sem_total} ({sem['semantic_false_consistent_rate']:.1%})  "
+        f"— the number that must stay ~0"
     )
-    print(f"  Correctly CONTRADICT:  {result['caught_contradiction']}")
-    print(f"  UNVERIFIABLE:          {result['unverifiable']}")
+    print(f"  SEMANTIC caught:          {sem['semantic_caught']}")
+    print(f"  SEMANTIC unverifiable:    {sem['semantic_unverifiable']}")
     print()
     print("Reading the number:")
-    print("  - false-consistent = corrupted claims the critic would let through as")
-    print("    CONSISTENT → these become served errors. This must stay ~0.")
-    print("  - UNVERIFIABLE is safe (routes to REVIEW) but caps coverage (§8.6).")
-    print("  - The offline critic's number is NOT the LLM critic's number.")
-    print("    To measure the LLM tier, set a provider key (e.g. DEEPSEEK_API_KEY)")
-    print("    and re-run — best_available_critic() will pick it up automatically.")
+    print("  - Semantic false-consistent = meaning-changing corruptions the critic")
+    print("    would serve as if clean. This must stay ~0 before trusting the critic")
+    print("    to unlock coverage.")
+    print("  - Transmission 'false-consistent' is the critic correctly seeing the")
+    print("    meaning is unchanged — those are caught by the chain grader instead.")
     print("=" * 70)
 
     out = os.path.join(_exp_dir, "results", f"critic_false_consistent_seed{args.seed}.json")
