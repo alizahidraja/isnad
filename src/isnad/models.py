@@ -134,6 +134,12 @@ class ChainLink(Base):
     output_snapshot: Mapped[str | None] = mapped_column(
         Text, nullable=True, comment="Claim text state leaving this link's transformation"
     )
+    document_hashes: Mapped[dict[str, object]] = mapped_column(
+        JSON,
+        nullable=False,
+        default=list,
+        comment="Retrieved-document content hashes (madār correlation check, #125)",
+    )
 
     # Relationship
     claim: Mapped[RijalClaim] = relationship("RijalClaim", back_populates="links")

@@ -22,6 +22,7 @@ import uuid
 from datetime import UTC, datetime
 from typing import Any
 
+from isnad.core.corroboration import SharedLineageDetector
 from isnad.core.registry import Registry
 from isnad.trace.schema import (
     ChainIntegrity,
@@ -138,64 +139,56 @@ def _detect_shared_ancestry(
 ) -> tuple[CorroborationVerdict, str]:
     """Detect shared ancestry across multiple chains.
 
-    Checks:
+    Delegates the correlation decision to the core ``SharedLineageDetector``
+    (issue #125 step 3 — single source of truth; the callback no longer keeps
+    its own duplicate 4-signal logic). Each pair of chains is reduced to the
+    detector's inputs (narrator IDs, narrator metadata, retrieved-document
+    hashes) and its structured assessment is mapped back to the trace verdict:
+    any shared signal → SHARED_ANCESTRY_DETECTED; none → ASSUMED.
+
+    Signals checked (see SharedLineageDetector.detect):
     1. Shared narrator IDs (hard correlation)
-    2. Overlapping retrieval document hashes
+    2. Overlapping retrieval document hashes (the madār case)
     3. Same upstream source
     4. Same model family
     """
     if len(chains) < 2:
         return CorroborationVerdict.UNVERIFIED, "Single chain — independence not applicable."
 
+    detector = SharedLineageDetector()
+
+    def _metadata(chain: list[TransmitterNode]) -> dict[str, dict[str, object]]:
+        return {
+            n.narrator_id: {
+                "model_family": n.grade.model_family,
+                "upstream_source": n.grade.upstream_source,
+            }
+            for n in chain
+        }
+
+    def _doc_hashes(chain: list[TransmitterNode]) -> set[str]:
+        return {
+            d.content_hash
+            for n in chain
+            for d in n.input_documents
+            if d.content_hash
+        }
+
     for i, chain_a in enumerate(chains):
         for j, chain_b in enumerate(chains):
             if i >= j:
                 continue
 
-            # 1. Shared narrator IDs
-            ids_a = {n.narrator_id for n in chain_a}
-            ids_b = {n.narrator_id for n in chain_b}
-            if ids_a & ids_b:
-                return (
-                    CorroborationVerdict.SHARED_ANCESTRY_DETECTED,
-                    f"Chains {i} and {j} share narrator IDs: {ids_a & ids_b}",
-                )
-
-            # 2. Overlapping retrieval document hashes
-            hashes_a: set[str] = set()
-            hashes_b: set[str] = set()
-            for n in chain_a:
-                for d in n.input_documents:
-                    if d.content_hash:
-                        hashes_a.add(d.content_hash)
-            for n in chain_b:
-                for d in n.input_documents:
-                    if d.content_hash:
-                        hashes_b.add(d.content_hash)
-            if hashes_a and hashes_b and (hashes_a & hashes_b):
-                return (
-                    CorroborationVerdict.SHARED_ANCESTRY_DETECTED,
-                    f"Chains {i} and {j} retrieved overlapping documents "
-                    f"({len(hashes_a & hashes_b)} shared hashes)",
-                )
-
-            # 3. Same upstream source
-            sources_a = {n.grade.upstream_source for n in chain_a if n.grade.upstream_source}
-            sources_b = {n.grade.upstream_source for n in chain_b if n.grade.upstream_source}
-            if sources_a and sources_b and (sources_a & sources_b):
-                return (
-                    CorroborationVerdict.SHARED_ANCESTRY_DETECTED,
-                    f"Chains {i} and {j} share upstream source: {sources_a & sources_b}",
-                )
-
-            # 4. Same model family
-            families_a = {n.grade.model_family for n in chain_a if n.grade.model_family}
-            families_b = {n.grade.model_family for n in chain_b if n.grade.model_family}
-            if families_a and families_b and (families_a & families_b):
-                return (
-                    CorroborationVerdict.SHARED_ANCESTRY_DETECTED,
-                    f"Chains {i} and {j} share model family: {families_a & families_b}",
-                )
+            assessment = detector.detect(
+                [n.narrator_id for n in chain_a],
+                [n.narrator_id for n in chain_b],
+                {**_metadata(chain_a), **_metadata(chain_b)},
+                chain_a_document_hashes=_doc_hashes(chain_a),
+                chain_b_document_hashes=_doc_hashes(chain_b),
+            )
+            if assessment.shared_signals:
+                detail = f"Chains {i} and {j} — " + "; ".join(assessment.shared_signals)
+                return CorroborationVerdict.SHARED_ANCESTRY_DETECTED, detail
 
     return CorroborationVerdict.ASSUMED, (
         "No shared ancestry detected — independence is assumed from topology, "

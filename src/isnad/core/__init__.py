@@ -28,6 +28,7 @@ from isnad.core.chain import (
 from isnad.core.corroboration import (
     CappedCorroborationPolicy,
     CorroborationEngine,
+    IndependenceAssessment,
     SharedLineageDetector,
     evaluate_corroboration,
 )
@@ -62,6 +63,7 @@ __all__ = [
     # corroboration
     "CappedCorroborationPolicy",
     "CorroborationEngine",
+    "IndependenceAssessment",
     "SharedLineageDetector",
     "evaluate_corroboration",
     # decision

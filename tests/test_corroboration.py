@@ -111,6 +111,31 @@ class TestSharedLineageDetector:
         )
         assert score == 1.0  # different families → independent
 
+    def test_detect_returns_provenance_for_shared_family(self) -> None:
+        """detect() reports *why* a chain was discounted (#125 step 3)."""
+        det = SharedLineageDetector()
+        metadata = {
+            "model-1": {"model_family": "gpt-4-family"},
+            "model-2": {"model_family": "gpt-4-family"},
+        }
+        a = det.detect(["model-1"], ["model-2"], metadata)
+        assert a.score == 0.6
+        assert any("gpt-4-family" in s for s in a.shared_signals)
+
+    def test_detect_unknown_lineage_has_no_shared_signals(self) -> None:
+        """Unknown lineage is a 'cannot tell' case, not a shared signal."""
+        det = SharedLineageDetector()
+        a = det.detect(["narrator-A"], ["narrator-B"], {})
+        assert a.score == SharedLineageDetector.UNKNOWN_LINEAGE_SCORE
+        assert a.shared_signals == ()  # empty — not a correlation finding
+
+    def test_detect_shared_narrator_ids_has_provenance(self) -> None:
+        """Shared narrator IDs produce a provenance entry naming the shared ID."""
+        det = SharedLineageDetector()
+        a = det.detect(["narrator-B"], ["narrator-B"], {})
+        assert a.score == 0.0
+        assert any("narrator-B" in s for s in a.shared_signals)
+
     def test_shared_document_hashes_are_hard_correlation(self) -> None:
         """Shared retrieved-document hash → hard correlation (the madār case).
 

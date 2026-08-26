@@ -58,6 +58,10 @@ class ChainLinkIn(BaseModel):
     trace_id: str = ""
     input_snapshot: str | None = None
     output_snapshot: str | None = None
+    document_hashes: list[str] = Field(
+        default_factory=list,
+        description="Retrieved-document content hashes for the madār correlation check (#125)",
+    )
 
 
 class ClaimSubmitIn(BaseModel):
@@ -104,6 +108,21 @@ def _find_best_matching_claim_id(
     if best_idx is None:
         return None
     return existing_claim_ids[best_idx]
+
+
+def _extract_document_hashes(record: dict) -> list[str]:
+    """Pull retrieved-document hashes from a stored claim record's chain.
+
+    The chain is stored as JSONB (a list of link dicts, each with a
+    ``document_hashes`` list after #125). Collect them all so a corroboration
+    check can detect when two claims read the same document.
+    """
+    hashes: list[str] = []
+    for link in record.get("chain", []) or []:
+        for h in link.get("document_hashes", []) or []:
+            if h:
+                hashes.append(h)
+    return hashes
 
 
 def _version_drift_detected(registry: Registry, chain: Chain) -> bool:
@@ -176,10 +195,16 @@ async def submit_claim(
             trace_id=link.trace_id or str(uuid.uuid4())[:8],
             input_snapshot=link.input_snapshot,
             output_snapshot=link.output_snapshot,
+            document_hashes=link.document_hashes,
         )
         for i, link in enumerate(chain_data)
     ]
     chain = Chain(specs)
+
+    # Base chain's retrieved-document hashes (madār check against corroborators).
+    base_document_hashes: set[str] = {
+        h for link in chain.links for h in link.document_hashes if h
+    }
 
     resolved_narrator_ids = resolved_narrator_ids_for_chain(chain)
     link_grades = grades_for_chain(reg.registry, chain)
@@ -218,6 +243,7 @@ async def submit_claim(
             "chain_grade": rec.get("chain_grade", "daif"),
             "narrator_ids": rec.get("resolved_narrator_ids", rec.get("narrator_ids", [])),
             "source": rec.get("page_slug", ""),
+            "document_hashes": _extract_document_hashes(rec),
         }
         for rec in all_claim_records
     ]
@@ -233,6 +259,7 @@ async def submit_claim(
         all_chains=all_chain_dicts,
         narrator_metadata=narrator_metadata,
         has_live_contradiction=has_live_contradiction,
+        base_document_hashes=base_document_hashes,
     )
     effective_grade = corr_result.upgraded_grade if corr_result.upgraded else cg
     if corr_result.upgraded:
@@ -272,6 +299,13 @@ async def submit_claim(
             "independent_chains": corr_result.independent_chains,
             "effective_weight": corr_result.effective_weight,
             "reason": corr_result.reason,
+            "chain_independence": [
+                {
+                    "score": a.score,
+                    "shared_signals": list(a.shared_signals),
+                }
+                for a in corr_result.chain_independence
+            ],
         },
     }
     state.claims[claim_id] = record

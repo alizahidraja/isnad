@@ -14,7 +14,7 @@ implements correlation detection as required by the paper (§7, Limitations).
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from isnad.types import (
     ChainGrade,
@@ -26,6 +26,28 @@ from isnad.types import (
 # ===========================================================================
 # Default CorrelationDetector
 # ===========================================================================
+
+
+@dataclass(frozen=True)
+class IndependenceAssessment:
+    """A structured independence verdict: a score plus *which* signals fired.
+
+    The score alone cannot answer "why were these chains correlated?" — a
+    compliance buyer or reviewer needs the provenance.  ``shared_signals`` is a
+    list of human-readable reasons (e.g. "shared model family: gpt-4-family"),
+    empty when no shared signal was found.
+
+    The score is the same value ``compute_independence_score`` returns; this
+    dataclass exists so the detector can report *why* without a second call.
+    """
+
+    score: float
+    shared_signals: tuple[str, ...]
+
+    @property
+    def is_independent(self) -> bool:
+        """True when the score clears the corroboration gate (>= 0.8)."""
+        return self.score >= 0.8
 
 
 class SharedLineageDetector:
@@ -109,7 +131,30 @@ class SharedLineageDetector:
         or same retrieved documents); ``UNKNOWN_LINEAGE_SCORE`` = independence
         neither shown nor ruled out.
 
-        Correlation signals, in order of severity:
+        Convenience wrapper over :meth:`detect` — see that method for the
+        full signal semantics and for the *why* (provenance) when a non-zero
+        penalty was applied.
+        """
+        return self.detect(
+            chain_a_narrators,
+            chain_b_narrators,
+            narrator_metadata,
+            chain_a_document_hashes=chain_a_document_hashes,
+            chain_b_document_hashes=chain_b_document_hashes,
+        ).score
+
+    def detect(
+        self,
+        chain_a_narrators: list[str],
+        chain_b_narrators: list[str],
+        narrator_metadata: dict[str, dict[str, object]],
+        *,
+        chain_a_document_hashes: set[str] | None = None,
+        chain_b_document_hashes: set[str] | None = None,
+    ) -> IndependenceAssessment:
+        """Compute an independence assessment: score plus which signals fired.
+
+        Correlation signals, in order of severity (each adds a provenance entry):
         - Shared narrator IDs (hard): score = 0.0.
         - Shared retrieved-document hashes (hard, the madār case): score = 0.0.
           Two chains that retrieved the same document are one source regardless
@@ -130,8 +175,9 @@ class SharedLineageDetector:
         set_b = set(chain_b_narrators)
 
         # --- Shared narrator IDs → directly correlated ---
-        if set_a & set_b:
-            return 0.0
+        shared_ids = set_a & set_b
+        if shared_ids:
+            return IndependenceAssessment(0.0, (f"shared narrator IDs: {sorted(shared_ids)}",))
 
         # --- Shared retrieved-document hashes → hard correlation (madār). ---
         # Checked before the unknown-lineage fallback: this is hard evidence
@@ -141,9 +187,12 @@ class SharedLineageDetector:
         if (
             chain_a_document_hashes is not None
             and chain_b_document_hashes is not None
-            and (set(chain_a_document_hashes) & set(chain_b_document_hashes))
         ):
-            return 0.0
+            shared_hashes = set(chain_a_document_hashes) & set(chain_b_document_hashes)
+            if shared_hashes:
+                return IndependenceAssessment(
+                    0.0, (f"shared retrieved document hash: {sorted(shared_hashes)}",)
+                )
 
         # --- Check model family overlap ---
         families_a: set[str] = set()
@@ -185,15 +234,25 @@ class SharedLineageDetector:
         side_a_known = bool(families_a or sources_a)
         side_b_known = bool(families_b or sources_b)
         if not (side_a_known and side_b_known):
-            return self.UNKNOWN_LINEAGE_SCORE
+            # Unknown lineage is NOT a shared signal — it is a distinct
+            # "cannot tell" case. shared_signals stays empty so callers can
+            # distinguish "correlation found" (non-empty signals) from
+            # "independence unprovable" (empty signals, score 0.5).
+            return IndependenceAssessment(self.UNKNOWN_LINEAGE_SCORE, ())
 
         # Compute penalty
+        signals: list[str] = []
         penalty = 0.0
-        penalty += len(shared_families) * 0.4
-        penalty += len(shared_sources) * 0.3
+        for fam in sorted(shared_families):
+            penalty += 0.4
+            signals.append(f"shared model family: {fam}")
+        for src in sorted(shared_sources):
+            penalty += 0.3
+            signals.append(f"shared upstream source: {src}")
 
         # Clamp
-        return max(0.0, min(1.0, 1.0 - penalty))
+        score = max(0.0, min(1.0, 1.0 - penalty))
+        return IndependenceAssessment(score, tuple(signals))
 
 
 # ===========================================================================
@@ -393,6 +452,11 @@ class CorroborationResult:
     effective_weight: float  # info-theoretic log-error ratio
     upgraded: bool
     reason: str = ""
+    # Per-chain independence provenance (issue #125 step 3): the score and the
+    # *why* for every corroborating chain that was evaluated, so a caller (or an
+    # audit record) can see which shared signal discounted a chain. Present for
+    # every corroborating chain, not just the independent ones.
+    chain_independence: list[IndependenceAssessment] = field(default_factory=list)
 
 
 def _narrator_to_chain_grade(ng: NarratorGrade) -> ChainGrade:
@@ -634,17 +698,25 @@ class CorroborationEngine:
                 reason="Corroboration withheld: claim has a live content contradiction outstanding",
             )
 
-        # Filter by independence
-        independent = [
-            c
-            for c in corroborating_chains
-            if self._correlation_detector.are_independent(
+        # Compute per-chain independence assessments for ALL corroborating
+        # chains (not just the independent ones) so the result carries the
+        # *why* for every chain evaluated, including discounted ones (#125).
+        assessments = [
+            self._correlation_detector.detect(
                 base_narrators,
                 c["narrators"],
                 narrator_metadata,
                 chain_a_document_hashes=base_document_hashes,
                 chain_b_document_hashes=c.get("document_hashes"),
             )
+            for c in corroborating_chains
+        ]
+
+        # Filter by independence
+        independent = [
+            c
+            for c, a in zip(corroborating_chains, assessments, strict=True)
+            if a.is_independent
         ]
 
         if len(independent) < self.min_independent_chains:
@@ -655,6 +727,7 @@ class CorroborationEngine:
                 independent_chains=len(independent),
                 effective_weight=0.0,
                 upgraded=False,
+                chain_independence=assessments,
                 reason=(
                     f"Need ≥{self.min_independent_chains} independent chains, "
                     f"have {len(independent)}"
@@ -670,20 +743,18 @@ class CorroborationEngine:
                 independent_chains=len(independent),
                 effective_weight=0.0,
                 upgraded=False,
+                chain_independence=assessments,
                 reason=f"No corroborating chain meets min grade {self.min_gate_grade.value}",
             )
 
-        # Compute independence scores and delegate to policy
-        independence_scores = [
-            self._correlation_detector.compute_independence_score(
-                base_narrators,
-                c["narrators"],
-                narrator_metadata,
-                chain_a_document_hashes=base_document_hashes,
-                chain_b_document_hashes=c.get("document_hashes"),
-            )
-            for c in independent
+        # Compute independence scores (for the independent chains only) and
+        # delegate to the policy.
+        independent_assessments = [
+            a
+            for c, a in zip(corroborating_chains, assessments, strict=True)
+            if a.is_independent
         ]
+        independence_scores = [a.score for a in independent_assessments]
         grades = [c["grade"] for c in independent]
 
         upgraded = self._policy.compute_corroborated_grade(
@@ -704,6 +775,7 @@ class CorroborationEngine:
             independent_chains=len(independent),
             effective_weight=effective_weight,
             upgraded=upgraded_flag,
+            chain_independence=assessments,
             reason=(
                 f"Upgraded via {len(independent)} independent chains "
                 f"(effective weight={effective_weight:.1f})"
