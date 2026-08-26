@@ -367,16 +367,20 @@ critic = best_available_critic()           # strongest offline critic (NLI if in
 critic = best_available_critic(prefer_llm=True)  # use the LLM tier if a key is present
 critic = EmbeddingCritic()                 # TF-IDF, always works, obvious contradictions
 critic = LLMCritic(provider="openrouter", model="openai/gpt-4o-mini")  # any LLM via OpenRouter
+critic = LLMCritic(provider="ollama", model="llama3.1")  # local LLM — no API key, no cloud
 ```
 
-Critic tiers are documented with their measured recall in
-[`docs/critics.md`](docs/critics.md) — the honest headline is that the semantic
-gap is solved by the LLM tier (~90%), while the no-key ceiling is NLI (~40%).
+Critic tiers are documented with their **measured** recall in
+[`docs/critics.md`](docs/critics.md). The honest headline: the LLM tier is the
+only near-perfect one (measured 100% recall, 0% false-consistents); the offline
+critics are safe but conservative (~72–76% recall). **For best results use the
+LLM critic** — a local model via Ollama gives you LLM-tier quality with no API
+key and no data leaving your machine.
 
 The LLM critic is **provider-agnostic** — OpenRouter, OpenAI, DeepSeek, Anthropic,
-Gemini, Groq, Together, or any OpenAI-compatible endpoint (including a local
-Ollama server).  Name a provider, or set `ISNAD_LLM_PROVIDER` + a key env var.
-`list_providers()` enumerates the known providers.
+Gemini, Groq, Together, **Ollama (local)**, or any OpenAI-compatible endpoint.
+Name a provider, or set `ISNAD_LLM_PROVIDER` + a key env var. `list_providers()`
+enumerates the known providers.
 
 **Good first issues:**
 - Implement an alternative critic (sentence-transformers embedding, CrewAI integration)

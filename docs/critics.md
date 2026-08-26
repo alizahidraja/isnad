@@ -36,15 +36,21 @@ low-recall.
 ## Usage
 
 ```python
-from isnad.critics import best_available_critic
+from isnad.critics import best_available_critic, LLMCritic
 
 critic = best_available_critic()             # offline: NLI if installed, else TF-IDF
 critic = best_available_critic(prefer_llm=True)  # use the LLM tier if a key is present
+critic = LLMCritic(provider="ollama", model="llama3.1")  # local LLM — no key, no cloud
 ```
 
 The factory never returns a critic it cannot run: it degrades LLM → NLI →
 TF-IDF, and the `LLMCritic` itself returns `UNVERIFIABLE` (never crashes) when
 no key is configured.
+
+**Local LLM (no key).** The `LLMCritic` supports a local Ollama server
+(`provider="ollama"`, `base_url` `http://localhost:11434/v1`, no API key) — the
+same LLM-tier quality with no data leaving the machine. Ollama is not in the
+env-var auto-detect list (it has no key), so construct it explicitly as above.
 
 > **Note:** the offline NLI critics are now *safe* (near-zero false-consistent),
 > but conservative — they return UNVERIFIABLE for most non-contradictions, so a

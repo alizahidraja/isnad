@@ -276,9 +276,14 @@ class LLMCritic:
         return self._call_openai_compat(prompt)
 
     def _call_openai_compat(self, prompt: str) -> str:
-        """Call any OpenAI-compatible ``chat/completions`` endpoint via httpx."""
-        if not (self.base_url and self.api_key):
-            raise RuntimeError("No LLM credentials available")
+        """Call any OpenAI-compatible ``chat/completions`` endpoint via httpx.
+
+        The API key is optional — local providers (e.g. Ollama) serve without
+        one. Key-requiring providers are gated upstream by ``_has_credentials``,
+        so a missing key there never reaches this call.
+        """
+        if not self.base_url:
+            raise RuntimeError("No LLM base URL available")
         if not self.model:
             raise RuntimeError(
                 f"Provider {self.provider!r} requires an explicit model name "

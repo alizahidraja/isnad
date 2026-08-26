@@ -295,3 +295,21 @@ class TestOpenAICompatCall:
         critic = LLMCritic(provider="openrouter", api_key="sk-or")
         with pytest.raises(RuntimeError):
             critic._call_openai_compat("test prompt")
+
+    def test_ollama_no_key_call_shape(self, monkeypatch) -> None:
+        """Local Ollama serves without an API key — the call must not require one."""
+        captured = self._fake_httpx(monkeypatch, "CONSISTENT")
+        critic = LLMCritic(provider="ollama", model="llama3.1")
+        result = critic._call_openai_compat("test prompt")
+        assert result == "CONSISTENT"
+        assert captured["url"] == "http://localhost:11434/v1/chat/completions"
+        assert "Authorization" not in captured["headers"]  # no key needed
+        assert captured["json"]["model"] == "llama3.1"
+
+    def test_ollama_full_evaluate_path(self, monkeypatch) -> None:
+        """End-to-end: Ollama (no key) reaches the LLM call and parses the verdict."""
+        captured = self._fake_httpx(monkeypatch, "CONTRADICTION")
+        critic = LLMCritic(provider="ollama", model="llama3.1")
+        result = critic.evaluate("F = a/m", "f = a/m", ["f = ma"], "physics")
+        assert result == ContentVerdict.CONTRADICTION
+        assert "Authorization" not in captured["headers"]
