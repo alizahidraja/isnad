@@ -17,9 +17,12 @@ from isnad.audit.merkle_log import (
     MerkleBatch,
     build_batch,
     prove_inclusion,
+    read_batch_log,
+    record_to_leaf,
     seal_batches,
     verify_batches,
     verify_inclusion,
+    write_batch_log,
 )
 from isnad.audit.schema import (
     AuditRecord,
@@ -55,8 +58,11 @@ __all__ = [
     "build_audit_record_from_nodes",
     "build_batch",
     "prove_inclusion",
+    "read_batch_log",
+    "record_to_leaf",
     "seal_batches",
     "verify_batches",
     "verify_chain",
     "verify_inclusion",
+    "write_batch_log",
 ]

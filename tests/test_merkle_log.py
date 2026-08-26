@@ -19,9 +19,12 @@ from isnad.audit.merkle_log import (
     MerkleBatch,
     build_batch,
     prove_inclusion,
+    read_batch_log,
+    record_to_leaf,
     seal_batches,
     verify_batches,
     verify_inclusion,
+    write_batch_log,
 )
 
 
@@ -203,3 +206,132 @@ class TestMerkleBatchDataclass:
         assert isinstance(batch, MerkleBatch)
         assert isinstance(batch.root, str)
         assert len(batch.leaves) == 2
+
+
+class TestRecordToLeaf:
+    """Wiring: an AuditRecord becomes a leaf via its own integrity hash."""
+
+    def test_record_becomes_a_leaf(self) -> None:
+        from isnad.audit.schema import Integrity
+
+        class _Rec:
+            record_id = "rec-1"
+            integrity = Integrity(record_hash="abc123" * 8)
+
+        assert record_to_leaf(_Rec()) == ("rec-1", "abc123" * 8)
+
+    def test_real_audit_record_seals_and_verifies(self) -> None:
+        """A real built AuditRecord → leaf → batch → verifies (production path)."""
+        import tempfile
+        from pathlib import Path
+
+        from sqlalchemy.orm import Session
+
+        from isnad.audit import build_audit_record
+        from isnad.core.chain import Chain, ChainLinkSpec, store_claim
+        from isnad.core.registry import RegistryDB
+        from isnad.storage.sqlalchemy import create_engine_from_url, init_db, reset_engine
+        from isnad.types import NarratorGrade, NarratorType
+
+        with tempfile.TemporaryDirectory() as d:
+            url = f"sqlite:///{Path(d) / 'r.db'}"
+            reset_engine()
+            init_db(url)
+            engine = create_engine_from_url(url)
+            with Session(engine) as s:
+                rdb = RegistryDB(session=s)
+                rdb.registry.register(
+                    "src",
+                    "physics",
+                    narrator_type=NarratorType.SOURCE,
+                    grade=NarratorGrade.RELIABLE,
+                )
+                chain = Chain([ChainLinkSpec("src", 0, domain="physics")])
+                claim = store_claim(s, "E=mc^2", "physics/rel", chain, chain_grade="sahih")
+                s.commit()
+                rec = build_audit_record(claim.claim_id, s, rdb.registry)
+            reset_engine()
+
+        batch = build_batch([record_to_leaf(rec)])
+        proof = prove_inclusion(batch, rec.record_id)
+        assert proof is not None
+        assert verify_inclusion(proof, batch.root) is True
+
+
+class TestBatchLogPersistence:
+    """On-disk batch log: round-trips, and disk tampering is detected."""
+
+    def test_write_read_round_trip_verifies(self, tmp_path) -> None:
+        sealed = seal_batches([build_batch([_leaf(0), _leaf(1)]), build_batch([_leaf(2)])])
+        log = tmp_path / "batches.jsonl"
+        write_batch_log(log, sealed)
+        loaded = read_batch_log(log)
+        assert verify_batches(loaded) is None
+        assert [b.leaves for b in loaded] == [b.leaves for b in sealed]
+
+    def test_empty_log_reads_empty(self, tmp_path) -> None:
+        assert read_batch_log(tmp_path / "nonexistent.jsonl") == []
+
+    def test_on_disk_leaf_tamper_is_detected(self, tmp_path) -> None:
+        """THE GATE: mutate a byte on disk → reload → verify catches it.
+
+        Round-trip equality only proves serialization. The property that matters
+        is that tampering with the file is detected, so we mutate the persisted
+        bytes and assert verify_batches reports a break.
+        """
+        sealed = seal_batches([build_batch([_leaf(0), _leaf(1)])])
+        log = tmp_path / "batches.jsonl"
+        write_batch_log(log, sealed)
+
+        raw = log.read_text()
+        assert "h0h0" in raw  # part of leaf 0's record_hash
+        log.write_text(raw.replace("h0h0", "XXXX", 1))  # flip a leaf byte on disk
+
+        loaded = read_batch_log(log)
+        assert verify_batches(loaded) is not None  # recomputed root != stored root
+
+    def test_on_disk_batch_drop_is_detected(self, tmp_path) -> None:
+        """Delete a (non-tail) batch line on disk → the prev_root link breaks."""
+        sealed = seal_batches([
+            build_batch([_leaf(0)]),
+            build_batch([_leaf(1)]),
+            build_batch([_leaf(2)]),
+        ])
+        log = tmp_path / "batches.jsonl"
+        write_batch_log(log, sealed)
+
+        lines = log.read_text().splitlines()
+        del lines[1]  # drop the middle batch
+        log.write_text("\n".join(lines) + "\n")
+
+        loaded = read_batch_log(log)
+        assert verify_batches(loaded) is not None
+
+
+class TestVerifyMerkleCLI:
+    """The wiring's real entry point: `isnad verify-merkle --log PATH`."""
+
+    def _run(self, argv: list[str]) -> int:
+        import pytest
+
+        from isnad.cli.main import main
+
+        with pytest.raises(SystemExit) as exc:
+            main(argv)
+        return exc.value.code if isinstance(exc.value.code, int) else 1
+
+    def test_cli_intact_log_exits_zero(self, tmp_path, capsys) -> None:
+        log = tmp_path / "batches.jsonl"
+        write_batch_log(log, seal_batches([build_batch([_leaf(0), _leaf(1)])]))
+        code = self._run(["verify-merkle", "--log", str(log)])
+        assert code == 0
+        assert "intact" in capsys.readouterr().out
+
+    def test_cli_tampered_log_exits_one(self, tmp_path, capsys) -> None:
+        log = tmp_path / "batches.jsonl"
+        write_batch_log(log, seal_batches([build_batch([_leaf(0), _leaf(1)])]))
+        raw = log.read_text()
+        log.write_text(raw.replace("h0h0", "XXXX", 1))
+        code = self._run(["verify-merkle", "--log", str(log)])
+        assert code == 1
+        assert "broken" in capsys.readouterr().out

@@ -33,9 +33,15 @@ Stdlib only (``hashlib`` via ``audit/canonical.py``).
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
+from pathlib import Path
+from typing import TYPE_CHECKING
 
 from isnad.audit.canonical import sha256_hex
+
+if TYPE_CHECKING:
+    from isnad.audit.schema import AuditRecord
 
 # Domain-separation prefixes keep leaf hashes, internal-node hashes, and the
 # empty-tree sentinel in disjoint spaces (guards against second-preimage tricks
@@ -207,3 +213,67 @@ def verify_inclusion(proof: InclusionProof, root: str) -> bool:
     for sibling, side in proof.audit_path:
         node = _node_hash(sibling, node) if side == "left" else _node_hash(node, sibling)
     return node == root
+
+
+# ---------------------------------------------------------------------------
+# Wiring: AuditRecord → leaf, and on-disk persistence of sealed batches
+# ---------------------------------------------------------------------------
+
+
+def record_to_leaf(record: AuditRecord) -> tuple[str, str]:
+    """Turn an ``AuditRecord`` into a Merkle leaf ``(record_id, record_hash)``.
+
+    Uses the record's own self-integrity hash (``integrity.record_hash``), so a
+    leaf commits to the exact record the audit layer already hashes — no new
+    hash surface. Callers build leaves independently (one per graded claim),
+    then hand an ordered list to ``build_batch``/``seal_batches``.
+    """
+    return (record.record_id, record.integrity.record_hash)
+
+
+def write_batch_log(path: str | Path, batches: list[MerkleBatch]) -> None:
+    """Persist sealed batches to a JSONL batch log, one JSON object per batch.
+
+    Written **once per seal**, not once per record: the batch log has a single
+    writer by construction (the seal step is already the one sequential point),
+    so this persistence layer does not reintroduce the concurrent-append
+    contention the batch model exists to avoid. Leaves are produced in parallel
+    and stay caller-side; only sealed batches are persisted.
+
+    Overwrites ``path`` with the full ordered batch list (append a new batch by
+    passing the extended list). Each line is ``{leaves, root, prev_root}``.
+    """
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    lines = []
+    for b in batches:
+        obj = {
+            "leaves": [[rid, rhash] for rid, rhash in b.leaves],
+            "root": b.root,
+            "prev_root": b.prev_root,
+        }
+        lines.append(json.dumps(obj, separators=(",", ":")))
+    p.write_text("\n".join(lines) + ("\n" if lines else ""))
+
+
+def read_batch_log(path: str | Path) -> list[MerkleBatch]:
+    """Read a batch log back into ``MerkleBatch`` objects (empty if absent).
+
+    ``root``/``prev_root`` are read as stored; ``verify_batches`` recomputes the
+    root from ``leaves`` so a tampered stored ``root`` (or tampered leaves) is
+    detected rather than trusted.
+    """
+    p = Path(path)
+    if not p.exists():
+        return []
+    batches: list[MerkleBatch] = []
+    for line in p.read_text().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        d = json.loads(line)
+        leaves = [(str(rid), str(rhash)) for rid, rhash in d["leaves"]]
+        batches.append(
+            MerkleBatch(leaves=leaves, root=str(d["root"]), prev_root=d.get("prev_root"))
+        )
+    return batches
