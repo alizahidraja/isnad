@@ -23,6 +23,7 @@ from __future__ import annotations
 import hashlib
 import hmac
 from collections.abc import Callable
+from typing import Any
 
 from isnad.audit.canonical import canonical_json
 from isnad.audit.schema import AuditRecord
@@ -67,5 +68,40 @@ def hmac_verifier(secret: str) -> Verifier:
     def verify(payload: str, signature: str) -> bool:
         expected = hmac.new(secret.encode(), payload.encode(), hashlib.sha256).hexdigest()
         return hmac.compare_digest(expected, signature)
+
+    return verify
+
+
+def ed25519_keypair() -> tuple[Any, Any]:
+    """Generate an Ed25519 (private, public) keypair via ``cryptography``.
+
+    ``cryptography`` is an optional dependency; it is imported lazily and this
+    raises ``ImportError`` if it is not installed.
+    """
+    from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+
+    private = Ed25519PrivateKey.generate()
+    return private, private.public_key()
+
+
+def ed25519_signer(private_key: Any) -> Signer:
+    """An Ed25519 detached signer (asymmetric — no shared secret)."""
+
+    def sign(payload: str) -> str:
+        return str(private_key.sign(payload.encode()).hex())
+
+    return sign
+
+
+def ed25519_verifier(public_key: Any) -> Verifier:
+    """The matching Ed25519 detached verifier."""
+    from cryptography.exceptions import InvalidSignature
+
+    def verify(payload: str, signature: str) -> bool:
+        try:
+            public_key.verify(bytes.fromhex(signature), payload.encode())
+            return True
+        except (InvalidSignature, ValueError):
+            return False
 
     return verify

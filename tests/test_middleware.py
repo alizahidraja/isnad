@@ -89,6 +89,28 @@ class TestMiddlewareAdapter:
         result = mw.wrap_tool_call(_Req(), lambda req: _Res())
         assert getattr(result, "quarantined", False) is True
 
+    def test_middleware_critic_gates_weak_contradiction(self) -> None:
+        """End-to-end hook path: a WEAK tool output that contradicts the corpus
+        → DAIF × CONTRADICTION → QUARANTINE, so the middleware gates it."""
+        from isnad.matn import DeterministicRuleCritic
+
+        reg = _registry(("tool:weak", NarratorGrade.WEAK))
+        mw = IsnadMiddleware(
+            reg,
+            domain="physics",
+            critic=DeterministicRuleCritic(),
+            corpus=["p = mv"],
+        )
+
+        class _Req:
+            tool_name = "tool:weak"
+
+        class _Res:
+            content = "p = h/lambda"  # contradicts the corpus
+
+        result = mw.wrap_tool_call(_Req(), lambda req: _Res())
+        assert getattr(result, "quarantined", False) is True
+
     def test_middleware_passes_clean_tool_call(self) -> None:
         reg = _registry(("tool:good", NarratorGrade.RELIABLE))
         mw = IsnadMiddleware(reg, domain="physics")
