@@ -59,6 +59,27 @@ class TestClaims:
         r = client.post("/v1/claims", json={"claim_text": "test", "chain": []})
         assert r.status_code == 401
 
+    def test_invalid_body_rejected_422(self):
+        """Pydantic validation (issue #93): a malformed body must 422, not silently
+        coerce or crash."""
+        # empty claim_text
+        r = client.post(
+            "/v1/claims",
+            json={"claim_text": "", "chain": []},
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 422
+        # invalid transform_type
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "F = ma",
+                "chain": [{"narrator_id": "x", "transform_type": "not-a-type"}],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 422
+
     def test_admin_required_for_narrator(self):
         r = client.post(
             "/v1/narrators", json={"narrator_id": "x"}, headers={"X-API-Key": "isnad-reader"}

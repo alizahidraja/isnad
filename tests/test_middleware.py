@@ -43,6 +43,37 @@ class TestGate:
         b = gate("x", ["model:bad"], reg, domain="physics")
         assert a.gated == b.gated and a.verdict.why == b.verdict.why
 
+    def test_with_critic_contradiction_gates(self) -> None:
+        """With a critic + corpus, a content contradiction blocks even a clean chain."""
+        from isnad.matn import DeterministicRuleCritic
+
+        reg = _registry(("model:good", NarratorGrade.RELIABLE))
+        r = gate(
+            "p = h/lambda",
+            ["model:good"],
+            reg,
+            domain="physics",
+            critic=DeterministicRuleCritic(),
+            corpus=["p = mv"],
+        )
+        # clean chain (SAHIH) but the content contradicts the corpus → REVIEW.
+        assert r.action is not None
+        assert r.action.value == "review"
+
+    def test_with_critic_consistent_does_not_gate(self) -> None:
+        from isnad.matn import DeterministicRuleCritic
+
+        reg = _registry(("model:good", NarratorGrade.RELIABLE))
+        r = gate(
+            "p = mv",
+            ["model:good"],
+            reg,
+            domain="physics",
+            critic=DeterministicRuleCritic(),
+            corpus=["p = mv"],
+        )
+        assert r.action.value == "serve"
+
 
 class TestMiddlewareAdapter:
     def test_middleware_wraps_tool_call_and_gates(self) -> None:
