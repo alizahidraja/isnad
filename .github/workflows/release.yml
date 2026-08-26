@@ -1,15 +1,20 @@
 name: Release
 
-# Triggered manually from the Actions tab, or on a push of a v* tag.
-# Bumps the version, tags, and publishes to PyPI via Trusted Publishing.
+# Triggered manually from the Actions tab, or on a push to main with a
+# version-bump commit message.  Bumps the version, tags, and publishes
+# to PyPI.
 #
-# To cut a release: bump the version in pyproject.toml, commit, push, then
-# push a tag matching v*.  (Tag push is the release trigger; a "bump:"
-# commit message no longer fires this workflow.)
+# Branch flow (see CONTRIBUTING.md):
+#   feature/*  ->  working  (CI runs)  ->  main  (this workflow releases)
 
 on:
   push:
-    tags: ["v*"]
+    branches: [main]
+    paths:
+      - "src/**"
+      - "pyproject.toml"
+      - "CITATION.cff"
+      - "README.md"
   workflow_dispatch:
 
 permissions:
@@ -18,7 +23,7 @@ permissions:
 
 jobs:
   release:
-    if: github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/v')
+    if: contains(github.event.head_commit.message, 'bump:') || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,7 +44,9 @@ jobs:
           uv build
 
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: uv publish
 
       - name: Create git tag
         run: |
