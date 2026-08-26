@@ -4,7 +4,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="arch_title" value="ISNAD–RIJĀL Framework v2.0.4 — Complete Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+        <mxCell id="arch_title" value="ISNAD–RIJĀL Framework v2.7.0 — Complete Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
           <mxGeometry x="350" y="15" width="950" height="40" as="geometry" />
         </mxCell>
         <mxCell id="arch_sub" value="Every module, class, method, and validation status — nothing omitted." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
@@ -340,7 +340,7 @@
         <mxCell id="pv5" value="&lt;b&gt;Decision matrix (all 12 cells)&lt;/b&gt; | &lt;b&gt;API endpoints (all tested)&lt;/b&gt; | &lt;b&gt;LangChain (9 tests)&lt;/b&gt; | &lt;b&gt;EmbeddingCritic (TF-IDF, functional)&lt;/b&gt; | &lt;b&gt;Database persistence (SQLAlchemy)&lt;/b&gt; | &lt;b&gt;Semantic matching pipeline (MiniLM)&lt;/b&gt; | &lt;b&gt;evaluate_direct() API&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="60" y="215" width="1260" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="pv6" value="&lt;b&gt;157 tests pass | 21 wiring checks | 38 public exports | ruff clean | 0 unused imports | v2.0.4 on PyPI&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=center;" vertex="1" parent="1">
+        <mxCell id="pv6" value="&lt;b&gt;738 tests pass | 21 wiring checks | 38 public exports | ruff clean | 0 unused imports | v2.7.0 on PyPI&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=center;" vertex="1" parent="1">
           <mxGeometry x="60" y="280" width="1260" height="40" as="geometry" />
         </mxCell>
 
@@ -385,7 +385,7 @@
           <mxGeometry x="1020" y="640" width="300" height="70" as="geometry" />
         </mxCell>
 
-        <mxCell id="tests_note" value="&lt;b&gt;Test suite:&lt;/b&gt; 157 tests (pytest) | &lt;b&gt;Wiring:&lt;/b&gt; 21 checks | &lt;b&gt;Full system:&lt;/b&gt; 145 checks | &lt;b&gt;Coverage:&lt;/b&gt; All 16 test files, all core modules | &lt;b&gt;Version:&lt;/b&gt; 2.0.4 on PyPI | &lt;b&gt;Paper:&lt;/b&gt; arXiv:2607.24117" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
+        <mxCell id="tests_note" value="&lt;b&gt;Test suite:&lt;/b&gt; 738 tests (pytest) | &lt;b&gt;Wiring:&lt;/b&gt; 21 checks | &lt;b&gt;Full system:&lt;/b&gt; 145 checks | &lt;b&gt;Coverage:&lt;/b&gt; All 16 test files, all core modules | &lt;b&gt;Version:</b> 2.7.0 on PyPI | &lt;b&gt;Paper:&lt;/b&gt; arXiv:2607.24117" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
           <mxGeometry x="60" y="750" width="1260" height="40" as="geometry" />
         </mxCell>
 

@@ -4,8 +4,7 @@
 > now keyed by **(narrator, domain, role)** (issue #3), the default policy
 > enforces an **integrity ladder** (issue #30), and an UNGRADED narrator now
 > caps at **ḍaʿīf** by default (`lenient_unknown=True` restores the old ḥasan
-> ceiling). See the README and the code for current behaviour; issue #46 tracks
-> the full refresh.
+> ceiling). See the README and the code for current behaviour.
 >
 > For anyone who wants to understand, extend, or contribute to the ISNAD
 > framework.  Start here.
@@ -784,7 +783,8 @@ reg = seed_registry({
 ```
 
 Builds a Registry from a simple dict.  Warm-start is **required** for
-practical coverage — cold-start produces ~10% coverage.
+practical coverage — seeding is now evidence-backed (`Registry.seed`) and
+coverage is critic-bound (LLM critic ~63% on new claims, embedding ~56%).
 
 ### @isnad_track
 

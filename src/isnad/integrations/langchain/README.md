@@ -34,10 +34,11 @@ print(tracer.report())
 
 ### 1. A Content Critic
 
-The bundled deterministic critic is a **non-functional reference stub** on real text.
-It returns UNVERIFIABLE for everything that isn't an exact duplicate. Without a real
-critic, all HASAN-tier claims are held for REVIEW instead of auto-served. Coverage
-collapses to ~10% (the review budget).
+The default critic is `best_available_critic()` — the LLM tier if a key or local
+server is configured, else NLI, else TF-IDF. With no LLM key and no NLI install
+it degrades to the word-overlap EmbeddingCritic, which returns UNVERIFIABLE for
+most real prose, so HASAN-tier claims are held for REVIEW rather than auto-served
+(coverage is critic-bound).
 
 **Fix:** Supply an LLM-backed or embedding-based critic:
 

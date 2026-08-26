@@ -31,6 +31,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 
+from isnad import __version__
 from isnad.integrations.liveverify.normalize import normalize_text, sha256_hex
 
 # The honest authority basis — self-attested, no independent endorser.
@@ -60,7 +61,7 @@ def render_verdict(
     content_verdict: str,
     *,
     evaluated_at: datetime | None = None,
-    isnad_version: str = "2.0.12",
+    isnad_version: str = __version__,
 ) -> str:
     """Render the canonical verdict statement as deterministic, fixed-order text.
 

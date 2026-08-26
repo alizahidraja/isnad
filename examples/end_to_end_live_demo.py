@@ -18,7 +18,15 @@ It shows, in one pass:
 
 from __future__ import annotations
 
-from isnad import Chain, ChainLinkSpec, Registry, decide, grade_chain, seed_from_benchmark
+from isnad import (
+    Chain,
+    ChainLinkSpec,
+    Registry,
+    __version__,
+    decide,
+    grade_chain,
+    seed_from_benchmark,
+)
 from isnad.audit import (
     GradingStrategy,
     hmac_signer,
@@ -151,7 +159,7 @@ def main() -> None:
             ),
         ],
         weakest_link=WeakestLink("ingest-model@v1", "acceptable", "lowest narrator grade"),
-        environment=Environment("2.6.2", "3.13", "darwin"),
+        environment=Environment(__version__, "3.13", "darwin"),
     )
     sign_detached(record, hmac_signer("demo-secret"))
     rh = record.integrity.record_hash[:16]

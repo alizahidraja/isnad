@@ -32,7 +32,7 @@ one of three actions — serve, review, or quarantine. The library ships with a
 pluggable grading engine, content criticism, independent-chain corroboration, a
 tamper-evident audit record, and integrations for LangChain, LangGraph,
 CrewAI, LlamaIndex, and OpenTelemetry. It is Apache-2.0 licensed, tested by an
-automated suite of over 600 tests on Python 3.12 and 3.13, and installable with
+automated suite of over 700 tests on Python 3.12 and 3.13, and installable with
 `pip install isnad`.
 
 # Statement of need

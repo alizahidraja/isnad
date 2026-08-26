@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from isnad import __version__
 from isnad.audit import (
     AuditRecord,
     ChainNodeAudit,
@@ -30,7 +31,7 @@ def _record() -> AuditRecord:
         weakest_link=WeakestLink("src", "reliable", "lowest grade"),
         source_documents=[SourceDocument("https://e/x")],
         human_oversight=[],
-        environment=Environment("2.6.2", "3.12", "darwin"),
+        environment=Environment(__version__, "3.12", "darwin"),
     )
 
 

@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.7.0] — 2026-08-26
+
+### Added
+
+- **Committed critic evaluation** (`experiments/critic_eval/`) — a 60-case labeled
+  eval set + runner + results; the critic recall numbers are now measured, not
+  estimated (#96).
+- **Local Ollama LLM critic** — the LLM tier now works with a local server (no
+  API key) (#113).
+- **Evidence-backed cold-start seeding** — `Registry.seed()` / `seed_from_benchmark()`
+  / `accuracy_to_grade()` record `BOOTSTRAP_SEED` evidence so seeds survive the
+  posterior; the Live Verify source bootstrapper is likewise evidence-backed (#114, #115).
+- **Detached audit signatures** — `sign_detached` / `verify_detached` + HMAC and
+  Ed25519 signers (#97).
+- **`best_available_critic()` prefers the LLM tier by default** — the serving
+  gate (tracer, API, middleware) now uses the LLM critic when one is configured (#116).
+- **Live end-to-end demo** (`examples/end_to_end_live_demo.py`).
+
+### Changed
+
+- **NLI critics fixed** — corrected label order, softmax-normalized scores, and
+  same-subject retrieval + contradiction-first-with-margin: false-consistent
+  rate dropped from 0.84–0.88 to ~0.00–0.04, recall 0.12–0.16 → 0.72–0.76 (#110).
+
+### Fixed
+
+- API: Pydantic request validation (malformed body → 422) + louder persistence
+  failure logging (#93).
+- Firewall test is now field-level (grading may read `corrupted`, not the
+  manifest fields) (#98).
+- Middleware `gate()` runs the full decision matrix when given a critic + corpus (#63).
+- Richer PyPI metadata: project URLs + classifiers + keywords (#62).
+
 ## [2.6.2] — 2026-08-26
 
 ### Added
