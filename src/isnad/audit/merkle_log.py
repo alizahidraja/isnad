@@ -38,7 +38,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from isnad.audit.canonical import sha256_hex
+from isnad.audit.canonical import MalformedLogError, sha256_hex
 
 if TYPE_CHECKING:
     from isnad.audit.schema import AuditRecord
@@ -227,6 +227,11 @@ def record_to_leaf(record: AuditRecord) -> tuple[str, str]:
     leaf commits to the exact record the audit layer already hashes — no new
     hash surface. Callers build leaves independently (one per graded claim),
     then hand an ordered list to ``build_batch``/``seal_batches``.
+
+    Honest limit (issue #97): ``integrity.record_hash`` is a *self*-hash, so the
+    log proves **log-integrity** (these records, in this order, unaltered), not
+    **authorship** — anyone who can rewrite a record can also produce a matching
+    leaf. Anchoring authorship (e.g. a signature) is tracked separately in #97.
     """
     return (record.record_id, record.integrity.record_hash)
 
@@ -262,18 +267,27 @@ def read_batch_log(path: str | Path) -> list[MerkleBatch]:
     ``root``/``prev_root`` are read as stored; ``verify_batches`` recomputes the
     root from ``leaves`` so a tampered stored ``root`` (or tampered leaves) is
     detected rather than trusted.
+
+    A non-blank line that is not a valid batch (invalid/truncated JSON, missing
+    ``leaves``/``root``, or a malformed leaf shape) raises ``MalformedLogError``
+    with the line index — corrupted logs are reported, not crashed on (#108).
+    Blank lines (e.g. a trailing newline) are skipped, not treated as errors.
     """
     p = Path(path)
     if not p.exists():
         return []
     batches: list[MerkleBatch] = []
-    for line in p.read_text().splitlines():
-        line = line.strip()
+    index = -1
+    for raw in p.read_text().splitlines():
+        line = raw.strip()
         if not line:
             continue
-        d = json.loads(line)
-        leaves = [(str(rid), str(rhash)) for rid, rhash in d["leaves"]]
-        batches.append(
-            MerkleBatch(leaves=leaves, root=str(d["root"]), prev_root=d.get("prev_root"))
-        )
+        index += 1
+        try:
+            d = json.loads(line)
+            leaves = [(str(rid), str(rhash)) for rid, rhash in d["leaves"]]
+            root = str(d["root"])
+        except (json.JSONDecodeError, KeyError, TypeError, ValueError) as e:
+            raise MalformedLogError(index, str(e)) from e
+        batches.append(MerkleBatch(leaves=leaves, root=root, prev_root=d.get("prev_root")))
     return batches

@@ -9,6 +9,7 @@ ISO/IEC 42001, NIST AI RMF, or any other).  See ``docs/evidence-mapping.md``
 for an informational field-by-field mapping — which is not legal advice.
 """
 
+from isnad.audit.canonical import MalformedLogError
 from isnad.audit.chainlog import ChainBreak, ChainEntry, append_record, verify_chain
 from isnad.audit.exporter import build_audit_record, build_audit_record_from_nodes
 from isnad.audit.merkle_log import (
@@ -57,6 +58,7 @@ __all__ = [
     "HumanOversight",
     "InclusionProof",
     "Integrity",
+    "MalformedLogError",
     "MerkleBatch",
     "RedactFn",
     "SourceDocument",

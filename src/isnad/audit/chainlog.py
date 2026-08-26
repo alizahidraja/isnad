@@ -13,6 +13,8 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
+from isnad.audit.canonical import MalformedLogError
+
 
 @dataclass
 class ChainEntry:
@@ -37,22 +39,33 @@ class ChainBreak:
 
 
 def _read_chain(path: Path) -> list[ChainEntry]:
+    """Read the chain log, raising ``MalformedLogError`` on a corrupt line.
+
+    A non-blank line that is not a valid entry (invalid/truncated JSON, missing
+    ``index``/``record_id``/``record_hash``, or a non-numeric index) raises with
+    the line index — ``verify_chain`` catches it and reports "broken" (#108).
+    Blank lines are skipped.
+    """
     if not path.exists():
         return []
     entries: list[ChainEntry] = []
-    for line in path.read_text().splitlines():
-        line = line.strip()
+    index = -1
+    for raw in path.read_text().splitlines():
+        line = raw.strip()
         if not line:
             continue
-        d = json.loads(line)
-        entries.append(
-            ChainEntry(
+        index += 1
+        try:
+            d = json.loads(line)
+            entry = ChainEntry(
                 index=int(d["index"]),
                 record_id=str(d["record_id"]),
                 record_hash=str(d["record_hash"]),
                 prev_hash=d.get("prev_hash"),
             )
-        )
+        except (json.JSONDecodeError, KeyError, TypeError, ValueError) as e:
+            raise MalformedLogError(index, str(e)) from e
+        entries.append(entry)
     return entries
 
 
@@ -73,9 +86,15 @@ def verify_chain(chain_path: str | Path) -> ChainBreak | None:
     """Walk the chain and return the first break, or None if intact.
 
     A break means: an entry's ``prev_hash`` does not match the previous entry's
-    ``record_hash``, or an entry is missing a field.
+    ``record_hash``, an entry is missing a field, or a line is malformed
+    (corrupted/truncated JSON) — the latter surfaced as a break, not a crash
+    (#108).
     """
-    entries = _read_chain(Path(chain_path))
+    try:
+        entries = _read_chain(Path(chain_path))
+    except MalformedLogError as e:
+        # e.detail only; the CLI already prefixes "chain broken at entry N:".
+        return ChainBreak(e.index, f"malformed line: {e.detail}")
     for i, entry in enumerate(entries):
         if i == 0:
             if entry.prev_hash is not None:

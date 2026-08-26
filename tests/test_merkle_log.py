@@ -335,3 +335,65 @@ class TestVerifyMerkleCLI:
         code = self._run(["verify-merkle", "--log", str(log)])
         assert code == 1
         assert "broken" in capsys.readouterr().out
+
+
+class TestMalformedLogsDoNotCrash:
+    """Issue #108: a corrupted/partial log reports 'broken', never a traceback.
+
+    A tamper-evidence verifier must survive exactly the corrupted input it exists
+    to detect. read_batch_log raises a structured MalformedLogError; the CLI and
+    verify path turn that into exit 1 with a readable message.
+    """
+
+    def _run(self, argv: list[str]) -> int:
+        import pytest
+
+        from isnad.cli.main import main
+
+        with pytest.raises(SystemExit) as exc:
+            main(argv)
+        return exc.value.code if isinstance(exc.value.code, int) else 1
+
+    # Every corruption flavor the RCA found — incl. the ValueError cases the
+    # issue's JSONDecodeError/KeyError/TypeError list missed.
+    _CORRUPTIONS = {
+        "invalid_json": "{not valid json\n",
+        "truncated_line": '{"leaves":[["r","h"]],"roo',
+        "missing_key": '{"root":"x"}\n',
+        "leaves_not_iterable": '{"leaves":5,"root":"x"}\n',
+        "leaf_not_a_pair": '{"leaves":[[1]],"root":"x"}\n',
+    }
+
+    def test_read_batch_log_raises_structured_error(self, tmp_path) -> None:
+        import pytest
+
+        from isnad.audit import MalformedLogError, read_batch_log
+
+        for name, content in self._CORRUPTIONS.items():
+            log = tmp_path / f"{name}.jsonl"
+            log.write_text(content)
+            with pytest.raises(MalformedLogError) as exc:
+                read_batch_log(log)
+            assert exc.value.index == 0, name  # first (0th) non-blank line
+
+    def test_cli_verify_merkle_reports_malformed_not_crash(self, tmp_path, capsys) -> None:
+        for name, content in self._CORRUPTIONS.items():
+            log = tmp_path / f"{name}.jsonl"
+            log.write_text(content)
+            code = self._run(["verify-merkle", "--log", str(log)])
+            assert code == 1, name
+            assert "malformed" in capsys.readouterr().out, name
+
+    def test_malformed_line_index_points_at_the_bad_line(self, tmp_path) -> None:
+        import pytest
+
+        from isnad.audit import MalformedLogError, read_batch_log
+
+        # One good batch, then a corrupt line → the error names index 1.
+        good = seal_batches([build_batch([_leaf(0)])])
+        write_batch_log(tmp_path / "m.jsonl", good)
+        log = tmp_path / "m.jsonl"
+        log.write_text(log.read_text() + "{garbage\n")
+        with pytest.raises(MalformedLogError) as exc:
+            read_batch_log(log)
+        assert exc.value.index == 1

@@ -116,6 +116,46 @@ class TestChainLog:
     def test_empty_chain_verifies(self, tmp_path) -> None:
         assert verify_chain(tmp_path / "nonexistent.jsonl") is None
 
+    def test_malformed_chain_reports_break_not_crash(self, tmp_path) -> None:
+        """Issue #108: a corrupted/partial chain log is 'broken', not a traceback."""
+        for name, content in {
+            "invalid_json": "{not valid json\n",
+            "missing_key": '{"record_id":"r"}\n',
+            "index_not_int": '{"index":"NOPE","record_id":"r","record_hash":"h"}\n',
+        }.items():
+            p = tmp_path / f"{name}.jsonl"
+            p.write_text(content)
+            break_ = verify_chain(p)  # must not raise
+            assert break_ is not None, name
+            assert "malformed" in break_.reason, name
+
+    def test_malformed_line_after_good_entries_keeps_the_index(self, tmp_path) -> None:
+        p = tmp_path / "chain.jsonl"
+        append_record(p, "r0", "h0")
+        p.write_text(p.read_text() + "{garbage\n")
+        break_ = verify_chain(p)
+        assert break_ is not None
+        assert break_.index == 1  # the corrupt second line
+
+    def test_blank_trailing_line_is_not_a_break(self, tmp_path) -> None:
+        p = tmp_path / "chain.jsonl"
+        append_record(p, "r0", "h0")
+        p.write_text(p.read_text() + "\n")  # extra blank line
+        assert verify_chain(p) is None
+
+    def test_append_onto_corrupt_chain_raises_structured_error(self, tmp_path) -> None:
+        """Behaviour change (#108): appending onto a corrupt chain raises a
+        structured MalformedLogError, not a raw JSONDecodeError — don't extend a
+        chain whose prior links can't be read."""
+        import pytest
+
+        from isnad.audit import MalformedLogError
+
+        p = tmp_path / "chain.jsonl"
+        p.write_text("{garbage\n")
+        with pytest.raises(MalformedLogError):
+            append_record(p, "r0", "h0")
+
 
 class TestExporter:
     def test_builds_record_with_weakest_link_and_hash(self, tmp_path) -> None:
