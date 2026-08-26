@@ -219,6 +219,9 @@ class CappedCorroborationPolicy:
       (minimum gate).
     - Chains with independence_score below INDEPENDENCE_THRESHOLD (0.8)
       are excluded: correlated chains do not count as independent.
+    - Chains above the threshold earn credit in proportion to their
+      independence score (the disjointness discount, #125 tier 1): a chain
+      at 0.85 contributes 85% of a full chain's log-error reduction.
     - All independent chains (including DAIF) contribute to the
       combined error reduction; even weak corroboration adds weight.
     - The combined log-error ratio must reach MIN_EFFECTIVE_WEIGHT
@@ -269,25 +272,38 @@ class CappedCorroborationPolicy:
         if base_grade == ChainGrade.MAWDU:
             return base_grade
 
-        # --- Filter: only chains that pass independence threshold ---
-        independent_grades: list[ChainGrade] = []
-        for grade, score in zip(corroborating_chains, independence_scores, strict=True):
-            if score >= self.INDEPENDENCE_THRESHOLD:
-                independent_grades.append(grade)
+        # --- Filter: only chains that pass independence threshold. ---
+        # Keep (grade, score) pairs so the disjointness discount below can
+        # weight each chain's contribution by its independence score.
+        independent: list[tuple[ChainGrade, float]] = [
+            (grade, score)
+            for grade, score in zip(corroborating_chains, independence_scores, strict=True)
+            if score >= self.INDEPENDENCE_THRESHOLD
+        ]
 
-        if not independent_grades:
+        if not independent:
             return base_grade
 
         # --- Minimum-grade gate: at least one chain must clear threshold ---
-        if not any(g >= self.MIN_GATE_GRADE for g in independent_grades):
+        if not any(g >= self.MIN_GATE_GRADE for g, _ in independent):
             return base_grade
 
-        # --- Information-theoretic corroboration ---
-        # Each chain at grade G_i has an implied error probability p_i.
-        # Combined error ∝ ∏ p_i (multiplicative reduction).
-        # Effective weight = log-reduction normalised by HASAN baseline.
+        # --- Information-theoretic corroboration with the disjointness discount. ---
+        # Each chain at grade G_i has an implied error probability p_i. A chain's
+        # contribution is weighted by its independence score s_i: a fully
+        # independent chain (1.0) contributes log(p_i) in full; a partially
+        # independent chain (e.g. 0.85) contributes 0.85 * log(p_i). This is the
+        # tier-1 disjointness discount from #125: correlated chains earn credit
+        # in proportion to their independence, approaching zero as they converge.
+        #
+        # Under the current penalty set only 1.0 clears the gate, so this is a
+        # no-op today — it generalises the binary filter without changing
+        # current behaviour, and becomes meaningful when partial scores in
+        # (0.8, 1.0) arise (recalibrated penalties, an extra signal).
         err = self.ERROR_PROBS
-        combined_log_error = sum(math.log(max(err.get(g, 0.30), 0.001)) for g in independent_grades)
+        combined_log_error = sum(
+            score * math.log(max(err.get(g, 0.30), 0.001)) for g, score in independent
+        )
         combined_log_error += math.log(max(err.get(base_grade, 0.30), 0.001))
 
         hasan_log = math.log(err[ChainGrade.HASAN])
@@ -676,7 +692,9 @@ class CorroborationEngine:
             independence_scores=independence_scores,
         )
 
-        effective_weight = self._compute_effective_weight(base_chain_grade, grades)
+        effective_weight = self._compute_effective_weight(
+            base_chain_grade, grades, independence_scores
+        )
         upgraded_flag = upgraded != base_chain_grade
 
         return CorroborationResult(
@@ -700,10 +718,21 @@ class CorroborationEngine:
         self,
         base_grade: ChainGrade,
         corroborating_grades: list[ChainGrade],
+        independence_scores: list[float],
     ) -> float:
-        """Compute information-theoretic effective weight."""
+        """Compute information-theoretic effective weight.
+
+        Each chain's log-error reduction is weighted by its independence score
+        (the disjointness discount), matching
+        ``CappedCorroborationPolicy.compute_corroborated_grade`` so the number
+        reported in ``CorroborationResult.effective_weight`` agrees with the
+        number the policy actually used for its decision.
+        """
         err = self._policy.ERROR_PROBS
-        combined = sum(math.log(max(err.get(g, 0.30), 0.001)) for g in corroborating_grades)
+        combined = sum(
+            score * math.log(max(err.get(g, 0.30), 0.001))
+            for g, score in zip(corroborating_grades, independence_scores, strict=True)
+        )
         combined += math.log(max(err.get(base_grade, 0.30), 0.001))
         hasan_log = math.log(err[ChainGrade.HASAN])
         return combined / max(hasan_log, -10.0)

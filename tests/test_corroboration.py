@@ -313,6 +313,49 @@ class TestCappedCorroborationPolicy:
         # min gate passes via the HASAN chain.
         assert result == ChainGrade.HASAN
 
+    def test_disjointness_discount_reduces_effective_weight(self) -> None:
+        """A partial independence score (0.85) earns less weight than 1.0 (#125).
+
+        HASAN + DAIF at full independence gives effective weight 2.046 (upgrade).
+        The same pair at 0.85 gives 1.817 (below the 2.0 gate → no upgrade). This
+        proves the discount is not just a cosmetic relabel — it changes decisions.
+        """
+        pol = CappedCorroborationPolicy()
+        full = pol.compute_corroborated_grade(
+            ChainGrade.DAIF,
+            [ChainGrade.HASAN, ChainGrade.DAIF],
+            [1.0, 1.0],
+        )
+        discounted = pol.compute_corroborated_grade(
+            ChainGrade.DAIF,
+            [ChainGrade.HASAN, ChainGrade.DAIF],
+            [0.85, 0.85],
+        )
+        assert full == ChainGrade.HASAN
+        assert discounted == ChainGrade.DAIF  # discount pushed it below the gate
+
+    def test_disjointness_discount_is_noop_at_full_independence(self) -> None:
+        """All scores 1.0 → behaviour identical to before the discount existed."""
+        pol = CappedCorroborationPolicy()
+        result = pol.compute_corroborated_grade(
+            ChainGrade.DAIF,
+            [ChainGrade.HASAN, ChainGrade.HASAN],
+            [1.0, 1.0],
+        )
+        assert result == ChainGrade.HASAN
+
+    def test_disjointness_discount_partial_score_still_counts(self) -> None:
+        """A partial score above the gate contributes, just weighted down."""
+        pol = CappedCorroborationPolicy()
+        # 3 HASAN at 0.85 → effective 3.073 ≥ 2.0 → still upgrades, despite the
+        # discount. Partial credit is not zero credit.
+        result = pol.compute_corroborated_grade(
+            ChainGrade.DAIF,
+            [ChainGrade.HASAN, ChainGrade.HASAN, ChainGrade.HASAN],
+            [0.85, 0.85, 0.85],
+        )
+        assert result == ChainGrade.HASAN
+
 
 class TestEvaluateCorroborationIntegration:
     """End-to-end corroboration evaluation with correlation detection."""
