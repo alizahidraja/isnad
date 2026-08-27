@@ -1,5 +1,117 @@
 # Changelog
 
+## [2.9.9] — 2026-08-27
+
+### Added
+
+- **ISNAD-Bench export** (`bench/export.py`) — per-chain graded output as JSONL
+  with a reproducibility header (source SHA-256, mapping SHA-256, invocation);
+  shared `bench/_grade.py` extracted from `run.py` so export and compute can
+  never drift (#134). Dataset card + HF card + `Dataset` JSON-LD + leaderboard.
+- **Published the benchmark** outside the repo: HF dataset
+  `alizahidraja/isnad-bench` (derived output, CC-BY-4.0, κ=0.8714 reproducible
+  from the hosted JSONL) and Zenodo DOI 10.5281/zenodo.22132880 (#134).
+
+### Changed
+
+- **Release publishing → Trusted Publishing (OIDC)** — no long-lived PyPI token
+  (#162).
+- Consolidated `MalformedLogError` into `canonical.py` (was duplicated in the
+  two readers); `verify_chain` now returns a `ChainBreak` on malformed input
+  (credits @AusafMo, #129).
+
+### Docs
+
+- §8.4 matched-coverage measured resolution (`results/MATCHED_COVERAGE_FINDING.md`).
+- Chain-viewer deployed to GitHub Pages (#131).
+
+## [2.9.8] — 2026-08-27
+
+### Added
+
+- **Live Verify `supersede_verdict`** — a re-graded claim flips its old hash to
+  `{"status": "superseded", "superseded_by": …}` and publishes the new one, so a
+  published verdict never silently stays "verified" forever (#122).
+
+## [2.9.7] — 2026-08-27
+
+### Fixed
+
+- **`verify-merkle` / `verify-chain` report malformed logs instead of crashing**
+  — a corrupted/truncated log now produces "broken at entry N" with exit 1, not
+  an uncaught traceback (#108).
+
+## [2.9.6] — 2026-08-27
+
+### Added
+
+- **End-to-end utility experiment** (`experiments/e2e_utility/`) — real
+  LLM-generated claims (DeepSeek) graded by the full pipeline against a
+  deterministic oracle: gated 0.0% served-error vs ungated 50.0% (#128).
+
+## [2.9.5] — 2026-08-27
+
+### Added
+
+- **Two-axis ablation** (`experiments/two_axis_ablation/`) — proves the
+  ʿadālah/ḍabṭ split quarantines a "fabricator who is usually accurate" at 3
+  integrity strikes where a blended score still serves; the inverse case proves
+  precision recovery (#124).
+
+## [2.9.4] — 2026-08-27
+
+### Fixed
+
+- Corrected the critic fault classification in the #126 measurement:
+  `fabricated_numeric` is content corruption, not transmission noise. The
+  corrected LLM false-consistent rate on content corruption is 39.1%. (#126)
+
+## [2.9.3] — 2026-08-27
+
+### Added
+
+- **LLM critic false-consistent measurement** (`critic_false_consistent.py`) —
+  the two-axis split applied to measurement: content corruption vs transmission
+  noise (#126).
+
+## [2.9.2] — 2026-08-27
+
+### Added
+
+- **Critic false-consistent safety gate** + `best_available_critic()` wired
+  into the §8 gate (replacing the stale inline DeepSeek critic) (#126).
+
+## [2.9.1] — 2026-08-27
+
+### Added
+
+- **9 negative controls for corroboration v3** (physics corpus), including the
+  document-hash hard-correlation case — a 100% fire rate is now backed by a
+  discrimination check (#127).
+
+## [2.9.0] — 2026-08-27
+
+### Added
+
+- **Chain independence — emit + populate (step 3)** (#125): `detect()` returns a
+  structured `IndependenceAssessment` (score + which shared signals fired);
+  `CorroborationResult` carries per-chain provenance; `document_hashes` threaded
+  through the API + DB.
+
+## [2.8.0] — 2026-08-27
+
+### Added
+
+- **Chain independence — detect + discount (steps 1–2)** (#125): document-hash
+  overlap in `SharedLineageDetector` (the madār case) and the disjointness
+  discount (corroboration weighted by independence score).
+
+### Changed
+
+- Visibility sweep: Beta status, full `all` extra, README first-screen keywords,
+  architecture diagram (PNG/SVG) + viewer GIF, licensing commitment
+  (`LICENSING.md`).
+
 ## [2.7.0] — 2026-08-26
 
 ### Added
