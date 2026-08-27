@@ -1,0 +1,42 @@
+name: Pages
+
+# Deploy the self-contained chain viewer (viewer/index.html) to GitHub Pages.
+# The viewer has all three fixtures embedded, so this is a static single-page
+# deploy — no build step, no data fetch.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "viewer/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload viewer as site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: viewer
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
