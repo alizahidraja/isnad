@@ -11,22 +11,33 @@ Locks the ablation's key claims into CI so the experiment cannot silently drift:
 
 from __future__ import annotations
 
+import importlib.util
 import os
-import sys
 
-# Add the experiment dir to sys.path so run.py is importable.
+
+# Load the experiment module under a UNIQUE name so two experiment scripts that
+# both ship a `run.py` cannot collide in pytest's import cache.
+def _load(module_name: str, path: str):
+    import sys
+
+    spec = importlib.util.spec_from_file_location(module_name, path)
+    mod = importlib.util.module_from_spec(spec)
+    # Register BEFORE exec so @dataclass decorators (which resolve their
+    # module via sys.modules) can find the module.
+    sys.modules[module_name] = mod
+    spec.loader.exec_module(mod)
+    return mod
+
+
 _exp_dir = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "experiments", "two_axis_ablation"
 )
-if _exp_dir not in sys.path:
-    sys.path.insert(0, _exp_dir)
+_run = _load("_isnad_two_axis_ablation_run", os.path.join(_exp_dir, "run.py"))
 
-from run import (
-    BlendedTransitionPolicy,
-    fabricator_scenario,
-    clumsy_honest_scenario,
-    run_scenario,
-)
+BlendedTransitionPolicy = _run.BlendedTransitionPolicy
+fabricator_scenario = _run.fabricator_scenario
+clumsy_honest_scenario = _run.clumsy_honest_scenario
+run_scenario = _run.run_scenario
 
 from isnad.types import Action, NarratorGrade
 
