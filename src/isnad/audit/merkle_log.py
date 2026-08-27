@@ -38,29 +38,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from isnad.audit.canonical import sha256_hex
+from isnad.audit.canonical import MalformedLogError, sha256_hex
 
 if TYPE_CHECKING:
     from isnad.audit.schema import AuditRecord
-
-
-class MalformedLogError(Exception):
-    """A batch-log line could not be parsed as a sealed Merkle batch.
-
-    Raised by :func:`read_batch_log` when a line is not valid JSON, is missing
-    the ``leaves``/``root`` keys, or has a field of the wrong type.  The message
-    names the offending entry index and the reason, so a verifier can report
-    "broken at entry N: <reason>" instead of an uncaught traceback.
-
-    A tamper-evidence verifier is the one tool that must survive malformed
-    input: a truncated or corrupted log is evidence of tampering, not a crash.
-    """
-
-    def __init__(self, index: int, reason: str):
-        self.index = index
-        self.reason = reason
-        super().__init__(f"malformed entry {index}: {reason}")
-
 
 # Domain-separation prefixes keep leaf hashes, internal-node hashes, and the
 # empty-tree sentinel in disjoint spaces (guards against second-preimage tricks
@@ -246,6 +227,11 @@ def record_to_leaf(record: AuditRecord) -> tuple[str, str]:
     leaf commits to the exact record the audit layer already hashes — no new
     hash surface. Callers build leaves independently (one per graded claim),
     then hand an ordered list to ``build_batch``/``seal_batches``.
+
+    Honest limit (#97): ``integrity.record_hash`` is a *self*-hash, so the log
+    proves **log-integrity** (these records, in this order, unaltered), not
+    **authorship** — anyone who can rewrite a record can also produce a matching
+    leaf. Anchoring authorship (e.g. a signature) is tracked separately in #97.
     """
     return (record.record_id, record.integrity.record_hash)
 
