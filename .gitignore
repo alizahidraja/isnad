@@ -25,6 +25,9 @@ wheels/
 *.db-shm
 !data/.gitkeep
 
+# Generated benchmark artifacts (reproducible via bench.export / bench.run)
+data/export/
+
 # OS
 .DS_Store
 Thumbs.db
