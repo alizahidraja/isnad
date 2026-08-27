@@ -13,21 +13,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-
-class MalformedLogError(Exception):
-    """A chain-log line could not be parsed as a chain entry.
-
-    Raised by :func:`_read_chain` when a line is not valid JSON, is missing a
-    required key, or has a field of the wrong type.  Carries the offending entry
-    index and a reason so a verifier can report "broken at entry N: <reason>"
-    instead of crashing with a traceback — the same guarantee
-    ``merkle_log.MalformedLogError`` gives the batch log.
-    """
-
-    def __init__(self, index: int, reason: str):
-        self.index = index
-        self.reason = reason
-        super().__init__(f"malformed entry {index}: {reason}")
+from isnad.audit.canonical import MalformedLogError
 
 
 @dataclass
@@ -99,9 +85,14 @@ def verify_chain(chain_path: str | Path) -> ChainBreak | None:
     """Walk the chain and return the first break, or None if intact.
 
     A break means: an entry's ``prev_hash`` does not match the previous entry's
-    ``record_hash``, or an entry is missing a field.
+    ``record_hash``, an entry is missing a field, or a line is malformed
+    (corrupted/truncated JSON) — the latter surfaced as a break with a
+    "malformed" reason, not a crash (#108).
     """
-    entries = _read_chain(Path(chain_path))
+    try:
+        entries = _read_chain(Path(chain_path))
+    except MalformedLogError as exc:
+        return ChainBreak(exc.index, f"malformed entry: {exc.reason}")
     for i, entry in enumerate(entries):
         if i == 0:
             if entry.prev_hash is not None:

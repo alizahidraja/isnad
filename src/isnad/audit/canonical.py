@@ -20,6 +20,28 @@ import hashlib
 import json
 
 
+class MalformedLogError(Exception):
+    """A tamper-evidence log line could not be parsed into a valid entry (#108).
+
+    Raised by the on-disk readers (``chainlog._read_chain``,
+    ``merkle_log.read_batch_log``) when a non-blank line is invalid/truncated
+    JSON, is missing a required key, or has the wrong shape. ``index`` is the
+    0-based position among non-blank lines; ``reason`` is the human-readable
+    cause. Verifiers catch this and surface a structured break, so a corrupted
+    or partially-written log reports "broken" and the CLI exits 1 rather than
+    crashing with a traceback — which is the whole point of a tamper-evidence
+    verifier: malformed input is exactly what it must survive, not die on.
+
+    (Consolidated here from the two audit readers after #108; originally two
+    duplicate definitions.)
+    """
+
+    def __init__(self, index: int, reason: str):
+        self.index = index
+        self.reason = reason
+        super().__init__(f"malformed entry {index}: {reason}")
+
+
 def canonical_json(obj: object) -> str:
     """Serialize an object to its RFC 8785-compatible canonical form."""
     return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False)

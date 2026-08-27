@@ -119,24 +119,20 @@ class TestChainLog:
         assert verify_chain(tmp_path / "nonexistent.jsonl") is None
 
     def test_malformed_chain_reports_malformed(self, tmp_path) -> None:
-        """#108: a malformed chain line must raise MalformedLogError, not crash."""
-        from isnad.audit.chainlog import MalformedLogError
-
+        """#108: a malformed chain line returns a ChainBreak, not a crash."""
         p = tmp_path / "chain.jsonl"
         append_record(p, "r0", "h0")
         append_record(p, "r1", "h1")
         lines = p.read_text().splitlines()
         lines[1] = "{not json"
         p.write_text("\n".join(lines) + "\n")
-        with pytest.raises(MalformedLogError) as exc:
-            verify_chain(p)
-        assert exc.value.index == 1
-        assert "invalid JSON" in exc.value.reason
+        break_ = verify_chain(p)
+        assert break_ is not None
+        assert break_.index == 1
+        assert "invalid JSON" in break_.reason
 
     def test_missing_key_chain_reports_malformed(self, tmp_path) -> None:
-        """#108: a missing key must raise MalformedLogError with a clear reason."""
-        from isnad.audit.chainlog import MalformedLogError
-
+        """#108: a missing key returns a ChainBreak with a clear reason."""
         p = tmp_path / "chain.jsonl"
         append_record(p, "r0", "h0")
         lines = p.read_text().splitlines()
@@ -144,9 +140,9 @@ class TestChainLog:
         del d["record_hash"]
         lines[0] = json.dumps(d)
         p.write_text("\n".join(lines) + "\n")
-        with pytest.raises(MalformedLogError) as exc:
-            verify_chain(p)
-        assert "record_hash" in exc.value.reason
+        break_ = verify_chain(p)
+        assert break_ is not None
+        assert "record_hash" in break_.reason
 
 
 class TestExporter:

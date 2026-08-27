@@ -44,9 +44,9 @@ jobs:
           uv build
 
       - name: Publish to PyPI
-        env:
-          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_TOKEN }}
-        run: uv publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        # Trusted Publishing (OIDC): no token secret. PyPI must have this repo
+        # registered as a trusted publisher (workflow name: release.yml).
 
       - name: Create git tag
         run: |

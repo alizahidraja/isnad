@@ -267,13 +267,8 @@ def _verify_chain(argv: list[str]) -> int:
     args = parser.parse_args(argv)
 
     from isnad.audit import verify_chain
-    from isnad.audit.chainlog import MalformedLogError
 
-    try:
-        break_ = verify_chain(args.chain)
-    except MalformedLogError as exc:
-        print(f"chain malformed at entry {exc.index}: {exc.reason}")
-        return 1
+    break_ = verify_chain(args.chain)
     if break_ is None:
         print("chain intact")
         return 0
