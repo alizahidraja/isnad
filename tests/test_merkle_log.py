@@ -15,6 +15,8 @@ regressed below the linear chain.
 
 from __future__ import annotations
 
+import pytest
+
 from isnad.audit.merkle_log import (
     MerkleBatch,
     build_batch,
@@ -335,3 +337,46 @@ class TestVerifyMerkleCLI:
         code = self._run(["verify-merkle", "--log", str(log)])
         assert code == 1
         assert "broken" in capsys.readouterr().out
+
+    def test_cli_malformed_json_exits_one_not_traceback(self, tmp_path, capsys) -> None:
+        """#108: a malformed line must produce 'malformed' + exit 1, not a crash."""
+        log = tmp_path / "batches.jsonl"
+        write_batch_log(log, seal_batches([build_batch([_leaf(0)]), build_batch([_leaf(1)])]))
+        lines = log.read_text().splitlines()
+        lines[1] = '{"leaves": [['  # truncated mid-JSON
+        log.write_text("\n".join(lines) + "\n")
+        code = self._run(["verify-merkle", "--log", str(log)])
+        out = capsys.readouterr().out
+        assert code == 1
+        assert "malformed" in out
+        assert "Traceback" not in out
+
+    def test_cli_missing_key_exits_one(self, tmp_path, capsys) -> None:
+        """#108: a missing required key must report malformed, not KeyError."""
+        log = tmp_path / "batches.jsonl"
+        write_batch_log(log, seal_batches([build_batch([_leaf(0)]), build_batch([_leaf(1)])]))
+        import json
+
+        lines = log.read_text().splitlines()
+        d = json.loads(lines[0])
+        del d["root"]
+        lines[0] = json.dumps(d)
+        log.write_text("\n".join(lines) + "\n")
+        code = self._run(["verify-merkle", "--log", str(log)])
+        out = capsys.readouterr().out
+        assert code == 1
+        assert "malformed" in out
+
+    def test_read_batch_log_raises_malformed(self, tmp_path) -> None:
+        """#108: read_batch_log raises MalformedLogError with index + reason."""
+        from isnad.audit.merkle_log import MalformedLogError, read_batch_log
+
+        log = tmp_path / "batches.jsonl"
+        write_batch_log(log, seal_batches([build_batch([_leaf(0)]), build_batch([_leaf(1)])]))
+        lines = log.read_text().splitlines()
+        lines[1] = "not json at all"
+        log.write_text("\n".join(lines) + "\n")
+        with pytest.raises(MalformedLogError) as exc:
+            read_batch_log(log)
+        assert exc.value.index == 1
+        assert "invalid JSON" in exc.value.reason

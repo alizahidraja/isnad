@@ -267,8 +267,13 @@ def _verify_chain(argv: list[str]) -> int:
     args = parser.parse_args(argv)
 
     from isnad.audit import verify_chain
+    from isnad.audit.chainlog import MalformedLogError
 
-    break_ = verify_chain(args.chain)
+    try:
+        break_ = verify_chain(args.chain)
+    except MalformedLogError as exc:
+        print(f"chain malformed at entry {exc.index}: {exc.reason}")
+        return 1
     if break_ is None:
         print("chain intact")
         return 0
@@ -285,8 +290,13 @@ def _verify_merkle(argv: list[str]) -> int:
     args = parser.parse_args(argv)
 
     from isnad.audit import read_batch_log, verify_batches
+    from isnad.audit.merkle_log import MalformedLogError
 
-    break_ = verify_batches(read_batch_log(args.log))
+    try:
+        break_ = verify_batches(read_batch_log(args.log))
+    except MalformedLogError as exc:
+        print(f"batch log malformed at entry {exc.index}: {exc.reason}")
+        return 1
     if break_ is None:
         print("batch log intact")
         return 0

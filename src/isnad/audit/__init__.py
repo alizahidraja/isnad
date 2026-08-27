@@ -9,7 +9,15 @@ ISO/IEC 42001, NIST AI RMF, or any other).  See ``docs/evidence-mapping.md``
 for an informational field-by-field mapping — which is not legal advice.
 """
 
-from isnad.audit.chainlog import ChainBreak, ChainEntry, append_record, verify_chain
+from isnad.audit.chainlog import (
+    ChainBreak,
+    ChainEntry,
+    append_record,
+    verify_chain,
+)
+from isnad.audit.chainlog import (
+    MalformedLogError as ChainMalformedLog,
+)
 from isnad.audit.exporter import build_audit_record, build_audit_record_from_nodes
 from isnad.audit.merkle_log import (
     BatchBreak,
@@ -23,6 +31,9 @@ from isnad.audit.merkle_log import (
     verify_batches,
     verify_inclusion,
     write_batch_log,
+)
+from isnad.audit.merkle_log import (
+    MalformedLogError as MerkleMalformedLog,
 )
 from isnad.audit.schema import (
     AuditRecord,
@@ -51,6 +62,7 @@ __all__ = [
     "BatchBreak",
     "ChainBreak",
     "ChainEntry",
+    "ChainMalformedLog",
     "ChainNodeAudit",
     "Environment",
     "GradingStrategy",
@@ -58,6 +70,7 @@ __all__ = [
     "InclusionProof",
     "Integrity",
     "MerkleBatch",
+    "MerkleMalformedLog",
     "RedactFn",
     "SourceDocument",
     "WeakestLink",
