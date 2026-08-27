@@ -14,8 +14,10 @@ from typing import Any
 
 from isnad.critics.base import ContentCritic
 from isnad.critics.embedding import EmbeddingCritic, TFIDFIndex
+from isnad.critics.ensemble import EnsembleCritic
 from isnad.critics.llm import LLMCritic
 from isnad.critics.nli import HybridCritic, LocalNLICritic
+from isnad.critics.recompute import RecomputeCritic
 
 
 def _sentence_transformers_available() -> bool:
@@ -57,9 +59,11 @@ def best_available_critic(*, prefer_llm: bool = True, **kwargs: Any) -> ContentC
 __all__ = [
     "ContentCritic",
     "EmbeddingCritic",
+    "EnsembleCritic",
     "HybridCritic",
     "LLMCritic",
     "LocalNLICritic",
+    "RecomputeCritic",
     "TFIDFIndex",
     "best_available_critic",
 ]
