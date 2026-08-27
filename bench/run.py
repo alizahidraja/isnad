@@ -23,16 +23,27 @@ import sqlite3
 from collections import Counter, defaultdict
 from collections.abc import Iterator, Sequence
 
-from bench.data import Node, RawChain, iter_chains
-from bench.mapping import chain_grade_from_hukum, is_sentinel, narrator_grade_from_rank
+from bench._grade import (
+    bucket as _bucket,
+)
+from bench._grade import (
+    chain_grade_from_narrators as _chain_grade_from_narrators,
+)
+from bench._grade import (
+    grade_one_chain as _grade_one_chain,
+)
+from bench._grade import (
+    independence_set as _independence_set,
+)
+from bench.data import RawChain, iter_chains
+from bench.mapping import chain_grade_from_hukum, narrator_grade_from_rank
 from bench.metrics import (
     cohens_kappa,
     confusion_matrix,
     linear_weighted_kappa,
     per_class_metrics,
 )
-from isnad.core.grading import grade_chain
-from isnad.types import ChainGrade, NarratorGrade, TransformType
+from isnad.types import ChainGrade, NarratorGrade
 
 CLASSES = [g.value for g in (ChainGrade.SAHIH, ChainGrade.HASAN, ChainGrade.DAIF, ChainGrade.MAWDU)]
 
@@ -52,91 +63,6 @@ def _load_sanad_ids(db_path: str) -> list[int]:
         return [r[0] for r in conn.execute("SELECT id FROM sanads")]
     finally:
         conn.close()
-
-
-def _grade_one_chain(
-    nodes: tuple[Node, ...], rank_map: dict[int, NarratorGrade] | None = None
-) -> _GradeResult:
-    """Map one chain's nodes to ISNAD grades (sentinels → is_complete)."""
-    narrator_grades: list[NarratorGrade] = []
-    rank_nos: list[int] = []
-    has_gap = False
-    has_taliq = False
-    for node in nodes:
-        mapped = narrator_grade_from_rank(node.rank_no, node.rank, node.name)
-        if mapped.is_sentinel:
-            has_gap = True
-            if node.name == _TALIQ:
-                has_taliq = True
-            continue
-        if rank_map is not None and node.rank_no in rank_map:
-            grade = rank_map[node.rank_no]
-        else:
-            grade = mapped.narrator_grade
-        narrator_grades.append(grade)
-        if node.rank_no is not None:
-            rank_nos.append(node.rank_no)
-    return narrator_grades, not has_gap, rank_nos, has_taliq, has_gap
-
-
-def _chain_grade_from_narrators(
-    narrator_grades: list[NarratorGrade], is_complete: bool, lenient_unknown: bool = False
-) -> str:
-    transforms = [TransformType.PASS_THROUGH] * len(narrator_grades)
-    return str(
-        grade_chain(narrator_grades, transforms, is_complete, lenient_unknown=lenient_unknown).value
-    )
-
-
-def _independence_set(nodes: tuple[Node, ...]) -> frozenset[int]:
-    """Narrator ids excluding companions (rank 1) and gap sentinels.
-
-    Two routes of the same hadith that share *only* the companion are treated as
-    independent (the madār-free comparison), since the companion is the common
-    origin of every route.
-    """
-    return frozenset(
-        n.rawi_id for n in nodes if not is_sentinel(n.name, n.rank_no, n.rank) and n.rank_no != 1
-    )
-
-
-def _bucket(
-    true: str,
-    pred: str,
-    has_gap: bool,
-    has_taliq: bool,
-    rank_nos: list[int],
-    hukum: str | None,
-) -> str | None:
-    """Label a disagreement with the principled explanation, or None."""
-    if true == pred:
-        return None
-    hukum = hukum or ""
-    # ISNAD's stricter mawḍūʿ flag vs classical "weak".
-    if true == "daif" and pred == "mawdu":
-        return "severity: classical ḍaʿīf vs ISNAD mawḍūʿ (rejected narrator)"
-    if true == "mawdu" and pred == "daif":
-        return "severity: classical mawḍūʿ vs ISNAD ḍaʿīf"
-    # Continuity: ISNAD capped at ḍaʿīf because of a chain gap.
-    if has_gap and pred == "daif":
-        if has_taliq:
-            return "continuity: taʿlīq gap (scholar still sound/good)"
-        return "continuity: irsāl/inqiṭāʿ gap"
-    if true == "daif" and pred in ("hasan", "sahih"):
-        # Classical "weak alone, ḥasan with mutābaʿa (corroboration)" — ISNAD
-        # grants ḥasan directly from ACCEPTABLE narrators (§4.2 divergence).
-        if "توبع" in hukum:
-            return _CORROBORATION_BUCKET
-        if any(r in (7, 9) for r in rank_nos):
-            return "leniency: majhūl → ḥasan ceiling"
-        # A gap is asserted in the verdict text but no sentinel node exists in
-        # the chain structure, so ISNAD cannot see it.
-        if any(k in hukum for k in ("تعليق", "إرسال", "انقطاع")):
-            return "gap-in-text-only: ḍaʿīf by irsāl/taʿlīq (no sentinel)"
-        return "leniency: weak → sound/good (mapping)"
-    if true in ("sahih", "hasan") and pred in ("hasan", "sahih"):
-        return "grade: ṣaḥīḥ ↔ ḥasan boundary"
-    return "other"
 
 
 def _shuffled_rank_map(rng: random.Random) -> dict[int, NarratorGrade]:
