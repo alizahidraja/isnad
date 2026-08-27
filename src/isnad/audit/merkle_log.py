@@ -43,6 +43,25 @@ from isnad.audit.canonical import sha256_hex
 if TYPE_CHECKING:
     from isnad.audit.schema import AuditRecord
 
+
+class MalformedLogError(Exception):
+    """A batch-log line could not be parsed as a sealed Merkle batch.
+
+    Raised by :func:`read_batch_log` when a line is not valid JSON, is missing
+    the ``leaves``/``root`` keys, or has a field of the wrong type.  The message
+    names the offending entry index and the reason, so a verifier can report
+    "broken at entry N: <reason>" instead of an uncaught traceback.
+
+    A tamper-evidence verifier is the one tool that must survive malformed
+    input: a truncated or corrupted log is evidence of tampering, not a crash.
+    """
+
+    def __init__(self, index: int, reason: str):
+        self.index = index
+        self.reason = reason
+        super().__init__(f"malformed entry {index}: {reason}")
+
+
 # Domain-separation prefixes keep leaf hashes, internal-node hashes, and the
 # empty-tree sentinel in disjoint spaces (guards against second-preimage tricks
 # that swap a leaf for an internal node — RFC 6962 §2.1).
@@ -267,13 +286,23 @@ def read_batch_log(path: str | Path) -> list[MerkleBatch]:
     if not p.exists():
         return []
     batches: list[MerkleBatch] = []
-    for line in p.read_text().splitlines():
+    for n, line in enumerate(p.read_text().splitlines()):
         line = line.strip()
         if not line:
             continue
-        d = json.loads(line)
-        leaves = [(str(rid), str(rhash)) for rid, rhash in d["leaves"]]
-        batches.append(
-            MerkleBatch(leaves=leaves, root=str(d["root"]), prev_root=d.get("prev_root"))
-        )
+        try:
+            d = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise MalformedLogError(n, f"invalid JSON ({exc.msg})") from exc
+        if not isinstance(d, dict):
+            raise MalformedLogError(n, f"not a JSON object (got {type(d).__name__})")
+        try:
+            leaves = [(str(rid), str(rhash)) for rid, rhash in d["leaves"]]
+            root = str(d["root"])
+            prev_root = d.get("prev_root")
+        except KeyError as exc:
+            raise MalformedLogError(n, f"missing key {exc.args[0]!r}") from exc
+        except (TypeError, ValueError) as exc:
+            raise MalformedLogError(n, f"malformed value: {exc}") from exc
+        batches.append(MerkleBatch(leaves=leaves, root=root, prev_root=prev_root))
     return batches

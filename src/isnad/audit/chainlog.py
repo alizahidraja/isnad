@@ -14,6 +14,22 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
+class MalformedLogError(Exception):
+    """A chain-log line could not be parsed as a chain entry.
+
+    Raised by :func:`_read_chain` when a line is not valid JSON, is missing a
+    required key, or has a field of the wrong type.  Carries the offending entry
+    index and a reason so a verifier can report "broken at entry N: <reason>"
+    instead of crashing with a traceback — the same guarantee
+    ``merkle_log.MalformedLogError`` gives the batch log.
+    """
+
+    def __init__(self, index: int, reason: str):
+        self.index = index
+        self.reason = reason
+        super().__init__(f"malformed entry {index}: {reason}")
+
+
 @dataclass
 class ChainEntry:
     index: int
@@ -40,19 +56,29 @@ def _read_chain(path: Path) -> list[ChainEntry]:
     if not path.exists():
         return []
     entries: list[ChainEntry] = []
-    for line in path.read_text().splitlines():
+    for n, line in enumerate(path.read_text().splitlines()):
         line = line.strip()
         if not line:
             continue
-        d = json.loads(line)
-        entries.append(
-            ChainEntry(
-                index=int(d["index"]),
-                record_id=str(d["record_id"]),
-                record_hash=str(d["record_hash"]),
-                prev_hash=d.get("prev_hash"),
+        try:
+            d = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise MalformedLogError(n, f"invalid JSON ({exc.msg})") from exc
+        if not isinstance(d, dict):
+            raise MalformedLogError(n, f"not a JSON object (got {type(d).__name__})")
+        try:
+            entries.append(
+                ChainEntry(
+                    index=int(d["index"]),
+                    record_id=str(d["record_id"]),
+                    record_hash=str(d["record_hash"]),
+                    prev_hash=d.get("prev_hash"),
+                )
             )
-        )
+        except KeyError as exc:
+            raise MalformedLogError(n, f"missing key {exc.args[0]!r}") from exc
+        except (TypeError, ValueError) as exc:
+            raise MalformedLogError(n, f"malformed value: {exc}") from exc
     return entries
 
 

@@ -9,6 +9,8 @@ from __future__ import annotations
 
 import json
 
+import pytest
+
 from isnad import __version__
 from isnad.audit import (
     AuditRecord,
@@ -115,6 +117,36 @@ class TestChainLog:
 
     def test_empty_chain_verifies(self, tmp_path) -> None:
         assert verify_chain(tmp_path / "nonexistent.jsonl") is None
+
+    def test_malformed_chain_reports_malformed(self, tmp_path) -> None:
+        """#108: a malformed chain line must raise MalformedLogError, not crash."""
+        from isnad.audit.chainlog import MalformedLogError
+
+        p = tmp_path / "chain.jsonl"
+        append_record(p, "r0", "h0")
+        append_record(p, "r1", "h1")
+        lines = p.read_text().splitlines()
+        lines[1] = "{not json"
+        p.write_text("\n".join(lines) + "\n")
+        with pytest.raises(MalformedLogError) as exc:
+            verify_chain(p)
+        assert exc.value.index == 1
+        assert "invalid JSON" in exc.value.reason
+
+    def test_missing_key_chain_reports_malformed(self, tmp_path) -> None:
+        """#108: a missing key must raise MalformedLogError with a clear reason."""
+        from isnad.audit.chainlog import MalformedLogError
+
+        p = tmp_path / "chain.jsonl"
+        append_record(p, "r0", "h0")
+        lines = p.read_text().splitlines()
+        d = json.loads(lines[0])
+        del d["record_hash"]
+        lines[0] = json.dumps(d)
+        p.write_text("\n".join(lines) + "\n")
+        with pytest.raises(MalformedLogError) as exc:
+            verify_chain(p)
+        assert "record_hash" in exc.value.reason
 
 
 class TestExporter:
