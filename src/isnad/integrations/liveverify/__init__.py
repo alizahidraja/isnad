@@ -38,6 +38,7 @@ from isnad.integrations.liveverify.issuer import (
     build_verification_meta,
     render_verdict,
     seal_verdict,
+    supersede_verdict,
     write_issuer_files,
     write_verification_meta,
 )
@@ -56,6 +57,7 @@ __all__ = [
     "seal_to_narrator",
     "seal_verdict",
     "sha256_hex",
+    "supersede_verdict",
     "verify_claim",
     "walk_authority_chain",
     "write_issuer_files",

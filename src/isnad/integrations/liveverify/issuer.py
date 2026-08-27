@@ -16,12 +16,13 @@ outcome.  A page never grades itself; ISNAD has no independent endorser, so a
 green tick would be a lie.
 
 Point-in-time: a verdict is a snapshot.  Grades drift as evidence accumulates.
-The evaluation date is sealed into the text so staleness is visible.  TODO:
-revocation-on-regrade is unimplemented — a re-graded claim would need its old
-hash flipped to `{"status": "superseded"}` and the new one published; that
-lifecycle is not yet built (see `seal_verdict` docstring).
+The evaluation date is sealed into the text so staleness is visible.
+Regrade lifecycle is implemented via ``supersede_verdict``: a re-graded claim
+flips its old hash to ``{"status": "superseded", "superseded_by": ...}`` and
+publishes the new one, so a published verdict never silently stays "verified"
+after the underlying grade moved.
 
-Stdlib only — reuses `normalize_text` and `sha256_hex` from the integration.
+Stdlib only — reuses ``normalize_text`` and ``sha256_hex`` from the integration.
 """
 
 from __future__ import annotations
@@ -106,13 +107,10 @@ def seal_verdict(
     Returns a SealedVerdict holding the normalized text, SHA-256 hash, the
     publishable page body (verdict + `verify:` line), and the hash-file JSON.
 
-    TODO: revocation-on-regrade is unimplemented.  A verdict is point-in-time;
-    when a claim is re-graded (evidence changed, grade moved), the OLD hash
-    should be flipped to a non-verified status and the NEW one published
-    alongside.  That lifecycle — superseding a previously published hash — is
-    not yet built.  Until then, a published verdict remains "verified" forever,
-    which overstates its currency.  State this gap wherever the issuer surface
-    is documented.
+    Point-in-time note: a verdict is a snapshot of one grading.  When a claim is
+    re-graded (evidence changed, grade moved), call :func:`supersede_verdict` to
+    flip the old hash to ``{"status": "superseded"}`` and publish the new one —
+    otherwise the old hash stays "verified" forever and overstates its currency.
     """
     normalized = normalize_text(verdict_text, metadata)
     hash_ = sha256_hex(normalized)
@@ -142,6 +140,42 @@ def write_issuer_files(sealed: SealedVerdict, output_dir: str | Path) -> Path:
     out.mkdir(parents=True, exist_ok=True)
     (out / sealed.hash).write_text(sealed.hash_file_json)
     (out / f"{sealed.hash}.html").write_text(sealed.page_body)
+    return out
+
+
+def supersede_verdict(
+    old_sealed: SealedVerdict,
+    new_sealed: SealedVerdict,
+    output_dir: str | Path,
+) -> Path:
+    """Publish a re-graded verdict and flip the old hash to ``superseded``.
+
+    A verdict is point-in-time.  When a claim is re-graded (evidence changed,
+    grade moved), the previously published hash must stop presenting as
+    "verified" — otherwise it overstates its currency.  This function:
+
+    1. rewrites ``<output_dir>/<old_hash>`` to
+       ``{"status": "superseded", "superseded_by": "<new_hash>"}`` so any
+       verifier of the old claim sees it is no longer current and can follow
+       the link; and
+    2. writes the new verdict's hash file and page (via :func:`write_issuer_files`).
+
+    ``superseded`` is NOT ``revoked`` — revocation (a punitive integrity strike)
+    is a distinct lifecycle the client maps to COMPROMISED; a regrade is a
+    re-evaluation, which the client maps to ACCEPTABLE/attested.  Do not use
+    this for revocation.
+
+    Returns the output_dir Path.
+    """
+    out = Path(output_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    superseded_json = (
+        json.dumps({"status": "superseded", "superseded_by": new_sealed.hash}, indent=2) + "\n"
+    )
+    (out / old_sealed.hash).write_text(superseded_json)
+    # The old page remains (it is the historical record); only its hash file
+    # flips status.  Publish the new one alongside.
+    write_issuer_files(new_sealed, out)
     return out
 
 
