@@ -22,10 +22,11 @@ import argparse
 import sqlite3
 from collections import Counter
 
+from bench._grade import chain_grade_from_narrators as _chain_grade_from_narrators
+from bench._grade import grade_one_chain as _grade_one_chain
 from bench.data import iter_chains
 from bench.mapping import chain_grade_from_hukum, grade_from_qawl
 from bench.metrics import cohens_kappa, confusion_matrix
-from bench.run import _chain_grade_from_narrators, _grade_one_chain
 
 CLASSES = ["sahih", "hasan", "daif", "mawdu"]
 
