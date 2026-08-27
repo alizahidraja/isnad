@@ -248,7 +248,7 @@ See `examples/langchain_middleware_demo.py`. The listable shape is the
 | **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 negative controls pass (Wikipedia only — physics pending, #127); madār detection blocks correlated chains. **Requires attested distinct lineage** (`model_family` / `upstream_source`) — unattested chains no longer corroborate (issue #54) |
 | **Content criticism**         | ✅ Measured          | `LLMCritic` (DeepSeek) 1.000 recall / 0.000 false-consistent > `LocalNLICritic` 0.760 > `HybridCritic` 0.720 > `EmbeddingCritic` 0.120 — measured on the committed eval set; see `docs/critics.md` |
 | **Semantic matching**         | ✅ Validated         | Cross-source embedding matching (MiniLM) across Wikipedia and physics corpora |
-| **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 62 integration tests pass |
+| **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 47 LangChain integration tests pass |
 | **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |
 | **Evidence provenance**       | ✅ Implemented       | `evidence_provenance()` reports whether a grade is prior-derived (benchmark) or observation-backed (audit/corroboration) — issue #6 |
 | **Survival primitive**        | ✅ Implemented       | `record_survival()` records that a claim survived independent (endorsed) verification — issue #25 |

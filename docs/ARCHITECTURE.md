@@ -176,7 +176,7 @@ docs/
 ├── ARCHITECTURE.drawio          Architecture diagram (3 tabs)
 └── concept_to_code.md           Concept → module mapping
 
-tests/                           ~200 tests across 22 files
+tests/                           ~770 tests across 69 files
 ```
 
 ---
