@@ -127,3 +127,63 @@ def test_authority_basis_is_honest():
     meta = build_verification_meta("verify:example.com/c")
     assert "Self-attested" in meta["authorityBasis"]
     assert "no external authority" in meta["authorityBasis"]
+
+
+class TestSupersedeVerdict:
+    """#122 — a re-graded claim must not stay 'verified' forever."""
+
+    def _verdict(self, grade: str) -> str:
+        return render_verdict(
+            claim_text="the momentum of a photon is p = h/λ",
+            chain_grade=grade,
+            narrator_chain=["source:openstax-vol3", "model:gpt-4o"],
+            weakest_link="model:gpt-4o",
+            content_verdict="consistent",
+        )
+
+    def test_old_hash_flips_to_superseded(self, tmp_path):
+        from isnad.integrations.liveverify.issuer import supersede_verdict
+
+        old = seal_verdict(self._verdict("hasan"), "verify:example.com/c")
+        new = seal_verdict(self._verdict("daif"), "verify:example.com/c")
+        write_issuer_files(old, tmp_path)
+
+        supersede_verdict(old, new, tmp_path)
+
+        # The old hash file must no longer say 'verified'.
+        old_payload = json.loads((tmp_path / old.hash).read_text())
+        assert old_payload["status"] == "superseded"
+        assert old_payload["superseded_by"] == new.hash
+
+        # The new hash file says 'verified'.
+        new_payload = json.loads((tmp_path / new.hash).read_text())
+        assert new_payload["status"] == "verified"
+
+    def test_superseded_status_is_not_verified_by_client(self, tmp_path):
+        """A verifier of the OLD claim sees not-verified, with the new hash."""
+        from isnad.integrations.liveverify.issuer import supersede_verdict
+        from isnad.integrations.liveverify.client import verify_claim
+
+        old = seal_verdict(self._verdict("hasan"), "verify:example.com/c")
+        new = seal_verdict(self._verdict("daif"), "verify:example.com/c")
+        write_issuer_files(old, tmp_path)
+        supersede_verdict(old, new, tmp_path)
+
+        # The client interprets the old hash file directly.
+        payload = json.loads((tmp_path / old.hash).read_text())
+        assert payload["status"] == "SUPERSEDED" or payload["status"] == "superseded"
+        # A superseded status must NOT be treated as verified by the client's
+        # status interpretation (only VERIFIED / custom-affirming are).
+        assert payload["status"].upper() != "VERIFIED"
+
+    def test_supersede_does_not_touch_revoked_semantics(self, tmp_path):
+        """Supersede is a regrade, not a revocation — status stays 'superseded'."""
+        from isnad.integrations.liveverify.issuer import supersede_verdict
+
+        old = seal_verdict(self._verdict("hasan"), "verify:example.com/c")
+        new = seal_verdict(self._verdict("daif"), "verify:example.com/c")
+        write_issuer_files(old, tmp_path)
+        supersede_verdict(old, new, tmp_path)
+        payload = json.loads((tmp_path / old.hash).read_text())
+        assert "revoked" not in str(payload).lower()
+        assert payload["status"] == "superseded"
