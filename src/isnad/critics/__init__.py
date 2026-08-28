@@ -18,6 +18,7 @@ from isnad.critics.ensemble import EnsembleCritic
 from isnad.critics.llm import LLMCritic
 from isnad.critics.nli import HybridCritic, LocalNLICritic
 from isnad.critics.recompute import RecomputeCritic
+from isnad.critics.routing import AggregateRouter
 
 
 def _sentence_transformers_available() -> bool:
@@ -57,6 +58,7 @@ def best_available_critic(*, prefer_llm: bool = True, **kwargs: Any) -> ContentC
 
 
 __all__ = [
+    "AggregateRouter",
     "ContentCritic",
     "EmbeddingCritic",
     "EnsembleCritic",
