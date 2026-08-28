@@ -308,6 +308,49 @@ class CappedCorroborationPolicy:
     INDEPENDENCE_THRESHOLD: float = 0.8
     MIN_EFFECTIVE_WEIGHT: float = 2.0  # need ≥2 HASAN-equivalent chains of evidence
 
+    # The witness-type-aware blind-spot prior (#54, mutābaʿa vs shāhid).
+    #
+    # Classical corroboration was NOT uniform: a mutābaʿa (a narrator confirming
+    # from the same teacher) is weak corroboration, while a shāhid (a *different*
+    # companion confirming the same meaning) is strong. The computational
+    # translation: two witnesses of the SAME kind (two LLMs, both trained on
+    # internet text) share a high prior probability of a correlated blind spot;
+    # two witnesses of DIFFERENT kinds (a model and a human reviewer, a model
+    # and a cryptographically-sealed source) share a far lower prior.
+    #
+    # These are STATED DEFAULTS, not truths — each cell is an assumption to be
+    # calibrated, never asserted as fact. The matrix is keyed by narrator type
+    # (NarratorType.value); an unknown type falls back to the flat
+    # ``shared_blind_spot_prior``.
+    BLIND_SPOT_MATRIX: dict[tuple[str, str], float] = {
+        # same-kind: high prior — shared training lineage, shared blind spots
+        ("model", "model"): 0.25,
+        ("scraper", "scraper"): 0.15,
+        ("source", "source"): 0.10,  # sources can still mirror the same received error
+        ("tool", "tool"): 0.15,
+        # cross-kind: low prior — qualitatively different failure modes
+        ("model", "human"): 0.05,
+        ("human", "model"): 0.05,
+        ("model", "source"): 0.08,
+        ("source", "model"): 0.08,
+        ("model", "scraper"): 0.10,
+        ("scraper", "model"): 0.10,
+        ("human", "source"): 0.02,
+        ("source", "human"): 0.02,
+    }
+
+    def blind_spot_prior_for(self, base_type: str | None, corr_type: str | None) -> float:
+        """The blind-spot prior for a base witness and a corroborating witness.
+
+        Looks up the witness-type matrix; falls back to the flat
+        ``shared_blind_spot_prior`` when either type is unknown or the pair is
+        not in the matrix. This is the shāhid/mutābaʿa distinction made explicit:
+        cross-kind corroboration is charged a smaller honesty discount.
+        """
+        if base_type is None or corr_type is None:
+            return self.shared_blind_spot_prior
+        return self.BLIND_SPOT_MATRIX.get((base_type, corr_type), self.shared_blind_spot_prior)
+
     def __init__(self, *, shared_blind_spot_prior: float = 0.20):
         """Args:
         shared_blind_spot_prior: the prior probability (0.0–1.0) that a
@@ -328,6 +371,8 @@ class CappedCorroborationPolicy:
         base_grade: ChainGrade,
         corroborating_chains: list[ChainGrade],
         independence_scores: list[float],
+        *,
+        chain_blind_spot_priors: list[float] | None = None,
     ) -> ChainGrade:
         """Compute the corroboration-upgraded chain grade.
 
@@ -341,6 +386,11 @@ class CappedCorroborationPolicy:
             corroborating_chains: Grades of corroborating chains.
             independence_scores: Independence score for each corroborating
                 chain relative to the base chain.  Must be same length.
+            chain_blind_spot_priors: Optional per-chain tawātur priors (one per
+                corroborating chain). When omitted, the flat
+                ``shared_blind_spot_prior`` is used for every chain. This is
+                the shāhid/mutābaʿa distinction: cross-kind witnesses get a
+                lower prior than same-kind witnesses.
 
         Returns:
             The new ChainGrade after corroboration.
@@ -353,11 +403,14 @@ class CappedCorroborationPolicy:
             return base_grade
 
         # --- Filter: only chains that pass independence threshold. ---
-        # Keep (grade, score) pairs so the disjointness discount below can
-        # weight each chain's contribution by its independence score.
-        independent: list[tuple[ChainGrade, float]] = [
-            (grade, score)
-            for grade, score in zip(corroborating_chains, independence_scores, strict=True)
+        # Keep (grade, score, prior) triples so the disjointness discount and
+        # the per-chain tawātur discount can both be applied.
+        priors = chain_blind_spot_priors
+        independent: list[tuple[ChainGrade, float, float]] = [
+            (grade, score, priors[i] if priors is not None else self.shared_blind_spot_prior)
+            for i, (grade, score) in enumerate(
+                zip(corroborating_chains, independence_scores, strict=True)
+            )
             if score >= self.INDEPENDENCE_THRESHOLD
         ]
 
@@ -365,26 +418,28 @@ class CappedCorroborationPolicy:
             return base_grade
 
         # --- Minimum-grade gate: at least one chain must clear threshold ---
-        if not any(g >= self.MIN_GATE_GRADE for g, _ in independent):
+        if not any(g >= self.MIN_GATE_GRADE for g, _, _ in independent):
             return base_grade
 
         # --- Information-theoretic corroboration with the disjointness discount
-        #     and the tawātur discount (#54). ---
+        #     and the per-chain tawātur discount (#54). ---
         # Each chain at grade G_i has an implied error probability p_i. A chain's
         # contribution is weighted by its independence score s_i (the #125
-        # disjointness discount) AND by (1 - shared_blind_spot_prior) (the #54
-        # tawātur discount): even a fully topology-independent chain is not a
-        # full witness, because it may share an unobservable correlated failure.
+        # disjointness discount) AND by (1 - prior_i) (the #54 tawātur discount):
+        # even a fully topology-independent chain is not a full witness, because
+        # it may share an unobservable correlated failure. The prior is per-chain
+        # when witness types are known (the shāhid/mutābaʿa distinction), flat
+        # otherwise.
         #
         # So the effective witness weight of chain i is
-        #     w_i = s_i * (1 - P_shared_blind_spot)
+        #     w_i = s_i * (1 - prior_i)
         # and a chain can never earn full (1.0) witness credit — which is the
         # honest tawātur position: corroboration requires *more* chains than the
         # nominal count suggests, never fewer.
         err = self.ERROR_PROBS
-        tau = 1.0 - self.shared_blind_spot_prior
         combined_log_error = sum(
-            score * tau * math.log(max(err.get(g, 0.30), 0.001)) for g, score in independent
+            score * (1.0 - prior) * math.log(max(err.get(g, 0.30), 0.001))
+            for g, score, prior in independent
         )
         combined_log_error += math.log(max(err.get(base_grade, 0.30), 0.001))
 
@@ -498,6 +553,34 @@ def _narrator_to_chain_grade(ng: NarratorGrade) -> ChainGrade:
         NarratorGrade.UNGRADED: ChainGrade.HASAN,
     }
     return mapping[ng]
+
+
+# Narrator types, in order of precedence for deciding a chain's "dominant
+# witness type" — the model (synthesis) is the trust-relevant link; a human
+# reviewer or source is a distinct witness kind; a scraper/tool is transmission
+# plumbing. Used for the shāhid/mutābaʿa per-chain tawātur prior (#54).
+_TYPE_PRECEDENCE = ("model", "human", "source", "tool", "scraper")
+
+
+def _chain_narrator_type(
+    narrator_ids: list[str], narrator_metadata: dict[str, dict[str, object]]
+) -> str | None:
+    """The dominant narrator type of a chain, for the blind-spot prior matrix.
+
+    Returns the highest-precedence narrator type present in the chain, or None
+    if no type is known. The model (synthesis) link is the trust-relevant
+    witness; if absent, a human, source, tool, or scraper in that order.
+    """
+    present: set[str] = set()
+    for nid in narrator_ids:
+        meta = narrator_metadata.get(nid, {})
+        nt = meta.get("narrator_type")
+        if nt and isinstance(nt, str):
+            present.add(nt)
+    for t in _TYPE_PRECEDENCE:
+        if t in present:
+            return t
+    return next(iter(present), None) if present else None
 
 
 class CorroborationEngine:
@@ -783,22 +866,38 @@ class CorroborationEngine:
         independence_scores = [a.score for a in independent_assessments]
         grades = [c["grade"] for c in independent]
 
+        # Per-chain tawātur priors from witness types (the shāhid/mutābaʿa
+        # distinction, #54). Derive the base chain's dominant narrator type and
+        # each corroborating chain's dominant type from metadata, then ask the
+        # policy for the pairwise prior. Falls back to the flat prior when a
+        # type is unknown.
+        base_type = _chain_narrator_type(base_narrators, narrator_metadata)
+        independent_priors = [
+            self._policy.blind_spot_prior_for(
+                base_type, _chain_narrator_type(c["narrators"], narrator_metadata)
+            )
+            for c in independent
+        ]
+
         upgraded = self._policy.compute_corroborated_grade(
             base_grade=base_chain_grade,
             corroborating_chains=grades,
             independence_scores=independence_scores,
+            chain_blind_spot_priors=independent_priors,
         )
 
         effective_weight = self._compute_effective_weight(
-            base_chain_grade, grades, independence_scores
+            base_chain_grade, grades, independence_scores, independent_priors
         )
         upgraded_flag = upgraded != base_chain_grade
 
         # Effective witnesses: sum of (independence_score × (1 − blind-spot
         # prior)) over the independent chains — the tawātur-discounted count that
         # is always ≤ the nominal count.
-        tau = 1.0 - self._policy.shared_blind_spot_prior
-        effective_witnesses = sum(a.score * tau for a in independent_assessments)
+        effective_witnesses = sum(
+            a.score * (1.0 - prior)
+            for a, prior in zip(independent_assessments, independent_priors, strict=True)
+        )
 
         return CorroborationResult(
             base_grade=base_chain_grade,
@@ -826,21 +925,25 @@ class CorroborationEngine:
         base_grade: ChainGrade,
         corroborating_grades: list[ChainGrade],
         independence_scores: list[float],
+        chain_blind_spot_priors: list[float] | None = None,
     ) -> float:
         """Compute information-theoretic effective weight.
 
         Each chain's log-error reduction is weighted by its independence score
-        (the disjointness discount) AND by (1 - shared_blind_spot_prior) (the
-        tawātur discount), matching
-        ``CappedCorroborationPolicy.compute_corroborated_grade`` so the number
-        reported in ``CorroborationResult.effective_weight`` agrees with the
-        number the policy actually used for its decision.
+        (the disjointness discount) AND by (1 - prior_i) (the tawātur discount),
+        matching ``CappedCorroborationPolicy.compute_corroborated_grade`` so the
+        number reported in ``CorroborationResult.effective_weight`` agrees with
+        the number the policy actually used for its decision.
         """
         err = self._policy.ERROR_PROBS
-        tau = 1.0 - self._policy.shared_blind_spot_prior
+        priors = chain_blind_spot_priors
         combined = sum(
-            score * tau * math.log(max(err.get(g, 0.30), 0.001))
-            for g, score in zip(corroborating_grades, independence_scores, strict=True)
+            score
+            * (1.0 - (priors[i] if priors is not None else self._policy.shared_blind_spot_prior))
+            * math.log(max(err.get(g, 0.30), 0.001))
+            for i, (g, score) in enumerate(
+                zip(corroborating_grades, independence_scores, strict=True)
+            )
         )
         combined += math.log(max(err.get(base_grade, 0.30), 0.001))
         hasan_log = math.log(err[ChainGrade.HASAN])
