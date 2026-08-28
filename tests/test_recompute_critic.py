@@ -1,12 +1,15 @@
 """Tests for the RecomputeCritic and EnsembleCritic.
 
-These cover the arithmetic critic in isolation and the contradiction-priority
-composition. The composition tests use a stub semantic critic so they run
-offline (no NLI model download) and pin the exact safety property: a correct
-number inside a false claim must NOT be served.
+These cover the arithmetic critic in isolation and the confirm-to-upgrade
+composition. Most composition tests use a stub semantic critic so they run
+offline (no NLI model download). One test uses a real EmbeddingCritic to pin the
+exact safety property with a real semantic critic: a correct number inside a
+false claim must NOT be served, even when the semantic critic returns
+UNVERIFIABLE rather than CONTRADICTION.
 """
 
 from isnad.critics.base import ContentCritic
+from isnad.critics.embedding import EmbeddingCritic
 from isnad.critics.ensemble import EnsembleCritic
 from isnad.critics.recompute import RecomputeCritic
 from isnad.types import ContentVerdict
@@ -97,14 +100,46 @@ _: ContentCritic = _StubSemantic(UNVERIFIABLE)
 
 
 class TestEnsembleComposition:
-    def test_recompute_upgrades_unverifiable_to_consistent(self):
-        """A1 case: NLI can't do arithmetic (UNVERIFIABLE); recompute confirms;
-        no contradiction anywhere -> CONSISTENT (serve-with-caveat downstream)."""
+    def test_recompute_does_NOT_upgrade_when_semantic_only_stays_silent(self):
+        """The safety rule (found by review of PR #168): a numeric confirmation
+        must NOT upgrade to CONSISTENT when the semantic critic merely stays
+        silent (UNVERIFIABLE). A number match closes the arithmetic slice only; it
+        does not affirm the non-numeric part of the claim. If the semantic critic
+        cannot confirm, the honest verdict is UNVERIFIABLE, not CONSISTENT.
+
+        (Earlier this test asserted CONSISTENT here, which was the vulnerability:
+        it let a false non-numeric assertion wrapped around a correct number slip
+        through. Inverted deliberately.)"""
         ens = EnsembleCritic(
             semantic=_StubSemantic(UNVERIFIABLE), deterministic=RecomputeCritic()
         )
         claim = "There are 522 rows; 470 have no category label."
+        assert ens.evaluate(claim, claim, ROWS) == UNVERIFIABLE
+
+    def test_upgrades_only_when_BOTH_critics_confirm(self):
+        """The upgrade path: recompute CONSISTENT and semantic CONSISTENT both,
+        so the ensemble returns CONSISTENT."""
+        ens = EnsembleCritic(
+            semantic=_StubSemantic(CONSISTENT), deterministic=RecomputeCritic()
+        )
+        claim = "There are 522 rows; 470 have no category label."
         assert ens.evaluate(claim, claim, ROWS) == CONSISTENT
+
+    def test_real_semantic_critic_false_claim_not_served(self):
+        """The counterexample from the PR #168 review, with a REAL semantic critic
+        (not a stub). The claim pairs a correct total (522) with a false
+        non-numeric assertion ('none are blank' when 470 ARE blank). The
+        EmbeddingCritic cannot see the falsehood, so it returns UNVERIFIABLE;
+        recompute confirms the 522. The ensemble must NOT serve this.
+
+        This is the test the original stub-only suite was missing: the stub
+        returned CONTRADICTION and masked the gap. A real critic returns
+        UNVERIFIABLE, which is exactly the case rule 3 must catch."""
+        ens = EnsembleCritic(
+            semantic=EmbeddingCritic(), deterministic=RecomputeCritic()
+        )
+        false_claim = "There are 522 rows total, and none of them are blank."
+        assert ens.evaluate(false_claim, false_claim, ROWS) != CONSISTENT
 
     def test_semantic_contradiction_beats_recompute_consistent(self):
         """THE SAFETY TEST (A2 trap): the claim carries a CORRECT number (522) but

@@ -26,8 +26,16 @@ It shows two things:
    qualifier would then be served. Routing must still run a semantic critic on
    the non-numeric parts.
 
-No proprietary data, no network, no model beyond the offline NLI weights the
-existing HybridCritic already downloads. Deterministic (fixed seed).
+It also demonstrates the safety rule a PR #168 review surfaced: when a claim
+pairs a correct number with a false non-numeric qualifier ("510 rows, none
+blank"), a semantic critic that cannot see the falsehood returns UNVERIFIABLE,
+and the ensemble must still refuse to serve. An upgrade to CONSISTENT requires
+the semantic critic to actively confirm, not merely stay silent.
+
+Requires sentence-transformers (for the NLI critic). It is pinned on purpose: the
+demo is about NLI behavior, so it fails loudly if the dependency is missing
+rather than silently falling back to a different critic. No proprietary data, no
+network beyond the one-time model download. Deterministic (fixed seed).
 
 Run:  python examples/numeric_critic_reproducer.py
 """
@@ -35,8 +43,9 @@ Run:  python examples/numeric_critic_reproducer.py
 from __future__ import annotations
 
 import random
+import sys
 
-from isnad.critics import EnsembleCritic, RecomputeCritic, best_available_critic
+from isnad.critics import EnsembleCritic, HybridCritic, RecomputeCritic
 
 
 def build_corpus(n_categories: int = 300, blank: int = 470) -> tuple[list[str], int, int]:
@@ -56,7 +65,26 @@ def build_corpus(n_categories: int = 300, blank: int = 470) -> tuple[list[str], 
 def main() -> None:
     rows, total, blank = build_corpus()
 
-    nli = best_available_critic()  # HybridCritic (offline NLI) when available
+    # Pin the NLI critic explicitly. This demo is about NLI's behavior on numeric
+    # corpora, so it must run the actual NLI critic, not whatever
+    # best_available_critic() falls back to. Without sentence-transformers the
+    # HybridCritic silently degrades to UNVERIFIABLE, which is NOT the
+    # CONTRADICTION this demo (and issue #170) is about. Check the dependency up
+    # front and fail loudly, so nobody sees the wrong result and mistrusts #170.
+    from isnad.critics.nli import _ensure_sentence_transformers
+
+    if not _ensure_sentence_transformers():
+        print(
+            "This demo needs the NLI critic (HybridCritic), which requires "
+            "sentence-transformers.\n"
+            "Install it with:  pip install sentence-transformers\n"
+            "(Without it, HybridCritic returns UNVERIFIABLE instead of the "
+            "CONTRADICTION this demo is about, so the demo would be misleading.)",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
+
+    nli = HybridCritic()
     recompute = RecomputeCritic()
     ensemble = EnsembleCritic(semantic=nli, deterministic=recompute)
 
@@ -97,25 +125,60 @@ def main() -> None:
     print(
         "\nRead:\n"
         "- A1: RecomputeCritic confirms the true aggregate that NLI cannot.\n"
-        "- A2: recompute says CONSISTENT, and that is correct behavior: it\n"
-        "  certifies the number (the total is right), not the claim. It is blind\n"
-        "  to the false 'no blanks' qualifier, which is a non-numeric assertion.\n"
-        "  The ensemble holds A2 only because a semantic critic contradicts it.\n"
-        "  This is why recompute alone must never serve, and why the ensemble is\n"
-        "  contradiction-priority.\n"
         "- A3: the superlative wrapper ('over N', 'dominates') is not an equality\n"
         "  assertion, so recompute defers rather than bless a coincidental match.\n"
         "- A4: recompute catches an inflated total (arithmetic contradiction) on\n"
         "  its own, no semantic critic needed.\n"
         "\n"
-        "At this scale NLI contradicts everything, true or false, so its verdict\n"
-        "carries no signal here. The safe ensemble preserves safety but cannot\n"
-        "rescue A1 through a critic that contradicts everything.\n"
+        "At this scale NLI contradicts everything, true or false (see the NLI\n"
+        "column). Its verdict carries no signal on a numeric corpus, which is the\n"
+        "point of issue #170. So in THIS run the ensemble is contradiction on\n"
+        "every row: rule 1 (any contradiction wins) fires on NLI's noise.\n"
         "\n"
-        "The fix is claim-type routing, with one caveat this demo makes concrete:\n"
-        "routing CANNOT be 'numeric -> recompute only'. A2 proves it. Send A2 to\n"
-        "recompute alone and it returns CONSISTENT -> serve, serving a false claim.\n"
-        "Routing must still run a semantic critic on the non-numeric parts."
+        "The confirm-to-upgrade safety rule is not visible above, because it only\n"
+        "matters when the semantic critic stays SILENT (unverifiable) rather than\n"
+        "contradicting. The next block shows it with a critic that does stay\n"
+        "silent."
+    )
+
+    # Second demonstration: the safety rule that a PR #168 review surfaced.
+    # A claim can pair a correct number with a false NON-numeric qualifier. A
+    # semantic critic that cannot see the falsehood returns UNVERIFIABLE (silent),
+    # not CONTRADICTION. The ensemble must still NOT serve it. We use a real
+    # EmbeddingCritic (TF-IDF) here precisely because it returns UNVERIFIABLE on
+    # the false qualifier, so the confirm-to-upgrade rule is what keeps it safe.
+    from isnad.critics import EmbeddingCritic
+
+    small_rows = [
+        "category alpha: 26 items",
+        "category beta: 14 items",
+        "rows with no category label: 470",
+        "total rows: 510",
+    ]
+    false_claim = "There are 510 rows total, and none of them are blank."
+    emb = EmbeddingCritic()
+    emb_ens = EnsembleCritic(semantic=emb, deterministic=recompute)
+
+    print("\nSafety rule (correct number, false non-numeric qualifier):")
+    print(f"  claim           : {false_claim!r}")
+    print(f"  truth           : 470 of the 510 rows ARE blank, so the claim is false")
+    print(f"  EmbeddingCritic : {emb.evaluate(false_claim, false_claim, small_rows).value}"
+          "   (cannot see the falsehood, stays silent)")
+    print(f"  RecomputeCritic : {recompute.evaluate(false_claim, false_claim, small_rows).value}"
+          "      (the number 510 is right)")
+    print(f"  ENSEMBLE        : {emb_ens.evaluate(false_claim, false_claim, small_rows).value}"
+          "   (NOT consistent, so NOT served)")
+    print(
+        "\n  The number matches, but the ensemble refuses to bless the claim on the\n"
+        "  number alone: an upgrade to CONSISTENT requires the semantic critic to\n"
+        "  actively confirm, not merely stay silent. This is the fix from the PR\n"
+        "  review. Without it, this false claim would be served.\n"
+        "\n"
+        "The fix for the NLI collapse itself is claim-type routing, with one\n"
+        "caveat this same example makes concrete: routing CANNOT be 'numeric ->\n"
+        "recompute only', because recompute alone returns CONSISTENT here and would\n"
+        "serve the false claim. Routing must still run a semantic critic on the\n"
+        "non-numeric parts."
     )
 
 
