@@ -326,26 +326,26 @@ class TestCappedCorroborationPolicy:
         assert result == ChainGrade.DAIF
 
     def test_mixed_independent_and_correlated(self) -> None:
+        """Default prior (0.20) tightens: HASAN+DAIF alone no longer clears the gate."""
         pol = CappedCorroborationPolicy()
         result = pol.compute_corroborated_grade(
             ChainGrade.DAIF,
             [ChainGrade.HASAN, ChainGrade.HASAN, ChainGrade.DAIF],
             [1.0, 0.5, 1.0],  # second chain correlated (0.5 < 0.8)
         )
-        # Independent: [HASAN(1.0), DAIF(1.0)]
-        # Effective = (ln(0.10) + ln(0.30) + ln(0.30)) / ln(0.10) ≈ 2.04 ≥ 2.0
-        # DAIF chain contributes to error reduction even though below gate;
-        # min gate passes via the HASAN chain.
-        assert result == ChainGrade.HASAN
+        # Independent: [HASAN(1.0), DAIF(1.0)] — but the tawātur discount
+        # (prior 0.20) scales each by 0.80, so effective weight ≈ 1.76 < 2.0.
+        assert result == ChainGrade.DAIF
 
     def test_disjointness_discount_reduces_effective_weight(self) -> None:
         """A partial independence score (0.85) earns less weight than 1.0 (#125).
 
-        HASAN + DAIF at full independence gives effective weight 2.046 (upgrade).
-        The same pair at 0.85 gives 1.817 (below the 2.0 gate → no upgrade). This
-        proves the discount is not just a cosmetic relabel — it changes decisions.
+        Isolates the #125 disjointness discount by pinning the #54 tawātur prior
+        to 0 (the discount under test is the score, not the blind-spot prior).
+        HASAN + DAIF at full independence gives effective weight 2.046 (upgrade);
+        the same pair at 0.85 gives 1.817 (no upgrade).
         """
-        pol = CappedCorroborationPolicy()
+        pol = CappedCorroborationPolicy(shared_blind_spot_prior=0.0)
         full = pol.compute_corroborated_grade(
             ChainGrade.DAIF,
             [ChainGrade.HASAN, ChainGrade.DAIF],
@@ -360,8 +360,8 @@ class TestCappedCorroborationPolicy:
         assert discounted == ChainGrade.DAIF  # discount pushed it below the gate
 
     def test_disjointness_discount_is_noop_at_full_independence(self) -> None:
-        """All scores 1.0 → behaviour identical to before the discount existed."""
-        pol = CappedCorroborationPolicy()
+        """All scores 1.0 AND prior 0 → behaviour identical to pre-discount."""
+        pol = CappedCorroborationPolicy(shared_blind_spot_prior=0.0)
         result = pol.compute_corroborated_grade(
             ChainGrade.DAIF,
             [ChainGrade.HASAN, ChainGrade.HASAN],
@@ -371,7 +371,7 @@ class TestCappedCorroborationPolicy:
 
     def test_disjointness_discount_partial_score_still_counts(self) -> None:
         """A partial score above the gate contributes, just weighted down."""
-        pol = CappedCorroborationPolicy()
+        pol = CappedCorroborationPolicy(shared_blind_spot_prior=0.0)
         # 3 HASAN at 0.85 → effective 3.073 ≥ 2.0 → still upgrades, despite the
         # discount. Partial credit is not zero credit.
         result = pol.compute_corroborated_grade(
@@ -380,6 +380,64 @@ class TestCappedCorroborationPolicy:
             [0.85, 0.85, 0.85],
         )
         assert result == ChainGrade.HASAN
+
+    # ── The tawātur discount (#54) ────────────────────────────────────
+
+    def test_tawatur_discount_requires_more_corroboration(self) -> None:
+        """With the default blind-spot prior (0.20), a near-threshold case that
+        used to upgrade no longer does — corroboration got harder, as honesty
+        demands when independence is no longer assumed perfect (#54)."""
+        pol = CappedCorroborationPolicy()  # default prior 0.20
+        result = pol.compute_corroborated_grade(
+            ChainGrade.DAIF,
+            [ChainGrade.HASAN, ChainGrade.DAIF],
+            [1.0, 1.0],
+        )
+        assert result == ChainGrade.DAIF  # effective weight ≈ 1.76 < 2.0
+
+    def test_tawatur_discount_zero_prior_is_backward_compatible(self) -> None:
+        """shared_blind_spot_prior=0.0 reproduces the pre-#54 behaviour exactly."""
+        pol = CappedCorroborationPolicy(shared_blind_spot_prior=0.0)
+        result = pol.compute_corroborated_grade(
+            ChainGrade.DAIF,
+            [ChainGrade.HASAN, ChainGrade.HASAN],
+            [1.0, 1.0],
+        )
+        assert result == ChainGrade.HASAN
+
+    def test_tawatur_discount_full_prior_disables_corroboration(self) -> None:
+        """shared_blind_spot_prior=1.0 → no corroboration credit at all."""
+        pol = CappedCorroborationPolicy(shared_blind_spot_prior=1.0)
+        result = pol.compute_corroborated_grade(
+            ChainGrade.DAIF,
+            [ChainGrade.HASAN, ChainGrade.HASAN, ChainGrade.HASAN],
+            [1.0, 1.0, 1.0],
+        )
+        assert result == ChainGrade.DAIF
+
+    def test_effective_witnesses_below_nominal(self) -> None:
+        """The engine reports effective_witnesses < nominal count when prior > 0."""
+        engine = CorroborationEngine(min_independent_chains=1)
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["a1", "a2"],
+            corroborating_chains=[
+                {"grade": "hasan", "narrators": ["b1", "b2"]},
+                {"grade": "hasan", "narrators": ["c1", "c2"]},
+            ],
+            narrator_metadata={
+                "a1": {"model_family": "f0", "upstream_source": "s0"},
+                "a2": {"model_family": "f0", "upstream_source": "s0"},
+                "b1": {"model_family": "f1", "upstream_source": "s1"},
+                "b2": {"model_family": "f1", "upstream_source": "s1"},
+                "c1": {"model_family": "f2", "upstream_source": "s2"},
+                "c2": {"model_family": "f2", "upstream_source": "s2"},
+            },
+        )
+        assert result.independent_chains == 2
+        assert result.shared_blind_spot_prior == pytest.approx(0.20)
+        # 2 nominal chains × (1 − 0.20) = 1.6 effective witnesses
+        assert result.effective_witnesses == pytest.approx(1.6)
 
 
 class TestEvaluateCorroborationIntegration:

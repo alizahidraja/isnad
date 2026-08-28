@@ -278,6 +278,17 @@ class CappedCorroborationPolicy:
     - Chains above the threshold earn credit in proportion to their
       independence score (the disjointness discount, #125 tier 1): a chain
       at 0.85 contributes 85% of a full chain's log-error reduction.
+    - **The tawātur discount (#54).** Even a chain with independence score 1.0
+      is not a full independent witness, because two agents can share an
+      *unobservable* correlated failure (shared training data, shared blind
+      spot) that no topology check can see. Classical tawātur never tried to
+      *prove* per-pair independence; it required a number of reporters large
+      enough that collusion on a falsehood was inconceivable. The computational
+      translation is an explicit prior ``shared_blind_spot_prior`` — the
+      probability that a nominally-independent chain shares a failure mode with
+      the base chain — which discounts every chain's witness weight. Default is
+      conservatively high (0.20); an operator who can *attest* distinct lineage
+      (#47) or exchange evidence (#44) lowers it.
     - All independent chains (including DAIF) contribute to the
       combined error reduction; even weak corroboration adds weight.
     - The combined log-error ratio must reach MIN_EFFECTIVE_WEIGHT
@@ -296,6 +307,19 @@ class CappedCorroborationPolicy:
     MIN_GATE_GRADE: ChainGrade = ChainGrade.HASAN
     INDEPENDENCE_THRESHOLD: float = 0.8
     MIN_EFFECTIVE_WEIGHT: float = 2.0  # need ≥2 HASAN-equivalent chains of evidence
+
+    def __init__(self, *, shared_blind_spot_prior: float = 0.20):
+        """Args:
+        shared_blind_spot_prior: the prior probability (0.0–1.0) that a
+            nominally-independent chain shares an *unobservable* correlated
+            failure with the base chain — shared training data, a shared
+            blind spot, a shared received error. This is the tawātur
+            discount (#54): it is never zero, because topology cannot prove
+            independence. Operators with attestation (#47) or evidence
+            exchange (#44) may lower it; it must not be silently assumed
+            away.
+        """
+        self.shared_blind_spot_prior = max(0.0, min(1.0, shared_blind_spot_prior))
 
     # ── public API ──────────────────────────────────────────────────────
 
@@ -344,21 +368,23 @@ class CappedCorroborationPolicy:
         if not any(g >= self.MIN_GATE_GRADE for g, _ in independent):
             return base_grade
 
-        # --- Information-theoretic corroboration with the disjointness discount. ---
+        # --- Information-theoretic corroboration with the disjointness discount
+        #     and the tawātur discount (#54). ---
         # Each chain at grade G_i has an implied error probability p_i. A chain's
-        # contribution is weighted by its independence score s_i: a fully
-        # independent chain (1.0) contributes log(p_i) in full; a partially
-        # independent chain (e.g. 0.85) contributes 0.85 * log(p_i). This is the
-        # tier-1 disjointness discount from #125: correlated chains earn credit
-        # in proportion to their independence, approaching zero as they converge.
+        # contribution is weighted by its independence score s_i (the #125
+        # disjointness discount) AND by (1 - shared_blind_spot_prior) (the #54
+        # tawātur discount): even a fully topology-independent chain is not a
+        # full witness, because it may share an unobservable correlated failure.
         #
-        # Under the current penalty set only 1.0 clears the gate, so this is a
-        # no-op today — it generalises the binary filter without changing
-        # current behaviour, and becomes meaningful when partial scores in
-        # (0.8, 1.0) arise (recalibrated penalties, an extra signal).
+        # So the effective witness weight of chain i is
+        #     w_i = s_i * (1 - P_shared_blind_spot)
+        # and a chain can never earn full (1.0) witness credit — which is the
+        # honest tawātur position: corroboration requires *more* chains than the
+        # nominal count suggests, never fewer.
         err = self.ERROR_PROBS
+        tau = 1.0 - self.shared_blind_spot_prior
         combined_log_error = sum(
-            score * math.log(max(err.get(g, 0.30), 0.001)) for g, score in independent
+            score * tau * math.log(max(err.get(g, 0.30), 0.001)) for g, score in independent
         )
         combined_log_error += math.log(max(err.get(base_grade, 0.30), 0.001))
 
@@ -454,6 +480,13 @@ class CorroborationResult:
     # audit record) can see which shared signal discounted a chain. Present for
     # every corroborating chain, not just the independent ones.
     chain_independence: list[IndependenceAssessment] = field(default_factory=list)
+    # The tawātur discount (#54): the explicit prior that a nominally-independent
+    # chain shares an unobservable correlated failure with the base chain. It is
+    # never zero, and it caps the effective witness count below the nominal count.
+    shared_blind_spot_prior: float = 0.20
+    # The effective number of independent witnesses, after the tawātur discount.
+    # Always ≤ the nominal independent-chain count; the gap is the honesty margin.
+    effective_witnesses: float = 0.0
 
 
 def _narrator_to_chain_grade(ng: NarratorGrade) -> ChainGrade:
@@ -761,6 +794,12 @@ class CorroborationEngine:
         )
         upgraded_flag = upgraded != base_chain_grade
 
+        # Effective witnesses: sum of (independence_score × (1 − blind-spot
+        # prior)) over the independent chains — the tawātur-discounted count that
+        # is always ≤ the nominal count.
+        tau = 1.0 - self._policy.shared_blind_spot_prior
+        effective_witnesses = sum(a.score * tau for a in independent_assessments)
+
         return CorroborationResult(
             base_grade=base_chain_grade,
             upgraded_grade=upgraded,
@@ -769,9 +808,12 @@ class CorroborationEngine:
             effective_weight=effective_weight,
             upgraded=upgraded_flag,
             chain_independence=assessments,
+            shared_blind_spot_prior=self._policy.shared_blind_spot_prior,
+            effective_witnesses=effective_witnesses,
             reason=(
                 f"Upgraded via {len(independent)} independent chains "
-                f"(effective weight={effective_weight:.1f})"
+                f"(effective weight={effective_weight:.1f}, "
+                f"effective witnesses={effective_witnesses:.1f})"
                 if upgraded_flag
                 else (
                     f"Effective weight {effective_weight:.1f} < {self._policy.MIN_EFFECTIVE_WEIGHT}"
@@ -788,14 +830,16 @@ class CorroborationEngine:
         """Compute information-theoretic effective weight.
 
         Each chain's log-error reduction is weighted by its independence score
-        (the disjointness discount), matching
+        (the disjointness discount) AND by (1 - shared_blind_spot_prior) (the
+        tawātur discount), matching
         ``CappedCorroborationPolicy.compute_corroborated_grade`` so the number
         reported in ``CorroborationResult.effective_weight`` agrees with the
         number the policy actually used for its decision.
         """
         err = self._policy.ERROR_PROBS
+        tau = 1.0 - self._policy.shared_blind_spot_prior
         combined = sum(
-            score * math.log(max(err.get(g, 0.30), 0.001))
+            score * tau * math.log(max(err.get(g, 0.30), 0.001))
             for g, score in zip(corroborating_grades, independence_scores, strict=True)
         )
         combined += math.log(max(err.get(base_grade, 0.30), 0.001))
