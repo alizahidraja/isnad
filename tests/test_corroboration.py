@@ -439,6 +439,32 @@ class TestCappedCorroborationPolicy:
         # 2 nominal chains × (1 − 0.20) = 1.6 effective witnesses
         assert result.effective_witnesses == pytest.approx(1.6)
 
+    # ── Witness-type-aware prior (shāhid vs mutābaʿa) ────────────────
+
+    def test_same_kind_model_model_prior_is_higher(self) -> None:
+        """Two models share a higher blind-spot prior than a model + a human."""
+        pol = CappedCorroborationPolicy()
+        mm = pol.blind_spot_prior_for("model", "model")
+        mh = pol.blind_spot_prior_for("model", "human")
+        assert mm > mh
+        assert mm == pytest.approx(0.25)
+        assert mh == pytest.approx(0.05)
+
+    def test_unknown_type_falls_back_to_flat_prior(self) -> None:
+        pol = CappedCorroborationPolicy()
+        assert pol.blind_spot_prior_for(None, "model") == pytest.approx(0.20)
+        assert pol.blind_spot_prior_for("model", "unknown-kind") == pytest.approx(0.20)
+
+    def test_cross_kind_witness_earns_more_weight(self) -> None:
+        """A model corroborated by a human (shāhid) earns more witness weight
+        than a model corroborated by another model (mutābaʿa), so it is more
+        likely to clear the upgrade gate."""
+        # model+model prior 0.25 -> tau 0.75; model+human prior 0.05 -> tau 0.95
+        pol = CappedCorroborationPolicy()
+        mh = pol.blind_spot_prior_for("model", "human")
+        mm = pol.blind_spot_prior_for("model", "model")
+        assert (1.0 - mh) > (1.0 - mm)
+
 
 class TestEvaluateCorroborationIntegration:
     """End-to-end corroboration evaluation with correlation detection."""
