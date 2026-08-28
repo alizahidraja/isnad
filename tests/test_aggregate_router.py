@@ -84,6 +84,7 @@ def test_wrong_number_is_contradiction():
 
 # --- The benefit: verdicts are meaningful, not NLI noise ---------------------
 
+
 def test_router_removes_nli_noise_vs_raw_corpus():
     """On the raw 300-row corpus the ensemble returns CONTRADICTION for a true
     aggregate (NLI collapse). The router, by scoping the semantic critic to a
@@ -103,6 +104,7 @@ def test_router_removes_nli_noise_vs_raw_corpus():
 
 
 # --- Pass-through: non-aggregate claims are untouched ------------------------
+
 
 def test_non_aggregate_claim_passes_through_unchanged():
     """A claim over a non-numeric corpus is not an aggregate; the router must
