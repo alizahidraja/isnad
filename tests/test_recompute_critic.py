@@ -100,7 +100,7 @@ _: ContentCritic = _StubSemantic(UNVERIFIABLE)
 
 
 class TestEnsembleComposition:
-    def test_recompute_does_NOT_upgrade_when_semantic_only_stays_silent(self):
+    def test_recompute_does_not_upgrade_when_semantic_only_stays_silent(self):
         """The safety rule (found by review of PR #168): a numeric confirmation
         must NOT upgrade to CONSISTENT when the semantic critic merely stays
         silent (UNVERIFIABLE). A number match closes the arithmetic slice only; it
@@ -110,18 +110,14 @@ class TestEnsembleComposition:
         (Earlier this test asserted CONSISTENT here, which was the vulnerability:
         it let a false non-numeric assertion wrapped around a correct number slip
         through. Inverted deliberately.)"""
-        ens = EnsembleCritic(
-            semantic=_StubSemantic(UNVERIFIABLE), deterministic=RecomputeCritic()
-        )
+        ens = EnsembleCritic(semantic=_StubSemantic(UNVERIFIABLE), deterministic=RecomputeCritic())
         claim = "There are 522 rows; 470 have no category label."
         assert ens.evaluate(claim, claim, ROWS) == UNVERIFIABLE
 
-    def test_upgrades_only_when_BOTH_critics_confirm(self):
+    def test_upgrades_only_when_both_critics_confirm(self):
         """The upgrade path: recompute CONSISTENT and semantic CONSISTENT both,
         so the ensemble returns CONSISTENT."""
-        ens = EnsembleCritic(
-            semantic=_StubSemantic(CONSISTENT), deterministic=RecomputeCritic()
-        )
+        ens = EnsembleCritic(semantic=_StubSemantic(CONSISTENT), deterministic=RecomputeCritic())
         claim = "There are 522 rows; 470 have no category label."
         assert ens.evaluate(claim, claim, ROWS) == CONSISTENT
 
@@ -135,9 +131,7 @@ class TestEnsembleComposition:
         This is the test the original stub-only suite was missing: the stub
         returned CONTRADICTION and masked the gap. A real critic returns
         UNVERIFIABLE, which is exactly the case rule 3 must catch."""
-        ens = EnsembleCritic(
-            semantic=EmbeddingCritic(), deterministic=RecomputeCritic()
-        )
+        ens = EnsembleCritic(semantic=EmbeddingCritic(), deterministic=RecomputeCritic())
         false_claim = "There are 522 rows total, and none of them are blank."
         assert ens.evaluate(false_claim, false_claim, ROWS) != CONSISTENT
 
@@ -145,9 +139,7 @@ class TestEnsembleComposition:
         """THE SAFETY TEST (A2 trap): the claim carries a CORRECT number (522) but
         a FALSE assertion ('all annotated'). Recompute might confirm the total;
         NLI catches the false assertion. Contradiction must win -> never served."""
-        ens = EnsembleCritic(
-            semantic=_StubSemantic(CONTRADICTION), deterministic=RecomputeCritic()
-        )
+        ens = EnsembleCritic(semantic=_StubSemantic(CONTRADICTION), deterministic=RecomputeCritic())
         # correct total, but semantically false -> stub semantic says CONTRADICTION
         claim = "All 522 rows are fully annotated with no missing labels."
         assert ens.evaluate(claim, claim, ROWS) == CONTRADICTION
@@ -155,26 +147,20 @@ class TestEnsembleComposition:
     def test_recompute_contradiction_is_honored(self):
         """A3 case: recompute detects an inflated aggregate even if semantic is
         unsure. Contradiction from either member wins."""
-        ens = EnsembleCritic(
-            semantic=_StubSemantic(UNVERIFIABLE), deterministic=RecomputeCritic()
-        )
+        ens = EnsembleCritic(semantic=_StubSemantic(UNVERIFIABLE), deterministic=RecomputeCritic())
         claim = "There are 900 rows in total."
         assert ens.evaluate(claim, claim, ROWS) == CONTRADICTION
 
     def test_falls_back_to_semantic_when_recompute_silent(self):
         """Non-numeric claim: recompute defers, ensemble returns the NLI verdict."""
-        ens = EnsembleCritic(
-            semantic=_StubSemantic(CONSISTENT), deterministic=RecomputeCritic()
-        )
+        ens = EnsembleCritic(semantic=_StubSemantic(CONSISTENT), deterministic=RecomputeCritic())
         claim = "The categories are ranked in descending order."
         assert ens.evaluate(claim, claim, ROWS) == CONSISTENT
 
     def test_recompute_never_overrides_a_contradiction_into_serve(self):
         """Even if recompute would say CONSISTENT, a semantic CONTRADICTION on the
         SAME claim keeps it out of serve-class. Pinned explicitly."""
-        ens = EnsembleCritic(
-            semantic=_StubSemantic(CONTRADICTION), deterministic=RecomputeCritic()
-        )
+        ens = EnsembleCritic(semantic=_StubSemantic(CONTRADICTION), deterministic=RecomputeCritic())
         claim = "There are 522 rows; 470 have no category label."  # numerically true
         assert ens.evaluate(claim, claim, ROWS) == CONTRADICTION
 
@@ -188,9 +174,7 @@ class TestEnsembleComposition:
         not. If the ensemble ever let recompute's CONSISTENT override a semantic
         CONTRADICTION, THIS would be served. It must not. Contradiction wins.
         """
-        ens = EnsembleCritic(
-            semantic=_StubSemantic(CONTRADICTION), deterministic=RecomputeCritic()
-        )
+        ens = EnsembleCritic(semantic=_StubSemantic(CONTRADICTION), deterministic=RecomputeCritic())
         claim = (
             "There are 522 rows, 470 blank, and category alpha has 26, and the "
             "dataset is fully validated and error-free."

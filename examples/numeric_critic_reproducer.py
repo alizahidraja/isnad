@@ -100,8 +100,7 @@ def main() -> None:
         ),
         (
             "A2 correct number, false qualifier",
-            f"There are {total} items, and every one maps to a named category "
-            f"with no blanks.",
+            f"There are {total} items, and every one maps to a named category with no blanks.",
         ),
         (
             "A3 superlative wrapper",
@@ -161,13 +160,19 @@ def main() -> None:
 
     print("\nSafety rule (correct number, false non-numeric qualifier):")
     print(f"  claim           : {false_claim!r}")
-    print(f"  truth           : 470 of the 510 rows ARE blank, so the claim is false")
-    print(f"  EmbeddingCritic : {emb.evaluate(false_claim, false_claim, small_rows).value}"
-          "   (cannot see the falsehood, stays silent)")
-    print(f"  RecomputeCritic : {recompute.evaluate(false_claim, false_claim, small_rows).value}"
-          "      (the number 510 is right)")
-    print(f"  ENSEMBLE        : {emb_ens.evaluate(false_claim, false_claim, small_rows).value}"
-          "   (NOT consistent, so NOT served)")
+    print("  truth           : 470 of the 510 rows ARE blank, so the claim is false")
+    print(
+        f"  EmbeddingCritic : {emb.evaluate(false_claim, false_claim, small_rows).value}"
+        "   (cannot see the falsehood, stays silent)"
+    )
+    print(
+        f"  RecomputeCritic : {recompute.evaluate(false_claim, false_claim, small_rows).value}"
+        "      (the number 510 is right)"
+    )
+    print(
+        f"  ENSEMBLE        : {emb_ens.evaluate(false_claim, false_claim, small_rows).value}"
+        "   (NOT consistent, so NOT served)"
+    )
     print(
         "\n  The number matches, but the ensemble refuses to bless the claim on the\n"
         "  number alone: an upgrade to CONSISTENT requires the semantic critic to\n"
