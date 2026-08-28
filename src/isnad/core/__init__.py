@@ -25,6 +25,7 @@ from isnad.core.chain import (
     normalize_claim_text,
     store_claim,
 )
+from isnad.core.content_madar import detect_content_madar
 from isnad.core.corroboration import (
     CappedCorroborationPolicy,
     CorroborationEngine,
@@ -66,6 +67,7 @@ __all__ = [
     "IndependenceAssessment",
     "SharedLineageDetector",
     "evaluate_corroboration",
+    "detect_content_madar",
     # decision
     "decide",
     "describe_action",
