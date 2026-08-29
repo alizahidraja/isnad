@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.13.0] — 2026-08-29
+
+### Changed
+
+- **REJECTED / COMPROMISED now dominate the completeness cap (#181).** A chain
+  that is both incomplete *and* contains a REJECTED narrator (or a COMPROMISED
+  ʿadālah) now grades **MAWDU**, not DAIF. Previously the completeness cap ran
+  first, so adding a gap *raised* a fabricated chain to (corroboratable) DAIF —
+  an anti-monotonic move that reopened the corroboration-upgrade path for a
+  quarantined fabricator. The paper's own decision matrix (§4.4) and MAWDU
+  definition ("a rejected narrator is present") already implied this; the code
+  order was the error.
+- **Benchmark numbers regenerated** as a consequence (the 3-way headline κ =
+  0.8714 is unchanged; the finer 4-way κ moves 0.8571 → 0.8745, agreement
+  89.7% → 90.9%, and the shuffled control moves 0.0446 → −0.0066, closer to its
+  expected ~0). This is a grading-rule change, not a mapping change; the
+  preregistered rank→grade mapping is untouched.
+
+### Fixed
+
+- **`isnad export --verify` fails closed** on an unverifiable detached
+  signature — it previously printed "verification OK" + exit 0 when a detached
+  signature was present but no secret was available (a forgeable path). Now
+  reports INCONCLUSIVE and exits 1; also verifies against `--sign` when given.
+
 ## [2.12.0] — 2026-08-29
 
 ### Added

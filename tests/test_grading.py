@@ -99,6 +99,27 @@ class TestCompletenessCap:
         )
         assert result == ChainGrade.DAIF
 
+    def test_incomplete_with_rejected_is_mawdu_not_daif(self) -> None:
+        """#181: a REJECTED fabricator dominates the completeness cap. Adding a
+        gap must never raise a MAWDU chain to (corroboratable) DAIF."""
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.REJECTED],
+            [TransformType.PASS_THROUGH] * 2,
+            is_complete=False,
+        )
+        assert result == ChainGrade.MAWDU
+
+    def test_incomplete_with_compromised_adalah_is_mawdu_not_daif(self) -> None:
+        """#181: COMPROMISED ʿadālah also dominates the completeness cap — same
+        anti-monotonicity argument, applied to the integrity axis."""
+        result = grade_chain(
+            [NarratorGrade.RELIABLE, NarratorGrade.ACCEPTABLE],
+            [TransformType.PASS_THROUGH] * 2,
+            is_complete=False,
+            link_adalah_grades=[AdalahGrade.ACCEPTABLE, AdalahGrade.COMPROMISED],
+        )
+        assert result == ChainGrade.MAWDU
+
 
 class TestDestructivePermanentCap:
     """Destructive transforms create a permanent floor (paper §4.1)."""

@@ -117,20 +117,32 @@ class RefinedWeakestLink:
         if not link_narrator_grades:
             return ChainGrade.DAIF  # empty chain is effectively munqaṭiʿ
 
-        # --- Incomplete chain → capped at DAIF (paper §4.1, commitment 4) ---
-        if not is_complete:
-            return ChainGrade.DAIF
-
         # --- Any REJECTED narrator → MAWDU immediately ---
+        # Runs BEFORE the completeness cap on purpose (#181): a quarantined
+        # (REJECTED) fabricator is present regardless of a chain gap, and the
+        # framework's own definition of MAWDU is "a rejected narrator is
+        # present" (types.py; paper §4.4). Ordering this below the cap would be
+        # anti-monotone — adding a gap would RAISE a MAWDU chain to DAIF, and a
+        # DAIF chain is corroboratable DAIF→HASAN, reopening the serve path for
+        # a fabricator. The worst-tier floor is never lifted by a weaker cap.
         if NarratorGrade.REJECTED in link_narrator_grades:
             return ChainGrade.MAWDU
 
         # --- Any COMPROMISED ʿadālah → MAWDU immediately ---
         # A separate axis from NarratorGrade on purpose (issue #11): integrity
         # failure poisons the chain even when the collapsed NarratorGrade for
-        # that narrator still looks acceptable.
+        # that narrator still looks acceptable. Also ordered above the
+        # completeness cap for the same #181 reason: compromised integrity is a
+        # containment floor, not a ceiling a gap can lift.
         if link_adalah_grades and AdalahGrade.COMPROMISED in link_adalah_grades:
             return ChainGrade.MAWDU
+
+        # --- Incomplete chain → capped at DAIF (paper §4.1, commitment 4) ---
+        # Only reached when no narrator is REJECTED and no ʿadālah is
+        # COMPROMISED — the cap floors *reliable-to-weak* narrators, it never
+        # lifts a containment floor above it.
+        if not is_complete:
+            return ChainGrade.DAIF
 
         fidelity = link_fidelity_verdicts or [ContentVerdict.UNVERIFIABLE] * len(
             link_narrator_grades

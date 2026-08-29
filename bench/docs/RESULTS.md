@@ -2,8 +2,8 @@
 
 **Headline:** ISNAD's weakest-link chain grading reproduces 1,200 years of
 classical hadith scholars' chain verdicts with **Cohen's κ = 0.871** (the strict
-default) and **0.761** (lenient opt-in), across **577,024** scholar-graded
-chains — with a shuffled-rank control at κ = 0.045.
+default) and **0.761** (lenient opt-in), across **575,060** graded
+chains — with a shuffled-rank control at κ = −0.007.
 
 > Reproduce:
 > `uv run python -m bench.run --seed 0` (strict, default) ·
@@ -18,8 +18,8 @@ ISNAD has two deliberate stances on a narrator it has never graded:
 
 | Mode | UNGRADED narrator | 3-way κ | 4-way κ | Agreement |
 |---|---|---|---:|---:|
-| **strict** (default) | caps at ḍaʿīf (classical majhūl) | **0.8714** | **0.8571** | **89.7%** |
-| lenient (`lenient_unknown=True`) | caps at ḥasan (epistemic humility) | 0.7610 | 0.7548 | 82.4% |
+| **strict** (default) | caps at ḍaʿīf (classical majhūl) | **0.8714** | **0.8745** | **90.9%** |
+| lenient (`lenient_unknown=True`) | caps at ḥasan (epistemic humility) | 0.7610 | 0.7726 | 83.6% |
 
 The gap between them is the measured cost of leniency: **0.11 κ**. Classical
 scholars treat an *unknown* narrator as making the chain weak; ISNAD's default
@@ -31,7 +31,7 @@ agrees. The lenient mode is opt-in in the library via
 | Control | κ |
 |---|---:|
 | majority-class predictor | 0.0000 |
-| shuffled-rank (scrambled mapping) | 0.0446 |
+| shuffled-rank (scrambled mapping) | −0.0066 |
 
 ## Per-class performance (strict mode)
 
@@ -39,8 +39,8 @@ agrees. The lenient mode is opt-in in the library via
 |---|---|---|---|---|
 | ṣaḥīḥ | 0.923 | 0.897 | 0.910 | 151,139 |
 | ḥasan | 0.909 | 0.892 | 0.900 | 186,256 |
-| ḍaʿīf | 0.848 | 0.928 | 0.886 | 171,763 |
-| mawḍūʿ | 0.952 | 0.831 | 0.887 | 65,902 |
+| ḍaʿīf | 0.886 | 0.922 | 0.904 | 171,763 |
+| mawḍūʿ | 0.941 | 0.953 | 0.947 | 65,902 |
 
 ## The corroboration ablation (mutābaʿa)
 
@@ -66,13 +66,13 @@ ISNAD's corroboration engine is the right next mechanism to wire in.
 |---|---:|---|
 | 43,628 | corroboration: weak-alone → ḥasan-with-mutābaʿa | 88% have independent support (above). |
 | 16,777 | grade: ṣaḥīḥ ↔ ḥasan boundary | genuinely fuzzy; scholars disagree too. |
-| 9,312 | continuity: irsāl/inqiṭāʿ gap | ISNAD caps gaps at ḍaʿīf. |
-| 9,164 | severity: classical mawḍūʿ vs ISNAD ḍaʿīf | classical "very weak" but binding narrator is only rank 8. |
+| 9,255 | continuity: irsāl/inqiṭāʿ gap | ISNAD caps gaps at ḍaʿīf. |
 | 7,798 | leniency: majhūl → ḥasan ceiling | **fixed by strict mode.** |
 | 3,773 | leniency: weak → sound/good (mapping) | residual mapping edges. |
+| 2,353 | severity: classical ḍaʿīf vs ISNAD mawḍūʿ | ISNAD stricter (rejected narrator). |
 | 1,770 | gap-in-text-only | gap in verdict text, no sentinel node. |
-| 1,223 | severity: classical ḍaʿīf vs ISNAD mawḍūʿ | ISNAD stricter (rejected narrator). |
-| 680 | continuity: taʿlīq gap | collector's known hanging form. |
+| 1,067 | severity: classical mawḍūʿ vs ISNAD ḍaʿīf | classical "very weak" but binding narrator is only rank 8. |
+| 676 | continuity: taʿlīq gap | collector's known hanging form. |
 
 ## The human ceiling (M3)
 
@@ -118,7 +118,7 @@ cannot time-label. The design is validated; the quantitative value lives in
 
 1. **The weakest-link rule is right.** Given the scholars' own narrator grades,
    ISNAD reproduces their chain verdicts at κ = 0.87 (strict) — on a scale where
-   the human ceiling (inter-critic agreement) is still to be measured.
+   the human ceiling (inter-critic agreement) is κ = 0.33 (measured, M3).
 2. **The two-axis split is real.** Integrity vs precision maps cleanly onto the
    classical ranks (ṣadūq-yahim = truthful-but-errs → precision LOW; fabricators
    → integrity COMPROMISED).
