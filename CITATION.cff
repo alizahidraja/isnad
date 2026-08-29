@@ -41,9 +41,10 @@ abstract: >
   methodology — graded narrator registries, weakest-link chain evaluation,
   independent corroboration, and dual chain+content criticism — to AI pipelines.
   Implements the architecture described in "Grading the Narrators" (Raja, 2026,
-  arXiv:2607.24117).  Empirically validated on 707 cross-source claim pairs
-  across Wikipedia and physics textbook corpora with 100% corroboration rate,
-  8/8 negative controls (Wikipedia corpus).
+  arXiv:2607.24117).  Validated on 707 cross-source claim pairs across Wikipedia
+  and physics textbook corpora (100% corroboration rate, 8/8 Wikipedia + 9/9
+  physics negative controls), and on 577,024 scholar-graded hadith chains
+  (Cohen's κ = 0.871 vs scholarly consensus; human ceiling 0.331).
 preferred-citation:
   authors:
     - family-names: Raja

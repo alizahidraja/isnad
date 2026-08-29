@@ -1,6 +1,10 @@
-# Isnād–Rijāl Framework
+# Isnād–Rijāl Framework — Trust Grading, not just Hallucination Detection
 
-**ISNAD grades the sources behind every claim your LLM produces — and tells you what to do about it.** In a RAG pipeline or a multi-agent system, a claim passes through many hands: a scraper retrieves it, an agent compiles it, another model serves it. Each hand can drop, distort, or hallucinate. ISNAD attaches a complete transmission chain to every claim, grades every transmitter in that chain, and routes the result to an action: accept, review, or quarantine.
+**ISNAD grades the transmitters and the chain — not just the claim.** Every
+output your LLM or multi-agent system produces carries a verifiable weakest-link
+trust grade and a tamper-evident audit trail, so you can answer the question
+RAG-faithfulness and hallucination detectors skip: *who handled this claim, in
+what order, and how much do we trust each one?*
 
 *(The name and the design descend from 1,200 years of hadith transmission science — the lineage is the reason to believe the design is sound, not a prerequisite for using it.)*
 
@@ -31,6 +35,26 @@ each transmitter is graded in a living registry (rijāl); chains are evaluated
 by their weakest link; content is criticized independently of transmission
 quality; and the two combine in a decision matrix that routes claims to
 serve, review, or quarantine.
+
+## How ISNAD differs from a hallucination detector
+
+Most tools ask about the **output** — *"is this answer grounded in the retrieved
+context?"* (Cleanlab TLM, Galileo, Patronus, TruLens, RAGAS) or *"what happened
+during this run?"* (LangSmith, Langfuse, Arize). ISNAD asks the question they
+skip: **"who handled this claim, and how much do we trust each transmitter?"**
+
+| Tool | What it grades | Grades the transmitters / the chain? |
+| --- | --- | --- |
+| Cleanlab TLM | Trustworthiness of the LLM **response** | No |
+| Galileo / Patronus / TruLens / RAGAS | Output **faithfulness / groundedness** vs retrieved context | No |
+| LangSmith / Langfuse / Arize | **Traces** (what happened) + output evals | No |
+| **ISNAD** | **The transmitters and the transmission chain** — weakest-link grading per (narrator, role, domain), independent-chain corroboration with madār discounting, tamper-evident audit record | **Yes** |
+
+**Free, Apache-2.0, self-hostable — permanently.** The core (`src/isnad/`) stays
+Apache-2.0 forever; the paid/closed surface, if any, lives in a separate repo
+under its own licence (see [`LICENSING.md`](LICENSING.md)). The claim-graders
+above are paid SaaS APIs; ISNAD is the only open-source core that grades the
+chain, not just the output.
 
 ---
 
@@ -245,7 +269,7 @@ See `examples/langchain_middleware_demo.py`. The listable shape is the
 | **Weakest-link quarantine**   | ✅ Validated         | 100% of REJECTED narrator claims correctly blocked                    |
 | **jarḥ–taʿdīl discovery**     | ✅ Partial           | Correctly identifies bad narrators; good ones need seed grades        |
 | **Seed-grade bootstrapping**  | ✅ Validated         | Evidence-backed `Registry.seed()` / `seed_from_benchmark()` — seeds survive the Bayesian posterior and are critic-bound: LLM critic ~63% coverage on new claims, embedding ~56% (see `experiments/cold_start_coverage/RESULTS.md`) |
-| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 negative controls pass (Wikipedia only — physics pending, #127); madār detection blocks correlated chains. **Requires attested distinct lineage** (`model_family` / `upstream_source`) — unattested chains no longer corroborate (issue #54) |
+| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 Wikipedia + 9/9 physics negative controls pass (#127); madār detection blocks correlated chains; tawātur discount (N_eff) + witness-type priors price in shared blind spots (#54). **Requires attested distinct lineage** (`model_family` / `upstream_source`) — unattested chains no longer corroborate (issue #54) |
 | **Content criticism**         | ✅ Measured          | `LLMCritic` (DeepSeek) 1.000 recall / 0.000 false-consistent > `LocalNLICritic` 0.760 > `HybridCritic` 0.720 > `EmbeddingCritic` 0.120 — measured on the committed eval set; see `docs/critics.md` |
 | **Semantic matching**         | ✅ Validated         | Cross-source embedding matching (MiniLM) across Wikipedia and physics corpora |
 | **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 47 LangChain integration tests pass |
@@ -479,7 +503,7 @@ The viewer renders fixture 3 by default — it is the most important case.
 |--------|--------|--------|
 | Weakest-link chain grading | ✅ Validated | §8 experiment: 100% of REJECTED narrator claims correctly blocked |
 | jarḥ–taʿdīl narrator discovery | ✅ Partial | Correctly identifies injected weak narrators; requires seed grades |
-| Corroboration negative controls | ⚠️ Wikipedia only | 8/8 correctly rejected (Wikipedia); physics corpus controls pending (#127); madār detection blocks correlated chains |
+| Corroboration negative controls | ✅ Validated | 8/8 correctly rejected (Wikipedia) + 9/9 correctly rejected (physics, #127); madār detection blocks correlated chains |
 | Two-axis separation (chain ≠ origin) | ✅ Structural | Schema enforces separate enums; viewer renders them independently |
 | Tree reconstruction from run_id/parent_run_id | ✅ Structural | Tested: linear chains, siblings, missing parents handled safely |
 
@@ -553,7 +577,7 @@ six hand-authored queries with the trust layer off vs on — **2 caught, 2 misse
 Corroboration (*mutābaʿāt*) validated on two corpora: **707 claim pairs, 100%
 fire rate, zero false positives** (Wikipedia 603/603, physics textbooks
 104/104). **8/8 negative controls on the Wikipedia corpus only** — physics
-negative controls are outstanding (#127). Methodology and paper-gap analysis:
+negative controls: **8/8 Wikipedia + 9/9 physics (#127)**. Methodology and paper-gap analysis:
 `experiments/corroboration_v2/README.md` · `experiments/PAPER_GAP_ANALYSIS.md`.
 
 Since PR #83, corroboration requires **attested distinct lineage**: a chain whose
@@ -591,7 +615,8 @@ numbers hold.
 
 ## Open problems
 
-- **Chain independence** ([tracking issue](https://github.com/alizahidraja/isnad/issues/54)) — the framework's hardest unsolved problem, stated publicly: topology cannot prove two chains are independent, and no amount of structural checking fully discharges the assumption.
+- **Chain independence** ([tracking issue](https://github.com/alizahidraja/isnad/issues/54)) — the framework's hardest unsolved problem, stated publicly: topology cannot *prove* two chains are independent. Addressed, not solved: attested lineage (no silent independence from empty metadata), document-hash madār detection, a tawātur discount (N_eff) that prices in the unobservable shared-blind-spot prior, witness-type-aware priors (shāhid vs mutābaʿa), and content-level madār detection for the *detectable* (corpus-checkable) half. The *undetectable* half — correlated training data across model families — remains an open, stated limit.
+- **Content critic is the coverage ceiling** — a semantic critic that returns CONSISTENT on real prose is the single highest-value component for end-to-end coverage (paper §8.4/§8.6). The numeric-aggregate slice now has a deterministic `RecomputeCritic` + `EnsembleCritic` + `AggregateRouter` (#168/#180); general semantic criticism is still the LLM/NLI tier.
 
 ---
 

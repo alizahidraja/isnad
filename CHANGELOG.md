@@ -1,5 +1,49 @@
 # Changelog
 
+## [2.11.0] — 2026-08-29
+
+### Added
+
+- **Deterministic numeric-aggregate critics** (#170, PR #168/#180) —
+  `RecomputeCritic` (recomputes count/sum aggregates from corpus rows;
+  never blesses on a numeric match alone), `EnsembleCritic` (contradiction-
+  priority: any CONTRADICTION wins, CONSISTENT requires both critics), and
+  `AggregateRouter` (scopes a semantic critic's corpus to a summary for count
+  claims so NLI stops collapsing to indiscriminate contradiction at scale).
+  Additive and opt-in; tested with real critics so no false claim reaches
+  CONSISTENT.
+- **Audit/API hardening (external audit follow-up).** `isnad verify` and
+  `isnad export --verify` now check the **detached signature** (HMAC/Ed25519),
+  not just the self-hash (#97); `isnad export --sign` emits a signed record.
+  The API rehydrates its in-memory claim index from the DB on boot, so claims
+  survive a restart (#93); `store_claim` accepts an explicit `claim_id` so the
+  API's served key matches the persisted key.
+
+### Fixed
+
+- `docker-compose.yml` no longer ships a hardcoded admin credential or DB
+  password — API keys and `POSTGRES_PASSWORD` are injected from the host env
+  (#93).
+- `BayesianTransitionPolicy.seed_grade()` dropped a spurious +1 Laplace term
+  that silently shifted a RELIABLE prior (0.96) down to ACCEPTABLE; documented
+  that `evaluate_transition` is the authoritative grading path (#90-class).
+- `THREAT_MODEL.md` no longer contradicts the shipped code on cross-domain
+  quarantine (#28): integrity compromise now spans domains.
+- `audit/schema.py` no longer marks `detached_signature` as "reserved — not
+  implemented" (#97).
+
+### Docs
+
+- README: differentiation positioning ("grades the transmitters and the chain,
+  not just the claim") + a competitor comparison (Cleanlab TLM, Galileo,
+  Patronus, TruLens, RAGAS, LangSmith/Langfuse/Arize); critic-count (945 vs
+  1,015) and test-count (~790) drift reconciled; §8 negative-control status
+  updated (8/8 Wikipedia + 9/9 physics, #127).
+- `bench/human_ceiling.py` computes the critic count from the DB instead of
+  hardcoding it; `bench/docs/bench_jsonld.py` + `mapping.md` disambiguate
+  945 (critics with statements) vs 1,015 (named critics).
+- `CITATION.cff` updated to the κ=0.871 benchmark + 9/9 physics controls.
+
 ## [2.10.1] — 2026-08-28
 
 ### Added

@@ -57,3 +57,35 @@ env-var auto-detect list (it has no key), so construct it explicitly as above.
 > production gate that must auto-serve HASAN-tier claims still needs the LLM
 > tier (or a larger review budget); the NLI critics are best for *catching*
 > contradictions, not for affirming consistency.
+
+## Numeric aggregates — the deterministic slice (#168/#180, issue #170)
+
+Semantic critics (NLI, embedding) do *entailment*, not *arithmetic*. On a corpus
+of hundreds of `"label: count"` rows, they go out of distribution and collapse
+to indiscriminate contradiction. Two additive critics fix the *decidable* slice
+(a count over returned rows manifestly can be checked):
+
+- **`RecomputeCritic`** recomputes aggregates from the corpus rows and compares
+  them to the numbers the claim asserts. It only speaks when it can confidently
+  parse both a structured aggregate and a numeric assertion, and it **never**
+  blesses a claim on a numeric match alone (a correct number inside a false
+  qualifier is not a serve).
+- **`EnsembleCritic`** composes a semantic critic with a deterministic one under
+  a contradiction-priority, upgrade-only rule: any CONTRADICTION wins; CONSISTENT
+  requires *both* critics to confirm; the deterministic critic can only upgrade,
+  never override a contradiction.
+- **`AggregateRouter`** scopes the semantic critic's corpus for count claims:
+  when the corpus is a big list of counts, it hands the inner critic a summary
+  (grand total + blank tally) instead of the raw rows, so the semantic critic is
+  back in distribution. It never overrides a verdict — it only changes the input.
+
+```python
+from isnad.critics import EnsembleCritic, RecomputeCritic, HybridCritic
+
+critic = EnsembleCritic(semantic=HybridCritic(), deterministic=RecomputeCritic())
+```
+
+The safety property, tested with real critics (`tests/test_aggregate_router.py`):
+no false claim reaches CONSISTENT. A false qualifier the summary refutes is
+caught; one the summary is silent about is held for review; a wrong number is
+caught. These are opt-in and additive — nothing existing changes behaviour.
