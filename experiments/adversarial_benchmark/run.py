@@ -102,7 +102,12 @@ def _build_cases() -> list[Case]:
             )
         )
 
-    # 3. Pattern contradictions — contradictions the reference critic CAN catch.
+    # 3. Content contradictions — a contradiction against the corpus, carried
+    #    by a clean (all-RELIABLE) chain. The reference critic is word-overlap
+    #    only; it catches the few cases whose negation matches a known pattern
+    #    and returns UNVERIFIABLE on the rest. We do NOT hand-label a
+    #    "pattern vs semantic" split — the honest single class is "content
+    #    contradiction", and the measured catch rate is the number that matters.
     contradictions = [
         "energy is not conserved",
         "the speed of light varies with the observer",
@@ -114,21 +119,6 @@ def _build_cases() -> list[Case]:
         "the atom has no nucleus",
         "entropy can decrease in isolated systems",
         "work is force divided by distance",
-    ]
-    for claim in contradictions:
-        cases.append(
-            Case(
-                claim=claim,
-                chain_narrators=["source:openstax", "model:reliable"],
-                good=False,
-                kind="pattern-contradiction",
-                note="contradicts the corpus via a known phrase",
-            )
-        )
-
-    # 4. Semantic contradictions — same falsehood, different wording; the
-    #    reference critic (word-overlap) cannot see these.
-    semantic = [
         "water solidifies at thirty-two degrees",
         "the atom contains no central core",
         "energy can be created from nothing",
@@ -140,14 +130,14 @@ def _build_cases() -> list[Case]:
         "entropy decreases over time in any system",
         "water boils at zero degrees",
     ]
-    for claim in semantic:
+    for claim in contradictions:
         cases.append(
             Case(
                 claim=claim,
                 chain_narrators=["source:openstax", "model:reliable"],
                 good=False,
-                kind="semantic-contradiction",
-                note="same falsehood, different wording (critic is blind)",
+                kind="content-contradiction",
+                note="contradicts the corpus; the word-overlap critic catches only a few",
             )
         )
 
@@ -187,12 +177,8 @@ def _measure_semantic_critics(cases, reg) -> None:
         ("HybridCritic (MiniLM -> NLI)", HybridCritic()),
     ]:
         tp = fn = tn = fp = 0
-        sem = sem_caught = 0
         for case in cases:
             r = _run_case(case, reg, critic)
-            if case.kind == "semantic-contradiction":
-                sem += 1
-                sem_caught += r.caught
             if case.good:
                 tn += r.served
                 fp += 0 if r.served else 1
@@ -201,7 +187,7 @@ def _measure_semantic_critics(cases, reg) -> None:
                 fn += 0 if r.caught else 1
         print(
             f"  {name:32} recall={tp}/{tp + fn}={tp / max(1, tp + fn):.0%}  "
-            f"FPR={fp / max(1, fp + tn):.0%}  semantic={sem_caught}/{sem}"
+            f"FPR={fp / max(1, fp + tn):.0%}"
         )
 
     _measure_llm_critic(cases, reg)
@@ -227,12 +213,8 @@ def _measure_llm_critic(cases, reg) -> None:
         return
 
     tp = fn = tn = fp = 0
-    sem = sem_caught = 0
     for case in cases:
         r = _run_case(case, reg, critic)
-        if case.kind == "semantic-contradiction":
-            sem += 1
-            sem_caught += r.caught
         if case.good:
             tn += r.served
             fp += 0 if r.served else 1
@@ -241,7 +223,7 @@ def _measure_llm_critic(cases, reg) -> None:
             fn += 0 if r.caught else 1
     print(
         f"  {'LLMCritic':32} recall={tp}/{tp + fn}={tp / max(1, tp + fn):.0%}  "
-        f"FPR={fp / max(1, fp + tn):.0%}  semantic={sem_caught}/{sem}"
+        f"FPR={fp / max(1, fp + tn):.0%}"
     )
 
 
@@ -288,7 +270,7 @@ def main() -> None:
     print(f"bad cases: {total_bad}  good cases: {total_good}")
     print("\nby corruption class:")
     print(f"  {'class':24} {'caught':>7} {'missed':>7} {'rate':>7}")
-    for kind in ["weak-narrator", "pattern-contradiction", "semantic-contradiction"]:
+    for kind in ["weak-narrator", "content-contradiction"]:
         k = by_kind[kind]
         caught, missed = k["tp"], k["fn"]
         denom = caught + missed
@@ -301,9 +283,8 @@ def main() -> None:
     print("\nsummary — split by mechanism (the honest headline):")
     nar_caught = by_kind["weak-narrator"]["tp"]
     nar_total = by_kind["weak-narrator"]["tp"] + by_kind["weak-narrator"]["fn"]
-    crit_kinds = ("pattern-contradiction", "semantic-contradiction")
-    crit_caught = sum(by_kind[k]["tp"] for k in crit_kinds)
-    crit_total = sum(by_kind[k]["tp"] + by_kind[k]["fn"] for k in crit_kinds)
+    crit_caught = by_kind["content-contradiction"]["tp"]
+    crit_total = by_kind["content-contradiction"]["tp"] + by_kind["content-contradiction"]["fn"]
     nar_rate = f"{nar_caught / max(1, nar_total):.0%}"
     crit_rate = f"{crit_caught / max(1, crit_total):.0%}"
     print(f"  narrator grading:   {nar_caught}/{nar_total} = {nar_rate}  (weak-narrator)")
@@ -320,10 +301,11 @@ def main() -> None:
     print("HONEST LIMITS (the point of the benchmark):")
     print("- 'caught' means REVIEW/QUARANTINE/REJECT — routed to a human, not")
     print("  auto-deleted. ISNAD surfaces; it does not adjudicate.")
-    print("- The reference critic is word-overlap only. It catches pattern")
-    print("  contradictions, but a semantic contradiction on a SAHIH chain is")
-    print("  served WITH_CAVEAT — not flagged. That gap is issue #34, and the")
-    print("  semantic-contradiction row above is its honest, quantitative size.")
+    print("- The reference critic is word-overlap only: it catches the few")
+    print("  negations that match a known pattern and returns UNVERIFIABLE on the")
+    print("  rest, so a content contradiction on a SAHIH chain is usually served")
+    print("  WITH_CAVEAT — not flagged. That gap is issue #34, and the")
+    print("  content-contradiction row above is its honest, quantitative size.")
     print("- This corpus is synthetic and physics-only. Real recall will differ.")
     print("-" * 70)
 

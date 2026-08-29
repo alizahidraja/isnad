@@ -25,6 +25,7 @@ from isnad.core.policies import (
     BetaState,
     CalibratedThresholdPolicy,
     ThresholdTransitionPolicy,
+    _is_overturn,
     threshold_transition,
 )
 from isnad.core.volatility import FixedVolatilityPolicy
@@ -725,14 +726,25 @@ class Registry:
         Starts from UNGRADED and applies each entry in order, tracking the
         integrity (quarantine) state.  A ``__quarantine__`` entry is replayed
         as the direct REJECTED + COMPROMISED action it records, mirroring
-        ``quarantine()``.
+        ``quarantine()``. An overturning adjudication (issue #38/#182) is
+        replayed as the re-accreditation it records — the narrator's integrity
+        is restored, so the slice after an overturn is no longer REJECTED.
         """
         grade = NarratorGrade.UNGRADED
         compromised = False
         for i, entry in enumerate(evidence):
-            if (entry.get("metadata", {}) or {}).get("__quarantine__"):
+            meta = entry.get("metadata", {}) or {}
+            if meta.get("__quarantine__"):
                 grade = NarratorGrade.REJECTED
                 compromised = True
+                continue
+            if _is_overturn(entry):
+                raw = meta.get("__overturn_grade__")
+                try:
+                    grade = NarratorGrade(str(raw)) if raw else NarratorGrade.ACCEPTABLE
+                except ValueError:
+                    grade = NarratorGrade.ACCEPTABLE
+                compromised = False
                 continue
             grade = self.transition_policy.evaluate_transition(
                 current_grade=grade,
@@ -1139,7 +1151,11 @@ class Registry:
                 EvidenceAction.TADIL,
                 reason or "Strike overturned by operator",
                 axis=EvidenceAxis.INTEGRITY,
-                metadata={"overturned": True},
+                metadata={
+                    "overturned": True,
+                    "__overturn_grade__": target_grade.value,
+                    "__overturn_adalah__": target_adalah.value,
+                },
             )
             narrator.grade = target_grade
             narrator.adalah_grade = target_adalah

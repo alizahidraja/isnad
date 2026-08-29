@@ -65,6 +65,9 @@ class TestWalkAuthorityChain:
         chain = walk_authority_chain("a.gov", fetch_meta=_stub_fetcher(metas))
         assert chain.reached_root is False
         assert chain.error == "cycle"
+        # A pure endorser cycle is self-referential, not independently
+        # confirmed — it must NOT render GREEN (issue #183).
+        assert chain.confirmed is False
 
 
 class _FakeResp:

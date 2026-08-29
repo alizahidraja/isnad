@@ -10,6 +10,9 @@ LIMITATIONS:
   present, else NLI, else TF-IDF). Without any LLM key or NLI install it
   degrades to the word-overlap EmbeddingCritic, which returns UNVERIFIABLE on
   most real prose — supply an LLM-backed critic for practical coverage.
+- The critic's corpus is the set of documents retrieved *during this run*
+  (`on_retriever_end`), so content criticism is real but bounded by what the
+  run actually retrieved.
 - Corroboration is experimentally untested.
 - Seed-grade your known narrators before use.
 """
@@ -82,6 +85,10 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
         self._links: list[ChainLinkSpec] = []
         self._step = 0
         self._graded_claims: list[dict[str, Any]] = []
+        # Retrieved document content, used as the content critic's corpus so
+        # matn criticism is real rather than an empty-corpus no-op. In-memory
+        # only; never serialized into the emitted trace.
+        self._retrieved_texts: list[str] = []
 
     # ── Callback hooks ──────────────────────────────────────────
 
@@ -93,6 +100,14 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
         for doc in documents:
             source = getattr(doc, "metadata", {}).get("source", "document")
             self._add_link(f"retriever:{source}", TransformType.DESTRUCTIVE)
+            # Retain retrieved content as the critic's corpus, so content
+            # criticism is real (a critic with an empty corpus can only return
+            # UNVERIFIABLE — the tracer's content criticism was previously a
+            # no-op). Page content is kept only for the in-memory corpus, never
+            # in the emitted trace.
+            content = getattr(doc, "page_content", "") or ""
+            if content.strip():
+                self._retrieved_texts.append(content.strip())
 
     def on_tool_start(self, serialized: dict[str, Any], input_str: str, **kwargs: Any) -> None:
         tool_name = serialized.get("name", "tool")
@@ -119,7 +134,7 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
                 link_adalah_grades=link_adalah_grades,
             )
 
-            cv = self.critic.evaluate(text, text, [], self.domain)
+            cv = self.critic.evaluate(text, text, self._retrieved_texts, self.domain)
             action = decide(cg, cv)
 
             self._graded_claims.append({

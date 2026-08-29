@@ -67,7 +67,7 @@ class TestBenchmarkIsHonest:
 
     def test_semantic_contradictions_are_mostly_missed(self, by_kind):
         """The critic is word-overlap only — this is the honest gap (#34)."""
-        k = by_kind["semantic-contradiction"]
+        k = by_kind["content-contradiction"]
         assert k["fn"] > k["tp"]
 
     def test_overall_recall_is_not_perfect(self, by_kind):

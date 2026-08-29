@@ -218,3 +218,44 @@ class TestTracerLifecycle:
         report = tracer.report()
         assert "ISNAD Report — 1 claims" in report
         assert "F = ma" in report
+
+
+class TestTracerContentCriticismCorpus:
+    """The tracer must pass its retrieved documents as the critic's corpus,
+    so content criticism is real rather than an empty-corpus no-op (#183)."""
+
+    def _build_tracer(self):
+        reg = Registry()
+        reg.register("source:docs", "physics", grade=NarratorGrade.RELIABLE)
+        reg.register("model:gpt-4o", "physics", grade=NarratorGrade.RELIABLE)
+        from isnad.matn import DeterministicRuleCritic
+
+        tracer = IsnadTracer(registry=reg, critic=DeterministicRuleCritic(), domain="physics")
+        return tracer
+
+    def test_retrieved_texts_become_the_critic_corpus(self):
+        tracer = self._build_tracer()
+        # Feed a corpus claim the deterministic critic knows, then a claim that
+        # contradicts it — the critic can only see the contradiction through the
+        # retrieved-text corpus, not through an empty list.
+        tracer.on_retriever_end(
+            documents=[type("D", (), {"page_content": "p = mv", "metadata": {}})()],
+            run_id="r1",
+        )
+        assert tracer._retrieved_texts == ["p = mv"]
+
+        # A claim that contradicts the retrieved corpus.
+        tracer.on_chain_end(outputs={"output": "p = h/lambda"})
+        (graded,) = tracer.graded_chains()
+        assert graded["content_verdict"] == ContentVerdict.CONTRADICTION
+        # The chain is DAIF (retriever:document is ungraded) × CONTRADICTION
+        # → QUARANTINE. The point: a real contradiction, not an empty-corpus no-op.
+        assert graded["action"].value == "quarantine"
+
+    def test_no_retrieved_docs_means_empty_corpus_still_safe(self):
+        tracer = self._build_tracer()
+        tracer.on_chain_end(outputs={"output": "p = h/lambda"})
+        (graded,) = tracer.graded_chains()
+        # No retrieved docs → critic returns UNVERIFIABLE, never a false
+        # CONTRADICTION from an empty corpus.
+        assert graded["content_verdict"] == ContentVerdict.UNVERIFIABLE

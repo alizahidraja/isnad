@@ -129,9 +129,12 @@ def walk_authority_chain(
     seen: set[str] = set()
     for _ in range(max_depth):
         if current in seen:
-            return AuthorityChain(
-                entries, reached_root=False, confirmed=bool(entries), error="cycle"
-            )
+            # A cycle never reaches a sovereign root: two (or more) issuers
+            # mutually endorsing each other with no root-authority is
+            # self-referential, not independently confirmed. Treat it as
+            # self-verified (amber), never green — otherwise an issuer
+            # controlling two domains could manufacture an endorsement pair.
+            return AuthorityChain(entries, reached_root=False, confirmed=False, error="cycle")
         seen.add(current)
         meta = fetch_meta(current, timeout=timeout)
         if meta is None:

@@ -175,9 +175,18 @@ def main() -> None:
                 [l.transform_type for l in chain.links],
                 is_complete=True,
             )
+            # Grade the corroborating chain from its own narrators — never a
+            # hardcoded tier. The fixture (Crowell source → scraper → excellent
+            # ingest) grades HASAN, not SAHIH; a hardcoded SAHIH here would make
+            # the demo claim a recovery the framework would not actually produce.
+            cg_corroborator = grade_chain(
+                [reg.get_grade(l.narrator_id, l.domain) for l in chain2.links],
+                [l.transform_type for l in chain2.links],
+                is_complete=True,
+            )
             upgraded = evaluate_corroboration(
                 base_grade=cg_base,
-                corroborating_chain_grades=[ChainGrade.SAHIH],
+                corroborating_chain_grades=[cg_corroborator],
                 base_narrators=chain.narrator_ids,
                 corroborating_narrators=[chain2.narrator_ids],
                 narrator_metadata={nid: reg.get_metadata(nid, "physics") for nid in NARRATORS},

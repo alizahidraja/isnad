@@ -53,6 +53,7 @@ NARRATORS: dict[str, Narrator] = {
     ),
     # Scrapers
     "pdf-scraper@1.2": Narrator("pdf-scraper@1.2", "scraper", "acceptable"),
+    "pdf-scraper@1.3": Narrator("pdf-scraper@1.3", "scraper", "reliable"),
     "pdf-scraper@0.9-legacy": Narrator("pdf-scraper@0.9-legacy", "scraper", "weak"),
     # A scraper still graded RELIABLE but which has silently drifted (stale grade)
     "pdf-scraper@2.0": Narrator("pdf-scraper@2.0", "scraper", "reliable"),
@@ -191,9 +192,12 @@ SCENARIOS: list[Scenario] = [
 
 # The second, genuinely independent corroborating chain for scenario E.
 # Different source AND different ingest model family, so the independence
-# detector does NOT flag it as correlated.
+# detector does NOT flag it as correlated. Its narrators are all RELIABLE, so
+# the chain grades SAHIH — a single HASAN corroborator is (correctly) NOT
+# enough to fire the upgrade (MIN_EFFECTIVE_WEIGHT ≈ 2 HASAN-equivalent
+# chains), and the demo must use the real grade, never a hardcoded tier.
 CORROBORATING_CHAIN_FOR_E: list[tuple[str, str]] = [
     ("source:crowell-light-matter", "pass_through"),
-    ("pdf-scraper@1.2", "destructive"),
+    ("pdf-scraper@1.3", "destructive"),
     ("ingest@excellent", "generative"),
 ]

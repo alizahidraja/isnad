@@ -76,3 +76,55 @@ class TestAuditTrail:
         reg.adjudicate("m", "d", overturn=True)
         last = reg.get("m", "d").evidence_log[-1]
         assert last["metadata"]["overturned"] is True
+
+
+class TestOverturnDurability:
+    """#182: an overturn must survive the next recompute AND get_grade_as_of —
+    the operator's re-accreditation is not undone by a later evidence event or
+    a period-sliced re-derivation."""
+
+    def test_overturn_survives_next_evidence_event(self):
+        reg = Registry()
+        reg.register("m", "d", grade=NarratorGrade.RELIABLE, adalah=AdalahGrade.HIGH)
+        reg.quarantine("m", "d", "mistaken strike")
+        reg.adjudicate(
+            "m",
+            "d",
+            overturn=True,
+            target_grade=NarratorGrade.RELIABLE,
+            target_adalah=AdalahGrade.HIGH,
+        )
+        assert reg.get("m", "d").grade == NarratorGrade.RELIABLE
+
+        # A subsequent evidence event must NOT re-apply the overturned strike.
+        # Before the #182 fix, the integrity jarḥ stayed in the log and the
+        # recompute re-asserted the permanent cap, silently dropping the grade.
+        reg.record_evidence(
+            "m",
+            "d",
+            EvidenceType.EVAL_HARNESS,
+            EvidenceAction.TADIL,
+            "sustained precision after overturn",
+        )
+        n = reg.get("m", "d")
+        # The overturned integrity strike did not re-apply: not REJECTED, and
+        # integrity is not COMPROMISED.
+        assert n.grade != NarratorGrade.REJECTED
+        assert n.adalah_grade != AdalahGrade.COMPROMISED
+
+    def test_get_grade_as_of_honors_overturn(self):
+        from datetime import UTC, datetime, timedelta
+
+        reg = Registry()
+        t0 = datetime.now(UTC)
+        reg.register("m", "d", grade=NarratorGrade.RELIABLE, adalah=AdalahGrade.HIGH)
+        reg.quarantine("m", "d", "mistaken strike")
+        t_q = datetime.now(UTC)
+        reg.adjudicate("m", "d", overturn=True, target_grade=NarratorGrade.RELIABLE)
+        t_o = datetime.now(UTC) + timedelta(seconds=1)
+
+        # After the overturn, the re-derived grade must NOT be REJECTED.
+        assert reg.get_grade_as_of("m", "d", as_of=t_o) == NarratorGrade.RELIABLE
+        # Before the overturn, the quarantine still held.
+        assert reg.get_grade_as_of("m", "d", as_of=t_q) == NarratorGrade.REJECTED
+        assert t0 < t_q

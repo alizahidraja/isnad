@@ -59,6 +59,9 @@ class TestGate:
         # clean chain (SAHIH) but the content contradicts the corpus → REVIEW.
         assert r.action is not None
         assert r.action.value == "review"
+        # REVIEW is "hold, do not serve" — the middleware must GATE it, not
+        # pass a contradicted claim through (issue #183).
+        assert r.gated is True
 
     def test_with_critic_consistent_does_not_gate(self) -> None:
         from isnad.matn import DeterministicRuleCritic

@@ -79,9 +79,10 @@ def gate(
 
     With a ``critic`` + ``corpus``, the full decision matrix runs: the claim's
     content is criticized against the corpus and routed to serve / review /
-    quarantine. Gating is then TRUE for QUARANTINE or
-    REJECT_AND_QUARANTINE_NARRATOR — so a contradiction (not just a bad
-    narrator) also blocks the claim.
+    quarantine. Gating is then TRUE for every action that does NOT serve —
+    REVIEW, QUARANTINE, and REJECT_AND_QUARANTINE_NARRATOR — so a contradiction
+    (not just a bad narrator) also blocks the claim, and an unverifiable
+    verdict on a ḥasan/ḍaʿīf chain holds it rather than letting it pass.
 
     This function has no LangChain dependency and is the unit-testable core.
     """
@@ -97,7 +98,11 @@ def gate(
     if critic is not None and corpus is not None:
         content = critic.evaluate(claim, claim.lower(), corpus, domain)
         action = decide(chain_grade, content)
-        gated = action in (Action.QUARANTINE, Action.REJECT_AND_QUARANTINE_NARRATOR)
+        # Gate everything the matrix does NOT serve: a contradiction is REVIEW
+        # (never SERVE) even on a ṣaḥīḥ chain, and REVIEW means "hold, do not
+        # serve" — the middleware's job is to stop untrustworthy claims
+        # entering, and an unserved claim must not pass through.
+        gated = action not in (Action.SERVE, Action.SERVE_WITH_CAVEAT)
     else:
         action = Action.REJECT_AND_QUARANTINE_NARRATOR if chain_grade == ChainGrade.MAWDU else None
         gated = quarantine and chain_grade == ChainGrade.MAWDU

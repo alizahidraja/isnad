@@ -150,6 +150,41 @@ def _is_integrity_jarh(entry: dict[str, object]) -> bool:
     return axis != EvidenceAxis.PRECISION
 
 
+def _is_overturn(entry: dict[str, object]) -> bool:
+    """True if an evidence entry is an operator adjudication that OVERRIDES the
+    integrity ladder (issue #38/#182): ``adjudicate(overturn=True)`` records an
+    ADJUDICATION entry with ``metadata.overturned == True``. Such an entry
+    re-accredits the narrator, so integrity strikes logged *before* it no longer
+    count toward the permanent ceiling.
+    """
+    raw_type = str(entry.get("evidence_type", "") or "")
+    if not raw_type:
+        return False
+    try:
+        if EvidenceType(raw_type) != EvidenceType.ADJUDICATION:
+            return False
+    except ValueError:
+        return False
+    return bool((entry.get("metadata", {}) or {}).get("overturned"))
+
+
+def _integrity_strikes(evidence: list[dict[str, object]]) -> int:
+    """Count *active* integrity strikes: the number of integrity jarḥ entries
+    after the most recent overturning adjudication.
+
+    An overturn is the one operator mechanism that overrides the permanent
+    integrity ladder (#38). Strikes before it are re-accredited and must not
+    silently re-apply on the next recompute; strikes after it still count.
+    """
+    strikes = 0
+    for e in evidence:
+        if _is_overturn(e):
+            strikes = 0
+        elif _is_integrity_jarh(e):
+            strikes += 1
+    return strikes
+
+
 _GRADE_RANK: dict[NarratorGrade, int] = {
     NarratorGrade.REJECTED: 0,
     NarratorGrade.WEAK: 1,
@@ -267,7 +302,7 @@ def threshold_transition(
     strikes_per_tier = (
         downgrade_threshold if integrity_strikes_per_tier is None else integrity_strikes_per_tier
     )
-    integrity_jarh = sum(1 for e in all_evidence if _is_integrity_jarh(e))
+    integrity_jarh = _integrity_strikes(all_evidence)
     integrity_cap = _integrity_cap(integrity_jarh, strikes_per_tier)
 
     # An arriving integrity jarḥ ratchets down to the permanent cap.
@@ -430,7 +465,7 @@ class BayesianTransitionPolicy:
         # Integrity (ʿadālah) jarḥ — JARH with axis != PRECISION — accumulates
         # permanently and imposes a ceiling.  Precision (ḍabṭ) evidence drives
         # the recoverable Beta posterior, which is then clamped to that ceiling.
-        integrity_jarh = sum(1 for e in all_evidence if _is_integrity_jarh(e))
+        integrity_jarh = _integrity_strikes(all_evidence)
         integrity_cap = _integrity_cap(integrity_jarh, self.integrity_strikes_per_tier)
 
         # Issue #90: an operator-assigned seed (register(grade=...) followed by a
