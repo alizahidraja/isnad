@@ -143,7 +143,9 @@ class TestVerifyDetachedSignature:
         code = cli_main._verify(["--record", str(path), "--hmac-secret", "s3cret"])
         assert code == 1
 
-    def test_verify_with_signature_but_no_secret_reports_unchecked(self, tmp_path, monkeypatch, capsys):
+    def test_verify_with_signature_but_no_secret_reports_unchecked(
+        self, tmp_path, monkeypatch, capsys
+    ):
         path = self._write_signed_record(tmp_path, "s3cret")
         monkeypatch.delenv("ISNAD_SIGNING_SECRET", raising=False)
         code = cli_main._verify(["--record", str(path)])

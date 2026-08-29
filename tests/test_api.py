@@ -355,14 +355,21 @@ class TestClaimHydration:
 
         chain = Chain([
             ChainLinkSpec(
-                "src", 0, version="1.0", transform_type=TransformType.PASS_THROUGH,
+                "src",
+                0,
+                version="1.0",
+                transform_type=TransformType.PASS_THROUGH,
                 domain="physics",
             )
         ])
         with get_session() as session:
             store_claim(
-                session, "E = mc^2", "physics/rel", chain,
-                chain_grade="sahih", claim_id="hydrate-test-1",
+                session,
+                "E = mc^2",
+                "physics/rel",
+                chain,
+                chain_grade="sahih",
+                claim_id="hydrate-test-1",
             )
 
         # Simulate a fresh process: index is empty, DB has the claim.

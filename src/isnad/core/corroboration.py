@@ -872,8 +872,11 @@ class CorroborationEngine:
                 reason=(
                     "Corroboration withheld: claim has a live content contradiction "
                     "outstanding"
-                    + (" (content-level madār: a corroborator repeats the same error)"
-                       if content_madar else "")
+                    + (
+                        " (content-level madār: a corroborator repeats the same error)"
+                        if content_madar
+                        else ""
+                    )
                 ),
             )
 

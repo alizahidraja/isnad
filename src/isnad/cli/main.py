@@ -288,8 +288,7 @@ def _verify(argv: list[str]) -> int:
     parser.add_argument(
         "--hmac-secret",
         default=None,
-        help="HMAC secret for detached-signature verification "
-        "(defaults to $ISNAD_SIGNING_SECRET)",
+        help="HMAC secret for detached-signature verification (defaults to $ISNAD_SIGNING_SECRET)",
     )
     args = parser.parse_args(argv)
 
