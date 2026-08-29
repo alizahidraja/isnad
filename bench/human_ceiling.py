@@ -54,12 +54,12 @@ def _count_critics(db_path: str) -> int:
     """
     conn = sqlite3.connect(db_path)
     try:
-        n = conn.execute(
+        row = conn.execute(
             "SELECT COUNT(DISTINCT alem_id) FROM aqwal WHERE qawl IS NOT NULL AND qawl != ''"
-        ).fetchone()[0]
+        ).fetchone()
     finally:
         conn.close()
-    return n
+    return int(row[0])
 
 
 def _load_consensus(db_path: str) -> dict[int, str]:
