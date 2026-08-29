@@ -778,13 +778,13 @@ class TestBayesianTransitionPolicy:
         assert reg.get_grade("model-E", "physics") == NarratorGrade.UNGRADED
 
     def test_bayesian_seeding_prior(self) -> None:
-        """Seeding a prior mean works."""
+        """Seeding a prior mean works — the prior is preserved, not shifted."""
         policy = BayesianTransitionPolicy()
         policy.seed_grade("model-F", "physics", prior_mean=0.85, prior_weight=10.0)
         state = policy.get_state("model-F", "physics")
-        # alpha = 0.85*10 + 1 = 9.5, beta = 0.15*10 + 1 = 2.5
-        # mean = 9.5 / 12.0 ≈ 0.79
-        assert 0.78 < state.mean < 0.80
+        # alpha = 0.85*10 = 8.5, beta = 0.15*10 = 1.5 → mean = 8.5/10 = 0.85.
+        # No +1 Laplace term: it would silently shift the prior down (issue #90-class).
+        assert abs(state.mean - 0.85) < 1e-9
         assert state.to_grade() == NarratorGrade.ACCEPTABLE
 
     def test_bayesian_can_recover_from_rejected(self) -> None:
