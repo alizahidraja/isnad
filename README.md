@@ -1,40 +1,61 @@
-# Isnād–Rijāl Framework — Trust Grading, not just Hallucination Detection
+# ISNAD — Open-Source LLM Provenance & AI Audit Trail for RAG and Multi-Agent Systems
 
-**ISNAD grades the transmitters and the chain — not just the claim.** Every
-output your LLM or multi-agent system produces carries a verifiable weakest-link
-trust grade and a tamper-evident audit trail, so you can answer the question
-RAG-faithfulness and hallucination detectors skip: *who handled this claim, in
-what order, and how much do we trust each one?*
+*Isnād–Rijāl Framework · grades the transmitters and the chain, not just the claim.*
 
-*(The name and the design descend from 1,200 years of hadith transmission science — the lineage is the reason to believe the design is sound, not a prerequisite for using it.)*
+**Open-source** `pip install isnad` — **LLM provenance**, **agent trust**, and an
+**AI audit trail** for RAG and multi-agent systems. Apache-2.0, permanently.
 
-> **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) | **Paper DOI:** [10.48550/arXiv.2607.24117](https://doi.org/10.48550/arXiv.2607.24117) | **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873)
+**Every claim your pipeline produces carries a verifiable weakest-link trust grade
+and a tamper-evident audit trail**, so you can answer the question hallucination
+detectors and observability tools skip: *who handled this claim, in what order,
+and how much do we trust each one?*
+
+> **Proof it works:** ISNAD's weakest-link rule reproduces **1,200 years of
+> scholar verdicts at Cohen's κ = 0.87** across 575,060 graded hadith chains —
+> where the scholars agree with *each other* at only κ = 0.33 (the human
+> ceiling). Full benchmark below.
+
+```python
+# 30 seconds to a verdict:
+from isnad import Registry, grade
+from isnad.types import NarratorGrade
+
+reg = Registry()
+reg.register("openstax", "physics", grade=NarratorGrade.RELIABLE)
+reg.register("pdf-scraper", "physics", grade=NarratorGrade.UNGRADED)
+reg.register("ingest-model", "physics", grade=NarratorGrade.ACCEPTABLE)
+
+verdict = grade("p = mv", ["openstax", "pdf-scraper", "ingest-model"], reg, domain="physics")
+print(verdict.why)
+# claim 'p = mv' → chain DAIF (weakest: pdf-scraper, ungraded)
+```
+
+> **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873)
 
 [![CI](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml/badge.svg)](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2607.24117-b31b1b.svg)](https://arxiv.org/abs/2607.24117)
 
-**🌐 Full project home: https://alizahidraja.com/isnad**
+**🌐 Project home: https://alizahidraja.com/isnad** · ⭐ Star to follow along · [Contribute](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ---
 
 ## What & Why
 
-In modern AI pipelines, a factual claim passes through many hands — a scraper
-extracts it, an agent compiles it, another serves it. Each hand can drop,
-distort, or invent. Existing observability tools record *what* happened. ISNAD
-grades *who* transformed the claim, so it can tell you **how much to trust the
-result** — and export the whole judgement as a tamper-evident audit trail for
-governance review.
+In a RAG pipeline or multi-agent system, a factual claim passes through many
+hands — a scraper extracts it, an agent compiles it, another model serves it.
+Each hand can drop, distort, or invent. **Observability and data-lineage tools
+record *what* happened; ISNAD grades *who* transformed the claim**, so you know
+how much to trust the result — and can export the whole judgment as a
+tamper-evident audit record for governance review.
 
 The framework adapts **hadith transmission science** — one of history's most
-rigorous epistemologies, refined over twelve centuries — into a Python library
-for AI systems. Every claim carries its complete chain of transmitters (isnād);
-each transmitter is graded in a living registry (rijāl); chains are evaluated
-by their weakest link; content is criticized independently of transmission
-quality; and the two combine in a decision matrix that routes claims to
-serve, review, or quarantine.
+rigorous epistemologies, refined over twelve centuries — into a Python library.
+Every claim carries its complete chain of transmitters (isnād); each transmitter
+is graded in a living registry (rijāl); chains are capped by their weakest link;
+content is criticized independently of transmission; and the two combine in a
+decision matrix that routes claims to serve, review, or quarantine.
 
 ## How ISNAD differs from a hallucination detector
 
@@ -43,131 +64,34 @@ context?"* (Cleanlab TLM, Galileo, Patronus, TruLens, RAGAS) or *"what happened
 during this run?"* (LangSmith, Langfuse, Arize). ISNAD asks the question they
 skip: **"who handled this claim, and how much do we trust each transmitter?"**
 
-| Tool | What it grades | Grades the transmitters / the chain? |
-| --- | --- | --- |
-| Cleanlab TLM | Trustworthiness of the LLM **response** | No |
-| Galileo / Patronus / TruLens / RAGAS | Output **faithfulness / groundedness** vs retrieved context | No |
-| LangSmith / Langfuse / Arize | **Traces** (what happened) + output evals | No |
-| **ISNAD** | **The transmitters and the transmission chain** — weakest-link grading per (narrator, role, domain), independent-chain corroboration with madār discounting, tamper-evident audit record | **Yes** |
+| Tool | What it grades | Records the chain (lineage)? | Grades the transmitters / chain (trust)? |
+| --- | --- | --- | --- |
+| Cleanlab TLM | Trustworthiness of the LLM **response** | No | No |
+| Galileo / Patronus / TruLens / RAGAS | Output **faithfulness / groundedness** vs retrieved context | No | No |
+| LangSmith / Langfuse / Arize | **Traces** (what happened) + output evals | Yes | No |
+| OpenLineage / Marquez / DataHub | **Data lineage** (what touched what) | Yes | No |
+| **ISNAD** | **The transmitters and the transmission chain** — weakest-link grading, corroboration with madār discounting, tamper-evident audit | **Yes** | **Yes** |
+
+**What ISNAD is NOT — and why that's the point.** Three honest answers, up front:
+
+1. *"Tracers already record who handled it."* They record the order; they don't
+   **grade** each transmitter, propagate a weakest-link verdict, or gate on it.
+2. *"Your grades are operator-assigned, so it's GIGO."* The grades are **priors +
+   audited observations + independent corroboration**, propagated by a documented
+   method. ISNAD makes trust *explicit and auditable* — it doesn't auto-measure it,
+   and it never pretends to.
+3. *"Claim critics measure truth better than you."* Correct — and ISNAD **composes
+   with them** (matn criticism). It doesn't replace them; it grades the chain that
+   carried the claim.
 
 **Free, Apache-2.0, self-hostable — permanently.** The core (`src/isnad/`) stays
-Apache-2.0 forever; the paid/closed surface, if any, lives in a separate repo
-under its own licence (see [`LICENSING.md`](LICENSING.md)). The claim-graders
-above are paid SaaS APIs; ISNAD is the only open-source core that grades the
-chain, not just the output.
+Apache-2.0 forever; any future commercial surface lives in a separate repo under
+its own licence (see [`LICENSING.md`](LICENSING.md)). The claim-graders above are
+paid SaaS APIs; ISNAD is open-source and self-hostable.
 
----
+## Quickstarts
 
-## Audit & Compliance Evidence
-
-ISNAD can **export a tamper-evident audit record** for any graded claim — a
-machine-readable artifact for governance record-keeping. One command:
-
-```bash
-isnad export --claim <id> --format json    # or jsonl|csv; --verify; --redact; --chain-log
-```
-
-Each record captures the full chain (who handled the claim, in order, as an
-explicit **DAG** via `upstream_ids`), the weakest link, source-document hashes,
-**human-oversight evidence**, the environment, and a SHA-256 integrity hash
-over the RFC 8785-canonical form of its own payload — plus an optional
-tamper-evident hash chain (no blockchain) and a PII-redaction hook.
-
-**Two tamper-evidence logs.** There are two ways to anchor a stream of audit
-records against post-hoc modification:
-
-- **Linear hash chain** (`isnad.audit.chainlog`, `isnad verify-chain`) — each
-  record's hash is linked to the previous one. Correct and simple, but
-  **strictly sequential**: every appender must read the previous hash first, so
-  parallel agents race on it.
-- **Merkle batch log** (`isnad.audit.merkle_log`, `isnad verify-merkle`) —
-  records enter as independent *leaves* with no back-reference, so any number of
-  agents can produce them concurrently; a **seal** step then commits the ordered
-  batch to a Merkle root, and batch roots chain via `prev_root`. Ships
-  `build_batch`, `seal_batches`, `verify_batches`, and O(log n)
-  `prove_inclusion`/`verify_inclusion` (RFC 6962 domain-separated hashing;
-  odd nodes promoted, not duplicated).
-
-**Which to use:** linear for a single sequential writer; Merkle for mass
-parallel agent batches. Both detect modification, deletion-of-middle, and
-reordering. Neither detects *tail truncation* (dropping the last entries) — that
-needs a trusted head/count, out of scope — and both commit to each record's
-self-integrity hash, so they detect post-hoc modification, not a forger who can
-rewrite records and rebuild the chain (see [#97]).
-
-**Who this is for:** teams running production AI who will be asked what their
-system did and how they know. The record answers that question; it does not
-answer "are we compliant?"
-
-**ISNAD produces evidence artifacts; it does not confer conformity with any
-regulation.** See [`docs/evidence-mapping.md`](docs/evidence-mapping.md) for an
-*informational* (not legal) mapping of each field to the EU AI Act, ISO/IEC
-42001, the NIST AI RMF, and the SDAIA framework — and the explicit statement of
-what ISNAD deliberately does *not* provide.
-
-**The core library is Apache-2.0, permanently.** See
-[`LICENSING.md`](LICENSING.md) for the public commitment: `src/isnad/` stays
-Apache-2.0 forever; any future commercial surface would live in a separate repo
-under its own licence, and the line is drawn so the core is never partially
-closed.
-
-```python
-from isnad.audit import build_audit_record
-
-record = build_audit_record(claim_id, session, registry)  # -> AuditRecord
-assert record.integrity.record_hash == canonical_hash(record.to_dict(include_integrity=False))
-```
-
-Demos (no API keys): [`examples/audit_export_langchain.py`](examples/audit_export_langchain.py),
-[`examples/multi_agent_handoff.py`](examples/multi_agent_handoff.py),
-[`examples/multi_agent_dag.py`](examples/multi_agent_dag.py) (branching DAG +
-the honest miss), [`examples/ci_gate.py`](examples/ci_gate.py) (fail a build on
-a degraded chain).
-
----
-
-## Scope and limitations
-
-ISNAD grades **post-entry provenance** — who handled a claim after it entered
-your pipeline and how much you trust them — not whether the upstream source or
-the final answer is objectively true.
-
-**What ISNAD covers:**
-
-- Ordered transmission chains (isnād) and narrator grades (rijāl)
-- Weakest-link chain grading and the serve / review / quarantine decision matrix
-- Matn (content) criticism **against your existing corpus** — contradiction detection
-- Corroboration when **independent** chains agree (with lineage / madār discounting)
-
-**What ISNAD does not cover:**
-
-- **Source legitimacy at the boundary** — ISNAD does not verify that a URL,
-  publisher, or retriever `metadata["source"]` is authentic. Registry grades are
-  **operator-assigned assertions**, not auto-verified facts.
-- **Novel claim truth** — matn catches contradictions with known corpus; claims
-  that are new and unverifiable are not auto-fact-checked against ground truth.
-- **Faithful transmission of bad input** — a `RELIABLE` fake publisher plus a
-  clean pipeline can yield a high chain grade. ISNAD reports faithful handling,
-  not source truth.
-
-**Boundary vetting is the operator's responsibility.** Before a source enters
-the pipeline:
-
-- Vet sources before registering them as `RELIABLE` (allowlists, domain
-  verification, human onboarding)
-- Register unknown sources as `UNGRADED` with `adalah=SUSPECT` until vetted
-- Do not treat LangChain retriever source tags as verified identity — map URLs
-  to pre-vetted narrator IDs
-- Use matn, corroboration, and human review as **downstream** gates; they narrow
-  risk but do not replace boundary vetting
-
-See Component-level validation status and endpoint-identity behavior
-in [What's Validated vs. What's Not](#whats-validated-vs-whats-not) and
-[Endpoint identity](#endpoint-identity-model-version-drift) below.
-
----
-
-## 30-Second Quickstart
+### 30 seconds — grade a claim
 
 ```bash
 pip install isnad
@@ -184,12 +108,10 @@ reg.register("ingest-model", "physics", grade=NarratorGrade.ACCEPTABLE)
 
 verdict = grade("p = mv", ["openstax", "pdf-scraper", "ingest-model"], reg, domain="physics")
 print(verdict.why)
-# 'claim "p = mv" → chain DAIF (weakest: pdf-scraper, ungraded → ḍaʿīf by default)'
+# claim 'p = mv' → chain DAIF (weakest: pdf-scraper, ungraded)
 ```
 
-The full expert API (chain objects, critics, the decision matrix) is below.
-
-## 60-Second Quickstart (expert API)
+### 60 seconds — full chain + content criticism + decision matrix
 
 ```bash
 pip install isnad
@@ -200,33 +122,29 @@ from isnad import Registry, Chain, ChainLinkSpec, grade_chain, decide
 from isnad.types import NarratorGrade, ContentVerdict
 from isnad.critics import EmbeddingCritic
 
-# Build a chain: source → scraper → model
 chain = Chain([
     ChainLinkSpec("openstax-textbook", 0, domain="physics"),
     ChainLinkSpec("pdf-scraper-v2", 1, domain="physics"),
     ChainLinkSpec("ingest-model-v3", 2, domain="physics"),
 ])
 
-# Seed-grade known narrators (operator-assigned — see Scope and limitations)
 reg = Registry()
 reg.register("openstax-textbook", "physics", grade=NarratorGrade.RELIABLE)
 reg.register("pdf-scraper-v2", "physics", grade=NarratorGrade.RELIABLE)
 reg.register("ingest-model-v3", "physics", grade=NarratorGrade.ACCEPTABLE)
 
-# Grade the chain
 grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
 transforms = [l.transform_type for l in chain.links]
 chain_grade = grade_chain(grades, transforms, is_complete=True)
 
-# Content criticism (now functional — embedding-based)
-critic = EmbeddingCritic()
+critic = EmbeddingCritic()  # offline; obvious contradictions only — see Scope
 verdict = critic.evaluate("p = h/λ", "p = h/lambda", ["p = mv"])
 action = decide(chain_grade, verdict)
 
 print(f"Chain: {chain_grade.value.upper()} | Content: {verdict.value} | Action: {action.value}")
 ```
 
-### LangChain Integration (5 lines)
+### LangChain integration (5 lines)
 
 ```bash
 pip install isnad[langchain]
@@ -235,88 +153,58 @@ pip install isnad[langchain]
 ```python
 from isnad.integrations.langchain import IsnadCallbackHandler, seed_registry
 
-reg = seed_registry({"source:docs": "reliable", "model:gpt-4o": "acceptable"})  # operator-assigned grades
+reg = seed_registry({"source:docs": "reliable", "model:gpt-4o": "acceptable"})
 handler = IsnadCallbackHandler(registry=reg, domain="physics")
 chain.invoke("What is F=ma?", config={"callbacks": [handler]})
 trace = handler.to_trace()  # isnad_trace v0.1 JSON
 ```
 
-Also available: `IsnadTracer` (older flat-list reporter with built-in report()) and
-`AsyncIsnadCallbackHandler` for async pipelines.
+Also available: `IsnadTracer` and `AsyncIsnadCallbackHandler` for async pipelines.
 
-**The policy layer — `IsnadMiddleware`.** The callback *captures* traces; the
-middleware *gates* claims — it grades each tool output and model response the
-moment they enter the agent and blocks (quarantines) MAWDU chains. Framing:
-*"PIIMiddleware stops sensitive data leaving; IsnadMiddleware stops untrustworthy
-claims entering."*
+**`IsnadMiddleware` (gating).** The callback *captures* traces; the middleware
+*gates* claims. Note, honestly: the core `gate()` function is **importable and
+testable today**, but the LangChain `AgentMiddleware` wiring is **forward-looking**
+(it targets LangChain's 2026 `AgentMiddleware` API; see
+`src/isnad/integrations/langchain/middleware.py`). The callback handler is the
+production-ready capture path.
 
 ```python
 from isnad.integrations.langchain import IsnadMiddleware
-
 mw = IsnadMiddleware(reg, domain="physics")  # wrap_tool_call grades + gates
 ```
-
-See `examples/langchain_middleware_demo.py`. The listable shape is the
-`langchain-isnad` PyPI package (see issue #63).
 
 ---
 
 ## What's Validated vs. What's Not
 
-| Component                     | Status              | Notes                                                                 |
-| ----------------------------- | ------------------- | --------------------------------------------------------------------- |
-| **Bayesian grading**          | ✅ Default           | Beta-distribution replaces hardcoded thresholds; ISNAD_POLICY env override |
-| **Weakest-link quarantine**   | ✅ Validated         | 100% of REJECTED narrator claims correctly blocked                    |
-| **jarḥ–taʿdīl discovery**     | ✅ Partial           | Correctly identifies bad narrators; good ones need seed grades        |
-| **Seed-grade bootstrapping**  | ✅ Validated         | Evidence-backed `Registry.seed()` / `seed_from_benchmark()` — seeds survive the Bayesian posterior and are critic-bound: LLM critic ~63% coverage on new claims, embedding ~56% (see `experiments/cold_start_coverage/RESULTS.md`) |
-| **Corroboration (mutābaʿāt)** | ✅ Empirically validated | 603/603 (100%) on Wikipedia; 104/104 (100%) on physics textbooks; 8/8 Wikipedia + 9/9 physics negative controls pass (#127); madār detection blocks correlated chains; tawātur discount (N_eff) + witness-type priors price in shared blind spots (#54). **Requires attested distinct lineage** (`model_family` / `upstream_source`) — unattested chains no longer corroborate (issue #54) |
-| **Content criticism**         | ✅ Measured          | `LLMCritic` (DeepSeek) 1.000 recall / 0.000 false-consistent > `LocalNLICritic` 0.760 > `HybridCritic` 0.720 > `EmbeddingCritic` 0.120 — measured on the committed eval set; see `docs/critics.md` |
-| **Semantic matching**         | ✅ Validated         | Cross-source embedding matching (MiniLM) across Wikipedia and physics corpora |
-| **LangChain integration**     | ✅ Ready             | IsnadTracer callback handler, seed_registry helper, 47 LangChain integration tests pass |
-| **Confidence-gating**         | ❌ Useless           | Self-confidence scores uncorrelated with defects                      |
-| **Evidence provenance**       | ✅ Implemented       | `evidence_provenance()` reports whether a grade is prior-derived (benchmark) or observation-backed (audit/corroboration) — issue #6 |
-| **Survival primitive**        | ✅ Implemented       | `record_survival()` records that a claim survived independent (endorsed) verification — issue #25 |
-| **Per-role precision**        | ✅ Implemented       | Precision (ḍabṭ) graded per (narrator, role, domain); integrity stays per-narrator — issue #3 |
-| **Integrity ladder (Bayesian)** | ✅ Implemented     | Default policy enforces integrity strikes-per-tier — a permanent ʿadālah ceiling that precision cannot lift — issue #30 |
-| **Precision recoverability**  | ✅ Implemented       | Precision-driven REJECTED is recoverable; only integrity (COMPROMISED) is sticky — issue #40 |
-| **Period-sliced grades**      | ✅ Implemented       | `get_grade_as_of()` re-derives a narrator's grade at any past instant — the ikhtilāṭ remedy — issue #43 |
-| **End-to-end benchmark**      | ✅ Measured          | Adversarial corruption-detection: weak narrators 100% caught, 0 false positives; the content critic is the binding constraint — issue #50 |
-| **ISNAD-Bench (classical ground truth)** | ✅ Measured | Weakest-link grading vs 577,024 scholar-graded chains: Cohen's κ = 0.87 strict / 0.76 lenient (shuffled control −0.007); human ceiling = scholars-vs-scholars κ = 0.33; 88% of the remaining gap is mutābaʿa — `bench/docs/RESULTS.md` |
+The honesty box is the point: what's proven, what's measured, and what's open.
 
-**Ungraded-narrator policy.** An *ungraded* narrator caps a chain at **ḍaʿīf** by
-default — the classical treatment of a *majhūl* (unknown) narrator, whom scholars
-judged weak. Pass `lenient_unknown=True` to `grade_chain(...)` to instead cap
-at ḥasan (epistemic humility: no evidence → refuse ṣaḥīḥ, don't punish the
-absence of a grade). ISNAD-Bench measures the gap between the two at 0.11 κ
-(0.87 strict vs 0.76 lenient); the choice is documented, not hidden.
+| Component | Status | Notes |
+| --- | --- | --- |
+| **Weakest-link quarantine** | ✅ Validated | Every REJECTED-narrator chain grades MAWDU and is blocked — §8 experiment, 100% |
+| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** strict / **0.761** lenient vs 575,060 scholar-graded chains; human ceiling κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
+| **Corroboration (mutābaʿāt)** | ✅ Validated | 603/603 Wikipedia + 104/104 physics semantically-matched pairs; **8/8 Wikipedia + 9/9 physics negative controls** (#127); requires attested distinct lineage (#54) |
+| **Seed-grade bootstrapping** | ✅ Validated | Evidence-backed `Registry.seed()`; coverage is critic-bound: LLM ~63% / embedding ~56% on genuinely-new claims, ~100% / ~75% on curated verbatim claims — `experiments/cold_start_coverage/RESULTS.md` |
+| **Content criticism** | ⚠️ Partial | The binding constraint. LLM critic: 1.000 recall / **0.000 false-consistent on the 60-case eval set**, but **39.1% false-consistent on §8 content corruption** (#126) — see `docs/critics.md`. Offline critics are safe but conservative (recall 0.12–0.76). |
+| **jarḥ–taʿdīl discovery** | ⚠️ Partial | Finds injected weak narrators; good narrators need seed grades |
+| **Bayesian grading** | ✅ Default | Beta posterior per (narrator, role, domain); `ISNAD_POLICY` env override |
+| **Confidence-gating** | ❌ Useless | Model self-confidence is uncorrelated with defects — stated, not hidden |
+| **Tamper-evident audit** | ✅ Implemented | Self-hash + detached signatures + Merkle log; tail-truncation and forger limits disclosed |
+| **Period-sliced grades** | ✅ Implemented | `get_grade_as_of()` — the ikhtilāṭ (decline) remedy, #43 |
+| **Integrity ladder + recoverability** | ✅ Implemented | Integrity strikes are permanent; precision-driven REJECTED is recoverable (#30, #40) |
 
-### Deep dives — the honesty box
-
-The four hardest design decisions, and where the framework draws the line:
-
-- **Evidence provenance** — a grade is either a *prior* (benchmark seed) or an
-  *observation* (audit/corroboration). `evidence_provenance()` makes the
-  distinction visible; priors are assumptions, not evidence. (issue #6)
-- **Survival** — `record_survival()` records that a claim survived independent
-  verification. Claim-scoped, tazkiyah-guarded (self-verified seals refused),
-  and a precision signal only — it never rehabilitates a quarantined narrator.
-  (issue #25)
-- **Per-role precision** — precision (ḍabṭ) is graded per (narrator, role, domain);
-  integrity (ʿadālah) stays per narrator — a model can extract faithfully yet
-  over-reach when synthesizing. (issue #3) — `docs/rfc-issue3-role-grading.md`
-- **Endpoint identity** — model grades are keyed `alias@version`; a version bump
-  is a new narrator, not inherited reputation. (paper §4.2)
-
-**Honest limits:** cold-start is worse per-role; integrity is domain-scoped, not
-global; sub-quarantine integrity strikes are per-role (cross-role propagation is
-future work). The honesty box is a feature — we say exactly what works, what is
-limited, and where you supply your own components.
+**Honest limits (stated up front):** cold-start is worse per-role; integrity is
+domain-scoped, not global; chain independence cannot be *proven* from topology
+(only assumed from attested lineage, then discounted — #54); the content critic is
+the coverage ceiling; corroboration rarely fires on dense technical corpora where
+genuine cross-source overlap is rare. These are features, not bugs — ISNAD says
+exactly what works, what's limited, and where you supply your own components.
 
 ## ISNAD-Bench — measured against 1,200 years of ground truth
 
-The strongest evidence ISNAD works is not a claim — it's a number.
-**ISNAD-Bench** grades 577,024 real hadith chains (each graded by classical
-scholars) with ISNAD's weakest-link rule and measures agreement:
+The strongest evidence is a number, not a claim: ISNAD's weakest-link rule, run
+on **575,060 graded hadith chains** (each graded by classical scholars), measured
+for agreement:
 
 | Quantity | Cohen's κ |
 |---|---:|
@@ -325,11 +213,10 @@ scholars) with ISNAD's weakest-link rule and measures agreement:
 | scholars vs scholars (the human ceiling) | 0.331 |
 
 **How to read it:** ISNAD reproduces the scholars' *consensus* at κ = 0.87 — not
-because it is "better than the scholars" (they disagree with each other at
-κ = 0.33), but because it faithfully implements their method. The benchmark is
-preregistered, carries negative controls (shuffled grades → κ = 0.05), and
-buckets every disagreement. Full write-up:
-[`bench/docs/RESULTS.md`](bench/docs/RESULTS.md).
+because it is "better than the scholars" (they disagree with each other at 0.33),
+but because it deterministically implements their method. The benchmark is
+preregistered, carries negative controls (majority-class 0.000; shuffled grades
+−0.007), and buckets every disagreement. Full write-up: [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md).
 
 ```bash
 uv run python -m bench.run               # strict (default), full corpus
@@ -338,287 +225,189 @@ uv run python -m bench.human_ceiling     # the human ceiling
 uv run python -m bench.ikhtilat          # the mukhtaliṭūn (period-sliced grades)
 ```
 
-The dataset (`emadjumaah/hadith-kg`, CC-BY-4.0, 1.6 GB) is gitignored and pinned
-by SHA-256 — see [`bench/README.md`](bench/README.md) for the audit discipline
-that produced this.
+The dataset (`emadjumaah/hadith-kg`, CC-BY-4.0, 1.6 GB) is gitignored and pinned by
+SHA-256 — see [`bench/README.md`](bench/README.md).
 
----
+## Glossary — the Arabic, in plain English
 
-## Concept → Module Map
+The name and lineage are the reason to trust the design; you don't need the Arabic
+to use it. Every term is defined on first use.
 
-| Concept                       | What it does                                         | Module                     |
-| ----------------------------- | ---------------------------------------------------- | -------------------------- |
-| **isnād** (chain)             | Ordered, gap-checked transmission chain per claim    | `isnad/core/chain.py`      |
-| **rijāl** (registry)          | Graded narrator store per (alias@version, domain)    | `isnad/core/registry.py`   |
-| **jarḥ–taʿdīl**               | Evidence-driven state machine for narrator grades    | `isnad/core/policies.py`   |
-| **Bayesian grading**          | Beta-distribution narrator grades (default)          | `isnad/core/policies.py`   |
-| **Threshold policies**        | Sliding-window + edge-trigger + axis split           | `isnad/core/policies.py`   |
-| **ittiṣāl**                   | Completeness as epistemic property (gap → DAIF)      | `isnad/core/chain.py`      |
-| **Weakest-link grading**      | Chain grade = refined minimum over narrators         | `isnad/core/grading.py`    |
-| **mutābaʿāt** (corroboration) | Independent-chain upgrade + madār detection          | `isnad/core/corroboration.py` |
-| **matn criticism**            | Content evaluated independently of chain quality     | `isnad/critics/`           |
-| **Decision matrix**           | 4×2 (chain × content) → action router                | `isnad/core/decision.py`   |
-| **Persistence**               | SQLAlchemy-backed registry (swap via protocol)       | `isnad/storage/`           |
-| **API**                       | FastAPI service with DI + Prometheus metrics         | `isnad/api/`               |
-| **CLI**                       | `isnad serve` | `isnad seed`                        | `isnad/cli/`               |
-| **ʿadālah / ḍabṭ**            | Integrity and precision as two distinct axes         | `isnad/types.py`           |
-
-> 🗺️ **Full architecture diagram:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) — 3 tabs: System Architecture, Claim Lifecycle (data flow), and Validation Matrix (what's proven vs what's not). Open in [draw.io](https://app.diagrams.net/) or VS Code Draw.io extension.
-
-![ISNAD system architecture](docs/images/architecture.png)
-
----
+| Term | Meaning |
+| --- | --- |
+| **isnād** | The transmission chain — who handled a claim, in order |
+| **rijāl** | The registry of transmitters ("narrators") and their grades |
+| **jarḥ–taʿdīl** | The criticism-and-accreditation loop that moves grades with evidence |
+| **ʿadālah** | Integrity — can this transmitter be trusted not to lie? |
+| **ḍabṭ** | Precision — how often is this transmitter *accurate*? |
+| **ittiṣāl** | Chain continuity (no gaps); a gap = munqaṭiʿ → capped weak |
+| **mutābaʿāt** | Corroboration — independent chains agreeing upgrade a claim |
+| **madār** | The hidden pivot — "independent" chains that secretly share an upstream |
+| **matn** | The claim content, criticized separately from the chain |
+| **ṣaḥīḥ / ḥasan / ḍaʿīf / mawḍūʿ** | Sound / good / weak / fabricated — the four chain grades |
 
 ## The Decision Matrix
 
-|                         | Content CONSISTENT               | Content CONTRADICTION                          | Content UNVERIFIABLE                       |
-| ----------------------- | -------------------------------- | ---------------------------------------------- | ------------------------------------------ |
-| **Ṣaḥīḥ** (sound chain) | **SERVE** — cache                | **REVIEW** — ʿilal signal (highest-value case) | **SERVE WITH CAVEAT**                      |
-| **Ḥasan** (good chain)  | **SERVE WITH CAVEAT**            | **REVIEW** — hold, do not serve                | **REVIEW**                                 |
-| **Ḍaʿīf** (weak chain)  | **REVIEW** — seek corroboration  | **QUARANTINE**                                 | **REVIEW**                                 |
-| **Mawḍūʿ** (fabricated) | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR**               | **REJECT + QUARANTINE NARRATOR**           |
+Chain grade × content verdict → action:
 
----
+| | Content CONSISTENT | Content CONTRADICTION | Content UNVERIFIABLE |
+| --- | --- | --- | --- |
+| **Ṣaḥīḥ** (sound) | **SERVE** — cache | **REVIEW** — ʿilal signal (highest-value case) | **SERVE WITH CAVEAT** |
+| **Ḥasan** (good) | **SERVE WITH CAVEAT** | **REVIEW** — hold, do not serve | **REVIEW** |
+| **Ḍaʿīf** (weak) | **REVIEW** — seek corroboration | **QUARANTINE** | **REVIEW** |
+| **Mawḍūʿ** (fabricated) | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR** |
+
+Two defaults to notice: contradictions go to a human by default (LLMs are bad at
+reconciling competing evidence), and **ṣaḥīḥ × contradiction is the highest-value
+signal**, not an error state.
 
 ## Pluggable Strategies — Extend It
 
 The framework leaves key parameters open by design (paper §4.2/§4.3). Swap any:
 
-| Strategy              | Protocol                | Default                          | What to provide                       |
-| --------------------- | ----------------------- | -------------------------------- | ------------------------------------- |
-| `GradingStrategy`     | `isnad/types.py`        | `RefinedWeakestLink`             | How links combine into chain grade    |
-| `TransitionPolicy`    | `isnad/types.py`        | `BayesianTransitionPolicy`       | Evidence → narrator grade transitions |
-| `CorroborationPolicy` | `isnad/types.py`        | `CappedCorroborationPolicy`      | Independent chains → claim upgrade    |
-| `CorrelationDetector` | `isnad/types.py`        | `SharedLineageDetector`          | True independence between chains      |
-| `ContentCritic`       | `isnad/critics/base.py` | `HybridCritic` / `EmbeddingCritic` | Content contradiction detection       |
+| Strategy | Default | What to provide |
+| --- | --- | --- |
+| `GradingStrategy` | `RefinedWeakestLink` | How links combine into a chain grade |
+| `TransitionPolicy` | `BayesianTransitionPolicy` | Evidence → narrator grade transitions |
+| `CorroborationPolicy` | `CappedCorroborationPolicy` | Independent chains → claim upgrade |
+| `CorrelationDetector` | `SharedLineageDetector` | True independence between chains |
+| `ContentCritic` | `HybridCritic` / `EmbeddingCritic` | Content contradiction detection |
 
 **Swap a critic in one line:**
 
 ```python
 from isnad.critics import best_available_critic, EmbeddingCritic, LLMCritic
 
-critic = best_available_critic()           # LLM if a key/local server is set, else NLI, else TF-IDF
-critic = best_available_critic(prefer_llm=False)  # force an offline critic
-critic = EmbeddingCritic()                 # TF-IDF, always works, obvious contradictions
-critic = LLMCritic(provider="openrouter", model="openai/gpt-4o-mini")  # any LLM via OpenRouter
-critic = LLMCritic(provider="ollama", model="llama3.1")  # local LLM — no API key, no cloud
+critic = best_available_critic()                 # LLM if configured, else NLI, else TF-IDF
+critic = best_available_critic(prefer_llm=False) # force an offline critic
+critic = LLMCritic(provider="ollama", model="llama3.1")  # local — no API key, no cloud
+critic = LLMCritic(provider="openrouter", model="openai/gpt-4o-mini")  # any LLM
 ```
 
-Critic tiers are documented with their **measured** recall in
-[`docs/critics.md`](docs/critics.md). The honest headline: the LLM tier is the
-only near-perfect one (measured 100% recall, 0% false-consistents); the offline
-critics are safe but conservative (~72–76% recall). **For best results use the
-LLM critic** — a local model via Ollama gives you LLM-tier quality with no API
-key and no data leaving your machine.
+Critic tiers are documented with their **measured** recall in [`docs/critics.md`](docs/critics.md).
+The LLM critic is provider-agnostic (OpenRouter, OpenAI, DeepSeek, Anthropic,
+Gemini, Groq, Together, Ollama, or any OpenAI-compatible endpoint). For best
+results use the LLM critic — but see the honesty note above: it is not an
+acceptance gate on content corruption (#126).
 
-The LLM critic is **provider-agnostic** — OpenRouter, OpenAI, DeepSeek, Anthropic,
-Gemini, Groq, Together, **Ollama (local)**, or any OpenAI-compatible endpoint.
-Name a provider, or set `ISNAD_LLM_PROVIDER` + a key env var. `list_providers()`
-enumerates the known providers.
-
-**Cold-start bootstrapping (issue #33).** A new pipeline starts with every
-narrator UNGRADED, so the strict default caps everything at ḍaʿīf and nothing
-serves. Seed grades are the fix — and they should be **evidence-backed priors**
-(`Registry.seed` records `BOOTSTRAP_SEED` evidence, so the seed survives the
-Bayesian posterior's first recompute and is visible in the evidence log):
+**Cold-start bootstrapping (#33).** A new pipeline starts with every narrator
+UNGRADED, so nothing serves. Seed grades are the fix — evidence-backed priors
+(`Registry.seed` records `BOOTSTRAP_SEED` evidence):
 
 ```python
-from isnad import Registry, seed_from_benchmark
+from isnad import Registry, NarratorGrade, seed_from_benchmark
 
 reg = Registry()
 reg.seed("source:openstax", "physics", NarratorGrade.RELIABLE, source="publisher")
-reg.seed("model:gpt-4o@v1", "physics", NarratorGrade.ACCEPTABLE, source="benchmark")
 seed_from_benchmark(reg, "model:gpt-4o@v1", "physics", 0.93, benchmark="mmlu")  # accuracy → grade
-# a Live Verify seal seeds a source's integrity on day one:
-from isnad.integrations.liveverify import register_sealed_source
-register_sealed_source(reg, verify_result, domain="education")
 ```
 
-**Good first issues:**
-- Implement an alternative critic (sentence-transformers embedding, CrewAI integration)
-- Extend semantic corroboration to multi-source corpora (ArXiv, textbooks, news)
+## Audit & Compliance Evidence
 
----
+ISNAD can **export a tamper-evident audit record** for any graded claim:
 
-## Trace Capture & Chain Viewer
-
-ISNAD ships a **capture → schema → viewer** pipeline that makes transmission
-chains visible. The contract is [isnad_trace v0.1](docs/trace-schema.md) — a
-versioned JSON schema aligned with W3C PROV-DM and PROV-AGENT (arXiv 2508.02866).
-
-### Capture (LangChain callback)
-
-```python
-from isnad.integrations.langchain import IsnadCallbackHandler, seed_registry
-
-reg = seed_registry({"source:my-docs": "reliable", "model:gpt-4o": "acceptable"})
-handler = IsnadCallbackHandler(registry=reg, domain="physics")
-
-# Attach to any LangChain/LangGraph pipeline
-chain.invoke("What is F=ma?", config={"callbacks": [handler]})
-
-trace = handler.to_trace()
-print(trace.model_dump_json(indent=2))  # isnad_trace v0.1
-```
-
-Key properties:
-- **Tree from run_id/parent_run_id** — LangChain already provides the tree;
-  the handler reconstructs it without timestamps or heuristics.
-- **Input provenance** — every retrieved document is recorded with source,
-  doc_id, and content hash. Full content is redacted by default.
-- **Model version captured** — resolved model version (e.g. `gpt-4o-2024-08-06`)
-  from response metadata, not the endpoint alias. Records `null` explicitly when
-  unavailable.
-- **Shared ancestry detection** — overlapping retrieval sets, shared model
-  families, or shared upstream sources are flagged as
-  `shared_ancestry_detected`.
-- **Never breaks your pipeline** — every callback is wrapped in try/except.
-- **Async support** — `AsyncIsnadCallbackHandler` for async LangChain runs.
-
-**Runnable demo** (no API keys required):
 ```bash
-python examples/isnad_langchain_demo.py
+isnad export --claim <id> --format json    # or jsonl|csv; --verify; --sign; --redact; --chain-log
 ```
 
-### Viewer
+Each record captures the full chain (as an explicit **DAG** via `upstream_ids`),
+the weakest link, source-document hashes, human-oversight evidence, the
+environment, and a SHA-256 integrity hash over the RFC 8785-canonical form of its
+payload — plus an optional detached signature (HMAC/Ed25519), a tamper-evident
+hash chain, and a PII-redaction hook.
 
-Open `viewer/index.html` in a browser. Three hand-built fixtures demonstrate
-the framework's key signals:
-
-| Fixture | What it shows |
-|---------|--------------|
-| 1. Clean chain | Ṣaḥīḥ-tier chain, verified independent corroboration (OpenStax + HyperPhysics). Baseline. |
-| 2. Weak extraction | Ḍaʿīf chain (gpt-3.5-turbo at 18% error rate) but **verified origin**. Two axes kept separate. |
-| 3. False corroboration | Five transmitters across three chains, all tracing to one NOAA source. Renders as a **warning**, not consensus. |
-
-The viewer renders fixture 3 by default — it is the most important case.
-
-![ISNAD chain viewer demo — false corroboration, weak extraction, clean chain](docs/images/viewer-demo.gif)
-
-### What the viewer shows — and what it doesn't
-
-**Validated signals** (mechanisms confirmed empirically or structurally):
-
-| Signal | Status | Source |
-|--------|--------|--------|
-| Weakest-link chain grading | ✅ Validated | §8 experiment: 100% of REJECTED narrator claims correctly blocked |
-| jarḥ–taʿdīl narrator discovery | ✅ Partial | Correctly identifies injected weak narrators; requires seed grades |
-| Corroboration negative controls | ✅ Validated | 8/8 correctly rejected (Wikipedia) + 9/9 correctly rejected (physics, #127); madār detection blocks correlated chains |
-| Two-axis separation (chain ≠ origin) | ✅ Structural | Schema enforces separate enums; viewer renders them independently |
-| Tree reconstruction from run_id/parent_run_id | ✅ Structural | Tested: linear chains, siblings, missing parents handled safely |
-
-**Indicative signals** (displayed honestly, not validated):
-
-| Signal | Status | Honest limit |
-|--------|--------|-------------|
-| Independence detection | ⚠ Indicative | Structural only (shared doc hashes, upstream sources, model families). Does not detect correlated training data or shared model blind spots. |
-| Narrator grades | ⚠ Indicative | Only calibrated where seed-grade data exists. Cold-start coverage is critic-bound: ~75% with the stub/embedding critic, **~100% with the LLM critic** — see `experiments/cold_start_coverage/RESULTS.md` |
-| Corroboration fire rate | ⚠ Corpus-dependent | 100% on Wikipedia; rarely fires on dense technical corpora (5/20K). |
-| Origin strength | ⚠ Indicative | Derived from ʿadālah grade. No cryptographic attestation (complementary: Live Verify). |
-| Content verdict | ⚠ Not captured | The trace schema has space for `content_verdict` but the callback handler does not populate it — the bundled critic is a stub on real text. |
-
-**What is NOT shown:**
-- No numeric confidence (never `87.3`). Grades are ordinal bands: ṣaḥīḥ/ḥasan/ḍaʿīf/mawḍūʿ.
-- No colour-alone confidence encoding. The viewer respects `prefers-reduced-motion` and visible keyboard focus.
-- No collapsed axes. Chain integrity and origin strength are always separate.
-- No implicit corroboration. `unverified` independence is not rendered as agreement.
-
----
-
-## Live Verify Integration
-
-ISNAD composes with [**Live Verify**](https://github.com/live-verify/live-verify) — Paul
-Hammant's cryptographic document-attestation protocol. Live Verify seals a
-document's **visible text** to an issuer's **domain** via a SHA-256 hash plus a
-`verify:` lookup; anyone can confirm the document is unaltered and issuer-attested.
-
-The two frameworks answer the same question from opposite ends of the pipeline.
-A Live Verify seal is an **ideal high-trust narrator input** to an ISNAD chain:
-its integrity axis (ʿadālah) is anchored by cryptography rather than by
-accumulated track record — bootstrapping a source narrator to a high grade
-**on day one**, solving the cold-start problem.
+**Two tamper-evidence logs:** a **linear hash chain** (single sequential writer)
+and a **Merkle batch log** (mass parallel agents; `build_batch`/`seal_batches`/
+`verify_batches`/`prove_inclusion`). Both detect modification, middle-deletion,
+and reordering; neither detects tail truncation, and both commit to a self-hash,
+so they detect post-hoc modification — not a forger who rebuilds the chain (#97).
 
 ```python
-from isnad.integrations.liveverify import verify_claim, register_sealed_source
-from isnad.core.registry import Registry
+from isnad.audit import build_audit_record
+from isnad.audit.canonical import canonical_hash
 
-result = verify_claim(
-    "MSc Computer Science, Edinburgh University\n"
-    "verify:degrees.ed.ac.uk/c"
-)
-
-reg = Registry()
-sealed = register_sealed_source(reg, result, domain="education")
-print(sealed.grade)   # RELIABLE — integrity anchored by crypto
-print(sealed.adalah)  # HIGH
-print(sealed.dabt)    # UNASSESSED — precision NOT claimed
+record = build_audit_record(claim_id, session, registry)  # -> AuditRecord
+assert record.integrity.record_hash == canonical_hash(record.to_dict(include_integrity=False))
 ```
 
-**Honest limit:** Live Verify proves **authenticity**, not **truth**. The seal
-anchors ʿadālah (integrity) and origin strength, but leaves ḍabṭ (precision)
-unassessed and leaves content to the matn critic. A verified document can still
-be a genuine, domain-attested lie.
+**ISNAD produces evidence artifacts; it does not confer conformity with any
+regulation.** See [`docs/evidence-mapping.md`](docs/evidence-mapping.md) for an
+*informational* mapping of each field to the EU AI Act, ISO/IEC 42001, the NIST AI
+RMF, and SDAIA — and the explicit statement of what ISNAD deliberately does *not*
+provide. **The core library is Apache-2.0, permanently** ([`LICENSING.md`](LICENSING.md)).
 
-See [`src/isnad/integrations/liveverify/`](src/isnad/integrations/liveverify/) —
-including a byte-compatible normalization port held against Live Verify's own
-cross-platform fixtures.
+## Scope and limitations
 
----
+ISNAD grades **post-entry provenance** — who handled a claim after it entered your
+pipeline, and how much you trust them — **not** whether the upstream source or the
+final answer is objectively true.
 
-## Controlled A/B Demonstration
+**What ISNAD covers:** ordered chains + narrator grades; weakest-link grading +
+the decision matrix; content criticism *against your corpus*; corroboration when
+independent chains agree.
 
-[`experiments/verified_vs_unverified/`](experiments/verified_vs_unverified/) runs
-six hand-authored queries with the trust layer off vs on — **2 caught, 2 missed
-(honestly), 0 false positives**. The miss cases map to the two open issues (#4,
-#11). Deterministic, no API keys.
+**What ISNAD does not cover:**
+- **Source legitimacy at the boundary** — grades are operator-assigned assertions,
+  not auto-verified facts.
+- **Novel claim truth** — new, unverifiable claims are not auto-fact-checked.
+- **Faithful transmission of bad input** — a `RELIABLE` fake publisher + a clean
+  pipeline can still yield a high chain grade.
 
-## Experimental Validation — Semantic Corroboration (§8)
+**Boundary vetting is the operator's responsibility** — vet sources before
+registering them as `RELIABLE`; register unknowns as `UNGRADED`; use matn,
+corroboration, and human review as *downstream* gates, not a replacement for it.
 
-Corroboration (*mutābaʿāt*) validated on two corpora: **707 claim pairs, 100%
-fire rate, zero false positives** (Wikipedia 603/603, physics textbooks
-104/104). **8/8 negative controls on the Wikipedia corpus only** — physics
-negative controls: **8/8 Wikipedia + 9/9 physics (#127)**. Methodology and paper-gap analysis:
-`experiments/corroboration_v2/README.md` · `experiments/PAPER_GAP_ANALYSIS.md`.
+## Integrations
 
-Since PR #83, corroboration requires **attested distinct lineage**: a chain whose
-narrators carry no `model_family` / `upstream_source` is scored *unknown* (below
-the gate) and does not corroborate — independence must be demonstrated, not
-assumed from empty metadata. The validated corpora above record lineage, so the
-numbers hold.
+- **LangChain / LangGraph** — callback handler + tracer + middleware (above).
+- **CrewAI / LlamaIndex** — adapters (`isnad.integrations.crewai`, `.llamaindex`).
+- **OpenTelemetry** — `isnad ingest --otlp` grades an existing GenAI trace (#73).
+- **Live Verify** — consume a `verify:` cryptographic seal as a high-trust narrator,
+  anchoring ʿadālah on day one (solves cold-start; see `examples/issuer_demo/`).
+  Honest limit: Live Verify proves *authenticity*, not *truth*.
 
-## Ecosystem
+A **chain viewer** (`viewer/index.html`) renders transmission chains in the browser
+— three fixtures including the most important one: *false corroboration* (five
+transmitters across three chains, all tracing to one source) rendered as a warning,
+not consensus.
 
-- 🌐 **Site:** https://alizahidraja.com/isnad
-- 📄 **Paper (arXiv):** https://arxiv.org/abs/2607.24117
-- 📄 **Paper (DOI):** https://doi.org/10.48550/arXiv.2607.24117
-- 💾 **Software (DOI):** https://doi.org/10.5281/zenodo.21216873
-- 📦 **PyPI:** https://pypi.org/project/isnad/
-- 📝 **Companion gist:** https://gist.github.com/alizahidraja/56beaadf493976182f38aa602b8958e2
-- 🧪 **§8 Experiment & results:** [`experiments/s8_gated_vs_ungated/`](experiments/s8_gated_vs_ungated/)
-- 🔬 **Semantic Corroboration v2 (Wikipedia):** [`experiments/corroboration_v2/`](experiments/corroboration_v2/)
-- 📚 **Corroboration v3 (Physics Textbooks):** [`experiments/corroboration_v3/`](experiments/corroboration_v3/) — 104/104 on s8 corpus
-- 🗺️ **Architecture Diagram:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) — 3 tabs: System, Data Flow, Validation Matrix
-- 🔌 **LangChain integration:** [`src/isnad/integrations/langchain/`](src/isnad/integrations/langchain/)
-- 🔏 **Live Verify integration:** [`src/isnad/integrations/liveverify/`](src/isnad/integrations/liveverify/) — consume a `verify:` seal as a high-trust narrator
-- 🔗 **Trace schema spec:** [`docs/trace-schema.md`](docs/trace-schema.md) — v0.1 with PROV/PROV-AGENT mapping
-- 👁️ **Chain viewer:** [`viewer/index.html`](viewer/index.html) — open in browser, renders all 3 fixtures
-- 🧪 **A/B demonstration:** [`experiments/verified_vs_unverified/`](experiments/verified_vs_unverified/) — trust layer off vs on, per-query
-- 🧪 **Trace capture demo:** [`examples/isnad_langchain_demo.py`](examples/isnad_langchain_demo.py) — runnable without API keys
-- 📊 **Critic evaluation:** [`src/isnad/critics/CRITIC_EVAL.md`](src/isnad/critics/CRITIC_EVAL.md)
-- 🛡️ **Security policy:** [`SECURITY.md`](SECURITY.md) — how to report a vulnerability; honesty is a security property
-- ⚠️ **Threat model:** [`THREAT_MODEL.md`](THREAT_MODEL.md) — what ISNAD defends against and deliberately does not
-- 🕵️ **Case study (xz backdoor as a sleeper narrator):** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md) — by Paul Hammant (Live Verify)
-- ⏳ **Period-sliced grades (the ikhtilāṭ remedy):** [`docs/period-sliced-grades.md`](docs/period-sliced-grades.md) · demo: [`examples/sleeper_narrator_demo.py`](examples/sleeper_narrator_demo.py)
-- 🎯 **Adversarial benchmark:** [`experiments/adversarial_benchmark/run.py`](experiments/adversarial_benchmark/run.py) — the honest "does it actually work?" number, including the misses
+## Experiments
 
----
+Every headline number is reproducible from the repo (mostly no API keys):
+- **Adversarial benchmark** — narrator grading 100% caught / 0 false positives;
+  content criticism is the binding constraint (`experiments/adversarial_benchmark/`).
+- **§8 gated-vs-ungated** — 20,000 claims; weakest-link quarantine validated;
+  matched-coverage *inconclusive* (honest) (`experiments/s8_gated_vs_ungated/`).
+- **Semantic corroboration** — 707 claim pairs, 8/8 + 9/9 negative controls
+  (`experiments/corroboration_v2/`, `corroboration_v3/`).
+- **A/B demonstration** — 2 caught, 2 missed (honestly), 0 false positives
+  (`experiments/verified_vs_unverified/`).
 
 ## Open problems
 
-- **Chain independence** ([tracking issue](https://github.com/alizahidraja/isnad/issues/54)) — the framework's hardest unsolved problem, stated publicly: topology cannot *prove* two chains are independent. Addressed, not solved: attested lineage (no silent independence from empty metadata), document-hash madār detection, a tawātur discount (N_eff) that prices in the unobservable shared-blind-spot prior, witness-type-aware priors (shāhid vs mutābaʿa), and **content-level madār detection now engine-wired** (v2.12.0: a corroborator repeating the same error withholds the upgrade). The *undetectable* half — correlated training data across model families — remains an open, stated limit.
-- **Content critic is the coverage ceiling** — a semantic critic that returns CONSISTENT on real prose is the single highest-value component for end-to-end coverage (paper §8.4/§8.6). The numeric-aggregate slice now has a deterministic `RecomputeCritic` + `EnsembleCritic` + `AggregateRouter` (#168/#180); general semantic criticism is still the LLM/NLI tier.
+- **Chain independence** (#54) — the detectable half is engine-wired (attested
+  lineage, document-hash madār, tawātur discount, witness-type priors, content-level
+  madār); the undetectable half (correlated training data across model families)
+  remains an open, stated limit.
+- **Content critic is the coverage ceiling** (#34) — a semantic critic that returns
+  CONSISTENT on real prose is the highest-value component. The numeric-aggregate
+  slice is now deterministic (`RecomputeCritic`/`EnsembleCritic`/`AggregateRouter`);
+  general semantic criticism is still LLM/NLI-tier.
 
----
+## Contributing
+
+Built in public — collaborators welcome. The on-ramp:
+[`CONTRIBUTING.md`](CONTRIBUTING.md) (branch flow, quality gates, code map) ·
+[`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) ·
+[`SECURITY.md`](SECURITY.md) (honesty is a security property) ·
+[`THREAT_MODEL.md`](THREAT_MODEL.md) ·
+[good first issues](https://github.com/alizahidraja/isnad/issues?q=label%3A%22good+first+issue%22).
+
+## Ecosystem
+
+- 🌐 **Site:** https://alizahidraja.com/isnad · 📄 **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · 💾 **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873) · 📦 **PyPI:** [`isnad`](https://pypi.org/project/isnad/)
+- 🗺️ **Architecture:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) · 🔗 **Trace schema:** [`docs/trace-schema.md`](docs/trace-schema.md) · 👁️ **Chain viewer:** [`viewer/index.html`](viewer/index.html)
+- 🧪 **Benchmark:** [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md) · 📊 **Critic eval:** [`docs/critics.md`](docs/critics.md) · 🕵️ **xz sleeper-narrator case study:** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md)
 
 ## Citation
 
@@ -632,23 +421,12 @@ numbers hold.
   eprint  = {2607.24117},
   archivePrefix = {arXiv},
 }
-
-@software{raja2026isnad,
-  author  = {Ali Zahid Raja},
-  title   = {Isnād–Rijāl Framework: Reference Implementation},
-  year    = 2026,
-  doi     = {10.5281/zenodo.21216873},
-  orcid   = {0009-0003-7875-4590},
-}
 ```
-
----
 
 ## About
 
-Built by [Ali Zahid Raja](https://alizahidraja.com) · ORCID [0009-0003-7875-4590](https://orcid.org/0009-0003-7875-4590)
-
-The rigor belongs to twelve centuries of muḥaddithūn. The transfer to AI
-systems is the contribution claimed here. Built in public — collaborators welcome.
+Built by [Ali Zahid Raja](https://alizahidraja.com) · ORCID [0009-0003-7875-4590](https://orcid.org/0009-0003-7875-4590).
+The rigor belongs to twelve centuries of muḥaddithūn; the transfer to AI systems
+is the contribution claimed here.
 
 **License:** Code — Apache 2.0 · Paper & docs — CC BY 4.0
