@@ -7,6 +7,7 @@ Usage:
     isnad verify --record PATH  Recompute a record hash; exit 0/1
     isnad verify-chain --chain PATH  Walk a hash chain; exit 0/1
     isnad ingest --otlp PATH    Grade an OpenTelemetry GenAI trace
+    isnad mcp             Serve the registry as an MCP server (grade_claim)
 
 The audit commands emit **evidence artifacts**, not compliance certificates.
 """
@@ -287,6 +288,36 @@ def _bench(argv: list[str]) -> int:
     return 1
 
 
+def _mcp(argv: list[str]) -> int:
+    """Run the ISNAD MCP server (grades claims from the local registry)."""
+    parser = argparse.ArgumentParser(
+        prog="isnad mcp",
+        description="Serve the local ISNAD registry as an MCP server (grade_claim tool).",
+    )
+    parser.add_argument(
+        "--domain", default="general", help="default domain tag for grading (default: general)"
+    )
+    parser.add_argument(
+        "--transport",
+        choices=["stdio", "sse", "streamable-http"],
+        default="stdio",
+        help="MCP transport (default: stdio)",
+    )
+    args = parser.parse_args(argv)
+
+    from isnad.core.registry import RegistryDB
+    from isnad.integrations.mcp import serve_mcp
+    from isnad.storage.sqlalchemy import get_session, init_db
+
+    init_db()
+    with get_session() as session:
+        reg_db = RegistryDB(session=session)
+        reg_db.load()
+        # Blocking: run the MCP server on the loaded registry.
+        serve_mcp(reg_db.registry, domain=args.domain, transport=args.transport)
+    return 0
+
+
 def _verify(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         prog="isnad verify",
@@ -385,7 +416,7 @@ def main(argv: list[str] | None = None) -> None:
             testing.
     """
     args = sys.argv if argv is None else ["isnad", *argv]
-    usage = "Usage: isnad [serve|seed|export|verify|verify-chain|verify-merkle|ingest|bench]"
+    usage = "Usage: isnad [serve|seed|export|verify|verify-chain|verify-merkle|ingest|bench|mcp]"
     if len(args) < 2:
         print(usage)
         sys.exit(1)
@@ -408,6 +439,8 @@ def main(argv: list[str] | None = None) -> None:
         sys.exit(_ingest(rest))
     elif cmd == "bench":
         sys.exit(_bench(rest))
+    elif cmd == "mcp":
+        sys.exit(_mcp(rest))
     else:
         print(f"Unknown command: {cmd}")
         print(usage)

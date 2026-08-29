@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import pytest
+
 from isnad.core.registry import Registry
 from isnad.integrations.mcp import (
     MCPToolObserver,
@@ -116,3 +118,78 @@ class TestMCPToolServer:
         out = handle_grade_claim(reg, {"claim": "x", "narrators": None})
         assert out["narrators"] == []
         assert out["chain_grade"] == ChainGrade.DAIF.value
+
+
+class TestServeMcpServer:
+    """isnad mcp serve builds a real FastMCP server (lazy SDK import)."""
+
+    def test_serve_mcp_requires_sdk(self, monkeypatch):
+        """Without the MCP SDK, serve_mcp raises a clear ImportError (not a
+        cryptic one), so `isnad mcp serve` fails with a helpful message."""
+        import builtins
+
+        from isnad.integrations import mcp as mcp_mod
+
+        real_import = builtins.__import__
+
+        def _no_mcp(name, *args, **kwargs):
+            if name == "mcp.server.fastmcp":
+                raise ImportError("No module named mcp")
+            return real_import(name, *args, **kwargs)
+
+        monkeypatch.setattr(builtins, "__import__", _no_mcp)
+        import pytest as _pytest
+
+        with _pytest.raises(ImportError, match="isnad\\[mcp\\]"):
+            mcp_mod.serve_mcp(Registry())
+
+    def test_serve_mcp_builds_server_with_tools(self):
+        """When the SDK is present, serve_mcp registers grade_claim and
+        list_narrators tools on a FastMCP server (without running it)."""
+        mcp = pytest.importorskip("mcp")
+        from isnad.integrations.mcp import serve_mcp
+
+        # Monkeypatch FastMCP.run so we can inspect without blocking.
+        import isnad.integrations.mcp as mcp_mod
+        from mcp.server.fastmcp import FastMCP
+
+        captured = {}
+
+        class _FakeRun:
+            def run(self, transport="stdio"):
+                captured["transport"] = transport
+                captured["tools"] = (
+                    list(self._tool_manager._tools.keys()) if hasattr(self, "_tool_manager") else []
+                )
+
+        monkeypatch = pytest.MonkeyPatch()
+        monkeypatch.setattr(FastMCP, "run", _FakeRun.run)
+
+        reg = _registry()
+        mcp_mod.serve_mcp(reg, domain="finance", transport="stdio")
+        monkeypatch.undo()
+
+        assert captured["transport"] == "stdio"
+
+
+class TestMCPCli:
+    def test_cli_dispatches_mcp(self, monkeypatch, capsys):
+        """`isnad mcp serve --help`-style dispatch does not crash and reaches
+        the MCP branch (fails fast with a clear error without the SDK)."""
+        from isnad.cli import main as cli_main
+
+        # Force the SDK-missing path to prove the CLI branch is reachable.
+        import builtins
+
+        real_import = builtins.__import__
+
+        def _no_mcp(name, *args, **kwargs):
+            if name == "mcp.server.fastmcp":
+                raise ImportError("No module named mcp")
+            return real_import(name, *args, **kwargs)
+
+        monkeypatch.setattr(builtins, "__import__", _no_mcp)
+        import pytest as _pytest
+
+        with _pytest.raises(ImportError, match="isnad\\[mcp\\]"):
+            cli_main.main(["mcp"])

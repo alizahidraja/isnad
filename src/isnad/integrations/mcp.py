@@ -223,4 +223,70 @@ def handle_grade_claim(
     }
 
 
-__all__ = ["MCPToolObserver", "ToolCallRecord", "build_mcp_tools", "handle_grade_claim"]
+def serve_mcp(registry: Registry, *, domain: str = "general", transport: str = "stdio") -> None:
+    """Run a real MCP server (FastMCP) exposing ``grade_claim`` over stdio.
+
+    This is the "elite" entry point behind ``isnad mcp serve``: it registers
+    the operator's local registry as an MCP server so any MCP client (Claude
+    Desktop, Cursor, an agent host) can call ``grade_claim`` at runtime.
+
+    Lazy-imports the MCP SDK: ``isnad.integrations.mcp`` stays importable
+    without it (the duck-typed helpers above need no SDK), and this function
+    raises a clear ImportError if ``pip install isnad[mcp]`` was not run.
+
+    Honesty (unchanged from the helpers): grades are operator-assigned and
+    local; the server never manufactures, imports, or auto-grades. The caller
+    owns authentication/allow-listing.
+    """
+    try:
+        from mcp.server.fastmcp import FastMCP
+    except ImportError as exc:  # pragma: no cover — depends on optional dep
+        raise ImportError(
+            "The MCP server requires the MCP SDK. Install with: pip install isnad[mcp]"
+        ) from exc
+
+    mcp_server = FastMCP(
+        name="isnad",
+        instructions=(
+            "Grade how much to trust a claim from the local ISNAD rijāl registry. "
+            "Grades are operator-assigned; this is a trust grade, not a fact-check, "
+            "and the chain is caller-supplied."
+        ),
+    )
+
+    @mcp_server.tool(
+        name="grade_claim",
+        description=(
+            "Grade how much to trust a claim. Returns the weakest-link chain grade "
+            "(sahih/hasan/daif/mawdu) for the narrators the caller names, from the "
+            "local ISNAD registry. Does not fact-check; does not manufacture grades."
+        ),
+    )
+    def grade_claim(claim: str, narrators: list[str]) -> dict:
+        return handle_grade_claim(registry, {"claim": claim, "narrators": narrators}, domain=domain)
+
+    @mcp_server.tool(
+        name="list_narrators",
+        description=("List the narrators known to the local ISNAD registry and their grades."),
+    )
+    def list_narrators() -> dict:
+        entries = []
+        for narrator in registry.all_narrators():
+            entries.append({
+                "narrator_id": narrator.narrator_id,
+                "domain": narrator.domain_tag,
+                "grade": narrator.grade.value,
+                "adalah": narrator.adalah_grade.value,
+            })
+        return {"narrators": entries}
+
+    mcp_server.run(transport=transport)
+
+
+__all__ = [
+    "MCPToolObserver",
+    "ToolCallRecord",
+    "build_mcp_tools",
+    "handle_grade_claim",
+    "serve_mcp",
+]

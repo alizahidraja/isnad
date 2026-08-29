@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.16.0] — 2026-08-29
+
+### Added
+
+- **`isnad mcp` — a runnable MCP server** (`serve_mcp` + CLI subcommand). Runs a
+  real FastMCP server over stdio (or sse/streamable-http) exposing `grade_claim`
+  and `list_narrators` tools backed by the operator's local registry. Lazy-imports
+  the SDK; `pip install isnad[mcp]`; a clear ImportError guides install otherwise.
+
+### Fixed
+
+- **Quarantine escape via version bump** — `bump_version` previously cleared
+  `adalah=COMPROMISED`, so a fabricator escaped containment by shipping "v2".
+  Integrity is now per-person and survives the bump (precision still resets).
+- **content-madar negation** now catches sentence-initial "Never" (was mid-string
+  only), matching the document-hash/witness-type detection breadth.
+- **Removed dead `_narrator_to_chain_grade`** (UNGRADED→HASAN, contradicted the
+  strict majhūl default).
+
+### Test suite hardening (multi-persona audit)
+
+- The ~166 full-system + wiring checks in `verify_*.py` never ran under pytest/CI
+  (no `test_*` functions, not in `python_files`). Now collected
+  (`python_files=['test_*.py','verify_*.py']`), with `sys.exit` gates converted
+  to `pytest.fail`. Fixed 11 stale checks encoding pre-change behavior.
+- Pinned JCS canonicalization (control-char short escapes), corroboration
+  boundary thresholds, the add_pattern class-state isolation, and added real
+  assertions to previously zero-assertion callback tests.
+
 ## [2.15.0] — 2026-08-29
 
 ### Added

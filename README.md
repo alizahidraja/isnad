@@ -365,6 +365,7 @@ corroboration, and human review as *downstream* gates, not a replacement for it.
 - **MCP** — grade MCP servers as narrators: `MCPToolObserver` records tool calls
   as TOOL narrator links and grades the resulting chain; a `grade_claim` tool
   exposes the operator's registry to an agent (`isnad.integrations.mcp`, #59).
+  `isnad mcp` runs a real FastMCP server over stdio (`pip install isnad[mcp]`).
   Honest limit: tool narrators stay **UNGRADED** by default (no auto-grading from
   call volume — that would be GIGO); the server returns operator-assigned grades,
   never manufactured ones.
