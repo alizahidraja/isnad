@@ -187,7 +187,7 @@ def _export(argv: list[str]) -> int:
             print("verification FAILED: hash mismatch", file=sys.stderr)
             return 1
         detached = record.integrity.detached_signature
-        secret = os.environ.get("ISNAD_SIGNING_SECRET", "")
+        secret = args.sign or os.environ.get("ISNAD_SIGNING_SECRET", "")
         if detached:
             if secret:
                 payload = canonical_json(record.to_dict(include_integrity=False))
@@ -197,13 +197,21 @@ def _export(argv: list[str]) -> int:
                     print("verification FAILED: detached signature mismatch", file=sys.stderr)
                     return 1
             else:
+                # Fail closed: a detached signature is present but we have no
+                # secret to check it against. Reporting "OK" here would be a
+                # forgeable path in a tamper-evidence tool.
                 print(
-                    "verification OK: hash only — detached signature present but no "
-                    "ISNAD_SIGNING_SECRET; forge-resistance NOT checked",
+                    "verification INCONCLUSIVE: detached signature present but no "
+                    "secret (--sign or ISNAD_SIGNING_SECRET); forge-resistance NOT checked",
                     file=sys.stderr,
                 )
+                return 1
         else:
-            print("verification OK: hash only — no detached signature", file=sys.stderr)
+            print(
+                "verification OK: hash only — no detached signature (forge-resistance NOT checked)",
+                file=sys.stderr,
+            )
+            return 1
 
     if args.chain_log:
         from isnad.audit import append_record

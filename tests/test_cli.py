@@ -11,6 +11,41 @@ import pytest
 from isnad.cli import main as cli_main
 
 
+def _record_with_signature(secret: str):
+    """A signed AuditRecord, mirroring what build_audit_record + --sign emit."""
+    from isnad.audit import hmac_signer, sign_detached
+    from isnad.audit.canonical import canonical_hash
+    from isnad.audit.schema import (
+        RECORD_VERSION,
+        AuditRecord,
+        ChainNodeAudit,
+        Environment,
+        GradingStrategy,
+        SourceDocument,
+        WeakestLink,
+        new_record_id,
+        utcnow_iso,
+    )
+
+    rec = AuditRecord(
+        record_id=new_record_id(),
+        record_version=RECORD_VERSION,
+        generated_at=utcnow_iso(),
+        claim_id="c1",
+        claim_text="p = mv",
+        final_grade="hasan",
+        grading_strategy=GradingStrategy("RefinedWeakestLink", "1"),
+        chain=[ChainNodeAudit("src", "dataset", "reliable", "r")],
+        weakest_link=WeakestLink("src", "reliable", "lowest grade"),
+        source_documents=[SourceDocument("https://e/x")],
+        human_oversight=[],
+        environment=Environment("2.12.0", "3.12", "darwin"),
+    )
+    rec.integrity.record_hash = canonical_hash(rec.to_dict(include_integrity=False))
+    sign_detached(rec, hmac_signer(secret))
+    return rec
+
+
 class TestMainDispatcher:
     def test_no_args_prints_usage_and_exits(self, capsys):
         with pytest.raises(SystemExit) as e:
@@ -151,3 +186,83 @@ class TestVerifyDetachedSignature:
         code = cli_main._verify(["--record", str(path)])
         assert code == 1
         assert "forge-resistance NOT checked" in capsys.readouterr().out
+
+
+class TestExportVerifyDetachedSignature:
+    """`isnad export --verify` must fail closed, not report OK, when a
+    detached signature is present but no secret is available (audit follow-up).
+    """
+
+    def _export_signed(self, tmp_path, secret):
+        """Write a signed record to a file and return (record_path, claim_id).
+
+        Uses a minimal registry + DB so build_audit_record has something to
+        read. Simpler: bypass build_audit_record and write a signed record
+        directly, mirroring what --sign emits.
+        """
+        from isnad.audit import hmac_signer, sign_detached
+        from isnad.audit.canonical import canonical_hash
+        from isnad.audit.schema import (
+            RECORD_VERSION,
+            AuditRecord,
+            ChainNodeAudit,
+            Environment,
+            GradingStrategy,
+            SourceDocument,
+            WeakestLink,
+            new_record_id,
+            utcnow_iso,
+        )
+
+        rec = AuditRecord(
+            record_id=new_record_id(),
+            record_version=RECORD_VERSION,
+            generated_at=utcnow_iso(),
+            claim_id="c1",
+            claim_text="p = mv",
+            final_grade="hasan",
+            grading_strategy=GradingStrategy("RefinedWeakestLink", "1"),
+            chain=[ChainNodeAudit("src", "dataset", "reliable", "r")],
+            weakest_link=WeakestLink("src", "reliable", "lowest grade"),
+            source_documents=[SourceDocument("https://e/x")],
+            human_oversight=[],
+            environment=Environment("2.12.0", "3.12", "darwin"),
+        )
+        rec.integrity.record_hash = canonical_hash(rec.to_dict(include_integrity=False))
+        sign_detached(rec, hmac_signer(secret))
+        path = tmp_path / "signed.json"
+        path.write_text(json.dumps(rec.to_dict()))
+        return path
+
+    def test_export_verify_fails_closed_without_secret(self, tmp_path, monkeypatch, capsys):
+        """A signed record with no secret must NOT print 'verification OK'."""
+        from isnad.audit.canonical import canonical_json
+        from isnad.audit.sign import hmac_verifier
+
+        # Confirm the signature is genuinely present and correct.
+        data = json.loads(self._export_signed(tmp_path, "s3cret").read_text())
+        integrity = data.pop("integrity", {})
+        detached = integrity.get("detached_signature")
+        assert detached
+        assert hmac_verifier("s3cret")(canonical_json(data), detached)
+
+        # Exercise the real _export verify branch by stubbing the record the
+        # way build_audit_record would produce it.
+        from isnad.cli import main as _m
+
+        class _DummySession:
+            def close(self):
+                pass
+
+        monkeypatch.setattr(_m, "_load_registry_and_session", lambda: (None, _DummySession()))
+        import isnad.audit as _audit
+
+        monkeypatch.setattr(
+            _audit, "build_audit_record", lambda *a, **k: _record_with_signature("s3cret")
+        )
+        monkeypatch.delenv("ISNAD_SIGNING_SECRET", raising=False)
+        code = cli_main._export(["--claim", "c1", "--verify"])
+        assert code == 1
+        err = capsys.readouterr().err
+        assert "forge-resistance NOT checked" in err
+        assert "verification OK" not in err
