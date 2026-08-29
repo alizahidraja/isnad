@@ -125,13 +125,17 @@ Full chain trace: `results/rejected_claims_diagnostic.txt`
 
 ## Where Coverage Goes
 
+> **Note:** the table below reports the *corrected* post-#9 numbers. The
+> pre-#9 figures ("4,057 quarantined = 29%") are superseded — see the
+> reproducibility update above.
+
 | Fate | Count | % |
 |---|---|---|
-| Quarantined (MAWDU via ingest@weak) | 4,057 | 29% |
-| Held for review, beyond budget | ~8,544 | 61% |
-| **Served (within review budget)** | **~1,400** | **10%** |
+| Quarantined (MAWDU via ingest@weak, REJECTED in 2–3 of 50 cells) | ~1,818–3,165 | 1.2–2.3% |
+| Held for review, beyond budget | majority | ~88% |
+| **Served (within review budget)** | **~10%** | **~10%** |
 
-The 61% held for review are HASAN and DAIF chains with UNVERIFIABLE content
+The large review-held share are HASAN and DAIF chains with UNVERIFIABLE content
 verdicts. The framework requires human review (or a working content critic
 that returns CONSISTENT) to serve them. With the deterministic stub critic on
 real text, neither condition is met.

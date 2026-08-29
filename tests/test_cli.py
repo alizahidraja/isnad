@@ -80,3 +80,72 @@ class TestSeed:
             reg.load()
             assert reg.registry.get_grade("src:openstax", "physics") == NarratorGrade.RELIABLE
             assert reg.registry.get_grade("model:gpt-4o", "physics") == NarratorGrade.ACCEPTABLE
+
+
+class TestVerifyDetachedSignature:
+    """`isnad verify` checks the detached signature, not just the self-hash (#97)."""
+
+    def _write_signed_record(self, tmp_path: Path, secret: str, tamper: bool = False) -> Path:
+        from isnad.audit import hmac_signer, sign_detached
+        from isnad.audit.canonical import canonical_hash
+        from isnad.audit.schema import (
+            RECORD_VERSION,
+            AuditRecord,
+            ChainNodeAudit,
+            Environment,
+            GradingStrategy,
+            SourceDocument,
+            WeakestLink,
+            new_record_id,
+            utcnow_iso,
+        )
+
+        rec = AuditRecord(
+            record_id=new_record_id(),
+            record_version=RECORD_VERSION,
+            generated_at=utcnow_iso(),
+            claim_id="c1",
+            claim_text="p = mv",
+            final_grade="hasan",
+            grading_strategy=GradingStrategy("RefinedWeakestLink", "1"),
+            chain=[ChainNodeAudit("src", "dataset", "reliable", "r")],
+            weakest_link=WeakestLink("src", "reliable", "lowest grade"),
+            source_documents=[SourceDocument("https://e/x")],
+            human_oversight=[],
+            environment=Environment("2.10.1", "3.12", "darwin"),
+        )
+        # The real exporter sets the self-hash before signing (see
+        # audit/exporter.py); mirror that so verify sees a stored hash.
+        rec.integrity.record_hash = canonical_hash(rec.to_dict(include_integrity=False))
+        sign_detached(rec, hmac_signer(secret))
+        if tamper:
+            rec.claim_text = "tampered"
+        path = tmp_path / "record.json"
+        path.write_text(json.dumps(rec.to_dict()))
+        return path
+
+    def test_verify_with_correct_secret_passes(self, tmp_path, monkeypatch, capsys):
+        path = self._write_signed_record(tmp_path, "s3cret")
+        monkeypatch.delenv("ISNAD_SIGNING_SECRET", raising=False)
+        code = cli_main._verify(["--record", str(path), "--hmac-secret", "s3cret"])
+        assert code == 0
+        assert "detached signature verified" in capsys.readouterr().out
+
+    def test_verify_with_wrong_secret_fails(self, tmp_path, monkeypatch):
+        path = self._write_signed_record(tmp_path, "s3cret")
+        monkeypatch.delenv("ISNAD_SIGNING_SECRET", raising=False)
+        code = cli_main._verify(["--record", str(path), "--hmac-secret", "other"])
+        assert code == 1
+
+    def test_verify_tampered_record_fails(self, tmp_path, monkeypatch):
+        path = self._write_signed_record(tmp_path, "s3cret", tamper=True)
+        monkeypatch.delenv("ISNAD_SIGNING_SECRET", raising=False)
+        code = cli_main._verify(["--record", str(path), "--hmac-secret", "s3cret"])
+        assert code == 1
+
+    def test_verify_with_signature_but_no_secret_reports_unchecked(self, tmp_path, monkeypatch, capsys):
+        path = self._write_signed_record(tmp_path, "s3cret")
+        monkeypatch.delenv("ISNAD_SIGNING_SECRET", raising=False)
+        code = cli_main._verify(["--record", str(path)])
+        assert code == 1
+        assert "forge-resistance NOT checked" in capsys.readouterr().out

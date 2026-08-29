@@ -148,7 +148,7 @@ class Integrity:
     record_hash: str
     hash_algorithm: str = "SHA-256"
     canonicalisation: str = "RFC8785"
-    detached_signature: str | None = None  # reserved — not implemented
+    detached_signature: str | None = None  # set by audit.sign.sign_detached (issue #97)
 
     def to_dict(self) -> dict[str, object]:
         return {

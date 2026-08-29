@@ -334,6 +334,55 @@ class TestClaimsList:
             assert c["domain"] == "physics"
 
 
+class TestClaimHydration:
+    """Persisted claims are rehydrated into the serving index (issue #93 follow-up).
+
+    The API's in-memory index must survive a restart: claims written to the DB
+    by ``store_claim`` are rebuilt into ``_app_state`` on boot. This closes the
+    "claims silently disappear on restart" gap from the external audit.
+    """
+
+    def test_hydrate_claims_from_db_repopulates_index(self):
+        from sqlalchemy.orm import Session
+
+        from isnad.api.endpoints.claims import _app_state, _hydrate_claims_from_db
+        from isnad.core.chain import Chain, ChainLinkSpec, store_claim
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import TransformType
+
+        _app_state.claims.clear()
+        _app_state._corroboration_index.clear()
+
+        chain = Chain([
+            ChainLinkSpec(
+                "src", 0, version="1.0", transform_type=TransformType.PASS_THROUGH,
+                domain="physics",
+            )
+        ])
+        with get_session() as session:
+            store_claim(
+                session, "E = mc^2", "physics/rel", chain,
+                chain_grade="sahih", claim_id="hydrate-test-1",
+            )
+
+        # Simulate a fresh process: index is empty, DB has the claim.
+        assert _app_state.claims == {}
+        with get_session() as session:
+            hydrated = _hydrate_claims_from_db(session)
+
+        assert hydrated >= 1
+        assert "hydrate-test-1" in _app_state.claims
+        rec = _app_state.claims["hydrate-test-1"]
+        assert rec["claim_text"] == "E = mc^2"
+        assert rec["chain_grade"] == "sahih"
+        assert rec["domain"] == "physics"
+        # Content verdict is honestly UNVERIFIABLE after rehydration.
+        assert rec["content_verdict"] == ContentVerdict.UNVERIFIABLE.value
+        # The corroboration index is rebuilt too.
+        assert _app_state.find_corroborating("e = mc^2", "hydrate-test-1") == []
+        assert "hydrate-test-1" in _app_state._corroboration_index["e = mc^2"]
+
+
 class TestMetrics:
     def test_metrics(self):
         r = client.get("/v1/metrics")

@@ -181,17 +181,23 @@ def store_claim(
     chain: Chain,
     *,
     chain_grade: str | None = None,
+    claim_id: str | None = None,
 ) -> RijalClaim:
     """Store a claim with its chain in the database.
 
-    If a claim with the same normalized text already exists, updates
-    it in-place (same claim_id).  Uses session.merge() to avoid
-    identity-map conflicts when re-ingesting.
+    ``claim_id`` defaults to the deterministic content hash
+    (``hash_claim_text(normalized)``), which makes re-ingesting the same text
+    update in-place (content-addressed knowledge base). A caller that wants
+    event-level uniqueness — e.g. the API, which assigns each submission a
+    fresh UUID so two claims with the same normalized text can corroborate —
+    may pass its own ``claim_id``.
+
+    Uses session.merge() to avoid identity-map conflicts when re-ingesting.
 
     Returns the RijalClaim ORM object.
     """
     normalized = normalize_claim_text(claim_text)
-    claim_id = hash_claim_text(normalized)
+    claim_id = claim_id or hash_claim_text(normalized)
 
     # Check if claim already exists in this session or DB
     existing = session.query(RijalClaim).filter_by(claim_id=claim_id).first()

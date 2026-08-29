@@ -69,9 +69,9 @@ strike being treated as permanent.
 is sticky *only* when integrity-driven (#40); integrity strikes impose a
 permanent ceiling that precision cannot lift (#30).
 
-**Not mitigated:** a quarantine is domain-scoped — a narrator quarantined in one
-domain is not auto-quarantined in another (#28); sub-quarantine integrity
-strikes are per-role, not per-person (#29).
+**Not mitigated:** sub-quarantine integrity
+strikes are per-role, not per-person (#29). (Quarantine *does* span domains —
+`registry.py` treats integrity compromise as narrator-wide, #28.)
 
 ### 4. Machine-critic false positives
 

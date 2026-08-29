@@ -6,9 +6,13 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - ISNAD_API_KEYS=isnad-admin:admin,isnad-reader:reader
-      - ISNAD_DATABASE_URL=postgresql://isnad:isnad@db:5432/isnad
-      - ISNAD_POLICY=bayesian
+      # API keys are injected from the host environment — no hardcoded
+      # credential ships in the compose file (issue #93). Fail-closed: with
+      # ISNAD_API_KEYS unset, authenticated endpoints return 503.
+      - ISNAD_API_KEYS=${ISNAD_API_KEYS:-}
+      - ISNAD_DATABASE_URL=${ISNAD_DATABASE_URL:-postgresql://isnad:${POSTGRES_PASSWORD:?}@db:5432/isnad}
+      - ISNAD_POLICY=${ISNAD_POLICY:-bayesian}
+      - ISNAD_CORS_ORIGINS=${ISNAD_CORS_ORIGINS:-}
       - SENTENCE_TRANSFORMERS_HOME=/app/.cache/sentence_transformers
     volumes:
       - nli_cache:/app/.cache/sentence_transformers
@@ -22,15 +26,20 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: isnad
-      POSTGRES_PASSWORD: isnad
-      POSTGRES_DB: isnad
+      # Credentials are injected from the host environment. POSTGRES_PASSWORD
+      # is required (no default) so a stock `docker compose up` cannot create a
+      # guessable database.
+      POSTGRES_USER: ${POSTGRES_USER:-isnad}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-isnad}
     ports:
-      - "5432:5432"
+      # Do not expose the database to the host by default. Override with
+      # POSTGRES_PORT_PUBLISH if a local connection is needed.
+      - "${POSTGRES_PORT_PUBLISH:-127.0.0.1:}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U isnad"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-isnad}"]
       interval: 5s
       timeout: 3s
       retries: 5
@@ -38,12 +47,12 @@ services:
   redis:
     image: redis:7-alpine
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT_PUBLISH:-127.0.0.1:}:6379"
 
   prometheus:
     image: prom/prometheus
     ports:
-      - "9090:9090"
+      - "${PROMETHEUS_PORT_PUBLISH:-127.0.0.1:}:9090"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
 

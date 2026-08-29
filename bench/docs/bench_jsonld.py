@@ -22,7 +22,8 @@ BENCH_RESULTS = {
     "majority_control": 0.000,
     "chains": 577024,
     "narrators": 49844,
-    "critics": 1015,
+    "critics": 945,
+    "critics_named": 1015,
     "criticism_statements": 127863,
 }
 

@@ -125,17 +125,21 @@ GRADE DISTRIBUTION    DECISIONS              CONTENT VERDICTS
 
 ---
 
-## Headline Numbers (B=10%, 10 seeds, default policy)
+## Headline Numbers (B=10%, 10 seeds, deterministic critic)
+
+> **Source of truth:** [`results/RESULTS.md`](results/RESULTS.md). The numbers
+> below match the corrected, post-#9 policy result documented there.
 
 | Metric | Ungated | Confidence | ISNAD |
 |---|---|---|---|
-| Served-error rate | 14.7% | 14.6% | **1.1%** |
-| Coverage | 100% | 100% | **7.9%** |
-| Review precision | 15.7% | 17.1% | 14.0% |
+| Served-error rate | 8.2% | 8.1% | **~0%** |
+| Coverage | 100% | 100% | **10.0%** |
 
-**ISNAD reduces error by 13.5 points** vs. confidence-gated at achievable
-coverage. Cold-start calibration quarantines 92% — the framework correctly
-defaults to conservatism when narrator grades are unreliable.
+ISNAD achieves near-zero served error at the review-budget coverage ceiling.
+Confidence-gating is no better than random. The weakest-link quarantine
+mechanism is what does the work; the binding constraint is the content critic
+(see RESULTS.md §3–§4 for the honest negative: with a deterministic critic,
+coverage is capped at the review budget).
 
 ---
 

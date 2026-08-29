@@ -19,7 +19,7 @@
 | File | `hadith-kg.db` (canonical relational KG) |
 | Size | 1,634,877,440 bytes |
 | SHA-256 | `d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6` |
-| Rows | 715,790 hadiths · 577,024 sanads · 4.4M sanad_rawl links · 49,844 narrators · 127,863 criticism statements (1,015 critics) |
+| Rows | 715,790 hadiths · 577,024 sanads · 4.4M sanad_rawl links · 49,844 narrators · 127,863 criticism statements (945 critics with gradeable statements; 1,015 critics named in `alems`) |
 
 ### Relevant schema (inspected live)
 
@@ -29,7 +29,7 @@
 | `sanads` | `hukum`, `max_rank`, `length` | one chain; `hukum` = scholar's verdict; `max_rank` = weakest-link rank |
 | `sanad_rawis` | `sanad_id`, `pos`, `rawi_id` | ordered narrator links of a chain |
 | `hadiths` | `type`, `matn`, `group_id` | `type` = attribution type (مرفوع/موقوف/مقطوع/قدسي), **not** authenticity |
-| `aqwal` / `alems` | `rawi_id`, `alem_id`, `qawl` | 127,863 criticism statements by 1,015 named critics |
+| `aqwal` / `alems` | `rawi_id`, `alem_id`, `qawl` | 127,863 criticism statements by 945 critics (the `alems` table names 1,015 critics; 945 of them issued a gradeable statement in `aqwal`) |
 
 `max_rank` was verified equal to `max(rank_no)` over the chain's links
 (sampled 5/5). `hukum` is the scholar's free-text chain verdict.

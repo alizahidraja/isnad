@@ -305,7 +305,7 @@
           <mxGeometry x="1040" y="110" width="300" height="95" as="geometry" />
         </mxCell>
 
-        <mxCell id="pv5" value="&lt;b&gt;Decision matrix (12 cells) · API endpoints · DB persistence · detached signatures (HMAC + Ed25519) · Merkle batch log · Live Verify integration · 773 tests · ruff/mypy clean&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="pv5" value="&lt;b&gt;Decision matrix (12 cells) · API endpoints · DB persistence · detached signatures (HMAC + Ed25519) · Merkle batch log · Live Verify integration · ~790 tests · ruff/mypy clean&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="60" y="220" width="1280" height="55" as="geometry" />
         </mxCell>
 
@@ -346,7 +346,7 @@
           <mxGeometry x="1020" y="650" width="300" height="70" as="geometry" />
         </mxCell>
 
-        <mxCell id="tests_note" value="&lt;b&gt;Test suite:&lt;/b&gt; 773 tests (pytest) | &lt;b&gt;ruff + mypy:&lt;/b&gt; clean | &lt;b&gt;Version:&lt;/b&gt; 2.9.9 on PyPI | &lt;b&gt;Paper:&lt;/b&gt; arXiv:2607.24117" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
+        <mxCell id="tests_note" value="&lt;b&gt;Test suite:&lt;/b&gt; ~790 tests (pytest) | &lt;b&gt;ruff + mypy:&lt;/b&gt; clean | &lt;b&gt;Version:&lt;/b&gt; 2.10.1 on PyPI | &lt;b&gt;Paper:&lt;/b&gt; arXiv:2607.24117" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
           <mxGeometry x="60" y="760" width="1260" height="40" as="geometry" />
         </mxCell>
       </root>

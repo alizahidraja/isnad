@@ -373,11 +373,19 @@ class BayesianTransitionPolicy:
             domain: Domain tag.
             prior_mean: Expected reliability (0.0–1.0).
             prior_weight: Strength of prior (pseudo-observations).
+
+        Note: this stores a Beta prior for ``get_state()`` introspection only.
+        The authoritative grading path is ``evaluate_transition``, which
+        recomputes the posterior from the evidence log and its own
+        ``_SEED_PRIOR_MEAN`` mapping (issue #90); it does not read ``_states``.
         """
         alpha = prior_mean * prior_weight
         beta = (1.0 - prior_mean) * prior_weight
         key = (narrator_id, domain)
-        self._states[key] = BetaState(alpha=alpha + 1, beta=beta + 1)
+        # No +1 Laplace term: the prior mean already encodes the belief, and
+        # adding a Beta(1,1) term on top would silently shift a RELIABLE
+        # prior (0.96) down toward ACCEPTABLE (issue #90-class double-count).
+        self._states[key] = BetaState(alpha=alpha, beta=beta)
 
     def evaluate_transition(
         self,

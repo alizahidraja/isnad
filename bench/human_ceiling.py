@@ -44,6 +44,24 @@ def _load_opinions(db_path: str) -> dict[int, list[str]]:
     return opinions
 
 
+def _count_critics(db_path: str) -> int:
+    """Number of distinct critics (alem_id) with a criticism statement.
+
+    This matches the documented "945 critics" (distinct critics who issued a
+    statement), which is distinct from the 1,015 critics *named* in ``alems``
+    (some named critics issued no statement). The human ceiling κ is computed
+    over the subset whose statements ``grade_from_qawl`` can classify.
+    """
+    conn = sqlite3.connect(db_path)
+    try:
+        n = conn.execute(
+            "SELECT COUNT(DISTINCT alem_id) FROM aqwal WHERE qawl IS NOT NULL AND qawl != ''"
+        ).fetchone()[0]
+    finally:
+        conn.close()
+    return n
+
+
 def _load_consensus(db_path: str) -> dict[int, str]:
     """Map rawi_id -> the consolidated NarratorGrade (from rawis.rank_no)."""
     conn = sqlite3.connect(db_path)
@@ -100,10 +118,11 @@ def main() -> None:
     cm_cons = confusion_matrix(yc_true, yc_pred, _GRADES)
     kappa_cons = cohens_kappa(cm_cons, _GRADES)
 
+    n_critics = _count_critics(args.db)
     print("=" * 72)
     print("ISNAD-Bench M3 — the human ceiling (inter-critic agreement)")
     print("=" * 72)
-    print("\ncritics: 945 · criticism statements: 127,863")
+    print(f"\ncritics (with a criticism statement): {n_critics} · criticism statements: 127,863")
     print(f"narrators with a classified grade: {n_narrators}")
     print(f"narrators with ≥2 critics:         {n_multi}")
     print(f"unanimous agreement: {unanimous}/{n_multi} ({unanimous / n_multi:.1%})")

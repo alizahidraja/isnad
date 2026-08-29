@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.10.1] — 2026-08-28
+
+### Added
+
+- **Witness-type-aware tawātur prior** (#54) — the blind-spot prior is now a
+  function of witness type, grounded in the classical distinction between
+  **mutābaʿa** (same-teacher confirmation — weak corroboration) and **shāhid**
+  (different-companion confirmation — strong corroboration).
+  `CappedCorroborationPolicy.BLIND_SPOT_MATRIX` keys pairwise priors by narrator
+  type (model+model → 0.25, model+human → 0.05, model+source → 0.08); every cell
+  is a stated default to calibrate, not an asserted truth. The engine derives each
+  chain's dominant narrator type and threads per-chain priors through
+  `compute_corroborated_grade` / `_compute_effective_weight`.
+
+## [2.10.0] — 2026-08-28
+
+### Added
+
+- **Tawātur discount (N_eff) + content-level madār detection** (#54) — the
+  chain-independence limit is addressed the way the classical scholars addressed
+  it: not by proving per-pair independence (unfalsifiable from topology), but by
+  pricing in joint failure probability. `CappedCorroborationPolicy` gains
+  `shared_blind_spot_prior` (default 0.20): every chain's witness weight is scaled
+  by (1 − prior), so no chain earns full witness credit.
+  `CorroborationResult` reports `effective_witnesses` and
+  `shared_blind_spot_prior`. `prior=0.0` is backward compatible; `prior=1.0`
+  disables corroboration.
+
 ## [2.9.9] — 2026-08-27
 
 ### Added

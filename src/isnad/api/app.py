@@ -25,6 +25,15 @@ async def _lifespan(app: FastAPI):
     try:
         init_db()
         logger.info("Database tables initialized")
+        # Rebuild the in-memory claim index from persisted claims so the read
+        # surface survives a restart (issue #93 follow-up).
+        from isnad.api.endpoints.claims import _hydrate_claims_from_db
+        from isnad.storage.sqlalchemy import get_session
+
+        with get_session() as session:
+            n = _hydrate_claims_from_db(session)
+        if n:
+            logger.info(f"Hydrated {n} persisted claim(s) into the serving index")
     except Exception as exc:
         logger.warning(f"DB init skipped (non-fatal): {exc}")
     yield

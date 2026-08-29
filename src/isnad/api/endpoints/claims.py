@@ -29,7 +29,7 @@ from isnad.core.identity import is_unknown_version, resolve_narrator_id
 from isnad.core.registry import Registry, RegistryDB
 from isnad.critics.embedding import TFIDFIndex
 from isnad.models import ReviewQueue
-from isnad.types import Action, ContentVerdict, NarratorGrade, TransformType
+from isnad.types import Action, ChainGrade, ContentVerdict, NarratorGrade, TransformType
 
 logger = logging.getLogger("isnad.api")
 router = APIRouter(prefix="/v1", tags=["claims"])
@@ -79,6 +79,66 @@ _app_state = AppState()
 
 def get_state() -> AppState:
     return _app_state
+
+
+def _hydrate_claims_from_db(session: Any) -> int:
+    """Rebuild the in-memory claim index from the DB (issue #93 follow-up).
+
+    The serving index (``_app_state.claims`` + the corroboration index) was
+    previously memory-only, so a process restart silently dropped every claim
+    even though each one had been persisted via ``store_claim``. This loads
+    persisted claims back into memory so the read surface survives restarts.
+
+    Fields the DB does not persist (content verdict, action, corroboration
+    result) are reconstructed honestly: ``content_verdict`` is UNVERIFIABLE
+    (the live critic corpus is not rebuilt here) and ``action`` is re-derived
+    from the deterministic decision matrix for ``(chain_grade, UNVERIFIABLE)``.
+
+    Returns the number of claims hydrated.
+    """
+    from isnad.core.decision import decide
+    from isnad.models import RijalClaim
+
+    rows = session.query(RijalClaim).order_by(RijalClaim.valid_from).all()
+    hydrated = 0
+    for row in rows:
+        if row.claim_id in _app_state.claims:
+            continue
+        chain = row.narrator_chain or []
+        narrator_ids = [link.get("narrator_id", "") for link in chain if isinstance(link, dict)]
+        domain = "general"
+        for link in chain:
+            if isinstance(link, dict) and link.get("domain"):
+                domain = link["domain"]
+                break
+        cg = row.chain_grade or "daif"
+        # Re-derive the route honestly: content verdict is unknown after a
+        # restart, so route on (chain_grade, UNVERIFIABLE).
+        action = decide(ChainGrade(cg), ContentVerdict.UNVERIFIABLE)
+        _app_state.claims[row.claim_id] = {
+            "claim_id": row.claim_id,
+            "claim_text": row.claim_text,
+            "normalized_text": row.normalized_text,
+            "chain_grade": cg,
+            "content_verdict": ContentVerdict.UNVERIFIABLE.value,
+            "action": action.value,
+            "description": "rehydrated from DB; content verdict unknown",
+            "chain": chain,
+            "served": False,
+            "quarantined": False,
+            "domain": domain,
+            "page_slug": row.page_slug,
+            "corroborating_claims": 0,
+            "narrator_ids": narrator_ids,
+            "resolved_narrator_ids": narrator_ids,
+            "link_grades": [],
+            "link_fidelity_verdicts": [],
+            "version_drift_detected": False,
+            "corroboration_result": None,
+        }
+        _app_state.index_claim(row.claim_id, row.normalized_text)
+        hydrated += 1
+    return hydrated
 
 
 def _find_best_matching_claim_id(
@@ -315,6 +375,7 @@ async def submit_claim(
             page_slug=page_slug,
             chain=chain,
             chain_grade=effective_grade.value,
+            claim_id=claim_id,
         )
     except Exception as exc:
         logger.error(f"Failed to persist claim to DB (audit trail will diverge): {exc}")

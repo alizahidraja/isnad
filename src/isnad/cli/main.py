@@ -129,6 +129,14 @@ def _export(argv: list[str]) -> int:
     parser.add_argument("--out", default=None, help="write to file instead of stdout")
     parser.add_argument("--verify", action="store_true", help="recompute the hash and check")
     parser.add_argument(
+        "--sign",
+        default=None,
+        help="HMAC secret to sign the record with before emitting "
+        "(defaults to $ISNAD_SIGNING_SECRET when the flag is passed without a value)",
+        nargs="?",
+        const=os.environ.get("ISNAD_SIGNING_SECRET", ""),
+    )
+    parser.add_argument(
         "--redact", action="store_true", help="redact claim text (PII) before hashing"
     )
     parser.add_argument("--chain-log", default=None, help="append the hash to a chain log")
@@ -143,6 +151,17 @@ def _export(argv: list[str]) -> int:
         )
     finally:
         session.close()
+
+    if args.sign is not None:
+        from isnad.audit.sign import hmac_signer, sign_detached
+
+        if not args.sign:
+            print(
+                "signing requires a secret: pass --sign SECRET or set ISNAD_SIGNING_SECRET",
+                file=sys.stderr,
+            )
+            return 1
+        sign_detached(record, hmac_signer(args.sign))
 
     output = _serialize(record, args.format)
 
@@ -160,13 +179,31 @@ def _export(argv: list[str]) -> int:
     )
 
     if args.verify:
-        from isnad.audit.canonical import canonical_hash
+        from isnad.audit.canonical import canonical_hash, canonical_json
+        from isnad.audit.sign import hmac_verifier
 
         recomputed = canonical_hash(record.to_dict(include_integrity=False))
         if recomputed != record.integrity.record_hash:
             print("verification FAILED: hash mismatch", file=sys.stderr)
             return 1
-        print("verification OK: record hash matches", file=sys.stderr)
+        detached = record.integrity.detached_signature
+        secret = os.environ.get("ISNAD_SIGNING_SECRET", "")
+        if detached:
+            if secret:
+                payload = canonical_json(record.to_dict(include_integrity=False))
+                if hmac_verifier(secret)(payload, detached):
+                    print("verification OK: hash + detached signature", file=sys.stderr)
+                else:
+                    print("verification FAILED: detached signature mismatch", file=sys.stderr)
+                    return 1
+            else:
+                print(
+                    "verification OK: hash only — detached signature present but no "
+                    "ISNAD_SIGNING_SECRET; forge-resistance NOT checked",
+                    file=sys.stderr,
+                )
+        else:
+            print("verification OK: hash only — no detached signature", file=sys.stderr)
 
     if args.chain_log:
         from isnad.audit import append_record
@@ -243,21 +280,55 @@ def _bench(argv: list[str]) -> int:
 
 
 def _verify(argv: list[str]) -> int:
-    parser = argparse.ArgumentParser(prog="isnad verify", description="Recompute a record hash.")
+    parser = argparse.ArgumentParser(
+        prog="isnad verify",
+        description="Recompute a record hash and (optionally) verify its detached signature.",
+    )
     parser.add_argument("--record", required=True, help="path to an AuditRecord JSON")
+    parser.add_argument(
+        "--hmac-secret",
+        default=None,
+        help="HMAC secret for detached-signature verification "
+        "(defaults to $ISNAD_SIGNING_SECRET)",
+    )
     args = parser.parse_args(argv)
 
-    from isnad.audit.canonical import canonical_hash
+    from isnad.audit.canonical import canonical_hash, canonical_json
+    from isnad.audit.sign import hmac_verifier
 
     with open(args.record) as f:
         data = json.load(f)
+
     integrity = data.pop("integrity", {})
     stored = integrity.get("record_hash", "")
     recomputed = canonical_hash(data)
-    if stored == recomputed:
-        print(f"OK: {stored}")
-        return 0
-    print(f"MISMATCH: stored {stored!r} != recomputed {recomputed!r}")
+    if stored != recomputed:
+        print(f"MISMATCH: stored {stored!r} != recomputed {recomputed!r}")
+        return 1
+
+    # Self-hash is only tamper-evident against accidental corruption, not a
+    # forger who rewrites the record and recomputes the hash (issue #97). If
+    # the record carries a detached signature and a secret is available,
+    # verify it. Otherwise say plainly what was NOT checked.
+    detached = integrity.get("detached_signature")
+    secret = args.hmac_secret or os.environ.get("ISNAD_SIGNING_SECRET", "")
+    if detached:
+        if secret:
+            if hmac_verifier(secret)(canonical_json(data), detached):
+                print(f"OK: {stored} (detached signature verified)")
+                return 0
+            print("MISMATCH: detached signature verification FAILED")
+            return 1
+        print(
+            f"OK: {stored} (self-hash only — detached signature present but no "
+            "ISNAD_SIGNING_SECRET; forge-resistance NOT checked)",
+        )
+        return 1
+
+    print(
+        f"OK: {stored} (self-hash only — record has no detached signature; "
+        "forge-resistance NOT checked)",
+    )
     return 1
 
 
