@@ -240,14 +240,16 @@ class TestSharedLineageDetectorDocHashesThroughEngine:
         assert result.independent_chains == 0
 
     def test_engine_upgrades_on_distinct_documents_and_lineage(self) -> None:
-        """Distinct docs + distinct lineage → upgrade still fires."""
+        """Distinct docs + distinct lineage, with a strong (SAHIH) corroborator,
+        still upgrades. A single *HASAN* corroborator no longer upgrades a DAIF
+        base (the weight gate requires ~2 HASAN-equivalent, or 1 SAHIH — #185)."""
         engine = CorroborationEngine(min_independent_chains=1)
         result = engine.evaluate_direct(
             base_chain_grade=ChainGrade.DAIF,
             base_narrators=["source:A", "model:A"],
             corroborating_chains=[
                 {
-                    "grade": "hasan",
+                    "grade": "sahih",
                     "narrators": ["source:B", "model:B"],
                     "document_hashes": ["report-b"],
                 }
@@ -261,6 +263,24 @@ class TestSharedLineageDetectorDocHashesThroughEngine:
             base_document_hashes={"report-a"},
         )
         assert result.upgraded is True
+
+    def test_engine_does_not_upgrade_on_single_hasan_corroborator(self) -> None:
+        """#185: a single HASAN corroborator is a weak (mutābaʿa-level) confirm and
+        must NOT elevate a DAIF base — the weight gate is 2.0 HASAN-equivalent,
+        and the engine must not silently overwrite it to 1.0."""
+        engine = CorroborationEngine(min_independent_chains=1)
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["source:A", "model:A"],
+            corroborating_chains=[{"grade": "hasan", "narrators": ["source:B", "model:B"]}],
+            narrator_metadata={
+                "source:A": {"model_family": None, "upstream_source": "openstax.org"},
+                "model:A": {"model_family": "fam-a", "upstream_source": "openstax.org"},
+                "source:B": {"model_family": None, "upstream_source": "hyperphysics.org"},
+                "model:B": {"model_family": "fam-b", "upstream_source": "hyperphysics.org"},
+            },
+        )
+        assert result.upgraded is False
 
 
 class TestCappedCorroborationPolicy:

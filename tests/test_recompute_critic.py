@@ -183,3 +183,29 @@ class TestEnsembleComposition:
         assert RecomputeCritic().evaluate(claim, claim, ROWS) == CONSISTENT
         # ...but the ensemble must still refuse to serve a semantically false claim
         assert ens.evaluate(claim, claim, ROWS) == CONTRADICTION
+
+
+class TestRecomputeCriticEdgeCases:
+    """Issue #185 regressions: year/date misread as total, and a category
+    literally named 'count' misread as the grand total."""
+
+    def _critic(self):
+        from isnad.critics.recompute import RecomputeCritic
+
+        return RecomputeCritic()
+
+    def test_year_in_claim_is_not_misread_as_inflated_total(self):
+        c = self._critic()
+        # Corpus total is 522; the claim also mentions the year 2024.
+        corpus = ["total rows: 522", "category alpha: 300", "category beta: 222"]
+        v = c.evaluate("In 2024 there were 522 rows.", "in 2024 there were 522 rows.", corpus)
+        # The correct total matches; the year must not trigger a contradiction.
+        assert v != ContentVerdict.CONTRADICTION
+
+    def test_category_named_count_is_not_the_total(self):
+        c = self._critic()
+        # A GROUP-BY category literally named "count" with value 26; the real
+        # total is 1240. A true claim about the total must not be contradicted.
+        corpus = ["total rows: 1240", "count: 26", "blank: 5"]
+        v = c.evaluate("There are 1240 rows.", "there are 1240 rows.", corpus)
+        assert v == ContentVerdict.CONSISTENT

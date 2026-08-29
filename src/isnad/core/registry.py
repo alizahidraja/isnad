@@ -1041,7 +1041,6 @@ class Registry:
             EvidenceAction.NEUTRAL,
             f"Version bumped to {new_version}; grade reset to UNGRADED",
         )
-        self._index_set_grade(narrator_id, domain_tag)
 
         # Role-scoped precision is void too: a new version is a new narrator.
         # Mirror the default record: reset the grade and clocks, log a
@@ -1060,6 +1059,12 @@ class Registry:
                     EvidenceAction.NEUTRAL,
                     f"Version bumped to {new_version}; role precision reset",
                 )
+
+        # Refresh the alias index AFTER the role reset: _narrator_is_graded
+        # scans role records, so indexing before the reset would leave a now-
+        # ungraded narrator in the graded-sibling index and mis-report version
+        # drift (issue #185).
+        self._index_set_grade(narrator_id, domain_tag)
 
     # ------------------------------------------------------------------
     # Quarantine
@@ -1308,7 +1313,7 @@ class Registry:
         # ACCEPTABLE with nothing ever evaluating its correctness.  A
         # freshness renewal extends the clock, nothing more.
         narrator.add_evidence(
-            EvidenceType.CORROBORATION_OUTCOME,
+            EvidenceType.FRESHNESS_RENEWAL,
             EvidenceAction.NEUTRAL,
             f"Grade freshness renewed via {reason}; trust window restarted",
         )

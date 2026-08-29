@@ -89,8 +89,11 @@ class RecomputeCritic:
                 continue
             key = m.group(1).strip().lower()
             val = _to_int(m.group(2))
-            # a row literally naming a total ("total rows", "total", "count")
-            if re.search(r"\btotal\b|\ball rows\b|\bcount\b", key):
+            # A row naming the grand total. The key must be *the* total word
+            # itself — not merely contain it, or a category literally named
+            # "count"/"word count" would be misread as the total (issue #185).
+            normalized_key = " ".join(key.split())
+            if normalized_key in ("total", "total rows", "all rows", "grand total"):
                 explicit_total = val
             elif re.search(r"\bblank\b|\bmissing\b|\bno .*(label|symbol|value)\b", key):
                 # a "rows with no X: N" fact is a countable part, keyed distinctly
@@ -132,14 +135,22 @@ class RecomputeCritic:
         supported.discard(0)  # 0 is too promiscuous to treat as a real match
 
         # Total-shaped assertion: does the claim state a grand total, and does it
-        # match? We look for the largest asserted integer as the presumptive total
-        # (aggregate claims lead with the count of everything).
-        asserted_total = max(claim_ints)
+        # match? Prefer the asserted integer that matches the recomputed total;
+        # only if none matches do we consider the largest as a presumptive total.
+        # This avoids misreading a year/date/version ("In 2024 there were 522
+        # rows") as an inflated aggregate (issue #185).
+        asserted_total = recomputed_total if recomputed_total in claim_ints else max(claim_ints)
         total_ok = asserted_total == recomputed_total
 
         # A claim number that matches nothing the corpus supports is a red flag,
         # but only decisive when it is the total-shaped number (the aggregate the
         # claim is *about*). A stray unmatched small number defers to semantics.
+        if not total_ok and asserted_total > recomputed_total and recomputed_total in claim_ints:
+            # The claim states the correct total AND a larger number that the
+            # corpus does not support (e.g. "522 rows, 2024" where 2024 is not a
+            # part, blank, or total). Ambiguous — defer rather than fabricate a
+            # contradiction.
+            return ContentVerdict.UNVERIFIABLE
         if not total_ok and asserted_total > recomputed_total:
             # claim inflates the aggregate beyond what the rows carry -> conflict
             return ContentVerdict.CONTRADICTION

@@ -258,6 +258,7 @@ class EvidenceType(Enum):
     ADJUDICATION = "adjudication"  # an operator resolves a dispute (issue #38)
     VERSION_BUMP = "version_bump"  # model version change → reset
     BOOTSTRAP_SEED = "bootstrap_seed"  # initial seed grade from benchmarks
+    FRESHNESS_RENEWAL = "freshness_renewal"  # clock restart only — no grade signal
 
 
 class EvidenceProvenance(Enum):
@@ -308,7 +309,8 @@ def provenance_of(evidence_type: EvidenceType) -> EvidenceProvenance:
     - POST_HOC_AUDIT / CORROBORATION_OUTCOME / SURVIVAL → OBSERVED (an
       in-pipeline instance).
     - HUMAN_REVIEW → HUMAN.
-    - VERSION_BUMP → META (a reset, not grade evidence).
+    - VERSION_BUMP / FRESHNESS_RENEWAL → META (a reset or clock restart,
+      not grade evidence).
     """
     if evidence_type in _PRIOR_EVIDENCE:
         return EvidenceProvenance.PRIOR

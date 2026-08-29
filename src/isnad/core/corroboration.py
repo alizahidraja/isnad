@@ -406,14 +406,18 @@ class CappedCorroborationPolicy:
 
         # --- Filter: only chains that pass independence threshold. ---
         # Keep (grade, score, prior) triples so the disjointness discount and
-        # the per-chain tawātur discount can both be applied.
+        # the per-chain tawātur discount can both be applied. A MAWDU chain is
+        # dropped entirely: a fabricated narrator's agreement is not
+        # corroboration — active containment means it contributes zero weight,
+        # never positive weight (its error prob 0.90 would otherwise *add* to
+        # the upgrade log-ratio, incoherently).
         priors = chain_blind_spot_priors
         independent: list[tuple[ChainGrade, float, float]] = [
             (grade, score, priors[i] if priors is not None else self.shared_blind_spot_prior)
             for i, (grade, score) in enumerate(
                 zip(corroborating_chains, independence_scores, strict=True)
             )
-            if score >= self.INDEPENDENCE_THRESHOLD
+            if score >= self.INDEPENDENCE_THRESHOLD and grade != ChainGrade.MAWDU
         ]
 
         if not independent:
@@ -614,7 +618,6 @@ class CorroborationEngine:
     def __init__(
         self,
         min_independent_chains: int = 1,
-        corroboration_cap: ChainGrade = ChainGrade.HASAN,
         min_gate_grade: ChainGrade = ChainGrade.HASAN,
         correlation_detector: SharedLineageDetector | None = None,
         policy: CappedCorroborationPolicy | None = None,
@@ -623,24 +626,29 @@ class CorroborationEngine:
         min_independent_chains: Minimum number of *corroborating*
             (not counting the base) independent chains required.
             Default 1 = one corroborating chain + base = two total.
-            Also sets the effective-weight threshold on the policy.
-        corroboration_cap: Highest grade reachable via corroboration.
-        min_gate_grade: At least one corroborating chain must meet
-            this grade for upgrade to be considered.
+            This is a COUNT gate, distinct from the policy's weight gate
+            (MIN_EFFECTIVE_WEIGHT): a single corroborator satisfies the count
+            but still must clear the weight threshold in the policy.
+        min_gate_grade: At least one corroborating chain must meet this grade
+            for upgrade to be considered. Propagated to the policy's
+            MIN_GATE_GRADE so both the engine gate and the policy agree.
         correlation_detector: Optional custom SharedLineageDetector.
         policy: Optional custom CappedCorroborationPolicy for the
-            upgrade decision math.  If not provided, one is created
-            with MIN_EFFECTIVE_WEIGHT = min_independent_chains.
+            upgrade decision math.  If not provided, one is created with its
+            default weight threshold (2.0); ``min_gate_grade`` is applied on
+            top so the constructor parameter always takes effect.
         """
         self.min_independent_chains = min_independent_chains
-        self.corroboration_cap = corroboration_cap
         self.min_gate_grade = min_gate_grade
         self._correlation_detector = correlation_detector or SharedLineageDetector()
         if policy is not None:
             self._policy = policy
         else:
             self._policy = CappedCorroborationPolicy()
-            self._policy.MIN_EFFECTIVE_WEIGHT = float(min_independent_chains)
+        # Propagate the operator's minimum-grade gate into the policy so the
+        # two gates cannot disagree (issue #185). Never overwrite the policy's
+        # weight threshold — that is a distinct, independent gate.
+        self._policy.MIN_GATE_GRADE = min_gate_grade
 
     def evaluate(
         self,
