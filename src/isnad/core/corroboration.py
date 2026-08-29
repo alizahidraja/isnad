@@ -16,8 +16,10 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass, field
 
+from isnad.core.content_madar import detect_content_madar
 from isnad.types import (
     ChainGrade,
+    ContentVerdict,
     CorrelationDetector,
     CorroborationPolicy,
     NarratorGrade,
@@ -542,6 +544,12 @@ class CorroborationResult:
     # The effective number of independent witnesses, after the tawātur discount.
     # Always ≤ the nominal independent-chain count; the gap is the honesty margin.
     effective_witnesses: float = 0.0
+    # Content-level madār detection (#54): True when a nominally-independent
+    # corroborating chain repeats the base claim's *same error* (identical wrong
+    # number or flipped negation) — a fingerprint of a common upstream, not
+    # independent confirmation. This is the *detectable* half of the
+    # chain-independence problem.
+    content_madar_detected: bool = False
 
 
 def _narrator_to_chain_grade(ng: NarratorGrade) -> ChainGrade:
@@ -644,6 +652,7 @@ class CorroborationEngine:
         *,
         has_live_contradiction: bool = False,
         base_document_hashes: set[str] | None = None,
+        base_content_verdict: ContentVerdict | None = None,
     ) -> CorroborationResult:
         """Evaluate corroboration by matching claims via exact claim_text.
 
@@ -657,7 +666,8 @@ class CorroborationEngine:
             all_chains: List of all claim chain dicts with keys:
                 claim_text, chain_grade, narrator_ids. Optional:
                 document_hashes (list[str] or set[str]) for each chain, used
-                by the correlation detector's madār check.
+                by the correlation detector's madār check, and content_verdict
+                (str or ContentVerdict) for content-level madār detection.
             narrator_metadata: Optional metadata for correlation detection.
             has_live_contradiction: True when content criticism has flagged
                 this claim as contradicting an existing claim (issue #11 —
@@ -665,6 +675,10 @@ class CorroborationEngine:
                 live contradiction; withhold any upgrade in that case).
             base_document_hashes: Retrieved-document content hashes of the
                 base chain, used for the madār check against corroborators.
+            base_content_verdict: The base claim's own content verdict. When
+                CONTRADICTION, the engine runs content-level madār detection
+                (#54): a corroborating chain that repeats the *same error* is
+                discounted as a common upstream, not independent confirmation.
 
         Returns:
             CorroborationResult with upgrade decision.
@@ -687,6 +701,8 @@ class CorroborationEngine:
                 "narrators": chain.get("narrator_ids", []),
                 "source": chain.get("source", ""),
                 "document_hashes": set(chain.get("document_hashes", []) or []),
+                "claim_text": chain.get("claim_text", ""),
+                "content_verdict": chain.get("content_verdict"),
             })
 
         return self._evaluate_core(
@@ -697,6 +713,8 @@ class CorroborationEngine:
             total_corroborating=len(corroborating_raw),
             has_live_contradiction=has_live_contradiction,
             base_document_hashes=base_document_hashes,
+            base_claim_text=claim_text,
+            base_content_verdict=base_content_verdict,
         )
 
     def evaluate_direct(
@@ -708,6 +726,8 @@ class CorroborationEngine:
         *,
         has_live_contradiction: bool = False,
         base_document_hashes: set[str] | None = None,
+        base_claim_text: str = "",
+        base_content_verdict: ContentVerdict | None = None,
     ) -> CorroborationResult:
         """Evaluate corroboration with pre-matched corroborating chains.
 
@@ -721,7 +741,9 @@ class CorroborationEngine:
             corroborating_chains: Pre-matched corroborating chain dicts.
                 Each dict must have keys: grade (ChainGrade or str),
                 narrators (list[str]).  Optional: source (str),
-                document_hashes (list[str] or set[str]) for the madār check.
+                document_hashes (list[str] or set[str]) for the madār check,
+                claim_text (str) and content_verdict (str or ContentVerdict)
+                for content-level madār detection (#54).
             narrator_metadata: Optional metadata for correlation detection.
             has_live_contradiction: True when content criticism has flagged
                 this claim as contradicting an existing claim (issue #11 —
@@ -729,6 +751,11 @@ class CorroborationEngine:
                 letting fake-independent parallel chains paper over it).
             base_document_hashes: Retrieved-document content hashes of the
                 base chain, used for the madār check against corroborators.
+            base_claim_text: The base claim's normalized text, used for
+                content-level madār fingerprinting (see base_content_verdict).
+            base_content_verdict: The base claim's content verdict. When
+                CONTRADICTION, content-level madār detection (#54) discounts
+                corroborating chains that repeat the same error.
 
         Returns:
             CorroborationResult with upgrade decision.
@@ -759,6 +786,8 @@ class CorroborationEngine:
                 "narrators": c.get("narrators", []),
                 "source": c.get("source", ""),
                 "document_hashes": set(c.get("document_hashes", []) or []),
+                "claim_text": c.get("claim_text", ""),
+                "content_verdict": c.get("content_verdict"),
             })
 
         return self._evaluate_core(
@@ -769,6 +798,8 @@ class CorroborationEngine:
             total_corroborating=len(normalised),
             has_live_contradiction=has_live_contradiction,
             base_document_hashes=base_document_hashes,
+            base_claim_text=base_claim_text,
+            base_content_verdict=base_content_verdict,
         )
 
     # ── internal: shared corroboration logic ──────────────────────
@@ -783,6 +814,8 @@ class CorroborationEngine:
         *,
         has_live_contradiction: bool = False,
         base_document_hashes: set[str] | None = None,
+        base_claim_text: str = "",
+        base_content_verdict: ContentVerdict | None = None,
     ) -> CorroborationResult:
         """Core corroboration logic shared by evaluate() and evaluate_direct()."""
         if base_chain_grade == ChainGrade.MAWDU:
@@ -794,6 +827,33 @@ class CorroborationEngine:
                 effective_weight=0.0,
                 upgraded=False,
                 reason="MAWDU chains cannot be corroborated",
+            )
+
+        # --- Content-level madār detection (#54): when the base claim is ---
+        # --- itself a corpus-checkable error (CONTRADICTION), a           ---
+        # --- "corroborating" chain that repeats the *same* error is a     ---
+        # --- fingerprint of a common upstream, not independent            ---
+        # --- confirmation. Correct agreement is NOT flagged; unverifiable ---
+        # --- claims are NOT flagged (undetectable). This is the           ---
+        # --- detectable half of the chain-independence problem.           ---
+        content_madar = False
+        if base_content_verdict is ContentVerdict.CONTRADICTION and base_claim_text:
+            corr_verdicts: list[tuple[str, ContentVerdict]] = []
+            for c in corroborating_chains:
+                raw_v = c.get("content_verdict")
+                v: ContentVerdict
+                if isinstance(raw_v, ContentVerdict):
+                    v = raw_v
+                elif isinstance(raw_v, str):
+                    try:
+                        v = ContentVerdict(raw_v)
+                    except ValueError:
+                        v = ContentVerdict.UNVERIFIABLE
+                else:
+                    v = ContentVerdict.UNVERIFIABLE
+                corr_verdicts.append((c.get("claim_text", ""), v))
+            content_madar = detect_content_madar(
+                base_claim_text, base_content_verdict, corr_verdicts
             )
 
         # --- Shādhdh gate (issue #11): a live contradiction must not be ---
@@ -808,7 +868,33 @@ class CorroborationEngine:
                 independent_chains=0,
                 effective_weight=0.0,
                 upgraded=False,
-                reason="Corroboration withheld: claim has a live content contradiction outstanding",
+                content_madar_detected=content_madar,
+                reason=(
+                    "Corroboration withheld: claim has a live content contradiction "
+                    "outstanding"
+                    + (" (content-level madār: a corroborator repeats the same error)"
+                       if content_madar else "")
+                ),
+            )
+
+        # --- Content-level madār gate (#54): even without a live         ---
+        # --- contradiction on the *base* claim, a corroborating chain    ---
+        # --- that repeats the base claim's same error is a common-       ---
+        # --- upstream fingerprint, not independent confirmation. Withhold ---
+        # --- the upgrade in that case.                                   ---
+        if content_madar:
+            return CorroborationResult(
+                base_grade=base_chain_grade,
+                upgraded_grade=base_chain_grade,
+                corroborating_chains=total_corroborating,
+                independent_chains=0,
+                effective_weight=0.0,
+                upgraded=False,
+                content_madar_detected=True,
+                reason=(
+                    "Corroboration withheld: content-level madār detected — "
+                    "a corroborating chain repeats the same error"
+                ),
             )
 
         # Compute per-chain independence assessments for ALL corroborating

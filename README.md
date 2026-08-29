@@ -615,7 +615,7 @@ numbers hold.
 
 ## Open problems
 
-- **Chain independence** ([tracking issue](https://github.com/alizahidraja/isnad/issues/54)) — the framework's hardest unsolved problem, stated publicly: topology cannot *prove* two chains are independent. Addressed, not solved: attested lineage (no silent independence from empty metadata), document-hash madār detection, a tawātur discount (N_eff) that prices in the unobservable shared-blind-spot prior, witness-type-aware priors (shāhid vs mutābaʿa), and content-level madār detection for the *detectable* (corpus-checkable) half. The *undetectable* half — correlated training data across model families — remains an open, stated limit.
+- **Chain independence** ([tracking issue](https://github.com/alizahidraja/isnad/issues/54)) — the framework's hardest unsolved problem, stated publicly: topology cannot *prove* two chains are independent. Addressed, not solved: attested lineage (no silent independence from empty metadata), document-hash madār detection, a tawātur discount (N_eff) that prices in the unobservable shared-blind-spot prior, witness-type-aware priors (shāhid vs mutābaʿa), and **content-level madār detection now engine-wired** (v2.12.0: a corroborator repeating the same error withholds the upgrade). The *undetectable* half — correlated training data across model families — remains an open, stated limit.
 - **Content critic is the coverage ceiling** — a semantic critic that returns CONSISTENT on real prose is the single highest-value component for end-to-end coverage (paper §8.4/§8.6). The numeric-aggregate slice now has a deterministic `RecomputeCritic` + `EnsembleCritic` + `AggregateRouter` (#168/#180); general semantic criticism is still the LLM/NLI tier.
 
 ---

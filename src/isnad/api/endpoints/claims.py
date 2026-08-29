@@ -302,6 +302,10 @@ async def submit_claim(
             "narrator_ids": rec.get("resolved_narrator_ids", rec.get("narrator_ids", [])),
             "source": rec.get("page_slug", ""),
             "document_hashes": _extract_document_hashes(rec),
+            # Each stored claim's content verdict, so the corroboration engine
+            # can detect content-level madār (a corroborator repeating the same
+            # error) — issue #54.
+            "content_verdict": rec.get("content_verdict", "unverifiable"),
         }
         for rec in all_claim_records
     ]
@@ -318,6 +322,7 @@ async def submit_claim(
         narrator_metadata=narrator_metadata,
         has_live_contradiction=has_live_contradiction,
         base_document_hashes=base_document_hashes,
+        base_content_verdict=cv,
     )
     effective_grade = corr_result.upgraded_grade if corr_result.upgraded else cg
     if corr_result.upgraded:
@@ -357,6 +362,9 @@ async def submit_claim(
             "independent_chains": corr_result.independent_chains,
             "effective_weight": corr_result.effective_weight,
             "reason": corr_result.reason,
+            "content_madar_detected": corr_result.content_madar_detected,
+            "shared_blind_spot_prior": corr_result.shared_blind_spot_prior,
+            "effective_witnesses": corr_result.effective_witnesses,
             "chain_independence": [
                 {
                     "score": a.score,

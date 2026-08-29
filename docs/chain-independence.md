@@ -50,15 +50,26 @@ it can never *prove independence* — it can only fail to find shared signals.
   metadata scored `1.0` — the framework assumed independence exactly when it
   knew the least.
 
-## Candidate approaches (none chosen yet)
+## Candidate approaches (now shipped)
 
 1. **Attestation-backed independence** — require each corroborating chain to
    carry a signed provenance attestation (SLSA/SBOM), and treat "independent"
-   as "attested-distinct lineage" (#47).
-2. **Calibration, not detection** — emit a corroboration-strength score that
-   decays with the prior probability of shared lineage.
-3. **Content-level madār detection** — detect when multiple "independent"
-   sources share an identical normalized error pattern, and discount those.
+   as "attested-distinct lineage" (#47). *Status: the half that does not need
+   cryptography is shipped — `UNKNOWN_LINEAGE_SCORE` below the gate (PR #83);
+   the full SLSA/SBOM hand-off is #47.*
+2. **Calibration, not detection** — the **tawātur discount (N_eff)**, shipped in
+   v2.10.0: `shared_blind_spot_prior` (default 0.20) prices in the unobservable
+   shared-failure probability, so every witness weight is scaled by (1 − prior);
+   v2.10.1 makes the prior **witness-type-aware** (shāhid vs mutābaʿa).
+3. **Content-level madār detection** — the **detectable half is now shipped and
+   engine-wired (v2.12.0)**: when the base claim is CONTRADICTION and a
+   corroborating chain repeats the *same error* (identical wrong number or
+   flipped negation), `CorroborationEngine` withholds the upgrade and reports
+   `content_madar_detected=True` (`core/content_madar.py`).
+
+The *undetectable* half — correlated training data across distinct model
+families with no shared source and no checkable error — remains an open,
+stated limit.
 
 ## Related
 

@@ -93,3 +93,79 @@ class TestDetectContentMadar:
             [("Energy is not conserved in an isolated system.", CONTRADICTION)],
         )
         assert madar is True
+
+
+class TestContentMadarWiredIntoEngine:
+    """The engine withholds corroboration when a corroborator repeats the base
+    claim's same error (the #54 gap that was previously unwired)."""
+
+    def test_engine_withholds_on_shared_wrong_number(self):
+        from isnad.core.corroboration import CorroborationEngine
+        from isnad.types import ChainGrade
+
+        engine = CorroborationEngine()
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["source:A", "ingest:A", "model:A"],
+            corroborating_chains=[
+                {
+                    "grade": "hasan",
+                    "narrators": ["source:B", "ingest:B", "model:B"],
+                    "claim_text": "The total is 97 records.",
+                    "content_verdict": "contradiction",
+                }
+            ],
+            base_claim_text="The total is 97 records.",
+            base_content_verdict=ContentVerdict.CONTRADICTION,
+        )
+        assert result.upgraded is False
+        assert result.content_madar_detected is True
+        assert "content-level madār" in result.reason
+
+    def test_engine_withholds_even_without_live_contradiction_flag(self):
+        """The madār gate fires on the base verdict alone — the caller does not
+        need to also pass has_live_contradiction."""
+        from isnad.core.corroboration import CorroborationEngine
+        from isnad.types import ChainGrade
+
+        engine = CorroborationEngine()
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["source:A"],
+            corroborating_chains=[
+                {
+                    "grade": "hasan",
+                    "narrators": ["source:B"],
+                    "claim_text": "Energy is not conserved in an isolated system.",
+                    "content_verdict": "contradiction",
+                }
+            ],
+            base_claim_text="Energy is not conserved in an isolated system.",
+            base_content_verdict=ContentVerdict.CONTRADICTION,
+            # has_live_contradiction deliberately NOT set
+        )
+        assert result.upgraded is False
+        assert result.content_madar_detected is True
+
+    def test_engine_does_not_withhold_on_different_errors(self):
+        """Two chains making different mistakes are independently wrong, not a
+        shared upstream — corroboration proceeds normally (no madār)."""
+        from isnad.core.corroboration import CorroborationEngine
+        from isnad.types import ChainGrade
+
+        engine = CorroborationEngine()
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["source:A"],
+            corroborating_chains=[
+                {
+                    "grade": "hasan",
+                    "narrators": ["source:B"],
+                    "claim_text": "The speed of light is 700,000 km/s.",
+                    "content_verdict": "contradiction",
+                }
+            ],
+            base_claim_text="The speed of light is 500,000 km/s.",
+            base_content_verdict=ContentVerdict.CONTRADICTION,
+        )
+        assert result.content_madar_detected is False

@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.12.0] — 2026-08-29
+
+### Added
+
+- **Content-level madār detection wired into the corroboration engine** (#54).
+  `detect_content_madar` is no longer an exported-but-unused helper: when the
+  base claim's content verdict is CONTRADICTION and a nominally-independent
+  corroborating chain repeats the *same error* (identical wrong number or
+  flipped negation), `CorroborationEngine` now withholds the upgrade and reports
+  `content_madar_detected=True` with a precise reason. This closes the "detectable
+  half" of the chain-independence gap — the undetectable half (correlated training
+  data across model families) remains an open, stated limit.
+- `CorroborationResult` now carries `content_madar_detected`,
+  `shared_blind_spot_prior`, and `effective_witnesses` through the API response
+  (`corroboration_result`), so the madār signal is visible in the audit record.
+- `evaluate` / `evaluate_direct` accept `base_content_verdict` (and the API
+  threads each stored claim's `content_verdict`) so the engine can fingerprint
+  corroborators' errors.
+
 ## [2.11.0] — 2026-08-29
 
 ### Added
