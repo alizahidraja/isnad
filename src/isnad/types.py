@@ -225,7 +225,7 @@ class DabtGrade(Enum):
 class Action(Enum):
     """Actions from the decision matrix (paper §4.4, Table).
 
-    The 4×2 matrix: chain_grade ∈ {SAHIH, HASAN, DAIF, MAWDU}
+    The 4×3 matrix: chain_grade ∈ {SAHIH, HASAN, DAIF, MAWDU}
                    × content_verdict ∈ {CONSISTENT, CONTRADICTION}
     """
 

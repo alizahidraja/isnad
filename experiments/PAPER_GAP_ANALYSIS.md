@@ -32,7 +32,7 @@ validation — the engine existed but had never fired on real data.
 
 3. **Full pipeline integration:** Chain grading → matn criticism →
    corroboration → decision matrix.  Only the corroboration step is tested.
-   The decision matrix (4×2: chain_grade × content_verdict → action) is
+   The decision matrix (4×3: chain_grade × content_verdict → action) is
    not exercised with real data.
 
 4. **Cross-source data beyond Wikipedia:** Britannica requires JS rendering.

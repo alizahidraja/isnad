@@ -85,7 +85,7 @@ DEEPSEEK_API_KEY=sk-... python run_experiment.py  # DeepSeek LLM critic
                            │
                            ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    DECISION MATRIX (4×2 router)                      │
+│                    DECISION MATRIX (4×3 router)                      │
 │                                                                      │
 │              CONSISTENT            CONTRADICTION                     │
 │  ─────────── ────────────────────  ───────────────────────────────── │

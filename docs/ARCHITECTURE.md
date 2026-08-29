@@ -81,7 +81,7 @@ at the decision matrix:
                           │
                  ┌────────▼────────┐
                  │ DECISION MATRIX │
-                 │  4×2 router     │
+                 │  4×3 router     │
                  │                 │
                  │ chain × content │
                  │ → serve/review  │

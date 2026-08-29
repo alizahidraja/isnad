@@ -42,7 +42,7 @@ def grade(
     Args:
         claim: The claim text (used for the ``why`` string; content criticism is
             not run here — pass a critic's verdict through ``decide`` if you
-            want the full 4×2 matrix).
+            want the full 4×3 matrix).
         chain: Ordered narrator ids (source first, answer last).
         registry: The graded-narrator registry.
         domain: Domain tag for grading.

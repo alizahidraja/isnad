@@ -1,4 +1,4 @@
-"""Decision Matrix — the 4×2 action router combining chain grade × content criticism.
+"""Decision Matrix — the 4×3 action router combining chain grade × content criticism.
 
 Implements paper §4.4, the framework's most directly actionable artifact.
 

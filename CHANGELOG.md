@@ -1,5 +1,41 @@
 # Changelog
 
+## [2.14.0] — 2026-08-29
+
+### Changed
+
+- **Corroboration threshold decoupled** (#185, panel decision 3/3 DECOUPLE). The
+  engine no longer silently overwrites the policy's `MIN_EFFECTIVE_WEIGHT` (2.0)
+  with `min_independent_chains` (1.0). `min_independent_chains` is now a COUNT
+  gate; the weight gate stays 2.0, so a single HASAN corroborator no longer
+  elevates a DAIF chain — ~2 HASAN-equivalent (or 1 SAHIH) is required. This
+  closes a one-shot trust-elevation/poisoning path and reconciles the engine
+  with the policy and paper §4.3.
+- **MAWDU corroborating chains contribute zero weight** — a fabricated narrator's
+  agreement is not corroboration (active containment).
+
+### Fixed
+
+- **#182 contestability durability** — `adjudicate(overturn=True)` now records its
+  target grade and survives the next recompute AND `get_grade_as_of`: the
+  overturned integrity strike is re-accredited, not silently re-applied.
+- **#183 integration honesty (3 bugs)** — `IsnadTracer` now passes retrieved
+  documents as the critic's corpus (content criticism was an empty-corpus no-op);
+  `IsnadMiddleware.gate()` now gates every action the matrix does not serve
+  (a SAHIH/HASAN contradiction no longer passes through un-blocked); Live Verify's
+  authority-chain walk treats an endorser cycle as self-verified (amber), not
+  confirmed (green).
+- **#184 experiment honesty (2 bugs)** — `verified_vs_unverified` no longer
+  hardcodes a SAHIH corroborator (it grades the real chain, so the recovery is
+  genuine and the 2-caught/2-missed/0-FP summary is true); `adversarial_benchmark`
+  collapsed its fictional "pattern vs semantic" split into a single honest
+  `content-contradiction` class.
+- **#185 correctness** — `renew_grade` no longer logs a freshness renewal as an
+  OBSERVED corroboration outcome (new `FRESHNESS_RENEWAL` META type);
+  `bump_version` refreshes the alias index after the role reset; `RecomputeCritic`
+  no longer misreads a year/date as an inflated total or a category named "count"
+  as the grand total.
+
 ## [2.13.0] — 2026-08-29
 
 ### Changed

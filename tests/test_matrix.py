@@ -1,4 +1,4 @@
-"""Tests for matrix.py — the 4×2 decision matrix.
+"""Tests for matrix.py — the 4×3 decision matrix.
 
 Verifies paper §4.4: every cell routes to the correct action, including:
 - ṣaḥīḥ × contradiction → REVIEW (ʿilal)
@@ -11,7 +11,7 @@ from isnad.types import Action, ChainGrade, ContentVerdict
 
 
 class TestDecisionMatrix:
-    """Each cell of the 4×2 + unverifiable matrix routes correctly."""
+    """Each cell of the 4×3 + unverifiable matrix routes correctly."""
 
     # --- SAHIH row ---
     def test_sahih_consistent_serve(self) -> None:

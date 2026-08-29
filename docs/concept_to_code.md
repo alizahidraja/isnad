@@ -160,7 +160,7 @@ result = grade_chain(
      → CorroborationEngine checks independence, min grade gate, effective weight
      → DAIF → HASAN (capped, never reaches SAHIH)
 6. Decision matrix routes action (core/decision.py) ← chain_grade + content_verdict
-     → 4×2 matrix → Action: SERVE | SERVE_WITH_CAVEAT | REVIEW | QUARANTINE | REJECT
+     → 4×3 matrix → Action: SERVE | SERVE_WITH_CAVEAT | REVIEW | QUARANTINE | REJECT
 7. Action executed: serve / review / quarantine
 8. Evidence logged back to Registry (jarḥ–taʿdīl loop closes)
      → POST /v1/evidence → Registry.record_evidence()
@@ -180,7 +180,7 @@ isnad/
 │   ├── registry.py        Registry, RegistryDB, BayesianTransitionPolicy
 │   ├── grading.py         RefinedWeakestLink, grade_chain()
 │   ├── corroboration.py   CorroborationEngine, SharedLineageDetector
-│   └── decision.py        decide(), describe_action() (4×2 matrix)
+│   └── decision.py        decide(), describe_action() (4×3 matrix)
 ├── critics/               Content criticism
 │   ├── base.py            ContentCritic protocol
 │   ├── embedding.py       EmbeddingCritic (TF-IDF — DEFAULT, zero-deps)
