@@ -151,7 +151,11 @@ def load_physics_corpus() -> dict[str, list[str]]:
 
     for chunk_path in sorted(S8_CORPUS.glob("*.txt")):
         name = chunk_path.stem
-        if name.startswith("ostax_vol1"):
+        # Accept both the historical ``ostax_vol1_*`` and the regenerated
+        # ``openstax_vol1_*`` chunk prefixes (the corpus is regenerated locally
+        # and is gitignored; the two naming schemes appeared in different
+        # generation runs).
+        if name.startswith(("ostax_vol1", "openstax_vol1")):
             src = "openstax_vol1"
         elif name.startswith("crowell_lm"):
             src = "crowell_lm"

@@ -15,7 +15,7 @@ exact functions that produce the benchmark's κ.
 
 ISNAD's weakest-link chain grading reproduces 1,200 years of classical hadith
 scholars' chain verdicts at **Cohen's κ = 0.871** (strict default), across
-**577,024** scholar-graded chains, with a shuffled-rank control at κ = 0.047.
+**577,024** scholar-graded chains, with a shuffled-rank control at κ = 0.045.
 
 **ISNAD faithfully implements the scholars' consensus; it is not "better than
 the scholars".** The human ceiling — how well the scholars agree with *each

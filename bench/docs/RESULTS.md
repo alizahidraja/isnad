@@ -3,7 +3,7 @@
 **Headline:** ISNAD's weakest-link chain grading reproduces 1,200 years of
 classical hadith scholars' chain verdicts with **Cohen's κ = 0.871** (the strict
 default) and **0.761** (lenient opt-in), across **577,024** scholar-graded
-chains — with a shuffled-rank control at κ = 0.047.
+chains — with a shuffled-rank control at κ = 0.045.
 
 > Reproduce:
 > `uv run python -m bench.run --seed 0` (strict, default) ·
@@ -31,16 +31,16 @@ agrees. The lenient mode is opt-in in the library via
 | Control | κ |
 |---|---:|
 | majority-class predictor | 0.0000 |
-| shuffled-rank (scrambled mapping) | 0.0472 |
+| shuffled-rank (scrambled mapping) | 0.0446 |
 
 ## Per-class performance (strict mode)
 
 | Class | Precision | Recall | F1 | Support |
 |---|---|---|---|---|
-| ṣaḥīḥ | 0.944 | 0.899 | 0.921 | 151,139 |
-| ḥasan | 0.775 | 0.934 | 0.847 | 186,256 |
-| ḍaʿīf | 0.897 | 0.818 | 0.856 | 171,763 |
-| mawḍūʿ | 0.953 | 0.831 | 0.888 | 65,902 |
+| ṣaḥīḥ | 0.923 | 0.897 | 0.910 | 151,139 |
+| ḥasan | 0.909 | 0.892 | 0.900 | 186,256 |
+| ḍaʿīf | 0.848 | 0.928 | 0.886 | 171,763 |
+| mawḍūʿ | 0.952 | 0.831 | 0.887 | 65,902 |
 
 ## The corroboration ablation (mutābaʿa)
 

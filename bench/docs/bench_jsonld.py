@@ -18,7 +18,7 @@ BENCH_RESULTS = {
     "kappa_lenient": 0.761,
     "human_ceiling_critic_vs_critic": 0.331,
     "human_ceiling_critic_vs_consensus": 0.450,
-    "shuffled_control": 0.047,
+    "shuffled_control": 0.0446,
     "majority_control": 0.000,
     "chains": 577024,
     "narrators": 49844,
@@ -83,7 +83,7 @@ LEADERBOARD_MD = (
     "faithfully implements the scholars' consensus |\n"
     "| ISNAD weakest-link (lenient) | 0.761 | 0.331 | "
     "opt-in `lenient_unknown=True` |\n"
-    "| shuffled-rank control | 0.047 | — | negative control |\n"
+    "| shuffled-rank control | 0.0446 | — | negative control |\n"
     "| majority-class control | 0.000 | — | negative control |\n"
     "\n"
     "*The human ceiling (κ=0.331) is how well the scholars agree with each other — "
