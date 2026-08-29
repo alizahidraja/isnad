@@ -4,7 +4,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="arch_title" value="ISNAD–RIJĀL Framework v2.9.9 — Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+        <mxCell id="arch_title" value="ISNAD–RIJĀL Framework v2.11.0 — Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
           <mxGeometry x="350" y="15" width="950" height="40" as="geometry" />
         </mxCell>
         <mxCell id="arch_sub" value="Claim-level provenance: chains (isnād) · graded narrators (rijāl) · weakest-link grading · content criticism · serve/review/quarantine · tamper-evident, signable audit" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
