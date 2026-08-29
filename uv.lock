@@ -1553,7 +1553,7 @@ wheels = [
 
 [[package]]
 name = "isnad"
-version = "2.14.0"
+version = "2.15.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
@@ -1570,6 +1570,7 @@ all = [
     { name = "langchain-core" },
     { name = "langgraph" },
     { name = "llama-index-core" },
+    { name = "mcp" },
     { name = "mypy" },
     { name = "pre-commit" },
     { name = "pytest" },
@@ -1604,6 +1605,9 @@ langgraph = [
 llamaindex = [
     { name = "llama-index-core" },
 ]
+mcp = [
+    { name = "mcp" },
+]
 nli = [
     { name = "sentence-transformers" },
 ]
@@ -1626,10 +1630,11 @@ requires-dist = [
     { name = "anthropic", marker = "extra == 'anthropic'", specifier = ">=0.40" },
     { name = "crewai", marker = "extra == 'crewai'", specifier = ">=0.80" },
     { name = "fastapi", marker = "extra == 'api'", specifier = ">=0.115" },
-    { name = "isnad", extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llamaindex", "api", "nli"], marker = "extra == 'all'" },
+    { name = "isnad", extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llamaindex", "api", "nli", "mcp"], marker = "extra == 'all'" },
     { name = "langchain-core", marker = "extra == 'langchain'", specifier = ">=0.3" },
     { name = "langgraph", marker = "extra == 'langgraph'", specifier = ">=0.2" },
     { name = "llama-index-core", marker = "extra == 'llamaindex'", specifier = ">=0.11" },
+    { name = "mcp", marker = "extra == 'mcp'", specifier = ">=1.0" },
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.11" },
     { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=3.8" },
     { name = "psycopg2-binary", specifier = ">=2.9,<3.0" },
@@ -1641,7 +1646,7 @@ requires-dist = [
     { name = "sqlalchemy", specifier = ">=2.0,<3.0" },
     { name = "uvicorn", marker = "extra == 'api'", specifier = ">=0.32" },
 ]
-provides-extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llamaindex", "api", "nli", "all"]
+provides-extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llamaindex", "mcp", "api", "nli", "all"]
 
 [package.metadata.requires-dev]
 dev = [

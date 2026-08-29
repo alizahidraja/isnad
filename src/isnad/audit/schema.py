@@ -29,9 +29,10 @@ SCHEMA_VERSION = "audit-record-v1"
 
 RedactFn = Callable[[str, object], object]
 
-# Narrator taxonomy the audit record emits (a superset of ``NarratorType``;
-# "tool" and "retriever" are roles, not graded identities, so they are carried
-# only where a caller provides them).
+# Governance-oriented narrator taxonomy the audit record emits. This is a
+# superset of ``NarratorType``: "retriever" is a Role (per step), not a graded
+# NarratorType, but is carried where a caller provides it. "tool" IS now a
+# NarratorType (issue #59). Kept in sync with ``exporter._NARRATOR_TYPE_MAP``.
 NARRATOR_TYPES = ("human", "model", "scraper", "tool", "dataset", "retriever")
 
 

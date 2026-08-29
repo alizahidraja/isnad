@@ -41,13 +41,14 @@ from isnad.models import RijalClaim
 from isnad.types import NarratorGrade, NarratorType
 
 # NarratorType → the governance-oriented taxonomy the audit record uses.
-# "tool" and "retriever" are roles (per step), not graded NarratorTypes, so they
-# are not produced by this mapping — a caller can supply them directly.
+# "retriever" is a Role (per step), not a graded NarratorType; "tool" IS a
+# graded NarratorType now (issue #59).
 _NARRATOR_TYPE_MAP: dict[str, str] = {
     NarratorType.SOURCE.value: "dataset",
     NarratorType.SCRAPER.value: "scraper",
     NarratorType.MODEL.value: "model",
     NarratorType.HUMAN.value: "human",
+    NarratorType.TOOL.value: "tool",
 }
 
 

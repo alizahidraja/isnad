@@ -160,6 +160,7 @@ class NarratorType(Enum):
     SCRAPER = "scraper"  # extraction tool
     MODEL = "model"  # LLM / ML model
     HUMAN = "human"  # human contributor / reviewer
+    TOOL = "tool"  # external tool (e.g. an MCP server, a code interpreter)
 
 
 class Role(StrEnum):

@@ -362,6 +362,12 @@ corroboration, and human review as *downstream* gates, not a replacement for it.
 - **LangChain / LangGraph** — callback handler + tracer + middleware (above).
 - **CrewAI / LlamaIndex** — adapters (`isnad.integrations.crewai`, `.llamaindex`).
 - **OpenTelemetry** — `isnad ingest --otlp` grades an existing GenAI trace (#73).
+- **MCP** — grade MCP servers as narrators: `MCPToolObserver` records tool calls
+  as TOOL narrator links and grades the resulting chain; a `grade_claim` tool
+  exposes the operator's registry to an agent (`isnad.integrations.mcp`, #59).
+  Honest limit: tool narrators stay **UNGRADED** by default (no auto-grading from
+  call volume — that would be GIGO); the server returns operator-assigned grades,
+  never manufactured ones.
 - **Live Verify** — consume a `verify:` cryptographic seal as a high-trust narrator,
   anchoring ʿadālah on day one (solves cold-start; see `examples/issuer_demo/`).
   Honest limit: Live Verify proves *authenticity*, not *truth*.

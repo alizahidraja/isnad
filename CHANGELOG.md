@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.15.0] — 2026-08-29
+
+### Added
+
+- **isnad-mcp** (`isnad.integrations.mcp`, #59) — grade MCP servers as narrators.
+  `MCPToolObserver` records MCP tool calls as TOOL narrator links and grades the
+  chain; a `grade_claim` tool exposes the operator's local registry to an agent.
+  Honest by construction: tool narrators stay UNGRADED by default (never
+  auto-graded from call volume), and the server returns operator-assigned grades,
+  never manufactured ones (#44 no-federation invariant). Duck-typed — no `mcp`
+  SDK import, so it ships and tests without it (`pip install isnad[mcp]`).
+- **`NarratorType.TOOL`** — the taxonomy now has a first-class tool narrator (was
+  only `Role.TOOL`); the LangChain `tool:`/`retriever:` prefix inference now maps
+  to TOOL (was SCRAPER), and the volatility + audit mappings carry it.
+
+### Fixed
+
+- Removed the drift hazard of a dead, misleading `NARRATOR_TYPES` tuple in
+  `audit/schema.py` (now aligned with the enum + governance map, #185).
+
 ## [2.14.0] — 2026-08-29
 
 ### Changed

@@ -79,7 +79,7 @@ def seed_registry(
         elif narrator_id.startswith("model:"):
             ntype = NarratorType.MODEL
         elif narrator_id.startswith("tool:") or narrator_id.startswith("retriever:"):
-            ntype = NarratorType.SCRAPER
+            ntype = NarratorType.TOOL
         else:
             ntype = NarratorType.MODEL
 

@@ -19,7 +19,7 @@ never needs to edit code to tune freshness:
 
     ISNAD_TTL_BASE_DAYS      base time-to-live in days        (default 90)
     ISNAD_TTL_TYPE_FACTORS   JSON: type -> TTL multiplier
-                            {"model":0.5,"scraper":1.0,"source":2.0,"human":3.0}
+                            {"model":0.5,"scraper":1.0,"tool":1.0,"source":2.0,"human":3.0}
     ISNAD_TTL_DOMAIN_DAYS    JSON: domain -> TTL days (overrides)
     ISNAD_STALE_RATIO        grace window as fraction of TTL (default 0.2)
 """
@@ -36,6 +36,7 @@ from isnad.types import NarratorType
 _DEFAULT_TYPE_FACTORS: dict[str, float] = {
     NarratorType.MODEL.value: 0.5,  # LLMs drift; short window
     NarratorType.SCRAPER.value: 1.0,  # extraction tools, moderate
+    NarratorType.TOOL.value: 1.0,  # external tools; tool-surface drift is real
     NarratorType.SOURCE.value: 2.0,  # external sources, slower-moving
     NarratorType.HUMAN.value: 3.0,  # human reviewers, slowest-moving
 }

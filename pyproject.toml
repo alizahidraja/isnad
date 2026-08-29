@@ -1,6 +1,6 @@
 [project]
 name = "isnad"
-version = "2.14.0"
+version = "2.15.0"
 description = "Isnād–Rijāl framework for claim-level provenance in multi-agent knowledge systems"
 readme = "README.md"
 authors = [
@@ -57,6 +57,9 @@ crewai = [
 llamaindex = [
     "llama-index-core>=0.11",
 ]
+mcp = [
+    "mcp>=1.0",
+]
 api = [
     "fastapi>=0.115",
     "uvicorn>=0.32",
@@ -65,7 +68,7 @@ nli = [
     "sentence-transformers>=3.0",
 ]
 all = [
-    "isnad[dev,anthropic,langchain,langgraph,crewai,llamaindex,api,nli]",
+    "isnad[dev,anthropic,langchain,langgraph,crewai,llamaindex,api,nli,mcp]",
 ]
 
 [project.scripts]
