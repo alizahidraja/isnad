@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a bug in ISNAD — grading, corroboration, audit, API, CLI, or docs.
+title: "[bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. For a **security vulnerability** (a quarantined
+        narrator that can recover, a forgeable grade, an integrity/precision
+        bypass), do **not** open an issue — email alizahidrajaa@gmail.com
+        (see SECURITY.md). Honesty is a security property here.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you observe?
+      placeholder: "e.g. isnad verify reports OK on a record whose detached signature is wrong"
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Steps or a code snippet that shows the bug.
+      render: python
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "e.g. 2.12.0 (pip show isnad)"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: What should have happened instead?
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Area
+      options:
+        - core (grading / registry / corroboration)
+        - audit (tamper-evidence / signatures / export)
+        - api
+        - cli
+        - critics (content criticism)
+        - integrations (LangChain / OTel / Live Verify)
+        - docs
+        - other

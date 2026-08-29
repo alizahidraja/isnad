@@ -1,0 +1,36 @@
+name: Feature request
+description: Propose a new capability, integration, or experiment.
+title: "[feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What gap or pain does this address?
+      placeholder: "e.g. a code change can't be graded as a claim about code today"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What would you add or change?
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - core (grading / registry / corroboration)
+        - audit
+        - api
+        - cli
+        - critics
+        - integrations
+        - benchmark / experiments
+        - docs
+  - type: textarea
+    id: validation
+    attributes:
+      label: How should it be validated?
+      description: ISNAD's charter is "not over-claiming" — say how this would be tested, not just built.
