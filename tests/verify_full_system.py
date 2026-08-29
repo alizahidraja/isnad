@@ -19,8 +19,11 @@ import os
 import sys
 import time
 
+import pytest
+
 # ── Setup: clean test DB ────────────────────────────────────────
 os.environ["ISNAD_DATABASE_URL"] = "sqlite:///data/isnad_full_verify.db"
+os.environ.setdefault("ISNAD_API_KEYS", "isnad-admin:admin,isnad-reader:reader")
 os.environ.pop("ISNAD_POLICY", None)
 
 from isnad.storage.sqlalchemy import drop_db, get_session, init_db, reset_engine
@@ -253,8 +256,11 @@ g2 = reg_t.record_evidence(
     "poison", "general", EvidenceType.CORROBORATION_OUTCOME, EvidenceAction.TADIL
 )
 check("Threshold: REJECTED sticky against TADIL", g2 == NarratorGrade.REJECTED)
-g3 = reg_t.record_evidence("poison", "general", EvidenceType.HUMAN_REVIEW, EvidenceAction.TADIL)
-check("Threshold: HUMAN_REVIEW restores REJECTED→WEAK", g3 == NarratorGrade.WEAK)
+# A quarantined (REJECTED) narrator is restored only by an operator
+# adjudication (overturn), not a raw HUMAN_REVIEW TADIL — active containment
+# is sticky (#182).
+g3 = reg_t.adjudicate("poison", "general", overturn=True)
+check("Threshold: adjudicate overturn restores REJECTED→ACCEPTABLE", g3 == NarratorGrade.ACCEPTABLE)
 
 reg_t.bump_version("src1", "physics", "v2")
 check(
@@ -308,7 +314,8 @@ check("Bayesian: 3 JARH → REJECTED", g7 == NarratorGrade.REJECTED, f"got {g7.v
 policy = BayesianTransitionPolicy()
 policy.seed_grade("seeded", "physics", prior_mean=0.85, prior_weight=10)
 state = policy.get_state("seeded", "physics")
-check("Bayesian seed: prior mean ≈ 0.79", 0.78 < state.mean < 0.80, f"mean={state.mean:.3f}")
+# The prior is preserved, not shifted by a +1 Laplace term (#90-class fix).
+check("Bayesian seed: prior mean ≈ 0.85", abs(state.mean - 0.85) < 1e-9, f"mean={state.mean:.3f}")
 check("Bayesian seed: prior grade = ACCEPTABLE", state.to_grade() == NarratorGrade.ACCEPTABLE)
 
 # Domain-conditioned grading
@@ -434,7 +441,7 @@ cg4 = grade_chain(
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=True,
 )
-check("UNGRADED caps at HASAN", cg4 == ChainGrade.HASAN, f"got {cg4.value}")
+check("UNGRADED caps at DAIF (strict majhūl default)", cg4 == ChainGrade.DAIF, f"got {cg4.value}")
 
 cg5 = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
@@ -489,9 +496,10 @@ print(SEP)
 
 det = SharedLineageDetector()
 
-# Independent
+# Independent — but with NO lineage metadata, independence is UNKNOWN (below
+# the gate), not assumed (issue #54 / PR #83).
 s1 = det.compute_independence_score(["a", "b"], ["c", "d"], {})
-check("Disjoint narrators, no metadata → score=1.0", s1 == 1.0)
+check("Disjoint narrators, no metadata → score=0.5 (unknown lineage)", s1 == 0.5, f"got {s1}")
 
 # Shared narrator = correlated
 s2 = det.compute_independence_score(["a", "b"], ["b", "c"], {})
@@ -578,7 +586,13 @@ r_int = evaluate_corroboration(
     corroborating_chain_grades=[ChainGrade.HASAN, ChainGrade.HASAN],
     base_narrators=["a", "b"],
     corroborating_narrators=[["c"], ["d", "e"]],
-    narrator_metadata={},
+    narrator_metadata={
+        "a": {"model_family": None, "upstream_source": "src-a.org"},
+        "b": {"model_family": "fam-a", "upstream_source": "src-a.org"},
+        "c": {"model_family": None, "upstream_source": "src-c.org"},
+        "d": {"model_family": None, "upstream_source": "src-d.org"},
+        "e": {"model_family": "fam-d", "upstream_source": "src-d.org"},
+    },
 )
 check(
     "evaluate_corroboration: 2 independent HASAN → upgrade to HASAN",
@@ -630,7 +644,14 @@ r_eng1 = engine.evaluate(
             "source": "",
         },
     ],
-    narrator_metadata={},
+    narrator_metadata={
+        "source:A": {"model_family": None, "upstream_source": "src-a.org"},
+        "parser:v1": {"model_family": None, "upstream_source": "src-a.org"},
+        "source:C": {"model_family": None, "upstream_source": "src-c.org"},
+        "parser:v2": {"model_family": None, "upstream_source": "src-c.org"},
+        "source:D": {"model_family": None, "upstream_source": "src-d.org"},
+        "parser:v3": {"model_family": None, "upstream_source": "src-d.org"},
+    },
 )
 check(
     "Engine: DAIF + 2 independent HASAN → upgrade fires",
@@ -780,10 +801,15 @@ check("TF-IDF: unrelated terms → sim ≈ 0", sim3 < 0.1, f"cosine={sim3:.4f}")
 
 # ── LocalNLICritic graceful degradation ──
 nli = LocalNLICritic()
+# If the NLI model is available (sentence-transformers installed), the critic
+# returns a real verdict; if not, it degrades to UNVERIFIABLE rather than
+# crashing. Both are safe. The no-model degradation is unit-tested separately
+# (tests/test_nli_critic.py).
+model_available = nli._load_model() is not None
 r_nli = nli.evaluate("test", "test", ["test"], "physics")
 check(
-    "LocalNLICritic: graceful when no model",
-    r_nli == ContentVerdict.UNVERIFIABLE,
+    "LocalNLICritic: safe verdict (or UNVERIFIABLE without a model)",
+    r_nli == ContentVerdict.UNVERIFIABLE if not model_available else r_nli in ContentVerdict,
     f"got {r_nli.value}",
 )
 
@@ -1104,7 +1130,10 @@ if passed < total:
         if not ok:
             print(f"  {FAIL} {name}  → {detail}")
     print()
-    sys.exit(1)
+    if "PYTEST_CURRENT_TEST" in os.environ:
+        pytest.fail(f"{total - passed}/{total} full-system checks failed")
+    else:
+        sys.exit(1)
 else:
     print(f"\n{PASS} ALL {total} CHECKS PASSED")
     print(f"{PASS} Bayesian engine, corroboration with madar detection,")

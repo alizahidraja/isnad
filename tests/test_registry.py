@@ -101,6 +101,30 @@ class TestVersionBumpReset:
         assert len(narrator.evidence_log) == 1
         assert narrator.evidence_log[0]["evidence_type"] == EvidenceType.VERSION_BUMP.value
 
+    def test_version_bump_preserves_quarantine(self) -> None:
+        """A fabricator cannot escape quarantine by shipping 'v2' (#185 follow-up).
+
+        Integrity is a judgment of the person, not the version: bump_version
+        resets precision (ḍabṭ) but must keep a COMPROMISED narrator
+        COMPROMISED + REJECTED, or active containment silently un-quarantines.
+        """
+        reg = Registry()
+        reg.register("ingest-model", "physics", grade=NarratorGrade.RELIABLE)
+        reg.quarantine("ingest-model", "physics", "proven fabrication")
+        assert reg.get_grade("ingest-model", "physics") == NarratorGrade.REJECTED
+
+        reg.bump_version("ingest-model", "physics", "v2")
+
+        narrator = reg.get("ingest-model", "physics")
+        assert narrator is not None
+        # The quarantine survives the version bump.
+        assert narrator.adalah_grade == AdalahGrade.COMPROMISED
+        assert narrator.grade == NarratorGrade.REJECTED
+        assert narrator.is_active is False
+        assert reg.get_grade("ingest-model", "physics") == NarratorGrade.REJECTED
+        # Precision (ḍabṭ) is still reset.
+        assert narrator.dabt_grade == DabtGrade.UNASSESSED
+
     def test_version_bump_is_an_epoch_boundary(self) -> None:
         """Old evidence must not re-inflate the grade after a version bump.
 

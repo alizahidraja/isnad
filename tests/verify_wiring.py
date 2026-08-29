@@ -6,6 +6,8 @@ Runs end-to-end checks that each new component actually fires.
 import os
 import sys
 
+import pytest
+
 # Ensure clean test DB
 os.environ["ISNAD_DATABASE_URL"] = "sqlite:///data/isnad_verify.db"
 
@@ -154,7 +156,17 @@ result1 = engine.evaluate(
             "source": "arxiv",
         },
     ],
-    narrator_metadata={},
+    narrator_metadata={
+        "openstax_v3": {"model_family": None, "upstream_source": "openstax.org"},
+        "pdf_scraper_a": {"model_family": None, "upstream_source": "openstax.org"},
+        "ingest_model_a": {"model_family": "fam-a", "upstream_source": "openstax.org"},
+        "wikisource": {"model_family": None, "upstream_source": "wikipedia.org"},
+        "pdf_scraper_b": {"model_family": None, "upstream_source": "wikipedia.org"},
+        "ingest_model_b": {"model_family": "fam-b", "upstream_source": "wikipedia.org"},
+        "arxiv_source": {"model_family": None, "upstream_source": "arxiv.org"},
+        "parser_v2": {"model_family": None, "upstream_source": "arxiv.org"},
+        "model_claude": {"model_family": "claude", "upstream_source": "arxiv.org"},
+    },
 )
 check(
     "Two independent chains → upgrade fires",
@@ -212,7 +224,11 @@ result3 = engine.evaluate(
             "source": "",
         },
     ],
-    narrator_metadata={},
+    narrator_metadata={
+        "source:A": {"model_family": None, "upstream_source": "src-a.org"},
+        "source:C": {"model_family": None, "upstream_source": "src-c.org"},
+        "source:D": {"model_family": None, "upstream_source": "src-d.org"},
+    },
 )
 check(
     "DAIF + 2 independent HASAN → upgraded to HASAN",
@@ -370,8 +386,10 @@ print(f"\n  {passed}/{total} checks passed")
 
 if passed == total:
     print(f"\n{PASS} ALL CHECKS PASS — system is wired correctly.")
-    sys.exit(0)
 else:
     print(f"\n{FAIL} {total - passed} CHECK(S) FAILED.")
-    sys.exit(1)
+    if "PYTEST_CURRENT_TEST" in os.environ:
+        pytest.fail(f"{total - passed}/{total} wiring checks failed")
+    else:
+        sys.exit(1)
 # ruff: noqa: E402

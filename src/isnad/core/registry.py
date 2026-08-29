@@ -1023,23 +1023,40 @@ class Registry:
         domain_tag: str,
         new_version: str,
     ) -> None:
-        """Model-version bump resets the narrator to UNGRADED per domain.
+        """Model-version bump resets *precision* to UNGRADED per domain.
 
-        Paper §4.2: version drift is a new narrator, not inherited reputation.
+        Paper §4.2: version drift is a new narrator for *reputation* (ḍabṭ) —
+        a new model version does not inherit the old version's precision.  But
+        integrity (ʿadālah) is a judgment of the *person*, not the version, and
+        a quarantine is active containment (#28/#29): a COMPROMISED narrator
+        stays COMPROMISED + REJECTED across a version bump, so a fabricator
+        cannot escape quarantine by shipping "v2".
         """
         narrator = self.register(narrator_id, domain_tag)
+        was_compromised = narrator.adalah_grade == AdalahGrade.COMPROMISED
         narrator.model_version = new_version
         narrator.grade = NarratorGrade.UNGRADED
-        narrator.adalah_grade = AdalahGrade.UNASSESSED
+        # Integrity is per-person, not per-version: preserve a quarantine.
+        if was_compromised:
+            narrator.grade = NarratorGrade.REJECTED
+            narrator.adalah_grade = AdalahGrade.COMPROMISED
+            narrator.is_active = False
+        else:
+            narrator.adalah_grade = AdalahGrade.UNASSESSED
         narrator.dabt_grade = DabtGrade.UNASSESSED
         narrator.known_error_rate = None
-        # A version bump is a new narrator: no reputation, no freshness clock.
+        # A version bump resets the freshness clock (REJECTED never decays).
         narrator.graded_at = None
         narrator.valid_until = None
         narrator.add_evidence(
             EvidenceType.VERSION_BUMP,
             EvidenceAction.NEUTRAL,
-            f"Version bumped to {new_version}; grade reset to UNGRADED",
+            f"Version bumped to {new_version}; "
+            + (
+                "quarantine preserved (integrity is per-person)"
+                if was_compromised
+                else "grade reset to UNGRADED"
+            ),
         )
 
         # Role-scoped precision is void too: a new version is a new narrator.

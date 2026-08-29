@@ -30,14 +30,16 @@ from isnad.types import (
 
 
 def test_paper_worked_example_hasan_contradiction() -> None:
-    """Paper §4.5: ungraded chain → ḥasan × contradiction → review queue.
+    """Paper §4.5: ungraded chain → ḍaʿīf × contradiction → quarantine.
 
     The claim "the momentum of a photon is p = h/λ" ingested from
     OpenStax Vol. 3 through:
     [source → pdf-scraper v1.2 → ingest-analysis M@v (ungraded) →
      ingest-renderer M@v (ungraded)]
 
-    Contradicts existing "p = mv" claim → routed to review, not served.
+    Two ungraded narrators cap the chain at ḍaʿīf (strict majhūl default);
+    the claim contradicts the existing "p = mv" claim → quarantine, not served.
+    (The ḥasan × contradiction → review path is covered in test_matrix.py.)
     """
     # --- 1. Build the transmission chain ---
     chain = Chain([

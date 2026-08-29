@@ -59,11 +59,24 @@ class ErrorFingerprint:
     @classmethod
     def from_claim(cls, text: str) -> ErrorFingerprint:
         n = _normalize_text(text)
+        # Detect a dropped/flipped negation. Match at word boundaries so both
+        # sentence-initial ("Never…") and mid-string ("is not…") forms fire.
+        negation = any(
+            re.search(w, n)
+            for w in (
+                r"\bis not\b",
+                r"\bare not\b",
+                r"\bno\b",
+                r"\bnever\b",
+                r"\bdoes not\b",
+                r"\bdo not\b",
+                r"\bcannot\b",
+                r"\bcan't\b",
+            )
+        )
         return cls(
             numbers=_normalize_numbers(text),
-            negation=any(
-                w in n for w in (" is not", " are not", "no ", " never", "does not", "do not")
-            ),
+            negation=bool(negation),
             text=n,
         )
 

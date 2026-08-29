@@ -540,19 +540,24 @@ class TestRoleScopedGradeLookup:
 class TestErrorHandlersNeverBreakPipeline:
     """Callbacks are wrapped so errors in the pipeline never raise (README promise)."""
 
-    def test_sync_error_handlers_log_do_not_raise(self):
+    def test_sync_error_handlers_log_do_not_raise(self, caplog):
         handler = IsnadCallbackHandler(registry=make_registry(), domain="physics")
         handler.on_llm_error(ValueError("boom"), run_id="r1")
         handler.on_retriever_error(ValueError("boom"), run_id="r2")
         handler.on_tool_error(ValueError("boom"), run_id="r3")
         handler.on_chain_error(ValueError("boom"), run_id="r4")
-        # Reaching here means none raised.
+        # Reaching here means none raised — but that is not enough: the promise
+        # is that they are *observed*, not silently dropped. Assert the error
+        # was logged at least once.
+        assert caplog.records, "expected at least one logged error, got none"
 
     def test_node_capture_swallows_exceptions(self):
         """A malformed serialized dict must not propagate out of _add_node."""
         handler = IsnadCallbackHandler(registry=make_registry(), domain="physics")
-        # _safe wraps all callbacks; a bad serialized value should be swallowed.
+        # _safe wraps all callbacks; a malformed serialized value should be
+        # swallowed without raising, and a valid name still records a node.
         handler.on_llm_start(serialized={"name": "gpt-4o"}, prompts=None, run_id="r1")
+        assert "r1" in handler._nodes
 
 
 class TestAsyncHandler:

@@ -139,6 +139,11 @@ ignore_errors = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src", "."]
+# Include the imperative verify_*.py integration scripts: they define no
+# `test_*` functions but run a full-system wiring check at import and gate on
+# failure. Naming them here ensures CI actually executes them (they were
+# previously invisible to the default python_files glob).
+python_files = ["test_*.py", "verify_*.py"]
 asyncio_mode = "auto"
 # NLI/LLM critics download large models or need API keys, so they are
 # excluded from the default (CI) run.  Run them explicitly with:

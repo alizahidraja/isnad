@@ -17,6 +17,15 @@ from isnad.types import Action, ChainGrade, ContentVerdict
 
 
 class TestMatnAddPattern:
+    @pytest.fixture(autouse=True)
+    def _restore_patterns(self):
+        """add_pattern mutates the shared class-level list; snapshot and
+        restore so the added patterns don't leak into later tests (order
+        independence)."""
+        original = list(DeterministicRuleCritic._CONTRADICTION_PATTERNS)
+        yield
+        DeterministicRuleCritic._CONTRADICTION_PATTERNS = original
+
     def test_add_pattern_extends_contradiction_detection(self) -> None:
         critic = DeterministicRuleCritic()
         critic.add_pattern("water is wet", "water is dry")

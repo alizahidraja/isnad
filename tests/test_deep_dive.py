@@ -29,6 +29,8 @@ import os
 import sys
 import time
 
+import pytest
+
 _parent = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.join(_parent, "src"))
 
@@ -542,7 +544,10 @@ if passed < total:
     for name, ok, detail in results:
         if not ok:
             print(f"  {FAIL} {name}  → {detail}")
-    sys.exit(1)
+    if "PYTEST_CURRENT_TEST" in os.environ:
+        pytest.fail(f"{total - passed}/{total} deep-dive checks failed")
+    else:
+        sys.exit(1)
 else:
     print(f"""
 {PASS} ALL {total} CHECKS PASSED

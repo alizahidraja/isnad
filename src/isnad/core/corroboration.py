@@ -22,7 +22,6 @@ from isnad.types import (
     ContentVerdict,
     CorrelationDetector,
     CorroborationPolicy,
-    NarratorGrade,
 )
 
 # ===========================================================================
@@ -554,17 +553,6 @@ class CorroborationResult:
     # independent confirmation. This is the *detectable* half of the
     # chain-independence problem.
     content_madar_detected: bool = False
-
-
-def _narrator_to_chain_grade(ng: NarratorGrade) -> ChainGrade:
-    mapping = {
-        NarratorGrade.RELIABLE: ChainGrade.SAHIH,
-        NarratorGrade.ACCEPTABLE: ChainGrade.HASAN,
-        NarratorGrade.WEAK: ChainGrade.DAIF,
-        NarratorGrade.REJECTED: ChainGrade.MAWDU,
-        NarratorGrade.UNGRADED: ChainGrade.HASAN,
-    }
-    return mapping[ng]
 
 
 # Narrator types, in order of precedence for deciding a chain's "dominant

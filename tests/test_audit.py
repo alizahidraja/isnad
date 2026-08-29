@@ -36,6 +36,14 @@ class TestCanonicalJson:
             '{"k":"p=mv","x":["a",1,true,null]}'
         )
 
+    def test_jcs_control_char_short_escapes(self) -> None:
+        """RFC 8785 §3.2.2.2 mandates the SHORT escapes \\n \\t \\r \\b \\f for
+        those control characters (NOT \\uXXXX), and raw UTF-8 for non-ASCII.
+        Pin both so a future 'fix' that switches to \\uXXXX escapes — or a
+        regression to ASCII-escaping non-ASCII — fails."""
+        assert canonical_json({"x": "a\nb\tc\rd"}) == '{"x":"a\\nb\\tc\\rd"}'
+        assert canonical_json({"x": "héllo"}) == '{"x":"héllo"}'
+
     def test_sha256_known_vector(self) -> None:
         assert sha256_hex("") == "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
