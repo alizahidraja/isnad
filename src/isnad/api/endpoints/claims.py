@@ -448,20 +448,14 @@ async def submit_claim(
             "upgraded_grade": corr_result.upgraded_grade.value,
             "corroborating_chains": corr_result.corroborating_chains,
             "independent_chains": corr_result.independent_chains,
-            # Structural corroboration metrics (witness counts / discount
-            # factors), NOT claim-truth confidence. No numeric confidence here.
-            "effective_weight": corr_result.effective_weight,
             "reason": corr_result.reason,
             "shared_error_detected": corr_result.shared_error_detected,
-            "shared_blind_spot_prior": corr_result.shared_blind_spot_prior,
-            "effective_witnesses": corr_result.effective_witnesses,
+            # Provenance only (issue 187): no raw floats. effective_weight,
+            # effective_witnesses, shared_blind_spot_prior, and per-chain
+            # independence scores stay internal to the engine. The public surface
+            # is the ordinal grade + boolean upgraded + shared-signal reasons.
             "chain_independence": [
-                {
-                    # D5: NOT a confidence score — a structural independence
-                    # measure (0.0 = shared lineage, 1.0 = fully independent).
-                    "independence": a.score,
-                    "shared_signals": list(a.shared_signals),
-                }
+                {"shared_signals": list(a.shared_signals)}
                 for a in corr_result.chain_independence
             ],
         },

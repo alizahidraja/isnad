@@ -167,6 +167,24 @@ class TestClaims:
         assert "chain_independence" in corr
         assert isinstance(corr["chain_independence"], list)
 
+    def test_corroboration_result_has_no_raw_floats(self):
+        """The public record must not leak numeric corroboration floats (issue 187)."""
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "momentum is conserved",
+                "chain": [{"narrator_id": "source:A"}],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        corr = r.json()["corroboration_result"]
+        for leaked in ("effective_weight", "effective_witnesses", "shared_blind_spot_prior"):
+            assert leaked not in corr, f"{leaked} leaked into the public record"
+        for entry in corr.get("chain_independence", []):
+            assert "independence" not in entry
+            assert "shared_signals" in entry
+
 
 class TestNarrators:
     def test_register_and_get(self):

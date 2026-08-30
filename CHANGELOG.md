@@ -20,6 +20,15 @@
   (evidence-consistent-with, not proof of a common upstream). Still oracle-gated
   on the base claim being CONTRADICTION; never withholds a correct agreement.
 
+### Fixed
+
+- **Public claim record no longer leaks raw corroboration floats (issue 187).**
+  `corroboration_result` dropped `effective_weight`, `effective_witnesses`,
+  `shared_blind_spot_prior`, and per-chain `independence` scores from the API
+  surface — they read as numeric confidence against the "no numeric confidence"
+  moat. The public surface is now ordinal grade + boolean `upgraded` + integer
+  chain counts + `shared_signals` provenance + reason string.
+
 ## [2.18.0] — 2026-08-30
 
 ### Fixed — five remaining decisions (10-person panel, 10/10 converged)
