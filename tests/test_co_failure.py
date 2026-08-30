@@ -46,6 +46,12 @@ def test_empty_input_is_all_zero():
     assert s.double_fault_rate == 0.0
     assert s.q_statistic == 0.0
 
+def test_prior_raises_on_empty_set():
+    # An empty labeled set is no measurement, not proof of independence.
+    s = compute_co_failure([])
+    with pytest.raises(ValueError):
+        s.prior()
+
 
 def test_prior_floors_at_chance_when_no_co_failure_observed():
     # No observed co-failure, but each narrator is 20% wrong -> chance = 0.04.

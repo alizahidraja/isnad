@@ -54,6 +54,11 @@ class CoFailureStats:
         The double-fault rate, floored at the chance product ``err_a * err_b`` so a
         small sample with zero observed co-failure is not mistaken for independence.
         """
+        if self.n_cases == 0:
+            # An empty labeled set is NOT evidence of independence — it is no
+            # measurement at all. Returning 0.0 here would feed a "proven
+            # independent" prior into the joint model. Refuse loudly.
+            raise ValueError("cannot derive a co-failure prior from an empty labeled set")
         chance = self.err_a * self.err_b
         floor = chance if floor is None else max(chance, floor)
         return max(self.double_fault_rate, floor)

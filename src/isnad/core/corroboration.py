@@ -375,6 +375,13 @@ class CappedCorroborationPolicy:
             independence. Operators with attestation (#47) or evidence
             exchange (#44) may lower it; it must not be silently assumed
             away.
+        measured_priors: optional operator-measured per-pair co-failure priors
+            (from isnad.core.co_failure), keyed (base_type, corr_type). They
+            override the hand-set BLIND_SPOT_MATRIX; absence falls back to it.
+        joint_failure: when True, aggregate corroboration with the joint-failure
+            mixture (P all corroborators fail together) instead of the pairwise
+            product. Strictly more conservative; requires calibrated priors to
+            fire at default. Default False (pairwise, backward compatible).
         """
         self.shared_blind_spot_prior = max(0.0, min(1.0, shared_blind_spot_prior))
         # Operator-measured per-pair co-failure priors (issue 54, from the
