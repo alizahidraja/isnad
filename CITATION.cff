@@ -6,8 +6,11 @@ authors:
     given-names: Ali Zahid
     orcid: "https://orcid.org/0009-0003-7875-4590"
     email: alizahidrajaa@gmail.com
-doi: 10.48550/arXiv.2607.24117
+doi: 10.5281/zenodo.21216873
 identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21211290
+    description: Paper (permanent DOI, Zenodo)
   - type: doi
     value: 10.48550/arXiv.2607.24117
     description: Paper (arXiv)
@@ -19,8 +22,8 @@ identifiers:
     description: Paper
 url: "https://doi.org/10.5281/zenodo.21216873"
 repository-code: "https://github.com/alizahidraja/isnad"
-version: "2.10.1"
-date-released: "2026-08-28"
+version: "2.16.0"
+date-released: "2026-08-29"
 year: 2026
 license: Apache-2.0
 type: software
@@ -51,5 +54,5 @@ preferred-citation:
       given-names: Ali Zahid
   title: "Grading the Narrators: An Isnād–Rijāl Framework for Claim-Level Provenance in Multi-Agent Knowledge Systems"
   year: 2026
-  doi: 10.48550/arXiv.2607.24117
+  doi: 10.5281/zenodo.21211290
   type: article

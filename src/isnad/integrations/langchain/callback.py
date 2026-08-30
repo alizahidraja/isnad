@@ -750,10 +750,14 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
 
         claim_text = self._final_claim or "(no claim captured)"
 
-        # Detect shared ancestry (for now, single chain — corroboration not yet captured
-        # across multiple runs; this is a placeholder for future multi-chain support)
+        # This callback captures a single run's trace. Cross-run corroboration
+        # is the corroboration engine's job (mutābaʿāt; validated on 707 pairs),
+        # invoked separately — a single captured run carries no peer evidence.
         independence = CorroborationVerdict.UNVERIFIED
-        independence_detail = "Single run — cross-run corroboration not yet captured."
+        independence_detail = (
+            "Single run — cross-run corroboration is computed by the "
+            "corroboration engine, not inside one trace."
+        )
 
         return TraceV01(
             trace_id=self.trace_id,

@@ -182,6 +182,8 @@ def store_claim(
     *,
     chain_grade: str | None = None,
     claim_id: str | None = None,
+    content_verdict: str | None = None,
+    action: str | None = None,
 ) -> RijalClaim:
     """Store a claim with its chain in the database.
 
@@ -191,6 +193,11 @@ def store_claim(
     event-level uniqueness — e.g. the API, which assigns each submission a
     fresh UUID so two claims with the same normalized text can corroborate —
     may pass its own ``claim_id``.
+
+    ``content_verdict`` and ``action`` are persisted so that restart
+    rehydration is faithful: without them, a held SAHIH × CONTRADICTION
+    (REVIEW) would re-derive as SAHIH × UNVERIFIABLE (SERVE_WITH_CAVEAT),
+    silently destroying the contradiction signal.
 
     Uses session.merge() to avoid identity-map conflicts when re-ingesting.
 
@@ -208,6 +215,8 @@ def store_claim(
         existing.claim_text = claim_text
         existing.narrator_chain = chain.to_jsonb()
         existing.chain_grade = chain_grade
+        existing.content_verdict = content_verdict
+        existing.action = action
         existing.chain_status = chain.chain_status.value
         existing.valid_from = datetime.now(UTC)
         # Delete old links via query to avoid ORM relationship staleness
@@ -222,6 +231,8 @@ def store_claim(
             normalized_text=normalized,
             narrator_chain=chain.to_jsonb(),
             chain_grade=chain_grade,
+            content_verdict=content_verdict,
+            action=action,
             chain_status=chain.chain_status.value,
         )
         session.add(claim)

@@ -89,10 +89,11 @@ def _hydrate_claims_from_db(session: Any) -> int:
     even though each one had been persisted via ``store_claim``. This loads
     persisted claims back into memory so the read surface survives restarts.
 
-    Fields the DB does not persist (content verdict, action, corroboration
-    result) are reconstructed honestly: ``content_verdict`` is UNVERIFIABLE
-    (the live critic corpus is not rebuilt here) and ``action`` is re-derived
-    from the deterministic decision matrix for ``(chain_grade, UNVERIFIABLE)``.
+    ``content_verdict`` and ``action`` are now persisted, so rehydration is
+    FAITHFUL: a claim that was held (SAHIH × CONTRADICTION → REVIEW) stays
+    held, instead of being silently upgraded to SERVE_WITH_CAVEAT by
+    re-deriving from UNVERIFIABLE. Legacy rows without these columns fall back
+    to the conservative re-derivation (never a serve).
 
     Returns the number of claims hydrated.
     """
@@ -112,20 +113,27 @@ def _hydrate_claims_from_db(session: Any) -> int:
                 domain = link["domain"]
                 break
         cg = row.chain_grade or "daif"
-        # Re-derive the route honestly: content verdict is unknown after a
-        # restart, so route on (chain_grade, UNVERIFIABLE).
-        action = decide(ChainGrade(cg), ContentVerdict.UNVERIFIABLE)
+        # Faithful rehydration: use the persisted verdict/action when present;
+        # otherwise (legacy rows) fall back to the conservative re-derivation
+        # from (chain_grade, UNVERIFIABLE) — which never serves a SAHIH claim
+        # with caveat, only routes it honestly.
+        if row.content_verdict and row.action:
+            cv_value = row.content_verdict
+            action_value = row.action
+        else:
+            cv_value = ContentVerdict.UNVERIFIABLE.value
+            action_value = decide(ChainGrade(cg), ContentVerdict.UNVERIFIABLE).value
         _app_state.claims[row.claim_id] = {
             "claim_id": row.claim_id,
             "claim_text": row.claim_text,
             "normalized_text": row.normalized_text,
             "chain_grade": cg,
-            "content_verdict": ContentVerdict.UNVERIFIABLE.value,
-            "action": action.value,
-            "description": "rehydrated from DB; content verdict unknown",
+            "content_verdict": cv_value,
+            "action": action_value,
+            "description": "rehydrated from DB",
             "chain": chain,
-            "served": False,
-            "quarantined": False,
+            "served": action_value in ("serve", "serve_with_caveat"),
+            "quarantined": action_value in ("quarantine", "reject_and_quarantine_narrator"),
             "domain": domain,
             "page_slug": row.page_slug,
             "corroborating_claims": 0,
@@ -205,11 +213,17 @@ async def list_claims(
     domain: str | None = Query(default=None),
     limit: int = Query(default=50, ge=1, le=500),
     offset: int = Query(default=0, ge=0),
+    served_only: bool = Query(default=True),
 ) -> dict:
     state = get_state()
     all_claims = list(state.claims.values())
     if domain:
         all_claims = [c for c in all_claims if c.get("domain") == domain]
+    if served_only:
+        # Default: do not surface quarantined/rejected claims to a downstream
+        # RAG — those are active containment, not a served surface. Pass
+        # served_only=false to audit everything.
+        all_claims = [c for c in all_claims if c.get("served", False)]
     total = len(all_claims)
     page = all_claims[offset : offset + limit]
     return {
@@ -384,6 +398,8 @@ async def submit_claim(
             chain=chain,
             chain_grade=effective_grade.value,
             claim_id=claim_id,
+            content_verdict=cv.value,
+            action=action.value,
         )
     except Exception as exc:
         logger.error(f"Failed to persist claim to DB (audit trail will diverge): {exc}")
@@ -412,6 +428,24 @@ async def submit_claim(
             reg.session.flush()
         except Exception as exc:
             logger.warning(f"Failed to enqueue claim for review: {exc}")
+
+    # Active containment (P0-C): a REJECT_AND_QUARANTINE_NARRATOR or QUARANTINE
+    # verdict must actually quarantine the offending narrators — set ʿadālah
+    # COMPROMISED + is_active False — not merely set a flag on the record. A
+    # flagged-but-not-quarantined narrator would keep serving.
+    if action in (Action.REJECT_AND_QUARANTINE_NARRATOR, Action.QUARANTINE):
+        for narrator_id in resolved_narrator_ids:
+            try:
+                reg.registry.quarantine(narrator_id, domain, reason="matrix action quarantined")
+            except Exception as exc:
+                logger.warning(f"Failed to quarantine narrator {narrator_id}: {exc}")
+        # Persist the quarantine: quarantine() mutates the in-memory Narrator;
+        # without flush() the COMPROMISED + is_active=False state is lost when
+        # the request's session commits only the previously-loaded rows.
+        try:
+            reg.flush()
+        except Exception as exc:
+            logger.error(f"Failed to persist quarantine: {exc}")
 
     return record
 

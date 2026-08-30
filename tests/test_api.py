@@ -314,7 +314,12 @@ class TestClaimsList:
             },
             headers={"X-API-Key": "isnad-admin"},
         )
-        r = client.get("/v1/claims")
+        # Default is served_only=True — an ungraded chain is not served, so it
+        # is absent from the default read surface.
+        r_served = client.get("/v1/claims")
+        assert r_served.status_code == 200
+        # The audit view (served_only=false) shows every submitted claim.
+        r = client.get("/v1/claims?served_only=false")
         assert r.status_code == 200
         assert r.json()["total"] >= 1
 
@@ -388,6 +393,42 @@ class TestClaimHydration:
         # The corroboration index is rebuilt too.
         assert _app_state.find_corroborating("e = mc^2", "hydrate-test-1") == []
         assert "hydrate-test-1" in _app_state._corroboration_index["e = mc^2"]
+
+    def test_hydration_preserves_contradiction_verdict(self):
+        """P0-A: a held SAHIH × CONTRADICTION (REVIEW) must stay REVIEW after
+        rehydration, not be silently upgraded to SERVE_WITH_CAVEAT by
+        re-deriving the verdict as UNVERIFIABLE."""
+        from isnad.api.endpoints.claims import _app_state, _hydrate_claims_from_db
+        from isnad.core.chain import Chain, ChainLinkSpec, store_claim
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import ContentVerdict, TransformType
+
+        _app_state.claims.clear()
+        _app_state._corroboration_index.clear()
+
+        chain = Chain([
+            ChainLinkSpec("src", 0, version="1.0", transform_type=TransformType.PASS_THROUGH)
+        ])
+        with get_session() as session:
+            store_claim(
+                session,
+                "a held contradiction",
+                "physics/rel",
+                chain,
+                chain_grade="sahih",
+                claim_id="hydrate-contradiction-1",
+                content_verdict=ContentVerdict.CONTRADICTION.value,
+                action="review",
+            )
+
+        _app_state.claims.clear()
+        with get_session() as session:
+            _hydrate_claims_from_db(session)
+
+        rec = _app_state.claims["hydrate-contradiction-1"]
+        assert rec["content_verdict"] == ContentVerdict.CONTRADICTION.value
+        assert rec["action"] == "review"
+        assert rec["served"] is False
 
 
 class TestMetrics:
@@ -598,3 +639,53 @@ class TestObservabilityAndReviewEdgeCases:
             headers={"X-API-Key": "isnad-admin"},
         )
         assert r.status_code == 404
+
+
+class TestQuarantineIsActiveContainment:
+    """P0-C: a REJECT_AND_QUARANTINE_NARRATOR / QUARANTINE verdict must actually
+    quarantine the narrator (COMPROMISED + inactive), not just flag the record."""
+
+    @pytest.fixture(autouse=True)
+    def force_embedding_critic(self):
+        app.dependency_overrides[get_critic] = lambda: EmbeddingCritic()
+        yield
+        app.dependency_overrides.pop(get_critic, None)
+
+    def test_mawdu_claim_quarantines_the_narrator(self):
+        from isnad.core.registry import RegistryDB
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import AdalahGrade, NarratorGrade, NarratorType
+
+        # Pre-register a narrator as REJECTED (operator assigned), then submit
+        # a claim through it: MAWDU -> REJECT_AND_QUARANTINE_NARRATOR, and the
+        # narrator must become actively COMPROMISED + inactive in the registry.
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            rdb.registry.register(
+                "narrator:rejected",
+                "physics",
+                narrator_type=NarratorType.MODEL,
+                grade=NarratorGrade.REJECTED,
+            )
+            rdb.flush()
+
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "a rejected source claims X",
+                "domain": "physics",
+                "chain": [{"narrator_id": "narrator:rejected"}],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            rec = rdb.registry.get("narrator:rejected", "physics")
+            assert rec is not None
+            assert rec.grade == NarratorGrade.REJECTED
+            assert rec.adalah_grade == AdalahGrade.COMPROMISED
+            assert rec.is_active is False

@@ -69,6 +69,21 @@ class RijalClaim(Base):
     chain_grade: Mapped[str | None] = mapped_column(
         String(32), nullable=True, comment="ChainGrade enum value; NULL until graded"
     )
+    content_verdict: Mapped[str | None] = mapped_column(
+        String(32),
+        nullable=True,
+        comment=(
+            "ContentVerdict enum value at serve time; persisted so a restart "
+            "does not lose a CONTRADICTION and re-derive it as UNVERIFIABLE"
+        ),
+    )
+    action: Mapped[str | None] = mapped_column(
+        String(64),
+        nullable=True,
+        comment=(
+            "Action enum value at serve time; persisted so rehydration is faithful, not re-derived"
+        ),
+    )
     valid_from: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,

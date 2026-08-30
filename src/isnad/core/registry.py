@@ -439,6 +439,7 @@ class Registry:
         graded_at: datetime | None = None,
         valid_until: datetime | None = None,
         role: Role | None = None,
+        is_active: bool = True,
     ) -> Narrator:
         """Register a new narrator or return the existing one.
 
@@ -494,6 +495,7 @@ class Registry:
                 role=role,
                 max_evidence_entries=self.max_evidence_entries,
             )
+            store[key].is_active = is_active
             self._index_set_grade(narrator_id, domain_tag)
         return store[key]
 
@@ -1388,6 +1390,7 @@ class RegistryDB:
                 graded_at=row.graded_at,
                 valid_until=row.valid_until,
                 role=role,
+                is_active=row.is_active,
             )
             # Preserve stored clocks exactly.  register() starts a fresh clock
             # for non-UNGRADED grades without one, which would clobber legacy
