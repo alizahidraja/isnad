@@ -6,7 +6,8 @@ readme = "README.md"
 authors = [
     { name = "Ali Zahid Raja", email = "alizahidrajaa@gmail.com" }
 ]
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 requires-python = ">=3.12"
 keywords = ["provenance", "multi-agent", "trust", "knowledge-base", "epistemology", "isnad", "lineage", "audit", "governance", "ai-safety", "llm-agents"]
 classifiers = [
