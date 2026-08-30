@@ -17,7 +17,7 @@ DEEPSEEK_API_KEY=sk-... python experiments/critic_eval/run.py
 Measured numbers (deterministic for the offline critics; LLM at temperature 0):
 
 | Critic | Contra. recall | False-consistent (danger) | 3-way acc |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `LLMCritic` (DeepSeek) | 1.000 | 0.000 | 1.000 |
 | `LocalNLICritic` | 0.760 | 0.000 | 0.417 |
 | `HybridCritic` | 0.720 | 0.040 | 0.433 |
