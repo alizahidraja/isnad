@@ -85,6 +85,21 @@ class TestVerdictParsing:
             == ContentVerdict.UNVERIFIABLE
         )
 
+    def test_not_consistent_is_not_misparsed_as_consistent(self, monkeypatch):
+        """Substring matching used to mislabel NOT-CONSISTENT as CONSISTENT."""
+        critic = self._critic_with("The claim is NOT CONSISTENT with the corpus", monkeypatch)
+        assert (
+            critic.evaluate("f ≠ ma", "f != ma", ["f = ma"], "physics")
+            == ContentVerdict.UNVERIFIABLE
+        )
+
+    def test_not_contradiction_is_not_misparsed(self, monkeypatch):
+        critic = self._critic_with("NOT CONTRADICTION — they agree", monkeypatch)
+        assert (
+            critic.evaluate("F = ma", "f = ma", ["f = ma"], "physics")
+            == ContentVerdict.UNVERIFIABLE
+        )
+
 
 class TestCaching:
     def test_cache_round_trips(self, monkeypatch, tmp_path):

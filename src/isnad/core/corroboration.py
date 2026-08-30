@@ -128,9 +128,10 @@ class SharedLineageDetector:
     ) -> float:
         """Compute an independence score in [0.0, 1.0].
 
-        1.0 = demonstrably independent; 0.0 = fully correlated (same lineage
-        or same retrieved documents); ``UNKNOWN_LINEAGE_SCORE`` = independence
-        neither shown nor ruled out.
+        1.0 = no shared *declared* lineage detected — NOT a proof of error
+        independence (distinct vendors/families can still co-fail, issue 54).
+        0.0 = fully correlated (same lineage or same retrieved documents).
+        ``UNKNOWN_LINEAGE_SCORE`` = independence neither shown nor ruled out.
 
         Convenience wrapper over :meth:`detect` — see that method for the
         full signal semantics and for the *why* (provenance) when a non-zero
@@ -995,13 +996,9 @@ class CorroborationEngine:
             shared_blind_spot_prior=self._policy.shared_blind_spot_prior,
             effective_witnesses=effective_witnesses,
             reason=(
-                f"Upgraded via {len(independent)} independent chains "
-                f"(effective weight={effective_weight:.1f}, "
-                f"effective witnesses={effective_witnesses:.1f})"
+                f"Upgraded via {len(independent)} independent chains"
                 if upgraded_flag
-                else (
-                    f"Effective weight {effective_weight:.1f} < {self._policy.MIN_EFFECTIVE_WEIGHT}"
-                )
+                else f"{len(independent)} independent chains below the corroboration threshold"
             ),
         )
 

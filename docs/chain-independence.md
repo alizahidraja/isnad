@@ -45,8 +45,9 @@ it can never *prove independence* — it can only fail to find shared signals.
   metadata (PR #83).** `SharedLineageDetector` now returns an `UNKNOWN_LINEAGE_SCORE`
   (0.5, below the gate) when either chain carries no lineage metadata — the
   chains are excluded from corroboration rather than silently trusted as
-  independent. Independence must be *demonstrated* (attested distinct
-  `model_family` / `upstream_source`) before it counts. Previously empty
+  independent. Independence is *inferred from* attested-distinct *declared*
+  lineage (`model_family` / `upstream_source`) — never *proven*, because distinct
+  vendors/families still co-fail on correlated training data (issue 54).
   metadata scored `1.0` — the framework assumed independence exactly when it
   knew the least.
 

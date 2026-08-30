@@ -92,7 +92,12 @@ def evaluate_critic(critic, entries: list[dict]) -> dict[str, float]:
 
     Returns metrics dict with precision, recall, false-consistent rate, etc.
     """
-    results = {"tp": 0, "fp": 0, "tn": 0, "fn": 0, "unverifiable": 0}
+    # 3x3 confusion matrix over {contradiction, consistent} x {CONTRADICTION,
+    # CONSISTENT, UNVERIFIABLE}. Report the false-consistent rate (blessed
+    # contradictions) and false-contradiction rate separately — never a blended
+    # accuracy (which hides per-class failure).
+    tp = fp = tn = fn = 0
+    contra_unverifiable = consis_unverifiable = 0
 
     for entry in entries:
         verdict = critic.evaluate(
@@ -105,27 +110,31 @@ def evaluate_critic(critic, entries: list[dict]) -> dict[str, float]:
 
         if true_label == "contradiction":
             if verdict == ContentVerdict.CONTRADICTION:
-                results["tp"] += 1
+                tp += 1
             elif verdict == ContentVerdict.CONSISTENT:
-                results["fn"] += 1  # false-consistent: dangerous!
+                fn += 1  # false-CONSISTENT: the dangerous error (a blessed lie)
             else:
-                results["unverifiable"] += 1
-        else:  # consistent
+                contra_unverifiable += 1
+        else:
             if verdict == ContentVerdict.CONSISTENT:
-                results["tn"] += 1
+                tn += 1
             elif verdict == ContentVerdict.CONTRADICTION:
-                results["fp"] += 1  # false-contradiction
+                fp += 1  # false-CONTRADICTION
             else:
-                results["unverifiable"] += 1
+                consis_unverifiable += 1
 
     total = len(entries)
-    tp, fp, tn, fn = results["tp"], results["fp"], results["tn"], results["fn"]
+    total_contra = tp + fn + contra_unverifiable
+    total_consis = tn + fp + consis_unverifiable
 
     precision = tp / max(1, tp + fp)
-    recall = tp / max(1, tp + fn)
+    # Recall denominator = ALL contradictions, including the ones the critic
+    # declined (UNVERIFIABLE). Excluding them inflates recall.
+    recall = tp / max(1, total_contra)
     f1 = 2 * precision * recall / max(0.001, precision + recall)
-    # False-consistent among contradictions:
-    false_consistent_among_contra = fn / max(1, tp + fn + results["unverifiable"])
+
+    false_consistent_rate = fn / max(1, total_contra)
+    false_contradiction_rate = fp / max(1, total_consis)
     accuracy = (tp + tn) / max(1, total)
 
     return {
@@ -134,11 +143,12 @@ def evaluate_critic(critic, entries: list[dict]) -> dict[str, float]:
         "fp": fp,
         "tn": tn,
         "fn": fn,
-        "unverifiable": results["unverifiable"],
+        "unverifiable": contra_unverifiable + consis_unverifiable,
         "precision": round(precision, 3),
         "recall": round(recall, 3),
         "f1": round(f1, 3),
-        "false_consistent_among_contra": round(false_consistent_among_contra, 3),
+        "false_consistent_among_contra": round(false_consistent_rate, 3),
+        "false_contradiction_among_consis": round(false_contradiction_rate, 3),
         "accuracy": round(accuracy, 3),
     }
 

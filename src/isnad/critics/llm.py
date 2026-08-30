@@ -35,6 +35,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -44,6 +45,41 @@ from isnad.types import ContentVerdict
 
 def _hash_claim(claim: str) -> str:
     return hashlib.sha256(claim.encode()).hexdigest()[:16]
+
+
+_NEGATION = re.compile(
+    r"\b(?:not|never|cannot|can't|doesn't|does not|isn't|is not|aren't|are not|don't|do not)\b",
+    re.IGNORECASE,
+)
+
+
+def _parse_verdict(text: str) -> ContentVerdict:
+    """Parse the LLM's verdict exactly, negation-aware.
+
+    The prompt asks for one word; in practice models add filler ("The answer
+    is CONSISTENT") or negation ("NOT CONSISTENT"). Naive substring matching
+    mislabels "NOT CONSISTENT" as CONSISTENT — a false-consistent (a blessed
+    contradiction), the one error the honesty moat forbids. This parses the
+    last token first, then falls back to a negation-aware scan. Any ambiguity
+    defaults to UNVERIFIABLE (fail safe).
+    """
+    t = (text or "").strip()
+    if not t:
+        return ContentVerdict.UNVERIFIABLE
+
+    # Preferred path: the prompt asks for a single trailing word.
+    last = t.split()[-1].strip().rstrip(".!?,;:'\"").upper()
+    if last in ("CONSISTENT", "CONTRADICTION", "UNVERIFIABLE"):
+        return ContentVerdict(last.lower())
+
+    # Fallback: negation-aware scan over the whole reply.
+    for m in re.finditer(r"\b(CONSISTENT|CONTRADICTION|UNVERIFIABLE)\b", t, re.IGNORECASE):
+        token = m.group(1).upper()
+        prefix_words = t[: m.start()].strip().split()[-3:]
+        if _NEGATION.search(" ".join(prefix_words)):
+            continue  # "NOT CONSISTENT" etc. — this token is negated
+        return ContentVerdict(token.lower())
+    return ContentVerdict.UNVERIFIABLE
 
 
 # =========================================================================
@@ -395,13 +431,7 @@ class LLMCritic:
         except Exception:
             return ContentVerdict.UNVERIFIABLE
 
-        verdict_str = "UNVERIFIABLE"
-        if "CONTRADICTION" in text:
-            verdict_str = "CONTRADICTION"
-        elif "CONSISTENT" in text:
-            verdict_str = "CONSISTENT"
-
-        verdict = ContentVerdict(verdict_str.lower())
+        verdict = _parse_verdict(text)
 
         if self.cache_dir:
             cache_file = self.cache_dir / f"{cache_key}.json"
