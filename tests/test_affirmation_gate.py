@@ -43,7 +43,12 @@ def test_no_record_refuses_affirmation():
 def test_valid_record_licenses_affirmation():
     register(_record())
     assert allows("llm", "physics", provider="deepseek", model="deepseek-chat") is True
-    assert gated("llm", "physics", ContentVerdict.CONSISTENT, provider="deepseek", model="deepseek-chat") is ContentVerdict.CONSISTENT
+    assert (
+        gated(
+            "llm", "physics", ContentVerdict.CONSISTENT, provider="deepseek", model="deepseek-chat"
+        )
+        is ContentVerdict.CONSISTENT
+    )
 
 
 def test_gate_never_suppresses_contradiction():

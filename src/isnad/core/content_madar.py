@@ -146,9 +146,7 @@ def _extract_units(text: str) -> frozenset[str]:
 
 def _extract_entities(text: str) -> frozenset[str]:
     """Case-folded title-case tokens (proper names), minus stopwords."""
-    return frozenset(
-        t.lower() for t in _TITLE_CASE.findall(text) if t.lower() not in _STOPWORDS
-    )
+    return frozenset(t.lower() for t in _TITLE_CASE.findall(text) if t.lower() not in _STOPWORDS)
 
 
 def _extract_dates(text: str) -> frozenset[str]:
