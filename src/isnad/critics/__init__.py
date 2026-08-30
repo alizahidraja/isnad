@@ -42,7 +42,14 @@ def best_available_critic(*, prefer_llm: bool = True, **kwargs: Any) -> ContentC
        ``prefer_llm=False`` to force an offline critic.
     2. ``HybridCritic`` — semantic NLI offline, needs ``sentence-transformers``
        (~500 MB of models, downloaded on first use).
-    3. ``EmbeddingCritic`` — TF-IDF, catches obvious contradictions, always works.
+    3. ``EmbeddingCritic`` — TF-IDF, contradiction-only (never CONSISTENT),
+       always works.
+
+    Every tier is composed with a deterministic ``RecomputeCritic`` inside an
+    ``EnsembleCritic``: a numeric-aggregate contradiction (an inflated total, a
+    wrong count) is caught even when the semantic critic cannot compute it. The
+    ensemble never upgrades on a number alone, so it is never less safe than
+    the semantic critic.
 
     Honest by construction: it never returns a critic it cannot run, and it
     degrades gracefully down the list. See ``docs/critics.md`` for the measured
@@ -51,10 +58,10 @@ def best_available_critic(*, prefer_llm: bool = True, **kwargs: Any) -> ContentC
     if prefer_llm:
         candidate = LLMCritic()
         if candidate._has_credentials():
-            return candidate
+            return EnsembleCritic(candidate, RecomputeCritic())
     if _sentence_transformers_available():
-        return HybridCritic(**kwargs)
-    return EmbeddingCritic()
+        return EnsembleCritic(HybridCritic(**kwargs), RecomputeCritic())
+    return EnsembleCritic(EmbeddingCritic(), RecomputeCritic())
 
 
 __all__ = [

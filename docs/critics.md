@@ -17,7 +17,7 @@ physics corpus; see `experiments/critic_eval/RESULTS.md`):
 | `LLMCritic` (DeepSeek) | **1.000** | **0.000** | 1.000 | API key |
 | `LocalNLICritic` | 0.760 | 0.000 | 0.417 | `sentence-transformers` |
 | `HybridCritic` | 0.720 | 0.040 | 0.433 | `sentence-transformers` |
-| `EmbeddingCritic` | 0.120 | 0.320 | 0.550 | nothing |
+| `EmbeddingCritic` | 0.120 | **0.000** (never affirms) | — | nothing |
 
 **The honest headline.** Only the LLM tier is near-perfect (100% recall, zero
 false-consistents). The offline NLI critics, after fixing three defects (issue
@@ -25,9 +25,11 @@ false-consistents). The offline NLI critics, after fixing three defects (issue
 max-over-whole-corpus "different fact" false positives), now *safely* recall
 ~72–76% of genuine contradictions with near-zero false-consistents — they are
 conservative (low 3-way accuracy, most non-contradictions return UNVERIFIABLE),
-which is the correct under-trust bias. The `EmbeddingCritic` remains the
-safest zero-dependency option (perfect precision, lowest false-consistent), just
-low-recall.
+which is the correct under-trust bias. The `EmbeddingCritic` is now
+**contradiction-only** (D2): it returns CONTRADICTION or UNVERIFIABLE, never
+CONSISTENT — symmetric lexical overlap cannot affirm correctness, so its
+false-consistent rate is 0.000 *by construction*, not by measurement. It
+catches obvious contradictions and stays silent otherwise.
 
 > These replace the earlier "~90% LLM / ~40% NLI / ~30% LocalNLI" figures, which
 > were estimated on a template-injected (word-swap) set the critics trivially
@@ -45,7 +47,9 @@ critic = LLMCritic(provider="ollama", model="llama3.1")  # local LLM — no key,
 
 The factory never returns a critic it cannot run: it degrades LLM → NLI →
 TF-IDF, and the `LLMCritic` itself returns `UNVERIFIABLE` (never crashes) when
-no key is configured.
+no key is configured. Every tier is composed with a `RecomputeCritic` inside
+an `EnsembleCritic`, so numeric-aggregate contradictions are caught
+deterministically regardless of the semantic tier (D2).
 
 **Local LLM (no key).** The `LLMCritic` supports a local Ollama server
 (`provider="ollama"`, `base_url` `http://localhost:11434/v1`, no API key) — the

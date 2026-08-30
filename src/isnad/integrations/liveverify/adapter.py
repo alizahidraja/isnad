@@ -163,4 +163,21 @@ def register_sealed_source(
             metadata={"verified": sealed.verified, "origin_strength": sealed.origin_strength},
             upstream_source=sealed.domain,
         )
+
+    # D4: an endorsed (green) seal is an OBSERVED survival — an independent
+    # authority verified this exact source held up. Recording it as survival
+    # evidence (not just a prior) makes the narrator observation-backed, which
+    # is what unlocks plain-SERVE under the P0-B prior-only gate. A self-verified
+    # (amber) seal is refused by record_survival's tazkiyah guard, so it stays
+    # prior-only/ungraded — exactly the honesty split.
+    if sealed.verified and not sealed.self_verified:
+        claim_id = (result.payload or {}).get("tx") or sealed.narrator_id
+        registry.record_survival(
+            sealed.narrator_id,
+            domain,
+            claim_id,
+            result.authorized_by or sealed.domain,
+            self_verified=False,
+        )
+
     return sealed

@@ -351,6 +351,22 @@ class TestRegisterSealedSource:
         narrator = reg.get(sealed.narrator_id, "physics")
         assert narrator.upstream_source == "degrees.ed.ac.uk"
 
+    def test_endorsed_seal_records_survival_observed(self):
+        """D4: an endorsed (green) seal records OBSERVED survival evidence,
+        so the narrator is observation-backed (not prior-only)."""
+        reg = Registry()
+        sealed = register_sealed_source(reg, _endorsed_result(), domain="physics")
+        assert sealed.self_verified is False
+        assert reg.evidence_provenance(sealed.narrator_id, "physics").observed_count >= 1
+        assert reg.evidence_provenance(sealed.narrator_id, "physics").prior_only is False
+
+    def test_self_verified_seal_records_no_survival(self):
+        """A self-verified (amber) seal records NO survival (tazkiyah guard)."""
+        reg = Registry()
+        sealed = register_sealed_source(reg, _verified_result(), domain="physics")
+        assert sealed.self_verified is True
+        assert reg.evidence_provenance(sealed.narrator_id, "physics").observed_count == 0
+
     def test_endorsed_seal_is_evidence_backed(self):
         """An endorsed (RELIABLE) seal must survive subsequent evidence, not be
         clobbered to WEAK by the Bayesian posterior (issue #33)."""

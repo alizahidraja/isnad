@@ -6,7 +6,7 @@ Verifies paper §4.4: every cell routes to the correct action, including:
 - All 8 core cells (plus unverifiable variants).
 """
 
-from isnad.core.decision import decide, describe_action, gate_serve
+from isnad.core.decision import decide, describe_action, gate_serve, hold_unverifiable
 from isnad.types import Action, ChainGrade, ContentVerdict
 
 
@@ -99,4 +99,30 @@ class TestServeGate:
         assert (
             gate_serve(Action.REJECT_AND_QUARANTINE_NARRATOR, ["model:seeded"], hold=True)
             == Action.REJECT_AND_QUARANTINE_NARRATOR
+        )
+
+
+class TestHoldUnverifiable:
+    """D3: in hold mode, unverifiable content never caveat-serves."""
+
+    def test_soft_mode_keeps_caveat(self) -> None:
+        assert (
+            hold_unverifiable(Action.SERVE_WITH_CAVEAT, ContentVerdict.UNVERIFIABLE, hold=False)
+            == Action.SERVE_WITH_CAVEAT
+        )
+
+    def test_hold_mode_demotes_unverifiable_to_review(self) -> None:
+        assert (
+            hold_unverifiable(Action.SERVE_WITH_CAVEAT, ContentVerdict.UNVERIFIABLE, hold=True)
+            == Action.REVIEW
+        )
+
+    def test_hold_mode_keeps_consistent_serve(self) -> None:
+        # CONSISTENT content still serves in hold mode; only UNVERIFIABLE is held.
+        assert hold_unverifiable(Action.SERVE, ContentVerdict.CONSISTENT, hold=True) == Action.SERVE
+
+    def test_never_touches_non_serve(self) -> None:
+        assert (
+            hold_unverifiable(Action.QUARANTINE, ContentVerdict.UNVERIFIABLE, hold=True)
+            == Action.QUARANTINE
         )

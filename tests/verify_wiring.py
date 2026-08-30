@@ -353,8 +353,8 @@ result_exact = ec.evaluate(
     "physics",
 )
 check(
-    "EmbeddingCritic exact match → CONSISTENT",
-    result_exact == ContentVerdict.CONSISTENT,
+    "EmbeddingCritic never affirms consistency (D2)",
+    result_exact == ContentVerdict.UNVERIFIABLE,
     f"got {result_exact.value}",
 )
 

@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.18.0] — 2026-08-30
+
+### Fixed — five remaining decisions (10-person panel, 10/10 converged)
+
+- **D1 · critic corpus now accepts operator KB docs.** `submit_claim` takes an
+  optional `corpus_docs` field; when supplied, the content critic checks the
+  claim against the operator's retrieved documents (the actual evidence
+  artifacts) instead of only prior claims (which are themselves unverified).
+  Provenance is surfaced (`critic_corpus_operator_docs`); an operator corpus is
+  an assumption, not an observation.
+- **D2 · TF-IDF never affirms consistency + ensemble wiring.** `EmbeddingCritic`
+  now returns only CONTRADICTION or UNVERIFIABLE (never CONSISTENT) — symmetric
+  lexical overlap cannot bless a ≤3× dose error or an unlisted antonym.
+  `best_available_critic()` now wraps every tier in
+  `EnsembleCritic(semantic, RecomputeCritic())` so numeric-aggregate
+  contradictions are caught deterministically.
+- **D3 · hold mode: unverifiable content never caveat-serves.** New
+  `hold_unverifiable()` remaps `SAHIH × UNVERIFIABLE → SERVE_WITH_CAVEAT` to
+  REVIEW in hold domains (`ISNAD_SERVE_GATE=hold` / `ISNAD_SERVE_HOLD_DOMAINS`).
+  A caveat is a label, not evidence.
+- **D4 · endorsed Live Verify seals now record survival.**
+  `register_sealed_source` records OBSERVED survival evidence for an endorsed
+  (green) seal, making the narrator observation-backed (unlocks plain-SERVE
+  under the prior-only gate). Self-verified (amber) seals stay refused by the
+  tazkiyah guard.
+- **D5 · numeric-float honesty.** `chain_independence[].score` is renamed
+  `independence` (0.0 = shared lineage, 1.0 = fully independent — NOT a
+  confidence) and the corroboration floats are annotated as structural witness
+  counts.
+
 ## [2.17.0] — 2026-08-30
 
 ### Fixed — serving-path P0s from the 7-persona 3-user audit

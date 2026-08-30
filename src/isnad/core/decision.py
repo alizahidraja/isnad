@@ -105,6 +105,33 @@ def gate_serve(
     return Action.SERVE_WITH_CAVEAT
 
 
+def hold_unverifiable(
+    action: Action,
+    content_verdict: ContentVerdict,
+    *,
+    hold: bool = False,
+) -> Action:
+    """In hold mode, unverifiable content never caveat-serves — it is held.
+
+    The matrix routes SAHIH x UNVERIFIABLE -> SERVE_WITH_CAVEAT. In a
+    high-stakes (hold) domain, absence of verification must not serve: a
+    caveat is a label, not evidence, and serving unverifiable content under
+    "hold" misstates the gate. So hold mode remaps the UNVERIFIABLE serve
+    cell to REVIEW. This is orthogonal to ``gate_serve`` (which gates on
+    prior-only narrator provenance); both apply.
+
+    Returns the action unchanged outside hold mode, and never touches
+    QUARANTINE/REJECT/REVIEW — it only demotes SERVE_WITH_CAVEAT.
+    """
+    if (
+        hold
+        and content_verdict == ContentVerdict.UNVERIFIABLE
+        and action == Action.SERVE_WITH_CAVEAT
+    ):
+        return Action.REVIEW
+    return action
+
+
 def describe_action(
     chain_grade: ChainGrade,
     content_verdict: ContentVerdict,

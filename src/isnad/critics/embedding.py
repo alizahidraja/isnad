@@ -132,17 +132,21 @@ class EmbeddingCritic:
     This is one instantiation of a parameter the framework leaves open
     (see paper §4.4).  Swap freely.
 
+    This critic is contradiction-ONLY: it returns CONTRADICTION when it finds a
+    negation/antonym/numeric-divergence signal and UNVERIFIABLE otherwise. It
+    never returns CONSISTENT — symmetric lexical overlap cannot affirm that a
+    claim is correct (a <=3x dose error or an unlisted antonym pair would be
+    blessed). Affirming consistency is the semantic critic's job (NLI/LLM).
+
     Args:
-        similarity_threshold: Cosine sim above which claims are "consistent".
-        contradiction_threshold: Cosine sim above which we check contradictions.
+        contradiction_threshold: Cosine sim above which we check for
+            contradiction signals.
     """
 
     def __init__(
         self,
-        similarity_threshold: float = 0.75,
         contradiction_threshold: float = 0.50,
     ):
-        self.similarity_threshold = similarity_threshold
         self.contradiction_threshold = contradiction_threshold
         self._index: TFIDFIndex | None = None
         self._corpus_texts: list[str] = []
@@ -181,7 +185,9 @@ class EmbeddingCritic:
             if _has_contradiction_signal(normalized_claim, best_text):
                 return ContentVerdict.CONTRADICTION
 
-        if best_sim >= self.similarity_threshold:
-            return ContentVerdict.CONSISTENT
+        # Never return CONSISTENT: symmetric lexical overlap cannot affirm a
+        # claim is correct (<=3x dose errors and unlisted antonym pairs would be
+        # blessed). CONTRADICTION is the only positive signal; everything else
+        # is UNVERIFIABLE. Affirming consistency is the semantic critic's job.
 
         return ContentVerdict.UNVERIFIABLE

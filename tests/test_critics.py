@@ -5,14 +5,16 @@ from isnad.types import ContentVerdict
 
 
 class TestEmbeddingCritic:
-    def test_consistent_on_exact_match(self) -> None:
+    def test_never_consistent_on_exact_match(self) -> None:
+        """D2: TF-IDF never affirms consistency — an exact lexical match is
+        still UNVERIFIABLE (overlap is conformity, not evidence)."""
         critic = EmbeddingCritic()
         result = critic.evaluate(
             "force equals mass times acceleration",
             "force equals mass times acceleration",
             ["force equals mass times acceleration"],
         )
-        assert result == ContentVerdict.CONSISTENT
+        assert result == ContentVerdict.UNVERIFIABLE
 
     def test_contradiction_on_negation(self) -> None:
         critic = EmbeddingCritic()
@@ -94,8 +96,8 @@ class TestEmbeddingCritic:
             "force equals mass times acceleration",
             ["force equals mass times acceleration"],
         )
-        # TF-IDF with identical text → very high similarity → CONSISTENT
-        assert result == ContentVerdict.CONSISTENT
+
+        assert result == ContentVerdict.UNVERIFIABLE
 
     def test_numeric_divergence_contradiction(self) -> None:
         critic = EmbeddingCritic()
@@ -106,3 +108,15 @@ class TestEmbeddingCritic:
         )
         # 10x difference → potential contradiction
         assert result == ContentVerdict.CONTRADICTION
+
+    def test_small_numeric_divergence_is_not_blessed(self) -> None:
+        """D2: a <=3x dose error must NOT be blessed as CONSISTENT."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the dose is 20 milligrams",
+            "the dose is 20 milligrams",
+            ["the dose is 10 milligrams"],
+        )
+        # 2x divergence — below the >3x gate — so it is NOT a contradiction,
+        # but TF-IDF must still never affirm it as CONSISTENT.
+        assert result == ContentVerdict.UNVERIFIABLE

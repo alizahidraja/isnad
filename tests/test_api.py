@@ -649,6 +649,17 @@ class _AlwaysConsistentCritic:
         return ContentVerdict.CONSISTENT
 
 
+class _CapturingCritic:
+    """Critic that records the corpus it was handed (for D1 assertions)."""
+
+    def __init__(self):
+        self.last_corpus: list[str] = []
+
+    def evaluate(self, claim_text, normalized_claim, corpus_claims, domain):
+        self.last_corpus = list(corpus_claims)
+        return ContentVerdict.UNVERIFIABLE
+
+
 class TestPriorOnlyServeGate:
     """P0-B: a seeded (prior-only) narrator must not plain-SERVE."""
 
@@ -707,6 +718,30 @@ class TestPriorOnlyServeGate:
         assert rec["chain_grade"] == "sahih"
         assert rec["action"] == "review"
         assert "narrator:seeded-2" in rec["prior_only_narrators"]
+
+
+class TestCriticCorpus:
+    """D1: the critic corpus includes operator-supplied KB docs."""
+
+    def test_operator_corpus_docs_passed_to_critic(self):
+        critic = _CapturingCritic()
+        app.dependency_overrides[get_critic] = lambda: critic
+        try:
+            r = client.post(
+                "/v1/claims",
+                json={
+                    "claim_text": "water boils at 100 celsius",
+                    "domain": "physics",
+                    "chain": [{"narrator_id": "src"}],
+                    "corpus_docs": ["water boils at 100 degrees celsius"],
+                },
+                headers={"X-API-Key": "isnad-admin"},
+            )
+            assert r.status_code == 200
+            assert "water boils at 100 degrees celsius" in critic.last_corpus
+            assert r.json()["critic_corpus_operator_docs"] == 1
+        finally:
+            app.dependency_overrides.pop(get_critic, None)
 
 
 class TestReGradeLoopClosure:

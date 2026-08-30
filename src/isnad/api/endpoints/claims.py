@@ -24,7 +24,7 @@ from isnad.core.chain import (
     store_claim,
 )
 from isnad.core.corroboration import CorroborationEngine
-from isnad.core.decision import decide, describe_action, gate_serve
+from isnad.core.decision import decide, describe_action, gate_serve, hold_unverifiable
 from isnad.core.fidelity import compute_fidelity_verdicts
 from isnad.core.grading import grade_chain
 from isnad.core.identity import is_unknown_version, resolve_narrator_id
@@ -74,6 +74,15 @@ class ClaimSubmitIn(BaseModel):
     page_slug: str = "default"
     normalized_text: str | None = None
     chain: list[ChainLinkIn] = Field(default_factory=list)
+    # D1: optional operator-supplied KB corpus — the retrieved documents the
+    # claim was grounded in. These are the actual evidence artifacts the
+    # content critic checks against (vs prior claims, which are themselves
+    # unverified assertions). An operator-supplied corpus is an ASSUMPTION
+    # (a prior), not an observation — provenance is recorded, never hidden.
+    corpus_docs: list[str] | None = Field(
+        default=None,
+        description="Optional operator-supplied KB documents the critic checks against",
+    )
 
 
 _app_state = AppState()
@@ -323,8 +332,13 @@ async def submit_claim(
     existing_records = list(state.claims.values())
     existing_texts = [c.get("normalized_text", "") for c in existing_records]
     existing_claim_ids = [c.get("claim_id", "") for c in existing_records]
+    # D1: the critic corpus is operator KB docs (when supplied) + prior claims.
+    # Docs are the evidence artifacts the claim was grounded in; prior claims
+    # are kept for contradiction-linking. Without docs, fall back to
+    # claims-only (honest cold-start: everything UNVERIFIABLE).
+    critic_corpus = list(body.corpus_docs or []) + existing_texts
     cv = (
-        critic.evaluate(claim_text, normalized, existing_texts, domain)
+        critic.evaluate(claim_text, normalized, critic_corpus, domain)
         if critic
         else ContentVerdict.UNVERIFIABLE
     )
@@ -384,7 +398,10 @@ async def submit_claim(
         for nid in resolved_narrator_ids
         if reg.registry.evidence_provenance(nid, domain).prior_only
     ]
-    action = gate_serve(action, prior_only_narrators, hold=_serve_hold(domain))
+    hold = _serve_hold(domain)
+    action = gate_serve(action, prior_only_narrators, hold=hold)
+    # D3: in hold mode, unverifiable content never caveat-serves — held.
+    action = hold_unverifiable(action, cv, hold=hold)
 
     claim_id = str(uuid.uuid4())
     state.index_claim(claim_id, normalized)
@@ -411,6 +428,7 @@ async def submit_claim(
         "quarantined": action.value in ("quarantine", "reject_and_quarantine_narrator"),
         "domain": domain,
         "page_slug": page_slug,
+        "critic_corpus_operator_docs": len(body.corpus_docs or []),
         "corroborating_claims": len(corroborating),
         "narrator_ids": [l.narrator_id for l in chain.links],
         "resolved_narrator_ids": resolved_narrator_ids,
@@ -424,6 +442,8 @@ async def submit_claim(
             "upgraded_grade": corr_result.upgraded_grade.value,
             "corroborating_chains": corr_result.corroborating_chains,
             "independent_chains": corr_result.independent_chains,
+            # Structural corroboration metrics (witness counts / discount
+            # factors), NOT claim-truth confidence. No numeric confidence here.
             "effective_weight": corr_result.effective_weight,
             "reason": corr_result.reason,
             "content_madar_detected": corr_result.content_madar_detected,
@@ -431,7 +451,9 @@ async def submit_claim(
             "effective_witnesses": corr_result.effective_witnesses,
             "chain_independence": [
                 {
-                    "score": a.score,
+                    # D5: NOT a confidence score — a structural independence
+                    # measure (0.0 = shared lineage, 1.0 = fully independent).
+                    "independence": a.score,
                     "shared_signals": list(a.shared_signals),
                 }
                 for a in corr_result.chain_independence
