@@ -34,7 +34,7 @@ DATASET_JSON_LD = {
     "description": (
         "Per-chain derived output of ISNAD's weakest-link chain grading against "
         "classical hadith ground truth: the scholar's verdict, ISNAD's predicted "
-        "chain grade, and the principled disagreement bucket, across 577,024 chains. "
+        "chain grade, and the principled disagreement bucket, across 575,060 graded chains. "
         "Cohen's kappa = 0.871 vs the scholarly consensus (human ceiling 0.331). "
         "Derived from emadjumaah/hadith-kg (CC-BY-4.0)."
     ),

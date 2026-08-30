@@ -433,7 +433,7 @@ check(
     f"{elapsed:.1f}s",
 )
 
-r = client.get("/v1/claims?domain=stress_test&limit=250&served_only=false")
+r = client.get("/v1/claims?domain=stress_test&limit=250&served_only=false", headers={"X-API-Key": "isnad-admin"})
 list_data = r.json()
 check(
     "Claims list shows all 200 (audit view)",

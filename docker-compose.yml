@@ -4,7 +4,9 @@ services:
   api:
     build: .
     ports:
-      - "8000:8000"
+      # Bind to loopback by default: the audit view exposes quarantined claim
+      # text, so the API should not be exposed on all interfaces out of the box.
+      - "127.0.0.1:8000:8000"
     environment:
       # API keys are injected from the host environment — no hardcoded
       # credential ships in the compose file (issue #93). Fail-closed: with

@@ -1,6 +1,6 @@
 # RFC — Per-Role Precision Grading (Issue #3)
 
-- **Status:** Approved (direction) → implementing
+- **Status:** Shipped (role dimension in `Registry.register(role=...)`, issue #3 closed)
 - **Issue:** #3 "Reliability grades are too coarse: score per role/task, not per model"
 - **Author:** Ali Zahid Raja (with multi-persona audit)
 - **Scope:** make the *precision* (ḍabṭ) axis of narrator grading per-role,

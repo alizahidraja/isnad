@@ -9,11 +9,11 @@ from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from typing import Any
 
-from fastapi import Depends, HTTPException, Query
+from fastapi import Depends, HTTPException, Query, Security
 from fastapi.routing import APIRouter
 from pydantic import BaseModel, Field
 
-from isnad.api.auth import require_auth
+from isnad.api.auth import _check_auth, api_key_header, require_auth
 from isnad.api.dependencies import _metrics_counters, get_critic, get_fidelity_critic, get_registry
 from isnad.core.chain import (
     Chain,
@@ -247,7 +247,13 @@ async def list_claims(
     limit: int = Query(default=50, ge=1, le=500),
     offset: int = Query(default=0, ge=0),
     served_only: bool = Query(default=True),
+    api_key: str | None = Security(api_key_header),
 ) -> dict:
+    if not served_only:
+        # The audit view (served_only=false) exposes quarantined/rejected claim
+        # text — that is containment metadata, not a public read surface, so it
+        # is authenticated (security finding from the repo-health audit).
+        _check_auth(api_key)
     state = get_state()
     all_claims = list(state.claims.values())
     if domain:

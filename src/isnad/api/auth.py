@@ -32,14 +32,17 @@ _API_KEYS = _load_api_keys()
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
 
 
-def require_auth(api_key: str | None = Security(api_key_header)) -> str:
+def _check_auth(api_key: str | None) -> str:
+    """Validate an API key and return its role. Raises 503/401 when closed."""
     if not _API_KEYS:
-        # Fail closed: no credentials configured → refuse to serve, rather than
-        # shipping a hardcoded default password.
         raise HTTPException(503, "API keys not configured (set ISNAD_API_KEYS)")
     if not api_key or api_key not in _API_KEYS:
         raise HTTPException(401, "Invalid or missing API key")
     return _API_KEYS[api_key]
+
+
+def require_auth(api_key: str | None = Security(api_key_header)) -> str:
+    return _check_auth(api_key)
 
 
 def require_admin(role: str = Depends(require_auth)) -> str:

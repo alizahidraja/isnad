@@ -319,9 +319,15 @@ class TestClaimsList:
         r_served = client.get("/v1/claims")
         assert r_served.status_code == 200
         # The audit view (served_only=false) shows every submitted claim.
-        r = client.get("/v1/claims?served_only=false")
+        r = client.get("/v1/claims?served_only=false", headers={"X-API-Key": "isnad-admin"})
         assert r.status_code == 200
         assert r.json()["total"] >= 1
+
+    def test_audit_view_requires_auth(self):
+        """The audit view (served_only=false) exposes quarantined text — it must
+        require auth, unlike the public served-only read surface."""
+        r = client.get("/v1/claims?served_only=false")
+        assert r.status_code == 401
 
     def test_list_claims_filter_by_domain(self):
         client.post(

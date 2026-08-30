@@ -115,6 +115,8 @@ from isnad import Registry
 from isnad.integrations.langchain import IsnadTracer
 from isnad.integrations.langchain.middleware import gate
 
+registry = Registry()  # your operator-assigned grades live here
+
 # 1. Trace the actual retrieval -> model chain (retrieved docs are the corpus,
 #    so the content critic judges the claim against what was actually read).
 tracer = IsnadTracer(registry, domain="medical")
@@ -154,6 +156,7 @@ record self-hashes, so a tampered record fails verification.
 # legal_rag.py — capture the chain, then export a tamper-evident record
 from isnad import Registry
 from isnad.core.chain import Chain, ChainLinkSpec, store_claim
+from isnad.types import TransformType
 from isnad.audit.exporter import build_audit_record
 from isnad.storage.sqlalchemy import get_session
 
@@ -161,8 +164,8 @@ registry = Registry()
 chain = Chain([
     ChainLinkSpec("source:case-file-1234", 0, document_hashes=["<full sha256>"]),
     # Summarization is lossy -> destructive; the weak link caps the chain.
-    ChainLinkSpec("model:summarizer@v3", 1, transform_type="destructive"),
-    ChainLinkSpec("model:citation-check@v2", 2, transform_type="pass_through"),
+    ChainLinkSpec("model:summarizer@v3", 1, transform_type=TransformType.DESTRUCTIVE),
+    ChainLinkSpec("model:citation-check@v2", 2, transform_type=TransformType.PASS_THROUGH),
 ])
 
 with get_session() as session:

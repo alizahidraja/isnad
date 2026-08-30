@@ -961,7 +961,7 @@ check("GET /v1/claims/nonexistent → 404", r.status_code == 404)
 r = client.get("/v1/claims")
 check("GET /v1/claims → 200", r.status_code == 200)
 list_data = r.json()
-r_audit = client.get("/v1/claims?served_only=false")
+r_audit = client.get("/v1/claims?served_only=false", headers={"X-API-Key": "isnad-admin"})
 check("GET /v1/claims?served_only=false → 200", r_audit.status_code == 200)
 check(
     "Claims list has total (audit view)",

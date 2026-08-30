@@ -23,7 +23,7 @@ identifiers:
 url: "https://doi.org/10.5281/zenodo.21216873"
 repository-code: "https://github.com/alizahidraja/isnad"
 version: "2.18.0"
-date-released: "2026-08-29"
+date-released: "2026-08-30"
 year: 2026
 license: Apache-2.0
 type: software
@@ -46,7 +46,7 @@ abstract: >
   Implements the architecture described in "Grading the Narrators" (Raja, 2026,
   arXiv:2607.24117).  Validated on 707 cross-source claim pairs across Wikipedia
   and physics textbook corpora (100% corroboration rate, 8/8 Wikipedia + 9/9
-  physics negative controls), and on 577,024 scholar-graded hadith chains
+  physics negative controls), and on 575,060 scholar-graded hadith chains
   (Cohen's κ = 0.871 vs scholarly consensus; human ceiling 0.331).
 preferred-citation:
   authors:
