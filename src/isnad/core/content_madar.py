@@ -100,9 +100,7 @@ class ErrorFingerprint:
         # False when there were no numbers — behaviorally equivalent but not a
         # bool, which is a latent type bug (and a footgun for `is False` checks).
         return (
-            bool(self.numbers)
-            and self.numbers == other.numbers
-            and self.negation == other.negation
+            bool(self.numbers) and self.numbers == other.numbers and self.negation == other.negation
         )
 
 
