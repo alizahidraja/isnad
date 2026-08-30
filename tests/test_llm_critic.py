@@ -55,7 +55,7 @@ class TestGracefulDegradation:
 class TestVerdictParsing:
     def _critic_with(self, llm_response: str, monkeypatch):
         monkeypatch.setenv("ANTHROPIC_API_KEY", "dummy")
-        critic = LLMCritic()
+        critic = LLMCritic(gate_affirmation=False)  # test parsing, not the gate
 
         def fake_call(prompt):
             return llm_response
@@ -104,7 +104,7 @@ class TestVerdictParsing:
 class TestCaching:
     def test_cache_round_trips(self, monkeypatch, tmp_path):
         monkeypatch.setenv("ANTHROPIC_API_KEY", "dummy")
-        critic = LLMCritic(cache_dir=str(tmp_path))
+        critic = LLMCritic(cache_dir=str(tmp_path), gate_affirmation=False)
 
         def fake_call(prompt):
             return "CONSISTENT"

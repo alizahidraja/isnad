@@ -52,6 +52,12 @@ no key is configured. Every tier is composed with a `RecomputeCritic` inside
 an `EnsembleCritic`, so numeric-aggregate contradictions are caught
 deterministically regardless of the semantic tier (D2).
 
+**Affirmation is gated by default.** No critic returns `CONSISTENT` unless a
+domain-scoped eval record licenses it (false-consistent rate ≤ threshold, default
+0.0). Without a record, every affirming critic (`llm`/`nli`/`hybrid`) returns
+`UNVERIFIABLE` instead — fail safe. See `src/isnad/critics/affirmation_gate.py`
+and `ISNAD_AFFIRMATION_*` env vars.
+
 **Local LLM (no key).** The `LLMCritic` supports a local Ollama server
 (`provider="ollama"`, `base_url` `http://localhost:11434/v1`, no API key) — the
 same LLM-tier quality with no data leaving the machine. Ollama is not in the

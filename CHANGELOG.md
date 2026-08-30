@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.19.0] — 2026-08-30
+
+### Added
+
+- **Default-ON content-critic affirmation gate (#34).** No critic may return
+  `CONSISTENT` unless a domain-scoped eval record proves its false-consistent
+  rate ≤ threshold (default 0.0). Without a valid, unexpired, re-runnable
+  record, affirmation is refused (`CONSISTENT` → `UNVERIFIABLE`, fail safe).
+  `ISNAD_AFFIRMATION_RECORDS_DIR` / `_MAX_FCR` / `_MAX_AGE_DAYS` configure it;
+  `affirmation_gate.register()` for programmatic/test callers. Gated critics:
+  `LLMCritic` (incl. its cache-hit path), `LocalNLICritic`, `HybridCritic`.
+
 ## [2.18.0] — 2026-08-30
 
 ### Fixed — five remaining decisions (10-person panel, 10/10 converged)

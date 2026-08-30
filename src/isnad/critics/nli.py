@@ -20,6 +20,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from isnad.critics.affirmation_gate import gated
 from isnad.types import ContentVerdict
 
 _SENTENCE_TRANSFORMERS_AVAILABLE = False
@@ -91,6 +92,7 @@ class LocalNLICritic:
         entailment_margin: float = 0.2,
         contradiction_margin: float = 0.2,
         retrieve_top_k: int = 10,
+        gate_affirmation: bool = True,
     ):
         self.model_name = model_name
         self.entailment_threshold = entailment_threshold
@@ -98,6 +100,7 @@ class LocalNLICritic:
         self.entailment_margin = entailment_margin
         self.contradiction_margin = contradiction_margin
         self.retrieve_top_k = retrieve_top_k
+        self.gate_affirmation = gate_affirmation
         self._model: Any = None
         self._tfidf_cache: dict[tuple[str, ...], tuple[Any, list[dict[str, float]]]] = {}
 
@@ -195,6 +198,8 @@ class LocalNLICritic:
             best_entailment >= self.entailment_threshold
             and best_entailment - best_contradiction >= self.entailment_margin
         ):
+            if self.gate_affirmation:
+                return gated("nli", domain, ContentVerdict.CONSISTENT, model=self.model_name)
             return ContentVerdict.CONSISTENT
 
         return ContentVerdict.UNVERIFIABLE
@@ -277,11 +282,18 @@ class HybridCritic:
                 contradiction_threshold=self.contradiction_threshold,
                 # already retrieved top-k; don't re-retrieve inside LocalNLI
                 retrieve_top_k=0,
+                gate_affirmation=False,  # the Hybrid gates itself as "hybrid"
             )
 
-        return self._nli_critic.evaluate(
+        result = self._nli_critic.evaluate(
             claim_text,
             normalized_claim,
             top_corpus,
             domain,
+        )
+        return gated(
+            "hybrid",
+            domain,
+            result,
+            model=f"{self.embed_model_name}/{self.nli_model_name}",
         )

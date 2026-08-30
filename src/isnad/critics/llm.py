@@ -39,6 +39,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
+from isnad.critics.affirmation_gate import gated
 from isnad.critics.embedding import EmbeddingCritic
 from isnad.types import ContentVerdict
 
@@ -255,6 +256,7 @@ class LLMCritic:
         model: str | None = None,
         top_k: int = 5,
         cache_dir: str | None = None,
+        gate_affirmation: bool = True,
     ):
         self._spec = resolve_provider(provider, base_url)
         self.provider = self._spec.name if self._spec else None
@@ -285,6 +287,7 @@ class LLMCritic:
         self.cache_dir = Path(cache_dir) if cache_dir else None
         if self.cache_dir:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
+        self.gate_affirmation = gate_affirmation
         self._retriever = EmbeddingCritic()
 
     def _has_credentials(self) -> bool:
@@ -406,7 +409,12 @@ class LLMCritic:
             if cache_file.exists():
                 try:
                     data = json.loads(cache_file.read_text())
-                    return ContentVerdict(data["verdict"])
+                    cached = ContentVerdict(data["verdict"])
+                    if self.gate_affirmation:
+                        cached = gated(
+                            "llm", domain, cached, provider=self.provider, model=self.model
+                        )
+                    return cached
                 except (json.JSONDecodeError, KeyError, ValueError):
                     pass
 
@@ -437,4 +445,6 @@ class LLMCritic:
             cache_file = self.cache_dir / f"{cache_key}.json"
             cache_file.write_text(json.dumps({"verdict": verdict.value}))
 
+        if self.gate_affirmation:
+            return gated("llm", domain, verdict, provider=self.provider, model=self.model)
         return verdict

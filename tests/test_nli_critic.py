@@ -73,7 +73,7 @@ class TestLocalNLICriticDecisionLogic:
             return self.outputs
 
     def _critic(self, outputs, **kw):
-        c = LocalNLICritic(**kw)
+        c = LocalNLICritic(gate_affirmation=False, **kw)  # test decision logic, not the gate
         c._model = self._FakeModel(outputs)
         return c
 
