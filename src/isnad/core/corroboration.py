@@ -308,7 +308,10 @@ class CappedCorroborationPolicy:
 
     MIN_GATE_GRADE: ChainGrade = ChainGrade.HASAN
     INDEPENDENCE_THRESHOLD: float = 0.8
-    MIN_EFFECTIVE_WEIGHT: float = 2.0  # need ≥2 HASAN-equivalent chains of evidence
+    MIN_EFFECTIVE_WEIGHT: float = 2.0  # need >=2 HASAN-equivalent chains of evidence
+    # The shared failure mode (when present) fails at the HASAN rate — a
+    # conservative-but-non-disabling anchor for the joint-failure mixture (issue 54).
+    SHARED_MODE_ERROR: float = 0.10
 
     # The witness-type-aware blind-spot prior (#54, mutābaʿa vs shāhid).
     #
@@ -349,11 +352,20 @@ class CappedCorroborationPolicy:
         not in the matrix. This is the shāhid/mutābaʿa distinction made explicit:
         cross-kind corroboration is charged a smaller honesty discount.
         """
+        measured = self.measured_priors.get((base_type, corr_type))
+        if measured is not None:
+            return max(0.0, min(1.0, measured))
         if base_type is None or corr_type is None:
             return self.shared_blind_spot_prior
         return self.BLIND_SPOT_MATRIX.get((base_type, corr_type), self.shared_blind_spot_prior)
 
-    def __init__(self, *, shared_blind_spot_prior: float = 0.20):
+    def __init__(
+        self,
+        *,
+        shared_blind_spot_prior: float = 0.20,
+        measured_priors: dict[tuple[str | None, str | None], float] | None = None,
+        joint_failure: bool = False,
+    ) -> None:
         """Args:
         shared_blind_spot_prior: the prior probability (0.0–1.0) that a
             nominally-independent chain shares an *unobservable* correlated
@@ -365,6 +377,43 @@ class CappedCorroborationPolicy:
             away.
         """
         self.shared_blind_spot_prior = max(0.0, min(1.0, shared_blind_spot_prior))
+        # Operator-measured per-pair co-failure priors (issue 54, from the
+        # co_failure harness). When present they override the hand-set matrix;
+        # absence falls back to the matrix/flat prior.
+        self.measured_priors: dict[tuple[str | None, str | None], float] = measured_priors or {}
+        # When True, aggregate corroboration with the joint-failure mixture
+        # (P all fail together) instead of the pairwise product. Opt-in because
+        # the joint model needs calibrated priors to fire at default (issue 54).
+        self.joint_failure = joint_failure
+
+    def _joint_effective_weight(
+        self,
+        base_grade: ChainGrade,
+        independent: list[tuple[ChainGrade, float, float]],
+    ) -> float:
+        """Joint-failure mixture effective weight (P all corroborators fail together).
+
+        The pairwise product undercounts common-cause co-failure: it assumes each
+        corroborator's error is independent. The joint model adds a shared-mode floor:
+            P_all = (1 - p) * e(base) * PROD(e_i ** score_i)  +  p * SHARED_MODE_ERROR
+        where p = max(per-chain priors) is the set-level shared-blind-spot prior, and
+        SHARED_MODE_ERROR (0.10, the HASAN rate) anchors the shared failure mode.
+
+        This is strictly more conservative than the pairwise product, and at the
+        default flat prior (0.20) the floor dominates so corroboration will NOT fire
+        — that is the honest behavior, not a bug: the joint model only upgrades when
+        the operator has supplied calibrated (measured) priors or attested distinct
+        cross-kind lineage. At p=0 it reduces exactly to the pairwise product.
+        """
+        err = self.ERROR_PROBS
+        e0 = max(err.get(base_grade, 0.30), 0.001)
+        p = max((prior for _, _, prior in independent), default=0.0)
+        product = e0
+        for g, score, _ in independent:
+            product *= max(err.get(g, 0.30), 0.001) ** score
+        p_all = (1.0 - p) * product + p * self.SHARED_MODE_ERROR
+        hasan_log = math.log(err[ChainGrade.HASAN])
+        return math.log(max(p_all, 1e-12)) / max(hasan_log, -10.0)
 
     # ── public API ──────────────────────────────────────────────────────
 
@@ -442,15 +491,17 @@ class CappedCorroborationPolicy:
         # and a chain can never earn full (1.0) witness credit — which is the
         # honest tawātur position: corroboration requires *more* chains than the
         # nominal count suggests, never fewer.
-        err = self.ERROR_PROBS
-        combined_log_error = sum(
-            score * (1.0 - prior) * math.log(max(err.get(g, 0.30), 0.001))
-            for g, score, prior in independent
-        )
-        combined_log_error += math.log(max(err.get(base_grade, 0.30), 0.001))
-
-        hasan_log = math.log(err[ChainGrade.HASAN])
-        effective_weight = combined_log_error / max(hasan_log, -10.0)
+        if self.joint_failure:
+            effective_weight = self._joint_effective_weight(base_grade, independent)
+        else:
+            err = self.ERROR_PROBS
+            combined_log_error = sum(
+                score * (1.0 - prior) * math.log(max(err.get(g, 0.30), 0.001))
+                for g, score, prior in independent
+            )
+            combined_log_error += math.log(max(err.get(base_grade, 0.30), 0.001))
+            hasan_log = math.log(err[ChainGrade.HASAN])
+            effective_weight = combined_log_error / max(hasan_log, -10.0)
 
         if effective_weight < self.MIN_EFFECTIVE_WEIGHT:
             return base_grade
@@ -1017,15 +1068,23 @@ class CorroborationEngine:
         number reported in ``CorroborationResult.effective_weight`` agrees with
         the number the policy actually used for its decision.
         """
-        err = self._policy.ERROR_PROBS
         priors = chain_blind_spot_priors
-        combined = sum(
-            score
-            * (1.0 - (priors[i] if priors is not None else self._policy.shared_blind_spot_prior))
-            * math.log(max(err.get(g, 0.30), 0.001))
+        independent: list[tuple[ChainGrade, float, float]] = [
+            (
+                g,
+                score,
+                priors[i] if priors is not None else self._policy.shared_blind_spot_prior,
+            )
             for i, (g, score) in enumerate(
                 zip(corroborating_grades, independence_scores, strict=True)
             )
+        ]
+        if self._policy.joint_failure:
+            return self._policy._joint_effective_weight(base_grade, independent)
+        err = self._policy.ERROR_PROBS
+        combined = sum(
+            score * (1.0 - prior) * math.log(max(err.get(g, 0.30), 0.001))
+            for g, score, prior in independent
         )
         combined += math.log(max(err.get(base_grade, 0.30), 0.001))
         hasan_log = math.log(err[ChainGrade.HASAN])

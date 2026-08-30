@@ -725,3 +725,56 @@ class TestContentMadarNegationBoundary:
         assert ErrorFingerprint.from_claim("Energy is not conserved.").negation is True
         # A genuinely non-negated claim does not.
         assert ErrorFingerprint.from_claim("Energy is conserved.").negation is False
+
+
+class TestJointFailureOptIn:
+    """Joint-failure aggregation (issue 54) is opt-in; measured priors override the matrix."""
+
+    def test_default_pairwise_still_upgrades(self):
+        # Backward compatible: joint_failure defaults off, so the pairwise
+        # product still upgrades DAIF -> HASAN with 2 independent HASAN chains.
+        pol = CappedCorroborationPolicy()
+        grade = pol.compute_corroborated_grade(
+            ChainGrade.DAIF, [ChainGrade.HASAN, ChainGrade.HASAN], [1.0, 1.0]
+        )
+        assert grade == ChainGrade.HASAN
+
+    def test_joint_failure_on_flat_prior_does_not_fire(self):
+        # The joint model at the default flat prior (0.20) is strictly conservative:
+        # the shared-mode floor (p * 0.10 = 0.02) exceeds the threshold (0.01), so
+        # corroboration does NOT fire. This is the honest behavior, not a bug — the
+        # joint model requires calibrated (measured) priors to upgrade.
+        pol = CappedCorroborationPolicy(joint_failure=True)
+        grade = pol.compute_corroborated_grade(
+            ChainGrade.DAIF, [ChainGrade.HASAN, ChainGrade.HASAN], [1.0, 1.0]
+        )
+        assert grade == ChainGrade.DAIF
+
+    def test_joint_failure_with_low_measured_prior_fires(self):
+        # With a low (attested cross-kind) prior, the joint model fires.
+        pol = CappedCorroborationPolicy(joint_failure=True)
+        grade = pol.compute_corroborated_grade(
+            ChainGrade.DAIF,
+            [ChainGrade.HASAN, ChainGrade.HASAN],
+            [1.0, 1.0],
+            chain_blind_spot_priors=[0.05, 0.05],
+        )
+        assert grade == ChainGrade.HASAN
+
+    def test_measured_prior_overrides_matrix(self):
+        pol = CappedCorroborationPolicy(measured_priors={("model", "source"): 0.05})
+        assert pol.blind_spot_prior_for("model", "source") == 0.05
+        # Unmeasured pairs still fall back to the hand-set matrix.
+        assert pol.blind_spot_prior_for("model", "model") == 0.25
+
+    def test_joint_failure_reduces_to_pairwise_at_zero_prior(self):
+        # At p=0 the joint model equals the pairwise product, so both fire.
+        pairwise = CappedCorroborationPolicy(shared_blind_spot_prior=0.0)
+        joint = CappedCorroborationPolicy(shared_blind_spot_prior=0.0, joint_failure=True)
+        g_pair = pairwise.compute_corroborated_grade(
+            ChainGrade.DAIF, [ChainGrade.HASAN, ChainGrade.HASAN], [1.0, 1.0]
+        )
+        g_joint = joint.compute_corroborated_grade(
+            ChainGrade.DAIF, [ChainGrade.HASAN, ChainGrade.HASAN], [1.0, 1.0]
+        )
+        assert g_pair == g_joint == ChainGrade.HASAN

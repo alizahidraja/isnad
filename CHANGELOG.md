@@ -27,6 +27,15 @@
   at the chance product so absence of observed co-failure is never mistaken for
   independence.
 
+- **Measured-prior wiring + opt-in joint-failure aggregation (#54).**
+  `CappedCorroborationPolicy(measured_priors=..., joint_failure=...)`: operator
+  measured co-failure priors override the hand-set `BLIND_SPOT_MATRIX`;
+  `joint_failure=True` switches the aggregation to the P(all fail together)
+  mixture (`(1-p)·e(base)·∏eᵢ^sᵢ + p·0.10`). Opt-in and strictly more
+  conservative — at the default flat prior it does not fire (honest, not a bug):
+  the joint model upgrades only with calibrated/attested priors. Default is
+  unchanged (pairwise, backward compatible).
+
 ### Fixed
 
 - **Public claim record no longer leaks raw corroboration floats (issue 187).**
