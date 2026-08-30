@@ -75,7 +75,7 @@ These limits are the point: the repo's credibility is built on not over-claiming
 ## 3. What changes
 
 | Layer | Change |
-|-------|--------|
+| ------- | -------- |
 | `types.py` | Add `Role` enum (moved from `trace/schema.py`; re-exported there for compatibility) |
 | `registry.py` | `role` param on `register`, `get`, `get_grade`, `effective_grade`, `needs_recheck`, `get_adalah_grade`, `get_grade_for_link`, `register_versioned`, `get_metadata`, `evidence_provenance`, `record_evidence`, `record_survival`, `flag_contradiction`, `renew_grade`, `bump_version`. Precision state keyed `(narrator, role, domain)`; integrity state keyed `(narrator, domain)` and shared. `quarantine` propagates to all roles. |
 | `models.py` | `role` column on `narrator_registry` (part of PK) and `narrator_evidence`. |
@@ -118,6 +118,7 @@ objection *survived* (a change was made), the change is recorded.  Where it was
 *overruled*, the reason is recorded — nothing is overruled silently.
 
 ### 6.1 Classical Rijāl Scholar
+
 - **Objection:** "Does per-role precision actually match the tradition?"
   → **Survives.** ʿAdālah is a judgment of the person; ḍabṭ is task-specific
   ("thiqa in fiqh, weak in ḥadīth"). The split is faithful.
@@ -129,6 +130,7 @@ objection *survived* (a change was made), the change is recorded.  Where it was
   domain — the critical containment property holds.
 
 ### 6.2 Systems / Backend Engineer
+
 - **Objection:** "Changing a PK/FK in SQLite needs a table recreate — is data
   preserved?"
   → **Survives.** The migration copies rows (`INSERT … SELECT`), drops the old
@@ -144,6 +146,7 @@ objection *survived* (a change was made), the change is recorded.  Where it was
   audit trail. No in-memory/DB divergence.
 
 ### 6.3 Honesty Auditor
+
 - **Objection:** "Does the README disclose the cost (cold-start sparsity)?"
   → **Survives.** The README "Honest limits" block states the trade plainly and
   links to this RFC. No result is overstated.
@@ -153,6 +156,7 @@ objection *survived* (a change was made), the change is recorded.  Where it was
   that sub-quarantine integrity strikes are per-role.
 
 ### 6.4 Security Engineer
+
 - **Objection:** "Could role-scoped precision evidence rehabilitate a
   quarantined narrator?"
   → **Survives.** `_effective_role_grade` floors to REJECTED *before* reading
@@ -162,6 +166,7 @@ objection *survived* (a change was made), the change is recorded.  Where it was
   applies before any role record is touched.
 
 ### 6.5 Data Scientist / ML Practitioner
+
 - **Objection:** "Six roles is coarse — why not a free-form task tag?"
   → **Overruled (ordinal-first).** Six categorical roles match the declared
   trace schema and avoid an unbounded key space; a finer `task` tag is a
@@ -171,6 +176,7 @@ objection *survived* (a change was made), the change is recorded.  Where it was
   a wrong cross-role grade; the cost is real and stated, not papered over.
 
 ### 6.6 OSS Maintainer
+
 - **Objection:** "Is `Role` importable everywhere it needs to be?"
   → **Survives.** `Role` lives in `types.py` and is re-exported from
   `isnad` and `isnad.trace` (explicit `as Role` re-export so strict mypy is

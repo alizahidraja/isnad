@@ -267,6 +267,7 @@ reconciling competing evidence), and **ṣaḥīḥ × contradiction is the high
 signal**, not an error state.
 
 Two serve-side gates apply on top of the matrix (both demote, never promote):
+
 - **Prior-only gate** — a narrator graded from a population *prior* alone
   (seeded, zero observed instances) can `SERVE WITH CAVEAT` at most; plain
   `SERVE` requires observation- or human-backed narrators. High-stakes

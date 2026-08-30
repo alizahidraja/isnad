@@ -43,7 +43,7 @@ upper bound, not a thing to exceed.
 ## Leaderboard
 
 | Model / method | κ (strict) | Human ceiling | Source |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **ISNAD weakest-link (strict)** | **0.871** | 0.331 | this dataset · `bench/docs/RESULTS.md` |
 | ISNAD weakest-link (lenient) | 0.761 | 0.331 | opt-in `lenient_unknown=True` |
 | shuffled-rank control | -0.0066 | — | negative control |
@@ -58,7 +58,7 @@ verdicts, and not hadith authenticity. "Mawḍūʿ" here is a chain-level flag
 ## Provenance & reproducibility
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Derived from | `emadjumaah/hadith-kg` (CC-BY-4.0) |
 | Source SHA-256 | `d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6` |
 | Mapping | `bench/docs/mapping.md` (preregistered, frozen) |
@@ -76,7 +76,7 @@ reported number — never a silent edit.
 
 ## File format
 
-One JSON object per line, prefixed by a `# ` JSON header carrying the source
+One JSON object per line, prefixed by a `#` JSON header carrying the source
 SHA-256, the mapping SHA-256, and the exact invocation. Schema:
 
 `sanad_id, hukum, true_grade, predicted_grade, disagreement_bucket, is_complete,

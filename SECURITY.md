@@ -29,7 +29,7 @@ If you believe you have found a security issue — especially one that lets a
 quarantined narrator recover, lets a grade be forged, or lets the
 integrity/precision distinction be bypassed — please report it privately:
 
-**Email: alizahidrajaa@gmail.com**
+**Email: <alizahidrajaa@gmail.com>**
 
 Please do **not** open a public issue for a suspected vulnerability. Include:
 
