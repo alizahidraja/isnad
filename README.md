@@ -37,7 +37,7 @@ print(verdict.why)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2607.24117-b31b1b.svg)](https://arxiv.org/abs/2607.24117)
 
-**🌐 Project home: https://alizahidraja.com/isnad** · ⭐ Star to follow along · [Contribute](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
+**🌐 Project home: <https://alizahidraja.com/isnad>** · ⭐ Star to follow along · [Contribute](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ---
 
@@ -212,7 +212,7 @@ on **575,060 graded hadith chains** (each graded by classical scholars), measure
 for agreement:
 
 | Quantity | Cohen's κ |
-|---|---:|
+| --- | ---: |
 | **ISNAD vs scholarly consensus** (strict default) | **0.871** |
 | a single scholar vs consensus | 0.450 |
 | scholars vs scholars (the human ceiling) | 0.331 |
@@ -352,6 +352,7 @@ the decision matrix; content criticism *against your corpus*; corroboration when
 independent chains agree.
 
 **What ISNAD does not cover:**
+
 - **Source legitimacy at the boundary** — grades are operator-assigned assertions,
   not auto-verified facts.
 - **Novel claim truth** — new, unverifiable claims are not auto-fact-checked.
@@ -386,6 +387,7 @@ not consensus.
 ## Experiments
 
 Every headline number is reproducible from the repo (mostly no API keys):
+
 - **Adversarial benchmark** — narrator grading 100% caught / 0 false positives;
   content criticism is the binding constraint (`experiments/adversarial_benchmark/`).
 - **§8 gated-vs-ungated** — 20,000 claims; weakest-link quarantine validated;
@@ -417,7 +419,7 @@ Built in public — collaborators welcome. The on-ramp:
 
 ## Ecosystem
 
-- 🌐 **Site:** https://alizahidraja.com/isnad · 📄 **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · 💾 **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873) · 📦 **PyPI:** [`isnad`](https://pypi.org/project/isnad/)
+- 🌐 **Site:** <https://alizahidraja.com/isnad> · 📄 **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · 💾 **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873) · 📦 **PyPI:** [`isnad`](https://pypi.org/project/isnad/)
 - 🗺️ **Architecture:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) · 🔗 **Trace schema:** [`docs/trace-schema.md`](docs/trace-schema.md) · 👁️ **Chain viewer:** [`viewer/index.html`](viewer/index.html)
 - 🧪 **Benchmark:** [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md) · 📊 **Critic eval:** [`docs/critics.md`](docs/critics.md) · 🕵️ **xz sleeper-narrator case study:** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md)
 

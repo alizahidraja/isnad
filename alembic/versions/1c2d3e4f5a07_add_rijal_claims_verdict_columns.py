@@ -9,17 +9,17 @@ rehydration is faithful instead of re-deriving a CONTRADICTION as UNVERIFIABLE
 (which silently upgraded a held SAHIH × CONTRADICTION → REVIEW to
 SERVE_WITH_CAVEAT).
 """
-from typing import Sequence, Union
+from collections.abc import Sequence
 
-from alembic import op
 import sqlalchemy as sa
 
+from alembic import op
 
 # revision identifiers, used by Alembic.
 revision: str = "1c2d3e4f5a07"
-down_revision: Union[str, Sequence[str], None] = "9d2e3f4a5b06"
-branch_labels: Union[str, Sequence[str], None] = None
-depends_on: Union[str, Sequence[str], None] = None
+down_revision: str | Sequence[str] | None = "9d2e3f4a5b06"
+branch_labels: str | Sequence[str] | None = None
+depends_on: str | Sequence[str] | None = None
 
 
 def upgrade() -> None:
