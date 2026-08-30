@@ -59,6 +59,7 @@ class ChainLinkSpec:
         input_snapshot: str | None = None,
         output_snapshot: str | None = None,
         document_hashes: list[str] | None = None,
+        timestamp: str | None = None,
     ):
         self.narrator_id = narrator_id
         self.step = step
@@ -77,6 +78,10 @@ class ChainLinkSpec:
         # corroboration engine's madār check (issue #125): two chains that
         # retrieved the same document are one source, not two.
         self.document_hashes = document_hashes or []
+        # When the framework observed this link's transmission. None means "not
+        # captured" — the honest default, never a fabricated clock. The
+        # chain_links.timestamp column records the DB-insert time separately.
+        self.timestamp = timestamp
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -90,7 +95,10 @@ class ChainLinkSpec:
             "input_snapshot": self.input_snapshot,
             "output_snapshot": self.output_snapshot,
             "document_hashes": list(self.document_hashes),
-            "timestamp": datetime.now(UTC).isoformat(),
+            # Honest: the observed transmission time, or null when not captured.
+            # (Previously this fabricated ``datetime.now()`` at serialization
+            # time — storage time masquerading as transmission time.)
+            "timestamp": self.timestamp,
         }
 
 
@@ -276,6 +284,7 @@ def get_chain_from_db(session: Session, claim_id: str) -> Chain | None:
             input_snapshot=link.input_snapshot,
             output_snapshot=link.output_snapshot,
             document_hashes=list(link.document_hashes or []),
+            timestamp=link.timestamp.isoformat() if link.timestamp else None,
         )
         for link in links
     ]

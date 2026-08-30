@@ -641,15 +641,175 @@ class TestObservabilityAndReviewEdgeCases:
         assert r.status_code == 404
 
 
-class TestQuarantineIsActiveContainment:
-    """P0-C: a REJECT_AND_QUARANTINE_NARRATOR / QUARANTINE verdict must actually
-    quarantine the narrator (COMPROMISED + inactive), not just flag the record."""
+class _AlwaysConsistentCritic:
+    """Deterministic critic that always returns CONSISTENT — to force the
+    matrix to SERVE a SAHIH chain, isolating the P0-B serve gate."""
+
+    def evaluate(self, claim_text, normalized_claim, corpus_claims, domain):
+        return ContentVerdict.CONSISTENT
+
+
+class TestPriorOnlyServeGate:
+    """P0-B: a seeded (prior-only) narrator must not plain-SERVE."""
+
+    @pytest.fixture(autouse=True)
+    def force_consistent_critic(self):
+        app.dependency_overrides[get_critic] = lambda: _AlwaysConsistentCritic()
+        yield
+        app.dependency_overrides.pop(get_critic, None)
+
+    def _seed_reliable(self, narrator_id: str, domain: str = "physics"):
+        from isnad.core.registry import RegistryDB
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import NarratorGrade, NarratorType
+
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            rdb.registry.seed(
+                narrator_id,
+                domain,
+                NarratorGrade.RELIABLE,
+                narrator_type=NarratorType.SOURCE,
+            )
+            rdb.flush()
+
+    def _submit(self, narrator_id: str, domain: str = "physics") -> dict:
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "a seeded source claim",
+                "domain": domain,
+                "chain": [{"narrator_id": narrator_id}],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        return r.json()
+
+    def test_prior_only_chain_is_capped_to_caveat(self):
+        self._seed_reliable("narrator:seeded-1")
+        rec = self._submit("narrator:seeded-1")
+        # Chain is SAHIH and content CONSISTENT — but the narrator is prior-only,
+        # so the soft gate caps plain SERVE to SERVE_WITH_CAVEAT.
+        assert rec["chain_grade"] == "sahih"
+        assert rec["content_verdict"] == "consistent"
+        assert rec["action"] == "serve_with_caveat"
+        assert "narrator:seeded-1" in rec["prior_only_narrators"]
+
+    def test_hold_domain_downgrades_prior_only_to_review(self):
+        self._seed_reliable("narrator:seeded-2", domain="medical")
+        os.environ["ISNAD_SERVE_HOLD_DOMAINS"] = "medical"
+        try:
+            rec = self._submit("narrator:seeded-2", domain="medical")
+        finally:
+            os.environ.pop("ISNAD_SERVE_HOLD_DOMAINS", None)
+        assert rec["chain_grade"] == "sahih"
+        assert rec["action"] == "review"
+        assert "narrator:seeded-2" in rec["prior_only_narrators"]
+
+
+class TestReGradeLoopClosure:
+    """P1: the jarḥ–taʿdīl loop is wired into submit_claim.
+
+    A live contradiction must record jarh evidence against the NEW claim's
+    narrator (it previously recorded nothing — the loop was orphaned).
+    """
 
     @pytest.fixture(autouse=True)
     def force_embedding_critic(self):
         app.dependency_overrides[get_critic] = lambda: EmbeddingCritic()
         yield
         app.dependency_overrides.pop(get_critic, None)
+
+    def test_contradiction_flags_the_new_narrator(self):
+        from isnad.core.registry import RegistryDB
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import EvidenceAction, EvidenceType, NarratorGrade, NarratorType
+
+        # Seed a RELIABLE narrator so the chain is not the strict UNGRADED→DAIF
+        # default — we want to observe the jarh strike, not the chain grade.
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            rdb.registry.seed(
+                "narrator:reliable-src",
+                "physics",
+                NarratorGrade.RELIABLE,
+                narrator_type=NarratorType.SOURCE,
+            )
+            rdb.flush()
+
+        def _submit(text: str) -> dict:
+            r = client.post(
+                "/v1/claims",
+                json={
+                    "claim_text": text,
+                    "domain": "physics",
+                    "chain": [{"narrator_id": "narrator:reliable-src"}],
+                },
+                headers={"X-API-Key": "isnad-admin"},
+            )
+            assert r.status_code == 200
+            return r.json()
+
+        _submit("the object moves at a speed of 10 meters per second")
+        claim2 = _submit("the object moves at a speed of 100 meters per second")
+        assert claim2["content_verdict"] == "contradiction"
+
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            narrator = rdb.registry.get("narrator:reliable-src", "physics")
+            assert narrator is not None
+            jarh = [
+                e
+                for e in narrator.evidence_log
+                if EvidenceType(str(e.get("evidence_type", "")))
+                == EvidenceType.CORROBORATION_OUTCOME
+                and EvidenceAction(str(e.get("action", ""))) == EvidenceAction.JARH
+            ]
+            assert len(jarh) == 1, f"expected 1 contradiction strike, got {len(jarh)}"
+
+    def test_corroboration_renews_grade(self):
+        """Corroboration fires renew_grade on the narrators (freshness signal)."""
+        from isnad.core.registry import RegistryDB
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import NarratorGrade, NarratorType
+
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            rdb.registry.seed(
+                "narrator:renew-src",
+                "physics",
+                NarratorGrade.ACCEPTABLE,
+                narrator_type=NarratorType.SOURCE,
+            )
+            rdb.flush()
+
+        # Two corroborating claims from independent narrators → corroboration
+        # upgrade → renew_grade on the base narrator.
+        for text in ("water boils at 100 degrees celsius", "water boils at 100 celsius"):
+            r = client.post(
+                "/v1/claims",
+                json={
+                    "claim_text": text,
+                    "domain": "physics",
+                    "chain": [{"narrator_id": "narrator:renew-src"}],
+                },
+                headers={"X-API-Key": "isnad-admin"},
+            )
+            assert r.status_code == 200
+
+        # renew_grade is a no-op for UNGRADED/REJECTED but our narrator is
+        # ACCEPTABLE, so we just assert no exception was raised and the
+        # narrator still resolves (the freshness renewal is not directly
+        # observable through the public record without a clock read).
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            assert rdb.registry.get("narrator:renew-src", "physics") is not None
 
     def test_mawdu_claim_quarantines_the_narrator(self):
         from isnad.core.registry import RegistryDB

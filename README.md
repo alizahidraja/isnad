@@ -173,6 +173,11 @@ from isnad.integrations.langchain import IsnadMiddleware
 mw = IsnadMiddleware(reg, domain="physics")  # wrap_tool_call grades + gates
 ```
 
+> **Want to ship this to a real system this afternoon?** See
+> [`docs/onboard-in-a-day.md`](docs/onboard-in-a-day.md) for three copy-paste
+> recipes (self-maintaining KB, medical RAG, legal RAG) and the honesty
+> contract that must not be broken.
+
 ---
 
 ## What's Validated vs. What's Not

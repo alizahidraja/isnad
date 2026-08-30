@@ -64,6 +64,47 @@ def decide(chain_grade: ChainGrade, content_verdict: ContentVerdict) -> Action:
     return _MATRIX[key]
 
 
+def gate_serve(
+    action: Action,
+    prior_only_narrators: list[str] | None,
+    *,
+    hold: bool = False,
+) -> Action:
+    """Cap a serve action when the chain rests on prior-only narrators (P0-B).
+
+    A narrator graded from a population prior alone (a benchmark seed with zero
+    observed in-pipeline instances) is an unvalidated assumption, however
+    confident the prior looks (issue #6). Classical rijāl graded on observed
+    instances, never priors — a reputation-only transmitter is majhūl al-ḥāl,
+    not thiqa. So a chain through a prior-only narrator must not be served as
+    if its transmission had been observed.
+
+    This gates the *action*, never the chain grade: the grade stays what the
+    weakest-link evaluation computed (a SAHIH chain through a seeded narrator
+    is still SAHIH — we just don't plain-SERVE it until someone observes the
+    transmitter in this pipeline).
+
+    Args:
+        action: The matrix action (from ``decide``).
+        prior_only_narrators: Narrator ids in the serving chain whose grade is
+            prior-only. Empty/None means no gate applies.
+        hold: When True (hard gate — high-stakes domains), a prior-only chain
+            downgrades any serve to REVIEW. When False (default soft gate), a
+            plain SERVE is capped to SERVE_WITH_CAVEAT.
+
+    Returns:
+        The (possibly capped) action. REVIEW/QUARANTINE/REJECT are never
+        touched — the gate only demotes serve, never upgrades anything.
+    """
+    if not prior_only_narrators:
+        return action
+    if action not in (Action.SERVE, Action.SERVE_WITH_CAVEAT):
+        return action
+    if hold:
+        return Action.REVIEW
+    return Action.SERVE_WITH_CAVEAT
+
+
 def describe_action(
     chain_grade: ChainGrade,
     content_verdict: ContentVerdict,

@@ -6,7 +6,7 @@ Verifies paper §4.4: every cell routes to the correct action, including:
 - All 8 core cells (plus unverifiable variants).
 """
 
-from isnad.core.decision import decide, describe_action
+from isnad.core.decision import decide, describe_action, gate_serve
 from isnad.types import Action, ChainGrade, ContentVerdict
 
 
@@ -70,3 +70,33 @@ class TestDecisionMatrix:
     def test_describe_action_returns_string(self) -> None:
         desc = describe_action(ChainGrade.SAHIH, ContentVerdict.CONTRADICTION)
         assert "ʿilal" in desc.lower() or "highest-value" in desc.lower()
+
+
+class TestServeGate:
+    """P0-B: a prior-only (seeded, unobserved) narrator must not plain-SERVE."""
+
+    def test_no_prior_only_leaves_action_unchanged(self) -> None:
+        assert gate_serve(Action.SERVE, []) == Action.SERVE
+        assert gate_serve(Action.SERVE, None) == Action.SERVE
+
+    def test_soft_gate_caps_serve_to_caveat(self) -> None:
+        assert gate_serve(Action.SERVE, ["model:seeded"], hold=False) == Action.SERVE_WITH_CAVEAT
+
+    def test_soft_gate_keeps_caveat(self) -> None:
+        assert (
+            gate_serve(Action.SERVE_WITH_CAVEAT, ["model:seeded"], hold=False)
+            == Action.SERVE_WITH_CAVEAT
+        )
+
+    def test_hard_gate_holds_to_review(self) -> None:
+        assert gate_serve(Action.SERVE, ["model:seeded"], hold=True) == Action.REVIEW
+        assert gate_serve(Action.SERVE_WITH_CAVEAT, ["model:seeded"], hold=True) == Action.REVIEW
+
+    def test_gate_never_touches_non_serve(self) -> None:
+        # The gate only demotes serve; it never upgrades or alters containment.
+        assert gate_serve(Action.REVIEW, ["model:seeded"], hold=True) == Action.REVIEW
+        assert gate_serve(Action.QUARANTINE, ["model:seeded"]) == Action.QUARANTINE
+        assert (
+            gate_serve(Action.REJECT_AND_QUARANTINE_NARRATOR, ["model:seeded"], hold=True)
+            == Action.REJECT_AND_QUARANTINE_NARRATOR
+        )

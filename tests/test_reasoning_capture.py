@@ -82,8 +82,8 @@ class TestReasoningHashByDefault:
         assert not hasattr(rc, "raw")
         # The preview truncates, but even it must not contain the full secret.
         assert rc.preview == secret[:120]
-        # The hash is present and deterministic.
-        assert len(rc.content_hash) == 16
+        # The hash is present and deterministic (full SHA-256).
+        assert len(rc.content_hash) == 64
 
 
 class TestReasoningOnNode:

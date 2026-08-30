@@ -435,7 +435,11 @@ check(
 
 r = client.get("/v1/claims?domain=stress_test&limit=250&served_only=false")
 list_data = r.json()
-check("Claims list shows all 200 (audit view)", list_data["total"] == 200, f"total={list_data['total']}")
+check(
+    "Claims list shows all 200 (audit view)",
+    list_data["total"] == 200,
+    f"total={list_data['total']}",
+)
 
 
 # ===================================================================

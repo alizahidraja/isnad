@@ -963,7 +963,11 @@ check("GET /v1/claims → 200", r.status_code == 200)
 list_data = r.json()
 r_audit = client.get("/v1/claims?served_only=false")
 check("GET /v1/claims?served_only=false → 200", r_audit.status_code == 200)
-check("Claims list has total (audit view)", r_audit.json()["total"] >= 1, f"total={r_audit.json()['total']}")
+check(
+    "Claims list has total (audit view)",
+    r_audit.json()["total"] >= 1,
+    f"total={r_audit.json()['total']}",
+)
 
 # List claims with domain filter
 r = client.get("/v1/claims?domain=physics")

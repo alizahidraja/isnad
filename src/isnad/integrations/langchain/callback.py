@@ -57,8 +57,14 @@ except ImportError:
 
 
 def _hash_content(text: str) -> str:
-    """SHA-256 of content — identity, not disclosure."""
-    return hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
+    """Full SHA-256 of content — identity + integrity, not disclosure.
+
+    Deliberately NOT truncated: the trace schema documents this as "SHA-256 of
+    document content for integrity", and a 64-bit prefix is collision-prone for
+    legal chain-of-custody. A full 256-bit digest (64 hex chars) is the
+    integrity guarantee the schema promises.
+    """
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
 def _doc_to_ref(doc: Any) -> dict[str, str | None]:
@@ -67,9 +73,12 @@ def _doc_to_ref(doc: Any) -> dict[str, str | None]:
         return {"source": "unknown", "doc_id": None, "content_hash": None}
     metadata = getattr(doc, "metadata", {}) or {}
     page_content = getattr(doc, "page_content", "") or ""
+    raw_doc_id = metadata.get("id", metadata.get("doc_id"))
     return {
         "source": str(metadata.get("source", "unknown")),
-        "doc_id": str(metadata.get("id", metadata.get("doc_id", None))),
+        # Never the literal string "None": an absent doc_id must be a true NULL
+        # so a downstream custody record cannot confuse it with a real id.
+        "doc_id": str(raw_doc_id) if raw_doc_id is not None else None,
         "content_hash": _hash_content(page_content) if page_content else None,
     }
 

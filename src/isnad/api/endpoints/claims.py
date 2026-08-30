@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import logging
+import os
 import uuid
 from dataclasses import dataclass, field
+from datetime import UTC, datetime
 from typing import Any
 
 from fastapi import Depends, HTTPException, Query
@@ -22,7 +24,7 @@ from isnad.core.chain import (
     store_claim,
 )
 from isnad.core.corroboration import CorroborationEngine
-from isnad.core.decision import decide, describe_action
+from isnad.core.decision import decide, describe_action, gate_serve
 from isnad.core.fidelity import compute_fidelity_verdicts
 from isnad.core.grading import grade_chain
 from isnad.core.identity import is_unknown_version, resolve_narrator_id
@@ -79,6 +81,28 @@ _app_state = AppState()
 
 def get_state() -> AppState:
     return _app_state
+
+
+def _serve_hold(domain: str) -> bool:
+    """Whether a prior-only chain must downgrade serve to REVIEW (hard gate).
+
+    Two knobs, both honest and operator-controlled:
+    - ``ISNAD_SERVE_GATE=hold`` makes EVERY domain hold (strict mode).
+    - ``ISNAD_SERVE_HOLD_DOMAINS=medical,legal`` holds only the named domains.
+
+    Default is the soft gate (cap SERVE → SERVE_WITH_CAVEAT), which keeps a
+    cold-start knowledge base useful while never plain-serving an unobserved
+    narrator.
+    """
+    gate = os.environ.get("ISNAD_SERVE_GATE", "caveat").strip().lower()
+    if gate == "hold":
+        return True
+    hold_domains = {
+        d.strip().lower()
+        for d in os.environ.get("ISNAD_SERVE_HOLD_DOMAINS", "").split(",")
+        if d.strip()
+    }
+    return domain.lower() in hold_domains
 
 
 def _hydrate_claims_from_db(session: Any) -> int:
@@ -270,6 +294,10 @@ async def submit_claim(
             input_snapshot=link.input_snapshot,
             output_snapshot=link.output_snapshot,
             document_hashes=link.document_hashes,
+            # The moment ISNAD observed this chain — not a per-link
+            # transmission clock (the client does not supply one). The DB
+            # chain_links.timestamp records the same observed instant.
+            timestamp=datetime.now(UTC).isoformat(),
         )
         for i, link in enumerate(chain_data)
     ]
@@ -345,9 +373,30 @@ async def submit_claim(
 
     action = decide(effective_grade, cv)
 
+    # P0-B: gate SERVE on prior-only provenance. A narrator graded from a
+    # population prior alone (seeded RELIABLE with zero observed instances) must
+    # not be served as if its transmission had been observed. The gate caps the
+    # action (never the chain grade): soft default caps SERVE →
+    # SERVE_WITH_CAVEAT; a high-stakes domain (hold) downgrades any serve to
+    # REVIEW.
+    prior_only_narrators = [
+        nid
+        for nid in resolved_narrator_ids
+        if reg.registry.evidence_provenance(nid, domain).prior_only
+    ]
+    action = gate_serve(action, prior_only_narrators, hold=_serve_hold(domain))
+
     claim_id = str(uuid.uuid4())
     state.index_claim(claim_id, normalized)
     corroborating = state.find_corroborating(normalized, claim_id)
+
+    description = describe_action(effective_grade, cv)
+    if prior_only_narrators and action == Action.SERVE_WITH_CAVEAT:
+        description = (
+            f"{description} Prior-only source(s) {', '.join(prior_only_narrators)}: "
+            "grade rests on an operator prior (seed), not observed in-pipeline "
+            "transmission — verify before relying."
+        )
 
     record = {
         "claim_id": claim_id,
@@ -356,7 +405,7 @@ async def submit_claim(
         "chain_grade": effective_grade.value,
         "content_verdict": cv.value,
         "action": action.value,
-        "description": describe_action(effective_grade, cv),
+        "description": description,
         "chain": chain.to_jsonb(),
         "served": action.value in ("serve", "serve_with_caveat"),
         "quarantined": action.value in ("quarantine", "reject_and_quarantine_narrator"),
@@ -365,6 +414,7 @@ async def submit_claim(
         "corroborating_claims": len(corroborating),
         "narrator_ids": [l.narrator_id for l in chain.links],
         "resolved_narrator_ids": resolved_narrator_ids,
+        "prior_only_narrators": prior_only_narrators,
         "link_grades": [g.value for g in link_grades],
         "link_fidelity_verdicts": [v.value for v in link_fidelity_verdicts],
         "version_drift_detected": _version_drift_detected(reg.registry, chain),
@@ -446,6 +496,39 @@ async def submit_claim(
             reg.flush()
         except Exception as exc:
             logger.error(f"Failed to persist quarantine: {exc}")
+
+    # Re-grade loop closure (P1): the jarḥ–taʿdīl loop was computed but never
+    # applied — a contradiction never downgraded a narrator, corroboration
+    # never renewed a grade. Close both:
+    #   - a live contradiction is jarh evidence against the NEW claim's
+    #     narrators (a factual disagreement questions their ḍabṭ/precision),
+    #     routed through the TransitionPolicy toward a downgrade;
+    #   - a corroboration upgrade is a freshness signal (independent chains
+    #     still agree → the world has not changed on this narrator).
+    applied_re_grade = False
+    if has_live_contradiction and action != Action.REJECT_AND_QUARANTINE_NARRATOR:
+        for narrator_id in resolved_narrator_ids:
+            try:
+                reg.registry.flag_contradiction(
+                    narrator_id,
+                    domain,
+                    description="claim contradicted an existing chain",
+                )
+                applied_re_grade = True
+            except Exception as exc:
+                logger.warning(f"Failed to flag contradiction on {narrator_id}: {exc}")
+    elif corr_result.upgraded:
+        for narrator_id in resolved_narrator_ids:
+            try:
+                reg.registry.renew_grade(narrator_id, domain, reason="corroboration")
+                applied_re_grade = True
+            except Exception as exc:
+                logger.warning(f"Failed to renew grade on {narrator_id}: {exc}")
+    if applied_re_grade:
+        try:
+            reg.flush()
+        except Exception as exc:
+            logger.error(f"Failed to persist re-grade evidence: {exc}")
 
     return record
 

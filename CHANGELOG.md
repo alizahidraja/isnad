@@ -1,5 +1,48 @@
 # Changelog
 
+## [2.17.0] — 2026-08-30
+
+### Fixed — serving-path P0s from the 7-persona 3-user audit
+
+- **P0-A · restart no longer destroys the contradiction signal.** `RijalClaim`
+  now persists `content_verdict` + `action` (migration `1c2d3e4f5a07`), and
+  rehydration is faithful: a held `SAHIH × CONTRADICTION → REVIEW` stays REVIEW
+  instead of being silently re-derived as `SAHIH × UNVERIFIABLE →
+  SERVE_WITH_CAVEAT`. Legacy rows without the columns fall back to the
+  conservative re-derivation (never a serve).
+- **P0-B · a prior-only (seeded, unobserved) narrator can no longer plain-SERVE.**
+  New `gate_serve()` caps SERVE → SERVE_WITH_CAVEAT when any serving-chain
+  narrator's grade rests on a population prior with zero observed instances
+  (classical majhūl al-ḥāl, not thiqa). The gate changes the *action*, never the
+  *grade*. High-stakes domains opt into a hard gate (`ISNAD_SERVE_GATE=hold` or
+  `ISNAD_SERVE_HOLD_DOMAINS=medical,legal`) → REVIEW. Structured
+  `prior_only_narrators` is surfaced on the record.
+- **P0-C · quarantine is now active containment, not passive labeling.**
+  `submit_claim` actually calls `registry.quarantine()` (COMPROMISED + inactive)
+  and flushes. `registry.load()` restores `is_active` (was reset to True on
+  every reload — an inactive narrator reactivated after restart).
+  `GET /v1/claims` defaults to `served_only=true` so a downstream RAG no longer
+  reads quarantined/rejected claims.
+- **P0-D (legal custody) · full SHA-256, no fabricated timestamps, no "None"
+  doc_id.** `_hash_content` no longer truncates to 64 bits; the trace
+  `content_hash` is a real 256-bit digest. `doc_id` is a true NULL when absent
+  (was the literal string "None"). Per-link `invocation_timestamp` is wired from
+  `chain_links.timestamp`; `ChainLinkSpec.to_dict()` no longer fabricates
+  `datetime.now()` at serialization (storage time masquerading as transmission
+  time).
+
+### Fixed — re-grade loop orphaned (P1)
+
+- A live contradiction now records jarh evidence against the new claim's
+  narrators (`flag_contradiction`); a corroboration upgrade renews their grade
+  window (`renew_grade`). Previously both were computed but never applied.
+
+### Hygiene
+
+- CITATION.cff version/DOI lockstep (2.16.0 → 2.17.0; permanent paper DOI
+  10.5281/zenodo.21211290; software DOI 10.5281/zenodo.21216873).
+- LangChain callback comment no longer self-contradicts corroboration status.
+
 ## [2.16.0] — 2026-08-29
 
 ### Added

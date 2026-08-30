@@ -162,7 +162,7 @@ class TestInputProvenance:
         # Hashes are present, content is not
         for d in ret_node.input_documents:
             assert d.content_hash is not None
-            assert len(d.content_hash) == 16  # truncated SHA-256
+            assert len(d.content_hash) == 64  # full SHA-256 (integrity, not a prefix)
 
     def test_retriever_documents_propagated_to_parent(self):
         """Retrieved docs should also be recorded on the parent (calling) node."""

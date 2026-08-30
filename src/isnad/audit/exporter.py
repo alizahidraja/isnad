@@ -99,7 +99,7 @@ def build_audit_record(
                 model_version=(
                     narrator.model_version if narrator and narrator.model_version else link.version
                 ),
-                invocation_timestamp=None,
+                invocation_timestamp=link.timestamp,
                 input_hash=sha256_hex(link.input_snapshot) if link.input_snapshot else None,
                 output_hash=sha256_hex(link.output_snapshot) if link.output_snapshot else None,
                 upstream_ids=upstream,
