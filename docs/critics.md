@@ -13,7 +13,7 @@ cases: 20 consistent, 25 genuine contradiction, 15 unrelated, over a 30-fact
 physics corpus; see `experiments/critic_eval/RESULTS.md`):
 
 | Critic | Contra. recall | False-consistent (danger) | 3-way acc | Requirements |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | `LLMCritic` (DeepSeek) | **1.000** | **0.000** | 1.000 | API key |
 | `LocalNLICritic` | 0.760 | 0.000 | 0.417 | `sentence-transformers` |
 | `HybridCritic` | 0.720 | 0.040 | 0.433 | `sentence-transformers` |
@@ -21,7 +21,7 @@ physics corpus; see `experiments/critic_eval/RESULTS.md`):
 
 **The honest headline.** Only the LLM tier is near-perfect (100% recall, zero
 false-consistents). The offline NLI critics, after fixing three defects (issue
-#110 — swapped label order, raw logits vs probability thresholds, and
+# 110 — swapped label order, raw logits vs probability thresholds, and
 max-over-whole-corpus "different fact" false positives), now *safely* recall
 ~72–76% of genuine contradictions with near-zero false-consistents — they are
 conservative (low 3-way accuracy, most non-contradictions return UNVERIFIABLE),
