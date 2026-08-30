@@ -102,6 +102,41 @@ class TestDetectContentMadar:
         )
         assert madar is True
 
+    def test_shared_wrong_entity_is_madar(self):
+        # Same wrong author + wrong work, reworded — error identity, not text.
+        madar = detect_content_madar(
+            "Shakespeare wrote the Iliad.",
+            CONTRADICTION,
+            [("The Iliad was authored by Shakespeare.", CONTRADICTION)],
+        )
+        assert madar is True
+
+    def test_different_wrong_entity_is_not_madar(self):
+        # Different wrong author — different mistake, not a shared one.
+        madar = detect_content_madar(
+            "Shakespeare wrote the Iliad.",
+            CONTRADICTION,
+            [("Marlowe wrote the Iliad.", CONTRADICTION)],
+        )
+        assert madar is False
+
+    def test_same_subject_different_work_is_not_madar(self):
+        # Shared subject alone is NOT a shared error (set equality, not intersection).
+        madar = detect_content_madar(
+            "Shakespeare wrote the Iliad.",
+            CONTRADICTION,
+            [("Shakespeare wrote the Odyssey.", CONTRADICTION)],
+        )
+        assert madar is False
+
+    def test_shared_wrong_date_is_madar(self):
+        madar = detect_content_madar(
+            "The event occurred in the year 1492.",
+            CONTRADICTION,
+            [("A historical event took place in 1492.", CONTRADICTION)],
+        )
+        assert madar is True
+
 
 class TestContentMadarWiredIntoEngine:
     """The engine withholds corroboration when a corroborator repeats the base
@@ -127,7 +162,7 @@ class TestContentMadarWiredIntoEngine:
             base_content_verdict=ContentVerdict.CONTRADICTION,
         )
         assert result.upgraded is False
-        assert result.content_madar_detected is True
+        assert result.shared_error_detected is True
         assert "content-level madār" in result.reason
 
     def test_engine_withholds_even_without_live_contradiction_flag(self):
@@ -153,7 +188,7 @@ class TestContentMadarWiredIntoEngine:
             # has_live_contradiction deliberately NOT set
         )
         assert result.upgraded is False
-        assert result.content_madar_detected is True
+        assert result.shared_error_detected is True
 
     def test_engine_does_not_withhold_on_different_errors(self):
         """Two chains making different mistakes are independently wrong, not a
@@ -176,4 +211,4 @@ class TestContentMadarWiredIntoEngine:
             base_claim_text="The speed of light is 500,000 km/s.",
             base_content_verdict=ContentVerdict.CONTRADICTION,
         )
-        assert result.content_madar_detected is False
+        assert result.shared_error_detected is False

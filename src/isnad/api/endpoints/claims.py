@@ -452,7 +452,7 @@ async def submit_claim(
             # factors), NOT claim-truth confidence. No numeric confidence here.
             "effective_weight": corr_result.effective_weight,
             "reason": corr_result.reason,
-            "content_madar_detected": corr_result.content_madar_detected,
+            "shared_error_detected": corr_result.shared_error_detected,
             "shared_blind_spot_prior": corr_result.shared_blind_spot_prior,
             "effective_witnesses": corr_result.effective_witnesses,
             "chain_independence": [

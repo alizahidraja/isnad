@@ -553,7 +553,7 @@ class CorroborationResult:
     # number or flipped negation) — a fingerprint of a common upstream, not
     # independent confirmation. This is the *detectable* half of the
     # chain-independence problem.
-    content_madar_detected: bool = False
+    shared_error_detected: bool = False
 
 
 # Narrator types, in order of precedence for deciding a chain's "dominant
@@ -865,7 +865,7 @@ class CorroborationEngine:
                 independent_chains=0,
                 effective_weight=0.0,
                 upgraded=False,
-                content_madar_detected=content_madar,
+                shared_error_detected=content_madar,
                 reason=(
                     "Corroboration withheld: claim has a live content contradiction "
                     "outstanding"
@@ -890,7 +890,7 @@ class CorroborationEngine:
                 independent_chains=0,
                 effective_weight=0.0,
                 upgraded=False,
-                content_madar_detected=True,
+                shared_error_detected=True,
                 reason=(
                     "Corroboration withheld: content-level madār detected — "
                     "a corroborating chain repeats the same error"

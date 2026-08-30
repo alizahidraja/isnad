@@ -12,6 +12,14 @@
   `affirmation_gate.register()` for programmatic/test callers. Gated critics:
   `LLMCritic` (incl. its cache-hit path), `LocalNLICritic`, `HybridCritic`.
 
+- **Widened content-level shared-error fingerprint (#54).** `ErrorFingerprint`
+  now detects the *same specific mistake* beyond numbers/negation: shared named
+  entities (via set equality, so a shared subject alone is not a shared error),
+  dates, citations, and number+unit pairs, plus zero-dep lexical shingling for
+  near-paraphrase. Result field `content_madar_detected` → `shared_error_detected`
+  (evidence-consistent-with, not proof of a common upstream). Still oracle-gated
+  on the base claim being CONTRADICTION; never withholds a correct agreement.
+
 ## [2.18.0] — 2026-08-30
 
 ### Fixed — five remaining decisions (10-person panel, 10/10 converged)

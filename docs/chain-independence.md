@@ -66,7 +66,7 @@ it can never *prove independence* — it can only fail to find shared signals.
    engine-wired (v2.12.0)**: when the base claim is CONTRADICTION and a
    corroborating chain repeats the *same error* (identical wrong number or
    flipped negation), `CorroborationEngine` withholds the upgrade and reports
-   `content_madar_detected=True` (`core/content_madar.py`).
+   `shared_error_detected=True` (`core/content_madar.py`).
 
 The *undetectable* half — correlated training data across distinct model
 families with no shared source and no checkable error — remains an open,
