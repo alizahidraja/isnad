@@ -20,9 +20,10 @@ physics corpus; see `experiments/critic_eval/RESULTS.md`):
 | `EmbeddingCritic` | 0.120 | **0.000** (never affirms) | — | nothing |
 
 **The honest headline.** Only the LLM tier is near-perfect (100% recall, zero
-false-consistents). The offline NLI critics, after fixing three defects (issue
-# 110 — swapped label order, raw logits vs probability thresholds, and
-max-over-whole-corpus "different fact" false positives), now *safely* recall
+false-consistents). The offline NLI critics, after fixing three defects —
+swapped label order, raw logits vs probability thresholds, and
+max-over-whole-corpus "different fact" false positives (issue 110) — now
+*safely* recall
 ~72–76% of genuine contradictions with near-zero false-consistents — they are
 conservative (low 3-way accuracy, most non-contradictions return UNVERIFIABLE),
 which is the correct under-trust bias. The `EmbeddingCritic` is now

@@ -33,6 +33,14 @@ class TestErrorFingerprint:
         b = ErrorFingerprint.from_claim("3000 records")
         assert a.shares_error_with(b)
 
+    def test_no_numbers_returns_bool_false_not_frozenset(self):
+        """Empty numbers must return False (bool), not an empty frozenset."""
+        a = ErrorFingerprint.from_claim("This claim has no figures at all.")
+        b = ErrorFingerprint.from_claim("This claim also has no figures whatsoever.")
+        result = a.shares_error_with(b)
+        assert result is False
+        assert isinstance(result, bool)
+
 
 class TestDetectContentMadar:
     def test_correct_agreement_is_not_madar(self):

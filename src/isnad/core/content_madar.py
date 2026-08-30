@@ -95,7 +95,15 @@ class ErrorFingerprint:
             return self.numbers == other.numbers
         # Different words but identical numbers and identical negation polarity:
         # the specific wrong figure (or the specific wrong polarity) is echoed.
-        return self.numbers and self.numbers == other.numbers and self.negation == other.negation
+        # ``bool(self.numbers)`` guards the empty case explicitly: the old form
+        # ``self.numbers and ...`` returned an empty frozenset (falsy) instead of
+        # False when there were no numbers — behaviorally equivalent but not a
+        # bool, which is a latent type bug (and a footgun for `is False` checks).
+        return (
+            bool(self.numbers)
+            and self.numbers == other.numbers
+            and self.negation == other.negation
+        )
 
 
 def detect_content_madar(
