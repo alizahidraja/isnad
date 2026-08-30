@@ -64,6 +64,25 @@ print(v.chain_grade, v.action, v.why)  # weakest link decides; `why` is the reas
 Claims whose only support is a seed are caveat-served; the first
 `record_survival` / post-hoc audit on a narrator unlocks plain serve.
 
+**Give the critic your documents, not just prior claims.** The content critic
+checks a claim against *what it was grounded in*. Pass the retrieved KB
+documents as `corpus_docs` so consistency is judged against evidence, not
+against other (unverified) claims:
+
+```python
+import requests
+requests.post(
+    "http://localhost:8000/v1/claims",
+    json={"claim_text": "the release shipped 2026-08-29", "domain": "kb",
+          "chain": [{"narrator_id": "source:internal-docs"}],
+          "corpus_docs": ["release notes: shipped 2026-08-29"]},
+    headers={"X-API-Key": "isnad-admin"},
+)
+```
+
+(An operator-supplied corpus is an assumption, not an observation — ISNAD
+records `critic_corpus_operator_docs` so the provenance is never hidden.)
+
 **Serve the graded surface, not the raw table:**
 
 ```python

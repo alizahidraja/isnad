@@ -266,6 +266,15 @@ Two defaults to notice: contradictions go to a human by default (LLMs are bad at
 reconciling competing evidence), and **ṣaḥīḥ × contradiction is the highest-value
 signal**, not an error state.
 
+Two serve-side gates apply on top of the matrix (both demote, never promote):
+- **Prior-only gate** — a narrator graded from a population *prior* alone
+  (seeded, zero observed instances) can `SERVE WITH CAVEAT` at most; plain
+  `SERVE` requires observation- or human-backed narrators. High-stakes
+  domains opt into a hard gate (`ISNAD_SERVE_GATE=hold` or
+  `ISNAD_SERVE_HOLD_DOMAINS=medical,legal`) → `REVIEW`.
+- **Hold-mode UNVERIFIABLE** — in a hold domain, a sound chain with
+  unverifiable content is held (`REVIEW`), never caveat-served.
+
 ## Pluggable Strategies — Extend It
 
 The framework leaves key parameters open by design (paper §4.2/§4.3). Swap any:
