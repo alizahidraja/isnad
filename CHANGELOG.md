@@ -20,6 +20,13 @@
   (evidence-consistent-with, not proof of a common upstream). Still oracle-gated
   on the base claim being CONTRADICTION; never withholds a correct agreement.
 
+- **Co-failure calibration harness (#54).** `isnad.core.co_failure` computes
+  the double-fault rate (P both narrators wrong together) and Yule's Q over a
+  labeled eval set — the *measurable* signature of a shared blind spot that
+  grounds the flat corroboration prior. Pure, dependency-free; `prior()` floors
+  at the chance product so absence of observed co-failure is never mistaken for
+  independence.
+
 ### Fixed
 
 - **Public claim record no longer leaks raw corroboration floats (issue 187).**
