@@ -46,6 +46,7 @@ def test_empty_input_is_all_zero():
     assert s.double_fault_rate == 0.0
     assert s.q_statistic == 0.0
 
+
 def test_prior_raises_on_empty_set():
     # An empty labeled set is no measurement, not proof of independence.
     s = compute_co_failure([])
