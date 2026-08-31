@@ -708,6 +708,7 @@ class CorroborationEngine:
         has_live_contradiction: bool = False,
         base_document_hashes: set[str] | None = None,
         base_content_verdict: ContentVerdict | None = None,
+        base_claim_text: str | None = None,
     ) -> CorroborationResult:
         """Evaluate corroboration by matching claims via exact claim_text.
 
@@ -768,7 +769,7 @@ class CorroborationEngine:
             total_corroborating=len(corroborating_raw),
             has_live_contradiction=has_live_contradiction,
             base_document_hashes=base_document_hashes,
-            base_claim_text=claim_text,
+            base_claim_text=base_claim_text if base_claim_text is not None else claim_text,
             base_content_verdict=base_content_verdict,
         )
 

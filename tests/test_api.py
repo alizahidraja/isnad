@@ -743,6 +743,29 @@ class TestPriorOnlyServeGate:
         assert rec["action"] == "review"
         assert "narrator:seeded-2" in rec["prior_only_narrators"]
 
+    def test_zero_evidence_bare_register_is_capped(self):
+        """A bare register(grade=RELIABLE) with no seed/evidence is unvalidated
+        and must not plain-SERVE (the broader serve gate catches it)."""
+        from isnad.core.registry import RegistryDB
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import NarratorGrade, NarratorType
+
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            rdb.registry.register(
+                "narrator:bare-reliable",
+                "physics",
+                grade=NarratorGrade.RELIABLE,
+                narrator_type=NarratorType.SOURCE,
+            )
+            rdb.flush()
+
+        rec = self._submit("narrator:bare-reliable")
+        assert rec["chain_grade"] == "sahih"
+        assert rec["action"] == "serve_with_caveat"
+        assert "narrator:bare-reliable" in rec["prior_only_narrators"]
+
 
 class TestCriticCorpus:
     """D1: the critic corpus includes operator-supplied KB docs."""

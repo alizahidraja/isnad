@@ -72,6 +72,19 @@ class TestVerdictParsing:
             == ContentVerdict.CONTRADICTION
         )
 
+    def test_default_gate_blocks_consistent(self, monkeypatch):
+        """The default gate_affirmation=True blocks CONSISTENT with no eval record."""
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "dummy")
+        critic = LLMCritic()  # default gate_affirmation=True
+
+        monkeypatch.setattr(critic, "_call_llm", lambda prompt: "CONSISTENT")
+        critic._retriever.evaluate("f = ma", "f = ma", ["f = ma"])
+        # No affirmation eval record -> CONSISTENT is downgraded to UNVERIFIABLE.
+        assert (
+            critic.evaluate("F = ma", "f = ma", ["f = ma"], "physics")
+            == ContentVerdict.UNVERIFIABLE
+        )
+
     def test_consistent_parsed(self, monkeypatch):
         critic = self._critic_with("CONSISTENT", monkeypatch)
         assert (

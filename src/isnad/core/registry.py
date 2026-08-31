@@ -155,6 +155,16 @@ class EvidenceProvenanceSummary:
         return self.observed_count == 0 and self.human_count == 0 and self.prior_count > 0
 
     @property
+    def unvalidated(self) -> bool:
+        """True when there is no observed or human evidence.
+
+        An unvalidated assumption: a population prior (seed) OR a bare operator
+        assignment (``register(grade=...)`` with no evidence at all). Either way it
+        must not plain-SERVE; the serve gate caps it. This is the broader predicate
+        the gate uses — ``prior_only`` is the seed-only subset."""
+        return self.observed_count == 0 and self.human_count == 0
+
+    @property
     def observation_backed(self) -> bool:
         """True when at least one observed in-pipeline instance exists."""
         return self.observed_count > 0

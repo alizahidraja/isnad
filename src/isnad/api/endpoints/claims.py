@@ -384,6 +384,7 @@ async def submit_claim(
         narrator_metadata=narrator_metadata,
         has_live_contradiction=has_live_contradiction,
         base_document_hashes=base_document_hashes,
+        base_claim_text=claim_text,  # original case, for entity-level shared-error detection
         base_content_verdict=cv,
     )
     effective_grade = corr_result.upgraded_grade if corr_result.upgraded else cg
@@ -402,7 +403,7 @@ async def submit_claim(
     prior_only_narrators = [
         nid
         for nid in resolved_narrator_ids
-        if reg.registry.evidence_provenance(nid, domain).prior_only
+        if reg.registry.evidence_provenance(nid, domain).unvalidated
     ]
     hold = _serve_hold(domain)
     action = gate_serve(action, prior_only_narrators, hold=hold)
@@ -417,8 +418,8 @@ async def submit_claim(
     if prior_only_narrators and action == Action.SERVE_WITH_CAVEAT:
         description = (
             f"{description} Prior-only source(s) {', '.join(prior_only_narrators)}: "
-            "grade rests on an operator prior (seed), not observed in-pipeline "
-            "transmission — verify before relying."
+            "grade is unvalidated (no observed or human evidence), so it is an",
+            "assumption — verify before relying."
         )
 
     record = {
