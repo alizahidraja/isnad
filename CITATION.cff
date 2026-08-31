@@ -20,6 +20,12 @@ identifiers:
   - type: url
     value: "https://arxiv.org/abs/2607.24117"
     description: Paper
+  - type: url
+    value: "https://huggingface.co/papers/2607.24117"
+    description: Paper (Hugging Face Papers)
+  - type: url
+    value: "https://huggingface.co/datasets/alizahidraja/isnad-bench"
+    description: ISNAD-Bench dataset (Hugging Face)
 url: "https://doi.org/10.5281/zenodo.21216873"
 repository-code: "https://github.com/alizahidraja/isnad"
 version: "2.19.0"

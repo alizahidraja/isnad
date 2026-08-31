@@ -232,7 +232,9 @@ uv run python -m bench.ikhtilat          # the mukhtaliṭūn (period-sliced gra
 ```
 
 The dataset (`emadjumaah/hadith-kg`, CC-BY-4.0, 1.6 GB) is gitignored and pinned by
-SHA-256 — see [`bench/README.md`](bench/README.md).
+SHA-256 — see [`bench/README.md`](bench/README.md). The derived graded output (per-chain
+scholar verdict + ISNAD prediction + disagreement bucket) is published as the
+[`alizahidraja/isnad-bench` dataset on Hugging Face](https://huggingface.co/datasets/alizahidraja/isnad-bench).
 
 ## Glossary — the Arabic, in plain English
 
@@ -430,9 +432,9 @@ Built in public — collaborators welcome. The on-ramp:
 
 ## Ecosystem
 
-- 🌐 **Site:** <https://alizahidraja.com/isnad> · 📄 **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · 💾 **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873) · 📦 **PyPI:** [`isnad`](https://pypi.org/project/isnad/)
+- 🌐 **Site:** <https://alizahidraja.com/isnad> · 📄 **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · 🤗 **HF Papers:** [2607.24117](https://huggingface.co/papers/2607.24117) · 💾 **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873) · 📦 **PyPI:** [`isnad`](https://pypi.org/project/isnad/)
 - 🗺️ **Architecture:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) · 🔗 **Trace schema:** [`docs/trace-schema.md`](docs/trace-schema.md) · 👁️ **Chain viewer:** [`viewer/index.html`](viewer/index.html)
-- 🧪 **Benchmark:** [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md) · 📊 **Critic eval:** [`docs/critics.md`](docs/critics.md) · 🕵️ **xz sleeper-narrator case study:** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md)
+- 🧪 **Benchmark:** [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md) · 🤗 **ISNAD-Bench dataset:** [`alizahidraja/isnad-bench`](https://huggingface.co/datasets/alizahidraja/isnad-bench) · 📊 **Critic eval:** [`docs/critics.md`](docs/critics.md) · 🕵️ **xz sleeper-narrator case study:** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md)
 
 ## Citation
 
