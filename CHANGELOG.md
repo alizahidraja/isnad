@@ -45,6 +45,10 @@
   moat. The public surface is now ordinal grade + boolean `upgraded` + integer
   chain counts + `shared_signals` provenance + reason string.
 
+- **CI coverage floor (issue 186).** `ci.yml` now runs pytest with
+  `--cov=src/isnad --cov-fail-under=88` (measured 91%), so a deleted test file
+  fails the build instead of passing silently.
+
 ## [2.18.0] — 2026-08-30
 
 ### Fixed — five remaining decisions (10-person panel, 10/10 converged)

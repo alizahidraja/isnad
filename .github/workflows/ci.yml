@@ -57,4 +57,4 @@ jobs:
         run: uv run mypy src/isnad bench
 
       - name: Test (pytest)
-        run: uv run pytest -v --tb=short
+        run: uv run pytest -v --tb=short --cov=src/isnad --cov-report=term-missing --cov-fail-under=88
