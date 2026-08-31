@@ -418,7 +418,7 @@ async def submit_claim(
     if prior_only_narrators and action == Action.SERVE_WITH_CAVEAT:
         description = (
             f"{description} Prior-only source(s) {', '.join(prior_only_narrators)}: "
-            "grade is unvalidated (no observed or human evidence), so it is an",
+            "grade is unvalidated (no observed or human evidence), so it is an "
             "assumption — verify before relying."
         )
 
