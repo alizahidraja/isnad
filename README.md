@@ -36,6 +36,7 @@ print(verdict.why)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2607.24117-b31b1b.svg)](https://arxiv.org/abs/2607.24117)
+[![Downloads](https://static.pepy.tech/badge/isnad/month)](https://pypi.org/project/isnad/)
 
 **🌐 Project home: <https://alizahidraja.com/isnad>** · ⭐ Star to follow along · [Contribute](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
 
