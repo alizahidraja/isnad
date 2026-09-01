@@ -942,18 +942,18 @@ check("Claim has chain_grade", "chain_grade" in claim_data)
 check("Claim has corroborating_claims count", "corroborating_claims" in claim_data)
 
 # Get claim
-r = client.get(f"/v1/claims/{cid}")
+r = client.get(f"/v1/claims/{cid}", headers={"X-API-Key": "isnad-admin"})
 check("GET /v1/claims/{id} → 200", r.status_code == 200)
 check("Claim text matches", r.json()["claim_text"] == "F = ma")
 check("Corroborating claims count present", "corroborating_claims" in r.json())
 
 # Get claim chain
-r = client.get(f"/v1/claims/{cid}/chain")
+r = client.get(f"/v1/claims/{cid}/chain", headers={"X-API-Key": "isnad-admin"})
 check("GET /v1/claims/{id}/chain → 200", r.status_code == 200)
 check("Chain has 1 link", len(r.json()["chain"]) == 1)
 
 # Claim 404
-r = client.get("/v1/claims/nonexistent")
+r = client.get("/v1/claims/nonexistent", headers={"X-API-Key": "isnad-admin"})
 check("GET /v1/claims/nonexistent → 404", r.status_code == 404)
 
 # List claims — the DEFAULT read surface is served-only (containment); the
