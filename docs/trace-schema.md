@@ -51,6 +51,21 @@ A PROV-AGENT graph is ingested by mapping `AIModelInvocation` → `TransmitterNo
 `Prompt` → `DocumentRef`, and `ResponseData` → `output_claim`.  The grade fields
 are then populated from the ISNAD registry.
 
+## Positioning: an evaluative profile, not a new standard
+
+`isnad_trace` is an *evaluative profile* layered on W3C PROV / PROV-AGENT — it
+adds the grading, independence, and corroboration semantics those specs
+deliberately leave open.  It is **not** a competing provenance standard, and it
+requires no trust authority: grades stay operator-local.
+
+**Emit, don't host.**  ISNAD emits receipts; it does not run a hosted
+transparency log.  A one-operator log is a new centralization point ("who
+audits the auditor").  Operators who want third-party anchoring can submit the
+emitted receipts to Rekor / Sigstore / CodeNotary themselves.
+
+The machine-readable contract is `fixtures/isnad_trace_v0.1.schema.json`; the
+`isnad` npm package is a reference verifier for the audit layer.
+
 ## Two Scoring Axes
 
 Chain integrity and origin strength are carried **separately**, never collapsed
