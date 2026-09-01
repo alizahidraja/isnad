@@ -166,6 +166,7 @@ dev = [
     "fastapi>=0.115",
     "httpx>=0.28",
     "langgraph>=0.2",
+    "cryptography>=42.0",
 ]
 
 [tool.ruff.lint.per-file-ignores]

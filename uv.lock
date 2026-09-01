@@ -1614,6 +1614,7 @@ nli = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "cryptography" },
     { name = "fastapi" },
     { name = "httpx" },
     { name = "langgraph" },
@@ -1650,6 +1651,7 @@ provides-extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llam
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "cryptography", specifier = ">=42.0" },
     { name = "fastapi", specifier = ">=0.115" },
     { name = "httpx", specifier = ">=0.28" },
     { name = "langgraph", specifier = ">=0.2" },
