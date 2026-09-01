@@ -150,6 +150,18 @@ def _emit_audit_trail(
     return record.integrity.record_hash, record.integrity.detached_signature
 
 
+def _redact_chain(chain_jsonb: object) -> object:
+    """Strip raw input/output snapshots (PHI) from a serialized chain."""
+    if not isinstance(chain_jsonb, list):
+        return chain_jsonb
+    out = []
+    for link in chain_jsonb:
+        if isinstance(link, dict):
+            link = {k: v for k, v in link.items() if k not in ("input_snapshot", "output_snapshot")}
+        out.append(link)
+    return out
+
+
 class ChainLinkIn(BaseModel):
     """A single transmission-chain link in a claim-submission request."""
 
@@ -667,25 +679,26 @@ async def submit_claim(
 
 
 @router.get("/claims/{claim_id}")
-async def get_claim(claim_id: str) -> dict:
+async def get_claim(claim_id: str, _role: str = Depends(require_auth)) -> dict:
     state = get_state()
     if claim_id not in state.claims:
         raise HTTPException(404, "Claim not found")
     record = dict(state.claims[claim_id])
     normalized = record.get("normalized_text", "")
     record["corroborating_claims"] = len(state.find_corroborating(normalized, claim_id))
+    record["chain"] = _redact_chain(record.get("chain"))
     return record
 
 
 @router.get("/claims/{claim_id}/chain")
-async def get_claim_chain(claim_id: str) -> dict:
+async def get_claim_chain(claim_id: str, _role: str = Depends(require_auth)) -> dict:
     state = get_state()
     if claim_id not in state.claims:
         raise HTTPException(404)
     r = state.claims[claim_id]
     return {
         "claim_id": claim_id,
-        "chain": r["chain"],
+        "chain": _redact_chain(r["chain"]),
         "chain_grade": r["chain_grade"],
         "action": r["action"],
     }

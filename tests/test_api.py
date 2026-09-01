@@ -52,7 +52,7 @@ class TestClaims:
         )
         assert r.status_code == 200
         cid = r.json()["claim_id"]
-        r2 = client.get(f"/v1/claims/{cid}")
+        r2 = client.get(f"/v1/claims/{cid}", headers={"X-API-Key": "isnad-admin"})
         assert r2.json()["claim_text"] == "F = ma"
 
     def test_auth_required(self):
@@ -96,7 +96,7 @@ class TestClaims:
             headers={"X-API-Key": "isnad-admin"},
         )
         cid = r.json()["claim_id"]
-        r2 = client.get(f"/v1/claims/{cid}/chain")
+        r2 = client.get(f"/v1/claims/{cid}/chain", headers={"X-API-Key": "isnad-admin"})
         assert len(r2.json()["chain"]) == 1
 
     def test_corroboration_indexing(self):
@@ -121,12 +121,48 @@ class TestClaims:
             headers={"X-API-Key": "isnad-admin"},
         )
         cid2 = r2.json()["claim_id"]
-        r = client.get(f"/v1/claims/{cid2}")
+        r = client.get(f"/v1/claims/{cid2}", headers={"X-API-Key": "isnad-admin"})
         assert r.json()["corroborating_claims"] >= 1
 
     def test_claim_404(self):
-        assert client.get("/v1/claims/nonexistent").status_code == 404
+        assert client.get("/v1/claims/nonexistent", headers={"X-API-Key": "isnad-admin"}).status_code == 404
 
+
+    def test_unauthenticated_claim_read_rejected(self):
+        """Claim read + chain endpoints require auth (issue #191)."""
+        r = client.post(
+            "/v1/claims",
+            json={"claim_text": "F = ma", "domain": "physics", "chain": [{"narrator_id": "source:openstax"}]},
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        cid = r.json()["claim_id"]
+        assert client.get(f"/v1/claims/{cid}").status_code == 401
+        assert client.get(f"/v1/claims/{cid}/chain").status_code == 401
+
+    def test_claim_chain_redacts_raw_snapshots(self):
+        """Served chains must not leak raw input/output snapshots (issue #191)."""
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "secret-adjacent claim",
+                "domain": "physics",
+                "chain": [
+                    {
+                        "narrator_id": "source:openstax",
+                        "transform_type": "pass_through",
+                        "input_snapshot": "PRIVATE INPUT",
+                        "output_snapshot": "PRIVATE OUTPUT",
+                    }
+                ],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        cid = r.json()["claim_id"]
+        chain = client.get(f"/v1/claims/{cid}/chain", headers={"X-API-Key": "isnad-admin"}).json()["chain"]
+        for link in chain:
+            assert "input_snapshot" not in link
+            assert "output_snapshot" not in link
     def test_document_hashes_round_trip_in_chain(self):
         """Chain links carry document_hashes through submission → retrieval (#125)."""
         r = client.post(
@@ -145,7 +181,7 @@ class TestClaims:
         )
         assert r.status_code == 200
         cid = r.json()["claim_id"]
-        r2 = client.get(f"/v1/claims/{cid}/chain")
+        r2 = client.get(f"/v1/claims/{cid}/chain", headers={"X-API-Key": "isnad-admin"})
         links = r2.json()["chain"]
         assert any("doc-hash-abc" in link.get("document_hashes", []) for link in links)
 
