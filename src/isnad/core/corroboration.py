@@ -80,6 +80,12 @@ class SharedLineageDetector:
 
     This is an honesty calibration, not a detection mechanism: it narrows the
     independence *assumption*, it does not claim to detect correlated blind spots.
+
+    Sybil note (issue #196): `model_family`/`upstream_source` are *self-declared*
+    caller metadata, not authenticated lineage — an adversary can spoof them to
+    earn a high independence score. This detector narrows the independence
+    assumption; it does not authenticate lineage (verified SLSA/SBOM attestation
+    is the 3.0 evidence model, issue #188).
     """
 
     # Independence we cannot rule out but also cannot demonstrate. Below the
@@ -299,6 +305,12 @@ class CappedCorroborationPolicy:
 
     # Error probabilities per grade tier (HadithRank calibration).
     # These are reference defaults — calibrate for your domain.
+    # ASSUMPTIONS, NOT MEASUREMENTS (issue #194). These per-grade error rates and
+    # the blind-spot matrix below are operator-assigned hand-set defaults that
+    # drive corroboration routing but are NOT calibrated to any pipeline. Supply
+    # measured co-failure priors via `measured_priors` (isnad.core.co_failure) to
+    # replace them in production; otherwise treat any upgrade they produce as a
+    # documented assumption, never a measured confidence.
     ERROR_PROBS: dict[ChainGrade, float] = {
         ChainGrade.SAHIH: 0.01,
         ChainGrade.HASAN: 0.10,
@@ -327,6 +339,8 @@ class CappedCorroborationPolicy:
     # calibrated, never asserted as fact. The matrix is keyed by narrator type
     # (NarratorType.value); an unknown type falls back to the flat
     # ``shared_blind_spot_prior``.
+    # Same as ERROR_PROBS: hand-set witness-type defaults, overridable by
+    # measured_priors. Cross-kind pairs are charged a smaller honesty discount.
     BLIND_SPOT_MATRIX: dict[tuple[str, str], float] = {
         # same-kind: high prior — shared training lineage, shared blind spots
         ("model", "model"): 0.25,
@@ -382,6 +396,10 @@ class CappedCorroborationPolicy:
             mixture (P all corroborators fail together) instead of the pairwise
             product. Strictly more conservative; requires calibrated priors to
             fire at default. Default False (pairwise, backward compatible).
+            NOTE (issue #195): the default (False) is LENIENT — pairwise
+            corroboration can still upgrade DAIF->HASAN at the flat prior.
+            High-stakes deployments should pass joint_failure=True with
+            measured priors so the conservative shared-mode floor applies.
         """
         self.shared_blind_spot_prior = max(0.0, min(1.0, shared_blind_spot_prior))
         # Operator-measured per-pair co-failure priors (issue 54, from the
