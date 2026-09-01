@@ -52,7 +52,7 @@ class TestMainDispatcher:
             cli_main.main([])
         assert e.value.code == 1
         assert (
-            "Usage: isnad [serve|seed|export|verify|verify-chain|verify-merkle|ingest|bench|mcp]"
+            "Usage: isnad [serve|seed|export|verify|verify-chain|verify-merkle|ingest|bench|mcp|scan]"
             in capsys.readouterr().out
         )
 
