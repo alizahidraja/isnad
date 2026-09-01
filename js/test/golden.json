@@ -1,0 +1,181 @@
+{
+  "canon_a": "{\"chain\":[{\"grade\":\"reliable\",\"grade_rationale\":\"r\",\"input_hash\":null,\"invocation_timestamp\":null,\"model_identifier\":null,\"model_version\":null,\"narrator_id\":\"src\",\"narrator_type\":\"dataset\",\"output_hash\":null,\"upstream_ids\":[]}],\"claim_id\":\"c1\",\"claim_text\":\"p = mv\",\"environment\":{\"isnad_version\":\"2.19.0\",\"platform\":\"test\",\"python_version\":\"3.12\"},\"final_grade\":\"hasan\",\"generated_at\":\"2026-08-30T00:00:00+00:00\",\"grading_strategy\":{\"name\":\"RefinedWeakestLink\",\"parameters\":{},\"version\":\"1\"},\"human_oversight\":[],\"record_id\":\"00000000-0000-4000-8000-000000000001\",\"record_version\":\"1.0\",\"source_documents\":[{\"content_hash\":null,\"licence\":null,\"retrieved_at\":null,\"uri\":\"https://example.com/x\"}],\"weakest_link\":{\"grade\":\"reliable\",\"narrator_id\":\"src\",\"why\":\"lowest grade\"}}",
+  "hash_a": "c02f25c079d0d00d158638f71fc85da8e96c7f8225706d30dda85eb8b0701011",
+  "hmac_a": "78e3d753ca447197c066bdbc6c87565b972bb1a297f3521dbf85f29a771bd735",
+  "ed25519_pub_raw_hex": "03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8",
+  "ed25519_sig_a_hex": "5f83973088daf2f4652ff180b43d24de44deafea48fb6a44ab5f713f26ff87d26e51b90caf4c8afcdc7585971b052c7440842ca1f46bbcb3209cd6028e7ed007",
+  "canon_b": "{\"chain\":[{\"grade\":\"reliable\",\"grade_rationale\":\"r\",\"input_hash\":null,\"invocation_timestamp\":null,\"model_identifier\":null,\"model_version\":null,\"narrator_id\":\"src\",\"narrator_type\":\"dataset\",\"output_hash\":null,\"upstream_ids\":[]}],\"claim_id\":\"c2\",\"claim_text\":\"café — naïve résumé 🚀  line-sep😀\",\"environment\":{\"isnad_version\":\"2.19.0\",\"platform\":\"test\",\"python_version\":\"3.12\"},\"final_grade\":\"daif\",\"generated_at\":\"2026-08-30T00:00:00+00:00\",\"grading_strategy\":{\"name\":\"RefinedWeakestLink\",\"parameters\":{},\"version\":\"1\"},\"human_oversight\":[],\"record_id\":\"00000000-0000-4000-8000-000000000002\",\"record_version\":\"1.0\",\"source_documents\":[{\"content_hash\":null,\"licence\":null,\"retrieved_at\":null,\"uri\":\"https://example.com/x\"}],\"weakest_link\":{\"grade\":\"reliable\",\"narrator_id\":\"src\",\"why\":\"lowest grade\"}}",
+  "hash_b": "157ed88aa4f9a3c455111c295a5278a7659f07a2e903d69c3fdac741c00621a7",
+  "merkle_empty": "18f39282003c750f67ed8bd1b7ceaff75c7a838bfa6cf64e1febafb1571b659a",
+  "merkle_batch_root": "43c7862fbe0272653a4f699a8e7edacabe54c65102fd366a53390735432ccd79",
+  "merkle_sealed_prev_root": null,
+  "merkle_proof_record_id": "00000000-0000-4000-8000-000000000002",
+  "merkle_proof_record_hash": "157ed88aa4f9a3c455111c295a5278a7659f07a2e903d69c3fdac741c00621a7",
+  "merkle_proof_leaf_index": 1,
+  "merkle_proof_audit_path": [
+    [
+      "a563c373528dca21dca48d15b1d2870814b080ab7bbcf4e297a313243ce76f28",
+      "left"
+    ],
+    [
+      "413856669488dbc6911f21bd7972d3d7774a21ad217403086e0eb3d3cd1c266b",
+      "right"
+    ]
+  ],
+  "record_a_full": {
+    "record_id": "00000000-0000-4000-8000-000000000001",
+    "record_version": "1.0",
+    "generated_at": "2026-08-30T00:00:00+00:00",
+    "claim_id": "c1",
+    "claim_text": "p = mv",
+    "final_grade": "hasan",
+    "grading_strategy": {
+      "name": "RefinedWeakestLink",
+      "version": "1",
+      "parameters": {}
+    },
+    "chain": [
+      {
+        "narrator_id": "src",
+        "narrator_type": "dataset",
+        "grade": "reliable",
+        "grade_rationale": "r",
+        "model_identifier": null,
+        "model_version": null,
+        "invocation_timestamp": null,
+        "input_hash": null,
+        "output_hash": null,
+        "upstream_ids": []
+      }
+    ],
+    "weakest_link": {
+      "narrator_id": "src",
+      "grade": "reliable",
+      "why": "lowest grade"
+    },
+    "source_documents": [
+      {
+        "uri": "https://example.com/x",
+        "retrieved_at": null,
+        "content_hash": null,
+        "licence": null
+      }
+    ],
+    "human_oversight": [],
+    "environment": {
+      "isnad_version": "2.19.0",
+      "python_version": "3.12",
+      "platform": "test"
+    },
+    "integrity": {
+      "record_hash": "c02f25c079d0d00d158638f71fc85da8e96c7f8225706d30dda85eb8b0701011",
+      "hash_algorithm": "SHA-256",
+      "canonicalisation": "RFC8785",
+      "detached_signature": null
+    }
+  },
+  "record_b_full": {
+    "record_id": "00000000-0000-4000-8000-000000000002",
+    "record_version": "1.0",
+    "generated_at": "2026-08-30T00:00:00+00:00",
+    "claim_id": "c2",
+    "claim_text": "café — naïve résumé 🚀  line-sep😀",
+    "final_grade": "daif",
+    "grading_strategy": {
+      "name": "RefinedWeakestLink",
+      "version": "1",
+      "parameters": {}
+    },
+    "chain": [
+      {
+        "narrator_id": "src",
+        "narrator_type": "dataset",
+        "grade": "reliable",
+        "grade_rationale": "r",
+        "model_identifier": null,
+        "model_version": null,
+        "invocation_timestamp": null,
+        "input_hash": null,
+        "output_hash": null,
+        "upstream_ids": []
+      }
+    ],
+    "weakest_link": {
+      "narrator_id": "src",
+      "grade": "reliable",
+      "why": "lowest grade"
+    },
+    "source_documents": [
+      {
+        "uri": "https://example.com/x",
+        "retrieved_at": null,
+        "content_hash": null,
+        "licence": null
+      }
+    ],
+    "human_oversight": [],
+    "environment": {
+      "isnad_version": "2.19.0",
+      "python_version": "3.12",
+      "platform": "test"
+    },
+    "integrity": {
+      "record_hash": "157ed88aa4f9a3c455111c295a5278a7659f07a2e903d69c3fdac741c00621a7",
+      "hash_algorithm": "SHA-256",
+      "canonicalisation": "RFC8785",
+      "detached_signature": null
+    }
+  },
+  "record_c_full": {
+    "record_id": "00000000-0000-4000-8000-000000000003",
+    "record_version": "1.0",
+    "generated_at": "2026-08-30T00:00:00+00:00",
+    "claim_id": "c3",
+    "claim_text": "E = mc^2",
+    "final_grade": "sahih",
+    "grading_strategy": {
+      "name": "RefinedWeakestLink",
+      "version": "1",
+      "parameters": {}
+    },
+    "chain": [
+      {
+        "narrator_id": "src",
+        "narrator_type": "dataset",
+        "grade": "reliable",
+        "grade_rationale": "r",
+        "model_identifier": null,
+        "model_version": null,
+        "invocation_timestamp": null,
+        "input_hash": null,
+        "output_hash": null,
+        "upstream_ids": []
+      }
+    ],
+    "weakest_link": {
+      "narrator_id": "src",
+      "grade": "reliable",
+      "why": "lowest grade"
+    },
+    "source_documents": [
+      {
+        "uri": "https://example.com/x",
+        "retrieved_at": null,
+        "content_hash": null,
+        "licence": null
+      }
+    ],
+    "human_oversight": [],
+    "environment": {
+      "isnad_version": "2.19.0",
+      "python_version": "3.12",
+      "platform": "test"
+    },
+    "integrity": {
+      "record_hash": "cb5cd56f947f00b168f7d728988eb39ca3d2ebbc2f6e88b1cc68039a81a9a9eb",
+      "hash_algorithm": "SHA-256",
+      "canonicalisation": "RFC8785",
+      "detached_signature": null
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "isnad",
+  "version": "0.1.0",
+  "description": "ISNAD audit-record verifier (JS/TS): verify SHA-256 / Merkle / detached-signature integrity of ISNAD audit records. Verifier only — grading stays in the Python core.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "isnad",
+    "provenance",
+    "trust",
+    "audit",
+    "merkle",
+    "tamper-evidence",
+    "multi-agent",
+    "rag",
+    "verify"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.1.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  }
+}

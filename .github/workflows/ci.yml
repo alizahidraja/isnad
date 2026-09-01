@@ -58,3 +58,36 @@ jobs:
 
       - name: Test (pytest)
         run: uv run pytest -v --tb=short --cov=src/isnad --cov-report=term-missing --cov-fail-under=88
+
+  js-conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: uv sync
+
+      - name: Regenerate golden vectors (drift gate)
+        run: |
+          uv run python js/scripts/generate_golden.py
+          git diff --exit-code js/test/golden.json || (echo "::error::js/test/golden.json drifted from the Python core. Re-run 'uv run python js/scripts/generate_golden.py' and commit the result." && exit 1)
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: js/package-lock.json
+
+      - name: Install JS deps
+        run: npm ci
+        working-directory: js
+
+      - name: Test JS verifier (golden conformance)
+        run: npm test
+        working-directory: js

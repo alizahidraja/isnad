@@ -44,3 +44,8 @@ htmlcov/
 .ruff_cache/
 corpus/pdfs/
 corpus/pdfs/
+
+# JavaScript (js/ verifier package)
+node_modules/
+*.tsbuildinfo
+*.tgz
