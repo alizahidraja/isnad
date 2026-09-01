@@ -51,6 +51,105 @@ class AppState:
         ]
 
 
+_NARRATOR_TYPE_MAP = {
+    "source": "dataset",
+    "scraper": "scraper",
+    "model": "model",
+    "human": "human",
+    "tool": "tool",
+}
+
+
+def _emit_audit_trail(
+    *,
+    chain: Chain,
+    link_grades: list[NarratorGrade],
+    claim_id: str,
+    claim_text: str,
+    final_grade: str,
+    registry: Registry,
+    domain: str,
+) -> tuple[str, str | None]:
+    """Emit a tamper-evident AuditRecord for a submitted claim (issue #189).
+
+    Builds a self-hashed AuditRecord from the in-memory chain and grades, signs it
+    with an HMAC secret when ``ISNAD_HMAC_SECRET`` is set, appends its hash to a
+    chain log when ``ISNAD_AUDIT_LOG`` is set, and returns (record_hash, signature).
+    Every submitted claim now carries unforgeable evidence, not just the manual CLI.
+    """
+    import platform
+
+    from isnad import __version__
+    from isnad.audit import (
+        ChainNodeAudit,
+        Environment,
+        GradingStrategy,
+        WeakestLink,
+        append_record,
+        build_audit_record_from_nodes,
+        hmac_signer,
+        sign_detached,
+    )
+
+    nodes: list[ChainNodeAudit] = []
+    for i, (link, grade) in enumerate(zip(chain.links, link_grades, strict=True)):
+        narrator = registry.get(link.narrator_id, domain)
+        nodes.append(
+            ChainNodeAudit(
+                narrator_id=link.narrator_id,
+                narrator_type=_NARRATOR_TYPE_MAP.get(
+                    narrator.narrator_type.value if narrator else "model", "model"
+                ),
+                grade=grade.value,
+                grade_rationale=(
+                    f"registry grade {grade.value} for {link.narrator_id} in domain {domain}"
+                ),
+                model_identifier=link.narrator_id,
+                model_version=(
+                    narrator.model_version if narrator and narrator.model_version else link.version
+                ),
+                invocation_timestamp=link.timestamp,
+                upstream_ids=[chain.links[i - 1].narrator_id] if i > 0 else [],
+            )
+        )
+
+    if chain.links and link_grades:
+        idx = min(range(len(link_grades)), key=lambda i: link_grades[i])
+        weakest = WeakestLink(
+            narrator_id=chain.links[idx].narrator_id,
+            grade=link_grades[idx].value,
+            why=f"lowest narrator grade in the chain ({link_grades[idx].value})",
+        )
+    else:
+        weakest = WeakestLink(narrator_id="", grade="ungraded", why="empty chain")
+
+    record = build_audit_record_from_nodes(
+        claim_id=claim_id,
+        claim_text=claim_text,
+        final_grade=final_grade,
+        grading_strategy=GradingStrategy(name="RefinedWeakestLink", version="1"),
+        nodes=nodes,
+        weakest_link=weakest,
+        source_documents=[],
+        human_oversight=[],
+        environment=Environment(
+            isnad_version=__version__,
+            python_version=platform.python_version(),
+            platform=platform.platform(),
+        ),
+    )
+
+    secret = os.environ.get("ISNAD_HMAC_SECRET")
+    if secret:
+        sign_detached(record, hmac_signer(secret))
+
+    log = os.environ.get("ISNAD_AUDIT_LOG")
+    if log:
+        append_record(log, record.record_id, record.integrity.record_hash)
+
+    return record.integrity.record_hash, record.integrity.detached_signature
+
+
 class ChainLinkIn(BaseModel):
     """A single transmission-chain link in a claim-submission request."""
 
@@ -422,8 +521,20 @@ async def submit_claim(
             "assumption — verify before relying."
         )
 
+    audit_hash, audit_sig = _emit_audit_trail(
+        chain=chain,
+        link_grades=link_grades,
+        claim_id=claim_id,
+        claim_text=claim_text,
+        final_grade=effective_grade.value,
+        registry=reg.registry,
+        domain=domain,
+    )
+
     record = {
         "claim_id": claim_id,
+        "audit_record_hash": audit_hash,
+        "audit_signature": audit_sig,
         "claim_text": claim_text,
         "normalized_text": normalized,
         "chain_grade": effective_grade.value,
