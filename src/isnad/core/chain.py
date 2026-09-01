@@ -192,6 +192,9 @@ def store_claim(
     claim_id: str | None = None,
     content_verdict: str | None = None,
     action: str | None = None,
+    audit_record_hash: str | None = None,
+    audit_signature: str | None = None,
+    human_oversight: list[dict] | None = None,
 ) -> RijalClaim:
     """Store a claim with its chain in the database.
 
@@ -225,6 +228,9 @@ def store_claim(
         existing.chain_grade = chain_grade
         existing.content_verdict = content_verdict
         existing.action = action
+        existing.audit_record_hash = audit_record_hash
+        existing.audit_signature = audit_signature
+        existing.human_oversight = human_oversight or []
         existing.chain_status = chain.chain_status.value
         existing.valid_from = datetime.now(UTC)
         # Delete old links via query to avoid ORM relationship staleness
@@ -241,6 +247,9 @@ def store_claim(
             chain_grade=chain_grade,
             content_verdict=content_verdict,
             action=action,
+            audit_record_hash=audit_record_hash,
+            audit_signature=audit_signature,
+            human_oversight=human_oversight or [],
             chain_status=chain.chain_status.value,
         )
         session.add(claim)

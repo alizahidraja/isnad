@@ -32,4 +32,4 @@ ENV ISNAD_POLICY=bayesian
 
 EXPOSE 8000
 # Run migrations before serving so an existing DB is upgraded (issue #198),
-CMD ["sh", "-c", "alembic upgrade head && uvicorn isnad.api.app:app --host 0.0.0.0 --port 8000"]
+CMD ["sh", "-c", "python -m alembic upgrade head && python -m uvicorn isnad.api.app:app --host 0.0.0.0 --port 8000"]

@@ -280,6 +280,9 @@ def _hydrate_claims_from_db(session: Any) -> int:
             "chain_grade": cg,
             "content_verdict": cv_value,
             "action": action_value,
+            "audit_record_hash": getattr(row, "audit_record_hash", None),
+            "audit_signature": getattr(row, "audit_signature", None),
+            "human_oversight": getattr(row, "human_oversight", []) or [],
             "description": "rehydrated from DB",
             "chain": chain,
             "served": action_value in ("serve", "serve_with_caveat"),
@@ -601,9 +604,16 @@ async def submit_claim(
             claim_id=claim_id,
             content_verdict=cv.value,
             action=action.value,
+            audit_record_hash=audit_hash,
+            audit_signature=audit_sig,
         )
     except Exception as exc:
         logger.error(f"Failed to persist claim to DB (audit trail will diverge): {exc}")
+        # Roll back the in-memory write so a failed persist is not served (#192).
+        state.claims.pop(claim_id, None)
+        _idx = state._corroboration_index.get(normalized, [])
+        if claim_id in _idx:
+            _idx.remove(claim_id)
         raise HTTPException(500, "Failed to persist claim") from exc
 
     # Route to human review — including a link to the specific claim this one

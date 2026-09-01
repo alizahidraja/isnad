@@ -111,18 +111,26 @@ async def resolve_review_queue_item(
     row.resolution = body.resolution
     row.reviewer_id = body.reviewer_id
 
-    # Record human-intervention evidence on the in-memory claim record.
+    entry = {
+        "actor_ref": body.reviewer_id,
+        "action": "resolved",
+        "timestamp": row.resolved_at.isoformat(),
+        "note": body.resolution,
+    }
+
+    # Record + persist the human-intervention evidence (survives restart, #193).
     state = get_state()
     claim = state.claims.get(row.claim_id)
     if claim is not None:
-        claim.setdefault("human_oversight", []).append(
-            {
-                "actor_ref": body.reviewer_id,
-                "action": "resolved",
-                "timestamp": row.resolved_at.isoformat(),
-                "note": body.resolution,
-            }
-        )
+        claim.setdefault("human_oversight", []).append(dict(entry))
+
+    from isnad.models import RijalClaim
+
+    rc = session.query(RijalClaim).filter_by(claim_id=row.claim_id).first()
+    if rc is not None:
+        existing = list(rc.human_oversight or [])
+        existing.append(dict(entry))
+        rc.human_oversight = existing
 
     session.commit()
     return _serialize(row)

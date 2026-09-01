@@ -84,6 +84,22 @@ class RijalClaim(Base):
             "Action enum value at serve time; persisted so rehydration is faithful, not re-derived"
         ),
     )
+    audit_record_hash: Mapped[str | None] = mapped_column(
+        String(64),
+        nullable=True,
+        comment="SHA-256 of the emitted AuditRecord (self-hash); NULL until emitted",
+    )
+    audit_signature: Mapped[str | None] = mapped_column(
+        Text,
+        nullable=True,
+        comment="Detached signature over the AuditRecord payload (HMAC/Ed25519), if signed",
+    )
+    human_oversight: Mapped[dict[str, object]] = mapped_column(
+        JSON,
+        nullable=False,
+        default=list,
+        comment="Human-intervention evidence (actor/action/timestamp/note)",
+    )
     valid_from: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,

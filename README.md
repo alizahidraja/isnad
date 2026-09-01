@@ -11,9 +11,9 @@ detectors and observability tools skip: *who handled this claim, in what order,
 and how much do we trust each one?*
 
 > **Proof it works:** ISNAD's weakest-link rule reproduces **1,200 years of
-> scholar verdicts at Cohen's κ = 0.87** across 575,060 graded hadith chains —
-> where the scholars agree with *each other* at only κ = 0.33 (the human
-> ceiling). Full benchmark below.
+> scholar chain verdicts at Cohen's κ = 0.87** across 575,060 graded hadith
+> chains. (For context: scholars disagree with each other on *narrator grades*
+> at κ = 0.33 — a different task.) Full benchmark below.
 
 ```python
 # 30 seconds to a verdict:
