@@ -10,15 +10,24 @@ the newly-submitted claim in isolation.
 
 from __future__ import annotations
 
+from datetime import UTC, datetime
 from uuid import UUID
 
 from fastapi import Depends, HTTPException
 from fastapi.routing import APIRouter
+from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-from isnad.api.auth import require_auth
+from isnad.api.auth import require_admin, require_auth
 from isnad.api.dependencies import get_db
+from isnad.api.endpoints.claims import get_state
 from isnad.models import ReviewQueue
+
+
+class ResolutionIn(BaseModel):
+    resolution: str
+    reviewer_id: str
+    note: str = ""
 
 router = APIRouter(prefix="/v1", tags=["review"])
 
@@ -72,4 +81,48 @@ async def get_review_queue_item(
     row = session.query(ReviewQueue).filter_by(id=parsed_id).first()
     if row is None:
         raise HTTPException(404, "Review queue item not found")
+    return _serialize(row)
+
+
+@router.post("/review-queue/{item_id}/resolve")
+async def resolve_review_queue_item(
+    item_id: str,
+    body: ResolutionIn,
+    session: Session = Depends(get_db),
+    _role: str = Depends(require_admin),
+) -> dict:
+    """Resolve a review-queue item — record the human intervention (issue #193).
+
+    Admin-only: this writes the resolution + reviewer evidence that proves a
+    human intervened (EU AI Act Art. 14). A quarantined claim is no longer a
+    dead end.
+    """
+    try:
+        parsed_id = UUID(item_id)
+    except ValueError:
+        raise HTTPException(404, "Review queue item not found") from None
+    row = session.query(ReviewQueue).filter_by(id=parsed_id).first()
+    if row is None:
+        raise HTTPException(404, "Review queue item not found")
+    if row.resolved_at is not None:
+        raise HTTPException(409, "Review queue item already resolved")
+
+    row.resolved_at = datetime.now(UTC)
+    row.resolution = body.resolution
+    row.reviewer_id = body.reviewer_id
+
+    # Record human-intervention evidence on the in-memory claim record.
+    state = get_state()
+    claim = state.claims.get(row.claim_id)
+    if claim is not None:
+        claim.setdefault("human_oversight", []).append(
+            {
+                "actor_ref": body.reviewer_id,
+                "action": "resolved",
+                "timestamp": row.resolved_at.isoformat(),
+                "note": body.resolution,
+            }
+        )
+
+    session.commit()
     return _serialize(row)

@@ -584,6 +584,46 @@ class TestReviewQueue:
         )
         assert r.status_code == 404
 
+    def test_resolve_review_queue_records_human_intervention(self):
+        """Resolving a quarantined claim records who/when/why (issue #193)."""
+        self._submit("the object moves at a speed of 10 meters per second")
+        claim2 = self._submit("the object moves at a speed of 100 meters per second")
+
+        rq = client.get("/v1/review-queue", headers={"X-API-Key": "isnad-admin"})
+        items = rq.json()["items"]
+        matching = [i for i in items if i["claim_id"] == claim2["claim_id"]]
+        assert len(matching) == 1
+        item_id = matching[0]["id"]
+
+        r = client.post(
+            f"/v1/review-queue/{item_id}/resolve",
+            json={"resolution": "human confirmed the faster value", "reviewer_id": "alice@example.com"},
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        body = r.json()
+        assert body["resolved_at"] is not None
+        assert body["resolution"] == "human confirmed the faster value"
+        assert body["reviewer_id"] == "alice@example.com"
+
+        claim = client.get(f"/v1/claims/{claim2['claim_id']}", headers={"X-API-Key": "isnad-admin"}).json()
+        assert any(
+            o["action"] == "resolved" and o["actor_ref"] == "alice@example.com"
+            for o in claim.get("human_oversight", [])
+        )
+
+    def test_resolve_review_queue_requires_admin(self):
+        self._submit("the object moves at a speed of 10 meters per second")
+        self._submit("the object moves at a speed of 100 meters per second")
+        rq = client.get("/v1/review-queue", headers={"X-API-Key": "isnad-admin"})
+        item_id = rq.json()["items"][0]["id"]
+        r = client.post(
+            f"/v1/review-queue/{item_id}/resolve",
+            json={"resolution": "x", "reviewer_id": "y"},
+            headers={"X-API-Key": "isnad-reader"},
+        )
+        assert r.status_code == 403
+
 
 class _FakeFidelityCritic:
     """Deterministic stand-in for LocalNLICritic — avoids depending on
