@@ -213,6 +213,12 @@ def _serve_hold(domain: str) -> bool:
     Default is the soft gate (cap SERVE → SERVE_WITH_CAVEAT), which keeps a
     cold-start knowledge base useful while never plain-serving an unobserved
     narrator.
+
+    NOTE (issue #202): the soft default SERVES unverifiable content with a
+    caveat label — fine for general use, NOT for high-stakes domains. Medical/
+    legal deployments MUST set ISNAD_SERVE_GATE=hold (or
+    ISNAD_SERVE_HOLD_DOMAINS) so unverifiable content routes to REVIEW, not
+    serve. A caveat is a label, not evidence.
     """
     gate = os.environ.get("ISNAD_SERVE_GATE", "caveat").strip().lower()
     if gate == "hold":
