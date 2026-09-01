@@ -1,5 +1,42 @@
 # Changelog
 
+## [2.20.0] — 2026-08-30
+
+### Security & integrity — brutal-audit hardening
+
+- **Serving-path tamper-evidence (#189).** `POST /v1/claims` now emits an
+  `AuditRecord` (self-hash + optional HMAC/Ed25519 detached signature + optional
+  chain-log append); `audit_record_hash`/`audit_signature` are persisted on
+  `rijal_claims` (migration `2a4b5c6d7e08`) so the evidence survives restart.
+- **Admin-gated grade mutations (#190).** Quarantine / flag_contradiction /
+  renew_grade now require the admin role; a reader can submit but not poison
+  the registry.
+- **Auth + redaction on claim reads (#191).** `GET /v1/claims/{id}` and `/chain`
+  require an API key and strip raw `input_snapshot`/`output_snapshot`.
+- **Fail-closed persistence (#192).** `store_claim` failure → HTTP 500 (and
+  rolls back the in-memory write); DB init failure raises; `/v1/health` probes
+  the DB and reports `degraded`.
+- **Human-intervention path (#193).** `POST /v1/review-queue/{id}/resolve`
+  (admin) writes resolution + reviewer evidence and persists it on the claim.
+- **Affirmation-gate exact match (#200).** No provider/model wildcards — a
+  provider-less eval record no longer licenses any model.
+
+### Honesty
+
+- Labeled hand-set corroboration constants as assumptions, not measurements
+  (#194–196); flagged the soft-caveat default as unsuitable for high-stakes
+  domains (#202); corrected the κ human-ceiling framing (#197); documented the
+  single-node serving index (#199).
+- **Migrations run on start (#198).** Dockerfile runs `python -m alembic upgrade
+  head` before serving.
+- **False-consistent fix (#202→#6).** `_parse_verdict('NOT CONSISTENT')` no
+  longer returns CONSISTENT.
+
+### Reverted
+
+- RFC 8785 shorthands: the audit panel claimed `\n`/`\t` shorthands were
+  non-compliant; verified against RFC 8785 §3.2.2.2 they are *mandatory*.
+
 ## [2.19.0] — 2026-08-30
 
 ### Added
