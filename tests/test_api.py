@@ -38,6 +38,18 @@ class TestHealth:
         assert r.status_code == 200
         assert r.json()["status"] == "ok"
 
+    def test_health_reports_degraded_when_db_unavailable(self, monkeypatch):
+        import isnad.storage.sqlalchemy as sqla
+
+        def boom():
+            raise RuntimeError("db down")
+
+        monkeypatch.setattr(sqla, "get_session", boom)
+        r = client.get("/v1/health")
+        assert r.status_code == 200
+        assert r.json()["status"] == "degraded"
+        assert r.json()["db"] == "unavailable"
+
 
 class TestClaims:
     def test_submit_and_retrieve(self):
@@ -163,6 +175,21 @@ class TestClaims:
         for link in chain:
             assert "input_snapshot" not in link
             assert "output_snapshot" not in link
+
+    def test_submit_fails_closed_on_persistence_failure(self, monkeypatch):
+        """A DB write failure must return 500, never a silent 200 (issue #192)."""
+        import isnad.api.endpoints.claims as claims_mod
+
+        def boom(*args, **kwargs):
+            raise RuntimeError("db down")
+
+        monkeypatch.setattr(claims_mod, "store_claim", boom)
+        r = client.post(
+            "/v1/claims",
+            json={"claim_text": "F = ma", "domain": "physics", "chain": [{"narrator_id": "source:openstax"}]},
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 500
     def test_document_hashes_round_trip_in_chain(self):
         """Chain links carry document_hashes through submission → retrieval (#125)."""
         r = client.post(

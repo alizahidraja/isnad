@@ -16,7 +16,18 @@ metrics_router = APIRouter(tags=["observability"])
 
 @router.get("/health")
 async def health() -> dict:
-    return {"status": "ok", "version": __version__}
+    try:
+        from sqlalchemy import text
+
+        from isnad.storage.sqlalchemy import get_session
+
+        with get_session() as session:
+            session.execute(text("SELECT 1"))
+        db = "ok"
+    except Exception:
+        db = "unavailable"
+    status = "ok" if db == "ok" else "degraded"
+    return {"status": status, "db": db, "version": __version__}
 
 
 @router.get("/metrics")

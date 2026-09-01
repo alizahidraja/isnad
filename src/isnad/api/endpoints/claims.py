@@ -598,6 +598,7 @@ async def submit_claim(
         )
     except Exception as exc:
         logger.error(f"Failed to persist claim to DB (audit trail will diverge): {exc}")
+        raise HTTPException(500, "Failed to persist claim") from exc
 
     # Route to human review — including a link to the specific claim this one
     # contradicts (issue #11: contradiction should surface both sides to a

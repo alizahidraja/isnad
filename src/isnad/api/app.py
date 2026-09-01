@@ -35,7 +35,8 @@ async def _lifespan(app: FastAPI):
         if n:
             logger.info(f"Hydrated {n} persisted claim(s) into the serving index")
     except Exception as exc:
-        logger.warning(f"DB init skipped (non-fatal): {exc}")
+        logger.error(f"Database init failed: {exc}")
+        raise
     yield
 
 
