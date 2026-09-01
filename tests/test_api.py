@@ -931,3 +931,40 @@ class TestReGradeLoopClosure:
             assert rec.grade == NarratorGrade.REJECTED
             assert rec.adalah_grade == AdalahGrade.COMPROMISED
             assert rec.is_active is False
+
+    def test_reader_cannot_quarantine_via_submission(self):
+        """A reader key can submit but must NOT mutate narrator grades (issue #190)."""
+        from isnad.core.registry import RegistryDB
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import AdalahGrade, NarratorGrade, NarratorType
+
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            rdb.registry.register(
+                "narrator:reader-rejected",
+                "physics",
+                narrator_type=NarratorType.MODEL,
+                grade=NarratorGrade.REJECTED,
+            )
+            rdb.flush()
+
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "a rejected source claims X",
+                "domain": "physics",
+                "chain": [{"narrator_id": "narrator:reader-rejected"}],
+            },
+            headers={"X-API-Key": "isnad-reader"},
+        )
+        assert r.status_code == 200
+
+        with get_session() as session:
+            rdb = RegistryDB(session=session)
+            rdb.load()
+            rec = rdb.registry.get("narrator:reader-rejected", "physics")
+            assert rec is not None
+            # Reader submission must not quarantine or compromise the narrator.
+            assert rec.is_active is True
+            assert rec.adalah_grade != AdalahGrade.COMPROMISED

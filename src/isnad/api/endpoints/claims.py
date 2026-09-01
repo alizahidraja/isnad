@@ -388,7 +388,7 @@ async def submit_claim(
     reg: RegistryDB = Depends(get_registry),
     critic: Any = Depends(get_critic),
     fidelity_critic: Any = Depends(get_fidelity_critic),
-    _: str = Depends(require_auth),
+    role: str = Depends(require_auth),
 ) -> dict:
     state = get_state()
     chain_data = body.chain
@@ -616,7 +616,7 @@ async def submit_claim(
     # verdict must actually quarantine the offending narrators — set ʿadālah
     # COMPROMISED + is_active False — not merely set a flag on the record. A
     # flagged-but-not-quarantined narrator would keep serving.
-    if action in (Action.REJECT_AND_QUARANTINE_NARRATOR, Action.QUARANTINE):
+    if role == "admin" and action in (Action.REJECT_AND_QUARANTINE_NARRATOR, Action.QUARANTINE):
         for narrator_id in resolved_narrator_ids:
             try:
                 reg.registry.quarantine(narrator_id, domain, reason="matrix action quarantined")
@@ -639,7 +639,7 @@ async def submit_claim(
     #   - a corroboration upgrade is a freshness signal (independent chains
     #     still agree → the world has not changed on this narrator).
     applied_re_grade = False
-    if has_live_contradiction and action != Action.REJECT_AND_QUARANTINE_NARRATOR:
+    if role == "admin" and has_live_contradiction and action != Action.REJECT_AND_QUARANTINE_NARRATOR:
         for narrator_id in resolved_narrator_ids:
             try:
                 reg.registry.flag_contradiction(
@@ -650,7 +650,7 @@ async def submit_claim(
                 applied_re_grade = True
             except Exception as exc:
                 logger.warning(f"Failed to flag contradiction on {narrator_id}: {exc}")
-    elif corr_result.upgraded:
+    elif role == "admin" and corr_result.upgraded:
         for narrator_id in resolved_narrator_ids:
             try:
                 reg.registry.renew_grade(narrator_id, domain, reason="corroboration")
