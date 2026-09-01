@@ -408,6 +408,45 @@ def _verify_merkle(argv: list[str]) -> int:
     return 1
 
 
+def _scan(argv: list[str]) -> int:
+    """Map pipeline transmitters onto the warm default registry (#206)."""
+    parser = argparse.ArgumentParser(
+        prog="isnad scan", description="Map pipeline transmitters onto the registry."
+    )
+    parser.add_argument(
+        "--narrators",
+        required=True,
+        help="comma-separated narrator_ids (e.g. source:a,model:b,scraper:c)",
+    )
+    parser.add_argument("--domain", default="general", help="domain tag for registry lookup")
+    parser.add_argument(
+        "--vertical",
+        default="self-maintaining-kb",
+        help="default-registry vertical to scan against",
+    )
+    args = parser.parse_args(argv)
+
+    from isnad.core.registry import default_registry
+    from isnad.scan import scan_registry
+
+    reg = default_registry(vertical=args.vertical)
+    narrator_ids = [n.strip() for n in args.narrators.split(",") if n.strip()]
+    result = scan_registry(narrator_ids, reg, args.domain)
+
+    report = {
+        "vertical": args.vertical,
+        "domain": args.domain,
+        "total": len(narrator_ids),
+        "vouched": len(result.vouched),
+        "cold": len(result.cold),
+        "vouched_narrators": result.vouched,
+        "cold_narrators": result.cold,
+        "submit_hint": [c["narrator_id"] for c in result.cold],
+    }
+    print(json.dumps(report, indent=2, ensure_ascii=False))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> None:
     """CLI dispatcher.
 
@@ -416,7 +455,9 @@ def main(argv: list[str] | None = None) -> None:
             testing.
     """
     args = sys.argv if argv is None else ["isnad", *argv]
-    usage = "Usage: isnad [serve|seed|export|verify|verify-chain|verify-merkle|ingest|bench|mcp]"
+    usage = (
+        "Usage: isnad [serve|seed|export|verify|verify-chain|verify-merkle|ingest|bench|mcp|scan]"
+    )
     if len(args) < 2:
         print(usage)
         sys.exit(1)
@@ -441,6 +482,8 @@ def main(argv: list[str] | None = None) -> None:
         sys.exit(_bench(rest))
     elif cmd == "mcp":
         sys.exit(_mcp(rest))
+    elif cmd == "scan":
+        sys.exit(_scan(rest))
     else:
         print(f"Unknown command: {cmd}")
         print(usage)
