@@ -80,6 +80,7 @@ def harness_rev() -> str:
     except Exception:
         return "unknown"
 
+
 CLASSES = [g.value for g in (ChainGrade.SAHIH, ChainGrade.HASAN, ChainGrade.DAIF, ChainGrade.MAWDU)]
 
 # Sentinel names (gap markers) → whether the gap is the grade-preserving taʿlīq
