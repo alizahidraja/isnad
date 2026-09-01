@@ -13,7 +13,7 @@ a living, evidence-driven registry of transmitter reliability.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from uuid import uuid4
 
@@ -328,6 +328,86 @@ def seed_from_benchmark(
         metadata={"benchmark_accuracy": accuracy},
     )
     return grade
+
+
+@dataclass(frozen=True)
+class SeedEntry:
+    """One shipped default seed — an *Estimated* prior, never an observation.
+
+    The warm-registry schema (issue #203). Every entry carries an evidence
+    source (benchmark / publisher reputation / extraction suite) and is seeded
+    as BOOTSTRAP_SEED, so ``evidence_provenance()`` reports it ``prior_only`` and
+    ``gate_serve()`` caps it to SERVE_WITH_CAVEAT / REVIEW. "Supported"
+    (observation-backed) is never shipped — it is only earned by real pipeline
+    evidence.
+    """
+
+    narrator_id: str
+    domain: str
+    grade: str  # NarratorGrade value, e.g. "acceptable"
+    narrator_type: str  # NarratorType value, e.g. "source"
+    source: str  # evidence source, e.g. "benchmark:MMLU"
+    vertical: str = "self-maintaining-kb"
+    metadata: dict[str, object] = field(default_factory=dict)
+    model_family: str | None = None
+    upstream_source: str | None = None
+
+
+# Minimal shipped seeds for the self-maintaining-KB vertical (issue #203).
+# Expanded + curated in issue #204. Every grade here is an ESTIMATED prior.
+_DEFAULT_SEED_ENTRIES: tuple[SeedEntry, ...] = (
+    SeedEntry(
+        narrator_id="source:wikipedia",
+        domain="general",
+        grade="acceptable",
+        narrator_type="source",
+        source="publisher-reputation",
+        metadata={"note": "broad coverage; not authoritative for specialized claims"},
+    ),
+    SeedEntry(
+        narrator_id="model:gpt-4o",
+        domain="general",
+        grade="acceptable",
+        narrator_type="model",
+        source="benchmark:MMLU",
+        metadata={"benchmark_accuracy": 0.88},
+        model_family="gpt-4",
+    ),
+    SeedEntry(
+        narrator_id="scraper:web",
+        domain="general",
+        grade="weak",
+        narrator_type="scraper",
+        source="extraction-fidelity",
+        metadata={"note": "generic web scraper; fidelity varies by site"},
+    ),
+)
+
+
+def default_registry(*, vertical: str = "self-maintaining-kb") -> Registry:
+    """Return a Registry pre-seeded with the shipped, evidence-backed defaults.
+
+    Every seed is a BOOTSTRAP_SEED prior ("Estimated"), never an observation
+    ("Supported"). ``gate_serve()`` caps prior-only chains to
+    SERVE_WITH_CAVEAT or REVIEW, so a shipped seed can never plain-SERVE.
+    Grades stay operator-local: operators may override or ignore any shipped
+    entry.
+    """
+    reg = Registry()
+    for entry in _DEFAULT_SEED_ENTRIES:
+        if entry.vertical != vertical:
+            continue
+        reg.seed(
+            entry.narrator_id,
+            entry.domain,
+            NarratorGrade(entry.grade),
+            narrator_type=NarratorType(entry.narrator_type),
+            source=entry.source,
+            metadata=dict(entry.metadata),
+            model_family=entry.model_family,
+            upstream_source=entry.upstream_source,
+        )
+    return reg
 
 
 class Registry:
