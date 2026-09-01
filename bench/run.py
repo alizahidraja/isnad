@@ -18,10 +18,12 @@ which classical scholars usually express as "weak" (ḍaʿīf) or "very weak".
 from __future__ import annotations
 
 import argparse
+import hashlib
 import random
 import sqlite3
 from collections import Counter, defaultdict
 from collections.abc import Iterator, Sequence
+from pathlib import Path
 
 from bench._grade import (
     bucket as _bucket,
@@ -44,6 +46,39 @@ from bench.metrics import (
     per_class_metrics,
 )
 from isnad.types import ChainGrade, NarratorGrade
+
+# SHA-256 of the hadith-kg.db the published κ=0.871 was measured against.
+# `--reproduce` hard-fails if the on-disk DB doesn't match, so the headline
+# number is independently re-runnable, not self-asserted (issue #205).
+PINNED_DB_SHA256 = "d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6"
+
+
+def hash_file(path: str | Path) -> str:
+    """Streamed SHA-256 of a file (the DB is 1.6 GB — don't load it whole)."""
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def verify_db_hash(db_path: str | Path) -> str:
+    """Compute the DB SHA-256 and raise if it doesn't match the pinned hash."""
+    db_hash = hash_file(db_path)
+    if db_hash != PINNED_DB_SHA256:
+        raise ValueError(f"{db_path} SHA-256 mismatch: expected {PINNED_DB_SHA256}, got {db_hash}")
+    return db_hash
+
+
+def harness_rev() -> str:
+    """Best-effort git commit of the bench harness (for the receipt)."""
+    import subprocess
+
+    try:
+        out = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+        return out[:12]
+    except Exception:
+        return "unknown"
 
 CLASSES = [g.value for g in (ChainGrade.SAHIH, ChainGrade.HASAN, ChainGrade.DAIF, ChainGrade.MAWDU)]
 
@@ -157,9 +192,22 @@ def main() -> None:
     parser.add_argument("--no-controls", action="store_true", help="skip negative controls")
     parser.add_argument("--no-corroboration", action="store_true", help="skip mutābaʿa ablation")
     parser.add_argument("--json", action="store_true", help="emit machine-readable JSON")
+    parser.add_argument(
+        "--reproduce",
+        action="store_true",
+        help="verify DB SHA-256 before grading (hard-fail on mismatch)",
+    )
     args = parser.parse_args()
 
     rng = random.Random(args.seed)
+
+    db_hash: str | None = None
+    if args.reproduce:
+        try:
+            db_hash = verify_db_hash(args.db)
+        except ValueError as exc:
+            parser.error(str(exc))
+        print(f"verified {args.db} SHA-256 {db_hash}")
 
     if not args.json:
         print("=" * 72)
@@ -231,6 +279,8 @@ def main() -> None:
         import json
 
         summary = {
+            "db_hash": db_hash,
+            "harness_rev": harness_rev(),
             "mode": "lenient" if args.lenient else "strict",
             "chains_selected": len(ids),
             "chains_graded": n,
