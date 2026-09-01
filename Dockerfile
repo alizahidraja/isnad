@@ -22,6 +22,8 @@ FROM base AS prod
 COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
 COPY --from=builder /app/.cache /app/.cache
 COPY src/ src/
+COPY alembic/ alembic/
+COPY alembic.ini .
 COPY pyproject.toml README.md ./
 RUN mkdir -p /app/data
 
@@ -29,4 +31,5 @@ RUN mkdir -p /app/data
 ENV ISNAD_POLICY=bayesian
 
 EXPOSE 8000
-CMD ["uvicorn", "isnad.api.app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run migrations before serving so an existing DB is upgraded (issue #198),
+CMD ["sh", "-c", "alembic upgrade head && uvicorn isnad.api.app:app --host 0.0.0.0 --port 8000"]

@@ -208,6 +208,8 @@ domain-scoped, not global; chain independence cannot be *proven* from topology
 the coverage ceiling; corroboration rarely fires on dense technical corpora where
 genuine cross-source overlap is rare. These are features, not bugs — ISNAD says
 exactly what works, what's limited, and where you supply your own components.
+The serving index is in-memory (single-node deployment; multi-worker HA is not
+yet supported — #199).
 
 ## ISNAD-Bench — measured against 1,200 years of ground truth
 
@@ -221,6 +223,11 @@ for agreement:
 | a single scholar vs consensus | 0.450 |
 | scholars vs scholars (the human ceiling) | 0.331 |
 
+
+**Not the same scale.** κ = 0.871 measures *chain-verdict* agreement (4 classes);
+the 0.450 and 0.331 figures measure *narrator-grade* agreement (5 classes) — a
+different task. The 0.331 is context for how contested the underlying narrator
+grades are, not a direct ceiling on the chain κ.
 **How to read it:** ISNAD reproduces the scholars' *consensus* at κ = 0.87 — not
 because it is "better than the scholars" (they disagree with each other at 0.33),
 but because it deterministically implements their method. The benchmark is
