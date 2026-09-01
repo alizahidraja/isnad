@@ -129,8 +129,8 @@ def _match(
     return (
         rec.critic_kind == critic_kind
         and rec.domain == domain
-        and (rec.provider is None or rec.provider == provider)
-        and (rec.model is None or rec.model == model)
+        and rec.provider == provider
+        and rec.model == model
     )
 
 
