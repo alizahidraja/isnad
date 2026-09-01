@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.21.0] — 2026-08-30
+
+### Added
+
+- **Warm default registry (#203, #204).** `default_registry()` ships a
+  conservative, evidence-sourced seed set (~39 narrators across sources,
+  models, scrapers, tools) so a fresh pipeline no longer starts fully UNGRADED.
+  Every seed is a BOOTSTRAP_SEED prior ("Estimated"), gated to
+  SERVE_WITH_CAVEAT/REVIEW — never plain SERVE, and never "Supported" without
+  real observations.
+- **`isnad bench --reproduce` (#205).** Hard-fails on a wrong hadith-kg.db
+  SHA-256 and adds db_hash + harness_rev to the JSON receipt, so κ=0.871 is
+  independently re-runnable, not self-asserted.
+- **`isnad scan` (#206).** Maps a live pipeline's transmitter ids onto the
+  registry and reports vouched vs cold (UNGRADED → REVIEW). Evidence listing
+  only — ordinal grade + provenance, never a numeric trust score.
+- **Interchange positioning (#207).** `isnad_trace` is documented as an
+  *evaluative profile* over W3C PROV / PROV-AGENT, not a competing standard;
+  emit receipts, don't host a transparency log.
+
+### Fixed
+
+- **Test harness no longer aborts the whole run on a flaky check (#209).**
+  The edge/stress module-level assertion is deferred to a test function.
+
 ## [2.20.1] — 2026-08-30
 
 ### Fixed
@@ -8,6 +33,7 @@
   version bump (the `isnad_version` embedded in `js/test/golden.json` had gone
   stale, failing the JS drift gate), and `ruff format`-ed the files the 2.20.0
   commits left unformatted.
+
 ## [2.20.0] — 2026-08-30
 
 ### Security & integrity — brutal-audit hardening

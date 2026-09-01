@@ -72,7 +72,7 @@ Chain integrity and origin strength are carried **separately**, never collapsed
 through a single `min()`:
 
 | Axis | What it measures | Enum values |
-|------|-----------------|-------------|
+| ------ | ----------------- | ------------- |
 | `chain_integrity` | How soundly was the claim transmitted? | `sahih`, `hasan`, `daif`, `mawdu`, `ungraded` |
 | `origin_strength` | How trustworthy is the SOURCE? | `verified`, `attested`, `reputable`, `unknown`, `suspect`, `compromised` |
 
@@ -86,7 +86,7 @@ merely rank them.
 First-class enum, never a silent boolean:
 
 | Value | Meaning |
-|-------|---------|
+| ------- | --------- |
 | `verified` | Independence structurally confirmed (disjoint narrator sets, different model families, different upstream sources) |
 | `unverified` | Default.  Not yet checked.  Absence of evidence of sharing is not evidence of independence. |
 | `shared_ancestry_detected` | Correlated chains found — shared narrator IDs, shared model family, or shared upstream source.  Corroboration is discounted. |
