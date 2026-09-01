@@ -1,6 +1,6 @@
 [project]
 name = "isnad"
-version = "2.20.0"
+version = "2.20.1"
 description = "Isnād–Rijāl framework for claim-level provenance in multi-agent knowledge systems"
 readme = "README.md"
 authors = [

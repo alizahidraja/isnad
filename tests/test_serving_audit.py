@@ -9,17 +9,15 @@ from isnad.types import NarratorGrade, TransformType
 def _chain_and_registry() -> tuple[Registry, Chain]:
     reg = Registry()
     reg.register("src", "physics", grade=NarratorGrade.RELIABLE)
-    chain = Chain(
-        [
-            ChainLinkSpec(
-                narrator_id="src",
-                step=0,
-                version="1",
-                transform_type=TransformType.PASS_THROUGH,
-                domain="physics",
-            )
-        ]
-    )
+    chain = Chain([
+        ChainLinkSpec(
+            narrator_id="src",
+            step=0,
+            version="1",
+            transform_type=TransformType.PASS_THROUGH,
+            domain="physics",
+        )
+    ])
     return reg, chain
 
 

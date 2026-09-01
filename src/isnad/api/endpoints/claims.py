@@ -668,7 +668,11 @@ async def submit_claim(
     #   - a corroboration upgrade is a freshness signal (independent chains
     #     still agree → the world has not changed on this narrator).
     applied_re_grade = False
-    if role == "admin" and has_live_contradiction and action != Action.REJECT_AND_QUARANTINE_NARRATOR:
+    if (
+        role == "admin"
+        and has_live_contradiction
+        and action != Action.REJECT_AND_QUARANTINE_NARRATOR
+    ):
         for narrator_id in resolved_narrator_ids:
             try:
                 reg.registry.flag_contradiction(

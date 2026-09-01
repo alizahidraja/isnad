@@ -137,14 +137,20 @@ class TestClaims:
         assert r.json()["corroborating_claims"] >= 1
 
     def test_claim_404(self):
-        assert client.get("/v1/claims/nonexistent", headers={"X-API-Key": "isnad-admin"}).status_code == 404
-
+        assert (
+            client.get("/v1/claims/nonexistent", headers={"X-API-Key": "isnad-admin"}).status_code
+            == 404
+        )
 
     def test_unauthenticated_claim_read_rejected(self):
         """Claim read + chain endpoints require auth (issue #191)."""
         r = client.post(
             "/v1/claims",
-            json={"claim_text": "F = ma", "domain": "physics", "chain": [{"narrator_id": "source:openstax"}]},
+            json={
+                "claim_text": "F = ma",
+                "domain": "physics",
+                "chain": [{"narrator_id": "source:openstax"}],
+            },
             headers={"X-API-Key": "isnad-admin"},
         )
         cid = r.json()["claim_id"]
@@ -171,7 +177,9 @@ class TestClaims:
         )
         assert r.status_code == 200
         cid = r.json()["claim_id"]
-        chain = client.get(f"/v1/claims/{cid}/chain", headers={"X-API-Key": "isnad-admin"}).json()["chain"]
+        chain = client.get(f"/v1/claims/{cid}/chain", headers={"X-API-Key": "isnad-admin"}).json()[
+            "chain"
+        ]
         for link in chain:
             assert "input_snapshot" not in link
             assert "output_snapshot" not in link
@@ -186,10 +194,15 @@ class TestClaims:
         monkeypatch.setattr(claims_mod, "store_claim", boom)
         r = client.post(
             "/v1/claims",
-            json={"claim_text": "F = ma", "domain": "physics", "chain": [{"narrator_id": "source:openstax"}]},
+            json={
+                "claim_text": "F = ma",
+                "domain": "physics",
+                "chain": [{"narrator_id": "source:openstax"}],
+            },
             headers={"X-API-Key": "isnad-admin"},
         )
         assert r.status_code == 500
+
     def test_document_hashes_round_trip_in_chain(self):
         """Chain links carry document_hashes through submission → retrieval (#125)."""
         r = client.post(
@@ -597,7 +610,10 @@ class TestReviewQueue:
 
         r = client.post(
             f"/v1/review-queue/{item_id}/resolve",
-            json={"resolution": "human confirmed the faster value", "reviewer_id": "alice@example.com"},
+            json={
+                "resolution": "human confirmed the faster value",
+                "reviewer_id": "alice@example.com",
+            },
             headers={"X-API-Key": "isnad-admin"},
         )
         assert r.status_code == 200
@@ -606,7 +622,9 @@ class TestReviewQueue:
         assert body["resolution"] == "human confirmed the faster value"
         assert body["reviewer_id"] == "alice@example.com"
 
-        claim = client.get(f"/v1/claims/{claim2['claim_id']}", headers={"X-API-Key": "isnad-admin"}).json()
+        claim = client.get(
+            f"/v1/claims/{claim2['claim_id']}", headers={"X-API-Key": "isnad-admin"}
+        ).json()
         assert any(
             o["action"] == "resolved" and o["actor_ref"] == "alice@example.com"
             for o in claim.get("human_oversight", [])

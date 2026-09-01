@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.20.1] — 2026-08-30
+
+### Fixed
+
+- **CI green.** Re-synced the golden conformance vectors after the 2.20.0
+  version bump (the `isnad_version` embedded in `js/test/golden.json` had gone
+  stale, failing the JS drift gate), and `ruff format`-ed the files the 2.20.0
+  commits left unformatted.
 ## [2.20.0] — 2026-08-30
 
 ### Security & integrity — brutal-audit hardening

@@ -62,12 +62,12 @@ def test_provider_model_mismatch_refuses():
     assert allows("llm", "physics", provider="openai", model="gpt-4o") is False
 
 
-
 def test_providerless_record_does_not_wildcard():
     """A provider=None/model=None record must NOT license any specific provider (#200)."""
     register(_record())
     assert allows("llm", "physics") is True  # None matches None
     assert allows("llm", "physics", provider="openai", model="gpt-4o") is False
+
 
 def test_threshold_refuses_when_rate_too_high():
     register(_record(false_consistent_count=3, false_consistent_rate=0.12))

@@ -29,6 +29,7 @@ class ResolutionIn(BaseModel):
     reviewer_id: str
     note: str = ""
 
+
 router = APIRouter(prefix="/v1", tags=["review"])
 
 
