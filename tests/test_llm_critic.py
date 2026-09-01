@@ -106,6 +106,18 @@ class TestVerdictParsing:
             == ContentVerdict.UNVERIFIABLE
         )
 
+    def test_bare_not_consistent_fails_safe(self, monkeypatch):
+        """The bare reply "NOT CONSISTENT" (no trailing filler) must fail safe.
+
+        Regression: the last-token fast path used to return CONSISTENT before
+        the negation-aware scan ran — a blessed contradiction.
+        """
+        critic = self._critic_with("NOT CONSISTENT", monkeypatch)
+        assert (
+            critic.evaluate("f ≠ ma", "f != ma", ["f = ma"], "physics")
+            == ContentVerdict.UNVERIFIABLE
+        )
+
     def test_not_contradiction_is_not_misparsed(self, monkeypatch):
         critic = self._critic_with("NOT CONTRADICTION — they agree", monkeypatch)
         assert (

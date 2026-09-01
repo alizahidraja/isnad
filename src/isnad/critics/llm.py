@@ -71,7 +71,10 @@ def _parse_verdict(text: str) -> ContentVerdict:
     # Preferred path: the prompt asks for a single trailing word.
     last = t.split()[-1].strip().rstrip(".!?,;:'\"").upper()
     if last in ("CONSISTENT", "CONTRADICTION", "UNVERIFIABLE"):
-        return ContentVerdict(last.lower())
+        # The final token may itself be negated ("NOT CONSISTENT").
+        prefix_words = t.split()[:-1][-3:]
+        if not _NEGATION.search(" ".join(prefix_words)):
+            return ContentVerdict(last.lower())
 
     # Fallback: negation-aware scan over the whole reply.
     for m in re.finditer(r"\b(CONSISTENT|CONTRADICTION|UNVERIFIABLE)\b", t, re.IGNORECASE):
