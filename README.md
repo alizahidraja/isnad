@@ -39,7 +39,7 @@ print(verdict.why)
 [![Downloads](https://static.pepy.tech/badge/isnad/month)](https://pypi.org/project/isnad/)
 [![npm](https://img.shields.io/npm/v/isnad)](https://www.npmjs.com/package/isnad)
 
-**🌐 Project home: <https://alizahidraja.com/isnad>** · ⭐ Star to follow along · [Contribute](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
+**🌐 Project home: <https://alizahidraja.com/isnad>** · **📚 Docs: <https://alizahidraja.com/isnad/docs>** · ⭐ Star to follow along · [Contribute](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
 
 **JavaScript/TypeScript verifier:** `npm install isnad` verifies ISNAD audit records (SHA-256 / Merkle / detached signatures) from JS — *verifier only*, grading stays in the Python core. See [`js/README.md`](js/README.md).
 
