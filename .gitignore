@@ -49,3 +49,4 @@ corpus/pdfs/
 node_modules/
 *.tsbuildinfo
 *.tgz
+site/

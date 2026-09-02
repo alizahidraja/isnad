@@ -1,0 +1,72 @@
+site_name: ISNAD
+site_description: >-
+  Grades the transmitters and the chain, not just the claim — open-source LLM
+  provenance and AI audit trail for RAG and multi-agent systems.
+site_url: https://alizahidraja.github.io/isnad/
+repo_url: https://github.com/alizahidraja/isnad
+repo_name: alizahidraja/isnad
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Provenance: provenance.md
+  - CLI Reference: cli-reference.md
+  - Architecture: ARCHITECTURE.md
+  - Chain Independence: chain-independence.md
+  - Critics: critics.md
+  - Evidence Mapping: evidence-mapping.md
+  - Trace Schema: trace-schema.md
+  - Onboard in a Day: onboard-in-a-day.md
+  - Period-Sliced Grades: period-sliced-grades.md
+  - Concept to Code: concept_to_code.md
+  - Role Grading (RFC): rfc-issue3-role-grading.md
+  - Case Study (xz backdoor): case-study-xz-sleeper-narrator.md
+  - OTel Mapping: otel-mapping.md
