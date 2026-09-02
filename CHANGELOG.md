@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.21.1] — 2026-08-30
+
+### Fixed
+
+- **Serving path now warms from the evidence-sourced default registry (#203/#204).**
+  `isnad serve` previously seeded a divergent hardcoded physics list with no evidence
+  source; it now seeds from `default_seed_entries()` (Estimated priors, BOOTSTRAP_SEED,
+  gated to SERVE_WITH_CAVEAT/REVIEW).
+- **`isnad scan` no longer fabricates "Supported" provenance (#206).** A narrator with
+  a grade but no observed/human evidence is now labeled "unvalidated"; a UNGRADED
+  narrator is reported "cold" (was "vouched"). Provenance branches on
+  observation_backed / prior_only / unvalidated.
+- **CHANGELOG honesty:** `--reproduce` lives on `python -m bench.run`, not the
+  `isnad bench` CLI; reworded the 2.21.0 entry accordingly.
+- **`test_edge_stress` positive gate always collected.** `test_edge_stress_all_passed`
+  is now defined unconditionally, so a green run collects + asserts (was 0 items on
+  success).
+
 ## [2.21.0] — 2026-08-30
 
 ### Added
@@ -10,7 +28,7 @@
   Every seed is a BOOTSTRAP_SEED prior ("Estimated"), gated to
   SERVE_WITH_CAVEAT/REVIEW — never plain SERVE, and never "Supported" without
   real observations.
-- **`isnad bench --reproduce` (#205).** Hard-fails on a wrong hadith-kg.db
+- **`python -m bench.run --reproduce` (#205).** Hard-fails on a wrong hadith-kg.db
   SHA-256 and adds db_hash + harness_rev to the JSON receipt, so κ=0.871 is
   independently re-runnable, not self-asserted.
 - **`isnad scan` (#206).** Maps a live pipeline's transmitter ids onto the

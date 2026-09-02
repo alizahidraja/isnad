@@ -648,12 +648,11 @@ if passed < total:
     msg = f"{total - passed}/{total} failed: {failed_names}"
     if __name__ == "__main__":
         raise AssertionError(msg)
-
-    # Imported (e.g. by pytest collection): defer the assertion to a test
-    # function so a single flaky check does not abort the whole collection.
-    def test_edge_stress_all_passed():
-        assert passed == total, msg
-
 else:
     print(f"\n{PASS} ALL {total} EDGE + STRESS CHECKS PASSED\n")
-# ruff: noqa: E402
+
+
+def test_edge_stress_all_passed():
+    """Assert the module-level edge/stress checks all passed (always collected)."""
+    failed = [name for name, ok, _ in results if not ok]
+    assert passed == total, f"{total - passed}/{total} failed: {failed}"

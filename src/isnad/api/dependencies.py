@@ -11,10 +11,15 @@ from typing import Any
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
-from isnad.core.registry import BayesianTransitionPolicy, RegistryDB, ThresholdTransitionPolicy
+from isnad.core.registry import (
+    BayesianTransitionPolicy,
+    RegistryDB,
+    ThresholdTransitionPolicy,
+    default_seed_entries,
+)
 from isnad.critics.nli import LocalNLICritic
 from isnad.storage.sqlalchemy import get_session_factory
-from isnad.types import NarratorGrade, TransitionPolicy
+from isnad.types import NarratorGrade, NarratorType, TransitionPolicy
 
 logger = logging.getLogger("isnad.api")
 
@@ -55,18 +60,28 @@ def _parse_seed_config() -> list[tuple[str, str, NarratorGrade]]:
 
 
 # ── Warm-start seeds ───────────────────────────────────────────
-_WARM_START_SEEDS: list[tuple[str, str, NarratorGrade]] = [
-    ("source:openstax", "physics", NarratorGrade.RELIABLE),
-    ("source:crowell", "physics", NarratorGrade.RELIABLE),
-    ("pdf-scraper@1.2", "physics", NarratorGrade.RELIABLE),
-    ("openstax_v3", "physics", NarratorGrade.RELIABLE),
-    ("wikisource", "physics", NarratorGrade.RELIABLE),
-    ("pdf_scraper_a", "physics", NarratorGrade.ACCEPTABLE),
-    ("pdf_scraper_b", "physics", NarratorGrade.ACCEPTABLE),
-    ("ingest_model_a", "physics", NarratorGrade.ACCEPTABLE),
-    ("ingest_model_b", "physics", NarratorGrade.ACCEPTABLE),
-]
-_WARM_START_SEEDS.extend(_parse_seed_config())
+def _seed_warm_registry(reg: RegistryDB) -> None:
+    """Warm the registry from evidence-sourced defaults + operator config.
+
+    The shipped defaults (issues #203/#204) are Estimated priors (BOOTSTRAP_SEED),
+    never observations, so ``gate_serve`` still caps them to SERVE_WITH_CAVEAT /
+    REVIEW. Operator seeds from ISNAD_SEED_CONFIG are applied after defaults.
+    """
+    for entry in default_seed_entries():
+        if reg.registry.get(entry.narrator_id, entry.domain) is None:
+            reg.registry.seed(
+                entry.narrator_id,
+                entry.domain,
+                NarratorGrade(entry.grade),
+                narrator_type=NarratorType(entry.narrator_type),
+                source=entry.source,
+                metadata=dict(entry.metadata),
+                model_family=entry.model_family,
+                upstream_source=entry.upstream_source,
+            )
+    for nid, dom, grade in _parse_seed_config():
+        if reg.registry.get(nid, dom) is None:
+            reg.registry.seed(nid, dom, grade, source="operator-config")
 
 
 # ── Policy builder ─────────────────────────────────────────────
@@ -108,9 +123,7 @@ def get_registry(session: Session = Depends(get_db)) -> RegistryDB:
     reg = RegistryDB(session=session, transition_policy=policy)
     reg.load()
     if not getattr(get_registry, "_seeded", False):
-        for nid, dom, grade in _WARM_START_SEEDS:
-            if reg.registry.get(nid, dom) is None:
-                reg.registry.seed(nid, dom, grade, source="warm-start")
+        _seed_warm_registry(reg)
         reg.flush()
         get_registry._seeded = True  # type: ignore[attr-defined]
     return reg

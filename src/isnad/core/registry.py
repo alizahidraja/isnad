@@ -690,6 +690,16 @@ _DEFAULT_SEED_ENTRIES: tuple[SeedEntry, ...] = (
 )
 
 
+def default_seed_entries(*, vertical: str = "self-maintaining-kb") -> list[SeedEntry]:
+    """The shipped warm-registry seed entries (Estimated priors, never observations).
+
+    Public so the serving path (``isnad.api.dependencies``) can warm its registry
+    from the same evidence-sourced defaults as ``default_registry()``, instead of
+    a divergent hardcoded list.
+    """
+    return [entry for entry in _DEFAULT_SEED_ENTRIES if entry.vertical == vertical]
+
+
 def default_registry(*, vertical: str = "self-maintaining-kb") -> Registry:
     """Return a Registry pre-seeded with the shipped, evidence-backed defaults.
 
@@ -700,9 +710,7 @@ def default_registry(*, vertical: str = "self-maintaining-kb") -> Registry:
     entry.
     """
     reg = Registry()
-    for entry in _DEFAULT_SEED_ENTRIES:
-        if entry.vertical != vertical:
-            continue
+    for entry in default_seed_entries(vertical=vertical):
         reg.seed(
             entry.narrator_id,
             entry.domain,

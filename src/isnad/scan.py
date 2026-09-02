@@ -11,6 +11,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from isnad.core.registry import Registry
+from isnad.types import NarratorGrade
 
 
 @dataclass(frozen=True)
@@ -37,20 +38,24 @@ def scan_registry(
     cold: list[dict[str, str]] = []
     for nid in narrator_ids:
         narrator = registry.get(nid, domain)
-        if narrator is None:
+        if narrator is None or narrator.grade is NarratorGrade.UNGRADED:
             cold.append({
                 "narrator_id": nid,
                 "status": "cold",
-                "note": "not in registry — UNGRADED → REVIEW (strict default)",
+                "note": "not in registry or UNGRADED — REVIEW (strict default)",
             })
         else:
             prov = registry.evidence_provenance(nid, domain)
+            if prov.observation_backed:
+                provenance = "observation (Supported)"
+            elif prov.prior_only:
+                provenance = "prior (Estimated)"
+            else:
+                provenance = "unvalidated (no observed or human evidence)"
             vouched.append({
                 "narrator_id": nid,
                 "status": "vouched",
                 "grade": narrator.grade.value,
-                "provenance": (
-                    "prior (Estimated)" if prov.prior_only else "observation (Supported)"
-                ),
+                "provenance": provenance,
             })
     return ScanResult(vouched=vouched, cold=cold)

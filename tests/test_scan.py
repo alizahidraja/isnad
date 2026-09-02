@@ -27,3 +27,26 @@ def test_empty_scan():
     result = scan_registry([], reg, "general")
     assert result.vouched == []
     assert result.cold == []
+
+
+def test_ungraded_narrator_is_cold():
+    from isnad.core.registry import Registry
+    from isnad.types import NarratorGrade
+
+    reg = Registry()
+    reg.register("x", "general", grade=NarratorGrade.UNGRADED)
+    result = scan_registry(["x"], reg, "general")
+    assert len(result.cold) == 1
+    assert len(result.vouched) == 0
+
+
+def test_bare_register_is_not_labeled_supported():
+    """A grade with no evidence is 'unvalidated', never 'Supported' (#206 audit)."""
+    from isnad.core.registry import Registry
+    from isnad.types import NarratorGrade
+
+    reg = Registry()
+    reg.register("x", "general", grade=NarratorGrade.WEAK)  # grade but NO evidence
+    result = scan_registry(["x"], reg, "general")
+    entry = result.vouched[0]
+    assert entry["provenance"] == "unvalidated (no observed or human evidence)"

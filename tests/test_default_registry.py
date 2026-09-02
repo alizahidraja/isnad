@@ -50,3 +50,13 @@ def test_prior_only_seed_cannot_plain_serve():
 def test_unknown_vertical_returns_empty_registry():
     reg = default_registry(vertical="does-not-exist")
     assert len(reg._narrators) == 0
+
+
+def test_default_seed_entries_are_evidence_sourced():
+    """Serving warms from evidence-sourced defaults, not unprovenanced seeds (#2.21.1)."""
+    from isnad.core.registry import default_seed_entries
+
+    entries = default_seed_entries()
+    assert len(entries) == len(_DEFAULT_SEED_ENTRIES)
+    assert all(e.source != "warm-start" for e in entries)
+    assert all(e.grade in {"reliable", "acceptable", "weak"} for e in entries)
