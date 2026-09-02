@@ -38,7 +38,8 @@ def scan_registry(
     cold: list[dict[str, str]] = []
     for nid in narrator_ids:
         narrator = registry.get(nid, domain)
-        if narrator is None or narrator.grade is NarratorGrade.UNGRADED:
+        effective = registry.get_grade(nid, domain)
+        if narrator is None or effective is NarratorGrade.UNGRADED:
             cold.append({
                 "narrator_id": nid,
                 "status": "cold",
@@ -50,12 +51,14 @@ def scan_registry(
                 provenance = "observation (Supported)"
             elif prov.prior_only:
                 provenance = "prior (Estimated)"
+            elif prov.human_count > 0:
+                provenance = "human (Reviewed)"
             else:
                 provenance = "unvalidated (no observed or human evidence)"
             vouched.append({
                 "narrator_id": nid,
                 "status": "vouched",
-                "grade": narrator.grade.value,
+                "grade": effective.value,
                 "provenance": provenance,
             })
     return ScanResult(vouched=vouched, cold=cold)

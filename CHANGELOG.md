@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.21.2] — 2026-09-02
+
+### Fixed
+
+- **`isnad scan` provenance now covers the human-evidence branch (audit P1).** A
+  narrator with human evidence but no observed instance (e.g. a quarantined/REJECTED
+  narrator) was mislabeled "unvalidated (no observed or human evidence)"; it now
+  reports "human (Reviewed)".
+- **`isnad scan` reports the effective (time-decayed) grade, not the stored grade
+  (audit P2).** An expired narrator is now reported "cold", not "vouched" with a
+  stale grade.
+- **`default_seed_entries` re-exported** at the package top level
+  (`isnad.default_seed_entries`).
+
 ## [2.21.1] — 2026-08-30
 
 ### Fixed

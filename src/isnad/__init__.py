@@ -21,7 +21,7 @@ Quickstart::
     action = decide(cg, cv)
 """
 
-__version__ = "2.21.1"
+__version__ = "2.21.2"
 __author__ = "Ali Zahid Raja"
 
 # Public API — re-exports
@@ -52,6 +52,7 @@ from isnad.core.registry import (
     ThresholdTransitionPolicy,
     accuracy_to_grade,
     default_registry,
+    default_seed_entries,
     seed_from_benchmark,
 )
 from isnad.critics import (
@@ -120,6 +121,7 @@ __all__ = [
     "seed_from_benchmark",
     "SeedEntry",
     "default_registry",
+    "default_seed_entries",
     # critics
     "ContentCritic",
     "EmbeddingCritic",
