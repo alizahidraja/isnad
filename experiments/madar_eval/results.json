@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "component": "content_madar",
+  "eval_set_sha256": "556e838958c252502c1dd8b91d81fbbee16bb698a4093adec9444305c9fc1793",
+  "layers": {
+    "shares_error_with": {
+      "n": 20,
+      "n_shared_error": 8,
+      "n_independent_agreement": 8,
+      "n_independent_different": 4,
+      "recall": 1.0,
+      "precision": 0.571,
+      "f1": 0.727,
+      "false_positive_rate": 0.5,
+      "false_positive_rate_agreement": 0.75,
+      "tp": 8,
+      "fn": 0,
+      "fp": 6,
+      "tn": 6,
+      "fp_agreement": 6
+    },
+    "detect_content_madar": {
+      "n": 20,
+      "n_shared_error": 8,
+      "n_independent_agreement": 8,
+      "n_independent_different": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_positive_rate_agreement": 0.0,
+      "tp": 8,
+      "fn": 0,
+      "fp": 0,
+      "tn": 12,
+      "fp_agreement": 0
+    }
+  },
+  "per_case": {
+    "raw": [
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "independent_agreement",
+        "fired": true
+      },
+      {
+        "label": "independent_agreement",
+        "fired": true
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_agreement",
+        "fired": true
+      },
+      {
+        "label": "independent_agreement",
+        "fired": true
+      },
+      {
+        "label": "independent_agreement",
+        "fired": true
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_agreement",
+        "fired": true
+      },
+      {
+        "label": "independent_different",
+        "fired": false
+      },
+      {
+        "label": "independent_different",
+        "fired": false
+      },
+      {
+        "label": "independent_different",
+        "fired": false
+      },
+      {
+        "label": "independent_different",
+        "fired": false
+      }
+    ],
+    "gated": [
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "shared_error",
+        "fired": true
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_agreement",
+        "fired": false
+      },
+      {
+        "label": "independent_different",
+        "fired": false
+      },
+      {
+        "label": "independent_different",
+        "fired": false
+      },
+      {
+        "label": "independent_different",
+        "fired": false
+      },
+      {
+        "label": "independent_different",
+        "fired": false
+      }
+    ]
+  },
+  "cases": [
+    [
+      "shared_error",
+      "The dataset contains 4,200 labeled records.",
+      "There are 4,200 labeled records in the dataset."
+    ],
+    [
+      "shared_error",
+      "The speed of light is about 300,000 km per hour.",
+      "Light travels at roughly 300,000 km per hour in a vacuum."
+    ],
+    [
+      "shared_error",
+      "The Odyssey was written by Virgil.",
+      "Virgil is the author of the Odyssey."
+    ],
+    [
+      "shared_error",
+      "The Berlin Wall fell in 1991.",
+      "1991 was the year the Berlin Wall came down."
+    ],
+    [
+      "shared_error",
+      "This result is established in arxiv:1706.03762 on convolutional models.",
+      "See arxiv:1706.03762, which proves the convolutional result."
+    ],
+    [
+      "shared_error",
+      "The enzyme denatures irreversibly at exactly 37 degrees Celsius.",
+      "At exactly 37 degrees Celsius the enzyme denatures irreversibly."
+    ],
+    [
+      "shared_error",
+      "The recommended dose is 500 mg taken twice daily.",
+      "Patients should take 500 mg of it twice daily as recommended."
+    ],
+    [
+      "shared_error",
+      "Pluto is not a planet and has no moons.",
+      "Pluto has no moons; it is not a planet."
+    ],
+    [
+      "independent_agreement",
+      "Newton published the Principia in 1687.",
+      "The Principia first appeared in 1687."
+    ],
+    [
+      "independent_agreement",
+      "The committee has 9 members.",
+      "There are 9 people on the committee."
+    ],
+    [
+      "independent_agreement",
+      "Einstein developed the theory of general relativity.",
+      "General relativity was formulated by Einstein."
+    ],
+    [
+      "independent_agreement",
+      "Water boils at 100 degrees Celsius at sea level.",
+      "At sea level, the boiling point of water is 100 degrees Celsius."
+    ],
+    [
+      "independent_agreement",
+      "The transformer architecture is introduced in arxiv:1706.03762.",
+      "arxiv:1706.03762 is the paper that introduced transformers."
+    ],
+    [
+      "independent_agreement",
+      "The marathon distance is 42 km.",
+      "A marathon covers 42 km."
+    ],
+    [
+      "independent_agreement",
+      "The sun is not a planet.",
+      "The sun is not a planet; it is a star."
+    ],
+    [
+      "independent_agreement",
+      "The mission launched on 1969-07-16.",
+      "Launch occurred on 1969-07-16."
+    ],
+    [
+      "independent_different",
+      "The dataset contains 4,200 labeled records.",
+      "The model was trained for 12 epochs."
+    ],
+    [
+      "independent_different",
+      "The Odyssey was written by Homer.",
+      "The speed of light is about 300,000 km per second."
+    ],
+    [
+      "independent_different",
+      "The recommended dose is 500 mg twice daily.",
+      "The committee meets on the first Monday of each month."
+    ],
+    [
+      "independent_different",
+      "Photosynthesis converts light into chemical energy.",
+      "The Berlin Wall fell in 1989."
+    ]
+  ]
+}
