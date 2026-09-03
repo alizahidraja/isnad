@@ -1,22 +1,49 @@
 """Regression test for the content-madār calibration harness (#54).
 
 Pins the headline invariants so the committed RESULTS.md numbers cannot silently
-drift, and so the *shape* of the result — the gate removes the raw fingerprint's
-dangerous false positives — stays true. This does not re-assert exact rates
-(those live in RESULTS.md); it asserts the properties that make the measurement
-meaningful.
+drift, and so the *shape* of the result — the gate short-circuits before the raw
+fingerprint on CONSISTENT claims — stays true. This does not re-assert exact
+rates (those live in RESULTS.md); it asserts the properties that make the
+measurement meaningful.
+
+The experiment modules are loaded under UNIQUE names via importlib: every
+experiment ships an ``eval_set``/``run``, and a bare ``from run import`` /
+``from eval_set import`` collides under pytest's shared process (the first module
+of that name imported wins in ``sys.modules``, so this test would silently run
+against critic_eval's data). See tests/test_e2e_utility_oracle.py for the same
+guard.
 """
 
 from __future__ import annotations
 
+import importlib.util
 import sys
 from pathlib import Path
 
 _EVAL_DIR = Path(__file__).resolve().parent.parent / "experiments" / "madar_eval"
-sys.path.insert(0, str(_EVAL_DIR))
 
-from eval_set import all_cases  # noqa: E402
-from run import _eval_set_sha256, _gated_fires, _metrics, _raw_fires  # noqa: E402
+
+def _load(module_name: str, path: Path):
+    spec = importlib.util.spec_from_file_location(module_name, path)
+    assert spec is not None and spec.loader is not None
+    mod = importlib.util.module_from_spec(spec)
+    # Register BEFORE exec so run.py's own `from madar_eval_set import ...` and
+    # any @dataclass decorators resolve against the right modules.
+    sys.modules[module_name] = mod
+    spec.loader.exec_module(mod)
+    return mod
+
+
+# eval_set must be importable by its own module name (run.py imports it), so load
+# it under that exact unique name first, then run.py.
+_load("madar_eval_set", _EVAL_DIR / "madar_eval_set.py")
+_run = _load("_isnad_madar_eval_run", _EVAL_DIR / "run.py")
+
+all_cases = _run.all_cases
+_eval_set_sha256 = _run._eval_set_sha256
+_gated_fires = _run._gated_fires
+_metrics = _run._metrics
+_raw_fires = _run._raw_fires
 
 
 def _rows():

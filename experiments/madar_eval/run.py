@@ -52,7 +52,10 @@ from isnad.core.content_madar import ErrorFingerprint, detect_content_madar
 from isnad.types import ContentVerdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from eval_set import all_cases  # noqa: E402
+# Unique module name: every experiment ships an ``eval_set``/``run``, and a bare
+# ``from eval_set import`` collides under pytest's shared process (the first one
+# imported wins in sys.modules). See tests/test_e2e_utility_oracle.py.
+from madar_eval_set import all_cases  # noqa: E402
 
 _HERE = Path(__file__).resolve().parent
 
