@@ -74,8 +74,8 @@ ISNAD — Self-maintaining KB demo (Recipe 1)
    - **4c** the fabricated-bot is *quarantined* (`rejected` / `compromised` /
      inactive); its claim stays off the served surface.
 5. **HONEST SURVIVAL** — the tazkiyah guard refuses self-verified survival, the
-   independence guard refuses a self-seal (`source == narrator`) and an
-   unregistered verifier, and claim-scoped dedup refuses a duplicate
+   independence guard refuses a self-seal (`source == narrator`), and
+   claim-scoped dedup refuses a duplicate
    `(claim, source)`.
 
 ## Honesty notes

@@ -130,4 +130,11 @@ def test_survival_refuses_self_seal(reg: Registry) -> None:
         )
         == grade
     )
+    # A versioned alias of the narrator is still a self-seal.
+    assert (
+        reg.record_survival(
+            "source:internal-docs", kb.DOMAIN, "claim-self-seal-v", "source:internal-docs@v1"
+        )
+        == grade
+    )
     assert reg.evidence_provenance("source:internal-docs", kb.DOMAIN).observed_count == 0

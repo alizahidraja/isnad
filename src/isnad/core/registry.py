@@ -1687,7 +1687,7 @@ class Registry:
 
         # Independence guard: a narrator vouching for itself (source == narrator)
         # is a self-seal, not independent verification; refuse it.
-        if source == narrator_id:
+        if self._alias_for(source) == self._alias_for(narrator_id):
             return current_grade
 
         # Claim-scoped dedup: has this claim already survived for this narrator?

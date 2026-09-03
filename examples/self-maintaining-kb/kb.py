@@ -10,7 +10,7 @@ isnad pipeline:
 4. **SELF-MAINTAINING LOOP** — new evidence (survival, contradiction,
    quarantine) re-grades a narrator and the served surface changes.
 5. **HONEST SURVIVAL** — self-verified survival and duplicate survival are
-   refused (no-op), so grades cannot be farmed.
+   refused (no-op), so re-checks of the same claim do not double-count.
 
 Run::
 
