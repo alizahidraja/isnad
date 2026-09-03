@@ -25,6 +25,11 @@ from isnad.core.chain import (
     normalize_claim_text,
     store_claim,
 )
+from isnad.core.chain_grounding import (
+    PollutionResult,
+    chain_scoped_corpus,
+    detect_context_pollution,
+)
 from isnad.core.content_madar import detect_content_madar
 from isnad.core.corroboration import (
     CappedCorroborationPolicy,
@@ -67,6 +72,9 @@ __all__ = [
     "IndependenceAssessment",
     "SharedLineageDetector",
     "evaluate_corroboration",
+    "PollutionResult",
+    "chain_scoped_corpus",
+    "detect_context_pollution",
     "detect_content_madar",
     # decision
     "decide",
