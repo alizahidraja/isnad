@@ -119,3 +119,15 @@ def test_honest_survival_noop(reg: Registry) -> None:
     assert reg.evidence_provenance("source:internal-docs", kb.DOMAIN).observed_count == 1
     reg.record_survival("source:internal-docs", kb.DOMAIN, claim_id, "source:changelog")
     assert reg.evidence_provenance("source:internal-docs", kb.DOMAIN).observed_count == 1
+
+
+def test_survival_refuses_self_seal(reg: Registry) -> None:
+    """A self-seal (source == narrator) is refused as non-independent."""
+    grade = reg.get_grade("source:internal-docs", kb.DOMAIN)
+    assert (
+        reg.record_survival(
+            "source:internal-docs", kb.DOMAIN, "claim-self-seal", "source:internal-docs"
+        )
+        == grade
+    )
+    assert reg.evidence_provenance("source:internal-docs", kb.DOMAIN).observed_count == 0

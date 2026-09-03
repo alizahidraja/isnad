@@ -39,7 +39,7 @@ ISNAD — Self-maintaining KB demo (Recipe 1)
 [4] SELF-MAINTAINING RE-GRADE
     4a survival      source:internal-docs: observation_backed=True
         A: chain SAHIH -> action serve  [observation-backed]
-    4b contradiction source:internal-docs: acceptable  # downgraded
+    4b contradiction source:internal-docs: acceptable
         A: chain HASAN -> serve_with_caveat  [observation-backed]
     4c quarantine    source:fabricated-bot: rejected / compromised / inactive=True
         SERVED SURFACE: A (serve_with_caveat)
@@ -73,9 +73,10 @@ ISNAD — Self-maintaining KB demo (Recipe 1)
      a plain `serve`.
    - **4c** the fabricated-bot is *quarantined* (`rejected` / `compromised` /
      inactive); its claim stays off the served surface.
-5. **HONEST SURVIVAL** — the tazkiyah guard refuses self-verified survival, and
-   claim-scoped dedup refuses a duplicate `(claim, source)`. Grades cannot be
-   farmed.
+5. **HONEST SURVIVAL** — the tazkiyah guard refuses self-verified survival, the
+   independence guard refuses a self-seal (`source == narrator`) and an
+   unregistered verifier, and claim-scoped dedup refuses a duplicate
+   `(claim, source)`.
 
 ## Honesty notes
 

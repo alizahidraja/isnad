@@ -1685,6 +1685,11 @@ class Registry:
         if self_verified:
             return current_grade
 
+        # Independence guard: a narrator vouching for itself (source == narrator)
+        # is a self-seal, not independent verification; refuse it.
+        if source == narrator_id:
+            return current_grade
+
         # Claim-scoped dedup: has this claim already survived for this narrator?
         for entry in narrator.evidence_log:
             if EvidenceType(str(entry.get("evidence_type", ""))) != EvidenceType.SURVIVAL:

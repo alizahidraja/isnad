@@ -278,7 +278,7 @@ def main() -> None:
     va_contradicted = grade_claim(reg, CLAIM_A, CHAIN_A, CORPUS_DOCS["A"])
     print(
         "    4b contradiction source:internal-docs: "
-        f"{reg.get_grade('source:internal-docs', DOMAIN).value}  # downgraded"
+        f"{reg.get_grade('source:internal-docs', DOMAIN).value}"
     )
     print(
         f"        A: chain {va_contradicted.chain_grade.value.upper()} "
