@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.21.3] — 2026-09-04
+
+### Added
+
+- **Self-maintaining-KB demo** (`examples/self-maintaining-kb/`): a runnable Recipe 1
+  demo (seed → grade → surface → self-maintaining re-grade → honest-survival) plus
+  regression tests, using only the public API.
+
+### Fixed
+
+- **`record_survival` independence hardening**: refuse a self-seal (`source`
+  alias-equal to the narrator, including versioned aliases), refuse a
+  blank/empty/alias-less verifier, and make claim-scoped dedup alias-aware.
+- **Re-export `adalah_grades_for_chain` and `gate_serve`** at the package top level.
+
 ## [2.21.2] — 2026-09-02
 
 ### Fixed
