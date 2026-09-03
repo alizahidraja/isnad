@@ -57,8 +57,8 @@ ISNAD — Self-maintaining KB demo (Recipe 1)
      content is `consistent`. But the source is *prior-only*, so the serve gate
      caps plain `serve` to `serve_with_caveat`.
    - **B** adds a `weak` scraper → the chain floor drops to `daif` → `review`.
-   - **C** flows through a `rejected` source → `mawdu` → the claim is rejected
-     and the narrator is quarantined.
+   - **C** flows through a `rejected` source → `mawdu` → the claim is rejected with a
+     quarantine action (the narrator is quarantined in beat 4c).
 3. **SURFACE** — only `serve` / `serve_with_caveat` verdicts are served. `B`
    (review) and `C` (rejected) are excluded.
 4. **SELF-MAINTAINING LOOP** — new evidence mutates narrator grades and the
@@ -89,8 +89,9 @@ ISNAD — Self-maintaining KB demo (Recipe 1)
   matching. Here "consistent" means *the claim is verbatim a fact the KB already
   holds* — not semantic agreement with a source document. A production KB swaps
   in an embedding- or LLM-backed critic for real content criticism.
-- The **survival in beat 4a is operator-recorded** (a real second source,
-  `source:changelog`, is registered first) — it is not a self-seal, and it is
-  never fabricated by the script.
+- The **survival in beat 4a is operator-recorded** — not fabricated and not a
+  self-seal. But the verifier (`source:changelog`) is itself only a prior
+  (Estimated), so beat 4a demonstrates the survival→observation *mechanism*; a
+  genuinely observation-backed grade needs the verifier to be itself observed.
 - Quarantine is **active containment**: `rejected` + `compromised` + inactive,
   and it never time-decays.

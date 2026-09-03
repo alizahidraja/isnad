@@ -1662,6 +1662,10 @@ class Registry:
         "survival" is refused: we return the current grade unchanged and log
         nothing.  Only an *endorsed* verification (green) is genuine survival.
 
+        **Self-seal guard.**  A narrator vouching for itself (``source``
+        alias-equal to ``narrator_id``) is refused — it proves nothing about
+        independence.
+
         **Claim-scoped dedup.**  The event binds to (claim_id, source), stored
         in the evidence entry's metadata.  Re-verifying the same claim does
         not double-count: if a SURVIVAL entry with this claim_id+source
@@ -1695,7 +1699,9 @@ class Registry:
             if EvidenceType(str(entry.get("evidence_type", ""))) != EvidenceType.SURVIVAL:
                 continue
             meta = entry.get("metadata", {}) or {}
-            if meta.get("claim_id") == claim_id and meta.get("source") == source:
+            if meta.get("claim_id") == claim_id and self._alias_for(
+                str(meta.get("source", ""))
+            ) == self._alias_for(source):
                 return current_grade
 
         return self.record_evidence(

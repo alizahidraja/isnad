@@ -251,9 +251,10 @@ def main() -> None:
 
     print("[4] SELF-MAINTAINING RE-GRADE")
 
-    # 4a — survival: a second source (source:changelog) confirms the claim, and
-    # the operator records the survival. source:changelog is a registered
-    # narrator, so this is a real observation, not a self-seal.
+    # 4a — survival: the operator records that a second source (source:changelog)
+    # confirmed the claim. NOTE: source:changelog is itself only a prior
+    # (Estimated) here, so this demonstrates the survival -> observation
+    # MECHANISM; a genuinely observed verifier is needed for a real observation.
     reg.record_survival(
         "source:internal-docs",
         DOMAIN,
