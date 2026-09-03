@@ -121,6 +121,14 @@ def test_honest_survival_noop(reg: Registry) -> None:
     assert reg.evidence_provenance("source:internal-docs", kb.DOMAIN).observed_count == 1
 
 
+def test_survival_dedup_is_alias_aware(reg: Registry) -> None:
+    """Re-verifying via a versioned alias of the same source does not double-count."""
+    claim_id = kb.make_claim_id(kb.CLAIM_A)
+    reg.record_survival("source:internal-docs", kb.DOMAIN, claim_id, "source:changelog")
+    reg.record_survival("source:internal-docs", kb.DOMAIN, claim_id, "source:changelog@v1")
+    assert reg.evidence_provenance("source:internal-docs", kb.DOMAIN).observed_count == 1
+
+
 def test_survival_refuses_self_seal(reg: Registry) -> None:
     """A self-seal (source == narrator) is refused as non-independent."""
     grade = reg.get_grade("source:internal-docs", kb.DOMAIN)

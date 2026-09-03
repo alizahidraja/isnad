@@ -1666,6 +1666,11 @@ class Registry:
         alias-equal to ``narrator_id``) is refused — it proves nothing about
         independence.
 
+        The verifier's *own* trust is not validated here: an unregistered or
+        prior-only ``source`` is accepted as-is. Genuine independence is the
+        caller's responsibility — pass an observed or human-backed authority
+        as ``source``.
+
         **Claim-scoped dedup.**  The event binds to (claim_id, source), stored
         in the evidence entry's metadata.  Re-verifying the same claim does
         not double-count: if a SURVIVAL entry with this claim_id+source
@@ -1687,6 +1692,10 @@ class Registry:
 
         # Tazkiyah guard: self-verified survival is not survival.
         if self_verified:
+            return current_grade
+
+        # Blank verifier: an empty/whitespace source is not evidence at all.
+        if not source or not source.strip():
             return current_grade
 
         # Independence guard: a narrator vouching for itself (source == narrator)
