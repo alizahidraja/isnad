@@ -28,6 +28,7 @@ __author__ = "Ali Zahid Raja"
 from isnad.core.chain import (
     Chain,
     ChainLinkSpec,
+    adalah_grades_for_chain,
     grades_for_chain,
     make_claim_id,
     normalize_claim_text,
@@ -38,7 +39,7 @@ from isnad.core.corroboration import (
     SharedLineageDetector,
     evaluate_corroboration,
 )
-from isnad.core.decision import decide, describe_action
+from isnad.core.decision import decide, describe_action, gate_serve
 from isnad.core.grading import RefinedWeakestLink, grade_chain
 from isnad.core.identity import is_unknown_version, parse_narrator_id, resolve_narrator_id
 from isnad.core.registry import (
@@ -89,6 +90,7 @@ __all__ = [
     # chain
     "Chain",
     "ChainLinkSpec",
+    "adalah_grades_for_chain",
     "grades_for_chain",
     "make_claim_id",
     "normalize_claim_text",
@@ -106,6 +108,7 @@ __all__ = [
     # core — decision
     "decide",
     "describe_action",
+    "gate_serve",
     # core — grading
     "RefinedWeakestLink",
     "grade_chain",
