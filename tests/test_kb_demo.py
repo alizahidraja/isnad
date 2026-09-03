@@ -129,6 +129,17 @@ def test_survival_dedup_is_alias_aware(reg: Registry) -> None:
     assert reg.evidence_provenance("source:internal-docs", kb.DOMAIN).observed_count == 1
 
 
+def test_survival_refuses_blank_or_empty_alias_source(reg: Registry) -> None:
+    """A blank, whitespace, or alias-less verifier source is refused."""
+    grade = reg.get_grade("source:internal-docs", kb.DOMAIN)
+    for bad_source in ("", "   ", "@", "@v1"):
+        assert (
+            reg.record_survival("source:internal-docs", kb.DOMAIN, "claim-blank", bad_source)
+            == grade
+        )
+    assert reg.evidence_provenance("source:internal-docs", kb.DOMAIN).observed_count == 0
+
+
 def test_survival_refuses_self_seal(reg: Registry) -> None:
     """A self-seal (source == narrator) is refused as non-independent."""
     grade = reg.get_grade("source:internal-docs", kb.DOMAIN)

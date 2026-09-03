@@ -1694,8 +1694,13 @@ class Registry:
         if self_verified:
             return current_grade
 
-        # Blank verifier: an empty/whitespace source is not evidence at all.
-        if not source or not source.strip():
+        # Normalize the verifier (strip surrounding whitespace) so the guards
+        # and dedup compare against the same canonical form that is stored.
+        source = source.strip()
+
+        # Blank verifier: an empty/whitespace source, or one resolving to no
+        # alias (e.g. "@"), is not evidence at all.
+        if not source or self._alias_for(source) == "":
             return current_grade
 
         # Independence guard: a narrator vouching for itself (source == narrator)
