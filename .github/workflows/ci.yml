@@ -28,10 +28,10 @@ jobs:
           --health-retries 5
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v10
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -62,10 +62,10 @@ jobs:
   js-conformance:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v10
         with:
           python-version: "3.12"
 
@@ -78,9 +78,9 @@ jobs:
           git diff --exit-code js/test/golden.json || (echo "::error::js/test/golden.json drifted from the Python core. Re-run 'uv run python js/scripts/generate_golden.py' and commit the result." && exit 1)
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
           cache-dependency-path: js/package-lock.json
 
