@@ -38,6 +38,7 @@ print(verdict.why)
 [![arXiv](https://img.shields.io/badge/arXiv-2607.24117-b31b1b.svg)](https://arxiv.org/abs/2607.24117)
 [![Downloads](https://static.pepy.tech/badge/isnad/month)](https://pypi.org/project/isnad/)
 [![npm](https://img.shields.io/npm/v/isnad)](https://www.npmjs.com/package/isnad)
+[![Glama MCP score](https://glama.ai/mcp/servers/alizahidraja/isnad/badges/score.svg)](https://glama.ai/mcp/servers/alizahidraja/isnad)
 
 **🌐 Project home: <https://alizahidraja.com/isnad>** · **📚 Docs: <https://alizahidraja.com/isnad/docs>** · ⭐ Star to follow along · [Contribute](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
 
