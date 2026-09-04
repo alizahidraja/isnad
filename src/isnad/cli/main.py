@@ -41,7 +41,7 @@ def seed() -> None:
         print("ISNAD_SEED_CONFIG is empty. Set it to a JSON array of {narrator_id, domain, grade}.")
         sys.exit(1)
 
-    from isnad.core.registry import NarratorGrade, RegistryDB
+    from isnad.core.registry import NarratorGrade, RegistryDB, seed_from_benchmark
     from isnad.types import Role
 
     grade_map = {
@@ -65,7 +65,7 @@ def seed() -> None:
             # grade — cold-start bootstrapping (issue #33).
             if "accuracy" in entry:
                 accuracy = float(entry["accuracy"])
-                reg.registry.seed_from_benchmark(nid, dom, accuracy, role=role, benchmark=source)
+                seed_from_benchmark(reg.registry, nid, dom, accuracy, role=role, benchmark=source)
             else:
                 grade = grade_map.get(entry.get("grade", "ungraded"), NarratorGrade.UNGRADED)
                 reg.registry.seed(nid, dom, grade, role=role, source=source)
