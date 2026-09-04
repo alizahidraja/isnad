@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.21.4] — 2026-09-04
+
+### Fixed
+
+- **`isnad seed` with an `accuracy` entry** (#213): the seed subcommand called
+  `seed_from_benchmark` as a Registry method, but it is a module-level function;
+  fixed the import + call so `isnad seed --config` with a benchmark accuracy works.
+
 ## [2.21.3] — 2026-09-04
 
 ### Added
