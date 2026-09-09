@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- **Content-madār calibration harness** (`experiments/madar_eval/`, #54): a
+  re-runnable, hash-pinned measurement of the shared-error fingerprint's
+  false-positive rate on independent agreement (the headline hazard: discounting
+  genuine corroboration). Reports the raw fingerprint's measured FP-on-agreement
+  (6/8 = 0.750, 95% CI ≈ 0.41–0.93) and demonstrates the corpus gate's
+  short-circuit (structural, not an empirical gate FP). Pure, dependency-free.
+
 ## [2.21.6] — 2026-09-08
 
 ### Changed
