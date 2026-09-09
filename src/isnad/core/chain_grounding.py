@@ -81,7 +81,7 @@ class GroundingResult:
     """
 
     grounded_off_chain_only: bool
-    on_chain_verdict: ContentVerdict
+    on_chain_verdict: ContentVerdict | None  # None = provenance unknown (not assessed)
     off_chain_verdict: ContentVerdict
 
 
@@ -144,6 +144,21 @@ class ChainScopedGroundingPolicy:
         critic: ContentCritic,
         domain: str = "general",
     ) -> GroundingResult:
+        if not chain.retrieved_rows_known:
+            # Provenance unknown (a DB-reloaded chain whose runtime-only rows were
+            # stripped): never flag, and do not invoke the critic on an empty
+            # on-chain corpus. See #241.
+            off_verdict = (
+                critic.evaluate(claim_text, normalized_claim, off_chain_rows, domain)
+                if off_chain_rows
+                else ContentVerdict.UNVERIFIABLE
+            )
+            return GroundingResult(
+                grounded_off_chain_only=False,
+                on_chain_verdict=None,
+                off_chain_verdict=off_verdict,
+            )
+
         on_chain = chain_scoped_corpus(chain)
         on_verdict = (
             critic.evaluate(claim_text, normalized_claim, on_chain, domain)
