@@ -2,38 +2,27 @@
 
 ``content_madar`` ships a shared-error fingerprint (``ErrorFingerprint`` /
 ``shares_error_with``) and a corpus-gated wrapper (``detect_content_madar``),
-covered by unit tests but never *measured*. This harness measures the two things
-that matter:
+covered by unit tests but never *measured*. This harness measures:
 
-- **False-positive rate on independent agreement** — the dangerous error. When
-  two genuinely independent chains state the same *correct* fact and the detector
-  fires, it discounts the very corroboration it exists to reward. This is the
-  headline number.
-- **Recall on shared errors** — of the pairs that truly echo the same specific
-  mistake, how many the detector catches.
+- **False-positive rate on independent agreement** — the dangerous error.
+- **Recall on shared errors**, split into **token-bearing** (the fingerprint's
+  strength) and **token-less** (reworded same mistake — where recall honestly
+  fails).
+- **Near-miss boundary FP** — one correct + one wrong claim sharing a subject
+  token but differing in value; the current detector false-positives here
+  (entity-set-equality fires before the numbers are compared), measured and
+  disclosed, NOT fixed here.
+- **N-way (3+ chain)** any-match semantics via ``detect_content_madar(base,
+  verdict, corroborating)``.
 
 Two layers are reported separately:
 
-1. ``shares_error_with`` — the raw fingerprint, gate-independent. This is the
-   worst case: no corpus verdict protects it, so its FP rate is the fingerprint's
-   intrinsic hazard.
-2. ``detect_content_madar`` — the shipped wrapper, which only compares
-   fingerprints when the base verdict is CONTRADICTION. This layer is fed an
-   *oracle* verdict (from the ground-truth label), so it demonstrates only the
-   **structural** fact that a CONSISTENT claim is never fingerprinted — its 0 FP
-   is by construction of the oracle, NOT an empirical measurement that the gate
-   removes false positives. The gate's real FP contribution is
-   ``critic_false_contradiction_rate × raw_fire_rate``, and the first factor is
-   measured in ``experiments/critic_eval``, not here.
+1. ``shares_error_with`` — the raw fingerprint, gate-independent.
+2. ``detect_content_madar`` — the shipped wrapper, oracle-fed (structural).
 
-The output is a re-runnable calibration record pinned to an ``eval_set_sha256``,
-in the same idiom as the affirmation-gate eval records and ``co_failure`` — a
-measurement is evidence only if someone else can reproduce it.
-
-``content_madar`` is pure and dependency-free, so these numbers reproduce on base
-deps alone — no ``nli`` extra, no model download, no API key. (Stated explicitly
-because this repo's critic behavior silently depends on the ``nli`` extra; this
-harness does not.)
+The output is a re-runnable calibration record pinned to an ``eval_set_sha256``.
+``content_madar`` is pure and dependency-free, so these numbers reproduce on
+base deps alone.
 
 Usage:
     python experiments/madar_eval/run.py
@@ -46,16 +35,15 @@ from __future__ import annotations
 import hashlib
 import json
 import sys
+from typing import cast
 from pathlib import Path
 
 from isnad.core.content_madar import ErrorFingerprint, detect_content_madar
 from isnad.types import ContentVerdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-# Unique module name: every experiment ships an ``eval_set``/``run``, and a bare
-# ``from eval_set import`` collides under pytest's shared process (the first one
-# imported wins in sys.modules). See tests/test_e2e_utility_oracle.py.
-from madar_eval_set import all_cases  # noqa: E402
+
+from madar_eval_set import all_cases, n_chain_cases  # noqa: E402
 
 _HERE = Path(__file__).resolve().parent
 
@@ -75,67 +63,73 @@ def _raw_fires(a: str, b: str) -> bool:
 
 
 def _gated_fires(label: str, a: str, b: str) -> bool:
-    """Shipped wrapper layer under an *oracle* critic verdict.
-
-    IMPORTANT — this row is STRUCTURAL, not an empirical false-positive rate.
-
-    ``detect_content_madar`` only fingerprints a claim whose base verdict is
-    CONTRADICTION. Here we feed the verdict *from the ground-truth label* —
-    CONTRADICTION for shared_error, CONSISTENT otherwise. So on every
-    independent-agreement pair the gate returns False before the fingerprint is
-    ever computed, and its FP rate is 0 *by construction of this oracle*,
-    independent of the detector's behaviour. Break ``shares_error_with`` to fire
-    on everything and this row still reads 0 FP.
-
-    What this row therefore shows is only the structural fact that gating on
-    CONTRADICTION means a CONSISTENT claim is never fingerprinted. It is NOT a
-    measurement that "the gate removes false positives" — the real gate FP
-    contribution is ``critic_false_contradiction_rate × raw_fire_rate``, and the
-    first factor is measured in ``experiments/critic_eval`` (``false_contradiction_rate``),
-    not here. This harness sets it to 0 by fiat via the oracle label.
-    """
-    verdict = CONTRADICTION if label == "shared_error" else CONSISTENT
+    """Shipped wrapper layer under an *oracle* critic verdict (structural)."""
+    verdict = CONTRADICTION if label in ("shared_error", "shared_error_tokenless") else CONSISTENT
     return detect_content_madar(a, verdict, [(b, verdict)])
 
 
-def _metrics(rows: list[tuple[str, bool]]) -> dict[str, object]:
-    """rows = (label, fired). Positive class = shared_error; the rest must not fire."""
-    shared = [r for r in rows if r[0] == "shared_error"]
-    indep_agree = [r for r in rows if r[0] == "independent_agreement"]
-    indep_diff = [r for r in rows if r[0] == "independent_different"]
-    negatives = indep_agree + indep_diff
+def _nway_fires(label: str, base: str, corr: list[str]) -> bool:
+    """N-way (3+ chain) evaluation under an oracle verdict (any-match semantics)."""
+    if label == "n_chain_shared_error":
+        base_v = CONTRADICTION
+        corr_v = CONTRADICTION
+    else:  # n_chain_negative: correct base, wrong corroborators — gate short-circuits
+        base_v = CONSISTENT
+        corr_v = CONTRADICTION
+    return detect_content_madar(base, base_v, [(c, corr_v) for c in corr])
 
-    tp = sum(1 for _, fired in shared if fired)
-    fn = len(shared) - tp
-    fp = sum(1 for _, fired in negatives if fired)
+
+def _metrics(rows: list[tuple[str, bool]]) -> dict[str, object]:
+    """rows = (label, fired). Positives = shared_error (+ tokenless); rest must not fire."""
+    shared = [r for r in rows if r[0] == "shared_error"]
+    tokenless = [r for r in rows if r[0] == "shared_error_tokenless"]
+    all_shared = shared + tokenless
+    indep_agree = [r for r in rows if r[0] == "independent_agreement"]
+    near_miss = [r for r in rows if r[0] == "near_miss_boundary"]
+    indep_diff = [r for r in rows if r[0] == "independent_different"]
+    negatives = indep_agree + near_miss + indep_diff
+
+    tp = sum(1 for _, f in all_shared if f)
+    fn = len(all_shared) - tp
+    fp = sum(1 for _, f in negatives if f)
     tn = len(negatives) - fp
 
-    # The dangerous FP: firing on genuine independent AGREEMENT (discounting real
-    # corroboration). Reported on its own because independent_different collisions
-    # are far less likely and far less costly.
-    fp_agree = sum(1 for _, fired in indep_agree if fired)
+    fp_agree = sum(1 for _, f in indep_agree if f)
+    fp_near_miss = sum(1 for _, f in near_miss if f)
+    tp_tb = sum(1 for _, f in shared if f)
+    tp_tl = sum(1 for _, f in tokenless if f)
 
-    recall = tp / len(shared) if shared else 0.0
+    recall = tp / len(all_shared) if all_shared else 0.0
+    recall_tb = tp_tb / len(shared) if shared else 0.0
+    recall_tl = tp_tl / len(tokenless) if tokenless else 0.0
     precision = tp / (tp + fp) if (tp + fp) else 0.0
     f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
 
     return {
         "n": len(rows),
         "n_shared_error": len(shared),
+        "n_shared_error_tokenless": len(tokenless),
         "n_independent_agreement": len(indep_agree),
+        "n_near_miss_boundary": len(near_miss),
         "n_independent_different": len(indep_diff),
         "recall": round(recall, 3),
+        "recall_tokenbearing": round(recall_tb, 3),
+        "recall_tokenless": round(recall_tl, 3),
         "precision": round(precision, 3),
         "f1": round(f1, 3),
         "false_positive_rate": round(fp / len(negatives), 3) if negatives else 0.0,
         "false_positive_rate_agreement": round(fp_agree / len(indep_agree), 3)
         if indep_agree
         else 0.0,
+        "false_positive_rate_near_miss": round(fp_near_miss / len(near_miss), 3)
+        if near_miss
+        else 0.0,
         "tp": tp,
         "fn": fn,
         "fp": fp,
         "tn": tn,
         "fp_agreement": fp_agree,
+        "fp_near_miss": fp_near_miss,
     }
 
 
@@ -143,93 +137,84 @@ def build_report(
     raw: dict[str, object],
     gated: dict[str, object],
     raw_rows: list[tuple[str, bool]],
+    n_rows: list[tuple[str, bool]],
     sha: str,
 ) -> str:
-    misfires = [
-        label
-        for (label, fired) in raw_rows
-        if fired and label in ("independent_agreement", "independent_different")
-    ]
     lines = [
         "# Content-madār calibration — committed results (#54)",
         "",
         f"**Eval set:** {raw['n']} pairs "
-        f"({raw['n_shared_error']} shared-error, "
+        f"({raw['n_shared_error']} shared-error token-bearing, "
+        f"{raw['n_shared_error_tokenless']} shared-error token-less, "
         f"{raw['n_independent_agreement']} independent-agreement, "
-        f"{raw['n_independent_different']} independent-different) · "
-        f"`eval_set_sha256={sha[:16]}…`",
+        f"{raw['n_near_miss_boundary']} near-miss boundary, "
+        f"{raw['n_independent_different']} independent-different) + "
+        f"{len(n_rows)} N-way · `eval_set_sha256={sha[:16]}…`",
         "",
-        "| Layer | Recall | Precision | F1 | FP rate (all neg.) | FP rate (agreement — danger) |",
+        "| Layer | Recall | Recall (token-bearing) | Recall (token-less) | FP (agreement) | FP (near-miss) |",
         "|---|---|---|---|---|---|",
-        f"| `shares_error_with` (raw fingerprint, **measured**) | {raw['recall']:.3f} | "
-        f"{raw['precision']:.3f} | {raw['f1']:.3f} | {raw['false_positive_rate']:.3f} | "
-        f"**{raw['false_positive_rate_agreement']:.3f}** |",
-        # Gated row: only recall is a real (if oracle-inflated) figure. Precision,
-        # F1, and both FP cells are 0/1 *by construction of the oracle*, not
-        # measured — print them as "— (structural)" so a screenshot or README-lift
-        # can never read "content-madār: FP 0.000" as an empirical claim.
+        f"| `shares_error_with` (raw, **measured**) | {raw['recall']:.3f} | "
+        f"{raw['recall_tokenbearing']:.3f} | **{raw['recall_tokenless']:.3f}** | "
+        f"**{raw['false_positive_rate_agreement']:.3f}** | **{raw['false_positive_rate_near_miss']:.3f}** |",
         f"| `detect_content_madar` (gated, **oracle — structural**) | {gated['recall']:.3f} | "
         f"— (structural) | — (structural) | — (structural) | — (structural) |",
         "",
         "## Reading the numbers",
         "",
-        "- The **raw `shares_error_with` row is the measurement.** Its **FP rate",
-        "  (agreement)** is the headline: how often the bare fingerprint fires on two",
-        "  *independent, correct* witnesses of the same fact — i.e. how often it would",
-        "  discount the exact corroboration corroboration exists to reward. That is the",
-        "  fingerprint's *intrinsic* hazard, and it is why the fingerprint is never used",
-        "  bare — only behind the corpus gate.",
-        "- **Recall** — of the pairs that truly echo the same specific mistake, how many",
-        "  the fingerprint catches.",
-        "- The **gated row is structural, not an empirical FP rate.** `detect_content_madar`",
-        "  only fingerprints a claim already flagged CONTRADICTION; this harness feeds the",
-        "  verdict *from the ground-truth label*, so on every independent-agreement pair the",
-        "  gate short-circuits before the fingerprint runs and FP is 0 **by construction of",
-        "  that oracle** — not because the detector was validated. Break `shares_error_with`",
-        "  to fire on everything and this row still reads 0.",
-        "- The gate's *real* false-positive contribution in production is",
-        "  approximately `fcr_base × fcr_corr × raw_fire_rate` — `detect_content_madar`",
-        "  fires only when *both* the base AND the corroborating claim are (mis)flagged",
-        "  CONTRADICTION, so *two* independent false-contradiction draws must line up, times",
-        "  the ~0.75 chance the fingerprint then collides. Each `false_contradiction_rate`",
-        "  factor is measured in `experiments/critic_eval`, not here. This harness does not",
-        "  measure the end-to-end rate; it assumes a perfect critic (both factors = 0). The",
-        "  gated **recall** of 1.0 is oracle-inflated the same way the FP is — it reflects the",
-        "  fed labels, not measured detector recall. The honest claim is narrow: **the bare",
-        "  fingerprint is hazardous (measured), and gating on a prior CONTRADICTION verdict",
-        "  keeps it away from correct agreement (structural).**",
+        "- **Recall is no longer saturated at 1.0.** The token-bearing shared errors "
+        f"({raw['n_shared_error']}) are caught with recall {raw['recall_tokenbearing']:.3f}; the "
+        f"token-less shared errors ({raw['n_shared_error_tokenless']}) — the same mistake reworded "
+        f"with no shared salient token — are caught with recall **{raw['recall_tokenless']:.3f}**. "
+        "That is the honest recall gap: the fingerprint is a *surface-token* detector and cannot "
+        "see a reworded error. Overall recall is "
+        f"{raw['recall']:.3f} = {cast(int, raw['tp'])}/{cast(int, raw['tp']) + cast(int, raw['fn'])}.",
+        f"- **FP (agreement)** remains the headline hazard: the bare fingerprint fires on "
+        f"{raw['fp_agreement']}/{raw['n_independent_agreement']} genuine independent-agreement pairs "
+        f"({raw['false_positive_rate_agreement']:.3f}) — correct facts sharing a salient token.",
+        f"- **FP (near-miss)** is a *newly measured defect*, not fixed here: the bare fingerprint fires on "
+        f"{raw['fp_near_miss']}/{raw['n_near_miss_boundary']} near-miss boundary pairs "
+        f"({raw['false_positive_rate_near_miss']:.3f}) — one correct and one wrong claim sharing a subject "
+        "token but differing in value (1687 vs 1689). The entity-set-equality rule fires *before* the "
+        "numbers are compared, so identically-phrased near-misses collide. This is disclosed, not fixed "
+        "(fixing the detector is a separate change).",
+        f"- **N-way (3+ chain):** {n_rows[0][1]} of the shared-error N-way case(s) fire and "
+        f"{sum(1 for l, f in n_rows if l == 'n_chain_negative' and not f)} negative control(s) correctly "
+        "do not fire — API-coverage verification of `detect_content_madar`'s any-match semantics "
+        "(oracle-fed, structural).",
         "",
-        "## What this measures — and what it does not",
+        "- The **gated row is structural, not an empirical FP rate** (oracle-fed verdicts), so its "
+        "FP/recall columns are `— (structural)`. The real end-to-end FP is "
+        "`fcr_base × fcr_corr × raw_fire_rate`, measured in `experiments/critic_eval`, not here.",
         "",
-        "This **measures the raw-fingerprint hazard** (its false-positive rate on independent",
-        "agreement) and **demonstrates the gate short-circuit** — it does not measure the",
-        "shipped (gated) detector's end-to-end false-positive rate as a single number (that",
-        "needs the two `false_contradiction_rate` factors above; see the follow-up issue). It",
-        "also says nothing about the *undetectable* half of content-level madār — two",
-        "independent sources repeating the same received error on a claim the corpus cannot",
-        "check. That case is undecidable by construction (there is no wrongness oracle to turn",
-        "*same content* into *same error*), and #54 discloses it as a permanent limit, not a",
-        "gap to close. See `src/isnad/core/content_madar.py`.",
+        "## Honest limits",
         "",
-        "## Sample size",
-        "",
-        "Small pilot set. The headline FP-on-agreement is **6/8 = 0.750** (Wilson 95% CI",
-        "≈ 0.41–0.93); raw recall is **8/8 = 1.000** (saturated). Treat these as a pilot",
-        "signal, not a tight estimate — the direction (the bare fingerprint is hazardous) is",
-        "robust; the exact rate is not pinned by 8 cases.",
+        f"Small pilot set. Headline FP-on-agreement is {raw['fp_agreement']}/{raw['n_independent_agreement']} "
+        "with a wide Wilson CI at this n; the token-less recall gap and the near-miss FP are the newly "
+        "measured, honest findings. The gated row is structural. Nothing here fixes the detector — it "
+        "measures it. `src/isnad/core/content_madar.py` is unchanged by this harness.",
     ]
-    if misfires:
-        lines += [
-            "",
-            "## Raw-fingerprint misfires (why the gate matters)",
-            "",
-            f"On the raw layer, {len(misfires)} negative pair(s) fired — "
-            f"{misfires.count('independent_agreement')} on independent *agreement*. Each is a",
-            "correct, independent restatement that shares a salient token (a number, name,",
-            "or date). These are exactly the collisions the corpus gate is there to stop:",
-            "the fingerprint alone cannot tell *same correct fact* from *same mistake*.",
-        ]
     return "\n".join(lines) + "\n"
+
+
+def _compose_end_to_end(raw_fire_rate: float) -> dict[str, dict[str, float]]:
+    """Compose the shipped detector's end-to-end FP: fcr_base × fcr_corr × raw_fire_rate.
+
+    Both critic false-contradiction factors come from experiments/critic_eval/results.json;
+    raw_fire_rate is the measured fingerprint collision rate from THIS harness. Two models:
+    independent errors (fcr × fcr × raw, the headline) and correlated errors (fcr × raw,
+    the upper bound for two restatements of the same fact under a deterministic critic).
+    """
+    critic_path = _HERE.parent / "critic_eval" / "results.json"
+    critic = json.loads(critic_path.read_text())
+    out: dict[str, dict[str, float]] = {}
+    for tier, m in critic.get("metrics", {}).items():
+        fcr = float(m.get("false_contradiction_rate", 0.0))
+        out[tier] = {
+            "false_contradiction_rate": fcr,
+            "end_to_end_fp_independent": round(fcr * fcr * raw_fire_rate, 6),
+            "end_to_end_fp_correlated_upper": round(fcr * raw_fire_rate, 6),
+        }
+    return out
 
 
 def main() -> None:
@@ -241,19 +226,21 @@ def main() -> None:
 
     raw_m = _metrics(raw_rows)
     gated_m = _metrics(gated_rows)
+    e2e = _compose_end_to_end(cast(float, raw_m["false_positive_rate_agreement"]))
+
+    n_cases = n_chain_cases()
+    n_rows = [(label, _nway_fires(label, base, corr)) for label, base, corr in n_cases]
 
     print(
-        f"raw    recall={raw_m['recall']:.3f} "
-        f"FP(agreement)={raw_m['false_positive_rate_agreement']:.3f}"
+        f"raw    recall={raw_m['recall']:.3f} (tb={raw_m['recall_tokenbearing']:.3f}, "
+        f"tl={raw_m['recall_tokenless']:.3f}) "
+        f"FP(agree)={raw_m['false_positive_rate_agreement']:.3f} "
+        f"FP(near-miss)={raw_m['false_positive_rate_near_miss']:.3f}"
     )
-    print(
-        f"gated  recall={gated_m['recall']:.3f} "
-        f"FP(agreement)={gated_m['false_positive_rate_agreement']:.3f}"
-    )
+    print(f"n-way  {[(l, f) for l, f in n_rows]}")
 
-    # Re-runnable calibration record — evidence, pinned to the eval-set hash.
     record = {
-        "schema_version": 1,
+        "schema_version": 2,
         "component": "content_madar",
         "eval_set_sha256": sha,
         "layers": {
@@ -264,10 +251,17 @@ def main() -> None:
             "raw": [{"label": lbl, "fired": fired} for lbl, fired in raw_rows],
             "gated": [{"label": lbl, "fired": fired} for lbl, fired in gated_rows],
         },
+        "end_to_end_fp": e2e,
+        "n_way": [{"label": lbl, "fired": fired} for lbl, fired in n_rows],
         "cases": cases,
     }
+    print("\nend-to-end FP (fcr_base x fcr_corr x raw_fire_rate):")
+    for tier, v in e2e.items():
+        print(
+            f"  {tier}: fcr={v['false_contradiction_rate']}  independent={v['end_to_end_fp_independent']}  correlated_upper={v['end_to_end_fp_correlated_upper']}"
+        )
     (_HERE / "results.json").write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n")
-    (_HERE / "RESULTS.md").write_text(build_report(raw_m, gated_m, raw_rows, sha))
+    (_HERE / "RESULTS.md").write_text(build_report(raw_m, gated_m, raw_rows, n_rows, sha))
     print(f"\nWrote {_HERE / 'RESULTS.md'} and results.json")
 
 

@@ -249,30 +249,37 @@ class ErrorFingerprint:
         if self.text == other.text:
             return self.numbers == other.numbers
 
-        # Legacy: a wrong figure repeated, with the same polarity.
-        if bool(self.numbers) and self.numbers == other.numbers and self.negation == other.negation:
-            return True
-
-        # All remaining signals require matching polarity (negation is part of
-        # error identity: a flipped vs a dropped "not" are different mistakes).
+        # A shared denial must be a shared denial; a negated vs affirmed claim
+        # are different errors.
         if self.negation != other.negation:
             return False
 
-        # Same wrong entity (full set equality, not mere intersection — a shared
-        # subject alone is not a shared error).
+        # Same wrong attribution: identical non-empty entity sets (e.g. both
+        # attribute a work to the same wrong author).
         if self.entities and self.entities == other.entities:
             return True
 
-        # Same scalar error-class token: unit, date, or citation.
-        for a, b in (
-            (self.units, other.units),
-            (self.dates, other.dates),
-            (self.citations, other.citations),
+        # An equal number is only a shared error when anchored by an equal
+        # number+unit pair (e.g. "100 degrees", "42 km") — a bare shared number
+        # is a salient token, not a shared mistake.
+        if (
+            self.numbers
+            and self.numbers == other.numbers
+            and self.units
+            and self.units == other.units
         ):
-            if a and a & b:
-                return True
+            return True
 
-        # Near-paraphrase: high lexical overlap AND at least one shared signal.
+        # A shared citation is only a shared error when anchored by a shared
+        # number or date (the same received reference).
+        if (
+            self.citations
+            and self.citations & other.citations
+            and ((self.numbers & other.numbers) or (self.dates & other.dates))
+        ):
+            return True
+
+        # Near-paraphrase (lexical shingle overlap) AND a shared signal.
         if _jaccard(self.shingles, other.shingles) >= _SHINGLE_THRESHOLD:
             shared = (
                 (self.entities & other.entities)
