@@ -46,6 +46,10 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Unpublish version
-        run: npm unpublish "isnad@${{ inputs.unpublish_version }}" --force
+        # npm forbids 2FA-bypass granular tokens from `unpublish` (destructive),
+        # so recover via deprecate + restore `latest` to the verifier's 0.1.x track.
+        run: |
+          npm deprecate "isnad@${{ inputs.unpublish_version }}" "mistaken publish - use the verifier 0.1.x track" || true
+          npm dist-tag add isnad@0.1.0 latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
