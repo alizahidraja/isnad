@@ -61,6 +61,19 @@ _NARRATOR_TYPE_MAP = {
 }
 
 
+def _critic_can_affirm_consistent(critic: Any) -> bool:
+    """Whether a critic can emit CONSISTENT (needed for the grounding flag to fire).
+
+    EmbeddingCritic (TF-IDF) is contradiction-only and never returns CONSISTENT;
+    NLI/LLM critics affirm CONSISTENT only when their affirmation gate is bypassed
+    (default gate downgrades CONSISTENT -> UNVERIFIABLE without a license record).
+    """
+    gate = getattr(critic, "gate_affirmation", None)
+    if gate is None:
+        return False  # contradiction-only tier
+    return not gate
+
+
 def _emit_audit_trail(
     *,
     chain: Chain,
@@ -481,6 +494,7 @@ async def submit_claim(
             "off_chain_verdict": gr.off_chain_verdict.value,
             "on_chain_corpus_size": len(chain_scoped_corpus(chain)),
             "off_chain_corpus_size": len(off_chain_rows),
+            "grounding_capable": _critic_can_affirm_consistent(critic),
         }
     cv = (
         critic.evaluate(claim_text, normalized, critic_corpus, domain)
@@ -575,6 +589,7 @@ async def submit_claim(
         "claim_id": claim_id,
         "audit_record_hash": audit_hash,
         "audit_signature": audit_sig,
+        "audit_signed": audit_sig is not None,
         "claim_text": claim_text,
         "normalized_text": normalized,
         "chain_grade": effective_grade.value,
