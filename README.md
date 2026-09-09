@@ -348,6 +348,11 @@ environment, and a SHA-256 integrity hash over the RFC 8785-canonical form of it
 payload — plus an optional detached signature (HMAC/Ed25519), a tamper-evident
 hash chain, and a PII-redaction hook.
 
+**Serving-side signing:** the API signs records with a detached HMAC only when
+`ISNAD_HMAC_SECRET` is set; when unset, records are emitted `audit_signed: false`
+(a self-hash a forger can recompute). Set it in any deployment that relies on
+tamper-evidence — see `.env.example`.
+
 **Two tamper-evidence logs:** a **linear hash chain** (single sequential writer)
 and a **Merkle batch log** (mass parallel agents; `build_batch`/`seal_batches`/
 `verify_batches`/`prove_inclusion`). Both detect modification, middle-deletion,
