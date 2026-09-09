@@ -1,23 +1,31 @@
 # Changelog
 
-## [Unreleased]
+## [2.23.0] — 2026-09-09
 
 ### Added
-
-- **Content-madār calibration harness** (`experiments/madar_eval/`, #54): a
-  re-runnable, hash-pinned measurement of the shared-error fingerprint's
-  false-positive rate on independent agreement (the headline hazard: discounting
-  genuine corroboration). Reports the raw fingerprint's measured FP-on-agreement
-  (6/8 = 0.750, 95% CI ≈ 0.41–0.93) and demonstrates the corpus gate's
-  short-circuit (structural, not an empirical gate FP). Pure, dependency-free.
 
 - **Chain-scoped content grounding** (`chain_grounding.py`, #216): a new core
   primitive — `ChainLinkSpec.retrieved_rows` (runtime-only, not serialized) +
   `chain_scoped_corpus()` — plus a swappable `GroundingPolicy`/
   `ChainScopedGroundingPolicy` that flags a claim grounded *only* off its own
   chain (`grounded_off_chain_only`, a grounding gap — not proven contamination).
-  No route into the decision matrix; the flag's FP is not yet measured (see #239).
+  Wired into `POST /v1/claims` (#247); the flag is evidence, not an action.
+- **Chain-grounding eval harness** (`experiments/grounding_eval/`, #239): measures
+  the flag's false-positive rate against `LocalNLICritic` (affirmation gate
+  bypassed) with a degeneracy guard — no silent FP=0-by-construction.
+- **Content-madār calibration harness** (`experiments/madar_eval/`, #54): a
+  re-runnable, hash-pinned measurement of the shared-error fingerprint, extended
+  with token-less / near-miss / N-way classes (#233).
 
+### Changed
+
+- **Fingerprint tightening** (#232): `shares_error_with` now requires
+  error-distinctive signals (number+unit, citation+number/date), dropping the raw
+  FP-on-agreement from 0.750 to 0.375 while preserving token-bearing recall 1.0.
+- **End-to-end FP** (#229): composed `fcr × fcr × raw_fire_rate` per critic tier
+  (LocalNLICritic ≈ 0.0009 independent / 0.0188 upper bound).
+- **Workflow hardening** (#230): pages / deploy-docs / npm-publish workflows
+  SHA-pinned and bumped to current majors.
 
 ### Fixed
 
