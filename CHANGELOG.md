@@ -18,6 +18,15 @@
   chain (`grounded_off_chain_only`, a grounding gap — not proven contamination).
   No route into the decision matrix; the flag's FP is not yet measured (see #239).
 
+
+### Fixed
+
+- **Grounding persistence round-trip** (#241): a chain reloaded from the DB was
+  silently treated as "no on-chain evidence" and could be false-flagged
+  `grounded_off_chain_only`. `Chain` now carries a `retrieved_rows_known` flag
+  (default `True`; `False` from `get_chain_from_db`), and the grounding policy
+  returns `on_chain_verdict=None` / never flags when provenance is unknown.
+  Raw retrieved rows stay runtime-only (no DB column, no canonical-hash change).
 ## [2.21.6] — 2026-09-08
 
 ### Changed

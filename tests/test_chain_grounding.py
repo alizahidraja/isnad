@@ -172,3 +172,48 @@ def test_retrieved_rows_is_copied_not_aliased():
     link = _link(0, rows=src)
     src.append("r2")
     assert link.retrieved_rows == ["r1"]
+
+
+def test_chain_retrieved_rows_known_defaults_true():
+    """In-memory chains default to provenance-known; the flag can be set False."""
+    assert Chain([_link(0)]).retrieved_rows_known is True
+    assert Chain([_link(0)], retrieved_rows_known=False).retrieved_rows_known is False
+
+
+def test_unknown_provenance_never_flags():
+    """A DB-reloaded chain (retrieved_rows_known=False) is never flagged on an
+    off-chain CONSISTENT match — its on-chain provenance is UNKNOWN, not empty."""
+    claim = "R"
+    chain = Chain([_link(0), _link(1, generative=True)], retrieved_rows_known=False)
+    res = _check(claim, chain, off_chain_rows=["R"])
+    assert res.on_chain_verdict is None
+    assert res.off_chain_verdict is ContentVerdict.CONSISTENT
+    assert res.grounded_off_chain_only is False
+
+
+def test_known_empty_still_flags():
+    """Known-empty (retrieved_rows_known=True, the default) live chains keep the
+    documented behavior: empty on-chain corpus -> UNVERIFIABLE -> flagged."""
+    claim = "R"
+    chain = Chain([_link(0), _link(1, generative=True)])  # default True
+    res = _check(claim, chain, off_chain_rows=["R"])
+    assert res.on_chain_verdict is ContentVerdict.UNVERIFIABLE
+    assert res.grounded_off_chain_only is True
+
+
+def test_unknown_provenance_skips_on_chain_critic():
+    """With provenance unknown, the policy must not invoke the critic against an
+    empty on-chain corpus — it makes exactly ONE critic call (off-chain only)."""
+
+    class SpyCritic(StubCritic):
+        def __init__(self):
+            self.calls = 0
+
+        def evaluate(self, *args, **kwargs):
+            self.calls += 1
+            return super().evaluate(*args, **kwargs)
+
+    spy = SpyCritic()
+    chain = Chain([_link(0), _link(1, generative=True)], retrieved_rows_known=False)
+    evaluate_chain_grounding("R", "R", chain, ["R"], spy)
+    assert spy.calls == 1  # off-chain only; on-chain skipped (provenance unknown)

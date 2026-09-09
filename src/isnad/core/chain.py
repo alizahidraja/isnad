@@ -126,7 +126,16 @@ class ChainLinkSpec:
 class Chain:
     """An ordered, gap-checked transmission chain for a claim."""
 
-    def __init__(self, links: list[ChainLinkSpec] | None = None):
+    def __init__(
+        self,
+        links: list[ChainLinkSpec] | None = None,
+        *,
+        retrieved_rows_known: bool = True,
+    ):
+        # Whether each link's retrieved_rows survived to this Chain. A chain
+        # rebuilt from the DB has runtime-only retrieved_rows stripped, so its
+        # provenance is UNKNOWN (not empty). See #241.
+        self.retrieved_rows_known = retrieved_rows_known
         self._links: list[ChainLinkSpec] = []
         if links:
             for link in sorted(links, key=lambda ln: ln.step):
@@ -318,4 +327,4 @@ def get_chain_from_db(session: Session, claim_id: str) -> Chain | None:
         )
         for link in links
     ]
-    return Chain(specs)
+    return Chain(specs, retrieved_rows_known=False)
