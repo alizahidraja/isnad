@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 
 from isnad.api.app import app
 from isnad.api.dependencies import get_critic, get_fidelity_critic
-from isnad.api.endpoints.claims import _app_state
+from isnad.api.endpoints.claims import _app_state, _critic_can_affirm_consistent
 from isnad.critics.embedding import EmbeddingCritic
 from isnad.storage.sqlalchemy import drop_db, init_db, reset_engine
 from isnad.types import ContentVerdict
@@ -1195,3 +1195,31 @@ class TestChainGrounding:
             body["grounding"]["grounding_capable"] is False
         )  # default EmbeddingCritic is contradiction-only
         assert body["audit_signed"] is False  # no ISNAD_HMAC_SECRET in the test env
+
+
+class TestCriticAffirmCapability:
+    """CI-visible coverage of _critic_can_affirm_consistent (the flag-fires path
+    that otherwise lives only in the skipped nli/llm suite)."""
+
+    class _FakeCritic:
+        def __init__(self, gate_affirmation):
+            self.gate_affirmation = gate_affirmation
+
+        def evaluate(self, claim, normalized, corpus, domain=""):
+            return ContentVerdict.UNVERIFIABLE
+
+    class _NoGateCritic:
+        def evaluate(self, claim, normalized, corpus, domain=""):
+            return ContentVerdict.UNVERIFIABLE
+
+    def test_gate_bypassed_can_affirm(self):
+        assert _critic_can_affirm_consistent(self._FakeCritic(gate_affirmation=False)) is True
+
+    def test_gate_on_cannot_affirm(self):
+        assert _critic_can_affirm_consistent(self._FakeCritic(gate_affirmation=True)) is False
+
+    def test_no_gate_contradiction_only(self):
+        assert _critic_can_affirm_consistent(self._NoGateCritic()) is False
+
+    def test_none_handled(self):
+        assert _critic_can_affirm_consistent(None) is False
