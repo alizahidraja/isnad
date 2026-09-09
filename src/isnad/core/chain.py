@@ -60,6 +60,7 @@ class ChainLinkSpec:
         output_snapshot: str | None = None,
         document_hashes: list[str] | None = None,
         timestamp: str | None = None,
+        retrieved_rows: list[str] | None = None,
     ):
         self.narrator_id = narrator_id
         self.step = step
@@ -78,6 +79,19 @@ class ChainLinkSpec:
         # corroboration engine's madār check (issue #125): two chains that
         # retrieved the same document are one source, not two.
         self.document_hashes = document_hashes or []
+        # The actual CONTENT of the rows this link retrieved (issue #216).
+        # document_hashes above identifies *which* documents a link fetched;
+        # this carries the groundable text, so the content critic can check a
+        # claim against the rows that entered *on its own chain* — not one flat
+        # merged corpus that has lost track of which agent fetched what.
+        # Empty for links that retrieve nothing (a synthesis or tool link).
+        #
+        # Copied (not aliased) so a later mutation of the caller's list cannot
+        # change this link's canonical form after the fact — a live reference
+        # would make the audit hash nondeterministic. This is a runtime-only
+        # field: it is deliberately NOT in to_dict()/the signed record (see
+        # to_dict); document_hashes remains what the signed record commits to.
+        self.retrieved_rows = list(retrieved_rows) if retrieved_rows is not None else []
         # When the framework observed this link's transmission. None means "not
         # captured" — the honest default, never a fabricated clock. The
         # chain_links.timestamp column records the DB-insert time separately.
@@ -95,6 +109,13 @@ class ChainLinkSpec:
             "input_snapshot": self.input_snapshot,
             "output_snapshot": self.output_snapshot,
             "document_hashes": list(self.document_hashes),
+            # retrieved_rows is deliberately NOT serialized here (issue #216): it
+            # is a runtime-only field for the content critic. Emitting it would
+            # change the RFC 8785 canonical form of every signed audit record (an
+            # un-signalled breaking change), and would pull raw row content —
+            # possibly PII — into the signed record and the --redact surface. The
+            # signed record commits to document_hashes (what was fetched); the row
+            # *content* stays out of it.
             # Honest: the observed transmission time, or null when not captured.
             # (Previously this fabricated ``datetime.now()`` at serialization
             # time — storage time masquerading as transmission time.)

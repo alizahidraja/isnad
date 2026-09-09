@@ -25,6 +25,13 @@ from isnad.core.chain import (
     normalize_claim_text,
     store_claim,
 )
+from isnad.core.chain_grounding import (
+    DefaultGroundingPolicy,
+    GroundingPolicy,
+    GroundingResult,
+    chain_scoped_corpus,
+    check_chain_grounding,
+)
 from isnad.core.content_madar import detect_content_madar
 from isnad.core.corroboration import (
     CappedCorroborationPolicy,
@@ -67,6 +74,11 @@ __all__ = [
     "IndependenceAssessment",
     "SharedLineageDetector",
     "evaluate_corroboration",
+    "DefaultGroundingPolicy",
+    "GroundingPolicy",
+    "GroundingResult",
+    "chain_scoped_corpus",
+    "check_chain_grounding",
     "detect_content_madar",
     # decision
     "decide",
