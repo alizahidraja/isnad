@@ -45,7 +45,11 @@ def test_eval_set_hash_pinned():
 
 def test_fp_denominator_non_empty():
     cases = _set.all_cases()
-    negatives = [c for c in cases if c[0] in ("grounded_on_chain", "grounded_nowhere", "on_chain_contradiction")]
+    negatives = [
+        c
+        for c in cases
+        if c[0] in ("grounded_on_chain", "grounded_nowhere", "on_chain_contradiction")
+    ]
     assert len(negatives) >= 1
 
 
@@ -56,7 +60,9 @@ def test_embedding_critic_fires_zero_by_construction():
     rows = _run._run(EmbeddingCritic())
     flags = sum(1 for r in rows if r[1])
     assert flags == 0  # contradiction-only critic can never affirm CONSISTENT
-    assert all(r[2] is not ContentVerdict.CONSISTENT for r in rows if r[0] == "grounded_off_chain_only")
+    assert all(
+        r[2] is not ContentVerdict.CONSISTENT for r in rows if r[0] == "grounded_off_chain_only"
+    )
 
 
 def test_nli_critic_emits_consistent():

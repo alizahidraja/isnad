@@ -30,19 +30,59 @@ def _c(label: str, claim: str, on_chain: list[str], off_chain: list[str]) -> Cas
 
 CASES: list[Case] = [
     # --- grounded_off_chain_only (positive: SHOULD flag) ---
-    _c("grounded_off_chain_only", "Paris is the capital of France.", [], ["Paris is the capital of France."]),
-    _c("grounded_off_chain_only", "Water freezes at 0 degrees Celsius.", [], ["Water freezes at 0 degrees Celsius at standard pressure."]),
-    _c("grounded_off_chain_only", "The Moon orbits the Earth.", [], ["The Moon revolves around the Earth."]),
+    _c(
+        "grounded_off_chain_only",
+        "Paris is the capital of France.",
+        [],
+        ["Paris is the capital of France."],
+    ),
+    _c(
+        "grounded_off_chain_only",
+        "Water freezes at 0 degrees Celsius.",
+        [],
+        ["Water freezes at 0 degrees Celsius at standard pressure."],
+    ),
+    _c(
+        "grounded_off_chain_only",
+        "The Moon orbits the Earth.",
+        [],
+        ["The Moon revolves around the Earth."],
+    ),
     # --- grounded_on_chain (negative: MUST NOT flag) ---
-    _c("grounded_on_chain", "Paris is the capital of France.", ["Paris is the capital of France."], ["Paris is the capital of France."]),
-    _c("grounded_on_chain", "Water freezes at 0 degrees Celsius.", ["Water freezes at 0 degrees Celsius."], []),
+    _c(
+        "grounded_on_chain",
+        "Paris is the capital of France.",
+        ["Paris is the capital of France."],
+        ["Paris is the capital of France."],
+    ),
+    _c(
+        "grounded_on_chain",
+        "Water freezes at 0 degrees Celsius.",
+        ["Water freezes at 0 degrees Celsius."],
+        [],
+    ),
     _c("grounded_on_chain", "The Moon orbits the Earth.", ["The Moon orbits the Earth."], []),
     # --- grounded_nowhere (negative: MUST NOT flag) ---
-    _c("grounded_nowhere", "The Moon is made of green cheese.", ["Paris is the capital of France."], ["Water freezes at 0 degrees Celsius."]),
+    _c(
+        "grounded_nowhere",
+        "The Moon is made of green cheese.",
+        ["Paris is the capital of France."],
+        ["Water freezes at 0 degrees Celsius."],
+    ),
     _c("grounded_nowhere", "A novel claim about an unverifiable private event.", [], []),
     # --- on_chain_contradiction (negative: MUST NOT flag) ---
-    _c("on_chain_contradiction", "Paris is the capital of Germany.", ["Paris is the capital of France."], ["Paris is the capital of Germany."]),
-    _c("on_chain_contradiction", "Water freezes at 10 degrees Celsius.", ["Water freezes at 0 degrees Celsius."], ["Water freezes at 10 degrees Celsius."]),
+    _c(
+        "on_chain_contradiction",
+        "Paris is the capital of Germany.",
+        ["Paris is the capital of France."],
+        ["Paris is the capital of Germany."],
+    ),
+    _c(
+        "on_chain_contradiction",
+        "Water freezes at 10 degrees Celsius.",
+        ["Water freezes at 0 degrees Celsius."],
+        ["Water freezes at 10 degrees Celsius."],
+    ),
 ]
 
 

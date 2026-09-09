@@ -58,11 +58,18 @@ def _run(critic: ContentCritic) -> list[tuple[str, bool, ContentVerdict, Content
     for label, claim, on_chain, off_chain in all_cases():
         chain = _chain_for(on_chain)
         res = policy.evaluate(claim, claim, chain, list(off_chain), critic)
-        rows.append((label, res.grounded_off_chain_only, res.off_chain_verdict, res.on_chain_verdict))
+        rows.append((
+            label,
+            res.grounded_off_chain_only,
+            res.off_chain_verdict,
+            res.on_chain_verdict,
+        ))
     return rows
 
 
-def _metrics(rows: list[tuple[str, bool, ContentVerdict, ContentVerdict | None]]) -> dict[str, object]:
+def _metrics(
+    rows: list[tuple[str, bool, ContentVerdict, ContentVerdict | None]],
+) -> dict[str, object]:
     pos = [r for r in rows if r[0] == "grounded_off_chain_only"]
     neg_on_chain = [r for r in rows if r[0] == "grounded_on_chain"]
     neg_nowhere = [r for r in rows if r[0] == "grounded_nowhere"]
@@ -110,8 +117,10 @@ def main() -> None:
     positives = [r for r in nli_rows if r[0] == "grounded_off_chain_only"]
     n_consistent_off = sum(1 for r in positives if r[2] is ContentVerdict.CONSISTENT)
     if n_consistent_off == 0:
-        print("ABORT: LocalNLICritic emitted zero CONSISTENT verdicts on positive cases — "
-              "model failed to load or sentence-transformers absent. Install the `nli` extra.")
+        print(
+            "ABORT: LocalNLICritic emitted zero CONSISTENT verdicts on positive cases — "
+            "model failed to load or sentence-transformers absent. Install the `nli` extra."
+        )
         sys.exit(1)
 
     # Baseline: EmbeddingCritic is contradiction-only -> 0 flags by construction.
