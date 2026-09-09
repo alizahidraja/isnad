@@ -23,6 +23,7 @@ from isnad.core.chain import (
     resolved_narrator_ids_for_chain,
     store_claim,
 )
+from isnad.core.chain_grounding import chain_scoped_corpus, evaluate_chain_grounding
 from isnad.core.corroboration import CorroborationEngine
 from isnad.core.decision import decide, describe_action, gate_serve, hold_unverifiable
 from isnad.core.fidelity import compute_fidelity_verdicts
@@ -174,6 +175,10 @@ class ChainLinkIn(BaseModel):
     document_hashes: list[str] = Field(
         default_factory=list,
         description="Retrieved-document content hashes for the madār correlation check (#125)",
+    )
+    retrieved_rows: list[str] = Field(
+        default_factory=list,
+        description="Runtime-only rows this link retrieved, for chain-scoped grounding (#216). Never persisted or signed.",
     )
 
 
@@ -429,6 +434,7 @@ async def submit_claim(
             input_snapshot=link.input_snapshot,
             output_snapshot=link.output_snapshot,
             document_hashes=link.document_hashes,
+            retrieved_rows=link.retrieved_rows,
             # The moment ISNAD observed this chain — not a per-link
             # transmission clock (the client does not supply one). The DB
             # chain_links.timestamp records the same observed instant.
@@ -463,6 +469,19 @@ async def submit_claim(
     # are kept for contradiction-linking. Without docs, fall back to
     # claims-only (honest cold-start: everything UNVERIFIABLE).
     critic_corpus = list(body.corpus_docs or []) + existing_texts
+    off_chain_rows = list(body.corpus_docs or []) + existing_texts
+    grounding = None
+    if critic is not None:
+        gr = evaluate_chain_grounding(claim_text, normalized, chain, off_chain_rows, critic, domain)
+        grounding = {
+            "grounded_off_chain_only": gr.grounded_off_chain_only,
+            "on_chain_verdict": gr.on_chain_verdict.value
+            if gr.on_chain_verdict is not None
+            else None,
+            "off_chain_verdict": gr.off_chain_verdict.value,
+            "on_chain_corpus_size": len(chain_scoped_corpus(chain)),
+            "off_chain_corpus_size": len(off_chain_rows),
+        }
     cv = (
         critic.evaluate(claim_text, normalized, critic_corpus, domain)
         if critic
@@ -568,6 +587,7 @@ async def submit_claim(
         "domain": domain,
         "page_slug": page_slug,
         "critic_corpus_operator_docs": len(body.corpus_docs or []),
+        "grounding": grounding,
         "corroborating_claims": len(corroborating),
         "narrator_ids": [l.narrator_id for l in chain.links],
         "resolved_narrator_ids": resolved_narrator_ids,
