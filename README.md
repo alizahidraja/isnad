@@ -33,7 +33,7 @@ print(verdict.why)
 > **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873)
 
 [![CI](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml/badge.svg)](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml)
-[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2607.24117-b31b1b.svg)](https://arxiv.org/abs/2607.24117)
 [![Downloads](https://static.pepy.tech/badge/isnad/month)](https://pypi.org/project/isnad/)
@@ -41,6 +41,8 @@ print(verdict.why)
 [![Glama MCP score](https://glama.ai/mcp/servers/alizahidraja/isnad/badges/score.svg)](https://glama.ai/mcp/servers/alizahidraja/isnad)
 
 **🌐 Project home: <https://alizahidraja.com/isnad>** · **📚 Docs: <https://alizahidraja.com/isnad/docs>** · ⭐ Star to follow along · [Contribute](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
+
+<p align="center"><img src="docs/images/isnad-demo.gif" width="640" alt="ISNAD demo — grade the chain, route the decision, sign the evidence"></p>
 
 **JavaScript/TypeScript verifier:** `npm install isnad` verifies ISNAD audit records (SHA-256 / Merkle / detached signatures) from JS — *verifier only*, grading stays in the Python core. See [`js/README.md`](js/README.md).
 
