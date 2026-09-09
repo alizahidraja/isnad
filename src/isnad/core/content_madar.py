@@ -272,8 +272,10 @@ class ErrorFingerprint:
 
         # A shared citation is only a shared error when anchored by a shared
         # number or date (the same received reference).
-        if self.citations and self.citations & other.citations and (
-            (self.numbers & other.numbers) or (self.dates & other.dates)
+        if (
+            self.citations
+            and self.citations & other.citations
+            and ((self.numbers & other.numbers) or (self.dates & other.dates))
         ):
             return True
 
