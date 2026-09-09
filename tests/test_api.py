@@ -1158,3 +1158,20 @@ class TestChainGrounding:
             assert on["grounding"]["grounded_off_chain_only"] is False
         finally:
             app.dependency_overrides.pop(get_critic, None)
+
+    def test_grounding_capable_and_audit_signed_surfaced(self):
+        """The response honestly reports whether the flag can fire (critic affirms
+        CONSISTENT) and whether the audit record is signed (fail-closed signal)."""
+        r = client.post(
+            "/v1/claims",
+            json={"claim_text": "F = ma", "domain": "physics", "chain": [{"narrator_id": "x"}]},
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        body = r.json()
+        assert "grounding" in body
+        assert "grounding_capable" in body["grounding"]
+        assert (
+            body["grounding"]["grounding_capable"] is False
+        )  # default EmbeddingCritic is contradiction-only
+        assert body["audit_signed"] is False  # no ISNAD_HMAC_SECRET in the test env
