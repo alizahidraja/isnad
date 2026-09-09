@@ -136,6 +136,26 @@ class TestClaims:
         r = client.get(f"/v1/claims/{cid2}", headers={"X-API-Key": "isnad-admin"})
         assert r.json()["corroborating_claims"] >= 1
 
+    def test_chain_independence_score_surfaced(self):
+        """The calibrated independence score (not just signals) reaches the API."""
+        for nid in ("source:A", "source:B"):
+            r = client.post(
+                "/v1/claims",
+                json={
+                    "claim_text": "energy is conserved",
+                    "normalized_text": "energy is conserved",
+                    "chain": [{"narrator_id": nid}],
+                },
+                headers={"X-API-Key": "isnad-admin"},
+            )
+            assert r.status_code == 200
+        body = client.get("/v1/claims", headers={"X-API-Key": "isnad-admin"}).json()
+        for rec in body if isinstance(body, list) else [body]:
+            ci = rec.get("corroboration_result") or {}
+            for entry in ci.get("chain_independence") or []:
+                assert "score" in entry and "is_independent" in entry and "shared_signals" in entry
+                assert entry["is_independent"] == (entry["score"] >= 0.8)
+
     def test_claim_404(self):
         assert (
             client.get("/v1/claims/nonexistent", headers={"X-API-Key": "isnad-admin"}).status_code
