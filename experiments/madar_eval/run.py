@@ -35,6 +35,7 @@ from __future__ import annotations
 import hashlib
 import json
 import sys
+from typing import cast
 from pathlib import Path
 
 from isnad.core.content_madar import ErrorFingerprint, detect_content_madar
@@ -162,7 +163,7 @@ def build_report(
         f"with no shared salient token — are caught with recall **{raw['recall_tokenless']:.3f}**. "
         "That is the honest recall gap: the fingerprint is a *surface-token* detector and cannot "
         "see a reworded error. Overall recall is "
-        f"{raw['recall']:.3f} = {raw['tp']}/{raw['tp'] + raw['fn']}.",
+        f"{raw['recall']:.3f} = {cast(int, raw['tp'])}/{cast(int, raw['tp']) + cast(int, raw['fn'])}.",
         f"- **FP (agreement)** remains the headline hazard: the bare fingerprint fires on "
         f"{raw['fp_agreement']}/{raw['n_independent_agreement']} genuine independent-agreement pairs "
         f"({raw['false_positive_rate_agreement']:.3f}) — correct facts sharing a salient token.",
@@ -191,6 +192,27 @@ def build_report(
     return "\n".join(lines) + "\n"
 
 
+def _compose_end_to_end(raw_fire_rate: float) -> dict[str, dict[str, float]]:
+    """Compose the shipped detector's end-to-end FP: fcr_base × fcr_corr × raw_fire_rate.
+
+    Both critic false-contradiction factors come from experiments/critic_eval/results.json;
+    raw_fire_rate is the measured fingerprint collision rate from THIS harness. Two models:
+    independent errors (fcr × fcr × raw, the headline) and correlated errors (fcr × raw,
+    the upper bound for two restatements of the same fact under a deterministic critic).
+    """
+    critic_path = _HERE.parent / "critic_eval" / "results.json"
+    critic = json.loads(critic_path.read_text())
+    out: dict[str, dict[str, float]] = {}
+    for tier, m in critic.get("metrics", {}).items():
+        fcr = float(m.get("false_contradiction_rate", 0.0))
+        out[tier] = {
+            "false_contradiction_rate": fcr,
+            "end_to_end_fp_independent": round(fcr * fcr * raw_fire_rate, 6),
+            "end_to_end_fp_correlated_upper": round(fcr * raw_fire_rate, 6),
+        }
+    return out
+
+
 def main() -> None:
     cases = all_cases()
     sha = _eval_set_sha256(cases)
@@ -200,6 +222,7 @@ def main() -> None:
 
     raw_m = _metrics(raw_rows)
     gated_m = _metrics(gated_rows)
+    e2e = _compose_end_to_end(cast(float, raw_m["false_positive_rate_agreement"]))
 
     n_cases = n_chain_cases()
     n_rows = [(label, _nway_fires(label, base, corr)) for label, base, corr in n_cases]
@@ -224,9 +247,13 @@ def main() -> None:
             "raw": [{"label": lbl, "fired": fired} for lbl, fired in raw_rows],
             "gated": [{"label": lbl, "fired": fired} for lbl, fired in gated_rows],
         },
+        "end_to_end_fp": e2e,
         "n_way": [{"label": lbl, "fired": fired} for lbl, fired in n_rows],
         "cases": cases,
     }
+    print("\nend-to-end FP (fcr_base x fcr_corr x raw_fire_rate):")
+    for tier, v in e2e.items():
+        print(f"  {tier}: fcr={v['false_contradiction_rate']}  independent={v['end_to_end_fp_independent']}  correlated_upper={v['end_to_end_fp_correlated_upper']}")
     (_HERE / "results.json").write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n")
     (_HERE / "RESULTS.md").write_text(build_report(raw_m, gated_m, raw_rows, n_rows, sha))
     print(f"\nWrote {_HERE / 'RESULTS.md'} and results.json")

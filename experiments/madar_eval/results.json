@@ -278,6 +278,28 @@
       }
     ]
   },
+  "end_to_end_fp": {
+    "EmbeddingCritic (TF-IDF)": {
+      "false_contradiction_rate": 0.0,
+      "end_to_end_fp_independent": 0.0,
+      "end_to_end_fp_correlated_upper": 0.0
+    },
+    "LocalNLICritic (DeBERTa NLI)": {
+      "false_contradiction_rate": 0.05,
+      "end_to_end_fp_independent": 0.000938,
+      "end_to_end_fp_correlated_upper": 0.01875
+    },
+    "HybridCritic (MiniLM → NLI)": {
+      "false_contradiction_rate": 0.0,
+      "end_to_end_fp_independent": 0.0,
+      "end_to_end_fp_correlated_upper": 0.0
+    },
+    "LLMCritic (DeepSeek)": {
+      "false_contradiction_rate": 0.0,
+      "end_to_end_fp_independent": 0.0,
+      "end_to_end_fp_correlated_upper": 0.0
+    }
+  },
   "n_way": [
     {
       "label": "n_chain_shared_error",

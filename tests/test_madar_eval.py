@@ -118,3 +118,25 @@ def test_eval_set_hash_matches_committed():
     assert _eval_set_sha256(cases) == _eval_set_sha256(all_cases())  # deterministic
     assert _eval_set_sha256(cases) == _COMMITTED_EVAL_SET_SHA256  # unchanged
     assert len(_eval_set_sha256(cases)) == 64
+
+
+def test_compose_end_to_end_matches_formula():
+    """The shipped detector's end-to-end FP is computed, not hand-written:
+    fcr_base x fcr_corr x raw_fire_rate, with both critic factors from critic_eval.
+    Default tiers (fcr=0) compose to 0; LocalNLICritic (fcr=0.05) composes to
+    0.05*0.05*raw (independent) and 0.05*raw (correlated upper bound)."""
+    raw = _rows()[0]["false_positive_rate_agreement"]  # live measured factor
+    e2e = _run._compose_end_to_end(raw)
+    assert set(e2e) == {
+        "EmbeddingCritic (TF-IDF)",
+        "LocalNLICritic (DeBERTa NLI)",
+        "HybridCritic (MiniLM → NLI)",
+        "LLMCritic (DeepSeek)",
+    }
+    nli = e2e["LocalNLICritic (DeBERTa NLI)"]
+    assert nli["false_contradiction_rate"] == 0.05
+    assert nli["end_to_end_fp_independent"] == round(0.05 * 0.05 * raw, 6)
+    assert nli["end_to_end_fp_correlated_upper"] == round(0.05 * raw, 6)
+    for tier in ("LLMCritic (DeepSeek)", "HybridCritic (MiniLM → NLI)", "EmbeddingCritic (TF-IDF)"):
+        assert e2e[tier]["end_to_end_fp_independent"] == 0.0
+        assert e2e[tier]["end_to_end_fp_correlated_upper"] == 0.0
