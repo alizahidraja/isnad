@@ -74,11 +74,22 @@ def test_raw_fingerprint_is_intrinsically_hazardous():
     assert raw["false_positive_rate_agreement"] == 0.75
 
 
-def test_recall_is_total_on_shared_errors():
-    """Both layers catch every genuine shared-error pair."""
+def test_recall_drops_on_tokenless_shared_errors():
+    """Token-less shared errors (same mistake, no shared salient token) are the
+    class where recall honestly fails — the fingerprint is a surface-token detector."""
     raw, gated = _rows()
-    assert raw["recall"] == 1.0
-    assert gated["recall"] == 1.0
+    assert raw["recall_tokenbearing"] == 1.0
+    assert raw["recall_tokenless"] == 0.0
+    assert raw["recall"] < 1.0
+    assert gated["recall"] < 1.0
+
+
+def test_near_miss_boundary_false_positives():
+    """One correct + one wrong claim sharing a subject token but differing in value
+    (1687 vs 1689) — the entity-set-equality rule fires before numbers are compared,
+    a measured defect, disclosed not fixed."""
+    raw, _gated = _rows()
+    assert raw["false_positive_rate_near_miss"] == 1.0
 
 
 def test_gated_oracle_row_has_no_worse_precision_than_raw():
@@ -95,7 +106,7 @@ def test_gated_oracle_row_has_no_worse_precision_than_raw():
 # ANY mutation of the labeled set (a reworded case, a flipped label, an added
 # pair) breaks CI — the whole point of the re-runnability pin. Regenerate with
 # `python experiments/madar_eval/run.py` and update this constant deliberately.
-_COMMITTED_EVAL_SET_SHA256 = "c2b9872ba7fa6b0387472c021d9b18042409adbee87fb391b6c740c9840b9cb8"
+_COMMITTED_EVAL_SET_SHA256 = "a3f92f863fe442d9aafc3c4cc3515133f4651a15b77b21a903163c7b88cfa0ae"
 
 
 def test_eval_set_hash_matches_committed():
