@@ -13,16 +13,16 @@
       "recall": 0.667,
       "recall_tokenbearing": 1.0,
       "recall_tokenless": 0.0,
-      "precision": 0.444,
-      "f1": 0.533,
-      "false_positive_rate": 0.625,
-      "false_positive_rate_agreement": 0.75,
+      "precision": 0.533,
+      "f1": 0.593,
+      "false_positive_rate": 0.438,
+      "false_positive_rate_agreement": 0.375,
       "false_positive_rate_near_miss": 1.0,
       "tp": 8,
       "fn": 4,
-      "fp": 10,
-      "tn": 6,
-      "fp_agreement": 6,
+      "fp": 7,
+      "tn": 9,
+      "fp_agreement": 3,
       "fp_near_miss": 4
     },
     "detect_content_madar": {
@@ -100,11 +100,11 @@
       },
       {
         "label": "independent_agreement",
-        "fired": true
+        "fired": false
       },
       {
         "label": "independent_agreement",
-        "fired": true
+        "fired": false
       },
       {
         "label": "independent_agreement",
@@ -128,7 +128,7 @@
       },
       {
         "label": "independent_agreement",
-        "fired": true
+        "fired": false
       },
       {
         "label": "near_miss_boundary",

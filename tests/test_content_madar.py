@@ -129,13 +129,13 @@ class TestDetectContentMadar:
         )
         assert madar is False
 
-    def test_shared_wrong_date_is_madar(self):
+    def test_bare_shared_date_no_longer_fires(self):
         madar = detect_content_madar(
             "The event occurred in the year 1492.",
             CONTRADICTION,
             [("A historical event took place in 1492.", CONTRADICTION)],
         )
-        assert madar is True
+        assert madar is False  # bare shared date/year is a salient token, not a shared mistake
 
 
 class TestContentMadarWiredIntoEngine:
