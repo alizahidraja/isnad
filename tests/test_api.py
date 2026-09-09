@@ -1089,3 +1089,72 @@ class TestReGradeLoopClosure:
             # Reader submission must not quarantine or compromise the narrator.
             assert rec.is_active is True
             assert rec.adalah_grade != AdalahGrade.COMPROMISED
+
+
+class TestChainGrounding:
+    """Chain-scoped grounding wiring (#216): the flag is evidence, not action."""
+
+    class _StubCritic:
+        def evaluate(self, claim, normalized, corpus, domain=""):
+            if claim in corpus:
+                return ContentVerdict.CONSISTENT
+            return ContentVerdict.UNVERIFIABLE
+
+    def test_submit_accepts_retrieved_rows(self):
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "Paris is the capital of France",
+                "domain": "general",
+                "chain": [
+                    {"narrator_id": "ret", "retrieved_rows": ["Paris is the capital of France"]}
+                ],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+        assert "grounding" in r.json()
+
+    def test_legacy_submission_without_retrieved_rows(self):
+        r = client.post(
+            "/v1/claims",
+            json={
+                "claim_text": "F = ma",
+                "domain": "physics",
+                "chain": [{"narrator_id": "source:openstax"}],
+            },
+            headers={"X-API-Key": "isnad-admin"},
+        )
+        assert r.status_code == 200
+
+    def test_grounded_off_chain_only_flag(self):
+        app.dependency_overrides[get_critic] = lambda: self._StubCritic()
+        try:
+            off = client.post(
+                "/v1/claims",
+                json={
+                    "claim_text": "Paris is the capital of France",
+                    "domain": "general",
+                    "corpus_docs": ["Paris is the capital of France"],
+                    "chain": [{"narrator_id": "synth"}],
+                },
+                headers={"X-API-Key": "isnad-admin"},
+            ).json()
+            assert off["grounding"]["grounded_off_chain_only"] is True
+            assert off["grounding"]["on_chain_verdict"] == "unverifiable"
+            assert off["grounding"]["off_chain_verdict"] == "consistent"
+
+            on = client.post(
+                "/v1/claims",
+                json={
+                    "claim_text": "Paris is the capital of France",
+                    "domain": "general",
+                    "chain": [
+                        {"narrator_id": "ret", "retrieved_rows": ["Paris is the capital of France"]}
+                    ],
+                },
+                headers={"X-API-Key": "isnad-admin"},
+            ).json()
+            assert on["grounding"]["grounded_off_chain_only"] is False
+        finally:
+            app.dependency_overrides.pop(get_critic, None)
