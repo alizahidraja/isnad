@@ -61,6 +61,7 @@ nav:
   - CLI Reference: cli-reference.md
   - Architecture: ARCHITECTURE.md
   - Chain Independence: chain-independence.md
+  - Chain-Scoped Grounding: chain-scoped-grounding.md
   - Critics: critics.md
   - Evidence Mapping: evidence-mapping.md
   - Trace Schema: trace-schema.md
