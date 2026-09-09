@@ -11,9 +11,9 @@ from __future__ import annotations
 
 from isnad.core.chain import Chain, ChainLinkSpec
 from isnad.core.chain_grounding import (
-    DefaultGroundingPolicy,
+    ChainScopedGroundingPolicy,
     chain_scoped_corpus,
-    check_chain_grounding,
+    evaluate_chain_grounding,
 )
 from isnad.types import ContentVerdict, TransformType
 
@@ -45,7 +45,7 @@ def _link(step: int, *, rows: list[str] | None = None, generative: bool = False)
 
 
 def _check(claim, chain, off_chain_rows):
-    return check_chain_grounding(claim, claim, chain, off_chain_rows, StubCritic())
+    return evaluate_chain_grounding(claim, claim, chain, off_chain_rows, StubCritic())
 
 
 # --- chain_scoped_corpus ---------------------------------------------------
@@ -143,8 +143,8 @@ def test_policy_is_swappable():
     none is given (both paths reach the same result here)."""
     claim = "R"
     chain = Chain([_link(0), _link(1, generative=True)])
-    explicit = check_chain_grounding(
-        claim, claim, chain, ["R"], StubCritic(), policy=DefaultGroundingPolicy()
+    explicit = evaluate_chain_grounding(
+        claim, claim, chain, ["R"], StubCritic(), policy=ChainScopedGroundingPolicy()
     )
     implicit = _check(claim, chain, off_chain_rows=["R"])
     assert explicit == implicit

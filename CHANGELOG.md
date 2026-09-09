@@ -11,6 +11,13 @@
   (6/8 = 0.750, 95% CI ≈ 0.41–0.93) and demonstrates the corpus gate's
   short-circuit (structural, not an empirical gate FP). Pure, dependency-free.
 
+- **Chain-scoped content grounding** (`chain_grounding.py`, #216): a new core
+  primitive — `ChainLinkSpec.retrieved_rows` (runtime-only, not serialized) +
+  `chain_scoped_corpus()` — plus a swappable `GroundingPolicy`/
+  `ChainScopedGroundingPolicy` that flags a claim grounded *only* off its own
+  chain (`grounded_off_chain_only`, a grounding gap — not proven contamination).
+  No route into the decision matrix; the flag's FP is not yet measured (see #239).
+
 ## [2.21.6] — 2026-09-08
 
 ### Changed
