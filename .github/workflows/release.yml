@@ -11,10 +11,9 @@ on:
   push:
     branches: [main]
     paths:
-      - "src/**"
       - "pyproject.toml"
       - "CITATION.cff"
-      - "README.md"
+      - "src/isnad/__init__.py"
   workflow_dispatch:
 
 permissions:

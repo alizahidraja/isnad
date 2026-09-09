@@ -45,7 +45,7 @@ def make_record(rid: str, cid: str, text: str, grade: str) -> AuditRecord:
         weakest_link=WeakestLink("src", "reliable", "lowest grade"),
         source_documents=[SourceDocument("https://example.com/x")],
         human_oversight=[],
-        environment=Environment(__version__, "3.12", "test"),
+        environment=Environment(__version__, "3.11", "test"),
     )
 
 
