@@ -623,7 +623,12 @@ async def submit_claim(
             # independence scores stay internal to the engine. The public surface
             # is the ordinal grade + boolean upgraded + shared-signal reasons.
             "chain_independence": [
-                {"shared_signals": list(a.shared_signals)} for a in corr_result.chain_independence
+                {
+                    "score": a.score,
+                    "is_independent": a.is_independent,
+                    "shared_signals": list(a.shared_signals),
+                }
+                for a in corr_result.chain_independence
             ],
         },
     }

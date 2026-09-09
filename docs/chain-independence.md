@@ -51,6 +51,16 @@ it can never *prove independence* — it can only fail to find shared signals.
   metadata scored `1.0` — the framework assumed independence exactly when it
   knew the least.
 
+- **The calibrated score is surfaced.** Each corroborating pair's
+  `chain_independence` assessment now carries its numeric `score` (0.0–1.0), the
+  `is_independent` gate (`score >= 0.8`), and the `shared_signals` that fired — so a
+  consumer can distinguish *attested-distinct* (≈1.0) from *unknown lineage* (0.5,
+  below the gate) from *hard correlation* (0.0), instead of a silent binary.
+- **The content-madār fingerprint is measured, not asserted** (`experiments/madar_eval`):
+  FP 0.375 on independent agreement (token-bearing recall 1.0), and a **near-miss
+  boundary class (correct vs wrong value) that still false-positives 4/4 — disclosed,
+  not fixed.** This bounds how far the shared-error discount can be trusted.
+
 ## Candidate approaches (now shipped)
 
 1. **Attestation-backed independence** — require each corroborating chain to
