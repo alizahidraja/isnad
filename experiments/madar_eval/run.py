@@ -118,8 +118,12 @@ def _metrics(rows: list[tuple[str, bool]]) -> dict[str, object]:
         "precision": round(precision, 3),
         "f1": round(f1, 3),
         "false_positive_rate": round(fp / len(negatives), 3) if negatives else 0.0,
-        "false_positive_rate_agreement": round(fp_agree / len(indep_agree), 3) if indep_agree else 0.0,
-        "false_positive_rate_near_miss": round(fp_near_miss / len(near_miss), 3) if near_miss else 0.0,
+        "false_positive_rate_agreement": round(fp_agree / len(indep_agree), 3)
+        if indep_agree
+        else 0.0,
+        "false_positive_rate_near_miss": round(fp_near_miss / len(near_miss), 3)
+        if near_miss
+        else 0.0,
         "tp": tp,
         "fn": fn,
         "fp": fp,
@@ -253,7 +257,9 @@ def main() -> None:
     }
     print("\nend-to-end FP (fcr_base x fcr_corr x raw_fire_rate):")
     for tier, v in e2e.items():
-        print(f"  {tier}: fcr={v['false_contradiction_rate']}  independent={v['end_to_end_fp_independent']}  correlated_upper={v['end_to_end_fp_correlated_upper']}")
+        print(
+            f"  {tier}: fcr={v['false_contradiction_rate']}  independent={v['end_to_end_fp_independent']}  correlated_upper={v['end_to_end_fp_correlated_upper']}"
+        )
     (_HERE / "results.json").write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n")
     (_HERE / "RESULTS.md").write_text(build_report(raw_m, gated_m, raw_rows, n_rows, sha))
     print(f"\nWrote {_HERE / 'RESULTS.md'} and results.json")

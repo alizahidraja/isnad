@@ -201,7 +201,6 @@ def all_cases() -> list[tuple[str, str, str]]:
 
 def n_chain_cases() -> list[tuple[str, str, list[str]]]:
     """Return every N-way (label, base_claim, [corroborating]) case."""
-    return (
-        [("n_chain_shared_error", b, c) for b, c in N_CHAIN_SHARED_ERROR]
-        + [("n_chain_negative", b, c) for b, c in N_CHAIN_NEGATIVE]
-    )
+    return [("n_chain_shared_error", b, c) for b, c in N_CHAIN_SHARED_ERROR] + [
+        ("n_chain_negative", b, c) for b, c in N_CHAIN_NEGATIVE
+    ]
