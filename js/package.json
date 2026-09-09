@@ -1,6 +1,6 @@
 {
   "name": "isnad",
-  "version": "2.23.0",
+  "version": "0.1.0",
   "description": "ISNAD audit-record verifier (JS/TS): verify SHA-256 / Merkle / detached-signature integrity of ISNAD audit records. Verifier only — grading stays in the Python core.",
   "license": "Apache-2.0",
   "type": "module",
