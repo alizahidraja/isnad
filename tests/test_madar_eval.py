@@ -71,7 +71,7 @@ def test_raw_fingerprint_is_intrinsically_hazardous():
     Pin a floor at 0.5 (not just > 0), so a future edit that softens the agreement
     cases can't silently deflate the headline while CI stays green."""
     raw, _gated = _rows()
-    assert raw["false_positive_rate_agreement"] >= 0.5
+    assert raw["false_positive_rate_agreement"] == 0.75
 
 
 def test_recall_is_total_on_shared_errors():

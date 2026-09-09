@@ -18,7 +18,7 @@ This module has two parts, deliberately separated (see #216 review):
   *retrieval* link's rows by design — a link-local check would wrongly flag every
   legitimate synthesis. This is pure, deterministic chain topology.
 
-- **A grounding POLICY** — ``GroundingPolicy`` (protocol) + ``DefaultGroundingPolicy``
+- **A grounding POLICY** — ``GroundingPolicy`` (protocol) + ``ChainScopedGroundingPolicy``
   — decides what an on-chain/off-chain verdict *pair* means. This is a policy, not
   a primitive: the predicate "grounded off-chain only ⇒ flag" is a contested
   semantic choice (like ``ContentCritic`` or ``CorroborationPolicy``, it is a
@@ -54,6 +54,10 @@ def chain_scoped_corpus(chain: Chain) -> list[str]:
     Every link on a ``Chain`` is an upstream hop that fed the claim, so this is
     the evidence that legitimately grounds it. Deduplicated preserving first-seen
     order so a row retrieved by two links is not double-counted.
+    Persistence limitation (#241): ``retrieved_rows`` is runtime-only (not in
+    ``to_dict()``), so a chain reloaded from the database has empty
+    ``retrieved_rows`` and this returns ``[]`` — persisted chains cannot be
+    chain-scoped-graded until ``retrieved_rows`` is persisted.
     """
     seen: set[str] = set()
     out: list[str] = []
@@ -96,11 +100,11 @@ class GroundingPolicy(Protocol):
         chain: Chain,
         off_chain_rows: list[str],
         critic: ContentCritic,
-        domain: str = "",
+        domain: str = "general",
     ) -> GroundingResult: ...
 
 
-class DefaultGroundingPolicy:
+class ChainScopedGroundingPolicy:
     """Default grounding policy: flag a claim grounded only off its own chain.
 
     ``grounded_off_chain_only`` is True iff the claim is CONSISTENT against the
@@ -138,7 +142,7 @@ class DefaultGroundingPolicy:
         chain: Chain,
         off_chain_rows: list[str],
         critic: ContentCritic,
-        domain: str = "",
+        domain: str = "general",
     ) -> GroundingResult:
         on_chain = chain_scoped_corpus(chain)
         on_verdict = (
@@ -161,15 +165,15 @@ class DefaultGroundingPolicy:
         )
 
 
-def check_chain_grounding(
+def evaluate_chain_grounding(
     claim_text: str,
     normalized_claim: str,
     chain: Chain,
     off_chain_rows: list[str],
     critic: ContentCritic,
-    domain: str = "",
+    domain: str = "general",
     policy: GroundingPolicy | None = None,
 ) -> GroundingResult:
     """Convenience wrapper: run a ``GroundingPolicy`` (default if none given)."""
-    policy = policy or DefaultGroundingPolicy()
+    policy = policy or ChainScopedGroundingPolicy()
     return policy.evaluate(claim_text, normalized_claim, chain, off_chain_rows, critic, domain)

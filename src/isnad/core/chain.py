@@ -78,7 +78,7 @@ class ChainLinkSpec:
         # Retrieved-document content hashes for this link — used by the
         # corroboration engine's madār check (issue #125): two chains that
         # retrieved the same document are one source, not two.
-        self.document_hashes = document_hashes or []
+        self.document_hashes = list(document_hashes) if document_hashes is not None else []
         # The actual CONTENT of the rows this link retrieved (issue #216).
         # document_hashes above identifies *which* documents a link fetched;
         # this carries the groundable text, so the content critic can check a
