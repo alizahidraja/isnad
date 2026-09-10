@@ -5,12 +5,12 @@ How does a claim's **hallucination rate** grow as it passes through an increasin
 content-critic + decision-matrix pipeline **catch** that hallucination at each depth?
 
 The methodology is **preregistered** (frozen before any result):
-[`experiments/model_drift/PREREGISTRATION.md`](../experiments/model_drift/PREREGISTRATION.md).
+[`experiments/model_drift/PREREGISTRATION.md`](https://github.com/alizahidraja/isnad/blob/main/experiments/model_drift/PREREGISTRATION.md).
 
 ## Live results — DeepSeek V4 Flash (`deepseek-flash`)
 
-[`experiments/model_drift/results/LIVE_RESULTS.md`](../experiments/model_drift/results/LIVE_RESULTS.md)
-· raw: [`results/live_results.json`](../experiments/model_drift/results/live_results.json)
+[`experiments/model_drift/results/LIVE_RESULTS.md`](https://github.com/alizahidraja/isnad/blob/main/experiments/model_drift/results/LIVE_RESULTS.md)
+· raw: [`results/live_results.json`](https://github.com/alizahidraja/isnad/blob/main/experiments/model_drift/results/live_results.json)
 
 65 facts (8 easy / 20 medium / 28 hard / 9 **post-cutoff**), temperature 0.0,
 1,300 calls, **$0.099** total, 27 truncated calls (recorded, not hidden).
@@ -49,7 +49,7 @@ labels come from an **LLM-free numeric oracle**, so the labels themselves cannot
 
 ## Offline results (pipeline plumbing, deterministic)
 
-[`experiments/model_drift/results/RESULTS.md`](../experiments/model_drift/results/RESULTS.md)
+[`experiments/model_drift/results/RESULTS.md`](https://github.com/alizahidraja/isnad/blob/main/experiments/model_drift/results/RESULTS.md)
 
 | Depth | hallucination_rate (oracle) | served_error_rate (perfect critic) | served_error_rate (empty critic) |
 |---|---|---|---|
