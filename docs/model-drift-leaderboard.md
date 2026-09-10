@@ -1,13 +1,39 @@
 # Model-drift leaderboard (#71)
 
 How does a claim's **hallucination rate** grow as it passes through an increasingly
-**deep multi-agent chain** — and how well does ISNAD's chain-grade + content-critic +
-decision-matrix pipeline **catch** that hallucination at each depth?
+**deep multi-agent chain** (depth 1..5) — and how well does ISNAD's chain-grade +
+content-critic + decision-matrix pipeline **catch** that hallucination at each depth?
 
 The methodology is **preregistered** (frozen before any result):
 [`experiments/model_drift/PREREGISTRATION.md`](../experiments/model_drift/PREREGISTRATION.md).
 
-## Current results (offline mode)
+## Live results — DeepSeek V4 Flash (`deepseek-flash`)
+
+[`experiments/model_drift/results/LIVE_RESULTS.md`](../experiments/model_drift/results/LIVE_RESULTS.md)
+· raw: [`results/live_results.json`](../experiments/model_drift/results/live_results.json)
+
+| Depth | hallucination_rate (oracle) | served_error_rate (real critic) |
+|---|---|---|
+| 1 | **0.000** | 0.000 |
+| 2 | **0.000** | 0.000 |
+| 3 | **0.000** | 0.000 |
+| 4 | **0.000** | 0.000 |
+| 5 | **0.000** | 0.000 |
+
+- **56 facts** (8 easy / 20 medium / 28 hard), temperature 0.0, 1,120 calls, **$0.053** total.
+- **Oracle cross-check (independent LLM audit):** 0.87 agreement (26/30). The 4
+  disagreements are the auditor answering "unverifiable" on a correct claim — not
+  hallucinations.
+- Ground-truth labels come from an **LLM-free numeric oracle** (never an LLM), so the
+  labels themselves cannot hallucinate.
+
+**What this honestly shows:** a frontier model relays all 56 well-known facts correctly
+through 5 hops — it does **not** drift on *training-data facts*. Hallucination of the
+kind #71 wants to measure does **not** emerge from well-known facts; it requires
+**post-training-cutoff or obscure** facts (where the model has no correct prior to
+reproduce). That is the next corpus iteration.
+
+## Offline results (pipeline plumbing, deterministic)
 
 [`experiments/model_drift/results/RESULTS.md`](../experiments/model_drift/results/RESULTS.md)
 
@@ -19,26 +45,29 @@ The methodology is **preregistered** (frozen before any result):
 | 4 | 0.667 | 0.000 | 1.000 |
 | 5 | 0.750 | 0.000 | 1.000 |
 
-**What this shows (honestly):** hallucination rate grows monotonically with depth
-(0.17 → 0.75 under the preregistered 0.25/hop corruption). A **perfect** critic → the
-decision matrix catches 100% (served-error 0 — this row verifies the plumbing, not
-critic quality). A **useless** critic (always UNVERIFIABLE) → every hallucinated claim
-is served with caveat (served-error 1.0). The real, open question — how well a *real*
-critic sits between those two extremes — is the live phase.
+A **perfect** critic → the decision matrix catches 100% (verifies the plumbing). A
+**useless** critic → serves every hallucinated claim. The real critic sits between the
+two — the live phase measures where.
 
 ## Reproduce
 
 ```bash
+# offline (no keys): deterministic drift-injector stand-in
 uv run python -m experiments.model_drift.run --seed 0
+
+# live (DeepSeek): key from env, $2 hard cap, optional --audit
+DEEPSEEK_API_KEY=… uv run python -m experiments.model_drift.live --audit
 ```
 
-Output is deterministic (byte-identical across runs), with every row carrying exact
-provenance (model/provider, temperature, seed, dataset SHA-256).
+## Hard limits (stated, not hidden)
 
-## Hard limits
-
-- **Offline mode only.** Live multi-family numbers require paid API keys and incur cost;
-  they are a separate keyed phase. Cells not actually run are rendered "not run".
-- Single seed dataset (12 facts) across 6 domains; the `offline-drift` injector is a
-  deterministic stand-in, not a real model.
+- **Live is single-model self-critique**: narrator and critic are both `deepseek-flash`,
+  so served_error_rate is optimistic (models are lenient on their own output).
+- **Well-known-fact corpus** → 0 drift on a frontier model. Inducing real hallucination
+  requires post-cutoff/obscure facts (next iteration).
+- **Oracle definition**: any numeric deviation (rounding, unit change, more precision)
+  counts as drift — but only *at the canonical value's precision*; a more-precise
+  correct answer (763.035 vs 763) is faithful.
+- **Cost** is derived from the API's token counts × the disclosed V4-Flash rate card
+  ($0.14/M in, $0.28/M out); raw token totals are the ground truth.
 - The metric does **not** claim general hallucination-detection superiority (#71).
