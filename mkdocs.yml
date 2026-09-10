@@ -68,6 +68,7 @@ nav:
   - Onboard in a Day: onboard-in-a-day.md
   - Period-Sliced Grades: period-sliced-grades.md
   - Concept to Code: concept_to_code.md
+  - Model-Drift Leaderboard: model-drift-leaderboard.md
   - Role Grading (RFC): rfc-issue3-role-grading.md
   - Case Study (xz backdoor): case-study-xz-sleeper-narrator.md
   - OTel Mapping: otel-mapping.md

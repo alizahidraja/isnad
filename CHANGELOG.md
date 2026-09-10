@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- **Model-drift leaderboard** (`experiments/model_drift/`, #71): a preregistered,
+  reproducible harness measuring how hallucination rate grows with multi-agent chain
+  depth (1..5), with a deterministic ground-truth oracle, a deterministic offline
+  drift injector (no API keys), and negative controls (perfect / empty critic).
+  Offline-only; live multi-family runs are a separate keyed phase.
+
 ## [2.23.0] — 2026-09-09
 
 ### Added
