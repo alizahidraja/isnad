@@ -33,6 +33,7 @@ class FakeClient:
         self.prompt_tokens = 0
         self.completion_tokens = 0
         self.retries = 0
+        self.truncated = 0
         self.model = "deepseek-flash"
         self.base_url = "https://api.deepseek.com/v1"
         self.temperature = 0.0
@@ -202,3 +203,42 @@ def test_live_client_does_not_commit_key():
     """Sanity: the module never writes the key anywhere; it is env-only."""
     src = Path(live_mod.__file__).read_text()
     assert "sk-" not in src
+
+
+class _TruncResp(_FakeResp):
+    def json(self) -> dict:
+        d = super().json()
+        d["choices"][0]["finish_reason"] = "length"
+        return d
+
+
+class _RecordingClient(FakeClient):
+    def __init__(self, responses: list[str]) -> None:
+        super().__init__(responses)
+        self.max_tokens_calls: list[int] = []
+
+    def complete(self, messages: list[dict[str, str]], max_tokens: int) -> str:
+        self.max_tokens_calls.append(max_tokens)
+        return super().complete(messages, max_tokens)
+
+
+def test_live_client_detects_truncation():
+    """finish_reason=length (the reasoning-model truncation bug) must be recorded."""
+    client = LiveClient(api_key="x", _client=_FakeHTTP(_TruncResp()))
+    client.complete([{"role": "user", "content": "hi"}], 4096)
+    assert client.truncated == 1
+
+
+def test_live_client_repr_hides_key():
+    """The dataclass repr must not expose the API key (security hardening)."""
+    client = LiveClient(api_key="sk-secret-key-123")
+    assert "sk-secret-key-123" not in repr(client)
+
+
+def test_max_tokens_floor_prevents_truncation():
+    """Every live prompt must use max_tokens >= 1024 to avoid reasoning-token truncation."""
+
+    c = _RecordingClient(["206 bones", "CONSISTENT"])
+    f = _fact("e01")
+    run_depth_live(c, 1, f)  # answer_from_memory + critique
+    assert all(mt >= 1024 for mt in c.max_tokens_calls)

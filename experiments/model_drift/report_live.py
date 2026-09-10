@@ -24,8 +24,9 @@ def _tier_rows(record: dict[str, Any], tier: str) -> str:
         hall = [r for r in dr if r["ground_truth"] == "hallucinated"]
         served = [r for r in hall if r["served"]]
         hr = len(hall) / len(dr) if dr else 0.0
-        ser = len(served) / len(hall) if hall else 0.0
-        lines.append(f"| {d} | {hr:.3f} | {ser:.3f} | {len(dr)} |")
+        ser = len(served) / len(hall) if hall else None
+        ser_str = f"{ser:.3f}" if ser is not None else "n/a"
+        lines.append(f"| {d} | {hr:.3f} | {ser_str} | {len(dr)} |")
     return "\n".join(lines)
 
 
@@ -48,9 +49,11 @@ def render(record: dict[str, Any]) -> str:
     ]
     for depth in sorted(pd, key=int):
         d = pd[depth]
-        lines.append(f"| {depth} | {d['hallucination_rate']:.3f} | {d['served_error_rate']:.3f} |")
+        ser = d["served_error_rate"]
+        ser_str = f"{ser:.3f}" if ser is not None else "n/a"
+        lines.append(f"| {depth} | {d['hallucination_rate']:.3f} | {ser_str} |")
     lines += ["", "## By difficulty tier", ""]
-    for tier in ("easy", "medium", "hard"):
+    for tier in ("easy", "medium", "hard", "postcutoff"):
         lines.append(_tier_rows(record, tier))
         lines.append("")
 
@@ -70,7 +73,8 @@ def render(record: dict[str, Any]) -> str:
         "  a model is often lenient on its own output, so served_error_rate is optimistic.",
         "- **Single provider / single model.** No cross-family comparison yet.",
         "- **temperature = 0.0**: drift is deterministic knowledge error, not sampling noise.",
-        "- **Oracle definition:** any numeric deviation (rounding, unit change) counts as drift.",
+        "- **Oracle definition:** any numeric deviation at the canonical value's precision",
+        "  (rounding, unit change) counts as drift; a more-precise correct answer is faithful.",
         "- **Cost** is derived from the API's token counts × the disclosed V4-Flash rate card",
         "  ($0.14/M in, $0.28/M out); the raw token totals are the ground truth.",
         "",
