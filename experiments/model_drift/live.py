@@ -339,7 +339,7 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"wrote {out_path}")
     print(
-        f"model={record['model']} calls={record['calls']} "
+        f"narrator={record['narrator_model']} critic={record['critic_model']} calls={record['calls']} "
         f"cost=${record['cost_usd']:.5f} "
         f"(in={record['prompt_tokens']} out={record['completion_tokens']})"
     )
