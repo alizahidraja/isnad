@@ -1,0 +1,4451 @@
+{
+  "schema_version": 2,
+  "generated_date": "2026-09-10",
+  "model": "deepseek-flash",
+  "base_url": "https://api.deepseek.com/v1",
+  "temperature": 0.0,
+  "price_in_per_m": 0.14,
+  "price_out_per_m": 0.28,
+  "cap_usd": 2.0,
+  "dataset_sha256": "d84890a07a18ba4fccb40c866db3eb10d7e50dd90d9babf1c3f6724cc29bb496",
+  "n_facts": 56,
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "prompt_tokens": 105590,
+  "completion_tokens": 135070,
+  "calls": 1120,
+  "retries": 0,
+  "cost_usd": 0.052602,
+  "per_depth": {
+    "1": {
+      "n": 56,
+      "n_hallucinated": 0,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.0,
+      "served_error_rate": 0.0
+    },
+    "2": {
+      "n": 56,
+      "n_hallucinated": 0,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.0,
+      "served_error_rate": 0.0
+    },
+    "3": {
+      "n": 56,
+      "n_hallucinated": 0,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.0,
+      "served_error_rate": 0.0
+    },
+    "4": {
+      "n": 56,
+      "n_hallucinated": 0,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.0,
+      "served_error_rate": 0.0
+    },
+    "5": {
+      "n": 56,
+      "n_hallucinated": 0,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.0,
+      "served_error_rate": 0.0
+    }
+  },
+  "rows": [
+    {
+      "fact_id": "e01",
+      "tier": "easy",
+      "depth": 1,
+      "final_claim": "The adult human body contains 206 bones.",
+      "hops": [
+        "The adult human body contains 206 bones."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e01",
+      "tier": "easy",
+      "depth": 2,
+      "final_claim": "The previous agent stated that an adult human skeleton contains 206 bones.",
+      "hops": [
+        "The adult human body has 206 bones.",
+        "The previous agent stated that an adult human skeleton contains 206 bones."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "e01",
+      "tier": "easy",
+      "depth": 3,
+      "final_claim": "The adult human skeleton comprises 206 bones.",
+      "hops": [
+        "There are 206 bones in the adult human body.",
+        "The adult human skeleton consists of 206 bones.",
+        "The adult human skeleton comprises 206 bones."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e01",
+      "tier": "easy",
+      "depth": 4,
+      "final_claim": "The previous agent stated that an adult human skeleton contains 206 bones.",
+      "hops": [
+        "The adult human body has 206 bones.",
+        "The previous agent stated that an adult human skeleton contains 206 bones.",
+        "The adult human skeleton consists of 206 bones.",
+        "The previous agent stated that an adult human skeleton contains 206 bones."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "e01",
+      "tier": "easy",
+      "depth": 5,
+      "final_claim": "An adult human skeleton is composed of 206 bones.",
+      "hops": [
+        "There are 206 bones in the adult human body.",
+        "The adult human body has 206 bones.",
+        "The previous agent stated that an adult human skeleton contains 206 bones.",
+        "The adult human skeleton consists of 206 bones.",
+        "An adult human skeleton is composed of 206 bones."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e02",
+      "tier": "easy",
+      "depth": 1,
+      "final_claim": "A standard chessboard has 64 squares.",
+      "hops": [
+        "A standard chessboard has 64 squares."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e02",
+      "tier": "easy",
+      "depth": 2,
+      "final_claim": "A standard chessboard has 64 squares.",
+      "hops": [
+        "There are 64 squares on a standard chessboard.",
+        "A standard chessboard has 64 squares."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e02",
+      "tier": "easy",
+      "depth": 3,
+      "final_claim": "A standard chessboard has 64 squares arranged in an 8-by-8 grid.",
+      "hops": [
+        "A standard chessboard has 64 squares arranged in an 8-by-8 grid.",
+        "A standard chessboard is an 8-by-8 grid containing 64 squares.",
+        "A standard chessboard has 64 squares arranged in an 8-by-8 grid."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "e02",
+      "tier": "easy",
+      "depth": 4,
+      "final_claim": "The previous agent confirmed that a standard chessboard consists of 64 squares.",
+      "hops": [
+        "A standard chessboard has 64 squares.",
+        "A standard chessboard contains 64 squares.",
+        "The previous agent stated that a standard chessboard has 64 squares.",
+        "The previous agent confirmed that a standard chessboard consists of 64 squares."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "e02",
+      "tier": "easy",
+      "depth": 5,
+      "final_claim": "A standard chessboard consists of 64 squares.",
+      "hops": [
+        "A standard chessboard has 64 squares.",
+        "A standard chessboard consists of 64 squares.",
+        "The previous agent stated that a standard chessboard contains 64 squares.",
+        "The previous agent’s key claim is that a standard chessboard has 64 squares.",
+        "A standard chessboard consists of 64 squares."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e03",
+      "tier": "easy",
+      "depth": 1,
+      "final_claim": "A common year has 365 days.",
+      "hops": [
+        "A common year has 365 days."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e03",
+      "tier": "easy",
+      "depth": 2,
+      "final_claim": "A standard year contains 365 days.",
+      "hops": [
+        "A common year has 365 days.",
+        "A standard year contains 365 days."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e03",
+      "tier": "easy",
+      "depth": 3,
+      "final_claim": "A common calendar year consists of 365 days.",
+      "hops": [
+        "A common year has 365 days.",
+        "A common year contains 365 days.",
+        "A common calendar year consists of 365 days."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e03",
+      "tier": "easy",
+      "depth": 4,
+      "final_claim": "A non-leap year contains 365 days.",
+      "hops": [
+        "A common year has 365 days.",
+        "A non-leap year contains 365 days.",
+        "A non-leap year has 365 days.",
+        "A non-leap year contains 365 days."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e03",
+      "tier": "easy",
+      "depth": 5,
+      "final_claim": "A normal calendar year contains 365 days.",
+      "hops": [
+        "A common year has 365 days.",
+        "A standard common year contains 365 days.",
+        "A common year lasts 365 days.",
+        "A common calendar year has 365 days.",
+        "A normal calendar year contains 365 days."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e04",
+      "tier": "easy",
+      "depth": 1,
+      "final_claim": "Pi rounded to two decimal places is 3.14.",
+      "hops": [
+        "Pi rounded to two decimal places is 3.14."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e04",
+      "tier": "easy",
+      "depth": 2,
+      "final_claim": "The previous answer claimed that pi rounded to two decimal places equals 3.14.",
+      "hops": [
+        "Pi rounded to two decimal places is 3.14.",
+        "The previous answer claimed that pi rounded to two decimal places equals 3.14."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "e04",
+      "tier": "easy",
+      "depth": 3,
+      "final_claim": "The previous agent’s essential claim is that pi rounded to two decimal places is 3.14.",
+      "hops": [
+        "Pi rounded to two decimal places is 3.14.",
+        "The previous agent stated that pi rounded to two decimal places equals 3.14.",
+        "The previous agent’s essential claim is that pi rounded to two decimal places is 3.14."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "e04",
+      "tier": "easy",
+      "depth": 4,
+      "final_claim": "Pi rounded to two decimal places is 3.14.",
+      "hops": [
+        "Pi rounded to two decimal places is 3.14.",
+        "Pi rounded to two decimal places is 3.14.",
+        "Pi rounded to two decimal places equals 3.14.",
+        "Pi rounded to two decimal places is 3.14."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e04",
+      "tier": "easy",
+      "depth": 5,
+      "final_claim": "Rounded to two decimal places, pi is approximately 3.14.",
+      "hops": [
+        "Pi rounded to two decimal places is 3.14.",
+        "When pi is rounded to two decimal places, it is 3.14.",
+        "Pi rounded to two decimal places is 3.14.",
+        "Pi rounded to two decimal places equals 3.14.",
+        "Rounded to two decimal places, pi is approximately 3.14."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e05",
+      "tier": "easy",
+      "depth": 1,
+      "final_claim": "Water boils at 100 degrees Celsius at sea level.",
+      "hops": [
+        "Water boils at 100 degrees Celsius at sea level."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e05",
+      "tier": "easy",
+      "depth": 2,
+      "final_claim": "At sea level, water boils at 100°C.",
+      "hops": [
+        "Water boils at sea level at 100 degrees Celsius.",
+        "At sea level, water boils at 100°C."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e05",
+      "tier": "easy",
+      "depth": 3,
+      "final_claim": "Water boils at 100°C at sea level.",
+      "hops": [
+        "Water boils at 100 degrees Celsius at sea level.",
+        "At sea level, water boils at 100°C.",
+        "Water boils at 100°C at sea level."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e05",
+      "tier": "easy",
+      "depth": 4,
+      "final_claim": "Under standard atmospheric pressure at sea level, water boils at 100 °C.",
+      "hops": [
+        "Water boils at sea level at 100 degrees Celsius.",
+        "At sea level, water boils at 100 °C.",
+        "At standard sea-level pressure, water boils at 100 °C.",
+        "Under standard atmospheric pressure at sea level, water boils at 100 °C."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e05",
+      "tier": "easy",
+      "depth": 5,
+      "final_claim": "Water boils at 100°C under normal atmospheric pressure at sea level.",
+      "hops": [
+        "Water boils at 100 degrees Celsius at sea level.",
+        "At sea level, water boils at 100°C.",
+        "At standard sea-level pressure, water boils at 100°C.",
+        "Water boils at 100°C under standard sea-level atmospheric pressure.",
+        "Water boils at 100°C under normal atmospheric pressure at sea level."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e06",
+      "tier": "easy",
+      "depth": 1,
+      "final_claim": "Humans first landed on the Moon in 1969.",
+      "hops": [
+        "Humans first landed on the Moon in 1969."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e06",
+      "tier": "easy",
+      "depth": 2,
+      "final_claim": "The first human Moon landing happened in 1969.",
+      "hops": [
+        "Humans first landed on the Moon in 1969.",
+        "The first human Moon landing happened in 1969."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e06",
+      "tier": "easy",
+      "depth": 3,
+      "final_claim": "The first crewed Moon landing took place in 1969.",
+      "hops": [
+        "Humans first landed on the Moon in 1969.",
+        "The first human Moon landing occurred in 1969.",
+        "The first crewed Moon landing took place in 1969."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e06",
+      "tier": "easy",
+      "depth": 4,
+      "final_claim": "The first human Moon landing took place in 1969.",
+      "hops": [
+        "Humans first landed on the Moon in 1969.",
+        "The first human Moon landing occurred in 1969.",
+        "Humans first landed on the Moon in 1969.",
+        "The first human Moon landing took place in 1969."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e06",
+      "tier": "easy",
+      "depth": 5,
+      "final_claim": "The first human Moon landing occurred in 1969.",
+      "hops": [
+        "Humans first landed on the Moon in 1969.",
+        "The previous agent stated that humans first landed on the Moon in 1969.",
+        "The prior agent claimed that the first human Moon landing occurred in 1969.",
+        "The previous agent asserted that the first human Moon landing took place in 1969.",
+        "The first human Moon landing occurred in 1969."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e07",
+      "tier": "easy",
+      "depth": 1,
+      "final_claim": "There are 12 months in a year.",
+      "hops": [
+        "There are 12 months in a year."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e07",
+      "tier": "easy",
+      "depth": 2,
+      "final_claim": "A year is composed of twelve months.",
+      "hops": [
+        "There are 12 months in a year.",
+        "A year is composed of twelve months."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e07",
+      "tier": "easy",
+      "depth": 3,
+      "final_claim": "A year is made up of twelve months.",
+      "hops": [
+        "There are 12 months in a year.",
+        "A year consists of twelve months.",
+        "A year is made up of twelve months."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e07",
+      "tier": "easy",
+      "depth": 4,
+      "final_claim": "A year is made up of twelve months.",
+      "hops": [
+        "There are 12 months in a year.",
+        "A year is divided into twelve months.",
+        "A year consists of twelve months.",
+        "A year is made up of twelve months."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e07",
+      "tier": "easy",
+      "depth": 5,
+      "final_claim": "The essential claim is that a year comprises twelve months.",
+      "hops": [
+        "There are 12 months in a year.",
+        "A year is divided into 12 months.",
+        "A year comprises 12 months.",
+        "The previous agent stated that a year consists of 12 months.",
+        "The essential claim is that a year comprises twelve months."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e08",
+      "tier": "easy",
+      "depth": 1,
+      "final_claim": "The United States has 50 states.",
+      "hops": [
+        "The United States has 50 states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e08",
+      "tier": "easy",
+      "depth": 2,
+      "final_claim": "The United States is composed of 50 states.",
+      "hops": [
+        "The United States has 50 states.",
+        "The United States is composed of 50 states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e08",
+      "tier": "easy",
+      "depth": 3,
+      "final_claim": "The United States consists of 50 states.",
+      "hops": [
+        "The United States has 50 states.",
+        "The United States comprises 50 states.",
+        "The United States consists of 50 states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e08",
+      "tier": "easy",
+      "depth": 4,
+      "final_claim": "The United States is composed of 50 states.",
+      "hops": [
+        "The United States has 50 states.",
+        "The United States comprises 50 states.",
+        "The United States consists of 50 states.",
+        "The United States is composed of 50 states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "e08",
+      "tier": "easy",
+      "depth": 5,
+      "final_claim": "The previous agent asserted that the United States is made up of 50 states.",
+      "hops": [
+        "The United States has 50 states.",
+        "The previous agent stated that the United States consists of 50 states.",
+        "The previous agent asserted that the United States is made up of 50 states.",
+        "The previous agent claimed that the United States consists of 50 states.",
+        "The previous agent asserted that the United States is made up of 50 states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m01",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The RMS Titanic sank in the year 1912.",
+      "hops": [
+        "The RMS Titanic sank in the year 1912."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m01",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The RMS Titanic went down in 1912.",
+      "hops": [
+        "The RMS Titanic sank in the year 1912.",
+        "The RMS Titanic went down in 1912."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m01",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The Titanic sank in 1912.",
+      "hops": [
+        "The RMS Titanic sank in 1912.",
+        "The RMS Titanic sank in 1912.",
+        "The Titanic sank in 1912."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m01",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The RMS Titanic went down in 1912.",
+      "hops": [
+        "The RMS Titanic sank in 1912.",
+        "The RMS Titanic sank in 1912.",
+        "The RMS Titanic sank in 1912.",
+        "The RMS Titanic went down in 1912."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m01",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "The Titanic sank in 1912.",
+      "hops": [
+        "The RMS Titanic sank in 1912.",
+        "The RMS Titanic sank in 1912.",
+        "The Titanic sank in 1912.",
+        "The Titanic sank in 1912.",
+        "The Titanic sank in 1912."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m02",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "World War II ended in 1945.",
+      "hops": [
+        "World War II ended in 1945."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m02",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "World War II concluded in 1945.",
+      "hops": [
+        "World War II ended in 1945.",
+        "World War II concluded in 1945."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m02",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The Second World War ended in 1945.",
+      "hops": [
+        "World War II ended in 1945.",
+        "World War II concluded in 1945.",
+        "The Second World War ended in 1945."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m02",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The previous agent stated that World War II concluded in 1945.",
+      "hops": [
+        "World War II ended in 1945.",
+        "World War II concluded in 1945.",
+        "World War II ended in 1945.",
+        "The previous agent stated that World War II concluded in 1945."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m02",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "World War II concluded in 1945.",
+      "hops": [
+        "World War II ended in 1945.",
+        "The Second World War concluded in 1945.",
+        "World War II ended in 1945.",
+        "World War II came to an end in 1945.",
+        "World War II concluded in 1945."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m03",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The Berlin Wall fell in 1989.",
+      "hops": [
+        "The Berlin Wall fell in 1989."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m03",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The previous agent stated that the Berlin Wall came down in 1989.",
+      "hops": [
+        "The Berlin Wall fell in 1989.",
+        "The previous agent stated that the Berlin Wall came down in 1989."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m03",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The Berlin Wall fell in 1989.",
+      "hops": [
+        "The Berlin Wall fell in 1989.",
+        "The previous agent stated that the Berlin Wall came down in 1989.",
+        "The Berlin Wall fell in 1989."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m03",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The Berlin Wall was brought down in 1989.",
+      "hops": [
+        "The Berlin Wall fell in 1989.",
+        "The Berlin Wall came down in 1989.",
+        "The Berlin Wall fell in 1989.",
+        "The Berlin Wall was brought down in 1989."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m03",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "The fall of the Berlin Wall occurred in 1989.",
+      "hops": [
+        "The Berlin Wall fell in 1989.",
+        "The Berlin Wall came down in 1989.",
+        "The Berlin Wall fell in 1989.",
+        "The Berlin Wall came down in 1989.",
+        "The fall of the Berlin Wall occurred in 1989."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m04",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "A marathon is 42.195 kilometers long.",
+      "hops": [
+        "A marathon is 42.195 kilometers long."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m04",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The previous agent stated that a marathon covers a distance of 42.195 kilometers.",
+      "hops": [
+        "A marathon is 42.195 kilometers long.",
+        "The previous agent stated that a marathon covers a distance of 42.195 kilometers."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m04",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "A marathon is 42.195 kilometers long.",
+      "hops": [
+        "A marathon is 42.195 kilometers long.",
+        "A marathon covers a distance of 42.195 kilometers.",
+        "A marathon is 42.195 kilometers long."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m04",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "A marathon covers 42.195 kilometers.",
+      "hops": [
+        "A marathon is 42.195 kilometers long.",
+        "A marathon covers a distance of 42.195 kilometers.",
+        "A standard marathon is 42.195 kilometers long.",
+        "A marathon covers 42.195 kilometers."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m04",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "A marathon is an official race distance of 42.195 kilometers.",
+      "hops": [
+        "A marathon is 42.195 kilometers long.",
+        "A marathon covers a distance of 42.195 kilometers.",
+        "A marathon is a race with a standard distance of 42.195 kilometers.",
+        "A marathon is a race whose official distance is 42.195 kilometers.",
+        "A marathon is an official race distance of 42.195 kilometers."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m05",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The men's 100m sprint world record is 9.58 seconds, set by Usain Bolt on August 16, 2009.",
+      "hops": [
+        "The men's 100m sprint world record is 9.58 seconds, set by Usain Bolt on August 16, 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m05",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "Usain Bolt holds the men’s 100m world record of 9.58 seconds, set on August 16, 2009.",
+      "hops": [
+        "The men's 100m sprint world record is 9.58 seconds, set by Usain Bolt on August 16, 2009.",
+        "Usain Bolt holds the men’s 100m world record of 9.58 seconds, set on August 16, 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m05",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "Usain Bolt holds the men’s 100m world record at 9.58 seconds, set on August 16, 2009.",
+      "hops": [
+        "The men's 100m sprint world record is 9.58 seconds, set by Usain Bolt on August 16, 2009.",
+        "Usain Bolt set the men’s 100m world record of 9.58 seconds on August 16, 2009.",
+        "Usain Bolt holds the men’s 100m world record at 9.58 seconds, set on August 16, 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m05",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "Usain Bolt’s men’s 100m world record is 9.58 seconds, set on August 16, 2009.",
+      "hops": [
+        "The men's 100m sprint world record is 9.58 seconds, set by Usain Bolt on August 16, 2009.",
+        "Usain Bolt set the men's 100m world record of 9.58 seconds on August 16, 2009.",
+        "Usain Bolt set the men’s 100m world record of 9.58 seconds on August 16, 2009.",
+        "Usain Bolt’s men’s 100m world record is 9.58 seconds, set on August 16, 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m05",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "Usain Bolt set the men’s 100-meter world record of 9.58 seconds on August 16, 2009.",
+      "hops": [
+        "The men's 100m sprint world record is 9.58 seconds, set by Usain Bolt on August 16, 2009.",
+        "Usain Bolt set the men's 100m world record of 9.58 seconds on August 16, 2009.",
+        "Usain Bolt's 9.58-second men's 100m world record was set on August 16, 2009.",
+        "Usain Bolt set the men’s 100m world record of 9.58 seconds on August 16, 2009.",
+        "Usain Bolt set the men’s 100-meter world record of 9.58 seconds on August 16, 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m06",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "Normal human body temperature is generally considered to be 98.6 degrees Fahrenheit.",
+      "hops": [
+        "Normal human body temperature is generally considered to be 98.6 degrees Fahrenheit."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m06",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "Normal human body temperature is typically cited as 98.6°F.",
+      "hops": [
+        "The normal human body temperature is commonly considered to be 98.6 degrees Fahrenheit.",
+        "Normal human body temperature is typically cited as 98.6°F."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m06",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The previous agent claimed that average normal human body temperature is about 98.6°F.",
+      "hops": [
+        "Normal human body temperature is generally considered to be 98.6 degrees Fahrenheit.",
+        "Normal human body temperature is typically around 98.6°F.",
+        "The previous agent claimed that average normal human body temperature is about 98.6°F."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m06",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "Normal human body temperature is usually around 98.6°F.",
+      "hops": [
+        "Normal human body temperature is generally 98.6 degrees Fahrenheit.",
+        "The previous agent stated that normal human body temperature is typically around 98.6°F.",
+        "Normal human body temperature is generally about 98.6°F.",
+        "Normal human body temperature is usually around 98.6°F."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m06",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "Normal human body temperature is generally cited as about 98.6°F.",
+      "hops": [
+        "Normal human body temperature is generally considered to be 98.6 degrees Fahrenheit.",
+        "Normal human body temperature is commonly cited as 98.6°F.",
+        "The commonly cited normal human body temperature is 98.6°F.",
+        "The commonly accepted normal human body temperature is typically stated as 98.6°F.",
+        "Normal human body temperature is generally cited as about 98.6°F."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m07",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The normal pH of human blood is approximately 7.35 to 7.45.",
+      "hops": [
+        "The normal pH of human blood is approximately 7.35 to 7.45."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m07",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "Human blood is normally slightly alkaline, with a pH of about 7.35 to 7.45.",
+      "hops": [
+        "The normal pH of human blood is approximately 7.35 to 7.45.",
+        "Human blood is normally slightly alkaline, with a pH of about 7.35 to 7.45."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m07",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "Normal human blood is mildly alkaline, typically around pH 7.40 and ranging from about 7.35 to 7.45.",
+      "hops": [
+        "The normal pH of human blood is approximately 7.40, with a typical range of 7.35 to 7.45.",
+        "Human blood is normally slightly alkaline at about pH 7.40, with a typical range of 7.35 to 7.45.",
+        "Normal human blood is mildly alkaline, typically around pH 7.40 and ranging from about 7.35 to 7.45."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m07",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "Normal human blood is maintained slightly alkaline at a pH of about 7.35–7.45.",
+      "hops": [
+        "The normal pH of human blood is approximately 7.35 to 7.45.",
+        "Human blood is normally slightly alkaline, with a pH ranging from about 7.35 to 7.45.",
+        "Normal human blood is mildly alkaline, typically kept within a pH range of about 7.35 to 7.45.",
+        "Normal human blood is maintained slightly alkaline at a pH of about 7.35–7.45."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m07",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "Human blood is typically mildly alkaline, with a normal pH range of about 7.35 to 7.45.",
+      "hops": [
+        "The normal pH of human blood is 7.35 to 7.45.",
+        "Human blood is normally slightly alkaline, with a pH ranging from 7.35 to 7.45.",
+        "Normal human blood is mildly alkaline, with a normal pH range of 7.35 to 7.45.",
+        "Human blood is normally slightly alkaline, with a pH between 7.35 and 7.45.",
+        "Human blood is typically mildly alkaline, with a normal pH range of about 7.35 to 7.45."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m08",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The United States declared independence in 1776.",
+      "hops": [
+        "The United States declared independence in 1776."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m08",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The United States declared its independence in 1776.",
+      "hops": [
+        "The United States declared independence in 1776.",
+        "The United States declared its independence in 1776."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m08",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The United States declared independence in 1776.",
+      "hops": [
+        "The United States declared independence in 1776.",
+        "The United States declared its independence in 1776.",
+        "The United States declared independence in 1776."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m08",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The United States declared its independence in 1776.",
+      "hops": [
+        "The United States declared independence in 1776.",
+        "The United States declared its independence in 1776.",
+        "The United States declared independence in 1776.",
+        "The United States declared its independence in 1776."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m08",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "In 1776, the United States declared its independence.",
+      "hops": [
+        "The United States declared independence in 1776.",
+        "The United States declared its independence in 1776.",
+        "The United States declared independence in 1776.",
+        "The United States declared independence in 1776.",
+        "In 1776, the United States declared its independence."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m09",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The French Revolution began in 1789.",
+      "hops": [
+        "The French Revolution began in 1789."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m09",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The French Revolution started in 1789.",
+      "hops": [
+        "The French Revolution began in 1789.",
+        "The French Revolution started in 1789."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m09",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The French Revolution began in 1789.",
+      "hops": [
+        "The French Revolution began in 1789.",
+        "The French Revolution commenced in 1789.",
+        "The French Revolution began in 1789."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m09",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The French Revolution started in 1789.",
+      "hops": [
+        "The French Revolution began in 1789.",
+        "The French Revolution started in 1789.",
+        "The French Revolution began in 1789.",
+        "The French Revolution started in 1789."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m09",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "The French Revolution began in 1789.",
+      "hops": [
+        "The French Revolution began in 1789.",
+        "The French Revolution started in 1789.",
+        "The French Revolution began in 1789.",
+        "The French Revolution started in 1789.",
+        "The French Revolution began in 1789."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m10",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "World War I ended in 1918.",
+      "hops": [
+        "World War I ended in 1918."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m10",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "World War I concluded in 1918.",
+      "hops": [
+        "World War I ended in the year 1918.",
+        "World War I concluded in 1918."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m10",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "World War I ended in 1918.",
+      "hops": [
+        "World War I ended in 1918.",
+        "World War I came to an end in 1918.",
+        "World War I ended in 1918."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m10",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "World War I came to an end in 1918.",
+      "hops": [
+        "World War I ended in 1918.",
+        "World War I came to an end in 1918.",
+        "The previous agent stated that World War I ended in 1918.",
+        "World War I came to an end in 1918."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m10",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "World War I ended in 1918.",
+      "hops": [
+        "World War I ended in 1918.",
+        "World War I concluded in 1918.",
+        "World War I came to an end in 1918.",
+        "The First World War concluded in 1918.",
+        "World War I ended in 1918."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m11",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "Columbus reached the Americas in 1492.",
+      "hops": [
+        "Columbus reached the Americas in 1492."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m11",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "Columbus arrived in the Americas in 1492.",
+      "hops": [
+        "Columbus reached the Americas in 1492.",
+        "Columbus arrived in the Americas in 1492."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m11",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The previous agent stated that Columbus reached the Americas in 1492.",
+      "hops": [
+        "Columbus reached the Americas in 1492.",
+        "Columbus arrived in the Americas in 1492.",
+        "The previous agent stated that Columbus reached the Americas in 1492."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m11",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "Columbus arrived in the Americas in 1492.",
+      "hops": [
+        "Columbus reached the Americas in 1492.",
+        "Columbus arrived in the Americas in 1492.",
+        "Columbus reached the Americas in 1492.",
+        "Columbus arrived in the Americas in 1492."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m11",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "Columbus arrived in the Americas during his 1492 expedition.",
+      "hops": [
+        "Columbus reached the Americas in 1492.",
+        "Columbus arrived in the Americas in 1492.",
+        "Columbus reached the Americas in 1492.",
+        "Columbus’s 1492 voyage reached the Americas.",
+        "Columbus arrived in the Americas during his 1492 expedition."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m12",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "Humans have 46 chromosomes in each typical somatic cell.",
+      "hops": [
+        "Humans have 46 chromosomes in each typical somatic cell."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m12",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "Typical human body cells contain 46 chromosomes.",
+      "hops": [
+        "Humans have 46 chromosomes in each typical somatic cell.",
+        "Typical human body cells contain 46 chromosomes."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m12",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "Human somatic cells contain 23 pairs of chromosomes, for a total of 46.",
+      "hops": [
+        "Humans have 46 chromosomes in each somatic cell, arranged in 23 pairs.",
+        "Each human somatic cell contains 46 chromosomes organized into 23 pairs.",
+        "Human somatic cells contain 23 pairs of chromosomes, for a total of 46."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m12",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "A typical human somatic cell contains 46 chromosomes.",
+      "hops": [
+        "Humans have 46 chromosomes in each typical somatic cell.",
+        "Typical human somatic cells contain 46 chromosomes.",
+        "A typical human body cell has 46 chromosomes.",
+        "A typical human somatic cell contains 46 chromosomes."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m12",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "Human cells have 23 pairs of chromosomes, for a total of 46.",
+      "hops": [
+        "Humans have 46 chromosomes, arranged in 23 pairs.",
+        "Human cells contain 46 chromosomes organized into 23 pairs.",
+        "Human cells have 23 pairs of chromosomes, totaling 46.",
+        "Human cells contain 46 chromosomes arranged into 23 pairs.",
+        "Human cells have 23 pairs of chromosomes, for a total of 46."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m13",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The speed of light in a vacuum is exactly 299,792,458 meters per second.",
+      "hops": [
+        "The speed of light in a vacuum is exactly 299,792,458 meters per second."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m13",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The speed of light in a vacuum is precisely 299,792,458 meters per second.",
+      "hops": [
+        "The speed of light in a vacuum is exactly 299,792,458 meters per second.",
+        "The speed of light in a vacuum is precisely 299,792,458 meters per second."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m13",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "Light travels through a vacuum at exactly 299,792,458 meters per second.",
+      "hops": [
+        "The speed of light in a vacuum is exactly 299,792,458 meters per second.",
+        "In a vacuum, light travels at exactly 299,792,458 meters per second.",
+        "Light travels through a vacuum at exactly 299,792,458 meters per second."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m13",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "Light travels through a vacuum at exactly 299,792,458 meters per second.",
+      "hops": [
+        "The speed of light in a vacuum is exactly 299,792,458 meters per second.",
+        "Light travels through a vacuum at exactly 299,792,458 meters per second.",
+        "The speed of light in a vacuum is exactly 299,792,458 meters per second.",
+        "Light travels through a vacuum at exactly 299,792,458 meters per second."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m13",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "Light travels at exactly 299,792,458 meters per second.",
+      "hops": [
+        "The speed of light in meters per second is exactly 299,792,458 m/s.",
+        "The speed of light is exactly 299,792,458 meters per second.",
+        "The speed of light is exactly 299,792,458 meters per second.",
+        "The speed of light is exactly 299,792,458 meters per second.",
+        "Light travels at exactly 299,792,458 meters per second."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m14",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "Earth's gravitational acceleration at the surface is approximately 9.81 meters per second squared, with the standard value defined as 9.80665 m/s².",
+      "hops": [
+        "Earth's gravitational acceleration at the surface is approximately 9.81 meters per second squared, with the standard value defined as 9.80665 m/s²."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m14",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "Earth's surface gravity is standardized at about 9.80665 m/s².",
+      "hops": [
+        "Earth's standard gravitational acceleration is approximately 9.80665 meters per second squared.",
+        "Earth's surface gravity is standardized at about 9.80665 m/s²."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m14",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "Earth's standard gravity is 9.80665 meters per second squared.",
+      "hops": [
+        "Earth's standard gravitational acceleration is 9.80665 meters per second squared.",
+        "Earth's standard gravitational acceleration is 9.80665 m/s².",
+        "Earth's standard gravity is 9.80665 meters per second squared."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m14",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "Earth’s standard gravitational acceleration is approximately 9.80665 m/s².",
+      "hops": [
+        "Earth's standard gravitational acceleration is approximately 9.80665 meters per second squared.",
+        "Earth’s standard gravitational acceleration is roughly 9.80665 m/s².",
+        "The standard gravitational acceleration on Earth is approximately 9.80665 m/s².",
+        "Earth’s standard gravitational acceleration is approximately 9.80665 m/s²."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m14",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "Earth’s standard gravitational acceleration is 9.80665 m/s².",
+      "hops": [
+        "Earth's standard gravitational acceleration is 9.80665 meters per second squared.",
+        "Earth's standard gravitational acceleration is 9.80665 m/s².",
+        "The previous agent stated that Earth’s standard gravitational acceleration equals 9.80665 m/s².",
+        "Earth’s standard gravitational acceleration is 9.80665 m/s².",
+        "Earth’s standard gravitational acceleration is 9.80665 m/s²."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m15",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The United Nations has 193 member states.",
+      "hops": [
+        "The United Nations has 193 member states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m15",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The United Nations is made up of 193 member states.",
+      "hops": [
+        "The United Nations has 193 member states.",
+        "The United Nations is made up of 193 member states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m15",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The United Nations comprises 193 member states.",
+      "hops": [
+        "The United Nations has 193 member states.",
+        "The UN is made up of 193 member states.",
+        "The United Nations comprises 193 member states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m15",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The UN is made up of 193 member states.",
+      "hops": [
+        "The United Nations has 193 member states.",
+        "The United Nations currently has 193 member states.",
+        "The United Nations has 193 member states.",
+        "The UN is made up of 193 member states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m15",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "The United Nations has 193 member states.",
+      "hops": [
+        "The United Nations has 193 member states.",
+        "The United Nations consists of 193 member states.",
+        "The United Nations has 193 member countries.",
+        "The United Nations consists of 193 member countries.",
+        "The United Nations has 193 member states."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m16",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The average distance from the Moon to Earth is about 384,400 kilometers.",
+      "hops": [
+        "The average distance from the Moon to Earth is about 384,400 kilometers."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m16",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The Moon’s average distance from Earth is approximately 384,400 kilometers.",
+      "hops": [
+        "The average distance from Earth to the Moon is about 384,400 kilometers.",
+        "The Moon’s average distance from Earth is approximately 384,400 kilometers."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m16",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "On average, the Moon orbits roughly 384,400 kilometers away from Earth.",
+      "hops": [
+        "The average distance from Earth to the Moon is about 384,400 kilometers.",
+        "The Moon is on average about 384,400 kilometers from Earth.",
+        "On average, the Moon orbits roughly 384,400 kilometers away from Earth."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m16",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The Moon is on average about 384,400 kilometers away from Earth.",
+      "hops": [
+        "The average distance from Earth to the Moon is about 384,400 kilometers.",
+        "The Moon is on average about 384,400 kilometers from Earth.",
+        "The Moon’s average distance from Earth is about 384,400 kilometers.",
+        "The Moon is on average about 384,400 kilometers away from Earth."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m16",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "On average, the Moon is about 384,400 kilometers away from Earth.",
+      "hops": [
+        "The Moon is on average about 384,400 kilometers from Earth.",
+        "The Moon’s average distance from Earth is approximately 384,400 kilometers.",
+        "The Moon orbits Earth at an average distance of roughly 384,400 kilometers.",
+        "The Moon’s average distance from Earth as it orbits is about 384,400 kilometers.",
+        "On average, the Moon is about 384,400 kilometers away from Earth."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m17",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The Western Roman Empire fell in 476 AD.",
+      "hops": [
+        "The Western Roman Empire fell in 476 AD."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m17",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The Western Roman Empire is traditionally dated as having fallen in 476 AD.",
+      "hops": [
+        "The Western Roman Empire fell in 476 AD.",
+        "The Western Roman Empire is traditionally dated as having fallen in 476 AD."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m17",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The Western Roman Empire is traditionally regarded as having ended in 476 AD.",
+      "hops": [
+        "The Western Roman Empire fell in 476 AD.",
+        "The Western Roman Empire is conventionally dated as falling in 476 AD.",
+        "The Western Roman Empire is traditionally regarded as having ended in 476 AD."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m17",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The Western Roman Empire is conventionally said to have fallen in 476 AD.",
+      "hops": [
+        "The Western Roman Empire fell in 476 AD.",
+        "The Western Roman Empire collapsed in 476 AD.",
+        "The Western Roman Empire fell in 476 AD.",
+        "The Western Roman Empire is conventionally said to have fallen in 476 AD."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m17",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "The Western Roman Empire's collapse is conventionally dated to 476 CE.",
+      "hops": [
+        "The Western Roman Empire fell in 476 AD.",
+        "The Western Roman Empire came to an end in 476 AD.",
+        "The Western Roman Empire fell in 476 AD.",
+        "The Western Roman Empire is said to have collapsed in 476 CE.",
+        "The Western Roman Empire's collapse is conventionally dated to 476 CE."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m18",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The Magna Carta was sealed in 1215.",
+      "hops": [
+        "The Magna Carta was sealed in 1215."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m18",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The prior agent stated that the Magna Carta was sealed in 1215.",
+      "hops": [
+        "The Magna Carta was sealed in 1215.",
+        "The prior agent stated that the Magna Carta was sealed in 1215."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m18",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The Magna Carta was formally sealed in 1215.",
+      "hops": [
+        "The Magna Carta was sealed in 1215.",
+        "The Magna Carta was sealed in 1215.",
+        "The Magna Carta was formally sealed in 1215."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m18",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The Magna Carta was sealed in 1215.",
+      "hops": [
+        "The Magna Carta was sealed in 1215.",
+        "The Magna Carta was sealed in the year 1215.",
+        "The Magna Carta was sealed in 1215.",
+        "The Magna Carta was sealed in 1215."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m18",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "In 1215, the Magna Carta was officially sealed.",
+      "hops": [
+        "The Magna Carta was sealed in 1215.",
+        "The Magna Carta was sealed in the year 1215.",
+        "The Magna Carta was sealed in 1215.",
+        "The Magna Carta was formally sealed in 1215.",
+        "In 1215, the Magna Carta was officially sealed."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m19",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "The Battle of Hastings was fought in 1066.",
+      "hops": [
+        "The Battle of Hastings was fought in 1066."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m19",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "The Battle of Hastings occurred in the year 1066.",
+      "hops": [
+        "The Battle of Hastings was fought in 1066.",
+        "The Battle of Hastings occurred in the year 1066."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m19",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The Battle of Hastings was fought in 1066.",
+      "hops": [
+        "The Battle of Hastings was fought in 1066.",
+        "The Battle of Hastings took place in 1066.",
+        "The Battle of Hastings was fought in 1066."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m19",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "The Battle of Hastings occurred in 1066.",
+      "hops": [
+        "The Battle of Hastings was fought in 1066.",
+        "The previous agent stated that the Battle of Hastings occurred in 1066.",
+        "The Battle of Hastings was fought in 1066.",
+        "The Battle of Hastings occurred in 1066."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m19",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "The previous agent claimed that the Battle of Hastings took place in 1066.",
+      "hops": [
+        "The Battle of Hastings was fought in 1066.",
+        "The Battle of Hastings occurred in 1066.",
+        "The previous agent stated that the Battle of Hastings took place in 1066.",
+        "The Battle of Hastings occurred in 1066.",
+        "The previous agent claimed that the Battle of Hastings took place in 1066."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m20",
+      "tier": "medium",
+      "depth": 1,
+      "final_claim": "Mount Fuji is 3,776 meters tall.",
+      "hops": [
+        "Mount Fuji is 3,776 meters tall."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m20",
+      "tier": "medium",
+      "depth": 2,
+      "final_claim": "Mount Fuji stands 3,776 meters high.",
+      "hops": [
+        "Mount Fuji is 3,776 meters tall.",
+        "Mount Fuji stands 3,776 meters high."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m20",
+      "tier": "medium",
+      "depth": 3,
+      "final_claim": "The previous agent stated that Mount Fuji is 3,776 meters tall.",
+      "hops": [
+        "Mount Fuji is 3,776 meters tall.",
+        "Mount Fuji stands 3,776 meters tall.",
+        "The previous agent stated that Mount Fuji is 3,776 meters tall."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "m20",
+      "tier": "medium",
+      "depth": 4,
+      "final_claim": "Mount Fuji is 3,776 meters high.",
+      "hops": [
+        "Mount Fuji is 3,776 meters tall.",
+        "Mount Fuji stands 3,776 meters tall.",
+        "Mount Fuji’s height is 3,776 meters.",
+        "Mount Fuji is 3,776 meters high."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "m20",
+      "tier": "medium",
+      "depth": 5,
+      "final_claim": "The previous agent stated that Mount Fuji stands 3,776 meters tall.",
+      "hops": [
+        "Mount Fuji is 3,776 meters tall.",
+        "Mount Fuji stands 3,776 meters high.",
+        "Mount Fuji is 3,776 meters tall.",
+        "Mount Fuji reaches a height of 3,776 meters.",
+        "The previous agent stated that Mount Fuji stands 3,776 meters tall."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h01",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Python 3.13 was released in 2024.",
+      "hops": [
+        "Python 3.13 was released in 2024."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h01",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Python 3.13 became available on October 7, 2024.",
+      "hops": [
+        "Python 3.13 was released on October 7, 2024.",
+        "Python 3.13 became available on October 7, 2024."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h01",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Python 3.13 was released in 2024.",
+      "hops": [
+        "Python 3.13 was released in 2024.",
+        "Python 3.13 was released in 2024.",
+        "Python 3.13 was released in 2024."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h01",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Python 3.13 was released in 2024.",
+      "hops": [
+        "Python 3.13 was released in 2024.",
+        "Python 3.13 was released in 2024.",
+        "Python 3.13 was released in 2024.",
+        "Python 3.13 was released in 2024."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h01",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Python 3.13.0 was released on October 7, 2024.",
+      "hops": [
+        "Python 3.13.0 was released on October 7, 2024.",
+        "Python 3.13.0 was released on October 7, 2024.",
+        "Python 3.13.0 was released on October 7, 2024.",
+        "Python 3.13.0 was released on October 7, 2024.",
+        "Python 3.13.0 was released on October 7, 2024."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h02",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The James Webb Space Telescope was launched in 2021.",
+      "hops": [
+        "The James Webb Space Telescope was launched in 2021."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h02",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The James Webb Space Telescope was launched in 2021.",
+      "hops": [
+        "The James Webb Space Telescope was launched in 2021.",
+        "The James Webb Space Telescope was launched in 2021."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h02",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The James Webb Space Telescope was launched in 2021.",
+      "hops": [
+        "The James Webb Space Telescope was launched in 2021.",
+        "The James Webb Space Telescope launched in 2021.",
+        "The James Webb Space Telescope was launched in 2021."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h02",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "The James Webb Space Telescope launched in 2021.",
+      "hops": [
+        "The James Webb Space Telescope was launched in 2021.",
+        "The James Webb Space Telescope launched in 2021.",
+        "The James Webb Space Telescope was launched in 2021.",
+        "The James Webb Space Telescope launched in 2021."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h02",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "JWST launched on December 25, 2021.",
+      "hops": [
+        "The James Webb Space Telescope was launched on December 25, 2021.",
+        "The James Webb Space Telescope launched on December 25, 2021.",
+        "The James Webb Space Telescope was launched on December 25, 2021.",
+        "The James Webb Space Telescope launched on December 25, 2021.",
+        "JWST launched on December 25, 2021."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h03",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The Nobel Prize for mRNA vaccines was awarded in 2023.",
+      "hops": [
+        "The Nobel Prize for mRNA vaccines was awarded in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h03",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The Nobel Prize related to mRNA vaccines was awarded in 2023.",
+      "hops": [
+        "The Nobel Prize for mRNA vaccines was awarded in 2023.",
+        "The Nobel Prize related to mRNA vaccines was awarded in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h03",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded for discoveries that enabled mRNA vaccines.",
+      "hops": [
+        "The Nobel Prize in Physiology or Medicine for discoveries enabling mRNA vaccines was awarded in 2023.",
+        "The 2023 Nobel Prize in Physiology or Medicine honored discoveries that made mRNA vaccines possible.",
+        "The 2023 Nobel Prize in Physiology or Medicine was awarded for discoveries that enabled mRNA vaccines."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h03",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "The Nobel Prize recognizing mRNA vaccine technology was awarded in 2023.",
+      "hops": [
+        "The Nobel Prize for mRNA vaccine technology was awarded in 2023.",
+        "The Nobel Prize related to mRNA vaccine technology was awarded in 2023.",
+        "The Nobel Prize for mRNA vaccine technology was awarded in 2023.",
+        "The Nobel Prize recognizing mRNA vaccine technology was awarded in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h03",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "The 2023 Nobel Prize in Physiology or Medicine recognized discoveries that made mRNA vaccines possible.",
+      "hops": [
+        "The Nobel Prize in Physiology or Medicine for discoveries enabling mRNA vaccines was awarded in 2023.",
+        "The discoveries that enabled mRNA vaccines received the 2023 Nobel Prize in Physiology or Medicine.",
+        "The 2023 Nobel Prize in Physiology or Medicine recognized discoveries that made mRNA vaccines possible.",
+        "The 2023 Nobel Prize in Physiology or Medicine honored discoveries that enabled the development of mRNA vaccines.",
+        "The 2023 Nobel Prize in Physiology or Medicine recognized discoveries that made mRNA vaccines possible."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h04",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The first CRISPR-based gene therapy, Casgevy (exagamglogene autotemcel), was approved in 2023.",
+      "hops": [
+        "The first CRISPR-based gene therapy, Casgevy (exagamglogene autotemcel), was approved in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h04",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Casgevy became the first approved CRISPR-based gene therapy in 2023.",
+      "hops": [
+        "The first CRISPR-based gene therapy, Casgevy, was approved in 2023.",
+        "Casgevy became the first approved CRISPR-based gene therapy in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h04",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Casgevy (exagamglogene autotemcel) became the first approved CRISPR-based gene therapy in 2023.",
+      "hops": [
+        "The first CRISPR-based gene therapy, Casgevy (exagamglogene autotemcel), was approved in 2023.",
+        "Casgevy (exagamglogene autotemcel), the first CRISPR-based gene therapy, was approved in 2023.",
+        "Casgevy (exagamglogene autotemcel) became the first approved CRISPR-based gene therapy in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h04",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Casgevy became the first CRISPR-based gene therapy to win approval in 2023.",
+      "hops": [
+        "The first CRISPR-based gene therapy, Casgevy, was approved in 2023.",
+        "Casgevy became the first approved CRISPR-based gene therapy in 2023.",
+        "Casgevy was the first CRISPR-based gene therapy to receive approval, doing so in 2023.",
+        "Casgevy became the first CRISPR-based gene therapy to win approval in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h04",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "In 2023, Casgevy (exagamglogene autotemcel) became the first CRISPR-based gene therapy approved.",
+      "hops": [
+        "The first CRISPR-based gene therapy, Casgevy (exagamglogene autotemcel), was approved in 2023.",
+        "Casgevy (exagamglogene autotemcel) became the first approved CRISPR-based gene therapy in 2023.",
+        "Casgevy (exagamglogene autotemcel) was approved in 2023 as the first CRISPR-based gene therapy.",
+        "Casgevy (exagamglogene autotemcel) became the first approved CRISPR-based gene therapy in 2023.",
+        "In 2023, Casgevy (exagamglogene autotemcel) became the first CRISPR-based gene therapy approved."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h05",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "ChatGPT was first released in 2022.",
+      "hops": [
+        "ChatGPT was first released in 2022."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h05",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "ChatGPT was initially released in 2022.",
+      "hops": [
+        "ChatGPT was first released in 2022.",
+        "ChatGPT was initially released in 2022."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h05",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "ChatGPT was first released on November 30, 2022.",
+      "hops": [
+        "ChatGPT was first released on November 30, 2022.",
+        "ChatGPT was initially launched on November 30, 2022.",
+        "ChatGPT was first released on November 30, 2022."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h05",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "The previous agent claimed that ChatGPT was first released in 2022.",
+      "hops": [
+        "ChatGPT was first released in 2022.",
+        "The previous agent claimed that ChatGPT was initially released in 2022.",
+        "The previous agent asserted that ChatGPT was first released in 2022.",
+        "The previous agent claimed that ChatGPT was first released in 2022."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h05",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "ChatGPT was first launched in 2022.",
+      "hops": [
+        "ChatGPT was first released in 2022.",
+        "ChatGPT was initially launched in 2022.",
+        "ChatGPT first launched in 2022.",
+        "ChatGPT was initially launched in 2022.",
+        "ChatGPT was first launched in 2022."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h06",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Mount Kilimanjaro’s highest point, Uhuru Peak, is 5,895 meters above sea level.",
+      "hops": [
+        "Mount Kilimanjaro’s highest point, Uhuru Peak, is 5,895 meters above sea level."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h06",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Mount Kilimanjaro has a height of 5,895 meters.",
+      "hops": [
+        "Mount Kilimanjaro is 5,895 meters tall.",
+        "Mount Kilimanjaro has a height of 5,895 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h06",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Mount Kilimanjaro reaches an elevation of 5,895 meters.",
+      "hops": [
+        "Mount Kilimanjaro is 5,895 meters tall.",
+        "Mount Kilimanjaro has an elevation of 5,895 meters.",
+        "Mount Kilimanjaro reaches an elevation of 5,895 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h06",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Mount Kilimanjaro’s summit stands at 5,895 meters above sea level.",
+      "hops": [
+        "Mount Kilimanjaro is 5,895 meters tall.",
+        "Mount Kilimanjaro reaches an elevation of 5,895 meters.",
+        "Mount Kilimanjaro’s summit is 5,895 meters above sea level.",
+        "Mount Kilimanjaro’s summit stands at 5,895 meters above sea level."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h06",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Mount Kilimanjaro’s summit reaches 5,895 meters above sea level.",
+      "hops": [
+        "Mount Kilimanjaro is 5,895 meters tall.",
+        "Mount Kilimanjaro stands 5,895 meters tall.",
+        "Mount Kilimanjaro has an elevation of 5,895 meters.",
+        "Mount Kilimanjaro rises to an elevation of 5,895 meters.",
+        "Mount Kilimanjaro’s summit reaches 5,895 meters above sea level."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h07",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The first mRNA COVID-19 vaccine, Pfizer-BioNTech’s, was authorized in 2020.",
+      "hops": [
+        "The first mRNA COVID-19 vaccine, Pfizer-BioNTech’s, was authorized in 2020."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h07",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The first mRNA COVID-19 vaccine was granted authorization in 2020.",
+      "hops": [
+        "The first mRNA COVID-19 vaccine was authorized in 2020.",
+        "The first mRNA COVID-19 vaccine was granted authorization in 2020."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h07",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The UK's December 2020 authorization of Pfizer-BioNTech made it the first mRNA COVID-19 vaccine to be approved.",
+      "hops": [
+        "The first mRNA COVID-19 vaccines were authorized in 2020, beginning with the UK’s authorization of Pfizer-BioNTech in December 2020.",
+        "The first mRNA COVID-19 vaccine to be authorized was Pfizer-BioNTech, approved by the UK in December 2020.",
+        "The UK's December 2020 authorization of Pfizer-BioNTech made it the first mRNA COVID-19 vaccine to be approved."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h07",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "The initial mRNA COVID-19 vaccines were granted authorization in 2020.",
+      "hops": [
+        "The first mRNA COVID-19 vaccines were authorized in 2020.",
+        "The earliest mRNA COVID-19 vaccines were authorized in 2020.",
+        "The first mRNA COVID-19 vaccines were authorized in 2020.",
+        "The initial mRNA COVID-19 vaccines were granted authorization in 2020."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h07",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "The UK became the first country to authorize the Pfizer-BioNTech mRNA COVID-19 vaccine, on December 2, 2020.",
+      "hops": [
+        "The first mRNA COVID-19 vaccine, Pfizer-BioNTech’s, was authorized in the United Kingdom on December 2, 2020.",
+        "The UK authorized Pfizer-BioNTech’s mRNA COVID-19 vaccine on December 2, 2020, making it the first such vaccine approved.",
+        "The UK became the first country to approve the Pfizer-BioNTech mRNA COVID-19 vaccine on December 2, 2020.",
+        "The UK was the first country to authorize the Pfizer-BioNTech mRNA COVID-19 vaccine on December 2, 2020.",
+        "The UK became the first country to authorize the Pfizer-BioNTech mRNA COVID-19 vaccine, on December 2, 2020."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h08",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The men's 200m sprint world record is 19.19 seconds, set by Usain Bolt on August 20, 2009.",
+      "hops": [
+        "The men's 200m sprint world record is 19.19 seconds, set by Usain Bolt on August 20, 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h08",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Usain Bolt set the men's 200m world record of 19.19 seconds on August 20, 2009.",
+      "hops": [
+        "The men's 200m sprint world record is 19.19 seconds, set by Usain Bolt on August 20, 2009.",
+        "Usain Bolt set the men's 200m world record of 19.19 seconds on August 20, 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h08",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The men’s 200m world record is 19.19 seconds, set by Usain Bolt at the 2009 World Championships in Berlin.",
+      "hops": [
+        "The men's 200m sprint world record is 19.19 seconds, set by Usain Bolt at the 2009 World Championships in Berlin.",
+        "Usain Bolt holds the men's 200m world record at 19.19 seconds, set at the 2009 World Championships in Berlin.",
+        "The men’s 200m world record is 19.19 seconds, set by Usain Bolt at the 2009 World Championships in Berlin."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h08",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "On August 20, 2009, Usain Bolt set the men’s 200-meter world record at 19.19 seconds.",
+      "hops": [
+        "The men's 200m sprint world record is 19.19 seconds, set by Usain Bolt on August 20, 2009.",
+        "Usain Bolt set the men’s 200m world record at 19.19 seconds on August 20, 2009.",
+        "Usain Bolt set the men’s 200m world record of 19.19 seconds on August 20, 2009.",
+        "On August 20, 2009, Usain Bolt set the men’s 200-meter world record at 19.19 seconds."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h08",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Usain Bolt set the men’s 200m world record with a time of 19.19 seconds on August 20, 2009.",
+      "hops": [
+        "The men's 200m sprint world record is 19.19 seconds, set by Usain Bolt on August 20, 2009.",
+        "Usain Bolt set the men’s 200m world record of 19.19 seconds on August 20, 2009.",
+        "Usain Bolt set the men’s 200m world record at 19.19 seconds on August 20, 2009.",
+        "Usain Bolt ran 19.19 seconds on August 20, 2009, to set the men’s 200m world record.",
+        "Usain Bolt set the men’s 200m world record with a time of 19.19 seconds on August 20, 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h09",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The men's 400m sprint world record is 43.03 seconds, set by Wayde van Niekerk at the 2016 Rio Olympics.",
+      "hops": [
+        "The men's 400m sprint world record is 43.03 seconds, set by Wayde van Niekerk at the 2016 Rio Olympics."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h09",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Wayde van Niekerk set the men's 400m world record of 43.03 seconds at the 2016 Rio Olympics.",
+      "hops": [
+        "The men's 400m world record is 43.03 seconds, set by Wayde van Niekerk at the 2016 Rio Olympics.",
+        "Wayde van Niekerk set the men's 400m world record of 43.03 seconds at the 2016 Rio Olympics."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h09",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Wayde van Niekerk ran the men’s 400m world record of 43.03 seconds on August 14, 2016.",
+      "hops": [
+        "The men's 400m world record is 43.03 seconds, set by Wayde van Niekerk on August 14, 2016.",
+        "Wayde van Niekerk set the men's 400m world record of 43.03 seconds on August 14, 2016.",
+        "Wayde van Niekerk ran the men’s 400m world record of 43.03 seconds on August 14, 2016."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h09",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Wayde van Niekerk ran the men’s 400m world record of 43.03 seconds in 2016.",
+      "hops": [
+        "The men's 400m sprint world record is 43.03 seconds, set by Wayde van Niekerk in 2016.",
+        "Wayde van Niekerk set the men’s 400m world record of 43.03 seconds in 2016.",
+        "Wayde van Niekerk set the men’s 400m world record at 43.03 seconds in 2016.",
+        "Wayde van Niekerk ran the men’s 400m world record of 43.03 seconds in 2016."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h09",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Wayde van Niekerk’s 43.03-second run at the 2016 Rio Olympics set the men’s 400m world record.",
+      "hops": [
+        "The men's 400m sprint world record is 43.03 seconds, set by Wayde van Niekerk at the 2016 Rio Olympics.",
+        "Wayde van Niekerk set the men's 400m world record at 43.03 seconds during the 2016 Rio Olympics.",
+        "Wayde van Niekerk set the men’s 400m world record with 43.03 seconds at the 2016 Rio Olympics.",
+        "Wayde van Niekerk ran 43.03 seconds at the 2016 Rio Olympics to set the men’s 400m world record.",
+        "Wayde van Niekerk’s 43.03-second run at the 2016 Rio Olympics set the men’s 400m world record."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h10",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Michael Phelps won 28 Olympic medals in total.",
+      "hops": [
+        "Michael Phelps won 28 Olympic medals in total."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h10",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Michael Phelps earned 28 Olympic medals in total.",
+      "hops": [
+        "Michael Phelps won 28 Olympic medals in total.",
+        "Michael Phelps earned 28 Olympic medals in total."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h10",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Michael Phelps earned 28 Olympic medals in total.",
+      "hops": [
+        "Michael Phelps won a total of 28 Olympic medals.",
+        "Michael Phelps won 28 Olympic medals overall.",
+        "Michael Phelps earned 28 Olympic medals in total."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h10",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Michael Phelps won 28 Olympic medals in total.",
+      "hops": [
+        "Michael Phelps won a total of 28 Olympic medals.",
+        "Michael Phelps won 28 Olympic medals overall.",
+        "Michael Phelps won a total of 28 Olympic medals.",
+        "Michael Phelps won 28 Olympic medals in total."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h10",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Michael Phelps won a total of 28 Olympic medals.",
+      "hops": [
+        "Michael Phelps won 28 Olympic medals in total.",
+        "Michael Phelps won 28 Olympic medals overall.",
+        "Michael Phelps earned a total of 28 Olympic medals.",
+        "Michael Phelps won 28 Olympic medals in total.",
+        "Michael Phelps won a total of 28 Olympic medals."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h11",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Brazil has won the FIFA World Cup 5 times.",
+      "hops": [
+        "Brazil has won the FIFA World Cup 5 times."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h11",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Brazil has won the FIFA World Cup five times.",
+      "hops": [
+        "Brazil has won the FIFA World Cup 5 times.",
+        "Brazil has won the FIFA World Cup five times."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h11",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Brazil has won the FIFA World Cup five times.",
+      "hops": [
+        "Brazil has won the FIFA World Cup 5 times.",
+        "Brazil has claimed five FIFA World Cup titles.",
+        "Brazil has won the FIFA World Cup five times."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h11",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Brazil has won five FIFA World Cup titles.",
+      "hops": [
+        "Brazil has won the FIFA World Cup 5 times.",
+        "Brazil has won the FIFA World Cup five times.",
+        "Brazil has five FIFA World Cup titles.",
+        "Brazil has won five FIFA World Cup titles."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h11",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Brazil holds five FIFA World Cup titles.",
+      "hops": [
+        "Brazil has won the FIFA World Cup 5 times.",
+        "Brazil has won the FIFA World Cup five times.",
+        "Brazil is a five-time FIFA World Cup champion.",
+        "Brazil has won the FIFA World Cup five times.",
+        "Brazil holds five FIFA World Cup titles."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h12",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Brian Lara's record Test cricket score is 400 not out, made against England in Antigua on April 12, 2004.",
+      "hops": [
+        "Brian Lara's record Test cricket score is 400 not out, made against England in Antigua on April 12, 2004."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h12",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Brian Lara's unbeaten 400 for the West Indies against England in Antigua on April 12, 2004, remains the highest score in Test cricket.",
+      "hops": [
+        "Brian Lara's record Test cricket score is 400 not out, made for West Indies against England in Antigua on April 12, 2004.",
+        "Brian Lara's unbeaten 400 for the West Indies against England in Antigua on April 12, 2004, remains the highest score in Test cricket."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h12",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Brian Lara scored the highest individual Test score, an unbeaten 400 for West Indies against England in Antigua on 12 April 2004.",
+      "hops": [
+        "Brian Lara's record Test cricket score is 400 not out, made for West Indies against England in Antigua on 12 April 2004.",
+        "Brian Lara made the highest individual Test score, 400 not out, for West Indies against England in Antigua on 12 April 2004.",
+        "Brian Lara scored the highest individual Test score, an unbeaten 400 for West Indies against England in Antigua on 12 April 2004."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h12",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Brian Lara set the Test record of 400 not out for the West Indies against England in Antigua in April 2004.",
+      "hops": [
+        "Brian Lara's record Test cricket score is 400 not out, made for West Indies against England in Antigua in April 2004.",
+        "Brian Lara’s record Test score is 400 not out, scored for the West Indies against England in Antigua in April 2004.",
+        "Brian Lara made the record Test score of 400 not out for the West Indies against England in Antigua in April 2004.",
+        "Brian Lara set the Test record of 400 not out for the West Indies against England in Antigua in April 2004."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h12",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Brian Lara's unbeaten 400 for the West Indies against England in Antigua in April 2004 remains Test cricket's highest individual score.",
+      "hops": [
+        "Brian Lara's record Test cricket score is 400 not out, made for West Indies against England in Antigua in April 2004.",
+        "Brian Lara holds the record for the highest individual Test score: 400 not out for West Indies against England in Antigua in April 2004.",
+        "Brian Lara made the highest individual Test score, 400 not out, for West Indies against England in Antigua in April 2004.",
+        "Brian Lara’s 400 not out for West Indies against England in Antigua in April 2004 is the highest individual score in Test cricket.",
+        "Brian Lara's unbeaten 400 for the West Indies against England in Antigua in April 2004 remains Test cricket's highest individual score."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h13",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Denali, North America's highest peak, is 6,190 meters tall.",
+      "hops": [
+        "Denali, North America's highest peak, is 6,190 meters tall."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h13",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Denali is North America’s tallest mountain, standing 6,190 meters high.",
+      "hops": [
+        "Denali, North America's highest peak, is 6,190 meters tall.",
+        "Denali is North America’s tallest mountain, standing 6,190 meters high."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h13",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Denali is North America’s highest mountain, reaching 6,190 meters (20,310 feet).",
+      "hops": [
+        "Denali, North America’s highest peak, is 6,190 meters (20,310 feet) tall.",
+        "Denali is North America’s tallest mountain, rising to 6,190 meters (20,310 feet).",
+        "Denali is North America’s highest mountain, reaching 6,190 meters (20,310 feet)."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h13",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Denali’s summit reaches an elevation of 6,190 meters (20,310 feet).",
+      "hops": [
+        "Denali is 6,190 meters (20,310 feet) tall.",
+        "Denali reaches a height of 6,190 meters, or 20,310 feet.",
+        "Denali's summit rises to 6,190 meters (20,310 feet).",
+        "Denali’s summit reaches an elevation of 6,190 meters (20,310 feet)."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h13",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Denali is North America’s highest peak, reaching 6,190 meters.",
+      "hops": [
+        "Denali, North America's highest peak, is 6,190 meters tall.",
+        "Denali, North America’s highest mountain, stands 6,190 meters tall.",
+        "Denali is North America’s highest peak, with an elevation of 6,190 meters.",
+        "Denali is North America’s tallest mountain, rising to 6,190 meters.",
+        "Denali is North America’s highest peak, reaching 6,190 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h14",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Lake Baikal reaches a maximum depth of 1,642 meters at its deepest point.",
+      "hops": [
+        "Lake Baikal reaches a maximum depth of 1,642 meters at its deepest point."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h14",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Lake Baikal’s maximum depth is 1,642 meters.",
+      "hops": [
+        "Lake Baikal reaches a maximum depth of 1,642 meters at its deepest point.",
+        "Lake Baikal’s maximum depth is 1,642 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h14",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Lake Baikal reaches a maximum depth of 1,642 meters.",
+      "hops": [
+        "Lake Baikal reaches a maximum depth of 1,642 meters.",
+        "Lake Baikal has a maximum depth of 1,642 meters.",
+        "Lake Baikal reaches a maximum depth of 1,642 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h14",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Lake Baikal has a maximum depth of 1,642 meters.",
+      "hops": [
+        "Lake Baikal reaches its deepest point at 1,642 meters.",
+        "Lake Baikal's maximum depth is 1,642 meters.",
+        "Lake Baikal reaches a maximum depth of 1,642 meters.",
+        "Lake Baikal has a maximum depth of 1,642 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h14",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Lake Baikal has a maximum depth of 1,642 meters.",
+      "hops": [
+        "Lake Baikal reaches a maximum depth of 1,642 meters.",
+        "Lake Baikal’s maximum depth is 1,642 meters.",
+        "Lake Baikal has a maximum depth of 1,642 meters.",
+        "Lake Baikal’s maximum depth is 1,642 meters.",
+        "Lake Baikal has a maximum depth of 1,642 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h15",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The Great Barrier Reef is approximately 2,300 kilometers long.",
+      "hops": [
+        "The Great Barrier Reef is approximately 2,300 kilometers long."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h15",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The Great Barrier Reef stretches roughly 2,300 kilometers in length.",
+      "hops": [
+        "The Great Barrier Reef is about 2,300 kilometers long.",
+        "The Great Barrier Reef stretches roughly 2,300 kilometers in length."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h15",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The Great Barrier Reef is approximately 2,300 kilometers long.",
+      "hops": [
+        "The Great Barrier Reef is approximately 2,300 kilometers long.",
+        "The Great Barrier Reef stretches about 2,300 kilometers in length.",
+        "The Great Barrier Reef is approximately 2,300 kilometers long."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h15",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "The Great Barrier Reef is about 2,300 kilometers in length.",
+      "hops": [
+        "The Great Barrier Reef is approximately 2,300 kilometers long.",
+        "The Great Barrier Reef extends roughly 2,300 kilometers in length.",
+        "The Great Barrier Reef is approximately 2,300 kilometers long.",
+        "The Great Barrier Reef is about 2,300 kilometers in length."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h15",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "The Great Barrier Reef stretches roughly 2,300 kilometers in length.",
+      "hops": [
+        "The Great Barrier Reef is approximately 2,300 kilometers long.",
+        "The Great Barrier Reef spans roughly 2,300 kilometers.",
+        "The Great Barrier Reef stretches approximately 2,300 kilometers.",
+        "The Great Barrier Reef is about 2,300 kilometers long.",
+        "The Great Barrier Reef stretches roughly 2,300 kilometers in length."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h16",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Mount Elbrus, Europe's highest peak, is 5,642 meters tall.",
+      "hops": [
+        "Mount Elbrus, Europe's highest peak, is 5,642 meters tall."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h16",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Mount Elbrus is Europe’s highest peak, with an elevation of 5,642 meters.",
+      "hops": [
+        "Mount Elbrus, Europe's highest peak, is 5,642 meters tall.",
+        "Mount Elbrus is Europe’s highest peak, with an elevation of 5,642 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h16",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Mount Elbrus is Europe’s highest peak, standing at 5,642 meters.",
+      "hops": [
+        "Mount Elbrus, Europe's highest peak, is 5,642 meters tall.",
+        "Mount Elbrus, Europe’s tallest mountain, reaches 5,642 meters in height.",
+        "Mount Elbrus is Europe’s highest peak, standing at 5,642 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h16",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Mount Elbrus is Europe’s tallest mountain, reaching 5,642 meters.",
+      "hops": [
+        "Mount Elbrus, Europe's highest peak, is 5,642 meters tall.",
+        "Mount Elbrus, Europe’s tallest mountain, reaches an elevation of 5,642 meters.",
+        "Mount Elbrus is Europe’s highest peak, standing 5,642 meters tall.",
+        "Mount Elbrus is Europe’s tallest mountain, reaching 5,642 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h16",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "At 5,642 meters, Mount Elbrus is Europe’s highest mountain.",
+      "hops": [
+        "Mount Elbrus, Europe's highest peak, is 5,642 meters tall.",
+        "Mount Elbrus, Europe’s highest mountain, stands 5,642 meters tall.",
+        "Mount Elbrus is Europe’s highest peak, reaching 5,642 meters.",
+        "Mount Elbrus is Europe’s highest mountain, with an elevation of 5,642 meters.",
+        "At 5,642 meters, Mount Elbrus is Europe’s highest mountain."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h17",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The universe is approximately 13.8 billion years old.",
+      "hops": [
+        "The universe is approximately 13.8 billion years old."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h17",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The universe is roughly 13.8 billion years old.",
+      "hops": [
+        "The universe is approximately 13.8 billion years old.",
+        "The universe is roughly 13.8 billion years old."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h17",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The universe is about 13.8 billion years old.",
+      "hops": [
+        "The universe is approximately 13.8 billion years old.",
+        "The universe's age is roughly 13.8 billion years.",
+        "The universe is about 13.8 billion years old."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h17",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "The universe is estimated to be roughly 13.8 billion years old.",
+      "hops": [
+        "The universe is approximately 13.8 billion years old.",
+        "The universe is roughly 13.8 billion years old.",
+        "The universe is estimated to be about 13.8 billion years old.",
+        "The universe is estimated to be roughly 13.8 billion years old."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h17",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "The universe originated about 13.8 billion years ago.",
+      "hops": [
+        "The universe is approximately 13.8 billion years old.",
+        "The universe began about 13.8 billion years ago.",
+        "The universe originated roughly 13.8 billion years ago.",
+        "The universe began approximately 13.8 billion years ago.",
+        "The universe originated about 13.8 billion years ago."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h18",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "There are 118 known chemical elements.",
+      "hops": [
+        "There are 118 known chemical elements."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h18",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The previous agent stated that 118 chemical elements were known as of 2024.",
+      "hops": [
+        "As of 2024, there are 118 known chemical elements.",
+        "The previous agent stated that 118 chemical elements were known as of 2024."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h18",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The previous agent claimed that there are 118 known chemical elements.",
+      "hops": [
+        "There are 118 known chemical elements.",
+        "The previous agent stated that there are 118 known chemical elements.",
+        "The previous agent claimed that there are 118 known chemical elements."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h18",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "There are currently 118 known chemical elements.",
+      "hops": [
+        "There are 118 known chemical elements.",
+        "Currently, 118 chemical elements are known.",
+        "The previous agent stated that 118 chemical elements are currently known.",
+        "There are currently 118 known chemical elements."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h18",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "The previous agent claimed that 118 chemical elements are currently known.",
+      "hops": [
+        "There are 118 known chemical elements.",
+        "The previous agent stated that there are 118 known chemical elements.",
+        "The prior agent claimed that 118 chemical elements are currently known.",
+        "The preceding agent stated that 118 chemical elements are currently known.",
+        "The previous agent claimed that 118 chemical elements are currently known."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h19",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "A typical adult human has 32 permanent teeth, including four wisdom teeth.",
+      "hops": [
+        "A typical adult human has 32 permanent teeth, including four wisdom teeth."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h19",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Most adult humans have 32 permanent teeth.",
+      "hops": [
+        "A typical adult human has 32 permanent teeth.",
+        "Most adult humans have 32 permanent teeth."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h19",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Adult humans typically have 32 permanent teeth.",
+      "hops": [
+        "A typical adult human has 32 permanent teeth.",
+        "The standard permanent tooth count for an adult human is 32.",
+        "Adult humans typically have 32 permanent teeth."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h19",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "The previous agent stated that a typical adult human has 32 permanent teeth.",
+      "hops": [
+        "A typical adult human has 32 permanent teeth.",
+        "The previous agent stated that a typical adult human has 32 permanent teeth.",
+        "The previous agent claimed that a typical adult human has 32 permanent teeth.",
+        "The previous agent stated that a typical adult human has 32 permanent teeth."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h19",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "The typical adult human has 32 permanent teeth.",
+      "hops": [
+        "A typical adult human has 32 permanent teeth.",
+        "The previous agent stated that a normal adult human has 32 permanent teeth.",
+        "Adults normally have 32 permanent teeth.",
+        "An adult typically has 32 permanent teeth.",
+        "The typical adult human has 32 permanent teeth."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h20",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Absolute zero is -273.15 degrees Celsius.",
+      "hops": [
+        "Absolute zero is -273.15 degrees Celsius."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h20",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Absolute zero is equal to -273.15 degrees Celsius.",
+      "hops": [
+        "Absolute zero is -273.15 degrees Celsius.",
+        "Absolute zero is equal to -273.15 degrees Celsius."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h20",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Absolute zero corresponds to -273.15 degrees Celsius.",
+      "hops": [
+        "Absolute zero is -273.15 degrees Celsius.",
+        "The previous agent stated that absolute zero is equal to -273.15 degrees Celsius.",
+        "Absolute zero corresponds to -273.15 degrees Celsius."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h20",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Absolute zero is equivalent to −273.15 °C.",
+      "hops": [
+        "Absolute zero is −273.15 degrees Celsius.",
+        "Absolute zero is equivalent to −273.15 degrees Celsius.",
+        "Absolute zero is equal to −273.15 °C.",
+        "Absolute zero is equivalent to −273.15 °C."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h20",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Absolute zero corresponds to −273.15 °C.",
+      "hops": [
+        "Absolute zero is equal to −273.15 degrees Celsius.",
+        "Absolute zero is defined as −273.15 °C.",
+        "Absolute zero equals −273.15 °C.",
+        "Absolute zero is equivalent to −273.15 °C.",
+        "Absolute zero corresponds to −273.15 °C."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h21",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "GPT-4 was released in 2023.",
+      "hops": [
+        "GPT-4 was released in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h21",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The previous agent stated that GPT-4 was released in 2023.",
+      "hops": [
+        "GPT-4 was released in 2023.",
+        "The previous agent stated that GPT-4 was released in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h21",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The previous agent stated that GPT-4 was released in 2023.",
+      "hops": [
+        "GPT-4 was released in 2023.",
+        "GPT-4 was launched in 2023.",
+        "The previous agent stated that GPT-4 was released in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h21",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "GPT-4 came out in 2023.",
+      "hops": [
+        "GPT-4 was released in 2023.",
+        "GPT-4 was launched in 2023.",
+        "GPT-4 was released in 2023.",
+        "GPT-4 came out in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h21",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "The previous agent claimed that GPT-4 was released in 2023.",
+      "hops": [
+        "GPT-4 was released in 2023.",
+        "GPT-4 was launched in 2023.",
+        "The previous agent claimed that GPT-4 was released in 2023.",
+        "The previous agent asserted that GPT-4 came out in 2023.",
+        "The previous agent claimed that GPT-4 was released in 2023."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h22",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The first iPhone was released in 2007.",
+      "hops": [
+        "The first iPhone was released in 2007."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h22",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The original iPhone was launched in 2007.",
+      "hops": [
+        "The first iPhone was released in 2007.",
+        "The original iPhone was launched in 2007."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h22",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The original iPhone was released in 2007.",
+      "hops": [
+        "The first iPhone was released in 2007.",
+        "The original iPhone launched in 2007.",
+        "The original iPhone was released in 2007."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h22",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "The first iPhone was launched in 2007.",
+      "hops": [
+        "The first iPhone was released in 2007.",
+        "The first iPhone was launched in 2007.",
+        "The original iPhone was released in 2007.",
+        "The first iPhone was launched in 2007."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h22",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "The original iPhone was released in 2007.",
+      "hops": [
+        "The first iPhone was released in 2007.",
+        "The original iPhone was launched in 2007.",
+        "The first iPhone was released in 2007.",
+        "The original iPhone launched in 2007.",
+        "The original iPhone was released in 2007."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h23",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The first Android phone, the HTC Dream (T-Mobile G1), was released in 2008.",
+      "hops": [
+        "The first Android phone, the HTC Dream (T-Mobile G1), was released in 2008."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h23",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The first Android phone was the HTC Dream, also known as the T-Mobile G1, released in 2008.",
+      "hops": [
+        "The first Android phone, the HTC Dream (T-Mobile G1), was released in 2008.",
+        "The first Android phone was the HTC Dream, also known as the T-Mobile G1, released in 2008."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h23",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "The first Android phone was the HTC Dream (T-Mobile G1), released in 2008.",
+      "hops": [
+        "The first Android phone, the HTC Dream (T-Mobile G1), was released in 2008.",
+        "The HTC Dream (T-Mobile G1) was the first Android phone, launched in 2008.",
+        "The first Android phone was the HTC Dream (T-Mobile G1), released in 2008."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h23",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "The first Android phone was the HTC Dream, also called the T-Mobile G1, released in 2008.",
+      "hops": [
+        "The first Android phone, the HTC Dream (T-Mobile G1), was released in 2008.",
+        "The first Android phone was the HTC Dream, also called the T-Mobile G1, launched in 2008.",
+        "The first Android phone, the HTC Dream—also known as the T-Mobile G1—was released in 2008.",
+        "The first Android phone was the HTC Dream, also called the T-Mobile G1, released in 2008."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h23",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "The HTC Dream, sold as the T-Mobile G1, was the first Android phone, debuting in 2008.",
+      "hops": [
+        "The first Android phone, the HTC Dream (T-Mobile G1), was released in 2008.",
+        "The HTC Dream, marketed as the T-Mobile G1, became the first Android phone when it launched in 2008.",
+        "The HTC Dream, sold as the T-Mobile G1, was the first Android phone, launching in 2008.",
+        "The HTC Dream, marketed as the T-Mobile G1, was the first Android phone and launched in 2008.",
+        "The HTC Dream, sold as the T-Mobile G1, was the first Android phone, debuting in 2008."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h24",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "Bitcoin was created in 2009.",
+      "hops": [
+        "Bitcoin was created in 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h24",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Bitcoin was created in 2009 with the mining of its genesis block on January 3.",
+      "hops": [
+        "Bitcoin was created in 2009, when its genesis block was mined on January 3.",
+        "Bitcoin was created in 2009 with the mining of its genesis block on January 3."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h24",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "Bitcoin was created in 2009.",
+      "hops": [
+        "Bitcoin was created in 2009.",
+        "Bitcoin originated in 2009.",
+        "Bitcoin was created in 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h24",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Bitcoin was first introduced in 2009.",
+      "hops": [
+        "Bitcoin was created in 2009.",
+        "Bitcoin was launched in 2009.",
+        "Bitcoin was introduced in 2009.",
+        "Bitcoin was first introduced in 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h24",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Bitcoin made its debut in 2009.",
+      "hops": [
+        "Bitcoin was created in 2009.",
+        "Bitcoin was launched in 2009.",
+        "Bitcoin was introduced in 2009.",
+        "Bitcoin first appeared in 2009.",
+        "Bitcoin made its debut in 2009."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h25",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The men's long jump world record is 8.95 meters, set by Mike Powell on August 30, 1991.",
+      "hops": [
+        "The men's long jump world record is 8.95 meters, set by Mike Powell on August 30, 1991."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h25",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The men's long jump world record is 8.95 meters, set by Mike Powell on August 30, 1991.",
+      "hops": [
+        "The men's long jump world record is 8.95 meters, set by Mike Powell on August 30, 1991.",
+        "The men's long jump world record is 8.95 meters, set by Mike Powell on August 30, 1991."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h25",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "On August 30, 1991, Mike Powell set the men’s long jump world record at 8.95 meters.",
+      "hops": [
+        "The men's long jump world record is 8.95 meters, set by Mike Powell on August 30, 1991.",
+        "Mike Powell set the men's long jump world record of 8.95 meters on August 30, 1991.",
+        "On August 30, 1991, Mike Powell set the men’s long jump world record at 8.95 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h25",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Mike Powell set the men’s long jump world record of 8.95 meters on August 30, 1991.",
+      "hops": [
+        "The men's long jump world record is 8.95 meters, set by Mike Powell on August 30, 1991.",
+        "Mike Powell set the men’s long jump world record of 8.95 meters on August 30, 1991.",
+        "Mike Powell set the men’s long jump world record of 8.95 meters on August 30, 1991.",
+        "Mike Powell set the men’s long jump world record of 8.95 meters on August 30, 1991."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h25",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Mike Powell’s 8.95-meter men’s long jump world record, set on August 30, 1991, remains unbroken.",
+      "hops": [
+        "The men's long jump world record is 8.95 meters, set by Mike Powell on August 30, 1991.",
+        "Mike Powell set the men's long jump world record of 8.95 meters on August 30, 1991.",
+        "Mike Powell's 8.95-meter leap on August 30, 1991, remains the men's long jump world record.",
+        "Mike Powell set the still-standing men's long jump world record of 8.95 meters on August 30, 1991.",
+        "Mike Powell’s 8.95-meter men’s long jump world record, set on August 30, 1991, remains unbroken."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h26",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The men's high jump world record is 2.45 meters, set by Javier Sotomayor on July 27, 1993.",
+      "hops": [
+        "The men's high jump world record is 2.45 meters, set by Javier Sotomayor on July 27, 1993."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h26",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Javier Sotomayor set the men’s high jump world record of 2.45 meters on July 27, 1993.",
+      "hops": [
+        "The men's high jump world record is 2.45 meters, set by Javier Sotomayor on July 27, 1993.",
+        "Javier Sotomayor set the men’s high jump world record of 2.45 meters on July 27, 1993."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h26",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "In 1993, Javier Sotomayor set the men’s high jump world record by clearing 2.45 meters.",
+      "hops": [
+        "The men's high jump world record is 2.45 meters, set by Javier Sotomayor in 1993.",
+        "Javier Sotomayor set the men's high jump world record at 2.45 meters in 1993.",
+        "In 1993, Javier Sotomayor set the men’s high jump world record by clearing 2.45 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h26",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Javier Sotomayor set the men’s high jump world record on July 27, 1993, by clearing 2.45 meters.",
+      "hops": [
+        "The men's high jump world record is 2.45 meters, set by Javier Sotomayor on July 27, 1993.",
+        "Javier Sotomayor set the men's high jump world record of 2.45 meters on July 27, 1993.",
+        "On July 27, 1993, Javier Sotomayor set the men’s high jump world record with a 2.45-meter jump.",
+        "Javier Sotomayor set the men’s high jump world record on July 27, 1993, by clearing 2.45 meters."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h26",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "Javier Sotomayor still holds the men’s high jump world record with his 2.45 m jump in 1993.",
+      "hops": [
+        "The men's high jump world record is 2.45 meters, set by Javier Sotomayor in 1993.",
+        "Javier Sotomayor's 1993 jump of 2.45 meters remains the men's high jump world record.",
+        "Javier Sotomayor’s 1993 clearance of 2.45 m still stands as the men’s high jump world record.",
+        "Javier Sotomayor’s 1993 high jump of 2.45 m remains the men’s world record.",
+        "Javier Sotomayor still holds the men’s high jump world record with his 2.45 m jump in 1993."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h27",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The absolute land speed record is 763.035 mph, set by ThrustSSC on 15 October 1997.",
+      "hops": [
+        "The absolute land speed record is 763.035 mph, set by ThrustSSC on 15 October 1997."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h27",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "Andy Green set the absolute land speed record of 763.035 mph in ThrustSSC on October 15, 1997.",
+      "hops": [
+        "The absolute land speed record is 763.035 mph, set by Andy Green in ThrustSSC on October 15, 1997.",
+        "Andy Green set the absolute land speed record of 763.035 mph in ThrustSSC on October 15, 1997."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h27",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "ThrustSSC set the official land speed record of 763.035 mph on October 15, 1997.",
+      "hops": [
+        "The official land speed record is 763.035 mph, set by ThrustSSC on October 15, 1997.",
+        "ThrustSSC holds the official land speed record at 763.035 mph, set on October 15, 1997.",
+        "ThrustSSC set the official land speed record of 763.035 mph on October 15, 1997."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h27",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "Andy Green set the official land speed record of 763.035 mph on October 15, 1997, driving ThrustSSC.",
+      "hops": [
+        "The official land speed record is 763.035 mph, set by Andy Green in the ThrustSSC on October 15, 1997.",
+        "Andy Green set the official land speed record of 763.035 mph in ThrustSSC on October 15, 1997.",
+        "On October 15, 1997, Andy Green drove ThrustSSC to the official land speed record of 763.035 mph.",
+        "Andy Green set the official land speed record of 763.035 mph on October 15, 1997, driving ThrustSSC."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h27",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "On October 15, 1997, ThrustSSC set the outright land speed record by reaching 763.035 mph.",
+      "hops": [
+        "The outright land speed record is 763.035 mph, set by ThrustSSC on 15 October 1997.",
+        "ThrustSSC holds the outright land speed record at 763.035 mph, achieved on October 15, 1997.",
+        "On October 15, 1997, ThrustSSC set the outright land speed record at 763.035 mph.",
+        "On October 15, 1997, ThrustSSC set the outright land speed record with a run of 763.035 mph.",
+        "On October 15, 1997, ThrustSSC set the outright land speed record by reaching 763.035 mph."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h28",
+      "tier": "hard",
+      "depth": 1,
+      "final_claim": "The Great Wall of China is 21,196 kilometers long, according to a 2012 official archaeological survey.",
+      "hops": [
+        "The Great Wall of China is 21,196 kilometers long, according to a 2012 official archaeological survey."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h28",
+      "tier": "hard",
+      "depth": 2,
+      "final_claim": "The Great Wall of China is about 21,196 kilometers long in total.",
+      "hops": [
+        "The Great Wall of China is approximately 21,196 kilometers long.",
+        "The Great Wall of China is about 21,196 kilometers long in total."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "consistent",
+      "action": "serve",
+      "served": true
+    },
+    {
+      "fact_id": "h28",
+      "tier": "hard",
+      "depth": 3,
+      "final_claim": "China’s 2012 archaeological survey measured the Great Wall’s total length at 21,196 kilometers.",
+      "hops": [
+        "The Great Wall of China measures 21,196 kilometers in total length according to China’s 2012 archaeological survey.",
+        "China’s 2012 archaeological survey found the Great Wall to have a total length of 21,196 kilometers.",
+        "China’s 2012 archaeological survey measured the Great Wall’s total length at 21,196 kilometers."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h28",
+      "tier": "hard",
+      "depth": 4,
+      "final_claim": "A 2012 Chinese archaeological survey estimated the Great Wall of China’s total length at approximately 21,196 kilometers.",
+      "hops": [
+        "The Great Wall of China measures approximately 21,196 kilometers in total length, according to China's 2012 archaeological survey.",
+        "China’s 2012 archaeological survey found that the Great Wall of China is about 21,196 kilometers long in total.",
+        "A 2012 Chinese archaeological survey concluded that the Great Wall of China measures roughly 21,196 kilometers in total length.",
+        "A 2012 Chinese archaeological survey estimated the Great Wall of China’s total length at approximately 21,196 kilometers."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    },
+    {
+      "fact_id": "h28",
+      "tier": "hard",
+      "depth": 5,
+      "final_claim": "A 2012 Chinese heritage survey determined the Great Wall’s total length to be about 21,196 kilometers (13,171 miles).",
+      "hops": [
+        "The Great Wall of China measures 21,196 kilometers (13,171 miles) in total length, according to a 2012 survey by China’s State Administration of Cultural Heritage.",
+        "China's 2012 cultural heritage survey found the Great Wall’s total length to be 21,196 kilometers (13,171 miles).",
+        "A 2012 Chinese cultural heritage survey determined the Great Wall’s total length to be 21,196 kilometers (13,171 miles).",
+        "A 2012 Chinese cultural heritage survey found the Great Wall to be 21,196 kilometers (13,171 miles) long in total.",
+        "A 2012 Chinese heritage survey determined the Great Wall’s total length to be about 21,196 kilometers (13,171 miles)."
+      ],
+      "ground_truth": "faithful",
+      "critic_verdict": "unverifiable",
+      "action": "serve_with_caveat",
+      "served": true
+    }
+  ],
+  "audit": {
+    "n_checked": 30,
+    "n_agree": 26,
+    "agreement_rate": 0.8667,
+    "note": "same model family as the critic under test — a sanity check, not independent ground truth",
+    "checks": [
+      {
+        "fact_id": "e01",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e01",
+        "oracle": "faithful",
+        "llm_audit": "unverifiable",
+        "agree": false
+      },
+      {
+        "fact_id": "e01",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e01",
+        "oracle": "faithful",
+        "llm_audit": "unverifiable",
+        "agree": false
+      },
+      {
+        "fact_id": "e01",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e02",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e02",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e02",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e02",
+        "oracle": "faithful",
+        "llm_audit": "unverifiable",
+        "agree": false
+      },
+      {
+        "fact_id": "e02",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e03",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e03",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e03",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e03",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e03",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e04",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e04",
+        "oracle": "faithful",
+        "llm_audit": "unverifiable",
+        "agree": false
+      },
+      {
+        "fact_id": "e04",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e04",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e04",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e05",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e05",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e05",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e05",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e05",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e06",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e06",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e06",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e06",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      },
+      {
+        "fact_id": "e06",
+        "oracle": "faithful",
+        "llm_audit": "faithful",
+        "agree": true
+      }
+    ]
+  }
+}

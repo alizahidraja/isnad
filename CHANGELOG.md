@@ -6,9 +6,13 @@
 
 - **Model-drift leaderboard** (`experiments/model_drift/`, #71): a preregistered,
   reproducible harness measuring how hallucination rate grows with multi-agent chain
-  depth (1..5), with a deterministic ground-truth oracle, a deterministic offline
-  drift injector (no API keys), and negative controls (perfect / empty critic).
-  Offline-only; live multi-family runs are a separate keyed phase.
+  depth (1..5), with a deterministic LLM-free ground-truth oracle and a deterministic
+  offline drift injector (no API keys) with negative controls (perfect / empty critic).
+- **Live model-drift runner** (`experiments/model_drift/live.py`): key-gated DeepSeek
+  `deepseek-flash` as relay narrators + content critic (key from `DEEPSEEK_API_KEY` env,
+  never committed; `$2` hard cost cap; raw token counts recorded). First live result:
+  56 facts × depths 1..5 → hallucination_rate 0.000 (a frontier model does not drift on
+  well-known facts; post-cutoff corpus is the next iteration).
 
 ## [2.23.0] — 2026-09-09
 
