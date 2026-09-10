@@ -1,0 +1,970 @@
+{
+  "schema_version": 1,
+  "generated_date": "2026-09-10",
+  "seed": 0,
+  "corruption_probability": 0.25,
+  "dataset_sha256": "6a79fe02c63e6dff1b95f01cd21e6c6a389333f201731a1a6129f1b5a4ebd114",
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "rows": [
+    {
+      "depth": 1,
+      "critic_mode": "perfect",
+      "n_facts": 12,
+      "n_hallucinated": 2,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.1667,
+      "served_error_rate": 0.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Paris.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Tokyo.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 100 degrees Celsius at sea level.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 600,000 km per second.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Sun.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Earth.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1945.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1989.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 23 pairs of chromosomes.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The nucleus is the powerhouse of the cell.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is H2O.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Au.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "critic_mode": "perfect",
+      "n_facts": 12,
+      "n_hallucinated": 5,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.4167,
+      "served_error_rate": 0.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Paris.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Kyoto.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 100 degrees Celsius at sea level.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 300,000 km per second.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Moon.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Earth.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1946.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1987.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 23 pairs of chromosomes.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The chloroplast is the powerhouse of the cell.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is H2O.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Au.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        }
+      ]
+    },
+    {
+      "depth": 3,
+      "critic_mode": "perfect",
+      "n_facts": 12,
+      "n_hallucinated": 7,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.5833,
+      "served_error_rate": 0.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Paris.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Kyoto.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 100 degrees Celsius at sea level.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 150,000 km per second.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Mars.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Earth.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1918.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1989.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 23 pairs of chromosomes.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The nucleus is the powerhouse of the cell.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is O2.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Go.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        }
+      ]
+    },
+    {
+      "depth": 4,
+      "critic_mode": "perfect",
+      "n_facts": 12,
+      "n_hallucinated": 8,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.6667,
+      "served_error_rate": 0.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Berlin.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Tokyo.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 90 degrees Celsius at sea level.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 600,000 km per second.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Venus.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Earth.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1945.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1987.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 46 pairs of chromosomes.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The mitochondria is the powerhouse of the cell.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is O2.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Fe.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        }
+      ]
+    },
+    {
+      "depth": 5,
+      "critic_mode": "perfect",
+      "n_facts": 12,
+      "n_hallucinated": 9,
+      "n_served_hallucinated": 0,
+      "hallucination_rate": 0.75,
+      "served_error_rate": 0.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Berlin.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Osaka.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 110 degrees Celsius at sea level.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 30,000 km per second.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Sun.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Sun.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1946.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1989.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 46 pairs of chromosomes.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The ribosome is the powerhouse of the cell.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is CO2.",
+          "ground_truth": "hallucinated",
+          "action": "review",
+          "served": false
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Au.",
+          "ground_truth": "faithful",
+          "action": "serve",
+          "served": true
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "critic_mode": "empty",
+      "n_facts": 12,
+      "n_hallucinated": 2,
+      "n_served_hallucinated": 2,
+      "hallucination_rate": 0.1667,
+      "served_error_rate": 1.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Paris.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Tokyo.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 100 degrees Celsius at sea level.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 600,000 km per second.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Sun.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Earth.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1945.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1989.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 23 pairs of chromosomes.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The nucleus is the powerhouse of the cell.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is H2O.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Au.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "critic_mode": "empty",
+      "n_facts": 12,
+      "n_hallucinated": 5,
+      "n_served_hallucinated": 5,
+      "hallucination_rate": 0.4167,
+      "served_error_rate": 1.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Paris.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Kyoto.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 100 degrees Celsius at sea level.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 300,000 km per second.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Moon.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Earth.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1946.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1987.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 23 pairs of chromosomes.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The chloroplast is the powerhouse of the cell.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is H2O.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Au.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        }
+      ]
+    },
+    {
+      "depth": 3,
+      "critic_mode": "empty",
+      "n_facts": 12,
+      "n_hallucinated": 7,
+      "n_served_hallucinated": 7,
+      "hallucination_rate": 0.5833,
+      "served_error_rate": 1.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Paris.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Kyoto.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 100 degrees Celsius at sea level.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 150,000 km per second.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Mars.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Earth.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1918.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1989.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 23 pairs of chromosomes.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The nucleus is the powerhouse of the cell.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is O2.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Go.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        }
+      ]
+    },
+    {
+      "depth": 4,
+      "critic_mode": "empty",
+      "n_facts": 12,
+      "n_hallucinated": 8,
+      "n_served_hallucinated": 8,
+      "hallucination_rate": 0.6667,
+      "served_error_rate": 1.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Berlin.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Tokyo.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 90 degrees Celsius at sea level.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 600,000 km per second.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Venus.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Earth.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1945.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1987.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 46 pairs of chromosomes.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The mitochondria is the powerhouse of the cell.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is O2.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Fe.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        }
+      ]
+    },
+    {
+      "depth": 5,
+      "critic_mode": "empty",
+      "n_facts": 12,
+      "n_hallucinated": 9,
+      "n_served_hallucinated": 9,
+      "hallucination_rate": 0.75,
+      "served_error_rate": 1.0,
+      "per_fact": [
+        {
+          "fact_id": "f001",
+          "claim": "The capital of France is Berlin.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f002",
+          "claim": "The capital of Japan is Osaka.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f003",
+          "claim": "Water boils at 110 degrees Celsius at sea level.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f004",
+          "claim": "The speed of light is about 30,000 km per second.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f005",
+          "claim": "The Earth orbits the Sun.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f006",
+          "claim": "The Moon orbits the Sun.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f007",
+          "claim": "World War II ended in 1946.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f008",
+          "claim": "The Berlin Wall fell in 1989.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f009",
+          "claim": "Humans have 46 pairs of chromosomes.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f010",
+          "claim": "The ribosome is the powerhouse of the cell.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f011",
+          "claim": "Water is CO2.",
+          "ground_truth": "hallucinated",
+          "action": "serve_with_caveat",
+          "served": true
+        },
+        {
+          "fact_id": "f012",
+          "claim": "The chemical symbol for gold is Au.",
+          "ground_truth": "faithful",
+          "action": "serve_with_caveat",
+          "served": true
+        }
+      ]
+    }
+  ],
+  "no_gating_baseline": {
+    "served_error_rate": 1.0,
+    "note": "serve-everything: every hallucinated claim is served by construction"
+  }
+}
