@@ -11,8 +11,12 @@
 - **Live model-drift runner** (`experiments/model_drift/live.py`): key-gated DeepSeek
   `deepseek-flash` as relay narrators + content critic (key from `DEEPSEEK_API_KEY` env,
   never committed; `$2` hard cost cap; raw token counts recorded). First live result:
-  56 facts × depths 1..5 → hallucination_rate 0.000 (a frontier model does not drift on
-  well-known facts; post-cutoff corpus is the next iteration).
+  65 facts (8 easy / 20 medium / 28 hard / 9 post-cutoff) × depths 1..5 →
+  hallucination_rate 0.061–0.077, entirely from post-cutoff facts (0.000 on well-known
+  facts). Key finding: hallucination originates at memory-generation (hop 1), not chain
+  depth — the relay preserves rather than amplifies error. Critic served_error_rate
+  0.0–0.4 (misses up to 2 of 5 hallucinations). $0.099 total, `$2` cap, 10-persona panel
+  audited; truncation/unit-blindness/precision limits disclosed.
 
 ## [2.23.0] — 2026-09-09
 

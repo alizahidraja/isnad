@@ -45,7 +45,7 @@ DEPTHS = (1, 2, 3, 4, 5)
 
 @dataclass
 class LiveClient:
-    api_key: str
+    api_key: str = field(repr=False)
     model: str = MODEL
     base_url: str = BASE_URL
     temperature: float = 0.0
@@ -56,6 +56,7 @@ class LiveClient:
     completion_tokens: int = 0
     calls: int = 0
     retries: int = 0
+    truncated: int = 0
     _client: httpx.Client = field(default_factory=httpx.Client, repr=False)
 
     @property
@@ -93,6 +94,8 @@ class LiveClient:
                 self.calls += 1
                 self.retries += attempt
                 choice = data.get("choices", [{}])[0]
+                if choice.get("finish_reason") == "length":
+                    self.truncated += 1
                 return (choice.get("message", {}).get("content") or "").strip()
             except Exception as exc:  # noqa: BLE001 - surface as UNVERIFIABLE upstream
                 last_err = exc
@@ -107,7 +110,7 @@ def answer_from_memory(client: LiveClient, question: str) -> str:
         "or date. Do not say you are unsure.\n\n"
         f"Question: {question}"
     )
-    return client.complete([{"role": "user", "content": prompt}], max_tokens=1024)
+    return client.complete([{"role": "user", "content": prompt}], max_tokens=4096)
 
 
 def relay(client: LiveClient, claim: str, depth: int, hop: int) -> str:
@@ -117,7 +120,7 @@ def relay(client: LiveClient, claim: str, depth: int, hop: int) -> str:
         f"conveying its essential factual claim. Keep it brief and in your own words.\n\n"
         f"Previous answer: {claim}"
     )
-    return client.complete([{"role": "user", "content": prompt}], max_tokens=1024)
+    return client.complete([{"role": "user", "content": prompt}], max_tokens=4096)
 
 
 def critique(client: LiveClient, claim: str, evidence: str) -> ContentVerdict:
@@ -127,7 +130,7 @@ def critique(client: LiveClient, claim: str, evidence: str) -> ContentVerdict:
         f"Evidence: {evidence}\n\nClaim: {claim}\n\n"
         "Answer with exactly one word: CONSISTENT, CONTRADICTION, or UNVERIFIABLE."
     )
-    text = client.complete([{"role": "user", "content": prompt}], max_tokens=1024)
+    text = client.complete([{"role": "user", "content": prompt}], max_tokens=4096)
     from isnad.critics.llm import _parse_verdict  # local import: negation-aware
 
     return _parse_verdict(text)
@@ -144,7 +147,7 @@ def audit_label(client: LiveClient, claim: str, fact: HardFact) -> str:
         "fact (HALLUCINATED), or is it too vague to tell (UNVERIFIABLE)? "
         "Answer with exactly one word: FAITHFUL, HALLUCINATED, or UNVERIFIABLE."
     )
-    text = client.complete([{"role": "user", "content": prompt}], max_tokens=1024)
+    text = client.complete([{"role": "user", "content": prompt}], max_tokens=4096)
     t = text.strip().rstrip(".!?,;:'\"").upper()
     for token in ("FAITHFUL", "HALLUCINATED", "UNVERIFIABLE"):
         if t.split() and t.split()[-1] == token:
@@ -208,7 +211,7 @@ def run_live(
             "n_hallucinated": len(hall),
             "n_served_hallucinated": len(served_hall),
             "hallucination_rate": round(len(hall) / len(dr), 4) if dr else 0.0,
-            "served_error_rate": round(len(served_hall) / len(hall), 4) if hall else 0.0,
+            "served_error_rate": round(len(served_hall) / len(hall), 4) if hall else None,
         }
 
     record: dict[str, object] = {
@@ -227,6 +230,7 @@ def run_live(
         "completion_tokens": client.completion_tokens,
         "calls": client.calls,
         "retries": client.retries,
+        "truncated": client.truncated,
         "cost_usd": round(client.cost_usd, 6),
         "per_depth": {str(k): v for k, v in per_depth.items()},
         "rows": rows,
@@ -317,9 +321,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     per_depth = cast(dict[str, dict[str, object]], record["per_depth"])
     for depth, d in per_depth.items():
+        ser = d["served_error_rate"]
+        ser_str = f"{ser:.3f}" if ser is not None else "n/a"
         print(
             f"  depth={depth} hallucination_rate={d['hallucination_rate']:.3f} "
-            f"served_error_rate={d['served_error_rate']:.3f}"
+            f"served_error_rate={ser_str}"
         )
     if "audit" in record:
         a = cast(dict[str, object], record["audit"])

@@ -12,26 +12,38 @@ The methodology is **preregistered** (frozen before any result):
 [`experiments/model_drift/results/LIVE_RESULTS.md`](../experiments/model_drift/results/LIVE_RESULTS.md)
 · raw: [`results/live_results.json`](../experiments/model_drift/results/live_results.json)
 
+65 facts (8 easy / 20 medium / 28 hard / 9 **post-cutoff**), temperature 0.0,
+1,300 calls, **$0.099** total, 27 truncated calls (recorded, not hidden).
+
 | Depth | hallucination_rate (oracle) | served_error_rate (real critic) |
 |---|---|---|
-| 1 | **0.000** | 0.000 |
-| 2 | **0.000** | 0.000 |
-| 3 | **0.000** | 0.000 |
-| 4 | **0.000** | 0.000 |
-| 5 | **0.000** | 0.000 |
+| 1 | **0.061** | 0.000 |
+| 2 | **0.061** | 0.000 |
+| 3 | **0.077** | 0.400 |
+| 4 | **0.077** | 0.400 |
+| 5 | **0.061** | 0.000 |
 
-- **56 facts** (8 easy / 20 medium / 28 hard), temperature 0.0, 1,120 calls, **$0.053** total.
-- **Oracle cross-check (independent LLM audit):** 0.87 agreement (26/30). The 4
-  disagreements are the auditor answering "unverifiable" on a correct claim — not
-  hallucinations.
-- Ground-truth labels come from an **LLM-free numeric oracle** (never an LLM), so the
-  labels themselves cannot hallucinate.
+All hallucination comes from the **post-cutoff** tier (facts after the model's
+~mid-2026 training cutoff), where the model confidently states stale values — e.g.
+the 400m hurdles world record as **45.94** (true: 45.80), the Knicks' last title as
+**1973** (true: 2026), Spain's last World Cup as **2010** (true: 2026):
 
-**What this honestly shows:** a frontier model relays all 56 well-known facts correctly
-through 5 hops — it does **not** drift on *training-data facts*. Hallucination of the
-kind #71 wants to measure does **not** emerge from well-known facts; it requires
-**post-training-cutoff or obscure** facts (where the model has no correct prior to
-reproduce). That is the next corpus iteration.
+| Tier | hallucination_rate (depth 1) |
+|---|---|
+| easy / medium / hard | **0.000** (0 drift — well-known facts) |
+| post-cutoff | **0.444–0.556** |
+
+**Oracle cross-check (independent LLM audit):** 0.90 agreement (27/30). Ground-truth
+labels come from an **LLM-free numeric oracle**, so the labels themselves cannot hallucinate.
+
+### What this honestly shows
+1. **Hallucination originates at memory-generation, not chain depth.** The rate is
+   *flat* across depths 1..5 (the relay faithfully propagates whatever hop 1 produced).
+   Deep multi-agent chains do **not** amplify hallucination here — the first hop does.
+2. **The critic is mostly-but-not-fully reliable even with evidence in context**:
+   served_error_rate 0.0–0.4 (it misses up to 2 of 5 hallucinated claims).
+3. **A frontier model does not drift on well-known facts** (0.000) — only on
+   post-cutoff facts where it has no correct prior.
 
 ## Offline results (pipeline plumbing, deterministic)
 
@@ -45,10 +57,6 @@ reproduce). That is the next corpus iteration.
 | 4 | 0.667 | 0.000 | 1.000 |
 | 5 | 0.750 | 0.000 | 1.000 |
 
-A **perfect** critic → the decision matrix catches 100% (verifies the plumbing). A
-**useless** critic → serves every hallucinated claim. The real critic sits between the
-two — the live phase measures where.
-
 ## Reproduce
 
 ```bash
@@ -61,13 +69,15 @@ DEEPSEEK_API_KEY=… uv run python -m experiments.model_drift.live --audit
 
 ## Hard limits (stated, not hidden)
 
-- **Live is single-model self-critique**: narrator and critic are both `deepseek-flash`,
-  so served_error_rate is optimistic (models are lenient on their own output).
-- **Well-known-fact corpus** → 0 drift on a frontier model. Inducing real hallucination
-  requires post-cutoff/obscure facts (next iteration).
-- **Oracle definition**: any numeric deviation (rounding, unit change, more precision)
-  counts as drift — but only *at the canonical value's precision*; a more-precise
-  correct answer (763.035 vs 763) is faithful.
-- **Cost** is derived from the API's token counts × the disclosed V4-Flash rate card
+- **Self-critique**: narrator and critic are both `deepseek-flash`; a model is lenient
+  on its own output, so served_error_rate is optimistic. (Cross-model critic — flash
+  narrator × `deepseek-v4-pro` critic — is the next step.)
+- **Single provider / single model**; **temperature 0.0** (deterministic knowledge
+  error, not sampling noise — a temperature>0 × multi-seed pass is the other next step).
+- **Oracle is numeric and unit-blind**: a correct answer in another unit (26.2 miles)
+  counts as drift, and a right number with a wrong unit is missed. Disclosed, not fixed.
+- **Truncated calls** (finish_reason=length, when reasoning exhausts the token budget)
+  are recorded and rendered as "unverifiable", never silently dropped.
+- **Cost** is derived from token counts × the disclosed V4-Flash rate card
   ($0.14/M in, $0.28/M out); raw token totals are the ground truth.
 - The metric does **not** claim general hallucination-detection superiority (#71).
