@@ -15,8 +15,10 @@
   hallucination_rate 0.061–0.077, entirely from post-cutoff facts (0.000 on well-known
   facts). Key finding: hallucination originates at memory-generation (hop 1), not chain
   depth — the relay preserves rather than amplifies error. Critic served_error_rate
-  0.0–0.4 (misses up to 2 of 5 hallucinations). $0.099 total, `$2` cap, 10-persona panel
-  audited; truncation/unit-blindness/precision limits disclosed.
+  0.0–0.4 self-critic (`deepseek-flash`) and 0.0–0.5 cross-model critic (`deepseek-v4-pro`)
+  — a stronger critic does not close the gap, and neither is a substitute for human
+  adjudication. ~$0.25 total, `$2` cap, 10-persona panel audited; truncation /
+  unit-blindness / precision limits disclosed.
 
 ## [2.23.0] — 2026-09-09
 

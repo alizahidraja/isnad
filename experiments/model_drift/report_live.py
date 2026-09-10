@@ -35,7 +35,7 @@ def render(record: dict[str, Any]) -> str:
     lines = [
         "# Model-drift leaderboard — LIVE results (#71)",
         "",
-        f"**Model:** `{record['model']}` · **temperature:** {record['temperature']} · "
+        f"**Narrator:** `{record['narrator_model']}` · **Critic:** `{record['critic_model']}` · "
         f"**date:** {record['generated_date']}",
         f"**Calls:** {record['calls']} · **tokens:** {record['prompt_tokens']} in / "
         f"{record['completion_tokens']} out · **cost:** ${record['cost_usd']:.5f} "

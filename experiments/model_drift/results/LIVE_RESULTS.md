@@ -1,18 +1,18 @@
 # Model-drift leaderboard — LIVE results (#71)
 
-**Model:** `deepseek-flash` · **temperature:** 0.0 · **date:** 2026-09-11
-**Calls:** 1300 · **tokens:** 123192 in / 291860 out · **cost:** $0.09897 (cap $2.00)
+**Narrator:** `deepseek-flash` · **Critic:** `deepseek-v4-pro` · **date:** 2026-09-11
+**Calls:** 1300 · **tokens:** 140714 in / 380791 out · **cost:** $0.24968 (cap $2.00)
 **dataset_sha256:** `53e319c33cb0e599…`
 
 ## Aggregate (all facts)
 
 | Depth | hallucination_rate (oracle) | served_error_rate (real critic) |
 |---|---|---|
-| 1 | 0.061 | 0.000 |
-| 2 | 0.061 | 0.000 |
-| 3 | 0.077 | 0.400 |
-| 4 | 0.077 | 0.400 |
-| 5 | 0.061 | 0.000 |
+| 1 | 0.077 | 0.000 |
+| 2 | 0.092 | 0.167 |
+| 3 | 0.061 | 0.500 |
+| 4 | 0.061 | 0.000 |
+| 5 | 0.061 | 0.250 |
 
 ## By difficulty tier
 
@@ -50,15 +50,15 @@
 
 | Depth | hallucination_rate | served_error_rate | n |
 |---|---|---|---|
-| 1 | 0.444 | 0.000 | 9 |
-| 2 | 0.444 | 0.000 | 9 |
-| 3 | 0.556 | 0.400 | 9 |
-| 4 | 0.556 | 0.400 | 9 |
-| 5 | 0.444 | 0.000 | 9 |
+| 1 | 0.556 | 0.000 | 9 |
+| 2 | 0.667 | 0.167 | 9 |
+| 3 | 0.444 | 0.500 | 9 |
+| 4 | 0.444 | 0.000 | 9 |
+| 5 | 0.444 | 0.250 | 9 |
 
 ## Oracle cross-check (independent LLM audit)
 
-agreement rate: **0.900** (27/30) — same model family as the critic under test — a sanity check, not independent ground truth.
+agreement rate: **0.967** (29/30) — same model family as the critic under test — a sanity check, not independent ground truth.
 
 ## Honest limits
 

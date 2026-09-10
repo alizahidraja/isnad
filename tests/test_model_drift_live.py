@@ -110,7 +110,7 @@ def test_run_depth_live_catches_contradiction():
     f = _fact("e01")
     # depth 1: one narrator reply (drifted) + one critic reply (CONTRADICTION)
     client = FakeClient(["An adult human body has 207 bones.", "CONTRADICTION"])
-    row = run_depth_live(client, 1, f)
+    row = run_depth_live(client, client, 1, f)
     assert row["ground_truth"] == "hallucinated"
     assert row["critic_verdict"] == "contradiction"
     assert row["action"] == Action.REVIEW.value
@@ -121,7 +121,7 @@ def test_run_depth_live_serves_when_critic_misses():
     """SAHIH chain + critic says UNVERIFIABLE -> SERVE_WITH_CAVEAT (hallucination served)."""
     f = _fact("e01")
     client = FakeClient(["An adult human body has 207 bones.", "UNVERIFIABLE"])
-    row = run_depth_live(client, 1, f)
+    row = run_depth_live(client, client, 1, f)
     assert row["ground_truth"] == "hallucinated"
     assert row["action"] == Action.SERVE_WITH_CAVEAT.value
     assert row["served"] is True
@@ -136,7 +136,7 @@ def test_run_depth_live_relays_through_all_hops():
         "Humans have 207 bones.",
         "CONSISTENT",
     ])
-    row = run_depth_live(client, 3, f)
+    row = run_depth_live(client, client, 3, f)
     assert len(row["hops"]) == 3
     assert row["final_claim"] == "Humans have 207 bones."
     assert row["ground_truth"] == "hallucinated"
@@ -152,7 +152,7 @@ def test_run_live_aggregates_metrics():
         "A chessboard has 64 squares.",
         "CONSISTENT",  # e02: faithful, served
     ])
-    record = run_live(client, depths=(1,), facts=(f1, f2))
+    record = run_live(client, client, depths=(1,), facts=(f1, f2))
     pd = record["per_depth"]["1"]
     assert pd["n"] == 2
     assert pd["n_hallucinated"] == 1
@@ -240,5 +240,5 @@ def test_max_tokens_floor_prevents_truncation():
 
     c = _RecordingClient(["206 bones", "CONSISTENT"])
     f = _fact("e01")
-    run_depth_live(c, 1, f)  # answer_from_memory + critique
+    run_depth_live(c, c, 1, f)  # answer_from_memory + critique
     assert all(mt >= 1024 for mt in c.max_tokens_calls)

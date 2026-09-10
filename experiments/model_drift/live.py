@@ -39,6 +39,9 @@ MODEL = "deepseek-flash"
 # V4-Flash flat rate card, USD per 1M tokens (public pricing, disclosed not asserted).
 PRICE_IN_PER_M = 0.14
 PRICE_OUT_PER_M = 0.28
+PRICE_IN_PER_M_V4PRO = 0.435
+PRICE_OUT_PER_M_V4PRO = 0.87
+MODEL_V4PRO = "deepseek-v4-pro"
 CAP_USD = 2.0
 DEPTHS = (1, 2, 3, 4, 5)
 
@@ -166,14 +169,16 @@ def _chain_grade_for_depth(depth: int) -> ChainGrade:
     )
 
 
-def run_depth_live(client: LiveClient, depth: int, fact: HardFact) -> dict[str, object]:
-    claim = answer_from_memory(client, fact.question)
+def run_depth_live(
+    narrator: LiveClient, critic: LiveClient, depth: int, fact: HardFact
+) -> dict[str, object]:
+    claim = answer_from_memory(narrator, fact.question)
     hops: list[str] = [claim]
     for hop in range(1, depth):
-        claim = relay(client, claim, depth, hop)
+        claim = relay(narrator, claim, depth, hop)
         hops.append(claim)
     gt = live_label(claim, fact)
-    verdict = critique(client, claim, fact.assertion)
+    verdict = critique(critic, claim, fact.assertion)
     chain_grade = _chain_grade_for_depth(depth)
     action = decide(chain_grade, verdict)
     served = action in (Action.SERVE, Action.SERVE_WITH_CAVEAT)
@@ -192,14 +197,15 @@ def run_depth_live(client: LiveClient, depth: int, fact: HardFact) -> dict[str, 
 
 
 def run_live(
-    client: LiveClient,
+    narrator: LiveClient,
+    critic: LiveClient,
     depths: tuple[int, ...] = DEPTHS,
     facts: tuple[HardFact, ...] = HARD_CORPUS,
 ) -> dict[str, object]:
     rows: list[dict[str, object]] = []
     for fact in facts:
         for depth in depths:
-            rows.append(run_depth_live(client, depth, fact))
+            rows.append(run_depth_live(narrator, critic, depth, fact))
 
     per_depth: dict[int, dict[str, object]] = {}
     for depth in depths:
@@ -217,21 +223,26 @@ def run_live(
     record: dict[str, object] = {
         "schema_version": 2,
         "generated_date": date.today().isoformat(),
-        "model": client.model,
-        "base_url": client.base_url,
-        "temperature": client.temperature,
-        "price_in_per_m": client.price_in,
-        "price_out_per_m": client.price_out,
-        "cap_usd": client.cap_usd,
+        "narrator_model": narrator.model,
+        "critic_model": critic.model,
+        "base_url": narrator.base_url,
+        "temperature": narrator.temperature,
+        "narrator_price_in_per_m": narrator.price_in,
+        "narrator_price_out_per_m": narrator.price_out,
+        "critic_price_in_per_m": critic.price_in,
+        "critic_price_out_per_m": critic.price_out,
+        "cap_usd": narrator.cap_usd,
         "dataset_sha256": corpus_sha256(),
         "n_facts": len(facts),
         "depths": list(depths),
-        "prompt_tokens": client.prompt_tokens,
-        "completion_tokens": client.completion_tokens,
-        "calls": client.calls,
-        "retries": client.retries,
-        "truncated": client.truncated,
-        "cost_usd": round(client.cost_usd, 6),
+        "prompt_tokens": narrator.prompt_tokens + critic.prompt_tokens,
+        "completion_tokens": narrator.completion_tokens + critic.completion_tokens,
+        "calls": narrator.calls + critic.calls,
+        "retries": narrator.retries + critic.retries,
+        "truncated": narrator.truncated + critic.truncated,
+        "cost_usd": round(narrator.cost_usd + critic.cost_usd, 6),
+        "narrator_cost_usd": round(narrator.cost_usd, 6),
+        "critic_cost_usd": round(critic.cost_usd, 6),
         "per_depth": {str(k): v for k, v in per_depth.items()},
         "rows": rows,
     }
@@ -281,6 +292,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--cap-usd", type=float, default=CAP_USD)
     parser.add_argument("--audit", action="store_true", help="run the LLM cross-check audit")
     parser.add_argument("--audit-sample", type=int, default=30)
+    parser.add_argument(
+        "--critic-model",
+        type=str,
+        default=MODEL,
+        help="critic model (e.g. deepseek-v4-pro for cross-model)",
+    )
     args = parser.parse_args(argv)
 
     key = os.environ.get("DEEPSEEK_API_KEY", "")
@@ -299,11 +316,18 @@ def main(argv: list[str] | None = None) -> int:
             print(f"no matching facts for {args.facts}", file=sys.stderr)
             return 1
 
-    client = LiveClient(api_key=key, cap_usd=args.cap_usd)
-    record = run_live(client, tuple(args.depths), facts)
+    narrator = LiveClient(api_key=key, model=MODEL, cap_usd=args.cap_usd)
+    critic = LiveClient(
+        api_key=key,
+        model=args.critic_model,
+        cap_usd=args.cap_usd,
+        price_in=PRICE_IN_PER_M_V4PRO if args.critic_model == MODEL_V4PRO else PRICE_IN_PER_M,
+        price_out=PRICE_OUT_PER_M_V4PRO if args.critic_model == MODEL_V4PRO else PRICE_OUT_PER_M,
+    )
+    record = run_live(narrator, critic, tuple(args.depths), facts)
     if args.audit:
         record["audit"] = run_audit(
-            client, cast(list[dict[str, object]], record["rows"]), args.audit_sample
+            critic, cast(list[dict[str, object]], record["rows"]), args.audit_sample
         )
 
     out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
@@ -315,7 +339,7 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"wrote {out_path}")
     print(
-        f"model={record['model']} calls={record['calls']} "
+        f"narrator={record['narrator_model']} critic={record['critic_model']} calls={record['calls']} "
         f"cost=${record['cost_usd']:.5f} "
         f"(in={record['prompt_tokens']} out={record['completion_tokens']})"
     )
