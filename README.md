@@ -267,6 +267,16 @@ SHA-256 — see [`bench/README.md`](bench/README.md). The derived graded output 
 scholar verdict + ISNAD prediction + disagreement bucket) is published as the
 [`alizahidraja/isnad-bench` dataset on Hugging Face](https://huggingface.co/datasets/alizahidraja/isnad-bench).
 
+## Transfers to AI provenance — measured on RAGTruth
+
+The κ = 0.871 above is the methodology's home turf (hadith chains). The transfer to live LLM
+pipelines is measured separately and published honestly: on **RAGTruth** (17,790 responses, 6 models),
+ISNAD's grounding critic catches **97.6% of hallucinations** at **κ = 0.575** (79.3% accuracy vs a
+71.4% baseline) and grades the six models' reliability in exactly the right order. The weak bi-encoder
+signal (κ ≈ 0.1) is reported alongside, not hidden. Case study + limits: [`G1_CASE_STUDY.md`](G1_CASE_STUDY.md).
+
+**Live product:** [isnad.islamandai.com](https://isnad.islamandai.com)
+
 ## Glossary — the Arabic, in plain English
 
 The name and lineage are the reason to trust the design; you don't need the Arabic
