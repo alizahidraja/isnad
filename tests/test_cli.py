@@ -51,10 +51,26 @@ class TestMainDispatcher:
         with pytest.raises(SystemExit) as e:
             cli_main.main([])
         assert e.value.code == 1
-        assert (
-            "Usage: isnad [serve|seed|export|verify|verify-chain|verify-merkle|ingest|bench|mcp|scan]"
-            in capsys.readouterr().out
-        )
+        assert "Usage: isnad [command] [options]" in capsys.readouterr().out
+
+    def test_help_flag_exits_0(self, capsys):
+        with pytest.raises(SystemExit) as e:
+            cli_main.main(["--help"])
+        assert e.value.code == 0
+        out = capsys.readouterr().out
+        assert "ISNAD — LLM provenance" in out
+        assert "Usage: isnad [command] [options]" in out
+
+    def test_short_help_flag_exits_0(self, capsys):
+        with pytest.raises(SystemExit) as e:
+            cli_main.main(["-h"])
+        assert e.value.code == 0
+
+    def test_version_flag_exits_0(self, capsys):
+        with pytest.raises(SystemExit) as e:
+            cli_main.main(["--version"])
+        assert e.value.code == 0
+        assert "isnad" in capsys.readouterr().out
 
     def test_unknown_command_exits_1(self, capsys):
         with pytest.raises(SystemExit) as e:
