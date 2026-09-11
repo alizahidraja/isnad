@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [2.24.0] — 2026-09-11
 
 ### Added
 
@@ -19,6 +19,11 @@
   — a stronger critic does not close the gap, and neither is a substitute for human
   adjudication. ~$0.25 total, `$2` cap, 10-persona panel audited; truncation /
   unit-blindness / precision limits disclosed.
+- **CLI** (`isnad --help` / `-h`, `--version` / `-V`): full help text with a description
+  and subcommand listing; bare `isnad` now prints help.
+- **Docs**: `quickstart.md` (5-minute LangChain), `concepts.md` (isnād–rijāl → multi-agent
+  provenance), `compliance.md` (EU AI Act Art. 12/13 · ISO/IEC 42001 · NIST AI RMF ·
+  SDAIA) — added to the mkdocs nav and linked from the README.
 
 ## [2.23.0] — 2026-09-09
 

@@ -447,6 +447,29 @@ def _scan(argv: list[str]) -> int:
     return 0
 
 
+_HELP = """ISNAD — LLM provenance & AI audit trail for RAG and multi-agent systems.
+
+Usage: isnad [command] [options]
+
+Commands:
+  serve          Start the REST API server (requires isnad[api])
+  seed           Seed narrators from the ISNAD_SEED_CONFIG env var
+  export         Emit a tamper-evident AuditRecord (json|jsonl|csv)
+  verify         Recompute a record hash; exit 0/1
+  verify-chain   Walk a linear hash chain; exit 0/1
+  verify-merkle  Verify a Merkle batch log; exit 0/1
+  ingest         Grade an OpenTelemetry GenAI trace
+  bench          Run the benchmark harness
+  mcp            Serve the registry as an MCP server (grade_claim)
+  scan           Scan narrators against the default registry
+
+Options:
+  -h, --help     Show this help and exit
+  -V, --version  Print the installed version and exit
+
+Audit commands emit evidence artifacts, not compliance certificates."""
+
+
 def main(argv: list[str] | None = None) -> None:
     """CLI dispatcher.
 
@@ -455,14 +478,20 @@ def main(argv: list[str] | None = None) -> None:
             testing.
     """
     args = sys.argv if argv is None else ["isnad", *argv]
-    usage = (
-        "Usage: isnad [serve|seed|export|verify|verify-chain|verify-merkle|ingest|bench|mcp|scan]"
-    )
     if len(args) < 2:
-        print(usage)
+        print(_HELP)
         sys.exit(1)
 
     cmd = args[1]
+    if cmd in ("-h", "--help"):
+        print(_HELP)
+        sys.exit(0)
+    if cmd in ("-V", "--version"):
+        from isnad import __version__
+
+        print(f"isnad {__version__}")
+        sys.exit(0)
+
     rest = args[2:]
     if cmd == "serve":
         serve()
@@ -486,7 +515,7 @@ def main(argv: list[str] | None = None) -> None:
         sys.exit(_scan(rest))
     else:
         print(f"Unknown command: {cmd}")
-        print(usage)
+        print("Run 'isnad --help' for usage.")
         sys.exit(1)
 
 

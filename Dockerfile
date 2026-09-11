@@ -8,7 +8,7 @@ ENV SENTENCE_TRANSFORMERS_HOME=/app/.cache/sentence_transformers
 # ── Builder stage ──────────────────────────────────────────────
 FROM base AS builder
 RUN pip install --no-cache-dir uv
-COPY pyproject.toml README.md ./
+COPY pyproject.toml README.md LICENSE ./
 COPY src/ src/
 RUN uv pip install --system ".[api,nli]"
 
