@@ -15,21 +15,21 @@
 
 1. [The Big Picture: Four Independent Loops](#the-big-picture-four-independent-loops)
 2. [Module Map: What Lives Where](#module-map-what-lives-where)
-3. [Loop 1: The Chain (isnād)](#loop-1-the-chain-isnād)
-4. [Loop 2: The Registry (rijāl)](#loop-2-the-registry-rijāl)
+3. [Loop 1: The Chain (isnād)](#loop-1-the-chain-isnad)
+4. [Loop 2: The Registry (rijāl)](#loop-2-the-registry-rijal)
 5. [Loop 3: Chain Grading (weakest-link)](#loop-3-chain-grading-weakest-link)
-6. [Corroboration (mutābaʿāt)](#corroboration-mutābaʿāt)
+6. [Corroboration (mutābaʿāt)](#corroboration-mutabaat)
 7. [Loop 4: Content Criticism (matn)](#loop-4-content-criticism-matn)
 8. [The Decision Matrix](#the-decision-matrix)
-9. [Grade Freshness & Time Decay](#grade-freshness--time-decay)
-10. [Narrator Identity & Versioning](#narrator-identity--versioning)
+9. [Grade Freshness & Time Decay](#grade-freshness-time-decay)
+10. [Narrator Identity & Versioning](#narrator-identity-versioning)
 11. [Persistence Layer](#persistence-layer)
 12. [API Layer](#api-layer)
 13. [CLI](#cli)
 14. [Trace Capture (LangChain)](#trace-capture-langchain)
 15. [Trace Schema v0.1](#trace-schema-v01)
 16. [Chain Viewer](#chain-viewer)
-17. [LangChain Integration (older tracer + decorator)](#langchain-integration-older-tracer--decorator)
+17. [LangChain Integration (older tracer + decorator)](#langchain-integration-older-tracer-decorator)
 18. [The Full End-to-End Flow](#the-full-end-to-end-flow)
 19. [Where to Start Contributing](#where-to-start-contributing)
 
@@ -102,6 +102,8 @@ src/isnad/
 ├── types.py                     All enums, Protocols, ordinal types
 ├── models.py                    Pydantic DTOs + SQLAlchemy ORM models
 ├── matn.py                      DeterministicRuleCritic (simple stub)
+├── quick.py                     One-shot grading convenience wrapper
+├── scan.py                      Batch / directory scan entry point
 │
 ├── core/                        ── The engine ──
 │   ├── chain.py                 Chain + ChainLinkSpec construction
@@ -110,20 +112,30 @@ src/isnad/
 │   ├── corroboration.py         Independent-chain upgrade + madār detection
 │   ├── decision.py              4×3 matrix: chain × content → action
 │   ├── identity.py              alias@version resolution
-│   └── volatility.py            Grade TTL / stale window / expiry
+│   ├── volatility.py            Grade TTL / stale window / expiry
+│   ├── policies.py              Policy registry + swappable-policy protocols
+│   ├── chain_grounding.py       Chain-scoped corpus + grounding policy
+│   ├── content_madar.py         Content-level shared-error fingerprinting
+│   ├── co_failure.py            Co-failure / shared-error detection
+│   └── fidelity.py              Per-link transformation-fidelity verdicts
 │
 ├── audit/                       ── Audit evidence layer ──
 │   ├── schema.py                AuditRecord + JSON Schema
 │   ├── canonical.py             RFC 8785 canonicalization
 │   ├── exporter.py              build + emit tamper-evident records
 │   ├── chainlog.py              linear hash-chain (prev_hash) integrity
-│   └── merkle_log.py            Merkle batch log (parallel agents, CT-style)
+│   ├── merkle_log.py            Merkle batch log (parallel agents, CT-style)
+│   └── sign.py                  Detached-signature audit signing
 │
 ├── critics/                     ── Content criticism ──
 │   ├── base.py                  ContentCritic Protocol
 │   ├── embedding.py             TF-IDF cosine similarity critic
 │   ├── nli.py                   HybridCritic (MiniLM + DeBERTa NLI)
 │   ├── llm.py                   LLM-backed critic (provider-agnostic)
+│   ├── affirmation_gate.py      Affirmation gate (expert-flag gating)
+│   ├── ensemble.py              Critic ensembling
+│   ├── recompute.py             Recompute / refresh verdicts
+│   ├── routing.py               Critic routing / selection
 │   └── eval.py                  Evaluation harness for critics
 │
 ├── storage/                     ── Persistence ──
@@ -137,6 +149,7 @@ src/isnad/
 │   └── endpoints/
 │       ├── claims.py            Claim grading + version drift
 │       ├── narrators.py         Registry CRUD
+│       ├── review.py            Human review queue
 │       └── health.py            Health + Prometheus /metrics
 │
 ├── cli/                         ── CLI ──
@@ -152,10 +165,18 @@ src/isnad/
 │   │   ├── tracer.py            IsnadTracer (older, flat-list, report())
 │   │   ├── helpers.py           seed_registry(), CriticAdapter
 │   │   └── decorator.py         @isnad_track decorator
+│   ├── crewai.py                ── CrewAI integration ──
+│   ├── langgraph.py             ── LangGraph integration ──
+│   ├── llamaindex.py            ── LlamaIndex integration ──
+│   ├── mcp.py                   ── MCP server (glama.json) ──
+│   ├── otel/                    ── OpenTelemetry integration ──
 │   └── liveverify/              ── Live Verify integration ──
 │       ├── client.py            verify: seal lookup (consumer)
 │       ├── issuer.py            create sealed verdicts (issuer)
 │       └── adapter.py           register_sealed_source — seal → high-trust narrator
+
+bench/                               ── ISNAD-Bench eval suite ──
+└── (README, mapping, export, human ceiling, ikhtilat)
 
 viewer/
 └── index.html                   Self-contained chain viewer (3 fixtures)
@@ -391,6 +412,7 @@ upgraded.  This is *mutābaʿāt* from hadith science.
 
 ```
 Shared narrator IDs?                  → score = 0.0 (hard correlation)
+Shared retrieved-document hashes?    → score = 0.0 (hard correlation — the madār case)
 Both chains carry lineage, no shared  → score = 1.0 (independent, earned)
   signal (family / upstream source)
 Shared model family?                  → penalty = 0.4 per shared family
@@ -419,13 +441,35 @@ The detector catches this via shared upstream sources.
 - **Minimum-grade gate**: at least one corroborating chain must be HASAN+
 - **Information-theoretic**: combined error = ∏ p_i (multiplicative reduction)
 - **Effective weight**: log-reduction / log(p_hasan). Must reach 2.0 for upgrade.
+- **Tawātur discount (#54)**: every chain carries a shared blind-spot prior
+  (`shared_blind_spot_prior = 0.20` by default; witness-type-aware for the
+  shāhid/mutābaʿa distinction) — even a topology-independent chain is not a full
+  witness, so its weight is discounted.
+- **Effective witnesses**: `effective_witnesses = Σ (independence_score × (1 − blind-spot prior))`;
+  caps the effective count below the nominal count.
 
 ### CorroborationEngine
 
 Operational engine: finds corroborating chains by exact text match or
-pre-matched via `evaluate_direct()`.  Validated on Wikipedia + physics
-textbooks (707 claim pairs, 100% fire rate, 8/8 negative controls —
-Wikipedia corpus only; physics controls pending, #127).
+pre-matched via `evaluate_direct()`.  Runs content-level madār detection
+(`detect_content_madar` → `shared_error_detected`), so two chains echoing the
+same *wrong* claim are not counted as independent.  Validated on Wikipedia +
+physics textbooks (707 claim pairs, 100% fire rate, 9/9 negative controls —
+the v3 harness adds a C9 shared-document-hash control, closing #127).
+
+### Content-madār (shared-error fingerprinting)
+
+**File:** `core/content_madar.py` (#54 — the *detectable* half of chain independence)
+
+The N_eff / tawātur discount prices in the *unobservable* shared-failure prior;
+`detect_content_madar` handles the *observable* half: two nominally-independent
+chains repeating the **same error** is a fingerprint of a common upstream (the
+classical madār), not independent confirmation.  The discriminator is error
+identity, not answer identity — agreeing on a *correct* statement is expected,
+agreeing on a *wrong* statement is suspicious.  Deterministic and dependency-free
+(numbers + units, named entities, dates, citation tokens, lexical shingles); it
+reports "evidence consistent with a shared error", never proof — the flag only
+withholds corroboration, it never serves or upgrades.
 
 ---
 
@@ -465,6 +509,25 @@ Returns `CONSISTENT` / `CONTRADICTION` / `UNVERIFIABLE`.
 
 Chain grading and content criticism are **fully decoupled**.  They never read
 each other's internals.  They combine only at the decision matrix.
+
+### Chain-scoped grounding
+
+**Files:** `core/chain_grounding.py`, wired into `POST /v1/claims` (`api/endpoints/claims.py`)
+
+The provenance-aware half of "is it grounded?".  The content critic answers "is this
+claim's information in the retrieved rows?" against one merged corpus — but that merged
+pile has lost track of *which link fetched which row*.  A claim can look grounded because
+its supporting row is somewhere in the pile, even when that row was fetched by a different
+branch that never fed this claim.
+
+- `chain_scoped_corpus(chain)` — the primitive: rows retrieved by links *on this claim's
+  own chain* (deterministic chain topology).
+- `ChainScopedGroundingPolicy` / `evaluate_chain_grounding` — the policy: reports a
+  **grounding gap** (`grounded_off_chain_only`) when the claim is CONSISTENT off-chain but
+  UNVERIFIABLE on-chain.  A *gap*, not proven contamination — deliberately no route into
+  the SERVE/REVIEW/QUARANTINE matrix yet.
+
+See `docs/chain-scoped-grounding.md`.
 
 ---
 
