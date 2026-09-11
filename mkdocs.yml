@@ -57,6 +57,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - Quickstart: quickstart.md
+  - Concepts: concepts.md
+  - Compliance: compliance.md
   - Provenance: provenance.md
   - CLI Reference: cli-reference.md
   - Architecture: ARCHITECTURE.md
