@@ -10,6 +10,11 @@ and a tamper-evident audit trail**, so you can answer the question hallucination
 detectors and observability tools skip: *who handled this claim, in what order,
 and how much do we trust each one?*
 
+> **The one-sentence pitch:** ISNAD gives you the **tamper-evident audit records your
+> regulators will demand** — a SHA-256 hash for every graded claim, mapped to the EU AI
+> Act, ISO/IEC 42001, NIST AI RMF, and SDAIA. **You pass your audit.** 📋
+
+
 > **Proof it works:** ISNAD's weakest-link rule reproduces **1,200 years of
 > scholar chain verdicts at Cohen's κ = 0.87** across 575,060 graded hadith
 > chains. (For context: scholars disagree with each other on *narrator grades*
@@ -73,11 +78,11 @@ skip: **"who handled this claim, and how much do we trust each transmitter?"**
 
 | Tool | What it grades | Records the chain (lineage)? | Grades the transmitters / chain (trust)? |
 | --- | --- | --- | --- |
-| Cleanlab TLM | Trustworthiness of the LLM **response** | No | No |
-| Galileo / Patronus / TruLens / RAGAS | Output **faithfulness / groundedness** vs retrieved context | No | No |
-| LangSmith / Langfuse / Arize | **Traces** (what happened) + output evals | Yes | No |
-| OpenLineage / Marquez / DataHub | **Data lineage** (what touched what) | Yes | No |
-| **ISNAD** | **The transmitters and the transmission chain** — weakest-link grading, corroboration with madār discounting, tamper-evident audit | **Yes** | **Yes** |
+| 🧪 Cleanlab TLM | Trustworthiness of the LLM **response** | ❌ | ❌ |
+| 🎯 Galileo / Patronus / TruLens / RAGAS | Output **faithfulness / groundedness** vs retrieved context | ❌ | ❌ |
+| 🔍 LangSmith / Langfuse / Arize | **Traces** (what happened) + output evals | ✅ | ❌ |
+| 🧬 OpenLineage / Marquez / DataHub | **Data lineage** (what touched what) | ✅ | ❌ |
+| ✨ **ISNAD** | **The transmitters and the transmission chain** — weakest-link grading, corroboration with madār discounting, tamper-evident audit | ✅ | ✅ |
 
 **What ISNAD is NOT — and why that's the point.** Three honest answers, up front:
 
@@ -187,6 +192,17 @@ mw = IsnadMiddleware(reg, domain="physics")  # wrap_tool_call grades + gates
 
 ---
 
+## Documentation
+
+Read in order, or jump to what you need:
+
+- 🚀 **[Quickstart](docs/quickstart.md)** — add ISNAD to your LangChain agent in 5 minutes.
+- 💡 **[Concepts](docs/concepts.md)** — how isnād–rijāl maps to multi-agent provenance.
+- 📋 **[Compliance](docs/compliance.md)** — EU AI Act · ISO/IEC 42001 · NIST AI RMF · SDAIA.
+- 📊 **[Model-drift leaderboard](docs/model-drift-leaderboard.md)** — measured hallucination vs. chain depth.
+- 🗺️ **[Architecture](docs/ARCHITECTURE.md)** — the four loops and the module map.
+
+
 ## What's Validated vs. What's Not
 
 The honesty box is the point: what's proven, what's measured, and what's open.
@@ -275,10 +291,10 @@ Chain grade × content verdict → action:
 
 | | Content CONSISTENT | Content CONTRADICTION | Content UNVERIFIABLE |
 | --- | --- | --- | --- |
-| **Ṣaḥīḥ** (sound) | **SERVE** — cache | **REVIEW** — ʿilal signal (highest-value case) | **SERVE WITH CAVEAT** |
-| **Ḥasan** (good) | **SERVE WITH CAVEAT** | **REVIEW** — hold, do not serve | **REVIEW** |
-| **Ḍaʿīf** (weak) | **REVIEW** — seek corroboration | **QUARANTINE** | **REVIEW** |
-| **Mawḍūʿ** (fabricated) | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR** | **REJECT + QUARANTINE NARRATOR** |
+| **Ṣaḥīḥ** (sound) | ✅ **SERVE** — cache | 🔍 **REVIEW** — ʿilal signal (highest-value case) | ⚠️ **SERVE WITH CAVEAT** |
+| **Ḥasan** (good) | ⚠️ **SERVE WITH CAVEAT** | 🔍 **REVIEW** — hold, do not serve | 🔍 **REVIEW** |
+| **Ḍaʿīf** (weak) | 🔍 **REVIEW** — seek corroboration | 🚫 **QUARANTINE** | 🔍 **REVIEW** |
+| **Mawḍūʿ** (fabricated) | ⛔ **REJECT + QUARANTINE NARRATOR** | ⛔ **REJECT + QUARANTINE NARRATOR** | ⛔ **REJECT + QUARANTINE NARRATOR** |
 
 Two defaults to notice: contradictions go to a human by default (LLMs are bad at
 reconciling competing evidence), and **ṣaḥīḥ × contradiction is the highest-value
@@ -453,6 +469,7 @@ Built in public — collaborators welcome. The on-ramp:
 ## Ecosystem
 
 - 🌐 **Site:** <https://alizahidraja.com/isnad> · 📄 **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · 🤗 **HF Papers:** [2607.24117](https://huggingface.co/papers/2607.24117) · 💾 **Software DOI:** [10.5281/zenodo.21216873](https://doi.org/10.5281/zenodo.21216873) · 📦 **PyPI:** [`isnad`](https://pypi.org/project/isnad/)
+- 🚀 **Docs — start here:** [`Quickstart`](docs/quickstart.md) (5-minute LangChain) · [`Concepts`](docs/concepts.md) (isnād–rijāl → multi-agent) · [`Compliance`](docs/compliance.md) (EU AI Act · ISO 42001 · NIST RMF · SDAIA) · [`Model-drift leaderboard`](docs/model-drift-leaderboard.md)
 - 🗺️ **Architecture:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) · 🔗 **Trace schema:** [`docs/trace-schema.md`](docs/trace-schema.md) · 👁️ **Chain viewer:** [`viewer/index.html`](viewer/index.html)
 - 🧪 **Benchmark:** [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md) · 🤗 **ISNAD-Bench dataset:** [`alizahidraja/isnad-bench`](https://huggingface.co/datasets/alizahidraja/isnad-bench) · 📊 **Critic eval:** [`docs/critics.md`](docs/critics.md) · 🕵️ **xz sleeper-narrator case study:** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md)
 
