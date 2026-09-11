@@ -1,5 +1,7 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "name": "isnad",
+  "description": "ISNAD — an LLM provenance / AI audit-trail framework: trace who transformed a claim (chain/isnād), grade narrator reliability (rijāl), and adjudicate content with the decision matrix.",
   "maintainers": [
     "alizahidraja"
   ]

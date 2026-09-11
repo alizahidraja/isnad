@@ -207,7 +207,8 @@ The honesty box is the point: what's proven, what's measured, and what's open.
 | **Period-sliced grades** | ✅ Implemented | `get_grade_as_of()` — the ikhtilāṭ (decline) remedy, #43 |
 | **Integrity ladder + recoverability** | ✅ Implemented | Integrity strikes are permanent; precision-driven REJECTED is recoverable (#30, #40) |
 
-**Honest limits (stated up front):** cold-start is worse per-role; integrity is
+**Honest limits (stated up front):** grades are **ordinal-only** (ṣaḥīḥ > ḥasan > ḍaʿīf,
+never a numeric confidence); cold-start is worse per-role; integrity is
 domain-scoped, not global; chain independence cannot be *proven* from topology
 (only assumed from attested lineage, then discounted — #54); the content critic is
 the coverage ceiling; corroboration rarely fires on dense technical corpora where
