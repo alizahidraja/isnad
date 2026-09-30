@@ -153,8 +153,8 @@ class TestClaims:
         for rec in body if isinstance(body, list) else [body]:
             ci = rec.get("corroboration_result") or {}
             for entry in ci.get("chain_independence") or []:
-                assert "score" in entry and "is_independent" in entry and "shared_signals" in entry
-                assert entry["is_independent"] == (entry["score"] >= 0.8)
+                assert "score" not in entry  # raw numeric float must not leak (ordinal moat)
+                assert "is_independent" in entry and "shared_signals" in entry
 
     def test_claim_404(self):
         assert (
@@ -278,7 +278,8 @@ class TestClaims:
         for leaked in ("effective_weight", "effective_witnesses", "shared_blind_spot_prior"):
             assert leaked not in corr, f"{leaked} leaked into the public record"
         for entry in corr.get("chain_independence", []):
-            assert "independence" not in entry
+            assert "score" not in entry
+            assert "is_independent" in entry
             assert "shared_signals" in entry
 
 
@@ -513,6 +514,65 @@ class TestClaimHydration:
         # The corroboration index is rebuilt too.
         assert _app_state.find_corroborating("e = mc^2", "hydrate-test-1") == []
         assert "hydrate-test-1" in _app_state._corroboration_index["e = mc^2"]
+
+    def test_hydrate_legacy_sahih_does_not_reserve(self):
+        """Legacy rows (no content_verdict/action) must fall back to REVIEW, never serve."""
+        from isnad.api.endpoints.claims import _app_state, _hydrate_claims_from_db
+        from isnad.core.chain import Chain, ChainLinkSpec, store_claim
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import TransformType
+
+        _app_state.claims.clear()
+        chain = Chain([
+            ChainLinkSpec(
+                "src", 0, version="1.0", transform_type=TransformType.PASS_THROUGH, domain="physics"
+            )
+        ])
+        with get_session() as session:
+            store_claim(
+                session,
+                "legacy = mc^2",
+                "physics/rel",
+                chain,
+                chain_grade="sahih",
+                claim_id="legacy-sahih-1",
+            )
+        with get_session() as session:
+            _hydrate_claims_from_db(session)
+        rec = _app_state.claims["legacy-sahih-1"]
+        assert rec["chain_grade"] == "sahih"
+        assert rec["action"] == "review"
+        assert rec["served"] is False
+
+    def test_hydrate_resolves_versioned_narrator_ids(self):
+        from isnad.api.endpoints.claims import _app_state, _hydrate_claims_from_db
+        from isnad.core.chain import Chain, ChainLinkSpec, store_claim
+        from isnad.storage.sqlalchemy import get_session
+        from isnad.types import TransformType
+
+        _app_state.claims.clear()
+        chain = Chain([
+            ChainLinkSpec(
+                "alias",
+                0,
+                version="v1",
+                transform_type=TransformType.PASS_THROUGH,
+                domain="physics",
+            )
+        ])
+        with get_session() as session:
+            store_claim(
+                session,
+                "versioned claim",
+                "physics/rel",
+                chain,
+                chain_grade="daif",
+                claim_id="versioned-1",
+            )
+        with get_session() as session:
+            _hydrate_claims_from_db(session)
+        rec = _app_state.claims["versioned-1"]
+        assert rec["resolved_narrator_ids"] == ["alias@v1"]
 
     def test_hydration_preserves_contradiction_verdict(self):
         """P0-A: a held SAHIH × CONTRADICTION (REVIEW) must stay REVIEW after
@@ -1073,8 +1133,9 @@ class TestReGradeLoopClosure:
             assert rec.adalah_grade == AdalahGrade.COMPROMISED
             assert rec.is_active is False
 
-    def test_reader_cannot_quarantine_via_submission(self):
-        """A reader key can submit but must NOT mutate narrator grades (issue #190)."""
+    def test_reader_cannot_submit_claim(self):
+        """A reader key must NOT write claims (P0 gate: submit is admin-only)."""
+        from isnad.core.registry import RegistryDB  # 190)."""
         from isnad.core.registry import RegistryDB
         from isnad.storage.sqlalchemy import get_session
         from isnad.types import AdalahGrade, NarratorGrade, NarratorType
@@ -1099,7 +1160,7 @@ class TestReGradeLoopClosure:
             },
             headers={"X-API-Key": "isnad-reader"},
         )
-        assert r.status_code == 200
+        assert r.status_code == 403  # reader cannot submit (P0 gate)
 
         with get_session() as session:
             rdb = RegistryDB(session=session)
@@ -1223,3 +1284,27 @@ class TestCriticAffirmCapability:
 
     def test_none_handled(self):
         assert _critic_can_affirm_consistent(None) is False
+
+
+def test_audit_round_trip_verifies_on_read(monkeypatch):
+    """POST -> rehydrate from DB -> GET /audit must recompute the hash and verify the signature."""
+    monkeypatch.setenv("ISNAD_HMAC_SECRET", "roundtrip-secret")
+    r = client.post(
+        "/v1/claims",
+        json={"claim_text": "round trip claim", "chain": [{"narrator_id": "source:rt"}]},
+        headers={"X-API-Key": "isnad-admin"},
+    )
+    assert r.status_code == 200
+    cid = r.json()["claim_id"]
+
+    from isnad.api.endpoints.claims import _app_state, _hydrate_claims_from_db
+    from isnad.storage.sqlalchemy import get_session
+
+    _app_state.claims.clear()
+    with get_session() as session:
+        _hydrate_claims_from_db(session)
+
+    a = client.get(f"/v1/claims/{cid}/audit", headers={"X-API-Key": "isnad-admin"}).json()
+    assert a["audit_signed"] is True
+    assert a["hash_matches"] is True
+    assert a["signature_verified"] is True

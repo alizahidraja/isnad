@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import logging
 import os
 import uuid
@@ -13,7 +14,7 @@ from fastapi import Depends, HTTPException, Query, Security
 from fastapi.routing import APIRouter
 from pydantic import BaseModel, Field
 
-from isnad.api.auth import _check_auth, api_key_header, require_auth
+from isnad.api.auth import _check_auth, api_key_header, require_admin, require_auth
 from isnad.api.dependencies import _metrics_counters, get_critic, get_fidelity_critic, get_registry
 from isnad.core.chain import (
     Chain,
@@ -32,7 +33,7 @@ from isnad.core.identity import is_unknown_version, resolve_narrator_id
 from isnad.core.registry import Registry, RegistryDB
 from isnad.critics.embedding import TFIDFIndex
 from isnad.models import ReviewQueue
-from isnad.types import Action, ChainGrade, ContentVerdict, NarratorGrade, TransformType
+from isnad.types import Action, ContentVerdict, NarratorGrade, TransformType
 
 logger = logging.getLogger("isnad.api")
 router = APIRouter(prefix="/v1", tags=["claims"])
@@ -74,6 +75,11 @@ def _critic_can_affirm_consistent(critic: Any) -> bool:
     return not gate
 
 
+def _sha256(text: str) -> str:
+    """SHA-256 hex digest — redacts raw claim text inside audit records."""
+    return hashlib.sha256(text.encode()).hexdigest()
+
+
 def _emit_audit_trail(
     *,
     chain: Chain,
@@ -83,7 +89,7 @@ def _emit_audit_trail(
     final_grade: str,
     registry: Registry,
     domain: str,
-) -> tuple[str, str | None]:
+) -> tuple[str, str | None, dict]:
     """Emit a tamper-evident AuditRecord for a submitted claim (issue #189).
 
     Builds a self-hashed AuditRecord from the in-memory chain and grades, signs it
@@ -107,7 +113,8 @@ def _emit_audit_trail(
 
     nodes: list[ChainNodeAudit] = []
     for i, (link, grade) in enumerate(zip(chain.links, link_grades, strict=True)):
-        narrator = registry.get(link.narrator_id, domain)
+        resolved = resolve_narrator_id(link.narrator_id, link.version)
+        narrator = registry.get(resolved, domain) or registry.get(link.narrator_id, domain)
         nodes.append(
             ChainNodeAudit(
                 narrator_id=link.narrator_id,
@@ -139,7 +146,7 @@ def _emit_audit_trail(
 
     record = build_audit_record_from_nodes(
         claim_id=claim_id,
-        claim_text=claim_text,
+        claim_text=_sha256(claim_text),
         final_grade=final_grade,
         grading_strategy=GradingStrategy(name="RefinedWeakestLink", version="1"),
         nodes=nodes,
@@ -269,7 +276,6 @@ def _hydrate_claims_from_db(session: Any) -> int:
 
     Returns the number of claims hydrated.
     """
-    from isnad.core.decision import decide
     from isnad.models import RijalClaim
 
     rows = session.query(RijalClaim).order_by(RijalClaim.valid_from).all()
@@ -279,6 +285,11 @@ def _hydrate_claims_from_db(session: Any) -> int:
             continue
         chain = row.narrator_chain or []
         narrator_ids = [link.get("narrator_id", "") for link in chain if isinstance(link, dict)]
+        resolved_ids = [
+            resolve_narrator_id(link.get("narrator_id", ""), link.get("version"))
+            for link in chain
+            if isinstance(link, dict)
+        ]
         domain = "general"
         for link in chain:
             if isinstance(link, dict) and link.get("domain"):
@@ -294,7 +305,7 @@ def _hydrate_claims_from_db(session: Any) -> int:
             action_value = row.action
         else:
             cv_value = ContentVerdict.UNVERIFIABLE.value
-            action_value = decide(ChainGrade(cg), ContentVerdict.UNVERIFIABLE).value
+            action_value = Action.REVIEW.value
         _app_state.claims[row.claim_id] = {
             "claim_id": row.claim_id,
             "claim_text": row.claim_text,
@@ -315,7 +326,7 @@ def _hydrate_claims_from_db(session: Any) -> int:
             "page_slug": row.page_slug,
             "corroborating_claims": 0,
             "narrator_ids": narrator_ids,
-            "resolved_narrator_ids": narrator_ids,
+            "resolved_narrator_ids": resolved_ids,
             "link_grades": [],
             "link_fidelity_verdicts": [],
             "version_drift_detected": False,
@@ -420,8 +431,15 @@ async def list_claims(
                 "chain_grade": c["chain_grade"],
                 "action": c["action"],
                 "domain": c.get("domain", "general"),
-                "corroborating_claims": c.get("corroborating_claims", 0),
+                "corroborating_claims": len(
+                    state.find_corroborating(c.get("normalized_text", ""), c["claim_id"])
+                ),
             }
+            | (
+                {"claim_text": c.get("claim_text", ""), "claim_text_redacted": False}
+                if not served_only
+                else {}
+            )
             for c in page
         ],
     }
@@ -441,9 +459,13 @@ def _narrator_metadata_for_claims(
     the corroborating narrators.
     """
     all_ids = set(base_narrator_ids)
+    id_to_domain = dict.fromkeys(base_narrator_ids, domain)
     for cd in all_chain_dicts:
-        all_ids.update(cd.get("narrator_ids", []) or [])
-    return {nid: registry.get_metadata(nid, domain) for nid in all_ids}
+        cd_domain = cd.get("domain", domain)
+        for nid in cd.get("narrator_ids", []) or []:
+            all_ids.add(nid)
+            id_to_domain.setdefault(nid, cd_domain)
+    return {nid: registry.get_metadata(nid, id_to_domain.get(nid, domain)) for nid in all_ids}
 
 
 @router.post("/claims")
@@ -452,7 +474,7 @@ async def submit_claim(
     reg: RegistryDB = Depends(get_registry),
     critic: Any = Depends(get_critic),
     fidelity_critic: Any = Depends(get_fidelity_critic),
-    role: str = Depends(require_auth),
+    role: str = Depends(require_admin),
 ) -> dict:
     state = get_state()
     chain_data = body.chain
@@ -491,12 +513,14 @@ async def submit_claim(
     link_fidelity_verdicts = compute_fidelity_verdicts(chain, fidelity_critic)
     # Serving-path corroboration is applied post-hoc by CorroborationEngine below
     # (grade_chain's corroboration_support=True repair branch is a separate, non-serving path).
+    has_corroborating = bool(state.find_corroborating(normalized, ""))
     cg = grade_chain(
         link_grades,
         [l.transform_type for l in chain.links],
         is_complete=chain.is_complete,
         link_adalah_grades=link_adalah_grades,
         link_fidelity_verdicts=link_fidelity_verdicts,
+        corroboration_support=has_corroborating,
     )
 
     # Content verdict — computed BEFORE corroboration (issue #11: corroboration
@@ -543,6 +567,7 @@ async def submit_claim(
             "chain_grade": rec.get("chain_grade", "daif"),
             "narrator_ids": rec.get("resolved_narrator_ids", rec.get("narrator_ids", [])),
             "source": rec.get("page_slug", ""),
+            "domain": rec.get("domain", "general"),
             "document_hashes": _extract_document_hashes(rec),
             # Each stored claim's content verdict, so the corroboration engine
             # can detect content-level madār (a corroborator repeating the same
@@ -652,7 +677,6 @@ async def submit_claim(
             # is the ordinal grade + boolean upgraded + shared-signal reasons.
             "chain_independence": [
                 {
-                    "score": a.score,
                     "is_independent": a.is_independent,
                     "shared_signals": list(a.shared_signals),
                 }
@@ -769,7 +793,7 @@ async def submit_claim(
 
 
 @router.get("/claims/{claim_id}")
-async def get_claim(claim_id: str, _role: str = Depends(require_auth)) -> dict:
+async def get_claim(claim_id: str, role: str = Depends(require_auth)) -> dict:
     state = get_state()
     if claim_id not in state.claims:
         raise HTTPException(404, "Claim not found")
@@ -777,6 +801,9 @@ async def get_claim(claim_id: str, _role: str = Depends(require_auth)) -> dict:
     normalized = record.get("normalized_text", "")
     record["corroborating_claims"] = len(state.find_corroborating(normalized, claim_id))
     record["chain"] = _redact_chain(record.get("chain"))
+    record.pop("audit_payload", None)
+    if role != "admin":
+        record["claim_text"] = "<redacted>"
     return record
 
 
@@ -816,8 +843,14 @@ async def get_claim_audit(claim_id: str, _role: str = Depends(require_auth)) -> 
     recomputed = canonical_hash(payload)
     secret = os.environ.get("ISNAD_HMAC_SECRET") or os.environ.get("ISNAD_SIGNING_SECRET")
     signature_verified = None
+    signature_reason = None
     if stored_sig and secret:
         signature_verified = hmac_verifier(secret)(canonical_json(payload), stored_sig)
+        if not signature_verified:
+            signature_reason = "signature does not match the persisted payload"
+    elif stored_sig and not secret:
+        signature_verified = False
+        signature_reason = "signature present but no signing secret configured"
     return {
         "claim_id": claim_id,
         "audit_record": payload,
@@ -825,4 +858,5 @@ async def get_claim_audit(claim_id: str, _role: str = Depends(require_auth)) -> 
         "hash_matches": recomputed == stored_hash,
         "audit_signed": stored_sig is not None,
         "signature_verified": signature_verified,
+        "signature_reason": signature_reason,
     }

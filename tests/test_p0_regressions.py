@@ -74,8 +74,12 @@ def test_list_claims_redacts_claim_text(monkeypatch):
                 "domain": "general",
                 "corroborating_claims": 0,
                 "served": True,
+                "normalized_text": "secret",
             }
         }
+
+        def find_corroborating(self, normalized_text, exclude_id):
+            return []
 
     monkeypatch.setattr(claims_mod, "get_state", lambda: _State())
 
