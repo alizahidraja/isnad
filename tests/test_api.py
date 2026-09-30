@@ -136,8 +136,10 @@ class TestClaims:
         r = client.get(f"/v1/claims/{cid2}", headers={"X-API-Key": "isnad-admin"})
         assert r.json()["corroborating_claims"] >= 1
 
-    def test_chain_independence_score_surfaced(self):
-        """The calibrated independence score (not just signals) reaches the API."""
+    def test_chain_independence_score_not_surfaced(self):
+        """The calibrated independence score is internal; the API surfaces only the
+        ordinal gate (is_independent) + provenance (shared_signals), never a float."""
+        checked = False
         for nid in ("source:A", "source:B"):
             r = client.post(
                 "/v1/claims",
@@ -149,12 +151,12 @@ class TestClaims:
                 headers={"X-API-Key": "isnad-admin"},
             )
             assert r.status_code == 200
-        body = client.get("/v1/claims", headers={"X-API-Key": "isnad-admin"}).json()
-        for rec in body if isinstance(body, list) else [body]:
-            ci = rec.get("corroboration_result") or {}
+            ci = r.json().get("corroboration_result") or {}
             for entry in ci.get("chain_independence") or []:
-                assert "score" not in entry  # raw numeric float must not leak (ordinal moat)
+                assert "score" not in entry
                 assert "is_independent" in entry and "shared_signals" in entry
+                checked = True
+        assert checked
 
     def test_claim_404(self):
         assert (

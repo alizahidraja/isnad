@@ -102,7 +102,17 @@ def migrate_db(url: str | None = None) -> None:
     if inspector.has_table("alembic_version"):
         command.upgrade(cfg, "head")
     else:
-        command.stamp(cfg, "head")
+        # No alembic_version: either a fresh create_all schema (already at head)
+        # or a legacy pre-migration schema missing the newer columns.
+        cols = {c["name"] for c in inspector.get_columns("rijal_claims")}
+        if "audit_payload" in cols:
+            command.stamp(cfg, "head")
+        else:
+            # Legacy create_all schema predates the additive column migrations.
+            # Stamp to the base revision, then upgrade: the additive migrations
+            # (op.add_column) are safe on the existing table.
+            command.stamp(cfg, "bcf1da0dec28")
+            command.upgrade(cfg, "head")
 
 
 def drop_db(url: str | None = None) -> None:
