@@ -10,7 +10,8 @@ FROM base AS builder
 RUN pip install --no-cache-dir uv
 COPY pyproject.toml README.md LICENSE ./
 COPY src/ src/
-RUN uv pip install --system ".[api,nli]"
+# postgres extra provides psycopg2 for the compose Postgres DB (SQLite is the default).
+RUN uv pip install --system ".[api,nli,postgres]"
 
 # Pre-download NLI models so they are baked into the image
 RUN python -c "import sentence_transformers; \
@@ -25,7 +26,10 @@ COPY src/ src/
 COPY alembic/ alembic/
 COPY alembic.ini .
 COPY pyproject.toml README.md LICENSE ./
-RUN mkdir -p /app/data
+RUN mkdir -p /app/data && \
+    useradd --create-home --uid 10001 isnad && \
+    chown -R isnad:isnad /app
+USER isnad
 
 # Default: Bayesian policy (set ISNAD_POLICY=threshold to use threshold)
 ENV ISNAD_POLICY=bayesian

@@ -25,7 +25,6 @@ dependencies = [
     "sqlalchemy>=2.0,<3.0",
     "pydantic>=2.0,<3.0",
     "alembic>=1.13,<2.0",
-    "psycopg2-binary>=2.9,<3.0",
 ]
 
 [project.urls]
@@ -38,11 +37,16 @@ Issues = "https://github.com/alizahidraja/isnad/issues"
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=8.0",
-    "pytest-asyncio>=0.24",
+    "mypy>=2.1.0",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
     "ruff>=0.15.20,<0.16",
-    "mypy>=1.11",
-    "pre-commit>=3.8",
+    "fastapi>=0.115",
+    "httpx>=0.28",
+    "langgraph>=0.2",
+    "cryptography>=42.0",
+    "mkdocs-material>=9.7.7",
 ]
 anthropic = [
     "anthropic>=0.40",
@@ -69,8 +73,14 @@ api = [
 nli = [
     "sentence-transformers>=3.0",
 ]
+postgres = [
+    "psycopg2-binary>=2.9,<3.0",
+]
+signing = [
+    "cryptography>=42.0",
+]
 all = [
-    "isnad[dev,anthropic,langchain,langgraph,crewai,llamaindex,api,nli,mcp]",
+    "isnad[dev,anthropic,langchain,langgraph,crewai,llamaindex,api,nli,mcp,postgres,signing]",
 ]
 
 [project.scripts]

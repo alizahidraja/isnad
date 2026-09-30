@@ -6,9 +6,16 @@ on:
       unpublish_version:
         description: "Version to unpublish (e.g. 2.23.0) — leave empty to publish"
         required: false
+  # Publishing is driven by pushing a `js-v*` tag (e.g. `git tag js-v0.1.1`),
+  # because the npm `isnad` package is the verifier-only 0.1.x track — distinct
+  # from the Python core version. No `main`-path trigger on purpose.
   push:
     tags:
       - "js-v*"
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
 
 jobs:
   publish:
