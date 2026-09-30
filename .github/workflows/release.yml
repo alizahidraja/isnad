@@ -1,8 +1,10 @@
 name: Release
 
-# Triggered manually from the Actions tab, or on a push to main with a
-# version-bump commit message.  Bumps the version, tags, and publishes
-# to PyPI.
+# Triggered manually from the Actions tab, or on a push to main that edits a
+# version-bearing file (pyproject.toml / CITATION.cff / src/isnad/__init__.py).
+# This workflow READS the already-bumped version (it does NOT bump), verifies
+# the three version files agree and the version is newer than the latest tag,
+# then publishes to PyPI, tags, and creates a GitHub Release.
 #
 # Branch flow (see CONTRIBUTING.md):
 #   feature/*  ->  working  (CI runs)  ->  main  (this workflow releases)
@@ -20,9 +22,12 @@ permissions:
   contents: write
   id-token: write
 
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
   release:
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -42,16 +47,34 @@ jobs:
           rm -rf dist
           uv build
 
+      - name: Verify version consistency + bump guard
+        id: version
+        run: |
+          V="$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")"
+          INIT="$(python -c "import re,pathlib; m=re.search(r'__version__ = \"(.+)\"', pathlib.Path('src/isnad/__init__.py').read_text()); print(m.group(1))")"
+          CFF="$(python -c "import re,pathlib; m=re.search(r'^version: (.+)$', pathlib.Path('CITATION.cff').read_text(), re.M); print(m.group(1).strip().strip(chr(34)))")"
+          if [ "$V" != "$INIT" ]; then echo "version mismatch: pyproject=$V init=$INIT" >&2; exit 1; fi
+          if [ "$V" != "$CFF" ]; then echo "version mismatch: pyproject=$V citation=$CFF" >&2; exit 1; fi
+          LATEST="$(git describe --tags --abbrev=0 2>/dev/null || echo 'v0.0.0')"
+          if printf '%s\n%s\n' "$LATEST" "v$V" | sort -V | tail -1 | grep -q "^v$V$"; then
+            echo "should_publish=true" >> "$GITHUB_OUTPUT"
+            echo "Releasing v$V (newer than $LATEST)"
+          else
+            echo "should_publish=false" >> "$GITHUB_OUTPUT"
+            echo "SKIP publish: v$V is not newer than $LATEST (dependency-only edit)."
+          fi
+
       - name: Publish to PyPI
+        if: steps.version.outputs.should_publish == 'true'
         uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # release/v1
         # Trusted Publishing (OIDC): no token secret. PyPI must have this repo
         # registered as a trusted publisher (workflow name: release.yml).
 
       - name: Create git tag
+        if: steps.version.outputs.should_publish == 'true'
         run: |
           VERSION="$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")"
           TAG="v${VERSION}"
-          # Tag only if it doesn't already exist (idempotent on re-runs).
           if git rev-parse "$TAG" >/dev/null 2>&1; then
             echo "Tag $TAG already exists — skipping."
           else
@@ -61,13 +84,12 @@ jobs:
           fi
 
       - name: Create GitHub Release
+        if: steps.version.outputs.should_publish == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           VERSION="$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")"
           TAG="v${VERSION}"
-          # A formal GitHub Release (not just a tag) so "what's new" is
-          # visible and Zenodo can archive per version.  Idempotent.
           if gh release view "$TAG" >/dev/null 2>&1; then
             echo "Release $TAG already exists — skipping."
           else
