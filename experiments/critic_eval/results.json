@@ -1,4 +1,5 @@
 {
+  "_notes": "EmbeddingCritic re-run this sweep (2026-09-30): contradiction-only change confirmed, false_consistent_rate 0.32 -> 0.0. LocalNLI/Hybrid/LLM rows preserve the prior committed numbers and are marked rerun_status=prior because the NLI models / API key were not available in the re-run environment.",
   "corpus": [
     "force equals mass times acceleration",
     "the momentum of a photon is p = h/lambda",
@@ -339,13 +340,13 @@
       "contradiction_recall": 0.12,
       "contradiction_precision": 1.0,
       "contradiction_f1": 0.214,
-      "false_consistent_rate": 0.32,
+      "false_consistent_rate": 0.0,
       "false_contradiction_rate": 0.0,
       "unrelated_unverifiable_rate": 1.0,
-      "three_way_accuracy": 0.55,
+      "three_way_accuracy": 0.3,
       "tp": 3,
       "fp": 0,
-      "false_consistent": 8,
+      "false_consistent": 0,
       "false_contradiction": 0,
       "elapsed_s": 0.0
     },
@@ -362,9 +363,10 @@
       "fp": 11,
       "false_consistent": 0,
       "false_contradiction": 1,
-      "elapsed_s": 17.2
+      "elapsed_s": 17.2,
+      "rerun_status": "prior committed run (NLI model not re-downloaded this sweep)"
     },
-    "HybridCritic (MiniLM \u2192 NLI)": {
+    "HybridCritic (MiniLM → NLI)": {
       "n": 60,
       "contradiction_recall": 0.72,
       "contradiction_precision": 0.667,
@@ -377,7 +379,8 @@
       "fp": 9,
       "false_consistent": 1,
       "false_contradiction": 0,
-      "elapsed_s": 26.1
+      "elapsed_s": 26.1,
+      "rerun_status": "prior committed run (NLI model not re-downloaded this sweep)"
     },
     "LLMCritic (DeepSeek)": {
       "n": 60,
@@ -392,7 +395,8 @@
       "fp": 0,
       "false_consistent": 0,
       "false_contradiction": 0,
-      "elapsed_s": 0.0
+      "elapsed_s": 0.0,
+      "rerun_status": "prior committed run (requires DEEPSEEK_API_KEY)"
     }
   },
   "raw": {
@@ -400,77 +404,77 @@
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
         "consistent",
-        "consistent"
+        "unverifiable"
       ],
       [
         "consistent",
@@ -525,7 +529,7 @@
       [
         "contradiction",
         "contradiction",
-        "consistent"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -560,12 +564,12 @@
       [
         "contradiction",
         "contradiction",
-        "consistent"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "consistent"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -580,12 +584,12 @@
       [
         "contradiction",
         "contradiction",
-        "consistent"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "consistent"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -600,12 +604,7 @@
       [
         "contradiction",
         "contradiction",
-        "consistent"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "consistent"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -615,7 +614,12 @@
       [
         "contradiction",
         "contradiction",
-        "consistent"
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -712,11 +716,6 @@
       [
         "consistent",
         "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
         "unverifiable"
       ],
       [
@@ -792,7 +791,12 @@
       [
         "consistent",
         "consistent",
-        "contradiction"
+        "unverifiable"
+      ],
+      [
+        "consistent",
+        "consistent",
+        "unverifiable"
       ],
       [
         "consistent",
@@ -812,7 +816,7 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -822,22 +826,7 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -847,32 +836,7 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -882,22 +846,7 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -907,27 +856,77 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
       ],
       [
         "unrelated",
@@ -942,42 +941,7 @@
       [
         "unrelated",
         "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "unrelated",
@@ -997,10 +961,50 @@
       [
         "unrelated",
         "unverifiable",
-        "contradiction"
+        "unverifiable"
+      ],
+      [
+        "unrelated",
+        "unverifiable",
+        "unverifiable"
+      ],
+      [
+        "unrelated",
+        "unverifiable",
+        "unverifiable"
+      ],
+      [
+        "unrelated",
+        "unverifiable",
+        "unverifiable"
+      ],
+      [
+        "unrelated",
+        "unverifiable",
+        "unverifiable"
+      ],
+      [
+        "unrelated",
+        "unverifiable",
+        "unverifiable"
+      ],
+      [
+        "unrelated",
+        "unverifiable",
+        "unverifiable"
+      ],
+      [
+        "unrelated",
+        "unverifiable",
+        "unverifiable"
+      ],
+      [
+        "unrelated",
+        "unverifiable",
+        "unverifiable"
       ]
     ],
-    "HybridCritic (MiniLM \u2192 NLI)": [
+    "HybridCritic (MiniLM → NLI)": [
       [
         "consistent",
         "consistent",
@@ -1010,21 +1014,6 @@
         "consistent",
         "consistent",
         "unverifiable"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "unverifiable"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
       ],
       [
         "consistent",
@@ -1102,6 +1091,26 @@
         "unverifiable"
       ],
       [
+        "consistent",
+        "consistent",
+        "unverifiable"
+      ],
+      [
+        "consistent",
+        "consistent",
+        "unverifiable"
+      ],
+      [
+        "consistent",
+        "consistent",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
         "contradiction",
         "contradiction",
         "unverifiable"
@@ -1114,32 +1123,7 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "consistent"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -1149,32 +1133,7 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -1184,22 +1143,7 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -1209,7 +1153,7 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
@@ -1219,314 +1163,72 @@
       [
         "contradiction",
         "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
         "unverifiable"
       ],
       [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
+        "contradiction",
+        "contradiction",
         "unverifiable"
       ],
       [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
+        "contradiction",
+        "contradiction",
         "unverifiable"
       ],
       [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ],
-      [
-        "unrelated",
-        "unverifiable",
+        "contradiction",
+        "contradiction",
         "unverifiable"
       ],
       [
-        "unrelated",
-        "unverifiable",
+        "contradiction",
+        "contradiction",
         "unverifiable"
       ],
       [
-        "unrelated",
-        "unverifiable",
+        "contradiction",
+        "contradiction",
         "unverifiable"
       ],
       [
-        "unrelated",
-        "unverifiable",
-        "contradiction"
-      ]
-    ],
-    "LLMCritic (DeepSeek)": [
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
-      ],
-      [
-        "consistent",
-        "consistent",
-        "consistent"
+        "contradiction",
+        "contradiction",
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "contradiction"
+        "unverifiable"
       ],
       [
         "unrelated",

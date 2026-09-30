@@ -1,6 +1,6 @@
 # ISNAD-Bench — ground-truth mapping (preregistered)
 
-> **Status:** DRAFT v1 — submitted for review. Not yet frozen.
+> **Status:** FROZEN — methodology fixed before the first result; reproduced by `bench/docs/RESULTS.md` (freeze date 2026-09-09).
 > This document is the *scientific claim* that makes the benchmark number
 > meaningful. It maps classical hadith narrator grading to ISNAD's ordinal
 > grades. It is committed to git **before** any result is computed, and must

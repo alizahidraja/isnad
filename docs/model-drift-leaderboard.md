@@ -7,21 +7,21 @@ content-critic + decision-matrix pipeline **catch** that hallucination at each d
 The methodology is **preregistered** (frozen before any result):
 [`experiments/model_drift/PREREGISTRATION.md`](https://github.com/alizahidraja/isnad/blob/main/experiments/model_drift/PREREGISTRATION.md).
 
-## Live results — DeepSeek V4 Flash (`deepseek-flash`)
+## Live results — `deepseek-flash` narrator × `deepseek-v4-pro` critic (cross-model)
 
 [`experiments/model_drift/results/LIVE_RESULTS.md`](https://github.com/alizahidraja/isnad/blob/main/experiments/model_drift/results/LIVE_RESULTS.md)
 · raw: [`results/live_results.json`](https://github.com/alizahidraja/isnad/blob/main/experiments/model_drift/results/live_results.json)
 
 65 facts (8 easy / 20 medium / 28 hard / 9 **post-cutoff**), temperature 0.0,
-1,300 calls, **$0.099** total, 27 truncated calls (recorded, not hidden).
+1,300 calls, **$0.250** total, 36 truncated calls (recorded, not hidden).
 
 | Depth | hallucination_rate (oracle) | served_error_rate (real critic) |
 |---|---|---|
-| 1 | **0.061** | 0.000 |
-| 2 | **0.061** | 0.000 |
-| 3 | **0.077** | 0.400 |
-| 4 | **0.077** | 0.400 |
-| 5 | **0.061** | 0.000 |
+| 1 | **0.077** | 0.000 |
+| 2 | **0.092** | 0.167 |
+| 3 | **0.061** | 0.500 |
+| 4 | **0.061** | 0.000 |
+| 5 | **0.061** | 0.250 |
 
 All hallucination comes from the **post-cutoff** tier (facts after the model's
 ~mid-2026 training cutoff), where the model confidently states stale values — e.g.
@@ -31,9 +31,9 @@ the 400m hurdles world record as **45.94** (true: 45.80), the Knicks' last title
 | Tier | hallucination_rate (depth 1) |
 |---|---|
 | easy / medium / hard | **0.000** (0 drift — well-known facts) |
-| post-cutoff | **0.444–0.556** |
+| post-cutoff | **0.556** |
 
-**Oracle cross-check (independent LLM audit):** 0.90 agreement (27/30). Ground-truth
+**Oracle cross-check (independent LLM audit):** 0.97 agreement (29/30). Ground-truth
 labels come from an **LLM-free numeric oracle**, so the labels themselves cannot hallucinate.
 
 ### What this honestly shows

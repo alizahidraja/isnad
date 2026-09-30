@@ -18,6 +18,7 @@ dangerous error.
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -98,6 +99,9 @@ def build_report(rows: list[tuple[str, dict[str, object]]]) -> str:
         "|---|---|---|---|---|---|---|",
     ]
     for name, m in rows:
+        if m is None:
+            lines.append(f"| {name} | - | - | - | - | - | - |")
+            continue
         lines.append(
             f"| {name} | {m['contradiction_recall']:.3f} | {m['contradiction_precision']:.3f} "
             f"| {m['contradiction_f1']:.3f} | {m['false_consistent_rate']:.3f} "
@@ -128,10 +132,6 @@ def main() -> None:
         ("EmbeddingCritic (TF-IDF)", EmbeddingCritic()),
         ("LocalNLICritic (DeBERTa NLI)", LocalNLICritic()),
         ("HybridCritic (MiniLM → NLI)", HybridCritic()),
-        (
-            "LLMCritic (DeepSeek)",
-            LLMCritic(provider="deepseek", cache_dir=str(_HERE / ".llm_cache")),
-        ),
     ]
 
     rows: list[tuple[str, dict[str, object]]] = []
@@ -147,11 +147,29 @@ def main() -> None:
             f"({m['elapsed_s']}s)"
         )
 
+    # LLM critic requires DEEPSEEK_API_KEY; when absent, record it as "not re-run"
+    # instead of silently emitting UNVERIFIABLE -> recall 0.000.
+    if "DEEPSEEK_API_KEY" in os.environ:
+        critics.append((
+            "LLMCritic (DeepSeek)",
+            LLMCritic(provider="deepseek", cache_dir=str(_HERE / ".llm_cache")),
+        ))
+        t0 = time.time()
+        lm = compute_metrics(evaluate_critic(critics[-1][1], cases, CORPUS))
+        lm["elapsed_s"] = round(time.time() - t0, 1)
+        rows.append((critics[-1][0], lm))
+        print(
+            f"{critics[-1][0]:32s} recall={lm['contradiction_recall']:.3f} "
+            f"falseConsistent={lm['false_consistent_rate']:.3f} ({lm['elapsed_s']}s)"
+        )
+    else:
+        rows.append(("LLMCritic (DeepSeek) - not re-run (needs DEEPSEEK_API_KEY)", None))
+
     # Persist raw verdicts for auditability.
     raw = {name: evaluate_critic(c, cases, CORPUS) for name, c in critics}
     with open(_HERE / "results.json", "w") as f:
         json.dump(
-            {"corpus": CORPUS, "cases": cases, "metrics": dict(rows), "raw": raw}, f, indent=2
+            {"corpus": CORPUS, "cases": cases, "metrics": {n: m for n, m in rows if m is not None}, "raw": raw}, f, indent=2
         )
 
     (_HERE / "RESULTS.md").write_text(build_report(rows))
