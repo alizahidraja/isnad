@@ -86,10 +86,10 @@ def test_recall_drops_on_tokenless_shared_errors():
 
 def test_near_miss_boundary_false_positives():
     """One correct + one wrong claim sharing a subject token but differing in value
-    (1687 vs 1689) — the entity-set-equality rule fires before numbers are compared,
-    a measured defect, disclosed not fixed."""
+    (1687 vs 1689) — the entity-set-equality rule now compares numbers first, so the
+    near-miss boundary is correctly separated (a fixed defect, #233)."""
     raw, _gated = _rows()
-    assert raw["false_positive_rate_near_miss"] == 1.0
+    assert raw["false_positive_rate_near_miss"] == 0.0
 
 
 def test_gated_oracle_row_has_no_worse_precision_than_raw():

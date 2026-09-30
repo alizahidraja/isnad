@@ -57,8 +57,8 @@ it can never *prove independence* — it can only fail to find shared signals.
   never surfaced to callers (ordinal-only: the honesty moat forbids a public float).
 - **The content-madār fingerprint is measured, not asserted** (`experiments/madar_eval`):
   FP 0.375 on independent agreement (token-bearing recall 1.0), and a **near-miss
-  boundary class (correct vs wrong value) that still false-positives 4/4 — disclosed,
-  not fixed.** This bounds how far the shared-error discount can be trusted.
+  boundary class (correct vs wrong value) that is now correctly separated (0/4 false
+  positives).** This bounds how far the shared-error discount can be trusted.
 
 ## Candidate approaches (now shipped)
 

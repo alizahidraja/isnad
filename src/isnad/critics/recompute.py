@@ -54,37 +54,93 @@ def _to_int(s: str) -> int:
     return int(s.replace(",", ""))
 
 
-_NUM_UNIT = re.compile(r"([0-9]+(?:\.\d+)?)\s*([a-z]+(?:/[a-z0-9]+)?)")
+_NUM_UNIT = re.compile(r"([0-9][0-9,]*(?:\.\d+)?)\s*([a-z]+(?:/[a-z0-9]+)?)")
 
-_NON_UNIT_WORDS = frozenset({
-    "and",
-    "or",
-    "the",
-    "a",
-    "an",
-    "of",
-    "in",
-    "on",
-    "with",
-    "for",
-    "to",
-    "from",
-    "rows",
-    "row",
-    "items",
-    "item",
-    "records",
-    "record",
-    "blank",
-    "total",
-    "category",
-    "label",
-    "there",
-    "are",
-    "is",
-    "was",
-    "has",
-    "have",
+_KNOWN_UNITS = frozenset({
+    # temperature
+    "celsius",
+    "fahrenheit",
+    "kelvin",
+    "c",
+    "f",
+    # mass
+    "kg",
+    "kilogram",
+    "kilograms",
+    "g",
+    "gram",
+    "grams",
+    "mg",
+    "pounds",
+    "lbs",
+    "lb",
+    "oz",
+    "ounces",
+    # distance
+    "km",
+    "kilometer",
+    "kilometers",
+    "m",
+    "meter",
+    "meters",
+    "metre",
+    "metres",
+    "mile",
+    "miles",
+    "ft",
+    "feet",
+    "foot",
+    "cm",
+    "mm",
+    "inch",
+    "inches",
+    "yard",
+    "yards",
+    # speed
+    "mph",
+    "kph",
+    "km/h",
+    "m/s",
+    # volume
+    "l",
+    "liter",
+    "liters",
+    "litre",
+    "litres",
+    "ml",
+    "gallon",
+    "gallons",
+    # time
+    "second",
+    "seconds",
+    "minute",
+    "minutes",
+    "hour",
+    "hours",
+    "day",
+    "days",
+    "week",
+    "weeks",
+    "month",
+    "months",
+    "year",
+    "years",
+    "s",
+    "min",
+    "hr",
+    "hrs",
+    # currency
+    "usd",
+    "eur",
+    "gbp",
+    "dollar",
+    "dollars",
+    "euro",
+    "euros",
+    # percentage
+    "percent",
+    "pct",
+    "%",
 })
 
 
@@ -93,9 +149,10 @@ def _num_unit_pairs(text: str) -> set[tuple[str, str]]:
     out: set[tuple[str, str]] = set()
     for m in _NUM_UNIT.finditer(text.lower()):
         unit = m.group(2)
-        if unit in _NON_UNIT_WORDS:
+        if unit not in _KNOWN_UNITS:
             continue
-        out.add((m.group(1), unit))
+        num = m.group(1).replace(",", "")
+        out.add((num, unit))
     return out
 
 

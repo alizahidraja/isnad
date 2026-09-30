@@ -34,9 +34,9 @@ from dataclasses import dataclass
 
 from isnad.types import ContentVerdict
 
-_NUM = re.compile(r"[0-9][0-9,]*\.?[0-9]*")
+_NUM = re.compile(r"[0-9][0-9,]*(?:\.\d+)?")
 # number followed by a unit token (e.g. "500,000 km/s", "97 records", "3 mg").
-_NUM_UNIT = re.compile(r"([0-9][0-9,]*\.?[0-9]*)\s*([a-z]+(?:/[a-z0-9]+)?)")
+_NUM_UNIT = re.compile(r"([0-9][0-9,]*(?:\.\d+)?)\s*([a-z]+(?:/[a-z0-9]+)?)")
 # title-case words (proper names / entities), >=2 chars, not all-caps acronyms.
 _TITLE_CASE = re.compile(r"\b[A-Z][a-z]{1,}\b")
 # years 1000-2099, ISO dates, and month names.
@@ -253,6 +253,7 @@ class ErrorFingerprint:
                 r"\bdo not\b",
                 r"\bdid not\b",
                 r"\bcannot\b",
+                r"\bcould not\b",
                 r"\bwill not\b",
                 r"\bwould not\b",
                 r"\bshould not\b",
@@ -301,7 +302,11 @@ class ErrorFingerprint:
         # Same wrong attribution: identical non-empty entity sets (e.g. both
         # attribute a work to the same wrong author).
         if self.entities and self.entities == other.entities:
-            return True
+            numbers_conflict = bool(
+                self.numbers and other.numbers and self.numbers != other.numbers
+            )
+            dates_conflict = bool(self.dates and other.dates and self.dates != other.dates)
+            return not (numbers_conflict or dates_conflict)
 
         # An equal number is only a shared error when anchored by an equal
         # number+unit pair (e.g. "100 degrees", "42 km") — a bare shared number
