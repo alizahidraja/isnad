@@ -209,3 +209,29 @@ class TestRecomputeCriticEdgeCases:
         corpus = ["total rows: 1240", "count: 26", "blank: 5"]
         v = c.evaluate("There are 1240 rows.", "there are 1240 rows.", corpus)
         assert v == ContentVerdict.CONSISTENT
+
+
+def test_unit_mismatch_is_not_consistent():
+    """A wrong-unit claim must never be CONSISTENT.
+
+    Regression: RecomputeCritic was unit-blind, so a "30 celsius" claim against a
+    "30 fahrenheit" row (same number, different unit) returned CONSISTENT.
+    """
+    from isnad.critics.recompute import RecomputeCritic
+    from isnad.types import ContentVerdict
+
+    c = RecomputeCritic()
+    corpus = ["temperature: 30 fahrenheit"]
+    v = c.evaluate("The temperature is 30 celsius.", "the temperature is 30 celsius.", corpus)
+    assert v != ContentVerdict.CONSISTENT
+
+
+def test_unit_match_still_consistent():
+    """Same number AND same unit is still a valid numeric match (no over-blocking)."""
+    from isnad.critics.recompute import RecomputeCritic
+    from isnad.types import ContentVerdict
+
+    c = RecomputeCritic()
+    corpus = ["temperature: 30 fahrenheit"]
+    v = c.evaluate("The temperature is 30 fahrenheit.", "the temperature is 30 fahrenheit.", corpus)
+    assert v == ContentVerdict.CONSISTENT

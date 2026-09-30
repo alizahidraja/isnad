@@ -13,17 +13,17 @@
       "recall": 0.667,
       "recall_tokenbearing": 1.0,
       "recall_tokenless": 0.0,
-      "precision": 0.533,
-      "f1": 0.593,
-      "false_positive_rate": 0.438,
+      "precision": 0.727,
+      "f1": 0.696,
+      "false_positive_rate": 0.188,
       "false_positive_rate_agreement": 0.375,
-      "false_positive_rate_near_miss": 1.0,
+      "false_positive_rate_near_miss": 0.0,
       "tp": 8,
       "fn": 4,
-      "fp": 7,
-      "tn": 9,
+      "fp": 3,
+      "tn": 13,
       "fp_agreement": 3,
-      "fp_near_miss": 4
+      "fp_near_miss": 0
     },
     "detect_content_madar": {
       "n": 28,
@@ -132,19 +132,19 @@
       },
       {
         "label": "near_miss_boundary",
-        "fired": true
+        "fired": false
       },
       {
         "label": "near_miss_boundary",
-        "fired": true
+        "fired": false
       },
       {
         "label": "near_miss_boundary",
-        "fired": true
+        "fired": false
       },
       {
         "label": "near_miss_boundary",
-        "fired": true
+        "fired": false
       },
       {
         "label": "independent_different",
