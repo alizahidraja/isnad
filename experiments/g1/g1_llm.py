@@ -4,6 +4,7 @@
 Replaces the weak bi-encoder cosine signal with an LLM entailment judge.
 Pure stdlib (no numpy/sklearn) — metrics computed manually.
 """
+
 import concurrent.futures
 import json
 import os
@@ -19,7 +20,9 @@ PER_MODEL = 300
 WORKERS = 16
 SEED = 0
 
-DATA = os.environ.get("RAGTRUTH_DATA_DIR", "ragtruth/dataset")  # download from github.com/ParticleMedia/RAGTruth
+DATA = os.environ.get(
+    "RAGTRUTH_DATA_DIR", "ragtruth/dataset"
+)  # download from github.com/ParticleMedia/RAGTruth
 
 
 def source_to_text(si):
@@ -63,10 +66,14 @@ def judge(source, response):
         "temperature": 0,
         "max_tokens": 1024,
     }).encode()
-    req = urllib.request.Request(URL, data=payload, headers={
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {API_KEY}",
-    })
+    req = urllib.request.Request(
+        URL,
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {API_KEY}",
+        },
+    )
     for attempt in range(4):
         try:
             with urllib.request.urlopen(req, timeout=120) as r:
@@ -78,7 +85,7 @@ def judge(source, response):
                 return 0
             return None
         except Exception:
-            time.sleep(2 ** attempt)
+            time.sleep(2**attempt)
     return None
 
 
@@ -169,8 +176,14 @@ def main():
         "f1_hallucinated": round(f1, 4),
         "baseline_majority_acc": round(baseline, 4),
         "confusion_[[TN,FP],[FN,TP]]": [[tn, fp], [fn, tp]],
-        "model_truth_hallucination_rate": {m: round(model_truth[m] / max(1, sum(1 for x in items if x[0] == m)), 4) for m in model_truth},
-        "model_pred_hallucination_rate": {m: round(model_pred[m] / max(1, sum(1 for x in items if x[0] == m)), 4) for m in model_pred},
+        "model_truth_hallucination_rate": {
+            m: round(model_truth[m] / max(1, sum(1 for x in items if x[0] == m)), 4)
+            for m in model_truth
+        },
+        "model_pred_hallucination_rate": {
+            m: round(model_pred[m] / max(1, sum(1 for x in items if x[0] == m)), 4)
+            for m in model_pred
+        },
     }
 
     print("\n===== G1 v2 RESULT (LLM critic) =====", flush=True)
