@@ -22,9 +22,23 @@ import os
 import sys
 
 
+def _signing_secret() -> str:
+    """Canonical HMAC secret for detached-signature sign/verify.
+
+    ISNAD_HMAC_SECRET is canonical (matches the API). ISNAD_SIGNING_SECRET
+    is a deprecated alias kept for backward compatibility.
+    """
+    return os.environ.get("ISNAD_HMAC_SECRET") or os.environ.get("ISNAD_SIGNING_SECRET", "")
+
+
 def serve() -> None:
     """Start the ISNAD API server."""
     import uvicorn
+
+    from isnad.storage.sqlalchemy import init_db, migrate_db
+
+    init_db()
+    migrate_db()
 
     host = os.environ.get("ISNAD_HOST", "0.0.0.0")
     port = int(os.environ.get("ISNAD_PORT", "8000"))
@@ -133,9 +147,9 @@ def _export(argv: list[str]) -> int:
         "--sign",
         default=None,
         help="HMAC secret to sign the record with before emitting "
-        "(defaults to $ISNAD_SIGNING_SECRET when the flag is passed without a value)",
+        "(defaults to $ISNAD_HMAC_SECRET when the flag is passed without a value)",
         nargs="?",
-        const=os.environ.get("ISNAD_SIGNING_SECRET", ""),
+        const=_signing_secret(),
     )
     parser.add_argument(
         "--redact", action="store_true", help="redact claim text (PII) before hashing"
@@ -158,7 +172,7 @@ def _export(argv: list[str]) -> int:
 
         if not args.sign:
             print(
-                "signing requires a secret: pass --sign SECRET or set ISNAD_SIGNING_SECRET",
+                "signing requires a secret: pass --sign SECRET or set ISNAD_HMAC_SECRET",
                 file=sys.stderr,
             )
             return 1
@@ -188,7 +202,7 @@ def _export(argv: list[str]) -> int:
             print("verification FAILED: hash mismatch", file=sys.stderr)
             return 1
         detached = record.integrity.detached_signature
-        secret = args.sign or os.environ.get("ISNAD_SIGNING_SECRET", "")
+        secret = args.sign or _signing_secret()
         if detached:
             if secret:
                 payload = canonical_json(record.to_dict(include_integrity=False))
@@ -203,7 +217,7 @@ def _export(argv: list[str]) -> int:
                 # forgeable path in a tamper-evidence tool.
                 print(
                     "verification INCONCLUSIVE: detached signature present but no "
-                    "secret (--sign or ISNAD_SIGNING_SECRET); forge-resistance NOT checked",
+                    "secret (--sign or ISNAD_HMAC_SECRET); forge-resistance NOT checked",
                     file=sys.stderr,
                 )
                 return 1
@@ -327,7 +341,7 @@ def _verify(argv: list[str]) -> int:
     parser.add_argument(
         "--hmac-secret",
         default=None,
-        help="HMAC secret for detached-signature verification (defaults to $ISNAD_SIGNING_SECRET)",
+        help="HMAC secret for detached-signature verification (defaults to $ISNAD_HMAC_SECRET)",
     )
     args = parser.parse_args(argv)
 
@@ -349,7 +363,7 @@ def _verify(argv: list[str]) -> int:
     # the record carries a detached signature and a secret is available,
     # verify it. Otherwise say plainly what was NOT checked.
     detached = integrity.get("detached_signature")
-    secret = args.hmac_secret or os.environ.get("ISNAD_SIGNING_SECRET", "")
+    secret = args.hmac_secret or _signing_secret()
     if detached:
         if secret:
             if hmac_verifier(secret)(canonical_json(data), detached):
@@ -359,7 +373,7 @@ def _verify(argv: list[str]) -> int:
             return 1
         print(
             f"OK: {stored} (self-hash only — detached signature present but no "
-            "ISNAD_SIGNING_SECRET; forge-resistance NOT checked)",
+            "ISNAD_HMAC_SECRET; forge-resistance NOT checked)",
         )
         return 1
 
