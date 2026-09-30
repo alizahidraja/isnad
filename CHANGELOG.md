@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.25.0] — 2026-09-30
+
+### Fixed (post-audit sweep)
+
+- **Audit-trail verifiability**: persist the canonical AuditRecord payload + `GET /v1/claims/{id}/audit` with verify-on-read; `audit_signed` derived from the signature, never a one-shot boolean.
+- **Corroboration**: narrator metadata covers corroborating chains; `corroboration_support` wired; `adalah` resolves alias@version; legacy rows no longer re-serve.
+- **Security**: redact claim_text on reads, admin-gate `submit_claim`, constant-time API-key compare, unify the signing-secret env name, run `alembic upgrade head` on serve.
+- **Critics**: content-madar contraction negation; RecomputeCritic unit-awareness (no false-consistent on unit mismatch).
+- **Packaging**: `psycopg2-binary` -> optional `postgres` extra; new `signing` extra (cryptography); `.dockerignore`; non-root Docker user; release.yml version-bump guard.
+- **Honesty/repro**: reconcile critic_eval, commit grounding_eval results, correct model-drift numbers, freeze the benchmark prereg; WHO-vs-WHETHER reframe (kappa=0.575 belongs to the composed critic).
+
+
 ## [2.24.0] — 2026-09-11
 
 ### Added
