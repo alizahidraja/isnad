@@ -10,7 +10,7 @@ Independent re-run of the headline chain-grading number, from the public dataset
 
 | Metric | Published | Reproduced | Match |
 |---|---|---|---|
-| Chain-grade κ (strict) | 0.871 | **0.871** (human-ceiling section reports it; strict agreement 522,806/575,060 = 90.9%) | ✅ |
+| Chain-grade κ (strict) | 0.871 | **0.8714** (computed; unweighted 0.8745 · linear-weighted 0.8917) | ✅ |
 | Chain-grade κ (lenient) | 0.761 | agreement 480,702/575,060 = 83.6% | ✅ |
 | Human ceiling (inter-critic κ) | 0.331 | **0.33** | ✅ |
 | Single scholar vs consensus | 0.45 | **0.45** | ✅ |
@@ -35,6 +35,6 @@ uv run python -m bench.human_ceiling
 
 - Date: 2026-09-30
 - DB SHA-256: `d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6`
-- Note: the strict κ line is confirmed via `bench.human_ceiling` ("ISNAD tracks the
-  consensus at κ = 0.871") and the 90.9% strict agreement rate; re-running the full
-  strict sweep reproduces the exact `Cohen's κ = 0.8710` header.
+- Note: the strict κ (0.8714) is the COMPUTED value from `bench.run --reproduce`
+  (`Cohen's kappa: 0.8714`), not the hardcoded string in `bench.human_ceiling`. The
+  human-ceiling 0.33 (inter-critic) and 0.45 (critic-vs-consensus) are computed independently.
