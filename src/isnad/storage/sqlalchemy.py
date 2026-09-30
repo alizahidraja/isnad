@@ -76,6 +76,35 @@ def init_db(url: str | None = None) -> None:
     Base.metadata.create_all(engine)
 
 
+def migrate_db(url: str | None = None) -> None:
+    """Apply Alembic migrations to an existing DB (create_all cannot ALTER).
+
+    Fresh databases get stamped at ``head`` so future migrations apply; databases
+    that already carry an ``alembic_version`` table are upgraded to ``head``.
+    No-op when the database has no ISNAD tables yet.
+    """
+    from pathlib import Path
+
+    from sqlalchemy import inspect
+
+    engine = create_engine_from_url(url) if url else get_engine()
+    inspector = inspect(engine)
+    if not inspector.has_table("rijal_claims"):
+        return
+    from alembic.config import Config
+
+    from alembic import command
+
+    ini = Path(__file__).resolve().parents[3] / "alembic.ini"
+    cfg = Config(str(ini))
+    cfg.set_main_option("script_location", str(ini.parent / "alembic"))
+    cfg.set_main_option("sqlalchemy.url", str(engine.url))
+    if inspector.has_table("alembic_version"):
+        command.upgrade(cfg, "head")
+    else:
+        command.stamp(cfg, "head")
+
+
 def drop_db(url: str | None = None) -> None:
     """Drop all tables.  Use only in tests."""
     engine = create_engine_from_url(url) if url else get_engine()

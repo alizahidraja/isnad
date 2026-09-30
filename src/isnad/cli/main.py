@@ -35,6 +35,11 @@ def serve() -> None:
     """Start the ISNAD API server."""
     import uvicorn
 
+    from isnad.storage.sqlalchemy import init_db, migrate_db
+
+    init_db()
+    migrate_db()
+
     host = os.environ.get("ISNAD_HOST", "0.0.0.0")
     port = int(os.environ.get("ISNAD_PORT", "8000"))
     uvicorn.run("isnad.api.app:app", host=host, port=port, reload=False)

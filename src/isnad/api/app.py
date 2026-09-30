@@ -15,7 +15,7 @@ from isnad.api.endpoints.health import metrics_router
 from isnad.api.endpoints.health import router as health_router
 from isnad.api.endpoints.narrators import router as narrators_router
 from isnad.api.endpoints.review import router as review_router
-from isnad.storage.sqlalchemy import init_db
+from isnad.storage.sqlalchemy import init_db, migrate_db
 
 logger = logging.getLogger("isnad.api")
 
@@ -24,7 +24,8 @@ logger = logging.getLogger("isnad.api")
 async def _lifespan(app: FastAPI):
     try:
         init_db()
-        logger.info("Database tables initialized")
+        migrate_db()
+        logger.info("Database tables initialized + migrations applied")
         # Rebuild the in-memory claim index from persisted claims so the read
         # surface survives a restart (issue #93 follow-up).
         from isnad.api.endpoints.claims import _hydrate_claims_from_db
