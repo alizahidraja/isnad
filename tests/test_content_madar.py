@@ -212,3 +212,33 @@ class TestContentMadarWiredIntoEngine:
             base_content_verdict=ContentVerdict.CONTRADICTION,
         )
         assert result.shared_error_detected is False
+
+
+def test_contraction_negation_is_shared_error():
+    """'isn't' and 'is not' are the SAME negation and must fingerprint identically.
+
+    Regression: content-madar did not expand contractions, so two chains echoing the
+    same wrong denial -- one phrased "isn't", the other "is not" -- had mismatched
+    negation flags and were NOT flagged as a shared error, letting CorroborationEngine
+    upgrade on non-independent corroboration (the unsafe direction).
+    """
+    a = ErrorFingerprint.from_claim("Energy isn't conserved in an isolated system.")
+    b = ErrorFingerprint.from_claim("Energy is not conserved in an isolated system.")
+    assert a.shares_error_with(b)
+    assert a.negation and b.negation
+
+
+def test_other_contractions_expand_to_the_same_negation():
+    """Several common negated contractions must normalize to the same negation flag."""
+    variants = [
+        "Energy isn't conserved.",
+        "Energy is not conserved.",
+        "It doesn't hold.",
+        "It does not hold.",
+        "You can't break it.",
+        "You cannot break it.",
+        "We won't see it.",
+        "We will not see it.",
+    ]
+    flags = [ErrorFingerprint.from_claim(v).negation for v in variants]
+    assert all(flags)

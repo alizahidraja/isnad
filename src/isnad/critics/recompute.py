@@ -54,6 +54,51 @@ def _to_int(s: str) -> int:
     return int(s.replace(",", ""))
 
 
+_NUM_UNIT = re.compile(r"([0-9]+(?:\.\d+)?)\s*([a-z]+(?:/[a-z0-9]+)?)")
+
+_NON_UNIT_WORDS = frozenset({
+    "and",
+    "or",
+    "the",
+    "a",
+    "an",
+    "of",
+    "in",
+    "on",
+    "with",
+    "for",
+    "to",
+    "from",
+    "rows",
+    "row",
+    "items",
+    "item",
+    "records",
+    "record",
+    "blank",
+    "total",
+    "category",
+    "label",
+    "there",
+    "are",
+    "is",
+    "was",
+    "has",
+    "have",
+})
+
+
+def _num_unit_pairs(text: str) -> set[tuple[str, str]]:
+    """Return {(number, normalized-unit)} pairs asserted in a piece of text."""
+    out: set[tuple[str, str]] = set()
+    for m in _NUM_UNIT.finditer(text.lower()):
+        unit = m.group(2)
+        if unit in _NON_UNIT_WORDS:
+            continue
+        out.add((m.group(1), unit))
+    return out
+
+
 class RecomputeCritic:
     """Deterministic aggregate-consistency critic for count/sum-style claims.
 
@@ -183,5 +228,16 @@ class RecomputeCritic:
         # serve), so it cannot reintroduce a contradiction-into-serve hole.
         if _BOUND_WORDS.search(claim_text):
             return ContentVerdict.UNVERIFIABLE
+
+        # Unit guard: the same number asserted with a DIFFERENT unit than the
+        # corpus row is not a numeric match (e.g. "30 celsius" vs a "30 fahrenheit"
+        # row). A unit mismatch must never be CONSISTENT.
+        corpus_units: dict[str, set[str]] = {}
+        for row in corpus_claims:
+            for num, unit in _num_unit_pairs(row):
+                corpus_units.setdefault(num, set()).add(unit)
+        for num, unit in _num_unit_pairs(claim_text):
+            if num in corpus_units and unit not in corpus_units[num]:
+                return ContentVerdict.UNVERIFIABLE
 
         return ContentVerdict.CONSISTENT

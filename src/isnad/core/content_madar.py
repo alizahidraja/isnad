@@ -174,8 +174,40 @@ def _extract_shingles(text: str) -> frozenset[str]:
     return frozenset(out)
 
 
+_CONTRACTIONS = {
+    "isn't": "is not",
+    "aren't": "are not",
+    "wasn't": "was not",
+    "weren't": "were not",
+    "don't": "do not",
+    "doesn't": "does not",
+    "didn't": "did not",
+    "can't": "cannot",
+    "couldn't": "could not",
+    "won't": "will not",
+    "wouldn't": "would not",
+    "shouldn't": "should not",
+    "haven't": "have not",
+    "hasn't": "has not",
+    "hadn't": "had not",
+    "ain't": "is not",
+    "shan't": "shall not",
+    "mustn't": "must not",
+    "needn't": "need not",
+    "mightn't": "might not",
+}
+
+
+def _expand_contractions(text: str) -> str:
+    """Expand common negated contractions so 'isn't' and 'is not' fingerprint identically."""
+    out = text.lower()
+    for contraction, expanded in _CONTRACTIONS.items():
+        out = out.replace(contraction, expanded)
+    return out
+
+
 def _normalize_text(text: str) -> str:
-    return " ".join(text.lower().split())
+    return " ".join(_expand_contractions(text).split())
 
 
 def _jaccard(a: frozenset[str], b: frozenset[str]) -> float:
@@ -213,12 +245,24 @@ class ErrorFingerprint:
             for w in (
                 r"\bis not\b",
                 r"\bare not\b",
+                r"\bwas not\b",
+                r"\bwere not\b",
                 r"\bno\b",
                 r"\bnever\b",
                 r"\bdoes not\b",
                 r"\bdo not\b",
+                r"\bdid not\b",
                 r"\bcannot\b",
-                r"\bcan't\b",
+                r"\bwill not\b",
+                r"\bwould not\b",
+                r"\bshould not\b",
+                r"\bhave not\b",
+                r"\bhas not\b",
+                r"\bhad not\b",
+                r"\bmust not\b",
+                r"\bneed not\b",
+                r"\bshall not\b",
+                r"\bmight not\b",
             )
         )
         return cls(
