@@ -30,4 +30,6 @@ in the JSON receipt, so κ = 0.87 is **independently re-runnable, not self-asser
 ## Exit codes
 
 Every command exits `0` on success and non-zero on failure. `--reproduce` exits `2` on a
-database hash mismatch (hard fail, by design).
+database hash mismatch (hard fail, by design). `isnad verify` and `isnad export --verify` are
+**fail-closed**: on an unsigned record (no secret available) they print `OK`/`verified` but exit `1`,
+because forge-resistance was NOT checked. A self-hash that a forger can recompute is not proof.
