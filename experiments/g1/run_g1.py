@@ -6,6 +6,7 @@ of a claim in its own on-chain source) transfer to AI hallucination detection?
 
 See g1_mapping.md for the preregistered mapping. Run inside the isnad-api image.
 """
+
 import json
 import os
 import random
@@ -134,7 +135,9 @@ def main():
         "n_responses": int(n_resp),
         "n_sentences": int(len(all_sents)),
         "model": MODEL_NAME,
-        "baseline_majority_acc": round(max(float((y_true == 0).mean()), float((y_true == 1).mean())), 4),
+        "baseline_majority_acc": round(
+            max(float((y_true == 0).mean()), float((y_true == 1).mean())), 4
+        ),
         "thresholds": {},
     }
 
@@ -151,10 +154,12 @@ def main():
         model_pred[m] += int(pred_hall[i])
     out["primary_threshold"] = PRIMARY_THRESHOLD
     out["model_truth_hallucination_rate"] = {
-        m: round(model_truth[m] / max(1, sum(1 for x in sample if x["model"] == m)), 4) for m in model_truth
+        m: round(model_truth[m] / max(1, sum(1 for x in sample if x["model"] == m)), 4)
+        for m in model_truth
     }
     out["model_pred_hallucination_rate"] = {
-        m: round(model_pred[m] / max(1, sum(1 for x in sample if x["model"] == m)), 4) for m in model_pred
+        m: round(model_pred[m] / max(1, sum(1 for x in sample if x["model"] == m)), 4)
+        for m in model_pred
     }
 
     print("\n===== G1 RESULT =====", flush=True)

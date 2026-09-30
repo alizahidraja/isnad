@@ -169,7 +169,14 @@ def main() -> None:
     raw = {name: evaluate_critic(c, cases, CORPUS) for name, c in critics}
     with open(_HERE / "results.json", "w") as f:
         json.dump(
-            {"corpus": CORPUS, "cases": cases, "metrics": {n: m for n, m in rows if m is not None}, "raw": raw}, f, indent=2
+            {
+                "corpus": CORPUS,
+                "cases": cases,
+                "metrics": {n: m for n, m in rows if m is not None},
+                "raw": raw,
+            },
+            f,
+            indent=2,
         )
 
     (_HERE / "RESULTS.md").write_text(build_report(rows))
