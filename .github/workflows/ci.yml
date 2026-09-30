@@ -40,7 +40,7 @@ jobs:
         # sentence-transformers/torch (~2GB) and are excluded from the default
         # run (`-m "not nli and not llm"`), so installing them wastes time and
         # slows test collection with an eager torch import.
-        run: uv sync --extra langchain
+        run: uv sync --extra langchain --extra postgres
 
       - name: Migrate (Postgres)
         env:
