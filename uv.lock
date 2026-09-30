@@ -1698,7 +1698,7 @@ wheels = [
 
 [[package]]
 name = "isnad"
-version = "2.24.0"
+version = "2.25.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
