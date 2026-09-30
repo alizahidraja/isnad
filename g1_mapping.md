@@ -1,9 +1,10 @@
 # G1 Moat-Gate — Preregistered Mapping (AI-provenance transfer)
 
-> **Status:** DRAFT v1.1 — updated BEFORE the first result is computed.
-> v1.0 used the NLI cross-encoder; v1.1 switches the grounding signal to the
-> bi-encoder cosine similarity because the cross-encoder is not CPU-feasible on
-> the deployment box. No result has been computed under either version.
+> **Status:** RESULTS COMPUTED — post-hoc addendum (2026-09-11).
+> The preregistered v1.1 bi-encoder signal scored weak (κ 0.099 at threshold 0.5).
+> A v2 LLM grounding critic (DeepSeek V4 Flash) — NOT in the original preregistration —
+> was then tried and scored κ 0.575 (79.3% acc vs 53.2% majority-class baseline).
+> Disclosed, not hidden: the headline result is post-hoc, not preregistered.
 
 ## 1. Data provenance
 
@@ -51,4 +52,5 @@ transparency (no post-hoc threshold selection for the headline number).
 
 ## 5. Reproduction
 
-`docker run --rm -v /opt/isnad/g1:/g1 -w /g1 isnad-api python /g1/run_g1.py`
+- **v1 bi-encoder (preregistered, weak κ ≈ 0.1):** `uv run python experiments/g1/run_g1.py` (needs `isnad[nli]` + the RAGTruth dataset).
+- **v2 LLM critic (post-hoc, κ = 0.575):** `DEEPSEEK_API_KEY=… uv run python experiments/g1/g1_llm.py` — dataset from `github.com/ParticleMedia/RAGTruth` into `experiments/g1/ragtruth/dataset/` (or set `RAGTRUTH_DATA_DIR`).

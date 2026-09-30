@@ -271,8 +271,9 @@ scholar verdict + ISNAD prediction + disagreement bucket) is published as the
 
 The κ = 0.871 above is the methodology's home turf (hadith chains). The transfer to live LLM
 pipelines is measured separately and published honestly: on **RAGTruth** (17,790 responses, 6 models),
-ISNAD's grounding critic catches **97.6% of hallucinations** at **κ = 0.575** (79.3% accuracy vs a
-71.4% baseline) and grades the six models' reliability in exactly the right order. The weak bi-encoder
+ISNAD's grounding critic catches **97.6% of hallucinations** at **κ = 0.575** (79.3% accuracy vs the
+53.2% majority-class baseline) and grades the six models' reliability in the right order (4/6 exact;
+the near-tied bottom two swap). The weak bi-encoder
 signal (κ ≈ 0.1) is reported alongside, not hidden. Case study + limits: [`G1_CASE_STUDY.md`](G1_CASE_STUDY.md).
 
 **Live product:** [isnad.islamandai.com](https://isnad.islamandai.com)
