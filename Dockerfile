@@ -24,7 +24,7 @@ COPY --from=builder /app/.cache /app/.cache
 COPY src/ src/
 COPY alembic/ alembic/
 COPY alembic.ini .
-COPY pyproject.toml README.md ./
+COPY pyproject.toml README.md LICENSE ./
 RUN mkdir -p /app/data
 
 # Default: Bayesian policy (set ISNAD_POLICY=threshold to use threshold)

@@ -26,7 +26,7 @@ A strict grounding judge: *"is this response fully grounded in its source?"*
 | Metric | Value |
 |---|---|
 | **Cohen's κ** | **0.575** |
-| Accuracy | 79.3% (baseline 71.4%) |
+| Accuracy | 79.3% (majority-class baseline 53.2%) |
 | Precision (halluc.) | 72.8% |
 | Recall (halluc.) | 97.6% |
 | F1 (halluc.) | 83.4% |
@@ -40,7 +40,8 @@ v3 fixes the prompt/parsing; expect κ to rise once those are recovered.
 
 ## The narrator-grading signal (ISNAD's core) — transfers cleanly
 
-Measured response-level hallucination rates rank all six models exactly as known:
+Measured response-level hallucination rates rank the six models in the right order
+(4/6 exact; the bottom two — mistral vs llama-2-7b, near-tied at 63.7% vs 63.0% — are swapped):
 
 | Model | Truth | LLM-critic predicted |
 |---|---|---|
