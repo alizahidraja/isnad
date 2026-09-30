@@ -153,7 +153,7 @@ def _emit_audit_trail(
         ),
     )
 
-    secret = os.environ.get("ISNAD_HMAC_SECRET")
+    secret = os.environ.get("ISNAD_HMAC_SECRET") or os.environ.get("ISNAD_SIGNING_SECRET")
     if secret:
         sign_detached(record, hmac_signer(secret))
 
@@ -161,7 +161,11 @@ def _emit_audit_trail(
     if log:
         append_record(log, record.record_id, record.integrity.record_hash)
 
-    return record.integrity.record_hash, record.integrity.detached_signature
+    return (
+        record.integrity.record_hash,
+        record.integrity.detached_signature,
+        record.to_dict(include_integrity=False),
+    )
 
 
 def _redact_chain(chain_jsonb: object) -> object:
@@ -300,6 +304,8 @@ def _hydrate_claims_from_db(session: Any) -> int:
             "action": action_value,
             "audit_record_hash": getattr(row, "audit_record_hash", None),
             "audit_signature": getattr(row, "audit_signature", None),
+            "audit_payload": getattr(row, "audit_payload", None),
+            "audit_signed": getattr(row, "audit_signature", None) is not None,
             "human_oversight": getattr(row, "human_oversight", []) or [],
             "description": "rehydrated from DB",
             "chain": chain,
@@ -410,7 +416,7 @@ async def list_claims(
         "claims": [
             {
                 "claim_id": c["claim_id"],
-                "claim_text": c["claim_text"][:200],
+                "claim_text_redacted": True,
                 "chain_grade": c["chain_grade"],
                 "action": c["action"],
                 "domain": c.get("domain", "general"),
@@ -419,6 +425,25 @@ async def list_claims(
             for c in page
         ],
     }
+
+
+def _narrator_metadata_for_claims(
+    registry: Registry,
+    base_narrator_ids: list[str],
+    all_chain_dicts: list[dict],
+    domain: str,
+) -> dict[str, dict[str, object]]:
+    """Metadata for the base chain AND every corroborating chain's narrators.
+
+    The base chain alone was insufficient: a corroborating chain with a disjoint
+    narrator set scored UNKNOWN_LINEAGE (0.5) < 0.8 and the engine never upgraded.
+    Building metadata over the union lets the shared-lineage detector actually see
+    the corroborating narrators.
+    """
+    all_ids = set(base_narrator_ids)
+    for cd in all_chain_dicts:
+        all_ids.update(cd.get("narrator_ids", []) or [])
+    return {nid: registry.get_metadata(nid, domain) for nid in all_ids}
 
 
 @router.post("/claims")
@@ -464,6 +489,8 @@ async def submit_claim(
     link_grades = grades_for_chain(reg.registry, chain)
     link_adalah_grades = adalah_grades_for_chain(reg.registry, chain)
     link_fidelity_verdicts = compute_fidelity_verdicts(chain, fidelity_critic)
+    # Serving-path corroboration is applied post-hoc by CorroborationEngine below
+    # (grade_chain's corroboration_support=True repair branch is a separate, non-serving path).
     cg = grade_chain(
         link_grades,
         [l.transform_type for l in chain.links],
@@ -524,9 +551,9 @@ async def submit_claim(
         }
         for rec in all_claim_records
     ]
-    narrator_metadata = {
-        nid: reg.registry.get_metadata(nid, domain) for nid in resolved_narrator_ids
-    }
+    narrator_metadata = _narrator_metadata_for_claims(
+        reg.registry, resolved_narrator_ids, all_chain_dicts, domain
+    )
 
     corr_engine = CorroborationEngine()
     corr_result = corr_engine.evaluate(
@@ -575,7 +602,7 @@ async def submit_claim(
             "assumption — verify before relying."
         )
 
-    audit_hash, audit_sig = _emit_audit_trail(
+    audit_hash, audit_sig, audit_payload = _emit_audit_trail(
         chain=chain,
         link_grades=link_grades,
         claim_id=claim_id,
@@ -589,6 +616,7 @@ async def submit_claim(
         "claim_id": claim_id,
         "audit_record_hash": audit_hash,
         "audit_signature": audit_sig,
+        "audit_payload": audit_payload,
         "audit_signed": audit_sig is not None,
         "claim_text": claim_text,
         "normalized_text": normalized,
@@ -646,6 +674,7 @@ async def submit_claim(
             action=action.value,
             audit_record_hash=audit_hash,
             audit_signature=audit_sig,
+            audit_payload=audit_payload,
         )
     except Exception as exc:
         logger.error(f"Failed to persist claim to DB (audit trail will diverge): {exc}")
@@ -762,4 +791,38 @@ async def get_claim_chain(claim_id: str, _role: str = Depends(require_auth)) -> 
         "chain": _redact_chain(r["chain"]),
         "chain_grade": r["chain_grade"],
         "action": r["action"],
+    }
+
+
+@router.get("/claims/{claim_id}/audit")
+async def get_claim_audit(claim_id: str, _role: str = Depends(require_auth)) -> dict:
+    """Return the canonical AuditRecord payload with its hash recomputed and the
+    detached signature verified (verify-on-read). The stored hash and signature
+    are only trustworthy because the payload they were computed over is now
+    persisted alongside them.
+    """
+    from isnad.audit.canonical import canonical_hash, canonical_json
+    from isnad.audit.sign import hmac_verifier
+
+    state = get_state()
+    if claim_id not in state.claims:
+        raise HTTPException(404, "Claim not found")
+    record = state.claims[claim_id]
+    payload = record.get("audit_payload")
+    stored_hash = record.get("audit_record_hash")
+    stored_sig = record.get("audit_signature")
+    if payload is None:
+        raise HTTPException(404, "No audit payload persisted for this claim")
+    recomputed = canonical_hash(payload)
+    secret = os.environ.get("ISNAD_HMAC_SECRET") or os.environ.get("ISNAD_SIGNING_SECRET")
+    signature_verified = None
+    if stored_sig and secret:
+        signature_verified = hmac_verifier(secret)(canonical_json(payload), stored_sig)
+    return {
+        "claim_id": claim_id,
+        "audit_record": payload,
+        "record_hash": stored_hash,
+        "hash_matches": recomputed == stored_hash,
+        "audit_signed": stored_sig is not None,
+        "signature_verified": signature_verified,
     }

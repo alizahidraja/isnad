@@ -31,8 +31,8 @@ A strict grounding judge: *"is this response fully grounded in its source?"*
 | Recall (halluc.) | 97.6% |
 | F1 (halluc.) | 83.4% |
 
-**Verdict:** a genuinely usable hallucination detector — it catches **97.6% of
-hallucinations** with 72.8% precision (κ = 0.575, "moderate" agreement).
+**Verdict:** the grounding critic ISNAD composes with (its matn layer) transfers at κ = 0.575
+(moderate agreement) on 1,355 of a 1,800-response sample — 97.6% hallucination recall at 72.8% precision.
 
 **Known limitation:** 24.7% of responses returned a non-conforming verdict and were
 excluded (the reasoning model sometimes doesn't emit the single requested word).

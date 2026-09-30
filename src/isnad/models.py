@@ -94,6 +94,11 @@ class RijalClaim(Base):
         nullable=True,
         comment="Detached signature over the AuditRecord payload (HMAC/Ed25519), if signed",
     )
+    audit_payload: Mapped[dict[str, object] | None] = mapped_column(
+        JSON,
+        nullable=True,
+        comment="Canonical AuditRecord payload (non-integrity fields)",
+    )
     human_oversight: Mapped[dict[str, object]] = mapped_column(
         JSON,
         nullable=False,

@@ -270,10 +270,11 @@ scholar verdict + ISNAD prediction + disagreement bucket) is published as the
 ## Transfers to AI provenance — measured on RAGTruth
 
 The κ = 0.871 above is the methodology's home turf (hadith chains). The transfer to live LLM
-pipelines is measured separately and published honestly: on **RAGTruth** (17,790 responses, 6 models),
-ISNAD's grounding critic catches **97.6% of hallucinations** at **κ = 0.575** (79.3% accuracy vs the
-53.2% majority-class baseline) and grades the six models' reliability in the right order (4/6 exact;
-the near-tied bottom two swap). The weak bi-encoder
+pipelines is measured separately and published honestly. On **RAGTruth**, the **grounding critic ISNAD
+composes with** (its matn layer) transfers at **Cohen's κ = 0.575** on 1,355 of a 1,800-response
+stratified sample (24.7% non-conforming excluded) — 97.6% hallucination recall at 72.8% precision,
+vs a 53.2% majority-class baseline. That number belongs to the composed critic, **not** to ISNAD's
+chain grading (WHO). The weak bi-encoder
 signal (κ ≈ 0.1) is reported alongside, not hidden. Case study + limits: [`G1_CASE_STUDY.md`](G1_CASE_STUDY.md).
 
 **Live product:** [isnad.islamandai.com](https://isnad.islamandai.com)

@@ -204,7 +204,10 @@ def adalah_grades_for_chain(registry: Registry, chain: Chain) -> list[AdalahGrad
     a narrator's precision/accuracy track record and its integrity status are
     distinct properties (paper §4.2) and should be checked independently.
     """
-    return [registry.get_adalah_grade(link.narrator_id, link.domain) for link in chain.links]
+    return [
+        registry.get_adalah_grade(resolve_narrator_id(link.narrator_id, link.version), link.domain)
+        for link in chain.links
+    ]
 
 
 # ===========================================================================
@@ -224,6 +227,7 @@ def store_claim(
     action: str | None = None,
     audit_record_hash: str | None = None,
     audit_signature: str | None = None,
+    audit_payload: dict | None = None,
     human_oversight: list[dict] | None = None,
 ) -> RijalClaim:
     """Store a claim with its chain in the database.
@@ -260,6 +264,7 @@ def store_claim(
         existing.action = action
         existing.audit_record_hash = audit_record_hash
         existing.audit_signature = audit_signature
+        existing.audit_payload = audit_payload
         existing.human_oversight = human_oversight or []
         existing.chain_status = chain.chain_status.value
         existing.valid_from = datetime.now(UTC)
@@ -279,6 +284,7 @@ def store_claim(
             action=action,
             audit_record_hash=audit_record_hash,
             audit_signature=audit_signature,
+            audit_payload=audit_payload,
             human_oversight=human_oversight or [],
             chain_status=chain.chain_status.value,
         )
