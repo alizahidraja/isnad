@@ -1,6 +1,6 @@
 # Case study: the xz-utils backdoor as a sleeper narrator
 
-> **Status:** draft for discussion. Not yet referenced from the README.
+> **Status:** linked from the README and in the mkdocs nav.
 >
 > This document reads a real-world software supply-chain compromise through
 > ISNAD's vocabulary. The goal is not to claim ISNAD would have stopped it —
@@ -14,8 +14,9 @@
 > per-domain grades, chain completeness, madār detection, the
 > precision/integrity axis, versioned identity — applied to a supply chain
 > rather than a multi-agent pipeline. **§6, §7 Tier 3, §8 and §11 are where
-> the case points beyond ISNAD** — semantic critics, period-sliced grades,
-> evidence-not-grade federation, reproducible traces. The attack was strongest
+> the case points beyond ISNAD** — semantic critics,
+> evidence-not-grade federation, reproducible traces. (Period-sliced grades are
+> now shipped via `get_grade_as_of()` — #43.) The attack was strongest
 > exactly where the second half lives; the first half is what would have
 > stood in its way regardless.
 >

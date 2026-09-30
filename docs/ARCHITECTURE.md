@@ -500,7 +500,7 @@ Returns `CONSISTENT` / `CONTRADICTION` / `UNVERIFIABLE`.
 | Critic | Mechanism | Quality | Requires |
 |--------|-----------|---------|----------|
 | `DeterministicRuleCritic` | Pattern matching | Stub (UNVERIFIABLE on real text) | Nothing |
-| `EmbeddingCritic` | TF-IDF cosine similarity | Catches obvious contradictions | `scikit-learn` |
+| `EmbeddingCritic` | TF-IDF cosine similarity | Catches obvious contradictions | Nothing (pure-Python TF-IDF) |
 | `HybridCritic` | MiniLM retrieval → DeBERTa NLI | Good semantic coverage | `sentence-transformers` |
 | `LocalNLICritic` | DeBERTa cross-encoder | Best offline quality | `sentence-transformers` |
 | `LLMCritic` | LLM-prompted judgment (provider-agnostic: OpenRouter/OpenAI/DeepSeek/Anthropic/Gemini/…) | Highest quality | API key |
@@ -662,11 +662,11 @@ FastAPI application with three endpoint groups:
 
 | Group | Prefix | Purpose |
 |-------|--------|---------|
-| Health | `/health`, `/metrics` | Liveness check + Prometheus metrics |
-| Claims | `/api/claims` | Submit claim for grading, list claims, review queue |
-| Narrators | `/api/narrators` | Register narrators, query grades, get evidence log |
+| Health | `/v1/health`, `/metrics` | Liveness check + Prometheus metrics |
+| Claims | `/v1/claims` | Submit claim for grading, list claims, review queue |
+| Narrators | `/v1/narrators` | Register narrators, query grades, get evidence log |
 
-### POST /api/claims (submit for grading)
+### POST /v1/claims (submit for grading)
 
 Accepts a chain of link specs.  Runs the full pipeline:
 1. Build chain from link specs
@@ -689,15 +689,19 @@ Accepts a chain of link specs.  Runs the full pipeline:
 
 **File:** `cli/main.py`
 
-Two commands:
+Ten commands:
 
 ```bash
 isnad serve              # Start API server (uvicorn)
-isnad seed --config      # Seed narrators from ISNAD_SEED_CONFIG env var
+isnad seed               # Seed narrators from ISNAD_SEED_CONFIG env var
 isnad export --claim <id> --format json   # Emit a tamper-evident AuditRecord
 isnad verify --record <path>              # Recompute a record's hash
 isnad verify-chain --chain <path>         # Walk a tamper-evident hash chain
 isnad verify-merkle --log <path>          # Verify a Merkle batch log (parallel agents)
+isnad ingest --otlp <path>                # Grade an OpenTelemetry GenAI trace
+isnad bench              # Run the benchmark harness
+isnad mcp                # Serve the registry as an MCP server (grade_claim)
+isnad scan --narrators a,b --domain d     # Scan narrators against the default registry
 ```
 
 Environment variables: `ISNAD_HOST`, `ISNAD_PORT`, `ISNAD_DATABASE_URL`,

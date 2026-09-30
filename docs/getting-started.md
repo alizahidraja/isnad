@@ -8,7 +8,7 @@ Install ISNAD and grade your first chain in under a minute.
 pip install isnad
 ```
 
-Requires **Python 3.12+**. Optional extras: `pip install isnad[langchain]` (LangChain
+Requires **Python 3.11+**. Optional extras: `pip install isnad[langchain]` (LangChain
 tracing) and `isnad[mcp]` (MCP server).
 
 ## 30 seconds to a verdict
