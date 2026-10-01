@@ -63,6 +63,8 @@ nav:
   - SOC 2 Readiness: soc2-readiness.md
   - Compliance Coverage Matrix: compliance-coverage-matrix.md
   - DPA Template: dpa-template.md
+  - Integrations: integrations.md
+  - Mission: mission.md
   - Provenance: provenance.md
   - CLI Reference: cli-reference.md
   - Architecture: ARCHITECTURE.md
