@@ -25,18 +25,20 @@ A strict grounding judge: *"is this response fully grounded in its source?"*
 
 | Metric | Value |
 |---|---|
-| **Cohen's κ** | **0.575** |
-| Accuracy | 79.3% (majority-class baseline 53.2%) |
-| Precision (halluc.) | 72.8% |
-| Recall (halluc.) | 97.6% |
-| F1 (halluc.) | 83.4% |
+| **Cohen's κ** | **0.433** |
+| Accuracy | 70.3% (majority-class baseline 55.8%) |
+| Precision (halluc.) | 60.2% |
+| Recall (halluc.) | 96.2% |
+| F1 (halluc.) | 74.1% |
 
-**Verdict:** the grounding critic ISNAD composes with (its matn layer) transfers at κ = 0.575
-(moderate agreement) on 1,355 of a 1,800-response sample — 97.6% hallucination recall at 72.8% precision.
+**Verdict:** the grounding critic ISNAD composes with (its matn layer) transfers at κ = 0.433
+(moderate agreement) over **all 1,800** RAGTruth responses — 96.2% hallucination recall at 60.2% precision.
+(Fail-closed: 55 unparseable responses, 3.1%, are scored as hallucinated, not dropped.)
 
-**Known limitation:** 24.7% of responses returned a non-conforming verdict and were
-excluded (the reasoning model sometimes doesn't emit the single requested word).
-v3 fixes the prompt/parsing; expect κ to rise once those are recovered.
+**Known limitation:** 55 responses (3.1%) returned no parseable verdict and are scored
+fail-closed as hallucinated. The **50.2% false-positive rate on grounded responses
+(505/1,005)** sits beside the 96.2% recall — the decision matrix holds those, so the cost
+is review, not a wrong serve. This is the honest cost of a high-recall grounding critic.
 
 ## The narrator-grading signal (ISNAD's core) — transfers cleanly
 
@@ -54,7 +56,7 @@ Measured response-level hallucination rates rank the six models in the right ord
 
 ## Overall verdict (G1 gate)
 
-**The LLM grounding critic transfers at κ = 0.575 — a real, moderate-strength signal.**
+**The LLM grounding critic transfers at κ = 0.433 — a moderate signal with a real false-positive cost.**
 It does not clear the κ ≥ 0.8 "company-path" bar yet, but it is a usable detector
 and a strong, honest first case study. Next lever: fix the parse losses + try
 `deepseek-v4-pro` on the hard cases.
