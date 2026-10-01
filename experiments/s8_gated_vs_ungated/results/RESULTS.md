@@ -88,16 +88,24 @@ critic — LLM-backed or embedding-based — to achieve practical coverage.
 
 ---
 
-## Primary Result (preregistered, B=10%, 10 seeds, critic=UNVERIFIABLE)
+## Primary Result (re-run 2026-10-01, B∈{2,5,10,20}%, 10 seeds, 3,710 eval claims/seed)
 
-| Condition | Error Rate | Coverage |
-|---|---|---|
-| Ungated | 8.2% | 100% |
-| Confidence-gated | 8.1% | 100% |
-| **ISNAD-gated** | **~0%** | **10.0%** |
+| Condition | Coverage | Served-error | Review precision |
+|---|---|---|---|
+| Ungated | 100% | 8.7% → 7.1% | ~8% (random) |
+| Confidence-gated | 100% | 8.6% → 7.0% | ~8–10% |
+| **ISNAD-gated** | **2–20% (review budget)** | **0.0%** | ~6–8% |
+| ISNAD, no corroboration | 2–20% (review budget) | 0.0% | ~6–8% (identical) |
 
-ISNAD achieves near-zero error at the review-budget coverage ceiling (10%).
-Confidence-gating is no better than random.
+ISNAD's zero served-error is a **coverage artifact, not a content signal**: the chain
+grades *who* (provenance), so it cannot rank *whether* (content) corruption. It quarantines
+~2% (ingest@weak → REJECT), holds ~88% for review (ḥasan × UNVERIFIABLE → REVIEW), and
+serves only the review budget — so it serves essentially nothing as "safe", hence 0 errors.
+Its review precision (~8%) is statistically indistinguishable from random (~8%) and from
+the corruption rate (~8.4%): **the chain signal does not discriminate content corruption.**
+Confidence-gating is no better than random. Corroboration fires 0× (single-source corpus),
+so `isnad` == `isnad_no_corroboration` exactly. This is the honest WHO-vs-WHETHER boundary
+made empirical; see [`MATCHED_COVERAGE_FINDING.md`](MATCHED_COVERAGE_FINDING.md).
 
 ---
 
