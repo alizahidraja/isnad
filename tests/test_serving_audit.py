@@ -70,3 +70,25 @@ def test_emit_audit_trail_signs_and_appends_to_log(tmp_path, monkeypatch):
     from isnad.audit.sign import hmac_verifier
 
     assert hmac_verifier("test-secret")(canonical_json(payload), sig)
+
+
+def test_emit_audit_trail_appends_to_merkle_log(tmp_path, monkeypatch):
+    reg, chain = _chain_and_registry()
+    mlog = tmp_path / "merkle.jsonl"
+    monkeypatch.setenv("ISNAD_MERKLE_LOG", str(mlog))
+
+    _emit_audit_trail(
+        chain=chain,
+        link_grades=[NarratorGrade.RELIABLE],
+        claim_id="c1",
+        claim_text="p = mv",
+        final_grade="sahih",
+        registry=reg,
+        domain="physics",
+    )
+
+    from isnad.audit import MerkleLog
+
+    ml = MerkleLog(str(mlog))
+    assert ml.count() == 1
+    assert ml.verify() is None

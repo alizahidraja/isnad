@@ -19,6 +19,7 @@ import pytest
 
 from isnad.audit.merkle_log import (
     MerkleBatch,
+    MerkleLog,
     build_batch,
     prove_inclusion,
     read_batch_log,
@@ -380,3 +381,47 @@ class TestVerifyMerkleCLI:
             read_batch_log(log)
         assert exc.value.index == 1
         assert "invalid JSON" in exc.value.reason
+
+
+class TestAnchoredLog:
+    """The persistent MerkleLog with an anchored head/count (tail-truncation)."""
+
+    def test_persists_across_instances(self, tmp_path):
+        path = tmp_path / "merkle.jsonl"
+        log = MerkleLog(path, batch_size=2)
+        log.append(*_leaf(0))
+        log.append(*_leaf(1))  # auto-seals at batch_size=2
+        head, count = log.seal()
+        assert count == 2
+        assert head
+
+        # A fresh instance reads the same anchored head/count.
+        log2 = MerkleLog(path, batch_size=2)
+        assert log2.head() == head
+        assert log2.count() == 2
+        assert log2.verify() is None
+
+    def test_detects_tail_truncation(self, tmp_path):
+        path = tmp_path / "merkle.jsonl"
+        log = MerkleLog(path, batch_size=1)
+        for i in range(3):
+            log.append(*_leaf(i))
+            log.seal()
+        assert log.verify() is None
+
+        # Drop the last batch line -> on-disk count < anchored count.
+        lines = path.read_text().splitlines()
+        path.write_text("\n".join(lines[:-1]) + "\n")
+        brk = log.verify()
+        assert brk is not None
+        assert "truncation" in brk.reason
+
+    def test_head_and_count_accessors(self, tmp_path):
+        path = tmp_path / "merkle.jsonl"
+        log = MerkleLog(path, batch_size=1)
+        assert log.head() is None
+        assert log.count() == 0
+        log.append(*_leaf(0))
+        head, count = log.seal()
+        assert count == 1
+        assert log.head() == head

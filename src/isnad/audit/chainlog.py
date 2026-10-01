@@ -13,6 +13,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
+from isnad.audit._lock import exclusive_lock
 from isnad.audit.canonical import MalformedLogError
 
 
@@ -69,16 +70,23 @@ def _read_chain(path: Path) -> list[ChainEntry]:
 
 
 def append_record(chain_path: str | Path, record_id: str, record_hash: str) -> None:
-    """Append a record hash to the chain, linking it to the previous entry."""
+    """Append a record hash to the chain, linking it to the previous entry.
+
+    The read-modify-append is performed under an exclusive advisory lock
+    (``fcntl.flock`` on POSIX, a documented no-op fallback on Windows), and the
+    line is written with a single ``write()``, so concurrent appenders cannot
+    interleave or lose entries.
+    """
     path = Path(chain_path)
-    entries = _read_chain(path)
-    prev = entries[-1].record_hash if entries else None
-    entry = ChainEntry(
-        index=len(entries), record_id=record_id, record_hash=record_hash, prev_hash=prev
-    )
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("a") as f:
-        f.write(json.dumps(entry.to_dict(), separators=(",", ":")) + "\n")
+    with exclusive_lock(path):
+        entries = _read_chain(path)
+        prev = entries[-1].record_hash if entries else None
+        entry = ChainEntry(
+            index=len(entries), record_id=record_id, record_hash=record_hash, prev_hash=prev
+        )
+        with path.open("a") as f:
+            f.write(json.dumps(entry.to_dict(), separators=(",", ":")) + "\n")
 
 
 def verify_chain(chain_path: str | Path) -> ChainBreak | None:
