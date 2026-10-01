@@ -1,4 +1,4 @@
-"""ISNAD-Bench: the preregistered ground-truth mapping.
+"""ISNAD-Bench: the pre-committed ground-truth mapping.
 
 Pure functions mapping classical hadith data (Ibn Hajar's *Taqrib* 12-tier
 narrator ranks, and the scholars' per-chain verdicts) onto ISNAD's ordinal
@@ -47,7 +47,7 @@ class MappedNarrator:
     is_sentinel: bool = False
 
 
-# rank_no -> (NarratorGrade, AdalahGrade, DabtGrade). Preregistered (§3.1).
+# rank_no -> (NarratorGrade, AdalahGrade, DabtGrade). Pre-committed (§3.1).
 _RANK_TABLE: dict[int, tuple[NarratorGrade, AdalahGrade, DabtGrade]] = {
     1: (NarratorGrade.RELIABLE, AdalahGrade.HIGH, DabtGrade.HIGH),
     2: (NarratorGrade.RELIABLE, AdalahGrade.HIGH, DabtGrade.HIGH),
@@ -115,9 +115,9 @@ _MAWDU_MARKERS = (
 
 
 def chain_grade_from_hukum(hukum: str | None) -> ChainGrade | None:
-    """Classify a scholar's chain verdict into an ISNAD ``ChainGrade``.
+    """Classify the dataset's chain-verdict field into an ISNAD ``ChainGrade``.
 
-    Returns ``None`` for verdicts that do not match any preregistered pattern
+    Returns ``None`` for verdicts that do not match any pre-committed pattern
     (these are reported as "unclassified" rather than silently guessed).
     """
     if not hukum:
@@ -137,7 +137,7 @@ def chain_grade_from_hukum(hukum: str | None) -> ChainGrade | None:
 # ---------------------------------------------------------------------------
 # Critic statements (aqwal.qawl) -> NarratorGrade
 #
-# Used by M3 (the human ceiling): how well do the critics agree with each other
+# Used by M3 (the narrator-grade agreement): how well do the critics agree with each other
 # on a narrator? Keyword order matters — strongest verdicts first.
 # ---------------------------------------------------------------------------
 

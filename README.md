@@ -254,7 +254,7 @@ from Ibn Hajar's 12 tiers (per-tier purity 0.88–0.97; the keyword classifier a
 with the source's structured code at 99.92%, ruling out classifier error), and ISNAD's weakest-link mapping conforms to that convention. The
 0.331/0.450 figures are narrator-grade agreement — context on how contested the
 tiers are, not a ceiling. The benchmark is
-preregistered, carries negative controls (majority-class 0.000; shuffled grades
+pre-committed, carries negative controls (majority-class 0.000; shuffled grades
 −0.007), and buckets every disagreement. Full write-up: [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md).
 
 ```bash

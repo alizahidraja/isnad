@@ -6,7 +6,7 @@ Run:  uv run python -m bench.run [--db PATH] [--limit N | --sample N]
 The primary question, stated once:
 
     When ISNAD is given the classical scholars' narrator grades, does its
-    weakest-link rule reproduce the scholars' own chain verdicts?
+    weakest-link rule reproduce the dataset's rule-based chain-verdict convention?
 
 The primary metric is Cohen's kappa (not accuracy — sahih dominates). A
 collapsed 3-way (sahih / hasan / weak) is reported alongside the full 4-way,
