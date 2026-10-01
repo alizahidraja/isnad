@@ -30,7 +30,7 @@ def siem_dict(
     ``chain_head`` is the current head of the hash/Merkle chain; when omitted it
     falls back to the record's own hash (the record is then its own head).
     """
-    payload = record.to_dict()
+    payload = record.to_dict(include_integrity=False)
     if redact:
         payload["claim_text"] = _REDACTED
     return {

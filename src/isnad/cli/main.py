@@ -166,8 +166,9 @@ def _export(argv: list[str]) -> int:
 
     registry, session = _load_registry_and_session()
     try:
+        redact = args.redact or (args.format == "siem" and not args.no_redact)
         record = build_audit_record(
-            args.claim, session, registry, redact_fn=_redact_claim_text if args.redact else None
+            args.claim, session, registry, redact_fn=_redact_claim_text if redact else None
         )
     finally:
         session.close()
@@ -186,7 +187,7 @@ def _export(argv: list[str]) -> int:
     if args.format == "siem":
         from isnad.audit.siem import siem_jsonl
 
-        for line in siem_jsonl([record], redact=not args.no_redact):
+        for line in siem_jsonl([record], redact=False):  # redacted before hashing
             if args.out:
                 with open(args.out, "a") as f:
                     f.write(line + "\n")
