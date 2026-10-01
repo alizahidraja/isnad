@@ -44,6 +44,7 @@ from isnad.audit.schema import (
     WeakestLink,
     apply_redact,
 )
+from isnad.audit.siem import siem_dict, siem_jsonl
 from isnad.audit.sign import (
     ed25519_keypair,
     ed25519_signer,
@@ -90,6 +91,8 @@ __all__ = [
     "verify_batches",
     "verify_chain",
     "verify_detached",
+    "siem_dict",
+    "siem_jsonl",
     "verify_inclusion",
     "write_batch_log",
 ]

@@ -140,7 +140,7 @@ def _serialize(record, fmt: str) -> str:
 def _export(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(prog="isnad export", description="Emit an AuditRecord.")
     parser.add_argument("--claim", required=True, help="stored claim id")
-    parser.add_argument("--format", choices=["json", "jsonl", "csv"], default="json")
+    parser.add_argument("--format", choices=["json", "jsonl", "csv", "siem"], default="json")
     parser.add_argument("--out", default=None, help="write to file instead of stdout")
     parser.add_argument("--verify", action="store_true", help="recompute the hash and check")
     parser.add_argument(
@@ -154,6 +154,11 @@ def _export(argv: list[str]) -> int:
     parser.add_argument(
         "--redact", action="store_true", help="redact claim text (PII) before hashing"
     )
+    parser.add_argument(
+        "--no-redact",
+        action="store_true",
+        help="SIEM format only: emit full claim_text (opt out of default redaction)",
+    )
     parser.add_argument("--chain-log", default=None, help="append the hash to a chain log")
     args = parser.parse_args(argv)
 
@@ -161,8 +166,9 @@ def _export(argv: list[str]) -> int:
 
     registry, session = _load_registry_and_session()
     try:
+        redact = args.redact or (args.format == "siem" and not args.no_redact)
         record = build_audit_record(
-            args.claim, session, registry, redact_fn=_redact_claim_text if args.redact else None
+            args.claim, session, registry, redact_fn=_redact_claim_text if redact else None
         )
     finally:
         session.close()
@@ -178,13 +184,22 @@ def _export(argv: list[str]) -> int:
             return 1
         sign_detached(record, hmac_signer(args.sign))
 
-    output = _serialize(record, args.format)
+    if args.format == "siem":
+        from isnad.audit.siem import siem_jsonl
 
-    if args.out:
-        with open(args.out, "w") as f:
-            f.write(output + "\n")
+        for line in siem_jsonl([record], redact=False):  # redacted before hashing
+            if args.out:
+                with open(args.out, "a") as f:
+                    f.write(line + "\n")
+            else:
+                print(line)
     else:
-        print(output)
+        output = _serialize(record, args.format)
+        if args.out:
+            with open(args.out, "w") as f:
+                f.write(output + "\n")
+        else:
+            print(output)
 
     # Human-readable summary → stderr, so stdout stays pipeable.
     print(
