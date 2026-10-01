@@ -22,6 +22,7 @@ import collections
 import json
 import sqlite3
 from collections.abc import Sequence
+from typing import cast
 
 from bench._grade import chain_grade_from_narrators, grade_one_chain
 from bench.data import iter_chains
@@ -36,7 +37,8 @@ def _kappas(y_true: Sequence[str], y_pred: Sequence[str]) -> dict[str, float]:
     k4 = cohens_kappa(confusion_matrix(y_true, y_pred, CLASSES), CLASSES)
     t3 = [THREE_WAY[y] for y in y_true]
     p3 = [THREE_WAY[y] for y in y_pred]
-    k3 = cohens_kappa(confusion_matrix(t3, p3, ["sahih", "hasan", "weak"]), ["sahih", "hasan", "weak"])
+    classes3 = ["sahih", "hasan", "weak"]
+    k3 = cohens_kappa(confusion_matrix(t3, p3, classes3), classes3)
     return {"kappa_4way": round(k4, 4), "kappa_3way": round(k3, 4)}
 
 
@@ -47,9 +49,7 @@ def _modal(tiers: dict[int, collections.Counter[str]]) -> dict[int, str]:
 def analyse(db_path: str) -> dict[str, object]:
     conn = sqlite3.connect(db_path)
     try:
-        rows = conn.execute(
-            "SELECT id, max_rank, hukum, matn_no FROM sanads"
-        ).fetchall()
+        rows = conn.execute("SELECT id, max_rank, hukum, matn_no FROM sanads").fetchall()
     finally:
         conn.close()
 
@@ -73,7 +73,9 @@ def analyse(db_path: str) -> dict[str, object]:
     # ---- held-out: fit modal on even ids, score on odd ids ----
     train = [s for s in gap_free if s % 2 == 0]
     test = [s for s in gap_free if s % 2 == 1]
-    by_tier_train: dict[int, collections.Counter[str]] = collections.defaultdict(collections.Counter)
+    by_tier_train: dict[int, collections.Counter[str]] = collections.defaultdict(
+        collections.Counter
+    )
     for s in train:
         by_tier_train[sanads[s][0]][verdict[s]] += 1
     modal_train = _modal(by_tier_train)
@@ -90,8 +92,7 @@ def analyse(db_path: str) -> dict[str, object]:
         true = [verdict[s] for s in ids]
         isnad_pred = [preds[s] for s in ids]
         oracle_pred = [
-            "daif" if sanads[s][0] >= 12 else oracle_from.get(sanads[s][0], "daif")
-            for s in ids
+            "daif" if sanads[s][0] >= 12 else oracle_from.get(sanads[s][0], "daif") for s in ids
         ]
         return {
             "n": len(ids),
@@ -118,7 +119,7 @@ def _print(report: dict[str, object]) -> None:
         f"(gap-free {report['n_gap_free']:,}, gapped {report['n_gapped']:,})"
     )
     for label in ("heldout_train_even_ids", "heldout_test_odd_ids", "full_corpus_in_sample_modal"):
-        r = report[label]
+        r = cast(dict[str, object], report[label])
         print(f"\n{label}: n={r['n']:,}")
         print(f"  lookup oracle  {r['lookup_oracle']}")
         print(f"  ISNAD strict   {r['isnad_strict']}")

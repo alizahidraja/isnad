@@ -7,6 +7,7 @@ Writes deterministic golden values to js/test/golden.json that the
 JS package verifies against byte-for-byte. All inputs are fixed (no random
 UUIDs/timestamps) so the vectors are reproducible.
 """
+
 from __future__ import annotations
 
 import json
@@ -57,9 +58,7 @@ def finalize(rec: AuditRecord) -> tuple[dict, str]:
 
 
 # --- record A: ASCII ---
-ra = make_record(
-    "00000000-0000-4000-8000-000000000001", "c1", "p = mv", "hasan"
-)
+ra = make_record("00000000-0000-4000-8000-000000000001", "c1", "p = mv", "hasan")
 payload_a, hash_a = finalize(ra)
 canon_a = canonical_json(payload_a)
 hmac_a = hmac_signer("test-secret")(canon_a)
@@ -68,16 +67,14 @@ hmac_a = hmac_signer("test-secret")(canon_a)
 rb = make_record(
     "00000000-0000-4000-8000-000000000002",
     "c2",
-    "café — naïve résumé 🚀 \u2028line-sep\U0001F600",
+    "café — naïve résumé 🚀 \u2028line-sep\U0001f600",
     "daif",
 )
 payload_b, hash_b = finalize(rb)
 canon_b = canonical_json(payload_b)
 
 # --- record C: another ASCII for the Merkle batch ---
-rc = make_record(
-    "00000000-0000-4000-8000-000000000003", "c3", "E = mc^2", "sahih"
-)
+rc = make_record("00000000-0000-4000-8000-000000000003", "c3", "E = mc^2", "sahih")
 payload_c, hash_c = finalize(rc)
 
 # --- Ed25519 deterministic key (seed = bytes 0..31) ---

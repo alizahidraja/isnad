@@ -9,6 +9,7 @@ audit_record_hash and audit_signature can be recomputed and verified on read —
 the serving-path "tamper-evident" claim was previously unverifiable because the
 record that was hashed and signed was discarded.
 """
+
 from collections.abc import Sequence
 
 import sqlalchemy as sa

@@ -9,6 +9,7 @@ rehydration is faithful instead of re-deriving a CONTRADICTION as UNVERIFIABLE
 (which silently upgraded a held SAHIH × CONTRADICTION → REVIEW to
 SERVE_WITH_CAVEAT).
 """
+
 from collections.abc import Sequence
 
 import sqlalchemy as sa

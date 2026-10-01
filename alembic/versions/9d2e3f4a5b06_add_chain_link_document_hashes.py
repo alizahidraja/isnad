@@ -8,6 +8,7 @@ Adds a JSON column for retrieved-document content hashes on chain_links, so the
 madār (shared-document) correlation check (#125) can round-trip through the
 normalized link table, not just the denormalized narrator_chain JSONB copy.
 """
+
 from typing import Sequence, Union
 
 from alembic import op
