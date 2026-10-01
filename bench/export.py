@@ -32,7 +32,7 @@ from bench.data import iter_chains
 from bench.mapping import chain_grade_from_hukum
 
 # The mapping file is the scientific claim; its hash is embedded in the header
-# so a downstream consumer can verify the export used the preregistered mapping.
+# so a downstream consumer can verify the export used the pre-committed mapping.
 _MAPPING_PATH = Path(__file__).parent / "docs" / "mapping.md"
 _SOURCE_SHA256 = "d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6"
 
@@ -63,7 +63,7 @@ def export(db_path: str, out_path: str, *, sample: int | None, seed: int, lenien
         "dataset": "isnad-bench",
         "derived_from": "emadjumaah/hadith-kg (CC-BY-4.0)",
         "source_sha256": _SOURCE_SHA256,
-        "mapping": "bench/docs/mapping.md (preregistered)",
+        "mapping": "bench/docs/mapping.md (pre-committed)",
         "mapping_sha256": _mapping_hash(),
         "mode": "lenient" if lenient else "strict",
         "invocation": f"bench.export --db {db_path} --sample {sample} --seed {seed}"
