@@ -9,6 +9,11 @@ LLM-free numeric oracle, so the labels themselves can never hallucinate.
 
 Tiers: easy (trivia a frontier model nails — negative control), medium
 (precise-but-known facts), hard (recent/obscure — where drift is expected).
+
+Post-cutoff provenance: pc01-pc08 match published reports (8 of 9 verified: dos
+Santos 45.80, Russell 12.09, Duplantis 6.31, Knicks 2026, Spain 2026, 2026 Winter
+Olympics medal counts). pc09 ("11 world records ratified in 2026") was DROPPED as
+ill-posed mid-year (the count moves as more records are ratified).
 """
 
 from __future__ import annotations
@@ -610,15 +615,6 @@ HARD_CORPUS: tuple[HardFact, ...] = (
         "Italy won 30 total medals at the 2026 Winter Olympics.",
         "30",
         ("28", "26", "33"),
-        "sports",
-        "postcutoff",
-    ),
-    HardFact(
-        "pc09",
-        "How many world records did World Athletics ratify in 2026?",
-        "World Athletics ratified 11 world records in 2026.",
-        "11",
-        ("8", "15", "20"),
         "sports",
         "postcutoff",
     ),

@@ -176,7 +176,7 @@ src/isnad/
 │       └── adapter.py           register_sealed_source — seal → high-trust narrator
 
 bench/                               ── ISNAD-Bench eval suite ──
-└── (README, mapping, export, human ceiling, ikhtilat)
+└── (README, mapping, export, narrator-grade agreement, ikhtilat)
 
 viewer/
 └── index.html                   Self-contained chain viewer (3 fixtures)

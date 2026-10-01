@@ -6,7 +6,7 @@ The reproducible numbers behind ISNAD — and how to run them on **your own syst
 
 | Benchmark | What it measures | Honest headline | Run |
 |---|---|---|---|
-| **ISNAD-Bench** | weakest-link grading vs 577,024 chains (575,060 graded) | **κ = 0.871** (human ceiling κ = 0.331) | `uv run python -m bench.run` |
+| **ISNAD-Bench** | weakest-link grading vs 577,024 chains (575,060 graded) | **κ = 0.871** (narrator-grade agreement κ = 0.331) | `uv run python -m bench.run` |
 | **Adversarial** | corruption detection on a synthetic corpus | **narrator grading 100%**, content criticism 15% | `uv run python experiments/adversarial_benchmark/run.py` |
 
 The headline numbers lead with the *split*, not a conflated average — the
@@ -70,5 +70,5 @@ bug.
   → ISNAD mapping was committed before any number was computed.
 - The corpus is gitignored and pinned by SHA-256; `bench/README.md` documents
   the audit discipline.
-- The human ceiling (scholars-vs-scholars κ = 0.331) is reported beside ISNAD —
+- The narrator-grade agreement (scholars-vs-scholars κ = 0.331) is reported beside ISNAD —
   it is the honest upper bound, not a thing to exceed.

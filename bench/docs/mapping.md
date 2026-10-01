@@ -157,7 +157,7 @@ number.
    produces a new `mapping` version and a new, separately-reported number.
 4. Negative controls: (a) majority-class baseline (always-sahih), (b)
    shuffled-grade baseline — reported alongside the real number.
-5. The **human ceiling** is reported alongside: inter-critic agreement over the
+5. The **narrator-grade agreement** is reported alongside: inter-critic agreement over the
    same chains (from `aqwal`). ISNAD cannot be expected to exceed it.
 
 ---

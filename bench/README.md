@@ -1,7 +1,7 @@
 # ISNAD-Bench
 
 **One reproducible agreement number between ISNAD's weakest-link chain grading
-and 1,200 years of labelled hadith ground truth.**
+and a rule-based grading convention derived from Ibn Hajar's 12 narrator tiers.**
 
 This directory is deliberately separate from `src/isnad/` — it imports the
 library but touches nothing in it. The 1.6 GB dataset lives in `data/`
@@ -39,7 +39,7 @@ number is computed. Read that first; it is the benchmark's credibility.
 |---|---|---|
 | M1 | Chain-grade agreement on Sahih Muslim only (all-ṣaḥīḥ) | false-demotion rate (lower-bound honesty) |
 | M2 | Full-corpus discrimination (ṣaḥīḥ/ḥasan/ḍaʿīf/mawḍūʿ) | Cohen's κ + confusion matrix + error analysis |
-| M3 | Human ceiling via per-critic agreement (`aqwal`) | inter-critic κ vs ISNAD-vs-consensus κ |
+| M3 | Narrator-grade agreement via per-critic agreement (`aqwal`) | inter-critic κ vs ISNAD-vs-consensus κ |
 | M4 | Ikhtilāṭ → period-sliced grades (`get_grade_as_of`) | validates the flagship #43 feature |
 
 ## Run
@@ -56,7 +56,7 @@ uv run python -m bench.human_ceiling  # M3: inter-critic agreement
 - The primary number is **κ**, not accuracy.
 - Every disagreement is bucketed: mapping ambiguity / missing grade / weakest-link-vs-nuance / continuity / genuine bug.
 - Negative controls (majority-class, shuffled-grade) are reported beside the real number.
-- The human ceiling is reported beside ISNAD — it is the honest upper bound.
+- The narrator-grade agreement is reported beside ISNAD — it is the honest upper bound.
 
 ## Audit & review discipline
 
