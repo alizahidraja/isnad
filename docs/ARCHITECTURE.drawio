@@ -4,7 +4,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="arch_title" value="ISNAD–RIJĀL Framework v2.11.0 — Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+        <mxCell id="arch_title" value="ISNAD–RIJĀL Framework v2.25.0 — Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
           <mxGeometry x="350" y="15" width="950" height="40" as="geometry" />
         </mxCell>
         <mxCell id="arch_sub" value="Claim-level provenance: chains (isnād) · graded narrators (rijāl) · weakest-link grading · content criticism · serve/review/quarantine · tamper-evident, signable audit" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
@@ -92,7 +92,7 @@
           <mxGeometry x="460" y="660" width="380" height="90" as="geometry" />
         </mxCell>
 
-        <mxCell id="critic_embed" value="&lt;b&gt;EmbeddingCritic&lt;/b&gt; (TF-IDF)&lt;br&gt;0.120 recall / 0.320 false-consistent&lt;br&gt;Safest zero-dependency option, low recall&lt;br&gt;TFIDFIndex" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="critic_embed" value="&lt;b&gt;EmbeddingCritic&lt;/b&gt; (TF-IDF)&lt;br&gt;0.120 recall / 0.000 false-consistent (contradiction-only)&lt;br&gt;Safest zero-dependency option, low recall&lt;br&gt;TFIDFIndex" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="860" y="660" width="350" height="90" as="geometry" />
         </mxCell>
 
@@ -281,7 +281,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="vtitle" value="Validation Status — What's Measured vs What's Not (as of August 2026)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+        <mxCell id="vtitle" value="Validation Status — What's Measured vs What's Not (as of October 2026)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
           <mxGeometry x="300" y="15" width="800" height="35" as="geometry" />
         </mxCell>
 
@@ -292,7 +292,7 @@
           <mxGeometry x="55" y="75" width="400" height="25" as="geometry" />
         </mxCell>
 
-        <mxCell id="pv1" value="&lt;b&gt;Content critics — measured&lt;/b&gt;&lt;br&gt;LLM (DeepSeek): 1.000 recall / 0.000 false-consistent&lt;br&gt;LocalNLI: 0.760 / 0.000 · Hybrid: 0.720 / 0.040&lt;br&gt;Embedding: 0.120 / 0.320&lt;br&gt;60-case committed eval set (experiments/critic_eval/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="pv1" value="&lt;b&gt;Content critics — measured&lt;/b&gt;&lt;br&gt;LLM (DeepSeek): 1.000 recall / 0.000 false-consistent&lt;br&gt;LocalNLI: 0.760 / 0.000 · Hybrid: 0.720 / 0.040&lt;br&gt;Embedding: 0.120 / 0.000 (contradiction-only)&lt;br&gt;60-case committed eval set (experiments/critic_eval/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="60" y="110" width="310" height="95" as="geometry" />
         </mxCell>
         <mxCell id="pv2" value="&lt;b&gt;Corroboration — validated&lt;/b&gt;&lt;br&gt;603/603 (Wikipedia) + 104/104 (physics) pairs&lt;br&gt;8/8 negative controls pass&lt;br&gt;Requires attested distinct lineage (madār, #83)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
@@ -301,7 +301,7 @@
         <mxCell id="pv3" value="&lt;b&gt;Weakest-link grading — validated&lt;/b&gt;&lt;br&gt;REJECTED → MAWDU → quarantine (100%)&lt;br&gt;Incomplete → DAIF cap · generative repair gated&lt;br&gt;ISNAD-Bench: κ=0.871 conformance to a rule-based convention&lt;br&gt;(narrator-grade agreement κ=0.33)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="710" y="110" width="310" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="pv4" value="&lt;b&gt;Cold-start seeding — evidence-backed&lt;/b&gt;&lt;br&gt;Registry.seed() survives the Bayesian posterior (#90/#114)&lt;br&gt;seed_from_benchmark() / accuracy_to_grade() — per-role&lt;br&gt;Coverage is critic-bound: LLM ~63% vs embedding ~56% (new claims)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="pv4" value="&lt;b&gt;Cold-start seeding — evidence-backed&lt;/b&gt;&lt;br&gt;Registry.seed() survives the Bayesian posterior (#90/#114)&lt;br&gt;seed_from_benchmark() / accuracy_to_grade() — per-role&lt;br&gt;Coverage is critic-bound: stub 75% / affirming critics 0% (affirmation gate)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="1040" y="110" width="300" height="95" as="geometry" />
         </mxCell>
 
@@ -346,7 +346,7 @@
           <mxGeometry x="1020" y="650" width="300" height="70" as="geometry" />
         </mxCell>
 
-        <mxCell id="tests_note" value="&lt;b&gt;Test suite:&lt;/b&gt; ~790 tests (pytest) | &lt;b&gt;ruff + mypy:&lt;/b&gt; clean | &lt;b&gt;Version:&lt;/b&gt; 2.10.1 on PyPI | &lt;b&gt;Paper:&lt;/b&gt; arXiv:2607.24117" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
+        <mxCell id="tests_note" value="&lt;b&gt;Test suite:&lt;/b&gt; ~790 tests (pytest) | &lt;b&gt;ruff + mypy:&lt;/b&gt; clean | &lt;b&gt;Version:&lt;/b&gt; 2.25.0 on PyPI | &lt;b&gt;Paper:&lt;/b&gt; arXiv:2607.24117" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;align=center;" vertex="1" parent="1">
           <mxGeometry x="60" y="760" width="1260" height="40" as="geometry" />
         </mxCell>
       </root>

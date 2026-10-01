@@ -852,7 +852,7 @@ reg = seed_registry({
 
 Builds a Registry from a simple dict.  Warm-start is **required** for
 practical coverage — seeding is now evidence-backed (`Registry.seed`) and
-coverage is critic-bound (LLM critic ~63% on new claims, embedding ~56%).
+coverage is critic-bound: DeterministicRuleCritic stub 75%, affirming critics 0% (affirmation gate).
 
 ### @isnad_track
 
