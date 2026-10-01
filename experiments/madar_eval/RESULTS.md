@@ -18,4 +18,4 @@
 
 ## Honest limits
 
-Small pilot set. Headline FP-on-agreement is 3/8 (Wilson 95% CI 0.14-0.69); FP overall is 3/16 (0.05-0.47); recall is 8/12 (0.39-0.86); the token-less recall gap and the near-miss FP are the newly measured, honest findings. The gated row is structural. Nothing here fixes the detector — it measures it. `src/isnad/core/content_madar.py` is unchanged by this harness.
+Small pilot set. Headline FP-on-agreement is 3/8 (Wilson 95% CI 0.14-0.69); FP overall is 3/16 (Wilson 95% CI 0.07-0.43); recall is 8/12 (0.39-0.86); the token-less recall gap and the near-miss FP are the newly measured, honest findings. The gated row is structural. Nothing here fixes the detector — it measures it. `src/isnad/core/content_madar.py` is unchanged by this harness.

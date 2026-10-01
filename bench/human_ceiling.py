@@ -1,9 +1,9 @@
 """ISNAD-Bench M3 — the narrator-grade agreement (critic-vs-critic and critic-vs-convention).
 
 Measures how well the classical critics agree with *each other* on a narrator,
-from the 127,863 jarḥ–taʿdīl statements in ``aqwal``. This is the honest upper
-bound for ISNAD's agreement: ISNAD cannot be expected to exceed the scholars'
-own inter-rater agreement.
+from the 127,863 jarḥ–taʿdīl statements in ``aqwal``. This is narrator-grade
+agreement — reported as context on how contested the narrator grades are, not as
+a ceiling on the chain-level κ.
 
 Run:  uv run python -m bench.human_ceiling [--db PATH]
 """
@@ -49,7 +49,7 @@ def _count_critics(db_path: str) -> int:
 
     This matches the documented "945 critics" (distinct critics who issued a
     statement), which is distinct from the 1,015 critics *named* in ``alems``
-    (some named critics issued no statement). The human ceiling κ is computed
+    (some named critics issued no statement). The narrator-grade agreement κ is computed
     over the subset whose statements ``grade_from_qawl`` can classify.
     """
     conn = sqlite3.connect(db_path)
@@ -105,7 +105,7 @@ def main() -> None:
     cm_critic = confusion_matrix(y_true, y_pred, _GRADES)
     kappa_critic = cohens_kappa(cm_critic, _GRADES)
 
-    # Critic vs consensus: how well does one scholar track the average opinion.
+    # Critic vs Ibn Hajar's tier: how well one critic tracks the tier-grade mapping.
     yc_true: list[str] = []
     yc_pred: list[str] = []
     for rawi_id, gs in opinions.items():
@@ -120,7 +120,7 @@ def main() -> None:
 
     n_critics = _count_critics(args.db)
     print("=" * 72)
-    print("ISNAD-Bench M3 — the human ceiling (inter-critic agreement)")
+    print("ISNAD-Bench M3 — the narrator-grade agreement (inter-critic)")
     print("=" * 72)
     print(f"\ncritics (with a criticism statement): {n_critics} · criticism statements: 127,863")
     print(f"narrators with a classified grade: {n_narrators}")
@@ -128,16 +128,16 @@ def main() -> None:
     print(f"unanimous agreement: {unanimous}/{n_multi} ({unanimous / n_multi:.1%})")
 
     print("\n--- the three quantities, in the same units ---")
-    print("  ISNAD vs consensus:       κ = 0.871")
-    print(f"  critic vs consensus:      κ = {kappa_cons:.4f}")
+    print("  ISNAD vs the convention:   κ = 0.871")
+    print(f"  critic vs Ibn Hajar's tier: κ = {kappa_cons:.4f}")
     print(f"  critic vs critic:         κ = {kappa_critic:.4f}  ({len(y_true)} pairs)")
 
     print("\n--- what this means (the honest framing) ---")
-    print(f"  The scholars disagree with each other at κ = {kappa_critic:.2f} — the ground truth")
-    print(f"  itself is contested. A single scholar tracks the consensus at κ = {kappa_cons:.2f}.")
-    print("  ISNAD tracks the consensus at κ = 0.871, i.e. it faithfully implements")
-    print("  the scholars' consensus — it is not 'better than the scholars', it is")
-    print("  a deterministic reflection of their average opinion.")
+    print(f"  The critics disagree with each other at κ = {kappa_critic:.2f} on narrator grades —")
+    print(f"  context, not a ceiling. A critic tracks Ibn Hajar's tier at κ = {kappa_cons:.2f}.")
+    print("  ISNAD conforms to the rule-based chain-verdict convention at κ = 0.871 —")
+    print("  it is not 'better than the scholars', it is a deterministic application")
+    print("  of the 12-tier→grade mapping.")
 
     print("\nconfusion matrix (critic vs critic):")
     for a in _GRADES:
