@@ -1,8 +1,13 @@
-"""Cross-process exclusive file-lock helper (flock on POSIX, no-op on Windows).
+"""Cross-process exclusive file-lock helper (flock on POSIX; no-op on Windows).
 
 ``exclusive_lock`` guards read-modify-append patterns so concurrent appenders do
 not interleave or lose entries. The lock is held on a ``<path>.lock`` sidecar, so
 it survives the lifetime of any single file descriptor.
+
+Honest limits: the lock is POSIX-only (``fcntl.flock``). On Windows it is a
+no-op, so multi-process chainlog/Merkle appends are single-writer there. On
+network filesystems (NFS) ``flock`` is advisory and best-effort — do not rely on
+it for cross-host mutual exclusion.
 """
 
 from __future__ import annotations

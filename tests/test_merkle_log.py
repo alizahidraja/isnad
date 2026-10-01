@@ -425,3 +425,55 @@ class TestAnchoredLog:
         head, count = log.seal()
         assert count == 1
         assert log.head() == head
+
+
+def _seal_one(args):
+    path, i = args
+    from isnad.audit.merkle_log import MerkleLog
+
+    ml = MerkleLog(path, batch_size=1000)
+    ml.append(f"r{i}", f"h{i}" * 8)
+    ml.seal()
+
+
+def test_concurrent_seals_do_not_corrupt_or_clobber(tmp_path):
+    """Multi-process concurrent seal(): the full RMW is under the lock, so no
+    batch chains to a stale prev_root and the anchored count is not clobbered."""
+    from concurrent.futures import ProcessPoolExecutor
+
+    from isnad.audit.merkle_log import MerkleLog
+
+    path = tmp_path / "merkle.jsonl"
+    n = 16
+    with ProcessPoolExecutor(max_workers=4) as ex:
+        list(ex.map(_seal_one, [(str(path), i) for i in range(n)]))
+
+    log = MerkleLog(path, batch_size=1000)
+    assert log.verify() is None
+    assert log.count() == n
+    assert log._batches_sealed == n
+
+
+def test_cli_verify_merkle_detects_anchored_tail_truncation(tmp_path, capsys):
+    """CLI verify-merkle must consult the sidecar anchor: dropping the last
+    batch line (tail truncation) exits 1 with a truncation message."""
+    import pytest
+
+    from isnad.audit.merkle_log import MerkleLog
+    from isnad.cli.main import main
+
+    path = tmp_path / "merkle.jsonl"
+    log = MerkleLog(path, batch_size=1)
+    for i in range(3):
+        log.append(f"r{i}", f"h{i}" * 8)
+        log.seal()
+    assert log.verify() is None
+
+    lines = path.read_text().splitlines()
+    path.write_text("\n".join(lines[:-1]) + "\n")  # drop the last batch
+
+    with pytest.raises(SystemExit) as exc:
+        main(["verify-merkle", "--log", str(path)])
+    assert exc.value.code == 1
+    out = capsys.readouterr().out
+    assert "truncation" in out
