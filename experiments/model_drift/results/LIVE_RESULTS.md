@@ -62,8 +62,11 @@ agreement rate: **0.967** (29/30) — same model family as the critic under test
 
 ## Honest limits
 
-- **Self-critique:** the narrator and critic are the SAME model (`deepseek-flash`);
-  a model is often lenient on its own output, so served_error_rate is optimistic.
+- **Cross-model critic:** narrator is `deepseek-flash`, critic is `deepseek-v4-pro` —
+  the self-critique confound is removed, but a model is still lenient on its own
+  family, so served_error_rate remains optimistic.
+- **Truncated calls: 36** (`finish_reason=length`) — recorded and rendered as
+  "unverifiable", never silently dropped.
 - **Single provider / single model.** No cross-family comparison yet.
 - **temperature = 0.0**: drift is deterministic knowledge error, not sampling noise.
 - **Oracle definition:** any numeric deviation at the canonical value's precision

@@ -10,7 +10,7 @@ Independent re-run of the headline chain-grading number, from the public dataset
 
 | Metric | Published | Reproduced | Match |
 |---|---|---|---|
-| Chain-grade κ (strict) | 0.871 | **0.8714** (computed; unweighted 0.8745 · linear-weighted 0.8917) | ✅ |
+| Chain-grade κ (strict, 3-way) | 0.871 | **0.8714** (computed; unweighted 0.8745 · linear-weighted 0.8917) | ✅ |
 | Chain-grade κ (lenient) | 0.761 | agreement 480,702/575,060 = 83.6% | ✅ |
 | Human ceiling (inter-critic κ) | 0.331 | **0.33** | ✅ |
 | Single scholar vs consensus | 0.45 | **0.45** | ✅ |
