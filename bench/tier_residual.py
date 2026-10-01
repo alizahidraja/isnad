@@ -12,8 +12,9 @@ on the same chains, where the residual comes from instead of assuming it:
 3. **Flag enrichment.** Among chains whose verdict differs from their tier's
    modal verdict, the share with a tadlis or ikhtilat narrator, or whose verdict
    text names a defect (tadlis, ikhtilat, irsal, inqita, i'dal, mutaba'a), next
-   to the same share among all other chains. A flag explains the residual only
-   if it is much more common there than in the rest.
+   to the same share among all other chains. A flag is *enriched for* the residual
+   if it is much more common there than in the rest — but it still only covers a
+   minority of the residual; most residual chains are unexplained by these flags.
 4. **Two kappas on the same chains.** A lookup oracle (tier -> modal verdict,
    fit in-sample: the ceiling for any rule that sees only the weakest tier) and
    ISNAD's strict weakest-link grading, each 4-way and 3-way.

@@ -81,17 +81,18 @@ statements by 945 critics?
 
 | Quantity | Cohen's κ |
 |---|---:|
-| ISNAD vs consensus (strict) | **0.871** |
-| critic vs consensus | 0.450 |
-| critic vs critic | 0.331 |
+| ISNAD vs the rule-based convention (strict) | **0.871** |
+| critic vs the convention | 0.450 |
+| critic vs critic (context, not a ceiling) | 0.331 |
 
 Unanimous agreement: 36.8% of narrators with ≥2 critics.
 
-The honest reading: the ground truth itself is **contested** — scholars disagree
-with each other at κ = 0.33. A single scholar tracks the consensus at κ = 0.45.
-ISNAD tracks the consensus at κ = 0.87 — i.e. it **faithfully implements the
-scholars' consensus**; it is not "better than the scholars", it is a
-deterministic reflection of their average opinion.
+The honest reading: the chain verdicts are a **rule-based convention** (the
+free-text verdict equals the dataset's structured code at 99.92%, and the weakest
+tier predicts the verdict for 88–97% of gap-free chains). ISNAD's weakest-link
+mapping **conforms** to that convention at κ = 0.87 — it is not "better than the
+scholars", and it is not agreement with independent per-chain scholar judgment.
+The 0.331/0.450 figures are narrator-grade agreement, reported as context.
 
 ## Ikhtilāṭ (M4) — the period-sliced grades
 
@@ -116,9 +117,10 @@ cannot time-label. The design is validated; the quantitative value lives in
 
 ## The three things this validates
 
-1. **The weakest-link rule is right.** Given the scholars' own narrator grades,
-   ISNAD reproduces their chain verdicts at κ = 0.87 (strict) — on a scale where
-   the narrator-grade agreement (inter-critic agreement) is κ = 0.33 (measured, M3).
+1. **The weakest-link rule is right.** Given Ibn Hajar's 12 narrator tiers,
+   ISNAD conforms to the dataset's rule-based chain-verdict convention at κ = 0.87
+   (strict) — on a scale where narrator-grade agreement (inter-critic) is κ = 0.33
+   (measured, M3; context, not a ceiling).
 2. **The two-axis split is real.** Integrity vs precision maps cleanly onto the
    classical ranks (ṣadūq-yahim = truthful-but-errs → precision LOW; fabricators
    → integrity COMPROMISED).
@@ -132,9 +134,9 @@ cannot time-label. The design is validated; the quantitative value lives in
   of scope for the chain path).
 - The rank→grade mapping is the author's best-effort reading of Ibn Ḥajar's
   Taqrīb; preregistered and frozen. Ranks 6–7 and 10–12 flagged for review.
-- The narrator-grade agreement is measured (M3): scholars disagree with each other at
-  κ = 0.33, and a single scholar tracks the consensus at κ = 0.45; ISNAD at
-  0.87 is a faithful implementation of the consensus, not a claim of
-  superiority over the scholars.
+- The narrator-grade agreement is measured (M3): critics disagree with each other at
+  κ = 0.33, and a single critic tracks the convention at κ = 0.45; ISNAD at
+  0.87 conforms to the rule-based convention, not a claim of superiority over
+  the scholars.
 - "Mawḍūʿ" is a *chain*-level flag ("a rejected narrator is present"), not a
   matn-level "fabricated" verdict.

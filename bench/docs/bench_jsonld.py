@@ -16,8 +16,8 @@ import json
 BENCH_RESULTS = {
     "kappa_strict": 0.871,
     "kappa_lenient": 0.761,
-    "human_ceiling_critic_vs_critic": 0.331,
-    "human_ceiling_critic_vs_consensus": 0.450,
+    "narrator_agreement_critic_vs_critic": 0.331,
+    "narrator_agreement_critic_vs_convention": 0.450,
     "shuffled_control": -0.0066,
     "majority_control": 0.000,
     "chains": 577024,
@@ -35,7 +35,8 @@ DATASET_JSON_LD = {
         "Per-chain derived output of ISNAD's weakest-link chain grading against "
         "classical hadith ground truth: the scholar's verdict, ISNAD's predicted "
         "chain grade, and the principled disagreement bucket, across 575,060 graded chains. "
-        "Cohen's kappa = 0.871 vs the scholarly consensus (narrator-grade agreement 0.331). "
+        "Cohen's kappa = 0.871 (3-way), conformance to the rule-based chain-verdict "
+        "convention (narrator-grade agreement 0.331, context). "
         "Derived from emadjumaah/hadith-kg (CC-BY-4.0)."
     ),
     "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -80,7 +81,7 @@ LEADERBOARD_MD = (
     "| Method | κ (strict) | Narrator-grade agreement | Note |\n"
     "|---|---|---|---|\n"
     "| **ISNAD weakest-link (strict)** | **0.871** | 0.331 | "
-    "faithfully implements the scholars' consensus |\n"
+    "conforms to the rule-based chain-verdict convention |\n"
     "| ISNAD weakest-link (lenient) | 0.761 | 0.331 | "
     "opt-in `lenient_unknown=True` |\n"
     "| shuffled-rank control | -0.0066 | — | negative control |\n"
