@@ -23,7 +23,7 @@ and a rule-based grading convention derived from Ibn Hajar's 12 narrator tiers.*
 
 This is **derived output**, not a re-host of the source data. The underlying
 dataset is [`emadjumaah/hadith-kg`](https://huggingface.co/datasets/emadjumaah/hadith-kg)
-(CC-BY-4.0). This dataset contains, per chain, the scholar's verdict, ISNAD's
+(CC-BY-4.0). This dataset contains, per chain, the dataset's chain-verdict field (hukum), ISNAD's
 predicted chain grade, and the principled disagreement bucket — computed by the
 exact functions that produce the benchmark's κ.
 
@@ -32,7 +32,7 @@ exact functions that produce the benchmark's κ.
 ISNAD's weakest-link chain grading conforms to the dataset's rule-based chain-verdict convention (derived from Ibn Hajar's 12 narrator tiers) at **Cohen's κ = 0.871** (strict default), across
 **575,060** chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers), with a shuffled-rank control at κ = -0.007.
 
-**ISNAD conforms to the rule-based convention; it is not "better than the scholars".** The narrator-grade agreement — how contested the underlying tiers are — is κ = 0.331 (critic-vs-critic, context). ISNAD's 0.871 means the preregistered tier→grade mapping conforms to the dataset's own convention; the 0.331 is narrator-grade context, not a ceiling.
+**ISNAD conforms to the rule-based convention; it is not "better than the scholars".** The narrator-grade agreement — how contested the underlying tiers are — is κ = 0.331 (critic-vs-critic, context). ISNAD's 0.871 means the pre-committed tier→grade mapping conforms to the dataset's own convention; the 0.331 is narrator-grade context, not a ceiling.
 
 ## Leaderboard
 
@@ -55,7 +55,7 @@ verdicts, and not hadith authenticity. "Mawḍūʿ" here is a chain-level flag
 | --- | --- |
 | Derived from | `emadjumaah/hadith-kg` (CC-BY-4.0) |
 | Source SHA-256 | `d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6` |
-| Mapping | `bench/docs/mapping.md` (preregistered, frozen) |
+| Mapping | `bench/docs/mapping.md` (pre-committed, frozen) |
 | Reproduction | `uv run python -m bench.run --seed 0` |
 | Software | `pip install isnad` (Apache-2.0) |
 | Paper | arXiv:2607.24117 · DOI 10.48550/arXiv.2607.24117 |

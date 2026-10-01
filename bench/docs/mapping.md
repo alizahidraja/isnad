@@ -1,11 +1,11 @@
-# ISNAD-Bench — ground-truth mapping (preregistered)
+# ISNAD-Bench — ground-truth mapping (pre-committed)
 
 > **Status:** FROZEN — methodology fixed before the first result; reproduced by `bench/docs/RESULTS.md` (freeze date 2026-09-09).
 > This document is the *scientific claim* that makes the benchmark number
 > meaningful. It maps classical hadith narrator grading to ISNAD's ordinal
 > grades. It is committed to git **before** any result is computed, and must
 > not be edited after results exist — any change is a new version with a new
-> number (see "Preregistration commitment" below).
+> number (see "Pre-commitment" below).
 
 ---
 
@@ -26,13 +26,13 @@
 | Table | Key columns | Meaning |
 |---|---|---|
 | `rawis` | `rank`, `rank_no`, `has_ikhtilat`, `has_tadlis`, `is_bukhari`, `is_muslim` | one narrator, with a 12-tier reliability rank |
-| `sanads` | `hukum`, `max_rank`, `length` | one chain; `hukum` = scholar's verdict; `max_rank` = weakest-link rank |
+| `sanads` | `hukum`, `max_rank`, `length` | one chain; `hukum` = the dataset's chain-verdict field (a templated convention string); `max_rank` = weakest-link rank |
 | `sanad_rawis` | `sanad_id`, `pos`, `rawi_id` | ordered narrator links of a chain |
 | `hadiths` | `type`, `matn`, `group_id` | `type` = attribution type (مرفوع/موقوف/مقطوع/قدسي), **not** authenticity |
 | `aqwal` / `alems` | `rawi_id`, `alem_id`, `qawl` | 127,863 criticism statements by 945 critics (the `alems` table names 1,015 critics; 945 of them issued a gradeable statement in `aqwal`) |
 
 `max_rank` was verified equal to `max(rank_no)` over the chain's links
-(sampled 5/5). `hukum` is the scholar's free-text chain verdict.
+(sampled 5/5). `hukum` is the dataset's free-text chain-verdict field (a templated convention string).
 
 > **Correction (found during implementation):** `max_rank` is *not* a clean
 > weakest-link signal. The corpus encodes **chain discontinuities** as synthetic
@@ -68,7 +68,7 @@ the standard modern reference for rijāl grading. `rank_no` is the ordinal
 
 ---
 
-## 3. The mapping (preregistered)
+## 3. The mapping (pre-committed)
 
 ### 3.1 Narrator grade: `rank_no` → ISNAD
 
@@ -92,7 +92,7 @@ split.
 
 ### 3.2 Chain verdict: `sanads.hukum` → ISNAD `ChainGrade`
 
-`hukum` is free text; we classify on the leading phrase (preregistered):
+`hukum` is free text; we classify on the leading phrase (pre-committed):
 
 | Leading phrase | ChainGrade |
 |---|---|
@@ -120,8 +120,8 @@ These are places where ISNAD and classical grading can *legitimately* disagree.
 The benchmark must report them separately, not bury them in a single accuracy
 number.
 
-1. **UNGRADED → ḍaʿīf (default) vs ḥasan (lenient opt-in).** Classical scholars
-   treat a *majhūl* (unknown) narrator as making the chain weak. ISNAD
+1. **UNGRADED → ḍaʿīf (default) vs ḥasan (lenient opt-in).** The classical
+   *majhūl* (unknown) narrator treatment makes the chain weak. ISNAD
    **defaults** to the same (ungraded caps at ḍaʿīf, via `lenient_unknown=False`).
    The earlier lenient stance — ungraded caps at ḥasan (never claim ṣaḥīḥ without
    evidence) — is opt-in via `lenient_unknown=True`. ISNAD-Bench measures the gap
@@ -147,7 +147,7 @@ number.
 
 ---
 
-## 5. Preregistration commitment
+## 5. Pre-commitment
 
 1. This document is committed to `feature/58-isnad-bench` **before** any
    agreement number is computed.
@@ -158,10 +158,13 @@ number.
 4. Negative controls: (a) majority-class baseline (always-sahih), (b)
    shuffled-grade baseline — reported alongside the real number.
 5. The **narrator-grade agreement** is reported alongside: inter-critic agreement over the
-   same chains (from `aqwal`). ISNAD cannot be expected to exceed it.
+   same chains (from `aqwal`) — reported as context on how contested the narrator grades are,
+   not as a ceiling on the chain-level κ.
+6. **Disclosure:** the mapping was committed 28 minutes before the first result; the strict
+   default (ungraded → ḍaʿīf) was adopted 46 minutes after it (v2.6.0).
 
 ---
 
 *Author's note: this mapping is my best-effort reading of Ibn Ḥajar's Taqrīb
 tiers. The repo has no external domain reviewer yet; the ranks 6–7 and 10–12
-rows in §3.1 are the places most likely to need a scholar's correction.*
+rows in §3.1 are the places most likely to need a maintainer's/scholar's review.*

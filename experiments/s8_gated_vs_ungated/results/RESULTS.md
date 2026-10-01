@@ -121,7 +121,7 @@ most-corrupted chains. Confidence-gating is no better than random. Corroboration
 
 ## What Gets Rejected — and Why
 
-Rejections come from `ingest@weak` being REJECTED in the 3 of 50 cells where the
+Rejections (on the 2-book re-run corpus) come from `ingest@weak` being REJECTED in the 3 of 50 cells where the
 post-#9 policy drives it that far (3,165 claims, 2.3% of eval). The chain trace
 when it fires:
 
@@ -149,7 +149,7 @@ Full chain trace: `results/rejected_claims_diagnostic.txt`
 
 | Fate | Count | % |
 |---|---|---|
-| Quarantined (MAWDU via ingest@weak, REJECTED in 2–3 of 50 cells) | ~1,818–3,165 | 1.2–2.3% |
+| Quarantined (MAWDU via ingest@weak — 2/50 cells, 1,818 (1.2%) on the 4-book corpus; 3/50 cells, 3,165 (2.3%) on the 2-book re-run) | ~1,818–3,165 | 1.2–2.3% |
 | Held for review, beyond budget | majority | ~88% |
 | **Served (within review budget)** | **~10%** | **~10%** |
 

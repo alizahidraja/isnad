@@ -55,8 +55,8 @@ group, disjoint non-companion narrators)?
 | lenient | 43,628 | **38,393 (88.0%)** |
 | strict | 5,520 | **5,079 (92.0%)** |
 
-So for ~88–92% of the chains ISNAD "over-grades", classical scholars would
-*also* grade them ḥasan — via mutābaʿa — because an independent route exists.
+88.0% (lenient) / 92.0% (strict) of the weak-alone→ḥasan chains have an
+independent corroborating route, so the mutābaʿa principle would apply to them.
 Only the small remainder are genuine over-grades. This is direct evidence that
 ISNAD's corroboration engine is the right next mechanism to wire in.
 
@@ -135,7 +135,7 @@ cannot time-label. The design is validated; the quantitative value lives in
 - Measures **chain-grade** agreement, not hadith-verdict agreement (matn is out
   of scope for the chain path).
 - The rank→grade mapping is the author's best-effort reading of Ibn Ḥajar's
-  Taqrīb; preregistered and frozen. Ranks 6–7 and 10–12 flagged for review.
+  Taqrīb; pre-committed and frozen. Ranks 6–7 and 10–12 flagged for review.
 - The narrator-grade agreement is measured (M3): critics disagree with each other at
   κ = 0.33, and a single critic tracks the convention at κ = 0.45; ISNAD at
   0.87 conforms to the rule-based convention, not a claim of superiority over
