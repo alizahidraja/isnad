@@ -42,21 +42,23 @@ is review, not a wrong serve. This is the honest cost of a high-recall grounding
 
 ## The narrator-grading signal (ISNAD's core) — transfers cleanly
 
-Measured response-level hallucination rates rank the six models in the right order
-(4/6 exact; the bottom two — mistral vs llama-2-7b, near-tied at 63.7% vs 63.0% — are swapped):
+The critic's predicted hallucination rate rank-orders the six models roughly right
+(4/6 exact; the near-tied bottom two — mistral vs llama-2-7b — are swapped), but it
+systematically **over-flags**: predicted rates are 3–4× the true rates (the 50.2%
+false-positive on grounded responses, above).
 
 | Model | Truth | LLM-critic predicted |
 |---|---|---|
-| gpt-4-0613 | 7.7% | 20.0% |
-| gpt-3.5-turbo-0613 | 11.0% | 22.3% |
-| llama-2-70b-chat | 41.7% | 60.0% |
-| llama-2-13b-chat | 53.3% | 70.7% |
-| llama-2-7b-chat | 63.0% | 76.0% |
-| mistral-7B-instruct | 63.7% | 73.3% |
+| gpt-4-0613 | 12.3% | 42.0% |
+| gpt-3.5-turbo-0613 | 16.0% | 46.3% |
+| llama-2-70b-chat | 46.0% | 76.3% |
+| llama-2-13b-chat | 57.0% | 84.0% |
+| llama-2-7b-chat | 66.3% | 89.3% |
+| mistral-7B-instruct | 67.3% | 85.3% |
 
 ## Overall verdict (G1 gate)
 
 **The LLM grounding critic transfers at κ = 0.433 — a moderate signal with a real false-positive cost.**
-It does not clear the κ ≥ 0.8 "company-path" bar yet, but it is a usable detector
+It does not clear the κ ≥ 0.8 "company-path" bar yet, but it is a usable high-recall/low-precision screening signal
 and a strong, honest first case study. Next lever: fix the parse losses + try
 `deepseek-v4-pro` on the hard cases.

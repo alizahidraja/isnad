@@ -70,5 +70,5 @@ bug.
   → ISNAD mapping was committed before any number was computed.
 - The corpus is gitignored and pinned by SHA-256; `bench/README.md` documents
   the audit discipline.
-- The narrator-grade agreement (scholars-vs-scholars κ = 0.331) is reported beside ISNAD —
-  it is the honest upper bound, not a thing to exceed.
+- The narrator-grade agreement (critic-vs-critic κ = 0.331) is reported beside ISNAD as
+  context on how contested the tiers are — not a ceiling on the chain κ.

@@ -214,7 +214,7 @@ The honesty box is the point: what's proven, what's measured, and what's open.
 | **Corroboration (mutābaʿāt)** | ✅ Validated | 603/603 Wikipedia + 104/104 physics semantically-matched pairs; **8/8 Wikipedia + 9/9 physics negative controls** (#127); requires attested distinct lineage (#54) |
 | **Chain-scoped grounding** | ⚠️ Partial | `ChainLinkSpec.retrieved_rows` + `chain_scoped_corpus` + `ChainScopedGroundingPolicy` flag a claim grounded only off its own chain (`grounded_off_chain_only`, a grounding gap — **evidence, not an action**). Wired into `POST /v1/claims` (#216); the flag requires a CONSISTENT-capable critic (NLI/LLM with the affirmation gate bypassed — the default EmbeddingCritic is contradiction-only, so the flag is inert unless you configure one); FP measurable via `experiments/grounding_eval` (#239; requires the `nli` extra — the committed result artifact is pending NLI-model availability, and the harness aborts rather than report FP=0 by construction). |
 | **Content-madār fingerprint calibration** | ✅ Measured | `experiments/madar_eval` — the shared-error fingerprint is measured at **FP 0.375 on independent agreement** (down from 0.750 after tightening #232) with token-bearing recall 1.0. The **near-miss boundary class (a correct vs wrong value, e.g. 1687 vs 1689) is now correctly separated (0/4 false positives)** (#233). |
-| **Seed-grade bootstrapping** | ✅ Validated | Evidence-backed `Registry.seed()`; coverage is critic-bound: LLM ~63% / embedding ~56% on genuinely-new claims, ~100% / ~75% on curated verbatim claims — `experiments/cold_start_coverage/RESULTS.md` |
+| **Seed-grade bootstrapping** | ✅ Validated | Evidence-backed `Registry.seed()`; coverage is critic-bound: the contradiction-only `EmbeddingCritic` now serves **0%** (it can no longer affirm CONSISTENT); the LLM critic is the coverage ceiling — `experiments/cold_start_coverage/RESULTS.md` |
 | **Content criticism** | ⚠️ Partial | The binding constraint. LLM critic: 1.000 recall / **0.000 false-consistent on the 60-case eval set**, but **39.1% false-consistent on §8 content corruption** (#126) — see `docs/critics.md`. Offline critics are safe but conservative (recall 0.12–0.76); the zero-dependency TF-IDF critic is now contradiction-only (never affirms consistency, so 0.000 false-consistent by construction). |
 | **jarḥ–taʿdīl discovery** | ⚠️ Partial | Finds injected weak narrators; good narrators need seed grades |
 | **Bayesian grading** | ✅ Default | Beta posterior per (narrator, role, domain); `ISNAD_POLICY` env override |
@@ -241,17 +241,20 @@ for agreement:
 
 | Quantity | Cohen's κ |
 | --- | ---: |
-| **ISNAD vs scholarly consensus** (strict default) | **0.871** |
-| a single scholar vs consensus | 0.450 |
-| scholars vs scholars (the narrator-grade agreement) | 0.331 |
+| **ISNAD vs the dataset's rule-based chain-verdict code** (strict default) | **0.871** |
+| a single critic vs the convention | 0.450 |
+| critic vs critic (narrator-grade agreement, context) | 0.331 |
 
 **Not the same scale.** κ = 0.871 measures *chain-verdict* agreement (3-way — ṣaḥīḥ / ḥasan / ḍaʿīf, the strict default; the 4-way unweighted is 0.8745);
 the 0.450 and 0.331 figures measure *narrator-grade* agreement (5 classes) — a
 different task. The 0.331 is context for how contested the underlying narrator
 grades are, not a direct ceiling on the chain κ.
-**How to read it:** ISNAD reproduces the scholars' *consensus* at κ = 0.87 — not
-because it is "better than the scholars" (they disagree with each other at 0.33),
-but because it deterministically implements their method. The benchmark is
+**How to read it:** κ = 0.87 is **conformance**, not agreement with independent
+scholar judgment. The dataset's chain verdicts are a rule-based convention derived
+from Ibn Hajar's 12 tiers (free-text == structured code at 99.92%; per-tier purity
+0.88–0.97), and ISNAD's weakest-link mapping conforms to that convention. The
+0.331/0.450 figures are narrator-grade agreement — context on how contested the
+tiers are, not a ceiling. The benchmark is
 preregistered, carries negative controls (majority-class 0.000; shuffled grades
 −0.007), and buckets every disagreement. Full write-up: [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md).
 

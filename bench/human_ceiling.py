@@ -1,4 +1,4 @@
-"""ISNAD-Bench M3 — the human ceiling.
+"""ISNAD-Bench M3 — the narrator-grade agreement (critic-vs-critic and critic-vs-convention).
 
 Measures how well the classical critics agree with *each other* on a narrator,
 from the 127,863 jarḥ–taʿdīl statements in ``aqwal``. This is the honest upper
