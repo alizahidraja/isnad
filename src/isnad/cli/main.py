@@ -407,11 +407,13 @@ def _verify_merkle(argv: list[str]) -> int:
     parser.add_argument("--log", required=True, help="path to a Merkle batch log JSONL")
     args = parser.parse_args(argv)
 
-    from isnad.audit import read_batch_log, verify_batches
+    from isnad.audit import MerkleLog
     from isnad.audit.merkle_log import MalformedLogError
 
     try:
-        break_ = verify_batches(read_batch_log(args.log))
+        # MerkleLog.verify() checks internal consistency AND the sidecar anchor
+        # (tail truncation). A malformed line is reported as a break.
+        break_ = MerkleLog(args.log).verify()
     except MalformedLogError as exc:
         print(f"batch log malformed at entry {exc.index}: {exc.reason}")
         return 1

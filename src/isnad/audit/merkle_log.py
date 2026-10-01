@@ -16,17 +16,20 @@ current scale; this is for mass parallel agent batches. The transmission lineage
 is already a DAG (``audit/schema.py``'s ``upstream_ids``); only the
 tamper-evidence chain was linear, and only that is addressed here.
 
-**Scope.** This is the in-memory structure (build / seal / verify / prove). It is
-not yet wired into the audit-record flow and has no on-disk format — converting
-an ``AuditRecord`` to a leaf, persistence, and a CLI verify path are follow-ups,
-kept out to keep the change reviewable. ``chainlog.py`` is untouched.
+**Wired + anchored.** ``record_to_leaf`` maps an ``AuditRecord`` to a leaf,
+``MerkleLog`` persists sealed batches to ``<path>.jsonl`` and a sidecar anchor
+``<path>.anchor.json`` committing to ``{head, count, batches}``, and
+``isnad verify-merkle`` uses ``MerkleLog.verify()`` so trailing-batch truncation
+is detected, not silently consistent.
 
-**Limit — tail truncation.** ``verify_batches`` confirms the *internal*
-consistency of the batch list it is given; it cannot detect that trailing
-batches were dropped, because nothing commits to the head or the count. This is
-parity with the linear chain (truncating trailing JSONL entries also passes
-``verify_chain``). Detecting truncation needs a trusted head/count, which is out
-of scope here.
+**Honest limit — the anchor is a self-anchored sidecar.** ``verify()`` detects
+*accidental* tail truncation (a crash or a partial write drops trailing
+batches) by comparing the on-disk batch count to the anchored count. It does
+**not** detect an *adversary* who truncates the log and then rewrites the
+sidecar — nothing external commits to the head. An RFC 3161 timestamp or a
+keyed signature over the anchor is the external-commitment next step (#97).
+This is the same parity as the linear chain (self-hash only, forge-resistant
+only when signed).
 
 Stdlib only (``hashlib`` via ``audit/canonical.py``).
 """
@@ -38,6 +41,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from isnad.audit._lock import exclusive_lock
 from isnad.audit.canonical import MalformedLogError, sha256_hex
 
 if TYPE_CHECKING:
@@ -292,3 +296,142 @@ def read_batch_log(path: str | Path) -> list[MerkleBatch]:
             raise MalformedLogError(n, f"malformed value: {exc}") from exc
         batches.append(MerkleBatch(leaves=leaves, root=root, prev_root=prev_root))
     return batches
+
+
+@dataclass
+class MerkleAnchor:
+    """The persisted head/count of a Merkle batch log (a self-anchored sidecar).
+
+    ``{head, count, batches}`` is written by the same process that seals. It
+    makes *accidental* tail truncation detectable (a crash or partial write
+    that drops trailing batches). It is NOT a trust anchor against an adversary
+    who rewrites the sidecar — external commitment (RFC 3161 / a keyed
+    signature) is the next step (#97).
+    """
+
+    head: str | None  # root of the last sealed batch (None when empty)
+    count: int  # total records sealed across all batches
+    batches: int  # number of sealed batches
+
+
+class MerkleLog:
+    """Persistent, append-only Merkle batch log with an anchored head/count.
+
+    Agents append ``(record_id, record_hash)`` leaves concurrently; ``seal()``
+    (or reaching ``batch_size``) links them into a batch chain, persists the
+    batch, and advances a sidecar anchor ``{head, count, batches}``. ``verify()``
+    recomputes every root and link and fail-closes when the on-disk batch count
+    is lower than the anchored count (tail truncation) — the gap
+    ``verify_batches`` alone cannot see, because nothing committed to the head.
+    """
+
+    def __init__(self, path: str | Path, batch_size: int = 1000) -> None:
+        self.path = Path(path)
+        self.batch_size = batch_size
+        self._open: list[tuple[str, str]] = []
+        self._last_root: str | None = None
+        self._batches_sealed = 0
+        self._count = 0
+        self._load()
+
+    @property
+    def anchor_path(self) -> Path:
+        return self.path.with_name(self.path.name + ".anchor.json")
+
+    def _load(self) -> None:
+        a = self.anchor_path
+        if not a.exists():
+            return
+        try:
+            data = json.loads(a.read_text())
+            self._last_root = data.get("head")
+            self._count = int(data.get("count", 0))
+            self._batches_sealed = int(data.get("batches", 0))
+        except (json.JSONDecodeError, ValueError):
+            # A corrupt anchor is a break; surfaced by verify() against on-disk
+            # batches. Keep zeroed here so append still works.
+            return
+
+    def _save_anchor(self) -> None:
+        obj = {"head": self._last_root, "count": self._count, "batches": self._batches_sealed}
+        self.anchor_path.write_text(json.dumps(obj, separators=(",", ":")))
+
+    def append(self, record_id: str, record_hash: str) -> None:
+        """Add a leaf; auto-seal when the open batch reaches ``batch_size``."""
+        self._open.append((record_id, record_hash))
+        if len(self._open) >= self.batch_size:
+            self._seal_open()
+
+    def seal(self) -> tuple[str, int]:
+        """Seal the open batch and return ``(head, count)`` — the trust anchor."""
+        self._seal_open()
+        return (self._last_root or "", self._count)
+
+    def head(self) -> str | None:
+        """Root of the last sealed batch (None when nothing sealed yet)."""
+        return self._last_root
+
+    def count(self) -> int:
+        """Total records sealed (the count the anchor commits to)."""
+        return self._count
+
+    def _reload_anchor(self) -> None:
+        """Re-read the anchor from disk (fresh state under the lock)."""
+        self._last_root = None
+        self._count = 0
+        self._batches_sealed = 0
+        self._load()
+
+    def _seal_open(self) -> None:
+        if not self._open:
+            return
+        # Full read-modify-write under the lock: re-read the anchor, chain to
+        # the FRESH prev_root, append the line, then write the anchor — so two
+        # concurrent seals cannot chain to the same stale prev_root or clobber
+        # the anchored count.
+        with exclusive_lock(self.path):
+            self._reload_anchor()
+            batch = build_batch(self._open)
+            sealed = MerkleBatch(leaves=batch.leaves, root=batch.root, prev_root=self._last_root)
+            obj = {
+                "leaves": [[rid, rhash] for rid, rhash in sealed.leaves],
+                "root": sealed.root,
+                "prev_root": sealed.prev_root,
+            }
+            line = json.dumps(obj, separators=(",", ":")) + "\n"
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            with self.path.open("a") as f:
+                f.write(line)
+            self._last_root = sealed.root
+            self._batches_sealed += 1
+            self._count += len(self._open)
+            self._open = []
+            self._save_anchor()
+
+    def verify(self) -> BatchBreak | None:
+        """Verify the persisted batch chain against its anchor, fail-closed.
+
+        Detects (a) a batch root no longer matching its leaves, (b) a broken
+        prev_root link, and (c) tail truncation — the on-disk batch count being
+        lower than the anchored count. A malformed line is reported as a break,
+        not raised. Without a sidecar anchor, only internal consistency is
+        checked (nothing commits to the head/count).
+        """
+        try:
+            batches = read_batch_log(self.path)
+        except MalformedLogError as exc:
+            return BatchBreak(exc.index, f"malformed batch log: {exc.reason}")
+        if not self.anchor_path.exists():
+            return verify_batches(batches)
+        expected_batches = self._batches_sealed
+        if len(batches) != expected_batches:
+            return BatchBreak(
+                len(batches),
+                f"tail truncation: {len(batches)} batches on disk vs {expected_batches} anchored",
+            )
+        brk = verify_batches(batches)
+        if brk is not None:
+            return brk
+        if expected_batches > 0 and batches[-1].root != self._last_root:
+            return BatchBreak(len(batches) - 1, f"head mismatch: anchor {self._last_root!r}")
+        return None

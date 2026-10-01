@@ -168,6 +168,14 @@ def _emit_audit_trail(
     if log:
         append_record(log, record.record_id, record.integrity.record_hash)
 
+    merkle_log = os.environ.get("ISNAD_MERKLE_LOG")
+    if merkle_log:
+        from isnad.audit import MerkleLog
+
+        ml = MerkleLog(merkle_log)
+        ml.append(record.record_id, record.integrity.record_hash)
+        ml.seal()
+
     return (
         record.integrity.record_hash,
         record.integrity.detached_signature,
