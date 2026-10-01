@@ -60,6 +60,9 @@ nav:
   - Quickstart: quickstart.md
   - Concepts: concepts.md
   - Compliance: compliance.md
+  - SOC 2 Readiness: soc2-readiness.md
+  - Compliance Coverage Matrix: compliance-coverage-matrix.md
+  - DPA Template: dpa-template.md
   - Provenance: provenance.md
   - CLI Reference: cli-reference.md
   - Architecture: ARCHITECTURE.md
