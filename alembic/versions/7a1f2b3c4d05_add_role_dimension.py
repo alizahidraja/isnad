@@ -108,7 +108,11 @@ def _sqlite_recreate() -> None:
         sa.Column("created_at", sa.DateTime(timezone=True), nullable=True),
         sa.ForeignKeyConstraint(
             ["narrator_id", "domain_tag", "role"],
-            ["narrator_registry.narrator_id", "narrator_registry.domain_tag", "narrator_registry.role"],
+            [
+                "narrator_registry.narrator_id",
+                "narrator_registry.domain_tag",
+                "narrator_registry.role",
+            ],
             ondelete="CASCADE",
         ),
         sa.PrimaryKeyConstraint("id"),
@@ -241,7 +245,9 @@ def downgrade() -> None:
         type_="foreignkey",
     )
     op.drop_constraint("narrator_registry_pkey", "narrator_registry", type_="primary")
-    op.create_primary_key("narrator_registry_pkey", "narrator_registry", ["narrator_id", "domain_tag"])
+    op.create_primary_key(
+        "narrator_registry_pkey", "narrator_registry", ["narrator_id", "domain_tag"]
+    )
     op.create_foreign_key(
         "narrator_evidence_narrator_id_domain_tag_fkey",
         "narrator_evidence",

@@ -188,3 +188,5 @@ dev = [
 "src/isnad/core/corroboration.py" = ["E402"]
 "src/isnad/critics/embedding.py" = ["SIM102"]
 "src/isnad/api/auth.py" = ["C416"]
+"alembic/*" = ["E501", "I001", "UP007", "UP035", "W291"]
+"js/scripts/*" = ["E402"]

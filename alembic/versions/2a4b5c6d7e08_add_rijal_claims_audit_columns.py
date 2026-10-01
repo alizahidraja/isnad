@@ -8,6 +8,7 @@ Persist the serving-path audit evidence on rijal_claims so it survives a
 restart: the emitted AuditRecord self-hash, the detached signature (if signed),
 and the human-oversight entries recorded at review resolution (issue #189/#193).
 """
+
 from collections.abc import Sequence
 
 import sqlalchemy as sa
