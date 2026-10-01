@@ -29,6 +29,14 @@ def siem_dict(
 
     ``chain_head`` is the current head of the hash/Merkle chain; when omitted it
     falls back to the record's own hash (the record is then its own head).
+
+    **Redaction honesty:** ``redact=True`` rewrites ``claim_text`` AFTER the record
+    was hashed, so the emitted ``record_hash`` commits to the UNREDACTED form - a
+    consumer recomputing the hash over the emitted (redacted) payload will NOT
+    match. For a self-verifying redacted record, redact BEFORE hashing via
+    ``build_audit_record(redact_fn=...)`` (the CLI's ``export --format siem`` does
+    this). ``siem_dict``'s ``redact`` is therefore display-only PII scrubbing, not
+    a verification-preserving transform.
     """
     payload = record.to_dict(include_integrity=False)
     if redact:

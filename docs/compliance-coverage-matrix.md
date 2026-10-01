@@ -1,6 +1,6 @@
 # Compliance coverage matrix — EU AI Act & NIST AI RMF (field-level)
 
-Counsel-signed template. Every cell is **COVERED / PARTIAL / NOT COVERED** — never
+Draft for counsel review (not yet signed by counsel). Every cell is **COVERED / PARTIAL / NOT COVERED** — never
 "compliant." ISNAD produces evidence artifacts; conformity is the deployer's attestation.
 
 ## EU AI Act (timeline: high-risk obligations from 2 Dec 2027 — Annex III standalone; 2 Aug 2028 — Annex I embedded)

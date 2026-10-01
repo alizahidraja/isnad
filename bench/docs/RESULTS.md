@@ -1,6 +1,6 @@
 # ISNAD-Bench — Results (v2)
 
-**Headline:** ISNAD's weakest-link chain grading reproduces 1,200 years of
+**Headline:** ISNAD's weakest-link chain grading reproduces a rule-based grading convention derived from
 classical hadith scholars' chain verdicts with **Cohen's κ = 0.871** (the strict
 default) and **0.761** (lenient opt-in), across **575,060** graded
 chains — with a shuffled-rank control at κ = −0.007.
@@ -74,7 +74,7 @@ ISNAD's corroboration engine is the right next mechanism to wire in.
 | 1,067 | severity: classical mawḍūʿ vs ISNAD ḍaʿīf | classical "very weak" but binding narrator is only rank 8. |
 | 676 | continuity: taʿlīq gap | collector's known hanging form. |
 
-## The human ceiling (M3)
+## The narrator-grade agreement (M3)
 
 How well do the scholars agree with *each other*, from 127,863 jarḥ–taʿdīl
 statements by 945 critics?
@@ -118,7 +118,7 @@ cannot time-label. The design is validated; the quantitative value lives in
 
 1. **The weakest-link rule is right.** Given the scholars' own narrator grades,
    ISNAD reproduces their chain verdicts at κ = 0.87 (strict) — on a scale where
-   the human ceiling (inter-critic agreement) is κ = 0.33 (measured, M3).
+   the narrator-grade agreement (inter-critic agreement) is κ = 0.33 (measured, M3).
 2. **The two-axis split is real.** Integrity vs precision maps cleanly onto the
    classical ranks (ṣadūq-yahim = truthful-but-errs → precision LOW; fabricators
    → integrity COMPROMISED).
@@ -132,7 +132,7 @@ cannot time-label. The design is validated; the quantitative value lives in
   of scope for the chain path).
 - The rank→grade mapping is the author's best-effort reading of Ibn Ḥajar's
   Taqrīb; preregistered and frozen. Ranks 6–7 and 10–12 flagged for review.
-- The human ceiling is measured (M3): scholars disagree with each other at
+- The narrator-grade agreement is measured (M3): scholars disagree with each other at
   κ = 0.33, and a single scholar tracks the consensus at κ = 0.45; ISNAD at
   0.87 is a faithful implementation of the consensus, not a claim of
   superiority over the scholars.

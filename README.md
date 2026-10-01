@@ -15,7 +15,7 @@ and how much do we trust each one?*
 > Act, ISO/IEC 42001, NIST AI RMF, and SDAIA. **You pass your audit.** 📋
 
 
-> **Proof it works:** ISNAD's weakest-link rule reproduces **1,200 years of
+> **Proof it works:** ISNAD's weakest-link rule reproduces **a rule-based grading convention derived from
 > scholar chain verdicts at Cohen's κ = 0.87** across 575,060 graded hadith
 > chains. (For context: scholars disagree with each other on *narrator grades*
 > at κ = 0.33 — a different task.) Full benchmark below.
@@ -210,7 +210,7 @@ The honesty box is the point: what's proven, what's measured, and what's open.
 | Component | Status | Notes |
 | --- | --- | --- |
 | **Weakest-link quarantine** | ✅ Validated | Every REJECTED-narrator chain grades MAWDU and is blocked — §8 experiment, 100% |
-| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** strict / **0.761** lenient vs 575,060 scholar-graded chains; human ceiling κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
+| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** strict / **0.761** lenient vs 575,060 scholar-graded chains; narrator-grade agreement κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
 | **Corroboration (mutābaʿāt)** | ✅ Validated | 603/603 Wikipedia + 104/104 physics semantically-matched pairs; **8/8 Wikipedia + 9/9 physics negative controls** (#127); requires attested distinct lineage (#54) |
 | **Chain-scoped grounding** | ⚠️ Partial | `ChainLinkSpec.retrieved_rows` + `chain_scoped_corpus` + `ChainScopedGroundingPolicy` flag a claim grounded only off its own chain (`grounded_off_chain_only`, a grounding gap — **evidence, not an action**). Wired into `POST /v1/claims` (#216); the flag requires a CONSISTENT-capable critic (NLI/LLM with the affirmation gate bypassed — the default EmbeddingCritic is contradiction-only, so the flag is inert unless you configure one); FP measurable via `experiments/grounding_eval` (#239; requires the `nli` extra — the committed result artifact is pending NLI-model availability, and the harness aborts rather than report FP=0 by construction). |
 | **Content-madār fingerprint calibration** | ✅ Measured | `experiments/madar_eval` — the shared-error fingerprint is measured at **FP 0.375 on independent agreement** (down from 0.750 after tightening #232) with token-bearing recall 1.0. The **near-miss boundary class (a correct vs wrong value, e.g. 1687 vs 1689) is now correctly separated (0/4 false positives)** (#233). |
@@ -233,7 +233,7 @@ exactly what works, what's limited, and where you supply your own components.
 The serving index is in-memory (single-node deployment; multi-worker HA is not
 yet supported — #199).
 
-## ISNAD-Bench — measured against 1,200 years of ground truth
+## ISNAD-Bench — measured against a rule-based grading convention
 
 The strongest evidence is a number, not a claim: ISNAD's weakest-link rule, run
 on **575,060 graded hadith chains** (each graded by classical scholars), measured
@@ -243,7 +243,7 @@ for agreement:
 | --- | ---: |
 | **ISNAD vs scholarly consensus** (strict default) | **0.871** |
 | a single scholar vs consensus | 0.450 |
-| scholars vs scholars (the human ceiling) | 0.331 |
+| scholars vs scholars (the narrator-grade agreement) | 0.331 |
 
 **Not the same scale.** κ = 0.871 measures *chain-verdict* agreement (3-way — ṣaḥīḥ / ḥasan / ḍaʿīf, the strict default; the 4-way unweighted is 0.8745);
 the 0.450 and 0.331 figures measure *narrator-grade* agreement (5 classes) — a
@@ -258,7 +258,7 @@ preregistered, carries negative controls (majority-class 0.000; shuffled grades
 ```bash
 uv run python -m bench.run               # strict (default), full corpus
 uv run python -m bench.run --lenient     # ungraded → ḥasan
-uv run python -m bench.human_ceiling     # the human ceiling
+uv run python -m bench.human_ceiling     # the narrator-grade agreement
 uv run python -m bench.ikhtilat          # the mukhtaliṭūn (period-sliced grades)
 ```
 

@@ -35,7 +35,7 @@ DATASET_JSON_LD = {
         "Per-chain derived output of ISNAD's weakest-link chain grading against "
         "classical hadith ground truth: the scholar's verdict, ISNAD's predicted "
         "chain grade, and the principled disagreement bucket, across 575,060 graded chains. "
-        "Cohen's kappa = 0.871 vs the scholarly consensus (human ceiling 0.331). "
+        "Cohen's kappa = 0.871 vs the scholarly consensus (narrator-grade agreement 0.331). "
         "Derived from emadjumaah/hadith-kg (CC-BY-4.0)."
     ),
     "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -77,7 +77,7 @@ SCHOLARLY_ARTICLE_JSON_LD = {
 
 LEADERBOARD_MD = (
     "## ISNAD-Bench leaderboard\n\n"
-    "| Method | κ (strict) | Human ceiling | Note |\n"
+    "| Method | κ (strict) | Narrator-grade agreement | Note |\n"
     "|---|---|---|---|\n"
     "| **ISNAD weakest-link (strict)** | **0.871** | 0.331 | "
     "faithfully implements the scholars' consensus |\n"
@@ -86,7 +86,7 @@ LEADERBOARD_MD = (
     "| shuffled-rank control | -0.0066 | — | negative control |\n"
     "| majority-class control | 0.000 | — | negative control |\n"
     "\n"
-    "*The human ceiling (κ=0.331) is how well the scholars agree with each other — "
+    "*The narrator-grade agreement (κ=0.331) is how well the scholars agree with each other — "
     "ISNAD does not exceed it; it is a deterministic reflection of their average "
     "opinion.*\n"
 )

@@ -24,7 +24,7 @@ print(verdict.why)
 # claim 'p = mv' -> chain DAIF (weakest: pdf-scraper, ungraded)
 ```
 
-> **Proof it works:** ISNAD's weakest-link rule reproduces **1,200 years of scholar
+> **Proof it works:** ISNAD's weakest-link rule reproduces **a rule-based grading convention derived from Ibn Hajar's tiers
 > chain verdicts at Cohen's κ = 0.87** across 575,060 graded hadith chains. (For context:
 > scholars disagree with *each other* on narrator grades at κ = 0.33 — a different task.)
 

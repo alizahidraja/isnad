@@ -17,7 +17,7 @@ tags:
 # ISNAD-Bench — derived graded output
 
 **One reproducible agreement number between ISNAD's weakest-link chain grading
-and 1,200 years of labelled hadith ground truth.**
+and a rule-based grading convention derived from Ibn Hajar's 12 narrator tiers.**
 
 ## What this is (and is not)
 
@@ -29,12 +29,12 @@ exact functions that produce the benchmark's κ.
 
 ## The headline number — and how to read it
 
-ISNAD's weakest-link chain grading reproduces 1,200 years of classical hadith
+ISNAD's weakest-link chain grading reproduces a rule-based grading convention derived from Ibn Hajar's 12 narrator tiers
 scholars' chain verdicts at **Cohen's κ = 0.871** (strict default), across
 **575,060** scholar-graded chains, with a shuffled-rank control at κ = -0.007.
 
 **ISNAD faithfully implements the scholars' consensus; it is not "better than
-the scholars".** The human ceiling — how well the scholars agree with *each
+the scholars".** The narrator-grade agreement — how well the scholars agree with *each
 other* — is κ = 0.331 (critic-vs-critic). ISNAD's 0.871 means it is a
 deterministic reflection of the scholars' *average opinion*, on a scale where
 they disagree with each other at 0.331. The consensus it tracks is the honest
@@ -42,7 +42,7 @@ upper bound, not a thing to exceed.
 
 ## Leaderboard
 
-| Model / method | κ (strict) | Human ceiling | Source |
+| Model / method | κ (strict) | Narrator-grade agreement | Source |
 | --- | --- | --- | --- |
 | **ISNAD weakest-link (strict)** | **0.871** | 0.331 | this dataset · `bench/docs/RESULTS.md` |
 | ISNAD weakest-link (lenient) | 0.761 | 0.331 | opt-in `lenient_unknown=True` |
