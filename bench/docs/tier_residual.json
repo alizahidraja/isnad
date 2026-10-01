@@ -1,0 +1,161 @@
+{
+  "scope": "gap-free chains (max_rank < 12), verdicts the keyword classifier can read",
+  "n_chains": 505626,
+  "n_classified": 505230,
+  "classifier_vs_matn_no": {
+    "n": 505230,
+    "agreement": 0.9992
+  },
+  "tiers": [
+    {
+      "tier": 1,
+      "n": 3,
+      "modal": "daif",
+      "purity_classifier": 0.6667,
+      "purity_matn_no": 0.6667,
+      "modal_matn_no": "daif"
+    },
+    {
+      "tier": 2,
+      "n": 15233,
+      "modal": "sahih",
+      "purity_classifier": 0.9575,
+      "purity_matn_no": 0.9575,
+      "modal_matn_no": "sahih"
+    },
+    {
+      "tier": 3,
+      "n": 131617,
+      "modal": "sahih",
+      "purity_classifier": 0.9191,
+      "purity_matn_no": 0.9191,
+      "modal_matn_no": "sahih"
+    },
+    {
+      "tier": 4,
+      "n": 98164,
+      "modal": "hasan",
+      "purity_classifier": 0.8993,
+      "purity_matn_no": 0.8992,
+      "modal_matn_no": "hasan"
+    },
+    {
+      "tier": 5,
+      "n": 39118,
+      "modal": "hasan",
+      "purity_classifier": 0.9344,
+      "purity_matn_no": 0.9344,
+      "modal_matn_no": "hasan"
+    },
+    {
+      "tier": 6,
+      "n": 45381,
+      "modal": "hasan",
+      "purity_classifier": 0.9088,
+      "purity_matn_no": 0.9146,
+      "modal_matn_no": "hasan"
+    },
+    {
+      "tier": 7,
+      "n": 44469,
+      "modal": "daif",
+      "purity_classifier": 0.8766,
+      "purity_matn_no": 0.8764,
+      "modal_matn_no": "daif"
+    },
+    {
+      "tier": 8,
+      "n": 69533,
+      "modal": "daif",
+      "purity_classifier": 0.9389,
+      "purity_matn_no": 0.9386,
+      "modal_matn_no": "daif"
+    },
+    {
+      "tier": 9,
+      "n": 9781,
+      "modal": "daif",
+      "purity_classifier": 0.9683,
+      "purity_matn_no": 0.9704,
+      "modal_matn_no": "daif"
+    },
+    {
+      "tier": 10,
+      "n": 35621,
+      "modal": "mawdu",
+      "purity_classifier": 0.957,
+      "purity_matn_no": 0.957,
+      "modal_matn_no": "mawdu"
+    },
+    {
+      "tier": 11,
+      "n": 16310,
+      "modal": "mawdu",
+      "purity_classifier": 0.9481,
+      "purity_matn_no": 0.949,
+      "modal_matn_no": "mawdu"
+    }
+  ],
+  "residual": {
+    "n_residual": 40310,
+    "n_rest": 464920
+  },
+  "enrichment": {
+    "narrator_tadlis": {
+      "share_residual": 0.3128,
+      "share_rest": 0.3049,
+      "ratio": 1.03
+    },
+    "narrator_ikhtilat": {
+      "share_residual": 0.3904,
+      "share_rest": 0.3558,
+      "ratio": 1.1
+    },
+    "text_tadlis": {
+      "share_residual": 0.0078,
+      "share_rest": 0.0149,
+      "ratio": 0.52
+    },
+    "text_ikhtilat": {
+      "share_residual": 0.002,
+      "share_rest": 0.0037,
+      "ratio": 0.56
+    },
+    "text_irsal": {
+      "share_residual": 0.0218,
+      "share_rest": 0.0028,
+      "ratio": 7.69
+    },
+    "text_inqita": {
+      "share_residual": 0.011,
+      "share_rest": 0.0004,
+      "ratio": 28.39
+    },
+    "text_idal": {
+      "share_residual": 0.0001,
+      "share_rest": 0.0,
+      "ratio": 11.53
+    },
+    "text_mutabaa": {
+      "share_residual": 0.1457,
+      "share_rest": 0.0836,
+      "ratio": 1.74
+    },
+    "any": {
+      "share_residual": 0.6243,
+      "share_rest": 0.5627,
+      "ratio": 1.11
+    }
+  },
+  "lookup_oracle": {
+    "kappa_4way": 0.8884,
+    "kappa_3way": 0.8863
+  },
+  "isnad_strict": {
+    "kappa_4way": 0.8884,
+    "kappa_3way": 0.8863,
+    "n": 505230
+  },
+  "db_sha256": "d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6",
+  "pinned_sha256": "d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6"
+}

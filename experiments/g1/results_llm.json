@@ -1,37 +1,37 @@
 {
   "model": "deepseek-flash",
-  "n_responses": 1355,
-  "unknown_parse": 445,
-  "kappa": 0.5751,
-  "accuracy": 0.7934,
-  "precision_hallucinated": 0.728,
-  "recall_hallucinated": 0.9764,
-  "f1_hallucinated": 0.8341,
-  "baseline_majority_acc": 0.5321,
+  "n_responses": 1800,
+  "unknown_parse": 55,
+  "kappa": 0.4328,
+  "accuracy": 0.7028,
+  "precision_hallucinated": 0.6024,
+  "recall_hallucinated": 0.9623,
+  "f1_hallucinated": 0.7409,
+  "baseline_majority_acc": 0.5583,
   "confusion_[[TN,FP],[FN,TP]]": [
     [
-      371,
-      263
+      500,
+      505
     ],
     [
-      17,
-      704
+      30,
+      765
     ]
   ],
   "model_truth_hallucination_rate": {
-    "gpt-4-0613": 0.0767,
-    "gpt-3.5-turbo-0613": 0.11,
-    "mistral-7B-instruct": 0.6367,
-    "llama-2-7b-chat": 0.63,
-    "llama-2-13b-chat": 0.5333,
-    "llama-2-70b-chat": 0.4167
+    "gpt-4-0613": 0.1233,
+    "gpt-3.5-turbo-0613": 0.16,
+    "mistral-7B-instruct": 0.6733,
+    "llama-2-7b-chat": 0.6633,
+    "llama-2-13b-chat": 0.57,
+    "llama-2-70b-chat": 0.46
   },
   "model_pred_hallucination_rate": {
-    "gpt-4-0613": 0.2,
-    "gpt-3.5-turbo-0613": 0.2233,
-    "mistral-7B-instruct": 0.7333,
-    "llama-2-7b-chat": 0.76,
-    "llama-2-13b-chat": 0.7067,
-    "llama-2-70b-chat": 0.6
+    "gpt-4-0613": 0.42,
+    "gpt-3.5-turbo-0613": 0.4633,
+    "mistral-7B-instruct": 0.8533,
+    "llama-2-7b-chat": 0.8933,
+    "llama-2-13b-chat": 0.84,
+    "llama-2-70b-chat": 0.7633
   }
 }

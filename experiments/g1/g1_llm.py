@@ -51,6 +51,26 @@ def load():
     return sources, rows
 
 
+def _parse_verdict(content: str):
+    """Robust, negation-aware parse of the judge's one-word verdict."""
+    import re as _re
+
+    t = (content or "").strip().upper()
+    if not t:
+        return None
+    last = t.split()[-1].rstrip(".!?,;:'\"")
+    if last in ("GROUNDED", "HALLUCINATED"):
+        return 0 if last == "GROUNDED" else 1
+    neg = _re.compile(r"\b(?:NOT|NEVER|NO|CANNOT|CAN'T|ISN'T|DOESN'T)\b")
+    for m in _re.finditer(r"\b(GROUNDED|HALLUCINATED)\b", t):
+        tok = m.group(1)
+        prefix = " ".join(t[: m.start()].strip().split()[-3:])
+        if neg.search(prefix):
+            continue
+        return 0 if tok == "GROUNDED" else 1
+    return None
+
+
 def judge(source, response):
     prompt = (
         "You are a strict grounding judge. Given a SOURCE and a RESPONSE generated from that source, "
@@ -64,7 +84,7 @@ def judge(source, response):
         "model": MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0,
-        "max_tokens": 1024,
+        "max_tokens": 4096,
     }).encode()
     req = urllib.request.Request(
         URL,
@@ -78,12 +98,8 @@ def judge(source, response):
         try:
             with urllib.request.urlopen(req, timeout=120) as r:
                 data = json.loads(r.read())
-            content = (data["choices"][0]["message"].get("content") or "").strip().upper()
-            if "HALLUCINATED" in content:
-                return 1
-            if "GROUNDED" in content:
-                return 0
-            return None
+            content = (data["choices"][0]["message"].get("content") or "").strip()
+            return _parse_verdict(content)
         except Exception:
             time.sleep(2**attempt)
     return None
@@ -149,8 +165,10 @@ def main():
     for i, (m, s, r, gold) in enumerate(items):
         p = preds[i]
         if p is None:
+            # fail-closed: an unparseable verdict is scored as hallucinated, never
+            # silently dropped (so kappa is computed over all 1,800 responses).
             unknown += 1
-            continue
+            p = 1
         y_true.append(1 if gold else 0)
         y_pred.append(p)
         model_truth[m] += int(gold)
