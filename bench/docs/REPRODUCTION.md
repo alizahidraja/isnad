@@ -13,15 +13,16 @@ Independent re-run of the headline chain-grading number, from the public dataset
 | Chain-grade κ (strict, 3-way) | 0.871 | **0.8714** (computed; unweighted 0.8745 · linear-weighted 0.8917) | ✅ |
 | Chain-grade κ (lenient) | 0.761 | agreement 480,702/575,060 = 83.6% | ✅ |
 | Narrator-grade agreement (inter-critic κ) | 0.331 | **0.33** | ✅ |
-| Single critic vs the convention | 0.45 | **0.45** | ✅ |
+| Single critic vs Ibn Hajar's tier | 0.45 | **0.45** | ✅ |
 | Shuffled-rank control | −0.007 | **−0.0066** | ✅ |
 | Majority-class control | 0.000 | **0.0000** | ✅ |
 | Graded chains | 575,060 | **575,060** | ✅ |
 
 ## Honest framing (from the harness output)
-> "The scholars disagree with each other at κ = 0.33 — the ground truth itself is
-> contested. ISNAD tracks the consensus at κ = 0.871 … it is not 'better than the
-> scholars', it is a deterministic reflection of their average opinion."
+> "The critics disagree with each other at κ = 0.33 on narrator grades — context,
+> not a ceiling. ISNAD conforms to the rule-based chain-verdict convention at
+> κ = 0.871 … it is not 'better than the scholars', it is a deterministic
+> application of the 12-tier→grade mapping."
 
 ## How to re-run
 ```bash
@@ -37,4 +38,4 @@ uv run python -m bench.human_ceiling
 - DB SHA-256: `d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6`
 - Note: the strict κ (0.8714) is the COMPUTED value from `bench.run --reproduce`
   (`Cohen's kappa: 0.8714`), not the hardcoded string in `bench.human_ceiling`. The
-  narrator-grade agreement 0.33 (inter-critic) and 0.45 (critic-vs-convention) are computed independently (context, not a ceiling).
+  narrator-grade agreement 0.33 (inter-critic) and 0.45 (critic vs Ibn Hajar's tier) are computed independently (context, not a ceiling).

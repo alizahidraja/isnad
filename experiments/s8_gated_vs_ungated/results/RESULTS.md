@@ -2,7 +2,10 @@
 
 **Date:** 2026-07-07 (s8 experiment) | Updated 2026-08-26 (reproducibility + extraction fixes)
 **Branch:** s8-scale (merged to main)
-**Corpus:** 22,307 sentence-level spans from real PDFs (OpenStax Vol.1-3 + Crowell)
+**Corpus:** v1 = 22,307 sentence-level spans from real PDFs (OpenStax Vol 1–3 + Crowell).
+**2026-10-01 re-run (Primary Result below):** 2 books — OpenStax Vol 2 + Vol 3 — 224
+chunks → 5,298 claims, 3,710 eval claims/seed. The two corpora are different; see the
+note in the Reproducibility update.
 
 > **Update (2026-07-09):** Corroboration is no longer untested.
 > The semantic corroboration experiment (v2) validates `mutābaʿāt` on
@@ -49,6 +52,12 @@ With `ingest@weak` REJECTED in only 2 of 50 cells, the quarantine count is
 **1,818 of 156,170 eval claims (1.2%)**, not 4,057 of 14,001 (29%). The
 weakest-link quarantine *mechanism* is unchanged and unit-tested; only the
 specific grade-recovery numbers were wrong.
+
+> **Corpus scope note:** the grade-recovery table above and the 1.2% quarantine figure
+> are from the **original 4-book corpus** (Vol 1–3 + Crowell, 22,307 spans, 156,170 eval
+> claims). The 2026-10-01 re-run (Primary Result below) used a **2-book subset** (Vol 2 + Vol 3,
+> 5,298 claims, 3,710 eval claims/seed, ≈2.2% quarantined). Do not compare the two figures
+> directly — they are different corpora.
 
 Both corrections are tracked in the paper-v2 issue (#51). The serving-coverage
 sweep (`run.py`) is regenerated separately; the numbers below predate this
@@ -97,15 +106,16 @@ critic — LLM-backed or embedding-based — to achieve practical coverage.
 | **ISNAD-gated** | **2–20% (review budget)** | **0.0%** | ~6–8% |
 | ISNAD, no corroboration | 2–20% (review budget) | 0.0% | ~6–8% (identical) |
 
-ISNAD's zero served-error is a **coverage artifact, not a content signal**: the chain
-grades *who* (provenance), so it cannot rank *whether* (content) corruption. It quarantines
-~2% (ingest@weak → REJECT), holds ~88% for review (ḥasan × UNVERIFIABLE → REVIEW), and
-serves only the review budget — so it serves essentially nothing as "safe", hence 0 errors.
-Its review precision (~8%) is statistically indistinguishable from random (~8%) and from
-the corruption rate (~8.4%): **the chain signal does not discriminate content corruption.**
-Confidence-gating is no better than random. Corroboration fires 0× (single-source corpus),
-so `isnad` == `isnad_no_corroboration` exactly. This is the honest WHO-vs-WHETHER boundary
-made empirical; see [`MATCHED_COVERAGE_FINDING.md`](MATCHED_COVERAGE_FINDING.md).
+ISNAD's zero served-error is a **coverage artifact**: it quarantines ~2% (ingest@weak →
+REJECT), holds ~88% for review (ḥasan × UNVERIFIABLE → REVIEW), and serves only the review
+budget — so it serves essentially nothing as safe-to-serve, hence 0 errors. The review-precision
+column does **not** show the chain cannot rank corruption: `run.py` assigns every REVIEW claim
+priority 0, so the review queue never orders by chain grade, and corruption is injected
+per-narrator (a WHO property by design). ISNAD's review precision (5.9–7.9%) sits slightly
+*below* random (7.0–8.6%), consistent with quarantine having already removed the
+most-corrupted chains. Confidence-gating is no better than random. Corroboration fires 0×
+(single-source corpus), so `isnad` == `isnad_no_corroboration` exactly. See
+[`MATCHED_COVERAGE_FINDING.md`](MATCHED_COVERAGE_FINDING.md) for the layered-gate reading.
 
 ---
 

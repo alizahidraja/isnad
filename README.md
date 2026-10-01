@@ -15,8 +15,7 @@ and how much do we trust each one?*
 > Act, ISO/IEC 42001, NIST AI RMF, and SDAIA. **You pass your audit.** 📋
 
 
-> **Proof it works:** ISNAD's weakest-link rule reproduces **a rule-based grading convention derived from
-> scholar chain verdicts at Cohen's κ = 0.87** across 575,060 graded hadith
+> **Proof it works:** ISNAD's weakest-link rule reproduces **a rule-based grading convention derived from Ibn Hajar's 12 narrator tiers at Cohen's κ = 0.87** across 575,060 graded hadith
 > chains. (For context: scholars disagree with each other on *narrator grades*
 > at κ = 0.33 — a different task.) Full benchmark below.
 
@@ -210,7 +209,7 @@ The honesty box is the point: what's proven, what's measured, and what's open.
 | Component | Status | Notes |
 | --- | --- | --- |
 | **Weakest-link quarantine** | ✅ Validated | Every REJECTED-narrator chain grades MAWDU and is blocked — §8 experiment, 100% |
-| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** strict / **0.761** lenient vs 575,060 scholar-graded chains; narrator-grade agreement κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
+| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** strict / **0.761** lenient vs 575,060 chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers); narrator-grade agreement κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
 | **Corroboration (mutābaʿāt)** | ✅ Validated | 603/603 Wikipedia + 104/104 physics semantically-matched pairs; **8/8 Wikipedia + 9/9 physics negative controls** (#127); requires attested distinct lineage (#54) |
 | **Chain-scoped grounding** | ⚠️ Partial | `ChainLinkSpec.retrieved_rows` + `chain_scoped_corpus` + `ChainScopedGroundingPolicy` flag a claim grounded only off its own chain (`grounded_off_chain_only`, a grounding gap — **evidence, not an action**). Wired into `POST /v1/claims` (#216); the flag requires a CONSISTENT-capable critic (NLI/LLM with the affirmation gate bypassed — the default EmbeddingCritic is contradiction-only, so the flag is inert unless you configure one); FP measurable via `experiments/grounding_eval` (#239; requires the `nli` extra — the committed result artifact is pending NLI-model availability, and the harness aborts rather than report FP=0 by construction). |
 | **Content-madār fingerprint calibration** | ✅ Measured | `experiments/madar_eval` — the shared-error fingerprint is measured at **FP 0.375 on independent agreement** (down from 0.750 after tightening #232) with token-bearing recall 1.0. The **near-miss boundary class (a correct vs wrong value, e.g. 1687 vs 1689) is now correctly separated (0/4 false positives)** (#233). |
@@ -236,13 +235,13 @@ yet supported — #199).
 ## ISNAD-Bench — measured against a rule-based grading convention
 
 The strongest evidence is a number, not a claim: ISNAD's weakest-link rule, run
-on **575,060 graded hadith chains** (each graded by classical scholars), measured
+on **575,060 graded hadith chains** (a rule-based convention derived from Ibn Hajar's 12 narrator tiers), measured
 for agreement:
 
 | Quantity | Cohen's κ |
 | --- | ---: |
 | **ISNAD vs the dataset's rule-based chain-verdict code** (strict default) | **0.871** |
-| a single critic vs the convention | 0.450 |
+| a single critic vs Ibn Hajar's tier | 0.450 |
 | critic vs critic (narrator-grade agreement, context) | 0.331 |
 
 **Not the same scale.** κ = 0.871 measures *chain-verdict* agreement (3-way — ṣaḥīḥ / ḥasan / ḍaʿīf, the strict default; the 4-way unweighted is 0.8745);
@@ -251,8 +250,8 @@ different task. The 0.331 is context for how contested the underlying narrator
 grades are, not a direct ceiling on the chain κ.
 **How to read it:** κ = 0.87 is **conformance**, not agreement with independent
 scholar judgment. The dataset's chain verdicts are a rule-based convention derived
-from Ibn Hajar's 12 tiers (free-text == structured code at 99.92%; per-tier purity
-0.88–0.97), and ISNAD's weakest-link mapping conforms to that convention. The
+from Ibn Hajar's 12 tiers (per-tier purity 0.88–0.97; the keyword classifier agrees
+with the source's structured code at 99.92%, ruling out classifier error), and ISNAD's weakest-link mapping conforms to that convention. The
 0.331/0.450 figures are narrator-grade agreement — context on how contested the
 tiers are, not a ceiling. The benchmark is
 preregistered, carries negative controls (majority-class 0.000; shuffled grades
@@ -267,7 +266,7 @@ uv run python -m bench.ikhtilat          # the mukhtaliṭūn (period-sliced gra
 
 The dataset (`emadjumaah/hadith-kg`, CC-BY-4.0, 1.6 GB) is gitignored and pinned by
 SHA-256 — see [`bench/README.md`](bench/README.md). The derived graded output (per-chain
-scholar verdict + ISNAD prediction + disagreement bucket) is published as the
+convention verdict + ISNAD prediction + disagreement bucket) is published as the
 [`alizahidraja/isnad-bench` dataset on Hugging Face](https://huggingface.co/datasets/alizahidraja/isnad-bench).
 
 ## Transfers to AI provenance — measured on RAGTruth

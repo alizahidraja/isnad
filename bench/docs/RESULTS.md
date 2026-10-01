@@ -1,7 +1,7 @@
 # ISNAD-Bench — Results (v2)
 
 **Headline:** ISNAD's weakest-link chain grading reproduces a rule-based grading convention derived from
-classical hadith scholars' chain verdicts with **Cohen's κ = 0.871** (the strict
+Ibn Hajar's 12 narrator tiers with **Cohen's κ = 0.871** (the strict
 default) and **0.761** (lenient opt-in), across **575,060** graded
 chains — with a shuffled-rank control at κ = −0.007.
 
@@ -82,14 +82,15 @@ statements by 945 critics?
 | Quantity | Cohen's κ |
 |---|---:|
 | ISNAD vs the rule-based convention (strict) | **0.871** |
-| critic vs the convention | 0.450 |
+| critic vs Ibn Hajar's tier | 0.450 |
 | critic vs critic (context, not a ceiling) | 0.331 |
 
 Unanimous agreement: 36.8% of narrators with ≥2 critics.
 
 The honest reading: the chain verdicts are a **rule-based convention** (the
-free-text verdict equals the dataset's structured code at 99.92%, and the weakest
-tier predicts the verdict for 88–97% of gap-free chains). ISNAD's weakest-link
+weakest tier predicts the verdict for 88–97% of gap-free chains, and the keyword
+classifier agrees with the source's structured code at 99.92% — ruling out
+classifier error). ISNAD's weakest-link
 mapping **conforms** to that convention at κ = 0.87 — it is not "better than the
 scholars", and it is not agreement with independent per-chain scholar judgment.
 The 0.331/0.450 figures are narrator-grade agreement, reported as context.
@@ -117,16 +118,17 @@ cannot time-label. The design is validated; the quantitative value lives in
 
 ## The three things this validates
 
-1. **The weakest-link rule is right.** Given Ibn Hajar's 12 narrator tiers,
+1. **The 12-tier→grade mapping conforms.** Given Ibn Hajar's 12 narrator tiers,
    ISNAD conforms to the dataset's rule-based chain-verdict convention at κ = 0.87
    (strict) — on a scale where narrator-grade agreement (inter-critic) is κ = 0.33
    (measured, M3; context, not a ceiling).
 2. **The two-axis split is real.** Integrity vs precision maps cleanly onto the
    classical ranks (ṣadūq-yahim = truthful-but-errs → precision LOW; fabricators
    → integrity COMPROMISED).
-3. **Corroboration is the next lever, and it is real.** 88–92% of the remaining
-   gap is exactly the mutābaʿa concept — corroboration the scholars themselves
-   applied.
+3. **Corroboration is the next lever, and it is real.** The mutābaʿa bucket
+   (5,520 weak-alone→ḥasan chains in strict mode, ~11% of the 52,330 strict
+   disagreements) is corroboration the scholars themselves applied — and 92% of
+   those chains have an independent route (ablation above).
 
 ## Honest limits
 

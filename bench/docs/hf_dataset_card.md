@@ -30,7 +30,7 @@ exact functions that produce the benchmark's κ.
 ## The headline number — and how to read it
 
 ISNAD's weakest-link chain grading conforms to the dataset's rule-based chain-verdict convention (derived from Ibn Hajar's 12 narrator tiers) at **Cohen's κ = 0.871** (strict default), across
-**575,060** scholar-graded chains, with a shuffled-rank control at κ = -0.007.
+**575,060** chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers), with a shuffled-rank control at κ = -0.007.
 
 **ISNAD conforms to the rule-based convention; it is not "better than the scholars".** The narrator-grade agreement — how contested the underlying tiers are — is κ = 0.331 (critic-vs-critic, context). ISNAD's 0.871 means the preregistered tier→grade mapping conforms to the dataset's own convention; the 0.331 is narrator-grade context, not a ceiling.
 
