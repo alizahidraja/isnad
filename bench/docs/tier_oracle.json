@@ -1,0 +1,42 @@
+{
+  "scope": "all chains with a readable free-text hukum, max_rank sentinel >= 12 -> daif",
+  "n_chains": 577024,
+  "n_classified": 575064,
+  "n_gap_free": 505230,
+  "n_gapped": 69834,
+  "heldout_train_even_ids": {
+    "n": 252684,
+    "lookup_oracle": {
+      "kappa_4way": 0.8884,
+      "kappa_3way": 0.8865
+    },
+    "isnad_strict": {
+      "kappa_4way": 0.8885,
+      "kappa_3way": 0.8865
+    }
+  },
+  "heldout_test_odd_ids": {
+    "n": 252546,
+    "lookup_oracle": {
+      "kappa_4way": 0.8883,
+      "kappa_3way": 0.8861
+    },
+    "isnad_strict": {
+      "kappa_4way": 0.8883,
+      "kappa_3way": 0.8862
+    }
+  },
+  "full_corpus_in_sample_modal": {
+    "n": 575060,
+    "lookup_oracle": {
+      "kappa_4way": 0.8446,
+      "kappa_3way": 0.8713
+    },
+    "isnad_strict": {
+      "kappa_4way": 0.8745,
+      "kappa_3way": 0.8714
+    }
+  },
+  "db_sha256": "d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6",
+  "pinned_sha256": "d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6"
+}

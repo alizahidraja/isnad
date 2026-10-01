@@ -12,7 +12,7 @@ Re-run 2026-10-01. Coverage on 20 clean claims (15 verbatim corpus facts + 5 par
 | EmbeddingCritic (TF-IDF) | **0%** |
 | LocalNLICritic (DeBERTa NLI) | 0% (no NLI model loaded) |
 | HybridCritic (MiniLM → NLI) | 0% (no NLI model loaded) |
-| LLMCritic (DeepSeek) | 0% (no `DEEPSEEK_API_KEY`) |
+| LLMCritic (DeepSeek) | 0% (affirmation gate — no eval record licenses CONSISTENT) |
 
 ## Reading
 
@@ -24,7 +24,15 @@ Re-run 2026-10-01. Coverage on 20 clean claims (15 verbatim corpus facts + 5 par
 - **The seed fix (#114) still works**: the seeded chain grades ḥasan, not ḍaʿīf — the
   bottleneck is now entirely the critic's ability to say CONSISTENT.
 - **The LLM critic remains the only critic that can affirm CONSISTENT on paraphrase**, so
-  it is the coverage ceiling. Re-run it with `DEEPSEEK_API_KEY` set to measure its coverage.
+- **The LLM critic is the only critic that *could* affirm CONSISTENT on paraphrase, but the
+  default-ON affirmation gate withholds it** (measured WITH `DEEPSEEK_API_KEY`, still 0%).
+  `gated()` downgrades CONSISTENT → UNVERIFIABLE until a valid, unexpired, re-runnable
+  eval record licenses affirmation for (kind=llm, domain=physics): false-consistent rate
+  ≤ 0.0, ≥ 25 contradiction cases, pinned eval-set hash. The LLM critic is correctly
+  **unlicensed** — its measured false-consistent rate (39% on §8 content corruption #126,
+  50% false-positive on grounded in the G1 recount) far exceeds 0.0. This is the moat
+  working: a critic may not bless a claim until its false-consistent rate is *measured*
+  and under threshold — and no current critic clears that bar.
 
 ## v1 correction
 
