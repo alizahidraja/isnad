@@ -245,7 +245,7 @@ for agreement:
 | a single scholar vs consensus | 0.450 |
 | scholars vs scholars (the human ceiling) | 0.331 |
 
-**Not the same scale.** κ = 0.871 measures *chain-verdict* agreement (4 classes);
+**Not the same scale.** κ = 0.871 measures *chain-verdict* agreement (3-way — ṣaḥīḥ / ḥasan / ḍaʿīf, the strict default; the 4-way unweighted is 0.8745);
 the 0.450 and 0.331 figures measure *narrator-grade* agreement (5 classes) — a
 different task. The 0.331 is context for how contested the underlying narrator
 grades are, not a direct ceiling on the chain κ.
