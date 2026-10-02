@@ -13,6 +13,10 @@ the review panel flagged remain open; this script answers them:
    kappa = 0.871? tier_residual only compared on the gap-free subset.
 
 Run:  uv run python -m bench.tier_oracle --out bench/docs/tier_oracle.json
+
+Note: the per-tier purity range 0.88-0.97 quoted in the paper EXCLUDES tier 1,
+whose modal is estimated from only n=3 chains (purity 0.6667) — too small to
+treat as a stable tier->verdict map.
 """
 
 from __future__ import annotations
@@ -94,10 +98,17 @@ def analyse(db_path: str) -> dict[str, object]:
         oracle_pred = [
             "daif" if sanads[s][0] >= 12 else oracle_from.get(sanads[s][0], "daif") for s in ids
         ]
+        agree = sum(1 for a, b in zip(isnad_pred, oracle_pred, strict=True) if a == b)
+        tier_marginal = dict(collections.Counter(sanads[s][0] for s in ids))
+        verdict_marginal = dict(collections.Counter(verdict[s] for s in ids))
         return {
             "n": len(ids),
             "lookup_oracle": _kappas(true, oracle_pred),
             "isnad_strict": _kappas(true, isnad_pred),
+            "isnad_vs_oracle_agreement": round(agree / len(ids), 4) if ids else None,
+            "isnad_vs_oracle_confusion": confusion_matrix(oracle_pred, isnad_pred, CLASSES),
+            "tier_marginal": tier_marginal,
+            "verdict_marginal": verdict_marginal,
         }
 
     return {
@@ -123,6 +134,8 @@ def _print(report: dict[str, object]) -> None:
         print(f"\n{label}: n={r['n']:,}")
         print(f"  lookup oracle  {r['lookup_oracle']}")
         print(f"  ISNAD strict   {r['isnad_strict']}")
+        print(f"  ISNAD==oracle agreement  {r['isnad_vs_oracle_agreement']}")
+        print(f"  tier marginal  {r['tier_marginal']}")
 
 
 def main(argv: list[str] | None = None) -> None:

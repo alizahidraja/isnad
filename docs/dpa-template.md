@@ -20,7 +20,7 @@ everything else in the audit record is hashes/ids, so the data exposure is narro
 
 ## 3. Retention & deletion
 - Audit records: retain per the customer's retention policy (default [7] years for regulated
-  use); the tamper-evident chain requires **append-only** retention (deletion breaks the chain).
+  use); the tamper-detecting chain requires **append-only** retention (deletion breaks the chain).
 - Redacted/derived records: delete on request within [30] days.
 - The 1.6 GB benchmark dataset (`hadith-kg.db`) is public CC-BY-4.0 and contains **no customer data**.
 

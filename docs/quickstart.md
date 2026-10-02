@@ -5,7 +5,7 @@ the provenance layer your agent is missing. Five minutes, three steps.
 
 ## What does ISNAD give my agent?
 
-A tamper-evident transmission chain for every claim your agent produces: each hop is
+A tamper-detecting transmission chain for every claim your agent produces: each hop is
 recorded with an input/output hash, each narrator is graded for reliability, and the
 whole chain resolves to one action — serve, caveat, review, or quarantine.
 

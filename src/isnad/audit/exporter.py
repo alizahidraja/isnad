@@ -1,4 +1,4 @@
-"""Export a graded claim as a tamper-evident AuditRecord.
+"""Export a graded claim as a tamper-detecting AuditRecord.
 
 ``build_audit_record`` reads a stored claim, its chain, and the registry's
 grades, and emits an ``AuditRecord`` whose ``record_hash`` is a SHA-256 over the
@@ -73,7 +73,7 @@ def build_audit_record(
     grading_strategy: GradingStrategy | None = None,
     redact_fn: RedactFn | None = None,
 ) -> AuditRecord:
-    """Build a tamper-evident audit record for a stored claim (linear chain)."""
+    """Build a tamper-detecting audit record for a stored claim (linear chain)."""
     claim = session.query(RijalClaim).filter_by(claim_id=claim_id).first()
     if claim is None:
         raise KeyError(f"No stored claim with id {claim_id!r}")

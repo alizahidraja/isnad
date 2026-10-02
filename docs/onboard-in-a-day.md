@@ -153,7 +153,7 @@ hash, through which models, at what time, and who changed it"* — and the audit
 record self-hashes, so a tampered record fails verification.
 
 ```python
-# legal_rag.py — capture the chain, then export a tamper-evident record
+# legal_rag.py — capture the chain, then export a tamper-detecting record
 from isnad import Registry
 from isnad.core.chain import Chain, ChainLinkSpec, store_claim
 from isnad.types import TransformType

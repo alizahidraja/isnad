@@ -6,13 +6,13 @@
 **AI audit trail** for RAG and multi-agent systems. Apache-2.0, permanently.
 
 **Every claim your pipeline produces carries a verifiable weakest-link trust grade
-and a tamper-evident audit trail**, so you can answer the question hallucination
+and a tamper-detecting audit trail**, so you can answer the question hallucination
 detectors and observability tools skip: *who handled this claim, in what order,
 and how much do we trust each one?*
 
-> **The one-sentence pitch:** ISNAD gives you the **tamper-evident audit records your
+> **The one-sentence pitch:** ISNAD gives you the **tamper-detecting audit records your
 > regulators will demand** — a SHA-256 hash for every graded claim, mapped to the EU AI
-> Act, ISO/IEC 42001, NIST AI RMF, and SDAIA. **You pass your audit.** 📋
+> Act, ISO/IEC 42001, NIST AI RMF, and SDAIA. **You get the evidence an auditor verifies.** 📋
 
 
 > **Proof it works:** ISNAD's weakest-link rule reproduces **a rule-based grading convention derived from Ibn Hajar's 12 narrator tiers at Cohen's κ = 0.87** across 575,060 graded hadith
@@ -59,7 +59,7 @@ hands — a scraper extracts it, an agent compiles it, another model serves it.
 Each hand can drop, distort, or invent. **Observability and data-lineage tools
 record *what* happened; ISNAD grades *who* transformed the claim**, so you know
 how much to trust the result — and can export the whole judgment as a
-tamper-evident audit record for governance review.
+tamper-detecting audit record for governance review.
 
 The framework adapts **hadith transmission science** — one of history's most
 rigorous epistemologies, refined over twelve centuries — into a Python library.
@@ -81,7 +81,7 @@ skip: **"who handled this claim, and how much do we trust each transmitter?"**
 | 🎯 Galileo / Patronus / TruLens / RAGAS | Output **faithfulness / groundedness** vs retrieved context | ❌ | ❌ |
 | 🔍 LangSmith / Langfuse / Arize | **Traces** (what happened) + output evals | ✅ | ❌ |
 | 🧬 OpenLineage / Marquez / DataHub | **Data lineage** (what touched what) | ✅ | ❌ |
-| ✨ **ISNAD** | **The transmitters and the transmission chain** — weakest-link grading, corroboration with madār discounting, tamper-evident audit | ✅ | ✅ |
+| ✨ **ISNAD** | **The transmitters and the transmission chain** — weakest-link grading, corroboration with madār discounting, tamper-detecting audit | ✅ | ✅ |
 
 **What ISNAD is NOT — and why that's the point.** Three honest answers, up front:
 
@@ -209,7 +209,7 @@ The honesty box is the point: what's proven, what's measured, and what's open.
 | Component | Status | Notes |
 | --- | --- | --- |
 | **Weakest-link quarantine** | ✅ Validated | Every REJECTED-narrator chain grades MAWDU and is blocked — §8 experiment, 100% |
-| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** strict / **0.761** lenient vs 575,060 chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers); narrator-grade agreement κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
+| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.8745** (4-way) / **0.871** (3-way) / **0.761** lenient vs 575,060 chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers); narrator-grade agreement κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
 | **Corroboration (mutābaʿāt)** | ✅ Validated | 603/603 Wikipedia + 104/104 physics semantically-matched pairs; **8/8 Wikipedia + 9/9 physics negative controls** (#127); requires attested distinct lineage (#54) |
 | **Chain-scoped grounding** | ⚠️ Partial | `ChainLinkSpec.retrieved_rows` + `chain_scoped_corpus` + `ChainScopedGroundingPolicy` flag a claim grounded only off its own chain (`grounded_off_chain_only`, a grounding gap — **evidence, not an action**). Wired into `POST /v1/claims` (#216); the flag requires a CONSISTENT-capable critic (NLI/LLM with the affirmation gate bypassed — the default EmbeddingCritic is contradiction-only, so the flag is inert unless you configure one); FP measurable via `experiments/grounding_eval` (#239; requires the `nli` extra — the committed result artifact is pending NLI-model availability, and the harness aborts rather than report FP=0 by construction). |
 | **Content-madār fingerprint calibration** | ✅ Measured | `experiments/madar_eval` — the shared-error fingerprint is measured at **FP 0.375 on independent agreement** (down from 0.750 after tightening #232) with token-bearing recall 1.0. The **near-miss boundary class (a correct vs wrong value, e.g. 1687 vs 1689) is now correctly separated (0/4 false positives)** (#233). |
@@ -240,11 +240,12 @@ for agreement:
 
 | Quantity | Cohen's κ |
 | --- | ---: |
-| **ISNAD vs the dataset's rule-based chain-verdict code** (strict default) | **0.871** |
+| **ISNAD vs the dataset's rule-based chain-verdict code** (strict default, 4-way) | **0.8745** |
+| — 3-way collapse (ṣaḥīḥ / ḥasan / weak) | 0.8714 |
 | a single critic vs Ibn Hajar's tier | 0.450 |
 | critic vs critic (narrator-grade agreement, context) | 0.331 |
 
-**Not the same scale.** κ = 0.871 measures *chain-verdict* agreement (3-way — ṣaḥīḥ / ḥasan / ḍaʿīf, the strict default; the 4-way unweighted is 0.8745);
+**Not the same scale.** The headline 0.8745 is *chain-verdict* agreement (4-way, the strict default); the 3-way collapse (ṣaḥīḥ / ḥasan / weak) is 0.8714;
 the 0.450 and 0.331 figures measure *narrator-grade* agreement (5 classes) — a
 different task. The 0.331 is context for how contested the underlying narrator
 grades are, not a direct ceiling on the chain κ.
@@ -368,7 +369,7 @@ seed_from_benchmark(reg, "model:gpt-4o@v1", "physics", 0.93, benchmark="mmlu")  
 
 ## Audit & Compliance Evidence
 
-ISNAD can **export a tamper-evident audit record** for any graded claim:
+ISNAD can **export a tamper-detecting audit record** for any graded claim:
 
 ```bash
 isnad export --claim <id> --format json    # or jsonl|csv; --verify; --sign; --redact; --chain-log
@@ -377,7 +378,7 @@ isnad export --claim <id> --format json    # or jsonl|csv; --verify; --sign; --r
 Each record captures the full chain (as an explicit **DAG** via `upstream_ids`),
 the weakest link, source-document hashes, human-oversight evidence, the
 environment, and a SHA-256 integrity hash over the RFC 8785-canonical form of its
-payload — plus an optional detached signature (HMAC/Ed25519), a tamper-evident
+payload — plus an optional detached signature (HMAC/Ed25519), a tamper-detecting
 hash chain, and a PII-redaction hook.
 
 **Serving-side signing:** the API signs records with a detached HMAC only when

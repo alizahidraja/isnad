@@ -1,4 +1,4 @@
-"""The ISNAD audit record — a machine-readable, tamper-evident evidence artifact.
+"""The ISNAD audit record — a machine-readable, tamper-detecting evidence artifact.
 
 An ``AuditRecord`` is what ISNAD *emits* for governance record-keeping.  It is
 an **evidence artifact, not a certificate of conformity**: it records what the

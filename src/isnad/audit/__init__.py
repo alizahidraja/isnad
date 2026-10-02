@@ -1,4 +1,4 @@
-"""ISNAD audit — tamper-evident evidence artifacts for AI governance.
+"""ISNAD audit — tamper-detecting evidence artifacts for AI governance.
 
 This package exports graded claims as ``AuditRecord`` objects whose integrity
 is provable (SHA-256 over RFC 8785-canonical JSON, optional hash-chaining).
