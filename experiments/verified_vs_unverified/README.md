@@ -66,7 +66,7 @@ shows the failure modes as prominently as the successes.
 - **E (corroboration):** a DAIF chain is upgraded to HASAN by a second,
   genuinely independent source (different upstream, different model family).
   The `mutābaʿāt` mechanism recovers a claim that would otherwise need review.
-- **F (ʿilal):** a sound chain carrying contradicted content — the
+- **F (shudhudh):** a sound chain carrying contradicted content — the
   highest-value review case. Content criticism catches what chain grading
   cannot.
 

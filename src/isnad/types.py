@@ -232,7 +232,7 @@ class Action(Enum):
 
     SERVE = "serve"  # serve directly; cache
     SERVE_WITH_CAVEAT = "serve_with_caveat"  # serve with confidence caveat
-    REVIEW = "review"  # hold in review queue; do not serve (ʿilal path)
+    REVIEW = "review"  # hold in review queue; do not serve (shudhudh path)
     QUARANTINE = "quarantine"  # quarantine claim
     REJECT_AND_QUARANTINE_NARRATOR = "reject_and_quarantine_narrator"
     # reject claim, quarantine narrator (poisoning mitigation)

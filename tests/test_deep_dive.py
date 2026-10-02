@@ -123,7 +123,7 @@ check(
     decide(cg2, ContentVerdict.CONSISTENT) == Action.SERVE,
 )
 check(
-    "B3. SAHIH + CONTRADICTION → REVIEW (ʿilal signal)",
+    "B3. SAHIH + CONTRADICTION → REVIEW (shudhudh signal)",
     decide(cg2, ContentVerdict.CONTRADICTION) == Action.REVIEW,
 )
 note("   This is the highest-value review signal in the paper.")

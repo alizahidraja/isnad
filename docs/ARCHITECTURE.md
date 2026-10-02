@@ -539,7 +539,7 @@ The 4×3 router: chain_grade × content_verdict → action.
 
 ```
                  CONSISTENT               CONTRADICTION                       UNVERIFIABLE
-SAHIH            SERVE (cache)            REVIEW (ʿilal — highest-value)      SERVE_WITH_CAVEAT
+SAHIH            SERVE (cache)            REVIEW (shudhudh — highest-value)      SERVE_WITH_CAVEAT
 HASAN            SERVE_WITH_CAVEAT        REVIEW (hold; do not serve)         REVIEW
 DAIF             REVIEW (seek corrob.)    QUARANTINE                          REVIEW
 MAWDU            REJECT_AND_QUARANTINE    REJECT_AND_QUARANTINE               REJECT_AND_QUARANTINE

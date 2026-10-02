@@ -170,7 +170,7 @@ def test_paper_worked_example_hasan_contradiction() -> None:
 
 def test_paper_worked_example_sahih_contradiction() -> None:
     """Paper §4.5 continued: if both ingest steps were RELIABLE in quantum domain,
-    the same claim lands in the ṣaḥīḥ × contradiction (ʿilal) cell.
+    the same claim lands in the ṣaḥīḥ × contradiction (shudhudh) cell.
 
     This is the difference the framework adds: the chain quality tells
     the reviewer which to trust more.
@@ -229,12 +229,12 @@ def test_paper_worked_example_sahih_contradiction() -> None:
     )
     assert content_verdict == ContentVerdict.CONTRADICTION
 
-    # --- Decision matrix: SAHIH × CONTRADICTION → REVIEW (ʿilal) ---
+    # --- Decision matrix: SAHIH × CONTRADICTION → REVIEW (shudhudh) ---
     action = decide(chain_grade, content_verdict)
     assert action == Action.REVIEW
 
     description = describe_action(chain_grade, content_verdict)
-    assert "ʿilal" in description.lower() or "highest-value" in description.lower()
+    assert "shudhudh" in description.lower() or "highest-value" in description.lower()
 
 
 def test_paper_worked_example_claim_id_is_deterministic() -> None:

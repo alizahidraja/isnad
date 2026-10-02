@@ -825,7 +825,7 @@ check(
     decide(ChainGrade.SAHIH, ContentVerdict.CONSISTENT) == Action.SERVE,
 )
 check(
-    "SAHIH + CONTRADICTION → REVIEW (ilal signal)",
+    "SAHIH + CONTRADICTION → REVIEW (shudhudh signal)",
     decide(ChainGrade.SAHIH, ContentVerdict.CONTRADICTION) == Action.REVIEW,
 )
 check(
@@ -877,9 +877,7 @@ check(
 
 # describe_action
 desc = describe_action(ChainGrade.SAHIH, ContentVerdict.CONTRADICTION)
-check(
-    "describe_action SAHIH+CONTRADICTION mentions ilal", "ilal" in desc.lower() or "ʿilal" in desc
-)
+check("describe_action SAHIH+CONTRADICTION mentions shudhudh", "shudhudh" in desc.lower())
 
 
 # ═══════════════════════════════════════════════════════════════════
