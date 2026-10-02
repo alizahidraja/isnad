@@ -257,7 +257,7 @@ def main() -> None:
     print(f"  false positives:    {fp}")
     print()
     print("  What the trust layer catches:  weak-narrator corruption (B),")
-    print("                                  ilal contradiction (F),")
+    print("                                  shudhudh contradiction (F),")
     print("                                  corroboration recovery (E)")
     print("  What it misses (honestly):      stale-grade drift (C, issue #4),")
     print("                                  fabricated-clean chain (D, issue #11)")

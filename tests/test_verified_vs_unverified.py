@@ -72,9 +72,9 @@ def test_scenario_e_is_recovered_by_corroboration(output: str):
     assert "FALSE +VE" not in e_section
 
 
-def test_scenario_f_is_caught_via_ilal(output: str):
+def test_scenario_f_is_caught_via_shudhudh(output: str):
     """Sound chain + contradicted content must route to review (caught)."""
-    f_section = output.split("[F-ilal]")[1].split("\n\n")[0]
+    f_section = output.split("[F-shudhudh]")[1].split("\n\n")[0]
     assert "CAUGHT" in f_section
     assert "action=review" in f_section
 

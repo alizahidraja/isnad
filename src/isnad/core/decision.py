@@ -6,7 +6,7 @@ The matrix:
 
                     CONSISTENT                          CONTRADICTION
   ─────────────── ──────────────────────────────────  ───────────────────────────────────
-  SAHIH            SERVE (cache)                       REVIEW (ʿilal — highest-value case)
+  SAHIH            SERVE (cache)                       REVIEW (shudhudh — highest-value case)
   HASAN            SERVE_WITH_CAVEAT (seek corrob.)   REVIEW (hold; do not serve)
   DAIF             REVIEW (seek corroboration first)   QUARANTINE
   MAWDU            REJECT_AND_QUARANTINE_NARRATOR      REJECT_AND_QUARANTINE_NARRATOR
@@ -147,7 +147,7 @@ def describe_action(
             "Sound chain, consistent content — serve directly and cache."
         ),
         (ChainGrade.SAHIH, ContentVerdict.CONTRADICTION): (
-            "ʿIlal signal: sound chain but content contradicts corpus. "
+            "Shudhudh signal: sound chain but content contradicts a stronger source. "
             "This is the highest-value review case — either the new source "
             "changed the world's state or the corpus has a latent defect."
         ),

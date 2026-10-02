@@ -45,7 +45,10 @@ critics; it doesn't replace them. Provenance answers *who*, the critic answers
 A 4×3 router combining chain grade (ṣaḥīḥ/ḥasan/ḍaʿīf/mawḍūʿ) with content verdict
 (consistent/contradiction/unverifiable) into one action: **serve**, **serve-with-caveat**,
 **review**, or **quarantine**. A sound chain with a contradiction is the most valuable
-case — it's routed to human review, not auto-served.
+case — it's the shudhudh case (a reliable narrator contradicted by a more reliable
+one, an anomaly), routed to human review rather than auto-adjudicated. Hidden defects
+in the chain or matn that survive surface grading are ʿilal — ISNAD does not implement
+ʿilal detection; it routes such cases to human review.
 
 ## What does ISNAD measure, and what doesn't it claim?
 

@@ -22,7 +22,7 @@ The six scenarios:
   C. stale grade        — RELIABLE-but-drifted, subtle error  → MISSED  (#4)
   D. fabricated source  — RELIABLE source, plausible lie      → MISSED  (#11)
   E. corroboration win  — DAIF chain upgraded by 2nd source   → recovered
-  F. ilal (contradict)  — sound chain, contradicted content   → review
+  F. shudhudh (contradict)  — sound chain, contradicted content   → review
 """
 
 from __future__ import annotations
@@ -170,9 +170,9 @@ SCENARIOS: list[Scenario] = [
         "upgrading it DAIF → HASAN. Corroboration recovers a claim that "
         "would otherwise need review.",
     ),
-    # F — ʿilal (hidden defect): sound chain, contradicted content
+    # F — shudhudh (anomaly): sound chain, contradicted content
     Scenario(
-        id="F-ilal",
+        id="F-shudhudh",
         query="What is the momentum of a moving object?",
         chain=[
             ("source:openstax-vol3", "pass_through"),
@@ -181,11 +181,11 @@ SCENARIOS: list[Scenario] = [
         ],
         claim="The momentum of a moving object is p = h/λ.",
         correct=False,
-        failure_mode="ilal",
+        failure_mode="shudhudh",
         note="Sound chain, but the content contradicts the corpus (classical "
         "p = mv vs quantum p = h/λ — the claim is missing its regime "
         "qualifier). A sound chain carrying contradicted content is the "
-        "ʿilal case — routed to human review, not served. Content criticism "
+        "shudhudh case — routed to human review, not served. Content criticism "
         "catches what chain grading cannot.",
     ),
 ]

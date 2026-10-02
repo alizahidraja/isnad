@@ -43,7 +43,7 @@ Primary comparator: ISNAD-gated vs. confidence-gated (current-practice baseline 
 Four serving conditions, all at the SAME budgets B ∈ {2%, 5%, 10%, 20%}:
 1. **Ungated + random review:** Serve all claims; spend budget on uniform-random claims.
 2. **Confidence-gated:** Route B lowest self-confidence claims to review; serve rest.
-3. **ISNAD-gated:** Full framework: chain grading → matn criticism → decision matrix → prioritized review queue consumption (ʿilal first, then ḥasan×contradiction, etc.). Claims beyond budget not served.
+3. **ISNAD-gated:** Full framework: chain grading → matn criticism → decision matrix → prioritized review queue consumption (shudhudh first, then ḥasan×contradiction, etc.). Claims beyond budget not served.
 4. **ISNAD-gated, no corroboration:** Same as 3 with mutābaʿāt disabled (ablation).
 
 5 random seeds for narrator assignment + injection. Matn criticism: deterministic critic.

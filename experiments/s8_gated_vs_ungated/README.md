@@ -89,7 +89,7 @@ DEEPSEEK_API_KEY=sk-... python run_experiment.py  # DeepSeek LLM critic
 │                                                                      │
 │              CONSISTENT            CONTRADICTION                     │
 │  ─────────── ────────────────────  ───────────────────────────────── │
-│  SAHIH       SERVE (cache)        REVIEW (ʿilal — highest value)    │
+│  SAHIH       SERVE (cache)        REVIEW (shudhudh — highest value)    │
 │  HASAN       SERVE_WITH_CAVEAT    REVIEW (hold; do not serve)       │
 │  DAIF        REVIEW (seek corrob) QUARANTINE                        │
 │  MAWDU  ───► REJECT_AND_QUARANTINE_NARRATOR  ◄── THIS CLAIM        │

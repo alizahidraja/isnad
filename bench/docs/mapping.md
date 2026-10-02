@@ -92,7 +92,12 @@ split.
 
 ### 3.2 Chain verdict: `sanads.hukum` → ISNAD `ChainGrade`
 
-`hukum` is free text; we classify on the leading phrase (pre-committed):
+`hukum` is free text; we classify on the leading phrase (pre-committed).
+
+ISNAD's `MAWDU` grade here is a framework term: a REJECTED narrator is
+present → quarantine. It is not the classical matn-level "the text is forged"
+judgment (the benchmark's free-text `hukum` does label some chains "موضوع",
+but the weakest-link rule emits MAWDU for any rejected narrator, weak or forged):
 
 | Leading phrase | ChainGrade |
 |---|---|

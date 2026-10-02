@@ -53,26 +53,30 @@ def _narrator_to_chain_grade(ng: NarratorGrade, *, lenient_unknown: bool = False
 class RefinedWeakestLink:
     """Default grading strategy: refined weakest-link with completeness cap.
 
-    This is one instantiation of a parameter the framework leaves open
-    (see paper §4.2/§4.3).  Swap freely.
+     This is one instantiation of a parameter the framework leaves open
+     (see paper §4.2/§4.3).  Swap freely.
 
-    The algorithm walks the transmission chain link-by-link, maintaining
-    a running *floor* that represents the best grade the chain can achieve
-    after each link:
+     The algorithm walks the transmission chain link-by-link, maintaining
+     a running *floor* that represents the best grade the chain can achieve
+     after each link:
 
-    1. Destructive (extraction, chunking, lossy summarization): the link's
-       grade becomes a hard floor.  Nothing downstream recovers lost info.
+     1. Destructive (extraction, chunking, lossy summarization): the link's
+        grade becomes a hard floor.  Nothing downstream recovers lost info.
 
-    2. Generative (broad-pretrained model synthesis) with corroboration:
-       the link REPLACES the floor with its own grade.  This means it can
-       *raise* a floor lowered by a previous destructive link (repair) OR
-       *lower* a higher floor (introduce corruption).  Only fires when the
-       generative link is ACCEPTABLE or better; WEAK generative always
-       degrades.
+     2. Generative (broad-pretrained model synthesis) with corroboration:
+        the link REPLACES the floor with its own grade.  This means it can
+        *raise* a floor lowered by a previous destructive link (repair) OR
+        *lower* a higher floor (introduce corruption).  Only fires when the
+        generative link is ACCEPTABLE or better; WEAK generative always
+        degrades.
 
-    3. Generative without corroboration, or pass-through: standard minimum.
+     3. Generative without corroboration, or pass-through: standard minimum.
 
-    4. Incomplete chain → DAIF.  REJECTED narrator → MAWDU.
+     4. Incomplete chain → DAIF.  REJECTED narrator → MAWDU.
+
+    Note: ISNAD's "MAWDU" is a framework term — "a REJECTED narrator is
+    present → quarantine" — NOT the classical "the text is forged" (a narrow
+    matn-level judgment). The chain-level quarantine signal reuses the label.
     """
 
     def compute_chain_grade(
