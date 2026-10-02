@@ -2,8 +2,8 @@
 
 Pure, dependency-free (no numpy/sklearn — the project keeps a minimal core).
 Cohen's kappa is the *primary* metric: the chain grades are ordinally ordered
-but the classes are imbalanced (sahih dominates), so raw accuracy would flatter
-a trivial majority-class predictor.
+but the classes are imbalanced — ḥasan is the plurality (32.4%), not ṣaḥīḥ — so raw
+accuracy would still flatter a trivial majority-class predictor.
 
 Both unweighted kappa and linear-weighted kappa are provided. Unweighted is
 the headline (standard, interpretable); linear-weighted rewards "near misses"

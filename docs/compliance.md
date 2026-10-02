@@ -1,10 +1,10 @@
 # Compliance — how ISNAD maps to AI governance frameworks
 
 The enterprise question isn't "does your framework grade AI claims." It's "do you have
-the records my auditor will ask for." ISNAD produces **tamper-evident audit records** —
+the records my auditor will ask for." ISNAD produces **tamper-detecting audit records** —
 a SHA-256 hash per graded claim, per link — that map onto the frameworks below.
 
-## What does ISNAD record, and why is it tamper-evident?
+## What does ISNAD record, and why is it tamper-detecting?
 
 Every claim gets a typed transmission chain (who → who), a narrator-reliability grade
 per hop, a content verdict, and the resulting decision — each link hashed and the whole

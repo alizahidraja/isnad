@@ -122,7 +122,7 @@ src/isnad/
 ├── audit/                       ── Audit evidence layer ──
 │   ├── schema.py                AuditRecord + JSON Schema
 │   ├── canonical.py             RFC 8785 canonicalization
-│   ├── exporter.py              build + emit tamper-evident records
+│   ├── exporter.py              build + emit tamper-detecting records
 │   ├── chainlog.py              linear hash-chain (prev_hash) integrity
 │   ├── merkle_log.py            Merkle batch log (parallel agents, CT-style)
 │   └── sign.py                  Detached-signature audit signing
@@ -694,9 +694,9 @@ Ten commands:
 ```bash
 isnad serve              # Start API server (uvicorn)
 isnad seed               # Seed narrators from ISNAD_SEED_CONFIG env var
-isnad export --claim <id> --format json   # Emit a tamper-evident AuditRecord
+isnad export --claim <id> --format json   # Emit a tamper-detecting AuditRecord
 isnad verify --record <path>              # Recompute a record's hash
-isnad verify-chain --chain <path>         # Walk a tamper-evident hash chain
+isnad verify-chain --chain <path>         # Walk a tamper-detecting hash chain
 isnad verify-merkle --log <path>          # Verify a Merkle batch log (parallel agents)
 isnad ingest --otlp <path>                # Grade an OpenTelemetry GenAI trace
 isnad bench              # Run the benchmark harness

@@ -373,7 +373,7 @@ def _verify(argv: list[str]) -> int:
         print(f"MISMATCH: stored {stored!r} != recomputed {recomputed!r}")
         return 1
 
-    # Self-hash is only tamper-evident against accidental corruption, not a
+    # Self-hash is only tamper-detecting against accidental corruption, not a
     # forger who rewrites the record and recomputes the hash (issue #97). If
     # the record carries a detached signature and a secret is available,
     # verify it. Otherwise say plainly what was NOT checked.
@@ -485,7 +485,7 @@ Usage: isnad [command] [options]
 Commands:
   serve          Start the REST API server (requires isnad[api])
   seed           Seed narrators from the ISNAD_SEED_CONFIG env var
-  export         Emit a tamper-evident AuditRecord (json|jsonl|csv)
+  export         Emit a tamper-detecting AuditRecord (json|jsonl|csv)
   verify         Recompute a record hash; exit 0/1
   verify-chain   Walk a linear hash chain; exit 0/1
   verify-merkle  Verify a Merkle batch log; exit 0/1

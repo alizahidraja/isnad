@@ -90,7 +90,7 @@ def _emit_audit_trail(
     registry: Registry,
     domain: str,
 ) -> tuple[str, str | None, dict]:
-    """Emit a tamper-evident AuditRecord for a submitted claim (issue #189).
+    """Emit a tamper-detecting AuditRecord for a submitted claim (issue #189).
 
     Builds a self-hashed AuditRecord from the in-memory chain and grades, signs it
     with an HMAC secret when ``ISNAD_HMAC_SECRET`` is set, appends its hash to a

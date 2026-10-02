@@ -6,7 +6,7 @@ Open-source **LLM provenance**, **agent trust**, and an **AI audit trail** for R
 multi-agent systems. Apache-2.0, permanently. `pip install isnad`.
 
 Every claim your pipeline produces carries a verifiable **weakest-link trust grade** and
-a **tamper-evident audit record** — so you can answer the question that hallucination
+a **tamper-detecting audit record** — so you can answer the question that hallucination
 detectors and observability tools skip: *who handled this claim, in what order, and how
 much do we trust each one?*
 
@@ -32,7 +32,7 @@ print(verdict.why)
 
 Most AI trust tooling records *what* happened. ISNAD grades *who* transformed the claim
 and *how much to trust the chain that carried it* — then exports the whole judgment as a
-tamper-evident record for governance review.
+tamper-detecting record for governance review.
 
 | Capability | ISNAD | LangSmith (observability) | RAGAS (eval) | OpenLineage (lineage) |
 | --- | --- | --- | --- | --- |

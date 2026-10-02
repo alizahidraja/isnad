@@ -18,7 +18,8 @@ benchmark asks a single, falsifiable question:
 > weakest-link rule reproduce the dataset's rule-based chain-verdict convention?
 
 The answer is reported as **Cohen's κ** plus a full confusion matrix — never
-raw accuracy (ṣaḥīḥ dominates), and never a single number without its
+raw accuracy (ḥasan is the plurality at 32.4%, so accuracy would flatter a
+majority-class predictor), and never a single number without its
 disagreement analysis.
 
 ## Ground truth

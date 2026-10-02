@@ -8,7 +8,9 @@ The primary question, stated once:
     When ISNAD is given the classical scholars' narrator grades, does its
     weakest-link rule reproduce the dataset's rule-based chain-verdict convention?
 
-The primary metric is Cohen's kappa (not accuracy — sahih dominates). A
+The primary metric is Cohen's kappa, not accuracy — the classes are imbalanced
+(ḥasan 32.4% / ḍaʿīf 29.9% / ṣaḥīḥ 26.3% / mawḍūʿ 11.5%; a 2.8:1 ratio, so a
+trivial majority-class predictor would still flatter raw accuracy). A
 collapsed 3-way (sahih / hasan / weak) is reported alongside the full 4-way,
 because classical isnād verdicts are fundamentally three-tiered; ISNAD's fourth
 grade (mawḍūʿ) is a *stricter* flag meaning "a rejected narrator is present",

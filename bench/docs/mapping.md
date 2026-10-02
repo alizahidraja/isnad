@@ -152,7 +152,8 @@ number.
 1. This document is committed to `feature/58-isnad-bench` **before** any
    agreement number is computed.
 2. The primary metric is Cohen's κ (and the full confusion matrix + per-class
-   precision/recall) — **not** raw accuracy (sahih dominates).
+   precision/recall) — **not** raw accuracy (the classes are imbalanced — ḥasan is
+the plurality at 32.4% — so accuracy would flatter a majority-class predictor).
 3. The mapping is **frozen** once the first number is computed. Any change
    produces a new `mapping` version and a new, separately-reported number.
 4. Negative controls: (a) majority-class baseline (always-sahih), (b)
