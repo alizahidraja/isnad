@@ -50,11 +50,15 @@
 
 | Depth | hallucination_rate | served_error_rate | n |
 |---|---|---|---|
-| 1 | 0.556 | 0.000 | 9 |
-| 2 | 0.667 | 0.167 | 9 |
-| 3 | 0.444 | 0.500 | 9 |
-| 4 | 0.444 | 0.000 | 9 |
-| 5 | 0.444 | 0.250 | 9 |
+| 1 | 0.625 | 0.000 | 8 |
+| 2 | 0.750 | 0.333 | 8 |
+| 3 | 0.500 | 0.333 | 8 |
+| 4 | 0.500 | 0.000 | 8 |
+| 5 | 0.500 | 0.200 | 8 |
+
+> **n = 8** — `pc09` ("11 world records ratified in 2026") is excluded as ill-posed
+> mid-year. The rates above re-derive the committed n=9 run by dropping `pc09`; the
+> pinned corpus hash is unchanged (53e319c3…).
 
 ## Oracle cross-check (independent LLM audit)
 

@@ -308,10 +308,10 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 1
 
-    facts = HARD_CORPUS
+    facts = tuple(f for f in HARD_CORPUS if not f.excluded)
     if args.facts:
         want = set(args.facts)
-        facts = tuple(f for f in HARD_CORPUS if f.fact_id in want)
+        facts = tuple(f for f in HARD_CORPUS if f.fact_id in want and not f.excluded)
         if not facts:
             print(f"no matching facts for {args.facts}", file=sys.stderr)
             return 1
