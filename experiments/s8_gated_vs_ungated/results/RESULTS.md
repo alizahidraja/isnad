@@ -2,10 +2,9 @@
 
 **Date:** 2026-07-07 (s8 experiment) | Updated 2026-08-26 (reproducibility + extraction fixes)
 **Branch:** s8-scale (merged to main)
-**Corpus:** v1 = 22,307 sentence-level spans from real PDFs (OpenStax Vol 1–3 + Crowell).
-**2026-10-01 re-run (Primary Result below):** 2 books — OpenStax Vol 2 + Vol 3 — 224
-chunks → 5,298 claims, 3,710 eval claims/seed. The two corpora are different; see the
-note in the Reproducibility update.
+**Corpus (re-run 2026-10-02):** 4 books — OpenStax Vol 1–3 + Crowell — **17,021 claims**,
+**11,918 eval claims/seed** × 10 seeds. This is the single corpus the Primary Result below
+is computed on (v1's 22,307-span / 156,170-eval-claim figures are superseded).
 
 > **Update (2026-07-09):** Corroboration is no longer untested.
 > The semantic corroboration experiment (v2) validates `mutābaʿāt` on
@@ -42,26 +41,17 @@ result (50 cells = 10 seeds × 5 domains):
 
 | Narrator | Designed fault | Recovered grade (50 cells) |
 |---|---|---|
-| `source:*` | 0% | RELIABLE 50/50 (seed, now honored — #90) |
+| `source:*` (openstax + crowell) | 0% | RELIABLE 50/50 (seed, now honored — #90) |
 | `pdf-scraper@1.2` | 1% | RELIABLE 50/50 (seed) |
 | `ingest@good` | 2% | ACCEPTABLE 50/50 (seed) |
-| `ingest@weak` | 15% | **WEAK 28/50, UNGRADED 14/50, ACCEPTABLE 6/50, REJECTED 2/50** |
+| `ingest@weak` | 15% | **WEAK 31/50, UNGRADED 9/50, ACCEPTABLE 7/50, REJECTED 3/50** |
 | `pdf-scraper@0.9-legacy` | 18% | missed (0/50 — too rare to grade) |
 
-With `ingest@weak` REJECTED in only 2 of 50 cells, the quarantine count is
-**1,818 of 156,170 eval claims (1.2%)**, not 4,057 of 14,001 (29%). The
-weakest-link quarantine *mechanism* is unchanged and unit-tested; only the
-specific grade-recovery numbers were wrong.
+With `ingest@weak` REJECTED in 3 of 50 cells, the quarantine count is
+**359 of 119,180 eval claims (3.0%)**. The weakest-link quarantine *mechanism*
+is unchanged and unit-tested.
 
-> **Corpus scope note:** the grade-recovery table above and the 1.2% quarantine figure
-> are from the **original 4-book corpus** (Vol 1–3 + Crowell, 22,307 spans, 156,170 eval
-> claims). The 2026-10-01 re-run (Primary Result below) used a **2-book subset** (Vol 2 + Vol 3,
-> 5,298 claims, 3,710 eval claims/seed, ≈2.2% quarantined). Do not compare the two figures
-> directly — they are different corpora.
-
-Both corrections are tracked in the paper-v2 issue (#51). The serving-coverage
-sweep (`run.py`) is regenerated separately; the numbers below predate this
-corpus and are marked accordingly.
+Both corrections are tracked in the paper-v2 issue (#51).
 
 ---
 
@@ -97,32 +87,32 @@ critic — LLM-backed or embedding-based — to achieve practical coverage.
 
 ---
 
-## Primary Result (re-run 2026-10-01, B∈{2,5,10,20}%, 10 seeds, 3,710 eval claims/seed)
+## Primary Result (re-run 2026-10-02, B∈{2,5,10,20}%, 10 seeds, 11,918 eval claims/seed)
 
 | Condition | Coverage | Served-error | Review precision |
 |---|---|---|---|
-| Ungated | 100% | 8.7% → 7.1% | ~8% (random) |
-| Confidence-gated | 100% | 8.6% → 7.0% | ~8–10% |
-| **ISNAD-gated** | **2–20% (review budget)** | **0.0%** | ~6–8% |
-| ISNAD, no corroboration | 2–20% (review budget) | 0.0% | ~6–8% (identical) |
+| Ungated | 100% | 8.9% → 7.3% | ~9% (random) |
+| Confidence-gated | 100% | 8.9% → 7.3% | ~8–9% |
+| **ISNAD-gated** | **2–20% (review budget)** | **0.0%** | ~9% |
+| ISNAD, no corroboration | 2–20% (review budget) | 0.0% | ~9% (identical) |
 
-ISNAD's zero served-error is a **coverage artifact**: it quarantines ~2% (ingest@weak →
-REJECT), holds ~88% for review (ḥasan × UNVERIFIABLE → REVIEW), and serves only the review
+ISNAD's zero served-error is a **coverage artifact**: it quarantines ~3% (ingest@weak →
+REJECT), holds ~80–97% for review (ḥasan × UNVERIFIABLE → REVIEW), and serves only the review
 budget — so it serves essentially nothing as safe-to-serve, hence 0 errors. The review-precision
 column does **not** show the chain cannot rank corruption: `run.py` assigns every REVIEW claim
 priority 0, so the review queue never orders by chain grade, and corruption is injected
-per-narrator (a WHO property by design). ISNAD's review precision (5.9–7.9%) sits slightly
-*below* random (7.0–8.6%), consistent with quarantine having already removed the
-most-corrupted chains. Confidence-gating is no better than random. Corroboration fires 0×
-(single-source corpus), so `isnad` == `isnad_no_corroboration` exactly. See
-[`MATCHED_COVERAGE_FINDING.md`](MATCHED_COVERAGE_FINDING.md) for the layered-gate reading.
+per-narrator (a WHO property by design). ISNAD's review precision (~9%) is statistically
+indistinguishable from random (~9%) and from the corruption rate (~8.8%): **the chain grades
+WHO, so it cannot rank WHETHER (content) corruption.** Confidence-gating is no better than
+random. Corroboration fires 0× (single-source corpus), so `isnad` == `isnad_no_corroboration`
+exactly. See [`MATCHED_COVERAGE_FINDING.md`](MATCHED_COVERAGE_FINDING.md).
 
 ---
 
 ## What Gets Rejected — and Why
 
-Rejections (on the 2-book re-run corpus) come from `ingest@weak` being REJECTED in the 3 of 50 cells where the
-post-#9 policy drives it that far (3,165 claims, 2.3% of eval). The chain trace
+Rejections come from `ingest@weak` being REJECTED in the 3 of 50 cells where the
+post-#9 policy drives it that far (359 claims, 3.0% of eval). The chain trace
 when it fires:
 
 ```
@@ -149,9 +139,9 @@ Full chain trace: `results/rejected_claims_diagnostic.txt`
 
 | Fate | Count | % |
 |---|---|---|
-| Quarantined (MAWDU via ingest@weak — 2/50 cells, 1,818 (1.2%) on the 4-book corpus; 3/50 cells, 3,165 (2.3%) on the 2-book re-run) | ~1,818–3,165 | 1.2–2.3% |
-| Held for review, beyond budget | majority | ~88% |
-| **Served (within review budget)** | **~10%** | **~10%** |
+| Quarantined (MAWDU via ingest@weak, REJECTED in 3/50 cells) | 359 | 3.0% |
+| Held for review, beyond budget | majority | ~80–97% (depends on B) |
+| **Served (within review budget)** | **~2–20%** | **B** |
 
 The large review-held share are HASAN and DAIF chains with UNVERIFIABLE content
 verdicts. The framework requires human review (or a working content critic
