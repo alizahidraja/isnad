@@ -143,14 +143,14 @@ def main():
         resp = r["response"] or ""
         if not resp.strip():
             continue
-        items.append((r["model"], src, resp, bool(r.get("labels"))))
+        items.append((r["model"], src, resp, bool(r.get("labels")), str(r.get("id", ""))))
 
     print(f"judging {len(items)} responses with {MODEL} ...", flush=True)
 
     preds = [None] * len(items)
     done = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as ex:
-        futs = {ex.submit(judge, s, r): i for i, (m, s, r, g) in enumerate(items)}
+        futs = {ex.submit(judge, s, r): i for i, (m, s, r, g, _rid) in enumerate(items)}
         for fut in concurrent.futures.as_completed(futs):
             i = futs[fut]
             preds[i] = fut.result()
@@ -162,8 +162,10 @@ def main():
     model_truth = Counter()
     model_pred = Counter()
     unknown = 0
-    for i, (m, s, r, gold) in enumerate(items):
+    per_item = []
+    for i, (m, s, r, gold, rid) in enumerate(items):
         p = preds[i]
+        parsed = None if p is None else ("GROUNDED" if p == 0 else "HALLUCINATED")
         if p is None:
             # fail-closed: an unparseable verdict is scored as hallucinated, never
             # silently dropped (so kappa is computed over all 1,800 responses).
@@ -173,6 +175,13 @@ def main():
         y_pred.append(p)
         model_truth[m] += int(gold)
         model_pred[m] += int(p)
+        per_item.append({
+            "id": rid,
+            "model": m,
+            "gold": bool(gold),
+            "pred": int(p),
+            "parsed_verdict": parsed,
+        })
 
     kappa, (tn, fp, fn, tp) = cohen_kappa(y_true, y_pred)
     n = tn + fp + fn + tp
@@ -186,6 +195,7 @@ def main():
     out = {
         "model": MODEL,
         "n_responses": int(n),
+        "per_item": per_item,
         "unknown_parse": int(unknown),
         "kappa": round(kappa, 4),
         "accuracy": round(acc, 4),
