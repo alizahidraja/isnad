@@ -3,7 +3,7 @@
 > **Status:** RESULTS COMPUTED — post-hoc addendum (2026-09-11).
 > The preregistered v1.1 bi-encoder signal scored weak (κ 0.099 at threshold 0.5).
 > A v2 LLM grounding critic (DeepSeek V4 Flash) — NOT in the original preregistration —
-> was then tried and scored κ = 0.433 over ALL 1,800 responses (55 unparseable, 3.1%, fail-closed as hallucinated); recall 96.2%, precision 60.2%, 50.2% false-positive on grounded.
+> was then tried and scored κ = 0.4345 over ALL 1,800 responses (57 unparseable, 3.1%, fail-closed as hallucinated); recall 96.0%, precision 60.4%, 49.9% false-positive on grounded.
 > Disclosed, not hidden: the headline result is post-hoc, not preregistered.
 
 ## 1. Data provenance
@@ -53,4 +53,4 @@ transparency (no post-hoc threshold selection for the headline number).
 ## 5. Reproduction
 
 - **v1 bi-encoder (preregistered, weak κ ≈ 0.1):** `uv run python experiments/g1/run_g1.py` (needs `isnad[nli]` + the RAGTruth dataset).
-- **v2 LLM critic (post-hoc, κ = 0.433 over all 1,800):** `DEEPSEEK_API_KEY=… uv run python experiments/g1/g1_llm.py` — dataset from `github.com/ParticleMedia/RAGTruth` into `experiments/g1/ragtruth/dataset/` (or set `RAGTRUTH_DATA_DIR`).
+- **v2 LLM critic (post-hoc, κ = 0.4345 over all 1,800):** `DEEPSEEK_API_KEY=… uv run python experiments/g1/g1_llm.py` — dataset from `github.com/ParticleMedia/RAGTruth` into `experiments/g1/ragtruth/dataset/` (or set `RAGTRUTH_DATA_DIR`).

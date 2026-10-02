@@ -274,9 +274,9 @@ convention verdict + ISNAD prediction + disagreement bucket) is published as the
 
 The κ = 0.871 above is the methodology's home turf (hadith chains). The transfer to live LLM
 pipelines is measured separately and published honestly. On **RAGTruth**, the **grounding critic ISNAD
-composes with** (its matn layer) transfers at **Cohen's κ = 0.433** over all 1,800 RAGTruth
-responses (55 unparseable, 3.1%, scored fail-closed) — 96.2% hallucination recall at 60.2% precision
-(plus a 50.2% false-positive rate on grounded responses), vs a 55.8% majority-class baseline. That
+composes with** (its matn layer) transfers at **Cohen's κ = 0.4345** over all 1,800 RAGTruth
+responses (57 unparseable, 3.1%, scored fail-closed) — 96.0% hallucination recall at 60.4% precision
+(plus a 49.9% false-positive rate on grounded responses), vs a 55.8% majority-class baseline. That
 number belongs to the composed critic, **not** to ISNAD's
 chain grading (WHO). The weak bi-encoder
 signal (κ ≈ 0.1) is reported alongside, not hidden. Case study + limits: [`G1_CASE_STUDY.md`](G1_CASE_STUDY.md).
