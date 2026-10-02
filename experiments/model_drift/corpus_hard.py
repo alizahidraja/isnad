@@ -10,10 +10,11 @@ LLM-free numeric oracle, so the labels themselves can never hallucinate.
 Tiers: easy (trivia a frontier model nails — negative control), medium
 (precise-but-known facts), hard (recent/obscure — where drift is expected).
 
-Post-cutoff provenance: pc01-pc08 match published reports (8 of 9 verified: dos
-Santos 45.80, Russell 12.09, Duplantis 6.31, Knicks 2026, Spain 2026, 2026 Winter
-Olympics medal counts). pc09 ("11 world records ratified in 2026") was DROPPED as
-ill-posed mid-year (the count moves as more records are ratified).
+Post-cutoff provenance: pc01-pc08 match published reports (dos Santos 45.80, Russell
+12.09, Duplantis 6.31, Knicks 2026, Spain 2026, 2026 Winter Olympics medal counts).
+pc09 ("11 world records ratified in 2026") is present in the pinned hash but EXCLUDED
+from grading as ill-posed mid-year (the count moves as more records are ratified), so the
+post-cutoff tier is n=8.
 """
 
 from __future__ import annotations
@@ -34,7 +35,8 @@ class HardFact:
     correct_value: str  # canonical number, e.g. "206", "9.58", "2024"
     wrong_values: tuple[str, ...]  # plausible near-misses (offline injector + display)
     domain: str
-    tier: str  # "easy" | "medium" | "hard"
+    tier: str
+    excluded: bool = False  # present in the pinned hash, skipped by the harness
 
 
 HARD_CORPUS: tuple[HardFact, ...] = (
@@ -617,6 +619,16 @@ HARD_CORPUS: tuple[HardFact, ...] = (
         ("28", "26", "33"),
         "sports",
         "postcutoff",
+    ),
+    HardFact(
+        "pc09",
+        "How many world records did World Athletics ratify in 2026?",
+        "World Athletics ratified 11 world records in 2026.",
+        "11",
+        ("8", "15", "20"),
+        "sports",
+        "postcutoff",
+        True,  # excluded: ill-posed mid-year (the count moves as records are ratified)
     ),
 )
 
