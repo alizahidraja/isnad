@@ -60,6 +60,26 @@
 > mid-year. The rates above re-derive the committed n=9 run by dropping `pc09`; the
 > pinned corpus hash is unchanged (53e319c3…).
 
+## Self-critic baseline (confounded)
+
+**Narrator:** deepseek-flash · **Critic:** deepseek-flash (same model) · **calls:** 1280 · **cost:** $0.09685
+
+Post-cutoff (n=8):
+
+| Depth | hallucination_rate | served_error_rate | n |
+|---|---|---|---|
+| 1 | 0.500 | 0.000 | 8 |
+| 2 | 0.500 | 0.200 | 8 |
+| 3 | 0.500 | 0.333 | 8 |
+| 4 | 0.500 | 0.333 | 8 |
+| 5 | 0.500 | 0.333 | 8 |
+
+> This is the CONFOUNDED baseline: a model grading its own output is lenient on its own family.
+> The cross-model number above (critic deepseek-v4-pro) is the de-confounded result the paper reports.
+> The self-critic hallucination rate is flat at 50% (the narrator's own post-cutoff errors); the confound
+> lives in served_error_rate, where the self-critic is no better than random at catching its own errors.
+> Raw: live_results_selfcritic.json.
+
 ## Oracle cross-check (independent LLM audit)
 
 agreement rate: **0.967** (29/30) — same model family as the critic under test — a sanity check, not independent ground truth.
