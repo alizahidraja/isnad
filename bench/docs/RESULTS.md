@@ -42,6 +42,7 @@ agrees. The lenient mode is opt-in in the library via
 | ṣaḥīḥ | 0.923 | 0.897 | 0.910 | 151,139 |
 | ḥasan | 0.909 | 0.892 | 0.900 | 186,256 |
 | ḍaʿīf | 0.886 | 0.922 | 0.904 | 171,763 |
+| ḍaʿīf jiddan | 0.942 | 0.860 | 0.899 | 56,858 |
 | mawḍūʿ | 0.853 | 0.616 | 0.716 | 9,044 |
 
 ## The corroboration ablation (mutābaʿa)

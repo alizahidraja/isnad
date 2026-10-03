@@ -9,7 +9,7 @@ The primary question, stated once:
     weakest-link rule reproduce the dataset's rule-based chain-verdict convention?
 
 The primary metric is Cohen's kappa, not accuracy — the classes are imbalanced
-(ḥasan 32.4% / ḍaʿīf 29.9% / ṣaḥīḥ 26.3% / mawḍūʿ 11.5%; a 2.8:1 ratio, so a
+(ḥasan 32.4% / ḍaʿīf 29.9% / ṣaḥīḥ 26.3% / ḍaʿīf jiddan 9.9% / mawḍūʿ 1.6%; a 2.8:1 ratio, so a
 trivial majority-class predictor would still flatter raw accuracy). A
 collapsed 3-way (sahih / hasan / weak) is reported alongside the full 5-way,
 because classical isnād verdicts are fundamentally three-tiered; ISNAD's fourth
