@@ -303,6 +303,7 @@ cg_all_reliable = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=True,
+    link_adalah_grades=[],
 )
 check("All RELIABLE → SAHIH", cg_all_reliable == ChainGrade.SAHIH, f"got {cg_all_reliable.value}")
 
@@ -310,6 +311,7 @@ cg_with_weak = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.WEAK],
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=True,
+    link_adalah_grades=[],
 )
 check(
     "RELIABLE + WEAK → DAIF (weakest-link)",
@@ -321,6 +323,7 @@ cg_incomplete = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=False,
+    link_adalah_grades=[],
 )
 check(
     "Incomplete chain → DAIF (ittisal cap)",

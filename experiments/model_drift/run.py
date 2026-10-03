@@ -90,7 +90,10 @@ def run_depth(
     chain, _ = _build_chain(depth)
     link_grades = [NarratorGrade.RELIABLE] * depth
     chain_grade = grade_chain(
-        link_grades, [l.transform_type for l in chain.links], is_complete=chain.is_complete
+        link_grades,
+        [l.transform_type for l in chain.links],
+        is_complete=chain.is_complete,
+        link_adalah_grades=[],
     )
 
     injector = DriftInjector(corruption_probability, seed)

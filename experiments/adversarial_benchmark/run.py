@@ -149,7 +149,9 @@ def _run_case(case: Case, reg: Registry, critic: DeterministicRuleCritic) -> Res
         ChainLinkSpec(nid, i, domain="physics") for i, nid in enumerate(case.chain_narrators)
     ])
     grades = [reg.get_grade_for_link(x.narrator_id, x.domain, x.version) for x in chain.links]
-    chain_grade = grade_chain(grades, [x.transform_type for x in chain.links], is_complete=True)
+    chain_grade = grade_chain(
+        grades, [x.transform_type for x in chain.links], is_complete=True, link_adalah_grades=[]
+    )
     verdict = critic.evaluate(case.claim, case.claim.lower(), CORPUS, "physics")
     action = decide(chain_grade, verdict)
     return Result(

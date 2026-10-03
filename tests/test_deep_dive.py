@@ -102,7 +102,12 @@ reg.register("ingest_model_a", "physics", grade=NarratorGrade.ACCEPTABLE)
 
 grades = [reg.get_grade(l.narrator_id, l.domain) for l in canonical_chain.links]
 note(f"Link grades: {[g.value for g in grades]}")
-cg = grade_chain(grades, [l.transform_type for l in canonical_chain.links], is_complete=True)
+cg = grade_chain(
+    grades,
+    [l.transform_type for l in canonical_chain.links],
+    is_complete=True,
+    link_adalah_grades=[],
+)
 check("A1. RELIABLE → ACCEPTABLE → ACCEPTABLE = HASAN", cg == ChainGrade.HASAN, f"got {cg.value}")
 check("A2. HASAN + UNVERIFIABLE → REVIEW", decide(cg, ContentVerdict.UNVERIFIABLE) == Action.REVIEW)
 
@@ -116,7 +121,12 @@ reg2 = Registry()
 for nid in BASE_NARRATORS:
     reg2.register(nid, "physics", grade=NarratorGrade.RELIABLE)
 grades2 = [reg2.get_grade(l.narrator_id, l.domain) for l in canonical_chain.links]
-cg2 = grade_chain(grades2, [l.transform_type for l in canonical_chain.links], is_complete=True)
+cg2 = grade_chain(
+    grades2,
+    [l.transform_type for l in canonical_chain.links],
+    is_complete=True,
+    link_adalah_grades=[],
+)
 check("B1. All RELIABLE → SAHIH", cg2 == ChainGrade.SAHIH, f"got {cg2.value}")
 check(
     "B2. SAHIH + CONSISTENT → SERVE (cache!)",
@@ -139,7 +149,12 @@ reg3.register("openstax_v3", "physics", grade=NarratorGrade.RELIABLE)
 reg3.register("pdf_scraper_a", "physics", grade=NarratorGrade.WEAK)  # ← weak
 reg3.register("ingest_model_a", "physics", grade=NarratorGrade.RELIABLE)
 grades3 = [reg3.get_grade(l.narrator_id, l.domain) for l in canonical_chain.links]
-cg3 = grade_chain(grades3, [l.transform_type for l in canonical_chain.links], is_complete=True)
+cg3 = grade_chain(
+    grades3,
+    [l.transform_type for l in canonical_chain.links],
+    is_complete=True,
+    link_adalah_grades=[],
+)
 check("C1. WEAK scraper contaminates chain → DAIF", cg3 == ChainGrade.DAIF, f"got {cg3.value}")
 check(
     "C2. DAIF + CONSISTENT → REVIEW (seek corroboration)",
@@ -161,7 +176,12 @@ reg4.register("openstax_v3", "physics", grade=NarratorGrade.RELIABLE)
 reg4.register("pdf_scraper_a", "physics", grade=NarratorGrade.REJECTED)  # ← poisoned
 reg4.register("ingest_model_a", "physics", grade=NarratorGrade.RELIABLE)
 grades4 = [reg4.get_grade(l.narrator_id, l.domain) for l in canonical_chain.links]
-cg4 = grade_chain(grades4, [l.transform_type for l in canonical_chain.links], is_complete=True)
+cg4 = grade_chain(
+    grades4,
+    [l.transform_type for l in canonical_chain.links],
+    is_complete=True,
+    link_adalah_grades=[],
+)
 check(
     "D1. Any REJECTED → DAIF_JIDDAN (very weak)", cg4 == ChainGrade.DAIF_JIDDAN, f"got {cg4.value}"
 )
@@ -193,7 +213,10 @@ reg5.register("openstax_v3", "physics", grade=NarratorGrade.RELIABLE)
 reg5.register("ingest_model_a", "physics", grade=NarratorGrade.RELIABLE)
 grades5 = [reg5.get_grade(l.narrator_id, l.domain) for l in gap_chain.links]
 cg5 = grade_chain(
-    grades5, [TransformType.PASS_THROUGH, TransformType.GENERATIVE], is_complete=False
+    grades5,
+    [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
+    is_complete=False,
+    link_adalah_grades=[],
 )
 check(
     "E2. All RELIABLE but incomplete → DAIF (ittiṣāl cap)",
@@ -224,7 +247,9 @@ grades_f = [reg_f.get_grade(l.narrator_id, l.domain) for l in repair_chain.links
 transforms_f = [l.transform_type for l in repair_chain.links]
 
 # Without corroboration: WEAK destructive creates permanent DAIF floor
-cg_f_no_corr = grade_chain(grades_f, transforms_f, is_complete=True, corroboration_support=False)
+cg_f_no_corr = grade_chain(
+    grades_f, transforms_f, is_complete=True, corroboration_support=False, link_adalah_grades=[]
+)
 check(
     "F1. WEAK destructive → DAIF (no corroboration)",
     cg_f_no_corr == ChainGrade.DAIF,
@@ -232,7 +257,9 @@ check(
 )
 
 # With corroboration: RELIABLE generative can repair the floor
-cg_f_corr = grade_chain(grades_f, transforms_f, is_complete=True, corroboration_support=True)
+cg_f_corr = grade_chain(
+    grades_f, transforms_f, is_complete=True, corroboration_support=True, link_adalah_grades=[]
+)
 check(
     "F2. With corroboration → generative REPAIRS to SAHIH",
     cg_f_corr == ChainGrade.SAHIH,
@@ -364,7 +391,12 @@ bumped_chain = Chain([
 reg_ver.register("openstax_v3", "physics", grade=NarratorGrade.RELIABLE)
 reg_ver.register("pdf_scraper_a", "physics", grade=NarratorGrade.RELIABLE)
 grades_ver = [reg_ver.get_grade(l.narrator_id, l.domain) for l in bumped_chain.links]
-cg_ver = grade_chain(grades_ver, [l.transform_type for l in bumped_chain.links], is_complete=True)
+cg_ver = grade_chain(
+    grades_ver,
+    [l.transform_type for l in bumped_chain.links],
+    is_complete=True,
+    link_adalah_grades=[],
+)
 check(
     "I3. Chain with bumped UNGRADED → DAIF (strict default)",
     cg_ver == ChainGrade.DAIF,

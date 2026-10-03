@@ -58,8 +58,8 @@ def grade_one_chain(
 def chain_grade_from_narrators(
     narrator_grades: list[NarratorGrade],
     is_complete: bool,
+    adalah_grades: list[AdalahGrade],
     lenient_unknown: bool = False,
-    adalah_grades: list[AdalahGrade] | None = None,
 ) -> str:
     """Apply the weakest-link rule to mapped narrator grades."""
     transforms = [TransformType.PASS_THROUGH] * len(narrator_grades)

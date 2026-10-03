@@ -55,7 +55,9 @@ def measure_coverage(critic, registry: Registry, claims: list[str], corpus: list
     for claim in claims:
         chain = chain_for()
         grades = [registry.get_grade(l.narrator_id, l.domain) for l in chain.links]
-        chain_grade = grade_chain(grades, [l.transform_type for l in chain.links], is_complete=True)
+        chain_grade = grade_chain(
+            grades, [l.transform_type for l in chain.links], is_complete=True, link_adalah_grades=[]
+        )
         verdict = critic.evaluate(claim, claim.lower(), corpus, DOMAIN)
         action = decide(chain_grade, verdict)
         if action in (Action.SERVE, Action.SERVE_WITH_CAVEAT):
@@ -69,6 +71,7 @@ def main() -> None:
         [reg.get_grade(l.narrator_id, l.domain) for l in chain_for().links],
         [l.transform_type for l in chain_for().links],
         is_complete=True,
+        link_adalah_grades=[],
     )
     print(
         f"seeded chain grade: {chain_grade.value.upper()}  "

@@ -130,9 +130,7 @@ def test_paper_worked_example_hasan_contradiction() -> None:
     ]
 
     chain_grade = grade_chain(
-        link_grades,
-        link_transforms,
-        is_complete=chain.is_complete,
+        link_grades, link_transforms, is_complete=chain.is_complete, link_adalah_grades=[]
     )
 
     # Two ungraded links → DAIF tier (classical majhūl, strict default)
@@ -215,6 +213,7 @@ def test_paper_worked_example_sahih_contradiction() -> None:
         link_grades,
         [link.transform_type for link in chain.links],
         is_complete=chain.is_complete,
+        link_adalah_grades=[],
     )
 
     # All RELIABLE + complete → SAHIH

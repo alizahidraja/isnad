@@ -83,7 +83,12 @@ class TestVersionedRegistryGrading:
             ),
         ])
         link_grades = grades_for_chain(reg, chain)
-        cg = grade_chain(link_grades, [l.transform_type for l in chain.links], is_complete=True)
+        cg = grade_chain(
+            link_grades,
+            [l.transform_type for l in chain.links],
+            is_complete=True,
+            link_adalah_grades=[],
+        )
         action = decide(cg, DeterministicRuleCritic().evaluate("p=h/l", "p=h/l", [], "physics"))
 
         assert resolved_narrator_ids_for_chain(chain) == [

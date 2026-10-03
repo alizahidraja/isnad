@@ -15,9 +15,17 @@ from typing import TYPE_CHECKING
 
 from sqlalchemy.orm import Session
 
+from isnad.core.grading import grade_chain
 from isnad.core.identity import resolve_narrator_id
 from isnad.models import ChainLink, RijalClaim
-from isnad.types import AdalahGrade, ChainStatus, NarratorGrade, TransformType
+from isnad.types import (
+    AdalahGrade,
+    ChainGrade,
+    ChainStatus,
+    ContentVerdict,
+    NarratorGrade,
+    TransformType,
+)
 
 if TYPE_CHECKING:
     from isnad.core.registry import Registry
@@ -213,6 +221,37 @@ def adalah_grades_for_chain(registry: Registry, chain: Chain) -> list[AdalahGrad
 # ===========================================================================
 # Chain persistence
 # ===========================================================================
+
+
+def grade_chain_from_registry(
+    registry: Registry,
+    chain: Chain,
+    *,
+    corroboration_support: bool = False,
+    link_fidelity_verdicts: list[ContentVerdict] | None = None,
+    lenient_unknown: bool = False,
+) -> ChainGrade:
+    """Grade a chain from a registry, always threading the integrity axis.
+
+    The single canonical grading entry point. ``grade_chain`` keys the
+    mawdu / daif-jiddan split on the integrity axis (COMPROMISED -> MAWDU),
+    so every path that grades a chain MUST supply ``link_adalah_grades``.
+    This helper composes the registry lookups and the grading call so no
+    integration can silently skip integrity and diverge from the decision
+    the API serves (the 3.0.0 regression).
+    """
+    grades = grades_for_chain(registry, chain)
+    adalah = adalah_grades_for_chain(registry, chain)
+    transforms = [link.transform_type for link in chain.links]
+    return grade_chain(
+        grades,
+        transforms,
+        chain.is_complete,
+        corroboration_support=corroboration_support,
+        link_adalah_grades=adalah,
+        link_fidelity_verdicts=link_fidelity_verdicts,
+        lenient_unknown=lenient_unknown,
+    )
 
 
 def store_claim(

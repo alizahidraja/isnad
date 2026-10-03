@@ -27,6 +27,7 @@ class TestWeakestLink:
             [NarratorGrade.RELIABLE] * 3,
             [TransformType.PASS_THROUGH] * 3,
             is_complete=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.SAHIH
 
@@ -36,6 +37,7 @@ class TestWeakestLink:
             [NarratorGrade.RELIABLE, NarratorGrade.WEAK, NarratorGrade.RELIABLE],
             [TransformType.PASS_THROUGH] * 3,
             is_complete=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF
 
@@ -44,6 +46,7 @@ class TestWeakestLink:
             [NarratorGrade.RELIABLE, NarratorGrade.REJECTED],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF_JIDDAN
 
@@ -53,6 +56,7 @@ class TestWeakestLink:
             [NarratorGrade.RELIABLE, NarratorGrade.UNGRADED],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF
 
@@ -63,6 +67,7 @@ class TestWeakestLink:
             [TransformType.PASS_THROUGH] * 2,
             is_complete=True,
             lenient_unknown=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.HASAN
 
@@ -71,11 +76,12 @@ class TestWeakestLink:
             [NarratorGrade.RELIABLE, NarratorGrade.ACCEPTABLE],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.HASAN
 
     def test_empty_chain_returns_daif(self) -> None:
-        result = grade_chain([], [], is_complete=False)
+        result = grade_chain([], [], is_complete=False, link_adalah_grades=[])
         assert result == ChainGrade.DAIF
 
 
@@ -88,6 +94,7 @@ class TestCompletenessCap:
             [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=False,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF
 
@@ -96,6 +103,7 @@ class TestCompletenessCap:
             [NarratorGrade.RELIABLE, NarratorGrade.WEAK],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=False,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF
 
@@ -107,6 +115,7 @@ class TestCompletenessCap:
             [NarratorGrade.RELIABLE, NarratorGrade.REJECTED],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=False,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF
 
@@ -133,6 +142,7 @@ class TestDestructivePermanentCap:
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
             is_complete=True,
             corroboration_support=False,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF
         # Verify: changing corroboration_support DOES change the result
@@ -146,6 +156,7 @@ class TestDestructivePermanentCap:
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
             is_complete=True,
             corroboration_support=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.SAHIH
 
@@ -154,8 +165,12 @@ class TestDestructivePermanentCap:
         grades = [NarratorGrade.WEAK, NarratorGrade.RELIABLE]
         transforms = [TransformType.DESTRUCTIVE, TransformType.GENERATIVE]
 
-        without = grade_chain(grades, transforms, is_complete=True, corroboration_support=False)
-        with_c = grade_chain(grades, transforms, is_complete=True, corroboration_support=True)
+        without = grade_chain(
+            grades, transforms, is_complete=True, corroboration_support=False, link_adalah_grades=[]
+        )
+        with_c = grade_chain(
+            grades, transforms, is_complete=True, corroboration_support=True, link_adalah_grades=[]
+        )
 
         assert without != with_c, f"corroboration_support flag is dead! Both returned {without}"
         assert without == ChainGrade.DAIF
@@ -175,6 +190,7 @@ class TestGenerativeCannotExceedOwnGrade:
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
             is_complete=True,
             corroboration_support=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.HASAN
 
@@ -185,6 +201,7 @@ class TestGenerativeCannotExceedOwnGrade:
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
             is_complete=True,
             corroboration_support=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF
 
@@ -200,6 +217,7 @@ class TestGenerativeCanAlwaysLower:
             [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
             is_complete=True,
             corroboration_support=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.SAHIH
 
@@ -211,6 +229,7 @@ class TestGenerativeCanAlwaysLower:
             [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
             is_complete=True,
             corroboration_support=False,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.HASAN
 
@@ -226,6 +245,7 @@ class TestChainWalkingOrder:
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE, TransformType.PASS_THROUGH],
             is_complete=True,
             corroboration_support=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF
 
@@ -237,6 +257,7 @@ class TestChainWalkingOrder:
             [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
             is_complete=True,
             corroboration_support=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.SAHIH
 
@@ -246,6 +267,7 @@ class TestChainWalkingOrder:
             [NarratorGrade.RELIABLE] * 3,
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE, TransformType.PASS_THROUGH],
             is_complete=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.SAHIH
 
@@ -285,6 +307,7 @@ class TestAdalahIntegrityAxis:
             [NarratorGrade.RELIABLE] * 3,
             [TransformType.PASS_THROUGH] * 3,
             is_complete=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.SAHIH
 
@@ -312,6 +335,7 @@ class TestFidelityAxis:
             [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
             is_complete=True,
             link_fidelity_verdicts=[ContentVerdict.UNVERIFIABLE, ContentVerdict.CONTRADICTION],
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.DAIF
 
@@ -325,7 +349,9 @@ class TestFidelityAxis:
         grades = [NarratorGrade.WEAK, NarratorGrade.RELIABLE]
         transforms = [TransformType.DESTRUCTIVE, TransformType.GENERATIVE]
 
-        repaired = grade_chain(grades, transforms, is_complete=True, corroboration_support=True)
+        repaired = grade_chain(
+            grades, transforms, is_complete=True, corroboration_support=True, link_adalah_grades=[]
+        )
         assert repaired == ChainGrade.SAHIH  # control: repair works without fidelity check
 
         blocked = grade_chain(
@@ -334,6 +360,7 @@ class TestFidelityAxis:
             is_complete=True,
             corroboration_support=True,
             link_fidelity_verdicts=[ContentVerdict.UNVERIFIABLE, ContentVerdict.CONTRADICTION],
+            link_adalah_grades=[],
         )
         assert blocked == ChainGrade.DAIF  # repair blocked by contradicted fidelity
 
@@ -343,6 +370,7 @@ class TestFidelityAxis:
             [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
             is_complete=True,
             link_fidelity_verdicts=[ContentVerdict.UNVERIFIABLE, ContentVerdict.CONSISTENT],
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.SAHIH
 
@@ -352,6 +380,7 @@ class TestFidelityAxis:
             [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
             is_complete=True,
             link_fidelity_verdicts=[ContentVerdict.UNVERIFIABLE, ContentVerdict.UNVERIFIABLE],
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.SAHIH
 
@@ -360,5 +389,6 @@ class TestFidelityAxis:
             [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
             [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
             is_complete=True,
+            link_adalah_grades=[],
         )
         assert result == ChainGrade.SAHIH

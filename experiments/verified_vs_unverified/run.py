@@ -135,7 +135,7 @@ def run_on(chain: Chain, reg: Registry, critic: DemonstrationCritic, claim: str)
     """Trust layer ON: full ISNAD pipeline."""
     link_grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
     transforms = [l.transform_type for l in chain.links]
-    cg = grade_chain(link_grades, transforms, is_complete=chain.is_complete)
+    cg = grade_chain(link_grades, transforms, is_complete=chain.is_complete, link_adalah_grades=[])
 
     cv = critic.evaluate(claim, claim.lower(), [], "physics")
     action = decide(cg, cv)
@@ -174,6 +174,7 @@ def main() -> None:
                 [reg.get_grade(l.narrator_id, l.domain) for l in chain.links],
                 [l.transform_type for l in chain.links],
                 is_complete=True,
+                link_adalah_grades=[],
             )
             # Grade the corroborating chain from its own narrators — never a
             # hardcoded tier. The fixture (Crowell source → scraper → excellent
@@ -183,6 +184,7 @@ def main() -> None:
                 [reg.get_grade(l.narrator_id, l.domain) for l in chain2.links],
                 [l.transform_type for l in chain2.links],
                 is_complete=True,
+                link_adalah_grades=[],
             )
             upgraded = evaluate_corroboration(
                 base_grade=cg_base,

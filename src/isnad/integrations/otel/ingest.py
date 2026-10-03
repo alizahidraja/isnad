@@ -107,10 +107,12 @@ def ingest_trace(
         )
 
     if grades:
+        adalah = [registry.get_adalah_grade(step.narrator_id, domain) for step in chain]
         chain_grade = grade_chain(
             grades,
             [TransformType.PASS_THROUGH] * len(grades),
             is_complete=True,
+            link_adalah_grades=adalah,
             lenient_unknown=lenient_unknown,
         )
         weakest = chain[grades.index(min(grades))].narrator_id

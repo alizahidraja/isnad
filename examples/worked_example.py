@@ -125,7 +125,9 @@ def main() -> None:
 
     link_grades = grades_for_chain(reg, chain)
     link_transforms = [link.transform_type for link in chain.links]
-    chain_grade = grade_chain(link_grades, link_transforms, is_complete=chain.is_complete)
+    chain_grade = grade_chain(
+        link_grades, link_transforms, is_complete=chain.is_complete, link_adalah_grades=[]
+    )
 
     print(f"   Narrator grades:  {' → '.join(g.value.upper() for g in link_grades)}")
     print(f"   Transform types:  {' → '.join(t.value.upper() for t in link_transforms)}")
@@ -169,7 +171,9 @@ def main() -> None:
         )
 
     link_grades2 = grades_for_chain(reg2, chain)
-    chain_grade2 = grade_chain(link_grades2, link_transforms, is_complete=chain.is_complete)
+    chain_grade2 = grade_chain(
+        link_grades2, link_transforms, is_complete=chain.is_complete, link_adalah_grades=[]
+    )
     action2 = decide(chain_grade2, content_verdict)
     desc2 = describe_action(chain_grade2, content_verdict)
 

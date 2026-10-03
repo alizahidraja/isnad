@@ -126,10 +126,14 @@ class MCPToolObserver:
         # narrator graded in rec.domain must not be queried under a later
         # self.domain reassignment.
         grades = [self.registry.get_grade(rec.narrator_id, rec.domain) for rec in self._calls]
+        adalah = [
+            self.registry.get_adalah_grade(rec.narrator_id, rec.domain) for rec in self._calls
+        ]
         chain_grade = grade_chain(
             grades,
             [TransformType.DESTRUCTIVE] * len(grades),
             is_complete=bool(narrators),
+            link_adalah_grades=adalah,
             lenient_unknown=self.lenient_unknown,
         )
         return {
@@ -203,10 +207,12 @@ def handle_grade_claim(
     # Never report a non-empty chain as complete when the caller supplied no
     # narrators; an empty chain grades DAIF (munqaṭiʿ), honestly.
     grades = [registry.get_grade(n, domain) for n in narrators]
+    adalah = [registry.get_adalah_grade(n, domain) for n in narrators]
     chain_grade = grade_chain(
         grades,
         [TransformType.PASS_THROUGH] * len(grades),
         is_complete=bool(narrators),
+        link_adalah_grades=adalah,
         lenient_unknown=lenient_unknown,
     )
     return {

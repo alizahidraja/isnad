@@ -39,7 +39,10 @@ def _grade_from_registry(chain: Chain, reg: Registry) -> ChainGrade:
         reg.get_grade_for_link(link.narrator_id, link.domain, link.version) for link in chain.links
     ]
     return grade_chain(
-        grades, [link.transform_type for link in chain.links], is_complete=chain.is_complete
+        grades,
+        [link.transform_type for link in chain.links],
+        is_complete=chain.is_complete,
+        link_adalah_grades=[],
     )
 
 

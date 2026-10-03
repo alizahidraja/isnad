@@ -69,7 +69,7 @@ def main() -> None:
         )
 
     transforms = [link.transform_type for link in chain.links]
-    chain_grade = grade_chain(link_grades, transforms, is_complete=True)
+    chain_grade = grade_chain(link_grades, transforms, is_complete=True, link_adalah_grades=[])
     verdict = critic.evaluate(claim, claim, [], "physics")
     action = decide(chain_grade, verdict)
 
@@ -85,7 +85,9 @@ def main() -> None:
         grade=NarratorGrade.RELIABLE,
     )
     link_grades_after = grades_for_chain(reg, chain)
-    chain_grade_after = grade_chain(link_grades_after, transforms, is_complete=True)
+    chain_grade_after = grade_chain(
+        link_grades_after, transforms, is_complete=True, link_adalah_grades=[]
+    )
     action_after = decide(chain_grade_after, verdict)
     print(f"  ingest-model-v3@2.0 grade: {link_grades_after[1].value.upper()}")
     print(f"  Chain grade now: {chain_grade_after.value.upper()}")

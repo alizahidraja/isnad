@@ -219,6 +219,7 @@ def run_condition(
                 link_transforms,
                 is_complete=claim.get("chain_complete", True),
                 corroboration_support=False,
+                link_adalah_grades=[],
             )
             c["chain_grade_raw"] = cg.value
             c["chain_grade"] = cg.value
