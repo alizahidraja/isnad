@@ -38,7 +38,7 @@ print(tracer.report())            # the transmission chain with per-link grades
 ## Step 3 — Grade the chain and decide
 
 ```python
-from isnad.core.chain import Chain, ChainLinkSpec, grades_for_chain, normalize_claim_text
+from isnad.core.chain import Chain, ChainLinkSpec, grade_chain_from_registry, normalize_claim_text
 from isnad.core.grading import grade_chain
 from isnad.core.decision import decide
 from isnad.matn import DeterministicRuleCritic
@@ -52,8 +52,7 @@ chain = Chain([
     ChainLinkSpec("model:gpt-4o-mini",        step=2, domain="medical-qa", transform_type=TransformType.DESTRUCTIVE),
 ])
 
-link_grades = grades_for_chain(reg, chain)
-chain_grade = grade_chain(link_grades, [l.transform_type for l in chain.links], is_complete=chain.is_complete)
+chain_grade = grade_chain_from_registry(reg, chain)
 # weakest-link rule: the weak summarizer caps the chain
 
 critic = DeterministicRuleCritic()   # swap in an LLM/embedding critic for real text

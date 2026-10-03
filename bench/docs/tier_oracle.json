@@ -7,11 +7,11 @@
   "heldout_train_even_ids": {
     "n": 252684,
     "lookup_oracle": {
-      "kappa_4way": 0.8867,
+      "kappa_5way": 0.8867,
       "kappa_3way": 0.8865
     },
     "isnad_strict": {
-      "kappa_4way": 0.8868,
+      "kappa_5way": 0.8868,
       "kappa_3way": 0.8865
     },
     "isnad_vs_oracle_agreement": 1.0,
@@ -76,11 +76,11 @@
   "heldout_test_odd_ids": {
     "n": 252546,
     "lookup_oracle": {
-      "kappa_4way": 0.8865,
+      "kappa_5way": 0.8865,
       "kappa_3way": 0.8861
     },
     "isnad_strict": {
-      "kappa_4way": 0.8865,
+      "kappa_5way": 0.8865,
       "kappa_3way": 0.8862
     },
     "isnad_vs_oracle_agreement": 1.0,
@@ -145,11 +145,11 @@
   "full_corpus_in_sample_modal": {
     "n": 575060,
     "lookup_oracle": {
-      "kappa_4way": 0.8434,
+      "kappa_5way": 0.8434,
       "kappa_3way": 0.8713
     },
     "isnad_strict": {
-      "kappa_4way": 0.8569,
+      "kappa_5way": 0.8569,
       "kappa_3way": 0.8714
     },
     "isnad_vs_oracle_agreement": 0.9886,

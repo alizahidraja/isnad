@@ -46,6 +46,15 @@
   "madar_fp_agreement": null,
   "madar_fp_overall": null,
   "madar_recall": null,
+  "_derivations": {
+    "bench_v1_4way_kappa": "v1 4-way kappa (0.8745) - superseded by mapping v2",
+    "bench_v1_3way_kappa": "v1 3-way kappa (0.8714) - equals current 3-way (mawdu-invariant)",
+    "drift_postcutoff_n": "8 - pc09 excluded as ill-posed (see corpus_hard.py)",
+    "drift_wellknown_err": "0 - 0/56 well-known facts err at every depth",
+    "g1_parsed_only_kappa": "recomputed from per_item (null-parsed dropped)",
+    "s8_quarantine_total": "run.py per-seed quarantine summed; replay gives 3,581",
+    "bench_n_classified": "575,064 readable-hukum; 575,060 graded (gradable subset)"
+  },
   "_source": {
     "bench": "bench/docs/tier_oracle.json",
     "g1": "experiments/g1/results_llm.json",

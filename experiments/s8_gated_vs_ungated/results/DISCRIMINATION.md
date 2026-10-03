@@ -28,7 +28,12 @@ and the weakest-link grade correctly surfaces the weak narrator's higher fault r
 | quarantined + corrupted | 527 |
 | **precision** | **14.7%** |
 
-Quarantine precision (14.7%) is ~1.7× the overall corruption rate (~8.8%) — the quarantine
+> The 3,581 above is the claim-level replay of this file's discrimination script. `run.py`
+> reports a slightly different quarantined total (3,588 summed over 10 seeds) because it counts
+> the DAIF_JIDDAN→QUARANTINE action per seed run; the two figures differ by a 7-claim counting
+> nuance, not a substantive difference.
+
+Quarantine precision (14.7%) is ~1.7× the overall corruption rate (~9.1%) — the quarantine
 cell is a weak-but-real filter, and its value is containment (hold, don't serve), not detection.
 
 ## 3. Chain-only acceptance curve (matched coverage)

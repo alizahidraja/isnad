@@ -126,17 +126,20 @@ To provide a custom implementation, create a class implementing the protocol and
 
 ```python
 from isnad.core.grading import grade_chain
+from isnad.core.chain import adalah_grades_for_chain
 from isnad.types import NarratorGrade, TransformType
 
 class MyGradingStrategy:
     def compute_chain_grade(self, link_narrator_grades, link_transform_types,
-                            is_complete, *, corroboration_support=False):
+                            is_complete, *, corroboration_support=False,
+                            link_adalah_grades=None):
         # custom logic here
         ...
 
 result = grade_chain(
     grades, transforms, is_complete=True,
     strategy=MyGradingStrategy(),
+    link_adalah_grades=adalah_grades_for_chain(reg, chain),
 )
 ```
 

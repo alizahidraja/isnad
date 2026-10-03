@@ -25,6 +25,7 @@ from isnad import (
     __version__,
     decide,
     grade_chain,
+    grade_chain_from_registry,
     seed_from_benchmark,
 )
 from isnad.audit import (
@@ -81,13 +82,7 @@ def grade_and_route(
     reg: Registry, critic: LLMCritic, claim: str
 ) -> tuple[ChainGrade, ContentVerdict, Action]:
     chain = chain_for()
-    grades = [reg.get_grade(link.narrator_id, link.domain) for link in chain.links]
-    cg = grade_chain(
-        grades,
-        [link.transform_type for link in chain.links],
-        is_complete=True,
-        link_adalah_grades=[],
-    )
+    cg = grade_chain_from_registry(reg, chain)
     cv = critic.evaluate(claim, claim.lower(), CORPUS, "physics")
     return cg, cv, decide(cg, cv)
 
@@ -132,7 +127,7 @@ def main() -> None:
         [NarratorGrade.REJECTED],
         [TransformType.PASS_THROUGH],
         is_complete=True,
-        link_adalah_grades=[],
+        link_adalah_grades=[AdalahGrade.COMPROMISED],
     )
     cv = critic.evaluate(
         "the speed of light in a vacuum is five hundred million meters per second",

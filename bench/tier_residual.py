@@ -71,7 +71,7 @@ def _kappas(y_true: Sequence[str], y_pred: Sequence[str]) -> dict[str, float]:
     p3 = [THREE_WAY[y] for y in y_pred]
     classes3 = ["sahih", "hasan", "weak"]
     k3 = cohens_kappa(confusion_matrix(t3, p3, classes3), classes3)
-    return {"kappa_4way": round(k4, 4), "kappa_3way": round(k3, 4)}
+    return {"kappa_5way": round(k4, 4), "kappa_3way": round(k3, 4)}
 
 
 def _load(db_path: str) -> tuple[dict[int, tuple[int, str, int]], dict[int, list[bool]]]:

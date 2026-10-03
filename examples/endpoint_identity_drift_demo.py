@@ -9,9 +9,8 @@ inherit trust earned by an older version behind the same service name.
 
 from __future__ import annotations
 
-from isnad.core.chain import Chain, ChainLinkSpec, grades_for_chain
+from isnad.core.chain import Chain, ChainLinkSpec, grade_chain_from_registry, grades_for_chain
 from isnad.core.decision import decide, describe_action
-from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
 from isnad.matn import DeterministicRuleCritic
 from isnad.types import NarratorGrade, TransformType
@@ -68,8 +67,7 @@ def main() -> None:
             f"→ grade={grade.value.upper()}"
         )
 
-    transforms = [link.transform_type for link in chain.links]
-    chain_grade = grade_chain(link_grades, transforms, is_complete=True, link_adalah_grades=[])
+    chain_grade = grade_chain_from_registry(reg, chain)
     verdict = critic.evaluate(claim, claim, [], "physics")
     action = decide(chain_grade, verdict)
 
@@ -85,9 +83,7 @@ def main() -> None:
         grade=NarratorGrade.RELIABLE,
     )
     link_grades_after = grades_for_chain(reg, chain)
-    chain_grade_after = grade_chain(
-        link_grades_after, transforms, is_complete=True, link_adalah_grades=[]
-    )
+    chain_grade_after = grade_chain_from_registry(reg, chain)
     action_after = decide(chain_grade_after, verdict)
     print(f"  ingest-model-v3@2.0 grade: {link_grades_after[1].value.upper()}")
     print(f"  Chain grade now: {chain_grade_after.value.upper()}")

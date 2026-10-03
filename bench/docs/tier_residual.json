@@ -148,11 +148,11 @@
     }
   },
   "lookup_oracle": {
-    "kappa_4way": 0.8866,
+    "kappa_5way": 0.8866,
     "kappa_3way": 0.8863
   },
   "isnad_strict": {
-    "kappa_4way": 0.8867,
+    "kappa_5way": 0.8867,
     "kappa_3way": 0.8863,
     "n": 505230
   },

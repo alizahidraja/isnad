@@ -16,10 +16,12 @@ chains — with a shuffled-rank control at κ = −0.007.
 
 ISNAD has two deliberate stances on a narrator it has never graded:
 
-| Mode | UNGRADED narrator | 3-way κ | 4-way κ | Agreement |
+| Mode | UNGRADED narrator | 3-way κ | 4-way κ (v1) | Agreement |
 |---|---|---|---:|---:|
 | **strict** (default) | caps at ḍaʿīf (classical majhūl) | **0.8714** | **0.8745** | **90.9%** |
 | lenient (`lenient_unknown=True`) | caps at ḥasan (epistemic humility) | 0.7610 | 0.7726 | 83.6% |
+
+Mapping v2 (3.0.0) splits the mawḍūʿ class into ḍāʿīf jiddan + mawḍūʿ; the current strict **5-way κ is 0.8569** (per-class table below). The 4-way 0.8745/0.7726 above are the superseded v1 numbers.
 
 The gap between them is the measured cost of leniency: **0.11 κ**. Classical
 scholars treat an *unknown* narrator as making the chain weak; ISNAD's default
@@ -40,7 +42,7 @@ agrees. The lenient mode is opt-in in the library via
 | ṣaḥīḥ | 0.923 | 0.897 | 0.910 | 151,139 |
 | ḥasan | 0.909 | 0.892 | 0.900 | 186,256 |
 | ḍaʿīf | 0.886 | 0.922 | 0.904 | 171,763 |
-| mawḍūʿ | 0.941 | 0.953 | 0.947 | 65,902 |
+| mawḍūʿ | 0.853 | 0.616 | 0.716 | 9,044 |
 
 ## The corroboration ablation (mutābaʿa)
 

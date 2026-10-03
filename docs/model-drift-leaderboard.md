@@ -31,7 +31,7 @@ the 400m hurdles world record as **45.94** (true: 45.80), the Knicks' last title
 | Tier | hallucination_rate (depth 1) |
 |---|---|
 | easy / medium / hard | **0.000** (0 drift — well-known facts) |
-| post-cutoff | **0.556** |
+| post-cutoff | **0.625** |
 
 **Oracle cross-check (independent LLM audit):** 0.97 agreement (29/30). Ground-truth
 labels come from an **LLM-free numeric oracle**, so the labels themselves cannot hallucinate.

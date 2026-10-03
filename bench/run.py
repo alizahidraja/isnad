@@ -314,7 +314,7 @@ def main() -> None:
             "chains_graded": n,
             "unclassified_hukum": n_unclassified,
             "empty_skipped": n_skipped,
-            "kappa_4way": kappa,
+            "kappa_5way": kappa,
             "kappa_linear_weighted": wkappa,
             "kappa_3way": kappa3,
             "agreement": agree / n,
@@ -326,7 +326,7 @@ def main() -> None:
         print(json.dumps(summary, indent=2, ensure_ascii=False))
         return
 
-    print("\n--- Full 4-way (sahih / hasan / daif / mawdu) ---")
+    print("\n--- Full 5-way (sahih / hasan / daif / daif_jiddan / mawdu) ---")
     print(f"  Cohen's kappa (unweighted):   {kappa:.4f}")
     print(f"  linear-weighted kappa:        {wkappa:.4f}")
     _report_matrix(cm, CLASSES)

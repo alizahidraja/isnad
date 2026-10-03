@@ -129,7 +129,7 @@ pip install isnad
 ```
 
 ```python
-from isnad import Registry, Chain, ChainLinkSpec, grade_chain, decide
+from isnad import Registry, Chain, ChainLinkSpec, grade_chain_from_registry, decide
 from isnad.types import NarratorGrade, ContentVerdict
 from isnad.critics import EmbeddingCritic
 
@@ -144,9 +144,7 @@ reg.register("openstax-textbook", "physics", grade=NarratorGrade.RELIABLE)
 reg.register("pdf-scraper-v2", "physics", grade=NarratorGrade.RELIABLE)
 reg.register("ingest-model-v3", "physics", grade=NarratorGrade.ACCEPTABLE)
 
-grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
-transforms = [l.transform_type for l in chain.links]
-chain_grade = grade_chain(grades, transforms, is_complete=True)
+chain_grade = grade_chain_from_registry(reg, chain)
 
 critic = EmbeddingCritic()  # offline; obvious contradictions only — see Scope
 verdict = critic.evaluate("p = h/λ", "p = h/lambda", ["p = mv"])
@@ -276,7 +274,7 @@ convention verdict + ISNAD prediction + disagreement bucket) is published as the
 The κ = 0.871 above is the methodology's home turf (hadith chains). The transfer to live LLM
 pipelines is measured separately and published honestly. On **RAGTruth**, the **grounding critic ISNAD
 composes with** (its matn layer) transfers at **Cohen's κ = 0.4345** over all 1,800 RAGTruth
-responses (57 unparseable, 3.1%, scored fail-closed) — 96.0% hallucination recall at 60.4% precision
+responses (57 unparseable, 3.2%, scored fail-closed) — 96.0% hallucination recall at 60.4% precision
 (plus a 49.9% false-positive rate on grounded responses), vs a 55.8% majority-class baseline. That
 number belongs to the composed critic, **not** to ISNAD's
 chain grading (WHO). The weak bi-encoder
@@ -459,8 +457,7 @@ Every headline number is reproducible from the repo (mostly no API keys):
 
 - **Adversarial benchmark** — narrator grading 100% caught / 0 false positives;
   content criticism is the binding constraint (`experiments/adversarial_benchmark/`).
-- **§8 gated-vs-ungated** — 20,000 claims; weakest-link quarantine validated;
-  matched-coverage *inconclusive* (honest) (`experiments/s8_gated_vs_ungated/`).
+- **§8 gated-vs-ungated** — 17,021-claim four-book corpus (11,918 eval/seed × 10 seeds); weakest-link quarantine validated; the chain grade ranks WHO-driven corruption (DISCRIMINATION.md: ḥasan 4.6% → ḍaʿīf 15.1%; chain-only serving 4.2% vs 9.2% random) (`experiments/s8_gated_vs_ungated/`).
 - **Semantic corroboration** — 707 claim pairs, 8/8 + 9/9 negative controls
   (`experiments/corroboration_v2/`, `corroboration_v3/`).
 - **A/B demonstration** — 2 caught, 2 missed (honestly), 0 false positives
