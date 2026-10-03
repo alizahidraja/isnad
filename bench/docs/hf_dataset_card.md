@@ -56,7 +56,7 @@ ranks 10–11). Both still quarantine.
 | --- | --- |
 | Derived from | `emadjumaah/hadith-kg` (CC-BY-4.0) |
 | Source SHA-256 | `d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6` |
-| Mapping | `bench/docs/mapping.md` (pre-committed, frozen) |
+| Mapping | `bench/docs/mapping.md` (pre-committed, frozen) — **mapping v2** (integrity-keyed mawḍūʿ / ḍaʿīf jiddan split, 3.0.0) |
 | Reproduction | `uv run python -m bench.run --seed 0` |
 | Software | `pip install isnad` (Apache-2.0) |
 | Paper | arXiv:2607.24117 · DOI 10.48550/arXiv.2607.24117 |

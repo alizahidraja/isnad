@@ -48,7 +48,7 @@ result (50 cells = 10 seeds × 5 domains):
 | `pdf-scraper@0.9-legacy` | 18% | missed (0/50 — too rare to grade) |
 
 With `ingest@weak` REJECTED in 3 of 50 cells, the quarantine count is
-**359 of 119,180 eval claims (3.0%)**. The weakest-link quarantine *mechanism*
+**3,588 of 119,180 eval claims (3.0%)**. The weakest-link quarantine *mechanism*
 is unchanged and unit-tested.
 
 Both corrections are tracked in the paper-v2 issue (#51).
@@ -102,8 +102,7 @@ budget — so it serves essentially nothing as safe-to-serve, hence 0 errors. Th
 column does **not** show the chain cannot rank corruption: `run.py` assigns every REVIEW claim
 priority 0, so the review queue never orders by chain grade, and corruption is injected
 per-narrator (a WHO property by design). ISNAD's review precision (~9%) is statistically
-indistinguishable from random (~9%) and from the corruption rate (~8.8%): **the chain grades
-WHO, so it cannot rank WHETHER (content) corruption.** Confidence-gating is no better than
+indistinguishable from random (~9%) and from the corruption rate (~8.8%) — so this run does **not** test whether the chain ranks corruption (the review queue never orders by chain grade); that discrimination question is measured separately. Confidence-gating is no better than
 random. Corroboration fires 0× (single-source corpus), so `isnad` == `isnad_no_corroboration`
 exactly. See [`MATCHED_COVERAGE_FINDING.md`](MATCHED_COVERAGE_FINDING.md).
 
@@ -112,7 +111,7 @@ exactly. See [`MATCHED_COVERAGE_FINDING.md`](MATCHED_COVERAGE_FINDING.md).
 ## What Gets Rejected — and Why
 
 Rejections come from `ingest@weak` being REJECTED in the 3 of 50 cells where the
-post-#9 policy drives it that far (359 claims, 3.0% of eval). The chain trace
+post-#9 policy drives it that far (3,588 claims, 3.0% of eval). The chain trace
 when it fires:
 
 ```
@@ -120,7 +119,7 @@ Step 0: source:openstax           RELIABLE ✓     [→]
 Step 1: pdf-scraper@1.2           RELIABLE ✓     [DESTRUCTIVE ▼]
 Step 2: ingest@weak               REJECTED ✗✗    [GENERATIVE ▲]  ← BREAKS
 
-Chain grade: MAWDU → REJECT_AND_QUARANTINE_NARRATOR
+Chain grade: DAIF_JIDDAN → QUARANTINE
 ```
 
 > **Note:** the original "4,057 claims (29%)" figure required `ingest@weak` to
@@ -139,7 +138,7 @@ Full chain trace: `results/rejected_claims_diagnostic.txt`
 
 | Fate | Count | % |
 |---|---|---|
-| Quarantined (MAWDU via ingest@weak, REJECTED in 3/50 cells) | 359 | 3.0% |
+| Quarantined (DAIF_JIDDAN via ingest@weak, REJECTED in 3/50 cells) | 3,588 | 3.0% |
 | Held for review, beyond budget | majority | ~80–97% (depends on B) |
 | **Served (within review budget)** | **~2–20%** | **B** |
 

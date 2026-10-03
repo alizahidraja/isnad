@@ -1,7 +1,7 @@
 # ISNAD-Bench — Results (v2)
 
 **Headline:** ISNAD's weakest-link chain grading reproduces a rule-based grading convention derived from
-Ibn Hajar's 12 narrator tiers with **Cohen's κ = 0.8714** (3-way headline; the 4-way is 0.8745 — a sensitivity that separates the mawḍūʿ class, a framework term)
+Ibn Hajar's 12 narrator tiers with **Cohen's κ = 0.8714** (3-way headline; the 5-way (mapping v2, post-hoc after the expert review) is 0.8569; v1's 4-way was 0.8745)
 and **0.761** (lenient opt-in), across **575,060** graded
 chains — with a shuffled-rank control at κ = −0.007.
 
@@ -59,6 +59,12 @@ group, disjoint non-companion narrators)?
 independent corroborating route, so the mutābaʿa principle would apply to them.
 Only the small remainder are genuine over-grades. This is direct evidence that
 ISNAD's corroboration engine is the right next mechanism to wire in.
+
+**Independence caveat (Kim et al., ICML 2025, arXiv 2506.07962):** provenance ≠ independence.
+Correlated errors are well documented — across 350+ models, when two models both get an item wrong
+they give the same wrong answer ~60% of the time, and the correlation persists across providers.
+ISNAD's madār check detects shared lineage (narrator identity, model family, upstream source) but
+does not yet *discount* correlated errors. This is a stated §7 limit, not a resolved one.
 
 ## Where ISNAD and the scholars disagree (lenient mode, bucketed)
 

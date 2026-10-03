@@ -64,15 +64,15 @@
 
 **Narrator:** deepseek-flash · **Critic:** deepseek-flash (same model) · **calls:** 1280 · **cost:** $0.09685
 
-Post-cutoff (n=8):
+Aggregate (all facts, n=64):
 
 | Depth | hallucination_rate | served_error_rate | n |
 |---|---|---|---|
-| 1 | 0.500 | 0.000 | 8 |
-| 2 | 0.500 | 0.200 | 8 |
-| 3 | 0.500 | 0.333 | 8 |
-| 4 | 0.500 | 0.333 | 8 |
-| 5 | 0.500 | 0.333 | 8 |
+| 1 | 0.0625 | 0.000 | 64 |
+| 2 | 0.0625 | 0.250 | 64 |
+| 3 | 0.0625 | 0.500 | 64 |
+| 4 | 0.0625 | 0.500 | 64 |
+| 5 | 0.0625 | 0.500 | 64 |
 
 > This is the CONFOUNDED baseline: a model grading its own output is lenient on its own family.
 > The cross-model number above (critic deepseek-v4-pro) is the de-confounded result the paper reports.
@@ -92,7 +92,7 @@ agreement rate: **0.967** (29/30) — same model family as the critic under test
 - **Truncated calls: 36** (`finish_reason=length`) — recorded and rendered as
   "unverifiable", never silently dropped.
 - **Single provider / single model.** No cross-family comparison yet.
-- **temperature = 0.0**: drift is deterministic knowledge error, not sampling noise.
+- **temperature = 0.0**, but hop-1 text is not deterministic across runs: 22 of 64 hop-1 answers changed between the 11 Sep and 3 Oct committed runs at temperature 0.
 - **Oracle definition:** any numeric deviation at the canonical value's precision
   (rounding, unit change) counts as drift; a more-precise correct answer is faithful.
 - **Cost** is derived from the API's token counts × the disclosed V4-Flash rate card
