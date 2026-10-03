@@ -25,7 +25,7 @@ A strict grounding judge: *"is this response fully grounded in its source?"*
 
 | Metric | Value |
 |---|---|
-| **Cohen's κ** | **0.4345** |
+| **Cohen's κ** | **0.4345** (fail-closed over 1,800) · **0.468** (parsed-only, 1,743) |
 | Accuracy | 70.3% (majority-class baseline 55.8%) |
 | Precision (halluc.) | 60.4% |
 | Recall (halluc.) | 96.0% |
@@ -35,7 +35,7 @@ A strict grounding judge: *"is this response fully grounded in its source?"*
 (moderate agreement) over **all 1,800** RAGTruth responses — 96.0% hallucination recall at 60.4% precision.
 (Fail-closed: 57 unparseable responses, 3.1%, are scored as hallucinated, not dropped.)
 
-**Known limitation:** 55 responses (3.1%) returned no parseable verdict and are scored
+**Known limitation:** 57 responses (3.2%) returned no parseable verdict and are scored
 fail-closed as hallucinated. The **49.9% false-positive rate on grounded responses
 (501/1,005)** sits beside the 96.0% recall — the decision matrix holds those, so the cost
 is review, not a wrong serve. This is the honest cost of a high-recall grounding critic.
@@ -49,16 +49,16 @@ false-positive on grounded responses, above).
 
 | Model | Truth | LLM-critic predicted |
 |---|---|---|
-| gpt-4-0613 | 12.3% | 42.0% |
-| gpt-3.5-turbo-0613 | 16.0% | 46.3% |
+| gpt-4-0613 | 12.3% | 39.7% |
+| gpt-3.5-turbo-0613 | 16.0% | 45.3% |
 | llama-2-70b-chat | 46.0% | 76.3% |
-| llama-2-13b-chat | 57.0% | 84.0% |
-| llama-2-7b-chat | 66.3% | 89.3% |
-| mistral-7B-instruct | 67.3% | 85.3% |
+| llama-2-13b-chat | 57.0% | 83.7% |
+| llama-2-7b-chat | 66.3% | 90.0% |
+| mistral-7B-instruct | 67.3% | 86.3% |
 
 Used as registry evidence (benchmark-accuracy → narrator grade bands), the critic's
-over-flagged rates would **REJECT all six models**; the true rates put GPT-4 (12.3%) and
-GPT-3.5 (16.0%) at ACCEPTABLE.
+over-flagged rates would **REJECT five of six models** — GPT-4 (39.7%) lands WEAK, not REJECTED;
+the true rates put GPT-4 (12.3%) and GPT-3.5 (16.0%) at ACCEPTABLE.
 
 ## Overall verdict (G1 gate)
 

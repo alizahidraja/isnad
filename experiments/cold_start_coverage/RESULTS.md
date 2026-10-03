@@ -35,7 +35,7 @@ Re-run 2026-10-01. Coverage on 20 clean claims (15 verbatim corpus facts + 5 par
   consistent, which *meets* the gate's numeric thresholds (≥ 25 contradiction cases,
   false-consistent rate ≤ 0.0) and would license affirmation. But that eval is curated;
   the §8 real-fault measurement is **39.1% false-consistent** on content corruption (#126),
-  and G1's false-consistent analogue is 30 of 795 (3.8%). So the gate is only as good as the
+  and G1's false-consistent analogue is 32 of 795 (4.0%). So the gate is only as good as the
   eval set that licenses it — a curated eval passes, real-world faults do not. This is the
   moat working: a critic may not bless a claim until its false-consistent rate is *measured*,
   and the honest report is that the two measurements disagree.

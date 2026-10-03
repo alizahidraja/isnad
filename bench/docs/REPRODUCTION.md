@@ -10,7 +10,7 @@ Independent re-run of the headline chain-grading number, from the public dataset
 
 | Metric | Published | Reproduced | Match |
 |---|---|---|---|
-| Chain-grade κ (strict, 3-way) | 0.871 | **0.8714** (computed; unweighted 0.8745 · linear-weighted 0.8917) | ✅ |
+| Chain-grade κ (strict, 3-way) | 0.871 | **0.8714** (computed; 5-way 0.8569 · linear-weighted 0.8763) | ✅ |
 | Chain-grade κ (lenient) | 0.761 | agreement 480,702/575,060 = 83.6% | ✅ |
 | Narrator-grade agreement (inter-critic κ) | 0.331 | **0.33** | ✅ |
 | Single critic vs Ibn Hajar's tier | 0.45 | **0.45** | ✅ |
