@@ -44,8 +44,8 @@ def build() -> dict[str, object]:
     tor = _load("bench/docs/tier_oracle.json")
     fc = tor["full_corpus_in_sample_modal"]
     n["bench_3way_kappa"] = fc["isnad_strict"]["kappa_3way"]  # 0.8714
-    n["bench_5way_kappa"] = fc["isnad_strict"]["kappa_4way"]  # 0.8569 (5 classes)
-    n["bench_lookup_5way_kappa"] = fc["lookup_oracle"]["kappa_4way"]  # 0.8434
+    n["bench_5way_kappa"] = fc["isnad_strict"]["kappa_5way"]  # 0.8569 (5 classes)
+    n["bench_lookup_5way_kappa"] = fc["lookup_oracle"]["kappa_5way"]  # 0.8434
     n["bench_lookup_3way_kappa"] = fc["lookup_oracle"]["kappa_3way"]  # 0.8713
     n["bench_oracle_agreement"] = fc["isnad_vs_oracle_agreement"]  # 0.9886
     n["bench_n_classified"] = tor["n_classified"]  # 575064
@@ -68,7 +68,19 @@ def build() -> dict[str, object]:
     n["g1_precision"] = g1["precision_hallucinated"]
     n["g1_f1"] = g1["f1_hallucinated"]
     n["g1_baseline"] = g1["baseline_majority_acc"]
-    n["g1_parsed_only_kappa"] = 0.4681  # computed over 1,743 parsed responses
+    per_item = g1.get("per_item", [])
+    parsed = [r for r in per_item if r.get("parsed_verdict") is not None]
+    if parsed:
+        from bench.metrics import cohens_kappa, confusion_matrix
+
+        _yt = ["1" if r["gold"] else "0" for r in parsed]
+        _yp = [str(r["pred"]) for r in parsed]
+        n["g1_parsed_only_kappa"] = round(
+            cohens_kappa(confusion_matrix(_yt, _yp, ["0", "1"]), ["0", "1"]), 4
+        )
+    else:
+        n["g1_parsed_only_kappa"] = None
+    # computed over 1,743 parsed responses
     cm = g1["confusion_[[TN,FP],[FN,TP]]"]
     n["g1_tn"] = cm[0][0]
     n["g1_fp"] = cm[0][1]
@@ -106,6 +118,15 @@ def build() -> dict[str, object]:
         n["madar_fp_overall"] = madar.get("fp_overall")
         n["madar_recall"] = madar.get("recall")
 
+    n["_derivations"] = {
+        "bench_v1_4way_kappa": "v1 4-way kappa (0.8745) - superseded by mapping v2",
+        "bench_v1_3way_kappa": "v1 3-way kappa (0.8714) - equals current 3-way (mawdu-invariant)",
+        "drift_postcutoff_n": "8 - pc09 excluded as ill-posed (see corpus_hard.py)",
+        "drift_wellknown_err": "0 - 0/56 well-known facts err at every depth",
+        "g1_parsed_only_kappa": "recomputed from per_item (null-parsed dropped)",
+        "s8_quarantine_total": "run.py per-seed quarantine summed; replay gives 3,581",
+        "bench_n_classified": "575,064 readable-hukum; 575,060 graded (gradable subset)",
+    }
     n["_source"] = {
         "bench": "bench/docs/tier_oracle.json",
         "g1": "experiments/g1/results_llm.json",

@@ -5,9 +5,14 @@ Run: make demo   OR   uv run python examples/worked_example.py
 This traces the paper's photon-momentum claim through the full pipeline.
 """
 
-from isnad.core.chain import Chain, ChainLinkSpec, grades_for_chain, normalize_claim_text
+from isnad.core.chain import (
+    Chain,
+    ChainLinkSpec,
+    grade_chain_from_registry,
+    grades_for_chain,
+    normalize_claim_text,
+)
 from isnad.core.decision import decide, describe_action
-from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
 from isnad.matn import DeterministicRuleCritic
 from isnad.types import (
@@ -125,9 +130,7 @@ def main() -> None:
 
     link_grades = grades_for_chain(reg, chain)
     link_transforms = [link.transform_type for link in chain.links]
-    chain_grade = grade_chain(
-        link_grades, link_transforms, is_complete=chain.is_complete, link_adalah_grades=[]
-    )
+    chain_grade = grade_chain_from_registry(reg, chain)
 
     print(f"   Narrator grades:  {' → '.join(g.value.upper() for g in link_grades)}")
     print(f"   Transform types:  {' → '.join(t.value.upper() for t in link_transforms)}")
@@ -171,9 +174,7 @@ def main() -> None:
         )
 
     link_grades2 = grades_for_chain(reg2, chain)
-    chain_grade2 = grade_chain(
-        link_grades2, link_transforms, is_complete=chain.is_complete, link_adalah_grades=[]
-    )
+    chain_grade2 = grade_chain_from_registry(reg2, chain)
     action2 = decide(chain_grade2, content_verdict)
     desc2 = describe_action(chain_grade2, content_verdict)
 

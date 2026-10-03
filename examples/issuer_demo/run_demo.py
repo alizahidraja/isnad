@@ -19,8 +19,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "src"))
 
-from isnad.core.chain import Chain, ChainLinkSpec
-from isnad.core.grading import grade_chain
+from isnad.core.chain import Chain, ChainLinkSpec, grade_chain_from_registry
 from isnad.core.registry import Registry
 from isnad.integrations.liveverify.issuer import (
     render_verdict,
@@ -47,13 +46,7 @@ reg.register("source:openstax-vol3", "physics", grade=NarratorGrade.RELIABLE)
 reg.register("pdf-scraper@1.2", "physics", grade=NarratorGrade.RELIABLE)
 reg.register("ingest-model-v3", "physics", grade=NarratorGrade.ACCEPTABLE)
 
-link_grades = [reg.get_grade(link.narrator_id, link.domain) for link in chain.links]
-chain_grade = grade_chain(
-    link_grades,
-    [link.transform_type for link in chain.links],
-    is_complete=True,
-    link_adalah_grades=[],
-)
+chain_grade = grade_chain_from_registry(reg, chain)
 content_verdict = ContentVerdict.CONSISTENT
 
 # ---------------------------------------------------------------------------

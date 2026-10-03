@@ -6,7 +6,7 @@ rather than merely logging execution traces.
 
 Quickstart::
 
-    from isnad import Registry, Chain, ChainLinkSpec, grade_chain, decide
+    from isnad import Registry, Chain, ChainLinkSpec, grade_chain_from_registry, decide
     from isnad.types import NarratorGrade, TransformType, ContentVerdict
     from isnad.matn import DeterministicRuleCritic
 
@@ -27,6 +27,7 @@ from isnad.core.chain import (
     Chain,
     ChainLinkSpec,
     adalah_grades_for_chain,
+    grade_chain_from_registry,
     grades_for_chain,
     make_claim_id,
     normalize_claim_text,
@@ -89,6 +90,7 @@ __all__ = [
     "Chain",
     "ChainLinkSpec",
     "adalah_grades_for_chain",
+    "grade_chain_from_registry",
     "grades_for_chain",
     "make_claim_id",
     "normalize_claim_text",

@@ -33,7 +33,7 @@ A strict grounding judge: *"is this response fully grounded in its source?"*
 
 **Verdict:** the grounding critic ISNAD composes with (its matn layer) transfers at κ = 0.4345
 (moderate agreement) over **all 1,800** RAGTruth responses — 96.0% hallucination recall at 60.4% precision.
-(Fail-closed: 57 unparseable responses, 3.1%, are scored as hallucinated, not dropped.)
+(Fail-closed: 57 unparseable responses, 3.2%, are scored as hallucinated, not dropped.)
 
 **Known limitation:** 57 responses (3.2%) returned no parseable verdict and are scored
 fail-closed as hallucinated. The **49.9% false-positive rate on grounded responses
