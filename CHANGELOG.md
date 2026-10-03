@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.0.0] — 2026-10-02
+
+### Changed (mapping v2 — classical correctness for the mawḍūʿ category)
+
+- **Integrity-keyed grade split** (Ibn Ḥajar, Nuzhat al-Naẓar): a narrator's *lying* makes a narration
+  mawḍūʿ (fabricated); being *accused* of lying makes it matrūk (abandoned → very weak). ISNAD now keys
+  the split on the integrity axis: **COMPROMISED integrity (proven liar/fabricator, rank 12) → MAWDU**;
+  **SUSPECT (accused/abandoned, ranks 10–11) → ḍaʿīf jiddan (new `ChainGrade.DAIF_JIDDAN`)**.
+  Both still quarantine — MAWDU permanently (`REJECT_AND_QUARANTINE_NARRATOR`), DAIF_JIDDAN recoverably (`QUARANTINE`).
+- **Decision matrix**: `DAIF_JIDDAN × {CONSISTENT, CONTRADICTION, UNVERIFIABLE} → QUARANTINE`.
+- **Benchmark re-versioned**: 3-way κ unchanged **0.8714**; 5-way κ **0.8569** (v1's 4-way 0.8745 conflated
+  "rejected narrator" with "fabricated"). `ṣaḥīḥ × contradiction` relabeled from "shudhudh" to "contradiction (taʿāruḍ)".
+
 ## [2.25.0] — 2026-09-30
 
 ### Fixed (post-audit sweep)
