@@ -1,0 +1,91 @@
+{
+  "scope": "four-book corpus, 10 seeds, 11,918 eval claims/seed, offline + deterministic",
+  "corruption_by_grade": {
+    "hasan": {
+      "n": 68019,
+      "corrupted": 3107,
+      "rate": 0.0457
+    },
+    "daif": {
+      "n": 47814,
+      "corrupted": 7206,
+      "rate": 0.1507
+    },
+    "daif_jiddan": {
+      "n": 3347,
+      "corrupted": 498,
+      "rate": 0.1488
+    }
+  },
+  "quarantine": {
+    "quarantined": 3581,
+    "quarantined_corrupted": 527,
+    "precision": 0.1472,
+    "rejected": 0,
+    "rejected_corrupted": 0
+  },
+  "chain_only_vs_random": {
+    "10": {
+      "chain_only_served_error_rate": 0.042,
+      "random_served_error_rate": 0.0951
+    },
+    "20": {
+      "chain_only_served_error_rate": 0.0412,
+      "random_served_error_rate": 0.0889
+    },
+    "30": {
+      "chain_only_served_error_rate": 0.0427,
+      "random_served_error_rate": 0.094
+    },
+    "40": {
+      "chain_only_served_error_rate": 0.0432,
+      "random_served_error_rate": 0.0911
+    },
+    "50": {
+      "chain_only_served_error_rate": 0.0425,
+      "random_served_error_rate": 0.0919
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 1,
+      "n_eval": 11918
+    },
+    {
+      "seed": 2,
+      "n_eval": 11918
+    },
+    {
+      "seed": 3,
+      "n_eval": 11918
+    },
+    {
+      "seed": 4,
+      "n_eval": 11918
+    },
+    {
+      "seed": 5,
+      "n_eval": 11918
+    },
+    {
+      "seed": 6,
+      "n_eval": 11918
+    },
+    {
+      "seed": 7,
+      "n_eval": 11918
+    },
+    {
+      "seed": 8,
+      "n_eval": 11918
+    },
+    {
+      "seed": 9,
+      "n_eval": 11918
+    },
+    {
+      "seed": 10,
+      "n_eval": 11918
+    }
+  ]
+}
