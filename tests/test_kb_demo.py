@@ -85,7 +85,7 @@ def test_quarantine_containment(reg: Registry) -> None:
     va = kb.grade_claim(reg, kb.CLAIM_A, kb.CHAIN_A, kb.CORPUS_DOCS["A"])
     vb = kb.grade_claim(reg, kb.CLAIM_B, kb.CHAIN_B, kb.CORPUS_DOCS["B"])
     vc = kb.grade_claim(reg, kb.CLAIM_C, kb.CHAIN_C, kb.CORPUS_DOCS["C"])
-    assert vc.action == Action.REJECT_AND_QUARANTINE_NARRATOR
+    assert vc.action == Action.QUARANTINE  # REJECTED (SUSPECT) -> DAIF_JIDDAN
     assert [v.text for v in kb.served_surface([va, vb, vc])] == [kb.CLAIM_A]
 
     reg.quarantine("source:fabricated-bot", kb.DOMAIN, "fabricated claims")

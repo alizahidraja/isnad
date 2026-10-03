@@ -12,7 +12,7 @@ from __future__ import annotations
 from bench.data import Node
 from bench.mapping import is_sentinel, narrator_grade_from_rank
 from isnad.core.grading import grade_chain
-from isnad.types import NarratorGrade, TransformType
+from isnad.types import AdalahGrade, NarratorGrade, TransformType
 
 # Sentinel names (gap markers) → whether the gap is the grade-preserving taʿlīq
 # form or a genuine break (irsāl / inqiṭāʿ).
@@ -21,17 +21,18 @@ _TALIQ = "موضع تعليق"
 # The corroboration bucket label (must match the RESULTS.md wording exactly).
 _CORROBORATION_BUCKET = "corroboration: weak-alone → ḥasan-with-mutābaʿa"
 
-_GradeResult = tuple[list[NarratorGrade], bool, list[int], bool, bool]
+_GradeResult = tuple[list[NarratorGrade], bool, list[int], bool, bool, list[AdalahGrade]]
 
 
 def grade_one_chain(
-    nodes: tuple[Node, ...], rank_map: dict[int, NarratorGrade] | None = None
+    nodes: tuple[Node, ...], rank_map: dict[int, tuple[NarratorGrade, AdalahGrade]] | None = None
 ) -> _GradeResult:
     """Map one chain's nodes to ISNAD grades (sentinels → is_complete).
 
-    Returns (narrator_grades, is_complete, rank_nos, has_taliq, has_gap).
+    Returns (narrator_grades, is_complete, rank_nos, has_taliq, has_gap, adalah_grades).
     """
     narrator_grades: list[NarratorGrade] = []
+    adalah_grades: list[AdalahGrade] = []
     rank_nos: list[int] = []
     has_gap = False
     has_taliq = False
@@ -43,22 +44,33 @@ def grade_one_chain(
                 has_taliq = True
             continue
         if rank_map is not None and node.rank_no in rank_map:
-            grade = rank_map[node.rank_no]
+            grade, adalah = rank_map[node.rank_no]
         else:
             grade = mapped.narrator_grade
+            adalah = mapped.adalah_grade
         narrator_grades.append(grade)
+        adalah_grades.append(adalah)
         if node.rank_no is not None:
             rank_nos.append(node.rank_no)
-    return narrator_grades, not has_gap, rank_nos, has_taliq, has_gap
+    return narrator_grades, not has_gap, rank_nos, has_taliq, has_gap, adalah_grades
 
 
 def chain_grade_from_narrators(
-    narrator_grades: list[NarratorGrade], is_complete: bool, lenient_unknown: bool = False
+    narrator_grades: list[NarratorGrade],
+    is_complete: bool,
+    lenient_unknown: bool = False,
+    adalah_grades: list[AdalahGrade] | None = None,
 ) -> str:
     """Apply the weakest-link rule to mapped narrator grades."""
     transforms = [TransformType.PASS_THROUGH] * len(narrator_grades)
     return str(
-        grade_chain(narrator_grades, transforms, is_complete, lenient_unknown=lenient_unknown).value
+        grade_chain(
+            narrator_grades,
+            transforms,
+            is_complete,
+            lenient_unknown=lenient_unknown,
+            link_adalah_grades=adalah_grades,
+        ).value
     )
 
 

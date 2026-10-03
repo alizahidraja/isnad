@@ -87,9 +87,11 @@ def analyse(db_path: str) -> dict[str, object]:
     # ---- ISNAD grades over all classified chains ----
     preds: dict[int, str] = {}
     for chain in iter_chains(db_path, set(verdict)):
-        grades, is_complete, *_ = grade_one_chain(chain.nodes)
+        grades, is_complete, _r, _t, _g, adalah = grade_one_chain(chain.nodes)
         if grades:
-            preds[chain.sanad_id] = chain_grade_from_narrators(grades, is_complete)
+            preds[chain.sanad_id] = chain_grade_from_narrators(
+                grades, is_complete, adalah_grades=adalah
+            )
 
     def _score(ids: Sequence[int], oracle_from: dict[int, str]) -> dict[str, object]:
         ids = [s for s in ids if s in preds]

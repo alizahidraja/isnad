@@ -42,7 +42,7 @@ def _narrator_to_chain_grade(ng: NarratorGrade, *, lenient_unknown: bool = False
         NarratorGrade.RELIABLE: ChainGrade.SAHIH,
         NarratorGrade.ACCEPTABLE: ChainGrade.HASAN,
         NarratorGrade.WEAK: ChainGrade.DAIF,
-        NarratorGrade.REJECTED: ChainGrade.MAWDU,
+        NarratorGrade.REJECTED: ChainGrade.DAIF_JIDDAN,
         NarratorGrade.UNGRADED: (
             ChainGrade.HASAN if lenient_unknown else ChainGrade.DAIF
         ),  # ungraded → ḍaʿīf (strict default) or ḥasan (lenient)
@@ -72,11 +72,14 @@ class RefinedWeakestLink:
 
      3. Generative without corroboration, or pass-through: standard minimum.
 
-     4. Incomplete chain → DAIF.  REJECTED narrator → MAWDU.
+     4. Incomplete chain → DAIF.  COMPROMISED integrity → MAWDU (fabricated);
+        a REJECTED narrator with SUSPECT integrity → DAIF_JIDDAN (very weak).
 
-    Note: ISNAD's "MAWDU" is a framework term — "a REJECTED narrator is
-    present → quarantine" — NOT the classical "the text is forged" (a narrow
-    matn-level judgment). The chain-level quarantine signal reuses the label.
+    Note: the mawḍūʿ / ḍaʿīf-jiddan split follows Ibn Ḥajar (Nuzhat al-Naẓar):
+    a narrator's *lying* makes a narration mawḍūʿ (fabricated), being *accused*
+    of lying makes it matrūk (abandoned → very weak). ISNAD keys the split on
+    the integrity axis — COMPROMISED integrity → MAWDU, SUSPECT (or no) integrity
+    → DAIF_JIDDAN — not on NarratorGrade alone. Both still quarantine.
     """
 
     def compute_chain_grade(
@@ -122,15 +125,10 @@ class RefinedWeakestLink:
             return ChainGrade.DAIF  # empty chain is effectively munqaṭiʿ
 
         # --- Any REJECTED narrator → MAWDU immediately ---
-        # Runs BEFORE the completeness cap on purpose (#181): a quarantined
-        # (REJECTED) fabricator is present regardless of a chain gap, and the
-        # framework's own definition of MAWDU is "a rejected narrator is
-        # present" (types.py; paper §4.4). Ordering this below the cap would be
-        # anti-monotone — adding a gap would RAISE a MAWDU chain to DAIF, and a
-        # DAIF chain is corroboratable DAIF→HASAN, reopening the serve path for
-        # a fabricator. The worst-tier floor is never lifted by a weaker cap.
-        if NarratorGrade.REJECTED in link_narrator_grades:
-            return ChainGrade.MAWDU
+        # Fabrication (mawḍūʿ) is now keyed on COMPROMISED integrity alone
+        # (mapping v2, #3.0.0) — see the block below. A REJECTED narrator with
+        # merely SUSPECT integrity grades DAIF_JIDDAN via the floor loop, not
+        # MAWDU.
 
         # --- Any COMPROMISED ʿadālah → MAWDU immediately ---
         # A separate axis from NarratorGrade on purpose (issue #11): integrity

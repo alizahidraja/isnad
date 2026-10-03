@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from isnad.core.chain import Chain, ChainLinkSpec
+from isnad.core.chain import Chain, ChainLinkSpec, adalah_grades_for_chain
 from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
 from isnad.types import Action, ChainGrade, NarratorGrade, TransformType
@@ -65,7 +65,10 @@ def grade(
     chain_obj = Chain(specs)
     grades = [registry.get_grade_for_link(s.narrator_id, s.domain, s.version) for s in specs]
     chain_grade = grade_chain(
-        grades, [s.transform_type for s in specs], is_complete=chain_obj.is_complete
+        grades,
+        [s.transform_type for s in specs],
+        is_complete=chain_obj.is_complete,
+        link_adalah_grades=adalah_grades_for_chain(registry, chain_obj),
     )
 
     weakest = min(chain, key=lambda nid: _narrator_grade(registry, nid, domain))

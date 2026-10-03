@@ -53,10 +53,13 @@ class TestNarratorRankMapping:
         assert m10.narrator_grade == NarratorGrade.REJECTED
         assert m10.adalah_grade == AdalahGrade.SUSPECT
 
-        for rn in (11, 12):
-            m = narrator_grade_from_rank(rn, "كذاب")
-            assert m.narrator_grade == NarratorGrade.REJECTED
-            assert m.adalah_grade == AdalahGrade.COMPROMISED
+        m11 = narrator_grade_from_rank(11, "منكر الحديث")
+        assert m11.narrator_grade == NarratorGrade.REJECTED
+        assert m11.adalah_grade == AdalahGrade.SUSPECT  # accused, not proven
+
+        m12 = narrator_grade_from_rank(12, "كذاب")
+        assert m12.narrator_grade == NarratorGrade.REJECTED
+        assert m12.adalah_grade == AdalahGrade.COMPROMISED  # proven liar / fabricator
 
     def test_unranked_or_none_is_ungraded(self):
         assert narrator_grade_from_rank(None).narrator_grade == NarratorGrade.UNGRADED
@@ -97,12 +100,20 @@ class TestHukumClassification:
         # "weak but becomes hasan with corroboration" is still weak alone.
         assert chain_grade_from_hukum("إسناد ضعيف ويحسن إذا توبع") == ChainGrade.DAIF
 
-    def test_mawdu_markers_take_precedence_over_weak(self):
+    def test_daif_jiddan_markers_take_precedence_over_weak(self):
         assert (
-            chain_grade_from_hukum("إسناد شديد الضعف فيه فلان وهو منكر الحديث") == ChainGrade.MAWDU
+            chain_grade_from_hukum("إسناد شديد الضعف فيه فلان وهو منكر الحديث")
+            == ChainGrade.DAIF_JIDDAN
         )
-        assert chain_grade_from_hukum("إسناد فيه متهم بالوضع وهو فلان") == ChainGrade.MAWDU
-        assert chain_grade_from_hukum("إسناد ضعيف فيه فلان وهو متروك الحديث") == ChainGrade.MAWDU
+        assert chain_grade_from_hukum("إسناد فيه متهم بالوضع وهو فلان") == ChainGrade.DAIF_JIDDAN
+        assert (
+            chain_grade_from_hukum("إسناد ضعيف فيه فلان وهو متروك الحديث") == ChainGrade.DAIF_JIDDAN
+        )
+
+    def test_mawdu_markers(self):
+        assert chain_grade_from_hukum("إسناد موضوع") == ChainGrade.MAWDU
+        assert chain_grade_from_hukum("إسناد فيه فلان وهو كذاب") == ChainGrade.MAWDU
+        assert chain_grade_from_hukum("إسناد فيه فلان وهو يضع الحديث") == ChainGrade.MAWDU
 
     def test_unclassified(self):
         assert chain_grade_from_hukum(None) is None

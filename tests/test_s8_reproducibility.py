@@ -100,7 +100,7 @@ def test_calibrate_discovers_broken_narrator_and_quarantines_it() -> None:
         ],
         is_complete=True,
     )
-    assert chain_grade == ChainGrade.MAWDU
+    assert chain_grade == ChainGrade.DAIF_JIDDAN
 
     action = decide(chain_grade, ContentVerdict.CONSISTENT)
-    assert action == Action.REJECT_AND_QUARANTINE_NARRATOR
+    assert action == Action.QUARANTINE

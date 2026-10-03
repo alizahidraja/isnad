@@ -1,7 +1,7 @@
 """Tests for matrix.py — the 4×3 decision matrix.
 
 Verifies paper §4.4: every cell routes to the correct action, including:
-- ṣaḥīḥ × contradiction → REVIEW (shudhudh)
+- ṣaḥīḥ × contradiction → REVIEW (contradiction — highest-value case)
 - mawḍūʿ → REJECT_AND_QUARANTINE_NARRATOR
 - All 8 core cells (plus unverifiable variants).
 """
@@ -18,7 +18,7 @@ class TestDecisionMatrix:
         assert decide(ChainGrade.SAHIH, ContentVerdict.CONSISTENT) == Action.SERVE
 
     def test_sahih_contradiction_review(self) -> None:
-        """ṣaḥīḥ × contradiction → REVIEW (shudhudh) — highest-value case."""
+        """ṣaḥīḥ × contradiction → REVIEW (contradiction) — highest-value case."""
         assert decide(ChainGrade.SAHIH, ContentVerdict.CONTRADICTION) == Action.REVIEW
 
     def test_sahih_unverifiable_caveat(self) -> None:
@@ -46,6 +46,16 @@ class TestDecisionMatrix:
     def test_daif_unverifiable_review(self) -> None:
         assert decide(ChainGrade.DAIF, ContentVerdict.UNVERIFIABLE) == Action.REVIEW
 
+    # --- DAIF_JIDDAN row (rejected-for-error, recoverable) ---
+    def test_daif_jiddan_consistent_quarantine(self) -> None:
+        assert decide(ChainGrade.DAIF_JIDDAN, ContentVerdict.CONSISTENT) == Action.QUARANTINE
+
+    def test_daif_jiddan_contradiction_quarantine(self) -> None:
+        assert decide(ChainGrade.DAIF_JIDDAN, ContentVerdict.CONTRADICTION) == Action.QUARANTINE
+
+    def test_daif_jiddan_unverifiable_quarantine(self) -> None:
+        assert decide(ChainGrade.DAIF_JIDDAN, ContentVerdict.UNVERIFIABLE) == Action.QUARANTINE
+
     # --- MAWDU row ---
     def test_mawdu_consistent_reject_and_quarantine(self) -> None:
         """mawḍūʿ tier = active containment, not passive label."""
@@ -69,7 +79,7 @@ class TestDecisionMatrix:
     # --- Descriptive output ---
     def test_describe_action_returns_string(self) -> None:
         desc = describe_action(ChainGrade.SAHIH, ContentVerdict.CONTRADICTION)
-        assert "shudhudh" in desc.lower() or "highest-value" in desc.lower()
+        assert "contradiction" in desc.lower() or "highest-value" in desc.lower()
 
 
 class TestServeGate:

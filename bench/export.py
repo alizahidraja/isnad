@@ -93,12 +93,12 @@ def export(db_path: str, out_path: str, *, sample: int | None, seed: int, lenien
             true = chain_grade_from_hukum(chain.hukum)
             if true is None:
                 continue
-            narrator_grades, is_complete, rank_nos, has_taliq, has_gap = grade_one_chain(
-                chain.nodes
+            narrator_grades, is_complete, rank_nos, has_taliq, has_gap, adalah_grades = (
+                grade_one_chain(chain.nodes)
             )
             if not narrator_grades:
                 continue
-            pred = chain_grade_from_narrators(narrator_grades, is_complete, lenient)
+            pred = chain_grade_from_narrators(narrator_grades, is_complete, lenient, adalah_grades)
             row = {
                 "sanad_id": chain.sanad_id,
                 "hukum": chain.hukum,

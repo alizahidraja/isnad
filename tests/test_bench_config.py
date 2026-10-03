@@ -51,4 +51,4 @@ class TestRunConfig:
         config["narrators"] = {"source:bad": "rejected"}
         config["claims"] = [{"text": "x", "chain": ["source:bad"]}]
         result = run_config(config)
-        assert result["claims"][0]["chain_grade"] == "mawdu"
+        assert result["claims"][0]["chain_grade"] == "daif_jiddan"
