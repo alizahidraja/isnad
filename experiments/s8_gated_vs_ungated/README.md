@@ -22,7 +22,7 @@ python analyze.py               # 6. Metrics + RESULTS.md
 ### Self-Contained Runner (no PDFs, no downloads)
 
 Runs the full ISNAD pipeline on pre-extracted claims (Bayesian grading +
-EmbeddingCritic content criticism + corroboration). The 20K-claim corpus
+EmbeddingCritic content criticism + corroboration). The 17,021-claim four-book corpus
 (`results/claims.json`) is **not committed** — generate it with the full
 pipeline above, or fetch it from Zenodo 10.5281/zenodo.21216873. Falls back
 to TF-IDF critic when no LLM API key is set.
