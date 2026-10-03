@@ -1,4 +1,4 @@
-"""Decision Matrix — the 4×3 action router combining chain grade × content criticism.
+"""Decision Matrix — the 5×3 action router combining chain grade × content criticism.
 
 Implements paper §4.4, the framework's most directly actionable artifact.
 
@@ -6,9 +6,10 @@ The matrix:
 
                     CONSISTENT                          CONTRADICTION
   ─────────────── ──────────────────────────────────  ───────────────────────────────────
-  SAHIH            SERVE (cache)                       REVIEW (shudhudh — highest-value case)
+  SAHIH            SERVE (cache)                       REVIEW (contradiction — highest-value case)
   HASAN            SERVE_WITH_CAVEAT (seek corrob.)   REVIEW (hold; do not serve)
   DAIF             REVIEW (seek corroboration first)   QUARANTINE
+  DAIF_JIDDAN      QUARANTINE (rejected-for-error)     QUARANTINE
   MAWDU            REJECT_AND_QUARANTINE_NARRATOR      REJECT_AND_QUARANTINE_NARRATOR
 
 Key design defaults from the paper:
@@ -32,6 +33,9 @@ _MATRIX: dict[tuple[ChainGrade, ContentVerdict], Action] = {
     (ChainGrade.DAIF, ContentVerdict.CONSISTENT): Action.REVIEW,
     (ChainGrade.DAIF, ContentVerdict.CONTRADICTION): Action.QUARANTINE,
     (ChainGrade.DAIF, ContentVerdict.UNVERIFIABLE): Action.REVIEW,
+    (ChainGrade.DAIF_JIDDAN, ContentVerdict.CONSISTENT): Action.QUARANTINE,
+    (ChainGrade.DAIF_JIDDAN, ContentVerdict.CONTRADICTION): Action.QUARANTINE,
+    (ChainGrade.DAIF_JIDDAN, ContentVerdict.UNVERIFIABLE): Action.QUARANTINE,
     (ChainGrade.MAWDU, ContentVerdict.CONSISTENT): Action.REJECT_AND_QUARANTINE_NARRATOR,
     (ChainGrade.MAWDU, ContentVerdict.CONTRADICTION): Action.REJECT_AND_QUARANTINE_NARRATOR,
     (ChainGrade.MAWDU, ContentVerdict.UNVERIFIABLE): Action.REJECT_AND_QUARANTINE_NARRATOR,
@@ -46,7 +50,7 @@ def decide(chain_grade: ChainGrade, content_verdict: ContentVerdict) -> Action:
     into a concrete serve/review/quarantine action.
 
     Args:
-        chain_grade: The ordinal chain grade (SAHIH/HASAN/DAIF/MAWDU).
+        chain_grade: The ordinal chain grade (SAHIH/HASAN/DAIF/DAIF_JIDDAN/MAWDU).
         content_verdict: The content criticism verdict (CONSISTENT/CONTRADICTION/UNVERIFIABLE).
 
     Returns:
@@ -147,9 +151,9 @@ def describe_action(
             "Sound chain, consistent content — serve directly and cache."
         ),
         (ChainGrade.SAHIH, ContentVerdict.CONTRADICTION): (
-            "Shudhudh signal: sound chain but content contradicts a stronger source. "
-            "This is the highest-value review case — either the new source "
-            "changed the world's state or the corpus has a latent defect."
+            "Contradiction (taʿāruḍ): sound chain but content contradicts the "
+            "corpus. This is the highest-value review case — either the new "
+            "source changed the world's state or the corpus has a latent defect."
         ),
         (ChainGrade.HASAN, ContentVerdict.CONSISTENT): (
             "Good chain, consistent content — serve with explicit confidence "
@@ -165,9 +169,16 @@ def describe_action(
         (ChainGrade.DAIF, ContentVerdict.CONTRADICTION): (
             "Weak chain with content contradiction — quarantine."
         ),
+        (ChainGrade.DAIF_JIDDAN, ContentVerdict.CONSISTENT): (
+            "Very weak chain (rejected-for-error narrator) — quarantine the "
+            "claim; the narrator grade is recoverable (SUSPECT, not COMPROMISED)."
+        ),
+        (ChainGrade.DAIF_JIDDAN, ContentVerdict.CONTRADICTION): (
+            "Very weak chain with content contradiction — quarantine."
+        ),
         (ChainGrade.MAWDU, ContentVerdict.CONSISTENT): (
-            "Rejected narrator (mawḍūʿ tier) — reject claim and quarantine "
-            "the narrator (active containment)."
+            "Compromised narrator (mawḍūʿ tier — proven liar/fabricator) — "
+            "reject claim and quarantine the narrator (active containment)."
         ),
         (ChainGrade.MAWDU, ContentVerdict.CONTRADICTION): (
             "Rejected narrator with content contradiction — reject claim and "

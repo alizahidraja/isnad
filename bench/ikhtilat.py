@@ -83,10 +83,10 @@ def main() -> None:
         if true is None:
             continue
         has_ikhtilat = any(n.rawi_id in ikhtilat_ids for n in chain.nodes)
-        narrator_grades, is_complete, _r, _t, _g = _grade_one_chain(chain.nodes)
+        narrator_grades, is_complete, _r, _t, _g, adalah = _grade_one_chain(chain.nodes)
         if not narrator_grades:
             continue
-        pred = _chain_grade_from_narrators(narrator_grades, is_complete)
+        pred = _chain_grade_from_narrators(narrator_grades, is_complete, adalah_grades=adalah)
         if has_ikhtilat:
             yt_ikhtilat.append(true.value)
             yp_ikhtilat.append(pred)

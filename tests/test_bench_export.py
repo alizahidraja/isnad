@@ -19,7 +19,7 @@ from bench.export import export
 from bench.mapping import chain_grade_from_hukum
 from bench.metrics import cohens_kappa, confusion_matrix
 
-_CLASSES = ["sahih", "hasan", "daif", "mawdu"]
+_CLASSES = ["sahih", "hasan", "daif", "daif_jiddan", "mawdu"]
 
 
 def _make_db(path: str) -> None:
@@ -125,11 +125,11 @@ def test_export_kappa_matches_recomputed(tmp_path):
         true = chain_grade_from_hukum(chain.hukum)
         if true is None:
             continue
-        grades, complete, _rn, _tl, _gap = grade_one_chain(chain.nodes)
+        grades, complete, _rn, _tl, _gap, adalah = grade_one_chain(chain.nodes)
         if not grades:
             continue
         yt.append(true.value)
-        yp.append(chain_grade_from_narrators(grades, complete, False))
+        yp.append(chain_grade_from_narrators(grades, complete, False, adalah))
     k_indep = cohens_kappa(confusion_matrix(yt, yp, _CLASSES), _CLASSES)
 
     assert k_export == pytest.approx(k_indep, abs=1e-9)

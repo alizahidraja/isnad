@@ -123,7 +123,7 @@ check(
     decide(cg2, ContentVerdict.CONSISTENT) == Action.SERVE,
 )
 check(
-    "B3. SAHIH + CONTRADICTION → REVIEW (shudhudh signal)",
+    "B3. SAHIH + CONTRADICTION → REVIEW (contradiction signal)",
     decide(cg2, ContentVerdict.CONTRADICTION) == Action.REVIEW,
 )
 note("   This is the highest-value review signal in the paper.")
@@ -153,7 +153,7 @@ check(
 
 # ═══════════════════════════════════════════════════════════════════
 print(f"\n{SEP}")
-print("D. REJECTED NARRATOR → MAWDU (active containment)")
+print("D. REJECTED NARRATOR → DAIF_JIDDAN (very weak, quarantined)")
 print(SEP)
 
 reg4 = Registry()
@@ -162,17 +162,19 @@ reg4.register("pdf_scraper_a", "physics", grade=NarratorGrade.REJECTED)  # ← p
 reg4.register("ingest_model_a", "physics", grade=NarratorGrade.RELIABLE)
 grades4 = [reg4.get_grade(l.narrator_id, l.domain) for l in canonical_chain.links]
 cg4 = grade_chain(grades4, [l.transform_type for l in canonical_chain.links], is_complete=True)
-check("D1. Any REJECTED → MAWDU immediately", cg4 == ChainGrade.MAWDU, f"got {cg4.value}")
 check(
-    "D2. MAWDU + CONSISTENT → REJECT_AND_QUARANTINE",
-    decide(cg4, ContentVerdict.CONSISTENT) == Action.REJECT_AND_QUARANTINE_NARRATOR,
+    "D1. Any REJECTED → DAIF_JIDDAN (very weak)", cg4 == ChainGrade.DAIF_JIDDAN, f"got {cg4.value}"
 )
 check(
-    "D3. ALL MAWDU cells → REJECT_AND_QUARANTINE",
-    decide(cg4, ContentVerdict.CONTRADICTION) == Action.REJECT_AND_QUARANTINE_NARRATOR
-    and decide(cg4, ContentVerdict.UNVERIFIABLE) == Action.REJECT_AND_QUARANTINE_NARRATOR,
+    "D2. DAIF_JIDDAN + CONSISTENT → QUARANTINE",
+    decide(cg4, ContentVerdict.CONSISTENT) == Action.QUARANTINE,
 )
-note("   MAWDU is active containment — narrator gets quarantined, never served.")
+check(
+    "D3. ALL DAIF_JIDDAN cells → QUARANTINE",
+    decide(cg4, ContentVerdict.CONTRADICTION) == Action.QUARANTINE
+    and decide(cg4, ContentVerdict.UNVERIFIABLE) == Action.QUARANTINE,
+)
+note("   DAIF_JIDDAN quarantines the claim; the narrator is recoverable (SUSPECT).")
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -470,6 +472,9 @@ matrix_tests = [
     (ChainGrade.DAIF, ContentVerdict.CONSISTENT, Action.REVIEW, "Seek corroboration first"),
     (ChainGrade.DAIF, ContentVerdict.CONTRADICTION, Action.QUARANTINE, "Quarantine claim"),
     (ChainGrade.DAIF, ContentVerdict.UNVERIFIABLE, Action.REVIEW, "Hold for review"),
+    (ChainGrade.DAIF_JIDDAN, ContentVerdict.CONSISTENT, Action.QUARANTINE, "Quarantine claim"),
+    (ChainGrade.DAIF_JIDDAN, ContentVerdict.CONTRADICTION, Action.QUARANTINE, "Quarantine claim"),
+    (ChainGrade.DAIF_JIDDAN, ContentVerdict.UNVERIFIABLE, Action.QUARANTINE, "Quarantine claim"),
     (
         ChainGrade.MAWDU,
         ContentVerdict.CONSISTENT,

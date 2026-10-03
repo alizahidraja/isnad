@@ -39,13 +39,13 @@ class TestWeakestLink:
         )
         assert result == ChainGrade.DAIF
 
-    def test_one_rejected_makes_mawdu(self) -> None:
+    def test_one_rejected_makes_daif_jiddan(self) -> None:
         result = grade_chain(
             [NarratorGrade.RELIABLE, NarratorGrade.REJECTED],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=True,
         )
-        assert result == ChainGrade.MAWDU
+        assert result == ChainGrade.DAIF_JIDDAN
 
     def test_ungraded_narrator_caps_at_daif_by_default(self) -> None:
         # Strict is the default: an ungraded narrator is a classical majhūl.
@@ -99,15 +99,16 @@ class TestCompletenessCap:
         )
         assert result == ChainGrade.DAIF
 
-    def test_incomplete_with_rejected_is_mawdu_not_daif(self) -> None:
-        """#181: a REJECTED fabricator dominates the completeness cap. Adding a
-        gap must never raise a MAWDU chain to (corroboratable) DAIF."""
+    def test_incomplete_with_rejected_is_daif(self) -> None:
+        """#181 revisited: a REJECTED narrator without COMPROMISED integrity is
+        DAIF_JIDDAN on a complete chain; an incomplete chain is capped at DAIF
+        (the completeness cap fires before the floor loop)."""
         result = grade_chain(
             [NarratorGrade.RELIABLE, NarratorGrade.REJECTED],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=False,
         )
-        assert result == ChainGrade.MAWDU
+        assert result == ChainGrade.DAIF
 
     def test_incomplete_with_compromised_adalah_is_mawdu_not_daif(self) -> None:
         """#181: COMPROMISED ʿadālah also dominates the completeness cap — same

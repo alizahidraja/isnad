@@ -160,9 +160,11 @@ def analyse(db_path: str) -> dict[str, object]:
     oracle = _kappas([verdict[s] for s in order], [modal[sanads[s][0]] for s in order])
     preds: dict[int, str] = {}
     for chain in iter_chains(db_path, set(order)):
-        grades, is_complete, *_ = grade_one_chain(chain.nodes)
+        grades, is_complete, _r, _t, _g, adalah = grade_one_chain(chain.nodes)
         if grades:
-            preds[chain.sanad_id] = chain_grade_from_narrators(grades, is_complete)
+            preds[chain.sanad_id] = chain_grade_from_narrators(
+                grades, is_complete, adalah_grades=adalah
+            )
     common = [s for s in order if s in preds]
     isnad = _kappas([verdict[s] for s in common], [preds[s] for s in common])
 

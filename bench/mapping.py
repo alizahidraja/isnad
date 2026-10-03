@@ -59,7 +59,7 @@ _RANK_TABLE: dict[int, tuple[NarratorGrade, AdalahGrade, DabtGrade]] = {
     8: (NarratorGrade.WEAK, AdalahGrade.ACCEPTABLE, DabtGrade.LOW),
     9: (NarratorGrade.UNGRADED, AdalahGrade.UNASSESSED, DabtGrade.UNASSESSED),
     10: (NarratorGrade.REJECTED, AdalahGrade.SUSPECT, DabtGrade.LOW),
-    11: (NarratorGrade.REJECTED, AdalahGrade.COMPROMISED, DabtGrade.LOW),
+    11: (NarratorGrade.REJECTED, AdalahGrade.SUSPECT, DabtGrade.LOW),
     12: (NarratorGrade.REJECTED, AdalahGrade.COMPROMISED, DabtGrade.LOW),
 }
 
@@ -103,14 +103,17 @@ def narrator_grade_from_rank(
 
 # "Very weak" = a rejected narrator is the binding constraint (→ ISNAD MAWDU).
 _MAWDU_MARKERS = (
-    "شديد الضعف",  # very weak
-    "متهم بالوضع",  # accused of fabrication
-    "متهم بالكذب",  # accused of lying
-    "منكر الحديث",  # rejected/munkar narrator
-    "متروك الحديث",  # abandoned/matrūk narrator
     "موضوع",  # fabricated
     "كذاب",  # liar
     "يضع الحديث",  # fabricates hadith
+)
+
+_DAIF_JIDDAN_MARKERS = (
+    "متهم بالوضع",  # accused of fabrication (matrūk)
+    "متهم بالكذب",  # accused of lying (matrūk)
+    "متروك الحديث",  # abandoned/matrūk narrator
+    "منكر الحديث",  # rejected/munkar narrator
+    "شديد الضعف",  # very weak
 )
 
 
@@ -125,6 +128,9 @@ def chain_grade_from_hukum(hukum: str | None) -> ChainGrade | None:
     for marker in _MAWDU_MARKERS:
         if marker in hukum:
             return ChainGrade.MAWDU
+    for marker in _DAIF_JIDDAN_MARKERS:
+        if marker in hukum:
+            return ChainGrade.DAIF_JIDDAN
     if "ضعيف" in hukum:
         return ChainGrade.DAIF
     if "حسن" in hukum:

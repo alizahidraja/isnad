@@ -11,10 +11,12 @@ The primary question, stated once:
 The primary metric is Cohen's kappa, not accuracy — the classes are imbalanced
 (ḥasan 32.4% / ḍaʿīf 29.9% / ṣaḥīḥ 26.3% / mawḍūʿ 11.5%; a 2.8:1 ratio, so a
 trivial majority-class predictor would still flatter raw accuracy). A
-collapsed 3-way (sahih / hasan / weak) is reported alongside the full 4-way,
+collapsed 3-way (sahih / hasan / weak) is reported alongside the full 5-way,
 because classical isnād verdicts are fundamentally three-tiered; ISNAD's fourth
-grade (mawḍūʿ) is a *stricter* flag meaning "a rejected narrator is present",
-which classical scholars usually express as "weak" (ḍaʿīf) or "very weak".
+and fifth grades (ḍaʿīf-jiddan and mawḍūʿ) are *stricter* flags meaning
+"a rejected-for-error narrator" and "a compromised (proven-fabrication)
+narrator" respectively, which classical scholars express as "weak" (ḍaʿīf),
+"very weak" (ḍaʿīf jiddan), or "fabricated" (mawḍūʿ).
 """
 
 from __future__ import annotations
@@ -47,7 +49,7 @@ from bench.metrics import (
     linear_weighted_kappa,
     per_class_metrics,
 )
-from isnad.types import ChainGrade, NarratorGrade
+from isnad.types import AdalahGrade, ChainGrade, NarratorGrade
 
 # SHA-256 of the hadith-kg.db the published κ=0.871 was measured against.
 # `--reproduce` hard-fails if the on-disk DB doesn't match, so the headline
@@ -83,7 +85,16 @@ def harness_rev() -> str:
         return "unknown"
 
 
-CLASSES = [g.value for g in (ChainGrade.SAHIH, ChainGrade.HASAN, ChainGrade.DAIF, ChainGrade.MAWDU)]
+CLASSES = [
+    g.value
+    for g in (
+        ChainGrade.SAHIH,
+        ChainGrade.HASAN,
+        ChainGrade.DAIF,
+        ChainGrade.DAIF_JIDDAN,
+        ChainGrade.MAWDU,
+    )
+]
 
 # Sentinel names (gap markers) → whether the gap is the grade-preserving taʿlīq
 # form or a genuine break (irsāl / inqiṭāʿ).
@@ -103,11 +114,13 @@ def _load_sanad_ids(db_path: str) -> list[int]:
         conn.close()
 
 
-def _shuffled_rank_map(rng: random.Random) -> dict[int, NarratorGrade]:
-    """A random permutation of the rank→grade assignment (negative control)."""
-    grades = [narrator_grade_from_rank(rn).narrator_grade for rn in range(1, 13)]
-    rng.shuffle(grades)
-    return dict(zip(range(1, 13), grades, strict=True))
+def _shuffled_rank_map(rng: random.Random) -> dict[int, tuple[NarratorGrade, AdalahGrade]]:
+    """A random permutation of the (narrator, integrity) assignment (negative control)."""
+    mapped = [narrator_grade_from_rank(rn) for rn in range(1, 13)]
+    rng.shuffle(mapped)
+    return {
+        rn: (m.narrator_grade, m.adalah_grade) for rn, m in zip(range(1, 13), mapped, strict=True)
+    }
 
 
 _PassResult = tuple[list[str], list[str], list[str | None], int, int]
@@ -115,7 +128,7 @@ _PassResult = tuple[list[str], list[str], list[str | None], int, int]
 
 def _run_pass(
     chains: Iterator[RawChain],
-    rank_map: dict[int, NarratorGrade] | None = None,
+    rank_map: dict[int, tuple[NarratorGrade, AdalahGrade]] | None = None,
     lenient_unknown: bool = False,
 ) -> _PassResult:
     """Grade every chain; return (y_true, y_pred, buckets, unclassified, skipped)."""
@@ -129,13 +142,15 @@ def _run_pass(
         if true is None:
             n_unclassified += 1
             continue
-        narrator_grades, is_complete, rank_nos, has_taliq, has_gap = _grade_one_chain(
-            chain.nodes, rank_map
+        narrator_grades, is_complete, rank_nos, has_taliq, has_gap, adalah_grades = (
+            _grade_one_chain(chain.nodes, rank_map)
         )
         if not narrator_grades:
             n_skipped_empty += 1
             continue
-        pred = _chain_grade_from_narrators(narrator_grades, is_complete, lenient_unknown)
+        pred = _chain_grade_from_narrators(
+            narrator_grades, is_complete, lenient_unknown, adalah_grades
+        )
         y_true.append(true.value)
         y_pred.append(pred)
         buckets.append(_bucket(true.value, pred, has_gap, has_taliq, rank_nos, chain.hukum))
@@ -161,10 +176,14 @@ def _corroboration_analysis(
             continue
         indep = _independence_set(chain.nodes)
         routes[chain.group_id].append(indep)
-        narrator_grades, is_complete, _rank_nos, _taliq, _gap = _grade_one_chain(chain.nodes)
+        narrator_grades, is_complete, _rank_nos, _taliq, _gap, adalah_grades = _grade_one_chain(
+            chain.nodes
+        )
         if not narrator_grades:
             continue
-        pred = _chain_grade_from_narrators(narrator_grades, is_complete, lenient_unknown)
+        pred = _chain_grade_from_narrators(
+            narrator_grades, is_complete, lenient_unknown, adalah_grades
+        )
         if true.value == "daif" and pred in ("hasan", "sahih") and "توبع" in (chain.hukum or ""):
             weak_alone.append((chain.group_id, indep))
 
@@ -250,7 +269,13 @@ def main() -> None:
     pc = per_class_metrics(y_true, y_pred, CLASSES)
 
     # Collapsed 3-way: classical isnād verdicts are three-tiered.
-    collapse = {"sahih": "sahih", "hasan": "hasan", "daif": "weak", "mawdu": "weak"}
+    collapse = {
+        "sahih": "sahih",
+        "hasan": "hasan",
+        "daif": "weak",
+        "daif_jiddan": "weak",
+        "mawdu": "weak",
+    }
     yt3 = [collapse[t] for t in y_true]
     yp3 = [collapse[p] for p in y_pred]
     cm3 = confusion_matrix(yt3, yp3, ["sahih", "hasan", "weak"])

@@ -24,7 +24,7 @@ class TestGate:
         reg = _registry(("model:bad", NarratorGrade.REJECTED))
         r = gate("x", ["model:bad"], reg, domain="physics")
         assert r.gated is True
-        assert r.verdict.chain_grade == ChainGrade.MAWDU
+        assert r.verdict.chain_grade == ChainGrade.DAIF_JIDDAN
 
     def test_reliable_narrator_does_not_gate(self) -> None:
         reg = _registry(("model:good", NarratorGrade.RELIABLE))

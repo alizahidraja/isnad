@@ -82,29 +82,33 @@ the standard modern reference for rijāl grading. `rank_no` is the ordinal
 | 8 | WEAK | ACCEPTABLE | LOW | Ḍaʿīf al-ḥadīth: precision weakness (recoverable) |
 | 9 | UNGRADED | UNASSESSED | UNASSESSED | Majhūl: unknown |
 | 10 | REJECTED | SUSPECT | LOW | Matrūk/munkar: abandoned (mixed) |
-| 11–12 | REJECTED | COMPROMISED | LOW | Muttaham/kadhdhāb/waḍḍāʿ: integrity strike — permanent |
+| 11 | REJECTED | SUSPECT | LOW | Muttaham/munkar: accused — recoverable |
+| 12 | REJECTED | COMPROMISED | LOW | Kadhdhāb/waḍḍāʿ: proven liar/fabricator — permanent |
 
-**Integrity ladder check** (§ of ISNAD #30): rank 11–12 map to `COMPROMISED`
-integrity, which ISNAD's grader makes *permanently* REJECTED. Rank 8 maps to
-`WEAK` with *uncompromised* integrity — the precision-driven, recoverable
-case (#40). This is the benchmark's direct test of the integrity/precision
-split.
+**Integrity ladder check** (§ of ISNAD #30): rank 12 maps to `COMPROMISED`
+integrity (proven liar/fabricator), which ISNAD's grader makes *permanently*
+REJECTED. Rank 11 maps to `SUSPECT` (accused, not proven) and rank 8 to `WEAK`
+with *uncompromised* integrity — the precision-driven, recoverable case (#40).
+This is the benchmark's direct test of the integrity/precision split.
 
 ### 3.2 Chain verdict: `sanads.hukum` → ISNAD `ChainGrade`
 
 `hukum` is free text; we classify on the leading phrase (pre-committed).
 
-ISNAD's `MAWDU` grade here is a framework term: a REJECTED narrator is
-present → quarantine. It is not the classical matn-level "the text is forged"
-judgment (the benchmark's free-text `hukum` does label some chains "موضوع",
-but the weakest-link rule emits MAWDU for any rejected narrator, weak or forged):
+Mapping v2 keys the mawḍūʿ / ḍaʿīf-jiddan split on the integrity axis,
+following Ibn Ḥajar (Nuzhat al-Naẓar): a narrator's *lying* makes a narration
+mawḍūʿ (fabricated), being *accused* of lying makes it matrūk (abandoned →
+very weak). So `COMPROMISED` integrity → `MAWDU`, and a REJECTED narrator with
+merely `SUSPECT` (or no) integrity → `DAIF_JIDDAN` (very weak). Both still
+quarantine.
 
 | Leading phrase | ChainGrade |
 |---|---|
 | `إسناده متصل ، رجاله ثقات` (connected, thiqah) | SAHIH |
 | `إسناد حسن` (ḥasan chain) | HASAN |
 | `إسناد ضعيف` (weak chain) | DAIF |
-| `إسناد شديد الضعف` / `فيه متهم بالوضع` / `متروك` (very weak / fabrication) | MAWDU |
+| `إسناد شديد الضعف` / `فيه متهم بالوضع` / `متروك` / `منكر` (very weak / accused) | DAIF_JIDDAN |
+| `موضوع` / `كذاب` / `يضع الحديث` (fabricated / liar) | MAWDU |
 
 ### 3.3 Chain computation
 
@@ -145,10 +149,11 @@ number.
    (independent of the verdict), and continuity disagreement is measured, not
    assumed away.
 
-4. **The two-axis split at ranks 10–12** (matrūk = SUSPECT vs COMPROMISED) is a
-   judgment call. Flagged for domain review; it does not affect the
-   NarratorGrade→ChainGrade outcome (all REJECTED → MAWDU), only the
-   integrity-ladder diagnostic.
+4. **The two-axis split at ranks 10–12** (matrūk/munkar = SUSPECT vs
+   kadhdhāb/waḍḍāʿ = COMPROMISED) is a judgment call. Flagged for domain
+   review; mapping v2 now keys the chain grade on it — COMPROMISED → MAWDU,
+   SUSPECT → DAIF_JIDDAN — so the integrity/precision split is reflected in
+   the chain grade, not only the diagnostic.
 
 ---
 

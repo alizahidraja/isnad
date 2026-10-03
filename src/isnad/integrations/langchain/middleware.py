@@ -73,9 +73,10 @@ def gate(
 ) -> GateResult:
     """Grade a claim's chain and decide whether to gate it.
 
-    Without a critic, gating is TRUE when the chain grade is ``MAWDU`` — a
-    REJECTED narrator transmitted the claim — and ``quarantine`` is enabled
-    (active containment, no content judgment).
+    Without a critic, gating is TRUE when the chain grade is ``MAWDU`` (a
+    COMPROMISED narrator — proven liar/fabricator) or ``DAIF_JIDDAN`` (a
+    REJECTED narrator with merely SUSPECT integrity) and ``quarantine`` is
+    enabled (active containment, no content judgment).
 
     With a ``critic`` + ``corpus``, the full decision matrix runs: the claim's
     content is criticized against the corpus and routed to serve / review /
@@ -104,8 +105,14 @@ def gate(
         # entering, and an unserved claim must not pass through.
         gated = action not in (Action.SERVE, Action.SERVE_WITH_CAVEAT)
     else:
-        action = Action.REJECT_AND_QUARANTINE_NARRATOR if chain_grade == ChainGrade.MAWDU else None
-        gated = quarantine and chain_grade == ChainGrade.MAWDU
+        action = (
+            Action.REJECT_AND_QUARANTINE_NARRATOR
+            if chain_grade == ChainGrade.MAWDU
+            else Action.QUARANTINE
+            if chain_grade == ChainGrade.DAIF_JIDDAN
+            else None
+        )
+        gated = quarantine and chain_grade in (ChainGrade.MAWDU, ChainGrade.DAIF_JIDDAN)
 
     return GateResult(verdict=verdict, gated=gated, action=action)
 

@@ -96,7 +96,7 @@ class FreshnessStatus(Enum):
 class ChainGrade(Enum):
     """Ordinal chain grade for a claim, in descending trust order.
 
-    SAHIH > HASAN > DAIF > MAWDU.  These are the hadith-authenticity
+    SAHIH > HASAN > DAIF > DAIF_JIDDAN > MAWDU.  These are the hadith-authenticity
     tiers adapted to AI chains.  A chain's grade is capped by its weakest
     link, refined by transform type (see grading.py), and subject to
     completeness (ittiṣāl) enforcement.
@@ -105,10 +105,17 @@ class ChainGrade(Enum):
     SAHIH = "sahih"  # sound — all narrators reliable, chain complete
     HASAN = "hasan"  # good — mostly reliable, ≥1 ungraded or acceptable
     DAIF = "daif"  # weak — weak narrator, or munqaṭiʿ (incomplete chain)
-    MAWDU = "mawdu"  # rejected / fabricated — quarantined narrator
+    DAIF_JIDDAN = "daif_jiddan"  # "very weak" — rejected-for-error (SUSPECT integrity), recoverable
+    MAWDU = "mawdu"  # fabricated — COMPROMISED integrity (proven liar / fabricator)
 
     def __lt__(self, other: ChainGrade) -> bool:
-        order = {ChainGrade.SAHIH: 4, ChainGrade.HASAN: 3, ChainGrade.DAIF: 2, ChainGrade.MAWDU: 1}
+        order = {
+            ChainGrade.SAHIH: 5,
+            ChainGrade.HASAN: 4,
+            ChainGrade.DAIF: 3,
+            ChainGrade.DAIF_JIDDAN: 2,
+            ChainGrade.MAWDU: 1,
+        }
         return order[self] < order[other]
 
     def __le__(self, other: ChainGrade) -> bool:

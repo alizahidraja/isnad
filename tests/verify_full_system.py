@@ -110,6 +110,10 @@ check("ChainGrade ordering: SAHIH > HASAN", ChainGrade.SAHIH > ChainGrade.HASAN)
 check("ChainGrade ordering: HASAN > DAIF", ChainGrade.HASAN > ChainGrade.DAIF)
 check("ChainGrade ordering: DAIF > MAWDU", ChainGrade.DAIF > ChainGrade.MAWDU)
 check(
+    "ChainGrade ordering: DAIF > DAIF_JIDDAN > MAWDU",
+    ChainGrade.DAIF > ChainGrade.DAIF_JIDDAN > ChainGrade.MAWDU,
+)
+check(
     "ChainGrade.min selects lowest",
     ChainGrade.min(ChainGrade.SAHIH, ChainGrade.DAIF) == ChainGrade.DAIF,
 )
@@ -434,7 +438,7 @@ cg3 = grade_chain(
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=True,
 )
-check("Any REJECTED → MAWDU", cg3 == ChainGrade.MAWDU, f"got {cg3.value}")
+check("Any REJECTED → DAIF_JIDDAN", cg3 == ChainGrade.DAIF_JIDDAN, f"got {cg3.value}")
 
 cg4 = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.UNGRADED],
@@ -825,7 +829,7 @@ check(
     decide(ChainGrade.SAHIH, ContentVerdict.CONSISTENT) == Action.SERVE,
 )
 check(
-    "SAHIH + CONTRADICTION → REVIEW (shudhudh signal)",
+    "SAHIH + CONTRADICTION → REVIEW (contradiction signal)",
     decide(ChainGrade.SAHIH, ContentVerdict.CONTRADICTION) == Action.REVIEW,
 )
 check(
@@ -861,6 +865,20 @@ check(
     decide(ChainGrade.DAIF, ContentVerdict.UNVERIFIABLE) == Action.REVIEW,
 )
 
+# DAIF_JIDDAN row
+check(
+    "DAIF_JIDDAN + CONSISTENT → QUARANTINE",
+    decide(ChainGrade.DAIF_JIDDAN, ContentVerdict.CONSISTENT) == Action.QUARANTINE,
+)
+check(
+    "DAIF_JIDDAN + CONTRADICTION → QUARANTINE",
+    decide(ChainGrade.DAIF_JIDDAN, ContentVerdict.CONTRADICTION) == Action.QUARANTINE,
+)
+check(
+    "DAIF_JIDDAN + UNVERIFIABLE → QUARANTINE",
+    decide(ChainGrade.DAIF_JIDDAN, ContentVerdict.UNVERIFIABLE) == Action.QUARANTINE,
+)
+
 # MAWDU row
 check(
     "MAWDU + CONSISTENT → REJECT_AND_QUARANTINE",
@@ -877,7 +895,7 @@ check(
 
 # describe_action
 desc = describe_action(ChainGrade.SAHIH, ContentVerdict.CONTRADICTION)
-check("describe_action SAHIH+CONTRADICTION mentions shudhudh", "shudhudh" in desc.lower())
+check("describe_action SAHIH+CONTRADICTION mentions contradiction", "contradiction" in desc.lower())
 
 
 # ═══════════════════════════════════════════════════════════════════
