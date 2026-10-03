@@ -7,11 +7,11 @@
   "heldout_train_even_ids": {
     "n": 252684,
     "lookup_oracle": {
-      "kappa_4way": 0.8884,
+      "kappa_4way": 0.8867,
       "kappa_3way": 0.8865
     },
     "isnad_strict": {
-      "kappa_4way": 0.8885,
+      "kappa_4way": 0.8868,
       "kappa_3way": 0.8865
     },
     "isnad_vs_oracle_agreement": 1.0,
@@ -20,25 +20,36 @@
         "sahih": 73452,
         "hasan": 0,
         "daif": 0,
+        "daif_jiddan": 0,
         "mawdu": 0
       },
       "hasan": {
         "sahih": 0,
         "hasan": 91450,
         "daif": 8,
+        "daif_jiddan": 0,
         "mawdu": 0
       },
       "daif": {
         "sahih": 0,
         "hasan": 0,
         "daif": 61906,
+        "daif_jiddan": 0,
+        "mawdu": 0
+      },
+      "daif_jiddan": {
+        "sahih": 0,
+        "hasan": 0,
+        "daif": 0,
+        "daif_jiddan": 25868,
         "mawdu": 0
       },
       "mawdu": {
         "sahih": 0,
         "hasan": 0,
         "daif": 0,
-        "mawdu": 25868
+        "daif_jiddan": 0,
+        "mawdu": 0
       }
     },
     "tier_marginal": {
@@ -58,17 +69,18 @@
       "sahih": 73074,
       "hasan": 90617,
       "daif": 62936,
-      "mawdu": 26057
+      "daif_jiddan": 25566,
+      "mawdu": 491
     }
   },
   "heldout_test_odd_ids": {
     "n": 252546,
     "lookup_oracle": {
-      "kappa_4way": 0.8883,
+      "kappa_4way": 0.8865,
       "kappa_3way": 0.8861
     },
     "isnad_strict": {
-      "kappa_4way": 0.8883,
+      "kappa_4way": 0.8865,
       "kappa_3way": 0.8862
     },
     "isnad_vs_oracle_agreement": 1.0,
@@ -77,25 +89,36 @@
         "sahih": 73400,
         "hasan": 0,
         "daif": 1,
+        "daif_jiddan": 0,
         "mawdu": 0
       },
       "hasan": {
         "sahih": 0,
         "hasan": 91201,
         "daif": 4,
+        "daif_jiddan": 0,
         "mawdu": 0
       },
       "daif": {
         "sahih": 0,
         "hasan": 0,
         "daif": 61877,
+        "daif_jiddan": 0,
+        "mawdu": 0
+      },
+      "daif_jiddan": {
+        "sahih": 0,
+        "hasan": 0,
+        "daif": 0,
+        "daif_jiddan": 26063,
         "mawdu": 0
       },
       "mawdu": {
         "sahih": 0,
         "hasan": 0,
         "daif": 0,
-        "mawdu": 26063
+        "daif_jiddan": 0,
+        "mawdu": 0
       }
     },
     "tier_marginal": {
@@ -115,44 +138,56 @@
       "sahih": 72984,
       "daif": 62935,
       "hasan": 90492,
-      "mawdu": 26135
+      "daif_jiddan": 25642,
+      "mawdu": 493
     }
   },
   "full_corpus_in_sample_modal": {
     "n": 575060,
     "lookup_oracle": {
-      "kappa_4way": 0.8446,
+      "kappa_4way": 0.8434,
       "kappa_3way": 0.8713
     },
     "isnad_strict": {
-      "kappa_4way": 0.8745,
+      "kappa_4way": 0.8569,
       "kappa_3way": 0.8714
     },
-    "isnad_vs_oracle_agreement": 0.9741,
+    "isnad_vs_oracle_agreement": 0.9886,
     "isnad_vs_oracle_confusion": {
       "sahih": {
         "sahih": 146849,
         "hasan": 0,
         "daif": 1,
+        "daif_jiddan": 0,
         "mawdu": 0
       },
       "hasan": {
         "sahih": 0,
         "hasan": 182651,
         "daif": 12,
+        "daif_jiddan": 0,
         "mawdu": 0
       },
       "daif": {
         "sahih": 3,
         "hasan": 0,
-        "daif": 178743,
-        "mawdu": 14870
+        "daif": 187078,
+        "daif_jiddan": 0,
+        "mawdu": 6535
+      },
+      "daif_jiddan": {
+        "sahih": 0,
+        "hasan": 0,
+        "daif": 0,
+        "daif_jiddan": 51931,
+        "mawdu": 0
       },
       "mawdu": {
         "sahih": 0,
         "hasan": 0,
         "daif": 0,
-        "mawdu": 51931
+        "daif_jiddan": 0,
+        "mawdu": 0
       }
     },
     "tier_marginal": {
@@ -173,7 +208,8 @@
       "sahih": 151139,
       "daif": 171763,
       "hasan": 186256,
-      "mawdu": 65902
+      "daif_jiddan": 56858,
+      "mawdu": 9044
     }
   },
   "db_sha256": "d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6",
