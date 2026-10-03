@@ -149,7 +149,7 @@ def _run_pass(
             n_skipped_empty += 1
             continue
         pred = _chain_grade_from_narrators(
-            narrator_grades, is_complete, lenient_unknown, adalah_grades
+            narrator_grades, is_complete, adalah_grades, lenient_unknown
         )
         y_true.append(true.value)
         y_pred.append(pred)
@@ -182,7 +182,7 @@ def _corroboration_analysis(
         if not narrator_grades:
             continue
         pred = _chain_grade_from_narrators(
-            narrator_grades, is_complete, lenient_unknown, adalah_grades
+            narrator_grades, is_complete, adalah_grades, lenient_unknown
         )
         if true.value == "daif" and pred in ("hasan", "sahih") and "توبع" in (chain.hukum or ""):
             weak_alone.append((chain.group_id, indep))

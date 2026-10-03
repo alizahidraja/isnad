@@ -99,6 +99,7 @@ def test_calibrate_discovers_broken_narrator_and_quarantines_it() -> None:
             TransformType.GENERATIVE,
         ],
         is_complete=True,
+        link_adalah_grades=[],
     )
     assert chain_grade == ChainGrade.DAIF_JIDDAN
 

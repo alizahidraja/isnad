@@ -121,7 +121,11 @@ def _grade_chain(chain: Chain, registry: Registry) -> ChainGrade:
     link_grades = [registry.get_grade(l.narrator_id, l.domain) for l in chain.links]
     link_transforms = [l.transform_type for l in chain.links]
     return grade_chain(
-        link_grades, link_transforms, is_complete=chain.is_complete, corroboration_support=False
+        link_grades,
+        link_transforms,
+        is_complete=chain.is_complete,
+        corroboration_support=False,
+        link_adalah_grades=[],
     )
 
 
@@ -246,10 +250,10 @@ def run_phase_ab(
         norm = normalize_claim(mp.text_reg)
 
         reg_chain = build_reg_weak_chain()
-        reg_grade = _grade_chain(reg_chain, registry)
+        reg_grade = _grade_chain(reg_chain, registry, link_adalah_grades=[])
 
         sim_chain = build_sim_chain()
-        sim_grade = _grade_chain(sim_chain, registry)
+        sim_grade = _grade_chain(sim_chain, registry, link_adalah_grades=[])
 
         # Look up source URLs
         reg_url = url_lookup.get(mp.topic_reg, {}).get("regular", "")

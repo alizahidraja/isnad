@@ -131,13 +131,11 @@ print(f"\n{SEP}")
 print("EDGE 2 -- EMPTY CHAINS, ZERO LINKS, MISSING NARRATORS")
 print(SEP)
 
-cg_empty = grade_chain([], [], is_complete=True)
+cg_empty = grade_chain([], [], is_complete=True, link_adalah_grades=[])
 check("Empty chain -> DAIF", cg_empty == ChainGrade.DAIF, f"got {cg_empty.value}")
 
 cg_incomplete = grade_chain(
-    [NarratorGrade.RELIABLE],
-    [TransformType.PASS_THROUGH],
-    is_complete=False,
+    [NarratorGrade.RELIABLE], [TransformType.PASS_THROUGH], is_complete=False, link_adalah_grades=[]
 )
 check("Single-link incomplete -> DAIF", cg_incomplete == ChainGrade.DAIF)
 
@@ -145,6 +143,7 @@ cg_unknown = grade_chain(
     [NarratorGrade.UNGRADED, NarratorGrade.RELIABLE],
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=True,
+    link_adalah_grades=[],
 )
 check(
     "UNGRADED + RELIABLE -> DAIF (strict default)",
@@ -343,7 +342,7 @@ check("100-link chain has 100 narrator_ids", len(deep_chain.narrator_ids) == 100
 
 deep_grades = [NarratorGrade.RELIABLE] * 99 + [NarratorGrade.WEAK]
 deep_transforms = [TransformType.PASS_THROUGH] * 100
-cg_deep = grade_chain(deep_grades, deep_transforms, is_complete=True)
+cg_deep = grade_chain(deep_grades, deep_transforms, is_complete=True, link_adalah_grades=[])
 check(
     "99 RELIABLE + 1 WEAK -> DAIF (100 links deep)",
     cg_deep == ChainGrade.DAIF,
@@ -388,6 +387,7 @@ cg_mixed = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.WEAK, NarratorGrade.ACCEPTABLE],
     [TransformType.PASS_THROUGH, TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
     is_complete=True,
+    link_adalah_grades=[],
 )
 check("Mixed-domain chain: weak link -> DAIF", cg_mixed == ChainGrade.DAIF, f"got {cg_mixed.value}")
 

@@ -60,10 +60,12 @@ def run_config(config: dict[str, object]) -> dict[str, object]:
                 reg.get_grade_for_link(link.narrator_id, link.domain, link.version)
                 for link in links
             ]
+            adalah = [reg.get_adalah_grade(link.narrator_id, link.domain) for link in links]
             chain_grade = grade_chain(
                 grades,
                 [link.transform_type for link in links],
                 is_complete=True,
+                link_adalah_grades=adalah,
             )
             graded.append({"claim": text, "chain": chain_ids, "chain_grade": chain_grade.value})
 

@@ -49,7 +49,10 @@ reg.register("ingest-model-v3", "physics", grade=NarratorGrade.ACCEPTABLE)
 
 link_grades = [reg.get_grade(link.narrator_id, link.domain) for link in chain.links]
 chain_grade = grade_chain(
-    link_grades, [link.transform_type for link in chain.links], is_complete=True
+    link_grades,
+    [link.transform_type for link in chain.links],
+    is_complete=True,
+    link_adalah_grades=[],
 )
 content_verdict = ContentVerdict.CONSISTENT
 

@@ -297,7 +297,7 @@ def build_crowell_chain() -> Chain:
 def grade_chain_fn(chain: Chain, registry: Registry) -> ChainGrade:
     grades = [registry.get_grade(l.narrator_id, l.domain) for l in chain.links]
     transforms = [l.transform_type for l in chain.links]
-    return grade_chain(grades, transforms, is_complete=True)
+    return grade_chain(grades, transforms, is_complete=True, link_adalah_grades=[])
 
 
 # ── Main ─────────────────────────────────────────────────────────────────

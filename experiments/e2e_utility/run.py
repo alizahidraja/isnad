@@ -336,7 +336,7 @@ def run(api_key: str | None, n_per_topic: int, offline: bool) -> None:
 
     print("\n  claim verdicts:")
     for claim, correct in labelled:
-        cg = grade_chain(grades, xforms, is_complete=True)
+        cg = grade_chain(grades, xforms, is_complete=True, link_adalah_grades=[])
         cv = critic.evaluate(claim, _normalize(claim), _CORPUS_TEXT, "physics")
         action = decide(cg, cv)
 

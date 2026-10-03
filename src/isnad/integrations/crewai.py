@@ -62,10 +62,12 @@ class CrewLineageCollector:
         """Grade the collected lineage, weakest-link, from the registry."""
         narrators = [f"agent:{role}" for role in self._agents]
         grades = [self.registry.get_grade(nid, self.domain) for nid in narrators]
+        adalah = [self.registry.get_adalah_grade(nid, self.domain) for nid in narrators]
         chain_grade = grade_chain(
             grades,
             [TransformType.PASS_THROUGH] * len(grades),
             is_complete=True,
+            link_adalah_grades=adalah,
             lenient_unknown=self.lenient_unknown,
         )
         return {

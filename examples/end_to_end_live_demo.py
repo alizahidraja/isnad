@@ -82,7 +82,12 @@ def grade_and_route(
 ) -> tuple[ChainGrade, ContentVerdict, Action]:
     chain = chain_for()
     grades = [reg.get_grade(link.narrator_id, link.domain) for link in chain.links]
-    cg = grade_chain(grades, [link.transform_type for link in chain.links], is_complete=True)
+    cg = grade_chain(
+        grades,
+        [link.transform_type for link in chain.links],
+        is_complete=True,
+        link_adalah_grades=[],
+    )
     cv = critic.evaluate(claim, claim.lower(), CORPUS, "physics")
     return cg, cv, decide(cg, cv)
 
@@ -123,7 +128,12 @@ def main() -> None:
     reg.register(
         "source:poisoned", "physics", grade=NarratorGrade.REJECTED, adalah=AdalahGrade.COMPROMISED
     )
-    cg = grade_chain([NarratorGrade.REJECTED], [TransformType.PASS_THROUGH], is_complete=True)
+    cg = grade_chain(
+        [NarratorGrade.REJECTED],
+        [TransformType.PASS_THROUGH],
+        is_complete=True,
+        link_adalah_grades=[],
+    )
     cv = critic.evaluate(
         "the speed of light in a vacuum is five hundred million meters per second",
         "the speed of light in a vacuum is five hundred million meters per second",

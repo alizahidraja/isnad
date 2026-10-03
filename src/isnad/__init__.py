@@ -14,9 +14,7 @@ Quickstart::
     reg = Registry()
     reg.register("src", "physics", grade=NarratorGrade.RELIABLE)
     reg.register("model-v1", "physics", grade=NarratorGrade.UNGRADED)
-    grades = [reg.get_grade_for_link(l.narrator_id, l.domain, l.version) for l in chain.links]
-    cg = grade_chain(grades, [l.transform_type for l in chain.links],
-                     is_complete=chain.is_complete)
+    cg = grade_chain_from_registry(reg, chain)
     cv = DeterministicRuleCritic().evaluate("p=mv", "p=mv", ["p=h/lambda"])
     action = decide(cg, cv)
 """

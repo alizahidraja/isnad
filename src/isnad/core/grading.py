@@ -208,7 +208,7 @@ def grade_chain(
     *,
     strategy: GradingStrategy | None = None,
     corroboration_support: bool = False,
-    link_adalah_grades: list[AdalahGrade] | None = None,
+    link_adalah_grades: list[AdalahGrade],
     link_fidelity_verdicts: list[ContentVerdict] | None = None,
     lenient_unknown: bool = False,
 ) -> ChainGrade:
@@ -220,7 +220,7 @@ def grade_chain(
         is_complete: Chain completeness (ittiṣāl).
         strategy: Optional custom GradingStrategy.
         corroboration_support: Whether corroboration supports the claim.
-        link_adalah_grades: Optional per-link ʿadālah (integrity) grades —
+        link_adalah_grades: Per-link ʿadālah (integrity) grades (required) —
             see RefinedWeakestLink.compute_chain_grade for details.
         link_fidelity_verdicts: Optional per-link transformation-fidelity
             verdicts (core/fidelity.py) — see

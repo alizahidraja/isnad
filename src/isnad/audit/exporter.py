@@ -34,7 +34,7 @@ from isnad.audit.schema import (
     new_record_id,
     utcnow_iso,
 )
-from isnad.core.chain import Chain, get_chain_from_db, grades_for_chain
+from isnad.core.chain import Chain, adalah_grades_for_chain, get_chain_from_db, grades_for_chain
 from isnad.core.grading import grade_chain
 from isnad.core.registry import Registry
 from isnad.models import RijalClaim
@@ -80,8 +80,11 @@ def build_audit_record(
 
     chain = get_chain_from_db(session, claim_id) or Chain([])
     grades = grades_for_chain(registry, chain)
+    adalah = adalah_grades_for_chain(registry, chain)
     transforms = [link.transform_type for link in chain.links]
-    final_grade = grade_chain(grades, transforms, is_complete=chain.is_complete)
+    final_grade = grade_chain(
+        grades, transforms, is_complete=chain.is_complete, link_adalah_grades=adalah
+    )
 
     nodes: list[ChainNodeAudit] = []
     for i, (link, grade) in enumerate(zip(chain.links, grades, strict=True)):

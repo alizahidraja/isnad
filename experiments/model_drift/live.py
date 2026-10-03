@@ -166,6 +166,7 @@ def _chain_grade_for_depth(depth: int) -> ChainGrade:
         [NarratorGrade.RELIABLE] * depth,
         [TransformType.GENERATIVE] * depth,
         is_complete=True,
+        link_adalah_grades=[],
     )
 
 

@@ -258,6 +258,7 @@ def run() -> None:
             link_grades,
             [l.transform_type for l in chain.links],
             is_complete=claim.get("chain_complete", True),
+            link_adalah_grades=[],
         )
         cv = critic.evaluate(
             claim.get("text", ""), claim.get("normalized", ""), [], claim.get("domain", "physics")

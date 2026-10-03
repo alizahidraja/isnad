@@ -68,7 +68,9 @@ def compute_risk_coverage_curve(
         chain = _rebuild_chain(c)
         grades = [reg.get_grade(l.narrator_id, l.domain) for l in chain.links]
         xforms = [l.transform_type for l in chain.links]
-        cg = grade_chain(grades, xforms, is_complete=c.get("chain_complete", True))
+        cg = grade_chain(
+            grades, xforms, is_complete=c.get("chain_complete", True), link_adalah_grades=[]
+        )
         action = decide(cg, ContentVerdict.UNVERIFIABLE)
         graded.append((c, action))
 

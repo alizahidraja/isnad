@@ -98,7 +98,7 @@ def export(db_path: str, out_path: str, *, sample: int | None, seed: int, lenien
             )
             if not narrator_grades:
                 continue
-            pred = chain_grade_from_narrators(narrator_grades, is_complete, lenient, adalah_grades)
+            pred = chain_grade_from_narrators(narrator_grades, is_complete, adalah_grades, lenient)
             row = {
                 "sanad_id": chain.sanad_id,
                 "hukum": chain.hukum,

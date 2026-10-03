@@ -423,6 +423,7 @@ cg1 = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
     [TransformType.PASS_THROUGH, TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
     is_complete=True,
+    link_adalah_grades=[],
 )
 check("All RELIABLE → SAHIH", cg1 == ChainGrade.SAHIH, f"got {cg1.value}")
 
@@ -430,6 +431,7 @@ cg2 = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.WEAK],
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=True,
+    link_adalah_grades=[],
 )
 check("RELIABLE + WEAK → DAIF (weakest-link)", cg2 == ChainGrade.DAIF, f"got {cg2.value}")
 
@@ -437,6 +439,7 @@ cg3 = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.REJECTED],
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=True,
+    link_adalah_grades=[],
 )
 check("Any REJECTED → DAIF_JIDDAN", cg3 == ChainGrade.DAIF_JIDDAN, f"got {cg3.value}")
 
@@ -444,6 +447,7 @@ cg4 = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.UNGRADED],
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=True,
+    link_adalah_grades=[],
 )
 check("UNGRADED caps at DAIF (strict majhūl default)", cg4 == ChainGrade.DAIF, f"got {cg4.value}")
 
@@ -451,6 +455,7 @@ cg5 = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.RELIABLE],
     [TransformType.PASS_THROUGH, TransformType.PASS_THROUGH],
     is_complete=False,
+    link_adalah_grades=[],
 )
 check("Incomplete → DAIF (ittisal cap)", cg5 == ChainGrade.DAIF, f"got {cg5.value}")
 
@@ -459,6 +464,7 @@ cg6 = grade_chain(
     [NarratorGrade.RELIABLE, NarratorGrade.WEAK, NarratorGrade.RELIABLE],
     [TransformType.PASS_THROUGH, TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
     is_complete=True,
+    link_adalah_grades=[],
 )
 check(
     "Destructive WEAK → permanent floor (no corroboration)",
@@ -472,6 +478,7 @@ cg7 = grade_chain(
     [TransformType.PASS_THROUGH, TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
     is_complete=True,
     corroboration_support=True,
+    link_adalah_grades=[],
 )
 check(
     "Generative with corroboration can repair destructive damage",
@@ -485,11 +492,12 @@ cg8 = grade_chain(
     [TransformType.PASS_THROUGH, TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
     is_complete=True,
     corroboration_support=True,
+    link_adalah_grades=[],
 )
 check("Generative ACCEPTABLE cannot reach SAHIH", cg8 == ChainGrade.HASAN, f"got {cg8.value}")
 
 # Empty chain
-cg9 = grade_chain([], [], is_complete=True)
+cg9 = grade_chain([], [], is_complete=True, link_adalah_grades=[])
 check("Empty chain → DAIF", cg9 == ChainGrade.DAIF, f"got {cg9.value}")
 
 
