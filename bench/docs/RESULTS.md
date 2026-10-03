@@ -69,7 +69,7 @@ ISNAD's corroboration engine is the right next mechanism to wire in.
 | 9,255 | continuity: irsāl/inqiṭāʿ gap | ISNAD caps gaps at ḍaʿīf. |
 | 7,798 | leniency: majhūl → ḥasan ceiling | **fixed by strict mode.** |
 | 3,773 | leniency: weak → sound/good (mapping) | residual mapping edges. |
-| 2,353 | severity: classical ḍaʿīf vs ISNAD mawḍūʿ | ISNAD stricter (rejected narrator). |
+| 2,353 | severity: classical ḍaʿīf vs ISNAD mawḍūʿ | ISNAD stricter (COMPROMISED integrity). |
 | 1,770 | gap-in-text-only | gap in verdict text, no sentinel node. |
 | 1,067 | severity: classical mawḍūʿ vs ISNAD ḍaʿīf | classical "very weak" but binding narrator is only rank 8. |
 | 676 | continuity: taʿlīq gap | collector's known hanging form. |
@@ -140,5 +140,8 @@ cannot time-label. The design is validated; the quantitative value lives in
   κ = 0.33, and a single critic tracks the convention at κ = 0.45; ISNAD at
   0.87 conforms to the rule-based convention, not a claim of superiority over
   the scholars.
-- "Mawḍūʿ" is a *chain*-level flag ("a rejected narrator is present"), not a
-  matn-level "fabricated" verdict.
+- Mapping v2 (3.0.0) splits the former single mawḍūʿ class: **COMPROMISED integrity**
+  (proven liar/fabricator, rank 12) → mawḍūʿ (fabricated); **SUSPECT** (accused/abandoned,
+  ranks 10–11) → ḍaʿīf jiddan (very weak, `ChainGrade.DAIF_JIDDAN`). Both still quarantine —
+  mawḍūʿ permanently, ḍaʿīf jiddan recoverably. The classical distinctions (mawḍūʿ vs matrūk vs
+  munkar vs shadīd al-ḍuʿf, per Ibn Ḥajar's Nuzhat al-Naẓar) are no longer collapsed.

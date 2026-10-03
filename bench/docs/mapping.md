@@ -176,6 +176,24 @@ the plurality at 32.4% — so accuracy would flatter a majority-class predictor)
 
 ---
 
+
+
+## 6. Mapping v2 — the mawḍūʿ / ḍaʿīf-jiddan split (3.0.0)
+
+Following Ibn Ḥajar (Nuzhat al-Naẓar), a narrator's *lying* makes a narration
+mawḍūʿ (fabricated), while being *accused* of lying makes it matrūk (abandoned →
+very weak). Mapping v2 keys the chain-grade split on the integrity axis:
+
+- **COMPROMISED integrity** (proven liar/fabricator, rank 12) → **MAWDU** (fabricated).
+- **SUSPECT** (accused / matrūk / munkar / shadīd al-ḍuʿf, ranks 10–11) → **DAIF_JIDDAN** (very weak).
+
+The classical distinctions — mawḍūʿ (fabricated) vs matrūk (abandoned) vs munkar
+(denounced) vs shadīd al-ḍuʿf (very weak) — are therefore no longer collapsed.
+Both grades still quarantine (mawḍūʿ permanently, ḍaʿīf jiddan recoverably). The
+rank 10–12 rows of §3.1 are flagged for scholar review and remain open to correction.
+
+---
+
 *Author's note: this mapping is my best-effort reading of Ibn Ḥajar's Taqrīb
 tiers. The repo has no external domain reviewer yet; the ranks 6–7 and 10–12
 rows in §3.1 are the places most likely to need a maintainer's/scholar's review.*

@@ -46,8 +46,9 @@ ISNAD's weakest-link chain grading conforms to the dataset's rule-based chain-ve
 ## Scope limit (read before citing)
 
 This measures **chain-grade (isnād) agreement only** — not matn (content)
-verdicts, and not hadith authenticity. "Mawḍūʿ" here is a chain-level flag
-("a rejected narrator is present"), not a matn-level "fabricated" verdict.
+verdicts, and not hadith authenticity. "Mawḍūʿ" here is keyed on COMPROMISED integrity
+(proven liar/fabricator, rank 12); "ḍaʿīf jiddan" (very weak) on SUSPECT (accused/abandoned,
+ranks 10–11). Both still quarantine.
 
 ## Provenance & reproducibility
 

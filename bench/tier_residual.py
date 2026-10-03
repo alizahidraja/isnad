@@ -51,7 +51,13 @@ TEXT_MARKERS = {
     "text_mutabaa": re.compile("توبع"),
 }
 FEATURES = ["narrator_tadlis", "narrator_ikhtilat", *TEXT_MARKERS, "any"]
-THREE_WAY = {"sahih": "sahih", "hasan": "hasan", "daif": "weak", "daif_jiddan": "weak", "mawdu": "weak"}
+THREE_WAY = {
+    "sahih": "sahih",
+    "hasan": "hasan",
+    "daif": "weak",
+    "daif_jiddan": "weak",
+    "mawdu": "weak",
+}
 
 
 def _norm(text: str | None) -> str:

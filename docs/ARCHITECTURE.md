@@ -374,8 +374,10 @@ for each link in chain:
 if chain is incomplete (munqaṭiʿ):
     return DAIF
 
-if any narrator is REJECTED:
+if any narrator has COMPROMISED integrity:
     return MAWDU
+if any narrator is REJECTED (SUSPECT integrity):
+    return DAIF_JIDDAN
 ```
 
 **Ungraded narrators.**  An UNGRADED narrator caps the chain at **ḍaʿīf** by
@@ -542,6 +544,7 @@ The 4×3 router: chain_grade × content_verdict → action.
 SAHIH            SERVE (cache)            REVIEW (shudhudh — highest-value)      SERVE_WITH_CAVEAT
 HASAN            SERVE_WITH_CAVEAT        REVIEW (hold; do not serve)         REVIEW
 DAIF             REVIEW (seek corrob.)    QUARANTINE                          REVIEW
+DAIF_JIDDAN      QUARANTINE              QUARANTINE                         QUARANTINE
 MAWDU            REJECT_AND_QUARANTINE    REJECT_AND_QUARANTINE               REJECT_AND_QUARANTINE
 ```
 

@@ -208,8 +208,8 @@ The honesty box is the point: what's proven, what's measured, and what's open.
 
 | Component | Status | Notes |
 | --- | --- | --- |
-| **Weakest-link quarantine** | ✅ Validated | Every REJECTED-narrator chain grades MAWDU and is blocked — §8 experiment, 100% |
-| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** (3-way headline) / **0.8745** (4-way) / **0.761** lenient vs 575,060 chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers); narrator-grade agreement κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
+| **Weakest-link quarantine** | ✅ Validated | Every COMPROMISED-integrity narrator chain (proven liar/fabricator) grades MAWDU and is blocked; a SUSPECT (accused/abandoned) narrator grades ḍaʿīf jiddan — both quarantine (§8, 100%) |
+| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** (3-way headline) / **0.8569** (5-way, mapping v2) / **0.761** lenient vs 575,060 chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers); narrator-grade agreement κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
 | **Corroboration (mutābaʿāt)** | ✅ Validated | 603/603 Wikipedia + 104/104 physics semantically-matched pairs; **8/8 Wikipedia + 9/9 physics negative controls** (#127); requires attested distinct lineage (#54) |
 | **Chain-scoped grounding** | ⚠️ Partial | `ChainLinkSpec.retrieved_rows` + `chain_scoped_corpus` + `ChainScopedGroundingPolicy` flag a claim grounded only off its own chain (`grounded_off_chain_only`, a grounding gap — **evidence, not an action**). Wired into `POST /v1/claims` (#216); the flag requires a CONSISTENT-capable critic (NLI/LLM with the affirmation gate bypassed — the default EmbeddingCritic is contradiction-only, so the flag is inert unless you configure one); FP measurable via `experiments/grounding_eval` (#239; requires the `nli` extra — the committed result artifact is pending NLI-model availability, and the harness aborts rather than report FP=0 by construction). |
 | **Content-madār fingerprint calibration** | ✅ Measured | `experiments/madar_eval` — the shared-error fingerprint is measured at **FP 0.375 on independent agreement** (down from 0.750 after tightening #232) with token-bearing recall 1.0. The **near-miss boundary class (a correct vs wrong value, e.g. 1687 vs 1689) is now correctly separated (0/4 false positives)** (#233). |
@@ -299,9 +299,9 @@ to use it. Every term is defined on first use.
 | **mutābaʿāt** | Corroboration — independent chains agreeing upgrade a claim |
 | **madār** | The hidden pivot — "independent" chains that secretly share an upstream |
 | **matn** | The claim content, criticized separately from the chain |
-| **ṣaḥīḥ / ḥasan / ḍaʿīf / mawḍūʿ** | Sound / good / weak / fabricated — the four chain grades (ISNAD's "mawḍūʿ" is a chain-level "rejected-narrator present → quarantine" flag, not the classical matn-level "forged" judgment) |
+| **ṣaḥīḥ / ḥasan / ḍaʿīf / ḍaʿīf jiddan / mawḍūʿ** | Sound / good / weak / very weak / fabricated — the five chain grades. "mawḍūʿ" (fabricated) is keyed on COMPROMISED integrity (proven liar/fabricator, rank 12); "ḍaʿīf jiddan" (very weak) on SUSPECT (accused/abandoned, ranks 10–11). Both quarantine — mawḍūʿ permanently, ḍaʿīf jiddan recoverably. |
 | **ʿilal** | Hidden defects in the chain or matn that survive surface grading — ISNAD does not implement ʿilal detection; it routes such cases to human review |
-| **shudhudh** | A reliable narrator contradicted by a more reliable one — an anomaly; routed to human review, out of scope to auto-adjudicate |
+| **contradiction (taʿāruḍ)** | A sound chain whose content contradicts the corpus — routed to human review (ISNAD does not auto-adjudicate which source outranks the other) |
 
 ## The Decision Matrix
 
@@ -309,9 +309,10 @@ Chain grade × content verdict → action:
 
 | | Content CONSISTENT | Content CONTRADICTION | Content UNVERIFIABLE |
 | --- | --- | --- | --- |
-| **Ṣaḥīḥ** (sound) | ✅ **SERVE** — cache | 🔍 **REVIEW** — shudhudh signal (highest-value case) | ⚠️ **SERVE WITH CAVEAT** |
+| **Ṣaḥīḥ** (sound) | ✅ **SERVE** — cache | 🔍 **REVIEW** — contradiction (taʿāruḍ, highest-value case) | ⚠️ **SERVE WITH CAVEAT** |
 | **Ḥasan** (good) | ⚠️ **SERVE WITH CAVEAT** | 🔍 **REVIEW** — hold, do not serve | 🔍 **REVIEW** |
 | **Ḍaʿīf** (weak) | 🔍 **REVIEW** — seek corroboration | 🚫 **QUARANTINE** | 🔍 **REVIEW** |
+| **Ḍaʿīf jiddan** (very weak) | 🚫 **QUARANTINE** | 🚫 **QUARANTINE** | 🚫 **QUARANTINE** |
 | **Mawḍūʿ** (fabricated) | ⛔ **REJECT + QUARANTINE NARRATOR** | ⛔ **REJECT + QUARANTINE NARRATOR** | ⛔ **REJECT + QUARANTINE NARRATOR** |
 
 Two defaults to notice: contradictions go to a human by default (LLMs are bad at

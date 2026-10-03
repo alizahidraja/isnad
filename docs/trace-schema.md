@@ -73,7 +73,7 @@ through a single `min()`:
 
 | Axis | What it measures | Enum values |
 | ------ | ----------------- | ------------- |
-| `chain_integrity` | How soundly was the claim transmitted? | `sahih`, `hasan`, `daif`, `mawdu`, `ungraded` |
+| `chain_integrity` | How soundly was the claim transmitted? | `sahih`, `hasan`, `daif`, `daif_jiddan`, `mawdu`, `ungraded` |
 | `origin_strength` | How trustworthy is the SOURCE? | `verified`, `attested`, `reputable`, `unknown`, `suspect`, `compromised` |
 
 A degraded chain from a sound origin (ḍaʿīf + verified source) is
