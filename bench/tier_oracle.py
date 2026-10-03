@@ -34,7 +34,7 @@ from bench.mapping import chain_grade_from_hukum
 from bench.metrics import cohens_kappa, confusion_matrix
 from bench.run import CLASSES, PINNED_DB_SHA256, verify_db_hash
 
-THREE_WAY = {"sahih": "sahih", "hasan": "hasan", "daif": "weak", "mawdu": "weak"}
+THREE_WAY = {"sahih": "sahih", "hasan": "hasan", "daif": "weak", "daif_jiddan": "weak", "mawdu": "weak"}
 
 
 def _kappas(y_true: Sequence[str], y_pred: Sequence[str]) -> dict[str, float]:
