@@ -114,11 +114,11 @@ ISNAD's `get_grade_as_of()` was built for (issue #43).
 |---|---:|
 | narrators flagged ikhtilāṭ | 161 (0.32%) |
 | chains touching a declined narrator | 203,159 (35.2%) |
-| κ on declined-narrator chains | 0.855 |
-| κ on clean chains | 0.858 |
+| κ on declined-narrator chains | 0.8546 |
+| κ on clean chains | 0.8579 |
 
 The honest reading: the static grade does **not** hurt agreement here
-(0.855 ≈ 0.858) — but only because the consensus itself is a *static* grade, so
+(0.8546 ≈ 0.8579) — but only because the consensus itself is a *static* grade, so
 the loss is invisible in this corpus. The decline is recorded in the scholars'
 own text ("thiqah, became confused before death"), and its cost shows up only in
 timestamped AI pipelines (the xz sleeper-narrator), which the classical corpus
