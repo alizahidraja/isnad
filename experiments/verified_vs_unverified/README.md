@@ -9,7 +9,7 @@ failure defeats both of its defenses at once.
 This is a *demonstration*, not a statistical experiment.  The statistical
 answer already lives in
 [`experiments/s8_gated_vs_ungated/`](../s8_gated_vs_ungated/README.md)
-(20K claims, 10 seeds, error-vs-coverage curves).  This directory is the
+(17,021 claims, 10 seeds, error-vs-coverage curves).  This directory is the
 artifact a reader actually *looks at*: the same six queries run through an
 identical pipeline with the trust layer off, then on.
 
@@ -66,7 +66,7 @@ shows the failure modes as prominently as the successes.
 - **E (corroboration):** a DAIF chain is upgraded to HASAN by a second,
   genuinely independent source (different upstream, different model family).
   The `mutābaʿāt` mechanism recovers a claim that would otherwise need review.
-- **F (shudhudh):** a sound chain carrying contradicted content — the
+- **F (contradiction (taʿāruḍ)):** a sound chain carrying contradicted content — the
   highest-value review case. Content criticism catches what chain grading
   cannot.
 
@@ -81,7 +81,7 @@ This mirrors the §8 experiment's `ground_truth.py` firewall.
 
 | | §8 (statistical) | This (demonstrative) |
 |---|---|---|
-| Unit | 20,000 claims | 6 queries |
+| Unit | 17,021 claims | 6 queries |
 | Question | served-error rate at fixed budget | per-query trajectory |
 | Output | error/coverage curves | side-by-side table |
 | Honesty | confidence intervals, null result | explicit miss scenarios |

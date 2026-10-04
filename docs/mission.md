@@ -16,7 +16,7 @@ The tempting version is "a global scoreboard of which models are factually relia
 1. **It grades WHETHER, not WHO.** "Factually reliable" is a truth claim about a model.
    ISNAD's whole thesis is that truth is the *critic's* job, not the *provenance layer's*.
 2. **It's numeric.** A "reliability score" is the fake numeric confidence ISNAD refuses
-   (ordinal-only: ṣaḥīḥ > ḥasan > ḍaʿīf > mawḍūʿ).
+   (ordinal-only: ṣaḥīḥ > ḥasan > ḍaʿīf > ḍaʿīf jiddan > mawḍūʿ).
 3. **It's circular.** Grading a narrator by how confidently its *output* reads is exactly
    the content-inferred trust that Nous (2606.22030) proved is gameable (a confidently-
    phrased poison earns 0.96).

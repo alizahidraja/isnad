@@ -4,5 +4,11 @@
 corpus/*.txt
 corpus/chunks/
 corpus/pdfs/
-results/
+# Per-seed calibration dirs + raw claims are regenerable; the five paper-cited
+# artifacts are force-added and explicitly un-ignored so they ship in the repo.
+results/*
 !results/RESULTS.md
+!results/all_results.json
+!results/discrimination.json
+!results/DISCRIMINATION.md
+!results/MATCHED_COVERAGE_FINDING.md

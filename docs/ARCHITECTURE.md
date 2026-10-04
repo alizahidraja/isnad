@@ -81,7 +81,7 @@ at the decision matrix:
                           │
                  ┌────────▼────────┐
                  │ DECISION MATRIX │
-                 │  4×3 router     │
+                 │  5×3 router     │
                  │                 │
                  │ chain × content │
                  │ → serve/review  │
@@ -110,7 +110,7 @@ src/isnad/
 │   ├── registry.py              Narrator store, jarḥ–taʿdīl, freshness
 │   ├── grading.py               Weakest-link chain grade computation
 │   ├── corroboration.py         Independent-chain upgrade + madār detection
-│   ├── decision.py              4×3 matrix: chain × content → action
+│   ├── decision.py              5×3 matrix: chain × content → action
 │   ├── identity.py              alias@version resolution
 │   ├── volatility.py            Grade TTL / stale window / expiry
 │   ├── policies.py              Policy registry + swappable-policy protocols
@@ -537,11 +537,11 @@ See `docs/chain-scoped-grounding.md`.
 
 **File:** `core/decision.py`
 
-The 4×3 router: chain_grade × content_verdict → action.
+The 5×3 router: chain_grade × content_verdict → action.
 
 ```
                  CONSISTENT               CONTRADICTION                       UNVERIFIABLE
-SAHIH            SERVE (cache)            REVIEW (shudhudh — highest-value)      SERVE_WITH_CAVEAT
+SAHIH            SERVE (cache)            REVIEW (contradiction (taʿāruḍ) — highest-value)      SERVE_WITH_CAVEAT
 HASAN            SERVE_WITH_CAVEAT        REVIEW (hold; do not serve)         REVIEW
 DAIF             REVIEW (seek corrob.)    QUARANTINE                          REVIEW
 DAIF_JIDDAN      QUARANTINE              QUARANTINE                         QUARANTINE
@@ -792,7 +792,7 @@ PROV-DM and PROV-AGENT (arXiv 2508.02866).
 
 ### Two axes, never collapsed
 
-- `chain_integrity` — how soundly was the claim transmitted?  (ṣaḥīḥ/ḥasan/ḍaʿīf/mawḍūʿ)
+- `chain_integrity` — how soundly was the claim transmitted?  (ṣaḥīḥ / ḥasan / ḍaʿīf / ḍaʿīf jiddan / mawḍūʿ)
 - `origin_strength` — how trustworthy is the SOURCE?  (verified/attested/reputable/unknown/suspect/compromised)
 
 A ḍaʿīf chain from a verified origin must be distinguishable from a ṣaḥīḥ
