@@ -195,5 +195,5 @@ what it observed and marks the rest "not captured" (`None`), never invents it.
    universal "trust score" — your registry is your evidence.
 4. **A seed is an assumption.** `prior_only` narrators caveat-serve at best;
    they plain-serve only after the pipeline observes them or a human vets them.
-5. **MAWḌŪʿ is containment.** A rejected/quarantined narrator is not "less
+5. **MAWḌŪʿ is containment.** A COMPROMISED (proven liar/fabricator) narrator is not "less
    trusted" — it is stopped, and the quarantine is permanent per-person.

@@ -30,7 +30,7 @@ from isnad.critics import best_available_critic
 from isnad.critics.base import ContentCritic
 from isnad.types import (
     Action,
-    NarratorGrade,
+    AdalahGrade,
     TransformType,
 )
 
@@ -141,6 +141,7 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
                 "claim_text": text,
                 "chain": chain,
                 "link_grades": link_grades,
+                "link_adalah_grades": link_adalah_grades,
                 "link_transforms": link_transforms,
                 "chain_grade": cg,
                 "content_verdict": cv,
@@ -170,11 +171,11 @@ class IsnadTracer(BaseCallbackHandler):  # type: ignore[misc,valid-type]
             lines.append(f"  Grade: {cg.value.upper()} | Action: {action.value.upper()}")
 
             if action == Action.REJECT_AND_QUARANTINE_NARRATOR:
-                for _j, (link, grade) in enumerate(
-                    zip(chain.links, gc["link_grades"], strict=False)
+                for _j, (link, adalah) in enumerate(
+                    zip(chain.links, gc["link_adalah_grades"], strict=False)
                 ):
-                    if grade == NarratorGrade.REJECTED:
-                        lines.append(f"  ⚠ QUARANTINED: {link.narrator_id} is REJECTED")
+                    if adalah is AdalahGrade.COMPROMISED:
+                        lines.append(f"  ⚠ QUARANTINED: {link.narrator_id} is COMPROMISED")
                         break
             elif action == Action.REVIEW:
                 lines.append(f"  ⚠ HELD FOR REVIEW: content is {gc['content_verdict'].value}")

@@ -12,7 +12,7 @@ Edge cases explored:
   A. Clean chain → HASAN
   B. All narrators RELIABLE → SAHIH
   C. One weak narrator → DAIF
-  D. One rejected narrator → MAWDU
+  D. One rejected narrator → DAIF_JIDDAN
   E. Incomplete chain → DAIF (ittiṣāl cap)
   F. Destructive link + corroboration repair
   G. Corroboration: 2 independent HASAN chains → upgrade

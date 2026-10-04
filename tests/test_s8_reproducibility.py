@@ -6,7 +6,7 @@ broke when the repo default drifted to Bayesian:
 1. `calibrate()` uses the post-#9 `ThresholdTransitionPolicy` and honors
    operator seed grades (`source:*` → RELIABLE, not WEAK).
 2. A high-fault narrator is *discovered* from audit evidence and driven down,
-   and a chain through it grades MAWDU → quarantine (the weakest-link rule).
+   and a chain through it grades DAIF_JIDDAN → quarantine (the weakest-link rule).
 
 The committed 20k-claim corpus is not loaded here; a small synthetic corpus
 exercises the same `calibrate()` code path deterministically.

@@ -181,7 +181,7 @@ def describe_action(
             "reject claim and quarantine the narrator (active containment)."
         ),
         (ChainGrade.MAWDU, ContentVerdict.CONTRADICTION): (
-            "Rejected narrator with content contradiction — reject claim and "
+            "Compromised narrator with content contradiction — reject claim and "
             "quarantine the narrator (poisoning mitigation)."
         ),
     }

@@ -40,7 +40,7 @@ number is computed. Read that first; it is the benchmark's credibility.
 | # | Milestone | Number |
 |---|---|---|
 | M1 | Chain-grade agreement on Sahih Muslim only (all-ṣaḥīḥ) | false-demotion rate (lower-bound honesty) |
-| M2 | Full-corpus discrimination (ṣaḥīḥ/ḥasan/ḍaʿīf/mawḍūʿ) | Cohen's κ + confusion matrix + error analysis |
+| M2 | Full-corpus discrimination (ṣaḥīḥ/ḥasan/ḍaʿīf/ḍaʿīf jiddan/mawḍūʿ) | Cohen's κ + confusion matrix + error analysis |
 | M3 | Narrator-grade agreement via per-critic agreement (`aqwal`) | critic-vs-critic κ (context, not a ceiling) |
 | M4 | Ikhtilāṭ → period-sliced grades (`get_grade_as_of`) | validates the flagship #43 feature |
 
