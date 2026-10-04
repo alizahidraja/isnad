@@ -2,7 +2,8 @@
 
 Demonstrates the policy layer in offline mode (no full `langchain` install
 required): grade a tool output against the registry and gate (quarantine) the
-claim when its chain is MAWDU — a REJECTED narrator transmitted it.
+claim when its chain is DAIF_JIDDAN (a REJECTED/SUSPECT narrator) or MAWDU (a
+COMPROMISED narrator) transmitted it.
 
 Framing: *"PIIMiddleware stops sensitive data leaving; IsnadMiddleware stops
 untrustworthy claims entering."*

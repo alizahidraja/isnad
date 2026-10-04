@@ -53,7 +53,7 @@ in the chain or matn that survive surface grading are ʿilal — ISNAD does not 
 ## What does ISNAD measure, and what doesn't it claim?
 
 It grades **who** transformed a claim and **how reliably** — ordinal grades (ṣaḥīḥ >
-ḥasan > ḍaʿīf), never a fake numeric confidence. It does not claim to detect truth; the
+ḥasan > ḍaʿīf > ḍaʿīf jiddan > mawḍūʿ), never a fake numeric confidence. It does not claim to detect truth; the
 content critic is the ceiling, and ISNAD states that ceiling instead of hiding it.
 
 ## Why does this map to multi-agent provenance so cleanly?
