@@ -2,7 +2,8 @@
 
 This is the *policy* layer for LangChain agents: it grades each tool output and
 model response against the rijāl registry and gates (quarantines) claims whose
-chain is MAWDU — i.e. a REJECTED narrator transmitted them.
+chain is MAWDU (COMPROMISED integrity) or DAIF_JIDDAN (REJECTED/SUSPECT) —
+a rejected narrator transmitted them.
 
 Forward-looking: it targets LangChain's ``AgentMiddleware`` API (2026).  The
 older callback handler remains the trace-*capture* path; this is the

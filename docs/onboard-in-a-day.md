@@ -186,7 +186,7 @@ what it observed and marks the rest "not captured" (`None`), never invents it.
 
 ## The honesty contract (do not break)
 
-1. **No numeric confidence.** Grades are ordinal (ṢAḤĪḤ/ḤASAN/ḌAʿĪF/MAWḌŪʿ) and
+1. **No numeric confidence.** Grades are ordinal (ṢAḤĪḤ/ḤASAN/ḌAʿĪF/ḌAʿĪF JIDDAN/MAWḌŪʿ) and
    the action is a route (serve/review/quarantine). Never emit a 0–100% score or
    a "probability of correctness".
 2. **Evidence artifacts, not conformity.** Every downgrade carries its full

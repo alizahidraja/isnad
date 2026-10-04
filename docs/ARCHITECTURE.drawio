@@ -18,7 +18,7 @@
           <mxGeometry x="55" y="92" width="350" height="20" as="geometry" />
         </mxCell>
 
-        <mxCell id="grade_box" value="&lt;b&gt;Ordinal Grades&lt;/b&gt;&lt;br&gt;NarratorGrade (5 tiers)&lt;br&gt;ChainGrade (4 tiers)&lt;br&gt;AdalahGrade (5) · DabtGrade (4)&lt;br&gt;FreshnessStatus (3)&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Ordered comparison | .min()&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="grade_box" value="&lt;b&gt;Ordinal Grades&lt;/b&gt;&lt;br&gt;NarratorGrade (5 tiers)&lt;br&gt;ChainGrade (5 tiers)&lt;br&gt;AdalahGrade (5) · DabtGrade (4)&lt;br&gt;FreshnessStatus (3)&lt;br&gt;&lt;font color=&quot;#28a745&quot;&gt;✅ Ordered comparison | .min()&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="60" y="118" width="250" height="110" as="geometry" />
         </mxCell>
 
@@ -57,7 +57,7 @@
           <mxGeometry x="690" y="310" width="300" height="140" as="geometry" />
         </mxCell>
 
-        <mxCell id="grading_box" value="&lt;b&gt;grading.py&lt;/b&gt;&lt;br&gt;⚖️ RefinedWeakestLink (default)&lt;br&gt;   DESTRUCTIVE → hard floor&lt;br&gt;   GENERATIVE → repair (corroboration-gated)&lt;br&gt;   Incomplete → DAIF · REJECTED → MAWDU&lt;br&gt;⚖️ fidelity verdicts cap a contradicted link&lt;br&gt;⚖️ grade_chain() convenience" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="grading_box" value="&lt;b&gt;grading.py&lt;/b&gt;&lt;br&gt;⚖️ RefinedWeakestLink (default)&lt;br&gt;   DESTRUCTIVE → hard floor&lt;br&gt;   GENERATIVE → repair (corroboration-gated)&lt;br&gt;   Incomplete → DAIF · COMPROMISED → MAWDU · SUSPECT → DAIF_JIDDAN&lt;br&gt;⚖️ fidelity verdicts cap a contradicted link&lt;br&gt;⚖️ grade_chain() convenience" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0077b6;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="1010" y="310" width="290" height="140" as="geometry" />
         </mxCell>
 
@@ -298,7 +298,7 @@
         <mxCell id="pv2" value="&lt;b&gt;Corroboration — validated&lt;/b&gt;&lt;br&gt;603/603 (Wikipedia) + 104/104 (physics) pairs&lt;br&gt;8/8 negative controls pass&lt;br&gt;Requires attested distinct lineage (madār, #83)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="390" y="110" width="300" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="pv3" value="&lt;b&gt;Weakest-link grading — validated&lt;/b&gt;&lt;br&gt;REJECTED → MAWDU → quarantine (100%)&lt;br&gt;Incomplete → DAIF cap · generative repair gated&lt;br&gt;ISNAD-Bench: κ=0.871 conformance to a rule-based convention&lt;br&gt;(narrator-grade agreement κ=0.33)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="pv3" value="&lt;b&gt;Weakest-link grading — validated&lt;/b&gt;&lt;br&gt;COMPROMISED → MAWDU · SUSPECT → DAIF_JIDDAN → quarantine (100%)&lt;br&gt;Incomplete → DAIF cap · generative repair gated&lt;br&gt;ISNAD-Bench: κ=0.871 conformance to a rule-based convention&lt;br&gt;(narrator-grade agreement κ=0.33)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="710" y="110" width="310" height="95" as="geometry" />
         </mxCell>
         <mxCell id="pv4" value="&lt;b&gt;Cold-start seeding — evidence-backed&lt;/b&gt;&lt;br&gt;Registry.seed() survives the Bayesian posterior (#90/#114)&lt;br&gt;seed_from_benchmark() / accuracy_to_grade() — per-role&lt;br&gt;Coverage is critic-bound: stub 75% / affirming critics 0% (affirmation gate)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">

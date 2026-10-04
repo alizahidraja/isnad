@@ -157,7 +157,7 @@ def build_mcp_tools(registry: Registry, domain: str = "general") -> list[dict[st
             "name": "grade_claim",
             "description": (
                 "Grade how much to trust a claim, from the local ISNAD registry: "
-                "returns the weakest-link chain grade (sahih/hasan/daif/mawdu) for "
+                "returns the weakest-link chain grade (sahih/hasan/daif/daif_jiddan/mawdu) for "
                 "the narrators the caller names. Grades are operator-assigned; this "
                 "does not fact-check the claim."
             ),
@@ -264,7 +264,7 @@ def serve_mcp(registry: Registry, *, domain: str = "general", transport: str = "
         name="grade_claim",
         description=(
             "Grade how much to trust a claim. Returns the weakest-link chain grade "
-            "(sahih/hasan/daif/mawdu) for the narrators the caller names, from the "
+            "(sahih/hasan/daif/daif_jiddan/mawdu) for the narrators the caller names, from the "
             "local ISNAD registry. Does not fact-check; does not manufacture grades."
         ),
     )

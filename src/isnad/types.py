@@ -233,13 +233,13 @@ class DabtGrade(Enum):
 class Action(Enum):
     """Actions from the decision matrix (paper §4.4, Table).
 
-    The 4×3 matrix: chain_grade ∈ {SAHIH, HASAN, DAIF, MAWDU}
-                   × content_verdict ∈ {CONSISTENT, CONTRADICTION}
+    The 5×3 matrix: chain_grade ∈ {SAHIH, HASAN, DAIF, DAIF_JIDDAN, MAWDU}
+                   × content_verdict ∈ {CONSISTENT, CONTRADICTION, UNVERIFIABLE}
     """
 
     SERVE = "serve"  # serve directly; cache
     SERVE_WITH_CAVEAT = "serve_with_caveat"  # serve with confidence caveat
-    REVIEW = "review"  # hold in review queue; do not serve (shudhudh path)
+    REVIEW = "review"  # hold in review queue; do not serve (contradiction taʿāruḍ path)
     QUARANTINE = "quarantine"  # quarantine claim
     REJECT_AND_QUARANTINE_NARRATOR = "reject_and_quarantine_narrator"
     # reject claim, quarantine narrator (poisoning mitigation)

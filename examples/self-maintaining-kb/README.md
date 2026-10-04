@@ -57,7 +57,7 @@ ISNAD — Self-maintaining KB demo (Recipe 1)
      content is `consistent`. But the source is *prior-only*, so the serve gate
      caps plain `serve` to `serve_with_caveat`.
    - **B** adds a `weak` scraper → the chain floor drops to `daif` → `review`.
-   - **C** flows through a `rejected` source → `mawdu` → the claim is rejected with a
+   - **C** flows through a `rejected` source → `daif_jiddan` → the claim is quarantined
      quarantine action (the narrator is quarantined in beat 4c).
 3. **SURFACE** — only `serve` / `serve_with_caveat` verdicts are served. `B`
    (review) and `C` (rejected) are excluded.
@@ -83,7 +83,7 @@ ISNAD — Self-maintaining KB demo (Recipe 1)
 - Every shipped seed is a **prior** ("Estimated"), never an observation. A
   prior-only chain can never plain-`serve`; it is capped to `serve_with_caveat`
   / `review` until someone observes the transmitter in the pipeline.
-- Grades are **ordinal** (`sahih`/`hasan`/`daif`/`mawdu`); the demo never prints
+- Grades are **ordinal** (`sahih`/`hasan`/`daif`/`daif_jiddan`/`mawdu`); the demo never prints
   a numeric confidence — only `.value` ordinals and human-readable rationale.
 - The **`DeterministicRuleCritic` is a reference stub** that does exact string
   matching. Here "consistent" means *the claim is verbatim a fact the KB already
