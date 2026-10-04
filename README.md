@@ -207,7 +207,7 @@ The honesty box is the point: what's proven, what's measured, and what's open.
 | Component | Status | Notes |
 | --- | --- | --- |
 | **Weakest-link quarantine** | ✅ Validated | Every COMPROMISED-integrity narrator chain (proven liar/fabricator) grades MAWDU and is blocked; a SUSPECT (accused/abandoned) narrator grades ḍaʿīf jiddan — both quarantine (the SUSPECT→ḍaʿīf jiddan path is exercised in §8; the COMPROMISED→mawḍūʿ path is unit-tested) |
-| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** (3-way headline) / **0.8569** (5-way, mapping v2) / **0.761** lenient vs 575,060 chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers); narrator-grade agreement κ = 0.331; shuffled control −0.0066 — `bench/docs/RESULTS.md` |
+| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** (3-way headline) / **0.8667** (5-way, mapping v2) / **0.761** lenient vs 575,060 chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers); narrator-grade agreement κ = 0.331; shuffled control −0.0066 — `bench/docs/RESULTS.md` |
 | **Corroboration (mutābaʿāt)** | ✅ Validated | 603/603 Wikipedia + 104/104 physics semantically-matched pairs; **8/8 Wikipedia + 9/9 physics negative controls** (#127); requires attested distinct lineage (#54) |
 | **Chain-scoped grounding** | ⚠️ Partial | `ChainLinkSpec.retrieved_rows` + `chain_scoped_corpus` + `ChainScopedGroundingPolicy` flag a claim grounded only off its own chain (`grounded_off_chain_only`, a grounding gap — **evidence, not an action**). Wired into `POST /v1/claims` (#216); the flag requires a CONSISTENT-capable critic (NLI/LLM with the affirmation gate bypassed — the default EmbeddingCritic is contradiction-only, so the flag is inert unless you configure one); FP measurable via `experiments/grounding_eval` (#239; requires the `nli` extra — the committed result artifact is pending NLI-model availability, and the harness aborts rather than report FP=0 by construction). |
 | **Content-madār fingerprint calibration** | ✅ Measured | `experiments/madar_eval` — the shared-error fingerprint is measured at **FP 0.375 on independent agreement** (down from 0.750 after tightening #232) with token-bearing recall 1.0. The **near-miss boundary class (a correct vs wrong value, e.g. 1687 vs 1689) is now correctly separated (0/4 false positives)** (#233). |
@@ -239,12 +239,12 @@ for agreement:
 | Quantity | Cohen's κ |
 | --- | ---: |
 | **ISNAD vs the dataset's rule-based chain-verdict code** (strict default, 3-way) | **0.8714** |
-| — 5-way (mapping v2) | 0.8569 |
+| — 5-way (mapping v2) | 0.8667 |
 | — 4-way (v1, pre-review) | 0.8745 |
 | a single critic vs Ibn Hajar's tier | 0.450 |
 | critic vs critic (narrator-grade agreement, context) | 0.331 |
 
-**Not the same scale.** The headline 0.8714 is *chain-verdict* agreement (3-way — ṣaḥīḥ / ḥasan / weak); the 5-way (0.8569, mapping v2, post-hoc after the expert review) is a sensitivity; v1's 4-way (0.8745) conflated "fabricated" with "very weak" before the split. ISNAD's mawḍūʿ class is now keyed on COMPROMISED integrity (proven liar/fabricator), and the 3-way κ is the robust headline;
+**Not the same scale.** The headline 0.8714 is *chain-verdict* agreement (3-way — ṣaḥīḥ / ḥasan / weak); the 5-way (0.8667, mapping v2, post-hoc after the expert review) is a sensitivity; v1's 4-way (0.8745) conflated "fabricated" with "very weak" before the split. ISNAD's mawḍūʿ class is now keyed on COMPROMISED integrity (proven liar/fabricator), and the 3-way κ is the robust headline;
 the 0.450 and 0.331 figures measure *narrator-grade* agreement (5 classes) — a
 different task. The 0.331 is context for how contested the underlying narrator
 grades are, not a direct ceiling on the chain κ.
