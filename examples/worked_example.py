@@ -150,7 +150,7 @@ def main() -> None:
     print(f"\n   ▶ Content verdict: {content_verdict.value.upper()}  (p=h/λ contradicts p=mv)")
 
     # ── Decision matrix ───────────────────────────────────────
-    hr("5. DECISION MATRIX (4×3 ROUTER)")
+    hr("5. DECISION MATRIX (5×3 ROUTER)")
 
     action = decide(chain_grade, content_verdict)
     description = describe_action(chain_grade, content_verdict)

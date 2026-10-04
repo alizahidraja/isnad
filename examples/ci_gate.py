@@ -27,9 +27,10 @@ from isnad.types import ChainGrade, NarratorGrade
 # Ordinal order, worst → best (so we can compare).
 _ORDER = {
     ChainGrade.MAWDU: 0,
-    ChainGrade.DAIF: 1,
-    ChainGrade.HASAN: 2,
-    ChainGrade.SAHIH: 3,
+    ChainGrade.DAIF_JIDDAN: 1,
+    ChainGrade.DAIF: 2,
+    ChainGrade.HASAN: 3,
+    ChainGrade.SAHIH: 4,
 }
 
 

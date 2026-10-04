@@ -41,7 +41,7 @@ labels come from an **LLM-free numeric oracle**, so the labels themselves cannot
    *flat* across depths 1..5 (the relay faithfully propagates whatever hop 1 produced).
    Deep multi-agent chains do **not** amplify hallucination here — the first hop does.
 2. **The critic is mostly-but-not-fully reliable even with evidence in context** — and a
-   stronger cross-model critic does not fix it: served_error_rate 0.0–0.4 with a
+   stronger cross-model critic does not fix it: served_error_rate 0.0–0.5 with a
    `deepseek-flash` self-critic, 0.0–0.5 with a `deepseek-v4-pro` critic (both miss up to
    ~2 of 4–5 hallucinated claims).
 3. **A frontier model does not drift on well-known facts** (0.000) — only on
@@ -72,7 +72,7 @@ DEEPSEEK_API_KEY=… uv run python -m experiments.model_drift.live --audit
 ## Hard limits (stated, not hidden)
 
 - **Self-critique (measured both ways)**: narrator is `deepseek-flash`; served_error_rate
-  is reported for both a `deepseek-flash` self-critic (0.0–0.4) and a `deepseek-v4-pro`
+  is reported for both a `deepseek-flash` self-critic (0.0–0.5) and a `deepseek-v4-pro`
   cross-model critic (0.0–0.5) — neither is a substitute for human adjudication.
 - **Single provider / single model**; **temperature 0.0** (deterministic knowledge
   error, not sampling noise — a temperature>0 × multi-seed pass is the other next step).

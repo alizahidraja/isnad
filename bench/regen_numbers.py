@@ -124,7 +124,7 @@ def build() -> dict[str, object]:
         "drift_postcutoff_n": "8 - pc09 excluded as ill-posed (see corpus_hard.py)",
         "drift_wellknown_err": "0 - 0/56 well-known facts err at every depth",
         "g1_parsed_only_kappa": "recomputed from per_item (null-parsed dropped)",
-        "s8_quarantine_total": "run.py per-seed quarantine summed; replay gives 3,581",
+        "s8_quarantine_total": "run.py per-seed 3,588; discrimination.py replay 3,581",
         "bench_n_classified": "575,064 readable-hukum; 575,060 graded (gradable subset)",
     }
     n["_source"] = {

@@ -85,11 +85,11 @@ DEEPSEEK_API_KEY=sk-... python run_experiment.py  # DeepSeek LLM critic
                            │
                            ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    DECISION MATRIX (4×3 router)                      │
+│                    DECISION MATRIX (5×3 router)                      │
 │                                                                      │
 │              CONSISTENT            CONTRADICTION                     │
 │  ─────────── ────────────────────  ───────────────────────────────── │
-│  SAHIH       SERVE (cache)        REVIEW (shudhudh — highest value)    │
+│  SAHIH       SERVE (cache)        REVIEW (contradiction (taʿāruḍ) — highest value)    │
 │  HASAN       SERVE_WITH_CAVEAT    REVIEW (hold; do not serve)       │
 │  DAIF        REVIEW (seek corrob) QUARANTINE                        │
 │  MAWDU  ───► REJECT_AND_QUARANTINE_NARRATOR  ◄── THIS CLAIM        │
@@ -112,30 +112,13 @@ DEEPSEEK_API_KEY=sk-... python run_experiment.py  # DeepSeek LLM critic
 
 ---
 
-## Self-Contained Runner Results (500 claims, EmbeddingCritic)
+## Superseded v1 self-contained runner + headline numbers
 
-```
-GRADE DISTRIBUTION    DECISIONS              CONTENT VERDICTS
-  SAHIH:    0 (0%)      SERVED:      58 (12%)  CONSISTENT:    180 (36%)
-  HASAN:  167 (33%)     REVIEW:     109 (22%)  CONTRADICTION:  21 (4%)
-  DAIF:     0 (0%)      QUARANTINED: 333 (67%)  UNVERIFIABLE:  299 (60%)
-  MAWDU:  333 (67%)
-                      Zero corrupted claims served
-```
-
----
-
-## Headline Numbers (B=10%, 10 seeds, deterministic critic)
-
-> **Source of truth:** [`results/RESULTS.md`](results/RESULTS.md). The numbers
-> below match the corrected, post-#9 policy result documented there.
-
-| Metric | Ungated | Confidence | ISNAD |
-|---|---|---|---|
-| Served-error rate | 8.2% | 8.1% | **~0%** |
-| Coverage | 100% | 100% | **10.0%** |
-
-ISNAD achieves near-zero served error at the review-budget coverage ceiling.
+These numbers predate the 2026-10-02 four-book re-run and the mapping-v2 grade split.
+They used the old corpus and the conflated rejected-narrator->mawdu label (MAWDU 67% is the
+pre-v2 conflation; under mapping v2 that tier is now daif-jiddan). See
+[results/RESULTS.md](results/RESULTS.md) for the current 4-book, 5-grade numbers
+(ungated 8.9%->7.3%, confidence 8.9%->7.3%, ISNAD-gated 0.0% served-error as a coverage artifact).
 Confidence-gating is no better than random. The weakest-link quarantine
 mechanism is what does the work; the binding constraint is the content critic
 (see RESULTS.md §3–§4 for the honest negative: with a deterministic critic,
@@ -174,5 +157,5 @@ coverage is capped at the review budget).
 | `audit_sample.py` | Human audit CSV export |
 | `archive/` | Diagnostic scripts (pre-restructure debugging) |
 | `results/RESULTS.md` | Complete honest report |
-| `results/claims.json` | 20K pre-extracted claims |
+| `results/claims.json` | 17,021 pre-extracted claims |
 | `results/s8_bayesian_corroboration.json` | Self-contained runner output |

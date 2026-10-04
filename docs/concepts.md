@@ -42,10 +42,10 @@ critics; it doesn't replace them. Provenance answers *who*, the critic answers
 
 ## What is the decision matrix?
 
-A 4×3 router combining chain grade (ṣaḥīḥ/ḥasan/ḍaʿīf/mawḍūʿ) with content verdict
+A 5×3 router combining chain grade (ṣaḥīḥ / ḥasan / ḍaʿīf / ḍaʿīf jiddan / mawḍūʿ) with content verdict
 (consistent/contradiction/unverifiable) into one action: **serve**, **serve-with-caveat**,
 **review**, or **quarantine**. A sound chain with a contradiction is the most valuable
-case — it's the shudhudh case (a reliable narrator contradicted by a more reliable
+case — it's the contradiction (taʿāruḍ) case (a reliable narrator contradicted by a more reliable
 one, an anomaly), routed to human review rather than auto-adjudicated. Hidden defects
 in the chain or matn that survive surface grading are ʿilal — ISNAD does not implement
 ʿilal detection; it routes such cases to human review.
