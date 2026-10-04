@@ -207,7 +207,7 @@ The honesty box is the point: what's proven, what's measured, and what's open.
 | Component | Status | Notes |
 | --- | --- | --- |
 | **Weakest-link quarantine** | ✅ Validated | Every COMPROMISED-integrity narrator chain (proven liar/fabricator) grades MAWDU and is blocked; a SUSPECT (accused/abandoned) narrator grades ḍaʿīf jiddan — both quarantine (the SUSPECT→ḍaʿīf jiddan path is exercised in §8; the COMPROMISED→mawḍūʿ path is unit-tested) |
-| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** (3-way headline) / **0.8569** (5-way, mapping v2) / **0.761** lenient vs 575,060 chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers); narrator-grade agreement κ = 0.331; shuffled control −0.007 — `bench/docs/RESULTS.md` |
+| **ISNAD-Bench (classical ground truth)** | ✅ Measured | κ = **0.871** (3-way headline) / **0.8569** (5-way, mapping v2) / **0.761** lenient vs 575,060 chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers); narrator-grade agreement κ = 0.331; shuffled control −0.0066 — `bench/docs/RESULTS.md` |
 | **Corroboration (mutābaʿāt)** | ✅ Validated | 603/603 Wikipedia + 104/104 physics semantically-matched pairs; **8/8 Wikipedia + 9/9 physics negative controls** (#127); requires attested distinct lineage (#54) |
 | **Chain-scoped grounding** | ⚠️ Partial | `ChainLinkSpec.retrieved_rows` + `chain_scoped_corpus` + `ChainScopedGroundingPolicy` flag a claim grounded only off its own chain (`grounded_off_chain_only`, a grounding gap — **evidence, not an action**). Wired into `POST /v1/claims` (#216); the flag requires a CONSISTENT-capable critic (NLI/LLM with the affirmation gate bypassed — the default EmbeddingCritic is contradiction-only, so the flag is inert unless you configure one); FP measurable via `experiments/grounding_eval` (#239; requires the `nli` extra — the committed result artifact is pending NLI-model availability, and the harness aborts rather than report FP=0 by construction). |
 | **Content-madār fingerprint calibration** | ✅ Measured | `experiments/madar_eval` — the shared-error fingerprint is measured at **FP 0.375 on independent agreement** (down from 0.750 after tightening #232) with token-bearing recall 1.0. The **near-miss boundary class (a correct vs wrong value, e.g. 1687 vs 1689) is now correctly separated (0/4 false positives)** (#233). |
@@ -255,7 +255,7 @@ with the source's structured code at 99.92%, ruling out classifier error), and I
 0.331/0.450 figures are narrator-grade agreement — context on how contested the
 tiers are, not a ceiling. The benchmark is
 pre-committed, carries negative controls (majority-class 0.000; shuffled grades
-−0.007), and buckets every disagreement. Full write-up: [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md).
+−0.0066), and buckets every disagreement. Full write-up: [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md).
 
 ```bash
 uv run python -m bench.run               # strict (default), full corpus

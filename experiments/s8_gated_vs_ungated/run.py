@@ -69,7 +69,7 @@ def _rebuild_chain(claim: dict) -> Chain:
 def _isnad_gated_priority(action: Action) -> int:
     """Priority for review-queue consumption: lower = review first."""
     priority = {
-        Action.REVIEW: 0,  # shudhudh / ḥasan×contradiction
+        Action.REVIEW: 0,  # contradiction (taʿāruḍ) / ḥasan×contradiction
         Action.SERVE_WITH_CAVEAT: 1,  # review if budget allows
         Action.QUARANTINE: 2,  # hold
         Action.REJECT_AND_QUARANTINE_NARRATOR: 3,  # already contained

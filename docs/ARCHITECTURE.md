@@ -74,7 +74,9 @@ at the decision matrix:
      │  Independent│ │ ṣaḥīḥ  │  │  consistent /   │
      │  chains     │ │ ḥasan  │  │  contradiction  │
      │  upgrade    │ │ ḍaʿīf  │  │  / unverifiable │
-     │  the grade  │ │ mawḍūʿ │  │                 │
+     │  the grade  │ │ ḍaʿīf  │  │                 │
+     │             │ │ jiddan │  │                 │
+     │             │ │ mawḍūʿ │  │                 │
      └──────┬──────┘ └───┬────┘  └──────┬──────────┘
             │             │             │
             └─────────────┼─────────────┘

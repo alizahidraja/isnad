@@ -79,8 +79,8 @@ DEEPSEEK_API_KEY=sk-... python run_experiment.py  # DeepSeek LLM critic
 │  │ ingest@weak          │ modern-quantum│ REJECTED      │           │
 │  └──────────────────────┴───────────────┴───────────────┘           │
 │                                                                      │
-│  Grade = weakest-link: min(SAHIH, DAIF, MAWDU) = MAWDU              │
-│  REJECTED narrator → automatic MAWDU chain → QUARANTINE             │
+│  Grade = weakest-link: min(SAHIH, DAIF, DAIF_JIDDAN, MAWDU)         │
+│  COMPROMISED → MAWDU · SUSPECT → DAIF_JIDDAN → QUARANTINE          │
 └──────────────────────────┬──────────────────────────────────────────┘
                            │
                            ▼

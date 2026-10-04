@@ -35,6 +35,7 @@ from isnad.trace.schema import (
     TraceV01,
     TransmitterNode,
 )
+from isnad.types import AdalahGrade, NarratorGrade
 
 logger = logging.getLogger(__name__)
 
@@ -122,9 +123,23 @@ def _narrator_grade_to_chain_integrity(grade_value: str) -> ChainIntegrity:
         "reliable": ChainIntegrity.SAHIH,
         "acceptable": ChainIntegrity.HASAN,
         "weak": ChainIntegrity.DAIF,
-        "rejected": ChainIntegrity.MAWDU,
+        "rejected": ChainIntegrity.DAIF_JIDDAN,  # SUSPECT -> very weak; only COMPROMISED -> MAWDU
     }
     return mapping.get(grade_value, ChainIntegrity.UNGRADED)
+
+
+def _trace_chain_integrity(
+    narrator_grade: NarratorGrade, adalah: AdalahGrade | None
+) -> ChainIntegrity:
+    """Chain-integrity projection for the trace (mapping v2).
+
+    MAWDU is keyed on COMPROMISED integrity (proven liar/fabricator); a
+    REJECTED narrator with merely SUSPECT integrity is very weak
+    (DAIF_JIDDAN), not fabricated.
+    """
+    if adalah is AdalahGrade.COMPROMISED:
+        return ChainIntegrity.MAWDU
+    return _narrator_grade_to_chain_integrity(narrator_grade.value)
 
 
 def _adalah_to_origin_strength(adalah: str, origin_strength: str | None) -> OriginStrength:
@@ -501,7 +516,9 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
                 narrator_id=narrator_id,
                 role=role,
                 domain=self.domain,
-                chain_integrity=_narrator_grade_to_chain_integrity(effective.value),
+                chain_integrity=_trace_chain_integrity(
+                    effective, identity.adalah_grade if identity else None
+                ),
                 adalah=(identity.adalah_grade.value if identity else "unassessed"),
                 dabt=narrator.dabt_grade.value,
                 origin_strength=_adalah_to_origin_strength(
@@ -706,6 +723,8 @@ class IsnadCallbackHandler(BaseCallbackHandler):  # type: ignore[misc,valid-type
         if grades:
             if ChainIntegrity.MAWDU in grades:
                 chain_integrity = ChainIntegrity.MAWDU
+            elif ChainIntegrity.DAIF_JIDDAN in grades:
+                chain_integrity = ChainIntegrity.DAIF_JIDDAN
             elif ChainIntegrity.DAIF in grades:
                 chain_integrity = ChainIntegrity.DAIF
             elif ChainIntegrity.HASAN in grades:

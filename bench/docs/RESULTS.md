@@ -3,7 +3,7 @@
 **Headline:** ISNAD's weakest-link chain grading reproduces a rule-based grading convention derived from
 Ibn Hajar's 12 narrator tiers with **Cohen's κ = 0.8714** (3-way headline; the 5-way (mapping v2, post-hoc after the expert review) is 0.8569; v1's 4-way was 0.8745)
 and **0.761** (lenient opt-in), across **575,060** graded
-chains — with a shuffled-rank control at κ = −0.007.
+chains — with a shuffled-rank control at κ = −0.0066.
 
 > Reproduce:
 > `uv run python -m bench.run --seed 0` (strict, default) ·

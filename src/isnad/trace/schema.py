@@ -57,7 +57,8 @@ class ChainIntegrity(StrEnum):
     SAHIH = "sahih"  # sound — complete chain, all narrators reliable
     HASAN = "hasan"  # good — mostly reliable, ≥1 ungraded or mid-tier
     DAIF = "daif"  # weak — weak narrator, or incomplete chain
-    MAWDU = "mawdu"  # rejected — fabricated/poisoned source, quarantined
+    DAIF_JIDDAN = "daif_jiddan"  # very weak (rejected-for-error, SUSPECT)
+    MAWDU = "mawdu"  # fabricated (COMPROMISED integrity)
     UNGRADED = "ungraded"  # chain not yet assessed
 
 

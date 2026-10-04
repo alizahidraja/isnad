@@ -52,7 +52,7 @@ defined elsewhere in it.
 - **Chain grade** — the grade of a whole transmission chain, capped by its
   weakest link. The tiers this document uses, best to worst: **`SAHIH`**
   (*ṣaḥīḥ*, sound), **`HASAN`** (*ḥasan*, good), **`DAIF`** (*ḍaʿīf*, weak).
-  There is a fourth, fabricated, below these.
+  Below these sit ḍaʿīf jiddan (very weak) and mawḍūʿ (fabricated).
 - **Matn** — the *content* of a claim, criticised separately from the chain
   that carried it. A sound chain can carry a contradicted claim; "matn
   criticism" is checking the content against what the operator already holds.
