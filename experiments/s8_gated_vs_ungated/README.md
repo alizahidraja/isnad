@@ -115,7 +115,7 @@ DEEPSEEK_API_KEY=sk-... python run_experiment.py  # DeepSeek LLM critic
 ## Superseded v1 self-contained runner + headline numbers
 
 These numbers predate the 2026-10-02 four-book re-run and the mapping-v2 grade split.
-They used the old corpus and the conflated rejected-narrator->mawdu label (MAWDU 67% is the
+They used the old corpus and the conflated mawdu label (MAWDU 67% is the
 pre-v2 conflation; under mapping v2 that tier is now daif-jiddan). See
 [results/RESULTS.md](results/RESULTS.md) for the current 4-book, 5-grade numbers
 (ungated 8.9%->7.3%, confidence 8.9%->7.3%, ISNAD-gated 0.0% served-error as a coverage artifact).
