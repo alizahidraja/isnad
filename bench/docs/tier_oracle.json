@@ -149,10 +149,10 @@
       "kappa_3way": 0.8713
     },
     "isnad_strict": {
-      "kappa_5way": 0.8569,
+      "kappa_5way": 0.8667,
       "kappa_3way": 0.8714
     },
-    "isnad_vs_oracle_agreement": 0.9886,
+    "isnad_vs_oracle_agreement": 0.9741,
     "isnad_vs_oracle_confusion": {
       "sahih": {
         "sahih": 146849,
@@ -171,8 +171,8 @@
       "daif": {
         "sahih": 3,
         "hasan": 0,
-        "daif": 187078,
-        "daif_jiddan": 0,
+        "daif": 178743,
+        "daif_jiddan": 8335,
         "mawdu": 6535
       },
       "daif_jiddan": {

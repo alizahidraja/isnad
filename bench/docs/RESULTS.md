@@ -1,7 +1,7 @@
 # ISNAD-Bench — Results (v2)
 
 **Headline:** ISNAD's weakest-link chain grading reproduces a rule-based grading convention derived from
-Ibn Hajar's 12 narrator tiers with **Cohen's κ = 0.8714** (3-way headline; the 5-way (mapping v2, post-hoc after the expert review) is 0.8569; v1's 4-way was 0.8745)
+Ibn Hajar's 12 narrator tiers with **Cohen's κ = 0.8714** (3-way headline; the 5-way (mapping v2, post-hoc after the expert review) is 0.8667; v1's 4-way was 0.8745)
 and **0.761** (lenient opt-in), across **575,060** graded
 chains — with a shuffled-rank control at κ = −0.0066.
 
@@ -21,7 +21,7 @@ ISNAD has two deliberate stances on a narrator it has never graded:
 | **strict** (default) | caps at ḍaʿīf (classical majhūl) | **0.8714** | **0.8745** | **90.9%** |
 | lenient (`lenient_unknown=True`) | caps at ḥasan (epistemic humility) | 0.7610 | 0.7726 | 83.6% |
 
-Mapping v2 (3.0.0) splits the mawḍūʿ class into ḍāʿīf jiddan + mawḍūʿ; the current strict **5-way κ is 0.8569** (per-class table below). The 4-way 0.8745/0.7726 above are the superseded v1 numbers.
+Mapping v2 (3.0.0) splits the mawḍūʿ class into ḍāʿīf jiddan + mawḍūʿ; the current strict **5-way κ is 0.8667** (per-class table below). The 4-way 0.8745/0.7726 above are the superseded v1 numbers.
 
 The gap between them is the measured cost of leniency: **0.11 κ**. Classical
 scholars treat an *unknown* narrator as making the chain weak; ISNAD's default

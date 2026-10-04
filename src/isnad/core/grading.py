@@ -143,6 +143,9 @@ class RefinedWeakestLink:
         # Only reached when no narrator is REJECTED and no ʿadālah is
         # COMPROMISED — the cap floors *reliable-to-weak* narrators, it never
         # lifts a containment floor above it.
+        if NarratorGrade.REJECTED in link_narrator_grades:
+            return ChainGrade.DAIF_JIDDAN  # a gap must never RAISE a rejected chain to DAIF
+
         if not is_complete:
             return ChainGrade.DAIF
 

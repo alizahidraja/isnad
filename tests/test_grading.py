@@ -107,17 +107,18 @@ class TestCompletenessCap:
         )
         assert result == ChainGrade.DAIF
 
-    def test_incomplete_with_rejected_is_daif(self) -> None:
-        """#181 revisited: a REJECTED narrator without COMPROMISED integrity is
-        DAIF_JIDDAN on a complete chain; an incomplete chain is capped at DAIF
-        (the completeness cap fires before the floor loop)."""
+    def test_incomplete_with_rejected_stays_daif_jiddan(self) -> None:
+        """Monotonicity: a gap must never RAISE a rejected chain to DAIF.
+        A SUSPECT (REJECTED, not COMPROMISED) narrator grades DAIF_JIDDAN;
+        an incomplete chain is capped at DAIF — and DAIF_JIDDAN < DAIF, so
+        the gap must not lift the grade. (mapping v2 regression fix)."""
         result = grade_chain(
             [NarratorGrade.RELIABLE, NarratorGrade.REJECTED],
             [TransformType.PASS_THROUGH] * 2,
             is_complete=False,
             link_adalah_grades=[],
         )
-        assert result == ChainGrade.DAIF
+        assert result == ChainGrade.DAIF_JIDDAN
 
     def test_incomplete_with_compromised_adalah_is_mawdu_not_daif(self) -> None:
         """#181: COMPROMISED ʿadālah also dominates the completeness cap — same
