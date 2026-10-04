@@ -61,7 +61,7 @@ SOFTWARE_JSON_LD = {
     "license": "https://www.apache.org/licenses/LICENSE-2.0",
     "codeRepository": "https://github.com/alizahidraja/isnad",
     "programmingLanguage": "Python",
-    "version": "2.9.8",
+    "version": "3.0.0",
 }
 
 SCHOLARLY_ARTICLE_JSON_LD = {
