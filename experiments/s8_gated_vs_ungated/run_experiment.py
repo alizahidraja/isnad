@@ -331,7 +331,7 @@ def run() -> None:
     print(f"\n{SEP}")
     print("GRADE DISTRIBUTION")
     print(SEP)
-    for grade in ["sahih", "hasan", "daif", "mawdu"]:
+    for grade in ["sahih", "hasan", "daif", "daif_jiddan", "mawdu"]:
         count = stats[grade]
         pct = count / len(claims) * 100
         bar = "█" * int(pct / 2)

@@ -28,7 +28,7 @@ from bench.data import iter_chains
 from bench.mapping import chain_grade_from_hukum, grade_from_qawl
 from bench.metrics import cohens_kappa, confusion_matrix
 
-CLASSES = ["sahih", "hasan", "daif", "mawdu"]
+CLASSES = ["sahih", "hasan", "daif", "daif_jiddan", "mawdu"]
 
 
 def _load_ikhtilat(db_path: str) -> tuple[set[int], list[str]]:
