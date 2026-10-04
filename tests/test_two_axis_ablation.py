@@ -56,7 +56,7 @@ def test_fabricator_three_strikes_quarantines() -> None:
     """Three integrity strikes → REJECTED → quarantine in two-axis; blended still serves."""
     r = run_scenario(fabricator_scenario(3))
     assert r.two_axis_grade == NarratorGrade.REJECTED
-    assert r.two_axis_action == Action.REJECT_AND_QUARANTINE_NARRATOR
+    assert r.two_axis_action == Action.QUARANTINE  # REJECTED -> daif_jiddan (mapping v2)
     # The blended model still only reaches ACCEPTABLE/HASAN — it never sees the
     # fabricator for what they are.
     assert r.blended_grade in (NarratorGrade.ACCEPTABLE, NarratorGrade.RELIABLE)

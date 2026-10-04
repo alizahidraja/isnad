@@ -19,7 +19,7 @@ the benchmark says so.
 |---|---|
 | no-gating (serve everything) | 0% recall, 0% FPR |
 | confidence-gating | ≈ random — self-reported confidence is noise (§8) |
-| shuffled-grade (scrambled mapping) | κ = −0.007 |
+| shuffled-grade (scrambled mapping) | κ = −0.0066 |
 | majority-class | κ = 0.000 |
 
 ## Run it on *your* data

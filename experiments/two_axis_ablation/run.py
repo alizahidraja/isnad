@@ -70,7 +70,7 @@ _NARRATOR_TO_CHAIN: dict[NarratorGrade, ChainGrade] = {
     NarratorGrade.RELIABLE: ChainGrade.SAHIH,
     NarratorGrade.ACCEPTABLE: ChainGrade.HASAN,
     NarratorGrade.WEAK: ChainGrade.DAIF,
-    NarratorGrade.REJECTED: ChainGrade.MAWDU,
+    NarratorGrade.REJECTED: ChainGrade.DAIF_JIDDAN,
     NarratorGrade.UNGRADED: ChainGrade.DAIF,
 }
 

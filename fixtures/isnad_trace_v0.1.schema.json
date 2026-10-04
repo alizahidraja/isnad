@@ -76,7 +76,8 @@
       "enum": [
         "verified",
         "unverified",
-        "shared_ancestry_detected"
+        "shared_ancestry_detected",
+        "assumed"
       ],
       "title": "CorroborationVerdict",
       "type": "string"

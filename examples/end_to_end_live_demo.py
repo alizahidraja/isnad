@@ -11,7 +11,7 @@ It shows, in one pass:
 1. A correct claim (in the corpus) → ḥasan chain + CONSISTENT → SERVE_WITH_CAVEAT.
 2. A correct *paraphrase* (not verbatim) → the live critic understands it → SERVE.
 3. A corrupted claim (wrong value) → CONTRADICTION → REVIEW (held, not served).
-4. A REJECTED narrator → MAWDU → REJECT_AND_QUARANTINE_NARRATOR.
+4. A COMPROMISED narrator → MAWDU → REJECT_AND_QUARANTINE_NARRATOR.
 5. The audit record for a served claim, detached-signed and verified.
 6. A Live Verify seal (Edinburgh MSc) → crypto-anchored ʿadālah on day one.
 """

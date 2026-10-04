@@ -34,7 +34,7 @@ ISNAD — Self-maintaining KB demo (Recipe 1)
 [2] INGEST + GRADE
     A: chain SAHIH — weakest link source:internal-docs (reliable); content CONSISTENT → serve_with_caveat  [prior-only]
     B: chain DAIF — weakest link scraper:web-generic (weak); content CONSISTENT → review  [prior-only]
-    C: chain MAWDU — weakest link source:fabricated-bot (rejected); content UNVERIFIABLE → reject_and_quarantine_narrator  [prior-only]
+    C: chain DAIF_JIDDAN — weakest link source:fabricated-bot (rejected); content UNVERIFIABLE → quarantine  [prior-only]
 [3] SERVED SURFACE: A (serve_with_caveat)
 [4] SELF-MAINTAINING RE-GRADE
     4a survival      source:internal-docs: observation_backed=True
