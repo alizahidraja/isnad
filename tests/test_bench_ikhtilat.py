@@ -4,7 +4,12 @@ from __future__ import annotations
 
 import sqlite3
 
-from bench.ikhtilat import _load_ikhtilat
+from bench.ikhtilat import CLASSES, _load_ikhtilat
+
+
+def test_classes_is_5way() -> None:
+    """Mapping v2: the ikhtilat kappa value-space must include daif_jiddan."""
+    assert CLASSES == ["sahih", "hasan", "daif", "daif_jiddan", "mawdu"]
 
 
 def _make_db(path: str) -> None:

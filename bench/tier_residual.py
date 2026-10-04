@@ -17,7 +17,7 @@ on the same chains, where the residual comes from instead of assuming it:
    minority of the residual; most residual chains are unexplained by these flags.
 4. **Two kappas on the same chains.** A lookup oracle (tier -> modal verdict,
    fit in-sample: the ceiling for any rule that sees only the weakest tier) and
-   ISNAD's strict weakest-link grading, each 4-way and 3-way.
+   ISNAD's strict weakest-link grading, each 5-way and 3-way.
 
 Run:  uv run python -m bench.tier_residual --out bench/docs/tier_residual.json
 """
