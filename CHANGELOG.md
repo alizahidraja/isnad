@@ -11,7 +11,7 @@
   Both still quarantine — MAWDU permanently (`REJECT_AND_QUARANTINE_NARRATOR`), DAIF_JIDDAN recoverably (`QUARANTINE`).
 - **Decision matrix**: `DAIF_JIDDAN × {CONSISTENT, CONTRADICTION, UNVERIFIABLE} → QUARANTINE`.
 - **Benchmark re-versioned**: 3-way κ unchanged **0.8714**; 5-way κ **0.8569** (v1's 4-way 0.8745 conflated
-  "rejected narrator" with "fabricated"). `ṣaḥīḥ × contradiction` relabeled from "shudhudh" to "contradiction (taʿāruḍ)".
+  "rejected narrator" with "fabricated"). `ṣaḥīḥ × contradiction` relabeled from "shādhdh" to "contradiction (taʿāruḍ)".
 
 ## [2.25.0] — 2026-09-30
 

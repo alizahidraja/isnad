@@ -3,7 +3,7 @@
 > **Status:** RESULTS COMPUTED — post-hoc addendum (2026-09-11).
 > The preregistered v1.1 bi-encoder signal scored weak (κ 0.099 at threshold 0.5).
 > A v2 LLM grounding critic (DeepSeek V4 Flash) — NOT in the original preregistration —
-> was then tried and scored κ = 0.4345 over ALL 1,800 responses (57 unparseable, 3.1%, fail-closed as hallucinated); recall 96.0%, precision 60.4%, 49.9% false-positive on grounded.
+> was then tried and scored κ = 0.4345 over ALL 1,800 responses (57 unparseable, 3.2%, fail-closed as hallucinated); recall 96.0%, precision 60.4%, 49.9% false-positive on grounded.
 > Disclosed, not hidden: the headline result is post-hoc, not preregistered.
 
 ## 1. Data provenance

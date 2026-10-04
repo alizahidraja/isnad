@@ -789,7 +789,7 @@ PROV-DM and PROV-AGENT (arXiv 2508.02866).
 | `TransmitterNode` | One chain step | node_id, parent_ids, role, narrator_id, model_version, input_documents, output_claim, grade |
 | `Grade` | Per-narrator score | chain_integrity, adalah, dabt, origin_strength, model_version, model_family, upstream_source |
 | `DocumentRef` | Input provenance | source, doc_id, content_hash |
-| `CorroborationVerdict` | Independence status | verified / unverified / shared_ancestry_detected |
+| `CorroborationVerdict` | Independence status | verified / unverified / shared_ancestry_detected / assumed |
 | `ContradictionFlag` | Conflicting claims | claim_a, chain_a_node_ids, claim_b, chain_b_node_ids |
 
 ### Two axes, never collapsed
