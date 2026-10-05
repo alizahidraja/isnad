@@ -449,14 +449,18 @@ class CappedCorroborationPolicy:
     def kish_scale(self, m_shared: int) -> float:
         """Kish per-chain scale for ``m_shared`` shared-lineage corroborators.
 
-        Total effective count of ``m_shared`` equicorrelated chains is
-        ``m_shared / (1 + (m_shared-1)*phi)``; the per-chain factor is therefore
-        ``1 / (1 + (m_shared-1)*phi)``. Identity (no discount) when ``m_shared <= 1``
-        or ``phi == 0``.
+        Shared-lineage is defined relative to the base chain, so the equicorrelated
+        group is the base plus ``m_shared`` corroborators (``m_shared + 1`` members);
+        its Kish effective count is ``(m_shared + 1) / (1 + m_shared*phi)``. The
+        per-corroborator factor is therefore ``1 / (1 + m_shared*phi)`` — the
+        base-inclusive denominator (3.0.5 brutal-panel finding M2). A single shared
+        corroborator is discounted too (``1/(1+phi)``); the pre-fix
+        ``1/(1+(m_shared-1)*phi)`` was a no-op at ``m_shared == 1``. Identity (no
+        discount) when ``m_shared <= 0`` or ``phi == 0``.
         """
-        if m_shared <= 1 or self.phi_shared_lineage == 0.0:
+        if m_shared <= 0 or self.phi_shared_lineage == 0.0:
             return 1.0
-        return 1.0 / (1.0 + (m_shared - 1) * self.phi_shared_lineage)
+        return 1.0 / (1.0 + m_shared * self.phi_shared_lineage)
 
     def admits_corroboration(self, score: float, is_shared_lineage: bool) -> bool:
         """Admission rule for corroborating chains (discount-not-exclude).
@@ -519,8 +523,8 @@ class CappedCorroborationPolicy:
         same-family error correlation from the phi study): corroborating chains flagged
         as shared-lineage (the madar case) are discounted as a group. With ``m_sh``
         shared-lineage chains, each contributes an effective weight scaled by
-        ``1/(1+(m_sh-1)*phi)``, so their total effective count is
-        ``m_sh/(1+(m_sh-1)*phi) = n_eff_sh``. Disjoint chains keep their full
+        ``1/(1+m_sh*phi)``, so their total effective count is
+        ``m_sh/(1+m_sh*phi)``. Disjoint chains keep their full
         ``score*(1-prior)`` weight. phi=0 reduces exactly to the pre-discount behaviour.
 
         Args:
@@ -1106,7 +1110,7 @@ class CorroborationEngine:
         # type is unknown.
         base_type = _chain_narrator_type(base_narrators, narrator_metadata)
         independent_priors = [
-            self._policy.blind_spot_prior_for(
+            self._blind_spot_prior_for(
                 base_type, _chain_narrator_type(c["narrators"], narrator_metadata)
             )
             for c in independent
@@ -1145,7 +1149,7 @@ class CorroborationEngine:
             effective_weight=effective_weight,
             upgraded=upgraded_flag,
             chain_independence=assessments,
-            shared_blind_spot_prior=self._policy.shared_blind_spot_prior,
+            shared_blind_spot_prior=self._flat_prior(),
             effective_witnesses=effective_witnesses,
             reason=(
                 f"Upgraded via {len(independent)} independent chains"
@@ -1170,6 +1174,41 @@ class CorroborationEngine:
             return fn(m_shared)
         return 1.0
 
+    def _admits_score(self, score: float, is_shared_lineage: bool) -> bool:
+        """Admission by (score, flag) with a pre-3.0.5 fallback to the score gate."""
+        fn = getattr(self._policy, "admits_corroboration", None)
+        if callable(fn):
+            return fn(score, is_shared_lineage)
+        threshold = getattr(self._policy, "INDEPENDENCE_THRESHOLD", 0.8)
+        return score >= threshold
+
+    def _blind_spot_prior_for(self, base_type: str | None, corr_type: str | None) -> float:
+        """Per-pair blind-spot prior with a pre-3.0.5 fallback to the flat prior."""
+        fn = getattr(self._policy, "blind_spot_prior_for", None)
+        if callable(fn):
+            return fn(base_type, corr_type)
+        return self._flat_prior()
+
+    def _flat_prior(self) -> float:
+        """The policy's flat shared blind-spot prior, defaulting to 0.20."""
+        return max(0.0, min(1.0, float(getattr(self._policy, "shared_blind_spot_prior", 0.20))))
+
+    def _joint_failure_enabled(self) -> bool:
+        """Whether the policy enables joint-failure aggregation (default False)."""
+        return bool(getattr(self._policy, "joint_failure", False))
+
+    def _error_probs(self) -> dict[ChainGrade, float]:
+        """Error probabilities with a pre-3.0.5 fallback to the default table."""
+        err = getattr(self._policy, "ERROR_PROBS", None)
+        if err:
+            return err
+        return {
+            ChainGrade.SAHIH: 0.01,
+            ChainGrade.HASAN: 0.10,
+            ChainGrade.DAIF: 0.30,
+            ChainGrade.MAWDU: 0.90,
+        }
+
     def _compute_effective_weight(
         self,
         base_grade: ChainGrade,
@@ -1191,23 +1230,25 @@ class CorroborationEngine:
         independent: list[tuple[ChainGrade, float, float, bool]] = []
         for i, (g, score) in enumerate(zip(corroborating_grades, independence_scores, strict=True)):
             is_shared = bool(flags[i]) if flags is not None else False
-            if not self._policy.admits_corroboration(score, is_shared):
+            if not self._admits_score(score, is_shared):
                 continue
             if g == ChainGrade.MAWDU:
                 continue
-            prior = priors[i] if priors is not None else self._policy.shared_blind_spot_prior
+            prior = priors[i] if priors is not None else self._flat_prior()
             independent.append((g, score, prior, is_shared))
         m_shared = sum(1 for _, _, _, is_shared in independent if is_shared)
         kish = self._kish_scale(m_shared)
-        if self._policy.joint_failure:
-            return self._policy._joint_effective_weight(
-                base_grade,
-                [
-                    (g, score * (kish if is_shared else 1.0), prior)
-                    for g, score, prior, is_shared in independent
-                ],
-            )
-        err = self._policy.ERROR_PROBS
+        if self._joint_failure_enabled():
+            joint = getattr(self._policy, "_joint_effective_weight", None)
+            if callable(joint):
+                return joint(
+                    base_grade,
+                    [
+                        (g, score * (kish if is_shared else 1.0), prior)
+                        for g, score, prior, is_shared in independent
+                    ],
+                )
+        err = self._error_probs()
         combined = sum(
             (kish if is_shared else 1.0)
             * score

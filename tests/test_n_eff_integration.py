@@ -7,6 +7,9 @@ arithmetic mean of the 4 ``same_family:true`` pairs in
 it is the documented opt-in example value, NOT the default (default phi = 0.0).
 """
 
+import json
+from pathlib import Path
+
 import pytest
 
 from isnad.core.corroboration import (
@@ -44,15 +47,17 @@ class TestKishIdentity:
             assert _strength(k, PHI_MEASURED) == pytest.approx(_n_eff(PHI_MEASURED, k))
 
     def test_policy_kish_scale_matches_identity(self) -> None:
-        """The policy's per-chain scale sums to the Kish total (n_eff cap)."""
+        """The per-chain scale locks the base-inclusive denominator 1/(1+m*phi),
+        NOT the pre-fix 1/(1+(m-1)*phi) (3.0.5 brutal-panel finding M2)."""
         pol = CappedCorroborationPolicy(phi_shared_lineage=PHI_MEASURED)
-        for m in (2, 3, 4, 8):
-            assert m * pol.kish_scale(m) == pytest.approx(_n_eff(PHI_MEASURED, m))
+        for m in (1, 2, 3, 4, 8):
+            assert pol.kish_scale(m) == pytest.approx(1.0 / (1.0 + m * PHI_MEASURED))
 
-    def test_kish_scale_identity_for_single_or_zero_phi(self) -> None:
-        """m_sh <= 1 or phi == 0 -> no discount."""
-        assert CappedCorroborationPolicy(phi_shared_lineage=PHI_MEASURED).kish_scale(0) == 1.0
-        assert CappedCorroborationPolicy(phi_shared_lineage=PHI_MEASURED).kish_scale(1) == 1.0
+    def test_kish_scale_identity_for_zero_or_no_shared(self) -> None:
+        """m_sh <= 0 or phi == 0 -> no discount; m_sh == 1 IS discounted (M2)."""
+        pol = CappedCorroborationPolicy(phi_shared_lineage=PHI_MEASURED)
+        assert pol.kish_scale(0) == 1.0
+        assert pol.kish_scale(1) == pytest.approx(1.0 / (1.0 + PHI_MEASURED))
         assert CappedCorroborationPolicy(phi_shared_lineage=0.0).kish_scale(4) == 1.0
 
     def test_default_phi_is_zero_opt_in(self) -> None:
@@ -93,6 +98,34 @@ class TestSharedLineageDiscount:
         )
         without_flags = pol.compute_corroborated_grade(base, grades, scores)
         assert with_flags == without_flags
+
+    def test_two_shared_sahih_corroborators_no_upgrade_at_phi(self) -> None:
+        """M2 repro: 2 shared-lineage SAHIH corroborators (score 0.6, prior 0)
+        must NOT upgrade DAIF->HASAN at phi=0.6172, but must at phi=0.0."""
+        base = ChainGrade.DAIF
+        grades = [ChainGrade.SAHIH, ChainGrade.SAHIH]
+        scores = [0.6, 0.6]
+        flags = [True, True]
+        priors = [0.0, 0.0]
+
+        discounted = CappedCorroborationPolicy(
+            phi_shared_lineage=PHI_MEASURED
+        ).compute_corroborated_grade(
+            base,
+            grades,
+            scores,
+            shared_lineage_flags=flags,
+            chain_blind_spot_priors=priors,
+        )
+        naive = CappedCorroborationPolicy(phi_shared_lineage=0.0).compute_corroborated_grade(
+            base,
+            grades,
+            scores,
+            shared_lineage_flags=flags,
+            chain_blind_spot_priors=priors,
+        )
+        assert naive == ChainGrade.HASAN
+        assert discounted == ChainGrade.DAIF
 
 
 class TestDiscountNotExclude:
@@ -167,6 +200,41 @@ class TestDiscountNotExclude:
         # the discount reduces the effective witness weight
         assert discounted.effective_witnesses < no_discount.effective_witnesses
 
+    def test_engine_decision_flips_with_phi(self) -> None:
+        """M3: through the engine, 4 shared-family HASAN corroborators (score 0.6)
+        upgrade DAIF->HASAN at phi=0.0 but stay DAIF at phi=0.6172."""
+        meta = {
+            "n:A": {"model_family": "gpt-4"},
+            "n:B": {"model_family": "gpt-4"},
+            "n:C": {"model_family": "gpt-4"},
+            "n:D": {"model_family": "gpt-4"},
+            "n:E": {"model_family": "gpt-4"},
+        }
+        chains = [
+            {"grade": "hasan", "narrators": ["n:B"]},
+            {"grade": "hasan", "narrators": ["n:C"]},
+            {"grade": "hasan", "narrators": ["n:D"]},
+            {"grade": "hasan", "narrators": ["n:E"]},
+        ]
+        discounted = CorroborationEngine(
+            policy=CappedCorroborationPolicy(phi_shared_lineage=PHI_MEASURED)
+        ).evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["n:A"],
+            corroborating_chains=chains,
+            narrator_metadata=meta,
+        )
+        no_discount = CorroborationEngine(
+            policy=CappedCorroborationPolicy(phi_shared_lineage=0.0)
+        ).evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["n:A"],
+            corroborating_chains=chains,
+            narrator_metadata=meta,
+        )
+        assert no_discount.upgraded_grade == ChainGrade.HASAN
+        assert discounted.upgraded_grade == ChainGrade.DAIF
+
 
 class _OldProtocolPolicy:
     """Minimal third-party policy written to the pre-3.0.5 protocol."""
@@ -198,6 +266,22 @@ class TestThirdPartyCompat:
             policy=_OldProtocolPolicy(),
         )
         assert result == ChainGrade.DAIF
+
+    def test_old_protocol_policy_through_engine_does_not_raise(self) -> None:
+        """M1: a pre-3.0.5 policy passed to CorroborationEngine degrades to the
+        old behavior (score-gate admission, flat prior) without AttributeError."""
+        engine = CorroborationEngine(policy=_OldProtocolPolicy())
+        result = engine.evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["n:A"],
+            corroborating_chains=[{"grade": "hasan", "narrators": ["n:B"]}],
+            narrator_metadata={
+                "n:A": {"model_family": "gpt-4"},
+                "n:B": {"model_family": "claude-3"},
+            },
+        )
+        assert result.base_grade == ChainGrade.DAIF
+        assert result.upgraded_grade == ChainGrade.DAIF
 
 
 class TestInvariantsStillHold:
@@ -233,5 +317,10 @@ class TestPhiConstant:
     def test_example_value_is_the_four_pair_mean(self) -> None:
         """F3: the documented opt-in example is the arithmetic mean of the 4
         same_family:true pairs in the committed stats.json."""
-        same_family = [0.4888, 0.7306, 0.5595, 0.6898]
+        stats_path = (
+            Path(__file__).resolve().parents[1] / "experiments" / "correlated_errors" / "stats.json"
+        )
+        stats = json.loads(stats_path.read_text(encoding="utf-8"))
+        same_family = [p["phi"] for p in stats["pairs"] if p.get("same_family") is True]
+        assert len(same_family) == 4
         assert sum(same_family) / len(same_family) == pytest.approx(PHI_MEASURED, abs=1e-4)
