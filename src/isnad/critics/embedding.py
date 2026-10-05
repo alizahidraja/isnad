@@ -86,8 +86,8 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
     c_low = claim.lower()
     cc_low = corpus_claim.lower()
 
-    if claim == corpus_claim:
-        return False  # a claim never contradicts itself
+    if c_low == cc_low:
+        return False  # a claim never contradicts itself (case/punct-insensitive)
 
     # Negation
     for pos, neg in [

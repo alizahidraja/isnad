@@ -5,8 +5,8 @@ chain-walking algorithm, not just the minimum-across-all-links fallback.
 
 Key properties tested:
 - Destructive weak link creates a permanent floor (paper: strict minimum).
-- Generative RELIABLE link WITH corroboration REPAIRS a destructive weak link
-  (paper: can raise the floor up to its own grade).
+- A corroborated generative link lifts a NON-destructive weak floor at most to
+  HASAN (hasan li-ghayrihi); a destructive loss is permanent and unrecoverable.
 - Generative link WITHOUT corroboration cannot repair (paper: only when
   corroboration supports it).
 - Generative link with WEAK grade cannot repair even with corroboration
@@ -149,7 +149,7 @@ class TestDestructivePermanentCap:
         # Verify: changing corroboration_support DOES change the result
         # (proving the flag is not dead code — see next test)
 
-    def test_destructive_weak_can_be_repaired_with_corroboration(self) -> None:
+    def test_destructive_weak_floor_is_permanent_even_with_corroboration(self) -> None:
         """WEAK destructive → permanent DAIF floor. Even a corroborated RELIABLE
         generative cannot recover a destructive loss (3.0.3 spec)."""
         result = grade_chain(
@@ -240,8 +240,9 @@ class TestChainWalkingOrder:
     """Chain order matters: walking left-to-right through the transmission."""
 
     def test_repair_then_degradation(self) -> None:
-        """WEAK destructive → RELIABLE gen (repairs to SAHIH) → UNGRADED
-        pass-through (caps at DAIF under the strict default). Order matters."""
+        """WEAK destructive → permanent DAIF floor. RELIABLE gen with
+        corroboration cannot recover it (capped at hasan li-ghayrihi AND the
+        permanent floor). UNGRADED pass-through caps at DAIF. Order matters."""
         result = grade_chain(
             [NarratorGrade.WEAK, NarratorGrade.RELIABLE, NarratorGrade.UNGRADED],
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE, TransformType.PASS_THROUGH],

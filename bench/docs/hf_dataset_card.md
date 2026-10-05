@@ -30,7 +30,7 @@ exact functions that produce the benchmark's κ.
 ## The headline number — and how to read it
 
 ISNAD's weakest-link chain grading conforms to the dataset's rule-based chain-verdict convention (derived from Ibn Hajar's 12 narrator tiers) at **Cohen's κ = 0.871** (strict default), across
-**575,060** chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers), with a shuffled-rank control at κ = -0.007.
+**575,060** chains graded by a rule-based convention (Ibn Hajar's 12 narrator tiers), with a shuffled-rank control at κ = −0.0066.
 
 **ISNAD conforms to the rule-based convention; it is not "better than the scholars".** The narrator-grade agreement — how contested the underlying tiers are — is κ = 0.331 (critic-vs-critic, context). ISNAD's 0.871 means the pre-committed tier→grade mapping conforms to the dataset's own convention; the 0.331 is narrator-grade context, not a ceiling.
 
@@ -56,7 +56,7 @@ ranks 10–11). Both still quarantine.
 | --- | --- |
 | Derived from | `emadjumaah/hadith-kg` (CC-BY-4.0) |
 | Source SHA-256 | `d528084321e715006712e0e2461809a3afc9408065a1d1af90238c8b723815a6` |
-| Mapping | `bench/docs/mapping.md` (pre-committed, frozen) — **mapping v2** (integrity-keyed mawḍūʿ / ḍaʿīf jiddan split, 3.0.0) |
+| Mapping | `bench/docs/mapping.md` (pre-committed; mapping v2 is post-hoc after the expert review) — **mapping v2** (integrity-keyed mawḍūʿ / ḍaʿīf jiddan split, 3.0.0) |
 | Reproduction | `uv run python -m bench.run --seed 0` |
 | Software | `pip install isnad` (Apache-2.0) |
 | Paper | arXiv:2607.24117 · DOI 10.48550/arXiv.2607.24117 |
@@ -71,8 +71,8 @@ reported number — never a silent edit.
 
 ## File format
 
-One JSON object per line, prefixed by a `#` JSON header carrying the source
-SHA-256, the mapping SHA-256, and the exact invocation. Schema:
+One JSON object per line, with no leading comment/header line (JSONL has no
+comment syntax). Schema:
 
 `sanad_id, hukum, true_grade, predicted_grade, disagreement_bucket, is_complete,
 has_gap, has_taliq, narrator_rank_nos, mode`
