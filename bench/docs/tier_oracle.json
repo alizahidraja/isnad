@@ -1,5 +1,5 @@
 {
-  "scope": "all chains with a readable free-text hukum, max_rank sentinel >= 12 -> daif",
+  "scope": "all chains with a readable free-text hukum (note: the baseline's own max_rank >= 12 -> daif rule shares the 3.0.2 gap flaw, so the oracle-agreement drop is a diagnostic consequence of now respecting REJECTED narrators on gapped chains)",
   "n_chains": 577024,
   "n_classified": 575064,
   "n_gap_free": 505230,

@@ -6,9 +6,9 @@ the completeness (ittiṣāl) cap.
 The default RefinedWeakestLink strategy walks the chain link-by-link:
 - Destructive links: strict minimum — nothing downstream recovers what was lost.
   The destructive link's grade becomes a permanent floor.
-- Generative links with corroboration and grade >= ACCEPTABLE: **replace** the
-  floor with the generative link's own grade (they can both raise a lower floor
-  and lower a higher floor).
+- Generative links with corroboration and grade >= ACCEPTABLE: the floor is
+  lifted toward the generative link's own grade but capped at HASAN (hasan
+  li-ghayrihi) and NEVER above a permanent destructive floor.
 - Generative links without corroboration (or WEAK generative): standard minimum.
 - Incomplete chains (munqaṭiʿ): capped at DAIF regardless of narrator quality.
 
@@ -64,10 +64,10 @@ class RefinedWeakestLink:
         grade becomes a hard floor.  Nothing downstream recovers lost info.
 
      2. Generative (broad-pretrained model synthesis) with corroboration:
-        the link REPLACES the floor with its own grade.  This means it can
-        *raise* a floor lowered by a previous destructive link (repair) OR
-        *lower* a higher floor (introduce corruption).  Only fires when the
-        generative link is ACCEPTABLE or better; WEAK generative always
+        the floor is lifted toward the link's own grade, capped at HASAN
+        (hasan li-ghayrihi) and never above a permanent destructive floor -
+        corroboration cannot recover a destructive loss.  Only fires when
+        the generative link is ACCEPTABLE or better; WEAK generative always
         degrades.
 
      3. Generative without corroboration, or pass-through: standard minimum.
