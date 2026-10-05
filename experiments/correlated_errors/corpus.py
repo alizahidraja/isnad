@@ -30,16 +30,19 @@ def build() -> list[dict[str, object]]:
             continue
         if getattr(f, "excluded", False):
             continue
-        out.append(
-            {
-                "id": f"md_{f.fact_id}",
-                "claim_text": f.question,
-                "oracle_value": f.correct_value,
-                "oracle_unit": "",
-                "source": "model_drift_postcutoff",
-                "domain": "postcutoff",
-            }
-        )
+        out.append({
+            "id": f"md_{f.fact_id}",
+            "claim_text": f.question,
+            "oracle_value": f.correct_value,
+            "oracle_unit": "",
+            "source": "model_drift_postcutoff",
+            "domain": "postcutoff",
+            "source_note": (
+                "post-cutoff event outcome; oracle = documented result from the "
+                "model_drift HARD_CORPUS (each outcome verified in the drift study, "
+                "not fabricated)"
+            ),
+        })
     return out
 
 

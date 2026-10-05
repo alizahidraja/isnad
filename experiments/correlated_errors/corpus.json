@@ -234,9 +234,9 @@
   {
     "id": "hard-p030",
     "claim_text": "What is standard gravity in meters per second squared?",
-    "oracle_value": 9.81,
+    "oracle_value": 9.80665,
     "oracle_unit": "",
-    "source": "CRC",
+    "source": "CODATA",
     "domain": "physics"
   },
   {
@@ -305,7 +305,7 @@
   },
   {
     "id": "hard-p039",
-    "claim_text": "What is the half-life of the neutron in minutes?",
+    "claim_text": "What is the mean lifetime of the neutron in minutes?",
     "oracle_value": 14.6,
     "oracle_unit": "",
     "source": "PDG",
@@ -578,7 +578,7 @@
   {
     "id": "hard-a028",
     "claim_text": "What is the diameter of the Sun in kilometers?",
-    "oracle_value": 1392700,
+    "oracle_value": 1391400,
     "oracle_unit": "",
     "source": "IAU",
     "domain": "astronomy"
@@ -667,14 +667,6 @@
     "id": "hard-a039",
     "claim_text": "What is the diameter of the Milky Way in thousand light-years?",
     "oracle_value": 100,
-    "oracle_unit": "",
-    "source": "Wikipedia:Milky_Way",
-    "domain": "astronomy"
-  },
-  {
-    "id": "hard-a040",
-    "claim_text": "What is the number of stars in the Milky Way in billions?",
-    "oracle_value": 200,
     "oracle_unit": "",
     "source": "Wikipedia:Milky_Way",
     "domain": "astronomy"
@@ -874,7 +866,7 @@
   {
     "id": "hard-a065",
     "claim_text": "What is the apparent visual magnitude of Venus at its brightest?",
-    "oracle_value": -4.6,
+    "oracle_value": -4.92,
     "oracle_unit": "",
     "source": "Wikipedia:Venus",
     "domain": "astronomy"
@@ -896,22 +888,6 @@
     "domain": "astronomy"
   },
   {
-    "id": "hard-a068",
-    "claim_text": "What is the altitude of the International Space Station in kilometers?",
-    "oracle_value": 408,
-    "oracle_unit": "",
-    "source": "NASA",
-    "domain": "astronomy"
-  },
-  {
-    "id": "hard-a069",
-    "claim_text": "What is the number of stars in the Pleiades cluster visible to the naked eye?",
-    "oracle_value": 6,
-    "oracle_unit": "",
-    "source": "Wikipedia:Pleiades",
-    "domain": "astronomy"
-  },
-  {
     "id": "hard-a070",
     "claim_text": "What is the temperature at the core of the Sun in million kelvin?",
     "oracle_value": 15.7,
@@ -922,7 +898,7 @@
   {
     "id": "hard-a071",
     "claim_text": "What is the mass of Pluto in units of 10 to the 22 kilograms?",
-    "oracle_value": 1.31,
+    "oracle_value": 1.303,
     "oracle_unit": "",
     "source": "NASA",
     "domain": "astronomy"
@@ -1784,22 +1760,6 @@
     "domain": "geography"
   },
   {
-    "id": "hard-g029",
-    "claim_text": "What is the elevation of the Dead Sea in meters below sea level?",
-    "oracle_value": -430.5,
-    "oracle_unit": "",
-    "source": "Wikipedia:Dead_Sea",
-    "domain": "geography"
-  },
-  {
-    "id": "hard-g030",
-    "claim_text": "What is the maximum depth of the Mariana Trench in meters?",
-    "oracle_value": 10984,
-    "oracle_unit": "",
-    "source": "Wikipedia:Mariana_Trench",
-    "domain": "geography"
-  },
-  {
     "id": "hard-g031",
     "claim_text": "What is the area of the Sahara Desert in million square kilometers?",
     "oracle_value": 9.2,
@@ -1976,14 +1936,6 @@
     "domain": "geography"
   },
   {
-    "id": "hard-g053",
-    "claim_text": "What is the lowest point on Earth's land surface in meters below sea level?",
-    "oracle_value": -430.5,
-    "oracle_unit": "",
-    "source": "Wikipedia:Dead_Sea",
-    "domain": "geography"
-  },
-  {
     "id": "hard-g054",
     "claim_text": "What is the area of the Mediterranean Sea in million square kilometers?",
     "oracle_value": 2.5,
@@ -2005,14 +1957,6 @@
     "oracle_value": 14.3,
     "oracle_unit": "",
     "source": "Wikipedia:Strait_of_Gibraltar",
-    "domain": "geography"
-  },
-  {
-    "id": "hard-g057",
-    "claim_text": "What is the height of Mount Etna in meters?",
-    "oracle_value": 3357,
-    "oracle_unit": "",
-    "source": "Wikipedia:Mount_Etna",
     "domain": "geography"
   },
   {
@@ -2809,8 +2753,8 @@
   },
   {
     "id": "hard-d012",
-    "claim_text": "What is the population of France in millions (2023 estimate)?",
-    "oracle_value": 68,
+    "claim_text": "What is the population of metropolitan France in millions (2023 estimate)?",
+    "oracle_value": 66.4,
     "oracle_unit": "",
     "source": "UN",
     "domain": "demographics"
@@ -3085,7 +3029,8 @@
     "oracle_value": "45.80",
     "oracle_unit": "",
     "source": "model_drift_postcutoff",
-    "domain": "postcutoff"
+    "domain": "postcutoff",
+    "source_note": "post-cutoff event outcome; oracle = documented result from the model_drift HARD_CORPUS (each outcome verified in the drift study, not fabricated)"
   },
   {
     "id": "md_pc02",
@@ -3093,7 +3038,8 @@
     "oracle_value": "12.09",
     "oracle_unit": "",
     "source": "model_drift_postcutoff",
-    "domain": "postcutoff"
+    "domain": "postcutoff",
+    "source_note": "post-cutoff event outcome; oracle = documented result from the model_drift HARD_CORPUS (each outcome verified in the drift study, not fabricated)"
   },
   {
     "id": "md_pc03",
@@ -3101,7 +3047,8 @@
     "oracle_value": "6.31",
     "oracle_unit": "",
     "source": "model_drift_postcutoff",
-    "domain": "postcutoff"
+    "domain": "postcutoff",
+    "source_note": "post-cutoff event outcome; oracle = documented result from the model_drift HARD_CORPUS (each outcome verified in the drift study, not fabricated)"
   },
   {
     "id": "md_pc04",
@@ -3109,7 +3056,8 @@
     "oracle_value": "2026",
     "oracle_unit": "",
     "source": "model_drift_postcutoff",
-    "domain": "postcutoff"
+    "domain": "postcutoff",
+    "source_note": "post-cutoff event outcome; oracle = documented result from the model_drift HARD_CORPUS (each outcome verified in the drift study, not fabricated)"
   },
   {
     "id": "md_pc05",
@@ -3117,7 +3065,8 @@
     "oracle_value": "2026",
     "oracle_unit": "",
     "source": "model_drift_postcutoff",
-    "domain": "postcutoff"
+    "domain": "postcutoff",
+    "source_note": "post-cutoff event outcome; oracle = documented result from the model_drift HARD_CORPUS (each outcome verified in the drift study, not fabricated)"
   },
   {
     "id": "md_pc06",
@@ -3125,7 +3074,8 @@
     "oracle_value": "41",
     "oracle_unit": "",
     "source": "model_drift_postcutoff",
-    "domain": "postcutoff"
+    "domain": "postcutoff",
+    "source_note": "post-cutoff event outcome; oracle = documented result from the model_drift HARD_CORPUS (each outcome verified in the drift study, not fabricated)"
   },
   {
     "id": "md_pc07",
@@ -3133,7 +3083,8 @@
     "oracle_value": "33",
     "oracle_unit": "",
     "source": "model_drift_postcutoff",
-    "domain": "postcutoff"
+    "domain": "postcutoff",
+    "source_note": "post-cutoff event outcome; oracle = documented result from the model_drift HARD_CORPUS (each outcome verified in the drift study, not fabricated)"
   },
   {
     "id": "md_pc08",
@@ -3141,6 +3092,7 @@
     "oracle_value": "30",
     "oracle_unit": "",
     "source": "model_drift_postcutoff",
-    "domain": "postcutoff"
+    "domain": "postcutoff",
+    "source_note": "post-cutoff event outcome; oracle = documented result from the model_drift HARD_CORPUS (each outcome verified in the drift study, not fabricated)"
   }
 ]
