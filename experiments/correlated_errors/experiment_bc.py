@@ -51,17 +51,21 @@ def agreement_counts(answers: dict[str, object]) -> Counter[float]:
 
 
 def corroboration_strength(m: int, phi_bar: float, k: int) -> float:
-    """Strength of ``m`` agreeing models under Kish discount.
+    """Strength of ``m`` agreeing models under Kish equicorrelation.
 
-    φ=0 → n_eff=k → strength = m (naive). φ>0 → strength = 1 + (m−1)·n_eff/k < m.
+    Kish's exact form for m routes with pairwise error correlation φ̄:
+    strength(m) = m / (1 + (m−1)·φ̄). At m=1 → 1; at m=k → n_eff.
+    φ=0 → strength = m (naive). φ>0 → strength < m (discounted).
     """
     if m <= 1:
         return float(m)
-    return 1 + (m - 1) * (n_eff(phi_bar, k) / k)
+    denom = 1 + (m - 1) * phi_bar
+    return m / denom if denom > 0 else float(m)
 
 
-def policy(answers_by_claim: dict[str, dict[str, object]], phi_bar: float, k: int,
-           threshold: int = 2) -> dict[str, tuple[bool, float | None, float]]:
+def policy(
+    answers_by_claim: dict[str, dict[str, object]], phi_bar: float, k: int, threshold: int = 2
+) -> dict[str, tuple[bool, float | None, float]]:
     """Apply a corroboration policy.
 
     Returns {claim_id: (upgraded, agreed_answer, strength)}. ``agreed_answer`` is the
@@ -89,9 +93,13 @@ def is_correct(agreed: float | None, oracle: object) -> bool:
     return abs(agreed - o) / abs(o) <= 1e-6
 
 
-def evaluate(answers_by_claim: dict[str, dict[str, object]],
-             oracle_by_claim: dict[str, object],
-             phi_bar: float, k: int, threshold: int = 2) -> dict[str, float]:
+def evaluate(
+    answers_by_claim: dict[str, dict[str, object]],
+    oracle_by_claim: dict[str, object],
+    phi_bar: float,
+    k: int,
+    threshold: int = 2,
+) -> dict[str, float]:
     """Return metrics for one policy: false-upgrade rate, coverage, risk."""
     pol = policy(answers_by_claim, phi_bar, k, threshold)
     n = len(answers_by_claim)
@@ -115,9 +123,13 @@ def evaluate(answers_by_claim: dict[str, dict[str, object]],
     }
 
 
-def compare(answers_by_claim: dict[str, dict[str, object]],
-            oracle_by_claim: dict[str, object],
-            phi_bar: float, k: int, threshold: int = 2) -> dict[str, object]:
+def compare(
+    answers_by_claim: dict[str, dict[str, object]],
+    oracle_by_claim: dict[str, object],
+    phi_bar: float,
+    k: int,
+    threshold: int = 2,
+) -> dict[str, object]:
     """Compare naive (φ=0) vs φ-discounted (φ=φ̄) at the same threshold."""
     naive = evaluate(answers_by_claim, oracle_by_claim, 0.0, k, threshold)
     discounted = evaluate(answers_by_claim, oracle_by_claim, phi_bar, k, threshold)
@@ -131,6 +143,60 @@ def compare(answers_by_claim: dict[str, dict[str, object]],
         "delta_false_upgrade_rate": naive["false_upgrade_rate"] - discounted["false_upgrade_rate"],
         "delta_coverage": naive["coverage"] - discounted["coverage"],
         "delta_risk": naive["risk"] - discounted["risk"],
+    }
+
+
+def threshold_sweep(
+    answers_by_claim: dict[str, dict[str, object]],
+    oracle_by_claim: dict[str, object],
+    phi_bar: float,
+    k: int,
+) -> list[dict[str, object]]:
+    """Per-threshold metrics for one policy (thresholds 1..k).
+
+    This is the matched-coverage substrate: each threshold yields a
+    (coverage, false-upgrade-rate) point; matched-coverage comparison picks the
+    naive threshold whose coverage best matches the discounted policy's coverage.
+    """
+    out: list[dict[str, object]] = []
+    for t in range(1, k + 1):
+        m = evaluate(answers_by_claim, oracle_by_claim, phi_bar, k, t)
+        out.append({"threshold": t, **m})
+    return out
+
+
+def matched_coverage_compare(
+    answers_by_claim: dict[str, dict[str, object]],
+    oracle_by_claim: dict[str, object],
+    phi_bar: float,
+    k: int,
+    target_threshold: int = 2,
+) -> dict[str, object]:
+    """Primary endpoint: false-upgrade rate at matched coverage.
+
+    The discounted policy at ``target_threshold`` defines the target coverage.
+    Find the naive threshold that achieves the closest coverage, then compare
+    false-upgrade rates at that matched coverage (naive is held to the same
+    coverage, so any remaining false-upgrade gap is the discount's effect, not
+    a coverage artifact).
+    """
+    disc = threshold_sweep(answers_by_claim, oracle_by_claim, phi_bar, k)
+    naive = threshold_sweep(answers_by_claim, oracle_by_claim, 0.0, k)
+    d_target = disc[target_threshold - 1]
+    target_cov = d_target["coverage"]
+    n_matched = min(naive, key=lambda r: abs(r["coverage"] - target_cov))
+    return {
+        "target_threshold": target_threshold,
+        "target_coverage": target_cov,
+        "discounted": d_target,
+        "naive_matched": n_matched,
+        "naive_matched_threshold": n_matched["threshold"],
+        "delta_false_upgrade_rate_matched": n_matched["false_upgrade_rate"]
+        - d_target["false_upgrade_rate"],
+        "delta_coverage_matched": n_matched["coverage"] - target_cov,
+        "delta_risk_matched": n_matched["risk"] - d_target["risk"],
+        "naive_sweep": naive,
+        "discounted_sweep": disc,
     }
 
 
@@ -155,7 +221,11 @@ def main() -> None:
         print("stats.json has no phi_bar/k — run stats first")
         return
     result = compare(answers_by_claim, oracle_by_claim, float(phi_bar), k)
-    (_HERE / "experiment_bc.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    matched = matched_coverage_compare(answers_by_claim, oracle_by_claim, float(phi_bar), k)
+    result["matched_coverage"] = matched
+    (_HERE / "experiment_bc.json").write_text(
+        json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
