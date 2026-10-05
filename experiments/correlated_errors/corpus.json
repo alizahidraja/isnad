@@ -1,450 +1,3026 @@
 [
   {
-    "id": "md_e01",
-    "claim_text": "How many bones are in the adult human body?",
-    "oracle_value": "206",
+    "id": "hard-p001",
+    "claim_text": "What is the speed of light in a vacuum in meters per second?",
+    "oracle_value": 299792458,
     "oracle_unit": "",
-    "domain": "easy"
+    "source": "CODATA",
+    "domain": "physics"
   },
   {
-    "id": "md_e02",
-    "claim_text": "How many squares are on a standard chessboard?",
-    "oracle_value": "64",
-    "oracle_unit": "",
-    "domain": "easy"
-  },
-  {
-    "id": "md_e03",
-    "claim_text": "How many days are in a common year?",
-    "oracle_value": "365",
-    "oracle_unit": "",
-    "domain": "easy"
-  },
-  {
-    "id": "md_e04",
-    "claim_text": "What is pi rounded to two decimal places?",
-    "oracle_value": "3.14",
-    "oracle_unit": "",
-    "domain": "easy"
-  },
-  {
-    "id": "md_e05",
-    "claim_text": "At what temperature in degrees Celsius does water boil at sea level?",
-    "oracle_value": "100",
-    "oracle_unit": "",
-    "domain": "easy"
-  },
-  {
-    "id": "md_e06",
-    "claim_text": "In what year did humans first land on the Moon?",
-    "oracle_value": "1969",
-    "oracle_unit": "",
-    "domain": "easy"
-  },
-  {
-    "id": "md_e07",
-    "claim_text": "How many months are in a year?",
-    "oracle_value": "12",
-    "oracle_unit": "",
-    "domain": "easy"
-  },
-  {
-    "id": "md_e08",
-    "claim_text": "How many states does the United States have?",
-    "oracle_value": "50",
-    "oracle_unit": "",
-    "domain": "easy"
-  },
-  {
-    "id": "md_m01",
-    "claim_text": "In what year did the RMS Titanic sink?",
-    "oracle_value": "1912",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m02",
-    "claim_text": "In what year did World War II end?",
-    "oracle_value": "1945",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m03",
-    "claim_text": "In what year did the Berlin Wall fall?",
-    "oracle_value": "1989",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m04",
-    "claim_text": "How long is a marathon in kilometers?",
-    "oracle_value": "42.195",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m05",
-    "claim_text": "What is the men's 100m sprint world record in seconds?",
-    "oracle_value": "9.58",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m06",
-    "claim_text": "What is normal human body temperature in degrees Fahrenheit?",
-    "oracle_value": "98.6",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m07",
-    "claim_text": "What is the normal pH of human blood?",
-    "oracle_value": "7.4",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m08",
-    "claim_text": "In what year did the United States declare independence?",
-    "oracle_value": "1776",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m09",
-    "claim_text": "In what year did the French Revolution begin?",
-    "oracle_value": "1789",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m10",
-    "claim_text": "In what year did World War I end?",
-    "oracle_value": "1918",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m11",
-    "claim_text": "In what year did Columbus reach the Americas?",
-    "oracle_value": "1492",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m12",
-    "claim_text": "How many chromosomes do humans have?",
-    "oracle_value": "46",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m13",
-    "claim_text": "What is the speed of light in meters per second?",
-    "oracle_value": "299,792,458",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m14",
-    "claim_text": "What is Earth's gravitational acceleration in meters per second squared?",
-    "oracle_value": "9.8",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m15",
-    "claim_text": "How many member states does the United Nations have?",
-    "oracle_value": "193",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m16",
-    "claim_text": "How far is the Moon from Earth in kilometers?",
-    "oracle_value": "384,400",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m17",
-    "claim_text": "In what year did the Western Roman Empire fall?",
-    "oracle_value": "476",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m18",
-    "claim_text": "In what year was the Magna Carta sealed?",
-    "oracle_value": "1215",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m19",
-    "claim_text": "In what year was the Battle of Hastings fought?",
-    "oracle_value": "1066",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_m20",
-    "claim_text": "How tall is Mount Fuji in meters?",
-    "oracle_value": "3,776",
-    "oracle_unit": "",
-    "domain": "medium"
-  },
-  {
-    "id": "md_h01",
-    "claim_text": "In what year was Python 3.13 released?",
-    "oracle_value": "2024",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h02",
-    "claim_text": "In what year was the James Webb Space Telescope launched?",
-    "oracle_value": "2021",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h03",
-    "claim_text": "In what year was the Nobel Prize for mRNA vaccines awarded?",
-    "oracle_value": "2023",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h04",
-    "claim_text": "In what year was the first CRISPR-based gene therapy approved?",
-    "oracle_value": "2023",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h05",
-    "claim_text": "In what year was ChatGPT first released?",
-    "oracle_value": "2022",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h06",
-    "claim_text": "How tall is Mount Kilimanjaro in meters?",
-    "oracle_value": "5,895",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h07",
-    "claim_text": "In what year were the first mRNA COVID-19 vaccines authorized?",
-    "oracle_value": "2020",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h08",
-    "claim_text": "What is the men's 200m sprint world record in seconds?",
-    "oracle_value": "19.19",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h09",
-    "claim_text": "What is the men's 400m sprint world record in seconds?",
-    "oracle_value": "43.03",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h10",
-    "claim_text": "How many Olympic medals did Michael Phelps win?",
-    "oracle_value": "28",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h11",
-    "claim_text": "How many times has Brazil won the FIFA World Cup?",
-    "oracle_value": "5",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h12",
-    "claim_text": "What is Brian Lara's record test cricket score?",
-    "oracle_value": "400",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h13",
-    "claim_text": "How tall is Denali, North America's highest peak, in meters?",
-    "oracle_value": "6,190",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h14",
-    "claim_text": "How deep is Lake Baikal at its deepest point in meters?",
-    "oracle_value": "1,642",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h15",
-    "claim_text": "How long is the Great Barrier Reef in kilometers?",
-    "oracle_value": "2,300",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h16",
-    "claim_text": "How tall is Mount Elbrus, Europe's highest peak, in meters?",
-    "oracle_value": "5,642",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h17",
-    "claim_text": "How old is the universe in billions of years?",
-    "oracle_value": "13.8",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h18",
-    "claim_text": "How many known chemical elements are there?",
-    "oracle_value": "118",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h19",
-    "claim_text": "How many permanent teeth does a typical adult human have?",
-    "oracle_value": "32",
-    "oracle_unit": "",
-    "domain": "hard"
-  },
-  {
-    "id": "md_h20",
+    "id": "hard-p002",
     "claim_text": "What is absolute zero in degrees Celsius?",
-    "oracle_value": "273.15",
+    "oracle_value": -273.15,
     "oracle_unit": "",
-    "domain": "hard"
+    "source": "CODATA",
+    "domain": "physics"
   },
   {
-    "id": "md_h21",
-    "claim_text": "In what year was GPT-4 released?",
-    "oracle_value": "2023",
+    "id": "hard-p003",
+    "claim_text": "What is the triple point of water in degrees Celsius?",
+    "oracle_value": 0.01,
     "oracle_unit": "",
-    "domain": "hard"
+    "source": "CODATA",
+    "domain": "physics"
   },
   {
-    "id": "md_h22",
+    "id": "hard-p004",
+    "claim_text": "What is standard atmospheric pressure in pascals?",
+    "oracle_value": 101325,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p005",
+    "claim_text": "What is the speed of sound in dry air at 20 degrees Celsius, in meters per second?",
+    "oracle_value": 343,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p006",
+    "claim_text": "What is the Avogadro constant divided by 10 to the 23, in per mole?",
+    "oracle_value": 6.022,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p007",
+    "claim_text": "What is the Faraday constant in coulombs per mole?",
+    "oracle_value": 96485,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p008",
+    "claim_text": "What is the molar gas constant in joules per mole per kelvin?",
+    "oracle_value": 8.314,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p009",
+    "claim_text": "What is the Boltzmann constant in units of 10 to the negative 23 joules per kelvin?",
+    "oracle_value": 1.381,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p010",
+    "claim_text": "What is the Planck constant in units of 10 to the negative 34 joule-seconds?",
+    "oracle_value": 6.626,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p011",
+    "claim_text": "What is the elementary charge in units of 10 to the negative 19 coulombs?",
+    "oracle_value": 1.602,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p012",
+    "claim_text": "What is the rest mass of the electron in units of 10 to the negative 31 kilograms?",
+    "oracle_value": 9.109,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p013",
+    "claim_text": "What is the rest mass of the proton in units of 10 to the negative 27 kilograms?",
+    "oracle_value": 1.673,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p014",
+    "claim_text": "What is the rest mass of the neutron in units of 10 to the negative 27 kilograms?",
+    "oracle_value": 1.675,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p015",
+    "claim_text": "What is the inverse of the fine-structure constant?",
+    "oracle_value": 137.036,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p016",
+    "claim_text": "What is the Rydberg constant in units of 10 to the 7 per meter?",
+    "oracle_value": 1.097,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p017",
+    "claim_text": "What is the Stefan-Boltzmann constant in units of 10 to the negative 8 watts per square meter per kelvin to the fourth?",
+    "oracle_value": 5.67,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p018",
+    "claim_text": "What is the Wien displacement constant in units of 10 to the negative 3 meter-kelvin?",
+    "oracle_value": 2.898,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p019",
+    "claim_text": "What is the Bohr radius in units of 10 to the negative 11 meters?",
+    "oracle_value": 5.292,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p020",
+    "claim_text": "What is the rest mass of the proton in MeV?",
+    "oracle_value": 938.272,
+    "oracle_unit": "",
+    "source": "PDG",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p021",
+    "claim_text": "What is the rest mass of the neutron in MeV?",
+    "oracle_value": 939.565,
+    "oracle_unit": "",
+    "source": "PDG",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p022",
+    "claim_text": "What is the rest mass of the electron in MeV?",
+    "oracle_value": 0.511,
+    "oracle_unit": "",
+    "source": "PDG",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p023",
+    "claim_text": "What is the rest mass of the muon in MeV?",
+    "oracle_value": 105.658,
+    "oracle_unit": "",
+    "source": "PDG",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p024",
+    "claim_text": "What is the mass of the Z boson in GeV?",
+    "oracle_value": 91.188,
+    "oracle_unit": "",
+    "source": "PDG",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p025",
+    "claim_text": "What is the mass of the top quark in GeV?",
+    "oracle_value": 172.69,
+    "oracle_unit": "",
+    "source": "PDG",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p026",
+    "claim_text": "What is the mass of the charged pion in MeV?",
+    "oracle_value": 139.57,
+    "oracle_unit": "",
+    "source": "PDG",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p027",
+    "claim_text": "What is the mass of the charged kaon in MeV?",
+    "oracle_value": 493.68,
+    "oracle_unit": "",
+    "source": "PDG",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p028",
+    "claim_text": "What is the charge radius of the proton in femtometers?",
+    "oracle_value": 0.841,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p029",
+    "claim_text": "What is the gravitational constant in units of 10 to the negative 11 cubic meters per kilogram per second squared?",
+    "oracle_value": 6.674,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p030",
+    "claim_text": "What is standard gravity in meters per second squared?",
+    "oracle_value": 9.80665,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p031",
+    "claim_text": "What is the density of water at 4 degrees Celsius in grams per cubic centimeter?",
+    "oracle_value": 1.0,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p032",
+    "claim_text": "What is the refractive index of water?",
+    "oracle_value": 1.333,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p033",
+    "claim_text": "What is the speed of light in a vacuum in units of 10 to the 8 meters per second?",
+    "oracle_value": 3.0,
+    "oracle_unit": "",
+    "source": "CODATA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p034",
+    "claim_text": "What is the melting point of tungsten in degrees Celsius?",
+    "oracle_value": 3422,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p035",
+    "claim_text": "What is the boiling point of liquid nitrogen in degrees Celsius?",
+    "oracle_value": -195.8,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p036",
+    "claim_text": "What is the boiling point of liquid helium in kelvin?",
+    "oracle_value": 4.22,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p037",
+    "claim_text": "What is the density of mercury in grams per cubic centimeter?",
+    "oracle_value": 13.53,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p038",
+    "claim_text": "What is the speed of sound in water in meters per second?",
+    "oracle_value": 1481,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p039",
+    "claim_text": "What is the mean lifetime of the neutron in minutes?",
+    "oracle_value": 14.6,
+    "oracle_unit": "",
+    "source": "PDG",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p040",
+    "claim_text": "What is the acceleration due to gravity on the Moon in meters per second squared?",
+    "oracle_value": 1.62,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p041",
+    "claim_text": "What is the Earth's mean radius in kilometers?",
+    "oracle_value": 6371,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p042",
+    "claim_text": "What is the mass of the Earth in units of 10 to the 24 kilograms?",
+    "oracle_value": 5.972,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p043",
+    "claim_text": "What is the mass of the Sun in units of 10 to the 30 kilograms?",
+    "oracle_value": 1.989,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p044",
+    "claim_text": "What is the distance from the Earth to the Sun in units of 10 to the 6 kilometers?",
+    "oracle_value": 149.6,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-p045",
+    "claim_text": "What is the distance from the Earth to the Moon in kilometers?",
+    "oracle_value": 384400,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "physics"
+  },
+  {
+    "id": "hard-a001",
+    "claim_text": "What is the distance to Proxima Centauri in light-years?",
+    "oracle_value": 4.246,
+    "oracle_unit": "",
+    "source": "Wikipedia:Proxima_Centauri",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a002",
+    "claim_text": "What is the distance to Sirius in light-years?",
+    "oracle_value": 8.6,
+    "oracle_unit": "",
+    "source": "Wikipedia:Sirius",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a003",
+    "claim_text": "What is the distance to the Andromeda Galaxy in million light-years?",
+    "oracle_value": 2.537,
+    "oracle_unit": "",
+    "source": "Wikipedia:Andromeda_Galaxy",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a004",
+    "claim_text": "What is the orbital period of Mars in days?",
+    "oracle_value": 687,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a005",
+    "claim_text": "What is the orbital period of Jupiter in years?",
+    "oracle_value": 11.86,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a006",
+    "claim_text": "What is the orbital period of Saturn in years?",
+    "oracle_value": 29.4,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a007",
+    "claim_text": "What is the orbital period of Uranus in years?",
+    "oracle_value": 84,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a008",
+    "claim_text": "What is the orbital period of Neptune in years?",
+    "oracle_value": 164.8,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a009",
+    "claim_text": "What is the orbital period of Mercury in days?",
+    "oracle_value": 88,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a010",
+    "claim_text": "What is the orbital period of Venus in days?",
+    "oracle_value": 224.7,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a011",
+    "claim_text": "What is the semi-major axis of Mars's orbit in astronomical units?",
+    "oracle_value": 1.524,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a012",
+    "claim_text": "What is the semi-major axis of Jupiter's orbit in astronomical units?",
+    "oracle_value": 5.2,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a013",
+    "claim_text": "What is the semi-major axis of Saturn's orbit in astronomical units?",
+    "oracle_value": 9.58,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a014",
+    "claim_text": "What is the semi-major axis of Neptune's orbit in astronomical units?",
+    "oracle_value": 30.07,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a015",
+    "claim_text": "What is the axial tilt of the Earth in degrees?",
+    "oracle_value": 23.44,
+    "oracle_unit": "",
+    "source": "Wikipedia:Axial_tilt",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a016",
+    "claim_text": "What is the orbital period of the Moon around the Earth in days?",
+    "oracle_value": 27.3,
+    "oracle_unit": "",
+    "source": "Wikipedia:Moon",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a017",
+    "claim_text": "What is the diameter of the Moon in kilometers?",
+    "oracle_value": 3474.8,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a018",
+    "claim_text": "What is the surface temperature of the Sun in kelvin?",
+    "oracle_value": 5772,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a019",
+    "claim_text": "What is the orbital speed of the Earth around the Sun in kilometers per second?",
+    "oracle_value": 29.78,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a020",
+    "claim_text": "What is the escape velocity from Earth in kilometers per second?",
+    "oracle_value": 11.19,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a021",
+    "claim_text": "What is the escape velocity from the Moon in kilometers per second?",
+    "oracle_value": 2.38,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a022",
+    "claim_text": "What is the orbital period of Pluto in years?",
+    "oracle_value": 248,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a023",
+    "claim_text": "What is the semi-major axis of Pluto's orbit in astronomical units?",
+    "oracle_value": 39.5,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a024",
+    "claim_text": "What is the diameter of Mars in kilometers?",
+    "oracle_value": 6779,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a025",
+    "claim_text": "What is the diameter of Venus in kilometers?",
+    "oracle_value": 12104,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a026",
+    "claim_text": "What is the diameter of Jupiter in kilometers?",
+    "oracle_value": 139820,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a027",
+    "claim_text": "What is the diameter of Neptune in kilometers?",
+    "oracle_value": 49244,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a028",
+    "claim_text": "What is the diameter of the Sun in kilometers?",
+    "oracle_value": 1391400,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a029",
+    "claim_text": "How many moons does Mars have?",
+    "oracle_value": 2,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a030",
+    "claim_text": "What is the rotation period of Jupiter in hours?",
+    "oracle_value": 9.9,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a031",
+    "claim_text": "What is the rotation period of Venus in Earth days?",
+    "oracle_value": 243,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a032",
+    "claim_text": "What is the number of confirmed moons of Jupiter as of 2023?",
+    "oracle_value": 95,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a033",
+    "claim_text": "What is the number of confirmed moons of Saturn as of 2023?",
+    "oracle_value": 146,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a034",
+    "claim_text": "What is the age of the universe in billion years?",
+    "oracle_value": 13.8,
+    "oracle_unit": "",
+    "source": "Planck_Collaboration",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a035",
+    "claim_text": "What is the Hubble constant in kilometers per second per megaparsec?",
+    "oracle_value": 67.4,
+    "oracle_unit": "",
+    "source": "Planck_Collaboration",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a036",
+    "claim_text": "What is the apparent visual magnitude of Sirius?",
+    "oracle_value": -1.46,
+    "oracle_unit": "",
+    "source": "Wikipedia:Sirius",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a037",
+    "claim_text": "What is the absolute magnitude of the Sun?",
+    "oracle_value": 4.83,
+    "oracle_unit": "",
+    "source": "Wikipedia:Sun",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a038",
+    "claim_text": "What is the number of light-years in one parsec?",
+    "oracle_value": 3.26,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a039",
+    "claim_text": "What is the diameter of the Milky Way in thousand light-years?",
+    "oracle_value": 100,
+    "oracle_unit": "",
+    "source": "Wikipedia:Milky_Way",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a041",
+    "claim_text": "What is the surface gravity of Mars in meters per second squared?",
+    "oracle_value": 3.71,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a042",
+    "claim_text": "What is the surface gravity of Jupiter in meters per second squared?",
+    "oracle_value": 24.79,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a043",
+    "claim_text": "What is the orbital inclination of the Moon's orbit to the ecliptic in degrees?",
+    "oracle_value": 5.14,
+    "oracle_unit": "",
+    "source": "Wikipedia:Moon",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a044",
+    "claim_text": "What is the temperature of the cosmic microwave background in kelvin?",
+    "oracle_value": 2.725,
+    "oracle_unit": "",
+    "source": "COBE",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a045",
+    "claim_text": "What is the number of officially recognized constellations?",
+    "oracle_value": 88,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a046",
+    "claim_text": "What is the mass of Jupiter in units of 10 to the 27 kilograms?",
+    "oracle_value": 1.898,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a047",
+    "claim_text": "What is the mass of Saturn in units of 10 to the 26 kilograms?",
+    "oracle_value": 5.683,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a048",
+    "claim_text": "What is the mass of the Moon in units of 10 to the 22 kilograms?",
+    "oracle_value": 7.342,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a049",
+    "claim_text": "What is the distance from the Sun to the center of the Milky Way in thousand light-years?",
+    "oracle_value": 26,
+    "oracle_unit": "",
+    "source": "Wikipedia:Milky_Way",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a050",
+    "claim_text": "What is the number of planets in the Solar System?",
+    "oracle_value": 8,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a051",
+    "claim_text": "What is the orbital period of Halley's Comet in years?",
+    "oracle_value": 76,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a052",
+    "claim_text": "What is the mean surface temperature of Mars in degrees Celsius?",
+    "oracle_value": -63,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a053",
+    "claim_text": "What is the mean surface temperature of Venus in degrees Celsius?",
+    "oracle_value": 464,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a054",
+    "claim_text": "What is the mass of the black hole at the center of the Milky Way in units of 10 to the 6 solar masses?",
+    "oracle_value": 4.15,
+    "oracle_unit": "",
+    "source": "ESO",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a055",
+    "claim_text": "What is the length of a light-year in units of 10 to the 12 kilometers?",
+    "oracle_value": 9.461,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a056",
+    "claim_text": "What is the eccentricity of Earth's orbit?",
+    "oracle_value": 0.0167,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a057",
+    "claim_text": "What is the number of days in a leap year?",
+    "oracle_value": 366,
+    "oracle_unit": "",
+    "source": "calendar",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a058",
+    "claim_text": "What is the mean distance from the Sun to Mercury in million kilometers?",
+    "oracle_value": 57.9,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a059",
+    "claim_text": "What is the mean distance from the Sun to Saturn in million kilometers?",
+    "oracle_value": 1434,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a060",
+    "claim_text": "What is the diameter of Mercury in kilometers?",
+    "oracle_value": 4879,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a061",
+    "claim_text": "What is the diameter of Uranus in kilometers?",
+    "oracle_value": 50724,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a062",
+    "claim_text": "What is the diameter of Saturn in kilometers?",
+    "oracle_value": 116460,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a063",
+    "claim_text": "What is the number of official dwarf planets recognized by the IAU?",
+    "oracle_value": 5,
+    "oracle_unit": "",
+    "source": "IAU",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a064",
+    "claim_text": "What is the distance to the Large Magellanic Cloud in thousand light-years?",
+    "oracle_value": 163,
+    "oracle_unit": "",
+    "source": "Wikipedia:Large_Magellanic_Cloud",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a065",
+    "claim_text": "What is the apparent visual magnitude of Venus at its brightest?",
+    "oracle_value": -4.92,
+    "oracle_unit": "",
+    "source": "Wikipedia:Venus",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a066",
+    "claim_text": "What is the number of times the Moon's diameter fits in the distance to the Moon?",
+    "oracle_value": 110,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a067",
+    "claim_text": "What is the orbital period of the International Space Station in minutes?",
+    "oracle_value": 92.9,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a070",
+    "claim_text": "What is the temperature at the core of the Sun in million kelvin?",
+    "oracle_value": 15.7,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a071",
+    "claim_text": "What is the mass of Pluto in units of 10 to the 22 kilograms?",
+    "oracle_value": 1.303,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a072",
+    "claim_text": "What is the diameter of Ceres in kilometers?",
+    "oracle_value": 940,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a073",
+    "claim_text": "What is the number of Earth days in one solar day on Mercury?",
+    "oracle_value": 176,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a074",
+    "claim_text": "What is the mean density of Saturn in grams per cubic centimeter?",
+    "oracle_value": 0.687,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-a075",
+    "claim_text": "What is the number of moons of Uranus (as of 2024)?",
+    "oracle_value": 28,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "astronomy"
+  },
+  {
+    "id": "hard-c001",
+    "claim_text": "What is the atomic number of gold?",
+    "oracle_value": 79,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c002",
+    "claim_text": "What is the atomic number of uranium?",
+    "oracle_value": 92,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c003",
+    "claim_text": "What is the atomic number of lead?",
+    "oracle_value": 82,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c004",
+    "claim_text": "What is the atomic number of tungsten?",
+    "oracle_value": 74,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c005",
+    "claim_text": "What is the atomic number of mercury?",
+    "oracle_value": 80,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c006",
+    "claim_text": "What is the atomic weight of carbon in atomic mass units?",
+    "oracle_value": 12.011,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c007",
+    "claim_text": "What is the atomic weight of iron in atomic mass units?",
+    "oracle_value": 55.845,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c008",
+    "claim_text": "What is the atomic weight of gold in atomic mass units?",
+    "oracle_value": 196.97,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c009",
+    "claim_text": "What is the atomic weight of oxygen in atomic mass units?",
+    "oracle_value": 15.999,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c010",
+    "claim_text": "What is the atomic weight of uranium in atomic mass units?",
+    "oracle_value": 238.03,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c011",
+    "claim_text": "What is the melting point of iron in degrees Celsius?",
+    "oracle_value": 1538,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c012",
+    "claim_text": "What is the melting point of gold in degrees Celsius?",
+    "oracle_value": 1064,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c013",
+    "claim_text": "What is the melting point of silver in degrees Celsius?",
+    "oracle_value": 961.8,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c014",
+    "claim_text": "What is the melting point of copper in degrees Celsius?",
+    "oracle_value": 1085,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c015",
+    "claim_text": "What is the melting point of lead in degrees Celsius?",
+    "oracle_value": 327.5,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c016",
+    "claim_text": "What is the melting point of aluminum in degrees Celsius?",
+    "oracle_value": 660.3,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c017",
+    "claim_text": "What is the boiling point of gold in degrees Celsius?",
+    "oracle_value": 2856,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c018",
+    "claim_text": "What is the boiling point of iron in degrees Celsius?",
+    "oracle_value": 2861,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c019",
+    "claim_text": "What is the density of gold in grams per cubic centimeter?",
+    "oracle_value": 19.3,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c020",
+    "claim_text": "What is the density of iron in grams per cubic centimeter?",
+    "oracle_value": 7.87,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c021",
+    "claim_text": "What is the density of aluminum in grams per cubic centimeter?",
+    "oracle_value": 2.7,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c022",
+    "claim_text": "What is the density of lead in grams per cubic centimeter?",
+    "oracle_value": 11.34,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c023",
+    "claim_text": "What is the density of copper in grams per cubic centimeter?",
+    "oracle_value": 8.96,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c024",
+    "claim_text": "What is the half-life of carbon-14 in years?",
+    "oracle_value": 5730,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c025",
+    "claim_text": "What is the half-life of uranium-238 in billion years?",
+    "oracle_value": 4.468,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c026",
+    "claim_text": "What is the half-life of uranium-235 in million years?",
+    "oracle_value": 704,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c027",
+    "claim_text": "What is the half-life of potassium-40 in billion years?",
+    "oracle_value": 1.25,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c028",
+    "claim_text": "What is the half-life of iodine-131 in days?",
+    "oracle_value": 8.02,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c029",
+    "claim_text": "What is the half-life of cesium-137 in years?",
+    "oracle_value": 30.2,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c030",
+    "claim_text": "What is the half-life of plutonium-239 in years?",
+    "oracle_value": 24110,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c031",
+    "claim_text": "What is the half-life of tritium in years?",
+    "oracle_value": 12.32,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c032",
+    "claim_text": "What is the half-life of cobalt-60 in years?",
+    "oracle_value": 5.27,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c033",
+    "claim_text": "What is the half-life of radium-226 in years?",
+    "oracle_value": 1600,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c034",
+    "claim_text": "What is the bond dissociation energy of the hydrogen-hydrogen bond in kilojoules per mole?",
+    "oracle_value": 436,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c035",
+    "claim_text": "What is the bond dissociation energy of the oxygen-oxygen double bond in kilojoules per mole?",
+    "oracle_value": 498,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c036",
+    "claim_text": "What is the bond dissociation energy of the nitrogen-nitrogen triple bond in kilojoules per mole?",
+    "oracle_value": 945,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c037",
+    "claim_text": "What is the bond dissociation energy of a carbon-carbon single bond in kilojoules per mole?",
+    "oracle_value": 347,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c038",
+    "claim_text": "What is the bond dissociation energy of a carbon-carbon double bond in kilojoules per mole?",
+    "oracle_value": 614,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c039",
+    "claim_text": "What is the bond dissociation energy of a carbon-carbon triple bond in kilojoules per mole?",
+    "oracle_value": 839,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c040",
+    "claim_text": "What is the bond dissociation energy of a carbon-hydrogen bond in kilojoules per mole?",
+    "oracle_value": 413,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c041",
+    "claim_text": "What is the bond dissociation energy of an oxygen-hydrogen bond in kilojoules per mole?",
+    "oracle_value": 463,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c042",
+    "claim_text": "What is the pH of a neutral aqueous solution at 25 degrees Celsius?",
+    "oracle_value": 7,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c043",
+    "claim_text": "What is the atomic number of carbon?",
+    "oracle_value": 6,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c044",
+    "claim_text": "What is the atomic number of oxygen?",
+    "oracle_value": 8,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c045",
+    "claim_text": "What is the atomic number of iron?",
+    "oracle_value": 26,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c046",
+    "claim_text": "What is the atomic number of copper?",
+    "oracle_value": 29,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c047",
+    "claim_text": "What is the atomic number of silver?",
+    "oracle_value": 47,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c048",
+    "claim_text": "What is the atomic number of platinum?",
+    "oracle_value": 78,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c049",
+    "claim_text": "What is the boiling point of water in degrees Fahrenheit?",
+    "oracle_value": 212,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c050",
+    "claim_text": "What is the freezing point of water in degrees Fahrenheit?",
+    "oracle_value": 32,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c051",
+    "claim_text": "What is the density of ethanol in grams per cubic centimeter?",
+    "oracle_value": 0.789,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c052",
+    "claim_text": "What is the molar mass of water in grams per mole?",
+    "oracle_value": 18.015,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c053",
+    "claim_text": "What is the molar mass of carbon dioxide in grams per mole?",
+    "oracle_value": 44.01,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c054",
+    "claim_text": "What is the molar mass of sodium chloride in grams per mole?",
+    "oracle_value": 58.44,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c055",
+    "claim_text": "What is the molar mass of sulfuric acid in grams per mole?",
+    "oracle_value": 98.08,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c056",
+    "claim_text": "What is the boiling point of ethanol in degrees Celsius?",
+    "oracle_value": 78.37,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c057",
+    "claim_text": "What is the melting point of ice in degrees Celsius?",
+    "oracle_value": 0,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c058",
+    "claim_text": "What is the density of diamond in grams per cubic centimeter?",
+    "oracle_value": 3.51,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c059",
+    "claim_text": "What is the number of protons in a helium nucleus?",
+    "oracle_value": 2,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c060",
+    "claim_text": "What is the atomic number of sodium?",
+    "oracle_value": 11,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c061",
+    "claim_text": "What is the atomic number of chlorine?",
+    "oracle_value": 17,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c062",
+    "claim_text": "What is the atomic number of potassium?",
+    "oracle_value": 19,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c063",
+    "claim_text": "What is the atomic number of calcium?",
+    "oracle_value": 20,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c064",
+    "claim_text": "What is the atomic number of iodine?",
+    "oracle_value": 53,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c065",
+    "claim_text": "What is the atomic weight of hydrogen in atomic mass units?",
+    "oracle_value": 1.008,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c066",
+    "claim_text": "What is the atomic weight of nitrogen in atomic mass units?",
+    "oracle_value": 14.007,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c067",
+    "claim_text": "What is the atomic weight of sodium in atomic mass units?",
+    "oracle_value": 22.99,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c068",
+    "claim_text": "What is the atomic weight of chlorine in atomic mass units?",
+    "oracle_value": 35.45,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c069",
+    "claim_text": "What is the density of sea water in grams per cubic centimeter?",
+    "oracle_value": 1.025,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c070",
+    "claim_text": "What is the number of neutrons in the most common isotope of carbon?",
+    "oracle_value": 6,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c071",
+    "claim_text": "What is the number of neutrons in the most common isotope of uranium?",
+    "oracle_value": 146,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c072",
+    "claim_text": "What is the half-life of radon-222 in days?",
+    "oracle_value": 3.82,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c073",
+    "claim_text": "What is the half-life of technetium-99m in hours?",
+    "oracle_value": 6.01,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c074",
+    "claim_text": "What is the melting point of titanium in degrees Celsius?",
+    "oracle_value": 1668,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-c075",
+    "claim_text": "What is the density of titanium in grams per cubic centimeter?",
+    "oracle_value": 4.51,
+    "oracle_unit": "",
+    "source": "CRC",
+    "domain": "chemistry"
+  },
+  {
+    "id": "hard-g001",
+    "claim_text": "What is the height of Mount Everest in meters?",
+    "oracle_value": 8848.86,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mount_Everest",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g002",
+    "claim_text": "What is the height of K2 in meters?",
+    "oracle_value": 8611,
+    "oracle_unit": "",
+    "source": "Wikipedia:K2",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g003",
+    "claim_text": "What is the height of Kangchenjunga in meters?",
+    "oracle_value": 8586,
+    "oracle_unit": "",
+    "source": "Wikipedia:Kangchenjunga",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g004",
+    "claim_text": "What is the height of Lhotse in meters?",
+    "oracle_value": 8516,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lhotse",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g005",
+    "claim_text": "What is the height of Makalu in meters?",
+    "oracle_value": 8485,
+    "oracle_unit": "",
+    "source": "Wikipedia:Makalu",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g006",
+    "claim_text": "What is the height of Cho Oyu in meters?",
+    "oracle_value": 8188,
+    "oracle_unit": "",
+    "source": "Wikipedia:Cho_Oyu",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g007",
+    "claim_text": "What is the height of Dhaulagiri in meters?",
+    "oracle_value": 8167,
+    "oracle_unit": "",
+    "source": "Wikipedia:Dhaulagiri",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g008",
+    "claim_text": "What is the height of Manaslu in meters?",
+    "oracle_value": 8163,
+    "oracle_unit": "",
+    "source": "Wikipedia:Manaslu",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g009",
+    "claim_text": "What is the height of Nanga Parbat in meters?",
+    "oracle_value": 8126,
+    "oracle_unit": "",
+    "source": "Wikipedia:Nanga_Parbat",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g010",
+    "claim_text": "What is the height of Annapurna I in meters?",
+    "oracle_value": 8091,
+    "oracle_unit": "",
+    "source": "Wikipedia:Annapurna",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g011",
+    "claim_text": "What is the height of Mont Blanc in meters?",
+    "oracle_value": 4808,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mont_Blanc",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g012",
+    "claim_text": "What is the height of the Matterhorn in meters?",
+    "oracle_value": 4478,
+    "oracle_unit": "",
+    "source": "Wikipedia:Matterhorn",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g013",
+    "claim_text": "What is the height of Mount Kilimanjaro in meters?",
+    "oracle_value": 5895,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mount_Kilimanjaro",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g014",
+    "claim_text": "What is the height of Denali in meters?",
+    "oracle_value": 6190,
+    "oracle_unit": "",
+    "source": "Wikipedia:Denali",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g015",
+    "claim_text": "What is the height of Aconcagua in meters?",
+    "oracle_value": 6961,
+    "oracle_unit": "",
+    "source": "Wikipedia:Aconcagua",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g016",
+    "claim_text": "What is the height of Mount Elbrus in meters?",
+    "oracle_value": 5642,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mount_Elbrus",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g017",
+    "claim_text": "What is the height of Mount Vinson in meters?",
+    "oracle_value": 4892,
+    "oracle_unit": "",
+    "source": "Wikipedia:Vinson_Massif",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g018",
+    "claim_text": "What is the height of Mount Fuji in meters?",
+    "oracle_value": 3776,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mount_Fuji",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g019",
+    "claim_text": "What is the maximum depth of Lake Baikal in meters?",
+    "oracle_value": 1642,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Baikal",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g020",
+    "claim_text": "What is the surface area of Lake Baikal in square kilometers?",
+    "oracle_value": 31722,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Baikal",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g021",
+    "claim_text": "What is the maximum depth of Lake Tanganyika in meters?",
+    "oracle_value": 1470,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Tanganyika",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g022",
+    "claim_text": "What is the surface area of the Caspian Sea in square kilometers?",
+    "oracle_value": 371000,
+    "oracle_unit": "",
+    "source": "Wikipedia:Caspian_Sea",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g023",
+    "claim_text": "What is the surface area of Lake Superior in square kilometers?",
+    "oracle_value": 82103,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Superior",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g024",
+    "claim_text": "What is the surface area of Lake Victoria in square kilometers?",
+    "oracle_value": 68800,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Victoria",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g025",
+    "claim_text": "What is the surface area of Lake Michigan in square kilometers?",
+    "oracle_value": 58000,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Michigan",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g026",
+    "claim_text": "What is the surface area of Lake Huron in square kilometers?",
+    "oracle_value": 59600,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Huron",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g027",
+    "claim_text": "What is the surface area of Lake Erie in square kilometers?",
+    "oracle_value": 25667,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Erie",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g028",
+    "claim_text": "What is the surface area of Lake Ontario in square kilometers?",
+    "oracle_value": 18960,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Ontario",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g031",
+    "claim_text": "What is the area of the Sahara Desert in million square kilometers?",
+    "oracle_value": 9.2,
+    "oracle_unit": "",
+    "source": "Wikipedia:Sahara",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g032",
+    "claim_text": "What is the area of the Amazon rainforest in million square kilometers?",
+    "oracle_value": 5.5,
+    "oracle_unit": "",
+    "source": "Wikipedia:Amazon_rainforest",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g033",
+    "claim_text": "What is the area of the Pacific Ocean in million square kilometers?",
+    "oracle_value": 165.25,
+    "oracle_unit": "",
+    "source": "Wikipedia:Pacific_Ocean",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g034",
+    "claim_text": "What is the area of the Atlantic Ocean in million square kilometers?",
+    "oracle_value": 106.4,
+    "oracle_unit": "",
+    "source": "Wikipedia:Atlantic_Ocean",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g035",
+    "claim_text": "What is the area of the Indian Ocean in million square kilometers?",
+    "oracle_value": 70.56,
+    "oracle_unit": "",
+    "source": "Wikipedia:Indian_Ocean",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g036",
+    "claim_text": "What is the area of the Arctic Ocean in million square kilometers?",
+    "oracle_value": 14.06,
+    "oracle_unit": "",
+    "source": "Wikipedia:Arctic_Ocean",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g037",
+    "claim_text": "What is the length of the Nile in kilometers?",
+    "oracle_value": 6650,
+    "oracle_unit": "",
+    "source": "Wikipedia:Nile",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g038",
+    "claim_text": "What is the length of the Amazon River in kilometers?",
+    "oracle_value": 6400,
+    "oracle_unit": "",
+    "source": "Wikipedia:Amazon_River",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g039",
+    "claim_text": "What is the length of the Mississippi River in kilometers?",
+    "oracle_value": 3766,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mississippi_River",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g040",
+    "claim_text": "What is the length of the Yangtze River in kilometers?",
+    "oracle_value": 6300,
+    "oracle_unit": "",
+    "source": "Wikipedia:Yangtze",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g041",
+    "claim_text": "What is the height of Niagara Falls in meters?",
+    "oracle_value": 51,
+    "oracle_unit": "",
+    "source": "Wikipedia:Niagara_Falls",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g042",
+    "claim_text": "What is the height of Angel Falls in meters?",
+    "oracle_value": 979,
+    "oracle_unit": "",
+    "source": "Wikipedia:Angel_Falls",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g043",
+    "claim_text": "What is the area of Australia in million square kilometers?",
+    "oracle_value": 7.69,
+    "oracle_unit": "",
+    "source": "Wikipedia:Australia",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g044",
+    "claim_text": "What is the area of the United States in million square kilometers?",
+    "oracle_value": 9.83,
+    "oracle_unit": "",
+    "source": "Wikipedia:United_States",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g045",
+    "claim_text": "What is the area of Canada in million square kilometers?",
+    "oracle_value": 9.98,
+    "oracle_unit": "",
+    "source": "Wikipedia:Canada",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g046",
+    "claim_text": "What is the area of Russia in million square kilometers?",
+    "oracle_value": 17.1,
+    "oracle_unit": "",
+    "source": "Wikipedia:Russia",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g047",
+    "claim_text": "What is the area of China in million square kilometers?",
+    "oracle_value": 9.6,
+    "oracle_unit": "",
+    "source": "Wikipedia:China",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g048",
+    "claim_text": "What is the area of India in million square kilometers?",
+    "oracle_value": 3.29,
+    "oracle_unit": "",
+    "source": "Wikipedia:India",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g049",
+    "claim_text": "What is the length of the Great Wall of China in kilometers?",
+    "oracle_value": 21196,
+    "oracle_unit": "",
+    "source": "Wikipedia:Great_Wall_of_China",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g050",
+    "claim_text": "What is the area of Greenland in million square kilometers?",
+    "oracle_value": 2.17,
+    "oracle_unit": "",
+    "source": "Wikipedia:Greenland",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g051",
+    "claim_text": "What is the highest point in Africa in meters (Mount Kilimanjaro)?",
+    "oracle_value": 5895,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mount_Kilimanjaro",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g052",
+    "claim_text": "What is the highest point in Europe in meters (Mount Elbrus)?",
+    "oracle_value": 5642,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mount_Elbrus",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g054",
+    "claim_text": "What is the area of the Mediterranean Sea in million square kilometers?",
+    "oracle_value": 2.5,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mediterranean_Sea",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g055",
+    "claim_text": "What is the maximum depth of the Mediterranean Sea in meters?",
+    "oracle_value": 5267,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mediterranean_Sea",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g056",
+    "claim_text": "What is the width of the Strait of Gibraltar at its narrowest point in kilometers?",
+    "oracle_value": 14.3,
+    "oracle_unit": "",
+    "source": "Wikipedia:Strait_of_Gibraltar",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g058",
+    "claim_text": "What is the height of Mount Vesuvius in meters?",
+    "oracle_value": 1281,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mount_Vesuvius",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g059",
+    "claim_text": "What is the area of Lake Titicaca in square kilometers?",
+    "oracle_value": 8372,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Titicaca",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g060",
+    "claim_text": "What is the maximum depth of Lake Superior in meters?",
+    "oracle_value": 406,
+    "oracle_unit": "",
+    "source": "Wikipedia:Lake_Superior",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g061",
+    "claim_text": "What is the height of the Burj Khalifa in meters?",
+    "oracle_value": 828,
+    "oracle_unit": "",
+    "source": "Wikipedia:Burj_Khalifa",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g062",
+    "claim_text": "What is the height of the Eiffel Tower in meters?",
+    "oracle_value": 330,
+    "oracle_unit": "",
+    "source": "Wikipedia:Eiffel_Tower",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g063",
+    "claim_text": "What is the height of the Empire State Building in meters?",
+    "oracle_value": 443.2,
+    "oracle_unit": "",
+    "source": "Wikipedia:Empire_State_Building",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g064",
+    "claim_text": "What is the number of floors in the Burj Khalifa?",
+    "oracle_value": 163,
+    "oracle_unit": "",
+    "source": "Wikipedia:Burj_Khalifa",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g065",
+    "claim_text": "What is the area of the Gobi Desert in million square kilometers?",
+    "oracle_value": 1.3,
+    "oracle_unit": "",
+    "source": "Wikipedia:Gobi_Desert",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g066",
+    "claim_text": "What is the elevation of Mexico City in meters?",
+    "oracle_value": 2240,
+    "oracle_unit": "",
+    "source": "Wikipedia:Mexico_City",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g067",
+    "claim_text": "What is the elevation of La Paz in meters?",
+    "oracle_value": 3640,
+    "oracle_unit": "",
+    "source": "Wikipedia:La_Paz",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g068",
+    "claim_text": "What is the elevation of Denver in meters?",
+    "oracle_value": 1609,
+    "oracle_unit": "",
+    "source": "Wikipedia:Denver",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g069",
+    "claim_text": "What is the maximum depth of the Caspian Sea in meters?",
+    "oracle_value": 1025,
+    "oracle_unit": "",
+    "source": "Wikipedia:Caspian_Sea",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g070",
+    "claim_text": "What is the number of countries in Africa?",
+    "oracle_value": 54,
+    "oracle_unit": "",
+    "source": "Wikipedia:Africa",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g071",
+    "claim_text": "What is the number of countries in South America?",
+    "oracle_value": 12,
+    "oracle_unit": "",
+    "source": "Wikipedia:South_America",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g072",
+    "claim_text": "What is the number of time zones in Russia?",
+    "oracle_value": 11,
+    "oracle_unit": "",
+    "source": "Wikipedia:Time_in_Russia",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g073",
+    "claim_text": "What is the length of the equator in kilometers?",
+    "oracle_value": 40075,
+    "oracle_unit": "",
+    "source": "Wikipedia:Equator",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g074",
+    "claim_text": "What is the circumference of the Earth in kilometers?",
+    "oracle_value": 40075,
+    "oracle_unit": "",
+    "source": "Wikipedia:Earth",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-g075",
+    "claim_text": "What is the area of Antarctica in million square kilometers?",
+    "oracle_value": 14.2,
+    "oracle_unit": "",
+    "source": "Wikipedia:Antarctica",
+    "domain": "geography"
+  },
+  {
+    "id": "hard-h001",
+    "claim_text": "In what year did the Western Roman Empire fall?",
+    "oracle_value": 476,
+    "oracle_unit": "",
+    "source": "Wikipedia:Fall_of_the_Western_Roman_Empire",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h002",
+    "claim_text": "In what year did Constantinople fall to the Ottomans?",
+    "oracle_value": 1453,
+    "oracle_unit": "",
+    "source": "Wikipedia:Fall_of_Constantinople",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h003",
+    "claim_text": "In what year was the Magna Carta sealed?",
+    "oracle_value": 1215,
+    "oracle_unit": "",
+    "source": "Wikipedia:Magna_Carta",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h004",
+    "claim_text": "In what year did Christopher Columbus first reach the Americas?",
+    "oracle_value": 1492,
+    "oracle_unit": "",
+    "source": "Wikipedia:Christopher_Columbus",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h005",
+    "claim_text": "In what year was the United States Declaration of Independence adopted?",
+    "oracle_value": 1776,
+    "oracle_unit": "",
+    "source": "Wikipedia:United_States_Declaration_of_Independence",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h006",
+    "claim_text": "In what year did the French Revolution begin?",
+    "oracle_value": 1789,
+    "oracle_unit": "",
+    "source": "Wikipedia:French_Revolution",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h007",
+    "claim_text": "In what year did the Battle of Waterloo take place?",
+    "oracle_value": 1815,
+    "oracle_unit": "",
+    "source": "Wikipedia:Battle_of_Waterloo",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h008",
+    "claim_text": "In what year did World War I begin?",
+    "oracle_value": 1914,
+    "oracle_unit": "",
+    "source": "Wikipedia:World_War_I",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h009",
+    "claim_text": "In what year did World War I end?",
+    "oracle_value": 1918,
+    "oracle_unit": "",
+    "source": "Wikipedia:World_War_I",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h010",
+    "claim_text": "In what year did World War II begin in Europe?",
+    "oracle_value": 1939,
+    "oracle_unit": "",
+    "source": "Wikipedia:World_War_II",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h011",
+    "claim_text": "In what year did the attack on Pearl Harbor occur?",
+    "oracle_value": 1941,
+    "oracle_unit": "",
+    "source": "Wikipedia:Attack_on_Pearl_Harbor",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h012",
+    "claim_text": "In what year did the D-Day landings occur?",
+    "oracle_value": 1944,
+    "oracle_unit": "",
+    "source": "Wikipedia:Normandy_landings",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h013",
+    "claim_text": "In what year was the first atomic bomb dropped on Hiroshima?",
+    "oracle_value": 1945,
+    "oracle_unit": "",
+    "source": "Wikipedia:Atomic_bombings_of_Hiroshima_and_Nagasaki",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h014",
+    "claim_text": "In what year did the Korean War begin?",
+    "oracle_value": 1950,
+    "oracle_unit": "",
+    "source": "Wikipedia:Korean_War",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h015",
+    "claim_text": "In what year was Sputnik 1 launched?",
+    "oracle_value": 1957,
+    "oracle_unit": "",
+    "source": "Wikipedia:Sputnik_1",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h016",
+    "claim_text": "In what year did the Cuban Missile Crisis occur?",
+    "oracle_value": 1962,
+    "oracle_unit": "",
+    "source": "Wikipedia:Cuban_Missile_Crisis",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h017",
+    "claim_text": "In what year was John F. Kennedy assassinated?",
+    "oracle_value": 1963,
+    "oracle_unit": "",
+    "source": "Wikipedia:Assassination_of_John_F._Kennedy",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h018",
+    "claim_text": "In what year did the Soviet Union dissolve?",
+    "oracle_value": 1991,
+    "oracle_unit": "",
+    "source": "Wikipedia:Dissolution_of_the_Soviet_Union",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h019",
+    "claim_text": "In what year did the September 11 attacks occur?",
+    "oracle_value": 2001,
+    "oracle_unit": "",
+    "source": "Wikipedia:September_11_attacks",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h020",
+    "claim_text": "In what year was the printing press invented by Gutenberg?",
+    "oracle_value": 1440,
+    "oracle_unit": "",
+    "source": "Wikipedia:Printing_press",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h021",
+    "claim_text": "In what year did the American Civil War begin?",
+    "oracle_value": 1861,
+    "oracle_unit": "",
+    "source": "Wikipedia:American_Civil_War",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h022",
+    "claim_text": "In what year did the American Civil War end?",
+    "oracle_value": 1865,
+    "oracle_unit": "",
+    "source": "Wikipedia:American_Civil_War",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h023",
+    "claim_text": "In what year was the Declaration of the Rights of Man adopted in France?",
+    "oracle_value": 1789,
+    "oracle_unit": "",
+    "source": "Wikipedia:Declaration_of_the_Rights_of_Man_and_of_the_Citizen",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h024",
+    "claim_text": "In what year did the Black Death arrive in Europe?",
+    "oracle_value": 1347,
+    "oracle_unit": "",
+    "source": "Wikipedia:Black_Death",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h025",
+    "claim_text": "In what year was the first transcontinental railroad in the US completed?",
+    "oracle_value": 1869,
+    "oracle_unit": "",
+    "source": "Wikipedia:First_transcontinental_railroad",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h026",
+    "claim_text": "In what year did the Russian Revolution (October) take place?",
+    "oracle_value": 1917,
+    "oracle_unit": "",
+    "source": "Wikipedia:October_Revolution",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h027",
+    "claim_text": "In what year was the first successful human heart transplant performed?",
+    "oracle_value": 1967,
+    "oracle_unit": "",
+    "source": "Wikipedia:Heart_transplantation",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h028",
+    "claim_text": "In what year did the Titanic sink?",
+    "oracle_value": 1912,
+    "oracle_unit": "",
+    "source": "Wikipedia:Sinking_of_the_Titanic",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h029",
+    "claim_text": "In what year was the Great Pyramid of Giza completed (approximately)?",
+    "oracle_value": 2560,
+    "oracle_unit": "",
+    "source": "Wikipedia:Great_Pyramid_of_Giza",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h030",
+    "claim_text": "In what year did the Hundred Years' War end?",
+    "oracle_value": 1453,
+    "oracle_unit": "",
+    "source": "Wikipedia:Hundred_Years%27_War",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h031",
+    "claim_text": "In what year was the Berlin Wall built?",
+    "oracle_value": 1961,
+    "oracle_unit": "",
+    "source": "Wikipedia:Berlin_Wall",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h032",
+    "claim_text": "In what year did the Berlin Wall fall?",
+    "oracle_value": 1989,
+    "oracle_unit": "",
+    "source": "Wikipedia:Berlin_Wall",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h033",
     "claim_text": "In what year was the first iPhone released?",
-    "oracle_value": "2007",
+    "oracle_value": 2007,
     "oracle_unit": "",
-    "domain": "hard"
+    "source": "Wikipedia:IPhone",
+    "domain": "history"
   },
   {
-    "id": "md_h23",
-    "claim_text": "In what year was the first Android phone released?",
-    "oracle_value": "2008",
+    "id": "hard-h034",
+    "claim_text": "In what year was the World Wide Web invented?",
+    "oracle_value": 1989,
     "oracle_unit": "",
-    "domain": "hard"
+    "source": "Wikipedia:World_Wide_Web",
+    "domain": "history"
   },
   {
-    "id": "md_h24",
-    "claim_text": "In what year was Bitcoin created?",
-    "oracle_value": "2009",
+    "id": "hard-h035",
+    "claim_text": "In what year did the Wright brothers first fly?",
+    "oracle_value": 1903,
     "oracle_unit": "",
-    "domain": "hard"
+    "source": "Wikipedia:Wright_brothers",
+    "domain": "history"
   },
   {
-    "id": "md_h25",
+    "id": "hard-h036",
+    "claim_text": "In what year was the Emancipation Proclamation issued?",
+    "oracle_value": 1863,
+    "oracle_unit": "",
+    "source": "Wikipedia:Emancipation_Proclamation",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h037",
+    "claim_text": "In what year was the United Nations founded?",
+    "oracle_value": 1945,
+    "oracle_unit": "",
+    "source": "Wikipedia:United_Nations",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h038",
+    "claim_text": "In what year did the Chernobyl disaster occur?",
+    "oracle_value": 1986,
+    "oracle_unit": "",
+    "source": "Wikipedia:Chernobyl_disaster",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h039",
+    "claim_text": "In what year did the Apollo 11 Moon landing occur?",
+    "oracle_value": 1969,
+    "oracle_unit": "",
+    "source": "Wikipedia:Apollo_11",
+    "domain": "history"
+  },
+  {
+    "id": "hard-h040",
+    "claim_text": "In what year did the Industrial Revolution begin in Britain (approximately)?",
+    "oracle_value": 1760,
+    "oracle_unit": "",
+    "source": "Wikipedia:Industrial_Revolution",
+    "domain": "history"
+  },
+  {
+    "id": "hard-s001",
+    "claim_text": "What is the men's 100m world record in seconds?",
+    "oracle_value": 9.58,
+    "oracle_unit": "",
+    "source": "World_Athletics",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s002",
+    "claim_text": "What is the men's 200m world record in seconds?",
+    "oracle_value": 19.19,
+    "oracle_unit": "",
+    "source": "World_Athletics",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s003",
     "claim_text": "What is the men's long jump world record in meters?",
-    "oracle_value": "8.95",
+    "oracle_value": 8.95,
     "oracle_unit": "",
-    "domain": "hard"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_h26",
+    "id": "hard-s004",
     "claim_text": "What is the men's high jump world record in meters?",
-    "oracle_value": "2.45",
+    "oracle_value": 2.45,
     "oracle_unit": "",
-    "domain": "hard"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_h27",
-    "claim_text": "What is the land speed record in miles per hour?",
-    "oracle_value": "763",
+    "id": "hard-s005",
+    "claim_text": "What is the women's 100m world record in seconds?",
+    "oracle_value": 10.49,
     "oracle_unit": "",
-    "domain": "hard"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_h28",
-    "claim_text": "How long is the Great Wall of China in kilometers?",
-    "oracle_value": "21,196",
+    "id": "hard-s006",
+    "claim_text": "What is the women's 200m world record in seconds?",
+    "oracle_value": 21.34,
     "oracle_unit": "",
-    "domain": "hard"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_pc01",
-    "claim_text": "What is the men's 400m hurdles world record in seconds?",
-    "oracle_value": "45.80",
+    "id": "hard-s007",
+    "claim_text": "What is the men's javelin throw world record in meters?",
+    "oracle_value": 98.48,
     "oracle_unit": "",
-    "domain": "postcutoff"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_pc02",
-    "claim_text": "What is the women's 100m hurdles world record in seconds?",
-    "oracle_value": "12.09",
+    "id": "hard-s008",
+    "claim_text": "What is the men's shot put world record in meters?",
+    "oracle_value": 23.56,
     "oracle_unit": "",
-    "domain": "postcutoff"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_pc03",
-    "claim_text": "What is the men's pole vault world record in meters?",
-    "oracle_value": "6.31",
+    "id": "hard-s009",
+    "claim_text": "What is the men's discus throw world record in meters?",
+    "oracle_value": 74.35,
     "oracle_unit": "",
-    "domain": "postcutoff"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_pc04",
-    "claim_text": "In what year did the New York Knicks win their most recent NBA championship?",
-    "oracle_value": "2026",
+    "id": "hard-s010",
+    "claim_text": "What is the men's triple jump world record in meters?",
+    "oracle_value": 18.29,
     "oracle_unit": "",
-    "domain": "postcutoff"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_pc05",
-    "claim_text": "In what year did Spain win their most recent FIFA World Cup title?",
-    "oracle_value": "2026",
+    "id": "hard-s011",
+    "claim_text": "What is the men's 400m world record in seconds?",
+    "oracle_value": 43.03,
     "oracle_unit": "",
-    "domain": "postcutoff"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_pc06",
-    "claim_text": "How many total medals did Norway win at the 2026 Winter Olympics?",
-    "oracle_value": "41",
+    "id": "hard-s012",
+    "claim_text": "What is the men's 800m world record in seconds?",
+    "oracle_value": 100.91,
     "oracle_unit": "",
-    "domain": "postcutoff"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_pc07",
-    "claim_text": "How many total medals did the United States win at the 2026 Winter Olympics?",
-    "oracle_value": "33",
+    "id": "hard-s013",
+    "claim_text": "What is the men's 1500m world record in seconds?",
+    "oracle_value": 206.0,
     "oracle_unit": "",
-    "domain": "postcutoff"
+    "source": "World_Athletics",
+    "domain": "sports"
   },
   {
-    "id": "md_pc08",
-    "claim_text": "How many total medals did Italy win at the 2026 Winter Olympics?",
-    "oracle_value": "30",
+    "id": "hard-s014",
+    "claim_text": "What is the men's marathon world record in minutes?",
+    "oracle_value": 120.6,
     "oracle_unit": "",
-    "domain": "postcutoff"
+    "source": "World_Athletics",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s015",
+    "claim_text": "How many players are on a soccer team on the field at once?",
+    "oracle_value": 11,
+    "oracle_unit": "",
+    "source": "FIFA",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s016",
+    "claim_text": "How many players are on a basketball team on the court at once?",
+    "oracle_value": 5,
+    "oracle_unit": "",
+    "source": "FIBA",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s017",
+    "claim_text": "How many players are on an ice hockey team on the ice at once?",
+    "oracle_value": 6,
+    "oracle_unit": "",
+    "source": "IIHF",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s018",
+    "claim_text": "How many players are on a baseball team in the field at once?",
+    "oracle_value": 9,
+    "oracle_unit": "",
+    "source": "MLB",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s019",
+    "claim_text": "What is the length of an Olympic swimming pool in meters?",
+    "oracle_value": 50,
+    "oracle_unit": "",
+    "source": "FINA",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s020",
+    "claim_text": "How many laps in a 1500m race on a standard 400m track?",
+    "oracle_value": 3.75,
+    "oracle_unit": "",
+    "source": "World_Athletics",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s021",
+    "claim_text": "What is the distance of a standard marathon in kilometers?",
+    "oracle_value": 42.195,
+    "oracle_unit": "",
+    "source": "World_Athletics",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s022",
+    "claim_text": "How many Olympic gold medals did Michael Phelps win in his career?",
+    "oracle_value": 23,
+    "oracle_unit": "",
+    "source": "Wikipedia:Michael_Phelps",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s023",
+    "claim_text": "In what year were the first modern Olympic Games held?",
+    "oracle_value": 1896,
+    "oracle_unit": "",
+    "source": "Wikipedia:Olympic_Games",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s024",
+    "claim_text": "How many players are on a cricket team?",
+    "oracle_value": 11,
+    "oracle_unit": "",
+    "source": "ICC",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s025",
+    "claim_text": "How many players are on a volleyball team on the court at once?",
+    "oracle_value": 6,
+    "oracle_unit": "",
+    "source": "FIVB",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s026",
+    "claim_text": "What is the men's 110m hurdles world record in seconds?",
+    "oracle_value": 12.8,
+    "oracle_unit": "",
+    "source": "World_Athletics",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s027",
+    "claim_text": "What is the weight of a men's Olympic shot put in kilograms?",
+    "oracle_value": 7.26,
+    "oracle_unit": "",
+    "source": "World_Athletics",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s028",
+    "claim_text": "What is the height of a basketball hoop in meters?",
+    "oracle_value": 3.05,
+    "oracle_unit": "",
+    "source": "FIBA",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s029",
+    "claim_text": "What is the number of Grand Slam singles titles won by Novak Djokovic (as of 2024)?",
+    "oracle_value": 24,
+    "oracle_unit": "",
+    "source": "ATP",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-s030",
+    "claim_text": "What is the number of World Cup titles won by Brazil (as of 2024)?",
+    "oracle_value": 5,
+    "oracle_unit": "",
+    "source": "FIFA",
+    "domain": "sports"
+  },
+  {
+    "id": "hard-d001",
+    "claim_text": "What is the population of India in billions (2023 estimate)?",
+    "oracle_value": 1.43,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d002",
+    "claim_text": "What is the population of China in billions (2023 estimate)?",
+    "oracle_value": 1.41,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d003",
+    "claim_text": "What is the population of the United States in millions (2023 estimate)?",
+    "oracle_value": 335,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d004",
+    "claim_text": "What is the population of Indonesia in millions (2023 estimate)?",
+    "oracle_value": 278,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d005",
+    "claim_text": "What is the population of Pakistan in millions (2023 estimate)?",
+    "oracle_value": 240,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d006",
+    "claim_text": "What is the population of Nigeria in millions (2023 estimate)?",
+    "oracle_value": 224,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d007",
+    "claim_text": "What is the population of Brazil in millions (2023 estimate)?",
+    "oracle_value": 216,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d008",
+    "claim_text": "What is the population of Bangladesh in millions (2023 estimate)?",
+    "oracle_value": 173,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d009",
+    "claim_text": "What is the population of Russia in millions (2023 estimate)?",
+    "oracle_value": 144,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d010",
+    "claim_text": "What is the population of Japan in millions (2023 estimate)?",
+    "oracle_value": 124,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d011",
+    "claim_text": "What is the population of the United Kingdom in millions (2023 estimate)?",
+    "oracle_value": 68,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d012",
+    "claim_text": "What is the population of metropolitan France in millions (2023 estimate)?",
+    "oracle_value": 66.4,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d013",
+    "claim_text": "What is the population of Germany in millions (2023 estimate)?",
+    "oracle_value": 84,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d014",
+    "claim_text": "What is the population of Egypt in millions (2023 estimate)?",
+    "oracle_value": 112,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d015",
+    "claim_text": "What is the population of Ethiopia in millions (2023 estimate)?",
+    "oracle_value": 127,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d016",
+    "claim_text": "What is the population of the Philippines in millions (2023 estimate)?",
+    "oracle_value": 117,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d017",
+    "claim_text": "What is the population of Vietnam in millions (2023 estimate)?",
+    "oracle_value": 99,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d018",
+    "claim_text": "What is the population of Mexico in millions (2023 estimate)?",
+    "oracle_value": 128,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d019",
+    "claim_text": "What is the population of Turkey in millions (2023 estimate)?",
+    "oracle_value": 85,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d020",
+    "claim_text": "What is the population of Iran in millions (2023 estimate)?",
+    "oracle_value": 89,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d021",
+    "claim_text": "What is the population of the world in billions (2023 estimate)?",
+    "oracle_value": 8.0,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d022",
+    "claim_text": "What is the population of Australia in millions (2023 estimate)?",
+    "oracle_value": 26,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d023",
+    "claim_text": "What is the population of Canada in millions (2023 estimate)?",
+    "oracle_value": 40,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d024",
+    "claim_text": "What is the population of South Korea in millions (2023 estimate)?",
+    "oracle_value": 52,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-d025",
+    "claim_text": "What is the population of Italy in millions (2023 estimate)?",
+    "oracle_value": 59,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "demographics"
+  },
+  {
+    "id": "hard-b001",
+    "claim_text": "How many chromosomes do humans have in a normal somatic cell?",
+    "oracle_value": 46,
+    "oracle_unit": "",
+    "source": "Wikipedia:Human_genome",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-b002",
+    "claim_text": "How many chromosomes does a human gamete have?",
+    "oracle_value": 23,
+    "oracle_unit": "",
+    "source": "Wikipedia:Human_genome",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-b003",
+    "claim_text": "What is the normal human body temperature in degrees Celsius?",
+    "oracle_value": 37,
+    "oracle_unit": "",
+    "source": "Wikipedia:Human_body_temperature",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-b004",
+    "claim_text": "How many teeth does a typical adult human have?",
+    "oracle_value": 32,
+    "oracle_unit": "",
+    "source": "Wikipedia:Human_tooth",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-b005",
+    "claim_text": "How many chambers does the human heart have?",
+    "oracle_value": 4,
+    "oracle_unit": "",
+    "source": "Wikipedia:Heart",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-b006",
+    "claim_text": "What is the average human gestation period in weeks?",
+    "oracle_value": 40,
+    "oracle_unit": "",
+    "source": "Wikipedia:Pregnancy",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-b007",
+    "claim_text": "How many pairs of ribs does a typical human have?",
+    "oracle_value": 12,
+    "oracle_unit": "",
+    "source": "Wikipedia:Rib_cage",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-b008",
+    "claim_text": "What is the number of bones in the adult human body?",
+    "oracle_value": 206,
+    "oracle_unit": "",
+    "source": "Wikipedia:Human_skeleton",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-b009",
+    "claim_text": "How many vertebrae does an adult human have?",
+    "oracle_value": 33,
+    "oracle_unit": "",
+    "source": "Wikipedia:Vertebral_column",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-b010",
+    "claim_text": "What is the pH of human blood?",
+    "oracle_value": 7.4,
+    "oracle_unit": "",
+    "source": "Wikipedia:Blood",
+    "domain": "biology"
+  },
+  {
+    "id": "hard-r001",
+    "claim_text": "In what year did the 2024 Summer Olympics take place?",
+    "oracle_value": 2024,
+    "oracle_unit": "",
+    "source": "IOC",
+    "domain": "recent"
+  },
+  {
+    "id": "hard-r002",
+    "claim_text": "How many electoral votes did the winner receive in the 2024 US presidential election?",
+    "oracle_value": 312,
+    "oracle_unit": "",
+    "source": "Wikipedia:2024_United_States_presidential_election",
+    "domain": "recent"
+  },
+  {
+    "id": "hard-r003",
+    "claim_text": "In what year did the first human receive a Neuralink brain implant?",
+    "oracle_value": 2024,
+    "oracle_unit": "",
+    "source": "Wikipedia:Neuralink",
+    "domain": "recent"
+  },
+  {
+    "id": "hard-r004",
+    "claim_text": "What is the number of seats in the European Parliament (2024)?",
+    "oracle_value": 720,
+    "oracle_unit": "",
+    "source": "Wikipedia:European_Parliament",
+    "domain": "recent"
+  },
+  {
+    "id": "hard-r005",
+    "claim_text": "In what year did Argentina win the 2022 FIFA World Cup?",
+    "oracle_value": 2022,
+    "oracle_unit": "",
+    "source": "FIFA",
+    "domain": "recent"
+  },
+  {
+    "id": "hard-r006",
+    "claim_text": "How many total medals did the United States win at the 2024 Summer Olympics?",
+    "oracle_value": 126,
+    "oracle_unit": "",
+    "source": "IOC",
+    "domain": "recent"
+  },
+  {
+    "id": "hard-r007",
+    "claim_text": "In what year was ChatGPT released?",
+    "oracle_value": 2022,
+    "oracle_unit": "",
+    "source": "Wikipedia:ChatGPT",
+    "domain": "recent"
+  },
+  {
+    "id": "hard-r008",
+    "claim_text": "What is the population of the world in billions (2025 estimate)?",
+    "oracle_value": 8.2,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "recent"
+  },
+  {
+    "id": "hard-r009",
+    "claim_text": "In what year did the James Webb Space Telescope begin science operations?",
+    "oracle_value": 2022,
+    "oracle_unit": "",
+    "source": "NASA",
+    "domain": "recent"
+  },
+  {
+    "id": "hard-r010",
+    "claim_text": "How many countries are members of the United Nations (2024)?",
+    "oracle_value": 193,
+    "oracle_unit": "",
+    "source": "UN",
+    "domain": "recent"
   }
 ]

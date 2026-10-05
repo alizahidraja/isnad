@@ -1,0 +1,444 @@
+{
+  "k": 8,
+  "phi_bar": 0.5599173086564229,
+  "n_eff": 1.6262075839492611,
+  "n_eff_ci": [
+    1.5312666392584822,
+    1.7411527652011058
+  ],
+  "pairs": [
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "deepseek/deepseek-reasoner",
+      "phi": 0.48877022511565754,
+      "same_wrong": 0.5254237288135594,
+      "table": {
+        "a": 59,
+        "b": 28,
+        "c": 46,
+        "d": 245
+      },
+      "same_family": true,
+      "cross_provider": false
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "glm/glm-5.3",
+      "phi": 0.4918153171866239,
+      "same_wrong": 0.56,
+      "table": {
+        "a": 50,
+        "b": 37,
+        "c": 29,
+        "d": 262
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "glm/glm-5.3-flash",
+      "phi": 0.4496542795514562,
+      "same_wrong": 0.6041666666666666,
+      "table": {
+        "a": 48,
+        "b": 39,
+        "c": 33,
+        "d": 258
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "kimi/kimi-k2.6",
+      "phi": 0.479880200123669,
+      "same_wrong": 0.4166666666666667,
+      "table": {
+        "a": 60,
+        "b": 27,
+        "c": 50,
+        "d": 241
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "kimi/kimi-k3",
+      "phi": 0.4281685601873208,
+      "same_wrong": 0.4909090909090909,
+      "table": {
+        "a": 55,
+        "b": 32,
+        "c": 51,
+        "d": 240
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "perplexity/sonar",
+      "phi": 0.4569088522924142,
+      "same_wrong": 0.3333333333333333,
+      "table": {
+        "a": 69,
+        "b": 18,
+        "c": 77,
+        "d": 214
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "perplexity/sonar-pro",
+      "phi": 0.4657402195854494,
+      "same_wrong": 0.3484848484848485,
+      "table": {
+        "a": 66,
+        "b": 21,
+        "c": 67,
+        "d": 224
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "glm/glm-5.3",
+      "phi": 0.6545081157658361,
+      "same_wrong": 0.5074626865671642,
+      "table": {
+        "a": 67,
+        "b": 38,
+        "c": 12,
+        "d": 261
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "glm/glm-5.3-flash",
+      "phi": 0.6261585997769192,
+      "same_wrong": 0.5,
+      "table": {
+        "a": 66,
+        "b": 39,
+        "c": 15,
+        "d": 258
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "kimi/kimi-k2.6",
+      "phi": 0.6169322205757042,
+      "same_wrong": 0.46153846153846156,
+      "table": {
+        "a": 78,
+        "b": 27,
+        "c": 32,
+        "d": 241
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "kimi/kimi-k3",
+      "phi": 0.6778817052033979,
+      "same_wrong": 0.5555555555555556,
+      "table": {
+        "a": 81,
+        "b": 24,
+        "c": 25,
+        "d": 248
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "perplexity/sonar",
+      "phi": 0.6119398699369442,
+      "same_wrong": 0.37362637362637363,
+      "table": {
+        "a": 91,
+        "b": 14,
+        "c": 55,
+        "d": 218
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "perplexity/sonar-pro",
+      "phi": 0.6067295714647823,
+      "same_wrong": 0.38372093023255816,
+      "table": {
+        "a": 86,
+        "b": 19,
+        "c": 47,
+        "d": 226
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "glm/glm-5.3",
+      "mj": "glm/glm-5.3-flash",
+      "phi": 0.7305561563691256,
+      "same_wrong": 0.6190476190476191,
+      "table": {
+        "a": 63,
+        "b": 16,
+        "c": 18,
+        "d": 281
+      },
+      "same_family": true,
+      "cross_provider": false
+    },
+    {
+      "mi": "glm/glm-5.3",
+      "mj": "kimi/kimi-k2.6",
+      "phi": 0.5444818908140961,
+      "same_wrong": 0.5081967213114754,
+      "table": {
+        "a": 61,
+        "b": 18,
+        "c": 49,
+        "d": 250
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "glm/glm-5.3",
+      "mj": "kimi/kimi-k3",
+      "phi": 0.6061289771041125,
+      "same_wrong": 0.59375,
+      "table": {
+        "a": 64,
+        "b": 15,
+        "c": 42,
+        "d": 257
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "glm/glm-5.3",
+      "mj": "perplexity/sonar",
+      "phi": 0.4341390050996406,
+      "same_wrong": 0.3968253968253968,
+      "table": {
+        "a": 63,
+        "b": 16,
+        "c": 83,
+        "d": 216
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "glm/glm-5.3",
+      "mj": "perplexity/sonar-pro",
+      "phi": 0.47964746599167896,
+      "same_wrong": 0.4444444444444444,
+      "table": {
+        "a": 63,
+        "b": 16,
+        "c": 70,
+        "d": 229
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "glm/glm-5.3-flash",
+      "mj": "kimi/kimi-k2.6",
+      "phi": 0.5454583144751435,
+      "same_wrong": 0.43548387096774194,
+      "table": {
+        "a": 62,
+        "b": 19,
+        "c": 48,
+        "d": 249
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "glm/glm-5.3-flash",
+      "mj": "kimi/kimi-k3",
+      "phi": 0.649972381821823,
+      "same_wrong": 0.6617647058823529,
+      "table": {
+        "a": 68,
+        "b": 13,
+        "c": 38,
+        "d": 259
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "glm/glm-5.3-flash",
+      "mj": "perplexity/sonar",
+      "phi": 0.499409192751235,
+      "same_wrong": 0.37681159420289856,
+      "table": {
+        "a": 69,
+        "b": 12,
+        "c": 77,
+        "d": 220
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "glm/glm-5.3-flash",
+      "mj": "perplexity/sonar-pro",
+      "phi": 0.5197840307247725,
+      "same_wrong": 0.4626865671641791,
+      "table": {
+        "a": 67,
+        "b": 14,
+        "c": 66,
+        "d": 231
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "kimi/kimi-k2.6",
+      "mj": "kimi/kimi-k3",
+      "phi": 0.5595077268204062,
+      "same_wrong": 0.47297297297297297,
+      "table": {
+        "a": 74,
+        "b": 36,
+        "c": 32,
+        "d": 236
+      },
+      "same_family": true,
+      "cross_provider": false
+    },
+    {
+      "mi": "kimi/kimi-k2.6",
+      "mj": "perplexity/sonar",
+      "phi": 0.5444340436319138,
+      "same_wrong": 0.3068181818181818,
+      "table": {
+        "a": 88,
+        "b": 22,
+        "c": 58,
+        "d": 210
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "kimi/kimi-k2.6",
+      "mj": "perplexity/sonar-pro",
+      "phi": 0.5768279963159179,
+      "same_wrong": 0.32558139534883723,
+      "table": {
+        "a": 86,
+        "b": 24,
+        "c": 47,
+        "d": 221
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "kimi/kimi-k3",
+      "mj": "perplexity/sonar",
+      "phi": 0.641780498082176,
+      "same_wrong": 0.44680851063829785,
+      "table": {
+        "a": 94,
+        "b": 12,
+        "c": 52,
+        "d": 220
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "kimi/kimi-k3",
+      "mj": "perplexity/sonar-pro",
+      "phi": 0.6006307203181344,
+      "same_wrong": 0.4069767441860465,
+      "table": {
+        "a": 86,
+        "b": 20,
+        "c": 47,
+        "d": 225
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "perplexity/sonar",
+      "mj": "perplexity/sonar-pro",
+      "phi": 0.6898385052934883,
+      "same_wrong": 0.625,
+      "table": {
+        "a": 112,
+        "b": 34,
+        "c": 21,
+        "d": 211
+      },
+      "same_family": true,
+      "cross_provider": false
+    }
+  ],
+  "error_rates": {
+    "deepseek/deepseek-chat": 0.23015873015873015,
+    "deepseek/deepseek-reasoner": 0.2777777777777778,
+    "glm/glm-5.3": 0.20899470899470898,
+    "glm/glm-5.3-flash": 0.21428571428571427,
+    "kimi/kimi-k2.6": 0.291005291005291,
+    "kimi/kimi-k3": 0.2804232804232804,
+    "perplexity/sonar": 0.3862433862433862,
+    "perplexity/sonar-pro": 0.35185185185185186
+  },
+  "coverage": {
+    "deepseek/deepseek-chat": 1.0,
+    "deepseek/deepseek-reasoner": 1.0,
+    "glm/glm-5.3": 1.0,
+    "glm/glm-5.3-flash": 1.0,
+    "kimi/kimi-k2.6": 1.0,
+    "kimi/kimi-k3": 1.0,
+    "perplexity/sonar": 1.0,
+    "perplexity/sonar-pro": 1.0
+  },
+  "excluded": {},
+  "truncated_count": {
+    "deepseek/deepseek-chat": 0,
+    "deepseek/deepseek-reasoner": 31,
+    "glm/glm-5.3-flash": 0,
+    "glm/glm-5.3": 3,
+    "kimi/kimi-k2.6": 46,
+    "kimi/kimi-k3": 7,
+    "perplexity/sonar-pro": 0,
+    "perplexity/sonar": 0
+  },
+  "refusal_count": {
+    "deepseek/deepseek-chat": 0,
+    "deepseek/deepseek-reasoner": 0,
+    "glm/glm-5.3-flash": 0,
+    "glm/glm-5.3": 0,
+    "kimi/kimi-k2.6": 0,
+    "kimi/kimi-k3": 0,
+    "perplexity/sonar-pro": 0,
+    "perplexity/sonar": 0
+  }
+}

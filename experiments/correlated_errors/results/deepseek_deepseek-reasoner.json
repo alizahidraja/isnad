@@ -1,0 +1,3476 @@
+[
+  {
+    "claim_id": "hard-p001",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "299792458",
+    "answer_unit": "",
+    "raw": "299792458",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p002",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "-273.15",
+    "answer_unit": "",
+    "raw": "-273.15",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p003",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "0.01",
+    "answer_unit": "",
+    "raw": "0.01",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p004",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "101325",
+    "answer_unit": "",
+    "raw": "101325",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p005",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "343",
+    "answer_unit": "",
+    "raw": "343",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p006",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6.02214076",
+    "answer_unit": "",
+    "raw": "6.02214076",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p007",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "96485.33212",
+    "answer_unit": "",
+    "raw": "96485.33212",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p008",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8.314",
+    "answer_unit": "",
+    "raw": "8.314",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p009",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.380649",
+    "answer_unit": "",
+    "raw": "1.380649",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p010",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6.62607015",
+    "answer_unit": "",
+    "raw": "6.62607015",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p011",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.602176634",
+    "answer_unit": "",
+    "raw": "1.602176634",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p012",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9.11",
+    "answer_unit": "",
+    "raw": "9.11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p013",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.67262192369",
+    "answer_unit": "",
+    "raw": "1.67262192369",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p014",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.6749",
+    "answer_unit": "",
+    "raw": "1.6749",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p015",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "137.035999177",
+    "answer_unit": "",
+    "raw": "137.035999177",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p016",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.097",
+    "answer_unit": "",
+    "raw": "1.097",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p017",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5.670374419",
+    "answer_unit": "",
+    "raw": "5.670374419",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p018",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2.898",
+    "answer_unit": "",
+    "raw": "2.898",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p019",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5.29177210903",
+    "answer_unit": "",
+    "raw": "5.29177210903",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p020",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "938.272",
+    "answer_unit": "",
+    "raw": "938.272",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p021",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "939.565",
+    "answer_unit": "",
+    "raw": "939.565",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p022",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "0.511",
+    "answer_unit": "",
+    "raw": "0.511",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p023",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "105.658",
+    "answer_unit": "",
+    "raw": "105.658",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p024",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "91.1876",
+    "answer_unit": "",
+    "raw": "91.1876",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p025",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value. Need know top quark mass. Current PDG mass? Top quark mass around 172.69 GeV? Let's recall. PDG 2022: top quark mass m_t = 172.69 ± 0.30 GeV (direct measurements). 2023 m",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-p026",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "139.57039",
+    "answer_unit": "",
+    "raw": "139.57039",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p027",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "493.677",
+    "answer_unit": "",
+    "raw": "493.677",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p028",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Question: charge radius of proton in femtometers. Current accepted? Proton charge radius puzzle. CODATA 2018? 0.8414 fm? Let's recall.\n\nProton charge radius: 0.8414 ",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-p029",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6.674",
+    "answer_unit": "",
+    "raw": "6.674",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p030",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9.80665",
+    "answer_unit": "",
+    "raw": "9.80665",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p031",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1",
+    "answer_unit": "",
+    "raw": "1",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p032",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.33",
+    "answer_unit": "",
+    "raw": "1.33",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p033",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2.99792458",
+    "answer_unit": "",
+    "raw": "2.99792458",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p034",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3422",
+    "answer_unit": "",
+    "raw": "3422",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p035",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "-196",
+    "answer_unit": "",
+    "raw": "-196",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p036",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4.2",
+    "answer_unit": "",
+    "raw": "4.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p037",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "13.6",
+    "answer_unit": "",
+    "raw": "13.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p038",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1500",
+    "answer_unit": "",
+    "raw": "1500",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p039",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value no units. Need know mean lifetime of neutron in minutes. Neutron mean lifetime ~879.4 seconds? 877.75 s, 878.4 s? Let's recall. Particle Data Group 2023: neutron mean life",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-p040",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.62",
+    "answer_unit": "",
+    "raw": "1.62",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p041",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6371",
+    "answer_unit": "",
+    "raw": "6371",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p042",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5.972",
+    "answer_unit": "",
+    "raw": "5.972",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p043",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.989",
+    "answer_unit": "",
+    "raw": "1.989",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p044",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "149.6",
+    "answer_unit": "",
+    "raw": "149.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p045",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "384400",
+    "answer_unit": "",
+    "raw": "384400",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a001",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4.24",
+    "answer_unit": "",
+    "raw": "4.24",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a002",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8.6",
+    "answer_unit": "",
+    "raw": "8.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a003",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2.5",
+    "answer_unit": "",
+    "raw": "2.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a004",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "687",
+    "answer_unit": "",
+    "raw": "687",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a005",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "11.86",
+    "answer_unit": "",
+    "raw": "11.86",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a006",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "29.46",
+    "answer_unit": "",
+    "raw": "29.46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a007",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "84.0205",
+    "answer_unit": "",
+    "raw": "84.0205",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a008",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "164.8",
+    "answer_unit": "",
+    "raw": "164.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a009",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "88",
+    "answer_unit": "",
+    "raw": "88",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a010",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "224.701",
+    "answer_unit": "",
+    "raw": "224.701",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a011",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.524",
+    "answer_unit": "",
+    "raw": "1.524",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a012",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5.203",
+    "answer_unit": "",
+    "raw": "5.203",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a013",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Need know semi-major axis Saturn orbit in AU. Approximately 9.5826 AU. Need just numeric. Could be 9.537? Let's recall: Saturn average distance from Sun 1.43 billion km = ",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-a014",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "30.07",
+    "answer_unit": "",
+    "raw": "30.07",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a015",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "23.44",
+    "answer_unit": "",
+    "raw": "23.44",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a016",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "27.3",
+    "answer_unit": "",
+    "raw": "27.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a017",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3474",
+    "answer_unit": "",
+    "raw": "3474",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a018",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5778",
+    "answer_unit": "",
+    "raw": "5778",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a019",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "29.78",
+    "answer_unit": "",
+    "raw": "29.78",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a020",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "11.2",
+    "answer_unit": "",
+    "raw": "11.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a021",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2.38",
+    "answer_unit": "",
+    "raw": "2.38",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a022",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "248",
+    "answer_unit": "",
+    "raw": "248",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a023",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "39.48",
+    "answer_unit": "",
+    "raw": "39.48",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a024",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6779",
+    "answer_unit": "",
+    "raw": "6779",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a025",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "12104",
+    "answer_unit": "",
+    "raw": "12104",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a026",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "139820",
+    "answer_unit": "",
+    "raw": "139820",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a027",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "49528",
+    "answer_unit": "",
+    "raw": "49528",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a028",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1392700",
+    "answer_unit": "",
+    "raw": "1392700",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a029",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2",
+    "answer_unit": "",
+    "raw": "2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a030",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9.925",
+    "answer_unit": "",
+    "raw": "9.925",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a031",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "243.025",
+    "answer_unit": "",
+    "raw": "243.025",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a032",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "95",
+    "answer_unit": "",
+    "raw": "95",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a033",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "145",
+    "answer_unit": "",
+    "raw": "145",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a034",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "13.8",
+    "answer_unit": "",
+    "raw": "13.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a035",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "70",
+    "answer_unit": "",
+    "raw": "70",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a036",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "-1.46",
+    "answer_unit": "",
+    "raw": "-1.46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a037",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4.83",
+    "answer_unit": "",
+    "raw": "4.83",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a038",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3.26",
+    "answer_unit": "",
+    "raw": "3.26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a039",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "100",
+    "answer_unit": "",
+    "raw": "100",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a041",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3.71",
+    "answer_unit": "",
+    "raw": "3.71",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a042",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "24.79",
+    "answer_unit": "",
+    "raw": "24.79",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a043",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5.145",
+    "answer_unit": "",
+    "raw": "5.145",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a044",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2.725",
+    "answer_unit": "",
+    "raw": "2.725",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a045",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "88",
+    "answer_unit": "",
+    "raw": "88",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a046",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.898",
+    "answer_unit": "",
+    "raw": "1.898",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a047",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5.683",
+    "answer_unit": "",
+    "raw": "5.683",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a048",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "7.35",
+    "answer_unit": "",
+    "raw": "7.35",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a049",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "26",
+    "answer_unit": "",
+    "raw": "26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a050",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8",
+    "answer_unit": "",
+    "raw": "8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a051",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "76",
+    "answer_unit": "",
+    "raw": "76",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a052",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "-63",
+    "answer_unit": "",
+    "raw": "-63",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a053",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "464",
+    "answer_unit": "",
+    "raw": "464",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a054",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4.3",
+    "answer_unit": "",
+    "raw": "4.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a055",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9.46",
+    "answer_unit": "",
+    "raw": "9.46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a056",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "0.0167",
+    "answer_unit": "",
+    "raw": "0.0167",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a057",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "366",
+    "answer_unit": "",
+    "raw": "366",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a058",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "57.9",
+    "answer_unit": "",
+    "raw": "57.9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a059",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Need know mean distance Sun to Saturn in million km. Saturn semi-major axis ~1.4335 billion km = 1433.5 million km. Mean distance likely average distance = semi-major axis",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-a060",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4879",
+    "answer_unit": "",
+    "raw": "4879",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a061",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Need recall diameter of Uranus in km. Mean diameter? Uranus equatorial radius 25,559 km, polar radius 24,973 km, mean radius 25,362 km. Diameter mean ~50,724 km. Equatoria",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-a062",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "120536",
+    "answer_unit": "",
+    "raw": "120536",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a063",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5",
+    "answer_unit": "",
+    "raw": "5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a064",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "163",
+    "answer_unit": "",
+    "raw": "163",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a065",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need know apparent visual magnitude of Venus at brightest. Venus maximum brightness about -4.9 mag? Sometimes -4.92, -4.6? Need precise. Venus at brightest as mornin",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-a066",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "110.6",
+    "answer_unit": "",
+    "raw": "110.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a067",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "92.68",
+    "answer_unit": "",
+    "raw": "92.68",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a070",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "15",
+    "answer_unit": "",
+    "raw": "15",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a071",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.31",
+    "answer_unit": "",
+    "raw": "1.31",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a072",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "939.4",
+    "answer_unit": "",
+    "raw": "939.4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a073",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "176",
+    "answer_unit": "",
+    "raw": "176",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a074",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "0.687",
+    "answer_unit": "",
+    "raw": "0.687",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a075",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "28",
+    "answer_unit": "",
+    "raw": "28",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c001",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "79",
+    "answer_unit": "",
+    "raw": "79",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c002",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "92",
+    "answer_unit": "",
+    "raw": "92",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c003",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "82",
+    "answer_unit": "",
+    "raw": "82",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c004",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "74",
+    "answer_unit": "",
+    "raw": "74",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c005",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "80",
+    "answer_unit": "",
+    "raw": "80",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c006",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "12.011",
+    "answer_unit": "",
+    "raw": "12.011",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c007",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "55.845",
+    "answer_unit": "",
+    "raw": "55.845",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c008",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "196.966569",
+    "answer_unit": "",
+    "raw": "196.966569",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c009",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "15.999",
+    "answer_unit": "",
+    "raw": "15.999",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c010",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "238.02891",
+    "answer_unit": "",
+    "raw": "238.02891",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c011",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1538",
+    "answer_unit": "",
+    "raw": "1538",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c012",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1064",
+    "answer_unit": "",
+    "raw": "1064",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c013",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "961.78",
+    "answer_unit": "",
+    "raw": "961.78",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c014",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1084.62",
+    "answer_unit": "",
+    "raw": "1084.62",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c015",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "327.5",
+    "answer_unit": "",
+    "raw": "327.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c016",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "660",
+    "answer_unit": "",
+    "raw": "660",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c017",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need boiling point of gold in Celsius. Gold boiling point ~2700 °C? Let's verify. Gold melting 1064°C, boiling 2700°C or 2856°C? I recall gold boiling point 2700 °C ",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-c018",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2861",
+    "answer_unit": "",
+    "raw": "2861",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c019",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "19.32",
+    "answer_unit": "",
+    "raw": "19.32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c020",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "7.87",
+    "answer_unit": "",
+    "raw": "7.87",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c021",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2.70",
+    "answer_unit": "",
+    "raw": "2.70",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c022",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "11.34",
+    "answer_unit": "",
+    "raw": "11.34",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c023",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8.96",
+    "answer_unit": "",
+    "raw": "8.96",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c024",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5730",
+    "answer_unit": "",
+    "raw": "5730",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c025",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4.468",
+    "answer_unit": "",
+    "raw": "4.468",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c026",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "703.8",
+    "answer_unit": "",
+    "raw": "703.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c027",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.25",
+    "answer_unit": "",
+    "raw": "1.25",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c028",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8.02",
+    "answer_unit": "",
+    "raw": "8.02",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c029",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "30.17",
+    "answer_unit": "",
+    "raw": "30.17",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c030",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "24100",
+    "answer_unit": "",
+    "raw": "24100",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c031",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "12.32",
+    "answer_unit": "",
+    "raw": "12.32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c032",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5.27",
+    "answer_unit": "",
+    "raw": "5.27",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c033",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1600",
+    "answer_unit": "",
+    "raw": "1600",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c034",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "436",
+    "answer_unit": "",
+    "raw": "436",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c035",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "498",
+    "answer_unit": "",
+    "raw": "498",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c036",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "945",
+    "answer_unit": "",
+    "raw": "945",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c037",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Question: \"What is the bond dissociation energy of a carbon-carbon single bond in kilojoules per mole?\" Need know typical C-C single bond dissociation energy. In kJ/mol ap",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-c038",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "614",
+    "answer_unit": "",
+    "raw": "614",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c039",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Question: bond dissociation energy of carbon-carbon triple bond in kJ/mol. Need recall typical BDE for C≡C. Often bond enthalpy C≡C around 839 kJ/mol? Let's verify. Bond e",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-c040",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "413",
+    "answer_unit": "",
+    "raw": "413",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c041",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "463",
+    "answer_unit": "",
+    "raw": "463",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c042",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "7",
+    "answer_unit": "",
+    "raw": "7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c043",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c044",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8",
+    "answer_unit": "",
+    "raw": "8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c045",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "26",
+    "answer_unit": "",
+    "raw": "26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c046",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "29",
+    "answer_unit": "",
+    "raw": "29",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c047",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "47",
+    "answer_unit": "",
+    "raw": "47",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c048",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "78",
+    "answer_unit": "",
+    "raw": "78",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c049",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "212",
+    "answer_unit": "",
+    "raw": "212",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c050",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "32",
+    "answer_unit": "",
+    "raw": "32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c051",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "0.789",
+    "answer_unit": "",
+    "raw": "0.789",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c052",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "18.015",
+    "answer_unit": "",
+    "raw": "18.015",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c053",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "44.01",
+    "answer_unit": "",
+    "raw": "44.01",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c054",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "58.44",
+    "answer_unit": "",
+    "raw": "58.44",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c055",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "98.08",
+    "answer_unit": "",
+    "raw": "98.08",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c056",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "78.37",
+    "answer_unit": "",
+    "raw": "78.37",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c057",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "0",
+    "answer_unit": "",
+    "raw": "0",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c058",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3.52",
+    "answer_unit": "",
+    "raw": "3.52",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c059",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2",
+    "answer_unit": "",
+    "raw": "2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c060",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c061",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "17",
+    "answer_unit": "",
+    "raw": "17",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c062",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "19",
+    "answer_unit": "",
+    "raw": "19",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c063",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "20",
+    "answer_unit": "",
+    "raw": "20",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c064",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "53",
+    "answer_unit": "",
+    "raw": "53",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c065",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.008",
+    "answer_unit": "",
+    "raw": "1.008",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c066",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "14.007",
+    "answer_unit": "",
+    "raw": "14.007",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c067",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "22.98976928",
+    "answer_unit": "",
+    "raw": "22.98976928",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c068",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "35.45",
+    "answer_unit": "",
+    "raw": "35.45",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c069",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.025",
+    "answer_unit": "",
+    "raw": "1.025",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c070",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c071",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "146",
+    "answer_unit": "",
+    "raw": "146",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c072",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3.82",
+    "answer_unit": "",
+    "raw": "3.82",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c073",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6.01",
+    "answer_unit": "",
+    "raw": "6.01",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c074",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1668",
+    "answer_unit": "",
+    "raw": "1668",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c075",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4.51",
+    "answer_unit": "",
+    "raw": "4.51",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g001",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8848.86",
+    "answer_unit": "",
+    "raw": "8848.86",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g002",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8611",
+    "answer_unit": "",
+    "raw": "8611",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g003",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8586",
+    "answer_unit": "",
+    "raw": "8586",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g004",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8516",
+    "answer_unit": "",
+    "raw": "8516",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g005",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8485",
+    "answer_unit": "",
+    "raw": "8485",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g006",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8188",
+    "answer_unit": "",
+    "raw": "8188",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g007",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8167",
+    "answer_unit": "",
+    "raw": "8167",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g008",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8163",
+    "answer_unit": "",
+    "raw": "8163",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g009",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8126",
+    "answer_unit": "",
+    "raw": "8126",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g010",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8091",
+    "answer_unit": "",
+    "raw": "8091",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g011",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Need know height of Mont Blanc. Commonly 4,808 m (or 4,810 m depending). Question asks \"height of Mont Blanc in meters\". Need just numeric value. Which value expected? Mon",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-g012",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4478",
+    "answer_unit": "",
+    "raw": "4478",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g013",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5895",
+    "answer_unit": "",
+    "raw": "5895",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g014",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6190",
+    "answer_unit": "",
+    "raw": "6190",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g015",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6961",
+    "answer_unit": "",
+    "raw": "6961",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g016",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5642",
+    "answer_unit": "",
+    "raw": "5642",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g017",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4892",
+    "answer_unit": "",
+    "raw": "4892",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g018",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3776",
+    "answer_unit": "",
+    "raw": "3776",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g019",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1642",
+    "answer_unit": "",
+    "raw": "1642",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g020",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "31722",
+    "answer_unit": "",
+    "raw": "31722",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g021",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1470",
+    "answer_unit": "",
+    "raw": "1470",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g022",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "371000",
+    "answer_unit": "",
+    "raw": "371000",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g023",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "82100",
+    "answer_unit": "",
+    "raw": "82100",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g024",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "68800",
+    "answer_unit": "",
+    "raw": "68800",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g025",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "58030",
+    "answer_unit": "",
+    "raw": "58030",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g026",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "59600",
+    "answer_unit": "",
+    "raw": "59600",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g027",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "25744",
+    "answer_unit": "",
+    "raw": "25744",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g028",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need know surface area Lake Ontario in square km. It is 18,960 km²? Let's recall Great Lakes: Lake Ontario surface area 7,340 sq mi = 19,009 km²? Let's verify.\n\nLake",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-g031",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9.2",
+    "answer_unit": "",
+    "raw": "9.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g032",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5.5",
+    "answer_unit": "",
+    "raw": "5.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g033",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "165.25",
+    "answer_unit": "",
+    "raw": "165.25",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g034",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Question: \"What is the area of the Atlantic Ocean in million square kilometers?\" Need know standard area. Atlantic Ocean area including adjacent seas? Usually about ",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-g035",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "70.56",
+    "answer_unit": "",
+    "raw": "70.56",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g036",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "14.06",
+    "answer_unit": "",
+    "raw": "14.06",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g037",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6650",
+    "answer_unit": "",
+    "raw": "6650",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g038",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6400",
+    "answer_unit": "",
+    "raw": "6400",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g039",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3766",
+    "answer_unit": "",
+    "raw": "3766",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g040",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6300",
+    "answer_unit": "",
+    "raw": "6300",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g041",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "51",
+    "answer_unit": "",
+    "raw": "51",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g042",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "979",
+    "answer_unit": "",
+    "raw": "979",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g043",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "7.692",
+    "answer_unit": "",
+    "raw": "7.692",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g044",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9.83",
+    "answer_unit": "",
+    "raw": "9.83",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g045",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9.98",
+    "answer_unit": "",
+    "raw": "9.98",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g046",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "17.1",
+    "answer_unit": "",
+    "raw": "17.1",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g047",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9.6",
+    "answer_unit": "",
+    "raw": "9.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g048",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3.287",
+    "answer_unit": "",
+    "raw": "3.287",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g049",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "21196",
+    "answer_unit": "",
+    "raw": "21196",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g050",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2.166",
+    "answer_unit": "",
+    "raw": "2.166",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g051",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5895",
+    "answer_unit": "",
+    "raw": "5895",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g052",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5642",
+    "answer_unit": "",
+    "raw": "5642",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g054",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2.5",
+    "answer_unit": "",
+    "raw": "2.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g055",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5267",
+    "answer_unit": "",
+    "raw": "5267",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g056",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need know width Strait of Gibraltar narrowest point in km. Commonly about 14.4 km (9 miles). Narrowest point between Point Marroquí (Spain) and Point Cires (Morocco)",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-g058",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1281",
+    "answer_unit": "",
+    "raw": "1281",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g059",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8372",
+    "answer_unit": "",
+    "raw": "8372",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g060",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "406",
+    "answer_unit": "",
+    "raw": "406",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g061",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "828",
+    "answer_unit": "",
+    "raw": "828",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g062",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "330",
+    "answer_unit": "",
+    "raw": "330",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g063",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "381",
+    "answer_unit": "",
+    "raw": "381",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g064",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "163",
+    "answer_unit": "",
+    "raw": "163",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g065",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.295",
+    "answer_unit": "",
+    "raw": "1.295",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g066",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2240",
+    "answer_unit": "",
+    "raw": "2240",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g067",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3640",
+    "answer_unit": "",
+    "raw": "3640",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g068",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1609",
+    "answer_unit": "",
+    "raw": "1609",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g069",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1025",
+    "answer_unit": "",
+    "raw": "1025",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g070",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "54",
+    "answer_unit": "",
+    "raw": "54",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g071",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "12",
+    "answer_unit": "",
+    "raw": "12",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g072",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g073",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "40075",
+    "answer_unit": "",
+    "raw": "40075",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g074",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "40075",
+    "answer_unit": "",
+    "raw": "40075",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g075",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "14.2",
+    "answer_unit": "",
+    "raw": "14.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h001",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "476",
+    "answer_unit": "",
+    "raw": "476",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h002",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1453",
+    "answer_unit": "",
+    "raw": "1453",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h003",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1215",
+    "answer_unit": "",
+    "raw": "1215",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h004",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1492",
+    "answer_unit": "",
+    "raw": "1492",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h005",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1776",
+    "answer_unit": "",
+    "raw": "1776",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h006",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1789",
+    "answer_unit": "",
+    "raw": "1789",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h007",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1815",
+    "answer_unit": "",
+    "raw": "1815",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h008",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1914",
+    "answer_unit": "",
+    "raw": "1914",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h009",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1918",
+    "answer_unit": "",
+    "raw": "1918",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h010",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1939",
+    "answer_unit": "",
+    "raw": "1939",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h011",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1941",
+    "answer_unit": "",
+    "raw": "1941",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h012",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1944",
+    "answer_unit": "",
+    "raw": "1944",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h013",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1945",
+    "answer_unit": "",
+    "raw": "1945",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h014",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1950",
+    "answer_unit": "",
+    "raw": "1950",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h015",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1957",
+    "answer_unit": "",
+    "raw": "1957",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h016",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1962",
+    "answer_unit": "",
+    "raw": "1962",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h017",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1963",
+    "answer_unit": "",
+    "raw": "1963",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h018",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1991",
+    "answer_unit": "",
+    "raw": "1991",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h019",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2001",
+    "answer_unit": "",
+    "raw": "2001",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h020",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1440",
+    "answer_unit": "",
+    "raw": "1440",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h021",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1861",
+    "answer_unit": "",
+    "raw": "1861",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h022",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1865",
+    "answer_unit": "",
+    "raw": "1865",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h023",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1789",
+    "answer_unit": "",
+    "raw": "1789",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h024",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1347",
+    "answer_unit": "",
+    "raw": "1347",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h025",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1869",
+    "answer_unit": "",
+    "raw": "1869",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h026",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1917",
+    "answer_unit": "",
+    "raw": "1917",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h027",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1967",
+    "answer_unit": "",
+    "raw": "1967",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h028",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1912",
+    "answer_unit": "",
+    "raw": "1912",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h029",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2560",
+    "answer_unit": "",
+    "raw": "2560",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h030",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1453",
+    "answer_unit": "",
+    "raw": "1453",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h031",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1961",
+    "answer_unit": "",
+    "raw": "1961",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h032",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1989",
+    "answer_unit": "",
+    "raw": "1989",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h033",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2007",
+    "answer_unit": "",
+    "raw": "2007",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h034",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1989",
+    "answer_unit": "",
+    "raw": "1989",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h035",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1903",
+    "answer_unit": "",
+    "raw": "1903",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h036",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1863",
+    "answer_unit": "",
+    "raw": "1863",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h037",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1945",
+    "answer_unit": "",
+    "raw": "1945",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h038",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1986",
+    "answer_unit": "",
+    "raw": "1986",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h039",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1969",
+    "answer_unit": "",
+    "raw": "1969",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h040",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1760",
+    "answer_unit": "",
+    "raw": "1760",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s001",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9.58",
+    "answer_unit": "",
+    "raw": "9.58",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s002",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "19.19",
+    "answer_unit": "",
+    "raw": "19.19",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s003",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8.95",
+    "answer_unit": "",
+    "raw": "8.95",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s004",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2.45",
+    "answer_unit": "",
+    "raw": "2.45",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s005",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "10.49",
+    "answer_unit": "",
+    "raw": "10.49",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s006",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "21.34",
+    "answer_unit": "",
+    "raw": "21.34",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s007",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "98.48",
+    "answer_unit": "",
+    "raw": "98.48",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s008",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "23.37",
+    "answer_unit": "",
+    "raw": "23.37",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s009",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "74.35",
+    "answer_unit": "",
+    "raw": "74.35",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s010",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "18.29",
+    "answer_unit": "",
+    "raw": "18.29",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s011",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "43.03",
+    "answer_unit": "",
+    "raw": "43.03",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s012",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "100.91",
+    "answer_unit": "",
+    "raw": "100.91",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s013",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "206.00",
+    "answer_unit": "",
+    "raw": "206.00",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s014",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "120.583333",
+    "answer_unit": "",
+    "raw": "120.583333",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s015",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s016",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5",
+    "answer_unit": "",
+    "raw": "5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s017",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s018",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "9",
+    "answer_unit": "",
+    "raw": "9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s019",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "50",
+    "answer_unit": "",
+    "raw": "50",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s020",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3.75",
+    "answer_unit": "",
+    "raw": "3.75",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s021",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "42.195",
+    "answer_unit": "",
+    "raw": "42.195",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s022",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "23",
+    "answer_unit": "",
+    "raw": "23",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s023",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1896",
+    "answer_unit": "",
+    "raw": "1896",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s024",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s025",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s026",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "12.80",
+    "answer_unit": "",
+    "raw": "12.80",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s027",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "7.26",
+    "answer_unit": "",
+    "raw": "7.26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s028",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "3.048",
+    "answer_unit": "",
+    "raw": "3.048",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s029",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "24",
+    "answer_unit": "",
+    "raw": "24",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s030",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "5",
+    "answer_unit": "",
+    "raw": "5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d001",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.43",
+    "answer_unit": "",
+    "raw": "1.43",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d002",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1.41",
+    "answer_unit": "",
+    "raw": "1.41",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d003",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "334.9",
+    "answer_unit": "",
+    "raw": "334.9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d004",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "277.5",
+    "answer_unit": "",
+    "raw": "277.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d005",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need know population Pakistan in millions 2023 estimate. Various sources: UN WPP 2023 maybe 240.5 million. World Bank 2023 population Pakistan 240,485,658? Let's rec",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d006",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "223.8",
+    "answer_unit": "",
+    "raw": "223.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d007",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "216.4",
+    "answer_unit": "",
+    "raw": "216.4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d008",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need know population Bangladesh 2023 estimate in millions. Likely 172.95 million? World Bank 2023: 172.95 million. UN WPP 2024 maybe 173.6. Bangladesh Bureau Statist",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d009",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "144.4",
+    "answer_unit": "",
+    "raw": "144.4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d010",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Need know population Japan 2023 estimate in millions. Likely 124.5 million? Let's verify. Japan population 2023 estimate around 124.5 million (Statistics Bureau). As of Oc",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d011",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need know UK population 2023 estimate in millions. ONS mid-2023? UK population estimated 68.3 million? Let's verify.\n\nQuestion: \"What is the population of the United",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d012",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "65.8",
+    "answer_unit": "",
+    "raw": "65.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d013",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Need know population Germany 2023 estimate in millions. Likely 84.3 million? Germany population 2023 estimate around 84.4 million (Destatis: 84.7 million at end 2023? Let'",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d014",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need know population Egypt 2023 estimate in millions. Likely around 112.7 million? Let's verify. Egypt population 2023 estimate. Worldometer: 112,716,598? CIA: 111,2",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d015",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "126.5",
+    "answer_unit": "",
+    "raw": "126.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d016",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "117.3",
+    "answer_unit": "",
+    "raw": "117.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d017",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need know population Vietnam 2023 estimate in millions. Generally 2023 population Vietnam ~98.9 million? World Bank 100.99? Let's recall. Vietnam population 2023 est",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d018",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need population of Mexico in millions 2023 estimate. Need be accurate. Mexico population 2023 around 128.5 million? Let's verify. World Bank 2023 Mexico population 1",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d019",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Question: population of Turkey in millions (2023 estimate). Need know. Turkey population 2023 estimate? Official? TÜİK announced Turkey population 2023 as 85,372,377",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d020",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Need know population of Iran 2023 estimate in millions. Need likely from World Bank/UN? The question asks \"What is the population of Iran in millions (2023 estimate)?\" Nee",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d021",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8.05",
+    "answer_unit": "",
+    "raw": "8.05",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d022",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value only. Need population Australia in millions 2023 estimate. Need be careful. Australia population 2023 estimate. According to ABS? Australia population at 31 Dec 2023 was 2",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d023",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "40.1",
+    "answer_unit": "",
+    "raw": "40.1",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d024",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Need know population South Korea 2023 estimate in millions. Likely around 51.7 million. Need exact? Question asks \"What is the population of South Korea in millions (2023 ",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-d025",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "58.9",
+    "answer_unit": "",
+    "raw": "58.9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b001",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "46",
+    "answer_unit": "",
+    "raw": "46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b002",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "23",
+    "answer_unit": "",
+    "raw": "23",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b003",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "37",
+    "answer_unit": "",
+    "raw": "37",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b004",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "32",
+    "answer_unit": "",
+    "raw": "32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b005",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "4",
+    "answer_unit": "",
+    "raw": "4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b006",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "40",
+    "answer_unit": "",
+    "raw": "40",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b007",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "12",
+    "answer_unit": "",
+    "raw": "12",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b008",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "206",
+    "answer_unit": "",
+    "raw": "206",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b009",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer just numeric. Adult human vertebral column typically 33 vertebrae? But adult due fusion: 24 presacral + sacrum 5 fused + coccyx 3-4 fused. Usually total vertebrae in adult considered 26",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "hard-b010",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "7.4",
+    "answer_unit": "",
+    "raw": "7.4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r001",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2024",
+    "answer_unit": "",
+    "raw": "2024",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r002",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "312",
+    "answer_unit": "",
+    "raw": "312",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r003",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2024",
+    "answer_unit": "",
+    "raw": "2024",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r004",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "720",
+    "answer_unit": "",
+    "raw": "720",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r005",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2022",
+    "answer_unit": "",
+    "raw": "2022",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r006",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "126",
+    "answer_unit": "",
+    "raw": "126",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r007",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2022",
+    "answer_unit": "",
+    "raw": "2022",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r008",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "8.2",
+    "answer_unit": "",
+    "raw": "8.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r009",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2022",
+    "answer_unit": "",
+    "raw": "2022",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r010",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "193",
+    "answer_unit": "",
+    "raw": "193",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc01",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "45.94",
+    "answer_unit": "",
+    "raw": "45.94",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc02",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "12.12",
+    "answer_unit": "",
+    "raw": "12.12",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc03",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric value. Men's pole vault world record outdoor is 6.26 m by Armand Duplantis? Set 2024? Need current as of 2026? World record men's pole vault: Armand Duplantis 6.26 m on Aug 25 2",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "md_pc04",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "1973",
+    "answer_unit": "",
+    "raw": "1973",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc05",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": "2010",
+    "answer_unit": "",
+    "raw": "2010",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc06",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer numeric only. Need know 2026 Winter Olympics? Current date 2026-05-09. 2026 Winter Olympics held Milano Cortina Feb 6-22 2026. Need total medals Norway won. Need factual. I may not have",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "md_pc07",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer. Need know 2026 Winter Olympics? Current date 2026-05-09. Winter Olympics Milano Cortina 2026 happened Feb 6-22 2026. Need total medals US won. Need numeric only. Need be accurate. I ma",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  },
+  {
+    "claim_id": "md_pc08",
+    "model": "deepseek/deepseek-reasoner",
+    "answer_value": null,
+    "answer_unit": "",
+    "raw": "We need answer question. Need know 2026 Winter Olympics. Current date 2026-05-09. Winter Olympics Milan-Cortina 2026 happened Feb 6-22 2026. Need total medals Italy won. I need factual. I may not have",
+    "finish_reason": "length",
+    "error": "truncated (finish_reason=length)"
+  }
+]

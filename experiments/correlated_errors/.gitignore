@@ -1,4 +1,5 @@
-# Raw model outputs are large + reproducible from the runner; do not commit.
-results/
-stats.json
-!corpus.json
+# The 8 per-model result JSON files are COMMITTED so φ̄ / n_eff / false-upgrade
+# recompute from a fresh clone without live API keys (auditable reproducibility).
+# Only transient artifacts are ignored:
+__pycache__/
+*.pyc
