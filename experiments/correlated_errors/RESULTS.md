@@ -7,12 +7,13 @@ and test whether a φ-discounted corroboration policy cuts false upgrades.
 
 ## Protocol (see `PREREGISTRATION.md`)
 - 4 families × 2 sizes = 8 models (deepseek, kimi, glm, perplexity — all with live keys).
-- 393-fact corpus: 385 hard numeric facts + 8 post-cutoff (ids `md_pcXX` stable).
+- 386-fact corpus: 378 hard numeric facts + 8 post-cutoff (ids `md_pcXX` stable).
 - Temperature 0 (kimi = 1, a disclosed provider deviation); max_tokens 2048.
 - Error = parsed answer differs from oracle by relative > 1e-6 (or missing/refused).
 - φ = phi coefficient on binary error vectors; Kim same-wrong reported separately.
 - Kish `n_eff = k/(1+(k−1)φ̄)` + cluster-bootstrap 95% CI (resample by claim).
-- Exclusion: models outside [1%, 99%] error-rate band dropped from φ pairs AND `k`.
+- Retention: a model is kept only if it covers ≥90% of facts AND its error rate is in [1%, 99%].
+- Primary endpoint: Δfalse-upgrade at **matched coverage**.
 
 ## Preliminary result — 64-fact corpus (sweep C, BEFORE the expansion)
 > **This is preliminary and unstable** (only 8 post-cutoff facts carry error signal;
@@ -26,55 +27,55 @@ and test whether a φ-discounted corroboration policy cuts false upgrades.
   family (it errs differently).
 - **Kish n_eff ≈ 1.2** for 8 models → ~6.7× over-crediting if independence is assumed.
 
-## Preliminary finding
-## Final result — 393-fact corpus (the number to cite)
+The 64-fact "perplexity is the most independent family" finding **did NOT replicate** on the
+larger corpus (there perplexity has the *highest* same-family φ) — it was an artifact of the
+tiny error set.
 
-**φ̄ = 0.5667 · n_eff = 1.611 · 95% CI [1.515, 1.724]** (k = 8, all 8 models retained;
-7 broken free-tier models excluded at 100% parse-failure per the pre-reg [1%,99%] band).
+## Post-audit corrections (20-person panel → BLOCKER → fixed)
 
-### Per-model error rates (all within [1%, 99%], none excluded)
-| model | error rate |
-|---|---|
-| glm-5.3 | 25.4% |
-| deepseek-chat | 26.0% |
-| glm-5.3-flash | 26.2% |
-| kimi-k3 | 29.0% |
-| deepseek-reasoner | 31.6% |
-| kimi-k2.6 | 32.6% |
-| perplexity-sonar-pro | 35.9% |
-| perplexity-sonar | 40.7% |
+The first 393-fact numbers (φ̄=0.5667, n_eff=1.611, −65%) were audited by a 20-person panel and
+found to be corrupted by several bugs, all now fixed. The corrected numbers are **PENDING a re-run**
+on the 386-fact corpus; the qualitative finding survives.
 
-### φ breakdown
-- **Same-family φ:** deepseek 0.532 · glm 0.614 · kimi 0.643 · perplexity 0.706.
-- **Cross-family φ range:** 0.394 (glm-5.3 ↔ perplexity-sonar) to 0.723 (deepseek-reasoner ↔ kimi-k3).
-- **The 64-fact "perplexity is the most independent family" finding did NOT replicate.** On 393
-  facts perplexity has the *highest* same-family φ (0.706) and cross-family φ comparable to the
-  others. The 64-fact conclusion was an artifact of the tiny error set. Corrected here.
+1. **Sign parser (BLOCKER)** — the runner's number regex dropped leading minus signs, so every
+   negative-oracle fact (absolute zero −273.15, Sirius −1.46, Venus −4.92, liquid-nitrogen −195.8,
+   Mars −63) was spuriously scored wrong for ALL models, inflating φ̄. Fixed: regex accepts `[+-]?`.
+2. **Kish strength formula (BLOCKER)** — `1 + (m−1)·n_eff/k` over-credited unanimity by ~2.3×.
+   Fixed: `strength(m) = m/(1+(m−1)φ̄)`, which equals `n_eff` at m=k.
+3. **Matched-coverage endpoint (BLOCKER)** — the −65% compared naive@100% coverage vs
+   discounted@68% coverage, not the pre-registered matched coverage. Fixed: `matched_coverage_compare()`.
+4. **Oracle fixes** — neutron half-life→mean lifetime (14.6), standard gravity 9.80665, Pluto 1.303,
+   Sun diameter 1,391,400, Venus −4.92, France (metropolitan) 66.4M. Dropped Milky Way star count,
+   ISS altitude, Pleiades count, Dead Sea ×2, Mariana, Etna (no fixed oracle). 393 → **386 facts**.
+5. **Exclusion logic** — the 7 free-tier models were never re-run against this corpus (their result
+   files carried foreign `md_eXX`/`md_hXX` ids). They are now excluded by the coverage rule
+   (<90% coverage), never "100% parse-failure"; their stale files are deleted.
 
-### Headline
-ISNAD's madār assumption (disjoint narrators ⇒ independent) is violated: **8 nominally-independent
-transmitters carry only 1.61 effective votes** (~5× over-crediting; the preliminary 64-fact run
-suggested ~6.7×, but 1.61 is the stable 393-fact estimate the paper should cite).
+## Corrected result — 386-fact corpus (PENDING re-run)
 
-## Experiment B/C — false-upgrade reduction
+**φ̄ = ████ · n_eff = ████ · 95% CI [███, ███]** — filled by the re-run.
 
-At threshold = 2 (corroboration by ≥2 disjoint routes):
+*(Pre-correction, for reference only: φ̄=0.5667, n_eff=1.611, CI [1.515, 1.724].)*
 
-| policy | false-upgrade rate | coverage | risk | upgrades |
-|---|---|---|---|---|
-| naive (assumes independence) | 23.4% | 100% | 23.4% | 393 |
-| φ-discounted | 8.1% | 68.4% | 11.9% | 269 |
+### Per-model error rates — PENDING re-run
 
-**Δfalse-upgrade = −15.3 pp (−65% relative)**, at the cost of 31.6% coverage (the discount correctly
-refuses the "corroboration" that is actually a correlated duplicate of a wrong answer).
-Δrisk = −11.5 pp.
+### Kim same-wrong table — PENDING re-run
 
-*Caveat:* these are not yet at exactly-matched coverage (naive is quoted at 100% coverage); a
-threshold sweep for matched-coverage comparison is a follow-up, but the direction is monotone and
-locked by `tests/test_correlated_errors.py`.
+## Experiment B/C — matched-coverage endpoint
+
+Primary endpoint (pre-registered): Δfalse-upgrade at **matched coverage**. The discounted policy's
+coverage at threshold 2 defines the target coverage; the naive policy is held to the same coverage,
+and the two false-upgrade rates are compared at that matched coverage.
+
+**PENDING re-run.** The pre-correction (unmatched) numbers were naive 23.4% @ 100% coverage vs
+discounted 8.1% @ 68.4% coverage. Because naive's false-upgrade rate at a *reduced* coverage is
+higher than its full-coverage average, the −65% headline is an upper bound; the matched-coverage
+number is the primary endpoint and will be smaller.
+
 ## Deviations & caveats
 - **kimi temperature=1** (provider rejects temperature=0) — disclosed in the prereg.
-- The 64-fact preliminary φ is **not** a stable estimate; the 393-fact corpus is the
-  number the paper should cite.
-- `results/*.json` is gitignored (reproducible); `corpus.json`, `stats.json`, and the
-  `.py` files are committed.
+- **5 negative-oracle facts** (−273.15, −195.8, −1.46, −63, −4.92) are FIXED constants; they require
+  the sign-aware parser and are kept.
+- **`results/*.json` (the 8 real models) is committed** so φ̄/n_eff/false-upgrade recompute from a
+  fresh clone without live API keys. `corpus.json`, `stats.json`, `experiment_bc.json`, and the
+  `.py` files are committed too.
