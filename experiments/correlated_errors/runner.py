@@ -27,18 +27,27 @@ _REPO = _HERE.parent.parent
 if str(_REPO) not in sys.path:
     sys.path.insert(0, str(_REPO))
 
-OPENROUTER = "https://openrouter.ai/api/v1"
-DEEPSEEK = "https://api.deepseek.com/v1"
+_PROVIDERS = {
+    "deepseek": ("https://api.deepseek.com/v1", "DEEPSEEK_API_KEY"),
+    "kimi": ("https://api.moonshot.ai/v1", "KIMI_API_KEY"),
+    "glm": ("https://open.bigmodel.cn/api/paas/v4", "GLM_API_KEY"),
+    "perplexity": ("https://api.perplexity.ai", "PERPLEXITY_API_KEY"),
+    "openrouter": ("https://openrouter.ai/api/v1", "OPENROUTER_API_KEY"),
+}
+
+# Kimi (Moonshot) reasoning models only accept temperature=1; every other provider
+# here accepts temperature=0. This is a disclosed deviation from the protocol.
+_TEMPERATURE = {"kimi": 1.0}
 _NUM = re.compile(r"\d+(?:\.\d+)?(?:[eE][+-]?\d+)?")
 
 
 def _endpoint_and_key(model: str) -> tuple[str, str, str]:
     """Return (base_url, api_key, model_name) for the given model id."""
-    if model.startswith("deepseek/"):
-        key = os.environ.get("DEEPSEEK_API_KEY", "")
-        return DEEPSEEK, key, model.split("/", 1)[1]
-    key = os.environ.get("OPENROUTER_API_KEY", "")
-    return OPENROUTER, key, model
+    prefix = model.split("/", 1)[0]
+    base, env = _PROVIDERS.get(prefix, _PROVIDERS["openrouter"])
+    key = os.environ.get(env, "")
+    model_name = model.split("/", 1)[1] if "/" in model else model
+    return base, key, model_name
 
 
 def _parse_number(text: str | None) -> str | None:
@@ -68,7 +77,7 @@ def run_model(model: str, corpus: list[dict[str, str]], limit: int | None) -> li
             "model": model_name,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 2048,
-            "temperature": 0,
+            "temperature": _TEMPERATURE.get(model.split("/", 1)[0], 0.0),
         }
         headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
         content = reasoning = None
