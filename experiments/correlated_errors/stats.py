@@ -1,10 +1,12 @@
-# mypy: disable-error-code=arg-type,index,return-value,type-arg
 """ISNAD φ study — statistics.
 
 Loads ``results/<model>.json``, joins on claim_id, computes per-model-pair:
 φ (phi) on the binary error indicators, the same-wrong conditional agreement
 (Kim's statistic), and the 2×2 table. Aggregates mean φ̄ → Kish
 ``n_eff = k / (1 + (k−1)φ̄)`` with a cluster-bootstrap 95% CI (resample by claim).
+
+Models outside the pre-reg [1%, 99%] error-rate band are excluded from both the
+pairwise-φ matrix and the ``k`` used for ``n_eff`` (100% rate = parse-failure).
 """
 
 from __future__ import annotations
@@ -37,18 +39,17 @@ def _is_error(answer: str | None, oracle: str) -> bool:
 
 
 def _family(model: str) -> str:
-    # "google/gemma-4-31b-it:free" -> "google"; "deepseek/deepseek-chat" -> "deepseek"
     return model.split("/", 1)[0]
 
 
 def _provider(model: str) -> str:
-    return "deepseek" if model.startswith("deepseek/") else "openrouter"
+    return model.split("/", 1)[0]
 
 
 def _phi(a: int, b: int, c: int, d: int) -> float | None:
     denom = math.sqrt((a + b) * (c + d) * (a + c) * (b + d))
     if denom == 0:
-        return None  # no variation on at least one side
+        return None
     return (a * d - b * c) / denom
 
 
@@ -80,7 +81,6 @@ def main() -> None:
         print("no results/*.json found — run the runner first")
         return
 
-    # error rate per model (for boundary exclusion)
     rates: dict[str, float] = {}
     for m, rows in models.items():
         ev, _ = error_vector(rows, corpus)
@@ -89,14 +89,22 @@ def main() -> None:
     for m, r in sorted(rates.items()):
         print(f"  {m}: {r:.3f}")
 
-    # pair stats
-    names = sorted(models)
+    # Pre-reg exclusion rule: drop any model with error rate <1% or >99% (φ is
+    # unstable at the boundary; 100% rate = parse-failure, not a real model).
+    retained = [m for m in sorted(models) if 0.01 <= rates[m] <= 0.99]
+    excluded = {m: rates[m] for m in sorted(models) if m not in retained}
+    if excluded:
+        print("excluded (pre-reg [1%,99%] error-rate band):")
+        for m, r in excluded.items():
+            print(f"  {m}: rate {r:.3f}")
+
+    names = retained
     pairs = []
     for i in range(len(names)):
         for j in range(i + 1, len(names)):
             mi, mj = names[i], names[j]
             if rates[mi] < 0.01 or rates[mi] > 0.99 or rates[mj] < 0.01 or rates[mj] > 0.99:
-                continue  # φ unstable at the boundary
+                continue
             ei, ai = error_vector(models[mi], corpus)
             ej, aj = error_vector(models[mj], corpus)
             a = sum(1 for x, y in zip(ei, ej) if x == 1 and y == 1)
@@ -125,18 +133,18 @@ def main() -> None:
                   f"table=({a},{b},{c},{d})")
 
     phis = [p["phi"] for p in pairs if p["phi"] is not None]
-    k = len(names)
+    k = len(retained)
     if phis:
         phi_bar = sum(phis) / len(phis)
         n_eff = k / (1 + (k - 1) * phi_bar) if phi_bar > -1 / (k - 1) else float("inf")
-        # cluster bootstrap by claim
+
         rng = random.Random(0)
         boot = []
         n_claims = len(corpus)
         idx = list(range(n_claims))
         for _ in range(1000):
             samp = [rng.choice(idx) for _ in range(n_claims)]
-            # recompute phi_bar on the resampled claims (per pair phi)
+
             bphis = []
             for p in pairs:
                 if p["phi"] is None:
@@ -169,6 +177,7 @@ def main() -> None:
         "n_eff_ci": [round(lo, 4), round(hi, 4)] if (phis and boot) else [],
         "pairs": pairs,
         "error_rates": {m: round(r, 4) for m, r in rates.items()},
+        "excluded": {m: round(r, 4) for m, r in excluded.items()},
     }
     (_HERE / "stats.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     print("\nwrote stats.json")
