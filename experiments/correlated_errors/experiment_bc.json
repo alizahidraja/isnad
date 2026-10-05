@@ -1,0 +1,25 @@
+{
+  "phi_bar": 0.5667,
+  "k": 8,
+  "n_eff": 1.610662586321448,
+  "threshold": 2,
+  "naive": {
+    "false_upgrade_rate": 0.2340966921119593,
+    "coverage": 1.0,
+    "risk": 0.2340966921119593,
+    "upgraded": 393,
+    "false_upgrades": 92,
+    "n_claims": 393
+  },
+  "discounted": {
+    "false_upgrade_rate": 0.08142493638676845,
+    "coverage": 0.6844783715012722,
+    "risk": 0.11895910780669144,
+    "upgraded": 269,
+    "false_upgrades": 32,
+    "n_claims": 393
+  },
+  "delta_false_upgrade_rate": 0.15267175572519084,
+  "delta_coverage": 0.3155216284987278,
+  "delta_risk": 0.11513758430526785
+}
