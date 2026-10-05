@@ -1,0 +1,450 @@
+[
+  {
+    "id": "md_e01",
+    "claim_text": "How many bones are in the adult human body?",
+    "oracle_value": "206",
+    "oracle_unit": "",
+    "domain": "easy"
+  },
+  {
+    "id": "md_e02",
+    "claim_text": "How many squares are on a standard chessboard?",
+    "oracle_value": "64",
+    "oracle_unit": "",
+    "domain": "easy"
+  },
+  {
+    "id": "md_e03",
+    "claim_text": "How many days are in a common year?",
+    "oracle_value": "365",
+    "oracle_unit": "",
+    "domain": "easy"
+  },
+  {
+    "id": "md_e04",
+    "claim_text": "What is pi rounded to two decimal places?",
+    "oracle_value": "3.14",
+    "oracle_unit": "",
+    "domain": "easy"
+  },
+  {
+    "id": "md_e05",
+    "claim_text": "At what temperature in degrees Celsius does water boil at sea level?",
+    "oracle_value": "100",
+    "oracle_unit": "",
+    "domain": "easy"
+  },
+  {
+    "id": "md_e06",
+    "claim_text": "In what year did humans first land on the Moon?",
+    "oracle_value": "1969",
+    "oracle_unit": "",
+    "domain": "easy"
+  },
+  {
+    "id": "md_e07",
+    "claim_text": "How many months are in a year?",
+    "oracle_value": "12",
+    "oracle_unit": "",
+    "domain": "easy"
+  },
+  {
+    "id": "md_e08",
+    "claim_text": "How many states does the United States have?",
+    "oracle_value": "50",
+    "oracle_unit": "",
+    "domain": "easy"
+  },
+  {
+    "id": "md_m01",
+    "claim_text": "In what year did the RMS Titanic sink?",
+    "oracle_value": "1912",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m02",
+    "claim_text": "In what year did World War II end?",
+    "oracle_value": "1945",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m03",
+    "claim_text": "In what year did the Berlin Wall fall?",
+    "oracle_value": "1989",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m04",
+    "claim_text": "How long is a marathon in kilometers?",
+    "oracle_value": "42.195",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m05",
+    "claim_text": "What is the men's 100m sprint world record in seconds?",
+    "oracle_value": "9.58",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m06",
+    "claim_text": "What is normal human body temperature in degrees Fahrenheit?",
+    "oracle_value": "98.6",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m07",
+    "claim_text": "What is the normal pH of human blood?",
+    "oracle_value": "7.4",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m08",
+    "claim_text": "In what year did the United States declare independence?",
+    "oracle_value": "1776",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m09",
+    "claim_text": "In what year did the French Revolution begin?",
+    "oracle_value": "1789",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m10",
+    "claim_text": "In what year did World War I end?",
+    "oracle_value": "1918",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m11",
+    "claim_text": "In what year did Columbus reach the Americas?",
+    "oracle_value": "1492",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m12",
+    "claim_text": "How many chromosomes do humans have?",
+    "oracle_value": "46",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m13",
+    "claim_text": "What is the speed of light in meters per second?",
+    "oracle_value": "299,792,458",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m14",
+    "claim_text": "What is Earth's gravitational acceleration in meters per second squared?",
+    "oracle_value": "9.8",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m15",
+    "claim_text": "How many member states does the United Nations have?",
+    "oracle_value": "193",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m16",
+    "claim_text": "How far is the Moon from Earth in kilometers?",
+    "oracle_value": "384,400",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m17",
+    "claim_text": "In what year did the Western Roman Empire fall?",
+    "oracle_value": "476",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m18",
+    "claim_text": "In what year was the Magna Carta sealed?",
+    "oracle_value": "1215",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m19",
+    "claim_text": "In what year was the Battle of Hastings fought?",
+    "oracle_value": "1066",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_m20",
+    "claim_text": "How tall is Mount Fuji in meters?",
+    "oracle_value": "3,776",
+    "oracle_unit": "",
+    "domain": "medium"
+  },
+  {
+    "id": "md_h01",
+    "claim_text": "In what year was Python 3.13 released?",
+    "oracle_value": "2024",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h02",
+    "claim_text": "In what year was the James Webb Space Telescope launched?",
+    "oracle_value": "2021",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h03",
+    "claim_text": "In what year was the Nobel Prize for mRNA vaccines awarded?",
+    "oracle_value": "2023",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h04",
+    "claim_text": "In what year was the first CRISPR-based gene therapy approved?",
+    "oracle_value": "2023",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h05",
+    "claim_text": "In what year was ChatGPT first released?",
+    "oracle_value": "2022",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h06",
+    "claim_text": "How tall is Mount Kilimanjaro in meters?",
+    "oracle_value": "5,895",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h07",
+    "claim_text": "In what year were the first mRNA COVID-19 vaccines authorized?",
+    "oracle_value": "2020",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h08",
+    "claim_text": "What is the men's 200m sprint world record in seconds?",
+    "oracle_value": "19.19",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h09",
+    "claim_text": "What is the men's 400m sprint world record in seconds?",
+    "oracle_value": "43.03",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h10",
+    "claim_text": "How many Olympic medals did Michael Phelps win?",
+    "oracle_value": "28",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h11",
+    "claim_text": "How many times has Brazil won the FIFA World Cup?",
+    "oracle_value": "5",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h12",
+    "claim_text": "What is Brian Lara's record test cricket score?",
+    "oracle_value": "400",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h13",
+    "claim_text": "How tall is Denali, North America's highest peak, in meters?",
+    "oracle_value": "6,190",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h14",
+    "claim_text": "How deep is Lake Baikal at its deepest point in meters?",
+    "oracle_value": "1,642",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h15",
+    "claim_text": "How long is the Great Barrier Reef in kilometers?",
+    "oracle_value": "2,300",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h16",
+    "claim_text": "How tall is Mount Elbrus, Europe's highest peak, in meters?",
+    "oracle_value": "5,642",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h17",
+    "claim_text": "How old is the universe in billions of years?",
+    "oracle_value": "13.8",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h18",
+    "claim_text": "How many known chemical elements are there?",
+    "oracle_value": "118",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h19",
+    "claim_text": "How many permanent teeth does a typical adult human have?",
+    "oracle_value": "32",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h20",
+    "claim_text": "What is absolute zero in degrees Celsius?",
+    "oracle_value": "273.15",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h21",
+    "claim_text": "In what year was GPT-4 released?",
+    "oracle_value": "2023",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h22",
+    "claim_text": "In what year was the first iPhone released?",
+    "oracle_value": "2007",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h23",
+    "claim_text": "In what year was the first Android phone released?",
+    "oracle_value": "2008",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h24",
+    "claim_text": "In what year was Bitcoin created?",
+    "oracle_value": "2009",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h25",
+    "claim_text": "What is the men's long jump world record in meters?",
+    "oracle_value": "8.95",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h26",
+    "claim_text": "What is the men's high jump world record in meters?",
+    "oracle_value": "2.45",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h27",
+    "claim_text": "What is the land speed record in miles per hour?",
+    "oracle_value": "763",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_h28",
+    "claim_text": "How long is the Great Wall of China in kilometers?",
+    "oracle_value": "21,196",
+    "oracle_unit": "",
+    "domain": "hard"
+  },
+  {
+    "id": "md_pc01",
+    "claim_text": "What is the men's 400m hurdles world record in seconds?",
+    "oracle_value": "45.80",
+    "oracle_unit": "",
+    "domain": "postcutoff"
+  },
+  {
+    "id": "md_pc02",
+    "claim_text": "What is the women's 100m hurdles world record in seconds?",
+    "oracle_value": "12.09",
+    "oracle_unit": "",
+    "domain": "postcutoff"
+  },
+  {
+    "id": "md_pc03",
+    "claim_text": "What is the men's pole vault world record in meters?",
+    "oracle_value": "6.31",
+    "oracle_unit": "",
+    "domain": "postcutoff"
+  },
+  {
+    "id": "md_pc04",
+    "claim_text": "In what year did the New York Knicks win their most recent NBA championship?",
+    "oracle_value": "2026",
+    "oracle_unit": "",
+    "domain": "postcutoff"
+  },
+  {
+    "id": "md_pc05",
+    "claim_text": "In what year did Spain win their most recent FIFA World Cup title?",
+    "oracle_value": "2026",
+    "oracle_unit": "",
+    "domain": "postcutoff"
+  },
+  {
+    "id": "md_pc06",
+    "claim_text": "How many total medals did Norway win at the 2026 Winter Olympics?",
+    "oracle_value": "41",
+    "oracle_unit": "",
+    "domain": "postcutoff"
+  },
+  {
+    "id": "md_pc07",
+    "claim_text": "How many total medals did the United States win at the 2026 Winter Olympics?",
+    "oracle_value": "33",
+    "oracle_unit": "",
+    "domain": "postcutoff"
+  },
+  {
+    "id": "md_pc08",
+    "claim_text": "How many total medals did Italy win at the 2026 Winter Olympics?",
+    "oracle_value": "30",
+    "oracle_unit": "",
+    "domain": "postcutoff"
+  }
+]

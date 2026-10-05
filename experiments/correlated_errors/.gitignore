@@ -1,0 +1,4 @@
+# Raw model outputs are large + reproducible from the runner; do not commit.
+results/
+stats.json
+!corpus.json
