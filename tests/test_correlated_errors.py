@@ -9,6 +9,7 @@ from __future__ import annotations
 import math
 
 from experiments.correlated_errors import experiment_bc as bc
+from experiments.correlated_errors import stats
 
 
 def test_n_eff_formula():
@@ -88,3 +89,53 @@ def test_agreement_counts_float_equality():
     counts = bc.agreement_counts({"a": "43.03", "b": 43.03, "c": None})
     assert counts[43.03] == 2
     assert len(counts) == 1
+
+
+def test_phi_known_table():
+    # a=both wrong, b=i wrong j right, c=i right j wrong, d=both right
+    assert math.isclose(stats._phi(16, 0, 4, 44), 0.8563, abs_tol=1e-3)
+    assert stats._phi(1, 0, 0, 1) == 1.0
+    assert stats._phi(0, 1, 1, 0) == -1.0
+    assert stats._phi(0, 0, 0, 0) is None
+
+
+def test_retained_models_band():
+    rates = {"a": 0.5, "b": 0.5, "c": 0.5, "d": 0.005, "e": 0.999}
+    covs = {"a": 1.0, "b": 0.5, "c": 1.0, "d": 1.0, "e": 1.0}
+    kept = stats.retained_models(rates, covs)
+    # a: ok; b: coverage <0.9 excluded; c: ok; d: rate <1% excluded; e: rate >99% excluded
+    assert kept == ["a", "c"]
+
+
+def test_error_vector_missing_is_not_error():
+    corpus = [
+        {"id": "f1", "oracle_value": "10"},
+        {"id": "f2", "oracle_value": "20"},
+        {"id": "f3", "oracle_value": "30"},
+    ]
+    rows = {"f1": {"answer_value": "10"}, "f3": {"answer_value": "999"}}  # f2 missing
+    err, ans, covered = stats.error_vector(rows, corpus)
+    assert covered == [True, False, True]
+    # f1 correct (0.0), f3 wrong (1.0); f2 missing is NOT an error
+    assert err[0] == 0.0
+    assert err[2] == 1.0
+    rate = sum(e for e, c in zip(err, covered, strict=True) if c) / sum(covered)
+    assert rate == 0.5  # 1 of 2 covered facts wrong (missing f2 excluded)
+
+
+def test_percentile_linear_interpolation():
+    vals = list(range(1000))
+    assert stats._percentile(vals, 0.025) == 24.975
+    assert stats._percentile(vals, 0.975) == 974.025
+
+
+def test_strength_equals_n_eff_at_m_k():
+    k = 8
+    phi_bar = 0.5667
+    assert bc.corroboration_strength(1, phi_bar, k) == 1.0
+    assert math.isclose(
+        bc.corroboration_strength(k, phi_bar, k), bc.n_eff(phi_bar, k), rel_tol=1e-12
+    )
+    # discounted is strictly below the naive count for m > 1 and phi > 0
+    for m in (2, 3, 4, 5):
+        assert bc.corroboration_strength(m, phi_bar, k) < m
