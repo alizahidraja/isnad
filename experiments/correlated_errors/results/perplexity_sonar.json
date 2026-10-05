@@ -11,7 +11,7 @@
   {
     "claim_id": "hard-p002",
     "model": "perplexity/sonar",
-    "answer_value": "273.15",
+    "answer_value": "-273.15",
     "answer_unit": "",
     "raw": "−273.15",
     "finish_reason": "stop",

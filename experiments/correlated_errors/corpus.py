@@ -1,8 +1,10 @@
 """ISNAD φ study — corpus builder.
 
-Builds ~393 facts: ~385 hard numeric facts (``corpus_hard.HARD_FACTS``) + the 8
-post-cutoff facts from the model-drift ``HARD_CORPUS`` (ids ``md_pcXX`` kept stable
-so the drift study stays comparable).
+Builds 378 hard numeric facts (``corpus_hard.HARD_FACTS``). The 8 post-cutoff
+``md_pcXX`` facts from the model-drift ``HARD_CORPUS`` were DROPPED (2026-10-05,
+post-audit): their oracles were fabricated/unverifiable (e.g. "Knicks most recent
+championship" oracle ``2026`` but the real answer is 1973) and violate the
+corpus's fixed-verifiable-oracle contract. See ``PREREGISTRATION.md`` (corrections).
 
 The oracle for every fact is a single canonical number; the question asks for it
 directly so the runner can parse exactly one answer number.
@@ -20,30 +22,10 @@ if str(_REPO) not in sys.path:
     sys.path.insert(0, str(_REPO))
 
 from experiments.correlated_errors.corpus_hard import build_hard
-from experiments.model_drift.corpus_hard import HARD_CORPUS
 
 
 def build() -> list[dict[str, object]]:
-    out: list[dict[str, object]] = build_hard()
-    for f in HARD_CORPUS:
-        if f.tier != "postcutoff":
-            continue
-        if getattr(f, "excluded", False):
-            continue
-        out.append({
-            "id": f"md_{f.fact_id}",
-            "claim_text": f.question,
-            "oracle_value": f.correct_value,
-            "oracle_unit": "",
-            "source": "model_drift_postcutoff",
-            "domain": "postcutoff",
-            "source_note": (
-                "post-cutoff event outcome; oracle = documented result from the "
-                "model_drift HARD_CORPUS (each outcome verified in the drift study, "
-                "not fabricated)"
-            ),
-        })
-    return out
+    return build_hard()
 
 
 def main() -> None:

@@ -2173,8 +2173,8 @@ HARD_FACTS: tuple[tuple[str, str, float | int, str, str], ...] = (
     ),
 )
 
-# The 8 post-cutoff facts from the model-drift HARD_CORPUS (ids kept stable).
-DRIFT_POSTCUTOFF_IDS = ("pc01", "pc02", "pc03", "pc04", "pc05", "pc06", "pc07", "pc08")
+# (The 8 model-drift post-cutoff facts were DROPPED 2026-10-05 post-audit:
+# fabricated/unverifiable oracles. See PREREGISTRATION.md — corrections.)
 
 
 def build_hard() -> list[dict[str, object]]:

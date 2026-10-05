@@ -9,6 +9,7 @@ from __future__ import annotations
 import math
 
 from experiments.correlated_errors import experiment_bc as bc
+from experiments.correlated_errors import runner
 from experiments.correlated_errors import stats
 
 
@@ -139,3 +140,14 @@ def test_strength_equals_n_eff_at_m_k():
     # discounted is strictly below the naive count for m > 1 and phi > 0
     for m in (2, 3, 4, 5):
         assert bc.corroboration_strength(m, phi_bar, k) < m
+
+
+def test_parse_number_unicode_minus_sign():
+    # U+2212 MINUS SIGN, U+2013 en-dash, U+2012 figure dash all normalize to ASCII "-"
+    assert runner._parse_number("−273.15") == "-273.15"
+    assert runner._parse_number("–273.15") == "-273.15"
+    assert runner._parse_number("‒273.15") == "-273.15"
+    # ASCII sign still works, positive numbers unchanged
+    assert runner._parse_number("-273.15") == "-273.15"
+    assert runner._parse_number("273.15") == "273.15"
+    assert runner._parse_number("+5.5") == "+5.5"
