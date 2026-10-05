@@ -38,7 +38,7 @@ _PROVIDERS = {
 # Kimi (Moonshot) reasoning models only accept temperature=1; every other provider
 # here accepts temperature=0. This is a disclosed deviation from the protocol.
 _TEMPERATURE = {"kimi": 1.0}
-_NUM = re.compile(r"\d+(?:\.\d+)?(?:[eE][+-]?\d+)?")
+_NUM = re.compile(r"[+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?")  # leading sign: negative oracles
 
 
 def _endpoint_and_key(model: str) -> tuple[str, str, str]:
@@ -61,10 +61,14 @@ def _slug(model: str) -> str:
     return model.replace("/", "_").replace(":", "_").replace(".", "_")
 
 
-def run_model(model: str, corpus: list[dict[str, str]], limit: int | None) -> list[dict[str, object]]:
+def run_model(
+    model: str, corpus: list[dict[str, str]], limit: int | None
+) -> list[dict[str, object]]:
     base, key, model_name = _endpoint_and_key(model)
     if not key:
-        raise SystemExit(f"no API key for model {model!r} (set OPENROUTER_API_KEY / DEEPSEEK_API_KEY)")
+        raise SystemExit(
+            f"no API key for model {model!r} (set the provider env var (DEEPSEEK_API_KEY / KIMI_API_KEY / GLM_API_KEY / PERPLEXITY_API_KEY))"
+        )
     rows: list[dict[str, object]] = []
     for i, fact in enumerate(corpus):
         if limit is not None and i >= limit:
@@ -103,17 +107,15 @@ def run_model(model: str, corpus: list[dict[str, str]], limit: int | None) -> li
         answer = _parse_number(content)
         if answer is None and reasoning:
             answer = _parse_number(reasoning)
-        rows.append(
-            {
-                "claim_id": fact["id"],
-                "model": model,
-                "answer_value": answer,
-                "answer_unit": "",
-                "raw": (content or reasoning or "")[:200],
-                "finish_reason": finish,
-                "error": error,
-            }
-        )
+        rows.append({
+            "claim_id": fact["id"],
+            "model": model,
+            "answer_value": answer,
+            "answer_unit": "",
+            "raw": (content or reasoning or "")[:200],
+            "finish_reason": finish,
+            "error": error,
+        })
         time.sleep(0.6)  # space out calls on the shared free pool
     return rows
 
