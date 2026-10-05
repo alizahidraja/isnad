@@ -93,8 +93,8 @@ def seed_registry(
         elif grade == NarratorGrade.WEAK:
             adalah = AdalahGrade.SUSPECT
             dabt = DabtGrade.LOW
-        else:
-            adalah = AdalahGrade.COMPROMISED
+        else:  # NarratorGrade.REJECTED -> SUSPECT (daif_jiddan), not COMPROMISED
+            adalah = AdalahGrade.SUSPECT
             dabt = DabtGrade.LOW
 
         # Seed as an evidence-backed prior (issue #33): a bare register() is

@@ -1,7 +1,8 @@
 """ISNAD-Bench: held-out + full-corpus lookup oracle (de-circularizes Blocker 1).
 
 ``bench/tier_residual.py`` showed ISNAD's strict kappa equals an *in-sample*
-tier->modal lookup oracle on gap-free chains (``max_rank < 12``). Two questions
+tier->modal lookup oracle on chains with no gap and no rank-12 narrator
+(``max_rank < 12``). Two questions
 the review panel flagged remain open; this script answers them:
 
 1. **Held-out.** Is the tier->modal map stable out of sample? Fit the map on a
@@ -10,7 +11,7 @@ the review panel flagged remain open; this script answers them:
    ISNAD, the equality is not an overfit artifact of fitting on the same chains.
 2. **Full corpus.** What is the lookup ceiling over ALL chains (including gapped,
    ``max_rank >= 12`` -> daif, the continuity cap), next to ISNAD's headline
-   kappa = 0.871? tier_residual only compared on the gap-free subset.
+   kappa = 0.871? tier_residual only compared on the no-gap/no-rank-12 subset.
 
 Run:  uv run python -m bench.tier_oracle --out bench/docs/tier_oracle.json
 
@@ -120,7 +121,12 @@ def analyse(db_path: str) -> dict[str, object]:
         }
 
     return {
-        "scope": "all chains with a readable free-text hukum, max_rank sentinel >= 12 -> daif",
+        "scope": (
+            "all chains with a readable free-text hukum (note: the baseline's own "
+            "max_rank >= 12 -> daif rule shares the 3.0.2 gap flaw, so the "
+            "oracle-agreement drop is a diagnostic consequence of now respecting "
+            "REJECTED narrators on gapped chains)"
+        ),
         "n_chains": len(sanads),
         "n_classified": len(verdict),
         "n_gap_free": len(gap_free),

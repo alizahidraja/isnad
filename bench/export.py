@@ -59,36 +59,15 @@ def export(db_path: str, out_path: str, *, sample: int | None, seed: int, lenien
         ids = all_ids
     id_set = set(ids)
 
-    header = {
-        "dataset": "isnad-bench",
-        "derived_from": "emadjumaah/hadith-kg (CC-BY-4.0)",
-        "source_sha256": _SOURCE_SHA256,
-        "mapping": "bench/docs/mapping.md (pre-committed)",
-        "mapping_sha256": _mapping_hash(),
-        "mode": "lenient" if lenient else "strict",
-        "invocation": f"bench.export --db {db_path} --sample {sample} --seed {seed}"
-        + (" --lenient" if lenient else ""),
-        "schema": [
-            "sanad_id",
-            "hukum",
-            "true_grade",
-            "predicted_grade",
-            "disagreement_bucket",
-            "is_complete",
-            "has_gap",
-            "has_taliq",
-            "narrator_rank_nos",
-            "mode",
-        ],
-    }
-
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
     rows = 0
     with out.open("w", encoding="utf-8") as f:
         # Reproducibility header as JSON comment lines (the ``# `` prefix keeps
         # the file valid JSONL — every non-comment line is one JSON object).
-        f.write("# " + json.dumps(header, ensure_ascii=False) + "\n")
+        # NOTE: no leading header line — JSONL has no comment syntax and a "# "
+        # line breaks downstream viewers (3.0.3). Header metadata lives in the
+        # dataset card instead.
         for chain in iter_chains(db_path, id_set):
             true = chain_grade_from_hukum(chain.hukum)
             if true is None:

@@ -481,8 +481,8 @@ cg7 = grade_chain(
     link_adalah_grades=[],
 )
 check(
-    "Generative with corroboration can repair destructive damage",
-    cg7 > ChainGrade.DAIF,
+    "Corroboration cannot repair destructive damage (permanent floor, 3.0.3)",
+    cg7 == ChainGrade.DAIF,
     f"got {cg7.value}",
 )
 

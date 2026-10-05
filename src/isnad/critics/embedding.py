@@ -86,6 +86,9 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
     c_low = claim.lower()
     cc_low = corpus_claim.lower()
 
+    if claim == corpus_claim:
+        return False  # a claim never contradicts itself
+
     # Negation
     for pos, neg in [
         (" is ", " is not "),
@@ -113,13 +116,12 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
             return True
 
     # Numeric divergence >3x
-    nums_c = [float(n) for n in re.findall(r"\d+\.?\d*", claim)]
-    nums_cc = [float(n) for n in re.findall(r"\d+\.?\d*", corpus_claim)]
-    for nc in nums_c:
-        for ncc in nums_cc:
-            if nc > 0 and ncc > 0 and max(nc, ncc) / min(nc, ncc) > 3.0:
-                if not any(w in c_low for w in ["equal", "same", "constant"]):
-                    return True
+    nums_c = sorted(float(n) for n in re.findall(r"\d+\.?\d*", claim))
+    nums_cc = sorted(float(n) for n in re.findall(r"\d+\.?\d*", corpus_claim))
+    for nc, ncc in zip(nums_c, nums_cc, strict=False):
+        if nc > 0 and ncc > 0 and max(nc, ncc) / min(nc, ncc) > 3.0:
+            if not any(w in c_low for w in ["equal", "same", "constant"]):
+                return True
     return False
 
 

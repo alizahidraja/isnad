@@ -150,8 +150,8 @@ class TestDestructivePermanentCap:
         # (proving the flag is not dead code — see next test)
 
     def test_destructive_weak_can_be_repaired_with_corroboration(self) -> None:
-        """WEAK destructive → DAIF floor. RELIABLE generative WITH
-        corroboration REPAIRS: floor becomes SAHIH (own grade)."""
+        """WEAK destructive → permanent DAIF floor. Even a corroborated RELIABLE
+        generative cannot recover a destructive loss (3.0.3 spec)."""
         result = grade_chain(
             [NarratorGrade.WEAK, NarratorGrade.RELIABLE],
             [TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
@@ -159,12 +159,13 @@ class TestDestructivePermanentCap:
             corroboration_support=True,
             link_adalah_grades=[],
         )
-        assert result == ChainGrade.SAHIH
+        assert result == ChainGrade.DAIF
 
     def test_destructive_and_generative_switch_corroboration_changes_result(self) -> None:
-        """corroboration_support genuinely changes the output — not dead code."""
+        """corroboration_support genuinely changes the output — not dead code.
+        A NON-destructive weak chain is lifted by corroboration (hasan li-ghayrihi)."""
         grades = [NarratorGrade.WEAK, NarratorGrade.RELIABLE]
-        transforms = [TransformType.DESTRUCTIVE, TransformType.GENERATIVE]
+        transforms = [TransformType.PASS_THROUGH, TransformType.GENERATIVE]
 
         without = grade_chain(
             grades, transforms, is_complete=True, corroboration_support=False, link_adalah_grades=[]
@@ -175,7 +176,7 @@ class TestDestructivePermanentCap:
 
         assert without != with_c, f"corroboration_support flag is dead! Both returned {without}"
         assert without == ChainGrade.DAIF
-        assert with_c == ChainGrade.SAHIH
+        assert with_c == ChainGrade.HASAN
 
 
 class TestGenerativeCannotExceedOwnGrade:
@@ -188,7 +189,7 @@ class TestGenerativeCannotExceedOwnGrade:
         # ACCEPTABLE → HASAN.  Floor should become HASAN, not SAHIH.
         result = grade_chain(
             [NarratorGrade.WEAK, NarratorGrade.ACCEPTABLE],
-            [TransformType.DESTRUCTIVE, TransformType.GENERATIVE],
+            [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
             is_complete=True,
             corroboration_support=True,
             link_adalah_grades=[],
@@ -252,7 +253,7 @@ class TestChainWalkingOrder:
 
     def test_degradation_then_repair(self) -> None:
         """UNGRADED pass → caps at DAIF (strict default). Then RELIABLE gen
-        with corroboration replaces the floor at SAHIH."""
+        with corroboration lifts it to HASAN (hasan li-ghayrihi), never SAHIH."""
         result = grade_chain(
             [NarratorGrade.UNGRADED, NarratorGrade.RELIABLE],
             [TransformType.PASS_THROUGH, TransformType.GENERATIVE],
@@ -260,7 +261,7 @@ class TestChainWalkingOrder:
             corroboration_support=True,
             link_adalah_grades=[],
         )
-        assert result == ChainGrade.SAHIH
+        assert result == ChainGrade.HASAN
 
     def test_all_reliable_always_sahih(self) -> None:
         """All RELIABLE links → SAHIH regardless of transform types."""
@@ -348,12 +349,14 @@ class TestFidelityAxis:
         block the repair — its own output didn't hold together, so it can't
         vouch for anything upstream either."""
         grades = [NarratorGrade.WEAK, NarratorGrade.RELIABLE]
-        transforms = [TransformType.DESTRUCTIVE, TransformType.GENERATIVE]
+        transforms = [TransformType.PASS_THROUGH, TransformType.GENERATIVE]
 
         repaired = grade_chain(
             grades, transforms, is_complete=True, corroboration_support=True, link_adalah_grades=[]
         )
-        assert repaired == ChainGrade.SAHIH  # control: repair works without fidelity check
+        assert (
+            repaired == ChainGrade.HASAN
+        )  # non-destructive weak -> lifted to hasan li-ghayrihi# control: repair works without fidelity check
 
         blocked = grade_chain(
             grades,

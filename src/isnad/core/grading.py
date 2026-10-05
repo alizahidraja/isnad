@@ -156,6 +156,7 @@ class RefinedWeakestLink:
         # --- Walk the chain, maintaining a running floor ---
         # Start at SAHIH — no floor yet, best possible grade
         floor: ChainGrade = ChainGrade.SAHIH
+        destructive_floor: ChainGrade = ChainGrade.SAHIH
 
         for narrator_grade, transform_type, fidelity_verdict in zip(
             link_narrator_grades, link_transform_types, fidelity, strict=True
@@ -172,6 +173,7 @@ class RefinedWeakestLink:
                 link_equiv = ChainGrade.min(link_equiv, ChainGrade.DAIF)
 
             if transform_type == TransformType.DESTRUCTIVE:
+                destructive_floor = ChainGrade.min(destructive_floor, link_equiv)
                 # Destructive: permanent floor at this link's grade
                 # Information was lost; nothing downstream recovers it
                 floor = ChainGrade.min(floor, link_equiv)
@@ -186,7 +188,13 @@ class RefinedWeakestLink:
                     # link's own fidelity verdict was CONTRADICTION, so a
                     # contradicted generative link can never use this branch
                     # to raise the floor past DAIF — it can only lower it.
-                    floor = link_equiv
+                    # The generative link's own grade caps the floor (an
+                    # ACCEPTABLE generator cannot reach SAHIH); corroboration then
+                    # lifts a weak floor at most to HASAN (hasan li-ghayrihi) and
+                    # never above a permanent destructive loss.
+                    floor = ChainGrade.min(floor, link_equiv)
+                    ceiling = ChainGrade.min(ChainGrade.HASAN, destructive_floor)
+                    floor = max(floor, ChainGrade.min(link_equiv, ceiling))
                 else:
                     # Without corroboration, or WEAK generative:
                     # standard minimum — can only lower, never raise
