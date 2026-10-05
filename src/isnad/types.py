@@ -433,6 +433,9 @@ class CorroborationPolicy(Protocol):
         base_grade: ChainGrade,
         corroborating_chains: list[ChainGrade],
         independence_scores: list[float],
+        *,
+        chain_blind_spot_priors: list[float] | None = None,
+        shared_lineage_flags: list[bool] | None = None,
     ) -> ChainGrade: ...
 
 
