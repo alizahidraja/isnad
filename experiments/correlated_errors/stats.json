@@ -1,17 +1,17 @@
 {
   "k": 8,
-  "phi_bar": 0.5599056958116437,
-  "n_eff": 1.626234456309625,
+  "phi_bar": 0.5599173086564229,
+  "n_eff": 1.6262075839492611,
   "n_eff_ci": [
-    1.5318873588156452,
-    1.7397926668205959
+    1.5312666392584822,
+    1.7411527652011058
   ],
   "pairs": [
     {
       "mi": "deepseek/deepseek-chat",
       "mj": "deepseek/deepseek-reasoner",
       "phi": 0.48877022511565754,
-      "same_wrong": 0.5423728813559322,
+      "same_wrong": 0.5254237288135594,
       "table": {
         "a": 59,
         "b": 28,
@@ -24,13 +24,13 @@
     {
       "mi": "deepseek/deepseek-chat",
       "mj": "glm/glm-5.3",
-      "phi": 0.4880821874756646,
-      "same_wrong": 0.5918367346938775,
+      "phi": 0.4918153171866239,
+      "same_wrong": 0.56,
       "table": {
-        "a": 49,
-        "b": 38,
-        "c": 28,
-        "d": 263
+        "a": 50,
+        "b": 37,
+        "c": 29,
+        "d": 262
       },
       "same_family": false,
       "cross_provider": true
@@ -52,13 +52,13 @@
     {
       "mi": "deepseek/deepseek-chat",
       "mj": "kimi/kimi-k2.6",
-      "phi": 0.5029798474917052,
-      "same_wrong": 0.4915254237288136,
+      "phi": 0.479880200123669,
+      "same_wrong": 0.4166666666666667,
       "table": {
-        "a": 59,
-        "b": 28,
-        "c": 43,
-        "d": 248
+        "a": 60,
+        "b": 27,
+        "c": 50,
+        "d": 241
       },
       "same_family": false,
       "cross_provider": true
@@ -67,7 +67,7 @@
       "mi": "deepseek/deepseek-chat",
       "mj": "kimi/kimi-k3",
       "phi": 0.4281685601873208,
-      "same_wrong": 0.509090909090909,
+      "same_wrong": 0.4909090909090909,
       "table": {
         "a": 55,
         "b": 32,
@@ -108,11 +108,11 @@
     {
       "mi": "deepseek/deepseek-reasoner",
       "mj": "glm/glm-5.3",
-      "phi": 0.6395645272043055,
-      "same_wrong": 0.5384615384615384,
+      "phi": 0.6545081157658361,
+      "same_wrong": 0.5074626865671642,
       "table": {
-        "a": 65,
-        "b": 40,
+        "a": 67,
+        "b": 38,
         "c": 12,
         "d": 261
       },
@@ -123,7 +123,7 @@
       "mi": "deepseek/deepseek-reasoner",
       "mj": "glm/glm-5.3-flash",
       "phi": 0.6261585997769192,
-      "same_wrong": 0.5303030303030303,
+      "same_wrong": 0.5,
       "table": {
         "a": 66,
         "b": 39,
@@ -136,13 +136,13 @@
     {
       "mi": "deepseek/deepseek-reasoner",
       "mj": "kimi/kimi-k2.6",
-      "phi": 0.6076598083236846,
-      "same_wrong": 0.5675675675675675,
+      "phi": 0.6169322205757042,
+      "same_wrong": 0.46153846153846156,
       "table": {
-        "a": 74,
-        "b": 31,
-        "c": 28,
-        "d": 245
+        "a": 78,
+        "b": 27,
+        "c": 32,
+        "d": 241
       },
       "same_family": false,
       "cross_provider": true
@@ -151,7 +151,7 @@
       "mi": "deepseek/deepseek-reasoner",
       "mj": "kimi/kimi-k3",
       "phi": 0.6778817052033979,
-      "same_wrong": 0.5679012345679012,
+      "same_wrong": 0.5555555555555556,
       "table": {
         "a": 81,
         "b": 24,
@@ -179,7 +179,7 @@
       "mi": "deepseek/deepseek-reasoner",
       "mj": "perplexity/sonar-pro",
       "phi": 0.6067295714647823,
-      "same_wrong": 0.4069767441860465,
+      "same_wrong": 0.38372093023255816,
       "table": {
         "a": 86,
         "b": 19,
@@ -192,13 +192,13 @@
     {
       "mi": "glm/glm-5.3",
       "mj": "glm/glm-5.3-flash",
-      "phi": 0.7443812208025729,
+      "phi": 0.7305561563691256,
       "same_wrong": 0.6190476190476191,
       "table": {
         "a": 63,
-        "b": 14,
+        "b": 16,
         "c": 18,
-        "d": 283
+        "d": 281
       },
       "same_family": true,
       "cross_provider": false
@@ -206,13 +206,13 @@
     {
       "mi": "glm/glm-5.3",
       "mj": "kimi/kimi-k2.6",
-      "phi": 0.5212250927825802,
-      "same_wrong": 0.625,
+      "phi": 0.5444818908140961,
+      "same_wrong": 0.5081967213114754,
       "table": {
-        "a": 56,
-        "b": 21,
-        "c": 46,
-        "d": 255
+        "a": 61,
+        "b": 18,
+        "c": 49,
+        "d": 250
       },
       "same_family": false,
       "cross_provider": true
@@ -220,13 +220,13 @@
     {
       "mi": "glm/glm-5.3",
       "mj": "kimi/kimi-k3",
-      "phi": 0.6054856351757631,
-      "same_wrong": 0.6190476190476191,
+      "phi": 0.6061289771041125,
+      "same_wrong": 0.59375,
       "table": {
-        "a": 63,
-        "b": 14,
-        "c": 43,
-        "d": 258
+        "a": 64,
+        "b": 15,
+        "c": 42,
+        "d": 257
       },
       "same_family": false,
       "cross_provider": true
@@ -234,13 +234,13 @@
     {
       "mi": "glm/glm-5.3",
       "mj": "perplexity/sonar",
-      "phi": 0.4486992479475971,
+      "phi": 0.4341390050996406,
       "same_wrong": 0.3968253968253968,
       "table": {
         "a": 63,
-        "b": 14,
+        "b": 16,
         "c": 83,
-        "d": 218
+        "d": 216
       },
       "same_family": false,
       "cross_provider": true
@@ -248,13 +248,13 @@
     {
       "mi": "glm/glm-5.3",
       "mj": "perplexity/sonar-pro",
-      "phi": 0.48014445917350146,
-      "same_wrong": 0.45161290322580644,
+      "phi": 0.47964746599167896,
+      "same_wrong": 0.4444444444444444,
       "table": {
-        "a": 62,
-        "b": 15,
-        "c": 71,
-        "d": 230
+        "a": 63,
+        "b": 16,
+        "c": 70,
+        "d": 229
       },
       "same_family": false,
       "cross_provider": true
@@ -262,13 +262,13 @@
     {
       "mi": "glm/glm-5.3-flash",
       "mj": "kimi/kimi-k2.6",
-      "phi": 0.5540253798537813,
-      "same_wrong": 0.5166666666666667,
+      "phi": 0.5454583144751435,
+      "same_wrong": 0.43548387096774194,
       "table": {
-        "a": 60,
-        "b": 21,
-        "c": 42,
-        "d": 255
+        "a": 62,
+        "b": 19,
+        "c": 48,
+        "d": 249
       },
       "same_family": false,
       "cross_provider": true
@@ -318,13 +318,13 @@
     {
       "mi": "kimi/kimi-k2.6",
       "mj": "kimi/kimi-k3",
-      "phi": 0.5625137294070195,
-      "same_wrong": 0.5633802816901409,
+      "phi": 0.5595077268204062,
+      "same_wrong": 0.47297297297297297,
       "table": {
-        "a": 71,
-        "b": 31,
-        "c": 35,
-        "d": 241
+        "a": 74,
+        "b": 36,
+        "c": 32,
+        "d": 236
       },
       "same_family": true,
       "cross_provider": false
@@ -332,13 +332,13 @@
     {
       "mi": "kimi/kimi-k2.6",
       "mj": "perplexity/sonar",
-      "phi": 0.5337462816833933,
-      "same_wrong": 0.37349397590361444,
+      "phi": 0.5444340436319138,
+      "same_wrong": 0.3068181818181818,
       "table": {
-        "a": 83,
-        "b": 19,
-        "c": 63,
-        "d": 213
+        "a": 88,
+        "b": 22,
+        "c": 58,
+        "d": 210
       },
       "same_family": false,
       "cross_provider": true
@@ -346,13 +346,13 @@
     {
       "mi": "kimi/kimi-k2.6",
       "mj": "perplexity/sonar-pro",
-      "phi": 0.5754848532984845,
-      "same_wrong": 0.35365853658536583,
+      "phi": 0.5768279963159179,
+      "same_wrong": 0.32558139534883723,
       "table": {
-        "a": 82,
-        "b": 20,
-        "c": 51,
-        "d": 225
+        "a": 86,
+        "b": 24,
+        "c": 47,
+        "d": 221
       },
       "same_family": false,
       "cross_provider": true
@@ -361,7 +361,7 @@
       "mi": "kimi/kimi-k3",
       "mj": "perplexity/sonar",
       "phi": 0.641780498082176,
-      "same_wrong": 0.4574468085106383,
+      "same_wrong": 0.44680851063829785,
       "table": {
         "a": 94,
         "b": 12,
@@ -403,9 +403,9 @@
   "error_rates": {
     "deepseek/deepseek-chat": 0.23015873015873015,
     "deepseek/deepseek-reasoner": 0.2777777777777778,
-    "glm/glm-5.3": 0.2037037037037037,
+    "glm/glm-5.3": 0.20899470899470898,
     "glm/glm-5.3-flash": 0.21428571428571427,
-    "kimi/kimi-k2.6": 0.2698412698412698,
+    "kimi/kimi-k2.6": 0.291005291005291,
     "kimi/kimi-k3": 0.2804232804232804,
     "perplexity/sonar": 0.3862433862433862,
     "perplexity/sonar-pro": 0.35185185185185186
@@ -420,5 +420,25 @@
     "perplexity/sonar": 1.0,
     "perplexity/sonar-pro": 1.0
   },
-  "excluded": {}
+  "excluded": {},
+  "truncated_count": {
+    "deepseek/deepseek-chat": 0,
+    "deepseek/deepseek-reasoner": 31,
+    "glm/glm-5.3-flash": 0,
+    "glm/glm-5.3": 3,
+    "kimi/kimi-k2.6": 46,
+    "kimi/kimi-k3": 7,
+    "perplexity/sonar-pro": 0,
+    "perplexity/sonar": 0
+  },
+  "refusal_count": {
+    "deepseek/deepseek-chat": 0,
+    "deepseek/deepseek-reasoner": 0,
+    "glm/glm-5.3-flash": 0,
+    "glm/glm-5.3": 0,
+    "kimi/kimi-k2.6": 0,
+    "kimi/kimi-k3": 0,
+    "perplexity/sonar-pro": 0,
+    "perplexity/sonar": 0
+  }
 }

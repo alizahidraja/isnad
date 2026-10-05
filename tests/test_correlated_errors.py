@@ -1,12 +1,15 @@
 """Tests for the ISNAD φ study (correlated-errors experiment).
 
-Covers the statistics exclusion rule and the Experiment B/C φ-discount direction:
-the discounted corroboration policy must never upgrade MORE than naive.
+Covers the statistics exclusion rule, the φ/same-wrong computation, the
+cluster-bootstrap CI, the number parser, and the Experiment B/C φ-discount
+direction: the discounted corroboration policy must never upgrade MORE than naive.
 """
 
 from __future__ import annotations
 
 import math
+
+import pytest
 
 from experiments.correlated_errors import experiment_bc as bc
 from experiments.correlated_errors import runner
@@ -14,22 +17,17 @@ from experiments.correlated_errors import stats
 
 
 def test_n_eff_formula():
-    # φ=0 → full independence → n_eff == k
     assert bc.n_eff(0.0, 8) == 8
-    # φ=1 → perfect correlation → n_eff == 1
     assert math.isclose(bc.n_eff(1.0, 8), 1.0)
-    # φ>0 → n_eff < k
     assert bc.n_eff(0.7, 8) < 8
 
 
 def test_corroboration_strength_naive_equals_m():
-    # With φ=0 (naive), strength of m agreeing models is exactly m.
     for m in range(1, 6):
         assert bc.corroboration_strength(m, 0.0, 8) == m
 
 
 def test_corroboration_strength_discounted_lower():
-    # With φ>0, each extra agreeing route counts <1, so strength < m for m>1.
     for m in (2, 3, 4):
         assert bc.corroboration_strength(m, 0.5, 8) < m
 
@@ -66,10 +64,7 @@ def test_discounted_never_upgrades_more_than_naive():
     naive_up = {cid for cid, (up, _a, _s) in naive.items() if up}
     disc_up = {cid for cid, (up, _a, _s) in discounted.items() if up}
 
-    # The discount only lowers the strength of correlated extra votes → it can
-    # only ever SHRINK the upgrade set, never grow it.
     assert disc_up <= naive_up
-    # In this fixture it genuinely removes the correlated-wrong pair (c2):
     assert "c2" in naive_up
     assert "c2" not in disc_up
 
@@ -77,23 +72,20 @@ def test_discounted_never_upgrades_more_than_naive():
 def test_false_upgrade_reduction_direction():
     answers, oracle = _fixture()
     result = bc.compare(answers, oracle, phi_bar=0.5, k=3, threshold=2)
-    # Discounted upgrades strictly fewer claims (lower coverage)…
+
     assert result["discounted"]["coverage"] < result["naive"]["coverage"]
-    # …and strictly fewer false upgrades, so Δfalse-upgrade ≥ 0 and Δrisk ≥ 0.
     assert result["discounted"]["false_upgrades"] < result["naive"]["false_upgrades"]
     assert result["delta_false_upgrade_rate"] >= 0
     assert result["delta_risk"] >= 0
 
 
 def test_agreement_counts_float_equality():
-    # "43.03" and 43.03 agree as the same number; None is ignored.
     counts = bc.agreement_counts({"a": "43.03", "b": 43.03, "c": None})
     assert counts[43.03] == 2
     assert len(counts) == 1
 
 
 def test_phi_known_table():
-    # a=both wrong, b=i wrong j right, c=i right j wrong, d=both right
     assert math.isclose(stats._phi(16, 0, 4, 44), 0.8563, abs_tol=1e-3)
     assert stats._phi(1, 0, 0, 1) == 1.0
     assert stats._phi(0, 1, 1, 0) == -1.0
@@ -104,7 +96,7 @@ def test_retained_models_band():
     rates = {"a": 0.5, "b": 0.5, "c": 0.5, "d": 0.005, "e": 0.999}
     covs = {"a": 1.0, "b": 0.5, "c": 1.0, "d": 1.0, "e": 1.0}
     kept = stats.retained_models(rates, covs)
-    # a: ok; b: coverage <0.9 excluded; c: ok; d: rate <1% excluded; e: rate >99% excluded
+
     assert kept == ["a", "c"]
 
 
@@ -114,14 +106,14 @@ def test_error_vector_missing_is_not_error():
         {"id": "f2", "oracle_value": "20"},
         {"id": "f3", "oracle_value": "30"},
     ]
-    rows = {"f1": {"answer_value": "10"}, "f3": {"answer_value": "999"}}  # f2 missing
+    rows = {"f1": {"answer_value": "10"}, "f3": {"answer_value": "999"}}
     err, ans, covered = stats.error_vector(rows, corpus)
     assert covered == [True, False, True]
-    # f1 correct (0.0), f3 wrong (1.0); f2 missing is NOT an error
+
     assert err[0] == 0.0
     assert err[2] == 1.0
     rate = sum(e for e, c in zip(err, covered, strict=True) if c) / sum(covered)
-    assert rate == 0.5  # 1 of 2 covered facts wrong (missing f2 excluded)
+    assert rate == 0.5
 
 
 def test_percentile_linear_interpolation():
@@ -130,24 +122,86 @@ def test_percentile_linear_interpolation():
     assert stats._percentile(vals, 0.975) == 974.025
 
 
-def test_strength_equals_n_eff_at_m_k():
+@pytest.mark.parametrize("phi_bar", [0.0, 0.4, 0.5599, 0.8])
+def test_strength_equals_n_eff_at_m_k(phi_bar):
     k = 8
-    phi_bar = 0.5667
     assert bc.corroboration_strength(1, phi_bar, k) == 1.0
     assert math.isclose(
         bc.corroboration_strength(k, phi_bar, k), bc.n_eff(phi_bar, k), rel_tol=1e-12
     )
-    # discounted is strictly below the naive count for m > 1 and phi > 0
     for m in (2, 3, 4, 5):
-        assert bc.corroboration_strength(m, phi_bar, k) < m
+        if phi_bar == 0.0:
+            assert bc.corroboration_strength(m, phi_bar, k) == m
+        else:
+            assert bc.corroboration_strength(m, phi_bar, k) < m
 
 
 def test_parse_number_unicode_minus_sign():
-    # U+2212 MINUS SIGN, U+2013 en-dash, U+2012 figure dash all normalize to ASCII "-"
     assert runner._parse_number("−273.15") == "-273.15"
     assert runner._parse_number("–273.15") == "-273.15"
     assert runner._parse_number("‒273.15") == "-273.15"
-    # ASCII sign still works, positive numbers unchanged
     assert runner._parse_number("-273.15") == "-273.15"
     assert runner._parse_number("273.15") == "273.15"
     assert runner._parse_number("+5.5") == "+5.5"
+
+
+@pytest.mark.parametrize(
+    "raw, expected",
+    [
+        ("299,792,458 m/s", "299792458"),
+        ("1,2,3", "3"),
+        ("1_000_000", "1000000"),
+        ("-273.15", "-273.15"),
+    ],
+)
+def test_parse_number_thousands_separator(raw, expected):
+    assert runner._parse_number(raw) == expected
+
+
+def test_pair_table_same_wrong_numeric_equality():
+    # fact0 both-wrong "9.8" vs "9.80" -> numerically equal -> same_wrong counts it;
+    # fact1 both-wrong "x" vs "y" -> not; fact2 m1-right -> c; fact3 both-wrong but
+    # both unparseable ("") -> NOT same-wrong.
+    ei = [1.0, 1.0, 0.0, 1.0]
+    ej = [1.0, 1.0, 1.0, 1.0]
+    ai = ["9.8", "x", "10", ""]
+    aj = ["9.80", "y", "20", ""]
+    ci = [True, True, True, True]
+    cj = [True, True, True, True]
+    a, b, c, d, both_wrong, same_wrong = stats._pair_table(ei, ej, ai, aj, ci, cj)
+    assert (a, b, c, d) == (3, 0, 1, 0)
+    assert both_wrong == 3
+    assert same_wrong == 1
+
+
+def test_pair_table_missing_not_same_wrong():
+    # a missing/missing fact (covered=False on both) must not enter any cell.
+    ei = [1.0, 0.0]
+    ej = [1.0, 0.0]
+    ai = ["", ""]
+    aj = ["", ""]
+    ci = [False, True]
+    cj = [False, True]
+    a, b, c, d, both_wrong, same_wrong = stats._pair_table(ei, ej, ai, aj, ci, cj)
+    assert (a, b, c, d, both_wrong, same_wrong) == (0, 0, 0, 1, 0, 0)
+
+
+def test_bootstrap_ci_deterministic_and_sane():
+    corpus = [{"id": f"f{i}", "oracle_value": str(i)} for i in range(20)]
+    # m1 errs on facts 0-9; m2 errs on facts 0-7 and 10-11 -> phi = 0.6.
+    m1 = {f"f{i}": {"answer_value": "999" if i < 10 else str(i)} for i in range(20)}
+    m2 = {
+        f"f{i}": {"answer_value": "999" if (i < 8 or i in (10, 11)) else str(i)} for i in range(20)
+    }
+    models = {"m1": m1, "m2": m2}
+    ei, ai, ci = stats.error_vector(m1, corpus)
+    ej, aj, cj = stats.error_vector(m2, corpus)
+    a, b, c, d, _both, _same = stats._pair_table(ei, ej, ai, aj, ci, cj)
+    phi = stats._phi(a, b, c, d)
+    assert math.isclose(phi, 0.6, abs_tol=1e-9)
+    pairs = [{"mi": "m1", "mj": "m2", "phi": phi}]
+    lo1, hi1 = stats._bootstrap_ci(pairs, models, corpus, k=2, n_draws=100, seed=0)
+    lo2, hi2 = stats._bootstrap_ci(pairs, models, corpus, k=2, n_draws=100, seed=0)
+    assert lo1 is not None and hi1 is not None
+    assert lo1 <= hi1
+    assert lo1 == lo2 and hi1 == hi2  # deterministic under a fixed seed

@@ -515,11 +515,11 @@
   {
     "claim_id": "hard-a013",
     "model": "kimi/kimi-k3",
-    "answer_value": "10592.25",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for Saturn's semi-major axis in astronomical units. The well-known value is approximately 9.5826 AU. NASA fact sheet gives Saturn semi-major axis = 9.537 AU? Let me recall precisely",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a014",
@@ -686,20 +686,20 @@
   {
     "claim_id": "hard-a032",
     "model": "kimi/kimi-k3",
-    "answer_value": "2025",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the number of confirmed moons of Jupiter as of 2023. They want just the numeric value, no units, no prose.\n\nAs of 2023, Jupiter had 95 confirmed moons. In early 2023 (February 2",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a033",
     "model": "kimi/kimi-k3",
-    "answer_value": "2025",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the number of confirmed moons of Saturn as of 2023. I need to answer with just a numeric value.\n\nAs of 2023, Saturn had 146 confirmed moons. In May 2023, 62 new moons were annou",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a034",
@@ -974,11 +974,11 @@
   {
     "claim_id": "hard-a065",
     "model": "kimi/kimi-k3",
-    "answer_value": "777",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants just the numeric value, no units, no prose. The question: apparent visual magnitude of Venus at its brightest. Venus reaches about -4.7 (often cited -4.6 to -4.7). Need answer numeric o",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a066",
@@ -2198,11 +2198,11 @@
   {
     "claim_id": "hard-g056",
     "model": "kimi/kimi-k3",
-    "answer_value": "13",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the width of the Strait of Gibraltar at its narrowest point in kilometers. They want just the numeric value, no units, no prose.\n\nThe Strait of Gibraltar at its narrowest point ",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g058",
@@ -3098,11 +3098,11 @@
   {
     "claim_id": "hard-d012",
     "model": "kimi/kimi-k3",
-    "answer_value": "68",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the population of metropolitan France in millions, 2023 estimate. They want just numeric value, no units, no prose.\n\nMetropolitan France population as of 2023 estimate. INSEE es",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d013",
@@ -3449,11 +3449,11 @@
   {
     "claim_id": "md_pc06",
     "model": "kimi/kimi-k3",
-    "answer_value": "5",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking about the 2026 Winter Olympics. My knowledge cutoff is 2024-06, and the 2026 Winter Olympics are scheduled for February 2026 in Milan-Cortina. This event has not happened yet relati",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "md_pc07",

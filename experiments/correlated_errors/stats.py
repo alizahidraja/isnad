@@ -46,10 +46,6 @@ def _family(model: str) -> str:
     return model.split("/", 1)[0]
 
 
-def _provider(model: str) -> str:
-    return model.split("/", 1)[0]
-
-
 def _phi(a: int, b: int, c: int, d: int) -> float | None:
     denom = math.sqrt((a + b) * (c + d) * (a + c) * (b + d))
     if denom == 0:
@@ -67,6 +63,92 @@ def _percentile(sorted_vals: list[float], p: float) -> float:
     if f == c:
         return sorted_vals[int(k)]
     return sorted_vals[f] * (c - k) + sorted_vals[c] * (k - f)
+
+
+def _pair_table(
+    ei: list[float], ej: list[float], ai: list[str], aj: list[str], ci: list[bool], cj: list[bool]
+) -> tuple[int, int, int, int, int, int]:
+    """2x2 table + same-wrong counts for one model pair.
+
+    Returns (a, b, c, d, both_wrong, same_wrong). A fact is counted only when BOTH
+    models cover it (ci and cj); missing/missing or one-sided-missing is excluded.
+    ``same_wrong`` is incremented only for facts where both models are wrong AND
+    their parsed answers are numerically equal (``float(u) == float(v)``), never on
+    raw-string equality, so ``"9.8"`` and ``"9.80"`` DO count as the same wrong value
+    while two missing/refused answers never do.
+    """
+    a = b = c = d = both_wrong = same_wrong = 0
+    for x, y, u, v, ci_, cj_ in zip(ei, ej, ai, aj, ci, cj):
+        if not (ci_ and cj_):
+            continue
+        if x == 1 and y == 1:
+            a += 1
+            both_wrong += 1
+            fu, fv = _float(u), _float(v)
+            if fu is not None and fv is not None and fu == fv:
+                same_wrong += 1
+        elif x == 1 and y == 0:
+            b += 1
+        elif x == 0 and y == 1:
+            c += 1
+        else:
+            d += 1
+    return a, b, c, d, both_wrong, same_wrong
+
+
+def _bootstrap_ci(
+    pairs: list[dict[str, object]],
+    models: dict[str, dict[str, dict[str, object]]],
+    corpus: list[dict[str, str]],
+    k: int,
+    n_draws: int = 1000,
+    seed: int = 0,
+) -> tuple[float | None, float | None]:
+    """Cluster-bootstrap 95% CI for n_eff (resample by claim, NOT iid).
+
+    Resamples claim indices once per draw and reuses the SAME sample across all
+    pairs, preserving the cross-pair dependence structure. Returns (lo, hi) via
+    linear-interpolated percentiles of the n_eff bootstrap distribution.
+    """
+    rng = random.Random(seed)
+    n_claims = len(corpus)
+    idx = list(range(n_claims))
+    boot: list[float] = []
+    for _ in range(n_draws):
+        samp = [rng.choice(idx) for _ in range(n_claims)]
+        bphis: list[float] = []
+        for p in pairs:
+            if p["phi"] is None:
+                continue
+            ei, _, ci = error_vector(models[p["mi"]], corpus)
+            ej, _, cj = error_vector(models[p["mj"]], corpus)
+            ei = [ei[x] for x in samp]
+            ej = [ej[x] for x in samp]
+            ci = [ci[x] for x in samp]
+            cj = [cj[x] for x in samp]
+            a, b, c, d = 0, 0, 0, 0
+            for x, y, ci_, cj_ in zip(ei, ej, ci, cj):
+                if not (ci_ and cj_):
+                    continue
+                if x == 1 and y == 1:
+                    a += 1
+                elif x == 1 and y == 0:
+                    b += 1
+                elif x == 0 and y == 1:
+                    c += 1
+                else:
+                    d += 1
+            bp = _phi(a, b, c, d)
+            if bp is not None:
+                bphis.append(bp)
+        if bphis:
+            bb = sum(bphis) / len(bphis)
+            if bb > -1 / (k - 1):
+                boot.append(k / (1 + (k - 1) * bb))
+    if not boot:
+        return None, None
+    boot.sort()
+    return _percentile(boot, 0.025), _percentile(boot, 0.975)
 
 
 def load_models() -> dict[str, dict[str, dict[str, object]]]:
@@ -142,6 +224,23 @@ def main() -> None:
     for m in sorted(models):
         print(f"  {m}: rate {rates[m]:.3f} · coverage {covs[m]:.3f}")
 
+    truncated: dict[str, int] = {}
+    refusals: dict[str, int] = {}
+    for m, rows in models.items():
+        truncated[m] = sum(
+            1 for r in rows.values() if str(r.get("error") or "").startswith("truncated")
+        )
+        refusals[m] = sum(
+            1
+            for r in rows.values()
+            if r.get("answer_value") is None
+            and r.get("error") is None
+            and r.get("finish_reason") != "length"
+        )
+    print("truncated / refusals (counted separately from error rate):")
+    for m in sorted(models):
+        print(f"  {m}: truncated {truncated[m]} · refusals {refusals[m]}")
+
     retained = retained_models(rates, covs)
     excluded: dict[str, dict[str, object]] = {}
     for m in sorted(models):
@@ -169,24 +268,7 @@ def main() -> None:
             mi, mj = names[i], names[j]
             ei, ai, ci = error_vector(models[mi], corpus)
             ej, aj, cj = error_vector(models[mj], corpus)
-            a = b = c = d = 0
-            both_wrong = 0
-            same_wrong = 0
-            for x, y, u, v, ci_, cj_ in zip(ei, ej, ai, aj, ci, cj):
-                if not (ci_ and cj_):
-                    continue  # missing in either model → excluded from the 2×2 table
-                if x == 1 and y == 1:
-                    a += 1
-                    both_wrong += 1
-                    fu, fv = _float(u), _float(v)
-                    if fu is not None and fv is not None and fu == fv:
-                        same_wrong += 1
-                elif x == 1 and y == 0:
-                    b += 1
-                elif x == 0 and y == 1:
-                    c += 1
-                else:
-                    d += 1
+            a, b, c, d, both_wrong, same_wrong = _pair_table(ei, ej, ai, aj, ci, cj)
             phi = _phi(a, b, c, d)
             same_wrong_rate = (same_wrong / both_wrong) if both_wrong else None
             pairs.append({
@@ -196,7 +278,7 @@ def main() -> None:
                 "same_wrong": same_wrong_rate,
                 "table": {"a": a, "b": b, "c": c, "d": d},
                 "same_family": _family(mi) == _family(mj),
-                "cross_provider": _provider(mi) != _provider(mj),
+                "cross_provider": _family(mi) != _family(mj),
             })
             print(
                 f"  φ({mi[:30]}, {mj[:30]}) = {phi if phi is None else round(phi, 4)} "
@@ -207,49 +289,12 @@ def main() -> None:
     phis = [p["phi"] for p in pairs if p["phi"] is not None]
     k = len(retained)
     phi_bar = n_eff = lo = hi = None
-    boot: list[float] = []
     if phis:
         phi_bar = sum(phis) / len(phis)  # full precision, NOT from rounded per-pair values
         n_eff = k / (1 + (k - 1) * phi_bar) if phi_bar > -1 / (k - 1) else float("inf")
 
-        rng = random.Random(0)
-        n_claims = len(corpus)
-        idx = list(range(n_claims))
-        for _ in range(1000):
-            samp = [rng.choice(idx) for _ in range(n_claims)]
-            bphis = []
-            for p in pairs:
-                if p["phi"] is None:
-                    continue
-                ei, _, ci = error_vector(models[p["mi"]], corpus)
-                ej, _, cj = error_vector(models[p["mj"]], corpus)
-                ei = [ei[x] for x in samp]
-                ej = [ej[x] for x in samp]
-                ci = [ci[x] for x in samp]
-                cj = [cj[x] for x in samp]
-                a = b = c = d = 0
-                for x, y, ci_, cj_ in zip(ei, ej, ci, cj):
-                    if not (ci_ and cj_):
-                        continue
-                    if x == 1 and y == 1:
-                        a += 1
-                    elif x == 1 and y == 0:
-                        b += 1
-                    elif x == 0 and y == 1:
-                        c += 1
-                    else:
-                        d += 1
-                bp = _phi(a, b, c, d)
-                if bp is not None:
-                    bphis.append(bp)
-            if bphis:
-                bb = sum(bphis) / len(bphis)
-                if bb > -1 / (k - 1):
-                    boot.append(k / (1 + (k - 1) * bb))
-        if boot:
-            boot.sort()
-            lo = _percentile(boot, 0.025)
-            hi = _percentile(boot, 0.975)
+        lo, hi = _bootstrap_ci(pairs, models, corpus, k)
+        if lo is not None and hi is not None:
             print(
                 f"\nφ̄ = {phi_bar:.4f} · k = {k} · n_eff = {n_eff:.3f} · 95% CI [{lo:.3f}, {hi:.3f}]"
             )
@@ -258,11 +303,13 @@ def main() -> None:
         "k": k,
         "phi_bar": phi_bar,
         "n_eff": n_eff,
-        "n_eff_ci": [lo, hi] if (phis and boot) else [],
+        "n_eff_ci": [lo, hi] if (phis and lo is not None and hi is not None) else [],
         "pairs": pairs,
         "error_rates": {m: rates[m] for m in sorted(rates)},
         "coverage": {m: covs[m] for m in sorted(covs)},
         "excluded": excluded,
+        "truncated_count": truncated,
+        "refusal_count": refusals,
     }
     (_HERE / "stats.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8"

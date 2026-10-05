@@ -119,11 +119,11 @@
   {
     "claim_id": "hard-p014",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "-31",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer the question: \"What is the rest mass of the neutron in units of 10 to the negative 27 kilograms?\" Provide just numeric value, no units, no prose.\n\nNeed to know rest mass of neutron. Sta",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-p015",
@@ -218,11 +218,11 @@
   {
     "claim_id": "hard-p025",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "172.76",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the mass of the top quark in GeV, and wants just the numeric value with no units and no prose.\n\nThe current accepted value for the top quark mass is approximately 172.76 GeV/c²,",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-p026",
@@ -245,11 +245,11 @@
   {
     "claim_id": "hard-p028",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "0.84",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the charge radius of the proton in femtometers, and wants just the numeric value with no units or prose.\n\nI need to recall the accepted value of the proton charge radius. This h",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-p029",
@@ -344,11 +344,11 @@
   {
     "claim_id": "hard-p039",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "15",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the mean lifetime of a neutron in minutes. I need to provide just the numeric value, no units, no prose.\n \n The mean lifetime of a neutron is approximately 879.4 seconds (the PD",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-p040",
@@ -371,11 +371,11 @@
   {
     "claim_id": "hard-p042",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "24",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the mass of the Earth in units of $10^{24}$ kilograms. They want just the numeric value, no units, no prose.\n \n The standard value for the mass of the Earth is approximately $5.",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-p043",
@@ -515,11 +515,11 @@
   {
     "claim_id": "hard-a013",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "29.66",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the semi-major axis of Saturn's orbit in astronomical units (AU). I need to provide just the numeric value with no units and no prose.\n\n Saturn's semi-major axis is approximatel",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a014",
@@ -695,11 +695,11 @@
   {
     "claim_id": "hard-a033",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "62",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the number of confirmed moons of Saturn as of 2023. I need to provide just the numeric value, no units, no prose.\n\nAs of 2023, Saturn has 146 confirmed moons. Wait, let me verif",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a034",
@@ -740,11 +740,11 @@
   {
     "claim_id": "hard-a038",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "800",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the number of light-years in one parsec. I need to provide just the numeric value, no units, no prose.\n \n A parsec is defined as the distance at which one astronomical unit subt",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a039",
@@ -758,11 +758,11 @@
   {
     "claim_id": "hard-a041",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "3.71",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the surface gravity of Mars in meters per second squared. They want just the numeric value with no units and no prose.\n \n The standard value for the surface gravity of Mars is a",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a042",
@@ -848,11 +848,11 @@
   {
     "claim_id": "hard-a051",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "1",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants to know the orbital period of Halley's Comet in years. I need to answer with just the numeric value, no units, no prose.\n\n Halley's Comet has an orbital period of about 75-76 years. Mor",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a052",
@@ -875,20 +875,20 @@
   {
     "claim_id": "hard-a054",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "4.3",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user asks: \"Answer the following question with just the numeric value (no units, no prose): What is the mass of the black hole at the center of the Milky Way in units of 10 to the 6 solar masses?\"",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a055",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "9.46073",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need to answer: \"What is the length of a light-year in units of 10 to the 12 kilometers?\" And output just the numeric value (no units, no prose). So compute light-year in kilometers, then divide by",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a056",
@@ -920,11 +920,11 @@
   {
     "claim_id": "hard-a059",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "9",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants the mean distance from the Sun to Saturn in million kilometers, with just the numeric value and no units or prose.\n\nThe mean distance from the Sun to Saturn (semi-major axis) is approxi",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a060",
@@ -938,11 +938,11 @@
   {
     "claim_id": "hard-a061",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "50724",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the diameter of Uranus in kilometers. They want just the numeric value with no units and no prose.\n\nThe diameter of Uranus is approximately 50,724 km (or often cited as around 5",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a062",
@@ -974,29 +974,29 @@
   {
     "claim_id": "hard-a065",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "1",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer: apparent visual magnitude of Venus at its brightest. Must be just numeric value, no units, no prose. Need accurate value. Venus brightest apparent magnitude is around -4.6 or -4.7? Let",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a066",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "110",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user asks: \"What is the number of times the Moon's diameter fits in the distance to the Moon?\" They want just the numeric value (no units, no prose).\n\nI need to compute the ratio of the average di",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a067",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "2",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the orbital period of the International Space Station in minutes, and wants just the numeric value, no units, no prose.\n\nThe ISS orbits at about 400 km altitude. The orbital per",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a070",
@@ -1028,11 +1028,11 @@
   {
     "claim_id": "hard-a073",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "175.94",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer the question: \"What is the number of Earth days in one solar day on Mercury?\" Must respond with just the numeric value, no units, no prose.\n\nWe need compute or recall the length of a so",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a074",
@@ -1361,11 +1361,11 @@
   {
     "claim_id": "hard-c035",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "498",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the bond dissociation energy of the oxygen-oxygen double bond (O=O) in kilojoules per mole. I need to provide just the numeric value with no units and no prose.\n\nThe standard bo",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c036",
@@ -1388,38 +1388,38 @@
   {
     "claim_id": "hard-c038",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "602",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user asks: \"Answer the following question with just the numeric value (no units, no prose): What is the bond dissociation energy of a carbon-carbon double bond in kilojoules per mole?\" So they wan",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c039",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "835",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user asks: \"Answer the following question with just the numeric value (no units, no prose): What is the bond dissociation energy of a carbon-carbon triple bond in kilojoules per mole?\"\n \n We need ",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c040",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "418.4",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the bond dissociation energy of a carbon-hydrogen bond in kilojoules per mole. They want just the numeric value with no units and no prose.\n\nI need to recall what the typical bo",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c041",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "463",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the bond dissociation energy of an O-H bond in kJ/mol. They want just the numeric value, no units, no prose.\n\nI need to recall the approximate bond dissociation energy for an O-",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c042",
@@ -1541,11 +1541,11 @@
   {
     "claim_id": "hard-c055",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "32",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the molar mass of sulfuric acid (H₂SO₄) in grams per mole, but they want just the numeric value with no units and no prose.\n \n Let me calculate the molar mass of H₂SO₄:\n \n Hydro",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c056",
@@ -1820,11 +1820,11 @@
   {
     "claim_id": "hard-g011",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "4809",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the height of Mont Blanc in meters. I need to provide just the numeric value without any units or prose. Mont Blanc is the highest mountain in the Alps and Western Europe. Its e",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g012",
@@ -1946,11 +1946,11 @@
   {
     "claim_id": "hard-g025",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "300",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the surface area of Lake Michigan in square kilometers. They want just the numeric value with no units and no prose.\n\n Lake Michigan is one of the Great Lakes. I need to recall ",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g026",
@@ -2000,11 +2000,11 @@
   {
     "claim_id": "hard-g033",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "000",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the area of the Pacific Ocean in million square kilometers. They want just the numeric value, no units, no prose.\n\nI need to recall or know the approximate area of the Pacific O",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g034",
@@ -2054,11 +2054,11 @@
   {
     "claim_id": "hard-g039",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "766",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants to know the length of the Mississippi River in kilometers. I need to provide just the numeric value, no units, no prose.\n\n The Mississippi River is approximately 2,320 miles long. Conve",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g040",
@@ -2090,11 +2090,11 @@
   {
     "claim_id": "hard-g043",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "7.692",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the area of Australia in million square kilometers, and wants just the numeric value with no units or prose.\n\nI need to recall the area of Australia. Australia is the world's si",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g044",
@@ -2198,11 +2198,11 @@
   {
     "claim_id": "hard-g056",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "13",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the width of the Strait of Gibraltar at its narrowest point, in kilometers, and wants just the numeric value with no units or prose.\n\nI need to recall the width of the Strait of",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g058",
@@ -2216,11 +2216,11 @@
   {
     "claim_id": "hard-g059",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "8372",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the area of Lake Titicaca in square kilometers, and specifically wants just the numeric value with no units and no prose.\n\nLake Titicaca is a large, deep lake in the Andes on th",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g060",
@@ -3008,11 +3008,11 @@
   {
     "claim_id": "hard-d002",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "1.4",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants to know the population of China in billions (2023 estimate). I need to provide just the numeric value with no units and no prose.\n\nAccording to common estimates, China's population in 2",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d003",
@@ -3035,92 +3035,92 @@
   {
     "claim_id": "hard-d005",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "240",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants the population of Pakistan in millions (2023 estimate) as just a numeric value, no units, no prose.\n\nLooking at my knowledge, the 2023 estimate for Pakistan's population is approximatel",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d006",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "223.8",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the population of Nigeria in millions (2023 estimate). They want just the numeric value with no units and no prose.\n \n According to the UN World Population Prospects 2022 or oth",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d007",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "216.4",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants to know the population of Brazil in millions (2023 estimate). I need to provide just the numeric value, no units, no prose.\n\nAccording to IBGE (Brazilian Institute of Geography and Stat",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d008",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "172.95",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants to know the population of Bangladesh in millions (2023 estimate). I need to provide just the numeric value with no units and no prose.\n\nAccording to the World Bank, UN, and other source",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d009",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "146.1",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the population of Russia in millions (2023 estimate). I need to provide just the numeric value, no units, no prose.\n\nAccording to various sources like the World Bank, UN, or Rus",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d010",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "124",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the population of Japan in millions (2023 estimate). They want just the numeric value with no units and no prose.\n\nAccording to the World Bank or UN estimates, Japan's populatio",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d011",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "2024",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants the population of the United Kingdom in millions for a 2023 estimate. They want just the numeric value, no units, no prose.\n\n According to the United Nations or World Bank or ONS data, ",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d012",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "65.9",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants to know the population of metropolitan France in millions (2023 estimate). They want just the numeric value with no units and no prose.\n\nMetropolitan France (France métropolitaine) refe",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d013",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "252",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user asks for the population of Germany in millions (2023 estimate), and wants just the numeric value with no units and no prose.\n\nI need to provide the estimated population of Germany for 2023. A",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d014",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "105",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user wants to know the population of Egypt in millions (2023 estimate). They want just the numeric value with no units and no prose.\n\nI need to recall or determine the estimated population of Egyp",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d015",
@@ -3152,11 +3152,11 @@
   {
     "claim_id": "hard-d018",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "2023",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the population of Mexico in millions (2023 estimate). I need to provide just the numeric value without any units or prose.\n\nThe 2023 population estimate for Mexico is approximat",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d019",
@@ -3206,11 +3206,11 @@
   {
     "claim_id": "hard-d024",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "51.7",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the population of South Korea in millions (2023 estimate). They want just the numeric value, no units, no prose.\n \n According to the World Bank, UN, or other reliable sources, S",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d025",
@@ -3449,20 +3449,20 @@
   {
     "claim_id": "md_pc06",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "2026",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the total number of medals Norway won at the 2026 Winter Olympics. \n\nFirst, I need to check if the 2026 Winter Olympics have taken place yet. The 2026 Winter Olympics are schedu",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "md_pc07",
     "model": "kimi/kimi-k2.6",
-    "answer_value": "2026",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the total number of medals won by the United States at the 2026 Winter Olympics. \n\nFirst, I need to check what year it is. The 2026 Winter Olympics (Milano-Cortina 2026) haven't",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "md_pc08",

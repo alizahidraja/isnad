@@ -55,6 +55,11 @@ def _endpoint_and_key(model: str) -> tuple[str, str, str]:
 def _parse_number(text: str | None) -> str | None:
     if not text:
         return None
+    # Strip thousands separators (comma/underscore between digits, followed by
+    # exactly 3 digits) so "299,792,458" parses as 299792458, while a
+    # comma-separated list like "1,2,3" is left intact. Sign/unicode handling
+    # is unchanged (see _NUM).
+    text = re.sub(r"(?<=\d)[,_](?=\d{3}(?!\d))", "", text)
     nums = _NUM.findall(text)
     if not nums:
         return None

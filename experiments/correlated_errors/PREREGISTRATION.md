@@ -66,6 +66,16 @@ relative > 1e-6, OR (for `oracle_value == 0`) by absolute > 1e-9. Missing/refuse
 are errors, but a fact *absent from a model's result file* is treated as MISSING (excluded
 from denominators), never an error.
 
+An answer with \`finish_reason == "length"\` (the model hit \`max_tokens\` before finishing) is
+treated as **unparseable** (\`answer_value = null\`, \`error = "truncated (finish_reason=length)"\`)
+and counted separately as \`truncated_count\` in \`stats.json\` — the "last number in reasoning"
+heuristic is not trusted on truncated output.
+
+**Rounding-tolerance caveat (brutal panel):** the relative 1e-6 (absolute 1e-9) tolerance scores
+uniform significant-figure rounding (e.g. oracle −195.8 answered as −196) as an ERROR for every
+model, so φ̄ partly reflects shared numeric-precision conventions, not only shared factual error.
+Applied uniformly to every model and pair; the independence-violation conclusion is unaffected.
+
 ## φ definition
 Per model pair, the **phi coefficient** on the two binary error indicator vectors:
 φ = (ad−bc) / √((a+b)(c+d)(a+c)(b+d)) where a = both wrong, b = i wrong & j right,

@@ -695,11 +695,11 @@
   {
     "claim_id": "hard-a033",
     "model": "glm/glm-5.3",
-    "answer_value": "146",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The question asks about the number of confirmed moons of Saturn as of 2023.\n\nThis is a tricky question because the count changed during 2023. Let me think about the timeline:\n\n- For most of 2023, Satu",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a034",
@@ -1397,11 +1397,11 @@
   {
     "claim_id": "hard-c039",
     "model": "glm/glm-5.3",
-    "answer_value": "839",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer just numeric no units no prose. Question: \"What is the bond dissociation energy of a carbon-carbon triple bond in kilojoules per mole?\" Need determine expected value. Carbon-carbon trip",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c040",
@@ -3116,11 +3116,11 @@
   {
     "claim_id": "hard-d014",
     "model": "glm/glm-5.3",
-    "answer_value": "105",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "The user is asking for the population of Egypt in millions (2023 estimate). They want just the numeric value, no units, no prose.\n\nEgypt's population in 2023 was approximately 105-112 million dependin",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d015",

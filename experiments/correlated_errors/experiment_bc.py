@@ -81,6 +81,10 @@ def policy(
         if not counts:
             out[cid] = (False, None, 0.0)
             continue
+        # Tie-break convention: Counter.most_common(1) returns the first-inserted
+        # maximum on an exact tie (insertion order), so a 4-vs-4 split resolves to
+        # whichever value was seen first in the claim’s answers dict. Documented
+        # in RESULTS.md; the effect is negligible at k=8 (ties need >=2 equal modes).
         agreed, m = counts.most_common(1)[0]
         strength = corroboration_strength(m, phi_bar, k)
         out[cid] = (strength >= threshold, agreed, strength)

@@ -218,11 +218,11 @@
   {
     "claim_id": "hard-p025",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "172",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value. Need know top quark mass. Current PDG mass? Top quark mass around 172.69 GeV? Let's recall. PDG 2022: top quark mass m_t = 172.69 ± 0.30 GeV (direct measurements). 2023 m",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-p026",
@@ -245,11 +245,11 @@
   {
     "claim_id": "hard-p028",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "0.8409",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Question: charge radius of proton in femtometers. Current accepted? Proton charge radius puzzle. CODATA 2018? 0.8414 fm? Let's recall.\n\nProton charge radius: 0.8414 ",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-p029",
@@ -344,11 +344,11 @@
   {
     "claim_id": "hard-p039",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "877.75",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value no units. Need know mean lifetime of neutron in minutes. Neutron mean lifetime ~879.4 seconds? 877.75 s, 878.4 s? Let's recall. Particle Data Group 2023: neutron mean life",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-p040",
@@ -515,11 +515,11 @@
   {
     "claim_id": "hard-a013",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "1433.53",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Need know semi-major axis Saturn orbit in AU. Approximately 9.5826 AU. Need just numeric. Could be 9.537? Let's recall: Saturn average distance from Sun 1.43 billion km = ",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a014",
@@ -920,11 +920,11 @@
   {
     "claim_id": "hard-a059",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "433",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Need know mean distance Sun to Saturn in million km. Saturn semi-major axis ~1.4335 billion km = 1433.5 million km. Mean distance likely average distance = semi-major axis",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a060",
@@ -938,11 +938,11 @@
   {
     "claim_id": "hard-a061",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "724",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Need recall diameter of Uranus in km. Mean diameter? Uranus equatorial radius 25,559 km, polar radius 24,973 km, mean radius 25,362 km. Diameter mean ~50,724 km. Equatoria",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a062",
@@ -974,11 +974,11 @@
   {
     "claim_id": "hard-a065",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "10",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need know apparent visual magnitude of Venus at brightest. Venus maximum brightness about -4.9 mag? Sometimes -4.92, -4.6? Need precise. Venus at brightest as mornin",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-a066",
@@ -1199,11 +1199,11 @@
   {
     "claim_id": "hard-c017",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "2970",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need boiling point of gold in Celsius. Gold boiling point ~2700 °C? Let's verify. Gold melting 1064°C, boiling 2700°C or 2856°C? I recall gold boiling point 2700 °C ",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c018",
@@ -1379,11 +1379,11 @@
   {
     "claim_id": "hard-c037",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "377",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Question: \"What is the bond dissociation energy of a carbon-carbon single bond in kilojoules per mole?\" Need know typical C-C single bond dissociation energy. In kJ/mol ap",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c038",
@@ -1397,11 +1397,11 @@
   {
     "claim_id": "hard-c039",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "965",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Question: bond dissociation energy of carbon-carbon triple bond in kJ/mol. Need recall typical BDE for C≡C. Often bond enthalpy C≡C around 839 kJ/mol? Let's verify. Bond e",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-c040",
@@ -1820,11 +1820,11 @@
   {
     "claim_id": "hard-g011",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "810",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Need know height of Mont Blanc. Commonly 4,808 m (or 4,810 m depending). Question asks \"height of Mont Blanc in meters\". Need just numeric value. Which value expected? Mon",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g012",
@@ -1973,11 +1973,11 @@
   {
     "claim_id": "hard-g028",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "960",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need know surface area Lake Ontario in square km. It is 18,960 km²? Let's recall Great Lakes: Lake Ontario surface area 7,340 sq mi = 19,009 km²? Let's verify.\n\nLake",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g031",
@@ -2009,11 +2009,11 @@
   {
     "claim_id": "hard-g034",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "460",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Question: \"What is the area of the Atlantic Ocean in million square kilometers?\" Need know standard area. Atlantic Ocean area including adjacent seas? Usually about ",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g035",
@@ -2198,11 +2198,11 @@
   {
     "claim_id": "hard-g056",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "14",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need know width Strait of Gibraltar narrowest point in km. Commonly about 14.4 km (9 miles). Narrowest point between Point Marroquí (Spain) and Point Cires (Morocco)",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-g058",
@@ -3035,11 +3035,11 @@
   {
     "claim_id": "hard-d005",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "240.5",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need know population Pakistan in millions 2023 estimate. Various sources: UN WPP 2023 maybe 240.5 million. World Bank 2023 population Pakistan 240,485,658? Let's rec",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d006",
@@ -3062,11 +3062,11 @@
   {
     "claim_id": "hard-d008",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "172.95",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need know population Bangladesh 2023 estimate in millions. Likely 172.95 million? World Bank 2023: 172.95 million. UN WPP 2024 maybe 173.6. Bangladesh Bureau Statist",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d009",
@@ -3080,20 +3080,20 @@
   {
     "claim_id": "hard-d010",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "531",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Need know population Japan 2023 estimate in millions. Likely 124.5 million? Let's verify. Japan population 2023 estimate around 124.5 million (Statistics Bureau). As of Oc",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d011",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "66",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need know UK population 2023 estimate in millions. ONS mid-2023? UK population estimated 68.3 million? Let's verify.\n\nQuestion: \"What is the population of the United",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d012",
@@ -3107,20 +3107,20 @@
   {
     "claim_id": "hard-d013",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "270",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Need know population Germany 2023 estimate in millions. Likely 84.3 million? Germany population 2023 estimate around 84.4 million (Destatis: 84.7 million at end 2023? Let'",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d014",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "2.1",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need know population Egypt 2023 estimate in millions. Likely around 112.7 million? Let's verify. Egypt population 2023 estimate. Worldometer: 112,716,598? CIA: 111,2",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d015",
@@ -3143,38 +3143,38 @@
   {
     "claim_id": "hard-d017",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "1.425",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need know population Vietnam 2023 estimate in millions. Generally 2023 population Vietnam ~98.9 million? World Bank 100.99? Let's recall. Vietnam population 2023 est",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d018",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "131.5",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need population of Mexico in millions 2023 estimate. Need be accurate. Mexico population 2023 around 128.5 million? Let's verify. World Bank 2023 Mexico population 1",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d019",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "2021",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Question: population of Turkey in millions (2023 estimate). Need know. Turkey population 2023 estimate? Official? TÜİK announced Turkey population 2023 as 85,372,377",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d020",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "2",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Need know population of Iran 2023 estimate in millions. Need likely from World Bank/UN? The question asks \"What is the population of Iran in millions (2023 estimate)?\" Nee",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d021",
@@ -3188,11 +3188,11 @@
   {
     "claim_id": "hard-d022",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "111",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value only. Need population Australia in millions 2023 estimate. Need be careful. Australia population 2023 estimate. According to ABS? Australia population at 31 Dec 2023 was 2",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d023",
@@ -3206,11 +3206,11 @@
   {
     "claim_id": "hard-d024",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "712",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Need know population South Korea 2023 estimate in millions. Likely around 51.7 million. Need exact? Question asks \"What is the population of South Korea in millions (2023 ",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-d025",
@@ -3296,11 +3296,11 @@
   {
     "claim_id": "hard-b009",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "4",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer just numeric. Adult human vertebral column typically 33 vertebrae? But adult due fusion: 24 presacral + sacrum 5 fused + coccyx 3-4 fused. Usually total vertebrae in adult considered 26",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "hard-b010",
@@ -3422,11 +3422,11 @@
   {
     "claim_id": "md_pc03",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "2025",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric value. Men's pole vault world record outdoor is 6.26 m by Armand Duplantis? Set 2024? Need current as of 2026? World record men's pole vault: Armand Duplantis 6.26 m on Aug 25 2",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "md_pc04",
@@ -3449,28 +3449,28 @@
   {
     "claim_id": "md_pc06",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "2022",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer numeric only. Need know 2026 Winter Olympics? Current date 2026-05-09. 2026 Winter Olympics held Milano Cortina Feb 6-22 2026. Need total medals Norway won. Need factual. I may not have",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "md_pc07",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "9",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer. Need know 2026 Winter Olympics? Current date 2026-05-09. Winter Olympics Milano Cortina 2026 happened Feb 6-22 2026. Need total medals US won. Need numeric only. Need be accurate. I ma",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   },
   {
     "claim_id": "md_pc08",
     "model": "deepseek/deepseek-reasoner",
-    "answer_value": "10",
+    "answer_value": null,
     "answer_unit": "",
     "raw": "We need answer question. Need know 2026 Winter Olympics. Current date 2026-05-09. Winter Olympics Milan-Cortina 2026 happened Feb 6-22 2026. Need total medals Italy won. I need factual. I may not have",
     "finish_reason": "length",
-    "error": null
+    "error": "truncated (finish_reason=length)"
   }
 ]

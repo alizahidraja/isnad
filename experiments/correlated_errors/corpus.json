@@ -929,7 +929,7 @@
   },
   {
     "id": "hard-a075",
-    "claim_text": "What is the number of moons of Uranus?",
+    "claim_text": "What is the number of moons of Uranus (as of 2024)?",
     "oracle_value": 28,
     "oracle_unit": "",
     "source": "NASA",

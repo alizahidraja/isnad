@@ -582,7 +582,7 @@ HARD_FACTS: tuple[tuple[str, str, float | int, str, str], ...] = (
         "NASA",
         "astronomy",
     ),
-    ("hard-a075", "What is the number of moons of Uranus?", 28, "NASA", "astronomy"),
+    ("hard-a075", "What is the number of moons of Uranus (as of 2024)?", 28, "NASA", "astronomy"),
     # ── chemistry ───────────────────────────────────────────────────────────
     ("hard-c001", "What is the atomic number of gold?", 79, "CRC", "chemistry"),
     ("hard-c002", "What is the atomic number of uranium?", 92, "CRC", "chemistry"),
