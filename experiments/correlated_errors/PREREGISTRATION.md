@@ -9,23 +9,34 @@ correlated, how much trust should corroboration contribute? Measure whether ISNA
 madār assumption (disjoint narrators ⇒ independent) holds, and (in Experiment C) test
 whether a φ-discounted corroboration policy cuts false upgrades.
 
-## Models (4 families × 2 sizes, 8 total)
+## Models (AMENDED 2026-10-05 — 4 families × 2 sizes, 8 total)
+The original roster (google/nvidia/deepseek/poolside via OpenRouter free tier) was
+replaced after provider key reality: OpenAI (no credits), Anthropic (low balance),
+Qwen (invalid key). The working roster — all with live keys, all parsing 64/64 in
+sweep C — is:
+
 | family | small | large |
 |---|---|---|
-| google | google/gemma-4-26b-a4b-it:free | google/gemma-4-31b-it:free |
-| nvidia | nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free | nvidia/nemotron-3-super-120b-a12b:free |
-| deepseek (direct key) | deepseek/deepseek-chat | deepseek/deepseek-reasoner |
-| poolside | poolside/laguna-xs-2.1:free | poolside/laguna-s-2.1:free |
+| deepseek (direct key) | deepseek-chat | deepseek-reasoner |
+| kimi (Moonshot) | kimi-k2.6 | kimi-k3 |
+| glm (Zhipu) | glm-5.3-flash | glm-5.3 |
+| perplexity | sonar | sonar-pro |
 
-## Corpus
-`corpus.json` — the model-drift `HARD_CORPUS` (64 facts after pc09's exclusion):
-56 well-known facts (the agreement control) + 8 post-cutoff facts (the error signal).
-Source filtering: §8 `claims.json` prose is NOT a clean oracle source and is excluded;
-expanding the hard-facts subset toward ~400 is a follow-up step disclosed here.
+## Corpus (AMENDED 2026-10-05 — expanded 64 → 393)
+`corpus.json` — 385 hard numeric facts (``corpus_hard.HARD_FACTS``) + the 8
+post-cutoff facts from the model-drift corpus (ids ``md_pcXX`` kept stable).
+Domains: astronomy 75, chemistry 75, geography 75, physics 45, history 40,
+sports 30, demographics 25, biology 10, recent 10, post-cutoff 8. Every fact has a
+fixed, verifiable oracle (CODATA/PDG/IAU/NASA/CRC/Wikipedia-level) and a ``source``
+tag. Uncertain oracles were dropped, not estimated.
 
 ## Prompt + sampling
 - Prompt: "Answer the following question with just the numeric value (no units, no prose): {question}"
 - temperature 0 · max_tokens 2048 (reasoning models emit reasoning_content that eats max_tokens).
+- **AMENDMENT (disclosed deviation):** kimi (Moonshot) reasoning models reject
+  `temperature=0` ("only 1 is allowed for this model"), so kimi runs at
+  `temperature=1`; every other provider stays at `temperature=0`. Recorded in
+  ``runner.py`` (``_TEMPERATURE``) — a provider-constraint deviation, not protocol drift.
 - Retry 429/5xx with exponential backoff; record the failure if 5 attempts exhaust.
 
 ## Error definition
@@ -49,8 +60,9 @@ Mean pairwise φ̄ across all pairs → **Kish n_eff = k / (1 + (k−1)φ̄)**, 
 corroboration, at matched coverage. Secondary: Δcoverage, Δrisk at matched coverage.
 
 ## Exclusion rules
-Any model with error rate < 1% or > 99% is excluded from its φ pairs (φ is unstable at
-the boundary) and the exclusion is disclosed in `stats.json`.
+Any model with error rate < 1% or > 99% is excluded from its φ pairs AND from the
+`k` used in `n_eff` (φ is unstable at the boundary), and the exclusion is disclosed
+in `stats.json` (``excluded`` map).
 
 ## Commit policy
 `results/*.json` is gitignored (raw model outputs are large + reproducible). `corpus.json`,
