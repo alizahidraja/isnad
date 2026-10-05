@@ -435,7 +435,6 @@ class CorroborationPolicy(Protocol):
         independence_scores: list[float],
         *,
         chain_blind_spot_priors: list[float] | None = None,
-        shared_lineage_flags: list[bool] | None = None,
     ) -> ChainGrade: ...
 
 
