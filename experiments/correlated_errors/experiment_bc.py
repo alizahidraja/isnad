@@ -5,17 +5,20 @@ per-model answers and oracle:
 
 - **B (naive):** k disjoint routes are treated as k independent votes — a claim is
   corroborated (upgraded) when ``>= threshold`` models agree on the same answer.
-- **C (φ-discounted):** each *additional* agreeing route is scaled by the Kish
-  factor ``n_eff/k = 1/(1+(k−1)φ̄)``, so the corroboration strength of ``m``
-  agreeing models is ``1 + (m−1)·n_eff/k`` instead of ``m``. With φ>0, ``n_eff<k``,
-  so the discounted policy is strictly more conservative: it can never upgrade MORE
-  than naive (the discount only lowers the strength of correlated extra votes).
+- **C (φ-discounted):** the corroboration strength of ``m`` agreeing models is
+  ``m / (1 + (m−1)·φ̄)`` (Kish's exact form: equals ``n_eff`` at ``m=k``, equals
+  ``m`` at φ=0). With φ>0, strength < m, so the discounted policy is strictly more
+  conservative: it can never upgrade MORE than naive.
 
-Primary endpoint: Δfalse-upgrade rate (fraction of claims falsely upgraded) at
-matched coverage. Secondary: Δcoverage, Δrisk (P(wrong | upgraded)).
+Primary endpoint: the false-upgrade gap at the corroboration bar (threshold=2).
+With φ̄>0 the maximum strength is ``n_eff``; when ``n_eff < threshold`` the bar is
+unreachable under the discount, so coverage is a STEP FUNCTION and the
+pre-registered "matched coverage" comparison is not applicable. That limit is
+reported honestly rather than forcing a matched-coverage number. Secondary:
+Δcoverage, Δrisk (P(wrong | upgraded)).
 
 The naive policy is exactly the discounted policy with φ=0 (then n_eff=k and
-``1+(m−1)·n_eff/k = m``), so the two share one code path.
+``m/(1+(m−1)φ̄) = m``), so the two share one code path.
 """
 
 from __future__ import annotations
@@ -165,38 +168,44 @@ def threshold_sweep(
     return out
 
 
-def matched_coverage_compare(
+def step_function_primary(
     answers_by_claim: dict[str, dict[str, object]],
     oracle_by_claim: dict[str, object],
     phi_bar: float,
     k: int,
-    target_threshold: int = 2,
+    threshold: int = 2,
 ) -> dict[str, object]:
-    """Primary endpoint: false-upgrade rate at matched coverage.
+    """Primary endpoint: the false-upgrade gap AT the corroboration bar.
 
-    The discounted policy at ``target_threshold`` defines the target coverage.
-    Find the naive threshold that achieves the closest coverage, then compare
-    false-upgrade rates at that matched coverage (naive is held to the same
-    coverage, so any remaining false-upgrade gap is the discount's effect, not
-    a coverage artifact).
+    With φ̄>0 the maximum corroboration strength is n_eff = k/(1+(k−1)φ̄). When
+    n_eff < threshold, the discounted policy can never reach the bar, so coverage
+    is a STEP FUNCTION (full at threshold=1, zero at threshold>=2) — not a tunable
+    trade-off — and a matched-coverage comparison is not applicable. The honest
+    statement is the step itself, reported here, with the naive threshold sweep
+    retained so the coverage/risk curve stays visible.
     """
-    disc = threshold_sweep(answers_by_claim, oracle_by_claim, phi_bar, k)
-    naive = threshold_sweep(answers_by_claim, oracle_by_claim, 0.0, k)
-    d_target = disc[target_threshold - 1]
-    target_cov = d_target["coverage"]
-    n_matched = min(naive, key=lambda r: abs(r["coverage"] - target_cov))
+    n_eff_val = n_eff(phi_bar, k)
+    naive_at_bar = evaluate(answers_by_claim, oracle_by_claim, 0.0, k, threshold)
+    discounted_at_bar = evaluate(answers_by_claim, oracle_by_claim, phi_bar, k, threshold)
+    bar_unreachable = n_eff_val < threshold
     return {
-        "target_threshold": target_threshold,
-        "target_coverage": target_cov,
-        "discounted": d_target,
-        "naive_matched": n_matched,
-        "naive_matched_threshold": n_matched["threshold"],
-        "delta_false_upgrade_rate_matched": n_matched["false_upgrade_rate"]
-        - d_target["false_upgrade_rate"],
-        "delta_coverage_matched": n_matched["coverage"] - target_cov,
-        "delta_risk_matched": n_matched["risk"] - d_target["risk"],
-        "naive_sweep": naive,
-        "discounted_sweep": disc,
+        "phi_bar": phi_bar,
+        "k": k,
+        "n_eff": n_eff_val,
+        "threshold": threshold,
+        "bar_unreachable": bar_unreachable,
+        "explanation": (
+            f"maximum corroboration strength is n_eff={n_eff_val:.3f} < threshold={threshold}; "
+            "the discounted policy can never reach the corroboration bar, so coverage is a "
+            "step function and matched coverage is not applicable."
+        ),
+        "naive_at_bar": naive_at_bar,
+        "discounted_at_bar": discounted_at_bar,
+        "delta_false_upgrade_rate": naive_at_bar["false_upgrade_rate"]
+        - discounted_at_bar["false_upgrade_rate"],
+        "delta_coverage": naive_at_bar["coverage"] - discounted_at_bar["coverage"],
+        "delta_risk": naive_at_bar["risk"] - discounted_at_bar["risk"],
+        "naive_sweep": threshold_sweep(answers_by_claim, oracle_by_claim, 0.0, k),
     }
 
 
@@ -221,8 +230,8 @@ def main() -> None:
         print("stats.json has no phi_bar/k — run stats first")
         return
     result = compare(answers_by_claim, oracle_by_claim, float(phi_bar), k)
-    matched = matched_coverage_compare(answers_by_claim, oracle_by_claim, float(phi_bar), k)
-    result["matched_coverage"] = matched
+    primary = step_function_primary(answers_by_claim, oracle_by_claim, float(phi_bar), k)
+    result["step_function"] = primary
     (_HERE / "experiment_bc.json").write_text(
         json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8"
     )

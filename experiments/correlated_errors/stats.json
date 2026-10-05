@@ -1,22 +1,22 @@
 {
   "k": 8,
-  "phi_bar": 0.5667,
-  "n_eff": 1.6106,
+  "phi_bar": 0.5550696716517568,
+  "n_eff": 1.6375028428465255,
   "n_eff_ci": [
-    1.5148,
-    1.724
+    1.5396083711307187,
+    1.7500931654478291
   ],
   "pairs": [
     {
       "mi": "deepseek/deepseek-chat",
       "mj": "deepseek/deepseek-reasoner",
-      "phi": 0.5323,
-      "same_wrong": 0.5405,
+      "phi": 0.5104668238815792,
+      "same_wrong": 0.5303030303030303,
       "table": {
-        "a": 74,
-        "b": 27,
-        "c": 49,
-        "d": 243
+        "a": 66,
+        "b": 28,
+        "c": 47,
+        "d": 245
       },
       "same_family": true,
       "cross_provider": false
@@ -24,208 +24,194 @@
     {
       "mi": "deepseek/deepseek-chat",
       "mj": "glm/glm-5.3",
-      "phi": 0.5655,
-      "same_wrong": 0.6324,
+      "phi": 0.5141860872706855,
+      "same_wrong": 0.5714285714285714,
       "table": {
-        "a": 68,
-        "b": 33,
-        "c": 32,
-        "d": 260
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-chat",
-      "mj": "glm/glm-5.3-flash",
-      "phi": 0.4753,
-      "same_wrong": 0.6129,
-      "table": {
-        "a": 62,
-        "b": 39,
-        "c": 40,
-        "d": 252
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-chat",
-      "mj": "kimi/kimi-k2.6",
-      "phi": 0.4776,
-      "same_wrong": 0.5634,
-      "table": {
-        "a": 71,
-        "b": 30,
-        "c": 56,
-        "d": 236
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-chat",
-      "mj": "kimi/kimi-k3",
-      "phi": 0.4884,
-      "same_wrong": 0.5224,
-      "table": {
-        "a": 67,
-        "b": 34,
-        "c": 46,
-        "d": 246
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-chat",
-      "mj": "perplexity/sonar",
-      "phi": 0.4238,
-      "same_wrong": 0.3947,
-      "table": {
-        "a": 76,
-        "b": 25,
-        "c": 81,
-        "d": 211
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-chat",
-      "mj": "perplexity/sonar-pro",
-      "phi": 0.4823,
-      "same_wrong": 0.4133,
-      "table": {
-        "a": 75,
-        "b": 26,
-        "c": 63,
-        "d": 229
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-reasoner",
-      "mj": "glm/glm-5.3",
-      "phi": 0.6136,
-      "same_wrong": 0.575,
-      "table": {
-        "a": 80,
-        "b": 43,
-        "c": 20,
-        "d": 250
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-reasoner",
-      "mj": "glm/glm-5.3-flash",
-      "phi": 0.6143,
-      "same_wrong": 0.5679,
-      "table": {
-        "a": 81,
-        "b": 42,
-        "c": 21,
-        "d": 249
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-reasoner",
-      "mj": "kimi/kimi-k2.6",
-      "phi": 0.66,
-      "same_wrong": 0.5521,
-      "table": {
-        "a": 96,
-        "b": 27,
-        "c": 31,
-        "d": 239
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-reasoner",
-      "mj": "kimi/kimi-k3",
-      "phi": 0.723,
-      "same_wrong": 0.6211,
-      "table": {
-        "a": 95,
-        "b": 28,
-        "c": 18,
-        "d": 252
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-reasoner",
-      "mj": "perplexity/sonar",
-      "phi": 0.5698,
-      "same_wrong": 0.45,
-      "table": {
-        "a": 100,
-        "b": 23,
-        "c": 57,
-        "d": 213
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "deepseek/deepseek-reasoner",
-      "mj": "perplexity/sonar-pro",
-      "phi": 0.6531,
-      "same_wrong": 0.4,
-      "table": {
-        "a": 100,
-        "b": 23,
-        "c": 38,
-        "d": 232
-      },
-      "same_family": false,
-      "cross_provider": true
-    },
-    {
-      "mi": "glm/glm-5.3",
-      "mj": "glm/glm-5.3-flash",
-      "phi": 0.6136,
-      "same_wrong": 0.7222,
-      "table": {
-        "a": 72,
-        "b": 28,
-        "c": 30,
+        "a": 56,
+        "b": 38,
+        "c": 29,
         "d": 263
       },
-      "same_family": true,
-      "cross_provider": false
+      "same_family": false,
+      "cross_provider": true
     },
     {
-      "mi": "glm/glm-5.3",
-      "mj": "kimi/kimi-k2.6",
-      "phi": 0.4957,
-      "same_wrong": 0.6111,
+      "mi": "deepseek/deepseek-chat",
+      "mj": "glm/glm-5.3-flash",
+      "phi": 0.477581451229163,
+      "same_wrong": 0.5818181818181818,
       "table": {
-        "a": 72,
+        "a": 55,
+        "b": 39,
+        "c": 34,
+        "d": 258
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "kimi/kimi-k2.6",
+      "phi": 0.5243302124370587,
+      "same_wrong": 0.48484848484848486,
+      "table": {
+        "a": 66,
         "b": 28,
-        "c": 55,
-        "d": 238
+        "c": 44,
+        "d": 248
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "kimi/kimi-k3",
+      "phi": 0.4530100112500215,
+      "same_wrong": 0.5161290322580645,
+      "table": {
+        "a": 62,
+        "b": 32,
+        "c": 52,
+        "d": 240
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "perplexity/sonar",
+      "phi": 0.412704807944821,
+      "same_wrong": 0.3333333333333333,
+      "table": {
+        "a": 69,
+        "b": 25,
+        "c": 78,
+        "d": 214
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-chat",
+      "mj": "perplexity/sonar-pro",
+      "phi": 0.44456629365696665,
+      "same_wrong": 0.36764705882352944,
+      "table": {
+        "a": 68,
+        "b": 26,
+        "c": 67,
+        "d": 225
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "glm/glm-5.3",
+      "phi": 0.6611025050856563,
+      "same_wrong": 0.5342465753424658,
+      "table": {
+        "a": 73,
+        "b": 40,
+        "c": 12,
+        "d": 261
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "glm/glm-5.3-flash",
+      "phi": 0.6481003436292861,
+      "same_wrong": 0.527027027027027,
+      "table": {
+        "a": 74,
+        "b": 39,
+        "c": 15,
+        "d": 258
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "kimi/kimi-k2.6",
+      "phi": 0.6280976146073536,
+      "same_wrong": 0.5609756097560976,
+      "table": {
+        "a": 82,
+        "b": 31,
+        "c": 28,
+        "d": 245
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "kimi/kimi-k3",
+      "phi": 0.6942487005545659,
+      "same_wrong": 0.5617977528089888,
+      "table": {
+        "a": 89,
+        "b": 24,
+        "c": 25,
+        "d": 248
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "perplexity/sonar",
+      "phi": 0.5624003124299458,
+      "same_wrong": 0.37362637362637363,
+      "table": {
+        "a": 91,
+        "b": 22,
+        "c": 56,
+        "d": 217
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "deepseek/deepseek-reasoner",
+      "mj": "perplexity/sonar-pro",
+      "phi": 0.5787874789369993,
+      "same_wrong": 0.42045454545454547,
+      "table": {
+        "a": 88,
+        "b": 25,
+        "c": 47,
+        "d": 226
       },
       "same_family": false,
       "cross_provider": true
     },
     {
       "mi": "glm/glm-5.3",
-      "mj": "kimi/kimi-k3",
-      "phi": 0.5969,
-      "same_wrong": 0.6667,
+      "mj": "glm/glm-5.3-flash",
+      "phi": 0.7629527073724353,
+      "same_wrong": 0.6338028169014085,
       "table": {
-        "a": 75,
-        "b": 25,
-        "c": 38,
+        "a": 71,
+        "b": 14,
+        "c": 18,
+        "d": 283
+      },
+      "same_family": true,
+      "cross_provider": false
+    },
+    {
+      "mi": "glm/glm-5.3",
+      "mj": "kimi/kimi-k2.6",
+      "phi": 0.5509065576865069,
+      "same_wrong": 0.640625,
+      "table": {
+        "a": 64,
+        "b": 21,
+        "c": 46,
         "d": 255
       },
       "same_family": false,
@@ -233,14 +219,28 @@
     },
     {
       "mi": "glm/glm-5.3",
-      "mj": "perplexity/sonar",
-      "phi": 0.3942,
-      "same_wrong": 0.411,
+      "mj": "kimi/kimi-k3",
+      "phi": 0.6289789095809937,
+      "same_wrong": 0.6197183098591549,
       "table": {
-        "a": 73,
-        "b": 27,
+        "a": 71,
+        "b": 14,
+        "c": 43,
+        "d": 258
+      },
+      "same_family": false,
+      "cross_provider": true
+    },
+    {
+      "mi": "glm/glm-5.3",
+      "mj": "perplexity/sonar",
+      "phi": 0.3943459283677323,
+      "same_wrong": 0.3968253968253968,
+      "table": {
+        "a": 63,
+        "b": 22,
         "c": 84,
-        "d": 209
+        "d": 217
       },
       "same_family": false,
       "cross_provider": true
@@ -248,13 +248,13 @@
     {
       "mi": "glm/glm-5.3",
       "mj": "perplexity/sonar-pro",
-      "phi": 0.4759,
-      "same_wrong": 0.527,
+      "phi": 0.4492939398661602,
+      "same_wrong": 0.46875,
       "table": {
-        "a": 74,
-        "b": 26,
-        "c": 64,
-        "d": 229
+        "a": 64,
+        "b": 21,
+        "c": 71,
+        "d": 230
       },
       "same_family": false,
       "cross_provider": true
@@ -262,13 +262,13 @@
     {
       "mi": "glm/glm-5.3-flash",
       "mj": "kimi/kimi-k2.6",
-      "phi": 0.6086,
-      "same_wrong": 0.5488,
+      "phi": 0.5809689825589914,
+      "same_wrong": 0.5441176470588235,
       "table": {
-        "a": 82,
-        "b": 20,
-        "c": 45,
-        "d": 246
+        "a": 68,
+        "b": 21,
+        "c": 42,
+        "d": 255
       },
       "same_family": false,
       "cross_provider": true
@@ -276,12 +276,12 @@
     {
       "mi": "glm/glm-5.3-flash",
       "mj": "kimi/kimi-k3",
-      "phi": 0.6626,
-      "same_wrong": 0.716,
+      "phi": 0.6702932856434252,
+      "same_wrong": 0.6447368421052632,
       "table": {
-        "a": 81,
-        "b": 21,
-        "c": 32,
+        "a": 76,
+        "b": 13,
+        "c": 38,
         "d": 259
       },
       "same_family": false,
@@ -290,13 +290,13 @@
     {
       "mi": "glm/glm-5.3-flash",
       "mj": "perplexity/sonar",
-      "phi": 0.5126,
-      "same_wrong": 0.369,
+      "phi": 0.4446727327950592,
+      "same_wrong": 0.37681159420289856,
       "table": {
-        "a": 84,
-        "b": 18,
-        "c": 73,
-        "d": 218
+        "a": 69,
+        "b": 20,
+        "c": 78,
+        "d": 219
       },
       "same_family": false,
       "cross_provider": true
@@ -304,13 +304,13 @@
     {
       "mi": "glm/glm-5.3-flash",
       "mj": "perplexity/sonar-pro",
-      "phi": 0.5251,
-      "same_wrong": 0.443,
+      "phi": 0.4884731459188185,
+      "same_wrong": 0.4782608695652174,
       "table": {
-        "a": 79,
-        "b": 23,
-        "c": 59,
-        "d": 232
+        "a": 69,
+        "b": 20,
+        "c": 66,
+        "d": 231
       },
       "same_family": false,
       "cross_provider": true
@@ -318,13 +318,13 @@
     {
       "mi": "kimi/kimi-k2.6",
       "mj": "kimi/kimi-k3",
-      "phi": 0.6429,
-      "same_wrong": 0.5778,
+      "phi": 0.5851584212924446,
+      "same_wrong": 0.5569620253164557,
       "table": {
-        "a": 90,
-        "b": 37,
-        "c": 23,
-        "d": 243
+        "a": 79,
+        "b": 31,
+        "c": 35,
+        "d": 241
       },
       "same_family": true,
       "cross_provider": false
@@ -332,13 +332,13 @@
     {
       "mi": "kimi/kimi-k2.6",
       "mj": "perplexity/sonar",
-      "phi": 0.5584,
-      "same_wrong": 0.4257,
+      "phi": 0.4858628466370641,
+      "same_wrong": 0.37349397590361444,
       "table": {
-        "a": 101,
-        "b": 26,
-        "c": 56,
-        "d": 210
+        "a": 83,
+        "b": 27,
+        "c": 64,
+        "d": 212
       },
       "same_family": false,
       "cross_provider": true
@@ -346,13 +346,13 @@
     {
       "mi": "kimi/kimi-k2.6",
       "mj": "perplexity/sonar-pro",
-      "phi": 0.6087,
-      "same_wrong": 0.4592,
+      "phi": 0.5479185368409805,
+      "same_wrong": 0.36904761904761907,
       "table": {
-        "a": 98,
-        "b": 29,
-        "c": 40,
-        "d": 226
+        "a": 84,
+        "b": 26,
+        "c": 51,
+        "d": 225
       },
       "same_family": false,
       "cross_provider": true
@@ -360,13 +360,13 @@
     {
       "mi": "kimi/kimi-k3",
       "mj": "perplexity/sonar",
-      "phi": 0.5952,
-      "same_wrong": 0.433,
+      "phi": 0.5915872282219693,
+      "same_wrong": 0.4574468085106383,
       "table": {
-        "a": 97,
-        "b": 16,
-        "c": 60,
-        "d": 220
+        "a": 94,
+        "b": 20,
+        "c": 53,
+        "d": 219
       },
       "same_family": false,
       "cross_provider": true
@@ -374,13 +374,13 @@
     {
       "mi": "kimi/kimi-k3",
       "mj": "perplexity/sonar-pro",
-      "phi": 0.5927,
-      "same_wrong": 0.4667,
+      "phi": 0.5731368545188937,
+      "same_wrong": 0.42045454545454547,
       "table": {
-        "a": 90,
-        "b": 23,
-        "c": 48,
-        "d": 232
+        "a": 88,
+        "b": 26,
+        "c": 47,
+        "d": 225
       },
       "same_family": false,
       "cross_provider": true
@@ -388,42 +388,37 @@
     {
       "mi": "perplexity/sonar",
       "mj": "perplexity/sonar-pro",
-      "phi": 0.706,
-      "same_wrong": 0.6083,
+      "phi": 0.6778180860336137,
+      "same_wrong": 0.625,
       "table": {
-        "a": 120,
-        "b": 37,
-        "c": 18,
-        "d": 218
+        "a": 112,
+        "b": 35,
+        "c": 23,
+        "d": 216
       },
       "same_family": true,
       "cross_provider": false
     }
   ],
   "error_rates": {
-    "deepseek/deepseek-chat": 0.257,
-    "deepseek/deepseek-reasoner": 0.313,
-    "glm/glm-5.3-flash": 0.2595,
-    "glm/glm-5.3": 0.2545,
-    "google/gemma-4-31b-it:free": 1.0,
-    "kimi/kimi-k2.6": 0.3232,
-    "kimi/kimi-k3": 0.2875,
-    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": 1.0,
-    "nvidia/nemotron-3-super-120b-a12b:free": 1.0,
-    "perplexity/sonar-pro": 0.3511,
-    "perplexity/sonar": 0.3995,
-    "poolside/laguna-s-2.1:free": 1.0,
-    "poolside/laguna-xs-2.1:free": 1.0,
-    "qwen/qwen3.8-27b:free": 1.0,
-    "thinkingmachines/inkling-small:free": 1.0
+    "deepseek/deepseek-chat": 0.24352331606217617,
+    "deepseek/deepseek-reasoner": 0.2927461139896373,
+    "glm/glm-5.3": 0.22020725388601037,
+    "glm/glm-5.3-flash": 0.23056994818652848,
+    "kimi/kimi-k2.6": 0.2849740932642487,
+    "kimi/kimi-k3": 0.29533678756476683,
+    "perplexity/sonar": 0.38082901554404147,
+    "perplexity/sonar-pro": 0.34974093264248707
   },
-  "excluded": {
-    "google/gemma-4-31b-it:free": 1.0,
-    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": 1.0,
-    "nvidia/nemotron-3-super-120b-a12b:free": 1.0,
-    "poolside/laguna-s-2.1:free": 1.0,
-    "poolside/laguna-xs-2.1:free": 1.0,
-    "qwen/qwen3.8-27b:free": 1.0,
-    "thinkingmachines/inkling-small:free": 1.0
-  }
+  "coverage": {
+    "deepseek/deepseek-chat": 1.0,
+    "deepseek/deepseek-reasoner": 1.0,
+    "glm/glm-5.3": 1.0,
+    "glm/glm-5.3-flash": 1.0,
+    "kimi/kimi-k2.6": 1.0,
+    "kimi/kimi-k3": 1.0,
+    "perplexity/sonar": 1.0,
+    "perplexity/sonar-pro": 1.0
+  },
+  "excluded": {}
 }

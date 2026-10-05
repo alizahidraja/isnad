@@ -1,0 +1,3476 @@
+[
+  {
+    "claim_id": "hard-p001",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "299792458",
+    "answer_unit": "",
+    "raw": "299792458",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p002",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "-273.15",
+    "answer_unit": "",
+    "raw": "-273.15",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p003",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "0.01",
+    "answer_unit": "",
+    "raw": "0.01",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p004",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "101325",
+    "answer_unit": "",
+    "raw": "101325",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p005",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "343",
+    "answer_unit": "",
+    "raw": "343",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p006",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6.02214076",
+    "answer_unit": "",
+    "raw": "6.02214076",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p007",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "96485",
+    "answer_unit": "",
+    "raw": "96485",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p008",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8.314",
+    "answer_unit": "",
+    "raw": "8.314",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p009",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.38",
+    "answer_unit": "",
+    "raw": "1.38",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p010",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6.62607015",
+    "answer_unit": "",
+    "raw": "6.62607015",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p011",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.602176634",
+    "answer_unit": "",
+    "raw": "1.602176634",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p012",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.109",
+    "answer_unit": "",
+    "raw": "9.109",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p013",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.673",
+    "answer_unit": "",
+    "raw": "1.673",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p014",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.675",
+    "answer_unit": "",
+    "raw": "1.675",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p015",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "137.035999",
+    "answer_unit": "",
+    "raw": "137.035999",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p016",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.097373156816",
+    "answer_unit": "",
+    "raw": "1.097373156816",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p017",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5.67",
+    "answer_unit": "",
+    "raw": "5.67",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p018",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2.897771955",
+    "answer_unit": "",
+    "raw": "2.897771955",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p019",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5.29",
+    "answer_unit": "",
+    "raw": "5.29",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p020",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "938.272",
+    "answer_unit": "",
+    "raw": "938.272",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p021",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "939.57",
+    "answer_unit": "",
+    "raw": "939.57",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p022",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "0.511",
+    "answer_unit": "",
+    "raw": "0.511",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p023",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "105.66",
+    "answer_unit": "",
+    "raw": "105.66",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p024",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "91.1876",
+    "answer_unit": "",
+    "raw": "91.1876",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p025",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "172.5",
+    "answer_unit": "",
+    "raw": "172.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p026",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "139.57",
+    "answer_unit": "",
+    "raw": "139.57",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p027",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "493.677",
+    "answer_unit": "",
+    "raw": "493.677",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p028",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "0.84",
+    "answer_unit": "",
+    "raw": "0.84",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p029",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6.67430",
+    "answer_unit": "",
+    "raw": "6.67430",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p030",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.80665",
+    "answer_unit": "",
+    "raw": "9.80665",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p031",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1",
+    "answer_unit": "",
+    "raw": "1",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p032",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.33",
+    "answer_unit": "",
+    "raw": "1.33",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p033",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2.998",
+    "answer_unit": "",
+    "raw": "2.998",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p034",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3422",
+    "answer_unit": "",
+    "raw": "3422",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p035",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "-196",
+    "answer_unit": "",
+    "raw": "-196",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p036",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4.2",
+    "answer_unit": "",
+    "raw": "4.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p037",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "13.6",
+    "answer_unit": "",
+    "raw": "13.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p038",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1482",
+    "answer_unit": "",
+    "raw": "1482",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p039",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "14.7",
+    "answer_unit": "",
+    "raw": "14.7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p040",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.62",
+    "answer_unit": "",
+    "raw": "1.62",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p041",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6371",
+    "answer_unit": "",
+    "raw": "6371",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p042",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5.972",
+    "answer_unit": "",
+    "raw": "5.972",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p043",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.989",
+    "answer_unit": "",
+    "raw": "1.989",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p044",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "149.6",
+    "answer_unit": "",
+    "raw": "149.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p045",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "384400",
+    "answer_unit": "",
+    "raw": "384400",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a001",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4.24",
+    "answer_unit": "",
+    "raw": "4.24",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a002",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8.6",
+    "answer_unit": "",
+    "raw": "8.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a003",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2.5",
+    "answer_unit": "",
+    "raw": "2.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a004",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "687",
+    "answer_unit": "",
+    "raw": "687",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a005",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "11.86",
+    "answer_unit": "",
+    "raw": "11.86",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a006",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "29.46",
+    "answer_unit": "",
+    "raw": "29.46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a007",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "84.0",
+    "answer_unit": "",
+    "raw": "84.0",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a008",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "164.8",
+    "answer_unit": "",
+    "raw": "164.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a009",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "88",
+    "answer_unit": "",
+    "raw": "88",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a010",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "224.7",
+    "answer_unit": "",
+    "raw": "224.7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a011",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.524",
+    "answer_unit": "",
+    "raw": "1.524",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a012",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5.2",
+    "answer_unit": "",
+    "raw": "5.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a013",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.58",
+    "answer_unit": "",
+    "raw": "9.58",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a014",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "30.07",
+    "answer_unit": "",
+    "raw": "30.07",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a015",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "23.44",
+    "answer_unit": "",
+    "raw": "23.44",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a016",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "27.3",
+    "answer_unit": "",
+    "raw": "27.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a017",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3474.8",
+    "answer_unit": "",
+    "raw": "3474.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a018",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5778",
+    "answer_unit": "",
+    "raw": "5778",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a019",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "29.8",
+    "answer_unit": "",
+    "raw": "29.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a020",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "11.2",
+    "answer_unit": "",
+    "raw": "11.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a021",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2.38",
+    "answer_unit": "",
+    "raw": "2.38",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a022",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "248",
+    "answer_unit": "",
+    "raw": "248",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a023",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "39.5",
+    "answer_unit": "",
+    "raw": "39.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a024",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6779",
+    "answer_unit": "",
+    "raw": "6779",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a025",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "12104",
+    "answer_unit": "",
+    "raw": "12104",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a026",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "984",
+    "answer_unit": "",
+    "raw": "142,984",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a027",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "244",
+    "answer_unit": "",
+    "raw": "49,244",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a028",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "700",
+    "answer_unit": "",
+    "raw": "1,392,700",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a029",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2",
+    "answer_unit": "",
+    "raw": "2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a030",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.93",
+    "answer_unit": "",
+    "raw": "9.93",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a031",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "243",
+    "answer_unit": "",
+    "raw": "243",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a032",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "95",
+    "answer_unit": "",
+    "raw": "95",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a033",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "146",
+    "answer_unit": "",
+    "raw": "146",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a034",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "13.8",
+    "answer_unit": "",
+    "raw": "13.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a035",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "67.4",
+    "answer_unit": "",
+    "raw": "67.4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a036",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "-1.46",
+    "answer_unit": "",
+    "raw": "-1.46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a037",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4.83",
+    "answer_unit": "",
+    "raw": "4.83",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a038",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3.26",
+    "answer_unit": "",
+    "raw": "3.26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a039",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "100",
+    "answer_unit": "",
+    "raw": "100",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a041",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3.71",
+    "answer_unit": "",
+    "raw": "3.71",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a042",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "24.79",
+    "answer_unit": "",
+    "raw": "24.79",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a043",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5.145",
+    "answer_unit": "",
+    "raw": "5.145",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a044",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2.725",
+    "answer_unit": "",
+    "raw": "2.725",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a045",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "88",
+    "answer_unit": "",
+    "raw": "88",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a046",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.898",
+    "answer_unit": "",
+    "raw": "1.898",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a047",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5.683",
+    "answer_unit": "",
+    "raw": "5.683",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a048",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "7.35",
+    "answer_unit": "",
+    "raw": "7.35",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a049",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "26",
+    "answer_unit": "",
+    "raw": "26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a050",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8",
+    "answer_unit": "",
+    "raw": "8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a051",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "76",
+    "answer_unit": "",
+    "raw": "76",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a052",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "-63",
+    "answer_unit": "",
+    "raw": "-63",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a053",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "464",
+    "answer_unit": "",
+    "raw": "464",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a054",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4.3",
+    "answer_unit": "",
+    "raw": "4.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a055",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.46",
+    "answer_unit": "",
+    "raw": "9.46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a056",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "0.0167",
+    "answer_unit": "",
+    "raw": "0.0167",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a057",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "366",
+    "answer_unit": "",
+    "raw": "366",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a058",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "57.9",
+    "answer_unit": "",
+    "raw": "57.9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a059",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1433.5",
+    "answer_unit": "",
+    "raw": "1433.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a060",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4879",
+    "answer_unit": "",
+    "raw": "4879",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a061",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "50724",
+    "answer_unit": "",
+    "raw": "50724",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a062",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "120536",
+    "answer_unit": "",
+    "raw": "120536",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a063",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5",
+    "answer_unit": "",
+    "raw": "5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a064",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "160",
+    "answer_unit": "",
+    "raw": "160",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a065",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "-4.9",
+    "answer_unit": "",
+    "raw": "-4.9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a066",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "110",
+    "answer_unit": "",
+    "raw": "110",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a067",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "92.7",
+    "answer_unit": "",
+    "raw": "92.7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a070",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "15.7",
+    "answer_unit": "",
+    "raw": "15.7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a071",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.303",
+    "answer_unit": "",
+    "raw": "1.303",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a072",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "940",
+    "answer_unit": "",
+    "raw": "940",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a073",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "176",
+    "answer_unit": "",
+    "raw": "176",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a074",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "0.687",
+    "answer_unit": "",
+    "raw": "0.687",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a075",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "28",
+    "answer_unit": "",
+    "raw": "28",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c001",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "79",
+    "answer_unit": "",
+    "raw": "79",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c002",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "92",
+    "answer_unit": "",
+    "raw": "92",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c003",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "82",
+    "answer_unit": "",
+    "raw": "82",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c004",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "74",
+    "answer_unit": "",
+    "raw": "74",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c005",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "80",
+    "answer_unit": "",
+    "raw": "80",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c006",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "12.011",
+    "answer_unit": "",
+    "raw": "12.011",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c007",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "55.845",
+    "answer_unit": "",
+    "raw": "55.845",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c008",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "196.97",
+    "answer_unit": "",
+    "raw": "196.97",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c009",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "15.999",
+    "answer_unit": "",
+    "raw": "15.999",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c010",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "238.02891",
+    "answer_unit": "",
+    "raw": "238.02891",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c011",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1538",
+    "answer_unit": "",
+    "raw": "1538",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c012",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1064",
+    "answer_unit": "",
+    "raw": "1064",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c013",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "961.8",
+    "answer_unit": "",
+    "raw": "961.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c014",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1084.62",
+    "answer_unit": "",
+    "raw": "1084.62",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c015",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "327.5",
+    "answer_unit": "",
+    "raw": "327.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c016",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "660.3",
+    "answer_unit": "",
+    "raw": "660.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c017",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2856",
+    "answer_unit": "",
+    "raw": "2856",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c018",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2862",
+    "answer_unit": "",
+    "raw": "2862",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c019",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "19.32",
+    "answer_unit": "",
+    "raw": "19.32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c020",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "7.87",
+    "answer_unit": "",
+    "raw": "7.87",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c021",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2.70",
+    "answer_unit": "",
+    "raw": "2.70",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c022",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "11.34",
+    "answer_unit": "",
+    "raw": "11.34",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c023",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8.96",
+    "answer_unit": "",
+    "raw": "8.96",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c024",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5730",
+    "answer_unit": "",
+    "raw": "5730",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c025",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4.468",
+    "answer_unit": "",
+    "raw": "4.468",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c026",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "703.8",
+    "answer_unit": "",
+    "raw": "703.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c027",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.25",
+    "answer_unit": "",
+    "raw": "1.25",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c028",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8.02",
+    "answer_unit": "",
+    "raw": "8.02",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c029",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "30.17",
+    "answer_unit": "",
+    "raw": "30.17",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c030",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "24110",
+    "answer_unit": "",
+    "raw": "24110",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c031",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "12.32",
+    "answer_unit": "",
+    "raw": "12.32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c032",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5.27",
+    "answer_unit": "",
+    "raw": "5.27",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c033",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1600",
+    "answer_unit": "",
+    "raw": "1600",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c034",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "436",
+    "answer_unit": "",
+    "raw": "436",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c035",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "498",
+    "answer_unit": "",
+    "raw": "498",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c036",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "945",
+    "answer_unit": "",
+    "raw": "945",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c037",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "348",
+    "answer_unit": "",
+    "raw": "348",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c038",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "614",
+    "answer_unit": "",
+    "raw": "614",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c039",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "839",
+    "answer_unit": "",
+    "raw": "839",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c040",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "413",
+    "answer_unit": "",
+    "raw": "413",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c041",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "463",
+    "answer_unit": "",
+    "raw": "463",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c042",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "7",
+    "answer_unit": "",
+    "raw": "7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c043",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c044",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8",
+    "answer_unit": "",
+    "raw": "8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c045",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "26",
+    "answer_unit": "",
+    "raw": "26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c046",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "29",
+    "answer_unit": "",
+    "raw": "29",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c047",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "47",
+    "answer_unit": "",
+    "raw": "47",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c048",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "78",
+    "answer_unit": "",
+    "raw": "78",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c049",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "212",
+    "answer_unit": "",
+    "raw": "212",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c050",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "32",
+    "answer_unit": "",
+    "raw": "32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c051",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "0.789",
+    "answer_unit": "",
+    "raw": "0.789",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c052",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "18.02",
+    "answer_unit": "",
+    "raw": "18.02",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c053",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "44.01",
+    "answer_unit": "",
+    "raw": "44.01",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c054",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "58.44",
+    "answer_unit": "",
+    "raw": "58.44",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c055",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "98.08",
+    "answer_unit": "",
+    "raw": "98.08",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c056",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "78.37",
+    "answer_unit": "",
+    "raw": "78.37",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c057",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "0",
+    "answer_unit": "",
+    "raw": "0",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c058",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3.51",
+    "answer_unit": "",
+    "raw": "3.51",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c059",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2",
+    "answer_unit": "",
+    "raw": "2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c060",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c061",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "17",
+    "answer_unit": "",
+    "raw": "17",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c062",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "19",
+    "answer_unit": "",
+    "raw": "19",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c063",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "20",
+    "answer_unit": "",
+    "raw": "20",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c064",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "53",
+    "answer_unit": "",
+    "raw": "53",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c065",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.008",
+    "answer_unit": "",
+    "raw": "1.008",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c066",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "14.007",
+    "answer_unit": "",
+    "raw": "14.007",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c067",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "22.99",
+    "answer_unit": "",
+    "raw": "22.99",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c068",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "35.45",
+    "answer_unit": "",
+    "raw": "35.45",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c069",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.025",
+    "answer_unit": "",
+    "raw": "1.025",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c070",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c071",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "146",
+    "answer_unit": "",
+    "raw": "146",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c072",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3.8",
+    "answer_unit": "",
+    "raw": "3.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c073",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6.0058",
+    "answer_unit": "",
+    "raw": "6.0058",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c074",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1668",
+    "answer_unit": "",
+    "raw": "1668",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c075",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4.506",
+    "answer_unit": "",
+    "raw": "4.506",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g001",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8848.86",
+    "answer_unit": "",
+    "raw": "8848.86",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g002",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8611",
+    "answer_unit": "",
+    "raw": "8611",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g003",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8586",
+    "answer_unit": "",
+    "raw": "8586",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g004",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8516",
+    "answer_unit": "",
+    "raw": "8516",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g005",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8485",
+    "answer_unit": "",
+    "raw": "8485",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g006",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8188",
+    "answer_unit": "",
+    "raw": "8188",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g007",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8167",
+    "answer_unit": "",
+    "raw": "8167",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g008",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8163",
+    "answer_unit": "",
+    "raw": "8163",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g009",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8126",
+    "answer_unit": "",
+    "raw": "8126",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g010",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8091",
+    "answer_unit": "",
+    "raw": "8091",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g011",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4808",
+    "answer_unit": "",
+    "raw": "4808",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g012",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4478",
+    "answer_unit": "",
+    "raw": "4478",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g013",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5895",
+    "answer_unit": "",
+    "raw": "5895",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g014",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6190",
+    "answer_unit": "",
+    "raw": "6190",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g015",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6961",
+    "answer_unit": "",
+    "raw": "6961",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g016",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5642",
+    "answer_unit": "",
+    "raw": "5642",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g017",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4892",
+    "answer_unit": "",
+    "raw": "4892",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g018",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3776",
+    "answer_unit": "",
+    "raw": "3776",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g019",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1642",
+    "answer_unit": "",
+    "raw": "1642",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g020",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "31722",
+    "answer_unit": "",
+    "raw": "31722",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g021",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1470",
+    "answer_unit": "",
+    "raw": "1470",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g022",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "371000",
+    "answer_unit": "",
+    "raw": "371000",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g023",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "100",
+    "answer_unit": "",
+    "raw": "82,100",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g024",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "68800",
+    "answer_unit": "",
+    "raw": "68800",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g025",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "58016",
+    "answer_unit": "",
+    "raw": "58016",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g026",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "59600",
+    "answer_unit": "",
+    "raw": "59600",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g027",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "700",
+    "answer_unit": "",
+    "raw": "25,700",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g028",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "960",
+    "answer_unit": "",
+    "raw": "18,960",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g031",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.2",
+    "answer_unit": "",
+    "raw": "9.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g032",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5.5",
+    "answer_unit": "",
+    "raw": "5.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g033",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "165.25",
+    "answer_unit": "",
+    "raw": "165.25",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g034",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "106.46",
+    "answer_unit": "",
+    "raw": "106.46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g035",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "70.56",
+    "answer_unit": "",
+    "raw": "70.56",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g036",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "14.06",
+    "answer_unit": "",
+    "raw": "14.06",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g037",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6650",
+    "answer_unit": "",
+    "raw": "6650",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g038",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6400",
+    "answer_unit": "",
+    "raw": "6400",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g039",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3766",
+    "answer_unit": "",
+    "raw": "3766",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g040",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6300",
+    "answer_unit": "",
+    "raw": "6300",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g041",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "51",
+    "answer_unit": "",
+    "raw": "51",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g042",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "979",
+    "answer_unit": "",
+    "raw": "979",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g043",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "7.69",
+    "answer_unit": "",
+    "raw": "7.69",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g044",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.83",
+    "answer_unit": "",
+    "raw": "9.83",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g045",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.98",
+    "answer_unit": "",
+    "raw": "9.98",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g046",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "17.1",
+    "answer_unit": "",
+    "raw": "17.1",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g047",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.6",
+    "answer_unit": "",
+    "raw": "9.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g048",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3.287",
+    "answer_unit": "",
+    "raw": "3.287",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g049",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "21196",
+    "answer_unit": "",
+    "raw": "21196",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g050",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2.17",
+    "answer_unit": "",
+    "raw": "2.17",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g051",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5895",
+    "answer_unit": "",
+    "raw": "5895",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g052",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5642",
+    "answer_unit": "",
+    "raw": "5642",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g054",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2.5",
+    "answer_unit": "",
+    "raw": "2.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g055",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5267",
+    "answer_unit": "",
+    "raw": "5267",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g056",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "14",
+    "answer_unit": "",
+    "raw": "14",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g058",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1281",
+    "answer_unit": "",
+    "raw": "1281",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g059",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8372",
+    "answer_unit": "",
+    "raw": "8372",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g060",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "406",
+    "answer_unit": "",
+    "raw": "406",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g061",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "828",
+    "answer_unit": "",
+    "raw": "828",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g062",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "330",
+    "answer_unit": "",
+    "raw": "330",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g063",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "443",
+    "answer_unit": "",
+    "raw": "443",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g064",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "163",
+    "answer_unit": "",
+    "raw": "163",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g065",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.3",
+    "answer_unit": "",
+    "raw": "1.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g066",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2240",
+    "answer_unit": "",
+    "raw": "2240",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g067",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3640",
+    "answer_unit": "",
+    "raw": "3640",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g068",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1609",
+    "answer_unit": "",
+    "raw": "1609",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g069",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1025",
+    "answer_unit": "",
+    "raw": "1025",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g070",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "54",
+    "answer_unit": "",
+    "raw": "54",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g071",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "12",
+    "answer_unit": "",
+    "raw": "12",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g072",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g073",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "40075",
+    "answer_unit": "",
+    "raw": "40075",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g074",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "075",
+    "answer_unit": "",
+    "raw": "40,075",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g075",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "14.2",
+    "answer_unit": "",
+    "raw": "14.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h001",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "476",
+    "answer_unit": "",
+    "raw": "476",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h002",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1453",
+    "answer_unit": "",
+    "raw": "1453",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h003",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1215",
+    "answer_unit": "",
+    "raw": "1215",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h004",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1492",
+    "answer_unit": "",
+    "raw": "1492",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h005",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1776",
+    "answer_unit": "",
+    "raw": "1776",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h006",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1789",
+    "answer_unit": "",
+    "raw": "1789",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h007",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1815",
+    "answer_unit": "",
+    "raw": "1815",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h008",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1914",
+    "answer_unit": "",
+    "raw": "1914",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h009",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1918",
+    "answer_unit": "",
+    "raw": "1918",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h010",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1939",
+    "answer_unit": "",
+    "raw": "1939",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h011",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1941",
+    "answer_unit": "",
+    "raw": "1941",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h012",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1944",
+    "answer_unit": "",
+    "raw": "1944",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h013",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1945",
+    "answer_unit": "",
+    "raw": "1945",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h014",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1950",
+    "answer_unit": "",
+    "raw": "1950",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h015",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1957",
+    "answer_unit": "",
+    "raw": "1957",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h016",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1962",
+    "answer_unit": "",
+    "raw": "1962",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h017",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1963",
+    "answer_unit": "",
+    "raw": "1963",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h018",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1991",
+    "answer_unit": "",
+    "raw": "1991",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h019",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2001",
+    "answer_unit": "",
+    "raw": "2001",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h020",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1440",
+    "answer_unit": "",
+    "raw": "1440",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h021",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1861",
+    "answer_unit": "",
+    "raw": "1861",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h022",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1865",
+    "answer_unit": "",
+    "raw": "1865",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h023",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1789",
+    "answer_unit": "",
+    "raw": "1789",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h024",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1347",
+    "answer_unit": "",
+    "raw": "1347",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h025",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1869",
+    "answer_unit": "",
+    "raw": "1869",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h026",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1917",
+    "answer_unit": "",
+    "raw": "1917",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h027",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1967",
+    "answer_unit": "",
+    "raw": "1967",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h028",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1912",
+    "answer_unit": "",
+    "raw": "1912",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h029",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2560",
+    "answer_unit": "",
+    "raw": "2560",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h030",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1453",
+    "answer_unit": "",
+    "raw": "1453",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h031",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1961",
+    "answer_unit": "",
+    "raw": "1961",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h032",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1989",
+    "answer_unit": "",
+    "raw": "1989",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h033",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2007",
+    "answer_unit": "",
+    "raw": "2007",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h034",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1989",
+    "answer_unit": "",
+    "raw": "1989",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h035",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1903",
+    "answer_unit": "",
+    "raw": "1903",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h036",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1863",
+    "answer_unit": "",
+    "raw": "1863",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h037",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1945",
+    "answer_unit": "",
+    "raw": "1945",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h038",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1986",
+    "answer_unit": "",
+    "raw": "1986",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h039",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1969",
+    "answer_unit": "",
+    "raw": "1969",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h040",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1760",
+    "answer_unit": "",
+    "raw": "1760",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s001",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9.58",
+    "answer_unit": "",
+    "raw": "9.58",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s002",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "19.19",
+    "answer_unit": "",
+    "raw": "19.19",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s003",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8.95",
+    "answer_unit": "",
+    "raw": "8.95",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s004",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2.45",
+    "answer_unit": "",
+    "raw": "2.45",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s005",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "10.49",
+    "answer_unit": "",
+    "raw": "10.49",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s006",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "21.34",
+    "answer_unit": "",
+    "raw": "21.34",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s007",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "98.48",
+    "answer_unit": "",
+    "raw": "98.48",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s008",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "23.56",
+    "answer_unit": "",
+    "raw": "23.56",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s009",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "75.56",
+    "answer_unit": "",
+    "raw": "75.56",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s010",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "18.29",
+    "answer_unit": "",
+    "raw": "18.29",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s011",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "43.03",
+    "answer_unit": "",
+    "raw": "43.03",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s012",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "100.91",
+    "answer_unit": "",
+    "raw": "100.91",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s013",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "206",
+    "answer_unit": "",
+    "raw": "206",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s014",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "120.58",
+    "answer_unit": "",
+    "raw": "120.58",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s015",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s016",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5",
+    "answer_unit": "",
+    "raw": "5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s017",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s018",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "9",
+    "answer_unit": "",
+    "raw": "9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s019",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "50",
+    "answer_unit": "",
+    "raw": "50",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s020",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3.75",
+    "answer_unit": "",
+    "raw": "3.75",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s021",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "42.195",
+    "answer_unit": "",
+    "raw": "42.195",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s022",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "23",
+    "answer_unit": "",
+    "raw": "23",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s023",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1896",
+    "answer_unit": "",
+    "raw": "1896",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s024",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s025",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s026",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "12.80",
+    "answer_unit": "",
+    "raw": "12.80",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s027",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "7.26",
+    "answer_unit": "",
+    "raw": "7.26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s028",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "3.048",
+    "answer_unit": "",
+    "raw": "3.048",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s029",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "24",
+    "answer_unit": "",
+    "raw": "24",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s030",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "5",
+    "answer_unit": "",
+    "raw": "5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d001",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.43",
+    "answer_unit": "",
+    "raw": "1.43",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d002",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1.41",
+    "answer_unit": "",
+    "raw": "1.41",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d003",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "334.9",
+    "answer_unit": "",
+    "raw": "334.9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d004",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "277.5",
+    "answer_unit": "",
+    "raw": "277.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d005",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "241.5",
+    "answer_unit": "",
+    "raw": "241.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d006",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "223.8",
+    "answer_unit": "",
+    "raw": "223.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d007",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "216",
+    "answer_unit": "",
+    "raw": "216",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d008",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "172",
+    "answer_unit": "",
+    "raw": "172",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d009",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "144",
+    "answer_unit": "",
+    "raw": "144",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d010",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "124.5",
+    "answer_unit": "",
+    "raw": "124.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d011",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "68.3",
+    "answer_unit": "",
+    "raw": "68.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d012",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "65.8",
+    "answer_unit": "",
+    "raw": "65.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d013",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "84.4",
+    "answer_unit": "",
+    "raw": "84.4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d014",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "111",
+    "answer_unit": "",
+    "raw": "111",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d015",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "126.5",
+    "answer_unit": "",
+    "raw": "126.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d016",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "117.3",
+    "answer_unit": "",
+    "raw": "117.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d017",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "98.9",
+    "answer_unit": "",
+    "raw": "98.9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d018",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "128.5",
+    "answer_unit": "",
+    "raw": "128.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d019",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "85.3",
+    "answer_unit": "",
+    "raw": "85.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d020",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "89",
+    "answer_unit": "",
+    "raw": "89",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d021",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8",
+    "answer_unit": "",
+    "raw": "8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d022",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "26.6",
+    "answer_unit": "",
+    "raw": "26.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d023",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "40",
+    "answer_unit": "",
+    "raw": "40",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d024",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "51.7",
+    "answer_unit": "",
+    "raw": "51.7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d025",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "58.9",
+    "answer_unit": "",
+    "raw": "58.9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b001",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "46",
+    "answer_unit": "",
+    "raw": "46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b002",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "23",
+    "answer_unit": "",
+    "raw": "23",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b003",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "37",
+    "answer_unit": "",
+    "raw": "37",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b004",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "32",
+    "answer_unit": "",
+    "raw": "32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b005",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "4",
+    "answer_unit": "",
+    "raw": "4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b006",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "40",
+    "answer_unit": "",
+    "raw": "40",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b007",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "12",
+    "answer_unit": "",
+    "raw": "12",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b008",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "206",
+    "answer_unit": "",
+    "raw": "206",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b009",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "33",
+    "answer_unit": "",
+    "raw": "33",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b010",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "7.4",
+    "answer_unit": "",
+    "raw": "7.4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r001",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2024",
+    "answer_unit": "",
+    "raw": "2024",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r002",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "312",
+    "answer_unit": "",
+    "raw": "312",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r003",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2024",
+    "answer_unit": "",
+    "raw": "2024",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r004",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "720",
+    "answer_unit": "",
+    "raw": "720",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r005",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2022",
+    "answer_unit": "",
+    "raw": "2022",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r006",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "126",
+    "answer_unit": "",
+    "raw": "126",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r007",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2022",
+    "answer_unit": "",
+    "raw": "2022",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r008",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "8.2",
+    "answer_unit": "",
+    "raw": "8.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r009",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2022",
+    "answer_unit": "",
+    "raw": "2022",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r010",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "193",
+    "answer_unit": "",
+    "raw": "193",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc01",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "45.94",
+    "answer_unit": "",
+    "raw": "45.94",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc02",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "12.12",
+    "answer_unit": "",
+    "raw": "12.12",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc03",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "6.28",
+    "answer_unit": "",
+    "raw": "6.28",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc04",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "1973",
+    "answer_unit": "",
+    "raw": "1973",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc05",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2010",
+    "answer_unit": "",
+    "raw": "2010",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc06",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2026",
+    "answer_unit": "",
+    "raw": "The 2026 Winter Olympics (Milan-Cortina, February 2026) had not yet taken place as of my knowledge cutoff, so no final medal count exists. If you're asking after the Games concluded, please check curr",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc07",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2026",
+    "answer_unit": "",
+    "raw": "I can't provide this number because the 2026 Winter Olympics (Milano-Cortina, scheduled for February 2026) occurred after my knowledge cutoff, so I have no data on the medal results. Guessing a figure",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc08",
+    "model": "glm/glm-5.3-flash",
+    "answer_value": "2026",
+    "answer_unit": "",
+    "raw": "I can't provide this — the 2026 Winter Olympics (Milano-Cortina) had not yet taken place as of my knowledge cutoff, so no final medal count for Italy exists in my information. I'd recommend checking a",
+    "finish_reason": "stop",
+    "error": null
+  }
+]

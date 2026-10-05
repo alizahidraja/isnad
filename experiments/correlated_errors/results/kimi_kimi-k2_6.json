@@ -1,0 +1,3476 @@
+[
+  {
+    "claim_id": "hard-p001",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "299792458",
+    "answer_unit": "",
+    "raw": "299792458",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p002",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "-273.15",
+    "answer_unit": "",
+    "raw": "-273.15",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p003",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "0.01",
+    "answer_unit": "",
+    "raw": "0.01",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p004",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "101325",
+    "answer_unit": "",
+    "raw": "101325",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p005",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "343",
+    "answer_unit": "",
+    "raw": "343",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p006",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6.02214076",
+    "answer_unit": "",
+    "raw": "6.02214076",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p007",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "96485",
+    "answer_unit": "",
+    "raw": "96485",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p008",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8.314",
+    "answer_unit": "",
+    "raw": "8.314",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p009",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.380649",
+    "answer_unit": "",
+    "raw": "1.380649",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p010",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6.62607015",
+    "answer_unit": "",
+    "raw": "6.62607015",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p011",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.602176634",
+    "answer_unit": "",
+    "raw": "1.602176634",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p012",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9.1093837015",
+    "answer_unit": "",
+    "raw": "9.1093837015",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p013",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.6726219",
+    "answer_unit": "",
+    "raw": "1.6726219",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p014",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "-31",
+    "answer_unit": "",
+    "raw": "We need answer the question: \"What is the rest mass of the neutron in units of 10 to the negative 27 kilograms?\" Provide just numeric value, no units, no prose.\n\nNeed to know rest mass of neutron. Sta",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p015",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "137.035999084",
+    "answer_unit": "",
+    "raw": "137.035999084",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p016",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.0973731568160",
+    "answer_unit": "",
+    "raw": "1.0973731568160",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p017",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5.670374419",
+    "answer_unit": "",
+    "raw": "5.670374419",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p018",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2.897771955",
+    "answer_unit": "",
+    "raw": "2.897771955",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p019",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5.29",
+    "answer_unit": "",
+    "raw": "5.29",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p020",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "938.272",
+    "answer_unit": "",
+    "raw": "938.272",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p021",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "939.565",
+    "answer_unit": "",
+    "raw": "939.565",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p022",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "0.511",
+    "answer_unit": "",
+    "raw": "0.511",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p023",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "105.658",
+    "answer_unit": "",
+    "raw": "105.658",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p024",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "91.1876",
+    "answer_unit": "",
+    "raw": "91.1876",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p025",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "172.76",
+    "answer_unit": "",
+    "raw": "The user is asking for the mass of the top quark in GeV, and wants just the numeric value with no units and no prose.\n\nThe current accepted value for the top quark mass is approximately 172.76 GeV/c²,",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p026",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "139.57",
+    "answer_unit": "",
+    "raw": "139.57",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p027",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "493.677",
+    "answer_unit": "",
+    "raw": "493.677",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p028",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "0.84",
+    "answer_unit": "",
+    "raw": "The user is asking for the charge radius of the proton in femtometers, and wants just the numeric value with no units or prose.\n\nI need to recall the accepted value of the proton charge radius. This h",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p029",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6.67430",
+    "answer_unit": "",
+    "raw": "6.67430",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p030",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9.80665",
+    "answer_unit": "",
+    "raw": "9.80665",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p031",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1",
+    "answer_unit": "",
+    "raw": "1",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p032",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.33",
+    "answer_unit": "",
+    "raw": "1.33",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p033",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2.99792458",
+    "answer_unit": "",
+    "raw": "2.99792458",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p034",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3422",
+    "answer_unit": "",
+    "raw": "3422",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p035",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "-196",
+    "answer_unit": "",
+    "raw": "-196",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p036",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4.2",
+    "answer_unit": "",
+    "raw": "4.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p037",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "13.6",
+    "answer_unit": "",
+    "raw": "13.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p038",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1500",
+    "answer_unit": "",
+    "raw": "1500",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p039",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "15",
+    "answer_unit": "",
+    "raw": "The user is asking for the mean lifetime of a neutron in minutes. I need to provide just the numeric value, no units, no prose.\n \n The mean lifetime of a neutron is approximately 879.4 seconds (the PD",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p040",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.62",
+    "answer_unit": "",
+    "raw": "1.62",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p041",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6371",
+    "answer_unit": "",
+    "raw": "6371",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p042",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "24",
+    "answer_unit": "",
+    "raw": "The user is asking for the mass of the Earth in units of $10^{24}$ kilograms. They want just the numeric value, no units, no prose.\n \n The standard value for the mass of the Earth is approximately $5.",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p043",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.989",
+    "answer_unit": "",
+    "raw": "1.989",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p044",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "149.6",
+    "answer_unit": "",
+    "raw": "149.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-p045",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "384400",
+    "answer_unit": "",
+    "raw": "384400",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a001",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4.24",
+    "answer_unit": "",
+    "raw": "4.24",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a002",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8.6",
+    "answer_unit": "",
+    "raw": "8.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a003",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2.5",
+    "answer_unit": "",
+    "raw": "2.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a004",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "687",
+    "answer_unit": "",
+    "raw": "687",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a005",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "11.86",
+    "answer_unit": "",
+    "raw": "11.86",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a006",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "29.5",
+    "answer_unit": "",
+    "raw": "29.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a007",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "84",
+    "answer_unit": "",
+    "raw": "84",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a008",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "164.8",
+    "answer_unit": "",
+    "raw": "164.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a009",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "87.97",
+    "answer_unit": "",
+    "raw": "87.97",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a010",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "224.7",
+    "answer_unit": "",
+    "raw": "224.7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a011",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.524",
+    "answer_unit": "",
+    "raw": "1.524",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a012",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5.2",
+    "answer_unit": "",
+    "raw": "5.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a013",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "29.66",
+    "answer_unit": "",
+    "raw": "The user is asking for the semi-major axis of Saturn's orbit in astronomical units (AU). I need to provide just the numeric value with no units and no prose.\n\n Saturn's semi-major axis is approximatel",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a014",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "30.07",
+    "answer_unit": "",
+    "raw": "30.07",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a015",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "23.5",
+    "answer_unit": "",
+    "raw": "23.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a016",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "27.32",
+    "answer_unit": "",
+    "raw": "27.32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a017",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3474",
+    "answer_unit": "",
+    "raw": "3474",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a018",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5778",
+    "answer_unit": "",
+    "raw": "5778",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a019",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "30",
+    "answer_unit": "",
+    "raw": "30",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a020",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "11.2",
+    "answer_unit": "",
+    "raw": "11.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a021",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2.38",
+    "answer_unit": "",
+    "raw": "2.38",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a022",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "247.94",
+    "answer_unit": "",
+    "raw": "247.94",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a023",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "39.48",
+    "answer_unit": "",
+    "raw": "39.48",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a024",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6779",
+    "answer_unit": "",
+    "raw": "6779",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a025",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "12104",
+    "answer_unit": "",
+    "raw": "12104",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a026",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "142984",
+    "answer_unit": "",
+    "raw": "142984",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a027",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "49244",
+    "answer_unit": "",
+    "raw": "49244",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a028",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1392700",
+    "answer_unit": "",
+    "raw": "1392700",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a029",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2",
+    "answer_unit": "",
+    "raw": "2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a030",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9.925",
+    "answer_unit": "",
+    "raw": "9.925",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a031",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "243",
+    "answer_unit": "",
+    "raw": "243",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a032",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "95",
+    "answer_unit": "",
+    "raw": "95",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a033",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "62",
+    "answer_unit": "",
+    "raw": "The user is asking for the number of confirmed moons of Saturn as of 2023. I need to provide just the numeric value, no units, no prose.\n\nAs of 2023, Saturn has 146 confirmed moons. Wait, let me verif",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a034",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "13.8",
+    "answer_unit": "",
+    "raw": "13.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a035",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "70",
+    "answer_unit": "",
+    "raw": "70",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a036",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "-1.46",
+    "answer_unit": "",
+    "raw": "-1.46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a037",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4.83",
+    "answer_unit": "",
+    "raw": "4.83",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a038",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "800",
+    "answer_unit": "",
+    "raw": "The user is asking for the number of light-years in one parsec. I need to provide just the numeric value, no units, no prose.\n \n A parsec is defined as the distance at which one astronomical unit subt",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a039",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "100",
+    "answer_unit": "",
+    "raw": "100",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a041",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3.71",
+    "answer_unit": "",
+    "raw": "The user is asking for the surface gravity of Mars in meters per second squared. They want just the numeric value with no units and no prose.\n \n The standard value for the surface gravity of Mars is a",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a042",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "24.79",
+    "answer_unit": "",
+    "raw": "24.79",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a043",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5.145",
+    "answer_unit": "",
+    "raw": "5.145",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a044",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2.725",
+    "answer_unit": "",
+    "raw": "2.725",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a045",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "88",
+    "answer_unit": "",
+    "raw": "88",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a046",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.898",
+    "answer_unit": "",
+    "raw": "1.898",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a047",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5.683",
+    "answer_unit": "",
+    "raw": "5.683",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a048",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "7.342",
+    "answer_unit": "",
+    "raw": "7.342",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a049",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "26",
+    "answer_unit": "",
+    "raw": "26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a050",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8",
+    "answer_unit": "",
+    "raw": "8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a051",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1",
+    "answer_unit": "",
+    "raw": "The user wants to know the orbital period of Halley's Comet in years. I need to answer with just the numeric value, no units, no prose.\n\n Halley's Comet has an orbital period of about 75-76 years. Mor",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a052",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "-63",
+    "answer_unit": "",
+    "raw": "-63",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a053",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "462",
+    "answer_unit": "",
+    "raw": "462",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a054",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4.3",
+    "answer_unit": "",
+    "raw": "The user asks: \"Answer the following question with just the numeric value (no units, no prose): What is the mass of the black hole at the center of the Milky Way in units of 10 to the 6 solar masses?\"",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a055",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9.46073",
+    "answer_unit": "",
+    "raw": "We need to answer: \"What is the length of a light-year in units of 10 to the 12 kilometers?\" And output just the numeric value (no units, no prose). So compute light-year in kilometers, then divide by",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a056",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "0.0167",
+    "answer_unit": "",
+    "raw": "0.0167",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a057",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "366",
+    "answer_unit": "",
+    "raw": "366",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a058",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "57.9",
+    "answer_unit": "",
+    "raw": "57.9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a059",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9",
+    "answer_unit": "",
+    "raw": "The user wants the mean distance from the Sun to Saturn in million kilometers, with just the numeric value and no units or prose.\n\nThe mean distance from the Sun to Saturn (semi-major axis) is approxi",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a060",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4879",
+    "answer_unit": "",
+    "raw": "4879",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a061",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "50724",
+    "answer_unit": "",
+    "raw": "The user is asking for the diameter of Uranus in kilometers. They want just the numeric value with no units and no prose.\n\nThe diameter of Uranus is approximately 50,724 km (or often cited as around 5",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a062",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "120536",
+    "answer_unit": "",
+    "raw": "120536",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a063",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5",
+    "answer_unit": "",
+    "raw": "5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a064",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "163",
+    "answer_unit": "",
+    "raw": "163",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a065",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1",
+    "answer_unit": "",
+    "raw": "We need answer: apparent visual magnitude of Venus at its brightest. Must be just numeric value, no units, no prose. Need accurate value. Venus brightest apparent magnitude is around -4.6 or -4.7? Let",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a066",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "110",
+    "answer_unit": "",
+    "raw": "The user asks: \"What is the number of times the Moon's diameter fits in the distance to the Moon?\" They want just the numeric value (no units, no prose).\n\nI need to compute the ratio of the average di",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a067",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2",
+    "answer_unit": "",
+    "raw": "The user is asking for the orbital period of the International Space Station in minutes, and wants just the numeric value, no units, no prose.\n\nThe ISS orbits at about 400 km altitude. The orbital per",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a070",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "15",
+    "answer_unit": "",
+    "raw": "15",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a071",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.303",
+    "answer_unit": "",
+    "raw": "1.303",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a072",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "940",
+    "answer_unit": "",
+    "raw": "940",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a073",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "175.94",
+    "answer_unit": "",
+    "raw": "We need answer the question: \"What is the number of Earth days in one solar day on Mercury?\" Must respond with just the numeric value, no units, no prose.\n\nWe need compute or recall the length of a so",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a074",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "0.687",
+    "answer_unit": "",
+    "raw": "0.687",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-a075",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "27",
+    "answer_unit": "",
+    "raw": "27",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c001",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "79",
+    "answer_unit": "",
+    "raw": "79",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c002",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "92",
+    "answer_unit": "",
+    "raw": "92",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c003",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "82",
+    "answer_unit": "",
+    "raw": "82",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c004",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "74",
+    "answer_unit": "",
+    "raw": "74",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c005",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "80",
+    "answer_unit": "",
+    "raw": "80",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c006",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "12.011",
+    "answer_unit": "",
+    "raw": "12.011",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c007",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "55.845",
+    "answer_unit": "",
+    "raw": "55.845",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c008",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "196.966569",
+    "answer_unit": "",
+    "raw": "196.966569",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c009",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "15.999",
+    "answer_unit": "",
+    "raw": "15.999",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c010",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "238.02891",
+    "answer_unit": "",
+    "raw": "238.02891",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c011",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1538",
+    "answer_unit": "",
+    "raw": "1538",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c012",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1064",
+    "answer_unit": "",
+    "raw": "1064",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c013",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "961.8",
+    "answer_unit": "",
+    "raw": "961.8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c014",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1085",
+    "answer_unit": "",
+    "raw": "1085",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c015",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "327.5",
+    "answer_unit": "",
+    "raw": "327.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c016",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "660.32",
+    "answer_unit": "",
+    "raw": "660.32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c017",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2970",
+    "answer_unit": "",
+    "raw": "2970",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c018",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2862",
+    "answer_unit": "",
+    "raw": "2862",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c019",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "19.3",
+    "answer_unit": "",
+    "raw": "19.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c020",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "7.87",
+    "answer_unit": "",
+    "raw": "7.87",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c021",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2.7",
+    "answer_unit": "",
+    "raw": "2.7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c022",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "11.34",
+    "answer_unit": "",
+    "raw": "11.34",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c023",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8.96",
+    "answer_unit": "",
+    "raw": "8.96",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c024",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5730",
+    "answer_unit": "",
+    "raw": "5730",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c025",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4.468",
+    "answer_unit": "",
+    "raw": "4.468",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c026",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "704",
+    "answer_unit": "",
+    "raw": "704",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c027",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.25",
+    "answer_unit": "",
+    "raw": "1.25",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c028",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8.02",
+    "answer_unit": "",
+    "raw": "8.02",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c029",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "30.17",
+    "answer_unit": "",
+    "raw": "30.17",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c030",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "24100",
+    "answer_unit": "",
+    "raw": "24100",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c031",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "12.32",
+    "answer_unit": "",
+    "raw": "12.32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c032",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5.27",
+    "answer_unit": "",
+    "raw": "5.27",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c033",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1600",
+    "answer_unit": "",
+    "raw": "1600",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c034",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "436",
+    "answer_unit": "",
+    "raw": "436",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c035",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "498",
+    "answer_unit": "",
+    "raw": "The user is asking for the bond dissociation energy of the oxygen-oxygen double bond (O=O) in kilojoules per mole. I need to provide just the numeric value with no units and no prose.\n\nThe standard bo",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c036",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "945",
+    "answer_unit": "",
+    "raw": "945",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c037",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "347",
+    "answer_unit": "",
+    "raw": "347",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c038",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "602",
+    "answer_unit": "",
+    "raw": "The user asks: \"Answer the following question with just the numeric value (no units, no prose): What is the bond dissociation energy of a carbon-carbon double bond in kilojoules per mole?\" So they wan",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c039",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "835",
+    "answer_unit": "",
+    "raw": "The user asks: \"Answer the following question with just the numeric value (no units, no prose): What is the bond dissociation energy of a carbon-carbon triple bond in kilojoules per mole?\"\n \n We need ",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c040",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "418.4",
+    "answer_unit": "",
+    "raw": "The user is asking for the bond dissociation energy of a carbon-hydrogen bond in kilojoules per mole. They want just the numeric value with no units and no prose.\n\nI need to recall what the typical bo",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c041",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "463",
+    "answer_unit": "",
+    "raw": "The user is asking for the bond dissociation energy of an O-H bond in kJ/mol. They want just the numeric value, no units, no prose.\n\nI need to recall the approximate bond dissociation energy for an O-",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c042",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "7",
+    "answer_unit": "",
+    "raw": "7",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c043",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c044",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8",
+    "answer_unit": "",
+    "raw": "8",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c045",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "26",
+    "answer_unit": "",
+    "raw": "26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c046",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "29",
+    "answer_unit": "",
+    "raw": "29",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c047",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "47",
+    "answer_unit": "",
+    "raw": "47",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c048",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "78",
+    "answer_unit": "",
+    "raw": "78",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c049",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "212",
+    "answer_unit": "",
+    "raw": "212",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c050",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "32",
+    "answer_unit": "",
+    "raw": "32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c051",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "0.789",
+    "answer_unit": "",
+    "raw": "0.789",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c052",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "18.015",
+    "answer_unit": "",
+    "raw": "18.015",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c053",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "44.01",
+    "answer_unit": "",
+    "raw": "44.01",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c054",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "58.44",
+    "answer_unit": "",
+    "raw": "58.44",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c055",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "32",
+    "answer_unit": "",
+    "raw": "The user is asking for the molar mass of sulfuric acid (H₂SO₄) in grams per mole, but they want just the numeric value with no units and no prose.\n \n Let me calculate the molar mass of H₂SO₄:\n \n Hydro",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c056",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "78.37",
+    "answer_unit": "",
+    "raw": "78.37",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c057",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "0",
+    "answer_unit": "",
+    "raw": "0",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c058",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3.51",
+    "answer_unit": "",
+    "raw": "3.51",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c059",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2",
+    "answer_unit": "",
+    "raw": "2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c060",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c061",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "17",
+    "answer_unit": "",
+    "raw": "17",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c062",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "19",
+    "answer_unit": "",
+    "raw": "19",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c063",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "20",
+    "answer_unit": "",
+    "raw": "20",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c064",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "53",
+    "answer_unit": "",
+    "raw": "53",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c065",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.008",
+    "answer_unit": "",
+    "raw": "1.008",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c066",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "14.007",
+    "answer_unit": "",
+    "raw": "14.007",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c067",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "22.98976928",
+    "answer_unit": "",
+    "raw": "22.98976928",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c068",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "35.45",
+    "answer_unit": "",
+    "raw": "35.45",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c069",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.025",
+    "answer_unit": "",
+    "raw": "1.025",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c070",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c071",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "146",
+    "answer_unit": "",
+    "raw": "146",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c072",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3.82",
+    "answer_unit": "",
+    "raw": "3.82",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c073",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c074",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1668",
+    "answer_unit": "",
+    "raw": "1668",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-c075",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4.51",
+    "answer_unit": "",
+    "raw": "4.51",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g001",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8848",
+    "answer_unit": "",
+    "raw": "8848",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g002",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8611",
+    "answer_unit": "",
+    "raw": "8611",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g003",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8586",
+    "answer_unit": "",
+    "raw": "8586",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g004",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8516",
+    "answer_unit": "",
+    "raw": "8516",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g005",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8485",
+    "answer_unit": "",
+    "raw": "8485",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g006",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8188",
+    "answer_unit": "",
+    "raw": "8188",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g007",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8167",
+    "answer_unit": "",
+    "raw": "8167",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g008",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8163",
+    "answer_unit": "",
+    "raw": "8163",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g009",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8126",
+    "answer_unit": "",
+    "raw": "8126",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g010",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8091",
+    "answer_unit": "",
+    "raw": "8091",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g011",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4809",
+    "answer_unit": "",
+    "raw": "The user is asking for the height of Mont Blanc in meters. I need to provide just the numeric value without any units or prose. Mont Blanc is the highest mountain in the Alps and Western Europe. Its e",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g012",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4478",
+    "answer_unit": "",
+    "raw": "4478",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g013",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5895",
+    "answer_unit": "",
+    "raw": "5895",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g014",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6190",
+    "answer_unit": "",
+    "raw": "6190",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g015",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6961",
+    "answer_unit": "",
+    "raw": "6961",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g016",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5642",
+    "answer_unit": "",
+    "raw": "5642",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g017",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4892",
+    "answer_unit": "",
+    "raw": "4892",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g018",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3776",
+    "answer_unit": "",
+    "raw": "3776",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g019",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1642",
+    "answer_unit": "",
+    "raw": "1642",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g020",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "31722",
+    "answer_unit": "",
+    "raw": "31722",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g021",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1470",
+    "answer_unit": "",
+    "raw": "1470",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g022",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "371000",
+    "answer_unit": "",
+    "raw": "371000",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g023",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "82100",
+    "answer_unit": "",
+    "raw": "82100",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g024",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "68870",
+    "answer_unit": "",
+    "raw": "68870",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g025",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "300",
+    "answer_unit": "",
+    "raw": "The user is asking for the surface area of Lake Michigan in square kilometers. They want just the numeric value with no units and no prose.\n\n Lake Michigan is one of the Great Lakes. I need to recall ",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g026",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "59600",
+    "answer_unit": "",
+    "raw": "59600",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g027",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "25667",
+    "answer_unit": "",
+    "raw": "25667",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g028",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "18960",
+    "answer_unit": "",
+    "raw": "18960",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g031",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9.2",
+    "answer_unit": "",
+    "raw": "9.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g032",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5.5",
+    "answer_unit": "",
+    "raw": "5.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g033",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "000",
+    "answer_unit": "",
+    "raw": "The user is asking for the area of the Pacific Ocean in million square kilometers. They want just the numeric value, no units, no prose.\n\nI need to recall or know the approximate area of the Pacific O",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g034",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "106.4",
+    "answer_unit": "",
+    "raw": "106.4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g035",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "70.56",
+    "answer_unit": "",
+    "raw": "70.56",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g036",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "14.056",
+    "answer_unit": "",
+    "raw": "14.056",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g037",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6650",
+    "answer_unit": "",
+    "raw": "6650",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g038",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6400",
+    "answer_unit": "",
+    "raw": "6400",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g039",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "766",
+    "answer_unit": "",
+    "raw": "The user wants to know the length of the Mississippi River in kilometers. I need to provide just the numeric value, no units, no prose.\n\n The Mississippi River is approximately 2,320 miles long. Conve",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g040",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6300",
+    "answer_unit": "",
+    "raw": "6300",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g041",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "51",
+    "answer_unit": "",
+    "raw": "51",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g042",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "979",
+    "answer_unit": "",
+    "raw": "979",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g043",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "7.692",
+    "answer_unit": "",
+    "raw": "The user is asking for the area of Australia in million square kilometers, and wants just the numeric value with no units or prose.\n\nI need to recall the area of Australia. Australia is the world's si",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g044",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9.83",
+    "answer_unit": "",
+    "raw": "9.83",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g045",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9.985",
+    "answer_unit": "",
+    "raw": "9.985",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g046",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "17.1",
+    "answer_unit": "",
+    "raw": "17.1",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g047",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9.6",
+    "answer_unit": "",
+    "raw": "9.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g048",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3.287",
+    "answer_unit": "",
+    "raw": "3.287",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g049",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "21196",
+    "answer_unit": "",
+    "raw": "21196",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g050",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2.166",
+    "answer_unit": "",
+    "raw": "2.166",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g051",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5895",
+    "answer_unit": "",
+    "raw": "5895",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g052",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5642",
+    "answer_unit": "",
+    "raw": "5642",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g054",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2.5",
+    "answer_unit": "",
+    "raw": "2.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g055",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5267",
+    "answer_unit": "",
+    "raw": "5267",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g056",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "13",
+    "answer_unit": "",
+    "raw": "The user is asking for the width of the Strait of Gibraltar at its narrowest point, in kilometers, and wants just the numeric value with no units or prose.\n\nI need to recall the width of the Strait of",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g058",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1281",
+    "answer_unit": "",
+    "raw": "1281",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g059",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8372",
+    "answer_unit": "",
+    "raw": "The user is asking for the area of Lake Titicaca in square kilometers, and specifically wants just the numeric value with no units and no prose.\n\nLake Titicaca is a large, deep lake in the Andes on th",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g060",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "406",
+    "answer_unit": "",
+    "raw": "406",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g061",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "828",
+    "answer_unit": "",
+    "raw": "828",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g062",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "330",
+    "answer_unit": "",
+    "raw": "330",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g063",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "443.2",
+    "answer_unit": "",
+    "raw": "443.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g064",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "163",
+    "answer_unit": "",
+    "raw": "163",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g065",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.3",
+    "answer_unit": "",
+    "raw": "1.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g066",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2240",
+    "answer_unit": "",
+    "raw": "2240",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g067",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3640",
+    "answer_unit": "",
+    "raw": "3640",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g068",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1609",
+    "answer_unit": "",
+    "raw": "1609",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g069",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1025",
+    "answer_unit": "",
+    "raw": "1025",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g070",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "54",
+    "answer_unit": "",
+    "raw": "54",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g071",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "12",
+    "answer_unit": "",
+    "raw": "12",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g072",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g073",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "40075",
+    "answer_unit": "",
+    "raw": "40075",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g074",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "40075",
+    "answer_unit": "",
+    "raw": "40075",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-g075",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "14.2",
+    "answer_unit": "",
+    "raw": "14.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h001",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "476",
+    "answer_unit": "",
+    "raw": "476",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h002",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1453",
+    "answer_unit": "",
+    "raw": "1453",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h003",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1215",
+    "answer_unit": "",
+    "raw": "1215",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h004",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1492",
+    "answer_unit": "",
+    "raw": "1492",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h005",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1776",
+    "answer_unit": "",
+    "raw": "1776",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h006",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1789",
+    "answer_unit": "",
+    "raw": "1789",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h007",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1815",
+    "answer_unit": "",
+    "raw": "1815",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h008",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1914",
+    "answer_unit": "",
+    "raw": "1914",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h009",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1918",
+    "answer_unit": "",
+    "raw": "1918",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h010",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1939",
+    "answer_unit": "",
+    "raw": "1939",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h011",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1941",
+    "answer_unit": "",
+    "raw": "1941",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h012",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1944",
+    "answer_unit": "",
+    "raw": "1944",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h013",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1945",
+    "answer_unit": "",
+    "raw": "1945",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h014",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1950",
+    "answer_unit": "",
+    "raw": "1950",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h015",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1957",
+    "answer_unit": "",
+    "raw": "1957",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h016",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1962",
+    "answer_unit": "",
+    "raw": "1962",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h017",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1963",
+    "answer_unit": "",
+    "raw": "1963",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h018",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1991",
+    "answer_unit": "",
+    "raw": "1991",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h019",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2001",
+    "answer_unit": "",
+    "raw": "2001",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h020",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1440",
+    "answer_unit": "",
+    "raw": "1440",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h021",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1861",
+    "answer_unit": "",
+    "raw": "1861",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h022",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1865",
+    "answer_unit": "",
+    "raw": "1865",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h023",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1789",
+    "answer_unit": "",
+    "raw": "1789",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h024",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1347",
+    "answer_unit": "",
+    "raw": "1347",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h025",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1869",
+    "answer_unit": "",
+    "raw": "1869",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h026",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1917",
+    "answer_unit": "",
+    "raw": "1917",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h027",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1967",
+    "answer_unit": "",
+    "raw": "1967",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h028",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1912",
+    "answer_unit": "",
+    "raw": "1912",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h029",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2560",
+    "answer_unit": "",
+    "raw": "2560",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h030",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1453",
+    "answer_unit": "",
+    "raw": "1453",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h031",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1961",
+    "answer_unit": "",
+    "raw": "1961",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h032",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1989",
+    "answer_unit": "",
+    "raw": "1989",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h033",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2007",
+    "answer_unit": "",
+    "raw": "2007",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h034",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1989",
+    "answer_unit": "",
+    "raw": "1989",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h035",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1903",
+    "answer_unit": "",
+    "raw": "1903",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h036",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1863",
+    "answer_unit": "",
+    "raw": "1863",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h037",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1945",
+    "answer_unit": "",
+    "raw": "1945",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h038",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1986",
+    "answer_unit": "",
+    "raw": "1986",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h039",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1969",
+    "answer_unit": "",
+    "raw": "1969",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-h040",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1760",
+    "answer_unit": "",
+    "raw": "1760",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s001",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9.58",
+    "answer_unit": "",
+    "raw": "9.58",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s002",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "19.19",
+    "answer_unit": "",
+    "raw": "19.19",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s003",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8.95",
+    "answer_unit": "",
+    "raw": "8.95",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s004",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2.45",
+    "answer_unit": "",
+    "raw": "2.45",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s005",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "10.49",
+    "answer_unit": "",
+    "raw": "10.49",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s006",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "21.34",
+    "answer_unit": "",
+    "raw": "21.34",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s007",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "98.48",
+    "answer_unit": "",
+    "raw": "98.48",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s008",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "23.56",
+    "answer_unit": "",
+    "raw": "23.56",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s009",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "74.08",
+    "answer_unit": "",
+    "raw": "74.08",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s010",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "18.29",
+    "answer_unit": "",
+    "raw": "18.29",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s011",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "43.03",
+    "answer_unit": "",
+    "raw": "43.03",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s012",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "100.91",
+    "answer_unit": "",
+    "raw": "100.91",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s013",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "206.00",
+    "answer_unit": "",
+    "raw": "206.00",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s014",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "120.58",
+    "answer_unit": "",
+    "raw": "120.58",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s015",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s016",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5",
+    "answer_unit": "",
+    "raw": "5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s017",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s018",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "9",
+    "answer_unit": "",
+    "raw": "9",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s019",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "50",
+    "answer_unit": "",
+    "raw": "50",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s020",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3.75",
+    "answer_unit": "",
+    "raw": "3.75",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s021",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "42.195",
+    "answer_unit": "",
+    "raw": "42.195",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s022",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "23",
+    "answer_unit": "",
+    "raw": "23",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s023",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1896",
+    "answer_unit": "",
+    "raw": "1896",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s024",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "11",
+    "answer_unit": "",
+    "raw": "11",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s025",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6",
+    "answer_unit": "",
+    "raw": "6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s026",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "12.80",
+    "answer_unit": "",
+    "raw": "12.80",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s027",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "7.26",
+    "answer_unit": "",
+    "raw": "7.26",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s028",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "3.048",
+    "answer_unit": "",
+    "raw": "3.048",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s029",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "24",
+    "answer_unit": "",
+    "raw": "24",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-s030",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "5",
+    "answer_unit": "",
+    "raw": "5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d001",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.43",
+    "answer_unit": "",
+    "raw": "1.43",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d002",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1.4",
+    "answer_unit": "",
+    "raw": "The user wants to know the population of China in billions (2023 estimate). I need to provide just the numeric value with no units and no prose.\n\nAccording to common estimates, China's population in 2",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d003",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "335",
+    "answer_unit": "",
+    "raw": "335",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d004",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "279",
+    "answer_unit": "",
+    "raw": "279",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d005",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "240",
+    "answer_unit": "",
+    "raw": "The user wants the population of Pakistan in millions (2023 estimate) as just a numeric value, no units, no prose.\n\nLooking at my knowledge, the 2023 estimate for Pakistan's population is approximatel",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d006",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "223.8",
+    "answer_unit": "",
+    "raw": "The user is asking for the population of Nigeria in millions (2023 estimate). They want just the numeric value with no units and no prose.\n \n According to the UN World Population Prospects 2022 or oth",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d007",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "216.4",
+    "answer_unit": "",
+    "raw": "The user wants to know the population of Brazil in millions (2023 estimate). I need to provide just the numeric value, no units, no prose.\n\nAccording to IBGE (Brazilian Institute of Geography and Stat",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d008",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "172.95",
+    "answer_unit": "",
+    "raw": "The user wants to know the population of Bangladesh in millions (2023 estimate). I need to provide just the numeric value with no units and no prose.\n\nAccording to the World Bank, UN, and other source",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d009",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "146.1",
+    "answer_unit": "",
+    "raw": "The user is asking for the population of Russia in millions (2023 estimate). I need to provide just the numeric value, no units, no prose.\n\nAccording to various sources like the World Bank, UN, or Rus",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d010",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "124",
+    "answer_unit": "",
+    "raw": "The user is asking for the population of Japan in millions (2023 estimate). They want just the numeric value with no units and no prose.\n\nAccording to the World Bank or UN estimates, Japan's populatio",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d011",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2024",
+    "answer_unit": "",
+    "raw": "The user wants the population of the United Kingdom in millions for a 2023 estimate. They want just the numeric value, no units, no prose.\n\n According to the United Nations or World Bank or ONS data, ",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d012",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "65.9",
+    "answer_unit": "",
+    "raw": "The user wants to know the population of metropolitan France in millions (2023 estimate). They want just the numeric value with no units and no prose.\n\nMetropolitan France (France métropolitaine) refe",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d013",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "252",
+    "answer_unit": "",
+    "raw": "The user asks for the population of Germany in millions (2023 estimate), and wants just the numeric value with no units and no prose.\n\nI need to provide the estimated population of Germany for 2023. A",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d014",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "105",
+    "answer_unit": "",
+    "raw": "The user wants to know the population of Egypt in millions (2023 estimate). They want just the numeric value with no units and no prose.\n\nI need to recall or determine the estimated population of Egyp",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d015",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "126.5",
+    "answer_unit": "",
+    "raw": "126.5",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d016",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "117.34",
+    "answer_unit": "",
+    "raw": "117.34",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d017",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "100.3",
+    "answer_unit": "",
+    "raw": "100.3",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d018",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2023",
+    "answer_unit": "",
+    "raw": "The user is asking for the population of Mexico in millions (2023 estimate). I need to provide just the numeric value without any units or prose.\n\nThe 2023 population estimate for Mexico is approximat",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d019",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "85.37",
+    "answer_unit": "",
+    "raw": "85.37",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d020",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "89",
+    "answer_unit": "",
+    "raw": "89",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d021",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8.0",
+    "answer_unit": "",
+    "raw": "8.0",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d022",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "26.6",
+    "answer_unit": "",
+    "raw": "26.6",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d023",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "40.1",
+    "answer_unit": "",
+    "raw": "40.1",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d024",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "51.7",
+    "answer_unit": "",
+    "raw": "The user is asking for the population of South Korea in millions (2023 estimate). They want just the numeric value, no units, no prose.\n \n According to the World Bank, UN, or other reliable sources, S",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "hard-d025",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "59.0",
+    "answer_unit": "",
+    "raw": "59.0",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b001",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "46",
+    "answer_unit": "",
+    "raw": "46",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b002",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "23",
+    "answer_unit": "",
+    "raw": "23",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b003",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "37",
+    "answer_unit": "",
+    "raw": "37",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b004",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "32",
+    "answer_unit": "",
+    "raw": "32",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b005",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "4",
+    "answer_unit": "",
+    "raw": "4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b006",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "40",
+    "answer_unit": "",
+    "raw": "40",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b007",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "12",
+    "answer_unit": "",
+    "raw": "12",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b008",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "206",
+    "answer_unit": "",
+    "raw": "206",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b009",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "33",
+    "answer_unit": "",
+    "raw": "33",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-b010",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "7.4",
+    "answer_unit": "",
+    "raw": "7.4",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r001",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2024",
+    "answer_unit": "",
+    "raw": "2024",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r002",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "312",
+    "answer_unit": "",
+    "raw": "312",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r003",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2024",
+    "answer_unit": "",
+    "raw": "2024",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r004",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "720",
+    "answer_unit": "",
+    "raw": "720",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r005",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2022",
+    "answer_unit": "",
+    "raw": "2022",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r006",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "126",
+    "answer_unit": "",
+    "raw": "126",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r007",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2022",
+    "answer_unit": "",
+    "raw": "2022",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r008",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "8.2",
+    "answer_unit": "",
+    "raw": "8.2",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r009",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2022",
+    "answer_unit": "",
+    "raw": "2022",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "hard-r010",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "193",
+    "answer_unit": "",
+    "raw": "193",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc01",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "45.94",
+    "answer_unit": "",
+    "raw": "45.94",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc02",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "12.12",
+    "answer_unit": "",
+    "raw": "12.12",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc03",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "6.25",
+    "answer_unit": "",
+    "raw": "6.25",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc04",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "1973",
+    "answer_unit": "",
+    "raw": "1973",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc05",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2010",
+    "answer_unit": "",
+    "raw": "2010",
+    "finish_reason": "stop",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc06",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2026",
+    "answer_unit": "",
+    "raw": "The user is asking for the total number of medals Norway won at the 2026 Winter Olympics. \n\nFirst, I need to check if the 2026 Winter Olympics have taken place yet. The 2026 Winter Olympics are schedu",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc07",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "2026",
+    "answer_unit": "",
+    "raw": "The user is asking for the total number of medals won by the United States at the 2026 Winter Olympics. \n\nFirst, I need to check what year it is. The 2026 Winter Olympics (Milano-Cortina 2026) haven't",
+    "finish_reason": "length",
+    "error": null
+  },
+  {
+    "claim_id": "md_pc08",
+    "model": "kimi/kimi-k2.6",
+    "answer_value": "0",
+    "answer_unit": "",
+    "raw": "0",
+    "finish_reason": "stop",
+    "error": null
+  }
+]

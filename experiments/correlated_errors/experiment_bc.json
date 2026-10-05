@@ -1,25 +1,126 @@
 {
-  "phi_bar": 0.5667,
+  "phi_bar": 0.5550696716517568,
   "k": 8,
-  "n_eff": 1.610662586321448,
+  "n_eff": 1.6375028428465255,
   "threshold": 2,
   "naive": {
-    "false_upgrade_rate": 0.2340966921119593,
+    "false_upgrade_rate": 0.22538860103626943,
     "coverage": 1.0,
-    "risk": 0.2340966921119593,
-    "upgraded": 393,
-    "false_upgrades": 92,
-    "n_claims": 393
+    "risk": 0.22538860103626943,
+    "upgraded": 386,
+    "false_upgrades": 87,
+    "n_claims": 386
   },
   "discounted": {
-    "false_upgrade_rate": 0.08142493638676845,
-    "coverage": 0.6844783715012722,
-    "risk": 0.11895910780669144,
-    "upgraded": 269,
-    "false_upgrades": 32,
-    "n_claims": 393
+    "false_upgrade_rate": 0.0,
+    "coverage": 0.0,
+    "risk": 0.0,
+    "upgraded": 0,
+    "false_upgrades": 0,
+    "n_claims": 386
   },
-  "delta_false_upgrade_rate": 0.15267175572519084,
-  "delta_coverage": 0.3155216284987278,
-  "delta_risk": 0.11513758430526785
+  "delta_false_upgrade_rate": 0.22538860103626943,
+  "delta_coverage": 1.0,
+  "delta_risk": 0.22538860103626943,
+  "step_function": {
+    "phi_bar": 0.5550696716517568,
+    "k": 8,
+    "n_eff": 1.6375028428465255,
+    "threshold": 2,
+    "bar_unreachable": true,
+    "explanation": "maximum corroboration strength is n_eff=1.638 < threshold=2; the discounted policy can never reach the corroboration bar, so coverage is a step function and matched coverage is not applicable.",
+    "naive_at_bar": {
+      "false_upgrade_rate": 0.22538860103626943,
+      "coverage": 1.0,
+      "risk": 0.22538860103626943,
+      "upgraded": 386,
+      "false_upgrades": 87,
+      "n_claims": 386
+    },
+    "discounted_at_bar": {
+      "false_upgrade_rate": 0.0,
+      "coverage": 0.0,
+      "risk": 0.0,
+      "upgraded": 0,
+      "false_upgrades": 0,
+      "n_claims": 386
+    },
+    "delta_false_upgrade_rate": 0.22538860103626943,
+    "delta_coverage": 1.0,
+    "delta_risk": 0.22538860103626943,
+    "naive_sweep": [
+      {
+        "threshold": 1,
+        "false_upgrade_rate": 0.22538860103626943,
+        "coverage": 1.0,
+        "risk": 0.22538860103626943,
+        "upgraded": 386,
+        "false_upgrades": 87,
+        "n_claims": 386
+      },
+      {
+        "threshold": 2,
+        "false_upgrade_rate": 0.22538860103626943,
+        "coverage": 1.0,
+        "risk": 0.22538860103626943,
+        "upgraded": 386,
+        "false_upgrades": 87,
+        "n_claims": 386
+      },
+      {
+        "threshold": 3,
+        "false_upgrade_rate": 0.21502590673575128,
+        "coverage": 0.9818652849740933,
+        "risk": 0.21899736147757257,
+        "upgraded": 379,
+        "false_upgrades": 83,
+        "n_claims": 386
+      },
+      {
+        "threshold": 4,
+        "false_upgrade_rate": 0.16062176165803108,
+        "coverage": 0.8989637305699482,
+        "risk": 0.1786743515850144,
+        "upgraded": 347,
+        "false_upgrades": 62,
+        "n_claims": 386
+      },
+      {
+        "threshold": 5,
+        "false_upgrade_rate": 0.11917098445595854,
+        "coverage": 0.8031088082901554,
+        "risk": 0.14838709677419354,
+        "upgraded": 310,
+        "false_upgrades": 46,
+        "n_claims": 386
+      },
+      {
+        "threshold": 6,
+        "false_upgrade_rate": 0.06735751295336788,
+        "coverage": 0.6994818652849741,
+        "risk": 0.0962962962962963,
+        "upgraded": 270,
+        "false_upgrades": 26,
+        "n_claims": 386
+      },
+      {
+        "threshold": 7,
+        "false_upgrade_rate": 0.046632124352331605,
+        "coverage": 0.6036269430051814,
+        "risk": 0.07725321888412018,
+        "upgraded": 233,
+        "false_upgrades": 18,
+        "n_claims": 386
+      },
+      {
+        "threshold": 8,
+        "false_upgrade_rate": 0.010362694300518135,
+        "coverage": 0.4792746113989637,
+        "risk": 0.021621621621621623,
+        "upgraded": 185,
+        "false_upgrades": 4,
+        "n_claims": 386
+      }
+    ]
+  }
 }
