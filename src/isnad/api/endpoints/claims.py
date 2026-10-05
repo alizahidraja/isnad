@@ -33,7 +33,7 @@ from isnad.core.identity import is_unknown_version, resolve_narrator_id
 from isnad.core.registry import Registry, RegistryDB
 from isnad.critics.embedding import TFIDFIndex
 from isnad.models import ReviewQueue
-from isnad.types import Action, ContentVerdict, NarratorGrade, TransformType
+from isnad.types import Action, AdalahGrade, ContentVerdict, NarratorGrade, TransformType
 
 logger = logging.getLogger("isnad.api")
 router = APIRouter(prefix="/v1", tags=["claims"])
@@ -521,7 +521,17 @@ async def submit_claim(
     link_fidelity_verdicts = compute_fidelity_verdicts(chain, fidelity_critic)
     # Serving-path corroboration is applied post-hoc by CorroborationEngine below
     # (grade_chain's corroboration_support=True repair branch is a separate, non-serving path).
-    has_corroborating = bool(state.find_corroborating(normalized, ""))
+    # Corroboration requires a DISTINCT lineage (madār): the same text through the
+    # same narrator set is a retry, not an independent route (3.0.3 fix).
+    _current_lineage = set(resolved_narrator_ids)
+
+    def _distinct_lineage(cid: str) -> bool:
+        other = state.claims[cid].get("resolved_narrator_ids", [])
+        return bool(other) and set(other) != _current_lineage
+
+    has_corroborating = any(
+        _distinct_lineage(cid) for cid in state.find_corroborating(normalized, "")
+    )
     cg = grade_chain(
         link_grades,
         [l.transform_type for l in chain.links],
@@ -747,11 +757,16 @@ async def submit_claim(
     # COMPROMISED + is_active False — not merely set a flag on the record. A
     # flagged-but-not-quarantined narrator would keep serving.
     if role == "admin" and action in (Action.REJECT_AND_QUARANTINE_NARRATOR, Action.QUARANTINE):
-        for narrator_id in resolved_narrator_ids:
-            try:
-                reg.registry.quarantine(narrator_id, domain, reason="matrix action quarantined")
-            except Exception as exc:
-                logger.warning(f"Failed to quarantine narrator {narrator_id}: {exc}")
+        # Quarantine ONLY the binding narrator(s) — the rejected/compromised weakest
+        # link — not reliable co-narrators (3.0.3 trust-path fix).
+        for narrator_id, grade, adalah in zip(
+            resolved_narrator_ids, link_grades, link_adalah_grades, strict=False
+        ):
+            if grade is NarratorGrade.REJECTED or adalah is AdalahGrade.COMPROMISED:
+                try:
+                    reg.registry.quarantine(narrator_id, domain, reason="matrix action quarantined")
+                except Exception as exc:
+                    logger.warning(f"Failed to quarantine narrator {narrator_id}: {exc}")
         # Persist the quarantine: quarantine() mutates the in-memory Narrator;
         # without flush() the COMPROMISED + is_active=False state is lost when
         # the request's session commits only the previously-loaded rows.

@@ -21,6 +21,19 @@ from bench.metrics import cohens_kappa, confusion_matrix
 
 _CLASSES = ["sahih", "hasan", "daif", "daif_jiddan", "mawdu"]
 
+_SCHEMA = [
+    "sanad_id",
+    "hukum",
+    "true_grade",
+    "predicted_grade",
+    "disagreement_bucket",
+    "is_complete",
+    "has_gap",
+    "has_taliq",
+    "narrator_rank_nos",
+    "mode",
+]
+
 
 def _make_db(path: str) -> None:
     """A small fixture: 3 narrators + a gap sentinel, 4 chains, 4 verdict tiers."""
@@ -62,28 +75,18 @@ def _read_rows(path):
     return header, rows
 
 
-def test_export_header_carries_reproducibility(tmp_path):
+def test_export_has_no_comment_header(tmp_path):
+    """3.0.3: JSONL has no comment syntax — the export must NOT emit a '# ' line
+    (a leading header broke the Hugging Face viewer)."""
     db = tmp_path / "t.db"
     _make_db(str(db))
     out = tmp_path / "e.jsonl"
     export(str(db), str(out), sample=None, seed=0, lenient=False)
     header, rows = _read_rows(out)
-    assert header["dataset"] == "isnad-bench"
-    assert header["derived_from"] == "emadjumaah/hadith-kg (CC-BY-4.0)"
-    assert header["mapping_sha256"]  # non-empty
-    assert header["schema"] == [
-        "sanad_id",
-        "hukum",
-        "true_grade",
-        "predicted_grade",
-        "disagreement_bucket",
-        "is_complete",
-        "has_gap",
-        "has_taliq",
-        "narrator_rank_nos",
-        "mode",
-    ]
+    assert header is None  # no leading header line
     assert len(rows) == 4
+    for r in rows:
+        assert isinstance(r, dict)
 
 
 def test_export_rows_match_schema_and_truth(tmp_path):
@@ -94,7 +97,7 @@ def test_export_rows_match_schema_and_truth(tmp_path):
     header, rows = _read_rows(out)
     by_id = {r["sanad_id"]: r for r in rows}
     for r in rows:
-        assert set(r.keys()) == set(header["schema"])
+        assert set(r.keys()) == set(_SCHEMA)
         assert r["true_grade"] in _CLASSES
         assert r["predicted_grade"] in _CLASSES
     # The gap chain must be flagged incomplete.

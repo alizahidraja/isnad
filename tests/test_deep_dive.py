@@ -261,11 +261,14 @@ cg_f_corr = grade_chain(
     grades_f, transforms_f, is_complete=True, corroboration_support=True, link_adalah_grades=[]
 )
 check(
-    "F2. With corroboration → generative REPAIRS to SAHIH",
-    cg_f_corr == ChainGrade.SAHIH,
+    "F2. With corroboration → stays DAIF (destructive loss is permanent, 3.0.3)",
+    cg_f_corr == ChainGrade.DAIF,
     f"got {cg_f_corr.value}",
 )
-note("   Corroboration flips 'destructive WEAK → permanent floor' into 'generative repairs'.")
+note("   Corroboration lifts a NON-destructive weak chain to hasan li-ghayrihi, but")
+note(
+    "   never recovers a destructive loss (nothing downstream recovers what the extractor dropped)."
+)
 
 
 # ═══════════════════════════════════════════════════════════════════

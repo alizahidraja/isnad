@@ -1,5 +1,38 @@
 # Changelog
 
+## [3.0.3] — 2026-10-05
+
+### Fixed (trust-path correctness)
+
+- **Retry is not corroboration**: `corroboration_support` now requires a distinct lineage
+  (different narrator set), so resubmitting the same claim through the same chain can no longer
+  lift a held daif claim to served sahih.
+- **Critic no longer self-contradicts**: the numeric contradiction signal now compares numbers by
+  aligned position (and never a claim against itself), so "100 C at 1 atm" and "2026-08-29" no
+  longer flag against their own copies.
+- **Quarantine no longer brands the chain**: a QUARANTINE now marks only the binding (REJECTED/
+  COMPROMISED) narrator, not reliable co-narrators.
+- **Destructive floor is permanent**: corroboration lifts a weak floor at most to hasan li-ghayrihi
+  and never recovers a destructive (extraction) loss. 5-way kappa unchanged at 0.8667 (the benchmark grades pass-through chains, so the destructive-floor fix affects the serving path, not the benchmark).
+
+## [3.0.2] — 2026-10-04
+
+### Fixed
+
+- **Gap monotonicity**: a gap must never RAISE a rejected (SUSPECT) chain to DAIF. `REJECTED -> DAIF_JIDDAN`
+  is now checked before the completeness cap. 5-way kappa 0.8569 -> 0.8667; 3-way unchanged 0.8714.
+
+## [3.0.1] — 2026-10-03
+
+### Fixed
+
+- **Uniform grading**: `grade_chain_from_registry()` helper + `link_adalah_grades` made a required
+  argument; every integration path (API, exporter, MCP, OTel, CrewAI, LangChain) now threads the
+  integrity axis, so the audit record matches the served decision.
+- **Number traceability**: pinned `bench/regen_numbers.py` regenerates `numbers.json`/`numbers.tex`.
+- **§8 discrimination**: corruption-by-chain-grade + quarantine precision + chain-only acceptance
+  curve measured on the four-book corpus.
+
 ## [3.0.0] — 2026-10-02
 
 ### Changed (mapping v2 — classical correctness for the mawḍūʿ category)
@@ -10,7 +43,7 @@
   **SUSPECT (accused/abandoned, ranks 10–11) → ḍaʿīf jiddan (new `ChainGrade.DAIF_JIDDAN`)**.
   Both still quarantine — MAWDU permanently (`REJECT_AND_QUARANTINE_NARRATOR`), DAIF_JIDDAN recoverably (`QUARANTINE`).
 - **Decision matrix**: `DAIF_JIDDAN × {CONSISTENT, CONTRADICTION, UNVERIFIABLE} → QUARANTINE`.
-- **Benchmark re-versioned**: 3-way κ unchanged **0.8714**; 5-way κ **0.8667** (v1's 4-way 0.8745 conflated
+- **Benchmark re-versioned**: 3-way κ unchanged **0.8714**; 5-way κ **0.8569** (v1's 4-way 0.8745 conflated
   "rejected narrator" with "fabricated"). `ṣaḥīḥ × contradiction` relabeled from "shādhdh" to "contradiction (taʿāruḍ)".
 
 ## [2.25.0] — 2026-09-30
