@@ -1,5 +1,7 @@
 # ISNAD — Open-Source LLM Provenance & AI Audit Trail for RAG and Multi-Agent Systems
 
+<p align="center"><img src="docs/images/isnad-seal-wax-512.png" width="140" alt="ISNAD — the wax seal (إسناد)"></p>
+
 *Isnād–Rijāl Framework · grades the transmitters and the chain, not just the claim.*
 
 **Open-source** `pip install isnad` — **LLM provenance**, **agent trust**, and an

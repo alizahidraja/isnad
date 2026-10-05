@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir uv
 COPY pyproject.toml README.md LICENSE ./
 COPY src/ src/
 # postgres extra provides psycopg2 for the compose Postgres DB (SQLite is the default).
-RUN uv pip install --system ".[api,nli,postgres]"
+RUN uv pip install --system ".[api,nli,postgres,signing]"
 
 # Pre-download NLI models so they are baked into the image
 RUN python -c "import sentence_transformers; \
