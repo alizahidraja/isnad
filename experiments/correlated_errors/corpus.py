@@ -1,13 +1,11 @@
-"""ISNAD φ study — corpus.
+"""ISNAD φ study — corpus builder.
 
-The oracle source is the model-drift ``HARD_CORPUS`` (64 facts after pc09's
-exclusion): 56 well-known facts (models answer correctly — the agreement control)
-+ 8 post-cutoff facts (models err 50–75% — the error signal φ is computed on).
+Builds ~393 facts: ~385 hard numeric facts (``corpus_hard.HARD_FACTS``) + the 8
+post-cutoff facts from the model-drift ``HARD_CORPUS`` (ids ``md_pcXX`` kept stable
+so the drift study stays comparable).
 
-The §8 ``claims.json`` extraction is NOT a clean oracle source (textbook prose,
-citations, list numbers), so it is deliberately excluded. Expanding the hard-facts
-subset toward ~400 (synthetic recent/obscure facts) is a follow-up step before the
-full sweep; the scaffold uses the 64 clean facts.
+The oracle for every fact is a single canonical number; the question asks for it
+directly so the runner can parse exactly one answer number.
 """
 
 from __future__ import annotations
@@ -21,12 +19,15 @@ _REPO = _HERE.parent.parent
 if str(_REPO) not in sys.path:
     sys.path.insert(0, str(_REPO))
 
-from experiments.model_drift.corpus_hard import HARD_CORPUS  # noqa: E402
+from experiments.correlated_errors.corpus_hard import build_hard
+from experiments.model_drift.corpus_hard import HARD_CORPUS
 
 
-def build() -> list[dict[str, str]]:
-    out = []
+def build() -> list[dict[str, object]]:
+    out: list[dict[str, object]] = build_hard()
     for f in HARD_CORPUS:
+        if f.tier != "postcutoff":
+            continue
         if getattr(f, "excluded", False):
             continue
         out.append(
@@ -35,7 +36,8 @@ def build() -> list[dict[str, str]]:
                 "claim_text": f.question,
                 "oracle_value": f.correct_value,
                 "oracle_unit": "",
-                "domain": f.tier,
+                "source": "model_drift_postcutoff",
+                "domain": "postcutoff",
             }
         )
     return out
@@ -45,8 +47,12 @@ def main() -> None:
     corpus = build()
     out_path = _HERE / "corpus.json"
     out_path.write_text(json.dumps(corpus, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"wrote {len(corpus)} facts to {out_path} "
-          f"({sum(1 for c in corpus if c['domain'] == 'postcutoff')} post-cutoff)")
+    domains: dict[str, int] = {}
+    for c in corpus:
+        domains[str(c["domain"])] = domains.get(str(c["domain"]), 0) + 1
+    print(f"wrote {len(corpus)} facts to {out_path}")
+    for d, n in sorted(domains.items()):
+        print(f"  {d}: {n}")
 
 
 if __name__ == "__main__":
