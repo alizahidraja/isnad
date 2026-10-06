@@ -13,6 +13,7 @@ implements correlation detection as required by the paper (§7, Limitations).
 
 from __future__ import annotations
 
+import inspect
 import math
 from dataclasses import dataclass, field
 
@@ -23,6 +24,23 @@ from isnad.types import (
     CorrelationDetector,
     CorroborationPolicy,
 )
+
+
+def _policy_accepts_shared_lineage_flags(policy: object) -> bool:
+    """True when ``policy.compute_corroborated_grade`` accepts ``shared_lineage_flags``.
+
+    Third-party ``CorroborationPolicy`` implementations written to the
+    pre-3.0.5 protocol do not accept the kwarg; call sites guard on this so
+    they keep working (3.0.5 panel finding F4).
+    """
+    compute = getattr(policy, "compute_corroborated_grade", None)
+    if compute is None:
+        return False
+    try:
+        return "shared_lineage_flags" in inspect.signature(compute).parameters
+    except (TypeError, ValueError):
+        return False
+
 
 # ===========================================================================
 # Default CorrelationDetector
@@ -49,6 +67,11 @@ class IndependenceAssessment:
     def is_independent(self) -> bool:
         """True when the score clears the corroboration gate (>= 0.8)."""
         return self.score >= 0.8
+
+    @property
+    def has_shared_lineage(self) -> bool:
+        """True when any shared-lineage signal fired (the madar case)."""
+        return bool(self.shared_signals)
 
 
 class SharedLineageDetector:
@@ -281,8 +304,9 @@ class CappedCorroborationPolicy:
     - Corroboration can never reach SAHIH (automatically capped).
     - At least one independent corroborating chain must be HASAN or above
       (minimum gate).
-    - Chains with independence_score below INDEPENDENCE_THRESHOLD (0.8)
-      are excluded: correlated chains do not count as independent.
+    - Soft shared-lineage chains (score > 0, flagged by the detector) are
+      admitted but discounted as a group by the Kish scale; hard identity
+      (score 0.0) and unknown lineage (0.5) are excluded.
     - Chains above the threshold earn credit in proportion to their
       independence score (the disjointness discount, #125 tier 1): a chain
       at 0.85 contributes 85% of a full chain's log-error reduction.
@@ -321,6 +345,9 @@ class CappedCorroborationPolicy:
     MIN_GATE_GRADE: ChainGrade = ChainGrade.HASAN
     INDEPENDENCE_THRESHOLD: float = 0.8
     MIN_EFFECTIVE_WEIGHT: float = 2.0  # need >=2 HASAN-equivalent chains of evidence
+    PHI_SHARED_LINEAGE: float = (
+        0.0  # default OFF (opt-in); phi-study same-family phi_bar = 0.6172 (see docstring)
+    )
     # The shared failure mode (when present) fails at the HASAN rate — a
     # conservative-but-non-disabling anchor for the joint-failure mixture (issue 54).
     SHARED_MODE_ERROR: float = 0.10
@@ -379,6 +406,7 @@ class CappedCorroborationPolicy:
         shared_blind_spot_prior: float = 0.20,
         measured_priors: dict[tuple[str | None, str | None], float] | None = None,
         joint_failure: bool = False,
+        phi_shared_lineage: float = 0.0,
     ) -> None:
         """Args:
         shared_blind_spot_prior: the prior probability (0.0–1.0) that a
@@ -400,6 +428,12 @@ class CappedCorroborationPolicy:
             corroboration can still upgrade DAIF->HASAN at the flat prior.
             High-stakes deployments should pass joint_failure=True with
             measured priors so the conservative shared-mode floor applies.
+            phi_shared_lineage: the phi coefficient (0.0-1.0) for shared-lineage
+                (madar) corroborators, applied via the Kish scale. Default 0.0
+                (no discount). The phi-study measured same-family phi_bar =
+                0.6172 (arithmetic mean of the 4 same_family:true pairs in
+                experiments/correlated_errors/stats.json: 0.4888, 0.7306,
+                0.5595, 0.6898); pass that value to opt in.
         """
         self.shared_blind_spot_prior = max(0.0, min(1.0, shared_blind_spot_prior))
         # Operator-measured per-pair co-failure priors (issue 54, from the
@@ -410,6 +444,33 @@ class CappedCorroborationPolicy:
         # (P all fail together) instead of the pairwise product. Opt-in because
         # the joint model needs calibrated priors to fire at default (issue 54).
         self.joint_failure = joint_failure
+        self.phi_shared_lineage = min(1.0 - 1e-12, max(0.0, phi_shared_lineage))
+
+    def kish_scale(self, m_shared: int) -> float:
+        """Kish per-chain scale for ``m_shared`` shared-lineage corroborators.
+
+        Shared-lineage is defined relative to the base chain, so the equicorrelated
+        group is the base plus ``m_shared`` corroborators (``m_shared + 1`` members);
+        its Kish effective count is ``(m_shared + 1) / (1 + m_shared*phi)``. The
+        per-corroborator factor is therefore ``1 / (1 + m_shared*phi)`` — the
+        base-inclusive denominator (3.0.5 brutal-panel finding M2). A single shared
+        corroborator is discounted too (``1/(1+phi)``); the pre-fix
+        ``1/(1+(m_shared-1)*phi)`` was a no-op at ``m_shared == 1``. Identity (no
+        discount) when ``m_shared <= 0`` or ``phi == 0``.
+        """
+        if m_shared <= 0 or self.phi_shared_lineage == 0.0:
+            return 1.0
+        return 1.0 / (1.0 + m_shared * self.phi_shared_lineage)
+
+    def admits_corroboration(self, score: float, is_shared_lineage: bool) -> bool:
+        """Admission rule for corroborating chains (discount-not-exclude).
+
+        Admit a chain when it is disjoint (score >= INDEPENDENCE_THRESHOLD) OR
+        it is a *soft* shared-lineage chain (score > 0). Hard identity (shared
+        narrator IDs / retrieved-document hashes, score == 0.0) and unknown
+        lineage (no shared signals, score 0.5) stay excluded.
+        """
+        return score >= self.INDEPENDENCE_THRESHOLD or (is_shared_lineage and score > 0.0)
 
     def _joint_effective_weight(
         self,
@@ -449,24 +510,36 @@ class CappedCorroborationPolicy:
         independence_scores: list[float],
         *,
         chain_blind_spot_priors: list[float] | None = None,
+        shared_lineage_flags: list[bool] | None = None,
     ) -> ChainGrade:
         """Compute the corroboration-upgraded chain grade.
 
         Uses information-theoretic error multiplication:
-        combined_log_error = Σ ln(p_i)  for each independent chain + base.
+        combined_log_error = sum ln(p_i) for each independent chain + base.
         effective_weight = combined_log_error / ln(p_hasan).
-        Upgrade fires when effective_weight ≥ MIN_EFFECTIVE_WEIGHT.
+        Upgrade fires when effective_weight >= MIN_EFFECTIVE_WEIGHT.
+
+        Lineage-aware Kish discount (phi = ``phi_shared_lineage``, the measured
+        same-family error correlation from the phi study): corroborating chains flagged
+        as shared-lineage (the madar case) are discounted as a group. With ``m_sh``
+        shared-lineage chains, each contributes an effective weight scaled by
+        ``1/(1+m_sh*phi)``, so their total effective count is
+        ``m_sh/(1+m_sh*phi)``. Disjoint chains keep their full
+        ``score*(1-prior)`` weight. phi=0 reduces exactly to the pre-discount behaviour.
 
         Args:
             base_grade: Grade of the chain being evaluated.
             corroborating_chains: Grades of corroborating chains.
             independence_scores: Independence score for each corroborating
                 chain relative to the base chain.  Must be same length.
-            chain_blind_spot_priors: Optional per-chain tawātur priors (one per
+            chain_blind_spot_priors: Optional per-chain tawatur priors (one per
                 corroborating chain). When omitted, the flat
                 ``shared_blind_spot_prior`` is used for every chain. This is
-                the shāhid/mutābaʿa distinction: cross-kind witnesses get a
+                the shahid/mutaba'a distinction: cross-kind witnesses get a
                 lower prior than same-kind witnesses.
+            shared_lineage_flags: Optional per-chain bool (one per corroborating
+                chain) marking the madar case. Default None = all False (backward
+                compatible).
 
         Returns:
             The new ChainGrade after corroboration.
@@ -474,55 +547,48 @@ class CappedCorroborationPolicy:
         if not corroborating_chains:
             return base_grade
 
-        # --- Already MAWDU → cannot be upgraded ---
         if base_grade == ChainGrade.MAWDU:
             return base_grade
 
-        # --- Filter: only chains that pass independence threshold. ---
-        # Keep (grade, score, prior) triples so the disjointness discount and
-        # the per-chain tawātur discount can both be applied. A MAWDU chain is
-        # dropped entirely: a fabricated narrator's agreement is not
-        # corroboration — active containment means it contributes zero weight,
-        # never positive weight (its error prob 0.90 would otherwise *add* to
-        # the upgrade log-ratio, incoherently).
         priors = chain_blind_spot_priors
-        independent: list[tuple[ChainGrade, float, float]] = [
-            (grade, score, priors[i] if priors is not None else self.shared_blind_spot_prior)
-            for i, (grade, score) in enumerate(
-                zip(corroborating_chains, independence_scores, strict=True)
-            )
-            if score >= self.INDEPENDENCE_THRESHOLD and grade != ChainGrade.MAWDU
-        ]
+        flags = shared_lineage_flags
+        independent: list[tuple[ChainGrade, float, float, bool]] = []
+        for i, (grade, score) in enumerate(
+            zip(corroborating_chains, independence_scores, strict=True)
+        ):
+            is_shared = bool(flags[i]) if flags is not None else False
+            if not self.admits_corroboration(score, is_shared):
+                continue
+            if grade == ChainGrade.MAWDU:
+                continue
+            prior = priors[i] if priors is not None else self.shared_blind_spot_prior
+            independent.append((grade, score, prior, is_shared))
 
         if not independent:
             return base_grade
 
-        # --- Minimum-grade gate: at least one chain must clear threshold ---
-        if not any(g >= self.MIN_GATE_GRADE for g, _, _ in independent):
+        if not any(g >= self.MIN_GATE_GRADE for g, _, _, _ in independent):
             return base_grade
 
-        # --- Information-theoretic corroboration with the disjointness discount
-        #     and the per-chain tawātur discount (#54). ---
-        # Each chain at grade G_i has an implied error probability p_i. A chain's
-        # contribution is weighted by its independence score s_i (the #125
-        # disjointness discount) AND by (1 - prior_i) (the #54 tawātur discount):
-        # even a fully topology-independent chain is not a full witness, because
-        # it may share an unobservable correlated failure. The prior is per-chain
-        # when witness types are known (the shāhid/mutābaʿa distinction), flat
-        # otherwise.
-        #
-        # So the effective witness weight of chain i is
-        #     w_i = s_i * (1 - prior_i)
-        # and a chain can never earn full (1.0) witness credit — which is the
-        # honest tawātur position: corroboration requires *more* chains than the
-        # nominal count suggests, never fewer.
+        m_shared = sum(1 for _, _, _, is_shared in independent if is_shared)
+        kish = self.kish_scale(m_shared)
+
         if self.joint_failure:
-            effective_weight = self._joint_effective_weight(base_grade, independent)
+            effective_weight = self._joint_effective_weight(
+                base_grade,
+                [
+                    (g, score * (kish if is_shared else 1.0), prior)
+                    for g, score, prior, is_shared in independent
+                ],
+            )
         else:
             err = self.ERROR_PROBS
             combined_log_error = sum(
-                score * (1.0 - prior) * math.log(max(err.get(g, 0.30), 0.001))
-                for g, score, prior in independent
+                (kish if is_shared else 1.0)
+                * score
+                * (1.0 - prior)
+                * math.log(max(err.get(g, 0.30), 0.001))
+                for g, score, prior, is_shared in independent
             )
             combined_log_error += math.log(max(err.get(base_grade, 0.30), 0.001))
             hasan_log = math.log(err[ChainGrade.HASAN])
@@ -531,16 +597,10 @@ class CappedCorroborationPolicy:
         if effective_weight < self.MIN_EFFECTIVE_WEIGHT:
             return base_grade
 
-        # --- Upgrade: at most one tier, never to SAHIH ---
         if base_grade == ChainGrade.DAIF:
-            return ChainGrade.HASAN  # DAIF → HASAN (cap)
-        # HASAN stays HASAN; SAHIH stays SAHIH
+            return ChainGrade.HASAN
+
         return base_grade
-
-
-# ===========================================================================
-# Convenience functions
-# ===========================================================================
 
 
 def evaluate_corroboration(
@@ -570,15 +630,28 @@ def evaluate_corroboration(
     pol = policy or CappedCorroborationPolicy()
     det = detector or SharedLineageDetector()
 
-    scores = [
-        det.compute_independence_score(base_narrators, corr_narrators, narrator_metadata)
-        for corr_narrators in corroborating_narrators
-    ]
+    if isinstance(det, SharedLineageDetector):
+        assessments = [
+            det.detect(base_narrators, corr_narrators, narrator_metadata)
+            for corr_narrators in corroborating_narrators
+        ]
+        scores = [a.score for a in assessments]
+        flags = [a.has_shared_lineage for a in assessments]
+    else:
+        scores = [
+            det.compute_independence_score(base_narrators, corr_narrators, narrator_metadata)
+            for corr_narrators in corroborating_narrators
+        ]
+        flags = None
 
+    kwargs: dict[str, object] = {}
+    if _policy_accepts_shared_lineage_flags(pol):
+        kwargs["shared_lineage_flags"] = flags
     return pol.compute_corroborated_grade(
         base_grade=base_grade,
         corroborating_chains=corroborating_chain_grades,
         independence_scores=scores,
+        **kwargs,
     )
 
 
@@ -990,7 +1063,7 @@ class CorroborationEngine:
 
         # Filter by independence
         independent = [
-            c for c, a in zip(corroborating_chains, assessments, strict=True) if a.is_independent
+            c for c, a in zip(corroborating_chains, assessments, strict=True) if self._admits(a)
         ]
 
         if len(independent) < self.min_independent_chains:
@@ -1024,9 +1097,10 @@ class CorroborationEngine:
         # Compute independence scores (for the independent chains only) and
         # delegate to the policy.
         independent_assessments = [
-            a for c, a in zip(corroborating_chains, assessments, strict=True) if a.is_independent
+            a for c, a in zip(corroborating_chains, assessments, strict=True) if self._admits(a)
         ]
         independence_scores = [a.score for a in independent_assessments]
+        shared_lineage_flags = [a.has_shared_lineage for a in independent_assessments]
         grades = [c["grade"] for c in independent]
 
         # Per-chain tawātur priors from witness types (the shāhid/mutābaʿa
@@ -1036,29 +1110,34 @@ class CorroborationEngine:
         # type is unknown.
         base_type = _chain_narrator_type(base_narrators, narrator_metadata)
         independent_priors = [
-            self._policy.blind_spot_prior_for(
+            self._blind_spot_prior_for(
                 base_type, _chain_narrator_type(c["narrators"], narrator_metadata)
             )
             for c in independent
         ]
 
+        policy_kwargs: dict[str, object] = {}
+        if _policy_accepts_shared_lineage_flags(self._policy):
+            policy_kwargs["shared_lineage_flags"] = shared_lineage_flags
         upgraded = self._policy.compute_corroborated_grade(
             base_grade=base_chain_grade,
             corroborating_chains=grades,
             independence_scores=independence_scores,
             chain_blind_spot_priors=independent_priors,
+            **policy_kwargs,
         )
 
         effective_weight = self._compute_effective_weight(
-            base_chain_grade, grades, independence_scores, independent_priors
+            base_chain_grade, grades, independence_scores, independent_priors, shared_lineage_flags
         )
         upgraded_flag = upgraded != base_chain_grade
 
         # Effective witnesses: sum of (independence_score × (1 − blind-spot
         # prior)) over the independent chains — the tawātur-discounted count that
         # is always ≤ the nominal count.
+        _kish = self._kish_scale(sum(1 for f in shared_lineage_flags if f))
         effective_witnesses = sum(
-            a.score * (1.0 - prior)
+            (a.score * (_kish if a.has_shared_lineage else 1.0)) * (1.0 - prior)
             for a, prior in zip(independent_assessments, independent_priors, strict=True)
         )
 
@@ -1070,7 +1149,7 @@ class CorroborationEngine:
             effective_weight=effective_weight,
             upgraded=upgraded_flag,
             chain_independence=assessments,
-            shared_blind_spot_prior=self._policy.shared_blind_spot_prior,
+            shared_blind_spot_prior=self._flat_prior(),
             effective_witnesses=effective_witnesses,
             reason=(
                 f"Upgraded via {len(independent)} independent chains"
@@ -1079,12 +1158,64 @@ class CorroborationEngine:
             ),
         )
 
+    def _admits(self, assessment) -> bool:
+        """Admission for a corroborating assessment, with a pre-3.0.5 fallback
+        (score >= threshold) when the policy has no lineage discount."""
+        fn = getattr(self._policy, "admits_corroboration", None)
+        if callable(fn):
+            return fn(assessment.score, assessment.has_shared_lineage)
+        return assessment.is_independent
+
+    def _kish_scale(self, m_shared: int) -> float:
+        """Kish scale for ``m_shared`` shared-lineage corroborators, or 1.0 (no
+        discount) when the policy does not implement a lineage discount."""
+        fn = getattr(self._policy, "kish_scale", None)
+        if callable(fn):
+            return fn(m_shared)
+        return 1.0
+
+    def _admits_score(self, score: float, is_shared_lineage: bool) -> bool:
+        """Admission by (score, flag) with a pre-3.0.5 fallback to the score gate."""
+        fn = getattr(self._policy, "admits_corroboration", None)
+        if callable(fn):
+            return fn(score, is_shared_lineage)
+        threshold = getattr(self._policy, "INDEPENDENCE_THRESHOLD", 0.8)
+        return score >= threshold
+
+    def _blind_spot_prior_for(self, base_type: str | None, corr_type: str | None) -> float:
+        """Per-pair blind-spot prior with a pre-3.0.5 fallback to the flat prior."""
+        fn = getattr(self._policy, "blind_spot_prior_for", None)
+        if callable(fn):
+            return fn(base_type, corr_type)
+        return self._flat_prior()
+
+    def _flat_prior(self) -> float:
+        """The policy's flat shared blind-spot prior, defaulting to 0.20."""
+        return max(0.0, min(1.0, float(getattr(self._policy, "shared_blind_spot_prior", 0.20))))
+
+    def _joint_failure_enabled(self) -> bool:
+        """Whether the policy enables joint-failure aggregation (default False)."""
+        return bool(getattr(self._policy, "joint_failure", False))
+
+    def _error_probs(self) -> dict[ChainGrade, float]:
+        """Error probabilities with a pre-3.0.5 fallback to the default table."""
+        err = getattr(self._policy, "ERROR_PROBS", None)
+        if err:
+            return err
+        return {
+            ChainGrade.SAHIH: 0.01,
+            ChainGrade.HASAN: 0.10,
+            ChainGrade.DAIF: 0.30,
+            ChainGrade.MAWDU: 0.90,
+        }
+
     def _compute_effective_weight(
         self,
         base_grade: ChainGrade,
         corroborating_grades: list[ChainGrade],
         independence_scores: list[float],
         chain_blind_spot_priors: list[float] | None = None,
+        shared_lineage_flags: list[bool] | None = None,
     ) -> float:
         """Compute information-theoretic effective weight.
 
@@ -1095,22 +1226,35 @@ class CorroborationEngine:
         the number the policy actually used for its decision.
         """
         priors = chain_blind_spot_priors
-        independent: list[tuple[ChainGrade, float, float]] = [
-            (
-                g,
-                score,
-                priors[i] if priors is not None else self._policy.shared_blind_spot_prior,
-            )
-            for i, (g, score) in enumerate(
-                zip(corroborating_grades, independence_scores, strict=True)
-            )
-        ]
-        if self._policy.joint_failure:
-            return self._policy._joint_effective_weight(base_grade, independent)
-        err = self._policy.ERROR_PROBS
+        flags = shared_lineage_flags
+        independent: list[tuple[ChainGrade, float, float, bool]] = []
+        for i, (g, score) in enumerate(zip(corroborating_grades, independence_scores, strict=True)):
+            is_shared = bool(flags[i]) if flags is not None else False
+            if not self._admits_score(score, is_shared):
+                continue
+            if g == ChainGrade.MAWDU:
+                continue
+            prior = priors[i] if priors is not None else self._flat_prior()
+            independent.append((g, score, prior, is_shared))
+        m_shared = sum(1 for _, _, _, is_shared in independent if is_shared)
+        kish = self._kish_scale(m_shared)
+        if self._joint_failure_enabled():
+            joint = getattr(self._policy, "_joint_effective_weight", None)
+            if callable(joint):
+                return joint(
+                    base_grade,
+                    [
+                        (g, score * (kish if is_shared else 1.0), prior)
+                        for g, score, prior, is_shared in independent
+                    ],
+                )
+        err = self._error_probs()
         combined = sum(
-            score * (1.0 - prior) * math.log(max(err.get(g, 0.30), 0.001))
-            for g, score, prior in independent
+            (kish if is_shared else 1.0)
+            * score
+            * (1.0 - prior)
+            * math.log(max(err.get(g, 0.30), 0.001))
+            for g, score, prior, is_shared in independent
         )
         combined += math.log(max(err.get(base_grade, 0.30), 0.001))
         hasan_log = math.log(err[ChainGrade.HASAN])
