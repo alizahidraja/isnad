@@ -1,7 +1,7 @@
 name: Release
 
-# Triggered manually from the Actions tab, or on a push to main that edits a
-# version-bearing file (pyproject.toml / CITATION.cff / src/isnad/__init__.py).
+# Triggered after the CI workflow completes on main (gated on CI success), or
+# manually from the Actions tab. The already-bumped version is read and released.
 # This workflow READS the already-bumped version (it does NOT bump), verifies
 # the three version files agree and the version is newer than the latest tag,
 # then publishes to PyPI, tags, and creates a GitHub Release.
@@ -10,12 +10,10 @@ name: Release
 #   feature/*  ->  working  (CI runs)  ->  main  (this workflow releases)
 
 on:
-  push:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
     branches: [main]
-    paths:
-      - "pyproject.toml"
-      - "CITATION.cff"
-      - "src/isnad/__init__.py"
   workflow_dispatch:
 
 permissions:
@@ -28,6 +26,10 @@ concurrency:
 
 jobs:
   release:
+    # Gate on CI success: only publish when triggered manually or when the
+    # CI workflow (which runs the full 3.11/3.12/3.13 matrix + js-conformance)
+    # completed successfully. A failed CI run skips the entire release job.
+    if: github.event_name == workflow_dispatch || github.event.workflow_run.conclusion == success
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

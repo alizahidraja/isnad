@@ -1117,7 +1117,6 @@ class CorroborationEngine:
                 chain_independence=assessments,
                 reason=(
                     f"Need \u2265{self.min_independent_chains} independent chains, "
-                    f"Need ≥{self.min_independent_chains} independent chains, "
                     f"have {len(independent)}"
                 ),
             )
@@ -1227,6 +1226,13 @@ class CorroborationEngine:
         the raw count; at phi>0 it reports the discounted number of effective
         votes (so no consumer reads "n independent routes" when the measured
         correlation says it is fewer).
+
+        Group-wide, not per-chain: this discounts the *entire* base+corroborator
+        set by phi, so on a mixed input (some disjoint + some shared-lineage
+        corroborators) it may under-report relative to ``effective_witnesses``,
+        which discounts only the shared-lineage subset. The direction is
+        conservative (fewer effective votes); at the default phi=0 the two
+        agree.
         """
         phi = getattr(self._policy, "phi_shared_lineage", 0.0)
         m_total = 1 + n_corroborating

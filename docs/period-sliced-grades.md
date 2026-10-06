@@ -1,4 +1,4 @@
-# The 1,200-year-old trick for catching a sleeper agent
+# The eight-century-old trick for catching a sleeper agent
 
 In 2024, an account named "Jia Tan" spent two years contributing genuinely
 good, well-reviewed patches to xz-utils — the compression library inside most
