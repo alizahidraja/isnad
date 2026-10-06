@@ -25,8 +25,12 @@ The methodology is **preregistered** (frozen before any result):
 
 All hallucination comes from the **post-cutoff** tier (facts after the model's
 ~mid-2026 training cutoff), where the model confidently states stale values — e.g.
-the 400m hurdles world record as **45.94** (true: 45.80), the Knicks' last title as
-**1973** (true: 2026), Spain's last World Cup as **2010** (true: 2026):
+the 400m hurdles world record as **45.94** (the real 2021 WR; 45.80 was the
+pre-2021 mark). **Oracle caveat:** the original post-cutoff oracle for “the Knicks'
+last title” and “Spain's last World Cup” was fabricated (it asserted “true: 2026”;
+the real answers are **1973** and **2010**), so those two post-cutoff examples are
+**withdrawn as unverifiable**, and the post-cutoff hallucination rate below is
+measured against a partially-fabricated oracle:
 
 | Tier | hallucination_rate (depth 1) |
 |---|---|
