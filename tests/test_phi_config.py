@@ -140,3 +140,54 @@ class TestServingPathWiringEndToEnd:
 
         src = inspect.getsource(claims.submit_claim)
         assert "_build_corroboration_engine()" in src
+
+
+class TestEffectiveVotes:
+    """The Kish effective-vote count is surfaced on CorroborationResult and in
+    the serialized audit record, so a compliance buyer sees the discounted
+    count, not the raw "n independent routes" count."""
+
+    def _shared_family_corroborators(self) -> tuple[dict, list[dict]]:
+        meta = {
+            "n:A": {"model_family": "gpt-4"},
+            "n:B": {"model_family": "gpt-4"},
+            "n:C": {"model_family": "gpt-4"},
+            "n:D": {"model_family": "gpt-4"},
+        }
+        chains = [
+            {"grade": "hasan", "narrators": ["n:B"]},
+            {"grade": "hasan", "narrators": ["n:C"]},
+            {"grade": "hasan", "narrators": ["n:D"]},
+        ]
+        return meta, chains
+
+    def test_phi_zero_equals_raw_count(self) -> None:
+        meta, chains = self._shared_family_corroborators()
+        policy = CappedCorroborationPolicy(phi_shared_lineage=0.0)
+        result = CorroborationEngine(policy=policy).evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["n:A"],
+            corroborating_chains=chains,
+            narrator_metadata=meta,
+        )
+        assert result.effective_votes == pytest.approx(1 + result.independent_chains)
+
+    def test_phi_measured_reduces_count(self) -> None:
+        meta, chains = self._shared_family_corroborators()
+        policy = CappedCorroborationPolicy(phi_shared_lineage=PHI_MEASURED)
+        result = CorroborationEngine(policy=policy).evaluate_direct(
+            base_chain_grade=ChainGrade.DAIF,
+            base_narrators=["n:A"],
+            corroborating_chains=chains,
+            narrator_metadata=meta,
+        )
+        raw = 1 + result.independent_chains
+        assert result.effective_votes < raw
+        assert result.effective_votes == pytest.approx(raw / (1 + (raw - 1) * PHI_MEASURED))
+
+    def test_serialized_output_includes_effective_votes(self) -> None:
+        import inspect
+
+        from isnad.api.endpoints import claims
+
+        assert '"effective_votes"' in inspect.getsource(claims.submit_claim)

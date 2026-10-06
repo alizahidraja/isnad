@@ -726,6 +726,13 @@ class CorroborationResult:
     # The effective number of independent witnesses, after the tawātur discount.
     # Always ≤ the nominal independent-chain count; the gap is the honesty margin.
     effective_witnesses: float = 0.0
+
+    # Kish effective-vote count: base + admitted corroborators, discounted
+    # by the policy's shared-lineage phi. At phi=0 this equals the raw count
+    # (1 + corroborators); at phi>0 it reports the discounted effective votes
+    # so a compliance buyer never reads "n independent routes" when the
+    # measured correlation says it is fewer.
+    effective_votes: float = 0.0
     # Content-level madār detection (#54): True when a nominally-independent
     # corroborating chain repeats the base claim's *same error* (identical wrong
     # number or flipped negation) — a fingerprint of a common upstream, not
@@ -1001,6 +1008,7 @@ class CorroborationEngine:
                 corroborating_chains=0,
                 independent_chains=0,
                 effective_weight=0.0,
+                effective_votes=self._effective_vote_count(0),
                 upgraded=False,
                 reason="MAWDU chains cannot be corroborated",
             )
@@ -1043,6 +1051,7 @@ class CorroborationEngine:
                 corroborating_chains=total_corroborating,
                 independent_chains=0,
                 effective_weight=0.0,
+                effective_votes=self._effective_vote_count(0),
                 upgraded=False,
                 shared_error_detected=content_madar,
                 reason=(
@@ -1068,6 +1077,7 @@ class CorroborationEngine:
                 corroborating_chains=total_corroborating,
                 independent_chains=0,
                 effective_weight=0.0,
+                effective_votes=self._effective_vote_count(0),
                 upgraded=False,
                 shared_error_detected=True,
                 reason=(
@@ -1102,9 +1112,11 @@ class CorroborationEngine:
                 corroborating_chains=total_corroborating,
                 independent_chains=len(independent),
                 effective_weight=0.0,
+                effective_votes=self._effective_vote_count(len(independent)),
                 upgraded=False,
                 chain_independence=assessments,
                 reason=(
+                    f"Need \u2265{self.min_independent_chains} independent chains, "
                     f"Need ≥{self.min_independent_chains} independent chains, "
                     f"have {len(independent)}"
                 ),
@@ -1118,6 +1130,7 @@ class CorroborationEngine:
                 corroborating_chains=total_corroborating,
                 independent_chains=len(independent),
                 effective_weight=0.0,
+                effective_votes=self._effective_vote_count(len(independent)),
                 upgraded=False,
                 chain_independence=assessments,
                 reason=f"No corroborating chain meets min grade {self.min_gate_grade.value}",
@@ -1180,6 +1193,7 @@ class CorroborationEngine:
             chain_independence=assessments,
             shared_blind_spot_prior=self._flat_prior(),
             effective_witnesses=effective_witnesses,
+            effective_votes=self._effective_vote_count(len(independent)),
             reason=(
                 f"Upgraded via {len(independent)} independent chains"
                 if upgraded_flag
@@ -1202,6 +1216,23 @@ class CorroborationEngine:
         if callable(fn):
             return fn(m_shared)
         return 1.0
+
+    def _effective_vote_count(self, n_corroborating: int) -> float:
+        """Kish effective-vote count for base + n corroborating chains.
+
+        The base chain plus ``n_corroborating`` admitted corroborators form a
+        group of ``m_total = 1 + n`` nominally-independent chains. Under the
+        policy's configured shared-lineage correlation phi, the Kish effective
+        count is ``m_total / (1 + (m_total - 1) * phi)``. At phi=0 this equals
+        the raw count; at phi>0 it reports the discounted number of effective
+        votes (so no consumer reads "n independent routes" when the measured
+        correlation says it is fewer).
+        """
+        phi = getattr(self._policy, "phi_shared_lineage", 0.0)
+        m_total = 1 + n_corroborating
+        if m_total <= 0 or phi == 0.0:
+            return float(m_total)
+        return m_total / (1.0 + (m_total - 1) * phi)
 
     def _admits_score(self, score: float, is_shared_lineage: bool) -> bool:
         """Admission by (score, flag) with a pre-3.0.5 fallback to the score gate."""
