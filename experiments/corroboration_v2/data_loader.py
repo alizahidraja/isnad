@@ -153,7 +153,7 @@ class DualWikipediaLoader:
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self._session = requests.Session()
         self._session.headers.update({
-            "User-Agent": "isnad-corroboration-v2/1.0 (academic research; mailto:alizahidrajaa@gmail.com)"
+            "User-Agent": "isnad-corroboration-v2/1.0 (academic research; mailto:contact@isnadhq.com)"
         })
 
     def _fetch_article(self, api_url: str, topic: str) -> dict[str, Any]:
