@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.0] — 2026-10-06
+
+### Changed (honesty reconciliation)
+
+- Repository-wide wording sync: "preregistered" -> "pre-committed" (the protocols are committed-before-run, not OSF-registered); "tamper-evident" -> "tamper-detecting"; "twelve centuries" -> "fourteen centuries" (hadith science dates from the 7th century CE).
+- CHANGELOG historical entries corrected: the retracted "scholarly consensus / human ceiling" and "preregistered" claims removed; "577,024 real chains" -> "575,060 graded".
+
+### Fixed
+
+- Release workflow checkout pinned to the CI-tested commit (ref: head_sha of the gating CI run), closing the main-branch race that could publish an untested commit.
+
+
 ## [3.0.8] — 2026-10-06
 
 ### Fixed
