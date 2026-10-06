@@ -77,6 +77,18 @@ it can never *prove independence* — it can only fail to find shared signals.
    flipped negation), `CorroborationEngine` withholds the upgrade and reports
    `shared_error_detected=True` (`core/content_madar.py`).
 
+4. **Measured correlation discount (the φ study)** — shipped in 3.0.5 and wired
+   end-to-end in 3.0.6. The φ study measured pairwise error correlation across 8
+   LLMs (4 vendors × 2 sizes) on a 378-fact fixed-oracle corpus: **φ̄ = 0.5599,
+   Kish n_eff = 1.626** — 8 nominally-independent transmitters carry ~1.6
+   effective votes (independence violated ~4.9×). `CappedCorroborationPolicy`
+   now applies a **lineage-aware Kish discount** to shared-lineage corroborators
+   (admitted-and-discounted rather than excluded). **Opt-in via
+   `ISNAD_PHI_SHARED_LINEAGE`** (float, default `0.0` = no discount; **HTTP serving path `submit_claim` only** — the CLI/MCP `grade_claim` tool is grade-only and does not apply corroboration). The
+   measured same-family φ̄ = 0.6172 is the documented example, **not the
+   default** — it is an LLM-domain proxy, not a narrator-domain measurement, so
+   operators should supply their own measured φ.
+
 The *undetectable* half — correlated training data across distinct model
 families with no shared source and no checkable error — remains an open,
 stated limit.

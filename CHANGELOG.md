@@ -1,10 +1,20 @@
 # Changelog
 
+## [3.0.6] — Unreleased
+
+### Added
+
+- **End-to-end φ config**: `ISNAD_PHI_SHARED_LINEAGE` env var (float, default
+  `0.0`, clamped to `[0, 1)`) now wires the 3.0.5 lineage-aware Kish discount
+  into the serving path (`submit_claim`), so operators can opt in without code.
+  Default stays `0.0` (no discount); the measured same-family φ̄ = 0.6172 is the
+  documented example value, not the default — an LLM-domain proxy, not a narrator-domain measurement; operators should supply their own measured φ.
+
 ## [3.0.5] — 2026-10-06
 
 ### Added
 
-- **Lineage-aware Kish corroboration discount** (opt-in, default-off). `CappedCorroborationPolicy(phi_shared_lineage=φ)` discounts corroborating chains that `SharedLineageDetector` flags as shared-lineage by the base-inclusive Kish factor `1/(1+m·φ)`, so `m` same-lineage corroborators are credited as `(m+1)/(1+mφ)` effective routes. Discount-not-exclude: soft shared-lineage routes (score 0.3–0.7) are admitted and discounted; hard identity (score 0.0) and unknown lineage (0.5) stay excluded. Default φ = 0.0 (no change); measured same-family φ̄ = 0.6172 is the documented opt-in example.
+- **Lineage-aware Kish corroboration discount** (opt-in, default-off). `CappedCorroborationPolicy(phi_shared_lineage=φ)` discounts corroborating chains that `SharedLineageDetector` flags as shared-lineage by the base-inclusive Kish factor `1/(1+m·φ)`, so `m` same-lineage corroborators are credited as `(m+1)/(1+mφ)` effective routes. Discount-not-exclude: soft shared-lineage routes (score 0.3–0.7) are admitted and discounted; hard identity (score 0.0) and unknown lineage (0.5) stay excluded. Default φ = 0.0 (no change); measured same-family φ̄ = 0.6172 is the documented opt-in example — an LLM-domain proxy, not a narrator-domain measurement; operators should supply their own measured φ.
 
 ## [3.0.4] — 2026-10-05
 

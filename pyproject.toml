@@ -4,7 +4,7 @@ version = "3.0.5"
 description = "Isnād–Rijāl framework for claim-level provenance in multi-agent knowledge systems"
 readme = "README.md"
 authors = [
-    { name = "Ali Zahid Raja", email = "alizahidrajaa@gmail.com" }
+    { name = "Ali Zahid Raja", email = "contact@isnadhq.com" }
 ]
 license = "Apache-2.0"
 license-files = ["LICENSE"]

@@ -25,7 +25,11 @@ from isnad.core.chain import (
     store_claim,
 )
 from isnad.core.chain_grounding import chain_scoped_corpus, evaluate_chain_grounding
-from isnad.core.corroboration import CorroborationEngine
+from isnad.core.corroboration import (
+    CappedCorroborationPolicy,
+    CorroborationEngine,
+    phi_shared_lineage_from_env,
+)
 from isnad.core.decision import decide, describe_action, gate_serve, hold_unverifiable
 from isnad.core.fidelity import compute_fidelity_verdicts
 from isnad.core.grading import grade_chain
@@ -476,6 +480,14 @@ def _narrator_metadata_for_claims(
     return {nid: registry.get_metadata(nid, id_to_domain.get(nid, domain)) for nid in all_ids}
 
 
+def _build_corroboration_engine() -> CorroborationEngine:
+    """Build the serving-path corroboration engine, honoring the opt-in
+    ``ISNAD_PHI_SHARED_LINEAGE`` env var (default 0.0 = no discount)."""
+    return CorroborationEngine(
+        policy=CappedCorroborationPolicy(phi_shared_lineage=phi_shared_lineage_from_env())
+    )
+
+
 @router.post("/claims")
 async def submit_claim(
     body: ClaimSubmitIn,
@@ -598,7 +610,7 @@ async def submit_claim(
         reg.registry, resolved_narrator_ids, all_chain_dicts, domain
     )
 
-    corr_engine = CorroborationEngine()
+    corr_engine = _build_corroboration_engine()
     corr_result = corr_engine.evaluate(
         claim_text=normalized,
         base_chain_grade=cg,
