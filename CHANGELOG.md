@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.0.6] — 2026-10-06
+
+### Added
+
+- **End-to-end φ config**: `ISNAD_PHI_SHARED_LINEAGE` env var (float, default
+  `0.0`, clamped to `[0, 1)`) now wires the 3.0.5 lineage-aware Kish discount
+  into the serving path (`submit_claim`), so operators can opt in without code.
+  Default stays `0.0` (no discount); the measured same-family φ̄ = 0.6172 is the
+  documented example value, not the default.
+
 ## [3.0.5] — 2026-10-06
 
 ### Added
