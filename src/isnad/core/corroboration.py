@@ -47,9 +47,7 @@ def phi_shared_lineage_from_env() -> float:
     try:
         value = float(raw)
     except ValueError as exc:
-        raise ValueError(
-            f"{PHI_SHARED_LINEAGE_ENV} must be a float in [0, 1), got {raw!r}"
-        ) from exc
+        raise ValueError(f"{PHI_SHARED_LINEAGE_ENV} must be a finite number, got {raw!r}") from exc
     if math.isnan(value) or math.isinf(value):
         raise ValueError(f"{PHI_SHARED_LINEAGE_ENV} must be a finite float, got {raw!r}")
     return min(1.0 - 1e-12, max(0.0, value))

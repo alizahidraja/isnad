@@ -110,3 +110,33 @@ class TestServingPathWiring:
         assert policy.phi_shared_lineage == 0.0
         # sanity: the clamped value must not be NaN/Inf
         assert math.isfinite(policy.phi_shared_lineage)
+
+
+class TestServingPathWiringEndToEnd:
+    """Locks the ACTUAL claims.py ``submit_claim`` wiring, not a reimplementation.
+
+    If the serving-path one-liner were reverted to an inline
+    ``CorroborationEngine()`` (dropping the env opt-in), these tests fail.
+    """
+
+    def test_helper_respects_env(self, monkeypatch: pytest.MonkeyPatch) -> None:
+        from isnad.api.endpoints import claims
+
+        monkeypatch.setenv(PHI_SHARED_LINEAGE_ENV, str(PHI_MEASURED))
+        engine = claims._build_corroboration_engine()
+        assert engine._policy.phi_shared_lineage == pytest.approx(PHI_MEASURED)
+
+    def test_helper_defaults_to_zero(self, monkeypatch: pytest.MonkeyPatch) -> None:
+        from isnad.api.endpoints import claims
+
+        monkeypatch.delenv(PHI_SHARED_LINEAGE_ENV, raising=False)
+        engine = claims._build_corroboration_engine()
+        assert engine._policy.phi_shared_lineage == 0.0
+
+    def test_submit_claim_uses_helper(self) -> None:
+        import inspect
+
+        from isnad.api.endpoints import claims
+
+        src = inspect.getsource(claims.submit_claim)
+        assert "_build_corroboration_engine()" in src
