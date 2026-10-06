@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.7] — 2026-10-06
+
+### Added
+
+- **Effective-vote emission**: `CorroborationResult.effective_votes` reports the Kish-discounted effective-vote count (base + admitted corroborators), so a compliance buyer never reads "n independent routes" when the measured φ̄ says it is fewer. At φ=0 it equals the raw count.
+
+### Fixed
+
+- **Release guard**: the version-bump guard now requires a strictly-newer version (`>`, not `>=`), so a version-file-touching merge at an unchanged version no longer re-attempts PyPI publish.
+- **G1 reconciliation**: `docs/mission.md` drops the "Nous (2606.22030) proved" mislabel (→ "convergent work finds").
+
 ## [3.0.6] — 2026-10-06
 
 ### Added
