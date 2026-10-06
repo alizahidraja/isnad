@@ -1,4 +1,4 @@
-# ISNAD φ study — pre-registration
+# ISNAD φ study — pre-committed protocol
 
 > This is a **pre-committed protocol** (committed to git before the full sweep), not an OSF/registry preregistration.
 **Committed: 2026-10-05.** The full sweep runs only after this file is committed.

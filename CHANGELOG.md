@@ -37,7 +37,7 @@
 
 ### Added
 
-- **φ study (correlated errors → Kish discount)**: pre-registered, thrice-audited (20-person → brutal 7-auditor → final small-things pass) measurement of error correlation across 8 LLMs (4 vendors × 2 sizes) on a 378-fact fixed-oracle corpus. **φ̄ = 0.5599, Kish n_eff = 1.626 (95% CI [1.531, 1.741])** — 8 nominally-independent transmitters carry ~1.6 effective votes (madār independence violated ~4.9×). Committed corpus + per-model results + stats for reproducibility under `experiments/correlated_errors/`.
+- **φ study (correlated errors → Kish discount)**: pre-committed, thrice-audited (20-person → brutal 7-auditor → final small-things pass) measurement of error correlation across 8 LLMs (4 vendors × 2 sizes) on a 378-fact fixed-oracle corpus. **φ̄ = 0.5599, Kish n_eff = 1.626 (95% CI [1.531, 1.741])** — 8 nominally-independent transmitters carry ~1.6 effective votes (madār independence violated ~4.9×). Committed corpus + per-model results + stats for reproducibility under `experiments/correlated_errors/`.
 
 ## [3.0.3] — 2026-10-05
 
@@ -94,14 +94,14 @@
 - **Security**: redact claim_text on reads, admin-gate `submit_claim`, constant-time API-key compare, unify the signing-secret env name, run `alembic upgrade head` on serve.
 - **Critics**: content-madar contraction negation; RecomputeCritic unit-awareness (no false-consistent on unit mismatch).
 - **Packaging**: `psycopg2-binary` -> optional `postgres` extra; new `signing` extra (cryptography); `.dockerignore`; non-root Docker user; release.yml version-bump guard.
-- **Honesty/repro**: reconcile critic_eval, correct model-drift numbers, freeze the benchmark prereg; WHO-vs-WHETHER reframe (kappa=0.575 belongs to the composed critic).
+- **Honesty/repro**: reconcile critic_eval, correct model-drift numbers, freeze the benchmark pre-commit; WHO-vs-WHETHER reframe (kappa=0.575 belongs to the composed critic).
 
 
 ## [2.24.0] — 2026-09-11
 
 ### Added
 
-- **Model-drift leaderboard** (`experiments/model_drift/`, #71): a preregistered,
+- **Model-drift leaderboard** (`experiments/model_drift/`, #71): a pre-committed,
   reproducible harness measuring how hallucination rate grows with multi-agent chain
   depth (1..5), with a deterministic LLM-free ground-truth oracle and a deterministic
   offline drift injector (no API keys) with negative controls (perfect / empty critic).
@@ -523,7 +523,7 @@
   0.8714 is unchanged; the finer 4-way κ moves 0.8571 → 0.8745, agreement
   89.7% → 90.9%, and the shuffled control moves 0.0446 → −0.0066, closer to its
   expected ~0). This is a grading-rule change, not a mapping change; the
-  preregistered rank→grade mapping is untouched.
+  pre-committed rank→grade mapping is untouched.
 
 ### Fixed
 
@@ -820,10 +820,11 @@
 
 ### Added
 
-- **ISNAD-Bench** (`bench/`): a preregistered, reproducible benchmark grading
-  577,024 real hadith chains against classical ground truth — Cohen's κ = 0.87
-  vs the scholarly consensus (human ceiling κ = 0.33), with corroboration,
-  human-ceiling, and ikhtilāṭ analyses plus negative controls.
+- **ISNAD-Bench** (`bench/`): a pre-committed, reproducible benchmark grading
+  575,060 graded hadith chains against a rule-based chain-verdict convention —
+  Cohen's κ = 0.87 conformance (narrator-grade agreement κ = 0.33, context, not
+  a ceiling), with corroboration, ikhtilāṭ, and period-slicing analyses plus
+  negative controls.
 - `--json` machine-readable export for the benchmark; `py.typed` marker.
 - `lenient_unknown` opt-in on `grade_chain(...)`.
 
