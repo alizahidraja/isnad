@@ -460,7 +460,9 @@ class CappedCorroborationPolicy:
                 (no discount). The phi-study measured same-family phi_bar =
                 0.6172 (arithmetic mean of the 4 same_family:true pairs in
                 experiments/correlated_errors/stats.json: 0.4888, 0.7306,
-                0.5595, 0.6898); pass that value to opt in.
+                0.5595, 0.6898); pass that value to opt in. This 0.6172 is
+                an LLM-domain proxy, not a narrator-domain measurement;
+                operators should supply their own measured φ.
         """
         self.shared_blind_spot_prior = max(0.0, min(1.0, shared_blind_spot_prior))
         # Operator-measured per-pair co-failure priors (issue 54, from the

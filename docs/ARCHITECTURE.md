@@ -451,6 +451,9 @@ The detector catches this via shared upstream sources.
   witness, so its weight is discounted.
 - **Effective witnesses**: `effective_witnesses = Σ (independence_score × (1 − blind-spot prior))`;
   caps the effective count below the nominal count.
+- **Lineage-aware Kish discount (3.0.5)**: `phi_shared_lineage` (default `0.0`, opt-in)
+  discounts shared-lineage corroborators by `1/(1+mφ)`; the serving path reads it from
+  `ISNAD_PHI_SHARED_LINEAGE` (3.0.6). Default-off — φ is an LLM-domain proxy.
 
 ### CorroborationEngine
 

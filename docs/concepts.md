@@ -60,6 +60,8 @@ content critic is the ceiling, and ISNAD states that ceiling instead of hiding i
 
 Because the three loops — chain, narrators, content — are exactly the three failure
 axes of an agent pipeline: *who touched it*, *how trustworthy is each component*, and
-*does the output contradict evidence*. ISNAD is the first framework to grade all three
-with a benchmark (κ 0.871 against scholars' own verdicts over 575,060 chains) rather
-than just an argument for them.
+*does the output contradict evidence*. ISNAD grades all three against a benchmark
+(κ 0.871 over 575,060 chains), where κ measures **conformance to a rule-based
+chain-verdict convention derived from Ibn Hajar's tiers** — not agreement with
+scholars' independent per-chain verdicts. The separate narrator-grade agreement
+(κ 0.331) is the contested-tradition number.

@@ -64,6 +64,12 @@ jobs:
             echo "SKIP publish: v$V is not newer than $LATEST (dependency-only edit)."
           fi
 
+      - name: Verify golden vectors regenerated
+        if: steps.version.outputs.should_publish == 'true'
+        run: |
+          uv run python js/scripts/generate_golden.py
+          git diff --exit-code js/test/golden.json || (echo "::error::js/test/golden.json not regenerated for this version bump. Run 'uv run python js/scripts/generate_golden.py' and commit the result before releasing." && exit 1)
+
       - name: Publish to PyPI
         if: steps.version.outputs.should_publish == 'true'
         uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # release/v1
