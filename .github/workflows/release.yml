@@ -56,7 +56,7 @@ jobs:
           if [ "$V" != "$INIT" ]; then echo "version mismatch: pyproject=$V init=$INIT" >&2; exit 1; fi
           if [ "$V" != "$CFF" ]; then echo "version mismatch: pyproject=$V citation=$CFF" >&2; exit 1; fi
           LATEST="$(git describe --tags --abbrev=0 2>/dev/null || echo 'v0.0.0')"
-          if printf '%s\n%s\n' "$LATEST" "v$V" | sort -V | tail -1 | grep -q "^v$V$"; then
+          if [ "$LATEST" != "v$V" ] && [ "$(printf '%s\n%s\n' "$LATEST" "v$V" | sort -V | tail -1)" = "v$V" ]; then
             echo "should_publish=true" >> "$GITHUB_OUTPUT"
             echo "Releasing v$V (newer than $LATEST)"
           else
