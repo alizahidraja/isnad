@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import inspect
 import math
+import os
 from dataclasses import dataclass, field
 
 from isnad.core.content_madar import detect_content_madar
@@ -24,6 +25,34 @@ from isnad.types import (
     CorrelationDetector,
     CorroborationPolicy,
 )
+
+PHI_SHARED_LINEAGE_ENV = "ISNAD_PHI_SHARED_LINEAGE"
+
+
+def phi_shared_lineage_from_env() -> float:
+    """Read the opt-in shared-lineage phi from ``ISNAD_PHI_SHARED_LINEAGE``.
+
+    Default ``0.0`` (no discount). The value is parsed as a float, validated to
+    be finite, and clamped to ``[0.0, 1.0)``. A non-numeric value raises
+    :class:`ValueError`.
+
+    The measured same-family ``phi_bar = 0.6172`` (mean of the 4
+    ``same_family:true`` pairs in ``experiments/correlated_errors/stats.json``)
+    is the documented opt-in example; the default stays ``0.0`` because that
+    value is an LLM-domain proxy, not a narrator-domain measurement.
+    """
+    raw = os.environ.get(PHI_SHARED_LINEAGE_ENV, "0.0").strip()
+    if not raw:
+        return 0.0
+    try:
+        value = float(raw)
+    except ValueError as exc:
+        raise ValueError(
+            f"{PHI_SHARED_LINEAGE_ENV} must be a float in [0, 1), got {raw!r}"
+        ) from exc
+    if math.isnan(value) or math.isinf(value):
+        raise ValueError(f"{PHI_SHARED_LINEAGE_ENV} must be a finite float, got {raw!r}")
+    return min(1.0 - 1e-12, max(0.0, value))
 
 
 def _policy_accepts_shared_lineage_flags(policy: object) -> bool:
