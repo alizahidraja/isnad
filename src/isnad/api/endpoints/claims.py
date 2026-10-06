@@ -699,6 +699,7 @@ async def submit_claim(
             "upgraded_grade": corr_result.upgraded_grade.value,
             "corroborating_chains": corr_result.corroborating_chains,
             "independent_chains": corr_result.independent_chains,
+            "effective_votes": round(corr_result.effective_votes, 3),
             "reason": corr_result.reason,
             "shared_error_detected": corr_result.shared_error_detected,
             # Provenance only (issue 187): no raw floats. effective_weight,
