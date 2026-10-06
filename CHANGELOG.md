@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.5] — 2026-10-06
+
+### Added
+
+- **Lineage-aware Kish corroboration discount** (opt-in, default-off). `CappedCorroborationPolicy(phi_shared_lineage=φ)` discounts corroborating chains that `SharedLineageDetector` flags as shared-lineage by the base-inclusive Kish factor `1/(1+m·φ)`, so `m` same-lineage corroborators are credited as `(m+1)/(1+mφ)` effective routes. Discount-not-exclude: soft shared-lineage routes (score 0.3–0.7) are admitted and discounted; hard identity (score 0.0) and unknown lineage (0.5) stay excluded. Default φ = 0.0 (no change); measured same-family φ̄ = 0.6172 is the documented opt-in example.
+
+## [3.0.4] — 2026-10-05
+
+### Added
+
+- **φ study (correlated errors → Kish discount)**: pre-registered, twice-audited measurement of error correlation across 8 LLMs (4 vendors × 2 sizes) on a 378-fact fixed-oracle corpus. **φ̄ = 0.5599, Kish n_eff = 1.626 (95% CI [1.531, 1.741])** — 8 nominally-independent transmitters carry ~1.6 effective votes (madār independence violated ~4.9×). Committed corpus + per-model results + stats for reproducibility under `experiments/correlated_errors/`.
+
 ## [3.0.3] — 2026-10-05
 
 ### Fixed (trust-path correctness)
