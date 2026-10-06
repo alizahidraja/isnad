@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.8] — 2026-10-06
+
+### Fixed
+
+- Release gated on CI; model-drift-leaderboard fabricated-oracle correction; period-sliced "1,200 years" fix; corroboration docstring cleanup.
+
 ## [3.0.7] — 2026-10-06
 
 ### Added
