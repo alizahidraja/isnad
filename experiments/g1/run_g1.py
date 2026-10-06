@@ -4,7 +4,7 @@
 Does ISNAD's source-grounding (weakest-link over per-sentence semantic grounding
 of a claim in its own on-chain source) transfer to AI hallucination detection?
 
-See g1_mapping.md for the preregistered mapping. Run inside the isnad-api image.
+See g1_mapping.md for the pre-committed mapping. Run inside the isnad-api image.
 """
 
 import json

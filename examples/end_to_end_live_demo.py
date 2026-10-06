@@ -4,7 +4,7 @@ Run:  DEEPSEEK_API_KEY=sk-... python examples/end_to_end_live_demo.py
 
 Not a synthetic unit test — this runs the *actual* pipeline (evidence-backed
 seeded registry → weakest-link grading → live LLM critic → decision matrix →
-tamper-evident, detached-signed audit record) on real physics claims, and
+tamper-detecting, detached-signed audit record) on real physics claims, and
 verifies a real Live Verify seal over the network.
 
 It shows, in one pass:

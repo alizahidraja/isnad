@@ -52,7 +52,7 @@ def render() -> str:
         "  cost; they are a separate keyed phase. Cells that were not actually run are",
         '  rendered "not run", never fabricated.',
         "- Single seed dataset (12 facts). The `offline-drift` injector is a deterministic",
-        "  stand-in for a real model, preregistered at corruption_probability = "
+        "  stand-in for a real model, pre-committed at corruption_probability = "
         f"{record['corruption_probability']}.",
         "- The metric does **not** claim general hallucination-detection superiority.",
         "",

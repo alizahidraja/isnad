@@ -15,7 +15,7 @@ Integrity, Confidentiality, Privacy.
 ## What ISNAD already produces (your evidence)
 | TSC | ISNAD artifact |
 |---|---|
-| **Processing Integrity** | Tamper-evident audit records — SHA-256 per claim, detached HMAC/Ed25519 signature, hash-chained + Merkle-batched with an anchored head (`src/isnad/audit/`) |
+| **Processing Integrity** | Tamper-detecting audit records — SHA-256 per claim, detached HMAC/Ed25519 signature, hash-chained + Merkle-batched with an anchored head (`src/isnad/audit/`) |
 | **Security** | Admin-gated writes, constant-time API-key auth, `audit_signed` derived from the signature (never a stored bool), PII redaction on reads |
 | **Confidentiality** | `claim_text` redaction + `redact_fn` in the export path; records are hash-first (content optional) |
 | **Privacy** | `--redact` export, `audit_signed` fail-closed when no secret is configured |

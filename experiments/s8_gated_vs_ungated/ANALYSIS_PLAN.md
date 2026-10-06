@@ -1,6 +1,6 @@
 # Analysis Plan — §8 Gated vs. Ungated Validation Experiment
 
-**Preregistered:** 2026-07-06  
+**Pre-committed:** 2026-07-06  
 **Paper:** "Grading the Narrators" (Raja, 2026, DOI: 10.5281/zenodo.21211290)  
 **Status:** Committed before any results exist.
 
@@ -91,7 +91,7 @@ A null result (no significant difference) or negative result (ISNAD worse) is re
 ### 2026-07-06 — Corpus scaling and seed increase
 
 - **Corpus scaled from 1,084 to 3,002 claims.** The original run produced only
-  1,084 claims (below the preregistered ≥3,000 floor). Additional textbook
+  1,084 claims (below the pre-committed ≥3,000 floor). Additional textbook
   excerpts were added covering all four physics domains to meet the target.
   The extraction method, model, dedup, and confidence capture are unchanged.
 - **Seeds increased from 5 to 10.** Narrower CIs via more randomness samples.
@@ -102,24 +102,24 @@ A null result (no significant difference) or negative result (ISNAD worse) is re
   6 synthetic overlap-test chunks. Real PDFs are gitignored; download via
   corpus/fetch.py. See corpus/ATTRIBUTION.md for provenance. Cross-source
   overlap count on real text: 71 (v3 run adds verified physics formula matches).
-- **Transition-policy sweep preregistered 2026-07-06.** A secondary (not primary)
+- **Transition-policy sweep pre-committed 2026-07-06.** A secondary (not primary)
   analysis sweeps the downgrade threshold ∈ {3, 6, 10, 15, 25} to characterize
   the coverage-collapse finding. Hypothesis: looser thresholds reduce
   over-penalization of reliable narrators, increasing coverage while preserving
   error advantage up to some point, after which error rises. This sweep is
   executed via the framework's pluggable TransitionPolicy interface (not by
-  editing framework code). The primary preregistered comparison uses the
+  editing framework code). The primary pre-committed comparison uses the
   DEFAULT policy (threshold=3) and is reported separately from the sweep.
   Sweep is CONFIGURATION exploration, not p-hacking — all thresholds are
   reported regardless of outcome.
-- **Matched-coverage analysis preregistered 2026-07-06.** The degenerate
+- **Matched-coverage analysis pre-committed 2026-07-06.** The degenerate
   ~0% error / <10% coverage regime makes the original served-error comparison
   misleading. A secondary matched-coverage analysis is added: sweep each
   condition's operating point to trace served-error at matched coverage
   levels (20%, 30%, 50%, 70%, 90%). This is the standard selective-prediction
   evaluation and neutralizes the "ISNAD just serves less" critique. If ISNAD
   cannot reach a coverage level, that is reported honestly. The original
-  preregistered primary (B=10%, default policy) is reported verbatim alongside.
+  pre-committed primary (B=10%, default policy) is reported verbatim alongside.
 - **Cross-source overlap corpus added 2026-07-06.** 107 claim texts now appear
   in both OpenStax and Crowell source files, making the corroboration ablation
   (conditions 3 vs 4) testable for the first time.

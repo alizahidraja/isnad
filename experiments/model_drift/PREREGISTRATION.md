@@ -1,5 +1,6 @@
-# Model-drift leaderboard — preregistered methodology (#71)
+# Model-drift leaderboard — pre-committed methodology (#71)
 
+> This is a **pre-committed protocol** (committed to git before any run), not an OSF/registry preregistration.
 **Status: FROZEN.** This methodology is committed before any result is computed.
 A change to this file after the freeze produces a new methodology version and a new
 result version — never a silent edit. The git SHA at freeze is recorded in
@@ -54,7 +55,7 @@ hallucination-detection superiority.
 - Model families: pinned `(provider, model_id)` tuples, each run at
   `temperature=0.0`, fixed `seed`, recorded in the result provenance. **Live runs
   require paid API keys and incur cost** — the harness runs an **offline mode** that
-  substitutes a deterministic drift-injector (a preregistered corruption probability
+  substitutes a deterministic drift-injector (a pre-committed corruption probability
   per hop) and renders real numbers for the *pipeline*, while any live-model cell that
   was not actually run is rendered as **"not run"**, never fabricated.
 

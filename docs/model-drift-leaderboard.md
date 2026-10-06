@@ -4,7 +4,7 @@ How does a claim's **hallucination rate** grow as it passes through an increasin
 **deep multi-agent chain** (depth 1..5) — and how well does ISNAD's chain-grade +
 content-critic + decision-matrix pipeline **catch** that hallucination at each depth?
 
-The methodology is **preregistered** (frozen before any result):
+The methodology is **pre-committed** (frozen before any result):
 [`experiments/model_drift/PREREGISTRATION.md`](https://github.com/alizahidraja/isnad/blob/main/experiments/model_drift/PREREGISTRATION.md).
 
 ## Live results — `deepseek-flash` narrator × `deepseek-v4-pro` critic (cross-model)

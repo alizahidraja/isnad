@@ -1,4 +1,4 @@
-"""Tamper-evident hash chaining — no blockchain, no external dependencies.
+"""Tamper-detecting hash chaining — no blockchain, no external dependencies.
 
 Each audit record's hash is appended to a JSONL chain where every entry stores
 the *previous* entry's hash.  Tampering with (or deleting, or reordering) any

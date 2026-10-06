@@ -13,7 +13,7 @@ per-model answers and oracle:
 Primary endpoint: the false-upgrade gap at the corroboration bar (threshold=2).
 With φ̄>0 the maximum strength is ``n_eff``; when ``n_eff < threshold`` the bar is
 unreachable under the discount, so coverage is a STEP FUNCTION and the
-pre-registered "matched coverage" comparison is not applicable. That limit is
+pre-committed "matched coverage" comparison is not applicable. That limit is
 reported honestly rather than forcing a matched-coverage number. Secondary:
 Δcoverage, Δrisk (P(wrong | upgraded)).
 
