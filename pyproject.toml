@@ -28,9 +28,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://alizahidraja.com/isnad"
+Homepage = "https://isnadhq.com/"
 Repository = "https://github.com/alizahidraja/isnad"
-Documentation = "https://github.com/alizahidraja/isnad#readme"
+Documentation = "https://isnadhq.com/docs"
 Paper = "https://arxiv.org/abs/2607.24117"
 Benchmark = "https://github.com/alizahidraja/isnad/blob/main/bench/docs/RESULTS.md"
 Issues = "https://github.com/alizahidraja/isnad/issues"
