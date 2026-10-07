@@ -24,7 +24,7 @@ and the weakest-link grade correctly surfaces the weak narrator's higher fault r
 
 | | count |
 |---|---|
-| quarantined (DAIF × CONTRADICTION) | 3,581 |
+| quarantined (DAIF_JIDDAN × CONTRADICTION) | 3,581 |
 | quarantined + corrupted | 527 |
 | **precision** | **14.7%** |
 

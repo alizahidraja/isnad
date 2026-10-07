@@ -1,0 +1,64 @@
+{
+  "db_hash": null,
+  "harness_rev": "8f41ecdd3ebb",
+  "mode": "strict",
+  "chains_selected": 577024,
+  "chains_graded": 575060,
+  "unclassified_hukum": 1960,
+  "empty_skipped": 4,
+  "kappa_5way": 0.8667206140263388,
+  "kappa_linear_weighted": 0.8873441479900869,
+  "kappa_3way": 0.8713664574666475,
+  "agreement": 0.903156192397315,
+  "per_class": {
+    "sahih": {
+      "precision": 0.9230790183313813,
+      "recall": 0.8968962345919981,
+      "f1": 0.909799289240279,
+      "support": 151139
+    },
+    "hasan": {
+      "precision": 0.909242216029477,
+      "recall": 0.8916437591272227,
+      "f1": 0.9003570005448528,
+      "support": 186256
+    },
+    "daif": {
+      "precision": 0.8858276085837679,
+      "recall": 0.9218923749585184,
+      "f1": 0.903500238218185,
+      "support": 171763
+    },
+    "daif_jiddan": {
+      "precision": 0.8930076660140046,
+      "recall": 0.9465334693446833,
+      "f1": 0.9189918377104608,
+      "support": 56858
+    },
+    "mawdu": {
+      "precision": 0.8529456771231828,
+      "recall": 0.6163202122954445,
+      "f1": 0.715578663585596,
+      "support": 9044
+    }
+  },
+  "controls": {
+    "majority_kappa": 0.0,
+    "shuffled_kappa": -0.004634685945432744
+  },
+  "corroboration": {
+    "weak_alone": 5520,
+    "independent_route": 5079
+  },
+  "disagreement_buckets": {
+    "continuity: taʿlīq gap (scholar still sound/good)": 701,
+    "gap-in-text-only: ḍaʿīf by irsāl/taʿlīq (no sentinel)": 1770,
+    "continuity: irsāl/inqiṭāʿ gap": 9534,
+    "grade: ṣaḥīḥ ↔ ḥasan boundary": 15295,
+    "other": 18557,
+    "leniency: weak → sound/good (mapping)": 3773,
+    "severity: classical mawḍūʿ vs ISNAD ḍaʿīf": 272,
+    "severity: classical ḍaʿīf vs ISNAD mawḍūʿ (rejected narrator)": 269,
+    "corroboration: weak-alone → ḥasan-with-mutābaʿa": 5520
+  }
+}

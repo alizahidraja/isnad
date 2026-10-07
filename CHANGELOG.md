@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.1.1] — 2026-10-07
+
+### Changed
+
+- Rebrand project home to <https://isnadhq.com/> and docs to <https://isnadhq.com/docs> (README, docs, pyproject URLs, mkdocs site_url, bench JSON-LD).
+- Software DOI updated to the 3.1.1 version archive: `10.5281/zenodo.23201516`.
+
+### Fixed (docs/honesty)
+
+- Per-class table (ḍaʿīf jiddan row) regenerated from `bench.run --json`; strict agreement corrected 90.9% → 90.3%; "~577,000 graded chains" → "575,060 graded".
+- `numbers.json` adds linear-weighted κ (0.8873) + agreement (0.9032), wired through `regen_numbers.py`.
+- Four stale sentences: DISCRIMINATION.md (DAIF_JIDDAN × CONTRADICTION), e2e_utility (κ=0.871 = conformance, not "reproduces hadith science"), §8 RESULTS (measured discrimination, not "100% ingest@weak"), tier_oracle.py ("no-gap, no-rank-12", not "gap-free").
+
+
 ## [3.1.0] — 2026-10-06
 
 ### Changed (honesty reconciliation)

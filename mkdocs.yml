@@ -2,7 +2,7 @@ site_name: ISNAD
 site_description: >-
   Grades the transmitters and the chain, not just the claim — open-source LLM
   provenance and AI audit trail for RAG and multi-agent systems.
-site_url: https://alizahidraja.github.io/isnad/
+site_url: https://isnadhq.com/docs
 repo_url: https://github.com/alizahidraja/isnad
 repo_name: alizahidraja/isnad
 edit_uri: edit/main/docs/

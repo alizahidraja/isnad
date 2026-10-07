@@ -40,8 +40,8 @@ all 12 novel-topic claims (tungsten, francium, helium, Mars) to REVIEW.
 
 ## What this adds to the paper
 
-This is the fidelity→utility crossing: κ=0.871 proved ISNAD reproduces hadith
-science; this shows the pipeline reduces served-error on *real LLM-generated*
+This is the fidelity→utility crossing: κ=0.871 measures conformance to the
+rule-based chain-verdict convention (it is NOT "reproduces hadith science"); this shows the pipeline reduces served-error on *real LLM-generated*
 claims. Frame it as a mechanism demonstration, not a headline benchmark.
 
 Run:

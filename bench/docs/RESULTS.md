@@ -23,7 +23,7 @@ ISNAD has two deliberate stances on a narrator it has never graded:
 
 | Mode | UNGRADED narrator | 3-way κ | 4-way κ (v1) | Agreement |
 |---|---|---|---:|---:|
-| **strict** (default) | caps at ḍaʿīf (classical majhūl) | **0.8714** | **0.8745** | **90.9%** |
+| **strict** (default) | caps at ḍaʿīf (classical majhūl) | **0.8714** | **0.8745** | **90.3%** |
 | lenient (`lenient_unknown=True`) | caps at ḥasan (epistemic humility) | 0.7610 | 0.7726 | 83.6% |
 
 Mapping v2 (3.0.0) splits the mawḍūʿ class into ḍāʿīf jiddan + mawḍūʿ; the current strict **5-way κ is 0.8667** (per-class table below). The 4-way 0.8745/0.7726 above are the superseded v1 numbers.
@@ -47,7 +47,7 @@ agrees. The lenient mode is opt-in in the library via
 | ṣaḥīḥ | 0.923 | 0.897 | 0.910 | 151,139 |
 | ḥasan | 0.909 | 0.892 | 0.900 | 186,256 |
 | ḍaʿīf | 0.886 | 0.922 | 0.904 | 171,763 |
-| ḍaʿīf jiddan | 0.942 | 0.860 | 0.899 | 56,858 |
+| ḍaʿīf jiddan | 0.893 | 0.947 | 0.919 | 56,858 |
 | mawḍūʿ | 0.853 | 0.616 | 0.716 | 9,044 |
 
 ## The corroboration ablation (mutābaʿa)
@@ -102,7 +102,7 @@ statements by 945 critics?
 Unanimous agreement: 36.8% of narrators with ≥2 critics.
 
 The honest reading: the chain verdicts are a **rule-based convention** (the
-weakest tier predicts the verdict for 88–97% of gap-free chains, and the keyword
+weakest tier predicts the verdict for 88–97% of no-gap, no-rank-12 chains, and the keyword
 classifier agrees with the source's structured code at 99.92% — ruling out
 classifier error). ISNAD's weakest-link
 mapping **conforms** to that convention at κ = 0.87 — it is not "better than the

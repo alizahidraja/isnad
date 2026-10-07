@@ -1,7 +1,7 @@
 """ISNAD-Bench: what explains the verdicts the weakest tier does not predict?
 
 Paper v2, Blocker 1, step 2. ``tier_check.py`` found per-tier purity of
-0.876-0.968 on gap-free chains (``max_rank < 12``): the weakest narrator's tier
+0.876-0.968 on no-gap-no-rank-12 chains (``max_rank < 12``): the weakest narrator's tier
 predicts the chain verdict for most chains, but not all. This script measures,
 on the same chains, where the residual comes from instead of assuming it:
 
@@ -175,7 +175,7 @@ def analyse(db_path: str) -> dict[str, object]:
     isnad = _kappas([verdict[s] for s in common], [preds[s] for s in common])
 
     return {
-        "scope": "gap-free chains (max_rank < 12), verdicts the keyword classifier can read",
+        "scope": "no-gap, no-rank-12 chains (max_rank < 12), keyword-readable verdicts",
         "n_chains": len(sanads),
         "n_classified": len(order),
         "classifier_vs_matn_no": {

@@ -1,4 +1,4 @@
-"""ISNAD-Bench — JSON-LD + page fragment for alizahidraja.com/isnad/bench (#134).
+"""ISNAD-Bench — JSON-LD + page fragment for isnadhq.com/bench (#134).
 
 This file holds the structured data (Schema.org Dataset + SoftwareSourceCode +
 ScholarlyArticle) and the plain-text leaderboard to paste into the site's
@@ -41,7 +41,7 @@ DATASET_JSON_LD = {
     ),
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "isBasedOn": "https://huggingface.co/datasets/emadjumaah/hadith-kg",
-    "url": "https://alizahidraja.com/isnad/bench",
+    "url": "https://isnadhq.com/bench",
     "sameAs": [
         "https://huggingface.co/datasets/alizahidraja/isnad-bench",
         "https://github.com/alizahidraja/isnad",
