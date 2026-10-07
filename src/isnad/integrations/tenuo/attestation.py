@@ -1,4 +1,4 @@
-"""Signed grade attestations for the Tenuo bridge (3.1.1).
+"""Signed grade attestations for the Tenuo bridge (3.2.0 candidate).
 
 A *grade attestation* is a compact, offline-verifiable statement that a single
 argument value carries a given ISNAD chain grade. Tenuo's warrants authorize
@@ -14,6 +14,17 @@ The plain grade names (sound/good/weak/very weak/fabricated) are the "plain
 grade names first, hadith terms second" mapping of
 ``isnad.types.ChainGrade``: sahih -> sound, hasan -> good, daif -> weak,
 daif_jiddan -> very weak, mawdu -> fabricated.
+
+**Trust model (PKI).** A verified attestation proves "the holder of the issuer
+private key signed grade *g* for value *v* at time *t*" — and *nothing more*.
+The security of the bridge therefore rests entirely on the meaning of that
+key: the operator must treat the issuer key **as** the ISNAD grading authority.
+In other words, ``isnad_digest`` is carried and signed, but it is *not resolved*
+here against any ledger; trusting the key means trusting that whoever holds it
+did the isnād verification. The production upgrade is a registry/ledger hook
+that resolves ``isnad_digest`` against ISNAD's trace store before trusting the
+attestation — out of scope for this showcase, but the field is carried so that
+hook can be added without changing the wire shape.
 """
 
 from __future__ import annotations
@@ -32,18 +43,14 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import (
     Ed25519PublicKey,
 )
 
-# Plain grade names in descending trust order. ``grade >= min_grade`` compares
-# these integer ranks, matching ChainGrade.SAHIH > HASAN > DAIF > DAIF_JIDDAN
-# > MAWDU.
 GRADE_ORDER: dict[str, int] = {
-    "sound": 5,  # sahih
-    "good": 4,  # hasan
-    "weak": 3,  # daif
-    "very weak": 2,  # daif_jiddan
-    "fabricated": 1,  # mawdu
+    "sound": 5,
+    "good": 4,
+    "weak": 3,
+    "very weak": 2,
+    "fabricated": 1,
 }
 
-# ChainGrade.value -> plain name (for callers that hold a ChainGrade).
 CHAIN_GRADE_PLAIN: dict[str, str] = {
     "sahih": "sound",
     "hasan": "good",
@@ -63,7 +70,14 @@ def _canonical(value: Any) -> str:
 
 
 def value_hash(value: Any) -> str:
-    """SHA-256 hex of the canonical serialization of ``value``."""
+    """SHA-256 hex of the canonical serialization of ``value``.
+
+    The attested-value domain is **narrowed to scalar values** (``str``,
+    ``int``, ``float``, ``bool``, ``None``) for this showcase. Canonical JSON
+    of arbitrary nested Python objects is not injective (dict int-keys vs
+    string-keys, tuples vs lists, NaN) so non-scalar values are not a supported
+    attestation domain here.
+    """
     return hashlib.sha256(_canonical(value).encode("utf-8")).hexdigest()
 
 
@@ -162,8 +176,11 @@ def verify_grade_attestation(
     """Offline, pure, fail-closed verification. Never raises.
 
     Returns True only when the signature verifies, the value hash matches,
-    the grade meets ``min_grade``, and the attestation is unexpired.
+    the grade meets ``min_grade``, and the attestation is unexpired (and was
+    not issued in the future). ``min_grade`` is normalized through
+    :func:`plain_grade`, so both "good" and "hasan" are accepted.
     """
+    min_grade = plain_grade(min_grade)
     try:
         data = json.loads(attestation)
         att = GradeAttestation(
@@ -182,12 +199,24 @@ def verify_grade_attestation(
             return False
         if GRADE_ORDER[att.grade] < GRADE_ORDER[min_grade]:
             return False
+        issued = datetime.fromisoformat(att.issued_at)
         expires = datetime.fromisoformat(att.expires_at)
-        if expires.tzinfo is None:
-            expires = expires.replace(tzinfo=UTC)
+        for dt in (issued, expires):
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=UTC)
         ref = now if now is not None else _utcnow()
         if ref.tzinfo is None:
             ref = ref.replace(tzinfo=UTC)
+        if ref < issued:
+            return False
         return ref < expires
-    except (InvalidSignature, KeyError, TypeError, ValueError, json.JSONDecodeError):
+    except (
+        InvalidSignature,
+        KeyError,
+        TypeError,
+        ValueError,
+        json.JSONDecodeError,
+        AttributeError,
+        RecursionError,
+    ):
         return False

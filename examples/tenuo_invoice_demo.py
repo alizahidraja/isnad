@@ -5,22 +5,30 @@ so the demo runs with zero network and zero external dependencies (stdlib +
 ``cryptography`` only). The simulated guard mirrors Tenuo's contract: each
 warrant field constrains the matching argument, checked before the tool runs.
 
-  Act 1 (baseline)  — a tight warrant (payee pinned to the vendor master,
-    €5k cap) passes a legitimate payment. Tenuo works as designed.
+  Act 1 (baseline)  — a steelmanned warrant (payee pinned to the vendor master,
+    €5k cap, iban pinned to the vendor master record) passes a legitimate
+    payment. Tenuo works as designed.
   Act 2 (attack)    — a poisoned "update vendor details" payload swaps the IBAN
-    through legitimate authority; the payment clears the warrant alone. This is
-    the in-policy gap: Tenuo never checks whether the *data behind an allowed
-    argument* is true.
+    through the agent's *legitimate* vendor-master authority. The payment then
+    clears the warrant alone, because the warrant follows the (now-poisoned)
+    master record. This is the in-policy gap: Tenuo checks *whether the action
+    is authorized*, never whether the *data behind the argument* was tampered.
   Act 3 (with ISNAD) — the pay tool's ``iban`` must satisfy
-    ``IsnadGradeConstraint(min_grade="good")``. A properly-sourced IBAN (sound
-    attestation) passes; the swapped IBAN (weak attestation) is denied and the
-    denial prints its trace; a retyped IBAN (valid attestation, wrong value) is
-    also denied.
+    ``IsnadGradeConstraint(min_grade="good")``. A properly-sourced IBAN passes;
+    the swapped IBAN (weak provenance) is denied and the denial prints the
+    trace carried in its own attestation; a retyped IBAN is denied on a value
+    mismatch; a bare IBAN is denied (fail closed).
+
+The envelope convention: the constrained field's value is
+``{"value": ..., "attestation": ...}``. The guard verifies the envelope, then
+the tool unwraps ``.value`` and consumes the real argument.
 
 Run:  uv run python examples/tenuo_invoice_demo.py
 """
 
 from __future__ import annotations
+
+import json
 
 from isnad.integrations.tenuo import (
     IsnadGradeConstraint,
@@ -29,11 +37,8 @@ from isnad.integrations.tenuo import (
     ed25519_public_key_from_bytes,
     ed25519_signing_key,
     mint_grade_attestation,
+    unwrap,
 )
-
-# --------------------------------------------------------------------------- #
-# Simulated Tenuo warrant + guard (no tenuo import)
-# --------------------------------------------------------------------------- #
 
 
 def guard(tool: str, args: dict, warrant: dict) -> tuple[bool, str]:
@@ -68,20 +73,46 @@ def _amount_cap(cap: int):
     return check
 
 
-# --------------------------------------------------------------------------- #
-# Scenario fixtures
-# --------------------------------------------------------------------------- #
+def _pinned_to_master(field: str):
+    """The steelmanned warrant pins a field to the *vendor master record*.
+
+    A careful customer does not hardcode the IBAN; they pin it to the registry
+    ("pay the vendor at their registered account"). That is the right thing to
+    do — and it is exactly why a poisoned registry entry flows straight through
+    a warrant that only checks authorization, never data provenance.
+    """
+
+    def check(v):
+        return v == VENDOR_MASTER[field]
+
+    return check
+
 
 MASTER_PAYEE = "ACME GmbH"
-MASTER_IBAN = "DE89 3704 0044 0532 0130 00"  # properly sourced
-POISONED_IBAN = "DE44 5001 0517 5407 3249 31"  # swapped via poisoned email
-RETYPED_IBAN = "DE89 3704 0044 0532 0130 0O"  # look-alike (letter O, not 0)
+MASTER_IBAN = "DE89 3704 0044 0532 0130 00"
+POISONED_IBAN = "DE44 5001 0517 5407 3249 31"
+RETYPED_IBAN = "DE89 3704 0044 0532 0130 0O"
 
-# The ISNAD issuer signs attestations for argument values.
+# The vendor master record (the registry the warrant pins against).
+VENDOR_MASTER = {"payee": MASTER_PAYEE, "iban": MASTER_IBAN}
+
+
+def update_vendor_details(authority: str, field: str, value: str) -> str:
+    """The legitimate "update vendor details" tool.
+
+    An agent with the ``vendor-master-admin`` authority may update the vendor
+    master. A poisoned email that lands in a shared data source can drive this
+    *in-policy* call — the authority is real, only the data is malicious.
+    """
+    if authority != "vendor-master-admin":
+        return "denied: no authority"
+    VENDOR_MASTER[field] = value
+    return f"updated {field}"
+
+
 issuer = ed25519_signing_key()
 issuer_pub = ed25519_public_key_from_bytes(ed25519_public_bytes(issuer))
 
-# The claim's isnad digest is the trace: where the value came from.
 master_trace = "vendor-master@registry/acme/iban (2 corroborating chains)"
 poisoned_trace = "poisoned-email:update-vendor-details@2026-10-07 (1 unverified source)"
 
@@ -94,7 +125,6 @@ weak_att = mint_grade_attestation(
 
 constraint = IsnadGradeConstraint(min_grade="good", trusted_public_key=issuer_pub)
 
-
 results: list[tuple[str, bool, str]] = []
 
 
@@ -103,86 +133,78 @@ def record(act: str, passed: bool, detail: str) -> None:
     print(f"[{act}] {'PASS' if passed else 'FAIL'} — {detail}")
 
 
-# --------------------------------------------------------------------------- #
-# Act 1 — baseline: Tenuo alone, tight warrant, legitimate payment
-# --------------------------------------------------------------------------- #
-print("=== Act 1: baseline (Tenuo alone, tight warrant) ===")
+print("=== Act 1: baseline (steelmanned warrant, Tenuo alone) ===")
 warrant1 = {
     "payee": MASTER_PAYEE,
     "amount": _amount_cap(5000),
-    "iban": lambda v: isinstance(v, str),  # any IBAN — Tenuo doesn't check provenance
+    "iban": _pinned_to_master("iban"),
 }
 ok, reason = guard(
     "pay_vendor", {"payee": MASTER_PAYEE, "amount": 2500, "iban": MASTER_IBAN}, warrant1
 )
 record("Act 1", ok, f"legitimate payment allowed ({reason})")
 
-# --------------------------------------------------------------------------- #
-# Act 2 — attack: poisoned IBAN swaps through legitimate authority
-# --------------------------------------------------------------------------- #
-print("=== Act 2: attack (poisoned IBAN, Tenuo alone) ===")
+print("\n=== Act 2: attack (poisoned master via legitimate update authority) ===")
+print("  poisoned email drives: update_vendor_details(vendor-master-admin, iban, POISONED)")
+update_vendor_details("vendor-master-admin", "iban", POISONED_IBAN)
 ok, reason = guard(
     "pay_vendor", {"payee": MASTER_PAYEE, "amount": 2500, "iban": POISONED_IBAN}, warrant1
 )
-# The warrant pins payee + amount but NOT the IBAN's provenance, so it clears.
-record("Act 2", ok, f"poisoned IBAN cleared Tenuo alone ({reason}) — the in-policy gap")
+record(
+    "Act 2",
+    ok,
+    f"poisoned IBAN cleared Tenuo alone ({reason}) — the in-policy data-provenance gap",
+)
 
-# --------------------------------------------------------------------------- #
-# Act 3 — with ISNAD: the iban argument must carry a valid grade attestation
-# --------------------------------------------------------------------------- #
-print("=== Act 3: with ISNAD (iban must satisfy IsnadGradeConstraint) ===")
+print("\n=== Act 3: with ISNAD (iban must satisfy IsnadGradeConstraint) ===")
 warrant3 = {
     "payee": MASTER_PAYEE,
     "amount": _amount_cap(5000),
     "iban": constraint,
 }
 
-# 3a — properly sourced IBAN (sound attestation) passes
-ok, reason = guard(
-    "pay_vendor",
-    {"payee": MASTER_PAYEE, "amount": 2500, "iban": attest(MASTER_IBAN, sound_att)},
-    warrant3,
-)
-record("Act 3a", ok, f"properly-sourced IBAN allowed ({reason})")
 
-# 3b — swapped IBAN (weak attestation, below min_grade=good) is denied + trace
-ok, reason = guard(
-    "pay_vendor",
-    {"payee": MASTER_PAYEE, "amount": 2500, "iban": attest(POISONED_IBAN, weak_att)},
-    warrant3,
+# The guarded tool: verify the envelope, then unwrap and call the real tool.
+def guarded_pay_vendor(args: dict, warrant: dict) -> tuple[bool, str]:
+    ok, reason = guard("pay_vendor", args, warrant)
+    if not ok:
+        return False, reason
+    iban = unwrap(args["iban"]) if isinstance(args["iban"], dict) else args["iban"]
+    return True, pay_vendor(iban=iban, payee=args["payee"], amount=args["amount"])
+
+
+ok, detail = guarded_pay_vendor(
+    {"payee": MASTER_PAYEE, "amount": 2500, "iban": attest(MASTER_IBAN, sound_att)}, warrant3
 )
+record("Act 3a", ok, f"properly-sourced IBAN allowed — tool ran: {detail!r}")
+
+ok, detail = guarded_pay_vendor(
+    {"payee": MASTER_PAYEE, "amount": 2500, "iban": attest(POISONED_IBAN, weak_att)}, warrant3
+)
+weak_trace = json.loads(weak_att)["isnad_digest"]
 record(
     "Act 3b",
     (not ok),
-    f"swapped IBAN denied ({reason}) — trace: {poisoned_trace}",
+    f"swapped IBAN denied ({detail}) — trace from its own attestation: {weak_trace}",
 )
 
-# 3c — retyped IBAN (valid sound attestation, wrong value_hash) is denied
-ok, reason = guard(
-    "pay_vendor",
-    {"payee": MASTER_PAYEE, "amount": 2500, "iban": attest(RETYPED_IBAN, sound_att)},
-    warrant3,
+ok, detail = guarded_pay_vendor(
+    {"payee": MASTER_PAYEE, "amount": 2500, "iban": attest(RETYPED_IBAN, sound_att)}, warrant3
 )
-record("Act 3c", (not ok), f"retyped IBAN denied ({reason}) — value_hash mismatch")
+record("Act 3c", (not ok), f"retyped IBAN denied ({detail}) — value_hash mismatch")
 
-# 3d — bare IBAN (no attestation) is denied (required=True fail-closed)
-ok, reason = guard(
-    "pay_vendor",
-    {"payee": MASTER_PAYEE, "amount": 2500, "iban": MASTER_IBAN},
-    warrant3,
+ok, detail = guarded_pay_vendor(
+    {"payee": MASTER_PAYEE, "amount": 2500, "iban": MASTER_IBAN}, warrant3
 )
-record("Act 3d", (not ok), f"bare IBAN denied ({reason}) — fail closed")
+record("Act 3d", (not ok), f"bare IBAN denied ({detail}) — fail closed")
 
-# --------------------------------------------------------------------------- #
-# Summary
-# --------------------------------------------------------------------------- #
+
 print("\n=== summary ===")
 all_ok = all(p for _, p, _ in results)
 for act, passed, detail in results:
     print(f"  {'PASS' if passed else 'FAIL'}  {act}: {detail}")
 print(f"\nRESULT: {'ALL ACTS PASS' if all_ok else 'SOME ACTS FAILED'}")
 
-# Hard assertions so the demo fails loudly if the invariants regress.
 assert results[0][1] is True, "Act 1 must pass"
 assert results[1][1] is True, "Act 2 must show Tenuo alone clears the poisoned IBAN"
 assert results[2][1] is True, "Act 3a must pass"

@@ -1,4 +1,4 @@
-"""Tenuo bridge (3.1.1) — a Tier-1 Tenuo constraint enforcing ISNAD grades.
+"""Tenuo bridge (3.2.0 candidate) — a Tier-1 Tenuo constraint enforcing ISNAD grades.
 
 This package mints and verifies compact Ed25519-signed **grade attestations**
 that bind a single argument value to its ISNAD chain grade. It is the
@@ -6,9 +6,16 @@ that bind a single argument value to its ISNAD chain grade. It is the
 whether the *data behind an allowed argument* is true.
 
 ``IsnadGradeConstraint`` implements Tenuo's unified ``.satisfies(value)``
-protocol, so it drops directly onto a high-risk warrant field (IBAN, payee,
-account). It is dependency-light (stdlib + ``cryptography``) and does not
-import ``tenuo``, so it works standalone and inside a real Tenuo warrant.
+protocol. It drops onto a high-risk warrant field (IBAN, payee, account)
+**whose value is an ISNAD-attested envelope** — the operator wraps the
+argument with :func:`attest`, the constraint verifies it, and the guarded tool
+unwraps it with :func:`unwrap`. It is dependency-light (stdlib +
+``cryptography``) and does not import ``tenuo``, so it works standalone and
+inside a real Tenuo warrant.
+
+This is a **showcase integration in ISNAD's repository**, not a Tenuo-core PR.
+The Tenuo-core path (a docs/example page in their integration guide) is
+issue-first per their CONTRIBUTING.md, and only comes after engagement.
 
 See ``examples/tenuo_invoice_demo.py`` for the three-act invoice-fraud demo.
 """
@@ -25,7 +32,7 @@ from isnad.integrations.tenuo.attestation import (
     value_hash,
     verify_grade_attestation,
 )
-from isnad.integrations.tenuo.constraint import IsnadGradeConstraint, attest
+from isnad.integrations.tenuo.constraint import IsnadGradeConstraint, attest, unwrap
 
 __all__ = [
     "CHAIN_GRADE_PLAIN",
@@ -33,6 +40,7 @@ __all__ = [
     "GradeAttestation",
     "IsnadGradeConstraint",
     "attest",
+    "unwrap",
     "ed25519_public_bytes",
     "ed25519_public_key_from_bytes",
     "ed25519_signing_key",
