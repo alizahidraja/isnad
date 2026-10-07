@@ -29,7 +29,7 @@ jobs:
     # Gate on CI success: only publish when triggered manually or when the
     # CI workflow (which runs the full 3.11/3.12/3.13 matrix + js-conformance)
     # completed successfully. A failed CI run skips the entire release job.
-    if: github.event_name == workflow_dispatch || github.event.workflow_run.conclusion == success
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
