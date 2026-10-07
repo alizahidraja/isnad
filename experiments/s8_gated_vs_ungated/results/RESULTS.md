@@ -190,7 +190,7 @@ Run: `python critic_false_consistent.py` (uses `best_available_critic()`;
 
 | Claim | Status | Evidence |
 |---|---|---|
-| Weakest link quarantines unreliable narrators | ✓ Yes | 100% of ingest@weak claims rejected |
+| Weakest link quarantines unreliable narrators | ✓ Yes | Chain grade discriminates: ḥasan 4.6% vs ḍaʿīf 15.1% corruption; 3,581 quarantined (14.7% precision) |
 | jarḥ–taʿdīl discovers bad narrators | ✓ Partial | Found ingest@weak (15%); good narrators were seed-graded |
 | Seed-grading enables practical grades | ✓ Yes | But coverage still limited by critic |
 | **Corroboration upgrades independent chains** | **✅ Validated (v2)** | **603/603 cross-source claims, 8/8 controls — see corroboration_v2/** |

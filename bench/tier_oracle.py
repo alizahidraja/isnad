@@ -73,17 +73,17 @@ def analyse(db_path: str) -> dict[str, object]:
         if g is not None:
             verdict[sid] = g.value
 
-    # tier -> modal verdict, fit on gap-free chains only (max_rank < 12).
+    # tier -> modal verdict, fit on chains with no gap AND no rank-12 narrator (max_rank < 12).
     by_tier: dict[int, collections.Counter[str]] = collections.defaultdict(collections.Counter)
-    gap_free = [s for s in verdict if sanads[s][0] < 12]
+    eligible = [s for s in verdict if sanads[s][0] < 12]
     gapped = [s for s in verdict if sanads[s][0] >= 12]
-    for s in gap_free:
+    for s in eligible:
         by_tier[sanads[s][0]][verdict[s]] += 1
     modal = _modal(by_tier)
 
     # ---- held-out: fit modal on even ids, score on odd ids ----
-    train = [s for s in gap_free if s % 2 == 0]
-    test = [s for s in gap_free if s % 2 == 1]
+    train = [s for s in eligible if s % 2 == 0]
+    test = [s for s in eligible if s % 2 == 1]
     by_tier_train: dict[int, collections.Counter[str]] = collections.defaultdict(
         collections.Counter
     )
@@ -129,7 +129,7 @@ def analyse(db_path: str) -> dict[str, object]:
         ),
         "n_chains": len(sanads),
         "n_classified": len(verdict),
-        "n_gap_free": len(gap_free),
+        "n_eligible": len(eligible),
         "n_gapped": len(gapped),
         "heldout_train_even_ids": _score(train, modal_train),
         "heldout_test_odd_ids": _score(test, modal_train),
@@ -141,7 +141,7 @@ def _print(report: dict[str, object]) -> None:
     print(f"scope: {report['scope']}")
     print(
         f"chains {report['n_chains']:,} · classified {report['n_classified']:,} "
-        f"(gap-free {report['n_gap_free']:,}, gapped {report['n_gapped']:,})"
+        f"(no-gap-no-rank-12 {report['n_eligible']:,}, gapped {report['n_gapped']:,})"
     )
     for label in ("heldout_train_even_ids", "heldout_test_odd_ids", "full_corpus_in_sample_modal"):
         r = cast(dict[str, object], report[label])

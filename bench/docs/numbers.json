@@ -1,6 +1,8 @@
 {
   "bench_3way_kappa": 0.8714,
   "bench_5way_kappa": 0.8667,
+  "bench_linear_weighted_kappa": 0.8873441479900869,
+  "bench_agreement": 0.903156192397315,
   "bench_lookup_5way_kappa": 0.8434,
   "bench_lookup_3way_kappa": 0.8713,
   "bench_oracle_agreement": 0.9741,
