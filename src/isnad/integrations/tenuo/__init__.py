@@ -1,12 +1,13 @@
-"""Tenuo bridge (3.1.2) — a Tier-1 Tenuo constraint enforcing ISNAD grades.
+"""Tenuo bridge (3.1.2) — a provenance check for in-policy arguments, designed to sit next to Tenuo.
 
 This package mints and verifies compact Ed25519-signed **grade attestations**
 that bind a single argument value to its ISNAD chain grade. It is the
-"in-policy gap" fix: Tenuo authorizes *what* an agent may call; ISNAD checks
-whether the *data behind an allowed argument* is true.
+provenance check for in-policy arguments, designed to sit next to Tenuo
+(Tenuo authorizes *what* an agent may call; ISNAD checks whether the *data
+behind an allowed argument* is sound).
 
 ``IsnadGradeConstraint`` implements Tenuo's unified ``.satisfies(value)``
-protocol. It drops onto a high-risk warrant field (IBAN, payee, account)
+protocol. It checks a high-risk argument (IBAN, payee, account)
 **whose value is an ISNAD-attested envelope** — the operator wraps the
 argument with :func:`attest`, the constraint verifies it, and the guarded tool
 unwraps it with :func:`unwrap`. It is dependency-light (stdlib +

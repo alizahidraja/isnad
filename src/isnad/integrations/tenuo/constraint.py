@@ -3,11 +3,17 @@
 Tenuo's constraints all expose a unified ``.satisfies(value) -> bool`` method
 (see Tenuo's ``tenuo/core.py``: "All tenuo_core constraint objects expose a
 unified ``.satisfies(value)`` method... returns False, never True"). This
-class implements exactly that protocol, so an operator can drop it onto a
-high-risk warrant field **whose value is an ISNAD-attested envelope**:
+class implements exactly that protocol, so an operator can use it as a
+standalone check on a high-risk argument **whose value is an ISNAD-attested
+envelope**. Note: the drop-in below is a *proposed* API — real Tenuo's
+``Warrant.mint`` only accepts its built-in constraint types
+(Pattern/Exact/OneOf/Range/CEL/Regex), so this does not run against
+``tenuo`` 0.3.x today; see the README wiring section for the wrapper path
+that works now:
 
 .. code-block:: python
 
+    # proposed API (not runnable against real Tenuo today)
     Capability(
         "pay_vendor",
         iban=IsnadGradeConstraint(min_grade="good", trusted_public_key=pub),

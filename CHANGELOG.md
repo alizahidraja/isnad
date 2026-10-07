@@ -1,10 +1,17 @@
 # Changelog
 
+## [3.1.3] — 2026-10-07
+
+### Fixed (honesty)
+
+- `isnad[tenuo]`: the `IsnadGradeConstraint` does **not** drop into a real Tenuo warrant — Tenuo's `Warrant.mint` only accepts its built-in constraint types (Pattern/Exact/OneOf/Range/CEL/Regex). README + docstrings corrected; the `mint_sync(Capability(...))` snippet is now marked "proposed API". Added the honest "works today" path: a wrapper around the guarded tool (Tenuo enforces the warrant, ISNAD checks the argument's grade at the handoff), shown in `examples/tenuo_real_wrapper.py`.
+
+
 ## [3.1.2] — 2026-10-07
 
 ### Added
 
-- **`isnad[tenuo]` bridge**: a Tier-1 Tenuo constraint (`IsnadGradeConstraint`) that verifies a signed ISNAD grade attestation (Ed25519) on a high-risk tool argument before the tool runs — offline, fail-closed. Fills Tenuo's in-policy data-provenance gap (Tenuo authorizes *what* may run, ISNAD checks *whether the data behind it is sound*). Includes `GradeAttestation` mint/verify, a three-act invoice-fraud demo, and the `tenuo` optional extra.
+- **`isnad[tenuo]` bridge**: a Tier-1 Tenuo constraint (`IsnadGradeConstraint`) that verifies a signed ISNAD grade attestation (Ed25519) on a high-risk tool argument before the tool runs — offline, fail-closed. adds a provenance check for in-policy arguments, designed to sit next to Tenuo (Tenuo authorizes *what* may run, ISNAD checks *whether the data behind it is sound*). Includes `GradeAttestation` mint/verify, a three-act invoice-fraud demo, and the `tenuo` optional extra.
 
 
 ## [3.1.1] — 2026-10-07

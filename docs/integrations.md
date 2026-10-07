@@ -40,9 +40,10 @@ never *"is this claim true?"* — the latter is the critic's lane, and the criti
 ## Tenuo (task-scoped authorization) — showcase bridge (3.1.2)
 
 Tenuo authorizes *what* an agent may call; it never checks whether the *data*
-behind an allowed argument is true. The `isnad[tenuo]` extra closes that gap
-with a Tier-1 Tenuo constraint that verifies a signed ISNAD grade attestation
-on a high-risk argument before the tool runs.
+behind an allowed argument is true. The `isnad[tenuo]` extra adds that
+provenance check (designed to sit next to Tenuo; it does not extend Tenuo's
+warrant constraints): it verifies a signed ISNAD grade attestation on a
+high-risk argument before the tool runs.
 
 - **Seam**: `IsnadGradeConstraint(min_grade, trusted_public_key).satisfies(value)` —
   the constrained field's value is an ISNAD-attested envelope `{"value", "attestation"}`;
