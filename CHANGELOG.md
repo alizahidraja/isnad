@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.2] — 2026-10-07
+
+### Added
+
+- **`isnad[tenuo]` bridge**: a Tier-1 Tenuo constraint (`IsnadGradeConstraint`) that verifies a signed ISNAD grade attestation (Ed25519) on a high-risk tool argument before the tool runs — offline, fail-closed. Fills Tenuo's in-policy data-provenance gap (Tenuo authorizes *what* may run, ISNAD checks *whether the data behind it is sound*). Includes `GradeAttestation` mint/verify, a three-act invoice-fraud demo, and the `tenuo` optional extra.
+
+
 ## [3.1.1] — 2026-10-07
 
 ### Changed

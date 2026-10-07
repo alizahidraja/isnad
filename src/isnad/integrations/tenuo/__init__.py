@@ -1,4 +1,4 @@
-"""Tenuo bridge (3.2.0 candidate) — a Tier-1 Tenuo constraint enforcing ISNAD grades.
+"""Tenuo bridge (3.1.2) — a Tier-1 Tenuo constraint enforcing ISNAD grades.
 
 This package mints and verifies compact Ed25519-signed **grade attestations**
 that bind a single argument value to its ISNAD chain grade. It is the

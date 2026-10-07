@@ -37,7 +37,7 @@ Every connector exposes the same three-move pattern:
 A connector is correct iff it answers *"who vouches for this claim, and how much?"* and
 never *"is this claim true?"* — the latter is the critic's lane, and the critic composes in.
 
-## Tenuo (task-scoped authorization) — showcase bridge (3.2.0 candidate)
+## Tenuo (task-scoped authorization) — showcase bridge (3.1.2)
 
 Tenuo authorizes *what* an agent may call; it never checks whether the *data*
 behind an allowed argument is true. The `isnad[tenuo]` extra closes that gap
