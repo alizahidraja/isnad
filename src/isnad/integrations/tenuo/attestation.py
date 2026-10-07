@@ -1,4 +1,4 @@
-"""Signed grade attestations for the Tenuo bridge (3.1.2).
+"""Signed grade attestations for the Tenuo bridge (3.1.3).
 
 A *grade attestation* is a compact, offline-verifiable statement that a single
 argument value carries a given ISNAD chain grade. Tenuo's warrants authorize

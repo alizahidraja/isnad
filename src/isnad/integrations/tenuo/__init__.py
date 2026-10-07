@@ -1,4 +1,4 @@
-"""Tenuo bridge (3.1.2) — a provenance check for in-policy arguments, designed to sit next to Tenuo.
+"""Tenuo bridge (3.1.3) — a provenance check for in-policy arguments, designed to sit next to Tenuo.
 
 This package mints and verifies compact Ed25519-signed **grade attestations**
 that bind a single argument value to its ISNAD chain grade. It is the
