@@ -1770,6 +1770,9 @@ postgres = [
 signing = [
     { name = "cryptography" },
 ]
+tenuo = [
+    { name = "cryptography" },
+]
 
 [package.dev-dependencies]
 dev = [
@@ -1792,10 +1795,11 @@ requires-dist = [
     { name = "crewai", marker = "extra == 'crewai'", specifier = ">=0.80" },
     { name = "cryptography", marker = "extra == 'dev'", specifier = ">=42.0" },
     { name = "cryptography", marker = "extra == 'signing'", specifier = ">=42.0" },
+    { name = "cryptography", marker = "extra == 'tenuo'", specifier = ">=42.0" },
     { name = "fastapi", marker = "extra == 'api'", specifier = ">=0.115" },
     { name = "fastapi", marker = "extra == 'dev'", specifier = ">=0.115" },
     { name = "httpx", marker = "extra == 'dev'", specifier = ">=0.28" },
-    { name = "isnad", extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llamaindex", "api", "nli", "mcp", "postgres", "signing"], marker = "extra == 'all'" },
+    { name = "isnad", extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llamaindex", "api", "nli", "mcp", "postgres", "signing", "tenuo"], marker = "extra == 'all'" },
     { name = "langchain-core", marker = "extra == 'langchain'", specifier = ">=0.3" },
     { name = "langgraph", marker = "extra == 'dev'", specifier = ">=0.2" },
     { name = "langgraph", marker = "extra == 'langgraph'", specifier = ">=0.2" },
@@ -1813,7 +1817,7 @@ requires-dist = [
     { name = "sqlalchemy", specifier = ">=2.0,<3.0" },
     { name = "uvicorn", marker = "extra == 'api'", specifier = ">=0.32" },
 ]
-provides-extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llamaindex", "mcp", "api", "nli", "postgres", "signing", "all"]
+provides-extras = ["dev", "anthropic", "langchain", "langgraph", "crewai", "llamaindex", "mcp", "api", "nli", "postgres", "signing", "tenuo", "all"]
 
 [package.metadata.requires-dev]
 dev = [
