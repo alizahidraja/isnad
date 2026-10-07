@@ -1,6 +1,6 @@
 [project]
 name = "isnad"
-version = "3.1.1"
+version = "3.1.2"
 description = "Isnād–Rijāl framework for claim-level provenance in multi-agent knowledge systems"
 readme = "README.md"
 authors = [
@@ -79,8 +79,14 @@ postgres = [
 signing = [
     "cryptography>=42.0",
 ]
+tenuo = [
+    # The Tenuo bridge: the constraint is pure-Python (stdlib + cryptography);
+    # the `tenuo` package is only needed when an operator wires it into a real
+    # Tenuo warrant, so it is NOT hard-required here.
+    "cryptography>=42.0",
+]
 all = [
-    "isnad[dev,anthropic,langchain,langgraph,crewai,llamaindex,api,nli,mcp,postgres,signing]",
+    "isnad[dev,anthropic,langchain,langgraph,crewai,llamaindex,api,nli,mcp,postgres,signing,tenuo]",
 ]
 
 [project.scripts]
