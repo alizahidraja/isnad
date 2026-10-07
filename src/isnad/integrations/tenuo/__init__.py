@@ -1,0 +1,43 @@
+"""Tenuo bridge (3.1.1) — a Tier-1 Tenuo constraint enforcing ISNAD grades.
+
+This package mints and verifies compact Ed25519-signed **grade attestations**
+that bind a single argument value to its ISNAD chain grade. It is the
+"in-policy gap" fix: Tenuo authorizes *what* an agent may call; ISNAD checks
+whether the *data behind an allowed argument* is true.
+
+``IsnadGradeConstraint`` implements Tenuo's unified ``.satisfies(value)``
+protocol, so it drops directly onto a high-risk warrant field (IBAN, payee,
+account). It is dependency-light (stdlib + ``cryptography``) and does not
+import ``tenuo``, so it works standalone and inside a real Tenuo warrant.
+
+See ``examples/tenuo_invoice_demo.py`` for the three-act invoice-fraud demo.
+"""
+
+from isnad.integrations.tenuo.attestation import (
+    CHAIN_GRADE_PLAIN,
+    GRADE_ORDER,
+    GradeAttestation,
+    ed25519_public_bytes,
+    ed25519_public_key_from_bytes,
+    ed25519_signing_key,
+    mint_grade_attestation,
+    plain_grade,
+    value_hash,
+    verify_grade_attestation,
+)
+from isnad.integrations.tenuo.constraint import IsnadGradeConstraint, attest
+
+__all__ = [
+    "CHAIN_GRADE_PLAIN",
+    "GRADE_ORDER",
+    "GradeAttestation",
+    "IsnadGradeConstraint",
+    "attest",
+    "ed25519_public_bytes",
+    "ed25519_public_key_from_bytes",
+    "ed25519_signing_key",
+    "mint_grade_attestation",
+    "plain_grade",
+    "value_hash",
+    "verify_grade_attestation",
+]
