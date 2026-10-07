@@ -6,7 +6,7 @@ authors:
     given-names: Ali Zahid
     orcid: "https://orcid.org/0009-0003-7875-4590"
     email: contact@isnadhq.com
-doi: 10.5281/zenodo.21216873
+doi: 10.5281/zenodo.23201516
 identifiers:
   - type: doi
     value: 10.5281/zenodo.21211290
@@ -15,7 +15,7 @@ identifiers:
     value: 10.48550/arXiv.2607.24117
     description: Paper (arXiv)
   - type: doi
-    value: 10.5281/zenodo.21216873
+    value: 10.5281/zenodo.23201516
     description: Software (Zenodo)
   - type: url
     value: "https://arxiv.org/abs/2607.24117"
@@ -26,10 +26,10 @@ identifiers:
   - type: url
     value: "https://huggingface.co/datasets/alizahidraja/isnad-bench"
     description: ISNAD-Bench dataset (Hugging Face)
-url: "https://doi.org/10.5281/zenodo.21216873"
+url: "https://doi.org/10.5281/zenodo.23201516"
 repository-code: "https://github.com/alizahidraja/isnad"
-version: "3.1.0"
-date-released: "2026-10-06"
+version: "3.1.1"
+date-released: "2026-10-07"
 year: 2026
 license: Apache-2.0
 type: software
