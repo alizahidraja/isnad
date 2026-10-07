@@ -175,7 +175,7 @@ def analyse(db_path: str) -> dict[str, object]:
     isnad = _kappas([verdict[s] for s in common], [preds[s] for s in common])
 
     return {
-        "scope": "no-gap-no-rank-12 chains (max_rank < 12), verdicts the keyword classifier can read",
+        "scope": "no-gap, no-rank-12 chains (max_rank < 12), keyword-readable verdicts",
         "n_chains": len(sanads),
         "n_classified": len(order),
         "classifier_vs_matn_no": {
