@@ -38,7 +38,7 @@ tamper-detecting record for governance review.
 | --- | --- | --- | --- | --- |
 | Grades the **chain** (who handled the claim) | ✅ | ❌ | ❌ | ⚠️ |
 | Grades the **transmitters** (living rijāl registry) | ✅ | ❌ | ❌ | ❌ |
-| Tamper-evident audit record (SHA-256 / Merkle / signatures) | ✅ | ⚠️ | ❌ | ❌ |
+| Tamper-detecting audit record (SHA-256 / Merkle / signatures) | ✅ | ⚠️ | ❌ | ❌ |
 | Evidence artifacts, not conformity | ✅ | ❌ | ❌ | ❌ |
 | Refuses numeric confidence (no over-claiming) | ✅ | ⚠️ | ❌ | ✅ |
 | Reproducible benchmark (κ = 0.87 on 575k chains) | ✅ | ❌ | ❌ | ❌ |

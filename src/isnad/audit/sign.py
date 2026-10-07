@@ -45,7 +45,7 @@ def verify_detached(record: AuditRecord, verifier: Verifier) -> bool:
     """Verify the stored detached signature against the canonical payload.
 
     Returns False when there is no signature (a self-hashed record is not
-    tamper-evident against a forger).
+    tamper-detecting against a forger).
     """
     if not record.integrity.detached_signature:
         return False

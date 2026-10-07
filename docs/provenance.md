@@ -26,7 +26,7 @@ ISNAD deliberately refuses to emit a `0.87 confidence`. It emits an **ordinal gr
 (`reliable → acceptable → weak → rejected → ungraded`) plus the **evidence that produced
 it**. A number would invite over-trust; the evidence invites review.
 
-## Tamper-evident records
+## Tamper-detecting records
 
 Every judgment can be exported as an `AuditRecord` with:
 
@@ -45,6 +45,6 @@ isnad verify-merkle --log batch.jsonl   # replay a Merkle batch log
 isnad verify-chain --chain chain.jsonl  # replay a hash chain log
 ```
 
-> **Tamper-evident, not tamper-proof.** ISNAD records *evidence of tampering*, it does
+> **Tamper-detecting, not tamper-proof.** ISNAD records *evidence of tampering*, it does
 > not *prevent* it. For an append-only transparency log you host yourself, pair ISNAD with
 > Rekor / Sigstore — see [trace-schema](trace-schema.md).

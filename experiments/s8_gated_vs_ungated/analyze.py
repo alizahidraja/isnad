@@ -59,7 +59,7 @@ def summarize(results: dict) -> dict:
 
 
 def primary_comparison(results: dict) -> dict:
-    """Primary preregistered comparison at B=10%."""
+    """Primary pre-committed comparison at B=10%."""
     isnad_entries = [
         e for e in results.values() if e["condition"] == "isnad" and e["budget"] == 0.10
     ]
@@ -105,7 +105,7 @@ def generate_report(results: dict) -> str:
         "# §8 Validation Experiment — Results",
         "",
         "**Date:** 2026-07-06",
-        "**Analysis Plan:** ANALYSIS_PLAN.md (preregistered before results)",
+        "**Analysis Plan:** ANALYSIS_PLAN.md (pre-committed before results)",
         "",
         "## Primary Result: ISNAD-gated vs. Confidence-gated at B=10%",
         "",

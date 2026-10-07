@@ -15,7 +15,7 @@ hallucination labels). Sample: stratified by model, seed 0.
 | Threshold | Cohen's κ | Accuracy |
 |---|---|---|
 | 0.3 (best) | 0.215 | 59.7% |
-| 0.5 (preregistered) | 0.099 | 51.3% |
+| 0.5 (pre-committed) | 0.099 | 51.3% |
 
 **Verdict:** too weak — semantic similarity is not entailment, and long sources get truncated.
 

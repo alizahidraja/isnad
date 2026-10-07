@@ -64,7 +64,7 @@ how much to trust the result — and can export the whole judgment as a
 tamper-detecting audit record for governance review.
 
 The framework adapts **hadith transmission science** — one of history's most
-rigorous epistemologies, refined over twelve centuries — into a Python library.
+rigorous epistemologies, refined over fourteen centuries — into a Python library.
 Every claim carries its complete chain of transmitters (isnād); each transmitter
 is graded in a living registry (rijāl); chains are capped by their weakest link;
 content is criticized independently of transmission; and the two combine in a
@@ -218,7 +218,7 @@ The honesty box is the point: what's proven, what's measured, and what's open.
 | **jarḥ–taʿdīl discovery** | ⚠️ Partial | Finds injected weak narrators; good narrators need seed grades |
 | **Bayesian grading** | ✅ Default | Beta posterior per (narrator, role, domain); `ISNAD_POLICY` env override |
 | **Confidence-gating** | ❌ Useless | Model self-confidence is uncorrelated with defects — stated, not hidden |
-| **Tamper-evident audit** | ✅ Implemented | Self-hash + detached signatures + Merkle log; tail-truncation and forger limits disclosed |
+| **Tamper-detecting audit** | ✅ Implemented | Self-hash + detached signatures + Merkle log; tail-truncation and forger limits disclosed |
 | **Period-sliced grades** | ✅ Implemented | `get_grade_as_of()` — the ikhtilāṭ (decline) remedy, #43 |
 | **Integrity ladder + recoverability** | ✅ Implemented | Integrity strikes are permanent; precision-driven REJECTED is recoverable (#30, #40) |
 
@@ -509,7 +509,7 @@ Built in public — collaborators welcome. The on-ramp:
 ## About
 
 Built by [Ali Zahid Raja](https://alizahidraja.com) · ORCID [0009-0003-7875-4590](https://orcid.org/0009-0003-7875-4590).
-The rigor belongs to twelve centuries of muḥaddithūn; the transfer to AI systems
+The rigor belongs to fourteen centuries of muḥaddithūn; the transfer to AI systems
 is the contribution claimed here.
 
 **License:** Code — Apache 2.0 · Paper & docs — CC BY 4.0

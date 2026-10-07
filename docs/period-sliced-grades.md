@@ -73,7 +73,7 @@ they compose with the rest of ISNAD's machinery:
 - a **dated integrity strike** lets an operator quarantine a payload era
   without re-litigating the genuine record.
 
-The tradition that spent twelve centuries refining "how much should I trust
+The tradition that spent fourteen centuries refining "how much should I trust
 this report and the hands it passed through" had already solved the problem
 that bit the Linux supply chain in 2024. This is that solution, in a library.
 

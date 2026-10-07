@@ -2,7 +2,7 @@
 
 No API keys, no LangChain runtime required: the "LLM" is a deterministic stub.
 Builds a two-link chain (a source and a synthesis model), stores the claim,
-exports a tamper-evident AuditRecord, then verifies its integrity.
+exports a tamper-detecting AuditRecord, then verifies its integrity.
 
 Run:  python examples/audit_export_langchain.py
 """

@@ -66,7 +66,7 @@ bug.
 
 ## Method & limits
 
-- **ISNAD-Bench** is preregistered (`bench/docs/mapping.md`) — the Arabic-grade
+- **ISNAD-Bench** is pre-committed (`bench/docs/mapping.md`) — the Arabic-grade
   → ISNAD mapping was committed before any number was computed.
 - The corpus is gitignored and pinned by SHA-256; `bench/README.md` documents
   the audit discipline.

@@ -13,7 +13,7 @@ and test whether a φ-discounted corroboration policy cuts false upgrades.
 - φ = phi coefficient on binary error vectors; Kim same-wrong reported separately.
 - Kish `n_eff = k/(1+(k−1)φ̄)` + cluster-bootstrap 95% CI (resample by claim).
 - Retention: a model is kept only if it covers ≥90% of facts AND its error rate is in [1%, 99%].
-- Primary endpoint — **AMENDED (post-audit)**: the pre-registered "matched coverage" endpoint is
+- Primary endpoint — **AMENDED (post-audit)**: the pre-committed "matched coverage" endpoint is
   not applicable (see Experiment B/C below); the amended primary endpoint is the false-upgrade gap
   at the 2-vote corroboration bar, reported as a step function.
 
@@ -120,7 +120,7 @@ At the standard corroboration bar (≥2 independent routes):
 **The bar is unreachable under the discount.** The maximum corroboration strength is
 `n_eff = 1.626 < 2`, so the discounted policy can never accumulate 2 effective votes.
 Coverage is therefore a **step function** (full at threshold 1, zero at threshold ≥2) —
-not a tunable trade-off — so the pre-registered "matched coverage" comparison does not
+not a tunable trade-off — so the pre-committed "matched coverage" comparison does not
 apply. The honest statement is the step itself:
 
 > The naive policy's 21.2% false-upgrade rate is *entirely* "corroboration" that never

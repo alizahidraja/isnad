@@ -29,7 +29,7 @@ The **hallucination rate** (ground-truth oracle) grows with chain depth. The
   cost; they are a separate keyed phase. Cells that were not actually run are
   rendered "not run", never fabricated.
 - Single seed dataset (12 facts). The `offline-drift` injector is a deterministic
-  stand-in for a real model, preregistered at corruption_probability = 0.25.
+  stand-in for a real model, pre-committed at corruption_probability = 0.25.
 - The metric does **not** claim general hallucination-detection superiority.
 
 Reproduce: `uv run python -m experiments.model_drift.run --seed 0`.

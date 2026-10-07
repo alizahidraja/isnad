@@ -6,7 +6,7 @@ Create Date: 2026-09-11
 
 Persist the canonical AuditRecord payload (non-integrity fields) so the stored
 audit_record_hash and audit_signature can be recomputed and verified on read —
-the serving-path "tamper-evident" claim was previously unverifiable because the
+the serving-path "tamper-detecting" claim was previously unverifiable because the
 record that was hashed and signed was discarded.
 """
 

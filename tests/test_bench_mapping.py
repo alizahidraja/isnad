@@ -1,4 +1,4 @@
-"""Tests for bench.mapping — the preregistered rank→grade and hukum→grade rules."""
+"""Tests for bench.mapping — the pre-committed rank→grade and hukum→grade rules."""
 
 from __future__ import annotations
 
