@@ -46,8 +46,8 @@ def build() -> dict[str, object]:
     fc = tor["full_corpus_in_sample_modal"]
     n["bench_3way_kappa"] = fc["isnad_strict"]["kappa_3way"]  # 0.8714
     n["bench_5way_kappa"] = fc["isnad_strict"]["kappa_5way"]  # 0.8569 (5 classes)
-    n["bench_linear_weighted_kappa"] = br["kappa_linear_weighted"]  # 0.8873
-    n["bench_agreement"] = br["agreement"]  # 0.9032
+    n["bench_linear_weighted_kappa"] = _round(br["kappa_linear_weighted"])  # 0.8873
+    n["bench_agreement"] = _round(br["agreement"])  # 0.9032
     n["bench_lookup_5way_kappa"] = fc["lookup_oracle"]["kappa_5way"]  # 0.8434
     n["bench_lookup_3way_kappa"] = fc["lookup_oracle"]["kappa_3way"]  # 0.8713
     n["bench_oracle_agreement"] = fc["isnad_vs_oracle_agreement"]  # 0.9886

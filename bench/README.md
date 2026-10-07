@@ -10,7 +10,7 @@ library but touches nothing in it. The 1.6 GB dataset lives in `data/`
 ## What it measures
 
 ISNAD grades *chains* (isnād), not hadith. The dataset (emadjumaah/hadith-kg) provides
-~577,000 graded chains — a rule-based convention derived from Ibn Hajar's 12 narrator
+~575,000 graded chains (575,060) — a rule-based convention derived from Ibn Hajar's 12 narrator
 tiers — with named narrators and named critics. This
 benchmark asks a single, falsifiable question:
 
