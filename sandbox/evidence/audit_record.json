@@ -1,0 +1,95 @@
+{
+  "record_id": "00000000-0000-4000-8000-00000000c0de",
+  "record_version": "1.0",
+  "generated_at": "2026-10-08T00:00:00+00:00",
+  "claim_id": "AC-2041-eligibility",
+  "claim_text": "Applicant AC-2041 is eligible for a €40,000 term loan.",
+  "final_grade": "hasan",
+  "grading_strategy": {
+    "name": "RefinedWeakestLink",
+    "version": "1",
+    "parameters": {}
+  },
+  "chain": [
+    {
+      "narrator_id": "source:credit-bureau",
+      "narrator_type": "source",
+      "grade": "reliable",
+      "grade_rationale": "The credit-bureau pull — the authoritative income/debt source.",
+      "model_identifier": null,
+      "model_version": null,
+      "invocation_timestamp": null,
+      "input_hash": null,
+      "output_hash": null,
+      "upstream_ids": []
+    },
+    {
+      "narrator_id": "retriever:rag-vectorstore",
+      "narrator_type": "tool",
+      "grade": "acceptable",
+      "grade_rationale": "The RAG step that surfaced the bureau record and the eligibility policy.",
+      "model_identifier": null,
+      "model_version": null,
+      "invocation_timestamp": null,
+      "input_hash": null,
+      "output_hash": null,
+      "upstream_ids": []
+    },
+    {
+      "narrator_id": "model:eligibility-llm",
+      "narrator_type": "model",
+      "grade": "acceptable",
+      "grade_rationale": "The LLM that produced the €40,000 eligibility figure.",
+      "model_identifier": null,
+      "model_version": null,
+      "invocation_timestamp": null,
+      "input_hash": null,
+      "output_hash": null,
+      "upstream_ids": []
+    },
+    {
+      "narrator_id": "reviewer:compliance-human",
+      "narrator_type": "human",
+      "grade": "reliable",
+      "grade_rationale": "The human compliance reviewer who signed off.",
+      "model_identifier": null,
+      "model_version": null,
+      "invocation_timestamp": null,
+      "input_hash": null,
+      "output_hash": null,
+      "upstream_ids": []
+    }
+  ],
+  "weakest_link": {
+    "narrator_id": "retriever:rag-vectorstore",
+    "grade": "acceptable",
+    "why": "lowest-graded hand caps the whole chain"
+  },
+  "source_documents": [
+    {
+      "uri": "https://example.com/bureau/AC-2041",
+      "retrieved_at": "2026-10-08T00:00:00+00:00",
+      "content_hash": null,
+      "licence": "proprietary"
+    }
+  ],
+  "human_oversight": [
+    {
+      "actor_ref": "reviewer:compliance-human",
+      "action": "approved",
+      "timestamp": "2026-10-08T00:00:00+00:00",
+      "note": "reviewed the bureau record and the €40,000 figure"
+    }
+  ],
+  "environment": {
+    "isnad_version": "3.1.4",
+    "python_version": "3.13",
+    "platform": "Darwin"
+  },
+  "integrity": {
+    "record_hash": "c430748e5173a962140fb545898591b6d43cac11aa58628e4c06b9d82cba71a3",
+    "hash_algorithm": "SHA-256",
+    "canonicalisation": "RFC8785",
+    "detached_signature": "30b2c80d364b6a4b0eccb698c06ee19fd8dcc937a541c1e3857853e2d6403325"
+  }
+}
