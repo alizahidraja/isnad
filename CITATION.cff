@@ -28,8 +28,8 @@ identifiers:
     description: ISNAD-Bench dataset (Hugging Face)
 url: "https://doi.org/10.5281/zenodo.23201516"
 repository-code: "https://github.com/alizahidraja/isnad"
-version: "3.1.3"
-date-released: "2026-10-07"
+version: "3.1.4"
+date-released: "2026-10-08"
 year: 2026
 license: Apache-2.0
 type: software

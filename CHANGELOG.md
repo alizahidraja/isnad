@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.4] — 2026-10-08
+
+### Added
+
+- **Local try-before-you-buy sandbox**: `docker compose up` + one demo command + a pre-loaded signed evidence folder. `examples/sandbox_demo.py` runs a loan-eligibility RAG chain (credit bureau → retriever → model → reviewer) and emits a graded `Verdict` + a signed `AuditRecord`. `sandbox/evidence/` ships one committed, re-verifiable audit record; `sandbox/README.md` is a 5-minute walkthrough.
+
+
 ## [3.1.3] — 2026-10-07
 
 ### Fixed (honesty)

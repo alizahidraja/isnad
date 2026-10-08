@@ -1,0 +1,36 @@
+{
+  "claim_id": "AC-2041-eligibility",
+  "claim_text": "Applicant AC-2041 is eligible for a €40,000 term loan.",
+  "domain": "lending",
+  "final_grade": "hasan",
+  "chain": [
+    {
+      "narrator_id": "source:credit-bureau",
+      "narrator_type": "source",
+      "grade": "reliable",
+      "transform_type": "pass_through",
+      "rationale": "The credit-bureau pull — the authoritative income/debt source."
+    },
+    {
+      "narrator_id": "retriever:rag-vectorstore",
+      "narrator_type": "tool",
+      "grade": "acceptable",
+      "transform_type": "pass_through",
+      "rationale": "The RAG step that surfaced the bureau record and the eligibility policy."
+    },
+    {
+      "narrator_id": "model:eligibility-llm",
+      "narrator_type": "model",
+      "grade": "acceptable",
+      "transform_type": "generative",
+      "rationale": "The LLM that produced the €40,000 eligibility figure."
+    },
+    {
+      "narrator_id": "reviewer:compliance-human",
+      "narrator_type": "human",
+      "grade": "reliable",
+      "transform_type": "pass_through",
+      "rationale": "The human compliance reviewer who signed off."
+    }
+  ]
+}
