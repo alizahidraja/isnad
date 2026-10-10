@@ -6,7 +6,7 @@ authors:
     given-names: Ali Zahid
     orcid: "https://orcid.org/0009-0003-7875-4590"
     email: contact@isnadhq.com
-doi: 10.5281/zenodo.23201516
+doi: 10.5281/zenodo.21216872
 identifiers:
   - type: doi
     value: 10.5281/zenodo.21211290
@@ -15,7 +15,7 @@ identifiers:
     value: 10.48550/arXiv.2607.24117
     description: Paper (arXiv)
   - type: doi
-    value: 10.5281/zenodo.23201516
+    value: 10.5281/zenodo.21216872
     description: Software (Zenodo)
   - type: url
     value: "https://arxiv.org/abs/2607.24117"
@@ -26,10 +26,10 @@ identifiers:
   - type: url
     value: "https://huggingface.co/datasets/alizahidraja/isnad-bench"
     description: ISNAD-Bench dataset (Hugging Face)
-url: "https://doi.org/10.5281/zenodo.23201516"
+url: "https://doi.org/10.5281/zenodo.21216872"
 repository-code: "https://github.com/alizahidraja/isnad"
-version: "3.1.5"
-date-released: "2026-10-08"
+version: "3.1.6"
+date-released: "2026-10-10"
 year: 2026
 license: Apache-2.0
 type: software
@@ -50,10 +50,11 @@ abstract: >
   methodology — graded narrator registries, weakest-link chain evaluation,
   independent corroboration, and dual chain+content criticism — to AI pipelines.
   Implements the architecture described in "Grading the Narrators" (Raja, 2026,
-  arXiv:2607.24117).  Validated on 707 cross-source claim pairs across Wikipedia
-  and physics textbook corpora (100% corroboration rate, 8/8 Wikipedia + 9/9
-  physics negative controls), and on 575,060 hadith chains graded by a rule-based convention
-  (Cohen's κ = 0.871 (3-way), conforming to a rule-based chain-verdict convention derived from Ibn Hajar's 12 narrator tiers; narrator-grade agreement 0.331 (context, not a ceiling)).
+  arXiv:2607.24117).  Validated on 575,060 hadith chains graded against a rule-based
+  chain-verdict convention derived from Ibn Hajar's 12 narrator tiers (Cohen's κ = 0.871
+  3-way / 0.8667 5-way = conformance, not scholars' agreement; narrator-grade agreement
+  0.331, context not a ceiling).  Measures error correlation across LLM transmitters
+  (φ̄ = 0.5599, Kish n_eff = 1.626) and ships an opt-in lineage-aware Kish corroboration discount.
 preferred-citation:
   authors:
     - family-names: Raja
