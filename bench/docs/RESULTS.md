@@ -103,8 +103,11 @@ Unanimous agreement: 36.8% of narrators with ≥2 critics.
 
 The honest reading: the chain verdicts are a **rule-based convention** (the
 weakest tier predicts the verdict for 88–97% of no-gap, no-rank-12 chains, and the keyword
-classifier agrees with the source's structured code at 99.92% — ruling out
-classifier error). ISNAD's weakest-link
+classifier agrees with the source's structured code at 89.79% — the residual
+10.2% is dominated by one bucket, matn_no=mawdu vs classifier=ḍaʿīf-jiddan
+(51,160 of 505,230 chains): the source's 6-code matn_no collapses mawḍūʿ and
+ḍaʿīf jiddan, while the classifier splits them, so this is a taxonomy-granularity
+mismatch, not classifier error). ISNAD's weakest-link
 mapping **conforms** to that convention at κ = 0.87 — it is not "better than the
 scholars", and it is not agreement with independent per-chain scholar judgment.
 The 0.331/0.450 figures are narrator-grade agreement, reported as context.

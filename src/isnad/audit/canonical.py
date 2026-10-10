@@ -55,3 +55,16 @@ def sha256_hex(text: str) -> str:
 def canonical_hash(obj: object) -> str:
     """SHA-256 over the canonical JSON of ``obj`` (the audit record hash)."""
     return sha256_hex(canonical_json(obj))
+
+
+def sig_commitment_hex(record_hash: str, detached_signature: str | None) -> str | None:
+    """SHA-256 commitment binding a record hash to its detached signature.
+
+    Returns ``None`` when the record is unsigned. Binding this into the
+    append-only log / Merkle leaf means a forger who rewrites a record and
+    recomputes its self-hash cannot keep the old signature commitment valid:
+    the recomputed commitment will differ from the one committed to the log.
+    """
+    if not detached_signature:
+        return None
+    return sha256_hex(f"{record_hash}\x00{detached_signature}")

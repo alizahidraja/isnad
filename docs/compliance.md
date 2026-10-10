@@ -4,6 +4,13 @@ The enterprise question isn't "does your framework grade AI claims." It's "do yo
 the records my auditor will ask for." ISNAD produces **tamper-detecting audit records** —
 a SHA-256 hash per graded claim, per link — that map onto the frameworks below.
 
+> **Erasure note.** The per-claim SHA-256 is a *deduplication* identifier, not
+> erasure: a plain SHA-256 of low-entropy text (names, dates, small IDs) is invertible
+> by brute force, i.e. *pseudonymization* (GDPR Art 4(5)), not erasure (Art 17). For an
+> irreversible commitment, use `isnad.audit.erasure.commit_claim_text(claim, secret)`
+> (HMAC-SHA256); destroying the per-record secret makes the stored commitment
+> irreversible.
+
 ## What does ISNAD record, and why is it tamper-detecting?
 
 Every claim gets a typed transmission chain (who → who), a narrator-reliability grade

@@ -113,6 +113,11 @@ def analyse(db_path: str) -> dict[str, object]:
     # 1. keyword classifier vs the source's structured code
     coded = [s for s in order if sanads[s][2] in MATN_NO]
     agree = sum(verdict[s] == MATN_NO[sanads[s][2]] for s in coded)
+    disagreement: collections.Counter[tuple[str, str]] = collections.Counter()
+    for s in coded:
+        expected = MATN_NO[sanads[s][2]]
+        if verdict[s] != expected:
+            disagreement[(expected, verdict[s])] += 1
 
     # 2. purity per tier, by classifier and by structured code
     by_cls: dict[int, collections.Counter[str]] = collections.defaultdict(collections.Counter)
@@ -181,6 +186,10 @@ def analyse(db_path: str) -> dict[str, object]:
         "classifier_vs_matn_no": {
             "n": len(coded),
             "agreement": round(agree / len(coded), 4) if coded else None,
+            "disagreement_buckets": [
+                {"matn_no": a, "classifier": b, "n": n}
+                for (a, b), n in sorted(disagreement.items(), key=lambda kv: -kv[1])
+            ],
         },
         "tiers": tiers,
         "residual": {"n_residual": n_group["residual"], "n_rest": n_group["rest"]},

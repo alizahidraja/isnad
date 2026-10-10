@@ -16,7 +16,12 @@ from isnad.audit.chainlog import (
     append_record,
     verify_chain,
 )
-from isnad.audit.exporter import build_audit_record, build_audit_record_from_nodes
+from isnad.audit.erasure import commit_claim_text
+from isnad.audit.exporter import (
+    attach_governance_mapping,
+    build_audit_record,
+    build_audit_record_from_nodes,
+)
 from isnad.audit.merkle_log import (
     BatchBreak,
     InclusionProof,
@@ -57,6 +62,8 @@ from isnad.audit.sign import (
 
 __all__ = [
     "AuditRecord",
+    "attach_governance_mapping",
+    "commit_claim_text",
     "BatchBreak",
     "ChainBreak",
     "ChainEntry",

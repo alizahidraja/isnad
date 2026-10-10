@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from isnad.audit._lock import exclusive_lock
-from isnad.audit.canonical import MalformedLogError
+from isnad.audit.canonical import MalformedLogError, sig_commitment_hex
 
 
 @dataclass
@@ -23,6 +23,7 @@ class ChainEntry:
     record_id: str
     record_hash: str
     prev_hash: str | None
+    sig_commitment: str | None = None
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -30,6 +31,7 @@ class ChainEntry:
             "record_id": self.record_id,
             "record_hash": self.record_hash,
             "prev_hash": self.prev_hash,
+            "sig_commitment": self.sig_commitment,
         }
 
 
@@ -60,6 +62,7 @@ def _read_chain(path: Path) -> list[ChainEntry]:
                     record_id=str(d["record_id"]),
                     record_hash=str(d["record_hash"]),
                     prev_hash=d.get("prev_hash"),
+                    sig_commitment=d.get("sig_commitment"),
                 )
             )
         except KeyError as exc:
@@ -69,7 +72,12 @@ def _read_chain(path: Path) -> list[ChainEntry]:
     return entries
 
 
-def append_record(chain_path: str | Path, record_id: str, record_hash: str) -> None:
+def append_record(
+    chain_path: str | Path,
+    record_id: str,
+    record_hash: str,
+    sig_commitment: str | None = None,
+) -> None:
     """Append a record hash to the chain, linking it to the previous entry.
 
     The read-modify-append is performed under an exclusive advisory lock
@@ -83,7 +91,11 @@ def append_record(chain_path: str | Path, record_id: str, record_hash: str) -> N
         entries = _read_chain(path)
         prev = entries[-1].record_hash if entries else None
         entry = ChainEntry(
-            index=len(entries), record_id=record_id, record_hash=record_hash, prev_hash=prev
+            index=len(entries),
+            record_id=record_id,
+            record_hash=record_hash,
+            prev_hash=prev,
+            sig_commitment=sig_commitment,
         )
         with path.open("a") as f:
             f.write(json.dumps(entry.to_dict(), separators=(",", ":")) + "\n")
@@ -113,3 +125,16 @@ def verify_chain(chain_path: str | Path) -> ChainBreak | None:
                 f"entry {i} prev_hash {entry.prev_hash!r} != previous record_hash {expected!r}",
             )
     return None
+
+
+def verify_signature_commitment(
+    sig_commitment: str | None, record_hash: str, detached_signature: str | None
+) -> bool:
+    """True when ``sig_commitment`` matches the record's hash + detached signature.
+
+    A signed record's commitment is computed at append time from the *then-current*
+    record hash + signature. If the record is later forged (rewritten with a
+    recomputed self-hash but the old signature), the recomputed commitment
+    differs and this returns False.
+    """
+    return sig_commitment == sig_commitment_hex(record_hash, detached_signature)

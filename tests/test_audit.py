@@ -97,6 +97,7 @@ class TestAuditRecord:
             "weakest_link",
             "source_documents",
             "human_oversight",
+            "governance",
             "environment",
             "integrity",
         }
