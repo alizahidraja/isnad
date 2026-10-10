@@ -1,10 +1,62 @@
 {
-  "scope": "gap-free chains (max_rank < 12), verdicts the keyword classifier can read",
+  "scope": "no-gap, no-rank-12 chains (max_rank < 12), keyword-readable verdicts",
   "n_chains": 505626,
   "n_classified": 505230,
   "classifier_vs_matn_no": {
     "n": 505230,
-    "agreement": 0.8979
+    "agreement": 0.8979,
+    "disagreement_buckets": [
+      {
+        "matn_no": "mawdu",
+        "classifier": "daif_jiddan",
+        "n": 51160
+      },
+      {
+        "matn_no": "hasan",
+        "classifier": "daif",
+        "n": 278
+      },
+      {
+        "matn_no": "mawdu",
+        "classifier": "daif",
+        "n": 59
+      },
+      {
+        "matn_no": "daif",
+        "classifier": "daif_jiddan",
+        "n": 43
+      },
+      {
+        "matn_no": "mawdu",
+        "classifier": "hasan",
+        "n": 9
+      },
+      {
+        "matn_no": "mawdu",
+        "classifier": "sahih",
+        "n": 7
+      },
+      {
+        "matn_no": "sahih",
+        "classifier": "hasan",
+        "n": 4
+      },
+      {
+        "matn_no": "sahih",
+        "classifier": "daif_jiddan",
+        "n": 3
+      },
+      {
+        "matn_no": "sahih",
+        "classifier": "daif",
+        "n": 3
+      },
+      {
+        "matn_no": "hasan",
+        "classifier": "daif_jiddan",
+        "n": 2
+      }
+    ]
   },
   "tiers": [
     {

@@ -42,7 +42,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 from isnad.audit._lock import exclusive_lock
-from isnad.audit.canonical import MalformedLogError, sha256_hex
+from isnad.audit.canonical import MalformedLogError, sha256_hex, sig_commitment_hex
 
 if TYPE_CHECKING:
     from isnad.audit.schema import AuditRecord
@@ -55,9 +55,9 @@ _NODE_PREFIX = "isnad-merkle-node:"
 _EMPTY = sha256_hex("isnad-merkle-empty")
 
 
-def _leaf_hash(record_id: str, record_hash: str) -> str:
-    """Hash a single leaf, binding record_id to record_hash."""
-    return sha256_hex(f"{_LEAF_PREFIX}{record_id}\x00{record_hash}")
+def _leaf_hash(record_id: str, record_hash: str, sig_commitment: str | None = None) -> str:
+    """Hash a leaf, binding record_id, record_hash, and (when signed) the signature commitment."""
+    return sha256_hex(f"{_LEAF_PREFIX}{record_id}\x00{record_hash}\x00{sig_commitment or ''}")
 
 
 def _node_hash(left: str, right: str) -> str:
@@ -91,25 +91,25 @@ def _merkle_root(leaf_hashes: list[str]) -> str:
 class MerkleBatch:
     """A sealed batch: an ordered leaf set plus its committed Merkle root.
 
-    ``leaves`` is the ordered list of ``(record_id, record_hash)`` pairs.
+    ``leaves`` is the ordered list of ``(record_id, record_hash, sig_commitment)`` triples.
     ``root`` is recomputed from ``leaves`` on demand by verification, so
     tampering with ``leaves`` after sealing is detectable. ``prev_root`` links
     this batch to the previous one in a batch chain (None for the first batch).
     """
 
-    leaves: list[tuple[str, str]]
+    leaves: list[tuple[str, str, str | None]]
     root: str
     prev_root: str | None = None
 
 
-def build_batch(leaves: list[tuple[str, str]]) -> MerkleBatch:
+def build_batch(leaves: list[tuple[str, str, str | None]]) -> MerkleBatch:
     """Build an unsealed batch (no ``prev_root`` yet) from ordered leaves.
 
-    ``leaves`` is a list of ``(record_id, record_hash)``. The order is part of
-    the commitment; the caller (the seal step) fixes it. Leaves themselves carry
-    no back-reference, so they can be produced in parallel and ordered here.
+    ``leaves`` is a list of ``(record_id, record_hash, sig_commitment)``. The order
+    is part of the commitment; the caller (the seal step) fixes it. Leaves themselves
+    carry no back-reference, so they can be produced in parallel and ordered here.
     """
-    leaf_hashes = [_leaf_hash(rid, rhash) for rid, rhash in leaves]
+    leaf_hashes = [_leaf_hash(rid, rhash, sc) for rid, rhash, sc in leaves]
     return MerkleBatch(leaves=list(leaves), root=_merkle_root(leaf_hashes))
 
 
@@ -124,7 +124,7 @@ def seal_batches(batches: list[MerkleBatch]) -> list[MerkleBatch]:
     sealed: list[MerkleBatch] = []
     prev: str | None = None
     for b in batches:
-        root = _merkle_root([_leaf_hash(rid, rhash) for rid, rhash in b.leaves])
+        root = _merkle_root([_leaf_hash(rid, rhash, sc) for rid, rhash, sc in b.leaves])
         sealed.append(MerkleBatch(leaves=list(b.leaves), root=root, prev_root=prev))
         prev = root
     return sealed
@@ -150,7 +150,7 @@ def verify_batches(batches: list[MerkleBatch]) -> BatchBreak | None:
     """
     prev: str | None = None
     for i, b in enumerate(batches):
-        recomputed = _merkle_root([_leaf_hash(rid, rhash) for rid, rhash in b.leaves])
+        recomputed = _merkle_root([_leaf_hash(rid, rhash, sc) for rid, rhash, sc in b.leaves])
         if recomputed != b.root:
             return BatchBreak(i, f"batch {i} root {b.root!r} != recomputed {recomputed!r}")
         if i == 0:
@@ -175,6 +175,7 @@ class InclusionProof:
     record_hash: str
     audit_path: list[tuple[str, str]]  # (sibling_hash, "left" | "right")
     leaf_index: int
+    sig_commitment: str | None = None
 
 
 def prove_inclusion(batch: MerkleBatch, record_id: str) -> InclusionProof | None:
@@ -182,12 +183,13 @@ def prove_inclusion(batch: MerkleBatch, record_id: str) -> InclusionProof | None
 
     If ``record_id`` appears more than once, the first occurrence is proven.
     """
-    index = next((i for i, (rid, _) in enumerate(batch.leaves) if rid == record_id), None)
+    index = next((i for i, (rid, _, _) in enumerate(batch.leaves) if rid == record_id), None)
     if index is None:
         return None
     record_hash = batch.leaves[index][1]
+    sig_commitment = batch.leaves[index][2]
 
-    level = [_leaf_hash(rid, rh) for rid, rh in batch.leaves]
+    level = [_leaf_hash(rid, rh, sc) for rid, rh, sc in batch.leaves]
     idx = index
     path: list[tuple[str, str]] = []
     while len(level) > 1:
@@ -206,6 +208,7 @@ def prove_inclusion(batch: MerkleBatch, record_id: str) -> InclusionProof | None
     return InclusionProof(
         record_id=record_id,
         record_hash=record_hash,
+        sig_commitment=sig_commitment,
         audit_path=path,
         leaf_index=index,
     )
@@ -213,7 +216,7 @@ def prove_inclusion(batch: MerkleBatch, record_id: str) -> InclusionProof | None
 
 def verify_inclusion(proof: InclusionProof, root: str) -> bool:
     """Recompute the root from ``proof`` and check it equals ``root``."""
-    node = _leaf_hash(proof.record_id, proof.record_hash)
+    node = _leaf_hash(proof.record_id, proof.record_hash, proof.sig_commitment)
     for sibling, side in proof.audit_path:
         node = _node_hash(sibling, node) if side == "left" else _node_hash(node, sibling)
     return node == root
@@ -224,8 +227,8 @@ def verify_inclusion(proof: InclusionProof, root: str) -> bool:
 # ---------------------------------------------------------------------------
 
 
-def record_to_leaf(record: AuditRecord) -> tuple[str, str]:
-    """Turn an ``AuditRecord`` into a Merkle leaf ``(record_id, record_hash)``.
+def record_to_leaf(record: AuditRecord) -> tuple[str, str, str | None]:
+    """Turn an ``AuditRecord`` into a Merkle leaf ``(record_id, record_hash, sig_commitment)``.
 
     Uses the record's own self-integrity hash (``integrity.record_hash``), so a
     leaf commits to the exact record the audit layer already hashes — no new
@@ -237,7 +240,10 @@ def record_to_leaf(record: AuditRecord) -> tuple[str, str]:
     **authorship** — anyone who can rewrite a record can also produce a matching
     leaf. Anchoring authorship (e.g. a signature) is tracked separately in #97.
     """
-    return (record.record_id, record.integrity.record_hash)
+    sig_commitment = sig_commitment_hex(
+        record.integrity.record_hash, record.integrity.detached_signature
+    )
+    return (record.record_id, record.integrity.record_hash, sig_commitment)
 
 
 def write_batch_log(path: str | Path, batches: list[MerkleBatch]) -> None:
@@ -257,7 +263,7 @@ def write_batch_log(path: str | Path, batches: list[MerkleBatch]) -> None:
     lines = []
     for b in batches:
         obj = {
-            "leaves": [[rid, rhash] for rid, rhash in b.leaves],
+            "leaves": [[rid, rhash, sc] for rid, rhash, sc in b.leaves],
             "root": b.root,
             "prev_root": b.prev_root,
         }
@@ -287,7 +293,13 @@ def read_batch_log(path: str | Path) -> list[MerkleBatch]:
         if not isinstance(d, dict):
             raise MalformedLogError(n, f"not a JSON object (got {type(d).__name__})")
         try:
-            leaves = [(str(rid), str(rhash)) for rid, rhash in d["leaves"]]
+            leaves: list[tuple[str, str, str | None]] = []
+            for lf in d["leaves"]:
+                if len(lf) == 2:
+                    leaves.append((str(lf[0]), str(lf[1]), None))
+                else:
+                    sc = lf[2]
+                    leaves.append((str(lf[0]), str(lf[1]), (str(sc) if sc is not None else None)))
             root = str(d["root"])
             prev_root = d.get("prev_root")
         except KeyError as exc:
@@ -328,7 +340,7 @@ class MerkleLog:
     def __init__(self, path: str | Path, batch_size: int = 1000) -> None:
         self.path = Path(path)
         self.batch_size = batch_size
-        self._open: list[tuple[str, str]] = []
+        self._open: list[tuple[str, str, str | None]] = []
         self._last_root: str | None = None
         self._batches_sealed = 0
         self._count = 0
@@ -356,9 +368,9 @@ class MerkleLog:
         obj = {"head": self._last_root, "count": self._count, "batches": self._batches_sealed}
         self.anchor_path.write_text(json.dumps(obj, separators=(",", ":")))
 
-    def append(self, record_id: str, record_hash: str) -> None:
+    def append(self, record_id: str, record_hash: str, sig_commitment: str | None = None) -> None:
         """Add a leaf; auto-seal when the open batch reaches ``batch_size``."""
-        self._open.append((record_id, record_hash))
+        self._open.append((record_id, record_hash, sig_commitment))
         if len(self._open) >= self.batch_size:
             self._seal_open()
 
@@ -394,7 +406,7 @@ class MerkleLog:
             batch = build_batch(self._open)
             sealed = MerkleBatch(leaves=batch.leaves, root=batch.root, prev_root=self._last_root)
             obj = {
-                "leaves": [[rid, rhash] for rid, rhash in sealed.leaves],
+                "leaves": [[rid, rhash, sc] for rid, rhash, sc in sealed.leaves],
                 "root": sealed.root,
                 "prev_root": sealed.prev_root,
             }

@@ -31,9 +31,9 @@ from isnad.audit.merkle_log import (
 )
 
 
-def _leaf(i: int) -> tuple[str, str]:
-    """(record_id, record_hash) for a synthetic record."""
-    return (f"r{i}", f"h{i}" * 8)  # 64-ish char hex-ish string
+def _leaf(i: int) -> tuple[str, str, str | None]:
+    """(record_id, record_hash, sig_commitment) for a synthetic record."""
+    return (f"r{i}", f"h{i}" * 8, None)  # 64-ish char hex-ish string
 
 
 class TestBatchRootCommitsToLeaves:
@@ -44,7 +44,7 @@ class TestBatchRootCommitsToLeaves:
 
     def test_modifying_a_leaf_changes_the_root(self) -> None:
         a = build_batch([_leaf(0), _leaf(1), _leaf(2)])
-        b = build_batch([_leaf(0), ("r1", "tampered" * 8), _leaf(2)])
+        b = build_batch([_leaf(0), ("r1", "tampered" * 8, None), _leaf(2)])
         assert a.root != b.root
 
     def test_reordering_leaves_changes_the_root(self) -> None:
@@ -85,7 +85,7 @@ class TestBatchChainDetectsTamper:
         b1 = build_batch([_leaf(2), _leaf(3)])
         sealed = seal_batches([b0, b1])
         # Tamper with a sealed batch's leaves after sealing.
-        sealed[1].leaves[0] = ("r2", "tampered" * 8)
+        sealed[1].leaves[0] = ("r2", "tampered" * 8, None)
         assert verify_batches(sealed) is not None
 
     def test_reordered_batches_break_chain(self) -> None:
@@ -174,7 +174,7 @@ class TestInclusionProofs:
     def test_every_leaf_has_a_valid_proof(self) -> None:
         leaves = [_leaf(i) for i in range(7)]
         batch = build_batch(leaves)
-        for rid, _ in leaves:
+        for rid, _, _ in leaves:
             proof = prove_inclusion(batch, rid)
             assert proof is not None, rid
             assert verify_inclusion(proof, batch.root) is True, rid
@@ -221,7 +221,7 @@ class TestRecordToLeaf:
             record_id = "rec-1"
             integrity = Integrity(record_hash="abc123" * 8)
 
-        assert record_to_leaf(_Rec()) == ("rec-1", "abc123" * 8)
+        assert record_to_leaf(_Rec()) == ("rec-1", "abc123" * 8, None)
 
     def test_real_audit_record_seals_and_verifies(self) -> None:
         """A real built AuditRecord → leaf → batch → verifies (production path)."""

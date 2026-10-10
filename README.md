@@ -282,7 +282,7 @@ number belongs to the composed critic, **not** to ISNAD's
 chain grading (WHO). The weak bi-encoder
 signal (κ ≈ 0.1) is reported alongside, not hidden. Case study + limits: [`G1_CASE_STUDY.md`](G1_CASE_STUDY.md).
 
-**Live product:** [isnad.islamandai.com](https://isnad.islamandai.com)
+**Home:** [isnadhq.com](https://isnadhq.com)
 
 ## Glossary — the Arabic, in plain English
 

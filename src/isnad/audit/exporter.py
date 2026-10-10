@@ -201,3 +201,25 @@ def _weakest_link(chain: Chain, grades: list[NarratorGrade]) -> WeakestLink:
         grade=grades[idx].value,
         why=f"lowest narrator grade in the chain ({grades[idx].value})",
     )
+
+
+# Field -> article mapping (source: docs/evidence-mapping.md, informational only).
+# This is NOT legal advice and does not assert compliance; counsel maps the
+# record's fields to articles for the specific deployment.
+# Informational only, NOT legal advice (counsel maps fields to articles).
+_GOVERNANCE_MAPPING: list[dict[str, str]] = [
+    {"instrument": "EU AI Act 2024/1689", "article": "Art 12", "note": "record-keeping"},
+    {"instrument": "EU AI Act 2024/1689", "article": "Art 19", "note": "generated logs"},
+    {"instrument": "EU AI Act 2024/1689", "article": "Art 14", "note": "human oversight"},
+]
+
+
+def attach_governance_mapping(record: AuditRecord) -> AuditRecord:
+    """Attach an informational field->article mapping to the record.
+
+    The mapping mirrors docs/evidence-mapping.md (hardcoded here as the
+    source of truth) so the exported record is self-describing. It is a record
+    field, so the canonical record hash commits to it.
+    """
+    record.governance = list(_GOVERNANCE_MAPPING)
+    return record

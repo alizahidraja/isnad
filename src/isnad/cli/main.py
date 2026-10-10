@@ -245,8 +245,14 @@ def _export(argv: list[str]) -> int:
 
     if args.chain_log:
         from isnad.audit import append_record
+        from isnad.audit.canonical import sig_commitment_hex
 
-        append_record(args.chain_log, record.record_id, record.integrity.record_hash)
+        append_record(
+            args.chain_log,
+            record.record_id,
+            record.integrity.record_hash,
+            sig_commitment_hex(record.integrity.record_hash, record.integrity.detached_signature),
+        )
         print(f"appended to chain log {args.chain_log}", file=sys.stderr)
 
     return 0

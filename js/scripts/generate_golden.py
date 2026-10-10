@@ -87,9 +87,9 @@ ed_sig_a = priv.sign(canon_a.encode()).hex()
 
 # --- Merkle batch over the three records ---
 leaves = [
-    (ra.record_id, ra.integrity.record_hash),
-    (rb.record_id, rb.integrity.record_hash),
-    (rc.record_id, rc.integrity.record_hash),
+    (ra.record_id, ra.integrity.record_hash, None),
+    (rb.record_id, rb.integrity.record_hash, None),
+    (rc.record_id, rc.integrity.record_hash, None),
 ]
 batch = build_batch(leaves)
 sealed = seal_batches([batch])

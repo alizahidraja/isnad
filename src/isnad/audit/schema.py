@@ -176,6 +176,7 @@ class AuditRecord:
     source_documents: list[SourceDocument]
     human_oversight: list[HumanOversight]
     environment: Environment
+    governance: list[dict[str, str]] = field(default_factory=list)
     integrity: Integrity = field(default_factory=lambda: Integrity(record_hash=""))
 
     def to_dict(self, *, include_integrity: bool = True) -> dict[str, object]:
@@ -196,6 +197,7 @@ class AuditRecord:
             "weakest_link": self.weakest_link.to_dict(),
             "source_documents": [s.to_dict() for s in self.source_documents],
             "human_oversight": [h.to_dict() for h in self.human_oversight],
+            "governance": self.governance,
             "environment": self.environment.to_dict(),
         }
         if include_integrity:

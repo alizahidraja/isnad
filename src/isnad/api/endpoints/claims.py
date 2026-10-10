@@ -170,14 +170,26 @@ def _emit_audit_trail(
 
     log = os.environ.get("ISNAD_AUDIT_LOG")
     if log:
-        append_record(log, record.record_id, record.integrity.record_hash)
+        from isnad.audit.canonical import sig_commitment_hex
+
+        append_record(
+            log,
+            record.record_id,
+            record.integrity.record_hash,
+            sig_commitment_hex(record.integrity.record_hash, record.integrity.detached_signature),
+        )
 
     merkle_log = os.environ.get("ISNAD_MERKLE_LOG")
     if merkle_log:
         from isnad.audit import MerkleLog
+        from isnad.audit.canonical import sig_commitment_hex
 
         ml = MerkleLog(merkle_log)
-        ml.append(record.record_id, record.integrity.record_hash)
+        ml.append(
+            record.record_id,
+            record.integrity.record_hash,
+            sig_commitment_hex(record.integrity.record_hash, record.integrity.detached_signature),
+        )
         ml.seal()
 
     return (

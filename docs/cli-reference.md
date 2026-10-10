@@ -4,7 +4,7 @@ Every `isnad` subcommand. Run `isnad <command> --help` for the full flag set.
 
 | Command | What it does |
 | --- | --- |
-| `isnad serve` | Run the HTTP API (`POST /v1/claims`, `GET /v1/claims`, admin-grade mutations). |
+| `isnad serve` | Run the HTTP API (`POST /v1/claims`, `GET /v1/claims`, admin-grade mutations). Requires `pip install "isnad[api]"` (uvicorn). |
 | `isnad seed` | Seed the registry (defaults or operator config). |
 | `isnad ingest` | Ingest a claim + its chain from JSON. |
 | `isnad export` | Export audit records (`--format json | jsonl | csv`,`--verify` re-hashes). |

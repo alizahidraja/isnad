@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.5] — 2026-10-08
+
+### Fixed (audit honesty)
+
+- **Signature now bound into the append-only log + Merkle leaf**: `ChainEntry` and the Merkle leaf carry a `sig_commitment` (SHA-256 of record hash + detached signature), so a forger who rewrites a record and recomputes its self-hash can no longer pass log verification with the old signature. `isnad verify`/`verify-merkle` and the append path now thread the commitment; unsigned records stay `None` and still verify.
+- **Per-record governance mapping**: `AuditRecord.governance` (default empty) + `attach_governance_mapping()` emit an informational field→article block (Art 12/19/14), hash-committed like any other record field. Not legal advice.
+- **Erasure relabeled**: `isnad.audit.erasure.commit_claim_text()` adds a keyed HMAC-SHA256 commitment; docs now say the plain per-claim SHA-256 is *pseudonymization* (dedup), not erasure (Art 17).
+- **Dead domain removed** (README "Live product" → isnadhq.com).
+- **Benchmark agreement reconciled**: keyword-classifier vs matn_no agreement is **89.79%** (was 99.92%); the residual is one bucket — matn_no=mawdu ↔ classifier=ḍaʿīf-jiddan (51,160 chains), a taxonomy-granularity mismatch, surfaced in `tier_residual.json`.
+- **`isnad serve` extra documented** (requires `isnad[api]`).
+
+
 ## [3.1.4] — 2026-10-08
 
 ### Added
