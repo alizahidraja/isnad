@@ -36,7 +36,7 @@ print(verdict.why)
 # claim 'p = mv' → chain DAIF (weakest: pdf-scraper, ungraded)
 ```
 
-> **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · **Software DOI:** [10.5281/zenodo.23201516](https://doi.org/10.5281/zenodo.23201516)
+> **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · **Software DOI:** [10.5281/zenodo.21216872](https://doi.org/10.5281/zenodo.21216872)
 
 [![CI](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml/badge.svg)](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
@@ -487,7 +487,7 @@ Built in public — collaborators welcome. The on-ramp:
 
 ## Ecosystem
 
-- 🌐 **Site:** <https://isnadhq.com/> · 📄 **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · 🤗 **HF Papers:** [2607.24117](https://huggingface.co/papers/2607.24117) · 💾 **Software DOI:** [10.5281/zenodo.23201516](https://doi.org/10.5281/zenodo.23201516) · 📦 **PyPI:** [`isnad`](https://pypi.org/project/isnad/)
+- 🌐 **Site:** <https://isnadhq.com/> · 📄 **Paper:** [arXiv:2607.24117](https://arxiv.org/abs/2607.24117) · 🤗 **HF Papers:** [2607.24117](https://huggingface.co/papers/2607.24117) · 💾 **Software DOI:** [10.5281/zenodo.21216872](https://doi.org/10.5281/zenodo.21216872) · 📦 **PyPI:** [`isnad`](https://pypi.org/project/isnad/)
 - 🚀 **Docs — start here:** [`Quickstart`](docs/quickstart.md) (5-minute LangChain) · [`Concepts`](docs/concepts.md) (isnād–rijāl → multi-agent) · [`Compliance`](docs/compliance.md) (EU AI Act · ISO 42001 · NIST RMF · SDAIA) · [`Model-drift leaderboard`](docs/model-drift-leaderboard.md)
 - 🗺️ **Architecture:** [`docs/ARCHITECTURE.drawio`](docs/ARCHITECTURE.drawio) · 🔗 **Trace schema:** [`docs/trace-schema.md`](docs/trace-schema.md) · 👁️ **Chain viewer:** [`viewer/index.html`](viewer/index.html)
 - 🧪 **Benchmark:** [`bench/docs/RESULTS.md`](bench/docs/RESULTS.md) · 🤗 **ISNAD-Bench dataset:** [`alizahidraja/isnad-bench`](https://huggingface.co/datasets/alizahidraja/isnad-bench) · 📊 **Critic eval:** [`docs/critics.md`](docs/critics.md) · 🕵️ **xz sleeper-narrator case study:** [`docs/case-study-xz-sleeper-narrator.md`](docs/case-study-xz-sleeper-narrator.md)

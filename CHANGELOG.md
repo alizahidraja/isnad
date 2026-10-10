@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.1.6] — 2026-10-10
+
+### Fixed (citation metadata)
+
+- Software DOI now points at the concept DOI `10.5281/zenodo.21216872` (matches the site; was the 3.1.1 version DOI).
+- JSON-LD audit-record schema `$id` changed from a dead URL to the versioned URN `urn:isnad:audit-record:v1`.
+- CITATION.cff abstract drops the superseded 707-claim / 100% corroboration line and states the current measured numbers (575,060 chains κ=0.871/0.8667 conformance; φ̄=0.5599, n_eff=1.626).
+
+
 ## [3.1.5] — 2026-10-08
 
 ### Fixed (audit honesty)

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://alizahidraja.com/isnad/schemas/audit-record-v1.json",
+  "$id": "urn:isnad:audit-record:v1",
   "title": "ISNAD AuditRecord v1",
   "type": "object",
   "required": [
