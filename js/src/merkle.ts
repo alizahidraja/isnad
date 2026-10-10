@@ -99,6 +99,7 @@ export function proveInclusion(batch: MerkleBatch, recordId: string): InclusionP
   const recordHash = batch.leaves[index][1];
   const sigCommitment = batch.leaves[index][2] ?? null;
   let level = batch.leaves.map(([rid, rh, sc]) => leafHash(rid, rh, sc ?? null));
+  let idx = index;
   const path: [string, "left" | "right"][] = [];
   while (level.length > 1) {
     const next: string[] = [];
