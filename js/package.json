@@ -26,7 +26,7 @@
     "trust",
     "audit",
     "merkle",
-    "tamper-evidence",
+    "tamper-detecting",
     "multi-agent",
     "rag",
     "verify"

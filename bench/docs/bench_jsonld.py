@@ -20,7 +20,7 @@ BENCH_RESULTS = {
     "narrator_agreement_critic_vs_convention": 0.450,
     "shuffled_control": -0.0066,
     "majority_control": 0.000,
-    "chains": 577024,
+    "chains": 575060,
     "narrators": 49844,
     "critics": 945,
     "critics_named": 1015,
@@ -61,7 +61,8 @@ SOFTWARE_JSON_LD = {
     "license": "https://www.apache.org/licenses/LICENSE-2.0",
     "codeRepository": "https://github.com/alizahidraja/isnad",
     "programmingLanguage": "Python",
-    "version": "3.0.0",
+    "version": "3.1.7",
+    "identifier": "10.5281/zenodo.21216872",
 }
 
 SCHOLARLY_ARTICLE_JSON_LD = {

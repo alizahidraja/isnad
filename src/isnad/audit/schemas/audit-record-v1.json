@@ -100,6 +100,17 @@
         "platform": { "type": "string" }
       }
     },
+    "governance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "instrument": { "type": "string" },
+          "article": { "type": "string" },
+          "note": { "type": "string" }
+        }
+      }
+    },
     "integrity": {
       "type": "object",
       "required": ["record_hash", "hash_algorithm", "canonicalisation", "detached_signature"],

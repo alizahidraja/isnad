@@ -461,8 +461,8 @@ Operational engine: finds corroborating chains by exact text match or
 pre-matched via `evaluate_direct()`.  Runs content-level madār detection
 (`detect_content_madar` → `shared_error_detected`), so two chains echoing the
 same *wrong* claim are not counted as independent.  Validated on Wikipedia +
-physics textbooks (707 claim pairs, 100% fire rate, 9/9 negative controls —
-the v3 harness adds a C9 shared-document-hash control, closing #127).
+physics textbooks (8/8 Wikipedia + 9/9 physics negative controls — the v3
+harness adds a C9 shared-document-hash control, closing #127).
 
 ### Content-madār (shared-error fingerprinting)
 

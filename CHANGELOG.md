@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.1.7] — 2026-10-10
+
+### Fixed
+
+- Signature commitment is now **enforced**: `isnad verify --chain-log` cross-checks the log entry's `sig_commitment` against the record hash + detached signature, so a forged record (recomputed self-hash + kept old signature) fails at the log level.
+- Governance mapping is now attached **and hash-covered** inside the export builder (no longer dead code emitting `governance: []`); JSON schema declares `governance`.
+- README classifier-agreement figure corrected 99.92% → 89.79% (the residual is a matn_no-vs-daif-jiddan taxonomy-granularity mismatch, not classifier error).
+- Relabeled the "tamper-evidence" noun → "tamper-detecting" across README/js/merkle docstring; de-staled SECURITY supported-versions, ARCHITECTURE §8 line, evidence-mapping `detached_signature`, bench JSON-LD (version + DOI + 575,060 chains).
+
+
 ## [3.1.6] — 2026-10-10
 
 ### Fixed (citation metadata)

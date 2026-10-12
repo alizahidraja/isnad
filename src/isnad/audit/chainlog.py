@@ -72,6 +72,11 @@ def _read_chain(path: Path) -> list[ChainEntry]:
     return entries
 
 
+def read_chain(path: str | Path) -> list[ChainEntry]:
+    """Read + parse a chain log into entries (empty for a missing file)."""
+    return _read_chain(Path(path))
+
+
 def append_record(
     chain_path: str | Path,
     record_id: str,

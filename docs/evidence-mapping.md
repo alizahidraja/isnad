@@ -42,7 +42,7 @@ they are "helps an auditor find" pointers.
 | `human_oversight[]` (actor, action, timestamp) | **Art. 14 human oversight** | A.5 roles; A.9.3 monitoring | GOVERN (oversight) | **human oversight** |
 | `environment.isnad_version`, `python_version`, `platform` | Art. 12 (system identity) | A.8.1 configuration management | GOVERN (reproducibility) | transparency |
 | `integrity.record_hash` | Art. 12 (log integrity) | A.7.5 integrity | GOVERN (auditability) | transparency |
-| `integrity.detached_signature` (reserved) | Annex IV (authentication) | A.7.5 | GOVERN | — |
+| `integrity.detached_signature` | Annex IV (authentication) | A.7.5 | GOVERN | — |
 
 ## What ISNAD deliberately does *not* provide
 
