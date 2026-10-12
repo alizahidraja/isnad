@@ -185,6 +185,7 @@ def build_audit_record_from_nodes(
         ],
         environment=env,
     )
+    attach_governance_mapping(record)
     record.integrity = Integrity(
         record_hash=canonical_hash(record.to_dict(include_integrity=False))
     )

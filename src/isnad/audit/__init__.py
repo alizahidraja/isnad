@@ -14,7 +14,9 @@ from isnad.audit.chainlog import (
     ChainBreak,
     ChainEntry,
     append_record,
+    read_chain,
     verify_chain,
+    verify_signature_commitment,
 )
 from isnad.audit.erasure import commit_claim_text
 from isnad.audit.exporter import (
@@ -92,11 +94,13 @@ __all__ = [
     "hmac_verifier",
     "prove_inclusion",
     "read_batch_log",
+    "read_chain",
     "record_to_leaf",
     "seal_batches",
     "sign_detached",
     "verify_batches",
     "verify_chain",
+    "verify_signature_commitment",
     "verify_detached",
     "siem_dict",
     "siem_jsonl",

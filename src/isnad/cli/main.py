@@ -364,6 +364,11 @@ def _verify(argv: list[str]) -> int:
         default=None,
         help="HMAC secret for detached-signature verification (defaults to $ISNAD_HMAC_SECRET)",
     )
+    parser.add_argument(
+        "--chain-log",
+        default=None,
+        help="optional chain log (JSONL) whose entry must carry the record's signature commitment",
+    )
     args = parser.parse_args(argv)
 
     from isnad.audit.canonical import canonical_hash, canonical_json
@@ -378,6 +383,26 @@ def _verify(argv: list[str]) -> int:
     if stored != recomputed:
         print(f"MISMATCH: stored {stored!r} != recomputed {recomputed!r}")
         return 1
+
+    # Chain-log signature commitment (3.1.7): the log entry must commit to the
+    # record hash + detached signature, so a forger who rewrites the record and
+    # recomputes its self-hash still fails at the log level.
+    if args.chain_log:
+        from isnad.audit.chainlog import read_chain, verify_signature_commitment
+
+        entry = next(
+            (e for e in read_chain(args.chain_log) if e.record_id == data.get("record_id")),
+            None,
+        )
+        if entry is None:
+            print(f"MISMATCH: record {data.get('record_id')!r} not present in chain log")
+            return 1
+        if not verify_signature_commitment(
+            entry.sig_commitment, recomputed, integrity.get("detached_signature")
+        ):
+            print("MISMATCH: chain-log signature commitment does not match the record")
+            return 1
+        print(f"chain-log signature commitment verified for {data.get('record_id')!r}")
 
     # Self-hash is only tamper-detecting against accidental corruption, not a
     # forger who rewrites the record and recomputes the hash (issue #97). If

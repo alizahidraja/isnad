@@ -1,4 +1,4 @@
-"""Merkle batch audit log — parallel-friendly tamper-evidence (issue #69).
+"""Merkle batch audit log — parallel-friendly tamper detection (issue #69).
 
 The linear chain in ``chainlog.py`` is correct but strictly sequential: every
 appender links its entry to the *previous* entry's hash, so parallel agents
@@ -14,7 +14,7 @@ modify/delete/reorder detection the linear chain had, across batch boundaries.
 **Scaling optimization, not a correctness fix.** The linear chain is correct at
 current scale; this is for mass parallel agent batches. The transmission lineage
 is already a DAG (``audit/schema.py``'s ``upstream_ids``); only the
-tamper-evidence chain was linear, and only that is addressed here.
+tamper-detection chain was linear, and only that is addressed here.
 
 **Wired + anchored.** ``record_to_leaf`` maps an ``AuditRecord`` to a leaf,
 ``MerkleLog`` persists sealed batches to ``<path>.jsonl`` and a sidecar anchor

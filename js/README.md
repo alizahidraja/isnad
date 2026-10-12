@@ -6,7 +6,7 @@ records from JavaScript/TypeScript.
 > **Verifier only — this package does not grade claims.** Grading, the narrator
 > registry, weakest-link evaluation, and corroboration live in the Python core
 > (`pip install isnad`), which is the *sole grading authority*. This package
-> only checks the tamper-evidence that the Python core emits.
+> only checks the tamper-detecting logs that the Python core emits.
 
 ## Install
 

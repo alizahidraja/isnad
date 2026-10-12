@@ -253,7 +253,7 @@ grades are, not a direct ceiling on the chain κ.
 **How to read it:** κ = 0.87 is **conformance**, not agreement with independent
 scholar judgment. The dataset's chain verdicts are a rule-based convention derived
 from Ibn Hajar's 12 tiers (per-tier purity 0.88–0.97; the keyword classifier agrees
-with the source's structured code at 99.92%, ruling out classifier error), and ISNAD's weakest-link mapping conforms to that convention. The
+with the source's structured code at 89.79% — the residual is a taxonomy-granularity mismatch (matn_no mawdu vs classifier daif-jiddan), not classifier error), and ISNAD's weakest-link mapping conforms to that convention. The
 0.331/0.450 figures are narrator-grade agreement — context on how contested the
 tiers are, not a ceiling. The benchmark is
 pre-committed, carries negative controls (majority-class 0.000; shuffled grades
@@ -388,9 +388,9 @@ hash chain, and a PII-redaction hook.
 **Serving-side signing:** the API signs records with a detached HMAC only when
 `ISNAD_HMAC_SECRET` is set; when unset, records are emitted `audit_signed: false`
 (a self-hash a forger can recompute). Set it in any deployment that relies on
-tamper-evidence — see `.env.example`.
+tamper-detecting logs — see `.env.example`.
 
-**Two tamper-evidence logs:** a **linear hash chain** (single sequential writer)
+**Two tamper-detecting logs:** a **linear hash chain** (single sequential writer)
 and a **Merkle batch log** (mass parallel agents; `build_batch`/`seal_batches`/
 `verify_batches`/`prove_inclusion`). Both detect modification, middle-deletion,
 and reordering; neither detects tail truncation, and both commit to a self-hash,

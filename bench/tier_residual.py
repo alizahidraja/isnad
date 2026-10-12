@@ -39,6 +39,10 @@ from bench.run import CLASSES, PINNED_DB_SHA256, verify_db_hash
 
 # sanads.matn_no -> ISNAD class (build_hkg.py: 0 sahih, 1 hasan, 2 daif,
 # 3 very weak, 4 accused of fabrication, 5 fabricated).
+# NOTE (3.1.7): MATN_NO has 4 distinct labels (sahih/hasan/daif/mawdu) while the
+# classifier emits 5 classes (incl. daif_jiddan). matn_no codes 3/4/5 all map
+# to mawdu, so a classifier emitting daif_jiddan for those rows is a
+# taxonomy-granularity disagreement, not classifier error.
 MATN_NO = {0: "sahih", 1: "hasan", 2: "daif", 3: "mawdu", 4: "mawdu", 5: "mawdu"}
 
 # Defects named in the verdict text, matched after _norm (no diacritics, one alef).
