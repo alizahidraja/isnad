@@ -44,7 +44,7 @@ body:
       label: Area
       options:
         - core (grading / registry / corroboration)
-        - audit (tamper-evidence / signatures / export)
+        - audit (tamper-detection / signatures / export)
         - api
         - cli
         - critics (content criticism)

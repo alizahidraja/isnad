@@ -52,7 +52,7 @@ class VerificationResult:
       if declared, else None.  This is the issuer describing itself, not an
       endorsement.
     - `self_verified` — True when no independent ``authorizedBy`` endorser is
-      present.  A self-verified seal proves tamper-evidence and origin, NOT
+      present.  A self-verified seal proves tamper-detection and origin, NOT
       integrity — the domain confirming the claim is the domain making it
       (Live Verify renders this amber, not green).
 

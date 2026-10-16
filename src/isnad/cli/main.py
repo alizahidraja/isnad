@@ -229,7 +229,7 @@ def _export(argv: list[str]) -> int:
             else:
                 # Fail closed: a detached signature is present but we have no
                 # secret to check it against. Reporting "OK" here would be a
-                # forgeable path in a tamper-evidence tool.
+                # forgeable path in a tamper-detection tool.
                 print(
                     "verification INCONCLUSIVE: detached signature present but no "
                     "secret (--sign or ISNAD_HMAC_SECRET); forge-resistance NOT checked",
@@ -448,7 +448,7 @@ def _verify_chain(argv: list[str]) -> int:
 def _verify_merkle(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         prog="isnad verify-merkle",
-        description="Verify a Merkle batch log (parallel-friendly tamper-evidence).",
+        description="Verify a Merkle batch log (parallel-friendly tamper-detection).",
     )
     parser.add_argument("--log", required=True, help="path to a Merkle batch log JSONL")
     args = parser.parse_args(argv)

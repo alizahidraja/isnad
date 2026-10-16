@@ -63,7 +63,7 @@ def seal_to_narrator(result: VerificationResult) -> SealedSource:
     declaring a narrator reliable (tazkiyah) must come from an *independent*
     critic — self-testimony establishes nothing.  Live Verify encodes the same
     principle: a self-verified seal (no independent ``authorizedBy`` endorser)
-    proves tamper-evidence and origin, but NOT integrity — the domain
+    proves tamper-detection and origin, but NOT integrity — the domain
     confirming the claim is the domain making it.  Live Verify renders it
     amber, not green.
 
@@ -90,7 +90,7 @@ def seal_to_narrator(result: VerificationResult) -> SealedSource:
         grade = NarratorGrade.RELIABLE
         adalah = AdalahGrade.HIGH
         origin_strength = "verified-attested"
-    # Verified but self-verified: tamper-evidence + origin only.  No integrity.
+    # Verified but self-verified: tamper-detection + origin only.  No integrity.
     elif result.verified:
         grade = NarratorGrade.UNGRADED
         adalah = AdalahGrade.UNASSESSED
