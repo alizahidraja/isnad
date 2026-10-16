@@ -78,18 +78,111 @@ class TFIDFIndex:
         return dot / (norm_a * norm_b)
 
 
+_WORD_NUMBERS = {
+    "zero": 0.0,
+    "one": 1.0,
+    "two": 2.0,
+    "three": 3.0,
+    "four": 4.0,
+    "five": 5.0,
+    "six": 6.0,
+    "seven": 7.0,
+    "eight": 8.0,
+    "nine": 9.0,
+    "ten": 10.0,
+    "eleven": 11.0,
+    "twelve": 12.0,
+    "thirteen": 13.0,
+    "fourteen": 14.0,
+    "fifteen": 15.0,
+    "sixteen": 16.0,
+    "seventeen": 17.0,
+    "eighteen": 18.0,
+    "nineteen": 19.0,
+    "twenty": 20.0,
+    "thirty": 30.0,
+    "forty": 40.0,
+    "fifty": 50.0,
+    "sixty": 60.0,
+    "seventy": 70.0,
+    "eighty": 80.0,
+    "ninety": 90.0,
+}
+_WORD_SCALES = {
+    "hundred": 100.0,
+    "thousand": 1000.0,
+    "million": 1000000.0,
+    "billion": 1000000000.0,
+}
+
+
+def _word_numbers(text: str) -> list[float]:
+    """Extract written-out numbers ("zero", "three hundred million", 9.8)."""
+    tokens = re.findall(r"[a-z]+", text.lower())
+    out: list[float] = []
+    i = 0
+    while i < len(tokens):
+        t = tokens[i]
+        if t in ("infinite", "infinity"):
+            out.append(float("inf"))
+            i += 1
+            continue
+        if t not in _WORD_NUMBERS:
+            i += 1
+            continue
+        # "nine point eight" -> 9.8
+        if i + 2 < len(tokens) and tokens[i + 1] == "point" and tokens[i + 2] in _WORD_NUMBERS:
+            whole = _WORD_NUMBERS[t]
+            frac = _WORD_NUMBERS[tokens[i + 2]]
+            out.append(whole + frac / (10 ** len(str(int(frac)))))
+            i += 3
+            continue
+        value = _WORD_NUMBERS[t]
+        i += 1
+        while i < len(tokens) and tokens[i] in _WORD_SCALES:
+            value *= _WORD_SCALES[tokens[i]]
+            i += 1
+        out.append(value)
+    return out
+
+
+def _extract_numbers(text: str) -> list[float]:
+    """All numeric values in a text: digit numbers plus written-out numbers."""
+    nums = [float(n) for n in re.findall(r"\d+\.?\d*", text)]
+    nums.extend(_word_numbers(text))
+    return nums
+
+
+def _numbers_diverge(a: float, b: float) -> bool:
+    """True when two magnitudes genuinely conflict (safe to call a contradiction)."""
+    if a == b:
+        return False
+    if (a == 0.0) != (b == 0.0):
+        return True
+    if math.isinf(a) or math.isinf(b):
+        return True
+    if a <= 0.0 or b <= 0.0:
+        return False
+    return max(a, b) / min(a, b) > 3.0
+
+
 def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
     """Heuristic contradiction detection between two similar claims.
 
-    Checks negation patterns, opposite words, and numeric divergence.
+    Checks negation patterns, opposite words, and numeric divergence
+    (including zero, written-out numbers, and "infinite").
     """
     c_low = claim.lower()
     cc_low = corpus_claim.lower()
 
     if c_low == cc_low:
-        return False  # a claim never contradicts itself (case/punct-insensitive)
+        return False
 
-    # Negation
+    # Treat a bare "proportional" as "directly proportional" so an
+    # "inversely proportional" claim contradicts the unstated default.
+    c_low = re.sub(r"(?<!inversely )proportional", "directly proportional", c_low)
+    cc_low = re.sub(r"(?<!inversely )proportional", "directly proportional", cc_low)
+
     for pos, neg in [
         (" is ", " is not "),
         (" does ", " does not "),
@@ -99,7 +192,6 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
         if (pos in c_low and neg in cc_low) or (neg in c_low and pos in cc_low):
             return True
 
-    # Opposite words
     for a, b in [
         ("increases", "decreases"),
         ("positive", "negative"),
@@ -111,15 +203,27 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
         ("hotter", "colder"),
         ("clockwise", "counterclockwise"),
         ("left", "right"),
+        ("always", "never"),
+        ("directly", "inversely"),
+        ("toward", "away"),
+        ("times", "divided by"),
+        ("times", "per"),
+        ("product", "divided"),
+        ("created", "conserved"),
+        ("destroyed", "conserved"),
+        ("increases", "conserved"),
+        ("decreases", "conserved"),
+        ("stationary", "moving"),
+        ("at rest", "in motion"),
+        ("both", "purely"),
     ]:
         if (a in c_low and b in cc_low) or (b in c_low and a in cc_low):
             return True
 
-    # Numeric divergence >3x
-    nums_c = sorted(float(n) for n in re.findall(r"\d+\.?\d*", claim))
-    nums_cc = sorted(float(n) for n in re.findall(r"\d+\.?\d*", corpus_claim))
+    nums_c = sorted(_extract_numbers(claim))
+    nums_cc = sorted(_extract_numbers(corpus_claim))
     for nc, ncc in zip(nums_c, nums_cc, strict=False):
-        if nc > 0 and ncc > 0 and max(nc, ncc) / min(nc, ncc) > 3.0:
+        if _numbers_diverge(nc, ncc):
             if not any(w in c_low for w in ["equal", "same", "constant"]):
                 return True
     return False

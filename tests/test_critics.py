@@ -120,3 +120,70 @@ class TestEmbeddingCritic:
         # 2x divergence — below the >3x gate — so it is NOT a contradiction,
         # but TF-IDF must still never affirm it as CONSISTENT.
         assert result == ContentVerdict.UNVERIFIABLE
+
+    def test_zero_vs_nonzero_numeric_divergence(self) -> None:
+        """Zero vs a non-zero magnitude is a real contradiction (was skipped)."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "water freezes at one hundred degrees celsius",
+            "water freezes at one hundred degrees celsius",
+            ["water freezes at zero degrees celsius"],
+        )
+        assert result == ContentVerdict.CONTRADICTION
+
+    def test_word_number_divergence_infinite(self) -> None:
+        """'infinite' vs a finite written-out magnitude is a contradiction."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the speed of light in a vacuum is infinite",
+            "the speed of light in a vacuum is infinite",
+            ["the speed of light in a vacuum is about three hundred million meters per second"],
+        )
+        assert result == ContentVerdict.CONTRADICTION
+
+    def test_directly_vs_inversely_proportional(self) -> None:
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the wavelength of light is directly proportional to its frequency",
+            "the wavelength of light is directly proportional to its frequency",
+            ["the wavelength of light is inversely proportional to its frequency"],
+        )
+        assert result == ContentVerdict.CONTRADICTION
+
+    def test_bare_proportional_vs_inversely(self) -> None:
+        """A bare 'proportional' is the default (direct), so 'inversely' contradicts it."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the energy of a photon is inversely proportional to its frequency",
+            "the energy of a photon is inversely proportional to its frequency",
+            ["the energy of a photon is proportional to its frequency"],
+        )
+        assert result == ContentVerdict.CONTRADICTION
+
+    def test_always_vs_never(self) -> None:
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the entropy of an isolated system always decreases",
+            "the entropy of an isolated system always decreases",
+            ["the entropy of an isolated system never decreases"],
+        )
+        assert result == ContentVerdict.CONTRADICTION
+
+    def test_created_vs_conserved(self) -> None:
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "energy can be created from nothing in an isolated system",
+            "energy can be created from nothing in an isolated system",
+            ["energy is conserved in an isolated system"],
+        )
+        assert result == ContentVerdict.CONTRADICTION
+
+    def test_consistent_paraphrase_not_flagged(self) -> None:
+        """A correct paraphrase must stay unflagged (no false-contradiction)."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "in an isolated system the total energy does not change",
+            "in an isolated system the total energy does not change",
+            ["energy is conserved in an isolated system"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
