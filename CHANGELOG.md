@@ -13,7 +13,7 @@
 ### Honesty
 
 - Completed the "tamper-evidence" → "tamper-detection" relabel (`canonical.py`, CLI, registry, `liveverify`, `.env.example`, issue template) and fixed two stale `0.120` recall cells in `docs/ARCHITECTURE.drawio`.
-- `js/` verifier comment relabeled "tamper-evident" → "tamper-detecting".
+- `js/` verifier comment reworded to drop the banned "tamper-evident" term.
 
 ## [3.1.7] — 2026-10-10
 
