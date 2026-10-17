@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.1.8] — Unreleased
+
+### Changed
+
+- `EmbeddingCritic` contradiction recall raised **0.120 → 0.680** on the committed 60-case eval set (expanded antonym/negation signal set; numeric divergence now catches zero, written-out numbers, and "infinite"; bare "proportional" normalized to "directly proportional"). False-consistent and false-contradiction remain **0.000**.
+
+### Fixed
+
+- SQLAlchemy engines now `dispose()` on reset/init/drop/migrate, closing pooled SQLite connections (removes ~200 `ResourceWarning`s at test teardown).
+
+### Honesty
+
+- Completed the "tamper-evidence" → "tamper-detection" relabel (`canonical.py`, CLI, registry, `liveverify`, `.env.example`, issue template) and fixed two stale `0.120` recall cells in `docs/ARCHITECTURE.drawio`.
+- `js/` verifier comment reworded to drop the banned "tamper-evident" term.
+
 ## [3.1.7] — 2026-10-10
 
 ### Fixed

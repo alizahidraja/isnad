@@ -18,7 +18,7 @@ export type SignatureVerifier = (payload: string, signature: string) => boolean;
 /**
  * Verify the stored detached signature over the canonical payload
  * (the record WITHOUT its `integrity` block). Returns false when there is no
- * signature — a self-hashed record is not tamper-evident against a forger.
+ * signature — a self-hashed record alone does not detect tampering by a forger.
  */
 export function verifyDetachedSignature(record: AuditRecord, verifier: SignatureVerifier): boolean {
   const sig = record.integrity?.detached_signature;

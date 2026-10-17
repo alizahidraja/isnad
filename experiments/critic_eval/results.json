@@ -337,14 +337,14 @@
   "metrics": {
     "EmbeddingCritic (TF-IDF)": {
       "n": 60,
-      "contradiction_recall": 0.12,
+      "contradiction_recall": 0.68,
       "contradiction_precision": 1.0,
-      "contradiction_f1": 0.214,
+      "contradiction_f1": 0.81,
       "false_consistent_rate": 0.0,
       "false_contradiction_rate": 0.0,
       "unrelated_unverifiable_rate": 1.0,
-      "three_way_accuracy": 0.3,
-      "tp": 3,
+      "three_way_accuracy": 0.533,
+      "tp": 17,
       "fp": 0,
       "false_consistent": 0,
       "false_contradiction": 0,

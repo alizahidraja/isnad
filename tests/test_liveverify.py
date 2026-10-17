@@ -285,7 +285,7 @@ class TestSealToNarrator:
         assert sealed.self_verified is False
 
     def test_self_verified_seal_does_not_seed_integrity(self):
-        """Self-verification proves tamper-evidence + origin, NOT integrity.
+        """Self-verification proves tamper-detection + origin, NOT integrity.
 
         The domain confirming the claim is the domain making it.  A
         self-verified seal must render UNASSESSED/UNGRADED — integrity is not

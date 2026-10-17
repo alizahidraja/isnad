@@ -74,6 +74,7 @@ def init_db(url: str | None = None) -> None:
     """Create all tables.  Use in tests / bootstrapping."""
     engine = create_engine_from_url(url) if url else get_engine()
     Base.metadata.create_all(engine)
+    engine.dispose()
 
 
 def migrate_db(url: str | None = None) -> None:
@@ -90,6 +91,7 @@ def migrate_db(url: str | None = None) -> None:
     engine = create_engine_from_url(url) if url else get_engine()
     inspector = inspect(engine)
     if not inspector.has_table("rijal_claims"):
+        engine.dispose()
         return
     from alembic.config import Config
 
@@ -113,16 +115,20 @@ def migrate_db(url: str | None = None) -> None:
             # (op.add_column) are safe on the existing table.
             command.stamp(cfg, "bcf1da0dec28")
             command.upgrade(cfg, "head")
+    engine.dispose()
 
 
 def drop_db(url: str | None = None) -> None:
     """Drop all tables.  Use only in tests."""
     engine = create_engine_from_url(url) if url else get_engine()
     Base.metadata.drop_all(engine)
+    engine.dispose()
 
 
 def reset_engine() -> None:
     """Reset global engine (useful in tests switching URLs)."""
     global _engine, _SessionLocal
+    if _engine is not None:
+        _engine.dispose()
     _engine = None
     _SessionLocal = None
