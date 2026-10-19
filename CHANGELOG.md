@@ -4,7 +4,7 @@
 
 ### Changed
 
-- `EmbeddingCritic` contradiction recall raised **0.120 → 0.680** on the committed 60-case eval set (expanded antonym/negation signal set; numeric divergence now catches zero, written-out numbers, and "infinite"; bare "proportional" normalized to "directly proportional"). False-consistent and false-contradiction remain **0.000**.
+- `EmbeddingCritic` contradiction recall raised **0.120 → 0.400** on the committed 60-case eval set (word-boundary antonym matching plus whole-number / zero / "infinite" numeric detection on single-quantity claims). False-consistent and false-contradiction remain **0.000**.
 
 ### Fixed
 

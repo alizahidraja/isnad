@@ -141,24 +141,30 @@ class TestEmbeddingCritic:
         )
         assert result == ContentVerdict.CONTRADICTION
 
-    def test_directly_vs_inversely_proportional(self) -> None:
-        critic = EmbeddingCritic()
-        result = critic.evaluate(
-            "the wavelength of light is directly proportional to its frequency",
-            "the wavelength of light is directly proportional to its frequency",
-            ["the wavelength of light is inversely proportional to its frequency"],
-        )
-        assert result == ContentVerdict.CONTRADICTION
+    def test_cross_relationship_proportional_not_flagged(self) -> None:
+        """Two true statements about different quantities must not be flagged.
 
-    def test_bare_proportional_vs_inversely(self) -> None:
-        """A bare 'proportional' is the default (direct), so 'inversely' contradicts it."""
+        'directly proportional to temperature' vs 'inversely proportional to
+        volume' are BOTH true; the directly/inversely pair was reverted because
+        it could not tell same-subject from cross-subject relationships.
+        """
         critic = EmbeddingCritic()
         result = critic.evaluate(
-            "the energy of a photon is inversely proportional to its frequency",
-            "the energy of a photon is inversely proportional to its frequency",
-            ["the energy of a photon is proportional to its frequency"],
+            "the pressure of a gas is directly proportional to its temperature",
+            "the pressure of a gas is directly proportional to its temperature",
+            ["the pressure of a gas is inversely proportional to its volume"],
         )
-        assert result == ContentVerdict.CONTRADICTION
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_indirectly_is_not_directly(self) -> None:
+        """Word-boundary matching: 'indirectly' must not match 'directly'."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the relation is indirectly proportional to x",
+            "the relation is indirectly proportional to x",
+            ["the relation is inversely proportional to y"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
 
     def test_always_vs_never(self) -> None:
         critic = EmbeddingCritic()
@@ -169,14 +175,15 @@ class TestEmbeddingCritic:
         )
         assert result == ContentVerdict.CONTRADICTION
 
-    def test_created_vs_conserved(self) -> None:
+    def test_no_false_contradiction_on_negated_conservation(self) -> None:
+        """A correct negation ('conserved ... cannot be created') must not flag."""
         critic = EmbeddingCritic()
         result = critic.evaluate(
-            "energy can be created from nothing in an isolated system",
-            "energy can be created from nothing in an isolated system",
+            "energy is conserved and cannot be created or destroyed",
+            "energy is conserved and cannot be created or destroyed",
             ["energy is conserved in an isolated system"],
         )
-        assert result == ContentVerdict.CONTRADICTION
+        assert result != ContentVerdict.CONTRADICTION
 
     def test_consistent_paraphrase_not_flagged(self) -> None:
         """A correct paraphrase must stay unflagged (no false-contradiction)."""
@@ -185,5 +192,35 @@ class TestEmbeddingCritic:
             "in an isolated system the total energy does not change",
             "in an isolated system the total energy does not change",
             ["energy is conserved in an isolated system"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_boundary_no_substring_false_positive(self) -> None:
+        """'per' inside 'experiment' must not fire a times/per check."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the experiment ran three times",
+            "the experiment ran three times",
+            ["the experiment ran five times"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_multi_quantity_no_cross_pairing(self) -> None:
+        """100 mg vs '40 mg 3 times daily' must not pair 100 with the frequency 3."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the dose is 100 milligrams daily",
+            "the dose is 100 milligrams daily",
+            ["the dose is 40 milligrams 3 times daily"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_number_tens_ones_composition(self) -> None:
+        """'twenty one' must parse as 21 (equal), not as [20, 1]."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the temperature is twenty one degrees",
+            "the temperature is twenty one degrees",
+            ["the temperature is 21 degrees"],
         )
         assert result != ContentVerdict.CONTRADICTION

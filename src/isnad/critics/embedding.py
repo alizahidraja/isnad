@@ -114,6 +114,32 @@ _WORD_SCALES = {
     "million": 1000000.0,
     "billion": 1000000000.0,
 }
+_TENS = {
+    "twenty",
+    "thirty",
+    "forty",
+    "fifty",
+    "sixty",
+    "seventy",
+    "eighty",
+    "ninety",
+}
+_ONES = {
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+}
+
+
+def _has_phrase(text: str, phrase: str) -> bool:
+    """Whole-word/phrase membership (avoids 'per' matching inside 'experiment')."""
+    return re.search(r"\b" + re.escape(phrase) + r"\b", text) is not None
 
 
 def _word_numbers(text: str) -> list[float]:
@@ -139,6 +165,10 @@ def _word_numbers(text: str) -> list[float]:
             continue
         value = _WORD_NUMBERS[t]
         i += 1
+        # tens + ones: "twenty one" -> 21
+        if t in _TENS and i < len(tokens) and tokens[i] in _ONES:
+            value += _WORD_NUMBERS[tokens[i]]
+            i += 1
         while i < len(tokens) and tokens[i] in _WORD_SCALES:
             value *= _WORD_SCALES[tokens[i]]
             i += 1
@@ -178,11 +208,6 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
     if c_low == cc_low:
         return False
 
-    # Treat a bare "proportional" as "directly proportional" so an
-    # "inversely proportional" claim contradicts the unstated default.
-    c_low = re.sub(r"(?<!inversely )proportional", "directly proportional", c_low)
-    cc_low = re.sub(r"(?<!inversely )proportional", "directly proportional", cc_low)
-
     for pos, neg in [
         (" is ", " is not "),
         (" does ", " does not "),
@@ -204,28 +229,22 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
         ("clockwise", "counterclockwise"),
         ("left", "right"),
         ("always", "never"),
-        ("directly", "inversely"),
         ("toward", "away"),
-        ("times", "divided by"),
-        ("times", "per"),
-        ("product", "divided"),
-        ("created", "conserved"),
-        ("destroyed", "conserved"),
-        ("increases", "conserved"),
-        ("decreases", "conserved"),
         ("stationary", "moving"),
+        ("times", "divided by"),
         ("at rest", "in motion"),
         ("both", "purely"),
     ]:
-        if (a in c_low and b in cc_low) or (b in c_low and a in cc_low):
+        if (_has_phrase(c_low, a) and _has_phrase(cc_low, b)) or (
+            _has_phrase(c_low, b) and _has_phrase(cc_low, a)
+        ):
             return True
 
-    nums_c = sorted(_extract_numbers(claim))
-    nums_cc = sorted(_extract_numbers(corpus_claim))
-    for nc, ncc in zip(nums_c, nums_cc, strict=False):
-        if _numbers_diverge(nc, ncc):
-            if not any(w in c_low for w in ["equal", "same", "constant"]):
-                return True
+    nums_c = _extract_numbers(claim)
+    nums_cc = _extract_numbers(corpus_claim)
+    if len(nums_c) == 1 and len(nums_cc) == 1 and _numbers_diverge(nums_c[0], nums_cc[0]):
+        if not any(_has_phrase(c_low, w) for w in ["equal", "same", "constant"]):
+            return True
     return False
 
 

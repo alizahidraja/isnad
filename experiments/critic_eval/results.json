@@ -337,14 +337,14 @@
   "metrics": {
     "EmbeddingCritic (TF-IDF)": {
       "n": 60,
-      "contradiction_recall": 0.68,
+      "contradiction_recall": 0.4,
       "contradiction_precision": 1.0,
-      "contradiction_f1": 0.81,
+      "contradiction_f1": 0.571,
       "false_consistent_rate": 0.0,
       "false_contradiction_rate": 0.0,
       "unrelated_unverifiable_rate": 1.0,
-      "three_way_accuracy": 0.533,
-      "tp": 17,
+      "three_way_accuracy": 0.417,
+      "tp": 10,
       "fp": 0,
       "false_consistent": 0,
       "false_contradiction": 0,
@@ -366,7 +366,7 @@
       "elapsed_s": 17.2,
       "rerun_status": "prior committed run (NLI model not re-downloaded this sweep)"
     },
-    "HybridCritic (MiniLM → NLI)": {
+    "HybridCritic (MiniLM \u2192 NLI)": {
       "n": 60,
       "contradiction_recall": 0.72,
       "contradiction_precision": 0.667,
@@ -504,12 +504,42 @@
       [
         "contradiction",
         "contradiction",
+        "contradiction"
+      ],
+      [
+        "contradiction",
+        "contradiction",
         "unverifiable"
       ],
       [
         "contradiction",
         "contradiction",
         "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "unverifiable"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "contradiction"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "contradiction"
+      ],
+      [
+        "contradiction",
+        "contradiction",
+        "contradiction"
       ],
       [
         "contradiction",
@@ -564,32 +594,7 @@
       [
         "contradiction",
         "contradiction",
-        "unverifiable"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "unverifiable"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "unverifiable"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "unverifiable"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "unverifiable"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "unverifiable"
+        "contradiction"
       ],
       [
         "contradiction",
@@ -614,17 +619,12 @@
       [
         "contradiction",
         "contradiction",
-        "unverifiable"
+        "contradiction"
       ],
       [
         "contradiction",
         "contradiction",
-        "unverifiable"
-      ],
-      [
-        "contradiction",
-        "contradiction",
-        "unverifiable"
+        "contradiction"
       ],
       [
         "unrelated",
@@ -1004,7 +1004,7 @@
         "unverifiable"
       ]
     ],
-    "HybridCritic (MiniLM → NLI)": [
+    "HybridCritic (MiniLM \u2192 NLI)": [
       [
         "consistent",
         "consistent",

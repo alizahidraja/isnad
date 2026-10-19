@@ -4,7 +4,7 @@
 
 | Critic | Contra. recall | Contra. precision | Contra. F1 | False-consistent (danger) | False-contradiction | 3-way acc |
 |---|---|---|---|---|---|---|
-| EmbeddingCritic (TF-IDF) | 0.680 | 1.000 | 0.810 | 0.000 | 0.000 | 0.533 |
+| EmbeddingCritic (TF-IDF) | 0.400 | 1.000 | 0.571 | 0.000 | 0.000 | 0.417 |
 | LocalNLICritic (DeBERTa NLI) | 0.760 | 0.633 | 0.691 | 0.000 | 0.050 | 0.417 |
 | HybridCritic (MiniLM → NLI) | 0.720 | 0.667 | 0.692 | 0.040 | 0.000 | 0.433 |
 | LLMCritic (DeepSeek) | 1.000 | 1.000 | 1.000 | 0.000 | 0.000 | 1.000 |
@@ -14,7 +14,7 @@
 - **EmbeddingCritic** re-run this sweep (offline, deterministic): the
   contradiction-only change is confirmed — **false-consistent 0.32 → 0.000**
   (it can no longer affirm consistency, so it can no longer bless a contradiction).
-  Contradiction recall was raised **0.120 → 0.680** by expanding the negation/
+  Contradiction recall was raised **0.120 → 0.400** by expanding the negation/
   antonym signal set and fixing numeric divergence to catch zero, written-out
   numbers, and "infinite" — with **no** false-consistent or false-contradiction
   regression (still 0.000 / 0.000).
