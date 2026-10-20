@@ -4,7 +4,7 @@
 
 ### Changed
 
-- `EmbeddingCritic` contradiction recall raised **0.120 → 0.400** on the committed 60-case eval set (word-boundary antonym matching plus whole-number / zero / "infinite" numeric detection on single-quantity claims). False-consistent and false-contradiction remain **0.000**.
+- `EmbeddingCritic` contradiction recall raised **0.120 → 0.360** on the committed 60-case eval set (word-boundary antonym matching plus whole-number / zero / "infinite" numeric detection on single-quantity claims). False-consistent and false-contradiction remain **0.000**.
 
 ### Fixed
 

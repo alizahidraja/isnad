@@ -224,3 +224,13 @@ class TestEmbeddingCritic:
             ["the temperature is 21 degrees"],
         )
         assert result != ContentVerdict.CONTRADICTION
+
+    def test_times_divided_by_cross_relationship_not_flagged(self) -> None:
+        """F = ma and a = F/m are BOTH true; times/divided-by was dropped."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "acceleration equals force divided by mass",
+            "acceleration equals force divided by mass",
+            ["force equals mass times acceleration"],
+        )
+        assert result != ContentVerdict.CONTRADICTION

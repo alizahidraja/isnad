@@ -92,7 +92,7 @@
           <mxGeometry x="460" y="660" width="380" height="90" as="geometry" />
         </mxCell>
 
-        <mxCell id="critic_embed" value="&lt;b&gt;EmbeddingCritic&lt;/b&gt; (TF-IDF)&lt;br&gt;0.400 recall / 0.000 false-consistent (contradiction-only)&lt;br&gt;Safest zero-dependency option, low recall&lt;br&gt;TFIDFIndex" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="critic_embed" value="&lt;b&gt;EmbeddingCritic&lt;/b&gt; (TF-IDF)&lt;br&gt;0.360 recall / 0.000 false-consistent (contradiction-only)&lt;br&gt;Safest zero-dependency option, low recall&lt;br&gt;TFIDFIndex" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="860" y="660" width="350" height="90" as="geometry" />
         </mxCell>
 
@@ -292,7 +292,7 @@
           <mxGeometry x="55" y="75" width="400" height="25" as="geometry" />
         </mxCell>
 
-        <mxCell id="pv1" value="&lt;b&gt;Content critics — measured&lt;/b&gt;&lt;br&gt;LLM (DeepSeek): 1.000 recall / 0.000 false-consistent&lt;br&gt;LocalNLI: 0.760 / 0.000 · Hybrid: 0.720 / 0.040&lt;br&gt;Embedding: 0.400 / 0.000 (contradiction-only)&lt;br&gt;60-case committed eval set (experiments/critic_eval/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="pv1" value="&lt;b&gt;Content critics — measured&lt;/b&gt;&lt;br&gt;LLM (DeepSeek): 1.000 recall / 0.000 false-consistent&lt;br&gt;LocalNLI: 0.760 / 0.000 · Hybrid: 0.720 / 0.040&lt;br&gt;Embedding: 0.360 / 0.000 (contradiction-only)&lt;br&gt;60-case committed eval set (experiments/critic_eval/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="60" y="110" width="310" height="95" as="geometry" />
         </mxCell>
         <mxCell id="pv2" value="&lt;b&gt;Corroboration — validated&lt;/b&gt;&lt;br&gt;603/603 (Wikipedia) + 104/104 (physics) pairs&lt;br&gt;8/8 negative controls pass&lt;br&gt;Requires attested distinct lineage (madār, #83)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">

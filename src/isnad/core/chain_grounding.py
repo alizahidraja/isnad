@@ -27,7 +27,7 @@ This module has two parts, deliberately separated (see #216 review):
   claim's support lies off its own chain. Naming it "pollution" would over-claim.
 
   ⚠️ The policy's flag is NOT yet measured against real critics. Offline critics
-  run recall 0.40–0.76 and the LLM critic 39.1% false-consistent on §8 content
+  run recall 0.36–0.76 and the LLM critic 39.1% false-consistent on §8 content
   corruption (#126); that error propagates into this flag. Per the "measure, don't
   assert" discipline (#215), an ``experiments/grounding_eval/`` harness should
   measure the flag's false-positive rate before it is wired into any decision.

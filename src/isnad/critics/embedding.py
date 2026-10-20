@@ -231,7 +231,6 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
         ("always", "never"),
         ("toward", "away"),
         ("stationary", "moving"),
-        ("times", "divided by"),
         ("at rest", "in motion"),
         ("both", "purely"),
     ]:
