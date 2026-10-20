@@ -1658,7 +1658,7 @@ class Registry:
 
         **Tazkiyah guard.**  Survival must come from an *independent* verifier.
         A self-verified seal (amber — the domain vouching for itself) proves
-        tamper-evidence and origin, NOT accuracy.  So a self-verified
+        tamper-detection and origin, NOT accuracy.  So a self-verified
         "survival" is refused: we return the current grade unchanged and log
         nothing.  Only an *endorsed* verification (green) is genuine survival.
 

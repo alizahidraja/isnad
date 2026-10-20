@@ -120,3 +120,168 @@ class TestEmbeddingCritic:
         # 2x divergence — below the >3x gate — so it is NOT a contradiction,
         # but TF-IDF must still never affirm it as CONSISTENT.
         assert result == ContentVerdict.UNVERIFIABLE
+
+    def test_zero_vs_nonzero_numeric_divergence(self) -> None:
+        """Zero vs a non-zero magnitude is a real contradiction (was skipped)."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "water freezes at one hundred degrees celsius",
+            "water freezes at one hundred degrees celsius",
+            ["water freezes at zero degrees celsius"],
+        )
+        assert result == ContentVerdict.CONTRADICTION
+
+    def test_word_number_divergence_infinite(self) -> None:
+        """'infinite' vs a finite written-out magnitude is a contradiction."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the speed of light in a vacuum is infinite",
+            "the speed of light in a vacuum is infinite",
+            ["the speed of light in a vacuum is about three hundred million meters per second"],
+        )
+        assert result == ContentVerdict.CONTRADICTION
+
+    def test_cross_relationship_proportional_not_flagged(self) -> None:
+        """Two true statements about different quantities must not be flagged.
+
+        'directly proportional to temperature' vs 'inversely proportional to
+        volume' are BOTH true; the directly/inversely pair was reverted because
+        it could not tell same-subject from cross-subject relationships.
+        """
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the pressure of a gas is directly proportional to its temperature",
+            "the pressure of a gas is directly proportional to its temperature",
+            ["the pressure of a gas is inversely proportional to its volume"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_indirectly_is_not_directly(self) -> None:
+        """Word-boundary matching: 'indirectly' must not match 'directly'."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the relation is indirectly proportional to x",
+            "the relation is indirectly proportional to x",
+            ["the relation is inversely proportional to y"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_always_vs_never(self) -> None:
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the entropy of an isolated system always decreases",
+            "the entropy of an isolated system always decreases",
+            ["the entropy of an isolated system never decreases"],
+        )
+        assert result == ContentVerdict.CONTRADICTION
+
+    def test_no_false_contradiction_on_negated_conservation(self) -> None:
+        """A correct negation ('conserved ... cannot be created') must not flag."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "energy is conserved and cannot be created or destroyed",
+            "energy is conserved and cannot be created or destroyed",
+            ["energy is conserved in an isolated system"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_consistent_paraphrase_not_flagged(self) -> None:
+        """A correct paraphrase must stay unflagged (no false-contradiction)."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "in an isolated system the total energy does not change",
+            "in an isolated system the total energy does not change",
+            ["energy is conserved in an isolated system"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_boundary_no_substring_false_positive(self) -> None:
+        """'per' inside 'experiment' must not fire a times/per check."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the experiment ran three times",
+            "the experiment ran three times",
+            ["the experiment ran five times"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_multi_quantity_no_cross_pairing(self) -> None:
+        """100 mg vs '40 mg 3 times daily' must not pair 100 with the frequency 3."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the dose is 100 milligrams daily",
+            "the dose is 100 milligrams daily",
+            ["the dose is 40 milligrams 3 times daily"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_number_tens_ones_composition(self) -> None:
+        """'twenty one' must parse as 21 (equal), not as [20, 1]."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the temperature is twenty one degrees",
+            "the temperature is twenty one degrees",
+            ["the temperature is 21 degrees"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_times_divided_by_cross_relationship_not_flagged(self) -> None:
+        """F = ma and a = F/m are BOTH true; times/divided-by was dropped."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "acceleration equals force divided by mass",
+            "acceleration equals force divided by mass",
+            ["force equals mass times acceleration"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_hyphen_compound_not_flagged(self) -> None:
+        """'non-negative' must not match the antonym 'negative'."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the result is non-negative",
+            "the result is non-negative",
+            ["the result is positive"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_temperature_scale_mismatch_not_flagged(self) -> None:
+        """0 C == 32 F: different scales must not be a numeric contradiction."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "water freezes at thirty two degrees fahrenheit",
+            "water freezes at thirty two degrees fahrenheit",
+            ["water freezes at zero degrees celsius"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_number_multidigit_decimal(self) -> None:
+        """'three point one four' must parse as 3.14 (equal to '3.14')."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the value is three point one four",
+            "the value is three point one four",
+            ["the value is 3.14"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_number_scale_continuation(self) -> None:
+        """'one hundred twenty one' must parse as 121 (equal to '121')."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the count is one hundred twenty one",
+            "the count is one hundred twenty one",
+            ["the count is 121"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_number_parser(self) -> None:
+        from isnad.critics.embedding import _extract_numbers
+
+        assert _extract_numbers("three point one four") == [3.14]
+        assert _extract_numbers("one hundred twenty one") == [121.0]
+        assert _extract_numbers("twenty one") == [21.0]
+        assert _extract_numbers("three hundred million") == [300000000.0]
+        assert _extract_numbers("nine point eight") == [9.8]
+        assert _extract_numbers("zero") == [0.0]
+        assert _extract_numbers("infinite") == [float("inf")]

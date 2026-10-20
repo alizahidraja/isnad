@@ -1,6 +1,6 @@
 """Tests for the Merkle batch audit log (issue #69).
 
-The linear tamper-evidence chain (chainlog.py) is correct but strictly
+The linear tamper-detection chain (chainlog.py) is correct but strictly
 sequential: parallel agents race on the previous hash. The Merkle batch log
 lets independent leaves be built without a back-reference, then sealed into a
 batch whose root commits to the full ordered leaf set. Batches chain by linking

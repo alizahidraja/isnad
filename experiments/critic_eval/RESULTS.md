@@ -4,7 +4,7 @@
 
 | Critic | Contra. recall | Contra. precision | Contra. F1 | False-consistent (danger) | False-contradiction | 3-way acc |
 |---|---|---|---|---|---|---|
-| EmbeddingCritic (TF-IDF) | 0.120 | 1.000 | 0.214 | 0.000 | 0.000 | 0.300 |
+| EmbeddingCritic (TF-IDF) | 0.360 | 1.000 | 0.529 | 0.000 | 0.000 | 0.400 |
 | LocalNLICritic (DeBERTa NLI) | 0.760 | 0.633 | 0.691 | 0.000 | 0.050 | 0.417 |
 | HybridCritic (MiniLM → NLI) | 0.720 | 0.667 | 0.692 | 0.040 | 0.000 | 0.433 |
 | LLMCritic (DeepSeek) | 1.000 | 1.000 | 1.000 | 0.000 | 0.000 | 1.000 |
@@ -14,6 +14,10 @@
 - **EmbeddingCritic** re-run this sweep (offline, deterministic): the
   contradiction-only change is confirmed — **false-consistent 0.32 → 0.000**
   (it can no longer affirm consistency, so it can no longer bless a contradiction).
+  Contradiction recall was raised **0.120 → 0.360** by expanding the negation/
+  antonym signal set and fixing numeric divergence to catch zero, written-out
+  numbers, and "infinite" — with **no** false-consistent or false-contradiction
+  regression (still 0.000 / 0.000).
 - **LocalNLI / Hybrid** rows preserve the prior committed numbers; the NLI models
   (DeBERTa ~500MB / MiniLM) were not re-downloaded in this environment. To reproduce:
   `uv run python experiments/critic_eval/run.py` with the models available.

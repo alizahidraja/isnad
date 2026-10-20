@@ -78,18 +78,163 @@ class TFIDFIndex:
         return dot / (norm_a * norm_b)
 
 
+_WORD_NUMBERS = {
+    "zero": 0.0,
+    "one": 1.0,
+    "two": 2.0,
+    "three": 3.0,
+    "four": 4.0,
+    "five": 5.0,
+    "six": 6.0,
+    "seven": 7.0,
+    "eight": 8.0,
+    "nine": 9.0,
+    "ten": 10.0,
+    "eleven": 11.0,
+    "twelve": 12.0,
+    "thirteen": 13.0,
+    "fourteen": 14.0,
+    "fifteen": 15.0,
+    "sixteen": 16.0,
+    "seventeen": 17.0,
+    "eighteen": 18.0,
+    "nineteen": 19.0,
+    "twenty": 20.0,
+    "thirty": 30.0,
+    "forty": 40.0,
+    "fifty": 50.0,
+    "sixty": 60.0,
+    "seventy": 70.0,
+    "eighty": 80.0,
+    "ninety": 90.0,
+}
+_WORD_SCALES = {
+    "hundred": 100.0,
+    "thousand": 1000.0,
+    "million": 1000000.0,
+    "billion": 1000000000.0,
+}
+_TENS = {
+    "twenty",
+    "thirty",
+    "forty",
+    "fifty",
+    "sixty",
+    "seventy",
+    "eighty",
+    "ninety",
+}
+_ONES = {
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+}
+
+
+def _has_phrase(text: str, phrase: str) -> bool:
+    """Whole-word/phrase membership (avoids 'per' matching inside 'experiment')."""
+    # Lookbehind/lookahead exclude word chars AND hyphens, so a hyphen inside
+    # a compound ("non-negative") does not open a word boundary.
+    return re.search(r"(?<![\w-])" + re.escape(phrase) + r"(?![\w-])", text) is not None
+
+
+def _parse_number(tokens: list[str], i: int) -> tuple[float | None, int]:
+    """Parse one written-out number starting at tokens[i]; return (value, next_i)."""
+    t = tokens[i]
+    if t in ("infinite", "infinity"):
+        return float("inf"), i + 1
+    if t not in _WORD_NUMBERS:
+        return None, i
+    # decimal: "three point one four" -> 3.14 (all following number words are digits)
+    if i + 2 < len(tokens) and tokens[i + 1] == "point" and tokens[i + 2] in _WORD_NUMBERS:
+        whole = _WORD_NUMBERS[t]
+        j = i + 2
+        digits: list[float] = []
+        while j < len(tokens) and tokens[j] in _WORD_NUMBERS and tokens[j] not in _WORD_SCALES:
+            digits.append(_WORD_NUMBERS[tokens[j]])
+            j += 1
+        frac = sum(d / (10 ** (k + 1)) for k, d in enumerate(digits))
+        return whole + frac, j
+    value = _WORD_NUMBERS[t]
+    i += 1
+    # tens + ones: "twenty one" -> 21
+    if t in _TENS and i < len(tokens) and tokens[i] in _ONES:
+        value += _WORD_NUMBERS[tokens[i]]
+        i += 1
+    # scales: "three hundred million" -> 3e8; continuation "one hundred twenty one" -> 121
+    while i < len(tokens) and tokens[i] in _WORD_SCALES:
+        value *= _WORD_SCALES[tokens[i]]
+        i += 1
+        if i < len(tokens) and tokens[i] in _WORD_NUMBERS and tokens[i] not in _WORD_SCALES:
+            cont, i = _parse_number(tokens, i)
+            if cont is not None:
+                value += cont
+    return value, i
+
+
+def _word_numbers(text: str) -> list[float]:
+    """Extract written-out numbers ("zero", "three hundred million", 3.14, 121)."""
+    tokens = re.findall(r"[a-z]+", text.lower())
+    out: list[float] = []
+    i = 0
+    while i < len(tokens):
+        value, i = _parse_number(tokens, i)
+        if value is not None:
+            out.append(value)
+        else:
+            i += 1
+    return out
+
+
+def _extract_numbers(text: str) -> list[float]:
+    """All numeric values in a text: digit numbers plus written-out numbers."""
+    nums = [float(n) for n in re.findall(r"\d+\.?\d*", text)]
+    nums.extend(_word_numbers(text))
+    return nums
+
+
+def _numbers_diverge(a: float, b: float) -> bool:
+    """True when two magnitudes genuinely conflict (safe to call a contradiction)."""
+    if a == b:
+        return False
+    if (a == 0.0) != (b == 0.0):
+        return True
+    if math.isinf(a) or math.isinf(b):
+        return True
+    if a <= 0.0 or b <= 0.0:
+        return False
+    return max(a, b) / min(a, b) > 3.0
+
+
+_TEMP_UNITS = ("fahrenheit", "kelvin", "celsius", "centigrade")
+
+
+def _temp_scale(text: str) -> str | None:
+    """Return the named temperature scale, or None if no scale is named."""
+    for u in _TEMP_UNITS:
+        if _has_phrase(text, u):
+            return "celsius" if u in ("celsius", "centigrade") else u
+    return None
+
+
 def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
     """Heuristic contradiction detection between two similar claims.
 
-    Checks negation patterns, opposite words, and numeric divergence.
+    Checks negation patterns, opposite words, and numeric divergence
+    (including zero, written-out numbers, and "infinite").
     """
     c_low = claim.lower()
     cc_low = corpus_claim.lower()
 
     if c_low == cc_low:
-        return False  # a claim never contradicts itself (case/punct-insensitive)
+        return False
 
-    # Negation
     for pos, neg in [
         (" is ", " is not "),
         (" does ", " does not "),
@@ -99,7 +244,6 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
         if (pos in c_low and neg in cc_low) or (neg in c_low and pos in cc_low):
             return True
 
-    # Opposite words
     for a, b in [
         ("increases", "decreases"),
         ("positive", "negative"),
@@ -111,17 +255,25 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
         ("hotter", "colder"),
         ("clockwise", "counterclockwise"),
         ("left", "right"),
+        ("always", "never"),
+        ("toward", "away"),
+        ("stationary", "moving"),
+        ("at rest", "in motion"),
+        ("both", "purely"),
     ]:
-        if (a in c_low and b in cc_low) or (b in c_low and a in cc_low):
+        if (_has_phrase(c_low, a) and _has_phrase(cc_low, b)) or (
+            _has_phrase(c_low, b) and _has_phrase(cc_low, a)
+        ):
             return True
 
-    # Numeric divergence >3x
-    nums_c = sorted(float(n) for n in re.findall(r"\d+\.?\d*", claim))
-    nums_cc = sorted(float(n) for n in re.findall(r"\d+\.?\d*", corpus_claim))
-    for nc, ncc in zip(nums_c, nums_cc, strict=False):
-        if nc > 0 and ncc > 0 and max(nc, ncc) / min(nc, ncc) > 3.0:
-            if not any(w in c_low for w in ["equal", "same", "constant"]):
-                return True
+    nums_c = _extract_numbers(claim)
+    nums_cc = _extract_numbers(corpus_claim)
+    if len(nums_c) == 1 and len(nums_cc) == 1 and _numbers_diverge(nums_c[0], nums_cc[0]):
+        scale_c = _temp_scale(c_low)
+        scale_cc = _temp_scale(cc_low)
+        same_scale = scale_c is None or scale_cc is None or scale_c == scale_cc
+        if same_scale and not any(_has_phrase(c_low, w) for w in ["equal", "same", "constant"]):
+            return True
     return False
 
 

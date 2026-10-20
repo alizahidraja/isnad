@@ -67,7 +67,7 @@ It does **not** prove the underlying claim is **true**.  And whether it anchors
 Classical rijāl is explicit that declaring a narrator reliable (tazkiyah)
 must come from an *independent* critic — self-testimony establishes nothing.
 Live Verify encodes the same rule as **amber vs green**: a self-verified seal
-proves tamper-evidence and origin, not integrity.  The domain confirming the
+proves tamper-detection and origin, not integrity.  The domain confirming the
 claim is the domain making it.  So ISNAD seeds integrity **only** for an
 independently-endorsed seal; a self-verified seal is a strong *origin* signal
 and nothing more.

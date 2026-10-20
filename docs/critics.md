@@ -17,7 +17,7 @@ physics corpus; see `experiments/critic_eval/RESULTS.md`):
 | `LLMCritic` (DeepSeek) | **1.000** | **0.000** | 1.000 | API key |
 | `LocalNLICritic` | 0.760 | 0.000 | 0.417 | `sentence-transformers` |
 | `HybridCritic` | 0.720 | 0.040 | 0.433 | `sentence-transformers` |
-| `EmbeddingCritic` | 0.120 | **0.000** (never affirms) | — | nothing |
+| `EmbeddingCritic` | 0.360 | **0.000** (never affirms) | 0.400 | nothing |
 
 **The honest headline.** Only the LLM tier is near-perfect (100% recall, zero
 false-consistents). The offline NLI critics, after fixing three defects —
@@ -30,9 +30,9 @@ which is the correct under-trust bias. The `EmbeddingCritic` is now
 **contradiction-only** (D2): it returns CONTRADICTION or UNVERIFIABLE, never
 CONSISTENT — symmetric lexical overlap cannot affirm correctness, so its
 false-consistent rate is 0.000 *by construction*, not by measurement. It
-catches obvious contradictions and stays silent otherwise.
+catches ~36% of genuine contradictions and stays silent otherwise.
 
-> These replace the earlier "~90% LLM / ~40% NLI / ~30% LocalNLI" figures, which
+> These replace the earlier "~90% LLM / ~36% NLI / ~30% LocalNLI" figures, which
 > were estimated on a template-injected (word-swap) set the critics trivially
 > caught and were never committed (issue #96). They were wrong, and are retracted.
 
