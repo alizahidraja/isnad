@@ -139,40 +139,56 @@ _ONES = {
 
 def _has_phrase(text: str, phrase: str) -> bool:
     """Whole-word/phrase membership (avoids 'per' matching inside 'experiment')."""
-    return re.search(r"\b" + re.escape(phrase) + r"\b", text) is not None
+    # Lookbehind/lookahead exclude word chars AND hyphens, so a hyphen inside
+    # a compound ("non-negative") does not open a word boundary.
+    return re.search(r"(?<![\w-])" + re.escape(phrase) + r"(?![\w-])", text) is not None
+
+
+def _parse_number(tokens: list[str], i: int) -> tuple[float | None, int]:
+    """Parse one written-out number starting at tokens[i]; return (value, next_i)."""
+    t = tokens[i]
+    if t in ("infinite", "infinity"):
+        return float("inf"), i + 1
+    if t not in _WORD_NUMBERS:
+        return None, i
+    # decimal: "three point one four" -> 3.14 (all following number words are digits)
+    if i + 2 < len(tokens) and tokens[i + 1] == "point" and tokens[i + 2] in _WORD_NUMBERS:
+        whole = _WORD_NUMBERS[t]
+        j = i + 2
+        digits: list[float] = []
+        while j < len(tokens) and tokens[j] in _WORD_NUMBERS and tokens[j] not in _WORD_SCALES:
+            digits.append(_WORD_NUMBERS[tokens[j]])
+            j += 1
+        frac = sum(d / (10 ** (k + 1)) for k, d in enumerate(digits))
+        return whole + frac, j
+    value = _WORD_NUMBERS[t]
+    i += 1
+    # tens + ones: "twenty one" -> 21
+    if t in _TENS and i < len(tokens) and tokens[i] in _ONES:
+        value += _WORD_NUMBERS[tokens[i]]
+        i += 1
+    # scales: "three hundred million" -> 3e8; continuation "one hundred twenty one" -> 121
+    while i < len(tokens) and tokens[i] in _WORD_SCALES:
+        value *= _WORD_SCALES[tokens[i]]
+        i += 1
+        if i < len(tokens) and tokens[i] in _WORD_NUMBERS and tokens[i] not in _WORD_SCALES:
+            cont, i = _parse_number(tokens, i)
+            if cont is not None:
+                value += cont
+    return value, i
 
 
 def _word_numbers(text: str) -> list[float]:
-    """Extract written-out numbers ("zero", "three hundred million", 9.8)."""
+    """Extract written-out numbers ("zero", "three hundred million", 3.14, 121)."""
     tokens = re.findall(r"[a-z]+", text.lower())
     out: list[float] = []
     i = 0
     while i < len(tokens):
-        t = tokens[i]
-        if t in ("infinite", "infinity"):
-            out.append(float("inf"))
+        value, i = _parse_number(tokens, i)
+        if value is not None:
+            out.append(value)
+        else:
             i += 1
-            continue
-        if t not in _WORD_NUMBERS:
-            i += 1
-            continue
-        # "nine point eight" -> 9.8
-        if i + 2 < len(tokens) and tokens[i + 1] == "point" and tokens[i + 2] in _WORD_NUMBERS:
-            whole = _WORD_NUMBERS[t]
-            frac = _WORD_NUMBERS[tokens[i + 2]]
-            out.append(whole + frac / (10 ** len(str(int(frac)))))
-            i += 3
-            continue
-        value = _WORD_NUMBERS[t]
-        i += 1
-        # tens + ones: "twenty one" -> 21
-        if t in _TENS and i < len(tokens) and tokens[i] in _ONES:
-            value += _WORD_NUMBERS[tokens[i]]
-            i += 1
-        while i < len(tokens) and tokens[i] in _WORD_SCALES:
-            value *= _WORD_SCALES[tokens[i]]
-            i += 1
-        out.append(value)
     return out
 
 
@@ -194,6 +210,17 @@ def _numbers_diverge(a: float, b: float) -> bool:
     if a <= 0.0 or b <= 0.0:
         return False
     return max(a, b) / min(a, b) > 3.0
+
+
+_TEMP_UNITS = ("fahrenheit", "kelvin", "celsius", "centigrade")
+
+
+def _temp_scale(text: str) -> str | None:
+    """Return the named temperature scale, or None if no scale is named."""
+    for u in _TEMP_UNITS:
+        if _has_phrase(text, u):
+            return "celsius" if u in ("celsius", "centigrade") else u
+    return None
 
 
 def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
@@ -242,7 +269,10 @@ def _has_contradiction_signal(claim: str, corpus_claim: str) -> bool:
     nums_c = _extract_numbers(claim)
     nums_cc = _extract_numbers(corpus_claim)
     if len(nums_c) == 1 and len(nums_cc) == 1 and _numbers_diverge(nums_c[0], nums_cc[0]):
-        if not any(_has_phrase(c_low, w) for w in ["equal", "same", "constant"]):
+        scale_c = _temp_scale(c_low)
+        scale_cc = _temp_scale(cc_low)
+        same_scale = scale_c is None or scale_cc is None or scale_c == scale_cc
+        if same_scale and not any(_has_phrase(c_low, w) for w in ["equal", "same", "constant"]):
             return True
     return False
 

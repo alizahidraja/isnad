@@ -234,3 +234,54 @@ class TestEmbeddingCritic:
             ["force equals mass times acceleration"],
         )
         assert result != ContentVerdict.CONTRADICTION
+
+    def test_hyphen_compound_not_flagged(self) -> None:
+        """'non-negative' must not match the antonym 'negative'."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the result is non-negative",
+            "the result is non-negative",
+            ["the result is positive"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_temperature_scale_mismatch_not_flagged(self) -> None:
+        """0 C == 32 F: different scales must not be a numeric contradiction."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "water freezes at thirty two degrees fahrenheit",
+            "water freezes at thirty two degrees fahrenheit",
+            ["water freezes at zero degrees celsius"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_number_multidigit_decimal(self) -> None:
+        """'three point one four' must parse as 3.14 (equal to '3.14')."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the value is three point one four",
+            "the value is three point one four",
+            ["the value is 3.14"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_number_scale_continuation(self) -> None:
+        """'one hundred twenty one' must parse as 121 (equal to '121')."""
+        critic = EmbeddingCritic()
+        result = critic.evaluate(
+            "the count is one hundred twenty one",
+            "the count is one hundred twenty one",
+            ["the count is 121"],
+        )
+        assert result != ContentVerdict.CONTRADICTION
+
+    def test_word_number_parser(self) -> None:
+        from isnad.critics.embedding import _extract_numbers
+
+        assert _extract_numbers("three point one four") == [3.14]
+        assert _extract_numbers("one hundred twenty one") == [121.0]
+        assert _extract_numbers("twenty one") == [21.0]
+        assert _extract_numbers("three hundred million") == [300000000.0]
+        assert _extract_numbers("nine point eight") == [9.8]
+        assert _extract_numbers("zero") == [0.0]
+        assert _extract_numbers("infinite") == [float("inf")]
