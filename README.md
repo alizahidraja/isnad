@@ -20,6 +20,11 @@ Site: https://isnadhq.com/ · Docs: https://isnadhq.com/docs
 pip install isnad
 ```
 
+## Status
+
+3.2 is the stable release of the 3.x line. The `release/3.x` branch receives security
+fixes only. If you depend on the current API, pin `isnad>=3.2,<4`.
+
 ## 30-second example
 
 ```python
@@ -99,6 +104,9 @@ discounted; correlated errors across model families (shared training data) canno
 detected; the content critic is the coverage ceiling; corroboration rarely fires on dense
 technical corpora where genuine cross-source overlap is rare; the serving index is
 in-memory (single-node; multi-worker HA is not yet supported).
+Resolving a review item records the human decision as oversight evidence; it does not
+change narrator grades. To move a grade, submit evidence with `Registry.record_evidence()`
+or `POST /v1/evidence`.
 
 ## Decision matrix
 
