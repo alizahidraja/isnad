@@ -1,7 +1,6 @@
 # ISNAD
 
-ISNAD grades who handled a claim in an AI pipeline — the transmitters and the
-chain — and exports each verdict as a verifiable, tamper-detecting audit record.
+ISNAD grades who handled a claim in an AI pipeline (the transmitters and the chain) and can export each verdict as an audit record you can sign and verify.
 
 Site: https://isnadhq.com/ · Docs: https://isnadhq.com/docs
 
@@ -82,7 +81,7 @@ Three objections, answered up front:
 | Weakest-link quarantine | Validated | Every COMPROMISED-integrity chain grades MAWDU and is blocked; a SUSPECT narrator grades ḍaʿīf jiddan — both quarantine. The SUSPECT→ḍaʿīf jiddan path is exercised in the gated-vs-ungated experiment; the COMPROMISED→mawḍūʿ path is unit-tested. |
 | ISNAD-Bench | Measured | κ = 0.871 (3-way) / 0.8667 (5-way, mapping v2, post-hoc) / 0.761 (lenient) vs 575,060 chains graded by a rule-based convention. κ is conformance, not agreement with scholars; narrator-grade agreement κ = 0.331 (a different task, not a ceiling); shuffled control −0.0066 |
 | Corroboration (mutābaʿāt) | Validated | 603/603 Wikipedia + 104/104 physics matched pairs; 8/8 + 9/9 negative controls; requires attested distinct lineage |
-| Chain-scoped grounding | Partial | Flags a claim grounded only off its own chain — evidence, not an action. Inert with the default critic (contradiction-only); false-positive rate not yet measured |
+| Corroboration (mutābaʿāt, shawāhid) | Validated | 603/603 Wikipedia + 104/104 physics matched pairs; 8/8 + 9/9 negative controls; requires attested distinct lineage |
 | Content-madār fingerprint calibration | Measured | FP 0.375 on independent agreement (down from 0.750), token-bearing recall 1.0; near-miss boundary separated (0/4 false positives) |
 | Seed-grade bootstrapping | Validated | Evidence-backed `Registry.seed()`; coverage is critic-bound — the offline `EmbeddingCritic` serves 0% (contradiction-only), so the LLM critic is the ceiling |
 | Content criticism | Partial | The main constraint. LLM critic 1.000 recall / 0.000 false-consistent on the 60-case eval, but 39.1% false-consistent on the gated-vs-ungated content corruption; offline critics recall 0.36–0.76 |
@@ -142,6 +141,13 @@ ISNAD produces evidence artifacts; it does not confer conformity with any regula
 
 - LangChain / LangGraph — callback handler, tracer, middleware. The callback handler is the
   stable capture path; the AgentMiddleware wiring targets a forward-looking LangChain API.
+- CrewAI / LlamaIndex — adapters
+- OpenTelemetry — `isnad ingest --otlp` grades an existing GenAI trace
+- MCP — grade MCP servers as narrators; tool narrators stay UNGRADED by default
+- Live Verify — consume a `verify:` seal as a high-trust narrator (proves authenticity, not truth)
+- Chain viewer — `viewer/index.html` renders chains in the browser
+
+LangChain callback, in five lines:
 
 ```python
 from isnad.integrations.langchain import IsnadCallbackHandler, seed_registry
@@ -151,12 +157,6 @@ handler = IsnadCallbackHandler(registry=reg, domain="physics")
 chain.invoke("What is F=ma?", config={"callbacks": [handler]})
 trace = handler.to_trace()  # isnad_trace v0.1 JSON
 ```
-
-- CrewAI / LlamaIndex — adapters
-- OpenTelemetry — `isnad ingest --otlp` grades an existing GenAI trace
-- MCP — grade MCP servers as narrators; tool narrators stay UNGRADED by default
-- Live Verify — consume a `verify:` seal as a high-trust narrator (proves authenticity, not truth)
-- Chain viewer — `viewer/index.html` renders chains in the browser
 
 ## Scope and limitations
 
@@ -185,8 +185,8 @@ downstream gates, not a replacement for it.
 | ʿadālah | Integrity — can this transmitter be trusted not to lie? |
 | ḍabṭ | Precision — how often is this transmitter accurate? |
 | ittiṣāl | Chain continuity (no gaps) |
-| mutābaʿāt | Corroboration — independent chains agreeing upgrade a claim |
-| madār | The hidden pivot — "independent" chains that secretly share an upstream |
+| mutābaʿāt / shawāhid | Corroboration: other routes that agree with a claim, through the same source (mutābaʿāt) or a different one (shawāhid). ISNAD counts only routes with attested distinct lineage. |
+| madār | The common link where chains converge: "independent" chains that actually share an upstream |
 | matn | The claim content, criticized separately from the chain |
 | ṣaḥīḥ / ḥasan / ḍaʿīf / ḍaʿīf jiddan / mawḍūʿ | Sound / good / weak / very weak / fabricated |
 | ʿilal | Hidden defects that survive surface grading — not implemented; routed to review |
