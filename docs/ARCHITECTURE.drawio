@@ -305,7 +305,7 @@
           <mxGeometry x="1040" y="110" width="300" height="95" as="geometry" />
         </mxCell>
 
-        <mxCell id="pv5" value="&lt;b&gt;Decision matrix (12 cells) · API endpoints · DB persistence · detached signatures (HMAC + Ed25519) · Merkle batch log · Live Verify integration · ~790 tests · ruff/mypy clean&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="pv5" value="&lt;b&gt;Decision matrix · API endpoints · DB persistence · detached signatures (HMAC + Ed25519) · Merkle batch log · Live Verify integration&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#28a745;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="60" y="220" width="1280" height="55" as="geometry" />
         </mxCell>
 
@@ -336,7 +336,7 @@
         <mxCell id="nd1" value="&lt;b&gt;Chain independence&lt;/b&gt; (#54)&lt;br&gt;Topology cannot prove independence — correlated&lt;br&gt;blind spots / content-level correlated error are&lt;br&gt;undetectable. Documented, not hidden." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="60" y="650" width="300" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="nd2" value="&lt;b&gt;Live Verify issuer revocation&lt;/b&gt; (#122)&lt;br&gt;revocation-on-regrade is unimplemented — a published&lt;br&gt;verdict stays &quot;verified&quot; forever, overstating currency." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="nd2" value="&lt;b&gt;Live Verify issuer re-grades:&lt;/b&gt; supersede_verdict() flips a published verdict to superseded (#122). The caller must invoke it; nothing re-grades automatically." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="380" y="650" width="300" height="70" as="geometry" />
         </mxCell>
         <mxCell id="nd3" value="&lt;b&gt;Human ground-truth validation&lt;/b&gt;&lt;br&gt;Claims verified by semantic overlap, not checked&lt;br&gt;against authoritative references — would strengthen §8." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dc3545;fontSize=10;align=left;verticalAlign=top;" vertex="1" parent="1">
