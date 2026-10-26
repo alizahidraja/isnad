@@ -199,7 +199,7 @@ docs/
 ├── ARCHITECTURE.drawio          Architecture diagram (3 tabs)
 └── concept_to_code.md           Concept → module mapping
 
-tests/                           ~790 tests across ~70 files
+tests/                           test suite (pytest)
 ```
 
 ---
@@ -945,7 +945,7 @@ no claims it can't defend.
 - **Chain integrity and origin strength are separate axes.**  Never collapse
   them.
 - **Independence is a first-class enum**, never a silent boolean.
-- **Be honest about limits.**  If a mechanism is unvalidated, the UI and docs
+- **State the limits.**  If a mechanism is unvalidated, the UI and docs
   say so.
 - **Everything is pluggable.**  Every strategy is a Protocol — swap without
   touching the rest.

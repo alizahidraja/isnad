@@ -23,12 +23,12 @@ Integrity, Confidentiality, Privacy.
 
 ## What the company must add (the auditor will ask; ISNAD cannot provide it)
 1. **Entity + policy**: security policy, access-control policy, incident-response plan, vendor-management policy, change-management, and a named security owner.
-2. **Access control**: SSO, RBAC, key rotation, separation of duties (a solo founder is a *compensating-control* problem — document it honestly).
+2. **Access control**: SSO, RBAC, key rotation, separation of duties (a solo founder is a *compensating-control* problem — document it).
 3. **Infrastructure**: HA, backups, retention (7-year for audit logs), monitoring/alerting, patching.
 4. **DPA + sub-processor inventory**: the LLM critic provider, the DB host, and any SIEM destination are sub-processors — each needs a DPA.
 5. **Pen test** before any "Type II" or "compliant" claim.
 
-## The honest line (never cross it)
+## The line (never cross it)
 ISNAD's audit record says *"produces evidence artifacts; does not confer conformity with
 any regulation."* SOC 2, EU AI Act, and NIST mapping are the **company's** attestations,
 not the library's. State COVERED / PARTIAL / NOT COVERED — never "compliant."

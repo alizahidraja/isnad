@@ -1,4 +1,4 @@
-# Content critics — the honest hierarchy
+# Content critics — the hierarchy
 
 The content critic (matn criticism) checks whether a claim *contradicts* the
 corpus, independently of chain quality. This is the framework's historically
@@ -19,7 +19,7 @@ physics corpus; see `experiments/critic_eval/RESULTS.md`):
 | `HybridCritic` | 0.720 | 0.040 | 0.433 | `sentence-transformers` |
 | `EmbeddingCritic` | 0.360 | **0.000** (never affirms) | 0.400 | nothing |
 
-**The honest headline.** Only the LLM tier is near-perfect (100% recall, zero
+**The headline.** Only the LLM tier is near-perfect (100% recall, zero
 false-consistents). The offline NLI critics, after fixing three defects —
 swapped label order, raw logits vs probability thresholds, and
 max-over-whole-corpus "different fact" false positives (issue 110) — now

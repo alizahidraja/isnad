@@ -52,7 +52,7 @@ Every registry method gains an optional `role: Role | None = None`.
 `(narrator, domain)` and is **bit-for-bit today's behaviour**. No existing test
 changes meaning.
 
-### 2.2 Honest scope (what this RFC does *not* do — by design)
+### 2.2 Scope (what this RFC does *not* do — by design)
 
 1. **Integrity is domain-scoped, not global.** A narrator quarantined in
    `physics` is not auto-quarantined in `biology`. (Chosen: issue explicitly
@@ -124,7 +124,7 @@ objection *survived* (a change was made), the change is recorded.  Where it was
   ("thiqa in fiqh, weak in ḥadīth"). The split is faithful.
 - **Objection:** "A proven liar in synthesis should be suspect in *every* role
   and domain — your integrity is domain-scoped."
-  → **Overruled (scope), recorded honestly.** The issue and author chose
+  → **Overruled (scope), recorded.** The issue and author chose
   domain-scoped integrity; globalizing ʿadālah across domains is a separate,
   larger change listed under non-goals. Quarantine *does* span roles within a
   domain — the critical containment property holds.
@@ -145,7 +145,7 @@ objection *survived* (a change was made), the change is recorded.  Where it was
   default record: reset grade/clocks, log `VERSION_BUMP`, keep the append-only
   audit trail. No in-memory/DB divergence.
 
-### 6.3 Honesty Auditor
+### 6.3 Auditor
 
 - **Objection:** "Does the README disclose the cost (cold-start sparsity)?"
   → **Survives.** The README "Honest limits" block states the trade plainly and
@@ -172,7 +172,7 @@ objection *survived* (a change was made), the change is recorded.  Where it was
   trace schema and avoid an unbounded key space; a finer `task` tag is a
   non-goal, not a denial.
 - **Objection:** "Cold-start gets worse — is per-role grading actually better?"
-  → **Survives as a documented trade.** A per-role UNGRADED is more honest than
+  → **Survives as a documented trade.** A per-role UNGRADED is more defensible than
   a wrong cross-role grade; the cost is real and stated, not papered over.
 
 ### 6.6 OSS Maintainer

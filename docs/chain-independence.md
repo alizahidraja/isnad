@@ -54,7 +54,7 @@ it can never *prove independence* — it can only fail to find shared signals.
 - **The gate is surfaced, the score stays internal.** Each corroborating pair's
   `chain_independence` assessment carries the `is_independent` gate and the
   `shared_signals` that fired. The calibrated numeric score is internal only — it is
-  never surfaced to callers (ordinal-only: the honesty moat forbids a public float).
+  never surfaced to callers (ordinal-only: the design forbids a public float).
 - **The content-madār fingerprint is measured, not asserted** (`experiments/madar_eval`):
   FP 0.375 on independent agreement (token-bearing recall 1.0), and a **near-miss
   boundary class (correct vs wrong value) that is now correctly separated (0/4 false

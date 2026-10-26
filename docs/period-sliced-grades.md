@@ -49,7 +49,7 @@ reg.get_grade_as_of("jia", "compression", after_backdoor)   # -> REJECTED
 
 The grade is **re-derived** from the evidence recorded up to the instant you
 ask about — it never reads the narrator's current, mutated state. It is a
-reconstruction, not a guess. The result is two honest answers where one number
+reconstruction, not a guess. The result is two answers where one number
 could only give a lie:
 
 | Question | Grade |

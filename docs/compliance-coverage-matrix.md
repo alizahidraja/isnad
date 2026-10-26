@@ -17,7 +17,7 @@ Draft for counsel review (not yet signed by counsel). Every cell is **COVERED / 
 
 | Function | ISNAD | Coverage |
 |---|---|---|
-| **Govern — accountability, transparency** | Hash-chained, signed audit records; ordinal grades; honesty box | **COVERED** |
+| **Govern — accountability, transparency** | Hash-chained, signed audit records; ordinal grades; validated-versus-not table | **COVERED** |
 | **Map — context, provenance** | Provenance-native: every claim traces to its source narrator + retrieved evidence (chain-scoped grounding) | **COVERED** |
 | **Measure — test/eval, monitoring** | Benchmark (κ=0.871), critic eval, model-drift leaderboard | **PARTIAL** | Continuous production monitoring needs the SIEM export |
 | **Manage — mitigation** | Decision matrix (serve/caveat/review/quarantine) + quarantine/reject | **COVERED** |
@@ -28,6 +28,6 @@ Draft for counsel review (not yet signed by counsel). Every cell is **COVERED / 
 - **Management-system clauses (leadership, objectives, audits)** — organizational =
   **NOT COVERED** (ISNAD is not a management system).
 
-## The one-sentence honesty note
+## The one-sentence note
 ISNAD is **evidence infrastructure**: it produces the records a compliance officer or
 auditor needs, and it never certifies AI-Act conformity, SOC 2, or RMF alignment.

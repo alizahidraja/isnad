@@ -38,8 +38,8 @@ reliability:
   error, and the corroboration is discounted — the registry catches the *hidden pivot*,
   not the confident answer.
 
-## The honest status
+## The status
 
 This is a **mission**, not a shipped feature. The primitive (per-(narrator, domain) ordinal
 registry + jarḥ–taʿdīl loop) ships today; the *shared* registry is a roadmap goal. Say so —
-the audience respects a mission that's honest about what exists vs. what's next.
+the audience respects a mission that states what exists vs. what's next.

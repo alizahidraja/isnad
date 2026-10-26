@@ -66,7 +66,7 @@ A graded, hash-chained provenance record — **who** vouches for the claim and *
 much** the weakest narrator lets you trust it. It grades the transmission, never the
 truth; your content critic owns the truth question, and ISNAD composes with it.
 
-## What are the honest limits?
+## What are the limits?
 
 The bundled deterministic critic is a reference stub on real text — plug in an LLM or
 embedding critic via `CriticAdapter` for practical coverage. Cold-start grades produce
