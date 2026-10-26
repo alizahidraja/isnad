@@ -1,5 +1,7 @@
 # Contributing to ISNAD
 
+Status (3.2.0): 3.x is in maintenance. Security fixes go to the `release/3.x` branch. The `working` branch described below will be recreated when 4.0 development starts; until then, open an issue before starting work.
+
 ## Branch Flow
 
 We use a two-stage integration model. **Every change goes to `working` first,
@@ -10,7 +12,7 @@ branch where things get tested together before they ship.
 feature/*  ──PR──▶  working  ──PR──▶  main  ──▶  PyPI release
                       │                  │
                  CI runs here      release workflow runs
-                 (lint, format,    (bumps version, publishes)
+                 (lint, format,    (publishes if version is newer)
                   type, tests)
 ```
 
@@ -20,7 +22,7 @@ feature/*  ──PR──▶  working  ──PR──▶  main  ──▶  PyPI 
   together. Merge conflicts are caught here, not on `main`.
 - `main` is always releasable. Only code that has passed CI on `working`
   gets merged in.
-- Merging to `main` (with a `bump:` commit) triggers the PyPI release.
+- Merging to `main` triggers the release workflow, which publishes only when the version in `pyproject.toml` is newer than the latest tag.
 
 ### Step-by-step
 
@@ -44,13 +46,12 @@ feature/*  ──PR──▶  working  ──PR──▶  main  ──▶  PyPI 
    ```bash
    python scripts/bump_version.py patch   # or minor, or major
    ```
-   Commit with a message starting `bump:`:
-   ```bash
-   git commit -am "bump: patch release"
-   ```
+   Commit the bump. The release workflow reads the version from `pyproject.toml`
+   and publishes only when it is newer than the latest tag; it does not bump the
+   version and does not read the commit message.
 
-5. **Merge to `main`**. The release workflow runs tests, builds, and
-   publishes to PyPI.
+5. **Merge to `main`**. The release workflow runs tests and builds, then
+   publishes to PyPI only when the version is newer than the latest tag.
 
 ## Versioning
 
@@ -88,7 +89,7 @@ uv run pytest -v --tb=short              # tests
 - [ ] Tests pass locally: `uv run pytest -q`
 - [ ] Lint clean: `uv run ruff check src/isnad tests`
 - [ ] Format clean: `uv run ruff format --check src/isnad tests`
-- [ ] No `bump:` commit (version bumps happen only on the `working` → `main` PR)
+- [ ] No version bump unless this is the release PR (the release workflow publishes when the version is newer than the latest tag)
 - [ ] If you changed behavior, update the docs and add a test
 
 ## Code Map — where things live
@@ -115,7 +116,6 @@ not `registry.py`.  If you're adding a new *grading strategy*, `grading.py`.
 
 ## Notes for Reviewers
 
-- `main` is protected — the version must be bumped and committed with a
-  `bump:` message before the release workflow fires.
+- `main` is protected — the version must be bumped (via `scripts/bump_version.py`) before merging; the release workflow publishes only when the version is newer than the latest tag.
 - The `scripts/bump_version.py` script asserts all three version locations
   agree, so drift is impossible if everyone uses it.
