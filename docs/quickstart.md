@@ -76,4 +76,4 @@ stated up front, not hidden.
 ## Where next?
 
 - [How isnād–rijāl maps to multi-agent provenance](concepts.md) — the idea.
-- [Compliance mapping](compliance.md) — turn the audit trail into an audit you pass.
+- [Compliance mapping](compliance.md) — the evidence an auditor reviews.
