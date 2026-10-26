@@ -80,8 +80,8 @@ Three objections, answered up front:
 | --- | --- | --- |
 | Weakest-link quarantine | Validated | Every COMPROMISED-integrity chain grades MAWDU and is blocked; a SUSPECT narrator grades ḍaʿīf jiddan — both quarantine. The SUSPECT→ḍaʿīf jiddan path is exercised in the gated-vs-ungated experiment; the COMPROMISED→mawḍūʿ path is unit-tested. |
 | ISNAD-Bench | Measured | κ = 0.871 (3-way) / 0.8667 (5-way, mapping v2, post-hoc) / 0.761 (lenient) vs 575,060 chains graded by a rule-based convention. κ is conformance, not agreement with scholars; narrator-grade agreement κ = 0.331 (a different task, not a ceiling); shuffled control −0.0066 |
-| Corroboration (mutābaʿāt) | Validated | 603/603 Wikipedia + 104/104 physics matched pairs; 8/8 + 9/9 negative controls; requires attested distinct lineage |
 | Corroboration (mutābaʿāt, shawāhid) | Validated | 603/603 Wikipedia + 104/104 physics matched pairs; 8/8 + 9/9 negative controls; requires attested distinct lineage |
+| Chain-scoped grounding | Partial | Flags a claim grounded only off its own chain — evidence, not an action. Inert with the default critic (contradiction-only); false-positive rate not yet measured |
 | Content-madār fingerprint calibration | Measured | FP 0.375 on independent agreement (down from 0.750), token-bearing recall 1.0; near-miss boundary separated (0/4 false positives) |
 | Seed-grade bootstrapping | Validated | Evidence-backed `Registry.seed()`; coverage is critic-bound — the offline `EmbeddingCritic` serves 0% (contradiction-only), so the LLM critic is the ceiling |
 | Content criticism | Partial | The main constraint. LLM critic 1.000 recall / 0.000 false-consistent on the 60-case eval, but 39.1% false-consistent on the gated-vs-ungated content corruption; offline critics recall 0.36–0.76 |
