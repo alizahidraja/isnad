@@ -33,4 +33,4 @@ A new pipeline starts with every narrator UNGRADED, so nothing serves; seed grad
 - [Compliance](compliance.md) — the evidence ISNAD produces for AI governance frameworks.
 - [Architecture](ARCHITECTURE.md) — the module map.
 - [Critics](critics.md) — content critics and their measured recall.
-- [ISNAD-Bench results](https://github.com/alizahidraja/isnad/blob/main/bench/docs/RESULTS.md)
+- [ISNAD-Bench results](https://github.com/alizahidraja/isnad/blob/v3.2.0/bench/docs/RESULTS.md)

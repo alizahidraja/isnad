@@ -6,13 +6,13 @@ Site: https://isnadhq.com/ · Docs: https://isnadhq.com/docs
 
 [![CI](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml/badge.svg)](https://github.com/alizahidraja/isnad/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/alizahidraja/isnad/blob/v3.2.0/LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2607.24117-b31b1b.svg)](https://arxiv.org/abs/2607.24117)
 [![Downloads](https://static.pepy.tech/badge/isnad/month)](https://pypi.org/project/isnad/)
 [![npm](https://img.shields.io/npm/v/isnad)](https://www.npmjs.com/package/isnad)
 [![Glama MCP score](https://glama.ai/mcp/servers/alizahidraja/isnad/badges/score.svg)](https://glama.ai/mcp/servers/alizahidraja/isnad)
 
-<p align="center"><img src="docs/images/isnad-seal-wax-512.png" width="140" alt="ISNAD — the wax seal (إسناد)"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alizahidraja/isnad/v3.2.0/docs/images/isnad-seal-wax-512.png" width="140" alt="ISNAD — the wax seal (إسناد)"></p>
 
 ## Install
 
@@ -135,7 +135,7 @@ and reordering. Neither detects tail truncation, and both commit to a self-hash,
 detect post-hoc modification, not a forger who rebuilds the chain.
 
 ISNAD produces evidence artifacts; it does not confer conformity with any regulation. See
-[docs/evidence-mapping.md](docs/evidence-mapping.md).
+[docs/evidence-mapping.md](https://github.com/alizahidraja/isnad/blob/v3.2.0/docs/evidence-mapping.md).
 
 ## Integrations
 
@@ -202,22 +202,22 @@ across 575,060 chains, with a shuffled-rank control at κ = −0.0066. ISNAD con
 rule-based convention; it is not "better than the scholars." The narrator-grade agreement —
 how contested the underlying tiers are — is κ = 0.331; the 0.331 is narrator-grade context,
 not a ceiling. The 5-way 0.8667 (mapping v2) is post-hoc. Full write-up:
-[bench/docs/RESULTS.md](bench/docs/RESULTS.md).
+[bench/docs/RESULTS.md](https://github.com/alizahidraja/isnad/blob/v3.2.0/bench/docs/RESULTS.md).
 
 **Transfer to AI pipelines.** On RAGTruth, the grounding critic ISNAD composes with transfers
 at κ = 0.4345 over all 1,800 responses (57 unparseable, 3.2%, scored fail-closed) — 96.0%
 hallucination recall at 60.4% precision, a 49.9% false-positive rate on grounded responses,
 vs a 55.8% majority-class baseline. That number belongs to the composed critic, not to chain
 grading. The weak bi-encoder signal (κ ≈ 0.1) is reported alongside. Case study:
-[G1_CASE_STUDY.md](G1_CASE_STUDY.md).
+[G1_CASE_STUDY.md](https://github.com/alizahidraja/isnad/blob/v3.2.0/G1_CASE_STUDY.md).
 
 **Datasets:** [alizahidraja/isnad-bench](https://huggingface.co/datasets/alizahidraja/isnad-bench)
-· each folder under [experiments/](experiments/) has its own RESULTS.md.
+· each folder under [experiments/](https://github.com/alizahidraja/isnad/tree/v3.2.0/experiments/) has its own RESULTS.md.
 
 ## Contributing and security
 
-[CONTRIBUTING.md](CONTRIBUTING.md) · [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) ·
-[SECURITY.md](SECURITY.md) · [THREAT_MODEL.md](THREAT_MODEL.md)
+[CONTRIBUTING.md](https://github.com/alizahidraja/isnad/blob/v3.2.0/CONTRIBUTING.md) · [CODE_OF_CONDUCT.md](https://github.com/alizahidraja/isnad/blob/v3.2.0/CODE_OF_CONDUCT.md) ·
+[SECURITY.md](https://github.com/alizahidraja/isnad/blob/v3.2.0/SECURITY.md) · [THREAT_MODEL.md](https://github.com/alizahidraja/isnad/blob/v3.2.0/THREAT_MODEL.md)
 
 ## Citation
 
@@ -235,7 +235,7 @@ grading. The weak bi-encoder signal (κ ≈ 0.1) is reported alongside. Case stu
 
 ## License and author
 
-Code: Apache 2.0 (see [LICENSING.md](LICENSING.md)) · Paper & docs: CC BY 4.0. The core
+Code: Apache 2.0 (see [LICENSING.md](https://github.com/alizahidraja/isnad/blob/v3.2.0/LICENSING.md)) · Paper & docs: CC BY 4.0. The core
 (`src/isnad/`) stays Apache-2.0.
 
 Built by [Ali Zahid Raja](https://alizahidraja.com) · ORCID [0009-0003-7875-4590](https://orcid.org/0009-0003-7875-4590).
