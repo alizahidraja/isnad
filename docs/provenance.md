@@ -3,10 +3,10 @@
 ISNAD's audit contract: **every grade is backed by evidence, and every record can be
 verified.** The framework emits *evidence artifacts*, not compliance certificates.
 
-## Three kinds of evidence — three honest labels
+## Three kinds of evidence — three labels
 
 A narrator's grade is derived from an append-only evidence log. Each entry is classified
-into one of three provenance buckets, and the label is **honest about which one produced
+into one of three provenance buckets, and the label is **explicit about which one produced
 it**:
 
 | Label | Evidence | Meaning |
@@ -16,7 +16,7 @@ it**:
 | `human (Reviewed)` | `HUMAN_REVIEW` | A human intervened (review, quarantine, override). |
 | `unvalidated` | *(none)* | A grade with no observed, human, or prior evidence. Never silently promoted. |
 
-The key honesty rule: **"Supported" is only ever earned, never shipped.** A shipped seed
+The key rule: **"Supported" is only ever earned, never shipped.** A shipped seed
 can never plain-`SERVE`; it is capped to `SERVE_WITH_CAVEAT` or `REVIEW` by the serve
 gate until real observations arrive.
 

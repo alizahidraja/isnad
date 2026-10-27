@@ -33,8 +33,8 @@ everything else in the audit record is hashes/ids, so the data exposure is narro
 - The company notifies the customer within [72] hours of a confirmed breach affecting customer
   content, per the customer's jurisdiction.
 
-## 6. The honest boundary
+## 6. The boundary
 ISNAD is a **self-hostable library**, not a hosted processor by default. If you run a managed
 cloud, *you* become the processor and this DPA becomes yours to sign. A Fortune-500 buyer will
-ask "are you a processor?" — the honest answer today is "no, you self-host; here is the evidence
+ask "are you a processor?" — the answer today is "no, you self-host; here is the evidence
 you'd want in a processor."

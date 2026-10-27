@@ -1,14 +1,14 @@
 # ISNAD
 
-**Grades the transmitters and the chain, not just the claim.**
+ISNAD grades who handled a claim in an AI pipeline (the transmitters and the chain) and can export each verdict as an audit record you can sign and verify.
 
-Open-source **LLM provenance**, **agent trust**, and an **AI audit trail** for RAG and
-multi-agent systems. Apache-2.0, permanently. `pip install isnad`.
+## Install
 
-Every claim your pipeline produces carries a verifiable **weakest-link trust grade** and
-a **tamper-detecting audit record** — so you can answer the question that hallucination
-detectors and observability tools skip: *who handled this claim, in what order, and how
-much do we trust each one?*
+```bash
+pip install isnad
+```
+
+## 30-second example
 
 ```python
 from isnad import Registry, grade
@@ -21,50 +21,16 @@ reg.register("ingest-model", "physics", grade=NarratorGrade.ACCEPTABLE)
 
 verdict = grade("p = mv", ["openstax", "pdf-scraper", "ingest-model"], reg, domain="physics")
 print(verdict.why)
-# claim 'p = mv' -> chain DAIF (weakest: pdf-scraper, ungraded)
+# claim 'p = mv' → chain DAIF (weakest: pdf-scraper, ungraded)
 ```
 
-> **Proof it works:** ISNAD's weakest-link rule reproduces **a rule-based grading convention derived from Ibn Hajar's tiers
-> chain verdicts at Cohen's κ = 0.87** across 575,060 graded hadith chains. (For context:
-> scholars disagree with *each other* on narrator grades at κ = 0.33 — a different task.)
+A new pipeline starts with every narrator UNGRADED, so nothing serves; seed grades with `Registry.seed()`.
 
-## Why ISNAD
+## Read next
 
-Most AI trust tooling records *what* happened. ISNAD grades *who* transformed the claim
-and *how much to trust the chain that carried it* — then exports the whole judgment as a
-tamper-detecting record for governance review.
-
-| Capability | ISNAD | LangSmith (observability) | RAGAS (eval) | OpenLineage (lineage) |
-| --- | --- | --- | --- | --- |
-| Grades the **chain** (who handled the claim) | ✅ | ❌ | ❌ | ⚠️ |
-| Grades the **transmitters** (living rijāl registry) | ✅ | ❌ | ❌ | ❌ |
-| Tamper-detecting audit record (SHA-256 / Merkle / signatures) | ✅ | ⚠️ | ❌ | ❌ |
-| Evidence artifacts, not conformity | ✅ | ❌ | ❌ | ❌ |
-| Refuses numeric confidence (no over-claiming) | ✅ | ⚠️ | ❌ | ✅ |
-| Reproducible benchmark (κ = 0.87 on 575k chains) | ✅ | ❌ | ❌ | ❌ |
-| Self-hostable / offline | ✅ | ✅ | ✅ | ✅ |
-
-✅ yes · ⚠️ partial · ❌ no
-
-## The honesty contract
-
-ISNAD does **not** emit numeric confidence. It emits an **ordinal grade** (reliable →
-acceptable → weak → rejected → ungraded) plus the **evidence** that produced it. Priors are
-labeled *Estimated*; observations are labeled *Supported*; a grade with no evidence is
-labeled *unvalidated* — never silently promoted. This is the moat: **evidence artifacts,
-not conformity.**
-
-## Start here
-
-* [Getting Started](getting-started.md) — install and grade your first chain
-* [Provenance](provenance.md) — the audit contract
-* [CLI Reference](cli-reference.md) — every command
-* [Architecture](ARCHITECTURE.md) — how it's built
-
-## Links
-
-[:fontawesome-solid-book-open: Docs](https://isnadhq.com/docs) ·
-[:fontawesome-brands-github: GitHub](https://github.com/alizahidraja/isnad) ·
-[:fontawesome-solid-book: Paper](https://arxiv.org/abs/2607.24117) ·
-[:fontawesome-solid-box: PyPI](https://pypi.org/project/isnad/) ·
-[:fontawesome-brands-npm: npm verifier](https://www.npmjs.com/package/isnad)
+- [Quickstart](quickstart.md) — add ISNAD to a LangChain agent in five minutes.
+- [Concepts](concepts.md) — the isnād–rijāl model.
+- [Compliance](compliance.md) — the evidence ISNAD produces for AI governance frameworks.
+- [Architecture](ARCHITECTURE.md) — the module map.
+- [Critics](critics.md) — content critics and their measured recall.
+- [ISNAD-Bench results](https://github.com/alizahidraja/isnad/blob/v3.2.0/bench/docs/RESULTS.md)

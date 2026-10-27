@@ -34,7 +34,7 @@ wrongly flag every legitimate synthesis.
 **The flag is evidence, not an action.** It deliberately has **no route** into the
 SERVE/REVIEW/QUARANTINE decision matrix — that mapping is a separate decision.
 
-## Honest limits
+## Limits
 
 - **Critic capability.** The flag only fires when the critic can affirm `CONSISTENT`.
   The default `EmbeddingCritic` is **contradiction-only** (never returns CONSISTENT), and
@@ -46,7 +46,7 @@ SERVE/REVIEW/QUARANTINE decision matrix — that mapping is a separate decision.
   (never flags) rather than falsely flagging a provenance-unknown chain (#241).
 - **Spoofable split.** `off_chain_rows` is **caller-supplied and unverified** — a planted
   off-chain row can false-flag a rival's claim; `off_chain_rows=[]` silently disables the
-  flag. Establishing the split honestly is the caller's responsibility.
+  flag. Establishing the split is the caller's responsibility.
 - **Measured, not asserted.** The flag's false-positive rate is measured in
   `experiments/grounding_eval/` (#239) against a real NLI critic — see the "measure,
   don't assert" discipline. Small pilot set; treat as a direction, not a tight estimate.

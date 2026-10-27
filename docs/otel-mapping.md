@@ -18,7 +18,7 @@ The chain is graded **weakest-link** over the registry grades, exactly like a
 hand-built isnād. An ungraded transmitter caps at **ḍaʿīf** by default
 (`--lenient` caps at ḥasan instead).
 
-## Honest limits (the important part)
+## Limits (the important part)
 
 1. **The GenAI conventions are in Development status** — attribute names may
    change. The parser is tolerant (missing attributes → skipped), but the

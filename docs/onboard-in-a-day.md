@@ -6,7 +6,7 @@ ordered chain of narrators (source → scraper → model), each narrator has a g
 in a living registry, the chain is capped at its weakest link, and the
 *fabricated* (mawḍūʿ) tier is active containment, not a label.
 
-This page is the shortest honest path to real value for the three users ISNAD
+This page is the shortest path to real value for the three users ISNAD
 was audited for. Each recipe is self-contained. Read the **honesty contract**
 at the bottom before you ship any of them.
 
@@ -18,7 +18,7 @@ at the bottom before you ship any of them.
 got there. Your wiki pages become claims whose provenance is graded and
 re-graded as new evidence arrives.
 
-**The honest limit:** ISNAD grades *transmission*; it does not judge the truth
+**The limit:** ISNAD grades *transmission*; it does not judge the truth
 of your domain content by magic. It will surface "this claim entered through an
 unverified scraper" — it will not tell you the claim is factually right. That is
 the point.

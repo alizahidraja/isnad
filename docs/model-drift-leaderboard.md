@@ -40,7 +40,7 @@ measured against a partially-fabricated oracle:
 **Oracle cross-check (independent LLM audit):** 0.97 agreement (29/30). Ground-truth
 labels come from an **LLM-free numeric oracle**, so the labels themselves cannot hallucinate.
 
-### What this honestly shows
+### What this shows
 1. **Hallucination originates at memory-generation, not chain depth.** The rate is
    *flat* across depths 1..5 (the relay faithfully propagates whatever hop 1 produced).
    Deep multi-agent chains do **not** amplify hallucination here — the first hop does.

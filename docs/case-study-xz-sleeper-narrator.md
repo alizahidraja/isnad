@@ -230,7 +230,7 @@ ingests their author as a narrator. This is a design choice worth keeping
 explicit: the day grades become *importable* between operators, the sleeper
 problem acquires a Sybil dimension it does not currently have.
 
-## 5. Which mechanisms do *not* answer it — honest limits
+## 5. Which mechanisms do *not* answer it — limits
 
 **ISNAD grades transmission, not truth at the boundary.** The README says it
 plainly: a `RELIABLE` fake publisher plus a clean pipeline yields a high chain

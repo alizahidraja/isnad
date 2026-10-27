@@ -1,6 +1,18 @@
 # Changelog
 
-## [3.1.8] — Unreleased
+## [3.2.0] — 2026-10-27
+
+### Changed
+
+- README rewritten (515 → 251 lines). Every row of the validated-versus-not table and every stated limitation is kept; emoji and promotional framing removed. Links and images are pinned to this release so they work on PyPI.
+- Glossary: mutābaʿāt (same source) and shawāhid (different origin) are now defined separately, and madār as the common link where chains converge.
+- Documented that resolving a review item does not change narrator grades.
+- docs/index.md is a short landing page instead of a copy of the README; docs/compliance.md and docs/quickstart.md say "produces evidence for" or "supports" instead of "satisfies"; self-descriptive wording removed from the docs.
+- CONTRIBUTING.md describes the current branches and release process; added AGENTS.md with rules for AI coding agents.
+- The architecture diagram and docs no longer carry a version label or test count.
+- No API or behavior changes.
+
+## [3.1.8] — 2026-10-20
 
 ### Changed
 

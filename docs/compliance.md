@@ -18,42 +18,42 @@ per hop, a content verdict, and the resulting decision — each link hashed and 
 record signable (HMAC) with `audit_signed` marking whether a secret was present. Records
 are hash-chained, so altering any hop breaks the hash.
 
-## How does ISNAD satisfy EU AI Act Article 12 (record-keeping)?
+## How does ISNAD produce evidence for EU AI Act Article 12 (record-keeping)?
 
 Article 12 obliges providers to **generate and keep logs** of the system's operation.
-ISNAD's chain + registry is exactly that log, made machine-readable: each transform is a
-timestamped, hashed, graded link — an auditable trace of how an output was produced,
-not just what it says.
+ISNAD's chain and registry produce part of that log in machine-readable form: each
+transform is a timestamped, hashed, graded link, an auditable trace of how an output
+was produced, not just what it says.
 
-## How does ISNAD satisfy EU AI Act Article 13 (transparency)?
+## How does ISNAD produce evidence for EU AI Act Article 13 (transparency)?
 
 Article 13 requires providers to document — where relevant — the mechanisms letting
 deployers **collect, store, and interpret logs**, plus intended purpose, capabilities,
-limitations, and human-oversight measures. ISNAD's trace schema is that mechanism: the
-decision matrix and grade rationale are the interpretation layer, and the honesty box
-states limits up front rather than hiding them.
+limitations, and human-oversight measures. ISNAD's trace schema supports that
+mechanism: the decision matrix and grade rationale are the interpretation layer, and
+the validated-versus-not table in the README states the limits up front.
 
 ## How does ISNAD map to ISO/IEC 42001?
 
 ISO/IEC 42001 requires **documented information** as controlled records — versioned,
 retained, and protected from alteration — for AI lifecycle and decision evidence.
 ISNAD's versioned narrator registry (who was graded, when, at what version), the
-per-link content hashes, and signed records are exactly the controlled evidence an
-42001 audit collects.
+per-link content hashes, and signed records can serve as controlled evidence in an
+ISO/IEC 42001 audit.
 
 ## How does ISNAD map to NIST AI RMF?
 
 The RMF's Govern/Map functions call for **provenance and traceability** — documenting
 sources, origins, transformations, and dependencies so outputs can be traced back.
-ISNAD is provenance-native: every claim traces back through its chain to its source
-narrator and retrieved evidence, with the chain-scoped grounding separating *what this
-chain actually retrieved* from *what was claimed*.
+ISNAD records provenance for every claim: each claim traces back through its chain to
+its source narrator and retrieved evidence, with the chain-scoped grounding separating
+what this chain actually retrieved from what was claimed.
 
 ## How does ISNAD map to SDAIA (Saudi Data & AI Authority)?
 
 SDAIA's AI ethics principles require **transparency, accountability, and traceability**
-in AI systems. ISNAD's graded, hash-chained provenance record is a direct implementation
-of those principles. (Specific SDAIA clause-by-clause mapping should be confirmed
+in AI systems. ISNAD's graded, hash-chained provenance record supports
+those principles. (Specific SDAIA clause-by-clause mapping should be confirmed
 against the latest published guidance.)
 
 ## What ISNAD does not claim for compliance
